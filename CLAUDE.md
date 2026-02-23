@@ -56,7 +56,8 @@ Translate each chapter sequentially using subagents. For each chapter:
 
 - Combine all modernized chapters into a single HTML file using the style
   from `index.html` as a template (clean serif typography, readable layout)
-- The HTML should have a table of contents and chapter headings
+- The HTML should have a table of contents and chapter headings, and final book should have an appropriate name and be put in `site/` as a single html file.
+- The `site/index.html` should be updated to include the book.
 
 ## Translation Philosophy
 
