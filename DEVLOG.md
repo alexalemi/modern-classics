@@ -1,5 +1,40 @@
 # DEVLOG
 
+## 2026-02-23
+
+Got interrupted with the rest of Dialogues by Plato and the Decameron.
+
+Decided I should try to do 
+
+Demoracy in America from the original French: https://www.gutenberg.org/ebooks/30513
+
+and
+
+An Essay Concerning Human Population by Malthus: https://www.gutenberg.org/ebooks/4239
+
+Other suggestions are Erewhon.
+
+True History (Lucian)
+The Night Land (Hodgson)
+The Coming Race (Bulwer-Lytton)
+Looking Backward (Bellamy)
+News From Nowhere (Morris)
+The Iron Heel (London)
+Walden (Thoreau)
+A Voyage to Arcuturus (Lindsay)
+Phantastes (MacDonald)
+
+An Investigation of the Laws of Thought (Boole)
+A Sceptical Chymist (Boyle)
+Opticks (Newton)
+The Education of Henry Adams
+A Budget of Paradoxes (De Morgan)
+Mutual Aid (Kropotkin)
+
+The Travels of Sir John Mandeville
+
+
+
 ## 2026-02-22
 
 Asked Claude for some tests to consider, suggested:
