@@ -19,6 +19,15 @@ parallel batches of 4-6 subagents — kept vocabulary locked ("commonwealth,"
 agents while cutting wall-clock time roughly 5x. `manifest.json` +
 `assemble.py` rebuild `site/leviathan.html` from the modern chapters.
 
+Harness overhaul (same day): rewrote `splitter.py` (heading-regex mode,
+Gutenberg stripping, oversize auto-split, manifest output), added
+`verify.py` (ratio/seam/famous-passage checks — the ratio bound catches
+silent summarization), replaced the per-book assemblers with a generic
+`assemble.py` + `site/template.html`, moved the old API scripts to
+`legacy/`, and rewrote CLAUDE.md to document the shared-ledger parallel
+translation pattern. Regenerated leviathan.html via the generic assembler:
+byte-identical body, only two internal anchor slugs changed.
+
 ## 2026-02-23
 
 Got interrupted with the rest of Dialogues by Plato and the Decameron.

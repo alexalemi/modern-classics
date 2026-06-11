@@ -15,49 +15,106 @@ Each book goes through these phases:
 
 ### 1. Setup — Prepare the source text
 
-- Obtain a plain text version of the book (standardebooks.org is the best source, Project Gutenberg is the secondary source)
+- Obtain a plain text version of the book (standardebooks.org is the best source,
+  Project Gutenberg is the secondary source)
 - Place the source text in a new directory: `{book}/`
 - Create a `{book}/env` file with metadata:
   ```
   ORIGINAL_WORK=Title of the Work
   AUTHOR=Author Name
   DATE=Year
+  SUBTITLE=optional subtitle shown under the title
+  SOURCE_NAME=Project Gutenberg          # optional attribution link
+  SOURCE_URL=https://www.gutenberg.org/ebooks/NNNN
+  MODERN_YEAR=2026
   ```
-- Download the book into chapters or sections, they need to fit into context, if they are too long you have to split them.
-  The `splitter.py` tool can help — it takes a source text file and a splits file
-  (one split delimiter per line) and produces numbered chapter files.
+- Split the source into chapter files with `splitter.py`:
+  ```
+  python3 splitter.py {book}/source.txt --headings '^CHAPTER [IVXL]+\..*$'
+  ```
+  It strips the Gutenberg wrapper, auto-splits chapters over ~7k words into
+  parts at paragraph boundaries (a translation agent must *output* as much
+  text as it reads, so output limits — not input context — are the binding
+  constraint), writes `chapters/NNN.txt`, and emits `manifest.json`, which is
+  the single source of truth for file → chapter mapping from here on.
+  Text before the first heading lands in `preamble.txt` — decide explicitly
+  whether to fold it into chapter 000 (dedications belong in the book) or
+  drop it (tables of contents do not).
+- Hand-edit `manifest.json` to add `"part_before"` dividers (e.g.
+  `"Part II: Of Commonwealth"`) and, for a front-matter file holding several
+  sections, `"split_headings"`.
 
 ### 2. Text Analysis — Develop a translation strategy
 
-Before translating any chapters, analyze the full work to create a consistent
-strategy. This analysis should cover:
+Before translating any chapters, analyze the full work and write
+`{book}/text_analysis.txt` covering:
 
 - Style, tone, and key themes of the original
 - Challenges specific to this text (archaic vocabulary, cultural references, etc.)
-- Consistent vocabulary mappings (e.g. archaic → modern equivalents)
+- Consistent vocabulary mappings (archaic → modern equivalents)
 - How to preserve the author's distinctive voice in modern English
-- Any content that needs careful handling
+- **Famous passages** that must survive near-verbatim — also list these in
+  `{book}/must_contain.txt` so `verify.py` checks them mechanically
+- Any content that needs careful handling, with explicit guidance
 
-Save the analysis to `{book}/text_analysis.txt`.
+**Sensitive historical content:** canonical works discuss war, rebellion,
+punishment, and religious conflict. Frame every subagent prompt as scholarly
+modernization of a canonical historical text, and put the handling guidance
+(measured register, render the author's argument as *his* argument, never
+sensationalize or bowdlerize) in the analysis doc. This framing is what got
+Leviathan through cleanly after an earlier attempt tripped safety filters.
 
-### 3. Chapter-by-chapter Translation
+### 3. Chapter-by-chapter Translation — shared-ledger pattern
 
-Translate each chapter sequentially using subagents. For each chapter:
+Don't translate strictly sequentially with chapter-to-chapter notes passing;
+use the shared-ledger pattern (proven on Leviathan, ~5x faster with no
+consistency loss):
 
-- Read the original chapter text from `{book}/chapters/NNN.txt`
-- Use the text analysis and the previous chapter's notes for consistency
-- Produce three outputs:
-  - **Modernized text** — the full chapter in modern English
-  - **Explanation** — brief notes on major changes and rationale
-  - **Next chapter notes** — consistency guidance for the next chapter
-- Save the modernized chapter to `{book}/modern_chapters/NNN.txt`
+- Write `{book}/agent_instructions.txt` once: the standing prompt every
+  translation subagent reads (persona, required reading, translation rules,
+  heading conventions, multi-part file rules, output format). Subagent
+  prompts then shrink to a few lines: file number, chapter title, anything
+  chapter-specific.
+- Maintain `{book}/running_notes.txt`: the accumulated consistency ledger —
+  locked vocabulary ("caps spent, no re-gloss"), tone calibration, forward
+  references to honor. Every agent reads it; the orchestrator (not the
+  agents) updates it between batches from the agents' returned notes.
+- Translate the first file **alone** to establish the voice, then run
+  parallel batches of 4–6 subagents, updating the ledger between batches.
+- Each agent writes `modern_chapters/NNN.txt` and returns (a) a short
+  summary and (b) consistency notes for the ledger.
+- **Specify exact heading strings in the prompts** ("Chapter 42: Of
+  Ecclesiastical Power") rather than letting parallel agents invent them —
+  independent reasonable choices are where seam bugs come from.
+- Multi-part chapters: heading line, then `(Part n of k)`, then the
+  translation; parts 2+ never re-introduce the chapter, non-final parts
+  never conclude it.
 
-### 4. Assembly — Combine into a readable book
+### 4. Verify — before assembly
 
-- Combine all modernized chapters into a single HTML file using the style
-  from `index.html` as a template (clean serif typography, readable layout)
-- The HTML should have a table of contents and chapter headings, and final book should have an appropriate name and be put in `site/` as a single html file.
-- The `site/index.html` should be updated to include the book.
+```
+python3 verify.py {book}
+```
+
+Checks every chapter has a modern counterpart, per-file word ratios are
+within 0.6–1.6 (catches silent summarization — the project's worst failure
+mode), part markers haven't leaked into the body, no part divider appears
+twice (the classic seam bug between parallel agents), and every phrase in
+`must_contain.txt` survived. Fix failures before assembling.
+
+### 5. Assembly — Combine into a readable book
+
+```
+python3 assemble.py {book}        # writes site/{book}.html
+```
+
+Generic and data-driven: page shell from `site/template.html`, metadata from
+`{book}/env`, structure from `manifest.json` (multi-part chapters are
+stitched back into single chapters; `part_before` entries become part
+dividers in the TOC and body). Subheadings, indented outlines, and paragraph
+rendering are handled by convention — see the docstring.
+
+Then add the book to `site/index.html`.
 
 ## Translation Philosophy
 
@@ -88,25 +145,38 @@ What to preserve:
 
 ```
 {book}/                    # One directory per book
-  env                      # Metadata (ORIGINAL_WORK, AUTHOR, DATE)
+  env                      # Metadata (see Setup above)
   {source}.txt             # Original full text
   chapters/                # Split chapter files (000.txt, 001.txt, ...)
+  manifest.json            # File -> chapter map; drives translation + assembly
   text_analysis.txt        # Translation strategy document
+  agent_instructions.txt   # Standing prompt for translation subagents
+  running_notes.txt        # Shared consistency ledger, updated between batches
+  must_contain.txt         # Famous passages verify.py checks for
   modern_chapters/         # Translated chapters (000.txt, 001.txt, ...)
 ```
 
-## Existing Scripts
+## Tooling
 
-- `splitter.py` — splits a source text into chapter files given a splits file
-- `translator.py` — original API-based batch translator (uses Anthropic API directly)
-- `chapter_prompt.txt` — the prompt template used for chapter translation
-- `prompt.01.txt` — the prompt template used for text analysis
+- `splitter.py` — source text → `chapters/` + `manifest.json` (heading-regex
+  or legacy splits-file mode; Gutenberg stripping; oversize auto-split)
+- `verify.py` — mechanical completeness/consistency checks before assembly
+- `assemble.py` — `modern_chapters/` + `manifest.json` + `env` +
+  `site/template.html` → `site/{book}.html`
+- `legacy/` — the original API-based batch translator and prompt templates,
+  plus old book-specific assemblers. Reference only; see `legacy/README.md`
+  (note: their `max_tokens` settings truncate full chapters).
 
-These scripts represent the original approach (calling the API programmatically).
-Claude Code can now do this work directly — reading chapters, translating them
-in-context, and writing the output files — without needing the API scripts.
+Claude Code does the translation work directly — reading chapters,
+orchestrating translation subagents, and writing the output files. The API
+scripts are not part of the current workflow.
 
 ## Books Completed
 
-- **The Decameron** by Giovanni Boccaccio (1492) — two passes (decameron1/, decameron2/)
-- **Flatland** by Edwin A. Abbott (1884) — one pass (flatland1/)
+See `site/index.html` for the live list. As of June 2026: The Decameron,
+Plato's Dialogues, The Prince, Candide, Meditations, Flatland, Common Sense,
+The Federalist Papers, Democracy in America (two passes — English and from
+the French), Progress and Poverty, The Wealth of Nations, Essay on the
+Principle of Population, Descartes' Philosophical Works, Commentaries on the
+Gallic War, On the Origin of Species, Herodotus' Histories, History of the
+Peloponnesian War, Two Treatises of Government, and Leviathan.

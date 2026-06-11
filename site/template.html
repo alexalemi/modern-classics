@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>{{TITLE}} &mdash; {{AUTHOR}}</title>
+<style>
+html {
+  max-width: 70ch;
+  padding: 3em 1em;
+  margin: auto;
+  line-height: 1.75;
+  font-size: 1.25em;
+}
+
+body {
+	font: large/1.556 "Libertine", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 3em 0 1em;
+	font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+}
+
+h1 {
+  margin-top: 1em;
+  text-align: center;
+}
+
+h4 {
+  margin: 2em 0 1em;
+  font-style: italic;
+  font-weight: 600;
+}
+
+p,ul,ol {
+  margin-bottom: 2em;
+  color: #1d1d1d;
+  font-family: Georgia, "Palatino Linotype", "Book Antiqua", serif;
+}
+
+blockquote {
+  margin: 1.5em 2em;
+  padding-left: 1em;
+  border-left: 3px solid #ccc;
+  font-style: italic;
+}
+
+blockquote p {
+  margin-bottom: 1em;
+}
+
+pre.outline {
+  font-family: Georgia, "Palatino Linotype", "Book Antiqua", serif;
+  white-space: pre-wrap;
+  line-height: 1.6;
+  margin-bottom: 2em;
+  color: #1d1d1d;
+}
+
+.center {
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  font-style: italic;
+  margin-top: -1em;
+  margin-bottom: 3em;
+}
+
+.toc-book {
+  font-weight: bold;
+  margin-top: 1em;
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+}
+
+.toc-list {
+  list-style: none;
+  padding-left: 1.5em;
+}
+
+.toc-list li {
+  margin-bottom: 0.3em;
+}
+</style>
+</head>
+
+<body>
+	<center>
+	<h1>{{TITLE}}</h1>
+{{SUBTITLE_BLOCK}}	<h3>by {{AUTHOR}}</h3>
+	<p class="center">
+	<s>{{DATE}}</s> {{MODERN_YEAR}}
+	</p>
+	</center>
+
+	<hr>
+	<p><i>This is an AI modernization of {{TITLE}} into contemporary English.{{SOURCE_SENTENCE}}</i></p>
+
+	<hr>
+<h2 id="contents">Contents</h2>
+{{TOC}}
+
+<hr>
+{{BODY}}
+
+</body>
+</html>
