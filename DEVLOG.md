@@ -1,5 +1,34 @@
 # DEVLOG
 
+## 2026-06-11
+
+Quality pass over all 19 earlier books (made by older models). Findings and
+fixes:
+
+- federalist, progress-and-poverty, wealth-of-nations: modern_chapters
+  files were raw model responses (`<modernized_text>` wrappers +
+  explanation/notes sections). Extracted clean text, moved the extras to
+  `NNN_notes.txt`. Site pages were unaffected (built from extracted text).
+- wealth-of-nations: Book IV ch. VI "Of Treaties of Commerce" had never
+  been translated — the grain-trade digression had spilled across files
+  042/043 and the site page had the Treaties heading sitting on Colonies
+  content. Translated the missing chapter (~4.6k words), rebalanced the
+  files (042 = full digression, 043 = Treaties), and fixed the site page.
+- dialogues: the book had been interrupted — site only published through
+  Republic X; files 024-058 were translated but unpublished, and
+  Theaetetus (both halves) + Timaeus Part 2 (~46k words) were never
+  translated. Translated the three missing chapters (9 subagents) and
+  extended site/dialogues.html with five new groups: Shorter Socratic
+  Dialogues, Language and Knowledge, The Late Dialogues, Cosmology and
+  Myth, and The Laws (25 new TOC entries; page now the complete Jowett
+  Plato).
+- Verified-acceptable flags (no action): herodotus 018 (0.59 ratio =
+  stylistic compression, subagent confirmed all content present);
+  wealth-of-nations 023 (Smith's wheat-price tables replaced by a
+  transparent editorial note summarizing them); democracy 039 (omitted
+  tail is footnote material); gallic-war (0.78 = Latin syntax tightening,
+  names/numbers verified intact).
+
 ## 2026-06-10
 
 Completed Leviathan (Hobbes, 1651). A previous attempt had stalled after
