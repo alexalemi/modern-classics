@@ -179,4 +179,5 @@ The Federalist Papers, Democracy in America (two passes — English and from
 the French), Progress and Poverty, The Wealth of Nations, Essay on the
 Principle of Population, Descartes' Philosophical Works, Commentaries on the
 Gallic War, On the Origin of Species, Herodotus' Histories, History of the
-Peloponnesian War, Two Treatises of Government, and Leviathan.
+Peloponnesian War, Two Treatises of Government, Leviathan, and The Social
+Contract.

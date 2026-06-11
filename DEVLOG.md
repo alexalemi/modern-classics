@@ -1,5 +1,25 @@
 # DEVLOG
 
+## 2026-06-11 (later)
+
+Two additions:
+
+1. Redesigned site/index.html: books grouped by theme (Political
+   Philosophy / Economics / The Ancient World / Philosophy & Science /
+   Fiction & Ideas) with one-line blurbs and reading-time estimates.
+
+2. Added Rousseau's The Social Contract (1762, Cole translation, PG
+   #46333 trimmed to the Social Contract proper) — completes the
+   social-contract trilogy with Leviathan and Two Treatises. First full
+   run of the new harness on a fresh book: splitter (book-level regex,
+   9 files), text_analysis + agent_instructions + running_notes ledger,
+   Book I solo then 8 parallel agents, verify.py (ratio 1.00, all famous
+   passages present), generic assemble.py with split_headings for the
+   Foreword. The agents handled the Gutenberg footnote-displacement
+   quirks (notes physically located across part boundaries from their
+   anchors) by coordinating through their returned notes. ~45k words,
+   roughly two hours wall-clock end to end.
+
 ## 2026-06-11
 
 Quality pass over all 19 earlier books (made by older models). Findings and
