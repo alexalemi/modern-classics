@@ -180,4 +180,7 @@ the French), Progress and Poverty, The Wealth of Nations, Essay on the
 Principle of Population, Descartes' Philosophical Works, Commentaries on the
 Gallic War, On the Origin of Species, Herodotus' Histories, History of the
 Peloponnesian War, Two Treatises of Government, Leviathan, The Social
-Contract, and Lucian's True History.
+Contract, Lucian's True History, More's Utopia, and Montaigne's Selected
+Essays (23 essays + preface; the Apology for Raymond Sebond, Upon Some
+Verses of Virgil, Of Vanity, Of Physiognomy, and Of Presumption remain
+untranslated — candidates for a second volume).

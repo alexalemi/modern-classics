@@ -1,5 +1,29 @@
 # DEVLOG
 
+## 2026-06-11 (night)
+
+Two more books:
+
+- Utopia (More, 1516, Burnet's 1684 translation, PG #2130). 14 files,
+  ratio 0.91. The interpretive-tightrope rule (never resolve the satire)
+  went in the analysis doc and held — Raphael stays a true believer,
+  "More" stays politely skeptical, the closing "rather wish, than hope"
+  lands intact.
+- Selected Essays of Montaigne (Cotton/Hazlitt, PG #3600): 23 essays +
+  the preface (~136k words of source), curated from 107 — the canon
+  (Cannibals, Friendship, Education, Repentance, Experience...) plus the
+  short gems. 34 files, ratio 0.90. New policy that earned its keep: all
+  Latin verse quotations collapsed to one integrated English clause with
+  mid-flow attribution — Cotton's double-rendering (Latin + bracket
+  translation) would have been a third of the book. Extraction needed
+  care: PG #3600 is stitched from volume files with per-volume "ETEXT
+  EDITOR'S BOOKMARKS" blocks, the Apology hides under a mixed-case
+  heading that the all-caps chapter regex missed (it silently inflated
+  Of Cruelty to 82k words until caught), and the editorial --[...]--
+  bracket notes had to be dropped wholesale. Remaining giants (Apology,
+  Of Vanity, Upon Some Verses of Virgil, Of Physiognomy, Of Presumption)
+  left for a possible second volume.
+
 ## 2026-06-11 (evening)
 
 Added Lucian's True History (c. 175 AD, via Francis Hickes' 1634
