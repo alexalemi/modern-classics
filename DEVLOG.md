@@ -1,5 +1,19 @@
 # DEVLOG
 
+## 2026-06-11 (evening)
+
+Added Lucian's True History (c. 175 AD, via Francis Hickes' 1634
+translation, PG #45858 — Whibley introduction and Hickes' marginal
+footnotes dropped). The first science fiction story, from the DEVLOG
+wishlist. ~16k words, 4 files, one voice-setting agent then 3 parallel;
+ratio 0.92, all checks pass. The comic compounds got locked in file 000
+(Vulture Cavalry, Salad-Wings, Pumpkin-Pirates...) and the "that I lie"
+confession lands as the punchline it is. One workflow note: verify.py
+flagged a must_contain phrase that I had copied in Hickes' archaic
+wording while text_analysis §7 itself mandated the modern rendering —
+the check was wrong, the translation right; must_contain phrases should
+be drawn from the strategy's target phrasing, not the source's.
+
 ## 2026-06-11 (later)
 
 Two additions:
