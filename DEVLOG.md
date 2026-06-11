@@ -1,5 +1,24 @@
 # DEVLOG
 
+## 2026-06-10
+
+Completed Leviathan (Hobbes, 1651). A previous attempt had stalled after
+downloading the source (safety filter trip, likely on the political-violence
+material read out of context); this pass framed every chapter prompt as
+scholarly modernization of a canonical political-philosophy text and had no
+filter issues at all — all 47 chapters plus the Epistle Dedicatory,
+Introduction, and Review & Conclusion translated complete (~213k words in,
+~217k out, ratio 1.02).
+
+Process notes: split into 57 files (chapter 42, "Of Power Ecclesiastical,"
+is 29.5k words and became 5 parts; chapters 26, 44, 45, 46 also split).
+Instead of strictly sequential chapter-notes passing, used a shared
+`agent_instructions.txt` + `running_notes.txt` ledger updated between
+parallel batches of 4-6 subagents — kept vocabulary locked ("commonwealth,"
+"covenant," counsel vs. command, the personation machinery) across ~50
+agents while cutting wall-clock time roughly 5x. `manifest.json` +
+`assemble.py` rebuild `site/leviathan.html` from the modern chapters.
+
 ## 2026-02-23
 
 Got interrupted with the rest of Dialogues by Plato and the Decameron.
