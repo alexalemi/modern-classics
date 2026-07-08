@@ -1,5 +1,71 @@
 # DEVLOG
 
+## 2026-07-08
+
+Linked the epubs from the site and refreshed all the pages.
+
+- `site/index.html`: every entry now has an epub link in its byline;
+  each book page's header note links its epub too (new `{{EPUB_SENTENCE}}`
+  in the template — `assemble.py` finds the right file by reading the
+  dc:source out of each epub's OPF rather than keeping a mapping).
+- Regenerating surfaced that the committed pages were stale: they'd been
+  generated before the June "quality pass" rewrote the chapter text (and
+  by an assemble.py variant that was never committed). Pages now match
+  the current chapters — the same text the epubs are built from.
+- Two renderer fixes applied to *both* the site and the epubs:
+  dialogue speakers on their own line (Plato, ~9,700 blocks) no longer
+  run into their text — site renders `<b>Socrates</b>: …`, epubs use
+  `<b epub:type="z3998:persona">`; and `---` scene markers become
+  thought breaks (`<hr>`) instead of literal dashes (the epubs had been
+  typogrifying them into lone em-dash paragraphs). Scene breaks at
+  section boundaries are dropped (lint s-012). Seven epubs rebuilt;
+  all 24 still lint clean and pass epubcheck.
+- `assemble.py`'s no-manifest fallback now ignores `NNN_notes.txt`
+  (the hazard flagged yesterday).
+- Note for deploys: `make deploy` rsyncs `site/` with `--delete`, so
+  `site/ebooks/` (~55 MB) ships on the next deploy.
+
+## 2026-07-07
+
+Standard-Ebooks-quality epubs for the whole library. New `build_ebook.py`
+(+ `rebrand.py`, `ebook_meta.json`) converts each book's `modern_chapters/`
+into an SE-style source tree with the pipx `se` toolset, then lints and
+builds to `site/ebooks/<author>_<title>.epub` (plus an `_advanced` build).
+`make ebooks` rebuilds everything; build trees live in `build/ebooks/`
+(gitignored).
+
+- Reuses `assemble.py`'s section parsing so the site and the epubs agree;
+  part grouping for pre-manifest books is reconstructed from "(Part n of k)"
+  markers.
+- SE semantics throughout: hgroup ordinals + titles, part files with
+  `data-parent`, verse blockquotes, `<hr/>` scene breaks, era abbrs,
+  half-title pages when a book has frontmatter.
+- All Standard Ebooks trademarks are replaced (publisher = Modern Classics,
+  imprint/colophon/uncopyright rewritten, identifier = repo URL); imprint
+  states plainly that these are Claude-assisted retellings and not SE
+  productions. Original PG translators are credited in the colophon.
+- Covers: public-domain paintings from Wikimedia Commons, one per book,
+  cropped to SE's 1400x2100 (choices + credits in `ebook_meta.json`).
+- Gotchas: don't import `se` into the system python (a `regex` C-extension
+  conflict produces heisenbugs — shell out to `se titlecase` instead);
+  `se create-draft` prompts when a title collides with SE's catalog;
+  `se build` names its output after the dc:identifier.
+- Fixed a latent hazard in no-manifest books: `assemble.py`'s fallback
+  globs `*.txt`, which now also matches `NNN_notes.txt` translation-notes
+  files — the epub builder guards with `\d{3}.txt`. The site generator
+  should get the same guard before any page is regenerated.
+- Final sweep: all 24 books lint with zero errors and pass epubcheck.
+  Late fixes: repeated matter sections get unique filenames (Democracy in
+  America has a preface per volume — the collision only shows up as an
+  epubcheck duplicate-itemref error); `EBOOK_WIKI_URL` placeholder is
+  handled when create-draft can't find the title on Wikipedia
+  ("Philosophical Works"); books without a `SOURCE_URL` in `env` no longer
+  get the repo URL as a duplicated dc:source. Note `build_ebook.py` reuses
+  an existing `build/ebooks/<slug>` tree — after changing `rebrand.py`,
+  `rm -rf` the tree first, since placeholder-driven replacements no-op on
+  a second pass.
+
+
 ## 2026-06-11 (night)
 
 Two more books:
