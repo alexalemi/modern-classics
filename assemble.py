@@ -63,18 +63,46 @@ def is_subheading(par):
     return caps >= max(1, len(words) // 2)
 
 
+SPEAKER_NAME = re.compile(r"[A-Z][A-Za-z .'’-]{0,30}")
+HR_LINE = re.compile(r"\*+( \*+)*|-{2,}")
+
+
+def find_speakers(pars):
+    """Dialogue speakers: short bare names that repeatedly open a block's
+    first line (Plato's dialogues put the speaker on its own line)."""
+    counts = {}
+    for par in pars:
+        lines = par.strip().split("\n")
+        head = lines[0].strip()
+        if (len(lines) >= 2 and SPEAKER_NAME.fullmatch(head)
+                and not head.isupper() and not head.endswith(".")):
+            counts[head] = counts.get(head, 0) + 1
+    return {name for name, n in counts.items() if n >= 3}
+
+
 def render_body(text):
+    pars = [p.rstrip() for p in re.split(r"\n\s*\n", text) if p.strip()]
+    speakers = find_speakers(pars)
     out = []
-    for par in re.split(r"\n\s*\n", text):
-        par = par.rstrip()
-        if not par.strip():
-            continue
-        if re.search(r"^[ \t]", par, re.M):
+    for par in pars:
+        s = par.strip()
+        lines = s.split("\n")
+        if HR_LINE.fullmatch(s):
+            out.append("<hr>")
+        elif re.search(r"^[ \t]", par, re.M):
             out.append(f'<pre class="outline">{html.escape(par)}</pre>')
-        elif is_subheading(par.strip()):
-            out.append(f"<h4>{html.escape(par.strip())}</h4>")
+        elif len(lines) >= 2 and lines[0].strip() in speakers:
+            rest = " ".join(l.strip() for l in lines[1:])
+            out.append(f"<p><b>{html.escape(lines[0].strip())}</b>: "
+                       f"{html.escape(rest)}</p>")
+        elif is_subheading(s):
+            out.append(f"<h4>{html.escape(s)}</h4>")
         else:
-            out.append(f"<p>{html.escape(par.strip())}</p>")
+            out.append(f"<p>{html.escape(s)}</p>")
+    while out and out[0] == "<hr>":
+        out.pop(0)
+    while out and out[-1] == "<hr>":
+        out.pop()
     return "\n".join(out)
 
 
@@ -95,11 +123,29 @@ def strip_front(lines, expect_heading):
     return heading, "\n".join(lines[j:]).strip()
 
 
+def find_epub(book, root):
+    """This book's epub in site/ebooks, matched via the dc:source repo path."""
+    import zipfile
+    needle = f"/tree/main/{book.name}<"
+    for f in sorted((root / "site" / "ebooks").glob("*.epub")):
+        if f.name.endswith("_advanced.epub"):
+            continue
+        try:
+            opf = zipfile.ZipFile(f).read("epub/content.opf").decode()
+        except Exception:
+            continue
+        if needle in opf:
+            return f.name
+    return None
+
+
 def load_manifest(book):
     mpath = book / "manifest.json"
     if mpath.exists():
         return json.loads(mpath.read_text())
-    files = sorted(p.name for p in (book / "modern_chapters").glob("*.txt"))
+    # NNN.txt only — the directory also holds NNN_notes.txt translation notes
+    files = sorted(p.name for p in (book / "modern_chapters").glob("*.txt")
+                   if re.fullmatch(r"\d{3}\.txt", p.name))
     if not files:
         sys.exit(f"ERROR: no modern_chapters in {book}")
     return [{"file": f, "title": "", "part": 1, "of": 1} for f in files]
@@ -209,6 +255,9 @@ def main():
                            f'<a href="{env["SOURCE_URL"]}">{html.escape(name)}</a>.')
     else:
         source_sentence = ""
+    epub = find_epub(book, root)
+    epub_sentence = (f' Also available as an <a href="ebooks/{epub}">epub</a>.'
+                     if epub else "")
 
     page = (root / "site" / "template.html").read_text()
     for key, val in {
@@ -218,6 +267,7 @@ def main():
         "{{MODERN_YEAR}}": env.get("MODERN_YEAR", "2026"),
         "{{SUBTITLE_BLOCK}}": subtitle_block,
         "{{SOURCE_SENTENCE}}": source_sentence,
+        "{{EPUB_SENTENCE}}": epub_sentence,
         "{{TOC}}": build_toc(sections),
         "{{BODY}}": build_body(sections),
     }.items():
