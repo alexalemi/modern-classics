@@ -43,7 +43,7 @@ def se_titlecase(s):
 
 PART_MARK = re.compile(r"^\(Part \d+ of \d+\)$", re.I)
 HEADING = re.compile(
-    r"^(?:##\s*)?(?P<label>Chapter|Book|Part|Letter|Essay|Section|Federalist|CHAPTER|BOOK|LETTER|PART|SECTION|FEDERALIST)?"
+    r"^(?:##\s*)?(?P<label>(?:Chapter|Book|Part|Letter|Essay|Section|Federalist|CHAPTER|BOOK|LETTER|PART|SECTION|FEDERALIST)(?![A-Za-z]))?"
     r"[ .:]*(?:No\.\s*)?(?P<ord>[IVXLC]+\b|[ivxlc]+\b|\d+\b)?[.:]?\s*(?P<title>.*)$")
 
 FRONT_BACK_TYPES = {

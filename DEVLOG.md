@@ -1,5 +1,44 @@
 # DEVLOG
 
+## 2026-07-20
+
+The Enchiridion (Epictetus), and the start of the Founders' Library.
+
+- New book: `enchiridion/` from Gutenberg #45109 (Higginson's translation;
+  the 1948 Liberal Arts Press introduction is stripped by `prep.py` — it
+  is separately copyrighted and we only want Higginson's 1865 text). This
+  edition has 51 sections (standard numbering through §43; Higginson
+  merges the usual 50–53 at the tail). Sections are tiny, so `prep.py`
+  groups them into 4 ~1.7k-word files with "Section N" subheadings rather
+  than using splitter.py — a pattern for future aphoristic texts.
+  Translated with the shared-ledger pattern (1 voice-setting agent + 3
+  parallel); verify ratio 0.96, all 7 locked famous passages intact.
+  Site page, index entry, and epub built (lints at parity: one t-064
+  manual-review row on the colophon painting title, matching Leviathan's
+  precedent of benign manual-review rows).
+- `build_ebook.py` heading-regex fix: the label alternation now requires
+  a word boundary, so a title like "Sections 1–15" no longer half-matches
+  "Section" and emits "s 1–15" as the chapter heading. Would have bitten
+  any plural label ("Letters …", "Essays …").
+- Toolchain note: under Claude Code's sandbox, epubcheck reports valid
+  cover images as "Corrupted image file encountered" (PKG-021) because
+  Java can't write its ImageIO cache to /tmp. Harmless outside the
+  sandbox; `-Djava.io.tmpdir` works around it when running epubcheck by
+  hand (but JAVA_TOOL_OPTIONS breaks `se build`'s output parsing).
+- Project direction: working through the Founders' Library (the shared
+  bookshelf from *The Pursuit of Happiness*). Already covered: Meditations;
+  Plato's Apology/Crito/Republic (in the dialogues volume); now the
+  Enchiridion. Queued, sources scouted: The Way to Wealth (PG 43855),
+  Xenophon's Memorabilia (PG 1177), Franklin's Autobiography (SE),
+  Nicomachean Ethics (SE, Peters), Plutarch's Roman Lives (PG 674,
+  Dryden/Clough — SE's Perrin edition was never produced), Seneca's
+  Moral Letters (SE, Gummere). Decisions: both Cicero works (On Duties,
+  Tusculan Disputations) will be translated from the original Latin
+  (PG 47001 for De Officiis; no public-domain English De Officiis exists
+  on PG/SE anyway) — same move as democracy2's from-the-French pass;
+  Cato's Letters will be a selected-letters volume (full text is ~350k
+  words and lives only on OLL/constitution.org/archive.org).
+
 ## 2026-07-08
 
 Linked the epubs from the site and refreshed all the pages.
