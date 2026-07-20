@@ -1,5 +1,40 @@
 # DEVLOG
 
+## 2026-07-20 (evening)
+
+The Memorabilia (Xenophon), plus site feeds and an About-page scaffold.
+
+- New book: `memorabilia/` from Gutenberg #1177 (Dakyns). `prep.py`
+  strips Dakyns' footnote apparatus and Greek transliterations,
+  auto-patches Book III's mislabeled fourteenth chapter (a second
+  "XII"), and groups 39 chapters into 18 part-files — a new structure:
+  one *section* per Book stitched from parts (like Herodotus), with
+  "Chapter N" h4 subheadings inside preserving Book+chapter citations.
+  Translated via shared ledger: 1 voice file + batches of 5 and 6;
+  overall ratio 0.86, all locked passages intact (indictment, divine
+  sign, Choice of Heracles "two roads", closing "best and the happiest
+  of men" — the finale intentionally reorders the source's last two
+  sentences so the eulogy line closes the book).
+  Two source corruptions found and cleanly folded out by agents (a
+  leaked flush-left syllogism schema in IV.6, a garbled voluntary-liar
+  line in IV.2) — prep.py's indent-based footnote filter can't catch
+  flush-left apparatus; worth a manual scan on future Dakyns texts.
+  Epub lints completely clean (zero rows); cover is Carracci's Choice
+  of Hercules (1596) — the fable in II.1, and the image John Adams
+  proposed for the Great Seal.
+- RSS + OPDS: new `build_feeds.py` → site/feed.xml (RSS 2.0, epub
+  enclosures) and site/opds.xml (OPDS 1.2 acquisition catalog), covers
+  copied to site/covers/. Publication dates = first git commit of each
+  site page (uncommitted pages fall back to 2026-01-01 and sort oldest,
+  so commit new books before deploying; `make deploy` now regenerates
+  feeds first). Autodiscovery links in index + template; PAGE_OVERRIDES
+  maps dirs whose page names differ (malthus→population,
+  descartes→philosophical-works). Base URL:
+  https://alexalemi.com/modern-classics
+- About page: Alex writes prose in `about.md` (placeholders only for
+  now); `make about` renders site/about.html via build_about.py, which
+  borrows the <style> block from site/index.html at build time.
+
 ## 2026-07-20 (later)
 
 The Way to Wealth (Franklin) — second Founders' Library book of the day.

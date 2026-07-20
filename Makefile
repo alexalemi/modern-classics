@@ -1,7 +1,15 @@
 .PHONY: deploy
 
-deploy:
+deploy: feeds
 	rsync -avz --delete site/ nubo:~/static/modern-classics/
+
+.PHONY: feeds
+feeds:
+	python3 build_feeds.py
+
+.PHONY: about
+about:
+	python3 build_about.py
 
 .PHONY: ebooks
 ebooks:
