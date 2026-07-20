@@ -101,6 +101,35 @@ p,ul,ol {
 <p>I was pleased with the result, and it got me thinking about other books that were lost to modern audiences. In particular there are tons of old works that were meant to be for a popular lay audience in other languages, but because of an accident of history the available english translations date from the 19th century. This means the works, which were meant to be widely accessible, have been <em>lost</em> to modern audiences.</p>
 <h2>How it&rsquo;s made</h2>
 <p>Here I use <a href="https://claude.ai">Claude</a> to translate the original books into contemporary English. I use the <a href="https://standardebooks.org">standardebooks.org</a> project for a bunch of wonderful guidelines for producing high quality epub ebooks.</p>
+<p>Each book gets more care than a single &ldquo;please modernize this&rdquo; prompt. The process looks like this:</p>
+<ol>
+<li>
+<p><strong>Source.</strong> I start from a public-domain text, usually from <a href="https://standardebooks.org">Standard Ebooks</a> or <a href="https://www.gutenberg.org">Project Gutenberg</a> (each book&rsquo;s page links its source). The text is split into chapter-sized pieces, and stray artifacts of old editions — translator footnotes, publisher ads, printers&rsquo; errors — are stripped or fixed, with the changes logged.</p>
+</li>
+<li>
+<p><strong>A translation strategy.</strong> Before any translating happens, Claude studies the whole work and writes an analysis: the author&rsquo;s voice and how to keep it, archaic vocabulary and what it should consistently become, content that needs careful historical handling, and — importantly — a list of famous passages that must survive recognizably. Nobody wants a Meditations that&rsquo;s lost &ldquo;the best revenge is not becoming like the person who wronged you,&rdquo; or an Enchiridion without &ldquo;Some things are up to us, and some things are not.&rdquo;</p>
+</li>
+<li>
+<p><strong>Translation.</strong> The persona is a scholar who has studied the work their whole life and happens to be a gifted storyteller, retelling it for a modern reader — faithful to the meaning, complete (never summarized), but genuinely fun to read. Chapters are translated a few at a time, and the translators share a running ledger of decisions — locked vocabulary, tone calibrations, forward references — so chapter 40 uses the same words as chapter 2.</p>
+</li>
+<li>
+<p><strong>Verification.</strong> Software checks every chapter mechanically: nothing missing, no chapter silently shortened (word-count ratios catch a translator that summarizes instead of translating — the failure mode I worry about most), and every one of those famous passages present, word for word.</p>
+</li>
+<li>
+<p><strong>Assembly.</strong> The chapters become the web pages here and epubs built with the Standard Ebooks toolchain, with covers from public-domain paintings.</p>
+</li>
+</ol>
+<p>An honest caveat: these are AI retellings, and despite the checks, a turn of phrase may occasionally drift from the original&rsquo;s nuance. Treat these as a friendly first encounter, not a scholarly edition — and if a book grabs you, go read a real translation of the original. Every page links to the source text for exactly that reason. If you spot something off, <a href="https://github.com/alexalemi/modern-classics">tell me</a>.</p>
+<h2>Following along</h2>
+<p>New retellings appear here as they&rsquo;re finished. Two ways to subscribe:</p>
+<p><strong>RSS</strong> — point any feed reader (Feedly, NetNewsWire, Miniflux, …) at:</p>
+<pre><code>https://alexalemi.com/modern-classics/feed.xml
+</code></pre>
+<p>Each new book shows up as an entry with a link to read it here and the epub attached.</p>
+<p><strong>OPDS</strong> — if you read on an e-reader, the whole library is an <a href="https://en.wikipedia.org/wiki/Open_Publication_Distribution_System">OPDS catalog</a>, which most reading apps can browse directly. Add this catalog URL in KOReader (Search → OPDS catalog), Moon+ Reader (Net Library), Thorium, Aldiko, or any other OPDS-aware app:</p>
+<pre><code>https://alexalemi.com/modern-classics/opds.xml
+</code></pre>
+<p>You&rsquo;ll get the full shelf with covers, and can download any book straight to your device — no computer required.</p>
 
 <p><a href="index.html">&larr; Back to the library</a></p>
 
