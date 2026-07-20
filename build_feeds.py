@@ -28,7 +28,9 @@ from pathlib import Path
 import assemble  # find_epub, read_env
 
 ROOT = Path(__file__).parent
-DEFAULT_BASE = "https://alexalemi.com/modern-classics"
+# www is the no-redirect host: bare alexalemi.com 301s via plain http,
+# which simple e-reader OPDS clients refuse to follow.
+DEFAULT_BASE = "https://www.alexalemi.com/modern-classics"
 
 # book dir -> site page, where the page name differs from the dir name
 PAGE_OVERRIDES = {"malthus": "population.html",

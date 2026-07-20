@@ -1,0 +1,91 @@
+TEXT ANALYSIS — On Duties / De Officiis (Cicero, 44 BC)
+Source: Gutenberg #47001, the 1913 Loeb edition. THIS TRANSLATION IS
+MADE FROM CICERO'S LATIN — the first from-the-Latin volume in the
+project (democracy2 did the same from Tocqueville's French). Walter
+Miller's 1913 English translation, from the same edition, sits in
+reference/NNN.txt as a comprehension crib ONLY.
+
+HOW TO USE THE TWO TEXTS
+
+- chapters/NNN.txt (Latin) is the source. Translate from it.
+- reference/NNN.txt (Miller) is a crib: consult it to construe a knotty
+  period or check a proper name, then put it down and write YOUR
+  modern English from the Latin. Never paraphrase Miller — his 1913
+  diction ("moral rectitude", "propriety", "in fine") is precisely the
+  register we are replacing, and verify.py's ratio check runs against
+  the LATIN (modern English should land 1.2–1.6x the Latin word count;
+  the orchestrator runs verify.py --min-ratio 1.0 --max-ratio 1.8).
+
+WHAT THIS IS
+
+Cicero's last philosophical work, finished months after Caesar's
+assassination and months before his own murder: a long letter of
+practical ethics to his son Marcus, 21 and studying (loafing) in
+Athens. Three books: I — what the right (honestum) requires, via the
+four virtues; II — what is advantageous (utile); III — the famous
+collision, arguing the conflict is always an illusion: nothing wrong
+is ever truly advantageous. It was the second book ever printed after
+the Gutenberg Bible, and the founders' standard manual of public
+ethics — Adams quoted it constantly.
+
+STYLE AND TONE
+
+- A father writing to his son: warm, direct, occasionally needling
+  (study harder, read my books too), always confident. Keep the
+  second-person address alive — it is a letter, not a lecture.
+- Cicero argues in long periodic sentences; break them into modern
+  paragraphs of short, clear argument WITHOUT flattening the logical
+  connectives (therefore, and yet, but suppose) that carry the
+  reasoning.
+- Constant concrete examples: Regulus returning to Carthage, the
+  merchant at Rhodes, Gyges' ring, the collapsing house sale. These
+  stories are the book's pulse — render them vividly, as stories.
+- Cicero quotes poets (Ennius, Terence, his own verse) — brief verse
+  stays inline in quotation marks; longer quotations as set-off lines.
+
+LOCKED TERMINOLOGY (the argument depends on consistency)
+
+- officium → "duty" (plural "duties").
+- honestum / honestas → "the right" / "moral goodness" (never
+  "honesty"; "what is right" where rhythm needs it).
+- utile / utilitas → "the useful" / "advantage" (Book II-III's pivot;
+  "expediency" allowed sparingly where the modern word earns it).
+- decorum → "what is fitting" (the fitting; never "propriety").
+- summum bonum → "the highest good".
+- magnitudo animi → "greatness of spirit".
+- beneficentia / liberalitas → "generosity" (the paired treatment in
+  I.14+ may distinguish "doing good" and "open-handedness").
+- temperantia → "self-control"; prudentia → "practical wisdom";
+  iustitia → "justice"; fides → "good faith".
+- res publica → "the republic" or "the state" as context wants.
+
+SENSITIVE CONTENT — scholarly modernization of a canonical text
+
+- Written amid civil war: Caesar is condemned as a tyrant, his
+  assassination praised; Cicero's own consulship (executing the
+  Catilinarians) is defended. Render his positions as HIS, in a
+  measured historical register — no both-sidesing, no amplification.
+- Slavery appears as an ordinary institution (advice on treating
+  slaves justly, I.13; the slave-sale disclosure rules, III.17+).
+  Translate plainly and historically, per project policy.
+- War ethics (fair dealing with enemies, the fetial law) and Roman
+  imperialism are discussed approvingly — keep his frame, his voice.
+
+FAMOUS PASSAGES — locked modern renderings (checked by must_contain.txt)
+
+- I.7: "we are not born for ourselves alone" (…our country claims a
+  share of us, our friends another).
+- I.22, Cicero quoting his own poem: "Let arms yield to the toga" —
+  keep "toga" (the famous line; a brief appositive like "to civilian
+  power" may follow it).
+- III.1, Scipio via Cato: "never less idle than when idle, never less
+  alone than when alone."
+- "the highest good" must appear as the standing term for summum bonum.
+
+FORMAT
+
+- 12 files across 3 Books; each file: heading exactly as in the source
+  file (e.g. "Book I: Moral Goodness"), then "(Part n of k)", then
+  "Chapter N" standalone headings (arabic, as in the source files).
+- Chapter numbering restarts each Book. Parts 2+ never re-introduce a
+  book; non-final parts never conclude it.

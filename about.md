@@ -40,12 +40,12 @@ New retellings appear here as they're finished. Two ways to subscribe:
 
 **RSS** — point any feed reader (Feedly, NetNewsWire, Miniflux, …) at:
 
-    https://alexalemi.com/modern-classics/feed.xml
+    https://www.alexalemi.com/modern-classics/feed.xml
 
 Each new book shows up as an entry with a link to read it here and the epub attached.
 
 **OPDS** — if you read on an e-reader, the whole library is an [OPDS catalog](https://en.wikipedia.org/wiki/Open_Publication_Distribution_System), which most reading apps can browse directly. Add this catalog URL in KOReader (Search → OPDS catalog), Moon+ Reader (Net Library), Thorium, Aldiko, or any other OPDS-aware app:
 
-    https://alexalemi.com/modern-classics/opds.xml
+    https://www.alexalemi.com/modern-classics/opds.xml
 
 You'll get the full shelf with covers, and can download any book straight to your device — no computer required.
