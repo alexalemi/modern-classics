@@ -1,5 +1,21 @@
 # DEVLOG
 
+## 2026-07-20 (later)
+
+The Way to Wealth (Franklin) — second Founders' Library book of the day.
+
+- New book: `way-to-wealth/` from Gutenberg #43855, an 1810 Darton
+  chapbook printing; `prep.py` extracts Franklin's 1758 essay only
+  (publisher ads, illustration captions, and Darton's added
+  Roman-numeral paragraph markers stripped). Single 2,946-word chapter,
+  single translation agent; ratio 1.01, all 22 "as Poor Richard says"
+  refrains and every locked proverb intact.
+- Cover: Duplessis' 1785 Franklin portrait (the Benjamin West kite
+  painting is reserved for the Autobiography later).
+- Lint at parity: two benign manual-review rows — the y-003
+  "paragraph ends in '; but'" is faithful to the source, which breaks
+  mid-sentence into the "age and want" couplet.
+
 ## 2026-07-20
 
 The Enchiridion (Epictetus), and the start of the Founders' Library.
