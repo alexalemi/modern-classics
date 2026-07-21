@@ -199,3 +199,10 @@ the founding generation's shared bookshelf (see the 2026-07-22 DEVLOG
 entry), including Seneca's complete Moral Letters, Plutarch's Roman
 Lives (5 lives), and Cato's Letters (18 selected) — the last three
 sourced from Wikisource via seneca/prep.py's MediaWiki-API pattern.
+
+Also complete: Theophrastus' Characters (theophrastus/ — thirty comic
+sketches, from the Greek) and Galileo's Dialogue Concerning the Two
+Chief World Systems (galileo/ — the project's first from-the-Italian
+volume; see prep.py's Wikisource-HTML pattern and its five source-
+cleanup passes. NOTE: dialogue speaker tags must be Title-Case, not
+ALL-CAPS — assemble.py reserves all-caps lines for section headings).

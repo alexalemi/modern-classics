@@ -5,12 +5,14 @@ audiences, in the public domain, trapped behind archaic English
 translations. Pipelines proven so far: Gutenberg/SE plain text,
 SE-XHTML, Wikisource-API, from-the-Latin, from-the-French.
 
-## In progress
+## Recently shipped
 - **Galileo — Dialogue Concerning the Two Chief World Systems**
-  (Italian, 1632; written in the vernacular *for* lay readers —
-  the perfect-thesis case; inaugurates the from-the-Italian pipeline)
+  (Italian, 1632; the from-the-Italian pipeline's debut) — 55 files,
+  ~194k words, assembled to site/galileo.html and added to the index.
+  Deploy still pending: build epub, regenerate feeds, commit + push.
 - **Theophrastus — Characters** (Greek, c. 319 BC; thirty comic
-  sketches of annoying personality types, ~10k words)
+  sketches of annoying personality types) — live at
+  site/theophrastus.html, in both feeds and epub catalog.
 
 ## Founders' Library, Volume II
 - Montesquieu — The Spirit of the Laws (from the French; the most-cited

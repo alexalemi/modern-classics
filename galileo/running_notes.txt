@@ -23,4 +23,354 @@ From file 000 (Front Matter):
   front matter only; plain names inside dialogue speech.
 - Seam: file 001 opens with SALVIATI mid-scene; no re-introduction.
 
+2026-07-21 re-prep: margin postille stripped at source; 55 files now
+(First Day 001-012, Second 013-032, Third 033-048, Fourth 049-054).
+
 (Batch notes appended below by the orchestrator.)
+
+From batches 6–7 (files 031–042; Day Two DONE, Day Three 1/16–10/16,
+all verified clean):
+- Day Two closed at 032 (Kepler named directly; Simplicio's honest
+  concession that stability is only shown non-necessary). Day Three
+  opened fresh at 033 (annual motion: novae/parallax, then the
+  Copernican planetary-motion and sunspot arguments).
+- THIRD POSTILLE BUG CLASS FOUND + FIXED (orchestrator): besides the
+  position:absolute margin spans and the bare SALV/SAGR tokens, a few
+  margin summaries are wrapped in <span font-variant:small-caps> full
+  sentences (>=4 words) — distinct from the short small-caps speaker
+  tags and inline proper names (Galileo/Ticone/Copernico). Six found
+  and removed from chapters/ (020, 037, 042, and THREE in 052 — Day
+  Four, caught before translation). File 042's agent had translated
+  its one into the dialogue ("Tycho and others argue against the
+  annual motion from the unchanging elevation of the pole.") — removed
+  from modern_chapters/042.txt. prep.py now strips this form too.
+  LESSON for agents: a lone third-person topic-sentence that
+  *summarizes* the very passage that follows is a leaked postille,
+  not dialogue — drop it and flag it.
+- LOCKED Day-Three vocab (reuse bare): "the great orb" (annual orbit)
+  / "radius of the great orb"; "radius" for *semidiametro* (NOT
+  "terminus"); "semidiameters" = Earth-radii distance unit; "the
+  fixed stars"/"the firmament" (distinct from locked "the starry
+  sphere"=*sfera stellata*); "magnitude" for stellar *grandezza*;
+  "stations and retrogradations" for *stazioni e retrogradazioni*
+  (+"forward and retrograde motions"); "arcminutes/arcseconds/thirds"
+  for *minuti primi/secondi/terzi*; "the boundary" (NOT "terminator")
+  for the Sun's *terminatore/finitore*; "greatest elongations" for
+  *massime digressioni*; "the convergence of the visual rays" for
+  *concorso de' raggi visuali*; "spyglass" for *occhiale* (vs
+  "telescope" for *cannocchiale/telescopio*); "sharply bounded" for
+  *terminati* (avoids terminator/terminus); "the difference of
+  apparent position" for *diversità di aspetto* (no "parallax" term
+  reintroduced there); zodiac + astronomer names anglicized (Busch,
+  Peucer, Reinhold, Alfraganus, Albategnius, Thebit, Clavius);
+  "our friend the Academician" kept implicit where the text does;
+  "the anonymous author/pamphleteer" stays anonymous, but real named
+  people (Lorenzini) are kept named.
+- FAMOUS PASSAGES rendered in Day Three: the theodicy on the immensity
+  of the Copernican cosmos (041 — "rashness to make our feeble
+  reasoning the judge of God's works"; a Day-Four-omnipotence echo,
+  kept "divine power", dignified register). Elegance-of-Copernicus
+  marvel (040 — stations/retrogradations + sunspots the two arguments
+  that most bind Sagredo).
+- FORWARD REF still uncashed: the Academician's accelerated-motion
+  treatise (deferred since Day Two).
+- SEAM 042→043: 042 ends on SIMPLICIO pressing the stellar-parallax
+  objection (if a galley moving 60 miles raises a star a degree, the
+  Earth carried a great-orb diameter should show far more) — the
+  pole-mistake conceded, the expected annual stellar shift the live
+  question. 043 opens with SALVIATI answering (vanishing parallax
+  from the firmament's immense distance).
+
+From batch 8 + 035 relaunch (files 043–048 + 035; DAY THREE COMPLETE,
+16/16 verified clean):
+- Day Three closed at 048 mid-analysis of the well-timing problem —
+  the source gives NO tides hand-off; Day Four opens fresh on the
+  tides. (Salviati's mid-Day "reserve the tides for tomorrow" is a
+  pointer, not the Day's close.)
+- LOCKED late-Day-Three vocab: "lodestone" for *calamita* (NEVER
+  "magnet"/"loadstone"); "the magnetic needle"/"the dipping needle"/
+  "dip" for the compass + inclination; "to arm / the armature" for
+  *armare* a lodestone; "the third motion" rendered plainly (Copernicus's
+  axis-orientation motion, shown to be effectively a rest); "the Wain
+  — the Big Dipper" for *il Carro*; "the Lyre" (Vega) for *la Lira*;
+  "spin" (not "whirl") for a lodestone-sphere/basin-ball rotating on
+  its own axis (per the vertigine-by-referent rule); Gilbert
+  (anglicized from *Gilberto/Guglielmo Gilberto*). Parallax term IS
+  now on the page (from 043) — usable where the source coins
+  *parallasse* explicitly; still prefer "difference of apparent
+  position" for the plain-language vanishing cases.
+- ANGLICIZED NAMES added (Day-Three nova roster): Hagecius, Hainzel,
+  Maurolyco, Schuler, Muñoz, Camerarius, Busch, Peucer, Reinhold,
+  Alfraganus, Albategnius, Thebit, Clavius, the Landgrave (of Hesse),
+  Sacrobosco. Sextant/quadrant/armillary instrument for the
+  instruments.
+- SOURCE FIXES this batch (orchestrator): (1) 046 had a Wikisource
+  author-link jam "William GilbertGuglielmo Gilberto" — cleaned to
+  "Guglielmo Gilberto" (translation already correctly said "William
+  Gilbert"). (2) 035's agent correctly dropped a genuine duplicate
+  sentence (source line 83, the "836−756=80" note that line 85
+  restates and references as "qua dreto") — verified no meaning lost.
+- FALSE-POSITIVE POSTILLE CAUTION: the postille-hunting instruction
+  can make an agent over-drop. Only drop a "summary" sentence when a
+  neighboring turn genuinely restates it (as in 035); when in doubt,
+  KEEP and flag. All batch-8 finals reported no postille.
+- FORWARD REFS still uncashed at end of Day Three: (a) the
+  Academician's accelerated-motion treatise; (b) "a straight line =
+  the circumference of the infinite circle"; (c) the "greatest
+  difficulty" (≈47° solar meridian swing vs no stellar shift),
+  explicitly deferred "until tomorrow" — Day Four may cash (c).
+- SEAM into Day Four (049): opens FRESH next day, SAGREDO greeting
+  ("Non so se il ritorno vostro..."). Day Four subject: the tides
+  (*flusso e reflusso del mare*, locked "the ebb and flow of the
+  sea"). No argument dangles across the Day boundary.
+- DAY FOUR ENDING (file 054) — the book's most sensitive passage:
+  Simplicio's closing "divine omnipotence" speech (God could produce
+  the tides by infinitely many means beyond our grasp) that enraged
+  Urban VIII, and Salviati's assent, then the courteous farewell.
+  Must echo the seeded phrases "piety, religion, divine omnipotence,
+  weakness of the human mind." Render EXACTLY as written, straight,
+  no editorial winking. Tides = Galileo's proudest, wrongest
+  argument — translate with full conviction, no hedging.
+
+From file 001 (First Day 1/12) — VOICE-ESTABLISHING FILE; read
+modern_chapters/001.txt's opening if unsure of register:
+- SPENT: "Peripatetics — the Aristotelian school" (bare "Peripatetic"
+  hereafter).
+- STILL UNSPENT: natural/violent motion gloss.
+- HOUSE PATTERN: scholastic Latin tags kept in Latin + two-or-three-
+  word inline gloss ("ad pleniorem scientiam — for fuller
+  understanding").
+- LOCKED: "his books On the Heavens"; Simplicio cites commentary
+  divisions as "the second/third/fourth texts" (keep "texts" for
+  *testo*); "the continuum"; "simple/mixed (compound) motion";
+  "toward/away from/around the center"; celestial litany
+  "ingenerable, incorruptible, inalterable", *impassibile* =
+  "impervious to change"; "the sensible world" vs "the ideal world";
+  diagram letters kept exactly as in the source.
+- TONE: contractions free in speech; "signor X" dropped to plain
+  names in dialogue; Galileo's idioms kept vivid ("lose my compass",
+  "switch the cards in our hand"); Simplicio genuinely learned.
+- SEAM 001→002: 001 ends on SAGREDO's question "which will you call
+  the simple, and which the compound?" (mixed-motion debate); 002
+  opens with Simplicio replying, deferring to Aristotle's authority.
+  Pick up mid-conversation, no re-introduction.
+
+From batch 1 (files 002–006, First Day 2/12–6/12):
+- GLOSSES NOW SPENT (all bare hereafter): natural/violent motion
+  ("violent motion — forced motion —", file 003); "impetus — greater
+  built-up drive" (LOCK impetus for *impeto*; also Galileo's own
+  inline gloss "impetus — that is, the degree of speed" kept);
+  "braccia — arm-lengths" (unit stays Italian); "paralogism";
+  "a priori — from first principles" / "a posteriori — from
+  experience"; "sublunar bodies — everything below the Moon";
+  "selenographers — Moon-mappers"; "parallaxes — those apparent
+  shifts in position"; "the Anti-Tycho, the book written against
+  Tycho" (bare "the Anti-Tycho" hereafter); "Prytaneum — that civic
+  hall"; sursum et deorsum, de facto, per accidens, ad medium /
+  a medio and other scholastic tags per house pattern (Latin kept +
+  two-or-three-word inline gloss at first use).
+- LOCKED TERMS added: "the vertical" vs "the incline" in fall
+  geometry ("perpendicular" only for constructed perpendiculars);
+  "degrees of slowness/speed"; "terminus" for *termine*;
+  "the divine Architect"/"the divine Mind" (caps); "indivisible" for
+  *impartibile*; "bulk" for *mole/quantità*; "substantial
+  transmutation"; "center of the world" vs "center of the universe"
+  (follow the source's own alternation); "integral bodies of the
+  world" for *corpi integrali*; positive litany "generable,
+  corruptible, alterable" mirrors the locked negative litany;
+  "the Master" = Aristotle in Simplicio's mouth; "telescope" for
+  both *cannocchiale* and *telescopio*; "Letters on Sunspots,
+  addressed to Mark Welser"; "foreshortened" for *in iscorcio*
+  (recurs in Days Two–Three), "full-face" for *in maestà*;
+  "our mutual friend, the Academician" (Linceo folded in, never
+  rendered separately); Tycho; famous line locked: "the dregs of the
+  world, the sink of every filth".
+- SOURCE CLEANUP 2026-07-21 (orchestrator): footnote residues,
+  lacunae [...], bracketed editorial marks, and mid-paragraph
+  speaker markers fixed in chapters/ for all untranslated files;
+  chapter files are clean continuous turns. If you still meet an
+  anomaly, flag it in your return notes, don't invent content.
+- SEAM 006→007: 006 ends mid-argument on SAGREDO in full flight
+  against celestial bodies existing only to serve the Earth —
+  closing image: a marble statue beside the bride, expecting
+  children from that union. 007 opens with the next speaker
+  responding; alterability-of-the-heavens debate still live.
+
+From batch 2 (files 007–012 — DAY ONE COMPLETE, verified clean):
+- CATALOGUE TERMS RECONCILED by orchestrator: the Earth–Moon
+  likenesses are "resemblances" / "the Nth point of resemblance"
+  (*conformità/congruenze*); the differences are "disparities"
+  (*disparità*). Never "conformities", "points of agreement", or
+  "incongruities" — files 007/011 were normalized by hand.
+- GLOSSES NOW SPENT (bare hereafter): natura nihil frustra facit;
+  opposition/conjunction/quadrature (Galileo's own inline glosses
+  kept); "the epicycle — that small secondary circle"; antichthones;
+  the Moon's "dragon" (nodes device); tenebrae sunt privatio
+  luminis; "the Dog Star"; "sphere of activity — the reach of a
+  body's power"; "secondary light — that dim glow on the dark part"
+  (LOCK: never "earthshine"); "intensive — in depth" / "extensive —
+  in range"; "Archytas' dove — that ancient mechanical bird".
+- LOCKED TERMS added: "The Assayer" (*Il Saggiatore*); "raised
+  banks" for crater walls (with Galileo's own aside kept); "a
+  certain pale glow" for *luce abbagliata*; "the Moon silent, as
+  they say" (new moon); Moon personified she/her; "whitened but not
+  burnished" silver pair; "full-face"/"foreshortened" pair in use;
+  "the horns" for the crescent's *corna* (recurs Day Three); "the
+  ancient spots"/"the spots" = the lunar plains; "the modern
+  author" for *l'autor moderno* (anonymous, never named); "the
+  boundary dividing the lit part from the dark" for the lunar
+  light/dark line — NOT "terminator" (anachronism) and NOT
+  "terminus" (reserved for fall-geometry *termine*); "the concordant
+  conspiring of all its parts toward the same center" for *concorde
+  conspirazione* (proto-gravitation phrase — keep verbatim if it
+  recurs); "its Maker and Ruler"; "granting, for argument's sake
+  and not conceding it" for *dato e non concesso*.
+- DAY ONE ENDS (file 012): intensive/extensive passage locked
+  phrases Day Four must echo: "equals the divine in objective
+  certainty"; divine knowing "a single, simple intuition" vs our
+  step-by-step reasoning; "runs through in an instant, like light";
+  "the human mind is a work of God, and one of the most excellent";
+  "twenty little characters on a page" (Sagredo's alphabet hymn).
+  Exact close: Sagredo's seal-of-inventions line, evening boat
+  ride, "tomorrow I shall be expecting you both, to carry on with
+  the discussions we have begun."
+- SEAM into Day Two (file 013): opens next morning, SALVIATI
+  ("Le diversioni di ieri..." — yesterday's digressions pulled us
+  off the straight thread). Fresh Day; no dangling argument.
+- HEADS-UP for file 022's agent: THE ship's-cabin passage
+  (must_contain: "Shut yourself up with a friend in the main cabin
+  below decks") lives in file 022.
+
+From batch 3 (files 013–018, Second Day 1/20–6/20, verified clean):
+- LOCKED Day-Two vocabulary (reuse bare hereafter): "the daily
+  rotation" for *moto/movimento diurno* (never "diurnal"); "the
+  starry sphere" for *sfera stellata* (recurs constantly Days 2–3);
+  "the terrestrial globe"; "the primum mobile, the first and
+  outermost sphere" (bare after); "the Medicean Stars — Jupiter's
+  four little moons"; "impressed force" for *virtù impressa* (pairs
+  with locked bare "impetus" for *impeto*; 017 and 018 agreed
+  independently); "the medium" for *il mezo* (air-as-mover debate);
+  "the thrower"/"the projectile"; "on a slant/slanting" for *moto
+  trasversale* (NOT "transverse"); "extrude — to fling off" for
+  *estrudere*; "begs the question / begging of the question" for
+  *petizion di principio*; "middle term" for *mezo termine*;
+  "point-blank" for *di punto in bianco* (+ Galileo's inline
+  "parallel to the horizon"); "ruzzole — those wooden discs"
+  (Italian game kept, bare after); "the Mover" caps for the
+  universe's *Motore*; Earth personified she/her when treated as a
+  body (mirrors Moon lock). Geography anglicized: Strait of
+  Gibraltar, Strait of Magellan, Pillars of Hercules, Moluccas,
+  Cape of Good Hope, Candia (= Crete, period name kept).
+- MASK LINE (016, an Inquisition-cover device — kept straight):
+  Salviati "playing the Copernican — wearing him, almost, as an
+  actor wears a mask... you may find me a different man from the one
+  you see on stage." The relativity formula from 013 ("shared motion
+  is imperceptible, as if it didn't exist"; "sharers in that
+  motion") is the Day's through-line — reuse the wording.
+- GLOSSES SPENT (bare hereafter): frustra fit per plura...; æque
+  bene; ex hypothesi; ad unguem; a culverin — a long cannon; vires
+  acquirant eundo; non entium nullae sunt operationes; ignotum per
+  aeque ignotum; Ipse dixit; "a world on paper" (*mondo di carta* —
+  now a locked famous line, pairs with "the sensible world").
+- SEAM into batch 4 (018→019): 018 ends on SAGREDO's Socratic
+  speech — truths must be known from within — addressed to Simplicio
+  about the ruzzole / dropped-ball speed problems (with the "demon,
+  one of Socrates', not Hell's" exchange just before). 019 opens
+  with the next speaker taking up the Socratic solution of those
+  problems; the daily-rotation objections (tower/ship/cannon) are
+  now answered ground, inertia conceded.
+
+From batch 4 (files 019–024, Second Day 7/20–12/20, verified clean):
+- SHIP'S-CABIN PASSAGE (022): must_contain line rendered verbatim,
+  full inventory intact (flies/butterflies, fish bowl, dripping
+  bottle, jumping, throwing, incense smoke). DONE — the book's most
+  famous page is safe.
+- ORCHESTRATOR FIXES this batch: (1) 020 had three "Signor Sagredo/
+  Salviati" vocatives in speech — normalized to plain names per the
+  house rule. (2) archibuso split across agents ("harquebus" 021 vs
+  "musket" 023) — unified to "harquebus — a shoulder gun" (021's
+  glossed choice); LOCK harquebus for *archibuso* hereafter.
+- *vertigine* renders by referent, NOT one fixed word: "spin" for a
+  disc/top rotating on its own axis (the ruzzola, 019); "the whirl /
+  whirling" for the Earth's rotation in the centrifugal-extrusion
+  argument (022–023). Both correct; keep the distinction.
+- LOCKED/confirmed: "extrude / fling off" for *estrudere* (bare);
+  "the thrower"/"the projectile" for *proiciente/proietto*;
+  "the tangent"/"the secant"/"point of contact"/"third (mean)
+  proportional"/"the angle of contact" geometry set; "the point
+  overhead" for *vertice* (NOT "zenith"); "degrees of speed" for
+  *gradi di velocità*; "terminus" for fall-geometry *termine* (incl.
+  "the terminus of rest"); "No, sir."/"Yes, sir." for *Signor no/sì*
+  (courtly register kept lightly); Archimedes "On the Sphere and the
+  Cylinder"; "the Peripatetics and the Tychonians" for the two
+  schools; geography kept period ("Alexandretta", "Aleppo").
+- GLOSSES SPENT (bare after): a fortiori; ignotum per ignotius —
+  the unknown by the more unknown (distinct from batch-3's ignotum
+  per aeque ignotum); sphaera tangit planum in puncto; ex professo;
+  nostrum scire sit quoddam reminisci — knowing is a kind of
+  recollection (Plato device); demonstratio potissima; ad
+  destruendum sufficit unum; componendo.
+- FORWARD REFERENCE to honor: the Academician's treatise on motion
+  (the proportion-of-acceleration / naturally-accelerated-motion
+  result) is explicitly deferred to "another special session" —
+  a promise Galileo makes but does not cash in here. If a later
+  file cashes or re-defers it, keep the wording consistent.
+- 021 source-fix (science-stays-right): a corrupt *gioia* for
+  *bocca* (muzzle) and a *più/manco* arithmetic contradiction were
+  silently corrected, and a garbled double-comparison streamlined —
+  content preserved, ratio 1.12, 28/28 turns.
+- SEAM 024→025: 024 ends on SALVIATI pressing the abstract-vs-
+  concrete point — imperfect matter means no real sphere/plane is
+  the perfect one we picture. 025 opens with Simplicio's reply;
+  thread still live, then pivots back toward the daily rotation.
+
+From batch 5 (files 025–030, Second Day 13/20–18/20, verified clean):
+- LATIN-HEAVY STRETCH: 028/029 dissect the anonymous "modern
+  author's" book, quoting it in Latin throughout. House pattern held
+  (Latin verbatim + em-dash + English rendering). This legitimately
+  lifts ratios (028=1.26, 029=1.19) — within verify's 1.35 bound;
+  do NOT treat as summarization. Author kept anonymous everywhere
+  ("this author / this philosopher / the pamphlet's author").
+- SECOND SOURCE-BUG CLASS FIXED (orchestrator, 2026-07-21): bare
+  uppercase speaker tokens with NO markup (SALV/SAGR/SIMP) — a few
+  the prep regex missed — found in 025, 044, 045, 047 and converted
+  to proper turns; prep.py patched to catch them. 025's translation
+  correctly pre-split its one (35 turns).
+- LOCKED TERMS added (reuse bare): "the sliding weight" for the
+  steelyard's *romano*; "the steelyard" (*stadera*) / "the balance"
+  (*bilancia*) / "equal-armed / unequal-armed balance" (here
+  *braccia* = balance ARMS, not the length unit); "swings" for
+  pendulum *vibrazioni/reciprocazioni* (NOT "vibrations"); "the
+  hollow / the concave of the Moon('s sphere)" for *concavo della
+  Luna* (one rendering — pick either "hollow" or "concave" per
+  sentence, both established); "the lunar orb" for *orbe lunare*;
+  "the great orb — the annual orbit / the Earth's yearly path" for
+  *orbe magno* (gloss spent); "canna — a rod's length" and "canne"
+  (Galileo's fall-law unit); "German miles"; "the golden rule — the
+  rule of three" for *regola aurea*; "the doubled ratio / as the
+  squares of the times" for *proporzione duplicata*; "the
+  equinoctial" for *equinoziale*; "axioms — self-evident truths"
+  for *dignità* (gloss spent); "the ebb and flow of the sea" for
+  *flusso e reflusso* (Day Four's subject, named here in advance);
+  "swings" pendulum vocabulary. Zodiac anglicized (Aries, Libra,
+  Taurus, Scorpio, Gemini, Sagittarius); *levante/ponente* =
+  east/west; *greco/sirocco* = northeast/southeast.
+- GLOSSES SPENT (bare after): sphaera aenea non tangit in puncto
+  (distinct from the locked sphaera tangit planum in puncto); lana
+  caprina — "goat's wool" (triviality idiom); ad verbum; ab unitate;
+  quandoque bonus... — "even the best nods"; tantum abest.
+- FORWARD REFERENCE still uncashed: the Academician's treatise on
+  naturally-accelerated motion / projectiles, deferred repeatedly to
+  "a session of its own" / "half a day separately." Keep the deferral
+  wording consistent; it is never cashed inside the Dialogue.
+- SOURCE READING kept faithfully (not corrected): the 1604 nova is
+  "in Sagittarius" (source: *nel Sagittario*), though historically
+  Kepler's nova was in Ophiuchus/Serpentarius. Per the no-invention
+  rule we follow the base text. If a later file also names it, match
+  "Sagittarius".
+- SEAM 030→031: 030 ends on SALVIATI driving home that the Earth's
+  daily and annual motions are concordant (both west-to-east / the
+  order of the signs), not contrary — correcting the author's core
+  blunder. 031 opens with SIMPLICIO conceding ("I've understood
+  perfectly, nor could I offer anything to excuse so great an
+  error"). Day Two nearly done (031–032 remain).
