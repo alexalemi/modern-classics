@@ -206,3 +206,15 @@ Chief World Systems (galileo/ — the project's first from-the-Italian
 volume; see prep.py's Wikisource-HTML pattern and its five source-
 cleanup passes. NOTE: dialogue speaker tags must be Title-Case, not
 ALL-CAPS — assemble.py reserves all-caps lines for section headings).
+
+The project's first NOVEL and first from-the-French volume: Verne's
+Twenty Thousand Leagues Under the Sea (twenty-thousand-leagues/ —
+complete, unabridged, from the Gutenberg French #5097; 49 chapter
+files, 2 split chapters, "Part Two" divider; see prep.py for the
+two-line-heading + dual-TOC + chapter-restart pattern). Kicks off the
+"Verne recovery project" (recovering the books the Victorian
+translations cut ~20% and botched). Note: FR->EN narrative prose runs
+near 1:1, so verify with --min-ratio 0.9 --max-ratio 1.5 and tell
+agents NOT to pad; keep Verne's science/dates as written (no silent
+corrections); Conseil addresses Aronnax as "Master", everyone else
+"Professor".

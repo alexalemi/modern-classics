@@ -42,7 +42,9 @@ SE-XHTML, Wikisource-API, from-the-Latin, from-the-French.
 ## The Verne recovery project
 The Victorian translations cut 20–30% and botched the science; faithful
 from-the-French retellings would recover lost books:
-- Twenty Thousand Leagues Under the Seas
+- Twenty Thousand Leagues Under the Sea — DONE (site/twenty-thousand-
+  leagues.html; complete/unabridged, from the French; the from-the-
+  French novel pipeline is now proven — see twenty-thousand-leagues/prep.py)
 - Around the World in Eighty Days
 - Journey to the Center of the Earth
 
