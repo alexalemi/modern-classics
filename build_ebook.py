@@ -72,6 +72,8 @@ def esc(s):
 def slugify(text):
     text = unicodedata.normalize("NFD", text)
     text = "".join(c for c in text if not unicodedata.combining(c))
+    # match se create-draft: apostrophes vanish rather than become dashes
+    text = re.sub(r"[''’]", "", text)
     return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
 
 
