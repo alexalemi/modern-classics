@@ -1,5 +1,35 @@
 # DEVLOG
 
+## 2026-07-21 (night)
+
+Nicomachean Ethics — the glossary-driven book.
+
+- New book: `ethics/` from SE's Peters translation (single-page XHTML,
+  the autobiography prep pattern; 784 endnote refs stripped). 116
+  chapters/10 books in 25 files; Peters' thematic part titles kept as
+  subheadings. Ratio 0.95 (91.6k → 86.6k), all locks intact.
+- The distinctive move for this book: a LOCKED GLOSSARY in
+  text_analysis.txt treated as law (happiness, habit, the mean,
+  practical wisdom, self-restraint vs. weakness of will — banning
+  Peters' "continence/incontinence" — the noble, activity, function,
+  generosity, friendship…), extended between batches as agents
+  flagged new territory (choice/prohairesis, the Book V justice
+  framework, the VI satellite faculties, VII's endurance/brutishness,
+  VIII–IX friendship terms). Seam fixes at merge were tiny and caught
+  by the ledger discipline: foolhardy/reckless, a duplicate hexis
+  gloss, hardiness→endurance, one mikropsychia collision.
+- Mid-book incident: the monthly spend limit killed a whole batch of
+  6 agents — but 4 of the 6 had already written complete, verified
+  files before dying (the failure notices only meant the *return
+  message* was lost). Lesson: after agent failures, check the output
+  files before re-running anything; only 2 files actually needed
+  relaunching.
+- Cover: Raphael's School of Athens. Lint: 10 manual-review rows,
+  zero errors.
+- Founders' Library: 10 of 13. Roman Lives (5-life fall-of-the-
+  Republic volume: Caesar, Cato, Cicero, Brutus, Antony — 28 files)
+  is prepped and starting; then Seneca, then selected Cato's Letters.
+
 ## 2026-07-21 (later)
 
 Tusculan Disputations — second from-the-Latin volume. Standing goal
