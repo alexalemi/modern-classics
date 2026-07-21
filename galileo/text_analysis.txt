@@ -1,0 +1,94 @@
+TEXT ANALYSIS — Dialogue Concerning the Two Chief World Systems
+(Galileo Galilei, 1632)
+Source: the ITALIAN original from it.wikisource (the Edizione
+Nazionale text). TRANSLATED FROM THE ITALIAN — the project's first
+Italian volume; the from-the-Latin pipeline pattern applies (translate
+from the original; there is no bundled crib — the public-domain
+English, Salusbury 1661, is itself the archaic barrier; agents work
+from the Italian directly).
+
+WHY THIS BOOK IS THE PROJECT'S THESIS
+
+Galileo wrote in Italian instead of Latin PRECISELY so that ordinary
+educated Italians — not just professors — could read it. It was a
+bestseller, then a banned book (the Inquisition trial of 1633 followed
+directly), and in English it has been locked behind either the 1661
+Salusbury or in-copyright modern translations. Retelling it in plain
+modern English restores exactly the audience Galileo wrote for.
+
+WHAT THIS IS
+
+Four days of conversation in a Venetian palazzo among three men:
+- SALVIATI — Galileo's stand-in: sharp, patient, devastating.
+- SAGREDO — the intelligent amateur host: curious, witty, the
+  reader's surrogate; swings the argument's emotional weight.
+- SIMPLICIO — the Aristotelian professor: earnest, bookish, forever
+  quoting authorities. NOT a buffoon — render him as the smartest
+  possible defender of a doomed system (the book's comedy works
+  better, and it's truer to the text).
+Day One: against the Aristotelian earth/heavens divide. Day Two: the
+Earth's daily rotation (the ship's-cabin relativity argument — the
+most famous passage). Day Three: the annual orbit. Day Four: the
+tides (Galileo's proudest and, ironically, wrongest argument —
+translate it with full conviction; no editorial winking).
+
+STYLE AND TONE
+
+- CONVERSATION, real and Italian: interruptions, jokes, courtesies,
+  digressions, flashes of temper. The modern voice is three smart
+  people arguing brilliantly over long dinners — natural contemporary
+  speech, contractions welcome, wit intact.
+- Speaker-tag format (established by prep): the speaker's name alone
+  on its own line (SALVIATI / SAGREDO / SIMPLICIO), then the speech
+  paragraphs — the Plato-dialogues convention; assemble.py renders
+  bold speaker tags. NEVER merge turns or drop tags.
+- The science must stay RIGHT: thought experiments (the tower drop,
+  the ship's cabin, the cannon shots) rendered concretely and
+  correctly. Where Galileo uses geometry, keep it followable in
+  prose; spell out ratios plainly.
+- Long periodic Italian sentences break into modern rhythm, but keep
+  the courtly flourishes ("as your excellency well knows...") lightly
+  — they are period charm, thinned not purged.
+
+LOCKED TERMINOLOGY
+
+- The three names always SALVIATI, SAGREDO, SIMPLICIO (tags) and
+  Salviati, Sagredo, Simplicio (in running speech).
+- "the Ptolemaic system" / "the Copernican system"; "the daily
+  rotation"; "the annual motion"; "natural motion"/"violent motion"
+  (the Aristotelian pair — keep, glossed once); epicycles, deferents
+  kept with one-time glosses.
+- "Peripatetics" for the Aristotelians (glossed once: "the
+  Aristotelian school").
+- The Academician = Galileo himself when the characters cite him
+  ("our mutual friend, the Academician") — keep the device.
+
+SENSITIVE / EDITORIAL
+
+- The preface "To the Discerning Reader" is Galileo's ironic
+  Inquisition-mandated cover story (claiming to treat Copernicanism
+  as mere hypothesis). Translate it straight — the irony is in the
+  text, not the translator.
+- Simplicio's closing recitation of the "divine omnipotence" argument
+  (Day Four's end) is the passage that enraged Urban VIII; render it
+  exactly as written, no commentary.
+
+FAMOUS PASSAGES — locked modern renderings (checked by must_contain)
+
+- Day Two, the ship's cabin: "Shut yourself up with a friend in the
+  main cabin below decks on some large ship" — keep the experiment's
+  full inventory (flies, fish in a bowl, dripping bottle, jumping)
+  vivid and complete.
+- Day One, on the book of the universe vs. authorities: the argument
+  that nature "does not care a fig" for our reasoning — keep
+  Sagredo's/Salviati's jabs at arguing from texts instead of the
+  world.
+
+FORMAT
+
+56 files: 000 = Front Matter (split headings "To the Grand Duke",
+"To the Discerning Reader"); Days One–Four as sections stitched from
+parts. Ratio target: Italian → modern English ≈ 0.95–1.25 (verify
+with --min-ratio 0.85 --max-ratio 1.35). Parts 2+ never re-introduce
+a Day; non-final parts never conclude it. Turns may continue across a
+part boundary — a part may open mid-conversation with a speaker tag.
