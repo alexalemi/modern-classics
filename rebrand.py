@@ -223,8 +223,10 @@ def _colophon(dest, env, meta):
     if art:
         t = t.replace("<i epub:type=\"se:name.visual-art.painting\">PAINTING</i>",
                       f"<i epub:type=\"se:name.visual-art.painting\">{esc(art['painting'])}</i>")
+        year = (f"<time>{art['year']}</time>" if str(art["year"]).isdigit()
+                else esc(str(art["year"])))
         t = t.replace("a painting completed in <time>YEAR</time> by",
-                      f"a {art.get('medium', 'painting')} completed in <time>{art['year']}</time> by")
+                      f"a {art.get('medium', 'painting')} completed in {year} by")
         artist = (f'<a href="{art["artist_wiki"]}">{esc(art["artist"])}</a>'
                   if art.get("artist_wiki") else f'<b epub:type="z3998:personal-name">{esc(art["artist"])}</b>')
         t = t.replace('<a href="COVER_ARTIST_WIKI_URL">COVER_ARTIST_NAME</a>', artist)

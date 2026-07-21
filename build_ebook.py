@@ -357,9 +357,13 @@ def prepare_cover(dest, meta):
             cw, ch = w, int(w * 3 / 2)
             x, y = 0, int((h - ch) * fy)
         geom = ["-crop", f"{cw}x{ch}+{x}+{y}", "+repage"]
-    subprocess.run(["convert", str(src)] + geom +
-                   ["-resize", "1400x2100!", "-quality", "90",
-                    str(dest / "images/cover.jpg")], check=True)
+    out = dest / "images/cover.jpg"
+    for quality in ("90", "80", "70", "60"):
+        subprocess.run(["convert", str(src)] + geom +
+                       ["-resize", "1400x2100!", "-quality", quality,
+                        str(out)], check=True)
+        if out.stat().st_size <= 1_500_000:  # se lint f-016 cap
+            break
 
 
 def run(cmd, cwd, check=True):

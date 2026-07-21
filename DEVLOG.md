@@ -1,6 +1,33 @@
 # DEVLOG
 
-## 2026-07-22
+## 2026-07-21 (Theophrastus; Galileo prepped)
+
+Theophrastus' Characters — the 35th book, and the first past the
+Founders' Library. Also the first book finished without subagents:
+the session hit the 200-subagent limit mid-Galileo, so sketches
+11–30 were translated inline by the orchestrator itself.
+
+- `theophrastus/` — 30 comic character sketches + the Epistle
+  Dedicatory (Bennett & Hammond 1902, Gutenberg #58242). Three files
+  of ten sketches, ratio 0.97. The voice agent locked all 30 modern
+  titles up front (The Phony, The Chatterbox, The Cheapskate, The
+  Trash-Talker, The Sleaze...) plus the formula "[Vice] is, in
+  essence, [definition]. The [title] is the sort of man who..." —
+  the catalogue engine is the comedy, so the formula is the lock.
+- Prep bug: the Gutenberg end-marker matched the license header deep
+  in the file, leaking license text into 002.txt — end marker
+  tightened to "*** END OF THE PROJECT GUTENBERG".
+- Two ebook toolchain fixes: non-numeric cover years ("the 2nd
+  century AD") no longer go inside `<time>` (vnu rejects them), and
+  `prepare_cover` now steps JPEG quality down until the cover fits
+  se lint's 1.5MB cap (the masks mosaic blew past it at q90).
+- Cover: the Hadrian's Villa theatrical-masks mosaic.
+- Galileo's Dialogue is fully prepped (it.wikisource source, speaker
+  tags, docs, front matter translated — 55 dialogue files remain)
+  but blocked on the session subagent limit; see ROADMAP.md for it
+  and the full future queue.
+
+## 2026-07-21 (Founders' Library complete)
 
 Seneca's Moral Letters + Cato's Letters — THE FOUNDERS' LIBRARY IS
 COMPLETE. All 13 works from Alex's Pursuit-of-Happiness list are now
