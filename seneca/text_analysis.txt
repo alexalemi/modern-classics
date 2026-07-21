@@ -1,0 +1,90 @@
+TEXT ANALYSIS — Moral Letters to Lucilius (Seneca, c. 63–65 AD)
+Source: Richard Mott Gummere's translation (Loeb, 1917–25), the full
+124 letters from English Wikisource (the only complete public-domain
+source; prep.py strips the wiki apparatus, footnotes, and Gummere's
+section numbers). 55 files of consecutive letters.
+
+WHAT THIS IS
+
+The last work of Nero's ex-minister, written in retirement while
+waiting for the emperor's death order (which came): letters to his
+friend Lucilius, procurator of Sicily, that together form a course in
+practical Stoicism. Topics run from saving time, crowds, friendship,
+and noise above a bathhouse to slavery, suicide, illness, old age, and
+death. This is the book Alex's list calls "Letters from a Stoic" —
+here complete, all 124 letters, not the usual selection.
+
+STYLE AND TONE
+
+- LETTERS, not essays: each opens from something concrete (your
+  letter arrived; I visited my villa; the ships came in; I was sick)
+  and pivots to the day's lesson. Keep every concrete opening — they
+  are what make the book alive.
+- Seneca's voice: an older friend writing daily — urgent, epigrammatic,
+  self-deprecating about his own failures ("I am not a wise man and
+  never shall be"), dry about wealth he conspicuously has. The modern
+  voice is a brilliant mentor's email you'd actually read: warm,
+  pointed, quotable.
+- THE EPIGRAMS ARE THE PAYLOAD. Seneca coins one-liners constantly;
+  render them AS one-liners, sharpened not padded. The early letters
+  each end with a "daily wage" quotation (usually Epicurus) — keep
+  that closing ritual and its framing jokes about borrowing from a
+  rival school.
+- Greetings/closings: each letter opens "Greetings from Seneca to his
+  friend Lucilius." — standardize exactly that line; letters end
+  "Farewell." — keep it as its own closing word.
+- Gummere is accurate but stiff ("Vouchsafe", "aught") — de-archaize
+  fully. His Latin tags in footnotes are gone; where Seneca quotes
+  Virgil/poets, verse renders as two-space-indented modernized lines.
+
+LOCKED TERMINOLOGY (Stoic core, consistent with the project)
+
+- "the wise man" (sapiens); "Fortune" capitalized as the adversary;
+  "the soul"; "virtue"; "philosophy" (never "wisdom-pursuit"
+  circumlocutions); "self-control" (temperantia); "the happy life".
+- Letter numbering and subtitles: each letter carries its "Letter N:
+  Subtitle" heading from the source file EXACTLY.
+
+FAMOUS PASSAGES — locked modern renderings (checked by must_contain.txt)
+
+- Letter 1: "while we are postponing, life speeds by." And the close
+  of its opening charge: hold every hour; "Nothing, Lucilius, is ours,
+  except time."
+- Letter 7: the crowd letter — "I never bring back home the same
+  character that I took abroad." And: "associate with those who will
+  make a better man of you."
+- Letter 12: "Whatever years lie behind us are in death's hands."
+- Letter 47 (the slavery letter — the most famous): "'They are
+  slaves,' people say. No — they are men." (render Gummere's sequence
+  "Slaves! No, comrades... No, they are men" in this compressed
+  modern shape; the rest of the sequence follows the source).
+- Letter 49: "It is not that we have a short space of time, but that
+  we waste much of it." (if the line falls in the Letters' text; it
+  is De Brevitate's — do NOT import it if absent. Verify against the
+  source; if absent, skip.)
+- The "daily wage" ritual: "Ah, but this is borrowed from Epicurus"
+  framing — keep the joke alive wherever it recurs.
+
+NOTE: must_contain.txt locks only lines verified present in THIS
+source; the orchestrator has checked them.
+
+SENSITIVE CONTENT — scholarly modernization of a canonical text
+
+- Letter 47 on slavery is the point of the book for many readers:
+  render with full force, plainly — Seneca's argument is radical for
+  its time and the modern text must not blunt OR overclaim it.
+- Suicide as Stoic doctrine recurs (letters 70, 77, etc.) — the open
+  door; render as the ancient philosophical argument it is, measured
+  register, no modern editorializing in either direction.
+- The gladiatorial-games letter (7) and Roman brutality: plain
+  historical register.
+- Illness, old age, and death are the book's constant subjects —
+  Seneca's unflinching directness is the feature; keep it.
+
+FORMAT
+
+55 files; heading "Letters N–M" exactly as in the source file; then
+each letter: blank line, its "Letter N: Subtitle" line EXACTLY as in
+the source, blank line, "Greetings from Seneca to his friend
+Lucilius.", the modern text, and "Farewell." on its own line. Word
+ratio target 0.85–1.15. No part markers (each file stands alone).

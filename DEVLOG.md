@@ -1,5 +1,36 @@
 # DEVLOG
 
+## 2026-07-21 (later still)
+
+Plutarch's Roman Lives — the five-lives volume.
+
+- New book: `roman-lives/` from Gutenberg #674 (Dryden-Clough). Five
+  lives — Caesar, Cato the Younger, Cicero, Brutus, Antony — chosen as
+  the fall-of-the-Republic arc the founders studied; 28 files, ratio
+  0.96 (113k → 109k).
+- The volume's central craft problem: the five lives retell the SAME
+  events (Catiline, the Rubicon, the Ides, Philippi, Actium, Cicero's
+  death). The ledger accumulated fixed renderings per event at first
+  occurrence, and later agents echoed them — while PRESERVING
+  Plutarch's own cross-life contradictions as source-faithful
+  divergences (who detained Antony at the door: Decimus in Caesar,
+  Trebonius in Brutus, unnamed in Antony; the prison-march silence;
+  "hands" vs "right hand" on the Rostra; 200 vs 300 proscribed).
+  Both fidelity rules held simultaneously.
+- Names policy: this volume deliberately uses "Pompey"/"Octavian"
+  (narrative familiarity) unlike the Cicero volumes' Latin-form rule;
+  Sulla/Gaius normalized from Dryden's Sylla/Caius; Dryden's corrupt
+  Gallic names repaired (Vergentorix→Vercingetorix).
+- One must_contain lock removed at verify: Cato's "destroy the state
+  sober" quip is Suetonius, NOT Plutarch — a prep-stage error; lesson:
+  verify famous quotes against the actual source text before locking
+  (the locks that were source-verified all passed).
+- Cover: Gérôme's The Death of Caesar (1867). Lint: zero errors.
+- Meanwhile: Seneca (55 files, Wikisource Gummere — SE unpublished,
+  Gutenberg lacks it entirely) and Cato's Letters (18 selected
+  letters, Wikisource) are prepped and translating; both fully
+  documented in their text_analysis files.
+
 ## 2026-07-21 (night)
 
 Nicomachean Ethics — the glossary-driven book.
