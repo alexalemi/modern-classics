@@ -184,10 +184,12 @@ Contract, Lucian's True History, More's Utopia, and Montaigne's Selected
 Essays (23 essays + preface; the Apology for Raymond Sebond, Upon Some
 Verses of Virgil, Of Vanity, Of Physiognomy, and Of Presumption remain
 untranslated — candidates for a second volume), the Enchiridion,
-The Way to Wealth, Xenophon's Memorabilia, and Cicero's On Duties
+The Way to Wealth, Xenophon's Memorabilia, Cicero's On Duties
 (translated from the Latin; see de-officiis/ for the Latin-source
 pipeline pattern — chapters/ holds the original, reference/ a
-public-domain English crib, and verify runs with ratio bounds 1.0–1.8).
+public-domain English crib, and verify runs with ratio bounds 1.0–1.8),
+and Franklin's Autobiography (see autobiography/prep.py for the
+Standard-Ebooks-XHTML source pattern).
 
 Current push (July 2026): the "Founders' Library" — the founding
 generation's shared bookshelf. Roadmap, sourcing decisions, and status

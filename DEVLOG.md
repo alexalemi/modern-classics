@@ -1,5 +1,37 @@
 # DEVLOG
 
+## 2026-07-21
+
+Franklin's Autobiography — first Standard-Ebooks-HTML-sourced book.
+
+- New book: `autobiography/` from SE's single-page XHTML (Pine's 1916
+  chapter arrangement, 19 chapters, one file each). `prep.py` grew an
+  HTMLParser-based converter: SE endnote refs stripped (editorial, not
+  Franklin), lists/tables (the 13 virtues, the tracking chart, the
+  daily schedule, Braddock's supply list) become two-space-indented
+  blocks that assemble.py renders as <pre>. A pattern for future
+  SE-sourced books (Nicomachean Ethics, Seneca next).
+- Translation: 19 agents in three batches + voice file; overall ratio
+  a remarkable 1.00 (61,623 → 61,625 words). All nine locked passages
+  intact ("Dear Son", puffy rolls, the cod moral, "bold and arduous
+  project", "Eat not to dullness", "Imitate Jesus and Socrates",
+  "a speckled ax was best", errata). "errata" glossed once at its true
+  first use (ch. 2) and used plain thereafter — coordinated across
+  parallel agents via the ledger.
+- Editorial calls worth recording: ch. 8's Memo referenced the Abel
+  James/Vaughan letters, which the SE/Pine edition itself omits (they
+  live in an endnote) — the Memo line was smoothed to "the advice of
+  friends who had written urging me to continue". The book ends on the
+  source's "[Unfinished]", nothing added. "empty sack" (ch. 10) vs.
+  our Way to Wealth's "empty bag" is NOT a seam: Franklin's own two
+  texts differ.
+- Cover: Benjamin West's "Benjamin Franklin Drawing Electricity from
+  the Sky" (as planned when Way to Wealth took the Duplessis
+  portrait). Lint: 10 manual-review abbreviation rows in quoted
+  period documents, zero errors. (se lint's --plain mode crashes on
+  messages containing literal [/xhtml] — use table mode when that
+  happens.)
+
 ## 2026-07-20 (night)
 
 On Duties (Cicero) — the first from-the-Latin volume — plus feed fixes.
