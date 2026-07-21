@@ -1,5 +1,41 @@
 # DEVLOG
 
+## 2026-07-20 (night)
+
+On Duties (Cicero) — the first from-the-Latin volume — plus feed fixes.
+
+- New book: `de-officiis/` from Gutenberg #47001, the 1913 Loeb
+  PARALLEL edition: Cicero's Latin + Walter Miller's English
+  alternating chapter by chapter. Translated FROM THE LATIN (the
+  democracy2 move); Miller kept per-file under `reference/` as a
+  comprehension crib with an explicit don't-echo-Miller rule. 103
+  chapters (45/25/33) in 12 files; verify runs with
+  `--min-ratio 1.0 --max-ratio 1.8` since English expands Latin
+  (final ratio 1.47: 34.6k Latin → 50.9k English).
+- prep.py battles worth remembering for Tusculan Disputations later:
+  Roman praenomen abbreviations ("L. Manlio…") masquerade as chapter
+  numerals (fixed by accepting only next-expected numerals in the
+  Latin-leads-English alternation); Latin sometimes runs two chapters
+  ahead of its English; and in ONE spot the Loeb alternates by page —
+  Book II ch. XIII resumes via a "*44* (XIII.)" marker the parser
+  misses. That stranded Latin was recovered by the translation agent
+  and then moved back into chapters/006.txt by hand (see prep.py's
+  header note before rerunning it).
+- The agents' Latin-first discipline caught real Miller issues:
+  Loeb editorial glosses presented as text, added addressees in the
+  Pyrrhus verse, Caesar/Pompey named where Cicero pointedly leaves
+  them unnamed ("this tyrant of ours" — policy: follow the Latin).
+- Epub: Maccari's "Cicero Denounces Catiline" fresco (focus_x 0.18 to
+  crop onto Cicero); the Commons file is a PNG, which `se` rejects
+  when cached as cover.jpg — converted the cache to real JPEG.
+  Note: my long_description fix no-opped once because I searched for
+  a typogrify-curled apostrophe in the raw JSON; edit ebook_meta with
+  straight quotes.
+- Feeds: base URL corrected to https://www.alexalemi.com (bare
+  alexalemi.com is Squarespace and 301s via plain http, which
+  e-reader OPDS clients refuse — this was the Xteink X3 "Failed to
+  fetch"). Feeds also need the site DEPLOYED to exist at all.
+
 ## 2026-07-20 (evening)
 
 The Memorabilia (Xenophon), plus site feeds and an About-page scaffold.

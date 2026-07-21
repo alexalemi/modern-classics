@@ -22,6 +22,14 @@ boundaries (expect modern English ≈ 1.3–1.5x the Latin word count — run
 verify.py with --min-ratio 1.0 --max-ratio 1.8).
 """
 
+# NOTE: chapters/, reference/, and manifest.json were generated once and
+# then hand-patched: the Loeb alternates by PAGE in one spot, resuming
+# Book II ch. XIII with a "*44* (XIII.)" continuation marker this parser
+# does not treat as a boundary. The stranded Latin was moved from
+# reference/006.txt into chapters/006.txt by hand. If you rerun this
+# script, re-apply that fix and re-check that the file grouping still
+# matches modern_chapters/ before overwriting anything.
+
 import json
 import re
 from pathlib import Path
