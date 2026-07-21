@@ -1,5 +1,35 @@
 # DEVLOG
 
+## 2026-07-21 (later)
+
+Tusculan Disputations — second from-the-Latin volume. Standing goal
+set by Alex: work through the whole Founders' Library.
+
+- New book: `tusculan/` — Latin from The Latin Library (first
+  non-Gutenberg/SE source), Yonge's English (PG #14988, minus the
+  bundled De Natura Deorum) as per-book cribs since the two sources
+  divide the text differently (§§ vs. chapters). prep.py fought:
+  nav-link rows of numerals, two garbled section numbers in Book I
+  (renumbered by position), mid-line § numerals glued to punctuation,
+  two anchor variants, dangling chapter numerals (stripped at 2+
+  letters only — single letters are praenomens).
+- Translation: 16 files, ratio 1.50 (48.5k Latin → 72.8k English),
+  all six locks intact (preparation for death; cultivation of the
+  mind; philosophy, guide of life; Damocles + single horsehair;
+  Archimedes). The Latin has no M./A. speaker tags (they're Yonge's),
+  so the dialogue is rendered as embedded quoted speech.
+- Orchestrator seam-fixes at merge: harmonized the grief-species list
+  (III.83 vs. IV.16–21), the gestiens family ("exultant"), Pompey→
+  Pompeius (cross-volume consistency with On Duties), and two
+  quote-punctuation slips lint caught (a lowercase re-opened quote,
+  a missing re-opening quote in a Plato quotation spanning sections).
+- Agents caught genuine Yonge errors (Aristus/Aristo confusion,
+  lyre-not-flute, inverted fear definition) and repaired Latin
+  Library typos against the standard text, flagging real cruxes
+  (Theombrotus, Anticlea, Nicocreon).
+- Cover: Westall's The Sword of Damocles (1812). Lint: manual-review
+  rows only.
+
 ## 2026-07-21
 
 Franklin's Autobiography — first Standard-Ebooks-HTML-sourced book.
