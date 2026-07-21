@@ -194,6 +194,8 @@ Standard-Ebooks-XHTML source pattern), the Tusculan Disputations
 Nicomachean Ethics (ethics/ — locked-glossary pattern for
 terminology-heavy works).
 
-Current push (July 2026): the "Founders' Library" — the founding
-generation's shared bookshelf. Roadmap, sourcing decisions, and status
-live in the 2026-07-20 DEVLOG entry.
+The "Founders' Library" push (July 2026) is COMPLETE: all 13 works of
+the founding generation's shared bookshelf (see the 2026-07-22 DEVLOG
+entry), including Seneca's complete Moral Letters, Plutarch's Roman
+Lives (5 lives), and Cato's Letters (18 selected) — the last three
+sourced from Wikisource via seneca/prep.py's MediaWiki-API pattern.

@@ -1,5 +1,42 @@
 # DEVLOG
 
+## 2026-07-22
+
+Seneca's Moral Letters + Cato's Letters — THE FOUNDERS' LIBRARY IS
+COMPLETE. All 13 works from Alex's Pursuit-of-Happiness list are now
+translated, built, and deployed.
+
+- Seneca: `seneca/` — all 124 letters (~209k words, the project's
+  largest book) from Wikisource's Gummere (SE unpublished, Gutenberg
+  lacks the work entirely; downloaded via the MediaWiki parse API
+  with polite backoff). 55 files, ratio 0.93, zero lint errors.
+  Ledger discipline at scale: the daily-wage Epicurus ritual tracked
+  until Seneca himself ends it at Letter 33 (later agents barred from
+  resuming it); the Cleanthes hymn rendered to match our Enchiridion
+  volume exactly; Cato's death kept consistent across five letters
+  AND with the Roman Lives volume; a Letter 71→75 self-quotation
+  harmonized at merge. Known source gaps documented in text_analysis
+  (Wikisource lacks Letter 64 §§1–4; a one-line bridge in Letter 84's
+  bee passage was restored from Gummere's known text — the only
+  restoration, flagged). Two source typos fixed in chapters+modern
+  together ("Tlme", "in of the"). One orchestrator-caused defect
+  caught before deploy: the Farewell-normalization regex left single
+  newlines that merged 39 letter headings into the previous
+  paragraph — fixed volume-wide, epub rebuilt.
+- Second spend-limit incident: 4 agents "failed" but all had written
+  complete verified files (the Ethics lesson held — check outputs
+  before re-running; zero re-runs needed).
+- Cato's Letters (committed previous push): the closing-formula
+  variance across agents normalized to "I am, etc." + initial.
+- Cover: Domínguez Sánchez's The Suicide of Seneca (1871).
+
+THE FOUNDERS' LIBRARY (13/13): Plato (Apology/Crito/Republic in
+Dialogues), Aristotle's Nicomachean Ethics, Xenophon's Memorabilia,
+Plutarch's Roman Lives, Cicero's On Duties + Tusculan Disputations
+(both from the Latin), Seneca's Moral Letters, Epictetus' Enchiridion,
+Marcus Aurelius' Meditations, Franklin's Autobiography + Way to
+Wealth, and Trenchard & Gordon's Cato's Letters (selected).
+
 ## 2026-07-21 (later still)
 
 Plutarch's Roman Lives — the five-lives volume.
