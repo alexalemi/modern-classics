@@ -218,3 +218,11 @@ near 1:1, so verify with --min-ratio 0.9 --max-ratio 1.5 and tell
 agents NOT to pad; keep Verne's science/dates as written (no silent
 corrections); Conseil addresses Aronnax as "Master", everyone else
 "Professor".
+
+Second Verne / second from-the-French novel: Around the World in Eighty
+Days (eighty-days/ — 37 chapters, ~71k English words; the comic-
+adventure register). Drop Verne's franc-conversion parentheticals of
+sterling amounts (English readers don't need them); keep standalone
+franc/dollar figures that are real detail. Reconcile Verne's internal
+self-contradictions (a date given two ways for the same event) but keep
+his one-off date-slips.

@@ -45,7 +45,8 @@ from-the-French retellings would recover lost books:
 - Twenty Thousand Leagues Under the Sea — DONE (site/twenty-thousand-
   leagues.html; complete/unabridged, from the French; the from-the-
   French novel pipeline is now proven — see twenty-thousand-leagues/prep.py)
-- Around the World in Eighty Days
+- Around the World in Eighty Days — DONE (site/eighty-days.html;
+  complete, from the French; second Verne, the comic-adventure pipeline)
 - Journey to the Center of the Earth
 
 ## Further afield (needs stronger crib scaffolding — different
