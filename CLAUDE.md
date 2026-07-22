@@ -226,3 +226,31 @@ sterling amounts (English readers don't need them); keep standalone
 franc/dollar figures that are real detail. Reconcile Verne's internal
 self-contradictions (a date given two ways for the same event) but keep
 his one-off date-slips.
+
+Third Verne / third from-the-French novel, completing the from-the-
+French Verne trilogy: A Journey to the Center of the Earth (journey-
+center-earth/ — 45 chapters, ~72k English words; the wonder-and-descent
+register). Complete/unabridged from Gutenberg French #4791. The
+SIMPLEST prep pattern yet: Verne titles chapters by lone Roman numeral
+only (no descriptive titles), so prep.py's HEADING regex is just
+`^[ \t]*([IVXLC]+)[ \t]*$` and manifest titles are generated "Chapter
+N" (1–45); no oversize splits. Verify --min-ratio 0.9 --max-ratio 1.5
+(landed 1.07). Voice locks: Professor (Otto) Lidenbrock (crackling/
+imperious), Axel (narrator, wry/fearful-growing-braver), Hans (silent
+Icelandic guide, tags kept+glossed as Verne glosses), Graüben (keep
+Verne's ü). English honorifics (German setting) EXCEPT "Monsieur"
+retained for French naming of real historical figures in scientific
+asides (Humboldt, Milne-Edwards). Keep the runic cryptogram + Latin
+solution verbatim (must_contain checks them). toise->"fathom". Place/
+coinage locks emerged mid-book and were normalized: "the Lidenbrock
+Sea," "Port Graüben" (not Port-Graüben), "Axel Islet" (not Island),
+"Cape Saknussemm," "Hansbach," "surtarbrandur/fossil wood," "guncotton"
+(fulmi-coton). TYPOGRAPHIC DEVICES preserved through assembly: Verne's
+dot-row elisions (whispering-gallery lag ch 28; storm's fractured diary
+ch 35) render as literal dot-paragraphs; the runic-initial facsimile
+`* ᛐ * ᚼ *` does NOT trip assemble.py's HR_LINE regex (glyphs between
+the asterisks), so it survives as a paragraph. Cover: Riou's 1867
+granite-wave engraving (Commons "Voyage au centre de la Terre 1867
+(140965384).jpg", crop "1231x1981+494+701" — the numbered 1867 scans
+are full book-PAGES with in-text engravings, so a crop is required to
+isolate the plate from the surrounding French text).

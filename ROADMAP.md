@@ -47,7 +47,9 @@ from-the-French retellings would recover lost books:
   French novel pipeline is now proven — see twenty-thousand-leagues/prep.py)
 - Around the World in Eighty Days — DONE (site/eighty-days.html;
   complete, from the French; second Verne, the comic-adventure pipeline)
-- Journey to the Center of the Earth
+- Journey to the Center of the Earth — DONE (site/journey-center-earth.html;
+  complete, from the French; third Verne, completes the from-the-French
+  trilogy; the wonder-and-descent register)
 
 ## Further afield (needs stronger crib scaffolding — different
 translation-risk class; caveat prominently in front matter)
