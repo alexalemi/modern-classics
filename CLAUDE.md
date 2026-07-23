@@ -254,3 +254,34 @@ granite-wave engraving (Commons "Voyage au centre de la Terre 1867
 (140965384).jpg", crop "1231x1981+494+701" — the numbered 1867 scans
 are full book-PAGES with in-text engravings, so a crop is required to
 isolate the plate from the surrounding French text).
+
+Ovid's Metamorphoses (ovid/ — the 40th book; the from-the-Latin
+mythology anthology). All 15 books, ~131k English words, from the
+LATIN (The Latin Library) with Henry Riley's 1851 prose as a per-file
+crib under reference/ (the de-officiis Latin+crib pattern). prep.py's
+key trick: Riley tags every segment with its Latin line-range ("FABLE
+I. [I.5-31]"), so it slices the Latin by those ranges and pairs each
+episode's crib to the same verses; handles compound "FABLES I. AND II."
+headings, cuts parts at episode boundaries before overshooting, and
+line-splits indivisibly-huge episodes. Verify --min-ratio 1.4
+--max-ratio 2.4 (landed 1.68; Latin verse is very compressed, so this
+runs much higher than the FR/IT prose books — do NOT reuse the 0.9–1.5
+Verne bounds). VOICE: vivid modern PROSE that MATCHES OVID'S REGISTER
+PER TALE (cosmic grandeur / tender pathos / real horror / sly comedy) —
+never flatten the poem; render transformations with full physical
+precision; handle the sexual violence with gravity, never sensationalize.
+KEY CONVENTION (locked in running_notes): a LONG embedded tale/song
+(Orpheus's song, the Muses' contest, Pythagoras's ~400-line discourse,
+Aeneas's nested wanderings) renders as PRIMARY NARRATION — no enclosing
+quotes around the whole tale; reserve quotes for framing remarks and
+character dialogue, single quotes for dialogue nested inside. Names use
+the familiar forms; resolve Ovid's cult-title periphrasis to plain names.
+Epitaphs/inscriptions and the hyacinth's "AI, AI" stay mixed-case (never
+all-caps — assemble.py reads an all-caps line as a heading). Cover:
+Waterhouse's "Apollo and Daphne" (1908), Commons "Apollo and Daphne
+waterhouse.jpg", crop "860x1219+38+0" (light width-crop to cut aspect
+stretch without clipping the figures). NOTE: files 013–029 were
+translated directly by the orchestrator after hitting the 200-subagent
+session cap mid-book — the shared-ledger pattern kept the voice identical
+across the subagent/direct boundary. For a multi-book push, raise
+CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION at the start.

@@ -1,0 +1,110 @@
+RUNNING NOTES — consistency ledger (orchestrator-maintained)
+
+Locked name forms (use the familiar English/Latin forms):
+- Gods: Jupiter, Juno, Venus, Minerva, Diana, Apollo (also Phoebus for
+  the sun-god where Ovid stresses that aspect), Bacchus, Mercury,
+  Neptune, Pluto, Vulcan, Mars, Ceres, Saturn, Jupiter's father Saturn.
+  Proserpine (not Persephone — matches the crib and our title). Cupid.
+- Resolve periphrasis to plain names: "the Delian"/"Latona's son" =
+  Apollo; "Saturnia" = Juno; "the Tirynthian" = Hercules; "the
+  Atlantid"/"Cyllenian" = Mercury; "the Lord of Delos" = Apollo. Keep a
+  periphrasis only for real flavor, glossed in-line.
+- Mortals/heroes as the crib gives them: Daphne, Io, Phaethon, Callisto,
+  Actaeon, Semele, Echo, Narcissus, Pentheus, Perseus, Andromeda,
+  Arachne, Niobe, Tereus/Procne/Philomela, Medea, Theseus, Daedalus,
+  Icarus, Meleager, Baucis & Philemon, Orpheus, Eurydice, Pygmalion,
+  Myrrha, Adonis, Atalanta, Midas, Ceyx & Alcyone, Aesacus, the Trojan
+  and Roman matter (Aeneas, Romulus, Numa, Pythagoras, Caesar).
+
+Register (see text_analysis): vivid modern PROSE, third person; MATCH
+Ovid's shifting tone per tale — cosmic grandeur, tender pathos, real
+horror, sly comedy — never flatten to one mood. Render transformations
+with full uncanny physicality. Complete: every tale and catalogue, no
+summarizing. Sensitive content (rape/incest/mutilation) faithful,
+grave, measured — never sensationalized or sanitized. No footnotes.
+
+Method: FROM THE LATIN (chapters/); Riley (reference/) is a
+comprehension crib ONLY — never copy his Victorian phrasing. Ratio
+Latin -> modern English ≈ 1.4-2.4 (Latin verse is compressed). Verify
+--min-ratio 1.4 --max-ratio 2.4.
+
+Structure: 30 files, 15 books = chapters "Book I".."Book XV", most split
+into 2-3 parts, no other dividers. It is one continuous poem (carmen
+perpetuum) — honor Ovid's segues between tales; do not isolate fables.
+
+THE PROEM (file 000, Book I lines 1-4): open with a clear, resonant
+rendering of "In nova fert animus mutatas dicere formas corpora" — "My
+mind moves me to tell of forms changed into new bodies." This is the
+book's first sentence; make it sing.
+
+Seam: file 000 (Book I part 1) opens the poem — the proem, then Creation,
+the Four Ages, the war with the Giants, Lycaon, and the Flood / Deucalion
+& Pyrrha begin. Establishes the VOICE for everyone; read 000 before the
+parallel batches.
+
+(Batch notes appended below by the orchestrator.)
+
+From file 000 (voice-establishing, Book I p1; ratio 1.72) — READ
+modern_chapters/000.txt's opening to calibrate. LOCKED VOICE: vivid
+propulsive third-person; long breathing sentences for cosmic set-pieces
+(Creation, Flood), shorter harder sentences for menace (Lycaon, the
+drowning world); tenderness in speeches; the mythic hedge rendered "so
+the story goes"/"they say" (for Ovid's ferunt); contractions only inside
+dialogue; register shifts honored per-tale, never flattened.
+- Proem locked: "My mind moves me to tell of forms changed into new
+  bodies." Keep Ovid's Roman politics (the Augustus apostrophe + the
+  "Caesar's blood" simile in Jupiter's council) intact and direct.
+- Name/periphrasis resolutions: "son of Iapetus" -> Prometheus; "son of
+  Prometheus" -> Deucalion; "daughter of Epimetheus" -> Pyrrha. Winds:
+  Eurus (East), Zephyr (West), Boreas (North), Notus/South Wind — tag
+  the direction on first use. Amphitrite/Nereus/Nereids/Triton = sea
+  names (Nereus glossed as the sea). Astraea glossed "Justice herself."
+  "the bow-bearing god" -> Apollo; "Phoebus" kept for the sun/light
+  aspect (and the final laurel line). "the great Thunderer" kept for
+  Jupiter (flavor); Ceres metonymic for grain, glossed. Method worked:
+  crib for names/sense only, phrasing fresh.
+- Seam 000->001: file 000 ends on the hinge line — "There was no laurel
+  yet, and Phoebus would bind his temples... with garlands from any tree
+  at all." File 001 (Book I p2) opens DIRECTLY into Apollo & Daphne
+  (Apollo flush from killing Python, mocking Cupid) — do NOT re-introduce
+  Book I or restate the Python kill; the laurel motif chains the tales.
+
+SOURCE ODDITY (all files): the Latin Library text carries occasional
+lines in [square brackets] — these are editorial variant/doublet lines
+(e.g. Book I line 100, a doublet of Daphne's prayer). Fold their sense
+in ONCE where relevant; do NOT translate a bracketed doublet twice.
+Also: stray ++double-plus++ marks and similar OCR artifacts wrap the odd
+word/line — read through them to the plain sense; never render the markup.
+
+FORMATTING: render any EPITAPH or INSCRIPTION (e.g. Phaethon's tomb) in
+normal/Title case, NEVER all-caps — assemble.py treats an all-caps line
+as a section heading. Set such couplets off as their own short lines but
+keep them mixed-case.
+
+EMBEDDED TALES (tale-within-a-tale) — locked convention (used in files
+005, 008, 009; CRITICAL for Book X where Orpheus sings for ~700 lines,
+and for any frame like the Minyeides or the Muses): render a LONG
+embedded song/tale as PRIMARY NARRATION — NO enclosing quotation marks
+around the whole tale. Reserve double quotes for the framing remarks
+and for direct character DIALOGUE; use single quotes for dialogue nested
+inside the embedded tale. Return to the outer frame's first person
+cleanly at the tale's end. Do not wrap hundreds of lines in one quote.
+
+From batch 2 (007-012, verified; ratios 1.75-1.90): the Perseus saga,
+the wedding battle, Ceres & Proserpine, Arachne/Niobe, Tereus, Medea.
+- FOLLOW THE LATIN over the crib where Riley misreads names/variants —
+  agents repeatedly caught Riley errors (Lyncides=Perseus not a local;
+  Lampetides not "son of Iapetus"; the salt-spring not the "wild horse"
+  token). The crib is a helper, not an authority.
+- Locks: Hecate = "the triple goddess"; the Argo/Argonauts (Minyae =
+  "the Minyans/Argonauts"); Jason (Aesonides); Medea (Colchian/Phasian);
+  Aeetes the king; Palaemon & Leucothoë (Ino & Melicerta as sea-gods);
+  the Furies/Tisiphone. Boreas etc. tagged as winds on first use.
+  Proserpine kept (even "Persephones zonam" -> "Proserpine's sash").
+- Medea's famous line locked: "I see the right course, and I approve of
+  it — and I follow the wrong one" (video meliora proboque...).
+- CRIB DRIFT AT PART BOUNDARIES is normal (the crib's line-ranges run a
+  little past/short of the Latin file's cut). Agents handle it: translate
+  exactly your Latin file, honor the seam ("continue, don't re-introduce
+  / don't restate the launch"), and complete a sentence orphaned at the
+  cut rather than leaving a gap. No content is lost or duplicated.

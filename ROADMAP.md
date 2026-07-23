@@ -36,7 +36,8 @@ SE-XHTML, Wikisource-API, from-the-Latin, from-the-French.
 - La Rochefoucauld — Maxims (from the French; ~500 epigrams; quoted in
   our Cato's Letters)
 - Erasmus — Praise of Folly (from the Latin)
-- Ovid — Metamorphoses (prose retelling; the storybook of mythology)
+- Ovid — Metamorphoses — DONE (site/ovid.html; all 15 books complete,
+  from the Latin with Riley's prose crib; the storybook of mythology)
 - Pascal — Pensées (from the French)
 
 ## The Verne recovery project
