@@ -1,0 +1,108 @@
+TEXT ANALYSIS — Michael Faraday, On the Various Forces of Nature (1860)
+Source: Project Gutenberg #52293 (Crookes's edition), plates in the same zip
+
+READ candle/text_analysis.txt FIRST. This is the same lecturer, the same
+hall, the same audience, the same editor, and the Christmas course of the
+year BEFORE. Everything there about voice, stage directions, nomenclature
+policy, figures and Crookes's notes carries over unchanged. What follows
+is only what is different.
+
+WHAT THIS IS
+
+Six lectures to a juvenile audience at the Royal Institution over
+Christmas 1859–60, taken down and edited by William Crookes, plus the
+address on "Light-house Illumination: the Electric Light" delivered on
+9 March 1860, which the edition appends.
+
+Where the Candle takes ONE object and derives all of chemistry from it,
+this course takes ALL the forces and drives them toward ONE conclusion:
+gravitation, cohesion, chemical affinity, heat, magnetism and electricity
+are not six powers but one, convertible each into the others. The last
+lecture is titled "The Correlation of the Physical Forces" and that is
+the payoff the whole course is built toward. Keep that architecture
+visible — every lecture ends by handing something to the next.
+
+THE ILLNESS
+
+Lecture One opens with Faraday apologising: the course had been twice
+postponed because he was ill, and he says he may manage only "a few
+words" and will substitute demonstrations for talk. Crookes's first note
+records the postponements. He is fifty-eight, four years from the Candle
+and seven from the end of his life.
+
+DO NOT SOFTEN OR TRIM THIS. It is the first thing in the book, it is
+said plainly and without self-pity, and it sets the tone for a man who
+lectured anyway. The same holds for the closing of Lecture Six, where he
+thanks the audience for bearing "the inconvenience that I at first
+subjected you to."
+
+WHAT IS DIFFERENT FROM THE CANDLE, PRACTICALLY
+
+  - MORE PHYSICS, LESS CHEMISTRY. The vocabulary to lock is mechanical
+    and electrical rather than chemical:
+        gravitation      -> keep (not "gravity" — he distinguishes the
+                            force from the everyday word)
+        cohesion, adhesion, chemical affinity -> keep; these are the
+                            chapter titles and the argument
+        specific gravity -> keep
+        the correlation of the physical forces -> keep, exactly; it is
+                            the title of the last lecture and the thesis
+        voltaic battery / voltaic pile -> keep, gloss once
+        magneto-electric -> keep (the lighthouse address turns on it)
+        galvanometer, electro-magnet, armature -> keep
+        caloric          -> if it appears, keep and gloss; he does not
+                            believe in it, and says so
+    Units and figures as printed, exactly, as in the Candle.
+  - SHAKESPEARE. Lecture Six ends by quoting As You Like It — "tongues
+    in trees, books in the running brooks, / Sermons in stones, and good
+    in everything." Set as verse (an indented block), verbatim, keeping
+    Faraday's leading dashes as an ellipsis of the missing half-line.
+    This is the last thing in the lecture course and is in
+    must_contain.txt.
+  - THE LIGHTHOUSE ADDRESS is not a juvenile lecture. It is a report to
+    adults on putting the electric light into lighthouses, given as a
+    Trinity House scientific adviser, and its register is plainer and
+    more official — proud, practical, concerned with fog and with the
+    safety of mariners. Do not import the Christmas-lecture warmth into
+    it. It opens "There is no part of my life which gives me more
+    delight than my connection with the Trinity House," and that sober
+    affection is its whole tone.
+
+FIGURES
+
+50 plates carrying 59 numbered figures, because Victorian printers put
+several figures on one block. Markers therefore carry compound ids:
+
+    [Figure 3-4]        -> renders "Figures 3 and 4"
+    [Figure 15-16-17]   -> renders "Figures 15, 16 and 17"
+
+A compound plate needs a caption that covers EVERY figure on it, in
+order, and says which is which ("left", "right", "above", "below") — the
+prose refers to them separately, so the reader must be able to tell them
+apart within the single image. Look at the plate before writing it.
+Otherwise the caption rules are the Candle's: one descriptive sentence,
+new writing, present tense, no editorialising.
+
+Note that the text's own illustration grouping does not match the
+plates'; prep.py has already reconciled this, so translate the markers as
+they appear and do not try to split or merge them.
+
+CROOKES'S NOTES
+
+24 of them, all anchored, all inlined by prep.py as "Editor's note: ..."
+paragraphs. Same rule as the Candle: keep them in Crookes's dry
+third-person register, never the lecturer's. Several are practical
+recipes (note 24 tells you how to grow a lead tree in a bottle) — keep
+the instructions complete.
+
+FAMOUS PASSAGES (also in must_contain.txt)
+
+  1. The opening apology for the postponed lectures.
+  2. The Shakespeare close of Lecture Six.
+  3. The opening of the lighthouse address on the Trinity House.
+
+RATIO
+
+Same as candle/ (landed 0.99) and soap-bubbles/ (1.02). Run:
+
+  python3 verify.py forces --min-ratio 0.85 --max-ratio 1.3

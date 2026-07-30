@@ -1,5 +1,45 @@
 # DEVLOG
 
+## 2026-07-30 (Faraday's Forces of Nature — book 2 of five)
+
+Second of the five Royal Institution Christmas Lecture volumes.
+
+- `forces/` — 15 files, ~35k modern words, ratio 0.98, epub lint clean.
+  Crookes's preface, the six Christmas 1859–60 lectures, and the
+  "Light-house Illumination" address of 9 March 1860 that the edition
+  appends. Note the word count: the raw Gutenberg file is 61k words, but
+  a third of that is the publisher's advertisements bound in at the back.
+- **Compound plates**, and the generic support for them. Victorian
+  printers put several numbered figures on one woodblock, so this book's
+  50 plates carry 59 figures. Markers and filenames now take hyphenated
+  ids (`[Figure 15-16-17]`, `fig15-16-17.jpg`) and
+  `assemble.figure_label()` renders "Figures 15, 16 and 17". Verified the
+  Candle and Boys pages come out byte-identical after the change.
+- The awkward part was that **the text's grouping and the plates'
+  grouping disagree**. `fig15-16-17` is a single plate that the text
+  marks as two illustrations — follow the text and the image prints
+  twice. Figures 18 and 19 are two separate plates under one text marker.
+  And `fig29` has no illustration marker anywhere; it is referenced only
+  in running prose as lower-case "(fig. 29)", which a case-sensitive
+  grep missed entirely. Its position was confirmed against the Gutenberg
+  HTML edition rather than guessed. prep.py therefore drives markers from
+  the FILES and reconciles the text to them.
+- Two traps repeated from the Candle, now recorded as rules: lecture
+  headings appear three times (contents, body, notes), so anchor on the
+  last before `NOTES.`; and a note runs until the next note *or* the next
+  per-lecture header, or the header is swallowed onto the end of a note
+  ("...could be solidified. LECTURE II.").
+- Three more mangled ASCII tables rebuilt as indented blocks — the 8:1
+  water diagram, the cubic-inches-to-grains table, and the relative
+  weights of hydrogen, air, water and platinum.
+- The book opens with Faraday apologising that illness had twice
+  postponed the course, saying he may manage "only a few words", and
+  then claiming as always the right to speak to the young "as a young
+  person myself". Kept unsoftened. It closes on As You Like It.
+- Cover: Church's *Aurora Borealis* (1865) — magnetism written across the
+  sky, which is precisely the thesis of the final lecture.
+
+
 ## 2026-07-30 (Faraday's Candle — book 1 of the Christmas Lectures five)
 
 Alex asked for five Royal Institution Christmas Lecture volumes:

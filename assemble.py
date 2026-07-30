@@ -73,7 +73,18 @@ def is_subheading(par):
 
 SPEAKER_NAME = re.compile(r"[A-Z][A-Za-z .'’-]{0,30}")
 HR_LINE = re.compile(r"\*+( \*+)*|-{2,}")
-FIGURE = re.compile(r"^\[Figure ([A-Za-z0-9]+)(?::\s*(.+?))?\]$", re.S)
+FIGURE = re.compile(r"^\[Figure ([A-Za-z0-9]+(?:-[A-Za-z0-9]+)*)(?::\s*(.+?))?\]$", re.S)
+
+
+def figure_label(num):
+    """'12' -> 'Figure 12'; '15-16-17' -> 'Figures 15, 16 and 17' (one plate
+    carrying several numbered figures, as Victorian books often print them)."""
+    if num == "front":
+        return "Frontispiece"
+    parts = num.split("-")
+    if len(parts) == 1:
+        return f"Figure {num}"
+    return f"Figures {', '.join(parts[:-1])} and {parts[-1]}"
 
 
 FIG_EXTS = ("jpg", "jpeg", "png", "gif")
@@ -118,7 +129,7 @@ def render_figure(num, caption, figdir, site):
     (fig12.jpg), except "front" which is the frontispiece plate."""
     caption = " ".join(caption.split()) if caption else None
     src = f"{figdir}/{figure_name(site, figdir, num)}"
-    label = "Frontispiece" if num == "front" else f"Figure {num}"
+    label = figure_label(num)
     dims = image_size(site / src)
     size = f' width="{dims[0]}" height="{dims[1]}"' if dims else ""
     alt = html.escape(caption or label, quote=True)

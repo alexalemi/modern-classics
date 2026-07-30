@@ -399,6 +399,45 @@ monoxide, aqua regia, hydrochloric, ethanol). Keep every number as
 printed; two garbled ASCII tables (the 1:8 water diagram, the
 atmosphere's bulk/weight analysis) were rebuilt as indented blocks, and
 the water diagram MOVED UP to the sentence that references it.
+Faraday's On the Various Forces of Nature (forces/ — the 43rd book;
+the Christmas 1859–60 course, the year BEFORE the Candle, plus the
+appended "Light-house Illumination" address of 9 March 1860). 15 files,
+~35k words from Gutenberg #52293 (NOT 61k — that count includes the
+publisher's advertisements bound in at the back, dropped at "THE END.").
+Ratio 0.98. Crookes edits and annotates this one too.
+COMPOUND PLATES (new, generic): Victorian printers put several numbered
+figures on ONE woodblock, so 50 plates carry 59 figures. Markers and
+filenames now take hyphenated ids — [Figure 15-16-17] / fig15-16-17.jpg
+— and assemble.figure_label() renders "Figures 15, 16 and 17". A
+compound caption MUST cover every figure on the block, in order, saying
+which is which (left/right/above/below): the prose refers to them
+separately and the reader has only one image to find them in. LOOK at
+the plate first.
+CRITICAL: the text's illustration grouping does NOT match the plates'
+grouping, so prep.py drives markers from the FILES, not from the
+"[Illustration: ...]" lines. fig15-16-17 is one plate but two text
+markers (emit once, drop the second, or the image appears twice);
+figures 18 and 19 are two plates under one marker (emit both); and
+fig29 has no marker at all — it is referenced only in lower-case prose
+as "(fig. 29)", and its position was confirmed against the Gutenberg
+HTML edition.
+SAME TRAP AS THE CANDLE: lecture headings appear THREE times — in the
+contents, in the body, and again as section headers inside the NOTES.
+Anchor on the LAST occurrence before "NOTES." (find_last_line).
+Also: a note runs until the next note OR the next "LECTURE" header, or
+the per-lecture header gets swallowed onto the end of a note.
+VOICE: as candle/, but Lecture One opens with Faraday apologising that
+illness twice postponed the course and that he may manage "only a few
+words" — render plainly, no softening. Lecture Six closes on As You
+Like It ("tongues in trees, books in the running brooks"), set as verse
+and pinned by must_contain. The LIGHTHOUSE ADDRESS is a separate adult
+occasion — a Trinity House report, plainer and more official; do not
+import Christmas-lecture warmth into it.
+Cover: Church's "Aurora Borealis" (1865), Commons "Aurora Borealis by
+Frederic Edwin Church.jpg", crop "1802x2704+1099+0" — magnetism written
+across the sky, which is the last lecture's thesis. (Balke's aurora was
+the runner-up but reads too dark at thumbnail size.)
+
 Cover: Blaikley's painting of Faraday's own 1855 Christmas Lecture,
 Commons "Professor Faraday lecturing at the Royal Institution, 27th
 December, 1855 RIIC 0006 20110213 BAL EP.jpg", crop "1847x2771+1500+86"

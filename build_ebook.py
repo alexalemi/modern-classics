@@ -173,7 +173,7 @@ def render_figure(s):
     num = m.group(1)
     caption = " ".join(m.group(2).split()) if m.group(2) else None
     name = assemble.figure_name(ROOT / "site", FIGURE_DIR[0] or "", num)
-    label = "Frontispiece" if num == "front" else f"Figure {num}"
+    label = assemble.figure_label(num)
     alt = caption or label
     if alt[-1] not in ".!?":       # se lint t-026 wants alt text punctuated
         alt += "."
