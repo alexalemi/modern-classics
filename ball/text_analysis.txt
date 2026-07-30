@@ -1,0 +1,105 @@
+STAR-LAND — Sir Robert S. Ball, 1889
+Translation strategy
+
+WHAT THIS IS
+The Royal Institution Christmas courses of 1881 and 1887, given by the
+Royal Astronomer of Ireland to an audience of children and worked up
+into a book. It is the fifth Royal Institution Christmas Lecture volume
+in this collection, and by some distance the warmest. Read the
+soap-bubbles/, candle/, forces/ and fleming/ analyses first: the
+register is the same family, but Ball is the funniest of the five and
+the only one who is openly delighted by his own subject.
+
+Six lectures — the Sun, the Moon, the inner planets, the giant planets,
+comets and shooting stars, the stars — plus a closing chapter that
+teaches the reader to actually find the constellations. ~98k words,
+36 files, 94 plates.
+
+VOICE
+Ball talks TO children, never down to them. The distinguishing marks:
+
+- He is constantly doing something. A burning glass, a noonday gun, a
+  ball thrown in the air, two eyes and a finger held at arm's length,
+  playing cards laid on a table to make a base-line. Keep every
+  demonstration concrete and in the present tense.
+- He is funny, and the jokes are load-bearing. His figure captions are
+  often the punchline ("This is what we wanted the Cards for", "Two
+  Eyes are better than One"). PRESERVE THE HUMOUR. A flattened Ball is
+  a failed translation, more so than a slightly long one.
+- He uses vast comparisons to make numbers mean something — an express
+  train that would take so many years to reach the sun, a cannon ball
+  fired at the moon. These are the heart of the book. Render them with
+  their arithmetic intact and their theatre intact.
+- Direct address is constant: "you will see", "I want you to notice",
+  "suppose that you and I". Keep all of it. Keep "Star-land" itself,
+  which is his coinage and the book's whole conceit.
+- He is Irish and writing for a British audience in 1889; the diction
+  is Victorian but the sentences are already short by Victorian
+  standards. Much of this book needs light work, not heavy rebuilding.
+
+THE VERNE RULE APPLIES THROUGHOUT
+This is 1889 astronomy and a great deal of it has since been overturned
+or refined. Render every figure and every claim as HIS, unhedged, with
+no editorial correction and no wink to the reader:
+  - the sun's distance, size and temperature as he gives them
+  - Vulcan, the intra-Mercurial planet, discussed as an open question
+  - the nature and origin of the lunar craters
+  - speculation about life in the moon and on the planets, which he
+    treats seriously and answers carefully
+  - the nebulae, and what they are made of
+He is often careful to say what is known versus what is guessed. Keep
+that distinction exactly where he puts it — it is the best thing in the
+book's method, and blurring it would misrepresent him.
+Modernize dated WORDS freely (that is vocabulary, not a claim), but
+never a dated measurement or conclusion. See fleming/ for the same
+split applied to the aether.
+
+NUMBERS
+Every measured quantity keeps its digits exactly as printed. Do not
+spell measured values out as words — that slip passes every mechanical
+check and was only caught on fleming/ by a numeric-token diff. Run that
+check per file (recipe in running_notes.txt).
+
+FIGURES
+Ball captioned his own plates, and the captions are in the source, so
+they arrive in chapters/ as [Figure N: caption]. MODERNIZE them, do not
+replace them — the wit is his. Where a caption is only a label
+("A Pendulum") it can be lightly extended if the plate plainly shows
+more, but never at the cost of his phrasing.
+Three plates are irregular: the frontispiece (id "front", uncaptioned),
+figures 29 and 30 which share one plate ("29-30" — the caption must
+cover both, saying which is which), and figures 35 and 64, whose
+captions carry the plate's own internal sub-labels.
+
+CONTENT NEEDING CARE
+Three passages, each a different call. All three are logged in
+running_notes.txt when done.
+
+1. Lecture V quotes an eyewitness account of the great Leonid meteor
+   storm of 12-13 November 1833, from a South Carolina plantation:
+   a white enslaver describing the terror of the people he held
+   enslaved, who are called "the negroes" throughout. The astronomy in
+   it is genuinely valuable — it is one of the best surviving
+   descriptions of what that night looked like. Render the period term
+   as "the enslaved people" / "the enslaved men and women". This is
+   MORE explicit about what was happening, not less: a modern young
+   reader would not otherwise know these were enslaved people at all.
+   Do not add commentary, do not cut the passage, do not soften the
+   fear it describes.
+2. "some savages are able to produce fire by means of friction" —
+   dated word, no claim attached. Render as people in some parts of
+   the world.
+3. "inhabited by painted savages, who waged incessant war with wild
+   beasts" — he means pre-Roman Britons, in a lovely passage about
+   light from distant stars showing us the past. Render as painted
+   Britons / painted tribes. Keep the image; it is doing real work.
+
+FAMOUS AND LOAD-BEARING PASSAGES (also in must_contain.txt)
+- the burning glass and the noonday gun that opens Lecture I
+- "Two eyes are better than one" and the base-line measurement
+- the express train to the sun
+- the phases of the moon and the old moon in the new moon's arms
+- the great November meteor showers of 1833 and 1866
+- the passage on how light from distant stars shows us the earth's own
+  past — Magna Charta, and the forests before it
+- the closing chapter's Great Bear as the key to the whole sky

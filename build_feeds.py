@@ -126,11 +126,17 @@ def build_rss(books, base):
 """
 
 
-def build_opds(books, base):
+def build_opds(books, base, self_href):
     entries = []
     for b in books:
         links = [f'      <link rel="alternate" type="text/html" href="{base}/{b["page"]}"/>']
         if b["epub"]:
+            # Two acquisition links, deliberately. "open-access" is the
+            # correct OPDS 1.2 rel for a free book, but several minimal
+            # readers look ONLY for the bare "acquisition" rel and report
+            # the whole catalog as broken when they do not find one.
+            links.append(f'      <link rel="http://opds-spec.org/acquisition" '
+                         f'type="application/epub+zip" href="{base}/ebooks/{esc(b["epub"])}"/>')
             links.append(f'      <link rel="http://opds-spec.org/acquisition/open-access" '
                          f'type="application/epub+zip" href="{base}/ebooks/{esc(b["epub"])}"/>')
         if b.get("cover"):
@@ -147,6 +153,7 @@ def build_opds(books, base):
       <name>{esc(b['author_name'])}</name>{author_uri}
     </author>
     <summary type="text">{esc(b['description'])}</summary>
+    <content type="text">{esc(b['description'])}</content>
 {chr(10).join(links)}
   </entry>""")
     newest = books[0]["date"] if books else ""
@@ -157,8 +164,8 @@ def build_opds(books, base):
   <title>Modern Classics</title>
   <updated>{newest}</updated>
   <author><name>Modern Classics</name><uri>{base}/</uri></author>
-  <link rel="self" type="application/atom+xml;profile=opds-catalog;kind=acquisition" href="{base}/opds.xml"/>
-  <link rel="start" type="application/atom+xml;profile=opds-catalog;kind=acquisition" href="{base}/opds.xml"/>
+  <link rel="self" type="application/atom+xml;profile=opds-catalog;kind=acquisition" href="{base}/{self_href}"/>
+  <link rel="start" type="application/atom+xml;profile=opds-catalog;kind=acquisition" href="{base}/{self_href}"/>
 {chr(10).join(entries)}
 </feed>
 """
@@ -174,9 +181,17 @@ def main():
     books = collect(base)
     copy_covers(books)
     (ROOT / "site" / "feed.xml").write_text(build_rss(books, base))
-    (ROOT / "site" / "opds.xml").write_text(build_opds(books, base))
-    print(f"wrote site/feed.xml and site/opds.xml ({len(books)} books, "
-          f"newest: {books[0]['key'] if books else 'n/a'})")
+    # The SAME catalog is written twice, under two extensions. GitHub
+    # Pages picks the Content-Type from the extension alone and cannot be
+    # given custom headers, so opds.xml goes out as "application/xml" —
+    # which some OPDS readers reject outright. ".atom" is served as
+    # "application/atom+xml", which is what the spec asks for, so
+    # opds.atom is the URL to hand out. opds.xml stays for anyone
+    # already subscribed to it.
+    (ROOT / "site" / "opds.xml").write_text(build_opds(books, base, "opds.atom"))
+    (ROOT / "site" / "opds.atom").write_text(build_opds(books, base, "opds.atom"))
+    print(f"wrote site/feed.xml, site/opds.xml and site/opds.atom "
+          f"({len(books)} books, newest: {books[0]['key'] if books else 'n/a'})")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,66 @@
+STAR-LAND — running consistency ledger
+(orchestrator updates this between files; every file reads it first)
+
+VOICE LOCKS
+- "Star-land" always, capital S, hyphen. It is his coinage and the title.
+- Second person throughout, present tense for every demonstration.
+- The jokes stay. His figure captions are frequently the punchline and
+  must survive as jokes, not as descriptions of jokes.
+- First person singular for Ball; he says "I" constantly and means it.
+
+NAMES AND TERMS
+- Keep his forms: "the sun", "the moon" lower case as he has them;
+  Jupiter/Saturn/Uranus/Neptune capitalised.
+- "shooting stars" (not "meteors") where he uses it; he introduces
+  "meteor" deliberately and the distinction is his.
+- Telescope parts, object-glass, speculum: keep, they are the right
+  words and he explains them.
+
+NUMERIC FIDELITY CHECK — run after every file
+  A measured quantity keeps its DIGITS exactly as printed. Words are
+  acceptable only for a structural enumeration. This check is the only
+  guard against a value being silently spelled away; it caught six on
+  fleming/ that every other check passed.
+
+    python3 - <<'PY'
+    import re
+    from pathlib import Path
+    FIG=re.compile(r"^\[Figure[^\]]*\]$",re.M)
+    def nums(t):
+        t=t.replace(',','').replace('·','.')
+        return set(re.findall(r'\d+(?:\.\d+)?', t))
+    for f in sorted(Path('ball/modern_chapters').glob('*.txt')):
+        s=FIG.sub('',(Path('ball/chapters')/f.name).read_text())
+        miss=sorted(nums(s)-nums(FIG.sub('',f.read_text())), key=float)
+        if miss: print(f.name, miss)
+    PY
+
+DECISIONS LOG
+(filled in as they are made)
+
+SECTION HEADINGS (68 of them, from file 001 on)
+  Ball breaks each lecture with an ALL-CAPS heading ending in a period
+  ("FURTHER BENEFITS THAT WE RECEIVE FROM THE SUN."). Render as TITLE
+  CASE WITH NO TERMINAL PERIOD ("Further Benefits We Receive from the
+  Sun"). assemble.is_subheading() rejects anything ending in ".;:,—",
+  so the period alone is the difference between an <h4> and a
+  paragraph shouted in capitals. These headings are the book's real
+  internal structure — they match the contents synopsis — so getting
+  them right is worth the care.
+
+FIGURE CAPTIONS
+  Ball's own captions arrive in chapters/ and are frequently the joke.
+  Keep his phrasing as the FIRST clause, then extend with a short
+  clause saying what the plate actually shows — the caption is also
+  the epub's alt text, and "The Noonday Gun" alone tells a listener
+  nothing. Never trade the wit for the description; keep both.
+
+VOICE CALIBRATION (file 001)
+  Ratio 0.97. Ball needs LIGHT work — his sentences are already short
+  by Victorian standards. Resist rebuilding. What actually needs doing:
+  split his few long compound sentences, drop "indeed"/"of course"
+  where they are filler, modernise "revelling"/"genial"/"utilize", and
+  keep every single second-person address. His comic set-pieces (the
+  voyage to the sun with a candle, a bullet, a penny, a poker and a
+  flint; the Christmas tea-table) are the reason the book survives —
+  translate them at full length, never summarise.
