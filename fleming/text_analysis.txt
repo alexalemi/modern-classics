@@ -1,0 +1,114 @@
+TEXT ANALYSIS — J. A. Fleming, Waves and Ripples in Water, Air, and Aether (1902)
+Source: Project Gutenberg #71757. Christmas 1901 course, Royal Institution.
+
+READ candle/text_analysis.txt AND forces/ FIRST. Same institution, same
+tradition, same live-demonstration register. What follows is only the
+differences.
+
+WHO AND WHAT
+
+John Ambrose Fleming, professor of electrical engineering at University
+College London, forty years after Faraday's courses and forty years
+younger as a lecturer. He would go on to invent the thermionic valve.
+This course was given in the winter of 1901, weeks after Marconi first
+signalled across the Atlantic, and the last chapter is a report from the
+front line of that work by a man who was consulting for Marconi at the
+time.
+
+Six chapters, ~81k words: water waves; the waves ships make (including
+the design of America's Cup yachts); waves in air; sound and music;
+electric oscillations; and waves in the aether.
+
+VOICE — HOW HE DIFFERS FROM FARADAY
+
+  - MORE FORMAL and more expository. Faraday performs; Fleming explains,
+    then demonstrates. Longer paragraphs, more sustained argument, more
+    numbers. Do NOT try to make him sound like Faraday.
+  - He still addresses the room directly and still runs experiments in
+    the continuous present. Keep every "you will see", "I have here",
+    and every bracketed stage direction.
+  - He is proud of the "juvenile audience" custom and defends it in his
+    preface as including "those who are young in spirit as well as those
+    who are young in years". That sets his level: he never talks down,
+    and he assumes an audience that can follow a formula if it is
+    explained.
+  - He quotes and credits generously — Kelvin, Rayleigh, Scott Russell,
+    Worthington, Hertz, Marconi — and often at length. Keep the credits.
+
+THE AETHER — THE CENTRAL EDITORIAL POINT
+
+A third of this book is a confident, detailed exposition of the
+luminiferous aether: a real elastic medium filling space, in which light
+and radio waves are strains and vibrations. This is the book's organising
+idea and it is wrong. Michelson and Morley had already failed to detect
+it; Einstein was three years away.
+
+FOLLOW THE VERNE RULE ABSOLUTELY. The aether stays exactly as Fleming
+has it: asserted, argued for, and never hedged. No footnotes saying "we
+now know", no softening to "what physicists then believed", no scare
+quotes. The reader is reading 1902, and the interest of the book is
+partly that it is a first-rate mind being completely confident about
+something that was about to evaporate. Say nothing.
+
+The same applies to everything else dated: his figures for the velocity
+of electric waves, his account of the coherer, his claims about what
+wireless telegraphy would become. All as written.
+
+TERMINOLOGY — LOCKED
+
+  aether               keep this spelling throughout (it is in the title)
+  wave-motion          keep as one hyphenated idea, his term of art
+  ripple / wave        he distinguishes them technically (ripples are
+                       ruled by surface tension, waves by gravity) — keep
+                       the distinction sharp everywhere
+  wave-length, wave-front, wave-train, node, anti-node, damping
+  stationary waves, forced and free vibrations, resonance
+  electric oscillation, oscillator, resonator, coherer, syntony
+  Hertzian waves, electric radiation
+  gamut, temperament, concord, discord — the music chapter's terms
+  indiarubber          -> rubber
+  telegraphy without wires / wireless telegraphy -> keep both as he uses
+                       them; do not modernise to "radio"
+  micron (μ)           keep, with his own gloss (a thousandth of a mm)
+
+Units and every numerical value exactly as printed.
+
+FIGURES — 87 plates
+
+Markers as in the earlier books. Notes specific to this one:
+
+  - [Figure front] is the Graphic's drawing of a Christmas Lecture in
+    progress at the Royal Institution, by F. C. Dickinson — an audience
+    of children watching a demonstration. Caption it as what it is.
+  - FIGURES 8, 9 AND 10 are Worthington's stroboscopic photographs of a
+    drop falling into milk, and their captions in the original are the
+    ELAPSED TIMES: 0.0262 sec, 0.0391 sec, 0.101 sec after contact. Put
+    those times in the modern captions; they are the whole point of the
+    sequence.
+  - [Figure 42a] and [Figure 42b] are the two halves of one figure
+    printed across facing pages: American yachts entered for the
+    America's Cup 1851–1899, and British yachts 1885–1901. Name the
+    yachts in the captions; the prose compares their hull lines.
+  - [Figure music] is a musical staff and has no number: its caption
+    stands alone with no "Figure N" prefix.
+  - The Morse alphabet, the Morse numerals and a specimen line of Morse
+    are TEXT, not plates, and prep.py has kept them as indented blocks.
+    Reproduce the dots and dashes exactly.
+
+FLEMING'S NOTES
+
+27 of them, his own, inlined by prep.py as "Note: ..." paragraphs after
+the paragraph that cites them. They are in HIS voice — first person,
+often a reading recommendation or a source — so unlike Crookes's notes in
+the Faraday volumes they should NOT be made third-person.
+
+FAMOUS PASSAGES (also in must_contain.txt)
+
+  1. The preface on the "juvenile audience" being an elastic term taking
+     in those young in spirit as well as young in years.
+  2. The opening of Chapter One, standing by the seashore.
+  3. Chapter Six on signalling without wires across the sea.
+
+RATIO
+
+  python3 verify.py fleming --min-ratio 0.85 --max-ratio 1.3

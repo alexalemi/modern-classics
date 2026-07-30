@@ -174,7 +174,7 @@ def render_figure(s):
     caption = " ".join(m.group(2).split()) if m.group(2) else None
     name = assemble.figure_name(ROOT / "site", FIGURE_DIR[0] or "", num)
     label = assemble.figure_label(num)
-    alt = caption or label
+    alt = caption or label or "Plate"
     if alt[-1] not in ".!?":       # se lint t-026 wants alt text punctuated
         alt += "."
     # alt is an ATTRIBUTE: quotes must be escaped too, or a caption that
@@ -182,8 +182,9 @@ def render_figure(s):
     out = [f'\t\t\t<figure id="fig-{num}">',
            f'\t\t\t\t<img alt="{html.escape(alt, quote=True)}" src="../images/{name}"/>']
     if caption:
+        inner = f"<b>{label}</b>—{esc(caption)}" if label else esc(caption)
         out.append("\t\t\t\t<figcaption>\n"
-                   f"\t\t\t\t\t<p><b>{label}</b>—{esc(caption)}</p>\n"
+                   f"\t\t\t\t\t<p>{inner}</p>\n"
                    "\t\t\t\t</figcaption>")
     out.append("\t\t\t</figure>")
     return "\n".join(out)

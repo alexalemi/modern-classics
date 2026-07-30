@@ -1,5 +1,87 @@
 # DEVLOG
 
+## 2026-07-30 (Fleming's Waves and Ripples — book 3 of five)
+
+Third of the five Royal Institution Christmas Lecture volumes, and the
+biggest: 32 files, ~77k modern words, ratio 0.95, all 87 plates, epub
+lint clean. Fleming gave this course at Christmas 1901, months before he
+invented the vacuum tube, and chapter six reports Marconi's Cornwall
+aerial as current news.
+
+The through-line is that a ripple on a pond, the wake of a liner, a note
+sung into a tube, the colour of a geranium and a wireless signal are one
+thing in different media — so the aether is not a digression in this
+book, it is the destination. The Verne rule therefore governs the whole
+back half: Fleming asserts the aether as established fact, and it is
+rendered as his claim, unhedged. Archaic *gas names* got the opposite
+treatment — carbonic acid became carbon dioxide silently, because that
+is vocabulary, not a claim. Dated claim, keep; dated word, modernize.
+
+**Every real defect this book had was invisible to verify.py.** That is
+now the headline lesson of the whole illustrated-books run, and it is
+worth stating plainly: the mechanical checks catch omission and
+truncation. They cannot catch *wrong*.
+
+- **An unnumbered plate broke figure assignment twice over.** The
+  middle-C clef in chapter four is a bare `[Illustration]` with no colon
+  and no caption — the only such marker in the book. A regex demanding
+  the colon walked straight past it, leaving a raw marker in the text
+  *and* leaving the `music` id unclaimed, so the next unnumbered block
+  took it. That block is chapter six's line of Morse code spelling "How
+  are you?", which would have shipped as a picture of a treble clef.
+  Fixed at the root: the caption is optional, and a *captioned* plate
+  with no number is now dropped rather than allowed to take a spare id.
+- **A cross-reference to that same class of plate had also gone astray.**
+  The gamut-of-aether-waves chart — printed unnumbered between figures 79
+  and 81 — is cited in the text as "(see Fig. 77)", which is the paraffin
+  prism. Almost certainly it went wrong *because* the plate has no number
+  of its own.
+- **Two arithmetic faults in tables.** The harmonic table prints 495 × 3
+  as 1475; every other cell in both columns is exact, so it is a
+  one-digit slip and 1485 was restored. The ice prism's electric
+  refractive index is 1·83 in the body and 1·88 in its own footnote —
+  the formula Fleming gives yields 1·813, so the footnote is the outlier
+  and was harmonized to his stated 1·83. Check every table that claims to
+  be computed; both of these are invisible to a word-count.
+- **Numbers written as words survive every existing check.** Chasing the
+  ratio drift to 0.94 turned up six measured quantities I had rendered
+  as "thirty-six hours" for "36 hours". Word ratio can't see it, figure
+  parity can't see it, must_contain can't see it. A set-difference on
+  numeric tokens catches it instantly, and it now runs per file. It is
+  cheap and it should run on every book from here on — the recipe is in
+  `fleming/running_notes.txt`.
+- The ratio drift itself was benign: modern paragraph counts run *higher*
+  than source (Fleming's long expository paragraphs got split), and the
+  missing words were his Victorian connective scaffolding.
+- **The appendix trap, which is generic.** Fleming's two-note appendix
+  carries no CHAPTER heading, so the splitter swept it into chapter six's
+  last part — where it would have shipped buried, with no TOC entry,
+  while two body notes still cited it by name. The fix that matters is
+  the ordering: peel it off *after* the chapter split, never before.
+  Splitting chapter six without its 1420 words changes nparts from 6 to 5
+  and moves every boundary in the chapter, which would have invalidated
+  five finished translations. Peeled afterwards, files 000–029 came out
+  byte-identical. Its print-page references ("NOTE A (see p. 21)") are
+  meaningless in a reflowable edition and became descriptive titles.
+- **Indented runs must stay one block.** `normalise()` emitted one
+  paragraph per indented line, so assemble.py opened a separate `<pre>`
+  for each — and each carries a 2em bottom margin, which strewed the
+  26-letter Morse alphabet down half a page and pulled two-line equations
+  apart. 94 `<pre>` blocks became 40. And such blocks must be *dedented*,
+  not stripped line by line: the Morse for "How are you?" sets its
+  letters underneath their own groups of dashes, and stripping each line
+  independently slides the rows out of register so the labels stop
+  pointing at anything. Worth auditing the other illustrated books.
+- Voice: a working engineer talking to teenagers, where everything is a
+  thing on a table and he says "you see" because they can. Where the body
+  drops into "The author had an instance of this before him" — the
+  Victorian way of telling a story about yourself — first person was
+  restored; it is the same man in the same lecture.
+- Cover: Hokusai's *Great Wave* (1831). Not period-apt, deliberately: the
+  book's whole argument is that one wave is every wave.
+- Fleming quotes C. V. Boys's soap-solution recipe by name in chapter
+  three — out of the book that opened this run.
+
 ## 2026-07-30 (Faraday's Forces of Nature — book 2 of five)
 
 Second of the five Royal Institution Christmas Lecture volumes.

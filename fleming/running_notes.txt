@@ -1,0 +1,149 @@
+RUNNING NOTES — Waves and Ripples. The consistency ledger.
+See candle/ and forces/ running_notes for what carries over.
+
+VOICE
+  Fleming, not Faraday: more formal, more expository, longer paragraphs,
+  more numbers. Live demonstration still in the continuous present, stage
+  directions kept in square brackets. Never talks down; assumes an
+  audience that can follow a formula once it is explained.
+
+THE AETHER
+  Asserted as fact throughout, and left that way. No hedging, no "we now
+  know", no scare quotes, no notes. Same for his wireless-telegraphy
+  predictions and all dated figures. Verne rule, absolutely.
+
+TERMINOLOGY LOCKED (full list in text_analysis.txt)
+  aether (this spelling), wave-motion, ripple vs wave kept distinct,
+  wave-length, stationary waves, syntony, coherer, Hertzian waves,
+  wireless telegraphy / telegraphy without wires (both kept),
+  gamut / temperament / concord / discord, micron.
+  indiarubber -> rubber. Numbers exactly as printed.
+
+NOTES
+  Fleming's own, inlined as "Note: ..." — keep them FIRST PERSON and in
+  his voice, unlike Crookes's third-person notes in the Faraday books.
+
+FIGURES
+  Captions are new writing, house style as before. Specific locks:
+  figures 8/9/10 are Worthington's milk-splash photographs and their
+  captions must carry the elapsed times (0.0262, 0.0391, 0.101 sec);
+  42a/42b are the American and British America's Cup yachts and the
+  captions name them; [Figure music] takes no "Figure" prefix.
+  Morse alphabet/numerals stay as indented text blocks, dots and dashes
+  exactly as printed.
+
+DECISIONS MADE, FILE BY FILE
+
+NUMERIC FIDELITY CHECK (added at file 013)
+  The word-ratio drifted to 0.94 on this book. Investigated: it is
+  Fleming's Victorian connective scaffolding being unstacked, NOT
+  omission — modern paragraph counts run HIGHER than source (I split
+  long ones), and figure parity is exact. But the investigation turned
+  up a real slip worth guarding against: numbers written out as words
+  ("thirty-six hours" for "36 hours") pass every existing check.
+  RULE: a measured quantity keeps its DIGITS, exactly as printed.
+  Words are acceptable only for a structural enumeration ((1),(2),(3)
+  rendered First/Second/Third).
+  Run this after each file; it should report nothing but that
+  enumeration:
+
+    python3 - <<'PY'
+    import re
+    from pathlib import Path
+    FIG=re.compile(r"^\[Figure[^\]]*\]$",re.M)
+    def nums(t):
+        t=t.replace(',','').replace('·','.')
+        return set(re.findall(r'\d+(?:\.\d+)?', t))
+    for f in sorted(Path('fleming/modern_chapters').glob('*.txt')):
+        s=FIG.sub('',(Path('fleming/chapters')/f.name).read_text())
+        miss=sorted(nums(s)-nums(FIG.sub('',f.read_text())), key=float)
+        if miss: print(f.name, miss)
+    PY
+
+VOICE: THIRD-PERSON AUTHORIAL ASIDES (file 016)
+  Fleming occasionally drops into "The author had an instance of this
+  before him not long ago... The writer, however, placed his hand..."
+  — the Victorian convention for an anecdote about himself, inside a
+  book that is otherwise "I shall show you" throughout. Render these
+  as FIRST PERSON ("I had an instance of this in front of me not long
+  ago"). It is the same man speaking either way, and the third person
+  reads as a different narrator to a modern ear.
+
+NOMENCLATURE (files 013-015)
+  carbonic acid  -> carbon dioxide
+  carbonic oxide -> carbon monoxide
+  These are archaic NAMES for gases we still use, not dated claims, so
+  the Verne rule does not apply — modernize silently. (Contrast the
+  aether, which IS a dated claim and stays exactly as Fleming has it.)
+
+SOURCE MISPRINT CORRECTED (file 018)
+  The harmonic table for the interval of the seventh prints the second
+  harmonic of B (495) as 1475. It is 1485 — 495 x 3. Every other cell
+  in both columns is exact (264/528/792/1056/1320/1584 and 990/1980/
+  2475/2970), and the whole point of the table is that each row is a
+  whole-number multiple of the fundamental, so 1475 is a one-digit
+  typo that makes the table wrong on its face. Corrected silently to
+  1485. This is the ONLY number altered anywhere in the book; the
+  numeric check will keep reporting 1475 as "missing" from 018, and
+  that report is correct and expected.
+  NOT a Verne-rule case: the rule protects Fleming's dated CLAIMS
+  (the aether, his velocity figures), not a compositor's slip.
+
+FIGURE-MAPPING BUG FOUND AND FIXED (files 017 / 029)
+  prep.py's ILLUS regex demanded "[Illustration:" with a colon. The
+  middle-C clef sign in chapter 4 is a BARE "[Illustration]" — so it
+  was never converted (a raw marker sat in chapters/017.txt) AND the
+  unclaimed "music" id was then grabbed by the next unnumbered block,
+  which is chapter 6's line of Morse code spelling "How are you?".
+  Result: a treble clef would have shipped in place of the Morse, and
+  chapter 4 would have shown a bare [Illustration].
+  Fixed: caption is now optional; the bare marker takes "music"; a
+  block with a run of three em-dashes and no "FIG." is Morse and
+  becomes an indented text block; a CAPTIONED plate with no number is
+  dropped rather than allowed to claim a spare id. The Morse block is
+  DEDENTED, not stripped per line — the letters sit under their own
+  groups of dashes and stripping slid the rows out of register.
+
+BODY/FOOTNOTE CONTRADICTION RECONCILED (file 026)
+  The body gives the electric refractive index of ice as 1.83; the
+  footnote works the same measurement and prints 1.88. Checked both
+  computations against the formula Fleming gives:
+    paraffin i=60 d=50 -> sin55/sin30 = 1.638  (body 1.64, note 1.64 OK)
+    ice      i=50 d=50 -> sin50/sin25 = 1.813  (body 1.83, note 1.88)
+  So the note's 1.88 is the outlier and 1.83 is Fleming's own stated
+  result. Harmonized the note to 1.83 (the eighty-days rule: reconcile
+  a self-contradiction, keep the author's figure). NOT rounded to the
+  computed 1.81 — his measured value is his to state.
+  The numeric check will report 1.88 "missing" from 026; expected.
+
+MIS-CITED FIGURE REFERENCE FIXED (file 027)
+  The piano-keyboard passage that walks up the octaves of aether
+  waves says "(see Fig. 77)". Fig. 77 is "The refraction of an
+  electric ray" — the paraffin-prism experiment two sections earlier.
+  The passage is plainly describing the GAMUT OF AETHER WAVES chart,
+  which the book prints UNNUMBERED between figs 79 and 81 (prep gives
+  it the id 80, so it renders as "Figure 80"). Almost certainly the
+  reference went astray precisely BECAUSE the plate carries no number
+  of its own. Redirected to Figure 80.
+  Numeric check reports 77 "missing" from 027; expected.
+  NOT changed: the chart says "Seven octaves of dark-heat waves" and
+  "Five octaves of unknown radiation" where the text says "six octaves
+  or more" and "six octaves". These are Fleming's own approximations
+  from different starting rungs, not a contradiction — left alone.
+
+APPENDIX GIVEN ITS OWN SECTION (new file 031)
+  Fleming's APPENDIX (Note A on wave-group velocity, Note B on
+  electrical tuning, ~1420 words) carries no CHAPTER heading, so the
+  splitter swept it into chapter six's last part, where it would have
+  shipped buried under "Chapter Six" with no TOC entry of its own.
+  Two of Fleming's body notes cite it ("see Appendix, Note A" in file
+  003, "Note B" in 029), so dropping it was never an option either.
+  prep.py now peels it off AFTER the chapter split, never before:
+  splitting chapter six without its 1420 words changes nparts from 6
+  to 5 and moves every boundary in the chapter. Peeling afterwards
+  leaves files 000-029 byte-identical and only shrinks 030.
+  The notes' print-page cross-references ("NOTE A (see p. 21)",
+  "Fig. 82, p. 271") are meaningless in a reflowable edition; replaced
+  with descriptive titles ("Note A: Wave-Velocity and Wave-Group
+  Velocity") and plain figure references. Numeric check reports 21,
+  271 and 273 missing from 031; expected.

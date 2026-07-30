@@ -6,15 +6,28 @@ translations. Pipelines proven so far: Gutenberg/SE plain text,
 SE-XHTML, Wikisource-API, from-the-Latin, from-the-French.
 
 ## Recently shipped
+### The Royal Institution Christmas Lectures (5-book run, 3 of 5 done)
 - **C. V. Boys — Soap Bubbles and the Forces Which Mould Them**
   (1890; the project's FIRST ILLUSTRATED volume) — 13 files, ~32k
-  words, all 69 plates + frontispiece carried through to
-  site/soap-bubbles.html and into the index. The figure pipeline
+  words, all 69 plates + frontispiece. LIVE. The figure pipeline
   (`FIGURE_DIR` in env, `[Figure N: caption]` markers, verify check 6)
-  is generic and now unblocks illustrated works in general — Hooke's
-  Micrographia, Faraday's Chemical History of a Candle (the other great
-  Christmas-lecture course), Vasari. Remaining: epub (needs a cover
-  choice), feeds, commit + push.
+  is generic and unblocks illustrated works in general — Hooke's
+  Micrographia, Vasari.
+- **Michael Faraday — The Chemical History of a Candle** (1861) — 12
+  files, ~42k words, 38 woodcuts, plus the Lecture on Platinum. LIVE.
+- **Michael Faraday — On the Various Forces of Nature** (1860) — 15
+  files, ~36k words, 50 plates carrying 59 figures (compound-plate ids),
+  plus the Lighthouse Illumination address. LIVE.
+- **J. A. Fleming — Waves and Ripples in Water, Air, and Aether**
+  (1902) — 32 files, ~77k words, all 87 plates, plus the two-note
+  appendix. LIVE. The largest of the five.
+- NEXT: **Sir Robert Ball — Star-land** (1889; Gutenberg #60318, ~106k
+  words, 95 plates — plates ship in the `-h.zip`). Sourced, untranslated.
+- THEN: **Silvanus P. Thompson — Light Visible and Invisible** (1897).
+  Archive.org OCR only (`lightvisibleinvi00thomrich`, `…uoft`; ~77k
+  words, 0.05% suspicious tokens). ~130 plates must be hand-cropped
+  from the page scans — the user chose this path explicitly over
+  prose-only.
 - **Galileo — Dialogue Concerning the Two Chief World Systems**
   (Italian, 1632; the from-the-Italian pipeline's debut) — 55 files,
   ~194k words, assembled to site/galileo.html and added to the index.

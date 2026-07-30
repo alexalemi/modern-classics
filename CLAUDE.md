@@ -443,3 +443,64 @@ Commons "Professor Faraday lecturing at the Royal Institution, 27th
 December, 1855 RIIC 0006 20110213 BAL EP.jpg", crop "1847x2771+1500+86"
 (a 2:3 slice out of a landscape painting, centred on Faraday at the
 bench).
+
+Fleming's Waves and Ripples in Water, Air, and Aether (fleming/ — the
+44th book; the Christmas 1901 course at the Royal Institution, the
+FOURTH RI Christmas Lecture volume after soap-bubbles/, candle/ and
+forces/). 32 files, ~77k words from Gutenberg #71757, ALL 87 PLATES.
+Ratio 0.95 — verify with --min-ratio 0.85 --max-ratio 1.3.
+Fleming was about to invent the vacuum tube and was already the leading
+authority on wireless; chapter six reports Marconi's Atlantic aerial as
+current news.
+THE VERNE RULE IS THE WHOLE BOOK: the aether is asserted as established
+fact ("suns and stars float in an illimitable ocean of aether"). Render
+it as HIS claim, unhedged, with no editorial wink. By contrast archaic
+GAS NAMES are just vocabulary — carbonic acid -> carbon dioxide,
+carbonic oxide -> carbon monoxide, silently. Distinguish dated claims
+(keep) from dated words (modernize).
+FOUR DEFECTS THE MECHANICAL CHECKS CANNOT SEE — every one found by
+reading, not by verify.py:
+  1. An UNNUMBERED plate breaks id assignment twice over. The middle-C
+     clef is a BARE "[Illustration]" with no colon, so a regex demanding
+     the colon skipped it AND left its "music" id free for the next
+     unnumbered block to claim — which put a treble clef where chapter
+     six's line of Morse code belonged. ILLUS now makes the caption
+     optional; a captioned plate with no number is DROPPED rather than
+     allowed to take a spare id.
+  2. A cross-reference to a plate that carries no number of its own goes
+     astray: the gamut-of-aether-waves chart is cited as "(see Fig. 77)",
+     which is the paraffin prism. Redirected to Figure 80.
+  3. Arithmetic in tables. 495x3 is printed 1475 (corrected to 1485);
+     the ice prism's refractive index is 1.83 in the body and 1.88 in
+     its own footnote (harmonized to 1.83, which is what the formula
+     gives). CHECK EVERY TABLE THAT CLAIMS TO BE COMPUTED.
+  4. Numbers spelled as words ("thirty-six hours" for "36 hours") pass
+     the word-ratio, the figure parity and must_contain alike. Add a
+     numeric-token set-difference check per file — see the recipe in
+     fleming/running_notes.txt. It is cheap and it is the only guard
+     against silent loss of a measured value. USE IT ON EVERY BOOK.
+THE APPENDIX TRAP (generic): back matter with no CHAPTER heading gets
+swept into the last chapter's final part, where it ships with no TOC
+entry — while body notes still cite it by name. prep.py peels it off
+AFTER the chapter split, never before: splitting the chapter without
+its 1420 words changes nparts 6 -> 5 and moves every boundary, which
+would invalidate translations already done. Its print-page references
+("NOTE A (see p. 21)") are meaningless in a reflowable edition and were
+replaced with descriptive titles.
+INDENTED RUNS MUST STAY ONE BLOCK: normalise() emitted one paragraph
+per indented line, so assemble.py opened a separate <pre> per line and
+its 2em bottom margin strewed the 26-letter Morse alphabet down half a
+page and pulled two-line equations apart. Group consecutive indented
+lines. DEDENT such blocks, never strip per line — the Morse for "How
+are you?" sets its letters under their own groups of dashes, and
+stripping slides the rows out of register. (Worth auditing the other
+illustrated books for the same thing.)
+VOICE: a working engineer talking to teenagers — everything is a thing
+on a table, and he says "you see" because they can. Keep the
+demonstrator's present tense. Fleming's own notes are first person;
+where the body drops into "The author had an instance of this before
+him", restore first person — same man, same lecture.
+Cover: Hokusai's "The Great Wave off Kanagawa" (1831), Commons "File:
+Great Wave off Kanagawa2.jpg", focus_x 0.43 — a 2:3 slice of a
+landscape print keeping the crest, the claw and Fuji. Not period-apt
+and deliberately so: the book's thesis is that one wave is every wave.

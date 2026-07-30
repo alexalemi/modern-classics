@@ -77,10 +77,17 @@ FIGURE = re.compile(r"^\[Figure ([A-Za-z0-9]+(?:-[A-Za-z0-9]+)*)(?::\s*(.+?))?\]
 
 
 def figure_label(num):
-    """'12' -> 'Figure 12'; '15-16-17' -> 'Figures 15, 16 and 17' (one plate
-    carrying several numbered figures, as Victorian books often print them)."""
+    """'12' -> 'Figure 12'; '42a' -> 'Figure 42a' (one half of a two-part
+    plate); '15-16-17' -> 'Figures 15, 16 and 17' (one block carrying
+    several numbered figures, as Victorian books often print them).
+
+    An id with no digits at all ('front', 'music') is a plate the book
+    never numbered: it gets no "Figure N" prefix and its caption stands
+    alone. "Frontispiece" is the one such id with a conventional name."""
     if num == "front":
         return "Frontispiece"
+    if not any(c.isdigit() for c in num):
+        return None
     parts = num.split("-")
     if len(parts) == 1:
         return f"Figure {num}"
@@ -132,12 +139,14 @@ def render_figure(num, caption, figdir, site):
     label = figure_label(num)
     dims = image_size(site / src)
     size = f' width="{dims[0]}" height="{dims[1]}"' if dims else ""
-    alt = html.escape(caption or label, quote=True)
+    alt = html.escape(caption or label or "Plate", quote=True)
     out = [f'<figure id="fig-{num}">',
-           f'<img src="{src}" alt="{alt}"{size}>']
-    if caption:
+           f'<img src="{src}" alt="{alt}"{size} loading="lazy">']
+    if caption and label:
         out.append(f'<figcaption><b>{label}</b> &mdash; '
                    f'{html.escape(caption)}</figcaption>')
+    elif caption:
+        out.append(f'<figcaption>{html.escape(caption)}</figcaption>')
     out.append("</figure>")
     return "\n".join(out)
 
