@@ -199,13 +199,22 @@ def main():
     con_at = next(i for i, l in enumerate(lines) if l.strip() == "CONTENTS.")
     preface = "\n".join(lines[pre_at + 1:con_at])
 
+    # The dedication sits between the copyright notice and the preface. A
+    # dedication belongs in the book (a contents does not), and it is the
+    # line that says who these lectures were actually for.
+    ded_at = next(i for i, l in enumerate(lines) if l.strip() == "To")
+    dedication = " ".join(l.strip() for l in lines[ded_at:pre_at] if l.strip())
+    if "DEDICATED" not in dedication:
+        raise SystemExit("dedication no longer sits before the preface")
+
     (BOOK / "chapters").mkdir(exist_ok=True)
     front = "\n\n".join(["Front Matter", "Frontispiece", "[Figure front]",
+                         "Dedication", dedication,
                          "Preface", normalise(preface)])
     (BOOK / "chapters" / "000.txt").write_text(front + "\n")
     manifest = [{"file": "000.txt", "title": "Front Matter", "part": 1, "of": 1,
                  "words": body_words(front),
-                 "split_headings": ["Frontispiece", "Preface"]}]
+                 "split_headings": ["Frontispiece", "Dedication", "Preface"]}]
 
     bounds = heads + [len(lines)]
     n = 1
