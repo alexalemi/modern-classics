@@ -353,3 +353,54 @@ ANOTHER GOTCHA: a bracketed aside like "(Note: For particulars see the
 Philosophical Magazine, September 1890.)" is read as a SUBHEADING —
 short, majority-capitalised, no terminal period after the bracket. End
 such notes with a plain period ("Note: ... 1890.").
+
+Faraday's The Chemical History of a Candle (candle/ — the 42nd book;
+the six Christmas 1860–61 lectures at the Royal Institution, plus the
+separate Lecture on Platinum this edition appends). ~41k words from
+Gutenberg #14474. Verify --min-ratio 0.85 --max-ratio 1.3 (landed
+0.99). The second book in the Royal Institution Christmas Lecture
+tradition after soap-bubbles/ — read that text_analysis first, the
+register carries over almost entirely.
+
+TWO-SOURCE PREP (new pattern): Gutenberg's transcription of the Candle
+keeps all 38 illustration CAPTIONS but none of the woodcuts —
+pg14474-h.zip contains exactly one image, the cover. The plates live on
+Wikisource/Commons instead, so prep pulls TEXT from Gutenberg and
+FIGURES from Commons, matched by number. Watch the Commons naming: figs
+1–35 are "Chemical History of a Candle Figure01" (zero-padded, no
+space) but 36–38 are "Figure 36" (space, no padding), because the
+Platinum lecture is a separate Wikisource page. Always check every
+prospective book's `-h.zip` for image files BEFORE planning it.
+PNG PLATES forced a toolchain generalization: assemble.py and
+build_ebook.py now resolve a plate's extension (jpg/png/gif) instead of
+assuming .jpg, and image_size() reads PNG's IHDR as well as JPEG's SOF.
+NOTE: `se lint` rejects a PNG with no transparency (f-019) — convert
+those plates to JPEG; the extension resolver picks them up with no
+other change. Four of the 38 needed it.
+EDITOR'S NOTES: Crookes's 19 notes sat at the back behind print-page
+headings ("Page 186."). prep.py cuts them loose and inlines each as an
+"Editor's note: ..." paragraph after the paragraph that cites it.
+Translate them in CROOKES'S register — dry, third-person, technical —
+never the lecturer's voice. Faraday writes "glycerin", Crookes writes
+"glycerine": do NOT harmonize, the spelling marks the seam.
+SOURCE DEFECT FOUND: Lecture V anchors note 16 as "[14]", so note 14
+was inlined twice and note 16 (which names the unnamed oxygen test gas)
+never appeared. prep.py's SOURCE_FIXES corrects it and raises SystemExit
+if the misprint ever vanishes from the source. Mechanical checks CANNOT
+catch this class of bug — a correctly-formatted note on the wrong
+sentence passes ratio and figure-parity. Read the notes in context.
+VOICE: warmer than Boys — "my boys and girls", "I claim the privilege
+of speaking to young people as a young person myself", constant
+self-interruption to admire something. Keep the stage directions in
+square brackets where they fall. NOMENCLATURE IS LOAD-BEARING: he
+reasons with "carbonic acid" and "carbonic oxide", so keep his term
+primary and gloss the modern name exactly once (carbon dioxide, carbon
+monoxide, aqua regia, hydrochloric, ethanol). Keep every number as
+printed; two garbled ASCII tables (the 1:8 water diagram, the
+atmosphere's bulk/weight analysis) were rebuilt as indented blocks, and
+the water diagram MOVED UP to the sentence that references it.
+Cover: Blaikley's painting of Faraday's own 1855 Christmas Lecture,
+Commons "Professor Faraday lecturing at the Royal Institution, 27th
+December, 1855 RIIC 0006 20110213 BAL EP.jpg", crop "1847x2771+1500+86"
+(a 2:3 slice out of a landscape painting, centred on Faraday at the
+bench).

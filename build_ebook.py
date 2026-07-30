@@ -159,6 +159,11 @@ ASTERISM = re.compile(r"^(\*+( \*+)*|-{2,})$")
 ERA = re.compile(r"\b([AB])\.([DC])\.")
 
 
+# set from env in main(); render_block() is reached through several layers of
+# generic rendering code, so the book's figure directory rides in a cell
+FIGURE_DIR = [None]
+
+
 def render_figure(s):
     """A "[Figure N: caption]" block, for illustrated books (FIGURE_DIR in
     env). Plates live in the draft at src/epub/images/, so text/*.xhtml
@@ -167,13 +172,15 @@ def render_figure(s):
     m = assemble.FIGURE.match(s)
     num = m.group(1)
     caption = " ".join(m.group(2).split()) if m.group(2) else None
-    name = "front.jpg" if num == "front" else f"fig{num}.jpg"
+    name = assemble.figure_name(ROOT / "site", FIGURE_DIR[0] or "", num)
     label = "Frontispiece" if num == "front" else f"Figure {num}"
     alt = caption or label
     if alt[-1] not in ".!?":       # se lint t-026 wants alt text punctuated
         alt += "."
+    # alt is an ATTRIBUTE: quotes must be escaped too, or a caption that
+    # names something in quotation marks produces unparseable XHTML
     out = [f'\t\t\t<figure id="fig-{num}">',
-           f'\t\t\t\t<img alt="{esc(alt)}" src="../images/{name}"/>']
+           f'\t\t\t\t<img alt="{html.escape(alt, quote=True)}" src="../images/{name}"/>']
     if caption:
         out.append("\t\t\t\t<figcaption>\n"
                    f"\t\t\t\t\t<p><b>{label}</b>—{esc(caption)}</p>\n"
@@ -192,9 +199,10 @@ def copy_figures(book, env, dest):
     images = dest / "src/epub/images"
     images.mkdir(parents=True, exist_ok=True)
     n = 0
-    for f in sorted(src.glob("*.jpg")):
-        shutil.copy(f, images / f.name)
-        n += 1
+    for f in sorted(src.iterdir()):
+        if f.suffix.lstrip(".").lower() in assemble.FIG_EXTS:
+            shutil.copy(f, images / f.name)
+            n += 1
     print(f"copied {n} figures from {src}")
     return n
 
@@ -429,6 +437,7 @@ def main():
     env = assemble.read_env(book / "env")
     all_meta = json.loads((ROOT / "ebook_meta.json").read_text())
     meta = all_meta[book.name]
+    FIGURE_DIR[0] = env.get("FIGURE_DIR")
 
     author, work = env["AUTHOR"], env["ORIGINAL_WORK"]
     slug = f"{slugify(author)}_{slugify(work)}"

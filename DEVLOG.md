@@ -1,5 +1,61 @@
 # DEVLOG
 
+## 2026-07-30 (Faraday's Candle — book 1 of the Christmas Lectures five)
+
+Alex asked for five Royal Institution Christmas Lecture volumes:
+Faraday's *Chemical History of a Candle* and *On the Various Forces of
+Nature*, Fleming's *Waves and Ripples*, Ball's *Star-land*, and
+Thompson's *Light Visible and Invisible*. ~360k words in all. Deploying
+one complete book at a time; this is the first.
+
+- `candle/` — 15 files, ~41k modern words, ratio 0.99, epub lint clean.
+  Crookes's preface, the six lectures, and the Lecture on Platinum that
+  the 1861 edition appends.
+- **Sourcing was scouted for all five up front**, which was worth doing:
+  Gutenberg's Candle transcription keeps all 38 illustration *captions*
+  and none of the woodcuts — its `-h.zip` holds one image, the cover.
+  The plates turned out to be on Wikisource/Commons, so the Candle uses
+  a two-source prep: text from Gutenberg, figures from Commons. Their
+  naming is inconsistent in a way that would have silently dropped three
+  plates (`Figure01` vs `Figure 36`, because Platinum is a separate
+  Wikisource page). Forces of Nature, Fleming and Ball all ship their
+  plates inside the Gutenberg zip; Thompson has no extracted plates
+  anywhere and needs ~130 crops off page scans — Alex chose to do them.
+- Commons served the plates as **PNG line art**, so the figure pipeline
+  built for Boys needed generalizing: both renderers now resolve a
+  plate's extension rather than assuming `.jpg`, and `image_size()`
+  reads PNG's IHDR alongside JPEG's SOF. Confirmed byte-identical output
+  for soap-bubbles afterwards. `se lint` then rejected four PNGs for
+  having no transparency (f-019); converting just those to JPEG fixed it
+  with no other change, which is exactly what the extension resolver was
+  for.
+- **Crookes's 19 notes.** I first concluded they had no anchors in the
+  body and could be dropped — that was wrong, from a byte-range bug in
+  my own check, and would have shipped 19 dangling `[n]` markers. They
+  are anchored 18 times. Each note is now cut loose from its meaningless
+  "Page 186." heading and inlined as an `Editor's note:` paragraph after
+  the paragraph citing it. Better than either original option, and no
+  footnote machinery needed.
+- **A real defect in the source**: Lecture V anchors note 16 as `[14]`,
+  so note 14 was inlined a second time in a passage about testing for
+  oxygen, and note 16 never appeared at all — the note that identifies
+  the "test gas" Faraday demonstrates but never names. `prep.py` carries
+  a `SOURCE_FIXES` entry that raises if the misprint ever disappears.
+  Worth recording that ratio and figure-parity checks were green
+  throughout: a correctly-formatted note attached to the wrong sentence
+  is invisible to them.
+- Also fixed, in shared code: `build_ebook.py` wrote `alt` text without
+  escaping quotes, so a caption naming the "philosopher's candle"
+  produced unparseable XHTML. Any illustrated book would have hit it.
+- Two garbled ASCII tables (the 1:8 water diagram, the atmosphere's
+  bulk/weight analysis) rebuilt as indented blocks; the water diagram
+  moved up to the sentence that says "represented for us in the
+  following diagram", where the original typesetting had stranded it two
+  paragraphs later.
+- Cover: Blaikley's painting of Faraday's own 1855 Christmas Lecture — a
+  2:3 slice out of a landscape canvas, centred on Faraday at the bench
+  with the packed theatre behind him.
+
 ## 2026-07-30 (Boys' Soap Bubbles — the first illustrated book)
 
 C. V. Boys' *Soap Bubbles and the Forces Which Mould Them* — the 41st

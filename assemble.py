@@ -25,10 +25,11 @@ Conventions read from the chapter files themselves:
   - a paragraph with indented lines is preserved as <pre> (outlines/tables)
   - "[Figure N: caption]" on its own becomes <figure><img><figcaption>, for
     illustrated books that set FIGURE_DIR in env (e.g. images/soap-bubbles);
-    the image is <FIGURE_DIR>/figN.jpg relative to site/. Intrinsic width
-    and height are read from the JPEG so narrow plates are not stretched
-    and the page does not reflow as images load. The caption may be
-    omitted ("[Figure 39b]") for scale bars and continuation plates.
+    the image is <FIGURE_DIR>/figN.<ext> relative to site/, with any of
+    jpg/png/gif. Intrinsic width and height are read from the file so
+    narrow plates are not stretched and the page does not reflow as images
+    load. The caption may be omitted ("[Figure 39b]") for scale bars and
+    continuation plates.
 
 The page shell comes from site/template.html.
 """
@@ -75,12 +76,27 @@ HR_LINE = re.compile(r"\*+( \*+)*|-{2,}")
 FIGURE = re.compile(r"^\[Figure ([A-Za-z0-9]+)(?::\s*(.+?))?\]$", re.S)
 
 
-def jpeg_size(path):
-    """(width, height) from a JPEG's first SOF marker, or None."""
+FIG_EXTS = ("jpg", "jpeg", "png", "gif")
+
+
+def figure_name(site, figdir, num):
+    """Plate filename for figure `num`, whatever extension it was saved as
+    (photographic plates arrive as JPEG, line-art woodcuts as PNG)."""
+    stem = "front" if num == "front" else f"fig{num}"
+    for ext in FIG_EXTS:
+        if (site / figdir / f"{stem}.{ext}").exists():
+            return f"{stem}.{ext}"
+    return f"{stem}.jpg"
+
+
+def image_size(path):
+    """(width, height) for a JPEG or PNG, or None."""
     try:
         data = path.read_bytes()
     except OSError:
         return None
+    if data[:8] == b"\x89PNG\r\n\x1a\n":
+        return struct.unpack(">II", data[16:24])
     i = 2
     while i + 9 < len(data):
         if data[i] != 0xFF:
@@ -101,10 +117,9 @@ def render_figure(num, caption, figdir, site):
     """<figure> for a [Figure N: caption] paragraph. `num` names the file
     (fig12.jpg), except "front" which is the frontispiece plate."""
     caption = " ".join(caption.split()) if caption else None
-    name = "front.jpg" if num == "front" else f"fig{num}.jpg"
-    src = f"{figdir}/{name}"
+    src = f"{figdir}/{figure_name(site, figdir, num)}"
     label = "Frontispiece" if num == "front" else f"Figure {num}"
-    dims = jpeg_size(site / src)
+    dims = image_size(site / src)
     size = f' width="{dims[0]}" height="{dims[1]}"' if dims else ""
     alt = html.escape(caption or label, quote=True)
     out = [f'<figure id="fig-{num}">',

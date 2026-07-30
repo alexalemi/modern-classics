@@ -1,0 +1,167 @@
+TEXT ANALYSIS — Michael Faraday, The Chemical History of a Candle (1861)
+Source: Project Gutenberg #14474 (Crookes's edition), figures from Commons
+
+WHAT THIS IS
+
+Six lectures given to a juvenile audience at the Royal Institution over
+Christmas 1860-61, taken down and edited by William Crookes. Faraday was
+sixty-nine and near the end of his working life; this was the last
+Christmas course he gave, and it is the most famous single course of
+popular science lectures ever delivered. This edition also carries the
+separate Lecture on Platinum (Royal Institution, 22 February 1861).
+
+The conceit is total and never dropped: everything in chemistry is
+reached by asking what is happening in a burning candle. Where the candle
+gets its fuel (capillary action), why the flame has that shape (convection),
+why it is bright (solid carbon particles glowing), what it consumes
+(oxygen), what it produces (water and carbonic acid), and finally that
+you yourself are a slow candle (respiration). The argument closes the
+loop: the breath you exhale is the same product as the flame's.
+
+This is the second book in the collection from the Royal Institution
+Christmas Lecture tradition, after Boys' Soap Bubbles. Read
+soap-bubbles/text_analysis.txt first — the register is closely related
+and many decisions carry straight over.
+
+STYLE AND TONE — WHERE FARADAY DIFFERS FROM BOYS
+
+Both are live demonstration in the continuous present, and everything in
+the Boys analysis about keeping the reader in the lecture theatre applies
+here without change. The differences that matter:
+
+  - Faraday is WARMER and more personal. He addresses "my boys" and "my
+    friends", apologises for enthusiasm, and says things like "I must
+    take the liberty" and "you will be pleased, I am sure". Boys is dry;
+    Faraday is affectionate. Do not sand this off into neutrality.
+  - He is more DIGRESSIVE and self-interrupting: he will stop mid-
+    experiment to admire something, or to tell you that a point is
+    beautiful. Keep the digressions and keep the admiration — the sense
+    of a man delighted by his own subject is the whole reason the book
+    survived.
+  - He BUILDS BY QUESTION, harder than Boys does: "What is that flame?
+    Why does it burn? Where does the wax go?" Sometimes several in a row.
+    Preserve the interrogative sequences intact; do not collapse three
+    questions into one.
+  - Stage directions appear in brackets in the source, e.g. "[touching
+    the gun-cotton with the hot iron]", "[Here the lecturer...]". KEEP
+    THEM, in square brackets, in the same place. They are the record of
+    the performance and they are often the funniest thing on the page.
+  - He is a working-class self-taught bookbinder's apprentice who became
+    the greatest experimentalist in Europe, and he never once condescends
+    to the children. Match that: never simplify a result, only the syntax.
+
+THE CENTRAL PROBLEM: OBSOLETE CHEMICAL NOMENCLATURE
+
+This is the book's real translation difficulty, and it needs a consistent
+policy because the names are load-bearing — Faraday reasons *with* them.
+
+POLICY: keep Faraday's term as the primary word, gloss the modern
+equivalent ONCE on first use, then continue with his term. The reader
+should finish the book able to read other Victorian chemistry, not
+holding a silent modernization. Locked mappings:
+
+  carbonic acid        -> keep; gloss once as carbon dioxide
+  carbonic oxide       -> keep; gloss once as carbon monoxide
+  oxygen, hydrogen, nitrogen, carbon        -> unchanged, he is correct
+  azote                -> nitrogen (he uses both; standardise on nitrogen
+                          and note the older name once if it appears)
+  muriatic acid        -> keep; gloss once as hydrochloric acid
+  oil of vitriol       -> keep; gloss once as sulphuric acid
+  caustic potash / potassa -> keep; gloss once as potassium hydroxide
+  lime, quicklime, litharge, minium        -> keep as written
+  spirits of wine      -> keep; gloss once as ethanol
+  ether                -> keep (diethyl ether), as in soap-bubbles
+  naphtha, camphine, spermaceti, stearin, tallow, paraffine
+                       -> keep; these are the candle materials themselves
+                          and the differences between them are the subject
+                          of Lecture I. "paraffine" -> "paraffin".
+  gun-cotton           -> guncotton (matches journey-center-earth)
+  voltaic battery      -> keep; gloss once as an electric battery
+  philosophy / natural philosophy -> "natural philosophy" kept where he
+                          means the discipline; "philosopher" in the sense
+                          of scientist -> "scientist", as in soap-bubbles
+  the lantern/lamp     -> as in soap-bubbles: gloss the projector once
+
+UNITS: keep his (grains, cubic inches, feet, pints). Do not convert.
+His arithmetic is exact and often the point of a passage.
+
+SCIENCE: WHAT TO LEAVE ALONE
+
+Faraday's chemistry is essentially all correct and needs no defending.
+Two things to leave exactly as he has them, following the Verne rule:
+  - His account of luminosity — that a flame is bright because solid
+    particles of carbon are heated to glowing within it — is right, and
+    is the intellectual centre of Lecture II. Do not "improve" it with
+    modern combustion vocabulary.
+  - Where his numbers are period measurements (the weight of a cubic foot
+    of air, the amount of carbon a person exhales per day), reproduce them
+    as written. They are close to right and they are his.
+
+FIGURES
+
+38 plates, carried as markers exactly as in soap-bubbles:
+  source:  [Figure 12]
+  modern:  [Figure 12: one descriptive sentence]
+
+The 1861 edition gives no captions at all beyond "Fig. 12.", so the
+captions are new writing, drawn from the adjacent prose — the same rule,
+and the same biggest-single-improvement, as in Boys. Most of these plates
+are simple line woodcuts of apparatus: a jar, a tube, a candle under a
+glass. Say what the apparatus is and what it is doing. In-sentence
+references stay, modernized to "(Figure 12)".
+
+CROOKES'S NOTES
+
+The editor's 19 explanatory notes sat in a block at the back of the 1861
+book, anchored by "[7]"-style markers. prep.py has cut them loose from
+their print-page headings and inlined each one as its own paragraph,
+directly after the paragraph that cited it:
+
+    Editor's note: <text>
+
+Translate them like everything else, but keep them in CROOKES'S register,
+not Faraday's — they are drier, third-person, and technical ("The fat or
+tallow consists of a chemical combination of fatty acids with
+glycerine"). They must never sound like the lecturer talking. Keep the
+"Editor's note: " prefix exactly, and keep each ending in a period: a
+short unpunctuated line with majority-capitalised words is read as a
+heading by assemble.py.
+
+Several notes are more chemically precise than the lecture (note 2 gives
+the full stearin saponification; note 4 defines capillary attraction).
+That is their value — do not compress them.
+
+SENSITIVE / DATED CONTENT
+
+Very little. Note only:
+  - The lectures were given to a mixed juvenile audience but Faraday
+    sometimes says "my boys". Keep his address as written; it is a
+    historical document and the warmth is the point.
+  - Lecture VI ends on respiration and touches on death and the body's
+    slow burning. It is gentle and should stay gentle.
+  - The Platinum lecture describes industrial processes with lead and
+    mercury fumes. No annotation policy here — unlike Boys, this book has
+    no "try it at home" appendix, so there is nothing a reader will
+    attempt. Leave the processes as described.
+
+FAMOUS PASSAGES (also in must_contain.txt)
+
+  1. The thesis, Lecture I: there is no better, no more open door into
+     the study of natural philosophy than the physical phenomena of a
+     candle. Keep near-verbatim.
+  2. Lecture I on the wick and capillary action, and the observation that
+     the candle's beauty is that it feeds itself.
+  3. The closing of Lecture VI — the most quoted passage in popular
+     science, and Faraday's farewell to lecturing: the wish that his
+     hearers may "be fit to compare to a candle", may "shine as lights to
+     those about you", and may "justify the beauty of the taper" by
+     making their deeds "honourable and effectual in the discharge of
+     your duty to your fellow-men." This must survive essentially word
+     for word. Modernize nothing here but the lightest connective tissue.
+
+RATIO
+
+English -> English modernization of spoken Victorian lecture prose, same
+as soap-bubbles (which landed 1.02). Run:
+
+  python3 verify.py candle --min-ratio 0.85 --max-ratio 1.3
