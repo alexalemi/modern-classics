@@ -107,11 +107,17 @@ def _content_opf(dest, env, meta):
     if not meta.get("author_wiki"):
         t = re.sub(r'\t*<link href="[^"]*" refines="#author" rel="schema:sameAs"/>\n', "", t)
 
-    # author also wrote the book's dedication/preface
+    # author also wrote the book's dedication/preface. Each role is added only
+    # if absent: the draft in build/ebooks is reused across rebuilds, so a
+    # blind insert duplicates the role and trips se lint m-087 (relators out
+    # of alphabetical order) the second time a book is built.
+    def has_role(code, refines):
+        return f'refines="#{refines}" scheme="marc:relators">{code}<' in t
+
     roles = ""
-    if meta.get("_has_dedication"):
+    if meta.get("_has_dedication") and not has_role("dto", "author"):
         roles += '\n\t\t<meta property="role" refines="#author" scheme="marc:relators">dto</meta>'
-    if meta.get("_has_preface"):
+    if meta.get("_has_preface") and not has_role("wpr", "author"):
         roles += '\n\t\t<meta property="role" refines="#author" scheme="marc:relators">wpr</meta>'
     if roles:
         t = t.replace('<meta property="role" refines="#author" scheme="marc:relators">aut</meta>',
@@ -144,10 +150,21 @@ def _content_opf(dest, env, meta):
                   '<meta property="file-as" refines="#producer-1">Alemi, Alex</meta>')
     t = t.replace('<link href="PRODUCER_URL" refines="#producer-1" rel="schema:url"/>\n\t\t', "")
 
-    # the retelling itself is a new work: credit the modernizer as translator
-    t = t.replace('<meta property="role" refines="#producer-1" scheme="marc:relators">tyg</meta>',
-                  '<meta property="role" refines="#producer-1" scheme="marc:relators">trl</meta>\n'
-                  '\t\t<meta property="role" refines="#producer-1" scheme="marc:relators">tyg</meta>')
+    # the retelling itself is a new work: credit the modernizer as translator.
+    # An illustrated book also needs a "writer of alt text" credit, or se lint
+    # rejects it with m-040 — the figure captions and alt text are written
+    # here too. Roles stay in alphabetical order (trl, tyg, wat).
+    extra = ('\n\t\t<meta property="role" refines="#producer-1" scheme="marc:relators">wat</meta>'
+             if env.get("FIGURE_DIR") and not has_role("wat", "producer-1") else "")
+    if not has_role("trl", "producer-1"):
+        t = t.replace('<meta property="role" refines="#producer-1" scheme="marc:relators">tyg</meta>',
+                      '<meta property="role" refines="#producer-1" scheme="marc:relators">trl</meta>\n'
+                      '\t\t<meta property="role" refines="#producer-1" scheme="marc:relators">tyg</meta>'
+                      + extra)
+    elif extra:
+        t = t.replace('<meta property="role" refines="#producer-1" scheme="marc:relators">tyg</meta>',
+                      '<meta property="role" refines="#producer-1" scheme="marc:relators">tyg</meta>'
+                      + extra)
 
     # wikipedia page for the work (create-draft leaves EBOOK_WIKI_URL when it
     # can't find the title on Wikipedia)

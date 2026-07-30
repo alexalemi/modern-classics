@@ -23,6 +23,12 @@ Conventions read from the chapter files themselves:
   - "(Part n of k)" marker lines and "Part X: ..." divider lines are stripped
   - a short title-case line with no terminal punctuation = subheading (h4)
   - a paragraph with indented lines is preserved as <pre> (outlines/tables)
+  - "[Figure N: caption]" on its own becomes <figure><img><figcaption>, for
+    illustrated books that set FIGURE_DIR in env (e.g. images/soap-bubbles);
+    the image is <FIGURE_DIR>/figN.jpg relative to site/. Intrinsic width
+    and height are read from the JPEG so narrow plates are not stretched
+    and the page does not reflow as images load. The caption may be
+    omitted ("[Figure 39b]") for scale bars and continuation plates.
 
 The page shell comes from site/template.html.
 """
@@ -31,6 +37,7 @@ import argparse
 import html
 import json
 import re
+import struct
 import sys
 from pathlib import Path
 
@@ -65,6 +72,48 @@ def is_subheading(par):
 
 SPEAKER_NAME = re.compile(r"[A-Z][A-Za-z .'’-]{0,30}")
 HR_LINE = re.compile(r"\*+( \*+)*|-{2,}")
+FIGURE = re.compile(r"^\[Figure ([A-Za-z0-9]+)(?::\s*(.+?))?\]$", re.S)
+
+
+def jpeg_size(path):
+    """(width, height) from a JPEG's first SOF marker, or None."""
+    try:
+        data = path.read_bytes()
+    except OSError:
+        return None
+    i = 2
+    while i + 9 < len(data):
+        if data[i] != 0xFF:
+            i += 1
+            continue
+        marker = data[i + 1]
+        if marker in (0xC0, 0xC1, 0xC2, 0xC3):
+            h, w = struct.unpack(">HH", data[i + 5:i + 9])
+            return w, h
+        if marker == 0xD8 or 0xD0 <= marker <= 0xD9:
+            i += 2
+        else:
+            i += 2 + struct.unpack(">H", data[i + 2:i + 4])[0]
+    return None
+
+
+def render_figure(num, caption, figdir, site):
+    """<figure> for a [Figure N: caption] paragraph. `num` names the file
+    (fig12.jpg), except "front" which is the frontispiece plate."""
+    caption = " ".join(caption.split()) if caption else None
+    name = "front.jpg" if num == "front" else f"fig{num}.jpg"
+    src = f"{figdir}/{name}"
+    label = "Frontispiece" if num == "front" else f"Figure {num}"
+    dims = jpeg_size(site / src)
+    size = f' width="{dims[0]}" height="{dims[1]}"' if dims else ""
+    alt = html.escape(caption or label, quote=True)
+    out = [f'<figure id="fig-{num}">',
+           f'<img src="{src}" alt="{alt}"{size}>']
+    if caption:
+        out.append(f'<figcaption><b>{label}</b> &mdash; '
+                   f'{html.escape(caption)}</figcaption>')
+    out.append("</figure>")
+    return "\n".join(out)
 
 
 def find_speakers(pars):
@@ -80,14 +129,17 @@ def find_speakers(pars):
     return {name for name, n in counts.items() if n >= 3}
 
 
-def render_body(text):
+def render_body(text, figdir=None, site=None):
     pars = [p.rstrip() for p in re.split(r"\n\s*\n", text) if p.strip()]
     speakers = find_speakers(pars)
     out = []
     for par in pars:
         s = par.strip()
         lines = s.split("\n")
-        if HR_LINE.fullmatch(s):
+        fig = FIGURE.match(s) if figdir else None
+        if fig:
+            out.append(render_figure(fig.group(1), fig.group(2), figdir, site))
+        elif HR_LINE.fullmatch(s):
             out.append("<hr>")
         elif re.search(r"^[ \t]", par, re.M):
             out.append(f'<pre class="outline">{html.escape(par)}</pre>')
@@ -108,7 +160,11 @@ def render_body(text):
 
 def strip_front(lines, expect_heading):
     """Drop leading blanks, part dividers, the chapter heading, and part
-    markers; return (heading_found, remaining_text)."""
+    markers; return (heading_found, remaining_text).
+
+    Trims blank lines only, never the leading spaces of the first surviving
+    line: a chapter whose body opens with an indented block (verse, an
+    outline) must keep that indentation, which is what marks it as <pre>."""
     heading = None
     j = 0
     while j < len(lines):
@@ -120,7 +176,7 @@ def strip_front(lines, expect_heading):
             j += 1
         else:
             break
-    return heading, "\n".join(lines[j:]).strip()
+    return heading, "\n".join(lines[j:]).strip("\n").rstrip()
 
 
 def find_epub(book, root):
@@ -217,7 +273,7 @@ def build_toc(sections):
     return "\n".join(toc)
 
 
-def build_body(sections):
+def build_body(sections, figdir=None, site=None):
     out = []
     for s in sections:
         if s["part_before"]:
@@ -225,7 +281,7 @@ def build_body(sections):
             out.append(f'<h2 id="{pid}" class="center">{html.escape(s["part_before"])}</h2>')
         tag = "h3" if s["is_chapter"] else "h2"
         out.append(f'<{tag} id="{s["id"]}">{html.escape(s["heading"])}</{tag}>')
-        out.append(render_body(s["body"]))
+        out.append(render_body(s["body"], figdir, site))
     return "\n".join(out)
 
 
@@ -269,7 +325,7 @@ def main():
         "{{SOURCE_SENTENCE}}": source_sentence,
         "{{EPUB_SENTENCE}}": epub_sentence,
         "{{TOC}}": build_toc(sections),
-        "{{BODY}}": build_body(sections),
+        "{{BODY}}": build_body(sections, env.get("FIGURE_DIR"), root / "site"),
     }.items():
         page = page.replace(key, val)
 

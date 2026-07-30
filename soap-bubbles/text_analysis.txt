@@ -1,0 +1,293 @@
+TEXT ANALYSIS — C. V. Boys, Soap Bubbles and the Forces Which Mould Them (1890)
+Source: Project Gutenberg #33370 (1896 printing of the 1890 first edition)
+
+WHAT THIS IS
+
+Three lectures delivered in the theatre of the London Institution on the
+afternoons of December 30, 1889 and January 1 and 3, 1890, "before a
+juvenile audience." Charles Vernon Boys was Assistant Professor of Physics
+at the Royal College of Science, South Kensington — a superb experimentalist
+(he invented the quartz-fibre torsion balance and measured G with it) who
+was also, on this evidence, one of the great popular science lecturers.
+
+The subject is surface tension, though Boys almost never uses the phrase.
+His entire pedagogy rests on one metaphor introduced in the first ten
+minutes and never abandoned: the surface of a liquid behaves as if it were
+a perfectly elastic skin, stretched with a definite force, always trying to
+make itself as small as possible. Everything else — capillarity, the shape
+of drops, the instability of liquid cylinders, spider webs, singing
+fountains, bubbles nested inside bubbles — is derived from that one idea.
+
+This is the project's first ILLUSTRATED volume and its first work of
+popular science lecturing. Both facts shape the translation.
+
+STYLE AND TONE
+
+Boys is standing in front of a room of children with a bench full of
+apparatus, and the prose is a transcript of a performance:
+
+  - Continuous present tense of live demonstration: "I am now dipping it
+    in the water, as you can see, and on taking it out, the hairs, as we
+    expected, cling together." This is the book's heartbeat. KEEP IT. Do
+    not convert demonstrations into the timeless present of a textbook
+    ("when a brush is dipped in water, the hairs cling"). The reader must
+    stay in the lecture theatre watching a man do things.
+  - Direct address, constantly: "I want you to notice", "you may well ask",
+    "which you can try at home just as well as I can here", "I hope to make
+    this clear when we meet again."
+  - Socratic setup: he poses the question, invites a wrong guess, then
+    performs the experiment that settles it. Preserve the order — never
+    front-load the answer he is building to.
+  - Dry, affectionate humour, deadpan and never arch: the Etruscan vase
+    ("there is however, no means of telling now whose soap they used"); the
+    tilted candlestick ("you will know when this is the case, because then
+    the falling grease will just fall on the edge of the candlestick and
+    splash on to the carpet"); the paper water-bomb "called a cat-box,
+    because of its power of dispelling cats." Land these jokes; do not
+    explain them, amplify them, or add jokes of your own.
+  - Intellectual generosity: he credits Plateau, Rayleigh, Kelvin, Savart,
+    Maxwell, Chichester Bell, Rücker by name, and says plainly when
+    something is beyond the lecture ("why I cannot now explain", "it would
+    take too long to explain"). Keep every one of these admissions — the
+    honesty about the limits of a children's lecture is part of the voice.
+
+The register to aim for: a brilliant teacher talking to a smart
+fourteen-year-old, in short clear modern sentences, with nothing talked
+down to and nothing dumbed out.
+
+THE CENTRAL TRANSLATION PROBLEM: LONG PERIODIC SENTENCES
+
+Boys' sentences are Victorian-long, with the argument carried in stacked
+subordinate clauses. His logic is exact and the clauses are load-bearing, so
+they cannot be dropped — they must be unstacked into sequenced short
+sentences without losing a single step. Example (Lecture I, capillarity):
+
+  ORIGINAL: "It will not even pull it up as high as it did in the case of
+  the smaller tube, because if it were pulled up as high the weight of the
+  water raised would in that case be four times as great, and not only
+  twice as great, as you might at first think."
+
+  MODERN: "It will not even lift the water as high as the narrow tube did.
+  Suppose it were lifted that high: the weight of raised water would then
+  be four times as great, not merely twice as great, which is what you
+  might guess at first."
+
+That is the whole job, three hundred times over. Watch especially for:
+  - "the more so as the spaces were narrower" — comparative constructions
+    that need rebuilding as explicit statements
+  - chains of "which ... which ... and so" — split at every "and so"
+  - "It is for this reason that..." — usually better as "That is why..."
+
+DO NOT SIMPLIFY THE PHYSICS TO SHORTEN A SENTENCE. Boys' reasoning about
+pressure and curvature (Lecture II) is genuinely subtle and completely
+correct; every "half", "twice", "four and a half diameters" and "three and
+one-seventh" must survive exactly as written.
+
+FIGURES
+
+69 numbered figures plus a frontispiece, carried as markers:
+
+  source:  [Figure 22]
+  modern:  [Figure 22: one line of caption, written by the translation]
+
+Rules:
+  - Every marker in the source file must appear in the modern file, in the
+    same order and the same position relative to the surrounding prose.
+    verify.py enforces this.
+  - The ORIGINAL has no captions at all — just "Fig. 22." under each plate.
+    Write a fresh one-sentence caption for each, drawn from what the
+    adjacent prose says the plate shows. This is the single biggest
+    improvement the modern edition makes: a reader can now understand a
+    plate without hunting the paragraph that explains it.
+  - Captions are descriptive, not interpretive: say what is in the picture
+    and what it demonstrates. No exclamation, no editorial.
+  - [Figure 39b] is NOT a figure — it is the scale bar ("thousandths of an
+    inch") belonging to Fig. 39's photomicrograph of spider-web beads.
+    Leave it caption-less; assemble.py renders a caption-less figure as a
+    bare image, which is correct for a scale.
+  - [Figure front] is the frontispiece: the stroboscopic photograph of a
+    fountain's drops apparently frozen in mid-air. Boys' own caption
+    survives in the marker; rewrite it as modern English and drop his
+    "(See page 109.)" — replace with a pointer to Lecture Three.
+  - Boys refers to plates INSIDE his sentences ("as the photograph taken
+    with a microscope beautifully shows (Fig. 39)"). Keep those references,
+    modernized to "(Figure 39)". They are how the lecture and the plate are
+    stitched together.
+  - Fig. 35 (the thaumatrope: 43 successive photographs of a falling drop)
+    was a fold-out at the END of the 1890 book, reached via a marginal note.
+    prep.py has moved it inline to the point where it is discussed. Boys'
+    cross-references to it ("For the use to which this figure is to be put,
+    see page 149") become pointers to the Practical Hints section, where he
+    explains how to cut it out and spin it.
+
+VOCABULARY — LOCKED MAPPINGS
+
+Keep (they are the content, and Boys defines each one himself):
+  elastic skin, surface tension, capillarity, catenoid, nodoid, cylinder,
+  sphere, hyperbola, parabola, ellipse, conic section, focus, figure of
+  revolution, surface of no curvature, screw surface, thaumatrope
+
+  - "elastic skin" is Boys' governing metaphor and must never be replaced
+    by "surface tension" as a matter of routine. Introduce "surface
+    tension" ONCE, in Lecture I, as the modern name for what he is
+    describing, then let him go on saying "elastic skin" exactly as he does.
+  - capillus / catena: Boys gives the Latin etymologies himself. Keep both.
+
+Modernize, once, then use the modern word throughout:
+  india-rubber            -> rubber
+  quicksilver             -> mercury
+  bisulphide of carbon    -> carbon disulfide (Boys' own "bad-smelling and
+                             dangerous" stays — it is both)
+  fluorescine / uranine   -> fluorescein
+  benzine                 -> benzine (a petroleum solvent — gloss on first
+                             use; it is not modern benzene, do not "correct")
+  lycopodium              -> lycopodium powder (club-moss spores)
+  ox-gall                 -> ox gall
+  water-butt              -> rain barrel
+  tooth-wheel             -> toothed wheel
+  nob (of a watch)        -> button
+  gutta-percha            -> gutta-percha (gloss: a hard natural latex)
+  the lantern             -> the projector, glossed ONCE on first use as
+                             "the lantern — the projector at the front of
+                             the room"; thereafter "the projector" or "the
+                             lantern" as reads best. "The screen" stays.
+  juveniles               -> young people (in the Preface)
+  philosophers (Newton's) -> scientists
+
+Keep as written, with a brief gloss on first use:
+  coal-gas — the piped town gas of 1890, lighter than air. Boys uses it to
+    make bubbles that rise. Gloss once; a modern reader would use helium,
+    and the Practical Hints annotation may say so, but the lecture text
+    keeps coal gas.
+  ether — diethyl ether. Keep. Boys already flags it as inflammable.
+  grains to the inch — his measurement of surface tension, "three and a
+    quarter grains to the inch." Keep the figure; gloss "grain" once as an
+    old unit of weight, about 65 milligrams.
+  a drop as large as a shilling — keep the shilling; add "about the size of
+    a modern coin" only if the sentence needs it. Do not convert to
+    millimetres.
+
+PEOPLE — gloss briefly on first mention, never more:
+  Plateau — Joseph Plateau, the Belgian physicist, who went blind and went
+    on experimenting (Boys calls him "the blind experimentalist" — keep it;
+    it is said with admiration)
+  Sir W. Thomson / Sir William Thomson — add "(Lord Kelvin)" once
+  Lord Rayleigh, Savart, Clerk Maxwell, Prof. Rücker (Boys prints "Rucker"
+    — restore the umlaut), Mr. Bidwell — name only, no biography
+  Mr. Chichester Bell, "cousin of Mr. Graham Bell, the inventor of the
+    telephone" — Boys' own gloss, keep it
+  Millais — the painter of "Bubbles" (1886), the picture "thanks to modern
+    advertising enterprise" that everyone had seen because Pears used it on
+    soap advertisements. Boys assumes his audience knows it; a modern reader
+    does not, so name the painting and say in a clause that it was famous
+    from soap advertising. This is exactly the "brief contextual
+    explanation" the project's philosophy calls for.
+
+QUOTATIONS THAT MUST SURVIVE VERBATIM
+
+  - The two stanzas of Edward Lear's "The Jumblies" ("They went to sea in a
+    sieve, they did..."). Quoted poetry is NEVER modernized. Boys does not
+    name Lear; naming him in a half-clause is a legitimate courtesy.
+  - Proverbs 23:31, King James: "Look not thou upon the wine when it is
+    red, when it giveth his colour in the cup, when it moveth itself
+    aright." Verbatim, KJV, including "his colour". Boys' argument depends
+    on the exact wording of "moveth itself aright" — he is claiming the
+    verse describes the tears-of-wine effect, which is a genuinely good
+    reading. Keep his reasoning intact, including the wider point he draws
+    from it about passages whose meaning is lost because the everyday
+    knowledge behind them is lost.
+
+FAMOUS PASSAGES (also listed in must_contain.txt)
+
+  1. The manifesto on experiment, Lecture I — the best-known thing in the
+     book and one of the great statements of the scientific method for
+     children: "An experiment is a question which we ask of Nature, who is
+     always ready to give a correct answer, provided we ask properly, that
+     is, provided we arrange a proper experiment." Keep near-verbatim. The
+     surrounding sentences ("An experiment is not a conjuring trick...")
+     may be modernized, but that sentence stands.
+  2. The opening: everyone in the room has blown a soap bubble and wondered
+     how such a magnificent thing is so easily made.
+  3. "capillus, a hair" and "catena is the Latin for a chain."
+  4. The frozen fountain: the drops "strung like pearls or beads of silver
+     upon an invisible wire."
+  5. The closing paragraph, Lecture III: has wonder been destroyed by
+     explanation, or increased? — ending on actions "not so trivial as to
+     be unworthy of the attention of ordinary people like ourselves."
+     Boys' last words. Keep the shape and the modesty exactly.
+
+SCIENCE: WHAT TO LEAVE ALONE
+
+Boys is right about essentially everything, which is remarkable for 1890.
+Follow the Verne rule — keep the science as written, make no silent
+corrections:
+  - Rayleigh's numbers on jet instability, drop vibration rates, and the
+    3.14-diameter (length = circumference) stability limit of a liquid
+    cylinder are all correct. Reproduce them exactly.
+  - The claim that thunderstorm raindrops are large because atmospheric
+    electricity makes colliding drops coalesce is Rayleigh's, and Boys
+    attributes it. It is not the modern account of raindrop size. Keep it
+    as his claim, unhedged — a footnote-style correction would break the
+    lecture. The reader is reading 1890.
+  - "There can never be more than three films meeting in an edge, or more
+    than four edges, or six films, meeting in a point" — Plateau's laws,
+    still exactly right (proved by Taylor in 1976).
+  - Where Boys says he cannot explain something in a children's lecture
+    ("why I cannot now explain"), do not supply the explanation.
+
+SENSITIVE / DATED CONTENT
+
+There is very little, and none of it is grave. Handle as follows:
+  - The "cat-box" is a folded-newspaper water bomb, and Boys' joke is that
+    it is good for driving cats off. Render the joke as he tells it, in one
+    clause, without embroidery and without a disclaimer. It is a Victorian
+    child throwing water.
+  - "Juvenile audience" / "juveniles": Boys is warm, never condescending;
+    "young people" carries it.
+  - The Practical Hints have children handling ether, carbon disulfide,
+    benzine, molten paraffin wax, and blown glass over a flame. See below.
+  - Boys says "he or she should skip the next pages" in a footnote, in
+    1890, unprompted. Keep that as written.
+
+PRACTICAL HINTS — THE ANNOTATION POLICY
+
+The appendix is a third of the book and the reason the lectures existed: he
+wants the reader to go and do it. Translate all of it, in full, keeping
+every dimension, material and quantity as given. Then, sparingly, add a
+bracketed modern note where a reader who actually tries the experiment
+needs one. Format, always exactly this, as its own sentence inside the
+paragraph or as a short paragraph after it:
+
+  [Modern note: ...]
+
+Use one only for these three reasons, and keep each to one or two sentences:
+  1. A material no longer obtainable or now called something else, where a
+     substitute is obvious: coal gas (helium), india-rubber sheet (a
+     balloon or dental dam), a "silvered ball used to ornament a
+     Christmas-tree" (a glass bulb of any kind).
+  2. A genuine hazard a reader might not recognise as one, because in 1890
+     nobody flagged it: carbon disulfide (highly flammable, seriously
+     toxic — this one gets a note), ether (extremely flammable, and its
+     vapour travels), melting paraffin wax over any flame, and Boys' own
+     glass-blowing instructions.
+  3. Boys' soap recipe. His mixture (oleate of soda, glycerine, distilled
+     water, left to stand for a week and decanted) is a real recipe worth
+     keeping verbatim, plus a note that modern dish detergent and glycerine
+     in water works and is what a reader will actually use.
+
+Do NOT annotate to explain physics he has already explained, to convert
+units, or to admire the experiment. Fewer than a dozen notes in the whole
+appendix. Where Boys is simply describing a workshop skill (soldering,
+sealing-wax, wire bending), leave him to it.
+
+RATIO
+
+English-to-English modernization: unstacking long sentences costs a few
+words, cutting Victorian throat-clearing ("I think then I have now done
+enough to show that...") saves them, and the two roughly cancel.
+Expect 0.95–1.15. Run:
+
+  python3 verify.py soap-bubbles --min-ratio 0.85 --max-ratio 1.3
+
+Figure markers are excluded from the word counts, so the captions written
+by the translation do not inflate the ratio.

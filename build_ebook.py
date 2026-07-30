@@ -139,8 +139,11 @@ def load_sections(book):
 
 
 def classify_block(par):
-    """paragraph | subhead | verse | lines"""
+    """figure | paragraph | subhead | verse | lines"""
     stripped = par.strip()
+    # must precede the subhead test: "[Figure 1]" looks like a subheading
+    if assemble.FIGURE.match(stripped):
+        return "figure"
     if re.search(r"^[ \t]", par, re.M):
         lines = [l.strip() for l in stripped.splitlines() if l.strip()]
         short = sum(1 for l in lines if len(l) < 65)
@@ -155,8 +158,50 @@ def classify_block(par):
 ASTERISM = re.compile(r"^(\*+( \*+)*|-{2,})$")
 ERA = re.compile(r"\b([AB])\.([DC])\.")
 
+
+def render_figure(s):
+    """A "[Figure N: caption]" block, for illustrated books (FIGURE_DIR in
+    env). Plates live in the draft at src/epub/images/, so text/*.xhtml
+    reaches them with ../images/. A caption-less marker (a scale bar, a
+    continuation plate) gets an img with no figcaption."""
+    m = assemble.FIGURE.match(s)
+    num = m.group(1)
+    caption = " ".join(m.group(2).split()) if m.group(2) else None
+    name = "front.jpg" if num == "front" else f"fig{num}.jpg"
+    label = "Frontispiece" if num == "front" else f"Figure {num}"
+    alt = caption or label
+    if alt[-1] not in ".!?":       # se lint t-026 wants alt text punctuated
+        alt += "."
+    out = [f'\t\t\t<figure id="fig-{num}">',
+           f'\t\t\t\t<img alt="{esc(alt)}" src="../images/{name}"/>']
+    if caption:
+        out.append("\t\t\t\t<figcaption>\n"
+                   f"\t\t\t\t\t<p><b>{label}</b>—{esc(caption)}</p>\n"
+                   "\t\t\t\t</figcaption>")
+    out.append("\t\t\t</figure>")
+    return "\n".join(out)
+
+
+def copy_figures(book, env, dest):
+    """Copy an illustrated book's plates into the draft. `se build-manifest`
+    picks them up from src/epub/images/ on its own."""
+    figdir = env.get("FIGURE_DIR")
+    if not figdir:
+        return 0
+    src = ROOT / "site" / figdir
+    images = dest / "src/epub/images"
+    images.mkdir(parents=True, exist_ok=True)
+    n = 0
+    for f in sorted(src.glob("*.jpg")):
+        shutil.copy(f, images / f.name)
+        n += 1
+    print(f"copied {n} figures from {src}")
+    return n
+
 def render_block(par, kind):
     s = par.strip()
+    if kind == "figure":
+        return render_figure(s)
     if ASTERISM.match(re.sub(r"\s+", " ", s)):
         return "\t\t\t<hr/>"
     if kind == "paragraph":
@@ -437,6 +482,7 @@ def main():
     meta["_has_preface"] = (textdir / "preface.xhtml").exists()
     rebrand.apply(dest, env, meta, spine)
     prepare_cover(dest, meta)
+    copy_figures(book, env, dest)
 
     for step in (["typogrify", "."], ["clean", "."], ["build-manifest", "."],
                  ["build-spine", "."], ["build-title", "."]):

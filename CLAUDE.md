@@ -285,3 +285,71 @@ translated directly by the orchestrator after hitting the 200-subagent
 session cap mid-book — the shared-ledger pattern kept the voice identical
 across the subagent/direct boundary. For a multi-book push, raise
 CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION at the start.
+
+C. V. Boys' Soap Bubbles and the Forces Which Mould Them
+(soap-bubbles/ — the 41st book; THE PROJECT'S FIRST ILLUSTRATED
+VOLUME and its first work of popular-science lecturing). Three 1889–90
+Christmas lectures on surface tension given to an audience of children;
+~29k words, from Gutenberg #33370. Verify --min-ratio 0.85 --max-ratio
+1.3 (landed 1.01 — EN→EN modernization runs ~1:1, since unstacking
+Victorian periodic sentences costs about what cutting the
+throat-clearing saves).
+
+THE ILLUSTRATED-BOOK PIPELINE (new, reusable — Vasari, Darwin's
+diagrams, any plate book):
+- Gutenberg's HTML edition carries the plates that the plain text drops;
+  they were copied wholesale to `site/images/{book}/figNN.jpg`.
+- Figures ride through the pipeline as PLAIN-TEXT MARKERS, so
+  chapters/ and modern_chapters/ stay text files: prep.py emits
+  `[Figure 22]`, the translation writes `[Figure 22: caption]`.
+- `env` gains `FIGURE_DIR=images/soap-bubbles`. assemble.py renders a
+  marker paragraph as `<figure><img><figcaption>`, reading intrinsic
+  width/height out of the JPEG (so a 66px-wide plate is not stretched
+  and the page does not reflow while loading). build_ebook.py does the
+  same into the SE draft and copies the plates to src/epub/images/,
+  where `se build-manifest` finds them by itself.
+- verify.py check 6: the set of figure markers in a modern file must
+  match its source file exactly, and markers are excluded from the word
+  counts so captions don't inflate the ratio. A silently dropped plate
+  is the illustrated analogue of silent summarization.
+- CAPTIONS ARE NEW WRITING. The 1890 original captions every plate
+  "Fig. 22." and nothing more; the modern edition writes a descriptive
+  one-liner for each from the adjacent prose. This is the single
+  biggest improvement over the original. Look at the plate before
+  captioning it — fig6 turned out to have two toy passengers and a sail
+  (Boys built Lear's Jumblies for real), and `fig39b` is not a figure at
+  all but the SCALE BAR belonging to Fig. 39, so it is emitted
+  caption-less right after it.
+- Boys' fold-out Fig. 35 (the thaumatrope) lived at the END of the 1890
+  book behind a marginal note; prep.py moves it inline to where it is
+  discussed, and the cross-references were rewritten to point at the
+  Practical Hints section instead of at page numbers.
+
+VOICE: live demonstration in the continuous present ("I am now dipping
+it in the water") — never convert his demonstrations into textbook
+statements; keep every "I want you to notice" and "you can try this at
+home". Keep "elastic skin" as the governing metaphor (introduce
+"surface tension" exactly once, in 001) and keep every number and ratio
+exactly (4½ diameters, 3 1/7 diameters, 3¼ grains to the inch). Keep
+the dated claims as HIS claims — the Rayleigh account of why
+thunderstorm raindrops are large is not the modern one, and gets no
+correction. Quoted verse (Lear's Jumblies, the Simple Simon couplet)
+and Proverbs 23:31 KJV stay verbatim.
+THE APPENDIX: "Practical Hints" is a third of the book — translate it
+whole; it is the DIY invitation the lectures existed for. Boys' recipes
+stay as written, with sparing `[Modern note: ...]` annotations (nine in
+all) for obsolete materials, his genuinely hazardous reagents (carbon
+disulfide, ether, mercury, molten wax — nobody flagged these in 1890),
+and a working modern bubble mixture. Its `_Italic Subheadings._` become
+plain title-case lines, which assemble.py renders as h4, and part
+splits are forced onto those boundaries so no recipe is cut in half.
+GOTCHA FIXED IN SHARED CODE: assemble.py's `strip_front` used to
+`.strip()` the body, which ate the leading indentation of a chapter's
+FIRST paragraph — so a file opening on verse or an outline lost its
+`<pre>`. Now trims blank lines only. This also made two chapter-summary
+blocks in democracy2 and the cast lists in dialogues render
+consistently with their siblings.
+ANOTHER GOTCHA: a bracketed aside like "(Note: For particulars see the
+Philosophical Magazine, September 1890.)" is read as a SUBHEADING —
+short, majority-capitalised, no terminal period after the bracket. End
+such notes with a plain period ("Note: ... 1890.").

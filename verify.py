@@ -15,6 +15,11 @@ Checks (exit code is nonzero if any fail):
      line must appear (case- and whitespace-insensitively) somewhere in
      the combined modern text. Use it for the famous passages listed in
      text_analysis.txt.
+  6. For illustrated books, the set of "[Figure N]" markers in a modern
+     file matches its source file exactly — a dropped plate is the
+     illustrated analogue of silent summarization. Figure markers are
+     excluded from the word counts, so captions written by the
+     translation do not inflate the prose ratio.
 """
 
 import argparse
@@ -25,10 +30,15 @@ from pathlib import Path
 
 PART_MARK = re.compile(r"^\(Part \d+ of \d+\)$", re.I)
 PART_DIVIDER = re.compile(r"^Part [IVXLC0-9]+: \S")
+FIGURE = re.compile(r"^\[Figure ([A-Za-z0-9]+)(?::[^\]]*)?\]$", re.M)
 
 
 def words(path):
-    return len(path.read_text().split())
+    return len(FIGURE.sub("", path.read_text()).split())
+
+
+def figures(path):
+    return [m.group(1) for m in FIGURE.finditer(path.read_text())]
 
 
 def normalize(text):
@@ -68,6 +78,15 @@ def main():
         ratio = m / o if o else 0
         if not (args.min_ratio <= ratio <= args.max_ratio):
             failures.append(f"RATIO: {fn} {ratio:.2f} ({o} -> {m} words)")
+
+        # 6: illustrated books — every plate survives, in order
+        fo, fm = figures(src), figures(out)
+        if fo != fm:
+            lost = [f for f in fo if f not in fm]
+            extra = [f for f in fm if f not in fo]
+            detail = (f"lost {lost}" if lost else "") + \
+                     (f" extra {extra}" if extra else "") or "reordered"
+            failures.append(f"FIGURES: {fn} {detail}")
 
     # 3 + 4: marker leakage and duplicate dividers
     divider_seen = {}

@@ -6,6 +6,15 @@ translations. Pipelines proven so far: Gutenberg/SE plain text,
 SE-XHTML, Wikisource-API, from-the-Latin, from-the-French.
 
 ## Recently shipped
+- **C. V. Boys — Soap Bubbles and the Forces Which Mould Them**
+  (1890; the project's FIRST ILLUSTRATED volume) — 13 files, ~32k
+  words, all 69 plates + frontispiece carried through to
+  site/soap-bubbles.html and into the index. The figure pipeline
+  (`FIGURE_DIR` in env, `[Figure N: caption]` markers, verify check 6)
+  is generic and now unblocks illustrated works in general — Hooke's
+  Micrographia, Faraday's Chemical History of a Candle (the other great
+  Christmas-lecture course), Vasari. Remaining: epub (needs a cover
+  choice), feeds, commit + push.
 - **Galileo — Dialogue Concerning the Two Chief World Systems**
   (Italian, 1632; the from-the-Italian pipeline's debut) — 55 files,
   ~194k words, assembled to site/galileo.html and added to the index.

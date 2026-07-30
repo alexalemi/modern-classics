@@ -1,5 +1,61 @@
 # DEVLOG
 
+## 2026-07-30 (Boys' Soap Bubbles — the first illustrated book)
+
+C. V. Boys' *Soap Bubbles and the Forces Which Mould Them* — the 41st
+book, the first illustrated one, and the first popular-science lecturing
+in the collection. Three Christmas lectures on surface tension given to
+a hall full of children over the New Year of 1889–90.
+
+- `soap-bubbles/` from Gutenberg #33370. 13 files, ~32k modern words,
+  ratio 1.01. Front matter + three lectures + the "Practical Hints"
+  appendix, which is a third of the book and got translated whole.
+- The interesting problem was not the prose, it was the **69 figures**.
+  The text makes ~150 references to them ("the apparatus in Fig. 22")
+  and is unreadable without them, but the plain-text edition drops
+  every plate. Gutenberg's HTML edition still has them, so all 70
+  images (69 + frontispiece) were pulled into
+  `site/images/soap-bubbles/`.
+- New generic capability across three tools: figures travel as
+  plain-text markers (`[Figure 22]` in, `[Figure 22: caption]` out) so
+  chapters/ stays text; `env` gains `FIGURE_DIR`; assemble.py renders
+  `<figure>` and reads intrinsic dimensions from the JPEG so narrow
+  plates aren't stretched; build_ebook.py does the same into the SE
+  draft; verify.py gained check 6, figure-set equality per file, with
+  markers excluded from the word counts.
+- **The captions are new writing.** Boys captioned every plate "Fig. 22."
+  and nothing else, so the modern edition writes a descriptive line for
+  each. Worth actually looking at the images first: fig6 turned out to
+  show two toy passengers and a sail on a tobacco-pipe mast — Boys had
+  built Lear's Jumblies for real — and `fig39b`, which has empty alt
+  text and no caption in the source, is not a figure at all but the
+  *scale bar* for Fig. 39's photomicrograph of spider-web beads. It is
+  now emitted caption-less directly beneath it.
+- Boys' fold-out Fig. 35 (43 photographs of a falling drop, to be cut
+  out and spun as a thaumatrope) sat at the very end of the 1890 book
+  behind a marginal note. prep.py moves it inline to where it's
+  discussed, and his "see page 149" cross-references were rewritten to
+  point at the Practical Hints.
+- Two bugs found by rendering the page and looking at it:
+  (1) `assemble.py`'s `strip_front` called `.strip()` on the body, which
+  ate the leading indentation of a chapter's *first* paragraph — so a
+  file opening on verse silently lost its `<pre>` and Lear came out as
+  one run-on line. Fixed to trim blank lines only; checked against all
+  39 other books, where it changes exactly two (democracy2's chapter
+  summaries and dialogues' cast lists, both now consistent with their
+  own siblings).
+  (2) A parenthetical footnote, "(Note: For particulars see the
+  Philosophical Magazine, September 1890.)", was rendered as an `<h4>` —
+  short, majority-capitalised, and no terminal period *outside* the
+  bracket. Such notes now end in a plain period.
+- The appendix has children handling ether, carbon disulfide, mercury
+  and molten wax, none of it flagged in 1890. Boys' recipes are kept
+  verbatim with nine sparing `[Modern note: ...]` annotations — obsolete
+  materials, real hazards, and a bubble mixture that works today.
+- Still to do: epub (wants a cover — Millais' *Bubbles*, which Boys
+  himself name-checks in Lecture One, is the obvious choice), feeds,
+  commit and push.
+
 ## 2026-07-21 (Theophrastus; Galileo prepped)
 
 Theophrastus' Characters — the 35th book, and the first past the
