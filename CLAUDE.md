@@ -504,3 +504,78 @@ Cover: Hokusai's "The Great Wave off Kanagawa" (1831), Commons "File:
 Great Wave off Kanagawa2.jpg", focus_x 0.43 — a 2:3 slice of a
 landscape print keeping the crest, the claw and Fuji. Not period-apt
 and deliberately so: the book's thesis is that one wave is every wave.
+
+Sir Robert Ball's Star-land (ball/ — the 45th book; the FIFTH and last
+Royal Institution Christmas Lecture volume, after soap-bubbles/,
+candle/, forces/ and fleming/). The Christmas courses of 1881 and 1887
+worked up into a book: six lectures from the sun out to the nebulae
+plus a closing chapter teaching the constellations. 36 files, ~96k
+words, 94 plates, from Gutenberg #60318. Ratio 0.95 (--min-ratio 0.85
+--max-ratio 1.3).
+IT IS THE 1899 REVISED EDITION, not the 1889 first — caught only
+because file 004 mentions the great sunspot of September 1898. Ball
+updated throughout (Saturn's ninth satellite, "(1899)" as the present
+year, a confident forecast of the 1899 Leonid shower). env DATE is
+1889/1899.
+THE CLEANEST SOURCE OF THE FIVE: no footnotes at all, and body
+headings sit at column 0 while the contents indents them, so a
+column-anchored regex separates them — none of the find_last_line
+contortions candle/ and forces/ needed. prep.py REFUSES TO RUN unless
+every plate on disk is placed exactly once; that assertion is what
+turned fleming/'s two figure traps into non-events here (the
+frontispiece is a bare uncaptioned "[Illustration]", and figures 35
+and 64 print their number AFTER the plate's own sub-labels, "Partial.
+Annular. FIG. 35."). Figures 29 and 30 share one plate — compound id
+from forces/.
+CAPTIONS COME FROM THE SOURCE for the first time. Ball captioned his
+own plates and the captions are frequently the joke ("Two Eyes are
+better than One", "This is what we wanted the Cards for"), so they
+ride through into chapters/ as [Figure N: caption] to be MODERNIZED,
+not replaced. Keep his phrasing as the first clause and extend with a
+short descriptive one — the caption is also the epub's alt text.
+INDENT THRESHOLD: normalise() now preserves a run of lines indented by
+TWO spaces, not four. The concluding chapter's six astronomical tables
+are indented by two, and at the old threshold every one of them was
+collapsed into running prose ("Mercury | 35.9 | 87.969 | 2,992 |
+Uncertain. Venus | 67.0 | ..."). Worth checking on any book with
+tables. Lowering it also fixed the postal-address block and the two
+verse quatrains. Verified against the manifest: no boundary drift.
+PROCESS RULE, learned on file 016: READ THE WHOLE SOURCE FILE, never a
+line range. Two sed ranges stopped at line 40 and a figure marker, a
+section heading and a closing paragraph were simply absent from the
+translation. Figure parity caught it — but nothing would have, had the
+dropped tail been ordinary prose with no figure and no number in it.
+Eight print-page references were all decided IN ADVANCE and logged,
+including the one that must NOT be touched: "page 123" in Lecture Five
+is not a reference to this book but the telegraph-code story, where
+astronomers cabled "123 degrees 45 minutes" as the 45th word on page
+123 of Worcester's Dictionary — the single word "constituent". There
+the page number IS the message.
+VOICE: Ball talks TO children and never down to them; he is the
+funniest of the five and needs LIGHT work (ratio 0.95), not rebuilding.
+Everything is a demonstration, and the jokes are load-bearing. 68
+in-lecture section headings render as TITLE CASE WITH NO TERMINAL
+PERIOD — assemble.is_subheading() rejects anything ending in ".;:,—",
+so the period alone is the difference between an <h4> and a paragraph
+shouted in capitals.
+VERNE RULE: 1889/99 astronomy throughout, kept unhedged — volcanic
+lunar craters, Lowell's canals, Venus keeping one face to the sun, the
+1899 Leonid prediction (which disappointed; no note is added). Ball is
+scrupulous about marking what is known versus guessed: keep that
+grading exactly where he puts it.
+SENSITIVE PASSAGE: Lecture Five quotes an 1833 eyewitness account of
+the great Leonid shower from a South Carolina plantation — an enslaver
+describing the terror of the people he held enslaved, "the negroes"
+throughout. The astronomy is genuinely valuable and is why Ball quotes
+it. Rendered "the enslaved people": MORE explicit, not less, since a
+modern young reader would not otherwise know. Quoted in full, nothing
+cut, the fear not softened.
+Cover: Trouvelot's "The November Meteors" (1868), Commons "File:
+Trouvelot - The November Meteors.jpg", crop "2533x3800+733+721" (the
+plate only, out of a full lithograph sheet with wide margins and a
+printed caption). Doubly apt: it is the shower Lecture Five is about,
+and Trouvelot's drawings are reproduced inside the book as figures 18
+and 20.
+NOTE: `se lint` raises two [Manual Review] titlecase items wanting
+"Star-Land"; the book's title is "Star-land" and they are correctly
+ignored.

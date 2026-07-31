@@ -59,6 +59,11 @@ TARGET = 2800
 MAX = 3500
 
 LECTURE = re.compile(r"^(LECTURE [IVX]+|CONCLUDING CHAPTER)\.\s*$")
+# TWO spaces is enough to mark a preserved block. The concluding chapter's
+# six astronomical tables are indented by two, not four, and at a
+# four-space threshold every one of them was collapsed into running prose
+# ("Mercury | 35.9 | 87.969 | 2,992 | Uncertain. Venus | 67.0 | ...").
+INDENTED = re.compile(r"^[ \t]{2,}\S")
 ILLUS = re.compile(r"\[Illustration(?::\s*(.*?))?\]", re.S)
 
 TITLES = [
@@ -125,10 +130,10 @@ def normalise(block):
             if cur:
                 paras.append(" ".join(cur)); cur = []
             paras.append(line.strip())
-        elif line.startswith("    ") and line.strip():
+        elif INDENTED.match(line):
             if cur:
                 paras.append(" ".join(cur)); cur = []
-            if paras and paras[-1].startswith("    "):
+            if paras and INDENTED.match(paras[-1]):
                 paras[-1] += "\n" + line
             else:
                 paras.append(line)
@@ -141,7 +146,7 @@ def normalise(block):
 
     out = []
     for p in paras:
-        if p.startswith("    "):
+        if INDENTED.match(p):
             out.append(p)
         elif p.startswith("[Figure"):
             out.append(p)

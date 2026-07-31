@@ -6,7 +6,7 @@ translations. Pipelines proven so far: Gutenberg/SE plain text,
 SE-XHTML, Wikisource-API, from-the-Latin, from-the-French.
 
 ## Recently shipped
-### The Royal Institution Christmas Lectures (5-book run, 3 of 5 done)
+### The Royal Institution Christmas Lectures (5-book run, 4 of 5 done)
 - **C. V. Boys — Soap Bubbles and the Forces Which Mould Them**
   (1890; the project's FIRST ILLUSTRATED volume) — 13 files, ~32k
   words, all 69 plates + frontispiece. LIVE. The figure pipeline
@@ -21,9 +21,11 @@ SE-XHTML, Wikisource-API, from-the-Latin, from-the-French.
 - **J. A. Fleming — Waves and Ripples in Water, Air, and Aether**
   (1902) — 32 files, ~77k words, all 87 plates, plus the two-note
   appendix. LIVE. The largest of the five.
-- NEXT: **Sir Robert Ball — Star-land** (1889; Gutenberg #60318, ~106k
-  words, 95 plates — plates ship in the `-h.zip`). Sourced, untranslated.
-- THEN: **Silvanus P. Thompson — Light Visible and Invisible** (1897).
+- **Sir Robert Ball — Star-land** (1889/1899) — 36 files, ~96k words,
+  all 94 plates, plus the concluding chapter on finding the
+  constellations. LIVE. The warmest of the five.
+- NEXT AND LAST OF THE FIVE: **Silvanus P. Thompson — Light Visible
+  and Invisible** (1897).
   Archive.org OCR only (`lightvisibleinvi00thomrich`, `…uoft`; ~77k
   words, 0.05% suspicious tokens). ~130 plates must be hand-cropped
   from the page scans — the user chose this path explicitly over

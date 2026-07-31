@@ -1,5 +1,93 @@
 # DEVLOG
 
+## 2026-07-31 (Ball's Star-land — book 4 of five, and the RI set complete bar one)
+
+Sir Robert Ball's Star-land: 36 files, ~96k modern words, ratio 0.95,
+all 94 plates, epub built. The Royal Institution Christmas courses of
+1881 and 1887 worked up into a book, and the warmest of the five
+Christmas-lecture volumes by a distance.
+
+The book turned out to be the **1899 revised edition, not the 1889
+first** — and I only caught it because file 004 mentions "the great
+spot of September 1898", which is impossible in an 1889 book. The
+title page confirms it, and Ball updated throughout: Saturn's ninth
+satellite (August 1898), "(1899)" as the present year, and a confident
+forecast of a great Leonid shower in 1899. The Verne rule keeps that
+prediction exactly as he made it, with no note that it disappointed.
+`env` now says 1889/1899. prep had also dropped the **dedication**
+with the copyright page; CLAUDE.md is explicit that dedications belong
+in the book and contents pages do not, so it is restored.
+
+This was the first prep that **refuses to run unless the plates
+reconcile** — it asserts every image on disk is placed exactly once and
+raises SystemExit otherwise. That assertion is why both of fleming's
+figure traps were non-events here rather than discoveries: the
+frontispiece is a bare uncaptioned `[Illustration]`, and figures 35 and
+64 print their number *after* the plate's own sub-labels ("Partial.
+Annular. FIG. 35."). Both were designed for from the start.
+
+It is also the first book where **the captions come from the source**.
+With Boys the 1890 original captioned every plate "Fig. 22." and
+nothing else, so captions were new writing; Ball captions his own, and
+they are frequently the joke — "Two Eyes are better than One", "This
+is what we wanted the Cards for". Those get modernized and then
+extended with a short descriptive clause, since the caption doubles as
+the epub's alt text and a bare punchline tells a screen-reader user
+nothing.
+
+Three things worth carrying forward:
+
+- **The indent threshold was wrong.** `normalise()` preserved runs of
+  lines indented by four spaces; the concluding chapter's six
+  astronomical tables are indented by *two*, and every one of them had
+  been collapsed into running prose — "Mercury | 35.9 | 87.969 | 2,992
+  | Uncertain. Venus | 67.0 | ...". Lowering the threshold to two
+  spaces restored all six byte-identical, and incidentally fixed the
+  interplanetary postal address and both verse quatrains. Verified
+  against the manifest first: no boundary drift. Worth checking on any
+  book with tables.
+- **Read the whole source file, never a line range.** On file 016 I
+  read with two `sed` ranges that stopped at line 40, and lines 41–45 —
+  a figure marker, a section heading and a closing paragraph — were
+  simply absent from the translation. Figure parity caught it in
+  seconds. But the lesson is what it revealed about the checks' limits:
+  had that tail been ordinary prose with no figure and no number in it,
+  *nothing* would have caught it. Losing 150 words from a 2,750-word
+  file moves the ratio from 0.94 to 0.89 — still inside the bound.
+- **Decide the print-page references up front.** All eight were
+  resolved and logged before translating, which turned up the one that
+  must *not* be touched: "page 123" in Lecture Five is not a reference
+  to this book at all but Ball's account of how astronomers telegraphed
+  comet positions cheaply, encoding "123 degrees 45 minutes" as the
+  45th word on page 123 of Worcester's Dictionary — the single word
+  *constituent*. There the page number is the message.
+
+Sensitive content: Lecture Five quotes an 1833 eyewitness account of
+the great Leonid storm from a South Carolina plantation — a white
+enslaver describing the terror of the people he held enslaved, called
+"the negroes" throughout. The astronomy is genuinely valuable; it is
+one of the best surviving descriptions of that night, and it is why
+Ball quotes it. Rendered as "the enslaved people": more explicit about
+what was happening, not less, since a modern young reader would not
+otherwise know these were enslaved people at all. Quoted in full,
+nothing cut, no commentary added, the fear not softened.
+
+Cover: Trouvelot's *The November Meteors* — doubly apt, since that is
+the shower Lecture Five is about and Trouvelot's drawings are
+reproduced inside the book as figures 18 and 20.
+
+Also this session: **the OPDS catalog was broken on an e-ink reader and
+is now fixed.** The feed itself was fine — 44 entries, well-formed,
+every href resolving. The problem was the header: GitHub Pages derives
+Content-Type from the file extension and cannot be given custom
+headers, so `opds.xml` went out as `application/xml`, which strict OPDS
+clients reject before parsing a byte. The same bytes at **opds.atom**
+serve as `application/atom+xml`; verified live. `opds.xml` still works
+for anyone already subscribed. Entries also gained a bare
+`rel=".../acquisition"` link alongside the `open-access` one (minimal
+readers often look only for the bare rel) and a `<content>` mirroring
+`<summary>`.
+
 ## 2026-07-30 (Fleming's Waves and Ripples — book 3 of five)
 
 Third of the five Royal Institution Christmas Lecture volumes, and the
