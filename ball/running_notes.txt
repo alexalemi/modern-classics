@@ -91,3 +91,35 @@ VERNE-RULE CASES SO FAR (keep as Ball's claim, no correction)
   - file 004: prominence heights and speeds (300,000 miles, 200,000
     miles an hour), the 1898 sunspot.
   - file 008: the Yerkes 40-inch as "the most powerful ever erected".
+
+PRINT-PAGE REFERENCE REPLACED (file 014)
+  "the principle of the method is really the same as that mentioned on
+  pp. 19-25" — page numbers are meaningless in a reflowable edition.
+  Replaced with the descriptive pointer: "the same as the one we used
+  in the first lecture with the two cards and the base-line". Same
+  handling as fleming/'s appendix notes. The numeric check reports 19
+  and 25 missing from 014; expected. Watch for more of these.
+  All eight page references in the source, and their handling:
+    014  "on pp. 19-25"                -> "in the first lecture with
+                                          the two cards and the base-line"
+    018  the moon case "(p. ...)"      -> "in the second lecture"
+    020  "a former lecture (p. 97)"    -> drop the page, keep the phrase
+    022  "about Mars (p. 187)"         -> drop the page
+    027  "just as on p. 21"            -> "just as we did in the first
+                                          lecture"
+    030  "Jupiter's moons (p. 219)"    -> drop the page
+    035  "Fig. 82, p. 322"             -> keep the figure, drop the page
+    024  "page 123" of the code book   -> KEEP. This is not a reference
+                                          to this book at all; it is the
+                                          telegraph-code story, where the
+                                          page number IS the message.
+
+PROCESS RULE (learned the hard way on file 016)
+  READ THE WHOLE SOURCE FILE, never a line range. I read 016 with two
+  sed ranges that stopped at line 40; lines 41-45 held a figure marker,
+  a section heading and a closing paragraph, and all three were simply
+  missing from the translation. The figure-parity check caught it
+  instantly (src had 59, output did not) and the numeric check caught
+  the stranded "Fig. 60" reference — but nothing would have caught it
+  if the dropped tail had been ordinary prose with no figure and no
+  number in it. Use Read on the whole file.
