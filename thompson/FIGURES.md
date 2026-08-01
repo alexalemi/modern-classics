@@ -102,3 +102,34 @@ Numbers still lacking direct evidence, to be settled by eye:
 
 The 147–158 run is Lecture VI, the Röntgen photographs — full-page
 plates whose captions are set differently from the line cuts.
+
+## Result
+
+**126 plate files covering 137 of the 158 figures**, in
+`site/images/thompson/figN.jpg`. Eight are compound plates under
+hyphenated ids (`fig41-42`, `fig88-89-90`, `fig141-142`, …).
+
+Every number was checked against the printed caption. The verification
+pass settled twenty-one blocks the automation had scored as compound;
+only seven of those were genuinely compound, and the rule that decided
+each was simply *how many captions are printed under the block*.
+
+Two further corrections came out of it:
+
+- **The stamp filter had a false positive.** Page 26 carries both the
+  ripple-tank photograph (Fig. 1) and a library stamp, so OCR-ing the
+  block found "LIBRARY" and threw the figure away. Stamps are ~620×340;
+  requiring area < 300,000 px keeps all thirteen real stamps and
+  restores Fig. 1 and the large plate on p299.
+- Eighteen plates had their own printed "FIG. n." caption inside the
+  ABBYY box and were re-cropped above it.
+
+Figures with no plate recovered — ABBYY marked no separate block for
+them, mostly small line cuts set into the text:
+
+    8, 13, 22, 36, 63, 64, 65, 73, 96, 103, 108, 123, 131,
+    134, 135, 150, 151, 152, 153, 156, 157
+
+The translation must not emit a `[Figure n]` marker for these, and
+should describe rather than cross-reference where the text says "see
+Fig. 8".
