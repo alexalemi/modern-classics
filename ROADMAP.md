@@ -24,12 +24,25 @@ SE-XHTML, Wikisource-API, from-the-Latin, from-the-French.
 - **Sir Robert Ball — Star-land** (1889/1899) — 36 files, ~96k words,
   all 94 plates, plus the concluding chapter on finding the
   constellations. LIVE. The warmest of the five.
-- NEXT AND LAST OF THE FIVE: **Silvanus P. Thompson — Light Visible
-  and Invisible** (1897).
+- IN PROGRESS, last of the five: **Silvanus P. Thompson — Light
+  Visible and Invisible** (1897).
   Archive.org OCR only (`lightvisibleinvi00thomrich`, `…uoft`; ~77k
-  words, 0.05% suspicious tokens). ~130 plates must be hand-cropped
-  from the page scans — the user chose this path explicitly over
-  prose-only.
+  words). PLATES DONE: 126 files covering 137 of the 158 figures,
+  recovered from the ABBYY picture-block coordinates Archive.org ships
+  — no hand-cropping needed. See thompson/FIGURES.md. Remaining: OCR
+  cleanup, then six lectures + six appendices.
+- THEN, making it six: **John Tyndall — Sound** (1867). Gutenberg
+  #54969, ~129k words, nine chapters each with the author's own
+  summary. The plain text drops the figure captions but the `-h.zip`
+  carries **191 images** — the soap-bubbles/ pattern exactly. Tyndall
+  invented the lecture-demonstration style all five of the others
+  descend from, and this is the direct companion volume: Boys on
+  surface tension, Faraday on candles and forces, Fleming on waves,
+  Ball on the sky, Thompson on light, Tyndall on sound.
+  (Note: "Sound: Musical and Non-Musical" is not a Thompson title —
+  his catalogue is electricity, dynamos, Faraday, Kelvin and Gilbert.
+  The nearest match to that phrase is Sedley Taylor's "Sound and
+  Music: A Non-Mathematical Treatise" (1873), Archive.org only.)
 - **Galileo — Dialogue Concerning the Two Chief World Systems**
   (Italian, 1632; the from-the-Italian pipeline's debut) — 55 files,
   ~194k words, assembled to site/galileo.html and added to the index.
