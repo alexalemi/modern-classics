@@ -105,8 +105,10 @@ plates whose captions are set differently from the line cuts.
 
 ## Result
 
-**126 plate files covering 137 of the 158 figures**, in
-`site/images/thompson/figN.jpg`. Eight are compound plates under
+**127 plate files covering 138 of the 158 figures**, in
+`site/images/thompson/figN.jpg`. (Figure 63, the refractive-index
+chart of appendix two, was rescued late by cropping it straight out of
+the page image for printed p. 104 — ABBYY had marked no block for it.) Eight are compound plates under
 hyphenated ids (`fig41-42`, `fig88-89-90`, `fig141-142`, …).
 
 Every number was checked against the printed caption. The verification
@@ -127,7 +129,7 @@ Two further corrections came out of it:
 Figures with no plate recovered — ABBYY marked no separate block for
 them, mostly small line cuts set into the text:
 
-    8, 13, 22, 36, 63, 64, 65, 73, 96, 103, 108, 123, 131,
+    8, 13, 22, 36, 64, 65, 73, 96, 103, 108, 123, 131,
     134, 135, 150, 151, 152, 153, 156, 157
 
 The translation must not emit a `[Figure n]` marker for these, and

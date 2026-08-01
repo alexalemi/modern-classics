@@ -6,7 +6,7 @@ translations. Pipelines proven so far: Gutenberg/SE plain text,
 SE-XHTML, Wikisource-API, from-the-Latin, from-the-French.
 
 ## Recently shipped
-### The Royal Institution Christmas Lectures (5-book run, 4 of 5 done)
+### The Royal Institution Christmas Lectures (5-book run, COMPLETE)
 - **C. V. Boys — Soap Bubbles and the Forces Which Mould Them**
   (1890; the project's FIRST ILLUSTRATED volume) — 13 files, ~32k
   words, all 69 plates + frontispiece. LIVE. The figure pipeline
@@ -24,14 +24,14 @@ SE-XHTML, Wikisource-API, from-the-Latin, from-the-French.
 - **Sir Robert Ball — Star-land** (1889/1899) — 36 files, ~96k words,
   all 94 plates, plus the concluding chapter on finding the
   constellations. LIVE. The warmest of the five.
-- IN PROGRESS, last of the five: **Silvanus P. Thompson — Light
-  Visible and Invisible** (1897).
-  Archive.org OCR only (`lightvisibleinvi00thomrich`, `…uoft`; ~77k
-  words). PLATES DONE: 126 files covering 137 of the 158 figures,
-  recovered from the ABBYY picture-block coordinates Archive.org ships
-  — no hand-cropping needed. See thompson/FIGURES.md. Remaining: OCR
-  cleanup, then six lectures + six appendices.
-- THEN, making it six: **John Tyndall — Sound** (1867). Gutenberg
+- **Silvanus P. Thompson — Light Visible and Invisible** (1897) — 30
+  files, ~69k words, all 127 recovered plates, plus six appendices.
+  LIVE. THE PROJECT'S FIRST OCR SOURCE (Archive.org
+  `lightvisibleinvi00thomrich`; there is no Gutenberg edition). Given
+  thirteen months after Röntgen; the sixth lecture is on X-rays and
+  quotes the discoverer's own interview. See thompson/FIGURES.md for
+  the plate recovery and CLAUDE.md for the OCR-source lessons.
+- NEXT, making it six: **John Tyndall — Sound** (1867). Gutenberg
   #54969, ~129k words, nine chapters each with the author's own
   summary. The plain text drops the figure captions but the `-h.zip`
   carries **191 images** — the soap-bubbles/ pattern exactly. Tyndall

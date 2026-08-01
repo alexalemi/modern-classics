@@ -494,6 +494,16 @@ def main():
     prepare_cover(dest, meta)
     copy_figures(book, env, dest)
 
+    # `se typogrify` turns an escaped &lt; back into a bare "<", which makes
+    # the file unparseable for every step after it — and the error you get is
+    # a raw XML "invalid element name", pages away from the cause. Refuse to
+    # ship a bare comparison operator in prose, and say why.
+    for f in sorted((dest / "src/epub/text").glob("*.xhtml")):
+        if "&lt;" in f.read_text():
+            raise SystemExit(
+                f"{f.name} contains an escaped '<'. `se typogrify` will "
+                "unescape it and break the XHTML. Reword the sentence "
+                "(\"h1 is less than h2\") in modern_chapters/ instead.")
     for step in (["typogrify", "."], ["clean", "."], ["build-manifest", "."],
                  ["build-spine", "."], ["build-title", "."]):
         run([SE] + step, cwd=dest)
@@ -510,7 +520,30 @@ def main():
         import tempfile
         out = Path(args.out_dir); out.mkdir(parents=True, exist_ok=True)
         with tempfile.TemporaryDirectory() as td:
-            run([SE, "build", "--check", f"--output-dir={td}", "."], cwd=dest)
+            r = run([SE, "build", "--check", f"--output-dir={td}", "."],
+                    cwd=dest, check=False)
+            if r.returncode:
+                # epubcheck's PKG-021 ("Corrupted image file encountered")
+                # fires for EVERY image in this environment — including the
+                # cover and title page that `se` generates itself, and
+                # including books already published from this repo. It is a
+                # broken Java image reader, not a broken book. Tolerate that
+                # one code and nothing else; verify the images ourselves.
+                blob = (r.stdout or "") + (r.stderr or "")
+                codes = set(re.findall(r"\b([A-Z]{3}-\d{3})\b", blob))
+                if codes and codes <= {"PKG-021"}:
+                    from PIL import Image
+                    for img in sorted((dest / "src/epub/images").glob("*")):
+                        if img.suffix.lower() in (".jpg", ".jpeg", ".png"):
+                            Image.open(img).verify()
+                    print("NOTE: epubcheck reported only PKG-021 "
+                          "(corrupted image) for every image, including its "
+                          "own cover — a local Java image-reader fault. All "
+                          "images verified independently; building without "
+                          "--check.")
+                    run([SE, "build", f"--output-dir={td}", "."], cwd=dest)
+                else:
+                    raise RuntimeError(f"se build --check failed:\n{blob}")
             built = sorted(Path(td).glob("*.epub"))
             if not built:
                 raise RuntimeError("se build produced no epub")

@@ -579,3 +579,70 @@ and 20.
 NOTE: `se lint` raises two [Manual Review] titlecase items wanting
 "Star-Land"; the book's title is "Star-land" and they are correctly
 ignored.
+
+Silvanus P. Thompson's Light Visible and Invisible (thompson/ — the
+45th book; the Royal Institution Christmas course of 1896, and the
+FIFTH and last of the RI Christmas Lecture set after soap-bubbles/,
+candle/, forces/, fleming/ and ball/). 30 files, ~69k words, 127
+plates, ratio 0.96 (verify --min-ratio 0.85 --max-ratio 1.3). Given
+thirteen months after Röntgen announced the X-ray; Lecture Six is
+about nothing else and quotes the discoverer's own interview.
+
+THE PROJECT'S FIRST OCR SOURCE — no Gutenberg, no Standard Ebooks.
+Archive.org's `lightvisibleinvi00thomrich` (text + plates; `…uoft` as
+a second copy for blotted cells). Four fifths of the work was making a
+source worth translating. The reusable lessons, all of them invisible
+to verify.py:
+- PAGE FURNITURE IS INSIDE THE TEXT. Stripping a running head leaves a
+  blank line, and a blank line is a paragraph break — ~330 paragraphs
+  were cut in half at the page turn. Mend rule: no English paragraph
+  starts in lower case, plus a dangling-word list for halves that
+  resume on a proper noun. Iterate to a fixed point.
+- A CELL IS NOT A PARAGRAPH. normalise()'s "drop paragraphs under three
+  words" ate three whole rows out of the luminescence table and moved
+  the word ratio by nothing. FIVE tables were rebuilt from page images.
+  CHECK EVERY TABLE AGAINST THE SCAN.
+- EVERY FRACTION IS A MEASURED VALUE AND NONE SURVIVE. ~30 of them, all
+  read off the page. My contextual guesses were wrong twice (1/10000
+  not 1/1000000; 1⅝ and ⅝ not 1½ and ¾). DO NOT INFER A FRACTION.
+- FORMULAS AND GREEK FLATTEN TO DEBRIS, and some vanish outright,
+  leaving "the formula becomes" followed by nothing. Restored via
+  thompson/appendix_fixes.py — a separate module of (garbled, correct)
+  pairs, each of which must still match or prep stops. REUSE THIS.
+- FOOTNOTES THAT RUN OVER A PAGE BREAK SWALLOW BODY SENTENCES; seven
+  here, six reassembled by hand.
+- A CAPTION LINE AND A SENTENCE OPENING ARE THE SAME REGEX. "Fig. 115
+  gives a front view…" lost its subject. The tail decides: upper case
+  = caption, lower case = sentence. Fixed generically in normalise().
+- "Fig. 118" split by a page break reads as a caption for FIG. 1 — the
+  ripple-tank plate landed in Lecture Five and the reference died.
+  Mend split figure numbers BEFORE the caption pass.
+- A SUB-FIGURE LETTER IS NOT A MISPRINT. "Fig. 121b" scanned as
+  "121^"; I "corrected" it to 122 and was wrong — two paragraphs later
+  the text uses 122 for something else. A conflict between references
+  is the signal; LOOK AT THE PLATE.
+ONE REAL ERROR IN THOMPSON'S PRINTING: the wave-length table gives the
+A line as 29.28 millionths of an inch where 75.94/2.54 = 29.90. All 55
+rows checked against both relations the table asserts about itself;
+only that one fails, and the frequency cell says which figure is wrong.
+Corrected with an editor's note.
+VOICE: the REFORMER of the five lecturers. He says outright that the
+orthodox teaching of optics is "fundamentally wrong" and that hard
+WORDS, not hard ideas, are what make science look difficult — a
+sentence that is this project's thesis in his own 1897 words. Wave-
+fronts, never rays. The ether is real and unhedged (the Verne rule);
+kathode -> cathode and reflexion -> reflection are silent vocabulary.
+TOOLCHAIN, both fixed in shared code:
+- `se typogrify` UNESCAPES `&lt;` into a bare `<` and breaks the XHTML
+  for every later step; build_ebook.py now refuses an escaped `<` and
+  says why.
+- `epubcheck` here reports PKG-021 "Corrupted image file" for EVERY
+  image including se's own cover, and for books already published from
+  this repo (star-land fails identically) — a local Java image-reader
+  fault. build_ebook.py tolerates that one code, verifies images with
+  PIL, and builds without --check; anything else still fails.
+Cover: Joseph Wright of Derby's "An Experiment on a Bird in an Air
+Pump" (1768), Commons "An Experiment on a Bird in an Air Pump by
+Joseph Wright of Derby, 1768.jpg", crop "1919x2878+922+0" — a
+demonstrator, a glass receiver, an air pump and an audience of
+frightened children.

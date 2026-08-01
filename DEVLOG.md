@@ -1,5 +1,126 @@
 # DEVLOG
 
+## 2026-08-01 (Thompson's Light Visible and Invisible — the RI set complete, and the first OCR source)
+
+Silvanus P. Thompson's Light Visible and Invisible: 30 files, ~69k
+modern words, ratio 0.96, all 127 recovered plates, epub built, `se
+lint` clean. The five-book Royal Institution Christmas Lecture push is
+finished — Boys, Faraday twice, Fleming, Ball, Thompson.
+
+**This is the project's first book taken from a scan rather than from a
+proofread text.** There is no Gutenberg or Standard Ebooks edition; the
+source is the Archive.org OCR of a University of California copy of the
+1897 Macmillan printing. That single fact reshaped the whole job. About
+a fifth of the session went into the translation and four fifths into
+making a source worth translating.
+
+### The defect classes an OCR source has and a proofread one does not
+
+1. **The page furniture is inside the text stream.** Every page carries
+   a running head, and stripping it leaves a blank line where the prose
+   ran on — so ~330 of Thompson's paragraphs were cut in half at the
+   point where the page turned. The mend rule is that no English
+   paragraph begins in lower case, plus a dangling-word list ("of",
+   "the", "and", a trailing comma) for the halves that resume on a
+   proper noun. Run it to a fixed point: one mend exposes another.
+
+2. **A cell is not a paragraph.** `normalise()` drops paragraphs under
+   three words, which is right for prose and fatal for tables. The
+   luminescence table lost *three whole rows* that way — tribo-
+   luminescence, lyo-luminescence, and the single substance under
+   crystallo-luminescence — and the word ratio barely moved. Five
+   tables were rebuilt from the page images (Tables I-V plus the
+   wave-length appendix). **Check every table against the scan.**
+
+3. **Every fraction is a measured value and not one of them survives.**
+   5½ seconds, 6¾ millionths of an inch, 1/800 inch, 1/10000 of the
+   air, 2⅞ inches, 1⅝ inch, 8¼ by 5 inches. Thirty-odd of them, each
+   read back off the page image. I guessed 1/1000000 for the sixth
+   Crookes tube and the page said 1/10000; I guessed 1½ and ¾ for the
+   polariscope and the page said 1⅝ and ⅝. **Do not infer a fraction
+   from context.**
+
+4. **Formulas and Greek flatten to debris.** Appendix I's eighteen
+   numbered formulas came through as "2 * r "" and ") i ( ^"; several
+   vanished outright, leaving the prose to say "the formula becomes"
+   and then say nothing. Restored from the page images into
+   `thompson/appendix_fixes.py`, which is the pattern to reuse: a
+   separate module of (garbled, correct) pairs, every one of which must
+   still match or prep stops.
+
+5. **Footnotes that run over a page break swallow the body.** Seven of
+   them here. A footnote's tail lands in the middle of whatever
+   sentence was running past it at the time, and the sentence's own
+   halves end up separated by the whole note. Six pieces of prose were
+   reassembled by hand this way, including the University of London
+   aside and the Bose apparatus description.
+
+### Three traps that would have shipped silently
+
+- **A caption line and a sentence opening look identical to a regex.**
+  "Fig. 115 gives a front view of the oscillator" was being read as a
+  caption for plate 115 and losing its subject. The tail tells them
+  apart: a caption continues in upper case or not at all, a sentence
+  continues in lower case. Fixed generically in `normalise()`.
+
+- **"Fig. 118" broken across a page break reads as a caption for Fig.
+  1** — so the ripple-tank photograph of Lecture One was emitted into
+  the middle of the Hertz-wave discussion in Lecture Five, and the
+  cross-reference itself was destroyed. Mend split figure numbers
+  *before* the caption pass ever sees them.
+
+- **A sub-figure letter is not a misprint.** "Fig. 121b" scanned as
+  "Fig. 121^", and I "corrected" it to Fig. 122 on the strength of the
+  plate captions — which was wrong. Two paragraphs later the text says
+  "Fig. 122 depicts one of the simplest ways of detecting such electric
+  waves", which is the electroscope, not the cylinder. Looking at the
+  plate settled it: Fig. 121 is one block lettered a and b. **A
+  conflict between two references is the signal; the plate is the
+  arbiter.**
+
+The Fechner footnote is the one I would have missed without the numeric
+check: the natural logarithm of 16 printed as "277". A number a hundred
+times too large, in a footnote, passing the word ratio, the figure
+parity and must_contain alike. Its neighbour, ln 100 = 4.6, kept its
+decimal point and pinned the pattern.
+
+### One real error in Thompson's own printing
+
+The wave-length table gives the A line as 29.28 millionths of an inch,
+where 75.94 micro-centimetres divided by 2.54 is 29.90. All 55 rows
+were checked against both relations the table asserts about itself
+(inches = micro-cm / 2.54, frequency = 30000 / micro-cm); every other
+row agrees within a rounding step, and the frequency cell confirms
+which of the two figures is the misprint. Corrected, with an editor's
+note. The second Archive.org copy was used to settle four cells the
+first has an ink blot over — and to make the point that two copies of
+one setting can confirm what was *printed*, never that it was right.
+
+### Toolchain
+
+- `se typogrify` **unescapes `&lt;` into a bare `<`**, which makes the
+  XHTML unparseable for every step after it, and the error you get is a
+  raw "invalid element name" pages from the cause. `build_ebook.py` now
+  refuses to ship an escaped `<` and says why. (Reworded to "h₁ is less
+  than h₂", which reads better anyway.)
+- `epubcheck` in this environment reports PKG-021 "Corrupted image
+  file" for **every** image, including the cover and title page `se`
+  generates itself, and including books already published from this
+  repo — Star-land fails identically. It is a local Java image-reader
+  fault, not a broken book. `build_ebook.py` now tolerates that single
+  code, verifies every image itself with PIL, and builds without
+  `--check`; anything else still fails the build.
+
+Figure 63, the refractive-index chart, was recovered late from a page
+image and brought the plate count from 126 to 127. Twenty figures still
+have no plate — mostly small line cuts set into the text — and the
+translation describes those instead of pointing at them.
+
+Cover: Joseph Wright of Derby's "An Experiment on a Bird in an Air
+Pump" (1768), crop `1919x2878+922+0`. A demonstrator, a glass receiver,
+an air pump and an audience of frightened children — which is this book
+exactly, and the air pump is what Lecture Six turns on.
+
 ## 2026-07-31 (Ball's Star-land — book 4 of five, and the RI set complete bar one)
 
 Sir Robert Ball's Star-land: 36 files, ~96k modern words, ratio 0.95,
