@@ -282,3 +282,34 @@ AFTER 018-023 (Chapter Five, ratio 0.98):
     clarionet -> clarinet. NOT the serpent, which is a real and
     now-obsolete instrument, and not the claque-bois or the straw
     fiddle, which Tyndall glosses himself.
+
+NESTED-CONTAINER DUPLICATION FOUND AND FIXED (found while translating 026)
+
+  walk() visited every <div> and <blockquote>, INCLUDING the ones that
+  merely wrap other blocks -- so a wrapper emitted its whole contents
+  once per level of nesting, on top of the children's own emission:
+    - the Spenser stanza in chapter six sits three deep
+      (poetry-container > poetry > stanza > line) and appeared FOUR
+      times: three times run together as prose, then once properly as
+      nine lines;
+    - the Gaines's Farm letter (chapter seven) and the "Acoustic
+      Reversibility" note at the end of chapter seven sit in
+      <blockquote><div> and appeared twice.
+  1,281 duplicated words in all. NOTHING MECHANICAL CATCHES THIS: the
+  text is all present and in order, and the word ratio silently gets
+  WORSE the more faithfully the translation refuses to repeat itself.
+  Fixed: a div or blockquote containing a block-level descendant is a
+  wrapper and is skipped.
+  BOUNDARY DRIFT: chapter seven drops from 8 parts to 7 (so the book
+  is 44 files, not 45) and file 025 loses its last three blocks to
+  026. Everything up to and including 024 is byte-identical, and the
+  three blocks were simply moved between the two finished modern
+  files. A rule to stop a cut falling after a SECTION HEADING was
+  tried and reverted: it would have moved the boundaries of six
+  already-translated files to fix something invisible in the output,
+  since assemble.py stitches the parts of a chapter back together
+  before rendering.
+
+  SOURCE MISPRINT (026): the section heading reads "Mr. Philip Harry's
+  Sensitive Flame" while the paragraph under it, and the book's own
+  index, both read "Philip Barry". Heading corrected.

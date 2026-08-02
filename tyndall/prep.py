@@ -347,6 +347,19 @@ def walk(soup, notes):
             continue
         if not section:
             continue
+        # A DIV OR BLOCKQUOTE THAT HOLDS OTHER BLOCKS IS A WRAPPER, and its
+        # children are visited in their own right a moment later: emitting
+        # it as well prints its whole contents an extra time, once per
+        # level of nesting. The Spenser stanza sits three deep
+        # (poetry-container > poetry > stanza > line) and so appeared FOUR
+        # times; the Gaines's Farm letter and the Acoustic Reversibility
+        # note sit in <blockquote><div>, and appeared twice. Nothing
+        # mechanical catches this — the text is all present, in order, and
+        # the word ratio only improves as the modern file declines to
+        # repeat it.
+        if node.name in ("div", "blockquote") and \
+                node.find(["p", "div", "table", "blockquote"]):
+            continue
         if node.name == "table":
             # a table holding plates is a layout device, not data
             raw = node.get_text(" ")
@@ -396,6 +409,11 @@ def split_body(paras):
         target = k * per
         best, best_d = None, None
         for i in range(lo, len(paras)):
+            # never cut immediately after a plate: its caption is written
+            # in the modern file and belongs with it. (A cut after a
+            # SECTION HEADING is harmless — assemble.py stitches the parts
+            # of a chapter back together, so the heading and its section
+            # end up adjacent again in the finished book.)
             if paras[i - 1].startswith("[Figure"):
                 continue
             d = abs(cum[i] - target)
