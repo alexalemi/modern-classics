@@ -122,13 +122,20 @@ def figure_id(caption, alt):
     'Fig. 182. 1:2.' -> '182' (the 1:2 is the interval the diagram draws,
     not a second figure number); 'Fog-Siren' -> 'front'.
 
+    A TRAILING LETTER IS PART OF THE NUMBER. The Helmholtz resonator is
+    captioned "Fig. 94a" — a fifth plate on a page that already has a
+    Fig. 94 — and a regex reading only digits gives it the id 94, which
+    silently overwrites the bell of section 9 with the resonator and then
+    prints the resonator twice. Neither the word ratio nor the figure
+    parity check can see that: both markers exist and both are placed.
+
     Singular "Fig. N" tokens are collected one by one, because a plate
     carrying two figures captions them separately; a plural "Figs." is
     followed by a comma-list and is read as a list."""
     for src in (caption, alt):
         if not src:
             continue
-        nums = re.findall(r"Fig\.\s*(\d+)", src)
+        nums = re.findall(r"Fig\.\s*(\d+[a-z]?)", src)
         plural = re.search(r"Figs\.\s*([\d,\s]+)", src)
         if plural:
             nums += re.findall(r"\d+", plural.group(1))
@@ -155,9 +162,27 @@ def stamp_figures(soup, figs):
     captions embedded in the running prose, where they read as stray text.
     Turning all three into one sentinel makes the rest of the walk simple:
     a paragraph splits around its sentinels, and a table that contains one
-    is a layout table, not data."""
-    n = 0
-    for node in soup.find_all(["div", "span"], class_=FIG_CLASS):
+    is a layout table, not data.
+
+    THE APPENDIX RESTARTS THE NUMBERING. Appendix II has its own Figs. 1
+    to 4, and the book already has four plates by those names in chapter
+    one. Plates found after an APPENDIX heading therefore take a
+    namespaced id ("app_1"), which assemble.figure_label strips back to
+    "Figure 1" for the reader while keeping the two files apart. Without
+    it the appendix quietly overwrote the row of solitaire balls, the row
+    of boys, Cottrell's spring model and the bell in the air pump with
+    four sensitive-flame diagrams from the back of the book."""
+    n, ns = 0, ""
+    for node in soup.find_all(["h2", "h3", "div", "span"]):
+        if node.name in ("h2", "h3"):
+            t = clean(node).upper()
+            if t.startswith("APPENDIX"):
+                ns = "app_"
+            elif t.startswith("CHAPTER"):
+                ns = ""
+            continue
+        if not FIG_CLASS.search(" ".join(node.get("class", []))):
+            continue
         img = node.find("img")
         if not img:
             continue
@@ -168,6 +193,11 @@ def stamp_figures(soup, figs):
         if not fid:
             continue
         if not fid.startswith("MATH:"):
+            fid = "-".join(ns + p for p in fid.split("-"))
+            # a silent overwrite here loses a plate and duplicates another
+            if figs.get(fid, src) != src:
+                raise SystemExit(f"figure id {fid} claimed by two plates: "
+                                 f"{figs[fid]} and {src}")
             figs[fid] = src
         # A bare replacement string would end up as a child of <body> for
         # the standalone plates, where the walk never looks. Leave a real

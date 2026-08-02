@@ -226,3 +226,31 @@ AFTER 011-013 (Chapter Three parts 1-3, ratio 0.98):
   - LETTER LABELS from the plates are kept exactly (B B', s s', t t',
     m n, A R, a', o'), because the captions written for the figures
     name them and the reader needs the two to agree.
+
+FIGURE-ID COLLISION FOUND AND FIXED (found while translating 019)
+
+  TWO SEPARATE COLLISIONS, both of which silently swapped plates and
+  which NO mechanical check in this repo could see -- every marker
+  existed, every marker was placed, every ratio was in range:
+
+  1. "Fig. 94a", the Helmholtz resonator, sits on the page after
+     "Fig. 94", the sonorous bell. figure_id() read digits only, so the
+     resonator claimed the id 94, overwrote the bell's file, and the
+     resonator was then printed TWICE -- once above the paragraph about
+     the bell. Fixed: a trailing letter is now part of the number.
+  2. APPENDIX II RESTARTS THE NUMBERING at Fig. 1, and chapter one
+     already has Figs. 1-4. The appendix's four sensitive-flame
+     diagrams had overwritten the row of solitaire balls, the row of
+     boys, Cottrell's spring model and the bell in the air pump. So
+     chapter one -- the first thing a reader sees -- was illustrated
+     with four plates from the back of the book. Fixed with a
+     NAMESPACED id: plates found after an APPENDIX heading become
+     "app_1".., and assemble.figure_label now strips a "_"-terminated
+     prefix so the reader still reads "Figure 1".
+  prep.py now RAISES if any id is ever claimed by two different files.
+  assemble.py, verify.py: "_" added to the marker character class.
+  LESSON, worth carrying to the next plate book: ALWAYS LOOK AT THE
+  PLATE BEFORE CAPTIONING IT. The captions for figures 1-4 had been
+  written from the prose and happened to be right, which is exactly why
+  nothing looked wrong. A caption written from the image would have
+  caught this on the first file.

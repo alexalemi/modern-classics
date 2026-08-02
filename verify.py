@@ -30,7 +30,8 @@ from pathlib import Path
 
 PART_MARK = re.compile(r"^\(Part \d+ of \d+\)$", re.I)
 PART_DIVIDER = re.compile(r"^Part [IVXLC0-9]+: \S")
-FIGURE = re.compile(r"^\[Figure ([A-Za-z0-9]+(?:-[A-Za-z0-9]+)*)(?::[^\]]*)?\]$", re.M)
+FIGURE = re.compile(
+    r"^\[Figure ([A-Za-z0-9_]+(?:-[A-Za-z0-9_]+)*)(?::[^\]]*)?\]$", re.M)
 
 
 def words(path):

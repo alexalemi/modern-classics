@@ -73,13 +73,20 @@ def is_subheading(par):
 
 SPEAKER_NAME = re.compile(r"[A-Z][A-Za-z .'’-]{0,30}")
 HR_LINE = re.compile(r"\*+( \*+)*|-{2,}")
-FIGURE = re.compile(r"^\[Figure ([A-Za-z0-9]+(?:-[A-Za-z0-9]+)*)(?::\s*(.+?))?\]$", re.S)
+FIGURE = re.compile(
+    r"^\[Figure ([A-Za-z0-9_]+(?:-[A-Za-z0-9_]+)*)(?::\s*(.+?))?\]$", re.S)
 
 
 def figure_label(num):
     """'12' -> 'Figure 12'; '42a' -> 'Figure 42a' (one half of a two-part
     plate); '15-16-17' -> 'Figures 15, 16 and 17' (one block carrying
     several numbered figures, as Victorian books often print them).
+
+    An id may carry a NAMESPACE prefix ending in '_': 'app_1' -> 'Figure 1'.
+    A book that restarts its figure numbering — an appendix with its own
+    Fig. 1 while chapter one also has a Fig. 1 — needs two plates with the
+    same printed label and different filenames. The prefix picks the file;
+    only what follows it is shown to the reader.
 
     An id with no digits at all ('front', 'music') is a plate the book
     never numbered: it gets no "Figure N" prefix and its caption stands
@@ -88,9 +95,9 @@ def figure_label(num):
         return "Frontispiece"
     if not any(c.isdigit() for c in num):
         return None
-    parts = num.split("-")
+    parts = [p.rsplit("_", 1)[-1] for p in num.split("-")]
     if len(parts) == 1:
-        return f"Figure {num}"
+        return f"Figure {parts[0]}"
     return f"Figures {', '.join(parts[:-1])} and {parts[-1]}"
 
 
