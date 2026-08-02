@@ -91,6 +91,21 @@ TITLES = [
 FIG_CLASS = re.compile(r"figcenter|figleft|figright")
 SENTINEL = "\x00FIG:%s\x00"
 
+# THE DEDICATION stands before the first heading, in a box of its own, set
+# entirely in capitals across six centred lines. Nothing else in the book
+# is laid out that way, and a general rule would either drop it (it falls
+# outside every section) or shout it (assemble.py reads an all-caps line
+# as a heading). It is set here as an indented block, which renders as the
+# centred page it is, and the source is checked so that it cannot vanish
+# unnoticed if the transcription changes.
+DEDICATION = """\
+    To the memory
+    of
+    my friend Richard Dawes
+    late Dean of Hereford
+    this book is dedicated
+    J. T."""
+
 
 def unpack():
     work = BOOK / "html"
@@ -333,7 +348,12 @@ def walk(soup, notes):
                 section = t
                 out.append((section, None))
                 for held in pending:
-                    emit(held, out, section)
+                    # an indented block goes through whole: emit() strips,
+                    # and a stripped first line loses the <pre>
+                    if "\n" in held:
+                        out.append((section, held))
+                    else:
+                        emit(held, out, section)
                 pending = []
                 # the two prefaces share one Front Matter section, so each
                 # keeps its own heading as a subheading inside it
@@ -344,6 +364,10 @@ def walk(soup, notes):
                 section = None          # contents, index, footnotes, licence
             elif section:
                 out.append((section, subhead(t)))
+            continue
+        if section is None and node.name == "div" and \
+                "bbox" in node.get("class", []):
+            pending.append(DEDICATION)   # held for the front matter
             continue
         if not section:
             continue
@@ -433,6 +457,8 @@ def main():
     work = unpack()
     soup = BeautifulSoup((work / "pg54969-images.html").read_text("utf-8"),
                          "html.parser")
+    if "RICHARD DAWES" not in (work / "pg54969-images.html").read_text("utf-8"):
+        raise SystemExit("the dedication has moved; DEDICATION needs checking")
     notes = collect_footnotes(soup)
     print(f"{len(notes)} footnotes collected")
     figs = {}
@@ -446,7 +472,11 @@ def main():
     SITE_IMG.mkdir(parents=True, exist_ok=True)
     for fid, src in figs.items():
         ext = src.rsplit(".", 1)[-1].lower()
-        shutil.copy(work / "images" / src, SITE_IMG / f"fig{fid}.{ext}")
+        # the frontispiece is "front.jpg", not "figfront.jpg":
+        # assemble.figure_name special-cases that one id, and a mismatch
+        # here silently breaks the image on the page and in the epub
+        stem = "front" if fid == "front" else f"fig{fid}"
+        shutil.copy(work / "images" / src, SITE_IMG / f"{stem}.{ext}")
     print(f"copied {len(figs)} plates to {SITE_IMG}")
 
     # group into sections, in the order TITLES gives
