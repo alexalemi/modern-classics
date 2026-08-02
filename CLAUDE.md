@@ -646,3 +646,86 @@ Pump" (1768), Commons "An Experiment on a Bird in an Air Pump by
 Joseph Wright of Derby, 1768.jpg", crop "1919x2878+922+0" — a
 demonstrator, a glass receiver, an air pump and an audience of
 frightened children.
+
+John Tyndall's Sound (tyndall/ — the 44th book, and the EIGHTH Royal
+Institution volume after soap-bubbles/, candle/, forces/, fleming/,
+ball/ and thompson/. Chronologically it is the FIRST: 1867, six years
+after Faraday's Candle, and the book every later lecturer in the set
+is imitating). 44 files, ~117k words, 187 plates, from Gutenberg
+#54969 — the Collier reprint of the THIRD edition of 1875, which is
+why the South Foreland fog-signal chapter is in it. Ratio 0.97
+(--min-ratio 0.85 --max-ratio 1.3). Read thompson/ and candle/ first;
+the register is theirs, one generation earlier.
+The translation is the easy part here. EVERY defect found was of the
+one class verify.py structurally cannot see: CONTENT PRESENT, IN
+ORDER, AND WRONG.
+FIGURE-ID COLLISIONS, TWO KINDS, BOTH SILENT (the important lesson):
+  - A TRAILING LETTER IS PART OF THE NUMBER. "Fig. 94a" (Helmholtz's
+    resonator) read as 94 overwrote the sonorous bell and then shipped
+    twice.
+  - A BOOK MAY RESTART ITS FIGURE NUMBERING. Appendix II has its own
+    Figs. 1-4 and overwrote chapter one's solitaire balls, row of
+    boys, Cottrell's spring model and bell-in-a-vacuum — so the first
+    plates a reader sees came from the back of the book. Fixed with a
+    NAMESPACED id: "app_1", which assemble.figure_label now strips
+    back to "Figure 1" (a "_"-terminated prefix picks the file, the
+    digits after it are what the reader sees). verify.py and
+    assemble.py accept "_" in marker ids. prep.py RAISES if any id is
+    ever claimed by two different plates — copy that assertion.
+  FIGURE PARITY CANNOT SEE EITHER OF THESE: every marker exists and
+  every marker is placed. Only looking at the plate finds them.
+NESTED CONTAINERS DUPLICATE TEXT (generic to any HTML source): walk()
+  visited every wrapping <div>/<blockquote> as well as its children,
+  so a wrapper emitted its whole contents once per level of nesting —
+  the Spenser stanza (poetry-container > poetry > stanza > line)
+  FOUR times, two blockquoted letters twice each, 1,281 words in all.
+  Skip a div/blockquote that contains a block-level descendant. The
+  word ratio gets WORSE, not better, the more faithful the
+  translation is, so nothing flags it.
+FRONTISPIECE FILENAME: assemble.figure_name special-cases the id
+  "front" and looks for front.jpg, so a prep that writes fig{id}.jpg
+  for every id produces figfront.jpg and a broken image on the page
+  AND a missing resource in the epub (epubcheck RSC-007, at the very
+  end of the build). Worth sweeping every assembled page for missing
+  image references after any illustrated book.
+SIX MISPRINTS IN TYNDALL'S OWN TEXT, each caught by reading a sentence
+  against the figure or the arithmetic it describes: the third law
+  names the wrong fork; a free-free rod's tone series printed
+  "1, 3, 4" for 1, 2, 3; an open pipe's reciprocals printed backwards
+  as 3:2:1; the resultant-tone table labelling the ratio 2:3 "Octave"
+  (it is the fifth); the major third located at c' instead of e' on
+  Helmholtz's own curve; and Fig. 165 cited for the parabola of
+  Fig. 177. Plus "Mr. Philip Harry's Sensitive Flame", where the
+  paragraph under the heading and the index both say Barry.
+QUOTED MATTER IS VERBATIM, as in the other lecture books — EXCEPT
+  where the quotation's source is itself reprinted in this volume. Le
+  Conte's 1858 paper is Appendix One and is also quoted in chapter
+  six; the two must agree, and the modernized form governs. Every
+  other quotation (Hooke, Herschel, Robison, Chladni, Abel, Arrow,
+  Atkins, Kean, Arago's French, Helmholtz's German) stays as printed.
+THE DEDICATION to Richard Dawes stands before the first heading in a
+  box of its own, six centred all-caps lines. It falls outside every
+  section (so it is dropped) and is all-caps (so a general rule would
+  render it as a heading). Set as an indented block, with a source
+  check so it cannot vanish unnoticed.
+A CUT AFTER A SECTION HEADING IS HARMLESS — assemble.py stitches a
+  chapter's parts back together before rendering, so the heading and
+  its section end up adjacent again. A cut after a PLATE is not: its
+  caption is written in the modern file. Do not add the heading rule;
+  it moves boundaries of finished files for nothing.
+CROSS-REFERENCES go to WORD FORM ("Chapter Seven", "Summary of Chapter
+  One"), not the source's Roman, because the manifest heads every
+  chapter that way and the reader has only the assembled page.
+VOICE: the ancestor of all the others — five boys in a row standing in
+  for a line of air particles, a glass tube rubbed until it shivers
+  into rings, a flame that ducks at the letter S and ignores the same
+  sound aimed half an inch higher. Chapter seven is unlike anything
+  else in the set: months on a steamer off the South Foreland, results
+  that contradict each other flatly day by day, and the ACOUSTIC
+  CLOUDS that resolve them — optically clear air that stops sound
+  dead, while dense fog is the best carrier of all. Keep his
+  scrupulousness about what is inference and what is measurement.
+Cover: Turner's "Snow Storm: Steam-Boat off a Harbour's Mouth" (1842),
+Commons "File:Joseph Mallord William Turner - Snow Storm - Steam-Boat
+off a Harbour's Mouth - WGA23178.jpg", crop "1252x1879+754+0" — a
+steamer signalling in fog off a harbour mouth, which is chapter seven.

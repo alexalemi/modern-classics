@@ -6,7 +6,7 @@ translations. Pipelines proven so far: Gutenberg/SE plain text,
 SE-XHTML, Wikisource-API, from-the-Latin, from-the-French.
 
 ## Recently shipped
-### The Royal Institution Christmas Lectures (5-book run, COMPLETE)
+### The Royal Institution lecture volumes (6-book run, COMPLETE)
 - **C. V. Boys — Soap Bubbles and the Forces Which Mould Them**
   (1890; the project's FIRST ILLUSTRATED volume) — 13 files, ~32k
   words, all 69 plates + frontispiece. LIVE. The figure pipeline
@@ -31,14 +31,16 @@ SE-XHTML, Wikisource-API, from-the-Latin, from-the-French.
   thirteen months after Röntgen; the sixth lecture is on X-rays and
   quotes the discoverer's own interview. See thompson/FIGURES.md for
   the plate recovery and CLAUDE.md for the OCR-source lessons.
-- NEXT, making it six: **John Tyndall — Sound** (1867). Gutenberg
-  #54969, ~129k words, nine chapters each with the author's own
-  summary. The plain text drops the figure captions but the `-h.zip`
-  carries **191 images** — the soap-bubbles/ pattern exactly. Tyndall
-  invented the lecture-demonstration style all five of the others
-  descend from, and this is the direct companion volume: Boys on
-  surface tension, Faraday on candles and forces, Fleming on waves,
-  Ball on the sky, Thompson on light, Tyndall on sound.
+- **John Tyndall — Sound** (1867; third edition 1875) — 44 files,
+  ~117k words, all 187 plates, plus Le Conte's 1858 paper on the
+  sensitive flame and Tyndall's own note on acoustic reversibility.
+  LIVE, and the largest of the set. Gutenberg #54969. Tyndall invented
+  the lecture-demonstration style all the others descend from, so the
+  set now reads as one shelf: Boys on surface tension, Faraday on
+  candles and forces, Fleming on waves, Ball on the sky, Thompson on
+  light, Tyndall on sound. Its seventh chapter — the South Foreland
+  fog-signal researches, and the acoustic clouds that explain them —
+  has no counterpart anywhere else in the collection.
   (Note: "Sound: Musical and Non-Musical" is not a Thompson title —
   his catalogue is electricity, dynamos, Faraday, Kelvin and Gilbert.
   The nearest match to that phrase is Sedley Taylor's "Sound and

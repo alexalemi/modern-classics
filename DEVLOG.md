@@ -1,5 +1,127 @@
 # DEVLOG
 
+## 2026-08-02 (Tyndall's Sound — the ancestor of the whole Royal Institution set)
+
+John Tyndall's *Sound*: 44 files, ~117k modern words, ratio 0.97, all
+187 plates, epub built, `se lint` clean but for three [Manual Review]
+items in a multi-paragraph quotation. It is the eighth Royal
+Institution volume in the collection and, chronologically, the first —
+1867, six years after Faraday's *Candle*, and the book every later
+lecturer in the set is imitating. Source: Gutenberg #54969, the Collier
+reprint of the third edition of 1875, which is why the fog-signal
+chapter is in it at all.
+
+The translation was straightforward: proofread text, HTML edition with
+the plates in place, EN→EN prose at 0.97. Everything hard about this
+book was in the plumbing, and every defect found was of the one class
+`verify.py` structurally cannot see — **content that is present, in
+order, and wrong.**
+
+### Four defects, none of them visible to any mechanical check
+
+1. **Two figure-id collisions, both silent.** "Fig. 94a" (the Helmholtz
+   resonator) sits on the page after "Fig. 94" (the sonorous bell), and
+   a regex reading only digits gave it the id `94` — so the resonator
+   overwrote the bell's file and then shipped *twice*, once above the
+   paragraph about the bell. Worse: **Appendix II restarts its figure
+   numbering at 1**, and chapter one already has Figs. 1–4. Its four
+   sensitive-flame diagrams had quietly overwritten the row of
+   solitaire balls, the row of boys, Cottrell's spring model and the
+   bell in the air pump — so chapter one, the first thing a reader
+   sees, was illustrated with plates from the back of the book. Figure
+   parity passed throughout: every marker existed and every marker was
+   placed.
+   Fixed with a trailing-letter rule and a **namespaced id** (`app_1`),
+   which `assemble.figure_label` strips back to "Figure 1" for the
+   reader — a general facility any book that restarts its numbering now
+   has. prep.py raises if an id is ever claimed by two different files.
+
+2. **Nested containers duplicated 1,281 words.** `walk()` visited every
+   wrapping `<div>`/`<blockquote>` as well as its children, so a
+   wrapper emitted its whole contents once per level of nesting. The
+   Spenser stanza in chapter six sits three deep
+   (poetry-container > poetry > stanza > line) and appeared **four
+   times**; the Gaines's Farm letter and the Acoustic Reversibility
+   note sit in `<blockquote><div>` and appeared twice. Nothing catches
+   this: the text is all present and in order, and the word ratio only
+   gets *worse* the more faithfully the translation refuses to repeat
+   itself.
+
+3. **The frontispiece was a broken image.** prep wrote `figfront.jpg`
+   while `assemble.figure_name` special-cases that one id and looks for
+   `front.jpg`, so the plate was missing from the page and from the
+   epub — and `se build-manifest` cheerfully listed the orphan.
+   epubcheck caught it in the end (RSC-007), but only after the whole
+   book was built. Swept every assembled page in the repo for missing
+   image references afterwards: none.
+
+4. **Six misprints in Tyndall's own text**, each found by reading a
+   sentence against the figure or the arithmetic it describes:
+   - the third law of vibrating strings names the wrong fork ("the
+     string attached to *b*" for *a*), which makes the next clause,
+     "substituting b for a", nonsense;
+   - the tone series of a rod free at both ends is printed "1, 3, 4"
+     where the same page's octave and the chapter summary both require
+     1, 2, 3;
+   - an open pipe's reciprocals are printed "3:2:1", the right set of
+     numbers written backwards against the lengths just listed;
+   - the table of resultant tones labels the ratio 2 : 3 "Octave" (it
+     is the fifth, and the resultant given is the fifth's);
+   - Helmholtz's dissonance curve puts the major third at *c′*, the
+     left-hand end of its own base line, instead of *e′*;
+   - and the parabola of Fig. 177 is cited as Fig. 165.
+   Also "Mr. Philip Harry's Sensitive Flame", where the paragraph under
+   the heading and the book's own index both say Barry.
+
+### The one place the quoted-matter rule had to bend
+
+This book's ledger says quotations stay verbatim — Tyndall is arguing
+from them, and they are evidence. But Le Conte's 1858 paper is
+reprinted *whole* as Appendix One, and one of its paragraphs is also
+quoted in chapter six. Left alone, the same paragraph would have read
+two ways in one volume. New rule: **where a quotation's source is
+itself reprinted in this volume, the two must agree, and the modernized
+form governs.** Every other quotation in the book — Hooke, Herschel,
+Robison, Chladni, Abel, Arrow, Atkins, Kean, Arago's French,
+Helmholtz's German — is still verbatim, because none of those sources
+is reprinted here.
+
+### Smaller things
+
+- The **dedication to Richard Dawes** stands before the first heading,
+  in a box of its own, set in six centred all-caps lines. It fell
+  outside every section and was being dropped; a general rule would
+  have shouted it instead, since `assemble.py` reads an all-caps line
+  as a heading. Set as an indented block, with a source check so it
+  cannot vanish again.
+- A rule forbidding a part-cut immediately after a **section heading**
+  was written and then reverted: it would have moved the boundaries of
+  six already-translated files to fix something invisible in the
+  output, since `assemble.py` stitches a chapter's parts back together
+  before rendering. A cut after a *plate* still has to be forbidden —
+  its caption is written in the modern file and belongs with it.
+- Chapter cross-references go to **word form** ("Chapter Seven"), not
+  the source's Roman, because the manifest heads every chapter that
+  way and a reader has only the assembled page in front of them.
+- Cover: Turner's *Snow Storm: Steam-Boat off a Harbour's Mouth*
+  (1842) — a steamer signalling in fog off a harbour mouth, which is
+  precisely chapter seven.
+
+### What the book is
+
+The demonstrations are the ancestors of everything in the other seven
+volumes: five boys in a row with their hands on each other's backs, a
+glass tube rubbed until it shivers into rings, Chladni's sand figures,
+a flame that ducks at the letter S and ignores the same sound aimed
+half an inch higher. And its longest chapter is the one nobody else
+could have written — months on a steamer off the South Foreland firing
+guns into the Channel, finding results that contradicted each other
+flatly day by day, and arriving at the acoustic clouds: air of perfect
+optical clearness that stops sound dead, while dense fog turns out to
+be the best carrier of all. Every belief the century had inherited
+about fog deadening sound was wrong, and ships had been lost over it.
+
+
 ## 2026-08-01 (Thompson's Light Visible and Invisible — the RI set complete, and the first OCR source)
 
 Silvanus P. Thompson's Light Visible and Invisible: 30 files, ~69k
