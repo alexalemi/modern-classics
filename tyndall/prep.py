@@ -492,7 +492,12 @@ def main():
     TITLE_OF = {k if dict(TITLES)[k] != "Front Matter" else "Front Matter":
                 dict(TITLES)[k] for k, _ in TITLES}
 
+    # clear stale files: a re-run that produces FEWER parts than the last
+    # one leaves the extras behind, and verify.py walks the manifest, so
+    # nothing notices an orphan chapter sitting in the directory
     (BOOK / "chapters").mkdir(exist_ok=True)
+    for old in (BOOK / "chapters").glob("*.txt"):
+        old.unlink()
     manifest, n = [], 0
     for key in order:
         title = TITLE_OF[key]
