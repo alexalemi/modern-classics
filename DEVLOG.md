@@ -1,5 +1,56 @@
 # DEVLOG
 
+## 2026-08-03 (Original-text editions for the seven lecture volumes)
+
+`assemble.py --original` builds `site/{book}-original.html` from
+`chapters/` — the source text as published, beside the modernization,
+for anyone who wants to see what the retelling is a retelling of. Live
+for the seven Royal Institution lecture volumes (Boys, Faraday ×2,
+Fleming, Ball, Thompson, Tyndall), cross-linked from each modern page
+and from the index.
+
+`chapters/` was already clean, split and keyed to the same manifest, so
+the build is nearly free — but two things differ from the modern build
+and both are consequences of it being the splitter's output rather than
+a translator's:
+
+- **Headings come from `manifest.json`, not from the file.** A modern
+  file opens on its chapter heading; a source file opens straight on
+  the chapter's own contents-summary paragraph, which would otherwise
+  become the heading.
+- **Plates keep the label the original printed and get no caption.**
+  The captions in this collection are new writing — often the single
+  biggest improvement over the original — and they belong to the modern
+  edition alone. `render_figure(bare_label=True)` emits
+  `<figcaption><b>Figure 22</b></figcaption>` and nothing more, which
+  is what the 1875 book had under the woodcut.
+
+The template's two variable lines (the date line and the intro
+paragraph) became `{{DATE_LINE}}` and `{{INTRO}}`, built in Python, so
+the original pages can say what they are without a second template to
+keep in sync. Re-assembled all 47 books to confirm the refactor is
+byte-identical everywhere else; the only diffs were `ball.html` and
+`thompson.html` gaining the epub links they should have had since
+their epubs were built.
+
+Checks: every plate resolves on all seven pages (70/38/50/87/94/127/187
+figures, matching the modern pages exactly), every page carries the
+full source word count, and a link check over the whole site finds no
+broken local href. The originals are deliberately absent from the RSS
+and OPDS feeds — they are the same book, not a new one.
+
+Also, found while checking paragraph alignment: `tyndall/chapters/`
+still held an orphaned `044.txt` from before chapter seven dropped
+from eight parts to seven. `verify.py` walks the manifest, so nothing
+noticed. prep now clears the directory before writing.
+
+*(Alignment note for any future facing-page edition: paragraph counts
+match in 36 of 44 Tyndall files but in only 4 of 257 across seven other
+books — unstacking Victorian sentences merges and splits paragraphs
+constantly. Anything finer than section-level alignment needs real
+alignment work per book.)*
+
+
 ## 2026-08-02 (Tyndall's Sound — the ancestor of the whole Royal Institution set)
 
 John Tyndall's *Sound*: 44 files, ~117k modern words, ratio 0.97, all

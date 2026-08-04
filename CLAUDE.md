@@ -162,7 +162,16 @@ What to preserve:
   or legacy splits-file mode; Gutenberg stripping; oversize auto-split)
 - `verify.py` — mechanical completeness/consistency checks before assembly
 - `assemble.py` — `modern_chapters/` + `manifest.json` + `env` +
-  `site/template.html` → `site/{book}.html`
+  `site/template.html` → `site/{book}.html`.
+  `--original` assembles `chapters/` instead → `site/{book}-original.html`:
+  the source text as published, for readers who want to see what the
+  modernization is a modernization of. Headings come from the manifest
+  (a source file opens on the chapter's contents summary, not a heading)
+  and plates keep only the number the original printed under them, since
+  the captions in this collection are new writing. Set `ORIGINAL_TEXT=yes`
+  in `env` to cross-link the two pages. Live for the seven Royal
+  Institution lecture volumes; the originals are deliberately NOT in the
+  feeds or the epub catalogue — they are the same book, not a new one.
 - `legacy/` — the original API-based batch translator and prompt templates,
   plus old book-specific assemblers. Reference only; see `legacy/README.md`
   (note: their `max_tokens` settings truncate full chapters).

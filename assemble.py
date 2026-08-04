@@ -1,6 +1,21 @@
 """Assemble a book's modern_chapters into a single HTML page.
 
     python3 assemble.py <book_dir> [--out site/<name>.html]
+    python3 assemble.py <book_dir> --original     # the source text instead
+
+`--original` assembles chapters/ rather than modern_chapters/ and writes
+site/<name>-original.html: the same book in the words it was published in,
+for readers who want to see what the modernization is a modernization of.
+Two things differ from the modern build, both because chapters/ is the
+splitter's output rather than a translator's:
+
+  - headings come from manifest.json, not from the file's first line
+    (a source file opens on the chapter's own contents-summary paragraph);
+  - a plate keeps the label the original printed under it ("Fig. 22.") and
+    gets no caption, because the captions in this collection are new
+    writing and belong only to the modern edition.
+
+Set ORIGINAL_TEXT=yes in the book's env to cross-link the two pages.
 
 Driven by two data files in <book_dir>:
 
@@ -138,10 +153,23 @@ def image_size(path):
     return None
 
 
-def render_figure(num, caption, figdir, site):
+def render_figure(num, caption, figdir, site, bare_label=False):
     """<figure> for a [Figure N: caption] paragraph. `num` names the file
-    (fig12.jpg), except "front" which is the frontispiece plate."""
+    (fig12.jpg), except "front" which is the frontispiece plate.
+
+    `bare_label` is for the original-text edition, where the source has no
+    captions to give: the plate keeps the number the book printed under it
+    and nothing else."""
     caption = " ".join(caption.split()) if caption else None
+    if bare_label and not caption:
+        label = figure_label(num)
+        src = f"{figdir}/{figure_name(site, figdir, num)}"
+        dims = image_size(site / src)
+        size = f' width="{dims[0]}" height="{dims[1]}"' if dims else ""
+        cap = (f'\n<figcaption><b>{label}</b></figcaption>' if label else "")
+        return (f'<figure id="fig-{num}">\n<img src="{src}" '
+                f'alt="{html.escape(label or "Plate", quote=True)}"{size} '
+                f'loading="lazy">{cap}\n</figure>')
     src = f"{figdir}/{figure_name(site, figdir, num)}"
     label = figure_label(num)
     dims = image_size(site / src)
@@ -171,7 +199,7 @@ def find_speakers(pars):
     return {name for name, n in counts.items() if n >= 3}
 
 
-def render_body(text, figdir=None, site=None):
+def render_body(text, figdir=None, site=None, bare_label=False):
     pars = [p.rstrip() for p in re.split(r"\n\s*\n", text) if p.strip()]
     speakers = find_speakers(pars)
     out = []
@@ -180,7 +208,8 @@ def render_body(text, figdir=None, site=None):
         lines = s.split("\n")
         fig = FIGURE.match(s) if figdir else None
         if fig:
-            out.append(render_figure(fig.group(1), fig.group(2), figdir, site))
+            out.append(render_figure(fig.group(1), fig.group(2), figdir,
+                                     site, bare_label))
         elif HR_LINE.fullmatch(s):
             out.append("<hr>")
         elif re.search(r"^[ \t]", par, re.M):
@@ -249,8 +278,13 @@ def load_manifest(book):
     return [{"file": f, "title": "", "part": 1, "of": 1} for f in files]
 
 
-def build_sections(book, manifest):
-    """Return a list of {id, heading, body, is_chapter, part_before}."""
+def build_sections(book, manifest, source="modern_chapters", titles=False):
+    """Return a list of {id, heading, body, is_chapter, part_before}.
+
+    `titles` takes each section's heading from manifest.json instead of from
+    the file's first line, which is what the original-text build needs: a
+    source file has no heading of its own and opens straight on the
+    chapter's contents summary."""
     groups = []
     for m in manifest:
         if m["part"] == 1:
@@ -262,10 +296,11 @@ def build_sections(book, manifest):
     for g in groups:
         bodies, heading = [], None
         for i, m in enumerate(g["entries"]):
-            lines = (book / "modern_chapters" / m["file"]).read_text().split("\n")
-            h, rest = strip_front(lines, expect_heading=not g["split_headings"])
+            lines = (book / source / m["file"]).read_text().split("\n")
+            h, rest = strip_front(
+                lines, expect_heading=not (g["split_headings"] or titles))
             if i == 0:
-                heading = h
+                heading = m.get("title") if titles else h
             bodies.append(rest)
         body = "\n\n".join(bodies)
 
@@ -315,7 +350,7 @@ def build_toc(sections):
     return "\n".join(toc)
 
 
-def build_body(sections, figdir=None, site=None):
+def build_body(sections, figdir=None, site=None, bare_label=False):
     out = []
     for s in sections:
         if s["part_before"]:
@@ -323,7 +358,7 @@ def build_body(sections, figdir=None, site=None):
             out.append(f'<h2 id="{pid}" class="center">{html.escape(s["part_before"])}</h2>')
         tag = "h3" if s["is_chapter"] else "h2"
         out.append(f'<{tag} id="{s["id"]}">{html.escape(s["heading"])}</{tag}>')
-        out.append(render_body(s["body"], figdir, site))
+        out.append(render_body(s["body"], figdir, site, bare_label))
     return "\n".join(out)
 
 
@@ -332,18 +367,23 @@ def main():
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("book_dir")
     ap.add_argument("--out", help="output path (default site/<book_dir>.html)")
+    ap.add_argument("--original", action="store_true",
+                    help="assemble chapters/ into site/<book_dir>-original.html")
     args = ap.parse_args()
 
     book = Path(args.book_dir)
     root = Path(__file__).parent
-    out = Path(args.out) if args.out else root / "site" / f"{book.name}.html"
+    stem = f"{book.name}-original" if args.original else book.name
+    out = Path(args.out) if args.out else root / "site" / f"{stem}.html"
 
     env = read_env(book / "env")
     for key in ("ORIGINAL_WORK", "AUTHOR", "DATE"):
         if key not in env:
             sys.exit(f"ERROR: {key} missing from {book}/env")
 
-    sections = build_sections(book, load_manifest(book))
+    sections = build_sections(book, load_manifest(book),
+                              source="chapters" if args.original
+                              else "modern_chapters", titles=args.original)
 
     subtitle = env.get("SUBTITLE", "")
     subtitle_block = f"\t<h3>{html.escape(subtitle)}</h3>\n" if subtitle else ""
@@ -356,18 +396,34 @@ def main():
     epub = find_epub(book, root)
     epub_sentence = (f' Also available as an <a href="ebooks/{epub}">epub</a>.'
                      if epub else "")
+    title = html.escape(env["ORIGINAL_WORK"])
+    if args.original:
+        date_line = html.escape(env["DATE"])
+        intro = (f'<p><i>This is the original text of {title}, as it was '
+                 f'published, for readers who want to see what the '
+                 f'modernization is a modernization of. '
+                 f'<a href="{book.name}.html">The modern retelling is '
+                 f'here</a>.{source_sentence}</i></p>')
+    else:
+        date_line = f'<s>{html.escape(env["DATE"])}</s> ' \
+                    f'{env.get("MODERN_YEAR", "2026")}'
+        original_sentence = (
+            f' <a href="{book.name}-original.html">The original text is also '
+            f'here</a>.' if env.get("ORIGINAL_TEXT") else "")
+        intro = (f'<p><i>This is an AI modernization of {title} into '
+                 f'contemporary English.{source_sentence}{epub_sentence}'
+                 f'{original_sentence}</i></p>')
 
     page = (root / "site" / "template.html").read_text()
     for key, val in {
-        "{{TITLE}}": html.escape(env["ORIGINAL_WORK"]),
+        "{{TITLE}}": title,
         "{{AUTHOR}}": html.escape(env["AUTHOR"]),
-        "{{DATE}}": html.escape(env["DATE"]),
-        "{{MODERN_YEAR}}": env.get("MODERN_YEAR", "2026"),
+        "{{DATE_LINE}}": date_line,
         "{{SUBTITLE_BLOCK}}": subtitle_block,
-        "{{SOURCE_SENTENCE}}": source_sentence,
-        "{{EPUB_SENTENCE}}": epub_sentence,
+        "{{INTRO}}": intro,
         "{{TOC}}": build_toc(sections),
-        "{{BODY}}": build_body(sections, env.get("FIGURE_DIR"), root / "site"),
+        "{{BODY}}": build_body(sections, env.get("FIGURE_DIR"), root / "site",
+                               bare_label=args.original),
     }.items():
         page = page.replace(key, val)
 
