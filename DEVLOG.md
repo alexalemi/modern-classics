@@ -1,5 +1,66 @@
 # DEVLOG
 
+## 2026-08-04 (Original-text epubs)
+
+`build_ebook.py {book} --original` builds the companion edition as an
+epub, so the source text travels with the retelling: seven more books
+in `site/ebooks/`, named `{author}_{work}-the-original-text.epub`.
+
+Three things beyond what the web page needed, all of them about not
+lying to a reader's library or a reader:
+
+- **The uid gets `#original-text`.** Two epubs sharing a `dc:identifier`
+  are the same work as far as a reader system is concerned. The suffix
+  also lets `assemble.find_epub` tell them apart, so each page links its
+  own edition — the modern page's needle (`/tree/main/candle<`) no longer
+  matches the original's uid.
+- **`dc:title` gains `: The Original Text`.** That is what makes
+  `se create-draft` name the build directory distinctly (it slugs the
+  title), and it flows through to the titlepage and the generated cover
+  without any extra work. `se build-images` lays the longer title out
+  over three lines and it reads cleanly; the colon survives the
+  text-to-path conversion.
+- **The imprint and colophon had to stop saying "retold".** They now say
+  the ebook reproduces the author's own text unmodernized, and drop the
+  "by Alex Alemi and Claude" line, which would be a false claim on a text
+  neither of them wrote.
+
+Plates keep the number the original printed under them and nothing else,
+matching the web build — `render_figure` in `build_ebook.py` needed the
+same `BARE_LABEL` treatment `assemble.py` got, or the epub silently
+dropped the "Fig. 22." label the prose refers to.
+
+Two things the source text needed that the modernization did not:
+
+- **`se typogrify` unescapes every form of `<`.** `&lt;`, `&#x3C;` and
+  `&#60;` all come out as a bare `<`, which makes the file invalid XML
+  for every step after it. In the modern text the fix is to reword, and
+  `build_ebook.py` refuses to build until someone does — but Thompson
+  printed "h₁ < h₂" and an edition of his text cannot reword him. So the
+  guard now applies to the modern build only, and the original build
+  re-escapes after typogrify, on the one form a bare `<` can take in
+  running prose: followed by something that cannot begin a tag.
+- **A lone acute accent in `forces`.** The transcription writes the prime
+  in Faraday's apparatus labels ("the stop-cocks H´ H H") as `´`, a
+  substitute for a character the printer had and the transcriber did not.
+  `se lint` rejects it (t-055) and it is meaningless to a reader.
+  Restored to a real prime in `forces/prep.py`; one character, no
+  boundary drift, verify still passes.
+
+**A bug found by the epubs, not by the pages.** `assemble.find_epub`
+matched a book to its epub on `dc:source` — but both editions cite the
+same repo directory there, so every modern page started linking the
+original-text epub. It now matches on `dc:identifier`, the one field the
+two are guaranteed to differ in.
+
+Lint on the originals is the same class of leftover as the modern books:
+[Manual Review] items on Victorian abbreviations, an unpunctuated line
+that is really a heading, and a curly-quote heuristic. The one [Error],
+`m-056` on Star-land, is pre-existing on the modern edition too: an SE
+convention that an author named in the long description be linked to
+their Standard Ebooks author page. These are not SE productions and
+there is no such page to link to.
+
 ## 2026-08-03 (Original-text editions for the seven lecture volumes)
 
 `assemble.py --original` builds `site/{book}-original.html` from

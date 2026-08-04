@@ -18,27 +18,28 @@ def esc(s):
     return html.escape(s, quote=False)
 
 
-def apply(dest, env, meta, spine):
-    _content_opf(dest, env, meta)
+def apply(dest, env, meta, spine, original=False):
+    _content_opf(dest, env, meta, original)
     pn = dest / "production-notes.md"
     if pn.exists() and not pn.read_text().strip():
         pn.unlink()
-    _imprint(dest, env, meta)
-    _colophon(dest, env, meta)
+    _imprint(dest, env, meta, original)
+    _colophon(dest, env, meta, original)
     _uncopyright(dest, env, meta)
     logo = dest / "src/epub/images/logo.svg"
     if logo.exists():
         logo.unlink()
 
 
-def _content_opf(dest, env, meta):
+def _content_opf(dest, env, meta, original=False):
     p = dest / "src/epub/content.opf"
     t = p.read_text()
     book = meta["dir"]
 
     t = t.replace(
         re.search(r"<dc:identifier id=\"uid\">[^<]*</dc:identifier>", t).group(0),
-        f'<dc:identifier id="uid">{REPO}/tree/main/{book}</dc:identifier>')
+        f'<dc:identifier id="uid">{REPO}/tree/main/{book}'
+        f'{"#original-text" if original else ""}</dc:identifier>')
 
     # publisher block: Modern Classics
     t = t.replace('<dc:publisher id="publisher">Standard Ebooks</dc:publisher>',
@@ -177,19 +178,34 @@ def _content_opf(dest, env, meta):
     p.write_text(t)
 
 
-def _imprint(dest, env, meta):
+def _imprint(dest, env, meta, original=False):
     p = dest / "src/epub/text/imprint.xhtml"
     t = p.read_text()
     t = re.sub(r'\t*<img[^>]*logo\.svg[^>]*/>\n', "", t)
     t = re.sub(r'<header>\s*<h2 epub:type="title">([^<]*)</h2>\s*</header>',
                r'<h2 epub:type="title">\1</h2>', t)
+    intro = (
+        f'This ebook is the companion original-text edition to a '
+        f'<a href="{REPO}">Modern Classics</a> retelling: the source text as '
+        f'published, so that a reader can see what the retelling is a '
+        f'retelling of. It is not affiliated with or endorsed by Standard '
+        f'Ebooks, whose open tooling and style manual were used to produce it.'
+        if original else
+        f'This ebook is a <a href="{REPO}">Modern Classics</a> retelling: a '
+        f'classic public domain text, retold in contemporary English with the '
+        f'help of Claude, an AI model by Anthropic. It is not affiliated with '
+        f'or endorsed by Standard Ebooks, whose open tooling and style manual '
+        f'were used to produce it.')
     t = t.replace(
         'This ebook is the product of many hours of hard work by volunteers for <a href="https://standardebooks.org/">Standard Ebooks</a>, and builds on the hard work of other literature lovers made possible by the public domain.',
-        f'This ebook is a <a href="{REPO}">Modern Classics</a> retelling: a classic public domain text, retold in contemporary English with the help of Claude, an AI model by Anthropic. It is not affiliated with or endorsed by Standard Ebooks, whose open tooling and style manual were used to produce it.')
+        intro)
     src = env.get("SOURCE_URL")
     src_name = env.get("SOURCE_NAME", "Project Gutenberg")
     trl = env.get("TRANSLATOR") or env.get("TRANSLATORS")
-    based = f'This particular ebook is a modern retelling of <i epub:type="se:name.publication.book">{esc(env["ORIGINAL_WORK"])}</i> by {esc(env["AUTHOR"])}'
+    based = (f'This particular ebook is the unmodernized text of '
+             f'<i epub:type="se:name.publication.book">{esc(env["ORIGINAL_WORK"])}</i> '
+             f'by {esc(env["AUTHOR"])}' if original else
+             f'This particular ebook is a modern retelling of <i epub:type="se:name.publication.book">{esc(env["ORIGINAL_WORK"])}</i> by {esc(env["AUTHOR"])}')
     if trl:
         based += f", working from the English translation by {esc(trl)}"
     if src:
@@ -206,7 +222,7 @@ def _imprint(dest, env, meta):
     p.write_text(t)
 
 
-def _colophon(dest, env, meta):
+def _colophon(dest, env, meta, original=False):
     p = dest / "src/epub/text/colophon.xhtml"
     t = p.read_text()
     t = re.sub(r'\t*<img[^>]*logo\.svg[^>]*/>\n', "", t)
@@ -222,8 +238,15 @@ def _colophon(dest, env, meta):
                author_link + ".</p>", t)  # no-op for non-draft templates
     t = re.sub(r'<a href="https://en\.wikipedia\.org/wiki/[^"]*">[^<]*</a>\.</p>\n(\t*<p>This ebook was produced for)',
                author_link + ".</p>\n" + r"\1", t, count=1)
+    # the original-text edition is not a retelling and must not say it is
+    made = ('This ebook reproduces the author\u2019s own text, unmodernized, for<br/>'
+            if original else
+            'This ebook was retold in contemporary English for<br/>')
+    by = ('' if original else
+          '<br/>\n\t\t\tby<br/>\n\t\t\t'
+          '<b epub:type="z3998:personal-name">Alex Alemi</b> and Claude,')
     t = t.replace('This ebook was produced for<br/>\n\t\t\t<a href="https://standardebooks.org/">Standard Ebooks</a><br/>\n\t\t\tby<br/>\n\t\t\t<a href="PRODUCER_URL">PRODUCER_NAME</a>,<br/>',
-                  f'This ebook was retold in contemporary English for<br/>\n\t\t\t<a href="{REPO}">Modern Classics</a><br/>\n\t\t\tby<br/>\n\t\t\t<b epub:type="z3998:personal-name">Alex Alemi</b> and Claude,<br/>')
+                  f'{made}\n\t\t\t<a href="{REPO}">Modern Classics</a>{by}<br/>')
     src = env.get("SOURCE_URL")
     src_name = env.get("SOURCE_NAME", "Project Gutenberg")
     trl = env.get("TRANSLATOR") or env.get("TRANSLATORS")

@@ -250,10 +250,19 @@ def strip_front(lines, expect_heading):
     return heading, "\n".join(lines[j:]).strip("\n").rstrip()
 
 
-def find_epub(book, root):
-    """This book's epub in site/ebooks, matched via the dc:source repo path."""
+UID = re.compile(r'<dc:identifier id="uid">([^<]*)</dc:identifier>')
+
+
+def find_epub(book, root, original=False):
+    """This book's epub in site/ebooks, matched on the dc:identifier.
+
+    NOT on dc:source: both editions of a book cite the same repo directory
+    there, so matching dc:source hands the modern page the original-text
+    epub. The identifier is the one field the two are guaranteed to differ
+    in — the original carries "#original-text" — because it is what makes
+    them distinct works to a reader's library in the first place."""
     import zipfile
-    needle = f"/tree/main/{book.name}<"
+    want = f"/tree/main/{book.name}{'#original-text' if original else ''}"
     for f in sorted((root / "site" / "ebooks").glob("*.epub")):
         if f.name.endswith("_advanced.epub"):
             continue
@@ -261,7 +270,8 @@ def find_epub(book, root):
             opf = zipfile.ZipFile(f).read("epub/content.opf").decode()
         except Exception:
             continue
-        if needle in opf:
+        m = UID.search(opf)
+        if m and m.group(1).endswith(want):
             return f.name
     return None
 
@@ -393,7 +403,7 @@ def main():
                            f'<a href="{env["SOURCE_URL"]}">{html.escape(name)}</a>.')
     else:
         source_sentence = ""
-    epub = find_epub(book, root)
+    epub = find_epub(book, root, original=args.original)
     epub_sentence = (f' Also available as an <a href="ebooks/{epub}">epub</a>.'
                      if epub else "")
     title = html.escape(env["ORIGINAL_WORK"])
@@ -403,7 +413,7 @@ def main():
                  f'published, for readers who want to see what the '
                  f'modernization is a modernization of. '
                  f'<a href="{book.name}.html">The modern retelling is '
-                 f'here</a>.{source_sentence}</i></p>')
+                 f'here</a>.{source_sentence}{epub_sentence}</i></p>')
     else:
         date_line = f'<s>{html.escape(env["DATE"])}</s> ' \
                     f'{env.get("MODERN_YEAR", "2026")}'

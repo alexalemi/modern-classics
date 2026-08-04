@@ -170,8 +170,26 @@ What to preserve:
   and plates keep only the number the original printed under them, since
   the captions in this collection are new writing. Set `ORIGINAL_TEXT=yes`
   in `env` to cross-link the two pages. Live for the seven Royal
-  Institution lecture volumes; the originals are deliberately NOT in the
-  feeds or the epub catalogue — they are the same book, not a new one.
+  Institution lecture volumes.
+- `build_ebook.py {book} --original` — the same companion edition as an
+  epub, into `{author}_{work}-the-original-text.epub`. Three things beyond
+  the page build: the uid gets `#original-text` so the two editions are
+  distinct works to a reader's library (and so `assemble.find_epub` can
+  tell them apart); `dc:title` gains `: The Original Text`, which is what
+  makes `se create-draft` name the build directory distinctly and what the
+  cover and titlepage then render; and the imprint and colophon say the
+  text is reproduced unmodernized rather than retold. The long description
+  keeps the book's own first paragraph — it describes the book, not the
+  retelling — and replaces the rest.
+- The originals are deliberately NOT in the RSS or OPDS feeds: they are the
+  same book, not a new one. They are reachable from the index and from each
+  book page.
+  TWO TRAPS. (1) `assemble.find_epub` must match on `dc:identifier`, NOT
+  `dc:source` — both editions cite the same repo directory in dc:source, so
+  matching that hands every modern page the original-text epub. (2) `se
+  typogrify` unescapes `&lt;`, `&#x3C;` and `&#60;` alike into a bare `<`.
+  The modern build refuses to proceed and asks for a rewording; the original
+  build cannot reword its author, so it re-escapes after typogrify.
 - `legacy/` — the original API-based batch translator and prompt templates,
   plus old book-specific assemblers. Reference only; see `legacy/README.md`
   (note: their `max_tokens` settings truncate full chapters).

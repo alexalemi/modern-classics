@@ -1,6 +1,15 @@
 """Build a Standard-Ebooks-quality epub from a book's modern_chapters.
 
     python3 build_ebook.py <book_dir> [--out-dir site/ebooks] [--skip-build]
+    python3 build_ebook.py <book_dir> --original     # the source text instead
+
+`--original` builds the companion edition of the source text from chapters/
+(see assemble.py --original), into <slug>_original.epub. It differs from the
+modern build in the same two ways the web page does — headings come from the
+manifest, plates keep only the number the original printed — plus three that
+belong to the epub: the uid is suffixed so the two editions are distinct
+works to a reader's library, the colophon says the text is unmodernized
+rather than retold, and dc:title carries ": The Original Text".
 
 Reads the same data files as assemble.py (env, manifest.json,
 modern_chapters/NNN.txt) plus per-book publishing metadata from
@@ -116,7 +125,7 @@ def parse_heading(raw):
     return label, ordinal, title
 
 
-def load_sections(book):
+def load_sections(book, original=False):
     """assemble.build_sections, with part grouping reconstructed for books
     that predate manifest.json (via '(Part n of k)' markers)."""
     mpath = book / "manifest.json"
@@ -135,7 +144,9 @@ def load_sections(book):
                     part, of = int(pm.group(1)), int(pm.group(2))
                     break
             manifest.append({"file": f, "title": "", "part": part, "of": of})
-    return assemble.build_sections(book, manifest)
+    return assemble.build_sections(
+        book, manifest, source="chapters" if original else "modern_chapters",
+        titles=original)
 
 
 def classify_block(par):
@@ -162,6 +173,9 @@ ERA = re.compile(r"\b([AB])\.([DC])\.")
 # set from env in main(); render_block() is reached through several layers of
 # generic rendering code, so the book's figure directory rides in a cell
 FIGURE_DIR = [None]
+# likewise for the original-text build: the source has no captions to give,
+# so a plate keeps the number the book printed under it and nothing else
+BARE_LABEL = [False]
 
 
 def render_figure(s):
@@ -172,6 +186,8 @@ def render_figure(s):
     m = assemble.FIGURE.match(s)
     num = m.group(1)
     caption = " ".join(m.group(2).split()) if m.group(2) else None
+    if BARE_LABEL[0]:
+        caption = None
     name = assemble.figure_name(ROOT / "site", FIGURE_DIR[0] or "", num)
     label = assemble.figure_label(num)
     alt = caption or label or "Plate"
@@ -181,8 +197,11 @@ def render_figure(s):
     # names something in quotation marks produces unparseable XHTML
     out = [f'\t\t\t<figure id="fig-{num}">',
            f'\t\t\t\t<img alt="{html.escape(alt, quote=True)}" src="../images/{name}"/>']
-    if caption:
-        inner = f"<b>{label}</b>—{esc(caption)}" if label else esc(caption)
+    if caption or (BARE_LABEL[0] and label):
+        if caption:
+            inner = f"<b>{label}</b>—{esc(caption)}" if label else esc(caption)
+        else:
+            inner = f"<b>{label}</b>"   # the number the original printed
         out.append("\t\t\t\t<figcaption>\n"
                    f"\t\t\t\t\t<p>{inner}</p>\n"
                    "\t\t\t\t</figcaption>")
@@ -420,6 +439,28 @@ def prepare_cover(dest, meta):
             break
 
 
+LONE_LT = re.compile(r"<(?![/!?a-zA-Z])")
+
+
+def reescape_lt(dest):
+    """`se typogrify` unescapes every form of the less-than sign — &lt;,
+    &#x3C; and &#60; alike — into a bare "<", which makes the file invalid
+    XML for every step after it. In the modern text the fix is to reword
+    ("h1 is less than h2"), and main() refuses to build until someone does.
+    In the ORIGINAL text there is nothing to reword: Thompson printed
+    "h1 < h2" and the edition reproduces what he printed. So put the
+    escape back, on the one form a bare "<" can take in running prose —
+    followed by something that cannot begin a tag."""
+    n = 0
+    for f in sorted((dest / "src/epub/text").glob("*.xhtml")):
+        s = f.read_text()
+        fixed = LONE_LT.sub("&lt;", s)
+        if fixed != s:
+            f.write_text(fixed)
+            n += 1
+    return n
+
+
 def run(cmd, cwd, check=True):
     r = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True, input="y\n")
     if check and r.returncode not in (0, 18):  # 18 = NoResults on finder tools
@@ -427,20 +468,54 @@ def run(cmd, cwd, check=True):
     return r
 
 
+ORIGINAL_SUFFIX = ": The Original Text"
+
+
+def original_meta(meta, env):
+    """Publishing metadata for the companion edition of the source text.
+
+    The book's own first long-description paragraph describes the book, not
+    the modernization, so it carries over; everything that describes the
+    retelling is replaced by a plain statement of what this edition is."""
+    work = env["ORIGINAL_WORK"]
+    m = dict(meta)
+    m["description"] = (f"The original text of {work} as published in "
+                        f"{env['DATE']} — the source behind the Modern "
+                        f"Classics retelling, not the retelling itself.")
+    first = (meta.get("long_description") or [""])[0]
+    m["long_description"] = [
+        first,
+        (f"This is that book in its own words. Modern Classics publishes a "
+         f"retelling of {work} in contemporary English; this companion "
+         f"edition is the text it was made from, unaltered, so that a reader "
+         f"can see what was changed and what was not. The plates are the "
+         f"same, carrying the numbers the original printed under them and "
+         f"none of the descriptive captions, which are new writing and "
+         f"belong to the retelling alone."),
+    ]
+    return m
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("book_dir")
     ap.add_argument("--out-dir", default=str(ROOT / "site" / "ebooks"))
     ap.add_argument("--skip-build", action="store_true")
+    ap.add_argument("--original", action="store_true",
+                    help="build the source text from chapters/ instead")
     args = ap.parse_args()
 
     book = Path(args.book_dir)
     env = assemble.read_env(book / "env")
     all_meta = json.loads((ROOT / "ebook_meta.json").read_text())
-    meta = all_meta[book.name]
+    meta = dict(all_meta[book.name])
     FIGURE_DIR[0] = env.get("FIGURE_DIR")
+    BARE_LABEL[0] = args.original
 
     author, work = env["AUTHOR"], env["ORIGINAL_WORK"]
+    if args.original:
+        meta = original_meta(meta, env)
+        work = work + ORIGINAL_SUFFIX
     slug = f"{slugify(author)}_{slugify(work)}"
     dest = BUILD_ROOT / slug
 
@@ -455,7 +530,7 @@ def main():
     for old in list(textdir.glob("part-*.xhtml")) + list(textdir.glob("body.xhtml")):
         old.unlink()
 
-    sections = load_sections(book)
+    sections = load_sections(book, original=args.original)
     spine, matters = build_chapter_files(book, sections, meta, textdir)
 
     # SE requires a half title page when the book has frontmatter
@@ -490,7 +565,7 @@ def main():
     import rebrand
     meta["_has_dedication"] = (textdir / "dedication.xhtml").exists()
     meta["_has_preface"] = (textdir / "preface.xhtml").exists()
-    rebrand.apply(dest, env, meta, spine)
+    rebrand.apply(dest, env, meta, spine, original=args.original)
     prepare_cover(dest, meta)
     copy_figures(book, env, dest)
 
@@ -498,13 +573,16 @@ def main():
     # the file unparseable for every step after it — and the error you get is
     # a raw XML "invalid element name", pages away from the cause. Refuse to
     # ship a bare comparison operator in prose, and say why.
-    for f in sorted((dest / "src/epub/text").glob("*.xhtml")):
-        if "&lt;" in f.read_text():
-            raise SystemExit(
-                f"{f.name} contains an escaped '<'. `se typogrify` will "
-                "unescape it and break the XHTML. Reword the sentence "
-                "(\"h1 is less than h2\") in modern_chapters/ instead.")
-    for step in (["typogrify", "."], ["clean", "."], ["build-manifest", "."],
+    if not args.original:
+        for f in sorted((dest / "src/epub/text").glob("*.xhtml")):
+            if "&lt;" in f.read_text():
+                raise SystemExit(
+                    f"{f.name} contains an escaped '<'. `se typogrify` will "
+                    "unescape it and break the XHTML. Reword the sentence "
+                    "(\"h1 is less than h2\") in modern_chapters/ instead.")
+    run([SE, "typogrify", "."], cwd=dest)
+    reescape_lt(dest)
+    for step in (["clean", "."], ["build-manifest", "."],
                  ["build-spine", "."], ["build-title", "."]):
         run([SE] + step, cwd=dest)
     rebrand.order_spine(dest, spine)

@@ -77,6 +77,12 @@ def strip_wrapper(text):
 
 
 def clean(s):
+    # The transcription writes the PRIME in Faraday's apparatus labels
+    # ("the stop-cocks H\u00b4 H H") as a lone acute accent, which is a
+    # substitute for a character the printer had and the transcriber did
+    # not. Restore it: `se lint` rejects a lone acute (t-055), and a bare
+    # accent floating after a capital is meaningless to a reader.
+    s = s.replace("\u00b4", "\u2032")
     return re.sub(r"\s+", " ", s).strip().replace("_", "")
 
 
