@@ -94,7 +94,7 @@ SOURCE DEFECTS FOUND (all by working the sums, none visible to verify.py)
 - KNOT FOUR (story): "two country gentlemen of the Twentieth Century"
   in a book published in 1885. Rendered nineteenth.
 
-OUTSTANDING BEFORE PUBLICATION
+RESOLVED BEFORE PUBLICATION
 - COVER NOT YET CHOSEN. My first pick was entered with a Commons
   filename that does not exist, which hung the epub build for forty
   minutes with no output at all (see the prepare_cover fix in
@@ -104,4 +104,16 @@ OUTSTANDING BEFORE PUBLICATION
   both under 1600px, too small for a 1400x2100 crop without visible
   upscaling. ALWAYS QUERY THE COMMONS API FOR SIZE AND EXISTENCE BEFORE
   WRITING A FILENAME INTO ebook_meta.json.
-- epub not yet built (it needs only the cover decision).
+- COVER CHOSEN: Jan Steen's "The Village School" (National Gallery of
+  Ireland), 2227x3000, crop 2000x3000+113+0 -- a schoolmaster at his desk
+  sharpening a pen while the children crowd round thrusting papers at
+  him and more work lies scattered on the floor. That is the Answers
+  appendix in one picture.
+- THE NINE PLATES SHIPPED AS JPEG, NOT PNG. `se lint` rejects a PNG with
+  no transparency (f-019) -- the same thing thompson/ hit. Converting
+  them is enough; assemble.py and build_ebook.py resolve the extension
+  themselves, so nothing else changes.
+- Carroll's ratios are written closed up ("1:2:3:4"). The spaced form
+  trips se lint t-041, illegal space before punctuation, and is not his
+  anyway.
+- epub BUILT, lint clean.
