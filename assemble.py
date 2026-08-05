@@ -81,11 +81,23 @@ def is_subheading(par):
         return False
     if par[-1] in ".;:,—":
         return False
+    # A short spoken line ending in "?" or "!" is not a heading. This has to
+    # be narrow: Leviathan and The Social Contract both give whole sections
+    # question-form titles ("Could Church Councils Make Scripture Law?"),
+    # so the terminal mark alone cannot decide it. What separates the two is
+    # that dialogue carries a speaker tag ("Christian. What were you once?")
+    # or runs to more than one sentence ("Pliable. Well said. And what
+    # else?"); a heading does neither. Without this, every short question in
+    # a dialogue book is set as a section heading mid-conversation.
+    if par[-1] in "?!" and (SPEAKER_TAG.match(par) or SENTENCE_BREAK.search(par)):
+        return False
     words = par.split()
     caps = sum(1 for w in words if w[0].isupper())
     return caps >= max(1, len(words) // 2)
 
 
+SPEAKER_TAG = re.compile(r"[A-Z][A-Za-z'\u2019-]{0,20}\.\s+\S")
+SENTENCE_BREAK = re.compile(r"[.?!]\s+[A-Z]")
 SPEAKER_NAME = re.compile(r"[A-Z][A-Za-z .'’-]{0,30}")
 HR_LINE = re.compile(r"\*+( \*+)*|-{2,}")
 FIGURE = re.compile(

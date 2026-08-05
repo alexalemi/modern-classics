@@ -257,29 +257,43 @@ def main():
         e["file"] = f"{i:03d}.txt"
         e["words"] = sum(len(p.split()) for p in chunk)
 
-    # Group multi-part chapters back under one title for the manifest.
+    # ONE MANIFEST ENTRY PER FILE, with "part"/"of" giving each file's place
+    # in its chapter. assemble.py indexes m["part"] directly and groups a
+    # chapter's files by watching for part == 1, so both keys are required
+    # on every entry even when a chapter is a single file.
     manifest = []
     for e in entries:
-        if manifest and manifest[-1]["title"] == e["title"] \
-                and "part_before" not in e:
-            manifest[-1]["files"].append(e["file"])
-            manifest[-1]["words"] += e["words"]
-        else:
-            m = {"title": e["title"], "files": [e["file"]], "words": e["words"]}
-            if "part_before" in e:
-                m["part_before"] = e["part_before"]
-            manifest.append(m)
+        same = (manifest and manifest[-1]["title"] == e["title"]
+                and "part_before" not in e)
+        m = {"file": e["file"], "title": e["title"],
+             "part": manifest[-1]["part"] + 1 if same else 1,
+             "of": 1, "words": e["words"]}
+        if "part_before" in e:
+            m["part_before"] = e["part_before"]
+        manifest.append(m)
+    # Fill "of" now that every chapter's run of parts is known.
+    run = []
+    for m in manifest + [{"part": 1}]:
+        if m["part"] == 1 and run:
+            for r in run:
+                r["of"] = len(run)
+            run = []
+        if "file" in m:
+            run.append(m)
+    for r in run:
+        r["of"] = len(run)
     (BOOK / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
 
     write_notes()
 
     total = sum(m["words"] for m in manifest)
-    print(f"{len(files)} files, {len(manifest)} chapters, {total:,} words")
+    chapters = sum(1 for m in manifest if m["part"] == 1)
+    print(f"{len(files)} files, {chapters} chapters, {total:,} words")
     for m in manifest:
         if m.get("part_before"):
             print(f"  -- {m['part_before']} --")
-        n = f" ({len(m['files'])} parts)" if len(m["files"]) > 1 else ""
-        print(f"  {m['files'][0]}  {m['words']:6,}w  {m['title']}{n}")
+        n = f"  (part {m['part']} of {m['of']})" if m["of"] > 1 else ""
+        print(f"  {m['file']}  {m['words']:6,}w  {m['title']}{n}")
 
 
 def write_notes():
