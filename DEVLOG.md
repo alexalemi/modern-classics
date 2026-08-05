@@ -1319,3 +1319,74 @@ For Colin, Democracy in America by de Tocqueville
 Tried out Gemini, might be the best for this.  The [ai
 studio](https://aistudio.google.com/app/prompts/1V-Xf_6BQQ1WX3sGIlZNsuXURfOM_wKEU)
 let's you customize a prompt and can accept up to 1 million token inputs.
+
+## 2026-08-05
+
+Shipped **The Pilgrim's Progress** (bunyan/) — the 46th book. Both
+parts, 39 files, 108,280 words in and 111,821 out, ratio 1.03, verify
+clean, epubs lint clean.
+
+The argument for doing it at all is the interesting part, and it is not
+the usual one. Standard Ebooks scores Bunyan at reading ease 74 —
+"fairly easy" — because he was a tinker writing deliberately plain
+English for people like himself. There are no periodic sentences to
+unstack. What there is instead is a book that misleads you without
+your noticing: "conversation" means conduct, "want" means lack,
+"prevent" means go before, "let" means hinder, "crazy" means decrepit.
+A reader who trips on "hath" knows they tripped. A reader who meets
+"his conversation gives his profession the lie" reads it smoothly and
+takes away the opposite of what it says. Difficulty you cannot feel is
+a better case for a retelling than difficulty you can.
+
+Three defects that would have shipped silently, none of them visible to
+verify.py. Standard Ebooks sets a no-break space inside abbreviations,
+so every chapter anchor written with an ordinary space matched nothing
+and the division came out empty. Noteref anchors had to be killed as
+elements rather than tags, or `<a>41</a>` welds a bare 41 onto the
+preceding word and reads as a number in the text. And "Christ." is
+CHRISTIANA, 56 times in Part Two — read as Jesus it produces fluent,
+confident, entirely wrong dialogue.
+
+One shared fix, and the useful lesson is about how nearly it went
+wrong. assemble.is_subheading() was setting 45 short spoken questions
+as section headings mid-conversation. The obvious repair — add "?" and
+"!" to the disqualifying terminators — was tested against all 29
+assembled books and REGRESSED two of them, because Leviathan and The
+Social Contract both give real sections question-form titles. The rule
+shipped is narrow: a "?"/"!" line is disqualified only if it also
+carries a speaker tag or runs to more than one sentence. Re-tested
+across every book; only bunyan changes, plus journey-center-earth,
+where "Climb, obviously! Always climb!" stops being a heading and
+becomes the narration it always was.
+
+And a new instance of an old family: **the SE draft goes stale**.
+rebrand.py installs the long description by substituting the
+LONG_DESCRIPTION placeholder that `se create-draft` writes, and
+build_ebook.py only creates the draft if the directory is absent. So on
+the second build the placeholder is gone, the substitution matches
+nothing, and the epub ships the previous metadata with no warning at
+all — I edited ebook_meta.json, rebuilt, and got a byte-identical
+description back twice before checking inside the epub. rm -rf
+build/ebooks/{slug} first. Same shape as the stale-image bug in
+copy_figures: a build step that writes into a set it does not own.
+
+Two race-adjacent passages, decided differently and both recorded in
+running_notes.txt. The Flatterer is "black of flesh" under a robe of
+light and is identified two paragraphs later as a fiend; rendered "the
+black figure", not "a black man", because the latter names a person's
+race and misidentifies the character. The Ethiopian on Mount Charity is
+kept verbatim: it is the classical proverb for attempting the
+impossible, and its whole mechanism is the man's origin, so there is no
+rendering that keeps the emblem and removes it. Cutting would be
+bowdlerising and a footnote would be the editorial wink the Verne rule
+forbids.
+
+Roadmap additions while scoping this: the **Carroll-the-mathematician**
+shelf (A Tangled Tale, Symbolic Logic, Pillow Problems, Euclid and His
+Modern Rivals), with the negative case for Alice and the Snark written
+down, since it is the sharpest statement of what the project's test
+actually is — not "old and famous" but "is a reader being silently
+blocked or misled?". Also **Don Quixote**, from the Spanish with Ormsby
+as crib; the strongest copyright argument on the list, since every good
+modern translation is still in copyright and the free Don Quixote is
+therefore Victorian or nothing.

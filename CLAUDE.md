@@ -708,6 +708,121 @@ reuse on any book whose plates come off a page scan):
   same bug left figfront.jpg in Tyndall's epub and 044.txt in its
   chapters/.
 
+John Bunyan's The Pilgrim's Progress (bunyan/ — the 46th book, and the
+project's first from Standard Ebooks XHTML since autobiography/). Both
+parts complete: Christian's road (20 files) and Christiana's (18), 39
+files, 108k words in and 112k out, ratio 1.03. Verify with
+--min-ratio 0.85 --max-ratio 1.3.
+
+THE JUSTIFICATION IS UNUSUAL AND WORTH KEEPING IN MIND FOR OTHER
+CANDIDATES: this book is not hard, it MISLEADS. Standard Ebooks scores
+it at reading ease 74 ("fairly easy") — Bunyan was a tinker writing
+deliberately plain English for people like himself and his sentences
+are short, so there is nothing to unstack. But "conversation" means
+CONDUCT (11x in Part One), "want" means lack, "prevent" means go
+before, "conceit" means opinion, "let" means hinder, "crazy" means
+decrepit, "professor" means one who professes faith. A reader trips on
+"hath" and knows it; they read "his conversation gives his profession
+the lie" and walk away confidently wrong. Difficulty you can feel is
+the weaker case for a retelling than difficulty you cannot.
+
+STRUCTURE: Bunyan wrote one continuous dream with NO chapters, and SE
+preserves that — part-1.xhtml is a single section of 924 paragraphs.
+The division is imposed on his own scene-transition formula ("Now I saw
+in my dream, that...", "I beheld, then, that..."), which is a chapter
+break in seventeenth-century dress. prep.py pins each boundary to a
+distinctive substring and ASSERTS it matches exactly one paragraph.
+No file exceeds 7k words, so no oversize splits at all.
+
+THREE SILENT TRAPS, none visible to verify.py:
+- SE SETS A NO-BREAK SPACE INSIDE ABBREVIATIONS ("Mrs.\u00a0Timorous").
+  Every chapter anchor written with an ordinary space matched nothing
+  and the division came out empty. Normalise \u00a0 and \u202f in
+  clean(). Applies to ANY Standard Ebooks source.
+- "Christ." IS CHRISTIANA, 56 times in Part Two. Read as Jesus it
+  produces fluent, confident, entirely wrong dialogue. The distribution
+  is clean and can be relied on: "Chr." = Christian, Part One only;
+  "Christ." = Christiana, Part Two only. Matt./James./Sam./Joseph. are
+  her four sons, not books of the Bible.
+- KILL NOTEREF ANCHORS AS ELEMENTS, NOT TAGS. Strip tags naively and
+  `<a>41</a>` welds a bare 41 onto the preceding word — "the Slough of
+  Despond,41 his labourers" — which reads as a number in the text and
+  passes every mechanical check this project has.
+
+OFFOR'S 1,010 COMMENTATOR NOTES ARE NOT TRANSLATED. At 500 KB the
+endnotes file is larger than either part of the book, and they are
+Victorian devotional commentary by men who are not Bunyan. They go to
+reference/notes.txt as a crib, drawn on only where a modern reader
+genuinely cannot follow (the soap-bubbles annotation rule). Exactly one
+bracketed note in the whole volume: that the "den" of the first
+sentence is Bedford jail.
+
+SHARED FIX — assemble.is_subheading(). It read 45 short spoken
+questions as section headings, because a speaker tag supplies one of
+the capitals that make a line count as majority-capitalised and "?" was
+not a disqualifying terminator. THE OBVIOUS FIX REGRESSES TWO BOOKS:
+adding "?"/"!" outright demoted real section titles in Leviathan
+("Could Church Councils Make Scripture Law?") and The Social Contract.
+The rule is therefore narrow — a "?"/"!" line is disqualified only if
+it ALSO carries a speaker tag or runs to more than one sentence.
+Dialogue does one or the other; a heading does neither. Re-tested
+across all 29 assembled books: only bunyan changes, plus
+journey-center-earth, where "Climb, obviously! Always climb!" stops
+being a heading. ALWAYS RE-ASSEMBLE EVERY BOOK AND DIFF BEFORE
+CHANGING is_subheading OR normalise.
+
+MANIFEST SHAPE: one entry per FILE with REQUIRED "part"/"of" keys, not
+one per chapter with a files list. assemble.py indexes m["part"]
+directly. Checksum chapters/ before and after any prep re-run to prove
+no boundary moved.
+
+STALE SE DRAFT — GENERIC, AND IT BIT HERE. rebrand.py installs the
+long description by substituting the LONG_DESCRIPTION placeholder that
+`se create-draft` writes. build_ebook.py only creates the draft `if not
+dest.exists()`, so on the SECOND build the placeholder is already gone,
+the substitution matches nothing, and THE EPUB SHIPS THE OLD METADATA
+WITH NO WARNING. Editing ebook_meta.json and rebuilding is not enough:
+rm -rf build/ebooks/{slug} first. Same family as the stale-image bug in
+copy_figures.
+
+VOICE: far more colloquial than the book's reputation. Pliable whines,
+Worldly-Wiseman patronises, Talkative is unbearable, Giant Despair
+takes his wife's advice, and the comedy is load-bearing — play it
+straight. TWO REGISTERS, and do not flatten them together: Part One is
+a man alone with his fingers in his ears; Part Two has a guide, four
+sons, two weddings and a great many meals, and its whole argument is
+that the weak all get across. Mr. Feeble-mind's "to run when I can, to
+walk when I cannot run, and to crawl when I cannot walk" only lands if
+Part Two is not pitched at Part One's terror.
+THE ALLEGORICAL NAMES ARE LOCKED and pinned in must_contain — Slough of
+Despond, Vanity Fair, Giant Despair, Mr. Worldly-Wiseman, Great-heart,
+the Delectable Mountains. They are the book's gift to the language.
+THE VERNE RULE, hard: Ignorance walks the whole road and is bound hand
+and foot at the very gate and carried to hell, and the vision ends "a
+way to hell, even from the gates of Heaven". Giant Pope, the anti-Roman
+aside at Vanity Fair and the beast of Revelation 17 all stand as his.
+No softening, no wink.
+TWO RACE-ADJACENT PASSAGES, DECIDED DIFFERENTLY AND BOTH RECORDED IN
+running_notes.txt. The Flatterer is "a man, black of flesh, but covered
+with a very light robe", identified two paragraphs later as a fiend
+transformed into an angel of light: rendered "black of body" / "the
+black figure", NOT "a black man", because in modern English that names
+a person's race and would misidentify the character. The Ethiopian on
+Mount Charity is KEPT verbatim: it is the classical proverb for
+attempting the impossible, glossed on the spot as being about the vile
+person, and its whole mechanism is the man's origin — no rendering
+keeps the emblem while removing it, so cutting would be bowdlerising
+and a note would be the wink the Verne rule forbids.
+Cover: Thomas Cole's "The Voyage of Life: Manhood" (1842), Commons
+"File:Thomas Cole - The Voyage of Life Manhood, 1842 (National Gallery
+of Art).jpg", crop "1684x2526+219+0" — a lone figure carried down a
+dark river with hands clasped, demons in the storm and a break of light
+ahead. NOTE the crop is in the coordinates of the 3840x2526 rendition
+Commons actually serves, not the 5272x3468 original.
+`se lint` raises s-023 wanting "Mr. Stand-Fast"; the name is
+"Stand-fast", as with Great-heart and Feeble-mind, and it is correctly
+ignored (compare star-land's "Star-land").
+
 John Tyndall's Sound (tyndall/ — the 44th book, and the EIGHTH Royal
 Institution volume after soap-bubbles/, candle/, forces/, fleming/,
 ball/ and thompson/. Chronologically it is the FIRST: 1867, six years
