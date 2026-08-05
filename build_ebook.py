@@ -429,9 +429,22 @@ def prepare_cover(dest, meta):
     src = cache / f"{meta['dir']}.jpg"
     if not src.exists():
         import urllib.request
+        # TIMEOUT AND AN EXPLICIT FAILURE, both learned the hard way. A cover
+        # whose Commons filename is wrong resolves to a URL that never
+        # answers, and urlopen with no timeout then blocks forever -- the
+        # whole build hangs before printing its first line of output, so it
+        # looks like a slow `se` step rather than a typo in ebook_meta.json.
         req = urllib.request.Request(commons_url(art["commons"]),
                                      headers={"User-Agent": "modern-classics-ebooks/1.0"})
-        src.write_bytes(urllib.request.urlopen(req).read())
+        try:
+            data = urllib.request.urlopen(req, timeout=120).read()
+        except Exception as e:
+            sys.exit(f"could not fetch cover art {art['commons']!r}: {e}\n"
+                     f"check the file actually exists on Commons")
+        if len(data) < 20_000:
+            sys.exit(f"cover art {art['commons']!r} came back as {len(data)} "
+                     f"bytes -- almost certainly an error page, not a painting")
+        src.write_bytes(data)
     shutil.copy(src, dest / "images/cover.source.jpg")
     if art.get("crop"):
         geom = ["-crop", art["crop"], "+repage"]

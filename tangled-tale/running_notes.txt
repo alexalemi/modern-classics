@@ -93,3 +93,15 @@ SOURCE DEFECTS FOUND (all by working the sums, none visible to verify.py)
   author, and rebuild the working from the problem's own conditions.
 - KNOT FOUR (story): "two country gentlemen of the Twentieth Century"
   in a book published in 1885. Rendered nineteenth.
+
+OUTSTANDING BEFORE PUBLICATION
+- COVER NOT YET CHOSEN. My first pick was entered with a Commons
+  filename that does not exist, which hung the epub build for forty
+  minutes with no output at all (see the prepare_cover fix in
+  build_ebook.py). The entry has been removed rather than replaced,
+  because the two candidates I then checked -- Millais's "Boyhood of
+  Raleigh" and Webster's "A Village School" -- are both landscape and
+  both under 1600px, too small for a 1400x2100 crop without visible
+  upscaling. ALWAYS QUERY THE COMMONS API FOR SIZE AND EXISTENCE BEFORE
+  WRITING A FILENAME INTO ebook_meta.json.
+- epub not yet built (it needs only the cover decision).
