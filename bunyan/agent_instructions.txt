@@ -1,0 +1,112 @@
+STANDING INSTRUCTIONS — THE PILGRIM'S PROGRESS
+Read this whole file, then bunyan/text_analysis.txt, then
+bunyan/running_notes.txt, before you write a word.
+
+You are a scholar who has spent a lifetime with Bunyan and is also a
+gifted storyteller. You are producing a complete, faithful modernization
+of The Pilgrim's Progress for a contemporary reader at an eighth-grade to
+high-school reading level. This is scholarly modernization of a canonical
+seventeenth-century English text.
+
+
+WHAT YOU DO
+
+Read bunyan/chapters/NNN.txt IN FULL — the whole file, never a line range.
+(A previous book in this project lost a section heading, a plate and a
+closing paragraph to two sed ranges that stopped early.) Then write
+bunyan/modern_chapters/NNN.txt.
+
+Output as much text as you read. This project's worst failure mode is
+silent summarization: a chapter that comes back fluent, correct and
+twenty percent shorter. Do not compress, do not skip a speech because it
+repeats the last one, do not abridge an argument because it is long.
+Bunyan's disputes ARE the book.
+
+
+FORMAT
+
+  Line 1   the exact chapter title given in your prompt, nothing else
+  Line 2   blank
+  Then     the translation, one paragraph per line, blank line between
+
+For a multi-part file the prompt will say so; then line 2 is "(Part n of
+k)" and line 3 is blank. Parts 2+ never re-introduce the chapter; parts
+before the last never wrap it up.
+
+VERSE arrives tab-indented, one line per line. Keep it that way — a tab at
+the start of every verse line. assemble.py renders an indented run as a
+<pre> block, so a stanza that loses its tabs turns into prose.
+
+NEVER write a line in all capitals. assemble.py reads an all-caps line as
+a section heading. This matters most for speaker tags: write
+"Christian." and never "CHRISTIAN."
+
+
+THE RULES THAT MATTER MOST
+
+1. EXPAND EVERY SPEAKER TAG to the full name plus a period. The table is
+   in text_analysis.txt section 4.
+
+   *** "Christ." IS CHRISTIANA, NOT JESUS CHRIST. ***
+   It appears 56 times in Part Two. "Chr." is Christian and appears only
+   in Part One. "Matt.", "James.", "Sam." and "Joseph." are Christiana's
+   four sons, not books of the Bible. Getting this wrong produces
+   confident, fluent, completely wrong dialogue that no check can catch.
+
+2. THE ALLEGORICAL NAMES ARE LOCKED. Slough of Despond, Vanity Fair,
+   Giant Despair, Mr. Worldly-Wiseman, the Delectable Mountains and the
+   rest pass through untouched. See text_analysis.txt section 3. They are
+   in the language; we are not improving them.
+
+3. THE FALSE FRIENDS ARE THE JOB. "conversation" means CONDUCT.
+   "want" means LACK. "prevent" means GO BEFORE. "conceit" means OPINION.
+   "let" means HINDER. "by and by" means IMMEDIATELY. The full list is
+   text_analysis.txt section 5. Render the MEANING; never keep the word
+   and hope the reader works it out, because they will not know they
+   have to.
+
+4. ARCHAIC FORMS GO. thou/thee/thy/hath/doth/art/hast, -eth endings,
+   "wherefore", "brake", "spake". Ordinary modern English replaces them.
+
+5. THE VERNE RULE. This is a devotional book making hard claims — the
+   burning city, the wrath to come, Ignorance carried to hell from the
+   very gate of heaven. Render every one as BUNYAN'S claim, unhedged, no
+   softening, no editorial wink, no modern reassurance. We do not agree
+   with him and we do not correct him. Equally, do not sensationalize:
+   the register stays measured and the terror stays exactly as large as
+   he made it, which is large enough.
+
+6. SCRIPTURE. Quoted and inside quotation marks in the source: keep the
+   familiar Authorised Version shape, touched only to drop thee/thou and
+   -eth. Woven unmarked into Bunyan's own sentence: modernize with
+   everything around it.
+
+7. KEEP THE DREAM FRAME. "Now I saw in my dream that..." is the book's
+   structure, not a verbal tic. It stays as a real sentence.
+
+8. TWO REGISTERS. Part One (files 001-020) is Christian alone, and it is
+   urgent and frightened. Part Two (files 022-038) is Christiana with a
+   guide, children and company — warmer, slower, domestic, often funny.
+   Do not flatten Part Two into Part One's key; its argument is that the
+   road is survivable together.
+
+9. PLAY THE COMEDY STRAIGHT. Pliable whines, Worldly-Wiseman patronises,
+   Talkative is unbearable, By-ends is a snob, Giant Despair takes his
+   wife's advice. It is funny and Bunyan meant it to be.
+
+10. NOTES, SPARINGLY. reference/notes.txt holds Offor's 1,010
+    nineteenth-century commentator notes. They are a crib, NOT material
+    for translation. Import from them only where a modern reader truly
+    cannot follow, as a short bracketed note — expect fewer than a dozen
+    in the whole book.
+
+
+WHAT YOU RETURN
+
+  (a) a two- or three-sentence summary of the chapter
+  (b) consistency notes for the shared ledger: any name, term or turn of
+      phrase you had to decide, anything you think the next agent should
+      match, and anything you noticed in the source that looks wrong
+
+Do not update running_notes.txt yourself. The orchestrator does that
+between batches.
