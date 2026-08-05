@@ -135,3 +135,56 @@ them, mostly small line cuts set into the text:
 The translation must not emit a `[Figure n]` marker for these, and
 should describe rather than cross-reference where the text says "see
 Fig. 8".
+
+## Re-cutting them (2026-08-04)
+
+The plates as first cut had two faults that only show when you read the
+assembled page, and `replate.py` fixes both. It works from
+`plates.json` (fig, page, box) and the page scans, so
+`bash fetch.sh` has to be run first.
+
+**They were clipped.** ABBYY's Picture block fits the *engraving*, not
+the drawing: arrowheads, outer labels and the last ray of a pencil fall
+outside it. Worst case, fig 3 lost the entire barrier-and-slit the
+wavefronts are diffracting through and shipped as three arcs and an
+arrow; fig 17 lost the whole lantern and kept the chimney; fig 10 was
+cut through the words "Light No. 2". A fixed margin is a guess in both
+directions, so each side is instead **grown outward until it reaches
+whitespace** — scan away from the box a line at a time, stop at the
+first run of blank lines, back off by a small pad. That recovers
+whatever was clipped, stops in the gutter before the running text, and
+does nothing at all to a plate that was never clipped. Seven plates
+where the search runs into body text anyway carry a hand-set cap in
+`CAPS`; a negative cap moves the edge inward, for the two boxes that
+took in page furniture to begin with.
+
+**The paper was in the picture.** Each plate carried its own patch of
+scanned cream with its own cast, and 127 slightly different creams down
+a white page read as dirt. The darkness of a pixel now becomes its
+ALPHA over pure black, so what survives is the ink, anti-aliased as the
+scan had it, on a transparent ground.
+
+Three details that matter:
+
+- **PAPER_PCT has to be near the top of the histogram, not at its
+  mode.** A fifth of these plates are printed white on black (a lantern
+  beam crossing a darkened room), where the mode IS the ink. At the
+  mode, the black ground came out at 0.9 alpha instead of 1.0 — enough
+  for the text on the back of the leaf to show through as a legible
+  ghost. Read at the 99th percentile the same mapping handles both
+  polarities with no special case: black ground opaque, white lines
+  transparent, so over a white page it looks exactly as printed.
+- **Alpha, not a threshold.** A fifth of the plates are halftones — the
+  Röntgen photographs, the ripple tank, the mirror scans — and a
+  bilevel threshold destroys them.
+- **Quantise the alpha.** The scan's noise gives every stroke a fringe
+  of unique values that PNG cannot compress. Rounding to 16 levels for
+  line art and 48 for halftones halves the files and is invisible.
+
+Two corrections to the inventory came out of it: `plates.json` still
+carried fig 108, whose box is a running head and a library stamp (it
+was right to be dropped from the shipped set), and lacked fig 63, the
+refractive-index chart rescued by hand. 63's box was recovered by
+matching the shipped crop against the page by row and column profile —
+[310, 1120, 1300, 685] on the file for printed p. 104 — and the page
+added to `fetch.sh`, which had never included it.

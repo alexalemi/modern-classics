@@ -209,21 +209,38 @@ def render_figure(s):
     return "\n".join(out)
 
 
+# se's own artwork, which lives in the same directory as the plates
+SE_IMAGES = {"cover.jpg", "cover.source.jpg", "cover.svg", "titlepage.svg",
+             "logo.svg"}
+
+
 def copy_figures(book, env, dest):
     """Copy an illustrated book's plates into the draft. `se build-manifest`
-    picks them up from src/epub/images/ on its own."""
+    picks them up from src/epub/images/ on its own.
+
+    The draft is reused between runs, so a plate that changes format has
+    to be swept out or BOTH copies ship: re-cutting Thompson's 127 JPEGs
+    as PNGs took the epub from 25 MB to 51 MB, because `se
+    build-manifest` faithfully listed the JPEGs still sitting there."""
     figdir = env.get("FIGURE_DIR")
     if not figdir:
         return 0
     src = ROOT / "site" / figdir
     images = dest / "src/epub/images"
     images.mkdir(parents=True, exist_ok=True)
-    n = 0
+    keep, n = set(SE_IMAGES), 0
     for f in sorted(src.iterdir()):
         if f.suffix.lstrip(".").lower() in assemble.FIG_EXTS:
             shutil.copy(f, images / f.name)
+            keep.add(f.name)
             n += 1
-    print(f"copied {n} figures from {src}")
+    stale = [f for f in images.iterdir()
+             if f.name not in keep
+             and f.suffix.lstrip(".").lower() in assemble.FIG_EXTS]
+    for f in stale:
+        f.unlink()
+    print(f"copied {n} figures from {src}"
+          + (f"; removed {len(stale)} stale" if stale else ""))
     return n
 
 def render_block(par, kind):
@@ -554,6 +571,13 @@ def main():
         rules.append('blockquote.lines p{\n\ttext-indent: 0;\n}')
     if "se:era" in used:
         rules.append('[epub|type~="se:era"]{\n\tfont-variant: all-small-caps;\n}')
+    figdir = env.get("FIGURE_DIR")
+    if figdir and any(f.suffix.lower() == ".png"
+                      for f in (ROOT / "site" / figdir).iterdir()):
+        # Plates with a transparent ground are black ink on nothing, which
+        # is invisible in a reader set to a dark theme. Give them the white
+        # page they were printed on.
+        rules.append("figure img{\n\tbackground: #fff;\n}")
     if "z3998:verse" in used:
         rules.append('[epub|type~="z3998:verse"] p{\n\ttext-align: initial;\n\ttext-indent: 0;\n}\n\n[epub|type~="z3998:verse"] p > span{\n\tdisplay: block;\n\tpadding-left: 1em;\n\ttext-indent: -1em;\n}')
     css = dest / "src/epub/css/local.css"

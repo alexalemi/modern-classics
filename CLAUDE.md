@@ -673,6 +673,40 @@ Pump" (1768), Commons "An Experiment on a Bird in an Air Pump by
 Joseph Wright of Derby, 1768.jpg", crop "1919x2878+922+0" — a
 demonstrator, a glass receiver, an air pump and an audience of
 frightened children.
+PLATES RE-CUT AND CLEANED (thompson/replate.py, and the pattern to
+reuse on any book whose plates come off a page scan):
+- ABBYY's Picture box fits the ENGRAVING, not the drawing, so plates
+  arrive CLIPPED — fig 3 lost the entire barrier-and-slit its
+  wavefronts diffract through. Do not re-cut with a fixed margin; GROW
+  EACH SIDE UNTIL IT REACHES WHITESPACE (scan outward, stop at the
+  first run of blank lines, back off by a pad). Self-limiting on a
+  plate that was never clipped. Seven needed a hand-set cap where the
+  search walks into body text; a negative cap moves an edge inward,
+  for boxes that took in a running head to begin with.
+- SCANNED PAPER IS DIRT ON A WHITE PAGE — 127 patches of cream, each
+  with its own cast. Map DARKNESS TO ALPHA over pure black: the ink
+  survives, anti-aliased as the scan had it, and the paper goes.
+- READ "PAPER" AT THE 99TH PERCENTILE, NOT THE MODE. A fifth of these
+  plates are printed white on black, where the mode IS the ink; at the
+  mode the black ground lands at 0.9 alpha and the text on the back of
+  the leaf shows through it as a legible ghost. At the 99th the one
+  mapping handles both polarities with no special case.
+- ALPHA, NOT A THRESHOLD: a bilevel threshold destroys the halftones
+  (the Röntgen plates, the ripple tank).
+- QUANTISE THE ALPHA (16 levels line art, 48 halftone). The scan's
+  noise gives every stroke a fringe of unique values PNG cannot
+  compress; rounding halves the files and is invisible.
+- build_ebook.py gives a book with transparent plates
+  `figure img{background:#fff}` in local.css — black ink on nothing is
+  invisible in a reader set to a dark theme.
+- THE SE DRAFT IS REUSED BETWEEN RUNS and copy_figures used to copy
+  only INWARD, so changing 127 JPEGs to PNGs left both in the draft and
+  `se build-manifest` listed all 254: the epub doubled to 51 MB with
+  every plate in it twice. It now sweeps whatever is not in the source
+  directory. GENERAL SHAPE: any build step that writes a SET of files
+  without owning the set will eventually ship something stale — the
+  same bug left figfront.jpg in Tyndall's epub and 044.txt in its
+  chapters/.
 
 John Tyndall's Sound (tyndall/ — the 44th book, and the EIGHTH Royal
 Institution volume after soap-bubbles/, candle/, forces/, fleming/,

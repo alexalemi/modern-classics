@@ -1,5 +1,80 @@
 # DEVLOG
 
+## 2026-08-04 (Thompson's plates re-cut and cleaned)
+
+Alex, reading the assembled page: several figures are cut off, and the
+off-white from the scan is distracting — could the figures be pure
+black on transparent? Both, and the first turned out to be the bigger
+problem. `thompson/replate.py` re-cuts all 127 plates from the page
+scans and separates the ink from the paper.
+
+**The clipping was worse than it looked.** ABBYY's Picture block fits
+the engraving, not the drawing. Fig 3 — light diffracting through a
+narrow slit — had lost the entire barrier and slit and was shipping as
+three arcs and an arrow with nothing to diffract through. Fig 17 had
+lost the whole lantern and kept the chimney. Fig 10 was cut through the
+words "Light No. 2".
+
+A fixed margin is a guess in both directions, so each side is instead
+**grown outward until it reaches whitespace**: scan away from the box a
+line at a time, stop at the first run of blank lines, back off by a
+pad. That recovers whatever was clipped, stops in the gutter before the
+running text, and does nothing to a plate that was never clipped. Seven
+plates where the search walks into body text anyway carry a hand-set
+cap; two boxes that took in a running head or a page number to begin
+with carry a negative cap, which moves the edge inward instead. All 127
+were montaged and looked at, twice.
+
+**The paper is now out of the picture.** The darkness of a pixel
+becomes its alpha over pure black, so what survives is the ink,
+anti-aliased as the scan had it, on a transparent ground; the page
+supplies the white. Three things that were not obvious:
+
+- **Read "paper" at the 99th percentile, not at the histogram's mode.**
+  A fifth of these plates are printed white on black — a lantern beam
+  crossing a darkened room — and there the mode IS the ink. Read at the
+  mode, the black ground came out at 0.9 alpha rather than 1.0, and the
+  text printed on the back of the leaf showed through it as a legible
+  ghost. Read at the 99th, one mapping handles both polarities with no
+  special case: black ground opaque, white lines transparent, so over a
+  white page it looks exactly as printed.
+- **Alpha, not a threshold.** A fifth of the plates are halftones — the
+  Röntgen photographs, the ripple tank, the Japanese magic mirror — and
+  a bilevel threshold destroys them.
+- **Quantise the alpha.** The scan's noise gives every stroke a fringe
+  of unique values that PNG cannot compress. Rounding to 16 levels for
+  line art and 48 for halftones takes the set from 44 MB to 33 MB with
+  no visible change.
+
+`build_ebook.py` now gives any book with transparent plates
+`figure img{background:#fff}` in local.css: black ink on nothing is
+invisible in a reader set to a dark theme.
+
+**And a stale-file bug the format change exposed.** The SE draft is
+reused between runs and `copy_figures` only ever copied *in*, so when
+127 JPEGs became 127 PNGs the draft held both and `se build-manifest`
+faithfully listed all 254: the epub went from 25 MB to 51 MB with every
+plate in it twice. It now sweeps anything not in the source directory.
+The same bug had left `figfront.jpg` — the frontispiece under its old,
+wrong name — shipping inside Tyndall's epub since the naming fix. Both
+books rebuilt. This is the third time in three days that a directory
+which is only ever added to has held something stale that nothing
+downstream noticed (`tyndall/chapters/044.txt`, the plate files, now
+the draft images); the shape to watch for is any build step that
+writes a *set* of files without owning the set.
+
+**Two inventory corrections fell out of it.** `plates.json` still
+carried fig 108, whose box is a running head and a library stamp — it
+was right to be dropped from the shipped set, but it was still in the
+data. And it lacked fig 63, the refractive-index chart that had been
+rescued by hand. 63's box was recovered by matching the shipped crop
+against the page by row and column profile (mean abs difference 1.16,
+i.e. JPEG requantisation and nothing else): [310, 1120, 1300, 685], on
+the scan file for printed p. 104 — which `fetch.sh` had never listed,
+because the printed page numbers and the scan file numbers differ by
+24 and the file list was built from the latter.
+
+
 ## 2026-08-04 (Original-text epubs)
 
 `build_ebook.py {book} --original` builds the companion edition as an

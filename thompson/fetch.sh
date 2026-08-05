@@ -55,6 +55,7 @@ set -e
 [ -s pages/p119.jpg ] || curl -sL --max-time 90 -o pages/p119.jpg "https://archive.org/download/lightvisibleinvi00thomrich/page/n118.jpg"
 [ -s pages/p120.jpg ] || curl -sL --max-time 90 -o pages/p120.jpg "https://archive.org/download/lightvisibleinvi00thomrich/page/n119.jpg"
 [ -s pages/p122.jpg ] || curl -sL --max-time 90 -o pages/p122.jpg "https://archive.org/download/lightvisibleinvi00thomrich/page/n121.jpg"
+[ -s pages/p128.jpg ] || curl -sL --max-time 90 -o pages/p128.jpg "https://archive.org/download/lightvisibleinvi00thomrich/page/n127.jpg"
 [ -s pages/p133.jpg ] || curl -sL --max-time 90 -o pages/p133.jpg "https://archive.org/download/lightvisibleinvi00thomrich/page/n132.jpg"
 [ -s pages/p134.jpg ] || curl -sL --max-time 90 -o pages/p134.jpg "https://archive.org/download/lightvisibleinvi00thomrich/page/n133.jpg"
 [ -s pages/p136.jpg ] || curl -sL --max-time 90 -o pages/p136.jpg "https://archive.org/download/lightvisibleinvi00thomrich/page/n135.jpg"
@@ -132,4 +133,4 @@ set -e
 [ -s pages/p319.jpg ] || curl -sL --max-time 90 -o pages/p319.jpg "https://archive.org/download/lightvisibleinvi00thomrich/page/n318.jpg"
 [ -s pages/p321.jpg ] || curl -sL --max-time 90 -o pages/p321.jpg "https://archive.org/download/lightvisibleinvi00thomrich/page/n320.jpg"
 [ -s pages/p338.jpg ] || curl -sL --max-time 90 -o pages/p338.jpg "https://archive.org/download/lightvisibleinvi00thomrich/page/n337.jpg"
-echo "fetched 132 pages"
+echo "fetched 133 pages"
