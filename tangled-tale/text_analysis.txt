@@ -1,0 +1,139 @@
+A TANGLED TALE — TRANSLATION STRATEGY
+Lewis Carroll (Charles Dodgson), serialised 1880–1885, collected 1885
+Source: Project Gutenberg #29042 (the illustrated HTML edition)
+
+
+1. WHAT THIS IS
+
+Ten comic stories, each with a mathematical puzzle buried in it, written
+month by month for The Monthly Packet — a magazine for young women. A
+month after each story Carroll printed his own review of the answers his
+readers had sent in: he sorts them into a CLASS LIST by pseudonym, praises
+the good ones, and takes the wrong ones apart with enormous relish.
+
+The book is therefore two books, and the second is the better one. The
+Knots are about 12,000 words; the Answers are about 15,000. TRANSLATE THE
+ANSWERS WHOLE. They are not an appendix in the sense of being optional —
+they are the half of the book where Carroll is actually present, arguing
+with named correspondents, being witty and occasionally unfair. Same rule
+as soap-bubbles/, where "Practical Hints" is a third of the book and is
+the reason it exists.
+
+Carroll is not the Alice of these pages. He is a working Oxford
+mathematician being funny at his own subject's expense, and the register
+is donnish, quick, and affectionate. Where Alice's nonsense is
+uncontrolled on purpose, this is nonsense in the service of arithmetic.
+
+
+2. WHAT NEEDS MODERNIZING, AND WHAT DOES NOT
+
+The prose is Victorian but not archaic. There is no thee/thou, no -eth,
+almost nothing to unstack. What actually blocks a reader is narrower and
+more specific than usual:
+
+  - THE MONEY. Shillings, pence and guineas throughout, and the
+    arithmetic depends on them.
+  - THE UNITS. Miles per hour is fine; but weights, distances and the
+    occasional "score" need to read naturally.
+  - THE SOCIAL FURNITURE. A lodging-house keeper's terms, a cab fare,
+    a governess's position, the etiquette of who takes whom in to
+    dinner. Where the puzzle depends on the arrangement, the
+    arrangement has to be legible to a reader who has never met it.
+  - THE PSEUDONYMS. His correspondents sign themselves Balbus, Simple
+    Susan, Sea Breeze, A Marlborough Boy, Galanthus Nivalis Major. LEAVE
+    THEM ALONE. They are the joke, and half the wit of the Answers is
+    Carroll punning on them.
+  - THE LATIN. "De Omnibus Rebus" is a pun (all things / omnibuses) and
+    the Knot is about an omnibus. Keep the title and let the story do
+    the work; do not translate it and do not explain it.
+
+
+3. THE MONEY — DECIDED IN ADVANCE, DO NOT RE-DECIDE
+
+KEEP the pounds, shillings and pence. Do NOT decimalise.
+
+Several answers work out the way they do BECAUSE there are twelve pence
+in a shilling and twenty shillings in a pound. Convert to decimal and the
+puzzle stops being the puzzle. It is Carroll's arithmetic in Carroll's
+units — the same rule that keeps Ball's Martian canals and Fleming's
+aether.
+
+The currency gets ONE gloss, in the preface, in a bracketed note: twelve
+pence to the shilling, twenty shillings to the pound, a guinea is
+twenty-one shillings. After that, nothing. A reader who has the ratios
+can follow every sum in the book, and a reader who is reminded of them
+every chapter will stop reading.
+
+
+4. THE ARITHMETIC — THE ONE THING THAT MATTERS MOST
+
+CHECK EVERY ANSWER THAT CLAIMS TO BE COMPUTED. Work the sums.
+
+This is the fleming/ lesson and it applies here more sharply than
+anywhere else in the project, because in this book the arithmetic IS the
+content. Fleming printed 495x3 as 1475 and gave one refractive index two
+different values; nobody noticed for a century. Carroll has known
+disputed and ambiguous solutions — he argues with correspondents about
+some of them in the text — and a wrong number that looks right passes
+the word ratio, the figure parity and must_contain alike.
+
+So: every fraction, every total, every intermediate step. Where Carroll
+is right, keep him. Where the source is a transcription slip, correct it
+silently. Where CARROLL HIMSELF is wrong or his problem is genuinely
+ambiguous — which happens, and which his correspondents tell him — say
+so in a short bracketed note. Do not quietly fix his mathematics; that
+is his argument with his readers and it is part of the book.
+
+Run the numeric-token check from fleming/running_notes.txt on every
+file, and expect it to be noisy here in a way it is not elsewhere:
+digits spelled as words are correct in prose but every figure must still
+be traceable.
+
+
+5. THE PLATES
+
+Nine, and they fall into three kinds.
+
+SEVEN are Arthur B. Frost illustrations of the stories, and Carroll
+captioned them himself with lines quoted out of the text ("why do they
+say 'Bamboo!' so often?"). Those captions ride through and are
+MODERNISED, not replaced — the ball/ rule. Keep his phrasing as the
+first clause and extend with a short descriptive one; the caption is
+also the epub's alt text.
+
+ONE is the Chelsea-bun street cry set as actual sheet music (Figure 8).
+It is a picture of a tune. Caption it as what it is.
+
+TWO are diagrams in the Answers (Figures 9 and 10 — the family tree of
+the dinner party, and the four houses set round a square). These have no
+caption in the original and need one that says what the diagram is FOR,
+because the prose refers to them by their letters and numbers. LOOK AT
+THE PLATE BEFORE CAPTIONING IT.
+
+
+6. VOICE
+
+Fast, dry, and pleased with itself. Carroll's narrators are amused by
+their own characters. Mad Mathesis drags her niece round London; Balbus
+writes essays to his pupils; Her Radiancy holds court; the Governor of
+Kgovjni arranges a dinner party of impossible relations. Play it as
+comedy, because it is comedy.
+
+In the Answers, the register shifts and must shift with it: this is a
+tutor marking work, delighted when it is good and merciless when it is
+lazy. He calls a wrong answer "a piece of arithmetical impertinence" and
+he means it kindly. Keep the edge. Where he is teasing a named
+correspondent, the tease is the point.
+
+Reading level: eighth grade to high school, as always — but the
+mathematics is not to be simplified. Make the PROSE easy and let the
+problems be exactly as hard as Carroll made them. The whole appeal of
+the book is that it takes a young reader seriously.
+
+
+7. RATIO
+
+Expect close to 1:1, as with the other English-to-English volumes.
+Verify with --min-ratio 0.85 --max-ratio 1.3. Unpacking a compressed
+piece of Victorian social shorthand expands; cutting throat-clearing
+contracts; the sums themselves are the same length in any century.
