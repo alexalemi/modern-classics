@@ -85,7 +85,14 @@ COMBINING = {"under1": "\u0332", "under2": "\u0333"}
 def clean(s):
     s = re.sub(r"<[^>]*>", "", s)
     s = html.unescape(s)
-    s = s.replace(" ", " ").replace(" ", " ")
+    # NO-BREAK AND THIN SPACES, spelled out. The source sets them
+    # inside expressions ("a\u00a0=\u00a0in the kitchen") and around
+    # subscripts, and a literal " " in the replace list is impossible
+    # to see in a diff and easy to lose in an edit -- which is how
+    # 3,789 of them survived into chapters/, where every one is a
+    # character that looks exactly like a space and matches nothing.
+    # (Same trap as Standard Ebooks' "Mrs.\u00a0Timorous" in bunyan/.)
+    s = re.sub("[\u00a0\u2007\u202f\u2009\u2002\u2003]", " ", s)
     # The marginal page numbers are INSIDE the running text, not only in
     # the headings: "before taking the trouble to read Vol. I. pg_xiiThis,
     # I say, is just permissible". Stripping them only from headings left
@@ -151,6 +158,8 @@ class Extract(HTMLParser):
         self.head = 0
         self.under = []
         self.overs = []
+        self.skip = 0
+        self.skips = []
 
     def flush(self):
         s = clean("".join(self.buf))
@@ -215,6 +224,16 @@ class Extract(HTMLParser):
             # and "1k1l'0" then reads as if the 1 belonged to the k. Set
             # it in parentheses, which is what the position was doing.
             over = "over1" in cls
+            # THE MARGINAL SPANS ARE PRINT FURNITURE. Two hundred of them
+            # are page numbers, which PAGEMARK already strips; the other
+            # twenty-nine are the EX1/AN1/SL1 reference tags that let a
+            # reader of the paper book jump between an Example, its Answer
+            # and its Solution. Set in the margin they are navigation; run
+            # into the text they weld onto the section heading ("EX1§ 1")
+            # and read as part of the notation, which in a book of
+            # subscripted letters is exactly the wrong thing to look like.
+            self.skips.append("marginal" in cls)
+            self.skip += self.skips[-1]
             self.under.append(mark)
             self.overs.append(over)
             if over:
@@ -222,6 +241,7 @@ class Extract(HTMLParser):
 
     def handle_endtag(self, tag):
         if tag == "span" and self.under:
+            self.skip -= self.skips.pop()
             self.under.pop()
             if self.overs.pop():
                 self.emit(")")
@@ -255,6 +275,8 @@ class Extract(HTMLParser):
             self.flush()
 
     def emit(self, d):
+        if self.skip:
+            return
         if self.cell is not None:
             self.cell.append(d)
         elif self.table is not None:
