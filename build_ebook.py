@@ -156,6 +156,16 @@ def classify_block(par):
     if assemble.FIGURE.match(stripped):
         return "figure"
     if re.search(r"^[ \t]", par, re.M):
+        # AN INDENTED BLOCK HOLDING PLATES IS A TABLE. Carroll tabulates his
+        # diagrams against their readings, so a figure marker is frequently
+        # one CELL of a row rather than a paragraph of its own. Rendered as
+        # lined matter it printed the marker as literal text and the plate
+        # never appeared -- 248 of symbolic-logic's 308, all of them present
+        # in the package and referenced by nothing. Mirrors the same fix in
+        # assemble.render_plate_table; only a block that carries a marker
+        # takes this path, so no other book's tables move.
+        if FIGURE_DIR[0] and assemble.FIGURE_INLINE.search(stripped):
+            return "plates"
         lines = [l.strip() for l in stripped.splitlines() if l.strip()]
         short = sum(1 for l in lines if len(l) < 65)
         if len(lines) >= 2 and short == len(lines) and not any(" -- " in l or l.endswith("--") for l in lines):
@@ -256,6 +266,8 @@ def render_block(par, kind):
         return f"\t\t\t<p>{text}</p>"
     if kind == "subhead":
         return f'\t\t\t<p class="subhead">{esc(s)}</p>'
+    if kind == "plates":
+        return render_plate_table(s)
     lines = [l.strip() for l in s.splitlines() if l.strip()]
     if kind == "verse":
         inner = "\n".join(
@@ -265,6 +277,40 @@ def render_block(par, kind):
     # generic lined matter (outlines, tables of figures, speaker lists)
     inner = "<br/>\n\t\t\t\t".join(esc(l) for l in lines)
     return f"\t\t\t<blockquote class=\"lines\">\n\t\t\t\t<p>{inner}</p>\n\t\t\t</blockquote>"
+
+
+def render_plate_table(s):
+    """An indented block whose cells include figure markers -> a table.
+
+    The plate goes in as a bare <img>: the caption is already the adjacent
+    cell of the same row, so a figcaption would set it twice. It rides into
+    the alt instead, which is what a reader who cannot see the plate gets."""
+    rows = []
+    for line in s.split("\n"):
+        if not line.strip():
+            continue
+        tds = []
+        for cell in (c.strip() for c in line.strip().split(" | ")):
+            parts, last = [], 0
+            for m in assemble.FIGURE_INLINE.finditer(cell):
+                parts.append(esc(cell[last:m.start()]))
+                num = m.group(1)
+                caption = " ".join(m.group(2).split()) if m.group(2) else None
+                if BARE_LABEL[0]:
+                    caption = None
+                alt = caption or assemble.figure_label(num) or "Plate"
+                if alt[-1] not in ".!?":   # se lint t-026 wants it punctuated
+                    alt += "."
+                name = assemble.figure_name(ROOT / "site", FIGURE_DIR[0] or "",
+                                            num)
+                parts.append(f'<img alt="{html.escape(alt, quote=True)}" '
+                             f'src="../images/{name}"/>')
+                last = m.end()
+            parts.append(esc(cell[last:]))
+            tds.append("\t\t\t\t\t\t<td>" + "".join(parts) + "</td>")
+        rows.append("\t\t\t\t\t<tr>\n" + "\n".join(tds) + "\n\t\t\t\t\t</tr>")
+    return ("\t\t\t<table>\n\t\t\t\t<tbody>\n" + "\n".join(rows)
+            + "\n\t\t\t\t</tbody>\n\t\t\t</table>")
 
 
 def render_body(text, indent="\t\t\t"):
