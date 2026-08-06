@@ -132,12 +132,20 @@ chose this course over three alternatives.
   exists to catch a dropped plate. Also: a file under twenty words now
   skips the ratio check — a plate-only Book divider has no prose to
   compare.
-- **`assemble.py` set an indented block as `<pre>` whatever was in it**,
-  so 248 of the 308 plates printed as the literal text "[Figure 57:
-  ...]" and never appeared at all. An indented block that carries a
-  marker is now rendered as a table, the caption going into the img's
-  alt. Only blocks containing a marker take the new path, so no other
-  book's tables move.
+- **Both body renderers set an indented block as lined matter whatever
+  was in it**, so 248 of the 308 plates printed as the literal text
+  "[Figure 57: ...]" and never appeared at all. An indented block that
+  carries a marker is now rendered as a table, the caption going into
+  the img's alt. Only blocks containing a marker take the new path, so
+  no other book's tables move — checked across every illustrated book.
+  **`assemble.py` and `build_ebook.py` share almost nothing**, so fixing
+  the page was not fixing the book: in between, the epub shipped 248
+  plates that were in the package and referenced by nothing. Nothing
+  catches that — `se build-manifest` lists what is on disk rather than
+  what is used, `se lint` passes, and epubcheck has no opinion about an
+  image nobody asked for. After any render change, unzip the built epub
+  and compare images referenced against images present, both
+  directions.
 - **`assemble.is_subheading` read 169 lines across seven books as
   section titles.** Two new disqualifiers, both narrow: a QUOTED line is
   speech (two-sentence dialogue slips past the existing "?"/"!" rule —

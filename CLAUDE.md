@@ -975,10 +975,17 @@ SHARED CODE, three fixes:
     CELL of a table row; anchored, those stayed in the word counts and
     were invisible to figure parity. Also: files under 20 words skip the
     ratio check.
-  - assemble.py set any indented block as <pre>, so 248 of 308 plates
-    printed as literal "[Figure 57: ...]". An indented block CARRYING a
-    marker now renders as a table (caption -> img alt); blocks without
-    one are untouched, so no other book moves.
+  - THERE ARE TWO BODY RENDERERS AND BOTH HAD THE SAME BUG. assemble.py
+    set any indented block as <pre> and build_ebook.py set it as lined
+    matter, so 248 of 308 plates printed as literal "[Figure 57: ...]"
+    on the page AND in the epub, where they sat in the package
+    referenced by nothing. An indented block CARRYING a marker now
+    renders as a table in both (caption -> img alt); blocks without one
+    are untouched, so no other book moves. NOTHING CATCHES THE EPUB
+    HALF: `se build-manifest` lists what is on disk rather than what is
+    used, `se lint` passes, and epubcheck has no opinion about an image
+    nobody asked for. After any render change, unzip the built epub and
+    compare images referenced against images present, BOTH directions.
   - assemble.is_subheading read 169 lines across seven books as titles.
     New: a QUOTED line is speech (92 dialogue lines across the Verne
     novels, journey-center-earth, memorabilia, tangled-tale), and
