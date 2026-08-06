@@ -289,29 +289,76 @@ def main():
     # ---- the print-page map ---------------------------------------------
     # Every pgNNN anchor, mapped to the name of the section it sits in, so
     # that "p. 12" can be rewritten as the place a reader can actually go.
+    #
+    # THE SECTION NAME ALONE IS NOT AN ADDRESS. Carroll's chapter headings
+    # are "CHAPTER I", "CHAPTER II", "CHAPTER III" -- and there are eight
+    # Books, so the book contains four separate Chapter IIs and the reader
+    # is sent to whichever he likes. Worse, "Review Tables VII, VIII
+    # (p. 46, p. 47)" came out as "(Chapter II, Chapter II)", which reads
+    # as a misprint rather than a reference. Every chapter target is
+    # qualified with its Book, exactly as the manifest titles are.
+    booked, bk, n = [], "", 0
+    for a, b_, name, lvl in cuts:
+        if lvl == 3 and re.match(r"BOOK [IVX]+", name.upper()):
+            n += 1
+            bk = f"Book {WORDNUM[n - 1]}"
+        booked.append(bk)
+
+    def address(i):
+        where = cuts[i][2].rstrip(".,;:").strip()
+        # .title() turns "CHAPTER III" into "Chapter Iii"; smallcaps
+        # leaves roman numerals and single-letter variables alone.
+        where = smallcaps(where)
+        if booked[i] and re.fullmatch(r"Chapter [IVXL]+", where):
+            return f"{booked[i]}, {where}"
+        return where
+
     pagemap, ci = {}, 0
     for m in re.finditer(r'id="(pg\d+)"', body):
         while ci + 1 < len(cuts) and cuts[ci + 1][0] < m.start():
             ci += 1
-        pagemap[m.group(1)] = cuts[ci][2] if cuts else ""
+        pagemap[m.group(1)] = (address(ci), ci) if cuts else ("", -1)
 
-    def fix_xrefs(chunk):
+    def fix_xrefs(chunk, here=-1):
         def repl(m):
             tgt, text = m.group(1), m.group(2)
-            where = pagemap.get(tgt)
+            where, sec = pagemap.get(tgt, ("", -1))
             if not where:
                 return text
-            # Section names come off printed headings and carry their
-            # printed punctuation ("APPENDIX,"), which produced things like
-            # "will be found in the Appendix, at APPENDIX,." Strip the
-            # trailing punctuation and set the name in title case so the
-            # rewritten reference reads as a sentence.
-            where = where.rstrip(".,;:").strip()
-            # .title() turns "CHAPTER III" into "Chapter Iii"; smallcaps
-            # leaves roman numerals and single-letter variables alone.
-            return smallcaps(where)
-        return re.sub(r'<a[^>]*href="#(pg\d+)"[^>]*>(.*?)</a>', repl,
-                      chunk, flags=re.S)
+            # A REFERENCE INTO THE SECTION IT IS WRITTEN IN reads as
+            # nonsense once the page number is gone: the four worked
+            # examples of Book Five are recapitulated at the end of their
+            # own chapter as "(1) [see Chapter II]", which is the chapter
+            # the reader is standing in. Say "above" instead.
+            if sec == here:
+                return "\x01above\x02"
+            return f"\x01{where}\x02"
+        chunk = re.sub(r'<a[^>]*href="#(pg\d+)"[^>]*>(.*?)</a>', repl,
+                       chunk, flags=re.S)
+        # TWO PAGE NUMBERS CAN LAND IN ONE SECTION, and then the reference
+        # says the same thing twice: "Review Tables VII, VIII (p. 46, p. 47)"
+        # became "(Book Four, Chapter II, Book Four, Chapter II)", and
+        # "Tables V-VIII (pp. 34, 47)" became a range from a section to
+        # itself. The rewrites are fenced so a repeat can be collapsed
+        # without a regex having to guess where a section name ends -- the
+        # names contain commas themselves.
+        while True:
+            c2 = re.sub("\x01([^\x02]*)\x02(\\s*(?:[,;]|and|–|—|-)\\s*)*"
+                        "\x01\\1\x02", "\x01\\1\x02", chunk)
+            if c2 == chunk:
+                break
+            chunk = c2
+        # "described at p. 63" -> "described at above" reads as a slip.
+        chunk = re.sub("\\b(?:at|on|in) (above)", "\\1", chunk)
+        chunk = chunk.replace("\x01", "").replace("\x02", "")
+        # Carroll cites his own Books in roman ("Work Examples § 1, 17-21
+        # (Book VIII)"), while every heading and every rewritten reference
+        # in this edition names them in words. Harmonise, or the reader has
+        # to hold two numbering systems at once.
+        return re.sub(r"\bBook ([IVX]+)\b",
+                      lambda m: "Book " + WORDNUM[
+                          ["I", "II", "III", "IV", "V", "VI", "VII", "VIII",
+                           "IX", "X"].index(m.group(1))], chunk)
 
     # ---- figures --------------------------------------------------------
     names = [Path(m).stem for m in
@@ -327,7 +374,7 @@ def main():
     for i, (a, b_, name, lvl) in enumerate(cuts):
         stop = cuts[i + 1][0] if i + 1 < len(cuts) else len(body)
         e = Extract(figmap)
-        e.feed(fix_xrefs(body[b_:stop]))
+        e.feed(fix_xrefs(body[b_:stop], here=i))
         sections.append((name, lvl, e.close()))
 
     CHAPTERS.mkdir(exist_ok=True)
