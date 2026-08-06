@@ -62,7 +62,20 @@ WORDNUM = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight",
 # so a rule demanding a capital or a space after it leaves exactly those
 # behind. "pg_"/"px_" are unambiguous on their own; bare "pg" is only
 # stripped when digits follow.
-PAGEMARK = re.compile(r"(?:pg_|px_)(?:[ivxlc]+|\d+)|pg\d+")
+#
+# The trailing [½¼¾] is not decoration: Carroll's fourth edition inserts
+# whole pages numbered 1½, 2½, 3½ and 4½, so the marker for one of them is
+# "pg002½" and a pattern anchored on \d+ leaves the fraction behind, welded
+# to the first word of the paragraph ("½Hence, any single Thing...").
+#
+# The digit run is FIXED at three, not "\d+". The marker sits in a <span> of
+# its own and the body text resumes immediately after it, so once the tags
+# are stripped the two run together -- and a greedy \d+ then eats the first
+# digit of the text: "pg007" + "4. Define “Men.”" leaves ". Define
+# “Men.”", a numbered example that has lost its number. Every
+# numeric marker in this edition is zero-padded to exactly three digits
+# (pg001-pg168), so the count is asserted rather than guessed.
+PAGEMARK = re.compile(r"(?:pg_|px_)(?:[ivxlc]+|\d+)|pg\d{3}[½¼¾]?")
 
 
 def clean(s):
