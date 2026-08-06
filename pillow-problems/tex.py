@@ -49,6 +49,10 @@ FUNC = ("sin", "cos", "tan", "cot", "sec", "cosec")
 # \text{i. e.} and the decimal point that \cdot produces, so both are
 # carried on a sentinel and restored at the end.
 DOT_KEEP = "\x01"
+# \text{} holds English, where "-" is a hyphen and "." ends a sentence. The
+# spacing passes below are for mathematics only, so its content is fenced
+# out of them and restored at the end.
+TEXT_A, TEXT_B = "\x03", "\x04"
 # Likewise "\\&", which the alignment-tab strip would otherwise eat: an
 # escaped ampersand is content, a bare one is a column separator.
 AMP_KEEP = "\x02"
@@ -203,13 +207,26 @@ def _inline(t):
     s = re.sub(r"\s+([,.;:)])", r"\1", s)
     s = re.sub(r"(?<=[\w)\]²³⁴⁵⁶⁷⁸⁹′])\s*\.\s*(?=[\w(\[√])", "·", s)
     s = s.replace(AMP_KEEP + "c.", "etc.").replace(AMP_KEEP, "&")
-    s = re.sub(r"\s*([+×÷±=<>])\s*", r" \1 ", s)
+    # A BINARY MINUS WANTS THE SAME AIR AS A PLUS. Left alone it gives
+    # "(1 + k), (1-k)", which reads as though the two were different kinds
+    # of thing. Only between two mathematical atoms, and never inside
+    # \text{}, where a hyphen is a hyphen.
+    fenced = re.split(f"({TEXT_A}[^{TEXT_B}]*{TEXT_B})", s)
+    for j, part in enumerate(fenced):
+        if part.startswith(TEXT_A):
+            continue
+        part = re.sub(r"\s*([+×÷±=<>])\s*", r" \1 ", part)
+        part = re.sub(r"(?<=[\w)\]²³⁴⁵⁶⁷⁸⁹′])\s*-\s*(?=[\w(\[√])",
+                      " - ", part)
+        fenced[j] = part
+    s = "".join(fenced)
     # "\sin A\sin B" comes out "sin Asin B"; a function name needs air in
     # front of it, and its exponent needs none ("sin ² B" -> "sin² B").
     s = re.sub(r"(?<=[A-Za-z0-9α-ω)\]])(?=(?:sin|cos|tan|cot|sec|cosec)\b)",
                " ", s)
     s = re.sub(r"\s+([²³⁴⁵⁶⁷⁸⁹ⁿ⁰¹])", r"\1", s)
     s = re.sub(r"[ \t]{2,}", " ", s)
+    s = s.replace(TEXT_A, "").replace(TEXT_B, "")
     return s.replace(DOT_KEEP, ".").strip()
 
 
@@ -273,7 +290,7 @@ def _command(name, t, i, out):
         return i
     if name == "text":
         a, i = _arg(t, i)
-        out.append(a.replace(".", DOT_KEEP))
+        out.append(TEXT_A + a.replace(".", DOT_KEEP) + TEXT_B)
         return i
     if name == "unicode":
         a, i = _arg(t, i)
