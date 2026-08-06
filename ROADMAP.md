@@ -175,13 +175,15 @@ different book from the one we make.
   rows) that are genuinely two-dimensional. Those want the indented-block
   path — which now renders properly in BOTH renderers after
   symbolic-logic — or they stay as plates. Decide that, and:
-  CARROLL'S FACTORIAL IS THE VICTORIAN |n WITH AN UNDERLINE, which
-  MathSpeak renders "vertical bar ModifyingBelow 2 With quotation dash".
-  It means 2!. Modernising it is probably right (a modern reader knows
-  "!" and cannot read the old glyph at all) but it is a terminology
-  decision of exactly the kind symbolic-logic had to settle first, and
-  the answer may not be the same — there the words were the machine,
-  here the notation is incidental to the argument.
+  DECIDED (Alex, 2026-08-06): MODERNISE THE NOTATION, and render it in
+  both formats rather than falling back to plates. So Carroll's Victorian
+  factorial |n-with-an-underline — which MathSpeak renders "vertical bar
+  ModifyingBelow 2 With quotation dash" — becomes 2!, and the multi-line
+  derivations become indented Unicode blocks, which BOTH renderers now
+  set properly after symbolic-logic. This is the opposite of the
+  symbolic-logic ruling and deliberately so: there the words WERE the
+  machine, here the notation is incidental to the argument and the
+  argument is what the reader came for.
 - **Euclid and His Modern Rivals** (1879) — the ghost of Euclid defends
   his own textbook against Victorian competitors, in dialogue. Genuinely
   funny and completely unread. NOT on Gutenberg in any edition; Archive
@@ -189,6 +191,58 @@ different book from the one we make.
   `euclidandhismode000469mbp` (1879, 1st ed), so this one is the Thompson
   OCR path and should be LAST. Dialogue speaker tags must be Title-Case,
   not ALL-CAPS (the galileo trap).
+
+## Folktales and stories from other cultures (Alex, 2026-08-06)
+
+A new strand, and the project's first COLLECTIONS rather than single
+works. Start with Joseph Jacobs. All are on Gutenberg, all are out of
+copyright, and Jacobs is the right door: he collected in English, wrote
+for children on purpose, and left a scholarly apparatus that says where
+every tale came from.
+
+  #7439   English Fairy Tales (1890)     65k words, 43 tales, NO plates
+  #35862  Celtic Folk and Fairy Tales    79k words, 26 tales, 80 plates
+          (= Celtic Fairy Tales, 1892, the Batten-illustrated setting;
+           #7885 is the same book without the pictures)
+  #14241  More English Fairy Tales (1894) 64k, 59 plates
+  #34453  More Celtic Fairy Tales (1894)  69k, 70 plates
+  #7128   Indian Fairy Tales (1892)       75k, 85 plates
+  #26019  Europa's Fairy Book (1916)      62k, 52 plates
+
+THE NEW EDITORIAL QUESTION, AND IT IS THE WHOLE JOB: **DIALECT IS NOT
+ARCHAISM.** Jacobs prints the tales as they were told. Tom Tit Tot opens
+"there was a woman, and she baked five pies... they were that overbaked
+the crusts were too hard to eat... 'Noo, they ain't come again'" — thick
+Suffolk, and it is not a defect to be repaired, it is the artifact. Every
+rule this project has is about removing distance between reader and
+author; here some of the distance IS the text. Nix Nought Nothing is
+Scots, several of the Celtic tales are Irish-inflected, and a modern
+ten-year-old will bounce off some of it. Decide ONCE, before any prep, on
+a scale: what is silently modernised (spelling that only represents
+pronunciation), what is kept (rhythm, syntax, the tags and refrains), and
+what gets a light hand (a genuinely opaque word). Nearest precedent is
+bunyan/ — where the case for the book was that it MISLEADS rather than
+that it is hard — but dialect is a class this project has not met.
+
+SECOND DECISION: JACOBS' NOTES AND REFERENCES. 11,338 of English Fairy
+Tales' 65k words are his own scholarly back matter — source, parallels,
+bibliography, tale by tale. Unlike Offor's Victorian devotional
+commentary in bunyan/ (dropped to a crib), these are the collector's own
+and they are genuinely interesting: they are what makes it a book about
+folklore and not just a book of stories. Probably keep, probably in his
+register, possibly abridged.
+
+THIRD: PLATES. Batten's illustrations are famous and good, and the Celtic
+volumes have them on Gutenberg. English Fairy Tales does NOT — #7439 is
+plain text and #26460 is an AUDIOBOOK, not an illustrated edition. So
+either ship the English volume unillustrated or take the two-source route
+(text from Gutenberg, plates from Archive.org) proven in candle/.
+
+After Jacobs the strand opens up — Indian Fairy Tales is already his;
+beyond that, Ozaki's Japanese, Ralston's Russian, and the Arabian Nights
+already listed below. Prefer collectors who worked from the source
+language over Lang's colour books, which are translations of
+translations.
 
 ## Further afield (needs stronger crib scaffolding — different
 translation-risk class; caveat prominently in front matter)
