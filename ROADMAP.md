@@ -238,51 +238,78 @@ plain text and #26460 is an AUDIOBOOK, not an illustrated edition. So
 either ship the English volume unillustrated or take the two-source route
 (text from Gutenberg, plates from Archive.org) proven in candle/.
 
-STANDARD EBOOKS HAS A REAL FOLKTALE SHELF, and it is a better strand
-than Jacobs alone — checked 2026-08-06. SE editions are proofread, use
-semantic markup and modern typography, and prep already handles SE XHTML
-(bunyan/, autobiography/), with the traps known: no-break spaces inside
-abbreviations, and noteref anchors that must be killed as ELEMENTS.
+STANDARD EBOOKS HAS A REAL FOLKTALE SHELF — checked and SAMPLED
+2026-08-06. SE editions are proofread, use semantic markup and modern
+typography, and prep already handles SE XHTML (bunyan/, autobiography/),
+with the traps known: no-break spaces inside abbreviations, and noteref
+anchors that must be killed as ELEMENTS.
 
-  Russian Folktales — Afanasyev, tr. Magnus     102k  ★ best candidate
-  Indian Fairy Tales — Joseph Jacobs             71k
-  Irish Fairy Tales — James Stephens (1920)      66k
-  Fairy Tales — Hans Christian Andersen             (various translators)
-  Folk Stories from Southern Nigeria — Dayrell      (Efik/Ibibio)
-  Hindu Tales from the Sanskrit — S. M. Mitra    40k
-  Fables — Aesop, tr. Vernon Jones               40k
-  American Indian Stories — Zitkala-Ša           32k
-  Legends of Vancouver — E. Pauline Johnson      29k  (Squamish, as told
-                                                       to her by Chief
-                                                       Joe Capilano)
-  Old Indian Legends — Zitkala-Ša                18k  (Dakota)
-  The Kalevala — Lönnrot, tr. Crawford              (Finnish epic)
+THE TEST ALEX SET: take the ones written in a stuffy or literary
+register that a retelling would unlock. If a book is already good and
+modern, LEAVE IT ALONE. Measured on the real text — average sentence
+length, proportion of sentences over 35 words, and reading the prose:
 
-NOTE THE GAP: SE has Jacobs' INDIAN Fairy Tales but NOT his English or
-Celtic. So the two Alex named still come from Gutenberg (#7439, #35862);
-everything else in the strand is better taken from SE.
+  WORTH DOING (the register genuinely obstructs the material)
+  - Hindu Tales from the Sanskrit — S. M. Mitra, 1919.  40k.
+    30.4w average sentence, 29% over 35 words, and Edwardian
+    explanatory syntax that keeps stopping to reassure you: "taking a
+    certain pleasure in being entirely his own master; which a king can
+    never really be, because he has to consider so many other people and
+    to keep so many rules." Best ratio of good material to bad prose in
+    the set. START HERE.
+  - The Kalevala — Lönnrot, tr. Crawford 1888.  53w "sentences",
+    50% over 35, and the whole thing is in Hiawatha metre: "O'er this
+    cold and cruel country". A huge unlock, but it is a national EPIC in
+    Victorian verse, so it is an Ovid-shaped job, not a folktale job.
+    Size it separately.
 
-NOT on SE at all: Grimm, Lang's colour books, Ozaki's Japanese, the
-Arabian Nights. Prefer collectors who worked from the source language
-over Lang, which is translations of translations.
+  MARGINAL
+  - Russian Folktales — Afanasyev, tr. Magnus 1915.  102k.  25.3w.
+    I EXPECTED THIS TO BE THE STUFFY ONE AND IT IS NOT: the tales
+    themselves keep a decent oral voice ("You know that there are all
+    sorts in this world, good and bad, people who do not fear God").
+    The scholarly apparatus is stiff; the stories are not. Great
+    material, smaller unlock than it looks.
+  - Indian Fairy Tales — Joseph Jacobs, 1892.  71k.  26.9w but reads
+    young on purpose: "a wee wee Lambikin, who frolicked about on his
+    little tottery legs".
+  - Legends of Vancouver — E. Pauline Johnson, 1911.  29k.  Longest
+    words in the set (4.27 chars) and a deliberately grand cadence
+    ("the humane, sympathetic, charitable, loving people"). Literary by
+    choice, not by stuffiness.
 
-TWO OF THESE ARE DIFFERENT IN KIND AND SHOULD PROBABLY COME EARLY.
-Zitkala-Ša (Dakota) and E. Pauline Johnson (Mohawk) are not Victorian
-collectors writing up somebody else's stories — they are Indigenous
-writers telling their own peoples' tales, in English, for a hostile
-audience. Both are short (18k, 29k, 32k). They are also the two where
-this project's usual value-add is SMALLEST, because the prose is already
-20th-century and clear; the honest case for including them may be
-curation rather than modernisation, and if so, say so in the front
-matter rather than rewriting prose that does not need it. Same caveat
-for Stephens' Irish Fairy Tales (1920).
+  LEAVE ALONE (already modern — the test says skip)
+  - Old Indian Legends / American Indian Stories — Zitkala-Ša, 1901.
+    13.9w average sentence and ONE PER CENT over 35 words: by a wide
+    margin the cleanest prose in the set, and she is a Dakota writer
+    telling Dakota stories. Nothing to unlock. Recommend as reading,
+    do not retell.
+  - Irish Fairy Tales — James Stephens, 1920. Mannered, but mannered
+    ON PURPOSE — Irish Revival high style, aphoristic and beautiful
+    ("or the spirit faints and wisdom herself grows bitter").
+    Modernising it would be like modernising Yeats.
+  - Fables — Aesop, tr. Vernon Jones 1912. Already brisk and clean.
 
-BY THAT TEST THE BEST FIRST BOOK IS AFANASYEV'S RUSSIAN FOLKTALES:
-102k words of superb material inside a stiff, scholarly 1915 translation
-that genuinely obstructs it — the Magnus version is Edwardian
-translationese with a heavy apparatus. Highest gap between what the book
-contains and what a reader can get out of it, which is the project's
-actual criterion.
+NOT ACTUALLY AVAILABLE: Andersen's Fairy Tales and Dayrell's Folk
+Stories from Southern Nigeria have SE pages but are IN PRODUCTION, not
+published — "We don't have this ebook in our catalog yet." Both would be
+strong candidates when they land (the Victorian Andersen translations
+are notoriously stiff and bowdlerised, which is exactly the target).
+Re-check before planning either.
+
+THE GAP: SE has Jacobs' INDIAN Fairy Tales but NOT his English or
+Celtic, so the two Alex first named still come from Gutenberg (#7439,
+#35862). Nor does SE have Grimm, Lang, Ozaki's Japanese or the Arabian
+Nights.
+
+WHERE TO LOOK NEXT, given the test — the unlock is biggest where a
+Victorian translator archaised deliberately, which is a Gutenberg
+hunt rather than an SE one: Margaret Hunt's Grimm (1884), Ralston's
+Russian Folk-Tales (1873), and above all Burton's Arabian Nights, whose
+whole method was to write mock-Elizabethan. Prefer collectors who
+worked from the source language over Lang, which is translations of
+translations. SAMPLE THE PROSE BEFORE COMMITTING — the Afanasyev
+result is the warning: the stuffy-looking one was fine.
 
 ## Further afield (needs stronger crib scaffolding — different
 translation-risk class; caveat prominently in front matter)
