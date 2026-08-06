@@ -905,3 +905,91 @@ Cover: Turner's "Snow Storm: Steam-Boat off a Harbour's Mouth" (1842),
 Commons "File:Joseph Mallord William Turner - Snow Storm - Steam-Boat
 off a Harbour's Mouth - WGA23178.jpg", crop "1252x1879+754+0" — a
 steamer signalling in fog off a harbour mouth, which is chapter seven.
+
+Lewis Carroll's Symbolic Logic, Part I (symbolic-logic/ — the 48th
+book, and the third of the Carroll shelf after bunyan/ and
+tangled-tale/). 41 files, ~57k words, 308 diagrams, from Gutenberg
+#28696. Ratio 1.00 (--min-ratio 0.85 --max-ratio 1.3).
+THE ONE BOOK WHERE THE FLEMING RULE DOES NOT REACH. Elsewhere dated
+CLAIMS stand as the author's and dated WORDS are modernised silently.
+Here THE WORDS ARE THE MACHINE: "Retinend" and "Eliminand" are not old
+names for something logic now calls something else, they are parts
+Carroll built. KEEP ALL OF HIS TERMINOLOGY and his capitalisation of
+it — Premiss/Premisses (his spelling), Univ., Sorites/Soriteses,
+Entity/Nullity, and the compass geography (North, South, Inner, Outer),
+which are COORDINATES, not description. All the work is syntax and
+signposting. The book is not hard, it MISLEADS: Victorian notation, a
+diagram method that is his and nobody else's, and a vocabulary later
+logic abandoned — so a reader WITH training is more lost than one
+without.
+THE CAPTIONS ARE THE BOOK. Every diagram carries alt text and every one
+is useless ("Diagram representing all x are y" repeats the sentence
+above it). A caption must say WHICH CELL HOLDS WHICH COUNTER. All 308
+were opened before captioning, because the drawing convention exists
+NOWHERE in the text: a Red Counter is a circle with a dot, a Grey
+Counter a plain circle, and from Book Four Chapter III — where Carroll
+tells the reader to switch to digits — the plates switch with him and
+draw the Red Counter as the letter I.
+A CAPTION ON AN EXERCISE MUST NOT PRINT ITS ANSWER. Book Eight § 3 sets
+twenty marked diagrams "to be interpreted" and the source's alt text on
+each IS the interpretation. Captioned by their marks instead, each
+checked against the printed Answer.
+FLOATED DIAGRAMS PRECEDE THE PARAGRAPH THEY BELONG TO. Figs 111/112
+show the right and wrong order of laying counters; read in text order
+they come out swapped and the caption then calls the tidy diagram the
+mistake.
+FIVE DEFECTS NO MECHANICAL CHECK CAN SEE, all in prep:
+  1. A GREEDY PAGE-MARKER REGEX EATS THE TEXT'S OWN DIGITS. The marker
+     is a span and the body resumes right after it, so pg\d+ swallowed
+     the "4" of "4. Define Men." — 21 numbers over seven files,
+     including two table cells that were answers. Anchor the digit run
+     (pg\d{3}), do not use \d+. Carroll's half-pages need a trailing
+     [½] too.
+  2. THE NOTATION LIVED IN THE CSS. The Method of Underscoring carries
+     as class="under1"/"under2"; strip tags and all 642 marks vanish,
+     leaving the section that TEACHES it printing its example twice in
+     identical letters. Carried through as U+0332/U+0333.
+  3. THE SECTION NAME ALONE IS NOT AN ADDRESS. Eight Books means four
+     "Chapter II"s. Qualify every chapter target with its Book; collapse
+     two page numbers landing in one section; say "above" for a
+     reference into its own section.
+  4. EVERY ROW OF THE INDEX OF TABLES POINTS AT PAGE 25 (visible
+     numbers right, all nine hrefs wrong), and A PAGE ANCHOR MARKS THE
+     TOP OF A PAGE, NOT THE PLACE — "'Name'" indexed a chapter early.
+     Resolve an index row through its own TERM anchor.
+  5. 3,789 NO-BREAK SPACES survived into chapters/ because clean()'s
+     replace list wrote them literally. Spell them as escapes.
+TWO MISPRINTS IN CARROLL, both c-for-e, found by WORKING the Sorites:
+"No a are e′" for ac′0, "No c′ are b′" for e′b′0. He also promises
+eight Problems and sets nine.
+FIVE EXERCISES CHANGE THEIR TERMS (racial and antisemitic Classes in
+§§ 5, 7 and 9). The logic is indifferent — subscripts, Answers and
+Solutions all unchanged — which is why they can go, and this is a book
+for children of twelve to fourteen who are invited to manipulate these
+propositions as their own. NOT the Verne rule: that protects a dated
+CLAIM the author makes as part of his subject, and none of this is
+Carroll's subject. The Bunyan-Flatterer precedent governs. All listed
+in running_notes.txt with the four neutral references that are KEPT.
+SHARED CODE, three fixes:
+  - verify.py's FIGURE was ANCHORED TO A WHOLE LINE. A marker can be one
+    CELL of a table row; anchored, those stayed in the word counts and
+    were invisible to figure parity. Also: files under 20 words skip the
+    ratio check.
+  - assemble.py set any indented block as <pre>, so 248 of 308 plates
+    printed as literal "[Figure 57: ...]". An indented block CARRYING a
+    marker now renders as a table (caption -> img alt); blocks without
+    one are untouched, so no other book moves.
+  - assemble.is_subheading read 169 lines across seven books as titles.
+    New: a QUOTED line is speech (92 dialogue lines across the Verne
+    novels, journey-center-earth, memorabilia, tangled-tale), and
+    SQUARE BRACKETS mark the author in a lower voice. TWO BLUNTER RULES
+    WERE TRIED FIRST AND BOTH REGRESSED REAL BOOKS — a sentence-break
+    rule killed theophrastus's "10. The Grouch" and tyndall's two-clause
+    titles; a followed-by-indented-block rule killed ball's table
+    captions and leviathan's numbered sections. Re-assemble all 60 pages
+    and diff after EVERY is_subheading change.
+Cover: Sofonisba Anguissola's "The Chess Game" (1555), Commons "File:
+The Chess Game (Sofonisba Anguissola) 1555 (4096x3236px).jpg", crop
+"2157x3236+350+0" — two sisters over a squared board of counters.
+Carroll names chess in the passage where he argues his own game is
+better, because a finished game of chess leaves you nothing to show.
