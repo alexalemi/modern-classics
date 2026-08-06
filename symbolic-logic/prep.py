@@ -334,6 +334,7 @@ def main():
     for f in CHAPTERS.glob("*.txt"):
         f.unlink()
     manifest, divider, book, bookname = [], None, 0, ""
+    oversize = []
     idx = 0
     for name, lvl, paras in sections:
         # THE BOOK CHECK MUST COME FIRST. Five of the eight Book headings
@@ -362,7 +363,16 @@ def main():
             paras = paras[1:]
         title = " ".join(title.split())      # headings can wrap onto 2 lines
         title = smallcaps(title)
-        title = title if len(title) < 78 else title[:75] + "..."
+        # A title that overruns is REPORTED, not silently cut with an
+        # ellipsis. Carroll's chapter subject lines run to eighty and ninety
+        # characters ("REPRESENTATION OF TWO PROPOSITIONS OF RELATION, ONE IN
+        # TERMS OF x AND m, AND THE OTHER IN TERMS OF y AND m") and a
+        # mechanical cut leaves "...in terms of x and m, ..." in the table of
+        # contents, where the reader has no way to recover the rest. These are
+        # shortened by hand in the manifest; the warning is what makes a new
+        # one impossible to miss.
+        if len(title) > 78:
+            oversize.append((f"{idx:03d}.txt", title))
         for k, chunk in enumerate(split_oversize(paras)):
             e = {"file": f"{idx:03d}.txt", "title": title,
                  "part": k + 1, "of": 1,
@@ -398,6 +408,9 @@ def main():
             print(f"  -- {m['part_before']} --")
         print(f"  {m['file']}  {m['words']:6,}w  {m['title'][:56]}")
     print(f"  ... ({len(manifest)} in all)")
+    for f, t in oversize:
+        print(f"  WARNING {f}: title is {len(t)} chars and will not fit "
+              f"the contents -- shorten it by hand in manifest.json\n            {t}")
 
 
 def split_oversize(paras):
