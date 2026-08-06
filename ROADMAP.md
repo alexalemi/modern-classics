@@ -155,13 +155,33 @@ different book from the one we make.
   #79080, 21k words. Seventy-two problems he solved in his head, in bed,
   in the dark; the premise alone sells it.
   NEW PREP PROBLEM, NOT YET SOLVED ANYWHERE IN THIS PROJECT: there is no
-  plain-text edition, and in the HTML the mathematics is INLINE SVG —
-  ~4,900 references. Every formula is an image sitting mid-sentence,
-  which is a different thing from a block plate and the figure-marker
-  pipeline does not fit it. Decide the representation before writing
-  prep.py; converting simple expressions to Unicode text is probably
-  right for a general-reader edition, with only genuinely two-dimensional
-  work (fractions, matrices) staying as images.
+  plain-text edition, and the mathematics is 2,436 separate SVG files
+  pulled in by <img> mid-sentence — one per symbol or fragment, so
+  "sin ∠OPN" is four images in a row. That is a different thing from a
+  block plate and the figure-marker pipeline does not fit it. (Only ~64
+  of the 2,501 images are real diagrams: i_pNN.jpg. Those the existing
+  pipeline takes.)
+  THE ALT TEXT IS MATHSPEAK, WHICH CHANGES THE PROBLEM. Every one of the
+  2,436 carries alt text, and it is not a human's loose description but
+  the standard verbal serialisation of MathML: "upper A", "StartFraction
+  x Over y EndFraction", "StartRoot r squared minus x squared EndRoot",
+  "Superscript 4 Baseline", "StartLayout 1st Row 1st Column … EndLayout".
+  That is grammatical and machine-reversible, so the notation can be
+  PARSED BACK rather than guessed at. Write the MathSpeak reader first
+  and test it against all 1,279 distinct strings before writing prep.
+  THE DISTRIBUTION IS BIMODAL and only the tail needs a decision: ~1,900
+  are a single symbol or a short inline expression and go straight to
+  Unicode; a few dozen are whole multi-line derivations (one runs to 15
+  rows) that are genuinely two-dimensional. Those want the indented-block
+  path — which now renders properly in BOTH renderers after
+  symbolic-logic — or they stay as plates. Decide that, and:
+  CARROLL'S FACTORIAL IS THE VICTORIAN |n WITH AN UNDERLINE, which
+  MathSpeak renders "vertical bar ModifyingBelow 2 With quotation dash".
+  It means 2!. Modernising it is probably right (a modern reader knows
+  "!" and cannot read the old glyph at all) but it is a terminology
+  decision of exactly the kind symbolic-logic had to settle first, and
+  the answer may not be the same — there the words were the machine,
+  here the notation is incidental to the argument.
 - **Euclid and His Modern Rivals** (1879) — the ghost of Euclid defends
   his own textbook against Victorian competitors, in dialogue. Genuinely
   funny and completely unread. NOT on Gutenberg in any edition; Archive
