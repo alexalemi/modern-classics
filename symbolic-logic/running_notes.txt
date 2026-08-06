@@ -46,3 +46,35 @@ STILL TO DECIDE BEFORE TRANSLATION
   and meaningless outside it. The Fleming rule (dated CLAIMS kept, dated
   WORDS modernised) does not settle this, because here the words ARE the
   system. Decide it once, in text_analysis, before a line is translated.
+
+DECIDED (and the reason it goes against the usual rule)
+- KEEP ALL OF CARROLL'S TERMINOLOGY, and his capitalisation of it. See
+  text_analysis.txt section 1. Elsewhere in this project dated WORDS are
+  modernised silently while dated CLAIMS stand; that rule does not reach
+  this book, because here the words ARE the system.
+
+PREP BUGS FOUND AND FIXED SINCE (all silent, none visible to verify.py)
+- Section names used in the rewritten cross-references carried their
+  printed punctuation, giving "will be found in the Appendix, at
+  APPENDIX,." Now stripped and title-cased.
+- MARGINAL PAGE NUMBERS ARE INSIDE THE RUNNING TEXT, not only in the
+  headings: "before taking the trouble to read Vol. I. pg_xiiThis, I
+  say". Welded to the following word all through the body — the same
+  shape as Bunyan's noteref digits and just as invisible.
+- And the fix for that needed a second pass: a roman-numeral marker can
+  be followed by a LOWER-CASE letter ("have pg_xiiifound them"), so a
+  rule demanding a capital or a space after it left exactly those
+  behind. "pg_"/"px_" are unambiguous without any lookahead.
+
+STILL OPEN, AND MUST BE FIXED BEFORE TRANSLATING
+- A TABLE WHOSE CELLS CONTAIN DIAGRAMS COMES OUT EMPTY. The Introduction
+  ends with a summary table pairing each diagram against its
+  interpretation; Extract emits the <img> straight to self.out the
+  moment it sees one, even inside a <td>, so the figure escapes the
+  table and the row is left as "Interpretation of | " with nothing in
+  it. Six figures and their whole explanatory table are affected at the
+  end of 004, and the same shape will recur wherever he tabulates
+  diagrams against readings. Buffer images per-cell instead.
+- Three stub files (013, 018, 030) are Book subject-lines that should
+  fold into their dividers rather than stand as six-word sections.
+- Chapter titles are still in the source's shouting capitals.

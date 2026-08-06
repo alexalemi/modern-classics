@@ -57,10 +57,25 @@ WORDNUM = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight",
            "Nine", "Ten"]
 
 
+# Two forms, and the underscore ones need NO lookahead: a roman-numeral
+# marker can be followed by a lower-case letter ("have pg_xiiifound them"),
+# so a rule demanding a capital or a space after it leaves exactly those
+# behind. "pg_"/"px_" are unambiguous on their own; bare "pg" is only
+# stripped when digits follow.
+PAGEMARK = re.compile(r"(?:pg_|px_)(?:[ivxlc]+|\d+)|pg\d+")
+
+
 def clean(s):
     s = re.sub(r"<[^>]*>", "", s)
     s = html.unescape(s)
     s = s.replace(" ", " ").replace(" ", " ")
+    # The marginal page numbers are INSIDE the running text, not only in
+    # the headings: "before taking the trouble to read Vol. I. pg_xiiThis,
+    # I say, is just permissible". Stripping them only from headings left
+    # them welded to the following word all through the body — the same
+    # shape as Bunyan's noteref digits, and just as invisible to every
+    # mechanical check.
+    s = PAGEMARK.sub("", s)
     return re.sub(r"[ \t]+", " ", s).strip()
 
 
