@@ -76,10 +76,27 @@ def read_env(path):
     return env
 
 
-def is_subheading(par):
+def is_subheading(par, next_par=None):
     if "\n" in par or len(par) > 90:
         return False
     if par[-1] in ".;:,—":
+        return False
+    # A QUOTED LINE IS SPEECH, NOT A TITLE. Two-sentence dialogue slips
+    # past the "?"/"!" rule below -- "\u201cYes. A Frenchman named
+    # Passepartout.\u201d", "\u201cWorried? No.\u201d" -- and twenty-eight of
+    # them were being set as section headings across the two Verne novels,
+    # Twenty Thousand Leagues and the Memorabilia. Nothing in this project
+    # titles a section with a quotation mark in front of it.
+    if par[0] in "\"'\u201c\u2018":
+        return False
+    # NEITHER IS ANYTHING CARRYING A SQUARE BRACKET. Brackets mark the
+    # author in a lower voice throughout this project -- Carroll's glosses
+    # on a definition, Boys' modern notes -- and Carroll sets every step of
+    # a worked example inside them: "[(6) The Proposition now becomes]",
+    # "[(4) Let Univ. be 'persons.']", "No Conclusion. [Fallacy of Unlike
+    # Eliminands with an Entity-Premiss.]". Short, majority-capitalised and
+    # with no terminal stop, fifty of them read as section titles.
+    if "[" in par:
         return False
     # A short spoken line ending in "?" or "!" is not a heading. This has to
     # be narrow: Leviathan and The Social Contract both give whole sections
@@ -198,6 +215,42 @@ def render_figure(num, caption, figdir, site, bare_label=False):
     return "\n".join(out)
 
 
+FIGURE_INLINE = re.compile(
+    r"\[Figure ([A-Za-z0-9_]+(?:-[A-Za-z0-9_]+)*)(?::\s*([^\]]+))?\]")
+
+
+def render_plate_table(par, figdir, site, bare_label=False):
+    """An indented block whose cells include figure markers -> a table.
+
+    Cells are split on the spaced pipe the rest of the pipeline uses. A cell
+    that is a figure marker becomes the plate itself; anything else is set
+    as text, with the marker's caption carried into the img's alt so a
+    reader who cannot see the plate still gets what is on it."""
+    rows = []
+    for line in par.split("\n"):
+        if not line.strip():
+            continue
+        cells = [c.strip() for c in line.strip().split(" | ")]
+        tds = []
+        for c in cells:
+            m = FIGURE_INLINE.fullmatch(c)
+            if m:
+                tds.append("<td>" + render_figure(m.group(1), m.group(2),
+                                                  figdir, site, bare_label)
+                           + "</td>")
+            else:
+                parts, last = [], 0
+                for m in FIGURE_INLINE.finditer(c):
+                    parts.append(html.escape(c[last:m.start()]))
+                    parts.append(render_figure(m.group(1), m.group(2),
+                                               figdir, site, bare_label))
+                    last = m.end()
+                parts.append(html.escape(c[last:]))
+                tds.append("<td>" + "".join(parts) + "</td>")
+        rows.append("<tr>" + "".join(tds) + "</tr>")
+    return '<table class="plates">\n' + "\n".join(rows) + "\n</table>"
+
+
 def find_speakers(pars):
     """Dialogue speakers: short bare names that repeatedly open a block's
     first line (Plato's dialogues put the speaker on its own line)."""
@@ -215,7 +268,8 @@ def render_body(text, figdir=None, site=None, bare_label=False):
     pars = [p.rstrip() for p in re.split(r"\n\s*\n", text) if p.strip()]
     speakers = find_speakers(pars)
     out = []
-    for par in pars:
+    for i, par in enumerate(pars):
+        nxt = pars[i + 1] if i + 1 < len(pars) else None
         s = par.strip()
         lines = s.split("\n")
         fig = FIGURE.match(s) if figdir else None
@@ -225,12 +279,22 @@ def render_body(text, figdir=None, site=None, bare_label=False):
         elif HR_LINE.fullmatch(s):
             out.append("<hr>")
         elif re.search(r"^[ \t]", par, re.M):
-            out.append(f'<pre class="outline">{html.escape(par)}</pre>')
+            # AN INDENTED BLOCK HOLDING PLATES IS A TABLE, NOT AN OUTLINE.
+            # Carroll tabulates his diagrams against their readings, so a
+            # figure marker is frequently one CELL of a row; set as <pre> it
+            # printed the marker as literal text and the plate never
+            # appeared at all -- 248 of the 308 in symbolic-logic/. Only a
+            # block that actually carries a marker takes this path, so no
+            # other book's tables change.
+            if figdir and FIGURE_INLINE.search(par):
+                out.append(render_plate_table(par, figdir, site, bare_label))
+            else:
+                out.append(f'<pre class="outline">{html.escape(par)}</pre>')
         elif len(lines) >= 2 and lines[0].strip() in speakers:
             rest = " ".join(l.strip() for l in lines[1:])
             out.append(f"<p><b>{html.escape(lines[0].strip())}</b>: "
                        f"{html.escape(rest)}</p>")
-        elif is_subheading(s):
+        elif is_subheading(s, nxt):
             out.append(f"<h4>{html.escape(s)}</h4>")
         else:
             out.append(f"<p>{html.escape(s)}</p>")

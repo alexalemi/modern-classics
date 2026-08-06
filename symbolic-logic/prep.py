@@ -348,6 +348,51 @@ def main():
             continue
         cuts.append((m.start(), m.end(), name, int(m.group(1))))
 
+    # ---- a source defect, corrected before anything reads the links ----
+    # EVERY ROW OF THE INDEX OF TABLES POINTS AT PAGE 25. The transcription
+    # gives each of the nine Tables its correct printed page number as the
+    # visible text -- 25, 34, 35, 42, 46, 47, 48, 49, 78 -- and then hangs
+    # all nine off href="#pg025". Following the href, as the rewriter must,
+    # sends the reader to Book Three, Chapter I for every one of them,
+    # including the three Triliteral tables and the table of Formulae that
+    # belong to Books Four and Six. A correctly formatted reference on the
+    # wrong target: ratio, figure parity and must_contain are all blind to
+    # it (the same shape as candle/'s note 16).
+    #
+    # The rule is general and self-correcting: a link whose visible text IS
+    # a page number should point at that page. It is a no-op wherever the
+    # two already agree.
+    def _retarget(m):
+        return m.group(0).replace(f'#pg{m.group(1)}', f'#pg{int(m.group(2)):03d}')
+    body, n_fixed = re.subn(
+        r'<a href="#pg(\d+)"[^>]*>\s*(?:pp?\.\s*)?(\d+)\s*</a>',
+        lambda m: _retarget(m) if int(m.group(1)) != int(m.group(2)) else m.group(0),
+        body)
+    n_fixed = sum(1 for m in re.finditer(
+        r'<a href="#pg(\d+)"[^>]*>\s*(?:pp?\.\s*)?(\d+)\s*</a>', body)
+        if int(m.group(1)) != int(m.group(2)))
+    if n_fixed:
+        sys.exit(f"{n_fixed} page links still disagree with their own text")
+
+    # A PAGE ANCHOR MARKS THE TOP OF A PAGE, NOT THE PLACE ITSELF. Each
+    # Index row carries two links: the term, anchored exactly where it is
+    # defined, and the page number, anchored at the head of the page that
+    # definition happens to fall on. Where a chapter opens part-way down a
+    # page the two disagree, and following the page link sends the reader
+    # to the chapter before -- "'Name'" is defined in Book One, Chapter IV
+    # and was being indexed under Chapter III. Point each row's page link
+    # at the row's own term anchor.
+    _ix = body.rfind("Words &c. explained")
+    if _ix < 0:
+        _ix = body.rfind("Words &amp;c. explained")
+    if _ix > 0:
+        head, tail = body[:_ix], body[_ix:]
+        tail = re.sub(
+            r'(<a href="#(?!pg)([\w]+)"[^>]*>[^<]*</a>\s*</td>\s*'
+            r'<td[^>]*>\s*<a )href="#pg[\w]+"',
+            lambda m: m.group(1) + 'href="#pg!' + m.group(2) + '"', tail)
+        body = head + tail
+
     # ---- the print-page map ---------------------------------------------
     # Every pgNNN anchor, mapped to the name of the section it sits in, so
     # that "p. 12" can be rewritten as the place a reader can actually go.
@@ -367,6 +412,15 @@ def main():
         booked.append(bk)
 
     def address(i):
+        # A BOOK HEADING IS NOT A PLACE TO SEND ANYONE. Five of the eight
+        # carry no text of their own, so a page that falls on one (the
+        # Index sends "Adjuncts" and "Attributes" to page 1, which is the
+        # page BOOK I is printed on) resolved to a bare "Book One". Step
+        # forward to the chapter that actually holds the definition.
+        while (i + 1 < len(cuts)
+               and not re.match(r"CHAPTER [IVXL]+", cuts[i][2].upper())
+               and cuts[i + 1][3] != 3):
+            i += 1
         where = cuts[i][2].rstrip(".,;:").strip()
         # .title() turns "CHAPTER III" into "Chapter Iii"; smallcaps
         # leaves roman numerals and single-letter variables alone.
@@ -376,10 +430,16 @@ def main():
         return where
 
     pagemap, ci = {}, 0
-    for m in re.finditer(r'id="(pg\d+)"', body):
+    # The half-pages Carroll inserts in the fourth edition anchor as
+    # "pg001x", not "pg001"; a pattern of \d+ alone leaves four Index
+    # entries reading "'Class' | 1½" -- a page number, in the one edition
+    # that has no pages.
+    for m in re.finditer(r'id="([\w]+)"', body):
         while ci + 1 < len(cuts) and cuts[ci + 1][0] < m.start():
             ci += 1
-        pagemap[m.group(1)] = (address(ci), ci) if cuts else ("", -1)
+        key = m.group(1)
+        pagemap[key] = pagemap["pg!" + key] = (
+            (address(ci), ci) if cuts else ("", -1))
 
     def fix_xrefs(chunk, here=-1):
         def repl(m):
@@ -395,7 +455,7 @@ def main():
             if sec == here:
                 return "\x01above\x02"
             return f"\x01{where}\x02"
-        chunk = re.sub(r'<a[^>]*href="#(pg\d+)"[^>]*>(.*?)</a>', repl,
+        chunk = re.sub(r'<a[^>]*href="#(pg[\w!]+)"[^>]*>(.*?)</a>', repl,
                        chunk, flags=re.S)
         # TWO PAGE NUMBERS CAN LAND IN ONE SECTION, and then the reference
         # says the same thing twice: "Review Tables VII, VIII (p. 46, p. 47)"
@@ -461,7 +521,12 @@ def main():
         if not paras:
             continue
         sub = ""
-        if paras and len(paras[0]) < 90 and not paras[0].startswith(("[", "\t")):
+        # A NOTE LABEL IS NOT A SUBTITLE. The back matter opens on
+        # "(A) [See p. 80]", which is the first note's own number and
+        # back-reference, and taking it as the section subtitle gave
+        # the contents an entry reading "Notes: (a) [see Chapter Iii]".
+        if (paras and len(paras[0]) < 90
+                and not paras[0].startswith(("[", "\t", "(", "§"))):
             sub = paras[0]
         title = name.rstrip(".")
         m2 = re.fullmatch(r"CHAPTER ([IVXL]+)", title.upper())

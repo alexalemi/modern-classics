@@ -30,8 +30,18 @@ from pathlib import Path
 
 PART_MARK = re.compile(r"^\(Part \d+ of \d+\)$", re.I)
 PART_DIVIDER = re.compile(r"^Part [IVXLC0-9]+: \S")
+# NOT anchored to a whole line. A figure marker is usually a paragraph of
+# its own, but it does not have to be: Carroll tabulates his diagrams
+# against their readings, so in symbolic-logic/ a marker is frequently one
+# CELL of an indented table row. Anchored, the pattern left those markers
+# in the word counts (where their captions inflated the ratio past the
+# bound) and invisible to the figure-parity check, which is the one check
+# that exists to catch a dropped plate.
 FIGURE = re.compile(
-    r"^\[Figure ([A-Za-z0-9_]+(?:-[A-Za-z0-9_]+)*)(?::[^\]]*)?\]$", re.M)
+    r"\[Figure ([A-Za-z0-9_]+(?:-[A-Za-z0-9_]+)*)(?::[^\]]*)?\]")
+
+
+MIN_WORDS_FOR_RATIO = 20
 
 
 def words(path):
@@ -66,6 +76,7 @@ def main():
         files = sorted(p.name for p in chapters.glob("*.txt"))
 
     # 1 + 2: pairing and ratios
+    short = 0
     total_o = total_m = 0
     for fn in files:
         src = chapters / fn
@@ -77,7 +88,12 @@ def main():
         total_o += o
         total_m += m
         ratio = m / o if o else 0
-        if not (args.min_ratio <= ratio <= args.max_ratio):
+        # A file too short to summarize cannot fail the summarization
+        # check, and a plate-only file (a Book divider carrying its
+        # diagram and nothing else) has no prose to compare at all.
+        if o < MIN_WORDS_FOR_RATIO:
+            short += 1
+        elif not (args.min_ratio <= ratio <= args.max_ratio):
             failures.append(f"RATIO: {fn} {ratio:.2f} ({o} -> {m} words)")
 
         # 6: illustrated books — every plate survives, in order
@@ -122,6 +138,9 @@ def main():
 
     print(f"{len(files)} files; original {total_o} words, modern {total_m} words, "
           f"ratio {total_m / total_o:.2f}" if total_o else "no files checked")
+    if short:
+        print(f"  ({short} file(s) under {MIN_WORDS_FOR_RATIO} words: "
+              f"ratio not checked)")
     if failures:
         print(f"\n{len(failures)} FAILURE(S):")
         for f in failures:
