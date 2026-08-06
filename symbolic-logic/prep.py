@@ -79,6 +79,26 @@ def clean(s):
     return re.sub(r"[ \t]+", " ", s).strip()
 
 
+SMALL = {"a","an","and","as","at","but","by","for","in","of","on","or",
+         "the","to","with","from","into","terms"}
+
+
+def smallcaps(s):
+    """SHOUTING CAPITALS -> Title Case, leaving Carroll's single-letter
+    variables (x, y, m) and roman numerals alone."""
+    out = []
+    for i, w in enumerate(s.split()):
+        if re.fullmatch(r"[IVXL]+[.,:]?", w) or len(w.strip(".,:")) == 1:
+            out.append(w)
+        elif w.isupper() or w.istitle():
+            low = w.lower()
+            out.append(w.capitalize() if (i == 0 or low.strip(".,:") not in SMALL)
+                       else low)
+        else:
+            out.append(w)
+    return " ".join(out)
+
+
 def strip_pagenum(s):
     """Headings carry their print page as a prefix: 'pg043CHAPTER II.'"""
     # A heading can carry MORE THAN ONE page marker ("pg_xxxiipg001BOOK I."
@@ -129,8 +149,16 @@ class Extract(HTMLParser):
                 return
             cap = clean(a.get("alt", ""))
             n = self.figmap[name]
-            self.out.append(f"[Figure {n}: {cap}]" if cap
-                            else f"[Figure {n}]")
+            marker = f"[Figure {n}: {cap}]" if cap else f"[Figure {n}]"
+            # A DIAGRAM CAN LIVE INSIDE A TABLE CELL. Carroll tabulates
+            # diagrams against their readings, and emitting the marker
+            # straight to self.out let the figure escape the table and left
+            # the row as "Interpretation of | " with nothing in it. Buffer
+            # it into the cell it belongs to.
+            if self.cell is not None:
+                self.cell.append(marker)
+            else:
+                self.out.append(marker)
         elif tag == "table":
             self.flush()
             self.table = []
@@ -190,7 +218,8 @@ class Extract(HTMLParser):
     def close(self):
         super().close()
         self.flush()
-        return [x for x in self.out if x.strip()]
+        return [x for x in self.out
+                if x.strip() and x.strip() not in {">", "|", "\t>"}]
 
 
 def main():
@@ -204,6 +233,31 @@ def main():
     if start < 0 or end < 0:
         sys.exit("could not find the body bounds")
     body = t[t.rfind("<h2", 0, start):end]
+
+    # ---- excise the table of contents -----------------------------------
+    # It is a <table> like any other to the parser, and its rows are section
+    # names against page numbers — which the cross-reference rewriter then
+    # helpfully turns into "Interpretation of | [Figure 1]". It is furniture,
+    # not text, and the six index*.png thumbnails in it are miniatures of
+    # diagrams that appear properly later, so they are not plates either.
+    before = len(body)
+    toc = re.search(r"tocchap", body)
+    if toc:
+        a = body.rfind("<table", 0, toc.start())
+        depth, i = 0, a
+        while i < len(body):                 # walk to the matching close
+            m2 = re.compile(r"</?table\b").search(body, i)
+            if not m2:
+                break
+            depth += 1 if m2.group(0) == "<table" else -1
+            i = m2.end()
+            if depth == 0:
+                break
+        body = body[:a] + body[i:]
+    body = re.sub(r"<tr[^>]*class=\"toc[^\"]*\".*?</tr>", "", body, flags=re.S)
+    body = re.sub(r"<tr[^>]*class=\"middled\".*?</tr>", "", body, flags=re.S)
+    if len(body) == before:
+        sys.exit("the contents table was not found — check the source markup")
 
     # ---- sections -------------------------------------------------------
     # h2 for the front matter, h3 for the BOOKs and the back matter, h4 for
@@ -240,9 +294,9 @@ def main():
             # trailing punctuation and set the name in title case so the
             # rewritten reference reads as a sentence.
             where = where.rstrip(".,;:").strip()
-            if where.isupper():
-                where = where.title()
-            return where
+            # .title() turns "CHAPTER III" into "Chapter Iii"; smallcaps
+            # leaves roman numerals and single-letter variables alone.
+            return smallcaps(where)
         return re.sub(r'<a[^>]*href="#(pg\d+)"[^>]*>(.*?)</a>', repl,
                       chunk, flags=re.S)
 
@@ -294,6 +348,7 @@ def main():
             title = f"{title}: {sub.rstrip('.')}"
             paras = paras[1:]
         title = " ".join(title.split())      # headings can wrap onto 2 lines
+        title = smallcaps(title)
         title = title if len(title) < 78 else title[:75] + "..."
         for k, chunk in enumerate(split_oversize(paras)):
             e = {"file": f"{idx:03d}.txt", "title": title,

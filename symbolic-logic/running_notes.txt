@@ -66,15 +66,33 @@ PREP BUGS FOUND AND FIXED SINCE (all silent, none visible to verify.py)
   rule demanding a capital or a space after it left exactly those
   behind. "pg_"/"px_" are unambiguous without any lookahead.
 
-STILL OPEN, AND MUST BE FIXED BEFORE TRANSLATING
-- A TABLE WHOSE CELLS CONTAIN DIAGRAMS COMES OUT EMPTY. The Introduction
+FIXED (was blocking translation)
+- A TABLE WHOSE CELLS CONTAIN DIAGRAMS CAME OUT EMPTY. The Introduction
   ends with a summary table pairing each diagram against its
   interpretation; Extract emits the <img> straight to self.out the
   moment it sees one, even inside a <td>, so the figure escapes the
   table and the row is left as "Interpretation of | " with nothing in
   it. Six figures and their whole explanatory table are affected at the
   end of 004, and the same shape will recur wherever he tabulates
-  diagrams against readings. Buffer images per-cell instead.
-- Three stub files (013, 018, 030) are Book subject-lines that should
-  fold into their dividers rather than stand as six-word sections.
-- Chapter titles are still in the source's shouting capitals.
+  diagrams against readings. Images are now buffered per-cell.
+  AND THE REAL CULPRIT TURNED OUT TO BE THE TABLE OF CONTENTS: that
+  "explanatory table" was the book's own contents list, class
+  "tocchaphead", whose rows are section names against page numbers —
+  which the cross-reference rewriter then helpfully turned into
+  "Interpretation of | [Figure 1]". It is furniture, and the six
+  index*.png in it are thumbnails of diagrams that appear properly
+  later, so they are not plates either. Excised, and the plate count
+  fell from 314 to the true 308.
+- EXCISING IT HAD TO HAPPEN BEFORE THE SECTION CUTS ARE COMPUTED. My
+  first attempt removed it afterwards, which invalidated every byte
+  offset in `cuts`, silently mis-sliced the sections and left five
+  diagrams unplaced. prep.py's assertion that every diagram is placed
+  exactly once is what caught it — that assertion has now paid for
+  itself twice.
+- Chapter titles are out of the source's shouting capitals, via a
+  smallcaps() that leaves roman numerals and Carroll's single-letter
+  variables alone. `.title()` cannot be used: it turns "CHAPTER III"
+  into "Chapter Iii".
+STILL OPEN (cosmetic, not blocking)
+- Three stub files (013, 018, 030) are Book subject-lines that would sit
+  better folded into their dividers than standing as six-word sections.
