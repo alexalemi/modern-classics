@@ -1,0 +1,110 @@
+SYMBOLIC LOGIC, PART I — TRANSLATION STRATEGY
+Lewis Carroll (Charles Dodgson), fourth edition, 1896
+Source: Project Gutenberg #28696 (the illustrated HTML edition)
+
+
+1. THE DECISION THAT GOVERNS EVERYTHING ELSE
+
+KEEP CARROLL'S TERMINOLOGY. All of it.
+
+This was the one question that had to be settled before a line was
+written, because it is not the usual case. Elsewhere in this project the
+rule is that dated CLAIMS are kept as the author's and dated WORDS are
+modernised silently — Faraday reasons with "carbonic acid" so we keep it
+and gloss the modern name once; Fleming's "carbonic oxide" becomes carbon
+monoxide without comment. That rule does not reach this book, because
+here THE WORDS ARE THE SYSTEM. "Retinend" and "Eliminand" are not old
+names for something logic now calls another thing; they are parts Carroll
+built, and the machine does not run without them.
+
+So the work here is on SYNTAX AND SIGNPOSTING, not vocabulary. Unstack
+his sentences, cut the throat-clearing, make the steps of an argument
+visible — and leave his nouns exactly where he put them.
+
+LOCKED, and pinned in must_contain.txt:
+
+  Proposition            Premiss / Premisses  (HIS spelling — never
+  Proposition of Existence                     "premise/premises")
+  Proposition of Relation
+  Universe of Discourse, and his abbreviation "Univ."
+  Subject, Predicate, Copula
+  Entity, Nullity
+  Retinend, Eliminand / Eliminands
+  Syllogism, Sorites (plural Soriteses, which is also his)
+  Fallacy
+  Biliteral Diagram, Triliteral Diagram
+  Cell, Compartment, Half, Counter
+  North, South, East, West, Inner, Outer
+
+That last row matters more than it looks. Carroll's diagrams are squares
+with a geography, and he reasons in it out loud — "there is at least one
+Thing in the Inner portion of the North Half". Those are coordinates, not
+decoration. Do not translate them into "top left" or anything else.
+
+WHERE A TERM IS GENUINELY OPAQUE, gloss it ONCE, at first use, inside his
+own sentence — never a footnote, never a second time. A reader who has
+been told once what a Retinend is can read the remaining two hundred
+pages; a reader reminded every chapter will stop.
+
+
+2. WHAT ACTUALLY BLOCKS A MODERN READER
+
+Not the vocabulary, once it is glossed. Three other things:
+
+  - THE SENTENCES. Carroll writes long, heavily-subordinated periods with
+    the operative clause buried in the middle. This is where nearly all
+    the work is.
+  - THE CAPITALISATION. He capitalises every technical noun, which to a
+    modern eye reads as shouting. KEEP IT. It is how he marks a term of
+    art, and stripping it makes his prose harder, not easier, because you
+    can no longer see where a definition is being used.
+  - HIS ADDRESS TO THE READER. He is funny, and constantly aside to the
+    student — "the Reader is entreated to...". Keep the jokes. This is
+    the same man who wrote Alice, and the humour is the reason a
+    fourteen-year-old could get through it.
+
+(A NOTE ON A LINE THAT IS NOT HERE: the "hard WORDS, not hard IDEAS"
+sentence that states this project's thesis so exactly belongs to
+Silvanus Thompson, in thompson/, not to Carroll. Do not go looking for
+it in this book and do not import it. What Carroll offers instead is
+"To Learners", which is better for being practical: begin at the
+beginning, do not dip, do not go on until you understand, and work every
+example. That address is the tone of the whole book and must keep its
+jokes — including the digression about why the rich uncle is always in
+India.)
+
+
+3. THE DIAGRAMS ARE THE NOTATION
+
+314 of them, and a reader who loses them loses the book. Each arrives as
+[Figure N: caption] carrying Carroll's own alt text as the caption seed.
+MODERNISE that caption, keeping his phrasing as the first clause and
+extending it with what the diagram actually shows — the caption is also
+the epub's alt text, and for this book that means it is the only thing a
+reader using a screen reader gets.
+
+A caption here must say WHICH CELLS ARE MARKED AND WITH WHAT. "Diagram
+representing all x are y" is a start, not a caption.
+
+
+4. TABLES, ASIDES, CROSS-REFERENCES
+
+108 tables arrive as indented blocks with cells joined by " | ". Keep
+them as blocks; do not turn a table into prose. CHECK EVERY TABLE THAT
+CLAIMS TO BE COMPUTED — the fleming rule, and A Tangled Tale has just
+shown what happens when a transcription silently corrupts an author's
+own arithmetic.
+
+130 bracketed asides are Carroll teaching in a lower voice. Keep them
+bracketed and keep them distinct from the running argument.
+
+509 print-page cross-references have ALREADY been rewritten by prep.py to
+name the section they point at. Do not add page numbers back.
+
+
+5. RATIO
+
+Expect close to 1:1, as with the other English-to-English volumes;
+verify with --min-ratio 0.85 --max-ratio 1.3. Unstacking a period
+expands; keeping every technical term contracts nothing. The Examples,
+Answers and Solutions books are long lists and will sit lowest.

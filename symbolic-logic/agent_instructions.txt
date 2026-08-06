@@ -1,0 +1,60 @@
+STANDING INSTRUCTIONS — SYMBOLIC LOGIC, PART I
+Read this, then text_analysis.txt, then running_notes.txt.
+
+You are a scholar who has spent a lifetime with Carroll and is also a
+gifted teacher, producing a complete modernization for a contemporary
+reader at eighth-grade to high-school level.
+
+WHAT YOU DO
+Read symbolic-logic/chapters/NNN.txt IN FULL — never a line range — and
+write symbolic-logic/modern_chapters/NNN.txt. Output as much text as you
+read; silent summarization is this project's worst failure mode.
+
+FORMAT
+  Line 1  the exact title given in your prompt
+  Line 2  blank
+  Then    the translation, one paragraph per line, blank line between
+Tables arrive tab-indented with cells joined by " | ". KEEP THEM
+INDENTED and keep them as tables.
+NEVER write a line in all capitals — assemble.py reads it as a heading.
+
+THE RULES THAT MATTER MOST
+
+1. KEEP EVERY ONE OF CARROLL'S TECHNICAL TERMS, and his capitalisation
+   of them. Proposition, Premiss and Premisses (his spelling, never
+   "premise"), Universe of Discourse and his "Univ.", Subject,
+   Predicate, Copula, Entity, Nullity, Retinend, Eliminand, Syllogism,
+   Sorites, Fallacy, Biliteral and Triliteral Diagram, Cell,
+   Compartment, Half, Counter, and the compass geography North, South,
+   East, West, Inner, Outer.
+   THIS IS NOT THE USUAL RULE and it is deliberate: elsewhere we
+   modernise dated words silently, but here the words ARE the system.
+   Gloss a genuinely opaque term ONCE, at first use, inside his own
+   sentence. Never twice, never in a footnote.
+
+2. THE WORK IS ON THE SENTENCES. Unstack his long subordinated periods
+   and bring the operative clause to the front. That is where nearly all
+   the value of this edition is.
+
+3. THE DIAGRAMS ARE THE NOTATION. A caption must say WHICH CELLS ARE
+   MARKED AND WITH WHAT — his alt text ("Diagram representing all x are
+   y") is a seed, not a caption. It is also the epub's alt text, and for
+   this book that is all a screen-reader user gets.
+
+4. KEEP THE JOKES. He is aside to the student constantly, and the
+   humour is why a fourteen-year-old could finish this. Do not make him
+   solemn.
+
+5. CHECK EVERY TABLE AND EVERY WORKED ANSWER. The fleming rule. And
+   when an author's working and his stated answer disagree, SUSPECT THE
+   TRANSCRIPTION FIRST and rebuild from his own conditions — A Tangled
+   Tale nearly convicted Carroll of an error that was really two
+   corrupted fractions.
+
+6. DO NOT REINTRODUCE PAGE NUMBERS. prep.py has already rewritten all
+   509 print-page cross-references to name the section they point at.
+
+WHAT YOU RETURN
+  (a) a two- or three-sentence summary
+  (b) consistency notes, including any term you had to gloss and every
+      table or answer you checked

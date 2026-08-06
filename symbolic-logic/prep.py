@@ -219,7 +219,15 @@ def main():
             where = pagemap.get(tgt)
             if not where:
                 return text
-            return f"{where}"
+            # Section names come off printed headings and carry their
+            # printed punctuation ("APPENDIX,"), which produced things like
+            # "will be found in the Appendix, at APPENDIX,." Strip the
+            # trailing punctuation and set the name in title case so the
+            # rewritten reference reads as a sentence.
+            where = where.rstrip(".,;:").strip()
+            if where.isupper():
+                where = where.title()
+            return where
         return re.sub(r'<a[^>]*href="#(pg\d+)"[^>]*>(.*?)</a>', repl,
                       chunk, flags=re.S)
 
