@@ -1,0 +1,345 @@
+"""Turn Gutenberg #28696 (Symbolic Logic, Part I) into chapters/ + manifest.
+
+    bash symbolic-logic/fetch.sh && python3 symbolic-logic/prep.py
+
+Carroll's logic textbook of 1896, and the genuinely trapped book of the
+Carroll shelf: the notation is Victorian, the diagram method is his own
+invention and nobody else's, and the terminology was abandoned by the
+logic that came after — so a modern reader WITH training is more lost
+than one without, not less.
+
+FOUR THINGS THIS SOURCE NEEDS THAT THE EASIER BOOKS DID NOT.
+
+1. 509 PRINT-PAGE CROSS-REFERENCES. Carroll refers the reader backwards
+   and forwards constantly — "as explained at p. 12" — and in a
+   reflowable edition there is no page 12. Dropping them silently would
+   break his argument, which is cumulative and leans on them. So prep
+   builds a map from every pgNNN anchor to the section it falls in, and
+   rewrites each reference to name that section instead. This is the
+   star-land rule (decide print-page references IN ADVANCE and log
+   them) applied at a scale that has to be mechanical.
+
+2. 314 DIAGRAMS, WHICH ARE THE NOTATION AND NOT DECORATION. Every one
+   carries descriptive alt text in the source ("Diagram representing all
+   x are y"), so the caption seed is Carroll's own and rides through to
+   be modernised, as in ball/. A reader who loses these loses the book:
+   the whole method is a square divided into compartments with counters
+   on it, and the prose says "this we can represent by placing a Red
+   Counter on the partition which divides it" and then shows you.
+
+3. 108 TABLES. A CELL IS NOT A PARAGRAPH — the lesson thompson/ paid
+   for, where normalise() ate three rows out of a table and moved the
+   word ratio by nothing. They are emitted as indented blocks, which
+   assemble.py sets as <pre>, with cells joined by spaced pipes.
+
+4. 130 BLOCKQUOTED ASIDES. Carroll's habit is to follow a definition
+   with a bracketed gloss in smaller type — "[Note that the full meaning
+   of this Proposition is ...]" — and these are a real part of how he
+   teaches. They are kept, marked as bracketed paragraphs so the
+   translation can keep them distinct from the running argument.
+"""
+
+import html
+import json
+import re
+import shutil
+import sys
+from html.parser import HTMLParser
+from pathlib import Path
+
+BOOK = Path(__file__).parent
+SRC = BOOK / "source"
+CHAPTERS = BOOK / "chapters"
+SITE_IMG = BOOK.parent / "site/images/symbolic-logic"
+
+MAX_WORDS = 7000
+WORDNUM = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight",
+           "Nine", "Ten"]
+
+
+def clean(s):
+    s = re.sub(r"<[^>]*>", "", s)
+    s = html.unescape(s)
+    s = s.replace(" ", " ").replace(" ", " ")
+    return re.sub(r"[ \t]+", " ", s).strip()
+
+
+def strip_pagenum(s):
+    """Headings carry their print page as a prefix: 'pg043CHAPTER II.'"""
+    # A heading can carry MORE THAN ONE page marker ("pg_xxxiipg001BOOK I."
+    # is the start of Book I on the page after the roman-numbered front
+    # matter), so strip repeatedly rather than once — a single pass leaves
+    # "pg001BOOK I.", which then fails to match as a Book heading at all.
+    while True:
+        s2 = re.sub(r"^(?:pg|px_|pg_)[\divxlc]+", "", s)
+        if s2 == s:
+            break
+        s = s2
+    return re.sub(r"^[\s½¼¾\d]+(?=[A-Z§])", "", s).strip()
+
+
+class Extract(HTMLParser):
+    """Section HTML -> paragraphs, figure markers, indented tables.
+
+    A parser, not a pattern: the source nests blockquote > div > p and
+    table > tbody > tr > td, and a non-greedy close tag lands in the wrong
+    place every time (see tyndall's Spenser stanza, which came out four
+    times over).
+    """
+
+    def __init__(self, figmap):
+        super().__init__(convert_charrefs=True)
+        self.figmap = figmap
+        self.out, self.buf = [], []
+        self.p = 0
+        self.quote = 0
+        self.table = None
+        self.row = None
+        self.cell = None
+        self.head = 0
+
+    def flush(self):
+        s = clean("".join(self.buf))
+        if s:
+            self.out.append(f"[{s}]" if self.quote and not s.startswith("[")
+                            else s)
+        self.buf = []
+
+    def handle_starttag(self, tag, attrs):
+        a = dict(attrs)
+        if tag == "img":
+            src = a.get("src", "")
+            name = Path(src).stem
+            if name not in self.figmap:
+                return
+            cap = clean(a.get("alt", ""))
+            n = self.figmap[name]
+            self.out.append(f"[Figure {n}: {cap}]" if cap
+                            else f"[Figure {n}]")
+        elif tag == "table":
+            self.flush()
+            self.table = []
+        elif tag == "tr" and self.table is not None:
+            self.row = []
+        elif tag in ("td", "th") and self.row is not None:
+            self.cell = []
+        elif tag == "blockquote":
+            self.flush()
+            self.quote += 1
+        elif tag in ("h5", "h6"):
+            self.flush()
+            self.head += 1
+        elif tag == "p":
+            self.p += 1
+        elif tag == "br":
+            self.buf.append(" ")
+
+    def handle_endtag(self, tag):
+        if tag in ("td", "th") and self.cell is not None:
+            self.row.append(clean("".join(self.cell)))
+            self.cell = None
+        elif tag == "tr" and self.row is not None:
+            if any(self.row):
+                self.table.append(self.row)
+            self.row = None
+        elif tag == "table" and self.table is not None:
+            rows = ["\t" + " | ".join(c for c in r) for r in self.table]
+            if rows:
+                self.out.append("\n".join(rows))
+            self.table = None
+        elif tag == "blockquote" and self.quote:
+            self.flush()
+            self.quote -= 1
+        elif tag in ("h5", "h6") and self.head:
+            self.head -= 1
+            s = strip_pagenum(clean("".join(self.buf)))
+            self.buf = []
+            # assemble.is_subheading() rejects anything ending in ".;:,—",
+            # so a heading that keeps its printed full stop is set as a
+            # shouted paragraph instead of a heading.
+            s = s.rstrip(".").strip()
+            if s:
+                self.out.append(s)
+        elif tag == "p" and self.p:
+            self.p -= 1
+            self.flush()
+
+    def handle_data(self, d):
+        if self.cell is not None:
+            self.cell.append(d)
+        elif self.table is not None:
+            pass                       # stray text between cells
+        elif self.p or self.quote or self.head:
+            self.buf.append(d)
+
+    def close(self):
+        super().close()
+        self.flush()
+        return [x for x in self.out if x.strip()]
+
+
+def main():
+    page = SRC / "pg28696-images.html"
+    if not page.exists():
+        sys.exit("no symbolic-logic/source — run `bash symbolic-logic/fetch.sh`")
+    t = page.read_text(encoding="utf-8", errors="replace")
+
+    start = t.find("ADVERTISEMENT")
+    end = t.find("WORKS BY LEWIS CARROLL")
+    if start < 0 or end < 0:
+        sys.exit("could not find the body bounds")
+    body = t[t.rfind("<h2", 0, start):end]
+
+    # ---- sections -------------------------------------------------------
+    # h2 for the front matter, h3 for the BOOKs and the back matter, h4 for
+    # the chapters inside them. Cut on h3/h4 and on the front-matter h2s.
+    SKIP = {"BY LEWIS CARROLL", "LEWIS CARROLL", "PART I",
+            "MACMILLAN AND CO., LTD., LONDON.", "TRANSCRIBER'S NOTE",
+            "THE END."}
+    cuts = []
+    for m in re.finditer(r"<h([234])[^>]*>(.*?)</h\1>", body, re.S):
+        name = strip_pagenum(clean(m.group(2)))
+        if not name or name.upper().rstrip(".") in {
+                s.upper().rstrip(".") for s in SKIP}:
+            continue
+        cuts.append((m.start(), m.end(), name, int(m.group(1))))
+
+    # ---- the print-page map ---------------------------------------------
+    # Every pgNNN anchor, mapped to the name of the section it sits in, so
+    # that "p. 12" can be rewritten as the place a reader can actually go.
+    pagemap, ci = {}, 0
+    for m in re.finditer(r'id="(pg\d+)"', body):
+        while ci + 1 < len(cuts) and cuts[ci + 1][0] < m.start():
+            ci += 1
+        pagemap[m.group(1)] = cuts[ci][2] if cuts else ""
+
+    def fix_xrefs(chunk):
+        def repl(m):
+            tgt, text = m.group(1), m.group(2)
+            where = pagemap.get(tgt)
+            if not where:
+                return text
+            return f"{where}"
+        return re.sub(r'<a[^>]*href="#(pg\d+)"[^>]*>(.*?)</a>', repl,
+                      chunk, flags=re.S)
+
+    # ---- figures --------------------------------------------------------
+    names = [Path(m).stem for m in
+             re.findall(r'<img[^>]*src="images/([^"]+)"', body)]
+    seen, figmap = set(), {}
+    for n in names:
+        if n not in seen:
+            seen.add(n)
+            figmap[n] = len(figmap) + 1
+
+    # ---- build ----------------------------------------------------------
+    sections = []
+    for i, (a, b_, name, lvl) in enumerate(cuts):
+        stop = cuts[i + 1][0] if i + 1 < len(cuts) else len(body)
+        e = Extract(figmap)
+        e.feed(fix_xrefs(body[b_:stop]))
+        sections.append((name, lvl, e.close()))
+
+    CHAPTERS.mkdir(exist_ok=True)
+    for f in CHAPTERS.glob("*.txt"):
+        f.unlink()
+    manifest, divider, book, bookname = [], None, 0, ""
+    idx = 0
+    for name, lvl, paras in sections:
+        # THE BOOK CHECK MUST COME FIRST. Five of the eight Book headings
+        # carry no body text of their own, so an "if not paras: continue"
+        # placed ahead of this skipped them entirely and no divider was ever
+        # set — the book silently lost its whole top-level structure.
+        if lvl == 3 and re.match(r"BOOK [IVX]+", name.upper()):
+            book += 1
+            bookname = f"Book {WORDNUM[book - 1]}"
+            # A Book's own subject line ("The Biliteral Diagram") is an h5
+            # inside it, so it arrives as this section's first paragraph.
+            sub = paras[0] if paras and len(paras[0]) < 60 else ""
+            divider = f"{bookname}: {sub.rstrip('.')}" if sub else bookname
+            continue
+        if not paras:
+            continue
+        sub = ""
+        if paras and len(paras[0]) < 90 and not paras[0].startswith(("[", "\t")):
+            sub = paras[0]
+        title = name.rstrip(".")
+        m2 = re.fullmatch(r"CHAPTER ([IVXL]+)", title.upper())
+        if m2 and bookname:
+            title = f"{bookname}, Chapter {m2.group(1)}"
+        if sub:
+            title = f"{title}: {sub.rstrip('.')}"
+            paras = paras[1:]
+        title = " ".join(title.split())      # headings can wrap onto 2 lines
+        title = title if len(title) < 78 else title[:75] + "..."
+        for k, chunk in enumerate(split_oversize(paras)):
+            e = {"file": f"{idx:03d}.txt", "title": title,
+                 "part": k + 1, "of": 1,
+                 "words": sum(len(p.split()) for p in chunk)}
+            if divider:
+                e["part_before"] = divider
+                divider = None
+            (CHAPTERS / f"{idx:03d}.txt").write_text("\n\n".join(chunk) + "\n")
+            manifest.append(e)
+            idx += 1
+    fill_of(manifest)
+    (BOOK / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
+
+    SITE_IMG.mkdir(parents=True, exist_ok=True)
+    for f in SITE_IMG.glob("fig*"):
+        f.unlink()
+    for name, n in figmap.items():
+        src = SRC / "images" / f"{name}.png"
+        if not src.exists():
+            sys.exit(f"missing plate {src}")
+        shutil.copy(src, SITE_IMG / f"fig{n}.png")
+
+    placed = sorted(int(m) for f in CHAPTERS.glob("*.txt")
+                    for m in re.findall(r"\[Figure (\d+)", f.read_text()))
+    if sorted(set(placed)) != list(range(1, len(figmap) + 1)):
+        missing = set(range(1, len(figmap) + 1)) - set(placed)
+        sys.exit(f"{len(missing)} figures never placed: {sorted(missing)[:10]}")
+
+    total = sum(m["words"] for m in manifest)
+    print(f"{len(manifest)} files, {total:,} words, {len(figmap)} diagrams")
+    for m in manifest[:8]:
+        if m.get("part_before"):
+            print(f"  -- {m['part_before']} --")
+        print(f"  {m['file']}  {m['words']:6,}w  {m['title'][:56]}")
+    print(f"  ... ({len(manifest)} in all)")
+
+
+def split_oversize(paras):
+    total = sum(len(p.split()) for p in paras)
+    if total <= MAX_WORDS:
+        return [paras]
+    n = -(-total // MAX_WORDS)
+    target = total / n
+    parts, cur, run = [], [], 0
+    for p in paras:
+        w = len(p.split())
+        if cur and run + w / 2 > target and len(parts) < n - 1:
+            parts.append(cur)
+            cur, run = [], 0
+        cur.append(p)
+        run += w
+    if cur:
+        parts.append(cur)
+    return parts
+
+
+def fill_of(manifest):
+    run = []
+    for m in manifest + [{"part": 1}]:
+        if m["part"] == 1 and run:
+            for r in run:
+                r["of"] = len(run)
+            run = []
+        if "file" in m:
+            run.append(m)
+    for r in run:
+        r["of"] = len(run)
+
+
+if __name__ == "__main__":
+    main()

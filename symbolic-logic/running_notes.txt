@@ -1,0 +1,48 @@
+RUNNING NOTES — SYMBOLIC LOGIC, PART I
+Prep is done and verified structurally. NOTHING TRANSLATED YET.
+
+STATE: 41 files, 57,065 words, 314 diagrams, eight Books plus front
+matter, Notes, Appendix, Notes to Appendix and Index. prep.py asserts
+that every diagram is placed exactly once and stops if one is not.
+
+WHY THIS BOOK IS THE TRAPPED ONE
+Victorian notation, a diagram method that is Carroll's own and nobody
+else's, and a terminology later logic abandoned — so a modern reader
+WITH logic training is more lost than one without. The diagrams are the
+notation, not decoration: the method is a square divided into
+compartments with red and grey counters laid on it, and the prose says
+"this we can represent by placing a Red Counter on the partition which
+divides it" and then shows you.
+
+WHAT PREP ALREADY HANDLES
+- 509 PRINT-PAGE CROSS-REFERENCES rewritten to name the section they
+  point at, because "p. 12" means nothing in a reflowable edition and
+  Carroll's argument is cumulative and leans on them constantly. This is
+  the star-land print-page rule at a scale that had to be mechanical.
+- 314 DIAGRAMS carry Carroll's own alt text through as the caption seed,
+  to be MODERNISED not replaced (the ball/ rule).
+- 108 TABLES emitted as indented blocks. A CELL IS NOT A PARAGRAPH —
+  the lesson thompson/ paid for.
+- 130 BLOCKQUOTED ASIDES kept and marked with brackets; they are how he
+  teaches, not ornament.
+
+TWO PREP BUGS ALREADY FOUND AND FIXED, BOTH SILENT
+- A heading can carry MORE THAN ONE page marker ("pg_xxxiipg001BOOK I."),
+  so strip_pagenum has to loop. One pass left "pg001BOOK I.", which then
+  failed to match as a Book heading at all.
+- The empty-section skip ran BEFORE the Book check, and five of the eight
+  Book headings carry no body text of their own — so they were skipped
+  entirely and the book silently lost its whole top-level structure. No
+  error, no warning, just a flat list of chapters.
+
+STILL TO DECIDE BEFORE TRANSLATION
+- Three stub files (013, 018, 030) are Book subject-lines that should be
+  folded into their dividers rather than standing as 6-word sections.
+- Chapter titles are still in the source's SHOUTING CAPITALS; they want
+  title case.
+- THE BIG ONE: how much of Carroll's terminology to keep. His
+  "Proposition of Existence", "Proposition of Relation", "Retinend",
+  "Eliminand", "Cosmophily" and so on are load-bearing inside his system
+  and meaningless outside it. The Fleming rule (dated CLAIMS kept, dated
+  WORDS modernised) does not settle this, because here the words ARE the
+  system. Decide it once, in text_analysis, before a line is translated.
