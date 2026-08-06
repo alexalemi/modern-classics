@@ -77,6 +77,10 @@ WORDNUM = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight",
 # (pg001-pg168), so the count is asserted rather than guessed.
 PAGEMARK = re.compile(r"(?:pg_|px_)(?:[ivxlc]+|\d+)|pg\d{3}[½¼¾]?")
 
+# Combining low line and combining double low line, for the eliminated
+# letters of the Method of Underscoring.
+COMBINING = {"under1": "\u0332", "under2": "\u0333"}
+
 
 def clean(s):
     s = re.sub(r"<[^>]*>", "", s)
@@ -145,6 +149,8 @@ class Extract(HTMLParser):
         self.row = None
         self.cell = None
         self.head = 0
+        self.under = []
+        self.overs = []
 
     def flush(self):
         s = clean("".join(self.buf))
@@ -189,8 +195,36 @@ class Extract(HTMLParser):
             self.p += 1
         elif tag == "br":
             self.buf.append(" ")
+        if tag == "span":
+            # THE UNDERSCORING IS THE NOTATION, AND IT LIVES IN THE CSS.
+            # Book Seven's "Method of Underscoring" -- Carroll's own
+            # preferred way of working a Sorites -- marks an eliminated
+            # letter with one rule under it and its partner with two, and
+            # the source carries that as class="under1"/"under2" on a
+            # <span>. Strip the tags and 642 marks vanish, leaving the
+            # section that TEACHES the method printing its worked example
+            # twice over in identical unmarked letters, and most of the
+            # Solutions book as rows of symbols with nothing to show what
+            # was cancelled against what. Nothing mechanical can see this:
+            # every word is present and in order. Carried through as the
+            # combining low line and double low line.
+            cls = a.get("class", "").split()
+            mark = next((COMBINING[c] for c in cls if c in COMBINING), "")
+            # THE PREMISS NUMERAL IS PRINTED ABOVE ITS EXPRESSION
+            # (class="over1"), which in running text becomes a prefix --
+            # and "1k1l'0" then reads as if the 1 belonged to the k. Set
+            # it in parentheses, which is what the position was doing.
+            over = "over1" in cls
+            self.under.append(mark)
+            self.overs.append(over)
+            if over:
+                self.emit("(")
 
     def handle_endtag(self, tag):
+        if tag == "span" and self.under:
+            self.under.pop()
+            if self.overs.pop():
+                self.emit(")")
         if tag in ("td", "th") and self.cell is not None:
             self.row.append(clean("".join(self.cell)))
             self.cell = None
@@ -220,13 +254,19 @@ class Extract(HTMLParser):
             self.p -= 1
             self.flush()
 
-    def handle_data(self, d):
+    def emit(self, d):
         if self.cell is not None:
             self.cell.append(d)
         elif self.table is not None:
             pass                       # stray text between cells
         elif self.p or self.quote or self.head:
             self.buf.append(d)
+
+    def handle_data(self, d):
+        if self.under and self.under[-1]:
+            mark = self.under[-1]
+            d = "".join(c + mark if c.strip() else c for c in d)
+        self.emit(d)
 
     def close(self):
         super().close()
