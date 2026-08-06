@@ -238,11 +238,51 @@ plain text and #26460 is an AUDIOBOOK, not an illustrated edition. So
 either ship the English volume unillustrated or take the two-source route
 (text from Gutenberg, plates from Archive.org) proven in candle/.
 
-After Jacobs the strand opens up — Indian Fairy Tales is already his;
-beyond that, Ozaki's Japanese, Ralston's Russian, and the Arabian Nights
-already listed below. Prefer collectors who worked from the source
-language over Lang's colour books, which are translations of
-translations.
+STANDARD EBOOKS HAS A REAL FOLKTALE SHELF, and it is a better strand
+than Jacobs alone — checked 2026-08-06. SE editions are proofread, use
+semantic markup and modern typography, and prep already handles SE XHTML
+(bunyan/, autobiography/), with the traps known: no-break spaces inside
+abbreviations, and noteref anchors that must be killed as ELEMENTS.
+
+  Russian Folktales — Afanasyev, tr. Magnus     102k  ★ best candidate
+  Indian Fairy Tales — Joseph Jacobs             71k
+  Irish Fairy Tales — James Stephens (1920)      66k
+  Fairy Tales — Hans Christian Andersen             (various translators)
+  Folk Stories from Southern Nigeria — Dayrell      (Efik/Ibibio)
+  Hindu Tales from the Sanskrit — S. M. Mitra    40k
+  Fables — Aesop, tr. Vernon Jones               40k
+  American Indian Stories — Zitkala-Ša           32k
+  Legends of Vancouver — E. Pauline Johnson      29k  (Squamish, as told
+                                                       to her by Chief
+                                                       Joe Capilano)
+  Old Indian Legends — Zitkala-Ša                18k  (Dakota)
+  The Kalevala — Lönnrot, tr. Crawford              (Finnish epic)
+
+NOTE THE GAP: SE has Jacobs' INDIAN Fairy Tales but NOT his English or
+Celtic. So the two Alex named still come from Gutenberg (#7439, #35862);
+everything else in the strand is better taken from SE.
+
+NOT on SE at all: Grimm, Lang's colour books, Ozaki's Japanese, the
+Arabian Nights. Prefer collectors who worked from the source language
+over Lang, which is translations of translations.
+
+TWO OF THESE ARE DIFFERENT IN KIND AND SHOULD PROBABLY COME EARLY.
+Zitkala-Ša (Dakota) and E. Pauline Johnson (Mohawk) are not Victorian
+collectors writing up somebody else's stories — they are Indigenous
+writers telling their own peoples' tales, in English, for a hostile
+audience. Both are short (18k, 29k, 32k). They are also the two where
+this project's usual value-add is SMALLEST, because the prose is already
+20th-century and clear; the honest case for including them may be
+curation rather than modernisation, and if so, say so in the front
+matter rather than rewriting prose that does not need it. Same caveat
+for Stephens' Irish Fairy Tales (1920).
+
+BY THAT TEST THE BEST FIRST BOOK IS AFANASYEV'S RUSSIAN FOLKTALES:
+102k words of superb material inside a stiff, scholarly 1915 translation
+that genuinely obstructs it — the Magnus version is Edwardian
+translationese with a heavy apparatus. Highest gap between what the book
+contains and what a reader can get out of it, which is the project's
+actual criterion.
 
 ## Further afield (needs stronger crib scaffolding — different
 translation-risk class; caveat prominently in front matter)
