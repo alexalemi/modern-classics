@@ -185,12 +185,30 @@ different book from the one we make.
   machine, here the notation is incidental to the argument and the
   argument is what the reader came for.
 - **Euclid and His Modern Rivals** (1879) — the ghost of Euclid defends
-  his own textbook against Victorian competitors, in dialogue. Genuinely
-  funny and completely unread. NOT on Gutenberg in any edition; Archive
-  has `euclidhismodernr00carr` (1885, 2nd ed) and
-  `euclidandhismode000469mbp` (1879, 1st ed), so this one is the Thompson
-  OCR path and should be LAST. Dialogue speaker tags must be Title-Case,
-  not ALL-CAPS (the galileo trap).
+  his own textbook against thirteen Victorian rivals, in dialogue, at
+  midnight, before a college examiner who cannot sleep for marking.
+  Genuinely funny and completely unread. STARTED 2026-08-06: sources
+  fetched and assessed, nothing prepped yet. Full findings in
+  `euclid-rivals/source_notes.txt`; the four that matter:
+  (1) confirmed NOT on Gutenberg (with a control query, so the search
+      really works). Archive.org only, so the thompson/ OCR path.
+  (2) USE BOTH SCANS. `euclidhismodernr00carr` (1885, 2nd ed) is the copy
+      text because Carroll revised it; `euclidandhismode000469mbp` (1879,
+      1st ed) is the corrector. Their OCR errors are INDEPENDENT, which
+      is the biggest lever available: the 1885 renders italics as debris
+      ("a College dudy. Time, midvigJtf") where the 1879 is nearly clean,
+      and yet in the same two sentences the 1885 has the digits right and
+      the 1879 has them wrong. A difference is a question, not an answer.
+  (3) THE SPEAKER TAGS ARE OCR-DAMAGED, which is the dangerous part: get
+      one wrong and Carroll's argument changes hands. But the vocabulary
+      is TINY AND CLOSED (Min, Euc, Nie, Nos), so nearest-match is safe,
+      the two scans can vote, and prep must RAISE on anything it cannot
+      resolve rather than guess. Title-Case tags, never ALL-CAPS (galileo).
+  (4) 29 Picture and 19 Table blocks in the ABBYY XML, so the full
+      thompson/ apparatus is needed — plates re-cut from the page scans,
+      and every table checked against the page image.
+  The five Appendices are dense tabular cross-reference matter and want a
+  decision of their own before prep, as bunyan/'s commentator notes did.
 
 ## Folktales and stories from other cultures (Alex, 2026-08-06)
 

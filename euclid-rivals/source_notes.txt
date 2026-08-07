@@ -1,0 +1,120 @@
+EUCLID AND HIS MODERN RIVALS — SOURCE ASSESSMENT
+Lewis Carroll (C. L. Dodgson), 1879; second edition 1885
+Scouted 2026-08-06, before any prep was written.
+
+The lesson of thompson/ was that four fifths of the work on an OCR book
+is making a source worth translating. This book is worse than thompson/
+in one specific way and better in another, and both are worth knowing
+before a line of prep.py is written.
+
+
+1. THERE IS NO GUTENBERG EDITION
+
+Checked, with a control: the same search finds Pillow Problems at #79080,
+so the search works and the book genuinely is not there. Archive.org has
+two scans and nothing else does.
+
+  euclidhismodernr00carr      1885, 2nd ed.   322pp  scribe2 scan
+  euclidandhismode000469mbp   1879, 1st ed.   338pp  Million Books scan
+
+Both about 74,000 words.
+
+
+2. USE BOTH. THEIR OCR ERRORS ARE INDEPENDENT.
+
+This is the single biggest lever on the whole job, and it is not obvious
+from either scan alone. Take the opening stage direction:
+
+  1885: "[Scene, a College dudy. Time, midvigJtf. Mixos discovered
+         seated between tivo gigantic j)iles of manuscripts. Ever and
+         anon lie takes a joaper from one Tieap^ reads it ... with a
+         ivearij sigh ... running of fiugers through it"
+
+  1879: "[Scene, a College study. Time, midnight. Mrsros discovered
+         seated between two gigantic piles of manuscripts. Ever and
+         anon he takes a paper from one heap> reads it ... with a weary
+         sigh ... running of fingers through it>"
+
+THE ITALICS ARE THE PROBLEM, and they are where the play keeps its stage
+directions. The 1885 scan renders italic text as debris; the 1879 scan
+renders it almost cleanly. Neither scan is reliable on its own and
+neither is reliably better — in the SAME two sentences:
+
+  - 1885 has "the second Corollary of Euc. I. 32" and 1879 has "I. 33".
+    I.32's second corollary is the one about exterior angles summing to
+    four right angles, which is the joke (Minos's hair "radiates in all
+    directions"), so 1885 is right.
+  - 1885 has "the paper had I. 20 in it" and 1879 has "I. 30". The
+    sentence two lines earlier is "Assuming I. 20?", so 1885 is right
+    again — but only the context says so, and a digit is exactly what no
+    checker can see.
+
+PLAN: the 1885 is COPY TEXT, because it is the edition Carroll revised.
+The 1879 is the CORRECTOR, especially for every italic passage. They
+differ in content as well as in OCR, so a difference is a question, not
+an answer — but a difference is where to look.
+
+
+3. THE SPEAKER TAGS ARE DAMAGED, AND THAT IS THE DANGEROUS PART
+
+The book is a play. Minos, a college examiner, is visited at midnight by
+the ghost of Euclid and then by Herr Niemand, the phantom of a German
+professor who speaks for each modern textbook in turn. Every speech is
+tagged with an abbreviation, and the OCR mangles them:
+
+  1885   Min 380  Nie 294  Euc 95  Mill 46  Nos 28  Mln 12  Eiic 11
+         Hue 9  Wie 4
+  1879   Min 295  Nie 241  Mm 129  Euc 54  Hue 49  Nos 20  Mln 8
+         Nle 6  Hin 5  JSuc 4  Sue 4  HUG 3  Uuc 3
+
+This is the bunyan/ trap — "Christ." is Christiana and not Christ — but
+noisy instead of systematic, and it matters more: attribute a speech to
+the wrong ghost and Carroll's argument changes hands. Read as OCR
+soup it produces fluent, confident, entirely wrong dialogue.
+
+THE GOOD NEWS, and the reason this is tractable: THE SPEAKER VOCABULARY
+IS TINY AND CLOSED. Min, Euc, Nie, Nos and a few walk-ons. So a
+nearest-match against a fixed list is safe, the two scans can VOTE, and
+prep can RAISE on any tag it cannot resolve rather than guess. Do that;
+do not let an unresolved tag through.
+
+GALILEO'S RULE APPLIES: speaker tags must be Title-Case, never ALL-CAPS.
+assemble.py reserves all-caps lines for section headings, and an all-caps
+tag renders as a run-on paragraph.
+
+
+4. WHAT ELSE IS IN THERE
+
+From the 1885 ABBYY XML: 653 Text blocks, **29 Picture** and **19
+Table**. So the full thompson/ apparatus is needed —
+  - 29 geometrical diagrams, to be cut from the page scans (replate.py:
+    grow each side until it reaches whitespace, then map darkness to
+    alpha so the paper goes and the ink survives);
+  - 19 tables, EVERY ONE of which must be checked against the page image.
+    normalise()'s "drop paragraphs under three words" ate three rows out
+    of a table in thompson/ and moved the word ratio by nothing.
+
+Structure: four Acts, about 27 Scenes, and five Appendices. The
+Appendices are dense tabular matter — lists of propositions cross-
+referenced to a dozen rival textbooks — and want a decision of their own
+before prep, in the way bunyan/'s 1,010 commentator notes did.
+
+Page furniture to strip, all of it INSIDE the text: running heads of the
+shape "MINOS AND EUCLID. [ACT I.", printer's signature marks ("'^ B"),
+an ERRATUM slip bound between the contents and Act I whose text the OCR
+has interleaved with the first page, and page numbers. Remember the
+thompson/ mend rule: stripping a running head leaves a blank line, a
+blank line is a paragraph break, and paragraphs then split at every page
+turn. No English paragraph starts in lower case; iterate to a fixed
+point.
+
+
+5. WHY THE BOOK IS WORTH IT
+
+It is a very funny book that almost nobody has read. Carroll puts the
+ghost of Euclid on trial, has him defend the Elements against thirteen
+Victorian rivals one at a time, and lets Minos demolish them with
+perfectly straight-faced courtesy. It is also the best surviving account
+of what a Victorian mathematician thought a proof was FOR — and the
+whole argument is conducted as farce, at midnight, by a man who cannot
+sleep for marking.
