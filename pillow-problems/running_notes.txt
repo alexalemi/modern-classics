@@ -82,3 +82,12 @@ converter. Every file clean except two, and both differences accounted
 for: 000 drops the page reference "(see p. 84)" and turns the misprinted
 capital O into 0; 004 turns money into words and adds the note on the
 shared numbering. Nothing lost from a formula.
+
+THE "<" TRAP, AND IT CAME FROM MY OWN CONVERTER. tex.py maps \lt and \gt
+to "<" and ">", which is the right notation and the wrong character:
+`se typogrify` unescapes "&lt;" into a bare "<" and breaks the XHTML for
+every later step, so build_ebook refuses an escaped "<" and asks for a
+rewording. Four of them, all in running prose rather than in a display,
+and all of them read better in words anyway — "∠ B must not be less than
+45°" is how Carroll writes it elsewhere himself. ">" is harmless to XML
+and stays as a symbol.
