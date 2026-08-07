@@ -243,6 +243,7 @@ EMBEDDED_TAGS = [
     ("^lin. Very well.", "^lin.", "Minos", 1),
     ("Euc. It is very like making a new Triangle", "Euc.", "Euclid", 1),
     ("Min. It is indeed.", "Min.", "Minos", 1),
+    ("Min. Hardly worth stating.", "Min.", "Minos", 1),
 ]
 
 
