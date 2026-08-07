@@ -84,6 +84,11 @@ OVERRIDE = {
     # Minos
     "iliti": "Minos", "nnn": "Minos", "mm": "Minos", "mn": "Minos",
     "min": "Minos", "mln": "Minos", "ilin": "Minos", "mhn": "Minos",
+    # The residue the scorer cannot reach: "Min." read as "Wn." (the M taken
+    # for a W and the i lost) and as "M\7i.", and "Rhad." read as "E/md.".
+    # Each identified from the speech it heads and the speeches either side.
+    "wn": "Minos", "m\\7i": "Minos", "e/md": "Rhadamanthus",
+    "311)1": "Minos", "i>uc": "Euclid", "^lin": "Minos",
     # Rhadamanthus
     "rhad": "Rhadamanthus", "bltad": "Rhadamanthus",
     "reach": "Rhadamanthus", "bhad": "Rhadamanthus",
@@ -174,7 +179,12 @@ def resolve(tag):
 _OVERRIDE = {_fold(k): v for k, v in OVERRIDE.items()}
 
 
-TAG = re.compile(r"^([A-Za-z0-9'^`À-ɏ]{2,8})\s*[.,;:]\s*$")
+# The class has to admit the punctuation the scan INVENTS inside a tag --
+# "Min." comes through as "3Ii?i." and "311)1." -- or the tag is refused
+# before it is ever scored. Widening it is safe because every caller either
+# has an italic run to go on or demands an exact resolve; _fold drops these
+# characters anyway, so they can only ever let a candidate be considered.
+TAG = re.compile(r"^([A-Za-z0-9'^`À-ɏ?()<>/\\|]{2,8})\s*[.,;:]\s*$")
 
 
 def looks_like_tag(s):
