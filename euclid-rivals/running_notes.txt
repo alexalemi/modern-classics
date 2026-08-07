@@ -1,0 +1,41 @@
+RUNNING NOTES — EUCLID AND HIS MODERN RIVALS
+
+STATE (2026-08-07): prep complete and verified; translation BEGUN, one
+scene of fifteen files done.
+
+  chapters/            15 files, 54,254 words, from the 1885 scan
+  reference/           the Appendices as a crib (11,000 words)
+  site/images/         19 plates, ink on transparent, each placed once
+  modern_chapters/000  Act One, Scene One — DONE, ratio 0.99
+  modern_chapters/001.txt.partial   Act One, Scene Two — about a fifth
+                       done. Kept with the .partial suffix ON PURPOSE: a
+                       half-finished file under the ordinary name looks
+                       finished, and would pass into assembly as though
+                       it were.
+
+WHAT THE TRANSLATION PASS ACTUALLY INVOLVES, which is more than
+translating. Every paragraph has to be read against the OCR at the same
+time, and the residue is exactly the class no check can see:
+
+  - REAL-WORD OCR ERRORS. "lie" for "he", "Kerens" for "Here's", "AYe"
+    for "We", "hoik" for "both". A dictionary cannot see any of them.
+  - GEOMETRICAL LABELS, which repair.py deliberately refuses to touch
+    (see its guards). "For A Gil and EGB are equal because vertically
+    opposite ... therefore AGE is equal to GIID" has to be read back into
+    "For AGH and EGB are equal ... therefore AGH is equal to GHD", and
+    the only way to do that is to reconstruct the geometry: E above and F
+    below, the transversal cutting AB at G and CD at H, so AGH and EGB
+    are the vertically opposite pair.
+  - PROPOSITION NUMBERS, AND BOTH SCANS GET THEM WRONG IN DIFFERENT
+    PLACES. In one exchange the 1885 says "this proof of I. 39" and the
+    1879 says "I. 29"; the proposition concerns alternate angles and
+    parallels, so it is I. 29 and the 1885 is wrong. Six lines later the
+    1885 has "= 2 right angles" and the 1879 "= 3"; the angles of a
+    triangle are two right angles, so this time the 1879 is wrong. ONLY
+    THE MATHEMATICS SETTLES IT. repair.py refuses to touch a numeral for
+    exactly this reason -- it cannot know -- so every one is a question
+    for the reader.
+
+PACE, honestly. Scene One took a full pass at 1,046 words, including one
+cross-scan check to settle a single proof. The remaining 53,000 words are
+the same density.
