@@ -195,21 +195,17 @@ def read_pages():
 # paragraphs here legitimately open "0 and 0'" and "1 should be very sorry",
 # the second being an "I" the scan read as a 1. The counts are asserted, so
 # a changed source stops the build instead of quietly keeping the furniture.
-HEAD_LEAKS = [
-    ("Sc. II.] PARALLELS. 57", 1),
-    ("Sc. VI. § I.] ANGLES. 101", 1),
-    ("Sc. II. § 2.] ■ DISCUSSED IN DETAIL. 199", 1),
-    ("Sc. YL § 2.] SO-CALLED 'parallels: 14'", 1),
-    ("Sc. YL § 3-] SO-CALLED 'parallels: 151", 1),
-    ("Sc. VI. § 3-] 'DOUBLE conversion: 155", 1),
-    ("Sc. v.] ANGLES.", 1),
-    ("Sc. v.]", 3),
-    ("122 WILSON. [Act II.", 1),
-    ("166 MORELL. [Act III.", 1),
-    ("75", 1),                  # a page number left alone on the turn
-    ("[Act I.", 1),
-    ("[Act III.", 1),
-]
+# The two shapes are regular even where their contents are not: the verso
+# head is "<page> <AUTHOR>. [Act II." and the recto "Sc. VI. § 1.] ANGLES.
+# 101". Matched WHOLE-PARAGRAPH and short, which no body paragraph is, and
+# the counts are asserted so a re-OCR cannot quietly change what is dropped.
+VERSO_HEAD = re.compile(r"^\d{0,3}\s*■?\s*[A-Z][A-Za-z'’ ]*\.?\s*"
+                        r"\[\s*A[Cc][Tt]\b[^\]]{0,30}$")
+RECTO_HEAD = re.compile(r"^(?:A[Cc][Tt]\s+[IVXLY]+\.\s*)?"
+                        r"Sc[.,]?\s*[IVXLYivxly]+\b.{0,44}\]?.{0,4}$")
+HEAD_SHAPES = [("verso", VERSO_HEAD, 6), ("recto", RECTO_HEAD, 10)]
+HEAD_LEAKS = [("75", 1),        # a page number left alone on the turn
+              ("[Act I.", 1), ("[Act III.", 1)]   # heads torn in half
 
 
 # A SPEECH ABBYY BURIED AT THE END OF ANOTHER PARAGRAPH. The tag is not at
@@ -270,13 +266,23 @@ def strip_head_leaks(paras):
     the body onto the RUNNING HEAD instead of onto its own first half.
     """
     seen = {p: 0 for p, _ in HEAD_LEAKS}
+    shapes = {name: 0 for name, _, _ in HEAD_SHAPES}
     out = []
     for kind, text in paras:
-        if kind == "par" and text.strip() in seen:
-            seen[text.strip()] += 1
-            continue
+        stripped = text.strip()
+        if kind == "par":
+            if stripped in seen:
+                seen[stripped] += 1
+                continue
+            hit = next((name for name, pat, _ in HEAD_SHAPES
+                        if len(stripped) < 90 and pat.match(stripped)), None)
+            if hit:
+                shapes[hit] += 1
+                continue
         out.append((kind, text))
     wrong = {p: (seen[p], n) for p, n in HEAD_LEAKS if seen[p] != n}
+    wrong.update({name: (shapes[name], n) for name, _, n in HEAD_SHAPES
+                  if shapes[name] != n})
     if wrong:
         sys.exit(f"running-head leaks changed (got, want): {wrong}")
     return out
