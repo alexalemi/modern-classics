@@ -89,6 +89,25 @@ def _arg(s, i):
     return s[i], i + 1
 
 
+# Commands that take arguments. An exponent or subscript must swallow the
+# whole construct: "2^\\tfrac{3}{4}" is 2 to the three-quarters, and reading
+# only the command name leaves the exponent as a bare "/" with the 3 and
+# the 4 spilling into the line as text -- "2^/34". Nineteen formulas.
+ARITY = {"frac": 2, "dfrac": 2, "tfrac": 2, "sqrt": 1, "text": 1,
+         "overline": 1, "underline": 1, "unicode": 1}
+
+
+def _script_arg(s, i):
+    """Read what an exponent or subscript applies to, arguments and all."""
+    a, j = _arg(s, i)
+    m = re.fullmatch(r"\\([a-zA-Z]+)", a)
+    if m and m.group(1) in ARITY:
+        for _ in range(ARITY[m.group(1)]):
+            b, j = _arg(s, j)
+            a += "{" + b + "}"
+    return a, j
+
+
 def _needs_parens(s):
     """A fraction's part needs brackets unless it is a single atom."""
     s = s.strip()
@@ -166,8 +185,19 @@ def _split_rows(t):
     return [re.sub(r"(?<!\\)&", " ", r).strip() for r in rows]
 
 
+# INITIALS ARE NOT MULTIPLICATION. "A. P." is arithmetical progression and
+# "A. M." the arithmetic mean; run through the dot rule below they become
+# "A·P." and "A·M.", which is a product of two variables. They are the only
+# two in the book and both are set as mathematics, so they cannot be told
+# apart from a product by shape -- only by being listed.
+ABBREV = {"A. P.": "A.P.", "A. M.": "A.M.", "Q. E. F.": "Q.E.F.",
+          "Q. E. D.": "Q.E.D.", "i. e.": "i.e."}
+
+
 def _inline(t):
     """The scanner. One pass, left to right, resolving commands as they come."""
+    for a, b in ABBREV.items():
+        t = t.replace(a, b.replace(".", DOT_KEEP))
     out, i = [], 0
     while i < len(t):
         ch = t[i]
@@ -182,11 +212,11 @@ def _inline(t):
             i = _command(name, t, i, out)
             continue
         if ch == "^":
-            a, i = _arg(t, i + 1)
+            a, i = _script_arg(t, i + 1)
             out.append(_script(_inline(a), SUP))
             continue
         if ch == "_":
-            a, i = _arg(t, i + 1)
+            a, i = _script_arg(t, i + 1)
             out.append(_script(_inline(a), SUB))
             continue
         if ch == "{":
