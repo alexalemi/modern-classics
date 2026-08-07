@@ -89,6 +89,7 @@ OVERRIDE = {
     # Each identified from the speech it heads and the speeches either side.
     "wn": "Minos", "m\\7i": "Minos", "e/md": "Rhadamanthus",
     "311)1": "Minos", "i>uc": "Euclid", "^lin": "Minos", "mhu": "Minos",
+    "NiCi": "Niemand", "A^V": "Niemand", "A?\"^": "Niemand",
     # Rhadamanthus
     "rhad": "Rhadamanthus", "bltad": "Rhadamanthus",
     "reach": "Rhadamanthus", "bhad": "Rhadamanthus",
@@ -184,7 +185,7 @@ _OVERRIDE = {_fold(k): v for k, v in OVERRIDE.items()}
 # before it is ever scored. Widening it is safe because every caller either
 # has an italic run to go on or demands an exact resolve; _fold drops these
 # characters anyway, so they can only ever let a candidate be considered.
-TAG = re.compile(r"^([A-Za-z0-9'^`À-ɏ?()<>/\\|]{2,8})\s*[.,;:]\s*$")
+TAG = re.compile(r"^([A-Za-z0-9'^`À-ɏ?()<>/\\|\"]{2,8})\s*[.,;:]\s*$")
 
 
 def looks_like_tag(s):

@@ -455,7 +455,14 @@ def read_body_and_appendix():
                     # scores 1.5 to Euclid and "Props." 2.5 to Nostradamus,
                     # and a looser rule turns both into speeches.
                     lead = txt.split(" ", 1)[0]
-                    if looks_like_tag(lead) and re.search(r"[A-Za-z]{2}", lead):
+                    if looks_like_tag(lead) and re.search(r"[A-Za-z]", lead):
+                        # ONE letter is enough, and it has to be: "M\\7i."
+                        # has no two letters in a row and 'A?"^.' has only
+                        # the one. The numbered Table items are held off by
+                        # the exact-resolve test below, not by this -- over
+                        # the whole book, relaxing it to a single letter
+                        # tags exactly one more speech, and that one is
+                        # Niemand's.
                         who, dist = tag_speaker(lead)
                         if who and dist == 0.0:
                             kind = "speech"
