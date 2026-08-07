@@ -541,8 +541,8 @@ def read_body_and_appendix():
             # plates, which is where it stands on the page
             plate += 1
             where.append(("picture", str(plate)))
-    if plate != 20:
-        sys.exit(f"numbered {plate} plates, replate.py cuts 20")
+    if plate != 19:
+        sys.exit(f"numbered {plate} plates, replate.py cuts 19")
     return body, appendix
 
 

@@ -55,7 +55,11 @@ GROW_LIMIT = 260        # never grow a side further than this
 # date-due slip at the back (p318). ABBYY cannot tell them from a figure
 # and neither can any rule about size or position -- they had to be
 # looked at. Listed rather than inferred, and prep asserts the count.
-NOT_A_PLATE = {3, 7, 318}
+NOT_A_PLATE = {3, 7, 318, 227}
+# 227 is not a diagram either: it is the Syllabus's rearranged list of
+# Euclid's first 26 Propositions, set as a boxed column, and shipping it
+# as a picture would put plain content behind an image. It is set as an
+# indented block in the translation instead.
 
 
 def fetch_page(n):
@@ -191,8 +195,8 @@ def plates():
                      max(b[2] for b in here), max(b[3] for b in here))]
         here += EXTRA_PLATES.get(pg.number, [])
         found += [(pg.number, b) for b in here]
-    if len(found) != 20:
-        sys.exit(f"expected 20 plates, found {len(found)} -- the scan, "
+    if len(found) != 19:
+        sys.exit(f"expected 19 plates, found {len(found)} -- the scan, "
                  f"NOT_A_PLATE or TABLE_PLATES has changed")
     return found
 
