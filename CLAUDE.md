@@ -1063,3 +1063,104 @@ Cover: Whistler's "Nocturne: Blue and Gold — Old Battersea Bridge"
 or.jpg", crop "1723x2584+120+0" — night, one small figure, and a
 composition of pure geometry that looks like one of his own diagrams
 floating in the black.
+
+Lewis Carroll's Euclid and His Modern Rivals (euclid-rivals/ — the 50th
+book, and the third Carroll after symbolic-logic/ and pillow-problems/).
+The 1879 farce in four acts, revised 1885: Minos, a college examiner,
+falls asleep over his marking and is visited by the ghost of Euclid and
+then by Herr Niemand, who appears as counsel for thirteen rival geometry
+manuals and loses every case. 14 files, 54,126 -> 53,015 words, ratio
+0.98 (verify --min-ratio 0.85 --max-ratio 1.3). The SECOND OCR source
+after thompson/, from the same Archive.org path, and see source_notes.txt
+plus abbyy.py / speakers.py / repair.py.
+
+THE TRANSLATION WAS THE EASY PART. Every defect found was in the class
+verify.py structurally cannot see, and check.py (new, per-book, KEEP THIS
+PATTERN) is what found them: it compares the SPEAKER SEQUENCE of each
+modern file against its source name for name, plus marker parity, heading
+renderability, and fleming/'s numeral diff. 1,163 speeches, all matching.
+
+A MISATTRIBUTED SPEECH IS THE WORST DEFECT AN OCR PLAY CAN HAVE — it
+reads perfectly and argues the opposite. ~50 tags were lost in FIVE
+distinct ways, none visible in the output:
+  - A TAG AND ITS ITALIC STAGE DIRECTION ARE ONE RUN ("Nie.
+    (innocently)"), so the tag test sees the whole thing and fails. This
+    was forty of the fifty.
+  - Some tags are never marked italic at all. Fall back on the paragraph's
+    first token, but ONLY for an exact resolve: "Sc." scores 1.5 to Euclid
+    and "Props." 2.5 to Nostradamus, and a looser rule promotes both.
+  - THE TERMINAL POINT IS PART OF THE TAG and the scan drops it ("Mhu",
+    "Nie»", "Euc. '" with the speech's opening quote pulled in). Retry on
+    the letters alone.
+  - Tags BURIED MID-PARAGRAPH, one paragraph hiding two. Match on a
+    distinctive CONTEXT string and cut at the tag: "Euc." alone occurs on
+    nearly every page as a citation.
+  - The tag pattern must admit the punctuation the scan INVENTS inside a
+    tag — "3Ii?i.", "311)1.", 'A?"^.' — or it is refused before scoring.
+Every guard on the fallback should be justified by what it actually
+excludes, and tested by re-running over the whole book: relaxing the
+"needs two letters" rule to one letter, and then to none, each added
+exactly one more speech, and each was the right one.
+
+THE ACT AND SCENE HEADINGS ARE THE SPINE AND THE SCAN MANGLES THEM.
+"ACT 11." for ACT II., "SCE^^E II.", "Scene YI.", "Scene VL" — six of
+nineteen Act headings and eight of seventeen Scene headings missed. EVERY
+MISS IS SILENT TWICE: the heading falls into the body as an all-caps
+paragraph that assemble.py renders as a spurious heading, AND the section
+it should open never opens, so two scenes weld into one file under the
+wrong title. Act II Scene II vanished into Scene I this way, while six
+REPEATED page headings invented sections the book does not have. Match
+loosely, then ASSERT THE WHOLE STRUCTURE against the book's own ARGUMENT
+OF DRAMA (eleven sections). Scene titles come from that front matter too,
+not from the scanned heading, which arrives as raw OCR.
+
+SIXTEEN RUNNING HEADS REACHED THE BODY in three shapes, four of them
+welded into the middle of a sentence. Strip them BEFORE mend(), or mend
+joins the body to the running head instead of to its own first half. A
+list of them is not enough — "58 LEGENDRE. [AcT II." and "Sc. v.]"
+escaped a first pass on capitalisation alone. Match the SHAPE
+whole-paragraph and short, and assert the counts.
+
+ABBYY'S BLOCK TYPES LIE, AND THE LIE IS INVISIBLE. Three cases here:
+  - A "Table" that is text: the fifth entry of Table III (R. Simpson's
+    Axiom), boxed because it is set in short measure beside its heading.
+    Table III shipped with four of its five Propositions.
+  - A "Table" that is a diagram: the labelled square of the II. 4 proof,
+    boxed because its point-letters sit in a grid.
+  - A "Picture" that is neither: page 227 is the Syllabus's rearranged
+    list of Propositions, and shipping it as a plate would have put plain
+    content behind an image.
+In each case the marker is present and placed once, and the word ratio
+barely moves. LOOK AT EVERY PLATE BEFORE CAPTIONING IT — that is what
+found all three, and it also found that page 65 is ONE diagram ABBYY
+boxed twice (cut in two it became two half-figures, each missing the
+labels that give it meaning) and that page 116 carries THREE of Niemand's
+case-diagrams where ABBYY found two — the missing one being the case the
+text names three times.
+PLATE IDS MUST BE SEQUENTIAL, NOT PAGE NUMBERS: three pages carry two
+plates each, and both would resolve to the same file.
+
+NO CRIB FOR THE 1885 ADDITIONS. repair.py corrects the 1885 scan against
+the 1879, but Henrici's book appeared in 1879 and Morell's in 1875, so
+those scenes are new in the revision and have nothing to correct against
+— which is why they are the most damaged, and why their geometry had to
+be rebuilt from the figures instead. Both reconstructions were confirmed
+afterwards by the plates themselves, letter for letter.
+
+CONVENTIONS (all three checked mechanically, see running_notes.txt):
+asides take Carroll's own form, "Minos. (thoughtfully) Well, ..." and not
+the modern playscript "Minos (thoughtfully)."; consecutive speeches by one
+speaker STAY TWO SPEECHES because that is what he printed; and section
+headings take no terminal period and are title case (ball/'s trap — 14 of
+them were written wrong).
+CROSS-REFERENCES to Carroll's own pages (there are ~50) go to Act and
+Scene, or to "§ 1 above"; two point forward into Act Four. References to
+OTHER authors' books are kept as printed — the numeral check earned its
+keep by catching a dropped "(see pp. 222, 241)".
+Cover: Goya's "The Sleep of Reason Produces Monsters" (Los Caprichos 43,
+1799), Commons "File:Francisco de Goya, El sueño de la razon produce
+monstruos (The Sleep of Reason Produces Monsters), published 1799, NGA
+7502.jpg", crop "2188x3282+312+278" — the plate only, out of a full sheet
+with wide margins and the printed number 43. A man asleep at his desk with
+his head on his arms while phantoms crowd in behind him is the book's
+opening stage direction almost word for word.
