@@ -1,5 +1,134 @@
 # DEVLOG
 
+## 2026-08-06 (Carroll's Pillow Problems — the 49th book)
+
+*Curiosa Mathematica, Part II* (1893, 4th ed. 1895), from Gutenberg
+#79080. Nine files, ~24,400 words, 64 plates, **2,436 formulas**. Ratio
+1.00 (`--min-ratio 0.85 --max-ratio 1.3`). Seventy-two problems Carroll
+worked out in his head, in bed, in the dark, before a diagram was drawn
+or a word written down.
+
+**THE SOURCE IS UNLIKE ANY OTHER IN THE PROJECT.** There is no
+plain-text edition, because the mathematics is not text: it is 2,436
+separate SVG files pulled in by `<img>`, one per symbol or fragment, so
+"sin OP · PN" arrives as four images in a row. The figure-marker
+pipeline does not fit that at all — a marker mid-sentence is not a plate.
+
+**But every image carries a `data-tex` attribute** holding the LaTeX it
+was rendered from, and across all 2,436 there are only **55 distinct
+commands and three environments**. The mathematics is encoded, not lost.
+`tex.py` converts it; all 2,436 come through with no leftover markup.
+
+(The `alt` text is MathSpeak — "StartFraction x Over y EndFraction" — and
+is also reversible, but it is a *reading* of the formula. `data-tex` is
+the formula. It does settle arguments, though: see the decimal point.)
+
+**Alex's ruling: MODERNISE THE NOTATION**, and render it in both formats
+rather than falling back to plates. Deliberately the opposite of the
+`symbolic-logic/` ruling three days earlier, and for a stated reason:
+there the words *were* the machine and the system would not run without
+them; here the notation is incidental to the argument, and the argument
+is what the reader came for. So the Victorian factorial — a vertical bar
+with the number underlined — becomes `3!`, `&c.` becomes `etc.`, and the
+mid-height decimal point becomes a full stop.
+
+### Six traps in the converter, every one producing readable, wrong arithmetic
+
+- **The decimal point is set at mid height.** `18 \cdot 65°` is 18.65°
+  and `\cdot 7` is 0.7, while `a \cdot b` is a times b. I first wrote the
+  rule so a digit *before* the dot meant multiplication, which turned
+  1.5430806 into `1· 5430806`. Settled against the MathSpeak: in all 41
+  places a digit follows, it is a decimal point ("18 dot 65 degree").
+- **A literal `.` between atoms is his multiplication sign.** `1/2.c/2`
+  is not a number. But the decimal point and the dots inside
+  `\text{i. e.}` must survive that pass, so both ride on sentinels.
+- **The vinculum is a bracket.** `2×10 - \overline{x-1}` means
+  2×10 − (x−1); drop the bar and the sign of the 1 flips silently. Over
+  a bare pair of letters it is a line *segment* and means no such thing,
+  so the content has to decide.
+- **`\\&c.` is a row break followed by content.** Protecting the
+  ampersand before splitting rows matches the tail of the separator
+  instead, eating the break and welding two lines of a derivation
+  together.
+- **An exponent must swallow its command's arguments.**
+  `2^\tfrac{3}{4}` is 2 to the three-quarters; reading only the command
+  name left the exponent as a bare `/` and spilled the 3 and the 4 into
+  the line as text — `2^/34` — in nineteen formulas, including the one
+  whose making the Introduction narrates (Problem 63).
+- **`A. P.` and `A. M.` are not products.** Arithmetical progression and
+  arithmetic mean, both set as mathematics, indistinguishable from a
+  product by shape — only by being listed.
+
+`{A}\over{B}` is brace-matched rather than pattern-matched, because one
+denominator is a whole `\begin{array}` nested three deep and a regex
+allowing one level walks straight past it.
+
+### Three things prep's own assertions caught
+
+- **The frontispiece falls outside every kept section** and would simply
+  have been dropped. It is Solution 67's diagram with the labels taken
+  off, printed opposite the title page under "See p. 100" — confirmed by
+  putting the two images side by side. Given the id `front`, **not**
+  `figfront`, which is the tyndall trap that breaks the image on the page
+  and the resource in the epub.
+- **A stray piece of LaTeX sits in the body text**, unrendered:
+  `1/kα, \text{&c.}; which answers (1)`. Every other formula is an
+  `<img>`, so this one is invisible to the converter and would have
+  shipped as markup. Fixed with a check that stops the build if the
+  transcription is ever corrected upstream.
+- **A stale plate** from my own earlier run, referenced by nothing. prep
+  now clears the image directory before writing it — the third time this
+  repo has hit "a step that writes a SET without owning the set".
+
+### The register
+
+The Introduction is why the book is worth reprinting. Carroll explains
+that he does *not* offer mathematics as a cure for insomnia — he says
+plainly he has never had it, and changed the title from "sleepless
+nights" to "wakeful hours" because kind friends kept writing to
+sympathise with an illness he did not have. What he offers it as is a
+remedy for "the harassing thoughts that are apt to invade a
+wholly-unoccupied mind". Then he drops his guard and says which thoughts:
+
+> there are sceptical thoughts, which seem for the moment to uproot the
+> firmest faith; there are blasphemous thoughts, which dart unbidden into
+> the most reverent souls; there are unholy thoughts, which torture, with
+> their hateful presence, the fancy that would fain be pure.
+
+**No clinical vocabulary anywhere near it.** No "intrusive thoughts", no
+"anxiety". He is describing a night, not a diagnosis. "Unholy" stays,
+and so does the unclean spirit of Matthew 12 who came back with seven
+others because he found the chamber "swept and garnished".
+
+The Answers and Solutions get a deliberately **light** touch. They are
+working, not exposition, and the compression is the point — he is showing
+what a mind can hold in the dark. Only genuinely archaic constructions
+move ("if X be Y" → "if X is Y", "evidently" → "plainly", "viz." →
+"namely"). **His dropped articles stay**: "If remaining bag be A", "DE
+shall be line required". That telegraphic style is how he thought, and
+filling it in would be rewriting the thing the book exists to show.
+
+His errata list is kept entire. It is a confession, not an erratum slip,
+and "Apparently I was under the delusion that 'a sin B sin C' was the
+same thing as 'sin A·bc'!" is the most likeable sentence in the book.
+
+### The check that mattered
+
+Not the ratio — **the numeric-token diff per file**, since `verify.py`
+cannot see arithmetic and 2,436 formulas came through a converter that is
+wrong in a way that reads perfectly well. Every file clean except two,
+both accounted for: 000 drops a page reference and corrects a misprinted
+capital O to a zero, 004 turns money into words. Nothing lost from a
+formula.
+
+Cover: Whistler's *Nocturne: Blue and Gold — Old Battersea Bridge*
+(1872), Commons "File:James McNeill Whistler - Nocturne en bleu et
+or.jpg", crop `1723x2584+120+0`. Night, one small solitary figure, and a
+composition of pure geometry — a great vertical pier, a horizontal span,
+a diagonal barge, and sparks of gold in the dark. Exactly contemporary
+with the dates Carroll pencilled beside these problems, and it looks like
+one of his own diagrams floating in the black.
+
 ## 2026-08-06 (Carroll's Symbolic Logic — the 48th book)
 
 Lewis Carroll's *Symbolic Logic, Part I* (1896), from Gutenberg #28696.

@@ -1000,3 +1000,66 @@ The Chess Game (Sofonisba Anguissola) 1555 (4096x3236px).jpg", crop
 "2157x3236+350+0" — two sisters over a squared board of counters.
 Carroll names chess in the passage where he argues his own game is
 better, because a finished game of chess leaves you nothing to show.
+
+Lewis Carroll's Pillow Problems (pillow-problems/ — the 49th book, and
+the fourth of the Carroll shelf after bunyan/, tangled-tale/ and
+symbolic-logic/). Curiosa Mathematica Part II, 1893. 9 files, ~24.4k
+words, 64 plates, 2,436 FORMULAS, from Gutenberg #79080. Ratio 1.00
+(--min-ratio 0.85 --max-ratio 1.3). Seventy-two problems he solved in
+his head, in bed, in the dark.
+THE SOURCE IS UNLIKE ANY OTHER HERE: there is NO plain-text edition,
+because the mathematics is not text. It is 2,436 separate SVG files
+pulled in by <img>, one per SYMBOL, so "sin OP · PN" is four images in
+a row — the figure-marker pipeline does not fit it at all. BUT EVERY
+IMAGE CARRIES data-tex WITH ITS LATEX, and across all 2,436 there are
+only 55 distinct commands and 3 environments. Encoded, not lost.
+tex.py converts it; reuse that module for any book whose mathematics
+comes as images. (The alt text is MathSpeak and is also reversible,
+but it is a READING of the formula; data-tex is the formula. It does
+settle arguments — see the decimal point.)
+ALEX'S RULING: MODERNISE THE NOTATION, and render in both formats.
+DELIBERATELY THE OPPOSITE OF symbolic-logic/ and for a stated reason —
+there the words WERE the machine, here the notation is incidental to
+the argument. So the Victorian factorial (a vertical bar with the
+number underlined) -> "3!", "&c." -> "etc.", mid-height decimal point
+-> full stop.
+SIX CONVERTER TRAPS, EVERY ONE PRODUCING READABLE, WRONG ARITHMETIC:
+  1. THE DECIMAL POINT IS AT MID HEIGHT. "18 \cdot 65°" is 18.65°;
+     "a \cdot b" is a times b. Getting it backwards turned 1.5430806
+     into "1· 5430806". The MathSpeak settles it (41 cases, all
+     "dot 65 degree").
+  2. A LITERAL "." BETWEEN ATOMS IS HIS MULTIPLICATION SIGN
+     ("1/2.c/2" is not a number) — but the decimal point and the dots
+     in \text{i. e.} must survive that pass, so both ride sentinels.
+  3. THE VINCULUM IS A BRACKET: "2×10 - \overline{x-1}" is
+     2×10-(x-1); dropping the bar flips the sign of the 1 silently.
+     Over bare letters it is a line SEGMENT. Content decides.
+  4. "\\&c." IS A ROW BREAK FOLLOWED BY CONTENT. Protecting "\&"
+     before splitting rows eats the break and welds two lines.
+  5. AN EXPONENT MUST SWALLOW ITS COMMAND'S ARGUMENTS.
+     "2^\tfrac{3}{4}" read as the command name alone gives "2^/34" —
+     19 formulas, including the one the Introduction narrates.
+  6. "A. P." / "A. M." are not products. Only a list can tell them
+     from one.
+THREE THINGS PREP'S ASSERTIONS CAUGHT: the FRONTISPIECE falls outside
+every kept section and would have been dropped (it is Solution 67's
+diagram with the labels off — id "front", NOT "figfront", the tyndall
+trap); A STRAY UNRENDERED LATEX FRAGMENT SITS IN THE BODY TEXT,
+invisible to a converter that only reads attributes; and a STALE PLATE
+from an earlier run, so prep now clears the image directory first.
+VOICE, THREE REGISTERS KEPT APART. The Introduction is the reason to
+publish the book and needs real work; NO CLINICAL VOCABULARY near the
+passage on sceptical, blasphemous and unholy thoughts — he is
+describing a night, not a diagnosis. The Questions are terse (money
+into words where it is puzzle data: "2/6" -> half a crown). The
+Answers and Solutions get a LIGHT touch on purpose — working, not
+exposition — and HIS DROPPED ARTICLES STAY ("If remaining bag be A"),
+because that telegraphic style is how he thought.
+THE CHECK THAT MATTERS IS NOT THE RATIO but the numeric-token diff per
+file: verify.py cannot see arithmetic, and 2,436 formulas came through
+a converter.
+Cover: Whistler's "Nocturne: Blue and Gold — Old Battersea Bridge"
+(1872), Commons "File:James McNeill Whistler - Nocturne en bleu et
+or.jpg", crop "1723x2584+120+0" — night, one small figure, and a
+composition of pure geometry that looks like one of his own diagrams
+floating in the black.
