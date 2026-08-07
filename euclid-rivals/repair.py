@@ -153,3 +153,34 @@ def repair(copy_text, corrector_text, log=None, min_gain=0.34):
         else:
             out.append(span_a)
     return " ".join(x for x in out if x)
+
+
+def repair_tokens(a_tokens, b_tokens, log=None, min_gain=0.34):
+    """As repair(), but returns one output string per COPY-TEXT token.
+
+    prep needs the paragraph boundaries of the 1885 scan preserved exactly
+    -- they are what the play's speeches are made of -- so the repair has
+    to be expressed as a per-token substitution rather than as a rebuilt
+    string. Every entry lines up with a_tokens by index; an entry may hold
+    several words, or none.
+    """
+    sm = difflib.SequenceMatcher(
+        None, [_key(t) for t in a_tokens], [_key(t) for t in b_tokens],
+        autojunk=False)
+    out = list(a_tokens)
+    for tag, i1, i2, j1, j2 in sm.get_opcodes():
+        if tag in ("equal", "delete", "insert"):
+            continue
+        span_a = " ".join(a_tokens[i1:i2])
+        span_b = " ".join(b_tokens[j1:j2])
+        if refuses(span_a, span_b):
+            continue
+        sa, _ = english_share(span_a)
+        sb, nb = english_share(span_b)
+        if similar(span_a, span_b) and nb and sb - sa >= min_gain:
+            out[i1] = span_b
+            for k in range(i1 + 1, i2):
+                out[k] = ""
+            if log is not None:
+                log.append((span_a, span_b, round(sa, 2), round(sb, 2)))
+    return out

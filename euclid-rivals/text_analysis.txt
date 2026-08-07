@@ -1,0 +1,107 @@
+EUCLID AND HIS MODERN RIVALS — TRANSLATION STRATEGY
+Lewis Carroll (C. L. Dodgson), 1879; second edition 1885
+Source: Archive.org, two scans. See source_notes.txt for the assessment
+and for what prep already fixes.
+
+
+1. WHAT THE BOOK IS
+
+A farce in four Acts about geometry textbooks, and it is much funnier
+than that sounds. Minos, a college examiner, sits up at midnight marking
+papers, his hair "radiating in all directions, like the second Corollary
+of Euc. I. 32". The ghost of Euclid appears. Then Herr Niemand — Mr
+Nobody, "the phantom of a German professor" — arrives to speak on behalf
+of each modern rival textbook in turn, thirteen of them, and is
+demolished one at a time with perfectly straight-faced courtesy.
+
+It is a real argument conducted as a joke: what is a proof FOR, what may
+be assumed, and what does a sequence of theorems owe the beginner who
+has to learn it. Carroll is defending Euclid not because he is
+old but because his order is honest about what depends on what.
+
+
+2. THE VOICE, AND THE THING TO PROTECT
+
+Two registers, and the comedy lives in the gap between them.
+
+  - MINOS is exhausted, sardonic and unfailingly polite. He says
+    "refreshingly cool!" about an undergraduate assuming the proposition
+    he is meant to be proving, and gives a fallacy "that peculiar mark
+    which cricketers call a duck's egg, and thermometers zero."
+  - NIEMAND is earnest, German, and doomed. He defends every manual with
+    complete good faith and is destroyed by having his own words read
+    back to him.
+
+Keep the courtesy. The book is never sneering: Minos apologises while
+demolishing. That politeness IS the joke, and flattening it into modern
+sarcasm would kill the book.
+
+STAGE DIRECTIONS ARE PART OF THE COMEDY and must be kept — the knocking
+heard, the pages turned over, the ghost who "vanishes with a sigh". They
+are italic in the printed book; prep keeps them as their own paragraphs.
+
+SPEAKER TAGS ARE TITLE-CASE, NEVER ALL-CAPS (the galileo trap:
+assemble.py reserves all-caps lines for section headings). prep already
+writes them out in full — "Minos.", "Euclid.", "Niemand." — rather than
+Carroll's abbreviations, since a modern reader has no reason to know
+that "Nie." is a person.
+
+
+3. WHAT PREP HAS ALREADY DONE, AND WHAT IT DELIBERATELY HAS NOT
+
+DONE: all 1,068 speaker tags resolved structurally (speakers.py); the
+1885 OCR repaired against the 1879 where a dictionary says the other
+reading is better and no numeral changes (repair.py); running heads,
+signature marks and the duplicated opening page removed; the Appendices
+sent to reference/appendices.txt as a crib.
+
+NOT DONE, AND ON PURPOSE — THE GEOMETRICAL LABELS ARE STILL AS OCR'D.
+repair.py refuses to touch any span containing two or more capitals in a
+row, because a dictionary will always prefer a word to a label and the
+result is catastrophic: "EF" became "IF", "EGB" became "12GB", and
+"AGH, GHD," became "AGE, GET),". Those letters name points on a printed
+diagram. The guard is right, but it means the labels arrive damaged —
+"A Gil and EGB", "GIID", "thin;^", "Qgg" — and they can only be repaired
+BY READING THE SENTENCE AGAINST ITS FIGURE. Do that. A wrong label is
+the exact analogue of tyndall/'s figure-id collisions: it reads
+perfectly and it is wrong.
+
+
+4. THE THINGS THAT WILL STILL BE WRONG
+
+- REAL-WORD OCR ERRORS. "lie" for "he", "Kerens" for "Here's", "Koman"
+  for "Roman" (that one is fixed; the others are not). A dictionary
+  cannot see these, and neither can any check in this repo. They are
+  found by reading, which is what the translation pass is.
+- SCENE NUMBERING. The Acts are reliable (they are set in 19-point and
+  prep keys on the size). The Scene headings are not all present in the
+  scan, so prep numbers them sequentially as it meets them, and the
+  result does not always match the book. THE AUTHORITY IS THE BOOK'S OWN
+  "ARGUMENT OF DRAMA" in the front matter, which lists every Act, Scene
+  and § with its subject; check the manifest titles against it before
+  assembling.
+- THE 19 TABLES and 20 PLATES are marked, not built. Every table must be
+  checked against the page image (thompson/'s rule: normalise() once ate
+  three rows out of a table and moved the word ratio by nothing), and
+  the plates must be cut from the JP2 scans with replate.py's method —
+  grow each side until it reaches whitespace, then map darkness to alpha
+  so the paper goes and the ink survives.
+
+
+5. THE APPENDICES ARE A CRIB, NOT A TRANSLATION
+
+Alex's ruling, and the right one. They are ~11,000 words of dense
+cross-reference tables — lists of Euclid's propositions against a dozen
+rival manuals, by section and page. They are apparatus for a Victorian
+schoolmaster checking his textbook, not reading matter, and no modern
+reader will follow a reference to page 262 of Cuthbertson. They sit in
+reference/appendices.txt and are drawn on only where the body text
+depends on one (the bunyan/ treatment of Offor's commentator notes).
+
+
+6. RATIO
+
+Expect close to 1:1, as with the other English-to-English volumes; verify
+with --min-ratio 0.85 --max-ratio 1.3. But note that the source is OCR:
+the word counts include its damage, so the ratio is a weaker check here
+than usual and the numeric-token diff matters more.
