@@ -226,7 +226,8 @@ RECTO_HEAD = re.compile(r"^(?:A[Cc][Tt]\s+[IVXLY]+\.\s*)?"
 HEAD_SHAPES = [("verso", VERSO_HEAD, 6), ("recto", RECTO_HEAD, 10)]
 HEAD_LEAKS = [("75", 1),        # a page number left alone on the turn
               ("[Act I.", 1), ("[Act III.", 1),   # heads torn in half
-              ("SO-CALLED 'parallels: 145", 1)]
+              ("SO-CALLED 'parallels: 145", 1),
+              ("§ 5.] LINES AND ANGLES. 219", 1)]
 
 
 # A SPEECH ABBYY BURIED AT THE END OF ANOTHER PARAGRAPH. The tag is not at
@@ -463,7 +464,7 @@ def read_body_and_appendix():
                     # scores 1.5 to Euclid and "Props." 2.5 to Nostradamus,
                     # and a looser rule turns both into speeches.
                     lead = txt.split(" ", 1)[0]
-                    if looks_like_tag(lead) and re.search(r"[A-Za-z]", lead):
+                    if looks_like_tag(lead):
                         # ONE letter is enough, and it has to be: "M\\7i."
                         # has no two letters in a row and 'A?"^.' has only
                         # the one. The numbered Table items are held off by
