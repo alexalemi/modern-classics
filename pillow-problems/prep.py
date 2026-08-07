@@ -114,7 +114,10 @@ def clean(s):
     s = re.sub(r"[ \t]+", " ", s).strip()
     # Carroll dates each problem in the margin with an opening bracket and
     # no closing one -- "[24/3/84" -- which reads as a typo off the page.
-    s = re.sub(r"^\[(\d+/\d+/\d+)$", r"[\1]", s)
+    # The dates come in several shapes -- "[24/3/84", "[3/89", "[11/76",
+    # "[4 or 5/89" -- so match the unclosed bracket rather than the date.
+    if re.fullmatch(r"\[[0-9][0-9 ,/a-z]{1,18}", s):
+        s += "]"
     return s.replace("i. e.", "i.e.").replace("Q. E. F.", "Q.E.F.")
 
 
