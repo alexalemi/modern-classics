@@ -90,6 +90,7 @@ OVERRIDE = {
     "wn": "Minos", "m\\7i": "Minos", "e/md": "Rhadamanthus",
     "311)1": "Minos", "i>uc": "Euclid", "^lin": "Minos", "mhu": "Minos",
     "NiCi": "Niemand", "A^V": "Niemand", "A?\"^": "Niemand",
+    "3/m": "Minos", "iVf^": "Niemand",
     # Rhadamanthus
     "rhad": "Rhadamanthus", "bltad": "Rhadamanthus",
     "reach": "Rhadamanthus", "bhad": "Rhadamanthus",
