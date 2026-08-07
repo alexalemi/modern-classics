@@ -244,6 +244,8 @@ EMBEDDED_TAGS = [
     ("Euc. It is very like making a new Triangle", "Euc.", "Euclid", 1),
     ("Min. It is indeed.", "Min.", "Minos", 1),
     ("Min. Hardly worth stating.", "Min.", "Minos", 1),
+    ("Nie. We do not dispute it.", "Nie.", "Niemand", 1),
+    ("Min. There are certainly some logical", "Min.", "Minos", 1),
 ]
 
 
