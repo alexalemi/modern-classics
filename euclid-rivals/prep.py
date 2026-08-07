@@ -225,7 +225,8 @@ RECTO_HEAD = re.compile(r"^(?:A[Cc][Tt]\s+[IVXLY]+\.\s*)?"
                         r"Sc[.,]?\s*[IVXLYivxly]+\b.{0,44}\]?.{0,4}$")
 HEAD_SHAPES = [("verso", VERSO_HEAD, 6), ("recto", RECTO_HEAD, 10)]
 HEAD_LEAKS = [("75", 1),        # a page number left alone on the turn
-              ("[Act I.", 1), ("[Act III.", 1)]   # heads torn in half
+              ("[Act I.", 1), ("[Act III.", 1),   # heads torn in half
+              ("SO-CALLED 'parallels: 145", 1)]
 
 
 # A SPEECH ABBYY BURIED AT THE END OF ANOTHER PARAGRAPH. The tag is not at
@@ -246,6 +247,10 @@ EMBEDDED_TAGS = [
     ("Min. Hardly worth stating.", "Min.", "Minos", 1),
     ("Nie. We do not dispute it.", "Nie.", "Niemand", 1),
     ("Min. There are certainly some logical", "Min.", "Minos", 1),
+    ("Nie. Very well.", "Nie.", "Niemand", 1),
+    ("Min. AVe will call them", "Min.", "Minos", 1),
+    ("Euc. Good. Let us to business.", "Euc.", "Euclid", 1),
+    ("3Iin. No ! A thousand times, no !", "3Iin.", "Minos", 1),
 ]
 
 
