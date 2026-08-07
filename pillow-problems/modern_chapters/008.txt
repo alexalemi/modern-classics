@@ -1,0 +1,937 @@
+Chapter III: Solutions
+(Part 3 of 3)
+
+Solution 59
+
+Let KL = MN = a,
+
+KN = LM = b,
+
+KM = LN = c;
+
+and let ∠s LMK, MKL, KLM be equal to 'A,
+B, C'; and similarly for the ∠s of the other facets.
+
+From K draw KT ⊥ base-facet LMN. Also draw KR,
+KS, ⊥ LM, MN. And join TR, TM, TS.
+
+It is easily proved that ∠s TRM, TSM are right.
+
+The required volume is 1/3·KT·LMN. The area of LMN
+is of course known. All we need is the length of KT. Now KT² = KS² - TS²; and KS plainly = c·sin B. Hence all we need
+is the length of TS.
+
+[Figure 51]
+
+Now this requires a preliminary Lemma, in itself a very pretty problem,
+namely—
+
+LEMMA (1).
+
+Given, in Tetragon RMST, sides RM, MS, and ∠ RMS,
+and that ∠s TRM, TSM are right: find TS.
+
+[Figure 52]
+
+Now TS/(sin TRS) = TR/(sin TSR);
+
+also TS cos TSR + TR cos TRS = RS;
+
+	∴ TS/(sin TRS) = TR/(sin TSR),
+	= (TS cos TSR + TR cos TRS)/(sin TRS cos TSR + sin TSR cos TRS),
+	= RS/(sin RMS) = MS/(sin MRS);
+	∴ TS/(cos MRS) = MS/(sin MRS); i.e.  TS = MS cot MRS.
+
+Q.E.F.
+
+Hence this requires another Lemma, to find the value of cot MRS (or tan MRS, which will do as well, and makes a prettier
+problem).
+
+LEMMA (2).
+
+[Figure 53]
+
+Given, in Triangle RMS, sides RM, MS, and ∠ RMS:
+find tan MRS.
+
+	tan MRS = (sin MRS)/(cos MRS) = (RS sin MRS)/(RS cos MRS),
+	= (MS sin RMS)/(RM - MS cos RMS).
+
+Q.E.F.
+
+Hence, in Tetragon RMST, we have by Lemma (1),
+
+	TS = MS cot MRS;
+
+and, by Lemma (2), cot MRS = (RM - MS cos RMS)/(MS sin RMS),
+
+	= (c cos A - c cos B cos C)/(c cos B sin C) = (cos A - cos B cos C)/(cos B sin C);
+
+∴ TS = c/(sin C)·(cos A - cos B cos C).
+
+Now KT² = KS² - TS²;
+
+∴ it = (c sin B)² - c²/sin²C·(cos A - cos B cos C)²,
+
+= c²/sin²C·{(sin B sin C)² - (cos A - cos B cos C)²};
+
+therefore KT = c/(sin C) multiplied by √(sin²B sin²C - cos²B cos²C - cos²A + 2 cos A cos B cos C),
+
+	= c/(sin C) multiplied by
+
+√((1 - cos²B)·(1 - cos²C) - cos²B cos²C - cos²A + 2 cos A cos B cos C),
+
+= c/(sin C) · √(1 - (cos²A + cos²B + cos²C) + 2 cos A cos B cos C),
+
+which is symmetrical, as it ought to be.
+
+[Figure 54]
+
+Now area of LMN = (ab sin C)/2;
+
+hence volume of Tetrahedron
+
+= abc/6·√(1 - (cos²A + cos²B + cos²C) + 2 cos A cos B cos C).
+
+Q.E.F.
+
+Solution 60
+
+Let ∠ BAD = θ, ∠ CAD = φ.
+
+[Figure 55]
+
+Now (sin (B + θ))/(sin θ) = c/((ma/(m + n)))
+
+= (c·(m + n))/ma;
+
+∴ sin B cot θ + cos B = (c·(m + n))/ma;
+
+∴ cot θ = (c·(m + n))/(ma·sin B) - cot B,
+
+= ((m + n)·(a cos B + b cos A) - ma cos B)/(ma sin B),
+
+= ((m + n)b cos A + na cos B)/(ma sin B);
+
+[Figure 56]
+
+i.e.cot θ = ((m + n)·b/(sin B)·cos A + na cot B)/ma,
+
+= ((m + n)a cot A + na cot B)/ma,
+
+= ((m + n) cot A + n cot B)/m.
+
+Similarly, cot φ = ((m + n) cot A + m cot C)/n.
+
+Q.E.F.
+
+COROLLARIES.
+
+(1) m cot θ - n cot φ = n cot B - m cot C.
+
+(2) (cot B + cot φ)/(cot C + cot θ) = m/n.
+
+(3) If Triangle is equilateral,
+
+cot θ = (m + 2n)/m·1/√3,
+
+cot φ = (n + 2m)/n·1/√3;
+
+∴ (cot θ)/(cot φ) = (mn + 2n²)/(mn + 2m²);
+
+∴ (tan θ)/(tan φ) = (mn + 2m²)/(mn + 2n²);
+
+i.e., if CD'B' is drawn ⊥ to AD, B'D'/D'C = (mn + 2m²)/(mn + 2n²);
+
+e.g., if m/n = 1/2,
+B'D'/D'C = 2/5·
+
+(4) Let tan A = 1, tan B = 2, tan C = 3;
+
+then cot θ = (m + n + n·1/2)/m = (2m + 3n)/2m,
+
+cot φ = (m + n + m·1/3)/n = (3n + 4m)/3n;
+
+∴ (tan θ)/(tan φ) = (6mn + 8m²)/(6mn + 9n²);
+
+from which, if (tan θ)/(tan φ) were given, we could
+find m/n from a Quadratic Equation.
+
+I tried various values, to find one which would give rational values
+for m and n, and found that 2/3 would do, as it
+leads to the Quadratic
+
+	2(6mn + 9n²) - 3(6mn + 8m²) = 0,
+
+in which (B² - 4AC) becomes, after dividing all through by 6,
+(1² + 4·4·3), i.e. 49.
+
+The Quadratic is 4m² + mn - 3n² = 0;
+
+from which m/n = (-1 ± 7)/8 = 3/4; which
+solves the Problem 'Given a Triangle ABC, having the tangents
+of its angles equal to 1, 2, 3: divide BC at D, so that, if
+AD is joined, and CD'B' drawn ⊥ to it, the ratio
+B'D'/D'C may be 2/3'. The answer is 'Divide
+it so that BD/DC = 3/4'.
+
+Solution 61
+
+We know that the equation
+
+'(a² + 4b² + 4c²) + (4a² + b² + 4c²)
+
++ (4a² + 4b² + c²) = 9(a² + b² + c²)'
+
+is identically true.
+
+Hence a² + b² + c²
+
+	= 1/9·{(a² + 4b² + 4c²) + (4a² + b² + 4c²) + (4a² + 4b² + c²)};
+	= 1/9·{(a² + 4b² + 4c² + 8bc - 4ca - 4ab)
+	+ (4a² + b² + 4c² - 4bc + 8ca - 4ab)
+	+ (4a² + 4b² + c² - 4bc - 4ca + 8ab)};
+	= 1/9·{(-a + 2b + 2c)² + (2a - b + 2c)² + (2a + 2b - c)²};
+	= ((-a + 2b + 2c)/3)² + ((2a - b + 2c)/3)² + ((2a + 2b - c)/3)².
+
+Now (-a + 2b + 2c) = 3(b + c) - (a + b + c);
+
+∴, if (a + b + c) is a multiple of 3, so also is
+(-a + 2b + 2c);
+
+∴ (-a + 2b + 2c)/3 is an integer;
+
+and similarly for the other 2 fractions.
+
+Also it may be proved that, if (-a + 2b + 2c)/3 is equal to
+a, or b, or c, then a, b, c can be arranged in
+A.P.
+
+First, let (-a + 2b + 2c)/3 = a;
+
+then -a + 2b + 2c = 3a; i.e. b + c = 2a;
+
+secondly, let (-a + 2b + 2c)/3 = b;
+
+then -a + 2b + 2c = 3b; i.e. 2c = a + b;
+
+thirdly, let (-a + 2b + 2c)/3 = c;
+
+then -a + 2b + 2c = 3c; i.e. 2b = c + a.
+
+And similarly for the other 2 fractions.
+
+Hence, contranominally, if a, b, c can not be
+arranged in A.P., the 2 sets of squares have no common term.
+
+Q. E. D.
+
+Numerical Examples (not thought out).
+
+	a² | b² | c² | ((-a + 2b + 2c)/3)² | ((2a - b + 2c)/3)² | ((2a + 2b - c)/3)²
+	1² | 4² | 4² | 5² | 2² | 2²
+	3² | 4² | 8² | 7² | 6² | 2²
+	4² | 5² | 9² | 8² | 7² | 3²
+
+Solution 62
+
+Let AB, AC, be the given Lines, and P the given Point.
+
+[Figure 57]
+
+Through P draw PD parallel to AB; from DC cut off
+DE equal to AD; join EP, and produce it to meet AB at
+F.
+
+Because AD = DE, and that DP is parallel to AB,
+
+∴ FP = PE.
+
+Now let GPH be any other line through P;
+
+then ∠ PFH > ∠ PEG.
+
+Because, in Triangles PFH, PEG, PF = PE, and
+
+	∠ FPH = ∠ GPE, and ∠ PFH > ∠ PEG,
+
+∴ PH > PG, and Triangle PFH > Triangle PGE.
+
+To each add Tetragon AFPG;
+
+∴ Triangle AGH > Triangle AEF.
+
+And so of any other line through P.
+
+Hence AEF is the least possible Triangle.
+
+Q.E.F.
+
+Solution 63
+
+[Figure 58]
+
+Let each side of each Square = 2.
+
+Then LG = √3, MG = (√2 - 1);
+
+∴ LM( = JK) = √(3 - (2 + 1 - 2√2))
+
+= 2^(3/4);
+
+∴ OJ = OK = 1/(2^(1/4)).
+
+Take O as origin, the X-axis ∥ to AD, and the
+Y-axis to AB; and let JK be part of the Z-axis.
+
+Let equation to plane containing Triangle CDG be
+
+	x cos α + y cos β + z cos γ - p = 0,
+
+where p is length of perpendicular dropped, from O, upon this
+plane, and meeting it somewhere in LG.
+
+Hence we can find p from equation to LG, in the XZ-plane,
+which will be
+
+	x cos α + z cos γ - p = 0;
+
+now this line contains L, whose co-ordinates are 
+(1, 1/(2^(1/4))), and G, whose co-ordinates are
+(√2, -1/(2^(1/4)));
+
+∴ cos α + 1/(2^(1/4)) · cos γ - p = 0,
+
+and √2 · cos α - 1/(2^(1/4)) · cos γ - p = 0;
+
+∴ (√2 - 1) · cos α = 2/(2^(1/4)) · cos γ = 2^(3/4) · cos γ;
+
+∴ (cos α)/(2^(3/4)) = (cos γ)/(√2 - 1) = 1/(√(2^(3/2) + 3 - 2^(3/2))) = 1/√3;
+
+∴ cos α = (2^(3/4))/√3, cos γ = (√2 - 1)/√3;
+
+∴ p = (2^(3/4))/√3 + (√2 - 1)/(2^(1/4)·√3) = (√2 + 1)/(2^(1/4)·√3).
+
+Now area of CDG = √3;
+
+∴ volume of pyramid, whose base is CDG and whose
+vertex is O, = (√2 + 1)/(3·2^(1/4));
+
+and there are eight such pyramids in the solid;
+
+∴ their sum = (8(√2 + 1))/(3·2^(1/4)).
+
+Also volume of pyramid, whose base is ABCD, and whose vertex is
+O, = 4/(3·2^(1/4));
+
+and there are 2 such pyramids in the solid;
+
+∴ their sum = 8/(3·2^(1/4));
+
+∴ volume of solid = (8(2 + √2))/(3·2^(1/4)) = (8·2^(1/4) ·(√2 + 1))/3
+
+Q.E.F.
+
+Solution 64
+
+[Figure 59]
+
+Let ABC be the given Triangle, and O the given Point; and let
+OD, its distance from BC, be less than either OE or OF,
+its distances from CA, AB.
+
+Draw a line GH equal to OE, and GK ⊥ it and equal to
+OF; and join HK; and about the Triangle GHK describe a
+Circle; and place in it a line KL equal to OD; and join LH.
+
+Because sqs of KL, LH = sqs of KG, GH, and that KL
+is less than either KG or GH, ∴ LH is greater than
+either;
+
+∴ a Circle, with centre O, and radius equal to LH,
+will cut all three Lines, in two Points each. Describe this Circle.
+
+Then sqs of MD, DO = sqs of PE, EO;
+
+also sq. of LH = sqs of RF, FO;
+
+∴ sqs of MD, DO, LH = sqs of PE, RF, EO, FO;
+
+but sqs of DO, LH = sqs of KL, LH,
+
+= sqs of GH, GK = sqs of EO, FO;
+
+∴ sq. of MD = sqs of PE, RF;
+
+∴ 4 times sq. of MD = 4 times sqs of PE, RF;
+
+i.e. sq. of MN = sqs of PQ, RS.
+
+Hence MN, PQ, RS, can be sides of a right-angled Triangle.
+
+Q.E.F.
+
+Solution 65
+
+Calling the angles 1/x, 1/y,
+1/z, of 360°, we must have
+
+	1/x + 1/y + 1/z = 1/2;
+
+an Indeterminate Equation with 3 unknowns.
+
+Plainly none of them can be so small as 2.
+
+(1) Let x = 3; then 1/y + 1/z = 1/6.
+
+Now, if 1/y = k/(k + l) × 1/6,
+1/z will = l/(k + l) × 1/6:
+
+hence k can only be 1, or 2, or 3, or 6; and the same is true of
+l.
+
+(N.B. It is assumed that the fractions k/(k + l),
+l/(k + l), are in their lowest terms.)
+
+Let 1/y be ≮ 1/z. Then
+k/(k + l) ≮ 1/2.
+
+Then its possible values are 1/2, so that l/(k + l) = 1/2
+
+	2/3, | 1/3
+	3/4, | 1/4
+	3/5 | 2/5
+	6/7, | 1/7.
+
+This gives 5 sets of values for 1/x, 1/y,
+1/z, namely:
+
+	1/3, 1/12, 1/12; 1/3, 1/9, 1/18; 1/3, 1/8, 1/24; 1/3, 1/10, 1/15; 1/3, 1/7, 1/42.
+
+(2) Let x = 4. Then 1/y + 1/z = 1/4,
+and, as before, k can only be 1, or 2, or 4, and the same is
+true of l. Hence the possible values for k/(k + l) are
+1/2, so that l/(k + l) = 1/2
+
+	2/3, | 1/3
+	4/5, | 1/5.
+
+This gives 3 more sets of values for 1/x,
+1/y, 1/z, namely:
+
+	1/4, 1/8, 1/8; 1/4, 1/6, 1/12; 1/2, 1/5, 1/20.
+
+(3) Let x = 5; then 1/y + 1/z = 3/10.
+
+Hence denominator must contain factor "3", and k can be only 1, or
+2, or 5, or 10; and the same is true of l.
+
+Hence possible values of k/(k + l) are 1/2, so
+that l/(k + l) = 1/2
+
+	2/3, | 1/3
+	5/6, | 1/6.
+
+This gives 2 sets of values for 1/x, 1/y,
+1/z, namely:—
+
+	1/5, 1/5, 1/10; 1/5, 1/4, 1/20;
+
+but the latter (a fact overlooked in thinking out) we have had already.
+
+(4) Let x = 6; then 1/y + 1/z = 1/3.
+
+Hence k can be only 1, or 3, and the same is true of l.
+
+Hence possible values for k/(k + l) are 1/2, so
+that l/(k + l) = 1/2
+
+	3/4, 1/4.
+
+This gives 2 sets of values, namely:—
+
+	1/6, 1/6, 1/6; 1/6, 1/4, 1/12;
+
+but the latter (a fact overlooked in thinking out) we have had already.
+
+There is no use in giving, to x, any values greater than 6; for
+these would make 1/y + 1/z > 1/3; so
+that one or other must be > 1/6; i.e. either y or
+z must < 6, and we should get old values over again.
+
+Hence there are 10 different shapes.
+
+Q.E.F.
+
+The 10 sets of angles (I am not certain that they were all thought out)
+are
+
+	(1) | 120°, | 30°, | 30°;
+	(2) | 120°, | 40°, | 20°;
+	(3) | 120°, | 45°, | 15°;
+	(4) | 120°, | 36°, | 24°;
+	(5) | 120° | 513/7°, | 84/7°;
+	(6) | 90°, | 45°, | 45°;
+	(7) | 90°, | 60°, | 30°;
+	(8) | 90°, | 72°, | 18°;
+	(9) | 72°, | 72°, | 36°;
+	(10) | 60°, | 60°, | 60°.
+
+Solution 66
+
+Write k for α/(α + β). Now the counters
+must be either both white, or one white and one black. Let chance of
+first condition be x; hence chance of second is (1 - x). Hence
+chance of drawing white is x × 1 + (1 - x) × 1/2.
+
+	∴ x + (1 - x)/2 = k; ∴ x = 2k - 1;
+	∴ (1 - x) = 2 - 2k.
+
+Let a counter now be drawn and prove white; then chance of
+'observed event,' in 1st condition, is 1, and, in 2nd condition,
+1/2;
+
+Hence the chances, of the existence of these two conditions, are
+proportional to (2k - 1) × 1, (2 - 2k) × 1/2; i.
+e. are proportional to 2k - 1, 1 - k;
+
+hence these chances actually are (2k - 1)/k,
+(1 - k)/k;
+
+hence the chance of now drawing white,
+
+	is (2k - 1)/k × 1 + (1 - k)/k × 1/2;
+	i.e. (3k - 1)/2k.
+
+Hence the effect of one repetition of the experiment has been to
+change k into (3k - 1)/2k.
+
+Hence a second repetition of it will change
+
+	(3k - 1)/2k into (3 × (3k - 1)/2k - 1)/(2 × (3k - 1)/2k); i.e. into (7k - 3)/(6k - 2).
+
+We have now to discover the law (if there is one) for the series
+
+	k, (3k - 1)/2k, (7k - 3)/(6k - 2),
+
+regarding these as identical functions of 1, 2, 3.
+
+We can write the 1st and 2nd term in the form of the 3rd, thus:—
+
+	(k - 0)/(0 × k - (-1)), (3k - 1)/(2k - 0), (7k - 3)/(6k - 2)
+
+and, by inspection, we see that each is of the form
+
+	((2ⁿ - 1) × k - (2^(n - 1) - 1))/((2ⁿ - 2) × k - (2^(n - 1) - 2)),
+
+where n denotes the place of the term.
+
+Suppose this law to hold for n terms, what will be the effect of
+repeating the experiment once more?
+
+We know that it changes k into (3k - 1)/2k. Hence the
+new chance will be
+
+	(3 × ((2ⁿ - 1) × k - (2^(n - 1) - 1))/((2ⁿ - 2) × k - (2^(n - 1) - 2)) - 1)/(2 × ((2ⁿ - 1) × k - (2^(n - 1) - 1))/((2ⁿ - 2) × k - (2^(n - 1) - 2)));
+
+	i.e. (k × (3·2ⁿ - 3 - 2ⁿ + 2) - 3·2^(n - 1) + 3 + 2^(n - 1) - 2)/((2^(n + 1) - 2) × k - (2ⁿ - 2));
+
+	i.e. ((2^(n + 1) - 1) × k - (2ⁿ - 1))/((2^(n + 1) - 2) × k - (2ⁿ - 2));
+
+i.e. the (n + 1)|^(th) term of the series
+will follow the same law. But we know that the law holds for the
+1^(st), 2^(nd), and 3^(rd) terms.
+Hence it holds universally.
+
+Hence, after m repetitions of the experiment, the chance of drawing
+white will be the (m + 1)|^(th) term of the
+above series; i.e. it will be
+
+	((2^(m + 1) - 1) × k - (2^m - 1))/((2^(m + 1) - 2) × k - (2^m - 2)).
+
+Now, for k, write α/(α + β).
+
+	Then chance is ((2^(m + 1) - 1) × α - (2^m - 1)· (α + β))/((2^(m + 1) - 2) × α - (2^m - 2)· (α + β));
+	i.e. ((2^(m + 1) - 2^m)α - (2^m - 1)· β)/((2^(m + 1) - 2^m)α - (2^m - 2)· β);
+	i.e. (2^m · (α - β) + β)/(2^m · (α - β) + 2β).
+
+Q.E.F.
+
+Example—Let chance be 9/10; and then let
+experiment be repeated 5 times more.
+
+Here α = 9, β = 1;
+
+∴ chance becomes (32 × 8 + 1)/(32 × 8 + 2), i.e. 257/258.
+
+Solution 67
+
+[Figure 60]
+
+Let ABCD be the socket. Revolve the Tetrahedron until the plane, in
+it, DOA has taken the new position D'QA'; and let edge DA,
+in its new position, meet the socket-rim AC at R. From A'
+draw A'L ⊥ XY-plane. Join OR, and produce it to L. And
+draw RM, LN, the y-ordinates of R and L.
+
+Then co-ordinates of A' are ON, NL, LA'.
+
+Call OM, MR, 'x', y''; and OA, OR, OD,
+'a, a', h'; and ∠ XOR 'θ'.
+
+Plainly the vertical axis of the Tetrahedron always
+coincides with the Z-axis.
+
+Hence A moves on the surface of a cylinder,
+
+i.e. x² + y² = a² (1)
+
+Now ∠ XAC = 150°;
+
+∴ Equation to AC is y = - 1/√3· (x - a);
+
+	i.e. x + √3 · y = a (2)
+
+Also Equation to OR is x/(cos θ) = y/(sin θ) = a;
+
+	∴, at R, x'/(cos θ) = y'/(sin θ) = a'; (3)
+
+∴, by (2), a' · cos θ + √3 · a' · sin θ = a;
+
+	∴ a' = a/(cos θ + √3 · sin θ) (4)
+
+Also, by similar △s D'QA', D'OR, QA': QD':: OR: OD'
+
+i.e. a: h:: a/(cos θ + √3· sin θ): h - z;
+
+∴ h - z = h/(cos θ + √3· sin θ);
+
+but cos θ = x/a, and sin θ = y/a;
+
+∴ h - z = (a h)/(x + √3 · y);
+
+i.e. (x + √3· y) · (h - z) = a h (5)
+
+Equations (1) and (5) give the required Locus.
+
+Q.E.F.
+
+Solution 68
+
+Let the Nos of bottles, taken out of the 3 days, be 'x, y,
+z'. Let each bottle have cost 10v pence, and therefore be sold
+for 11v pence.
+
+Then the Treasurer's receipts, on the 3 days, were (x - 1)0.11v, y 0.11 v - v, (z - 1)0.11 v - v; yielding, as
+profits (i.e. as remainders after deducting cost-price of bottles
+taken out), xv - 11 v, yv - v, zv - 12 v. Then these 3
+quantities are equal.
+
+Hence y = x - 10, and z = x + 1;
+
+∴ total No. of bottles, being (x + y + z), = 3x - 9.
+
+Now total profits are (x + y + z)·v - 24v; i.e. (3x - 33)v;
+
+∴ profit, per bottle = ((3x - 33) · v)/(3x - 9); and this must = 6;
+
+∴ (x - 11)·v = (x - 3)·6.
+
+Also z·11v = 11 × 240; i.e. (x + 1)·11v = 11 × 240;
+
+∴ (x - 11)/(x + 1) = (6·(x - 3))/240;
+
+∴ (x + 1)·(x - 3) = 40·(x - 11);
+
+∴ x² - 2x - 3 = 40x - 440;
+
+∴ x² - 42x + 437 = 0.
+
+Now 42² - 4 × 437 = 1764 - 1748 = 16;
+
+∴ x = (42 ± 4)/2 = 23 or 19;
+
+∴ No. of bottles = 60 or 48; but it is a multiple of 5;
+
+∴ it = 60.
+
+Also (x + 1)·11v = 11 × 240; i.e. 24v = 240;
+
+∴ v = 10;
+
+i.e. the wine was bought @ 8/4 a bottle, and sold @
+9/2 a bottle.
+
+Q.E.F.
+
+Solution 69
+
+§ 1. Let ∠ BAD = k·A, ∠ CBE = l·B, ∠ ACF = m·C.
+
+Then ∠ ABE = (1 - l)·B.
+
+Now ∠ BC'D = ∠ C'AB + ∠ C'BA.
+
+i.e. k·A + (1 - l)·B = C. (1)
+
+Similarly, l·B + (1 - m)·C = A; (2)
+
+and m·C + (1 - k)·A = B. (3)
+
+[Figure 61]
+
+From equations (1) and (3), l and m may be found in terms of
+k: but these, taken along with k, will not be similar
+functions of the single variable k. We must have k a certain
+function of A, B, C, and θ (say); l a similar
+function of B, C, A, and θ; and m a similar
+function of C, A, B, and θ; i.e. we must have
+
+	k = f(A, B, C, θ),
+	l = f(B, C, A, θ),
+	m = f(C, A, B, θ).
+
+Now we know, by (1), that kA - lB = C - B;
+
+i.e. A·f(A, B, C, θ) - B·f(B, C, A, θ) = C - B.
+
+Now, as an experiment, let
+
+	k·A = xA + yB + zC + θ,
+	l·B = xB + yC + z A + θ;
+
+then kA - lB = (x - z)·A + (y - x)·B + (z - y)·C;
+
+	∴ x - z = 0; i.e. x = z;
+	z - y = 1; i.e. z = y + 1.
+
+These conditions will be fulfilled, if we make y = 1, and
+x = z = 2; so that
+
+	kA = 2A + B + 2C + θ,
+	lB = 2B + C + 2A + θ;
+
+which would make
+
+	f(A, B, C, θ) mean (2A + B + 2C + θ)/A.
+
+Now this may plainly be simplified by omitting (A + B + C), which
+is constant; and we then have k = (A + C + θ)/A; or, in
+a yet simpler form, by again subtracting 180°, k = (θ - B)/A.
+
+[Figure 62]
+
+	Similarly l = (θ - C)/B,
+	m = (θ - A)/C.
+
+Q.E.F.
+
+§ 2. We see that kA = θ - B, so that ∠ ADC is
+plainly equal to θ; and so are ∠s BEA, CFB.
+
+This gives us a geometrical construction, namely to draw lines from
+A, B, C, so that each makes the same angle θ with
+the opposite side.
+
+§ 3. Let us now ascertain the limits within which the value of
+θ must lie.
+
+We know that kA = θ - B.
+
+Now kA ≯ A; ∴ θ - B ≯ A; i.e. θ ≯ A + B;
+
+i.e. θ ≯ the supplement of C;
+
+and of course this is true for each of the three angles A,
+B, C; i.e. if A, B, C, be the order of the angles
+in a descending order of magnitude, θ ≯ supplement of
+A.
+
+Again kA ≮ 0.
+
+Hence θ - B ≮ 0; i.e. θ ≮ B;
+
+and of course this is true for each angle.
+
+Hence if A, B, C, be the order in a descending order of
+magnitude, θ ≮ A, and ≯ 180° - A.
+
+Q.E.F.
+
+§ 4. We have now to ascertain the ratio which B′C′ bears to BC.
+
+In Triangle ABC′, whose ∠s are (θ - B), (180° - θ - A), (180° - C), we have
+
+	AC′ = AB/(sin AC′B)·sin ABC′ = c/(sin C)·sin (θ + A) = a/(sin A)·sin (θ + A);
+	BC′ = AB/(sin AC′B)·sin BAC′ = c/(sin C)·sin (θ - B) = a/(sin A)·sin (θ - B)
+
+∴, by symmetry, AB′ = a/(sin A)·sin (θ - A).
+
+Now B′C′ = AC′ - AB′;
+
+	∴ it = a/(sin A){sin (θ + A) - sin (θ - A)},
+	= a/(sin A)·2 cos θ sin A = a 2 cos θ.
+
+Hence a′/a = b′/b = c′/c = 2 cos θ.
+
+Q.E.F.
+
+Solution 70
+
+Before folding the Plane containing the Triangles, the locus of their
+vertices is plainly a Line parallel to their common base. Hence, if
+the base of the Tetrahedron = 1, we may imagine a slip of paper, whose
+width is √3/2, attached to the front facet of the
+Tetrahedron, and wrapped round towards the right; and the upper edge
+of this slip will plainly be the locus of the vertices. This slip
+may be conveniently regarded as divided into equilateral Triangles,
+placed base-downwards and base-upwards alternately, and it is evident
+that these Triangles will successively cover the facets of the
+Tetrahedron, in the order 'front, right side, base, left side, front,
+&c.'; and its upper edge, made up of the bases of the inverted
+constituent Triangles, will plainly run as follows. Calling the
+successive Triangles, after the first (which occupies the front facet
+of the Tetrahedron), 'α' (base-up), 'β' (base-down),
+'γ' (base-up), 'δ' (base-down), 'ε'
+(base-up), and so on, the locus consists of the bases of α,
+γ, &c. Now 'α' will occupy the right facet, its
+base coinciding with the back-edge of the Tetrahedron; 'β'
+will occupy the base of the Tetrahedron, its base coinciding with
+the front-edge; 'γ' will occupy the left facet, its base
+coinciding with the back-edge; and so on. Hence the locus runs down the
+back-edge; up again; and so on. Which answers Question (1).
+
+Q.E.F.
+
+We may therefore, in answering the other three questions, consider the
+slip before it is folded, and calculate the positions of the
+vertices along its upper edge: and the problems thus become
+'plane' ones.
+
+(2) Gives us a right-angled Triangle, whose left-hand base-angle is
+15°, and whose altitude is √3/2. We must calculate
+its base, and then, deducting half the base of the initial Triangle (i.
+e. deducting 1/2), we shall get the distance, measured
+along the upper edge of the slip, from the vertex of the initial
+Triangle to the vertex of the given Triangle; and from that we can
+calculate how many times we must go down and up the back-edge to
+reach it. Call the base of this right-angled Triangle 'x.' Then
+√3/2 ÷ x = tan 15°.
+
+Now call tan 15° 't'; then 2t/((1 - t²)) = tan 30° = 1/√3;
+
+∴ 1 - t² = 2√3·t; t² + 2√3·t - 1 = 0;
+
+∴ t = (-2√3 ± 4)/2 = (rejecting negative value) 2 - √3.
+
+∴ x = √3/(2 (2 - √3)) = √3/2 (2 + √3) = √3 + 3/2.
+
+Deducting 1/2, we get (√3 + 1) as the required
+distance.
+
+Now √3 = 1.7 &c.; ∴ distance = 2.7 &c.
+
+Hence we must go down back-edge, up again, and then about
+0.7 down again. This answers question (2).
+
+(3) We need to go down the back-edge, and up again; i.e. we must use
+up the upward bases of 'α' and 'γ'. Hence the base
+of the required right-angled Triangle is 2 1/2. Hence the
+required left-hand base-angle is
+
+	tan ⁻¹(√3/2 ÷ 5/2); i.e. tan ⁻¹√3/5.
+
+Hence, for the required base-angle, we have sin/cos = √3/5;
+
+	∴ sin/√3 = cos/5 = 1/√(28); ∴ sin = √(3/28) = √(84)/28,
+	= (rather over 9)/28; (79·!)/((41·28 etc.!)/(0·32 etc.))
+
+	Now (by mem. tech.) sin ⁻¹.3 = 17.45 etc.°.
+	sin ⁻¹.4 = 23.57 etc.°.
+
+and the required angle is about 1/5 of the way from one to
+the other. But the difference is almost exactly 6°. Hence we must add,
+to the lesser, about 1 1/5 degrees, or 1.20°. And
+the total will be about 18.65°.
+
+(4) Here the right-angled Triangle has, for its base, 3 1/2.
+
+∴ the required base-angle has, for its tangent,
+
+	(√3/2 ÷ 7/2); i.e. √3/7;
+
+∴ sin/√3 = cos/7 = 1/√(52); ∴ sin = √(3/52) = nearly √(1/17),
+
+= nearly √(17)/17. Now √(17) = 4.12 etc. ∴ sin = 0.24 etc.
+
+Now sin ⁻¹.2 = 11.53 &c°.; and we must go about
+half-way to the next angle, namely 17.45 &c°. The difference
+is about 6°; ∴ we must add about 3°. Hence the answer is
+about 14.53°.
+
+Solution 71
+
+Let ABC be the given Triangle, and P the given Point.
+
+[Figure 63]
+
+Bisect the sides of ABC at D, E, F; and join these
+Points.
+
+First, let P be within the Triangle DEF.
+
+Draw HG parallel to BC, so that its distance from BC may
+be double the distance of P from BC; join GP, HP, and
+produce them to meet BC in L, M. From L draw LK
+parallel to AC; join KP, and produce it to meet AC at
+N: join MN.
+
+Because HG is parallel to LM,
+
+∴ GP = PL, and HP = PM;
+
+∵ KL is parallel to GN, and that LP = PG,
+
+∴ KP = PN; ∴ MN is parallel to HK.
+
+Now the Triangles PGH, PLM, are equal in all respects;
+
+∴ GH = LM. Similarly KL = GN, and MN = HK.
+
+If P lies on FE, HG and LM vanish, and the Hexagon
+becomes a Parallelogram.
+
+If P lies at D, the Hexagon becomes the line BC.
+
+If P lies outside the Triangle DEF, the Problem is insoluble.
+
+Q.E.F.
+
+Solution 72
+
+We know that, if a bag contained 3 counters, 2 being black and one
+white, the chance of drawing a black one would be 2/3; and
+that any other state of things would not give this chance.
+
+Now the chances, that the given bag contains (α) BB,
+(β) BW, (γ) WW, are respectively 1/4, 1/2, 1/4.
+
+Add a black counter.
+
+Then the chances, that it contains (α) BBB, (β) BWB,
+(γ) WWB, are, as before, 1/4, 1/2,
+1/4.
+
+Hence the chance, of now drawing a black one,
+
+	= 1/4.1 + 1/2 · 2/3 + 1/4 · 1/3 = 2/3.
+
+Hence the bag now contains BBW (since any other state of
+things would not give this chance).
+
+Hence, before the black counter was added, it contained BW, i.e.
+one black counter and one white.
+
+Q.E.F.
+
+THE END.

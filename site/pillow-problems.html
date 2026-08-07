@@ -1,0 +1,2627 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Pillow Problems &mdash; Lewis Carroll</title>
+	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
+	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
+<style>
+html {
+  max-width: 70ch;
+  padding: 3em 1em;
+  margin: auto;
+  line-height: 1.75;
+  font-size: 1.25em;
+}
+
+body {
+	font: large/1.556 "Libertine", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 3em 0 1em;
+	font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+}
+
+h1 {
+  margin-top: 1em;
+  text-align: center;
+}
+
+h4 {
+  margin: 2em 0 1em;
+  font-style: italic;
+  font-weight: 600;
+}
+
+p,ul,ol {
+  margin-bottom: 2em;
+  color: #1d1d1d;
+  font-family: Georgia, "Palatino Linotype", "Book Antiqua", serif;
+}
+
+blockquote {
+  margin: 1.5em 2em;
+  padding-left: 1em;
+  border-left: 3px solid #ccc;
+  font-style: italic;
+}
+
+blockquote p {
+  margin-bottom: 1em;
+}
+
+pre.outline {
+  font-family: Georgia, "Palatino Linotype", "Book Antiqua", serif;
+  white-space: pre-wrap;
+  line-height: 1.6;
+  margin-bottom: 2em;
+  color: #1d1d1d;
+}
+
+figure {
+  margin: 2.5em auto;
+  text-align: center;
+}
+
+figure + figure {
+  margin-top: 1em;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+  background: #fff;
+}
+
+table.plates {
+  width: 100%;
+  margin: 2.5em 0;
+  border-collapse: collapse;
+  font-family: Georgia, "Palatino Linotype", "Book Antiqua", serif;
+  line-height: 1.5;
+}
+
+table.plates td {
+  padding: 0.4em 0.8em;
+  vertical-align: middle;
+  border-bottom: 1px solid #e6e2da;
+}
+
+table.plates tr:last-child td {
+  border-bottom: none;
+}
+
+table.plates figure,
+table.plates figure + figure {
+  margin: 0.4em auto;
+}
+
+table.plates figcaption {
+  display: none;
+}
+
+figcaption {
+  margin-top: 0.6em;
+  font-family: Georgia, "Palatino Linotype", "Book Antiqua", serif;
+  font-size: 0.8em;
+  line-height: 1.5;
+  color: #4a4a4a;
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  font-style: italic;
+  margin-top: -1em;
+  margin-bottom: 3em;
+}
+
+.toc-book {
+  font-weight: bold;
+  margin-top: 1em;
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+}
+
+.toc-list {
+  list-style: none;
+  padding-left: 1.5em;
+}
+
+.toc-list li {
+  margin-bottom: 0.3em;
+}
+</style>
+</head>
+
+<body>
+	<center>
+	<h1>Pillow Problems</h1>
+	<h3>Seventy-two problems solved in the head, in the dark</h3>
+	<h3>by Lewis Carroll</h3>
+	<p class="center">
+	<s>1893</s> 2026
+	</p>
+	</center>
+
+	<hr>
+	<p><i>This is an AI modernization of Pillow Problems into contemporary English. The original is available from <a href="https://www.gutenberg.org/ebooks/79080">Project Gutenberg</a>.</i></p>
+
+	<hr>
+<h2 id="contents">Contents</h2>
+<p><a href="#preface-to-the-fourth-edition">Preface to the Fourth Edition</a></p>
+<p><a href="#preface-to-the-second-edition">Preface to the Second Edition</a></p>
+<p><a href="#introduction">Introduction</a></p>
+<p><a href="#subjects-classified">Subjects Classified</a></p>
+<p><a href="#chapter-i-questions">Chapter I: Questions</a></p>
+<p><a href="#chapter-ii-answers">Chapter II: Answers</a></p>
+<p><a href="#chapter-iii-solutions">Chapter III: Solutions</a></p>
+
+<hr>
+<h2 id="preface-to-the-fourth-edition">Preface to the Fourth Edition</h2>
+<figure id="fig-front">
+<img src="images/pillow-problems/front.jpg" alt="Frontispiece" width="500" height="613" loading="lazy">
+</figure>
+<p>I take this opportunity of explaining why it is that, as stated in the note on page xix, I have used the symbols ⫙ and ⌓ to stand for the words &quot;sine&quot; and &quot;cosine&quot;.</p>
+<p>Using some symbol or other needs, I suppose, no more justification than using + and − for &quot;plus&quot; and &quot;minus&quot;.</p>
+<p>These particular ones come from the old theory of Trigonometry, in which sines, cosines and the rest were actual lines.</p>
+<figure id="fig-1">
+<img src="images/pillow-problems/fig1.jpg" alt="Figure 1" width="200" height="155" loading="lazy">
+</figure>
+<p>In this diagram, if OP is taken as the unit of length, then PN is the sine of the angle NOP and ON is its cosine.</p>
+<p>In each of my two symbols I have kept the semicircle. In the symbol for sine I have simply moved PN into the middle; and in the symbol for cosine I have lengthened ON, carrying it a little beyond the curve so as to avoid confusion with the existing symbol for &quot;semicircle&quot;.</p>
+<p>I also take this opportunity of adding a sort of corollary, thought out lately, to the solution of Problem 59.</p>
+<p>If a, b, c are given lengths, then for the Tetrahedron to be possible at all they must meet certain conditions:</p>
+<p>(1) They have to form the sides of a Triangle, so any two of them must be greater than the third.</p>
+<p>(2) The three angles of that Triangle have to form a solid angle, so any two of those angles must together be greater than the third; hence any two of them must together be greater than 90°; hence any one of them must be less than 90°; hence the cosine of any one of them must be greater than 0 — that is, b² + c² − a² must be greater than 0, and so on. So a, b, c must be such that the squares of any two of them are together greater than the square of the third.</p>
+<p>For example, the lengths 2, 3, 4 would not do, since although they meet the first condition, 2 + 3 being greater than 4, they fail the second: 2² + 3² is not greater than 4².</p>
+<p>C. L. D.</p>
+<p>Christ Church, Oxford.
+March, 1895.</p>
+<h2 id="preface-to-the-second-edition">Preface to the Second Edition</h2>
+<p>The principal changes made in this Second Edition of Pillow-Problems are these.</p>
+<p>(1) After the numeral that precedes each Question, Answer or Solution, references are given to the pages where the corresponding matter may be found.</p>
+<p>(2) Some of the Solutions have been rearranged, and duplicate diagrams inserted, so that every stretch of text has its illustrative diagram visible alongside it, and the reader is spared the trouble — and the strain on his temper — of turning a leaf backwards and forwards while looking from one to the other.</p>
+<p>(3) In the title of the book, the words &quot;sleepless nights&quot; have been replaced by &quot;wakeful hours&quot;.</p>
+<p>This last change has been made to set at rest the anxiety of kind friends who have written to me expressing their sympathy in my broken-down state of health, believing that I suffer from chronic insomnia, and that it is as a remedy for that exhausting complaint that I have recommended mathematical calculation.</p>
+<p>The title was not, I fear, wisely chosen, and it certainly was liable to suggest a meaning I never intended: namely that my nights are very often wholly sleepless. That is by no means the case. I have never suffered from insomnia; and the over-wakeful hours I have had to spend at night have often been simply the result of the over-sleepy hours I had spent during the preceding evening! Nor have I suggested mathematical calculation as a remedy for wakefulness, but as a remedy for the harassing thoughts that are apt to invade a wholly-unoccupied mind. I hope the new title will express my meaning more clearly.</p>
+<p>To put the matter logically: the dilemma my friends suppose me to be in has for its two horns the enduring of a sleepless night, and the taking of some recipe for inducing sleep. Now so far as my experience goes, no such recipe has any effect unless you are sleepy already — and mathematical calculation would be more likely to delay the coming of sleep than to hasten it.</p>
+<p>The real dilemma I have had to face is this. Given that the brain is in so wakeful a condition that, do what I will, I am certain to stay awake for the next hour or so, I must choose between two courses: either to submit to the fruitless self-torture of going over some worrying topic again and again, or else to set myself some topic absorbing enough to keep the worry at bay. A mathematical problem is, for me, such a topic; and it is a benefit even if it lengthens the wakeful period a little. I believe an hour of calculation is much better for me than half an hour of worry.</p>
+<p>The reader will, I think, be interested to see a curiously illogical solution that has been proposed, by a correspondent of the Educational Times, for Problem 61: &quot;Prove that, if any 3 Numbers be taken, which cannot be arranged in A.P., and whose sum is a multiple of 3, the sum of their squares is also the sum of another set of 3 squares, the 2 sets having no common term.&quot;</p>
+<p>The proposed solution runs as follows.</p>
+<p>&quot;Let 3m, 21m, 30m be the three Numbers; then</p>
+<pre class="outline">	3m + 21m + 30m = 3 × 18m.</pre>
+<p>Also (3m)² + (21m)² + (30m)² = (6m)² + (15m)² + (33m)²</p>
+<p>= (5m)² + (13m)² + (34m)² = (10m)² + (17m)² + (31m)²</p>
+<p>= (14m)² + (23m)² + (25m)².&quot;</p>
+<p>Now if we write &quot;α&quot; for the property &quot;which cannot be arranged in A.P., and whose sum is a multiple of 3&quot;, and &quot;β&quot; for the property &quot;the sum of whose squares is also the sum of another set of 3 squares, the 2 sets having no common term&quot;, we see that all this writer has managed to prove is that certain selected Numbers which have property α also have property β. But that does not prove my Theorem, which is that any Numbers whatever that have property α also have property β. If his argument were set out as a syllogism, it would be found to assume a quite untenable Major Premiss: &quot;that which is true of certain selected Numbers which have property α is true of any Numbers whatever which have property α.&quot;</p>
+<p>C. L. D.</p>
+<p>Christ Church, Oxford.
+September, 1893.</p>
+<h2 id="introduction">Introduction</h2>
+<p>Nearly all of the following seventy-two Problems are genuine &quot;Pillow-Problems&quot;, having been solved in the head while lying awake at night. (I have put the exact dates of some of them on record.) No. 37 and one or two others belong to the daylight, having been solved on a solitary walk; but every one of them was worked out to the very end before any diagram was drawn or a single word of the solution written down. I generally wrote down the answer first of all, and afterwards the question and its solution. In No. 70, for instance, the very first words I wrote down were these: &quot;(1) down back-edge; up again; down again; and so on; (2) about 0.7 of the way down the back-edge; (3) about 18° 18′; (4) about 14°.&quot; Those answers are not quite correct; but at least they are genuine, being the results of mental work only. &quot;A poor thing, Sir, but mine own!&quot;</p>
+<p>My motive for publishing these Problems, with the solutions I worked out in my head, is most certainly not any wish to display powers of mental calculation. Mine, I feel sure, are nothing out of the way, and I have no doubt there are many mathematicians who could produce much shorter and better solutions mentally. It is not for such people that I intend my little book, but rather for the much larger class of ordinary mathematicians who have perhaps never tried this resource when they needed something to occupy the mind, and who will, I hope, be encouraged by seeing what can be done after a little practice by a man of average mathematical powers, and will try the experiment for themselves, and find in it as much benefit and comfort as I have.</p>
+<p>The word &quot;comfort&quot; may perhaps sound out of place in connection with so entirely intellectual an occupation; but I think it will come home to many who know what it is to be haunted by some worrying subject of thought that no effort of will can banish. Again and again I have said to myself on lying down at night, after a day embittered by some vexatious business, &quot;I will not think of it any more! I have gone through it all, thoroughly. It can do no good whatever to go through it again. I will think of something else!&quot; And ten minutes later I have found myself once more in the very thick of the miserable business, torturing myself to no purpose with all the old troubles.</p>
+<p>Now it is not possible — and here, I think, all psychologists will agree with me — to carry out by any effort of will the resolution &quot;I will not think of such-and-such a thing.&quot; (Witness the common trick played on a child, of saying &quot;I&#x27;ll give you a penny if you&#x27;ll stand in that corner for five minutes and not once think of strawberry-jam.&quot; No human child ever yet won that tempting wager.) But it is possible — as I am most thankful to know — to carry out the resolution &quot;I will think of such-and-such a thing.&quot; Once fasten the attention on a subject so chosen, and you will find that the worrying subject you want to be rid of is practically annulled. It may come back from time to time, just looking in at the door, so to speak; but it will find itself so coldly received, and get so little attention paid to it, that after a while it will cease to be any worry at all.</p>
+<p>Perhaps I may venture for a moment to use a more serious tone, and to point out that there are mental troubles much worse than mere worry, for which an absorbing subject of thought may serve as a remedy. There are sceptical thoughts, which seem for the moment to uproot the firmest faith; there are blasphemous thoughts, which dart unbidden into the most reverent souls; there are unholy thoughts, which torture, with their hateful presence, the fancy that would fain be pure. Against all of these, some real mental work is a most helpful ally. That &quot;unclean spirit&quot; of the parable, who brought back with him seven others more wicked than himself, only did so because he found the chamber &quot;swept and garnished&quot; and its owner sitting with folded hands. Had he found it all alive with the busy hum of active work, there would have been scant welcome for him and his seven.</p>
+<p>My purpose — to give this encouragement to others — would not have been so well served had I allowed myself, in writing out my solutions, to improve on the work done in my head. It seemed to me far more important to set down what had actually been done in the head than to supply shorter or neater solutions, which would perhaps be much harder to manage without paper. A long multiplication, for example — say the multiplying together of two numbers of 7 digits — is no doubt best done on paper by beginning at the units end, writing out 7 rows of figures, and adding up the columns in the usual way. But it would be very difficult indeed, and to me quite impossible, to do such a thing in the head. The only chance seems to be to begin with the millions and get them properly grouped, then the hundred-thousands, adding the result to the previous one, and so on. Very often it seems to happen that the easiest mental process looks decidedly long and roundabout once it is committed to paper.</p>
+<p>When I first tried this plan, easy geometrical problems were all I could manage; and even in those I had to pause from time to time in order to redraw the diagram, which would persist in getting rubbed out. Algebraic problems I avoided at first, because of the provoking fact that if one single coefficient escaped the memory there was nothing for it but to begin the whole calculation again. But I soon got over both difficulties, and found I could remember fairly large numerical coefficients, and could hold fairly complex diagrams in the mind&#x27;s eye — even to the point of finding my way about from one part of a diagram to another. The lettering of the diagrams proved such a troublesome thing to keep in the memory that I almost gave it up, and learned to recognise Points by their position alone. In my manuscript of No. 53 I find this memorandum:</p>
+<p>&quot;I had never set myself this Problem before the week ending Ap. 6, 1889. I tried it, two or three nights, lying awake; and finally worked it out on the night of Ap. 6/7. All the conclusions were worked out mentally before any use was made of pen and paper. While working it, I did not give names to any Points, except A, B, C, and P: I merely thought of them by their positions (e.g. &#x27;the foot of the perpendicular from P on BC&#x27;).&quot;</p>
+<p>If any of my readers should feel inclined to reproach me with having worked too steadily in the region of the commonplace, and with never having ventured off the beaten track, I can point proudly to my one Problem in &quot;Transcendental Probabilities&quot; — a subject in which, I believe, very little has yet been done by even the most enterprising of mathematical explorers. To the casual reader it may seem abnormal, and even paradoxical; but I would have such a reader ask himself candidly the question &quot;Is not Life itself a Paradox?&quot;</p>
+<p>To give the Reader some idea of how these Problems are put together, I will give the biography of No. 63. The history of one is, to a great extent, the history of all.</p>
+<p>It was begun during the night of Sept. 3/4, 1890, and finished during the following night. The idea had occurred to me a short time before that something interesting might be found in the subject of what I may call &quot;partially-regular&quot; Solids. The regular Solids are provokingly few in number, and it would be hopeless to find any question connected with them that has not already been exhaustively analysed; some of the partially-regular ones too (rhomboidal crystals, for instance) have probably had the same treatment. But there seemed to be room for inventing other such Solids.</p>
+<p>Accordingly I devised a Solid enclosed above and below by 2 equal and parallel Squares, their centres in the same vertical line, and the upper one twisted round so that its sides ran parallel to the diagonals of the lower Square. Then I imagined the upper one raised until its corners formed the vertices of 4 equilateral Triangles whose bases were the sides of the lower one. The Solid so obtained was plainly enclosed by 2 Squares and 8 equilateral Triangles, and the Problem I set myself was to find its Volume.</p>
+<p>There was no great difficulty in proving that the distance between the 2 Squares, taking each side as equal to 2, was 2^(3/4). But when I looked about for some trigonometrical method of calculating the Volume, despair soon seized on me. A calculable Prism could be cut out of the middle of the Solid, I saw; but the outlying projections completely baffled me. After a while the happy idea occurred to me of trying algebraic geometry, and treating each facet as the base of a Pyramid with its vertex at the centre of the Solid, which I decided to take as the Origin. I saw at once that I could calculate the coordinates of all the vertical Points, from those get equations to the Planes containing the facets, and from those calculate their distances from the Origin, which would be the altitudes of the Pyramids. It was evident too that one sample Pyramid would do. I worked out a value for the Volume that first night; but the thing got into a tangle, and I felt pretty sure I had it wrong.</p>
+<p>The next night I began again and worked it all through from the beginning. In the morning the answer was clear in my memory, and I wrote it down at once, and did not write out the Problem and its solution until later in the day, when I was well pleased to find the written proof confirm the result I had reached in the hours of darkness.</p>
+<p>It is not, perhaps, much to be wondered at that when these Problems came to be rewritten and arranged for publication, a good many mistakes were discovered. Some were so bad as quite to spoil the solutions they occurred in, and those Problems I have left out altogether. The others I have corrected in the solutions as given in Chapter III; but so that I may not be credited with an accuracy as a computer which I am well aware I do not possess, I append a list of them here.</p>
+<p>In No. 7, in the denominator &quot;2 sin A&quot;, I forgot the &quot;2&quot;.</p>
+<p>In No. 10, I failed to notice that the 3 coins might also be a half-crown and 2 shillings.</p>
+<p>In No. 13, in the last line but one, I put &quot;2bc·ca&quot; instead of &quot;4bc·ca&quot;.</p>
+<p>In No. 32, I brought out the arithmetical value as 358520 instead of 358550.</p>
+<p>In No. 38, I got the decimal wrong, making it 0.476 instead of 0.478, and so brought out the answer as 0.042 instead of 0.044.</p>
+<p>In No. 44, I said the denominator would be of the form (10ⁿ − 1)·10^m. This last factor is superfluous: that is, m = 0.</p>
+<p>In No. 50, I made a mistake near the end, bringing out 41/108 instead of 50/108.</p>
+<p>In No. 55, I put &quot;tan&quot; for &quot;sin&quot;.</p>
+<p>In No. 57, in the last paragraph, I replaced the denominator &quot;a sin B sin C&quot; by what I imagined to be its equivalent, &quot;2m&quot;. Apparently I was under the delusion that &quot;a sin B sin C&quot; was the same thing as &quot;sin A·bc&quot;!</p>
+<p>In No. 70, section (3), I forgot to add in the 0.45, thus making the answer half a degree wrong; and in section (4) I forgot to add in the 0.53, thus again making the answer half a degree wrong.</p>
+<p>Let me in conclusion acknowledge, with gratitude, the valuable help I have had from Mr. F. G. Brabant, M.A., of Corpus Christi College, Oxford, who has gone through my proofs most patiently and carefully, working out each result independently, and has so detected many mistakes that had escaped my notice. He has also supplied, for No. 59, a much neater answer than mine: abc/3·√(cos A cos B cos C).</p>
+<p>Other mistakes may perchance have eluded us both, and await the penetrating eye of some critical reader — to whom the joy of discovery, and the intellectual superiority he will thereby recognise in himself over the author of this little book, will, I hope, repay to some extent the time and trouble its perusal may have cost him.</p>
+<p>C. L. D.</p>
+<p>Christ Church, Oxford.
+May, 1893.</p>
+<p>FOOTNOTES:</p>
+<p>[1] In the trigonometrical Problems, I have used the symbols ⫙ and ⌓ to stand for the words &quot;sine&quot; and &quot;cosine&quot;.</p>
+<h2 id="subjects-classified">Subjects Classified</h2>
+<p>Arithmetic. No. 31.</p>
+<p>Algebra:
+Equational Problems. Nos. 8, 25, 39, 52, 68.
+Series. Nos. 21, 32.
+Indeterminate Equations. No. 47.
+Properties of Numbers. Nos. 1, 14, 29, 44, 61.
+Chances. Nos. 5, 10, 16, 19, 23, 27, 38, 41, 45, 50, 58, 66.</p>
+<p>Pure Geometry, Plane. Nos. 2, 3, 9, 15, 17, 18, 20, 24, 26, 30, 34, 35, 36, 40, 46, 51, 57, 62, 64, 71.</p>
+<p>Trigonometry:
+Plane. Nos. 4, 6, 7, 11, 12, 13, 18, 22, 28, 37, 42, 43, 48, 54, 55, 56, 57, 60, 65, 69.
+Solid. Nos. 49, 59, 63, 70.</p>
+<p>Algebraical Geometry:
+Plane. No. 53.
+Solid. No. 67.</p>
+<p>Differential Calculus:
+Maxima and Minima. No. 33.</p>
+<p>Transcendental Probabilities. No. 72.</p>
+<h2 id="chapter-i-questions">Chapter I: Questions</h2>
+<p>[Modern note: each Question, Answer and Solution carries the same number, so Answer 5 and Solution 5 belong to Question 5. Carroll&#x27;s original printed the page numbers here as well; in an edition with no pages, the number does the work.]</p>
+<h4>Problem 1</h4>
+<p>Find a general formula for two squares whose sum = 2.</p>
+<p>[24/3/84]</p>
+<h4>Problem 2</h4>
+<p>In a given Triangle, to place a line parallel to the base such that the portions of the sides intercepted between it and the base are together equal to the base.</p>
+<h4>Problem 3</h4>
+<p>If the sides of a Tetragon pass through the vertices of a Parallelogram, and three of them are bisected at those vertices, prove that the fourth is bisected there too.</p>
+<h4>Problem 4</h4>
+<p>In a given acute-angled Triangle, inscribe a Triangle whose sides make equal angles, at each of the vertices, with the sides of the given Triangle.</p>
+<p>[19/4/76]</p>
+<h4>Problem 5</h4>
+<p>A bag contains one counter, known to be either white or black. A white counter is put in, the bag shaken, and a counter drawn out, which proves to be white. What is now the chance of drawing a white counter?</p>
+<p>[8/9/87]</p>
+<h4>Problem 6</h4>
+<p>Given the lengths of the lines drawn from the vertices of a Triangle to the middle points of the opposite sides, find its sides and angles.</p>
+<h4>Problem 7</h4>
+<p>Given 2 adjacent sides of a Tetragon and the angle between them, and given that the angles at the other ends of those 2 sides are right angles, find (1) the remaining sides, (2) the area.</p>
+<p>[4 or 5/89]</p>
+<h4>Problem 8</h4>
+<p>Some men sat in a circle, so that each had 2 neighbours, and each had a certain number of shillings. The first had 1 shilling more than the second, who had 1 shilling more than the third, and so on. The first gave 1 shilling to the second, who gave 2 to the third, and so on, each giving 1 shilling more than he received, for as long as they could. There were then 2 neighbours, one of whom had 4 times as much as the other. How many men were there? And how much had the poorest man to begin with?</p>
+<p>[3/89]</p>
+<h4>Problem 9</h4>
+<p>Given two Lines meeting at a Point, and a Point lying inside the angle between them, draw from the given Point two lines at right angles to each other, forming two equal Triangles with the given Lines and with the line joining their intersection to the given Point.</p>
+<p>[11/76]</p>
+<h4>Problem 10</h4>
+<p>A triangular billiard-table has 3 pockets, one in each corner. One of them will hold only one ball; each of the others will hold two. There are 3 balls on the table, each with a single coin inside it. The table is tilted up so that the balls run into one corner, but it is not known which. The &quot;expectation&quot; as to the contents of the pocket is half a crown. What are the coins?</p>
+<p>[8/90]</p>
+<h4>Problem 11</h4>
+<p>A Triangle ABC has another, A′B′C′, inscribed in it, so that ∠ BA′C′ = ∠ CB′A′ = ∠ AC′B′ = θ, which makes it similar to the first Triangle. Find the ratio between corresponding sides. Then solve for θ = 90°.</p>
+<figure id="fig-2">
+<img src="images/pillow-problems/fig2.jpg" alt="Figure 2" width="300" height="233" loading="lazy">
+</figure>
+<p>The Triangles can be proved similar like this:</p>
+<pre class="outline">	∠ C′A′B′ + ∠ B′A′C = supp. of θ,
+	∠ B′A′C + ∠ A′CB′ = supp. of θ;
+	∴ these pairs are equal; ∴ ∠ C′A′B′ = C.</pre>
+<p>Hence ∠ A′B′C′ = A, and ∠ B′C′A′ = B.</p>
+<p>Let C′A′ = ka; ∴ A′B′ = kb, and B′C′ = kc. We have to find k.</p>
+<p>[31/3/82]</p>
+<h4>Problem 12</h4>
+<p>Given the semi-perimeter and the area of a Triangle, and also the volume of the cuboid whose edges are equal to the sides of the Triangle, find the sum of the squares of its sides.</p>
+<p>[23/1/91]</p>
+<h4>Problem 13</h4>
+<p>Given the lengths of the radii of two intersecting Circles, and the distance between their centres, find the area of the Tetragon formed by the tangents at the points of intersection.</p>
+<p>[3/89]</p>
+<h4>Problem 14</h4>
+<p>Prove that 3 times the sum of 3 squares is also the sum of 4 squares.</p>
+<p>[2/12/81]</p>
+<h4>Problem 15</h4>
+<p>If a Figure is such that the opposite angles of every inscribed Tetragon are supplementary, the Figure is a Circle.</p>
+<p>[3/91]</p>
+<h4>Problem 16</h4>
+<p>There are two bags. One contains a counter, known to be either white or black; the other contains 1 white and 2 black. A white is put into the first, the bag shaken, and a counter drawn out, which proves to be white. Which course now gives the better chance of drawing a white — to draw from one of the two bags without knowing which it is, or to empty one bag into the other and then draw?</p>
+<p>[10/87]</p>
+<h4>Problem 17</h4>
+<p>In a given Triangle, place a line parallel to the base such that if lines are drawn from its ends, parallel to the sides and stopping at the base, they are together equal to the first line.</p>
+<p>[3/89]</p>
+<h4>Problem 18</h4>
+<p>Find a Point in the base of a given Triangle such that if perpendiculars are dropped from it onto the sides, the line joining their far ends is parallel to the base. (1) Trigonometrically. (2) Geometrically.</p>
+<p>[11/89]</p>
+<h4>Problem 19</h4>
+<p>There are 3 bags: one containing a white counter and a black one, another two white and a black, and the third 3 white and a black. It is not known in what order the bags are placed. A white counter is drawn from one of them, and a black from another. What is the chance of drawing a white counter from the remaining bag?</p>
+<h4>Problem 20</h4>
+<p>In the base of a given Triangle, find a Point such that if two lines are drawn from it, stopping at the sides, one perpendicular to the base and one to the left-hand side, they are equal.</p>
+<p>[5/88]</p>
+<h4>Problem 21</h4>
+<h4>Sum the series</h4>
+<pre class="outline">	1·3·5 + 2·4·6 + etc.</pre>
+<p>(1) to n terms, (2) to 100 terms.</p>
+<p>[7/4/89]</p>
+<h4>Problem 22</h4>
+<p>Given the 3 altitudes of a Triangle, find its (1) sides, (2) angles, (3) area.</p>
+<p>[4/6/89]</p>
+<h4>Problem 23</h4>
+<p>A bag contains 2 counters, each of which is known to be black or white. 2 white and a black are put in, and 2 white and a black drawn out. Then a white is put in, and a white drawn out. What is the chance that it now contains 2 white?</p>
+<p>[25/9/87]</p>
+<h4>Problem 24</h4>
+<p>If the lines AD, BE, CF are drawn from the vertices of a triangle ABC, intersecting at O, find the ratio DO/DA in terms of the two ratios EO/EB and FO/FC.</p>
+<figure id="fig-3">
+<img src="images/pillow-problems/fig3.jpg" alt="Figure 3" width="300" height="236" loading="lazy">
+</figure>
+<p>[5/86]</p>
+<h4>Problem 25</h4>
+<p>Let ε, α and λ stand for proper fractions; and suppose that in a certain hospital ε of the patients have lost an eye, α an arm, and λ a leg. What is the least possible number who have lost all three?</p>
+<p>[7/2/76]</p>
+<h4>Problem 26</h4>
+<p>Within a given Triangle, place a similar Triangle whose area has a given ratio to its area, less than 1; whose sides are parallel to its sides; and whose vertices are all the same distance from its vertices.</p>
+<p>[4/89]</p>
+<h4>Problem 27</h4>
+<p>There are 3 bags, each containing 6 counters. One contains 5 white and one black; another 4 white and 2 black; the third 3 white and 3 black. From two of the bags — it is not known which — 2 counters are drawn, and prove to be black and white. What is the chance of drawing a white counter from the remaining bag?</p>
+<p>[4/3/80]</p>
+<h4>Problem 28</h4>
+<p>If the sides of a given Triangle, taken in order round it, are divided in extreme and mean ratio, and the Points joined, find the ratio the area of the Triangle so formed bears to the area of the given Triangle.</p>
+<p>[12/78]</p>
+<h4>Problem 29</h4>
+<p>Prove that the sum of 2 different squares, multiplied by the sum of 2 different squares, gives the sum of 2 squares in 2 different ways.</p>
+<p>[3/12/81]</p>
+<h4>Problem 30</h4>
+<p>In a given Triangle, to place a line parallel to the base such that if lines are drawn from its ends to the base, parallel to the sides, they are together double the inscribed line.</p>
+<p>[15/3/89]</p>
+<h4>Problem 31</h4>
+<p>On July 1, at 8 a.m. by my watch, it was 8h. 4m. by my clock. I took the watch to Greenwich, and when it said &quot;noon&quot; the true time was 12h. 5m. That evening, when the watch said 6h., the clock said 5h. 59m.</p>
+<p>On July 30, at 9 a.m. by my watch, it was 8h. 57m. by my clock. At Greenwich, when the watch said 12h. 10m., the true time was 12h. 5m. That evening, when the watch said 7h., the clock said 6h. 58m.</p>
+<p>My watch is only wound up for each journey, and goes uniformly through any one day; the clock is always going, and goes uniformly.</p>
+<p>How am I to know when it is true noon on July 31?</p>
+<p>[14/3/89]</p>
+<h4>Problem 32</h4>
+<p>Sum the series 1·5 + 2·6 + etc., (1) to n terms, (2) to 100 terms.</p>
+<p>[7/4/89]</p>
+<h4>Problem 33</h4>
+<p>Inscribe in a given Circle the largest Tetragon having 2 parallel sides, one double the other.</p>
+<h4>Problem 34</h4>
+<p>From a given Point, draw 2 Lines: one to the centre of a given Circle, and the other cutting off from it a Segment containing an angle equal to the angle between the Lines.</p>
+<p>[21/12/74]</p>
+<h4>Problem 35</h4>
+<p>With a given Triangle, describe a Circle cutting each side in two points, such that if radii are drawn perpendicular to the sides, they are divided by the sides in given ratios.</p>
+<p>[11/76]</p>
+<h4>Problem 36</h4>
+<p>In a given Triangle, draw a line from a Point on one side to a Point on the other, perpendicular to one of those sides, and equal to the sum of the portions of those sides intercepted between it and the base.</p>
+<p>[3/89]</p>
+<h4>Problem 37</h4>
+<p>Two given Circles intersect, so that their common chord subtends angles of 30° and 60° at their centres. What fraction of the smaller Circle lies within the larger?</p>
+<p>[12/91]</p>
+<h4>Problem 38</h4>
+<p>There are 3 bags, A, B and C. A contains 3 red counters; B, 2 red and one white; C, one red and 2 white. Two bags are taken at random and a counter drawn from each: both prove to be red. The counters are replaced and the experiment repeated with the same two bags: one proves to be red. What is the chance of the other being red?</p>
+<p>[3/76]</p>
+<h4>Problem 39</h4>
+<p>A and B begin, at 6 a.m. on the same day, to walk along a road in the same direction, B having a start of 14 miles, and each walking from 6 a.m. to 6 p.m. daily. A walks 10 miles at a uniform pace the first day, 9 the second, 8 the third, and so on; B walks 2 miles at a uniform pace the first day, 4 the second, 6 the third, and so on. When and where are they together?</p>
+<p>[16/3/78]</p>
+<h4>Problem 40</h4>
+<p>In a given Triangle whose base-angles are acute, draw two lines at right angles to the base, together equal to the line drawn from the vertex at right angles to the base, and such that</p>
+<p>(1) they are equidistant from the line drawn from the vertex;</p>
+<p>(2) they are equidistant from the ends of the base.</p>
+<p>[5/76]</p>
+<h4>Problem 41</h4>
+<p>My friend brings me a bag containing four counters, each of which is either black or white. He tells me to draw two, and both prove to be white. He then says &quot;I meant to tell you, before you began, that there was at least one white counter in the bag. However, you know it now, without my telling you. Draw again.&quot;</p>
+<p>(1) What is now my chance of drawing white?</p>
+<p>(2) What would it have been if he had not spoken?</p>
+<p>[9/87]</p>
+<h4>Problem 42</h4>
+<p>If the angles of a given Triangle are bisected, and lines are drawn through its vertices at right angles to the bisectors, so as to form a fresh Triangle, find the ratio of the area of this Triangle to the area of the given Triangle.</p>
+<p>[17/5/78]</p>
+<h4>Problem 43</h4>
+<p>From the ends of the base of a given Triangle, draw two lines that intersect, stop at the sides, and form an isosceles Triangle at the base and a Tetragon, equal to it, at the vertex.</p>
+<p>[2/82]</p>
+<h4>Problem 44</h4>
+<p>If a and b are two numbers prime to each other, a value can be found for n which will make (aⁿ − 1) a multiple of b.</p>
+<p>[18/3/81]</p>
+<h4>Problem 45</h4>
+<p>If an infinite number of rods are broken, find the chance that at least one is broken in the middle.</p>
+<p>[5/84]</p>
+<h4>Problem 46</h4>
+<p>In a given Triangle whose base is divided at a given Point, inscribe a Triangle having its angles equal to given angles, and having an assigned vertex at the given Point.</p>
+<p>[19/11/87]</p>
+<h4>Problem 47</h4>
+<h4>Solve the 2 Indeterminate Equations</h4>
+<pre class="outline">	x/y = x − z;
+	x/z = x − y;
+	} (1)
+	(2)</pre>
+<p>and find the limits, if any, between which the real values lie.</p>
+<p>[12/90]</p>
+<h4>Problem 48</h4>
+<p>If semicircles are described on the outside of the sides of a given Triangle, and their common tangents drawn, and the lengths of those tangents are α, β, γ, prove that</p>
+<pre class="outline">	(βγ/α + γα/β + αβ/γ)</pre>
+<p>is equal to the semiperimeter of the Triangle.</p>
+<p>[9/2/81]</p>
+<h4>Problem 49</h4>
+<p>If four equilateral Triangles are made the sides of a square Pyramid, find the ratio its volume bears to that of a Tetrahedron made of the same Triangles.</p>
+<p>[16/11/86]</p>
+<h4>Problem 50</h4>
+<p>There are 2 bags, H and K, each containing 2 counters, and it is known that each counter is either black or white. A white counter is added to bag H, the bag is shaken up, and one counter transferred, without being looked at, to bag K, where the process is repeated, a counter being transferred back to bag H. What is now the chance of drawing a white counter from bag H?</p>
+<h4>Problem 51</h4>
+<p>From a given Point in one side of a given Triangle, draw a line stopping at the other side, so that if lines are drawn from its ends at right angles to the base, their sum is equal to the first line.</p>
+<p>[12/81]</p>
+<h4>Problem 52</h4>
+<p>Five beggars sat down in a circle, and each piled up in front of him the pennies he had been given that day; and the five heaps were equal.</p>
+<p>Then spoke the eldest and wisest of them, unfolding as he spoke an empty sack.</p>
+<p>&quot;My friends, let me teach you a pretty little game! First, I name myself Number One, my left-hand neighbour Number Two, and so on to Number Five. I then pour into this sack the whole of my earnings for the day, and hand it on to the man sitting next but one on my left — that is, Number Three. His part in the game is to take out of it, and give to his two neighbours, as many pennies as their names come to (so he must give four to Number Four and two to Number Two); he must then put into the sack half as much as it held when he received it; and he must then hand it on just as I did, to the man sitting next but one on his left — who will of course be Number Five. He must go on in the same way, and hand it to Number Two, from whom the sack will find its way to Number Four, and so back to me. If any player cannot furnish out of his own heap the whole of what he has to put into the sack, he is at liberty to draw on any of the other heaps — except mine!&quot;</p>
+<p>The other beggars entered into the game with much enthusiasm; and in due time the sack came back to Number One, who put into it the two pennies he had received during the game, and carefully tied up its mouth with a string. Then, remarking &quot;it is a very pretty little game,&quot; he rose to his feet and hastily left the spot. The other four beggars gazed at each other with rueful faces. Not one of them had a penny left.</p>
+<p>How much had each at first?</p>
+<p>[16/2/89]</p>
+<h4>Problem 53</h4>
+<p>On a triangular billiard-table, a Point is given by its trilinear coordinates. A ball starting from that Point strikes the three sides and returns to its starting-point. Find, in terms of the trilinear coordinates and of the angles of the Triangle, the Point where the ball strikes the second side.</p>
+<p>[6/4/89]</p>
+<h4>Problem 54</h4>
+<p>Cut off from a given Triangle, by lines parallel to the sides, 3 Triangles, so that the remaining Hexagon is equilateral. Also find the lengths of its sides in terms of the sides of the given Triangle, and the ratios in which the sides of the given Triangle are divided.</p>
+<p>[18/4/86]</p>
+<h4>Problem 55</h4>
+<p>Given three cylindrical towers on a Plane, find a Point on the Plane from which they all look the same width.</p>
+<p>[20/12/74]</p>
+<h4>Problem 56</h4>
+<p>Given the 3 altitudes of a Triangle, construct it.</p>
+<p>[27/6/84]</p>
+<h4>Problem 57</h4>
+<p>In a given Triangle, describe three Squares whose bases lie along the sides of the Triangle and whose upper edges form a Triangle;</p>
+<p>(1) geometrically; (2) trigonometrically.</p>
+<p>[27/1/91]</p>
+<h4>Problem 58</h4>
+<p>Three Points are taken at random on an infinite Plane. Find the chance of their being the vertices of an obtuse-angled Triangle.</p>
+<p>[20/1/84]</p>
+<h4>Problem 59</h4>
+<p>Given a Tetrahedron having every edge equal to the opposite edge, so that its faces are all identically equal when looked at from the outside, find its volume in terms of its edges.</p>
+<p>[8/90]</p>
+<h4>Problem 60</h4>
+<p>Given a Triangle ABC whose base BC is divided at D in the ratio m to n, find the angles BAD and CAD.</p>
+<p>[21/3/90]</p>
+<h4>Problem 61</h4>
+<p>Prove that if any 3 Numbers are taken which cannot be arranged in A.P., and whose sum is a multiple of 3, the sum of their squares is also the sum of another set of 3 squares, the 2 sets having no common term.</p>
+<p>[1/12/81]</p>
+<h4>Problem 62</h4>
+<p>Given two Lines meeting at a Point, and a Point lying inside the angle between them, draw a line through the given Point forming the smallest possible Triangle with the given Lines.</p>
+<p>[12/76]</p>
+<h4>Problem 63</h4>
+<p>Given 2 equal Squares in different horizontal planes, with their centres in the same vertical line, so placed that the sides of each are parallel to the diagonals of the other, and so far apart that joining neighbouring vertices forms 8 equilateral Triangles, find the volume of the solid so enclosed.</p>
+<p>[3, 4/9/90]</p>
+<h4>Problem 64</h4>
+<p>Given a Triangle, and a Point inside it whose distance from one of the sides is less than its distance from either of the others, describe a Circle with the given Point as centre such that the lengths it cuts off on the sides are equal to the sides of a right-angled Triangle.</p>
+<p>[18/12/74]</p>
+<h4>Problem 65</h4>
+<p>How many shapes are there for Triangles all of whose angles divide 360° exactly?</p>
+<p>[5/89]</p>
+<h4>Problem 66</h4>
+<p>There are 2 counters in a bag, and all that was originally known of them was that each was either white or black. The experiment has been tried a certain number of times of drawing a counter, looking at it, and putting it back; it has been white every time; and as a result the chance of drawing white next time is α/(α + β). Now suppose the same experiment is repeated m times more, and it still comes out white every time. What would the chance of drawing white be then?</p>
+<p>[9/89]</p>
+<h4>Problem 67</h4>
+<p>A regular Tetrahedron is placed with one vertex downwards in a socket that exactly fits it, and is turned round its vertical axis through an angle of 120°, being raised only as much as is necessary, until it fits the socket again. Find the path traced by one of the turning vertices.</p>
+<p>[27/1/72]</p>
+<h4>Problem 68</h4>
+<p>Five friends agreed to form themselves into a Wine Company (Limited). They contributed equal amounts of wine, which had been bought at the same price. They then elected one of themselves to act as Treasurer, and another undertook to act as Salesman and to sell the wine at 10% over cost price.</p>
+<p>The first day the Salesman drank one bottle, sold some, and handed the takings over to the Treasurer.</p>
+<p>The second day he drank none, but pocketed the profit on one bottle sold, and handed the rest of the takings over to the Treasurer.</p>
+<p>That night the Treasurer visited the cellars and counted the remaining wine. &quot;It will fetch just £11,&quot; he muttered to himself as he left.</p>
+<p>The third day the Salesman drank one bottle, pocketed the profit on another, and handed the rest of the takings over to the Treasurer.</p>
+<p>The wine was now all gone. The Company held a meeting, and found to their chagrin that their profits — that is, the Treasurer&#x27;s takings, less the original value of the wine — cleared only sixpence a bottle on the whole stock. Those profits had come in three equal sums on the three days (that is, the Treasurer&#x27;s takings for the day, less the original value of the wine taken out during the day, came to the same amount every time); but of course only the Salesman knew that.</p>
+<p>(1) How much wine had they bought? (2) At what price?</p>
+<p>[28/2/89]</p>
+<h4>Problem 69</h4>
+<p>From each of the angles of a given Triangle ABC, taken in order round it, a certain proper fraction of the angle is cut off, the arithmetical values of the 3 fractions being k, l and m. Given that the Triangle formed by the lines so drawn is similar to the given one — the angle formed by the lines drawn from B and C being equal to A, and so on — find k, l and m as similar functions of a single variable. Also find the ratio each side of the second Triangle bears to the corresponding side of the first.</p>
+<p>[8/89]</p>
+<h4>Problem 70</h4>
+<p>Let an equilateral and equiangular Tetrahedron be placed with one face to the front; and suppose a series of triangles equal to that face are constructed in the Plane containing it, sharing a base with it, and are then all wrapped round the Tetrahedron as far as they will go. Find (1) the path traced by their vertices; (2) the position of the vertex of the one whose left-hand base-angle is 15°; (3) the left-hand base-angle of the one which, wrapped round towards the right, covers parts of all four faces of the Tetrahedron and whose vertex coincides with its vertex; (4) the left-hand base-angle of the one which, treated the same way, covers all four faces and then the front and right-hand face a second time, and whose vertex coincides with the far vertex of the base of the Tetrahedron.</p>
+<h4>Problem 71</h4>
+<p>In a given Triangle, place a Hexagon having its opposite sides equal and parallel, three of them lying along the sides of the Triangle, and its diagonals intersecting at a given Point.</p>
+<p>[14/12/74]</p>
+<h4>Problem 72</h4>
+<p>A bag contains 2 counters, of which nothing is known except that each is either black or white. Find out their colours without taking them out of the bag.</p>
+<p>[8/9/87]</p>
+<h2 id="chapter-ii-answers">Chapter II: Answers</h2>
+<h4>Answer 5</h4>
+<p>Two-thirds.</p>
+<h4>Answer 6</h4>
+<p>Calling the sides &#x27;2a&#x27;, &#x27;2b&#x27;, &#x27;2c&#x27; and the lines
+&#x27;α&#x27;, &#x27;β&#x27;, &#x27;γ&#x27;, we have</p>
+<p>a² = (-α² + 2β² + 2γ²)/9,</p>
+<p>cos A = (5α² - β² - γ²)/(2√(2α² - β² + 2γ²)·√(2α² + 2β² - γ²)).</p>
+<h4>Answer 7</h4>
+<figure id="fig-4">
+<img src="images/pillow-problems/fig4.jpg" alt="Figure 4" width="300" height="170" loading="lazy">
+</figure>
+<p>Let AB, AD be given sides, and B, D the right
+∠s; and let AB = b, AD = d.</p>
+<p>(1) BC = (d - b cos A)/(sin A); CD = (b - d cos A)/(sin A);</p>
+<p>(2) area = (2bd - (b² + d²) cos A)/(2 sin A).</p>
+<h4>Answer 8</h4>
+<p>7 men; 2 shillings.</p>
+<h4>Answer 10</h4>
+<p>Either 2 florins and a sixpence; or else a half-crown and 2 shillings.</p>
+<h4>Answer 11</h4>
+<p>The required ratio is equal to</p>
+<pre class="outline">	(sin A sin B sin C)/(sin θ (1 + cos A cos B cos C) + cos θ sin A sin B sin C).</pre>
+<p>If θ = 90°, this = (sin A sin B sin C)/(1 + cos A cos B cos C).</p>
+<h4>Answer 12</h4>
+<p>If s = semi-perimeter, m = area, v = volume; then</p>
+<pre class="outline">	a² + b² + c² = 2·(s² - v/s - m²/s²).</pre>
+<h4>Answer 13</h4>
+<p>If &#x27;2M&#x27; = area of Tetragon whose vertices are the Centres and the
+Points of intersection; and if its sides is &#x27;a&#x27;, &#x27;b&#x27;, and its
+diagonal, joining the Centres, &#x27;c&#x27;: required area</p>
+<pre class="outline">	= 32M³/((b² + c² - a²)·(c² + a² - b²)).</pre>
+<h4>Answer 16</h4>
+<p>The first course gives chance = 1/2; the second,
+5/12. Hence the first is best.</p>
+<h4>Answer 18</h4>
+<p>(1) Divide base BC, at E, so that BE/EC = (sin 2C)/(sin 2B).</p>
+<p>(2) At B, C, make right angles ABD, ACD; and join
+AD cutting BC at E, which is the required Point.</p>
+<h4>Answer 19</h4>
+<p>Eleven-seventeenths.</p>
+<h4>Answer 21</h4>
+<p>(1) (n·(n + 1)·(n + 4)·(n + 5))/4; (2) 27,573,000.</p>
+<h4>Answer 22</h4>
+<p>Calling the given altitudes &#x27;α, β, γ&#x27;; and
+the fraction</p>
+<pre class="outline">	(2α² β² γ²·(α² + β² + γ²) - (β⁴ γ⁴ + γ⁴ α⁴ + α⁴ β⁴))/(4α⁴ β⁴ γ⁴) k²,</pre>
+<p>(1) a = 1/kα, etc.</p>
+<p>(2) sin A = kβ γ, etc.</p>
+<p>(3) area = 1/2k.</p>
+<h4>Answer 23</h4>
+<p>Two-fifths.</p>
+<h4>Answer 24</h4>
+<p>DO/DA + EO/EB + FO/FC = 1; from which any
+one can be found in terms of the other two.</p>
+<h4>Answer 25</h4>
+<pre class="outline">	ε + α + λ - 2.</pre>
+<h4>Answer 27</h4>
+<p>Seventeen-twentyfifths.</p>
+<h4>Answer 28</h4>
+<pre class="outline">	7 - 3√5.</pre>
+<h4>Answer 31</h4>
+<p>When the clock says &#x27;12h. 2m. 29 277/288 sec.&#x27;</p>
+<h4>Answer 32</h4>
+<pre class="outline">	(1) (n·(n + 1)·(2n + 13))/6;
+	(2) 358550.</pre>
+<h4>Answer 37</h4>
+<pre class="outline">	(4 + √3)/12 - (1 + √3)/2π; i.e. about 0.044</pre>
+<p>.</p>
+<h4>Answer 38</h4>
+<p>Fortynine-seventytwoths.</p>
+<h4>Answer 39</h4>
+<p>They meet at end of 2d. 6h., and at end of 4d.:
+and the distances are 23 miles, and 34 miles.</p>
+<h4>Answer 41</h4>
+<p>(1) Seven-twelfths. (2) One-half.</p>
+<h4>Answer 42</h4>
+<pre class="outline">	abc/(2(s - a)·(s - b)·(s - c)).</pre>
+<h4>Answer 45</h4>
+<pre class="outline">	0.6321207 etc.</pre>
+<h4>Answer 47</h4>
+<p>One set of values is 0, 0, 0.</p>
+<p>A 2nd set is x = y = 0; z has any value.</p>
+<p>A 3rd is x = z = 0; y has any value.</p>
+<p>And the 4th set is x = k²/(k - 1), y = z = k; where
+k has any value.</p>
+<p>If x has any positive value less than 4, y and z are unreal.</p>
+<h4>Answer 49</h4>
+<p>Two.</p>
+<h4>Answer 50</h4>
+<p>Seventeen-twentysevenths.</p>
+<h4>Answer 52</h4>
+<p>2l. 18s. 0d.</p>
+<h4>Answer 53</h4>
+<p>The portion, cut off from the second side, is equal to</p>
+<pre class="outline">	((α sin C + γ sin A)(2γ cos A + β))/(α cos C + γ cos A + β) + (β cos A + γ cos 2A)/(sin A).</pre>
+<h4>Answer 54</h4>
+<p>Side AB must be divided at D, G, so that</p>
+<pre class="outline">	AD: DG: GB:: 1/a: 1/c: 1/b;</pre>
+<p>and similarly for the other sides. Also each side of the
+Hexagon = 1/(1/a + 1/b + 1/c).</p>
+<h4>Answer 56</h4>
+<figure id="fig-5">
+<img src="images/pillow-problems/fig5.jpg" alt="Figure 5" width="300" height="497" loading="lazy">
+</figure>
+<p>Draw BC, CE, BD equal to the given altitudes, so as to form
+right ∠s at B and C: and produce DB, EC. Join
+DC, and draw CF ⊥ to it. Join EB, and draw BG ⊥
+to it. With centre B, and distance BF, describe a circle: with
+centre C, and distance CG describe another: let them meet at
+A: and join AB, AC. Triangle ABC may be proved to be
+similar to required Triangle. The rest of the construction is obvious.</p>
+<h4>Answer 57</h4>
+<p>(1) Geometrically.</p>
+<p>If Squares is described externally on the sides of the given Triangle;
+and if their outer edges is produced to form a new Triangle; and if
+the sides of the given Triangle is divided similarly to those of the
+new Triangle: their central portions will be the bases of the required
+Squares.</p>
+<p>(2) Trigonometrically.</p>
+<p>If a, b, c be the sides of the given Triangle, and m
+its area; and if x, y, z be the sides of the required
+Squares: then</p>
+<pre class="outline">	a/x = b/y = c/z = (a² + b² + c²)/2m + 1.</pre>
+<h4>Answer 58</h4>
+<pre class="outline">	3/(8 - 6√3/π).</pre>
+<h4>Answer 59</h4>
+<p>Calling lengths of the 3 pairs of edges &#x27;a, b, c&#x27;, and the
+corresponding ∠s, in each facet, &#x27;A, B, C&#x27;; volume
+=</p>
+<pre class="outline">	abc/6·√(1 - (cos²A + cos²B + cos²C) + 2 cos A cos B cos C.)</pre>
+<h4>Answer 60</h4>
+<p>cot BAD = ((m + n) cot A + n cot B)/m;</p>
+<p>similarly, cot CAD = ((m + n) cot A + m cot C)/n.</p>
+<h4>Answer 63</h4>
+<p>If each side of each Square = 2, the volume =</p>
+<pre class="outline">	(8·2^(1/4)·(√2 + 1))/3.</pre>
+<h4>Answer 66</h4>
+<pre class="outline">	(2^m·(α - β) + β)/(2^m·(α - β) + 2β).</pre>
+<h4>Answer 67</h4>
+<p>If the centre of the horizontal facet is taken as the Origin, and if
+the X-axis pass through one of the vertices of that facet, and
+the Y-axis be parallel to the opposite edge of that facet, and
+the Z-axis be perpendicular to that facet: and if the altitude
+(measured downwards) of the Tetrahedron be called &#x27;h&#x27;, and the
+intercept on the X-axis be called &#x27;a&#x27;: the Equations to the
+Locus are</p>
+<pre class="outline">	(x + √3·y)·(h - z) = ah;
+	x² + y² = a².</pre>
+<h4>Answer 68</h4>
+<p>(1) 5 dozen; (2) 8/4 a bottle.</p>
+<h4>Answer 69</h4>
+<p>(1) k = (θ - B)/A; l = (θ - C)/B; m = (θ - A)/C.</p>
+<p>(2) Calling new Triangle &#x27;A&#x27;B&#x27;C&#x27;&#x27;,</p>
+<pre class="outline">	a&#x27;/a = b&#x27;/b = c&#x27;/c = 2 cos θ.</pre>
+<h4>Answer 70</h4>
+<p>(1) Down the back-edge; up again; and so on. (2) about 0.7 of
+the way down the back-edge. (3) About 18.65°. (4) About 14.53°.</p>
+<h4>Answer 72</h4>
+<p>One is black, and the other white.</p>
+<h2 id="chapter-iii-solutions">Chapter III: Solutions</h2>
+<h4>Solution 1</h4>
+<p>Let u, v be the Nos.</p>
+<p>Then u² + v² = 2.</p>
+<p>Plainly &#x27;(1 + k), (1 - k)&#x27; is a form for the squares.</p>
+<p>Also, if we write &#x27;2m²&#x27; for &#x27;2&#x27; (which will not interfere with
+the problem, as we can divide by m², and get u²/m² + v²/m² = 2),
+the above form becomes &#x27;(m² + k), (m² - k)&#x27;.</p>
+<p>Now, as these are squares, their resemblance to</p>
+<pre class="outline">	(a² + b² + 2ab), (a² + b² - 2ab)</pre>
+<p>at once suggests itself; so that the problem depends on the known one
+of finding a, b, such that (a² + b²) is a square; and we
+can then take 2ab as k.</p>
+<p>A general form for this is</p>
+<pre class="outline">	a = x² - y²,
+	b = 2xy;
+	∴ a² + b² = (x² + y²)²;
+	∴ the formula u² + v² = 2 m² becomes
+	(x² - y² + 2xy)² + (x² - y² - 2xy)² = 2(x² + y²)²;
+	i.e.  ((x² - y² + 2xy)/(x² + y²))² + ((x² - y² - 2xy)/(x² + y²))² = 2.</pre>
+<p>Q.E.F.</p>
+<h4>Solution 2</h4>
+<figure id="fig-6">
+<img src="images/pillow-problems/fig6.jpg" alt="Figure 6" width="300" height="234" loading="lazy">
+</figure>
+<p>(Analysis.)</p>
+<p>Let ABC be the Triangle, and DE the required line, so that BD + CE = BC.</p>
+<p>From BC cut off BF equal to BD; then CF = CE.</p>
+<p>Join DF, EF.</p>
+<p>Now ∠ BDF = ∠ BFD = [by I. 29] ∠ FDE;</p>
+<p>Similarly ∠ CEF = ∠ FED;</p>
+<p>∴ ∠ s BDE, CED, are bisected
+by DF, EF, and F is centre of ⊙ escribed to
+△ ADE.</p>
+<p>Drop, from F, ⊥s on BD, DE, EC; then these
+⊥s are equal.</p>
+<p>Hence, if AF is joined, it bisects ∠ A.</p>
+<p>Hence construction.</p>
+<p>(Synthesis.)</p>
+<p>Bisect ∠ A by AF: from F draw FB&#x27;, FC&#x27;,
+⊥ AC, AB: also draw FA&#x27; ⊥ BC and equal to FB&#x27;:
+and through A&#x27; draw DE ⊥ FA&#x27;, i.e. ∥ BC. Then
+DE is line required.</p>
+<p>∵ ∠s at A&#x27;, B&#x27;, C&#x27;, are right, and FA&#x27; = FB&#x27; = FC&#x27;,</p>
+<p>∴ ∠s BDE, CED, are bisected by DF, EF.</p>
+<p>Now ∠ BFD = ∠ FDA&#x27;; ∴ it = ∠ BDF;
+∴ BF = BD;</p>
+<p>Similarly CF = CE; ∴ BC = BD + CE.</p>
+<p>Q.E.F.</p>
+<h4>Solution 3</h4>
+<figure id="fig-7">
+<img src="images/pillow-problems/fig7.jpg" alt="Figure 7" width="300" height="247" loading="lazy">
+</figure>
+<p>Let ABCD be the Tetragon; and let the 3 sides, AB, BC,
+CD, be bisected by vertices of the Parallelogram EFGH.</p>
+<p>Join BD.</p>
+<p>∵, in Triangle BCD, sides BC, CD are bisected at
+F and G,</p>
+<p>∴ FG is parallel to BD;</p>
+<p>but EH is parallel to FG;</p>
+<p>∴ EH is parallel to BD;</p>
+<p>∴ Triangles AEH, ABD are similar;</p>
+<p>now AE is half of AB;</p>
+<p>∴ AH is half of AD.</p>
+<p>Q. E. D.</p>
+<h4>Solution 4</h4>
+<figure id="fig-8">
+<img src="images/pillow-problems/fig8.jpg" alt="Figure 8" width="300" height="253" loading="lazy">
+</figure>
+<p>Let ABC be the given Triangle, and A&#x27;B&#x27;C&#x27; the required
+Triangle, so that ∠ BA&#x27;C&#x27; = ∠ CA&#x27;B&#x27;, &amp;c.</p>
+<p>Plainly A&#x27;C&#x27;, A&#x27;B&#x27; are equally inclined to a line drawn,
+from A&#x27;, ⊥ BC; and so of the others: i.e. these ⊥s
+bisect the ∠s at A&#x27;, B&#x27;, C&#x27;;</p>
+<p>∴ they meet in the same Point. Draw them; let them meet at
+O; and call the ∠ C&#x27;A&#x27;B&#x27; &#x27;2α&#x27;, and so on.</p>
+<p>Now (β + γ) = π - ∠ B&#x27;OC&#x27; = A;</p>
+<p>∴ 2A = 2(β + γ) = π - 2α;</p>
+<p>∴ α = 90°-A;</p>
+<p>∴ ∠ BA&#x27;C&#x27; = A.</p>
+<p>Similarly, ∠ BC&#x27;A&#x27; = C.</p>
+<p>∴ Triangle BC&#x27;A&#x27; is similar to Triangle BCA; and
+so of the others;</p>
+<pre class="outline">	∴ BA&#x27; = c/a · BC&#x27; = c/a · (c - AC&#x27;),
+	= c/a · (c - b/c · AB&#x27;),
+	= c²/a - b/a · (b - CB&#x27;),
+	= c²/a - b²/a + b/a · a/b · CA&#x27;,
+	= c²/a - b²/a + a - BA&#x27;;
+	∴ 2BA&#x27; = (c² + a² - b²)/a = (2ca cos B)/a;
+	∴ BA&#x27; = c cos B;</pre>
+<p>∴ A&#x27; is foot of ⊥ drawn, from A, to
+BC. Hence the construction is obvious.</p>
+<p>Q.E.F.</p>
+<h4>Solution 5</h4>
+<p>At first sight, it would appear that, as the state of the bag,
+after the operation, is necessarily identical with its
+state before it, the chance is just what it then was, namely
+1/2. This, however, is an error.</p>
+<p>The chances, before the addition, that the bag contains
+(a) 1 white (b) 1 black, are (a) 1/2
+(b) 1/2. Hence the chances, after the
+addition, that it contains (a) 2 white (b) 1 white,
+1 black, are the same, namely (a) 1/2 (b)
+1/2. Now the probabilities, which these 2 states give
+to the observed event, of drawing a white counter, are (a)
+certainty (b) 1/2. Hence the chances, after drawing
+the white counter, that the bag, before drawing, contained (a)
+2 white, (b) 1 white, 1 black, are proportional to (a)
+1/2.1 (b) 1/2 · 1/2;
+i.e. (a) 1/2 (b) 1/4; i.
+e. (a) 2 (b) 1. Hence the chances are (a)
+2/3 (b) 1/3. Hence, after the removal
+of a white counter, the chances, that the bag now contains (a) 1
+white (b) 1 black, are for (a) 2/3 and for
+(b) 1/3.</p>
+<p>Thus the chance, of now drawing a white counter, is 2/3.</p>
+<p>Q.E.F.</p>
+<h4>Solution 6</h4>
+<p>Call sides &#x27;2a, 2b, 2c&#x27;, and lines in question &#x27;α,
+β, γ&#x27;.</p>
+<figure id="fig-9">
+<img src="images/pillow-problems/fig9.jpg" alt="Figure 9" width="300" height="223" loading="lazy">
+</figure>
+<p>Now cos ADB + cos ADC = 0;</p>
+<pre class="outline">	∴ (α² + a² - 4c²)/(2α a) + (α² + a² - 4b²)/(2α a) = 0;
+	∴ 2α² + 2a² - 4b² - 4c² = 0;
+	∴ α² = -a² + 2b² + 2c².
+	Similarly, β² = 2a² - b² + 2c²;
+	γ² = 2a² + 2b² - c².</pre>
+<p>To eliminate b, c, let us multiply by k, l, m, so
+taken that</p>
+<pre class="outline">	2k - l + 2m = 0,
+	and 2k + 2l - m = 0;
+	∴ 3(l - m) = 0; i.e. l = m;
+	∴ 2k = -l = -m;</pre>
+<p>hence we may make k = -1, l = 2, m = 2;</p>
+<pre class="outline">	∴ - α² + 2β² + 2γ² = 9a²;
+	i.e. a² = (- α² + 2β² + 2γ²)/9;
+	∴ BC (which = 2a) = 2/3√(- α² + 2β² + 2γ²), etc.,</pre>
+<p>which gives lengths of sides.</p>
+<pre class="outline">	Also cos A = (b² + c² - a²)/2bc
+	= (2α² - β² + 2γ² + 2α² + 2β² - γ² + α² - 2β² - 2γ²)/(2·√(2α² - β² + 2γ²)·√(2α² + 2β² - γ²))
+	= (5α² - β² - γ²)/den.; and so for other angles.</pre>
+<p>Q.E.F.</p>
+<h4>Solution 7</h4>
+<p>Let AB, AD be given sides, and B, D the right
+∠s; and let AB = b, AD = d.</p>
+<figure id="fig-10">
+<img src="images/pillow-problems/fig10.jpg" alt="Figure 10" width="200" height="134" loading="lazy">
+</figure>
+<p>Produce DC to meet AB-produced at E.</p>
+<pre class="outline">	Now AE = AD·sec A = d sec A;
+	∴ BE = d sec A - b.
+	Also BC = BE·tan E = (d sec A - b)·cot A,
+	= (d - b cos A)/(sin A);</pre>
+<p>similarly, CD = (b - d cos A)/(sin A); which answers (1).</p>
+<figure id="fig-11">
+<img src="images/pillow-problems/fig11.jpg" alt="Figure 11" width="300" height="193" loading="lazy">
+</figure>
+<pre class="outline">	Also area = 1/2 · (AB·BC + AD·DC),
+	= 1/2 · (b·(d - b cos A) + d·(b - d cos A))/(sin A),
+	= (2bd - (b² + d²) cos A)/(2 sin A); which answers (2).</pre>
+<p>Q.E.F.</p>
+<h4>Solution 8</h4>
+<p>Let m = No. of men, k = No. of shillings possessed by the
+last (i.e. the poorest) man. After one circuit, each is a shilling
+poorer, and the moving heap contains m shillings. Hence, after
+k circuits, each is k shillings poorer, the last man now having
+nothing, and the moving heap contains mk shillings. Hence the thing
+ends when the last man is again called on to hand on the heap, which
+then contains (mk + m - 1) shillings, the penultimate man now
+having nothing, and the first man having (m - 2) shillings.</p>
+<p>Plainly the first and last man are the only 2 neighbours
+whose possessions can be in the ratio &#x27;4 to 1&#x27;. Hence either</p>
+<pre class="outline">	mk + m - 1 = 4(m - 2),
+	or else 4(mk + m - 1) = m - 2.</pre>
+<p>The first equation gives mk = 3m - 7, i.e. k = 3 - 7/m, which plainly gives no integral values other than m = 7, k = 2.</p>
+<p>The second gives 4mk = 2 - 3m, which plainly gives no positive
+integral values.</p>
+<p>Hence the answer is &#x27;7 men; 2 shillings&#x27;.</p>
+<h4>Solution 9</h4>
+<p>Let AB, AC, be the given Lines, and P the given Point; and
+join AP.</p>
+<figure id="fig-12">
+<img src="images/pillow-problems/fig12.jpg" alt="Figure 12" width="300" height="247" loading="lazy">
+</figure>
+<p>Through A draw EAF, ⊥ AP, and bisected at A; from
+E, F, draw EG, FH, parallel to AP, and meeting
+AB, AC, at G, H; join GH, and on it describe a
+semicircle cutting AP at K; and join KG, KH. Then
+∠ GKH is a right angle. From P draw PL, PM,
+parallel to KG, KH.</p>
+<p>Now Triangle APL has, to Triangle AKG, the duplicate ratio of
+AP to AK;</p>
+<p>but so also has triangle APM to Triangle AKH;</p>
+<p>also Triangles AKG, AKH, are equal, being on the same base
+AK, and having equal altitudes AE, AF;</p>
+<p>∴ Triangles APL, APM are equal: and ∠ LPM
+is plainly equal to ∠ GKH; ∴ it is a right
+angle.</p>
+<p>Q.E.F.</p>
+<h4>Solution 10</h4>
+<p>Call them x, y, z; and let x + y + z = s.</p>
+<p>The chance, that the pocket contains 2 balls, is 2/3; and,
+if it does, the &#x27;expectation&#x27; is the average value of</p>
+<pre class="outline">	(y + z), (z + x), (x + y);  i.e. it is  2s/3.</pre>
+<p>Also the chance, that it contains only one, is 1/3; and,
+if it does, the &#x27;expectation&#x27; is s/3.</p>
+<p>Hence total &#x27;expectation&#x27; = 4s/9 + s/9 = 5s/9.</p>
+<pre class="outline">	∴ 5s/9 = 30d.; ∴ s = 54d. = 4/6.</pre>
+<p>Hence the coins must be 2 florins and a sixpence; or else a half-crown
+and 2 shillings.</p>
+<p>Q.E.F.</p>
+<h4>Solution 11</h4>
+<figure id="fig-13">
+<img src="images/pillow-problems/fig13.jpg" alt="Figure 13" width="300" height="231" loading="lazy">
+</figure>
+<p>Now BA&#x27;/A&#x27;C&#x27; = (sin (B + θ))/(sin B); and A&#x27;C/A&#x27;B&#x27; = (sin θ)/(sin C).</p>
+<p>∴ BA = (sin (B + θ))/(sin B)·ka; and A&#x27;C = (sin θ)/(sin C)·kb</p>
+<p>but BA&#x27; + A&#x27;C = a; ∴ k</p>
+<p>= a/((a·sin (B + θ))/(sin B) + (b sin θ)/(sin C)) = (sin A)/((sin A sin (B + θ))/(sin B) + (sin B sin θ)/(sin C))</p>
+<pre class="outline">	= (sin A sin B sin C)/(sin A sin (B + θ) sin C + sin² B sin θ)
+	= (sin A sin B sin C)/(sin A sin C(sin B cos θ + cos B sin θ) + (1 - cos² B) sin θ)
+	= (sin A sin B sin C)/(sin θ + sin θ(sin A sin C cos B - cos²B) + cos θ sin A sin B sin C)
+	= (sin A sin B sin C)/(sin θ + sin θ cos B(sin A sin C + cos (A + C)) + cos θ sin A sin B sin C)
+	= (sin A sin B sin C)/(sin θ(1 + cos A cos B cos C) + cos θ sin A sin B sin C).</pre>
+<p>Q.E.F.</p>
+<p>Cor. Let θ = 90°; then k = (sin A sin B sin C)/(1 + cos A cos B cos C).</p>
+<h4>Solution 12</h4>
+<p>Let s = semi-perimeter, m = area, v = volume.</p>
+<p>We know that m = √(s·(s - a)·(s - b)·(s - c));</p>
+<pre class="outline">	∴ m² = s·(s - a)·(s - b)·(s - c);
+	∴ m²/s = s³ - s²·(a + b + c) + s·(bc + ca + ab) - abc;
+	= s³ - 2s³ + s·(bc + ca + ab) - v;
+	∴ m²/s² + v/s + s² = bc + ca + ab;
+	∴ 2·(m²/s² + v/s + s²) = (a + b + c)² - (a² + b² + c²);
+	= 4s² - (a² + b² + c²);
+	∴ a² + b² + c² = 2·(s² - v/s - m²/s²).</pre>
+<p>Q.E.F.</p>
+<h4>Solution 13</h4>
+<figure id="fig-14">
+<img src="images/pillow-problems/fig14.jpg" alt="Figure 14" width="300" height="238" loading="lazy">
+</figure>
+<p>Let A, B, be the centres of the Circles; C, D, their
+points of intersection; and CFDE the Tetragon whose area is
+required.</p>
+<p>Let the sides of the Triangle ABC be a, b, c; and its
+∠s α, β, γ.</p>
+<p>Then CE = b·tan α, and CF = a·tan β.</p>
+<p>Also ∠ FCE = ∠ ACE + ∠ FCB - γ = π - γ;</p>
+<p>∴ sin FCE = sin γ.</p>
+<p>Hence area of Triangle FCE = 1/2·ab·tan α·tan β·sin γ;</p>
+<p>∴ area of Tetragon = (ab sin α sin β sin γ)/(cos α cos β).</p>
+<p>Now, writing &#x27;M&#x27; for area of Triangle ABC, we have</p>
+<pre class="outline">	sin α = 2M/bc, sin β = 2M/ca, sin γ = 2M/ab;</pre>
+<pre class="outline">	∴ area of Tetragon = ab · 8M³/(a² b² c²) · (4bc·ca)/((b² + c² - a²)(c² + a² - b²));
+	= 32M³/((b² + c² - a²)·(c² + a² - b²)).</pre>
+<p>Q.E.F.</p>
+<h4>Solution 14</h4>
+<p>This simply expresses the identity</p>
+<pre class="outline">	3(a² + b² + c²)
+	= (a + b + c)² + (b² - 2bc + c²) + (c² - 2ca + a²) + (a² - 2ab + b²);
+	= (a + b + c)² + (b - c)² + (c - a)² + (a - b)².</pre>
+<p>Q. E. D.</p>
+<p>Numerical Examples (not thought out).</p>
+<pre class="outline">	3(1² + 2² + 3²) = 6² + 1² + 2² + 1².
+	3(1² + 3² + 7²) = 11² + 4² + 6² + 2².</pre>
+<h4>Solution 15</h4>
+<figure id="fig-15">
+<img src="images/pillow-problems/fig15.jpg" alt="Figure 15" width="300" height="207" loading="lazy">
+</figure>
+<p>Let ABCD be an inscribed Tetragon. Join AC: and about Triangle
+ACD describe a Circle.</p>
+<p>Now, if this Circle does not pass through B, let it cut CB, or
+CB produced, in B′ or B″. Join AB′, AB″.</p>
+<p>Then ∠ AB′C, or ∠ AB″C, is supplementary to ∠ ADC;</p>
+<p>∴ it = ∠ ABC; which is absurd;</p>
+<p>∴ this Circle does pass through B.</p>
+<p>The same thing may be proved for any other Point on that portion, of
+the perimeter of the given Figure, which lies on the same side of
+AC as the Point D.</p>
+<p>Similarly for the other portion.</p>
+<p>Hence the Figure is a Circle.</p>
+<p>Q. E. D.</p>
+<h4>Solution 16</h4>
+<p>The &#x27;a priori&#x27; chances of possible states of first bag are &#x27;W,
+1/2; B, 1/2&#x27;. Hence chances,
+after putting W in, are &#x27;WW, 1/2; WB,
+1/2&#x27;. The chances, which these give to the &#x27;observed
+event&#x27;, are 1, 1/2. Hence chances of possible
+states &#x27;W, B&#x27;, after the event, are proportional to 1,
+1/2; i.e. to 2, 1; i.e. their actual values are
+2/3, 1/3.</p>
+<p>Now, in first course, chance of drawing W is 1/2 · 2/3 + 1/2 · 1/3; i.e.
+1/2.</p>
+<p>And, in second course, chances of possible states &#x27;WWBB, WBBB&#x27;
+are 2/3, 1/3: hence chance of drawing
+W is 2/3 · 1/2 + 1/3 · 1/4; i.e. 5/12.</p>
+<p>Hence first course gives best chance.</p>
+<p>Q.E.F.</p>
+<h4>Solution 17</h4>
+<p>(Analysis.)</p>
+<p>Let ABC be the given Triangle, and DE the line required.</p>
+<figure id="fig-16">
+<img src="images/pillow-problems/fig16.jpg" alt="Figure 16" width="300" height="203" loading="lazy">
+</figure>
+<p>From D, E, draw DF, EG, parallel to the sides. Then
+DF + EG = DE.</p>
+<p>Because BE is a Parallelogram, ∴ DB = EG;</p>
+<p>similarly EC = DF;</p>
+<p>∴ DB + EC = DE.</p>
+<p>Hence construction.</p>
+<p>(Synthesis.)</p>
+<p>Bisect ∠s B, C, by BH, CH, meeting at H;
+through H draw DE parallel to BC; and from D, E,
+draw DF, EG, parallel to AC, AB.</p>
+<p>Because DE is parallel to BC,</p>
+<p>∴ ∠ DHB = alternate ∠ HBF = ∠ DBH;</p>
+<p>∴ DB = DH.</p>
+<p>Similarly EC = EH.</p>
+<p>∴ DB + EC = DE.</p>
+<p>Because BE, DC are Parallelograms,</p>
+<p>∴ EG = DB, and DF = EC;</p>
+<p>∴ DF + EG = DE.</p>
+<p>Q.E.F.</p>
+<h4>Solution 18</h4>
+<figure id="fig-17">
+<img src="images/pillow-problems/fig17.jpg" alt="Figure 17" width="300" height="255" loading="lazy">
+</figure>
+<p>(1) Call required Point E. From E draw EF, FG ⊥
+sides. Join FG. From F, G, draw FH, GK ⊥ BC.
+Call BE &#x27;x&#x27;, and EC &#x27;y&#x27;.</p>
+<pre class="outline">	Now FH  must  = GK.
+	Also  EF = x sin B;  and  FH = EF sin FEH,
+	= EF cos B,
+	= x sin B cos B;
+	similarly,  GK = y sin C cos C.</pre>
+<pre class="outline">	But  FH = GK; ∴ x sin B cos B = y sin C cos C;
+	∴ x/y = (sin 2C)/(sin 2B).</pre>
+<p>Q.E.F.</p>
+<figure id="fig-18">
+<img src="images/pillow-problems/fig18.jpg" alt="Figure 18" width="300" height="319" loading="lazy">
+</figure>
+<p>(2) At B, C, make right angles ABD, ACD; and join
+AD, cutting BC at E. From E draw EF, EG ⊥ sides; and join FG.</p>
+<p>∵ BD, FE are ⊥ AB, ∴ they are
+∥; ∴ AF: FB:: AE: ED;</p>
+<p>∵ CD, GE are ⊥ AC, ∴ they are
+∥; ∴ AG: GC:: AE: ED;</p>
+<p>∴ AF: FB:: AG: GC;</p>
+<p>∴ FG is parallel to BC.</p>
+<p>Q.E.F.</p>
+<h4>Solution 19</h4>
+<p>Call the bags A, B, C; so that A contains a white
+counter and a black one; &amp;c.</p>
+<p>The chances of the orders ABC, ACB, BAC, BCA, CAB,
+CBA, are, a priori, 1/6 each. Since they are equal,
+we may, instead of multiplying each by the probability it gives to the
+observed event, simply assume those probabilities as being proportional
+to the chances after the observed event.</p>
+<p>These probabilities are:—</p>
+<pre class="outline">	for ABC, 1/2 × 1/3; i.e. 1/6.
+	ACB, 1/2 × 1/4; i.e. 1/8.
+	BAC, 2/3 × 1/2; i.e. 1/3.
+	BCA, 2/3 × 1/4; i.e. 1/6.
+	CAB, 3/4 × 1/2; i.e. 3/8.
+	CBA, 3/4 × 1/3; i.e. 1/4.</pre>
+<p>Hence the chances are proportional to 4, 3, 8, 4, 9, 6; i.e. they are
+these Nos. divided by 34.</p>
+<p>Hence the chance, of drawing a white counter from the remaining bag; is</p>
+<pre class="outline">	1/34 · {4 × 3/4 + 3 × 2/3 + 8 × 3/4 + 4 × 1/2 + 9 × 2/3 + 6 × 1/2};
+	i.e. 1/34 × {3 + 2 + 6 + 2 + 6 + 3}; i.e. 22/34; i.e. 11/17.</pre>
+<h4>Solution 20</h4>
+<p>(Analysis.)</p>
+<p>Let ABC be the given Triangle, and P the required Point.
+Draw PQ⊥ BC, and PR⊥ AB. Then
+PQ = PR.</p>
+<figure id="fig-19">
+<img src="images/pillow-problems/fig19.jpg" alt="Figure 19" width="200" height="256" loading="lazy">
+</figure>
+<p>Hence PC tan C = PB sin B;</p>
+<h4>∴ PC:PB:: sin B:tan C, (draw AD ⊥ BC,)</h4>
+<pre class="outline">	:: AD/AB: AD/DC,
+	:: DC:AB.</pre>
+<p>Hence construction.</p>
+<p>(Synthesis.)</p>
+<p>From A draw AD⊥ BC. Produce BA to E, making AE
+equal to DC. Join EC. From A draw AP parallel to
+EC; and from P draw PQ⊥ BC, and PR⊥ AB.</p>
+<pre class="outline">	Then PQ/PC = AD/DC = AD/AB · AB/DC,
+	= PR/PB · AB/AE,
+	= PR/PB · PB/PC = PR/PC;
+	∴ PQ = PR.</pre>
+<p>Q.E.F.</p>
+<h4>Solution 21</h4>
+<p>(1) The nth term is n·(n + 2)·(n + 4);</p>
+<p>∴ the (n + 1)th term is (n + 1)·(n + 3)·(n + 5);</p>
+<p>= (n + 1)·((n + 2) + 1)·(n + 5);</p>
+<p>= (n + 1)·(n + 2)·(n + 5) + (n + 1)·(n + 5)</p>
+<p>= (n + 1)·(n + 2)·((n + 3) + 2) + (n + 1)·((n + 2) + 3);</p>
+<p>= (n + 1)·(n + 2)·(n + 3) + 2·(n + 1)·(n + 2) + (n + 1)·(n + 2) + 3·(n + 1);</p>
+<p>= (n + 1)·(n + 2)·(n + 3) + 3·(n + 1)·(n + 2) + 3·(n + 1).</p>
+<p>∴ S = (n·(n + 1)·(n + 2)·(n + 3))/4 + n·(n + 1)·(n + 2) + 3/2·n·(n + 1) + C;</p>
+<p>and C = 0.</p>
+<p>∴ S = n·(n + 1)·((n² + 5n + 6)/4 + n + 2 + 3/2);</p>
+<p>= n·(n + 1)·(n² + 9n + 20)/4 = (n·(n + 1)·(n + 4)·(n + 5))/4.</p>
+<p>Q.E.F.</p>
+<p>(2) S, to 100 terms,</p>
+<p>= (100·101·104·105)/4 = 100·101·26·105;</p>
+<p>now 101·105 = 10,605;</p>
+<p>∴ 101·105·13 = 130,000 + 7800 + 65 = 137,865;</p>
+<p>and twice this = 274,000 + 1730 = 275,730;</p>
+<p>∴ S = 27,573,000.</p>
+<p>Q.E.F.</p>
+<h4>Solution 22</h4>
+<figure id="fig-20">
+<img src="images/pillow-problems/fig20.jpg" alt="Figure 20" width="300" height="278" loading="lazy">
+</figure>
+<p>Call given altitudes &#x27;α, β, γ&#x27;.</p>
+<p>Now aα = bβ = cγ;</p>
+<p>∴ α sin A = β sin B = γ sin C;</p>
+<p>∴ (sin A)/βγ = (sin B)/γα = (sin C)/αβ = k (say);</p>
+<p>∴ sin A = kβγ, sin B = kγα, sin C = kαβ.</p>
+<p>Now sin (A + B) = sin C;</p>
+<p>∴ sin A cos B + cos A sin B = sin C;</p>
+<p>∴ sin A cos B = sin C - cos A sin B;</p>
+<p>∴ sin²A (1 - sin²B) = sin²C + sin²B (1 - sin²A) - 2 sin C cos A sin B;</p>
+<p>∴ sin²A - sin²A sin²B = sin²C + sin²B - sin²A sin²B - 2 sin B sin C cos A;</p>
+<p>∴ sin²A - sin²B - sin²C = -2 sin B sin C cos A;</p>
+<p>∴, squaring, (sin⁴A + etc.) - 2 sin²A sin²B - 2 sin²A sin²C + 2 sin²B sin²C = 4 sin²B sin²C(1 - sin²A);</p>
+<p>∴ (sin⁴A + etc.) - 2(sin²B sin²C + etc.) + 4 sin²A sin²B sin²C = 0;</p>
+<p>∴, substituting for sin A, &amp;c., and dividing by k⁴,
+(β⁴γ⁴ + etc.) - 2α²β²γ²·(α² + etc.) + 4k²α⁴β⁴γ⁴ = 0;</p>
+<figure id="fig-21">
+<img src="images/pillow-problems/fig21.jpg" alt="Figure 21" width="300" height="265" loading="lazy">
+</figure>
+<p>∴ k² = (2α²β²γ²(α² + etc.) - (β⁴γ⁴ + etc.))/4α⁴β⁴γ⁴.</p>
+<p>Now sin A = kβγ, &amp;c.; which answers (2).</p>
+<p>Also α = b sin C; and similarly γ = a sin B;</p>
+<p>∴ a = γ/(sin B) = γ/kγα = 1/kα, etc.; which answers (1).</p>
+<p>Also area = (bc sin A)/2 = 1/2 · 1/kβ · 1/kγ · kβγ = 1/2k;</p>
+<p>which answers (3).</p>
+<p>Q.E.F.</p>
+<h4>Solution 23</h4>
+<p>The original chances, as to states of bag, are</p>
+<pre class="outline">	for 2 W 1/4;
+	1 W, 1 B 1/2;
+	2 B 1/4.</pre>
+<p>∴ the chances, after adding 2 W and 1 B, are</p>
+<pre class="outline">	for 4 W, 1 B 1/4;
+	3 W, 2 B 1/2;
+	2 W, 3 B 1/4.</pre>
+<p>Now the chances, which these give to the observed event, drawing 2 W
+and 1 B, are 3/5, 3/5, 3/10.</p>
+<p>∴ the chances, after this event, are proportional to
+3/20, 3/10, 3/40; i.e. to 2, 4,
+1. Hence they are 2/7, 4/7, 1/7.</p>
+<p>Hence the chances, as to states, now are</p>
+<pre class="outline">	for 2 W 2/7;
+	1 W, 1 B 4/7;
+	2 B 1/7.</pre>
+<p>∴ the chances, after adding 1 W, are</p>
+<pre class="outline">	for 3 W 2/7;
+	2 W, 1 B 4/7;
+	1 W, 2 B 1/7.</pre>
+<p>Now the chances, which these give to the observed event, of drawing 1 W,
+are 1, 2/3, 1/3.</p>
+<p>∴ the chances, after this event, are proportional to
+2/7, 8/21, 1/21;</p>
+<p>i.e. to 6, 8, 1. Hence they are 6/15, 8/15,
+1/15.</p>
+<p>Hence the chance, that the bag now contains 2 white, is
+6/15; i.e. 2/5.</p>
+<p>Q.E.F.</p>
+<h4>Solution 24</h4>
+<figure id="fig-22">
+<img src="images/pillow-problems/fig22.jpg" alt="Figure 22" width="300" height="228" loading="lazy">
+</figure>
+<pre class="outline">	Because DO/OA = (△ DOC)/(△ OAC) = (△ DOB)/(△ OAB) = (△ OBC)/(△ OCA + △ OAB);
+	∴ DO/DA = (△ OBC)/(△ ABC).
+	Similarly, EO/EB = (△ OCA)/(△ ABC), and FO/FC = (△ OAB)/(△ ABC).
+	Hence DO/DA + EO/EB + FO/FC = 1.</pre>
+<p>Q.E.F.</p>
+<h4>Solution 25</h4>
+<p>Let &#x27;E&#x27; mean &#x27;having lost an eye&#x27;, &#x27;A&#x27; &#x27;having lost an arm&#x27;,
+and &#x27;L&#x27; &#x27;having lost a leg&#x27;.</p>
+<figure id="fig-23">
+<img src="images/pillow-problems/fig23.jpg" alt="Figure 23" width="200" height="69" loading="lazy">
+</figure>
+<p>Then the state of things which gives the least possible number of
+those who, being E and A, are also L, may plainly be
+found by arranging the patients in a row, so that the EA-class
+may begin from one end of the row, and the L-class from the other
+end, and counting the portion where they overlap; and, the smaller the
+EA-class, the smaller will be this common portion: hence we must
+make the EA-class a minimum.</p>
+<figure id="fig-24">
+<img src="images/pillow-problems/fig24.jpg" alt="Figure 24" width="200" height="81" loading="lazy">
+</figure>
+<p>This may be done by re-arranging the patients, so that the E-class
+may begin from one end of the row, and the A-class from the
+other: and the least possible number for the EA-class is the
+common portion, i.e. (ε - (1 - α)), i.e.
+(ε + α - 1).</p>
+<p>Then, as already shown, the least possible number
+for the EAL-class is the common portion, i.e.
+(ε + α - 1 - (1 - λ)), i.e.
+(ε + α + λ - 2).</p>
+<p>Q.E.F.</p>
+<h4>Solution 26</h4>
+<p>(Analysis.)</p>
+<p>Let ABC be the given Triangle, and A&#x27;B&#x27;C&#x27; the required one; and
+let the ratio, which B&#x27;C&#x27; has to BC, be &#x27;k&#x27;; so that k
+is less than 1.</p>
+<p>Since BB&#x27; = CC&#x27;, and that BC, B&#x27;C&#x27;, are parallel, it may
+easily be proved, by dropping perpendiculars from B&#x27;, C&#x27;,
+upon BC, which must necessarily be equal, that ∠s
+B&#x27;BC, C&#x27;CB, are equal.</p>
+<p>Similarly, ∠s A&#x27;AC, C&#x27;CA, are equal; and so are
+∠s A&#x27;AB, B&#x27;BA.</p>
+<figure id="fig-25">
+<img src="images/pillow-problems/fig25.jpg" alt="Figure 25" width="300" height="243" loading="lazy">
+</figure>
+<p>Call ∠ B&#x27;BC &#x27;θ&#x27;; then ∠ C&#x27;CB = θ;</p>
+<p>∴∠ C&#x27;CA = C - θ = ∠ A&#x27;AC;</p>
+<p>∴∠ A&#x27;AB = A - (C - θ) = ∠ B&#x27;BA.</p>
+<p>Now ∠s B&#x27;BC, B&#x27;BA, together = B;</p>
+<p>∴θ + A - (C - θ) = B;</p>
+<p>∴ 2θ = B + C - A = 180°-2A;</p>
+<p>∴θ = 90°-A.</p>
+<p>Hence, if BB&#x27;, CC&#x27;, be produced to meet at D, Triangle
+DBC will be isosceles, with a vertical ∠ equal to 2A.</p>
+<p>Now, if a Circle is drawn about ABC, and its centre joined to B
+and C, the Triangle, so formed, will fulfil the same conditions;</p>
+<p>hence the centre of this Circle will be D;</p>
+<p>hence the construction.</p>
+<p>(Synthesis.)</p>
+<p>Bisect the sides, and draw perpendiculars, meeting at D. Join D
+to the vertices B, C. From DB cut off DB&#x27; = k·DB. From
+B&#x27; draw B&#x27;C&#x27; parallel to BC.</p>
+<p>Then B&#x27;C&#x27; is easily proved equal to k·BC.</p>
+<p>And if, from B&#x27;, C&#x27;, parallels to AB, AC, be drawn,
+it may easily be proved that they meet on DA, and that they are
+respectively equal to k·AB, k·AC.</p>
+<p>Q.E.F.</p>
+<h4>Solution 27</h4>
+<p>Call the bags A, B, C.</p>
+<p>If remaining bag is A, chance of observed event = 1/2
+chance of drawing white from B and black from C +
+1/2 chance of drawing black from B and white from
+C:</p>
+<p>i.e. it = 1/2.{2/3 × 1/2 + 1/3 × 1/2} = 1/4.</p>
+<p>Similarly, if remaining bag is B, it is
+1/2.{5/6·1/2 + 1/6·1/2} = 1/4;
+and, if it is C, it is
+1/2.{5/6·1/3 + 1/6·2/3} = 7/36.</p>
+<p>∴ chances of remaining bag being A, B, or C,
+are as 1/4 to 1/4 to 7/36;
+i.e. as 9 to 9 to 7. ∴ they are, in value,
+(9, 9, 7)/25.</p>
+<p>Now, if remaining bag is A, chance of drawing white from it
+is 5/6; ∴ chance, on this issue, is
+5/6·9/25 = 3/10; similarly, for B,
+it is 2/3·9/25 = 6/25; and, for C,
+1/2·7/25 = 7/50. And entire chance of
+drawing white from the remaining bag is the sum of these; i.e.
+(15 + 12 + 7)/50 = 34/50 = 17/25.</p>
+<h4>Solution 28</h4>
+<p>Let ABC be the given Triangle; and let its sides be divided
+internally at A&#x27;, B&#x27;, C&#x27;, in extreme and mean ratio.</p>
+<figure id="fig-26">
+<img src="images/pillow-problems/fig26.jpg" alt="Figure 26" width="300" height="233" loading="lazy">
+</figure>
+<p>And let M be the area of ABC.</p>
+<p>Let BA&#x27; = x; then x² = a·(a - x);</p>
+<p>i.e. x² + ax - a² = 0;</p>
+<p>∴ x = (-a ± a√5)/2 = a/2·(√5 - 1),
+the other sign being excluded by the terms of the question.</p>
+<h4>Then area of Triangle AB&#x27;C&#x27;</h4>
+<pre class="outline">	= 1/2·c/2·(√5 - 1).{b - b/2·(√5 - 1)}.sin A,
+	= 1/8·(√5 - 1)(3 - √5)bc·sin A,
+	= 1/4·(4√5 - 8)·M = (√5 - 2)·M.</pre>
+<p>Similarly for BC&#x27;A&#x27; and CA&#x27;B&#x27;.</p>
+<p>Hence the sum of these 3 Triangles = 3·(√5 - 2)·M, and area of
+Triangle A&#x27;B&#x27;C&#x27; = (7 - 3√5)·M.</p>
+<p>Q.E.F.</p>
+<h4>Solution 29</h4>
+<p>This may be deduced from the identity</p>
+<pre class="outline">	(a² + b²)·(c² + d²) = a²c² + b²d² + a²d² + b²c².</pre>
+<pre class="outline">	(a² + b²)·(c² + d²) = a²c² + b²d² + a²d² + b²c²;
+	or else = a²c² + b²d² + 2acbd + a²d² + b²c² - 2adbc,
+	= a²c² + b²d² - 2acbd + a²d² + b²c² + 2adbc; }
+	i.e.
+	or else = (ac + bd)² + (ad - bc)²,
+	= (ac - bd)² + (ad + bc)². }</pre>
+<p>Now, if these last 2 sets are identical, (ac + bd) must =
+(ad + bc); for it cannot = (ac - bd);</p>
+<p>i.e., a(c - d) - b(c - d) must = 0;</p>
+<p>i.e., (a - b)·(c - d) must = 0;</p>
+<p>i.e., one or other of the first 2 sets is the sum of 2
+identical squares.</p>
+<p>Hence, contranominally, if each of the original sets consists of
+2 different squares, their product gives the sum of 2 squares in
+2 different ways.</p>
+<p>Q. E. D.</p>
+<h4>Solution 30</h4>
+<figure id="fig-27">
+<img src="images/pillow-problems/fig27.jpg" alt="Figure 27" width="300" height="208" loading="lazy">
+</figure>
+<p>(Analysis.)</p>
+<p>Let ABC be the Triangle: and suppose B&#x27;C&#x27; so placed that
+B&#x27;D, C&#x27;E, drawn parallel to the sides, shall together =
+2B&#x27;C&#x27;.</p>
+<p>By Euc. I. 34, B&#x27;D = C&#x27;B, and C&#x27;E = B&#x27;C:</p>
+<pre class="outline">	∴ B&#x27;C + C&#x27;B = 2B&#x27;C&#x27;.</pre>
+<p>Hence, if B&#x27;L is cut off equal to half B&#x27;C, C&#x27;L = half C&#x27;B.</p>
+<p>Hence construction.</p>
+<p>(Synthesis.)</p>
+<p>In BC&#x27; take any point F: draw FG, ∥ BC, and
+equal to half BF: and join BG.</p>
+<p>Similarly, in CB&#x27; take any point H: draw HK, ∥ BC, and equal to half HC: and join CK.</p>
+<p>Produce BG, CK, to meet at L: and through L draw
+C&#x27;B&#x27; ∥ BC: and from B&#x27;, C&#x27;, draw B&#x27;D, C&#x27;E,
+∥ the sides.</p>
+<p>∵ FG = half FB; ∴, by similar
+Triangles, C&#x27;L = half C&#x27;B;</p>
+<p>Similarly B&#x27;L = half B&#x27;C;</p>
+<p>∴ C&#x27;B&#x27; = half sum of C&#x27;B, B&#x27;C; i.e.
+C&#x27;B + B&#x27;C = 2B&#x27;C&#x27;.</p>
+<p>But, by Euc. I. 34, C&#x27;B = B&#x27;D, and B&#x27;C = C&#x27;E;</p>
+<p>∴ B&#x27;D + C&#x27;E = 2B&#x27;C&#x27;.</p>
+<p>Q.E.F.</p>
+<h4>Solution 31</h4>
+<p>On July 1, watch gained on clock 5m. in 10h.; i.e.
+1/2m. per hour; i.e. 2m. in 4h.
+Hence, when watch said &#x27;noon&#x27;, clock said &#x27;12h. 2m.&#x27;; i.
+e. clock was 3m. slow of true time, when true time was
+12h. 5m.</p>
+<p>On July 30, watch lost on clock 1m. in 10h.; i.e.
+6sec. per hour; i.e. 19sec. in 3h. 10m.
+Hence, when watch said &#x27;12h. 10m.&#x27;, clock said
+&#x27;12h. 7m. 19sec.&#x27;; i.e. clock was 2m.
+19sec. fast of true time, when true time was 12h.
+5m.</p>
+<p>Hence clock gains, on true time, 5m. 19sec. in 29
+days; i.e. 319sec. in 29 days; i.e. 11sec. per day; i.
+e. 11/(24 × 12)sec. in 5m.</p>
+<p>Hence, while true time goes 5m., watch goes 5m.
+11/288sec.</p>
+<p>Now, when true time is 12h. 5m. on July 31,
+clock is (2m. 19sec. + 11sec.) fast of it;
+i.e. says &#x27;12h. 71/2m.&#x27; Hence, if
+true time is put 5m. back, clock must be put 5m.
+11/288sec. back; i.e. must be put back to
+12h. 2m. 29277/288sec.</p>
+<p>Hence, on July 31, when clock indicates this time, it is true
+noon.</p>
+<p>Q.E.F.</p>
+<h4>Solution 32</h4>
+<p>The nth term is n·(n + 4);</p>
+<pre class="outline">	∴ the (n+1)th term is (n + 1)·(n + 5) = (n + 1).{(n + 2) + 3},
+	= (n + 1)·(n + 2) + 3(n + 1);
+	∴ S_n = (n·(n + 1)·(n + 2))/3 + 3 · (n·(n + 1))/2 + C; and C = 0;
+	∴ S_n = n·(n + 1)·((n + 2)/3 + 3/2) = (n·(n + 1)·(2n + 13))/6.</pre>
+<p>Q.E.F.</p>
+<p>Also S₁₀₀ = (100·101·213)/6 = (100·101·71)/2 = (100·7171)/2 = 717100/2 = 358550.</p>
+<p>Q.E.F.</p>
+<h4>Solution 33</h4>
+<figure id="fig-28">
+<img src="images/pillow-problems/fig28.jpg" alt="Figure 28" width="300" height="316" loading="lazy">
+</figure>
+<p>Let DE = x; ∴ BC = 2x.</p>
+<p>Area = 3x·(√(r² - x²) + √(r² - 4x²)) = max.</p>
+<p>let v = x·(√(r² - x²) + √(r² - 4x²)) = max.</p>
+<pre class="outline">	∴ dv/dx = √(r² - x²) + √(r² - 4x²) - x²·(1/(√(r² - x²)) + 4/(√(r² - 4x²))) = 0;
+	∴ (r² - x²)·√(r² - 4x²) + (r² - 4x²)·√(r² - x²) = x²·(4√(r² - x²) + √(r² - 4x²));
+	∴ (r² - 2x²)·√(r² - 4x²) = -(r² - 8x²)·√(r² - x²);
+	∴ r⁴ - 4(r²x² + 4x⁴)·(r² - 4x²) = (r⁴ - 16r²x² + 64x⁴)·(r² - x²);
+	∴ r⁶ - 8r⁴x² + 20r²x⁴ - 16x⁶ = r⁶ - 17r⁴x² + 80r²x⁴ - 64x⁶;</pre>
+<p>∴, omitting r⁶, and dividing by x²,</p>
+<pre class="outline">	48x⁴ - 60r²x² + 9r⁴ = 0;
+	i.e. 16x⁴ - 20r²x² + 3r⁴ = 0;</pre>
+<p>∴ x²/r² = (20 ± √(208))/32 = (5 - √(13))/8 (upper sign being inadmissible, though this
+was not thought out.)</p>
+<p>Q.E.F.</p>
+<h4>Solution 34</h4>
+<figure id="fig-29">
+<img src="images/pillow-problems/fig29.jpg" alt="Figure 29" width="300" height="172" loading="lazy">
+</figure>
+<p>(Analysis.)</p>
+<p>Let A be the given Point, and C the centre of the given Circle.
+Join AC, and let ABD be the required Line. From B draw the
+Chord BE parallel to AC. Then ∠ DBE = ∠ A.
+Hence Arc DE = Arc BD; i.e. Arc BE is bisected by D;
+i.e. D is on perpendicular from C.</p>
+<figure id="fig-30">
+<img src="images/pillow-problems/fig30.jpg" alt="Figure 30" width="200" height="158" loading="lazy">
+</figure>
+<p>(Synthesis.)</p>
+<p>Join AC. From C draw CD perpendicular to AC. Join
+AD cutting Circle at B. From B draw BE parallel to
+AC.</p>
+<p>It is easily proved that Arc BD = Arc DE. Hence Arc BD
+subtends, in the Circle, an angle = ∠ DBE = ∠ A.</p>
+<p>Q.E.F.</p>
+<h4>Solution 35</h4>
+<figure id="fig-31">
+<img src="images/pillow-problems/fig31.jpg" alt="Figure 31" width="300" height="327" loading="lazy">
+</figure>
+<p>Let ABC be the given Triangle; and let the portions of the radii,
+outside the Triangle, have to the radius the given ratios k:1,
+l:1, m:1. (N.B. k, l, m, are supposed to be proper
+fractions.)</p>
+<p>From B draw BD ⊥ BA, and BE ⊥ BC; and make
+BD have, to BE, the ratio 1 - m:1 - k. Through D draw
+DF parallel to BA, and EF parallel to BC; and join
+BF. From F draw FG ⊥ BA, and FH ⊥ BC.</p>
+<p>Then FG:FH:: 1 - m:1 - k.</p>
+<p>Similarly, draw CO so that the ⊥s, drawn from any Point
+of it to CA and CB, are in the ratio 1 - l:1 - k; and produce
+BF to meet it at O.</p>
+<p>From O draw OA´, OB´, OC´, ⊥ the sides.</p>
+<p>Then OA´:OB´:OC´:: 1 - k:1 - l:1 - m.</p>
+<p>Produce OA´ to K, so that OK:OA´:: 1:1 - k.</p>
+<p>With centre O, and distance OK, describe a Circle; and produce
+OB&#x27;, OC&#x27;, to meet it at L, M.</p>
+<pre class="outline">	Now OK:OA&#x27;:: 1:1 - k;
+	OA&#x27;:OB&#x27;:: 1 - k:1 - l;
+	∴ OK:OB&#x27;:: 1:1 - l;</pre>
+<p>Similarly, OK:OC&#x27;:: 1:1 - m.</p>
+<p>But A&#x27;K:OK:: OK - OA&#x27;:OK:: k:1.</p>
+<p>Similarly B&#x27;L:radius:: l:1, and
+C&#x27;M:radius:: m:1.</p>
+<p>Q.E.F.</p>
+<h4>Solution 36</h4>
+<figure id="fig-32">
+<img src="images/pillow-problems/fig32.jpg" alt="Figure 32" width="300" height="286" loading="lazy">
+</figure>
+<p>(Analysis.)</p>
+<p>Let B&#x27;C&#x27; be required Line: and let ∠ at C&#x27; be right.</p>
+<p>Cut off C&#x27;D equal to C&#x27;B: then DB&#x27; = B&#x27;C.</p>
+<p>Join DB, DC: then ∠ DBC&#x27; = 45°, and ∠ B&#x27;DC = ∠ B&#x27;CD.</p>
+<p>From C draw CE ⊥ AB.</p>
+<p>Then ∠ B&#x27;DC = ∠ DCE; ∴ ∠ B&#x27;CD = ∠ DCE.</p>
+<p>(Synthesis.)</p>
+<p>Hence construction. Draw CE ⊥ AB: bisect ∠ ACE: at
+B make ∠ ABD = 45°. Let these lines meet at D. Through
+D draw B&#x27;DC&#x27;⊥ AB.</p>
+<p>Then ∠ C&#x27;DB = π - (∠ DC&#x27;B + ∠ C&#x27;BD) = 45° = ∠ C&#x27;BD;</p>
+<p>∴ C&#x27;D = C&#x27;B.</p>
+<figure id="fig-33">
+<img src="images/pillow-problems/fig33.jpg" alt="Figure 33" width="200" height="184" loading="lazy">
+</figure>
+<pre class="outline">	Also ∠ B&#x27;DC = ∠ DCE = ∠ DCB&#x27;;
+	∴ DB&#x27; = B&#x27;C;
+	∴ C&#x27;B&#x27; = sum of BC&#x27;, CB&#x27;.</pre>
+<p>Q.E.F.</p>
+<p>Limits of possibility:—</p>
+<p>∠ A must not be &gt; 90°;</p>
+<p>∠ B must not be &lt; 45°;</p>
+<p>∠ C must not be &lt; half complement of A,</p>
+<p>i.e. not &lt; (45°- A/2).</p>
+<h4>Solution 37</h4>
+<p>Let BC be the common chord, and A, D, the centres.</p>
+<figure id="fig-34">
+<img src="images/pillow-problems/fig34.jpg" alt="Figure 34" width="300" height="408" loading="lazy">
+</figure>
+<p>Let ∠ A = 30°, and ∠ D = 60°.</p>
+<p>And let BC (which = DB = DC) = 1.</p>
+<p>And let AB = x.</p>
+<p>Now cos A = √3/2 = (2x² - 1)/2x²;</p>
+<p>∴ √3/2 = 1 - 1/2x²; ∴ 1/2x² = (2 - √3)/2;</p>
+<p>∴ x² = 1/(2 - √3) = 2 + √3;</p>
+<p>∴ areas of Circles are π·(2 + √3) and π;</p>
+<p>∴ areas of Sectors are π·(2 + √3)/12 and
+π/6;</p>
+<p>∴ their sum = π·(4 + √3)/12.</p>
+<p>Again, area of Triangle ABC = 1/2·(2 + √3)·1/2,</p>
+<p>= (2 + √3)/4;</p>
+<p>also area of Triangle DBC = √3/4;</p>
+<p>∴ their sum = (2 + 2√3)/4 = (1 + √3)/2.</p>
+<p>Now the portion, of the smaller Circle, that is within the larger one,
+is the difference between these two sums;</p>
+<p>∴ it = π·(4 + √3)/12 - (1 + √3)/2.</p>
+<p>Hence its ratio, to the area of the smaller Circle, is this sum divided
+by π;</p>
+<p>∴ it = (4 + √3)/12 - (1 + √3)/2π,</p>
+<p>= 5·732/12 - 2·732/((44/7)) = 0.478 - 0·248/((4/7)),</p>
+<p>= 0.478 - 1·736/4 = 0.478 - 0.434 = 0.044.</p>
+<p>Q.E.F.</p>
+<h4>Solution 38</h4>
+<p>Taking, in order, the bag from which this unknown counter is drawn, the
+bag from which a red one was twice drawn, and the remaining bag, we
+see that there are six possible arrangements of &#x27;A&#x27;, &#x27;B&#x27;, and
+&#x27;C&#x27;: namely—</p>
+<pre class="outline">	(1) ABC, | (4) BCA,
+	(2) ACB, | (5) CAB,
+	(3) BAC, | (6) CBA.</pre>
+<p>Now the chance of the observed event is, in case (1),
+1 × 4/9 = 4/9; in case (2),
+1 × 1/9 = 1/9; in case (3),
+2/3 × 1 = 2/3; in case (4),
+2/3 × 1/9 = 2/27; in case
+(5), 1/3 × 1 = 1/3; and in case (6),
+1/3 × 4/9 = 4/27.</p>
+<p>Hence the chances of existence, for these 6 states, are proportional to
+&#x27;12, 3, 18, 2, 9, 4&#x27;. Hence their actual values are &#x27;1/4, 1/16, 3/8, 1/24, 3/16, 1/12&#x27;.</p>
+<p>Hence the chance of the unknown counter being red is the
+sum of 1/4 × 1, 1/16 × 1, 3/8 × 2/3, 1/24 × 2/3, 3/16 × 1/3, 1/12 × 1/3;</p>
+<p>i.e. it is (36 + 9 + 36 + 4 + 9 + 4)/(9 × 16); which = 98/(9 × 16) = 49/72.</p>
+<p>Q.E.F.</p>
+<h4>Solution 39</h4>
+<p>Let x = no. of days.</p>
+<p>Then (2 × 10 - (x - 1))·x/2 = 14 + {2 × 2 + (x - 1)·2} · x/2;</p>
+<p>i.e. 21x/2 - x²/2 = 14 + x + x²;</p>
+<p>∴ 3x² - 19x + 28 = 0; ∴ x = (19 ± 5)/6 = 4
+or 7/3.</p>
+<p>Now the above solution has taken no account of the discontinuity
+of increase, or decrease of pace, and is the true solution only on the
+supposition that the increase or decrease is continuous, and
+such as to coincide with the above data at the end of each day. Hence
+&#x27;4&#x27; is a correct answer; but &#x27;7/3&#x27; only indicates that a
+meeting occurs during the third day. To find the hour of this,
+let y = no. of hours.</p>
+<p>Now in 2 days A has got to the end of 19 miles, B to the end of
+(14 + 6), i.e. 20.</p>
+<p>∴ 19 + y·8/12 = 20 + y·6/12.</p>
+<p>i.e. y·2/3 = 1 + y·1/2; ∴ y = 6.</p>
+<p>Hence they meet at end of 2d. 6h., and at end of
+4d.: and the distances are 23 miles, and 34 miles.</p>
+<p>Q.E.F.</p>
+<h4>Solution 40</h4>
+<p>(1) Let ABC be the given Triangle, and AD the line from the
+vertex.</p>
+<figure id="fig-35">
+<img src="images/pillow-problems/fig35.jpg" alt="Figure 35" width="300" height="230" loading="lazy">
+</figure>
+<p>From D draw DE, DF, parallel to the sides; and from E
+and F draw EG, FH, ⊥ BC.</p>
+<p>Then Triangles FBD, EDC, are similar to ABC;</p>
+<p>∴ FH: AD:: BD: BC,</p>
+<p>and EG: AD:: DC: BC;</p>
+<p>∴ (FH + EG): AD:: BC: BC;</p>
+<p>∴ FH + EG = AD.</p>
+<p>Also, ∵ Triangles AED, AFD, are equal and on the
+same base AD,</p>
+<p>∴ their altitudes are equal; i.e. DH = DG.</p>
+<p>Q.E.F.</p>
+<p>(2) Let ABC be the given Triangle, and AD the line from the
+vertex.</p>
+<figure id="fig-36">
+<img src="images/pillow-problems/fig36.jpg" alt="Figure 36" width="300" height="235" loading="lazy">
+</figure>
+<p>Make CE = BD; from E draw EF, EG, parallel to the sides;
+and from F, G, draw FH, GK, ⊥ BC.</p>
+<p>Then Triangles GBE, FEC, are similar to ABC;</p>
+<p>∴ GK: AD:: BE: BC,</p>
+<p>and FH: AD:: EC: BC;</p>
+<p>∴ (GK + FH): AD:: BC: BC;</p>
+<p>∴ GK + FH = AD.</p>
+<p>Also BK: BE:: BD: BC;</p>
+<p>∴ BK: DC:: EC: BC;</p>
+<p>:: HC: DC;</p>
+<p>∴ BK = HC.</p>
+<p>Q.E.F.</p>
+<h4>Solution 41</h4>
+<p>(1) As there was certainly at least one W in the bag at
+first, the &#x27;a priori&#x27; chances for the various states of the bag,
+&#x27;WWWW, WWWB, WWBB, WBBB,&#x27; were &#x27;1/8,
+3/8, 3/8, 1/8&#x27;.</p>
+<p>These would have given, to the observed event, the chances &#x27;1,
+1/2, 1/6, 0&#x27;.</p>
+<p>Hence the chances, after the event, for the various
+states, are proportional to &#x27;1/8.1,
+3/8·1/2, 3/8·1/6&#x27;;
+i.e. to &#x27;1/8, 3/16, 1/16&#x27;;
+i.e. to &#x27;2, 3, 1&#x27;. Hence their actual values are &#x27;1/3,
+1/2, 1/6&#x27;.</p>
+<p>Hence the chance, of now drawing W, is &#x27;1/3.1 + 1/2·1/2&#x27;; i.e. it is 7/12.</p>
+<p>Q.E.F.</p>
+<p>(2) If he had not spoken, the &#x27;a priori&#x27; chances for the states
+&#x27;WWWW, WWWB, WWBB, WBBB, BBBB&#x27;, would have been
+&#x27;(1, 4, 6, 4, 1)/16&#x27;.</p>
+<p>These would have given, to the observed event, the chances &#x27;1,
+1/2, 1/6, 0, 0&#x27;.</p>
+<p>Hence the chances, after the event, for the various states, are
+proportional to &#x27;1/16.1, 1/4 · 1/2, 1/6 · 3/8&#x27;; i.e. to &#x27;1, 2,
+1&#x27;. Hence their actual values are &#x27;1/4, 1/2,
+1/4&#x27;.</p>
+<p>Hence the chance, of now drawing W, is &#x27;1/4.1 + 1/2 · 1/2&#x27;; i.e. it is 1/2.</p>
+<p>Q.E.F.</p>
+<h4>Solution 42</h4>
+<p>Let ABC be the given Triangle. Bisect its angles, and draw
+⊥s to them, forming the Triangle A′B′C′.</p>
+<figure id="fig-37">
+<img src="images/pillow-problems/fig37.jpg" alt="Figure 37" width="300" height="314" loading="lazy">
+</figure>
+<p>Now ∠ CBA′ = 90° - B/2; and so of the others.</p>
+<p>∴ A′ = 180° - (CBA′ + BCA′) = (B + C)/2 = 90°- A/2; ∴ BA′ = a·(cos C/2)/(cos A/2).</p>
+<p>Similarly, BC&#x27; = c·(cos A/2)/(cos C/2);</p>
+<pre class="outline">	∴ A&#x27;C&#x27; = (a cos²C/2 + c cos²A/2)/(cos A/2 cos C/2) = (a·(s·(s - c))/ab + c·(s·(s - a))/bc)/(s/b·√(((s - a)·(s - c))/ac)),
+	= (s - c + s - a)/(sin B/2) = b/(sin B/2).</pre>
+<figure id="fig-38">
+<img src="images/pillow-problems/fig38.jpg" alt="Figure 38" width="200" height="221" loading="lazy">
+</figure>
+<p>Similarly, A&#x27;B&#x27; = c/(sin C/2);</p>
+<p>∴ area of A&#x27;B&#x27;C&#x27; = (bc cos A/2)/(2 sin B/2 sin C/2);</p>
+<pre class="outline">	∴ (area of A&#x27;B&#x27;C&#x27;)/(area of ABC) = (bc cos A/2)/(2 sin B/2 sin C/2)·2/(bc sin A),
+	= (cos A/2)/(sin B/2 sin C/2·2 sin A/2 cos A/2),
+	= 1/(2 sin A/2 sin B/2 sin C/2),
+	= abc/(2(s - a)·(s - b)·(s - c)).</pre>
+<p>Q.E.F.</p>
+<h4>Solution 43</h4>
+<figure id="fig-39">
+<img src="images/pillow-problems/fig39.jpg" alt="Figure 39" width="300" height="262" loading="lazy">
+</figure>
+<p>Let ABC be the given Triangle; and let BFD, CFE, be the
+required lines, so that FB = FC, and Tetragon AEFD = Triangle
+FBC. And call the angle FBC &#x27;θ&#x27;. It will suffice to
+calculate this angle.</p>
+<p>Because Triangle FBC = Tetragon AEFD,</p>
+<pre class="outline">	∴ Triangle  DBC = Triangle  AEC,
+	= Triangle  ABC - Triangle  EBC;</pre>
+<p>∴ Triangles DBC, EBC, together = Triangle ABC;</p>
+<p>∴ 1/2 · a²/(cot θ + cot C) + 1/2 · a²/(cot θ + cot B) = 1/2 · a²/(cot B + cot C);</p>
+<p>∴ 1/(cot θ + cot C) + 1/(cot θ + cot B) = 1/(cot B + cot C);</p>
+<p>∴ (2 cot θ + (cot B + cot C))/(cot² θ + cot θ ·(cot B + cot C) + cot B cot C) = do.;</p>
+<p>∴ cot² θ + cot θ ·(cot B + cot C) + cot B cot C = 2 cot θ·(cot B + cot C) + (cot B + cot C)²;</p>
+<p>∴ cot² θ - cot θ·(cot B + cot C) - (cot² B + cot B cot C + cot² C) = 0;</p>
+<p>∴ cot θ = 1/2. {cot B + cot C ± √(5 cot² B + 6 cot B cot C + 5 cot² C)}.</p>
+<p>Q.E.F.</p>
+<h4>Solution 44</h4>
+<p>Let k be a No. not containing 2 or 5 as a factor, i.e. let it
+be prime to 10. Then, if 1/k is reduced to a circulating
+decimal, and that to a vulgar fraction, the digits of the denominator
+will be a certain number of 9&#x27;s; i.e. it will be of the form
+(10ⁿ - 1).</p>
+<p>And since this fraction = 1/k, and that k is prime
+to 10, and so prime to 10^m, the factor (10ⁿ - 1) must be a
+multiple of k.</p>
+<p>This plainly holds good in any other scale of notation. Hence, if
+a is the radix of the scale of notation, and b a No. prime to
+a, a value may be found for n, which will make (aⁿ - 1) a
+multiple of b.</p>
+<p>Q. E. D.</p>
+<p>EXAMPLES (not thought out).</p>
+<p>(1) With radix 10, find a value, for n, which will make
+(10ⁿ - 1) a multiple of 7.</p>
+<pre class="outline">	1/7 = ·142857 = 142857/(10⁶ - 1).</pre>
+<p>Ans. n = 6.</p>
+<p>(2) Let the two given Nos. be 8, 9.</p>
+<p>Taking 8 as radix, we get 1/9 = ·07 = 7/(8² - 1).</p>
+<p>Ans. n = 2.</p>
+<p>(3) Let the two given Nos. be 7, 13.</p>
+<p>Taking 7 as radix, we get</p>
+<pre class="outline">	1/13 = ·035245631421 = 35245631421/(7¹² - 1).</pre>
+<p>Ans. n = 12.</p>
+<h4>Solution 45</h4>
+<p>Divide each rod into (n + 1) parts, where n is assumed to be
+odd, and the n points of division are assumed to be the only points
+where the rod will break, and to be equally frangible.</p>
+<pre class="outline">	The chance of one failure is (n - 1)/n;
+	∴ n failures is ((n - 1)/n)ⁿ
+	= (1 - 1/n)ⁿ.</pre>
+<p>Now, if m = 1/n; then, when n = 1/0, m = 0;</p>
+<p>∴ the chance that no rod is broke in the middle = (1 - m)^(1/m), when m = 0;</p>
+<p>i.e. it approaches the limit (1 - 0)^(1/0).</p>
+<p>And Ans. = 1 - (1 - 0)^(1/0).</p>
+<p>Now (1 + 0)^(1/0) = e. Hence if, in the series for e,
+we call the sum of the odd terms &#x27;a&#x27;, and of the even terms
+&#x27;b&#x27;; then e = a + b; and (1 - 0)^(1/0) = a - b = 2a - e.</p>
+<p>Q.E.F.</p>
+<p>[N.B. What follows here was not thought out.]</p>
+<pre class="outline">	Now a = 1 + 1/2! + 1/4! + etc.
+	1 = 1
+	1/2! = 0.5
+	1/4! = 0.04166666 etc.
+	1/6! = 0.00138888 etc.
+	1/8! = 0.00002480 etc.
+	1/10! = 0.00000027 etc.
+	——————————
+	∴ a = 1.5430806 etc.
+	∴ 2a = 3.0861612 etc.
+	e = 2.7182818 etc.
+	——————————
+	∴ (1 - 0)^(1/0) = 0.3678793 etc.
+	∴ Ans. = 1 - (1 - 0)^(1/0) = 0.6321207 etc.</pre>
+<h4>Solution 46</h4>
+<p>Let ABC be the given Triangle, and D the given Point.</p>
+<figure id="fig-40">
+<img src="images/pillow-problems/fig40.jpg" alt="Figure 40" width="500" height="191" loading="lazy">
+</figure>
+<p>If we make a Triangle D′E′F′, having its angles equal to the given
+angles, and having D′ as its assigned vertex, the Problem may
+be solved, if we can circumscribe, about the Triangle D′E′F′, a
+Triangle similar to ABC.</p>
+<p>Now we can construct, on E′F′, F′D′, D′E′, segments of
+Circles containing angles equal to A, B, C. Hence the
+Problem may be solved, if we can place, in these Circles, a line
+B′D′C′, divided in the same proportion as BDC.</p>
+<p>This Lemma may be solved as follows. Let G, H, be the centres
+of the Circles. Join GH, and divide it, at K, proportionally to
+BDC.</p>
+<figure id="fig-41">
+<img src="images/pillow-problems/fig41.jpg" alt="Figure 41" width="400" height="232" loading="lazy">
+</figure>
+<p>Join KD&#x27;; through D&#x27; draw B′D′C′ ⊥ KD&#x27;; and from G,
+H, draw GL, HM, ⊥ B′C′.</p>
+<p>Now it may be easily proved that</p>
+<pre class="outline">	LD&#x27;: D′M:: GK: KH:: BD: DC.</pre>
+<p>But B′D′, D′C′, are doubles of LD&#x27;, D′M;</p>
+<pre class="outline">	∴ B′D′: D′C′:: BD: DC.</pre>
+<p>Q.E.F.</p>
+<p>[The construction is now obvious, namely to join B′F′, C′E′, and
+produce them to meet, on the third Circle (as they may be easily proved
+to do), at A′; then to divide AB, AC, at F and E,
+proportionally to A′F′B′, A′E′C′; and then to join DE,
+DF.]</p>
+<h4>Solution 47</h4>
+<p>By inspection, &#x27;0, 0, 0&#x27; are one set of values.</p>
+<p>Subtracting, we get x·(1/y - 1/z) = y - z;</p>
+<p>∴ x = yz·(y - z)/(z - y) = -yz, unless y = z, in which case x = 0/0.</p>
+<p>Now, by (1), x = xy - yz;</p>
+<p>∴, when y ≠ z, x = xy + x;</p>
+<p>∴ xy = 0, unless x be infinite.</p>
+<p>Similarly, by (2), xz = 0, unless x be infinite.</p>
+<p>Hence, if x is finite, and if y≠ z, either x or y = 0, and also either x or z = 0; i.e. either x = 0, or
+else y = z = 0. But the latter is excluded by our hypothesis. Hence
+x = 0. Hence yz = 0; i.e. either y or z = 0, and the
+other may take any value.</p>
+<p>This gives us 2 more sets of values, namely</p>
+<pre class="outline">	x = y = 0; z  has any value;
+	x = z = 0; y  has any value.</pre>
+<p>We have now to ascertain what happens when y = z.</p>
+<p>By (1), x/y = x - y;</p>
+<p>∴ y² = x·(y - 1); i.e. x = y²/(y - 1).</p>
+<p>Similarly, by (2), x = z²/(z - 1).</p>
+<p>This gives us a 4th set of values, namely x = k²/(k - 1), y = z = k; where k has any value.</p>
+<p>Now y and z may plainly have any real values, but
+x is restricted by the equation</p>
+<pre class="outline">	y² - xy + x = 0,</pre>
+<p>in which y
+cannot be real, unless (x² - 4x) &gt; 0. Hence x may have any
+negative value, and any positive value that is not less than 4; but
+it cannot have any positive value, less than 4, without making y
+unreal.</p>
+<p>Q.E.F.</p>
+<h4>Solution 48</h4>
+<p>Let ABC be the given Triangle, A′, B′, C′, the centres
+of the semicircles, and DE, FG, HJ, the common tangents; so
+that DE = α, FG = β, and HJ = γ.</p>
+<figure id="fig-42">
+<img src="images/pillow-problems/fig42.jpg" alt="Figure 42" width="300" height="295" loading="lazy">
+</figure>
+<p>Join B′D, C′E; and from C′ draw C′K ⊥ B′D. Hence
+CK = α.</p>
+<p>Call sides of given Triangle &#x27;2a, 2b, 2c&#x27;.</p>
+<p>Then B′C′ = a, and B′K = b - c;</p>
+<p>∴ C′K = √{a² - (b - c)²};</p>
+<p>i.e. α = √{(a - b + c)·(a + b - c)};</p>
+<p>similarly, β = √{(a + b - c)·(-a + b + c)},</p>
+<p>and γ = √{(-a + b + c)·(a - b + c)};</p>
+<p>∴ βγ/α = -a + b + c;</p>
+<p>similarly, γα/β = a - b + c,</p>
+<p>and αβ/γ = a + b - c;</p>
+<p>∴ their sum = a + b + c,</p>
+<p>= semi-perimeter of ABC.</p>
+<p>Q.E.D.</p>
+<h4>Solution 49</h4>
+<p>Take, as unit, a side of one of the Triangles.</p>
+<p>If the Tetrahedron is cut by a vertical Plane containing one
+of the slant edges, the section is a Triangle whose base is
+√3/2, and whose sides are √3/2, 1;</p>
+<p>hence cosine of smaller base-angle</p>
+<pre class="outline">	= (3/4 + 1 - 3/4)·1/√3 = 1/√3;</pre>
+<p>∴ its sine = √2/√3 = its altitude;</p>
+<p>and this is the altitude of the Tetrahedron;</p>
+<p>∴ volume of Tetrahedron = 1/3·√2/√3·√3/4 = √2/12.</p>
+<p>Also altitude of Pyramid = altitude of Triangle whose base is
+√2, and whose sides are 1, 1;</p>
+<p>i.e. it = √2/2;</p>
+<p>∴ volume of Pyramid =
+1/3·√2/2 = √2/6.</p>
+<p>Hence required ratio = √2/6·12/√2 = 2.</p>
+<p>Q.E.F.</p>
+<h4>Solution 50</h4>
+<p>At first, the chance that bag H shall contain</p>
+<pre class="outline">	2 W counters, is 1/4.
+	1 W and 1 B, is 1/2.
+	2 B, is 1/4.</pre>
+<p>∴, after adding a W, the chance that it shall contain</p>
+<pre class="outline">	3 W, is  1/4.
+	2 W, 1 B, is  1/2.
+	1 W, 2 B, is  1/4.</pre>
+<p>hence the chance of drawing a W from it is</p>
+<pre class="outline">	1/4 × 1 + 1/2 × 2/3 + 1/4 × 1/3:  i.e. 2/3.</pre>
+<p>∴ the chance of drawing a
+B is 1/3.</p>
+<p>After transferring this (unseen) counter to bag K, the chance that
+it shall contain</p>
+<pre class="outline">	3 W, is 2/3 × 1/4;  i.e.  1/6.
+	2 W,  and 1 B, is 2/3 × 1/2 + 1/3 × 1/4;  i.e.  5/12.
+	1 W, 2 B, is 2/3 × 1/4 + 1/3 × 1/2;  i.e.  1/3.
+	3 B, is 1/3 × 1/4;  i.e. 1/12;</pre>
+<p>∴ the chance of drawing a W from it is</p>
+<pre class="outline">	1/6 × 1 + 5/12 × 2/3 + 1/3 × 1/3;  i.e.  5/9.</pre>
+<p>∴ the chance of drawing a B is 4/9.</p>
+<p>Before transferring this to bag H, the chance that bag H
+shall contain</p>
+<pre class="outline">	2 W, is 1/4 × 1 + 1/2 × 1/3;  i.e.  5/12.
+	1 W, 1 B, 1/2 × 2/3 + 1/4 × 2/3;  i.e.  1/2.
+	2 B, 1/4 × 1/3;  i.e. 1/12.</pre>
+<p>∴, after transferring it, the chance that bag H shall
+contain</p>
+<pre class="outline">	3 W, is 5/12 × 5/9;  i.e. 25/108.
+	2 W, 1 B, 5/12 × 4/9 + 1/2 × 5/9;  i.e. 50/108.
+	1 W, 2 B, 1/2 × 4/9 + 1/12 × 5/9;  i.e. 29/108.
+	3 B, 1/12 × 4/9;  i.e. 4/108.</pre>
+<p>Hence the chance of drawing a W is</p>
+<pre class="outline">	1/108 × {25 × 1 + 50 × 2/3 + 29 × 1/3};  i.e.  17/27.</pre>
+<p>i.e. the odds are 17 to 10 on its happening.</p>
+<p>Q.E.F.</p>
+<h4>Solution 51</h4>
+<p>Let ABC be the given Triangle, and D the given Point.</p>
+<figure id="fig-43">
+<img src="images/pillow-problems/fig43.jpg" alt="Figure 43" width="300" height="237" loading="lazy">
+</figure>
+<p>(Analysis.)</p>
+<p>Let DE be the line required. Draw DF, EG, ⊥ the
+base. Then their sum is equal to DE.</p>
+<p>Bisect DE at H, and draw HK ⊥ the base: then it is
+evident that HK is the A.M. of DF, EG, and is equal
+to half their sum; i.e. it is equal to half of DE. Hence
+a Circle, drawn with centre H and at distance HD, will pass
+through E and K, and will touch the base at K.</p>
+<p>Through H draw LHM parallel to AC. Then DA is plainly
+bisected at L. Also LM passes through the centre of the Circle.
+Hence, if DN is drawn ⊥ LM (or CA), it is a chord
+of the Circle, and is bisected at R. Produce ND to meet the
+base produced at S. Hence SDN cuts the Circle, and SK
+touches it at K. But S can be found, and SK can then be
+taken, so that sq. of SK may be equal to rect. of SD, SN.</p>
+<p>(Synthesis.)</p>
+<p>From D draw DN ⊥ AC, and produce it to meet the base
+produced at S. Take SK, so that its square may be equal to
+rect. of SD, SN.</p>
+<p>Bisect DA at L, and from L draw LM parallel to AC;
+and from K draw KH ⊥ the base, to meet LM at H.
+Join DH, and produce it to meet AC at E, and draw DF,
+EG, ⊥ the base.</p>
+<p>Because DL = LA, and that LM is parallel to AC,</p>
+<p>∴ DH = HE = HK; ∴ DE = 2 HK.</p>
+<p>But DF + EG = 2HK; ∴ DF + EG = DE.</p>
+<p>Q.E.F.</p>
+<p>[N.B. This proof is incomplete. I have assumed, without proving it,
+that DH = HK. It may be proved thus. Because sq. of SK = rect.
+of SD, SN, ∴ DN is a chord of a Circle which
+touches the base at K; ∴ LM, which bisects it at right
+angles, passes through the centre. But KH also passes through the
+centre; ∴ H is the centre; ∴ HD = HK.]</p>
+<h4>Solution 52</h4>
+<p>Let x be the number of pennies each had at first.</p>
+<p>No. (3) received x, took out (2 + 4), and put in x/2;
+so that the sack then contained (x·3/2 - 6). Let us write
+&#x27;a&#x27; for &#x27;3/2.&#x27;</p>
+<p>No. (5) received (xa - 6), took out (4 + 1), and put in enough to
+multiply, by a, its contents when he received it. The sack now
+contained (xa² - 6a - 5).</p>
+<p>No. (2) took out (1 + 3), and handed on (xa³ - 6a² - 5a - 4).</p>
+<p>No. (4) took out (3 + 5), and handed on</p>
+<pre class="outline">	(xa⁴ - 6a³ - 5a² - 4a - 8).</pre>
+<p>No. (1) put in 2. The sack now contained 5x.</p>
+<p>Hence xa⁴ - 6a³ - 5a² - 4a - 6 = 5x;</p>
+<p>∴ x = (6a³ + 5a² + 4a + 6)/(a⁴ - 5);</p>
+<p>= ((6·3³ + 5·3²·2 + 4·3·2² + 6·2³)·2)/(3⁴ - 5·2⁴);</p>
+<p>= ((162 + 90 + 48 + 48)·2)/(81 - 80) = 696 = 2l·18s·0d.</p>
+<p>Q.E.F.</p>
+<h4>Solution 53</h4>
+<p>Let ABC be the given Triangle, and P the given Point; and call
+its trilinear co-ordinates &#x27;α, β, γ&#x27;.</p>
+<figure id="fig-44">
+<img src="images/pillow-problems/fig44.jpg" alt="Figure 44" width="300" height="302" loading="lazy">
+</figure>
+<p>From P draw PA′, PB′, PC′, ⊥ the sides, and therefore
+equal to α, β, γ. Produce PA′ and PC′ to A&#x27;&#x27; and C&#x27;&#x27;, making
+A′A&#x27;&#x27; = PA′, and C′C″ = PC′. From C″ draw C″D ⊥ AC, and
+produce it to E, making DE = C&#x27;&#x27;D. Join EA&#x27;&#x27;, cutting AC
+in R, and BC in S. Join C&#x27;&#x27;R, cutting AB in Q. Join
+PQ, PS.</p>
+<p>The path of the ball is plainly PQRSP; and we have
+to calculate the length of AR.</p>
+<p>Now AR = DR + AD = DR + AB′ - DB′.</p>
+<p>First, to calculate DR.</p>
+<p>From P draw PU, PV, parallel to AB, AC; from C&#x27;
+draw C&#x27;W ⊥ PV; and from A&#x27;&#x27; draw A&#x27;&#x27;F ⊥ AC.</p>
+<p>By similar Triangles, DR: RF:: DE: A&#x27;&#x27;F:: C&#x27;&#x27;D: A&#x27;&#x27;F;</p>
+<p>∴ DR: DF:: C&#x27;&#x27;D: (C&#x27;&#x27;D + A&#x27;&#x27;F);</p>
+<p>∴ DR = (DF · C&#x27;&#x27;D)/(C&#x27;&#x27;D + AF).</p>
+<p>Now ∠ C&#x27;VP = A; ∴ ∠ C&#x27;PV = 90° - A;</p>
+<p>∴ WP = γ sin A;</p>
+<p>∴ DB&#x27;, which = 2 WP, = 2γ sin A.</p>
+<p>Similarly, B&#x27;F = 2α sin C;</p>
+<p>∴ DF = 2 (α sin C + γ sin A).</p>
+<p>Again, C&#x27;W = γ cos A;</p>
+<p>∴ C″D, which = 2 C&#x27;W + PB&#x27;, = 2γ cos A + β.</p>
+<p>Similarly, A″F = 2 α cos C + β;</p>
+<p>∴ C&#x27;&#x27;D + A″F = 2 (α cos C + γ cos A + β);</p>
+<p>∴ DR = ((α sin C + γ sin A) · (2 γ cos A + β))/(α cos C + γ cos A + β).</p>
+<p>Now AB&#x27; = B&#x27;U + UA = B&#x27;U + PV,</p>
+<p>co sec co sec = β cot A + γ co sec A = (β cos A + γ)/(sin A);</p>
+<p>∴ AB&#x27; - DB&#x27; = (β cos A + γ)/(sin A) - 2 γ sin A,</p>
+<p>= (β cos A + γ (1 - 2 sin² A))/(sin A)</p>
+<p>= (β cos A + γ cos 2 A)/(sin A).</p>
+<p>Now AR = DR + AB&#x27; - DB&#x27;;</p>
+<p>∴ AR = ((α sin C + γ sin A) · (2 γ cos A + β))/(α cos C + γ cos A + β) + (β cos A + γ cos 2 A)/(sin A).</p>
+<p>Q.E.F.</p>
+<h4>Solution 54</h4>
+<p>Plainly Triangle ADE is similar to ABC.</p>
+<figure id="fig-45">
+<img src="images/pillow-problems/fig45.jpg" alt="Figure 45" width="200" height="176" loading="lazy">
+</figure>
+<p>Let k = ratio DE/a = AE/b = AD/c.</p>
+<p>Now DG = DE; ∴ DG = ka;</p>
+<p>∴ GB = c - ka - kc;</p>
+<p>∴ GB/c = 1 - k - k·a/c;</p>
+<p>∴ GF (which = GB·b/c) = b - kb - k·ab/c;</p>
+<p>but GF = DE = ka;</p>
+<p>∴ b - kb - k·ab/c = ka;</p>
+<p>∴ bc = k·(bc + ca + ab);</p>
+<p>∴ k = bc/(bc + ca + ab) = (1/a)/(1/a + 1/b + 1/c) = (1/a)/m (say).</p>
+<p>Hence AD = (c·1/a)/m; DG = 1/m = (c·1/c)/m·</p>
+<p>∴ GB (which = c - AD - DG) = (c·(m - 1/a - 1/c))/m = (c·1/b)/m;</p>
+<h4>∴ AD: DG: GB:: 1/a: 1/c: 1/b·</h4>
+<p>Also DE = ka = 1/m = 1/(1/a + 1/b + 1/c)·</p>
+<p>Q.E.F.</p>
+<h4>Solution 55</h4>
+<figure id="fig-46">
+<img src="images/pillow-problems/fig46.jpg" alt="Figure 46" width="300" height="198" loading="lazy">
+</figure>
+<p>Let A, B, C be the centres of the bases of the towers; and
+a, b, c their radii. Suppose P the required Point; and
+from P draw a pair of tangents to each circle, and lines to the
+centres, which will plainly bisect the angles contained by the pairs
+of tangents.</p>
+<p>Hence angles APD, BPE, CPF are equal;</p>
+<p>∴ sin APD = sin BPE = sin CPF;</p>
+<p>i.e. a/AP = b/BP = c/CP;</p>
+<p>∴ AP: BP: CP:: a: b: c.</p>
+<p>Draw a Line through A, B, and on it take Points G, H,
+such that AG: GB:: AH: HB:: a: b.</p>
+<p>Then the Semicircle, described on GH, is the locus of all Points
+whose distances, from A and B, are proportional to a, b.</p>
+<p>Hence, if a Line is drawn through B, C, and a Semicircle
+described which is the locus of all Points whose distances, from
+B and C, are proportional to b, c; the intersection of
+these two Semicircles will be the Point required.</p>
+<p>Q.E.F.</p>
+<p>[Note. &quot;The locus of all Points whose distances &amp;c.,&quot; if
+represented algebraically, is plainly a Circle, whose centre is on
+the Line through A, B, and which passes through G and
+H.]</p>
+<h4>Solution 56</h4>
+<p>Draw BC, CE, BD, equal to the given altitudes, so as to
+form right ∠s at B and C: and produce DB, EC.
+Join DC, and draw CF ⊥ to it. Join EB, and draw
+BG ⊥ to it. With centre B, and distance BF,
+describe a circle: with centre C, and distance CG, describe
+another: let them meet at A: and join AB, AC.</p>
+<p>Call the altitudes of ABC, &#x27;α, β, γ&#x27;.</p>
+<p>Now α·BC = β·CA = γ·AB</p>
+<p>= twice area of ABC;</p>
+<p>also, taking BC as unit-line,</p>
+<p>BC = 1/BC, CA = CG = 1/CE,</p>
+<p>AB = BF = 1/BD;</p>
+<p>∴ α/BC = β/CE = γ/BD;</p>
+<p>i.e. α, β, γ are proportional to given
+altitudes;</p>
+<p>∴ Triangle ABC is similar to required Triangle.</p>
+<p>The rest of the construction is obvious.</p>
+<p>Q.E.F.</p>
+<h4>Solution 57</h4>
+<p>(1) Geometrically.</p>
+<p>Let ABC be given Triangle.</p>
+<p>(Analysis.)</p>
+<p>Suppose the 3 Squares described, and that their upper edges form the
+Triangle A&#x27;B&#x27;C&#x27;. Join AA&#x27;, BB&#x27;, CC&#x27;.</p>
+<p>Now plainly, if BB&#x27; is produced, the perpendiculars
+dropped, from any Point of it, upon AB, BC, will be
+proportional to B&#x27;F, B&#x27;D.</p>
+<p>Similarly for AA&#x27; and CC&#x27;.</p>
+<p>Hence these 3 Lines will meet at the Point from which the
+perpendiculars, dropped upon the sides of ABC, are proportional to
+B&#x27;C&#x27;, C&#x27;A&#x27;, A&#x27;B&#x27;.</p>
+<figure id="fig-47">
+<img src="images/pillow-problems/fig47.jpg" alt="Figure 47" width="300" height="208" loading="lazy">
+</figure>
+<p>Hence, if Squares is described externally on the sides of ABC, and
+if their outer edges is produced to form a new Triangle A&#x27;&#x27;B&#x27;&#x27;C&#x27;&#x27;:
+this Triangle, with these 3 Squares, will form a Diagram wholly similar
+to that formed by the Triangle ABC, with the 3 Squares inside it.</p>
+<p>(Synthesis.)</p>
+<p>Hence, if Squares is described externally on the sides of the given
+Triangle; and if their outer edges is produced to form a new Triangle;
+and if the sides of the given Triangle is divided similarly to those
+of the new Triangle: their central portions will be the bases of the
+required Squares.</p>
+<p>Q.E.F.</p>
+<p>(2) Trigonometrically.</p>
+<p>Let a, b, c be the sides of the given Triangle, and m
+its area; and let x, y, z be the sides of the required
+Squares.</p>
+<p>Plainly a Circle can be described about the Tetragon
+BDB&#x27;F.</p>
+<p>Hence ∠ B&#x27;BD = ∠ B&#x27;FD.</p>
+<h4>Now, in Triangle B&#x27;FD, we know that</h4>
+<pre class="outline">	B&#x27;D sin D = B&#x27;F sin F;</pre>
+<p>i.e. x sin (B&#x27; + F) = z sin F;</p>
+<p>∴ x sin B&#x27;cos F + x cos B&#x27;sin F = z sin F.</p>
+<p>Now ∠ B is supplementary to ∠ B&#x27;;</p>
+<p>∴ x sin B cos F = (z + x cos B) sin F;</p>
+<p>cot cot∴ cot F = (z + x cos B)/(x sin B) = cot B&#x27;BD.</p>
+<figure id="fig-48">
+<img src="images/pillow-problems/fig48.jpg" alt="Figure 48" width="300" height="212" loading="lazy">
+</figure>
+<p>Now BD = x cot B&#x27;BD;</p>
+<p>∴ BD = (z + x cos B)/(sin B)·</p>
+<h4>Similarly, EC = (y + x cos C)/(sin C)·</h4>
+<p>But BD + EC = a - x;</p>
+<p>∴ (z + x cos B)/(sin B) + (y + x cos C)/(sin C) = a - x;</p>
+<p>∴ (x sin (B + C) + y sin B + z sin C)/(sin B sin C) = a - x;</p>
+<p>i.e. (x sin A + y sin B + z sin C)/(sin B sin C) = a - x.</p>
+<p>Now plainly these Triangles are similar; so that</p>
+<pre class="outline">	a/x = b/y = c/z.</pre>
+<p>Hence, multiplying the last equation, throughout, by one or other of
+these equal fractions, we get</p>
+<pre class="outline">	(a sin A + b sin B + c sin C)/(sin B sin C) = a²/x - a;
+	∴ (a sin A + b sin B + c sin C)/(a sin B sin C) = a/x - 1;
+	∴ a/x = (a sin A + b sin B + c sin C)/(a sin B sin C) + 1.</pre>
+<p>Hence, multiplying above and below by one or other of the
+equal fractions a/(sin A), b/(sin B),
+c/(sin C),</p>
+<pre class="outline">	a/x = (a² + b² + c²)/(ab sin C) + 1;
+	= (a² + b² + c²)/2m + 1 = b/y = c/z.</pre>
+<p>Q.E.F.</p>
+<h4>Solution 58</h4>
+<p>It may be assumed that the 3 Points form a Triangle, the chance of
+their lying in a straight Line being (practically) nil.</p>
+<figure id="fig-49">
+<img src="images/pillow-problems/fig49.jpg" alt="Figure 49" width="300" height="342" loading="lazy">
+</figure>
+<p>Take the longest side of the Triangle, and call it &#x27;AB&#x27;: and,
+on that side of it, on which the Triangle lies, draw the semicircle
+AFB. Also, with centres A, B, and distances AB, BA,
+draw the arcs BDC, AEC, intersecting at C.</p>
+<p>Then plainly the vertex of the Triangle cannot fall outside
+the Figure ABDCE.</p>
+<p>Also, if it fall inside the semicircle, the Triangle is obtuse-angled:
+if outside it, acute-angled. (The chance, of its falling on the
+semicircle, is practically nil.)</p>
+<p>Hence required chance = (area of semicircle)/(area of fig·ABDCE)·</p>
+<figure id="fig-50">
+<img src="images/pillow-problems/fig50.jpg" alt="Figure 50" width="300" height="315" loading="lazy">
+</figure>
+<p>Now let AB = 2a: then area of semicircle = (π a²)/2; and area of Fig. ABDCE = 2 × sector ABDC - Triangle ABC;</p>
+<pre class="outline">	= 2·(4π a²)/6 - √3·a² = a²·(4π/3 - √3);</pre>
+<p>∴ chance = (π/2)/(4π/3 - √3) = 3/(8 - 6√3/π)·</p>
+<p>Q.E.F.</p>
+<h4>Solution 59</h4>
+<p>Let KL = MN = a,</p>
+<p>KN = LM = b,</p>
+<p>KM = LN = c;</p>
+<p>and let ∠s LMK, MKL, KLM be equal to &#x27;A,
+B, C&#x27;; and similarly for the ∠s of the other facets.</p>
+<p>From K draw KT ⊥ base-facet LMN. Also draw KR,
+KS, ⊥ LM, MN. And join TR, TM, TS.</p>
+<p>It is easily proved that ∠s TRM, TSM are right.</p>
+<p>The required volume is 1/3·KT·LMN. The area of LMN
+is of course known. All we need is the length of KT. Now KT² = KS² - TS²; and KS plainly = c·sin B. Hence all we need
+is the length of TS.</p>
+<figure id="fig-51">
+<img src="images/pillow-problems/fig51.jpg" alt="Figure 51" width="300" height="292" loading="lazy">
+</figure>
+<p>Now this requires a preliminary Lemma, in itself a very pretty problem,
+namely—</p>
+<p>LEMMA (1).</p>
+<p>Given, in Tetragon RMST, sides RM, MS, and ∠ RMS,
+and that ∠s TRM, TSM are right: find TS.</p>
+<figure id="fig-52">
+<img src="images/pillow-problems/fig52.jpg" alt="Figure 52" width="200" height="145" loading="lazy">
+</figure>
+<p>Now TS/(sin TRS) = TR/(sin TSR);</p>
+<p>also TS cos TSR + TR cos TRS = RS;</p>
+<pre class="outline">	∴ TS/(sin TRS) = TR/(sin TSR),
+	= (TS cos TSR + TR cos TRS)/(sin TRS cos TSR + sin TSR cos TRS),
+	= RS/(sin RMS) = MS/(sin MRS);
+	∴ TS/(cos MRS) = MS/(sin MRS); i.e.  TS = MS cot MRS.</pre>
+<p>Q.E.F.</p>
+<p>Hence this requires another Lemma, to find the value of cot MRS (or tan MRS, which will do as well, and makes a prettier
+problem).</p>
+<p>LEMMA (2).</p>
+<figure id="fig-53">
+<img src="images/pillow-problems/fig53.jpg" alt="Figure 53" width="200" height="101" loading="lazy">
+</figure>
+<p>Given, in Triangle RMS, sides RM, MS, and ∠ RMS:
+find tan MRS.</p>
+<pre class="outline">	tan MRS = (sin MRS)/(cos MRS) = (RS sin MRS)/(RS cos MRS),
+	= (MS sin RMS)/(RM - MS cos RMS).</pre>
+<p>Q.E.F.</p>
+<p>Hence, in Tetragon RMST, we have by Lemma (1),</p>
+<pre class="outline">	TS = MS cot MRS;</pre>
+<p>and, by Lemma (2), cot MRS = (RM - MS cos RMS)/(MS sin RMS),</p>
+<pre class="outline">	= (c cos A - c cos B cos C)/(c cos B sin C) = (cos A - cos B cos C)/(cos B sin C);</pre>
+<p>∴ TS = c/(sin C)·(cos A - cos B cos C).</p>
+<p>Now KT² = KS² - TS²;</p>
+<p>∴ it = (c sin B)² - c²/sin²C·(cos A - cos B cos C)²,</p>
+<p>= c²/sin²C·{(sin B sin C)² - (cos A - cos B cos C)²};</p>
+<p>therefore KT = c/(sin C) multiplied by √(sin²B sin²C - cos²B cos²C - cos²A + 2 cos A cos B cos C),</p>
+<pre class="outline">	= c/(sin C) multiplied by</pre>
+<p>√((1 - cos²B)·(1 - cos²C) - cos²B cos²C - cos²A + 2 cos A cos B cos C),</p>
+<p>= c/(sin C) · √(1 - (cos²A + cos²B + cos²C) + 2 cos A cos B cos C),</p>
+<p>which is symmetrical, as it ought to be.</p>
+<figure id="fig-54">
+<img src="images/pillow-problems/fig54.jpg" alt="Figure 54" width="300" height="289" loading="lazy">
+</figure>
+<p>Now area of LMN = (ab sin C)/2;</p>
+<p>hence volume of Tetrahedron</p>
+<p>= abc/6·√(1 - (cos²A + cos²B + cos²C) + 2 cos A cos B cos C).</p>
+<p>Q.E.F.</p>
+<h4>Solution 60</h4>
+<p>Let ∠ BAD = θ, ∠ CAD = φ.</p>
+<figure id="fig-55">
+<img src="images/pillow-problems/fig55.jpg" alt="Figure 55" width="200" height="193" loading="lazy">
+</figure>
+<p>Now (sin (B + θ))/(sin θ) = c/((ma/(m + n)))</p>
+<p>= (c·(m + n))/ma;</p>
+<p>∴ sin B cot θ + cos B = (c·(m + n))/ma;</p>
+<p>∴ cot θ = (c·(m + n))/(ma·sin B) - cot B,</p>
+<p>= ((m + n)·(a cos B + b cos A) - ma cos B)/(ma sin B),</p>
+<p>= ((m + n)b cos A + na cos B)/(ma sin B);</p>
+<figure id="fig-56">
+<img src="images/pillow-problems/fig56.jpg" alt="Figure 56" width="300" height="290" loading="lazy">
+</figure>
+<p>i.e.cot θ = ((m + n)·b/(sin B)·cos A + na cot B)/ma,</p>
+<p>= ((m + n)a cot A + na cot B)/ma,</p>
+<p>= ((m + n) cot A + n cot B)/m.</p>
+<p>Similarly, cot φ = ((m + n) cot A + m cot C)/n.</p>
+<p>Q.E.F.</p>
+<p>COROLLARIES.</p>
+<p>(1) m cot θ - n cot φ = n cot B - m cot C.</p>
+<p>(2) (cot B + cot φ)/(cot C + cot θ) = m/n.</p>
+<p>(3) If Triangle is equilateral,</p>
+<p>cot θ = (m + 2n)/m·1/√3,</p>
+<p>cot φ = (n + 2m)/n·1/√3;</p>
+<p>∴ (cot θ)/(cot φ) = (mn + 2n²)/(mn + 2m²);</p>
+<p>∴ (tan θ)/(tan φ) = (mn + 2m²)/(mn + 2n²);</p>
+<p>i.e., if CD&#x27;B&#x27; is drawn ⊥ to AD, B&#x27;D&#x27;/D&#x27;C = (mn + 2m²)/(mn + 2n²);</p>
+<p>e.g., if m/n = 1/2,
+B&#x27;D&#x27;/D&#x27;C = 2/5·</p>
+<p>(4) Let tan A = 1, tan B = 2, tan C = 3;</p>
+<p>then cot θ = (m + n + n·1/2)/m = (2m + 3n)/2m,</p>
+<p>cot φ = (m + n + m·1/3)/n = (3n + 4m)/3n;</p>
+<p>∴ (tan θ)/(tan φ) = (6mn + 8m²)/(6mn + 9n²);</p>
+<p>from which, if (tan θ)/(tan φ) were given, we could
+find m/n from a Quadratic Equation.</p>
+<p>I tried various values, to find one which would give rational values
+for m and n, and found that 2/3 would do, as it
+leads to the Quadratic</p>
+<pre class="outline">	2(6mn + 9n²) - 3(6mn + 8m²) = 0,</pre>
+<p>in which (B² - 4AC) becomes, after dividing all through by 6,
+(1² + 4·4·3), i.e. 49.</p>
+<p>The Quadratic is 4m² + mn - 3n² = 0;</p>
+<p>from which m/n = (-1 ± 7)/8 = 3/4; which
+solves the Problem &#x27;Given a Triangle ABC, having the tangents
+of its angles equal to 1, 2, 3: divide BC at D, so that, if
+AD is joined, and CD&#x27;B&#x27; drawn ⊥ to it, the ratio
+B&#x27;D&#x27;/D&#x27;C may be 2/3&#x27;. The answer is &#x27;Divide
+it so that BD/DC = 3/4&#x27;.</p>
+<h4>Solution 61</h4>
+<p>We know that the equation</p>
+<p>&#x27;(a² + 4b² + 4c²) + (4a² + b² + 4c²)</p>
+<p>+ (4a² + 4b² + c²) = 9(a² + b² + c²)&#x27;</p>
+<p>is identically true.</p>
+<p>Hence a² + b² + c²</p>
+<pre class="outline">	= 1/9·{(a² + 4b² + 4c²) + (4a² + b² + 4c²) + (4a² + 4b² + c²)};
+	= 1/9·{(a² + 4b² + 4c² + 8bc - 4ca - 4ab)
+	+ (4a² + b² + 4c² - 4bc + 8ca - 4ab)
+	+ (4a² + 4b² + c² - 4bc - 4ca + 8ab)};
+	= 1/9·{(-a + 2b + 2c)² + (2a - b + 2c)² + (2a + 2b - c)²};
+	= ((-a + 2b + 2c)/3)² + ((2a - b + 2c)/3)² + ((2a + 2b - c)/3)².</pre>
+<p>Now (-a + 2b + 2c) = 3(b + c) - (a + b + c);</p>
+<p>∴, if (a + b + c) is a multiple of 3, so also is
+(-a + 2b + 2c);</p>
+<p>∴ (-a + 2b + 2c)/3 is an integer;</p>
+<p>and similarly for the other 2 fractions.</p>
+<p>Also it may be proved that, if (-a + 2b + 2c)/3 is equal to
+a, or b, or c, then a, b, c can be arranged in
+A.P.</p>
+<p>First, let (-a + 2b + 2c)/3 = a;</p>
+<p>then -a + 2b + 2c = 3a; i.e. b + c = 2a;</p>
+<p>secondly, let (-a + 2b + 2c)/3 = b;</p>
+<p>then -a + 2b + 2c = 3b; i.e. 2c = a + b;</p>
+<p>thirdly, let (-a + 2b + 2c)/3 = c;</p>
+<p>then -a + 2b + 2c = 3c; i.e. 2b = c + a.</p>
+<p>And similarly for the other 2 fractions.</p>
+<p>Hence, contranominally, if a, b, c can not be
+arranged in A.P., the 2 sets of squares have no common term.</p>
+<p>Q. E. D.</p>
+<p>Numerical Examples (not thought out).</p>
+<pre class="outline">	a² | b² | c² | ((-a + 2b + 2c)/3)² | ((2a - b + 2c)/3)² | ((2a + 2b - c)/3)²
+	1² | 4² | 4² | 5² | 2² | 2²
+	3² | 4² | 8² | 7² | 6² | 2²
+	4² | 5² | 9² | 8² | 7² | 3²</pre>
+<h4>Solution 62</h4>
+<p>Let AB, AC, be the given Lines, and P the given Point.</p>
+<figure id="fig-57">
+<img src="images/pillow-problems/fig57.jpg" alt="Figure 57" width="300" height="213" loading="lazy">
+</figure>
+<p>Through P draw PD parallel to AB; from DC cut off
+DE equal to AD; join EP, and produce it to meet AB at
+F.</p>
+<p>Because AD = DE, and that DP is parallel to AB,</p>
+<p>∴ FP = PE.</p>
+<p>Now let GPH be any other line through P;</p>
+<p>then ∠ PFH &gt; ∠ PEG.</p>
+<h4>Because, in Triangles PFH, PEG, PF = PE, and</h4>
+<pre class="outline">	∠ FPH = ∠ GPE, and ∠ PFH &gt; ∠ PEG,</pre>
+<p>∴ PH &gt; PG, and Triangle PFH &gt; Triangle PGE.</p>
+<p>To each add Tetragon AFPG;</p>
+<p>∴ Triangle AGH &gt; Triangle AEF.</p>
+<p>And so of any other line through P.</p>
+<p>Hence AEF is the least possible Triangle.</p>
+<p>Q.E.F.</p>
+<h4>Solution 63</h4>
+<figure id="fig-58">
+<img src="images/pillow-problems/fig58.jpg" alt="Figure 58" width="300" height="290" loading="lazy">
+</figure>
+<p>Let each side of each Square = 2.</p>
+<p>Then LG = √3, MG = (√2 - 1);</p>
+<p>∴ LM( = JK) = √(3 - (2 + 1 - 2√2))</p>
+<p>= 2^(3/4);</p>
+<p>∴ OJ = OK = 1/(2^(1/4)).</p>
+<p>Take O as origin, the X-axis ∥ to AD, and the
+Y-axis to AB; and let JK be part of the Z-axis.</p>
+<p>Let equation to plane containing Triangle CDG be</p>
+<pre class="outline">	x cos α + y cos β + z cos γ - p = 0,</pre>
+<p>where p is length of perpendicular dropped, from O, upon this
+plane, and meeting it somewhere in LG.</p>
+<p>Hence we can find p from equation to LG, in the XZ-plane,
+which will be</p>
+<pre class="outline">	x cos α + z cos γ - p = 0;</pre>
+<p>now this line contains L, whose co-ordinates are 
+(1, 1/(2^(1/4))), and G, whose co-ordinates are
+(√2, -1/(2^(1/4)));</p>
+<p>∴ cos α + 1/(2^(1/4)) · cos γ - p = 0,</p>
+<p>and √2 · cos α - 1/(2^(1/4)) · cos γ - p = 0;</p>
+<p>∴ (√2 - 1) · cos α = 2/(2^(1/4)) · cos γ = 2^(3/4) · cos γ;</p>
+<p>∴ (cos α)/(2^(3/4)) = (cos γ)/(√2 - 1) = 1/(√(2^(3/2) + 3 - 2^(3/2))) = 1/√3;</p>
+<p>∴ cos α = (2^(3/4))/√3, cos γ = (√2 - 1)/√3;</p>
+<p>∴ p = (2^(3/4))/√3 + (√2 - 1)/(2^(1/4)·√3) = (√2 + 1)/(2^(1/4)·√3).</p>
+<p>Now area of CDG = √3;</p>
+<p>∴ volume of pyramid, whose base is CDG and whose
+vertex is O, = (√2 + 1)/(3·2^(1/4));</p>
+<p>and there are eight such pyramids in the solid;</p>
+<p>∴ their sum = (8(√2 + 1))/(3·2^(1/4)).</p>
+<p>Also volume of pyramid, whose base is ABCD, and whose vertex is
+O, = 4/(3·2^(1/4));</p>
+<p>and there are 2 such pyramids in the solid;</p>
+<p>∴ their sum = 8/(3·2^(1/4));</p>
+<p>∴ volume of solid = (8(2 + √2))/(3·2^(1/4)) = (8·2^(1/4) ·(√2 + 1))/3</p>
+<p>Q.E.F.</p>
+<h4>Solution 64</h4>
+<figure id="fig-59">
+<img src="images/pillow-problems/fig59.jpg" alt="Figure 59" width="400" height="216" loading="lazy">
+</figure>
+<p>Let ABC be the given Triangle, and O the given Point; and let
+OD, its distance from BC, be less than either OE or OF,
+its distances from CA, AB.</p>
+<p>Draw a line GH equal to OE, and GK ⊥ it and equal to
+OF; and join HK; and about the Triangle GHK describe a
+Circle; and place in it a line KL equal to OD; and join LH.</p>
+<p>Because sqs of KL, LH = sqs of KG, GH, and that KL
+is less than either KG or GH, ∴ LH is greater than
+either;</p>
+<p>∴ a Circle, with centre O, and radius equal to LH,
+will cut all three Lines, in two Points each. Describe this Circle.</p>
+<p>Then sqs of MD, DO = sqs of PE, EO;</p>
+<p>also sq. of LH = sqs of RF, FO;</p>
+<p>∴ sqs of MD, DO, LH = sqs of PE, RF, EO, FO;</p>
+<p>but sqs of DO, LH = sqs of KL, LH,</p>
+<p>= sqs of GH, GK = sqs of EO, FO;</p>
+<p>∴ sq. of MD = sqs of PE, RF;</p>
+<p>∴ 4 times sq. of MD = 4 times sqs of PE, RF;</p>
+<p>i.e. sq. of MN = sqs of PQ, RS.</p>
+<p>Hence MN, PQ, RS, can be sides of a right-angled Triangle.</p>
+<p>Q.E.F.</p>
+<h4>Solution 65</h4>
+<p>Calling the angles 1/x, 1/y,
+1/z, of 360°, we must have</p>
+<pre class="outline">	1/x + 1/y + 1/z = 1/2;</pre>
+<p>an Indeterminate Equation with 3 unknowns.</p>
+<p>Plainly none of them can be so small as 2.</p>
+<p>(1) Let x = 3; then 1/y + 1/z = 1/6.</p>
+<p>Now, if 1/y = k/(k + l) × 1/6,
+1/z will = l/(k + l) × 1/6:</p>
+<p>hence k can only be 1, or 2, or 3, or 6; and the same is true of
+l.</p>
+<p>(N.B. It is assumed that the fractions k/(k + l),
+l/(k + l), are in their lowest terms.)</p>
+<p>Let 1/y be ≮ 1/z. Then
+k/(k + l) ≮ 1/2.</p>
+<p>Then its possible values are 1/2, so that l/(k + l) = 1/2</p>
+<pre class="outline">	2/3, | 1/3
+	3/4, | 1/4
+	3/5 | 2/5
+	6/7, | 1/7.</pre>
+<p>This gives 5 sets of values for 1/x, 1/y,
+1/z, namely:</p>
+<pre class="outline">	1/3, 1/12, 1/12; 1/3, 1/9, 1/18; 1/3, 1/8, 1/24; 1/3, 1/10, 1/15; 1/3, 1/7, 1/42.</pre>
+<p>(2) Let x = 4. Then 1/y + 1/z = 1/4,
+and, as before, k can only be 1, or 2, or 4, and the same is
+true of l. Hence the possible values for k/(k + l) are
+1/2, so that l/(k + l) = 1/2</p>
+<pre class="outline">	2/3, | 1/3
+	4/5, | 1/5.</pre>
+<p>This gives 3 more sets of values for 1/x,
+1/y, 1/z, namely:</p>
+<pre class="outline">	1/4, 1/8, 1/8; 1/4, 1/6, 1/12; 1/2, 1/5, 1/20.</pre>
+<p>(3) Let x = 5; then 1/y + 1/z = 3/10.</p>
+<p>Hence denominator must contain factor &quot;3&quot;, and k can be only 1, or
+2, or 5, or 10; and the same is true of l.</p>
+<p>Hence possible values of k/(k + l) are 1/2, so
+that l/(k + l) = 1/2</p>
+<pre class="outline">	2/3, | 1/3
+	5/6, | 1/6.</pre>
+<p>This gives 2 sets of values for 1/x, 1/y,
+1/z, namely:—</p>
+<pre class="outline">	1/5, 1/5, 1/10; 1/5, 1/4, 1/20;</pre>
+<p>but the latter (a fact overlooked in thinking out) we have had already.</p>
+<p>(4) Let x = 6; then 1/y + 1/z = 1/3.</p>
+<p>Hence k can be only 1, or 3, and the same is true of l.</p>
+<p>Hence possible values for k/(k + l) are 1/2, so
+that l/(k + l) = 1/2</p>
+<pre class="outline">	3/4, 1/4.</pre>
+<p>This gives 2 sets of values, namely:—</p>
+<pre class="outline">	1/6, 1/6, 1/6; 1/6, 1/4, 1/12;</pre>
+<p>but the latter (a fact overlooked in thinking out) we have had already.</p>
+<p>There is no use in giving, to x, any values greater than 6; for
+these would make 1/y + 1/z &gt; 1/3; so
+that one or other must be &gt; 1/6; i.e. either y or
+z must &lt; 6, and we should get old values over again.</p>
+<p>Hence there are 10 different shapes.</p>
+<p>Q.E.F.</p>
+<p>The 10 sets of angles (I am not certain that they were all thought out)
+are</p>
+<pre class="outline">	(1) | 120°, | 30°, | 30°;
+	(2) | 120°, | 40°, | 20°;
+	(3) | 120°, | 45°, | 15°;
+	(4) | 120°, | 36°, | 24°;
+	(5) | 120° | 513/7°, | 84/7°;
+	(6) | 90°, | 45°, | 45°;
+	(7) | 90°, | 60°, | 30°;
+	(8) | 90°, | 72°, | 18°;
+	(9) | 72°, | 72°, | 36°;
+	(10) | 60°, | 60°, | 60°.</pre>
+<h4>Solution 66</h4>
+<p>Write k for α/(α + β). Now the counters
+must be either both white, or one white and one black. Let chance of
+first condition be x; hence chance of second is (1 - x). Hence
+chance of drawing white is x × 1 + (1 - x) × 1/2.</p>
+<pre class="outline">	∴ x + (1 - x)/2 = k; ∴ x = 2k - 1;
+	∴ (1 - x) = 2 - 2k.</pre>
+<p>Let a counter now be drawn and prove white; then chance of
+&#x27;observed event,&#x27; in 1st condition, is 1, and, in 2nd condition,
+1/2;</p>
+<p>Hence the chances, of the existence of these two conditions, are
+proportional to (2k - 1) × 1, (2 - 2k) × 1/2; i.
+e. are proportional to 2k - 1, 1 - k;</p>
+<p>hence these chances actually are (2k - 1)/k,
+(1 - k)/k;</p>
+<p>hence the chance of now drawing white,</p>
+<pre class="outline">	is (2k - 1)/k × 1 + (1 - k)/k × 1/2;
+	i.e. (3k - 1)/2k.</pre>
+<p>Hence the effect of one repetition of the experiment has been to
+change k into (3k - 1)/2k.</p>
+<p>Hence a second repetition of it will change</p>
+<pre class="outline">	(3k - 1)/2k into (3 × (3k - 1)/2k - 1)/(2 × (3k - 1)/2k); i.e. into (7k - 3)/(6k - 2).</pre>
+<p>We have now to discover the law (if there is one) for the series</p>
+<pre class="outline">	k, (3k - 1)/2k, (7k - 3)/(6k - 2),</pre>
+<p>regarding these as identical functions of 1, 2, 3.</p>
+<p>We can write the 1st and 2nd term in the form of the 3rd, thus:—</p>
+<pre class="outline">	(k - 0)/(0 × k - (-1)), (3k - 1)/(2k - 0), (7k - 3)/(6k - 2)</pre>
+<p>and, by inspection, we see that each is of the form</p>
+<pre class="outline">	((2ⁿ - 1) × k - (2^(n - 1) - 1))/((2ⁿ - 2) × k - (2^(n - 1) - 2)),</pre>
+<p>where n denotes the place of the term.</p>
+<p>Suppose this law to hold for n terms, what will be the effect of
+repeating the experiment once more?</p>
+<p>We know that it changes k into (3k - 1)/2k. Hence the
+new chance will be</p>
+<pre class="outline">	(3 × ((2ⁿ - 1) × k - (2^(n - 1) - 1))/((2ⁿ - 2) × k - (2^(n - 1) - 2)) - 1)/(2 × ((2ⁿ - 1) × k - (2^(n - 1) - 1))/((2ⁿ - 2) × k - (2^(n - 1) - 2)));</pre>
+<pre class="outline">	i.e. (k × (3·2ⁿ - 3 - 2ⁿ + 2) - 3·2^(n - 1) + 3 + 2^(n - 1) - 2)/((2^(n + 1) - 2) × k - (2ⁿ - 2));</pre>
+<pre class="outline">	i.e. ((2^(n + 1) - 1) × k - (2ⁿ - 1))/((2^(n + 1) - 2) × k - (2ⁿ - 2));</pre>
+<p>i.e. the (n + 1)|^(th) term of the series
+will follow the same law. But we know that the law holds for the
+1^(st), 2^(nd), and 3^(rd) terms.
+Hence it holds universally.</p>
+<p>Hence, after m repetitions of the experiment, the chance of drawing
+white will be the (m + 1)|^(th) term of the
+above series; i.e. it will be</p>
+<pre class="outline">	((2^(m + 1) - 1) × k - (2^m - 1))/((2^(m + 1) - 2) × k - (2^m - 2)).</pre>
+<p>Now, for k, write α/(α + β).</p>
+<pre class="outline">	Then chance is ((2^(m + 1) - 1) × α - (2^m - 1)· (α + β))/((2^(m + 1) - 2) × α - (2^m - 2)· (α + β));
+	i.e. ((2^(m + 1) - 2^m)α - (2^m - 1)· β)/((2^(m + 1) - 2^m)α - (2^m - 2)· β);
+	i.e. (2^m · (α - β) + β)/(2^m · (α - β) + 2β).</pre>
+<p>Q.E.F.</p>
+<p>Example—Let chance be 9/10; and then let
+experiment be repeated 5 times more.</p>
+<p>Here α = 9, β = 1;</p>
+<p>∴ chance becomes (32 × 8 + 1)/(32 × 8 + 2), i.e. 257/258.</p>
+<h4>Solution 67</h4>
+<figure id="fig-60">
+<img src="images/pillow-problems/fig60.jpg" alt="Figure 60" width="400" height="516" loading="lazy">
+</figure>
+<p>Let ABCD be the socket. Revolve the Tetrahedron until the plane, in
+it, DOA has taken the new position D&#x27;QA&#x27;; and let edge DA,
+in its new position, meet the socket-rim AC at R. From A&#x27;
+draw A&#x27;L ⊥ XY-plane. Join OR, and produce it to L. And
+draw RM, LN, the y-ordinates of R and L.</p>
+<p>Then co-ordinates of A&#x27; are ON, NL, LA&#x27;.</p>
+<p>Call OM, MR, &#x27;x&#x27;, y&#x27;&#x27;; and OA, OR, OD,
+&#x27;a, a&#x27;, h&#x27;; and ∠ XOR &#x27;θ&#x27;.</p>
+<p>Plainly the vertical axis of the Tetrahedron always
+coincides with the Z-axis.</p>
+<p>Hence A moves on the surface of a cylinder,</p>
+<p>i.e. x² + y² = a² (1)</p>
+<p>Now ∠ XAC = 150°;</p>
+<p>∴ Equation to AC is y = - 1/√3· (x - a);</p>
+<pre class="outline">	i.e. x + √3 · y = a (2)</pre>
+<p>Also Equation to OR is x/(cos θ) = y/(sin θ) = a;</p>
+<pre class="outline">	∴, at R, x&#x27;/(cos θ) = y&#x27;/(sin θ) = a&#x27;; (3)</pre>
+<p>∴, by (2), a&#x27; · cos θ + √3 · a&#x27; · sin θ = a;</p>
+<pre class="outline">	∴ a&#x27; = a/(cos θ + √3 · sin θ) (4)</pre>
+<h4>Also, by similar △s D&#x27;QA&#x27;, D&#x27;OR, QA&#x27;: QD&#x27;:: OR: OD&#x27;</h4>
+<p>i.e. a: h:: a/(cos θ + √3· sin θ): h - z;</p>
+<p>∴ h - z = h/(cos θ + √3· sin θ);</p>
+<p>but cos θ = x/a, and sin θ = y/a;</p>
+<p>∴ h - z = (a h)/(x + √3 · y);</p>
+<p>i.e. (x + √3· y) · (h - z) = a h (5)</p>
+<p>Equations (1) and (5) give the required Locus.</p>
+<p>Q.E.F.</p>
+<h4>Solution 68</h4>
+<p>Let the Nos of bottles, taken out of the 3 days, be &#x27;x, y,
+z&#x27;. Let each bottle have cost 10v pence, and therefore be sold
+for 11v pence.</p>
+<p>Then the Treasurer&#x27;s receipts, on the 3 days, were (x - 1)0.11v, y 0.11 v - v, (z - 1)0.11 v - v; yielding, as
+profits (i.e. as remainders after deducting cost-price of bottles
+taken out), xv - 11 v, yv - v, zv - 12 v. Then these 3
+quantities are equal.</p>
+<p>Hence y = x - 10, and z = x + 1;</p>
+<p>∴ total No. of bottles, being (x + y + z), = 3x - 9.</p>
+<p>Now total profits are (x + y + z)·v - 24v; i.e. (3x - 33)v;</p>
+<p>∴ profit, per bottle = ((3x - 33) · v)/(3x - 9); and this must = 6;</p>
+<p>∴ (x - 11)·v = (x - 3)·6.</p>
+<p>Also z·11v = 11 × 240; i.e. (x + 1)·11v = 11 × 240;</p>
+<p>∴ (x - 11)/(x + 1) = (6·(x - 3))/240;</p>
+<p>∴ (x + 1)·(x - 3) = 40·(x - 11);</p>
+<p>∴ x² - 2x - 3 = 40x - 440;</p>
+<p>∴ x² - 42x + 437 = 0.</p>
+<p>Now 42² - 4 × 437 = 1764 - 1748 = 16;</p>
+<p>∴ x = (42 ± 4)/2 = 23 or 19;</p>
+<p>∴ No. of bottles = 60 or 48; but it is a multiple of 5;</p>
+<p>∴ it = 60.</p>
+<p>Also (x + 1)·11v = 11 × 240; i.e. 24v = 240;</p>
+<p>∴ v = 10;</p>
+<p>i.e. the wine was bought @ 8/4 a bottle, and sold @
+9/2 a bottle.</p>
+<p>Q.E.F.</p>
+<h4>Solution 69</h4>
+<p>§ 1. Let ∠ BAD = k·A, ∠ CBE = l·B, ∠ ACF = m·C.</p>
+<p>Then ∠ ABE = (1 - l)·B.</p>
+<p>Now ∠ BC&#x27;D = ∠ C&#x27;AB + ∠ C&#x27;BA.</p>
+<p>i.e. k·A + (1 - l)·B = C. (1)</p>
+<p>Similarly, l·B + (1 - m)·C = A; (2)</p>
+<p>and m·C + (1 - k)·A = B. (3)</p>
+<figure id="fig-61">
+<img src="images/pillow-problems/fig61.jpg" alt="Figure 61" width="200" height="194" loading="lazy">
+</figure>
+<p>From equations (1) and (3), l and m may be found in terms of
+k: but these, taken along with k, will not be similar
+functions of the single variable k. We must have k a certain
+function of A, B, C, and θ (say); l a similar
+function of B, C, A, and θ; and m a similar
+function of C, A, B, and θ; i.e. we must have</p>
+<pre class="outline">	k = f(A, B, C, θ),
+	l = f(B, C, A, θ),
+	m = f(C, A, B, θ).</pre>
+<p>Now we know, by (1), that kA - lB = C - B;</p>
+<p>i.e. A·f(A, B, C, θ) - B·f(B, C, A, θ) = C - B.</p>
+<p>Now, as an experiment, let</p>
+<pre class="outline">	k·A = xA + yB + zC + θ,
+	l·B = xB + yC + z A + θ;</pre>
+<p>then kA - lB = (x - z)·A + (y - x)·B + (z - y)·C;</p>
+<pre class="outline">	∴ x - z = 0; i.e. x = z;
+	z - y = 1; i.e. z = y + 1.</pre>
+<p>These conditions will be fulfilled, if we make y = 1, and
+x = z = 2; so that</p>
+<pre class="outline">	kA = 2A + B + 2C + θ,
+	lB = 2B + C + 2A + θ;</pre>
+<p>which would make</p>
+<pre class="outline">	f(A, B, C, θ) mean (2A + B + 2C + θ)/A.</pre>
+<p>Now this may plainly be simplified by omitting (A + B + C), which
+is constant; and we then have k = (A + C + θ)/A; or, in
+a yet simpler form, by again subtracting 180°, k = (θ - B)/A.</p>
+<figure id="fig-62">
+<img src="images/pillow-problems/fig62.jpg" alt="Figure 62" width="300" height="273" loading="lazy">
+</figure>
+<pre class="outline">	Similarly l = (θ - C)/B,
+	m = (θ - A)/C.</pre>
+<p>Q.E.F.</p>
+<p>§ 2. We see that kA = θ - B, so that ∠ ADC is
+plainly equal to θ; and so are ∠s BEA, CFB.</p>
+<p>This gives us a geometrical construction, namely to draw lines from
+A, B, C, so that each makes the same angle θ with
+the opposite side.</p>
+<p>§ 3. Let us now ascertain the limits within which the value of
+θ must lie.</p>
+<p>We know that kA = θ - B.</p>
+<p>Now kA ≯ A; ∴ θ - B ≯ A; i.e. θ ≯ A + B;</p>
+<p>i.e. θ ≯ the supplement of C;</p>
+<p>and of course this is true for each of the three angles A,
+B, C; i.e. if A, B, C, be the order of the angles
+in a descending order of magnitude, θ ≯ supplement of
+A.</p>
+<p>Again kA ≮ 0.</p>
+<p>Hence θ - B ≮ 0; i.e. θ ≮ B;</p>
+<p>and of course this is true for each angle.</p>
+<p>Hence if A, B, C, be the order in a descending order of
+magnitude, θ ≮ A, and ≯ 180° - A.</p>
+<p>Q.E.F.</p>
+<p>§ 4. We have now to ascertain the ratio which B′C′ bears to BC.</p>
+<p>In Triangle ABC′, whose ∠s are (θ - B), (180° - θ - A), (180° - C), we have</p>
+<pre class="outline">	AC′ = AB/(sin AC′B)·sin ABC′ = c/(sin C)·sin (θ + A) = a/(sin A)·sin (θ + A);
+	BC′ = AB/(sin AC′B)·sin BAC′ = c/(sin C)·sin (θ - B) = a/(sin A)·sin (θ - B)</pre>
+<p>∴, by symmetry, AB′ = a/(sin A)·sin (θ - A).</p>
+<p>Now B′C′ = AC′ - AB′;</p>
+<pre class="outline">	∴ it = a/(sin A){sin (θ + A) - sin (θ - A)},
+	= a/(sin A)·2 cos θ sin A = a 2 cos θ.</pre>
+<p>Hence a′/a = b′/b = c′/c = 2 cos θ.</p>
+<p>Q.E.F.</p>
+<h4>Solution 70</h4>
+<p>Before folding the Plane containing the Triangles, the locus of their
+vertices is plainly a Line parallel to their common base. Hence, if
+the base of the Tetrahedron = 1, we may imagine a slip of paper, whose
+width is √3/2, attached to the front facet of the
+Tetrahedron, and wrapped round towards the right; and the upper edge
+of this slip will plainly be the locus of the vertices. This slip
+may be conveniently regarded as divided into equilateral Triangles,
+placed base-downwards and base-upwards alternately, and it is evident
+that these Triangles will successively cover the facets of the
+Tetrahedron, in the order &#x27;front, right side, base, left side, front,
+&amp;c.&#x27;; and its upper edge, made up of the bases of the inverted
+constituent Triangles, will plainly run as follows. Calling the
+successive Triangles, after the first (which occupies the front facet
+of the Tetrahedron), &#x27;α&#x27; (base-up), &#x27;β&#x27; (base-down),
+&#x27;γ&#x27; (base-up), &#x27;δ&#x27; (base-down), &#x27;ε&#x27;
+(base-up), and so on, the locus consists of the bases of α,
+γ, &amp;c. Now &#x27;α&#x27; will occupy the right facet, its
+base coinciding with the back-edge of the Tetrahedron; &#x27;β&#x27;
+will occupy the base of the Tetrahedron, its base coinciding with
+the front-edge; &#x27;γ&#x27; will occupy the left facet, its base
+coinciding with the back-edge; and so on. Hence the locus runs down the
+back-edge; up again; and so on. Which answers Question (1).</p>
+<p>Q.E.F.</p>
+<p>We may therefore, in answering the other three questions, consider the
+slip before it is folded, and calculate the positions of the
+vertices along its upper edge: and the problems thus become
+&#x27;plane&#x27; ones.</p>
+<p>(2) Gives us a right-angled Triangle, whose left-hand base-angle is
+15°, and whose altitude is √3/2. We must calculate
+its base, and then, deducting half the base of the initial Triangle (i.
+e. deducting 1/2), we shall get the distance, measured
+along the upper edge of the slip, from the vertex of the initial
+Triangle to the vertex of the given Triangle; and from that we can
+calculate how many times we must go down and up the back-edge to
+reach it. Call the base of this right-angled Triangle &#x27;x.&#x27; Then
+√3/2 ÷ x = tan 15°.</p>
+<p>Now call tan 15° &#x27;t&#x27;; then 2t/((1 - t²)) = tan 30° = 1/√3;</p>
+<p>∴ 1 - t² = 2√3·t; t² + 2√3·t - 1 = 0;</p>
+<p>∴ t = (-2√3 ± 4)/2 = (rejecting negative value) 2 - √3.</p>
+<p>∴ x = √3/(2 (2 - √3)) = √3/2 (2 + √3) = √3 + 3/2.</p>
+<p>Deducting 1/2, we get (√3 + 1) as the required
+distance.</p>
+<p>Now √3 = 1.7 &amp;c.; ∴ distance = 2.7 &amp;c.</p>
+<p>Hence we must go down back-edge, up again, and then about
+0.7 down again. This answers question (2).</p>
+<p>(3) We need to go down the back-edge, and up again; i.e. we must use
+up the upward bases of &#x27;α&#x27; and &#x27;γ&#x27;. Hence the base
+of the required right-angled Triangle is 2 1/2. Hence the
+required left-hand base-angle is</p>
+<pre class="outline">	tan ⁻¹(√3/2 ÷ 5/2); i.e. tan ⁻¹√3/5.</pre>
+<p>Hence, for the required base-angle, we have sin/cos = √3/5;</p>
+<pre class="outline">	∴ sin/√3 = cos/5 = 1/√(28); ∴ sin = √(3/28) = √(84)/28,
+	= (rather over 9)/28; (79·!)/((41·28 etc.!)/(0·32 etc.))</pre>
+<pre class="outline">	Now (by mem. tech.) sin ⁻¹.3 = 17.45 etc.°.
+	sin ⁻¹.4 = 23.57 etc.°.</pre>
+<p>and the required angle is about 1/5 of the way from one to
+the other. But the difference is almost exactly 6°. Hence we must add,
+to the lesser, about 1 1/5 degrees, or 1.20°. And
+the total will be about 18.65°.</p>
+<p>(4) Here the right-angled Triangle has, for its base, 3 1/2.</p>
+<p>∴ the required base-angle has, for its tangent,</p>
+<pre class="outline">	(√3/2 ÷ 7/2); i.e. √3/7;</pre>
+<p>∴ sin/√3 = cos/7 = 1/√(52); ∴ sin = √(3/52) = nearly √(1/17),</p>
+<p>= nearly √(17)/17. Now √(17) = 4.12 etc. ∴ sin = 0.24 etc.</p>
+<p>Now sin ⁻¹.2 = 11.53 &amp;c°.; and we must go about
+half-way to the next angle, namely 17.45 &amp;c°. The difference
+is about 6°; ∴ we must add about 3°. Hence the answer is
+about 14.53°.</p>
+<h4>Solution 71</h4>
+<p>Let ABC be the given Triangle, and P the given Point.</p>
+<figure id="fig-63">
+<img src="images/pillow-problems/fig63.jpg" alt="Figure 63" width="300" height="263" loading="lazy">
+</figure>
+<p>Bisect the sides of ABC at D, E, F; and join these
+Points.</p>
+<p>First, let P be within the Triangle DEF.</p>
+<p>Draw HG parallel to BC, so that its distance from BC may
+be double the distance of P from BC; join GP, HP, and
+produce them to meet BC in L, M. From L draw LK
+parallel to AC; join KP, and produce it to meet AC at
+N: join MN.</p>
+<p>Because HG is parallel to LM,</p>
+<p>∴ GP = PL, and HP = PM;</p>
+<p>∵ KL is parallel to GN, and that LP = PG,</p>
+<p>∴ KP = PN; ∴ MN is parallel to HK.</p>
+<p>Now the Triangles PGH, PLM, are equal in all respects;</p>
+<p>∴ GH = LM. Similarly KL = GN, and MN = HK.</p>
+<p>If P lies on FE, HG and LM vanish, and the Hexagon
+becomes a Parallelogram.</p>
+<p>If P lies at D, the Hexagon becomes the line BC.</p>
+<p>If P lies outside the Triangle DEF, the Problem is insoluble.</p>
+<p>Q.E.F.</p>
+<h4>Solution 72</h4>
+<p>We know that, if a bag contained 3 counters, 2 being black and one
+white, the chance of drawing a black one would be 2/3; and
+that any other state of things would not give this chance.</p>
+<p>Now the chances, that the given bag contains (α) BB,
+(β) BW, (γ) WW, are respectively 1/4, 1/2, 1/4.</p>
+<p>Add a black counter.</p>
+<p>Then the chances, that it contains (α) BBB, (β) BWB,
+(γ) WWB, are, as before, 1/4, 1/2,
+1/4.</p>
+<p>Hence the chance, of now drawing a black one,</p>
+<pre class="outline">	= 1/4.1 + 1/2 · 2/3 + 1/4 · 1/3 = 2/3.</pre>
+<p>Hence the bag now contains BBW (since any other state of
+things would not give this chance).</p>
+<p>Hence, before the black counter was added, it contained BW, i.e.
+one black counter and one white.</p>
+<p>Q.E.F.</p>
+<p>THE END.</p>
+
+</body>
+</html>
