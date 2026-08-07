@@ -156,16 +156,41 @@ def ink_to_alpha(crop, levels=16, white_frac=0.80):
 # figure never exists; it is a plate and is cut as one.
 TABLE_PLATES = {89}
 
+# TWO THINGS ABBYY GETS WRONG ABOUT WHICH MARKS ON A PAGE ARE A FIGURE, and
+# neither is visible downstream -- the markers it does emit are all placed,
+# and the figure parity check compares its own output with itself.
+#   MERGE: page 65 carries ONE diagram -- two coincidental Lines cut by a
+#   transversal -- and ABBYY boxes it twice, diagonally, because the drawing
+#   is mostly white space. Cut as two plates it becomes two half-figures,
+#   each missing the labels that make it mean anything.
+#   EXTRA: page 116 carries THREE of Niemand's case-diagrams and ABBYY finds
+#   two. The third is the one where the two half-rays coincide, and the text
+#   calls for it by name three times ("Figure 3", case epsilon). Its box was
+#   measured off the page scan.
+MERGE_PAGES = {65}
+# Growing to whitespace is self-limiting except where the nearest
+# whitespace is above the running head: page 65's merged box is wide
+# enough to reach it, and takes in "...AND EUCLID. [Act I." and the
+# rule under it. thompson/replate.py needed seven such caps.
+CAPS = {65: {"top": 370}}
+EXTRA_PLATES = {116: [(1230, 1780, 1900, 1990)]}
+
 
 def plates():
     found = []
     for pg in pages(XML):
+        here = []
         for b in pg.blocks:
             wide = (b.right - b.left) >= pg.width * 0.95
             if b.kind == "Picture" and pg.number not in NOT_A_PLATE and not wide:
-                found.append((pg.number, (b.left, b.top, b.right, b.bottom)))
+                here.append((b.left, b.top, b.right, b.bottom))
             elif b.kind == "Table" and pg.number in TABLE_PLATES:
-                found.append((pg.number, (b.left, b.top, b.right, b.bottom)))
+                here.append((b.left, b.top, b.right, b.bottom))
+        if pg.number in MERGE_PAGES and len(here) > 1:
+            here = [(min(b[0] for b in here), min(b[1] for b in here),
+                     max(b[2] for b in here), max(b[3] for b in here))]
+        here += EXTRA_PLATES.get(pg.number, [])
+        found += [(pg.number, b) for b in here]
     if len(found) != 20:
         sys.exit(f"expected 20 plates, found {len(found)} -- the scan, "
                  f"NOT_A_PLATE or TABLE_PLATES has changed")
@@ -179,6 +204,11 @@ def main():
     for i, (page, box) in enumerate(plates(), 1):
         img = fetch_page(page)
         grown = grow(img, box)
+        cap = CAPS.get(page)
+        if cap:
+            l, tp, r, bt = grown
+            grown = (l, max(tp, cap.get("top", tp)), r,
+                     min(bt, cap.get("bottom", bt)))
         plate = ink_to_alpha(img.crop(grown))
         name = OUT / f"fig{i}.png"
         plate.save(name, optimize=True)

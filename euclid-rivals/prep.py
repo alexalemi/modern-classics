@@ -33,7 +33,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from abbyy import pages, clean                            # noqa: E402
 from speakers import resolve, looks_like_tag              # noqa: E402
 from repair import repair_tokens, english_share           # noqa: E402
-from replate import NOT_A_PLATE                           # noqa: E402
+from replate import NOT_A_PLATE, MERGE_PAGES, EXTRA_PLATES  # noqa: E402
 
 BOOK = Path(__file__).parent
 SRC = BOOK / "source"
@@ -165,6 +165,11 @@ def _head(txt, words):
 # line arrives as raw OCR ("Treatment of Parallels hy equidistances") and
 # never passes through the cross-copy repair. Act One's two scenes keep the
 # bare form they were translated under. Act Four has no Scene heading at all.
+# Act Four has no Scene, so its section title would repeat its own part
+# divider word for word. The ARGUMENT OF DRAMA calls it "Manual of
+# Euclid" -- the Act in which Euclid answers for his own book.
+ACT_TITLE = {4: "Euclid's Manual"}
+
 SCENE_TITLE = {
     (2, 1): "Introductory",
     (2, 2): "Legendre",
@@ -400,16 +405,26 @@ def read_body_and_appendix():
     running heads and in the contents."""
     body, appendix = [], []
     zone = False        # inside the run of display lines that opens a section
+    # PLATES ARE NUMBERED IN PAGE ORDER, exactly as replate.py cuts them, so
+    # that marker "[Figure 5]" and file "fig5.png" cannot drift apart. The
+    # page number will not serve as the id: three pages carry two plates
+    # each, and both would resolve to the same file.
+    plate = 0
     for pg in pages(XML):
         if pg.number in DUPLICATE_PAGES or not pg.blocks:
             continue
         where = body if pg.number < APPENDIX_FIRST else appendix
         if pg.number < BODY_FIRST:
             continue
+        seen_here = 0
         for b in pg.blocks:
             if (b.kind == "Picture" and pg.number not in NOT_A_PLATE
                     and (b.right - b.left) < pg.width * 0.95):
-                where.append(("picture", str(pg.number)))
+                seen_here += 1
+                if pg.number in MERGE_PAGES and seen_here > 1:
+                    continue          # replate cuts this page as one plate
+                plate += 1
+                where.append(("picture", str(plate)))
                 continue
             if b.kind == "Table" and pg.number in TABLE_IS_TEXT:
                 # NOT A TABLE. ABBYY boxed the fifth entry of Table III as
@@ -425,7 +440,8 @@ def read_body_and_appendix():
                     where.append(("par", joined))
                 continue
             if b.kind == "Table" and pg.number in TABLE_IS_PLATE:
-                where.append(("picture", str(pg.number)))
+                plate += 1
+                where.append(("picture", str(plate)))
                 continue
             if b.kind == "Table":
                 where.append(("table", str(pg.number)))
@@ -520,6 +536,13 @@ def read_body_and_appendix():
                     # Swallowing them with the heading would leave that scene
                     # showing §§ 3 and 4 and not §§ 1, 2, 5 and 6.
                     where.append(("par", scene_h[1]))
+        for _ in EXTRA_PLATES.get(pg.number, []):
+            # a figure ABBYY did not see at all: emitted after the page's own
+            # plates, which is where it stands on the page
+            plate += 1
+            where.append(("picture", str(plate)))
+    if plate != 20:
+        sys.exit(f"numbered {plate} plates, replate.py cuts 20")
     return body, appendix
 
 
@@ -597,7 +620,7 @@ def render(items):
             who, body = text.split("\t", 1)
             out.append(f"{who}. {body}")
         elif kind == "picture":
-            out.append(f"[Figure p{text}]")
+            out.append(f"[Figure {text}]")
         elif kind == "table":
             out.append(f"[Table p{text}]")
         else:
@@ -660,6 +683,8 @@ def main():
     manifest, idx, opened = [], 0, set()
     for act, scene, items in fixed:
         title = f"Act {WORDNUM[act - 1]}"
+        if scene is None and act in ACT_TITLE:
+            title += f": {ACT_TITLE[act]}"
         if scene is not None:
             title += f", Scene {WORDNUM[scene - 1]}"
             if (act, scene) in SCENE_TITLE:
