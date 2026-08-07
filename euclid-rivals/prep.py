@@ -117,6 +117,18 @@ ACT_WORDS = {"ACT"}                     # "A-CT" reduces to this
 SCENE_WORDS = {"SCENE", "SCEE", "SCNE", "SCEXE"}
 
 
+# TWO OF ABBYY'S "TABLE" BLOCKS ARE NOTHING OF THE KIND, and a marker for
+# each is all that reached the chapter -- so one Proposition and one diagram
+# left the book without trace. Neither is visible to any check: the marker
+# is present, it is placed once, and the word ratio barely moves.
+#   77 is the fifth entry of Table III (R. Simpson's Axiom).
+#   89 is the labelled square of the II. 4 proof, boxed as a table because
+#      its point-letters sit in a grid. It is cut as a plate instead.
+TABLE_IS_TEXT = {77}
+TABLE_IS_PLATE = {89}
+TABLE_FURNITURE = re.compile(r"^(\d{1,3}|MINOS AND EUCLID\.?|\[Act\b.*)$")
+
+
 FULL_NAMES = {"minos": "Minos", "euclid": "Euclid", "niemand": "Niemand",
               "nostradamus": "Nostradamus", "rhadamanthus": "Rhadamanthus"}
 
@@ -397,6 +409,22 @@ def read_body_and_appendix():
         for b in pg.blocks:
             if (b.kind == "Picture" and pg.number not in NOT_A_PLATE
                     and (b.right - b.left) < pg.width * 0.95):
+                where.append(("picture", str(pg.number)))
+                continue
+            if b.kind == "Table" and pg.number in TABLE_IS_TEXT:
+                # NOT A TABLE. ABBYY boxed the fifth entry of Table III as
+                # one, because the Axiom is set in short measure beside its
+                # heading -- so a marker was emitted, the entry vanished,
+                # and Table III shipped with four of its five Propositions.
+                # The book's own ARGUMENT OF DRAMA lists five.
+                lines = [clean(" ".join(l.text for l in par))
+                         for par in b.paragraphs]
+                joined = " ".join(x for x in lines
+                                  if x and not TABLE_FURNITURE.match(x))
+                if joined:
+                    where.append(("par", joined))
+                continue
+            if b.kind == "Table" and pg.number in TABLE_IS_PLATE:
                 where.append(("picture", str(pg.number)))
                 continue
             if b.kind == "Table":

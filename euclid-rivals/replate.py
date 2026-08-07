@@ -151,16 +151,24 @@ def ink_to_alpha(crop, levels=16, white_frac=0.80):
     return out
 
 
+# ABBYY BOXED ONE DIAGRAM AS A TABLE, because the point-letters of the
+# II. 4 square sit in a grid. Read as a table it becomes a marker and the
+# figure never exists; it is a plate and is cut as one.
+TABLE_PLATES = {89}
+
+
 def plates():
     found = []
     for pg in pages(XML):
         for b in pg.blocks:
-            if (b.kind == "Picture" and pg.number not in NOT_A_PLATE
-                    and (b.right - b.left) < pg.width * 0.95):
+            wide = (b.right - b.left) >= pg.width * 0.95
+            if b.kind == "Picture" and pg.number not in NOT_A_PLATE and not wide:
                 found.append((pg.number, (b.left, b.top, b.right, b.bottom)))
-    if len(found) != 19:
-        sys.exit(f"expected 19 plates, found {len(found)} -- the scan or "
-                 f"NOT_A_PLATE has changed")
+            elif b.kind == "Table" and pg.number in TABLE_PLATES:
+                found.append((pg.number, (b.left, b.top, b.right, b.bottom)))
+    if len(found) != 20:
+        sys.exit(f"expected 20 plates, found {len(found)} -- the scan, "
+                 f"NOT_A_PLATE or TABLE_PLATES has changed")
     return found
 
 
