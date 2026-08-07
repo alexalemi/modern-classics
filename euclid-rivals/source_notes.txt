@@ -162,3 +162,34 @@ the duplicate opening page (38 and 40 are the same printed page, 38 with
 an ERRATUM slip pasted over the stage direction); Act/Scene splitting;
 the 29 plates; the 19 tables; and the Appendices, which Alex has ruled go
 to reference/ as a crib rather than being translated.
+
+
+7. RESOLVED (2026-08-07): THE 19 PLATES
+
+replate.py cuts them from the JP2 page scans and separates the ink from
+the paper, by thompson/'s method: grow each side outward until it reaches
+whitespace (ABBYY's Picture box fits the engraving, not the drawing, so
+labels sit outside it), then map darkness to alpha so the paper goes and
+the strokes keep their anti-aliasing. Pages come one at a time out of the
+Archive zip -- 324 leaves, 19 of which carry a diagram, and no reason to
+download 106 MB for them.
+
+TWO THINGS THAT ONLY LOOKING COULD SETTLE:
+
+- READING THE PAPER AT THE 99TH PERCENTILE IS NOT ENOUGH ON ITS OWN. That
+  finds the paper's BRIGHTEST pixels, and most of the sheet is darker
+  than that -- so mapping everything below it to some alpha left the whole
+  page faintly visible behind the figure. It needs two points: a white
+  point BELOW the paper's own noise (0.80 of it) and a black point at the
+  ink's 2nd percentile. The percentile still matters, because on a plate
+  that is mostly ink the mode is the ink.
+- THREE OF THE TWENTY-TWO PICTURE BLOCKS ARE NOT THE BOOK'S. The Wellesley
+  College bookplate inside the front cover (p3), a decorative device on
+  the flyleaf (p7), and the library's date-due slip at the back (p318).
+  ABBYY cannot tell them from a figure, and no rule about size or position
+  can either -- a bookplate is exactly the size and position of a diagram.
+  They are listed, and the plate count is asserted, so the list cannot rot
+  silently.
+
+Every plate is placed exactly once: 14 markers in the body and 5 in the
+appendix crib, against 19 files.

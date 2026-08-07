@@ -33,6 +33,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from abbyy import pages, clean                            # noqa: E402
 from speakers import resolve, looks_like_tag              # noqa: E402
 from repair import repair_tokens, english_share           # noqa: E402
+from replate import NOT_A_PLATE                           # noqa: E402
 
 BOOK = Path(__file__).parent
 SRC = BOOK / "source"
@@ -215,7 +216,8 @@ def read_body_and_appendix():
         if pg.number < BODY_FIRST:
             continue
         for b in pg.blocks:
-            if b.kind == "Picture" and (b.right - b.left) < pg.width * 0.95:
+            if (b.kind == "Picture" and pg.number not in NOT_A_PLATE
+                    and (b.right - b.left) < pg.width * 0.95):
                 where.append(("picture", str(pg.number)))
                 continue
             if b.kind == "Table":
