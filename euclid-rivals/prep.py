@@ -117,6 +117,26 @@ ACT_WORDS = {"ACT"}                     # "A-CT" reduces to this
 SCENE_WORDS = {"SCENE", "SCEE", "SCNE", "SCEXE"}
 
 
+FULL_NAMES = {"minos": "Minos", "euclid": "Euclid", "niemand": "Niemand",
+              "nostradamus": "Nostradamus", "rhadamanthus": "Rhadamanthus"}
+
+
+def tag_speaker(lead):
+    """resolve(), but a name spelled out in full is its own tag.
+
+    speakers.NOT_SPEAKER holds the five full names so that "Minos reads."
+    and "[Minos sleeping" cannot be promoted to speeches -- and that also
+    refuses the three paragraphs in the book which carry the name in full
+    as the tag: Niemand's opening line of Act Two, and Minos's aside beside
+    it. looks_like_tag() already demands the trailing point or comma, which
+    is exactly what the stage directions do not have.
+    """
+    key = re.sub(r"[^a-z]", "", lead.lower())
+    if key in FULL_NAMES:
+        return FULL_NAMES[key], 0.0
+    return resolve(lead)
+
+
 def _head(txt, words):
     """(roman number, trailing title) if txt is one of these headings."""
     m = HEAD.match(txt.strip())
@@ -411,9 +431,20 @@ def read_body_and_appendix():
                     if not looks_like_tag(head) and "(" in head:
                         before, after = head.split("(", 1)
                         lead, aside = before.strip(), "(" + after
+                    exact_only = bool(aside)
+                    if not looks_like_tag(lead):
+                        # THE TERMINAL POINT IS PART OF THE TAG AND THE SCAN
+                        # DROPS IT -- "Mhu", "Nie»", and "Euc. '" where the
+                        # opening quote of the speech was pulled into the
+                        # italic run. Retry on the letters alone, demanding
+                        # an exact resolve, which is what stops a one-word
+                        # italic emphasis from becoming a speaker.
+                        bare = re.sub(r"[^A-Za-z0-9'^`]+$", "", lead).strip()
+                        if bare and looks_like_tag(bare + "."):
+                            lead, exact_only = bare + ".", True
                     if looks_like_tag(lead):
-                        who, dist = resolve(lead)
-                        if who and (not aside or dist == 0.0):
+                        who, dist = tag_speaker(lead)
+                        if who and (not exact_only or dist == 0.0):
                             kind = "speech"
                             rest = clean(txt[len(head):]).strip()
                             payload = f"{who}\t{(aside + ' ' + rest).strip()}"
@@ -425,7 +456,7 @@ def read_body_and_appendix():
                     # and a looser rule turns both into speeches.
                     lead = txt.split(" ", 1)[0]
                     if looks_like_tag(lead) and re.search(r"[A-Za-z]{2}", lead):
-                        who, dist = resolve(lead)
+                        who, dist = tag_speaker(lead)
                         if who and dist == 0.0:
                             kind = "speech"
                             payload = f"{who}\t{txt[len(lead):].strip()}"

@@ -88,7 +88,7 @@ OVERRIDE = {
     # for a W and the i lost) and as "M\7i.", and "Rhad." read as "E/md.".
     # Each identified from the speech it heads and the speeches either side.
     "wn": "Minos", "m\\7i": "Minos", "e/md": "Rhadamanthus",
-    "311)1": "Minos", "i>uc": "Euclid", "^lin": "Minos",
+    "311)1": "Minos", "i>uc": "Euclid", "^lin": "Minos", "mhu": "Minos",
     # Rhadamanthus
     "rhad": "Rhadamanthus", "bltad": "Rhadamanthus",
     "reach": "Rhadamanthus", "bhad": "Rhadamanthus",
