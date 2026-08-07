@@ -1,0 +1,137 @@
+PILLOW PROBLEMS — TRANSLATION STRATEGY
+Lewis Carroll (C. L. Dodgson), Curiosa Mathematica Part II, 4th ed. 1895
+Source: Project Gutenberg #79080 (the illustrated HTML edition)
+
+
+1. WHAT THIS BOOK IS, AND WHY IT IS WORTH DOING
+
+Seventy-two mathematical problems, every one of them worked out in his
+head, in bed, in the dark, before a diagram was drawn or a word written
+down. Questions in Chapter I, Answers in Chapter II, Solutions in
+Chapter III, sharing one numbering.
+
+The premise sells it, but the Introduction is the reason to publish it.
+Carroll explains that he does not recommend mathematics as a cure for
+insomnia — he says plainly he has never suffered from it, and changed
+the title from "sleepless nights" to "wakeful hours" because kind
+friends had written to sympathise with an illness he did not have. What
+he offers it as is a remedy for "the harassing thoughts that are apt to
+invade a wholly-unoccupied mind". Then he says why, and drops his guard:
+
+  "there are sceptical thoughts, which seem for the moment to uproot
+  the firmest faith; there are blasphemous thoughts, which dart unbidden
+  into the most reverent souls; there are unholy thoughts, which
+  torture, with their hateful presence, the fancy that would fain be
+  pure."
+
+That is a devout, scrupulous, frightened man telling you what he does at
+three in the morning, and it is the most naked page he ever printed. It
+governs the register of the whole front matter. DO NOT modernise it into
+the language of mental health — no "intrusive thoughts", no "anxiety",
+no clinical vocabulary at all. He is not describing a diagnosis, he is
+describing a night. Keep his cadence, keep "unholy", keep the biblical
+"unclean spirit" who came back with seven others because he found the
+chamber "swept and garnished" (Matthew 12), and let the reader meet him
+as he was.
+
+
+2. THE DECISION THAT GOVERNS THE MATHEMATICS
+
+MODERNISE THE NOTATION. Decided by Alex before a line was written, and
+DELIBERATELY THE OPPOSITE of the ruling for symbolic-logic/. There,
+Carroll's terminology was kept untouched because the words WERE the
+machine — Retinend and Eliminand are parts he built and the system does
+not run without them. Here the notation is incidental to the argument,
+and the argument is what the reader came for. So:
+
+  - his factorial, a vertical bar with the number underlined, is "3!"
+  - his mid-height decimal point is a full stop: ·5 becomes 0.5
+  - "&c." becomes "etc.", "i. e." closes up to "i.e."
+  - fractions set as text, x/y, with brackets where they are needed
+
+All of this is done mechanically by tex.py before the translation sees
+it, so the translator's job is the PROSE around the mathematics. Read
+tex.py's docstring before touching a formula: the four traps there (the
+decimal point that is not a multiplication sign, the multiplication dot
+that is not a decimal point, the vinculum that is a bracket, and the row
+break welded to an ampersand) each produce plausible, readable, wrong
+arithmetic.
+
+WHAT IS *NOT* MODERNISED: his mathematical vocabulary and his notation
+for the objects themselves. Tetragon stays a Tetragon. He capitalises
+Triangle, Square, Problem, Solid, Points; keep it, as in symbolic-logic
+— it is how he marks a term of art. Q.E.F. stays. His letters for
+points and his angle names stay exactly as printed, because the diagrams
+carry the same letters and a reader with the plate in front of them must
+be able to follow.
+
+
+3. TWO THINGS THE TRANSCRIBER DID, WHICH ARE NOT CARROLL
+
+Both are stated in the Gutenberg transcriber's note and both matter:
+
+  - CARROLL USED PRIVATE SYMBOLS FOR SINE AND COSINE — ⫙ and ⌓, derived
+    from the old theory in which sines and cosines were actual lines.
+    The transcription replaced them with "sin" and "cos" throughout. His
+    Preface to the Fourth Edition explains the symbols and shows the
+    diagram they come from, and that passage is KEPT: it is a lovely
+    piece of mathematical history and the only place the symbols now
+    survive. Translate it so a reader understands that the body of the
+    book no longer uses them.
+  - 'a' AND GREEK ALPHA ARE INDISTINGUISHABLE IN THE PRINTED BOOK, and
+    the transcriber "corrected certain expressions to avoid potential
+    mathematical errors". So some symbol assignments are HIS judgement,
+    not Carroll's page. This cuts against the tangled-tale rule (suspect
+    the transcription before the author): here the transcription has
+    already been silently edited, and where an a/α reading looks wrong
+    the transcriber is as likely to be the cause as the compositor.
+
+
+4. CARROLL'S OWN ERRATA ARE PART OF THE BOOK
+
+The Introduction ends with him listing his own mistakes, one by one,
+with the flat cheerfulness of a man who does not mind being wrong in
+public: "In No. 55, I put 'tan' for 'sin'." "Apparently I was under the
+delusion that 'a sin B sin C' was the same thing as 'sin A·bc'!" KEEP
+EVERY ONE, and keep the closing hope that a reader will find further
+mistakes and enjoy feeling superior to him. Do not silently correct the
+solutions to match — Chapter III already contains the corrected working;
+the list is a confession, not an erratum slip.
+
+ONE REAL MISPRINT TO FIX: in the Preface to the Fourth Edition, "b² +
+c² - a² must be greater than O" sets a capital letter O where the
+figure 0 belongs. Correct it silently.
+
+
+5. VOICE
+
+Three registers, and they must stay apart.
+
+  - THE PREFACES AND INTRODUCTION: conversational, self-deprecating,
+    intermittently very moving. This is where the work is. Long
+    Victorian periods to unstack, and jokes that must survive — the
+    child who cannot win a penny by not thinking of strawberry-jam, "A
+    poor thing, Sir, but mine own!", the "Transcendental Probabilities"
+    boast and its follow-up, "Is not Life itself a Paradox?"
+  - THE QUESTIONS: terse, formal, and often funny in one clause ("A bag
+    contains one counter, known to be either white or black"). Do not
+    pad them. Each ends with the date he solved it, in the margin.
+  - THE SOLUTIONS: working, not exposition. Short connective phrases
+    between formulas — "Hence", "Also", "Similarly", "which answers
+    (1)". Leave them short. The temptation is to explain his steps; do
+    not. He is showing what he did in the dark, and the compression is
+    the point.
+
+
+6. RATIO
+
+Expect close to 1:1, as with the other English-to-English volumes;
+verify with --min-ratio 0.85 --max-ratio 1.3. Note that the word counts
+are dominated by mathematics that passes through untouched, so the prose
+ratio matters more than the number: check the Introduction on its own.
+
+AND THE CHECK THAT MATTERS MOST IS NOT THE RATIO. verify.py cannot see
+arithmetic. Run a numeric-token set difference per file (the fleming
+recipe) and read the derivations against the Answers in Chapter II —
+2,436 formulas came through a converter, and a converter that is wrong
+is wrong in a way that reads perfectly well.

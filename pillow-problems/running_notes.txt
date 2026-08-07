@@ -1,0 +1,59 @@
+RUNNING NOTES — PILLOW PROBLEMS
+
+STATE: prep done and verified structurally. 9 files, 24,377 words, 64
+plates, 2,436 formulas converted from LaTeX to Unicode by tex.py.
+
+THE SOURCE IS UNLIKE ANY OTHER IN THE PROJECT. There is no plain-text
+edition because the mathematics is not text: it is 2,436 separate SVG
+files pulled in by <img>, one per symbol. Every one carries a data-tex
+attribute with the LaTeX it was rendered from, and across all of them
+there are only 55 distinct commands and three environments. See tex.py.
+
+DECIDED BEFORE TRANSLATION (Alex): MODERNISE THE NOTATION, and render it
+in both formats rather than falling back to plates. The opposite of the
+symbolic-logic ruling, and for a stated reason — there the words were the
+machine, here the notation is incidental to the argument.
+
+BUGS FOUND AND FIXED IN THE CONVERTER, every one of which produced
+plausible, readable, WRONG arithmetic:
+  - The mid-height decimal point read as multiplication: 1.5430806
+    became "1· 5430806". Settled against the MathSpeak in the alt text,
+    which says "18 dot 65 degree" in all 41 places a digit follows.
+  - A literal "." between atoms is his multiplication sign; "1/2.c/2" is
+    not a number. But the decimal point and the dots in "i. e." must
+    survive that pass, so both ride on sentinels.
+  - The vinculum is a BRACKET: "2×10 - x-1-with-a-bar" is 2×10 - (x-1),
+    and dropping the bar flips the sign of the 1 silently. Over a bare
+    pair of letters it is a line segment and means no such thing.
+  - "\\&c." is a row break followed by content; protecting the ampersand
+    before splitting rows eats the break and welds two lines together.
+  - AN EXPONENT MUST SWALLOW ITS COMMAND'S ARGUMENTS. "2^\tfrac{3}{4}"
+    is 2 to the three-quarters; reading only the command name left the
+    exponent as a bare "/" and spilled the 3 and the 4 into the line —
+    "2^/34" — in nineteen formulas, including the one whose making the
+    Introduction narrates (Problem 63).
+  - "A. P." and "A. M." are arithmetical progression and arithmetic
+    mean, not products. They are set as mathematics and cannot be told
+    from a product by shape, only by being listed.
+
+THREE THINGS PREP'S ASSERTIONS CAUGHT:
+  - The FRONTISPIECE falls outside every kept section and would have
+    been dropped. It is Solution 67's diagram with the labels removed,
+    printed opposite the title page under "See p. 100" — confirmed by
+    putting the two images side by side. Given the id "front", NOT
+    "figfront" (the tyndall trap).
+  - A STRAY PIECE OF LATEX SITS IN THE BODY TEXT, unrendered:
+    "1/kα, \text{&c.}; which answers (1)". Invisible to the converter,
+    since every other formula is an <img>. Fixed with a check that stops
+    the build if the transcription is ever corrected upstream.
+  - A STALE PLATE from an earlier run, referenced by nothing. prep now
+    clears the image directory before writing it.
+
+STILL TO WATCH DURING TRANSLATION
+  - The Introduction's register: see text_analysis section 1. No
+    clinical vocabulary. He is describing a night, not a diagnosis.
+  - His errata list is a confession and stays whole (section 4).
+  - "greater than O" in the Fourth-Edition preface is a capital letter
+    where the figure 0 belongs. Corrected silently.
+  - THE ARITHMETIC IS THE THING verify.py CANNOT SEE. Numeric-token
+    diff per file, and read the derivations against Chapter II.
