@@ -118,3 +118,47 @@ perfectly straight-faced courtesy. It is also the best surviving account
 of what a Victorian mathematician thought a proof was FOR — and the
 whole argument is conducted as farce, at midnight, by a man who cannot
 sleep for marking.
+
+
+6. RESOLVED (2026-08-07): THE SPEAKER TAGS, ALL 1,068 OF THEM
+
+abbyy.py reads the ABBYY XML into pages, blocks, lines and RUNS, and the
+run-level italic flag is what makes this tractable. In the printed book a
+speech opens with its tag in italic, so the leading italic run of a
+paragraph IS the tag, whatever characters the scan made of it. That is how
+"Jihad." and "Bhad." were found at all -- both are "Rhad.".
+
+speakers.py then resolves against the closed vocabulary. Result:
+
+    Minos          553      Nostradamus     27
+    Niemand        318      Rhadamanthus     9
+    Euclid         146      non-speaker     15   (Reads., Enter, headings)
+                                UNRESOLVED    0
+
+Nothing is guessed: an ambiguous tag stops the build. Distance scoring
+gets ~98 per cent; the residue is an explicit table, each entry read in
+context, in the manner of thompson/appendix_fixes.py.
+
+THREE THINGS WORTH KEEPING FROM THE DOING OF IT:
+
+- "Mill." IS "Min.", 45 times. Not a character. Confirmed against the 1879
+  scan, which gives "Min." for the same speeches ("Exactly so.", "We could
+  easily deduce that from I. 34.", "You had indeed.").
+- "Rhad." AND "Reads." ARE ONE LETTER APART. A non-speaker list tested on
+  its own stole Rhadamanthus and turned him into a stage direction --
+  which is the same class of error as misattributing a speech, and it went
+  unnoticed until his count dropped from 9 to 4. Both sets are now scored
+  and the closer wins; a tie raises.
+- THE OVERRIDE TABLE HAD TO BE FOLDED TOO. It was written in the
+  spellings as they appear on the page while matching happened on the
+  folded form, so it never matched once -- and every entry in it looked
+  like a tag the scorer had simply failed on. A lookup table keyed
+  differently from the thing it is looked up with is invisible: it does
+  not error, it just never fires.
+
+STILL TO DO: page furniture (running heads are italic and at the top of
+the page, so they are identifiable by position and not by pattern);
+the duplicate opening page (38 and 40 are the same printed page, 38 with
+an ERRATUM slip pasted over the stage direction); Act/Scene splitting;
+the 29 plates; the 19 tables; and the Appendices, which Alex has ruled go
+to reference/ as a crib rather than being translated.
