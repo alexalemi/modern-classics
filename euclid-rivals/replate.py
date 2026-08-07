@@ -43,6 +43,7 @@ XML = BOOK / "source" / "euclidhismodernr00carr_abbyy.gz"
 CACHE = BOOK / "source" / "pagecache"
 OUT = BOOK.parent / "site/images/euclid-rivals"
 ID = "euclidhismodernr00carr"
+APPENDIX_FIRST = 265
 
 PAD = 12                # blank margin kept around the found edge
 BLANK_RUN = 14          # consecutive blank lines that mean "outside"
@@ -183,6 +184,8 @@ EXTRA_PLATES = {116: [(1230, 1780, 1900, 1990)]}
 def plates():
     found = []
     for pg in pages(XML):
+        if pg.number >= APPENDIX_FIRST:
+            break          # the Appendices are a crib, not a published text
         here = []
         for b in pg.blocks:
             wide = (b.right - b.left) >= pg.width * 0.95
@@ -195,8 +198,8 @@ def plates():
                      max(b[2] for b in here), max(b[3] for b in here))]
         here += EXTRA_PLATES.get(pg.number, [])
         found += [(pg.number, b) for b in here]
-    if len(found) != 19:
-        sys.exit(f"expected 19 plates, found {len(found)} -- the scan, "
+    if len(found) != 14:
+        sys.exit(f"expected 14 plates, found {len(found)} -- the scan, "
                  f"NOT_A_PLATE or TABLE_PLATES has changed")
     return found
 

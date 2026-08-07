@@ -419,6 +419,7 @@ def read_body_and_appendix():
         seen_here = 0
         for b in pg.blocks:
             if (b.kind == "Picture" and pg.number not in NOT_A_PLATE
+                    and pg.number < APPENDIX_FIRST
                     and (b.right - b.left) < pg.width * 0.95):
                 seen_here += 1
                 if pg.number in MERGE_PAGES and seen_here > 1:
@@ -541,8 +542,8 @@ def read_body_and_appendix():
             # plates, which is where it stands on the page
             plate += 1
             where.append(("picture", str(plate)))
-    if plate != 19:
-        sys.exit(f"numbered {plate} plates, replate.py cuts 19")
+    if plate != 14:
+        sys.exit(f"numbered {plate} plates, replate.py cuts 14")
     return body, appendix
 
 
