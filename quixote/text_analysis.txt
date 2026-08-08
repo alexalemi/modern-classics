@@ -1,0 +1,152 @@
+DON QUIXOTE — TRANSLATION STRATEGY
+==================================
+
+THE CASE FOR DOING IT
+---------------------
+This is the strongest copyright argument on the whole roadmap. Every good
+modern translation of Don Quixote is in copyright — Grossman, Rutherford,
+Lathrop, Montgomery. What is free is Ormsby (1885), Jarvis (1742), Motteux
+(1700) and Shelton (1612). So the Don Quixote that a reader actually meets
+for nothing is a Victorian one, and the book's reputation as a slog — long,
+arch, hard to get into, funnier in theory than in practice — is very largely
+an artifact of that. The book is not arch. Cervantes writes fast, plain,
+speakable Spanish full of jokes, and the jokes are mostly still funny.
+
+Compare Ormsby, chapter 1: "In a village of La Mancha, the name of which I
+have no desire to call to mind, there lived not long since one of those
+gentlemen that keep a lance in the lance-rack, an old buckler, a lean hack,
+and a greyhound for coursing." Every word of that is right and the whole of
+it is dead. That sentence is the job.
+
+SOURCE AND CRIB
+---------------
+Translate FROM THE SPANISH (Gutenberg #2000, 379,021 words in chapters).
+Ormsby sits under reference/ormsby/ as a per-file crib — one file per
+chapter, aligned 1:1 because the Spanish has 126 chapter headings and the
+Standard Ebooks Ormsby has 126 chapter files. Use him for who-does-what, for
+the hard idiom, for the proverbs, and for the many topical references. Never
+translate from him. His register is the thing this edition exists to remove.
+
+SIZE. 134 files, 379k Spanish words; expect ~400–420k English. Second only
+to Plato's Dialogues in this collection and larger than The Wealth of
+Nations. Ormsby runs 1.06x the Spanish, so verify with
+    python3 verify.py quixote --min-ratio 0.95 --max-ratio 1.35
+and expect to land near 1.10. A retelling that comes in UNDER the Spanish is
+almost certainly summarising.
+
+VOICE
+-----
+Fast, warm, speakable modern English. The narrator is a comedian with a
+straight face who keeps pretending to be a scrupulous historian working from
+a manuscript by an Arab author he does not trust. Keep the pretence and keep
+the deadpan; do not explain the joke.
+
+THE TWO VOICES ARE THE BOOK. Don Quixote speaks in the high chivalric
+register — long periods, archaic vocabulary, "vuestra merced" — and Sancho
+speaks in proverbs and malapropisms. The comedy is the collision. If both
+come out in the same modern middle register the book stops working.
+  - DON QUIXOTE: formal, courtly, syntactically elaborate — but not
+    incomprehensible. He is grandiloquent, not obscure; when he lectures on
+    arms and letters or the Golden Age he is genuinely eloquent and must be
+    allowed to be. Only in his chivalric fits does the language go
+    deliberately absurd, and there the absurdity should be legible AS
+    absurdity, which is what Ormsby's uniform Victorian gravity destroys.
+  - SANCHO: plain, rapid, physical, greedy, shrewd. His proverbs are the
+    single hardest thing in the book (see below).
+  - EVERYONE ELSE sits between them. The Duke's household speak courtly; the
+    innkeepers and goatherds speak plainly; the Canon and the curate speak
+    like educated men.
+
+SANCHO'S PROVERBS — THE CENTRAL PROBLEM
+---------------------------------------
+Sancho speaks in refranes, and in Part Two he fires them in avalanches, six
+or eight in a row, several of them not quite fitting. Three things are true
+at once: they are proverbs, they are FUNNY, and the joke is often that he
+has used the wrong one or mangled it.
+  RULE: translate for the FUNCTION, not the words. Where English has a real
+  proverb that does the same work, use it. Where it does not, make an
+  English-sounding proverb rather than a literal rendering of the Spanish —
+  a literal proverb is not a proverb, it is a sentence about a goat.
+  KEEP THE AVALANCHE. When he strings eight together, eight must arrive. The
+  length is the joke, and Don Quixote's exasperation is the punchline.
+  KEEP THE MISFIRES. Where Sancho mangles a proverb or picks an irrelevant
+  one, the English must mangle or misfire too. Ormsby footnotes these; we
+  cannot, so the English has to carry it.
+  MALAPROPISMS likewise: Sancho says "fósil" for "fértil", "cananea" for
+  "cana". Find an English malapropism of the same shape and register.
+
+CHAPTER TITLES ARE JOKES AND MUST STAY JOKES
+--------------------------------------------
+Cervantes' chapter headings are part of the comedy and he plays with them —
+they promise things they do not deliver, they apologise, they cross-refer.
+II.70 is headed "Which follows sixty-nine and deals with matters
+indispensable for the clear understanding of this history." I.9 announces
+the conclusion of a battle that the previous chapter broke off mid-stroke.
+Translate them with the same relish as the text.
+  MECHANICS: titles live in titles.json, keyed "1-1" .. "2-74", and prep.py
+  uses them for the manifest when present. Until a title is written there,
+  the manifest carries Cervantes' Spanish. Write the English title into
+  titles.json AND as the file's own first line, so the two cannot drift.
+
+WHAT IS KEPT, AND WHY
+---------------------
+THE INTERPOLATED TALES ARE KEPT WHOLE. The Curioso impertinente (I.33–35),
+the Captive's tale (I.39–41), Cardenio and Dorotea, Leandra, the
+Camacho wedding, Ricote, Ana Félix. Abridgements cut these first, and
+cutting them is how the book got its reputation for sagging in the middle.
+They are also the part of the book Cervantes' own characters argue about in
+Part Two, so removing them removes a joke the sequel depends on.
+
+THE FOUR INTERNAL "PARTES" of the 1605 volume are kept where Cervantes put
+them, as headings before chapters 9, 15 and 28. Ormsby drops them. They stay
+because the break at chapter 9 is a joke: the narrative stops in mid-
+swordstroke because the manuscript ran out, and the narrator has to go and
+buy the rest in a market in Toledo.
+
+THE VERSE. Eighty-nine verse blocks, tab-indented in chapters/. Set them as
+verse, not prose. Two need decisions of their own:
+  - THE TEN PRELIMINARY POEMS (chapters/002.txt) are burlesque commendatory
+    verses supposedly written by Amadís, Orlando, Oriana and Rocinante —
+    parodies of the real puffery that opened books of the period.
+    URGANDA'S and EL DONOSO'S are in *versos de cabo roto*: the last
+    syllable of every line is chopped off, which both makes the rhyme and
+    mocks affected poets. RECOMMENDATION: do the same thing in English —
+    chop the last syllable — with one bracketed note the first time, because
+    the joke is visible on the page and dies completely if smoothed away.
+  - DE SOLISDÁN'S sonnet is written in deliberately fake-archaic Spanish
+    ("Maguer", "fazañas", "vuesa"). Render it in fake-archaic English, the
+    same way Don Quixote's own chivalric fits are handled.
+
+WHAT IS DROPPED
+---------------
+The printing-office paperwork bound into both volumes: the Tasa (the price
+per sheet the book might legally be sold at), the Testimonio de las erratas,
+the royal Privilegio, and the three Aprobaciones. Cervantes did not write
+them, they are civil-service documents, they would open the book with tax
+paperwork, and Ormsby drops them too. They are in reference/licences.txt so
+that the omission is recorded rather than silent. 2,782 words.
+
+BOTH PRÓLOGOS AND BOTH DEDICATIONS ARE KEPT AND TRANSLATED. The 1605
+prologue — in which Cervantes complains that he cannot think how to begin,
+and a friend tells him to pad the book with invented citations and a list of
+authorities in alphabetical order — is one of the great prefaces in any
+language and is the book's thesis in miniature. The 1615 prologue answers
+Avellaneda, who had published a fake sequel, and answers him with a
+gentleness that is more devastating than abuse.
+
+THINGS THAT WILL GO WRONG
+-------------------------
+1. SUMMARISING. At 379k words the temptation is to compress, and Cervantes'
+   long comic sentences are exactly what compresses most easily and must
+   not. Watch the per-file ratio.
+2. FLATTENING THE TWO REGISTERS into one. See VOICE above. This is the
+   failure that would make the whole thing pointless.
+3. LOSING THE NARRATOR. The found-manuscript conceit, Cide Hamete Benengeli,
+   the marginal notes, the chapter that breaks off — these are not framing
+   devices to be tidied away. They are the reason the book is called the
+   first modern novel.
+4. THE PROVERBS going literal. See above.
+5. ANACHRONISM in the other direction. Modern and speakable is not modern
+   and slangy: no "okay", no "guys". The test is whether a sentence could
+   have been said aloud in 1605 by someone who happened to speak modern
+   English.
