@@ -289,7 +289,7 @@ def main():
             title = titles.get(key) or head
             crib = ormsby(part, chap_no)
         else:
-            key, title, crib = None, head, None
+            key, title, crib = None, titles.get(head, head), None
         chunks = split_oversize(pars)
         for k, chunk in enumerate(chunks):
             name = f"{idx:03d}.txt"

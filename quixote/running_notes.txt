@@ -1,0 +1,99 @@
+DON QUIXOTE — RUNNING NOTES
+===========================
+The consistency ledger. Everything here is settled; do not re-decide it.
+Strategy and register live in text_analysis.txt.
+
+FILE FORMAT
+-----------
+Line 1 of every modern file is the title, exactly as it stands in
+manifest.json:
+    Chapter 12: Of What a Goatherd Told Those Who Were With Don Quixote
+For a split chapter, line 2 is "(Part 2 of 3)". Front-matter files carry
+their English title alone.
+
+CHAPTER TITLES live in titles.json, keyed "1-1" .. "2-74" for chapters and
+by the Spanish heading for front matter. prep.py reads it, so the manifest
+and the file agree and cannot drift. WRITE THE TITLE IN BOTH PLACES.
+The titles are jokes. Translate them with the same relish as the text.
+
+VERSE is tab-indented, one line per line, as everywhere else in this
+project. The source marks none of it; prep detects it by line length, so
+89 blocks arrive already indented. Keep the stanza breaks — the source runs
+whole poems together and breaking them up is an improvement, so verse-block
+counts will NOT match between source and translation and are not a check.
+
+LOCKED VOCABULARY
+-----------------
+ínsula          -> "isle", ALWAYS, never "island". Cervantes has Quixote and
+                   Sancho say ínsula where ordinary Spanish says isla; it is
+                   a chivalric affectation and half the comedy of Sancho's
+                   governorship in Part Two depends on his using a word he
+                   does not quite understand. "Isle" carries the same slight
+                   archaic strangeness in English. Ormsby flattens it to
+                   "island" and the joke goes.
+vuestra merced  -> "your grace" in Quixote's mouth and in formal speech;
+                   Sancho's slurred "vuesa merced" gets the same, since his
+                   comedy is in the proverbs, not here.
+caballero andante -> "knight errant", never "wandering knight".
+hidalgo         -> "gentleman" (the first sentence). Not "hidalgo": the
+                   whole point is that he is minor gentry with a lance and
+                   no money, which "gentleman" carries and the loanword does
+                   not.
+escudero        -> "squire".
+duelos y quebrantos -> "'griefs and groans' — bacon and eggs". The Spanish
+                   name is a joke and the dish needs explaining; three words
+                   does both, and no footnote is possible.
+Cide Hamete Benengeli — keep. The narrator's Arab "author" is load-bearing.
+
+NAMES. Familiar English forms where they exist: Amadís of Gaul, Palmerín of
+England, the Knight of Phoebus, Roland (for Roldán) but Orlando where
+Cervantes means the Italian poem's hero, Ganelon, Trebizond, Bucephalus.
+Spanish names keep their accents: Rocinante, Dulcinea, Sansón Carrasco,
+Cardenio, Dorotea, Zoraida.
+
+LATIN QUOTATIONS are kept verbatim, in the form Cervantes printed them, with
+a plain English rendering immediately after in square brackets. The joke in
+the Prologue is that the tags are banalities dressed as learning, and that
+only lands if the reader can see what they say.
+
+TEXTUAL DECISIONS
+-----------------
+"por Hepila famosa" (Prologue-adjacent, chapter 1, of Amadís adding his
+country's name) is a 1605 misprint and means nothing. Read with the modern
+editions as "por hacerla famosa" and translated "in order to make it
+famous". Recorded here because it is an emendation, not a translation.
+
+THE PRINTING PAPERWORK is not translated and is in reference/licences.txt —
+Tasa, errata certificates, royal Privilegio, three Aprobaciones, 2,782
+words. Both prologues and both dedications ARE translated.
+
+REGISTER — THE ONE THING THAT MATTERS MOST
+------------------------------------------
+Don Quixote and Sancho must not sound alike. Quixote is formal, courtly and
+elaborate, and genuinely eloquent when he is on a subject he understands;
+his language goes absurd only in the chivalric fits, and there the absurdity
+must read AS absurdity. Sancho is plain, fast, physical and shrewd. If both
+come out in the same modern middle register, the book stops working, and
+that is exactly what the Victorian translations did to it.
+
+SANCHO'S PROVERBS: translate for the FUNCTION. Use a real English proverb
+where one does the same work; invent an English-sounding one where none
+does. Never render the Spanish literally — a literal proverb is not a
+proverb, it is a sentence about a goat. Keep the avalanches at full length
+(the length is the joke) and keep the misfires misfiring.
+
+ESTABLISHED SO FAR (files 000-003)
+----------------------------------
+000 To the Duke of Béjar        189 ->   217   1.15
+001 Prologue                  2,459 -> 2,768   1.13
+002 Verses                    1,276 -> 1,619   1.27  (verse runs long)
+003 Chapter 1                 1,879 -> 2,092   1.11
+Ormsby runs 1.06x the Spanish; we should sit a little above him. Verify:
+    python3 verify.py quixote --min-ratio 0.95 --max-ratio 1.35
+A file that comes in UNDER the Spanish is summarising.
+
+THE CABO ROTO VERSE (002) is reproduced in English: the last syllable of
+every line is lopped off, exactly as Cervantes does it, with one bracketed
+note at the head of the file telling the reader to finish the words aloud.
+Alex approved this. Solisdán's sonnet, written in mock-archaic Spanish, is
+rendered in mock-archaic English on the same principle.
