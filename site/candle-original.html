@@ -74,6 +74,33 @@ figure img {
   background: #fff;
 }
 
+table.plates {
+  width: 100%;
+  margin: 2.5em 0;
+  border-collapse: collapse;
+  font-family: Georgia, "Palatino Linotype", "Book Antiqua", serif;
+  line-height: 1.5;
+}
+
+table.plates td {
+  padding: 0.4em 0.8em;
+  vertical-align: middle;
+  border-bottom: 1px solid #e6e2da;
+}
+
+table.plates tr:last-child td {
+  border-bottom: none;
+}
+
+table.plates figure,
+table.plates figure + figure {
+  margin: 0.4em auto;
+}
+
+table.plates figcaption {
+  display: none;
+}
+
 figcaption {
   margin-top: 0.6em;
   font-family: Georgia, "Palatino Linotype", "Book Antiqua", serif;
@@ -356,7 +383,7 @@ figcaption {
 <p>But before I take you to that result, I must tell you about the atmosphere itself. I have written on this diagram the composition of one hundred parts of atmospheric air:—</p>
 <p>Bulk. Weight. Oxygen, . . . . . 20 22.3 Nitrogen, . . . . 80 77.7 ——— ————— 100 100.0</p>
 <p>It is a true analysis of the atmosphere, so far as regards the quantity of oxygen and the quantity of nitrogen present. By our analysis, we find that 5 pints of the atmosphere contain only 1 pint of oxygen, and 4 pints, or 4 parts, of nitrogen by bulk. That is our analysis of the atmosphere. It requires all that quantity of nitrogen to reduce the oxygen down, so as to be able to supply the candle properly with fuel, so as to supply us with an atmosphere which our lungs can healthily and safely breathe; for it is just as important to make the oxygen right for us to breathe, as it is to make the atmosphere right for the burning of the fire and the candle.</p>
-<p>But now for this atmosphere. First of all, let me tell you the weight of these gases. A pint of nitrogen weighs 10⁴⁄₁₀ grains, or a cubic foot weighs 1⅙ ounce. That is the weight of the nitrogen. The oxygen is heavier: a pint of it weighs 11⁹⁄₁₀ grains, and a cubic foot weighs 1¾ ounce. A pint of air weighs about 10⁷⁄₁₀ grains, and a cubic foot 1⅕ ounce.</p>
+<p>But now for this atmosphere. First of all, let me tell you the weight of these gases. A pint of nitrogen weighs 10<sup>4</sup>⁄<sub>10</sub> grains, or a cubic foot weighs 1⅙ ounce. That is the weight of the nitrogen. The oxygen is heavier: a pint of it weighs 11<sup>9</sup>⁄<sub>10</sub> grains, and a cubic foot weighs 1¾ ounce. A pint of air weighs about 10<sup>7</sup>⁄<sub>10</sub> grains, and a cubic foot 1⅕ ounce.</p>
 <figure id="fig-25">
 <img src="images/candle/fig25.png" alt="Figure 25" width="87" height="350" loading="lazy">
 <figcaption><b>Figure 25</b></figcaption>
@@ -398,8 +425,8 @@ figcaption {
 <p>We will now proceed to the next experiment with regard to this gas. What is its nature? Here is one of the vessels full, and we will try it, as we have done so many other gases, by combustion. You see it is not combustible, nor does it support combustion. Neither, as we know, does it dissolve much in water, because we collect it over water very easily. Then, you know that it has an effect, and becomes white in contact with lime-water; and when it does become white in that way, it becomes one of the constituents to make carbonate of lime or limestone.</p>
 <p>The next thing I must shew you is, that it really does dissolve a little in water, and therefore that it is unlike oxygen and hydrogen in that respect I have here an apparatus by which we can produce this solution. In the lower part of this apparatus is marble and acid, and in the upper part cold water. The valves are so arranged that the gas can get from one to the other. I will set it in action now, and you can see the gas bubbling up through the water, as it has been doing all night long, and by this time we shall find that we have this substance dissolved in the water. If I take a glass and draw off some of the water, I find that it tastes a little acid to the mouth: it is impregnated with carbonic acid; and if I now apply a little lime-water to it, that will give us a test of its presence. This water will make the lime-water turbid and white, which is proof of the presence of carbonic acid.</p>
 <p>Then it is a very weighty gas—it is heavier than the atmosphere. I have put their respective weights at the lower part of this table, along with, for comparison, the weights of the other gases we have been examining:—</p>
-<p>Pint. Cubic Foot. Hydrogen, . . . . ¾ grains. ¹⁄₁₂ ounce. Oxygen, . . . . 11⁹⁄₁₀ „ 1½ „ Nitrogen, . . . . 10⅒ „ 1¼ „ Air,. . . . . . 10⁷⁄₁₆ „ 1⅜ „ Carbonic acid, . . 16⅓ „ 1⁹⁄₁₀ „</p>
-<p>A pint of it weighs 16⅓ grains, and a cubic foot weighs 1⁹⁄₁₀ ounce, almost two ounces. You can see by many experiments that this is a heavy gas. Suppose I take a glass containing nothing else but air, and from this vessel containing the carbonic acid I attempt to pour a little of this gas into that glass; I wonder whether any has gone in or not. I cannot tell by the appearance, but I can in this way [introducing the taper]. Yes, there it is, you see; and if I were to examine it by lime-water, I should find it by that test also. I will take this little bucket, and put it down into the well of carbonic acid—indeed, we too often have real wells of carbonic acid—and now, if there is any carbonic acid, I must have got to it by this time, and it will be in this bucket, which we will examine with a taper. There it is, you see; it is full of carbonic acid.</p>
+<p>Pint. Cubic Foot. Hydrogen, . . . . ¾ grains. <sup>1</sup>⁄<sub>12</sub> ounce. Oxygen, . . . . 11<sup>9</sup>⁄<sub>10</sub> „ 1½ „ Nitrogen, . . . . 10⅒ „ 1¼ „ Air,. . . . . . 10<sup>7</sup>⁄<sub>16</sub> „ 1⅜ „ Carbonic acid, . . 16⅓ „ 1<sup>9</sup>⁄<sub>10</sub> „</p>
+<p>A pint of it weighs 16⅓ grains, and a cubic foot weighs 1<sup>9</sup>⁄<sub>10</sub> ounce, almost two ounces. You can see by many experiments that this is a heavy gas. Suppose I take a glass containing nothing else but air, and from this vessel containing the carbonic acid I attempt to pour a little of this gas into that glass; I wonder whether any has gone in or not. I cannot tell by the appearance, but I can in this way [introducing the taper]. Yes, there it is, you see; and if I were to examine it by lime-water, I should find it by that test also. I will take this little bucket, and put it down into the well of carbonic acid—indeed, we too often have real wells of carbonic acid—and now, if there is any carbonic acid, I must have got to it by this time, and it will be in this bucket, which we will examine with a taper. There it is, you see; it is full of carbonic acid.</p>
 <figure id="fig-30">
 <img src="images/candle/fig30.png" alt="Figure 30" width="197" height="300" loading="lazy">
 <figcaption><b>Figure 30</b></figcaption>

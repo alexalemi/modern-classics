@@ -251,6 +251,35 @@ def render_plate_table(par, figdir, site, bare_label=False):
     return '<table class="plates">\n' + "\n".join(rows) + "\n</table>"
 
 
+# UNICODE SUPERSCRIPTS AND SUBSCRIPTS ARE A FONT LOTTERY. "x²" needs the
+# reader's font to carry U+00B2; "x⁴" needs U+2074, "sin⁻¹" needs U+207B and
+# U+00B9, and S₁₀₀ needs the subscript digits -- and an e-ink reader that has
+# the first of those very often has none of the rest, so the page comes out
+# with tofu boxes in the middle of the mathematics. Rendered as markup they
+# need nothing but an ordinary digit.
+SUPERS = {"⁰": "0", "¹": "1", "²": "2", "³": "3", "⁴": "4", "⁵": "5",
+          "⁶": "6", "⁷": "7", "⁸": "8", "⁹": "9", "⁺": "+", "⁻": "−",
+          "⁼": "=", "⁽": "(", "⁾": ")", "ⁿ": "n", "ⁱ": "i"}
+SUBS = {"₀": "0", "₁": "1", "₂": "2", "₃": "3", "₄": "4", "₅": "5",
+        "₆": "6", "₇": "7", "₈": "8", "₉": "9", "₊": "+", "₋": "−",
+        "₌": "=", "₍": "(", "₎": ")", "ₙ": "n", "ₐ": "a", "ₑ": "e",
+        "ₓ": "x"}
+SCRIPT_RUN = re.compile("([" + "".join(SUPERS) + "]+)|([" + "".join(SUBS) + "]+)")
+
+
+def scripts(escaped):
+    """Runs of Unicode super/subscript characters -> <sup>/<sub> markup.
+
+    Takes ALREADY-ESCAPED text and returns text with markup in it, so it must
+    be the last thing applied to a fragment.
+    """
+    def sub(m):
+        if m.group(1):
+            return "<sup>" + "".join(SUPERS[c] for c in m.group(1)) + "</sup>"
+        return "<sub>" + "".join(SUBS[c] for c in m.group(2)) + "</sub>"
+    return SCRIPT_RUN.sub(sub, escaped)
+
+
 def find_speakers(pars):
     """Dialogue speakers: short bare names that repeatedly open a block's
     first line (Plato's dialogues put the speaker on its own line)."""
@@ -289,15 +318,15 @@ def render_body(text, figdir=None, site=None, bare_label=False):
             if figdir and FIGURE_INLINE.search(par):
                 out.append(render_plate_table(par, figdir, site, bare_label))
             else:
-                out.append(f'<pre class="outline">{html.escape(par)}</pre>')
+                out.append(f'<pre class="outline">{scripts(html.escape(par))}</pre>')
         elif len(lines) >= 2 and lines[0].strip() in speakers:
             rest = " ".join(l.strip() for l in lines[1:])
             out.append(f"<p><b>{html.escape(lines[0].strip())}</b>: "
-                       f"{html.escape(rest)}</p>")
+                       f"{scripts(html.escape(rest))}</p>")
         elif is_subheading(s, nxt):
-            out.append(f"<h4>{html.escape(s)}</h4>")
+            out.append(f"<h4>{scripts(html.escape(s))}</h4>")
         else:
-            out.append(f"<p>{html.escape(s)}</p>")
+            out.append(f"<p>{scripts(html.escape(s))}</p>")
     while out and out[0] == "<hr>":
         out.pop(0)
     while out and out[-1] == "<hr>":

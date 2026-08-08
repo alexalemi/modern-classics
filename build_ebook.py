@@ -78,6 +78,12 @@ def esc(s):
     return html.escape(s, quote=False)
 
 
+def esct(s):
+    """esc(), plus super/subscript markup. For BODY TEXT only --
+    never for a <title>, which must stay text."""
+    return assemble.scripts(esc(s))
+
+
 def slugify(text):
     text = unicodedata.normalize("NFD", text)
     text = "".join(c for c in text if not unicodedata.combining(c))
@@ -262,7 +268,7 @@ def render_block(par, kind):
     if kind == "paragraph":
         if is_all_caps(s) and len(s) < 200 and "\n" not in s:
             return f'\t\t\t<p class="subhead">{esc(nice_title(s))}</p>'
-        text = ERA.sub(r'<abbr epub:type="se:era">\1\2</abbr>', esc(s))
+        text = ERA.sub(r'<abbr epub:type="se:era">\1\2</abbr>', esct(s))
         return f"\t\t\t<p>{text}</p>"
     if kind == "subhead":
         return f'\t\t\t<p class="subhead">{esc(s)}</p>'
@@ -271,11 +277,11 @@ def render_block(par, kind):
     lines = [l.strip() for l in s.splitlines() if l.strip()]
     if kind == "verse":
         inner = "\n".join(
-            f'\t\t\t\t\t\t<p><span>{esc(l)}</span></p>' for l in lines)
+            f'\t\t\t\t\t\t<p><span>{esct(l)}</span></p>' for l in lines)
         return ("\t\t\t<blockquote epub:type=\"z3998:verse\">\n"
                 "\t\t\t\t<div>\n" + inner + "\n\t\t\t\t</div>\n\t\t\t</blockquote>")
     # generic lined matter (outlines, tables of figures, speaker lists)
-    inner = "<br/>\n\t\t\t\t".join(esc(l) for l in lines)
+    inner = "<br/>\n\t\t\t\t".join(esct(l) for l in lines)
     return f"\t\t\t<blockquote class=\"lines\">\n\t\t\t\t<p>{inner}</p>\n\t\t\t</blockquote>"
 
 
@@ -293,7 +299,7 @@ def render_plate_table(s):
         for cell in (c.strip() for c in line.strip().split(" | ")):
             parts, last = [], 0
             for m in assemble.FIGURE_INLINE.finditer(cell):
-                parts.append(esc(cell[last:m.start()]))
+                parts.append(esct(cell[last:m.start()]))
                 num = m.group(1)
                 caption = " ".join(m.group(2).split()) if m.group(2) else None
                 if BARE_LABEL[0]:
@@ -306,7 +312,7 @@ def render_plate_table(s):
                 parts.append(f'<img alt="{html.escape(alt, quote=True)}" '
                              f'src="../images/{name}"/>')
                 last = m.end()
-            parts.append(esc(cell[last:]))
+            parts.append(esct(cell[last:]))
             tds.append("\t\t\t\t\t\t<td>" + "".join(parts) + "</td>")
         rows.append("\t\t\t\t\t<tr>\n" + "\n".join(tds) + "\n\t\t\t\t\t</tr>")
     return ("\t\t\t<table>\n\t\t\t\t<tbody>\n" + "\n".join(rows)
@@ -322,7 +328,7 @@ def render_body(text, indent="\t\t\t"):
         lines = par.strip().split("\n")
         if kind == "paragraph" and len(lines) >= 2 and lines[0].strip() in speakers:
             rest = ERA.sub(r'<abbr epub:type="se:era">\1\2</abbr>',
-                           esc(" ".join(l.strip() for l in lines[1:])))
+                           esct(" ".join(l.strip() for l in lines[1:])))
             out.append(f'\t\t\t<p><b epub:type="z3998:persona">{esc(lines[0].strip())}</b>: {rest}</p>')
             continue
         out.append(render_block(par, kind))
@@ -518,6 +524,46 @@ def prepare_cover(dest, meta):
 LONE_LT = re.compile(r"<(?![/!?a-zA-Z])")
 
 
+VULGAR = {"¼": "1/4", "½": "1/2", "¾": "3/4", "⅐": "1/7", "⅑": "1/9",
+          "⅒": "1/10", "⅓": "1/3", "⅔": "2/3", "⅕": "1/5", "⅖": "2/5",
+          "⅗": "3/5", "⅘": "4/5", "⅙": "1/6", "⅚": "5/6", "⅛": "1/8",
+          "⅜": "3/8", "⅝": "5/8", "⅞": "7/8", "↉": "0/3"}
+BUILT_UP = re.compile("([\u2070\u00b9\u00b2\u00b3\u2074-\u2079]+)"
+                      "\u2044([\u2080-\u2089]+)")
+SUP_DIGIT = {"\u2070": "0", "\u00b9": "1", "\u00b2": "2", "\u00b3": "3",
+             "\u2074": "4", "\u2075": "5", "\u2076": "6", "\u2077": "7",
+             "\u2078": "8", "\u2079": "9"}
+
+
+def plain_fractions(dest):
+    """Undo `se typogrify`'s fraction typography.
+
+    Typogrify turns "1/6" into "\u2159" and "6/7" into "\u2076\u2044\u2087" --
+    print-quality on a machine with a full font, and a row of tofu boxes on
+    an e-ink reader that has \u00bd and \u00bc and none of the rest. Pillow
+    Problems is a book MADE of fractions, and this is most of what it looked
+    like on the device that reported it.
+
+    Converting all of them, rather than only the rare ones, is deliberate:
+    half a page set in \u00bd and \u00bc while the other half reads 1/7 is worse
+    than either. It also makes the epub agree with the web page, which never
+    goes through typogrify and has said "1/2" all along.
+    """
+    n = 0
+    for f in sorted((dest / "src/epub/text").glob("*.xhtml")):
+        s = f.read_text()
+        out = BUILT_UP.sub(
+            lambda m: ("".join(SUP_DIGIT[c] for c in m.group(1)) + "/"
+                       + "".join(str(ord(c) - 0x2080) for c in m.group(2))), s)
+        for glyph, plain in VULGAR.items():
+            out = out.replace(glyph, plain)
+        if out != s:
+            f.write_text(out)
+            n += 1
+    if n:
+        print(f"set fractions plain in {n} files")
+
+
 def reescape_lt(dest):
     """`se typogrify` unescapes every form of the less-than sign — &lt;,
     &#x3C; and &#60; alike — into a bare "<", which makes the file invalid
@@ -665,6 +711,7 @@ def main():
                     "(\"h1 is less than h2\") in modern_chapters/ instead.")
     run([SE, "typogrify", "."], cwd=dest)
     reescape_lt(dest)
+    plain_fractions(dest)
     for step in (["clean", "."], ["build-manifest", "."],
                  ["build-spine", "."], ["build-title", "."]):
         run([SE] + step, cwd=dest)

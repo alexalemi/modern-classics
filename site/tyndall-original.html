@@ -74,6 +74,33 @@ figure img {
   background: #fff;
 }
 
+table.plates {
+  width: 100%;
+  margin: 2.5em 0;
+  border-collapse: collapse;
+  font-family: Georgia, "Palatino Linotype", "Book Antiqua", serif;
+  line-height: 1.5;
+}
+
+table.plates td {
+  padding: 0.4em 0.8em;
+  vertical-align: middle;
+  border-bottom: 1px solid #e6e2da;
+}
+
+table.plates tr:last-child td {
+  border-bottom: none;
+}
+
+table.plates figure,
+table.plates figure + figure {
+  margin: 0.4em auto;
+}
+
+table.plates figcaption {
+  display: none;
+}
+
 figcaption {
   margin-top: 0.6em;
   font-family: Georgia, "Palatino Linotype", "Book Antiqua", serif;
@@ -347,7 +374,7 @@ figcaption {
 <h4>Ratio of Specific Heats of Air deduced from Velocity of Sound</h4>
 <p>Having grasped this, even partially, I will ask you to accompany me to a remote corner of the domain of physics, with the view, however, of showing that remoteness does not imply discontinuity. Let a certain quantity of air at a temperature of 0°, contained in a perfectly inexpansible vessel, have its temperature raised 1°. Let the same quantity of air, placed in a vessel which permits the air to expand when it is heated—the pressure on the air being kept constant during its expansion—also have its temperature raised 1°. The quantities of heat employed in the two cases are different. The one quantity expresses what is called the specific heat of air at constant volume; the other the specific heat of air at constant pressure. It is an instance of the manner in which apparently unrelated natural phenomena are bound together, that from the calculated and observed velocities of sound in air we can deduce the ratio of these two specific heats. Squaring Newton’s theoretic velocity and the observed velocity, and dividing the greater square by the less, we obtain the ratio referred to. Calling the specific heat at constant volume Cv, and that at constant pressure Cp; calling, moreover, Newton’s calculated velocity V, and the observed velocity V′, Laplace proved that—</p>
 <p>Footnote: See “Heat as a Mode of Motion,” chap. iii.</p>
-<pre class="outline">    Cp / Cv  =  V′² / V²</pre>
+<pre class="outline">    Cp / Cv  =  V′<sup>2</sup> / V<sup>2</sup></pre>
 <p>Inserting the values of V and V′ in this equation, and making the calculation, we find—</p>
 <pre class="outline">    Cp / Cv  =  1.42</pre>
 <p>Thus, without knowing either the specific heat at constant volume or at constant pressure, Laplace found the ratio of the greater of them to the less to be 1·42. It is evident from the foregoing formulæ that the calculated velocity of sound, multiplied by the square root of this ratio, gives the observed velocity.</p>
@@ -1724,7 +1751,7 @@ figcaption {
 <p>“Respectfully,</p>
 <p>“Your obedient servant,</p>
 <p>“R. G. H. Kean.</p>
-<h4>“Prof. John Tyndall.”</h4>
+<p>“Prof. John Tyndall.”</p>
 <p>I learn from a subsequent letter that during the battle the air was still.—J. T.</p>
 <h4>Echoes from Invisible Acoustic Clouds</h4>
 <p>But both the argument and the phenomena have a complementary side, which we have now to consider. A stratum of air less than 3 miles thick on a calm day has been proved competent to stifle both the cannonade and the horn-sounds employed at the South Foreland; while, according to the foregoing explanation, this result was due to the reflection of the sound from invisible acoustic clouds which filled the atmosphere on a day of perfect optical transparency. But, granting this, it is incredible that so great a body of sound could utterly disappear in so short a distance without rendering some account of itself. Supposing, then, instead of placing ourselves behind the acoustic cloud, we were to place ourselves in front of it, might we not, in accordance with the law of conservation, expect to receive by reflection the sound which had failed to reach us by transmission? The case would then be strictly analogous to the reflection of light from an ordinary cloud to an observer between it and the sun.</p>
@@ -1834,7 +1861,7 @@ figcaption {
 <p>Satisfactory, and indeed conclusive, as these results seemed, I desired exceedingly to confirm them by experiments with the instruments actually employed at the South Foreland. On the 10th of February I had the gratification of receiving the following note and inclosure from the Deputy Master of Trinity House:</p>
 <p>“My dear Tyndall—The inclosed will show how accurately your views have been verified, and I send them on at once without waiting for the details. I think you will be glad to have them, and as soon as I get the report it shall be sent to you. I made up my mind ten days ago that there would be a chance in the light foggy-disposed weather at home, and therefore sent the ‘Argus’ off at an hour’s notice, and requested the Fog Committee to keep one member on board. On Friday I was so satisfied that the fog would occur that I sent Edwards down to record the observations.</p>
 <p>“Very truly yours,</p>
-<h4>“Fred. Arrow.”</h4>
+<p>“Fred. Arrow.”</p>
 <p>The inclosure referred to was notes from Captain Atkins and Mr. Edwards. Captain Atkins writes thus:</p>
 <p>“As arranged, I came down here by the mail express, meeting Mr. Edwards at Cannon Street. We put up at the Dover Castle, and next morning at 7 I was awoke by sounds of the siren. On jumping up I discovered that the long-looked-for fog had arrived, and that the ‘Argus’ had left her moorings.</p>
 <p>“However, had I been on board, the instructions I left with Troughton (the master of the ‘Argus’) could not have been better carried out. About noon the fog cleared up, and the ‘Argus’ returned to her moorings, when I learned that they had taken both siren and horn sounds to a distance of 11 miles from the station, where they dropped a buoy. This I knew to be correct, as I have this morning recovered the buoy, and the distances both in and out agree with Troughton’s statement. I have also been to the Varne light-ship (12-3/4 miles from the Foreland), and ascertained that during the fog of Saturday forenoon they ‘distinctly’ heard the sounds.”</p>
