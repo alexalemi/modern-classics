@@ -150,3 +150,34 @@ sweep over chapters/ — and prep.py did not introduce it. Left in
 chapters/ so no boundary moves; simply not translated. Same class as the
 Faraday note-16 misprint: a mechanical check cannot see it, and only
 reading against the sense finds it.
+
+=========================================================================
+RESUME PROTOCOL — read this first after any break in the session
+=========================================================================
+1. Which files are left:
+       cd /home/alemi/projects/modern-classics
+       python3 verify.py quixote --min-ratio 0.95 --max-ratio 1.35 \
+           2>&1 | grep MISSING
+   Work them in numeric order. One modern_chapters/NNN.txt per
+   chapters/NNN.txt, same number.
+2. Get the English chapter title from manifest.json (translate the Spanish
+   title there) — first line of the file, "Chapter N: Title In Title Case".
+   Then a BLANK line, then the translation. Nothing else.
+   titles.json holds the front-matter headings.
+3. READ THE WHOLE SOURCE FILE, never a line range (the ball/ lesson).
+   reference/ holds Ormsby's 1885 English per file as a crib — consult it
+   for a hard idiom, never copy its phrasing; it is Victorian and that is
+   the thing this edition exists to replace.
+4. Ratio target 1.06-1.20. Under 1.00 means summarising. Check with:
+       python3 -c "import pathlib;n='NNN';\
+       s=pathlib.Path(f'quixote/chapters/{n}.txt').read_text().split();\
+       m=pathlib.Path(f'quixote/modern_chapters/{n}.txt').read_text()\
+       .split(chr(10),1)[1].split();print(len(s),len(m),len(m)/len(s))"
+5. Verse: tab-indent every line, blank line between stanzas. Prose: no
+   indent. NEVER write an all-caps line and NEVER use *markup*.
+6. Commit every two or three chapters so nothing is lost.
+7. Everything above this block is the locked ledger. Obey it; append to it
+   when a new decision is forced.
+AFTER ALL 134 FILES: verify, then assemble.py, cover in ebook_meta.json,
+build_ebook.py, site/index.html entry, build_feeds.py, commit, push.
+=========================================================================
