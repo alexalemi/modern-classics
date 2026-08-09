@@ -253,3 +253,25 @@ Sancho's mangling of Mambrino is rebuilt as "Malbrino"; the barber the
 company out-argues is "the out-barbered barber" (sobrebarbero, a coinage).
 Cervantes' pun "ladrones en cuadrilla, que no cuadrilleros" survives
 straight: "you gang of thieves and not officers of the gang".
+
+VERSE-DETECTION SWEEP (run at file 055) — one false positive in 134 files
+--------------------------------------------------------------------------
+prep.py marks a block as verse when it has more than one line and no line
+exceeds VERSE_MAX (62) characters. Swept every tab-indented block in
+chapters/ that is three lines or shorter — 22 of them — and read each.
+Twenty-one are genuine quoted verse (the Horace and Ovid tags in 001, the
+Marquis of Mantua ballad, the Roland inscription, the Gaiferos and
+Melisendra ballads, the braying-aldermen couplet, the Favila curse).
+ONE IS PROSE: chapters/055.txt, "Contento dieron las palabras del cabrero
+a los que las oyeron / especialmente al canonigo, que le dijo" — a
+narrative sentence that happens to have been wrapped into two short lines.
+Translated as PROSE in modern_chapters/055.txt, which is correct.
+chapters/ is left untouched: editing it would change nothing that ships
+(this book has no original-text edition) and re-running prep risks moving
+a boundary under files already translated.
+
+FILE 057 CARRIES ALL-CAPS ATTRIBUTIONS ("EL MONICONGO, ACADEMICO DE LA
+ARGAMASILLA, A LA SEPULTURA DE DON QUIJOTE") above each of the academy
+poems that close Part One. WRITE THESE IN TITLE CASE, never all caps —
+the ovid/ rule. They sit above tab-indented verse, so they are the one
+place in this book where the heading trap can bite.
