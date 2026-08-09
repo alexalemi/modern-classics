@@ -208,3 +208,38 @@ protect the reader from the book.
 ANOTHER SLIP RECONCILED: in chapter 29 Cardenio addresses Dorotea as
 "Teodora" once, mid-speech, a page after learning her name is Dorotea.
 It is a printer's error for "senora" and is rendered "madam".
+
+SPLIT-CHAPTER BUG, CAUGHT AT FILE 037 — READ THE MANIFEST, NOT THE PROSE
+------------------------------------------------------------------------
+This book has THREE split chapters, not one file per chapter throughout:
+    035+036 = chapter 33   (the Curioso impertinente, part 1)
+    037+038 = chapter 34   (the Curioso impertinente, part 2)
+    045+046 = chapter 41   (the captive's story)
+Everything else is 1 of 1. I had been titling every file as its own
+chapter and got 036 and 037 wrong — 036 headed "Chapter 34" when it is
+chapter 33's second half, and 037 headed "Chapter 34 (Part 2)" when it is
+chapter 34's FIRST half.
+
+WHAT WOULD HAVE SHIPPED, AND WHY NOTHING WOULD HAVE CAUGHT IT:
+assemble.strip_front() drops the first non-blank line of EVERY file in a
+group, part 1 and part 2 alike, and takes the heading from the part-1 file
+only. So the wrong line in 036 would have been swallowed in silence, and
+chapter 34 would have gone to the page and the epub titled
+"Chapter 34 (Part 2): ... Is Carried Further". verify.py check 3 only
+asserts that a "(Part n of k)" marker, IF PRESENT, sits in the first three
+lines; a MISSING marker and a WRONG heading are both invisible to it, and
+the word ratio and must_contain do not move at all.
+FORMAT, now correct in all three files: heading line, then "(Part n of k)"
+on its own line, then a blank line, then the body. Parts 2+ repeat the
+same heading text and never re-introduce the chapter in the prose; a
+non-final part never concludes it.
+CHECK THE MANIFEST FOR "of" > 1 BEFORE WRITING ANY FILE.
+
+LEONELA'S ABC (file 037) is an alphabet of a good lover's virtues, and the
+Spanish letters do not survive translation. Rebuilt as a real English A-Z:
+appreciative, blameless, chivalrous, devoted, enamoured, firm, gallant,
+honourable, illustrious, just, kind, loyal, manly, noble, open-hearted,
+princely, quick-witted, rich, "and the S's they talk about", tactful,
+veracious. Cervantes' three jokes at the end all survive intact in
+English: X is refused as a harsh letter, Y is said to have been covered by
+I, and Z is "zealous guardian of your honour".
