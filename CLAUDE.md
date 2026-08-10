@@ -1164,3 +1164,90 @@ monstruos (The Sleep of Reason Produces Monsters), published 1799, NGA
 with wide margins and the printed number 43. A man asleep at his desk with
 his head on his arms while phantoms crowd in behind him is the book's
 opening stage direction almost word for word.
+
+Miguel de Cervantes' Don Quixote (quixote/ — the 51st book, and by a wide
+margin the LONGEST in the collection: 134 files, 379,021 Spanish words ->
+426,371 English, ratio 1.12, verify --min-ratio 0.95 --max-ratio 1.35).
+Both parts complete and unabridged — Part One of 1605 (52 chapters) and Part
+Two of 1615 (74) — from the Spanish, Gutenberg #2000, with every interpolated
+tale that abridgements cut (Reckless Curiosity, the Captive's story, Cardenio
+and Dorotea, Leandra, the Camacho wedding, Ricote and Ana Félix).
+
+THE SINGLE MOST DANGEROUS BUG, and it is INVISIBLE TO verify.py. Three
+chapters are split across two files (035+036 = I.33, 037+038 = I.34,
+045+046 = I.41). I titled 036 and 037 as chapters in their own right — 036
+headed "Chapter 34" when it is chapter 33's second half. NOTHING would have
+caught it: assemble.strip_front() drops the first non-blank line of EVERY
+file in a group and takes the heading from part 1 only, so the bad line in
+036 vanishes silently, and chapter 34 would have shipped titled "Chapter 34
+(Part 2): ... Is Carried Further". verify.py check 3 only asserts that a part
+marker, IF PRESENT, sits in the first three lines; a MISSING marker and a
+WRONG heading are both invisible, and neither the ratio nor must_contain
+moves. CHECK THE MANIFEST FOR "of" > 1 BEFORE WRITING ANY FILE. The correct
+shape is: heading line, "(Part n of k)", blank, body — parts 2+ never
+re-introduce the chapter and non-final parts never conclude it.
+
+THE PIPELINE IS MARKUP-FREE AND IT IS EASY TO FORGET IT. I wrote
+*Tablante de Ricamonte* in file 018 and four italicised book titles in 081;
+both renderers would have shipped literal asterisks. Book titles go in plain
+text. Structure comes ONLY from convention: tab indent = verse or table,
+ALL CAPS = heading (so NEVER write an all-caps line), and nothing else.
+
+SANCHO IS THE TRANSLATION PROBLEM. Two editorial calls, both approved up
+front and both worth reusing:
+- PROVERBS ARE TRANSLATED FOR FUNCTION, not word for word. Where a real
+  English equivalent exists, use it; where none does, INVENT an
+  English-sounding proverb. Keep the avalanches at full length (they are the
+  joke) and let the misfires misfire — Don Quixote's complaint that Sancho
+  drags them in "by the hair" only lands if some of them genuinely do not fit.
+- EVERY MALAPROPISM IS REBUILT ON THE ENGLISH WORD, never carried over.
+  fiscal/friscal -> prosecutor/PERSECUTOR (a letter's difference, and Sancho
+  does feel persecuted); Ptolomeo's dirty syllables -> "a Toll-and-Lousy,
+  with 'pee' tacked on"; scitas/"cita, cita" -> "Scythians"/"sic 'em, sic 'em";
+  bárbaros -> "barbarians"/"barbers"; pacto expreso -> "packet expressed";
+  teologías -> "'ologies"; abernuncio kept as the Latin he mangles. The full
+  locked list is in running_notes.txt. Sancho's malapropisms are the one place
+  where a literal rendering is guaranteed to be wrong.
+- THE VERSOS DE CABO ROTO in the prologue verses (Cervantes chops the last
+  syllable off every line) are reproduced by chopping the last syllable in
+  ENGLISH, with one bracketed note. `se lint` flags all thirty-odd of them as
+  broken words; they are correct and the warnings are ignored.
+
+THE INCONSISTENCY RULE, and it has two halves. RECONCILE a slip a reader
+could only read as OURS: the Yangüesan/Galician muleteers, Alifanfarón's
+shifting name, "Teodora" for Dorotea, Vicente de la Roca/de la Rosa, don
+Pedro/don Gaspar Gregorio, Osiris for Busiris, Curambro for Curiambro, and
+II.45's back-reference to a purse case that has not happened yet (dropped the
+specific reference; the whole chapter otherwise stands). KEEP the famous ones
+Cervantes answers for himself: Sancho's wife's shifting name, the vanishing
+and reappearing saddlebags, and the stolen ass — he apologises for the last
+two in II.3-4 and the apology is funnier than the fix. Every reconciliation is
+logged in running_notes.txt.
+
+EPITHET CHANGE: from II.17 Don Quixote renames himself the KNIGHT OF THE
+LIONS and the narrative follows him. "The Knight of the Sorrowful Countenance"
+stays pinned in must_contain because it is Part One's, but do not use it as
+the running epithet after file 076.
+
+TWO SENSITIVE PASSAGES, both the Verne rule, both translated in full with no
+softening and no wink: Ricote the Morisco endorsing the 1609 expulsion of his
+own people as "divine inspiration" while weeping for Spain (II.54), and his
+praise of its executor Don Bernardino de Velasco for using "the cautery that
+burns rather than the ointment that softens" (II.65). The reader has just
+watched his daughter nearly hanged; the contradiction is what Cervantes leaves
+standing, and a note would be the wink the rule forbids. Sancho on the slave
+trade (II.1) and his "mortal enemy of the Jews" are handled the same way.
+Dorotea's seduction and the attempted rape are at full length, with gravity
+and without titillation.
+
+RATIO: Spanish -> English narrative prose runs about 1.12 here — HIGHER than
+the 0.9-1.5 FR/IT novels because Cervantes' periodic sentences unstack, and
+far below the 1.4-2.4 of Latin verse. Target 1.06-1.20 per file; under 1.00
+means summarising.
+Cover: Gustave Doré's 1863 frontispiece, Commons "File:Gustave Doré - Miguel
+de Cervantes - Don Quixote - Part 1 - Chapter 1 - Plate 1 \"A world of
+disorderly notions, picked out of his books, crowded into his imagination\"
+.jpg", crop "3067x4600+338+100" — the plate only, out of a book page with
+white margins and a printed caption line. THE CROP IS IN THE COORDINATES OF
+THE 3840x4968 RENDITION COMMONS SERVES, not the 6456x8352 original (the
+bunyan trap: build_ebook caches the 4000px thumb and crops THAT).
