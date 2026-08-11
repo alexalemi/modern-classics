@@ -212,6 +212,90 @@ different book from the one we make.
 
 ## Folktales and stories from other cultures (Alex, 2026-08-06)
 
+### RESOLVED 2026-08-11 by measurement — JACOBS IS OUT, BURTON IS IN
+Alex chose Jacobs' English + Celtic on 2026-08-06; both were SAMPLED
+before prep (the strand's own rule) and both FAIL the test. The whole
+strand was then re-measured on one scale. Per 1,000 words of tale text,
+counting thou/thee/thy/hast/hath/doth/quoth/unto/ere/ye/verily etc.:
+
+  Burton, Thousand Nights & a Night   mean 38.4w  over35 38%  ARCH 19.83
+  Hunt, Grimm's Household Tales 1884  mean 35.4w  over35 36%  ARCH 11.52
+  Jacobs, Celtic Fairy Tales          mean 28.9w  over35 27%  ARCH  3.32
+  Ralston, Russian Folk-Tales 1873    mean 20.9w  over35 14%  ARCH  2.05
+  Jacobs, English Fairy Tales         mean 27.8w  over35 24%  ARCH  0.90
+  Mitra, Hindu Tales from Sanskrit    mean 27.9w  over35 24%  ARCH  0.08
+
+THREE FINDINGS WORTH KEEPING:
+
+(1) JACOBS FAILS, and English fails hardest. Genuine FALSE FRIENDS run
+    0.80 per 1,000 words in English Fairy Tales (41 in 51,023) against
+    Bunyan, whose whole case was that layer. What Jacobs has instead is
+    dialect SPELLING at 3.84/1k ('em, o', ain't, "says she", "a-thinking")
+    — the voice, not an obstacle. And the one genuinely opaque idiom in
+    the book, the pie-crusts that "come again", JACOBS GLOSSES HIMSELF,
+    inline: "She meant, you know, the crust would get soft." He already
+    did the annotating, in 1890, for a child. Celtic's archaism is real
+    but confined to ~5 tales of 26 (Olwen 59 hits — which is Lady Guest's
+    Mabinogion, not Jacobs — Conall Yellowclaw 37, Battle of the Birds 31,
+    Connla 21), and there it is Jacobs MARKING THE MYTHIC REGISTER on
+    purpose: the Stephens/Irish-Revival case already skipped.
+
+(2) THE SENTENCE-LENGTH METRIC MIS-FIRES ON ORAL CHAIN-TALES. Jacobs
+    English averages 27.8w, which looks like Mitra's "DO" number — but
+    the tales driving it are the cumulative ones. "The Cat and the Mouse"
+    averages 194 words per sentence because it IS one chained run-on, and
+    "Titty Mouse and Tatty Mouse" 57.9. In a cumulative tale the long
+    sentence is the FORM, not the barrier. Read the outliers before
+    trusting the mean; and weight ARCHAISM DENSITY over sentence length,
+    which is what actually separates the six books above.
+
+(3) RALSTON IS THE AFANASYEV RESULT ALL OVER AGAIN — 2.05/1k and a 20.9w
+    mean, cleaner than Jacobs' Celtic. Struck from the list. The lesson
+    has now held twice: the Victorian-looking Russian collections are
+    fine, and only sampling shows it. Mitra re-measures at essentially
+    ZERO archaism (0.08/1k): its length is Edwardian explanatory syntax,
+    an unstacking job, not an unlocking one — a weaker case than the
+    2026-08-06 note implies.
+
+### BURTON'S NIGHTS — the strand's real target
+The purest instance of this project's thesis anywhere on the roadmap:
+THE ARCHAISM IS NOT IN THE ORIGINAL. The Arabic is plain popular
+storytelling; Burton bolted mock-Elizabethan onto it as a method
+("I was sitting at mine ease but my frowardness brought me to unease";
+"wend thy ways"; "quoth the Caliph"; "seeing that the morning hath not
+yet dawned"). 19.83 archaisms per 1,000 words — 22x Jacobs' English.
+A modern reader is blocked, and blocked by a Victorian's affectation
+rather than by the source.
+
+SCOPE IS THE PROBLEM, not quality. 10 volumes plus 6 Supplemental,
+~1.8M words — five Don Quixotes. So this must be a SELECTED volume,
+which is an established shape here (Montaigne's 23 essays, Cato's 18
+letters, Plutarch's 5 lives). Where the famous tales actually live:
+  #3435  Vol 1  174k words, 1,396 [FN#] markers — the frame story
+         (Shahryar and Shahrazad), the Trader and the Jinni, the
+         Fisherman and the Jinni, the Porter and the Three Ladies of
+         Baghdad, the Three Kalandars
+  #3440  Vol 6  136k words — SINDBAD THE SEAMAN, the City of Brass
+  #3447  Suppl. v3  225k words — ALADDIN, ALI BABA (the "orphan" tales,
+         not in Burton's main Calcutta II text)
+  #51252 is a SECOND transcription of Vol 1 with no [FN#] markers at
+         all; #3435 carries them, so the apparatus is cleanly separable
+         from the tales. Prefer #3435 and strip.
+
+TWO CALLS TO MAKE BEFORE PREP:
+  - THE APPARATUS IS NOT THE BOOK. Burton's footnotes and Terminal Essay
+    are Victorian racial-sexual ethnography and are a large fraction of
+    the wordcount. Take the tales; drop the apparatus (the bunyan/Offor
+    precedent — keep as a crib, draw on it only where a reader genuinely
+    cannot follow).
+  - CONTENT. The tales are frankly sexual and the frame story turns on
+    the queens' adultery with enslaved Black men. That is in the Arabic,
+    not Burton's invention, and gets the project's standard handling:
+    translate in full, with gravity, no softening and no wink — the
+    Verne rule as applied to Ricote, Sancho on the slave trade, and
+    Ball's 1833 Leonid eyewitness.
+
+
 A new strand, and the project's first COLLECTIONS rather than single
 works. Start with Joseph Jacobs. All are on Gutenberg, all are out of
 copyright, and Jacobs is the right door: he collected in English, wrote
