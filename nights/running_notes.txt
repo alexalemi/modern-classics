@@ -1,0 +1,1091 @@
+RUNNING NOTES — THE THOUSAND NIGHTS AND A NIGHT
+================================================
+
+The shared consistency ledger. Every translator reads this before every
+file; the orchestrator updates it between batches. Anything here is
+LOCKED — do not re-decide it, do not re-gloss it, do not "improve" it.
+
+
+THE LOCKED FORMULAE
+-------------------
+
+These recur 147 times between them and their power is that they are
+identical every time. Do not vary them.
+
+THE NIGHT-BREAK, all three parts, exactly:
+
+    ...mid-sentence, then:—And Shahrazad saw the dawn breaking, and fell
+    silent.
+
+    When it was the Eighth Night,
+
+    she went on: It has reached me, O fortunate King, that ...
+
+  - Part one ALWAYS "saw the dawn breaking, and fell silent". Burton has
+    two wordings for it (70 "perceived", 76 "was surprised by"); that is
+    his inconsistency, not the Arabic's, and we use one.
+  - Part two keeps the night NUMBER exactly as printed, spelled out, and
+    keeps the TRAILING COMMA. Without the comma assemble.py reads the
+    line as a subheading and sets it as an <h4>.
+  - Part three always "It has reached me, O fortunate King, that".
+    Burton alternates "O auspicious King" (68) and "O King of the Age"
+    (77); one wording throughout.
+  - THE CUT IS ALWAYS MID-SENTENCE. That is the whole joke of the
+    device. Do not tidy it into a sentence break.
+
+OTHER SET PHRASES, locked:
+
+    "Hearing and obedience!"                  (Burton: Hearkening and
+                                               obedience)
+    "There is no Majesty and there is no Might save in Allah!"
+    "O Commander of the Faithful"
+    "on the two of them be peace!"            (of prophets)
+    "extolled and exalted be He!"             (of God)
+    "if Allah will"                           (not "God willing")
+    "in the old days, and in the old time before them"  — the tale-
+        opening formula (Burton: "in tide of yore and in times and years
+        long gone before"). Keep the cadence; it is saj'.
+    "he wept till he wetted his gown"         — kept as printed; it is a
+        set phrase, not a description, and it recurs.
+
+
+THE LOCKED GLOSSARY
+-------------------
+
+One English form each. GLOSS ONCE, at first appearance, as a natural
+clause in the sentence — never a bracketed note. Then never again.
+
+  vizier          (Wazir) — no gloss, the word is English
+  jinni / jinn    gloss once against "genie", which is the same word
+  ifrit           gloss once: a jinni of the fiercer kind
+  marid           glossed alongside the ifrit
+  kalandar        gloss once: a wandering holy beggar under a vow.
+                  KEEP the word — the three Kalandars are known by it
+  roc             (Rukh) — never "rukh"
+  Mamluk          gloss once: a soldier-slave
+  houri           gloss once
+  emir, caliph, sultan, judge (Kazi), governor (Wali)
+  the baths / the bathhouse   (Hammam)
+  bazaar, or market           (bazar)
+  dinar, dirham   KEEP. They are money and the amounts matter
+  Christian       (Burton: Nazarene)
+  Muslim          (Burton: Moslem);  Ramadan (Ramazan);  Kaaba
+  Allah           always. Never "God" — it is the text's word and it is
+                  ordinary English now
+
+NAMES:
+
+  Aladdin         Burton spells it Alaeddin; English settled this a
+                  century ago and we use the settled form
+  Shahrazad       glossed at her first appearance against Scheherazade,
+                  which is the spelling a reader has heard. ONE inline
+                  gloss, then never again
+  Sesame          (Simsim). "Open, Sesame!" — must_contain
+  Shahryar, Shah Zaman, Dunyazad, Sindbad, Kasim, Morgiana,
+  Duban, Al-Nashshar — as printed
+
+
+BURTON'S COSTUME — GOES SILENTLY
+--------------------------------
+
+whereupon, quoth, aught, naught, whereat, forthright, ere, sooth,
+albeit, wot, whenas, withal, hight, forthwith, anent, belike,
+peradventure, methinks, prithee, whilome, wone, eke, lief, perchance,
+fain, wist, trow; "an"/"and" for if; "for that" for because; "the
+which"; "needs must"; "he ceased not to" for he kept on; "fared forth";
+inverted "quoth he".
+
+And his home-made words: verroterie (glassware), fid (chunk), Gobbo
+(the hunchback), stound (moment), leven (lightning), undight
+(unveiled).
+
+
+DECISIONS AND RECONCILIATIONS
+-----------------------------
+
+Logged as they are made, with the file they were made in.
+
+FILE 000 — the frame opens; Shahryar and Shah Zaman
+
+  GLOSSES SPENT (do not re-gloss any of these):
+    Mamluk    "Mamluks, which is to say soldiers who are also slaves"
+    jinni     "a jinni — one of the jinn, the spirits that people
+               nowadays call genies"
+    the moon of the fourteenth night  "which is the full moon"
+    alhamdulillah  "praise be to Allah"
+
+  LOCKED WORDINGS ESTABLISHED HERE:
+    "In the name of Allah, the Compassionate, the Merciful!" — the
+        bismillah, opening the book
+    "in the old days, and in the old time before them" — the tale-opening
+        formula, first used in the preface paragraph
+    "Hearing and obedience!"
+    the house of Sasan            (Burton: the Banu Sasan)
+    Samarkand, away in the outer lands   (Burton: "in Barbarian land",
+        his rendering of the Arabic for the non-Arab countries. Not
+        "Barbarian" — a modern reader hears something the text does not
+        say.)
+    Saeed / Sa'ad al-Din Saood    as printed, both forms; the second is
+        the man announcing his own full name and the queen laughs at it
+
+  THE RACE PASSAGE, as applied — the pattern for every later one:
+    Burton's "a big slobbering blackamoor with rolling eyes which showed
+    the whites, a truly hideous sight" became "a huge Black man,
+    slack-mouthed, the whites of his eyes showing as they rolled — a
+    hideous sight, as Shah Zaman saw him from the window."
+      - the FACTS all stay: his size, his mouth, his eyes, and the
+        judgement passed on him
+      - the slur-vocabulary goes ("blackamoor" 11x, "negro" 8x across
+        the book -> "the Black man", "the Black slave")
+      - the judgement is LOCATED IN THE WATCHER rather than asserted by
+        the narration. This is not softening: Shah Zaman is at the
+        window, it is his scene, and the contempt is his. Nothing is
+        laundered and nothing is added.
+      - Shah Zaman's own speech keeps his contempt intact and unmarked
+        ("in love with the filthiest slave in his household") — it is
+        his line, in his mouth, and the Verne rule holds it there.
+
+  RATIO: 1.05. NOTE THE SPLIT-FILE TRAP THAT NEARLY BIT HERE — the
+  source file 000 ends on the lead-in "Even so the poet Utayyah hath
+  excellently said:—" and the VERSE ITSELF IS THE FIRST THING IN FILE
+  001. I translated the poem at the end of 000 and had to pull it back
+  out. assemble.py stitches the parts together, so the reader would have
+  seen nothing wrong; the poem would simply have been translated twice,
+  once in each file, and both ratios would have been off. When a file
+  ends on a colon, the thing it introduces belongs to the NEXT file.
+
+FILE 001 — the ifrit's wife; the killing begins; Shahrazad volunteers
+
+  GLOSS SPENT:
+    Shahrazad  "Shahrazad is the name English has usually spelled
+                Scheherazade" — the one gloss she gets. Never again.
+
+  MUST_CONTAIN LANDED HERE:
+    "There is no Majesty and there is no Might save in Allah, the
+    Glorious, the Great" — the brothers say it walking away from the
+    tree. This is its first of many appearances; the wording is now
+    locked for all of them.
+
+  THE COERCION SCENE: the woman forces both kings at threat of waking
+  the ifrit. Burton uses his own coarse verb throughout ("futtering",
+  "the deed of kind"). Rendered matter-of-factly and at full length —
+  "Take me, and be quick about it", "do what men do", "when they had got
+  up off her". Neither clinical nor pornographic, which is the register
+  the Arabic itself has. The 570 rings are kept exactly.
+
+  "the two damsels who (Inshallah!) will presently be mentioned" is a
+  NARRATOR'S ASIDE, not the vizier's — kept, as "the father of the two
+  girls who, Allah willing, will be spoken of shortly".
+
+  THE RATIO BAND WAS WRONG AND HAS BEEN CORRECTED. Predicted 0.90-1.05;
+  files 000 and 001 both landed at 1.05. text_analysis.txt and
+  agent_instructions.txt now say 0.98-1.12, and verify.py runs with
+  --min-ratio 0.85 --max-ratio 1.25. The cost is in unstacking Burton's
+  compressed archaic verbs and in making the nesting seams explicit.
+
+FILE 002 — the Bull and the Ass; Shahrazad goes to the King
+
+  BURTON'S IMPORTED COSTUME, replaced. He reaches for European animal
+  names that have nothing behind them in the Arabic: "Chanticleer" and
+  "Dame Partlets" (Chaucer) for the cock and hens, and "Aliboron" (La
+  Fontaine) for the donkey. All three go. The Ass is "Father of Waking"
+  throughout — the one epithet, used consistently, where Burton drifts
+  between that, "Father Wakener" and "Aliboron"; the Bull is
+  "Broad-Brow" / "Father of a Bull".
+
+  PROVERB ECHO — worth watching for generally. The Ass's "I was in joy
+  and gladness, nought save my officiousness brought me this sadness" is
+  THE SAME PROVERB the vizier quotes in file 001. Burton words it
+  differently in the two places and the echo dies. Both now read "I was
+  lying comfortably; nothing but my own meddling made me uncomfortable."
+  The Ass repeating the father's proverb is the joke of the frame.
+
+  "in spite of your nose" (Arabic idiom, not Burton's invention) is KEPT
+  literal when aimed at another person, where the context carries it
+  ("I will marry myself to him in spite of your nose"). In file 003 it
+  is reflexive — the merchant goes to his death "despite his own nose" —
+  where literal English says nothing, so it is unpacked: "though every
+  part of him refused to go."
+
+  THE WIFE-BEATING is the tale's moral and its punchline: the merchant
+  "learned how to run a household from his Rooster". Verne rule. Played
+  straight, at full length, no softening and no comment.
+
+FILES 003-004 — the Trader and the Jinni; the First Old Man
+
+  THE NIGHT-BREAK'S FIRST OUTING, and the three-part formula works as
+  locked. Note what sits BETWEEN the parts here: Dunyazad's praise,
+  Shahrazad's teaser, the King deciding not to kill her yet, a whole day
+  of court business, and the vizier still carrying his daughter's
+  shroud. That surrounding frame material is not boilerplate and is
+  translated in full every time.
+
+  Burton's opener varies again — "It is related, O auspicious King" and
+  "It hath reached me, O auspicious King and Heaven directed Ruler". Both
+  are normalised to the locked "It has reached me, O fortunate King,
+  that". One wording, always.
+
+  TALE TITLES: "The First Shaykh's Story" -> "The First Old Man's
+  Story", and the same for the second and third. The manifest keeps
+  Burton's word (it drives only the original-text edition); the modern
+  heading comes from the file. Shaykh means old man here and all three
+  are introduced as old men in the prose.
+
+  RECURRING FORMULA, now locked: "if it were engraved with needles on
+  the inner corners of the eye, it would be a warning to anyone willing
+  to take warning." It comes back many times in the book.
+
+  KEPT AS PRINTED, all genuine Arabic idiom rather than Burton's
+  costume: "drunk without any wine", "the very core of your heart",
+  "the life-blood of my liver", "her blood is lawful to you".
+
+PREP FIX AFTER FILE 003 — THE VERSE REBUILD, and it is the silent class
+again. verse_lines() un-wrapped Burton's couplets line by line, on the
+rule that a wrapped continuation begins in lower case. A hemistich that
+OPENS ON A CAPITAL breaks it both ways at once: "Yet ne'er a star but /
+Sun and Moon by eclipse is overta'en" was torn in half, while its
+neighbour was left carrying two hemistichs welded together. Every word
+present, in order, with the right total — invisible to the ratio, to
+must_contain, to everything.
+  Now the run is joined and cut on the ASTERISKS first, and each
+  between-asterisks chunk is split at the sentence end nearest its
+  midpoint (split_middle). The midpoint rule matters: taking the FIRST
+  sentence end instead would cut "Lot! Enjoy the Present passing well"
+  after "Lot!". Suspect lines fell from 22 to 11, and the 11 that remain
+  are real hemistichs with internal exclamations.
+  Word counts are IDENTICAL before and after (217,747), so no manifest
+  boundary moved and no finished file was invalidated.
+
+FILES 007-012 — the Fisherman cycle, and the nested tales inside it
+
+  GLOSSES SPENT:
+    ifrit    "an ifrit is a jinni of the fiercer kind" — placed in file
+             001, which is where the word FIRST appears. I had written
+             007's gloss first and then found 001 had used the word
+             unglossed six files earlier. CHECK FIRST APPEARANCE, not
+             the file you happen to be in.
+    marid    "the name of the mightiest and most rebellious of the jinn"
+             (007)
+    ghulah   "a ghulah, an ogress" — Burton glosses it himself (011)
+    the tribe of Ad  "the ancient giants of the tribe of Ad" (012)
+
+  NAME DECIDED: Solomon, not Sulayman. English settled this long ago,
+  "the seal of Solomon" is the known phrase, and Burton himself writes
+  "Solomon's seal" a few lines after writing "Sulayman". Asaf son of
+  Barkhiya and Sakhr the Jinni are kept as printed.
+
+  "pall and mall" -> polo, which is the game the Arabic means (008).
+
+  BURTON'S CAPITALISATION IS NOT A SIGNAL. Source file 008 heads its
+  night "When It Was The Fifth Night," in title case where every other
+  one is sentence case. Normalised. A heading whose case varies at
+  random cannot be carrying information.
+
+  ONE GLOSS ADDED FOR SENSE, and the standard for when to do it: the
+  proverb about "Ummi Amir's neighbour" (007) is meaningless in English
+  — Umm Amir is the hyena — so it reads "gets what the man got who took
+  in the hyena". The rule is the soap-bubbles annotation rule: a gloss
+  only where a modern reader genuinely cannot follow, and worked into
+  the line rather than bracketed. Umamah and Atikah (011) get no gloss,
+  because there the speaker is interrupted before he can explain and
+  the interruption IS the point.
+
+  SAJ' KEPT WHERE IT RHYMES IN THE SOURCE: the King's message to the
+  cook (011) — "I have not stored you up, O treasure of mine, except
+  against a hard time of mine" — keeps the rhyme because the rhyme is
+  the reason the sentence exists.
+
+  RACE, second and third applications of the file 000 rule. In 006 the
+  wife is found with "a black slave"; the fact stays, the sex is
+  matter-of-fact, no ornament is added. In 012 the guardian who bursts
+  through the wall is "like a huge rock or a remnant of the tribe Ad" —
+  that comparison is about SIZE and is kept in full; "blackamoor"
+  becomes "the huge Black man" on its second mention.
+
+  KEPT AS PRINTED, all comic and all in the Arabic's own register: the
+  fisherman wetting himself when the ifrit kicks the jar into the sea
+  (011); "not knowing Sunday from Thursday"; "His staff broke at the
+  first blow!" (012).
+
+FILE 013 — the Ensorcelled Prince. THE HARDEST RACE PASSAGE IN THE BOOK
+SO FAR, and it splits three ways. Recorded in full because the same
+three-way split will recur.
+
+  1. WHAT IS THE TEXT'S, AND STANDS UNTOUCHED (Verne rule):
+     - The queen's lover is a Black enslaved man, and the tale's whole
+       horror is that a queen abases herself to a man living in a mud hut
+       on cane trash, eating grilled rat bones and beer dregs. The
+       squalor, the leprosy, the paralysis, the rags: all kept.
+     - HIS SPEECH ASSERTING BLACK MANHOOD OVER WHITE — "by the courage
+       and the honour of Black men, and do not imagine our manhood is
+       the poor manhood of white men... Vilest of the vile whites!" This
+       is in the Arabic and it is not a one-way slur: it is the enslaved
+       man asserting superiority over the class that holds him. Kept in
+       full, unsoftened. Cutting it would flatten the passage into
+       something simpler and less true than what is there.
+     - The husband's own rage against her, obscenity and all, stays in
+       his mouth; only the slur-noun is replaced ("every slave you hire
+       to have at you").
+     - Her endearment names his blackness affectionately ("My darling!
+       My black one!") and that is kept, because the contrast between
+       her tenderness to him and her hatred of her husband is the scene.
+
+  2. WHAT IS BURTON'S ADDITION, AND GOES — THE MIMICRY SCENE. When the
+     King kills the slave and impersonates him to fool the sorceress,
+     Burton writes the impersonation as MINSTREL EYE-DIALECT: "'lack!
+     'lack! there be no Ma'esty and there be no Might save in Allauh,
+     the Gloriose, the Great", "O my cuss", "hubby", "evenin' till
+     mawnin'". That is blackface, and it is Burton's invention.
+     THE MECHANISM SURVIVES WITHOUT IT, and the text supplies the means
+     itself: it says he "lowered his voice and twisted his tongue". So
+     he "spoke thickly and indistinctly, the way a man speaks who is
+     very weak and whose throat has been cut" — which is not only not a
+     minstrel turn, it is BETTER MOTIVATED than Burton's version, since
+     the man she is expecting to hear has had his throat cut and has not
+     spoken in three years. She is fooled for a reason.
+     "O my cuss" is Burton's eye-dialect for "O my curse", and is kept
+     as "my curse" — a bitter joke, and the King's, not the slave's.
+
+  3. THE GROTESQUE LIP DESCRIPTION is kept as the size image it is in
+     the Arabic ("upper lip like the lid of a pot and lower lip like the
+     pot itself"), set down plainly and not played for caricature.
+
+  THE FOUR FAITHS AND THE FOUR COLOURS are the tale's machinery and are
+  exact: Muslims white, Magians red, Christians blue, Jews yellow.
+
+  KEPT: Mount Kaf, bhang, Mustafa and Murtaza (Muhammad and Ali), the
+  hair shirt, "the kings of Persia" for Burton's "Kisra-kings".
+
+FILE 014 — the Porter and the Three Ladies. The erotic-comic centre.
+
+  THE THREE LADIES ARE NAMED BY ROLE and the naming is now locked,
+  because Burton drifts across four words for one of them (cateress,
+  provisioner, procuratrix, provisioneress):
+    the caterer      — the one who does the shopping, hires the porter
+    the doorkeeper   — the one who opens the gate (Burton: portress)
+    the eldest lady  — the mistress of the house, on the couch
+  In file 021 she is titled "Tale of the Portress" in the manifest; the
+  modern heading there will be "The Doorkeeper's Tale".
+
+  THE NAMING GAME is the most explicit passage in the volume and is
+  translated in full, with nothing cut and nothing sanitised. The comedy
+  is mechanical: he offers a blunt word, gets slapped, escalates; the
+  answer they want is a lyrical kenning. Both kennings are Burton's
+  literal renderings of the Arabic and both are kept exactly — "the
+  basil of the bridges" and "the husked sesame seed" — because they ARE
+  the joke. The porter's four guesses run slit / womb / cunny /
+  clitoris: blunt, escalating, and stopping short of the one word that
+  would read as pornography rather than as farce. Register is farce
+  throughout — the slaps, his aching neck, his surrender to "the basil
+  of the bridges" — never titillation.
+
+  GLOSS SPENT: houris, "the maidens of Heaven".
+
+  KEPT WHOLE: the shopping catalogue, every fruit, flower, sweet and
+  scent of it. It is a page of pure list and it is one of the best
+  things in the book — the Baghdad market inventoried by a woman with
+  money. Do not compress a catalogue.
+
+  "straight as the letter I" is Burton rendering the Arabic letter alif,
+  a single upright stroke. Rendered as the image ("straight as a single
+  upright stroke of the pen") rather than as the letter, which means
+  nothing in English.
+
+FILES 015-016 — the Porter, parts two and three
+
+  GLOSS SPENT: kalandar — "three Persian kalandars, wandering holy
+  beggars under a vow". Placed at their first appearance (015).
+
+  THE DOOR INSCRIPTION IS THE ALL-CAPS TRAP, and it is set in capitals
+  in the source: "WHOSO SPEAKETH OF WHAT CONCERNETH HIM NOT, SHALL HEAR
+  WHAT PLEASETH HIM NOT!" Written out in sentence case. assemble.py
+  reads an all-caps line as a section heading, so reproducing the
+  source's capitals would have put a spurious <h2> in the middle of the
+  scene. WATCH FOR THIS ON EVERY INSCRIPTION, LETTER AND PLACARD — the
+  book has several more.
+
+  LOCKED FORMULA: "rub your head and be on your way" — the lady's
+  formula of pardon, and it recurs after each of the five tales told in
+  this house.
+
+  THE THIRD KENNING: "the Inn of Abu Mansur" (Burton: Khan), completing
+  the set with the basil of the bridges and the husked sesame. All three
+  are needed for the porter's punchline, which strings them together.
+
+  NORMALISED: Burton's "Prince of the Faithful" -> "Commander of the
+  Faithful", which is the locked form and the one in must_contain.
+
+  "Hammal" is simply the Arabic for porter and is not kept as a name.
+
+FILE 017 — the First Kalandar's Tale
+
+  SOURCE INCONSISTENCY RECONCILED. The kalandar is blinded in his LEFT
+  eye by the usurping vizier ("he thrust his finger into my left eye"),
+  and all three kalandars are established in 015 as blind in the LEFT
+  eye — but he closes the tale saying "the manner of my losing my right
+  eye". Corrected to left. This is the quixote rule: reconcile a slip
+  that a reader could only read as OURS, and log it. Nothing else in
+  the tale moves.
+
+  INCEST, and the Verne rule holds. The cousin and his own sister wall
+  themselves into an underground room and are burnt black by fire from
+  heaven; the father spits in the corpse's face and beats it with his
+  slipper, and says the judgement to come will be worse. Translated in
+  full, at the text's own pitch, with no softening and no note. The
+  narrator's protest at his uncle's hardness is what the text supplies
+  in place of a comment, and it is enough.
+
+  "Prince of the Faithful" normalised to "Commander of the Faithful"
+  again — Burton alternates freely and it is locked.
+
+FILES 018-020 — the Second Kalandar's Tale and the Envier/Envied
+
+  NAME RECONCILED: the ifrit is "Jirjis son of Rajmus" at his first
+  naming (018) and "Jirjaris" when the princess names him (020). One
+  spelling, Jirjis. Burton's variant is a transliteration wobble, not a
+  second character.
+
+  PLACE LOCKED: the Ebony Islands (Burton: "the Islands of Abnus" —
+  abnus IS ebony). Distinct from the Black Islands of file 013, which is
+  a different kingdom, so both names are needed and neither can drift.
+
+  THE SIX CALLIGRAPHIC HANDS ARE KEPT BY NAME — Rayhani, Thuluth (Burton
+  spells it Suls), Naskh, Tumar, Muhakkak, plus the ordinary letter
+  hand. The whole joke of the scene is an ape demonstrating six distinct
+  scripts, so collapsing them into "he wrote beautifully" would destroy
+  it. Each gets the one clause of description Burton gives it and no
+  more.
+
+  THE FOOD POEM (019) is a comic tour de force and every dish in it
+  stays — partridges, fries, marinated stews, sand grouse, omelette,
+  browned fowls, the two fish on new-made scones, vermicelli, eggs with
+  hash and fritters, pot-herbs in oil and vinegar, meat pudding, sweets
+  from brocaded trays. Burton even drops into French for the fish. It is
+  a menu played as an elegy and the humour is entirely in the
+  completeness.
+
+  THE SHAPE-SHIFTING DUEL (020) is the book's best set-piece and the
+  chain must stay exact and in order: lion -> scorpion / serpent ->
+  vulture / eagle -> tomcat / piebald wolf -> worm in the pomegranate ->
+  scattered seeds -> white cock -> the one missed seed -> fish -> fire.
+  The princess dies because she overlooked a single seed. Every link is
+  load-bearing.
+
+  RELIGIOUS FRAMING KEPT WHOLE (Verne rule): the princess burns the
+  ifrit only after urging him to embrace Islam, dies making the
+  profession of faith, and the King is converted afterwards. The
+  victory-cry naming those who do not believe is kept as printed.
+
+FILE 021 — the Third Kalandar, part one; the Magnet Mountain
+
+  NAME RECONCILED: the narrator is "Ajib son of Kazib" in his opening
+  sentence and "Ajib bin Khazib" / "son of Khazib" everywhere after,
+  including in the prophecy that names him. One spelling: KHAZIB.
+
+  PLACE LOCKED: the Magnet Mountain. Burton calls the same peak the
+  Magnet Mountain, the Loadstone Mountain and the Mountain Magnet within
+  three paragraphs. It is named four more times in this tale and in the
+  prophecy that drives the plot, so it cannot be allowed to drift.
+
+  "laton" (latten) is rendered "brass" throughout, which is what Burton
+  himself calls it half the time — the horseman, the horse, the lance
+  and the dome are all the one metal and the reader needs to see that.
+
+  A SOURCE TYPO: "I lighted a large wax candle and trimmed the ramps and
+  the three lanterns" — ramps for lamps. Rendered as lamps.
+
+FILES 022-023 — the Third Kalandar concluded; the frame resolves
+
+  THE PROVERB ECHO, AND A DRIFT CAUGHT LATE. The saying "I was sitting
+  at my ease, and nothing but my own meddling brought me unease" occurs
+  FIVE times across the book so far, in four different mouths: the
+  vizier warning Shahrazad (001), the Ass regretting his advice (002),
+  the ten one-eyed young men chanting it over their trays of soot (022,
+  twice) and Ajib repeating it as he is driven out (023). Burton words
+  it differently nearly every time, and I had followed him for the first
+  two before locking the wording — so 001 and 002 read "I was lying
+  comfortably; nothing but my own meddling made me uncomfortable" and
+  the later three did not match. All five now use the one form.
+  IT IS THE BOOK'S MORAL IN ONE LINE and the whole point is that the
+  reader hears it come back. A ledger entry is not enough on its own:
+  grep the finished files for the locked phrase after every batch.
+
+  KEPT AS PRINTED: the Abbasid genealogy Ja'afar recites when he reveals
+  the Caliph — Harun al-Rashid, brother of Musa al-Hadi, son of
+  al-Mansur, son of Mohammed the brother of al-Saffah son of Mohammed.
+  It is a formal pedigree announced in a throne room and its whole
+  effect is the weight of the list.
+
+  A NICE INTERNAL ECHO WORTH NOT FLATTENING: the winged black horse in
+  the forbidden fortieth room feeds from a crystal manger of HUSKED
+  SESAME — the same phrase the three ladies used as their kenning in
+  file 014. Burton did not invent it and I have kept it identical in
+  both places.
+
+FILES 024-025 — the Eldest Lady and the Doorkeeper; the cycle closes
+
+  THE BAGHDAD CYCLE IS NOW COMPLETE (files 000-025, 75,130 words). Every
+  question the frame opened has been answered: the two beaten bitches
+  are the eldest lady's sisters, transformed by a grateful jinniyah; the
+  whip scars belong to the doorkeeper, beaten by the Caliph's own son
+  Al-Amin for breaking an oath. Harun marries the caterer, marries the
+  three sisters to the three kalandars, and has the whole thing written
+  into the archives — which is the Nights' own joke about itself.
+
+  TITLE: the manifest keeps Burton's "Tale of the Portress"; the modern
+  heading is "The Doorkeeper's Tale", following the role-names locked in
+  file 014.
+
+  PLACE NORMALISED: the jinniyah promises to come "even if I were beyond
+  Mount Kaf". Burton writes "beyond Caucasus-mountain" here and "Mount
+  Kaf" in files 012 and 020 — they are the same mythical world-encircling
+  mountain, and it is named three times in the book, so one form.
+
+  NAMES KEPT AS PRINTED: Al-Amin and Al-Ma'mun (real Abbasid princes,
+  and the point of the ending is that the culprit is the Caliph's own
+  son), Ja'afar the Barmecide, Sa'ad the slave who is ordered to do the
+  killing and does not.
+
+  BASRA for Burton's Bassorah — English settled it long ago.
+
+  THE DOORKEEPER'S TALE IS THE VOLUME'S LONGEST SINGLE FILE so far
+  (5,063 source words) and it is nearly half verse: eight separate poems
+  in which husband and wife quarrel IN VERSE while she is pinned to the
+  floor by seven slaves and a sword is waiting. The alternation is the
+  scene — he recites, she answers, he recites again — and cutting or
+  compressing any of it would leave a beating with no argument in it.
+
+NEW: nights/check.py — THE PER-BOOK CHECKER (the euclid-rivals pattern)
+
+  Written after file 025, and it earned its keep on the first run. It
+  checks the four things verify.py structurally cannot see:
+    1. night-break parity and the spelled-out night NUMBERS as a
+       sequence. MATCH CASE-INSENSITIVELY: Burton writes "When It Was The
+       Fifth Night", "When it Was the Ninth Night" and "When It was the
+       Eleventh Night", so a case-sensitive pattern reports three false
+       mismatches and would bury a real one in the noise.
+    2. the locked phrases, WITH their known near-miss variants. The
+       meddling proverb drifted for twenty files before a grep found it;
+       now any reappearance of the old wording fails the run.
+    3. the fleming numeral diff, per file.
+    4. the all-caps and markup sweep.
+
+TWO SOURCE DEFECTS FOUND BY THE NUMERAL DIFF, both now corrected in
+prep.py's SOURCE_FIXES with the thompson assertion (a fix that stops
+matching stops the build, because a correction that silently lapses is
+worse than none):
+  - "0 my master" in file 013 — a ZERO set for the letter O.
+  - "End of Vol. 1." at the end of file 040 — GUTENBERG PRINT FURNITURE
+    sitting inside the last kept section. It would have been translated
+    as though it were part of the tale. Nothing else in the toolchain
+    looks at digits, so nothing else would have caught either.
+  Re-running prep changed exactly one manifest entry (040, 1300 -> 1296
+  words) and moved no boundary, so no finished file was invalidated.
+
+FORWARD REFERENCE TO HANDLE IN FILE 040, of the same class as the
+Ma'aruf reference in the Conclusion: the Tailor's tale ends with
+Shahrazad promising "the tale of the two Wazirs and Anis al-Jalis",
+which is in volume two and is NOT in this selection. Reconcile it the
+way the Conclusion's will be reconciled — a reader can only read a
+promise of a tale that never comes as our error.
+
+FILE 026 — the Hunchback's Tale. THE COMIC CYCLE OPENS.
+
+  REGISTER: deadpan. Four men in succession shove past the crowd to
+  confess to a murder none of them committed, and the executioner's line
+  — "I am tired of this slow work. We bring out this one and change him
+  for that one, and nobody gets hanged after all" — only lands if the
+  whole thing is played perfectly straight. Do not signal the joke.
+
+  BURTON'S CHAUCERIAN COSTUME, and it goes. He dresses the four
+  tale-tellers as a Canterbury company: the Tailor, the Jewish Doctor,
+  the Nazarene Broker and THE REEVE. "Reeve" is an English manorial
+  officer and means nothing here; the Arabic is the controller of the
+  Sultan's kitchen. He is THE STEWARD throughout, and file 029's heading
+  is "The Steward's Tale" (the manifest keeps Burton's word).
+  Also gone: "Gobbo" (Burton's Italian nickname for the hunchback) and
+  "Charley", which is VICTORIAN LONDON SLANG for a night watchman and
+  has no business within a thousand miles of this book.
+
+  KEPT WHOLE, and it is the Verne rule: the Jewish physician's panic in
+  his own idiom — "O Ezra! O Moses! O Aaron! O Joshua son of Nun! O the
+  Ten Commandments! ... O by the hooves of the ass of Ezra!" The comedy
+  of this cycle is that a Muslim, a Jew and a Christian are each made
+  ridiculous in exactly the same measure and each behaves exactly as
+  well as the others, and softening any one of the three breaks the
+  symmetry that is the whole point. Esdras -> Ezra, which is the settled
+  English form of the name.
+
+  Also kept: the steward's prayer to "Thou the Veiler" (ya Sattar, a
+  real invocation), and the Christian broker's "O Messiah! O Virgin!"
+
+FILES 027-028 — the Christian Broker's Story
+
+  HEADING: "The Christian Broker's Story" (the manifest keeps Burton's
+  "Nazarene"). Note this is a nested tale told BY the broker ABOUT a
+  young Baghdadi merchant, so the young man's own long narration is
+  primary narration inside it, per the Ovid convention — no enclosing
+  quotes around the whole of it.
+
+  A SLUR WITH NO CONTENT BEHIND IT, and therefore replaced. The young
+  man, abasing himself before the lady, says in Burton "I am thy slave,
+  thy negro slave". This is NOT the file-000 case: he is a Baghdadi
+  merchant and nothing in the tale turns on anyone's colour. It is the
+  common Arabic formula of humility ("your black slave" = your utter
+  servant), and the word carries no fact a reader needs. Rendered "I am
+  your slave, your bondsman" — the abasement kept entire, the word gone.
+  CONTRAST file 013, where the same vocabulary DOES carry fact and
+  therefore stays. The test is always: does the reader lose information?
+
+  CAIRO'S TOPOGRAPHY IS ALL REAL AND ALL KEPT: the Khan al-Jawali, the
+  Gate of Victory, the Khan al-Masrur, Bayn al-Kasrayn (glossed on the
+  spot, as Burton does, "Between the Two Palaces"), the Exchange of
+  Jaharkas, the Zuwaylah Gate, the Habbaniyah quarter, Darb al-Munkari.
+  This tale is a street map and the density of it is the pleasure.
+
+  ardabb glossed once — "the great Egyptian measure for grain" — because
+  the arithmetic depends on it (fifty ardabbs at a hundred dirhams).
+  Shroff -> money-changer, which Burton glosses himself.
+
+FILE 029 — the Steward's Tale (the cumin ragout)
+
+  "O black of face!" is the bride's insult to her husband when she comes
+  back to maim him. In Arabic "blackened of face" means DISGRACED — it is
+  the standard idiom for shame and has nothing to do with anyone's
+  colour. Rendered "You disgrace!" A literal English rendering would
+  hand the reader a racial reading the Arabic does not contain, which is
+  the opposite of faithfulness. Same test as file 028: the reader loses
+  no fact, and would gain a false one.
+
+  Note the tale's arithmetic, which the numeral check now guards: five
+  thousand dirhams paid, a thousand dinars taken, ten thousand dinars
+  the value the eunuch is threatened with, ten thousand for the wedding
+  portion, fifty thousand for the house, a hundred and twenty washings
+  (forty soap, forty potash, forty galangal). The washings are the
+  tale's punchline and are counted twice.
+
+  KEPT: the bride cuts off his thumbs and both great toes with a razor
+  for eating with an unwashed hand, and the comedy is that the
+  punishment is monstrous and she is entirely serious. Played straight.
+
+FILE 031 — the Tailor's Tale; the Barber arrives
+
+  THE SEVEN BROTHERS' NAMES ARE THE JOKE and all seven are kept with
+  their glosses, because the whole cycle turns on them: Al-Bakbuk the
+  Prattler, Al-Haddar the Babbler, Al-Fakik the Gabbler, Al-Kuz
+  al-Aswani the Long-Necked Jug, Al-Nashshar the Tattler, Shakashik or
+  Many Clamours, and Al-Samit the Silent Man — who is the barber, and
+  who never stops talking. Six of the seven names mean "chatterbox" and
+  the seventh means "silent". Do not translate the names away.
+  SLIP RECONCILED: Burton glosses Al-Nashshar as "the tattler and tale
+  teller" here and as "the Babbler" in file 038, which is already
+  Al-Haddar's gloss. One gloss each: Al-Nashshar is THE TATTLER.
+
+  MORE BURTON COSTUME OFF: "argal" (his comic Hamlet corruption of
+  ergo), "tota re scibili" (a Latin tag in an Arab barber's boast),
+  "fou and wood" (Scots for drunk and mad). None of it is in the
+  Arabic and all of it breaks the voice.
+
+  "yon black o'face" — the young man's insult to the barber, and the
+  SAME idiom as file 029's "O black of face". Disgraced, not dark.
+  Rendered "that disgrace".
+
+  EVERY NUMBER IN THE BARBER'S ASTROLOGY IS KEPT EXACTLY and check.py
+  now guards them: the tenth of Safar, the six hundred and fifty-third
+  year of the Hegira, the seven thousand three hundred and twentieth
+  year of the era of Alexander, eight degrees and six minutes, three
+  full hours to prayer. The comedy is the PRECISION — a man computing
+  the heavens to six decimal places while his customer sits there with
+  half a shaved head. Round any of it off and the joke goes.
+  Same for the hundred and three dinars, whose itemised breakdown
+  (one for the observation, one for the conversation, one for the
+  bloodletting, a hundred for the poem) is the punchline of the
+  anecdote inside the anecdote.
+
+FILES 033-039 — the Barber and his six brothers. THE ROLL CALL HAD TO BE
+CHECKED AGAINST THE TALES, and it did not match.
+
+  In file 033 the barber lists his brothers' injuries: "One is a
+  monocular, another palsied, a third stone blind, a fourth cropped of
+  ears AND NOSE and a fifth shorn of both lips, while THE SIXTH is a
+  hunchback and a cripple." Read against the six tales themselves:
+
+    1  Al-Bakbuk    the Prattler     HUNCHBACK, and lamed at the end
+    2  Al-Haddar    the Babbler      PARALYTIC
+    3  Al-Fakik     the Gabbler      BLIND
+    4  Al-Kuz       Long-Necked Jug  BLIND OF ONE EYE
+    5  Al-Nashshar  the Tattler      CROPPED OF BOTH EARS
+    6  Shakashik    Many Clamours    SHORN OF BOTH LIPS
+
+  So all six INJURIES in the list are right, but the ordinal is wrong —
+  the hunchback is the FIRST brother, not the sixth — and no brother
+  anywhere loses his nose. Rendered as the unordered catalogue it
+  actually is ("One of them is one-eyed; one is palsied; one is stone
+  blind; one is cropped of both his ears; one is shorn of both his lips;
+  and one is a hunchback and a cripple"), and the nose dropped.
+  This is the quixote rule again: a reader who reaches the first brother
+  and finds a hunchback where the sixth was promised can only read it as
+  OUR error. Nothing else in the passage moves.
+
+  NOTE the second slip in the same family, already logged from file 031:
+  file 038 opens by calling Al-Nashshar "the Babbler", which is
+  Al-Haddar's gloss. He is THE TATTLER throughout.
+
+FILES 034-039 — the six brothers. The densest run of farce in the book.
+
+  BARMECIDE, not "Barmaki". Burton uses both within one paragraph of
+  file 039. The English form is locked because THE BARMECIDE FEAST — a
+  banquet of empty dishes served with elaborate commentary — passed into
+  English as an idiom out of this very tale, and it is the one thing a
+  reader may already know before opening the book. "Invisible soap in
+  imperceptible water" is Burton at his best and is kept exactly.
+
+  Al-Nashshar is THE TATTLER wherever he appears (file 038 opens by
+  calling him "the Babbler", which belongs to Al-Haddar). Reconciled.
+
+  MORE BURTON SLANG OUT: "sham-abraham" (036) is British cant for a
+  malingerer and is rendered "the impostor"; "verroterie" (038) is his
+  French for glassware.
+
+  THE FIFTH BROTHER'S DAYDREAM (038) is the volume's most famous set
+  piece after the Barmecide feast, and its whole architecture is
+  ARITHMETIC: 100 dirhams to 200 to 400 to 4,000 to a hundred thousand,
+  then a thousand dinars of settlement and a thousand more as a gift,
+  then five hundred for the dressing-women. Every figure is kept, and
+  the check guards them. Burton lets the unit slip from dirhams to
+  dinars mid-daydream; reconciled to dirhams, since a reader can only
+  read the switch as ours.
+
+  THE MUTILATIONS ARE ALL AT FULL LENGTH and none is dwelt on: the ears
+  docked by thieves, the lips cut off by the Bedouin, the castration
+  that follows. This is farce with real blood in it, which is the
+  register of the whole cycle, and softening the injuries would leave
+  the barber's cheerful summary — that he supports all six of them and
+  is the upright one of the family — with nothing to be cheerful over.
+
+FILE 040 — the Hunchback resurrected; THE CYCLE CLOSES.
+
+  THE FORWARD REFERENCE RECONCILED, as flagged when prep.py's
+  SOURCE_FIXES found the volume colophon in this same file. Shahrazad
+  ends the cycle by promising "the tale of the two Wazirs and Anis
+  al-Jalis" — which is in Burton's volume two and is NOT in this
+  selection. She now promises Sindbad the Seaman and Sindbad the
+  Landsman, which is what actually follows. A reader can only read a
+  promise of a tale that never arrives as our error, and the seam is
+  invisible.
+  THE SAME FIX IS STILL OWED IN FILE 071, where the Conclusion refers
+  back to "the story of Ma'aruf".
+
+  "Gobbo Golightly" — Burton's last and silliest coinage for the
+  hunchback — is simply "this hunchback".
+
+  THE JOKE OF THE WHOLE CYCLE lands here and needs no help: the barber
+  takes the corpse's head in his lap, laughs until he falls over, pulls
+  out a pair of tweezers, and removes the fishbone. The hunchback
+  sneezes and stands up. Four men have spent a day and a night
+  confessing in turn to a murder that never happened. Played straight.
+
+FILES 041-043 — Sindbad begins
+
+  A THIRD SOURCE DEFECT, and the worst of the three because it makes
+  NONSENSE that reads as sense. In the second voyage the Gutenberg text
+  has a DITTOGRAPH — the compositor's eye skipped back a line — so a
+  whole clause repeats and the roc is made to carry off "both the
+  rhinoceros's eyes". The true sequence is plain from the sentences
+  around it: the dead elephant's fat melts in the sun, runs into the
+  rhinoceros's eyes and blinds him; and THEN the roc carries off the
+  rhinoceros and the elephant on its horn together, to feed its young.
+  Corrected in prep.py's SOURCE_FIXES with the usual assertion. Only
+  file 043 changed (3,291 -> 3,268 words); no boundary moved.
+  NOTHING in the toolchain could have caught this: the words are all
+  present, the grammar is sound, and the ratio moves by 23 words in
+  218,000. It was found by reading the sentence and asking what it
+  described.
+
+  THE NIGHT NUMBERS JUMP HERE, from the Thirty-fourth to the Five
+  Hundred and Thirty-seventh, and that is correct and deliberate: this
+  is a SELECTED volume and Sindbad genuinely falls on those nights in
+  Burton's sixth volume. check.py verifies the sequence against the
+  source rather than against any expectation of continuity.
+
+  LOCKED: roc (never "Rukh"); Basra; the House of Peace for Baghdad;
+  "Sindbad the Porter" (hammal is simply the Arabic for porter, and
+  Burton glosses it himself in the same sentence). The rhinoceros keeps
+  its Arabic name karkadan, which Burton also glosses on the spot.
+
+FILES 044-045 — Sindbad's third and fourth voyages
+
+  A FOURTH APPLICATION OF THE RACE TEST, and it comes out the same way
+  as 028 and 029. In the fourth voyage the pepper-gatherers ask how
+  Sindbad escaped "these blacks who swarm in the island". The islanders
+  are cannibals, and their CANNIBALISM is the fact the tale turns on;
+  their colour carries nothing and is not mentioned when they are
+  described (Burton introduces them as "naked men" and calls them "the
+  savages" and "the naked folk" everywhere else). Rendered "these
+  savages", which is his own majority usage. No fact is lost.
+  CONTRAST the third voyage's ogre, who is described as "black in
+  colour, tall and big of bulk as a great date palm, with eyes like
+  coals of fire" — that is a monster's description, it is kept entire,
+  and only Burton's noun "blackamoor" is replaced.
+
+  THE FOURTH VOYAGE IS THE STRONGEST OF THE SEVEN and needs no help:
+  Sindbad refuses the cannibals' food and so keeps his mind while his
+  companions are fattened like cattle; escapes; invents the SADDLE for a
+  people who ride bareback and grows rich on it; is married into the
+  royal household as an honour; and then learns that when a wife dies
+  her husband is buried alive with her. The saddle-making is described
+  step by step — saddle tree, felt, leather, girth, stirrup leathers,
+  stirrups, bit, silk fringes — and the detail is the point: it is the
+  one voyage where he prospers by MAKING something.
+
+FILE 046 — the burial cavern. THE DARKEST PASSAGE IN SINDBAD.
+
+  Sindbad escapes the pit by beating to death, with a dead man's
+  leg-bone, every living person who is subsequently lowered into it —
+  "men and women alike" — and robbing the corpses of their grave
+  jewellery. He then sells the jewellery, comes home rich, and gives
+  alms to the widow and the orphan.
+  THE VERNE RULE, and it is the whole point: this is rendered in full,
+  flatly, with no softening, no flinch and no editorial comment. The
+  text offers it as survival and does not moralise, and the horror is
+  left exactly where the Arabic leaves it — standing, unremarked, in the
+  middle of an adventure story that goes cheerfully on. A modern reader
+  will notice. That noticing is the reading experience and must not be
+  done for them.
+
+FILE 047 — the Fifth Voyage. The roc's egg, the Old Man of the Sea.
+
+  "Shaykh al-Bahr" is KEPT, because Burton's own text glosses it on the
+  spot as "the Old Man of the Sea" — the gloss is the author's, not
+  ours, and the English name is the one the phrase entered English by.
+  Pinned in must_contain.
+  Burton's "bepissed and conskited my shoulders and back" renders as
+  "fouled my shoulders and my back". The humiliation is the point and
+  is kept; the archaic verbs are costume and go.
+  "The farthest part of the country of the blacks" -> "the Land of the
+  Blacks". This is bilad al-sudan, a real medieval region name — the
+  word that gives us Sudan — so it is a place on a map, not a
+  description applied to a person, and removing it would lose actual
+  geography. Reads differently from files 028, 029 and 045 because it
+  IS different: the test is whether the reader loses information or
+  gains a false one, and here they would lose it.
+
+FILE 048 — the Sixth Voyage. The river under the mountain; Sarandib.
+
+  "As soon as these blackamoors saw that I was awake" -> "As soon as
+  they saw". The people have been named one clause earlier — Indians
+  and Abyssinians, both real peoples, both KEPT — so Burton's noun
+  carries no information at all beyond the slur. The naming stays, the
+  slur goes; same call as the eleven earlier instances.
+  BURTON'S "the Mihraj" IS RECONCILED to "the Mihrjan", the king of the
+  FIRST voyage (file 042, 8x). Same title, same figure, and a reader
+  with only the assembled page cannot connect two spellings.
+  Three source typos corrected silently, all Gutenberg/Burton slips and
+  none of them claims: "will nigh fainting" (well-nigh), "twelve house"
+  (twelve hours, of day and of night under the equator), and "manners
+  and customers" (customs).
+  "miskals" stays unglossed, as in file 019 — caps spent, and the
+  context carries it as a weight.
+  THE GIFT LIST ENDS "and a slave girl like a shining moon", and she is
+  the last item in it, between the aloes-wood and the leave-taking.
+  Kept exactly there and exactly so: the Verne rule, and the placement
+  is the whole comment the text makes.
+
+FILE 049 — the Seventh Voyage. The bird-men; THE CYCLE CLOSES.
+
+  THE DEATH FORMULA IS NOW LOCKED, and check.py knows the near-misses.
+  Burton writes "Sunderer of Societies" here and "Sunderer of Companies"
+  elsewhere; normalised to "the Destroyer of Delights and the Sunderer
+  of Companies", which is the form the phrase entered English by, and
+  added to must_contain. It RECURS IN THE CONCLUSION (071), which is why
+  it had to be settled now rather than there. "Sunderer of Societies",
+  "Destroyer of delights" (lower-case d) and "Caterer for Cemeteries"
+  are all registered as failing variants. The other two members of the
+  four-part list are kept: the Leveller of palaces, the Filler of
+  graveyards.
+  RULE THIS BOOK KEEPS PROVING: the moment a consistency decision is
+  made, encode the WRONG answers too. A checker that knows only the
+  right string is silent when a synonym walks in — which is exactly how
+  "Prince of the Faithful" (033) and "Prince of True Believers" (023)
+  got in.
+  "tasbih" keeps BURTON'S OWN inline gloss ("praised be Allah!"), which
+  is in the source; the gloss is the author's, not ours, and no cap is
+  spent.
+  "seven and twenty years" -> "twenty-seven years". The numeral diff
+  would otherwise read a measured value as lost — fleming's rule.
+  VERNE RULE: the bird-men are "brothers of the devils" who cannot speak
+  the name of Allah, and a fire comes out of heaven at Sindbad's tasbih.
+  Stands unhedged, with no gesture at what the older story underneath it
+  may have been.
+
+FILE 050 — the Seventh Voyage, THE CALCUTTA VERSION.
+
+  RETITLED. The manifest read "The Other Version"; it now reads "The
+  Calcutta Version", which is Burton's own description ("according to
+  the version of the Calcutta Edition") and tells the reader something.
+  Changed in prep.py's EXTRA_HEADINGS as well as manifest.json, so the
+  pipeline stays reproducible; titles do not affect splitting, so no
+  boundary moved and prep was not re-run.
+  ONE BRACKETED EDITOR'S NOTE — the second in the volume. A reader who
+  meets a SECOND seventh voyage with no explanation will think the book
+  has repeated itself, and the note says in three sentences that the
+  manuscripts part company here and that Burton printed both. This is a
+  genuine comprehension gap, not a wink: the Verne rule protects the
+  author's claims, and the existence of two manuscript traditions is not
+  a claim of his.
+  "Dinarzad" -> "Dunyazad". Burton's spelling drifts in this
+  Calcutta-derived appendix; the frame-story sister has been Dunyazad
+  since file 001 and a reader cannot connect two spellings.
+  "ducats" -> "dinars", for the same reason: the coin is dinars
+  everywhere else in the volume.
+  "their ivories and sorivellos" -> "their ivory". Sorivellos is
+  Burton's borrowing for the softer inferior tusk-material; the
+  distinction is invisible in English and carries nothing here.
+
+FILES 051-054 — THE CITY OF BRASS. Four parts.
+
+  A SOURCE MISPRINT CAUGHT BY check.py, NOT BY verify.py: file 054's
+  third night header reads "the Five Hundred ante Seventy-fifth Night".
+  Nothing mechanical in verify.py can see it — the header is otherwise
+  well formed, the night-break COUNT is right, must_contain does not
+  move and the word ratio does not move. Only the spelled-out
+  night-number SEQUENCE catches it. Fixed in prep.py's SOURCE_FIXES with
+  the usual assertion, so it is reproducible and so the build stops if
+  the misprint ever vanishes from the source. Same class as candle/'s
+  misanchored note 16.
+  Re-ran prep after the fix. The replacement is same-word-count and
+  in-place, so no split boundary can move; confirmed by check.py's
+  per-file night-break parity passing across all 55 translated files,
+  which is precisely the check that fails first if a boundary drifts.
+  THE DEATH FORMULA APPEARS TWICE MORE, and Burton varies it BOTH times
+  ("Severer of societies", "Devastator of dwelling-places"). Rendered
+  from the locked form throughout, keeping the extra members of the list
+  where he adds them. Locking it in 049 is what made these automatic.
+  THE VESSELS ARE "JARS OF COPPER" THROUGHOUT, though Burton writes
+  copper, brass and "cucurbite" interchangeably and the city itself is
+  Brass. The reader met this object in file 007 as "a jar shaped like a
+  cucumber, made of yellow copper... stopped with a lead cap stamped
+  with the seal ring of our lord Solomon" — the same object, and the
+  callback is one of the real pleasures of reading the collection whole.
+  The CITY keeps brass; its towers are Andalusian brass and that is
+  where the name comes from.
+  THE LONG PROSE INSCRIPTIONS ARE ONE INDENTED BLOCK EACH, not a run of
+  separate indented paragraphs. Separate blocks give assemble.py one
+  <pre class="outline"> apiece, each with a 2em bottom margin — the
+  fleming/ Morse-alphabet bug exactly. One block gives one <pre> on the
+  page and one <blockquote class="lines"> in the epub. NOTE the epub
+  classifier calls a block "verse" only when every line is under 65
+  characters, so prose inscriptions land correctly as lined matter.
+  THE PEOPLE OF AL-KARKAR: "a tribe of blacks" -> "a tribe of black
+  people", and thereafter simply "the King" and "his people". The
+  descent from Ham is KEPT — they claim it themselves, their king states
+  it as his genealogy, and they are the most honourable people in the
+  tale: pious, hospitable, taught by al-Khizr himself, and the only ones
+  in the whole story who help. Cutting it would remove what the text
+  gives them. No note; the Verne rule.
+  "Zanj", "Abyssinia" and "Nubia" all kept in the third tablet's verses:
+  places on a map, as with the Land of the Blacks in 047.
+  Two more Gutenberg slips corrected silently: "Pate" for Fate and
+  "deme" for doom.
+
+FILES 055-067 — ALADDIN. Thirteen parts.
+
+  AN EDITOR'S NOTE OPENS THE TALE — the volume's third, and the reason
+  is structural. Aladdin's night numbering RESTARTS AT 515, after the
+  City of Brass ended at 578, because it comes from Burton's
+  Supplemental volume and a different manuscript tradition. That
+  collision is an artefact of OUR selection order, not of Burton, so it
+  is ours to explain. The note gives the fact that explains it and is
+  the best fact about the Nights anyway: Aladdin and Ali Baba are the
+  two most famous stories in the collection and the two that are not in
+  it — no Arabic manuscript older than the eighteenth century has
+  either; Galland took them down in Paris in 1709 from Hanna Diyab, a
+  young Syrian traveller, and they were written back into Arabic
+  afterwards. A fact about the book's construction, like the Calcutta
+  note in 050, and not a claim of the author's.
+  THE FRAME FORMULAS ARE HARMONISED. This source says "O King of the
+  Age" and "was surprised by the dawn of day"; the volume says "O
+  fortunate King" and "saw the dawn breaking, and fell silent". A reader
+  meeting a new resumption formula in file 55 of 72 reads it as our
+  error. check.py already holds "O King of the Age" as a FAILING variant
+  of the resumption lock, so the harmonisation is enforced, not merely
+  intended.
+  KEPT: Dunyazad's nightly request, which this source has and the others
+  do not. It adds something and contradicts nothing — it restores the
+  frame the whole book is built on at the exact moment the reader has
+  gone longest without it.
+  VOCABULARY LOCKS: "the Moroccan magician", then "the Moroccan" or "the
+  magician" (Burton alternates Maghrabi / Moorman / Maroccan / African
+  within a single paragraph); "the Slave of the Ring" and "the slave of
+  the Lamp" (the first is pinned in must_contain); "the baths" as
+  everywhere else in the volume.
+
+FILE 058 — THE DEALER. DECIDED BY ALEX, and the reasoning is worth
+  keeping because the volume answers this question two different ways.
+
+  Burton's buyer is "a man which was a Jew, a viler than the Satans",
+  thereafter "the accursed Jew" — twelve times — and the honest goldsmith
+  who exposes him says that "the Jews ever hold lawful to them the good
+  of Moslems... and always defraud them".
+  RULING: KEEP THE CHARACTER, CUT THE LIBEL. He remains a Jewish dealer
+  and remains dishonest — a Jewish merchant in a Muslim market is real
+  social history, and his cheating is the plot that brings the honest
+  goldsmith on. What goes is the narrator's slur-epithets, which carry no
+  information beyond contempt, and the goldsmith's GENERALISATION, which
+  becomes a statement about this dealer. Not one plot point moves.
+  WHY THIS DIFFERS FROM FILE 026, where the Jewish physician is kept
+  ENTIRE, panic-idiom and all: there a Muslim, a Jew and a Christian are
+  made ridiculous in precisely equal measure, and the symmetry IS the
+  joke, so softening any one of the three breaks it. Here there is no
+  symmetry — one Jewish character, a cheat, and a group libel the story
+  never answers. The test that separates them is the one this book has
+  used throughout: does the reader lose information, or gain a false one?
+
+FILES 068-070 — ALI BABA. A THIRD SET OF FRAME FORMULAS.
+
+  This source breaks the night with "the morn began to dawn" and puts the
+  header AFTER the break, counting the night that has just CLOSED ("The
+  end of the Six Hundred and Twenty-sixth Night") where the rest of the
+  volume names the night about to OPEN. Normalised to the volume's single
+  form, which makes every modern header the source number PLUS ONE.
+  THE +1 IS ENCODED, NOT TRUSTED. check.py now parses spelled-out ordinals
+  into integers ("Six Hundred and Thirty-fourth" -> 634), reads BOTH source
+  header forms, applies the shift to Ali Baba's, and compares numerically.
+  The parser was validated by re-running over the 68 files already
+  finished: it reproduced every one of them unchanged, which is the
+  evidence that it is right in general and not merely here.
+  A SECOND "ante" FOR "and" MISPRINT, this time in pg3447 (file 069). Two
+  instances in two different Gutenberg volumes makes it the transcription's
+  habit rather than a one-off. Both in SOURCE_FIXES with assertions.
+  "Open, O Simsim!" -> "OPEN, SESAME!" and "Shut, O Simsim!" -> "Shut,
+  Sesame!". Pinned in must_contain; it is the phrase the tale gave the
+  language, and Kasim's death still works exactly as written, because he
+  forgets the word and shouts every other grain instead ("Open, Barley!").
+  Morgiana is the hero of the tale and is played straight throughout: she
+  counts the jars, answers thirty-seven robbers in the captain's own voice,
+  boils them one at a time, and then dances with the dagger. Ali Baba
+  frees her and marries her to his nephew. Nothing here needed softening
+  or sharpening.
+  Two Gutenberg slips fixed silently: "Pear him not" for Fear, and the
+  degree-sign quotation marks around the praise formula.
+
+FILE 071 — THE CONCLUSION. THE MA'ARUF REFERENCE, RECONCILED.
+
+  The source's Conclusion opens "when she had made an end of the story of
+  Ma'aruf" — a tale that is NOT in this selection; and file 070 ended by
+  handing off to it ("began to tell in these words the story of").
+  Both fixed, and neither by a note: 070's last night now reads "she said:
+  It has reached me, O fortunate King -- and so Shahrazad went on telling
+  the King her tales, night after night, until the thousand nights and a
+  night were fulfilled", and 071 opens "when she had made an end of her
+  tales". No absent tale is named, the night count stays honest at 640,
+  and the frame closes on itself. Same class as the 040 fix.
+  The six display-poems arrive from prep BADLY BROKEN (a couplet split
+  across three paragraphs mid-phrase: "Clad in her" / "cramoisy-hued
+  chemisette:"). All re-lineated as couplets. This is the verse-rebuild
+  problem of file 003 in its last appearance.
+  THE DEATH FORMULA closes the book, in its fullest four-part form, and is
+  the locked wording. Locking it in 049 has now paid four times.
+  Shahrazad's seventh dress is a YOUNG MAN'S CLOTHES, and the poem is about
+  the bride wearing a beard; Shahryar "threatens her in her ear with the
+  taking of the sword". Rendered as printed.

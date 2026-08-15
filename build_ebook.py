@@ -468,6 +468,18 @@ def commons_url(title):
         # very large originals: use the 4000px rendition instead
         if ii["width"] > 4200 and ii.get("thumburl"):
             return ii["thumburl"]
+        # A COMMONS ORIGINAL NEED NOT BE A JPEG. Anderson's "Scheherazade"
+        # is a TIFF, and `convert` cannot read that particular one at all
+        # ("Can not read TIFF directory count"), so the build died at the
+        # cover step with an ImageMagick error and no hint of the cause.
+        # Take the rendered JPEG instead whenever the original is not one.
+        # NOTE the crop must then be expressed in the RENDITION's
+        # coordinates, not the original's -- Commons caps TIFF thumbnails
+        # at 1920px wide, so they are usually SMALLER than the original.
+        # Same trap as the cached 4000px thumb in bunyan/ and quixote/.
+        if not ii["url"].split("?")[0].lower().endswith((".jpg", ".jpeg")) \
+                and ii.get("thumburl"):
+            return ii["thumburl"]
         return ii["url"]
     raise RuntimeError(f"no imageinfo for {title}")
 

@@ -228,9 +228,18 @@ def _colophon(dest, env, meta, original=False):
     t = re.sub(r'\t*<img[^>]*logo\.svg[^>]*/>\n', "", t)
     t = re.sub(r'<header>\s*<h2 epub:type="title">([^<]*)</h2>\s*</header>',
                r'<h2 epub:type="title">\1</h2>', t)
-    t = t.replace("was published in <time>YEAR</time> by",
-                  f"was published in {esc(env['DATE'])} by" if not env["DATE"].isdigit()
-                  else f"was published in <time>{env['DATE']}</time> by")
+    # ANCHOR ON THE PHRASE, NOT ON WHAT FOLLOWS IT. `se create-draft` writes
+    # "was published in <time>YEAR</time> by <author>" for a named author but
+    # "was published in <time>YEAR</time>." for an anonymous one, so matching
+    # the trailing " by" silently left the literal placeholder in the file --
+    # and the build then died much later, in `se build --check`, with vnu
+    # complaining that <time>YEAR</time> is not a valid datetime. Found on
+    # nights/, whose author is Anonymous AND whose DATE is "c. 800-1400".
+    # count=1 matters: the cover-art credit below uses the same placeholder.
+    t = re.sub(r"was published in <time>YEAR</time>",
+               ("was published in " + esc(env["DATE"])) if not env["DATE"].isdigit()
+               else f"was published in <time>{env['DATE']}</time>",
+               t, count=1)
     author_link = (f'<a href="{meta["author_wiki"]}">{esc(env["AUTHOR"])}</a>'
                    if meta.get("author_wiki") else
                    f'<b epub:type="z3998:personal-name">{esc(env["AUTHOR"])}</b>')
