@@ -1251,3 +1251,137 @@ disorderly notions, picked out of his books, crowded into his imagination\"
 white margins and a printed caption line. THE CROP IS IN THE COORDINATES OF
 THE 3840x4968 RENDITION COMMONS SERVES, not the 6456x8352 original (the
 bunyan trap: build_ebook caches the 4000px thumb and crops THAT).
+
+The Thousand Nights and a Night (nights/ — the 52nd book, and the first
+ANTHOLOGY assembled by selection rather than translated whole). Shahrazad's
+frame plus eighteen of the great tales, from Burton's 1885-88 translation
+(Gutenberg #3435/3440/3444/3447): the Fisherman and the Jinni, the Porter
+and the Three Ladies, the entire Hunchback cycle, Sindbad's seven voyages
+AND the Calcutta variant seventh, the City of Brass, Aladdin, Ali Baba.
+72 files, 217,720 -> 225,804 words, ratio 1.04 (verify --min-ratio 0.85
+--max-ratio 1.25).
+
+THE JUSTIFICATION IS THE SAME SHAPE AS bunyan/, and stronger. Burton's
+archaism is the densest on the roadmap (19.83 archaic tokens per 1000) and
+NONE OF IT IS IN THE ARABIC — he invented an antique English that was
+already artificial in 1885. Elsewhere we remove the centuries between the
+reader and the author; here we remove a costume the translator put on. That
+distinction is worth stating in the book's own front matter, and it is why
+the ratio lands at 1.04 rather than the 0.95 of the EN->EN lecture books:
+unstacking Burton costs about what cutting his throat-clearing saves.
+
+FOUR SOURCE VOLUMES, THREE SETS OF FRAME FORMULAS. This is the structural
+lesson and it generalises to any anthology drawn from several volumes:
+  - the main Nights: "perceived the dawn of day" / "O auspicious King";
+  - Aladdin (supplemental): "surprised by the dawn" / "O King of the Age",
+    plus a nightly exchange with Dunyazad the others lack;
+  - Ali Baba: "the morn began to dawn", and the header comes AFTER the
+    break naming the night that has just CLOSED, where everywhere else it
+    precedes the break and names the night about to OPEN.
+ALL THREE ARE NORMALISED to one form, which makes every Ali Baba header the
+source number PLUS ONE. THE SHIFT IS ENCODED, NOT TRUSTED: check.py parses
+spelled-out ordinals to integers ("Six Hundred and Thirty-fourth" -> 634),
+reads both source header forms, applies the +1 to Ali Baba's, and compares
+numerically. Validated by re-running over the 68 files already finished and
+reproducing every one unchanged — that, not the new file passing, is the
+evidence a normaliser is right.
+Aladdin's numbering also RESTARTS at 515 after the City of Brass ended at
+578, because the selection order is ours; see the editor's notes below.
+
+check.py (the euclid-rivals per-book pattern) CAUGHT TWO REAL DEFECTS that
+verify.py structurally cannot see, both in night headers: "the Five Hundred
+ante Seventy-fifth Night" and "the Six Hundred ante Thirty-fourth Night" —
+"ante" for "and", in two different Gutenberg volumes, which makes it the
+transcription's habit and not a one-off. The header is otherwise well
+formed, the night-break COUNT is right, must_contain does not move and the
+ratio does not move. Only reading the numbers AS A SEQUENCE finds it. Both
+in prep.py's SOURCE_FIXES with assertions.
+WHEN A CHECK FIRES ON CORRECT OUTPUT, FIX THE CHECK. The resumption lock
+flagged the Queen greeting her husband as "O King of the Age", which is
+good dialogue and in the source; the variants are now anchored to
+"reached me," so the lock guards the FORMULA and not the honorific. The
+tempting fix — rewording the Queen — would have let a blunt check quietly
+distort the prose.
+
+THREE EDITOR'S NOTES, the most in any book here, and each is a fact about
+the BOOK'S CONSTRUCTION rather than a claim of the author's (which is what
+the Verne rule protects): that the Calcutta seventh voyage is a different
+tale and not a variant reading, so the reader does not think the edition
+has repeated itself; and that Aladdin and Ali Baba are the two most famous
+stories in the Nights and the two that are not in it — no Arabic manuscript
+older than the eighteenth century has either, Galland took them down in
+Paris in 1709 from Hanna Diyab, and they were written back into Arabic
+afterwards — which is also what explains the night numbering restarting.
+
+THE SENSITIVE-CONTENT DECISIONS, and the volume answers the same question
+two ways ON PURPOSE. The test throughout: does the reader LOSE information,
+or GAIN a false one?
+  - File 026, the Jewish physician of the Hunchback cycle: KEPT ENTIRE,
+    panic-idiom and all, because a Muslim, a Jew and a Christian are made
+    ridiculous in exactly equal measure and the symmetry IS the joke.
+  - File 058, Aladdin's dealer (ALEX'S RULING, asked before writing):
+    KEEP THE CHARACTER, CUT THE LIBEL. He stays a Jewish dealer and stays
+    dishonest — real social history, and his cheating brings the honest
+    goldsmith on — but the narrator's slur-epithets go, and the goldsmith's
+    claim about all Jews becomes a claim about this dealer. No plot moves.
+    There is no symmetry here to protect, which is what separates it.
+  - "blackamoor" goes wherever the people have ALREADY been named (Indians
+    and Abyssinians, in the same clause) — the noun then carries nothing
+    but contempt. But "the country of the blacks" is KEPT as "the Land of
+    the Blacks": bilad al-sudan is a real region on a medieval map, and
+    deleting it loses geography. Likewise Zanj, Abyssinia and Nubia, and
+    likewise the descent of the people of al-Karkar from Ham, which they
+    state themselves and which the tale gives to the only people in it who
+    help anybody.
+  - Sindbad's burial cavern (046) is the darkest passage in the book — he
+    escapes by beating to death every living person lowered into the pit
+    and robbing the corpses, then comes home and gives alms to the widow
+    and the orphan. Rendered flat and in full, unremarked, exactly as the
+    Arabic leaves it. A modern reader will notice; that noticing is the
+    reading experience and must not be done for them.
+
+LOCK THE FORMULAS EARLY AND ENCODE THE WRONG ANSWERS. "the Destroyer of
+Delights and the Sunderer of Companies" was locked in file 049 with its
+near-misses registered ("Sunderer of Societies", lower-case "Destroyer of
+delights", "Caterer for Cemeteries"); Burton then varied it four more times
+and every one was rendered correctly without my noticing. This is the same
+mechanism that caught "Prince of the Faithful" in 033 and, chasing it,
+"Prince of True Believers" eleven files earlier.
+FAMOUS PHRASES GOVERN over Burton's wording: "Open, Sesame!" (his "Open, O
+Simsim!"), "New lamps for old", "the Slave of the Ring", "the Old Man of
+the Sea". All pinned in must_contain. Kasim still dies of forgetting the
+word, because he shouts every other grain instead.
+CROSS-SELECTION REFERENCES MUST BE RECONCILED, and there were two: file 040
+pointed forward to a tale not chosen, and the Conclusion opened "when she
+had made an end of the story of Ma'aruf" while file 070 handed off to it.
+Fixed without a note — 070's last night now closes the frame ("and so
+Shahrazad went on telling the King her tales... until the thousand nights
+and a night were fulfilled") and 071 opens "when she had made an end of her
+tales". No absent tale is named and the night count stays honest.
+
+TWO SHARED-CODE FIXES, both generic, both found here:
+  - build_ebook.commons_url TAKES THE RENDERED JPEG WHEN THE ORIGINAL IS
+    NOT ONE. Anderson's "Scheherazade" is a TIFF that ImageMagick cannot
+    read at all ("Can not read TIFF directory count"), so the build died at
+    the cover step with a bare TIFF error and no hint of the cause. THE
+    CROP IS THEN IN THE RENDITION'S COORDINATES: Commons caps TIFF
+    thumbnails at 1920px, so unlike the bunyan/quixote case the rendition
+    is SMALLER than the original (2528x3204 -> 1920x2433).
+  - rebrand._colophon ANCHORS ON THE PHRASE, NOT ON WHAT FOLLOWS IT.
+    `se create-draft` writes "was published in <time>YEAR</time> by
+    <author>" for a named author but "...<time>YEAR</time>." for an
+    anonymous one, so matching the trailing " by" left the placeholder in
+    place and the build died much later in `se build --check`, with vnu
+    objecting that YEAR is not a datetime. Any anonymous work would have
+    hit this.
+VOICE: eighteen tales and no single register. The frame is a woman talking
+for her life; the Hunchback cycle is farce played dead straight; Sindbad is
+an adventure serial whose hero is a merchant, not a hero; the City of Brass
+is an hour of tomb inscriptions and is the most beautiful thing in the
+book; Aladdin and Ali Baba are folk tales with the shape of pantomime.
+Morgiana counts thirty-seven jars, answers each robber in the captain's own
+voice, boils them one at a time and then dances with the dagger — she is
+the best character in the collection and needs no help at all.
+Cover: Sophie Gengembre Anderson's "Scheherazade" (c. 1870), Commons "File:
+Scheherazade.tif", crop "1622x2433+140+0" — the storyteller herself, calm
+and looking straight out at the reader, which is the whole book.
