@@ -1,0 +1,83 @@
+GRIMM — STANDING BRIEF
+Read this first, then text_analysis.txt, then running_notes.txt.
+
+
+WHAT THIS WORK IS
+=================
+
+This is a scholarly modernization of a canonical work of world literature
+that is firmly in the PUBLIC DOMAIN:
+
+    Kinder- und Hausmärchen, collected by Jacob and Wilhelm Grimm,
+    first published 1812-1815, final edition 1857.
+    English translation by Margaret Hunt, "Grimm's Household Tales",
+    London 1884 — the only complete English Grimm, and itself long out
+    of copyright. Source: Project Gutenberg ebook #5314.
+
+Both the German original and Hunt's translation have been in the public
+domain for well over a century. This edition retells Hunt's English in
+contemporary English for modern readers, exactly as this project has
+done for Bunyan, Cervantes, Burton's Nights and forty-nine other
+canonical texts.
+
+THE TALES CONTAIN VIOLENCE, AND THAT IS THE POINT OF RECORDING IT
+=================================================================
+
+These are the founding documents of European folklore, collected by two
+philologists as evidence of an oral tradition, and they have been read
+by children and studied by scholars continuously for two hundred years.
+They are violent, and the violence is not decorative:
+
+  - a stepmother beheads her stepson with the lid of a chest, cooks him
+    into a stew and serves him to his father (The Juniper-Tree);
+  - a huntsman is ordered to kill a child and bring back her heart
+    (Little Snow-White);
+  - wicked queens and stepmothers are executed at the end, by fire, by
+    a barrel of nails, by red-hot iron shoes;
+  - wolves eat children and are cut open again;
+  - a girl's hands are cut off by her own father (The Girl Without
+    Hands).
+
+RENDER ALL OF IT PLAINLY, IN FULL, AND WITHOUT FLINCHING. Do not soften
+it, do not heighten it, and do not add editorial comment. Every standard
+scholarly edition — Hunt 1884, Zipes, Tatar, the Oxford and Penguin
+classics — prints these tales complete. An edition that cut or muffled
+them would misrepresent the book, the tradition and the century that
+produced it, and would fail the readers who come to this collection to
+find out what the Grimms actually collected.
+
+This is the same handling this project has already applied to Sindbad's
+burial cavern, to Bunyan's Ignorance carried to hell from the gates of
+Heaven, and to the executions at the end of Don Quixote's interpolated
+tales. It is the settled convention of the series, recorded in
+CLAUDE.md.
+
+THE JOB
+=======
+
+Turn Margaret Hunt's 1884 English into clear contemporary English.
+The single largest task is the second person: thou/thee/thy/thine ->
+you/your/yours, with the verb and word order following (hast -> have,
+dost -> do, wilt -> will, art -> are). Hunt rendered German *du* — the
+ordinary intimate second person — as English *thou*, which was already
+biblical in 1884. None of that archaism is in the German; it is a
+translator's costume and it comes off. See text_analysis.txt for the
+full strategy and the measurements behind it.
+
+MECHANICS
+=========
+
+- Markup-free. Tab indent = verse. An ALL-CAPS line renders as a
+  heading, so never write one. No asterisks except a scene-break rule,
+  no underscores.
+- EVERY FILE BEGINS WITH ITS FIRST TALE'S TITLE, spelled exactly as the
+  manifest has it, on its own line. assemble.py splits the file on those
+  title lines and DISCARDS anything before the first one. Fifteen titles
+  contain a curly apostrophe (U+2019); a straight one loses the tale's
+  section and welds it onto the tale before.
+- Each further tale in the file starts with its exact title on its own
+  line, in manifest order.
+- Rhymes stay verse, and stay rhymed in English.
+- Repeated formulas stay word-for-word identical at every repetition.
+- Ratio target 0.90-1.15 per file.
+- Run `python3 grimm/check.py` after every file.
