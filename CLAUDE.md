@@ -194,6 +194,46 @@ What to preserve:
   plus old book-specific assemblers. Reference only; see `legacy/README.md`
   (note: their `max_tokens` settings truncate full chapters).
 
+EVERY BOOK NEEDS A REAL manifest.json, and the fallback is not a safe
+default. With no manifest, `assemble.load_manifest` gives every file its
+own section and `strip_front` takes the FIRST LINE as the heading. That
+is right when the line is a heading and silent data loss when it is not,
+and it is invisible to every check in the toolchain: verify.py compares
+`chapters/` with `modern_chapters/`, and the damage happens downstream of
+both, at render time. Six books were repaired in August 2026 (dialogues,
+democracy, democracy2, descartes, wealth-of-nations, two-treatises) and
+the same three defects ran through all of them.
+  1. A MECHANICAL MID-CHAPTER CUT OPENS ON A SENTENCE, and that sentence
+     was being set as a contents entry instead of as text — 5 in
+     democracy, 9 in wealth-of-nations, 2 in democracy2. Group the file
+     as a later part of the chapter it continues, so its prose survives.
+     The signal is free: a SOURCE file that also opens on prose is a
+     mechanical cut, and a source that labels its own pieces ("Chapter
+     VIII: The Federal Constitution—Part IV") makes the whole grouping
+     derivable. Read the source heading as the first PARAGRAPH, not the
+     first line — four parts of one Tocqueville chapter wrap onto a
+     second line and all four came back as "part 1 of 4".
+  2. A "Part <Roman>:" LINE IN A FILE'S FRONT MATTER IS DELETED.
+     strip_front skips anything matching PART_LINE (`^Part [IVXLC0-9]+:
+     \S`) before the heading AND after it, since a translation may write
+     its own divider on either side. Descartes lost all four Parts of the
+     Principles of Philosophy that way — "Of the Principles of Human
+     Knowledge" appeared nowhere on the shipped page — and Smith lost two.
+     WORD FORM ("Part One: ...") does not match the pattern and is the
+     house style for cross-references anyway. Sweep for it after any
+     illustrated or multi-part book: every page, every file's first six
+     lines.
+  3. A REPEATED HEADING IS A REPEATED ANCHOR. Six "CHAPTER I." in
+     democracy2, nine "MEDITATIONS ON THE FIRST PHILOSOPHY" in descartes
+     — every one of them a link to the first of its kind.
+Titles the batches disagree about are the visible symptom, and worth
+normalising while you are there: the five Books of the Wealth of Nations
+used five conventions, and Tocqueville's four tomes alternate ALL CAPS
+with sentence case. Arabic "Chapter N: Title" is what `assemble.CHAP_LINE`
+recognises, which is what sets a chapter as an `<h3>` inside its Book
+rather than as a top-level section. Each repair lives in `{book}/retitle.py`,
+kept alongside `prep.py` so the work is repeatable.
+
 Claude Code does the translation work directly — reading chapters,
 orchestrating translation subagents, and writing the output files. The API
 scripts are not part of the current workflow.
