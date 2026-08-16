@@ -1,0 +1,83 @@
+GRIMM — RUNNING NOTES (the consistency ledger)
+Read text_analysis.txt first. This file records what is LOCKED.
+
+
+THE ONE JOB
+===========
+thou/thee/thy/thine -> you/your/yours, and the verb and word order with
+it (hast->have, dost->do, doth->does, art->are, wilt->will, shalt->shall,
+canst->can, mayest->may, wert->were). 3,729 instances, 99% inside
+dialogue. Everything else in this book is secondary.
+
+
+LOCKED WORDINGS
+===============
+- "Once upon a time" for Hunt's "There was once on a time" / "Once on a
+  time". Openings are formulas and stay formulaic.
+- "Once upon a time there was..." / "There was once a..." — either, but
+  never a literary rewrite.
+- "and they lived happily to the end of their days" for Hunt's various
+  "lived happily until they died" endings, EXCEPT where the German ending
+  is a specific joke ("and if they have not died, they are still alive
+  today"), which is kept as the joke.
+- "the King's daughter" and "the princess" both, as Hunt has them; not
+  normalised, because the tales themselves alternate.
+- "dwarf" (Hunt's "manikin"/"dwarf" for Männlein), "the little man" where
+  it is Männlein and stature is the point.
+- "wicked" not "vile" for böse; "stepmother" always.
+- Frau Trude, Herr Korbes, Mother Holle, Allerleirauh, Fundevogel keep
+  their names. "Grethel" -> "Gretel" everywhere (spelling, not name).
+
+RHYMES ARE VERSE AND MUST RHYME
+===============================
+Tab-indented, one line per line, rhymed in English. A rhyme that does not
+rhyme has been mistranslated; rework it until it chimes, and take a freer
+sense to get there. Locked so far:
+
+  001 The Frog-King —
+        "Princess, youngest princess,
+         open the door for me!
+         Have you forgotten what you promised me
+         yesterday, down by the cool well water?"
+      (Hunt sets this unrhymed; the German is a rhymed couplet pair. Kept
+       as a chant rather than forced, because the tale repeats it three
+       times and a strained rhyme would grate three times.)
+
+DECIDED BY ALEX, BEFORE ANY OF THE THREE WAS WRITTEN
+====================================================
+THE ANTISEMITIC TALES — "The Good Bargain" (7, file 003), "The Jew Among
+Thorns" (110, file 051) and "The Bright Sun Brings It to Light" (115,
+file 054). RULING: TRANSLATE ALL THREE IN FULL AND UNSOFTENED, plus ONE
+short editor's note at "The Jew Among Thorns", the worst of them.
+
+  The tale is not an incidental slur: a servant with a magic fiddle makes
+  a Jew dance in a thorn bush until he is bloody and in rags, robs him,
+  forces a confession out of him under threat of more, and the Jew is
+  hanged as a thief while the man who robbed him walks free — presented
+  as a comic happy ending.
+
+  WHY NOT CUT: completeness is the only reason this edition exists rather
+  than Lucy Crane's plainer selection. An edition that quietly dropped
+  three tales would misrepresent both the book and the century.
+  WHY A NOTE HERE, when nights/ mostly refused notes: the nights/ notes
+  were facts about the book's construction, and so is this one — it says
+  what the edition chose to do and why. It makes no comment on the tale
+  itself, which stands exactly as the Grimms printed it.
+  The note goes at 110 only, not at all three.
+
+CONVENTIONS CHECKED MECHANICALLY (see check.py)
+===============================================
+1. Every tale title in the manifest's split_headings appears in its modern
+   file, on its own line, spelled EXACTLY. A drifted title loses its
+   section and welds its tale onto the previous one — invisible on the
+   page except as a missing TOC entry.
+2. Each file BEGINS with its first title line. assemble.py discards
+   everything before the first heading.
+3. Titles appear in the same ORDER as the manifest.
+4. No thou-family word survives anywhere.
+5. Numerals present in the source are present in the translation (the
+   fleming rule).
+6. No all-caps lines, no stray asterisks or underscores.
+7. Verse parity: a file with N tab-indented blocks in the source should
+   have about N in the translation — a rhyme silently flattened into
+   prose is this book's version of silent summarisation.
