@@ -89,6 +89,21 @@ def is_subheading(par, next_par=None):
     # titles a section with a quotation mark in front of it.
     if par[0] in "\"'\u201c\u2018":
         return False
+    # AND SO IS A LINE THAT ENDS ON ONE -- but only when the quote is
+    # INTRODUCED. The rule above catches speech that begins with the
+    # quotation mark; narration in front of it hides the line completely
+    # ('Hans answered, "To Gretel."', 'Said St. Peter, "You go first."'),
+    # because the terminal stop is inside the quotes where the test above
+    # cannot see it. Eleven lines of Clever Hans were set as section
+    # headings in the middle of their own conversation.
+    # THE BLUNT RULE -- any line ending in a closing quote -- REGRESSES
+    # LEVIATHAN, whose real section titles quote a TERM: 'The Different
+    # Meanings of the Word "Prophet"', 'The Names "Sacerdotes" and
+    # "Sacrifices"'. What separates them is what stands before the opening
+    # quote. Reported speech introduces it with a comma or a full stop;
+    # a quoted term sits inside a noun phrase with nothing but a space.
+    if par[-1] in "\"'\u201d\u2019" and QUOTE_INTRO.search(par):
+        return False
     # NEITHER IS ANYTHING CARRYING A SQUARE BRACKET. Brackets mark the
     # author in a lower voice throughout this project -- Carroll's glosses
     # on a definition, Boys' modern notes -- and Carroll sets every step of
@@ -113,6 +128,7 @@ def is_subheading(par, next_par=None):
     return caps >= max(1, len(words) // 2)
 
 
+QUOTE_INTRO = re.compile(r"[,.]\s+[\"'\u201c\u2018]")
 SPEAKER_TAG = re.compile(r"[A-Z][A-Za-z'\u2019-]{0,20}\.\s+\S")
 SENTENCE_BREAK = re.compile(r"[.?!]\s+[A-Z]")
 SPEAKER_NAME = re.compile(r"[A-Z][A-Za-z .'’-]{0,30}")

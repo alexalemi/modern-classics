@@ -22,6 +22,15 @@ failure modes are elsewhere, and all of them are silent:
     translation is invisible to the word ratio and is this book's silent
     summarisation.
  5. The fleming numeric diff, and the markup-free conventions.
+ 6. THE MANIFEST CAN AGREE WITH ITSELF AND STILL BE SHORT A TALE. Checks
+    1-3 compare the manifest against the FILES, so a heading that prep
+    never recognised is missing from both and every one of them passes.
+    "The Twelve Idle Servants" is numbered 151* -- a star that a \\d{1,3}
+    regex silently dropped -- and it shipped as an untitled paragraph in
+    the middle of another tale, with no TOC entry, while verify.py's word
+    ratio did not move by a hair. The only witness is the SOURCE'S OWN
+    CONTENTS LIST, which is why the tale count is now taken from there
+    rather than from anything the pipeline produced.
 """
 import json
 import pathlib
@@ -65,6 +74,23 @@ def caps_or_markup(text):
         if ("*" in s or "_" in s) and not re.fullmatch(r"\*+( \*+)*|-{2,}", s):
             out.append((i, "markup character ships literally", s[:70]))
     return out
+
+
+def source_tale_count():
+    """How many tales the book itself says it contains.
+
+    Read off the Gutenberg contents list, which is the only description of
+    the collection that the pipeline did not produce. Numbers are what is
+    counted, not titles: the contents prints entry 1 twice, and a title
+    string cannot be compared against the manifest anyway once TITLE_FIXES
+    has been applied to it. The star in "151*" is significant and is why
+    this check exists.
+    """
+    src = sorted((BOOK / "source").glob("*.txt"))[0].read_text(errors="replace")
+    head = src[:src.index("Legend 10 The Hazel Branch") + 200]
+    tales = set(re.findall(r"\n[ \t]*(\d{1,3}\*?)[ \t]+[A-Z][^\n]{2,80}", head))
+    legends = set(re.findall(r"\n[ \t]*Legend (\d{1,2})[ \t]+[A-Z]", head))
+    return len(tales) + len(legends)
 
 
 def verse_blocks(text):
@@ -152,6 +178,20 @@ def main():
     tales = sum(len(m.get("split_headings") or [m["title"]])
                 for m in done if m["part"] == 1)
     print(f"{len(done)}/{len(manifest)} files translated, {tales} tales")
+
+    # THE COMPLETENESS CHECK, AND IT MUST NOT BE TAKEN FROM THE PIPELINE.
+    # Count the entries in the source's own contents list and require the
+    # manifest to hold exactly that many distinct titles. Deduplicated by
+    # catalogue number, because the contents prints entry 1 twice and the
+    # 3-part tale contributes its title three times to the manifest.
+    if len(done) == len(manifest):
+        want = source_tale_count()
+        got = len({t for m in manifest
+                   for t in (m.get("split_headings") or [m["title"]])})
+        if want != got:
+            fails.append(
+                f"the source contents lists {want} tales, the manifest has "
+                f"{got} distinct titles -- a tale has been lost or doubled")
     if fails:
         print(f"\n{len(fails)} PROBLEM(S):")
         for x in fails[:40]:

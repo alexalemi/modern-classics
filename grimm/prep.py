@@ -54,7 +54,18 @@ VERSE_LINE = 58               # a line shorter than this may be verse
 # entry. Anchored on the final legend rather than on a count.
 CONTENTS_END = "Legend 10 The Hazel Branch (Die Haselrute)"
 
-TALE = re.compile(r"\n[ \t]*(\d{1,3})[ \t]+([A-Z][^\n]{2,70})\n")
+# A STAR IS PART OF THE TALE NUMBER, and dropping it loses a whole tale.
+# The Grimms' final edition numbers 1-200 but contains 201 numbered tales,
+# because "The Twelve Idle Servants" is 151* -- an extra hung on 151, "The
+# Three Sluggards". Written \d{1,3} this heading never matched, so the tale
+# was never a section: its text rode through the pipeline inside its
+# neighbour's file and rendered as a stray paragraph with no title and no
+# TOC entry. NOTHING in verify.py or check.py could see it -- the words are
+# all present, the ratio does not move, and check.py compares the manifest
+# against the FILES, so a heading missing from both agrees with itself.
+# Only counting against the source's own contents list finds it: see
+# assert_tale_count below.
+TALE = re.compile(r"\n[ \t]*(\d{1,3}\*?)[ \t]+([A-Z][^\n]{2,70})\n")
 LEGEND = re.compile(r"\n[ \t]*Legend (\d{1,2})[ \t]+([A-Z][^\n]{2,70})\n")
 
 # Hunt's own printing errors, corrected with the assertion that keeps a
