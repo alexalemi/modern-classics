@@ -44,7 +44,10 @@ def caps_or_markup(text):
         if len(s.split()) >= 4 and letters and \
                 sum(c.isupper() for c in letters) / len(letters) > 0.9:
             out.append((i, "all-caps line would render as a heading", s[:70]))
-        if "*" in s or "_" in s:
+        # A LINE OF ASTERISKS IS A SCENE BREAK, not stray markup: both
+        # renderers match assemble.HR_LINE and set it as an <hr/>. Hunt uses
+        # one in Little Red-Cap, between the tale and the second wolf.
+        if ("*" in s or "_" in s) and not re.fullmatch(r"\*+( \*+)*|-{2,}", s):
             out.append((i, "markup character ships literally", s[:70]))
     return out
 
@@ -85,7 +88,17 @@ def main():
                                 head[1] != f"(Part {m['part']} of {m['of']})"):
                 fails.append(f"{f}: missing or wrong part marker")
 
-        left = sorted({w.lower() for w in THOU.findall(d)})
+        # A FIXED LITURGICAL QUOTATION KEEPS ITS OWN ARCHAIC ENGLISH. The
+        # boy in "The Girl Without Hands" recites the Lord's Prayer he was
+        # taught -- "Our Father, which art in Heaven" -- and that wording
+        # is the prayer, not Hunt's costume; modernising it would put words
+        # in the child's mouth that no child ever learned. Exempted by
+        # exact phrase rather than by loosening the sweep, so that a stray
+        # "art" anywhere else still fails.
+        swept = d
+        for fixed in ("Our Father, which art in Heaven",):
+            swept = swept.replace(fixed, "")
+        left = sorted({w.lower() for w in THOU.findall(swept)})
         if left:
             fails.append(f"{f}: archaic second person survives: {left}")
 
