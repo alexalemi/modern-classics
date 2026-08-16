@@ -31,8 +31,16 @@ import sys
 BOOK = pathlib.Path(__file__).resolve().parent
 SRC, MOD = BOOK / "chapters", BOOK / "modern_chapters"
 
-THOU = re.compile(r"\b(thou|thee|thy|thine|hast|hath|doth|dost|art|wilt|"
-                  r"shalt|canst|mayest|wert|quoth)\b", re.I)
+# "art" and "wilt" are NOT in this list, and deliberately. Both are ordinary
+# modern words -- the art of a trade, a flower that wilts -- and bare
+# matches on them fired on "the animal knew nothing of the art". Nothing is
+# lost by dropping them: Hunt's archaic "art"/"wilt" are always governed by
+# "thou" ("thou art", "wilt thou"), which the sweep catches anyway. A check
+# that cries wolf on correct prose gets ignored, which is worse than a
+# narrower one that never does.
+THOU = re.compile(r"\b(thou|thee|thy|thine|hast|hath|doth|dost|"
+                  r"shalt|canst|mayest|wert|quoth|hither|whither|whence)\b",
+                  re.I)
 NUM = re.compile(r"\d[\d,]*")
 
 
