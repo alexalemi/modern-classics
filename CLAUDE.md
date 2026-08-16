@@ -1385,3 +1385,111 @@ the best character in the collection and needs no help at all.
 Cover: Sophie Gengembre Anderson's "Scheherazade" (c. 1870), Commons "File:
 Scheherazade.tif", crop "1622x2433+140+0" — the storyteller herself, calm
 and looking straight out at the reader, which is the whole book.
+
+Grimm's Household Tales (grimm/ — the 53rd book, and the largest tale
+collection in the project: 211 tales in 85 files, 282,941 source words ->
+280,899, ratio 0.99, verify --min-ratio 0.85 --max-ratio 1.2). All two
+hundred numbered tales and all ten children's legends, from Margaret
+Hunt's 1884 translation (Gutenberg #5314) — the FIRST complete English
+Grimm and still the only complete one out of copyright.
+
+THE JUSTIFICATION IS THE BUNYAN ONE, SHARPENED: this book is not hard, it
+MISLEADS, and the misleading is 99% inside dialogue. Hunt's thou-family
+runs to 3,729 instances and is the visible half; the invisible half is
+her ordinary-looking vocabulary — "conversation" for conduct, "want" for
+lack, "prevent" for go before, "presently" for at once. A reader trips on
+"hath" and knows to look it up; the same reader walks past "prevent" and
+comes away confidently wrong. The DELIVERABLE, though, is completeness:
+every other modern Grimm in print is a selection of thirty or forty.
+
+THE WORST DEFECT OF THE BOOK WAS A MISSING TALE, AND EVERY MECHANICAL
+CHECK PASSED WHILE IT WAS MISSING. The Grimms number their tales 1-200
+but print 201 of them, because "The Twelve Idle Servants" is 151* — an
+extra hung on 151, "The Three Sluggards". prep.py's heading regex was
+\d{1,3}, the star did not match, and the heading was never recognised.
+Its text still rode through the entire pipeline inside its neighbour's
+file, so:
+  - verify.py's word ratio did not move by a hair (the words are all
+    there, in order);
+  - check.py's title, order and first-line rules passed, because they
+    compare the manifest against the FILES and a heading missing from
+    both agrees with itself;
+  - the page simply had one untitled paragraph in the middle of another
+    tale and one missing TOC entry, out of 211.
+THE ONLY WITNESS IS THE SOURCE'S OWN CONTENTS LIST — the one description
+of the book that the pipeline did not produce. check.py now counts it and
+requires the manifest to match. GENERALISE THIS: any book that prints its
+own table of contents can be checked against it, and nothing else in this
+toolchain can see a section that was never a section. (Found by sweeping
+the assembled HTML for heading counts, not by any check.)
+
+SHARED FIX — assemble.is_subheading READ NARRATION-PLUS-SPEECH AS A
+TITLE. The existing rule rejects a line that BEGINS with a quotation
+mark; it cannot see 'Hans answered, "To Gretel."', where the terminal
+stop is inside the quotes. Eleven lines of Clever Hans were section
+headings in the middle of their own conversation. THE BLUNT FIX (any line
+ending in a closing quote) REGRESSES LEVIATHAN, whose real section titles
+quote a term — 'The Names "Sacerdotes" and "Sacrifices"'. The rule
+therefore keys on what INTRODUCES the quote: a comma or full stop means
+reported speech, a bare space means a quoted term. All 65 pages
+re-assembled and diffed, as this file requires: the only changes are
+dialogue and answer lines losing heading status in grimm, nights,
+euclid-rivals, symbolic-logic, tangled-tale and tyndall-original.
+
+SHARED FIX — A THIRD FORM OF THE NON-JPEG COVER. commons_url already
+takes the rendered thumbnail when the Commons original is not a JPEG (the
+nights TIFF), but it asks for a 4000px rendition, and WHEN THE ORIGINAL IS
+SMALLER THAN THAT COMMONS RETURNS THE ORIGINAL UNTOUCHED. So a PNG
+arrived named .jpg and `se build-images` stopped on "Invalid JPEG file"
+several minutes in. Commons will not render a PNG as a JPEG at any size,
+so prepare_cover now converts on the magic number. Expect this on any
+illustrator's plate — they are usually PNGs.
+
+CONVENTIONS, all checked mechanically by grimm/check.py:
+ - Every tale title appears in its modern file on its own line, spelled
+   EXACTLY and in manifest order. 15 of the 212 titles carry U+2019, and
+   a straight apostrophe loses the section silently; grimm/fixtitles.py
+   repairs ONLY that, and is deliberately too weak to mask a real drift.
+ - No thou-family word survives anywhere ("Our Father, which art in
+   Heaven" is exempted by exact phrase, not by loosening the sweep).
+ - Verse parity counts BLOCKS, not lines: a rhyme dissolved into prose is
+   this book's silent summarisation, but re-setting a four-line unrhymed
+   rendering as a rhymed couplet is a legitimate choice and must not be
+   punished by the tool.
+ - The fleming numeric diff, with a FILE-SCOPED exemption for the one
+   stray catalogue number in the body. Never loosen NUM itself.
+EVERY CHECK THAT FIRED IN THIS BOOK FIRED ON CORRECT PROSE EXCEPT ONE
+("hop hither and thither", a real archaism hiding inside a nonsense
+jingle, where the ear stops auditing). Six of seven fixes went into the
+tool, not the sentence.
+
+TRANSLATION DECISIONS worth reusing (all in running_notes.txt):
+ - DUMMLING = SIMPLETON always. Hunt renders one German name two ways in
+   adjacent files; that is the TRANSLATOR's inconsistency, not the
+   Grimms', and is reconciled. The Verne rule protects an author's own
+   claim, not a transmission artefact.
+ - Coinage kept (thaler, groschen, kreuzer, farthing); it is doing real
+   work as a quantity and no modern equivalent survives conversion.
+ - Nonsense jingles are REBUILT ON THE ENGLISH WORD, like Sancho's
+   malapropisms — the chain-rhyme in "Domestic Servants" (Cham/name,
+   Hippodadle/cradle) rhymes in English or it is not the joke.
+ - THE THREE ANTISEMITIC TALES (7, 110, 115) are translated IN FULL AND
+   UNSOFTENED, with exactly ONE editor's note, at 110, saying what the
+   edition did and why and making no comment on the tale. Alex's ruling,
+   taken before any of the three was written.
+ - COLOUR AS ENCHANTMENT, twice, decided differently from each other and
+   both logged. In "The King's Son Who Feared Nothing" the princess's
+   blackness is the spell's progress meter and is rendered as a
+   CONDITION, never an identity ("black from head to foot", thereafter
+   "the girl") — the Bunyan-Flatterer precedent. "The White Bride and the
+   Black One" cannot be handled that way: there blackness is a punishment
+   God inflicts and is half the title, so it stands as printed, and
+   whether the editor's note should widen to cover it is FLAGGED FOR ALEX
+   in running_notes.txt and has not been decided unilaterally.
+Cover: Arthur Rackham's Little Red-Cap from his 1909 Grimm, Commons
+"File:Grimm-Rackham-reconstruction_0173.1.png", crop "1890x2835+538+482"
+— the plate only, cropped out of a page scan with wide paper margins (the
+Trouvelot/Goya method: find the plate box by darkness profile, then take
+the 2:3 rectangle inside it). One small red figure at the foot of a huge
+bare wood, meeting the wolf: legible at thumbnail size, and the emblem of
+the whole collection.
