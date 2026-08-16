@@ -35,6 +35,7 @@ the direction of showing you something to look at. Exit status is 1 if
 anything was reported, so it can still fail a build.
 """
 import argparse
+import collections
 import html as _html
 import json
 import re
@@ -144,6 +145,17 @@ def orphan_source_headings(book, manifest):
         # subheading inside a chapter (Hunt's "FIRST STORY", a recipe
         # name in soap-bubbles), so it is reported only in verbose mode.
         (numbered if bare != line else bare_orphans).append(line)
+
+    # A NUMBER THAT REPEATS IS A MARGINAL NOTE, NOT A LOST SECTION.
+    # Hobbes numbers the arguments inside each chapter, so Leviathan's
+    # source is full of "1. The Subjects Cannot Change The Forme Of
+    # Government", "2. Soveraigne Power Cannot Be Forfeited" — restarting
+    # in every chapter. A section the manifest really lost carries a
+    # number from the book's one global sequence and so appears once.
+    counts = collections.Counter(NUM_PREFIX.match(l).group(1) for l in numbered
+                                 if NUM_PREFIX.match(l))
+    numbered = [l for l in numbered
+                if counts[NUM_PREFIX.match(l).group(1)] <= 2]
     return (numbered, bare_orphans), \
         f"{len(found)}/{len(wanted)} manifest titles found in source"
 
@@ -183,19 +195,29 @@ def sweep(book, verbose=False):
         tag = page_path.stem
         page = page_path.read_text()
 
-        # A — counts
-        h2 = page_headings(page, 2)
-        toc = len(re.findall(r'<li><a href="#', page)) or \
-            len(re.findall(r'href="#[a-z0-9-]', page))
-        # the page's own <h2> title line is not a section
-        body_h2 = [h for h in h2 if h]
-        if abs(len(body_h2) - sections) > 1:
-            out.append(f"{tag}: manifest has {sections} sections, page has "
-                       f"{len(body_h2)} h2 — a section may be missing or doubled")
-        if toc and abs(toc - sections) > 1:
-            out.append(f"{tag}: {sections} manifest sections but {toc} "
-                       f"table-of-contents links")
-        note.append(f"{tag}: {sections} sections, {len(body_h2)} h2, {toc} toc links")
+        # A — counts. A SECTION IS NOT ALWAYS AN h2: assemble sets a
+        # chapter as h3 (leviathan renders 50 sections as 8 h2 and 42 h3),
+        # and a part divider is an EXTRA h2 with no body of its own
+        # (euclid-rivals' four Acts). Count what the page actually links
+        # to instead — the table of contents has exactly one entry per
+        # section, which is the number that should match the manifest.
+        # A SECTION HEADING IS THE ONE THAT CARRIES AN id. The masthead
+        # (work title, author line) has none, and "Contents" is furniture,
+        # not a section — counting those made every book on the shelf look
+        # two or three sections adrift.
+        ided = re.findall(r'<h[23][^>]*\sid="([^"]+)"', page)
+        headings = len([i for i in ided if i != "contents"])
+        dividers = sum(1 for m in manifest if m.get("part_before"))
+        linked = len([i for i in re.findall(r'href="#([^"]+)"', page)
+                      if i != "contents"])
+        if abs(linked - sections) > 1:
+            out.append(f"{tag}: manifest has {sections} sections but the "
+                       f"page links to {linked} — one may be missing or doubled")
+        if abs(headings - dividers - sections) > 1:
+            out.append(f"{tag}: {sections} manifest sections + {dividers} "
+                       f"dividers, but {headings} headings on the page")
+        note.append(f"{tag}: {sections} sections, {headings} headings "
+                    f"({dividers} dividers), {linked} links")
 
         # B — headings that are really prose. Only the BODY: the page's
         # own masthead carries the work's subtitle and the author line as
@@ -210,9 +232,13 @@ def sweep(book, verbose=False):
                                f"({why}): {h[:72]!r}")
 
         # C — markup that shipped literally
+        # NOTE what is NOT here: &lt;. An escaped angle bracket in the page
+        # is CORRECT — Thompson's formulas compare h<sub>1</sub> &lt;
+        # h<sub>2</sub> — and flagging it confuses this check with the
+        # real trap, which is `se typogrify` UNescaping it during the epub
+        # build. build_ebook already refuses that one at source.
         for pat, what in ((r"\[Figure\b", "unrendered figure marker"),
                           (r"\*\*\w", "markdown bold"),
-                          (r"&lt;", "escaped angle bracket"),
                           (r"(?m)^\s*_[A-Z][^_\n]{2,40}_\s*$", "markdown italic line")):
             n = len(re.findall(pat, page))
             if n:
@@ -225,9 +251,15 @@ def sweep(book, verbose=False):
             if not (SITE / src).exists():
                 out.append(f"{tag}: <img> points at a missing file: {src}")
 
-        # G — near-empty sections
-        for m in re.finditer(r"<h2[^>]*>(.*?)</h2>(.*?)(?=<h2|\Z)", page, re.S):
-            head, body = text_of(m.group(1)), text_of(m.group(2))
+        # G — near-empty sections. A PART DIVIDER IS SUPPOSED TO BE EMPTY:
+        # assemble emits it as an h2 immediately before the first section
+        # under it, so "Act One" legitimately has no body of its own.
+        # They carry class="center"; everything else with no body is a
+        # section that lost its text.
+        for m in re.finditer(r"<h2([^>]*)>(.*?)</h2>(.*?)(?=<h2|\Z)", page, re.S):
+            attrs, head, body = m.group(1), text_of(m.group(2)), text_of(m.group(3))
+            if "center" in attrs or 'id="contents"' in attrs:
+                continue
             if head and len(body) < 40:
                 out.append(f"{tag}: section {head[:50]!r} has almost no body "
                            f"({len(body)} chars)")
