@@ -81,3 +81,43 @@ CONVENTIONS CHECKED MECHANICALLY (see check.py)
 7. Verse parity: a file with N tab-indented blocks in the source should
    have about N in the translation — a rhyme silently flattened into
    prose is this book's version of silent summarisation.
+
+LOCKS ADDED IN THE 029-034 RUN
+==============================
+- DUMMLING = SIMPLETON, always. Hunt translates the same German name two
+  ways: "Simpleton" in The Queen Bee and The Three Feathers, "Dummling"
+  in The Golden Goose. It is one character-type across three tales in two
+  adjacent files, and a reader meeting both spellings in ten pages would
+  read them as two different people. This is a TRANSLATOR'S inconsistency,
+  not the Grimms', so it is reconciled — the same rule that reconciled
+  Verne's shifting place-names, not the Verne rule that protects an
+  author's own claim.
+- ALLERLEIRAUH keeps her name (it is the tale's title in the manifest and
+  cannot drift), glossed ONCE, in-line, at the moment the huntsmen name
+  her: "Allerleirauh — All-Kinds-of-Fur". No bracketed note.
+- THALER kept. It is period coinage doing real work as a quantity (two
+  hundred for an apprenticeship, thirty for a greyhound, three hundred
+  for a cow's hide), and no modern equivalent survives conversion.
+- THE TOAD-RHYMES in The Three Feathers are set as RHYMED COUPLETS.
+  Hunt's four-line rendering does not rhyme in English, but the German is
+  a nonsense jingle whose whole point is the jingle. check.py counts verse
+  BLOCKS, not lines, so a couplet satisfies parity — and it should: what
+  the check guards against is a rhyme flattened into prose, not a rhyme
+  reset in fewer lines.
+- THE HARE'S BRIDE keeps its odd present tense throughout ("says the
+  mother to the daughter"). It is Hunt rendering a Low German telling,
+  and it is the only tale in the collection that sounds like someone
+  talking rather than someone reading.
+
+SOURCE DEFECTS REPAIRED IN THIS RUN (Hunt's text, not the Grimms')
+==================================================================
+- The Two Brothers, part 2: "he sprang away, have you have never seen one
+  running?" is garbled for "wie ihr's nie gesehen habt" — set as "he
+  sprang away as you never saw a hare run."
+- The Two Brothers, part 3: "The the huntsman stood up"; and four
+  speeches print with no quotation marks at all (the witch interrogation).
+- The Little Peasant: the closing quotation mark falls after "carried it
+  to the pasture" instead of after "All right", putting the cowherd's
+  narration inside his own speech.
+None of these are visible to verify.py: the words are all present, in
+order, and the ratio does not move.
