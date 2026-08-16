@@ -509,7 +509,20 @@ def prepare_cover(dest, meta):
             sys.exit(f"cover art {art['commons']!r} came back as {len(data)} "
                      f"bytes -- almost certainly an error page, not a painting")
         src.write_bytes(data)
-    shutil.copy(src, dest / "images/cover.source.jpg")
+    # AND THE FILE MUST ACTUALLY BE A JPEG, whatever it is called. Asking
+    # commons_url for a rendered thumbnail is not enough: it requests a
+    # 4000px rendition, and when the original is SMALLER than that Commons
+    # hands back the untouched original, so a PNG arrives named .jpg and
+    # `se build-images` stops on "Invalid JPEG file" several minutes into
+    # the build. Commons will not render a PNG as a JPEG at any size, so
+    # the conversion has to happen here. Same family as the TIFF trap in
+    # commons_url, and it bites whenever a cover is not a photograph --
+    # Rackham's Grimm plates are PNGs.
+    if src.read_bytes()[:3] != b"\xff\xd8\xff":
+        subprocess.run(["convert", str(src), "-quality", "95",
+                        str(dest / "images/cover.source.jpg")], check=True)
+    else:
+        shutil.copy(src, dest / "images/cover.source.jpg")
     if art.get("crop"):
         geom = ["-crop", art["crop"], "+repage"]
     else:
