@@ -52,12 +52,16 @@ THOU = re.compile(r"\b(thou|thee|thy|thine|hast|hath|doth|dost|"
                   re.I)
 NUM = re.compile(r"\d[\d,]*")
 
-# Numerals that are PAGE FURNITURE in the source rather than content: a
-# tale's catalogue number left stranded in the body by the transcription.
-# Keyed by file so the exemption cannot spread.
-SOURCE_NUMBER_FURNITURE = {
-    "066.txt": {"151"},          # "151* The Twelve Idle Servants"
-}
+# Numerals that are PAGE FURNITURE in the source rather than content —
+# a tale's catalogue number left stranded in the body by the
+# transcription. Keyed by file so an exemption can never spread.
+# EMPTY, AND THAT IS THE POINT: this existed for "151* The Twelve Idle
+# Servants", whose number survived into chapters/ only because prep did
+# not recognise the heading. Once prep read the star the number was
+# stripped like every other tale's, and the special case dissolved. An
+# exemption that stops being needed is evidence the real bug was found;
+# keep the mechanism, since the next scanned source will want it.
+SOURCE_NUMBER_FURNITURE = {}
 
 
 def caps_or_markup(text):

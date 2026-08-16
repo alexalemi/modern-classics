@@ -68,6 +68,13 @@ CONTENTS_END = "Legend 10 The Hazel Branch (Die Haselrute)"
 TALE = re.compile(r"\n[ \t]*(\d{1,3}\*?)[ \t]+([A-Z][^\n]{2,70})\n")
 LEGEND = re.compile(r"\n[ \t]*Legend (\d{1,2})[ \t]+([A-Z][^\n]{2,70})\n")
 
+# The Grimms' own numbering, in full: 1-200, with 151* between 151 and 152.
+# Stated here rather than derived, so that the sequence the book prints has
+# to be matched exactly and a dropped or doubled tale cannot pass.
+TALE_NUMBERS = [str(i) for i in range(1, 201)]
+TALE_NUMBERS.insert(TALE_NUMBERS.index("151") + 1, "151*")
+TALE_COUNT = len(TALE_NUMBERS) + 10          # 201 tales + 10 legends = 211
+
 # Hunt's own printing errors, corrected with the assertion that keeps a
 # correction honest: if the misprint ever leaves the source, the build stops
 # rather than silently applying nothing.
@@ -135,9 +142,16 @@ def parse():
     parts = TALE.split(tales_part)
     for i in range(1, len(parts) - 2, 3):
         t = parts[i + 1].strip()
-        items.append((int(parts[i]), TITLE_FIXES.get(t, t), blocks(parts[i + 2])))
-    assert [n for n, _, _ in items] == list(range(1, 201)), \
-        f"expected tales 1..200, got {len(items)}"
+        # THE NUMBER IS A LABEL, NOT AN INTEGER. int("151*") raises, and the
+        # only thing the number is used for is this ordering assertion --
+        # nothing downstream reads it. Keeping it as the printed string is
+        # what lets 151* be checked in its proper place instead of being
+        # quietly excluded from the sequence.
+        items.append((parts[i], TITLE_FIXES.get(t, t), blocks(parts[i + 2])))
+    assert [n for n, _, _ in items] == TALE_NUMBERS, \
+        (f"tale numbering does not match the Grimms' own: got {len(items)} "
+         f"tales, first mismatch at "
+         f"{next((a, b) for a, b in zip([n for n, _, _ in items] + [None], TALE_NUMBERS) if a != b)}")
 
     legends = []
     parts = LEGEND.split(legend_part)
@@ -230,7 +244,13 @@ def main():
     dupes = {t: c for t, c in seen.items() if c > 1 and
              sum(1 for m in manifest if m["title"] == t and m["of"] > 1) == 0}
     assert not dupes, f"title claimed twice: {dupes}"
-    assert len({t for t in placed}) >= 209, f"only {len(set(placed))} titles"
+    # EXACTLY, not "at least". This was written as >= 209 and that slack is
+    # precisely what let 151* go missing for the whole first build: the
+    # manifest had 210 distinct titles, cleared the floor, and was short a
+    # tale. A count that can only be right is worth more than one that is
+    # merely not obviously wrong.
+    assert len(set(placed)) == TALE_COUNT, \
+        f"expected {TALE_COUNT} distinct titles, got {len(set(placed))}"
 
     for bad in TITLE_FIXES:
         assert bad not in placed, f"title fix did not fire: {bad!r}"
