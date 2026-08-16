@@ -1483,9 +1483,18 @@ TRANSLATION DECISIONS worth reusing (all in running_notes.txt):
    CONDITION, never an identity ("black from head to foot", thereafter
    "the girl") — the Bunyan-Flatterer precedent. "The White Bride and the
    Black One" cannot be handled that way: there blackness is a punishment
-   God inflicts and is half the title, so it stands as printed, and
-   whether the editor's note should widen to cover it is FLAGGED FOR ALEX
-   in running_notes.txt and has not been decided unilaterally.
+   God inflicts and is half the title, so it stands as printed.
+ - THE NOTE COVERS BOTH CLASSES (Alex, 2026-08-16: broaden it). Still
+   exactly ONE note, still at 110, now naming the caricatures of Jews AND
+   the tales that turn on skin colour, with "The White Bride and the
+   Black One" as the sharpest of the second. It stays inside the Verne
+   rule by remaining a statement about what the EDITION did, and says so
+   in as many words: "It makes no further comment on them. They stand as
+   the Grimms printed them." NOTE THE COUPLING nobody would look for: the
+   note states the collection's size, so recovering the missing 151*
+   turned it into a miscount ("two hundred and ten") until it was fixed
+   in the same pass. Any change to what the edition contains has to reach
+   that sentence.
 Cover: Arthur Rackham's Little Red-Cap from his 1909 Grimm, Commons
 "File:Grimm-Rackham-reconstruction_0173.1.png", crop "1890x2835+538+482"
 — the plate only, cropped out of a page scan with wide paper margins (the
