@@ -455,6 +455,31 @@ def build_sections(book, manifest, source="modern_chapters", titles=False):
             "is_chapter": bool(cm),
             "part_before": g["part_before"],
         })
+    return unique_ids(sections)
+
+
+def unique_ids(sections):
+    """Make every section id unique, keeping the first of each.
+
+    AN ID IS A DESTINATION, AND A REPEATED ONE SILENTLY SENDS THE READER
+    TO THE WRONG PLACE — the browser jumps to the first match. Don Quixote
+    numbers its chapters from 1 twice, once per Part, so every Part Two
+    entry in its table of contents pointed at the Part One chapter of the
+    same number: 52 wrong links in the collection's largest novel. The
+    same shape appears wherever a heading repeats — six "CHAPTER I." in
+    democracy2, nine "MEDITATIONS ON THE FIRST PHILOSOPHY" in descartes,
+    eleven "Persons of the dialogue:" in Plato.
+
+    The FIRST occurrence keeps the bare id, so every link that already
+    worked still works and only the broken ones move.
+    """
+    seen = {}
+    for s in sections:
+        base = s["id"]
+        n = seen.get(base, 0) + 1
+        seen[base] = n
+        if n > 1:
+            s["id"] = f"{base}-{n}"
     return sections
 
 
