@@ -43,6 +43,13 @@ THOU = re.compile(r"\b(thou|thee|thy|thine|hast|hath|doth|dost|"
                   re.I)
 NUM = re.compile(r"\d[\d,]*")
 
+# Numerals that are PAGE FURNITURE in the source rather than content: a
+# tale's catalogue number left stranded in the body by the transcription.
+# Keyed by file so the exemption cannot spread.
+SOURCE_NUMBER_FURNITURE = {
+    "066.txt": {"151"},          # "151* The Twelve Idle Servants"
+}
+
 
 def caps_or_markup(text):
     out = []
@@ -124,7 +131,17 @@ def main():
         elif vd < vs and (vs - vd) > max(1, vs // 3):
             fails.append(f"{f}: verse blocks lost: {vs} -> {vd}")
 
-        missing = [n for n in set(NUM.findall(s)) if n not in d]
+        # PAGE FURNITURE IS NOT A MEASURED VALUE. Gutenberg's transcription
+        # leaves one tale number stranded in the body ("151* The Twelve Idle
+        # Servants"); it is the Grimms' catalogue number, not anything the
+        # story says, and it must NOT survive into the translation. Exempt
+        # it by file and by exact token, never by loosening NUM -- the whole
+        # value of this check (the fleming rule) is that it is blind and
+        # total, and a general "ignore small integers" rule would let a real
+        # dropped quantity through.
+        stray = SOURCE_NUMBER_FURNITURE.get(f, set())
+        missing = [n for n in set(NUM.findall(s)) if n not in d
+                   and n not in stray]
         if missing:
             fails.append(f"{f}: numerals not found in translation: "
                          f"{sorted(missing)} (check they are not spelled out)")
