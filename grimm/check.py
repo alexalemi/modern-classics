@@ -89,12 +89,19 @@ def main():
         if left:
             fails.append(f"{f}: archaic second person survives: {left}")
 
+        # ONLY LOSS IS A DEFECT. The check exists to catch a rhyme flattened
+        # into prose, so it flags vd < vs. GAINING blocks is routine and
+        # correct: Hunt often sets a rhymed call-and-response as separate
+        # one-line quotations, which prep cannot detect as verse (its rule
+        # needs two short lines), and the translation properly sets every
+        # rhymed reply as verse. Flagging that would have made the check
+        # bully the text instead of guarding it.
         vs, vd = verse_blocks(s), verse_blocks(d)
         if vs and not vd:
             fails.append(f"{f}: {vs} verse block(s) in source, none in "
                          f"translation -- a rhyme has been flattened")
-        elif abs(vs - vd) > max(1, vs // 2):
-            fails.append(f"{f}: verse blocks {vs} -> {vd}")
+        elif vd < vs and (vs - vd) > max(1, vs // 3):
+            fails.append(f"{f}: verse blocks lost: {vs} -> {vd}")
 
         missing = [n for n in set(NUM.findall(s)) if n not in d]
         if missing:
