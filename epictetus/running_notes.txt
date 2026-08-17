@@ -175,3 +175,51 @@ assemble.is_subheading run over each finished file — not an
 approximation of it, the function itself — since this book is mostly
 dialogue and short lines, which is precisely what it has misread in
 six other books.
+
+
+BOOK ONE COMPLETE (files 000-031). Running ratio 0.96.
+
+- LONG'S PARENTHETICAL GREEK IS DROPPED. He prints the Greek term after
+  his English in brackets — (προλήψεις), (προαίρεσις), (ὁρμή), (πάθη),
+  (δόγματα), (εἰσαγωγήν). The English equivalents are locked in this
+  ledger and the Greek adds nothing for a reader of a plain-text
+  edition; it is a speed bump in the middle of a sentence. His
+  parenthetical English double-shots go the same way — "confidence
+  (courage)", "tranquillity (freedom from perturbation)", "proficiency
+  (progress)" — resolved to one word, per the convention above.
+  Greek IS romanised and kept where it is the NAME of something (the
+  Diatribai, the Encheiridion, in Long's introduction).
+- "courage" for andreia, where Long writes "manliness".
+- "greatness of spirit" for megalopsuchia everywhere, matching the
+  chapter title at II.5. Long alternates "greatness of soul" and
+  "magnanimity"; that is his inconsistency, not Epictetus'.
+- "the governing part" for hegemonikon, glossed once at I.15 as the
+  mind's command centre. Long's "ruling faculty" is never used.
+- ROMAN TECHNICALITIES GLOSSED IN PLACE, never footnoted: the
+  laticlave becomes "the senator's stripe", the modius "a peck",
+  "superintendent of the close stool" becomes "in charge of the
+  imperial chamber pot", a "tropic" becomes "a mode of argument".
+- A SEXUAL SLUR RENDERED BY WHAT IT MEANS IN THE ARGUMENT. I.5 ends by
+  asking whether we would call shamelessness strength "in catamites"
+  (Greek kinaidoi), a term of abuse for men taking the passive role.
+  Epictetus' point is purely about lost shame, and the class is not his
+  subject, so it is rendered "men who have lost all shame about sex".
+  This is NOT the Verne rule, which protects a dated claim an author
+  makes as part of his argument; it is the Bunyan-Flatterer precedent —
+  the reader loses no information and gains no false one. Apply the
+  same test to the sexual vocabulary later in the book, and log each.
+
+TWO RENDERING DEFECTS CAUGHT BY check.py, BOTH THE SAME SHAPE, and
+worth expecting again: A SHORT QUESTION CARRYING A PROPER NAME READS AS
+A SECTION HEADING. is_subheading's final rule is caps >= len(words)//2,
+and a vocative or a cited name supplies the second capital — "How so,
+Diogenes?" (2 caps of 3 words), "How does Medea put it?" (2 of 5). Both
+would have been set as h4 in the middle of their own conversation.
+Fixed in the text: the first is a reported exchange between two named
+parties and takes quotation marks on both sides, which is already the
+logged rule; the second now ends in a stop. THE SHARED FIX (a strict
+majority rather than half) is available and would be more robust, but
+it requires re-assembling and diffing all 55 books. Two lines do not
+justify it. If this recurs often enough that the prose starts bending
+to accommodate the renderer, that is the moment to do it properly —
+and the count is the evidence, so keep it.
