@@ -428,3 +428,88 @@ translation-risk class; caveat prominently in front matter)
 - Sun Tzu — The Art of War (Giles as crib)
 - 1001 Nights, selected (Burton/Lane as cribs)
 - Bhagavad Gita
+
+
+## Measured screening, 2026-08-17 — fourteen candidates against the shelf
+
+Prompted by the Epictetus result, which showed the archaism screen blind
+to a whole class. So this pass measures THREE things, not one, and
+calibrates every number against books the project has already judged.
+Scores are per 1,000 words over the MIDDLE 60% of each text, which skips
+Gutenberg boilerplate of either vintage, title pages, translators'
+introductions and indexes without having to recognise any of them. (The
+first run did not do this and was contaminated: the Wollstonecraft
+sample was Project Gutenberg's own licence text and the Tacitus sample
+was a modern translator's preface.)
+
+  arch   thou/hast/doth/unto/ere — archaism you can feel
+  calq   Latinate abstraction and the philosophical calques
+  sent   mean sentence length, and the share over 35 words
+
+THE CALIBRATION IS THE POINT. Accepted books span the whole range, and
+no single axis explains them:
+    Marcus Aurelius   arch 34.7                 accepted on arch
+    Burton Nights     arch 27.3  sent 53  61%   accepted on arch
+    Bunyan            arch 15.4  sent 19  16%   accepted on FALSE FRIENDS
+    Grimm (Hunt)      arch 13.9                 accepted on arch
+    Hobbes            arch  5.0  calq 26.5      accepted on calq+length
+    Epictetus (Long)  arch  1.5  calq 14.5      accepted on CALQUE
+    Darwin            arch  0.1  calq 34.8  41% accepted on calq+length
+    Henry George      arch  0.2  calq 39.8  37% accepted on calq+length
+A book is a candidate if it is high on ANY ONE axis. Darwin was accepted
+at an archaism score of 0.09.
+
+BLOCKED BY ARCHAISM (class 1):
+    Augustine, Confessions (Pusey)      arch 35.9   — above Aurelius
+    Kalevala (Crawford)                 arch 32.4   sent 58.9  60%
+    Homer, Iliad (Bryant — the SE text) arch 30.7
+    Dante, Divine Comedy (Longfellow)   arch 28.7
+    Boethius, Consolation               arch 23.7   calq 22.9  (both)
+    Homer, Iliad (Lang/Leaf/Myers)      arch 23.5
+    Chaucer, Canterbury Tales           arch 23.3   — UNDERSTATED; the
+      word list cannot see Middle English spelling, and Chaucer is a
+      translation problem rather than a modernisation one.
+
+BLOCKED BY ABSTRACTION (class 3, the Epictetus signature — high calque,
+near-zero archaism):
+    Hume, Enquiry                       calq 49.1   arch 0.47
+    Burke, Reflections                  calq 39.7   arch 0.25
+    Spinoza, Ethics                     calq 38.6   sent 17.9
+    Wollstonecraft, Vindication         calq 35.0   42% over 35
+    Mill, On Liberty                    calq 34.6   44% over 35
+
+LEAVE ALONE — clean on every axis, the Jacobs/Ralston/Zitkala-Ša result
+for a third time:
+    Tacitus, Histories (Fyfe)   arch 0.16  calq 18.5  sent 22.5  15%
+    Marco Polo, Travels         arch 1.07  calq 16.8  sent 18.8  17%
+    Homer, Odyssey (Butler)     arch 0.38  calq  4.6
+
+FOUR HONEST CAVEATS, because the numbers must not stand alone:
+  1. THE TACITUS RESULT IS NOT YET A VERDICT ON THE ANNALS. The download
+     labelled Church & Brodribb turned out to be the HISTORIES in
+     Fyfe's translation. That text is clean; the Annals has not been
+     measured. Do not strike Tacitus from Founders' Vol II on this.
+  2. HUME'S NUMBER OVERSTATES HIS BLOCK. The score is real ("one
+     considerable advantage, which results from the accurate and
+     abstract philosophy, is, its subserviency to the easy and humane")
+     but his famous passages are lucid — "Custom, then, is the great
+     guide of human life." The obstruction is in the apparatus around
+     the argument, not the argument. A narrower win than 49.1 suggests.
+  3. THE FALSE-FRIEND COLUMN DOES NOT DISCRIMINATE and is omitted above.
+     It counts words like "want", "prevent" and "several" in ANY sense,
+     so it is an upper bound; Darwin scores highest on it, which is
+     simply modern usage. Telling the senses apart needs parsing.
+  4. FOR HOMER, THE TRANSLATION IS THE WHOLE DECISION. Butler's prose
+     measures clean and should be left alone; Bryant's verse, which is
+     what Standard Ebooks carries, scores 30.7. "Should we do Homer"
+     has no answer. "Which Homer is a reader actually stuck with" does.
+
+AVAILABILITY: Standard Ebooks has Augustine, Boethius, Hume, Spinoza,
+Burke, Dante, Chaucer, the Kalevala, Wollstonecraft and Homer (Bryant)
+— all as proofread XHTML, the pipeline used for bunyan/, autobiography/
+and epictetus/. Prefer SE over Gutenberg: the Wealth of Nations tables
+were recoverable in August 2026 only because the source was SE.
+
+A COVERAGE FACT, stated plainly: all 56 books have male authors (the
+Nights is anonymous). Wollstonecraft measures as blocked on the same
+axis as Darwin and George, and is on SE.
