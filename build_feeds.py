@@ -33,8 +33,10 @@ ROOT = Path(__file__).parent
 DEFAULT_BASE = "https://www.alexalemi.com/modern-classics"
 
 # book dir -> site page, where the page name differs from the dir name
-PAGE_OVERRIDES = {"malthus": "population.html",
-                  "descartes": "philosophical-works.html"}
+# The published filename now lives in each book's env as PAGE, read by
+# assemble.py, sweep.py and this script alike. It used to be a dict here
+# and nowhere else, which is how assemble came to write a page that
+# nothing linked to while the site served a stale one.
 
 
 def esc(s):
@@ -55,7 +57,7 @@ def collect(base):
     for key, m in meta.items():
         bdir = ROOT / m["dir"]
         env = assemble.read_env(bdir / "env")
-        page = PAGE_OVERRIDES.get(m["dir"], f"{m['dir']}.html")
+        page = env.get("PAGE", m["dir"]) + ".html"
         if not (ROOT / "site" / page).exists():
             print(f"  skipping {key}: no site page")
             continue

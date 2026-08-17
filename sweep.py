@@ -43,6 +43,8 @@ import sys
 import zipfile
 from pathlib import Path
 
+import assemble          # for read_env: the PAGE key has one definition
+
 import assemble
 
 ROOT = Path(__file__).parent
@@ -180,12 +182,13 @@ def sweep(book, verbose=False):
     out = []
     note = []
 
-    pages = [(SITE / f"{name}.html", False)]
-    orig = SITE / f"{name}-original.html"
+    page = assemble.read_env(ROOT / name / "env").get("PAGE", name)
+    pages = [(SITE / f"{page}.html", False)]
+    orig = SITE / f"{page}-original.html"
     if orig.exists():
         pages.append((orig, True))
     if not pages[0][0].exists():
-        return [f"{name}: not assembled (no site/{name}.html)"], note
+        return [f"{name}: not assembled (no site/{page}.html)"], note
 
     manifest = assemble.load_manifest(book)
     sections = sum(len(m.get("split_headings") or [m["title"]])
