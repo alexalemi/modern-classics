@@ -1737,3 +1737,100 @@ rather than assuming it is what made the fix possible. See
 wealth-of-nations/tables.py: classify() raises on a row shape it does
 not know, each table asserts every non-header row survived, and the
 digit runs were compared as multisets between source and output.
+
+David Hume's An Enquiry Concerning Human Understanding (hume/ — the
+55th book; the 1748 rewrite of Book One of the Treatise, from Standard
+Ebooks). 20 files, 12 sections, 48,082 -> 45,632 words, ratio 0.95
+(verify --min-ratio 0.85 --max-ratio 1.3).
+
+THE PUREST CASE YET OF THE CLASS epictetus/ NAMED, and worth reusing as
+the justification template. Archaism 0.47 per 1,000 words — BELOW books
+struck from the roadmap for being too clean (Jacobs, Ralston) — against
+the highest abstraction score measured anywhere in the screening pass
+(49.1). Nothing in it sounds old. It is blocked entirely by
+eighteenth-century philosophical vocabulary used with total
+consistency, and "matter of fact" read as the modern idiom ("prosaic")
+silently destroys the distinction the whole book is built on. A reader
+who trips on "hath" knows to look it up; this reader does not know
+anything happened. DIFFICULTY YOU CANNOT FEEL IS A STRONGER CASE FOR A
+RETELLING THAN DIFFICULTY YOU CAN.
+
+AND THE MEASURE OVERSTATES IT, WHICH THE TRANSLATION HAS TO KNOW. Hume
+is a great stylist and his famous sentences are already modern
+("Custom, then, is the great guide of human life"; "A wise man
+proportions his belief to the evidence"). The obstruction is the
+apparatus AROUND the argument — section-opening throat-clearing,
+periodic set-up sentences — not the argument. THE GOVERNING RULE IS THE
+REVERSE OF THIS PROJECT'S USUAL ONE: IF A SENTENCE IS ALREADY CLEAR,
+LEAVE IT ALONE. A file in which every sentence has been rewritten has
+been damaged, however defensible each rewrite is. Several must_contain
+pins are therefore pinned UNCHANGED, which is what stops a translator
+improving a sentence that needs no improving.
+
+THE FIRST BOOK THAT DEPENDS ON THE EMPHASIS RENDERING (assemble.inline,
+added 2026-08-17), and it leans on it hard: 202 spans, because Hume
+italicises the terms he is DEFINING at the moment of defining them, the
+propositions under examination ("*that the sun will not rise
+tomorrow*"), and both definitions of cause. All 202 render as <em> on
+the page and in the epub. MARKER PARITY AGAINST THE SOURCE, per file,
+caught three drifts nothing else could see: two spans I invented, and
+one moved off Hume's word onto its neighbour (*may* possibly, for may
+*possibly*). DO NOT ADD emphasis the author did not have — in the one
+book where the markers mean something, inflating them makes them mean
+less. Malformed markers FAIL OPEN (assemble.EMPH deliberately refuses
+to match across a leading or trailing space), so a bad marker ships as
+literal asterisks and is visible only in a check.
+
+SHARED LESSON — THE fleming NUMERIC DIFF IS A SET DIFFERENCE, AND A SET
+CANNOT SEE A DROPPED DUPLICATE. Hume dates two parallel suppositions to
+the same first of January 1600; spelling one of them out passes a set
+difference untouched because the other survives. hume/check.py counts
+instead (Counter subtraction), which caught it with ZERO false
+positives across all twenty files. Worth adopting wherever the set form
+is in use. Also: NUM's character class r"\d[\d,./]*" lets a figure
+swallow the SENTENCE comma after it, so "1600," and "1600" are
+different tokens and every number ending a clause fires a false
+positive — separators must be required to be followed by a digit.
+
+PART-DIVIDER PARITY, per file, counted against the source. This is the
+descartes trap in its cheapest possible form: strip_front deletes a
+line matching PART_LINE from a file's front matter, which is how the
+Principles lost all four of its Parts off the published page. WORD form
+("Part One") dodges the pattern, but only COUNTING them proves it —
+and proves equally that a divider was not dropped in translation.
+Section Eleven is undivided; do not assume every split section has one.
+
+THREE SOURCE DEFECTS FOUND BY READING, none visible to any check
+because each reads perfectly aloud and says the wrong thing: "necessary
+and evitable" for inevitable, which reverses the very argument it
+concludes; a question mark on "Is it thence we become acquainted",
+where every neighbouring sentence is a question-and-answer pair and
+this is the answer; and a full stop closing a plain question. All three
+are transmission errors, not claims, so the Verne rule does not protect
+them.
+
+THE VERNE RULE, unhedged, no notes anywhere in the book: Section Ten
+entire, including the remarks on ignorant and barbarous nations — which
+are LOAD-BEARING in the argument about testimony, and that is exactly
+why they cannot be quietly dropped — and its closing irony that the
+Christian religion cannot be believed by any reasonable person without
+a miracle. Section Eleven keeps Hume's frame of a friend arguing in
+Epicurus' person; he built the deniability in on purpose. Section
+Eight's compatibilism including the passages tracing a criminal's sins
+back to the Creator.
+BUT ONE PASSAGE IS NOT THE VERNE RULE, and the ledger says why at
+length, because the distinction is the whole editorial method: "A
+Laplander or Negro has no notion of the relish of wine" keeps the
+example entire and drops the noun. The Verne rule protects a dated
+CLAIM that is part of the author's subject. Hume's subject here is the
+origin of ideas and his claim is about an absent EXPERIENCE; the noun
+carries no part of the argument, so the reader loses no information and
+gains no false one. Same class as "the vulgar" -> "ordinary people".
+(Hume's notorious footnote on race is in "Of National Characters", a
+different essay, and is NOT in this book. Do not import it.)
+Cover: Chardin's "The House of Cards" (1737), Commons "File:Jean Siméon
+Chardin, The House of Cards, probably 1737, NGA 97.jpg", crop
+"2667x4000+0+0" — the trim comes off the RIGHT because the card house
+sits hard against the left edge and is the reason for the choice.
+Painted eleven years before the Enquiry: a fragile structure built by
+careful habit, which is Hume's account of what knowledge rests on.
