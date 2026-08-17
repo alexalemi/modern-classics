@@ -1687,3 +1687,53 @@ like. NOTE the original is 1800x1322, SMALLER than the 4000px rendition
 build_ebook requests, so Commons returns it untouched and the crop is
 in the original's own coordinates — the opposite of the bunyan/quixote
 trap.
+
+TWO BUGS OF ONE SHAPE, both found on 2026-08-17, and the shape is worth
+naming: A FACT DUPLICATED ACROSS TWO TOOLS WILL EVENTUALLY DISAGREE, AND
+THE DISAGREEMENT IS INVISIBLE WHILE EACH TOOL IS INDIVIDUALLY CORRECT.
+  1. THE PUBLISHED FILENAME. Two early books ship under the name of the
+     WORK, not the directory: descartes/ as philosophical-works.html and
+     malthus/ as population.html. Only build_feeds.py knew, in a dict of
+     its own, so assemble.py wrote site/descartes.html, nothing linked to
+     it, and the site served a stale page. A repair to descartes/ the day
+     before -- nineteen duplicate contents entries, four Part titles
+     restored that strip_front had deleted -- was committed, verified,
+     swept, pushed, and REACHED NO READER. Now `PAGE=` in the book's env,
+     read by assemble.py, sweep.py and build_feeds.py alike. sweep found
+     the staleness seconds after being taught the right filename.
+  2. INLINE MARKUP. assemble.py and build_ebook.py each did their own
+     escaping-plus-markup. Now assemble.inline() is the only one and
+     build_ebook.esct() calls it, so page and epub cannot drift.
+When you add a per-book fact, ask which tools need it before deciding
+where it lives.
+
+EMPHASIS IS THE ONE EXCEPTION TO THE MARKUP-FREE RULE (Alex, 2026-08-17):
+_x_ and *x* render as <em> in both renderers. Everything else still comes
+from convention alone. THE PATTERN MUST STAY NARROW, because a bare
+asterisk means at least five other things here: "* * *" is a scene
+separator (291 of them in progress-and-poverty, 52 in democracy2);
+Carroll writes "* * *" for an unexpressed substantive and marks proposed
+axioms with a leading "*"; Paine and Smith use it as a footnote mark;
+Verne's runic facsimile "* ᛐ * ᚼ *" must survive. So the delimiters may
+not enclose whitespace and are anchored against word characters (which
+also protects the figure id "app_1" and pillow-problems' "S_n"). A span
+MAY cross a line break -- the Decameron wraps each multi-line rubric in
+one pair of asterisks -- capped at 400 characters. Re-assemble all books
+AND the -original pages and diff after any change here; the books that
+carry only separators must not move, and that is the test that the guard
+works.
+
+A DECLARED OMISSION IS STILL AN OMISSION, AND NO CHECK CAN SEE IT.
+wealth-of-nations/023 verified at 0.44 from the day it shipped. The
+prose was complete; what was missing was 342 rows of Smith's wheat-price
+tables, and in their place sat a bracketed note saying the original
+"includes extensive historical wheat price tables" followed by a
+120-word summary of what they showed. verify.py could measure the ratio
+but had no way to know the missing words were DATA; the note itself was
+the evidence, in plain English, and only reading the file found it.
+Recovered from Standard Ebooks' XHTML, which keeps the tables as real
+tables -- our source was SE, not Gutenberg, and checking the provenance
+rather than assuming it is what made the fix possible. See
+wealth-of-nations/tables.py: classify() raises on a row shape it does
+not know, each table asserts every non-header row survived, and the
+digit runs were compared as multisets between source and output.
