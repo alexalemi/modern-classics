@@ -223,3 +223,29 @@ it requires re-assembling and diffing all 55 books. Two lines do not
 justify it. If this recurs often enough that the prose starts bending
 to accommodate the renderer, that is the moment to do it properly —
 and the count is the evidence, so keep it.
+
+
+THE BARE-QUESTION RULE (settled at II.2, after the third occurrence).
+My own dialogue convention causes this: Epictetus answers unquoted, so
+his side of a rapid exchange is full of short bare questions, and
+is_subheading's last test is caps >= len(words)//2 — which a two-word
+question passes on its capital letter alone ("How so?" is 1 of 2).
+Rather than reword after the fact each time, WRITE THEM SAFE:
+  - four words or more, and
+  - no proper noun in them,
+  or else quote the line, which disqualifies it outright.
+"And how was that?" is 1 capital in 4 words and passes cleanly; "How
+so?" and "How so, Diogenes?" do not. check.py catches every miss, so
+the loop is closed either way — but writing them safe costs nothing and
+stops the prose being edited by a renderer.
+
+THE SHARED FIX WAS COSTED AND REJECTED, and the arithmetic is worth
+keeping so nobody re-opens it casually. Requiring a strict majority
+(caps > len/2) fixes "How so?" and "How does Medea put it?" but NOT
+"How so, Diogenes?" (2 of 3). Excluding the first word from the count
+fixes the first two as well and keeps every real title in this book
+("On the Cynic Life" scores 2 of 4 after the exclusion), but STILL
+leaves "How so, Diogenes?" at 1 of 3. So no one-line change to
+is_subheading covers the whole class, and any of them would need all
+55 books re-assembled and diffed. The convention above is cheaper and
+complete.
