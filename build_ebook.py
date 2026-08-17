@@ -81,7 +81,7 @@ def esc(s):
 def esct(s):
     """esc(), plus super/subscript markup. For BODY TEXT only --
     never for a <title>, which must stay text."""
-    return assemble.scripts(esc(s))
+    return assemble.inline(esc(s))
 
 
 def slugify(text):

@@ -296,6 +296,51 @@ def scripts(escaped):
     return SCRIPT_RUN.sub(sub, escaped)
 
 
+# EMPHASIS. _like this_ and *like this* become <em>, which reverses this
+# project's markup-free rule for one specific case, by Alex's ruling of
+# 2026-08-17. The rule stands everywhere else: structure still comes only
+# from convention (tab indent = verse or table, ALL CAPS = heading), and
+# nothing else in the pipeline reads markup.
+#
+# THE PATTERN HAS TO BE NARROW, because a bare asterisk means other
+# things in these books:
+#   - "* * *" is a SCENE SEPARATOR and is already an <hr> by HR_LINE. It
+#     survives here anyway, because the delimiters must not enclose
+#     whitespace: "* *" would otherwise become an empty <em>. 52 of
+#     democracy2's asterisks and 291 of progress-and-poverty's are this,
+#     not emphasis, and a blanket conversion would have wrecked both.
+#   - an underscore inside a word (a figure id like "app_1") is not a
+#     delimiter, so both sides are anchored against word characters.
+# What legitimately matches is emphasis (flatland's 78 spans, the
+# Federalist's "must", "might", "intend"), species binomials in
+# origin-of-species ("C. livia"), and the Decameron's story rubrics.
+#
+# A SPAN MAY CROSS A LINE BREAK. The Decameron marks each day's and each
+# story's rubric with a single pair of asterisks around a summary that
+# runs to several lines inside one paragraph; forbidding "\n" left 78 of
+# them unconverted with their asterisks showing. The span is capped at
+# 400 characters and still cannot enclose whitespace at either end, so it
+# cannot run away across a paragraph.
+#
+# Applied to ALREADY-ESCAPED text and returning markup, exactly like
+# scripts(), so it must be among the last things done to a fragment.
+EMPH = re.compile(
+    r"(?<![A-Za-z0-9_])_(?!\s)([^_]{1,400}?)(?<!\s)_(?![A-Za-z0-9_])"
+    r"|(?<![*\w])\*(?!\s)([^*]{1,400}?)(?<!\s)\*(?!\*)", re.S)
+
+
+def emphasis(escaped):
+    return EMPH.sub(lambda m: "<em>" + (m.group(1) or m.group(2)) + "</em>",
+                    escaped)
+
+
+def inline(escaped):
+    """Every inline transform, in one place, for BOTH renderers.
+    build_ebook.esct() calls this too, so the page and the epub cannot
+    drift apart."""
+    return scripts(emphasis(escaped))
+
+
 def find_speakers(pars):
     """Dialogue speakers: short bare names that repeatedly open a block's
     first line (Plato's dialogues put the speaker on its own line)."""
@@ -334,15 +379,15 @@ def render_body(text, figdir=None, site=None, bare_label=False):
             if figdir and FIGURE_INLINE.search(par):
                 out.append(render_plate_table(par, figdir, site, bare_label))
             else:
-                out.append(f'<pre class="outline">{scripts(html.escape(par))}</pre>')
+                out.append(f'<pre class="outline">{inline(html.escape(par))}</pre>')
         elif len(lines) >= 2 and lines[0].strip() in speakers:
             rest = " ".join(l.strip() for l in lines[1:])
             out.append(f"<p><b>{html.escape(lines[0].strip())}</b>: "
-                       f"{scripts(html.escape(rest))}</p>")
+                       f"{inline(html.escape(rest))}</p>")
         elif is_subheading(s, nxt):
-            out.append(f"<h4>{scripts(html.escape(s))}</h4>")
+            out.append(f"<h4>{inline(html.escape(s))}</h4>")
         else:
-            out.append(f"<p>{scripts(html.escape(s))}</p>")
+            out.append(f"<p>{inline(html.escape(s))}</p>")
     while out and out[0] == "<hr>":
         out.pop(0)
     while out and out[-1] == "<hr>":
@@ -529,10 +574,22 @@ def main():
 
     book = Path(args.book_dir)
     root = Path(__file__).parent
-    stem = f"{book.name}-original" if args.original else book.name
-    out = Path(args.out) if args.out else root / "site" / f"{stem}.html"
 
     env = read_env(book / "env")
+    # PAGE: the published filename, when it is not the directory name.
+    # Two early books were published under the name of the WORK rather
+    # than of the directory -- descartes/ as philosophical-works.html and
+    # malthus/ as population.html -- and only build_feeds.py knew it, in a
+    # hard-coded dict of its own. So assemble wrote site/descartes.html,
+    # which nothing linked to, and the page the site actually served went
+    # on being the stale one: a repair to descartes/ in August 2026 fixed
+    # nineteen duplicate contents entries and restored four Part titles
+    # that had been deleted outright, and NONE of it reached a reader.
+    # Nothing caught it, because every check looked at a file that was
+    # being written correctly. One fact, one place.
+    page = env.get("PAGE", book.name)
+    stem = f"{page}-original" if args.original else page
+    out = Path(args.out) if args.out else root / "site" / f"{stem}.html"
     for key in ("ORIGINAL_WORK", "AUTHOR", "DATE"):
         if key not in env:
             sys.exit(f"ERROR: {key} missing from {book}/env")
