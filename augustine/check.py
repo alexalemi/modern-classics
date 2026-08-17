@@ -53,9 +53,17 @@ NUM = re.compile(r"\d+(?:[,./]\d+)*")
 # The whole thou-family, plus the verb forms that only exist to agree
 # with it. Deliberately broad: this book's entire justification is that
 # removing it is the work.
+#
+# "art" IS NOT IN THE LIST, and its absence costs nothing. As a verb it
+# is the second person singular and CANNOT occur without "thou", which
+# the sweep already catches; as a noun it is ordinary modern English,
+# and Augustine writes about the art of verse. Including it fired on
+# "the art itself, by which I wrote" -- correct prose. When a check
+# fires on correct output, fix the check; but fix it by an argument
+# about what the rule can actually miss, not by whatever silences it.
 THOU = re.compile(
     r"\b(thou|thee|thy|thine|ye|hast|hath|doth|dost|shalt|shouldst|wouldst|"
-    r"couldst|canst|mayest|mightest|wert|wilt|didst|art|knowest|madest|"
+    r"couldst|canst|mayest|mightest|wert|wilt|didst|knowest|madest|"
     r"gavest|sawest|hadst|wast|saith|cometh|goeth|liveth|maketh|giveth|"
     r"unto|whither|whence|thither|hither|betwixt|nay|verily|yea|aught|"
     r"naught|wont|ere|oft|methinks|hearken|behold|thereof|therein|"
