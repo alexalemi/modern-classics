@@ -34,9 +34,19 @@ for f in sorted(pathlib.Path('epictetus/modern_chapters').glob('*.txt')):
     lines=[x.strip() for x in f.read_text().split('\n') if x.strip()]
     if lines[0]!=open(f'epictetus/chapters/{n}.txt').read().split('\n')[0].strip():
         rows.append(f'{n} HEADING drift: {lines[0][:50]}'); bad+=1
-    for l in lines[1:]:
-        if assemble.is_subheading(l): rows.append(f'{n} SUBHEADING: {l[:55]}'); bad+=1
-        if re.search(r'[*_#]', l): rows.append(f'{n} MARKUP: {l[:55]}'); bad+=1
+    # TEST WHAT THE RENDERER TESTS, PARAGRAPH BY PARAGRAPH. A first
+    # version stripped every line and ran is_subheading on each, which
+    # flagged "- Homer, Iliad ii 25" -- a citation INSIDE a tab-indented
+    # verse block. render_body never asks is_subheading about that: an
+    # indented paragraph takes the <pre> branch several tests earlier.
+    # A check that approximates the renderer will eventually disagree
+    # with it, and every disagreement costs an edit to correct prose.
+    for par in [x for x in re.split(r'\n\s*\n', f.read_text()) if x.strip()][1:]:
+        if re.search(r'^[ \t]', par, re.M):      # <pre>, never a heading
+            continue
+        s = par.strip()
+        if assemble.is_subheading(s): rows.append(f'{n} SUBHEADING: {s[:55]}'); bad+=1
+        if re.search(r'[*_#]', s): rows.append(f'{n} MARKUP: {s[:55]}'); bad+=1
 done=len(list(pathlib.Path('epictetus/modern_chapters').glob('*.txt')))
 print(f'{done}/101 files')
 if rows:
