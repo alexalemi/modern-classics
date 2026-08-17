@@ -42,6 +42,7 @@ check.py printed its findings and exited 0, and 48 files went through a
 `check && commit` chain with a finding in them.
 """
 import json
+from collections import Counter
 import pathlib
 import re
 import sys
@@ -50,8 +51,13 @@ BOOK = pathlib.Path(__file__).resolve().parent
 SRC = BOOK / "chapters"
 MOD = BOOK / "modern_chapters"
 
-NUM = re.compile(r"\d[\d,./]*")
+# A number, with internal separators only. The class form r"\d[\d,./]*"
+# lets a figure swallow the SENTENCE comma after it, so "1600," and
+# "1600" count as different tokens and every number ending a clause
+# fires a false positive. Separators must be followed by a digit.
+NUM = re.compile(r"\d+(?:[,./]\d+)*")
 MARKER = re.compile(r"\*([^*]*)\*")
+PART_DIV = re.compile(r"Part (One|Two|Three|Four)$")
 
 # Numbers in a source file that are deliberately absent from the modern
 # one, keyed by file. FILE-SCOPED, as in grimm/ -- never loosen NUM
@@ -144,12 +150,30 @@ def main():
                 out.append(f"{fn}:{i}: underscore renders as emphasis: "
                            f"{st[:50]!r}")
 
-        # 5 -- numeric diff
-        exempt = set(NUM_EXEMPT.get(fn, []))
-        lost = (set(NUM.findall(s)) - set(NUM.findall(t))) - exempt
+        # 5 -- HUME'S OWN "Part One"/"Part Two" DIVIDERS, per file.
+        # The descartes trap: assemble.strip_front deletes a line matching
+        # PART_LINE (^Part [IVXLC0-9]+: \S) anywhere in a file's front
+        # matter, which is how the Principles of Philosophy lost all four
+        # of its Parts off the published page. WORD form dodges the
+        # pattern, but only counting them proves it -- and proves equally
+        # that a divider was not dropped in translation.
+        want_p = [l.strip() for l in s.split("\n") if PART_DIV.match(l.strip())]
+        got_p = [l.strip() for l in lines if PART_DIV.match(l.strip())]
+        if want_p != got_p:
+            out.append(f"{fn}: part dividers {want_p} in source, "
+                       f"{got_p} in translation")
+
+        # 6 -- numeric diff
+        # COUNTED, not set-differenced. fleming/ compares the SETS, which
+        # cannot see a dropped DUPLICATE: Hume states the same date twice
+        # in two parallel suppositions in Section Ten, and spelling one of
+        # them out passes a set difference untouched because the other
+        # survives. Counter subtraction catches it.
+        exempt = Counter(NUM_EXEMPT.get(fn, []))
+        lost = Counter(NUM.findall(s)) - Counter(NUM.findall(t)) - exempt
         if lost:
-            out.append(f"{fn}: numbers in source, absent from translation: "
-                       f"{sorted(lost)}")
+            out.append(f"{fn}: numbers in source, missing or fewer in "
+                       f"translation: {sorted(lost.elements())}")
 
     done = sum(1 for m in manifest if (MOD / m["file"]).exists())
     print(f"checked {done}/{len(manifest)} translated files")
