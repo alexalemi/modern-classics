@@ -60,7 +60,16 @@ SE-XHTML, Wikisource-API, from-the-Latin, from-the-French.
   reread De Senectute yearly)
 - Tacitus — Annals (Church & Brodribb as crib; pairs with Roman Lives)
 - Livy — History of Rome, Books I–X (the founders' Rome)
-- Epictetus — Discourses (the full lectures behind our Enchiridion)
+- Epictetus — Discourses — DONE (site/epictetus.html; all four surviving
+  books complete, 95 chapters, ~115k words, from Standard Ebooks' George
+  Long, since Gutenberg has only a selection). The justification is a
+  THIRD class, worth applying to the rest of this list: Long scores 1.00
+  archaisms per 1,000 words — below Jacobs, who was struck as too clean —
+  and is nonetheless unreadable, because he renders the technical
+  vocabulary by calque (phantasia -> "appearance", prohairesis ->
+  "will", dogma -> "opinion") at 4.99 per 1,000. MEASURE THE TECHNICAL
+  VOCABULARY SEPARATELY when screening a philosophical translation; the
+  archaism test cannot see this class at all.
 - Beccaria — On Crimes and Punishments (from the Italian; behind the
   Eighth Amendment; short)
 

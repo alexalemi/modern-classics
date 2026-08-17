@@ -1542,3 +1542,148 @@ Trouvelot/Goya method: find the plate box by darkness profile, then take
 the 2:3 rectangle inside it). One small red figure at the foot of a huge
 bare wood, meeting the wolf: legible at thumbnail size, and the emblem of
 the whole collection.
+
+Epictetus' Discourses (epictetus/ — the 54th book, and the completion
+of something the collection already half-had: our Enchiridion is an
+abridgement of THIS, compiled by Arrian out of these same lectures).
+All four surviving books, 95 chapters, 120,290 -> 115,318 words, ratio
+0.96 (verify --min-ratio 0.85 --max-ratio 1.3). From Standard Ebooks'
+George Long; GUTENBERG HAS ONLY A SELECTION (#10661), so check SE when
+Gutenberg looks thin.
+
+A THIRD JUSTIFICATION CLASS, and the most useful thing this book
+teaches. Measured first, as the folktales strand requires, and the
+measurement says DON'T DO IT:
+    Bunyan (source)               13.11 archaisms per 1,000 words
+    Hunt's Grimm                  12.34
+    Long's Discourses              1.00
+    Jacobs' English Fairy Tales    0.90  <- STRUCK as too clean
+22.8-word mean sentence, 19% over 35. By every number this project has
+used to choose a book, Long should be left alone.
+He should not be. He translates word by word, and the words he picks
+are ordinary modern English meaning something else: phantasia ->
+"appearance", prohairesis -> "will", dogma -> "opinion", prolepsis ->
+"precognition", ataraxia -> "perturbation", dunamis -> "faculty".
+Those run to 4.99 per 1,000 words, FIVE TIMES his archaism rate. A
+reader trips on "thou hast" and looks it up; he meets "the right use of
+appearances" and sails past having understood the opposite.
+So the three classes are: (1) HARD — Burton, Leviathan, archaism you
+can feel; (2) FALSE FRIENDS — Bunyan, Grimm, ordinary words that have
+moved; (3) TECHNICAL CALQUE — this book, where a translator renders a
+foreign TERM with a transparent-looking English word and then uses it
+for 119,000 words. CLASS 3 IS INVISIBLE TO THE ARCHAISM MEASURE BY
+CONSTRUCTION. Do not conclude from a low score that a philosophical
+translation is safe; measure the technical vocabulary separately.
+
+ONE FILE PER CHAPTER, DELIBERATELY, against the grimm/ precedent of
+grouping short pieces. The mean chapter is 1,254 words and grouping
+would halve the file count — but assemble.build_sections sets
+is_chapter=False for every section it carves out of a grouped file, so
+all 95 chapters would have rendered as top-level h2 and the four Books
+would have nested nothing. 101 files, three chapters split into parts.
+
+THE SOURCE IS XML, SO PARSE IT AS XML (ElementTree, not regex — that is
+where tyndall's four-fold Spenser stanza and bunyan's welded noteref
+digits came from). Then add the check that actually paid: EVERY
+CHAPTER'S WORD SEQUENCE COMPARED AGAINST A SECOND READING OF THE RAW
+XML THAT SHARES NO CODE WITH THE PARSER. It caught three bugs in ten
+minutes, none of which would have moved the word ratio:
+  1. MY OWN NOTEREF REMOVAL appended a deleted anchor's tail to the
+     parent's LAST child instead of the anchor's PREDECESSOR, relocating
+     a clause to the end of any paragraph carrying two notes. II.23 read
+     "...syllogisms like Chrysippus, and putting our hopes in them. If a
+     man by this teaching does harm ... from being wretched" — every
+     word present, and it reads almost plausibly.
+  2. The verse renderer took spans as DESCENDANTS of the blockquote, so
+     a <cite>'s inner span became a line of the poem ("i") while the
+     word "Iliad" vanished.
+  3. A BLOCKQUOTE THAT IS NOT VERSE wrapped the one drama table
+     (Euripides), silently dropping eight lines and leaving "see what
+     they say:" pointing at nothing.
+REUSE THIS CROSS-CHECK ON ANY STRUCTURED SOURCE. Two independent
+readings agreeing is evidence; one reading is a hope.
+
+check.py (the euclid-rivals per-book pattern), and TWO LESSONS ABOUT
+CHECKERS THAT GENERALISE:
+  - IT MUST EXIT NONZERO. It printed findings and returned success for
+    48 files, so a real defect rode straight through a `check && commit`
+    chain. A checker that cannot fail a build will eventually be ignored.
+  - IT MUST MIRROR THE RENDERER, NOT APPROXIMATE IT. It stripped every
+    line and asked is_subheading about each, so a citation INSIDE a
+    tab-indented verse block came back as a spurious heading — the
+    renderer never asks, because an indented paragraph takes the <pre>
+    branch several tests earlier. Walk paragraphs exactly as
+    render_body does. Every disagreement between a check and the
+    renderer costs an edit to correct prose.
+
+THE BARE-QUESTION RULE, and the shared fix that was COSTED AND
+REJECTED. The dialogue convention here is that the objector is quoted
+and Epictetus answers unquoted — which is most of what makes Long
+readable, since he runs both sides into one paragraph and the reader
+cannot tell who is speaking. But it fills Epictetus' side with short
+bare questions, and is_subheading's last test is caps >= len(words)//2,
+which a two-word question passes on its opening capital alone ("How
+so?"). Write them at four words or more with no proper noun, or quote
+them. The shared fix does not exist: a strict majority fixes "How so?"
+and "How does Medea put it?" but not "How so, Diogenes?" (2 of 3);
+excluding the first word from the count fixes those two and keeps every
+real title, but still leaves "How so, Diogenes?". No one-line change to
+is_subheading covers the class, and any of them costs a re-assembly and
+diff of all 56 books.
+
+A FORMULA LOCKED ACROSS TWO BOOKS. The Cleanthes prayer appears FIVE
+times and Long renders it FOUR ways, including "necessity" for
+"destiny" at IV.4 where Epictetus quotes it with anagke. All five are
+set as the Enchiridion's stanza ("Lead me, Zeus, and you too, Destiny,
+/ wherever you have fixed my post"), verified by grepping both books
+rather than by memory. This is the nights/ rule about frame formulas
+applied to a QUOTATION: a reader who owns both books meets the same
+lines five times and must recognise them every time.
+
+SENSITIVE CONTENT, AND THE DISTINCTION IS THE POINT. Epictetus uses
+kinaidoi four times (I.5, II.10, II.20, IV.2) as an incidental term of
+abuse inside sentences about something else; all four are rendered by
+what the word MEANS in the argument ("men who have lost all shame about
+sex"), because the class is not his subject and the reader loses no
+information and gains no false one — the Bunyan-Flatterer test. At
+II.10 the SYMMETRY is what has to survive: he condemns both parties and
+says the second man "loses being a man no less than the other".
+BUT III.1 IS THE VERNE RULE AND GOES THE OTHER WAY. Two thousand words
+arguing that a man who plucks his body hair is trying to stop being a
+man, with the gods sending Hermes to tell him to let a man be a man and
+a woman a woman. There the claim IS the chapter, and softening it would
+replace his argument with one he never made. Translate in full,
+unhedged, no note.
+Also: "the Galileans" (IV.7) kept as written with no note — it is one
+of the earliest pagan references to Christians and whether he means
+Christians or Jewish zealots is a live dispute, so identifying them
+would put a claim in his mouth. Same reasoning as II.9's "dipped".
+The suicide material (I.9, I.24, I.25, II.15, III.13) is translated in
+full with NO modern note and no helpline: that would be the wink the
+Verne rule forbids and would recast a philosophical position as a
+symptom. KEEP BOTH HALVES — II.15, where Epictetus talks a student out
+of starving himself ("not to all our decisions, to the right ones"), is
+the same doctrine as "the door is open", and is the half every popular
+account leaves out.
+
+A must_contain PIN MUST BE WRITTEN FROM THE TEXT, NOT FROM MEMORY. The
+one that failed pinned the Cynic as "a scout sent from God to men";
+Epictetus uses two words there and Long keeps them apart — MESSENGER
+(angelos) from Zeus, and SPY (kataskopos) on what is good and bad. The
+pin merged them into a phrase in neither the Greek nor Long, so it
+could only have been satisfied by a translation that was wrong.
+VOICE: it is SPEECH — the Greek diatribe, a man talking out loud,
+starting again, answering a heckler, losing patience. Long flattens it
+to level Victorian prose and restoring it is most of the job. Resolve
+his parenthetical double-shots ("confidence (courage)") to one word and
+drop his parenthetical Greek. Keep the diminutives ("this little body
+of yours"), keep the plainness about the body that Long is prim about,
+and keep the comedy, which is load-bearing.
+Cover: Gérôme's "Diogenes" (1860), Commons "File:Jean-Léon Gérôme -
+Diogenes - Walters 37131.jpg", crop "881x1322+400+0" — the whole jar
+with the lamp centred and one dog entering at the edge. Diogenes is
+whom Epictetus points to whenever he has to show what a free man looks
+like. NOTE the original is 1800x1322, SMALLER than the 4000px rendition
+build_ebook requests, so Commons returns it untouched and the crop is
+in the original's own coordinates — the opposite of the bunyan/quixote
+trap.
