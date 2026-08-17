@@ -39,4 +39,12 @@ for f in sorted(pathlib.Path('epictetus/modern_chapters').glob('*.txt')):
         if re.search(r'[*_#]', l): rows.append(f'{n} MARKUP: {l[:55]}'); bad+=1
 done=len(list(pathlib.Path('epictetus/modern_chapters').glob('*.txt')))
 print(f'{done}/101 files')
-print('\n'.join(rows) if rows else 'ratios, headings, subheadings, markup: all clean')
+if rows:
+    print('\n'.join(rows))
+    # EXIT NONZERO, OR THE CHECK IS DECORATION. This printed its findings
+    # and returned success for the first 48 files, so a real defect ("Why?"
+    # at II.15, a bare question that renders as a section heading) rode
+    # through a `check && commit` chain untouched. A checker that cannot
+    # fail a build is a checker that will eventually be ignored.
+    sys.exit(1)
+print('ratios, headings, subheadings, markup: all clean')
