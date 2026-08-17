@@ -1,0 +1,104 @@
+HUME — RUNNING CONSISTENCY LEDGER
+=================================
+Read text_analysis.txt first. Anything locked here is spent — use it and
+do not re-gloss it.
+
+
+THE GOVERNING RULE OF THIS BOOK
+
+IF A SENTENCE IS ALREADY CLEAR, LEAVE IT ALONE.
+
+Hume's archaism score is 0.47 per 1,000 words. He is a great stylist and
+most of what he wrote needs no help. The work is concentrated in:
+  - the section-opening throat-clearing (usually deletable outright);
+  - the periodic sentences that set up a distinction before making it;
+  - the technical vocabulary, which is glossed once and then used.
+Everything else is left standing. A file in which every sentence has
+been rewritten has been damaged, however defensible each rewrite is.
+
+
+GLOSSED ONCE, THEN USED BARE — the "caps spent" list
+
+  impression / idea      Section Two, at first use. Impression = the
+                         lively original; idea = its faded copy.
+  matter of fact         Section Four. THE MOST IMPORTANT GLOSS IN THE
+                         BOOK — the modern idiom ("prosaic") is a
+                         guaranteed misread and is invisible. Say
+                         plainly that he means a claim about how the
+                         world actually is, which could have been
+                         otherwise.
+  relations of ideas     Section Four, alongside it.
+  experimental reasoning Section Four. Means reasoning FROM EXPERIENCE.
+  constant conjunction   Section Seven. Never softened.
+  necessary connection   Section Seven, and the section title.
+  custom / habit         Section Five. Never "familiarity".
+  Pyrrhonism / mitigated Section Twelve. The distinction between
+    scepticism             excessive and mitigated scepticism is the
+                         book's conclusion and must survive.
+
+NOT GLOSSED, MODERNISED SILENTLY: subserviency, the vulgar, actuated,
+conjoined (outside the technical phrase), sensible qualities, admit of,
+esteem, betwixt. Plus the five false friends, all confirmed present:
+peculiar, sensible (= aware), discover (= reveal), want (= lack),
+presently (= at once).
+
+
+THE ITALICS
+
+202 *marker* spans came through prep from the source's <em>. They are
+argument, not decoration — the terms being defined, the propositions
+under examination, the two definitions of cause. KEEP EVERY ONE, on the
+same words. If a rewrite would break an italicised run in half, do not
+do the rewrite. DO NOT ADD emphasis Hume did not have.
+
+This is the first book that depends on the emphasis rendering, so it is
+also the first place a bug in it would show. The pipeline is otherwise
+markup-free: no other asterisks or underscores, no all-caps lines, tab
+indent only for verse or a table.
+
+
+LOCKED WORDING — the must_contain pins, verbatim
+
+  "Custom, then, is the great guide of human life."          [Five]
+  "Commit it then to the flames"                             [Twelve]
+  "*that the sun will not rise tomorrow*" — italicised       [Four]
+  "no testimony is sufficient to establish a miracle" /
+  "its falsehood would be more miraculous than the fact"     [Ten]
+  "proportions his belief to the evidence"                   [Ten]
+  "an object followed by another" — italicised, first
+    definition of cause                                      [Seven]
+  "constant conjunction"                                     [Seven]
+
+NEAR-MISSES REGISTERED: NOT "habit is the great guide of human life"
+(he wrote custom, and custom is the technical term); NOT "throw it in
+the fire"; NOT "regular conjunction" or "invariable conjunction"; NOT
+"necessary link".
+
+
+STRUCTURE — CHECK THE MANIFEST BEFORE WRITING ANY FILE
+
+Section Eight is THREE files. Sections Four, Five, Seven, Ten, Eleven
+and Twelve are TWO. Sections One, Two, Three, Six and Nine are one each.
+A multi-part file is: heading line, "(Part n of k)", blank, body. Parts
+2+ never re-introduce the section; non-final parts never conclude it.
+This is the quixote trap and it is invisible to verify.py — a wrong
+heading on a part-2 file is silently swallowed by strip_front.
+
+Hume's own subdivisions are already in the files as "Part One" / "Part
+Two" on their own lines. WORD FORM, never "Part I:" — the descartes
+trap. Leave them exactly as prep wrote them.
+
+
+THE VERNE RULE, and the places it bites
+
+  Section Ten (miracles) entire, including the remarks on the credulity
+  of ignorant and barbarous nations — load-bearing in the argument about
+  testimony, which is why they cannot be quietly dropped. Section Eleven
+  keeps Hume's frame of a friend arguing in Epicurus' person. Section
+  Eight's compatibilism including the passages tracing a criminal's sins
+  to God. No notes, no hedges, no wink anywhere in the book.
+
+
+DECISIONS LOG
+
+(file 000) ...
