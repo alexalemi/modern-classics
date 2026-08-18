@@ -1834,3 +1834,109 @@ Chardin, The House of Cards, probably 1737, NGA 97.jpg", crop
 sits hard against the left edge and is the reason for the choice.
 Painted eleven years before the Enquiry: a fragile structure built by
 careful habit, which is Hume's account of what knowledge rests on.
+
+Augustine's Confessions (augustine/ — the 56th book; Pusey's 1838
+translation from Gutenberg #3296). 36 files, 13 books, 112,160 ->
+117,672 words, ratio 1.05 (verify --min-ratio 0.85 --max-ratio 1.3).
+Written c. 397-400: the first autobiography in the Western tradition,
+and the book that invented most of what we mean by an inner life.
+
+THE HIGHEST ARCHAISM DENSITY IN THE COLLECTION (35.9 per 1,000 words,
+above Burton's Nights and far above Bunyan) — AND THE MEASURE IS
+MISLEADING IN A NEW WAY, worth keeping in mind for any translated
+source. Nearly all of it is ONE grammatical feature, the second person
+singular, and removing it is nearly mechanical. What is NOT mechanical
+is everything the Thou was carrying.
+
+THE CENTRAL DECISION: RENDER IT "you", and the argument is the nights/
+argument sharpened. Latin "tu" is the INTIMATE singular — the pronoun
+for a friend, a child, a lover — so Pusey's "Thou" is a Victorian
+addition that makes the book considerably MORE formal than Augustine
+wrote it. As with Burton, we are removing a costume the TRANSLATOR put
+on, not centuries between reader and author. Take the reverence out of
+the pronoun and put it back in the rhythm.
+CAPITALISE THE DIVINE PRONOUNS, and NOT for piety — for
+disambiguation, and the need is frequent. Augustine breaks off from
+addressing God to address his readers directly as "you", sometimes in
+the same paragraph (Book Ten opens that way). The capital is the
+cheapest possible signal and costs the prose nothing. God is "You",
+the reader is "you".
+
+THE DECISION IS MECHANICALLY CHECKABLE, which is unusual and is why
+augustine/check.py exists: NO thou-family word survives anywhere,
+INCLUDING inside quoted Scripture — because the point is that the book
+has ONE voice, and re-archaising the quotations would put a frame
+round them that Augustine did not. It fired twice on my own prose,
+both times on "Behold" inside a Scripture quotation, which is exactly
+the archaism the rule removes. Exemptions are by EXACT PHRASE, never
+by loosening the sweep (the grimm rule).
+IT ALSO FIRED ONCE ON CORRECT PROSE — "the art itself, by which I
+wrote" — and there the CHECK was fixed, not the sentence, with the
+reason recorded in the file: as a verb "art" is second person singular
+and CANNOT occur without "thou", which the sweep already catches, so
+dropping it loses nothing; as a noun it is ordinary modern English.
+Fix a check by an argument about what the rule can actually miss, not
+by whatever silences it.
+
+THE CHAPTER DIVISIONS ARE NOT IN THE SOURCE AND ARE NOT INVENTED.
+Augustine is cited by book, chapter and section (Conf. VIII.12.29) and
+every scholarly edition prints all three; this transcription prints
+thirteen BOOK headings and then continuous prose. That was CHECKED and
+not assumed — in the .txt AND in Gutenberg's HTML, which elsewhere in
+this project has carried structure the .txt drops. Recovering them
+from the Latin (#33849) was considered and rejected: 971 Latin
+sections against 461 English paragraphs, so there is no 1:1 map, and A
+WRONG CHAPTER NUMBER IS WORSE THAN NONE, because a reader would trust
+it. Each book instead gets a DESCRIPTIVE title as new writing, on the
+soap-bubbles precedent ("Book Eight: The Garden at Milan").
+
+KEEP THE RHETORICAL FIGURES — this reverses the project's usual
+instruction and is the easiest way to lose 10% of the word count
+without noticing. Augustine was a professor of rhetoric who is ashamed
+of having been one, and the piled antitheses ("most hidden, yet most
+present") are professional equipment, not padding.
+SCRIPTURE IS WOVEN IN UNMARKED, half-clause by half-clause, because
+the Psalms are the language he thinks in. Render a quoted phrase in
+the SAME modern register as the prose around it, so the seam stays
+where he put it: invisible. Lifting them into King James English would
+make the book look like a book of proofs rather than a man whose
+sentences have the Psalms in them the way ours have song lyrics.
+
+THE VERNE RULE, in full and with no note anywhere in the volume:
+infant sin argued as guilt; the Manichees as he tells them; his
+condemnation of the men of Sodom; his praise of his mother for
+enduring a violent husband; woman as subject to man in Book Thirteen;
+the allegorical Genesis of Books Twelve and Thirteen, where he keeps
+his own modesty about other readings and that modesty is kept too.
+THE WOMAN HE DISMISSED (Book Six) is the sharpest case and is handled
+as nights/'s Sindbad: she is never named in thirteen books, he records
+that his heart was "torn and wounded and bleeding" and then that he
+took another mistress because he could not wait two years. Rendered
+flat, in full, unremarked. THE ONE THING TO GET RIGHT IN THE
+TRANSLATION is that his grief is entirely about his own pain — no
+sympathetic phrase may slip in on her behalf that he did not write. A
+modern reader will notice what Augustine does not notice, and doing
+that noticing for them destroys it.
+NOT the Verne rule, and logged as such: Pusey's dismissive rendering
+of MULIERCULIS is KEPT, because the diminutive is dismissive in the
+Latin too and so is the author's, not the translator's addition. The
+test each time is whether the archaism is HIS or PUSEY'S.
+
+BOOKS TEN TO THIRTEEN ARE KEPT ENTIRE. Most modern editions cut them
+or append them, which turns the Confessions into a conversion memoir —
+a genre it invented and then refused. Book Eleven is the greatest
+sustained writing about time in the language and is handled like
+hume/: clear the apparatus, keep the joints visible, and do NOT import
+the memoir's warmth, or let it go cold either, since he prays in the
+middle of the argument and that is the point.
+Cover: Ary Scheffer's "Saints Augustine and Monica" (1846), Commons
+"File:Scheffer, Ary - Saint Augustin et Sainte Monique - 88.45 - Musée
+de la Vie romantique.jpg", crop "2888x4332+250+93" — cropped INSIDE
+the painted gold frame, which runs round all four edges. It is the
+vision at Ostia itself, Book Nine: mother and son at a window looking
+up together, the sea beyond on the right.
+NOTE ON THE CROP COORDINATES, a refinement of the bunyan/quixote trap:
+commons_url gates on WIDTH > 4200, not on the larger dimension. This
+painting is 3520x4500, so despite exceeding 4000 in HEIGHT it is
+served as the original, and the crop is in the ORIGINAL's coordinates.
+Check which dimension the gate actually tests before assuming.
