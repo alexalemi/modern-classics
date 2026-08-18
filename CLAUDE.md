@@ -2045,3 +2045,125 @@ is 1:2, so the 2:3 rectangle comes off the top; at 2967 wide it is
 under commons_url's 4200 gate and the crop is in the ORIGINAL's own
 coordinates. Boethius is the reason that wheel is in every medieval
 manuscript.
+
+John Stuart Mill's On Liberty (mill/ — the 58th book; 1859, from
+Standard Ebooks). 12 files, 5 chapters, 47,974 -> 47,385 words, ratio
+0.99 (verify --min-ratio 0.85 --max-ratio 1.15).
+
+THE JUSTIFICATION IS THE hume CASE ALMOST EXACTLY, and the wrong
+diagnosis produces the wrong translation. Archaism 0.6 per 1,000 words
+— below books struck from the roadmap as too clean — against calque
+34.6 and 44% of sentences over 35 words. Nothing in it sounds old.
+What blocks it is (1) Victorian periodic sentence architecture, and
+(2) a technical vocabulary used with total consistency: "utility" is
+Bentham's standard and not usefulness, "sentiment" is settled feeling
+and not sentimentality, "self-regarding" is Mill's own coinage and the
+hinge of the book. Plus the bunyan false friends, of which there are
+more than expected — "suffer" for allow ("mankind gain more by letting
+each other live as seems good to themselves" turns on it), "vulgarly"
+for commonly, "peculiar" for specific, "obtain" for hold good.
+AND THE MEASURE OVERSTATES IT, so the hume rule governs: IF A SENTENCE
+IS ALREADY CLEAR, LEAVE IT ALONE. Mill's famous sentences are already
+perfect. Four of the nine must_contain pins are pinned UNCHANGED for
+that reason, and two more encode a punctuation decision (his comma
+after "the case" in "He who knows only his own side of the case, knows
+little of that" goes, and the pin is written without it so the choice
+cannot drift).
+
+THE SECOND READING OF THE SOURCE EARNED ITS KEEP IN THE FIRST MINUTE
+(the epictetus rule: parse as XML, then compare against an independent
+regex reading that shares no code with the parser). It caught
+kill_noterefs giving a removed anchor's tail to THE PREVIOUS ANCHOR
+rather than to the previous SURVIVING element. Notes 7, 8 and 9 sit in
+one paragraph — the Old Bailey jurymen — so note 8's tail was attached
+to detached note 7 and half a sentence vanished. Every other word
+present and in order; the ratio would not have moved enough to notice.
+GENERALISE: when deleting elements, the destination for a tail is the
+nearest preceding sibling THAT STILL EXISTS.
+The same check taught its own lesson: COMPARE CHARACTERS, NOT TOKENS.
+A raw reading replaces each tag with a space, so "<i>odium
+theologicum</i>," tokenises differently from the parsed form — a
+difference in the check, not in the text.
+
+WHAT IS IN THE BOOK AND WHAT IS NOT, decided explicitly. The
+dedication to Harriet Taylor and the Humboldt epigraph are Mill's and
+stay (CLAUDE.md's rule that a dedication belongs in the book).
+introduction.xhtml is a later editor's biographical essay and goes to
+reference/ as a crib, on the bunyan/Offor precedent. THE ENDNOTES
+SPLIT CLEANLY WITH IT: notes 1-5 are that editor's citations to his own
+essay; notes 6-14 are MILL'S OWN and are inlined as "Footnote: ..."
+paragraphs after the citing paragraph (the candle pattern), in Mill's
+voice and not an editor's. Note 6 is the 1858 Press Prosecutions
+footnote he added rather than change a word of his text, and says so.
+
+WORD-FORM CHAPTER NUMBERS, DELIBERATELY. assemble.CHAP_LINE matches
+only "Chapter <digits>: Title" and nests those as h3 under a Part
+divider; this book has no Parts, so digits would have left the five
+chapters nested under nothing and the Epigraph and Dedication looking
+more important than they are. "Chapter One: ..." keeps everything at
+one level and the contents flat, as hume/ does with "Section One".
+NINE OF THE TWELVE FILES ARE CHAPTER PARTS, so the quixote trap is
+live: heading, "(Part n of k)", blank, body, and part 2+ never
+re-introduces the chapter. check.py compares later parts against part
+1's MODERN heading, not the manifest title, because that is what the
+renderer uses.
+
+check.py also carries the hume COUNTED numeric diff (a set cannot see
+a dropped duplicate), and asks assemble.EMPH ITSELF whether every
+emphasis marker renders rather than approximating the test. THE
+EMPHASIS PARITY CAUGHT A REAL DEFECT: I rendered "a clever nisi prius
+advocate" as "a clever courtroom advocate", dropping one of Mill's 52
+italic spans. The prose read perfectly and nothing else would have
+seen it. Its archaism sweep exempts exactly ONE phrase, by exact
+phrase (the grimm rule): Chapter Two's account of Christian morality
+turns on the grammatical form of the commandments, '"thou shalt not"
+predominates unduly over "thou shalt"', so modernising it there would
+delete the observation.
+
+SENSITIVE CONTENT — THE VERNE RULE IN FULL, NO NOTE ANYWHERE, AND ONE
+EXCEPTION. Kept entire and unhedged: the despotism-and-barbarians
+exception and "backward states of society ... in its nonage" (Chapter
+One), which is the most discussed passage in the book's modern
+reception and is Mill's own limitation on his own principle; the
+attack on the Calvinistic theory; the whole China and "despotism of
+Custom over the whole East" argument; the Mormon passage, including
+his judgment that polygamy is a direct infraction of the principle of
+liberty, his account of why a woman might still choose it, and his
+refusal all the same to allow a "civilizade"; the critique of
+Christian morality, with the Old Testament "intended only for a
+barbarous people" and Paul's apparent sanction of slavery; and all of
+Chapter Five, including the view that a man who cannot support
+children should not be permitted to have them.
+THE ONE EXCEPTION, and the reasoning is the hume "Laplander or Negro"
+precedent exactly: in Chapter One's list of moralities made by an
+ascendant class, "between planters and negroes" is rendered "between
+planters and the people they enslaved". The Verne rule protects a
+dated CLAIM that is part of the author's subject; Mill's subject there
+is the morality that power produces, and the claim survives entire
+when the noun is replaced by the relationship. MORE explicit, not less
+— the ball/ Leonid precedent. "roturiers" becomes commoners in the
+same list and nothing else moves.
+A DATED WORD IS NOT A DATED CLAIM: Mahomedans and Mussulmans become
+Muslims silently (he uses both interchangeably in one paragraph). But
+inside the Sepoy footnote, where Mill QUOTES an Undersecretary of
+State calling the faith of a hundred million British subjects "the
+superstition which they called religion", the quotation is verbatim,
+because exhibiting it is the argument.
+
+VOICE: Mill is arguing with one reader in mind — an educated, decent,
+liberal Englishman who agrees with him about religious toleration and
+has never once thought about why. Courteous to the point of
+self-effacement, concedes early and often, then does not budge. And
+more ANGRY than his reputation suggests: the 1857 prosecutions, the
+"moral police", the Sabbatarian legislation and the Maine Law are
+written with his temper on a short leash, and that has to survive, as
+do the two or three moments of open contempt ("the pinched and
+hidebound type of human character", "the deep slumber of a decided
+opinion") and the elegiac tone of Chapter Three, which is the most
+beautiful writing in the book and is really about Harriet Taylor.
+Cover: Friedrich's "Wanderer above the Sea of Fog" (1818), Commons
+"File:Caspar David Friedrich - Wanderer above the sea of fog.jpg",
+crop "1986x2980+170+0" — the canvas is 1:1.28, so the 2:3 rectangle is
+centred, keeping the whole figure and the rock he stands on. At 2327
+wide it is under commons_url's 4200 gate and the crop is in the
+ORIGINAL's coordinates.

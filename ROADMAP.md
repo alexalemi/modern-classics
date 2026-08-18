@@ -482,7 +482,10 @@ near-zero archaism):
     Burke, Reflections                  calq 39.7   arch 0.25
     Spinoza, Ethics                     calq 38.6   sent 17.9
     Wollstonecraft, Vindication         calq 35.0   42% over 35
-    Mill, On Liberty                    calq 34.6   44% over 35
+    Mill, On Liberty                    calq 34.6   44% over 35  — DONE,
+      site/mill.html (the hume case again: nothing in it sounds old,
+      and "utility", "sentiment" and "self-regarding" are used with
+      total consistency for 48,000 words)
 
 LEAVE ALONE — clean on every axis, the Jacobs/Ralston/Zitkala-Ša result
 for a third time:
