@@ -302,9 +302,15 @@ def main():
                 head = f"Song {label}: {title}" if title else f"Song {label}"
                 name = f"{idx:03d}.txt"
                 (OUT / name).write_text(head + "\n\n" + "\n".join(lines) + "\n")
+                # "chapter": it is a peer of Book One's CHAPTERS, not of
+                # the five Books. assemble.py nests a section under its
+                # Part divider when the heading reads "Chapter N: ...",
+                # which this one cannot say; without the flag it renders
+                # as a top-level section level with "Book One" itself.
                 manifest.append({"file": name, "title": head, "part": 1,
                                  "of": 1, "words": sum(len(l.split()) for l in lines),
-                                 "part_before": pending, "kind": "song"})
+                                 "part_before": pending, "kind": "song",
+                                 "chapter": True})
                 pending, idx = None, idx + 1
 
         want = COUNTS[b]

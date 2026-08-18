@@ -465,7 +465,8 @@ def build_sections(book, manifest, source="modern_chapters", titles=False):
     for m in manifest:
         if m["part"] == 1:
             groups.append({"entries": [], "part_before": m.get("part_before"),
-                           "split_headings": m.get("split_headings")})
+                           "split_headings": m.get("split_headings"),
+                           "chapter": m.get("chapter")})
         groups[-1]["entries"].append(m)
 
     sections = []
@@ -492,12 +493,20 @@ def build_sections(book, manifest, source="modern_chapters", titles=False):
                                  "part_before": g["part_before"] if k == 1 else None})
             continue
 
+        # A section nests under its Part divider (h3) instead of standing
+        # level with it (h2) when its heading reads "Chapter N: Title".
+        # Some sections belong INSIDE a Part without being able to say so
+        # that way: boethius' Book One opens on Song I, which is a peer of
+        # that Book's chapters and not of the five Books, but is titled
+        # "Song I: ..." and so came out as a top-level section. The
+        # manifest may therefore say `"chapter": true` on a group's first
+        # entry. Additive and opt-in -- no book without the key moves.
         cm = CHAP_LINE.match(heading or "")
         sections.append({
             "id": f"ch-{cm.group(1)}" if cm else slugify(heading or "section"),
             "heading": heading or "(untitled)",
             "body": body,
-            "is_chapter": bool(cm),
+            "is_chapter": bool(cm) or bool(g["chapter"]),
             "part_before": g["part_before"],
         })
     return unique_ids(sections)
