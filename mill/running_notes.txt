@@ -1,0 +1,137 @@
+MILL — RUNNING CONSISTENCY LEDGER
+=================================
+Read text_analysis.txt first. This file is the accumulated decisions;
+anything locked here is locked, and re-glossing a locked term is a
+defect, not a courtesy.
+
+FILE / PART DISCIPLINE — THE quixote TRAP, AND IT IS LIVE HERE
+--------------------------------------------------------------
+NINE OF THE TWELVE FILES ARE CHAPTER PARTS. Check the manifest for
+"of" > 1 BEFORE writing any file. The shape is exactly:
+
+    Chapter Two: On the Liberty of Thought and Discussion
+    (Part 2 of 3)
+
+    <body>
+
+Parts 2 and later NEVER re-introduce the chapter, and non-final parts
+NEVER conclude it. assemble.strip_front drops the first non-blank line
+of EVERY file in a group and takes the heading from part 1 only, so a
+wrong heading in a later part vanishes silently and a missing part
+marker is invisible to verify.py. Nothing catches this but reading the
+manifest first.
+
+Headings, exactly, and never anything else:
+    Epigraph
+    Dedication
+    Chapter One: Introductory
+    Chapter Two: On the Liberty of Thought and Discussion
+    Chapter Three: On Individuality, as One of the Elements of Well-Being
+    Chapter Four: On the Limits of Society's Authority over the Individual
+    Chapter Five: Applications
+WORD-FORM numbers, deliberately: assemble.CHAP_LINE matches only
+"Chapter <digits>:" and would nest these under a Part divider that does
+not exist. Cross-references in the text use the same word form
+("as I argued in Chapter Two"), because the reader has one long page.
+
+MARKUP
+------
+The pipeline is markup-free with ONE exception: *x* and _x_ render as
+<em>. So:
+  - NO asterisks except emphasis. Mill's three section breaks in
+    Chapter Two ride through as "* * *" lines and must be left exactly
+    as they are; they are horizontal rules, not emphasis.
+  - NEVER write an all-caps line: assemble.py reads one as a heading.
+  - A tab indent is a quotation block. Only the Epigraph uses one.
+  - Book titles go in *emphasis*, as the source has them.
+  - The opening asterisk may not follow a word character, so write
+    "can *not*" and never "can*not*" -- the latter ships as literal
+    asterisks and the marker count still balances.
+
+LOCKED VOCABULARY (caps spent, no re-gloss)
+-------------------------------------------
+    utility           -> keep "utility", glossed ONCE in Chapter One as
+                         the greatest-happiness standard. It is the
+                         foundation Mill explicitly stands on and
+                         "usefulness" destroys it.
+    expediency        -> keep; it is utility applied to a case
+    self-regarding    -> KEEP. Mill's own term and the hinge of the
+                         book; gloss once in Chapter One ("the part of
+                         what you do that concerns only yourself") and
+                         then use it plainly.
+    opinion           -> belief / view; "opinion" where it means the
+                         public's settled judgement ("public opinion",
+                         "the tyranny of prevailing opinion")
+    sentiment         -> feeling / attitude. NEVER "sentimentality".
+    interest          -> stake, concern
+    improvement       -> development, progress (Mill's "progressive
+                         being" standard); keep "improvement" where it
+                         is his term of art
+    suffer (v.)       -> allow, let
+    vulgarly          -> commonly, popularly
+    want (n./v.)      -> lack
+    peculiar          -> specific, particular to
+    obtain (rules)    -> hold, are in force
+    the multitude,
+    the mass          -> most people / the majority; NOT "the masses"
+    Custom            -> custom, and keep its personification where
+                         Mill capitalises the argument onto it
+    a civilised
+    community         -> keep "civilised" (British spelling throughout,
+                         from the source; -ise not -ize)
+    prima facie,
+    de jure,
+    odium theologicum -> keep the Latin, italicised, glossed inline
+                         once each in plain words
+    roturier          -> commoner
+    Akbar, Charlemagne, Pooley, Holyoake, Truelove, de Gleichen,
+    Sterling, Humboldt, Comte, Knox, Alcibiades, Pericles, Calvin,
+    the Maine Law, the Sabbatarian legislation -- all kept as printed
+
+SPELLING: British (-ise, "civilised", "recognised", "endeavour"), from
+the Standard Ebooks source. Do not drift into American forms.
+
+SENSITIVE PASSAGES — DECIDED IN ADVANCE, ALL LOGGED
+---------------------------------------------------
+KEPT ENTIRE AND UNHEDGED (the Verne rule), with NO note anywhere in the
+volume: the despotism-and-barbarians exception and "backward states of
+society ... in its nonage" (Chapter One); Mormons and polygamy and
+"a retrograde step in civilisation" (Chapter Four); China as a warning;
+the attack on the Calvinistic theory of human nature; and every
+application in Chapter Five, including his position that a man who
+cannot support children should not be allowed to have them.
+
+ONE CHANGE, and only one, in Chapter One's list of moralities produced
+by an ascendant class: "between planters and negroes" is rendered
+"between planters and the people they enslaved". The Verne rule
+protects a dated CLAIM that is part of the author's subject; Mill's
+subject there is the morality that power produces, and that claim
+survives entire when the noun is replaced by the relationship. It is
+MORE explicit, not less -- the ball/ Leonid precedent and the hume
+"Laplander or Negro" precedent. In the same list "roturiers" becomes
+"commoners". Nothing else in the sentence moves.
+
+RATIO
+-----
+Target 0.90-1.05 per file. EN->EN modernisation runs about 1:1 here:
+unstacking a periodic sentence costs roughly what cutting the
+throat-clearing saves. Verify with --min-ratio 0.85 --max-ratio 1.15.
+A file under 0.85 is summarising -- and Mill's qualifications are not
+padding, they are the argument being careful.
+
+FOOTNOTES
+---------
+Nine, already inlined by prep.py as "Footnote: " paragraphs. Keep the
+prefix exactly, keep them where they are, and translate them in Mill's
+own voice -- they are his. Every name, court and date inside them is a
+fact and is checked mechanically.
+
+CHECKS
+------
+    python3 verify.py mill --min-ratio 0.85 --max-ratio 1.15
+    python3 mill/check.py
+check.py covers what verify.py structurally cannot see: heading and
+part-marker parity against the manifest, emphasis parity against the
+source and that every marker actually RENDERS, the asterism count, a
+counted (not set-difference) numeric diff, and the sweep for archaism
+that should not have survived.
