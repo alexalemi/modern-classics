@@ -48,6 +48,8 @@ import sys
 from collections import Counter
 
 BOOK = pathlib.Path(__file__).resolve().parent
+sys.path.insert(0, str(BOOK.parent))
+import assemble                                              # noqa: E402
 SRC = BOOK / "chapters"
 MOD = BOOK / "modern_chapters"
 
@@ -86,16 +88,27 @@ def verse(text):
 
 
 def marker_report(text, where, out):
+    """Count emphasis markers, and prove every one of them RENDERS.
+
+    MIRROR THE RENDERER, DO NOT APPROXIMATE IT (the epictetus lesson).
+    The first version of this tested only for a space inside the span,
+    which is one of three ways assemble.EMPH refuses a marker -- it also
+    requires the opening delimiter not to follow a word character, so
+    that a figure id ("app_1") and a subscript ("S_n") are safe. That
+    guard means "can*not*" is not emphasis at all, and 028 was written
+    that way and passed: markers balanced, no internal space, correct
+    count against the source. It would have shipped literal asterisks.
+    So ask assemble.EMPH itself, and require that nothing survives it.
+    """
     n = text.count("*")
     if n % 2:
         out.append(f"{where}: ODD number of emphasis markers ({n})")
-    for m in MARKER.finditer(text):
-        inner = m.group(1)
-        if not inner.strip():
-            out.append(f"{where}: empty emphasis marker")
-        elif inner != inner.strip():
-            out.append(f"{where}: marker has a leading/trailing space -- "
-                       f"{inner[:50]!r} will NOT render as <em>")
+    left = assemble.EMPH.sub("", text)
+    if "*" in left:
+        for i, line in enumerate(left.split("\n"), 1):
+            if "*" in line:
+                out.append(f"{where}:{i}: asterisk does NOT render as <em> -- "
+                           f"{line.strip()[:70]!r}")
     return n
 
 
