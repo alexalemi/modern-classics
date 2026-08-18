@@ -498,6 +498,41 @@ FOUR HONEST CAVEATS, because the numbers must not stand alone:
      labelled Church & Brodribb turned out to be the HISTORIES in
      Fyfe's translation. That text is clean; the Annals has not been
      measured. Do not strike Tacitus from Founders' Vol II on this.
+     SETTLED 2026-08-18, AND THE ANSWER IS THAT THE RE-RUN MEASURED THE
+     HISTORIES A SECOND TIME. A re-measurement over the middle 60%
+     returned a row labelled "Tacitus Annals (Church/Brodribb), 67,195
+     words" whose four scores — arch 0.16, calq 18.5, sent 22.5, 15%
+     over 35 — are IDENTICAL ON EVERY AXIS to the Histories row above.
+     Two different texts do not agree to three significant figures on
+     four independent measures. Checked by re-measuring both Gutenberg
+     texts directly (same middle-60% sampling, same archaism probe):
+         #16927 Histories (Fyfe)         arch 0.06  sent 17.5  11%
+         #7959 Reign of Tiberius (Gordon) arch 2.00  sent 46.1  50%
+     The table's row has the Histories' profile and nothing like the
+     Annals'. A LABEL IS NOT A MEASUREMENT, and this is the same defect
+     class as the descartes filename and the duplicated figure ids: a
+     fact carried in two places that quietly disagrees. THE ANNALS IS
+     THEREFORE STILL UNMEASURED. Do not strike Tacitus on this row.
+
+     TWO THINGS THE CHECK TURNED UP.
+     (a) GUTENBERG HAS NO CHURCH & BRODRIBB ANNALS. Searching it for
+         "tacitus annals" returns exactly two books, and neither is
+         theirs: #7959 and a Victorian monograph arguing the Annals is
+         a forgery. So the plan recorded above ("Church & Brodribb as
+         crib") needs a source that has not been found yet — try
+         Standard Ebooks, Wikisource and Perseus, in that order. NOT
+         checked yet, as of this entry.
+     (b) THE TEXT GUTENBERG DOES HAVE IS A CANDIDATE IN ITS OWN RIGHT.
+         #7959 is Thomas Gordon's 1728 translation of the first six
+         books, "The Reign of Tiberius" — 108k words, mean sentence
+         46.1 words, HALF of them over 35. On sentence length alone
+         that is the Burton end of the scale (53 words, 61%), and by
+         this table's own rule — a book is a candidate if it is high on
+         ANY ONE axis — it qualifies comfortably. It is also the same
+         Thomas Gordon whose Cato's Letters this project has already
+         published, which puts it squarely in the Founders' strand.
+         Against it: it is six books of the Annals, not the whole, so
+         it would ship as a selection and would have to say so.
   2. HUME'S NUMBER OVERSTATES HIS BLOCK. The score is real ("one
      considerable advantage, which results from the accurate and
      abstract philosophy, is, its subserviency to the easy and humane")
