@@ -1,0 +1,102 @@
+THE SUBJECTION OF WOMEN — RUNNING CONSISTENCY LEDGER
+====================================================
+Read text_analysis.txt first, and mill/running_notes.txt before that:
+this is the same author and the same pipeline, and every lock recorded
+there still holds unless contradicted here.
+
+FILE / PART DISCIPLINE — THE quixote TRAP, AND IT IS AT MAXIMUM HERE
+---------------------------------------------------------------------
+ALL EIGHT FILES ARE CHAPTER PARTS. Every single one. The shape is
+exactly:
+
+    Chapter Two: What the Law Makes of a Wife
+    (Part 2 of 2)
+
+    <body>
+
+Parts 2 and later NEVER re-introduce the chapter; non-final parts NEVER
+conclude it. assemble.strip_front drops the first non-blank line of
+EVERY file in a group and takes the heading from part 1 only, so a wrong
+heading in a later part vanishes silently and a missing part marker is
+invisible to verify.py. check.py is the only thing that sees either.
+
+Headings, exactly, and never anything else:
+    Chapter One: An Opinion That Has Never Been Put on Trial
+    Chapter Two: What the Law Makes of a Wife
+    Chapter Three: Whether Women Should Be Shut Out of Anything
+    Chapter Four: What Would Be Gained
+WORD-FORM numbers, as in mill/: assemble.CHAP_LINE matches only
+"Chapter <digits>:" and would nest these under a Part divider that does
+not exist. THE TITLES ARE NEW WRITING — the 1869 printing heads each
+chapter with a bare Roman numeral — so they are also the only place in
+the book where a wrong word is invisible to every check. Cross-refer to
+them in word form ("as I argued in Chapter Two").
+
+MARKUP
+------
+Markup-free with ONE exception: *x* and _x_ render as <em>.
+  - NO asterisks except emphasis. The three "* * *" separators ride
+    through as they are; they are horizontal rules, not emphasis.
+  - NEVER write an all-caps line: assemble.py reads one as a heading.
+  - The opening asterisk may not follow a word character, so write
+    "can *not*", never "can*not*" -- the latter ships as literal
+    asterisks with the marker count still balanced.
+
+LOCKED VOCABULARY (caps spent, no re-gloss)
+-------------------------------------------
+    disability,
+    disabilities      -> the LEGAL bar. Render as "legal disability" or
+                         "the bar" / "the disqualification" as the
+                         sentence wants. NEVER anything that could read
+                         as impairment. This is the book's most
+                         dangerous false friend.
+    bondage,
+    bondservant       -> KEEP. Not softened, not metaphorised.
+    slave, master,
+    despotism         -> KEEP. Chapter Two is a legal comparison, not a
+                         figure of speech.
+    subjection,
+    subordination     -> KEEP both; they are not interchangeable for him
+    odalisque         -> KEEP, glossed inside the sentence
+    the generality of -> most of
+    acquirements      -> accomplishments
+    animal strength   -> physical strength
+    condition         -> station, position in life
+    education         -> upbringing, formation (not schooling alone)
+    interested        -> self-interested
+    Hindoo            -> Hindu;  Mahomedan -> Muslim  (dated WORDS)
+    utility, sentiment, self-regarding, suffer (= allow), vulgarly
+                      -> exactly as locked in mill/running_notes.txt
+
+SPELLING: British (-ise, "civilised", "endeavour"), from the Standard
+Ebooks source, as mill/.
+
+SENSITIVE PASSAGES — DECIDED IN ADVANCE
+---------------------------------------
+The Verne rule here mostly protects Mill's RADICALISM. Kept entire and
+unhedged, with no note anywhere in the volume: the sustained
+wife-and-slave legal comparison and both halves of its qualification;
+the husband's legal claim on his wife's body; "no legal slaves, except
+the mistress of every house"; and, on the other side, his Victorian
+confidence about savages, barbarians and the stages of civilisation,
+and his assumption that most wives will still choose the household.
+A DATED WORD IS NOT A DATED CLAIM, and the mill/ ruling governs: where
+a racial noun carries no part of the argument it is replaced by the
+relationship (On Liberty's "planters and the people they enslaved");
+where Mill is arguing ABOUT the institution of slavery, it is named
+plainly.
+
+RATIO
+-----
+Target 0.90-1.05 per file, as mill/ (which landed 0.99). Verify with
+--min-ratio 0.85 --max-ratio 1.15. Under 0.85 is summarising, and Mill's
+qualifications are not padding -- they are the argument being careful.
+
+CHECKS
+------
+    python3 verify.py subjection --min-ratio 0.85 --max-ratio 1.15
+    python3 subjection/check.py
+check.py is mill/check.py: heading and part parity against the manifest,
+emphasis parity against the source AND that every marker renders,
+asterism count, the COUNTED (not set-difference) numeric diff, footnote
+parity, and an archaism sweep.
