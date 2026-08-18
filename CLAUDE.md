@@ -1940,3 +1940,108 @@ commons_url gates on WIDTH > 4200, not on the larger dimension. This
 painting is 3520x4500, so despite exceeding 4000 in HEIGHT it is
 served as the original, and the crop is in the ORIGINAL's coordinates.
 Check which dimension the gate actually tests before assuming.
+
+Boethius' The Consolation of Philosophy (boethius/ — the 57th book;
+H. R. James's 1897 translation from Standard Ebooks, GUTENBERG HAS NO
+USABLE EDITION). Written in 524 in a cell at Pavia by a consul
+condemned without a hearing, and finished shortly before he was
+clubbed to death. All five books, 39 chapters and ALL THIRTY-NINE
+POEMS, 39,364 -> 40,579 words, ratio 1.03 (verify --min-ratio 0.9
+--max-ratio 1.25). It was the most-read book in Europe after the
+Bible; Alfred, Chaucer and Elizabeth I each translated it, and there
+is not one Christian doctrine in it.
+
+THE POEMS ARE HALF THE BOOK AND ARE WHAT ABRIDGEMENTS CUT. Boethius
+alternates prose argument with verse (the Menippean satire form), in
+some twenty-eight different classical quantitative metres, and
+UNRHYMED. THE RHYME IS JAMES'S VICTORIAN ADDITION — so it goes, on
+the nights/ reasoning: we remove the costume the TRANSLATOR put on,
+not the centuries between reader and author. Verse STAYS VERSE, in
+clear modern English with an audible rhythm. Turning a poem into a
+paragraph is this book's silent summarisation. The one metrum James
+himself set unrhymed is Song IX, the "O qui perpetua" hymn, and there
+the work was only unstacking his inversions.
+
+check.py's DECISIVE CHECK IS VERSE INTEGRITY, and it is exact on all
+three of blocks, line count and per-line indent depth — because the
+depth carries James's stanza structure (a stanza opens at depth 2, its
+body sits at depth 1) and nothing else in the toolchain can see it.
+Every song also has to carry its own number, in order. Plus the
+augustine THOU sweep, emphasis parity, a markup sweep and the fleming
+numeric diff. IT FIRED ON MY OWN PROSE TWICE, both times on "behold",
+which is exactly the archaism the rule exists to remove.
+
+A CHECK MUST MIRROR THE RENDERER, NOT APPROXIMATE IT (the epictetus
+lesson, re-learned). marker_report tested an emphasis span only for an
+internal space, which is ONE of the three ways assemble.EMPH refuses a
+marker — it also requires the opening delimiter not to follow a word
+character, the guard that protects "app_1" and "S_n". So "can*not*" is
+not emphasis at all, and file 028 was written that way and passed
+clean: markers balanced, no internal space, count correct against the
+source. It would have shipped literal asterisks. Now the check
+substitutes with assemble.EMPH and requires that no asterisk survives.
+Reintroduce a defect and watch the check fail before believing it.
+
+SHARED, ADDITIVE — A MANIFEST GROUP MAY SAY `"chapter": true`.
+assemble.build_sections nests a section under its Part divider only
+when the heading reads "Chapter N: Title", and some sections belong
+inside a Part without being able to say so that way: Book One opens on
+Song I, a peer of that Book's six chapters and not of the five Books,
+and it rendered as a top-level section level with "Book One" itself.
+Both renderers go through build_sections, so page and epub agree. No
+book without the key moves — re-assembled all 46 and diffed.
+
+TWO GENERIC COLOPHON BUGS, both first hit here and both in shipped
+epubs (rebrand.py):
+  1. HTML's year format is FOUR OR MORE DIGITS, so "<time>524</time>"
+     is invalid and vnu rejects it — killing `se build --check`
+     minutes in, with nothing pointing at the cause. This is the
+     collection's first pre-1000 date. A short year now keeps its
+     semantics through a zero-padded datetime attribute.
+  2. "a oil painting" — the se template hardcodes "a painting
+     completed in" and every medium goes straight into it. Five books
+     say "a oil painting", seven "a engraving", plus "a etching" and
+     "a illustration". Sixteen epubs carry it until rebuilt.
+ALSO: ASSEMBLE THE PAGE **AFTER** BUILDING THE EPUB. assemble.find_epub
+looks for the file on disk, so a page built first ships with no epub
+link and nothing complains. hume.html and augustine.html were both
+shipped that way and were repaired here.
+
+MEASURED AND REJECTED, so it is not re-tried blind:
+build_ebook.classify_block calls an indented block verse only when
+EVERY line is under 65 characters, so the four songs James set as
+fourteeners ship as generic lined matter — `blockquote class="lines"`,
+which has no hanging indent, exactly what a long wrapped line needs.
+Two wider rules were measured over every book. Allowing 120 characters
+moved 1,508 blocks, pillow-problems' formulas and symbolic-logic's
+tables among them. Requiring 4+ lines, no column gap, no "|", no list
+marker and almost no digits moved 98 — nearly all real poetry (72 in
+Burton's Nights, Bunyan's Apology, Seneca's and Cicero's quoted verse)
+but still wrong on Franklin's thirteen virtues and the dialogues' cast
+lists. The same shape as the is_subheading precedents: successive
+blunter rules, each regressing a real book. Left alone; the PAGE is
+correct either way, since <pre> keeps the indentation the epub drops.
+
+VOICE: it opens as self-pity and Philosophy throws the Muses out for
+making the sickness worse, and the book is a cure administered in
+stages — "gentler remedies" first, then the hard ones. Keep the two
+speakers distinct: Boethius complains, argues back, and concedes; she
+is affectionate, brisk and occasionally sarcastic, and never a
+lecturer. The Socratic step-by-step in Books Three and Four is the
+spine and its joints must stay visible (the hume rule: where a
+sentence is already clear, leave it). Book Two's Fortune speaks in her
+own person and is the great set-piece.
+must_contain pins the definition of eternity in the form the
+translation is REQUIRED to use — "the complete and perfect possession
+of endless life all at once", which is what Aquinas takes over whole —
+plus "every fortune is good fortune", the wheel, and Orpheus and
+Eurydice by name. Note what the eternity pin does NOT say: not
+"everlasting", not "for ever". All at once.
+Cover: Burne-Jones' "The Wheel of Fortune" (1883), Commons "File:
+Edward Burne-Jones - The Wheel of Fortune - Google Art Project.jpg",
+crop "2967x4450+0+0" — Fortune with her hand on the wheel and the
+slave, the crowned king and the laurelled poet bound to it. The canvas
+is 1:2, so the 2:3 rectangle comes off the top; at 2967 wide it is
+under commons_url's 4200 gate and the crop is in the ORIGINAL's own
+coordinates. Boethius is the reason that wheel is in every medieval
+manuscript.

@@ -460,11 +460,14 @@ A book is a candidate if it is high on ANY ONE axis. Darwin was accepted
 at an archaism score of 0.09.
 
 BLOCKED BY ARCHAISM (class 1):
-    Augustine, Confessions (Pusey)      arch 35.9   — above Aurelius
+    Augustine, Confessions (Pusey)      arch 35.9   — DONE, site/augustine.html
     Kalevala (Crawford)                 arch 32.4   sent 58.9  60%
     Homer, Iliad (Bryant — the SE text) arch 30.7
     Dante, Divine Comedy (Longfellow)   arch 28.7
-    Boethius, Consolation               arch 23.7   calq 22.9  (both)
+    Boethius, Consolation               arch 23.7   calq 22.9  — DONE,
+      site/boethius.html (James 1897 from Standard Ebooks; all five
+      books and all 39 poems, kept AS poems and unrhymed, since the
+      rhyme is James's addition and Boethius wrote none)
     Homer, Iliad (Lang/Leaf/Myers)      arch 23.5
     Chaucer, Canterbury Tales           arch 23.3   — UNDERSTATED; the
       word list cannot see Middle English spelling, and Chaucer is a
@@ -472,7 +475,10 @@ BLOCKED BY ARCHAISM (class 1):
 
 BLOCKED BY ABSTRACTION (class 3, the Epictetus signature — high calque,
 near-zero archaism):
-    Hume, Enquiry                       calq 49.1   arch 0.47
+    Hume, Enquiry                       calq 49.1   arch 0.47  — DONE,
+      site/hume.html (the purest case of the class: nothing in it
+      sounds old, and "matter of fact" read as the modern idiom
+      destroys the distinction the book is built on)
     Burke, Reflections                  calq 39.7   arch 0.25
     Spinoza, Ethics                     calq 38.6   sent 17.9
     Wollstonecraft, Vindication         calq 35.0   42% over 35
