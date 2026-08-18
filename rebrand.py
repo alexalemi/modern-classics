@@ -222,6 +222,36 @@ def _imprint(dest, env, meta, original=False):
     p.write_text(t)
 
 
+def article(word):
+    """"a" or "an" for the colophon's cover-art credit.
+
+    The `se create-draft` template hardcodes "a painting completed in",
+    and every medium is substituted straight into it -- so five books
+    said "a oil painting", seven "a engraving", and "a etching" and
+    "a illustration" once each. Letter-initial is enough for every
+    medium this collection uses; a medium whose spelling and sound
+    disagree ("a unicorn tapestry") would need naming here.
+    """
+    return "an" if word[:1].lower() in "aeiou" else "a"
+
+
+def year_el(year):
+    """A <time> element for a publication year, or plain text.
+
+    HTML's year format is FOUR OR MORE digits, so `<time>524</time>` is
+    invalid and vnu rejects it -- which killed the boethius build at
+    `se build --check`, several minutes in, with no hint of the cause.
+    A three-digit year keeps its semantics through a zero-padded
+    datetime attribute. Anything not a bare number ("c. 800-1400") has
+    no datetime to give and goes out as text, as it always did.
+    """
+    if not year.isdigit():
+        return esc(year)
+    if len(year) >= 4:
+        return f"<time>{year}</time>"
+    return f'<time datetime="{year.zfill(4)}">{year}</time>'
+
+
 def _colophon(dest, env, meta, original=False):
     p = dest / "src/epub/text/colophon.xhtml"
     t = p.read_text()
@@ -237,8 +267,7 @@ def _colophon(dest, env, meta, original=False):
     # nights/, whose author is Anonymous AND whose DATE is "c. 800-1400".
     # count=1 matters: the cover-art credit below uses the same placeholder.
     t = re.sub(r"was published in <time>YEAR</time>",
-               ("was published in " + esc(env["DATE"])) if not env["DATE"].isdigit()
-               else f"was published in <time>{env['DATE']}</time>",
+               "was published in " + year_el(env["DATE"]),
                t, count=1)
     author_link = (f'<a href="{meta["author_wiki"]}">{esc(env["AUTHOR"])}</a>'
                    if meta.get("author_wiki") else
@@ -272,10 +301,10 @@ def _colophon(dest, env, meta, original=False):
     if art:
         t = t.replace("<i epub:type=\"se:name.visual-art.painting\">PAINTING</i>",
                       f"<i epub:type=\"se:name.visual-art.painting\">{esc(art['painting'])}</i>")
-        year = (f"<time>{art['year']}</time>" if str(art["year"]).isdigit()
-                else esc(str(art["year"])))
+        medium = art.get("medium", "painting")
         t = t.replace("a painting completed in <time>YEAR</time> by",
-                      f"a {art.get('medium', 'painting')} completed in {year} by")
+                      f"{article(medium)} {medium} completed in "
+                      f"{year_el(str(art['year']))} by")
         artist = (f'<a href="{art["artist_wiki"]}">{esc(art["artist"])}</a>'
                   if art.get("artist_wiki") else f'<b epub:type="z3998:personal-name">{esc(art["artist"])}</b>')
         t = t.replace('<a href="COVER_ARTIST_WIKI_URL">COVER_ARTIST_NAME</a>', artist)
