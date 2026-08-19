@@ -83,7 +83,16 @@ THOU = re.compile(
 # Declaration of Right and the Act of Recognition verbatim, and a
 # statute is not ours to modernise: altering the words would misquote a
 # legal text that the whole argument of Section Two turns on.
-THOU_OK = ["doth, under God, wholly depend"]
+# Exemptions are by EXACT PHRASE, never by loosening the sweep (the
+# grimm rule). Every one of these is a VERBATIM QUOTATION -- a statute,
+# scripture, or a poem -- which Burke quotes because the exact words are
+# the point, and which is not ours to modernise.
+THOU_OK = [
+    "doth, under God, wholly depend",       # the Declaration of Right
+    "hath _abdicated_ the government",      # the same statute
+    "whilst 't is changed by",              # Waller, on Cromwell
+    "he that hath little business",         # Ecclesiasticus 38
+]
 
 
 def body_of(path):
