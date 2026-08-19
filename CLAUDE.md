@@ -2168,6 +2168,131 @@ centred, keeping the whole figure and the rock he stands on. At 2327
 wide it is under commons_url's 4200 gate and the crop is in the
 ORIGINAL's coordinates.
 
+Edmund Burke's Reflections on the Revolution in France (burke/ — the
+60th book; 1790, from Gutenberg #15679, the Works vol. III). 22 files,
+13 sections, 97,846 -> 99,967 words, ratio 1.02 (verify --min-ratio
+0.85 --max-ratio 1.3).
+
+THE JUSTIFICATION IS THE hume/mill CASE, class 3 (technical calque):
+archaism 0.25 per 1,000 words — the LOWEST of any book taken on, below
+several struck from the roadmap as too clean — against calque 39.7.
+Nothing in it sounds old. What blocks it is 200-word periodic sentences
+and a vocabulary used with total consistency: "prejudice" is inherited
+judgement and not bigotry, "prescription" is title by long possession,
+"speculation" is theorising, "manners" is the whole moral texture of a
+society. The hume rule governs and hard — HIS FAMOUS SENTENCES ARE
+ALREADY MODERN, and most must_contain pins are pinned UNCHANGED.
+
+STRUCTURE FROM THE AUTHOR, NOT FROM US. Burke wrote one continuous
+letter with no chapters, but he PUNCTUATED it with twelve `* * * * *`
+breaks of his own. prep.py cuts on those, giving 13 sections; the
+titles are new writing (the soap-bubbles/augustine precedent). Four
+sections needed oversize splits, so 22 files.
+
+THE REAL WORK WAS THE SOURCE, AND THE LESSON GENERALISES TO ANY SCAN.
+The translation itself was ordinary; every defect found was of the class
+verify.py structurally cannot see, and most were OCR damage that is
+INDISTINGUISHABLE FROM CONTENT because the result is a real English word
+in a plausible place:
+    "They TOLL the people"  (tell)      "he must HE sensible"   (be)
+    "WORE endowed with"     (were)      "the conquest AXE"      (are)
+    "persons are to MATE good"(make)    "to LENDER them"        (render)
+    "for WHOSO present relief"(whose)   "ministers in PRANCE"   (France)
+    "this new RELIGIONS persecution"    "IFS judicial authority"(its)
+    "HO spent the income"   (He)        "PROM the general style"(From)
+    "those who US TEN"      (listen)
+NONE of these moves the word ratio, the emphasis parity, must_contain or
+the numeric diff. burke/ocr_sweep.py (NEW, REUSE IT) turns each one
+found into one that cannot recur; it REPORTS and never fixes, and it is
+deliberately noisy — two of its findings were CORRECT as printed
+("protect all religions" is the plural noun; "ut bis jam vidimus" is
+Latin for twice), and being made to look is the whole mechanism. IT IS
+NOT A GUARANTEE: three errors in file 017 got past it because its F/P
+pattern had been written around the single word that first produced it.
+
+A COMPUTED TABLE THAT DOES NOT COMPUTE (the fleming rule, again).
+Burke's footnote on the Assembly's charity spending gives every item in
+livres AND sterling with a total for both. Every sterling row is its
+livres figure over exactly 24 except the grain premiums, printed
+235,329 9s 2d where 5,671,907/24 = 236,329 9s 2d — and only with the
+correction does the column reach its own printed total, which as printed
+it misses by exactly £1,000. TWO INDEPENDENT RELATIONS AGREE ON WHICH
+CELL IS WRONG, which is what makes it a correction and not a guess.
+
+FOREIGN QUOTATIONS: KEEP VERBATIM, THEN GLOSS. Burke quotes at length in
+French and Latin because his correspondent read both; his modern reader
+does not, and an untranslated block is a hole in the argument rather
+than a piece of scholarship. The original stands (it is a document, and
+his italics inside it are part of what he is pointing at) and a plain
+English rendering follows, CARRYING NO EMPHASIS MARKERS so parity is
+undisturbed. This is why files 008 and 014 run at 1.15 and 1.08 against
+the book's 1.02 — the extra words ARE the gloss. Scan errors inside a
+quotation are still scan errors and are repaired ("qui OUT déterminé",
+"ON plutôt", "à RÉCRÉER" for recréer, which inverts the sense of the
+sentence the whole footnote exists for): a quotation is protected from
+us, not from its scanner.
+
+check.py (the euclid-rivals per-book pattern) carries the augustine
+thou-sweep, the hume COUNTED numeric diff, footnote parity, and
+emphasis parity asked of assemble.EMPH itself. TWO SIGNED ALLOWANCE
+TABLES, both with the reason written beside each entry, because an
+allowance without one is just a loosened check: EMPH_DELTA (the printer
+sets the pound sign as an italic "l." after the figure — typography, not
+emphasis; and two words of small-capital contrast that become italics)
+and NUM_DROPPED ("Cic. Off. 1. 2." is "l. 2", LIBER 2, with the ell
+scanned as a one).
+THE EMPHASIS PARITY EARNED ITS KEEP TWICE OVER: at file 017 it caught a
+DROPPED TAIL. I read that source with two sed windows ending at line 60
+and the file has 61 — the last being La Tour du Pin's speech to the
+Assembly, which the whole army section is built on. It was simply
+absent, and the ratio came in at 0.98, inside every band. It was caught
+only because the missing paragraph happened to carry three italic spans.
+THE ball/ RULE IS THE FIX: READ THE WHOLE SOURCE FILE, NEVER A LINE
+RANGE.
+
+SENSITIVE CONTENT — THE VERNE RULE THROUGHOUT, NO NOTE ANYWHERE IN THE
+VOLUME, AND ONE EXCEPTION. Kept entire and unhedged: the Marie
+Antoinette passage with its ten thousand swords, which even sympathetic
+contemporaries thought absurd; "learning will be cast into the mire and
+trodden down under the hooves of a swinish multitude", the phrase that
+made him hated for a century and that he never retracted; the whole
+jeering page on Lord George Gordon's conversion to Judaism, offering to
+swap "our Protestant rabbi" for the Archbishop of Paris and pricing the
+ransom in compound interest on the thirty pieces of silver — the ugliest
+thing in the book, and Burke's own argument about who is applauding the
+Revolution; the contempt for the Assembly as country attorneys; and the
+defence of prejudice, prescription and hereditary rank.
+THE ONE EXCEPTION is the mill/ "planters and negroes" precedent exactly:
+"As the colonists rise on you, the negroes rise on them" becomes "the
+people they hold enslaved rise against them". The Verne rule protects a
+dated CLAIM that is part of the author's subject; Burke's subject there
+is the logic of the rights of men running past the men who declared it,
+and the claim survives ENTIRE when the noun is replaced by the
+relationship — MORE explicit, not less (the ball/ Leonid precedent).
+"massacre, torture, hanging! These are your rights of men!" stands.
+
+VOICE: a working politician's prose, and much funnier and angrier than
+its reputation — the Assembly's finance is "paper pills at thirty-four
+millions sterling a dose", their politicians "do not understand their
+trade, and so they sell their tools", and a chapter of constitutional
+arithmetic ends with the three principles held together "like wild
+beasts shut up in a cage to claw and bite each other". Keep the
+periodic sentences' JOINTS visible while unstacking them; the argument
+is cumulative and the subordinate clauses are the argument.
+Cover: Hubert Robert's "The Bastille in the First Days of Its
+Demolition" (1789), Commons "File:The Bastille in the first days of its
+demolition, by Hubert Robert.jpg", crop "1695x2543+620+66" — a 2:3
+slice of a 1.5:1 canvas, taken inside the painted frame and centred on
+the great tower with the demolition crew silhouetted along its parapet.
+Robert was a painter of ruins who was himself jailed in the Terror. The
+crop is in the coordinates of the 4000px RENDITION (the original is
+5162 wide, over commons_url's 4200 gate) — the bunyan/quixote trap.
+NOTE the stale-draft trap bit again and cost a rebuild: `se create-draft`
+keys the build directory on the SLUG, so it is
+build/ebooks/edmund-burke_reflections-on-the-revolution-in-france and
+NOT build/ebooks/burke. `rm -rf build/ebooks/<book-dir>` removes nothing
+and the old metadata ships silently.
+
 Mill's The Subjection of Women (subjection/ — the 59th book; written
 1861, published 1869, from Standard Ebooks). 8 files, 4 chapters,
 44,006 -> 43,483 words, ratio 0.99 (verify --min-ratio 0.85

@@ -479,7 +479,14 @@ near-zero archaism):
       site/hume.html (the purest case of the class: nothing in it
       sounds old, and "matter of fact" read as the modern idiom
       destroys the distinction the book is built on)
-    Burke, Reflections                  calq 39.7   arch 0.25
+    Burke, Reflections                  calq 39.7   arch 0.25  — DONE,
+      site/burke.html. The class-3 diagnosis held, but with a caveat
+      worth carrying to Spinoza and Wollstonecraft: the SOURCE was the
+      obstacle as much as the prose. Gutenberg #15679 is a scan, and it
+      supplied a steady drip of real English words in the wrong place
+      ("toll" for tell, "wore" for were, "mate" for make, "axe" for
+      are) that no mechanical check in this toolchain can see. See
+      burke/ocr_sweep.py. PREFER SE FOR THE REST OF THIS BLOCK.
     Spinoza, Ethics                     calq 38.6   sent 17.9
     Wollstonecraft, Vindication         calq 35.0   42% over 35
     Mill, On Liberty                    calq 34.6   44% over 35  — DONE,
@@ -554,6 +561,6 @@ Burke, Dante, Chaucer, the Kalevala, Wollstonecraft and Homer (Bryant)
 and epictetus/. Prefer SE over Gutenberg: the Wealth of Nations tables
 were recoverable in August 2026 only because the source was SE.
 
-A COVERAGE FACT, stated plainly: all 56 books have male authors (the
+A COVERAGE FACT, stated plainly: all 60 books have male authors (the
 Nights is anonymous). Wollstonecraft measures as blocked on the same
 axis as Darwin and George, and is on SE.

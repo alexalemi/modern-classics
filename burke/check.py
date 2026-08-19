@@ -68,31 +68,77 @@ THOU = re.compile(
     r"whilst|amongst|betwixt|nay|behold|methinks|perchance|oft|"
     r"'tis|thereunto|whereupon|hereunto)\b", re.I)
 
-# EMPTY, AND DELIBERATELY SO. mill/ exempts "thou shalt" by exact
-# phrase because Chapter Two of On Liberty turns on the grammatical form
-# of the commandments. Nothing in this book quotes scripture that way,
-# so there is nothing to exempt -- and an exemption list that is empty
-# because it was checked is worth more than one that is empty by
-# accident. If this ever needs an entry, add the EXACT PHRASE and never
-# loosen the sweep (the grimm rule).
-# EMPTY, and empty because it was checked. Burke quotes scripture and
-# the Book of Common Prayer here and there, but never in a form that
-# needs a thou-family word preserved. If this ever needs an entry, add
-# the EXACT PHRASE and never loosen the sweep (the grimm rule).
-# ONE EXEMPTION, by EXACT PHRASE (the grimm rule). Burke quotes the
-# Declaration of Right and the Act of Recognition verbatim, and a
-# statute is not ours to modernise: altering the words would misquote a
-# legal text that the whole argument of Section Two turns on.
-# Exemptions are by EXACT PHRASE, never by loosening the sweep (the
-# grimm rule). Every one of these is a VERBATIM QUOTATION -- a statute,
-# scripture, or a poem -- which Burke quotes because the exact words are
-# the point, and which is not ours to modernise.
+# Words the archaism sweep would otherwise flag, exempted by EXACT
+# PHRASE and never by loosening the sweep (the grimm rule). This list
+# began empty and grew one entry at a time, each with its reason; the
+# reason is the point, because an exemption without one is just a hole.
 THOU_OK = [
-    "doth, under God, wholly depend",       # the Declaration of Right
-    "hath _abdicated_ the government",      # the same statute
-    "whilst 't is changed by",              # Waller, on Cromwell
-    "he that hath little business",         # Ecclesiasticus 38
+    # Exemptions are by EXACT PHRASE, never by loosening the sweep (the
+    # grimm rule). All but the last are VERBATIM QUOTATIONS -- a statute,
+    # a scripture, a sermon, a poem -- which Burke quotes because the
+    # exact words are the point, and which are not ours to modernise.
+    "doth, under God, wholly depend",        # the Declaration of Right
+    "hath _abdicated_ the government",       # the same statute
+    "whilst 't is changed by",               # Waller, on Cromwell
+    "he that hath little business",          # Ecclesiasticus 38
+    "whilst we are _mocked_",                # Dr Price's sermon
+    "now lettest thou thy servant depart in peace, for mine eyes have "
+    "seen thy salvation",                    # the Nunc dimittis, quoted
+                                             # by Price and by Peters
+    # Section Nine's footnote quotes a Dissenting minister's letter
+    # VERBATIM, in order to dispute the terms it uses -- which is why
+    # Burke italicises them. Modernising a word inside the quotation
+    # would put our English into another man's mouth in the one place
+    # where the exact wording is the thing under argument.
+    "enlightened and liberal amongst the English",
+    # Denham's "Cooper's Hill", quoted at length in a Section Ten
+    # footnote. A poem is not ours to re-metre: "Betwixt their frigid
+    # and our torrid zone" scans on the word, and "between" does not.
+    "Betwixt their frigid and our torrid zone",
+    # The one judgement call. "Never, never more shall we behold..."
+    # stands inside the chivalry passage, which must_contain pins
+    # UNCHANGED because it is the reason the book is still read. "See"
+    # for "behold" is a real modernisation and it wrecks the cadence of
+    # the most famous sentence Burke wrote. The check fired on correct
+    # prose, so the check is what changes (the boethius rule).
+    "never more shall we behold",
 ]
+
+# Numerals in the source that are NOT numbers, per file, with the
+# reason. Same discipline as EMPH_DELTA: subtracted from the source
+# side so the counted diff stays exact everywhere else.
+NUM_DROPPED = {
+    # "Cic. Off. 1. 2." is "Cic. Off. l. 2" -- LIBER 2 -- with the ell
+    # scanned as a one. The citation renders as "Cicero, On Duties, book
+    # 2", so the digit is correctly absent from the translation. This is
+    # the numeric-diff analogue of the ocr_sweep.py findings: a scan
+    # artefact that looks exactly like content.
+    "014.txt": ["1"],
+}
+
+# Deliberate, per-file departures from exact emphasis parity, with the
+# reason. The value is added to the SOURCE count before comparing, so a
+# POSITIVE number means spans the source has and the translation drops,
+# and a NEGATIVE number means spans the translation adds. Everywhere
+# else the check stays exact -- an allowance without a reason written
+# beside it is just a loosened check.
+EMPH_DELTA = {
+    # Burke's printer sets the pound sign as an italic "l." after the
+    # figure: "2,200,000 _l._ sterling". The italics are a typographic
+    # convention for an abbreviation, not emphasis on a word, and the
+    # modern text writes the figure with the £ sign instead. A dated WORD, not
+    # a dated claim -- silently modernised, like Mahomedan -> Muslim in
+    # mill/. Four of them in this file.
+    "011.txt": 4,
+    # Burke's printer sets two words of the arithmetic in Section Eleven
+    # in small capitals for contrast -- "pay one sixth LESS", "will have
+    # three voices MORE" -- which the transcription can only render as
+    # shouting capitals. They are emphasis, and every word they are
+    # contrasted against in those two sentences is already italic, so
+    # they are set as emphasis too. Modernising the TYPOGRAPHY, which is
+    # what the pipeline exists to do; the words are untouched.
+    "016.txt": -2,
+}
 
 
 def body_of(path):
@@ -160,6 +206,7 @@ def main():
         # either kind survives it (the epictetus rule: mirror the
         # renderer, do not approximate it).
         ws = len(assemble.EMPH.findall(strip_ast(src)))
+        ws -= EMPH_DELTA.get(m["file"], 0)
         wm = len(assemble.EMPH.findall(strip_ast(body)))
         if ws != wm:
             out.append(f"{where}: {ws} emphasis span(s) in source, "
@@ -172,7 +219,9 @@ def main():
                            f"NOT render -- {line.strip()[:66]!r}")
 
         # 3 -- numbers, COUNTED
-        lost = Counter(NUM.findall(strip_ast(src))) - Counter(NUM.findall(body))
+        lost = (Counter(NUM.findall(strip_ast(src)))
+                - Counter(NUM_DROPPED.get(m["file"], []))
+                - Counter(NUM.findall(body)))
         if lost:
             out.append(f"{where}: numbers lost: "
                        + ", ".join(sorted(lost.elements())))
