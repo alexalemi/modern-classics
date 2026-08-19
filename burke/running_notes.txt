@@ -1,0 +1,114 @@
+BURKE — RUNNING CONSISTENCY LEDGER
+==================================
+Read text_analysis.txt first.
+
+FILE / PART DISCIPLINE
+----------------------
+Thirteen sections; 13 of the 22 files are section parts. Check the
+manifest for "of" > 1 BEFORE writing any file. The shape is exactly:
+
+    Section Ten: The Church Establishment, and the Seizure of Its Property
+    (Part 2 of 4)
+
+    <body>
+
+Parts 2 and later NEVER re-introduce the section; non-final parts NEVER
+conclude it. assemble.strip_front drops the first non-blank line of
+EVERY file in a group and takes the heading from part 1 only, so a
+wrong heading in a later part vanishes silently and a missing part
+marker is invisible to verify.py.
+
+The thirteen headings are fixed in prep.py's TITLES and must be
+reproduced EXACTLY. Cross-references in the text use the same word form
+("as I said at the beginning of this letter"), never a file number.
+
+MARKUP
+------
+  - _x_ and *x* render as <em>; everything else is convention.
+  - Gutenberg's _italics_ are already correct and mostly need only to be
+    carried across onto the equivalent English word.
+  - A tab indent is a quotation block. Six of them: the Latin verse
+    tags and the long French quotations near the end. Keep them
+    indented and keep their line breaks.
+  - NEVER write an all-caps line: assemble.py reads one as a heading.
+  - The opening delimiter may not follow a word character, so write
+    "can *not*", never "can*not*".
+
+LOCKED VOCABULARY (caps spent, no re-gloss)
+-------------------------------------------
+    prescription      -> keep, glossed once: a right established by
+                         long undisputed use. It is a term of art and
+                         the hinge of his constitutional argument.
+    establishment,
+    established church-> keep
+    the moneyed interest -> keep; gloss once as the holders of
+                         government debt, set against the landed
+    speculation,
+    speculatist       -> theorising, theorist. NEVER financial. Always
+                         carries his contempt.
+    manners           -> manners, in the large sense: the whole texture
+                         of how people behave. Gloss once.
+    policy            -> statecraft, or a settled course of governing
+    corporation       -> a chartered body (guild, college, borough)
+    the people        -> the politically constituted nation, NOT
+                         everybody; where he means everybody he says so
+    economist         -> political economist, and in his mouth a sneer
+    opinion           -> settled public sentiment
+    address (n.)      -> a formal petition
+    suffer            -> allow;  want -> lack;  sensible -> aware
+    pretend,
+    pretension        -> claim
+    discover          -> reveal
+    improve           -> make use of, turn to account
+    condescend        -> stoop graciously (no modern irony)
+    assignat          -> keep; gloss once as the paper money issued on
+                         the security of the confiscated church lands
+    Caisse d'Église   -> keep, glossed
+    the Old Jewry     -> keep: the meeting house where Price preached.
+                         It is a PLACE NAME, not a reference to Jews.
+    Dr Price, the Revolution Society, the Society for Constitutional
+    Information, the National Assembly, the Third Estate, M. Necker,
+    the Bishop of Autun, Bailly, the Bastille -> keep, glossed inline
+    ONCE each, in a clause and never in a bracket.
+
+SPELLING: British (-ise, "civilised", "honour"). The source is an
+American reprint and uses "honor", "favor", "labor"; those go to
+British forms, since the book is a letter written in London.
+
+SENSITIVE PASSAGES — DECIDED IN ADVANCE
+---------------------------------------
+THE VERNE RULE, IN FULL, AND NO EDITOR'S NOTE ANYWHERE IN THE VOLUME.
+Kept entire and unsoftened:
+  - "a swinish multitude". The most notorious phrase he ever wrote,
+    thrown back at him for a century -- radicals published journals
+    called Pig's Meat in reply -- and never retracted. Softening it
+    would delete the reception history of the book.
+  - The contempt for the National Assembly as country attorneys and
+    obscure practitioners raised above their station.
+  - The Marie Antoinette passage entire, ten thousand swords and all,
+    which even sympathetic contemporaries thought absurd.
+  - His partisan and in places inaccurate account of 5-6 October, as
+    HIS account.
+  - The defence of prejudice as a positive good, of prescription, of
+    hereditary rank and of an established church.
+  - His hostility to Dissenters, to "political men of letters", and the
+    references to Jewish financiers in the assignat passages. This is
+    the ugliest thing in the book, it is his, and it stands.
+A note saying that some of this has aged badly would be the wink the
+Verne rule forbids. A reader in 2026 does not need the help.
+
+RATIO
+-----
+Target 0.90-1.05. EN->EN modernisation runs about 1:1: unstacking a
+200-word period costs roughly what cutting the throat-clearing saves.
+Verify with --min-ratio 0.85 --max-ratio 1.15.
+
+CHECKS
+------
+    python3 verify.py burke --min-ratio 0.85 --max-ratio 1.15
+    python3 burke/check.py
+check.py: heading and part parity against the manifest, emphasis parity
+against the source AND that every marker renders, asterism count, the
+COUNTED numeric diff (Burke is dense with dates, decrees and sums of
+livres, which is exactly what it protects), footnote parity, and an
+archaism sweep whose exemption list is empty because it was checked.

@@ -79,7 +79,11 @@ THOU = re.compile(
 # the Book of Common Prayer here and there, but never in a form that
 # needs a thou-family word preserved. If this ever needs an entry, add
 # the EXACT PHRASE and never loosen the sweep (the grimm rule).
-THOU_OK = []
+# ONE EXEMPTION, by EXACT PHRASE (the grimm rule). Burke quotes the
+# Declaration of Right and the Act of Recognition verbatim, and a
+# statute is not ours to modernise: altering the words would misquote a
+# legal text that the whole argument of Section Two turns on.
+THOU_OK = ["doth, under God, wholly depend"]
 
 
 def body_of(path):
@@ -136,15 +140,27 @@ def main():
             out.append(f"{where}: {saster} asterism(s) in source, {aster} kept")
         strip_ast = lambda s: "\n".join(
             "" if ASTERISM.match(l.strip()) else l for l in s.split("\n"))
-        ws, wm = strip_ast(src).count("*"), strip_ast(body).count("*")
+        # BURKE'S ITALICS ARE UNDERSCORES, not asterisks: Gutenberg sets
+        # them as _x_, which assemble.EMPH renders exactly as it renders
+        # *x*. Counting asterisks alone -- which is what the mill/ and
+        # subjection/ versions of this check do, correctly, for a
+        # Standard Ebooks source -- would leave the parity guard blind on
+        # the book that needs it most: 442 spans, and Burke's sarcasm
+        # lives in the italic. Count the SPANS assemble.EMPH actually
+        # matches, on both sides, and then require that no delimiter of
+        # either kind survives it (the epictetus rule: mirror the
+        # renderer, do not approximate it).
+        ws = len(assemble.EMPH.findall(strip_ast(src)))
+        wm = len(assemble.EMPH.findall(strip_ast(body)))
         if ws != wm:
-            out.append(f"{where}: {ws // 2} emphasis span(s) in source, "
-                       f"{wm // 2} in translation")
+            out.append(f"{where}: {ws} emphasis span(s) in source, "
+                       f"{wm} in translation")
         left = assemble.EMPH.sub("", strip_ast(body))
         for i, line in enumerate(left.split("\n"), 1):
-            if "*" in line:
-                out.append(f"{where}:{i}: asterisk does NOT render as <em> -- "
-                           f"{line.strip()[:70]!r}")
+            stray = line.count("*") + line.count("_")
+            if stray:
+                out.append(f"{where}:{i}: {stray} emphasis delimiter(s) do "
+                           f"NOT render -- {line.strip()[:66]!r}")
 
         # 3 -- numbers, COUNTED
         lost = Counter(NUM.findall(strip_ast(src))) - Counter(NUM.findall(body))
