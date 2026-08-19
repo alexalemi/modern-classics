@@ -2167,3 +2167,75 @@ crop "1986x2980+170+0" — the canvas is 1:1.28, so the 2:3 rectangle is
 centred, keeping the whole figure and the rock he stands on. At 2327
 wide it is under commons_url's 4200 gate and the crop is in the
 ORIGINAL's coordinates.
+
+Mill's The Subjection of Women (subjection/ — the 59th book; written
+1861, published 1869, from Standard Ebooks). 8 files, 4 chapters,
+44,006 -> 43,483 words, ratio 0.99 (verify --min-ratio 0.85
+--max-ratio 1.15). READ mill/ FIRST: same author, same decade, same
+pipeline, and every rule there carries over.
+
+EASIER THAN On Liberty IN THE TWO PLACES THAT COST WORK THERE. No
+editorial introduction to separate out, and ALL THREE endnotes are
+Mill's own, so all three inline as "Footnote: ..." with nothing going
+to reference/. The cross-check passed on the FIRST run, because
+prep.py was mill/prep.py with the surviving-predecessor noteref fix
+already in it.
+
+HARDER IN ONE: ALL EIGHT FILES ARE CHAPTER PARTS, so the quixote trap
+is at maximum. And the 1869 printing heads each chapter with a bare
+Roman numeral, so the four titles are NEW WRITING (the soap-bubbles
+and augustine precedent) — which makes them the one place in the book
+where a wrong word is invisible to every mechanical check. They were
+written from each chapter's argument, verified by reading the first
+and last paragraph of each.
+
+THE JUSTIFICATION IS hume/mill CLASS 3 AGAIN, plus a second and
+stronger one. "Disability" is the dangerous false friend and it is
+everywhere: it means a LEGAL BAR, not an impairment. But the better
+case is that this book is far less read than On Liberty and much more
+startling — written fifty years before British women could vote, and
+arguing that the nature of women is simply unknown because it has
+never been observed out of chains. In Victorian prose a reader files
+that as a period document, which is the misreading the retelling
+exists to prevent.
+
+VOCABULARY THAT MUST NOT BE SOFTENED: bondage, bondservant, slave,
+master, despotism. Chapter Two is a point-by-point LEGAL comparison,
+not a figure of speech, and Mill twice says wives are not in general
+TREATED as slaves are — which is exactly what licenses him to insist
+that in law they are worse placed, since a slave has hours off and an
+acknowledged right to refuse his master the last familiarity. KEEP
+BOTH HALVES. Dropping the qualification makes him cruder than he is;
+softening the claim makes him tamer.
+
+TWO DEFECTS I INTRODUCED AND CAUGHT BY READING, both in one file, and
+both of the class no check in this project can see:
+  1. A SILENT EMENDATION. The source says the lord was led to believe
+     his vassals were really SUPERIOR to himself; I wrote "inferior"
+     because it looked like a misprint. It is not: the two branches
+     are a gradation — believing them actually superior, or merely as
+     good as himself — and both are "no merit of his own". Restored.
+     A source oddity is either KEPT or corrected WITH A LOGGED REASON;
+     it is never quietly flipped.
+  2. A DROPPED NEGATION. "values itself upon accidental advantages,
+     NOT of its own achieving" came out without the "not", asserting
+     the opposite. It reads perfectly.
+MEASURED AND REJECTED, so it is not re-tried blind: a per-file
+negation-count check. On known-good files the modern/source ratio runs
+0.96-1.04, and the dropped "not" moved a 91-negation file to 88, ratio
+0.97 — inside the noise, because rewording legitimately moves
+negations about ("cannot" -> "is unable to"). The regex is noisy too:
+an `un\w+` class counts "unfolded" as a negation. There is no
+threshold that separates the defect from the noise. This class is
+caught by reading and by nothing else.
+
+Cover: Emily Mary Osborn's "The Governess" (1860), Commons "File:
+Emily Mary Osborn - The Governess - Google Art Project.jpg", crop
+"3268x4903+0+0" — the governess in plain black standing apart on the
+left, hands clasped, while the mother in scarlet velvet and four
+children occupy the right. The trim comes off the RIGHT because she
+stands hard against the left edge and is the reason for the choice.
+At 4051 wide it is under commons_url's 4200 gate, so the crop is in
+the ORIGINAL's coordinates. Painted by a woman, one year before Mill
+wrote the book, and it is the one occupation Chapter Three says was
+open to an educated woman.
