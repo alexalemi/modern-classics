@@ -1,0 +1,150 @@
+SPINOZA, ETHICS (1677) — TRANSLATION STRATEGY
+=============================================
+Source: R. H. M. Elwes's 1883 translation, Project Gutenberg #3800.
+Standard Ebooks has no Spinoza (checked 2026-08-19), so Gutenberg is
+the source rather than the fallback.
+87,955 words of body text in five Parts.
+
+WHY THIS BOOK NEEDS A RETELLING
+-------------------------------
+It is the hume/mill/burke case — class 3, technical calque — and by the
+screening pass it is the last big one left:
+
+    archaism   0.29 per 1,000 words   (below books struck as too clean)
+    calque    38.6
+    sentences 17.9 mean, only 16% over 35 words
+
+Note what that third line says. Unlike Hume, Mill and Burke, Spinoza's
+sentences are SHORT. Nothing here is a 200-word periodic construction.
+The obstruction is not syntax at all, and a translator who arrives
+expecting to unstack sentences will find nothing to do and will start
+rewriting prose that was already clear — the hume failure mode.
+
+WHAT ACTUALLY BLOCKS THE READER, in order of severity:
+
+1. THE APPARATUS. The Ethics is not prose with headings; it is a
+   machine of numbered parts that cite each other. 259 propositions,
+   each trailing a Proof and often Corollaries, Notes and
+   Explanations; 26 definitions, 15 axioms, 8 postulates, 48
+   Definitions of the Emotions; and 422 parenthetical cross-references
+   binding them together. A reader who cannot follow the citations
+   cannot follow a single proof.
+
+2. THE TECHNICAL VOCABULARY, used with total consistency for 88,000
+   words and almost all of it false friends in modern English:
+       substance     that which is in itself and conceived through
+                     itself — NOT stuff or material
+       mode          a modification of substance; what we would call
+                     a particular thing
+       attribute     what the intellect perceives as constituting the
+                     essence of substance
+       affection     a state or modification (Latin affectio) — NOT
+                     fondness. Elwes footnotes this himself at I.Def.V
+       emotion       affectus, a specific technical term
+       idea          a conception the mind forms, not a notion or
+                     opinion
+       adequate      a technical property of an idea, not "sufficient"
+       perfection    reality; Spinoza says outright they are the same
+       virtue        power to act (virtus) — NOT moral goodness
+       conatus       the striving each thing makes to persist in being
+       blessedness   beatitudo, the book's last word and its goal
+   These are locked in running_notes.txt. Getting "virtue" or
+   "perfection" wrong does not make a sentence obscure; it makes it
+   mean something Spinoza spent a Part disproving.
+
+3. ELWES'S OWN VICTORIAN LAYER, which is thin but real: "whatsoever",
+   "in so far as", "appertain", "owns God as its cause". This is the
+   nights/ distinction — the costume the TRANSLATOR put on, not the
+   author's age, and it goes.
+
+THE REFERENCE RULING (Alex, 2026-08-19): RESOLVE AND NORMALISE
+---------------------------------------------------------------
+The source spells its 422 references in 137 distinct shapes:
+    (II. 7. Coroll.)        (by Prop. iv.)        (by the last Prop.)
+    (II. Def. 4)            (Ax. i.)              (by the foregoing Prop.)
+    (Def. of the Emotions, xiii.)                 (See Pt. i., Prop. xxv.)
+    (by Prop. iv. of this part)                   (I. 25. Coroll.)
+Absolute, implicitly scoped, and RELATIVE, all mixed together.
+
+All of them become one form: arabic numerals, scope always explicit,
+relative references resolved to the number they actually point at.
+
+    (II. 7. Coroll.)            -> (by Part 2, Proposition 7, Corollary)
+    (by Prop. iv.)              -> (by Proposition 4 of this Part)
+    (by the last Prop.)         -> (by Proposition 22 of this Part)
+    (Def. of the Emotions, xiii.) -> (by Definition 13 of the Emotions)
+
+This is the pillow-problems ruling, not the symbolic-logic one: there
+Carroll's words WERE the machine and had to be kept, here the numerals
+are notation and the machine is the reference STRUCTURE, which is
+preserved exactly and in fact made visible for the first time.
+
+AND IT IS INFERENCE, SO IT MUST BE VERIFIED, NOT TRUSTED. Resolution is
+done once, mechanically, in prep.py — not 422 times by hand — and
+check.py asserts that every resolved citation names an item that
+exists, against the inventory below. A reference that silently points
+at the wrong proposition is this book's version of the candle defect: it
+reads perfectly and sends the reader somewhere Spinoza never sent them.
+
+THE VERIFIED INVENTORY (spinoza/structure.py), which every reference is
+checked against. Every count matches the received text:
+    Part  Props  Def  Ax  Post  Emotions
+      1      36    8   7     -         -     Concerning God
+      2      49    7   5     6         -     On the Nature and Origin of
+                                             the Mind
+      3      59    3   -     2        48     On the Origin and Nature of
+                                             the Emotions
+      4      73    8   1*    -         -     Of Human Bondage
+      5      42    -   2     -         -     Of the Power of the
+                                             Understanding
+    * Part 4's single axiom carries no number, so a citation of it has
+      nothing after the abbreviation. max()==0 there is the truth and
+      not a parsing failure.
+
+FOUR SOURCE TRAPS, all found by surveying before writing a line of prep
+-----------------------------------------------------------------------
+1. PART II HAS NO "PART" LINE AT ALL. The five Parts are headed five
+   different ways — "PART I. CONCERNING GOD.", then nothing whatever
+   for Part II except its subtitle "ON THE NATURE AND ORIGIN OF THE
+   MIND", then "PART III.", "PART IV:", "PART V:". A regex anchored on
+   the word PART loses a fifth of the book, and loses it the way the
+   grimm 151* tale was lost: prep never sees the section, so every
+   check that compares prep's output against prep's own manifest
+   agrees with itself and passes.
+2. 233 OF THE 422 REFERENCES BREAK ACROSS A LINE — "(see\nAx. iv.)",
+   "(by the last\nProp.)". Normalise whitespace before matching, or
+   more than half of them are invisible to the resolver.
+3. THE SAME ITEM IS LAID OUT TWO WAYS. Part I numbers a definition with
+   a bare "I."; Part II writes "DEFINITION I." with the word in front.
+   Written against either alone, the inventory reports that the other
+   Part has no definitions — which is exactly what the first run said
+   about Part II.
+4. FOOTNOTE NUMBERING RESTARTS PER PART: 51 marks, 17 distinct numbers.
+   "[1]" is five different notes. Scope the marks to their Part before
+   inlining them (the candle pattern), or a note lands on the wrong
+   sentence and reads perfectly.
+
+VOICE
+-----
+Spinoza is the least rhetorical writer in this collection and the most
+absolute. He is not persuading; he is demonstrating, and the flatness
+is the argument — he says in the Preface to Part III that he will treat
+human passions exactly as if he were dealing with lines, planes and
+solids. That must survive. Do NOT warm him up, do not add connective
+throat-clearing, and do not soften "hence it follows" into "so you can
+see that".
+
+But the Notes are a different voice, and this is the one place the book
+opens up: the Appendix to Part I on final causes, the Preface to Part
+III, the Notes on free will and on the man who believes he chooses. There
+he is polemical, occasionally sardonic, and writing for a reader rather
+than a proof. Keep the two registers apart.
+
+SENSITIVE CONTENT — THE VERNE RULE, no note anywhere in the volume. The
+Appendix to Part I is a sustained attack on providence, miracles and
+scripture read as prophecy, and it is why the Ethics could not be
+published in his lifetime and why he was expelled from his synagogue at
+twenty-three. The identification of God with Nature stands as he wrote
+it. So do the passages on women and on the weak-minded in Part IV and
+the Political Treatise's terms where they surface. None of it is
+softened; all of it is his subject.
