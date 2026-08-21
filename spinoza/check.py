@@ -40,7 +40,14 @@ NUM = re.compile(r"\d[\d,./]*(?<![.,/])")
 # which is the point: what he has is a thin Victorian layer over an
 # argument that is not old, and it all goes.
 ARCHAIC = re.compile(
-    r"\b(thou|thee|thy|thine|hath|hast|doth|dost|art|shalt|wilt|whilst|"
+    # "art" is deliberately NOT in this list, and the reason is the
+    # augustine one: as a verb it is second person singular and
+    # cannot occur without "thou", which the sweep already catches,
+    # so dropping it loses nothing; as a noun it is ordinary modern
+    # English and fires on "so great a work of art". Fix a check by
+    # an argument about what the rule can actually miss, never by
+    # whatever silences it.
+    r"\b(thou|thee|thy|thine|hath|hast|doth|dost|shalt|wilt|whilst|"
     r"whatsoever|whensoever|wheresoever|whereof|wherein|whereby|"
     r"wherefore|herein|thereof|therein|thereto|thereby|hereby|"
     r"appertain|appertains|appertaineth|nought|betwixt|amongst|"
