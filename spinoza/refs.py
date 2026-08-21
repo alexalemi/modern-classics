@@ -303,3 +303,134 @@ def num(tok):
 def inventory():
     """The verified index every reference is validated against."""
     return S.inventory(S.split_parts(S.body()))
+
+
+# ---------------------------------------------------------------------
+# THE HAND TABLE
+# ---------------------------------------------------------------------
+# The 36 references the resolver refuses, each resolved by READING the
+# passage and keyed by (Part, Proposition, exact text). Five of them
+# needed the surrounding proof to settle:
+#   II.11  "by the same Axiom"     -> the "(by II. Ax. iii.)" two clauses back
+#   III.1  "by the same Coroll."   -> the "(II. xl. Coroll.)" just cited
+#   III.16 "by the foregoing Coroll." -> III.15's Corollary
+#   III.51 "by the same Post."     -> the "(II. Post. iii.)" that opens the proof
+#   V.33   "by the same Axiom"     -> the "(V. xxxi. I. Ax. iii.)" before it
+# Most of the rest need good English rather than a number: the physical
+# digression's items are located by position and HAVE no absolute
+# number, the general Definition of the Emotions is unnumbered, and the
+# Prefaces are not numbered at all. Two are not pointers into the
+# Ethics and stand unchanged.
+HAND = {
+    # --- not the Ethics ------------------------------------------------
+    (1, 19, '(in Prop. xix. of my "Principles of the Cartesian Philosophy")'):
+        "(in Proposition 19 of my Principles of the Cartesian Philosophy)",
+    (4, 66, "(Pollock, p. 268, note.)"): "(Pollock, p. 268, note.)",
+
+    # --- resolved by reading the proof ---------------------------------
+    (2, 11, "(by the same Axiom)"): "(by Part 2, Axiom 3)",
+    (3, 1, "(by the same Coroll.)"):
+        "(by Part 2, Proposition 40, Corollary)",
+    (3, 16, "(by the foregoing Corollary)"):
+        "(by Proposition 15 of this Part, Corollary)",
+    (3, 51, "(by the same Post.)"): "(by Part 2, Postulate 3)",
+    (5, 33, "(by the same Axiom)"): "(by Part 1, Axiom 3)",
+    (2, 41, "(in the foregoing note)"):
+        "(in Proposition 40 of this Part, Note 2)",
+    (3, None, "(by the foregoing definition)"):
+        "(by Definition 1 of this Part)",
+    (4, 35, "(by the foregoing Coroll.)"): "(by Corollary 1 above)",
+    (4, 45, "(which I have in Coroll. I. stated to be bad)"):
+        "(which I have in Corollary 1 stated to be bad)",
+
+    # --- Part II's physical digression, located by position ------------
+    (2, 13, "(by the last Def.)"):
+        "(by the Definition before Lemma 4)",
+    (2, 16, "(by Ax. i., after the Coroll. of Lemma iii.)"):
+        "(by Axiom 1, after the Corollary to Lemma 3)",
+    (2, 17, "(Ax. ii., after the Coroll. of Lemma iii.)"):
+        "(Axiom 2, after the Corollary to Lemma 3)",
+    (2, 24, "(Def. after Lemma iii.)"): "(the Definition after Lemma 3)",
+    (2, 24, "(Ax. i., after Lemma iii.)"): "(Axiom 1, after Lemma 3)",
+    (3, 17, "(Ax.i. after Lemma iii. after II. xiii.)"):
+        "(Axiom 1, after Lemma 3, which follows Part 2, Proposition 13)",
+    (3, 51, "(by Ax. i. after Lemma iii. after II. xiii.)"):
+        "(by Axiom 1, after Lemma 3, which follows Part 2, Proposition 13)",
+    (3, 51, "(by the same Axiom)"): "(by that same Axiom 1)",
+    (3, 57, "(which see after Lemma iii. Prop. xiii., Part II.)"):
+        "(which see after Lemma 3, following Part 2, Proposition 13)",
+    (4, 39, "(Def. before Lemma iv. after II. xiii.)"):
+        "(the Definition before Lemma 4, which follows Part 2, "
+        "Proposition 13)",
+    (5, 4, "(II. xii. and Lemma ii. after II. xiii.)"):
+        "(Part 2, Proposition 12, and Lemma 2, which follows Part 2, "
+        "Proposition 13)",
+
+    # --- the general Definition of the Emotions, which has no number ---
+    (4, 7, "(cf. the general Definition of the Emotions at the end of "
+           "Part III.)"):
+        "(compare the general Definition of the Emotions at the end of "
+        "Part 3)",
+    (4, 7, "(by the general definition of the emotions)"):
+        "(by the general Definition of the Emotions)",
+    (4, 7, "(by the general Definition of the Emotions)"):
+        "(by the general Definition of the Emotions)",
+    (4, 14, "(by the general Definition of the Emotions)"):
+        "(by the general Definition of the Emotions)",
+    (5, 3, "(by the general Def. of the Emotions)"):
+        "(by the general Definition of the Emotions)",
+    (5, 4, "(by the general Def. of the Emotions)"):
+        "(by the general Definition of the Emotions)",
+    (5, 17, "(by the general Def. of the Emotions)"):
+        "(by the general Definition of the Emotions)",
+    (5, 34, "(see general Def. of Emotions)"):
+        "(see the general Definition of the Emotions)",
+    (5, 40, "(III. iii. and general Def. of the Emotions)"):
+        "(Part 3, Proposition 3, and the general Definition of the "
+        "Emotions)",
+
+    # --- the Prefaces, which carry no number ---------------------------
+    (4, None, "(Concerning these terms see the foregoing preface towards "
+              "the end.)"):
+        "(Concerning these terms see the Preface to this Part, towards "
+        "the end.)",
+    (4, 39, "(see Preface to this Part towards the end, though the point "
+            "is indeed self--evident)"):
+        "(see the Preface to this Part, towards the end, though the point "
+        "is indeed self-evident)",
+    (4, 59, "(as we pointed out in the preface to Pt. IV.)"):
+        "(as we pointed out in the Preface to Part 4)",
+    (4, 65, "(see preface to this Part)"): "(see the Preface to this Part)",
+
+    # --- a citation INSIDE a clause -----------------------------------
+    # The clause is Spinoza's prose and has to survive, so only the
+    # pointer inside it moves. These cannot go through the resolver at
+    # all: "as I have already shown in Prop. vii." opens with a capital
+    # I, which the case rule reads as Part I.
+    (1, 19, "(as I have already shown in Prop. vii.)"):
+        "(as I have already shown in Proposition 7 of this Part)",
+    (2, None, "(for we proved in Part i., Prop. xvi., that an infinite "
+              "number must follow in an infinite number of ways)"):
+        "(for we proved in Part 1, Proposition 16, that an infinite "
+        "number must follow in an infinite number of ways)",
+    (2, 3, "(what is the same thing, by Prop. xvi., Part i.)"):
+        "(what is the same thing, by Part 1, Proposition 16)",
+    (3, 23, "(as I am about to show in Prop. xxvii.)"):
+        "(as I am about to show in Proposition 27 of this Part)",
+    (3, 28, "(This is clear from II. vii. Coroll. and II. xi. Coroll.)"):
+        "(This is clear from Part 2, Proposition 7, Corollary, and "
+        "Part 2, Proposition 11, Corollary)",
+    (4, 4, "(by the last Prop., the proof of which is universal, and can "
+           "be applied to all individual things)"):
+        "(by Proposition 3 of this Part, the proof of which is universal, "
+        "and can be applied to all individual things)",
+    (4, 16, "(by the last Prop., the proof whereof is of universal "
+            "application)"):
+        "(by Proposition 16 of this Part, the proof whereof is of "
+        "universal application)",
+    (4, 30, "(by the Def., which see in III. xi. note)"):
+        "(by the Definition, which see in Part 3, Proposition 11, Note)",
+    (4, 59, "(as we showed in Pt. II.)"): "(as we showed in Part 2)",
+    (4, 73, "(as we showed in IV. xxxvii. note. ii.)"):
+        "(as we showed in Proposition 37 of this Part, Note 2)",
+}
