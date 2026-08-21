@@ -156,8 +156,8 @@ def resolve_relative(phrase, here_part, here_prop, block):
 TOKEN = re.compile(
     r"(?P<partkw>\b(?:Pt|Part)\b\.?\s*(?P<pnum>[IVXLCivxlc]+|\d+)\b)"
     r"|(?P<emotion>\bDef(?:s)?\b\.?\s*(?:of\s+(?:the\s+)?Emotions?)\b)"
-    r"|(?P<kind>\b(?:Prop|Deff|Def|Axiom|Ax|Post|Lemma)\b\.?)"
-    r"|(?P<coroll>\bCorolls?\b\.?|\bCorollary\b)"
+    r"|(?P<kind>\b(?:[Pp]rop(?:osition)?s?|[Dd]eff|[Dd]ef(?:inition)?s?|[Aa]xioms?|[Aa]x|[Pp]ost(?:ulate)?s?|[Ll]emmas?)\b\.?)"
+    r"|(?P<coroll>\b[Cc]orolls?\b\.?|\b[Cc]orollary\b|\b[Cc]orollaries\b)"
     r"|(?P<note>\bnotes?\b\.?|\bNotes?\b\.?)"
     r"|(?P<expl>\bexplanations?\b|\bExplanations?\b)"
     r"|(?P<upper>\b[IVXLC]+\b)"
@@ -214,8 +214,10 @@ def parse(inner, here_part):
             cur_kind = "Emotion"
         elif g == "kind":
             flush()
-            raw = m.group("kind").strip(".")
-            cur_kind = {"Deff": "Def", "Axiom": "Ax"}.get(raw, raw)
+            raw = m.group("kind").strip(".").rstrip("s").capitalize()
+            cur_kind = {"Deff": "Def", "Definition": "Def",
+                        "Proposition": "Prop", "Axiom": "Ax",
+                        "Postulate": "Post"}.get(raw, raw)
         elif g == "upper":
             v = num(m.group("upper"))
             if v is None:

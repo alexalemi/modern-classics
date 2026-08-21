@@ -19,16 +19,24 @@ REFUSE = [
     (r"\bafter\b.*\bLemma\b|\bLemma\b.*\bafter\b|before Lemma",
      "points into Part II's physical digression, numbered separately"),
     (r"\bpreface\b|\bPreface\b", "cites a Preface, which has no number"),
+    (r"Pollock, p\.",
+     "Elwes's own footnote citing Frederick Pollock's book on Spinoza, "
+     "not a pointer into the Ethics"),
     (r"in Coroll\. [IVXLC]+\. stated",
      "a bare Corollary ordinal inside prose: 'Coroll. I.' here is the "
      "first Corollary of the proposition it sits in, not Part I, and "
      "the case rule cannot tell those apart"),
-    (r"general Def", "the general Definition of the Emotions, unnumbered"),
+    # Elwes sets this one in three cases -- "general Def.", "general
+    # Definition", "general definition" -- so the pattern is
+    # case-insensitive or the lower-case one escapes.
+    (r"(?i)general def", "the general Definition of the Emotions, unnumbered"),
 ]
 # Relative: resolvable only from the citing position, never from the text.
 RELATIVE = re.compile(
-    r"\b(last|foregoing|preceding|first) (Prop|Def|Coroll|Post)|"
-    r"\bthe same (Coroll|Post|Def|Prop|note)|\bthe note to the same\b",
+    r"\b(last|foregoing|preceding|first) (prop|def|coroll|post|ax|lemma|"
+    r"note)|"
+    r"\bthe same (coroll|post|def|prop|note|ax)|"
+    r"\bthe note to the same\b",
     re.I)
 # Prose wrapped round a citation: a clause, not a bare pointer.
 PROSE = re.compile(r"\b(we proved|have already shown|am about to show|"
