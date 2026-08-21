@@ -119,9 +119,10 @@ _PART = r"[IVXLC]+\.\s*"
 # Props. xxi., xxii., xxiii. that the effect is most perfect".
 # Every pattern here spelled the singular, so that citation --
 # three propositions at once -- went through untouched.
-_KIND = (r"(?:Prop(?:osition)?s?|Deff|Def(?:inition)?s?|"
+_KIND = (r"(?:Def(?:inition)?s?\.?\s*of\s+the\s+Emotions?|"
+         r"Prop(?:osition)?s?|Deff|Def(?:inition)?s?|"
          r"Ax(?:iom)?s?|Post(?:ulate)?s?|Corolls?|Corollary|"
-         r"Lemmas?)\b\.?\s*")
+         r"Lemmas?)\b[.,]?\s*")
 # WORD BOUNDARIES. Without them "[ivxlc]+" matches the "i" inside
 # "is", so "This Proposition is evident from the mere definition"
 # came out as "This Proposition 1 of this Parts evident from the

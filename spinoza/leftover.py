@@ -20,8 +20,9 @@ LEFT = re.compile(
     # "Lemma\\b" does not match inside "Lemmas", so the one check
     # meant to catch surviving roman numerals was blind to exactly
     # the form that survived.
-    r"\b(?:Props?|Deff|Defs?|Axs?|Axioms?|Posts?|Corolls?|"
-    r"Corollary|Corollaries|Lemmas?|Notes?)\b\.?\s*"
+    r"\b(?:Def(?:inition)?s?\.?\s*of\s+the\s+Emotions?|"
+    r"Props?|Deff|Defs?|Axs?|Axioms?|Posts?|Corolls?|"
+    r"Corollary|Corollaries|Lemmas?|Notes?)\b[.,]?\s*"
     r"\b[ivxlc]+\b\.?")
 # A bare Part.Proposition pair outside parentheses: "II. xiii."
 BARE = re.compile(r"(?<![(\w])\b[IVXLC]+\.\s*[ivxlc]+\.")

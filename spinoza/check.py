@@ -58,6 +58,11 @@ ARCHAIC_OK = [
     # in this wording and the archaism is doing the work; everywhere
     # else "whatsoever" goes.
     "Whatsoever is, is in God",
+    # Elwes's footnote on Land's text glosses the Latin 'quo' as
+    # 'whereby'. That is what the word means, and the note is
+    # about which reading of the Latin to adopt; modernising it
+    # would destroy the gloss.
+    "'quo' (= whereby)",
 ]
 
 
