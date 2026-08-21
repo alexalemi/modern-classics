@@ -70,6 +70,14 @@ def resolve_all(part, text, inv, used, unresolved):
                 if good:
                     lead = R.LEAD.match(raw[1:-1].strip())
                     word = lead.group(0).strip().lower() if lead else ""
+                    # "cf." is a Latin abbreviation, not part of the
+                    # reference, and it is exactly the kind of thing this
+                    # edition modernises. Doing it HERE rather than in the
+                    # translation keeps both sides of the citation-parity
+                    # check identical -- the alternative is a translator
+                    # writing "compare" and being told they invented a
+                    # citation.
+                    word = {"cf.": "compare", "cf": "compare"}.get(word, word)
                     body = "; ".join(r.render(part) for r in parsed)
                     if PROSE.search(raw):
                         # A CITATION INSIDE A CLAUSE. The clause is
@@ -170,9 +178,15 @@ def resolve_bare(part, text, inv):
         # consuming the whole span took the full stop with it, welding
         # two sentences together. Restore it when what follows starts a
         # new sentence or ends the paragraph.
-        after = text[m.end():m.end() + 4]
-        nxt = after.lstrip()[:1]
-        if span.rstrip().endswith(".") and (not nxt or nxt.isupper()):
+        # THE PRONOUN "I" IS NOT A SENTENCE OPENING. "In the note to II.
+        # xvii. I explained how error consists..." runs straight on, and
+        # reading the capital as the start of a new sentence put a full
+        # stop in the middle of it. Require a capitalised WORD, not
+        # merely a capital letter.
+        after = text[m.end():m.end() + 10]
+        nxt = after.lstrip()
+        starts = bool(re.match(r"[A-Z][a-z]", nxt)) or not nxt.strip()
+        if span.rstrip().endswith(".") and starts:
             out += "."
         return out + trail
 
