@@ -140,6 +140,19 @@ def inventory(parts):
             inv[n][kind] = max(nums) if nums else UNNUMBERED.get((n, kind), 0)
             if (n, kind) in UNNUMBERED:
                 inv[n][kind + "_unnumbered"] = True
+        # PART II'S PHYSICAL DIGRESSION. Between Prop. XIII and Prop.
+        # XIV Spinoza inserts 2,149 words of physics with SEVEN LEMMAS
+        # of its own, plus Axioms and Postulates nested inside it. The
+        # Lemmas are cited directly and by number from Parts II, III
+        # and V, so they belong in the inventory. The digression's own
+        # Axioms do NOT: they are numbered relative to a Lemma ("Ax. i.
+        # after Lemma iii."), which is a position and not a number, and
+        # those citations are refused rather than guessed.
+        lem = [unroman(m.group(1)) for m in
+               re.finditer(r"^\s*LEMMA\s+([IVXLC]+)", text, re.M)]
+        if lem:
+            inv[n]["Lemma"] = max(x for x in lem if x)
+
         # Part III's Definitions of the Emotions are cited from Parts
         # III, IV and V and are numbered in their own series.
         m = re.search(r"DEFINITIONS? OF THE EMOTIONS", text)
