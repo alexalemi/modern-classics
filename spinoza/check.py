@@ -46,7 +46,12 @@ ARCHAIC = re.compile(
     r"appertain|appertains|appertaineth|nought|betwixt|amongst|"
     r"unto|ere|oft|sundry|divers)\b", re.I)
 # Exemptions by EXACT PHRASE, never by loosening the sweep (grimm rule).
-ARCHAIC_OK = []
+ARCHAIC_OK = [
+    # Part 1, Proposition 15, pinned in must_contain. The line is famous
+    # in this wording and the archaism is doing the work; everywhere
+    # else "whatsoever" goes.
+    "Whatsoever is, is in God",
+]
 
 
 def cites(text):
@@ -54,9 +59,28 @@ def cites(text):
                                for c in CITE.findall(text))
 
 
+# AN ENUMERATOR IS NOT A MEASURED VALUE, and Elwes sets them four
+# ways: at the head of a paragraph, after a colon and one space,
+# after a colon and two, after a colon and a dash, and simply after
+# the previous sentence's full stop ('...Corollary).  2. That God
+# cannot properly be styled...'). Each form missed left its digit
+# counted as though a quantity had gone missing from the
+# translation. The trailing capital is what distinguishes an
+# enumerated clause from a figure that happens to end a sentence.
+ENUM = re.compile("(?:^|\\n|:[\\s\u2014-]+|(?<=[.)])\\s+)"
+                  "\\d+\\.(?=\\s+[A-Z])")
+
+
 def numbers(text):
-    """Counted, not a set: a set cannot see a dropped duplicate (hume)."""
-    return collections.Counter(NUM.findall(re.sub(CITE, " ", text)))
+    """Counted, not a set: a set cannot see a dropped duplicate (hume).
+
+    Enumerators are removed first. "Corollary 1. It follows: 1. That
+    there can be no cause..." restates its own number, and writing that
+    as "It follows, first, that" is a rendering decision, not a lost
+    value. What this check is for is a measured quantity going missing.
+    """
+    text = ENUM.sub(" ", re.sub(CITE, " ", text))
+    return collections.Counter(NUM.findall(text))
 
 
 def main():

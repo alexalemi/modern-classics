@@ -113,13 +113,32 @@ def resolve_bare(part, text, inv):
     def one(m):
         span = m.group(0)
         trail = ""
-        # never swallow the sentence's own closing punctuation
         while span and span[-1] in " ,":
             trail, span = span[-1] + trail, span[:-1]
         parsed, ok = R.parse(span, part)
         if not ok or not all(r.valid(inv, part) for r in parsed):
             return m.group(0)
-        return "; ".join(r.render(part) for r in parsed) + trail
+
+        # THESE READ AS PROSE, not as an aside, so they are joined the
+        # way a sentence joins things. A parenthetical can get away with
+        # semicolons; "clear from Definition 3 of this Part; Definition
+        # 5 of this Part" cannot.
+        bits = [r.render(part) for r in parsed]
+        if len(bits) > 1:
+            out = ", ".join(bits[:-1]) + " and " + bits[-1]
+        else:
+            out = bits[0]
+
+        # THE CITATION'S LAST PERIOD IS ALSO THE SENTENCE'S. "clear from
+        # Deff. iii. and v." ends with the period belonging to "v.", and
+        # consuming the whole span took the full stop with it, welding
+        # two sentences together. Restore it when what follows starts a
+        # new sentence or ends the paragraph.
+        after = text[m.end():m.end() + 4]
+        nxt = after.lstrip()[:1]
+        if span.rstrip().endswith(".") and (not nxt or nxt.isupper()):
+            out += "."
+        return out + trail
 
     out, last = [], 0
     for m in BARE.finditer(text):
