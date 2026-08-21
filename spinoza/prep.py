@@ -522,21 +522,25 @@ def main():
             groups.append(cur)
 
         for k, g in enumerate(groups, 1):
-            # The collapse is applied HERE, at the write, because
-            # neither resolver produces a doubled "of this Part"
-            # in isolation and yet one reaches the files. Applying
-            # it where the bytes are written is unconditional, and
-            # the substitution is idempotent: this pipeline
-            # generates the phrase and it never doubles
-            # legitimately.
+            # EVERY FILE IS ITS OWN SECTION AND MUST OPEN WITH ITS
+            # HEADING. assemble.strip_front takes the first non-blank
+            # line of a file as that section's heading and drops it, so
+            # a file opening on content silently loses its first line.
+            # And "part"/"of" mean which piece of a SPLIT CHAPTER a file
+            # is; using them for "which file within a Part" made
+            # build_ebook stitch each Part back into one monolithic
+            # chapter, so the epub's contents listed five entries for a
+            # book with seventeen sections. Both renderers read the
+            # manifest the same way, so the page had the same defect.
+            title = section_title(g, n, k, len(groups),
+                                  heads_at.get(k - 1))
             body = re.sub(r"(of this Part)(\s+of this [Pp]art)+",
                           r"\1", "\n\n".join(g))
-            (OUT / f"{idx:03d}.txt").write_text(body + "\n")
+            (OUT / f"{idx:03d}.txt").write_text(
+                title + "\n\n" + body + "\n")
             PART_OF[f"{idx:03d}.txt"] = n
-            e = {"file": f"{idx:03d}.txt",
-                 "title": section_title(g, n, k, len(groups),
-                                        heads_at.get(k - 1)),
-                 "part": k, "of": len(groups), "chapter": True}
+            e = {"file": f"{idx:03d}.txt", "title": title,
+                 "part": 1, "of": 1, "chapter": True}
             if k == 1:
                 e["part_before"] = (f"Part {PART_WORD[n]}: "
                                     f"{S.PART_TITLES[n]}")

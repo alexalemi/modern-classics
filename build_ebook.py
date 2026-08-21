@@ -126,9 +126,32 @@ def parse_heading(raw):
         ordinal = ordinal.upper()
     if label and not ordinal and title.lower() in NUMBER_WORDS:
         ordinal, title = NUMBER_WORDS[title.lower()], ""
+    if label and not ordinal and ":" in title:
+        # THE THIRD ORDINAL FORM, and the one this collection actually
+        # uses for part dividers: a WORD ordinal followed by a colon and
+        # its own title ("Part One: Concerning God"). HEADING catches the
+        # roman ("Part I: Of Man") and the bare word ("Part One"); here
+        # the colon hides the ordinal inside the title group, so it has
+        # to be split off. Without this the divider renders as "Part 1"
+        # with the real name demoted to a bridgehead reading
+        # "One: Concerning God" -- which is what boethius and bunyan
+        # shipped.
+        head, rest = title.split(":", 1)
+        if head.strip().lower() in NUMBER_WORDS:
+            ordinal = NUMBER_WORDS[head.strip().lower()]
+            title = nice_title(rest)
     if not label and not ordinal:
         title = nice_title(raw.strip().lstrip("# ").rstrip(".,;"))
     return label, ordinal, title
+
+
+def roman(n):
+    """1 -> 'I'. Part dividers are typed z3998:roman, so they must be."""
+    out, n = "", int(n)
+    for v, sym in ((10, "X"), (9, "IX"), (5, "V"), (4, "IV"), (1, "I")):
+        while n >= v:
+            out, n = out + sym, n - v
+    return out
 
 
 def load_sections(book, original=False):
@@ -390,16 +413,20 @@ def build_chapter_files(book, sections, meta, textdir):
         if s["part_before"]:
             part_no += 1
             plabel, pord, ptitle = parse_heading(s["part_before"])
+            # The span is typed z3998:roman, so an arabic ordinal has to
+            # be converted or `se lint` raises s-026 on every part file.
+            part_ord = pord or str(part_no)
+            part_ord = part_ord.upper() if part_ord.isalpha() else roman(part_ord)
             part_id = f"part-{part_no}"
             fname = f"{part_id}.xhtml"
             h2 = (f'\t\t\t<h2>\n\t\t\t\t<span epub:type="se:label">{plabel or "Part"}</span>\n'
-                  f'\t\t\t\t<span epub:type="z3998:ordinal z3998:roman">{pord or part_no}</span>\n\t\t\t</h2>')
+                  f'\t\t\t\t<span epub:type="z3998:ordinal z3998:roman">{part_ord}</span>\n\t\t\t</h2>')
             if ptitle:
                 body_part = ("\t\t\t<header>\n" + h2.replace("\t\t\t<h2>", "\t\t\t\t<h2>").replace("\n\t\t\t\t<span", "\n\t\t\t\t\t<span").replace("\n\t\t\t</h2>", "\n\t\t\t\t</h2>")
                              + f'\n\t\t\t\t<p epub:type="se:bridgehead">{esc(ptitle)}</p>\n\t\t\t</header>\n')
             else:
                 body_part = h2 + "\n"
-            xml = (XHTML_HEAD.format(title=f"{plabel or 'Part'} {pord or part_no}", fic=fic)
+            xml = (XHTML_HEAD.format(title=f"{plabel or 'Part'} {part_ord}", fic=fic)
                    + f'\t\t<section id="{part_id}" epub:type="part">\n'
                    + body_part + "\t\t</section>\n\t</body>\n</html>\n")
             (textdir / fname).write_text(xml)

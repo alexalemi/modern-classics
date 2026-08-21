@@ -487,7 +487,17 @@ near-zero archaism):
       ("toll" for tell, "wore" for were, "mate" for make, "axe" for
       are) that no mechanical check in this toolchain can see. See
       burke/ocr_sweep.py. PREFER SE FOR THE REST OF THIS BLOCK.
-    Spinoza, Ethics                     calq 38.6   sent 17.9
+    Spinoza, Ethics                     calq 38.6   sent 17.9  — DONE,
+      site/spinoza.html. The class-3 diagnosis held, and the SENTENCES
+      were the easy half: at 17.9 words they are the shortest of any
+      book taken on, and the hume rule ("if a sentence is already
+      clear, leave it alone") governed throughout. What actually
+      blocked the book was neither vocabulary nor syntax but the
+      APPARATUS — 1,084 cross-references in 137 different shapes,
+      "(II. vii. Coroll.)" and "(by the last Prop.)", which a reader
+      cannot follow without counting on their fingers. Resolving them
+      is the edition's one real contribution and it is a class of work
+      no earlier book here needed. See spinoza/refs.py.
     Wollstonecraft, Vindication         calq 35.0   42% over 35
     Mill, On Liberty                    calq 34.6   44% over 35  — DONE,
       site/mill.html (the hume case again: nothing in it sounds old,

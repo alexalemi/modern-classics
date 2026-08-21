@@ -2364,3 +2364,133 @@ At 4051 wide it is under commons_url's 4200 gate, so the crop is in
 the ORIGINAL's coordinates. Painted by a woman, one year before Mill
 wrote the book, and it is the one occupation Chapter Three says was
 open to an educated woman.
+
+Baruch Spinoza's Ethics (spinoza/ — the 61st book; Elwes' 1883
+translation from Standard Ebooks). All five Parts, 17 files, 91,300 ->
+87,619 words, ratio 0.96 (verify --min-ratio 0.85 --max-ratio 1.15).
+Published the year he died, and on the Index within four.
+
+THE JUSTIFICATION IS hume/mill/burke CLASS 3 (technical calque):
+archaism 0.29 per 1,000 words against calque 38.6. But the SENTENCES
+are the shortest of any book taken on — mean 17.9 words, only 16% over
+35 — so the hume rule governs harder here than anywhere: IF A SENTENCE
+IS ALREADY CLEAR, LEAVE IT ALONE. A file in which every sentence has
+been rewritten has been damaged. The blockers are a small locked
+vocabulary used with total consistency (substance, attribute, mode,
+affection, conatus/endeavour, adequate idea) and the false friends
+around it — "affection" is a modification and not fondness, "passion"
+is being acted on, "idea" is not a notion in a head, "perfection" is
+reality.
+
+THE REAL WORK WAS NEITHER VOCABULARY NOR SYNTAX BUT THE APPARATUS, and
+this is a class of work no earlier book here has needed. The Ethics is
+bound together by 1,084 cross-references and Elwes prints them as
+Spinoza's contemporaries did — "(II. vii. Coroll.)", "(by the last
+Prop.)", "(by the Coroll. of the preceding Prop.)" — IN A HUNDRED AND
+THIRTY-SEVEN DISTINCT SHAPES. ALEX'S RULING: RESOLVE AND NORMALISE.
+Every one is written out in full and in one canonical form, arabic,
+with the scope always explicit ("Part 3, Proposition 9, Note";
+"Proposition 22 of this Part, Corollary"). A reader can now follow a
+proof without counting on their fingers, and it is the edition's one
+real contribution. See spinoza/refs.py, and the toolkit around it
+(triage/refcheck/gap/leftover/refused, plus test_refs.py).
+
+FOUR LESSONS FROM THE RESOLVER, all of them general:
+  1. A RELATIVE REFERENCE INSIDE A COROLLARY POINTS AT N, NOT N-1
+     (Alex's ruling). A Corollary is drawn FROM the proposition it
+     hangs on, and that proposition is what a reader looking up the
+     page finds first. Same for a Note and an Explanation.
+  2. I COUNTED THE REFERENCES WRONG FOUR TIMES — 430, then 598, then
+     1,027, then 1,075, then +114 unparenthesised — AND EVERY COUNT
+     AGREED WITH EVERY OTHER COUNT, because all of them derived from
+     one blind regex. A number confirmed by the tool that produced it
+     is not confirmed. What fixed it was asking DIFFERENT questions:
+     what falls in the gaps between matches (gap.py), what tokens are
+     left over (leftover.py), what the resolver REFUSED (refused.py),
+     and reading the prepared text.
+  3. WHITESPACE MAY CROSS A NEWLINE BUT NEVER A BLANK LINE. A `\s*`
+     in a citation's tail ate the paragraph break and DELETED Part
+     III Proposition 27's second Corollary. Two narrower fixes were
+     wrong before the rule came out right:
+     `_WS = r"(?:[ \t]|\n(?![ \t]*\n))*"`. Reuse it.
+  4. `[ivxlc]+` WITHOUT WORD BOUNDARIES MATCHES THE "i" IN "is", which
+     produced "This Proposition 1 of this Parts evident". Roman
+     numerals always need `\b`.
+
+check.py's DECISIVE CHECK IS CITATION PARITY: every citation in a
+modern file, parsed back into its (part, kind, number) triple and
+compared as a multiset against the prepared source. Nothing else can
+see a citation quietly reworded, and I did it — plus moving a
+parenthesis boundary and writing word-form Part numbers where the
+source had digits. Plus proposition sequence, Q.E.D. parity, the
+augustine thou-sweep, emphasis parity via assemble.EMPH itself, and
+the hume COUNTED numeric diff (with the four enumerator forms stripped,
+or every numbered list item fires).
+A CHECK AND A CONVENTION MUST NOT PULL OPPOSITE WAYS. "whereof" inside
+a citation was demanded by citation parity and forbidden by the
+archaism sweep; the fix is to modernise it IN prep, so both sides agree
+about what the source says (same precedent as cf. -> compare).
+
+SHARED FIX — parse_heading MISSED THE THIRD ORDINAL FORM. It knew the
+roman ("Part I: Of Man") and the bare word ("Part Two"), but not A WORD
+ORDINAL FOLLOWED BY A COLON AND ITS OWN TITLE, which is what this
+collection actually writes. So "Part One: Concerning God" came back
+with NO ordinal, and build_ebook fell back on the sequence number:
+every part divider in the epub read "Part 1" with the real name demoted
+to a bridgehead reading "One: Concerning God". boethius, bunyan and
+wealth-of-nations shipped that way and nothing had ever looked. The
+same heading also fed a span typed z3998:roman an arabic digit, which
+is the s-026 [Manual Review] item on every part file — now converted.
+NOTHING IN THE TOOLCHAIN CHECKS EPUB PART HEADINGS; this was found by
+reading the built XHTML, which is worth doing once per illustrated or
+multi-part book.
+
+THE MANIFEST TRAP THAT PRODUCED IT: "part"/"of" mean WHICH PIECE OF A
+SPLIT CHAPTER, not which Part of the book. Writing "part": k, "of": 5
+stitched each Part into one monolithic chapter — 17 sections collapsed
+to 5, one of them 22,819 words — and the page and epub both agreed with
+each other, so only the ToC's length gave it away. Each file is its own
+section: "part": 1, "of": 1, "chapter": true, with "part_before" on the
+first file of each Part.
+AND EVERY FILE MUST OPEN WITH ITS HEADING LINE, because
+assemble.strip_front takes the first non-blank line as the section
+heading and drops it. The translations were written before prep wrote
+headings into chapters/, so a retitle pass was needed (spinoza/
+retitle.py, idempotent).
+
+SECTION TITLES ARE NEW WRITING and are deliberately mechanical
+("Propositions 18 to 36", "Definitions of the Emotions"), because the
+Ethics has no chapters and any interpretive title would put a claim in
+Spinoza's mouth about what a run of propositions is FOR. Same reasoning
+as augustine, opposite decision, and the reason is the geometrical
+form: the reader is meant to find Proposition 36, not a theme.
+
+VOICE: the flattest prose in the collection, and that is the point —
+forty-eight emotions are defined in order, hatred and jealousy and
+ambition among them, with no more moralising than a geometer gives a
+triangle. Do not warm it up. The exceptions are the four Prefaces and
+the Appendix to Part One, where he drops the geometry and is suddenly
+savage about final causes and the men who take refuge in "the will of
+God, that sanctuary of ignorance"; those need real work and carry the
+book's heat. THE PINS WERE WRITTEN FROM THE PREPARED TEXT, NOT FROM
+MEMORY (the epictetus rule), and one of them is why that rule exists:
+"God or Nature" was about to be pinned "God, or Nature", with a comma
+Elwes does not use, and no correct translation could ever have
+satisfied it. Also pinned: the parallelism doctrine, "a kingdom within
+a kingdom", "Blessedness is not the reward of virtue, but virtue
+itself", and the last sentence of the book.
+THE VERNE RULE, no note anywhere in the volume: the identification of
+God with Nature, the denial of free will and of final causes, the
+reading of Genesis in Part 4 Proposition 68 as a story Moses used to
+signify something else; "womanish pity" as the thing reason is set
+against; the contempt for what "the vulgar" believe; and the jealousy
+passage of Part 3, explicit about the body in a way Elwes is not prim
+about and neither is this edition.
+Cover: Vermeer's "The Astronomer" (1668), Commons "File:Johannes
+Vermeer - The Astronomer - 1668.jpg", crop "2908x4363+240+0" — a man
+alone at a table with his hand on a celestial globe, painted in the
+Dutch Republic in the year Spinoza was writing. The Commons original
+is over commons_url's 4200 gate, so what arrives is the 3840px
+rendition and the crop is in ITS coordinates (the bunyan/quixote
+trap); the cached build/covers/spinoza.jpg is 3840x4363, which is how
+to tell which case you are in.
