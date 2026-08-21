@@ -45,6 +45,12 @@ _KIND_RE = re.compile(rf"\b(?:{KINDS})\b")
 _NUM_RE = re.compile(NUMERAL)
 _REL_RE = re.compile(RELMARK, re.I)
 _PAREN = re.compile(r"\([^()]{0,200}\)")
+_LEADW = re.compile(r"^(?:by|see|cf\.?|in|from|and)\s+", re.I)
+# Numerals and separators only: "(II. xi.)", "(I. xxv. and xxvi.)",
+# "(IV. xxxvii., xlvi.)". Nothing but roman or arabic numerals,
+# periods, commas, semicolons and the word "and".
+_BARE = re.compile(r"(?:[IVXLC]+|[ivxlc]+|\d+)"
+                   r"(?:[.,;]|\s|\band\b|[IVXLCivxlc]|\d)*")
 
 
 class _Cite:
@@ -53,6 +59,16 @@ class _Cite:
 
     @staticmethod
     def _is_cite(s):
+        # THE COMMONEST FORM OF ALL CARRIES NO KIND WORD. Spinoza's
+        # ordinary citation is a bare "(II. xi.)" -- Part 2,
+        # Proposition 11 -- and there are 429 of them. Requiring a kind
+        # word beside the numeral, which is what caught the lower-case
+        # "note" problem, still could not see any of these: there is no
+        # word in them at all. Case alone carries the meaning, upper
+        # roman for the Part and lower roman for the Proposition.
+        inner = _LEADW.sub("", s[1:-1].strip())
+        if _BARE.fullmatch(inner):
+            return True
         if not _KIND_RE.search(s):
             return False
         return bool(_NUM_RE.search(s) or _REL_RE.search(s))

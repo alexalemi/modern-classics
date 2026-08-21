@@ -31,6 +31,10 @@ CASES = [
     ("IV. Ax.", 4, "the Axiom of this Part"),
     ("as we showed in Pt. II.", 4, "Part 2"),
     ("Lemma iii.", 2, "Lemma 3 of this Part"),
+    # "and" detaches the numeral from the open qualifier: this is
+    # Proposition 6's Corollary AND Proposition 7, not "Corollary 7".
+    ("II. vi. Coroll. and vii.", 2,
+     "Proposition 6 of this Part, Corollary; Proposition 7 of this Part"),
 ]
 
 

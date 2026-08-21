@@ -187,6 +187,7 @@ def parse(inner, here_part):
     refs, cur_part, cur_kind, pending = [], None, None, None
     lead = []          # qualifiers seen before any target
     parts_seen = []    # every Part named anywhere in the parenthesis
+    prev_end = 0       # end of the previous token, to read the gap
 
     def flush():
         nonlocal pending
@@ -205,6 +206,21 @@ def parse(inner, here_part):
 
     for m in TOKEN.finditer(inner):
         g = m.lastgroup
+        # "AND" BEFORE A NUMERAL STARTS A NEW TARGET. Elwes writes
+        # "(II. vi. Coroll. and vii.)" for Proposition 6's Corollary AND
+        # Proposition 7; without this the "vii" is read as qualifying
+        # the open "Coroll." and the pair collapses into a single
+        # "Corollary 7", which is a corollary Proposition 6 does not
+        # have and a reference to Proposition 7 that has vanished.
+        # A COMMA DETACHES TOO. "(II. xxxviii. Coroll., xxxix. and
+        # Coroll. and xl.)" is Proposition 38's Corollary, then
+        # Proposition 39 with its Corollary, then Proposition 40 --
+        # and the comma is all that separates the open "Coroll."
+        # from the next proposition number. Only whitespace means
+        # the numeral belongs to the qualifier ("Coroll. ii.").
+        joined = bool(re.search(r"\band\b|,",
+                                inner[prev_end:m.start()]))
+        prev_end = m.end()
         if g == "partkw":
             flush()
             cur_part = num(m.group("pnum"))
@@ -224,7 +240,7 @@ def parse(inner, here_part):
                 return refs, False
             if cur_kind == "Lemma" and pending is None:
                 pending = start(cur_part, "Lemma", v)
-            elif open_tail(pending):
+            elif open_tail(pending) and not joined:
                 # "Coroll. I." -- an uppercase ordinal qualifying a tail
                 pending.tail[-1] = f"{pending.tail[-1]} {v}"
             elif 1 <= v <= 5:
@@ -248,7 +264,7 @@ def parse(inner, here_part):
             v = num(m.group(g))
             if v is None:
                 return refs, False
-            if open_tail(pending):
+            if open_tail(pending) and not joined:
                 pending.tail[-1] = f"{pending.tail[-1]} {v}"
             else:
                 prev_kind = pending.kind if pending is not None else None
