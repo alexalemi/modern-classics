@@ -170,7 +170,8 @@ BARE = re.compile(
     # is how the Corollary went on being swallowed after the first
     # attempt at this fix.
     rf"(?:{_WS}(?:,|and)?{_WS}{_TAIL.format(n=_NUM)}\b\.?)*"
-    rf"(?:[ \t]+of this [Pp]art)?")
+    rf"(?:[ \t]+of[ \t]+(?:this[ \t]+[Pp]art|"
+    rf"(?:Pt|Part)\b\.?[ \t]*[IVXLCivxlc]+\.?))?")
 
 
 def resolve_bare(part, text, inv):
