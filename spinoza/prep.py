@@ -316,13 +316,21 @@ HYPHEN_PREFIX = {
     "pre", "post", "co", "re", "ever", "never", "all", "god", "good",
     "long", "short", "new", "old", "far", "near", "much", "many",
 }
+# EXACT PAIRS, for compounds whose left word is not a prefix and
+# could legitimately take a dash elsewhere. Widening HYPHEN_PREFIX
+# to cover "two-footed" would also hyphenate "two--that is", so
+# these are listed as whole compounds instead.
+COMPOUND = {
+    "hunting-dog", "house-dog", "weak-minded", "two-footed",
+}
 JOIN = re.compile(r"\b(\w+)--(\w+)")
 
 
 def dashes(s):
     def one(m):
-        if m.group(1).lower() in HYPHEN_PREFIX:
-            return f"{m.group(1)}-{m.group(2)}"
+        pair = f"{m.group(1)}-{m.group(2)}"
+        if m.group(1).lower() in HYPHEN_PREFIX or pair.lower() in COMPOUND:
+            return pair
         return f"{m.group(1)}—{m.group(2)}"
     return JOIN.sub(one, s).replace("--", "—")
 

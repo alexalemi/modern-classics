@@ -448,7 +448,7 @@ HAND = {
         "and can be applied to all individual things)",
     (4, 16, "(by the last Prop., the proof whereof is of universal "
             "application)"):
-        "(by Proposition 16 of this Part, the proof whereof is of "
+        "(by Proposition 16 of this Part, the proof of which is of "
         "universal application)",
     (4, 30, "(by the Def., which see in III. xi. note)"):
         "(by the Definition, which see in Part 3, Proposition 11, Note)",
