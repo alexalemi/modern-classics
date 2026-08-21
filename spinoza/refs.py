@@ -224,7 +224,7 @@ def parse(inner, here_part):
         # and the comma is all that separates the open "Coroll."
         # from the next proposition number. Only whitespace means
         # the numeral belongs to the qualifier ("Coroll. ii.").
-        joined = bool(re.search(r"\band\b|,",
+        joined = bool(re.search(r"\band\b|[,;]",
                                 inner[prev_end:m.start()]))
         prev_end = m.end()
         if g == "partkw":

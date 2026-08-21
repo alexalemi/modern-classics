@@ -323,7 +323,7 @@ HYPHEN_PREFIX = {
 # these are listed as whole compounds instead.
 COMPOUND = {
     "hunting-dog", "house-dog", "weak-minded", "two-footed",
-    "grown-up",
+    "grown-up", "piece-meal",
 }
 JOIN = re.compile(r"\b(\w+)--(\w+)")
 
