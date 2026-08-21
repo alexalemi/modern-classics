@@ -67,6 +67,9 @@ class Ref:
         else:
             name = WORD[self.kind]
             head = f"the {name}" if self.unnumbered else f"{name} {self.num}"
+            if self.kind == "Lemma" and self.part is None and here != 2:
+                # Cited from outside Part II, where the Lemmas live.
+                return ", ".join([f"Part 2, {head}"] + self.tail)
             if self.part is not None and self.part != here:
                 head = f"Part {self.part}, {head}"
             else:
@@ -78,6 +81,9 @@ class Ref:
         if self.kind == "Part":
             # "(as we showed in Pt. II.)" -- a whole Part, no item.
             return self.num in (1, 2, 3, 4, 5)
+        if self.kind == "Lemma" and self.part is None:
+            # Only Part II has Lemmas, so an unscoped one is Part II's.
+            return 1 <= (self.num or 0) <= inv.get(2, {}).get("Lemma", 0)
         p = self.part if self.part is not None else here
         kind = "Emotion" if self.kind == "Emotion" else self.kind
         if kind == "Emotion":
