@@ -46,6 +46,7 @@ _NUM_RE = re.compile(NUMERAL)
 _REL_RE = re.compile(RELMARK, re.I)
 _PAREN = re.compile(r"\([^()]{0,200}\)")
 _LEADW = re.compile(r"^(?:by|see|cf\.?|in|from|and)\s+", re.I)
+_PAIR = re.compile(r"\b[IVXLC]+\.\s*[ivxlc]+\.")
 # Numerals and separators only: "(II. xi.)", "(I. xxv. and xxvi.)",
 # "(IV. xxxvii., xlvi.)". Nothing but roman or arabic numerals,
 # periods, commas, semicolons and the word "and".
@@ -68,6 +69,13 @@ class _Cite:
         # roman for the Part and lower roman for the Proposition.
         inner = _LEADW.sub("", s[1:-1].strip())
         if _BARE.fullmatch(inner):
+            return True
+        # A Part.Proposition PAIR inside parentheses is a citation even
+        # when the rest of the parenthesis is prose and no kind word
+        # appears: "(as we showed in III. xix.)", "(for I have shown
+        # such, in II. xlviii., to be fictitious)". Nine of these, all
+        # resolved by hand in refs.HAND.
+        if _PAIR.search(s):
             return True
         if not _KIND_RE.search(s):
             return False

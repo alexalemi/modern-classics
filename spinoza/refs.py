@@ -449,4 +449,28 @@ HAND = {
     (4, 59, "(as we showed in Pt. II.)"): "(as we showed in Part 2)",
     (4, 73, "(as we showed in IV. xxxvii. note. ii.)"):
         "(as we showed in Proposition 37 of this Part, Note 2)",
+
+    # --- prose carrying a Part.Proposition pair and no kind word ------
+    # Invisible to the detector until it learned to read the pair; the
+    # clause is Spinoza's and only the pointer inside it moves.
+    (2, 43, "(by II. xx., whereof the proof is of universal application)"):
+        "(by Part 2, Proposition 20, the proof of which is of universal "
+        "application)",
+    (3, 13, "(cf. III. xii. Proof)"):
+        "(compare Proposition 12 of this Part, Proof)",
+    (3, 21, "(as we showed in III. xix.)"):
+        "(as we showed in Proposition 19 of this Part)",
+    (3, 22, "(as shown in III. xxi.)"):
+        "(as shown in Proposition 21 of this Part)",
+    (3, 59, "(for I have shown such, in II. xlviii., to be fictitious)"):
+        "(for I have shown such things, in Part 2, Proposition 48, to be "
+        "fictitious)",
+    (3, 59, "(as we have shown, III. lii.)"):
+        "(as we have shown, Proposition 52 of this Part)",
+    (3, 59, "(as I have shown in III. lvi.)"):
+        "(as I have shown in Proposition 56 of this Part)",
+    (4, 5, "(as is shown in II. xvi.)"):
+        "(as is shown in Part 2, Proposition 16)",
+    (4, 52, "(as we showed in IV. xxv.)"):
+        "(as we showed in Proposition 25 of this Part)",
 }
