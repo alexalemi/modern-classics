@@ -1,0 +1,137 @@
+SPINOZA, ETHICS — RUNNING NOTES
+================================
+The shared consistency ledger. Read before translating any file.
+
+THE GOVERNING RULE, AND IT IS THE OPPOSITE OF THIS PROJECT'S USUAL ONE
+----------------------------------------------------------------------
+IF A SENTENCE IS ALREADY CLEAR, LEAVE IT ALONE (the hume rule).
+Spinoza's mean sentence is 17.9 words and only 16% run over 35. There
+is nothing to unstack. A translator who arrives expecting Burke's
+200-word periods will find nothing to do and will start rewriting prose
+that was already fine, and a file in which every sentence has been
+recast has been damaged however defensible each recasting was.
+
+What actually needs doing, in order:
+  1. the technical vocabulary, locked below;
+  2. Elwes's thin Victorian layer -- "whatsoever", "in so far as" where
+     it is doing nothing, "appertain", "owns God as its cause";
+  3. the connective throat-clearing that opens proofs.
+
+THE LOCKED GLOSSARY
+-------------------
+These are terms, not words. Getting one wrong does not make a sentence
+obscure, it makes it mean something Spinoza spent a Part disproving.
+Caps spent once, then used plainly.
+
+  substance      KEEP. That which is in itself and is conceived through
+                 itself. NEVER "stuff", "material", "matter".
+  mode           KEEP. A modification of substance; a particular thing.
+  attribute      KEEP.
+  affection      -> "state" or "modification" where Elwes means
+                 affectio (Elwes footnotes this himself at I.Def.V).
+                 NEVER "fondness".
+  emotion        KEEP for affectus. It is the title of Parts III and IV
+                 and the whole subject; do not vary it to "feeling",
+                 "passion" or "affect".
+  passion        KEEP where Spinoza opposes it to activity.
+  idea           KEEP. Not "notion", not "opinion", not "thought".
+  adequate /     KEEP both. Technical properties of an idea.
+  inadequate
+  perfection     KEEP, and keep his identification of it with reality.
+                 He says outright they are the same thing.
+  reality        KEEP.
+  virtue         KEEP, and it means POWER TO ACT (virtus), not moral
+                 goodness. Part IV turns on this. Where a modern reader
+                 would certainly misread it, the surrounding sentence
+                 may carry the sense, but the word stays.
+  endeavour      KEEP for conatus. "Everything, in so far as it is in
+                 itself, endeavours to persist in its own being."
+                 Pinned in must_contain. Do NOT vary to "strives",
+                 "tends", "seeks" -- it is the hinge of Parts III-V and
+                 a reader has to be able to follow it by ear.
+  blessedness    KEEP for beatitudo. The last word of the book.
+  bondage        KEEP. The title of Part IV.
+  acquiescentia  Elwes has "acquiescence" / "self-approval". Keep
+                 "self-approval" where it is the emotion, and
+                 "contentment" where he means acquiescentia in se ipso
+                 loosely -- but never "complacency" in the modern
+                 sense, which has inverted since 1883.
+  God or Nature  LOCKED, no comma. Elwes writes it three times and it
+                 is the most famous phrase in the book.
+  under the form KEEP for sub specie aeternitatis. Not "aspect", not
+  of eternity    "standpoint". Pinned.
+
+STRUCTURE AND CONVENTIONS
+-------------------------
+Every file is already laid out by prep.py and the layout is FIXED:
+
+  Proposition 7            <- a line on its own, title case, no period.
+                              assemble.py renders it as a subheading.
+  <the proposition>        <- its own paragraph.
+  Proof. ...               <- paragraph opening with the word.
+  Corollary 1. ...
+  Note. ...
+  Explanation. ...
+
+DO NOT renumber, merge or reorder these, and do not write an all-caps
+line anywhere -- assemble.py reads one as a heading. Book titles and
+emphasis: the pipeline is markup-free except for _x_ / *x*, and Spinoza
+needs almost none.
+
+THE REFERENCES ARE ALREADY DONE. All 1,075 were resolved by prep.py
+into one form:
+    (by Proposition 4 of this Part)
+    (by Part 2, Proposition 7, Corollary)
+    (by Definition 13 of the Emotions)
+COPY THEM THROUGH EXACTLY. Do not renumber, re-abbreviate, or "tidy"
+them, and do not convert them back to roman. check.py compares the set
+of citations in each modern file against its source file and a drift is
+a defect: a citation is the only thing in this book that a reader
+cannot repair for themselves.
+
+VOICE
+-----
+Spinoza is the least rhetorical writer in this collection and the most
+absolute. He is not persuading, he is demonstrating, and the flatness
+IS the argument -- he says in the Preface to Part III that he will
+treat human passions exactly as if he were dealing with lines, planes
+and solids. Do not warm him up. Do not add connective throat-clearing.
+Do not soften "hence it follows" into "so you can see that". Keep the
+Q.E.D.
+
+BUT THE NOTES ARE A DIFFERENT VOICE and this is where the book opens
+up: the Appendix to Part I on final causes, the Preface to Part III,
+the notes on free will and on the man who thinks he chooses, the
+Preface to Part IV, the whole of Part V's second half. There he is
+polemical, occasionally sardonic, and writing for a reader rather than
+for a proof. Keep the two registers apart. The Appendix to Part I is
+the best prose in the book and the reason many people read it at all.
+
+SENSITIVE CONTENT — THE VERNE RULE, no note anywhere in the volume.
+The Appendix to Part I is a sustained attack on providence, miracles
+and scripture read as prophecy; it is why the Ethics could not be
+published in his lifetime and why he was expelled from his synagogue at
+twenty-three. The identification of God with Nature stands as he wrote
+it. Part IV's remarks on the weak-minded, on the drunkard and on women
+stand as his. Nothing is softened, nothing is annotated.
+
+DECISIONS LOG
+-------------
+(append as they are made, with the reason)
+
+- 2026-08-19, Alex: RESOLVE AND NORMALISE the cross-references. The
+  pillow-problems ruling rather than the symbolic-logic one -- there
+  Carroll's words were the machine; here the numerals are notation and
+  the machine is the reference structure, which is preserved exactly
+  and for the first time made legible.
+- 2026-08-20, Alex: inside a Corollary, "the last Prop." means N, the
+  proposition the Corollary hangs on, not N-1.
+- Elwes's seventeen endnotes are inlined as "Footnote: ..." after the
+  paragraph citing them (the candle pattern). They are ELWES'S voice,
+  not Spinoza's: dry, editorial, third person, and often about a
+  variant reading. Keep them that way. Note 4, 16 and 17 cite Pollock
+  and Camerer by name; keep the names.
+- Part III's Preface carries no heading in the source (Parts II, IV and
+  V do). prep.py supplies one, so the "lines, planes and solids"
+  passage opens a section as it should.
+- Q.E.D. stays as printed and is not expanded.

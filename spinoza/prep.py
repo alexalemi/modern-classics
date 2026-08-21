@@ -92,6 +92,48 @@ def resolve_all(part, text, inv, used, unresolved):
     return "".join(out)
 
 
+# SPINOZA ALSO CITES WITHOUT PARENTHESES, and for a long time nothing
+# here looked outside them: "This is clear from Deff. iii. and v.",
+# "the demonstration of Prop. vii.", "Cf. III. xxxix. note and xl."
+# There are 114 of these, and they are the WORST place to leave the
+# Victorian shorthand, because they fall in the middle of a sentence
+# rather than in an aside the eye can skip.
+_PART = r"[IVXLC]+\.\s*"
+_KIND = (r"(?:Prop(?:osition)?|Deff|Def(?:inition)?|Ax(?:iom)?|"
+         r"Post(?:ulate)?|Coroll|Corollary|Lemma)\b\.?\s*")
+_NUM = r"[ivxlc]+\.?"
+BARE = re.compile(
+    rf"\b(?:{_PART}(?:{_KIND})?|{_KIND}){_NUM}"
+    rf"(?:\s*(?:,|and)?\s*(?:{_NUM}|Coroll\.?|Corollary|[Nn]ote)\b\.?)*"
+    rf"(?:\s+of this [Pp]art)?")
+
+
+def resolve_bare(part, text, inv):
+    """Rewrite citations that carry no parentheses of their own."""
+    def one(m):
+        span = m.group(0)
+        trail = ""
+        # never swallow the sentence's own closing punctuation
+        while span and span[-1] in " ,":
+            trail, span = span[-1] + trail, span[:-1]
+        parsed, ok = R.parse(span, part)
+        if not ok or not all(r.valid(inv, part) for r in parsed):
+            return m.group(0)
+        return "; ".join(r.render(part) for r in parsed) + trail
+
+    out, last = [], 0
+    for m in BARE.finditer(text):
+        # skip anything already inside a parenthesis
+        before = text[:m.start()]
+        if before.count("(") > before.count(")"):
+            continue
+        out.append(text[last:m.start()])
+        out.append(one(m))
+        last = m.end()
+    out.append(text[last:])
+    return "".join(out)
+
+
 # ------------------------------------------------------------- layout
 FOOT = re.compile(r"\[(\d+)\]")
 
@@ -228,7 +270,8 @@ def main():
     for n, text in S.split_parts(S.body()):
         text, found = take_notes(text)
         notes.update(found)
-        parts.append((n, resolve_all(n, text, inv, used, unresolved)))
+        text = resolve_all(n, text, inv, used, unresolved)
+        parts.append((n, resolve_bare(n, text, inv)))
     if len(notes) != 17:
         raise SystemExit(f"expected 17 endnotes, found {len(notes)}")
     seen = set()
@@ -249,8 +292,15 @@ def main():
     for n, text in parts:
         # drop the Part's own heading line; the manifest carries it
         text = re.sub(r"^.*?(?=\n)", "", text, count=1)
-        paras = [relabel(p) for p in unwrap(text)]
-        paras = [p for p in paras if p]
+        # THE FOOTNOTE TEXT IS PRINTED TWICE. Gutenberg sets each note
+        # inline in the body, right after the paragraph that cites it,
+        # AND again in the collected block at the back. Inlining the back
+        # copy without dropping the body copy prints every note twice
+        # over -- 'Footnote: "Affectiones"' followed by '"Affectiones"'.
+        raw = [q for q in unwrap(text)
+               if not re.match(r"^\[\d+\]", q.strip())]
+        paras = [relabel(q) for q in raw]
+        paras = [q for q in paras if q]
         paras = inline_notes(paras, notes, seen)
 
         # AND DROP THE SUBTITLE UNDER IT. Every Part repeats its own
