@@ -156,14 +156,19 @@ _TAIL = ("(?:{n}|Coroll\\.?|Corollary|"
 # swallowed the blank line and the heading after it, so the Corollary
 # was absorbed into the citation and stopped being a Corollary at all.
 # Between Corollary 1 and Corollary 3 the reader found nothing.
-_WS = r"[ \t]*(?:\n[ \t]*)?"
+# The rule is not 'at most one newline' -- that was a proxy, and it
+# broke 'III. xxiv. and\nxxxii.', where the line breaks after the
+# separator. The rule is: whitespace may cross newlines but never a
+# BLANK LINE, because a blank line is a paragraph break and a
+# citation never spans one.
+_WS = r"(?:[ \t]|\n(?![ \t]*\n))*"
 BARE = re.compile(
     rf"\b(?:{_PARTW})?(?:{_PART}(?:{_KIND})?|{_KIND}){_NUM}"
     # ONE newline in the whole gap, not one on each side of the
     # separator. Two _WS in a row still spanned a blank line, which
     # is how the Corollary went on being swallowed after the first
     # attempt at this fix.
-    rf"(?:{_WS}(?:,|and)?[ \t]*{_TAIL.format(n=_NUM)}\b\.?)*"
+    rf"(?:{_WS}(?:,|and)?{_WS}{_TAIL.format(n=_NUM)}\b\.?)*"
     rf"(?:[ \t]+of this [Pp]art)?")
 
 
