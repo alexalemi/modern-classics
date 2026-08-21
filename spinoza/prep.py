@@ -122,7 +122,14 @@ _PART = r"[IVXLC]+\.\s*"
 _KIND = (r"(?:Prop(?:osition)?s?|Deff|Def(?:inition)?s?|"
          r"Ax(?:iom)?s?|Post(?:ulate)?s?|Corolls?|Corollary|"
          r"Lemmas?)\b\.?\s*")
-_NUM = r"[ivxlc]+\.?"
+# WORD BOUNDARIES. Without them "[ivxlc]+" matches the "i" inside
+# "is", so "This Proposition is evident from the mere definition"
+# came out as "This Proposition 1 of this Parts evident from the
+# mere definition" -- a citation invented out of an ordinary verb,
+# with the rest of the word left dangling. Every letter of a roman
+# numeral is also an English word or the start of one, so a numeral
+# pattern that can begin mid-word will eventually eat prose.
+_NUM = r"\b[ivxlc]+\b\.?"
 # THE SPAN MAY OPEN WITH THE WORD "Part", and in either case: Elwes
 # writes "from Part i., Ax. iv." Without this the span began at "Ax.
 # iv." and resolved to Axiom 4 OF THE PART THE CITATION SITS IN --
@@ -230,6 +237,34 @@ def resolve_bare(part, text, inv):
     # it never occurs twice legitimately.
     return re.sub(r"(of this Part)(\s+of this [Pp]art)+", r"\1",
                   "".join(out))
+
+
+# "Prop." IS SOMETIMES JUST THE WORD, and sometimes a relative pointer
+# with no numeral to catch the resolver's eye. Neither the resolver nor
+# leftover.py can see these: both look for an abbreviation FOLLOWED BY a
+# numeral, which is exactly what these lack. Patterns are whitespace-
+# tolerant because the source hard-wraps and two of them break mid-
+# phrase. Each was read in its passage:
+#   - Part III Prop. 15's Note points forward to the "next Prop.", which
+#     is Proposition 16.
+#   - Part IV Prop. 17's Proof cites "the last Prop.", which by Alex's
+#     ruling of 2026-08-20 is N-1 inside a Proof: Proposition 16.
+#   - Part V Prop. 33's Note cites "the Coroll. of the last Prop.". The
+#     ruling's default for a Note is N, but PROPOSITION 33 HAS NO
+#     COROLLARY and Proposition 32 does, so the structure settles it
+#     without any appeal to the sense: it is Proposition 32's.
+WORD_PROP = [
+    (r"This\s+Prop\.\s+is\s+evident\s+from\s+the\s+mere\s+definition",
+     "This proposition is evident from the mere definition"),
+    (r"This\s+Prop\.\s+is\s+proved\s+in\s+the\s+same\s+way\s+as\s+"
+     r"the\s+last\s+Prop\.\s+from",
+     "This proposition is proved in the same way as Proposition 16 of "
+     "this Part is proved from"),
+    (r"I\s+will\s+show\s+in\s+the\s+next\s+Prop\.",
+     "I will show in Proposition 16 of this Part."),
+    (r"as\s+we\s+feigned\s+in\s+the\s+Coroll\.\s+of\s+the\s+last\s+Prop\.",
+     "as we supposed in Proposition 32 of this Part, Corollary."),
+]
 
 
 # ------------------------------------------------------------- layout
@@ -369,7 +404,10 @@ def main():
         text, found = take_notes(text)
         notes.update(found)
         text = resolve_all(n, text, inv, used, unresolved)
-        parts.append((n, resolve_bare(n, text, inv)))
+        text = resolve_bare(n, text, inv)
+        for pat, rep in WORD_PROP:
+            text = re.sub(pat, rep, text)
+        parts.append((n, text))
     if len(notes) != 17:
         raise SystemExit(f"expected 17 endnotes, found {len(notes)}")
     seen = set()
