@@ -1,0 +1,128 @@
+TEXT ANALYSIS — Dante's Inferno
+Read this before translating. The consistency ledger is running_notes.txt.
+
+
+WHAT THIS EDITION IS
+---------------------------------------------------------------------
+From the Italian (Gutenberg #997, the Petrocchi text), with Longfellow's
+1867 English as a per-canto crib under reference/ — the ovid/ and
+de-officiis/ pattern. Longfellow is line-for-line faithful, which is
+what makes him a good crib and a bad read: he keeps Italian word order
+in English and scores 28.7 archaisms per 1,000 words, second only to
+Pusey's Augustine in this project's screening pass. USE HIM TO CHECK A
+LINE, NEVER TO BORROW A PHRASE. His endnotes are in reference/ too and
+are drawn on only where a modern reader genuinely cannot follow.
+
+
+THE FORM, AND IT IS THE WHOLE BOOK
+---------------------------------------------------------------------
+Terza rima — aba bcb cdc — cannot be reproduced in English without
+padding, because English has a fraction of Italian's rhyming
+vocabulary. Padding a poem famous for compression is the one thing
+that must not happen. So:
+
+  - VERSE STAYS VERSE. Every line is its own line, tab-indented.
+    Dissolving a tercet into prose is this book's silent summarisation.
+  - TERCETS STAY TERCETS, same number, same order, three lines each
+    (and one line at the end of every canto, which is Dante's form).
+    check.py compares the shape exactly against chapters/.
+  - THE LINE COUNT PER CANTO IS EXACT and is asserted in prep.py
+    against a written-out table, because it is a fact about the poem
+    rather than about any translation of it.
+  - NO RHYME, and no metre imposed on the English. What survives is
+    the tercet's shape and its forward lean.
+  - ENJAMBMENT ACROSS A TERCET BOUNDARY IS DANTE'S and is kept where he
+    has it; do not tidy a sentence back inside its tercet.
+  - AIM AT ONE LINE OF ENGLISH PER LINE OF ITALIAN in sense, not in
+    syllables. A rendering that needs a line and a half has usually
+    explained something Dante left compressed.
+
+
+VOICE
+---------------------------------------------------------------------
+Dante is CONCRETE, FAST AND PHYSICAL. He is not solemn; that is the
+translations. He notices weather, footing, smells, the exact way a
+body moves. The famous lines are famous because they are plain: "e
+quindi uscimmo a riveder le stelle" is "and from there we came out to
+see the stars again", and no ornament improves it. THE hume RULE
+GOVERNS: if a line is already clear, leave it alone.
+
+He is also, constantly, IN THE SCENE — frightened, curious, faint,
+weeping, ashamed, occasionally spiteful. Keep the pilgrim's nerves.
+Virgil is patient, sometimes sharp, and once or twice genuinely angry.
+
+REGISTER PER CIRCLE. The poem changes voice as it descends and the
+translation must follow:
+  - the upper circles are elegiac (Francesca, Brunetto, Ulysses);
+  - the middle is grotesque and comic (the Malebranche cantos, XXI-XXIII,
+    are slapstick with real cruelty in them, and end with the devils
+    falling into their own pitch);
+  - the lowest circles go flat, cold and quiet (Ugolino, Cocytus).
+Do not flatten these together into one "epic" tone.
+
+THE OBSCENE AND THE CRUEL STAY. Canto XXI ends with a devil making a
+trumpet of his backside, and the line is exactly that. The thieves'
+transformations in XXIV-XXV are anatomical and are meant to disgust.
+Ugolino's last line is meant to be unresolvable. Render all of it
+plainly, in full, and let it do its own work.
+
+
+NAMES AND REFERENCES
+---------------------------------------------------------------------
+  - FAMILIAR ENGLISH FORMS for names that have them: Virgil, Ulysses,
+    Charon, Minos, Beatrice, Florence, Lucifer. Italian forms stay for
+    Italians: Farinata, Cavalcante, Ciacco, Vanni Fucci, Ugolino.
+  - DANTE'S PERIPHRASIS IS OFTEN THE POINT and is kept where the poem
+    withholds a name deliberately ("that one who made the great
+    refusal"). Where it is merely learned shorthand for a name a
+    thirteenth-century reader knew, resolve it.
+  - NO FOOTNOTES ON THE PAGE. The Inferno is full of Florentine
+    politics, and annotating it would double the book and turn a poem
+    into an apparatus. Where a reference is genuinely unfollowable,
+    let the line carry the smallest amount of identification it can
+    ("Frederick, the Emperor") rather than adding a note. Any
+    exception is logged in running_notes.txt.
+  - LATIN STAYS LATIN where Dante writes Latin and means it to be
+    heard as Latin ("Vexilla regis prodeunt inferni", the gate
+    inscription's rhythm, "Papè Satàn, papè Satàn aleppe").
+
+
+THE VERNE RULE, AND THIS BOOK NEEDS IT MORE THAN MOST
+---------------------------------------------------------------------
+The Inferno is a Christian poem that damns real people by name, most
+of them the author's political enemies, and puts a Pope head-down in a
+hole. It also damns the virtuous pagans to Limbo for not being
+baptised, consigns Muhammad to the ninth pit of the eighth circle in
+one of the most gruesome passages in European literature, and has
+Virgil explain that the geography of Hell was rearranged by the
+Crucifixion.
+
+ALL OF IT STANDS, unhedged, with no note anywhere in the volume. These
+are the author's claims and they are the subject of the book, not
+incidental to it. Softening the Muhammad canto would replace Dante's
+poem with one he did not write; a modern editorial note would be the
+wink the rule forbids. Translate it in full, with gravity, and do not
+sensationalise it either.
+
+The same goes for the suicides of canto XIII, the sodomites of XV-XVI
+(where Dante's tenderness towards Brunetto Latini is the most
+interesting thing in the canto and must not be tidied), and the
+usurers. Where a dated WORD is doing no work, it is modernised
+silently, as everywhere in this project; where the dated CLAIM is the
+point, it stays.
+
+
+CONSISTENT VOCABULARY
+---------------------------------------------------------------------
+  Inferno / Hell            "Hell" in the body; "Inferno" is the title.
+  duca, maestro, segnore    "guide", "master", "my lord" — Dante varies
+                            them deliberately and so does this edition.
+  ombra                     "shade" (not "ghost", not "spirit").
+  peccato / colpa           "sin" / "fault".
+  malebolge                 "Malebolge", kept, glossed once as "the evil
+                            ditches" when the name is introduced.
+  contrapasso               "counter-suffering", glossed once in XXVIII.
+  gentile, cortese          "noble", "courteous" — thirteenth-century
+                            social vocabulary, not compliments.
+  pietà / pietoso           watch this one: it swings between "pity"
+                            and "piety" and Dante uses the ambiguity.

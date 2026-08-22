@@ -1,0 +1,98 @@
+RUNNING NOTES — Dante's Inferno
+The consistency ledger. Read text_analysis.txt first.
+
+
+LOCKED — caps spent, no re-gloss
+---------------------------------------------------------------------
+  Virgil, Beatrice, Charon, Minos, Cerberus, Plutus, Geryon, Lucifer,
+  Ulysses, Diomedes, Jason      familiar English forms.
+  Farinata, Cavalcante, Ciacco, Brunetto Latini, Vanni Fucci, Ugolino,
+  Ruggieri, Capocchio, Bocca    Italian, unchanged.
+  Malebolge                     kept, glossed ONCE at XVIII.1 as "the
+                                evil ditches"; never re-glossed.
+  Malebranche                   kept, glossed ONCE at XXI.37 as "you
+                                Evil Claws"; the twelve devils keep
+                                their Italian names throughout.
+  contrapasso                   "counter-suffering", at XXVIII only,
+                                where Dante names it.
+  shade                         always, for "ombra" — not ghost, not
+                                spirit.
+  guide / master / lord         Dante varies duca / maestro / segnore
+                                deliberately and so does this edition.
+  Latin and nonsense kept verbatim: "Vexilla regis prodeunt inferni"
+  (XXXIV), "Papè Satàn, papè Satàn aleppe" (VII), "Raphèl maì amècche
+  zabì almi" (XXXI). The first gets its sense folded into the next
+  line rather than a footnote.
+
+
+DECISIONS LOG
+---------------------------------------------------------------------
+
+--- FORM: 4,720 lines in 34 cantos, tercet for tercet, unrhymed. The
+argument is in prep.py's docstring and in text_analysis.txt. check.py
+compares the tercet count, the lines within each tercet and the total
+per canto EXACTLY against chapters/, and requires every line to keep
+its tab — one lost tab turns a tercet into a paragraph and the ratio
+does not move.
+
+--- RATIO 1.19, and it belongs where the FR/IT prose novels do not.
+Italian verse is far more compressed than English (32,706 -> 38,787
+words), so verify runs at --min-ratio 1.05 --max-ratio 1.35. That is
+well below ovid/'s 1.4-2.4 for Latin hexameter and well above the
+0.9-1.5 of the Verne novels. Under 1.05 in any file would mean the
+tercets had been squeezed.
+
+--- V: GALEOTTO IS RENDERED FOR SENSE. "Galeotto fu 'l libro e chi lo
+scrisse" names Gallehault, the go-between of the Lancelot romance the
+lovers are reading. Keeping the name preserves a proper noun and
+destroys the accusation, because no modern reader knows him; the line
+before names Lancelot, so the context is already there. Rendered "The
+book was our go-between, and so was the man who wrote it." Pinned.
+
+--- XXXIII: UGOLINO'S LAST LINE KEEPS ITS AMBIGUITY. "Poscia, più che
+'l dolor, poté 'l digiuno" can mean that starvation finished what grief
+had not, or that he ate his children. Dante will not say. Any rendering
+that decides is wrong in either direction, so the pin is written to
+hold the ambiguity open: "Then fasting had more power than grief."
+
+--- XXXIV: LUCIFER'S THIRD FACE. The left face is "such as those who
+come from where the Nile flows down". This is DANTE'S OWN PERIPHRASIS
+for a colour, in a three-coloured description that is the infernal
+parody of the Trinity, and the third colour is structurally
+load-bearing. Kept exactly as he writes it — no more and no less than
+the Italian says — and no note. Not the mill/burke case: there a slur
+NOUN stood in for a relationship and the claim survived the swap;
+here there is no slur and no claim, only Dante naming a colour by
+pointing at a place. Compare the grimm ruling on "The White Bride and
+the Black One", where the colour is likewise the author's subject.
+
+--- THE VERNE RULE, THROUGHOUT, WITH NO NOTE ANYWHERE IN THE VOLUME.
+Canto Four damns the virtuous pagans, Virgil included, for lacking
+baptism, and Virgil says so about himself. Canto Nineteen puts a Pope
+head-down in a hole and blames the Donation of Constantine for the
+corruption of the Church. Canto Twenty-Eight shows Muhammad and Ali
+split open, in the most gruesome passage in the poem, and it is
+translated in full, with gravity, and neither softened nor
+sensationalised. Canto Twenty-Three has Caiaphas crucified on the
+ground and calls his council "a bad seed for the Jews". Canto
+Thirty-Four has Brutus and Cassius in Satan's mouths beside Judas,
+which is Dante's politics, not an oversight. All of it stands as his.
+
+--- XXI-XXIII ARE COMEDY AND MUST BE PLAYED STRAIGHT. Ten named devils
+with a leader who signals the march by farting; a grafter who cons them
+into letting him dive; two of them falling into the pitch in a rage and
+having to be fished out. The register is slapstick with real cruelty
+underneath it and must not be flattened into "epic". Equally, XXXII to
+XXXIV must not be warmed up: the lowest circle goes flat, cold and
+quiet, and Ugolino's canto works because nothing in it is raised.
+
+--- ENJAMBMENT ACROSS A TERCET BOUNDARY IS KEPT WHERE DANTE HAS IT
+(I.13-15, VIII.43 into the last line, XXVII.45 into the last line).
+Tidying a sentence back inside its tercet is the commonest way to
+smooth this poem into something slower than it is.
+
+--- THE PROJECT'S MARKUP RULES ARE TIGHT HERE AND WERE WATCHED FOR: no
+all-caps line anywhere (assemble.py would set it as a heading), no
+asterisks or underscores (the Italian carries no emphasis at all, so
+any marker would be an invention), and every line tab-indented so that
+both renderers set it as verse. check.py tests all three.

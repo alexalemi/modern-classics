@@ -2751,3 +2751,100 @@ to be a museum caption card and a 1996 gift-shop facsimile behind glass.
 letter") and y-003 in four; both are correct here, because a verse is
 routinely interrupted by a commentary block and resumes in a new
 paragraph.
+
+Dante's Inferno (inferno/ — the 64th book; from the ITALIAN, Gutenberg
+#997, with Longfellow's 1867 English as a per-canto crib under
+reference/). All thirty-four cantos and all 4,720 lines, 32,706 Italian
+words -> 38,787 English, ratio 1.19 (verify --min-ratio 1.05 --max-ratio
+1.35). The ovid/de-officiis pattern: chapters/ holds Dante, reference/
+holds a line-aligned crib.
+
+THE FORM IS THE WHOLE BOOK, and the decision is the reverse of
+boethius/'s. There the RHYME WAS THE TRANSLATOR'S ADDITION and went;
+here the rhyme is Dante's own terza rima and still cannot come across,
+because English has a fraction of Italian's rhyming vocabulary and every
+poet who has tried has padded — which is the one thing that must not
+happen to a poem this compressed. So the rhyme goes and what it was
+carrying stays: VERSE STAYS VERSE, TERCETS STAY TERCETS in the same
+number and order, and THE LINE COUNT PER CANTO IS EXACT (136, 142, 136,
+151, ...). Say so in the front matter rather than implying a fidelity
+the edition does not have.
+prep.py asserts the line count against a WRITTEN-OUT TABLE and again
+against the crib — two witnesses that share no code with the parser (the
+grimm rule: a source compared only against itself agrees with itself).
+check.py compares tercet count, lines within each tercet, and total,
+EXACTLY against chapters/, and requires every line to keep its tab. ONE
+LOST TAB TURNS A TERCET INTO A PARAGRAPH — assemble.py joins the lines
+into running prose — and the word ratio does not move at all.
+
+TWO PARSER TRAPS IN THE SE CRIB, both of which slide the whole canto out
+of register rather than dropping anything:
+  - A RECURSIVE SPAN SWEEP PICKS UP THE HEADING. The canto's <h3> sets
+    "Canto" and "I" as spans of their own, so canto one came back with
+    138 lines for 136 — and the two extras are at the TOP, so every
+    line of the crib would have been numbered two out.
+  - THE BRIDGEHEAD IS NOT A LINE. Longfellow heads each canto with his
+    own one-line argument, and canto three's names "Pope Celestine V"
+    with the numeral in a z3998:roman SPAN. A bare "V" as line 1 would
+    have slid all 136 lines of that canto by one, invisibly: every line
+    present, in order, and a translator checking line 121 silently
+    reading 120. Take only spans that are DIRECT CHILDREN of a <p>, and
+    skip any <p> typed bridgehead. (The arguments are kept, labelled as
+    Longfellow's and not Dante's, at the head of each crib file.)
+MEASURED AND NOT INCLUDED, so it is not re-tried blind: the fleming
+numeric diff. The Italian contains ZERO digit tokens — Dante spells
+every number as a word — so the check would be entirely inert, and an
+inert check that looks like coverage is worse than none (the nights
+lesson, learned there only after shipping it).
+
+VOICE: concrete, fast and physical, and NOT solemn — that is the
+translations. THE hume RULE GOVERNS HARD, because the famous lines are
+famous for being plain: "e quindi uscimmo a riveder le stelle" is "and
+from there we came out to see the stars again", and no ornament improves
+it. Keep the pilgrim's nerves (he is frightened, faint, weeping,
+ashamed, occasionally spiteful) and keep the register changing as the
+poem descends: elegiac in the upper circles, GROTESQUE AND COMIC in the
+middle — cantos XXI-XXIII are slapstick with real cruelty in them and
+must be played straight, ending on a devil making a trumpet of his
+backside — and flat, cold and quiet at the bottom. Do not flatten them
+together into one "epic" tone; Ugolino works because nothing in it is
+raised.
+PINS MUST COME FROM THE PREPARED TEXT (the epictetus rule), and this
+book punishes memory harder than most: almost every Inferno phrase an
+English reader knows is somebody's TRANSLATION rather than Dante.
+"Abandon all hope, ye who enter here" has a "here" that is not in the
+line. Two pins encode decisions no mechanical check could see: GALEOTTO
+IS RENDERED FOR SENSE ("The book was our go-between"), because keeping
+the name preserves a proper noun and destroys the accusation; and
+Ugolino's last line is pinned in the form that HOLDS THE AMBIGUITY OPEN
+— "Then fasting had more power than grief" — because Dante refuses to
+say whether hunger finished him or he ate his children, and a rendering
+that settles it is wrong whichever way it settles it.
+
+THE VERNE RULE, throughout, with NO NOTE ANYWHERE IN THE VOLUME: Limbo
+damns the virtuous pagans for lacking baptism and Virgil says so about
+himself; canto XIX puts a Pope head-down in a hole and blames the
+Donation of Constantine; canto XXIII crucifies Caiaphas on the ground
+and calls his council "a bad seed for the Jews"; canto XXXIV has Brutus
+and Cassius in Satan's mouths beside Judas. CANTO XXVIII, where Muhammad
+and Ali are split open, is translated in full, with gravity, neither
+softened nor sensationalised — softening it would replace Dante's poem
+with one he did not write, and a modern editorial note would be the wink
+the rule forbids.
+NOT A SEPARATE CASE, and logged as such: Lucifer's third face is "such
+as those who come from where the Nile flows down". That is DANTE'S OWN
+PERIPHRASIS FOR A COLOUR, in a three-coloured description that is the
+infernal parody of the Trinity, so the third colour is load-bearing.
+Kept exactly — no more and no less than the Italian says. It is not the
+mill/burke case, where a slur NOUN stood in for a relationship and the
+claim survived the swap; there is no slur here and no claim, only Dante
+naming a colour by pointing at a place. Compare grimm's ruling on "The
+White Bride and the Black One".
+Cover: Doré's first Inferno plate (1861), Commons "File:Gustave Doré -
+Dante Alighieri - Inferno - Plate 1 (I found myself within a forest
+dark...).jpg", crop "1839x2758+258+24" — the plate only, cropped out of
+a page that prints Longfellow's first tercet underneath it (the
+Trouvelot/Goya method). One small figure in a break of light at the foot
+of enormous trunks, which is the book's first sentence. At 2343 wide it
+is under commons_url's 4200 gate and the crop is in the ORIGINAL's
+coordinates.
