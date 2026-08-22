@@ -95,6 +95,38 @@ def looks_like_prose_heading(h):
     return None
 
 
+# SIGNED ALLOWANCES for check F, with the reason written beside each —
+# an allowance without one is just a silenced check (the burke rule).
+#
+# These three books had been reporting 22 findings between them since the
+# check was written, EVERY ONE OF THEM A FALSE POSITIVE, and every one
+# traced (2026-08-22) to a line that does reach the reader. The check
+# compares SOURCE heading text against MANIFEST titles, so it cannot see
+# a heading that legitimately became a SUBHEADING under a modernised
+# name — and a modernised name never matches by text.
+#
+# A PERMANENT FALSE POSITIVE IS NOT HARMLESS: 22 of them is how a real
+# finding gets skimmed past. The manifest comparison is kept for every
+# other book, because it is what catches the grimm shape (a section the
+# book numbered and the manifest never got).
+ORPHAN_OK = {
+    "theophrastus": "the thirty sketches are h4 subheadings inside three "
+                    "grouped files and carry modernised titles — "
+                    "'1. The Dissembler' ships as '1. The Phony'. "
+                    "Checked: 31 h4 on the assembled page.",
+    "leviathan": "Hobbes's numbered marginal arguments, restarting in "
+                 "every chapter, plus one row of the Table of the "
+                 "Sciences. All six checked on the page or in "
+                 "modern_chapters/: '12. And Of Honour And Order' ships "
+                 "as '12. And of Honor and Rank', and '2. PHYSIQUES' as "
+                 "'2. PHYSICS — consequences from qualities' inside the "
+                 "preserved table.",
+    "social-contract": "Rousseau's chapter headings inside each Book, "
+                       "which the manifest groups one file per Book. "
+                       "Checked: 'CIVIL RELIGION' ships as the h4 "
+                       "'Chapter 8: Civil Religion'.",
+}
+
 def orphan_source_headings(book, manifest):
     """Heading-shaped lines in chapters/ that no manifest section claims.
 
@@ -106,6 +138,8 @@ def orphan_source_headings(book, manifest):
     src = book / "chapters"
     if not src.exists():
         return None, "no chapters/ (no source text kept)"
+    if book.name in ORPHAN_OK:
+        return None, f"allowed: {ORPHAN_OK[book.name]}"
 
     wanted = set()
     for m in manifest:
@@ -262,6 +296,15 @@ def sweep(book, verbose=False):
         for m in re.finditer(r"<h2([^>]*)>(.*?)</h2>(.*?)(?=<h2|\Z)", page, re.S):
             attrs, head, body = m.group(1), text_of(m.group(2)), text_of(m.group(3))
             if "center" in attrs or 'id="contents"' in attrs:
+                continue
+            # A SECTION WHOSE BODY IS A PLATE IS NOT EMPTY. text_of()
+            # strips the <img> and leaves only the caption, so a
+            # frontispiece measured 12 characters and was reported as a
+            # section that had lost its text -- in the -original editions
+            # especially, where a plate keeps only the number the original
+            # printed under it. ball-original and fleming-original had
+            # been reporting this since the check was written.
+            if "<img" in m.group(3):
                 continue
             if head and len(body) < 40:
                 out.append(f"{tag}: section {head[:50]!r} has almost no body "
