@@ -60,6 +60,22 @@ THOU = re.compile(
 # BY EXACT PHRASE, NEVER BY LOOSENING THE SWEEP (the grimm rule).
 ARCHAIC_OK = []
 
+# GILES'S ITALICISED EDITORIAL LATIN, and why it is exempt AS A RULE
+# rather than by a per-file allowance.
+#
+# He italicises two quite different things. Transliterated Chinese and
+# real foreign words -- *cheng*, *ch'i*, *li*, *picul*, *testudo*, *ruse*
+# -- stay foreign in this edition and KEEP their italics; those are the
+# spans a translator drops, and they are exactly what this check is for.
+# But his editorial POINTERS are Latin only because that was the scholarly
+# habit of 1910: "*I.e.*" is "that is", "*supra*" is "above". Englished,
+# they are ordinary words and correctly lose the italics with the Latin.
+#
+# Exempting them by rule beats a per-file table because it cannot grow
+# into a place to hide a real drop: a missing *li* or *cheng* still fails.
+LATIN_TAGS = {"I.e.", "i.e.", "e.g.", "supra", "infra", "q.d.", "et seq.",
+              "circa", "sic"}
+
 
 def body_of(path):
     lines = path.read_text().split("\n")
@@ -158,17 +174,31 @@ def main():
                        f"unexpected {[x for x in nd if x not in ns]}")
 
         # 4 -- emphasis, counted and rendered
-        es, ed = src.count("*"), body.count("*")
-        if es != ed:
-            out.append(f"{where}: {es // 2} emphasis span(s) in source, "
-                       f"{ed // 2} in translation")
+        # The curly apostrophe is typography, not content: the source
+        # writes "ch\u2019i" and this edition writes "ch'i" throughout.
+        apos = lambda x: x.replace("\u2019", "'")
+        ss = [apos(x) for x in re.findall(r"\*([^*]+)\*", src)
+              if x not in LATIN_TAGS]
+        ds = [apos(x) for x in re.findall(r"\*([^*]+)\*", body)]
+        if Counter(ss) != Counter(ds):
+            gone = Counter(ss) - Counter(ds)
+            new = Counter(ds) - Counter(ss)
+            out.append(f"{where}: emphasis differs -- dropped "
+                       f"{sorted(gone.elements())}, added "
+                       f"{sorted(new.elements())}")
         for i, line in enumerate(assemble.EMPH.sub("", body).split("\n"), 1):
             if "*" in line:
                 out.append(f"{where}:{i}: asterisk does NOT render as <em> -- "
                            f"{line.strip()[:70]!r}")
 
         # 5 -- numbers, COUNTED
-        lost = Counter(NUM.findall(src)) - Counter(NUM.findall(body))
+        # A THOUSANDS SEPARATOR IS NOT A DIFFERENT NUMBER. Giles writes
+        # "12500" and this edition writes "12,500"; comparing the tokens
+        # raw reports the figure as lost when it is right there. Strip
+        # the separators from both sides -- the check exists to catch a
+        # value that VANISHED, not one that gained a comma.
+        bare = lambda t: [x.replace(",", "") for x in NUM.findall(t)]
+        lost = Counter(bare(src)) - Counter(bare(body))
         if lost:
             out.append(f"{where}: numerals lost: "
                        + ", ".join(sorted(lost.elements())))

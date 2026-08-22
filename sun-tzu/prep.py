@@ -137,6 +137,13 @@ SOURCE_FIXES = [
      'entail the ruin or surrender of his whole army." [2]]'),
     ("changed to Yin by P\u2019an Keng in 1401.",
      "changed to Yin by P\u2019an Keng in 1401.]"),
+    # 3. A VERSE NUMBER WITH NO POINT AFTER IT. Chapter Five's verse 9
+    #    prints "9 There are not more than five cardinal tastes", alone
+    #    among the book's 537 verses. The number is the citation system
+    #    the commentators cross-refer by, so a verse that does not parse
+    #    as numbered is a verse nothing can point at.
+    ("\n\n9 There are not more than five cardinal tastes",
+     "\n\n9. There are not more than five cardinal tastes"),
 ]
 
 
@@ -177,9 +184,23 @@ def apply_source_fixes(body):
     return body
 
 
+# GILES ITALICISES WITH UNDERSCORES; this pipeline's canonical emphasis
+# marker is the asterisk. Both render as <em>, but check.py compares
+# marker counts between chapters/ and modern_chapters/, so the source
+# has to be normalised or every file reports a spurious mismatch.
+# Anchored against word characters, like assemble.EMPH, so that a lone
+# underscore inside a word or an id is left alone.
+UNDERSCORE = re.compile(r"(?<![\w*])_(?!\s)([^_]+?)(?<!\s)_(?![\w*])")
+
+
 def paragraphs(block):
-    return [re.sub(r"[ \t]*\n[ \t]*", " ", p).strip()
-            for p in re.split(r"\n\s*\n", block) if p.strip()]
+    out = []
+    for p in re.split(r"\n\s*\n", block):
+        if not p.strip():
+            continue
+        t = re.sub(r"[ \t]*\n[ \t]*", " ", p).strip()
+        out.append(UNDERSCORE.sub(r"*\1*", t))
+    return out
 
 
 def main():
@@ -306,7 +327,7 @@ def main():
     # ch. 3.]"), so strip brackets from BOTH sides or the comparison
     # diverges on a difference that is only in the comparison.
     got = re.sub(r"[\[\]]", " ", got.replace("Commentary:", " "))
-    squash = lambda s: re.sub(r"\s+", "", s)
+    squash = lambda s: re.sub(r"[\s_*]+", "", s)
     a, b = squash(want), squash(got)
     if a != b:
         i = next((k for k in range(min(len(a), len(b))) if a[k] != b[k]),
