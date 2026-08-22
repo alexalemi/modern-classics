@@ -543,9 +543,27 @@ reading, not by verify.py:
      gives). CHECK EVERY TABLE THAT CLAIMS TO BE COMPUTED.
   4. Numbers spelled as words ("thirty-six hours" for "36 hours") pass
      the word-ratio, the figure parity and must_contain alike. Add a
-     numeric-token set-difference check per file — see the recipe in
+     numeric-token check per file — see the recipe in
      fleming/running_notes.txt. It is cheap and it is the only guard
      against silent loss of a measured value. USE IT ON EVERY BOOK.
+     COUNT, DO NOT USE A SET (the hume lesson): a set cannot see a
+     dropped duplicate, because the surviving occurrence covers for the
+     lost one. Counter subtraction is the whole fix. And never test
+     `token not in modern_text` — that is a substring search, so "5"
+     counts as present because some "1500" contains it.
+     BUT MEASURE WHAT IT CAN ACTUALLY SEE BEFORE COUNTING IT AS
+     PROTECTION (2026-08-22). THE CHECK ONLY HAS PURCHASE WHERE THE
+     SOURCE USES DIGITS. Burton's Nights contains NOT ONE DIGIT in 72
+     source files — he spells every number out — so nights/check.py had
+     been reporting "numerals clean" since the day it was written while
+     testing precisely nothing. Grimm has six numeral tokens in all,
+     across 3 of 85 files, one of them already-exempted page furniture.
+     Both now say so in place. A check that cannot fire is worse than no
+     check, because it is counted as coverage. What actually guards
+     numbers in the Nights is its night-number SEQUENCE check, which
+     parses the spelled-out ordinals into integers — and that one has
+     caught real defects ("the Five Hundred ante Seventy-fifth Night").
+     Where a source spells its numbers out, that is the shape to build.
 THE APPENDIX TRAP (generic): back matter with no CHAPTER heading gets
 swept into the last chapter's final part, where it ships with no TOC
 entry — while body notes still cite it by name. prep.py peels it off
