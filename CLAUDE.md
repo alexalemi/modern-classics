@@ -2848,3 +2848,113 @@ Trouvelot/Goya method). One small figure in a break of light at the foot
 of enormous trunks, which is the book's first sentence. At 2343 wide it
 is under commons_url's 4200 gate and the crop is in the ORIGINAL's
 coordinates.
+
+Benvenuto Cellini's Life (cellini/ — the 64th book, and the longest
+from the Italian after quixote/: 42 files, 241 chapters, 164,207
+Italian words -> 180,478 English, ratio 1.10, verify --min-ratio 0.95
+--max-ratio 1.35). Dictated 1558-1567 to a boy of thirteen while
+Cellini went on working, and it stops in the middle of a sentence.
+The first autobiography by an artist; from the ITALIAN (Wikisource),
+with Symonds' 1888 English under reference/ as a per-file crib only.
+
+RATIO: Italian narrative prose runs 1.10 here, BETWEEN the 0.9-1.5 of
+the from-the-French Verne novels and quixote/'s 1.12, and nowhere near
+the 1.4-2.4 of Latin verse. Under 1.00 in a file means summarising.
+
+fetch.py IS THE seneca/ MEDIAWIKI-API PATTERN AGAIN, and the alignment
+is the whole of prep: 241 Italian chapters against Symonds' 240,
+because SYMONDS RUNS THE ITALIAN'S 127 AND 128 TOGETHER. Book One is
+128 chapters in the Italian and 127 in the English. That is a
+transmission artefact of the ENGLISH, not a variant in Cellini, and
+prep.py maps the crib accordingly (out[(1,128)] = out[(1,127)]) rather
+than letting every later crib file sit one chapter out of register.
+Checked, not assumed: a crib silently off by one reads perfectly.
+
+check.py's DECISIVE CHECK IS CHAPTER-LABEL PARITY. Chapters are
+grouped five or six to a file and each keeps its "Chapter N" line. A
+label that goes missing loses no word: it WELDS TWO CHAPTERS INTO ONE,
+so the prose reads perfectly, the ratio does not move, must_contain
+does not move, and every citation after it in that file points at the
+wrong chapter. The labels are compared as an exact ordered list
+against chapters/. Nothing else in the toolchain can see this.
+
+HEADINGS MUST BE UNIQUE ACROSS THE BOOK — "Book One, Chapters 93 to
+97" — because BOTH BOOKS HAVE A CHAPTER 97 and assemble.py makes a
+section's anchor by slugifying its heading (the democracy2 trap, in
+its cheapest possible form: prevented in prep rather than repaired
+afterwards).
+
+A WIKI COLON INDENT IS VERSE. Four chapters quote verse as ": line"
+and normalise() would have run them into the surrounding paragraph —
+silent summarisation of the quietest kind, ten lines in all. render()
+detects a block whose every line starts with ":" and emits it
+tab-indented. The Proem sonnet, the prison dialogue, the sonnet to the
+Castellan and the 64-stanza Capitolo all ride through the same way,
+and check.py compares stanza count and line count exactly.
+
+THE ARCHAISM SWEEP CAUGHT THE TRANSLATOR, NOT THE AUTHOR. With
+Symonds open beside you all day the drift is into HIS English, and the
+augustine thou-sweep fired eight times across the book on one word:
+"whereupon", which is his habit and nobody's speech. Every firing was
+mine. WHEN A CRIB IS VICTORIAN, THE SWEEP IS AIMED AT YOU.
+
+VOICE: fast, spoken, headlong — a man talking, not writing. Sentences
+that start again, clauses that never close, "know that", "it is enough
+that", "now hear". The temptation with a self-glorifying narrator is
+to tidy him into good prose, and a tidy Cellini is not Cellini but a
+story about a Renaissance craftsman. Two halves and both are his:
+DIALOGUE (quarrels, courtrooms, the Duke's small talk) and TECHNICAL
+PROCESS (the alloy, the vents in the mould, the two outlets for the
+bronze) — the process passages are not padding and must not be
+summarised, since the casting of the Perseus is the most famous
+account of making anything in the language and it is famous because it
+is exact. He is funny without knowing it; play it straight.
+
+LOCKED VOCABULARY, all in running_notes.txt: virtù is SKILL or
+COURAGE and never the modern "virtue", which makes a moral claim
+Cellini is not making; uomini virtuosi are men of talent; "la virtuosa
+Scuola" is the School of Florence as a corporate body; uomo da bene is
+an honest man, his highest word for anybody. Coinage kept (scudi,
+ducats, giulios, carlins, crazie), as in grimm/. THE ITALIAN CLOCK IS
+KEPT — "two hours of the night", "twenty-two hours" — because the
+hours are how he measures a day; converting silently would put a
+modern clock in a book that has none.
+
+SOURCE SLIPS KEPT AS HIS, ONE TRANSCRIPTION SLIP CORRECTED. He gives
+the price asked for the great diamond as seventeen thousand scudi in
+II.60 and sixteen thousand in II.64, telling the same story twice, and
+dates the move to the roomy prison 1538 inside a narrative in 1539:
+both stand, because a man remembering is not a slip a reader could
+only read as ours (the quixote rule). But "6o libbre" of tin in II.77
+is a letter o for a zero — sixty pounds, with the reason logged beside
+the entry in check.py's NUM_DROPPED (the burke signed-allowance rule).
+
+SENSITIVE CONTENT — THE VERNE RULE THROUGHOUT, NO NOTE ANYWHERE, and
+one passage that decides the book's register. Kept entire: the
+killings, the mutilation of the man who brought the lawsuit, the sack
+of Rome told as marksmanship, the sodomy trial with Cellini demanding
+that Caterina and her mother be burned, and his answer to Bandinello's
+insult about Jove and Ganymede, which is the boldest thing anybody
+says in the book.
+CATERINA IS THE PASSAGE TO GET RIGHT, and it is nights/'s Sindbad
+problem exactly. He beats her, drags her round the room by the hair,
+and takes his revenge on her husband by sleeping with her while she
+models — reporting all of it cheerfully, in the same voice he uses for
+a well-made cup. THE EDITION IS NOT CHEERFUL, AND THE WAY TO BE NOT
+CHEERFUL IS TO BE EXACT: nothing softened, nothing cut, and no
+sympathetic phrase slipped in on her behalf that he did not write. A
+modern reader will notice what Cellini does not notice, and doing that
+noticing for them destroys it. Same for the girl he calls Scorzone,
+got with child at fifteen and handed back to an aunt with a dowry.
+Cover: a 19th-century albumen photograph of CELLINI'S OWN BRONZE MODEL
+for the Perseus (Bargello), Commons "File:Ontwerp voor sculptuur van
+Perseus door Cellini in het Museo Nazionale te Florence,
+RP-F-00-509.jpg", crop "2313x3470+935+870" — the plate only, cut out of
+a mounted card with wide blue-grey margins, a collector's stamp and a
+printed caption line (the Trouvelot/Goya method). The object on the
+cover is the little model the Duke praised in the book. The original is
+5014 wide, OVER commons_url's 4200 gate, so what arrives is the 4000px
+rendition and the crop is in ITS coordinates (the bunyan/quixote trap).
+NOTE on ebook_meta: an empty string in a subject's authority slot ships
+an empty <meta> element and epubcheck rejects it (RSC-005) minutes into
+`se build --check`; the value is "Unknown".

@@ -1,0 +1,150 @@
+CELLINI — RUNNING NOTES (the shared consistency ledger)
+
+Caps spent, no re-gloss. Every entry below is locked for the whole
+volume; where a decision could reasonably have gone the other way, the
+reason is written beside it (the burke rule for allowance tables applied
+to editorial choices).
+
+
+VOICE
+
+Fast, spoken, headlong. Cellini dictated this while working, to a boy
+of thirteen, and it reads like a man talking: sentences that start
+again, subordinate clauses that never close, "it is enough that",
+"know that", "now hear". KEEP THAT. The temptation with a self-glorying
+narrator is to tidy him into good prose, and a tidy Cellini is not
+Cellini but a story about a Renaissance craftsman.
+
+Two halves, both of them his: DIALOGUE (quarrels, boasts, courtroom
+scenes, the Duke's small talk) and TECHNICAL PROCESS (the alloy, the
+vents in the mould, the two outlets for the bronze). Neither is
+padding, and the process passages are not to be summarised — the
+casting of the Perseus is the most famous account of making anything
+in Western literature and it is famous because it is exact.
+
+He is funny without knowing it. Play it straight; the comedy is in the
+gap between what he reports and what he thinks he is reporting.
+
+
+LOCKED VOCABULARY
+
+  virtù        = skill, ability, talent, or courage as the sentence
+                 requires — NEVER the modern English "virtue", which
+                 makes a moral claim Cellini is not making. "uomini
+                 virtuosi" are men of talent, "la virtuosa Scuola" is
+                 the skilled School of Florence.
+  Scuola       = School (capital S), the Florentine body of artists as
+                 a corporate thing, not a building.
+  uomo da bene = honest man. His highest word for a person, used of
+                 the Castellan, of Guido Guidi, of himself.
+  ribaldo      = rascal; ribaldone/ribaldaccio = great rascal.
+  poltrone     = coward.
+  virtuoso as a noun = man of talent, never "virtuoso" in the modern
+                 musical sense.
+  scudi, ducats, giulios, carlins, crazie, soldi, farthings: coinage
+                 KEPT, as in grimm/ — it is doing real work as a
+                 quantity and Cellini's quarrels are almost all about
+                 a number.
+  braccio/braccia, palmo, once: kept as braccia, palm, ounce.
+  Signor / Messer / Monsignor: kept. "Your most illustrious
+                 Excellency" for "Vostra Eccellenzia illustrissima" in
+                 full, every time — the length of the address is part
+                 of the register of a court, and shortening it makes
+                 Cellini sound modern and casual with dukes, which he
+                 is not.
+  Le Maçon, d'Étampes, de Marmagne, de Villeroy, Fontainebleau, the
+                 Petit Nesle: French names in their French forms.
+
+
+CONVENTIONS
+
+Chapter labels: every chapter keeps its own line, "Chapter N", exactly
+as prep.py writes it in chapters/. check.py compares the label
+sequence exactly and in order; a lost label welds two chapters into
+one and NOTHING else can see it (the prose reads perfectly, the ratio
+does not move, and every later citation in that file points at the
+wrong chapter).
+
+Headings must be UNIQUE across the book — "Book One, Chapters 93 to
+97" — because assemble.py makes a section's anchor by slugifying its
+heading and BOTH Books have a chapter 97 (the democracy2 trap).
+
+Verse: the Proem sonnet, the prison dialogue in Book One 119, the
+sonnet to the Castellan in 123, the Capitolo (63 tercets and a closing
+line), and the four lines of doggerel on Bernardone. All set as
+tab-indented verse, stanza for stanza and line for line against the
+Italian, and rendered UNRHYMED in clear modern English — the boethius
+reasoning: forcing rhyme costs more than the rhyme is worth, and
+Cellini's verse is not what anybody comes to this book for.
+
+No all-caps lines anywhere (assemble.py reads one as a section
+heading). No markup: book titles go in plain text.
+
+
+TRANSLATION DECISIONS
+
+THE ITALIAN CLOCK is kept as Cellini gives it — "two hours of the
+night", "twenty-two hours", "four hours into the night" — because the
+hours are how he measures a day and converting them silently would put
+a modern clock in a book that does not have one. The one exception is
+Book One chapter 1, where the figure could not survive into English
+without becoming nonsense; logged in check.py's NUM_DROPPED.
+
+SYMONDS IS A CRIB, NOT A SOURCE. reference/ holds John Addington
+Symonds' 1888 English for consultation, and it is thoroughly Victorian;
+the augustine thou-sweep in check.py exists to catch the translator
+drifting into it. It fired eight times over the book and every one was
+mine, not Cellini's — always the same word, "whereupon", which is
+Symonds' habit and not an English sentence anybody says.
+
+THE 128-VS-127 CHAPTER DISCREPANCY: the Italian numbers Book One to
+128 and Symonds to 127, because Symonds runs the Italian's 127 and 128
+together. prep.py maps the crib accordingly. This is a transmission
+artefact of the English, not a variant in Cellini, and is reconciled
+silently (the grimm Dümmling precedent).
+
+SOURCE SLIPS KEPT AS HIS. Cellini gives the price Antonio Landi asked
+for the great diamond as seventeen thousand scudi in Book Two chapter
+60 and as sixteen thousand in chapter 64, telling the same story
+twice. Both stand as written: he is a man remembering, and the second
+figure is not a slip a reader could only read as ours. Likewise the
+date of the move into the roomy prison, given as 1538 where the
+narrative is in 1539.
+
+ONE TRANSCRIPTION SLIP CORRECTED: "6o libbre" of tin in Book Two
+chapter 77 is a letter o for a zero. Sixty pounds; logged in check.py.
+
+REDACTED NAMES stay redacted. The Italian prints "messer…" for the
+lover of Ammannati's wife; the translation prints "Messer ——" and does
+not guess.
+
+
+SENSITIVE CONTENT — THE VERNE RULE, WITH ONE THING TO GET RIGHT
+
+Everything stands as Cellini dictated it, with no note anywhere in the
+volume: the killings (Pompeo in the street, the goldsmith's brother,
+the innkeeper at the Siena gate), the mutilation of the man who
+brought the lawsuit, the sack of Rome told as marksmanship, the
+duelling, the bragging.
+
+CATERINA IS THE PASSAGE TO GET RIGHT, and it is the nights/Sindbad
+problem exactly. He beats her, drags her about the room by the hair,
+has his revenge on her husband by sleeping with her while she models,
+and reports all of it cheerfully as a good joke, in the same voice he
+uses for a well-made cup. THE EDITION IS NOT CHEERFUL, and the way to
+be not cheerful is to be EXACT: nothing softened, nothing cut, and no
+sympathetic phrase slipped in on her behalf that he did not write. A
+modern reader will notice what Cellini does not notice, and doing that
+noticing for them destroys it. The same holds for the girl he calls
+Scorzone, whom he got with child at fifteen and handed back to an aunt
+with a dowry, and for the two words he gives the mother he beat out of
+the house.
+
+THE SODOMY TRIAL (Book Two 29-30) and BANDINELLO'S INSULT (35) are
+translated in full and unhedged, including Cellini's answer about Jove
+and Ganymede, which is the boldest thing anybody says in the book. The
+charge, the law's penalty of burning, and his own demand that Caterina
+and her mother be burned for confessing it all stand. No note.
+
+The accusation over the boy Cencio in Book Two 61 is kept entire,
+including the boy's denial and the mother's reply.
