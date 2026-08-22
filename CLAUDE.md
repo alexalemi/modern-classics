@@ -2494,3 +2494,136 @@ is over commons_url's 4200 gate, so what arrives is the 3840px
 rendition and the crop is in ITS coordinates (the bunyan/quixote
 trap); the cached build/covers/spinoza.jpg is 3840x4363, which is how
 to tell which case you are in.
+
+Mary Wollstonecraft's A Vindication of the Rights of Woman
+(wollstonecraft/ — the 62nd book; 1792, from Standard Ebooks). All
+thirteen chapters plus the Dedication to Talleyrand and her own
+Introduction, 21 files, 84,590 -> 85,835 words, ratio 1.01 (verify
+--min-ratio 0.85 --max-ratio 1.15). READ mill/ AND subjection/ FIRST:
+same decade of English, same publisher, same pipeline, and Mill's book
+is the sequel to this one.
+
+THE JUSTIFICATION IS hume/mill CLASS 3 (technical calque): calque 35.0
+with 42% of sentences over 35 words, against an archaism score low
+enough that on that axis alone it would have been struck. Nothing in it
+sounds old. What blocks it is periodic sentence architecture and a
+technical vocabulary used with total consistency — and the FALSE FRIENDS
+are unusually dangerous here. "SEXUAL CHARACTER" is the book's central
+term and means a character proper to one's sex; the modern reading is
+not merely wrong, it is obscene, and it is Chapter Two's entire subject.
+Also sensibility (capacity for feeling), manners (the moral texture of a
+society, as burke/), accomplishments (the finishing-school skills),
+suffer (allow), want (lack).
+AND THERE IS A SECOND JUSTIFICATION, which is the stronger one: this
+book has a reputation that stands in for reading it. Its actual claim is
+not "women are equal" but something harder — that the character women
+have is an ARTEFACT of their education, and nobody knows what women are
+like because nobody has ever let them find out. In 1792 prose a reader
+files that as a period document, which is the misreading the retelling
+exists to prevent.
+
+THE CHAPTER TITLES ARE HERS, AND STANDARD EBOOKS DROPPED THEM. SE prints
+a bare Roman numeral in the <h2> and in its own ToC; the 1792 printing
+titles every chapter ("ANIMADVERSIONS ON SOME OF THE WRITERS WHO HAVE
+RENDERED WOMEN OBJECTS OF PITY, BORDERING ON CONTEMPT"). So unlike
+subjection/, where the titles had to be NEW WRITING, here they are the
+author's and are MODERNISED like any other sentence of hers — the ball/
+rule for a source that captions its own plates. Recovered from Gutenberg
+#3420's contents list, CROSS-CHECKED AND NOT REMEMBERED. GENERALISE:
+when a modern edition prints bare numerals, go and look at whether the
+original had titles before deciding they are yours to invent.
+
+THE ONE DEPARTURE FROM THE LECTURE-VOLUMES RULE, and it is deliberate:
+QUOTED PROSE IS MODERNISED WITH HER OWN, quoted VERSE is verbatim.
+Chapter Five is 16,000 words of Rousseau, Fordyce, Gregory and
+Chesterfield quoted at length and then taken apart line by line. If the
+quotations stay in 1762 English while her replies are modern, the reader
+can follow the reply and not the charge — the exact failure the
+retelling exists to prevent. Two further reasons it is safe: Rousseau's
+Emile is quoted in an eighteenth-century ENGLISH TRANSLATION, so the
+archaism there is the translator's costume and not the author's (the
+nights/ reasoning), and she is usually quoting in order to ridicule,
+which requires the reader to understand the words. NOTHING IS SOFTENED
+INSIDE THE QUOTATIONS; they are the evidence. Verse (Milton, Dryden,
+Pope, and "God is thy law, thou mine" pinned in must_contain) stays as
+printed, attributions included.
+SCRIPTURE COUNTS AS QUOTED PROSE and is modernised too — Job 38:11 and
+the talents of Matthew 25 — on the augustine precedent that the book has
+ONE voice. Contrast soap-bubbles, which kept Proverbs 23:31 in the King
+James wording, where the verse is a set-piece and no argument depends on
+the reader following it.
+
+CHECK.PY, and the one lesson worth taking away from it: A STRUCTURAL
+EXEMPTION CAN BEAT THE grimm EXACT-PHRASE RULE, WITH AN ARGUMENT. The
+archaism sweep now skips tab-indented lines, because those blocks are
+required to be verbatim Milton and Dryden, so an archaism inside one is
+the poet's BY CONSTRUCTION — and check 3 independently pins every verse
+block's line count, so the exempted region cannot quietly grow. The
+exact-phrase version was tried first and was incomplete WITHIN ONE FILE:
+it listed Eve's five lines and then fired on Adam's eleven-line reply
+the moment chapter Two was written. A list that has to be extended every
+time a poet is quoted is not an exemption list, it is a leak. Proved by
+reintroducing "hath" into ordinary prose and watching the sweep fail
+(the boethius rule). THOU_OK stays for PROSE, and stays empty.
+The rest is the standard set: heading/part parity (ELEVEN of 21 files
+are chapter parts, so the quixote trap is near maximum), section-heading
+parity asked of assemble.is_subheading ITSELF, verse integrity (blocks
+and line counts, the boethius check), emphasis parity via assemble.EMPH,
+the hume COUNTED numeric diff, and footnote parity.
+
+THE CROSS-CHECK EARNED ITS KEEP IN THE FIRST RUN, as it did in mill/ and
+epictetus/. THE ATTRIBUTION IS PART OF THE QUOTATION and lives in a
+<cite> INSIDE the blockquote, so collecting only the <span> lines
+dropped "—Dryden" silently. Nothing else would have noticed: the word
+ratio does not move for one word.
+
+SENSITIVE CONTENT — THE VERNE RULE THROUGHOUT, NO NOTE ANYWHERE, AND TWO
+EXCEPTIONS OF THE mill/burke CLASS. Kept entire and unhedged: the
+PHYSICAL-INFERIORITY CONCESSION of the Introduction, which modern
+readers find the most surprising thing in the book and which is
+LOAD-BEARING (the whole structure is "grant that, and nothing else
+follows"); her contempt for women as they are ("mere propagators of
+fools"), without which the argument collapses, since her point is that
+this is what the education PRODUCED; the two "Muhammadan" passages,
+where the CLAIM is hers and part of her attack on Milton while the WORD
+is modernised as mill/ does; "the Indians worship the devil"; her
+Dissenting Christianity, which she means; and the slavery vocabulary,
+which is deliberate and never softened.
+THE TWO EXCEPTIONS are both racial nouns replaced by the relationship,
+where the claim survives entire: "like the poor African slaves" ->
+"like the enslaved Africans" (Chapter Nine), and "the savage desire of
+admiration which the black heroes inherit from both their parents" ->
+"that enslaved people inherit from both their parents alike" (Chapter
+Thirteen), where the point is that a love of ornament is HUMAN and not
+female, which is why "from both their parents" is the load-bearing
+phrase. Her abolitionist passages stand entire: "Is sugar always to be
+produced by human blood?" and the minister who rivets the chains "by
+sanctioning the abominable trade".
+
+VOICE: far funnier and angrier than her reputation. "A wild wish has
+just flown from my heart to my head, and I will not stifle it though it
+may excite a horse laugh." She wrote the book in six weeks and refused
+to polish it, and SAYS SO — "I shall not waste my time in rounding
+periods... I shall be employed about things, not words!", which is this
+project's thesis in an author's own words and is pinned. So the hume
+rule governs hard: IF A SENTENCE IS ALREADY CLEAR, LEAVE IT ALONE. Most
+pins are pinned UNCHANGED. The work is unstacking the sentences where
+the stack has collapsed, which happens mostly in Chapters Four and Five.
+KEEP THE METAPHORS — the gilt cage, the rattle that must jingle in his
+ears, the flowers planted in too rich a soil. They are compressed
+argument, not ornament.
+Cover: Adélaïde Labille-Guiard's "Self-Portrait with Two Pupils" (1785),
+Commons "File:Adélaïde Labille-Guiard - Self-Portrait with Two Pupils -
+The Metropolitan Museum of Art.jpg", crop "3820x5730+0+0" — a woman at
+her easel with palette and brushes, looking straight out, with two young
+women she is training behind her. The parallel to subjection/'s Osborn
+is deliberate: a painting by a woman, from the book's own decade,
+showing the thing the book argues for. The canvas is 4523x6479, over
+commons_url's 4200 gate, so what arrives is the 4000px rendition at
+4000x5730 and THE CROP IS IN THE RENDITION'S COORDINATES; it is taller
+than 2:3, so the crop is height-limited and the 180px comes off the
+RIGHT, because the easel at the left edge is the reason for the choice.
+NOTE: `se lint` raises two [Manual Review] items wanting a `win` relator
+and a frontmatter inflection on introduction.xhtml. The Introduction is
+WOLLSTONECRAFT'S OWN, not an editor's, and carries four of the
+must_contain pins; both are correctly ignored.

@@ -498,7 +498,17 @@ near-zero archaism):
       cannot follow without counting on their fingers. Resolving them
       is the edition's one real contribution and it is a class of work
       no earlier book here needed. See spinoza/refs.py.
-    Wollstonecraft, Vindication         calq 35.0   42% over 35
+    Wollstonecraft, Vindication         calq 35.0   42% over 35  — DONE,
+      site/wollstonecraft.html. The class-3 diagnosis held, and the
+      source was clean (Standard Ebooks, no OCR), so the real work was
+      elsewhere: SE prints a BARE ROMAN NUMERAL for every chapter, but
+      the 1792 book titles them all, so the titles are HERS and had to
+      be recovered from Gutenberg #3420 rather than invented as
+      subjection/'s were. The second justification is the one that
+      matters most here: the book's reputation stands in for reading
+      it, and its actual claim — that the character women have is an
+      artefact of their education — reads as a period document in 1792
+      prose.
     Mill, On Liberty                    calq 34.6   44% over 35  — DONE,
       site/mill.html (the hume case again: nothing in it sounds old,
       and "utility", "sentiment" and "self-regarding" are used with
