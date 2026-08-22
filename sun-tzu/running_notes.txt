@@ -1,0 +1,99 @@
+RUNNING NOTES — The Art of War
+The consistency ledger. Read text_analysis.txt first.
+
+
+LOCKED VOCABULARY — caps spent, no re-gloss
+---------------------------------------------------------------------
+  cheng / ch'i        KEPT, italicised, and glossed once where Giles
+                      glosses them (Chapter Five, verse 3). "Direct"
+                      and "indirect" are his English for them and are
+                      used alongside, as he does.
+  the Moral Law       KEPT. It is his rendering of tao and does NOT
+                      mean morality; his own note says so, once.
+  energy              KEPT (shih). Nearer momentum than vigour.
+  method and discipline   KEPT (fa). Organisation and logistics.
+  li, picul, shu, i   KEPT, italicised, with his conversions intact.
+  Wade-Giles spelling KEPT throughout — Ts'ao Kung, Sun Tzu, Ch'i, Wu.
+                      Not converted to Pinyin: see text_analysis 4.
+  § / Cf. / supra     "verse" / "compare" / "above". Giles's editorial
+                      Latin is Englished and CORRECTLY loses its
+                      italics with the Latin; check.py exempts those
+                      tags by rule, not by a per-file allowance.
+
+
+DECISIONS LOG
+---------------------------------------------------------------------
+
+--- 001: FIGURES STAY FIGURES IN A NUMERICAL NOTE. Tu Mu's gloss turns
+on 3/10 against 7/10, and spelling both out (which I did first) loses
+the contrast the note exists for. The numeric check caught it.
+
+--- 004: THE SHIP VICTORY. I set her name in italics, the modern
+convention; Giles used quotation marks. Reverted to his — the emphasis
+check compares span CONTENT, and an added span is as much a drift as a
+dropped one.
+
+--- 006: SCHOLARLY LOCATORS ARE DATA. I dropped "chap. 1 ad init.",
+"year 10, § 1" and "(chap. 4)" from citations, and spelled "ch. 1" out
+as "the first chapter". All restored. This is the burke lesson exactly:
+there the numeric diff earned its keep by catching a dropped "(see
+pp. 222, 241)", and it earned it again here.
+
+--- 007 AND 009: GILES'S TWO ETHNIC GENERALISATIONS, DECIDED
+DIFFERENTLY FROM EACH OTHER, and the split is principled.
+  - Chapter Ten's opening note reads "a strange lack of logical
+    perception is shown in the Chinaman's unquestioning acceptance of
+    glaring cross-divisions". THE CLAIM STANDS as his — he is judging
+    the Chinese commentators' logic, that judgement is part of his
+    commentary's character, and this edition's whole framing is that we
+    are reading an Edwardian Englishman. But the NOUN goes: "Chinese
+    writers" names the same people and carries no part of the claim, so
+    the reader loses no information and gains no false one. This is the
+    mill "planters and negroes" precedent exactly.
+  - Chapter Eight's "some of which would occur only to the Oriental
+    mind" is KEPT ENTIRE. Here the dated category IS the claim — he is
+    asserting that these particular stratagems are characteristically
+    Eastern — and replacing the term would put a different claim in his
+    mouth. That is the Verne rule, and it is why the two are not
+    handled alike: swap a slur WORD for the neutral name of the same
+    people; never swap out the CLAIM.
+No note anywhere in the volume for either.
+
+--- 010 AND 011: GILES'S PAGE REFERENCES TO HIS OWN EDITION. There are
+five, and they are meaningless in a reflowable page. Three RESOLVE and
+were rewritten to point where the reader can actually go: "(See p. 57.)"
+is Chao She's march, Chapter Seven, verse 4, note; "p. 90" is T'ien Tan
+with the oxen, Chapter Nine, verse 24, note; "(See p. 132.)" is Pan
+Ch'ao before Yarkand, Chapter Eleven, verse 36, note. ONE DOES NOT: "one
+of his most brilliant battles, already alluded to on p. 28" points into
+Giles's own introduction, which this edition does not carry, so the
+locator is dropped -- and the battle is then described in full in the
+same sentence, which is why nothing is lost. All five are entered in
+check.py's NUM_DROPPED with the reason beside them; the counted numeric
+diff caught every one of them, which is what that check is for.
+
+--- 011: THE BARBARIANS OF THE HOU HAN SHU ARE KEPT. Giles quotes the
+history at length and its Chinese court calls the Hsiung-nu "the
+Northern barbarians"; Pan Ch'ao uses the word again in his own speech in
+chapter Twelve. This is the Verne rule and not the nights "blackamoor"
+case: the word is not a slur standing in for a people already named, it
+is the Chinese state's political category for everyone outside it, and
+the whole point of the anecdote is a small kingdom choosing which of two
+powers to submit to. Giles's own bracketed gloss ("the mortal enemies of
+the Chinese") stays with it.
+
+--- 011: *débandade* GOES, and it is the one emphasis span in the book
+deliberately dropped. Giles italicises transliterated Chinese and real
+technical terms, and those are locked; this is a French word he reached
+for where English has one, inside a Chinese general's reported speech,
+and modern English never took it up. A dated WORD, not a dated claim.
+Rendered "stampede", and registered in check.py's EMPH_DELTA so that the
+parity check still guards every other span.
+
+--- 012 AND 013: FOUR TRANSMISSION TYPOS in Gutenberg's transcription,
+each of which reads perfectly and says the wrong thing, so none is
+protected by the Verne rule: "kits them together" for KNITS (the San
+Lueh on how a prince holds an army), "Sun Tzu's agreement is certainly
+ingenious" for ARGUMENT, "reliance on spies, while production of great
+results" for PRODUCTIVE, and "Lo Shang ... march out all his best
+troops" for MARCHED. Corrected silently.

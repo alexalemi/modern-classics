@@ -144,6 +144,37 @@ SOURCE_FIXES = [
     #    as numbered is a verse nothing can point at.
     ("\n\n9 There are not more than five cardinal tastes",
      "\n\n9. There are not more than five cardinal tastes"),
+    # 4. A SECOND MISSING OPENING BRACKET, chapter Nine, on the gloss of
+    #    "deep natural hollows". Same class as the chapter Eight case
+    #    above, and found the same way: a paragraph that is plainly a
+    #    commentator's gloss, carries no opening bracket, and ends with a
+    #    closing one that has no opener. Left alone it reads as Sun Tzu
+    #    defining his own term.
+    ("\n\nThe latter defined as \"places enclosed on every side",
+     "\n\n[The latter defined as \"places enclosed on every side"),
+    # 10. The same defect, and the longest instance of it: Tu Yu's gloss
+    #     on desperate ground runs on into Giles's own 500-word review of
+    #     how badly the Nine Grounds hang together ("Sun Tzu's work
+    #     cannot have come down to us in the shape in which it left his
+    #     hands"). It carries the closing bracket and not the opening
+    #     one, so the whole thing reads as Sun Tzu criticising his own
+    #     text -- and it is the single largest block of commentary in the
+    #     book to be handed to the wrong voice.
+    ("\n\nTu Yu says: \"Burn your baggage",
+     "\n\n[Tu Yu says: \"Burn your baggage"),
+    # 11. TWO MORE OF THE MISSING-CLOSER CLASS, and they were hidden
+    #     until the bracket handling got stricter: each block ENDS on a
+    #     bracketed citation of its own, so under the old rule the
+    #     citation's closer was read as the block's and the block closed
+    #     by accident, in the right place, for the wrong reason. Now the
+    #     block closes only on a bracket nothing inside it opened, which
+    #     is correct -- and correctly exposes these two as unclosed.
+    #     Hannibal at Casilinum (chapter Eleven) and Ho Shih's story of
+    #     P'o-t'ai (chapter Thirteen).
+    #     The added bracket rides the @@CB@@ sentinel, because the stray-
+#     bracket collapse below would otherwise eat it again.
+    ("Livy, XXII. 16 17.]", "Livy, XXII. 16 17.]@@CB@@"),
+    ("_Chin Shu_, ch. 120, 121.]", "_Chin Shu_, ch. 120, 121.]@@CB@@"),
 ]
 
 
@@ -166,8 +197,28 @@ def apply_source_fixes(body):
     # through on a sentinel (the pillow-problems rule) so the collapse
     # cannot see them.
     body = re.sub(r"\[(\d+)\]", r"@@FN\1@@", body)
+    # NOR IS A NESTED CITATION'S BRACKET A STRAY -- the same trap in its
+    # other form. Three of Giles's notes end on a bracketed source
+    # reference, so the run is "inner close + block close" and collapsing
+    # it eats the inner one, leaving a "[" that never closes: the
+    # prepared text then reads "[The above is Tu Mu's version..." with no
+    # end, and "[See Ch'ien Han Shu, ch. 34, ff. 4, 5." likewise. Ride
+    # them through on their own sentinel. Each is asserted, so a fourth
+    # has to be looked at rather than silently absorbed.
+    for tail in ("his army.] ]",              # Tu Mu vs. the Shih Chi
+                 "ff. 4, 5.] ]",              # Han Hsin, Ch'ien Han Shu
+                 "ch. 71.]\n]"):              # Pan Ch'ao, ch. XII
+        # NOT "ff. 1, 2.] ]" in chapter thirteen, which looks identical
+        # and is not: there the citation has no OPENING bracket either,
+        # so both closers are strays and the collapse is right about it.
+        # Checked by reading the source, not by the shape of the run.
+        assert body.count(tail) == 1, f"nested close {tail!r} not found once"
+        body = body.replace(tail, tail.replace("]", "@@CB@@", 1))
+    # What is left is the genuine noise: five bare brackets in a row at
+    # the end of chapter twelve's longest note, which findall reads as
+    # two non-overlapping runs, plus chapter thirteen's stray pair.
     n = len(re.findall(r"\]\s*\]", body))
-    assert n >= 5, f"expected the '] ]' noise, found {n} runs"
+    assert n == 3, f"expected 3 runs of the '] ]' noise, found {n}"
     while re.search(r"\]\s*\]", body):
         body = re.sub(r"\]\s*\]", "]", body)
     # A VERSE THAT FOLLOWS A CLOSING BRACKET WITHOUT A BLANK LINE IS
@@ -181,6 +232,7 @@ def apply_source_fixes(body):
     assert len(welded) == 1, f"{len(welded)} welded verses, expected 1"
     body = re.sub(r"\]\r?\n(?=\d+[.,])", "]\n\n", body)
     body = re.sub(r"@@FN(\d+)@@", r"[\1]", body)
+    body = body.replace("@@CB@@", "]")
     return body
 
 
@@ -268,11 +320,32 @@ def main():
                 in_block = opening = False
                 unclosed.append((n, body_text[:55]))
             if in_block or opening:
-                if body_text.endswith("]"):
+                # A TRAILING "]" IS NOT ALWAYS THE BLOCK'S. The Hannibal
+                # note ends "[See Polybius, III. 93, 94; Livy, XXII. 16
+                # 17.]" and the source gives it no closer of its own, so
+                # reading that bracket as the block's both loses the
+                # citation's and closes the block a paragraph early.
+                # Decide by BALANCE: the block closes only on a "]" that
+                # nothing inside the paragraph has opened.
+                inner = body_text[1:] if opening else body_text
+                closing = (inner.endswith("]")
+                           and inner.count("[") < inner.count("]"))
+                if closing:
                     in_block = False
                 elif opening:
                     in_block = True
-                body_text = "Commentary: " + body_text.strip("[] ").strip()
+                # STRIP EXACTLY ONE DELIMITER AT EACH END, never every
+                # bracket standing there. Five of Giles's notes END on a
+                # nested citation -- "[See Ch'ien Han Shu, ch. 34, ff. 4,
+                # 5.]" closing a block that itself opened with "[" -- and
+                # .strip("[] ") took the citation's closer along with the
+                # block's. The result was an opening bracket that never
+                # closed, in five of the fourteen files.
+                if opening:
+                    body_text = body_text[1:]
+                if closing:
+                    body_text = body_text[:-1]
+                body_text = "Commentary: " + body_text.strip()
             out.append(body_text)
             for c in cited:
                 assert c in notes, f"chapter {n}: marker [{c}] has no text"

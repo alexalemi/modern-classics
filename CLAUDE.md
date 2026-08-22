@@ -2645,3 +2645,109 @@ NOTE: `se lint` raises two [Manual Review] items wanting a `win` relator
 and a frontmatter inflection on introduction.xhtml. The Introduction is
 WOLLSTONECRAFT'S OWN, not an editor's, and carries four of the
 must_contain pins; both are correctly ignored.
+
+Sun Tzu's The Art of War (sun-tzu/ — the 63rd book; Lionel Giles's 1910
+translation from Gutenberg #132). All thirteen chapters, verses AND
+commentary, 14 files, 41,012 -> 40,290 words, ratio 0.98 (verify
+--min-ratio 0.85 --max-ratio 1.3).
+
+IT IS A CRIB MODERNISATION, NOT A TRANSLATION FROM THE ORIGINAL, and
+that is said in the subtitle on the page and in the epub description.
+Sun Tzu wrote about 6,000 Chinese characters; what is modernised here is
+Giles's English. Every other from-the-original book here (ovid/,
+galileo/, the Vernes) works from the source language with a crib
+alongside; this one cannot, because nobody here reads classical Chinese.
+Say so rather than implying otherwise.
+
+THE COMMENTARY IS THE BOOK — 53% of the text, 416 bracketed blocks by
+eleven Chinese generals and scholars over two thousand years. Most
+modern editions print the verses alone, which is why this one is worth
+having. Giles's own sixteen footnotes are kept too. THREE VOICES, and
+the reader can tell them apart ONLY by the label, so check.py's decisive
+check is VOICE PARITY: the sequence of "Commentary:" / "Footnote:" /
+verse, per file, compared against the source. A label that vanishes
+hands a commentator's gloss to Sun Tzu; one that is invented does the
+reverse. BOTH READ PERFECTLY, and neither moves the ratio.
+
+THE SOURCE DEFECT CLASS THIS BOOK IS MADE OF: GUTENBERG'S BRACKETS DO
+NOT BALANCE, and every imbalance silently reassigns a voice. Eleven are
+corrected in prep.py's SOURCE_FIXES, each asserted. The lesson that
+generalises is that BRACKET ARITHMETIC IS THE WRONG TOOL — classify by
+paragraph (first character opens, an unmatched closer ends) and then fix
+the specific breakages by hand:
+  - A MISSING OPENING BRACKET makes a gloss read as Sun Tzu's own text.
+    Three of these, the largest being Giles's 500-word review of how
+    badly the Nine Grounds hang together, which would have shipped as
+    Sun Tzu criticising his own book.
+  - A MISSING CLOSING BRACKET makes the block swallow the verse after
+    it. Eight, and each needed READING to find where the note ends.
+  - A FOOTNOTE MARKER'S BRACKET IS NOT A STRAY. Collapsing the "] ]"
+    transcription noise ate the block's own closer wherever a note ended
+    "[1] ]", and the casualty was "All warfare is based on deception" —
+    the most quoted line in the book — shipping as somebody's commentary
+    on itself. Ride the markers through on a sentinel.
+  - NOR IS A NESTED CITATION'S BRACKET A STRAY. Four notes end on a
+    bracketed source reference, so the run is "inner close + block
+    close". Same sentinel, and NOT applied to the one that looks
+    identical and is not (its citation has no opener either).
+  - A TRAILING "]" IS NOT ALWAYS THE BLOCK'S. Decide by BALANCE, never
+    by the last character, and strip EXACTLY ONE delimiter at each end:
+    .strip("[] ") took a citation's closer along with the block's and
+    left an opening bracket dangling in five of the fourteen files.
+Every one of these is invisible to verify.py, and the two that reassign
+a voice are invisible to a reader who does not have the source open.
+
+GILES'S PAGE REFERENCES TO HIS OWN EDITION, five of them, are
+meaningless in a reflowable page. Four RESOLVE and were rewritten to
+chapter-and-verse; one points into his introduction, which this edition
+does not carry, so the locator is dropped and the battle it refers to is
+described in full in the same sentence. All five are in check.py's
+NUM_DROPPED with the reason beside them — the hume COUNTED numeric diff
+caught every one. References to OTHER authors' books ("Marshal Turenne,"
+p. 311) are kept as printed, the euclid-rivals rule.
+
+VOICE: three registers kept apart. Sun Tzu is aphoristic and already
+modern — the hume rule governs and most must_contain pins are pinned
+UNCHANGED, because his sentences are the reason the book is quoted. The
+commentators are a two-thousand-year argument, by turns pedantic,
+anecdotal and rude about each other. Giles is an Edwardian scholar who
+is funny, opinionated ("But this is very weak") and given to comparing
+everything to Napoleon, Cromwell and Turenne; the connective prose and
+his apparatus are where the actual work is.
+PINS MUST COME FROM THE PREPARED TEXT (the epictetus rule), and this
+book punishes memory harder than most: "swift as the wind", "the
+victorious warrior wins first and then goes to war" and the sheathed
+sword are all famous Sun Tzu and NONE of them is in Giles. They belong
+to later translations, so a pin written from memory could only be
+satisfied by a translation that had drifted to somebody else's wording.
+LOCKED: the Moral Law (his tao, and his own note says it is not
+morality), *cheng* and *ch'i*, energy (shih), method and discipline
+(fa), *li* and *picul*, and Wade-Giles spelling throughout. Giles's
+editorial Latin (*I.e.*, *supra*, *infra*) is Englished and correctly
+loses its italics with the Latin — exempted in check.py BY RULE, not by
+a per-file allowance, so a dropped *li* or *cheng* still fails.
+THE VERNE RULE, no note anywhere in the volume: Giles's aside that "a
+strange lack of logical perception is shown in the Chinaman's
+unquestioning acceptance of glaring cross-divisions" stands as HIS
+judgement of the commentators' logic (the noun goes, on the mill
+"planters and negroes" precedent, because it names the same people and
+carries no part of the claim); "some of which would occur only to the
+Oriental mind" is KEPT ENTIRE, because there the dated category IS the
+claim. Swap a slur WORD for the neutral name of the same people; never
+swap out the CLAIM. The "Northern barbarians" of the Hou Han Shu are
+kept for the same reason — that is the Chinese state's political
+category, not a slur standing in for a people already named.
+Cover: Shang Xi's "Guan Yu Captures General Pang De" (c. 1430), Commons
+"File:Shang Xi, Guan Yu Captures General Pang De.JPG", crop
+"1241x1862+300+0" — the general seated under a pine with his officers,
+taken out of a nearly square Ming hanging scroll; the crop deliberately
+leaves the bound prisoner outside the frame, so what is left is a
+commander deciding something, which is the book. At 2200 wide it is
+under commons_url's 4200 gate and the crop is in the ORIGINAL's
+coordinates. FOUR CANDIDATES WERE LOOKED AT AND REJECTED BY LOOKING:
+the two best-named "bamboo slips of the Art of War" photographs turn out
+to be a museum caption card and a 1996 gift-shop facsimile behind glass.
+`se lint` raises t-057 in eleven chapters ("`<p>` starting with lowercase
+letter") and y-003 in four; both are correct here, because a verse is
+routinely interrupted by a commentary block and resumes in a new
+paragraph.

@@ -60,6 +60,35 @@ THOU = re.compile(
 # BY EXACT PHRASE, NEVER BY LOOSENING THE SWEEP (the grimm rule).
 ARCHAIC_OK = []
 
+# TWO SIGNED ALLOWANCE TABLES (the burke rule): a reason beside every
+# entry, or the entry is just a loosened check. Both are keyed by file,
+# so an allowance cannot leak into a chapter it was not argued for.
+#
+# GILES'S PAGE REFERENCES TO HIS OWN EDITION are meaningless in a
+# reflowable one, and two of them fall here. "(See p. 57.)" resolves to
+# Tu Mu's account of Chao She's march, which IS in this book, so it is
+# rewritten as "Chapter Seven, verse 4, note" and the reader can follow
+# it. "already alluded to on p. 28" points into Giles's own
+# introduction, which this edition does not carry (see prep.py), so the
+# locator has nothing to point at and is dropped -- the battle it refers
+# to is then described in full in the very same sentence.
+# "[See p. 90.]" is the third, and it resolves: T'ien Tan's stratagem
+# with the oxen is Chapter Nine, verse 24, note, which is where the
+# rewritten reference now sends the reader.
+# Chapter thirteen carries three more of them, all resolvable: p. 90
+# and p. 57 as above, and "(See p. 132.)" -- Pan Ch'ao's deception of
+# his own officers before Yarkand, Chapter Eleven, verse 36, note.
+NUM_DROPPED = {"011.txt": ["57", "28"], "012.txt": ["90"],
+               "013.txt": ["90", "57", "132"]}
+
+# *débandade* is not the locked foreign vocabulary the emphasis check
+# exists to protect. Giles italicises transliterated Chinese and real
+# technical terms -- *cheng*, *ch'i*, *li* -- and those stay. This is a
+# French word he reached for where English has one, in the middle of a
+# Chinese general's reported speech, and modern English never took it
+# up: a dated WORD, not a dated claim. Rendered "stampede".
+EMPH_DELTA = {"011.txt": ["débandade"]}
+
 # GILES'S ITALICISED EDITORIAL LATIN, and why it is exempt AS A RULE
 # rather than by a per-file allowance.
 #
@@ -166,6 +195,16 @@ def main():
                            f"{i + 1}: source {vs[i]}, translation {vd[i]} "
                            f"-- {dp[i][:60]!r}")
 
+        # 1b -- A VERSE MUST NOT END ON A CLOSING BRACKET. That is the
+        # signature of a commentary block whose OPENING bracket the
+        # source lost: the gloss then reads as Sun Tzu's own words and
+        # nothing else can see it. Two were found this way.
+        for i, ptext in enumerate(dp, 1):
+            if not LABEL.match(ptext) and ptext.rstrip().endswith("]"):
+                out.append(f"{where}: paragraph {i} is unlabelled but ends "
+                           f"on ']' -- a note that lost its opening "
+                           f"bracket? {ptext[:60]!r}")
+
         # 2 -- verse numbers, in order
         ns, nd = verse_numbers(sp), verse_numbers(dp)
         if ns != nd:
@@ -176,10 +215,17 @@ def main():
         # 4 -- emphasis, counted and rendered
         # The curly apostrophe is typography, not content: the source
         # writes "ch\u2019i" and this edition writes "ch'i" throughout.
-        apos = lambda x: x.replace("\u2019", "'")
+        # Giles's breve is the same class (the source writes "Sun Tz\u016d"
+        # and this edition drops the diacritic throughout), and so is
+        # punctuation the printer swept inside a span ("*qui vive;*").
+        # A RULE, not a per-file allowance: neither can hide a reworded
+        # span, because only the trailing marks are trimmed.
+        apos = lambda x: (x.replace("\u2019", "'")
+                           .replace("\u016d", "u").rstrip(" .,;:"))
         ss = [apos(x) for x in re.findall(r"\*([^*]+)\*", src)
               if x not in LATIN_TAGS]
         ds = [apos(x) for x in re.findall(r"\*([^*]+)\*", body)]
+        ds += [apos(x) for x in EMPH_DELTA.get(fn, [])]
         if Counter(ss) != Counter(ds):
             gone = Counter(ss) - Counter(ds)
             new = Counter(ds) - Counter(ss)
@@ -198,7 +244,8 @@ def main():
         # the separators from both sides -- the check exists to catch a
         # value that VANISHED, not one that gained a comma.
         bare = lambda t: [x.replace(",", "") for x in NUM.findall(t)]
-        lost = Counter(bare(src)) - Counter(bare(body))
+        lost = (Counter(bare(src)) - Counter(bare(body))
+                - Counter(NUM_DROPPED.get(fn, [])))
         if lost:
             out.append(f"{where}: numerals lost: "
                        + ", ".join(sorted(lost.elements())))
