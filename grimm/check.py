@@ -36,6 +36,7 @@ import json
 import pathlib
 import re
 import sys
+from collections import Counter
 
 BOOK = pathlib.Path(__file__).resolve().parent
 SRC, MOD = BOOK / "chapters", BOOK / "modern_chapters"
@@ -50,7 +51,10 @@ SRC, MOD = BOOK / "chapters", BOOK / "modern_chapters"
 THOU = re.compile(r"\b(thou|thee|thy|thine|hast|hath|doth|dost|"
                   r"shalt|canst|mayest|wert|quoth|hither|whither|whence)\b",
                   re.I)
-NUM = re.compile(r"\d[\d,]*")
+# A separator must be FOLLOWED BY A DIGIT, or a figure at the end of a
+# clause swallows the comma after it and "1,000," stops matching its own
+# occurrence in the translation (the hume fix).
+NUM = re.compile(r"\d+(?:[,./]\d+)*")
 
 # Numerals that are PAGE FURNITURE in the source rather than content —
 # a tale's catalogue number left stranded in the body by the
@@ -169,12 +173,27 @@ def main():
         # value of this check (the fleming rule) is that it is blind and
         # total, and a general "ignore small integers" rule would let a real
         # dropped quantity through.
+        # MEASURED, 2026-08-22: this check has almost nothing to bite on.
+        # The Grimms' source carries SIX numeral tokens in all, across 3 of
+        # 85 files, and one of those is the 151* catalogue number exempted
+        # below. Hunt spells her numbers out ("seven ravens", "twelve
+        # brothers"), so the fleming diff is nearly inert here. It is kept
+        # because it is free and because a future source change would be
+        # caught -- but it must NOT be counted as coverage. See the note in
+        # nights/check.py, where it is inert entirely.
+        # COUNTED, NOT A SET (the hume lesson): a set cannot see a dropped
+        # duplicate, because the surviving occurrence covers for the lost
+        # one. And the old test asked `n not in d`, a substring search over
+        # the whole file, so "5" counted as present because some "1500"
+        # contained it.
         stray = SOURCE_NUMBER_FURNITURE.get(f, set())
-        missing = [n for n in set(NUM.findall(s)) if n not in d
-                   and n not in stray]
-        if missing:
+        lost = Counter(NUM.findall(s)) - Counter(NUM.findall(d))
+        for n in stray:
+            del lost[n]
+        if lost:
             fails.append(f"{f}: numerals not found in translation: "
-                         f"{sorted(missing)} (check they are not spelled out)")
+                         f"{sorted(lost.elements())} "
+                         f"(check they are not spelled out)")
 
         for line, why, txt in caps_or_markup(d):
             fails.append(f"{f}:{line}: {why}: {txt}")

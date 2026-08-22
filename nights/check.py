@@ -42,6 +42,7 @@ import json
 import pathlib
 import re
 import sys
+from collections import Counter
 
 BOOK = pathlib.Path(__file__).resolve().parent
 SRC, MOD = BOOK / "chapters", BOOK / "modern_chapters"
@@ -95,7 +96,10 @@ def spelled(phrase):
         else:
             return None
     return total or None
-NUM = re.compile(r"\d[\d,]*")
+# A separator must be FOLLOWED BY A DIGIT, or a figure at the end of a
+# clause swallows the comma after it and "1,000," stops matching its own
+# occurrence in the translation (the hume fix).
+NUM = re.compile(r"\d+(?:[,./]\d+)*")
 
 # Phrases locked in running_notes.txt, with the near-miss variants that
 # have actually been written by mistake. A variant present anywhere is a
@@ -170,10 +174,30 @@ def main():
         elif sorted(ns) != sorted(nd):
             fails.append(f"{f}: night numbers {ns} -> {nd}")
 
-        missing = [n for n in set(NUM.findall(s)) if n not in d]
-        if missing:
+        # THIS CHECK CANNOT FIRE, AND SAYING SO IS THE POINT.
+        # MEASURED, 2026-08-22: there is not a single digit anywhere in the
+        # 72 source files. Burton spells every number out in words -- "three
+        # hundred and sixty days", "the Forty Thieves" -- so NUM.findall
+        # returns nothing on either side and the diff is always empty. The
+        # line below has reported "numerals clean" since the day it was
+        # written while testing precisely nothing.
+        # It is kept, tightened, because this file is a template other books
+        # copy and the old set-plus-substring form was wrong in three ways
+        # (see the module docstring). But the fleming numeric diff only has
+        # purchase where the SOURCE USES DIGITS: measure that before
+        # claiming it as protection. What actually guards numbers in this
+        # book is the night-number sequence check above, which parses the
+        # spelled-out ordinals -- and that one has caught real defects.
+        # COUNTED, NOT A SET (the hume lesson): a set cannot see a dropped
+        # duplicate. And the old test asked `n not in d`, a substring
+        # search over the whole file, so "5" counted as present because
+        # some "1500" contained it. Sindbad's voyages are full of repeated
+        # small figures, which is exactly the material this protects.
+        lost = Counter(NUM.findall(s)) - Counter(NUM.findall(d))
+        if lost:
             fails.append(f"{f}: numerals not found in translation: "
-                         f"{sorted(missing)} (check they are not spelled out)")
+                         f"{sorted(lost.elements())} "
+                         f"(check they are not spelled out)")
 
         for line, why, txt in caps_or_markup(d):
             fails.append(f"{f}:{line}: {why}\n    {txt}")
