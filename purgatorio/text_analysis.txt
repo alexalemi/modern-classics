@@ -1,0 +1,183 @@
+TEXT ANALYSIS — Dante's Purgatorio
+Read this AND inferno/text_analysis.txt before translating. The
+consistency ledger is running_notes.txt.
+
+
+WHAT THIS EDITION IS
+---------------------------------------------------------------------
+The second cantica, complete: 33 cantos, 4,755 lines, from the Italian
+(Gutenberg #998, the Petrocchi text), with Longfellow's 1867 English as
+a per-canto crib under reference/ — the ovid/ and de-officiis/ pattern.
+USE THE CRIB TO CHECK A LINE, NEVER TO BORROW A PHRASE. Longfellow
+keeps Italian word order in English and scores 28.7 archaisms per 1,000
+words; the whole point of this edition is not to sound like him, and
+check.py's archaism sweep exists to catch the drift.
+
+
+THE FORM IS THE INFERNO'S AND DOES NOT CHANGE
+---------------------------------------------------------------------
+  - VERSE STAYS VERSE, every line its own line, tab-indented.
+  - TERCETS STAY TERCETS: same number, same order, three lines each and
+    one line closing every canto. check.py compares the shape exactly.
+  - THE LINE COUNT PER CANTO IS EXACT (136, 133, 145, 139, ...), and
+    the total is 4,755 in 33 cantos.
+  - NO RHYME and no imposed metre. Terza rima cannot cross into English
+    without padding, and padding is what this poem must not suffer.
+  - ENJAMBMENT ACROSS A TERCET BOUNDARY IS DANTE'S; keep it where he
+    has it and do not tidy the sentence back inside its tercet.
+  - ONE LINE OF ENGLISH PER LINE OF ITALIAN in sense, not in syllables.
+
+
+HOW THIS CANTICA DIFFERS, AND IT IS NOT A SMALL DIFFERENCE
+---------------------------------------------------------------------
+The Inferno is a place where nothing can change. The Purgatorio is
+about people who are changing, and that is a different book to render.
+
+  1 EVERYONE HERE IS SAVED AND KNOWS IT. The suffering is real and
+    severe — fire, weights, blindness, starvation — and it is entered
+    willingly and left behind. Nobody complains and nobody argues his
+    sentence. That is the tone to hold: pain without despair. Do not
+    import the Inferno's bitterness, and do not sweeten the pain
+    either.
+
+  2 TIME EXISTS. This is the only cantica with a sunrise, a noon, three
+    nights and three dawn dreams; the climb stops when the light goes.
+    Dante marks the hour constantly, often by where the sun stands.
+    KEEP EVERY TIME-MARKER; they are the spine of the narrative, not
+    ornament, and they are why the reader feels the mountain being
+    climbed rather than described.
+
+  3 IT IS THE MOST HUMAN OF THE THREE. The dead here embrace, apologise,
+    tease, remember meals and songs, and ask for prayers. Casella sings
+    a love song of Dante's own and everybody stands still to listen;
+    Belacqua sits behind a rock making fun of him; Forese jokes about
+    his own thinness. That warmth is load-bearing and must survive.
+
+  4 IT IS A POEM ABOUT ART, and about the vanity of being good at it.
+    Oderisi on fame in canto XI, Statius on being converted by reading
+    Virgil in XXI-XXII, Bonagiunta naming the "sweet new style" in XXIV,
+    Guinizelli and Arnaut Daniel in XXVI: Dante keeps putting poets in
+    front of the reader and asking what any of it is worth. These
+    passages are where the writing is most careful and they repay the
+    most work.
+
+  5 THE GREAT LOSS IS VIRGIL'S DEPARTURE. He crowns and mitres Dante
+    over himself in XXVII, and then in XXX he is simply gone, named
+    three times in three lines. Play it exactly as written: Dante does
+    not say goodbye and Virgil never speaks again. Nothing may be added
+    to help the reader feel it.
+
+
+LITURGY, LATIN AND SONG
+---------------------------------------------------------------------
+The mountain sings almost continuously — psalms at the shore, "Salve
+Regina" in the valley, "Te lucis ante" at nightfall, a Beatitude on
+every terrace, "Summae Deus clementiae" in the fire, "Benedictus qui
+venis" at Beatrice's arrival.
+
+  - LATIN STAYS LATIN, exactly as in the Inferno. It is meant to be
+    heard as Latin, by souls who are singing it; translating it would
+    turn a liturgy into a sentence.
+  - Where Dante himself translates or paraphrases a Latin line into
+    Italian in the next tercet, so does this edition.
+  - "In exitu Israel de Aegypto", "Miserere", "Asperges me", "Deus,
+    venerunt gentes", "Beati pauperes spiritu", "Labia mea, Domine",
+    "Virum non cognosco", "Manibus, oh, date lilia plenis": all kept.
+
+CANTO XXVI ENDS IN PROVENÇAL, AND IT IS THE ONE PLACE WHERE THE LATIN
+RULE IS NOT FOLLOWED. Arnaut Daniel answers in his own language, eight
+lines of it, and they are Dante's lines in Dante's tercets. They are
+rendered in ENGLISH all the same, and the reason is the burke rule:
+an untranslated block is a hole in the poem rather than a piece of
+scholarship, and there is no room to gloss it, because the tercet
+count and the line count are fixed. Dante's own readers could read
+Provençal — it was the literary language of love poetry in Italy — so
+keeping it would reproduce the surface and destroy the effect, which
+is Arnaut speaking and being understood. What carries the fact of the
+other language instead is the line that introduces him: "liberamente"
+becomes "freely, in his own tongue", which tells the reader exactly
+what happened and costs no line. Logged in running_notes.txt.
+
+
+VOICE
+---------------------------------------------------------------------
+As the Inferno: concrete, fast, physical, not solemn. THE hume RULE
+GOVERNS HARD — the famous lines are famous for being plain, and a line
+that is already clear is left alone.
+
+What changes is the light. The Purgatorio is full of colour and
+weather: the sapphire of the first dawn, the trembling of the sea at
+sunrise, shadow on grass, smoke thick as night, snow on the Apennines,
+the last sunlight going out on the seventh terrace. Do not generalise
+these into "beauty"; Dante names the actual colour and the actual hour,
+and so does this edition.
+
+Dante himself is lighter here — curious, sociable, embarrassed when
+caught being vain, and repeatedly told to hurry up. Virgil is warmer
+and more often uncertain, because he does not know this mountain and
+says so. The angels are brisk and kind. Cato is severe. Beatrice, when
+she comes, is merciless for a hundred lines and then not.
+
+THE ADDRESSES TO THE READER (there are more here than in the other two
+cantiche) are direct second-person and stay that way: "Reader, if God
+ever lets you take the fruit of your reading..."
+
+
+NAMES, REFERENCES, NO NOTES
+---------------------------------------------------------------------
+  - FAMILIAR ENGLISH FORMS where they exist: Virgil, Cato, Beatrice,
+    Statius, Florence, Rome. Italian forms for Italians: Manfredi,
+    Belacqua, Sordello, Oderisi, Forese, Bonagiunta, Piccarda.
+  - NO FOOTNOTES ON THE PAGE, as in the Inferno. Where a reference is
+    genuinely unfollowable, let the line carry the smallest possible
+    identification ("Manfred, King of Sicily") rather than a note. Every
+    such case is logged in running_notes.txt.
+  - THE PROPHECIES STAY DARK. The "cinquecento diece e cinque" of canto
+    XXXIII is deliberately a riddle and is rendered as one; so is the
+    DXV's counterpart in the Inferno. Do not solve them for the reader.
+  - DANTE'S NAME appears exactly once in the whole Comedy, in canto XXX
+    line 55, and he apologises for recording it. It stays.
+
+
+THE VERNE RULE
+---------------------------------------------------------------------
+Everything stands as Dante wrote it, with no note anywhere in the
+volume:
+  - MANFRED, excommunicate, dies with two mortal wounds and is saved
+    anyway, and the poem says plainly that no curse of the Church can
+    put a soul beyond return. That is a claim against the institution
+    Dante belonged to and it is the point of canto III.
+  - The lust terrace holds heterosexual and homosexual sinners together
+    and Guinizelli explains the difference between the two groups
+    without a flicker of extra condemnation; canto XXVI is translated
+    plainly, in full, and the tenderness in it is not tidied (the
+    Brunetto precedent from the Inferno).
+  - The invective is savage and stays: "Ah, Italy, slave and hostel of
+    grief" in VI, the two suns of Rome in XVI, the Capetian kings in
+    XX, the whore and the giant in XXXII.
+  - The theology is his: the late-repentant kept waiting, the value of
+    prayers offered by the living, the making of the soul in XXV.
+
+
+CONSISTENT VOCABULARY
+---------------------------------------------------------------------
+  purgatorio            "Purgatory" in the body; "Purgatorio" is the title.
+  cornice               "terrace" (the seven ledges), never "cornice".
+  girone                "circle" only when Dante means one of the seven.
+  antipurgatorio        not Dante's word; do not use it in the text.
+  scoglio, balzo        "ledge", "bank".
+  duca, maestro, segnore, dolce padre
+                        "guide", "master", "my lord", "sweet father" —
+                        Dante varies them deliberately and so do we.
+  ombra                 "shade" (not "ghost", not "spirit").
+  P                     the seven P's cut in Dante's forehead stay "P",
+                        and the angel's wing wipes one away each time.
+  contrapasso           not named here; do not import it from the Inferno.
+  gentile, cortese      "noble", "courteous" — social vocabulary.
+  pietà / pietoso       swings between "pity" and "piety"; Dante uses
+                        the ambiguity and so must the English.
+  disio, voglia, talento
+                        "longing", "will", "desire" — kept distinct;
+                        the whole cantica is about wanting the right
+                        thing, so these words are technical.
+  libero arbitrio       "free will", and it is an argument, not a phrase.

@@ -2958,3 +2958,77 @@ rendition and the crop is in ITS coordinates (the bunyan/quixote trap).
 NOTE on ebook_meta: an empty string in a subject's authority slot ships
 an empty <meta> element and epubcheck rejects it (RSC-005) minutes into
 `se build --check`; the value is "Unknown".
+
+Dante's Purgatorio (purgatorio/ — the 65th book, and the SECOND
+CANTICA of the Comedy after inferno/). All 33 cantos and all 4,755
+lines, 32,712 Italian words -> 38,449 English, ratio 1.18 (verify
+--min-ratio 1.05 --max-ratio 1.35). From the ITALIAN, Gutenberg #998,
+with Longfellow's 1867 English as a per-canto crib under reference/,
+pulled from the Standard Ebooks repo (src/epub/text/purgatorio.xhtml).
+READ inferno/prep.py AND inferno/text_analysis.txt FIRST: the form
+rules, the crib parser and both of its traps carry over unchanged.
+
+THE LINE-COUNT TABLE IS DERIVED-THEN-PINNED, AND THAT IS A DEPARTURE
+WORTH UNDERSTANDING. In inferno/ the per-canto table was written out
+from outside the file, which is the grimm rule (a source compared only
+against itself agrees with itself). Here I did not have a canto-by-
+canto count I trusted from memory — my recollection differed from the
+file at canto VIII — and A TABLE WRITTEN FROM A SHAKY MEMORY IS WORSE
+THAN NO TABLE: it either fires on correct text or, worse, pins a wrong
+number that a later re-run quietly satisfies. So the table was read off
+the file ONCE and pinned as a regression guard, and the load-bearing
+checks are the two that do come from outside it: the crib (a second
+text, parsed by different code, must agree canto for canto) and the
+totals, 4,755 lines in 33 cantos, which are facts about the poem.
+
+THE TRANSLATION DECISION THIS BOOK ADDS, and it is the one place the
+Latin rule does not reach: CANTO XXVI ENDS IN EIGHT LINES OF PROVENÇAL.
+Latin stays Latin all through the cantica because it is liturgy, sung,
+and recognised as liturgy. Arnaut Daniel's speech is different: it is a
+SPEECH WITH CONTENT — he names himself, repents, and asks to be
+remembered — and THE BURKE RULE DECIDES IT, that an untranslated block
+is a hole in the work rather than a piece of scholarship. Burke could
+keep the French and gloss it because prose has room; here the tercet
+and line counts are fixed and there is no room, so the choice is a hole
+or a rendering. It is rendered. AND THE EFFECT IS BETTER SERVED:
+Dante's readers could read Provençal, so keeping it reproduces the
+surface and destroys the effect. What carries the fact of the other
+language costs no line — "El cominciò liberamente a dire" becomes "He
+began, freely, in his own tongue, to say". Same reasoning for the two
+Italian canzoni quoted by their incipits (II.112, XXIV.51).
+
+THE ACROSTIC OF CANTO XII IS NOT REPRODUCED AND THE ANAPHORA IS. Lines
+25-63 spell VOM (uomo) down the initials of thirteen tercets. An
+English acrostic would be paid for in distorted lines, which is the
+terza rima decision in miniature. What the device actually does —
+hammering the same three openings — survives exactly: four tercets open
+"I saw", four "Oh", four "It showed", and the thirteenth carries all
+three in order.
+
+VOICE, AND IT IS NOT THE INFERNO'S. Everyone here is saved and knows
+it, so the register is pain without despair: do not import the
+Inferno's bitterness and do not sweeten the suffering either. It is the
+most human of the three cantiche (the dead embrace, apologise, tease,
+remember meals and songs) and the only one with a clock — a sunrise,
+three nights when climbing is forbidden, three dawn dreams, and a sun
+whose position Dante checks constantly. KEEP EVERY TIME-MARKER: they
+are why a reader feels a mountain being climbed rather than described.
+The great loss is Virgil's, and it is played exactly as written: he
+crowns and mitres Dante over himself in XXVII, and in XXX he is simply
+gone, named three times in three lines, with nothing added to help.
+
+THE VERNE RULE, no note anywhere in the volume: Manfred excommunicate
+and saved, with the Church's curse declared powerless (III); the
+terrace of lust holding both kinds of sinners with Guinizelli
+explaining the difference and no extra condemnation (XXVI); the whore
+and the giant of XXXII; the prophecy against the Church in XXXIII,
+whose DXV riddle is rendered as a riddle ("a five hundred, ten and
+five") and NOT solved for the reader.
+Cover: Doré's "The Boat of Souls" (1868), Commons "File:Gustove Dore,
+The Divine Comedy, Purgatory, plate 79, The Boat of Souls.jpg", crop
+"2527x3790+695+512" — the plate only, out of a page scan with wide
+margins, a page number and a printed caption (the Trouvelot/Goya
+method). The angel at the tiller, the souls in white, Dante and Virgil
+watching from the shore among the rushes of canto I. The original is
+5690 wide, over commons_url's 4200 gate, so the crop is in the 4000px
+RENDITION's coordinates (the bunyan/quixote trap).

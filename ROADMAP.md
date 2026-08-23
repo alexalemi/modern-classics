@@ -53,6 +53,16 @@ SE-XHTML, Wikisource-API, from-the-Latin, from-the-French.
   sketches of annoying personality types) — live at
   site/theophrastus.html, in both feeds and epub catalog.
 
+### The Divine Comedy (from the Italian)
+- **Dante - Inferno** - DONE (site/inferno.html; 34 cantos, 4,720
+  lines, tercet for tercet, from Gutenberg #997 with Longfellow as a
+  per-canto crib).
+- **Dante - Purgatorio** - DONE (site/purgatorio.html; 33 cantos,
+  4,755 lines, same pipeline, Gutenberg #998 and the Standard Ebooks
+  Longfellow). The cantica most readers of the Inferno never reach.
+- **Dante - Paradiso** - the obvious next book: 33 cantos, 4,758
+  lines, the same prep and the same checks, and it finishes the poem.
+
 ## Founders' Library, Volume II
 - Montesquieu — The Spirit of the Laws (from the French; the most-cited
   secular author of the founding era; ~250k words)
