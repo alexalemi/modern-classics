@@ -1,0 +1,202 @@
+PARADISO -- RUNNING NOTES
+The shared consistency ledger. Read inferno/running_notes.txt and
+purgatorio/running_notes.txt first: the form rules are identical across
+all three cantiche and are not repeated here except where this book
+decides something the other two did not.
+
+
+FORM (identical to inferno/ and purgatorio/)
+
+- Verse stays verse, tab-indented, one line per line.
+- Tercets stay tercets, in the same number and the same order. The line
+  count per canto is exact and is checked mechanically against
+  chapters/. ONE LOST TAB TURNS A TERCET INTO A PARAGRAPH -- assemble.py
+  joins the lines into running prose -- and the word ratio does not move
+  at all.
+- No rhyme. Terza rima cannot cross into English without padding, and
+  padding is the one thing that must not happen to a poem this
+  compressed. Said plainly in the front matter rather than implied.
+- Enjambment across a tercet boundary is preserved where Dante has it.
+- Ratio: 1.18 over the cantica (verify --min-ratio 1.05 --max-ratio
+  1.35), which is Purgatorio's 1.18 and just under Inferno's 1.19.
+
+CHECK: paradiso/check.py compares tercet count, lines within each
+tercet, and the total, EXACTLY against chapters/, and requires every
+line to keep its tab. It caught exactly one defect in the whole
+cantica -- canto XXVI tercets 12 and 13, where I had run
+"Dunque a l'essenza ov' è tanto avvantaggio" and the tercet that
+completes its sentence together into one five-line block. Every word
+was present and the English read perfectly; only the shape was wrong,
+and nothing else in the toolchain can see that.
+MEASURED AND NOT INCLUDED, as in inferno/: the fleming numeric diff.
+The Italian of the Paradiso spells its numbers out almost throughout,
+so the check would be very nearly inert, and an inert check that looks
+like coverage is worse than none (the nights lesson).
+
+
+THE CENTRAL PROBLEM, AND THE ANSWER IS THE OPPOSITE OF GRAND
+
+The Paradiso has a reputation for being abstract, and translators
+answer that reputation by raising the register -- which is exactly what
+destroys it. Dante's answer to a heaven made of light is to reach for
+the smallest domestic thing in the room. Keep every one of them:
+
+  a bird on the nest before dawn, waiting for the light (XXIII)
+  a baby flinging its face towards the milk (XXX)
+  an infant stretching its arms after feeding (XXIII)
+  jackdaws warming their feathers at daybreak (XXI)
+  wheels in the works of a clock (XXIV)
+  a coal quickening into flame at the wind (XVI)
+  a tailor cutting the gown by the cloth he has (XXXII)
+  a woman blushing, and the blush going (XVIII)
+  bees going in and out of a flower (XXXI)
+  a man taking his finger out of a fire and putting it back (XXII)
+  two beasts under one skin -- prelate and palfrey (XXI)
+  the hood puffed up with a good laugh at a sermon (XXIX)
+
+Whenever the argument climbs, the image comes down. That alternation is
+the cantica's whole tone and it is easy to flatten by degrees without
+noticing any single loss.
+
+
+THE LIGHT VOCABULARY IS LOCKED
+
+Dante has a dozen words for light and uses them as different things.
+Do not harmonize them into "light" and "brightness":
+  luce      light (the thing itself)
+  lume      light (as received, as a lamp gives it)
+  raggio    ray
+  splendore splendour (light reflected)
+  fulgore   blaze
+  lampo     flash
+  favilla   spark
+  candor    whiteness
+  chiarezza brightness / clearness
+"vivo lume" is the living light and stays that.
+
+
+THE INEFFABILITY PASSAGES ARE KEPT IN FULL
+
+Dante says nine or ten times that he cannot say what he saw, and each
+time he says it differently and at length. This is not throat-clearing
+to be cut: it is the cantica's argument about its own medium, and the
+last one (XXXIII) is the end of the poem. Never compress them.
+"Trasumanar" -- to pass beyond the human -- is pinned in must_contain in
+the form that keeps the refusal instead of paraphrasing it away.
+
+
+THREE REGISTERS, KEPT APART
+
+1. THE FLIGHT. Beatrice explaining, and Dante rising without noticing.
+   Clear, fast, and warm. The hume rule governs hard: most of these
+   sentences are already plain in the Italian.
+2. THE ENCOUNTERS. Piccarda, Justinian, Cacciaguida, Peter Damian,
+   Bernard -- each a person with a voice. Cacciaguida (XV-XVII) is the
+   emotional centre of the cantica and the only place in the whole
+   Comedy where Dante is spoken to as somebody's child.
+3. THE INVECTIVE. Peter Damian on the fat prelates (XXI), Benedict on
+   the ruined orders (XXII), Beatrice on preachers who tell jokes
+   (XXIX), and above all Saint Peter going red in the face -- "my place,
+   my place, my place, which stands empty" (XXVII). These are as angry
+   as anything in the Inferno and must not be softened by the sweetness
+   around them.
+
+
+LATIN STAYS LATIN, AND IS GLOSSED AT ZERO LINE COST
+
+The burke rule: an untranslated block is a hole in the work, not a
+piece of scholarship. But Dante's Latin is always short and always
+marked as Latin on purpose, so it stays, with the English folded into
+the same line and no line added:
+  XV.28   "O sanguis meus, o superinfusa..." -- Cacciaguida's greeting,
+          kept entire and untranslated. It is the one place in the poem
+          where an ancestor speaks the language of the Rome he served,
+          and it is three whole lines; glossing it inline would cost
+          the tercet. The context supplies it ("my blood").
+  XVIII   'DILIGITE IUSTITIAM' / 'QUI IUDICATIS TERRAM' -- love justice
+          / you who judge the earth. Glossed inline. The Latin CANNOT
+          go: two tercets later Dante counts to the M of the fifth word,
+          and TERRAM is what supplies it.
+  XX.94   Regnum celorum -- the kingdom of heaven. Glossed inline.
+  XXIV    'Dio laudamo' -- we praise you, God. Glossed inline.
+  XXV     'Sperent in te' -- let them hope in you. Glossed inline.
+  XXV.26  coram me -- before me. Glossed inline.
+  XXXII   'Miserere mei', 'Ave, Maria, gratïa plena', sine causa.
+          All glossed inline.
+BERNARD'S PRAYER (XXXIII.1-39) IS ENGLISHED, because Dante wrote it in
+Italian. It is the most famous prayer in the poem and the fact that it
+is NOT in Latin is part of what it is.
+
+
+NAMES AND USAGE
+
+- Familiar English forms throughout: Solomon, Boethius, Bernard,
+  Charlemagne, Roland, Joshua. Italian names keep their Italian
+  (Cacciaguida, Cunizza, Folco, Piccarda, Romuald, Bonaventure).
+- Dante's periphrases for people are resolved where the reader would
+  otherwise lose the referent and Dante is not making a puzzle of it,
+  and KEPT where the periphrasis is the point (the "singer of the Holy
+  Spirit" for David; "the great baron" of Saint James).
+- XVI opens on Dante addressing Cacciaguida with the respectful plural
+  "voi", which English cannot distinguish. Signalled inside the
+  introducing line -- "the respectful plural 'you' which was first
+  offered at Rome" -- at zero line cost, the same device used for the
+  Provençal of Purgatorio XXVI.
+- The Florentine family names of XVI are kept as printed. They are a
+  roll-call and the reader is meant to hear length, not to identify
+  every house.
+
+
+THE VERNE RULE, THROUGHOUT, WITH NO NOTE ANYWHERE IN THE VOLUME
+
+Nothing in this cantica is softened and nothing carries an editorial
+wink. The doctrine IS the poem:
+- The unbaptized. XIX is a whole canto arguing that a man born on the
+  banks of the Indus who lives blamelessly and dies unbaptized has no
+  claim on God's justice that any created sight can measure, and Dante
+  does not resolve it in the reader's favour. XXXII puts unbaptized
+  infants outside salvation in as many words. Translate in full.
+- Predestination. XX and XXXII both say flatly that the ranks are
+  allotted before any merit, and XX ends by saying the blessed are glad
+  not to know who is chosen. Keep both halves.
+- PAGANS IN HEAVEN. Trajan and Ripheus the Trojan (XX) are in the eye
+  of the Eagle, and Dante knows exactly how startling that is -- "who
+  would believe, down in the erring world". Kept unhedged, including
+  the mechanism (Trajan came back from hell to be baptized; Ripheus was
+  baptized by Faith, Hope and Charity a thousand years early).
+- The papal invective, entire: Saint Peter's "he has made a sewer of my
+  burial ground" (XXVII), the wolves in shepherds' clothing, Boniface
+  destined for the hole where Simon Magus is, and the men of Cahors and
+  Gascony getting ready to drink the blood of the martyrs.
+- XXIX's flat statement that a preacher who says the moon eclipsed the
+  sun at the Crucifixion "lies", and its reasoning about the Spaniards,
+  the Indians and the Jews. Kept as Dante's astronomy and Dante's
+  argument.
+- XXVII.136 -- "so the white skin turns black". NOT a separate case,
+  and logged here because it looks like one. This is Dante's figure for
+  the corruption of human nature between infancy and adulthood: the
+  beautiful daughter of the Sun is human nature itself, and white and
+  black are the before and after of a single person, not two kinds of
+  person. It is the same class as Inferno XXXIV's "such as those who
+  come from where the Nile flows down" -- a colour named, no claim made
+  about anybody -- and it is kept exactly, no more and no less than the
+  Italian says. Compare grimm's ruling on "The White Bride and the
+  Black One".
+- XXXI's "barbarians" is Dante's own political category for the
+  northerners, as the "Northern barbarians" of sun-tzu/ are the Chinese
+  state's. Kept.
+
+
+TWO THINGS THAT CANNOT DRIFT ACROSS THE THREE BOOKS
+
+- The last line of each cantica ends on the stars, and all three are
+  pinned in their own must_contain: "and from there we came out to see
+  the stars again" (Inferno), "pure and ready to rise to the stars"
+  (Purgatorio), "by the love that moves the sun and the other stars"
+  (Paradiso). A reader who owns all three meets the figure three times
+  and must recognise it every time (the nights/ rule about frame
+  formulas, applied across three volumes).
+- Beatrice is the same person in Purgatorio XXX-XXXIII and here. She
+  scolds in the Purgatorio and teaches here, but she is brisk and
+  affectionate in both, and she laughs constantly in the Paradiso. Do
+  not make her a lecturer.

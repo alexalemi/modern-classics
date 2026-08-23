@@ -3032,3 +3032,136 @@ method). The angel at the tiller, the souls in white, Dante and Virgil
 watching from the shore among the rushes of canto I. The original is
 5690 wide, over commons_url's 4200 gate, so the crop is in the 4000px
 RENDITION's coordinates (the bunyan/quixote trap).
+
+Dante's Paradiso (paradiso/ — the 66th book, and the one that FINISHES
+THE POEM: with inferno/ and purgatorio/ the collection now has all three
+cantiche, 100 cantos and 14,233 lines). From the ITALIAN, Gutenberg #999,
+with Longfellow's 1867 English as a per-canto crib under reference/.
+All thirty-three cantos and all 4,758 lines, 32,048 Italian words ->
+37,698 English, ratio 1.18 (verify --min-ratio 1.05 --max-ratio 1.35) —
+which is Purgatorio's 1.18 and just under Inferno's 1.19, so the three
+volumes agree with each other and a file outside that band is a signal.
+
+THE PREP IS purgatorio/prep.py WITH THREE CONSTANTS CHANGED, and that is
+the point: the third time through, a pipeline that was written twice cost
+nothing. HEAD becomes `\nParadiso\nCanto ([IVXL]+)\n`, LINES is the
+per-canto table, TOTAL_LINES 4758, CANTOS 33. The line table is DERIVED
+and then PINNED, and asserted twice — against the written-out table and
+again against the crib, two witnesses that share no code with the parser
+(the grimm rule: a source compared only against itself agrees with
+itself). Both Longfellow traps from inferno/ were non-events here because
+the fix was already in the file: take only spans that are DIRECT CHILDREN
+of a `<p>`, and skip any `<p>` typed bridgehead.
+THE ONE NUMBER IN THE TABLE THAT LOOKS LIKE A BUG AND IS NOT: Paradiso
+III is 130 lines, the SHORTEST CANTO IN THE WHOLE COMEDY. prep.py says so
+in its docstring, because the natural reaction to a 130 among 139s, 142s
+and 148s is to go looking for dropped tercets.
+
+check.py CAUGHT EXACTLY ONE DEFECT IN THE CANTICA, and it is the class
+nothing else can see: canto XXVI tercets 12 and 13, where I ran the
+tercet beginning "Dunque a l'essenza ov' è tanto avvantaggio" together
+with the one that completes its sentence, producing a five-line block and
+a two-line block. EVERY WORD WAS PRESENT AND IN ORDER, the English read
+perfectly, the ratio did not move and must_contain did not move. Only
+comparing tercet SHAPE against chapters/ finds it. Same tool as inferno/:
+tercet count, lines within each tercet, total, and every line keeping its
+tab, all exact — ONE LOST TAB TURNS A TERCET INTO A PARAGRAPH, because
+assemble.py joins untabbed lines into running prose.
+MEASURED AND NOT INCLUDED, as in inferno/: the fleming numeric diff. The
+Italian spells its numbers out almost throughout, so the check would be
+very nearly inert, and an inert check that looks like coverage is worse
+than none (the nights lesson).
+
+THE CENTRAL TRANSLATION PROBLEM, AND THE ANSWER IS THE OPPOSITE OF GRAND.
+The Paradiso's reputation is "the abstract one", and translators answer
+that reputation by RAISING THE REGISTER, which is exactly what destroys
+it. Dante's own answer to a heaven made of light is to reach for the
+smallest domestic thing in the room, and he does it every time the
+argument climbs: a bird on the nest waiting for dawn (XXIII), a baby
+flinging its face towards the milk (XXX), jackdaws warming their feathers
+at daybreak (XXI), wheels in the works of a clock (XXIV), a tailor
+cutting the gown to the cloth he has (XXXII), two beasts under one skin —
+prelate and palfrey (XXI), a hood puffed up with a good laugh at a sermon
+(XXIX). That alternation IS the cantica's tone, and it is lost by degrees
+rather than all at once, which is why no check can see it going.
+THE LIGHT VOCABULARY IS LOCKED and must not be harmonised: luce, lume,
+raggio, splendore, fulgore, lampo, favilla, candor, chiarezza are nine
+different things, and "vivo lume" is the living light. THE INEFFABILITY
+PASSAGES ARE KEPT IN FULL — Dante says nine or ten times that he cannot
+say what he saw, each time differently and at length, and that is the
+cantica's argument about its own medium, not throat-clearing to be cut.
+THREE REGISTERS, KEPT APART: the flight (Beatrice explaining, and Dante
+rising without noticing), the encounters (Cacciaguida in XV-XVII is the
+emotional centre of the whole Comedy and the only place in it where Dante
+is spoken to as somebody's child), and THE INVECTIVE — Peter Damian on
+the fat prelates, Benedict on the ruined orders, and Saint Peter going
+red in the face over "my place, my place, my place, which stands empty"
+(XXVII). Those are as angry as anything in the Inferno and must not be
+sweetened by what surrounds them.
+
+LATIN STAYS LATIN AND IS GLOSSED AT ZERO LINE COST. The burke rule says
+an untranslated block is a hole in the work rather than a piece of
+scholarship; Dante's Latin is always short and always marked as Latin on
+purpose, so it stays, with the English folded into the same line and no
+line added: 'DILIGITE IUSTITIAM' / 'QUI IUDICATIS TERRAM' (XVIII, and the
+Latin CANNOT go — two tercets later Dante counts to the M of the fifth
+word, and TERRAM is what supplies it), Regnum celorum (XX), 'Dio laudamo'
+(XXIV), 'Sperent in te' and coram me (XXV), 'Miserere mei', 'Ave, Maria,
+gratïa plena' and sine causa (XXXII). THE ONE EXCEPTION IS CACCIAGUIDA'S
+GREETING (XV.28-30), kept entire and untranslated: it is three whole
+lines, glossing it inline would cost the tercet, and it is the one place
+in the poem where an ancestor speaks the language of the Rome he served.
+CONVERSELY, BERNARD'S PRAYER (XXXIII.1-39) IS ENGLISHED, because Dante
+wrote it in Italian, and the fact that the most famous prayer in the poem
+is NOT in Latin is part of what it is.
+XVI opens on Dante addressing Cacciaguida with the respectful plural
+"voi", which English cannot distinguish. Signalled inside the introducing
+line at zero line cost — the same device used for the Provençal of
+Purgatorio XXVI.
+
+THE VERNE RULE THROUGHOUT, NO NOTE ANYWHERE IN THE VOLUME, and here the
+doctrine IS the poem. Kept entire and unhedged: canto XIX, a whole canto
+arguing that a man born on the banks of the Indus who lives blamelessly
+and dies unbaptized has no claim on God's justice that any created sight
+can measure, and Dante does not resolve it in the reader's favour; XXXII
+putting unbaptized infants outside salvation in as many words; the
+predestination of XX and XXXII, allotted before any merit, with the
+blessed glad not to know who is chosen; TRAJAN AND RIPHEUS THE TROJAN in
+the eye of the Eagle (XX), pagans in heaven, with Dante saying himself
+how startling it is; the papal invective entire; and XXIX's flat
+statement that a preacher who says the moon eclipsed the sun at the
+Crucifixion "lies".
+XXVII.136, "so the white skin turns black", IS NOT A SEPARATE CASE and is
+logged in running_notes.txt precisely because it looks like one. It is
+Dante's figure for the corruption of human nature between infancy and
+adulthood — the beautiful daughter of the Sun is human nature itself, and
+white and black are the before and after of ONE person, not two kinds of
+person. Same class as Inferno XXXIV's "such as those who come from where
+the Nile flows down": a colour named, no claim made about anybody. Kept
+exactly, no more and no less than the Italian says.
+
+PINS MUST COME FROM THE FINISHED TEXT (the epictetus rule), and this book
+punishes memory as hard as the Inferno did: almost every Paradiso phrase
+an English reader knows is somebody's TRANSLATION rather than Dante.
+Several pins are pinned UNCHANGED because the line is already plain and
+any improvement would be damage (the hume rule) — "And in his will is our
+peace:" with its colon, since the sentence is an answer and the sea that
+follows is its proof; and Cacciaguida's "You will find out how salt
+another man's bread tastes".
+THE THREE CANTICHE END ON THE SAME FIGURE and all three closes are pinned
+in their own must_contain, so a reader who owns all three meets it three
+times and must recognise it every time (the nights/ rule about frame
+formulas, applied across three volumes): "And from there we came out to
+see the stars again" / "pure and ready to rise to the stars" / "by the
+love that moves the sun and the other stars."
+Cover: Doré's Empyrean (1868), Commons "File:Paradiso Canto 31 (no
+caption).jpg", crop "1940x2910+267+45" — the plate only, cut out of a page
+with paper margins and the engraver's signature line (the Trouvelot/Goya
+method). Two small figures on a rock at the foot of the celestial rose,
+which is the cantica in one image. At 2448 wide it is under commons_url's
+4200 gate, so the crop is in the ORIGINAL's coordinates.
+`se lint` raises nine [Manual Review] items, all y-013/y-036/y-035 about
+single quotes and a single letter: they are the quoted formulas, the
+speech nested inside speech, and the "O" of Cacciaguida's Latin, and all
+nine are correctly ignored. One t-002 was real and was fixed (a comma
+outside the closing quote of "Ave, Maria,").

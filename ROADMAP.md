@@ -60,8 +60,10 @@ SE-XHTML, Wikisource-API, from-the-Latin, from-the-French.
 - **Dante - Purgatorio** - DONE (site/purgatorio.html; 33 cantos,
   4,755 lines, same pipeline, Gutenberg #998 and the Standard Ebooks
   Longfellow). The cantica most readers of the Inferno never reach.
-- **Dante - Paradiso** - the obvious next book: 33 cantos, 4,758
-  lines, the same prep and the same checks, and it finishes the poem.
+- **Dante - Paradiso** - DONE (site/paradiso.html; 33 cantos, 4,758
+  lines, same pipeline, Gutenberg #999 and the Standard Ebooks
+  Longfellow). THE POEM IS COMPLETE: all three cantiche, 100 cantos and
+  14,233 lines, tercet for tercet and without the rhyme.
 
 ## Founders' Library, Volume II
 - Montesquieu — The Spirit of the Laws (from the French; the most-cited
