@@ -1,0 +1,147 @@
+HOMER'S ODYSSEY -- TRANSLATION STRATEGY
+Scholarly modernization of a canonical text, from the Greek.
+
+
+1. WHAT THIS EDITION IS, SAID PLAINLY
+
+From the GREEK: Perseus' canonical-greekLit, the text of the 1919 Loeb
+(Allen), 24 books and 12,107 lines.  A. T. Murray's 1919 Loeb English sits
+under reference/ as a per-book crib with the Greek line numbers marked in
+it, and is a crib only -- it is never the thing being modernised.  That
+distinction matters and is the opposite of sun-tzu/, where nobody here
+reads classical Chinese and the page says so in the subtitle.  Here the
+subtitle can say "from the Greek" because it is true.
+
+RETOLD AS PROSE (Alex's ruling).  Say so; do not imply a verse fidelity
+the edition does not have.  Homer's line is a six-beat hexameter and there
+is no rhyme to abandon, so verse was possible -- it was declined in favour
+of what a modern reader of a novel-length narrative actually wants.
+
+NO ORIGINAL-TEXT COMPANION PAGE.  Perseus' markup is CC BY-SA 4.0 and
+Tufts asserts copyright over the digital library; the 1919 text underneath
+is public domain by age.  Our retelling is new writing and is unaffected,
+but shipping the Greek as a companion edition would be redistributing
+their marked-up text.  The Comedy shipped no companion page either.
+
+
+2. THE COST OF PROSE, AND WHAT PAYS IT BACK
+
+The three cantiche were guarded by exact line and tercet parity, which is
+what caught the only real defect in the Paradiso.  Prose has no lines, so
+that check is gone and something has to stand in its place.
+
+WHAT STANDS IN ITS PLACE IS SPEECH PARITY.  Perseus tags every speech in
+the poem <q>: 674 of them, 570 spoken and 104 quoted inside another
+speech.  The translation renders the first in double quotes and the second
+in single quotes -- the convention ovid/ already uses -- so check.py can
+count both, per file, against what prep.py recorded.
+
+A LOST SPEECH BOUNDARY IS THIS BOOK'S SILENT SUMMARISATION.  Two speeches
+welded into one, or a speech dissolved into narration, leaves every word
+present, in order, reading perfectly, with the word ratio unmoved.  It is
+the euclid-rivals defect (a misattributed speech reads perfectly and
+argues the opposite) and the cellini one (a dropped chapter label welds
+two chapters and moves nothing).
+
+AND IT IS WEAKER THAN LINE PARITY, WHICH MUST BE SAID.  It can see a
+speech that vanished; it cannot see four verses of narration that did.
+The word ratio is the only guard on those, which is why the bounds are
+tight (1.30-1.80, against Murray's 1.53) and why a file under 1.30 is to
+be read rather than explained.
+
+
+3. THE FOUR BOOKS WHERE THE MARKUP CANNOT BE TRUSTED
+
+Books 9-12 are Odysseus telling his own story to the Phaeacians -- one
+speech of 4,145 words in book 10 alone.  THE OVID RULE GOVERNS: a long
+embedded tale renders as PRIMARY NARRATION, with no enclosing quotation
+marks round the whole thing, and speeches inside it are double-quoted like
+any other.  Nothing else is readable.
+
+But Perseus' nesting is inconsistent across exactly these four books:
+
+   book  9   one top-level <q>, lines 2-566            consistent
+   book 10   one top-level <q>, lines 1-574            consistent
+   book 11   seven: the tale, the Phaeacian intermezzo
+             at 336-376, then the tale resumed         consistent
+   book 12   ELEVEN, and FLATTENED -- Circe at 116-141
+             and the Sirens at 184-191 are speeches
+             inside the tale but are tagged top-level,
+             and 352-453 opens "ὣς ἔφατʼ Εὐρύλοχος",
+             which is narration and not a speech
+
+So for those four files the counts are hand-calibrated against the Greek
+at translation time, and until they are, check.py PRINTS that it is not
+checking them.  A check that silently passes on four of twenty-five files
+is worse than none, because it is counted as coverage (the nights lesson).
+
+
+4. THE CRIB IS 1919 AND THE SWEEP IS AIMED AT YOU
+
+Murray writes "thou hast", "thee", "thy", "aye", "verily", "sore
+afflicted", "wroth".  With him open beside you all day the drift is into
+HIS English -- exactly what happened in cellini/, where the archaism sweep
+fired eight times across the book on one word ("whereupon"), Symonds'
+habit and nobody's speech, and every firing was mine.  check.py sweeps for
+the thou-family and its neighbours.  Exemptions go in by EXACT PHRASE and
+never by loosening the pattern (the grimm rule), and ARCHAIC_OK is empty
+and should stay that way.
+
+
+5. VOICE
+
+It is an adventure story told aloud, and it was composed to be heard.
+Keep it moving.  The register is plain, concrete and fast -- Homer's
+similes are about laundry, olive trees, a farmer's dog, an octopus pulled
+off a rock -- and the poem is far less solemn than its reputation.
+
+FOUR REGISTERS, KEPT APART:
+  - TELEMACHUS' BOOKS (1-4): a boy of twenty who has never been listened
+    to, learning to speak in public and doing it badly at first.  His
+    nerves are the point; do not make him competent too early.
+  - THE PHAEACIAN BOOKS (5-8, 13): court comedy and hospitality, with
+    Nausicaa's episode the most charming thing in the poem and Odysseus
+    at his most calculating inside it.
+  - THE APOLOGUE (9-12): a man telling adventure stories to an audience
+    he is working.  He is a superb and self-serving narrator; keep the
+    performance audible.
+  - ITHACA (13-24): patient, tense, domestic and cruel by turns.  The
+    disguised beggar sequence is the best sustained writing in the poem
+    and depends on the reader knowing what the characters do not.
+
+FORMULAS ARE THE POEM'S MACHINERY AND ARE LOCKED.  "Rosy-fingered dawn",
+"wine-dark sea", "much-enduring Odysseus", "grey-eyed Athena",
+"circumspect Penelope", "winged words".  They repeat because the form is
+oral, and a reader meets them a hundred times and must recognise each one
+(the grimm Dummling rule and the nights frame-formula rule).  Lock them in
+running_notes.txt on the first file that uses them and never vary them for
+elegance.  Do NOT, however, print every epithet every time the Greek has
+one: English prose cannot carry that density.  The rule is that a given
+epithet always renders the SAME WAY when it renders at all.
+
+THE VERNE RULE, and this poem needs it stated in advance:
+  - The slaughter of the suitors, and then the hanging of the twelve
+    serving women, in full and unsoftened.  Telemachus calls it a clean
+    death being too good for them, and the text does not editorialise.
+    Neither do we, and there is no note.
+  - Slavery is everywhere in this household and is simply the world of the
+    poem: Eumaeus was a stolen prince, Eurycleia was bought.  Render the
+    relationships exactly, do not soften "slave" into "servant" where the
+    Greek is explicit, and add nothing.
+  - The gods behave badly, Athena's favouritism is open, and Odysseus lies
+    constantly, including to his father.  Keep all of it.
+  - Odysseus and Calypso: he sleeps with her nightly for seven years while
+    weeping on the shore by day for home.  Both halves stand.
+
+
+6. NAMES AND THINGS
+
+Familiar English forms: Odysseus (never Ulysses), Penelope, Telemachus,
+Athena, Circe, Calypso, Nausicaa, Alcinous, Eumaeus, Laertes, Antinous,
+Eurymachus, Polyphemus, Poseidon, Nestor, Menelaus, Helen.
+Patronymics resolve to the plain name where they are just a name, and are
+kept where Homer is making a point of the parentage.
+Cult titles and periphrasis resolve as in ovid/ ("the Earth-shaker" ->
+Poseidon), EXCEPT where the periphrasis is doing work in the sentence.
+Keep the Greek measures and objects as they are; do not modernise a
+"talent of gold" into a weight or a "krater" into a bowl-shaped nothing.
