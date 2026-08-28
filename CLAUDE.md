@@ -3165,3 +3165,125 @@ single quotes and a single letter: they are the quoted formulas, the
 speech nested inside speech, and the "O" of Cacciaguida's Latin, and all
 nine are correctly ignored. One t-002 was real and was fixed (a comma
 outside the closing quote of "Ave, Maria,").
+
+Homer's The Odyssey (odyssey/ — the 67th book, and the collection's
+FIRST FROM THE GREEK at book length after theophrastus/'s thirty
+sketches). All twenty-four books and all 12,107 lines, 87,239 Greek
+words -> 131,090 English, ratio 1.50 (verify --min-ratio 1.30
+--max-ratio 1.80). From the GREEK — Perseus' text of the 1919 Loeb —
+with A. T. Murray's facing English as a per-book crib under reference/,
+the ovid/de-officiis pattern.
+
+THE ROADMAP HAD STRUCK IT, AND THE ROADMAP WAS ANSWERING THE WRONG
+QUESTION. Butler's Odyssey measures arch 0.38 / calq 4.6 — clean on
+every axis, the Jacobs/Ralston result — so the screening pass put it
+under LEAVE ALONE. But Butler is clean because he rewrote Homer AS A
+VICTORIAN NOVEL: he drops the formulas, flattens the epithets and cuts
+the repetitions, which are the poem's machinery and not its decoration.
+A TRANSLATION CAN SCORE CLEAN BY HAVING ALREADY THROWN AWAY WHAT A
+RETELLING WOULD HAVE TO KEEP. Generalise it: before striking a work on
+a translation's score, ask what that translator DID to earn it. The
+answer here was to leave Butler alone and go to the Greek.
+
+ALEX'S RULING: PROSE, like Murray and Butler, and the reasoning is the
+opposite of inferno/'s. There the line count was held exact because the
+tercet is Dante's unit of thought and a reader can follow it; here the
+hexameter has no English equivalent that is not padding, and 12,107
+lines of it is a novel-length story that a reader wants as prose. SO
+WHAT THE VERSE WAS CARRYING IS KEPT INSTEAD, and that is the whole
+translation policy: the formulas locked and repeated exactly as Homer
+repeats them (rosy-fingered dawn, the wine-dark sea, "so he spoke, and
+they all held their peace in silence"), never varied for freshness.
+Say in the front matter that it is prose rather than implying a
+fidelity the edition does not have.
+
+check.py's DECISIVE CHECK IS SPEECH PARITY, and nothing else in the
+toolchain can see what it sees. The Odyssey is more than half direct
+speech, and the Perseus markup tags every speech, so the count is a
+fact about the poem: 674 of them, per book. A SPEECH QUIETLY WELDED
+INTO NARRATION READS PERFECTLY — every word present, in order, the
+ratio unmoved, must_contain unmoved — and it hands a character's claim
+to the narrator, which in a poem where Odysseus lies to almost everyone
+is the difference between a lie and a fact. Proved by the boethius
+rule: a speech was deliberately welded and another dissolved into
+narration, and both came back as 19 of 20.
+COUNTING SPEECHES IS HARDER THAN IT LOOKS, AND MY FIRST CHECK WAS
+WRONG, NOT THE TRANSLATION. It counted only speeches that BEGIN a
+paragraph and reported 11 where book one has 20, because most are
+introduced inline ("Then Zeus ... answered her. \"My child ...\"). The
+working form reads quote marks as alternating open/close, with a
+COSMETIC-REOPENER rule: a paragraph continuing an open speech opens on
+a quote mark that is not a new speech. The nested (single-quote)
+counter needs the identical rule — book four came back 17 for 13
+without it.
+WHEN THE CHECK AND THE TEXT DISAGREE, DECIDE WHICH IS WRONG AND WRITE
+THE REASON DOWN (the burke signed-allowance rule). EXPECT carries six
+entries, each with its argument: book 11 gives 29 rather than 30
+because the courtesy line resuming Odysseus' narration is unquoted, to
+match book 9's identical opening; book 21 gives one nested speech the
+markup does not tag, verified against the Greek at lines 324 and 329,
+where it is genuine untagged direct speech.
+
+THREE PREP LESSONS, all of them general:
+  1. A SILENT FALLBACK IS WORSE THAN A CRASH. My books_of() asked for
+     subtype="Book" (wrong case), found nothing, and fell back to
+     type="textpart" — which gave the right 24 by luck on the Greek
+     file and would have given 312 on the English. The fallback is
+     GONE and the count is asserted. Same shape as manifest-less
+     assembly: a default that is right often enough to hide.
+  2. SWEEP ALL THE BOOKS, NOT THE FAILING ONE. One crib anchor
+     assertion fired on book 16; sweeping all 24 found three
+     transcription slips rather than one. Two are in ANCHOR_FIXES with
+     the reason beside each ("digit slip: sits between 275 and 285"),
+     the third in KNOWN_GAPS.
+  3. THE CRIB IS 1919 AND THE SWEEP IS AIMED AT YOU (the cellini
+     lesson). Murray is a Loeb crib written in deliberate archaism —
+     "wooers", "handmaids", thou throughout — and with him open beside
+     you all day the drift is into HIS English. The augustine
+     thou-sweep runs with ARCHAIC_OK empty and caught it.
+
+LOCKED VOCABULARY, in running_notes.txt: polutropos is "the man of
+many turns" (the word the poem hangs on, and it is pinned);
+glaukopis is "grey-eyed Athena"; pepnumenos is "clear-headed
+Telemachus"; the mnesteres are THE SUITORS and never Murray's
+"wooers"; and the dmoai are SLAVES, not "handmaids" — the household
+runs on slavery, Homer says so, and Murray's word hides it.
+
+THE VERNE RULE, no note anywhere in the volume. The hanging of the
+twelve women in book 22 is the hardest passage in the poem and the one
+most often quietly softened: Telemachus refuses them a clean death,
+the simile is domestic (thrushes or doves in a snare), the sentence is
+short, and Homer does not comment. Neither does this edition — "And
+they writhed a little while with their feet, but not long." is pinned
+in must_contain for exactly that reason. Same for the mutilation of
+Melanthius, and for the slavery throughout, which is stated plainly
+and never euphemised. A modern reader will notice what Homer does not
+notice, and doing that noticing for them destroys it (the nights/
+Sindbad rule, the augustine rule, the cellini Caterina rule).
+PINS MUST COME FROM THE FINISHED TEXT (the epictetus rule), and this
+book punishes memory as hard as the Comedy did: nearly every Odyssey
+phrase an English reader knows belongs to Chapman, Pope, Butler,
+Fitzgerald or Lattimore rather than to Homer. "Nobody is my name."
+is pinned in the form that makes the joke work in ENGLISH — Murray's
+"Noman" does not, and the whole Cyclops episode turns on the other
+giants going away because nobody is hurting him.
+
+SHARED FIX — `se lint`'s s-084 IS A HARDCODED TITLE LIST. It raises
+"[Error] Poem has incorrect semantics" wherever the Iliad, Odyssey,
+Aeneid, Metamorphoses, Beowulf, Divine Comedy or Paradise Lost is
+named as `se:name.publication.book`, which is what `se create-draft`
+writes for everything — and it fires in the COLOPHON and IMPRINT, which
+carry no verse and no poem semantics at all, so the message points
+nowhere near the cause. The collection had missed it only narrowly:
+the match is on exact titles, and the three cantiche ship as
+"Inferno", "Purgatorio" and "Paradiso", none of which is the string
+"Divine Comedy". rebrand.pub_semantic now reads an optional
+`"publication_semantic": "poem"` from the BOOK's metadata, defaulting
+to "book", rather than keeping a copy of se's list — a list held in two
+tools eventually disagrees and nothing notices. First book in the
+collection to report LINT CLEAN.
+Cover: Böcklin's "Odysseus and Calypso" (1883), Commons "File:Arnold
+Böcklin 008.jpg", crop "1850x2775+350+0" — the goddess in red in the
+mouth of her cave and Odysseus standing with his back to her, looking
+out at the sea, which is books one to five in one image and is the
+only thing he does on her island for seven years.

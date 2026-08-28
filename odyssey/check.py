@@ -163,6 +163,17 @@ EXPECT = {
                 "inside the tale, not double-nested, because Homer "
                 "reports the chain of hearsay only AFTERWARDS, as an "
                 "aside ('I heard this from Calypso')."),
+
+    "021.txt": (26, 1,
+                "A fourth untagged speech, the same defect as book 4's "
+                "Proteus and book 12's Odysseus.  Eurymachus quotes an "
+                "imagined sneer inside his own speech -- 'far weaker "
+                "men are courting the wife of a noble man, and cannot "
+                "string his bow' -- and Perseus does not tag it.  The "
+                "Greek is unambiguous: line 324 introduces it (μή ποτέ "
+                "τις εἴπῃσι, 'lest some baser Achaean say') and line "
+                "329 closes it (ὣς ἐρέουσʼ, 'so they will say').  "
+                "Rendered single-quoted, as the nested speech it is."),
 }
 
 

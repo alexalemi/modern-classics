@@ -47,8 +47,8 @@ SE-XHTML, Wikisource-API, from-the-Latin, from-the-French.
   Music: A Non-Mathematical Treatise" (1873), Archive.org only.)
 - **Galileo — Dialogue Concerning the Two Chief World Systems**
   (Italian, 1632; the from-the-Italian pipeline's debut) — 55 files,
-  ~194k words, assembled to site/galileo.html and added to the index.
-  Deploy still pending: build epub, regenerate feeds, commit + push.
+  ~194k words, live at site/galileo.html, in both feeds and the epub
+  catalog.
 - **Theophrastus — Characters** (Greek, c. 319 BC; thirty comic
   sketches of annoying personality types) — live at
   site/theophrastus.html, in both feeds and epub catalog.
@@ -64,6 +64,19 @@ SE-XHTML, Wikisource-API, from-the-Latin, from-the-French.
   lines, same pipeline, Gutenberg #999 and the Standard Ebooks
   Longfellow). THE POEM IS COMPLETE: all three cantiche, 100 cantos and
   14,233 lines, tercet for tercet and without the rhyme.
+
+### Homer (from the Greek)
+- **Homer - The Odyssey** - DONE (site/odyssey.html; all 24 books and all
+  12,107 lines, 87,239 Greek words -> 131,090 English, ratio 1.50). From
+  the GREEK — Perseus' 1919 Loeb text — with Murray's facing English as a
+  per-book crib only, the ovid/de-officiis pattern. SET AS PROSE, by
+  Alex's ruling: the poem's line is not reproducible in English without
+  padding, and a novel-length story wants prose, so what the verse was
+  carrying is kept instead — the formulas, the epithets and the
+  repetitions, locked and consistent. The check that mattered was neither
+  the ratio nor the pins but SPEECH PARITY: 674 speeches, counted per
+  book against the Greek's own speech tagging, since a speech quietly
+  welded into narration reads perfectly and moves no other measure.
 
 ## Founders' Library, Volume II
 - Montesquieu — The Spirit of the Laws (from the French; the most-cited
@@ -88,9 +101,10 @@ SE-XHTML, Wikisource-API, from-the-Latin, from-the-French.
 ## High-payoff singles
 - Lucretius — On the Nature of Things (from the Latin; Jefferson owned
   five copies)
-- Augustine — Confessions (the first autobiography; pairs with
-  Franklin's)
-- Cellini — Autobiography (from the Italian; gossipy Renaissance gold)
+- Augustine — Confessions — DONE (site/augustine.html; all thirteen
+  books, Pusey's Thou rendered "you"; pairs with Franklin's)
+- Cellini — Autobiography — DONE (site/cellini.html; from the Italian,
+  241 chapters; gossipy Renaissance gold)
 - Vasari — Lives of the Artists (from the Italian; the Plutarch
   treatment for painters)
 - La Rochefoucauld — Maxims (from the French; ~500 epigrams; quoted in
@@ -99,16 +113,18 @@ SE-XHTML, Wikisource-API, from-the-Latin, from-the-French.
 - Ovid — Metamorphoses — DONE (site/ovid.html; all 15 books complete,
   from the Latin with Riley's prose crib; the storybook of mythology)
 - Pascal — Pensées (from the French)
-- Bunyan — The Pilgrim's Progress — IN PROGRESS (bunyan/; both parts,
+- Bunyan — The Pilgrim's Progress — DONE (site/bunyan.html; both parts,
   108k words, 39 chapters). The unusual justification: it is not hard,
   it MISLEADS. Standard Ebooks scores it at reading ease 74 ("fairly
   easy"), so there are no periodic sentences to unstack — but
   "conversation" means conduct, "want" means lack, "prevent" means go
   before, and a reader sails through getting them backwards with nothing
   to signal the error.
-- Cervantes — Don Quixote (from the SPANISH, with Ormsby 1885 as the
-  per-file crib — the de-officiis/ovid pattern; Gutenberg #2000 is the
-  Spanish, Standard Ebooks has Ormsby in clean XHTML). 390k words of
+- Cervantes — Don Quixote — DONE (site/quixote.html; both parts complete
+  and unabridged, and by a wide margin the longest book in the
+  collection). Done as planned: from the SPANISH, with Ormsby 1885 as
+  the per-file crib — the de-officiis/ovid pattern; Gutenberg #2000 is
+  the Spanish, Standard Ebooks has Ormsby in clean XHTML. 390k words of
   Spanish, 430k of Ormsby: the project's second-largest after Plato's
   Dialogues, and larger than Wealth of Nations. THE STRONGEST COPYRIGHT
   ARGUMENT ON THIS LIST — every good modern translation (Grossman,
@@ -530,7 +546,17 @@ LEAVE ALONE — clean on every axis, the Jacobs/Ralston/Zitkala-Ša result
 for a third time:
     Tacitus, Histories (Fyfe)   arch 0.16  calq 18.5  sent 22.5  15%
     Marco Polo, Travels         arch 1.07  calq 16.8  sent 18.8  17%
-    Homer, Odyssey (Butler)     arch 0.38  calq  4.6
+    Homer, Odyssey (Butler)     arch 0.38  calq  4.6  — AND THE BOOK WAS
+      NEVERTHELESS DONE, site/odyssey.html, WHICH IS THE LESSON. The row
+      is correct and was not the right question: it measures BUTLER'S
+      ENGLISH, and Butler is clean because he rewrote Homer as a
+      Victorian novel, dropping the formulas, the epithets and the
+      repetitions that are the poem's machinery. A translation can score
+      clean by having already thrown away what a retelling would have to
+      keep. So the edition goes to the GREEK (Perseus, the 1919 Loeb
+      text), with Murray's facing English as a per-book crib only — the
+      ovid/de-officiis pattern. GENERALISE: before striking a work on a
+      translation's score, ask what that translator DID to earn it.
 
 FOUR HONEST CAVEATS, because the numbers must not stand alone:
   1. THE TACITUS RESULT IS NOT YET A VERDICT ON THE ANNALS. The download

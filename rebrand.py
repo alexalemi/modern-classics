@@ -202,10 +202,11 @@ def _imprint(dest, env, meta, original=False):
     src = env.get("SOURCE_URL")
     src_name = env.get("SOURCE_NAME", "Project Gutenberg")
     trl = env.get("TRANSLATOR") or env.get("TRANSLATORS")
+    sem = pub_semantic(meta)
     based = (f'This particular ebook is the unmodernized text of '
-             f'<i epub:type="se:name.publication.book">{esc(env["ORIGINAL_WORK"])}</i> '
+             f'<i epub:type="se:name.publication.{sem}">{esc(env["ORIGINAL_WORK"])}</i> '
              f'by {esc(env["AUTHOR"])}' if original else
-             f'This particular ebook is a modern retelling of <i epub:type="se:name.publication.book">{esc(env["ORIGINAL_WORK"])}</i> by {esc(env["AUTHOR"])}')
+             f'This particular ebook is a modern retelling of <i epub:type="se:name.publication.{sem}">{esc(env["ORIGINAL_WORK"])}</i> by {esc(env["AUTHOR"])}')
     if trl:
         based += f", working from the English translation by {esc(trl)}"
     if src:
@@ -220,6 +221,25 @@ def _imprint(dest, env, meta, original=False):
         'Standard Ebooks is a volunteer-driven project that produces ebook editions of public domain literature using modern typography, technology, and editorial standards, and distributes them free of cost. You can download this and other ebooks carefully produced for true book lovers at <a href="https://standardebooks.org/">standardebooks.org</a>.',
         f'Modern Classics retells great books in a modern, conversational voice — faithful to the original meaning, and genuinely fun to read. The retelling is released under the MIT license; you can read all the books, and inspect every stage of how they were made, at <a href="{REPO}">github.com/alexalemi/modern-classics</a>.')
     p.write_text(t)
+
+
+def pub_semantic(meta):
+    """The `se:name.publication.*` semantic for the work being named.
+
+    `se lint`'s s-084 carries a hardcoded list of works that are POEMS --
+    the Iliad, the Odyssey, the Aeneid, the Metamorphoses, Beowulf, the
+    Divine Comedy and Paradise Lost -- and raises an [Error] wherever one
+    of them is named as `se:name.publication.book`, which is what
+    `se create-draft` writes for everything.
+
+    The fact lives in the BOOK's own metadata (`"publication_semantic":
+    "poem"`) rather than in a copy of se's list here, because a list held
+    in two tools eventually disagrees and nothing notices. Note how
+    narrowly this collection has missed it so far: the check matches exact
+    titles only, and the three cantiche ship as "Inferno", "Purgatorio"
+    and "Paradiso", none of which is the string "Divine Comedy".
+    """
+    return meta.get("publication_semantic", "book")
 
 
 def article(word):
@@ -255,6 +275,12 @@ def year_el(year):
 def _colophon(dest, env, meta, original=False):
     p = dest / "src/epub/text/colophon.xhtml"
     t = p.read_text()
+    # the colophon's title element is written by `se create-draft`, always
+    # as `.book`; retype it where the work is a poem (see pub_semantic)
+    t = t.replace('epub:type="se:name.publication.book">'
+                  + esc(env["ORIGINAL_WORK"]) + "</i>",
+                  'epub:type="se:name.publication.%s">' % pub_semantic(meta)
+                  + esc(env["ORIGINAL_WORK"]) + "</i>")
     t = re.sub(r'\t*<img[^>]*logo\.svg[^>]*/>\n', "", t)
     t = re.sub(r'<header>\s*<h2 epub:type="title">([^<]*)</h2>\s*</header>',
                r'<h2 epub:type="title">\1</h2>', t)
