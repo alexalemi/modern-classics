@@ -1,0 +1,87 @@
+ODYSSEY -- RUNNING NOTES
+The shared consistency ledger.  Read text_analysis.txt first.
+
+
+LOCKED FORMULAS -- set in Book One, never varied for elegance
+
+These repeat because the poem is oral, and a reader meets each of them
+dozens of times.  A given epithet always renders the SAME WAY when it
+renders at all (the grimm Dummling rule).  It need not render every time
+the Greek has one -- English prose cannot carry that density -- but it
+may never render two ways.
+
+  πολύτροπος          the man of many turns          (the first line)
+  γλαυκῶπις Ἀθήνη     grey-eyed Athena
+  πεπνυμένος          clear-headed Telemachus
+  περίφρων            wise Penelope
+  δῖος Ὀδυσσεύς       godlike Odysseus
+  πολύτλας            Odysseus, who endures everything
+  πολύμητις           Odysseus, who works things out
+  νεφεληγερέτα Ζεύς   Zeus who gathers the clouds
+  ἐνοσίχθων           Poseidon the earth-shaker
+  γαιήοχος            Poseidon, who holds the earth
+  Ἀργεϊφόντης         the slayer of Argus            (Hermes)
+  ἔπεα πτερόεντα      winged words
+  οἴνοπα πόντον       the wine-dark sea
+  ῥοδοδάκτυλος Ἠώς    rosy-fingered dawn
+  ἀμφιάλῳ Ἰθάκῃ       sea-girt Ithaca
+  μνηστῆρες           the suitors        (NEVER Murray's "wooers")
+  ξεῖνος (formal)     guest-friend, where the relationship is meant;
+                      plain "stranger" where it is not
+
+VOCABULARY DECISIONS
+  - "Achaeans", "Argives", "Danaans" all kept as Homer uses them; they
+    are the same people under three names and the variation is his.
+  - δμῳαί / δμῶες are SLAVES and are called slaves.  Murray writes
+    "handmaids" and "maid-servants" throughout; that is his 1919
+    politeness, not Homer's word, and softening it would hide what the
+    household is.  See the Verne-rule note in text_analysis.
+  - Greek measures and objects stay: a talent of gold, a hecatomb, a
+    krater.  Do not convert or generalise them away.
+  - "the immortals", "the blessed gods", "the gods who live for ever"
+    all occur; keep the variation, it is in the Greek.
+
+
+THE CRIB IS 1919 AND THE SWEEP IS AIMED AT YOU
+
+Murray writes thou/thee/thy, "aye", "verily", "wroth", "sore", "haply",
+"I ween", "methinks".  Working with him open all day pulls the prose
+towards him -- the cellini pattern exactly, where the archaism sweep
+fired eight times on one word of Symonds' and every firing was mine.
+check.py sweeps for the whole family.  ARCHAIC_OK is EMPTY and should
+stay empty: exemptions go in by exact phrase or not at all (grimm).
+
+
+SPEECH PARITY IS THE CHECK THAT MATTERS
+
+Prose has no line count, so the guard against silent loss is the number
+of speeches, counted per file against Perseus' <q> markup.  Two things
+it catches, both of which read perfectly and move the word ratio by
+almost nothing -- verified on Book One by reintroducing each defect and
+watching the check fail (the boethius rule):
+  - two speeches WELDED into one, by dropping a close-and-reopen;
+  - a speech DISSOLVED into narration ("she told him not to wait").
+CONVENTION, and check.py depends on it:
+  - a speech is in double quotes;
+  - a speech that runs over a paragraph break REOPENS its quote at the
+    new paragraph and closes only at the end;
+  - a speech quoted inside another speech is in single quotes;
+  - books 9-12 are Odysseus' own narration and carry NO enclosing
+    quotes at all (the ovid rule) -- see text_analysis section 3, and
+    note that check.py cannot verify those four files until their
+    counts are hand-calibrated, and says so when it runs.
+
+
+PER-BOOK NOTES
+
+Book 1 (000.txt) -- 3,175 Greek words -> 4,624 English, ratio 1.46, 20
+  speeches.  Voice set here.  Telemachus is twenty and has never been
+  listened to; his first speech to the suitors is brave and slightly
+  too loud, and Antinous mocks him for exactly that, so the bravado has
+  to be audible or the reply does not land.  Athena-as-Mentes is brisk
+  and practical.  Zeus opens the poem complaining that mortals blame
+  the gods for what they bring on themselves -- keep it conversational,
+  it is an old man's grievance, not a pronouncement.
+  Eurycleia is bought "for the price of twenty oxen" and Laertes never
+  slept with her because he feared his wife's anger: rendered flat and
+  entire, no softening (the Verne rule).

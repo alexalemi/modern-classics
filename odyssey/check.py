@@ -116,19 +116,22 @@ def count_speeches(paras):
     A speech quoted inside another is single-quoted and counted apart.
     """
     outer = inner = 0
-    open_outer = False
+    is_open = False
     for p in paras:
-        starts = p.lstrip().startswith('"')
-        ends = p.rstrip().endswith('"') or p.rstrip().endswith('".')
-        if starts and not open_outer:
-            outer += 1
-            open_outer = True
-        if open_outer and ends:
-            open_outer = False
-        # a nested speech is opened by  '  after a space or an opening
-        # double quote, and closed by  '  before punctuation or a space;
-        # count openings only, and never an apostrophe inside a word
-        inner += len(re.findall(r"(?<![\w])'(?=[A-Z‘-‟])", p))
+        n = p.count('"')
+        # a speech that runs over a paragraph break reopens its quote at
+        # the new paragraph without ever having closed it.  That quote is
+        # typography, not a state change, so it is dropped before the
+        # marks are read as alternating open/close.
+        if is_open and p.lstrip().startswith('"'):
+            n -= 1
+        for _ in range(n):
+            if not is_open:
+                outer += 1
+            is_open = not is_open
+        # a speech quoted inside another is single-quoted; count only the
+        # opening marks, and never an apostrophe inside a word
+        inner += len(re.findall(r"(?<![\w])'(?=[A-Za-z])", p))
     return outer, inner
 
 
