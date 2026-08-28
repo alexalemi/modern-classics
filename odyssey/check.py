@@ -93,7 +93,32 @@ ARCHAIC_OK = []
 # silently passes on four of twenty-five files is worse than no check,
 # because it is counted as coverage (the nights lesson).
 APOLOGUE = {"009.txt", "010.txt", "011.txt", "012.txt"}
-APOLOGUE_EXPECT = {}          # file -> (outer, inner), filled in on writing
+
+# CORRECTED EXPECTATIONS, each with the reason it differs from the markup.
+# The markup is right almost everywhere and these are not licence to
+# adjust a number until the check passes: an entry may only be added
+# after reading the Greek and establishing that Perseus CLOSED A SPEECH
+# THAT IS STILL RUNNING, which is a defect of the same kind as book 12's.
+#
+#   file: (outer, inner, why)
+EXPECT = {
+    "003.txt": (19, 13,
+                "TWO defects in the Proteus episode, both read off the "
+                "markup and the crib together.  (1) Perseus closes "
+                "Menelaus' <q> at line 537, but he is still narrating: "
+                "Proteus speaks again at 543 and 555 and Menelaus "
+                "answers at 551, all inside the story he is telling "
+                "Telemachus, and his speech does not end until 592.  "
+                "The markup counts those three as top-level (22/10); "
+                "rendering them so would put Proteus in the room in "
+                "Sparta.  So Menelaus is ONE speech, 333-592, and the "
+                "three move inside it.  (2) Proteus' long reply at "
+                "492-537 -- Ajax on the rocks of Gyrae, and Agamemnon "
+                "killed like an ox at the stall -- is NOT TAGGED AS A "
+                "SPEECH AT ALL, though the crib prints it as one and it "
+                "is plainly spoken.  It is rendered as the speech it is, "
+                "which is the thirteenth."),
+}
 
 
 def paragraphs(path):
@@ -117,6 +142,7 @@ def count_speeches(paras):
     """
     outer = inner = 0
     is_open = False
+    nested = False
     for p in paras:
         n = p.count('"')
         # a speech that runs over a paragraph break reopens its quote at
@@ -129,9 +155,24 @@ def count_speeches(paras):
             if not is_open:
                 outer += 1
             is_open = not is_open
-        # a speech quoted inside another is single-quoted; count only the
-        # opening marks, and never an apostrophe inside a word
-        inner += len(re.findall(r"(?<![\w])'(?=[A-Za-z])", p))
+        # A speech quoted inside another is single-quoted, and runs over
+        # paragraph breaks the same way, so the same cosmetic-reopener
+        # rule applies.  An apostrophe inside a word is never either
+        # mark, because an opening quote cannot follow a word character
+        # and a closing one cannot precede a letter.
+        for m in re.finditer(r"'", p):
+            i = m.start()
+            before = p[i - 1] if i else " "
+            after = p[i + 1] if i + 1 < len(p) else " "
+            opening = (not before.isalnum()) and after.isalpha()
+            closing = before.isalnum() or before in ".,!?;:"
+            if opening and not nested:
+                inner += 1
+                nested = True
+            elif closing and after.isalpha():
+                pass                      # apostrophe inside a word
+            elif closing:
+                nested = False
     return outer, inner
 
 
@@ -163,14 +204,14 @@ def main():
 
         # 2. speech parity -- the check that replaces line parity
         got = count_speeches(paragraphs(mp)[1:])
-        if name in APOLOGUE:
-            exp = APOLOGUE_EXPECT.get(name)
-            if exp is None:
-                unchecked.append("%s (book %d): speech parity NOT checked "
-                                 "-- Apologue, Perseus' nesting unreliable; "
-                                 "found %d spoken / %d nested"
-                                 % (name, m["book"], got[0], got[1]))
-                exp = got
+        if name in EXPECT:
+            exp = EXPECT[name][:2]
+        elif name in APOLOGUE:
+            unchecked.append("%s (book %d): speech parity NOT checked "
+                             "-- Apologue, Perseus' nesting unreliable; "
+                             "found %d spoken / %d nested"
+                             % (name, m["book"], got[0], got[1]))
+            exp = got
         else:
             exp = (shape[name]["outer"], shape[name]["inner"])
         if got != exp:
