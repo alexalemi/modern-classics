@@ -118,6 +118,16 @@ EXPECT = {
                 "SPEECH AT ALL, though the crib prints it as one and it "
                 "is plainly spoken.  It is rendered as the speech it is, "
                 "which is the thirteenth."),
+
+    # --- the Apologue, calibrated as each file is written -------------
+    "009.txt": (19, 0,
+                "Book 9 is ONE <q>, Odysseus' whole narration from line 2 "
+                "to 566, with 19 speeches nested inside it.  The ovid "
+                "rule drops the enclosing quotes -- a tale this long "
+                "renders as primary narration -- so all 19 come up a "
+                "level and nothing is left nested.  The markup shape "
+                "(1/19) is right; it is the CONVENTION that moves, and "
+                "unlike book 12 nothing here is mis-tagged."),
 }
 
 
