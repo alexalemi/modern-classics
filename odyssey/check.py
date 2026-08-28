@@ -128,6 +128,41 @@ EXPECT = {
                 "level and nothing is left nested.  The markup shape "
                 "(1/19) is right; it is the CONVENTION that moves, and "
                 "unlike book 12 nothing here is mis-tagged."),
+    "010.txt": (29, 0,
+                "As book 9: ONE <q>, lines 1-574, with 29 nested.  The "
+                "enclosing quotes go and all 29 come up a level.  The "
+                "markup shape is right."),
+    "011.txt": (29, 0,
+                "Book 11 is the tale INTERRUPTED.  Seven top-level <q>: "
+                "Odysseus narrating 1-332, then the Phaeacian intermezzo "
+                "at 336-376 (Arete, Echeneus, Alcinous, Odysseus, "
+                "Alcinous -- five real speeches in the poet's voice), "
+                "then Odysseus resuming 378-640.  His two narration "
+                "spans lose their quotes and the 24 speeches inside them "
+                "come up a level: 24 + 5 = 29.  NOTE that his resumed "
+                "span opens by addressing Alcinous directly ('there is a "
+                "time for many words') and that courtesy is still part "
+                "of the narration span, so it is NOT quoted -- exactly "
+                "as book 9's opening courtesy is not.  Quoting it reads "
+                "better locally and gives 30; consistency governs."),
+    "012.txt": (15, 0,
+                "THE ONE BOOK WHERE THE MARKUP IS WRONG, not merely "
+                "framed differently.  It records 11 top-level and 5 "
+                "nested; the truth is that the whole book is Odysseus "
+                "narrating and there are FIFTEEN speeches inside it.  "
+                "Nine of the eleven 'top-level' <q> are speeches inside "
+                "his tale that have been flattened out of their nesting "
+                "-- Circe at 116, the Sirens at 184, Eurylochus twice, "
+                "Odysseus five times.  A tenth, 352-453, is NOT A SPEECH "
+                "AT ALL: it opens 'so spoke Eurylochus', which is "
+                "narration, and it is what carries the three real nested "
+                "speeches (Odysseus' cry, Helios to Zeus, Zeus to "
+                "Helios).  And Odysseus' reply to Circe at 112-114 is "
+                "untagged, exactly as Proteus' reply is in book 4.  "
+                "Helios and Zeus are rendered as ordinary speeches "
+                "inside the tale, not double-nested, because Homer "
+                "reports the chain of hearsay only AFTERWARDS, as an "
+                "aside ('I heard this from Calypso')."),
 }
 
 
