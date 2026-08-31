@@ -1,0 +1,58 @@
+SOPHOCLES -- RUNNING NOTES (the shared consistency ledger)
+Updated as files are finished. Everything here is LOCKED once written.
+
+--------------------------------------------------------------------
+FORM (settled before file 000; see text_analysis.txt section 2)
+--------------------------------------------------------------------
+- Spoken scenes: modern prose. Speaker tag on its own, then the speech.
+  Format is "Antigone." on its own line, then the prose beneath it --
+  the euclid-rivals convention, NOT the modern playscript
+  "ANTIGONE:" and never ALL CAPS (assemble.py reads an all-caps line as
+  a heading).
+- Sung odes: TAB-INDENTED verse, unrhymed, one line per line.
+- The [Spoken] / [Sung] markers in chapters/ are prep's scaffolding and
+  do NOT appear in the translation. The tab indent carries it.
+- Line numbers in chapters/ are anchors for the crib. They do NOT appear
+  in the translation either.
+- Stage directions: own paragraph, in parentheses, sparse and factual.
+  They are Jebb's, not Sophocles' -- ours to write.
+- NO markup except _x_ / *x* for emphasis, which these plays barely
+  need. Structure comes from convention alone.
+
+--------------------------------------------------------------------
+LOCKED RENDERINGS (caps spent, no re-gloss)
+--------------------------------------------------------------------
+(filled in as each file is translated; a word entered here is fixed for
+the remaining six plays)
+
+--------------------------------------------------------------------
+FORMULAS THAT RECUR ACROSS PLAYS
+--------------------------------------------------------------------
+- The Chorus' closing tag -- most plays end with four or five chanted
+  anapaestic lines drawing a moral. They are a FORM, like the Nights'
+  night-formulas, and a reader who owns the volume meets them seven
+  times. Keep them recognisably the same kind of thing each time:
+  short, plain, verse, and slightly inadequate to what just happened.
+- "Call no man happy until he is dead" (Oedipus the King's closing
+  anapaests, and Herodotus I.32, which the collection already has).
+  CHECKED, not remembered (the epictetus rule). herodotus/ has Solon
+  say: "But until he's dead, hold off on the word 'happy.' Call him
+  fortunate, if you like, but not happy" -- which keeps the olbios /
+  eutuches distinction. Sophocles' lines are NOT a quotation of
+  Herodotus and must not be made into one; render them so a reader who
+  owns both books hears the echo, and no closer than that. In
+  particular do not import Solon's fortunate/happy contrast, which
+  Sophocles does not draw there.
+
+--------------------------------------------------------------------
+DECISIONS LOG
+--------------------------------------------------------------------
+- 2026-08-31 The three unlabelled metres were classified BY LOOKING at
+  the passages, not inferred: "close" (Oedipus the King) and "trochaic"
+  (Philoctetes) are rapid one-line exchanges -- recitative, so SPOKEN;
+  "hexameter" (Philoctetes 839-842) is Neoptolemus speaking three epic
+  lines inside a choral lyric, where the oracular metre is the point,
+  so VERSE. Recorded in prep.py's SUNG/SPOKEN sets with the reasons.
+- 2026-08-31 Speech counts: the Greek and English parses agree exactly
+  on four plays and differ by <= 4 on three. The three are pinned in
+  prep.EXPECT with a reason each, never averaged.

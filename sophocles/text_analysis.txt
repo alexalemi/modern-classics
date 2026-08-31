@@ -1,0 +1,185 @@
+SOPHOCLES: THE SEVEN TRAGEDIES
+Translation strategy. From the GREEK (Perseus' Jebb text), with Jebb's
+facing English prose under reference/ as a per-file crib ONLY.
+
+READ FIRST: odyssey/text_analysis.txt (the from-the-Greek pipeline and
+the crib-is-Victorian warning), boethius/ (verse kept as verse, and the
+verse-integrity check), and euclid-rivals/ (a play, and what a lost
+speaker tag does).
+
+--------------------------------------------------------------------
+1. WHY THIS BOOK
+--------------------------------------------------------------------
+Measured 2026-08-31 against the shelf, and the result is not close:
+
+    Sophocles (Campbell, verse)   arch 39.10   verse-set 87%
+    Sophocles (Storr, verse)      arch 37.97   verse-set 72%
+    Augustine (Pusey)             arch 35.9    <- the previous record
+    Marcus Aurelius               arch 34.7
+    Burton's Nights               arch 27.3
+
+39.10 is THE HIGHEST ARCHAISM SCORE EVER MEASURED IN THIS PROJECT. Every
+public-domain Sophocles is Victorian or Edwardian VERSE, and none of the
+archaism is in the Greek -- Sophocles wrote the ordinary literary Attic
+of his own day, for an audience of fifteen thousand people sitting in
+the open air who had to follow it in real time, at speed, once.
+
+So this is the nights/ case in its purest form, and it should be said in
+the front matter: we are not removing the twenty-four centuries between
+the reader and the author. We are removing a costume that Campbell,
+Storr, Plumptre and Murray put on him, and that is why the retelling can
+be plain without being a simplification.
+
+Aristophanes was screened in the same pass and STRUCK: the Athenian
+Society prose measures arch 2.11 / 1.77 and stage-diction 1.21 / 0.76,
+below Grimm and far below Bunyan. It is clean, it is unexpurgated, and
+by this project's rules it is not a candidate. (It has a separate open
+question -- the French slang "mottes" for a Greek obscenity suggests the
+1912 text came via Talbot's French rather than "from the Greek Tongue"
+as its title page claims. That would make it a RETRANSLATION job, not a
+modernisation one. Settle it before taking Aristophanes on.)
+
+--------------------------------------------------------------------
+2. THE FORM -- ALEX'S RULING, AND IT IS DERIVABLE
+--------------------------------------------------------------------
+Greek tragedy has two registers and the difference is structural, not
+decorative:
+
+  SPOKEN scenes, iambic trimeter    -> MODERN PROSE
+  SUNG odes, lyric metres           -> VERSE, tab-indented
+  CHANTED anapaests, hexameter      -> VERSE (with the odes)
+
+Nearly every translation blurs this, printing the whole play in one
+register, and a reader then cannot tell that the chorus is SINGING. The
+Greeks could not miss it: the odes were danced.
+
+THE DISTINCTION IS IN THE SOURCE. Perseus marks every division
+`subtype="episode"` or `"choral"/"strophe"/"antistrophe"/"anapests"`,
+so prep.py derives it and check.py asserts it. This is the difference
+between a convention applied by hand five hundred times and an
+invariant. `[Spoken]` and `[Sung]` markers in chapters/ say which is
+which; they are prep's, not Sophocles', and they do NOT appear in the
+translation -- the tab indent carries it (assemble.py sets an indented
+block as verse, the boethius/inferno convention).
+
+TAKE SUNG/SPOKEN FROM THE GREEK. The English markup disagrees (The
+Women of Trachis: 111 sung speeches in the Greek, 24 in the English).
+The metre is a fact about the Greek.
+
+THE ODES ARE NOT RHYMED, and must not be. Sophocles' lyric metres are
+quantitative and have no English equivalent; rhyme is what Campbell and
+Murray ADDED, and it is what makes their odes unreadable. Same ruling as
+boethius/, and for the same reason. What the verse setting must carry is
+that these lines are SUNG: shorter than the prose around them, rhythmic,
+image-dense, and syntactically simpler than the spoken scenes -- because
+an audience has to follow a song in one hearing.
+
+STROPHE AND ANTISTROPHE ARE A PAIR. They were sung to the SAME music by
+the chorus dancing one way and then back. Keep them recognisably
+matched in length and shape; do not let one run to twice the other.
+
+--------------------------------------------------------------------
+3. VOICE
+--------------------------------------------------------------------
+Sophocles is the plainest of the three tragedians and the most
+frightening, and the two facts are the same fact. He does not decorate.
+His most famous lines are short, flat declaratives that a translator
+into verse is forced to pad:
+
+  - Do not warm the plays up. The horror in Oedipus is administered in
+    ordinary sentences by people being reasonable.
+  - The STICHOMYTHIA -- one line each, back and forth, sometimes for
+    fifty lines -- is the engine of every play, and it is where a
+    Victorian translation dies. Render it as fast, clipped, modern
+    dialogue. It should read like an interrogation, because it is one.
+  - THE CHARACTERS ARGUE. These are not declamations; they are people
+    scoring points off each other, with the audience judging. Creon and
+    Haemon, Antigone and Ismene, Oedipus and Teiresias, Ajax and
+    Tecmessa, Neoptolemus and Odysseus -- all of it is argument, and
+    the arguments are good on BOTH sides. Never make the loser stupid.
+  - Keep the SILENCES. Characters stop answering, walk off without a
+    word, or say one thing and leave. Do not fill those in.
+  - The Chorus is not a narrator and not the author's opinion. It is a
+    group of frightened, partisan, usually wrong local men (or women).
+    Let them be wrong.
+
+--------------------------------------------------------------------
+4. LOCKED VOCABULARY
+--------------------------------------------------------------------
+Fixed here so the seven plays agree with each other; the ledger is
+running_notes.txt. The false friends do the real damage:
+
+  ate         RUIN -- the madness sent from outside that destroys a
+              house. Never "sin", never "guilt".
+  hubris      OUTRAGE done to another person; a public act, not an
+              attitude. NOT "pride" -- that mistranslation is the whole
+              modern misreading of Greek tragedy.
+  moira       what is allotted; "fate" only where it is a person.
+  nomos       LAW, and also custom -- Antigone turns on the ambiguity.
+              Keep it visible; do not resolve it silently.
+  dike        both JUSTICE and a lawsuit, and Sophocles means both.
+  daimon      not "demon". A god's power working in a life; sometimes
+              just "what happened to me".
+  arete       EXCELLENCE at what you are for; not "virtue".
+  eugeneia    good birth, and the character that is supposed to come
+              with it -- Neoptolemus' whole problem.
+  philos      not "friend" but the people you OWE: kin, host, ally.
+              Antigone buries her brother because he is philos.
+  sophos      clever/skilled AND wise, and the plays keep sliding
+              between them, usually as an accusation.
+  xenos       guest AND stranger AND host, one word, an obligation.
+  Hades       the place and the god; keep the name, not "hell".
+
+NAMES: familiar English forms (Ajax not Aias, Oedipus not Oidipous,
+Clytemnestra, Teiresias, Jocasta, Creon, Haemon, Neoptolemus, Philoctetes,
+Deianeira, Heracles). Resolve cult-title periphrasis to plain names, as
+ovid/ does, EXCEPT where the periphrasis is the point.
+
+--------------------------------------------------------------------
+5. STAGE DIRECTIONS ARE JEBB'S, NOT SOPHOCLES'
+--------------------------------------------------------------------
+The Greek carries NONE -- ancient manuscripts have no stage directions,
+and all thirty in the English are Jebb's editorial reconstructions from
+the dialogue. So they are ours to write plainly and to modernise freely,
+and they are not protected by the Verne rule. Keep them SPARSE and
+factual (entrances, exits, who is carried on), never interpretive; where
+the text says what is happening, the direction is redundant and goes.
+Set them as their own paragraph in parentheses.
+
+--------------------------------------------------------------------
+6. THE VERNE RULE
+--------------------------------------------------------------------
+No editorial note anywhere in the volume. Translated in full, unhedged:
+
+  - AJAX slaughters livestock believing them to be the Greek generals,
+    recovers, understands, and kills himself on stage-adjacent ground
+    in the only on-stage suicide in surviving tragedy. His speech about
+    why he must do it is a REASONED ARGUMENT and is rendered as one.
+  - Tecmessa is his SLAVE and the mother of his son, and she says so;
+    the household runs on slavery throughout all seven plays and it is
+    never euphemised. Not "handmaid" (the odyssey/ ruling on dmoai).
+  - ANTIGONE's claim that she would not have done this for a husband or
+    a child, only for a brother, because a brother is irreplaceable
+    once the parents are dead. Readers since Goethe have wished it away.
+    It stands.
+  - OEDIPUS' self-blinding, described in full by the messenger, and
+    Jocasta's suicide. No softening of either.
+  - The exposure of the infant Oedipus with his ankles pinned.
+  - DEIANEIRA poisons her husband by accident with what she believes is
+    a love charm, and Heracles' final scene -- in agony, demanding his
+    son marry the girl he burned a city to capture -- is as ugly as it
+    is meant to be. His last order to Hyllus stands as written.
+  - PHILOCTETES' wound, its smell, and the fact that the Greeks left a
+    man on an island for ten years because they could not stand it.
+  - The gods of these plays are not just and are not said to be. Where
+    a character says the gods are good, that is THAT CHARACTER'S claim,
+    and the play usually disagrees with them.
+
+--------------------------------------------------------------------
+7. RATIO
+--------------------------------------------------------------------
+Greek verse -> English prose runs high. Jebb's own prose is 92,381
+English words against 59,795 Greek, a ratio of 1.54; our odes are verse
+and slightly tighter, our prose slightly looser. Target 1.45-1.70 per
+file; verify --min-ratio 1.35 --max-ratio 1.80. UNDER 1.35 MEANS
+SUMMARISING, which in a play means a speech has been trimmed.
