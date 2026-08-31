@@ -177,8 +177,16 @@ def is_sung(kind):
                      f"as sung or spoken before continuing")
 
 
-def render(speeches, title, crib=None):
-    """One play as text. Sung speeches are tab-indented, spoken are not."""
+def render(speeches, title, numbers=False):
+    """One play as text. Sung speeches are tab-indented, spoken are not.
+
+    LINE NUMBERS ONLY IN THE CRIB. chapters/ is the source text that
+    verify.py measures the translation against, and a number on every
+    line inflates its word count by about a quarter -- which would make
+    the ratio, the one check that catches silent summarising, mean
+    nothing. reference/ keeps the anchors; the speeches are in the same
+    order in both files, so the crib aligns by speech regardless.
+    """
     body = [title, ""]
     mode = None
     for kind, name, lines, stage in speeches:
@@ -192,7 +200,7 @@ def render(speeches, title, crib=None):
             body.append("")
         body.append(f"{name}.")
         for n, t in lines:
-            tag = f"{n} " if n else ""
+            tag = f"{n} " if (numbers and n) else ""
             body.append(("\t" if sung else "") + tag + t)
         body.append("")
     return "\n".join(body).rstrip() + "\n"
@@ -264,7 +272,8 @@ def main():
             open(os.path.join(chap, f"{idx:03d}.txt"), "w").write(
                 render(g[a:b], head))
             open(os.path.join(ref, f"{idx:03d}.txt"), "w").write(
-                render(e[ea:eb], head + " -- Jebb's prose, crib only"))
+                render(e[ea:eb], head + " -- Jebb's prose, crib only",
+                       numbers=True))
             manifest.append({
                 "file": f"{idx:03d}.txt",
                 "title": title,
