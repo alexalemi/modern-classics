@@ -79,8 +79,25 @@ for p in sorted((HERE / "english").glob("n*.txt")):
            and lines[i] and not lines[i].startswith("\t"):
             bad.append(f"{p.stem}: line {i+1} lost its tab inside an indented block")
 
+# 5. COMPLETENESS. Every half-leaf of the book must be accounted for, and
+#    every plate captioned and every text leaf classified. This is the
+#    assertion that says the reading is FINISHED; without it "remaining: 0"
+#    is a fact about today's files and not a guarantee about tomorrow's.
+from collections import Counter
+_c = Counter(kind.values())
+if sum(_c.values()) != 238:
+    bad.append(f"readorder: {sum(_c.values())} half-leaves, expected 238")
+_uncap = sorted(k for k, v in kind.items() if v == "PICTURE" and k not in plate_ids)
+if _uncap:
+    bad.append(f"plates.txt: {len(_uncap)} plate(s) uncaptioned: {' '.join(_uncap)}")
+_unc = sorted(k for k, v in kind.items() if v == "text" and k not in classified)
+if _unc:
+    bad.append(f"layers.txt: {len(_unc)} text leaf/leaves unclassified: {' '.join(_unc)}")
+
 for b in bad:
     print(b)
-print(f"\n{len(plate_ids)} plates, {len(en)} leaves rendered, {len(classified)} classified, "
+print(f"\n{sum(_c.values())} half-leaves = {_c['text']} text + {_c['PICTURE']} plates "
+      f"+ {_c['binding']} binding + {_c['blank']} blank")
+print(f"{len(plate_ids)} plates, {len(en)} leaves rendered, {len(classified)} classified, "
       f"{len(bad)} finding(s)")
 sys.exit(1 if bad else 0)
