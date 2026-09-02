@@ -85,3 +85,11 @@ WHEN DONE
    any forward reference the next part must honour, and any place you
    had to decide something the notes did not cover. Keep (c) short and
    concrete; the orchestrator merges it into running_notes.txt.
+
+ONE MORE TRAP (found in Electra): a wrapped prose line that ends on a
+bare name plus period ("...the offerings are from\nOrestes.") IS a
+speaker tag to check.py, and if it lands at the end of a paragraph it
+is not even counted, so it passes silently. Never let a wrap end on
+"Name." -- rewrap the sentence. Sweep before reporting:
+    grep -nE '^[A-Z][A-Za-z -]{1,24}\.$' sophocles/modern_chapters/NNN.txt
+and make sure every hit is a real speaker tag.
