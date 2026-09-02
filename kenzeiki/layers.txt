@@ -706,9 +706,13 @@ n118r   blank      BLANK RULED PAPER, no text at all -- readorder classifies
 #                  it "text" because survey.py separates picture from text by
 #                  gutter depth and a blank leaf has a text-like profile.
 #                  So the "157 text leaves" figure is an upper bound, not a
-#                  count of leaves carrying text: the survey can call a blank
-#                  leaf text but never the reverse (a woodcut has no gutter).
-#                  Worth knowing when the remainder is being counted.
+#                  count of leaves carrying text.
+#                  [CORRECTED AT n008l: I wrote here that the error runs one
+#                  way only, a blank leaf being callable text but never a
+#                  woodcut. That is false. The frontispiece portrait carries
+#                  a three-column title block down its side and was also
+#                  classified text. The classifier errs in BOTH directions,
+#                  so every leaf has to be opened -- which is what found it.]
 n065l   text       narrative: A DISCOURSE TO THE ASSEMBLY, and one of the
 #                  best things in the book -- do not be troubled that the
 #                  assembly is small (Fenyang had six or seven, Yaoshan not
@@ -877,3 +881,45 @@ n006l   text       THE TITLE PAGE AND THE OPENING OF THE BIOGRAPHY, and the
 #                  PARENTAGE IS GIVEN EXACTLY AS PRINTED and no name is
 #                  supplied for the Later Chushoo -- source_notes.txt warns
 #                  against exactly that on this page.
+n007r   MIXED      one line of narrative -- "his frame and features were
+#                  remarkable, and there were double pupils in his eyes: this
+#                  is no ordinary child" -- then a long 補, omitted, which is
+#                  Menzan's GENEALOGICAL CHART (Emperor Murakami through
+#                  Prince Tomohira, Morofusa, Akifusa, Masazane, Masasada,
+#                  Michimichi, to Michichika) and, more to the point, HIS
+#                  RECORD OF THE PATERNITY DISPUTE: the chart makes Dogen
+#                  Michichika's son and younger brother of Michimitsu, but
+#                  "the common genealogies" make him the son of Michitada,
+#                  and others the son of Tomofusa.
+#                  THIS RESOLVES THE source_notes.txt WARNING about false
+#                  parentage on the book's first page: the source itself does
+#                  not settle it, so neither does this volume. The main text
+#                  at n006l gives the descent without naming a father, and
+#                  that is what is rendered.
+n007l   menzan     補 entire (continuing the paternity argument), omitted --
+#                  but it is careful work and worth recording. Menzan dates
+#                  Michimitsu at fourteen and Michitada as not yet born in
+#                  Shoji 2, so neither can be the father; cites the Koga
+#                  house genealogy written out at Doshoan's request, a scroll
+#                  seen hanging at Doshoan in Kanpo 3, the Kaogen and the
+#                  Hyoroku Shishosho; and settles on Michichika, with the
+#                  Horikawa branch noted. The dispute is real and old, and
+#                  this volume follows the main text in not naming a father.
+n008r   menzan     補 entire, omitted: Menzan on the foster-father question.
+#                  Michichika died when the Founder was three, so the elder
+#                  brother Michitomo brought him up; Koroku book five has a
+#                  discourse for a foster-father, the Provisional Middle
+#                  Counsellor Minamoto, and another marking a memorial for
+#                  him; ten of Michitomo's poems are in the Shinkokinshu and
+#                  he was one of its compilers. Michichika died at
+#                  fifty-four, Kennin 2/10/21.
+n008l   PICTURE    THE FRONTISPIECE PORTRAIT, and readorder had it as text.
+#                  This is the SECOND survey.py misclassification after
+#                  n118r, and it is the same mechanism: survey separates
+#                  picture from text by gutter depth, and this plate carries
+#                  a three-column title block down its right side with wide
+#                  blank paper beside it, so the profile reads as text.
+#                  Earlier I recorded that the error "runs one way only" --
+#                  a blank leaf can be called text but a woodcut never can.
+#                  THAT WAS WRONG: a plate with a text block in it can be
+#                  called text too. readorder.txt corrected here.
