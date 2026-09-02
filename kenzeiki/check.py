@@ -37,6 +37,17 @@ def load_readorder():
 
 kind = load_readorder()
 
+# 0. readorder.txt integrity. An edit that blanks or malforms a row is
+#    INVISIBLE to every other check here, because they all iterate over the
+#    ids that ARE present and a missing row agrees with itself (the grimm
+#    missing-tale lesson). The book is 238 half-leaves; assert it.
+_rows = [l for l in (HERE / "readorder.txt").read_text().splitlines() if l.strip()]
+if len(_rows) != 238:
+    bad.append(f"readorder.txt: {len(_rows)} rows, expected 238 half-leaves")
+for _l in _rows:
+    if len(_l.split()) != 3:
+        bad.append(f"readorder.txt: malformed row {_l!r}")
+
 # 1. plate ids
 plate_ids = re.findall(r"^(n\d{3}[rl])\s+\S", (HERE / "plates.txt").read_text(), re.M)
 for pid in plate_ids:
