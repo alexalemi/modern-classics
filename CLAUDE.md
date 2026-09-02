@@ -3428,3 +3428,81 @@ how NDL represents an item digitised but served only under
 現代語訳) is in copyright, as is every English treatment. If a scan ever
 surfaces, the feasibility test is the one used here: read a page image
 against a known-good transcription and see whether they agree.
+
+THE READABILITY CORRECTION (Alex, 2026-09-02), and it applies to every
+from-the-original book with no crib. He read the Dogen volume and said
+it was hard to read: "remember it is meant to be readable ... as if
+your life's work but also excellent story teller and writer." The first
+draft was faithful, learned and unreadable, and the diagnosis is in
+dogen/running_notes.txt: THE CHINESE SENTENCE WAS THE UNIT; EVERY
+ALLUSION CROSSED AS A BARE PROPER NOUN (Maoqiang and Xishi, the Duke of
+She, a stone of Yan, "four and seven in the west"); TECHNICAL TERMS
+STAYED TERMS where the term was not load-bearing; PARADOX GOT NO
+FOOTHOLD. The storyteller's move is to FOLD THE STORY INTO THE SENTENCE
+-- "the Duke of She, who loved dragons: he had them carved on his
+pillars and painted on his walls, and when a real dragon heard of it
+and came to visit, he ran away" -- never a footnote (the Verne rule),
+and to use the plain word unless the term is one the book turns on.
+THE RULE: every sentence one a bright fourteen-year-old could read
+aloud and follow, with every clause of the source present. NOTE that
+Flesch-Kincaid could not see the problem: the unreadable draft scored
+grade 5-6. The formula counts syllables and sentence length; the
+defect was opacity. The number is a floor, not a verdict. First drafts
+kept in dogen/legacy_v1/ for comparison; ratio band held (1.25 -> 1.55
+w/char on the Fukanzazengi, since a retelling that explains its
+allusions is longer than a crib, and that is the right direction).
+
+Kenzei's The Illustrated Life of Dogen (kenzeiki/ -- the 69th book,
+and the companion to dogen/). The Kenzeiki, c. 1470, in Menzan's
+corrected and illustrated edition of 1806, read from the National
+Institute of Japanese Literature's 1817 impression against the
+National Archives' 1806 first cutting. 18 chapters, ~18.4k words. EVERY
+HALF-LEAF OF THE BOOK WAS OPENED: 238 = 156 text + 71 plates + 6
+binding + 5 blank; every text leaf classified in layers.txt, every
+plate captioned in plates.txt, and check.py asserts all three counts.
+WHAT IS IN AND WHAT IS OUT, ruled by Alex ("you can leave out the
+narrator's notes"): Menzan's 補 apparatus is omitted; kept are every
+PRIMARY DOCUMENT the record quotes (Dogen's letters, the travel
+permits, the farmers' sworn statement and its ten signatures, Ejo's
+note on storing the broken screens as evidence, the kitchen and
+storehouse rules in his hand, the prayer-board of ten kami, the robe's
+four-generation custody record) and the bare identifications the
+narrative cannot do without. THE PRINCIPLE is stated at layers.txt
+n082l and the one place it ran out (the Kamakura quatrain, n092r) is
+logged as a judgement rather than dressed up as a rule.
+SIX SURVEY MISCLASSIFICATIONS, ALL FOUND BY OPENING THE LEAF: survey.py
+separates picture from text by darkness profile, so a blank leaf and
+the frontispiece portrait read as text, and the indigo covers read as
+woodcuts. The plate count moved 76 -> 71 and the text count 157 -> 156
+over the reading. I wrote once that the error "runs one way only" and
+was wrong within two commits; the correction stands in layers.txt.
+SIXTEEN FOR SIXTEEN: every left-hand half skipped in the first sweep as
+"probably apparatus" carried main-text narrative, including the
+bamboo-and-blossom discourse, Dogen's reply to Lanxi, and the
+Michizane poem exchange. Never skip a half-leaf.
+THE ILLUSTRATORS SAY THEY COMPOSED (n005r: "adding flowers where we
+render spring, bringing in the moon where we draw autumn"), so a
+caption describes what is DRAWN and never asserts it as fact about the
+event; and the plates are a CHOSEN set (Ejo's first sermon was left
+unillustrated on purpose). Cross-plate patterns worth knowing: the two
+decisive first meetings (Eisai, Rujing) use one composition; five
+plates make a DOCUMENT more visible than the man receiving it; gods are
+drawn as ordinary men (Inari with a walking stick, Hakusan at a writing
+desk) and only the ghost at the pond is drawn insubstantial; the
+awakening is a teacher scolding a sleeper in a dormitory; the stupa is
+the one plate with nobody in it; and n117r/n117l are ONE picture cut
+across the fold and must be placed together.
+PIPELINE SHAPE, unusual: chapters/ holds the literal English of the
+leaves concatenated per chapter and modern_chapters/ the readable book,
+so verify.py's ratio compares retelling against crib (000 and 002 run
+high by construction -- a preface written around a 200-word source, and
+a two-leaf chapter unpacked -- and are logged). The kanbun stays in
+transcript/. Dates: era-name WITH Western year, sexagenary names
+dropped, zodiac hours as clock times, all declared in the front matter.
+BOTH IMPRESSION DATES ARE EVIDENCED FROM INSIDE THE BOOK: the preface
+is dated Bunka 3 (1806) and n118l's colophon dates this impression to
+Bunka 14 (1817).
+Cover: the book's own frontispiece portrait (n008l), cropped by hand
+to build/covers/kenzeiki.jpg -- NOT on Commons; ebook_meta.json says
+so and gives the crop, because prepare_cover reads the cache and would
+try to fetch a nonexistent Commons file if it were cleared.
