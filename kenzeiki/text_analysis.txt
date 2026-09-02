@@ -1,0 +1,97 @@
+THE ILLUSTRATED LIFE OF DŌGEN (訂補建撕記図会)
+Translation strategy. From the JAPANESE, read off two woodblock
+impressions, with NO English crib and no transcription of any kind.
+
+READ dogen/text_analysis.txt FIRST. Same author-subject, same absence
+of a crib, same character-based ratio; that book is the smaller and
+easier half of this problem.
+
+--------------------------------------------------------------------
+1. WHAT THE BOOK IS, AND WHOSE IT IS
+--------------------------------------------------------------------
+Three men, and the edition must not blur them:
+
+  KENZEI 建撕 (1415-1474), fourteenth abbot of Eiheiji, compiled the
+    original 永平開山行状建撕記 by about 1472, assembling it out of the
+    Record of the Three Ancestors, the Eihei Kōroku, the Shōbōgenzō,
+    the Zuimonki and Dōgen's poems, in chronological order. It is THE
+    OLDEST SUBSTANTIAL LIFE OF DŌGEN and the source of nearly every
+    story later told about him.
+  MENZAN ZUIHŌ 面山瑞方 (1683-1769) revised and supplemented it as the
+    訂補建撕記, 1754, adding annotation and argument of his own.
+  DAIKEN 大賢 drew the woodcuts for the illustrated recension, 図会,
+    published 1806.
+
+MENZAN'S CORRECTIONS ARE NOT NEUTRAL and modern scholarship prefers
+the older manuscripts to his text. That is a fact about this edition
+and belongs in the front matter, not hidden: what is translated here is
+the book as Menzan made it and Daiken pictured it, the version that
+actually formed the Sōtō school's picture of its founder for two
+centuries -- not a critical reconstruction of what Kenzei wrote.
+Where Menzan is plainly arguing rather than narrating (he does it at
+length about Dōgen's paternity), the argument is HIS and is rendered as
+his, in his voice.
+
+--------------------------------------------------------------------
+2. TWO IMPRESSIONS, AND WHY THERE HAVE TO BE TWO
+--------------------------------------------------------------------
+  READING COPY   文化14 (1817), Ogawa Tazaemon, held by the National
+                 Institute of Japanese Literature, biblio 100265060.
+                 Clean paper, no show-through.
+  CHECK COPY     文化3 (1806), 内閣文庫, National Archives of Japan,
+                 aipId 4982930 / 4982931. Browned, with the reverse
+                 leaf showing through.
+Both are struck from Menzan's blocks and both run to exactly 119
+openings, so they are page-for-page.
+
+THIS IS NOT BELT AND BRACES. There is no transcription of the Kenzeiki
+anywhere free, and every modern edition and every English treatment is
+in copyright, so the text in chapters/ is MY READING OF A WOODBLOCK
+PAGE and nothing else stands behind it. A misread character in a
+biography is a wrong date, a wrong name or a wrong place -- content
+present, in order, and wrong, which is the defect class this project
+fears most and which no check in the toolchain can see.
+Measured before relying on it: on a dense page of the 1806 copy I read
+roughly 90-95% of characters confidently. The two impressions together
+are what close that gap, and the gain is not theoretical -- the first
+word of the editorial preface reads 糞 in the 1806 copy and 冀 in the
+1817. Dung against hope, from one character fouled by show-through.
+WHAT THE SECOND COPY CANNOT DO: both are the same blocks, so it
+resolves ILLEGIBILITY and not a shared misprint. Say so.
+
+--------------------------------------------------------------------
+3. THE ILLUSTRATIONS ARE THE SPINE
+--------------------------------------------------------------------
+76 of the 238 half-leaves are woodcut, and the plates carry the story:
+each is captioned in large clear type naming the scene -- 祖師御誕生
+(the Founder's birth), 最明寺殿ノ請ニ赴キ鎌倉ニテ菩薩戒ヲ授ケ玉フ (going
+to Kamakura at Tokiyori's request to confer the bodhisattva precepts).
+Those captions are the most legible text in the book and they are an
+independent outline of the narrative: a transcription of the prose that
+contradicts the caption beside it is wrong somewhere.
+They ride through the pipeline as [Figure N: caption] markers, the
+soap-bubbles convention, with FIGURE_DIR=images/kenzeiki. Unlike
+soap-bubbles, THE CAPTIONS ARE THE SOURCE'S OWN and are modernised, not
+invented (the ball/ rule).
+
+--------------------------------------------------------------------
+4. THE VERNE RULE, AND IT GOVERNS MORE HERE THAN USUAL
+--------------------------------------------------------------------
+This is a fifteenth-century hagiography and it behaves like one. A
+voice speaks out of the sky before Dōgen is born to say the child will
+be a great sage; portents attend his birth, his ordination and his
+death; the mountain god of Hakusan copies out a text for him overnight.
+NONE OF IT IS HEDGED, footnoted or explained away. Kenzei believed it
+and Menzan reprinted it, and a reader who is told what to make of it is
+being handed a different book. The same goes for the claims about
+Dōgen's noble paternity, which are the least reliable part of the text
+and are exactly what Menzan argues hardest for.
+
+--------------------------------------------------------------------
+5. RATIO
+--------------------------------------------------------------------
+Character-based, as dogen/ (a word ratio cannot fire on a CJK source;
+see that book's check.py for why shipping one anyway is worse than
+shipping none). Derive the band from the first finished files and pin
+it. Do NOT reuse dogen/'s 1.20-1.65: this is Japanese kanji-katakana
+narrative, not kanbun, and it is much less compressed.

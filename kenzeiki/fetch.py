@@ -92,13 +92,23 @@ def get(url, path, tries=4):
 
 
 def nijl():
-    """The 1817 impression, whole openings, for checking hard characters."""
+    """The 1817 impression, as half-leaves.
+
+    THIS IS THE READING COPY, and the 1806 Archives scan is the check --
+    the reverse of what was planned. The 1817 impression is printed on
+    unbrowned paper with no show-through, and the difference is not
+    cosmetic: in the 1806 copy the first word of the editorial preface
+    reads 糞 and in the 1817 it is plainly 冀, "I hope that". Dung
+    against hope, from one character fouled by the reverse leaf.
+    """
     os.makedirs(NIJL_PAGES, exist_ok=True)
     got = 0
     for i in range(1, NIJL_N + 1):
-        p = os.path.join(NIJL_PAGES, f"n{i:03d}.jpg")
-        if get(f"{NIJL % i}/full/2400,/0/default.jpg", p):
-            got += 1
+        for side, region in (("r", "pct:50,0,50,100"),
+                             ("l", "pct:0,0,50,100")):
+            p = os.path.join(NIJL_PAGES, f"n{i:03d}{side}.jpg")
+            if get(f"{NIJL % i}/{region}/2200,/0/default.jpg", p):
+                got += 1
     print(f"NIJL 1817 impression: {got} new, "
           f"{len(os.listdir(NIJL_PAGES))} files in pages_nijl/")
 
