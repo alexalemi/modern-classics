@@ -70,7 +70,15 @@ ARCHAIC = re.compile(
     r"sire|maiden|hark)\b", re.I)
 ARCHAIC_OK = []
 
+# A SPEAKER TAG AND A SHORT SENTENCE ARE THE SAME REGEX -- the thompson
+# lesson, and this fired on correct prose before it was fixed. The
+# character class has to admit a space (for "First Half-Chorus"), which
+# means "You have cause to mourn." matched too: four phantom speeches in
+# Ajax alone, each shifting every index after it, so the check reported a
+# divergence in a file that was right. The names are a CLOSED SET taken
+# from the Greek, so require membership rather than shape.
 SPEAKER_LINE = re.compile(r"^([A-Z][A-Za-z' -]{1,24})\.$")
+NAMES = set(SPEAKERS.values())
 STAGE_LINE = re.compile(r"^\(.*\)$")
 PART_LINE = re.compile(r"^\(Part (\d+) of (\d+)\)$")
 
@@ -91,7 +99,7 @@ def modern_speeches(path):
         if STAGE_LINE.match(line.strip()) or PART_LINE.match(line.strip()):
             continue
         m = SPEAKER_LINE.match(line.strip())
-        if m and not line.startswith("\t"):
+        if m and m.group(1) in NAMES and not line.startswith("\t"):
             speaker = m.group(1)
             out.append([speaker, None])
             continue

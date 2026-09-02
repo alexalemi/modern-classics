@@ -88,3 +88,25 @@ DECISIONS LOG
   #3"; an ode dissolved into prose -> "speech #56 is prose but the
   Greek marks it sung"; "yonder" -> archaism; a wrong part marker ->
   caught. All four fire; the file then restores clean.
+
+--------------------------------------------------------------------
+PAUSED 2026-09-01, AFTER AJAX
+--------------------------------------------------------------------
+Alex paused the shelf here to take on Dogen. State: Ajax complete and
+clean (files 000-002, 310 speeches, ratios 1.66/1.66/1.62). Nineteen
+files remain: Antigone (003-005), Oedipus the King (006-008), The Women
+of Trachis (009-011), Electra (012-014), Philoctetes (015-017),
+Oedipus at Colonus (018-021).
+Everything needed to resume is in place and proven: prep.py is
+idempotent (re-run reproduces chapters/ byte for byte), check.py fires
+on all four defect classes, and the voice, the locked vocabulary and
+the form ruling are recorded above. must_contain.txt is NOT yet
+written -- pins come from the finished text (the epictetus rule), so
+write it at the end, not now.
+ONE SHARED-CODE FIX WAS MADE HERE AND MATTERS TO ANY LATER PLAY: a
+speaker tag and a short sentence are the same regex. check.SPEAKER_LINE
+has to admit a space (for "First Half-Chorus"), which made
+"You have cause to mourn." a speaker tag -- four phantom speeches in
+Ajax alone, each shifting every index after it, so the check reported a
+divergence in a file that was correct. Fixed by requiring membership in
+the closed NAMES set taken from the Greek, not by loosening the regex.
