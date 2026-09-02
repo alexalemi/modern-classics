@@ -3402,8 +3402,20 @@ years facing a wall, in the Fukanzazengi, and 斷臂腕於少室, he cut off
 his arm at Shaoshi, in Gakudō Yōjinshū VIII. At 1491 wide it is under
 commons_url's 4200 gate, so the crop is in the ORIGINAL's coordinates.
 
-THE KENZEIKI IS BLOCKED, and the negative is recorded so it is not
-re-researched. Kenzei's 15th-century life of Dōgen is the primary
+THE KENZEIKI IS AVAILABLE, AND THE NEGATIVE RECORDED HERE FIRST WAS
+WRONG — see ROADMAP.md. It is in the NATIONAL ARCHIVES OF JAPAN
+(内閣文庫), not NDL: Menzan's illustrated 訂補建撕記図会 of 1806, two
+volumes, 119 page images, IIIF, printed kanji-katakana and legible.
+THE LESSON IS ABOUT THE SHAPE OF THE NEGATIVE. I searched Gutenberg,
+Archive.org, Wikisource, NDL and Waseda, found nothing, and wrote the
+conclusion down as settled. Five institutions is not "everywhere", and
+a Japanese Edo woodblock book is exactly the material that sits in a
+sixth. WHEN RECORDING THAT SOMETHING CANNOT BE FOUND, RECORD WHERE YOU
+LOOKED RATHER THAN THAT IT DOES NOT EXIST. Also: the National Archives
+search API accepts `keyword`, `freeWord`, `searchWord` and `anyWord`,
+and silently returns the WHOLE ARCHIVE for each — a query that looks
+like it worked and did not. Only `title` and `q` filter.
+The original note follows, and its NDL findings still stand. Kenzei's 15th-century life of Dōgen is the primary
 source for his biography and would suit this collection, but no usable
 text could be reached: Gutenberg nothing; Archive.org ZERO results for
 "kenzeiki"; ja.wikisource nothing; Waseda's Kotenseki database 0 hits.

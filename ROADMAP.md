@@ -94,13 +94,37 @@ SE-XHTML, Wikisource-API, from-the-Latin, from-the-French.
   (Hōkyōki, his record of questions to Rujing) and the 傘松道詠 (Sanshō
   Dōei, his waka). All legible; all would need reading off the page
   images rather than transcription, which was tested and works.
-- **THE KENZEIKI IS BLOCKED.** Kenzei's 15th-century life of Dōgen: no
-  usable text anywhere reachable. Gutenberg nothing, Archive.org zero
-  hits, ja.wikisource nothing, Waseda Kotenseki 0 hits; NDL has three
-  public-domain printings but serves none of them publicly (the 1921
-  item's IIIF 404s and its OAI record is empty, which is how NDL marks
-  図書館・個人送信). Every modern edition and every English treatment is
-  in copyright. Do not re-research without a new lead.
+- **THE KENZEIKI IS AVAILABLE AFTER ALL** (corrected 2026-09-02; the
+  earlier "blocked" verdict here was wrong and the correction came from
+  Alex). Kenzei's 15th-century life of Dōgen, in MENZAN'S ILLUSTRATED
+  RECENSION: 訂補建撕記図会 (Teiho Kenzeiki zue), annotated by Menzan
+  Zuihō, drawn by Daiken, published 文化3年 = 1806. Two volumes, 62 + 57
+  page images = 119, held in the 内閣文庫 and digitised by the NATIONAL
+  ARCHIVES OF JAPAN — which is why every earlier search missed it. I
+  had looked at NDL, Wikisource, Archive.org and Waseda and concluded
+  it did not exist; it was in a fifth institution.
+      IIIF, and the API pattern is worth keeping:
+      search   https://www.digital.archives.go.jp/api/search?title=…
+               (the parameter MUST be `title` or `q`; `keyword`,
+               `freeWord`, `searchWord` and `anyWord` are all accepted
+               and silently return the entire archive — 4.29 million
+               hits — which looks like a working query and is not)
+      manifest https://www.digital.archives.go.jp/api/iiif/{aipId}/manifest.json
+      volumes  aipId 4982930 (vol 1, 62pp) and 4982931 (vol 2, 57pp);
+               1241586 is the parent record and carries only a cover
+  LEGIBILITY TESTED, not assumed, by the method used for dogen/: two
+  page images were read directly. The text is PRINTED kanji-katakana,
+  not cursive — Menzan's annotations and the picture captions alike —
+  and it is comfortably readable. It is also genuinely illustrated,
+  which suits the illustrated pipeline that has been ready since
+  thompson/.
+  STILL NO ENGLISH CRIB: Kawamura's 1975 critical edition, the 2000
+  現代語訳, and every English treatment are in copyright, so this is the
+  dogen/ risk class — from the Japanese with no second witness but the
+  scan itself. NOTE the Leighton & Okumura translation of the Eihei
+  Kōroku circulating on terebess.hu is Wisdom Publications' and in
+  copyright; it is not a usable source, though its introduction is what
+  named Menzan's recension and broke the search open.
 - **Greek tragedy — PAUSED at 3/22.** sophocles/ has Ajax complete and
   clean (310 speeches); Antigone, Oedipus the King, The Women of
   Trachis, Electra, Philoctetes and Oedipus at Colonus remain. The
