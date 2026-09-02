@@ -32,6 +32,22 @@ MANIFEST = "https://www.digital.archives.go.jp/api/iiif/%s/manifest.json"
 VOLS = [("4982930", 1, 62), ("4982931", 2, 57)]
 PAGES = os.path.join(HERE, "pages")
 
+# A SECOND IMPRESSION, AND IT IS THE ONLY CHECK THIS BOOK CAN HAVE.
+# There is no transcription of the Kenzeiki anywhere free and no
+# English translation out of copyright, so the transcription made here
+# has no crib behind it -- and a misread character in a biography is a
+# wrong date or a wrong name, which is the one defect class that reads
+# perfectly. What exists instead is a DIFFERENT PRINTING: the National
+# Institute of Japanese Literature holds the 文化14 (1817) impression by
+# Ogawa Tazaemon, against the National Archives' 文化3 (1806), and it
+# runs to exactly the same 119 openings. Where the ink or the
+# bleed-through fouls a character in one copy, the other settles it.
+#   https://kokusho.nijl.ac.jp/biblio/100265060  (DOI 10.20730/100265060)
+NIJL = ("https://kokusho.nijl.ac.jp/api/iiif/100265060/v4/ORMK/"
+        "ORMK-00310/ORMK-00310-%05d.tif")
+NIJL_PAGES = os.path.join(HERE, "pages_nijl")
+NIJL_N = 119
+
 
 def canvases(aip, expect):
     with urllib.request.urlopen(
@@ -75,7 +91,21 @@ def get(url, path, tries=4):
     return False
 
 
+def nijl():
+    """The 1817 impression, whole openings, for checking hard characters."""
+    os.makedirs(NIJL_PAGES, exist_ok=True)
+    got = 0
+    for i in range(1, NIJL_N + 1):
+        p = os.path.join(NIJL_PAGES, f"n{i:03d}.jpg")
+        if get(f"{NIJL % i}/full/2400,/0/default.jpg", p):
+            got += 1
+    print(f"NIJL 1817 impression: {got} new, "
+          f"{len(os.listdir(NIJL_PAGES))} files in pages_nijl/")
+
+
 def main():
+    if "--nijl" in sys.argv:
+        return nijl()
     os.makedirs(PAGES, exist_ok=True)
     got = 0
     for aip, vol, expect in VOLS:
