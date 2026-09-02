@@ -94,6 +94,22 @@ SE-XHTML, Wikisource-API, from-the-Latin, from-the-French.
   (Hōkyōki, his record of questions to Rujing) and the 傘松道詠 (Sanshō
   Dōei, his waka). All legible; all would need reading off the page
   images rather than transcription, which was tested and works.
+- **AND THE NATIONAL ARCHIVES HAS A WHOLE EDO DŌGEN SHELF** (surveyed
+  2026-09-02 at Alex's suggestion, after the Kenzeiki turned up there).
+  Search with `title=`, never `keyword`:
+      永平正法眼蔵          23 records — the SHŌBŌGENZŌ complete in an
+                            Edo woodblock edition, 22 numbered volumes,
+                            aipId 4983248-4983269
+      宝慶記                3 records (1250510-1250512)
+      永平初祖学道用心集    1208996, and 俗詮 (with commentary) 1250514
+      普勧坐禅儀            1208915, plus two annotated editions,
+                            頭書間註 3145506 and 首書傍訓 3145471
+      日本洞上聯灯録        6 volumes, the Sōtō lineage records
+  NOT there, and checked: the ZUIMONKI (随聞記 returns nothing of his)
+  and the SANSHŌ DŌEI. For those the NDL 1909 volume 3 remains the only
+  route. So the two collections are complementary rather than rival:
+  NDL has the talks and the poems, the Archives has the Shōbōgenzō and
+  the annotated recensions.
 - **THE KENZEIKI IS AVAILABLE AFTER ALL** (corrected 2026-09-02; the
   earlier "blocked" verdict here was wrong and the correction came from
   Alex). Kenzei's 15th-century life of Dōgen, in MENZAN'S ILLUSTRATED
