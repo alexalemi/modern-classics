@@ -90,3 +90,39 @@ DECISIONS LOG
   books half-built. The Kenzeiki state is fully resumable -- fetch.py,
   survey.py, pagemap, readorder, layers, transcript/, english/,
   source_notes -- and picks up at the next unclassified leaf.
+
+--------------------------------------------------------------------
+STATE AT THE END OF THE FIRST WORKING SESSION (2026-09-02)
+--------------------------------------------------------------------
+45 of 157 text leaves classified: 7 pure narrative, 16 mixed, 22 pure
+apparatus. 23 leaves transcribed, 18 translated, 2,151 English words.
+
+WHAT IS COMPLETE AS AN ARC: the China years, and they read as a whole
+book already -- the great doubt at fifteen that nobody on Hiei could
+answer, Koin sending him to Eisai, the travel permit with the barriers
+ordered open, the seating dispute at Tiantong and the memorial that won
+an imperial edict, the four succession documents, Myozen's death with
+Eisai's answer to the doubt repeated over him, the awakening under
+Rujing, the parting charge, and the landing at Kawajiri.
+
+WHERE TO RESUME: the next unclassified leaf. Print it with
+    python3 - <<'PY'
+    lay={l.split()[0] for l in open("kenzeiki/layers.txt")
+         if l[:1]=="n" and len(l.split())>1
+         and l.split()[1] in ("narrative","menzan","MIXED")}
+    text=[l.split()[0] for l in open("kenzeiki/readorder.txt")
+          if l.split()[-1]=="text"]
+    print([t for t in text if t not in lay][:10])
+    PY
+
+ADVICE FOR THE NEXT SESSION, learned the hard way here:
+- LEAVES 44-57 OF VOLUME ONE ARE ALMOST ALL MENZAN. Lineage dating,
+  gazetteers, temple-founding documents. Each still costs a full read
+  to identify, and roughly half the remaining work is reading material
+  in order to discard it. Consider starting VOLUME TWO (n063 onward,
+  Eiheiji and the death) and backfilling volume one's middle later:
+  volume two is where the narrative resumes densely.
+- The rate has been about one leaf per reading throughout and has not
+  improved. The reading is the irreducible step; there is no way to
+  batch it, because narrative and apparatus can only be told apart by
+  reading, and a leaf can carry both.
