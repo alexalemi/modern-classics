@@ -149,13 +149,19 @@ def main():
                 f"{title}: {n} characters, pinned {CHARS[title]} -- the "
                 f"Wikisource transcription changed; re-read it against the "
                 f"1909 scan ({where}) before adjusting the pin")
-        text = "\n\n".join([roman] + lines) + "\n"
+        # ONE HEADING, NOT TWO. A part_before divider plus a section
+        # heading printed the work's name twice on the page -- "Fukan-
+        # zazengi — Universal Recommendation for Zazen (1227)" as an
+        # <h2> and then "Fukanzazengi" as an <h3> directly under it.
+        # With two works and no Parts, the divider earns nothing; the
+        # gloss and the date go into the section heading instead.
+        head = f"{roman}: {english} ({date})"
+        text = "\n\n".join([head] + lines) + "\n"
         open(os.path.join(chap, f"{idx:03d}.txt"), "w").write(text)
         manifest.append({
             "file": f"{idx:03d}.txt",
-            "title": roman,
+            "title": head,
             "part": 1, "of": 1, "chapter": True,
-            "part_before": f"{roman} — {english} ({date})",
         })
         idx += 1
         print(f"  {idx-1:03d}.txt  {n:>6,} chars  {roman} ({english})")

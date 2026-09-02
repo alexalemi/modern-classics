@@ -78,6 +78,41 @@ SE-XHTML, Wikisource-API, from-the-Latin, from-the-French.
   book against the Greek's own speech tagging, since a speech quietly
   welded into narration reads perfectly and moves no other measure.
 
+### Dōgen (from the Chinese) — and the drama shelf, paused
+- **Dōgen — The Practice Instructions** - DONE (site/dogen.html; the
+  Fukanzazengi of 1227 and the Gakudō Yōjinshū of 1234, both complete,
+  5,236 characters of kanbun -> 6,250 English words). The collection's
+  FIRST Japanese author, first Buddhist text and first from-the-Chinese
+  volume, and the first with NO CRIB — there is no public-domain
+  English Dōgen of any kind. Source: Eiheiji's own collected edition of
+  1909 via ja.wikisource, with the transcription verified directly
+  against the NDL page images. See CLAUDE.md for the NDL IIIF route,
+  which reaches any pre-1928 Japanese book.
+- **STILL AVAILABLE, same source**: volume 3 of the 1909 edition (NDL
+  pid 823141, 306 pages) also carries the 正法眼藏隨聞記 (Zuimonki,
+  Dōgen's recorded talks and by far his most readable book), the 寶慶記
+  (Hōkyōki, his record of questions to Rujing) and the 傘松道詠 (Sanshō
+  Dōei, his waka). All legible; all would need reading off the page
+  images rather than transcription, which was tested and works.
+- **THE KENZEIKI IS BLOCKED.** Kenzei's 15th-century life of Dōgen: no
+  usable text anywhere reachable. Gutenberg nothing, Archive.org zero
+  hits, ja.wikisource nothing, Waseda Kotenseki 0 hits; NDL has three
+  public-domain printings but serves none of them publicly (the 1921
+  item's IIIF 404s and its OAI record is empty, which is how NDL marks
+  図書館・個人送信). Every modern edition and every English treatment is
+  in copyright. Do not re-research without a new lead.
+- **Greek tragedy — PAUSED at 3/22.** sophocles/ has Ajax complete and
+  clean (310 speeches); Antigone, Oedipus the King, The Women of
+  Trachis, Electra, Philoctetes and Oedipus at Colonus remain. The
+  measurement that justified it: Sophocles in Campbell's verse scores
+  arch 39.10, THE HIGHEST EVER RECORDED HERE, above Pusey's Augustine
+  at 35.9. Aristophanes was screened in the same pass and STRUCK (arch
+  2.11/1.77 — clean, unexpurgated, not a candidate), with one open
+  question: the French slang "mottes" for a Greek obscenity suggests
+  the 1912 Athenian Society text came via Talbot's French, which would
+  make it a retranslation job rather than a modernisation. All 33
+  surviving tragedies are on Perseus with Greek plus an English crib.
+
 ## Founders' Library, Volume II
 - Montesquieu — The Spirit of the Laws (from the French; the most-cited
   secular author of the founding era; ~250k words)

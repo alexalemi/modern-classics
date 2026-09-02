@@ -3287,3 +3287,132 @@ Böcklin 008.jpg", crop "1850x2775+350+0" — the goddess in red in the
 mouth of her cave and Odysseus standing with his back to her, looking
 out at the sea, which is books one to five in one image and is the
 only thing he does on her island for seven years.
+
+Dōgen's The Practice Instructions (dogen/ — the 68th book; the
+collection's FIRST JAPANESE AUTHOR, first Buddhist text and first
+FROM-THE-CHINESE volume). Two complete works: the Fukanzazengi of 1227
+(894 characters) and the Gakudō Yōjinshū of 1234 (4,342 characters, ten
+sections). 5,236 characters of kanbun -> 6,250 English words, which is
+Enchiridion scale. Verify does not apply; see below.
+
+THE SOURCE HUNT IS THE REUSABLE PART, because the obvious answers were
+all wrong. Gutenberg has no Dōgen and no Zen primary text at all;
+Archive.org's every Shōbōgenzō is Nishijima & Cross or later and in
+copyright; ja.wikisource's Dōgen pages LOOK EMPTY (446 bytes, and the
+Zuimonki page is literally 0 bytes). They are not empty: they are
+TRANSCLUSION WRAPPERS naming a real source, 承陽大師聖教全集 — EIHEIJI'S
+OWN COLLECTED EDITION OF 1909, NDL Digital Collections pid 823139 and
+823141, Access Restriction PDM. A search result of a few hundred bytes
+is worth opening before it is believed.
+NDL SERVES THE WHOLE THING AS IIIF, and the manifest carries the access
+terms: `https://www.dl.ndl.go.jp/api/iiif/{pid}/manifest.json` gives
+label, metadata, page count and per-page image services. That is the
+route to any pre-1928 Japanese book, and it is how the rest of Dōgen
+(the Zuimonki, the Hōkyōki, the Sanshō Dōei poems) can be reached
+later: volume 3 alone is 306 pages and its contents page lists them.
+
+THE 1909 SCANS ARE LEGIBLE AND THAT WAS PROVED, NOT ASSUMED. A page
+image of the Gakudō Yōjinshū's opening sections was read directly and
+compared against the Wikisource transcription, which is independent of
+it: they agree character for character, colophon (天福二甲午三月九日書)
+included. THAT CROSS-CHECK IS THE ONLY SUBSTITUTE AVAILABLE FOR THE
+MISSING CRIB, and it is why the text can be trusted.
+
+THERE IS NO PUBLIC-DOMAIN ENGLISH DŌGEN, AT ALL. Every other
+from-the-original volume here carries one — Murray for Homer, Riley for
+Ovid, Longfellow for Dante, Jebb for Sophocles, Symonds for Cellini —
+and that crib is the SECOND WITNESS the whole method depends on. Here
+reference/ is empty by necessity, the front matter says so in as many
+words, and the risk class is genuinely different. What partly replaces
+it: the text is short enough to work phrase by phrase, and its cruxes
+(非思量, 本來面目, 公案現成) have settled English renderings to check
+against.
+
+A WORD RATIO CANNOT FIRE ON A CJK SOURCE, AND MUST NOT BE SHIPPED AS IF
+IT COULD. verify.py measures len(text.split()); kanbun has no spaces, so
+a whole chapter counts as a handful of "words" and the ratio — this
+collection's one mechanical guard against silent summarising — is inert
+while looking like coverage. That is strictly worse than no check (the
+nights lesson). check.py measures CHARACTERS of source against WORDS of
+translation: 1.40 overall, band 1.20-1.65 DERIVED from the finished
+files. I PREDICTED 2.0-3.0 BEFORE MEASURING; that band would have
+failed every correct file, which is the purgatorio rule in miniature.
+The fleming numeric diff is likewise measured and NOT shipped: Dōgen
+writes 六十二見 and 三千 in characters, so a digit check would be
+entirely inert. What replaces it is a count of the SPELLED-OUT numbers.
+
+THREE CHECK BUGS, ALL OF THE SAME SHAPE — THE CHECK WRONG, THE PROSE
+RIGHT — and worth expecting on any new book:
+  1. A PRESENCE TEST CANNOT SEE A DROPPED DUPLICATE (the hume rule,
+     which this file first ignored). The locked-vocabulary check was
+     written as `term in text` and passed when one of seven occurrences
+     of 名利 was reworded. Rebuilt as an EXACT COUNT for the fixed
+     compounds — verified one-to-one first: 名利 7/7, 名聞利養 2/2,
+     正師 7/7 — and presence-only for 菩提心 and 坐禪/參禪, which the
+     English legitimately varies. The near-misses are registered as
+     BANNED too (the nights rule: lock the formula AND encode the wrong
+     answers), each checked absent from the finished text first so none
+     can fire on correct prose.
+  2. A PHRASE TEST MUST SEE WHAT THE RENDERER SEES. The number check
+     fired on "nine years" because hard-wrapping had split it as
+     "nine\nyears"; assemble.py joins a paragraph's lines before
+     rendering, so the phrase is on the page and not in the file. All
+     phrase tests now run on whitespace-normalised text.
+  3. TWO PINS WERE WRITTEN FROM MEMORY. The phrase Dōgen is famous for
+     receiving from Rujing is 身心脱落, but the Fukanzazengi has
+     身心自然脱落, with 自然 in the middle; a pin from memory could only
+     have been satisfied by a translation that dropped a word he wrote.
+
+NEVER HARD-WRAP AFTER A HYPHEN. Both renderers join a paragraph's lines
+with a space, so "Single-\nminded" ships as "Single- minded" — a broken
+word on the page and in the epub. `se lint` catches it as t-033, but
+only if the book reaches a build; it is a real defect, not a lint
+nicety, and any book wrapped at 72 columns can produce it.
+`se lint` m-056 also wants an author's first mention in the long
+description linked to their Standard Ebooks author page. Dōgen is not
+in the SE catalogue, so there is no page to link and the name is simply
+not used there — the description introduces him as "a Japanese monk".
+
+VOICE: he is not vague and not soothing, and English Zen writing has
+made him both. The Fukanzazengi is a MANUAL and its physical
+instructions stay physical, in the imperative, as soap-bubbles/ renders
+Boys at the bench. The philosophy is welded into the manual and must
+not be lifted out of it: the most famous sentence in Zen sits in the
+middle of a posture instruction and is as terse in English as in
+Chinese — "Think of the thing that does not think. How do you think of
+the thing that does not think? Beyond thinking." 非思量 is BEYOND
+thinking, never "not thinking", which asserts the opposite of the
+argument. The Gakudō Yōjinshū is warmer and much sharper than his
+reputation, and contemptuous of teachers he thinks are frauds.
+THE VERNE RULE, no note anywhere: his claim that this practice is the
+only correct one; that people who talk about the thought of awakening
+without having raised it are "far, far from the buddha way"; and above
+all his verdict on his own country in section five — that Japan has
+never produced a true teacher, that its teachers "count another man's
+treasure and have not half a coin of their own", and that you should go
+to Song China instead, because if you cannot get a true teacher it is
+better not to study at all. That is his argument for his own life and
+it stands unhedged.
+Cover: Sesshū Tōyō's "Huike Offering His Arm to Bodhidharma" (1496),
+Commons "File:Bodhidharma.and.Huike-Sesshu.Toyo.jpg", crop
+"1491x2236+0+176" — the trim comes off the TOP, which is cave rock,
+keeping both figures. Doubly apt rather than merely Japanese: Dōgen
+cites this exact scene twice in these two texts — 面壁九歳, the nine
+years facing a wall, in the Fukanzazengi, and 斷臂腕於少室, he cut off
+his arm at Shaoshi, in Gakudō Yōjinshū VIII. At 1491 wide it is under
+commons_url's 4200 gate, so the crop is in the ORIGINAL's coordinates.
+
+THE KENZEIKI IS BLOCKED, and the negative is recorded so it is not
+re-researched. Kenzei's 15th-century life of Dōgen is the primary
+source for his biography and would suit this collection, but no usable
+text could be reached: Gutenberg nothing; Archive.org ZERO results for
+"kenzeiki"; ja.wikisource nothing; Waseda's Kotenseki database 0 hits.
+NDL catalogues three public-domain printings — 建撕記布皷 (1921),
+絵入道元禅師伝：訂補建撕記 (1931, illustrated) and an Edo woodblock
+訂補永平開山行状建撕記 (1754) — but the 1921 item's IIIF manifest 404s
+and its OAI record comes back with an EMPTY rdf:Description, which is
+how NDL represents an item digitised but served only under
+図書館・個人送信. Every modern edition (Kawamura 1975, the 2000
+現代語訳) is in copyright, as is every English treatment. If a scan ever
+surfaces, the feasibility test is the one used here: read a page image
+against a known-good transcription and see whether they agree.
