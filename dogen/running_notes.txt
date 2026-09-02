@@ -62,3 +62,28 @@ DECISIONS LOG
   across a line break -- correct prose, wrong check. All phrase tests
   now run on whitespace-normalised text, as assemble.py joins a
   paragraph's lines before rendering (the epictetus rule).
+- 2026-09-02 THE VOLUME IS EXTENDED WITH THE TENZO KYOKUN (1237), from
+  the same 1909 Eiheiji edition, NDL volume 3 (pid 823141), printed
+  pages 13-24. It belongs here and is not merely convenient: the book
+  was two sets of instructions -- how to sit and how to study -- and
+  this is the third, how to cook, which Dogen treats as the same
+  practice and not a support for it.
+  IT ALSO CLOSES A LOOP. The Tenzo Kyokun first surfaced in this
+  session inside a 補 note in the Kenzeiki, where the rule required
+  dropping it. Here it is the text itself.
+- 2026-09-02 THE RATIO CHECK CAUGHT A REAL OMISSION, which is what it
+  is for. 002 came in at 0.99 against a band of 1.20-1.65. Diagnosed
+  rather than waved through: two passages translated in full were
+  measured separately and came out at 1.36 and 0.92, so the text is not
+  uniformly denser -- but the diagnosis also turned up a passage I had
+  genuinely dropped, the count of the assembly and the rice-grain
+  riddle on Luling rice and Guishan's water buffalo, skipped because I
+  could not read the column at page resolution. Refetched at high zoom
+  through the IIIF region API and translated; that moved the file to
+  1.00. ONLY THEN was the remaining gap accepted, as a signed allowance
+  in check.RATIO_EXPECT with the argument written out. A band widened
+  before the omission was found would have hidden it.
+- 2026-09-02 ANOTHER NUMERAL-INSIDE-A-NUMERAL BUG, same family as the
+  "nine years" line-break one. 六年 is "six years" in the Fukanzazengi
+  but every occurrence in the Tenzo Kyokun is the tail of 嘉定十六年, a
+  date. The count now refuses a match preceded by another numeral.

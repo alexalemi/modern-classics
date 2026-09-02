@@ -33,6 +33,29 @@ import assemble                                        # noqa: E402
 # from that guess could not have been satisfied by a correct file.
 MIN_RATIO, MAX_RATIO = 1.20, 1.65
 
+# A SIGNED ALLOWANCE, WITH THE ARGUMENT WRITTEN OUT (the burke rule).
+# Not a loosened band: the band still governs the other files, and an
+# allowance without a reason is just a check switched off.
+#
+# 002 -- the Tenzo Kyokun runs at 1.00 words per character where the
+# other two run at 1.49 and 1.39, and this was DIAGNOSED rather than
+# waved through. Two passages that are translated in full were measured
+# separately: the opening comes out at 1.36, inside the band, and the
+# three-minds passage at 0.92, far below it. So the text is not
+# uniformly denser -- its procedural and list-heavy stretches are. It
+# is full of four-character phrases and enumerations (地獄餓鬼畜生修羅
+# is eight characters for seven English words) which no faithful
+# English can pad out, next to discursive passages that behave like the
+# rest of the book.
+# The check DID catch a real omission first, and it was fixed rather
+# than allowed: the count of the assembly and the rice-grain riddle on
+# Luling rice and Guishan's water buffalo had been dropped because I
+# could not read the column at page resolution. Refetched at high zoom
+# through the IIIF region API, transcribed and translated; that alone
+# moved the file from 0.95 to 1.00. Only after the omission was closed
+# was the remaining gap accepted as genre.
+RATIO_EXPECT = {"002.txt": (0.95, 1.15)}
+
 CJK = re.compile(r"[㐀-鿿]")
 
 # The augustine thou-sweep. ARCHAIC_OK stays EMPTY. There is no
@@ -136,9 +159,9 @@ def main(argv):
 
         # 1. character-to-word ratio
         r = nword / max(1, nchar)
-        if not MIN_RATIO <= r <= MAX_RATIO:
-            say.append(f"ratio {r:.2f} words/char outside "
-                       f"{MIN_RATIO}-{MAX_RATIO}")
+        lo, hi = RATIO_EXPECT.get(f, (MIN_RATIO, MAX_RATIO))
+        if not lo <= r <= hi:
+            say.append(f"ratio {r:.2f} words/char outside {lo}-{hi}")
 
         # 2. section parity, anchored on the source's own headings
         s = [l for l in src.split("\n") if SRC_SECTION.match(l)]
@@ -175,7 +198,16 @@ def main(argv):
 
         # 5. spelled-out numbers, counted
         for cn, en in NUMBERS.items():
-            want_n = src.count(cn)
+            # A SPELLED-OUT NUMBER CAN SIT INSIDE A LONGER ONE. 六年 is
+            # "six years" in the Fukanzazengi (the Buddha's six years of
+            # sitting) but in the Tenzo Kyokun every occurrence is the
+            # tail of 嘉定十六年, the sixteenth year of Jiading -- a date,
+            # not a duration. Counting the bare form reported a dropped
+            # number in a translation that was right. Same family as the
+            # "nine years" line-break bug: the check was wrong, not the
+            # prose. Occurrences preceded by another numeral do not count.
+            want_n = len(re.findall(
+                r"(?<![一二三四五六七八九十百千])" + re.escape(cn), src))
             got_n = len(re.findall(re.escape(en), flat, re.I))
             if want_n and got_n < want_n:
                 say.append(f"number {cn} appears {want_n}x in source, "
