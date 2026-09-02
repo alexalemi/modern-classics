@@ -116,3 +116,32 @@ THE VERNE RULE, no note anywhere:
     XXXII, and Beatrice's prophecy against the Church in XXXIII.
   - Statius made a secret Christian by reading Virgil's Fourth
     Eclogue (XXII), which is Dante's claim and not history.
+
+THE READABILITY PASS (2026-09-02)
+The same pass as paradiso/ (see its running_notes for the rule in full),
+applied to all 33 cantos. Ratio moved 1.18 -> 1.22; tercet count, lines
+per tercet and tabs unchanged (check.py compares against chapters/).
+What changed, and only this:
+- Periphrasis resolved to the name where Dante is not setting a puzzle
+  (Thaumas's daughter -> the rainbow; the bird of Jove -> the eagle;
+  "that Greek whom the Muses suckled" -> Homer; the Fieschi, Averroes,
+  Scipio, Phaethon, Charles of Anjou / Valois / Naples, Philip, Boniface).
+  Where the periphrasis IS the point it stays and the name rides
+  alongside it ("the emeralds, her eyes"; "the griffin, the beast that
+  is one person only in two natures").
+- Every Latin line glossed inline in the same line, at zero line cost
+  (Qui lugent, Adhaesit pavimento, Neque nubent, sitiunt, Labia mea,
+  Summae Deus clementiae, Virum non cognosco, Beati mundo corde, Venite
+  benedicti, Beati quorum, Veni sponsa, ad vocem tanti senis, Benedictus
+  qui venis, Manibus date lilia, In te Domine speravi, Asperges me, Deus
+  venerunt gentes, Modicum et non videbitis). The must_contain pins keep
+  the Latin phrase itself, which is what they test.
+- Plain astronomy: the time-markers are rendered as times of day in the
+  same line ("it was about two in the afternoon"; "it was between ten and
+  eleven"), and the star-lore that gives them is kept, not cut.
+- The riddles Dante leaves unsolved stay unsolved: the DXV, the whore and
+  the giant, the pageant's three and four ladies (given their colours,
+  not their names). Beatrice's rebuke and Virgil's leaving untouched.
+- One handhold for a Florentine custom that the line depends on: the sop
+  eaten on a victim's grave (XXXIII), which Beatrice's "God's vengeance
+  is not afraid of sops" is meaningless without.
