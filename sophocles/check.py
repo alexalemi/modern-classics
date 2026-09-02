@@ -223,6 +223,16 @@ def main(argv):
             say.append(f"archaism {mm.group(0)!r}: "
                        f"...{ctx.strip()[:70]}...")
 
+        # 5b. A SHORT STAGE DIRECTION IS A SUBHEADING TO THE RENDERER.
+        # "(The Guard goes.)" is short and majority-capitalised, so
+        # assemble.is_subheading set four of them as <h4> on the shipped
+        # page. Ask the renderer itself (the epictetus rule), never a
+        # copy of its test, and reword the direction, not the rule.
+        for ln in text.splitlines():
+            ln = ln.strip()
+            if STAGE_LINE.match(ln) and assemble.is_subheading(ln):
+                say.append(f"stage direction renders as a heading: {ln}")
+
         # 6. emphasis: ask assemble.EMPH itself whether it renders
         stripped = assemble.EMPH.sub("", text)
         if "*" in stripped or "_" in stripped.replace("app_", ""):

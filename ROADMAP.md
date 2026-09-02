@@ -141,17 +141,18 @@ SE-XHTML, Wikisource-API, from-the-Latin, from-the-French.
   Kōroku circulating on terebess.hu is Wisdom Publications' and in
   copyright; it is not a usable source, though its introduction is what
   named Menzan's recension and broke the search open.
-- **Greek tragedy — PAUSED at 3/22.** sophocles/ has Ajax complete and
-  clean (310 speeches); Antigone, Oedipus the King, The Women of
-  Trachis, Electra, Philoctetes and Oedipus at Colonus remain. The
-  measurement that justified it: Sophocles in Campbell's verse scores
-  arch 39.10, THE HIGHEST EVER RECORDED HERE, above Pusey's Augustine
-  at 35.9. Aristophanes was screened in the same pass and STRUCK (arch
-  2.11/1.77 — clean, unexpurgated, not a candidate), with one open
-  question: the French slang "mottes" for a Greek obscenity suggests
-  the 1912 Athenian Society text came via Talbot's French, which would
-  make it a retranslation job rather than a modernisation. All 33
-  surviving tragedies are on Perseus with Greek plus an English crib.
+- **Greek tragedy — DONE (2026-09-02).** sophocles/ ships all seven
+  plays, 22 files, 62,774 Greek -> 100,024 English, ratio 1.59, lint
+  clean. The measurement that justified it: Sophocles in Campbell's
+  verse scores arch 39.10, THE HIGHEST EVER RECORDED HERE, above
+  Pusey's Augustine at 35.9. Aeschylus and Euripides remain on Perseus
+  with Greek plus an English crib (26 more plays) and the sophocles/
+  pipeline is reusable for them as it stands. Aristophanes was
+  screened in the same pass and STRUCK (arch 2.11/1.77 — clean,
+  unexpurgated, not a candidate), with one open question: the French
+  slang "mottes" for a Greek obscenity suggests the 1912 Athenian
+  Society text came via Talbot's French, which would make it a
+  retranslation job rather than a modernisation.
 
 ## Founders' Library, Volume II
 - Montesquieu — The Spirit of the Laws (from the French; the most-cited

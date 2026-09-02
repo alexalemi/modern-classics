@@ -3506,3 +3506,49 @@ Cover: the book's own frontispiece portrait (n008l), cropped by hand
 to build/covers/kenzeiki.jpg -- NOT on Commons; ebook_meta.json says
 so and gives the crop, because prepare_cover reads the cache and would
 try to fetch a nonexistent Commons file if it were cleared.
+
+Sophocles' The Seven Tragedies (sophocles/ -- the 70th book; the
+collection's first DRAMA and its second from the Greek at book length).
+All seven surviving plays, 22 files, 62,774 Greek words -> 100,024
+English, ratio 1.59 (check.py band 1.40-1.85; verify --min-ratio 1.35
+--max-ratio 1.80). From Perseus' Greek (Jebb's text) with Jebb's prose
+as a per-file crib under reference/. Justification: every public-domain
+Sophocles is Victorian VERSE and scores arch 39.10, the highest ever
+measured here, and none of it is in the Greek -- the nights/ case pure.
+THE FORM IS DERIVED FROM THE SOURCE, NOT APPLIED BY HAND: Perseus marks
+every division episode/choral/strophe/kommos, so spoken scenes are
+prose and sung odes are tab-indented unrhymed verse, and check.py
+asserts the sung/spoken run sequence against the Greek. FOLLOW
+chapters/, NEVER THE CRIB: prep marks some iambic stretches sung
+(Antigone 526-581, Trachis 225-496) and some anapaestic closes spoken
+(OT 1524-30, Trachis 1259-78), and the translation follows prep so the
+check can be exact. The closing tags are therefore verse in five plays
+and prose in two.
+THE DECISIVE CHECK IS SPEAKER PARITY against the Greek, per file, and
+it found a SOURCE ERROR: Perseus tags Oedipus at Colonus 1252a as
+Oedipus, who has just asked "Who is it?"; it is Antigone's line. The
+agent wrote Antigone, the check fired, and the fix went into
+prep.SPEAKER_FIXES with an assertion that it applies exactly once. When
+a check fires on correct prose, decide which witness is wrong and write
+the reason down. Also: the Greek has EMPTY speeches (OT 625, OC 305-7,
+312) that the check drops -- two consecutive tags for the other speaker
+are correct there. A WRAPPED PROSE LINE ENDING ON "Name." IS A PHANTOM
+SPEAKER TAG (Electra); sweep with the grep in agent_instructions.txt.
+A SHORT STAGE DIRECTION IS A SUBHEADING TO THE RENDERER: "(The Guard
+goes.)" shipped as <h4> until check.py asked assemble.is_subheading
+itself; reword the direction ("The guard goes out."), never the rule.
+SHARED-LEDGER PATTERN AT FULL SPEED: agent_instructions.txt written
+once, then three batches of six, six and seven agents; every one of
+the 19 files came back clean on its first check.py run. Two
+consecutive same-speaker tags are KEPT where the Greek has them (the
+crib prints a bare "."); cries are cries ("Aiai", "Papai.", "Oh.",
+never "Alas"); hubris is OUTRAGE, ate is RUIN, nomos stays "laws" on
+both sides of Antigone, the household slaves are slaves.
+`se lint` m-052 wants dcterms:alternative because "Seven" is a number
+word: alt_title "The 7 Tragedies" in ebook_meta. m-056 wants the
+author linked in the long description; Sophocles is not named there.
+Cover: Moreau's "Oedipus and the Sphinx" (1864, the Met, CC0),
+Commons "File:Oedipus and the Sphinx MET DP-14201-023.jpg", crop
+"2020x3030+26+250" -- the original is 2072x4000, under the 4200 gate,
+so the crop is in its own coordinates; it takes the faces and the
+wings and drops the dead men's feet at the bottom.

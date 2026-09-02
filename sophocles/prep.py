@@ -136,6 +136,18 @@ def norm(s):
     return re.sub(r"\s+", " ", s).strip()
 
 
+# A SPEAKER TAG PERSEUS GETS WRONG. At Oedipus at Colonus 1252 Oedipus asks
+# "Who is it?" and the answer -- "The one we have been expecting all along:
+# Polyneices is here" -- is Antigone's, who announced the arrival at 1249-51.
+# Perseus' Greek XML tags both <sp>s as Oedipus; the English XML gives the
+# second to Antigone, and so does every edition. Keyed on the speech's first
+# line number and the wrong name, so it can only ever fire on that speech;
+# main() asserts it fired exactly once, so a re-fetched source cannot
+# silently lose the correction (the candle/ SOURCE_FIXES rule).
+SPEAKER_FIXES = {("1252a", "Οἰδίπους"): "Ἀντιγόνη"}
+FIXES_APPLIED = []
+
+
 def stream(root):
     """Every <sp>, in document order, as (kind, speaker, [(line, text)]).
 
@@ -161,6 +173,10 @@ def stream(root):
                     lines = [(None, norm(text_of(p)))
                              for p in c.findall(f"{TEI}p")]
                 lines = [(n, t) for n, t in lines if t]
+                key = (lines[0][0], name) if lines else None
+                if key in SPEAKER_FIXES:
+                    name = SPEAKER_FIXES[key]
+                    FIXES_APPLIED.append(key)
                 out.append((kind, name, lines, list(pending)))
                 pending.clear()
 
@@ -286,6 +302,9 @@ def main():
 
     if total != TOTAL_GREEK:
         raise SystemExit(f"total {total} Greek words, pinned {TOTAL_GREEK}")
+    if sorted(FIXES_APPLIED) != sorted(SPEAKER_FIXES):
+        raise SystemExit(f"SPEAKER_FIXES applied {FIXES_APPLIED}, expected "
+                         f"{list(SPEAKER_FIXES)} -- the source changed")
     json.dump(manifest, open(os.path.join(HERE, "manifest.json"), "w"),
               indent=1)
     print(f"{idx} files, {total:,} Greek words, {len(PLAYS)} plays")

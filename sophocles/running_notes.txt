@@ -199,3 +199,33 @@ Ratios 1.54-1.70. Merged:
     strength"; "a little heap in a little jar".
   TRAP added to agent_instructions.txt: a wrapped line ending on a
     bare "Name." is a phantom speaker tag.
+
+--------------------------------------------------------------------
+BATCH 3 (Philoctetes 015-017, Oedipus at Colonus 018-021) -- COMPLETE
+--------------------------------------------------------------------
+All seven clean; ratios 1.52-1.61. Book: 62,774 Greek -> 100,024
+English, 1.59. Merged:
+  Philoctetes: "the sons of Atreus" (never Atreids); "the brute
+    strength of Odysseus"; the bow is "the bow of Heracles"; the wound
+    is "the sickness", never plague. Cries transliterated as cries:
+    "Papai." / "Apappapai." / "Attatai."; Neoptolemus's own "Papai."
+    at 895 is deliberate. The trochaic Odysseus-Neoptolemus exchange
+    is prose; Heracles' whole speech is verse (prep marks it sung).
+    Neoptolemus 974 opens 017 (it is in the Greek 017, not 016).
+  Colonus: the Eumenides introduced once as "the Kindly Ones", then
+    "the Revered Goddesses" / "the goddesses of this place"; Theseus
+    "son of Aegeus"; Cadmeans -> Thebans; "the Revered Goddesses" for
+    semnai. Eteocles never named (Sophocles does not). The "not to be
+    born" ode is in 020. 1224-38 pinned.
+  Three EMPTY Greek speeches in the OC kommos (305-307, 312) and one
+    at OT 625 get no tag; check.py drops them.
+  ONE SOURCE CORRECTION, prep.SPEAKER_FIXES: Perseus tags OC 1252a
+    ("The one we have been expecting all along: Polyneices is here")
+    as Oedipus, who has just asked "Who is it?". It is Antigone's, as
+    the English XML and every edition have it. The 020 agent wrote
+    Antigone and the check fired -- correctly, against a wrong source.
+    The fix lives in prep with an assertion that it applied exactly
+    once; chapters/020.txt changed by that one speaker line and
+    nothing else, and prep is otherwise byte-for-byte idempotent.
+  must_contain.txt WRITTEN NOW, from the finished text (25 pins), each
+    grepped before being pinned.
