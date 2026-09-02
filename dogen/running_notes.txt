@@ -1,0 +1,64 @@
+DŌGEN -- RUNNING NOTES (the shared consistency ledger)
+
+--------------------------------------------------------------------
+WHAT IS SETTLED
+--------------------------------------------------------------------
+- Two works, both complete: Fukanzazengi (000) and Gakudō Yōjinshū
+  (001, ten sections). From the kanbun. NO English crib exists, so
+  reference/ is empty and the front matter says so.
+- Section headings render "One: You Must Raise the Thought of
+  Awakening" -- title case, NO terminal period (the ball trap: the
+  period alone is the difference between an <h4> and a paragraph
+  shouted in capitals). check.py asks assemble.is_subheading itself.
+- Dōgen's two colophons are KEPT and dated as he dates them
+  ("the ninth day of the third month, the second year of Tenpuku";
+  "the Qingming day of the year of the horse, Tenpuku"). They are
+  evidence about when the sections were written and they are his.
+
+--------------------------------------------------------------------
+LOCKED RENDERINGS (caps spent, no re-gloss)
+--------------------------------------------------------------------
+Counted exactly by check.py, verified one-to-one against the source:
+  非思量        beyond thinking          (NOT "not thinking")
+  本來面目      original face
+  公案現成      the koan is realised in the present
+  身心自然脱落  body and mind drop away of themselves
+  名利     x7   name and gain
+  名聞利養 x2   reputation and profit    (a DIFFERENT compound; do not
+                collapse the two, which is why both are counted)
+  正師     x7   true teacher
+Presence only, because the English legitimately varies:
+  菩提心        the thought of awakening
+  坐禪 / 參禪   sit / sitting / take up Zen / practise, as the sentence
+                needs -- an exact count here would fire on correct prose
+
+REGISTERED WRONG ANSWERS (the nights rule -- lock the formula AND
+encode the near-misses, so drift is caught rather than hoped against):
+"fame and fortune", "fame and gain", "name and profit", "not thinking",
+"dropping off body and mind", "genuine teacher". Each was checked to be
+absent from the finished text before being listed, so none of them can
+fire on correct prose.
+
+--------------------------------------------------------------------
+DECISIONS LOG
+--------------------------------------------------------------------
+- 2026-09-01 THE SOURCE WAS VERIFIED, NOT ASSUMED. The Wikisource
+  transcription was read against the NDL page images of the 1909
+  Eiheiji edition for the Gakudō Yōjinshū's first four sections; they
+  agree character for character, colophon included. Two witnesses that
+  share no code -- which is the only substitute available for the
+  missing crib.
+- 2026-09-01 A WORD RATIO CANNOT FIRE ON THIS BOOK and is not shipped
+  as if it could. Characters-to-words instead, band 1.20-1.65 DERIVED
+  from the finished files (measured 1.48 and 1.39). I predicted 2.0-3.0
+  before measuring; that band would have failed every correct file.
+- 2026-09-01 A PRESENCE TEST CANNOT SEE A DROPPED DUPLICATE. The
+  locked-vocabulary check was written as presence and passed when one
+  of seven occurrences of 名利 was reworded. Rebuilt as an exact count
+  for the fixed compounds (the hume rule), and proved by reintroducing
+  the defect.
+- 2026-09-01 A PHRASE TEST MUST SEE WHAT THE RENDERER SEES. The number
+  check fired on "nine years" because my hard-wrapping had split it
+  across a line break -- correct prose, wrong check. All phrase tests
+  now run on whitespace-normalised text, as assemble.py joins a
+  paragraph's lines before rendering (the epictetus rule).
