@@ -1,0 +1,116 @@
+DŌGEN: THE PRACTICE INSTRUCTIONS
+Translation strategy. From the KANBUN, with NO English crib.
+
+--------------------------------------------------------------------
+1. WHAT THIS EDITION IS, AND WHAT IT IS NOT
+--------------------------------------------------------------------
+Two complete works by Dōgen Kigen (1200-1253), founder of the Sōtō
+school:
+
+  普勸坐禪儀  Fukanzazengi, 1227      894 characters
+    Written the year he came back from China. The instruction for
+    zazen: what to do with the legs, the hands, the eyes, the breath,
+    and the mind. It is the shortest important text in Zen.
+  學道用心集  Gakudō Yōjinshū, 1234   4,342 characters, ten sections
+    Ten pieces of advice to people taking up the practice, from
+    "you must raise the thought of awakening" to "you must take hold
+    of it directly."
+
+SOURCE: Japanese Wikisource, transcribed and proofread to 100% from
+承陽大師聖教全集 (Jōyō Daishi Shōgyō Zenshū), EIHEIJI'S OWN COLLECTED
+EDITION OF 1909, NDL Digital Collections pid 823139 and 823141, marked
+PDM. VERIFIED, not assumed: the NDL page images were read directly
+against the transcription for the Gakudō Yōjinshū's first four
+sections, and they agree character for character -- 「第二　見聞正法必可
+修習事／右忠臣獻一言、數有囘天之力」 and the colophon 「天福二甲午三月
+九日書」. Two witnesses.
+
+THERE IS NO PUBLIC-DOMAIN ENGLISH DŌGEN. This is the central fact about
+the edition and it is stated in the front matter rather than implied.
+Every English Dōgen -- Nishijima & Cross, Tanahashi, Waddell & Abe,
+Cleary, Kim -- is in copyright, and Gutenberg, Archive.org and
+Wikisource return nothing. So unlike every other from-the-original
+volume in this collection (Murray for Homer, Riley for Ovid, Longfellow
+for Dante, Jebb for Sophocles, Symonds for Cellini), reference/ is
+EMPTY, and the second witness the method depends on is absent.
+What partly stands in for it: the text is short enough to work phrase
+by phrase, and its cruxes are famous enough to have settled English
+renderings to check against.
+
+IT IS KANBUN -- classical Chinese written by a Japanese author. Not
+Japanese. 「原夫。道本圓通、爭假修證。」 is Chinese syntax throughout.
+This is the collection's first from-the-Chinese volume; sun-tzu/
+modernises Giles's English precisely because it is not one.
+
+--------------------------------------------------------------------
+2. THE CHECK THAT CANNOT FIRE
+--------------------------------------------------------------------
+A WORD RATIO IS MEANINGLESS ON THIS BOOK. CJK text has no spaces, so
+len(text.split()) is about 1 for a whole chapter, and verify.py's ratio
+-- the collection's one mechanical guard against silent summarising --
+would be inert while looking like coverage. That is worse than no check
+(the nights lesson, learned there only after shipping it).
+check.py therefore measures CHARACTERS of source against WORDS of
+translation. Kanbun is extremely compressed: expect roughly 2.0-3.0
+English words per character, far above the Latin-verse books. Derive
+the band from the first file and pin it; a file below the band has been
+summarised, which in a text this dense is very easy to do by accident.
+
+--------------------------------------------------------------------
+3. VOICE
+--------------------------------------------------------------------
+Dōgen is not vague and not soothing, and the English tradition has made
+him both. The Fukanzazengi is a MANUAL: it tells you which foot goes on
+which thigh, that the ears line up with the shoulders and the nose with
+the navel, that the tongue rests on the palate and the eyes stay open.
+Render the physical instructions as physical instructions -- plainly,
+in the imperative, the way soap-bubbles/ renders Boys at the bench.
+The philosophy is welded to the manual and must not be lifted out of
+it. The most famous sentence in the book sits in the middle of a
+posture instruction: 思量箇不思量底。不思量底如何思量。非思量。
+"Think of not-thinking. How do you think of not-thinking? Beyond
+thinking." Keep it as terse in English as it is in Chinese; every added
+word is a loss.
+The Gakudō Yōjinshū is warmer and more argumentative -- Dōgen telling
+students what to watch out for, often sharply, sometimes with contempt
+for teachers he thinks are frauds. He quotes Nāgārjuna, he says 可哀可
+惜 ("it is pitiable, it is a shame"), and he is completely certain.
+
+--------------------------------------------------------------------
+4. LOCKED VOCABULARY
+--------------------------------------------------------------------
+These are the terms the book turns on. The ledger is running_notes.txt.
+
+  坐禪 zazen        SITTING. Keep "zazen" -- it is in English
+                    dictionaries and Dōgen means one specific practice.
+  辨道 bendō        "wholehearted practice of the way"; not "study".
+  只管打坐          "just sitting" -- appears here as 唯務打坐.
+  身心脱落          "body and mind drop away" -- the phrase Dōgen said
+                    he received from Rujing. LOCKED in exactly that
+                    form; not "dropping off body and mind".
+  本來面目          "the original face". Kept; it is a koan phrase.
+  非思量            "beyond thinking" -- NOT "not thinking", which is
+                    the opposite of what the passage argues.
+  公案現成          "the koan realised in the present"; do not render
+                    公案 as "riddle".
+  菩提心 bodaishin  "the thought of awakening" -- Gakudō Yōjinshū I
+                    is entirely about what this does and does not mean.
+  無常 mujō         "impermanence"; 觀無常 "to observe impermanence".
+  正師              "a true teacher" -- section 5 is about how to tell.
+  名利              "name and gain" -- fame and profit, Dōgen's
+                    standing target. Never soften it.
+  法執 / 世執       "clinging to the dharma" / "clinging to the world".
+  參禪              "to take up Zen practice" -- not "meditate on".
+
+--------------------------------------------------------------------
+5. THE VERNE RULE
+--------------------------------------------------------------------
+No editorial note anywhere in the volume. Dōgen's claims stand as his:
+that this practice is the only correct one and the others are mistaken;
+that people who talk about the thought of awakening without having
+raised it are "far, far from the buddha way"; his contempt for those
+who study for reputation; the miraculous framing of the buddhas and
+patriarchs; and the flat assertion that sitting IS awakening rather
+than a means to it. He is a thirteenth-century Buddhist monk making
+religious claims, and the edition renders them, not a modern
+accommodation of them.
