@@ -116,7 +116,7 @@ BANNED = {
 # no digits. COUNTED, not set-differenced: a set cannot see a dropped
 # duplicate (the hume rule).
 NUMBERS = {
-    "六十二見": "sixty-two views",
+    "六十二見": "sixty-two",
     "三千": "three thousand",
     "二十八代": "twenty-eight",
     "六年": "six years",
