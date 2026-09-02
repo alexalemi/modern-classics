@@ -110,3 +110,61 @@ has to admit a space (for "First Half-Chorus"), which made
 Ajax alone, each shifting every index after it, so the check reported a
 divergence in a file that was correct. Fixed by requiring membership in
 the closed NAMES set taken from the Greek, not by loosening the regex.
+
+--------------------------------------------------------------------
+RESUMED 2026-09-02 -- BATCH 1 (Antigone 003-005, Oedipus the King 006-008)
+--------------------------------------------------------------------
+All six clean on first run. Ratios 1.52-1.70. Merged from the agents:
+
+READABILITY RULE NOW IN agent_instructions.txt (Alex, 2026-09-02):
+every sentence readable aloud by a bright fourteen-year-old; allusions
+folded into the sentence, never a note.
+
+LOCKED (new):
+  Ode to Man opens "There are many wonders, and none more wonderful
+    than man." (deinos plain, not "terrible"). Also "He has a way
+    through everything"; "From Hades alone he will get no escape".
+  nomos = "laws" on BOTH sides in Antigone (Creon's decree, the gods'
+    "unwritten and unshakable laws", "by what laws I go").
+  philos = "one of your own" / "the people you love", never "friend"
+    where obligation is the point. dmoes = "slaves" (Creon 578).
+  Antigone 904-920 (husband/child/brother) stands, unhedged. Done.
+  to phronein = "good sense" (Haemon scene and the closing tag).
+  miasma = "pollution", everywhere in Oedipus the King.
+  Teiresias 362: "I say you are the murderer of the man whose
+    murderer you are looking for."
+  OT 873: "Outrage breeds the tyrant." tyrannis = "throne" in
+    Oedipus's mouth, "tyrant" only in the ode.
+  OT closing: "count no one happy until he has crossed the boundary
+    of his life without suffering pain" -- Herodotus echo, no
+    fortunate/happy contrast imported.
+  Name-gloss "Oedipus, the swollen foot" is in 008 (the Messenger's
+    line), nowhere else.
+  Cries: aiai kept as "aiai" (the Ajax convention); io/oimoi as
+    "Oh." -- never "Alas". Curses: "Damn you", never "go to hell";
+    Hades is a name.
+  Cult titles resolved: Phoebus/Loxias -> Apollo; Pytho -> Delphi or
+    "Apollo's house at Pytho"; the Sphinx named once, then "the
+    singing bitch" (Oedipus 391, kept), "the winged girl".
+  Persephone (not Phersephassa), Pluto where the Greek says Pluto,
+    Bacchus/Bacchants/Maenads, Boreas glossed "the North Wind",
+    Erechtheids glossed "the kings of Athens".
+  Address: "my lord" from subordinates (never Sire/King); Chorus to
+    Creon "son of Menoeceus"; Oedipus to Jocasta "Wife", she to him
+    "my lord"; the Corinthian calls Oedipus "my boy".
+  Both Angelos and Exangelos tag as "Messenger."; the second is told
+    apart by a stage direction. The Theban herdsman is "Servant."
+
+STRUCTURAL FACTS THE CHECK ENCODES (do not "fix" them):
+  - OT 625 is an EMPTY Oedipus speech in the Greek (a lacuna). The
+    check drops it, so the expected sequence is Creon, Creon. Two
+    consecutive Creon tags are correct; do not supply Oedipus a line.
+  - OT's closing lines 1524-1530 are trochaic tetrameters = SPOKEN
+    under prep's "close" ruling, so this play's closing tag is a
+    short prose paragraph, not verse. EXCEPTION to the closing-tag
+    form; the others stay verse.
+  - Antigone 526-581 (the Ismene scene) is marked [Sung] in prep
+    though it is stichomythia after anapaests; rendered as short tab
+    lines. Kommoi are tabbed for EVERY speaker in them.
+  - The Greek splits sometimes disagree with the crib by a speech at
+    a file boundary (006/007, 007/008): follow the Greek file.
