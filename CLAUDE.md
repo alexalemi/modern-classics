@@ -3552,3 +3552,78 @@ Commons "File:Oedipus and the Sphinx MET DP-14201-023.jpg", crop
 "2020x3030+26+250" -- the original is 2072x4000, under the 4200 gate,
 so the crop is in its own coordinates; it takes the faces and the
 wings and drops the dead men's feet at the bottom.
+
+Aeschylus' The Seven Tragedies (aeschylus/ -- the 71st book; the second
+volume of the drama shelf after sophocles/). All seven plays, the
+Oresteia nested under one divider; 15 files, 40,335 Greek words ->
+73,192 English, ratio 1.74 (check.py band 1.45-1.95; verify --min-ratio
+1.40 --max-ratio 1.95). From Perseus' Greek (Smyth's 1926 Loeb) with
+Smyth's prose as a per-file crib. Read sophocles/ first: prep, check,
+agent_instructions and the form ruling carry over; this entry records
+only what Aeschylus added.
+THE JUSTIFICATION IS NOT THE SOPHOCLES ONE AND HAD TO BE MADE AGAINST THE
+CRIB. Morshead's verse scores arch 32.5, Buckley's PROSE 22.9, Murray
+22.8 -- the Victorian costume again -- but Smyth measures 0.1, clean.
+He is clean because he is a LOEB, written to sit opposite the Greek and
+be checked word by word ("warders of the royal abode"), and he sets the
+odes as paragraphs, so the one formal fact about these plays is
+invisible in him. A crib's clean score is why it is a good crib and no
+reason to leave the work where it is (the odyssey/Butler lesson from
+the other side).
+PERSEUS' GREEK MARKUP FOR AESCHYLUS IS WRONG IN ABOUT THIRTY PLACES, all
+one way: a <div> opened for a choral stanza runs on over the spoken
+scene after it (Agamemnon's whole arrival scene under "anapests", the
+whole Io scene under "lyric", the Nurse, the shield scene) and an
+actor's iambic replies inside an epirrhematic exchange inherit the
+stanza's label. Sophocles' files were clean and prep had no way to say
+otherwise. NEW: prep.KIND_FIXES, per SPEECH (play, line range, optional
+speaker, sung?), each with its reason, each asserted to fire. RULED:
+iambic trimeter is spoken wherever it occurs, so an actor's trimeter
+replies between sung stanzas are prose and the stanzas stay verse -- a
+deliberate departure from sophocles/, which left Antigone 526-581 as
+prep marked it.
+A SECOND WITNESS, aeschylus/metre.py, counts syllables per Greek line:
+spoken runs 12-13 (90%), trochaic tetrameter 15-16, lyric mostly 6-11.
+A speech whose lines are all 12-15 inside a lyric division is trimeter.
+IT FOUND WHAT THE FIRST WITNESS STRUCTURALLY COULD NOT: (1) a BUG --
+the override assigned to walk()'s variable for the ENCLOSING DIV, so
+every speech after a fixed one inherited the fix and the Libation
+Bearers' recognition scene (164-305) had become verse, with check.py
+asserting the translation against prep and therefore insisting on the
+error; (2) six more mislabellings, each then read (Supp 739-756 and the
+Herald's threats; PB 101-113 and Io's inset trimeters; Eum 254-275 lyric
+marked episode; the LB finale's Chorus trimeters). It is a witness, not
+a rule: Cassandra's stanzas mix trimeter and lyric inside one speech
+and stay sung. RUN IT AFTER ANY CHANGE TO KIND_FIXES AND READ THE LIST.
+Reuse it on Euripides, whose markup is worse (long "lyric" divisions of
+200-400 lines in Heracles, Hecuba, Ion, the Phoenician Women).
+FILE BOUNDARIES ARE PINNED (prep.CUTS). split_points prefers a cut where
+the mode changes, so a KIND_FIX near a boundary MOVED it and two
+finished files each gained or lost two speeches. Derive once, pin, and
+note that the index counts EVERY <sp> including empties (the Suppliants
+has four; 139 in prep is 135 in check.py, and getting that wrong
+re-cut the two Suppliants files in the other direction).
+THREE AGENTS FLAGGED THE SAME MISLABELLING INDEPENDENTLY, which is what
+turned a "follow chapters/" compromise into a fix. Tell agents to REPORT
+a marker that looks wrong rather than override it, then fix prep, not
+the translations; an orchestrator script re-set the affected speeches
+and the agents re-lined the ones it hit by mistake.
+ONE SPEAKER_FIX: Seven 812-821 is the Scout's, not the Chorus'.
+SPEAKERS_BY_PLAY: the Angelos of the Seven is "Scout". The Queen of the
+Persians is "Queen" (Aeschylus never names her; Atossa is the editors'),
+the ghost is "Darius" like the man, the Suppliants' divided exodos keeps
+the Greek's four tags.
+VOICE: big, physical, concrete, never solemn -- THE IMAGES ARE THE
+ARGUMENT and the trilogy is held together by keeping one English word
+per image every time (net, robe, yoke, lion cub, snake, blood soaking
+into the ground, beacon, scales), all logged with their exact English in
+running_notes.txt. Refrains (ephymnia) repeat verbatim. Clytemnestra's
+irony is rendered and never explained. The Verne rule throughout, no
+note: Iphigenia's gag, "like rain from heaven on the sprouting corn",
+the Nurse's nappies, Apollo's "only the nurse of the seed" winning the
+case, the Furies right and bought off.
+Cover: John Collier's "Clytemnestra" (1882), Commons "File:Clytemnestra
+by John Collier, 1882.jpg", crop "2056x3084+0+0" -- the canvas is
+2056x3088, almost exactly 2:3 and under the 4200 gate, so the crop is
+in its own coordinates and trims four rows. She stands in the doorway
+with the axe and the blood, which is Agamemnon 1372.

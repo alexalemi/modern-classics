@@ -1,0 +1,271 @@
+AESCHYLUS -- RUNNING NOTES (the shared consistency ledger)
+Updated as files are finished. Everything here is LOCKED once written.
+sophocles/running_notes.txt's FORM section and LOCKED RENDERINGS carry
+over in full (ruin, outrage, "the man who keeps himself in hand",
+cries as cries, "my lord" from subordinates, Hades a name).
+
+--------------------------------------------------------------------
+FORM (settled before file 000; see text_analysis.txt section 2)
+--------------------------------------------------------------------
+- Spoken: modern prose under a "Name." tag. Sung and chanted:
+  TAB-INDENTED unrhymed verse. Follow chapters/'s [Sung]/[Spoken]
+  markers exactly -- prep.KIND_FIXES has already corrected the twelve
+  places Perseus mislabels a scene, and check.py asserts the file
+  against prep. If a marker still looks wrong, report it; never
+  silently override it.
+- Trochaic dialogue (Persians 155-175, 215-248, 703-758; Agamemnon
+  1649-1673; Suppliants 980-1017) is SPOKEN: prose. Anapaests are
+  VERSE even when a single actor chants them.
+- A REFRAIN (ephymnion) recurs word for word. Set it identically each
+  time chapters/ prints it.
+- Speaker tags are the closed set in check.py SPEAKERS: "Queen." for
+  Xerxes' mother (Aeschylus never names her; Atossa is the editors'),
+  "Darius." for the ghost as well as the man, "Scout." in Seven Against
+  Thebes, "Messenger." everywhere else, "King." in The Suppliants,
+  "Priestess.", "Ghost of Clytemnestra.", "Escort.", and in the
+  Suppliants' exodos "Danaids." / "Serving Women." / "A Danaid." /
+  "A Serving Woman.". Two consecutive tags for one speaker are KEPT
+  where the Greek has two speeches.
+- The Oresteia is one divider with three plays nested under it; the
+  other four plays stand alone. Titles as the manifest gives them:
+  "The Persians", "Seven Against Thebes", "The Suppliants",
+  "Agamemnon", "The Libation Bearers", "The Eumenides", "Prometheus
+  Bound".
+
+--------------------------------------------------------------------
+LOCKED RENDERINGS (caps spent, no re-gloss)
+--------------------------------------------------------------------
+Carried from sophocles/: ate = ruin; hubris = outrage; dike = justice
+(and a lawsuit); philos = one of your own; nomos = law/custom kept
+visible; daimon never demon; Hades a name; dmoai = slaves.
+New, from text_analysis.txt section 4:
+  pathei mathos      "learning through suffering"
+  drasanti pathein   "the doer must suffer"
+  Erinyes            "the Furies"; "the Kindly Ones" only in Eum.
+  barbaros           "barbarian", kept in The Persians' own mouths.
+  RECURRING IMAGES across the trilogy, ONE word each: net, robe, yoke,
+  lion cub, snake, the house's blood soaking into the ground, the
+  beacon, the scales of Justice.
+
+--------------------------------------------------------------------
+DECISIONS LOG
+--------------------------------------------------------------------
+- 2026-09-09 SOURCE MARKUP CORRECTED IN PREP, NOT IN THE TRANSLATION.
+  Twelve KIND_FIXES (Agamemnon 810-974 and 1343-1406; Prometheus
+  300-398 and 696-876; Libation Bearers 730-782, 869-934, Orestes in
+  1010-1062, Chorus 152-163; Seven's Scout and Eteocles in 369-652;
+  Athena in Eumenides 778-891; Eumenides 299-306), each found by
+  listing every division's line span and reading the long ones, each
+  confirmed at speech granularity, each asserted to fire. One
+  SPEAKER_FIX: Seven 812-821 is the Scout's, not the Chorus'.
+- 2026-09-09 The Greek/English speech counts differ on five plays;
+  each difference was read and pinned in prep.EXPECT with its reason.
+  All are markup granularity (a speech split at a metre change or a
+  line anchor), none is a disagreement about who speaks.
+- 2026-09-09 The Suppliants has four EMPTY speeches in the Greek (a
+  lacuna and three lost lines); check.py drops them, so two consecutive
+  tags for the other speaker are correct there. Do not supply lines.
+
+--------------------------------------------------------------------
+FILE 000 (The Persians, part 1) -- the voice sample. Ratio 1.64.
+--------------------------------------------------------------------
+LOCKED from 000:
+  "the Faithful" for pista (1); "heavy with gold" for polychrysos,
+    every time; "the Great King".
+  The yoke image: "a yoke thrown over the neck of the sea" (72), "the
+    yoke of slavery over Greece" (50), the dream's "broke the yoke in
+    the middle", "in a yoke made for two, alone" (139). ONE word, yoke.
+  Ate: "Ruin is friendly at first. She fawns and coaxes a man into her
+    nets" (93-100). Ruin, capitalised as a person, nets.
+  barbaros: "the barbarians" / "the whole barbarian army", in Persian
+    mouths, unsoftened.
+  "the eye of a house ... is the presence of its master" (169).
+  Cries: "Aiai" / "Otototoi" / "Oh." -- never "Alas".
+  Address: Chorus to the Queen "Queen" (not Atossa, never "Madam");
+    Messenger calls her "my lady" (despoina). The Chorus call her
+    "Mother" at 215 and it is kept.
+  Salamis narrative: past tense, short clauses, the Greek battle-cry
+    in double quotes as reported speech; "bronze beak on bronze";
+    "as if they were tuna or some other haul of fish".
+  The Messenger's speech is split at 519/520 in the Greek (two
+    Messenger tags in a row); 000 keeps both tags.
+  Stage directions as full sentences: "(The Messenger goes out.)"
+    passes is_subheading; a bare "(Exit.)" would not.
+FORWARD REFERENCES for 001: Darius rises from the tomb -- tag
+  "Darius." for the ghost; the Queen returns with the offerings;
+  Xerxes enters in rags for the closing kommos, which is sung
+  antiphonally (every speaker tabbed). The Elders' litany of the dead
+  by name (955-1001) keeps every name. The dream's two women / broken
+  yoke and "the eye of the house" are 000's images; do not re-gloss.
+
+--------------------------------------------------------------------
+BATCH 1 (001-005, 013-014) -- all clean first run. Ratios 1.65-1.82.
+--------------------------------------------------------------------
+DECISION 2026-09-09, EPIRRHEMATIC SCENES: three agents independently
+flagged an actor's iambic replies sitting inside [Sung] (the King in
+Suppliants 354-417, Eteocles in Seven 208-244 and 689-711, Darius at
+Persians 681-699). Perseus wraps the reply in the stanza's <div>.
+RULED: iambic trimeter is spoken wherever it occurs, so those replies
+are PROSE and the Chorus' stanzas stay verse -- eight more KIND_FIXES
+in prep.py (also the Messenger's couplets in Persians 260-289, the
+elders' trimeter answers to Cassandra at Agamemnon 1074-1113, and
+Clytemnestra's first reply in the kommos, 1412-1425). Files 000-004
+were re-set accordingly and re-checked. This is a DELIBERATE departure
+from sophocles/, which left Antigone 526-581 as prep marked it; here
+the mechanism existed, so the ruling was made right rather than
+consistent with a compromise. Follow chapters/ -- it now encodes this.
+
+LOCKED across batch 1 (see each file's notes in the agents' reports;
+the ones that recur):
+  tyrannos/tyrannis = "tyrant"/"tyranny" (Prometheus, of Zeus).
+  "the Fury"/"the Furies" for Erinys; "Necessity" (Ananke) capitalised;
+    "Fate" capitalised as a power; Themis = "Right".
+  Cult titles resolved: Cypris/Cytherea -> Aphrodite; Loxias -> Apollo;
+    Aidoneus -> Hades. ("Cypris" survived once in 002 and was fixed.)
+  Name-puns folded into the text: "Prometheus, the Forethinker, and the
+    name is a lie"; "Poly-neices, Much-Strife"; "the Bosporus, the
+    Cow's Ford"; "Epaphus, the Touched One".
+  "maiden" is on the ARCHAIC list: parthenos -> "girl"/"virgin"/
+    "unmarried daughter".
+  Cries: io as an exclamation -> "Oh" (Io is a CHARACTER in Prometheus
+    and in the Suppliants' story); aiai, otototoi, papai, popoi, eleleu
+    kept; never "Alas".
+  Persians: "the Faithful", "the Eye, the faithful Eye" (the Persian
+    office), "the strait of Helle", the yoke everywhere.
+  Seven: Phobos = "Terror" (a person); the ship of state kept as one
+    image; "Zeus who brings all things to their end".
+  Suppliants: "the sons of Aegyptus" never "Egyptians"; "Zeus, god of
+    the suppliant"; the King unnamed in tags (Pelasgus twice in text).
+  Prometheus: "creatures of a day"; "of adamant"; "the gadfly"; "the
+    herdsman with ten thousand eyes"; "He has the net on his limbs."
+  The Greek doubles refrains (162a-167a etc.): render each printing.
+FOR THE ORESTEIA (006-012): the image chain is the trilogy's argument.
+  ONE word each, every time: NET (Agamemnon's robe is a net, Orestes
+  holds the net up in LB, the Furies' binding song is a net); ROBE;
+  YOKE; LION CUB (Ag 717-736 and every echo); SNAKE (Clytemnestra's
+  dream, Orestes as the snake); BLOOD SOAKING INTO THE GROUND; the
+  BEACON; the SCALES; "learning through suffering"; "the doer must
+  suffer". Clytemnestra is "Clytemnestra" (never Smyth's Clytaemestra).
+  Her irony is rendered and never explained. Cassandra's scene moves
+  from sung cries to spoken trimeters and back: follow chapters/.
+
+--------------------------------------------------------------------
+PREP CORRECTIONS DURING BATCH 2 (2026-09-09) -- recorded because they
+moved finished files
+--------------------------------------------------------------------
+- A SYLLABLE-COUNT WITNESS was built (check.py metre_report): spoken
+  Aeschylus runs 12-13 syllables a line (90%), trochaic tetrameter
+  15-16, lyric mostly 6-11. Run over every speech it (a) exposed a BUG
+  in prep -- the KIND_FIX override assigned to the enclosing div's
+  variable, so every speech after a fixed one in the same div inherited
+  the fix; LB 164-305 had become verse -- and (b) found five more
+  mislabelled passages (Supp 739-756 and the Herald's 882-894 are
+  trimeters; PB 101-113 and Io's 589-592 are trimeters; Eum 254-275 is
+  lyric marked episode). All in prep.KIND_FIXES with reasons.
+- FILE BOUNDARIES ARE NOW PINNED (prep.CUTS) because a fix near a
+  boundary moved it and two finished Prometheus files each gained or
+  lost two speeches. The index counts EVERY <sp> including the
+  Suppliants' four empties (139 in prep is 135 in check.py).
+- Files re-set after the corrections: 000, 001, 002, 003, 004, 005, 013
+  (actor trimeters to prose; a script flattened the lines, so re-read
+  those speeches for rhythm at the end), 009 and 010 by their agents.
+
+--------------------------------------------------------------------
+BATCH 2 (the Oresteia, 006-012) -- LOCKED, merged from the agents
+--------------------------------------------------------------------
+Agamemnon:
+  Refrain (121/139/159): "Sing sorrow, sing sorrow, but let the good
+    win out." Clytemnestra's echo at 349: "may the good win out".
+  177: "learning through suffering" on its own verse line.
+  250: "Justice tips her scales so that those who suffer learn."
+  160: "Zeus, whoever he is,". Zeus xenios: "Zeus, god of guest and
+    host". Zeus teleios (973): "Zeus, Zeus who brings things to their
+    end, bring my prayers to their end."
+  NET: "a net with no gaps in it" / "the great dragnet of slavery"
+    (357-361); "we threw the net of our anger around the city" (Ag);
+    "more holes in him than a net" (Clyt); "You are caught inside the
+    nets of fate"; Cassandra "Is it some net of Hades? No. The net is
+    the woman who shares his bed"; 1375 "the nets of ruin too high to
+    jump out of"; 1382 "I threw a net around him with no way out, the
+    kind you throw for fish, a robe, a rich and deadly robe"; Aegisthus
+    "in the woven robe the Furies made", "in the net of Justice";
+    kommos refrain "You lie in this spider's web".
+  ROBE: 1126 "She has caught him in the robe, her trick with the black
+    horn". LION CUB: "a man once raised a lion cub in his house" ...
+    "A priest of Ruin, sent by a god, and the house itself had raised
+    it"; "the dewy cubs of savage lions" (141); Aegisthus "a lion with
+    no courage, rolling in the bed"; Clytemnestra "This two-footed
+    lioness, who sleeps with a wolf while the noble lion is away".
+  YOKE: "the yoke-strap of Necessity" (218); "Such a yoke he threw
+    round the neck of Troy" (529); "Nobody puts on the yoke of slavery
+    by choice"; "I will yoke him under a heavy yoke" (1640).
+  BEACON for phryktos everywhere. BLOOD: "streams of a slaughtered
+    girl's blood"; "blood ... fallen to the ground ... who can sing it
+    back" (1019-21). Corn: "It fell on me like rain from heaven on the
+    sprouting corn, and I was as glad as the corn is, when the buds are
+    being born." 1564: "the doer must suffer. That is the law."
+  Puns folded in: Helen "hell to ships, hell to men, hell to the city";
+    Apollo "god of the roads, my destroyer. Your name says it."
+  Personifications capitalised: Wrath, Outrage, Recklessness, Ruin,
+    Justice, Hope, Victory, Rumour, Persuasion, Necessity, Fate, the
+    Fury/Furies. Alexandros -> Paris; Ares stays Ares. Watchman: "A
+    great ox has stepped on my tongue." 475-487 is ONE Chorus tag.
+  Address: Chorus to Clytemnestra "Lady"; Agamemnon to her "Daughter
+    of Leda, guardian of my house"; she to him "my dear one"/"my lord".
+  Cassandra: "his faithful whore who talked oracles"; sung cries then
+    spoken trimeters, per chapters/. Kommos refrain "Oh, oh, my King,
+    my King" identical both times. The close: "you and I will set this
+    house in order."
+Libation Bearers:
+  313: "The doer must suffer." (own sentence). 930: "You killed the man
+    you should not have; now suffer what you should not."
+  61: "the scales of Justice keep watch"; 66/400 "blood drunk down by
+    the earth that nursed us" / "drops of murdered blood spilled on the
+    ground demand more blood"; 148 "Justice who brings victory".
+  SNAKE: "a terrible snake" (249), "she gave birth to a snake" (527),
+    "I am the snake. I turn snake, and I kill her" (549-50), 928 "This
+    is the snake I gave birth to and fed."
+  NET/ROBE: "a new kind of net" (492), "in a robe they had plotted
+    over" (494), "die in the same net" (557); 980-1005 "No. A net. Call
+    it a hunting net, or a robe to tangle a man's feet."; 1010 "This
+    robe is my witness, dyed where Aegisthus's sword went in".
+  "the hounds of a mother's anger" (924/1054) -- Eumenides keeps
+    "hounds" for the Furies as hunters. "Gorgons, dressed in grey".
+  Eye of the house (from Persians): 934 "that the eye of the house
+    should not fall". Cilissa named once; "nappies", "needs to pee".
+  Refrains identical at both printings (942/942a, 961/972).
+  Chorus: "You slave women who keep this house in order" (84).
+Eumenides:
+  "the Kindly Ones" ONCE, at 992: "Be kind to the Kindly Ones,
+    always." Tag stays "Chorus."; "Escort." for the procession.
+  Apollo 658-661: "The mother is not the parent of the thing that is
+    called her child. She is only the nurse of the seed that was newly
+    sown in her. The one who mounts her is the parent." No note.
+  Athena: "No mother gave birth to me. In everything, except for
+    marriage, I am for the male"; "Neither anarchy nor a master";
+    "Foul clear water with mud and you will never find a drink."
+  ROBE (634-5): "she flung a robe over him like a tent, fettered her
+    husband in the endless embroidered folds of that robe".
+  Refrains: first lament opens "Oh, you younger gods, you have ridden
+    down the old laws, / you have snatched them out of my hands." and
+    ends "Oh, great is the grief of the daughters of Night, / the
+    unlucky ones, dishonoured and mourning."; second opens "That I
+    should suffer this, ah," ends "and brought me to nothing."; Escort
+    "Raise the cry now, over our song."
+  "Night, black Mother"; "The Lady Fury" (951); "the Hill of Ares";
+    civic periphrases kept ("the people of Aegeus", "the house of
+    Erechtheus", "children of Cranaus", "the land of Theseus").
+
+--------------------------------------------------------------------
+COMPLETE 2026-09-09. 15 files, 40,335 Greek -> 73,192 English (verify's
+count, 42,147 with prep's scaffolding), ratio 1.74; per file 1.63-1.84.
+check.py band 1.45-1.95 stands; verify --min-ratio 1.40 --max-ratio
+1.95. must_contain.txt: 29 pins, every one grepped in the finished text
+before being written (the epictetus rule).
+--------------------------------------------------------------------
+- 005 note (agent): in the 736-759 exchange the Chorus speaks trimeters
+  (prose) and answers itself in lyric (verse) within one run; Danaus's
+  couplets are prose throughout; the Herald's 882-884/893-894 are prose
+  while his 836-875 threats stay verse. Follows prep exactly.
+- 010: ratio 1.84 is the book's highest -- the folded allusions in the
+  ode of monstrous women and the Nurse's speech, not padding. Read.

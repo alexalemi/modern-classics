@@ -141,6 +141,15 @@ SE-XHTML, Wikisource-API, from-the-Latin, from-the-French.
   Kōroku circulating on terebess.hu is Wisdom Publications' and in
   copyright; it is not a usable source, though its introduction is what
   named Menzan's recension and broke the search open.
+- **Aeschylus — DONE (2026-09-09).** aeschylus/ ships all seven plays,
+  15 files, 40,335 Greek -> 73,192 English, ratio 1.74; the Oresteia
+  nested under one divider. sophocles/prep.py carried over with ONE new
+  mechanism, per-speech KIND_FIXES, because Perseus' Greek markup for
+  Aeschylus labels ~30 spoken passages with the kind of the lyric
+  stanza before them; and a SECOND WITNESS, aeschylus/metre.py, which
+  counts syllables a line (trimeter 12-13, tetrameter 15-16, lyric
+  6-11) and found a prep bug plus six mislabellings the first witness
+  could not see. Reuse both on Euripides, whose markup is worse.
 - **Greek tragedy — DONE (2026-09-02).** sophocles/ ships all seven
   plays, 22 files, 62,774 Greek -> 100,024 English, ratio 1.59, lint
   clean. The measurement that justified it: Sophocles in Campbell's

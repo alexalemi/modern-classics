@@ -1,0 +1,211 @@
+AESCHYLUS: THE SEVEN TRAGEDIES
+Translation strategy. From the GREEK (Perseus' text of Smyth's 1926
+Loeb), with Smyth's facing English prose under reference/ as a per-file
+crib ONLY.
+
+READ FIRST: sophocles/text_analysis.txt -- this is the second volume of
+the same shelf, the form ruling and the whole method carry over, and
+this file records only what is DIFFERENT about Aeschylus. Then
+odyssey/text_analysis.txt (from-the-Greek pipeline, the crib-is-a-Loeb
+warning) and euclid-rivals/ (what a lost speaker tag does to a play).
+
+--------------------------------------------------------------------
+1. WHY THIS BOOK, and the measurement is NOT the Sophocles one
+--------------------------------------------------------------------
+Screened 2026-09-09 with screen.py:
+
+    Morshead, House of Atreus (verse, 1881)   arch 32.46   verse 82%
+    Buckley, PB + Seven (PROSE, 1849)         arch 22.92
+    Murray, Agamemnon (rhymed verse, 1920)    arch 22.81
+    Plumptre, Tragedies (verse, 1868)         arch 19.81
+    Browning, Agamemnon (verse, 1877)         arch 17.17
+    Smyth, Loeb (prose, 1926)                 arch  0.1    calq 9-11
+
+    Sophocles (Campbell, verse)               arch 39.10   <- the record
+
+So the Sophocles case holds for six of the seven public-domain
+Aeschyluses: what a reader downloads is Victorian or Edwardian verse
+whose archaism is the TRANSLATOR'S costume and not in the Greek. Even
+Buckley's Bohn PROSE runs at 23 -- "thou" throughout -- and Browning's
+famous version is not only archaic but word-for-word Greek syntax in
+English, which is why it is unreadable by common consent.
+
+BUT SMYTH MEASURES CLEAN, and the case has to be made honestly against
+him, because he is the text this edition works from. It is the odyssey/
+lesson again from the other side: Butler scored clean because he threw
+the poem away; Smyth scores clean because he is a LOEB CRIB, written to
+sit opposite the Greek and be checked against it word by word. "Here we
+are, the faithful Council of the Persians, who have gone to the land of
+Hellas, we who serve as warders of the royal abode" is not archaic. It
+is also not English anyone would read for pleasure, and it is PROSE
+THROUGHOUT -- the odes are paragraphs -- so the one formal fact about
+these plays, that the chorus is singing, is invisible in him. His
+clean score is the reason he is a good crib and no reason at all to
+leave the plays where they are.
+
+THE THIRD REASON is the one the Sophocles volume did not have to make:
+Aeschylus is the HARDEST Greek of the three tragedians. Compound
+epithets ("the many-golden seats", "the bronze-bitted horse"), sentences
+that stack images three deep, and choral odes whose grammar scholars
+still argue about. Every translator either flattens the images or keeps
+them and loses the sentence. Smyth keeps them and loses the sentence.
+The retelling's job is to keep the image AND make the sentence go.
+
+--------------------------------------------------------------------
+2. THE FORM -- as sophocles/, derived from the source, with a caveat
+--------------------------------------------------------------------
+  SPOKEN scenes, iambic trimeter       -> MODERN PROSE
+  SUNG odes, lyric metres, refrains    -> VERSE, tab-indented, unrhymed
+  CHANTED anapaests, trochaic dialogue -> anapaests VERSE, trochees prose
+
+THE CAVEAT: Perseus' Greek markup for Aeschylus is WORSE than for
+Sophocles. Twelve times a <div> labelled for a choral stanza runs on
+over the spoken scene after it (the whole Agamemnon-Clytemnestra scene,
+the whole Io scene, the Nurse). prep.py's KIND_FIXES corrects them per
+speech with a reason each, and asserts that every fix fires. What is
+left in chapters/ is therefore the edition's ruling, and AGENTS FOLLOW
+chapters/, NEVER THE CRIB and never their own sense of the metre. If a
+[Sung] marker looks wrong, say so in the notes; do not silently set it
+as prose. check.py asserts the modern file against prep.
+
+AESCHYLUS IS MORE THAN HALF CHORUS. The Suppliants and The Persians are
+essentially oratorios; the Agamemnon's parodos is 200 lines before
+anyone speaks. This is the opposite balance from Sophocles and it makes
+the verse setting the larger half of the work, not the smaller. The
+odes must be READABLE VERSE, not a crib set in short lines: an image a
+line, syntax a fourteen-year-old can follow aloud, and the strophe and
+antistrophe matched in shape. A song heard once.
+
+THE REFRAINS (ephymnia) are Aeschylus' own device and nobody else's:
+the Suppliants' hymn, the Furies' binding song ("over our victim we
+sing this song"), the Agamemnon kommos. A refrain is REPEATED VERBATIM
+every time it recurs -- the nights/ rule for frame formulas. Perseus
+prints some refrains twice (162a-167a) where editors restore them;
+render each occurrence chapters/ prints.
+
+--------------------------------------------------------------------
+3. VOICE
+--------------------------------------------------------------------
+Aeschylus is the grandest of the three and the least interested in
+people as individuals; his characters are forces and his plots are
+about whole houses over three generations. Do NOT make him small and
+do NOT make him solemn. The register is BIG, PHYSICAL and CONCRETE:
+the sea, fire on hilltops, a net, a robe, a lion cub in the house, a
+snake at the breast. Every abstraction he uses (Justice, Ruin, Fear)
+he immediately gives a body -- Justice "tips her scales", Ruin "is
+born a child of Outrage". Keep those bodies.
+
+  - THE IMAGES ARE THE ARGUMENT. Where Sophocles reasons, Aeschylus
+    piles images until the pattern becomes visible: the net thrown over
+    Troy becomes the robe thrown over Agamemnon becomes the net Orestes
+    holds up in the Libation Bearers. Keep the same English word for
+    the same image every time it recurs across the trilogy (see the
+    ledger). A reader must be able to SEE the chain.
+  - LONG SPEECHES, NOT STICHOMYTHIA. Aeschylus has far less one-line
+    exchange than Sophocles and far more sixty-line set piece: the
+    Messenger's Salamis, the Herald, Clytemnestra's beacons,
+    Cassandra, Prometheus' catalogue of what he gave men. Paragraph
+    them; keep them moving; never trim.
+  - CLYTEMNESTRA is the greatest part in Greek tragedy and she is
+    IRONIC from her first line to her last: everything she says to
+    the Herald and to Agamemnon is true in a sense he cannot hear.
+    Render the double meaning exactly, never wink at it, never
+    flatten it into either the innocent or the guilty sense.
+  - CASSANDRA sees three tenses at once. Her scene moves from lyric
+    cries (sung) to lucid iambics (spoken); the shift IS the scene.
+  - THE PERSIANS is the only surviving tragedy about a historical
+    event eight years old, told from the ENEMY'S side with sympathy.
+    Xerxes is not a villain; the play is a lament. The Messenger's
+    account of Salamis is the earliest eyewitness-style battle
+    narrative in literature and must be exact and fast.
+  - THE FURIES are hideous and they are RIGHT: they have an argument
+    about blood and the old laws, and Athena does not refute it, she
+    buys them off. Never make them stupid or merely monstrous.
+  - PROMETHEUS BOUND is almost static -- a bound god visited by a
+    series of speakers -- and lives on the catalogue and the
+    prophecy. Keep the geography of Io's wanderings entire.
+  - THE PLAIN LINES ARE PLAIN (the hume rule): "the doer must suffer",
+    "Zeus, whoever he is", "learning comes through suffering". Do not
+    ornament them.
+
+--------------------------------------------------------------------
+4. LOCKED VOCABULARY
+--------------------------------------------------------------------
+All of sophocles/text_analysis.txt section 4 carries over unchanged
+(ate RUIN, hubris OUTRAGE, dike JUSTICE and lawsuit, philos the people
+you owe, nomos law/custom, daimon not demon, Hades a name). Added:
+
+  pathei mathos   "learning through suffering" -- Agamemnon 177, the
+                  phrase the trilogy is built on. Render it plainly.
+  drasanti pathein "the doer must suffer" (LB 313). Same form every
+                  time the law of retaliation is stated.
+  Erinyes         THE FURIES throughout; "the Kindly Ones" only where
+                  the Eumenides text itself renames them.
+  Dike            "Justice" capitalised where she acts as a person
+                  (tips scales, comes late); lower case as a concept.
+  Zeus teleios    "Zeus who brings things to their end"; the epithet
+                  is the point.
+  thymos/phren    heart/mind -- keep the body-words; Aeschylus locates
+                  thought in organs and it is part of the physicality.
+  barbaros        "barbarian" is KEPT in The Persians: the Persians
+                  call themselves that (the word just means non-Greek
+                  in 472 and the play uses it with sympathy). The
+                  Verne rule; do not soften to "foreign".
+  doulos/dmoe     SLAVE, never handmaid/servant, where the Greek has a
+                  slave word (the odyssey ruling). "Servant" only for
+                  Οἰκέτης/Θεράπαινα.
+  Names: familiar forms -- Clytemnestra (not Klutaimnestra or Smyth's
+  Clytaemestra), Cassandra, Aegisthus, Orestes, Electra, Eteocles,
+  Polyneices, Xerxes, Darius, Atossa is NOT named (the Queen), Io,
+  Oceanus, Hephaestus, Hermes, Pelasgus is the King (named once in the
+  text at 251; tag stays "King"). Cult titles resolved to plain names as
+  ovid/ does, except where the periphrasis is the point.
+
+--------------------------------------------------------------------
+5. STAGE DIRECTIONS ARE SMYTH'S, NOT AESCHYLUS'
+--------------------------------------------------------------------
+The Greek carries none. Smyth's are sparse (4-8 per play) and ours to
+write and modernise freely. Own paragraph in parentheses, factual,
+never interpretive; long enough not to render as a heading
+(check.py asks assemble.is_subheading itself). Ghosts rising, the
+chariot, the Furies asleep, the robe held up: these are the ones a
+reader needs.
+
+--------------------------------------------------------------------
+6. THE VERNE RULE
+--------------------------------------------------------------------
+No editorial note anywhere in the volume. Translated in full, unhedged:
+  - THE SUPPLIANTS' HATRED OF MARRIAGE and of their cousins, which the
+    play half endorses; the King's decision to risk his city for fifty
+    foreign women, argued out at length.
+  - The PERSIANS' account of Greek victory, put in Persian mouths, and
+    the Elders' litany of the dead by name -- the names are the point,
+    all of them, every time.
+  - AGAMEMNON'S sacrifice of his daughter, told by the chorus with her
+    gag and her eyes; Clytemnestra exulting over the corpse "like rain
+    from heaven on the sprouting corn"; her sexual claim on Aegisthus
+    stated plainly.
+  - THE NURSE'S SPEECH about Orestes' nappies (LB 749-760), which is
+    comic and about a baby's bowels, and is kept exactly so.
+  - ORESTES KILLING HIS MOTHER, on stage-adjacent ground, with her
+    baring the breast that fed him; his flat "you killed the man you
+    should not have; now suffer what you should not."
+  - The Furies' account of what they do to the guilty, and Apollo's
+    argument in the Eumenides that a mother is "no parent, only the
+    nurse of the seed" -- the play's own argument, stated by a god,
+    and it wins the case. Not softened, not footnoted.
+  - The Eumenides' close, in which Athens is praised by its own poet at
+    its own festival; the civic flattery stands.
+  - Prometheus' contempt for Zeus and the Chorus' fear of it.
+
+--------------------------------------------------------------------
+7. RATIO
+--------------------------------------------------------------------
+Greek verse -> English runs HIGHER here than in Sophocles. Smyth's
+prose is 68,000 English against 40,335 Greek, 1.70 (Jebb ran 1.54 on
+Sophocles), because Aeschylus' compound words each unpack into three
+or four of ours. Target 1.55-1.80 per file; check.py 1.45-1.95;
+verify --min-ratio 1.40 --max-ratio 1.95. UNDER 1.45 MEANS SUMMARISING,
+which in a play means a speech has been trimmed or an ode compressed.
+Re-derive the band from the finished files (the purgatorio rule) and
+record it in running_notes.txt.
