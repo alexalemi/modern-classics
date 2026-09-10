@@ -3712,3 +3712,65 @@ Cover: Delacroix's "Medea about to Kill her Children" (1862), Commons
 1402.jpg", crop "1900x2850+0+0" -- at 1900 wide it is under commons_url's
 4200 gate, so the crop is in the ORIGINAL's coordinates and takes the
 whole cave mouth, the knife and the children.
+
+Lucretius' On the Nature of Things (lucretius/ -- the 73rd book; from the
+LATIN, Perseus' text, with W. E. Leonard's 1916 blank verse under
+reference/ as a per-file crib). All six books, 15 files, 49,036 Latin
+words -> 83,841 English, ratio 1.70 (per file 1.61-1.79; check.py band
+1.55-2.30, verify --min-ratio 1.5 --max-ratio 2.3). The fullest account
+of ancient atomism to survive, and the poem Jefferson owned five copies
+of.
+THE ALIGNMENT IS FREE, AND IT IS THE PREP LESSON. Perseus divides
+Leonard's English into "cards" and the LATIN CARRIES THE SAME CARDS as
+<milestone unit="card">, so each crib file is cut at exactly the Latin
+lines its chapter holds, and prep asserts the card numbers equal per book
+before writing anything. Check for a milestone before building any
+alignment machinery of your own.
+THE FORM IS PROSE (the ovid/odyssey precedent): the hexameter has no
+English equivalent that is not padding, and this is a 7,400-line
+ARGUMENT whose reader wants to follow it. What the verse carried is kept
+instead -- the proems, every simile at full length, and the argument's
+joints left visible, because Lucretius signposts every step and the
+signposts are what make the poem followable.
+THE GLOSSARY IS THE WHOLE JOB (the spinoza pattern). He has no word
+"atom" and uses a dozen periphrases; ALL of them render as "atoms" where
+the sense is the particle, with "the seeds of things" kept only where
+generation is the point and "first-beginnings" (Munro) and "primal
+germs" (Leonard) banned. inane is "void"; religio is "religion", never
+"superstition", because superstition lets the modern reader off the hook
+he means to catch them on; animus is "mind" and anima is "soul" and Book
+Three's whole argument depends on their never being merged.
+TEN PERSEUS DITTOGRAPHIES across the poem, each translated ONCE at its
+home. Together they account for a few hundred Latin words with no
+English opposite number, which is why a per-file ratio can read a shade
+low -- it is not summarising. AND THE DISTINCTION MATTERS: IV.799-801
+repeats 768-770 inside ONE card, and that is LUCRETIUS repeating
+himself, so it is translated twice. Look at whether the repeat crosses a
+card boundary before deciding.
+A PIN WRITTEN FROM THE LEDGER'S OWN GLOSSARY IS STILL A PIN WRITTEN FROM
+MEMORY. "the swerve" is the locked term for the clinamen and appears
+nowhere in the book as a bare phrase: the noun occurs once, as "the tiny
+swerve of the atoms" (II.292). Caught by grepping every pin before
+writing must_contain (the epictetus rule), which is exactly what that
+rule is for.
+DASHES: assemble.py does NOT convert "--" while `se typogrify` silently
+does, so a double hyphen ships literally on the PAGE and correctly in
+the EPUB -- a divergence that hides. One file came back with 24 of them.
+The house form is a real em dash with spaces.
+THE VERNE RULE, no note anywhere in the volume: the sun is the size it
+looks; the magnet works by streams of atoms; spontaneous generation is
+real; the attack on love in Book Four is explicit about sex and
+contemptuous of romantic love and stands entire, with the Greek
+pet-names for a lover's defects KEPT IN GREEK with the English folded in
+(the ligna/ignes precedent), because the joke is that the LOVER renames
+the defect. VI.1109's "black generations of men whose colour has been
+baked into them" is kept exactly, inside his climate argument -- a
+colour named and no claim made about anybody (the paradiso XXVII and
+inferno XXXIV precedent). THE POEM ENDS ON THE PLAGUE AT ATHENS with no
+consolation and no summing up, exactly as the manuscripts leave it.
+Cover: Botticelli's "The Birth of Venus" (c. 1485), Commons "File:Sandro
+Botticelli - La nascita di Venere - Google Art Project - edited.jpg",
+crop "1675x2512+1319+0" -- the original is 30000px wide, far over
+commons_url's 4200 gate, so the crop is in the 4000px RENDITION's
+coordinates. The poem opens on Venus and it is the one image everybody
+already knows.

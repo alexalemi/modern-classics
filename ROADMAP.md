@@ -193,8 +193,13 @@ SE-XHTML, Wikisource-API, from-the-Latin, from-the-French.
   Eighth Amendment; short)
 
 ## High-payoff singles
-- Lucretius — On the Nature of Things (from the Latin; Jefferson owned
-  five copies)
+- Lucretius — On the Nature of Things — DONE (site/lucretius.html; all
+  six books, 15 files, 49,036 Latin words -> 83,841 English, ratio 1.70,
+  from the Latin with Leonard's 1916 verse as a per-file crib; Jefferson
+  owned five copies). Rendered as PROSE on the ovid/odyssey principle.
+  Perseus' Latin and its English carry THE SAME "card" milestones, so
+  the crib aligns for free — look for that before building alignment
+  machinery of your own.
 - Augustine — Confessions — DONE (site/augustine.html; all thirteen
   books, Pusey's Thou rendered "you"; pairs with Franklin's)
 - Cellini — Autobiography — DONE (site/cellini.html; from the Italian,
