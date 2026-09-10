@@ -1,0 +1,191 @@
+EURIPIDES: THE NINETEEN PLAYS
+Translation strategy. From the GREEK (Perseus' text), with Coleridge's
+prose (1891, as Perseus carries it) under reference/ as a per-file crib
+ONLY. The third and last volume of the drama shelf: READ
+sophocles/text_analysis.txt AND aeschylus/text_analysis.txt FIRST. The
+form ruling, the locked vocabulary, the Verne rule and the whole method
+carry over; this file records what is DIFFERENT about Euripides.
+
+--------------------------------------------------------------------
+1. WHY THIS BOOK -- THE HIGHEST ARCHAISM SCORE IN THE PROJECT
+--------------------------------------------------------------------
+Screened 2026-09-09 with screen.py:
+
+    Coleridge, Medea (prose, 1891)          arch 60.05
+    Murray, Medea (rhymed verse, 1910)      arch 48.24
+    Coleridge, Hippolytus (prose)           arch 44.11
+    Murray, Trojan Women (verse)            arch 39.96
+    Sophocles (Campbell, verse)             arch 39.10   <- the old record
+    Augustine (Pusey)                       arch 35.9
+
+Coleridge's Medea at 60 archaisms per thousand words is the highest
+score ever measured here -- and it is PROSE. A reader who downloads the
+free Euripides gets "thou" in every second line of a man who wrote the
+plainest, most conversational Greek of the three tragedians, the one
+Aristophanes mocked for putting everyday speech on the tragic stage. So
+the nights/ case again: the costume is the translator's, none of it is
+in the Greek, and removing it is not simplification.
+
+NOTE ON THE CRIB: Perseus' Coleridge is NOT uniform. Some plays carry
+his 1891 text (Medea 60, Hippolytus 44); others were silently modernised
+by Perseus' editors and measure 0.0 (Bacchae, Orestes, Hecuba). Do not
+be reassured by a clean crib file -- it is the same Victorian prose with
+the thou's taken out, still literal and still stiff, and it is prose
+throughout, so it is no witness to the form.
+
+--------------------------------------------------------------------
+2. THE FORM -- DERIVED FROM THE METRE, NOT THE MARKUP
+--------------------------------------------------------------------
+  SPOKEN, iambic trimeter and trochaic tetrameter  -> MODERN PROSE
+  SUNG, lyric metres, anapaests, refrains          -> VERSE, tab-indented
+
+The ruling is Alex's, from sophocles/. What changed is the WITNESS. For
+Sophocles the Perseus division labels were right; for Aeschylus they
+were wrong in ~30 places and corrected by hand; for Euripides they are
+wrong in ~380 places, always the same way (a "lyric" or "anapests"
+<div> runs on over the spoken scene after it). So prep.classify decides
+each speech from the SYLLABLE COUNT (trimeter is 12-13 a line,
+tetrameter 15-16, lyric 6-11) with the label only as tie-breaker, and
+three KIND_FIXES cover the chanted metres it cannot know (elegiacs,
+hexameters). See euripides/prep.py's docstring and metre.py.
+AGENTS FOLLOW chapters/'s [Sung]/[Spoken] MARKERS EXACTLY. If one looks
+wrong, REPORT it in the notes; never override it. The Aeschylus lesson:
+three agents flagging the same thing is what got prep fixed.
+
+EURIPIDES SINGS DIFFERENTLY. Less chorus than Aeschylus and more ACTOR'S
+SONG: the monody (Ion sweeping the temple, Creusa's aria, Hecuba,
+Electra at the well, Iphigenia's lament, the Phrygian slave's whole
+scene in Orestes) and the lyric duet between actors. These are the
+arias of the Athenian stage and the audience went for them. Set them as
+verse with real momentum, an image a line, first person, never a crib
+in short lines. The choral odes are often DETACHED from the plot (the
+escapist ode: "let me be a bird", the ode on a myth two removes away);
+render that detachment, do not tie them back to the action.
+
+--------------------------------------------------------------------
+3. VOICE
+--------------------------------------------------------------------
+Euripides is the modern one, and the trap is to make him solemn like
+Aeschylus or clean like Sophocles. He is neither.
+
+  - HIS PEOPLE TALK LIKE PEOPLE. Nurses, farmers, slaves, a Phrygian
+    eunuch, a herdsman -- and kings who argue like litigants. The
+    register is conversational Attic and the English must be
+    conversational: contractions are fine in speech, short sentences,
+    people interrupting themselves. Aristophanes called it "the
+    language of the marketplace" as an insult; take it as a
+    description.
+  - THE DEBATE (agon). Nearly every play has a formal two-speech
+    argument -- Medea and Jason, Hecuba and Helen, Pentheus and
+    Dionysus, Clytemnestra and Electra over the murder -- and both
+    sides are GOOD. Jason is not a fool; Helen's defence is clever
+    enough that Hecuba has to work. Never make the loser stupid (the
+    sophocles rule, at maximum).
+  - THE RHETORIC IS DELIBERATE. Characters make speeches they know are
+    speeches; Medea says "I will show you where the argument goes". Keep
+    the visible joints -- "first... and second... and then there is
+    this" -- because the self-consciousness is the point.
+  - WOMEN AND SLAVES ARE THE CENTRE, not the margin: Medea, Phaedra,
+    Hecuba, Andromache, Electra, Alcestis, Iphigenia, Creusa, Agave.
+    Give them the full argumentative weight the Greek gives them; the
+    "misogynist" passages (Hippolytus' speech, Jason's wish that
+    children could be got without women) are CHARACTERS' claims and
+    stand as such, unhedged and unwinked at.
+  - THE GODS ARE UNRELIABLE and the plays say so. Apollo in Ion,
+    Aphrodite in Hippolytus, Athena at the end of the Suppliants,
+    Dionysus in the Bacchae: characters accuse them, and the accusation
+    is often the last word. Render it flat.
+  - THE MESSENGER SPEECHES are the best set-pieces in Greek drama --
+    Pentheus torn apart, the death of Glauce and Creon, Hippolytus'
+    chariot, the sacrifice at Aulis, Neoptolemus at Delphi. Past tense,
+    fast, exact, physical, at full length.
+  - THE ENDINGS ARE OFTEN ABRUPT OR MACHINE-MADE (the god on the crane,
+    the tag lines the chorus repeats from play to play). Keep them as
+    written: the deus ex machina speaks in the flat register of a
+    decree, and the repeated closing tags ("Many are the shapes of what
+    the gods do...") recur VERBATIM across plays (Alcestis, Medea,
+    Andromache, Helen, Bacchae) -- the nights/ rule for frame formulas.
+  - CYCLOPS IS A COMEDY. The only complete satyr play: Silenus and the
+    satyrs are drunk, cowardly and obscene, and Odysseus is a straight
+    man. Play it for laughs; the Verne rule covers the obscenity.
+  - RHESUS may not be his. Translate it as the play it is: a night
+    piece, soldiers and sentries, and the Muse's lament.
+
+--------------------------------------------------------------------
+4. LOCKED VOCABULARY
+--------------------------------------------------------------------
+All of sophocles/ section 4 and aeschylus/ section 4 carry over (ate
+RUIN, hubris OUTRAGE, dike JUSTICE, philos the people you owe, sophron
+"keep yourself in hand", daimon never demon, Hades a name, dmoe SLAVE).
+Added:
+  sophia/sophos    CLEVER as often as wise -- Medea's sophia is what
+                   Creon fears; keep the accusation.
+  tolma            "daring"/"the nerve to" -- the word for what Medea
+                   does; not "audacity".
+  gnome            judgement/opinion; the agon turns on it.
+  tyrannos         "king" where it is neutral (Euripides uses it of
+                   any monarch), "tyrant" only where it is an
+                   accusation. The reverse of the Prometheus lock; say
+                   which in the notes when it is a close call.
+  xenos            stranger AND guest AND host -- Alcestis and Helen
+                   turn on the obligation; keep it visible.
+  barbaros         "barbarian" kept, and in Euripides the word is
+                   usually an argument (Medea, Andromache, Helen,
+                   Iphigenia in Tauris): Greeks call foreigners it and
+                   the plays show Greeks behaving worse.
+  Names: familiar forms (Medea, Jason, Hippolytus, Phaedra, Theseus,
+  Hecuba, Andromache, Helen, Menelaus, Clytemnestra, Iphigenia, Orestes,
+  Electra, Pentheus, Dionysus, Agave, Cadmus). Bacchus/Bromius/Dithyrambos
+  in the Bacchae are cult titles of Dionysus and are RESOLVED to
+  "Dionysus" except where the title is the point (the chorus's invocation
+  "Bromius" once, glossed). Loxias -> Apollo; Cypris -> Aphrodite (except
+  in Hippolytus, where the goddess names herself and "Cypris" recurs as
+  the play's word for love: keep it there, glossed once). Phoebus ->
+  Apollo. Zeus's titles resolved as in aeschylus/.
+
+--------------------------------------------------------------------
+5. STAGE DIRECTIONS ARE COLERIDGE'S, NOT EURIPIDES'
+--------------------------------------------------------------------
+As in the other two volumes: the Greek carries none, they are ours,
+sparse and factual, own paragraph in parentheses, a full sentence so
+they do not render as headings. The machine (deus ex machina) gets one:
+"(Athena appears above the house.)"
+
+--------------------------------------------------------------------
+6. THE VERNE RULE
+--------------------------------------------------------------------
+No editorial note anywhere in the volume. Translated in full, unhedged:
+  - MEDEA kills her children and is right about Jason; the play gives
+    her the chariot and the last word. Her "I know what I am about to
+    do is evil" speech at full length and full contradiction.
+  - HIPPOLYTUS' speech wishing women did not exist; Phaedra's letter;
+    the Nurse's argument that everyone does it.
+  - THE SACRIFICE OF IPHIGENIA is consented to, in a speech that a
+    modern reader will find monstrous and that Aristotle thought out
+    of character. It stands.
+  - HECUBA blinds Polymestor and kills his children; the play does not
+    condemn her and neither does the edition.
+  - PENTHEUS torn apart by his mother, who carries his head on stage
+    thinking it is a lion's, and the slow recognition. Full length.
+  - The slavery throughout -- the Trojan Women is a play about women
+    being allotted as slaves and says so; Andromache is a slave and a
+    concubine; the Phrygian in Orestes is a eunuch slave played for
+    laughs. None of it softened. "barbarian" kept.
+  - HERACLES kills his wife and children in a madness a goddess sends;
+    Theseus' argument that he should go on living anyway is the play.
+  - The satyrs' obscenity in Cyclops, including the jokes about
+    Ganymede and about raping Helen.
+  - Aristophanes' charge that Euripides was an atheist: the plays'
+    accusations against the gods stand as the characters make them.
+
+--------------------------------------------------------------------
+7. RATIO
+--------------------------------------------------------------------
+Coleridge's prose is 227,000 English against 148,719 Greek, 1.53 --
+LOWER than Smyth's 1.70 on Aeschylus, because Euripides' Greek is
+plainer and unpacks less. Target 1.50-1.75 per file; check.py
+1.40-1.90; verify --min-ratio 1.35 --max-ratio 1.90. UNDER 1.40 MEANS
+SUMMARISING. Re-derive the band from the finished files (the purgatorio
+rule) and record it in running_notes.txt. This is the collection's
+LARGEST from-the-Greek volume by far: 57 files, ~240k English words,
+between Plato's Dialogues and Don Quixote in size.

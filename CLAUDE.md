@@ -3627,3 +3627,88 @@ by John Collier, 1882.jpg", crop "2056x3084+0+0" -- the canvas is
 2056x3088, almost exactly 2:3 and under the 4200 gate, so the crop is
 in its own coordinates and trims four rows. She stands in the doorway
 with the axe and the blood, which is Agamemnon 1372.
+
+Euripides' The Nineteen Plays (euripides/ -- the 72nd book; the THIRD and
+last volume of the drama shelf after sophocles/ and aeschylus/, and the
+collection's LARGEST FROM-THE-GREEK VOLUME: 57 files, 148,719 Greek words
+-> 258,872 English, ratio 1.66, per file 1.56-1.75). Every surviving play,
+including Cyclops (the only complete satyr play) and Rhesus (authorship
+disputed since antiquity). check.py band 1.40-1.90; verify --min-ratio
+1.35 --max-ratio 1.90. From Perseus' Greek with Coleridge's 1891 prose as
+a per-file crib (Buckley's 1850 for the Bacchae).
+THE JUSTIFICATION IS THE nights/ CASE AT ITS EXTREME: Coleridge's Medea
+measures arch 60.05, THE HIGHEST SCORE THIS PROJECT HAS EVER RECORDED --
+and it is PROSE. Murray's verse Medea is 48.2, his Trojan Women 40.0.
+Euripides wrote the plainest Greek of the three tragedians and was mocked
+for putting the language of the marketplace on the tragic stage. WATCH THE
+CRIB, THOUGH: Perseus' Coleridge is NOT uniform, and some plays have been
+silently de-archaised by its editors and measure 0.0. A clean crib file is
+the same Victorian prose with the thou's removed; it is no evidence.
+THE METRE IS THE WITNESS OF RECORD, which is the step past aeschylus/.
+There the ~30 mislabelled divisions were corrected by hand in KIND_FIXES;
+here metre.py reports ~380 disagreements across 19 plays, and reading the
+first hundred showed ONE shape every time (a lyric-labelled <div> running
+on over the iambic scene after it). A hand list at that scale is a copy of
+the classifier's output with typing errors added. So prep.classify decides
+each speech from the SYLLABLE COUNT and uses Perseus' label only as a
+tie-breaker, with five KIND_FIXES for what it cannot know. Validated
+against Aeschylus, where the labels had already been corrected by hand: it
+reproduces the hand result on 812 of 839 multi-line speeches.
+FOUR CLASSIFIER CORRECTIONS, EACH FOUND BY AN AGENT REPORTING A MARKER
+RATHER THAN OVERRIDING IT -- which is why the standing instruction is to
+REPORT, never override:
+  1. THE SYLLABLE COUNTER MUST RESPECT THE DIAERESIS. U+0308 marks two
+     adjacent vowels as NOT a diphthong, so "naian" is three syllables and
+     not two; without it the Messenger's trimeters at Medea 1121-3 read as
+     lyric. The counter now keeps the mark through NFD stripping.
+  2. THE LYRIC RULE COUNTS A SHARE OF SHORT LINES, NOT A MEAN. One
+     antilabe fragment before three trimeters (Alcestis 1119c, 7/12/12/12)
+     pulled a mean under eleven and made a spoken speech verse.
+  3. A RULE THAT DROPS EDGE FRAGMENTS WAS TRIED AND REVERTED. It fixed
+     two speeches and broke two lyric stanzas, because a dactylo-epitrite
+     stanza with one short colon looks identical. The two real cases are
+     hand-fixed instead. THE SUCCESSIVE-BLUNTER-RULE PATTERN AGAIN.
+  4. One chorus stanza in nineteen plays (Medea 835-845) is
+     dactylo-epitrite at 12-14 syllables a line and reads as trimeter.
+TWO RESIDUALS ACCEPTED AND WRITTEN DOWN, because four separate agents
+reported each: DOCHMIACS ARE LONG LINES, so a dochmiac stretch inside an
+"episode" div (Hecuba 684-692, Ion 763-799, Phoenician Women 293-300,
+Orestes 1295-1300) stays prose; and a TRIMETER ONE-LINER inside a choral
+lyric is tabbed as verse unless the run around it is already decided
+spoken. Fixing the first needs a second metrical signal (dochmiac has a
+shape, not a length); not attempted.
+A ONE-WORD ANSWER THAT IS A CHARACTER'S NAME IS A PHANTOM SPEAKER TAG.
+Rhesus' password is "Apollo", and "Apollo." alone on a line is both a grep
+hit and a member of check.py's closed NAMES set, so it would have counted
+as a speech by the god. Give any such password, oath or one-word reply a
+carrier sentence ("The word is Apollo."). Generic to any cast that shares
+a name with a thing people say.
+CRIB BOUNDARIES DRIFT FROM THE GREEK FILE'S at many seams, because prep
+cuts the crib by a scaled index where the two speech counts disagree.
+FOLLOW THE GREEK FILE: never translate a crib passage the Greek file does
+not carry, never skip one it does. Eight agents hit this and all eight
+reported it.
+A FAILED AGENT IS NOT EVIDENCE OF A MISSING FILE. A credit exhaustion
+killed eight agents mid-batch; four of them had already written their
+files and passed check.py before the API call that reported home failed.
+LOOK AT THE DIRECTORY before relaunching anything.
+VOICE: conversational, quick, argumentative, never solemn -- nurses,
+farmers, slaves, and kings who argue like litigants. The formal debate
+(agon) is the engine and BOTH SIDES ARE GOOD: Jason is not a fool, Helen's
+defence is clever, Tyndareus is right about the law. The ACTOR'S SONG
+(monody) is Euripides' signature and is set as first-person verse with
+momentum -- Ion sweeping the temple, Creusa accusing Apollo, the Phrygian
+eunuch's whole scene. The recurring closing tags are locked across plays
+(the nights/ frame-formula rule): "Many are the shapes of what the gods
+do..." in five plays, with Medea's differing first line checked against
+the Greek, and "Great Victory, holy one..." in three.
+THE VERNE RULE THROUGHOUT, no note anywhere: Medea given the chariot and
+the last word; Apollo's rape of Creusa stated as plainly as the Greek
+states it; Hippolytus' speech against women at full force; Iphigenia's
+consent; Hecuba blinding Polymestor with no condemnation; Agave carrying
+her son's head; the slavery of the Trojan plays; the satyrs' obscenity.
+Cover: Delacroix's "Medea about to Kill her Children" (1862), Commons
+"File:Médée furieuse - Eugène Delacroix - Musée du Louvre Peintures RF
+1402.jpg", crop "1900x2850+0+0" -- at 1900 wide it is under commons_url's
+4200 gate, so the crop is in the ORIGINAL's coordinates and takes the
+whole cave mouth, the knife and the children.

@@ -141,6 +141,15 @@ SE-XHTML, Wikisource-API, from-the-Latin, from-the-French.
   Kōroku circulating on terebess.hu is Wisdom Publications' and in
   copyright; it is not a usable source, though its introduction is what
   named Menzan's recension and broke the search open.
+- **Euripides — DONE (2026-09-10).** euripides/ ships all nineteen
+  surviving plays, 57 files, 148,719 Greek -> 258,872 English, ratio
+  1.66. THE DRAMA SHELF IS NOW COMPLETE: all 33 surviving Greek
+  tragedies plus the one satyr play, across sophocles/, aeschylus/ and
+  euripides/. The step past aeschylus/ is that THE METRE IS THE WITNESS
+  OF RECORD -- prep.classify decides sung/spoken from the syllable count
+  with Perseus' labels only as a tie-breaker, because the labels are
+  wrong in ~380 places here and a hand list at that scale is a copy of
+  the classifier with typing errors added.
 - **Aeschylus — DONE (2026-09-09).** aeschylus/ ships all seven plays,
   15 files, 40,335 Greek -> 73,192 English, ratio 1.74; the Oresteia
   nested under one divider. sophocles/prep.py carried over with ONE new

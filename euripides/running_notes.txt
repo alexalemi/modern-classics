@@ -1,0 +1,488 @@
+EURIPIDES -- RUNNING NOTES (the shared consistency ledger)
+Updated as files are finished. Everything here is LOCKED once written.
+sophocles/running_notes.txt and aeschylus/running_notes.txt carry over
+in full (ruin, outrage, "keep yourself in hand", cries as cries, "my
+lord" from subordinates, Hades a name, slaves are slaves, cult titles
+resolved, refrains verbatim).
+
+--------------------------------------------------------------------
+FORM (settled before file 000; see text_analysis.txt section 2)
+--------------------------------------------------------------------
+- Spoken: modern prose under a "Name." tag. Sung: TAB-INDENTED unrhymed
+  verse. Follow chapters/'s [Sung]/[Spoken] markers exactly. They come
+  from prep.classify, which decides from the SYLLABLE COUNT (the metre)
+  with Perseus' labels as tie-breaker, because those labels are wrong
+  in ~380 places for Euripides. If a marker still looks wrong, REPORT
+  it in your notes; never silently override it.
+- Trochaic tetrameter (long lines, 15-16 syllables; common in the late
+  plays -- Ion, Orestes, Iphigenia at Aulis, the Bacchae) is SPOKEN.
+  Anapaests and every lyric metre are VERSE.
+- Speaker tags are the closed set in check.py SPEAKERS. Euripides has
+  MANY nameless parts: "Nurse.", "Tutor.", "Servant." (Θεράπων),
+  "Maid." (Θεράπαινα), "Old Man." (Πρέσβυς/Πρεσβύτης), "Old Woman.",
+  "Child."/"Children.", "Farmer." (the Autourgos of Electra),
+  "Herdsman.", "Charioteer.", "Phrygian.", "Priestess.", "Shepherd.",
+  "Messenger."/"Second Messenger.", "Herald.", "Huntsmen." (Hippolytus'
+  companions), "Argive Soldiers." (IA), "Half-Chorus."/"First
+  Half-Chorus."/"Second Half-Chorus.", and in Cyclops 635-641 "First
+  Satyr." to "Fourth Satyr.". Lyssa is "Madness."; the Dioscuri are
+  "Castor." (he speaks for both). Two consecutive tags for one speaker
+  are KEPT where the Greek has two speeches.
+- Each play is its own divider and its own chapter; titles as the
+  manifest gives them: "Alcestis", "Medea", "The Children of Heracles",
+  "Hippolytus", "Andromache", "Hecuba", "The Suppliants", "Electra",
+  "Heracles", "The Trojan Women", "Iphigenia among the Taurians", "Ion",
+  "Helen", "The Phoenician Women", "Orestes", "The Bacchae", "Iphigenia
+  at Aulis", "Cyclops", "Rhesus".
+
+--------------------------------------------------------------------
+LOCKED RENDERINGS (caps spent, no re-gloss)
+--------------------------------------------------------------------
+Carried from the two earlier volumes. New, from text_analysis.txt 4:
+  sophos/sophia   "clever" where it is an accusation (Medea).
+  tolma           "daring" / "the nerve to".
+  tyrannos        "king" where neutral; "tyrant" only as an accusation.
+  barbaros        "barbarian", kept; in Euripides usually an argument.
+  Cypris          -> Aphrodite, EXCEPT in Hippolytus (kept, glossed once).
+  Bromius etc.    -> Dionysus, except one invocation in the Bacchae.
+  CLOSING TAGS that recur across plays -- lock the wording at first
+  use and copy it thereafter (fill in here as files finish):
+    "Many are the shapes of what the gods do..." (Alcestis 1159-63,
+      Medea, Andromache, Helen, Bacchae) -- LOCKED by 002, five tabbed
+      lines, copy VERBATIM:
+	Many are the shapes of what the gods do,
+	and many the things they bring about that no one expected.
+	What we counted on did not happen,
+	and for what no one counted on, a god found a way.
+	That is how this business ended.
+    "Great Victory..." (IT 1497-99, Phoenician Women, Orestes) --
+      LOCKED by 031, three tabbed lines, copy VERBATIM (check each play's
+      Greek for the line before it):
+	Great Victory, holy one,
+	stay with me all my life,
+	and never stop crowning me.
+
+--------------------------------------------------------------------
+DECISIONS LOG
+--------------------------------------------------------------------
+- 2026-09-09 THE METRE IS THE WITNESS OF RECORD (prep.classify), with
+  three KIND_FIXES for chanted metres the classifier cannot know:
+  Andromache's elegiacs (103-116), the Suppliants' hexameter plea
+  (271-285), Helen's three hexameters (164-166): all SUNG. Residual
+  disagreements between classifier and label were listed and read
+  (81); every one was trochaic tetrameter (spoken, correctly) or a
+  fragment line.
+- 2026-09-09 Speech counts: Greek and English agree on 11 plays and
+  differ on 8 by markup granularity (the English splits a chorus into
+  numbered voices, or a speech at a line anchor); each pinned in
+  prep.EXPECT with its reason.
+- 2026-09-09 The Suppliants has two EMPTY Greek speeches, IT one, the
+  Bacchae three; check.py drops them, so two consecutive tags for the
+  other speaker are correct there. Do not supply lines.
+- 2026-09-09 FILE BOUNDARIES PINNED in prep.CUTS from the first run
+  (57 files) so no later fix can move a finished file.
+
+--------------------------------------------------------------------
+FILE 000 (Alcestis, part 1) -- the voice sample. Ratio 1.64.
+--------------------------------------------------------------------
+LOCKED from 000:
+  Apollo speaks of "a servant's table"; "I cheated the Fates"; Death is
+    "the priest of the dead"; Paian -> "Healer"/"Lord Healer" (Apollo's
+    title, glossed by the word itself); "the house of Hades"; Pluto's
+    hound; Charon "the ferryman of the dead" with "his hand on the
+    pole". Alcestis is "the daughter of Pelias".
+  The Apollo/Death stichomythia is PROSE (trimeters under a "lyric"
+    label; the classifier's run rule catches it). Death's entrance
+    (28-37) and the Chorus's parodos are verse. In the death scene
+    Alcestis SINGS (tabbed) and Admetus answers in prose couplets,
+    exactly as chapters/ marks it; his 273-279 is anapaests, verse.
+  Cries: "Ah. Ah." (Death's a a), "Aiai", "Papai", "Oh." for oimoi.
+  Quoted prayers and reported speech in double quotes inside a prose
+    speech (the Maid's report of Alcestis at the hearth and the bed).
+  "Bed, where I undid my virgin belt for the man I am dying for,
+    goodbye." (177-179). "Time will soften you. The dead are nothing."
+    (381). "She is gone. The wife of Admetus is no more." (392).
+  tyrannis at 286 rendered "a house that was rich with a throne in it"
+    (neutral: no accusation).
+  Address: Chorus to the Maid "one of the servants"; the Maid calls
+    Admetus "the master" and Alcestis "the mistress"/"the lady"; the
+    slaves of the house are "slaves" (oiketai, 192).
+FORWARD for 001-002: Heracles arrives (the "man Eurystheus has sent
+  after a team of horses"); Pheres and Admetus quarrel; the closing
+  tag "Many are the shapes of what the gods do..." is Alcestis 1159-63
+  and is in 002 -- LOCK ITS WORDING THERE and record it here for Medea,
+  Andromache, Helen and the Bacchae to copy.
+
+--------------------------------------------------------------------
+BATCH 1 IN PROGRESS -- LOCKED from 001-003
+--------------------------------------------------------------------
+Alcestis (001, 002): "The dead are dead." (541); "every one of us owes a
+  death" (419) / Heracles 782; Death is "Death, the black-robed lord of
+  the dead"; Necessity capitalised, addressed "Lady"; Persephone "and
+  her Lord below" (never "the Maiden"); othneios = "outsider"; xenos
+  visible as guest/host/stranger, "a man who loves his guests"; Heracles
+  echoes 000's lock: "Time will soften it. The evil is still young."
+  Kommos cries tabbed one per speech: "Io.", "Io moi moi.", "Ai ai.",
+  "Aiai.", "E, e.", "Pheu, pheu." (Aeschylus used "Oh." for io; here the
+  Greek cry is kept as a cry. Either is acceptable; within a PLAY be
+  consistent with its earlier parts.)
+Medea (003): "Of all creatures that live and think, we women are the most
+  wretched." / "I would rather stand behind a shield three times than
+  give birth once." / "But when she is wronged in her bed, there is no
+  mind more murderous." / "The springs of the holy rivers are running
+  uphill." / "we were born women: helpless when it comes to doing good,
+  but of every kind of evil the cleverest builders." sophe = CLEVER as
+  an accusation. Jason is "the worst man alive"; his fault is
+  "shamelessness". tyrannos neutral ("king", "the royal bed") except
+  Creon 348 "There is nothing of the tyrant in my nature". Creon's
+  daughter unnamed: "the princess"/"the girl"/"the bride". "the dark
+  Clashing Rocks"; Themis "who keeps oaths for Zeus"; Hecate "who lives
+  in the inmost corner of my hearth"; "born from the Sun". Nurse 40-41 =
+  Medea 379-380 verbatim: "go quietly into the room where the bed is
+  made and drive a sharpened sword through the liver". philoi = "the
+  people I owe". Household = "slaves"; "fellow slave".
+PREP NOTE 2026-09-09: the classifier gained an ANTILABE rule (a split
+  trimeter leaves each speaker a fragment; one-liners of any length now
+  join a run that the metre has already decided). Alcestis 817-820 is
+  spoken as a result. 000-002 re-checked clean.
+Medea (004, 005): the poisoned gifts are "a fine-woven dress and a
+  wreath of beaten gold" (786 = 949); "The Sun, my father's father";
+  Zeus's daughter is "Justice"; Athens "the town and the citadel of
+  Pallas Athena", "the city of the holy rivers"; Aegeus's oath "by Earth,
+  and by the holy light of the Sun, and by all the gods". Locked lines:
+  "I am going to kill my children. My own."; "Let no one think me weak,
+  or feeble, or the quiet kind. I am the other kind. Heavy on my
+  enemies, and kind to my friends."; Jason 573-5 "Men should have found
+  some other way of getting children, and there should have been no such
+  thing as women."; 1078-80 "I know what evil I am about to do, but my
+  anger is stronger than my plans, and anger is the cause of the
+  greatest evils human beings suffer." ito = "Let it come." Hera Akraia
+  = "Hera of the Heights"; Scylla "in the Tyrrhenian sea"; Ino's story
+  folded into the stanza. Tutor calls Medea "Mistress".
+  MEDEA'S CLOSING TAG: line 1 differs in the Greek ("Zeus on Olympus
+  keeps the store of many things,"); lines 2-5 are the Alcestis lock
+  VERBATIM. Same rule for Andromache, Helen, Bacchae: check the Greek's
+  first line, copy the rest.
+Children of Heracles (007): 961 is the CHORUS and 962 the SERVANT
+  (Coleridge misattributes both); the man who brings Eurystheus in is
+  the same Servant. penestes = "one of Hyllus's serfs"; "Zeus who turns
+  the battle"; "grey-eyed Athena"; "the hill of Pallene"; "Hymen, god of
+  weddings"; "the avenging ghost" (prostropaios). Alcmene: "You. Hateful
+  thing."
+PREP NOTES 2026-09-09 (three classifier corrections after batch 1, each
+  found by an agent reporting a marker rather than overriding it):
+  (a) the syllable counter now respects the DIAERESIS (ναΐαν is three
+  syllables), which had made the Messenger's trimeters at Medea 1121-3
+  read as lyric; (b) the lyric rule counts a SHARE of short lines, not a
+  mean, so an antilabe fragment before three trimeters (Alcestis 1119c)
+  no longer drags a spoken speech into verse; (c) KIND_FIX for Medea
+  835-845, the one chorus stanza in nineteen plays whose dactylo-
+  epitrites read as trimeters. Files 002, 004, 005 re-set and re-checked.
+Children of Heracles (006): 73-74 is trimeter and spoken; 75-77 is ONE
+  Chorus speech (crib splits it). tyrannos: "the king of this land"
+  (111) and "the king in Argos" (361) neutral; "a tyrant's power, the
+  way barbarians do" (423) the accusation. "Zeus of the marketplace";
+  "Lady Justice"; Kore -> "Persephone, Demeter's daughter" then
+  "Demeter's daughter" (never "the Maiden" -- banned word). Allusions
+  folded: "the four towns that live here as one people"; "the Amazon
+  queen's belt, the belt that cost so many lives"; "the city of
+  beautiful dances". Acamas is on stage mute; Demophon does NOT exit
+  after 473 (the crib is wrong; he speaks at 567). Chorus to the Herald
+  "stranger"; Iolaus to Demophon "My boy".
+Hippolytus (008): Cypris KEPT, glossed once: "My name is Cypris, the
+  goddess of Cyprus: Aphrodite." "Lady Cypris, queen of the sea" (415 =
+  522). Trozen; "the land of Pandion, Athens"; "the rock of Pallas, on the
+  Acropolis"; "Venetian colts"; Dictynna; "the horse-riding queen, the
+  Amazon". Hippolytus: "I greet her from a distance. I am pure." (102);
+  "As for your Cypris, I bid her a long goodbye." (113); "an untouched
+  meadow" tended by "Modesty". Phaedra: aidos = "shame" in her speech
+  ("There are two kinds of shame..."), "Modesty" in his; do not
+  harmonise. "We know what is right, and we recognise it, and we do not
+  work it out in practice." (380-81). Nurse: "Cypris is not a god after
+  all. She is something greater than a god"; "Stop your outrage...
+  wanting to be stronger than the gods" (473-75); "Have the nerve to
+  love. A god has willed it." (476). Nurse to Phaedra "child"/"mistress";
+  Servant to Hippolytus "my lord"/"boy". Cries this play: "Aiai.",
+  "Pheu, pheu.", "Oh.", "Io moi." Theseus's men are "slaves".
+Hippolytus (009, 010) -- COMPLETE: "My tongue swore the oath. My mind
+  swore nothing." (612); "I hate a clever woman." (640); "Eros, the
+  tyrant of men" (538, the accusation sense); Poseidon is "Father
+  Poseidon"; the letter is "the letter", sealed with "the marks pressed
+  by her gold ring"; nothos = "a bastard" (Theseus's word). 776-787 is
+  the NURSE (Coleridge prints Messenger); 782-785 is one Chorus speech.
+  Theseus's last line: "How many times, Cypris, I will remember what you
+  have done." Artemis's decree: "Girls not yet yoked in marriage will
+  cut their hair for you before their weddings." Paian -> "death the
+  Healer" (000's lock); Dictynna glossed "Artemis of the nets"; Latona
+  -> Leto. "the man the god hates" for dysdaimon. Marker noted, not
+  overridden: Artemis 1283-1312 is one speech, anapaests then trimeters,
+  set whole as verse (the Cassandra precedent).
+CRIB BOUNDARIES DRIFT from the Greek file boundaries by a scene at
+  several seams (the crib is cut by scaled index): 004/005, 008/009,
+  009/010, 006/007. FOLLOW THE GREEK FILE; never translate a crib passage
+  the Greek file does not carry, never skip one it does.
+Andromache (011-013) -- COMPLETE: "Thebe" (her Cilician city); "the
+  Nereid" for Thetis; "Phrygia/Phrygians" kept as their word for Trojans;
+  "the two vultures" (Menelaus and Hermione); "Clever. Very clever. And
+  you are still going to die." (245); "That is the whole barbarian race."
+  (173); Peleus "you worst of men"; "barbarians by birth, ruling Greeks";
+  "Menelaus the general"; Zeus Philios folded "the Zeus who guards the
+  love between husband and wife"; the Symplegades "the Clashing Rocks"
+  (Medea's form); Enyalios "Ares, the master of the spear"; "Apollo,
+  Healer" (Alcestis lock); the Furies "the goddesses with blood in their
+  eyes who hunt me"; Neoptolemus never named by characters ("Achilles's
+  son"); Molossus unnamed, tag "Child.". Closing tag: Greek first line
+  identical to Alcestis, all five lines copied verbatim. Nurse 851-52 is
+  SPOKEN; chorus one-liner trimeters inside the kommos (1203, 1208,
+  1218, 1221) are marked sung and tabbed -- the epirrhematic one-liner
+  compromise, noted, not overridden (the classifier only turns a
+  one-liner spoken inside a run the metre has already decided).
+Hecuba (014): Polymestor is Priam's "guest-friend"; "the Chersonese";
+  Thracians "horse-loving"; Achilles' "prize of honour"; "the tomb of
+  Achilles"; Cassandra "the god-possessed prophetess"; Odysseus "the son
+  of Laertes", the Chorus's "that shifty-minded chatterer, that sweet-
+  talker, that pleaser of crowds"; Polyxena is "my city, my nurse, my
+  walking stick, my guide on the road"; Helen "the daughter of
+  Tyndareus"; "my Zeus, the god of suppliants"; "To be a slave is always
+  an evil thing." (332). Greeks: Hellenes/Danaoi -> "Greeks", Achaioi ->
+  "the Achaeans", Argeioi -> "the Argives"; Trojans "Phrygians" where the
+  Greek has it. Cries this play: "Oh.", "Aiai.", "Io.", "Ah." (pheu).
+  Part 1 ends with Hecuba on the ground; Talthybius finds her there.
+Hecuba (015, 016) -- COMPLETE: Nomos at 799-801 "Law" (capital once);
+  "Persuasion, the one thing that rules human beings absolutely";
+  "Luck herself"; "I was a queen once, and now I am your slave." (809);
+  Alexandros -> Paris ("a cowherd then"); Talthybius "the servant of the
+  Greeks"; Hecuba to Agamemnon "my lord", "Master, greatest light of
+  the Greeks"; "Hecuba, who was queen of Troy once" (484 = 891);
+  Polyxena "a bride who is no bride, a virgin who is no virgin"; "the
+  Thracian"/"my Thracian guest-friend"; "it was the gold that killed my
+  son. The gold, and your profit."; Cynossema: "The Grave of the
+  Miserable Dog. A landmark for sailors."; "the Bacchants of Hades";
+  Clytemnestra unnamed, "the daughter of Tyndareus"; close: "to taste
+  the labour of slaves / under masters. Necessity is hard."
+  MARKERS NOTED: Hecuba 684-692 and 710-712 are dochmiacs inside an
+  "episode" div and stay prose (the classifier's lyric rule needs short
+  lines; dochmiacs are long) -- the Perseus label problem in its
+  residual form, accepted. Polymestor 1127b-28 antilabe tabbed.
+The Suppliants (017-019) -- COMPLETE: tyrannos "king" neutral (166, 399,
+  404, 1189) but Theseus 429ff "tyrant" (the accusation: "There is
+  nothing more hostile to a city than a tyrant"); "This city is not
+  ruled by one man. It is free."; "I made the people the sole ruler
+  here" (352); "the law of all the Greeks"; Theseus 531-6 "the breath to
+  the air, the body to the ground..."; Herald: "And to my mind that is
+  courage: forethought."; Poinai "the Spirits of Vengeance"; Aethra "The
+  god turns everything upside down again" (331); Iphis "Old age, you are
+  a hard wrestler"; "the After-born, the Epigoni"; Eteoclus (not
+  Eteocles) for the Argive captain; Demeter "the goddess who carries the
+  torch"; the setting is "this temple". Coleridge errors NOT followed:
+  1182 duplicated; 1145/1147 given to the Chorus (Greek: Children).
+  Lacuna at 263 supplied plainly, unmarked ("Your mother's father
+  Pittheus was a son of Pelops"). Iphis 1076, a single trimeter inside
+  the lyric, tabbed as marked (the one-liner compromise).
+Electra (020-022) -- COMPLETE: tags Farmer/Electra/Orestes/Chorus/Old
+  Man/Messenger/Clytemnestra/Castor. tyrannos 93 "the tyrants who hold
+  this land" (accusation, Orestes of the usurpers); elsewhere "king".
+  "Aegisthus's", "Thyestes's" possessives. The axe: "With the same axe my
+  father died by" (279) -- the murder keeps "axe". Cassandra unnamed in
+  the Greek (1032), stays unnamed. Castor names himself: "Castor, and
+  this is my brother Polydeuces"; "the sanctuary of Zeus of Mount
+  Lycaeon" (1274; Coleridge wrongly says Apollo). Closing tag is
+  Electra's own: "Goodbye. And whoever among mortals can fare well, / and
+  is not worn down by some blow of fortune, / that is the one who lives a
+  happy life." Pylades is "his shield-mate". ea = "Ah." / "What is this?"
+Heracles (023): "Zeus the Saviour"; Cerberus never named, "the
+  three-bodied dog"; Hydra "the water-snake"; "the Sown Men"; Thebes "the
+  city of seven towers"; Argos "the walls the Cyclopes built"; Eurystheus
+  "the king of Mycenae"; Lycus never "tyrant" in part 1 ("you worst of
+  kings"); Amphitryon 347 "You are a stupid god, or you were born unjust";
+  chapters/ line 129 (eukleestatas) ends mid-phrase -- completed from
+  the crib as "a country whose glory was second to none".
+FILES 024-029 (Heracles 2-3, Trojan Women 1-3, IT 1) WERE WRITTEN BUT
+  THEIR AGENTS HIT THE SESSION RATE LIMIT BEFORE REPORTING (2026-09-10,
+  ~02:10). All six passed check.py on inspection; 025 had ONE dropped
+  line (Heracles 1251, a one-line speech in the stichomythia) which the
+  speaker-parity check caught and which was restored by hand: "Not this
+  much. Not if suffering is measured by any scale." Their locks were
+  not recorded; agents for 030-031 read 029 directly instead.
+Iphigenia among the Taurians (031): "the Unfriendly Sea"; "Artemis
+  Tauropolos, the goddess of the Taurians"; Halae, Brauron; "the hill of
+  Ares"; "Holiness, the goddess" (Hosia); halcyon "sea-kingfisher";
+  Thoas "my lord"; two lacunae bridged plainly, unmarked.
+Iphigenia among the Taurians (029-031) -- COMPLETE: "Nowhere, and
+  everywhere." (568); "A woman is a weak thing." (1006); "the goddesses
+  who are not to be named" (944); "the Feast of Pitchers"; "the dark
+  rocks"/"the Clashing Rocks"; the image is "the statue"/"the goddess's
+  image", "fell from the sky"; Thoas "the king" (neutral) until named.
+Ion (034): "Pallas Athena, and your country is named after me"; "the
+  Long Rocks"; "the cave of Cecrops"; the tribes Geleon (Greek form),
+  Hopletes, Argades, Aegicores; "the cradle", "the basket",
+  "baby-clothes"; tokens "the weaving", gold-snake "necklaces", "a wreath
+  of olive"; Leto not Latona. Interrupted lines rendered with a dash.
+Helen (035): tags Helen/Teucer/Chorus/Menelaus/Old Woman; Theonoe "called
+  Eido as a baby"; Athena "of the Bronze House"; the phantom: "a
+  breathing image, put together out of the sky and made to look like
+  me"; "Not me. My name." (42-43); "Then why am I still alive?" (56 =
+  293, identical); Theoclymenus "hunting me for his wife" (the hunting
+  pun kept); Menelaus 395 "I was no tyrant driving troops by force";
+  164-166 hexameters are their own tabbed speech; the real Helen is
+  hidden "deep in a cave" for part 2's recognition.
+Ion (032-034) -- COMPLETE: the name pun folded: "I name you Ion, to fit
+  what happened: you were the one coming toward me"; "a nobody, and a
+  nobody's son"; "I would rather live as a happy commoner than as a
+  tyrant" (the accusation sense); the bracelet "this gold thing of
+  Athena's, the old work"; "the venom of the Gorgon's snakes"; Hecate
+  unnamed ("Goddess of the crossroads, daughter of Demeter"); Bacchus kept
+  once in the Parnassus stanza. MARKERS NOTED: Creusa's dochmiac
+  fragments inside the epirrhematic scene 763-799 are marked spoken (the
+  Hecuba residual shape).
+Helen (036, 037): eidolon = "phantom" (also "the copy of you", "the image
+  made of cloud", "Hera's holy phantom"); "nothing is stronger than
+  dreadful Necessity" (514); "A name can be in many places at once. A
+  body cannot." (588); "Recognising the people you love is a god too."
+  (560); "I do not have the name of a free man. I have the mind of one."
+  (731); Theonoe addressed "lady"; Helen to Theoclymenus "My lord" from
+  1193 on; the cover story: Menelaus drowned "on the harbourless rocks
+  of Libya", funeral "with empty woven robes" from a boat; Menelaus
+  "one of the Achaeans who sailed with my husband"; Theonoe: "The mind
+  of the dead does not live, but it keeps its judgement, and that is
+  immortal". Menelaus's trimeter one-liners in the duet marked
+  inconsistently (the one-liner compromise); followed.
+Ion (032): refrain "Healer, Healer, / be blessed, be blessed, / son of
+  Leto."; Ion "the god's slave" (309); "Shame is a lazy goddess" (337);
+  "I have shot my arrow, and that is all" (256); "the daughters of
+  Aglaurus"; rape stated plainly ("He rapes girls and then abandons
+  them?"). Part 2 opens inside the trochaic stichomythia at 556.
+Helen (038) -- COMPLETE: closing tag = Alcestis's five lines verbatim
+  (Greek first line identical). Persephone "the girl whose name is not
+  spoken"; Galaneia "the grey-eyed daughter of the Sea, Calm"; Gorgopis
+  "the grim-eyed one, Athena"; the Servant calls Theoclymenus "master";
+  Theonoe "the daughter of Proteus"/"the daughter of the Nereid goddess",
+  never named by Castor. The Bacchae crib is Buckley's 1850 prose, not
+  Coleridge's; same rules.
+Phoenician Women (041): "the Sown Men"; "the seven-towered gates"; "the
+  earth-born dragon", "the dragon's den"; the Sphinx unnamed ("the winged
+  girl", "half a girl"); Menoeceus "a colt still loose", "cut his own
+  throat" from "the top of the battlements"; gates Neistan, Proetid,
+  Ogygian, Homoloid, Crenaean, Electran, "the seventh gate"; Jocasta's
+  last line "If they die, I will lie down dead with them."; cries "Aiai.",
+  "Oh.", "Oh, no." (oi 'go), "Hey." (oe), "Pheu, Earth."
+Phoenician Women (039-042) -- COMPLETE: "Oedipus, the boy with the
+  swollen feet" (glossed once); Oedipus's curse "divide this house
+  between them with sharpened iron" (68); Polyneices "the man of many
+  quarrels" / "Man of Many Quarrels, your name came true" (1493);
+  Eteocles' Tyrannis = "Power, the greatest of the gods"; Jocasta's
+  Philotimia = "Ambition", Isotes = "Equality"; "The words of truth are
+  simple."; "If a man must do wrong, then to do wrong for the sake of
+  power is the finest wrong there is."; the Argive army "the Argives"/
+  "the Danaids", the Thebans "the people of Cadmus"; Sparton (795) is the
+  SOWN MEN (Coleridge: "Spartans", wrong); the Sphinx "the girl who was
+  half a girl"; lacuna 1604-05 bridged plainly. Closing tag: the 031
+  Victory lock verbatim.
+Orestes (045): Talthybius "the man who was with your father when he
+  sacked the Phrygians"; the demagogue "a man with no door on his mouth";
+  the farmer "one of the men who work their own land"; "the land the
+  Cyclopes built" for Argos; Menelaus "was not born bold, and he was not
+  born brave" (1201-02); Hermione "the cub of that unholy father".
+Orestes (044): Tyndareus's refrain verbatim twice, "Leave him to the
+  citizens to be stoned to death, or never set foot on Spartan soil"
+  (536-7 = 625-6); "The wise are slaves to fortune." (716); "Friends who
+  are not friends when the trouble comes have the name of friends and
+  nothing else." (454-5); "get yourself friends, not only relations"
+  (804); Eumenides at 836 rendered "the Furies" (no "Kindly Ones" outside
+  Aeschylus); Delphi "the navel of the earth"; Orestes to Menelaus
+  "Uncle, my father's own brother".
+Orestes (043): Eumenides = "the Kindly Ones" where Electra explains the
+  euphemism (37-38, Chorus 321 "black-skinned Kindly Ones"); Erinyes =
+  "the Furies"; "A house that has run out of luck has run out of
+  everything." (70); "Understanding. I understand what I have done, and
+  it was terrible." (396); "We are slaves to the gods. Whatever the gods
+  are." (418); Helen vain and literal, calls Electra "girl"/"child"; the
+  bow at 268 is imaginary.
+Orestes (046) -- COMPLETE: closing tag = the 031 Victory lock verbatim
+  after Apollo's own sung tag; Eumenides "the three Kindly Ones, the
+  Furies"; "the hill of Ares"; "Pelasgian Argos"; the eunuch joke flat:
+  "You were not born a woman, and you do not count among men either.";
+  Linus-cry "Ailinon, ailinon: that is how the barbarians begin a death".
+The Bacchae (047): Bromius glossed once ("Bromius, the Roarer, / which is
+  one of the names of Dionysus"), then Dionysus everywhere; "Bacchants",
+  "Maenads", "thyrsus" (glossed once as "the ivy-tipped wand that is my
+  weapon"), "fawnskin", "the company" (thiasos), cry "Euoi."; puns folded:
+  homeros/meros; "His name means grief." (Pentheus); Cybele "the Great
+  Mother"; Pentheus to Cadmus "Father"/"grandfather"; part 2 opens
+  mid-stichomythia at 483.
+The Bacchae (047-049) -- COMPLETE: closing tag = the Alcestis lock
+  verbatim (Greek first line identical). "Second Messenger." is required
+  by check.py for Angelos B. Justice refrain identical in both stanzas.
+  "It is me, mother. I am your son. Pentheus."; "and the victory she wins
+  in his service is tears."; Echion's son / "one of the Sown Men"; the
+  lacuna after 1329 bridged plainly and unmarked.
+Rhesus (055): the password is "Apollo" (780) and part 2 must match it;
+  Adrasteia KEPT (glossed once "who punishes a boast"); the Euxine is
+  "the Friendly Sea" (the deliberate mirror of IT's "the Unfriendly
+  Sea"); Rhesus "the colt of Strymon and of the singing Muse"; Dolon's
+  name folded ("Your name is a word for a trick, Dolon, and it fits
+  you."); tyrannos neutral throughout; cries "Io, io."; the herdsman is
+  tagged "Shepherd." once (420) and "Messenger." thereafter, which is
+  what the Greek does and what check.py wants.
+Iphigenia at Aulis (050-052) -- COMPLETE: "Aulis, where no wave comes";
+  the tablet is "the tablet"/"the letters"; Achilles "is lending a name,
+  not a deed" (echoed by Clytemnestra's "Your name destroyed me");
+  Odysseus is "the seed of Sisyphus" where the periphrasis is the point;
+  Argos "the walls the Cyclopes built"; the transmitted order stands
+  (the prologue speech 49-114 precedes the anapaests 1-48). Cries
+  "Aiai.", "Io, io.", "Oh.", "Ah.", plus 051's "Papai." and "Pheu."
+
+--------------------------------------------------------------------
+COMPLETE 2026-09-10. 57 files, 148,719 Greek words (155,904 with prep's
+scaffolding) -> 258,872 English, ratio 1.66; per file 1.56-1.75.
+check.py band 1.40-1.90 stands; verify --min-ratio 1.35 --max-ratio
+1.90. must_contain.txt: 35 pins, every one grepped in the finished text
+before being written (the epictetus rule). THE COLLECTION'S LARGEST
+FROM-THE-GREEK VOLUME and its third-largest book after Don Quixote and
+Plato's Dialogues.
+--------------------------------------------------------------------
+- THE CLASSIFIER'S RESIDUAL, recorded because it recurs and was accepted
+  rather than fixed: DOCHMIACS ARE LONG LINES. The lyric rule needs a
+  majority of lines under eleven syllables, and a dochmiac stretch
+  inside an "episode" div (Hecuba 684-692, Ion 763-799, Phoenician
+  Women 293-300, Orestes 1295-1300) does not meet it, so those passages
+  are set as prose. Four agents reported it independently, which is what
+  makes it a known residual and not a surprise. Fixing it would need a
+  second metrical signal (dochmiac has a characteristic shape, not a
+  characteristic length); not attempted.
+- THE ONE-LINER COMPROMISE, likewise accepted: a trimeter one-liner
+  inside a choral lyric is tabbed as verse unless the run around it has
+  already been decided spoken. Reported by the Andromache, Ion, Helen,
+  Orestes and Suppliants agents. It reads well and keeps the exchange
+  visually one thing.
+- FOUR AGENTS' FILES SURVIVED THEIR OWN DEATH (2026-09-10): a credit
+  exhaustion killed eight agents mid-batch, and 051-054 had already
+  written their files and passed check.py before the API call that
+  reported home failed. The other four were relaunched from scratch. A
+  failed agent is not evidence of a missing file: LOOK AT THE DIRECTORY.
+Rhesus (056) -- COMPLETE, and it found A GENERAL TRAP worth keeping:
+  A ONE-WORD ANSWER THAT IS A CHARACTER'S NAME IS A PHANTOM SPEAKER TAG.
+  The password is "Apollo", and "Apollo." alone on a line is both a hit
+  for the phantom-tag grep AND a member of check.py's closed NAMES set,
+  so it would have been counted as a speech by the god. Give any such
+  password, oath or one-word reply a carrier sentence: "The word is
+  Apollo." Applies to any play whose cast shares a name with a thing
+  people say.
+  Also: the Muse's curse names Diomedes and Odysseus alongside their
+  patronymics ("Curse Diomedes, who came out of Oeneus's house"),
+  because a curse is unusable if the reader cannot tell who is cursed;
+  bare patronymics stand elsewhere. "the girls of the springs" for the
+  Parthenoi (never "the Maidens" -- banned word).
+KNOWN INCONSISTENCY, RECORDED RATHER THAN FORCED: an interrupted or
+  shared line (antilabe) is written with a trailing dash in about 70
+  places and simply broken off in about 26. Both read correctly and `se
+  lint` raises only Manual Review items for them (y-003 "paragraph
+  missing ending punctuation", t-029 "period followed by lowercase
+  letter" where a speech resumes another's sentence in lower case, as
+  sun-tzu's t-057). Not harmonised: the two cases are genuinely
+  different (a sentence CUT OFF versus one COMPLETED by the next
+  speaker), and a blanket sweep would have to decide which is which.
+TITLE-CASE FIX: "Iphigenia Among the Taurians" (se lint s-023). The
+  collection's own house style capitalises a five-letter preposition
+  (Twenty Thousand Leagues Under the Sea), so the lint is right here and
+  is NOT the star-land/Stand-fast case of a real name being flagged.
