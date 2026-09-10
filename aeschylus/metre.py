@@ -24,15 +24,21 @@ import os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import prep
 V=set("αεηιουωᾳῃῳ")
 def strip(s):
+    # keep the iota subscript (a vowel) and the DIAERESIS (U+0308), which
+    # marks that two adjacent vowels are NOT a diphthong: "naian" with the
+    # mark is three syllables, without it two, and the undercount made the
+    # Messenger's trimeters at Medea 1121-1123 read as lyric.
     s=unicodedata.normalize('NFD',s)
-    return ''.join(c for c in s if not unicodedata.combining(c) or c in 'ͅ').lower()  # keep iota subscript
+    return ''.join(c for c in s if not unicodedata.combining(c) or c in 'ͅ\u0308').lower()
 DIPH={"αι","ει","οι","υι","αυ","ευ","ου","ηυ","ωυ"}
 def syl(line):
-    s=strip(line); s=re.sub(r"[^α-ῳ ]"," ",s)
+    s=strip(line); s=re.sub(r"[^α-ῳ \u0308]"," ",s)
     n=0; i=0; s=s.replace(" ","")
     while i<len(s):
         if s[i] in V or s[i]=='ͅ':
-            if i+1<len(s) and s[i:i+2] in DIPH: i+=2
+            if (i+1<len(s) and s[i:i+2] in DIPH
+                    and not (i+2<len(s) and s[i+2]=='\u0308')):
+                i+=2
             else: i+=1
             n+=1
         else: i+=1
