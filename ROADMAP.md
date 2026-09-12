@@ -551,7 +551,50 @@ result is the warning: the stuffy-looking one was fine.
 
 ## Further afield (needs stronger crib scaffolding — different
 translation-risk class; caveat prominently in front matter)
-- Tao Te Ching; Analects (Legge as crib)
+
+MEASURED 2026-09-11 (Alex asked about Confucius, Lao Tzu and the Buddha).
+The archaism probe says all three are clean and the archaism probe is
+WRONG about them, which is the epictetus trap exactly: they are class 3,
+technical calque. Measured with screen.py plus a per-book count of the
+calqued terms:
+
+    Legge, Analects (#3330)        arch 0.06  calq 16.4  terms 25.4/1000
+    Giles, Sayings of Confucius    arch 0.78  calq 22.7
+    Legge, Tao Teh King (#216)     arch 0.78  calq 23.3  terms 16.1/1000
+    Müller, Dhammapada (#2017)     arch 6.72  calq 10.4  terms 18.5/1000
+    Sujato, Majjhima (CC0)         arch 0.00  calq 17.3
+
+  "terms" counts the actual calqued vocabulary per 1,000 words, the
+  epictetus method; Long's Epictetus scored 4.99 there and was judged
+  decisive. Legge's Analects is 25.4 (11.0 with the "The Master said"
+  formula discounted), and every one of them is a transparent English
+  word doing duty as a term of art: ren is "perfect virtue", junzi is
+  "the superior man", li is "the rules of propriety".
+
+- Analects — THE STRONGEST OF THE THREE. The reader is genuinely stuck:
+  every free modern English Analects (Eno 2015, A. C. Muller) reserves
+  copyright and is non-commercial, so a redistributable modern one does
+  not exist. The CHINESE is on Gutenberg (#23839), so this is the
+  ovid/de-officiis shape (original + public-domain crib), not the
+  dogen no-crib risk class.
+- Tao Te Ching — same case, and the Chinese is on Gutenberg (#7337), but
+  it is tiny (~5,000 characters) and would want a companion; Legge's
+  Texts of Taoism carries Zhuangzi too. His prose is a crib rather than
+  a book: "Hence those who pursue (the course) of the Tao do not adopt
+  and allow them."
+- THE BUDDHA — LEAVE ALONE, and the reason is worth keeping. Bhikkhu
+  Sujato's translation of the four Pali Nikāyas is released CC0, fully
+  public domain, in plain modern English ("At one time the Buddha was
+  staying near Ukkaṭṭhā in the Subhaga Forest at the root of a
+  magnificent sal tree"), and measures arch 0.00. Müller's Dhammapada
+  is the archaic one and renders papa as "sin" and dhamma as "the law",
+  importing a theology the text does not have — but NOBODY IS STUCK
+  WITH MÜLLER. The Jacobs/Ralston/Zitkala-Ša rule applies: if a book is
+  already good and modern and free, leave it alone. This is the
+  odyssey/Butler lesson in reverse — there a clean score hid a
+  translator who had thrown the poem away; here the clean score is real.
+- Bhagavad Gita — NOT measured; the same question should be asked of it
+  (is there a free modern one?) before it is planned.
 - Sun Tzu — The Art of War (Giles as crib)
 - 1001 Nights, selected (Burton/Lane as cribs)
 - Bhagavad Gita

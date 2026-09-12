@@ -242,8 +242,16 @@ def sweep(book, verbose=False):
         # (work title, author line) has none, and "Contents" is furniture,
         # not a section — counting those made every book on the shelf look
         # two or three sections adrift.
+        # FURNITURE, NOT SECTIONS: "Contents" and the editor's
+        # introduction both carry an id and neither is in the manifest.
+        # Leaving the introduction in would be absorbed by the +/-1
+        # tolerance below rather than reported -- which would spend the
+        # whole slack and leave every book with an introduction unable to
+        # report a real off-by-one (the nights lesson: a check that
+        # cannot fire is worse than none, because it counts as coverage).
+        furniture = {"contents", assemble.INTRO_ID}
         ided = re.findall(r'<h[23][^>]*\sid="([^"]+)"', page)
-        headings = len([i for i in ided if i != "contents"])
+        headings = len([i for i in ided if i not in furniture])
         dividers = sum(1 for m in manifest if m.get("part_before"))
         linked = len([i for i in re.findall(r'href="#([^"]+)"', page)
                       if i != "contents"])

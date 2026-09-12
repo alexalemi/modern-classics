@@ -395,6 +395,53 @@ def render_body(text, figdir=None, site=None, bare_label=False):
     return "\n".join(out)
 
 
+INTRO_HEADING = "Editor's Introduction"
+INTRO_ID = "editors-introduction"
+
+
+def read_introduction(book):
+    """The editor's introduction for this book, or None.
+
+    NEW WRITING, and it lives at the book root rather than in
+    modern_chapters/ ON PURPOSE: everything in that directory is compared
+    against chapters/ by verify.py's word ratio and by the book's own
+    check.py, so editorial matter dropped in there would read as a
+    translation that had grown a few hundred words from nowhere.
+
+    The file carries NO heading line of its own -- unlike a chapter file,
+    where strip_front() takes the first line as the heading. The heading
+    is supplied here, and it is "Editor's Introduction" and not
+    "Introduction" because ten books in the collection have an
+    Introduction the AUTHOR wrote (Wollstonecraft's, Leviathan's,
+    Carroll's, Hobbes'), and in the epub build a slug collision would
+    quietly rename theirs.
+    """
+    path = book / "introduction.txt"
+    if not path.exists():
+        return None
+    text = path.read_text().strip("\n").rstrip()
+    return text or None
+
+
+def render_introduction(book, original=False):
+    """The introduction, rendered for the MODERN page only.
+
+    NOT on the --original companion page. The introduction's last
+    paragraph says what THIS EDITION did -- "translated here in full",
+    "nine bracketed notes have been added", "set as prose" -- and every
+    one of those sentences is false of the source text sitting on the
+    companion page. One artifact, two contexts, true in only one of
+    them. The companion page already links to the modern one.
+    """
+    if original:
+        return ""
+    text = read_introduction(book)
+    if text is None:
+        return ""
+    return (f'\n\t<hr>\n<h2 id="{INTRO_ID}">{html.escape(INTRO_HEADING)}</h2>\n'
+            f'{render_body(text)}\n')
+
+
 def strip_front(lines, expect_heading):
     """Drop leading blanks, part dividers, the chapter heading, and part
     markers; return (heading_found, remaining_text).
@@ -643,6 +690,7 @@ def main():
         "{{DATE_LINE}}": date_line,
         "{{SUBTITLE_BLOCK}}": subtitle_block,
         "{{INTRO}}": intro,
+        "{{INTRODUCTION}}": render_introduction(book, args.original),
         "{{TOC}}": build_toc(sections),
         "{{BODY}}": build_body(sections, env.get("FIGURE_DIR"), root / "site",
                                bare_label=args.original),

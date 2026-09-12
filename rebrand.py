@@ -19,7 +19,7 @@ def esc(s):
 
 
 def apply(dest, env, meta, spine, original=False):
-    _content_opf(dest, env, meta, original)
+    _content_opf(dest, env, meta, spine, original)
     pn = dest / "production-notes.md"
     if pn.exists() and not pn.read_text().strip():
         pn.unlink()
@@ -31,7 +31,7 @@ def apply(dest, env, meta, spine, original=False):
         logo.unlink()
 
 
-def _content_opf(dest, env, meta, original=False):
+def _content_opf(dest, env, meta, spine=(), original=False):
     p = dest / "src/epub/content.opf"
     t = p.read_text()
     book = meta["dir"]
@@ -155,8 +155,18 @@ def _content_opf(dest, env, meta, original=False):
     # An illustrated book also needs a "writer of alt text" credit, or se lint
     # rejects it with m-040 — the figure captions and alt text are written
     # here too. Roles stay in alphabetical order (trl, tyg, wat).
+    # The editor's introduction has a writer, and `se lint` m-030 asks who:
+    # an "introduction" semantic with no `win` relator. Same hand as the
+    # retelling, so it goes on producer-1 beside trl. THE SIGNAL IS THE
+    # SPINE, not a second copy of "does this book have an introduction"
+    # -- a fact held in two places eventually disagrees and nothing
+    # notices (the descartes lesson).
     extra = ('\n\t\t<meta property="role" refines="#producer-1" scheme="marc:relators">wat</meta>'
              if env.get("FIGURE_DIR") and not has_role("wat", "producer-1") else "")
+    if any(f == "editors-introduction.xhtml" for f in spine) \
+            and not has_role("win", "producer-1"):
+        extra += ('\n\t\t<meta property="role" refines="#producer-1" '
+                  'scheme="marc:relators">win</meta>')
     if not has_role("trl", "producer-1"):
         t = t.replace('<meta property="role" refines="#producer-1" scheme="marc:relators">tyg</meta>',
                       '<meta property="role" refines="#producer-1" scheme="marc:relators">trl</meta>\n'

@@ -476,6 +476,33 @@ def build_chapter_files(book, sections, meta, textdir):
     return spine, matters
 
 
+INTRO_FILE = "editors-introduction.xhtml"
+
+
+def build_introduction_file(book, meta, textdir):
+    """Write the editor's introduction as the epub's first frontmatter
+    section; return its filename, or None if the book has none.
+
+    NOT routed through build_chapter_files and FRONT_BACK_TYPES, which
+    would need "introduction" added to FRONTMATTER -- and that would move
+    the ten AUTHOR-written Introductions already in the collection out of
+    bodymatter, changing shipped epubs that are correct as they are. The
+    slug is distinct from "introduction" for the same reason.
+    """
+    text = assemble.read_introduction(book)
+    if text is None:
+        return None
+    fic = "z3998:fiction" if meta.get("fiction") else "z3998:non-fiction"
+    head = (XHTML_HEAD.format(title=esc(assemble.INTRO_HEADING), fic=fic)
+            .replace('epub:type="bodymatter', 'epub:type="frontmatter'))
+    xml = (head
+           + f'\t\t<section id="{assemble.INTRO_ID}" epub:type="introduction">\n'
+           + f'\t\t\t<h2 epub:type="title">{esc(assemble.INTRO_HEADING)}</h2>\n'
+           + render_body(text) + "\n\t\t</section>\n\t</body>\n</html>\n")
+    (textdir / INTRO_FILE).write_text(xml)
+    return INTRO_FILE
+
+
 def commons_url(title):
     import urllib.request, urllib.parse, time
     q = urllib.parse.quote(title)
@@ -703,9 +730,21 @@ def main():
         old.unlink()
     for old in list(textdir.glob("part-*.xhtml")) + list(textdir.glob("body.xhtml")):
         old.unlink()
+    # THE SE DRAFT IS REUSED BETWEEN RUNS: a step that writes a set of
+    # files without owning the set ships something stale eventually (the
+    # copy_figures lesson). Drop the introduction and let it be rewritten.
+    if (textdir / INTRO_FILE).exists():
+        (textdir / INTRO_FILE).unlink()
 
     sections = load_sections(book, original=args.original)
     spine, matters = build_chapter_files(book, sections, meta, textdir)
+
+    # The editor's introduction leads the frontmatter, so it sits before
+    # the half title page the block below inserts at the first bodymatter.
+    intro_file = build_introduction_file(book, meta, textdir)
+    if intro_file:
+        spine.insert(0, intro_file)
+        matters.insert(0, "frontmatter")
 
     # SE requires a half title page when the book has frontmatter
     if "frontmatter" in matters:
