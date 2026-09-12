@@ -741,7 +741,15 @@ def main():
 
     # The editor's introduction leads the frontmatter, so it sits before
     # the half title page the block below inserts at the first bodymatter.
-    intro_file = build_introduction_file(book, meta, textdir)
+    # NEVER on the --original companion edition: the introduction's last
+    # paragraph says what THIS EDITION did -- "set as prose", "translated
+    # here in full" -- and every one of those sentences is false of the
+    # source text the companion reproduces. Same rule as
+    # assemble.render_introduction. The shipped companion epubs predate
+    # the introductions and are correct; this is what keeps them correct
+    # when one is next rebuilt.
+    intro_file = None if args.original else \
+        build_introduction_file(book, meta, textdir)
     if intro_file:
         spine.insert(0, intro_file)
         matters.insert(0, "frontmatter")

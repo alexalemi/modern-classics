@@ -162,6 +162,14 @@ FOUR THINGS THAT ARE LOAD-BEARING AND NOT OBVIOUS:
    `se lint` m-030 also asks who wrote an `introduction` semantic, so
    rebrand.py adds the `win` relator to producer-1 beside `trl`, keyed
    off the SPINE rather than off a second copy of the fact.
+   THE EPUB HALF OF THAT RULE WAS A LATENT BUG FOR A WHILE:
+   assemble.render_introduction was gated on `original` from the start,
+   but build_ebook called build_introduction_file unconditionally, so a
+   companion edition would have GAINED an introduction the next time one
+   was rebuilt. Nothing had rebuilt one yet, so nothing showed it -- it
+   was found by verifying the shipped companion epubs rather than by
+   trusting that the page rule covered both renderers. When a rule spans
+   two renderers, check that BOTH were taught it.
 5. THE ONE DEFECT NO CHECK CAN SEE IS A WELL-WRITTEN WRONG FACT. An
    introduction that says Boccaccio was in Naples during the plague
    renders perfectly, passes every mechanical test, and misinforms every
