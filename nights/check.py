@@ -9,7 +9,7 @@ WRONG, which is the class every book since tyndall/ has actually shipped.
 This is the euclid-rivals/check.py pattern applied to what THIS book has
 that the shared tools do not know about.
 
-  1. THE NIGHT-BREAK PARITY. The 147 night-breaks are the frame's whole
+  1. THE NIGHT-BREAK PARITY. The 161 night-breaks are the frame's whole
      mechanism, not filler, and a translation can drop one without moving
      the word ratio by a measurable amount. Every source break must have a
      modern break, and the spelled-out night NUMBERS must match as a

@@ -732,8 +732,14 @@ Silvanus P. Thompson's Light Visible and Invisible (thompson/ — the
 FIFTH and last of the RI Christmas Lecture set after soap-bubbles/,
 candle/, forces/, fleming/ and ball/). 30 files, ~69k words, 127
 plates, ratio 0.96 (verify --min-ratio 0.85 --max-ratio 1.3). Given
-thirteen months after Röntgen announced the X-ray; Lecture Six is
-about nothing else and quotes the discoverer's own interview.
+TWELVE months after Röntgen announced the X-ray -- his paper was read
+to the Würzburg Physical-Medical Society on 28 December 1895 and this
+course opened on 29 December 1896. (This file said "thirteen months"
+until 2026-09-12, and the editor's introduction inherited it: the
+introduction stated BOTH dates and the interval in one sentence, so it
+contradicted itself in plain sight. A derived number written beside
+the dates it is derived from is worth arithmetic, not trust.) Lecture
+Six is about nothing else and quotes the discoverer's own interview.
 
 THE PROJECT'S FIRST OCR SOURCE — no Gutenberg, no Standard Ebooks.
 Archive.org's `lightvisibleinvi00thomrich` (text + plates; `…uoft` as
