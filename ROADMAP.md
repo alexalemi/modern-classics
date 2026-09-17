@@ -764,3 +764,94 @@ were recoverable in August 2026 only because the source was SE.
 A COVERAGE FACT, stated plainly: all 60 books have male authors (the
 Nights is anonymous). Wollstonecraft measures as blocked on the same
 axis as Darwin and George, and is on SE.
+
+## A SECOND STRAND: RESTORED EDITIONS (Alex, 2026-09-17)
+
+Some books do not need modernizing and do need an edition. Alex's
+ruling, after the Worthington screening below came back cleaner than
+anything on the shelf: "start making a second page of books we just give
+some TLC and put into standard books quality, original prose but
+improved markup and a nice ebook edition and web edition."
+
+So the collection gets a second kind of volume. THE PROSE IS THE
+AUTHOR'S, UNCHANGED. The contribution is the apparatus: proper markup,
+a caption and alt text for every plate, a real epub, a readable page, and
+an editor's introduction. It is the soap-bubbles caption rule ("captions
+are new writing... the single biggest improvement over the original")
+promoted from a side-effect to the whole point.
+
+THE MECHANISM IS NEARLY FREE, and the reason is worth stating. If
+modern_chapters/ holds the original prose, verify.py's word ratio -- the
+project's loosest check -- becomes its TIGHTEST: the ratio should be
+1.00 exactly, and any file that drifts has been edited when it should
+not have been. verify.FIGURE strips a marker and its caption from the
+word counts, so new captions do not disturb it. A check that was a broad
+band for a retelling is an equality test for a restoration.
+
+### A. M. Worthington, A Study of Splashes (1908) -- FIRST CANDIDATE
+
+Gutenberg #39831 (complete, with plates) and a second scan at
+Archive.org `studyofsplashes00wortrich`, the same path pattern thompson/
+used. 18,874 words, 11 chapters and a preface. The companion is #27125,
+The Splash of a Drop (1895), 9,846 words and 30 plates -- the popular
+lecture version; the 1963 Dover reprint prints the two together, which
+is precedent for pairing them.
+
+WHY IT IS NOT A RETELLING. Screened 2026-09-17 with screen.py:
+    A Study of Splashes    arch 0.00   calq 25.4   sent 17.6   16% >35
+    The Splash of a Drop   arch 0.00   calq 34.7   sent 23.3   20% >35
+against the class-3 books actually taken on (Hume calq 49.1, Burke 39.7,
+Spinoza 38.6, Mill 34.6) and against Jacobs, STRUCK at arch 0.90 for
+being too clean. Worthington is cleaner than all of them, and reading
+confirms it -- even the most technical chapter is plain. The odyssey
+rule does not rescue it either: that one applies when a TRANSLATOR threw
+something away, and this is the author's own English.
+
+WHY IT IS WORTH AN EDITION. 218 plates against 18,874 words -- about 86
+words a plate, the most illustrated book in the collection (tyndall has
+187) and the shortest. Every caption in the source is a lab record ("3
+0·002 sec.") and EVERY SINGLE alt ATTRIBUTE IS EMPTY. 218 photographs
+and diagrams with no descriptive text at all.
+
+PLATE TAXONOMY, and the first lesson is the old one. The filename does
+not tell you what the plate is:
+  - 191 `photo-*` files, the instantaneous photographs;
+  - `fig-a-f.jpg` and `fig-b-f.jpg` are PHOTOGRAPHS despite the name
+    (a cavity beside a millimetre scale) -- found by opening them;
+  - `plate-i.png` is a LINE DIAGRAM of the apparatus despite sitting
+    among the photographic plates, and `plate-ii-f.jpg` is a photograph;
+  - `fig-15a/15b` are diagrams stored as JPEG, and fig-15 has no PNG,
+    which is why the PNG sequence runs 1-14, 16-20 with a hole at 15.
+THE BOOK'S OWN COUNT DOES NOT RECONCILE: the title page says "WITH 197
+ILLUSTRATIONS FROM INSTANTANEOUS PHOTOGRAPHS" and the source carries
+194 photographs by the above taxonomy. There is NO list of illustrations
+to arbitrate -- the front matter has a chapter contents and nothing
+else. Where I looked: the Gutenberg HTML, the plain text, the contents.
+Resolving it needs the Archive.org scan, and it must be resolved before
+publishing, because a dropped plate is this book's silent defect (the
+grimm rule: the book's own count is the one witness the pipeline did not
+produce).
+
+FOUR TRAPS ALREADY IDENTIFIED, all with existing rulings:
+  1. Every photograph exists twice, `-f` full and `-t` thumbnail, and the
+     HTML shows the thumbnail and links the full. Ship the `-f` ONLY --
+     thompson's stale-set bug doubled an epub to 51 MB exactly this way.
+  2. Figures 15a and 15b appear in the HTML in REVERSED order (15b
+     first), the symbolic-logic floated-diagram trap; read in source
+     order the captions would swap.
+  3. 197 mid-height decimal points (0·002 sec.), pillow-problems'
+     ruling -- and here they are ALL measured values.
+  4. 22 PNGs will trip `se lint` f-019 where they have no transparency,
+     candle's fix (convert those to JPEG).
+
+THE ID SCHEME IS THE ONE REAL DESIGN PROBLEM. assemble.figure_label
+renders "Figure N" from an id's digits, and Worthington has no single
+figure sequence: Figs. 1-20 are line diagrams, while the photographs run
+in SERIES with a per-series number and an elapsed time. The documented
+behaviour to use is that AN ID WITH NO DIGITS GETS NO LABEL AND ITS
+CAPTION STANDS ALONE -- so the diagrams keep numeric ids ("15a" renders
+"Figure 15a" correctly) and every photograph takes a digit-free id with
+the real label inside its caption ("Series II, 3 -- 0·002 sec. ..."),
+which is what a reader wants to read anyway. Pin the id -> source
+filename map in prep.py and assert it, or a later prep re-run silently
+renumbers 194 plates out from under 194 written captions.
