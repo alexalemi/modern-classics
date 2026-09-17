@@ -188,6 +188,28 @@ def inline(el):
     return "".join(out)
 
 
+def emph_safe(text):
+    """Remove every asterisk assemble.EMPH would not render.
+
+    An italic letter glued to a number ("Figs. 20<i>a</i>") cannot be
+    emphasis -- EMPH refuses a delimiter after a word character -- and a
+    test made inside a nested tag cannot see the digit before it. So ask
+    the renderer instead of approximating it: keep the spans EMPH matches,
+    drop any asterisk left over. 16 of them shipped on the first
+    Worthington page before this existed.
+    """
+    import sys as _s
+    _s.path.insert(0, str(ROOT))
+    import assemble
+    keep = []
+
+    def hold(m):
+        keep.append(m.group(0))
+        return f"\x00{len(keep) - 1}\x00"
+    held = assemble.EMPH.sub(hold, text).replace("*", "")
+    return re.sub(r"\x00(\d+)\x00", lambda m: keep[int(m.group(1))], held)
+
+
 def clean(s):
     return re.sub(r"\s+", " ", s.replace(" ", " ")).strip()
 
@@ -336,10 +358,10 @@ def walk(nodes, book, stream):
             continue
         if "footnotes" in cls:
             for fn in el.find_all("div", class_="footnote"):
-                stream.append(("P", "Footnote " + clean(inline(fn))))
+                stream.append(("P", emph_safe("Footnote " + clean(inline(fn)))))
             continue
         if el.name == "p":
-            t = clean(inline(el))
+            t = emph_safe(clean(inline(el)))
             if t:
                 stream.append(("P", t))
             continue
@@ -349,7 +371,7 @@ def walk(nodes, book, stream):
         if el.name in ("br", "img"):
             continue
         if el.name in ("small", "i", "b", "em", "strong", "sup", "sub"):
-            t = clean(inline(el))
+            t = emph_safe(clean(inline(el)))
             if t:
                 stream.append(("P", t))
             continue
@@ -550,6 +572,14 @@ def main():
             if line.strip() and not line.startswith("#"):
                 pid, _, desc = line.partition("\t")
                 captions[pid.strip()] = desc.strip()
+    if (HERE / "captions").is_dir():
+        for f in sorted((HERE / "captions").glob("*.txt")):
+            for line in f.read_text().splitlines():
+                if line.strip() and not line.startswith("#"):
+                    k, _, v = line.partition("\t")
+                    if k.strip() in captions:
+                        raise SystemExit(f"{f.name}: {k.strip()} captioned twice")
+                    captions[k.strip()] = v.strip()
     for d in ("chapters", "modern_chapters"):
         (HERE / d).mkdir(exist_ok=True)
         for f in (HERE / d).glob("*.txt"):
