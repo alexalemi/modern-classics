@@ -181,6 +181,77 @@ FOUR THINGS THAT ARE LOAD-BEARING AND NOT OBVIOUS:
    round it up. The reports from the writing pass are worth keeping for
    exactly that reason: they record what was deliberately omitted.
 
+### 7. Restored Editions — books that need an edition, not a retelling
+
+Alex's ruling of 2026-09-17, after A. M. Worthington's A Study of Splashes
+screened cleaner than any book the project had modernised (arch 0.00,
+calq 25.4, against Jacobs struck at 0.90): "books we just give some TLC
+and put into standard books quality, original prose but improved markup
+and a nice ebook edition and web edition." They live on their own page,
+site/restored.html, built by build_restored.py from env and never from a
+hand-kept list.
+
+THE PROSE IS THE AUTHOR'S, UNCHANGED. What a restored edition adds is the
+apparatus: a caption and alt text for every plate, proper markup, an
+editor's introduction, a real epub. Two shapes:
+  COMPANION  a retelling's `--original` page (ORIGINAL_TEXT=yes): the seven
+             Royal Institution volumes. Their 653 captions ALREADY EXISTED
+             in modern_chapters/, and assemble.caption_map / fill_captions
+             lift them onto the source's bare markers. Fill where empty,
+             never overwrite: Ball captioned 93 of his 94 plates himself and
+             those are his text.
+  NATIVE     no retelling at all (EDITION=restored): worthington/, aesop/,
+             irish-fairy-tales/. The page says "restored edition"; the epub
+             drops "retold" and the `trl` role.
+
+MODERN_CHAPTERS/ IS COMPOSED, NEVER TYPED. prep.py writes chapters/ with
+bare markers and modern_chapters/ as the same files with each marker
+filled from plates.json (the label the book printed) and captions/*.txt
+(what this edition writes, see CAPTIONS.md). Nobody retypes the prose, so
+verify.py's word ratio -- the loosest check in the project -- becomes an
+EQUALITY TEST that holds at 1.00 by construction.
+
+AND THEREFORE THE RATIO CAN SEE NOTHING THAT PREP GOT WRONG, because both
+directories come from the same prep. Aesop's first prep dropped 357 words
+of "The Miller, His Son, and Their Ass" (loose text inside Gutenberg's
+pg_body_wrapper divs) and verified at 1.00. The only defence is a SECOND
+READING THAT SHARES NO CODE WITH THE WALKER (the epictetus rule): aesop/
+prep.py now counts the raw HTML's words against what it emitted.
+
+PLATE IDS ARE PINNED AND THE PIN IS AUTHORITATIVE. Captions are keyed by
+id; ids were first assigned in document order; so an ORDER_FIX must move a
+plate without renumbering it, or every caption after the move describes
+its neighbour. Once plates.json exists, an id follows its source plate.
+Unnumbered plates get digit-free ids ('aa', 'ab') so assemble.figure_label
+cannot print "Figure 12" over a photograph the book calls "Series II, 3".
+
+THE CAPTION PASS IS THE BEST PLATE AUDIT THIS PROJECT HAS. Every batch
+agent opened every plate and reported what did not match, and between them
+they found: Worthington labels given the whole row of a table ("1 2 T = 0 3
+0·002 sec. ..."); a page-reference link stripped out of a label; 21 Aesop
+plates one fable too late (the <hr> is the fable boundary, not "has text
+been emitted yet"); Aesop's lost Miller text; Fig. 5 a photograph, not a
+diagram; the lecture's "photographs" mostly engravings and drawings; the
+page-55 order 1, 2a, 3, 2. REPORT, DON'T FIX is the standing instruction,
+and every one of these was fixed in prep, not in a caption.
+
+WHEN TWO WITNESSES DISAGREE, GO TO THE PAGE. Irish Fairy Tales' captions
+came from an OCR list and were checked against Stephens' own prose, which
+caught "Guillen" for Cuillen and a welded "con-tinuous" in the source. But
+one printed caption genuinely departs from the sentence it quotes ("all
+the worlds"), and only the scanned page image settled it. Worthington's
+two out-of-sequence times (0·014, 0·285) were likewise checked on the scan
+and are his own misprints, so they stand.
+
+EMPHASIS IS ASKED OF THE RENDERER. emph_safe() keeps exactly the spans
+assemble.EMPH will render and removes every other asterisk. The first
+Worthington page shipped 16 literal asterisks from italic letters glued to
+numbers ("Figs. 20*a*").
+
+Covers come from the books' own plates where Commons has nothing large
+enough (build/covers/{book}.jpg with a placeholder `commons` name and a
+cover_note -- the kenzeiki precedent).
+
 ## Translation Philosophy
 
 The translator persona is: an expert scholar who has studied this work their
@@ -227,6 +298,9 @@ What to preserve:
 - `splitter.py` — source text → `chapters/` + `manifest.json` (heading-regex
   or legacy splits-file mode; Gutenberg stripping; oversize auto-split)
 - `verify.py` — mechanical completeness/consistency checks before assembly
+- `build_restored.py` — site/restored.html, the Restored Editions page,
+  derived from env (ORIGINAL_TEXT companions, EDITION=restored natives).
+- `CAPTIONS.md` — the captioning spec for restored editions.
 - `check_introductions.py` — the editor's introductions: word band,
   banned-phrase list, markup conventions, agreement with the renderer
   (is_subheading and EMPH are asked themselves), and that the author is

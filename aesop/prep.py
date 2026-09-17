@@ -193,8 +193,20 @@ def main():
                 t = emph_safe(clean(inline(el)))
                 if t:
                     stream.append(("P", t))
-            elif el.name in ("div", "blockquote") and "pg_body_wrapper" not in cls:
-                paragraphs(el.children, stream)
+            elif el.name in ("div", "blockquote"):
+                # A pg_body_wrapper is usually a <br> or an anchor, and was
+                # skipped as furniture -- but in "The Miller, His Son, and
+                # Their Ass" the transcription put 357 words of the fable
+                # LOOSE inside five of them, between silhouettes. The fable
+                # stopped mid-sentence and both chapters/ and modern_chapters/
+                # agreed, so the word ratio said 1.00. Found by the caption
+                # pass. Loose text in a div is text.
+                if el.find(["p", "div"]):
+                    paragraphs(el.children, stream)
+                else:
+                    t = emph_safe(clean(inline(el)))
+                    if t:
+                        stream.append(("P", t))
 
     intro_stream = []
     if title_page is not None:
@@ -202,12 +214,22 @@ def main():
     paragraphs(intro, intro_stream)
     pieces.append(("Introduction", None, intro_stream, None))
 
-    fable_titles, current, buffered = [], None, []
+    # THE <hr> IS THE FABLE BOUNDARY. A plate before it belongs to the fable
+    # it follows; a plate after it and before the next heading is that next
+    # fable's headpiece. The first version guessed from whether text had
+    # been emitted yet, and put 21 full plates one fable too late -- each
+    # printed at the END of its fable, where Rackham put it. Found by the
+    # caption pass looking at what each plate actually draws.
+    fable_titles, current, buffered, after_rule = [], None, [], False
     for el in fables_h.next_siblings:
         if not isinstance(el, Tag):
             continue
         cls = el.get("class") or []
+        if el.name == "hr":
+            after_rule = True
+            continue
         if el.name == "h2":
+            after_rule = False
             current = titlecase(clean(el.get_text()))
             fable_titles.append(current)
             stream = [("TITLE", current)] + buffered
@@ -215,9 +237,7 @@ def main():
             pieces.append((current, "fable", stream, None))
             continue
         if el.name == "div" and any(c.startswith("fig") for c in cls):
-            # a figure before any text of the current fable is a headpiece
-            # of the NEXT one only if text has already been emitted here
-            if current is None or any(k == "P" for k, _ in pieces[-1][2]):
+            if current is None or after_rule:
                 buffered.append(plate_of(el))
             else:
                 pieces[-1][2].append(plate_of(el))
@@ -232,6 +252,19 @@ def main():
     key = lambda x: re.sub(r"[\W_]", "", x.lower())
     mismatch = [(a, b) for a, b in zip(toc, fable_titles) if key(a) != key(b)]
     assert not mismatch, mismatch[:3]
+
+    # ---- a SECOND READING that shares no code with the walker: every word
+    # of the fables in the raw HTML, tags stripped, against what was emitted.
+    # The word ratio cannot see a dropped paragraph here, because chapters/
+    # and modern_chapters/ are written by the same prep.
+    raw = html[html.index("<h2>AESOP", s):e]
+    raw = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", raw, flags=re.S)
+    raw_words = len(re.sub(r"<[^>]+>", " ", raw).replace("&nbsp;", " ").split())
+    got = sum(len(v.split()) for p in pieces[1:] for k, v in p[2]
+              if k in ("P", "TITLE"))
+    assert abs(raw_words - got) <= 0.01 * raw_words, \
+        f"fables: raw HTML {raw_words} words, emitted {got}"
+    print(f"witness: raw HTML {raw_words:,} words, emitted {got:,}")
 
     # ---- plates: exactly once, ids pinned
     on_disk = {n.split("/")[-1] for n in z.namelist()

@@ -855,3 +855,29 @@ the real label inside its caption ("Series II, 3 -- 0·002 sec. ..."),
 which is what a reader wants to read anyway. Pin the id -> source
 filename map in prep.py and assert it, or a later prep re-run silently
 renumbers 194 plates out from under 194 written captions.
+
+### Restored editions — status, 2026-09-17
+
+DONE, on site/restored.html:
+  - The seven Royal Institution companions (tyndall, thompson, ball,
+    fleming, soap-bubbles, forces, candle): 653 captions lifted from the
+    retellings onto the original text.
+  - worthington/ — A Study of Splashes (1908) with The Splash of a Drop
+    (the 1894 Royal Institution discourse). 247 plates captioned; 195
+    photographs in the 1908 book against the title page's claimed 197,
+    no list of illustrations to arbitrate, no hole in any series' numbering.
+  - aesop/ — Vernon Jones's translation (1912), Chesterton's introduction,
+    Rackham's 65 listed plates and 15 decorations. 284 fables, both
+    witnessed by the book's own lists.
+  - irish-fairy-tales/ — Stephens (1920), Rackham's 16 colour plates with
+    the captions Gutenberg dropped (recovered from the 1920 List of
+    Illustrations and checked against the prose and the page image), plus
+    21 drawings and the drawn title page.
+
+NEXT CANDIDATES for the strand, from the LEAVE ALONE verdicts above:
+  - Zitkala-Ša, Old Indian Legends / American Indian Stories (1901). The
+    strongest editorial case: the cleanest prose screened, a Dakota writer
+    telling Dakota stories, and the collection's first woman author. Text
+    only, so the contribution is typesetting, an introduction and an epub.
+  - Weaker: Jacobs, Ralston, Mitra, Fyfe's Tacitus, Marco Polo. These are
+    translations, so "restoring" them restores a translator's text.

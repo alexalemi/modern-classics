@@ -63,6 +63,15 @@ BLURBS = {
               "driving at the idea that the forces of nature are one.",
     "candle": "Faraday’s last Christmas course, and the most famous "
               "science lectures ever given.",
+    "worthington": "The splash of a drop, photographed by electric spark in "
+                   "hundredths of a second — with Worthington’s 1894 Royal "
+                   "Institution discourse on the same subject.",
+    "aesop": "All 284 fables in Vernon Jones’s 1912 translation, with "
+             "Chesterton’s introduction and every Rackham plate and "
+             "silhouette.",
+    "irish-fairy-tales": "Ten stories of Fionn, the Fianna and the Shi’, with "
+                         "Rackham’s colour plates and drawings, and the "
+                         "captions Gutenberg dropped.",
 }
 
 HEAD = """<!DOCTYPE html>

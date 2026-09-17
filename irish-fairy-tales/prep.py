@@ -12,7 +12,10 @@ plates, each captioned with a sentence from the story, and those survive
 in Archive.org's scan (`irishfairytales00steprich`). They are OCR, so each
 is checked against Stephens' OWN PROSE near the plate -- the caption
 quotes the story, which makes the book a second witness to its own
-captions. The frontispiece ("page 250") is exempt from the nearness test
+captions. That witness caught "Guillen" for Cuillen and a welded
+"con-tinuous" in the prose itself. It is not infallible: one plate caption
+genuinely departs from the sentence it quotes, and that one was settled
+against the page image instead (PRINTED_DIFFERS). The frontispiece ("page 250") is exempt from the nearness test
 only, since it sits at the front of the book.
 
 38 IMAGES, 37 PLATES. `001` is the book's green cloth CASE, not a plate;
@@ -49,6 +52,13 @@ CAPTIONS = HERE / "captions.txt"
 BOOK = "2892"
 UA = {"User-Agent": "modern-classics/1.0 (alexalemi@gmail.com)"}
 STORIES = 10
+# A printed caption that DEPARTS FROM THE PROSE it quotes. The prose
+# witness cannot settle these, so they were settled against the page image:
+# Archive.org irishfairytales00steprich, leaf n19, printed page x.
+PRINTED_DIFFERS = {
+    "323": "the plate reads 'all the worlds ... one huge green cataract'; "
+           "the story reads 'all the world ... one huge, green cataract'",
+}
 DROPPED = {"001": "the book's cloth case, photographed; not a plate"}
 LONG_SIDE = 2000
 
@@ -83,7 +93,8 @@ COLOUR = [
     ("271", "“This one is fat,” said Cuillen, and she rolled a bulky Fenian "
             "along like a wheel"),         # OCR "Guillen"; the prose says Cuillen
     ("279", "They stood outside, filled with savagery and terror"),
-    ("323", None),
+    ("323", "The waves of all the worlds seemed to whirl past them in one huge "
+            "green cataract"),
     ("343", "They offered a cow for each leg of her cow, but she would not "
             "accept that offer unless Fiachna went bail for the payment"),
     ("385", "The Hag of the Mill was a bony, thin pole of a hag with odd feet"),
@@ -265,7 +276,7 @@ def main():
     prose = [(x, " ".join(v for k, v in x["stream"] if k == "P"))
              for x in sections]
     for p, cap in COLOUR:
-        if not cap:
+        if not cap or p in PRINTED_DIFFERS:
             continue
         home = next(i for i, (x, _) in enumerate(prose)
                     if ("PLATE", p) in x["stream"]) if p not in \

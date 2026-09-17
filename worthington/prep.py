@@ -44,7 +44,13 @@ TRAPS, each with a ruling earned elsewhere in this repo:
      symbolic-logic floated-diagram trap. FLIPPED, asserted once.
   3. 197 mid-height decimal points (0·002 sec.) are MEASURED VALUES and
      pass through untouched (pillow-problems).
-  4. A PAGE-105 COMPOSITE shows one plate twice. Order comes from a plate's
+  4. TWO PRINTED TIMES RUN OUT OF SEQUENCE (Series Ia No. 10 at 0·014 sec.
+     between 0·087 and 0·139; No. 19 at 0·285 after No. 18's 0·294). Both
+     were checked against the 1908 printing (Archive.org studyofsplashes00
+     wortrich, leaves 60 and 66) and both are printed that way, so they are
+     Worthington's own and stand. So do the prose's "Fig. 23b" for the
+     plate after it and a Fig. A whose left and right read mirrored.
+  5. A PAGE-105 COMPOSITE shows one plate twice. Order comes from a plate's
      FIRST appearance; its printed label from whichever appearance has one.
   5. Italics glued to a word ("15<i>a</i>") cannot become emphasis: EMPH
      refuses a delimiter after a word character and would ship literal
@@ -52,7 +58,8 @@ TRAPS, each with a ruling earned elsewhere in this repo:
 
 THE PLATE COUNT, recorded rather than smoothed over. The title page says
 "WITH 197 ILLUSTRATIONS FROM INSTANTANEOUS PHOTOGRAPHS"; the source
-carries 194 photographs. The book has NO list of illustrations. Two
+carries 195 photographs (194 until the caption pass opened Fig. 5 and
+found a photograph whose own label begins "Photograph of"). The book has NO list of illustrations. Two
 witnesses were tried: Archive.org's ABBYY picture blocks (238, and they do
 not align with printed pages -- ABBYY block types lie, the euclid-rivals
 lesson) and the book's OWN SERIAL NUMBERING, which counts up without a
@@ -87,17 +94,50 @@ UA = {"User-Agent": "modern-classics/1.0 (alexalemi@gmail.com)"}
 
 STUDY, DROP = "39831", "27125"
 CLAIMED_PHOTOGRAPHS = 197
-PHOTOGRAPHS = 194           # derived once and pinned; see the docstring
+PHOTOGRAPHS = 195           # derived and pinned; Fig. 5 is a photograph (its own label says so)
 
 PLATE_KIND = {
+    "fig-05": "photo",      # its own label: "Photograph of the edge of a rapidly whirling disc"
     "fig-a": "photo",       # a cavity beside a millimetre scale
     "fig-b": "photo",
     "plate-i": "diagram",   # the apparatus, laboratory and dark room
     "plate-ii": "photo",
 }
+# The 1894 lecture's plates are NOT all photographs, and prep first said
+# they were. Found by the caption pass opening every plate: the apparatus
+# figures are engravings, the long First-to-Thirteenth series are
+# Worthington's own drawings (white on black), and the Fourteenth Series is
+# engraved from photographs. (drop image number range -> kind)
+DROP_KIND = [((1, 3), "photo"), ((4, 5), "engraving"), ((6, 20), "drawing"),
+             ((21, 23), "photo"), ((24, 29), "engraving")]
 NAMED_DIAGRAMS = {"plate-i": "plate-one", "fig-p033-water": "water-drop",
                   "fig-p033-turp": "turpentine-drop"}
 FLIPPED = ("fig-15b", "fig-15a")
+
+# THE PAGE-55 TABLE HOLDS 2a ABOVE 2 in its middle column, so document
+# order reads 1, 2a, 3, 2. Worthington's numbering is 1, 2, 2a, 3. Found by
+# the caption pass, not by prep. (moved stem, the stem it goes before)
+ORDER_FIXES = [("photo-p055-02", "photo-p055-02a")]
+
+# Printed labels the extraction cannot split correctly, each checked
+# against the source HTML. The words are Worthington's; only their
+# assignment to plates is ours.
+PRINTED_OVERRIDE = {
+    # one shared caption under two plates; extraction gave it to 15b alone
+    "fig-15a": "Diagrams of a breaking wave.",
+    "fig-15b": "Diagrams of a breaking wave.",
+    # WATER heads the left plate and TURPENTINE the right; the measure
+    # line belongs to both
+    "fig-p033-water": "WATER. Pendent drops (magnified 2-1/4 times).",
+    "fig-p033-turp": "TURPENTINE. Pendent drops (magnified 2-1/4 times).",
+    # the frontispiece: one caption under two photographs, whose print-page
+    # reference ("See page 120") is dead in a reflowable edition and goes to
+    # the chapter that page belongs to, the collection's standing rule
+    "photo-p000-01": "Permanent Splashes left where a Projectile has entered "
+                     "an Armour-plate. (See Chapter 10.)",
+    "photo-p000-02": "Permanent Splashes left where a Projectile has entered "
+                     "an Armour-plate. (See Chapter 10.)",
+}
 
 TITLES = {
     1: "Preliminary—Methods of Observation and Apparatus",
@@ -253,8 +293,11 @@ def plate_cells(block):
     if block.name != "table":
         titles = [i.get("title", "").strip() for i in block.find_all("img")]
         own = BeautifulSoup(str(block), "html.parser")
-        for x in own.find_all(["a", "img"]):
+        for x in own.find_all("img"):
             x.decompose()
+        for x in own.find_all("a"):
+            if not x.get_text(strip=True):
+                x.decompose()         # a plate link; a page-reference link keeps its words
         text = plain(own)
         for k, st in enumerate(cell_stems(block)):
             order.append(st)
@@ -314,8 +357,11 @@ def plate_cells(block):
                     #    (<td><img><p>Fig. 1</p></td>, and Series I's
                     #    "2  T = 0" under each photograph)
                     own = BeautifulSoup(str(cell), "html.parser")
-                    for x in own.find_all(["a", "img"]):
+                    for x in own.find_all("img"):
                         x.decompose()
+                    for x in own.find_all("a"):
+                        if not x.get_text(strip=True):
+                            x.decompose()
                     lab = plain(own)
                 if lab and not label.get(st):
                     label[st] = lab
@@ -491,6 +537,16 @@ def main():
             if stream[k][0] == "PLATE" and stream[k][1] == FLIPPED[0] \
                     and stream[k + 1][1] == FLIPPED[1]:
                 stream[k], stream[k + 1] = stream[k + 1], stream[k]
+    for moved, before in ORDER_FIXES:
+        hit = 0
+        for _, _, _, stream in files:
+            idx = {x[1]: k for k, x in enumerate(stream) if x[0] == "PLATE"}
+            if moved in idx and before in idx:
+                item = stream.pop(idx[moved])
+                stream.insert(idx[before] if idx[before] < idx[moved]
+                              else idx[before] - 1, item)
+                hit += 1
+        assert hit == 1, f"order fix {moved} applied {hit} times"
     plates = [(s[1], s[2], s[3], s[4]) for _, _, _, stream in files
               for s in stream if s[0] == "PLATE"]
 
@@ -525,19 +581,38 @@ def main():
                       "abcdefghijklmnopqrstuvwxyz"[k % 26]
                 break
             n_photo += 1
+        if book == DROP:
+            num = int(re.search(r"\d+", stem).group())
+            kind = next(k for (lo, hi), k in DROP_KIND if lo <= num <= hi)
+        else:
+            kind = kind_of(stem)
         rows.append({"id": pid, "source": key, "book": book,
-                     "kind": "photo" if book == DROP else kind_of(stem),
+                     "kind": kind,
                      "printed": label, "block": ttl})
+    # THE PIN IS AUTHORITATIVE FOR IDS. Ids were first assigned in document
+    # order, and captions are keyed by id -- so reordering plates (an
+    # ORDER_FIX) must not renumber them, or every caption after the move
+    # describes its neighbour. Once pinned, an id follows its SOURCE plate
+    # wherever the plate goes; the set of plates must still match exactly.
     if PIN.exists():
-        old = json.loads(PIN.read_text())
-        assert [(r["id"], r["source"]) for r in old] == \
-               [(r["id"], r["source"]) for r in rows], \
-            "plate ids moved -- captions.txt would describe the wrong plates"
-    else:
-        PIN.write_text(json.dumps(rows, indent=1, ensure_ascii=False) + "\n")
+        pinned = {r["source"]: r["id"] for r in json.loads(PIN.read_text())}
+        assert set(pinned) == {r["source"] for r in rows}, \
+            "the set of plates changed -- re-check before re-pinning"
+        for r in rows:
+            r["id"] = pinned[r["source"]]
+    for r in rows:
+        src_stem = r["source"].replace("drop-", "")
+        if src_stem in PRINTED_OVERRIDE and r["book"] == STUDY:
+            r["printed"] = PRINTED_OVERRIDE[src_stem]
+    assert len({r["id"] for r in rows}) == len(rows), "duplicate plate id"
+    PIN.write_text(json.dumps(rows, indent=1, ensure_ascii=False) + "\n")
     by_source = {r["source"]: r for r in rows}
+    # An UNNUMBERED plate must have a digit-free id, or figure_label prints
+    # "Figure N" over a photograph the book calls "Series II, 3". A plate the
+    # book itself numbers (Fig. 5, a photograph) keeps its number.
     assert all(not any(c.isdigit() for c in r["id"]) for r in rows
-               if r["kind"] == "photo"), "a photograph id carries a digit"
+               if r["source"].startswith(("photo-", "drop-"))), \
+        "an unnumbered plate's id carries a digit"
 
     # ---- images
     IMAGES.mkdir(parents=True, exist_ok=True)
