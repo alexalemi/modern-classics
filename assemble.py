@@ -235,6 +235,51 @@ FIGURE_INLINE = re.compile(
     r"\[Figure ([A-Za-z0-9_]+(?:-[A-Za-z0-9_]+)*)(?::\s*([^\]]+))?\]")
 
 
+def caption_map(book):
+    """{figure id: caption} harvested from a book's modern_chapters/.
+
+    The captions in this collection are new writing, and for the seven
+    Royal Institution volumes they are ALREADY WRITTEN and already
+    figure-parity-checked against the source (verify.py check 6 requires
+    the marker sets to match exactly). A restored edition of the
+    original text is therefore the author's prose plus captions that
+    exist -- not new work.
+    """
+    out = {}
+    d = book / "modern_chapters"
+    if not d.is_dir():
+        return out
+    for f in sorted(d.glob("*.txt")):
+        if not re.fullmatch(r"\d{3}\.txt", f.name):
+            continue                      # NNN_notes.txt are agent notes
+        for m in FIGURE_INLINE.finditer(f.read_text()):
+            if m.group(2):
+                out.setdefault(m.group(1), " ".join(m.group(2).split()))
+    return out
+
+
+def fill_captions(text, caps):
+    """Give a bare [Figure N] the caption the modern edition wrote.
+
+    ONLY where the source printed none. Where the book captioned its own
+    plate the caption is the AUTHOR'S TEXT and stands unchanged -- Ball
+    captioned 93 of his 94 plates himself, and the jokes are his ("Two
+    Eyes are better than One"). Overwriting those with a modernised
+    rewrite would edit the very text a restored edition exists to
+    reproduce.
+    """
+    if not caps:
+        return text
+
+    def sub(m):
+        if m.group(2):                    # the author's own caption
+            return m.group(0)
+        c = caps.get(m.group(1))
+        return f"[Figure {m.group(1)}: {c}]" if c else m.group(0)
+
+    return FIGURE_INLINE.sub(sub, text)
+
+
 def render_plate_table(par, figdir, site, bare_label=False):
     """An indented block whose cells include figure markers -> a table.
 
@@ -501,13 +546,21 @@ def load_manifest(book):
     return [{"file": f, "title": "", "part": 1, "of": 1} for f in files]
 
 
-def build_sections(book, manifest, source="modern_chapters", titles=False):
+def build_sections(book, manifest, source="modern_chapters", titles=False,
+                   restore=False):
     """Return a list of {id, heading, body, is_chapter, part_before}.
 
     `titles` takes each section's heading from manifest.json instead of from
     the file's first line, which is what the original-text build needs: a
     source file has no heading of its own and opens straight on the
-    chapter's contents summary."""
+    chapter's contents summary.
+
+    `restore` fills the source's bare figure markers with the captions the
+    modern edition wrote -- see fill_captions. It is what turns a raw
+    original-text companion into a RESTORED EDITION: the author's prose
+    with an apparatus it never had. Off by default, so no book moves
+    unless its build asks for it."""
+    caps = caption_map(book) if restore else {}
     groups = []
     for m in manifest:
         if m["part"] == 1:
@@ -520,7 +573,10 @@ def build_sections(book, manifest, source="modern_chapters", titles=False):
     for g in groups:
         bodies, heading = [], None
         for i, m in enumerate(g["entries"]):
-            lines = (book / source / m["file"]).read_text().split("\n")
+            raw = (book / source / m["file"]).read_text()
+            if caps:
+                raw = fill_captions(raw, caps)
+            lines = raw.split("\n")
             h, rest = strip_front(
                 lines, expect_heading=not (g["split_headings"] or titles))
             if i == 0:
@@ -652,7 +708,8 @@ def main():
 
     sections = build_sections(book, load_manifest(book),
                               source="chapters" if args.original
-                              else "modern_chapters", titles=args.original)
+                              else "modern_chapters", titles=args.original,
+                              restore=args.original)
 
     subtitle = env.get("SUBTITLE", "")
     subtitle_block = f"\t<h3>{html.escape(subtitle)}</h3>\n" if subtitle else ""
@@ -668,9 +725,18 @@ def main():
     title = html.escape(env["ORIGINAL_WORK"])
     if args.original:
         date_line = html.escape(env["DATE"])
+        # A RESTORED EDITION SAYS WHAT IS THE AUTHOR'S AND WHAT IS OURS.
+        # The prose is his, word for word; the captions and the alt text
+        # are new writing carried over from the modern edition, and the
+        # page has to admit that rather than let a reader assume the
+        # author captioned his own plates. Where he DID caption them
+        # (Ball did, 93 times) fill_captions leaves his wording alone.
+        plates = (' Every plate carries a caption and alt text written '
+                  'for this edition; the words of the book are the '
+                  "author's, unchanged." if env.get("FIGURE_DIR") else "")
         intro = (f'<p><i>This is the original text of {title}, as it was '
                  f'published, for readers who want to see what the '
-                 f'modernization is a modernization of. '
+                 f'modernization is a modernization of.{plates} '
                  f'<a href="{book.name}.html">The modern retelling is '
                  f'here</a>.{source_sentence}{epub_sentence}</i></p>')
     else:
