@@ -173,9 +173,14 @@ def load_sections(book, original=False):
                     part, of = int(pm.group(1)), int(pm.group(2))
                     break
             manifest.append({"file": f, "title": "", "part": part, "of": of})
+    # restore=original gives the source's bare plates the captions the
+    # modern edition wrote (assemble.fill_captions). BOTH RENDERERS MUST
+    # BE TAUGHT THE SAME RULE -- the introduction gate was a latent bug
+    # for exactly this reason: assemble knew and build_ebook did not, and
+    # nothing showed it until the companions were rebuilt.
     return assemble.build_sections(
         book, manifest, source="chapters" if original else "modern_chapters",
-        titles=original)
+        titles=original, restore=original)
 
 
 def classify_block(par):
@@ -212,8 +217,9 @@ ERA = re.compile(r"\b([AB])\.([DC])\.")
 # set from env in main(); render_block() is reached through several layers of
 # generic rendering code, so the book's figure directory rides in a cell
 FIGURE_DIR = [None]
-# likewise for the original-text build: the source has no captions to give,
-# so a plate keeps the number the book printed under it and nothing else
+# the original-text build: a plate with NO caption keeps the number the
+# book printed under it. A plate WITH one (see assemble.fill_captions) is
+# rendered like any other.
 BARE_LABEL = [False]
 
 
@@ -224,9 +230,13 @@ def render_figure(s):
     continuation plate) gets an img with no figcaption."""
     m = assemble.FIGURE.match(s)
     num = m.group(1)
+    # A caption that reached here on an --original build was put there by
+    # assemble.fill_captions -- the restored-edition apparatus, or the
+    # author's own printed caption -- so it is KEPT. The bare label is only
+    # the fallback for a plate with no caption at all. Discarding it here
+    # was the second copy of the two-renderer bug: the page showed 653
+    # captions and the epub still printed "Figure 1".
     caption = " ".join(m.group(2).split()) if m.group(2) else None
-    if BARE_LABEL[0]:
-        caption = None
     name = assemble.figure_name(ROOT / "site", FIGURE_DIR[0] or "", num)
     label = assemble.figure_label(num)
     alt = caption or label or "Plate"
@@ -325,8 +335,6 @@ def render_plate_table(s):
                 parts.append(esct(cell[last:m.start()]))
                 num = m.group(1)
                 caption = " ".join(m.group(2).split()) if m.group(2) else None
-                if BARE_LABEL[0]:
-                    caption = None
                 alt = caption or assemble.figure_label(num) or "Plate"
                 if alt[-1] not in ".!?":   # se lint t-026 wants it punctuated
                     alt += "."

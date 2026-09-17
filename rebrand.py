@@ -167,7 +167,14 @@ def _content_opf(dest, env, meta, spine=(), original=False):
             and not has_role("win", "producer-1"):
         extra += ('\n\t\t<meta property="role" refines="#producer-1" '
                   'scheme="marc:relators">win</meta>')
-    if not has_role("trl", "producer-1"):
+    # A restored edition translated and retold nothing, so producer-1 is
+    # not credited `trl`; the typographer and alt-text roles still stand.
+    if restored(env) and not has_role("trl", "producer-1"):
+        if extra:
+            t = t.replace('<meta property="role" refines="#producer-1" scheme="marc:relators">tyg</meta>',
+                          '<meta property="role" refines="#producer-1" scheme="marc:relators">tyg</meta>'
+                          + extra)
+    elif not has_role("trl", "producer-1"):
         t = t.replace('<meta property="role" refines="#producer-1" scheme="marc:relators">tyg</meta>',
                       '<meta property="role" refines="#producer-1" scheme="marc:relators">trl</meta>\n'
                       '\t\t<meta property="role" refines="#producer-1" scheme="marc:relators">tyg</meta>'
@@ -188,6 +195,17 @@ def _content_opf(dest, env, meta, spine=(), original=False):
     p.write_text(t)
 
 
+def restored(env):
+    """A native restored edition: the author's prose unchanged, no retelling.
+
+    Worded like the --original companion wherever the text is concerned --
+    it is the unmodernized text -- but it is the PRIMARY edition, not a
+    companion to anything, so it must not point at a retelling that does
+    not exist.
+    """
+    return env.get("EDITION", "").lower() == "restored"
+
+
 def _imprint(dest, env, meta, original=False):
     p = dest / "src/epub/text/imprint.xhtml"
     t = p.read_text()
@@ -195,6 +213,12 @@ def _imprint(dest, env, meta, original=False):
     t = re.sub(r'<header>\s*<h2 epub:type="title">([^<]*)</h2>\s*</header>',
                r'<h2 epub:type="title">\1</h2>', t)
     intro = (
+        f'This ebook is a <a href="{REPO}">Modern Classics</a> restored '
+        f'edition: the author\u2019s own text, unchanged, with a caption and '
+        f'alt text written for every plate. It is not affiliated with or '
+        f'endorsed by Standard Ebooks, whose open tooling and style manual '
+        f'were used to produce it.'
+        if restored(env) else
         f'This ebook is the companion original-text edition to a '
         f'<a href="{REPO}">Modern Classics</a> retelling: the source text as '
         f'published, so that a reader can see what the retelling is a '
@@ -215,7 +239,7 @@ def _imprint(dest, env, meta, original=False):
     sem = pub_semantic(meta)
     based = (f'This particular ebook is the unmodernized text of '
              f'<i epub:type="se:name.publication.{sem}">{esc(env["ORIGINAL_WORK"])}</i> '
-             f'by {esc(env["AUTHOR"])}' if original else
+             f'by {esc(env["AUTHOR"])}' if original or restored(env) else
              f'This particular ebook is a modern retelling of <i epub:type="se:name.publication.{sem}">{esc(env["ORIGINAL_WORK"])}</i> by {esc(env["AUTHOR"])}')
     if trl:
         based += f", working from the English translation by {esc(trl)}"
@@ -314,9 +338,9 @@ def _colophon(dest, env, meta, original=False):
                author_link + ".</p>\n" + r"\1", t, count=1)
     # the original-text edition is not a retelling and must not say it is
     made = ('This ebook reproduces the author\u2019s own text, unmodernized, for<br/>'
-            if original else
+            if original or restored(env) else
             'This ebook was retold in contemporary English for<br/>')
-    by = ('' if original else
+    by = ('' if original or restored(env) else
           '<br/>\n\t\t\tby<br/>\n\t\t\t'
           '<b epub:type="z3998:personal-name">Alex Alemi</b> and Claude,')
     t = t.replace('This ebook was produced for<br/>\n\t\t\t<a href="https://standardebooks.org/">Standard Ebooks</a><br/>\n\t\t\tby<br/>\n\t\t\t<a href="PRODUCER_URL">PRODUCER_NAME</a>,<br/>',

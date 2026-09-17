@@ -739,6 +739,19 @@ def main():
                  f'modernization is a modernization of.{plates} '
                  f'<a href="{book.name}.html">The modern retelling is '
                  f'here</a>.{source_sentence}{epub_sentence}</i></p>')
+    elif env.get("EDITION", "").lower() == "restored":
+        # A NATIVE RESTORED EDITION HAS NO RETELLING. The strike-through
+        # date line says "this was 1908 and is now 2026 English", which is
+        # false of a book whose words were not changed, and so is "an AI
+        # modernization". Say exactly what was done instead.
+        date_line = html.escape(env["DATE"])
+        plates = (' Every plate carries a caption and alt text written for '
+                  'this edition, beginning with the label the book printed.'
+                  if env.get("FIGURE_DIR") else "")
+        intro = (f'<p><i>This is a restored edition of {title}: the '
+                 f"author's own words, unchanged.{plates}"
+                 f'{source_sentence}{epub_sentence} '
+                 f'<a href="restored.html">More restored editions</a>.</i></p>')
     else:
         date_line = f'<s>{html.escape(env["DATE"])}</s> ' \
                     f'{env.get("MODERN_YEAR", "2026")}'
