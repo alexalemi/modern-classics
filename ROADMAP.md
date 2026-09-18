@@ -874,10 +874,17 @@ DONE, on site/restored.html:
     Illustrations and checked against the prose and the page image), plus
     21 drawings and the drawn title page.
 
+  - old-indian-legends/ — Zitkala-Ša (1901), the collection's first woman
+    author. Gutenberg dropped the preface, Angel De Cora's 14 plates and
+    their captions; all three restored from the Archive.org scan (plates
+    cut from the page images by their own edges, the preface checked
+    letter for letter against the OCR).
+  - american-indian-stories/ — Zitkala-Ša (1921). Text only. Compared word
+    by word with TWO scans of the 1921 printing, which disagree with each
+    other (two states: the candies sentences and the Great Spirit's ending);
+    follows the state Gutenberg and the BPL copy share, and says so in the
+    introduction. Epigraph and Acknowledgments restored.
+
 NEXT CANDIDATES for the strand, from the LEAVE ALONE verdicts above:
-  - Zitkala-Ša, Old Indian Legends / American Indian Stories (1901). The
-    strongest editorial case: the cleanest prose screened, a Dakota writer
-    telling Dakota stories, and the collection's first woman author. Text
-    only, so the contribution is typesetting, an introduction and an epub.
   - Weaker: Jacobs, Ralston, Mitra, Fyfe's Tacitus, Marco Polo. These are
     translations, so "restoring" them restores a translator's text.

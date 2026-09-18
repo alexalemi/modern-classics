@@ -201,7 +201,7 @@ editor's introduction, a real epub. Two shapes:
              never overwrite: Ball captioned 93 of his 94 plates himself and
              those are his text.
   NATIVE     no retelling at all (EDITION=restored): worthington/, aesop/,
-             irish-fairy-tales/. The page says "restored edition"; the epub
+             irish-fairy-tales/, old-indian-legends/, american-indian-stories/. The page says "restored edition"; the epub
              drops "retold" and the `trl` role.
 
 MODERN_CHAPTERS/ IS COMPOSED, NEVER TYPED. prep.py writes chapters/ with
@@ -247,6 +247,48 @@ EMPHASIS IS ASKED OF THE RENDERER. emph_safe() keeps exactly the spans
 assemble.EMPH will render and removes every other asterisk. The first
 Worthington page shipped 16 literal asterisks from italic letters glued to
 numbers ("Figs. 20*a*").
+
+COMPARE THE TRANSCRIPTION WITH A SCAN, WORD BY WORD, AND WITH A SECOND
+COPY WHERE THEY DISAGREE (Zitkala-Ša, 2026-09-17). A word diff of Gutenberg
+against the Archive.org OCR, after dropping running heads and line-end
+splits, leaves a short list worth reading. It found four kinds of thing,
+and they are decided differently:
+  - WHOLE MATTER GUTENBERG LEFT OUT: Old Indian Legends' preface (only its
+    signature survived, as a garbled heading), all fourteen plates and
+    their captions; American Indian Stories' epigraph and Acknowledgments.
+    Restored, typed from the page images and checked LETTER FOR LETTER
+    against the OCR, which shares no keystrokes with prep.py.
+  - GUTENBERG NORMALISING PERIOD SPELLING ("Dumfounded", "hand's-breadth",
+    "intrust", "gayly"): reversed in SOURCE_FIXES, but ONLY where two copies
+    agree on the printed reading.
+  - THE PRINTER'S PLAIN MISPRINTS ("langauge", "warrier", "gilt" for
+    guilt), which Gutenberg corrected: left corrected. They are errors,
+    not the author's words.
+  - TWO STATES OF ONE PRINTING. The BYU copy of American Indian Stories
+    prints two sentences and an ending that the BPL copy and Gutenberg do
+    not. Neither is "the" 1921 text; the edition follows the two witnesses
+    that agree and the introduction says what the other copy prints. One
+    scan, taken as the book, would have silently swapped the text.
+  AND A DIFF CAN LIE ABOUT THE TRANSCRIPTION: its biggest hit, 300 words
+  "missing" from Iya, the Camp-Eater, was a page the Archive.org copy
+  scanned twice.
+
+A PRINTED CAPTION MAY MISQUOTE ITS OWN SENTENCE. De Cora's plates quote
+the story ("A little boy stopped his play among the grasses") where the
+story says "a little wild boy ... among the tall grasses". prep places each
+plate after the one paragraph containing its caption and asserts it; the
+two that depart are in PRINTED_DIFFERS with the prose anchor beside them,
+and the caption stands as printed. A frontispiece whose caption says "(See
+page 89)" is placed at page 89's paragraph, not at the front.
+
+PLATES CUT FROM A PAGE SCAN BY THEIR OWN EDGES (old-indian-legends/
+plate_box): average brightness across a central band, take the LONGEST run
+darker than the paper, then the same across the plate's rows. A halftone's
+lightest passages stay well under the paper; the gutter shading and a
+library's perforated stamp only make short runs. Asserted against a size
+band. Note the leaf index: Archive.org's _jp2.zip is one ahead of the
+ABBYY page index for this scan, and the first fetch was fourteen text
+pages.
 
 Covers come from the books' own plates where Commons has nothing large
 enough (build/covers/{book}.jpg with a placeholder `commons` name and a

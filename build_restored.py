@@ -69,6 +69,12 @@ BLURBS = {
     "aesop": "All 284 fables in Vernon Jones’s 1912 translation, with "
              "Chesterton’s introduction and every Rackham plate and "
              "silhouette.",
+    "old-indian-legends": "Fourteen Dakota legends of Iktomi the trickster and "
+                          "his neighbours, with the preface and Angel De "
+                          "Cora’s plates that Gutenberg dropped.",
+    "american-indian-stories": "Her childhood on the Yankton reservation, her "
+                               "schooldays in the East, her stories, and her "
+                               "1921 case against the Indian Bureau.",
     "irish-fairy-tales": "Ten stories of Fionn, the Fianna and the Shi’, with "
                          "Rackham’s colour plates and drawings, and the "
                          "captions Gutenberg dropped.",

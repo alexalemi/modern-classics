@@ -110,6 +110,13 @@ def looks_like_prose_heading(h):
 # other book, because it is what catches the grimm shape (a section the
 # book numbered and the manifest never got).
 ORPHAN_OK = {
+    "american-indian-stories": "the autobiographical essays number their "
+                               "subsections afresh from I in each essay, "
+                               "and V-VII occur only twice, so the repeat "
+                               "filter lets them through. They are "
+                               "subheadings inside their essay, not lost "
+                               "sections. Checked: 33 h4 on the page, "
+                               "'V. Iron Routine' among them.",
     "theophrastus": "the thirty sketches are h4 subheadings inside three "
                     "grouped files and carry modernised titles — "
                     "'1. The Dissembler' ships as '1. The Phony'. "
