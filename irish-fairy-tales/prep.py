@@ -234,6 +234,16 @@ def main():
             continue
         if el.name == "p":
             t = emph_safe(clean(inline(el)))
+            if t and el.get("class") and "pfirst" in el.get("class"):
+                # A DROP CAP PLUS SMALL CAPITALS, written by the transcription
+                # as an all-caps word ("BY his arts"). That is typography,
+                # not text, and `se lint` t-048 rightly rejects a chapter
+                # opening in capitals. Normal casing for the word only.
+                # Keyed on the FIRST WORD ONLY, whatever follows it: "THERE I
+                # dreamed" slipped past a version that wanted a lowercase
+                # word next.
+                t = re.sub(r"^([“‘\"']?[A-Z])([A-Z]+)\b",
+                           lambda m: m.group(1) + m.group(2).lower(), t)
             if t:
                 current["stream"].append(("P", t))
             continue
