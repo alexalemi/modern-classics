@@ -48,6 +48,8 @@ SITE = ROOT / "site"
 # fact-check pass had just removed from that book's introduction. A fact
 # copied into a second place comes back wrong.
 BLURBS = {
+    "symbolic-logic": "Carroll’s own text of 1896, notation and all, with every "
+                      "diagram described by which cell holds which counter.",
     "tyndall": "Eighteen sixty-seven, and the book every later Royal "
                "Institution lecturer is imitating.",
     "thompson": "The Christmas course given twelve months after Röntgen "

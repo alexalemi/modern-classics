@@ -314,8 +314,14 @@ def render_plate_table(par, figdir, site, bare_label=False):
                     last = m.end()
                 parts.append(html.escape(c[last:]))
                 tds.append("<td>" + "".join(parts) + "</td>")
-        rows.append("<tr>" + "".join(tds) + "</tr>")
-    return '<table class="plates">\n' + "\n".join(rows) + "\n</table>"
+        rows.append(tds)
+    # a short row's last cell spans the rest (build_ebook.pad_rows)
+    width = max((len(r) for r in rows), default=0)
+    for r in rows:
+        if r and len(r) < width:
+            r[-1] = r[-1].replace("<td>", f'<td colspan="{width - len(r) + 1}">', 1)
+    return ('<table class="plates">\n' + "\n".join("<tr>" + "".join(r) + "</tr>" for r in rows)
+            + "\n</table>")
 
 
 # UNICODE SUPERSCRIPTS AND SUBSCRIPTS ARE A FONT LOTTERY. "x²" needs the

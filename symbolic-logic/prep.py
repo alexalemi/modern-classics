@@ -175,9 +175,16 @@ class Extract(HTMLParser):
             name = Path(src).stem
             if name not in self.figmap:
                 return
-            cap = clean(a.get("alt", ""))
+            # THE MARKER IS BARE. Carroll printed no captions: Gutenberg's
+            # alt text is the transcriber's, and in Book Eight Section 3 it
+            # IS the answer to the exercise. A captioned source marker is
+            # read by assemble.fill_captions as the AUTHOR's caption and
+            # would have shipped on the original-text page unchanged.
+            # (chapters/ was made bare IN PLACE on 2026-09-20: a full re-run
+            # of this prep no longer reproduces the committed file
+            # boundaries, which the finished translation is aligned to.)
             n = self.figmap[name]
-            marker = f"[Figure {n}: {cap}]" if cap else f"[Figure {n}]"
+            marker = f"[Figure {n}]"
             # A DIAGRAM CAN LIVE INSIDE A TABLE CELL. Carroll tabulates
             # diagrams against their readings, and emitting the marker
             # straight to self.out let the figure escape the table and left

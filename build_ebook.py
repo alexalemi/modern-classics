@@ -46,7 +46,10 @@ SE = shutil.which("se") or str(Path.home() / ".local/bin/se")
 _tc_cache = {}
 def se_titlecase(s):
     if s not in _tc_cache:
-        r = subprocess.run([SE, "titlecase", s], capture_output=True, text=True)
+        # stdin from /dev/null: `se titlecase` reads stdin whenever it is not
+        # a terminal, so a build run in the background hung here for good
+        r = subprocess.run([SE, "titlecase", s], capture_output=True, text=True,
+                           stdin=subprocess.DEVNULL)
         _tc_cache[s] = (r.stdout.strip()
                         if r.returncode == 0 and r.stdout.strip() else s.title())
     return _tc_cache[s]
@@ -332,6 +335,21 @@ def render_block(par, kind):
     return f"\t\t\t<blockquote class=\"lines\">\n\t\t\t\t<p>{inner}</p>\n\t\t\t</blockquote>"
 
 
+def pad_rows(rows):
+    """[[cell, ...], ...] -> [[(cell, attrs), ...], ...] with every row as
+    wide as the widest: a short row's LAST cell spans the rest. vnu rejects
+    a ragged table, and Carroll's one-cell headings over a pair of diagrams
+    ("xm0 † ym′0" over two plates) are exactly a spanning cell."""
+    width = max((len(r) for r in rows), default=0)
+    out = []
+    for r in rows:
+        cells = [(c, "") for c in r]
+        if cells and len(r) < width:
+            cells[-1] = (cells[-1][0], f' colspan="{width - len(r) + 1}"')
+        out.append(cells)
+    return out
+
+
 def render_plate_table(s):
     """An indented block whose cells include figure markers -> a table.
 
@@ -358,9 +376,13 @@ def render_plate_table(s):
                              f'src="../images/{name}"/>')
                 last = m.end()
             parts.append(esct(cell[last:]))
-            tds.append("\t\t\t\t\t\t<td>" + "".join(parts) + "</td>")
-        rows.append("\t\t\t\t\t<tr>\n" + "\n".join(tds) + "\n\t\t\t\t\t</tr>")
-    return ("\t\t\t<table>\n\t\t\t\t<tbody>\n" + "\n".join(rows)
+            tds.append("".join(parts))
+        rows.append(tds)
+    out = []
+    for tds in pad_rows(rows):
+        out.append("\t\t\t\t\t<tr>\n" + "\n".join(f"\t\t\t\t\t\t<td{a}>{c}</td>" for c, a in tds)
+                   + "\n\t\t\t\t\t</tr>")
+    return ("\t\t\t<table>\n\t\t\t\t<tbody>\n" + "\n".join(out)
             + "\n\t\t\t\t</tbody>\n\t\t\t</table>")
 
 

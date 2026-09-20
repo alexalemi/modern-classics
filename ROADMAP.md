@@ -897,23 +897,23 @@ renewal database (and HathiTrust) before any work starts, as Rogers was.
 
 | Title | Author | First read |
 |---|---|---|
-| Relativity: The Special and General Theory (Lawson tr. 1920) | Einstein | PD in the US (1916/1920) |
-| The Nature of the Judicial Process (1921) | Cardozo | PD in the US |
-| The Common Law (1881) | O. W. Holmes Jr. | PD |
+| Relativity: The Special and General Theory (Lawson tr. 1920) | Einstein | DONE 2026-09-20, restored (relativity/) |
+| The Nature of the Judicial Process (1921) | Cardozo | DONE 2026-09-20, restored from Wikisource (nature-of-the-judicial-process/) |
+| The Common Law (1881) | O. W. Holmes Jr. | DONE 2026-09-20, MODERN CLASSIC with original-text companion (common-law/) |
 | Structure and Interpretation of Computer Programs (2nd ed.) | Abelson & Sussman | NOT PD: CC BY-SA 4.0. Possible, but the edition must carry the licence and share alike |
-| Economics in One Lesson (1946) | Hazlitt | CHECK: "distributed free by permission" (FEE) is permission to read, not to publish a derivative edition |
-| An Introduction to Mathematics (1911) | Whitehead | PD |
-| Carroll, restored editions of what the retellings left out (Symbolic Logic's original text, The Game of Logic, ...) | Carroll | PD; survey what exists |
-| The Problems of Philosophy (1912) | Russell | PD in the US |
-| Science and Hypothesis (English 1905) | Poincaré | PD |
+| Economics in One Lesson (1946) | Hazlitt | RULED OUT: renewed 1974, in copyright |
+| An Introduction to Mathematics (1911) | Whitehead | DONE 2026-09-20, restored from the DP LaTeX (introduction-to-mathematics/) |
+| Carroll, restored editions of what the retellings left out (Symbolic Logic's original text, The Game of Logic, ...) | Carroll | PD. Done: Alice (Rackham), The Hunting of the Snark, Symbolic Logic's original-text companion |
+| The Problems of Philosophy (1912) | Russell | DONE, restored (problems-of-philosophy/) |
+| Science and Hypothesis (English 1905) | Poincaré | DONE 2026-09-20, restored from the DP LaTeX (science-and-hypothesis/) |
 | How Plants Grow (1858) | Asa Gray | PD |
 | Anatomy, Descriptive and Surgical (1858; 1918 US ed.) | Gray | PD; very large, plate-heavy |
-| Psychology: Briefer Course (1892) | William James | PD |
-| A Short History of the World (1922) | H. G. Wells | PD in the US |
+| Psychology: Briefer Course (1892) | William James | DONE 2026-09-20, restored (psychology-briefer-course/) |
+| A Short History of the World (1922) | H. G. Wells | DONE 2026-09-20, restored (short-history-of-the-world/) |
 | On the Sensations of Tone (Ellis tr. 1875/1885) | Helmholtz | PD; heavy notation and tables |
-| What to Listen for in Music (1939) | Copland | CHECK: likely renewed, in copyright to 2034 if so |
-| The Compleat Strategyst (1954) | J. D. Williams | CHECK: RAND copyright; RAND distributes it free, publication rights unclear |
-| Astronomy for Everybody (1902) | Simon Newcomb | PD |
+| What to Listen for in Music (1939) | Copland | RULED OUT: renewed 1966, in copyright |
+| The Compleat Strategyst (1954) | J. D. Williams | RULED OUT: renewed 1982 |
+| Astronomy for Everybody (1902) | Simon Newcomb | DONE 2026-09-20, restored from Wikisource (astronomy-for-everybody/) |
 | The Evolution of Physics (1938) | Einstein & Infeld | CHECK: 1938 Simon & Schuster, so PD only if NOT renewed in 1965-66; a book of this standing very likely was, and the Einstein estate is active. Added by Alex 2026-09-20; the Stanford renewal search was behind a bot wall that day |
 | The Expert at the Card Table (1902) | S. W. Erdnase | PD (1902). Restored edition; Smith's 101 drawings are the plates. Added by Alex 2026-09-20 |
 | The Tarbell Course in Magic (the 1926-28 correspondence lessons) | Harlan Tarbell | CHECK: the original mail-order lessons of 1926-28 are PD in the US if published then (1928 works entered the public domain in 2024); the later Tannen book volumes (1941 on) are NOT. Find a scan of the lessons themselves. Added by Alex 2026-09-20 |
