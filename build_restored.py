@@ -75,6 +75,8 @@ BLURBS = {
     "american-indian-stories": "Her childhood on the Yankton reservation, her "
                                "schooldays in the East, her stories, and her "
                                "1921 case against the Indian Bureau.",
+    "relativity": "A train, an embankment and two strokes of lightning. "
+                  "Lawson's 1920 text, with the formulas typeset.",
     "psychology-briefer-course": "Habit, the stream of consciousness, the "
                                  "self and the will, in James's own one-volume "
                                  "version of the Principles.",

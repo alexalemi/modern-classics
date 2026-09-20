@@ -914,6 +914,7 @@ renewal database (and HathiTrust) before any work starts, as Rogers was.
 | What to Listen for in Music (1939) | Copland | CHECK: likely renewed, in copyright to 2034 if so |
 | The Compleat Strategyst (1954) | J. D. Williams | CHECK: RAND copyright; RAND distributes it free, publication rights unclear |
 | Astronomy for Everybody (1902) | Simon Newcomb | PD |
+| The Evolution of Physics (1938) | Einstein & Infeld | CHECK: 1938 Simon & Schuster, so PD only if NOT renewed in 1965-66; a book of this standing very likely was, and the Einstein estate is active. Added by Alex 2026-09-20; the Stanford renewal search was behind a bot wall that day |
 
 Done from Alex's 2026-09-20 request: Calculus Made Easy (restored).
 Ruled out: Rogers, Physics for the Inquiring Mind (1960), renewed by the
