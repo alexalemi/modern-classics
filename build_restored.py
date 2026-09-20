@@ -23,6 +23,10 @@ TWO SHAPES, and the page lists both:
   NATIVE     a book with no retelling at all, because it does not need
              one. `EDITION=restored` in env. Worthington is the first.
 
+THE PAGE IS ORGANISED BY TOPIC, and the topic is a fact about the book,
+so it lives in the book's env (TOPIC=, one of TOPICS below) like
+everything else; a book with none stops the build.
+
 THE LIST IS DERIVED FROM env, NEVER KEPT HERE. A hand-maintained list
 would be a second copy of "which books are restored", and this repo has
 scars from a fact held in two places drifting apart — the descartes
@@ -31,12 +35,16 @@ published filename. The only per-book text stored below is the blurb,
 which exists nowhere else.
 """
 import html
+import re
 import sys
 from pathlib import Path
 
 import assemble
 
 ROOT = Path(__file__).parent
+# the topics, in page order; every restored book's env names one (TOPIC=)
+TOPICS = ["Mathematics", "Physical sciences", "Life sciences", "Humanities",
+          "Stories and verse", "Home, craft and arts"]
 SITE = ROOT / "site"
 
 # One line per restored edition, and the ONLY thing hard-coded here:
@@ -266,19 +274,28 @@ def main():
             blurb = (blurb + " " if blurb else "") + f"{n} plates."
         row = entry(env["ORIGINAL_WORK"], env["AUTHOR"], env["DATE"],
                     page, epub, blurb)
+        topic = env.get("TOPIC")
+        if not topic:
+            sys.exit(f"ERROR: {d.name}/env has no TOPIC= (one of {', '.join(TOPICS)})")
+        assert topic in TOPICS, (d.name, topic)
         (native if kind == "native" else companion).append(
-            (n, d.name, row))
+            (n, d.name, row, topic, env["DATE"]))
 
+    # BY TOPIC (Alex, 2026-09-20). A companion (the original text of a
+    # retelling) sits with its subject, marked as such, not in a list of
+    # its own; within a topic, in order of first publication.
     out = [HEAD]
-    if native:
-        out.append("<h2>Editions</h2>\n<ul class=\"book-list\">")
-        out += [r for _, _, r in sorted(native, reverse=True)]
-        out.append("</ul>")
-    if companion:
-        out.append("<h2>The Royal Institution lectures</h2>\n"
-                   "<ul class=\"book-list\">")
-        # by plate count, which is the reason to come to this page
-        out += [r for _, _, r in sorted(companion, reverse=True)]
+    rows = [(t, d, r, "native") for _, _, r, t, d in native] + \
+           [(t, d, r, "companion") for _, _, r, t, d in companion]
+    year = lambda d: int(re.match(r"\d+", d).group()) if re.match(r"\d+", d) else 9999
+    for topic in TOPICS:
+        these = sorted((x for x in rows if x[0] == topic), key=lambda x: year(x[1]))
+        if not these:
+            continue
+        out.append(f"<h2>{html.escape(topic)}</h2>\n<ul class=\"book-list\">")
+        for _, _, r, kind in these:
+            out.append(r if kind == "native" else r.replace(
+                '<span class="author">', '<span class="author">Original text of a retelling &middot; ', 1))
         out.append("</ul>")
     (SITE / "restored.html").write_text("\n".join(out) + FOOT)
     print(f"wrote site/restored.html "
