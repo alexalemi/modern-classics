@@ -43,7 +43,7 @@ import assemble
 
 ROOT = Path(__file__).parent
 # the topics, in page order; every restored book's env names one (TOPIC=)
-TOPICS = ["Mathematics", "Physical sciences", "Life sciences", "Humanities",
+TOPICS = ["Mathematics", "Physical sciences", "Life sciences", "Law", "Humanities",
           "Stories and verse", "Home, craft and arts"]
 SITE = ROOT / "site"
 
