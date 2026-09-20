@@ -906,7 +906,7 @@ renewal database (and HathiTrust) before any work starts, as Rogers was.
 | Carroll, restored editions of what the retellings left out (Symbolic Logic's original text, The Game of Logic, ...) | Carroll | PD. Done: Alice (Rackham), The Hunting of the Snark, the original-text companions of Symbolic Logic, A Tangled Tale and Pillow Problems, and The Game of Logic (2026-09-20, restored; 200 diagrams redrawn from Gutenberg's ASCII and proofed against the scan). Euclid and His Modern Rivals gets no companion: its chapters/ is raw OCR |
 | The Problems of Philosophy (1912) | Russell | DONE, restored (problems-of-philosophy/) |
 | Science and Hypothesis (English 1905) | Poincaré | DONE 2026-09-20, restored from the DP LaTeX (science-and-hypothesis/) |
-| How Plants Grow (1858) | Asa Gray | PD |
+| How Plants Grow (1858) | Asa Gray | DONE 2026-09-20, restored (gray-plants/): every page read from the scan (howplantsgrowsim00gray, a later Ivison, Blakeman, Taylor printing with pp. 104¹-104⁴), 467 woodcut blocks (Figs. 1-519) cut from the page and captioned, the Flora's key references converted from page to family number |
 | Anatomy, Descriptive and Surgical (1858; 1918 US ed.) | Gray | PD; very large, plate-heavy |
 | Psychology: Briefer Course (1892) | William James | DONE 2026-09-20, restored (psychology-briefer-course/) |
 | A Short History of the World (1922) | H. G. Wells | DONE 2026-09-20, restored (short-history-of-the-world/) |

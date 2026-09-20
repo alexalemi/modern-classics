@@ -331,7 +331,19 @@ def render_block(par, kind):
         return ("\t\t\t<blockquote epub:type=\"z3998:verse\">\n"
                 "\t\t\t\t<div>\n" + inner + "\n\t\t\t\t</div>\n\t\t\t</blockquote>")
     # generic lined matter (outlines, tables of figures, speaker lists)
-    inner = "<br/>\n\t\t\t\t".join(esct(l) for l in lines)
+    # INDENTATION IS KEPT, in steps of two spaces after the block's own TAB:
+    # an outline or a botanical key carries its logic in the depth of each
+    # line, and dropping it (as this renderer did) left the page right and
+    # the epub a flat list. Depth 0 lines are unchanged, so a block with no
+    # inner indentation renders exactly as before.
+    raw = [l[1:] if l.startswith("\t") else l for l in par.split("\n") if l.strip()]
+    base = min(len(l) - len(l.lstrip(" ")) for l in raw)
+    parts = []
+    for l in raw:
+        depth = min(8, (len(l) - len(l.lstrip(" ")) - base) // 2)
+        t = esct(l.strip())
+        parts.append(f'<span class="indent-{depth}">{t}</span>' if depth else t)
+    inner = "<br/>\n\t\t\t\t".join(parts)
     return f"\t\t\t<blockquote class=\"lines\">\n\t\t\t\t<p>{inner}</p>\n\t\t\t</blockquote>"
 
 
@@ -817,6 +829,9 @@ def main():
         rules.append('p.subhead{\n\tfont-style: italic;\n\tmargin-top: 1.5em;\n\ttext-indent: 0;\n}')
     if 'class="lines"' in used:
         rules.append('blockquote.lines p{\n\ttext-indent: 0;\n}')
+    for d in range(1, 9):
+        if f'class="indent-{d}"' in used:
+            rules.append(f'span.indent-{d}{{\n\tdisplay: inline-block;\n\tpadding-left: {d * 1.5}em;\n\ttext-indent: -1em;\n}}')
     if "se:era" in used:
         rules.append('[epub|type~="se:era"]{\n\tfont-variant: all-small-caps;\n}')
     figdir = env.get("FIGURE_DIR")

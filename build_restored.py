@@ -81,6 +81,8 @@ BLURBS = {
     "american-indian-stories": "Her childhood on the Yankton reservation, her "
                                "schooldays in the East, her stories, and her "
                                "1921 case against the Indian Bureau.",
+    "gray-plants": "Botany for young people, 1858: how plants grow, and a "
+                   "Popular Flora of 105 families with keys and 467 woodcuts.",
     "bridgman": "What a pendulum, a drop of liquid and an airplane model have "
                 "in common: the Π theorem, read from the 1922 printing.",
     "game-of-logic": "Logic as a board game with red and grey counters, "

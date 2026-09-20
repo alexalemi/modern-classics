@@ -1,0 +1,135 @@
+PROOFREADING AND PLATES: Asa Gray, How Plants Grow (1858; this copy a
+later printing by Ivison, Blakeman, Taylor & Co.)
+
+You are transcribing pages of a nineteenth-century botany school-book for a
+RESTORED EDITION: the author's text, unchanged, in clean modern markup, with
+every woodcut cut out, captioned and placed. No transcription of this book
+exists, so YOUR READING OF THE PAGE IMAGE IS THE TEXT. The OCR draft is a
+convenience only, and it mangles small capitals, accents, the key's layout
+and the Latin names; the image is the authority.
+
+Read /home/alemi/projects/modern-classics/CAPTIONS.md before starting.
+
+FOR EACH LEAF NNN YOU ARE GIVEN
+  page image:  gray-plants/_src/png/NNN.png  (1800 px wide; Read it; for
+               small type, accents or a figure number, crop and enlarge with
+               a short python/PIL script into your scratch directory and Read
+               the crop)
+  OCR draft:   gray-plants/_src/draft/NNN.txt
+YOU WRITE TWO FILES PER LEAF:
+  gray-plants/proof/NNN.txt     the text
+  gray-plants/proof/NNN.plates  the woodcuts on the leaf (omit if none)
+Read the WHOLE page image, top to bottom, every time.
+
+THE TEXT (proof/NNN.txt)
+- Every word the page prints, in order, EXCEPT the running head at the top
+  (e.g. "POPULAR FLORA.  113", "BOTANY FOR YOUNG PEOPLE.") and the page
+  number, and EXCEPT the figure numbers and printed captions of woodcuts,
+  which go in the .plates file instead (see below).
+  FIRST LINE OF THE FILE: "page: <printed page number as printed>", e.g.
+  "page: 113" or "page: 104¹" (this printing has inserted pages 104¹-104⁴),
+  or "page: none" if the leaf prints no number; then a blank line.
+- Spelling, capitals, punctuation and hyphenation EXACTLY as printed. Do not
+  modernise or correct. An obvious misprint is transcribed as printed and
+  listed in your report.
+- ACCENTS on Latin names are Gray's stress marks and are part of the text:
+  "M. cordàta", "M. Fràseri", "Umbrélla". Copy every one exactly (grave or
+  acute, and on which vowel). Enlarge to be sure.
+- Measurements use Gray's signs: ° (foot), ′ (inch), ″ (line): "1° long",
+  "4′ long", "8′ or 10′ broad". Use the characters ° ′ ″ (not ' or ").
+- One paragraph per line: join the printed lines of a paragraph into ONE
+  line. Separate paragraphs with ONE blank line. A word broken at a line end
+  is joined; keep the hyphen only in a real compound ("heart-shaped").
+- Quotation marks as plain ASCII ". Apostrophes as '. Dashes as —.
+- If the page OPENS in the middle of a paragraph continued from the previous
+  page, start that first line with "+ " (plus, space).
+
+MARKUP (the only markup there is)
+- *italic* for italic type: the Latin names, "Order ANONACEÆ"'s Latin where
+  italic, emphasised words, "Fig." references only if italic.
+- ^^Small Capitals^^ for words set in SMALL CAPITALS inside a line: the
+  common names in the Flora ("4. ^^Yellow Cucumber^^-M."), key results
+  ("^^Currant^^ F."), and words stressed in small caps in Part I. Write the
+  letters as they would be capitalised in ordinary type.
+- A HEADING on its own line is its own paragraph, exactly as printed,
+  capitals and all: "CHAPTER II.", "HOW PLANTS ARE PROPAGATED.",
+  "SECTION III.", "3. CUSTARD-APPLE FAMILY. Order ANONACEÆ." Keep Æ, Œ.
+- Numbered paragraphs ("249. Multiple fruits...") and the Flora's numbered
+  species ("5. ^^Ear-leaved Umbrella^^-M. Leaves ...") are ordinary
+  paragraphs beginning with the number as printed. A Latin name set at the
+  right margin at the end of an entry is appended to the paragraph after
+  two spaces, in italic as printed: "...at the base (Fig. 102). S.  *M.
+  Fràseri.*"  "§ 3." section marks as printed.
+- THE KEYS (the Flora's analytical tables, where each line leads to a
+  family and a page): one printed line per text line, each starting with a
+  TAB, then two spaces for each step of printed indentation (count the
+  steps; the first, leftmost level has none), then the text, and where the
+  line ends in a result, " | " and the result exactly as printed:
+  "\t    Seeds many in a one-celled berry. Shrubs, | ^^Currant^^ F. 155"
+  Keep the page numbers; they are converted later. A key line that wraps in
+  print is joined into one line.
+- A TABLE: TAB rows, cells separated by " | ".
+- Verse or a set-off quotation (the text from Matthew on the Part First
+  title): each printed line on its own line, starting with a TAB.
+- A FOOTNOTE: its own paragraph at the very end of the file, starting
+  "Footnote: " then the symbol and text; the mark stays in the body.
+
+THE WOODCUTS
+- In the text, put a line "[Figure N]" as its own paragraph where the woodcut
+  sits (N = its printed number; for one engraving block carrying several
+  numbers that cannot be cut apart, "[Figure 261-262-263]" in printed order;
+  an unnumbered ornament or vignette: "[Figure x1]", "[Figure x2]" on the
+  leaf). A woodcut set BESIDE a paragraph (text wrapping round it) goes after
+  that paragraph ends; if the paragraph continues on the next line after the
+  figure, write the rest with "+ " as a new line after the figure line.
+- proof/NNN.plates: one line per woodcut, TAB-separated, four fields:
+    <ids>   <x0,y0,x1,y1>   <printed label>   <caption>
+  ids: as in the [Figure] marker ("263", "261-262-263", "x1").
+  box: pixel box in png/NNN.png (x0,y0 top left; x1,y1 bottom right) that
+       holds THE ENGRAVING ONLY: not its printed number, not its printed
+       caption, not body text. Tight, but include every stroke. FIND IT BY
+       CROPPING: write the crop to your scratch directory, Read it, adjust,
+       until it is right. If a figure number sits INSIDE the engraving block
+       and cannot be excluded, leave it.
+  printed label: the number and any caption printed with it, exactly
+       ("Fig. 263." if only a number is printed; "261. Branch of Papaw, with
+       flowers." if a caption is printed) — the book's words, not yours.
+  caption: YOUR description per CAPTIONS.md: what is drawn, concretely, in
+       Gray's vocabulary, 10-30 words, plain text, ending with a full stop.
+       Do not repeat the printed label. For a compound block say which part
+       is which number.
+
+REPORT (your final message, SHORT; do not quote page text back):
+  NNN  page <n>  figures: <ids>  footnotes: <n>
+then misprints kept, anything you could not read with certainty, and
+anything odd. Do not change any file other than your own proof/ files.
+
+RULINGS FROM THE PILOT (these override anything above that disagrees)
+1. A WOODCUT THAT WRAPS ROUND TEXT (an L-shape, a frame, a cut beside
+   several lines): the box field may carry text regions to BLANK OUT after
+   the box, joined by " - ": "120,300,1700,1900 - 400,320,1690,1200". Each
+   minus-box is whitened in the cut, so no body text ships inside an image.
+   Check by cropping WITH the minus-boxes painted white. The marker goes
+   where the woodcut begins in reading order (after any heading above it).
+   A woodcut beside several paragraphs: marker after the first paragraph
+   it mostly sits beside.
+2. PRINTED LABEL of a woodcut that prints only its number: "Fig. N." (so
+   "5" under a cut is written "Fig. 5."). A woodcut with no printed number
+   and no caption: leave the label field empty (two tabs in a row).
+3. A FOOTNOTE WITH SEVERAL PARAGRAPHS: "Footnote: *" + first paragraph on
+   one line, each further paragraph on the next line (no blank line); prep
+   sets them as separate paragraphs.
+4. A note with no reference mark in the body (a "⁂" note): an ordinary
+   paragraph, as printed.
+5. A heading on its own line in BOLD or italic type ("The Root"): its own
+   paragraph, as printed, no markup. A bold run-in heading at the start of a
+   paragraph: plain text, then the paragraph continues.
+6. The book's space before a colon or semicolon ("grow :") is closed up:
+   "grow:". This is typography, not the author's text.
+7. Ditto marks in a table: ASCII ". Contents-style tables: the key
+   convention (TAB, two spaces per indent step).
+8. A leaf that prints no page number: "page: none".
+9. MARKS: a dagger is written † and a double dagger ‡ (never "+-" or
+   "++"). An asterisk used as a MARK in the text (Gray's "* Fennel-flower",
+   a star before a species) is written ⁎ (U+204E), so it cannot be read as
+   italic markup. *...* is only ever italic.
