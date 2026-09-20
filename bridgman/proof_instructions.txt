@@ -1,0 +1,79 @@
+PROOFREADING: P. W. Bridgman, Dimensional Analysis (Yale, 1922)
+
+You are transcribing pages of a 1922 physics book for a RESTORED EDITION:
+the author's text, unchanged, in clean modern markup, with every formula
+typeset. No usable transcription exists, so YOUR READING OF THE PAGE IMAGE
+IS THE TEXT. The OCR draft is a convenience and is often wrong, and it
+destroys the mathematics completely; the image is the authority.
+
+FOR EACH LEAF NNN YOU ARE GIVEN
+  page image:  bridgman/_src/png/NNN.png  (open it with the Read tool; it is
+               1700 px wide; if a formula is hard to read, crop and enlarge
+               it with a short python/PIL script into $TMPDIR and Read that)
+  OCR draft:   bridgman/_src/draft/NNN.txt  (words only; useless for maths)
+The printed page number is the leaf number minus 13 (leaf 040 = p. 27).
+
+WRITE bridgman/proof/NNN.txt (three-digit leaf number). Read the WHOLE page
+image, top to bottom, every time. Do not stop at a formula.
+
+WHAT TO WRITE
+- Every word the page prints, in order, EXCEPT the running head at the top
+  (e.g. "DIMENSIONAL FORMULAS    27") and the page number.
+- Spelling, capitals, punctuation and hyphenation EXACTLY as printed
+  ("formulae" and "formulas" both occur; "preëminently" keeps its
+  diaeresis). Do not modernise or correct. An obvious misprint is
+  transcribed as printed and listed in your report.
+- One paragraph per line: join the printed lines of a paragraph into ONE
+  line. Separate paragraphs and headings with ONE blank line.
+- A word broken at a line end is joined ("informa-" / "tion" ->
+  "information"); keep the hyphen only in a real compound.
+- Quotation marks and apostrophes as plain ASCII " and '. Dashes as —.
+- If the page OPENS in the middle of a paragraph continued from the
+  previous page, start that first line with "+ " (plus, space). Otherwise
+  do not.
+
+MATHEMATICS (the reason this pass exists)
+- Every formula, symbol, subscript, exponent or dimensional expression is
+  LaTeX. Inline: \( ... \). Displayed (set on its own line, centred): \[ ... \]
+  written INSIDE the paragraph line where it falls, with the text before and
+  after it on the same line. If a displayed formula ends a paragraph, the
+  paragraph ends after the \].
+- Standard LaTeX only (amsmath is available): \frac, ^{}, _{}, \sqrt, \Pi,
+  \phi, \rho, \mu, \times, \cdot, \left( \right), \quad, \text{etc.}
+  Bridgman sets symbols in UPRIGHT type; write ordinary LaTeX letters anyway
+  (x, not \mathrm{x}), the house style. Words inside a formula go in \text{}.
+- Single letters in running text that are symbols are maths: "the units L,
+  M, and T" -> "the units \(L\), \(M\), and \(T\)"; "x₁" -> \(x_1\).
+  Dimensional formulas: \([m l^{-1} t^{-2}]\) with the brackets as printed.
+- Equation numbers printed at the right margin: put them inside the
+  display with \tag{}: \[ F = ma \tag{3} \].
+- A multi-line display (a system of equations, aligned steps): one \[ \]
+  with \begin{aligned} ... \\ ... \end{aligned}.
+- Copy exponents and coefficients EXACTLY. Every number is a measured or
+  derived value and a wrong digit reads perfectly.
+- A TABLE of symbols or values: one row per line, each line starting with a
+  TAB, cells separated by " | ", maths inside cells as \( \).
+
+OTHER MARKUP (the only markup there is)
+- *italic* for italic words (e.g., i.e., book titles, emphasis).
+- ^^Small Capitals^^ for words in small capitals inside a line: the paper
+  author names ("S. P. ^^Thompson^^, Elementary Lessons...") and the first
+  word of a chapter ("^^In^^ the introductory chapter..."). Write the
+  letters as they would be capitalised in ordinary type.
+- A HEADING on its own line is its own paragraph, as printed:
+  "CHAPTER II" then, as a separate paragraph, "DIMENSIONAL FORMULAS";
+  "REFERENCES"; "PROBLEMS".
+- A FOOTNOTE at the foot of the page: write it as its own paragraph at the
+  very end of the file, starting "Footnote: " followed by the symbol and
+  text as printed; leave the reference mark in the body as printed,
+  e.g. "...the paper.*" -> keep the * in the body. Report every footnote.
+- Numbered references "(1) R. C. Tolman, Phys. Rev. 6, 1915, p. 226." one
+  per paragraph, as printed. Journal volume:page citations exactly.
+- A drawing or diagram, if any: a line "[Figure N]" (N = its printed
+  number, or "aa" if unnumbered) where it sits, and report it.
+
+REPORT (your final message): for each leaf one line
+  NNN  p<printed page>  <first words>  formulas: <count>  footnotes: <n>
+then any misprints kept, any formula you could not read with certainty
+(leaf, and what is uncertain), and anything odd. Do not change any file
+other than your own bridgman/proof/NNN.txt.

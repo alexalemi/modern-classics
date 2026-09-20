@@ -1,0 +1,29 @@
+FORMULA CHECK: P. W. Bridgman, Dimensional Analysis (1922)
+
+A first reader has transcribed every page image into bridgman/proof/NNN.txt,
+with every formula in LaTeX (\( ... \) inline, \[ ... \] displayed). You
+are the SECOND, INDEPENDENT reader of the MATHEMATICS ONLY. Words have
+already been checked against two other scans; formulas have not, and a
+wrong exponent or digit reads perfectly.
+
+FOR EACH LEAF NNN IN YOUR RANGE
+  1. Open the page image bridgman/_src/png/NNN.png (Read tool). Enlarge
+     every formula region with a short PIL crop into your scratch directory
+     ($TMPDIR, or the session scratchpad if $TMPDIR is unset) and Read the
+     crop; do not judge exponents at page scale.
+  2. Compare, formula by formula, against bridgman/proof/NNN.txt: every
+     symbol, subscript, superscript, sign, fraction, digit, bracket,
+     equation number and table cell. Also check that no printed formula or
+     table row is MISSING from the file and that none is invented.
+  3. Ignore pure LaTeX style (spacing, \dfrac vs \frac, \left/\right) and
+     ignore pencil marks by a reader of the copy (grey, handwritten).
+     Upright type in the print is written as ordinary LaTeX letters; that
+     is deliberate.
+
+DO NOT EDIT ANY FILE. REPORT ONLY.
+
+REPORT (final message, short): one line per discrepancy
+  NNN  printed: <what the page shows>  file: <what the file has>
+and, separately, anything you could not read with certainty. If a leaf
+is clean, do not list it; end with "N leaves checked, M discrepancies".
+Do not quote page text beyond the formula in question.

@@ -123,13 +123,22 @@ def to_mathml(tex, display):
     # likewise an empty group, which pandoc writes for LaTeX's {}; mspace
     # keeps the parent's argument count (a superscript still has two)
     m = re.sub(r"<mrow(?:/>|></mrow>)", "<mspace/>", m)
+    m = re.sub(r"<mi(?:/>|></mi>)", "<mspace/>", m)
     alt = _alts().get(_norm(tex)) or _norm(tex)
     # a comparison is SPOKEN in the alttext: `se typogrify` reads a bare ">"
     # in an attribute as the end of the tag and curls the closing quote
     # (Whitehead's "3 > 2"), and it unescapes &lt; and &gt; alike
     alt = re.sub(r"\s*\\?(<|&lt;|\\lt)\s*", " less than ", alt)
     alt = re.sub(r"\s*\\?(>|&gt;|\\gt)\s*", " greater than ", alt)
-    alt = alt.replace("&", "&amp;").replace('"', "&quot;")
+    # and a QUOTATION MARK likewise: typogrify unescapes &quot; too, which
+    # ends the attribute early (Bridgman's \text{ for the "2 H.P."}, and his
+    # ditto marks); an apostrophe reads the same aloud and needs no escape
+    alt = alt.replace('"', "'")
+    # `se lint` t-041 reads "= ?" and "d ," in an alttext as a space before
+    # punctuation; LaTeX spacing means nothing in a spoken reading
+    # (a mark followed by a space or the end only: ".85" is a decimal)
+    alt = re.sub(r"\s+([,.;:?!])(?=\s|$)", r"\1", alt)
+    alt = alt.replace("&", "&amp;")
     return m.replace("<math", f'<math alttext="{alt}"', 1)
 
 

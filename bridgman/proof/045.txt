@@ -1,0 +1,11 @@
++ in \(X_1\), \(X_2\), and \(X_3\) respectively. Then in any concrete case we may write \[ \begin{aligned} C_1 Y_1 &= X_1^{a_1} X_2^{a_2} X_3^{a_3} \\ C_2 Y_2 &= X_1^{b_1} X_2^{b_2} X_3^{b_3} \\ C_3 Y_3 &= X_1^{c_1} X_2^{c_2} X_3^{c_3} \end{aligned} \] where the \(C\)'s are numerical coefficients. These equations are to be solved for the \(X\)'s in terms of the \(Y\)'s. This may be done conveniently by taking the logarithm of the equations, giving, \[ \begin{aligned} a_1 \log X_1 + a_2 \log X_2 + a_3 \log X_3 &= \log C_1 Y_1 \\ b_1 \log X_1 + b_2 \log X_2 + b_3 \log X_3 &= \log C_2 Y_2 \\ c_1 \log X_1 + c_2 \log X_2 + c_3 \log X_3 &= \log C_3 Y_3 \end{aligned} \]
+
+These are algebraic equations in the logarithms, and may be solved immediately. The solution for \(X\) is \[ X_1 = (C_1 Y_1)^{\begin{vmatrix} b_2 & b_3 \\ c_2 & c_3 \end{vmatrix} \div \Delta} (C_2 Y_2)^{\begin{vmatrix} c_2 & c_3 \\ a_2 & a_3 \end{vmatrix} \div \Delta} (C_3 Y_3)^{\begin{vmatrix} a_2 & a_3 \\ b_2 & b_3 \end{vmatrix} \div \Delta}. \]
+
+In this solution \(\Delta\) stands for the determinant of the exponents. \[ \Delta = \begin{vmatrix} a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3 \\ c_1 & c_2 & c_3 \end{vmatrix} \]
+
+The values of \(X_2\) and \(X_3\) are to be obtained from the value for \(X_1\) by advancing the letters.
+
+Now let us consider an example. It is required to find what a momentum of 15 tons (mass) miles/hour becomes in that system whose fundamental units are the "2 Horsepower," the "3 ft per sec," and the "5 ergs." This ought to be sufficiently complicated. Introduce the abbreviations: \[ \begin{aligned} &Y_1 \text{ for the "2 H.P."} \\ &Y_2 \text{ for the "3 ft per sec"} \\ &Y_3 \text{ for the "5 ergs."} \end{aligned} \] \[ Y_1 = 2 \text{ H.P.} = 2 \times 33000 \frac{1 \text{ lb (force) } 1 \text{ ft}}{1 \text{ min}} \]
+
+In the first place we have to change lbs (force) to lbs (mass).

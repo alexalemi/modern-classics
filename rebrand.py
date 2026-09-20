@@ -14,6 +14,14 @@ from pathlib import Path
 REPO = "https://github.com/alexalemi/modern-classics"
 
 
+
+def the(name):
+    """`se lint` m-061: some source names take the article before their link
+    ("from the Internet Archive"); a bare "from Internet Archive" is an error.
+    Where a <br/> sits between, the article goes BEFORE the break: lint looks
+    for "the" at the end of the text node ahead of the <br/>."""
+    return "the " if name.startswith(("Internet Archive", "HathiTrust", "Library of Congress")) else ""
+
 def esc(s):
     return html.escape(s, quote=False)
 
@@ -244,7 +252,7 @@ def _imprint(dest, env, meta, original=False):
     if trl:
         based += f", working from the English translation by {esc(trl)}"
     if src:
-        based += f', with the source text drawn from <a href="{src}">{esc(src_name)}</a>'
+        based += f', with the source text drawn from {the(src_name)}<a href="{src}">{esc(src_name)}</a>'
     based += "."
     t = re.sub(r'<p>This particular ebook is based on a transcription[^<]*<a href="TRANSCRIPTION_URL">TRANSCRIPTION_SOURCE</a>[^<]*<a href="PAGE_SCANS_URL">PAGE_SCANS_SOURCE</a>\.</p>',
                f"<p>{based}</p>", t)
@@ -351,9 +359,9 @@ def _colophon(dest, env, meta, original=False):
     tail = ""
     if trl:
         tail += f'and is based on the English translation by<br/>\n\t\t\t<b epub:type="z3998:personal-name">{esc(trl)}</b>'
-        tail += (f'<br/>\n\t\t\tfrom<br/>\n\t\t\t<a href="{src}">{esc(src_name)}</a>.</p>' if src else ".</p>")
+        tail += (f'<br/>\n\t\t\tfrom{" the" if the(src_name) else ""}<br/>\n\t\t\t<a href="{src}">{esc(src_name)}</a>.</p>' if src else ".</p>")
     elif src:
-        tail = f'and is based on the source text from<br/>\n\t\t\t<a href="{src}">{esc(src_name)}</a>.</p>'
+        tail = f'and is based on the source text from{" the" if the(src_name) else ""}<br/>\n\t\t\t<a href="{src}">{esc(src_name)}</a>.</p>'
     else:
         tail = ".</p>"
     t = t.replace('and is based on a transcription produced in <time>TRANSCRIPTION_YEAR</time> by<br/>\n\t\t\t<b epub:type="z3998:personal-name">TRANSCRIBER_1_NAME</b>, <b epub:type="z3998:personal-name">TRANSCRIBER_2_NAME</b>, and <a href="https://www.pgdp.net/">Distributed Proofreaders</a><br/>\n\t\t\tfor<br/>\n\t\t\t<a href="TRANSCRIPTION_URL">TRANSCRIPTION_SOURCE</a><br/>\n\t\t\tand on digital scans from<br/>\n\t\t\t<a href="PAGE_SCANS_URL">PAGE_SCANS_SOURCE</a>.</p>', tail)

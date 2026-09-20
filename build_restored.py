@@ -81,6 +81,8 @@ BLURBS = {
     "american-indian-stories": "Her childhood on the Yankton reservation, her "
                                "schooldays in the East, her stories, and her "
                                "1921 case against the Indian Bureau.",
+    "bridgman": "What a pendulum, a drop of liquid and an airplane model have "
+                "in common: the Π theorem, read from the 1922 printing.",
     "game-of-logic": "Logic as a board game with red and grey counters, "
                      "the rulebook for the card that came in its envelope.",
     "erdnase": "The 1902 manual of card handling, at the card table and on "
