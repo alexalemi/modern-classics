@@ -1,0 +1,44 @@
+BYRNE'S EUCLID — status notes (2026-09-20), work paused
+
+Alex's ruling: build on Sergey Slyusarev's recreation
+(github.com/jemmybutton/byrne-euclid; book text CC BY-SA 4.0, byrne.mp
+GPLv3). The edition must carry CC BY-SA 4.0 and credit it.
+
+WHAT WORKS
+- Standalone MetaPost: one mpost job per \defineNewPicture reproduces the
+  diagrams exactly as SVG (prototype _src/proto/p1.mp: Prop. I.1's margin
+  figure and the inline black line both correct). Needs:
+    u:=1cm;  (byrnebook.cls \mpPre)
+    input metafun; input byrne;  prologues:=3; outputformat:="svg";
+    MPINPUTS=_src/texmf/metapost/context/mpii:.../common:.../base:
+  metafun (ConTeXt mpii/common/mpiv) was fetched from
+  github.com/contextgarden/context; MetaPost base (plain.mp) and luamplib
+  from the TeX Live archive on mirrors.mit.edu (the Utah CTAN mirror fails
+  certificate verification through the proxy). TeX Live here has the byrne
+  package but not luamplib, metafun or plain.mp.
+- Every inline macro in byrne.sty reduces to \drawFromCurrentPicture
+  [placement][name]{MP code}: an image() in the current instance, reused by
+  name until the next \defineNewPicture resets the undefine list. So the
+  pictures can be generated in source order without LaTeX.
+
+WHAT IS HARD, and why it is paused
+- ~5,000 inline pictures, many INSIDE math: $\drawUnitLine{AB} =
+  \drawUnitLine{CA}$, \dfrac of pictures (Books V-VI), \halign proportion
+  tables, \vcenter/\hbox stacks. A text converter must rebuild all of that
+  layout, and the renderers need a new inline-image feature (glyphs inside
+  running text, fractions of images) in both assemble.py and build_ebook.
+- Compiling the real book with lualatex (to typeset those blocks by TeX)
+  half-works: with _src/texmf as TEXMFHOME it runs, but EB Garamond is not
+  installed (fontspec errors) and the pictures did not appear in the test
+  PDF (luamplib here is the 2026 archive version against TeX Live 2023's
+  LuaTeX; unresolved).
+- Realistic estimate: several days of engineering for a faithful
+  reflowable edition, which is roughly what the web recreations took.
+
+NEXT STEPS WHEN RESUMED
+1. Get the full book to compile (fonts: ebgaramond from the TL archive;
+   match luamplib to LuaTeX 1.16), then instrument byrne.sty to \shipout
+   every inline picture as its own page and \write a marker log.
+2. Or: the standalone-mpost route for pictures plus a Python LaTeX
+   converter, rendering display formulas / tables as TeX-typeset SVG blocks
+   with generated alt text.
