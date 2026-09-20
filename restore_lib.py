@@ -433,6 +433,10 @@ def copy_plates(book, rows):
         data = Path(rp).read_bytes() if rp else book.zip.read(names[r["source"]])
         im = Image.open(io.BytesIO(data))
         has_alpha = im.mode in ("RGBA", "LA") or (im.mode == "P" and "transparency" in im.info)
+        if has_alpha and im.convert("RGBA").getchannel("A").getextrema()[0] == 255:
+            # an alpha channel with nothing transparent in it: se lint's
+            # f-019 rejects such a PNG, so it goes out as a JPEG (Newcomb)
+            has_alpha = False
         if max(im.size) > book.long_side:
             im.thumbnail((book.long_side, book.long_side))
         elif not has_alpha and r["source"].lower().endswith((".jpg", ".jpeg")):

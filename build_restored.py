@@ -75,6 +75,9 @@ BLURBS = {
     "american-indian-stories": "Her childhood on the Yankton reservation, her "
                                "schooldays in the East, her stories, and her "
                                "1921 case against the Indian Bureau.",
+    "astronomy-for-everybody": "The sky from the turning earth out to the fixed "
+                               "stars, as America's great calculator of the "
+                               "planets told it in 1902, with all sixty-four figures.",
     "nature-of-the-judicial-process": "A judge on what judges do: logic, history, "
                                       "custom and social welfare, and legislating "
                                       "only between the gaps.",
