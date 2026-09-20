@@ -75,6 +75,9 @@ BLURBS = {
     "american-indian-stories": "Her childhood on the Yankton reservation, her "
                                "schooldays in the East, her stories, and her "
                                "1921 case against the Indian Bureau.",
+    "psychology-briefer-course": "Habit, the stream of consciousness, the "
+                                 "self and the will, in James's own one-volume "
+                                 "version of the Principles.",
     "short-history-of-the-world": "From the nebulae to the peace of 1922 in "
                                   "sixty-seven chapters, with all 208 plates "
                                   "and the preface restored.",

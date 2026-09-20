@@ -827,7 +827,10 @@ def main():
     # the file unparseable for every step after it — and the error you get is
     # a raw XML "invalid element name", pages away from the cause. Refuse to
     # ship a bare comparison operator in prose, and say why.
-    if not args.original:
+    # A RESTORED edition is the author's words, like the original-text
+    # companions, so there is nothing to reword either: James printed
+    # "I per se < P". reescape_lt() below puts the escape back.
+    if not args.original and env.get("EDITION") != "restored":
         for f in sorted((dest / "src/epub/text").glob("*.xhtml")):
             # a formula's less-than is <m:mo>&lt;</m:mo> and is correct there
             if "&lt;" in re.sub(r"<m:math\b.*?</m:math>", "", f.read_text(), flags=re.S):

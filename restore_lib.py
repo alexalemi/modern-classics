@@ -133,6 +133,11 @@ class Walker:
             for a in d.find_all("a", id=re.compile(r"(?i)^f(oot)?n(ote)?_?\w+$")):
                 key = a["id"]
                 p = a.find_parent(["p", "div"])
+                # a note of several paragraphs (or with a table) is the whole
+                # div.footnote, not the paragraph holding its anchor
+                box = a.find_parent("div", class_="footnote")
+                if box is not None and len(box.find_all(["p", "table", "blockquote", "div"], recursive=False)) > 1:
+                    p = box
                 a.decompose()
                 if p is not None and key not in self.notes:
                     self.notes[key] = p
@@ -141,7 +146,13 @@ class Walker:
                     h.decompose()
         self.note_text = {}
         for key, p in self.notes.items():
-            self.note_text[key] = self.para(p, collect=False)
+            kids = p.find_all(["p", "table", "blockquote", "div"], recursive=False) if p.name == "div" else []
+            if len(kids) > 1:
+                items = self.stream_list(kids)
+                assert items and items[0][0] == "P", key
+                self.note_text[key] = [("P", "Footnote: " + items[0][1])] + items[1:]
+            else:
+                self.note_text[key] = [("P", "Footnote: " + self.para(p, collect=False))]
             p.decompose()
         for d in soup.select("div.footnotes"):
             d.decompose()
@@ -207,6 +218,15 @@ class Walker:
             else:
                 yield n
 
+    def stream_list(self, nodes):
+        wrap = BeautifulSoup("<div></div>", "html.parser").div
+        for n in nodes:
+            wrap.append(n.extract() if n.parent is not None else n)
+        pend, self.pending = self.pending, []
+        out = self.stream(wrap)
+        self.pending = pend
+        return out
+
     def stream(self, soup):
         out = []
         for el in self.flat(list(soup.children)):
@@ -255,11 +275,21 @@ class Walker:
             if cls & {"poetry-container", "poetry"} or el.select_one(".stanza, .verse"):
                 for st in (el.select(".stanza") or [el]):
                     lines = []
-                    for v in st.select(".verse, .line") or st.find_all("br"):
-                        t = clean(self.inline(v)) if v.name != "br" else ""
-                        if t:
-                            m = re.search(r"indent(\d+)", " ".join(v.get("class") or []))
-                            lines.append("\t" + "  " * (int(m.group(1)) if m else 0) + t)
+                    # lines are .verse/.line, or span.i0/i1/..., or bare text
+                    # broken by <br> (James's one-line quotations were lost
+                    # when only the first shape was known)
+                    vs = st.select(".verse, .line") or st.find_all("span", class_=re.compile(r"^i\d+$"))
+                    if vs:
+                        for v in vs:
+                            t = clean(self.inline(v))
+                            if t:
+                                c = " ".join(v.get("class") or [])
+                                m = re.search(r"indent(\d+)", c) or re.fullmatch(r"i(\d+)", c)
+                                lines.append("\t" + "  " * (int(m.group(1)) if m else 0) + t)
+                    else:
+                        for br in st.find_all("br"):
+                            br.replace_with("\x00")
+                        lines = ["\t" + clean(t) for t in self.inline(st).split("\x00") if clean(t)]
                     if lines:
                         out.append(("BLOCK", "\n".join(lines)))
                 continue
@@ -270,8 +300,26 @@ class Walker:
                         out.append(("P", t))
                 continue
             if el.name in ("p", "div", "blockquote", "dl", "span", "center"):
+                figs = el.find_all(["figure"]) + el.find_all(class_=re.compile(r"^fig"))
+                if el.name == "p" and figs and not el.find("table"):
+                    # A PLATE FLOATED INTO A SENTENCE (James, Fig. 3: "formed
+                    # by a tough [plate] white membrane"). Splitting around it
+                    # cut the sentence in two; the plate goes after the
+                    # paragraph instead, which is where a reader looks.
+                    figs = [f for f in figs if not any(g in f.parents for g in figs)]
+                    for f in figs:
+                        f.extract()
+                    t = self.para(el)
+                    if t:
+                        out.append(("P", t))
+                        for n in self.pending:
+                            if n in self.note_text:
+                                out.extend(self.note_text.pop(n))
+                        self.pending = []
+                    out.extend(self.stream_list(figs))
+                    continue
                 if el.find(["figure", "table"]) or el.find(class_=re.compile("fig")):
-                    # a paragraph wrapping a plate: split around it
+                    # a block wrapping a plate: split around it
                     out.extend(self.stream(el))
                     continue
                 t = self.para(el)
@@ -279,7 +327,7 @@ class Walker:
                     out.append(("P", t))
                     for n in self.pending:
                         if n in self.note_text:
-                            out.append(("P", "Footnote: " + self.note_text.pop(n)))
+                            out.extend(self.note_text.pop(n))
                     self.pending = []
                 continue
             raise SystemExit(f"unhandled <{el.name} {sorted(cls)}>: {clean(el.get_text())[:80]!r}")
@@ -440,3 +488,26 @@ def respell(sections, pairs):
                     s["stream"][k] = (it[0], t) + tuple(it[2:])
         counts[bad] = n
     return counts
+
+
+def mend_plate_splits(sections):
+    """A paragraph the TRANSCRIPTION cut in two around a plate: the first
+    half ends mid-sentence, the plates follow, the second half opens in
+    lower case. Join the halves and set the plates after the paragraph.
+    Returns how many were mended, for the prep to assert."""
+    n = 0
+    for s in sections:
+        st = s["stream"]
+        k = 0
+        while k < len(st):
+            if st[k][0] == "P" and re.search(r"[a-z,;]$", st[k][1]):
+                j = k + 1
+                while j < len(st) and st[j][0] == "PLATE":
+                    j += 1
+                if j > k + 1 and j < len(st) and st[j][0] == "P" and re.match(r"[a-z]", st[j][1]):
+                    plates = st[k + 1:j]
+                    st[k:j + 1] = [("P", st[k][1] + " " + st[j][1])] + plates
+                    n += 1
+                    continue
+            k += 1
+    return n
