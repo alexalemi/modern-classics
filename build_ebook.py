@@ -211,7 +211,10 @@ def classify_block(par):
         if len(lines) >= 2 and short == len(lines) and not any(" -- " in l or l.endswith("--") for l in lines):
             return "verse"
         return "lines"
-    if assemble.is_subheading(stripped):
+    # a line carrying an inline picture is a sentence of a proof, however
+    # short (Byrne's "Construct [angle] (prop. I.22)"), and a subhead would
+    # print its marker raw: subheads are escaped, not inlined
+    if assemble.is_subheading(stripped) and not re.search("[⟦⟪⟬]", stripped):
         return "subhead"
     return "paragraph"
 
@@ -305,7 +308,7 @@ def render_block(par, kind):
     if ASTERISM.match(re.sub(r"\s+", " ", s)):
         return "\t\t\t<hr/>"
     if kind == "paragraph":
-        if is_all_caps(s) and len(s) < 200 and "\n" not in s:
+        if is_all_caps(s) and len(s) < 200 and "\n" not in s and not re.search("[⟦⟪⟬]", s):
             return f'\t\t\t<p class="subhead">{esc(nice_title(s))}</p>'
         text = ERA.sub(r'<abbr epub:type="se:era">\1\2</abbr>', esct(s))
         return f"\t\t\t<p>{text}</p>"
@@ -764,6 +767,9 @@ def main():
 
     book = Path(args.book_dir)
     env = assemble.read_env(book / "env")
+    # inline pictures (Byrne): the chapter files sit in text/, the images in
+    # images/, so an inline picture is referenced as ../images/gID.svg
+    assemble.set_glyphs(book, "../images")
     all_meta = json.loads((ROOT / "ebook_meta.json").read_text())
     meta = dict(all_meta[book.name])
     FIGURE_DIR[0] = env.get("FIGURE_DIR")
@@ -829,6 +835,17 @@ def main():
         rules.append('p.subhead{\n\tfont-style: italic;\n\tmargin-top: 1.5em;\n\ttext-indent: 0;\n}')
     if 'class="lines"' in used:
         rules.append('blockquote.lines p{\n\ttext-indent: 0;\n}')
+    if 'class="glyph"' in used:
+        rules.append('img.glyph{\n\tvertical-align: middle;\n\tdisplay: inline;\n}')
+    if 'class="frac"' in used:
+        rules.append('span.frac{\n\tdisplay: inline-block;\n\tvertical-align: middle;\n\ttext-align: center;\n}\n\n'
+                     'span.frac > span{\n\tdisplay: block;\n}\n\n'
+                     'span.frac > span.num{\n\tborder-bottom: 1px solid currentColor;\n}\n\n'
+                     'span.frac > span.den{\n\tborder-top: 0;\n}')
+    if 'class="stack' in used:
+        rules.append('span.stack{\n\tdisplay: inline-block;\n\tvertical-align: middle;\n\ttext-align: center;\n}\n\n'
+                     'span.stack > span{\n\tdisplay: block;\n}\n\n'
+                     'span.stack.brace{\n\tborder-left: 2px solid currentColor;\n\tborder-right: 2px solid currentColor;\n\tborder-radius: 0.6em;\n\tpadding: 0 0.3em;\n}')
     for d in range(1, 9):
         if f'class="indent-{d}"' in used:
             rules.append(f'span.indent-{d}{{\n\tdisplay: inline-block;\n\tpadding-left: {d * 1.5}em;\n\ttext-indent: -1em;\n}}')

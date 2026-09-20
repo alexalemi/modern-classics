@@ -51,6 +51,12 @@ blockquote p {
   margin-bottom: 1em;
 }
 
+img.glyph { vertical-align: middle; display: inline; }
+span.frac, span.stack { display: inline-block; vertical-align: middle; text-align: center; }
+span.frac > span, span.stack > span { display: block; }
+span.frac > span.num { border-bottom: 1px solid currentColor; }
+span.stack.brace { border-left: 2px solid currentColor; border-right: 2px solid currentColor; border-radius: 0.6em; padding: 0 0.3em; }
+
 pre.outline {
   font-family: Georgia, "Palatino Linotype", "Book Antiqua", serif;
   white-space: pre-wrap;

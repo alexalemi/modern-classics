@@ -1,0 +1,29 @@
+% Byrne capture hooks: every MetaPost picture is shipped out as its own
+% page, cropped to the picture, and tagged in the paragraph it sits in.
+\newcount\bycapno
+\newbox\bypicbox
+\directlua{dofile("capture.lua")}
+\makeatletter
+\def\drawImageFromCurrentInstance#1{%
+	\setbox\bypicbox\hbox{\begin{mplibcode}[\currentInstance]%
+		draw #1;
+	\end{mplibcode}}%
+	\directlua{byc.mark(\the\bypicbox, "\luaescapestring{#1}")}%
+	{\hoffset=-1in \voffset=-1in
+	 \pagewidth=\wd\bypicbox \pageheight=\dimexpr\ht\bypicbox+\dp\bypicbox\relax
+	 \ifdim\pagewidth<1pt \pagewidth=1pt\fi \ifdim\pageheight<1pt \pageheight=1pt\fi
+	 \RawShipout\vbox{\copy\bypicbox}}%
+	\box\bypicbox}
+\makeatother
+% text typeset while a mplibcode environment is open (textext labels) is
+% part of the picture, not the text
+\AddToHook{env/mplibcode/begin}{\directlua{byc.inmp = byc.inmp + 1}}
+\AddToHook{env/mplibcode/end}{\directlua{byc.inmp = byc.inmp - 1}}
+% every numbered heading (proposition, definition, axiom, postulate...) as
+% an event, with the number TeX gave it: at the top of a page the class
+% sets the heading as a \phantom, so it never reaches a paragraph
+\makeatletter
+\let\byc@oldsect\@sect
+\def\@sect#1#2#3#4#5#6[#7]#8{\byc@oldsect{#1}{#2}{#3}{#4}{#5}{#6}[#7]{#8}%
+	\directlua{byc.event("sect", "\luaescapestring{#1}|\luaescapestring{\csname the#1\endcsname}|\luaescapestring{\detokenize{#8}}")}}
+\makeatother

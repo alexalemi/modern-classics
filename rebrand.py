@@ -256,6 +256,12 @@ def _imprint(dest, env, meta, original=False):
     based += "."
     t = re.sub(r'<p>This particular ebook is based on a transcription[^<]*<a href="TRANSCRIPTION_URL">TRANSCRIPTION_SOURCE</a>[^<]*<a href="PAGE_SCANS_URL">PAGE_SCANS_SOURCE</a>\.</p>',
                f"<p>{based}</p>", t)
+    if env.get("LICENSE"):
+        # a licensed book: its imprint must not claim the public domain
+        t = re.sub(r"<p>The source text and artwork in this ebook are believed to be in the United States public domain.*?</p>",
+                   f'<p>{esc(env.get("LICENSE_CREDIT", ""))} This ebook is released under the '
+                   f'<a href="{LICENSES[env["LICENSE"]][1]}">{LICENSES[env["LICENSE"]][0]}</a>; '
+                   f'see the License page at the end of this ebook.</p>', t, flags=re.S)
     t = t.replace(
         'The source text and artwork in this ebook are believed to be in the United States public domain',
         'The original source text and artwork in this ebook are believed to be in the United States public domain')
@@ -383,7 +389,39 @@ def _colophon(dest, env, meta, original=False):
     p.write_text(t)
 
 
+LICENSES = {
+    "CC-BY-SA-4.0": ("Creative Commons Attribution-ShareAlike 4.0 International License",
+                     "https://creativecommons.org/licenses/by-sa/4.0/"),
+}
+
+
+def _licensed(dest, env):
+    """A book that is NOT in the public domain (LICENSE= in env: Byrne's
+    Euclid, built on Slyusarev's CC BY-SA recreation). The Uncopyright page
+    and dc:rights say public domain and CC0; both would be false, so both
+    are replaced, with the credit env's LICENSE_CREDIT gives."""
+    name, url = LICENSES[env["LICENSE"]]
+    credit = env.get("LICENSE_CREDIT", "")
+    p = dest / "src/epub/text/uncopyright.xhtml"
+    t = p.read_text()
+    body = (f'<p>This ebook is not in the public domain. {esc(credit)} It is released under the terms of the '
+            f'<a href="{url}">{name}</a>: you may share and adapt it, for any purpose, provided you give '
+            f'appropriate credit and release what you make from it under the same license.</p>')
+    t = re.sub(r"<blockquote.*?</blockquote>\s*", "", t, flags=re.S)
+    t = re.sub(r"(<h2 epub:type=\"title\">)Uncopyright(</h2>)", r"\1License\2", t)
+    t = re.sub(r"<title>Uncopyright</title>", "<title>License</title>", t)
+    t = re.sub(r"(</h2>).*?(</section>)", lambda m: m.group(1) + "\n\t\t\t" + body + "\n\t\t" + m.group(2), t, flags=re.S)
+    p.write_text(t)
+    opf = dest / "src/epub/content.opf"
+    o = opf.read_text()
+    o = re.sub(r"<dc:rights>.*?</dc:rights>",
+               f"<dc:rights>{esc(credit)} Released under the {name} ({url}).</dc:rights>", o, flags=re.S)
+    opf.write_text(o)
+
+
 def _uncopyright(dest, env, meta):
+    if env.get("LICENSE"):
+        return _licensed(dest, env)
     p = dest / "src/epub/text/uncopyright.xhtml"
     t = p.read_text()
     t = t.replace("<a href=\"https://standardebooks.org/\">standardebooks.org</a>",

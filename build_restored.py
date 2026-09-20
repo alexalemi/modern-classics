@@ -81,6 +81,9 @@ BLURBS = {
     "american-indian-stories": "Her childhood on the Yankton reservation, her "
                                "schooldays in the East, her stories, and her "
                                "1921 case against the Indian Bureau.",
+    "byrne": "Euclid with the letters replaced by colour, 1847: every proof "
+             "written in coloured pictures of its parts. CC BY-SA, after "
+             "Slyusarev's recreation.",
     "gray-plants": "Botany for young people, 1858: how plants grow, and a "
                    "Popular Flora of 105 families with keys and 467 woodcuts.",
     "bridgman": "What a pendulum, a drop of liquid and an airplane model have "

@@ -170,7 +170,7 @@ def figure_label(num):
     return f"Figures {', '.join(parts[:-1])} and {parts[-1]}"
 
 
-FIG_EXTS = ("jpg", "jpeg", "png", "gif")
+FIG_EXTS = ("jpg", "jpeg", "png", "gif", "svg")
 
 
 def figure_name(site, figdir, num):
@@ -191,6 +191,13 @@ def image_size(path):
         return None
     if data[:8] == b"\x89PNG\r\n\x1a\n":
         return struct.unpack(">II", data[16:24])
+    if data.lstrip()[:4] in (b"<svg", b"<?xm"):
+        # an SVG's own width/height, in pt from pdf/MetaPost (1pt = 4/3 px)
+        m = re.search(rb'<svg[^>]*?width="([\d.]+)(pt|px)?"[^>]*?height="([\d.]+)(pt|px)?"', data)
+        if m:
+            k = 4 / 3 if m.group(2) == b"pt" else 1
+            return round(float(m.group(1)) * k), round(float(m.group(3)) * k)
+        return None
     i = 2
     while i + 9 < len(data):
         if data[i] != 0xFF:
@@ -397,6 +404,49 @@ def emphasis(escaped):
                     escaped)
 
 
+# INLINE PICTURES (Byrne's Euclid, 2026-09-20): a book whose diagrams sit
+# inside its sentences -- "Describe [a circle] and [a circle]" -- carries
+#   ⟦g:ID⟧                 one inline picture, {book}/glyphs.json -> size, alt
+#   ⟪NUM‖DEN⟫              a fraction whose parts may hold pictures
+#   ⟬A‖B‖C⟭ / ⟬{A‖B‖C}⟭    a vertical stack (a brace group when braced)
+# Both renderers set GLYPHS before rendering: the image directory as the
+# text will reference it, and the per-picture metadata. Books without
+# glyphs.json never contain these characters, and nothing changes for them.
+GLYPHS = {"src": None, "meta": {}}
+GLYPH = re.compile(r"⟦g:([0-9a-z]+)⟧")
+FRAC = re.compile(r"⟪([^⟪⟫⟬⟭]*)‖([^⟪⟫⟬⟭]*)⟫")
+STACK = re.compile(r"⟬([^⟪⟫⟬⟭]*)⟭")
+
+
+def set_glyphs(book, src):
+    f = Path(book) / "glyphs.json"
+    GLYPHS["meta"] = json.loads(f.read_text()) if f.exists() else {}
+    GLYPHS["src"] = src
+
+
+def glyphs(text):
+    if "⟦g:" not in text and "⟪" not in text and "⟬" not in text:
+        return text
+
+    def img(m):
+        g = GLYPHS["meta"][m.group(1)]
+        alt = html.escape(g["alt"], quote=True)
+        return (f'<img class="glyph" src="{GLYPHS["src"]}/g{m.group(1)}.svg" '
+                f'alt="{alt}" width="{g["w"]}" height="{g["h"]}"/>')
+    text = GLYPH.sub(img, text)
+    for _ in range(8):                     # innermost first; nesting is shallow
+        t2 = FRAC.sub(lambda m: f'<span class="frac"><span class="num">{m.group(1)}</span>'
+                                f'<span class="den">{m.group(2)}</span></span>', text)
+        t2 = STACK.sub(lambda m: (
+            '<span class="stack' + (' brace' if m.group(1).startswith("{") else '') + '">'
+            + "".join(f"<span>{x}</span>" for x in m.group(1).strip("{}").split("‖") if x.strip()) + "</span>"), t2)
+        if t2 == text:
+            break
+        text = t2
+    assert not re.search("[⟦⟪⟬]", text), text[:120]
+    return text
+
+
 def inline(escaped):
     """Every inline transform, in one place, for BOTH renderers.
     build_ebook.esct() calls this too, so the page and the epub cannot
@@ -415,7 +465,7 @@ def inline(escaped):
         held.append(mathml.to_mathml(tex, m.group(2) is not None))
         return f"\x00M{len(held) - 1}\x00"
     escaped = mathml.MATH.sub(hold, escaped)
-    out = scripts(emphasis(escaped))
+    out = glyphs(scripts(emphasis(escaped)))
     return re.sub("\x00M(\\d+)\x00", lambda m: held[int(m.group(1))], out)
 
 
@@ -756,6 +806,8 @@ def main():
         if key not in env:
             sys.exit(f"ERROR: {key} missing from {book}/env")
 
+    if env.get("FIGURE_DIR"):
+        set_glyphs(book, env["FIGURE_DIR"])
     sections = build_sections(book, load_manifest(book),
                               source="chapters" if args.original
                               else "modern_chapters", titles=args.original,
