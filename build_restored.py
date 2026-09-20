@@ -75,6 +75,9 @@ BLURBS = {
     "american-indian-stories": "Her childhood on the Yankton reservation, her "
                                "schooldays in the East, her stories, and her "
                                "1921 case against the Indian Bureau.",
+    "short-history-of-the-world": "From the nebulae to the peace of 1922 in "
+                                  "sixty-seven chapters, with all 208 plates "
+                                  "and the preface restored.",
     "problems-of-philosophy": "A table, its colour and its shape, and what if "
                               "anything we know about it. The 1912 text.",
     "calculus-made-easy": "“What one fool can do, another can.” The 1914 "

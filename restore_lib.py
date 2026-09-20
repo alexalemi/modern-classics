@@ -68,13 +68,15 @@ def titlecase(s, keep=()):
     words = clean(s).split()
     out = []
     for i, w in enumerate(words):
-        bare = w.strip(".,:;()")
-        if re.fullmatch(r"[IVXLC]+", bare) or bare in keep:
+        bare = w.strip(".,:;()“”‘’\"'*")
+        if re.fullmatch(r"[IVXLC]+", bare) or bare in keep or bare + "." in keep:
             out.append(w)
-        elif i and w.lower() in SMALL:
+        elif i and bare.lower() in SMALL:
             out.append(w.lower())
         else:
-            out.append("-".join(p[:1].upper() + p[1:].lower() for p in w.split("-")))
+            # capitalise the first LETTER: "(TANG" -> "(Tang", "“OBELISK" -> "“Obelisk"
+            out.append("-".join(re.sub(r"[^\W\d_]", lambda m: m.group(0).upper(), p.lower(), count=1)
+                                for p in w.split("-")))
     return " ".join(out)
 
 
@@ -150,7 +152,10 @@ class Walker:
             if isinstance(c, Comment):
                 continue
             if isinstance(c, NavigableString):
-                out.append(str(c))
+                # A compound broken at the HTML's line end ("psycho-\nanalysts")
+                # would come out "psycho- analysts" once whitespace collapses.
+                # A suspended hyphen ("sand- or emery-paper") is left alone.
+                out.append(re.sub(r"(\w)-\r?\n[ \t]*(?!(?:or|and|to|nor)\b)(\w)", r"\1-\2", str(c)))
                 continue
             if not isinstance(c, Tag):
                 continue
