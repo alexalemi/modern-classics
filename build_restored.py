@@ -280,9 +280,6 @@ def main():
         # by plate count, which is the reason to come to this page
         out += [r for _, _, r in sorted(companion, reverse=True)]
         out.append("</ul>")
-        out.append('<p class="note">Each of these is also published as a '
-                   'retelling in contemporary English; the link on every '
-                   'book page goes to it, and back.</p>')
     (SITE / "restored.html").write_text("\n".join(out) + FOOT)
     print(f"wrote site/restored.html "
           f"({len(native)} edition(s), {len(companion)} companion(s))")
