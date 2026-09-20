@@ -81,6 +81,8 @@ BLURBS = {
     "american-indian-stories": "Her childhood on the Yankton reservation, her "
                                "schooldays in the East, her stories, and her "
                                "1921 case against the Indian Bureau.",
+    "game-of-logic": "Logic as a board game with red and grey counters, "
+                     "the rulebook for the card that came in its envelope.",
     "erdnase": "The 1902 manual of card handling, at the card table and on "
                "the stage, with all of M. D. Smith's drawings from life.",
     "astronomy-for-everybody": "The sky from the turning earth out to the fixed "

@@ -1,0 +1,51 @@
+CAPTION AND PROOF PASS: Lewis Carroll, The Game of Logic (1887)
+
+A RESTORED EDITION: Carroll's text unchanged. His diagrams were set in type
+in 1887 (ruled boxes; the digit 1 for a red counter, 0 for a grey one; a
+counter "on the fence" printed across a division line) and are REDRAWN here
+from Gutenberg's ASCII transcription. Gutenberg's ASCII HAS ERRORS: answer 7
+on page 60 was transcribed with two 1s where the print has one. So this pass
+does two jobs for every plate: PROOF the redrawing against the printed page,
+and CAPTION it for readers who cannot see it.
+
+Read /home/alemi/projects/modern-classics/CAPTIONS.md first.
+
+FOR EACH PLATE ID IN YOUR RANGE
+  the drawing:   site/images/game-of-logic/fig<id>.png   (Read it)
+  its place:     game-of-logic/chapters/NNN.txt, find "[Figure <id>]"
+                 (a table row "7. | [Figure ab] | Some x are y'." puts the
+                 exercise number and the reading beside the plate)
+  the print:     game-of-logic/_src/png/<page>.png, where <page> is in
+                 game-of-logic/_src/pagemap.json. THE MAPPING IS APPROXIMATE:
+                 if the diagram is not there, look one or two pages either
+                 side. Pages are named by scan leaf, not printed page.
+
+1. PROOF: compare the drawing with the printed diagram. Same shape (half,
+   smaller or larger Diagram; which half), same counters (1s and 0s) in the
+   same compartments, a counter on the fence where the print has one, same
+   letters (x, y, m, x', y', m') where printed. REPORT every difference as
+   "<id>: printed ... / drawn ..." with the page. Do not change any file
+   for this; the orchestrator fixes the source and redraws.
+
+2. CAPTION: one sentence, 10-30 words, saying exactly what is marked, in
+   Carroll's own vocabulary: the smaller Diagram (four compartments,
+   numbered 5 and 6 above, 7 and 8 below), the larger Diagram (the outer
+   compartments 9, 10, 15, 16 and the inner square's 11, 12, 13, 14, the
+   inner square being the m part), the upper half (x), the lower half (x'),
+   the left half (y), the right half (y'); a red counter (1), a grey counter
+   (0); "on the line between" for a counter on the fence. Name compartments
+   by their numbers where you can and by position too
+   ("a red counter in No. 5, the upper left compartment").
+   DESCRIBE THE PRINTED DIAGRAM: if the drawing is wrong, caption what the
+   page prints (and report the difference).
+   A CAPTION MUST NOT GIVE AN ANSWER THE BOOK ASKS THE READER TO FIND: in
+   "Symbols to be interpreted" exercises, say where the counters are, never
+   what the diagram means. Where the reading is printed beside the plate
+   (the answers), the caption still describes only the marks.
+   Plain prose, no markup, no tabs.
+
+WRITE game-of-logic/captions/<first-id>.txt (one file per agent, named by
+the first id of your range), one line per plate: <id><TAB><caption>.
+Then run: python3 game-of-logic/prep.py   and confirm it completes.
+
+RETURN: the ids captioned, and the full list of proof differences.

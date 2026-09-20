@@ -139,8 +139,11 @@ SPEAKER_TAG = re.compile(r"[A-Z][A-Za-z'\u2019-]{0,20}\.\s+\S")
 SENTENCE_BREAK = re.compile(r"[.?!]\s+[A-Z]")
 SPEAKER_NAME = re.compile(r"[A-Z][A-Za-z .'’-]{0,30}")
 HR_LINE = re.compile(r"\*+( \*+)*|-{2,}")
+# the caption may not run into a SECOND marker: "[Figure bj: ...] | [Figure
+# bk: ...]" (two plates side by side, game-of-logic) otherwise matched as ONE
+# figure whose caption swallowed the other plate, and bk never rendered
 FIGURE = re.compile(
-    r"^\[Figure ([A-Za-z0-9_]+(?:-[A-Za-z0-9_]+)*)(?::\s*(.+?))?\]$", re.S)
+    r"^\[Figure ([A-Za-z0-9_]+(?:-[A-Za-z0-9_]+)*)(?::\s*((?:(?!\[Figure ).)+?))?\]$", re.S)
 
 
 def figure_label(num):
@@ -292,7 +295,10 @@ def render_plate_table(par, figdir, site, bare_label=False):
     Cells are split on the spaced pipe the rest of the pipeline uses. A cell
     that is a figure marker becomes the plate itself; anything else is set
     as text, with the marker's caption carried into the img's alt so a
-    reader who cannot see the plate still gets what is on it."""
+    reader who cannot see the plate still gets what is on it.
+    Text cells go through inline() like any paragraph (they were only
+    escaped, so emphasis in a cell shipped as asterisks on the page while
+    the epub, whose renderer calls inline() already, set it as italic)."""
     rows = []
     for line in par.split("\n"):
         if not line.strip():
@@ -308,11 +314,11 @@ def render_plate_table(par, figdir, site, bare_label=False):
             else:
                 parts, last = [], 0
                 for m in FIGURE_INLINE.finditer(c):
-                    parts.append(html.escape(c[last:m.start()]))
+                    parts.append(inline(html.escape(c[last:m.start()])))
                     parts.append(render_figure(m.group(1), m.group(2),
                                                figdir, site, bare_label))
                     last = m.end()
-                parts.append(html.escape(c[last:]))
+                parts.append(inline(html.escape(c[last:])))
                 tds.append("<td>" + "".join(parts) + "</td>")
         rows.append(tds)
     # a short row's last cell spans the rest (build_ebook.pad_rows)
