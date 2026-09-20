@@ -533,7 +533,7 @@ def commons_url(title):
     for i in range(5):
         try:
             req = urllib.request.Request(url, headers={"User-Agent": "modern-classics-ebooks/1.0 (contact: alexalemi@gmail.com)"})
-            d = json.load(urllib.request.urlopen(req))
+            d = json.load(urllib.request.urlopen(req, timeout=60))
             break
         except Exception:
             time.sleep(5 * (i + 1))
