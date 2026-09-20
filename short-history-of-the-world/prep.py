@@ -79,6 +79,7 @@ TEXT_FIXES = [
     ("then it very efficient", "then a very efficient", "both scans"),
     ("drawing to it close", "drawing to a close", "both scans"),
     ("the front. Then was a cessation", "the front. There was a cessation", "both scans"),
+    ("inhabitants as being little more of a foreigner", "inhabitants as being very little more of a foreigner", "both scans: a dropped word"),
     ("Shi- Hwang-ti", "Shi-Hwang-ti", "transcription slip; spelled so everywhere else"),
     ("archæolologists", "archæologists", "Gutenberg typo; both scans"),
 ]

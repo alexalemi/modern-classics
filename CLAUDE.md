@@ -270,6 +270,13 @@ and they are decided differently:
     not. Neither is "the" 1921 text; the edition follows the two witnesses
     that agree and the introduction says what the other copy prints. One
     scan, taken as the book, would have silently swapped the text.
+  AND THE VOTE WAS BLIND TO A DROPPED WORD until 2026-09-20: it compared
+  only words the edition HAS and the print lacks, never the reverse, so
+  "the law always approaching" (for "the law is always approaching") and
+  Russell's later-state omissions of "Mr." and "until very lately" passed
+  six books. It now reports short insertions both scans agree on, minus
+  running heads, and `--json` writes them for a prep to apply (see
+  common-law/prep.py restore_dropped: 58 words in Holmes).
   AND A DIFF CAN LIE ABOUT THE TRANSCRIPTION: its biggest hit, 300 words
   "missing" from Iya, the Camp-Eater, was a page the Archive.org copy
   scanned twice.

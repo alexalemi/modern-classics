@@ -20,6 +20,7 @@ for READING -- it is a list to look at, never a list to apply.
   INSERT n>8      the print has a run of words the edition lacks
 """
 import difflib
+import json
 import re
 import sys
 import unicodedata
@@ -64,11 +65,25 @@ def vote(book, id1, id2, start):
             assert i >= 0, f"start phrase not in {ident}"
             s = s[i:]
         scans.append(" ".join(words(s)))
-    out = []
+    heads = set(words(" ".join(f.read_text().split("\n", 1)[0] for f in (d / "chapters").glob("*.txt"))))
+    envt = (d / "env").read_text() if (d / "env").exists() else ""
+    for key in ("ORIGINAL_WORK", "AUTHOR"):
+        m = re.search(key + r"=(.*)", envt)
+        if m:
+            heads |= set(words(m.group(1)))
+    out, found = [], []
     sm = difflib.SequenceMatcher(None, ew, scans[0].split(), autojunk=False)
     for tag, i1, i2, j1, j2 in sm.get_opcodes():
-        if tag not in ("replace", "delete") or i2 - i1 > 6 or j2 - j1 > 6:
+        # an INSERT is a word the print has and the edition lacks -- a dropped
+        # word, which reads perfectly ("the law always approaching" for "the
+        # law is always approaching"). Short ones only; long runs are page
+        # furniture and are the non-vote mode's business.
+        if tag not in ("replace", "delete", "insert") or i2 - i1 > 6 or j2 - j1 > 6:
             continue
+        if tag == "insert" and j2 - j1 > 3:
+            continue
+        if tag == "insert" and set(scans[0].split()[j1:j2]) <= heads:
+            continue                                  # a running head
         a = scans[0].split()[j1:j2]
         if "".join(ew[i1:i2]) == "".join(a):
             continue
@@ -77,6 +92,9 @@ def vote(book, id1, id2, start):
         edited = " ".join(x for x in (L, " ".join(ew[i1:i2]), R) if x)
         if printed in scans[1] and edited not in scans[1]:
             out.append(f"  ED '{' '.join(ew[i1:i2])}'  PRINT '{' '.join(a)}'   [{L} _ {R}]")
+            found.append({"tag": tag, "left": L, "edition": " ".join(ew[i1:i2]), "print": " ".join(a), "right": R})
+    if "--json" in sys.argv:
+        (d / "_src" / "vote.json").write_text(json.dumps(found, indent=1))
     print(f"{book}: {len(out)} readings where {id1} and {id2} agree against the edition")
     print("\n".join(out))
 

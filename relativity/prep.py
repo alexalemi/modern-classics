@@ -146,6 +146,7 @@ TEXT_FIXES = [
     ("the above expression given the amount", "the above expression gives the amount", "both scans"),
     ("indebted to the [British] Royal Society", "indebted to the Royal Society", "editorial insertion"),
     ("Undaunted by the [first world] war", "Undaunted by the war", "editorial insertion"),
+    ("surprised. We must experience many such", "surprised. We must needs experience many such", "both scans: a dropped word"),
     ("a certain comprehensibility as compared", "a certain comprehensibleness as compared", "both scans"),
     ("as observed front the earth", "as observed from the earth", "both scans"),
     ("A. EINSTEIN", "A. Einstein", "the Preface's signature; an all-caps line renders as a heading"),

@@ -44,6 +44,14 @@ TEXT_FIXES = [
     ("beleagured", "beleaguered", "Gutenberg typo; all three print beleaguered"),
     ("Thus utility does not", "This utility does not", "all three"),
     ("unchanged. This colour is not", "unchanged. Thus colour is not", "all three"),
+    # words the later state dropped, found once scan_diff's vote learned to
+    # see a word the print has and the edition lacks (2026-09-20)
+    ("writings of G. E. Moore and J. M. Keynes", "writings of Mr. G. E. Moore and Mr. J. M. Keynes", "1912 printings"),
+    ("by considering which among them is most possible", "by considering which among them it is most possible", "1912 printings"),
+    ("The first of these views, advocated by Spinoza", "The first of these views, which was advocated by Spinoza", "1912 printings"),
+    ("in our own day by Bradley", "in our own day by Mr. Bradley", "1912 printings"),
+    ("the second, advocated by Leibniz", "the second, which was advocated by Leibniz", "1912 printings"),
+    ("the human mind, which was a part of philosophy, has now", "the human mind, which was, until very lately, a part of philosophy, has now", "1912 printings"),
 ]
 # Word-level: all three printings use these forms throughout.
 SPELLING = [("judgements", "judgments"), ("judgement", "judgment"),
