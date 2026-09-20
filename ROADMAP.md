@@ -917,7 +917,7 @@ renewal database (and HathiTrust) before any work starts, as Rogers was.
 | The Evolution of Physics (1938) | Einstein & Infeld | CHECK: 1938 Simon & Schuster, so PD only if NOT renewed in 1965-66; a book of this standing very likely was, and the Einstein estate is active. Added by Alex 2026-09-20; the Stanford renewal search was behind a bot wall that day |
 | The Expert at the Card Table (1902) | S. W. Erdnase | DONE 2026-09-20, restored (erdnase/): every page read from the facsimile's images, all 101 drawings |
 | The Tarbell Course in Magic (the 1926-28 correspondence lessons) | Harlan Tarbell | CHECK: the original mail-order lessons of 1926-28 are PD in the US if published then (1928 works entered the public domain in 2024); the later Tannen book volumes (1941 on) are NOT. Find a scan of the lessons themselves. Added by Alex 2026-09-20 |
-| Rhetoric | Aristotle | IN PROGRESS (rhetoric/): from Perseus' Greek (Ross's OCT) with Freese's 1926 Loeb as crib. Added by Alex 2026-09-20 |
+| Rhetoric | Aristotle | DONE 2026-09-20, MODERN CLASSIC (rhetoric/): from Perseus' Greek (Ross's OCT) with Freese's 1926 Loeb as crib |
 
 Done from Alex's 2026-09-20 request: Calculus Made Easy (restored).
 Ruled out: Rogers, Physics for the Inquiring Mind (1960), renewed by the
