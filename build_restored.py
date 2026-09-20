@@ -81,6 +81,8 @@ BLURBS = {
     "american-indian-stories": "Her childhood on the Yankton reservation, her "
                                "schooldays in the East, her stories, and her "
                                "1921 case against the Indian Bureau.",
+    "erdnase": "The 1902 manual of card handling, at the card table and on "
+               "the stage, with all of M. D. Smith's drawings from life.",
     "astronomy-for-everybody": "The sky from the turning earth out to the fixed "
                                "stars, as America's great calculator of the "
                                "planets told it in 1902, with all sixty-four figures.",

@@ -1,0 +1,75 @@
+PROOFREADING: S. W. Erdnase, Artifice, Ruse and Subterfuge at the Card Table (1902)
+
+You are proofreading pages of a 1902 book for a RESTORED EDITION: the
+author's text, unchanged, in clean modern markup. No transcription of this
+book exists anywhere we can use, so YOUR READING OF THE PAGE IMAGE IS THE
+TEXT. The OCR draft is a convenience and is often wrong; the image is
+the authority. This is a scholarly edition of a classic of card magic and
+of the history of gambling; it describes cheating techniques as its
+subject, and it is to be transcribed exactly as printed.
+
+FOR EACH LEAF NNN YOU ARE GIVEN
+  page image:  erdnase/_src/png/NNN.png  (open it with the Read tool)
+  OCR draft:   erdnase/_src/draft/NNN.txt  (may be missing whole paragraphs,
+               especially next to drawings)
+  plates:      erdnase/_src/plates/NNN-k.png, one per drawing on the leaf,
+               k = 0, 1, ... top to bottom
+
+WRITE erdnase/proof/NNN.txt (three-digit leaf number, as in the draft
+name). Read the WHOLE page image, top to bottom, every time.
+
+WHAT TO WRITE
+- Every word the page prints, in order, EXCEPT: the running head at the
+  top ("CARD TABLE ARTIFICE.", "LEGERDEMAIN.", "INTRODUCTION.",
+  "CONTENTS." with the page number), the page number itself, and the line
+  "Copyright, by S. W. Erdnase, 1902." printed under some drawings (leave
+  it out, but COUNT it: see the report).
+- Spelling, capitals, punctuation and hyphenated compounds EXACTLY as
+  printed. Do not modernise, do not correct the author's grammar or
+  usage, do not "fix" an odd word. If the printer made an obvious
+  misprint, transcribe it as printed and list it in your report.
+- One paragraph per line: join the printed lines of a paragraph into ONE
+  line. Separate paragraphs, headings and figures with ONE blank line.
+- A word broken at the end of a printed line ("be-" / "tween") is joined
+  ("between"). Keep the hyphen where the word is a real compound
+  ("left-hand", "one-quarter", "under-cut", "in-jog", "out-jog") -- decide
+  by how the author spells the same word elsewhere when you can see it;
+  list any you are unsure of in the report.
+- Quotation marks and apostrophes as plain ASCII " and '. Dashes as the
+  em dash character —. Keep "etc.", "i. e." and the like as printed.
+
+MARKUP (the only markup there is)
+- *italic* for italic type (the "When Cards Are Riffled." in a run-in
+  heading, "Second Method.", book titles, emphasised words).
+- ^^Small Capitals^^ for words set in SMALL CAPITALS inside a line, as at
+  the start of many paragraphs ("^^Bottom Palm^^ *When Cards Are
+  Riffled*.—When the cards are riffled..."). Write the letters as they
+  would be capitalised in ordinary type (initial capitals as printed large).
+- A HEADING printed on its own line (centred, in capitals or in small
+  capitals) is its own paragraph, written in capital letters exactly as
+  printed: "TO MAINTAIN THE BOTTOM PALM WHILE DEALING." A numbered
+  sub-heading on its own line is written as printed:
+  "II. To Retain the Complete Stock."
+- A DRAWING is a line "[Figure N]" where N is the figure number printed
+  under it ("Fig. 44" -> [Figure 44]), placed exactly where the drawing
+  sits between the lines of text. If the drawing interrupts a paragraph,
+  write the first part of the paragraph, then the figure line, then the
+  rest of the paragraph starting with "+ " (plus and space), which means
+  "this continues the paragraph above; no paragraph break".
+- If the page OPENS in the middle of a paragraph continued from the
+  previous page (no indent, usually lower case or mid-sentence), start the
+  first paragraph with "+ " too. If the page opens a new paragraph, do not.
+- Tables, formulas, or card lists set in columns: one row per line, each
+  line starting with a TAB, cells separated by " | ".
+- Verse or a letter/signature set off: each printed line on its own line,
+  starting with a TAB.
+
+THE PLATES: open each erdnase/_src/plates/NNN-k.png and confirm it is the
+whole drawing with its "Fig. N" label, no text from the page and no
+copyright line. Match each plate k to its figure number.
+
+REPORT (your final message): for each leaf, one line:
+  NNN  p<printed page>  figures: <N,...>  plates ok|<problem>  copyright lines: <count>
+then, separately, any printed misprints you kept (with the page), any
+compound-hyphen decisions you were unsure of, and anything else odd. Do not
+change files other than your own erdnase/proof/NNN.txt.
