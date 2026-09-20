@@ -915,6 +915,9 @@ renewal database (and HathiTrust) before any work starts, as Rogers was.
 | The Compleat Strategyst (1954) | J. D. Williams | CHECK: RAND copyright; RAND distributes it free, publication rights unclear |
 | Astronomy for Everybody (1902) | Simon Newcomb | PD |
 | The Evolution of Physics (1938) | Einstein & Infeld | CHECK: 1938 Simon & Schuster, so PD only if NOT renewed in 1965-66; a book of this standing very likely was, and the Einstein estate is active. Added by Alex 2026-09-20; the Stanford renewal search was behind a bot wall that day |
+| The Expert at the Card Table (1902) | S. W. Erdnase | PD (1902). Restored edition; Smith's 101 drawings are the plates. Added by Alex 2026-09-20 |
+| The Tarbell Course in Magic (the 1926-28 correspondence lessons) | Harlan Tarbell | CHECK: the original mail-order lessons of 1926-28 are PD in the US if published then (1928 works entered the public domain in 2024); the later Tannen book volumes (1941 on) are NOT. Find a scan of the lessons themselves. Added by Alex 2026-09-20 |
+| Rhetoric | Aristotle | MODERN CLASSIC (a retelling, from the Greek; Perseus has the text and a public-domain crib). Added by Alex 2026-09-20 |
 
 Done from Alex's 2026-09-20 request: Calculus Made Easy (restored).
 Ruled out: Rogers, Physics for the Inquiring Mind (1960), renewed by the

@@ -1,0 +1,279 @@
+Chapter XIV: Series
+
+No part of Mathematics suffers more from
+
+the triviality of its initial presentation to beginners than the great subject of series. Two minor examples of series, namely arithmetic and geometric series, are considered; these examples are important because they are the simplest examples of an important general theory. But the general ideas are never disclosed; and thus the examples, which exemplify nothing, are reduced to silly trivialities.
+
+The general mathematical idea of a series is that of a set of things ranged in order, that is, in sequence; This meaning is accurately represented in the common use of the term. Consider for example, the series of English Prime Ministers during the nineteenth century, arranged in the order of their first tenure of that office within the century. The series commences with William Pitt, and ends with
+
+Lord Rosebery, who, appropriately enough, is the biographer of the first member. We
+
+might have considered other serial orders for the arrangement of these men; for example, according to their height or their weight. These other suggested orders strike us as trivial in connection with Prime Ministers, and would not naturally occur to the mind; but abstractly they are just as good orders as any other. When one order among terms is very much more important or more obvious than other orders, it is often spoken of as *the* order of those terms. Thus *the* order of the integers would always be taken to mean their order as arranged in order of magnitude. But of course there is an indefinite number of other ways of arranging them. When the number of things considered is finite, the number of ways of arranging them in order is called the number of their permutations. The number of permutations of a set of \(n\) things, where \(n\) is some finite integer, is
+
+\[n \times (n - 1) \times (n - 2) \times (n - 3) \times \dots \times 4 \times 3 \times 2 \times 1,\]
+
+that is to say, it is the product of the first \(n\) integers; this product is so important in mathematics that a special symbolism, is used for it, and it is always written ‘\(n!\).’ Thus, \(2! = 2 \times 1 = 2\), and \(3! = 3 \times 2 \times 1 = 6\), and \(4! = 4 \times 3 \times 2 \times 1 = 24\), and \(5! = 5 \times 4 \times 3 \times 2 \times 1 = 120\). As \(n\) increases, the value of \(n!\) increases very quickly; thus \(100!\) is a hundred times as large as \(99!\).
+
+It is easy to verify in the case of small values of \(n\) that \(n!\) is the number of ways of arranging \(n\) things in order. Thus consider two things \(a\) and \(b\); these are capable of the two orders \(ab\) and \(ba\), and \(2! = 2\).
+
+Again, take three things \(a\), \(b\), and \(c\); these are capable of the six orders, \(abc\), \(acb\), \(bac\), \(bca\), \(cab\), \(cba\), and \(3! = 6\). Similarly for the twenty-four orders in which four things \(a\), \(b\), \(c\), and \(d\), can be arranged.
+
+When we come to the infinite sets of things—like
+
+the sets of all the integers, or all the fractions, or all the real numbers for instance—we come at once upon the complications of the theory of order-types. This subject was touched upon in Chapter VI. in considering the possible orders of the integers, and of the fractions, and of the real numbers. The whole question of order-types forms a comparatively new branch of mathematics of great importance. We shall not consider it any further. All the infinite series which we consider now are of the same order-type as the integers arranged in ascending order of magnitude, namely, with a first term, and such that each term has a couple of next-door neighbours, one on either side, with the exception of the first term which has, of course, only one next-door neighbour. Thus, if \(m\) be any integer (not zero), there will be always an \(m\)th term. A series with a finite
+
+number of terms (say \(n\) terms) has the same characteristics as far as next-door neighbours are concerned as an infinite series; it only differs from infinite series in having a last term, namely, the \(n\)th.
+
+The important thing to do with a series of numbers—using for the future “series” in the restricted sense which has just been mentioned—is to add its successive terms together.
+
+Thus if \(u_{1}\), \(u_{2}\), \(u_{3}\), …, \(u_{n}\), … are respectively the \(1\)st, \(2\)nd, \(3\)rd, \(4\)th, …, \(n\)th, … terms of a series of numbers, we form successively the series \(u_{1}\), \(u_{1} + u_{2}\), \(u_{1} + u_{2} + u_{3}\), \(u_{1} + u_{2} + u_{3} + u_{4}\), and so on; thus the sum of the \(1\)st \(n\) terms may be written
+
+\[u_{1} + u_{2} + u_{3} + \dots + u_{n}.\]
+
+If the series has only a finite number of
+
+terms, we come at last in this way to the sum of the whole series of terms. But, if the series has an infinite number of terms, this process of successively forming the sums of the terms never terminates; and in this sense there is no such thing as the sum of an infinite series.
+
+But why is it important successively to add the terms of a series in this way? The answer is that we are here symbolizing the fundamental mental process of approximation. This is a process which has significance far
+
+beyond the regions of mathematics. Our limited intellects cannot deal with complicated material all at once, and our method of arrangement is that of approximation. The statesman in framing his speech puts the dominating issues first and lets the details fall naturally into their subordinate places. There is, of course, the converse artistic method of preparing the imagination by the presentation of subordinate or special details, and then gradually rising to a crisis. In either way the process is one of gradual summation of effects; and this is exactly what is done by the successive summation of the terms of a series. Our ordinary method of stating numbers is such a process of gradual summation, at least, in the case of large numbers. Thus \(568,213\) presents itself to the mind as:—
+
+\[500,000 + 60,000 + 8,000 + 200 + 10 + 3.\]
+
+In the case of decimal fractions this is so more avowedly. Thus \(3.14159\) is:—
+
+\[3 + \tfrac{1}{10} + \tfrac{4}{100} + \tfrac{1}{1000} + \tfrac{5}{10000} + \tfrac{9}{100000}.\]
+
+Also, \(3\) and \(3 + \frac{1}{10}\), and \(3 + \tfrac{1}{10} + \tfrac{4}{100}\), and \(3 + \tfrac{1}{10} + \tfrac{4}{100} + \tfrac{1}{1000}\), and \(3 + \tfrac{1}{10} + \tfrac{4}{100} + \tfrac{1}{1000} + \tfrac{5}{10000}\) are successive approximations to the complete result \(3.14159\). If we read \(568,213\) backwards from right to left, starting with the \(3\) units,
+
+we read it in the artistic way, gradually preparing the mind for the crisis of \(500,000\).
+
+The ordinary process of numerical multiplication proceeds by means of the summation of a series, Consider the computation
+
+\[\begin{array}{cccccc} & & &3&4&2 \\ & & &\underline{6}&\underline{5}&\underline{8} \\ & &2&7&3&6 \\ &1&7&1&0& \\ \underline{2}&\underline{0}&\underline{5}&\underline{2}& & \\ 2&2&5&0&3&6 \end{array}\]
+
+Hence the three lines to be added form a series of which the first term is the upper line. This series follows the artistic method of presenting the most important term last, not from any feeling for art, but because of the convenience gained by keeping a firm hold on the units’ place, thus enabling us to omit some \(0\)’s, formally necessary.
+
+But when we approximate by gradually
+
+adding the successive terms of an infinite series, what are we approximating to? The difficulty is that the series has no “sum” in the straightforward sense of the word, because the operation of adding together its terms can never be completed. The answer is that we are approximating to the *limit* of the summation of the series, and we must now
+
+proceed to explain what the “limit” of a series is.
+
+The summation of a series approximates to a limit when the sum of any number of its terms, provided the number be large enough, is as nearly equal to the limit as you care to approach. But this description of the meaning of approximating to a limit evidently will not stand the vigorous scrutiny of modern mathematics. What is meant by *large enough*, and by *nearly equal*, and by *care to approach*? All these vague phrases must be explained in terms of the simple abstract ideas which alone are admitted into pure mathematics.
+
+Let the successive terms of the series be \(u_{1}\), \(u_{2}\), \(u_{3}\), \(u_{4}\), …, \(u_{n}\), etc., so that \(u_{n}\) is the \(n\)th term of the series. Also let \(s_{n}\) be the sum of the \(1\)st \(n\) terms, whatever \(n\) may be. So that:—
+
+\[\begin{gathered} s_{1} = u_{1},\quad s_{2} = u_{1} + u_{2},\quad s_{3} = u_{1} + u_{2} + u_{3},\quad\text{and} \\ s_{n} = u_{1} + u_{2} + u_{3} + \dots + u_{n}. \end{gathered}\]
+
+Then the terms \(s_{1}\), \(s_{2}\), \(s_{3}\), …, \(s_{n}\), … form a new series, and the formation of this series is the process of summation of the original series. Then the “approximation” of the *summation* of the original series to a “limit” means the “approximation of the *terms* of this new series to a limit.” And we have
+
+now to explain what we mean by the approximation to a limit of the terms of a series.
+
+Now, remembering the definition (given in chapter XII.) of a *standard of approximation*,
+
+the idea of a limit means this: \(l\) is the limit of the terms of the series \(s_{1}\), \(s_{2}\), \(s_{3}\), …, \(s_{n}\), …, if, corresponding to each real number \(k\), taken as a standard of approximation, a term \(s_{n}\) of the series can be found so that all succeeding terms (*i.e.* \(s_{n+1}\), \(s_{n+2}\), etc.) approximate to \(l\) within that standard of approximation. If another smaller standard \(k^{1}\) be chosen, the term \(s_{n}\) may be too early in the series, and a later term \(s_{m}\) with the above property will then be found.
+
+If this property holds, it is evident that as you go along to series \(s_{1}\), \(s_{2}\), \(s_{3}\), …, \(s_{n}\), … from left to right, after a time you come to terms *all* of which are nearer to \(l\) than any number which you may like to assign. In other words you approximate to \(l\) as closely as you like. The close connection of this definition of the limit of a series with the definition of a continuous function given in chapter XI. will be immediately perceived.
+
+Then coming back to the original series \(u_{1}\), \(u_{2}\), \(u_{3}\), …, \(u_{n}\), …, the limit of the terms of the series \(s_{1}\), \(s_{2}\), \(s_{3}\), …, \(s_{n}\), …, is called the “sum to infinity” of the original series. But it is evident that this use of the word
+
+“sum” is very artificial, and we must not assume the analogous properties to those of the ordinary sum of a finite number of terms without some special investigation.
+
+Let us look at an example of a “sum to infinity.” Consider the recurring decimal \(.1111\dots\). This decimal is merely a way of symbolizing the “sum to infinity” of the series \(.1\), \(.01\), \(.001\), \(.0001\), etc. The corresponding series found by summation is \(s_{1} = .1\), \(s_{2} = .11\), \(s_{3} = .111\), \(s_{4} = .1111\), etc. The limit of the terms of this series is \(\frac{1}{9}\); this is easy to see by simple division, for
+
+\[\tfrac{1}{9} = .1 + \tfrac{1}{90} = .11 + \tfrac{1}{900} = .111 + \tfrac{1}{9000} = \text{etc.}\]
+
+Hence, if \(\frac{3}{17}\) is given (the \(k\) of the definition), \(.1\) and *all* succeeding terms differ from \(\frac{1}{9}\) by less than \(\frac{3}{17}\); if \(\frac{1}{1000}\) is given (another choice for the \(k\) of the definition), \(.111\) and all succeeding terms differ from \(\frac{1}{9}\) by less than \(\frac{1}{1000}\); and so on, whatever choice for \(k\) be made.
+
+It is evident that nothing that has been said gives the slightest idea as to how the “sum to infinity” of a series is to be found. We have merely stated the conditions which such a number is to satisfy. Indeed, a general method for finding in all cases the sum to infinity of a series is intrinsically out of the question, for the simple reason that such a “sum,” as here defined, does not always exist. Series which possess a sum to
+
+infinity are called *convergent*, and those which do not possess a sum to infinity are called *divergent*.
+
+An obvious example of a divergent series is \(1\), \(2\), \(3\), …, \(n\) …, *i.e.* the series of integers in their order of magnitude. For whatever number \(l\) you try to take as its sum to infinity, and whatever standard of approximation \(k\) you choose, by taking enough terms of the series you can always make their sum differ from \(l\) by more than \(k\). Again, another example of a divergent series is \(1\), \(1\), \(1\), etc., *i.e.* the series of which each term is equal to \(1\). Then the sum of \(n\) terms is \(n\), and this sum grows without limit as \(n\) increases. Again, another example of a divergent series is \(1\), \(-1\), \(1\), \(-1\), \(1\), \(-1\), etc., *i.e.* the series in which the terms are alternately \(1\) and \(-1\). The sum of an odd number of terms is \(1\), and of an even number of terms is \(0\). Hence the terms of the series \(s_{1}\), \(s_{2}\), \(s_{3}\), …, \(s_{n}\), … do not approximate to a limit, although they do not increase without limit.
+
+It is tempting to suppose that the condition for \(u_{1}\), \(u_{2}\), …, \(u_{n}\), … to have a sum to infinity is that \(u_{n}\) should decrease indefinitely as \(n\) increases. Mathematics would be a much easier science than it is, if this were the case. Unfortunately the supposition is not true.
+
+For example the series
+
+\[1,\quad \frac{1}{2},\quad \frac{1}{3},\quad \frac{1}{4},\ \dots,\quad \frac{1}{n},\ \dots\]
+
+is divergent. It is easy to see that this is the case; for consider the sum of \(n\) terms
+
+beginning at the \((n + 1)\)th term. These \(n\) terms are \(\dfrac{1}{n + 1}\), \(\dfrac{1}{n + 2}\), \(\dfrac{1}{n + 3}\), …, \(\dfrac{1}{2n}\): there are \(n\) of them and \(\dfrac{1}{2n}\) is the least among them. Hence their sum is greater than \(n\) times \(\dfrac{1}{2n}\), *i.e.* is greater than \(\dfrac{1}{2}\). Now, without altering the sum to infinity, if it exist, we can add together neighbouring terms, and obtain the series
+
+\[1,\quad \tfrac{1}{2},\quad \tfrac{1}{3} + \tfrac{1}{4},\quad \tfrac{1}{5} + \tfrac{1}{6} + \tfrac{1}{7} + \tfrac{1}{8},\quad \text{etc.},\]
+
+that is, by what has been said above, a series whose terms after the \(2\)nd are greater than those of the series,
+
+\[1,\quad \tfrac{1}{2},\quad \tfrac{1}{2},\quad \tfrac{1}{2},\quad \text{etc.},\]
+
+where all the terms after the first are equal. But this series is divergent. Hence the original series is divergent.
+
+Footnote: Cf. Note C, in the Notes.
+
+This question of divergency shows how careful we must be in arguing from the properties
+
+of the sum of a finite number of terms to that of the sum of an infinite series. For the most elementary property of a finite number of terms is that of course they possess a sum: but even this fundamental property is not necessarily possessed by an infinite series. This caution merely states that we must not be misled by the suggestion of the technical term “*sum* of an infinite series.” It is usual to indicate the sum of the infinite series
+
+\[u_{1},\quad u_{2},\quad u_{3},\ \dots,\quad u_{n},\ \dots\]
+
+by
+
+\[u_{1} + u_{2} + u_{3} + \dots + u_{n} + \dots.\]
+
+We now pass on to a generalization of the idea of a series, which mathematics, true to its method, makes by use of the variable. Hitherto, we have only contemplated series in which each definite term was a definite number. But equally well we can generalize, and make each term to be some mathematical expression containing a variable \(x\). Thus we may consider the series \(1\), \(x\), \(x^{2}\), \(x^{3}\), …, \(x^{n}\), …, and the series
+
+\[x,\quad \frac{x^{2}}{2},\quad \frac{x^{3}}{3},\ \dots,\quad \frac{x^{n}}{n},\ \dots.\]
+
+In order to symbolize the general idea of any such function, conceive of a function of \(x\), \(f_{n}(x)\) say, which involves in its formation a variable integer \(n\), then, by giving \(n\) the
+
+values \(1\), \(2\), \(3\), etc., in succession, we get the series
+
+\[f_{1}(x),\quad f_{2}(x),\quad f_{3}(x),\ \dots,\quad f_{n}(x),\dots.\]
+
+Such a series may be convergent for some values of \(x\) and divergent for others. It is, in fact, rather rare to find a series involving a variable \(x\) which is convergent for all values of \(x\),—at least in any particular instance it is very unsafe to assume that this is the case. For example, let us examine the simplest of all instances, namely, the “geometrical”
+
+series
+
+\[1,\quad x,\quad x^{2},\quad x^{3},\ \dots,\quad x^{n},\ \dots.\]
+
+The sum of \(n\) terms is given by
+
+\[s_{n} = 1 + x + x^{2} + x^{3} + \dots + x^{n}.\]
+
+Now multiply both sides by \(x\) and we get
+
+\[xs_{n} = x + x^{2} + x^{3} + x^{4} + \dots + x^{n} + x^{n+1}.\]
+
+Now subtract the last line from the upper line and we get
+
+\[s_{n}(1 - x) = s_{n} - xs_{n} = 1 - x^{n+1},\]
+
+and hence (if \(x\) be not equal to \(1\))
+
+\[s_{n} = \frac{1 - x^{n+1}}{1 - x} = \frac{1}{1 - x} - \frac{x^{n+1}}{1 - x}.\]
+
+Now if \(x\) be numerically less than \(1\), for sufficiently large values of \(n\), \(\dfrac{x^{n+1}}{1 - x}\) is always numerically
+
+less than \(k\), however \(k\) be chosen. Thus, if \(x\) be numerically less than \(1\), the series \(1\), \(x\), \(x^{2}\), …, \(x^{n}\), … is convergent, and \(\dfrac{1}{1 - x}\) is its limit. This statement is symbolized by
+
+\[\frac{1}{1 - x} = 1 + x + x^{2} + \dots + x^{n} + \dots,\quad (-1 < x < 1).\]
+
+But if \(x\) is numerically greater than \(1\), or numerically equal to \(1\), the series is divergent. In other words, if \(x\) lie between \(-1\) and \(+1\), the series is convergent; but if \(x\) be equal to \(-1\) or \(+1\), or if \(x\) lie outside the interval \(-1\) to \(+1\), then the series is divergent. Thus the series is convergent at all “points” within the interval \(-1\) to \(+1\), exclusive of the end points.
+
+At this stage of our enquiry another question arises. Suppose that the series
+
+\[f_{1}(x) + f_{2}(x) + f_{3}(x) + \dots + f_{n}(x) + \dots\]
+
+is convergent for all values of \(x\) lying within the interval \(a\) to \(b\), *i.e.* the series is convergent for any value of \(x\) which is greater than \(a\) and less than \(b\). Also, suppose we want to be sure that in approximating to the limit we add together enough terms to come within some standard of approximation \(k\). Can we always state some number of terms, say \(n\), such that, if we take \(n\) or more terms to form the sum, then *whatever* value \(x\) has
+
+within the interval we have satisfied the desired standard of approximation?
+
+Sometimes we can and sometimes we cannot
+
+do this for each value of \(k\). When we can, the series is called uniformly convergent throughout the interval, and when we cannot do so, the series is called non-uniformly convergent throughout the interval. It makes a great difference to the properties of a series whether it is or is not uniformly convergent through an interval. Let us illustrate the matter by the simplest example and the simplest numbers.
+
+Consider the geometric series
+
+\[1 + x + x^{2} + x^{3} + \dots + x^{n} + \dots.\]
+
+It is convergent throughout the interval \(-1\) to \(+1\), excluding the end values \(x = ±1\).
+
+But it is not uniformly convergent throughout this interval. For if \(s_{n}(x)\) be the sum of \(n\) terms, we have proved that the difference between \(s_{n}(x)\) and the limit \(\dfrac{1}{1 - x}\) is \(\dfrac{x^{n+1}}{1 - x}\). Now suppose \(n\) be any given number of terms, say \(20\), and let \(k\) be any assigned standard of approximation, say \(.001\). Then, by taking \(x\) near enough to \(+1\) or near enough to \(-1\), we can make the numerical value of \(\dfrac{x^{21}}{1 - x}\) to be greater than \(.001\). Thus \(20\) terms will
+
+not do over the whole interval, though it is more than enough over some parts of it.
+
+The same reasoning can be applied whatever other number we take instead of \(20\), and whatever standard of approximation instead of \(.001\). Hence the geometric series \(1 + x + x^{2} + x^{3} + \dots + x^{n} + \dots\) is non-uniformly convergent over its *whole* interval of convergence \(-1\) to \(+1\). But if we take any smaller interval lying at both ends within the interval \(-1\) to \(+1\), the geometric series is uniformly convergent within it. For example, take the interval \(0\) to \(+\frac{1}{10}\). Then any value for \(n\) which makes \(\dfrac{x^{n+1}}{1 - x}\) numerically less than \(k\) *at* these limits for \(x\) also serves for all values of \(x\) between these limits, since it so happens that \(\dfrac{x^{n+1}}{1 - x}\) diminishes in numerical value as \(x\) diminishes in numerical value. For example, take \(k = .001\); then, putting \(x = \frac{1}{10}\), we find:—
+
+\[\begin{alignedat}{9} &\text{for $n = 1$,}\quad & \frac{x^{n+1}}{1 - x} &= \frac{(\frac{1}{10})^{2}}{1 - \frac{1}{10}} &&= \tfrac{1}{90} = .0111\dots, \\ &\text{for $n = 2$,}\quad & \frac{x^{n+1}}{1 - x} &= \frac{(\frac{1}{10})^{3}}{1 - \frac{1}{10}} &&= \tfrac{1}{900} = .00111\dots, \\ &\text{for $n = 3$,}\quad & \frac{x^{n+1}}{1 - x} &= \frac{(\frac{1}{10})^{4}}{1 - \frac{1}{10}} &&= \tfrac{1}{9000} = .000111\dots. \end{alignedat}\]
+
+Thus three terms will do for the whole interval,
+
+though, of course, for some parts of the interval it is more than is necessary. Notice that, because \(1 + x + x^{2} + \dots + x^{n} + \dots\) is convergent (though not uniformly) throughout the interval \(-1\) to \(+1\), for each value of \(x\) in the interval some number of terms \(n\) can be found which will satisfy a desired standard of approximation; but, as we take \(x\) nearer and nearer to either end value \(+1\) or \(-1\), larger and larger values of \(n\) have to be employed.
+
+It is curious that this important distinction between uniform and non-uniform convergence was not published till 1847 by Stokes—afterwards,
+
+Sir George Stokes—and later, independently in 1850 by Seidel, a German
+
+mathematician.
+
+The critical points, where non-uniform convergence comes in, are not necessarily at the limits of the interval throughout which convergence holds. This is a speciality belonging to the geometric series.
+
+In the case of the geometric series \(1 + x + x^{2} + \dots + x^{n} + \dots\), a simple algebraic expression \(\dfrac{1}{1 - x}\) can be given for its limit in its interval of convergence. But this is not always the case. Often we can prove a series to be convergent within a certain interval, though we know nothing more about its limit except that it is the limit of the series.
+
+But this is a very good way of defining a function; *viz.*. as the limit of an infinite convergent series, and is, in fact, the way in which most functions are, or ought to be, defined.
+
+Thus, the most important series in elementary
+
+analysis is
+
+\[1 + x + \frac{x^{2}}{2!} + \frac{x^{3}}{3!} + \dots + \frac{x^{n}}{n!} + \dots,\]
+
+where \(n!\) has the meaning defined earlier in this chapter. This series can be proved to be absolutely convergent for *all* values of \(x\), and to be uniformly convergent within any interval which we like to take. Hence it has all the comfortable mathematical properties which a series should have. It is called the exponential series. Denote its sum to infinity by \(\exp x\). Thus, by definition,
+
+\[\exp x = 1 + x + \frac{x^{2}}{2!} + \frac{x^{3}}{3!} + \dots + \frac{x^{n}}{n!} + \dots.\]
+
+\(\exp x\) is called the exponential function.
+
+It is fairly easy to prove, with a little knowledge of elementary mathematics, that
+
+\[(\exp x) \times (\exp y) = \exp(x + y). \qquad (A)\]
+
+In other words that
+
+\[\begin{gathered} (\exp x) \times (\exp y) \\ = 1 + (x + y) + \frac{(x + y)^{2}}{2!} + \frac{(x + y)^{3}}{3!} + \dots + \frac{(x + y)^{n}}{n!} + \dots. \end{gathered}\]
+
+This property \((A)\) is an example of what is called an addition-theorem. When any
+
+function [say \(f(x)\)] has been defined, the first thing we do is to try to express \(f(x + y)\) in terms of known functions of \(x\) only, and known functions of \(y\) only. If we can do so, the result is called an addition-theorem. Addition-theorems play a great part in mathematical analysis. Thus the addition-theorem for the sine is given by
+
+\[\sin(x + y) = \sin x \cos y + \cos x \sin y,\]
+
+and for the cosine by
+
+\[\cos(x + y) = \cos x \cos y - \sin x \sin y.\]
+
+As a matter of fact the best ways of defining \(\sin x\) and \(\cos x\) are not by the elaborate geometrical methods of the previous chapter, but as the limits respectively of the series
+
+\[x - \frac{x^{3}}{3!} + \frac{x^{5}}{5!} - \frac{x^{7}}{7!} + \text{etc.} \dots,\]
+
+and
+
+\[1 - \frac{x^{2}}{2!} + \frac{x^{4}}{4!} - \frac{x^{6}}{6!} + \text{etc.} \dots,\]
+
+so that we put
+
+\[\begin{aligned} \sin x &= x - \frac{x^{3}}{3!} + \frac{x^{5}}{5!} - \frac{x^{7}}{7!} + \text{etc.} \dots, \\ \cos x &= 1 - \frac{x^{2}}{2!} + \frac{x^{4}}{4!} - \frac{x^{6}}{6!} + \text{etc.} \dots. \end{aligned}\]
+
+These definitions are equivalent to the geometrical definitions, and both series can be proved to be convergent for all values of \(x\), and uniformly convergent throughout any interval. These series for sine and cosine have a general likeness to the exponential series given above. They are, indeed, intimately connected with it by means of the theory of imaginary numbers explained in Chapters VII. and VIII.
+
+[Figure be]
+
+The graph of the exponential function is given in fig. 29. It cuts the axis \(OY\) at the point \(y = 1\), as evidently it ought to do, since when \(x = 0\) every term of the series except the first is zero. The importance of the exponential function is that it represents any changing physical quantity whose rate of increase at any instant is a uniform percentage of its value at that instant. For
+
+example, the above graph represents the size at any time of a population with a uniform birth-rate, a uniform death-rate, and no emigration, where the \(x\) corresponds to the time reckoned from any convenient day, and the \(y\) represents the population to the proper scale. The scale must be such that \(OA\) represents the population at the date which is taken as the origin. But we have here come upon the idea of “rates of increase” which is the topic for the next chapter.
+
+An important function nearly allied to the
+
+exponential function is found by putting \(-x^{2}\) for \(x\) as the argument in the exponential function.
+
+We thus get \(\exp (-x^{2})\). The graph \(y = \exp(-x^{2})\) is given in fig. 30.
+
+[Figure bf]
+
+The curve, which is something like a cocked hat, is called the curve of normal error. Its
+
+corresponding function is vitally important to the theory of statistics, and tells us in many cases the sort of deviations from the average results which we are to expect.
+
+Another important function is found by combining the exponential function with the sine, in this way:—
+
+\[y = \exp(-cx) \times \sin \frac{2\pi x}{p}.\]
+
+[Figure bg]
+
+Its graph is given in fig. 31. The points \(A\), \(B\), \(O\), \(C\), \(D\), \(E\), \(F\), are placed at equal intervals \(\frac{1}{2}p\), and an unending series of them should be drawn forwards and backwards. This function represents the dying away of vibrations under the influence of friction or of “damping” forces. Apart from the friction, the vibrations would be periodic, with a period \(p\); but the influence of the friction
+
+makes the extent of each vibration smaller than that of the preceding by a constant percentage of that extent. This combination of the idea of “periodicity” (which requires
+
+the sine or cosine for its symbolism) and of “constant percentage” (which requires the exponential function for its symbolism) is the reason for the form of this function, namely, its form as a product of a sine-function into an exponential function.

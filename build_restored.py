@@ -75,6 +75,9 @@ BLURBS = {
     "american-indian-stories": "Her childhood on the Yankton reservation, her "
                                "schooldays in the East, her stories, and her "
                                "1921 case against the Indian Bureau.",
+    "introduction-to-mathematics": "What mathematics is, from variables to the "
+                                   "calculus, by the co-author of Principia "
+                                   "Mathematica. Typeset from the transcription's TeX.",
     "relativity": "A train, an embankment and two strokes of lightning. "
                   "Lawson's 1920 text, with the formulas typeset.",
     "psychology-briefer-course": "Habit, the stream of consciousness, the "

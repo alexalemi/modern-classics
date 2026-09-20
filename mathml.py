@@ -114,6 +114,9 @@ def to_mathml(tex, display):
     # pandoc sets style="text-align: ..." beside every columnalign; the
     # attribute says the same thing and `se lint` rejects inline style (x-012)
     m = re.sub(r' style="[^"]*"', "", m)
+    # \dfrac and \tfrac come out as <mfrac displaystyle=...>, which vnu
+    # rejects (the attribute belongs on <mstyle>); the fraction still sets
+    m = re.sub(r'(<mfrac[^>]*?) displaystyle="[^"]*"', r"\1", m)
     # an empty table cell (an aligned formula's blank column) is an empty
     # element to `se lint` (s-010); <mspace/> is the one filler it exempts
     m = re.sub(r"<mtd([^>]*)(?:/>|></mtd>)", r"<mtd\1><mspace/></mtd>", m)
@@ -121,7 +124,12 @@ def to_mathml(tex, display):
     # keeps the parent's argument count (a superscript still has two)
     m = re.sub(r"<mrow(?:/>|></mrow>)", "<mspace/>", m)
     alt = _alts().get(_norm(tex)) or _norm(tex)
-    alt = alt.replace("&", "&amp;").replace('"', "&quot;").replace("<", "&lt;")
+    # a comparison is SPOKEN in the alttext: `se typogrify` reads a bare ">"
+    # in an attribute as the end of the tag and curls the closing quote
+    # (Whitehead's "3 > 2"), and it unescapes &lt; and &gt; alike
+    alt = re.sub(r"\s*\\?(<|&lt;|\\lt)\s*", " less than ", alt)
+    alt = re.sub(r"\s*\\?(>|&gt;|\\gt)\s*", " greater than ", alt)
+    alt = alt.replace("&", "&amp;").replace('"', "&quot;")
     return m.replace("<math", f'<math alttext="{alt}"', 1)
 
 
