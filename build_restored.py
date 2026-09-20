@@ -75,6 +75,8 @@ BLURBS = {
     "american-indian-stories": "Her childhood on the Yankton reservation, her "
                                "schooldays in the East, her stories, and her "
                                "1921 case against the Indian Bureau.",
+    "problems-of-philosophy": "A table, its colour and its shape, and what if "
+                              "anything we know about it. The 1912 text.",
     "calculus-made-easy": "“What one fool can do, another can.” The 1914 "
                           "edition, with every formula typeset rather than "
                           "pictured.",
