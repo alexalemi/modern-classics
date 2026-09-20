@@ -93,7 +93,7 @@ def emph_safe(text):
 class Book:
     def __init__(self, here, zip_name, *, html_name=None, images_subdir=None,
                  drop=(), source_fixes=(), long_side=2000, skip_classes=(),
-                 transnote=True):
+                 transnote=True, flatten=()):
         self.here = Path(here)
         self.dir = self.here.name
         self.zip = zipfile.ZipFile(self.here / "_src" / zip_name)
@@ -105,6 +105,8 @@ class Book:
         self.long_side = long_side
         self.skip_classes = set(skip_classes) | {"pagenum", "pageno", "tnote"}
         self.transnote = transnote
+        # more wrapper classes to open, per book (the Snark's intro/maintext)
+        self.flatten = {"pg_body_wrapper", "chapter", "section", "blockquot", "container"} | set(flatten)
 
     # ---------------------------------------------------------------- source
     def html(self):
@@ -212,7 +214,7 @@ class Walker:
             if isinstance(n, Tag) and n.name == "div" and not n.find(re.compile("^h[1-6]$"), recursive=False) is None:
                 pass
             if isinstance(n, Tag) and n.name in ("div", "section") and (
-                    not n.get("class") or set(n["class"]) & {"pg_body_wrapper", "chapter", "section", "blockquot", "container"}) \
+                    not n.get("class") or set(n["class"]) & self.book.flatten) \
                     and not (set(n.get("class") or []) & {"poetry-container", "poetry", "figcenter", "figleft", "figright", "footnote"}):
                 yield from self.flat(n.children)
             else:
@@ -239,6 +241,8 @@ class Walker:
                 continue
             if el.name in ("br", "a") and not clean(el.get_text()):
                 continue                       # spacer <br>, empty anchor
+            if el.name in ("map", "area", "script", "style"):
+                continue                       # an image map carries nothing
             if re.fullmatch(r"h[1-6]", el.name):
                 out.append(("H", int(el.name[1]), clean(self.inline(el))))
                 continue
