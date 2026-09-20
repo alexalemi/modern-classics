@@ -903,7 +903,7 @@ renewal database (and HathiTrust) before any work starts, as Rogers was.
 | Structure and Interpretation of Computer Programs (2nd ed.) | Abelson & Sussman | NOT PD: CC BY-SA 4.0. Possible, but the edition must carry the licence and share alike |
 | Economics in One Lesson (1946) | Hazlitt | RULED OUT: renewed 1974, in copyright |
 | An Introduction to Mathematics (1911) | Whitehead | DONE 2026-09-20, restored from the DP LaTeX (introduction-to-mathematics/) |
-| Carroll, restored editions of what the retellings left out (Symbolic Logic's original text, The Game of Logic, ...) | Carroll | PD. Done: Alice (Rackham), The Hunting of the Snark, Symbolic Logic's original-text companion |
+| Carroll, restored editions of what the retellings left out (Symbolic Logic's original text, The Game of Logic, ...) | Carroll | PD. Done: Alice (Rackham), The Hunting of the Snark, the original-text companions of Symbolic Logic, A Tangled Tale and Pillow Problems, and The Game of Logic (2026-09-20, restored; 200 diagrams redrawn from Gutenberg's ASCII and proofed against the scan). Euclid and His Modern Rivals gets no companion: its chapters/ is raw OCR |
 | The Problems of Philosophy (1912) | Russell | DONE, restored (problems-of-philosophy/) |
 | Science and Hypothesis (English 1905) | Poincaré | DONE 2026-09-20, restored from the DP LaTeX (science-and-hypothesis/) |
 | How Plants Grow (1858) | Asa Gray | PD |
