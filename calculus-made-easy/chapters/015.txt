@@ -1,0 +1,101 @@
+Chapter XII: Curvature of Curves
+
+RETURNING to the process of successive differentiation, it may be asked: Why does anybody want to differentiate twice over? We know that when the variable quantities are space and time, by differentiating twice over we get the acceleration of a moving body, and that in the geometrical interpretation, as applied to curves, \({\dfrac{d y}{d x}}\) means the *slope* of the curve. But what can \({\dfrac{d^{2} y}{d x^{2}}}\) mean in this case? Clearly it means the rate (per unit of length \({x}\)) at which the slope is changing-in brief, it is *a measure of the curvature of the slope*.
+
+[Figure bf]
+
+[Figure bg]
+
+Suppose a slope constant, as in Fig. 31.
+
+Here, \({\dfrac{d y}{d x}}\) is of constant value.
+
+Suppose, however, a case in which, like Fig. 32, the slope itself is getting greater upwards, then \({\dfrac{d\left(\dfrac{d y}{dx}\right)}{d x}}\), that is, \({\dfrac{d^{2} y}{d x^{2}}}\), will be positive.
+
+If the slope is becoming less as you go to the right (as in Fig. 14, p. 80), or as in Fig. 33, then, even though the curve may be going upward, since the change is such as to diminish its slope, its \({\dfrac{d^{2}y}{d x^{2}}}\) will be *negative*.
+
+[Figure bh]
+
+It is now time to initiate you into another secret-how to tell whether the result that you get by "equating to zero" is a maximum or a minimum. The trick is this: After you have differentiated (so as to get the expression which you equate to zero), you then differentiate a second time, and look whether the result of the second differentiation is *positive* or *negative*. If \({\dfrac{d^{2} y}{d x^{2}}}\) comes out *positive*, then you know that the value of \({y}\) which you got was a *minimum*; but if \({\dfrac{d^{2} y}{d x^{2}}}\) comes out *negative*, then the value of \({y}\) which you got must be a *maximum*. That's the rule.
+
+The reason of it ought to be quite evident. Think of any curve that has a minimum point in it (like Fig. 15, p. 80), or like Fig. 34, where the point of minimum \({y}\) is marked \({M}\), and the curve is *concave* upwards. To the left of \({M}\) the slope is downward, that is, negative, and is getting less negative. To the right of \({M}\) the slope has become upward, and is getting more and more upward. Clearly the change of slope as the curve passes through \({M}\) is such that \({\dfrac{d^{2} y}{d x^{2}}}\) is *positive*, for its operation, as \({x}\) increases toward the right, is to convert a downward slope into an upward one.
+
+[Figure bi]
+
+[Figure bj]
+
+Similarly, consider any curve that has a maximum point in it (like Fig. 16, p. 81), or like Fig. 35, where the curve is convex, and the maximum point is marked \({M}\). In this case, as the curve passes through \({M}\) from left to right, its upward slope is converted into a downward or negative slope, so that in this case the "slope of the slope" \({\dfrac{d^{2} y}{d x^{2}}}\) is *negative*.
+
+Go back now to the examples of the last chapter and verify in this way the conclusions arrived at as to whether in any particular case there is a maximum or a minimum. You will find below a few worked out examples.
+
+* * *
+
+(1) Find the maximum or minimum of
+
+(a) \({y=4 x^{2}-9 x-6}\);
+
+(b) \({y=6+9 x-4 x^{2}}\);
+
+and ascertain if it be a maximum or a minimum in each case.
+
+(a) \({\quad\dfrac{d y}{d x} =8 x-9=0; \quad x=1 \dfrac{1}{8}}\), and \({y=-11.065.}\)
+
+\({\quad \dfrac{d^{2} y}{d x^{2}} =8}\); it is +; hence it is a minimum.
+
+(b) \({\quad \dfrac{d y}{d x}=9-8 x=0; \quad x=1 \dfrac{1}{8}; \quad}\) and \({y=+11.065}\). \({\dfrac{d^{2} y}{d x^{2}}=-8; \quad}\) it is \({-;}\) hence it is a maximum.
+
+(2) Find the maxima and minima of the function \({y=x^{3}-3 x+16}\). \[ \begin{aligned} & \frac{d y}{d x}=3 x^{2}-3=0; \quad x^{2}=1; \quad \text { and } x= \pm 1. \\ & \frac{d^{2} y}{d x^{2}}=6 x; \quad \text { for } x=1; \text { it is }+; \end{aligned} \] hence \({x=1}\) corresponds to a minimum \({y=14}\). For \({x=-1}\) it is -; hence \({x=-1}\) corresponds to a maximum \({y=+18}\).
+
+(3) Find the maxima and minima of \({y=\dfrac{x-1}{x^{2}+2}}\). \[ \frac{d y}{d x}=\frac{\left(x^{2}+2\right) \times 1-(x-1) \times 2 x}{\left(x^{2}+2\right)^{2}}=\frac{2 x-x^{2}+2}{\left(x^{2}+2\right)^{2}}=0; \] or \({x^{2}-2 x-2=0}\), whose solutions are \({x=+2.73}\) and \({x=-0.73}\). \[ \begin{aligned} \frac{d^{2} y}{d x^{2}} & =-\frac{\left(x^{2}+2\right)^{2} \times(2 x-2)-\left(x^{2}-2 x-2\right)\left(4 x^{3}+8 x\right)}{\left(x^{2}+2\right)^{4}} \\ & =-\frac{2 x^{5}-6 x^{4}-8 x^{3}-8 x^{2}-24 x+8}{\left(x^{2}+2\right)^{4}}. \end{aligned} \]
+
+The denominator is always positive, so it is sufficient to ascertain the sign of the numerator.
+
+If we put \({x=2.73}\), the numerator is negative; the maximum, \({y=0.183}\).
+
+If we put \({x=-0.73}\), the numerator is positive; the minimum, \({y=-0.683}\).
+
+(4) The expense \({C}\) of handling the products of a certain factory varies with the weekly output \({P}\) according to the relation \({C=a P+ \dfrac{b}{c+P}+d}\), where \({a, b, c, d}\) are positive constants. For what output will the expense be least? \[ \frac{d C}{d P}=a-\frac{b}{(c+P)^{2}}=0 \quad \text { for maximum or minimum; } \] hence \({a=\dfrac{b}{(c+P)^{2}}}\) and \({P= \pm \sqrt{\dfrac{b}{a}}-c}\).
+
+As the output cannot be negative, \({P=+\sqrt{\dfrac{b}{a}}-c}\).
+
+Now \[ \frac{d^{2} C}{d P^{2}}=+\frac{b(2 c+2 P)}{(c+P)^{4}}, \] which is positive for all the values of \({P}\); hence \({P=+\sqrt{\frac{b}{a}}-c}\) corresponds to a minimum.
+
+(5) The total cost per hour \({C}\) of lighting a building with \({N}\) lamps of a certain kind is \[ C=N\left(\frac{C_{l}}{t}+\frac{E P C_{e}}{1000}\right) \] where \({E}\) is the commercial efficiency (watts per candle), \[ \begin{aligned} & P \text { is the candle power of each lamp, } \\ & t \text { is the average life of each lamp in hours, } \\ & C_{l}=\text { cost of renewal in pence per hour of use, } \\ & C_{e}=\text { cost of energy per } 1000 \text { watts per hour. } \end{aligned} \]
+
+Moreover, the relation connecting the average life of a lamp with the commercial efficiency at which it is run is approximately \({t=mE^{n}}\), where \({m}\) and \({n}\) are constants depending on the kind of lamp.
+
+Find the commercial efficiency for which the total cost of lighting will be least.
+
+We have \[ \begin{aligned} C & =N\left(\frac{C_{l}}{m} E^{-n}+\frac{P C_{e}}{1000} E\right), \\ \frac{d C}{d E} & =\frac{P C_{e}}{1000}-\frac{n C_{l}}{m} E^{-(n+1)}=0 \end{aligned} \] for maximum or minimum. \[ E^{n+1}=\frac{1000 \times n C_{l}}{m P C_{e}} \quad \text { and } \quad E=\sqrt[n+1]{\frac{1000 \times n C_{l}}{m P C_{e}}}. \]
+
+This is clearly for minimum, since \[ \frac{d^{2} C}{d E^{2}}=(n+1) \frac{n C_{l}}{m} E^{-(n+2)}, \] which is positive for a positive value of \({E}\).
+
+For a particular type of 16 candle-power lamps, \({C_{l}=17}\) pence, \({C_{e}=5}\) pence; and it was found that \({m=10}\) and \({n=3.6}\). \[ E=\sqrt[4.6]{\frac{1000 \times 3.6 \times 17}{10 \times 16 \times 5}}=2.6 \text { watts per candle-power. } \]
+
+* * *
+
+*Exercises X*. (You are advised to plot the graph of any numerical example.) (See p. 258 for the Answers.)
+
+(1) Find the maxima and minima of \[ y=x^{3}+x^{2}-10 x+8. \]
+
+(2) Given \({y=\dfrac{b}{a} x-c x^{2}}\), find expressions for \({\dfrac{dy}{d x}}\), and for \({\dfrac{d^{2} y}{d x^{2}}}\), also find the value of \({x}\) which makes \({y}\) a maximum or a minimum, and show whether it is maximum or minimum.
+
+(3) Find how many maxima and how many minima there are in the curve, the equation to which is \[ y=1-\frac{x^{2}}{2}+\frac{x^{4}}{24}; \] and how many in that of which the equation is \[ y=1-\frac{x^{2}}{2}+\frac{x^{4}}{24}-\frac{x^{6}}{720}. \]
+
+(4) Find the maxima and minima of \[ y=2 x+1+\frac{5}{x^{2}}. \]
+
+(5) Find the maxima and minima of \[ y=\frac{3}{x^{2}+x+1}. \]
+
+(6) Find the maxima and minima of \[ y=\frac{5 x}{2+x^{2}}. \]
+
+(7) Find the maxima and minima of \[ y=\frac{3 x}{x^{2}-3}+\frac{x}{2}+5. \]
+
+(8) Divide a number \({N}\) into two parts in such a way that three times the square of one part plus twice the square of the other part shall be a minimum.
+
+(9) The efficiency \({u}\) of an electric generator at different values of output \({x}\) is expressed by the general equation: \[ u=\frac{x}{a+b x+c x^{2}}; \] where \({a}\) is a constant depending chiefly on the energy losses in the iron and \({c}\) a constant depending chiefly on the resistance of the copper parts. Find an expression for that value of the output at which the efficiency will be a maximum.
+
+(10) Suppose it to be known that consumption of coal by a certain steamer may be represented by the formula \({y=0.3+0.001 v^{3}}\); where \({y}\) is the number of tons of coal burned per hour and \({v}\) is the speed expressed in nautical miles per hour. The cost of wages, interest on capital, and depreciation of that ship are together equal, per hour, to the cost of 1 ton of coal. What speed will make the total cost of a voyage of 1000 nautical miles a minimum? And, if coal costs 10 shillings per ton, what will that minimum cost of the voyage amount to?
+
+(11) Find the maxima and minima of \[ y= \pm \frac{x}{6} \sqrt{x(10-x)}. \]
+
+(12) Find the maxima and minima of \[ y=4 x^{3}-x^{2}-2 x+1. \]

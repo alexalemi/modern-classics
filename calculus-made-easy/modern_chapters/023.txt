@@ -1,0 +1,117 @@
+Chapter XX: Dodges, Pitfalls, and Triumphs
+
+*Dodges*. A great part of the labour of integrating things consists in licking them into some shape that can be integrated. The books-and by this is meant the serious books-on the Integral Calculus are full of plans and methods and dodges and artifices for this kind of work. The following are a few of them.
+
+*Integration by Parts*. This name is given to a dodge, the formula for which is \[ \int u d x=u x-\int x d u+C. \]
+
+It is useful in some cases that you can't tackle directly, for it shows that if in any case \({\int x d u}\) can be found, then \({\int u d x}\) can also be found. The formula can be deduced as follows. From p. 37, we have, \[ d(u x)=u d x+x d u, \] which may be written \[ u(d x)=d(u x)-x d u, \] which by direct integration gives the above expression.
+
+Examples
+
+(1) Find \({\int w \cdot \sin w d w}\).
+
+Write \({u=w}\), and for \({\sin w \cdot d w}\) write \({d x}\). We shall then have \({d u=d w}\), while \({\int \sin w \cdot d w=-\cos w=x}\).
+
+Putting these into the formula, we get \[ \begin{aligned} \int w \cdot \sin w d w & =w(-\cos w)-\int-\cos w d w \\ & =-w \cos w+\sin w+C. \end{aligned} \]
+
+(2) Find \({\int x \epsilon^{x} d x}\).
+
+Write \[ u=x, \quad \epsilon^{x} d x=d v; \] then \[ d u=d x, \quad v=\epsilon^{x}, \] and \[ \begin{aligned} \int x \epsilon^{x} d x & =x \epsilon^{x}-\int \epsilon^{x} d x \quad \text { (by the formula) } \\ & =x \epsilon^{x}-\epsilon^{x}=\epsilon^{x}(x-1)+C. \end{aligned} \]
+
+(3) Try \({\int \cos ^{2} \theta d \theta}\).
+
+\[ u=\cos \theta, \quad \cos \theta d \theta=d v. \]
+
+\[ \begin{align*} \text{Hence}\quad d u=-\sin \theta d \theta, \quad v=\sin \theta, \\ \int \cos ^{2} \theta d \theta=\cos \theta \sin \theta+\int \sin ^{2} \theta d \theta \\ =\frac{2 \cos \theta \sin \theta}{2}+\int\left(1-\cos ^{2} \theta\right) d \theta \\ =\frac{\sin 2 \theta}{2}+\int d \theta-\int \cos ^{2} \theta d \theta. \end{align*} \]
+
+Hence \[ 2 \int \cos ^{2} \theta d \theta=\frac{\sin 2 \theta}{2}+\theta \] and \[ \int \cos ^{2} \theta d \theta=\frac{\sin 2 \theta}{4}+\frac{\theta}{2}+C. \]
+
+(4) Find \({\int x^{2} \sin x d x}\).
+
+Write \[ x^{2}=u, \quad \sin x d x=d v; \] then \[ d u=2 x d x, \quad v=-\cos x, \] \[ \int x^{2} \sin x d x=-x^{2} \cos x+2 \int x \cos x d x. \]
+
+Now find \({\int x \cos x d x}\), integrating by parts (as in Example 1 above): \[ \int x \cos x d x=x \sin x+\cos x+C. \]
+
+Hence \[ \begin{aligned} \int x^{2} \sin x d x & =-x^{2} \cos x+2 x \sin x+2 \cos x+C^{\prime} \\ & =2\left[x \sin x+\cos x\left(1-\frac{x^{2}}{2}\right)\right]+C^{\prime}. \end{aligned} \]
+
+(5) Find \({\int \sqrt{1-x^{2}} d x}\).
+
+Write \[ u=\sqrt{1-x^{2}}, \quad d x=d v; \] then \[ d u=-\frac{x d x}{\sqrt{1-x^{2}}} \] (see Chap. IX., p. 66). and \({x=v}\); so that \[ \int \sqrt{1-x^{2}} d x=x \sqrt{1-x^{2}}+\int \frac{x^{2} d x}{\sqrt{1-x^{2}}}. \]
+
+Here we may use a little dodge, for we can write \[ \int \sqrt{1-x^{2}} d x=\int \frac{\left(1-x^{2}\right) d x}{\sqrt{1-x^{2}}}=\int \frac{d x}{\sqrt{1-x^{2}}}-\int \frac{x^{2} d x}{\sqrt{1-x^{2}}}. \]
+
+Adding these two last equations, we get rid of \({\int \dfrac{x^{2} dx}{\sqrt{1-x^{2}}}}\), and we have \[ 2 \int \sqrt{1-x^{2}} d x=x \sqrt{1-x^{2}}+\int \frac{d x}{\sqrt{1-x^{2}}}. \]
+
+Do you remember meeting \({\dfrac{d x}{\sqrt{1-x^{2}}}}\)? it is got by differentiating \({y=\arcsin x}\) (see p. 168); hence its integral is \({\arcsin x}\), and so \[ \int \sqrt{1-x^{2}} d x=\frac{x \sqrt{1-x^{2}}}{2}+\frac{1}{2} \arcsin x+C. \]
+
+You can try now some exercises by yourself; you will find some at the end of this chapter.
+
+*Substitution*. This is the same dodge as explained in Chap. IX., p. 66. Let us illustrate its application to integration by a few examples.
+
+(1) \({\int \sqrt{3+x} d x}\).
+
+Let \[ 3+x=u, \quad d x=d u; \] replace \[ \int u^{\tfrac{1}{2}} d u=\tfrac{2}{3} u^{\frac{3}{2}}=\frac{2}{3}(3+x)^{\tfrac{3}{2}}. \]
+
+(2) \({\int \dfrac{d x}{\epsilon^{x}+\epsilon^{-x}}}\).
+
+Let \[ \epsilon^{x}=u, \quad \frac{d u}{d x}=\epsilon^{x}, \quad \text { and } \quad d x=\frac{d u}{\epsilon^{x}}; \] so that \[\int \dfrac{d x}{\epsilon^{x}+\epsilon^{-x}}=\int \dfrac{d u}{\epsilon^{x}\left(\epsilon^{x}+\epsilon^{-x}\right)}=\int \dfrac{d u}{u\left(u+\frac{1}{u}\right)}=\int \dfrac{d u}{u^{2}+1}. \]
+
+\({\dfrac{d u}{1+u^{2}}}\) is the result of differentiating \({\arctan x}\). Hence the integral is \({\operatorname{arc} \tan \epsilon^{x}}\).
+
+(3) \({\int \dfrac{d x}{x^{2}+2 x+3}=\int \dfrac{d x}{x^{2}+2 x+1+2}=\int \dfrac{d x}{(x+1)^{2}+(\sqrt{2})^{2}}}\).
+
+Let \[ x+1=u, \quad d x=d u; \] then the integral becomes \({\int \dfrac{d u}{u^{2}+(\sqrt{2})^{2}}}\); but \({\dfrac{d u}{u^{2}+a^{2}}}\) is the result of differentiating \({u=\dfrac{1}{a} \arctan \dfrac{u}{a}}\).
+
+Hence one has finally \({\dfrac{1}{\sqrt{2}} \arctan \frac{x+1}{\sqrt{2}}}\) for the value of the given integral.
+
+*Formulæ of Reduction* are special forms applicable chiefly to binomial and trigonometrical expressions that have to be integrated, and have to be reduced into some form of which the integral is known.
+
+*Rationalization*, and *Factorization of Denominator* are dodges applicable in special cases, but they do not admit of any short or general explanation. Much practice is needed to become familiar with these preparatory processes.
+
+The following example shows how the process of splitting into partial fractions, which we learned in Chap. XIII., p. 118, can be made use of in integration.
+
+Take again \({\int \dfrac{d x}{x^{2}+2 x+3}}\); if we split \({\dfrac{1}{x^{2}+2 x+3}}\) into partial fractions, this becomes (see p. 230): \[ \begin{align*} \frac{1}{2 \sqrt{-2}}\left[\int \frac{d x}{x+1-\sqrt{-2}}-\int \frac{d x}{x+1+\sqrt{-2}}\right] \\ =\frac{1}{2 \sqrt{-2}} \log_{\epsilon} \frac{x+1-\sqrt{-2}}{x+1+\sqrt{-2}}. \end{align*} \] Notice that the same integral can be expressed sometimes in more than one way (which are equivalent to one another).
+
+*Pitfalls*. A beginner is liable to overlook certain points that a practised hand would avoid; such as the use of factors that are equivalent to either zero or infinity, and the occurrence of indeterminate quantities such as \({\tfrac{0}{0}}\). There is no golden rule that will meet every possible case. Nothing but practice and intelligent care will avail. An example of a pitfall which had to be circumvented arose in Chap. XVIII., p. 189, when we came to the problem of integrating \({x^{-1} d x}\).
+
+*Triumphs*. By triumphs must be understood the successes with which the calculus has been applied to the solution of problems otherwise intractable. Often in the consideration of physical relations one is able to build up an expression for the law governing the interaction of the parts or of the forces that govern them, such expression being naturally in the form of a *differential equation*, that is an equation containing differential coefficients with or without other algebraic quantities. And when such a differential equation has been found, one can get no further until it has been integrated. Generally it is much easier to state the appropriate differential equation than to solve it: the real trouble begins then only when one wants to integrate, unless indeed the equation is seen to possess some standard form of which the integral is known, and then the triumph is easy. The equation which results from integrating a differential equation is called its "solution"; and it is quite astonishing how in many cases the solution looks as if it had no relation to the differential equation of which it is the integrated form. The solution often seems as different from the original expression as a butterfly does from the caterpillar that it was. Who would have supposed that such an innocent thing as \[ \frac{d y}{d x}=\frac{1}{a^{2}-x^{2}} \] could blossom out into \[ y=\frac{1}{2 a} \log_{\epsilon} \frac{a+x}{a-x}+C? \] yet the latter is the *solution* of the former.
+
+Footnote: This means that the actual result of solving it is called its "solution." But many mathematicians would say, with Professor Forsyth, "every differential equation *is considered as solved* when the value of the dependent variable is expressed as a function of the independent variable by means either of known functions, or of integrals, whether the integrations in the latter can or cannot be expressed in terms of functions already known."
+
+As a last example, let us work out the above together.
+
+By partial fractions, \[ \begin{aligned} \frac{1}{a^{2}-x^{2}} & =\frac{1}{2 a(a+x)}+\frac{1}{2 a(a-x)}, \\ d y & =\frac{d x}{2 a(a+x)}+\frac{d x}{2 a(a-x)}, \\ y & =\frac{1}{2 a}\left(\int \frac{d x}{a+x}+\int \frac{d x}{a-x}\right)\\ & =\frac{1}{2 a}\left(\log_{\epsilon}(a+x)-\log_{\epsilon}(a-x)\right) \\ & =\frac{1}{2 a} \log_{\epsilon} \frac{a+x}{a-x}+C. \end{aligned} \]
+
+Not a very difficult metamorphosis!
+
+There are whole treatises, such as Boole's *Differential Equations*, devoted to the subject of thus finding the "solutions" for different original forms.
+
+*Exercises XIX.* (See p. 266 for Answers.)
+
+(1) Find \({\int \sqrt{a^{2}-x^{2}} d x}\).
+
+(2) Find \({\int x \log_{\epsilon} x d x}\).
+
+(3) Find \({\int x^{a} \log_{\epsilon} x d x}\).
+
+(4) Find \({\int \epsilon^{x} \cos \epsilon^{x} d x}\).
+
+(5) Find \({\int \dfrac{1}{x} \cos \left(\log_{\epsilon} x\right) d x}\).
+
+(6) Find \({\int x^{2} \epsilon^{x} d x}\).
+
+(7) Find \({\int \dfrac{\left(\log_{\epsilon} x\right)^{a}}{x} d x}\).
+
+(8) Find \({\int \dfrac{d x}{x \log_{\epsilon} x}}\).
+
+(9) Find \({\int \dfrac{5 x+1}{x^{2}+x-2} d x}\).
+
+(10) Find \({\int \dfrac{\left(x^{2}-3\right) d x}{x^{3}-7 x+6}}\).
+
+(11) Find \({\int \dfrac{b d x}{x^{2}-a^{2}}}\).
+
+(12) Find \({\int \dfrac{4 x d x}{x^{4}-1}}\).
+
+(13) Find \({\int \dfrac{d x}{1-x^{4}}}\).
+
+(14) Find \({\int \dfrac{d x}{x \sqrt{a-b x^{2}}}}\).

@@ -1,0 +1,131 @@
+Chapter IX: Introducing a Useful Dodge
+
+SOMETIMES one is stumped by finding that the expression to be differentiated is too complicated to tackle directly.
+
+Thus, the equation \[ y=\left(x^{2}+a^{2}\right)^{\tfrac{3}{2}} \] is awkward to a beginner.
+
+Now the dodge to turn the difficulty is this: Write some symbol, such as \({u}\), for the expression \({x^{2}+a^{2}}\); then the equation becomes \[ y=u^{\frac{3}{2}}, \] which you can easily manage; for \[ \frac{d y}{d u}=\frac{3}{2} u^{\tfrac{1}{2}}. \]
+
+Then tackle the expression \[ u=x^{2}+a^{2}, \] and differentiate it with respect to \({x}\), \[ \frac{d u}{d x}=2 x. \]
+
+Then all that remains is plain sailing; \[ \text{for}\quad \frac{d y}{d x}=\frac{d y}{d u} \times \frac{d u}{d x}; \] that is, \[ \begin{aligned} \frac{d y}{d x} & =\frac{3}{2} u^{\tfrac{1}{2}} \times 2 x \\ & =\frac{3}{2}\left(x^{2}+a^{2}\right)^{\tfrac{1}{2}} \times 2 x \\ & =3 x\left(x^{2}+a^{2}\right)^{\tfrac{1}{2}}; \end{aligned} \] and so the trick is done.
+
+By and bye, when you have learned how to deal with sines, and cosines, and exponentials, you will find this dodge of increasing usefulness.
+
+* * *
+
+Examples
+
+Let us practise this dodge on a few examples.
+
+(1) Differentiate \({y=\sqrt{a+x}}\).
+
+Let \({a+x=u}\). \[ \begin{aligned} & \frac{d u}{d x}=1; \quad y=u^{\tfrac{1}{2}}; \quad \frac{d y}{d u}=\frac{1}{2} u^{-\tfrac{1}{2}}=\frac{1}{2}(a+x)^{-\tfrac{1}{2}}. \\ & \frac{d y}{d x}=\frac{d y}{d u} \times \frac{d u}{d x}=\frac{1}{2 \sqrt{a+x}}. \end{aligned} \]
+
+(2) Differentiate \({y=\dfrac{1}{\sqrt{a+x^{2}}}}\).
+
+Let \({a+x^{2}=u}\). \[ \begin{aligned} & \frac{d u}{d x}=2 x; \quad y=u^{-\tfrac{1}{2}}; \quad \frac{d y}{d u}=-\frac{1}{2} u^{-\tfrac{3}{2}}. \\ & \frac{d y}{d x}=\frac{d y}{d u} \times \frac{d u}{d x}=-\frac{x}{\sqrt{\left(a+x^{2}\right)^{3}}}. \end{aligned} \]
+
+(3) Differentiate \({y=\left(m-n x^{\frac{2}{3}}+\frac{p}{x^{\frac{4}{3}}}\right)^{a}}\).
+
+Let \({m-n x^{\tfrac{2}{3}}+p x^{-\tfrac{4}{3}}=u}\). \[ \begin{align*} \frac{d u}{d x}=-\frac{2}{3} n x^{-\frac{1}{3}}-\frac{4}{3} p x^{-\frac{7}{3}}; \\ y=u^{a}; \quad \frac{d y}{d u}=a u^{a-1}. \\ \frac{d y}{d x}=\frac{d y}{d u} \times \frac{d u}{d x}=-a\left(m-n x^{\frac{2}{3}}+\frac{p}{x^{\frac{4}{3}}}\right)^{a-1}\left(\frac{2}{3} n x^{-\frac{1}{3}}+\frac{4}{3} p x^{-\frac{7}{3}}\right). \end{align*} \]
+
+(4) Differentiate \({y=\dfrac{1}{\sqrt{x^{3}-a^{2}}}}\).
+
+Let \({u=x^{3}-a^{2}}\). \[ \begin{aligned} & \frac{d u}{d x}=3 x^{2}; \quad y=u^{-\frac{1}{2}}; \quad \frac{d y}{d u}=-\frac{1}{2}\left(x^{3}-a^{2}\right)^{-\frac{3}{2}}. \\ & \frac{d y}{d x}=\frac{d y}{d u} \times \frac{d u}{d x}=-\frac{3 x^{2}}{2 \sqrt{\left(x^{3}-a^{2}\right)^{3}}}. \end{aligned} \]
+
+(5) Differentiate \({y=\sqrt{\dfrac{1-x}{1+x}}}\).
+
+Write this as \({y=\dfrac{(1-x)^{\tfrac{1}{2}}}{(1+x)^{\tfrac{1}{2}}}}\). \[ \frac{d y}{d x}=\frac{(1+x)^{\tfrac{1}{2}} \frac{d(1-x)^{\tfrac{1}{2}}}{d x}-(1-x)^{\tfrac{1}{2}} \frac{d(1+x)^{\tfrac{1}{2}}}{d x}}{1+x}. \] (We may also write \({y=(1-x)^{\tfrac{1}{2}}(1+x)^{-\tfrac{1}{2}}}\) and differentiate as a product.)
+
+Proceeding as in example (1) above, we get \[ \frac{d(1-x)^{\frac{1}{2}}}{d x}=-\frac{1}{2 \sqrt{1-x}}; \quad \text { and } \quad \frac{d(1+x)^{\frac{1}{2}}}{d x}=\frac{1}{2 \sqrt{1+x}}. \]
+
+Hence \[ \begin{aligned} \frac{d y}{d x} & =-\frac{(1+x)^{\frac{1}{2}}}{2(1+x) \sqrt{1-x}}-\frac{(1-x)^{\frac{1}{2}}}{2(1+x) \sqrt{1+x}} \\ & =-\frac{1}{2 \sqrt{1+x} \sqrt{1-x}}-\frac{\sqrt{1-x}}{2 \sqrt{(1+x)^{3}}}; \end{aligned} \] or \[ \frac{d y}{d x}=-\frac{1}{(1+x) \sqrt{1-x^{2}}}. \]
+
+(6) Differentiate \({y=\sqrt{\dfrac{x^{3}}{1+x^{2}}}}\).
+
+We may write this \[ \begin{align*} y=x^{\frac{3}{2}}\left(1+x^{2}\right)^{-\frac{1}{2}}; \\ \frac{d y}{d x}=\frac{3}{2} x^{\frac{1}{2}}\left(1+x^{2}\right)^{-\frac{1}{2}}+x^{\frac{3}{2}} \times \frac{d\left[\left(1+x^{2}\right)^{-\frac{1}{2}}\right]}{d x}. \end{align*} \]
+
+Differentiating \({\left(1+x^{2}\right)^{-\tfrac{1}{2}}}\), as shown in example (2) above, we get \[ \frac{d\left[\left(1+x^{2}\right)^{-\frac{1}{2}}\right]}{d x}=-\frac{x}{\sqrt{\left(1+x^{2}\right)^{3}}}; \] so that \[ \frac{d y}{d x}=\frac{3 \sqrt{x}}{2 \sqrt{1+x^{2}}}-\frac{\sqrt{x^{5}}}{\sqrt{\left(1+x^{2}\right)^{3}}}=\frac{\sqrt{x}\left(3+x^{2}\right)}{2 \sqrt{\left(1+x^{2}\right)^{3}}}. \]
+
+(7) Differentiate \({y=\left(x+\sqrt{x^{2}+x+a}\right)^{3}}\).
+
+Let \({x+\sqrt{x^{2}+x+a}=u}\). \[ \begin{align*} \frac{d u}{d x}=1+\frac{d\left[\left(x^{2}+x+a\right)^{\frac{1}{2}}\right]}{d x}. \\ y=u^{3}; \quad \text { and } \quad \frac{d y}{d u}=3 u^{2}=3\left(x+\sqrt{x^{2}+x+a}\right)^{2}. \end{align*} \]
+
+Now let \({\left(x^{2}+x+a\right)^{\tfrac{1}{2}}=v}\) and \({\left(x^{2}+x+a\right)=w}\). \[ \begin{aligned} & \frac{d w}{d x}=2 x+1; \quad v=w^{\frac{1}{2}}; \quad \frac{d v}{d w}=\frac{1}{2} w^{-\frac{1}{2}}. \\ & \frac{d v}{d x}=\frac{d v}{d w} \times \frac{d w}{d x}=\frac{1}{2}\left(x^{2}+x+a\right)^{-\frac{1}{2}}(2 x+1). \end{aligned} \]
+
+Hence \({\quad \dfrac{d u}{d x}=1+\dfrac{2 x+1}{2 \sqrt{x^{2}+x+a}}}\), \[ \begin{aligned} \frac{d y}{d x} & =\frac{d y}{d u} \times \frac{d u}{d x} \\ & =3\left(x+\sqrt{x^{2}+x+a}\right)^{2}\left(1+\frac{2 x+1}{2 \sqrt{x^{2}+x+a}}\right). \end{aligned} \]
+
+(8) Differentiate \({y=\sqrt{\dfrac{a^{2}+x^{2}}{a^{2}-x^{2}}} \sqrt[3]{\dfrac{a^{2}-x^{2}}{a^{2}+x^{2}}}}\).
+
+We get \[ \begin{aligned} y & =\frac{\left(a^{2}+x^{2}\right)^{\frac{1}{2}}\left(a^{2}-x^{2}\right)^{\frac{1}{3}}}{\left(a^{2}-x^{2}\right)^{\frac{1}{2}}\left(a^{2}+x^{2}\right)^{\tfrac{1}{3}}}=\left(a^{2}+x^{2}\right)^{\tfrac{1}{6}}\left(a^{2}-x^{2}\right)^{-\tfrac{1}{6}}. \\ \frac{d y}{d x} & =\left(a^{2}+x^{2}\right)^{\tfrac{1}{6}} \frac{d\left[\left(a^{2}-x^{2}\right)^{-\tfrac{1}{6}}\right]}{d x}+\frac{d\left[\left(a^{2}+x^{2}\right)^{\tfrac{1}{6}}\right]}{\left(a^{2}-x^{2}\right)^{\tfrac{1}{6}} d x}. \end{aligned} \]
+
+Let \({u=\left(a^{2}-x^{2}\right)^{-\tfrac{1}{6}}}\) and \({v=\left(a^{2}-x^{2}\right)}\). \[ \begin{aligned} u & =v^{-\frac{1}{6}}; \quad \frac{d u}{d v}=-\frac{1}{6} v^{-\frac{7}{6}}; \quad \frac{d v}{d x}=-2 x. \\ \frac{d u}{d x} & =\frac{d u}{d v} \times \frac{d v}{d x}=\frac{1}{3} x\left(a^{2}-x^{2}\right)^{-\tfrac{7}{6}}. \end{aligned} \]
+
+Let \({w=\left(a^{2}+x^{2}\right)^{\tfrac{1}{6}}}\) and \({z=\left(a^{2}+x^{2}\right)}\). \[ \begin{aligned} w & =z^{\frac{1}{6}}; \quad \frac{d w}{d z}=\frac{1}{6} z^{-\tfrac{5}{6}}; \quad \frac{d z}{d x}=2 x. \\ \frac{d w}{d x} & =\frac{d w}{d z} \times \frac{d z}{d x}=\frac{1}{3} x\left(a^{2}+x^{2}\right)^{-\tfrac{5}{6}}. \end{aligned} \]
+
+Hence \[ \begin{aligned} & \frac{d y}{d x}=\left(a^{2}+x^{2}\right)^{\frac{1}{6}} \frac{x}{3\left(a^{2}-x^{2}\right)^{\tfrac{7}{6}}}+\frac{x}{3\left(a^{2}-x^{2}\right)^{\tfrac{1}{6}}\left(a^{2}+x^{2}\right)^{\tfrac{5}{6}}}; \\ & \frac{d y}{d x}=\frac{x}{3}\left[\sqrt[6]{\frac{a^{2}+x^{2}}{\left(a^{2}-x^{2}\right)^{7}}}+\frac{1}{\left.\sqrt[6]{\left(a^{2}-x^{2}\right)\left(a^{2}+x^{2}\right)^{5}}\right]}\right]. \end{aligned} \]
+
+(9) Differentiate \({y^{n}}\) with respect to \({y^{5}}\). \[ \frac{d\left(y^{n}\right)}{d\left(y^{5}\right)}=\frac{n y^{n-1}}{5 y^{5-1}}=\frac{n}{5} y^{n-5}. \] (10) Find the first and second differential coefficients of \({y=\dfrac{x}{b} \sqrt{(a-x) x}}\). \[ \frac{d y}{d x}=\frac{x}{b} \frac{d\left\{[(a-x) x]^{\frac{1}{2}}\right\}}{d x}+\frac{\sqrt{(a-x) x}}{b}. \]
+
+Let \({[(a-x) x]^{\tfrac{1}{2}}=u}\) and let \({(a-x) x=w}\); then \({u=w^{\tfrac{1}{2}}}\). \[ \begin{aligned} & \frac{d u}{d w}=\frac{1}{2} w^{-\tfrac{1}{2}}=\frac{1}{2 w^{\tfrac{1}{2}}}=\frac{1}{2 \sqrt{(a-x) x}}. \\ & \frac{d w}{d x}=a-2 x. \\ & \frac{d u}{d w} \times \frac{d w}{d x}=\frac{d u}{d x}=\frac{a-2 x}{2 \sqrt{(a-x) x}}. \end{aligned} \]
+
+Hence \[ \frac{d y}{d x}=\frac{x(a-2 x)}{2 b \sqrt{(a-x) x}}+\frac{\sqrt{(a-x) x}}{b}=\frac{x(3 a-4 x)}{2 b \sqrt{(a-x) x}}. \]
+
+Now \[ \begin{aligned} \frac{d^{2} y}{d x^{2}} & =\frac{2 b \sqrt{(a-x) x}(3 a-8 x)-\frac{\left(3 a x-4 x^{2}\right) b(a-2 x)}{\sqrt{(a-x) x}}}{4 b^{2}(a-x) x} \\ & =\frac{3 a^{2}-12 a x+8 x^{2}}{4 b(a-x) \sqrt{(a-x) x}}. \end{aligned} \] (We shall need these two last differential coefficients later on. See Ex. X. No. 11.)
+
+* * *
+
+*Exercises VI.* (See page 255 for Answers.)
+
+Differentiate the following:
+
+(1) \({y=\sqrt{x^{2}+1}}\).
+
+(2) \({y=\sqrt{x^{2}+a^{2}}}\).
+
+(3) \({y=\dfrac{1}{\sqrt{a+x}}}\).
+
+(4) \({y=\dfrac{a}{\sqrt{a-x^{2}}}}\).
+
+(5) \({y=\dfrac{\sqrt{x^{2}-a^{2}}}{x^{2}}}\).
+
+(6) \({y=\dfrac{\sqrt[3]{x^{4}+a}}{\sqrt[2]{x^{3}+a}}}\).
+
+(7) \({y=\dfrac{a^{2}+x^{2}}{(a+x)^{2}}}\).
+
+(8) Differentiate \({y^{5}}\) with respect to \({y^{2}}\).
+
+(9) Differentiate \({y=\dfrac{\sqrt{1-\theta^{2}}}{1-\theta}}\).
+
+* * *
+
+The process can be extended to three or more differential coefficients, so that \({\dfrac{d y}{d x}=\dfrac{d y}{d z} \times \dfrac{d z}{d v}\times \dfrac{d v}{d x}}\).
+
+Examples
+
+(1) If \({z=3 x^{4}; \quad v=\dfrac{7}{z^{2}}; \quad y=\sqrt{1+v}}\), find \({\dfrac{d v}{d x}}\).
+
+We have \[ \begin{aligned} & \frac{d y}{d v}=\frac{1}{2 \sqrt{1+v}}; \quad \frac{d v}{d z}=-\frac{14}{z^{3}}; \quad \frac{d z}{d x}=12 x^{3}. \\ & \frac{d y}{d x}=-\frac{168 x^{3}}{(2 \sqrt{1+v}) z^{3}}=-\frac{28}{3 x^{5} \sqrt{9 x^{8}+7}}. \end{aligned} \]
+
+(2) If \({t=\dfrac{1}{5 \sqrt{\theta}}; \quad x=t^{3}+\dfrac{t}{2}; \quad v=\dfrac{7 x^{2}}{\sqrt[3]{x-1}}}\), find \({\dfrac{d v}{d \theta}}\). \[ \frac{d v}{d x}=\frac{7 x(5 x-6)}{3 \sqrt[3]{(x-1)^{4}}}; \quad \frac{d x}{d t}=3 t^{2}+\frac{1}{2}; \quad \frac{d t}{d \theta}=-\frac{1}{10 \sqrt{\theta^{3}}}. \]
+
+Hence \[ \frac{d v}{d \theta}=-\frac{7 x(5 x-6)\left(3 t^{2}+\frac{1}{2}\right)}{30 \sqrt[3]{(x-1)^{4}} \sqrt{\theta^{3}}}, \] an expression in which \({x}\) must be replaced by its value, and \({t}\) by its value in terms of \({\theta}\).
+
+(3) If \({\theta=\dfrac{3 a^{2} x}{\sqrt{x^{3}}}; \quad \omega=\dfrac{\sqrt{1-\theta^{2}}}{1+\theta}; \quad}\) and \({\phi=\sqrt{3}-\dfrac{1}{\omega \sqrt{2}}}\), find \({\dfrac{d \phi}{d x}}\).
+
+We get \[ \begin{align*} \theta=3 a^{2} x^{-\frac{1}{2}}; \quad \omega=\sqrt{\frac{1-\theta}{1+\theta}}; \quad \text { and } \quad \phi=\sqrt{3}-\frac{1}{\sqrt{2}} \omega^{-1}. \\ \frac{d \theta}{d x}=-\frac{3 a^{2}}{2 \sqrt{x^{3}}}; \quad \frac{d \omega}{d \theta}=-\frac{1}{(1+\theta) \sqrt{1-\theta^{2}}} \end{align*} \] (see example 5, p. 68); and \[ \frac{d \phi}{d \omega}=\frac{1}{\sqrt{2} \omega^{2}}. \]
+
+So that \({\dfrac{d \theta}{d x}=\dfrac{1}{\sqrt{2} \times \omega^{2}} \times \dfrac{1}{(1+\theta) \sqrt{1-\theta^{2}}} \times \dfrac{3 a^{2}}{2 \sqrt{x^{3}}}}\).
+
+Replace now first \({\omega}\), then \({\theta}\) by its value.
+
+* * *
+
+*Exercises VII*. You can now successfully try the following. (See page 256 for Answers.)
+
+(1) If \({u=\dfrac{1}{2} x^{3}; \quad v=3\left(u+u^{2}\right); \quad}\) and \({w=\dfrac{1}{v^{2}}}\), find \({\dfrac{d w}{d x}}\).
+
+(2) If \({y=3 x^{2}+\sqrt{2}; \quad z=\sqrt{1+y}; \quad}\) and \({v=\dfrac{1}{\sqrt{3}+4 z}}\), find \({\dfrac{d v}{d x}}\).
+
+(3) If \({y=\dfrac{x^{3}}{\sqrt{3}}; \quad z=(1+y)^{2}; \quad}\) and \({u=\dfrac{1}{\sqrt{1+z}}}\), find \({\dfrac{d u}{d x}}\).

@@ -1,0 +1,164 @@
+Chapter XV: How to Deal with Sines and Cosines
+
+GREEK letters being usual to denote angles, we will take as the usual letter for any variable angle the letter \({\theta}\) ("theta").
+
+Let us consider the function \[ y=\sin \theta. \]
+
+[Figure br: Fig. 43. — A circle with centre O and a radius at an angle θ to the horizontal; a small further angle dθ adds a little to the height y of the radius's end.]
+
+What we have to investigate is the value of \({\dfrac{d(\sin \theta)}{d \theta}}\); or, in other words, if the angle \({\theta}\) varies, we have to find the relation between the increment of the sine and the increment of the angle, both increments being indefinitely small in themselves. Examine Fig. 43, wherein, if the radius of the circle is unity, the height of \({y}\) is the sine, and \({\theta}\) is the angle. Now, if \({\theta}\) is supposed to increase by the addition to it of the small angle \({d \theta}\) —an element of angle—the height of \({y}\), the sine, will be increased by a small element \({d y}\). The new height \({y+d y}\) will be the sine of the new angle \({\theta+d \theta}\), or, stating it as an equation, \[ y+d y=\sin (\theta+d \theta); \] and subtracting from this the first equation gives \[ d y=\sin (\theta+d \theta)-\sin \theta. \]
+
+The quantity on the right-hand side is the difference between two sines, and books on trigonometry tell us how to work this out. For they tell us that if \({M}\) and \({N}\) are two different angles, \[ \sin M-\sin N=2 \cos \frac{M+N}{2} \cdot \sin \frac{M-N}{2}. \]
+
+If, then, we put \({M=\theta+d \theta}\) for one angle, and \({N=\theta}\) for the other, we may write \[ \begin{aligned} & d y=2 \cos \frac{\theta+d \theta+\theta}{2} \cdot \sin \frac{\theta+d \theta-\theta}{2}, \\ \text{or,}\quad & d y=2 \cos \left(\theta+\tfrac{1}{2} d \theta\right) \cdot \sin \tfrac{1}{2} d \theta. \end{aligned} \]
+
+But if we regard \({d \theta}\) as indefinitely small, then in the limit we may neglect \({\tfrac{1}{2} d \theta}\) by comparison with \({\theta}\), and may also take \({\sin \tfrac{1}{2} d \theta}\) as being the same as \({\tfrac{1}{2} d \theta}\). The equation then becomes: \[ \begin{aligned} & d y=2 \cos \theta \times \tfrac{1}{2} d \theta; \\ & d y=\cos \theta \cdot d \theta, \\ \text{and, finally,}\quad & \frac{d y}{d \theta}=\cos \theta. \end{aligned} \]
+
+The accompanying curves, Figs. 44 and 45, show, plotted to scale, the values of \({y=\sin \theta}\), and \({\dfrac{d y}{d \theta}=\cos \theta}\), for the corresponding values of \({\theta}\).
+
+[Figure bs: Fig. 44. — The curve of y = sin θ over a whole turn from 0° to 360°, rising to 1 at 90° and falling to −1 at 270°.]
+
+[Figure bt: Fig. 45. — The curve of cos θ over a whole turn from 0° to 360°, starting at 1, falling to −1 at 180° and rising to 1 again.]
+
+* * *
+
+Take next the cosine.
+
+Let \({y=\cos \theta}\).
+
+Now \({\cos \theta=\sin \left(\dfrac{\pi}{2}-\theta\right)}\).
+
+Therefore \[ \begin{aligned} d y=d\left(\sin \left(\frac{\pi}{2}-\theta\right)\right) & =\cos \left(\frac{\pi}{2}-\theta\right) \times d(-\theta), \\ & =\cos \left(\frac{\pi}{2}-\theta\right) \times(-d \theta), \\ \frac{d y}{d \theta}=-\cos \left(\frac{\pi}{2}-\theta\right). \end{aligned} \]
+
+And it follows that \[ \frac{d y}{d \theta}=-\sin \theta. \]
+
+* * *
+
+Lastly, take the tangent.
+
+Let \[ \begin{aligned} y & =\tan \theta, \\ d y & =\tan (\theta+d \theta)-\tan \theta. \end{aligned} \]
+
+Expanding, as shown in books on trigonometry, \[ \begin{aligned} \tan (\theta+d \theta) & =\frac{\tan \theta+\tan d \theta}{1-\tan \theta \cdot \tan d \theta}; \\ \text{whence} \quad d y & =\frac{\tan \theta+\tan d \theta}{1-\tan \theta \cdot \tan d \theta}-\tan \theta \\ & =\frac{\left(1+\tan ^{2} \theta\right) \tan d \theta}{1-\tan \theta \cdot \tan d \theta}. \end{aligned} \]
+
+Now remember that if \({d \theta}\) is indefinitely diminished, the value of \({\tan d \theta}\) becomes identical with \({d \theta}\), and \({\tan\theta \cdot d \theta}\) is negligibly small compared with 1, so that the expression reduces to \[ \begin{aligned} & d y=\frac{\left(1+\tan ^{2} \theta\right) d \theta}{1}, \\ \text{so that}\quad& \frac{d y}{d \theta}=1+\tan ^{2} \theta, \\ \text{or}\quad & \frac{d y}{d \theta}=\sec ^{2} \theta. \end{aligned} \]
+
+Collecting these results, we have:
+
+	\({x}\) | \({\dfrac{d y}{d \theta}}\)
+	\({\sin \theta}\) | \({\cos \theta}\)
+	\({\cos \theta}\) | \({-\sin\theta}\)
+	\({\tan \theta}\) | \({\sec ^{2} \theta}\)
+
+Sometimes, in mechanical and physical questions, as, for example, in simple harmonic motion and in wave-motions, we have to deal with angles that increase in proportion to the time. Thus, if \({T}\) be the time of one complete *period*, or movement round the circle, then, since the angle all round the circle is \({2 \pi}\) radians, or \({360^{\circ}}\), the amount of angle moved through in time \({t}\), will be \[ \begin{aligned} & \theta=2 \pi \frac{t}{T}, \quad \text { in radians, } \\ \text{or}\quad & \theta=360 \frac{t}{T}, \quad \text { in degrees. } \end{aligned} \]
+
+If the *frequency*, or number of periods per second, be denoted by \({n}\), then \({n=\dfrac{1}{T}}\), and we may then write: \[ \theta=2 \pi n t. \]
+
+Then we shall have \[ y=\sin 2 \pi n t. \]
+
+If, now, we wish to know how the sine varies with respect to time, we must differentiate with respect, not to \({\theta}\), but to \({t}\). For this we must resort to the artifice explained in Chapter IX., p. 66, and put \[ \frac{d y}{d t}=\frac{d y}{d \theta} \cdot \frac{d \theta}{d t}. \]
+
+Now \({\dfrac{d \theta}{d t}}\) will obviously be \({2 \pi n}\); so that \[ \begin{aligned} \frac{d y}{d t} & =\cos \theta \times 2 \pi n \\ & =2 \pi n \cdot \cos 2 \pi n t. \end{aligned} \]
+
+Similarly, it follows that \[ \frac{d(\cos 2 \pi n t)}{d t}=-2 \pi n \cdot \sin 2 \pi n t. \]
+
+Second Differential Coefficient of Sine or Cosine
+
+We have seen that when \({\sin \theta}\) is differentiated with respect to \({\theta}\) it becomes \({\cos \theta;}\) and that when \({\cos \theta}\) is differentiated with respect to \({\theta}\) it becomes \({-\sin \theta}\); or, in symbols, \[ \frac{d^{2}(\sin \theta)}{d \theta^{2}}=-\sin \theta. \]
+
+So we have this curious result that we have found a function such that if we differentiate it twice over, we get the same thing from which we started, but with the sign changed from + to -.
+
+The same thing is true for the cosine; for differentiating \({\cos \theta}\) gives us \({-\sin \theta}\), and differentiating \({-\sin\theta}\) gives us \({-\cos \theta;}\) or thus: \[ \frac{d^{2}(\cos \theta)}{d \theta^{2}}=-\cos \theta. \]
+
+*Sines and cosines are the only functions of which the second differential coefficient is equal* (and of opposite sign to) *the original function.*
+
+* * *
+
+Examples
+
+With what we have so far learned we can now differentiate expressions of a more complex nature.
+
+(1) \({y=\arcsin x}\).
+
+If \({y}\) is the arc whose sine is \({x}\), then \({x=\sin y}\). \[ \frac{d x}{d y}=\cos y. \]
+
+Passing now from the inverse function to the original one, we get \[ \frac{d y}{d x}=\frac{1}{\frac{d x}{d y}}=\frac{1}{\cos y}. \]
+
+Now \[ \cos y=\sqrt{1-\sin ^{2} y}=\sqrt{1-x^{2}}; \] hence \[ \frac{d y}{d x}=\frac{1}{\sqrt{1-x^{2}}}, \] a rather unexpected result.
+
+(2) \({y=\cos ^{3} \theta}\).
+
+This is the same thing as \({y=(\cos \theta)^{3}}\).
+
+Let \({\cos \theta=v}\); then \({y=v^{3}}\); \({\dfrac{d y}{d v}=3 v^{2}}\). \[ \begin{aligned} & \frac{d v}{d \theta}=-\sin \theta. \\ & \frac{d y}{d \theta}=\frac{d y}{d v} \times \frac{d v}{d \theta}=-3 \cos ^{2} \theta \sin \theta. \end{aligned} \]
+
+(3) \({y=\sin (x+a)}\).
+
+Let \({x+a=v}\); then \({y=\sin v}\). \[ \frac{d y}{d v}=\cos v; \quad \frac{d v}{d x}=1 \quad \text { and } \quad \frac{d y}{d x}=\cos (x+a). \]
+
+(4) \({y=\log_{\epsilon} \sin \theta}\).
+
+Let \({\sin \theta=v; \quad y=\log_{\epsilon} v}\). \[ \begin{aligned} & \frac{d y}{d v}=\frac{1}{v}; \quad \frac{d v}{d \theta}=\cos \theta; \\ & \frac{d y}{d \theta}=\frac{1}{\sin \theta} \times \cos \theta=\cot \theta. \end{aligned} \]
+
+(5) \({y=\cot \theta=\dfrac{\cos \theta}{\sin \theta}}\). \[ \begin{aligned} \frac{d y}{d \theta} & =\frac{-\sin ^{2} \theta-\cos ^{2} \theta}{\sin ^{2} \theta} \\ & =-\left(1+\cot ^{2} \theta\right)=-\operatorname{cosec}^{2} \theta. \end{aligned} \]
+
+(6) \({y=\tan 3 \theta}\).
+
+Let \({3 \theta=v}\); \({y=\tan v}\); \({\dfrac{d y}{d v}=\sec ^{2} v}\). \[ \frac{d v}{d \theta}=3; \quad \frac{d y}{d \theta}=3 \sec ^{2} 3 \theta. \]
+
+(7) \({y=\sqrt{1+3 \tan ^{2} \theta}; \quad y=\left(1+3 \tan ^{2} \theta\right)^{\frac{1}{2}}}\).
+
+Let \({3 \tan ^{2} \theta=v}\) (see p. 67). \[ \begin{aligned} y & =(1+v)^{\frac{1}{2}}; \quad \frac{d y}{d v}=\frac{1}{2 \sqrt{1+v}}; \\ \frac{d v}{d \theta} & =6 \tan \theta \sec ^{2} \theta \end{aligned} \] (for, if \({\tan \theta=u}\), \[ v=3 u^{2}; \quad \frac{d v}{d u}=6 u; \quad \frac{d u}{d \theta}=\sec^{2} \theta; \] hence \({\quad \dfrac{d v}{d \theta}=6\left(\tan \theta \sec ^{2} \theta\right)}\))
+
+hence \({\quad \dfrac{d y}{d \theta}=\frac{6 \tan \theta \sec ^{2} \theta}{2 \sqrt{1+3 \tan ^{2} \theta}}}\).
+
+(8) \({y=\sin x \cos x}\). \[ \begin{aligned} \frac{d y}{d x} & =\sin x(-\sin x)+\cos x \times \cos x \\ & =\cos ^{2} x-\sin ^{2} x. \end{aligned} \]
+
+* * *
+
+*Exercises XIV.* (See page 261 for Answers.)
+
+(1) Differentiate the following:
+
+(i) \({y=A \sin \left(\theta-\dfrac{\pi}{2}\right)}\).
+
+(ii) \({y=\sin ^{2} \theta}\); and \({y=\sin 2 \theta}\).
+
+(iii) \({y=\sin ^{3} \theta}\); and \({y=\sin 3 \theta}\).
+
+(2) Find the value of \({\theta}\) for which \({\sin \theta \times \cos\theta}\) is a maximum.
+
+(3) Differentiate \({y=\dfrac{1}{2 \pi} \cos 2 \pi n t}\).
+
+(4) If \({y=\sin a^{x}}\), find \({\dfrac{d y}{d x}}\).
+
+(5) Differentiate \({y=\log_{\epsilon} \cos x}\).
+
+(6) Differentiate \({y=18.2 \sin \left(x+26^{\circ}\right)}\).
+
+(7) Plot the curve \({y=100 \sin \left(\theta-15^{\circ}\right)}\); and show that the slope of the curve at \({\theta=75^{\circ}}\) is half the maximum slope.
+
+(8) If \({y=\sin \theta \cdot \sin 2 \theta}\), find \({\dfrac{d y}{d\theta}}\).
+
+(9) If \({y=a \cdot \tan ^{m}\left(\theta^{n}\right)}\), find the differential coefficient of \({y}\) with respect to \({\theta}\).
+
+(10) Differentiate \({y=\epsilon^{x} \sin ^{2} x}\).
+
+(11) Differentiate the three equations of Exercises XIII. (p. 160), No. 4, and compare their differential coefficients, as to whether they are equal, or nearly equal, for very small values of \({x}\), or for very large values of \({x}\), or for values of \({x}\) in the neighbourhood of \({x=30}\).
+
+(12) Differentiate the following:
+
+(i) \({y=\sec x}\).
+
+(ii) \({y=\operatorname{arc} \cos x}\).
+
+(iii) \({y=\arctan x}\).
+
+(iv) \({y=\operatorname{arcsec} x}\).
+
+(v) \({y=\tan x \times \sqrt{3 \sec x}}\).
+
+(13) Differentiate \({y=\sin (2 \theta+3)^{2.3}}\).
+
+(14) Differentiate \({y=\theta^{3}+3 \sin (\theta+3)-3^{\sin \theta}-3^{\theta}}\).
+
+(15) Find the maximum or minimum of \({y=\theta \cos \theta}\).

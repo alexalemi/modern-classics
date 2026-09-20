@@ -291,6 +291,7 @@ def sweep(book, verbose=False):
         # build. build_ebook already refuses that one at source.
         for pat, what in ((r"\[Figure\b", "unrendered figure marker"),
                           (r"\*\*\w", "markdown bold"),
+                          (r"\\\(|\\\[", "unrendered LaTeX formula (see mathml.py)"),
                           (r"(?m)^\s*_[A-Z][^_\n]{2,40}_\s*$", "markdown italic line")):
             n = len(re.findall(pat, page))
             if n:

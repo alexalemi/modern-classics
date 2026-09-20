@@ -53,6 +53,8 @@ import argparse
 import html
 import json
 import re
+
+import mathml
 import struct
 import sys
 from pathlib import Path
@@ -78,6 +80,10 @@ def read_env(path):
 
 def is_subheading(par, next_par=None):
     if "\n" in par or len(par) > 90:
+        return False
+    # A LINE CARRYING A FORMULA IS NEVER A TITLE. "(1) \\(y=x^{13}\\)" is an
+    # exercise, short and unpunctuated. No book without LaTeX moves.
+    if mathml.MATH.search(par):
         return False
     if par[-1] in ".;:,—":
         return False
@@ -382,8 +388,38 @@ def emphasis(escaped):
 def inline(escaped):
     """Every inline transform, in one place, for BOTH renderers.
     build_ebook.esct() calls this too, so the page and the epub cannot
-    drift apart."""
-    return scripts(emphasis(escaped))
+    drift apart.
+
+    MATHEMATICS IS HELD ASIDE FIRST. A restored edition carries formulas
+    as LaTeX, \\(...\\) and \\[...\\] (see mathml.py), and LaTeX is full of
+    underscores and asterisks that emphasis() would read as italics. The
+    formula is lifted out, typeset as MathML, and put back last. The text
+    arrives escaped, so the LaTeX is unescaped before conversion (an
+    aligned environment's "&" arrives as "&amp;")."""
+    held = []
+
+    def hold(m):
+        tex = html.unescape(m.group(1) or m.group(2))
+        held.append(mathml.to_mathml(tex, m.group(2) is not None))
+        return f"\x00M{len(held) - 1}\x00"
+    escaped = mathml.MATH.sub(hold, escaped)
+    out = scripts(emphasis(escaped))
+    return re.sub("\x00M(\\d+)\x00", lambda m: held[int(m.group(1))], out)
+
+
+def render_math_table(par):
+    """An indented block carrying formulas -> a table, cells split on the
+    spaced pipe, as render_plate_table does for plates. Set as <pre> it
+    would print its MathML inside a monospace block with the columns kept
+    apart only by the source's spaces."""
+    rows = []
+    for line in par.split("\n"):
+        if line.strip():
+            # only the tab: a first cell may be empty (see build_ebook)
+            cells = [c.strip() for c in line.lstrip("\t").split(" | ")]
+            rows.append("<tr>" + "".join(f"<td>{inline(html.escape(c))}</td>"
+                                         for c in cells) + "</tr>")
+    return '<table class="math">\n' + "\n".join(rows) + "\n</table>"
 
 
 def find_speakers(pars):
@@ -423,6 +459,8 @@ def render_body(text, figdir=None, site=None, bare_label=False):
             # other book's tables change.
             if figdir and FIGURE_INLINE.search(par):
                 out.append(render_plate_table(par, figdir, site, bare_label))
+            elif mathml.MATH.search(par):
+                out.append(render_math_table(par))
             else:
                 out.append(f'<pre class="outline">{inline(html.escape(par))}</pre>')
         elif len(lines) >= 2 and lines[0].strip() in speakers:

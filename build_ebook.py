@@ -36,6 +36,7 @@ from pathlib import Path
 ROOT = Path(__file__).parent
 sys.path.insert(0, str(ROOT))
 import assemble  # reuse section parsing conventions
+import mathml
 
 BUILD_ROOT = ROOT / "build" / "ebooks"
 SE = shutil.which("se") or str(Path.home() / ".local/bin/se")
@@ -81,7 +82,7 @@ def esc(s):
 def esct(s):
     """esc(), plus super/subscript markup. For BODY TEXT only --
     never for a <title>, which must stay text."""
-    return assemble.inline(esc(s))
+    return mathml.prefixed(assemble.inline(esc(s)))
 
 
 def slugify(text):
@@ -200,6 +201,8 @@ def classify_block(par):
         # takes this path, so no other book's tables move.
         if FIGURE_DIR[0] and assemble.FIGURE_INLINE.search(stripped):
             return "plates"
+        if mathml.MATH.search(stripped):
+            return "table"             # mirrors assemble.render_math_table
         lines = [l.strip() for l in stripped.splitlines() if l.strip()]
         short = sum(1 for l in lines if len(l) < 65)
         if len(lines) >= 2 and short == len(lines) and not any(" -- " in l or l.endswith("--") for l in lines):
@@ -307,6 +310,17 @@ def render_block(par, kind):
         return f'\t\t\t<p class="subhead">{esc(s)}</p>'
     if kind == "plates":
         return render_plate_table(s)
+    if kind == "table":
+        # Only the TAB is stripped from a row: a table's first cell may be
+        # empty, and stripping the whole line would lose that column.
+        rows = []
+        for line in par.split("\n"):
+            if line.strip():
+                tds = "\n".join(f"\t\t\t\t\t\t<td>{esct(c.strip())}</td>"
+                                for c in line.lstrip("\t").split(" | "))
+                rows.append(f"\t\t\t\t\t<tr>\n{tds}\n\t\t\t\t\t</tr>")
+        return ("\t\t\t<table>\n\t\t\t\t<tbody>\n" + "\n".join(rows)
+                + "\n\t\t\t\t</tbody>\n\t\t\t</table>")
     lines = [l.strip() for l in s.splitlines() if l.strip()]
     if kind == "verse":
         inner = "\n".join(
@@ -804,6 +818,10 @@ def main():
     rebrand.apply(dest, env, meta, spine, original=args.original)
     prepare_cover(dest, meta)
     copy_figures(book, env, dest)
+    for f in sorted((dest / "src/epub/text").glob("*.xhtml")):
+        t = f.read_text()
+        if mathml.declare(t) != t:          # MathML namespace on <html>, see mathml.py
+            f.write_text(mathml.declare(t))
 
     # `se typogrify` turns an escaped &lt; back into a bare "<", which makes
     # the file unparseable for every step after it — and the error you get is
@@ -811,7 +829,8 @@ def main():
     # ship a bare comparison operator in prose, and say why.
     if not args.original:
         for f in sorted((dest / "src/epub/text").glob("*.xhtml")):
-            if "&lt;" in f.read_text():
+            # a formula's less-than is <m:mo>&lt;</m:mo> and is correct there
+            if "&lt;" in re.sub(r"<m:math\b.*?</m:math>", "", f.read_text(), flags=re.S):
                 raise SystemExit(
                     f"{f.name} contains an escaped '<'. `se typogrify` will "
                     "unescape it and break the XHTML. Reword the sentence "

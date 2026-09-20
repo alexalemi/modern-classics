@@ -1,0 +1,147 @@
+Chapter XIII: Other Useful Dodges
+
+Partial Fractions
+
+WE have seen that when we differentiate a fraction we have to perform a rather complicated operation; and, if the fraction is not itself a simple one, the result is bound to be a complicated expression. If we could split the fraction into two or more simpler fractions such that their sum is equivalent to the original fraction, we could then proceed by differentiating each of these simpler expressions. And the result of differentiating would be the sum of two (or more) differentials, each one of which is relatively simple; while the final expression, though of course it will be the same as that which could be obtained without resorting to this dodge, is thus obtained with much less effort and appears in a simplified form.
+
+Let us see how to reach this result. Try first the job of adding two fractions together to form a resultant fraction. Take, for example, the two fractions \({\dfrac{1}{x+1}}\) and \({\dfrac{2}{x-1}}\). Every schoolboy can add these together and find their sum to be \({\dfrac{3x+1}{x^{2}-1}}\). And in the same way he can add together three or more fractions. Now this process can certainly be reversed: that is to say, that if this last expression were given, it is certain that it can somehow be split back again into its original components or partial fractions. Only we do not know in every case that may be presented to us *how* we can so split it. In order to find this out we shall consider a simple case at first. But it is important to bear in mind that all which follows applies only to what are called "proper" algebraic fractions, meaning fractions like the above, which have the numerator of *a lesser degree* than the denominator; that is, those in which the highest index of \({x}\) is less in the numerator than in the denominator. If we have to deal with such an expression as \({\dfrac{x^{2}+2}{x^{2}-1}}\), we can simplify it by division, since it is equivalent to \({1+\dfrac{3}{x^{2}-1}}\); and \({\dfrac{3}{x^{2}-1}}\) is a proper algebraic fraction to which the operation of splitting into partial fractions can be applied, as explained hereafter.
+
+*Case I*. If we perform many additions of two or more fractions the denominators of which contain only terms in \({x}\), and no terms in \({x^{2}}\), \({x^{3}}\), or any other powers of \({x}\), we *always* find that *the denominator of the final resulting fraction is the product of the denominators* of the fractions which were added to form the result. It follows that by factorizing the denominator of this final fraction, we can find every one of the denominators of the partial fractions of which we are in search.
+
+Suppose we wish to go back from \({\dfrac{3 x+1}{x^{2}-1}}\) to the components which we know are \({\dfrac{1}{x+1}}\) and \({\dfrac{2}{x-1}}\). If we did not know what those components were we can still prepare the way by writing: \[ \frac{3 x+1}{x^{2}-1}=\frac{3 x+1}{(x+1)(x-1)}=\frac{}{x+1}+\frac{}{x-1}, \] leaving blank the places for the numerators until we know what to put there. We always may assume the sign between the partial fractions to be *plus*, since, if it be *minus*, we shall simply find the corresponding numerator to be negative. Now, since the partial fractions are *proper* fractions, the numerators are mere numbers without \({x}\) at all, and we can call them \({A, B, C \ldots}\) as we please. So, in this case, we have: \[ \frac{3 x+1}{x^{2}-1}=\frac{A}{x+1}+\frac{B}{x-1}. \]
+
+If now we perform the addition of these two partial fractions, we get \({\dfrac{A(x-1)+B(x+1)}{(x+1)(x-1)}}\); and this must be equal to \({\dfrac{3 x+1}{(x+1)(x-1)}}\). And, as the denominators in these two expressions are the same, the numerators must be equal, giving us: \[ 3 x+1=A(x-1)+B(x+1). \]
+
+Now, this is an equation with two unknown quantities, and it would seem that we need another equation before we can solve them and find \({A}\) and \({B}\). But there is another way out of this difficulty. The equation must be true for all values of \({x}\); therefore it must be true for such values of \({x}\) as will cause \({x-1}\) and \({x+1}\) to become zero, that is for \({x=1}\) and for \({x=-1}\) respectively. If we make \({x=1}\), we get \({4=(A \times 0)+(B \times 2)}\), so that \({B=2}\); and if we make \({x=-1}\), we get \({-2=(A \times-2)+(B \times 0)}\), so that \({A=1}\). Replacing the \({A}\) and \({B}\) of the partial fractions by these new values, we find them to become \({\dfrac{1}{x+1}}\) and \({\dfrac{2}{x-1}}\); and the thing is done.
+
+As a farther example, let us take the fraction \({\dfrac{4 x^{2}+2x-14}{x^{3}+3 x^{2}-x-3}}\). The denominator becomes zero when \({x}\) is given the value 1; hence \({x-1}\) is a factor of it, and obviously then the other factor will be \({x^{2}+4 x+3}\); and this can again be decomposed into \({(x+1)(x+3)}\). So we may write the fraction thus: \[ \frac{4 x^{2}+2 x-14}{x^{3}+3 x^{2}-x-3}=\frac{A}{x+1}+\frac{B}{x-1}+\frac{C}{x+3}, \] making three partial factors.
+
+Proceeding as before, we find \[ 4 x^{2}+2 x-14=A(x-1)(x+3)+B(x+1)(x+3)+C(x+1)(x-1). \]
+
+Now, if we make \({x=1}\), we get: \[ -8=(A \times 0)+B(2 \times 4)+(C \times 0); \quad \text { that is, } B=-1. \]
+
+If \({x=-1}\), we get: \[ -12=A(-2 \times 2)+(B \times 0)+(C \times 0); \quad \text { whence } A=3. \]
+
+If \({x=-3}\), we get: \[ 16=(A \times 0)+(B \times 0)+C(-2 \times-4); \quad \text { whence } C=2. \]
+
+So then the partial fractions are: \[ \frac{3}{x+1}-\frac{1}{x-1}+\frac{2}{x+3}, \] which is far easier to differentiate with respect to \({x}\) than the complicated expression from which it is derived.
+
+*Case II*. If some of the factors of the denominator contain terms in \({x^{2}}\), and are not conveniently put into factors, then the corresponding numerator may contain a term in \({x}\), as well as a simple number; and hence it becomes necessary to represent this unknown numerator not by the symbol \({A}\) but by \({A x+B}\); the rest of the calculation being made as before.
+
+Try, for instance: \({\quad \dfrac{-x^{2}-3}{\left(x^{2}+1\right)(x+1)}}\). \[ \begin{align*} \frac{-x^{2}-3}{\left(x^{2}+1\right)(x+1)}=\frac{A x+B}{x^{2}+1}+\frac{C}{x+1}; \\ -x^{2}-3=(A x+B)(x+1)+C\left(x^{2}+1\right). \end{align*} \]
+
+Putting \({x=-1}\), we get \({-4=C \times 2}\); and \({C=-2}\); hence \[ -x^{2}-3=(A x+B)(x+1)-2 x^{2}-2; \] and \[ x^{2}-1=A x(x+1)+B(x+1). \]
+
+Putting \({x=0}\), we get \({-1=B}\); hence \[ x^{2}-1=A x(x+1)-x-1; \quad \text { or } x^{2}+x=A x(x+1); \] and \[ x+1=A(x+1), \] so that \({A=1}\), and the partial fractions are: \[ \frac{x-1}{x^{2}+1}-\frac{2}{x+1}. \]
+
+Take as another example the fraction \[ \frac{x^{3}-2}{\left(x^{2}+1\right)\left(x^{2}+2\right)}. \]
+
+We get \[ \begin{aligned} \frac{x^{3}-2}{\left(x^{2}+1\right)\left(x^{2}+2\right)} & =\frac{A x+B}{x^{2}+1}+\frac{C x+D}{x^{2}+2} \\ & =\frac{(A x+B)\left(x^{2}+2\right)+(C x+D)\left(x^{2}+1\right)}{\left(x^{2}+1\right)\left(x^{2}+2\right)}. \end{aligned} \]
+
+In this case the determination of \({A, B, C, D}\) is not so easy. It will be simpler to proceed as follows: Since the given fraction and the fraction found by adding the partial fractions are equal, and have *identical* denominators, the numerators must also be identically the same. In such a case, and for such algebraical expressions as those with which we are dealing here, *the coefficients of the same powers of* \({x}\) *are equal and of same sign*.
+
+Hence, since \[ \begin{aligned} x^{3}-2 & =(A x+B)\left(x^{2}+2\right)+(C x+D)\left(x^{2}+1\right) \\ & =(A+C) x^{3}+(B+D) x^{2}+(2 A+C) x+2 B+D, \end{aligned} \] we have \({1=A+C; \quad 0=B+D}\) (the coefficient of \({x^{2}}\) in the left expression being zero); \({0=2 A+C}\); and \({-2=2B+D}\). Here are four equations, from which we readily obtain \({A=-1; B=-2; C=2}\); \({D=0}\); so that the partial fractions are \({\dfrac{2(x+1)}{x^{2}+2}-\dfrac{x+2}{x^{2}+1}}\). This method can always be used; but the method shown first will be found the quickest in the case of factors in \({x}\) only.
+
+*Case III*. When, among the factors of the denominator there are some which are raised to some power, one must allow for the possible existence of partial fractions having for denominator the several powers of that factor up to the highest. For instance, in splitting the fraction \({\dfrac{3 x^{2}-2 x+1}{(x+1)^{2}(x-2)}}\) we must allow for the possible existence of a denominator \({x+1}\) as well as \({(x+1)^{2}}\) and \({(x-2)}\).
+
+It maybe thought, however, that, since the numerator of the fraction the denominator of which is \({(x+1)^{2}}\) may contain terms in \({x}\), we must allow for this in writing \({A x+B}\) for its numerator, so that \[ \frac{3 x^{2}-2 x+1}{(x+1)^{2}(x-2)}=\frac{A x+B}{(x+1)^{2}}+\frac{C}{x+1}+\frac{D}{x-2}. \]
+
+If, however, we try to find \({A, B, C}\) and \({D}\) in this case, we fail, because we get four unknowns; and we have only three relations connecting them, yet \[ \frac{3 x^{2}-2 x+1}{(x+1)^{2}(x-2)}=\frac{x-1}{(x+1)^{2}}+\frac{1}{x+1}+\frac{1}{x-2}. \]
+
+But if we write \[ \frac{3 x^{2}-2 x+1}{(x+1)^{2}(x-2)}=\frac{A}{(x+1)^{2}}+\frac{B}{x+1}+\frac{C}{x-2}, \] we get \[ 3 x^{2}-2 x+1=A(x-2)+B(x+1)(x-2)+C(x+1)^{2}, \] which gives \({C=1}\) for \({x=2}\). Replacing \({C}\) by its value, transposing, gathering like terms and dividing by \({x-2}\), we get \({-2x=A+B(x+1)}\), which gives \({A=-2}\) for \({x=-1}\). Replacing \({A}\) by its value, we get \[ 2 x=-2+B(x+1). \]
+
+Hence \({B=2}\); so that the partial fractions are: \[ \frac{2}{x+1}-\frac{2}{(x+1)^{2}}+\frac{1}{x-2}, \] instead of \({\dfrac{1}{x+1}+\dfrac{x-1}{(x+1)^{2}}+\dfrac{1}{x-2}}\) stated above as being the fractions from which \({\dfrac{3 x^{2}-2x+1}{(x+1)^{2}(x-2)}}\) was obtained. The mystery is cleared if we observe that \({\dfrac{x-1}{(x+1)^{2}}}\) can itself be split into the two fractions \({\dfrac{1}{x+1}- \dfrac{2}{(x+1)^{2}}}\), so that the three fractions given are really equivalent to \[ \frac{1}{x+1}+\frac{1}{x+1}-\frac{2}{(x+1)^{2}}+\frac{1}{x-2}=\frac{2}{x+1}-\frac{2}{(x+1)^{2}}+\frac{1}{x-2}, \] which are the partial fractions obtained.
+
+We see that it is sufficient to allow for one numerical term in each numerator, and that we always get the ultimate partial fractions.
+
+When there is a power of a factor of \({x^{2}}\) in the denominator, however, the corresponding numerators must be of the form \({A x+B}\); for example, \[ \frac{3 x-1}{\left(2 x^{2}-1\right)^{2}(x+1)}=\frac{A x+B}{\left(2 x^{2}-1\right)^{2}}+\frac{C x+D}{2 x^{2}-1}+\frac{E}{x+1}, \] which gives \({3 x-1=(A x+B)(x+1)+(C x+D)(x+1)\left(2 x^{2}-1\right)+E\left(2 x^{2}-1\right)^{2}}\).
+
+For \({x=-1}\), this gives \({E=-4}\). Replacing, transposing, collecting like terms, and dividing by \({x+1}\), we get \[ 16 x^{3}-16 x^{2}+3=2 C x^{3}+2 D x^{2}+x(A-C)+(B-D). \]
+
+Hence \({2 C=16}\) and \({C=8; 2 D=-16}\) and \({D=-8; A-C=0}\) or \({A-8=0}\) and \({A=8}\), and finally, \({B-D=3}\) or \({B=-5}\). So that we obtain as the partial fractions: \[ \frac{(8 x-5)}{\left(2 x^{2}-1\right)^{2}}+\frac{8(x-1)}{2 x^{2}-1}-\frac{4}{x+1}. \]
+
+It is useful to check the results obtained. The simplest way is to replace \({x}\) by a single value, say +1, both in the given expression and in the partial fractions obtained.
+
+Whenever the denominator contains but a power of a single factor, a very quick method is as follows:
+
+Taking, for example, \({\dfrac{4 x+1}{(x+1)^{3}}}\), let \({x+1=z}\); then \({x=z-1}\).
+
+Replacing, we get \[ \frac{4(z-1)+1}{z^{3}}=\frac{4 z-3}{z^{3}}=\frac{4}{z^{2}}-\frac{3}{z^{3}}. \]
+
+The partial fractions are, therefore, \[ \frac{4}{(x+1)^{2}}-\frac{3}{(x+1)^{3}}. \]
+
+Application to differentiation. Let it be required to differentiate \({y=\dfrac{5-4 x}{6 x^{2}+7 x-3}}\); we have \[ \begin{aligned} \frac{d y}{d x} & =-\frac{\left(6 x^{2}+7 x-3\right) \times 4+(5-4 x)(12 x+7)}{\left(6 x^{2}+7 x-3\right)^{2}} \\ & =\frac{24 x^{2}-60 x-23}{\left(6 x^{2}+7 x-3\right)^{2}}. \end{aligned} \]
+
+If we split the given expression into \[ \frac{1}{3 x-1}-\frac{2}{2 x+3}, \] we get, however, \[ \frac{d y}{d x}=-\frac{3}{(3 x-1)^{2}}+\frac{4}{(2 x+3)^{2}}, \] which is really the same result as above split into partial fractions. But the splitting, if done after differentiating, is more complicated, as will easily be seen. When we shall deal with the *integration* of such expressions, we shall find the splitting into partial fractions a precious auxiliary (see p. 228).
+
+* * *
+
+*Exercises XI*. (See page 259 for Answers.)
+
+Split into fractions:
+
+(1) \({\dfrac{3 x+5}{(x-3)(x+4)}}\).
+
+(2) \({\dfrac{3 x-4}{(x-1)(x-2)}}\).
+
+(3) \({\dfrac{3 x+5}{x^{2}+x-12}}\).
+
+(4) \({\dfrac{x+1}{x^{2}-7 x+12}}\).
+
+(5) \({\dfrac{x-8}{(2 x+3)(3 x-2)}}\).
+
+(6) \({\dfrac{x^{2}-13 x+26}{(x-2)(x-3)(x-4)}}\).
+
+(7) \({\dfrac{x^{2}-3 x+1}{(x-1)(x+2)(x-3)}}\).
+
+(8) \({\dfrac{5 x^{2}+7 x+1}{(2 x+1)(3 x-2)(3 x+1)}}\).
+
+(9) \({\dfrac{x^{2}}{x^{3}-1}}\).
+
+(10) \({\dfrac{x^{4}+1}{x^{3}+1}}\).
+
+(11) \({\dfrac{5 x^{2}+6 x+4}{(x+1)\left(x^{2}+x+1\right)}}\).
+
+(12) \({\dfrac{x}{(x-1)(x-2)^{2}}}\).
+
+(13) \({\dfrac{x}{\left(x^{2}-1\right)(x+1)}}\).
+
+(14) \({\dfrac{x+3}{(x+2)^{2}(x-1)}}\).
+
+(15) \({\dfrac{3 x^{2}+2 x+1}{(x+2)\left(x^{2}+x+1\right)^{2}}}\).
+
+(16) \({\dfrac{5 x^{2}+8 x-12}{(x+4)^{3}}}\).
+
+(17) \({\dfrac{7 x^{2}+9 x-1}{(3 x-2)^{4}}}\).
+
+(18) \({\dfrac{x^{2}}{\left(x^{3}-8\right)(x-2)}}\).
+
+Differential of an Inverse Function
+
+Consider the function (see p. 13) \({y=3 x}\); it can be expressed in the form \({x=\dfrac{y}{3}}\); this latter form is called the *inverse function* to the one originally given.
+
+If \({y=3 x, \quad \dfrac{d y}{d x}=3}\); if \({x=\dfrac{y}{3}, \quad\dfrac{d x}{d y}=\dfrac{1}{3}}\), and we see that \[ \frac{d y}{d x}=\frac{1}{\frac{d x}{d y}} \quad \text { or } \quad \frac{d y}{d x} \times \frac{d x}{d y}=1. \]
+
+Consider \({y=4 x^{2}, \dfrac{d y}{d x}=8 x}\); the inverse function is \[ x=\frac{y^{\frac{1}{2}}}{2}, \quad \text { and } \quad \frac{d x}{d y}=\frac{1}{4 \sqrt{y}}=\frac{1}{4 \times 2 x}=\frac{1}{8 x}. \]
+
+Here again \[ \frac{d y}{d x} \times \frac{d x}{d y}=1. \]
+
+It can be shown that for all functions which can be put into the inverse form, one can always write \[ \frac{d y}{d x} \times \frac{d x}{d y}=1 \quad \text { or } \quad \frac{d y}{d x}=\frac{1}{\frac{d x}{d y}}. \]
+
+It follows that, being given a function, if it be easier to differentiate the inverse function, this may be done, and the reciprocal of the differential coefficient of the inverse function gives the differential coefficient of the given function itself.
+
+As an example, suppose that we wish to differentiate \({y=\sqrt[2]{\dfrac{3}{x}-1}}\). We have seen one way of doing this, by writing \({u=\dfrac{3}{x}-1}\), and finding \({\dfrac{d y}{d u}}\) and \({\dfrac{d u}{d x}}\). This gives \[ \frac{d y}{d x}=-\frac{3}{2 x^{2} \sqrt{\frac{3}{x}-1}}. \]
+
+If we had forgotten how to proceed by this method, or wished to check our result by some other way of obtaining the differential coefficient, or for any other reason we could not use the ordinary method, we can proceed as follows: The inverse function is \({x=\dfrac{3}{1+y^{2}}}\). \[ \frac{d x}{d y}=-\frac{3 \times 2 y}{\left(1+y^{2}\right)^{2}}=-\frac{6 y}{\left(1+y^{2}\right)^{2}}; \] hence \[ \frac{d y}{d x}=\frac{1}{\frac{d x}{d y}}=-\frac{\left(1+y^{2}\right)^{2}}{6 y}=-\frac{\left(1+\frac{3}{x}-1\right)^{2}}{6 \times \sqrt[2]{\frac{3}{x}-1}}=-\frac{3}{2 x^{2} \sqrt{\frac{3}{x}-1}}. \]
+
+Let us take as an other example \({y=\dfrac{1}{\sqrt[3]{\theta+5}}}\).
+
+The inverse function is \({\theta=\dfrac{1}{y^{3}}-5}\) or \({\theta=y^{-3}-5}\), and \[ \frac{d \theta}{d y}=-3 y^{-4}=-3 \sqrt[3]{(\theta+5)^{4}}. \]
+
+It follows that \({\dfrac{d y}{d x}=-\dfrac{1}{3\sqrt{(\theta+5)^{4}}}}\), as might have been found otherwise.
+
+We shall find this dodge most useful later on; meanwhile you are advised to become familiar with it by verifying by its means the results obtained in Exercises I. (p. 24), Nos. 5, 6, 7; Examples (p. 67), Nos. 1, 2, 4; and Exercises VI. (p. 72), Nos. 1, 2, 3 and 4.
+
+* * *
+
+You will surely realize from this chapter and the preceding, that in many respects the calculus is an *art* rather than a *science*: an art only to be acquired, as all other arts are, by practice. Hence you should work many examples, and set yourself other examples, to see if you can work them out, until the various artifices become familiar by use.

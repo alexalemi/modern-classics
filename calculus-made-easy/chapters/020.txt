@@ -1,0 +1,71 @@
+Chapter XVII: Integration
+
+THE great secret has already been revealed that this mysterious symbol \({\int}\), which is after all only a long \({S}\), merely means "the sum of," or "the sum of all such quantities as." It therefore resembles that other symbol \({\sum}\) (the Greek *Sigma*), which is also a sign of summation. There is this difference, however, in the practice of mathematical men as to the use of these signs, that while \({\sum}\) is generally used to indicate the sum of a number of finite quantities, the integral sign \({\int}\) is generally used to indicate the summing up of a vast number of small quantities of indefinitely minute magnitude, mere elements in fact, that go to make up the total required. Thus \({\int d y=y}\), and \({\int d x=x}\).
+
+Any one can understand how the whole of anything can be conceived of as made up of a lot of little bits; and the smaller the bits the more of them there will be. Thus, a line one inch long may be conceived as made up of 10 pieces, each \({\tfrac{1}{10}}\) of an inch long; or of 100 parts, each part being \({\tfrac{1}{100}}\) of an inch long; or of \({1,000,000}\) parts, each of which is \({\tfrac{1}{1,000,000}}\) of an inch long; or, pushing the thought to the limits of conceivability, it may be regarded as made up of an infinite number of elements each of which is infinitesimally small.
+
+Yes, you will say, but what is the use of thinking of anything that way? Why not think of it straight off, as a whole? The simple reason is that there are a vast number of cases in which one cannot calculate the bigness of the thing as a whole without reckoning up the sum of a lot of small parts. The process of "*integrating*" is to enable us to calculate totals that otherwise we should be unable to estimate directly.
+
+Let us first take one or two simple cases to familiarize ourselves with this notion of summing up a lot of separate parts.
+
+Consider the series: \[ 1+\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\frac{1}{32}+\frac{1}{64}+\text { etc. } \]
+
+Here each member of the series is formed by taking it half the value of the preceding. What is the value of the total if we could go on to an infinite number of terms? Every schoolboy knows that the answer is 2. Think of it, if you like, as a line.
+
+[Figure bu]
+
+Begin with one inch; add a half inch, add a quarter; add an eighth; and so on. If at any point of the operation we stop, there will still be a piece wanting to make up the whole 2 inches; and the piece wanting will always be the same size as the last piece added. Thus, if after having put together \({1, \tfrac{1}{2}}\), and \({\tfrac{1}{4}}\), we stop, there will be \({\tfrac{1}{4}}\) wanting. If we go on till we have added \({\tfrac{1}{64}}\), there will still be \({\tfrac{1}{64}}\) wanting. The remainder needed will always be equal to the last term added. By an infinite number of operations only should we reach the actual 2 inches. Practically we should reach it when we got to pieces so small that they could not be drawn-that would be after about 10 terms, for the eleventh term is \({\tfrac{1}{1024}}\). If we want to go so far that not even a Whitworth's measuring machine would detect it, we should merely have to go to about 20 terms. A microscope would not show even the \({18^{{}\text {th }}}\) term! So the infinite number of operations is no such dreadful thing after all. The *integral* is simply the whole lot. But, as we shall see, there are cases in which the integral calculus enables us to get at the exact total that there would be as the result of an infinite number of operations. In such cases the integral calculus gives us a rapid and easy way of getting at a result that would otherwise require an interminable lot of elaborate working out. So we had best lose no time in learning *how to integrate*.
+
+Slopes of Curves, and the Curves themselves
+
+Let us make a little preliminary enquiry about the slopes of curves. For we have seen that differentiating a curve means finding an expression for its slope (or for its slopes at different points). Can we perform the reverse process of reconstructing the whole curve if the slope (or slopes) are prescribed for us?
+
+Go back to case (2) on p. 82. Here we have the simplest of curves, a sloping line with the equation \[ y=a x+b. \]
+
+[Figure bv]
+
+We know that here \({b}\) represents the initial height of \({y}\) when \({x=0}\), and that \({a}\), which is the same as \({\dfrac{d y}{d x}}\), is the "slope" of the line. The line has a constant slope. All along it the elementary triangles \({\triangleleft}\) have the same proportion between height and base. Suppose we were to take the \({d x}\) 's, and \({d y}\) 's of finite magnitude, so that \({10 d x}\) 's made up one inch, then there would be ten little triangles like
+
+[Figure bw]
+
+Now, suppose that we were ordered to reconstruct the "curve," starting merely from the information that \({\dfrac{d y}{d x}=a}\). What could we do? Still taking the little \({d}\) 's as of finite size, we could draw 10 of them, all with the same slope, and then put them together, end to end, like this:
+
+[Figure bx]
+
+And, as the slope is the same for all, they would join to make, as in Fig. 48, a sloping line sloping with the correct slope \({\dfrac{d y}{d x}=a}\). And whether we take the \({d y}\) 's and \({dx}\) 's as finite or infinitely small, as they are all alike, clearly \({\dfrac{y}{x}=a}\), if we reckon \({y}\) as the total of all the \({dy}\) 's, and \({x}\) as the total of all the \({d x}\) 's. But whereabouts are we to put this sloping line? Are we to start at the origin \({O}\), or higher up? As the only information we have is as to the slope, we are without any instructions as to the particular height above \({O}\); in fact the initial height is undetermined. The slope will be the same, whatever the initial height. Let us therefore make a shot at what may be wanted, and start the sloping line at a height \({C}\) above \({O}\). That is, we have the equation \[ y=a x+C. \]
+
+It becomes evident now that in this case the added constant means the particular value that \({y}\) has when \({x=0}\).
+
+Now let us take a harder case, that of a line, the slope of which is not constant, but turns up more and more. Let us assume that the upward slope gets greater and greater in proportion as \({x}\) grows. In symbols this is: \[ \frac{d y}{d x}=a x. \] Or, to give a concrete case, take \({a=\dfrac{1}{5}}\), so that \[ \frac{d y}{d x}=\tfrac{1}{5} x. \]
+
+Then we had best begin by calculating a few of the values of the slope at different values of \({x}\), and also draw little diagrams of them.
+
+When \[ \begin{array}{ll} x=0, & \frac{d y}{d x}=0,&\qquad \text{-}\\ x=1, & \frac{d y}{d x}=0.2,&\qquad \tiny\triangleleft\\ x=2, & \frac{d y}{d x}=0.4,&\qquad \Tiny\triangleleft\\ x=3, & \frac{d y}{d x}=0.6,&\qquad \small\triangleleft\\ x=4, & \frac{d y}{d x}=0.8,&\qquad \large\triangleleft\\ x=5, & \frac{d y}{d x}=1.0.&\qquad \Large\triangleleft \end{array} \]
+
+Now try to put the pieces together, setting each so that the middle of its base is the proper distance to the right, and so that they fit together at the corners; thus (Fig. 49). The result is, of course, not a smooth curve: but it is an approximation to one. If we had taken bits half as long, and twice as numerous, like Fig. 50, we should have a better approximation. But for a perfect curve we ought to take each \({dx}\) and its corresponding \({d y}\) infinitesimally small, and infinitely numerous.
+
+[Figure by]
+
+Then, how much ought the value of any \({y}\) to be? Clearly, at any point \({P}\) of the curve, the value of \({y}\) will be the sum of all the little \({d y}\) 's from 0 up to that level, that is to say, \({\int d y=y}\). And as each \({d y}\) is equal to \({\dfrac{1}{5} x \cdot d x}\), it follows that the whole \({y}\) will be equal to the sum of all such bits as \({\dfrac{1}{5} x \cdot d x}\), or, as we should write it, \({\int \frac{1}{5} x \cdot d x}\).
+
+[Figure bz]
+
+Now if \({x}\) had been constant, \({\int \frac{1}{5} x \cdot d x}\) would have been the same as \({\dfrac{1}{5} x \int d x}\), or \({\dfrac{1}{5} x^{2}}\). But \({x}\) began by being 0, and increases to the particular value of \({x}\) at the point \({P}\), so that its average value from 0 to that point is \({\dfrac{1}{2} x}\). Hence \({\int \dfrac{1}{5} x d x=\dfrac{1}{10} x^{2}}\); or \({y=\dfrac{1}{10} x^{2}}\).
+
+[Figure ca]
+
+But, as in the previous case, this requires the addition of an undetermined constant \({C}\), because we have not been told at what height above the origin the curve will begin, when \({x=0}\). So we write, as the equation of the curve drawn in Fig. 51, \[ y=\frac{1}{10} x^{2}+C. \]
+
+* * *
+
+*Exercises XVI.* (See page 264 for Answers.)
+
+(1) Find the ultimate sum of \({\dfrac{2}{3}+\dfrac{1}{3}+\dfrac{1}{6}+\dfrac{1}{12}+\dfrac{1}{24}+}\) etc.
+
+(2) Show that the series \({1-\dfrac{1}{2}+\dfrac{1}{3}-\dfrac{1}{4}+\dfrac{1}{5}-\dfrac{1}{6}+\dfrac{1}{7}}\) etc., is convergent, and find its sum to 8 terms.
+
+(3) If \({\log_{\epsilon}(1+x)=x-\dfrac{x^{2}}{2}+\frac{x^{3}}{3}-\dfrac{x^{4}}{4}+}\) etc., find \({\log_{\epsilon} 1.3}\).
+
+(4) Following a reasoning similar to that explained in this chapter, find \({y}\), \[ (a) \text { if } \frac{d y}{d x}=\frac{1}{4} x; \quad(b) \text { if } \frac{d y}{d x}=\cos x. \]
+
+(5) If \({\dfrac{d y}{d x}=2 x+3}\), find \({y}\).

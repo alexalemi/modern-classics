@@ -1,0 +1,234 @@
+Chapter XIX: On Finding Areas by Integrating
+
+ONE use of the integral calculus is to enable us to ascertain the values of areas bounded by curves.
+
+Let us try to get at the subject bit by bit.
+
+[Figure cb: Fig. 52. — A curve AB with a piece PQ above the x axis; perpendiculars PM and QN bound the area beneath it, which is ruled in narrow upright strips, with x₁, x₂, y₁ and y₂ marked.]
+
+Let \({A B}\) (Fig. 52) be a curve, the equation to which is known. That is, \({y}\) in this curve is some known function of \({x}\). Think of a piece of the curve from the point \({P}\) to the point \({Q}\).
+
+Let a perpendicular \({P M}\) be dropped from \({P}\), and another \({Q N}\) from the point \({Q}\). Then call \({O M=x_{1}}\) and \({O N=x_{2}}\), and the ordinates \({P M=y_{1}}\) and \({Q N=y_{2}}\). We have thus marked out the area \({P Q N M}\) that lies beneath the piece \({P Q}\). The problem is, *how can we calculate the value of this area*?
+
+[Figure cc: One of the narrow strips on its own: a thin upright strip whose top slopes a little, with a dashed line across it.]
+
+The secret of solving this problem is to conceive the area as being divided up into a lot of narrow strips, each of them being of the width \({d x}\). The smaller we take \({d x}\), the more of them there will be between \({x_{1}}\) and \({x_{2}}\). Now, the whole area is clearly equal to the sum of the areas of all such strips. Our business will then be to discover an expression for the area of any one narrow strip, and to integrate it so as to add together all the strips. Now think of any one of the strips. will be like this: being bounded between two vertical sides, with a flat bottom \({d x}\), and with a slightly curved sloping top. Suppose we take its average height as being \({y}\); then, as its width is \({d x}\), its area will be \({y d x}\). And seeing that we may take the width as narrow as we please, if we only take it narrow enough its average height will be the same as the height at the middle of it. Now let us call the unknown value of the whole area \({S}\), meaning surface. The area of one strip will be simply a bit of the whole area, and may therefore be called \({d S}\). So we may write \[ \text { area of } 1 \text { strip }=d S=y \cdot d x. \] If then we add up all the strips, we get \[ \text { total area } S=\int d S=\int y d x. \]
+
+So then our finding \({S}\) depends on whether we can integrate \({y \cdot d x}\) for the particular case, when we know what the value of \({y}\) is as a function of \({x}\).
+
+For instance, if you were told that for the particular curve in question \({y=b+a x^{2}}\), no doubt you could put that value into the expression and say: then I must find \({\int\left(b+a x^{2}\right) d x}\).
+
+That is all very well; but a little thought will show you that something more must be done. Because the area we are trying to find is not the area under the whole length of the curve, but only the area limited on the left by \({P M}\), and on the right by \({Q N}\), it follows that we must do something to define our area between those '*limits*.'
+
+This introduces us to a new notion, namely that of *integrating between limits*. We suppose \({x}\) to vary, and for the present purpose we do not require any value of \({x}\) below \({x_{1}}\) (that is \({O M}\)), nor any value of \({x}\) above \({x_{2}}\) (that is \({O N}\)). When an integral is to be thus defined between two limits, we call the lower of the two values *the inferior limit*, and the upper value *the superior limit*. Any integral so limited we designate as a *definite integral*, by way of distinguishing it from a *general integral* to which no limits are assigned.
+
+In the symbols which give instructions to integrate, the limits are marked by putting them at the top and bottom respectively of the sign of integration. Thus the instruction \[ \int_{x=x_{1}}^{x=x_{2}} y \cdot d x \] will be read: find the integral of \({y \cdot d x}\) between the inferior limit \({x_{1}}\) and the superior limit \({x_{2}}\).
+
+Sometimes the thing is written more simply \[ \int_{x_{1}}^{x_{2}} y \cdot d x. \] Well, but *how* do you find an integral between limits, when you have got these instructions?
+
+Look again at Fig. 52 (p. 204). Suppose we could find the area under the larger piece of curve from \({A}\) to \({Q}\), that is from \({x=0}\) to \({x=x_{2}}\), naming the area \({A Q N O}\). Then, suppose we could find the area under the smaller piece from \({A}\) to \({P}\), that is from \({x=0}\) to \({x=x_{1}}\), namely the area \({A P M O}\). If then we were to subtract the smaller area from the larger, we should have left as a remainder the area \({P Q N M}\), which is what we want. Here we have the clue as to what to do; the definite integral between the two limits is *the difference* between the integral worked out for the superior limit and the integral worked out for the lower limit.
+
+Let us then go ahead. First, find the general integral thus: \[ \int y d x, \] and, as \({y=b+a x^{2}}\) is the equation to the curve (Fig. 52), \[ \int\left(b+a x^{2}\right) d x \] is the general integral which we must find.
+
+Doing the integration in question by the rule (p. 193), we get \[ b x+\frac{a}{3} x^{3}+C; \] and this will be the whole area from 0 up to any value of \({x}\) that we may assign.
+
+Therefore, the larger area up to the superior limit \({x_{2}}\) will be \[ b x_{2}+\frac{a}{3} x_{2}^{3}+C; \] and the smaller area up to the inferior limit \({x_{1}}\) will be \[ b x_{1}+\frac{a}{3} x_{1}^{3}+C. \]
+
+Now, subtract the smaller from the larger, and we get for the area \({S}\) the value, \[ \text { area } S=b\left(x_{2}-x_{1}\right)+\frac{a}{3}\left(x_{2}^{3}-x_{1}^{3}\right). \]
+
+This is the answer we wanted. Let us give some numerical values. Suppose \({b=10, a=0.06}\), and \({x_{2}=8}\) and \({x_{1}=6}\). Then the area \({S}\) is equal to \[ \begin{aligned} & 10(8-6)+\frac{0.06}{3}\left(8^{3}-6^{3}\right) \\ & =20+0.02(512-216) \\ & =20+0.02 \times 296 \\ & =20+5.92 \\ & =25.92. \end{aligned} \]
+
+Let us here put down a symbolic way of stating what we have ascertained about limits: \[ \int_{x=x_{1}}^{x=x_{2}} y d x=y_{2}-y_{1}, \] where \({y_{2}}\) is the integrated value of \({y d x}\) corresponding to \({x_{2}}\), and \({y_{1}}\) that corresponding to \({x_{1}}\).
+
+All integration between limits requires the difference between two values to be thus found. Also note that, in making the subtraction the added constant \({C}\) has disappeared.
+
+Examples
+
+(1) To familiarize ourselves with the process, let us take a case of which we know the answer beforehand. Let us find the area of the triangle (Fig. 53), which has base \({x=12}\) and height \({y=4}\). We know beforehand, from obvious mensuration, that the answer will come 24.
+
+[Figure cd: Fig. 53. — A triangle with base 12 along the x axis and height 4, cut into narrow strips by dashed lines.]
+
+Now, here we have as the "curve" a sloping line for which the equation is \[ y=\frac{x}{3}. \]
+
+The area in question will be \[ \int_{x=0}^{x=12} y \cdot d x=\int_{x=0}^{x=12} \frac{x}{3} \cdot d x. \]
+
+Integrating \({\dfrac{x}{3} d x}\) (p. 192), and putting down the value of the general integral in square brackets with the limits marked above and below, we get \[ \begin{aligned} \text { area } & =\left[\frac{1}{3} \cdot \frac{1}{2} x^{2}\right]_{x=0}^{x=12}+C \\ & =\left[\frac{x^{2}}{6}\right]_{x=0}^{x=12}+C \\ & =\left[\frac{12^{2}}{6}\right]-\left[\frac{0^{2}}{6}\right] \\ & =\frac{144}{6}=24. \quad \textit { Ans. } \end{aligned} \]
+
+[Figure ce: Fig. 54. — The line y = x/3 drawn on squared paper from the origin to x = 12, with steps outlined beneath it at x = 3, 6, 9 and 12 for counting the squares.]
+
+Let us satisfy ourselves about this rather surprising dodge of calculation, by testing it on a simple example. Get some squared paper, preferably some that is ruled in little squares of one-eighth inch or one-tenth inch each way. On this squared paper plot out the graph of the equation, \[ y=\frac{x}{3}. \]
+
+The values to be plotted will be:
+
+	\({x}\) | 0 | 3 | 6 | 9 | 12
+	\({y}\) | 0 | 1 | 2 | 3 | 4
+
+The plot is given in Fig. 54.
+
+Now reckon out the area beneath the curve *by counting the little squares* below the line, from \({x=0}\) as far as \({x=12}\) on the right. There are 18 whole squares and four triangles, each of which has an area equal to \({1 \dfrac{1}{2}}\) squares; or, in total, 24 squares. Hence 24 is the numerical value of the integral of \({\dfrac{x}{3} d x}\) between the lower limit of \({x=0}\) and the higher limit of \({x=12}\).
+
+As a further exercise, show that the value of the same integral between the limits of \({x=3}\) and \({x=15}\) is 36.
+
+[Figure cf: Fig. 55. — The curve y = b/(x + a), falling from a height b/a at the y axis, with the area beneath it from 0 to x ruled in upright strips and the distance a marked to the left of the origin.]
+
+(2) Find the area, between limits \({x=x_{1}}\) and \({x=0}\), of the curve \({y=\dfrac{b}{x+a}}\). \[ \begin{aligned} \text { Area } & =\int_{x=0}^{x=x_{1}} y \cdot d x=\int_{x=0}^{x=x_{1}} \frac{b}{x+a} d x \\ & =b\left[\log_{\epsilon}(x+a)\right]_{0}^{x_{1}}+C \\ & =b\left[\log_{\epsilon}\left(x_{1}+a\right)-\log_{\epsilon}(0+a)\right]\\ & =b \log_{\epsilon} \frac{x_{1}+a}{a}. \quad \textit { Ans. } \end{aligned} \]
+
+*N.B.*—Notice that in dealing with definite integrals the constant \({C}\) always disappears by subtraction.
+
+[Figure cg: Fig. 56. — A flat ring between an inner circle of radius r₁ and an outer circle of radius r₂, drawn from the same centre.]
+
+Let it be noted that this process of subtracting one part from a larger to find the difference is really a common practice. How do you find the area of a plane ring (Fig. 56), the outer radius of which is \({r_{2}}\) and the inner radius is \({r_{1}}\)? You know from mensuration that the area of the outer circle is \({\pi r_{2}^{2}}\); then you find the area of the inner circle, \({\pi r_{1}^{2}}\); then you subtract the latter from the former, and find area of ring \({=\pi\left(r_{2}^{2}-r_{1}^{2}\right)}\); which may be written \[ \pi\left(r_{2}+r_{1}\right)\left(r_{2}-r_{1}\right) \] \({=}\) mean circumference of ring × width of ring.
+
+(3) Here's another case - that of the *die-away curve* (p. 153). Find the area between \({x=0}\) and \({x=a}\), of the curve (Fig. 57) whose equation is \[ \begin{aligned} y & =b \epsilon^{-x}. \\ \text { Area } & =b \int_{x=0}^{x=a} \epsilon^{-x} \cdot d x. \end{aligned} \]
+
+The integration (p. 198) gives \[ \begin{aligned} & =b\left[-\epsilon^{-x}\right]_{0}^{a} \\ & =b\left[-\epsilon^{-a}-\left(-\epsilon^{-0}\right)\right] \\ & =b\left(1-\epsilon^{-a}\right). \end{aligned} \]
+
+[Figure ch: Fig. 57. — The curve y = bε⁻ˣ falling from a height b, with the area beneath it from 0 to a ruled in upright strips.]
+
+[Figure ci: Fig. 58. — A curve of pressure p against volume v, with the area beneath it between v₁ and v₂ ruled in upright strips and the pressures p₁ and p₂ marked.]
+
+(4) Another example is afforded by the adiabatic curve of a perfect gas, the equation to which is \({p v^{n}=c}\), where \({p}\) stands for pressure, \({v}\) for volume, and \({n}\) is of the value 1.42 (Fig. 58).
+
+Find the area under the curve (which is proportional to the work done in suddenly compressing the gas) from volume \({v_{2}}\) to volume \({v_{1}}\).
+
+Here we have \[ \begin{aligned} \operatorname{area} & =\int_{v=v_{1}}^{v=v_{2}} c v^{-n} \cdot d v \\ & =c\left[\frac{1}{1-n} v^{1-n}\right]_{v_{1}}^{v_{2}} \\ & =c \frac{1}{1-n}\left(v_{2}^{1-n}-v_{1}^{1-n}\right) \\ & =\frac{-c}{0.42}\left(\frac{1}{v_{2}^{0.42}}-\frac{1}{v_{1}^{0.42}}\right). \end{aligned} \]
+
+*An Exercise.*
+
+Prove the ordinary mensuration formula, that the area \({A}\) of a circle whose radius is \({R}\), is equal to \({\pi R^{2}}\).
+
+[Figure cj: Fig. 59. — A circle of radius R containing a thin dashed ring of radius r and breadth dr.]
+
+Consider an elementary zone or annulus of the surface (Fig. 59), of breadth \({d r}\), situated at a distance \({r}\) from the centre. We may consider the entire surface as consisting of such narrow zones, and the whole area \({A}\) will simply be the integral of all such elementary zones from centre to margin, that is, integrated from \({r=0}\) to \({r=R}\).
+
+We have therefore to find an expression for the elementary area \({d A}\) of the narrow zone. Think of it as a strip of breadth \({d r}\), and of a length that is the periphery of the circle of radius \({r}\), that is, a length of \({2 \pi r}\). Then we have, as the area of the narrow zone, \[ d A=2 \pi r d r. \]
+
+Hence the area of the whole circle will be: \[ A=\int d A=\int_{r=0}^{r=R} 2 \pi r \cdot d r=2 \pi \int_{r=0}^{r=R} r \cdot d r. \]
+
+Now, the general integral of \({r \cdot d r}\) is \({\dfrac{1}{2} r^{2}}\). Therefore, \[ \begin{aligned} & A=2 \pi\left[\frac{1}{2} r^{2}\right]_{r=0}^{r=R}; \\ \text{or}\quad & A=2 \pi\left[\frac{1}{2} R^{2}-\frac{1}{2}(0)^{2}\right];\\ \text{whence}\quad & A=\pi R^{2}. \end{aligned} \]
+
+*Another Exercise.*
+
+[Figure ck: Fig. 60. — The arch of a curve from O to N on the x axis, with its highest ordinate, at M, marked 1/4 and the area beneath it ruled in strips.]
+
+Let us find the mean ordinate of the positive part of the curve \({y=x-x^{2}}\), which is shown in Fig. 60. To find the mean ordinate, we shall have to find the area of the piece \({O M N}\), and then divide it by the length of the base \({O N}\). But before we can find the area we must ascertain the length of the base, so as to know up to what limit we are to integrate. At \({N}\) the ordinate \({y}\) has zero value; therefore, we must look at the equation and see what value of \({x}\) will make \({y=0}\). Now, clearly, if \({x}\) is \({0, y}\) will also be 0, the curve passing through the origin \({O}\); but also, if \({x=1, y=0}\); so that \({x=1}\) gives us the position of the point \({N}\).
+
+Then the area wanted is \[ \begin{aligned} & =\int_{x=0}^{x=1}\left(x-x^{2}\right) d x \\ & =\left[\frac{1}{2} x^{2}-\frac{1}{3} x^{3}\right]_{0}^{1} \\ & =\left[\frac{1}{2}-\frac{1}{3}\right]-[0-0] \\ & =\frac{1}{6}. \end{aligned} \]
+
+But the base length is 1.
+
+Therefore, the average ordinate of the curve \({=\tfrac{1}{6}}\).
+
+[*N.B.*—It will be a pretty and simple exercise in maxima and minima to find by differentiation what is the height of the maximum ordinate. It must be greater than the average.]
+
+The mean ordinate of any curve, over a range from \({x=0}\) to \({x=x_{1}}\), is given by the expression, \[ \text { mean } y=\frac{1}{x_{1}} \int_{x=0}^{x=x_{1}} y \cdot d x \text {. } \]
+
+One can also find in the same way the surface area of a solid of revolution.
+
+Example
+
+The curve \({y=x^{2}-5}\) is revolving about the axis of \({x}\). Find the area of the surface generated by the curve between \({x=0}\) and \({x=6}\).
+
+A point on the curve, the ordinate of which is \({y}\), describes a circumference of length \({2 \pi y}\), and a narrow belt of the surface, of width \({d x}\), corresponding to this point, has for area \({2 \pi y dx}\). The total area is \[ \begin{aligned} 2 \pi \int_{x=0}^{x=6} y d x & =2 \pi \int_{x=0}^{x=6}\left(x^{2}-5\right) d x=2 \pi\left[\frac{x^{3}}{3}-5 x\right]_{0}^{6} \\ & =6.28 \times 42=263.76. \end{aligned} \]
+
+Areas in Polar Coordinates
+
+[Figure cl: Fig. 61. — Two lines OA and OB from the point O, a small angle dθ apart, the first at an angle θ to the line OX, with the short arc between their ends at a distance r.]
+
+When the equation of the boundary of an area is given as a function of the distance \({r}\) of a point of it from a fixed point \({O}\) (see Fig. 61) called the *pole*, and of the angle which \({r}\) makes with the positive horizontal direction \({O X}\), the process just explained can be applied just as easily, with a small modification. Instead of a strip of area, we consider a small triangle \({O A B}\), the angle at \({O}\) being \({d\theta}\), and we find the sum of all the little triangles making up the required area.
+
+The area of such a small triangle is approximately \({\dfrac{A B}{2}\times r}\) or \({\dfrac{r d \theta}{2} \times r}\); hence the portion of the area included between the curve and two positions of \({r}\) corresponding to the angles \({\theta_{1}}\) and \({\theta_{2}}\) is given by \[ \tfrac{1}{2} \int_{\theta=\theta_{1}}^{\theta=\theta_{2}} r^{2} d \theta. \]
+
+* * *
+
+Examples
+
+(1) Find the area of the sector of 1 radian in a circumference of radius \({a}\) inches.
+
+The polar equation of the circumference is evidently \({r=a}\). The area is \[ \frac{1}{2} \int_{\theta=\theta_{1}}^{\theta=\theta_{2}} a^{2} d \theta=\frac{a^{2}}{2} \int_{\theta=0}^{\theta=1} d \theta=\frac{a^{2}}{2}. \]
+
+(2) Find the area of the first quadrant of the curve (known as "Pascal's Snail"), the polar equation of which is \({r=a(1+\cos\theta)}\). \[ \begin{aligned} \text { Area } & =\frac{1}{2} \int_{\theta=0}^{\theta=\frac{\pi}{2}} a^{2}(1+\cos \theta)^{2} d \theta \\ & =\frac{a^{2}}{2} \int_{\theta=0}^{\theta=\frac{\pi}{2}}\left(1+2 \cos \theta+\cos ^{2} \theta\right) d \theta \\ & =\frac{a^{2}}{2}\left[\theta+2 \sin \theta+\frac{\theta}{2}+\frac{\sin 2 \theta}{4}\right]_{0}^{\frac{\pi}{2}} \\ & =\frac{a^{2}(3 \pi+8)}{8}. \end{aligned} \]
+
+Volumes by Integration
+
+What we have done with the area of a little strip of a surface, we can, of course, just as easily do with the volume of a little strip of a solid. We can add up all the little strips that make up the total solid, and find its volume, just as we have added up all the small little bits that made up an area to find the final area of the figure operated upon.
+
+* * *
+
+Examples
+
+(1) Find the volume of a sphere of radius \({r}\).
+
+A thin spherical shell has for volume \({4 \pi x^{2} d x}\) (see Fig. 59, p. 214); summing up all the concentric shells which make up the sphere, we have \[ \text { volume sphere }=\int_{x=0}^{x=r} 4 \pi x^{2} d x=4 \pi\left[\frac{x^{3}}{3}\right]_{0}^{r}=\frac{4}{3} \pi r^{3}. \]
+
+[Figure cm: Fig. 62. — A circle centred on the origin with a thin upright slice of thickness dx at a distance x from the centre, its half-height marked y.]
+
+We can also proceed as follows: a slice of the sphere, of thickness \({dx}\), has for volume \({\pi y^{2} d x}\) (see Fig. 62). Also \({x}\) and \({y}\) are related by the expression \[ y^{2}=r^{2}-x^{2}. \] \[ \begin{aligned} \text { Hence volume sphere }\quad & =2 \int_{x=0}^{x=r} \pi\left(r^{2}-x^{2}\right) d x \\ & =2 \pi\left[\int_{x=0}^{x=r} r^{2} d x-\int_{x=0}^{x=r} x^{2} d x\right] \\ & =2 \pi\left[r^{2} x-\frac{x^{3}}{3}\right]_{0}^{r}=\frac{4 \pi}{3} r^{3}. \end{aligned} \]
+
+(2) Find the volume of the solid generated by the revolution of the curve \({y^{2}=6 x}\) about the axis of \({x}\), between \({x=0}\) and \({x=4}\).
+
+The volume of a strip of the solid is \({\pi y^{2} d x}\).
+
+Hence \[ \begin{aligned} \text { volume } & =\int_{x=0}^{x=4} \pi y^{2} d x=6 \pi \int_{x=0}^{x=4} x d x \\ & =6 \pi\left[\frac{x^{2}}{2}\right]_{0}^{4}=48 \pi=150.8 \end{aligned} \]
+
+On Quadratic Means
+
+In certain branches of physics, particularly in the study of alternating electric currents, it is necessary to be able to calculate the *quadratic mean* of a variable quantity. By "quadratic mean" is denoted the square root of the mean of the squares of all the values between the limits considered. Other names for the quadratic mean of any quantity are its "virtual" value, or its "R.M.S." (meaning root-mean-square) value. The French term is *valeur efficace*. If \({y}\) is the function under consideration, and the quadratic mean is to be taken between the limits of \({x=0}\) and \({x=l}\); then the quadratic mean is expressed as \[ \sqrt[2]{\frac{1}{l} \int_{0}^{l} y^{2} d x}. \]
+
+Examples
+
+(1) To find the quadratic mean of the function \({y=a x}\) (Fig. 63).
+
+Here the integral is \({\int_{0}^{l} a^{2} x^{2} d x}\), which is \({\dfrac{1}{3} a^{2} l^{3}}\). Dividing by \({l}\) and taking the square root, we have \[ \text { quadratic mean }=\frac{1}{\sqrt{3}} al. \]
+
+[Figure cn: Fig. 63. — A straight line rising from the origin over a length l, with the area beneath it ruled in upright strips and its height y marked at the end.]
+
+Here the arithmetical mean is \({\dfrac{1}{2} a l}\); and the ratio of quadratic to arithmetical mean (this ratio is called the *form-factor*) is \({\dfrac{2}{\sqrt{3}}=1.155}\).
+
+(2) To find the quadratic mean of the function \({y=x^{a}}\).
+
+The integral is \({\int_{x=0}^{x=l} x^{2 a} d x}\), that is \({\dfrac{l^{2a+1}}{2 a+1}}\).
+
+Hence \[ \text { quadratic mean }=\sqrt[2]{\frac{l^{2 a}}{2 a+1}}. \]
+
+(3) To find the quadratic mean of the function \({y=a^{\tfrac{x}{2}}}\).
+
+The integral is \({\int_{x=0}^{x=l}\left(a^{\frac{x}{2}}\right)^{2} dx}\), that is \({\int_{x=0}^{x=l} a^{x} d x}\), \[ \text{or}\quad \left[\frac{a^{x}}{\log_{\epsilon} a}\right]_{x=0}^{x=l}, \] which is \({\dfrac{a^{l}-1}{\log_{\epsilon} a}}\).
+
+Hence the quadratic mean is \({\sqrt[2]{\dfrac{a^{l}-1}{l \log_{\epsilon} a}}}\).
+
+* * *
+
+*Exercises XVIII.* (See p. 265 for Answers.)
+
+(1) Find the area of the curve \({y=x^{2}+x-5}\) between \({x=0}\) and \({x=6}\), and the mean ordinates between these limits.
+
+(2) Find the area of the parabola \({y=2 a \sqrt{x}}\) between \({x=0}\) and \({x=a}\). Show that it is two-thirds of the rectangle of the limiting ordinate and of its abscissa.
+
+(3) Find the area of the positive portion of a sine curve and the mean ordinate.
+
+(4) Find the area of the positive portion of the curve \({y=\sin ^{2}x}\), and find the mean ordinate.
+
+(5) Find the area included between the two branches of the curve \({y=x^{2} \pm x^{\tfrac{5}{2}}}\) from \({x=0}\) to \({x=1}\), also the area of the positive portion of the lower branch of the curve (see Fig. 30, p. 106).
+
+(6) Find the volume of a cone of radius of base \({r}\), and of height \({h}\).
+
+(7) Find the area of the curve \({y=x^{3}-\log_{\epsilon} x}\) between \({x=0}\) and \({x=1}\).
+
+(8) Find the volume generated by the curve \({y=\sqrt{1+x^{2}}}\), as it revolves about the axis of \({x}\), between \({x=0}\) and \({x=4}\).
+
+(9) Find the volume generated by a sine curve revolving about the axis of \({x}\). Find also the area of its surface.
+
+(10) Find the area of the portion of the curve \({x y=a}\) included between \({x=1}\) and \({x=a}\). Find the mean ordinate between these limits.
+
+(11) Show that the quadratic mean of the function \({y=\sin x}\), between the limits of 0 and \({\pi}\) radians, is \({\dfrac{\sqrt{2}}{2}}\). Find also the arithmetical mean of the same function between the same limits; and show that the form-factor is \({=1.11}\).
+
+(12) Find the arithmetical and quadratic means of the function \({x^{2}+ 3 x+2}\), from \({x=0}\) to \({x=3}\).
+
+(13) Find the quadratic mean and the arithmetical mean of the function \({y=A_{1} \sin x+A_{1} \sin 3 x}\).
+
+(14) A certain curve has the equation \({y=3.42 \epsilon^{0.21 x}}\). Find the area included between the curve and the axis of \({x}\), from the ordinate at \({x=2}\) to the ordinate at \({x=8}\). Find also the height of the mean ordinate of the curve between these points.
+
+(15) Show that the radius of a circle, the area of which is twice the area of a polar diagram, is equal to the quadratic mean of all the values of \({r}\) for that polar diagram.
+
+(16) Find the volume generated by the curve \({y= \pm \frac{x}{6} \sqrt{x(10-x)}}\) rotating about the axis of \({x}\).

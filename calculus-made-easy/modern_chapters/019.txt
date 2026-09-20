@@ -1,0 +1,87 @@
+Chapter XVI: Partial Differentiation
+
+WE sometimes come across quantities that are functions of more than one independent variable. Thus, we may find a case where \({y}\) depends on two other variable quantities, one of which we will call \({u}\) and the other \({v}\). In symbols \[ y=f(u, v). \]
+
+Take the simplest concrete case.
+
+Let \({\quad y=u \times v}\).
+
+What are we to do? If we were to treat \({v}\) as a constant, and differentiate with respect to \({u}\), we should get \[ d y_{v}=v d u; \] or if we treat \({u}\) as a constant, and differentiate with respect to \({v}\), we should have: \[ d y_{u}=u d v. \]
+
+The little letters here put as subscripts are to show which quantity has been taken as constant in the operation.
+
+Another way of indicating that the differentiation has been performed only *partially*, that is, has been performed only with respect to one of the independent variables, is to write the differential coefficients with Greek deltas, like \({\partial}\), instead of little \({d}\). In this way \[ \begin{aligned} & \frac{\partial y}{\partial u}=v, \\ & \frac{\partial y}{\partial v}=u. \end{aligned} \]
+
+If we put in these values for \({v}\) and \({u}\) respectively, we shall have \[ \left.\begin{array}{rl} d y_{v} & =\frac{\partial y}{\partial u} d u, \\ d y_{u} & =\frac{\partial y}{\partial v} d v, \end{array}\right\} \quad \text { which are } \textit{partial differentials. } \]
+
+But, if you think of it, you will observe that the total variation of \({y}\) depends on *both* these things at the same time. That is to say, if both are varying, the real \({d y}\) ought to be written \[ d y=\frac{\partial y}{\partial u} d u+\frac{\partial y}{\partial v} d v; \] and this is called a *total differential*. In some books it is written \({d y= \left(\dfrac{d y}{d u}\right) d u+\left(\dfrac{d y}{d v}\right) d v}\).
+
+*Example* (1). Find the partial differential coefficients of the expression \({w=2 a x^{2}+3 b x y+4 c y^{3}}\). The answers are: \[ \left.\begin{array}{l} \frac{\partial w}{\partial x}=4 a x+3 b y. \\ \frac{\partial w}{\partial y}=3 b x+12 c y^{2}. \end{array}\right\} \]
+
+The first is obtained by supposing \({y}\) constant, the second is obtained by supposing \({x}\) constant; then \[ d w=(4 a x+3 b y) d x+\left(3 b x+12 c y^{2}\right) d y. \]
+
+*Example* (2). Let \({z=x^{y}}\). Then, treating first \({y}\) and then \({x}\) as constant, we get in the usual way \[ \left.\begin{array}{l} \frac{\partial z}{\partial x}=y x^{y-1}, \\ \frac{\partial z}{\partial y}=x^{y} \times \log_{\epsilon} x, \end{array}\right\} \] so that \({d z=y x^{y-1} d x+x^{y} \log_{\epsilon} x d y}\).
+
+*Example* (3). A cone having height \({h}\) and radius of base \({r}\) has volume \({V=\tfrac{1}{3} \pi r^{2} h}\). If its height remains constant, while \({r}\) changes, the ratio of change of volume, with respect to radius, is different from ratio of change of volume with respect to height which would occur if the height were varied and the radius kept constant, for \[ \left.\begin{array}{l} \frac{\partial V}{\partial r}=\frac{2 \pi}{3} r h, \\ \frac{\partial V}{\partial h}=\frac{\pi}{3} r^{2}. \end{array}\right\} \]
+
+The variation when both the radius and the height change is given by \({d V=\frac{2 \pi}{3} r h d V+\frac{\pi}{3} r^{2} d h}\).
+
+*Example* (4). In the following example \({F}\) and \({f}\) denote two arbitrary functions of any form whatsoever. For example, they may be sine-functions, or exponentials, or mere algebraic functions of the two independent variables, \({t}\) and \({x}\). This being understood, let us take the expression \[ y=F(x+a t)+f(x-a t), \] or, \[ y=F(w)+f(v); \] where \[ w=x+a t, \quad \text { and } \quad v=x-a t. \]
+
+Then \[ \begin{aligned} \frac{\partial y}{\partial x} & =\frac{\partial F(w)}{\partial w} \cdot \frac{\partial w}{\partial x}+\frac{\partial f(v)}{\partial v} \cdot \frac{\partial v}{\partial x} \\ & =F^{\prime}(w) \cdot 1+f^{\prime}(v) \cdot 1 \end{aligned} \] (where the figure 1 is simply the coefficient of \({x}\) in \({w}\) and \({v}\)); and \[ \frac{\partial^{2} y}{\partial x^{2}}=F^{\prime \prime}(w)+f^{\prime \prime}(v). \]
+
+Also \({\quad \dfrac{\partial y}{\partial t}=\dfrac{\partial F(w)}{\partial w} \cdot \dfrac{\partial w}{\partial t}+\dfrac{\partial f(v)}{\partial v} \cdot \dfrac{\partial v}{\partial t}}\) \[ =F^{\prime}(w) \cdot a-f^{\prime}(v) a; \] and \[ \frac{\partial^{2} y}{\partial t^{2}}=F^{\prime \prime}(w) a^{2}+f^{\prime \prime}(v) a^{2}; \] whence \[ \frac{\partial^{2} y}{\partial t^{2}}=a^{2} \frac{\partial^{2} y}{\partial x^{2}}. \]
+
+This differential equation is of immense importance in mathematical physics.
+
+Maxima and Minima of Functions of two Independent Variables
+
+*Example* (5). Let us take up again Exercise IX., p. 107, No. 4.
+
+Let \({x}\) and \({y}\) be the length of two of the portions of the string. The third is \({30-(x+y)}\), and the area of the triangle is \({A=\sqrt{s(s-x)(s-y)(s-30+x+y)}}\), where \({s}\) is the half perimeter, 15, so that \({A=\sqrt{15 P}}\), where \[ \begin{aligned} P & =(15-x)(15-y)(x+y-15) \\ & =x y^{2}+x^{2} y-15 x^{2}-15 y^{2}-45 x y+450 x+450 y-3375. \end{aligned} \]
+
+Clearly \({A}\) is maximum when \({P}\) is maximum. \[ d P=\frac{\partial P}{\partial x} d x+\frac{\partial P}{\partial y} d y. \] For a maximum (clearly it will not be a minimum in this case), one must have simultaneously \[ \frac{\partial P}{\partial x}=0 \quad \text { and } \quad \frac{\partial P}{\partial y}=0; \] that is, \[ \left.\begin{array}{l} 2 x y-30 x+y^{2}-45 y+450=0, \\ 2 x y-30 y+x^{2}-45 x+450=0. \end{array}\right\} \]
+
+An immediate solution is \({x=y}\).
+
+If we now introduce this condition in the value of \({P}\), we find \[ P=(15-x)^{2}(2 x-15)=2 x^{3}-75 x^{2}+900 x-3375. \] For maximum or minimum, \({\dfrac{d P}{d x}=6 x^{2}-150 x+900=0}\), which gives \({x=15}\) or \({x=10}\).
+
+Clearly \({x=15}\) gives minimum area; \({x=10}\) gives the maximum, for \({\dfrac{d^{2} P}{d x^{2}}=12 x-150}\), which is +30 for \({x=15}\) and -30 for \({x=10}\).
+
+*Example* (6). Find the dimensions of an ordinary railway coal truck with rectangular ends, so that, for a given volume \({V}\) the area of sides and floor together is as small as possible.
+
+The truck is a rectangular box open at the top. Let \({x}\) be the length and \({y}\) be the width; then the depth is \({\dfrac{V}{x y}}\). The surface area is \({S=x y+\dfrac{2 V}{x}+\dfrac{2 V}{y}}\) \[ dS=\frac{\partial S}{\partial x} d x+\frac{\partial S}{\partial y} d y=\left(y-\frac{2 V}{x^{2}}\right) d x+\left(x-\frac{2 V}{y^{2}}\right) d y. \]
+
+For minimum (clearly it won't be a maximum here), \[ y-\frac{2 V}{x^{2}}=0, \quad x-\frac{2 V}{y^{2}}=0. \]
+
+Here also, an immediate solution is \({x=y}\), so that \({S=x^{2}+\dfrac{4V}{x}}\), \({\dfrac{d S}{d x}=2 x-\frac{4 V}{x^{2}}=0}\) for minimum, and \[ x=\sqrt[3]{2 V}. \]
+
+* * *
+
+*Exercises XV*. (See page 263 for Answers.)
+
+(1) Differentiate the expression \({\dfrac{x^{3}}{3}-2 x^{3} y-2 y^{2}x+\dfrac{y}{3}}\) with respect to \({x}\) alone, and with respect to \({y}\) alone.
+
+(2) Find the partial differential coefficients with respect to \({x, y}\) and \({z}\), of the expression \[ x^{2} y z+x y^{2} z+x y z^{2}+x^{2} y^{2} z^{2}. \]
+
+(3) Let \({r^{2}=(x-a)^{2}+(y-b)^{2}+(z-c)^{2}}\).
+
+Find the value of \({\dfrac{\partial r}{\partial x}+\dfrac{\partial r} {\partial y}+\dfrac{\partial r}{\partial z}}\). Also find the value of \({\dfrac{\partial^{2} r}{\partial x^{2}}+\dfrac{\partial^{2}r} {\partial y^{2}}+ \frac{\partial^{2} r}{\partial z^{2}}}\).
+
+(4) Find the total differential of \({y=u^{v}}\).
+
+(5) Find the total differential of \({y=u^{3} \sin v}\); of \({y=(\sin x)^{u}}\); and of \({y=\dfrac{\log_{\epsilon} u}{v}}\).
+
+(6) Verify that the sum of three quantities \({x}\), \({y}\), \({z}\), whose product is a constant \({k}\), is maximum when these three quantities are equal.
+
+(7) Find the maximum or minimum of the function \[ u=x+2 x y+y. \]
+
+(8) The post-office regulations state that no parcel is to be of such a size that its length plus its girth exceeds 6 feet. What is the greatest volume that can be sent by post (a) in the case of a package of rectangular cross section; (b) in the case of a package of circular cross section.
+
+(9) Divide \({\pi}\) into 3 parts such that the continued product of their sines may be a maximum or minimum.
+
+(10) Find the maximum or minimum of \({u=\dfrac{\epsilon^{x+y}}{x y}}\).
+
+(11) Find maximum and minimum of \[ u=y+2 x-2 \log_{\epsilon} y-\log_{\epsilon} x. \]
+
+(12) A telpherage bucket of given capacity has the shape of a horizontal isosceles triangular prism with the apex underneath, and the opposite face open. Find its dimensions in order that the least amount of iron sheet may be used in its construction.

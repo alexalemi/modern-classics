@@ -1,0 +1,143 @@
+Chapter V: Next Stage. What to Do with Constants
+
+IN our equations we have regarded \({x}\) as growing, and as a result of \({x}\) being made to grow \({y}\) also changed its value and grew. We usually think of \({x}\) as a quantity that we can vary; and, regarding the variation of \({x}\) as a sort of cause, we consider the resulting variation of \({y}\) as an *effect*. In other words, we regard the value of \({y}\) as depending on that of \({x}\). Both \({x}\) and \({y}\) are variables, but \({x}\) is the one that we operate upon, and \({y}\) is the "dependent variable." In all the preceding chapter we have been trying to find out rules for the proportion which the dependent variation in \({y}\) bears to the variation independently made in \({x}\).
+
+Our next step is to find out what effect on the process of differentiating is caused by the presence of *constants*, that is, of numbers which don't change when \({x}\) or \({y}\) change their values.
+
+Added Constants
+
+Let us begin with some simple case of an added constant, thus:
+
+Let \[ y=x^{3}+5. \] Just as before, let us suppose \({x}\) to grow to \({x+d x}\) and \({y}\) to grow to \({y+d y}\).
+
+Then: \[ \begin{aligned} y+d y&=(x+d x)^{3}+5\\ &=x^{3}+3 x^{2} d x+3 x(d x)^{2}+(d x)^{3}+5. \end{aligned} \] Neglecting the small quantities of higher orders, this becomes \[ y+d y=x^{3}+3 x^{2} \cdot d x+5. \] Subtract the original \({y=x^{3}+5}\), and we have left: \[ \begin{aligned} d y & =3 x^{2} d x. \\ \frac{d y}{d x} & =3 x^{2}. \end{aligned} \]
+
+So the 5 has quite disappeared. It added nothing to the growth of \({x}\), and does not enter into the differential coefficient. If we had put 7, or 700, or any other number, instead of 5, it would have disappeared. So if we take the letter \({a}\), or \({b}\), or \({c}\) to represent any constant, it will simply disappear when we differentiate.
+
+If the additional constant had been of negative value, such as -5 or \({-b}\), it would equally have disappeared.
+
+Multiplied Constants
+
+Take as a simple experiment this case:
+
+Let \({y=7 x^{2}}\).
+
+Then on proceeding as before we get: \[ \begin{aligned} y+d y & =7(x+d x)^{2} \\ & =7\left\{x^{2}+2 x \cdot d x+(d x)^{2}\right\} \\ & =7 x^{2}+14 x \cdot d x+7(d x)^{2}. \end{aligned} \]
+
+Then, subtracting the original \({y=7 x^{2}}\), and neglecting the last term, we have \[ \begin{aligned} & d y=14 x \cdot d x. \\ & \frac{d y}{d x}=14 x. \end{aligned} \]
+
+Let us illustrate this example by working out the graphs of the equations \({y=7 x^{2}}\) and \({\dfrac{d y}{d x}=14 x}\), by assigning to \({x}\) a set of successive values, 0, 1, 2, 3, etc., and finding the corresponding values of \({y}\) and of \({\dfrac{d y}{d x}}\).
+
+These values we tabulate as follows:
+
+	\({x}\) | 0 | 1 | 2 | 3 | 4 | 5 | -1 | -2 | -3
+	\({y}\) | 0 | 7 | 28 | 63 | 112 | 175 | 7 | 28 | 63
+	\({\dfrac{d y}{d x}}\) | 0 | 14 | 28 | 42 | 56 | 70 | -14 | -28 | -42
+
+Now plot these values to some convenient scale, and we obtain the two curves, Figs. 6 and 6a.
+
+Carefully compare the two figures, and verify by inspection that the height of the ordinate of the derived curve, Fig. 6a, is proportional to the slope of the original curve, Fig. 6, at the corresponding value of \({x}\). To the left of the origin, where the original curve slopes negatively (that is, downward from left to right) the corresponding ordinates of the derived curve are negative.
+
+Footnote: See p. 76 about slopes of curves.
+
+[Figure af]
+
+[Figure ag]
+
+Now if we look back at p. 18, we shall see that simply differentiating \({x^{2}}\) gives us \({2 x}\). So that the differential coefficient of \({7x^{2}}\) is just 7 times as big as that of \({x^{2}}\). If we had taken \({8 x^{2}}\), the differential coefficient would have come out eight times as great as that of \({x^{2}}\). If we put \({y=a x^{2}}\), we shall get \[ \frac{d y}{d x}=a \times 2 x. \]
+
+If we had begun with \({y=a x^{n}}\), we should have had \({\dfrac{d y}{d x}=a \times n x^{n-1}}\). So that any mere multiplication by a constant reappears as a mere multiplication when the thing is differentiated. And, what is true about multiplication is equally true about division: for if, in the example above, we had taken as the constant \({\dfrac{1}{7}}\) instead of 7, we should have had the same \({\dfrac{1}{7}}\) come out in the result after differentiation.
+
+Some Further Examples
+
+The following further examples, fully worked out, will enable you to master completely the process of differentiation as applied to ordinary algebraical expressions, and enable you to work out by yourself the examples given at the end of this chapter.
+
+(1) Differentiate \({y=\dfrac{x^{5}}{7}-\dfrac{3}{5}}\).
+
+\({\dfrac{3}{5}}\) is an added constant and vanishes (see p. 25).
+
+We may then write at once \[ \begin{aligned} \frac{d y}{d x} &= \frac{1}{7}\times 5 \times x^{5-1},\\ \text { or } \qquad &\frac{d y}{d x}=\frac{5}{7} x^{4}. \end{aligned} \]
+
+(2) Differentiate \({y=a \sqrt{x}-\frac{1}{2} \sqrt{a}}\).
+
+The term \({\dfrac{1}{2} \sqrt{a}}\) vanishes, being an added constant; and as \({a \sqrt{x}}\), in the index form, is written \({ax^{\frac{1}{2}}}\), we have \[ \begin{align*} \frac{d y}{d x}=a \times &\frac{1}{2} \times x^{\frac{1}{2}-1}=\frac{a}{2} \times x^{-\frac{1}{2}}, \\ \text{or}\quad\qquad\qquad &\frac{d y}{d x}=\frac{a}{2 \sqrt{x}}. \end{align*} \]
+
+(3) If \({a y+b x=b y-a x+(x+y) \sqrt{a^{2}-b^{2}}}\),
+
+find the differential coefficient of \({y}\) with respect to \({x}\).
+
+As a rule an expression of this kind will need a little more knowledge than we have acquired so far; it is, however, always worth while to try whether the expression can be put in a simpler form.
+
+First we must try to bring it into the form \({y=}\) some expression involving \({x}\) only.
+
+The expression may be written \[ (a-b) y+(a+b) x=(x+y) \sqrt{a^{2}-b^{2}}. \]
+
+Squaring, we get \[ (a-b)^{2} y^{2}+(a+b)^{2} x^{2}+2(a+b)(a-b) x y=\left(x^{2}+y^{2}+2 x y\right)\left(a^{2}-b^{2}\right), \] which simplifies to \[ (a-b)^{2} y^{2}+(a+b)^{2} x^{2}=x^{2}\left(a^{2}-b^{2}\right)+y^{2}\left(a^{2}-b^{2}\right); \] or \[ \left[(a-b)^{2}-\left(a^{2}-b^{2}\right)\right] y^{2}=\left[\left(a^{2}-b^{2}\right)-(a+b)^{2}\right] x^{2}, \] that is \[ 2 b(b-a) y^{2}=-2 b(b+a) x^{2}; \] hence \[ y=\sqrt{\frac{a+b}{a-b}} x \quad \text { and } \quad \frac{d y}{d x}=\sqrt{\frac{a+b}{a-b}}. \]
+
+(4) The volume of a cylinder of radius \({r}\) and height \({h}\) is given by the formula \({V=\pi r^{2} h}\). Find the rate of variation of volume with the radius when \({r=5.5\, \mathrm{in}}\). and \({h=20\, \mathrm{in}}\). If \({r=h}\), find the dimensions of the cylinder so that a change of 1 in. in radius causes a change of 400 cub. in. in the volume.
+
+The rate of variation of \({V}\) with regard to \({r}\) is \[ \frac{d V}{d r}=2 \pi r h. \]
+
+If \({r=5.5 \mathrm{in.}}\) and \({h=20 \mathrm{in.}}\) this becomes 690.8. It means that a change of radius of 1 inch will cause a change of volume of 690.8 cub. inch. This can be easily verified, for the volumes with \({r=5}\) and \({r=6}\) are 1570 cub. in. and 2260.8 cub. in. respectively, and \({2260.8-1570=690.8}\).
+
+Also, if \[ r=h, \quad \frac{d V}{d r}=2 \pi r^{2}=400 \quad \text { and } \quad r=h=\sqrt{\frac{400}{2 \pi}}=7.98\, \mathrm{in.} \]
+
+(5) The reading \({\theta}\) of a Féry's Radiation pyrometer is related to the Centigrade temperature \({t}\) of the observed body by the relation \[ \frac{\theta}{\theta_{1}}=\left(\frac{t}{t_{1}}\right)^{4}, \] where \({\theta_{1}}\) is the reading corresponding to a known temperature \({t_{1}}\) of the observed body.
+
+Compare the sensitiveness of the pyrometer at temperatures \({800^{\circ} \mathrm{C}., 1000^{\circ} \mathrm{C}., 1200^{\circ}\mathrm{C}.}\), given that it read 25 when the temperature was \({1000^{\circ} \mathrm{C}}\).
+
+The sensitiveness is the rate of variation of the reading with the temperature, that is \({\dfrac{d \theta}{d t}}\). The formula may be written \[ \theta=\frac{\theta_{1}}{t_{1}^{4}} t^{4}=\frac{25 t^{4}}{1000^{4}}, \] and we have \[ \frac{d \theta}{d t}=\frac{100 t^{3}}{1000^{4}}=\frac{t^{3}}{10,000,000,000}. \]
+
+When \({t=800, 1000}\) and 1200, we get \({\dfrac{d \theta}{dt}=0.0512,0.1}\) and 0.1728 respectively.
+
+The sensitiveness is approximately doubled from \({800^{\circ}}\) to \({1000^{\circ}}\), and becomes three-quarters as great again up to \({1200^{\circ}}\).
+
+* * *
+
+*Exercises II.* (See p. 252 for Answers.)
+
+Differentiate the following:
+
+(1) \({y=a x^{3}+6}\).
+
+(2) \({y=13 x^{\tfrac{3}{2}}-c}\).
+
+(3) \({y=12 x^{\tfrac{1}{2}}+c^{\tfrac{1}{2}}}\).
+
+(4) \({y=c^{\tfrac{1}{2}} x^{\tfrac{1}{2}}}\).
+
+(5) \({u=\dfrac{a z^{n}-1}{c}}\).
+
+(6) \({y=1.18 t^{2}+22.4}\).
+
+Make up some other examples for yourself, and try your hand at differentiating them.
+
+(7) If \({l_{t}}\) and \({l_{0}}\) be the lengths of a rod of iron at the temperatures \({t^{\circ} \mathrm{C}}\). and \({0^{\circ} \mathrm{C}}\). respectively, then \({l_{t}=l_{0}(1+0.000012 t)}\). Find the change of length of the rod per degree Centigrade.
+
+(8) It has been found that if \({c}\) be the candle power of an incandescent electric lamp, and \({V}\) be the voltage, \({c=a V^{b}}\), where \({a}\) and \({b}\) are constants.
+
+Find the rate of change of the candle power with the voltage, and calculate the change of candle power per volt at 80,100 and 120 volts in the case of a lamp for which \({a=0.5 \times 10^{-10}}\) and \({b=6}\).
+
+(9) The frequency \({n}\) of vibration of a string of diameter \({D}\), length \({L}\) and specific gravity \({\sigma}\), stretched with a force \({T}\), is given by \[ n=\frac{1}{D L} \sqrt{\frac{g T}{\pi \sigma}}. \]
+
+Find the rate of change of the frequency when \({D, L, \sigma}\) and \({T}\) are varied singly.
+
+(10) The greatest external pressure \({P}\) which a tube can support without collapsing is given by \[ P=\left(\frac{2 E}{1-\sigma^{2}}\right) \frac{t^{3}}{D^{3}}, \] where \({E}\) and \({\sigma}\) are constants, \({t}\) is the thickness of the tube and \({D}\) is its diameter. (This formula assumes that \({4 t}\) is small compared to \({D}\).)
+
+Compare the rate at which \({P}\) varies for a small change of thickness and for a small change of diameter taking place separately.
+
+(11) Find, from first principles, the rate at which the following vary with respect to a change in radius:
+
+(a) the circumference of a circle of radius \({r}\);
+
+(b) the area of a circle of radius \({r}\);
+
+(c) the lateral area of a cone of slant dimension \({l}\);
+
+(d) the volume of a cone of radius \({r}\) and height \({h}\);
+
+(e) the area of a sphere of radius \({r}\);
+
+(f) the volume of a sphere of radius \({r}\).
+
+(12) The length \({L}\) of an iron rod at the temperature \({T}\) being given by \({L=l_{t}[1+0.000012(T-t)]}\), where \({l_{t}}\) is the length at the temperature \({t}\), find the rate of variation of the diameter \({D}\) of an iron tyre suitable for being shrunk on a wheel, when the temperature \({T}\) varies.

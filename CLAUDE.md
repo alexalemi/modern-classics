@@ -201,7 +201,8 @@ editor's introduction, a real epub. Two shapes:
              never overwrite: Ball captioned 93 of his 94 plates himself and
              those are his text.
   NATIVE     no retelling at all (EDITION=restored): worthington/, aesop/,
-             irish-fairy-tales/, old-indian-legends/, american-indian-stories/. The page says "restored edition"; the epub
+             irish-fairy-tales/, old-indian-legends/, american-indian-stories/,
+             calculus-made-easy/. The page says "restored edition"; the epub
              drops "retold" and the `trl` role.
 
 MODERN_CHAPTERS/ IS COMPOSED, NEVER TYPED. prep.py writes chapters/ with
@@ -289,6 +290,32 @@ library's perforated stamp only make short runs. Asserted against a size
 band. Note the leaf index: Archive.org's _jp2.zip is one ahead of the
 ABBYY page index for this scan, and the first fetch was fourteen text
 pages.
+
+MATHEMATICS IS TYPESET, NOT PICTURED (calculus-made-easy/, 2026-09-20).
+Gutenberg sets each formula as an image carrying `data-tex`; a restored
+edition keeps the LaTeX in chapters/ as \(...\) and \[...\] and both
+renderers typeset it (mathml.py: pandoc, cached in build/). assemble.inline
+HOLDS formulas aside before emphasis, since LaTeX is full of _ and *. The
+page gets plain <math>; the epub needs MORE, all found by building:
+  - `se clean` hoists a default MathML xmlns onto <html>, replacing XHTML's,
+    so every chapter failed to parse. Emit <m:math> and declare xmlns:m on
+    the root (mathml.prefixed/declare); `se build-manifest` only sets the
+    `mathml` property when that root declaration exists.
+  - `se lint` wants alttext on every formula (s-089): prep writes
+    {book}/mathalt.json from Gutenberg's MathSpeak alts. It rejects
+    pandoc's inline style (x-012) and empty <mtd>/<mrow> (s-010; <mspace/>
+    is the exempt filler).
+  - `se build` renders MathML to PNG for the compatible epub through
+    Selenium/Firefox: export SE_CACHE_PATH to a writable directory, and
+    mathml.se_safe dodges its "cannot add ancestor as sibling" crash on
+    nested groups in a superscript.
+The witnesses that mattered: a FORMULA-SEQUENCE diff against data-tex
+(caught six displayed formulas lost in wrapper divs the word count could
+not see), and a scan diff that found Gutenberg's "trillionth" for the
+printed "billionth" and "sixpence" for "saxpence". Beware: Archive.org's
+`calculusmadeeasy_202001`, catalogued as the 1914 book, is Gutenberg's own
+typeset PDF -- not a witness. Three figure pairs (12/13, 38/39, 44/45)
+carried each other's numbers and were relabelled by Thompson's text.
 
 Covers come from the books' own plates where Commons has nothing large
 enough (build/covers/{book}.jpg with a placeholder `commons` name and a

@@ -1,0 +1,165 @@
+Chapter XVIII: Integrating as the Reverse of Differentiating
+
+DIFFERENTIATING is the process by which when \({y}\) is given us (as a function of \({x}\)), we can find \({\dfrac{d y}{d x}}\).
+
+Like every other mathematical operation, the process of differentiation may be reversed; thus, if differentiating \({y=x^{4}}\) gives us \({\dfrac{d y}{d x}=4 x^{3}}\); if one begins with \({\dfrac{d y}{dx}=4 x^{3}}\) one would say that reversing the process would yield \({y=x^{4}}\). But here comes in a curious point. We should get \({\dfrac{dy}{d x}=4 x^{3}}\) if we had begun with any of the following: \({x^{4}}\), or \({x^{4}+a}\), or \({x^{4}+c}\), or \({x^{4}}\) with *any* added constant. So it is clear that in working backwards from \({\dfrac{d y}{dx}}\) to \({y}\), one must make provision for the possibility of there being an added constant, the value of which will be undetermined until ascertained in some other way. So, if differentiating \({x^{n}}\) yields \({n x^{n-1}}\), going backwards from \({\dfrac{d y}{d x}=n x^{n-1}}\) will give us \({y=x^{n}+C}\); where \({C}\) stands for the yet undetermined possible constant.
+
+Clearly, in dealing with powers of \({x}\), the rule for working backwards will be: Increase the power by 1, then divide by that increased power, and add the undetermined constant.
+
+So, in the case where \[ \frac{d y}{d x}=x^{n}, \] working backwards, we get \[ y=\frac{1}{n+1} x^{n+1}+C. \]
+
+If differentiating the equation \({y=a x^{n}}\) gives us \[ \frac{d y}{d x}=a n x^{n-1}, \] it is a matter of common sense that beginning with \[ \frac{d y}{d x}=a n x^{n-1}, \] and reversing the process, will give us \[ y=a x^{n}. \] So, when we are dealing with a multiplying constant, we must simply put the constant as a multiplier of the result of the integration.
+
+Thus, if \({\dfrac{d y}{d x}=4 x^{2}}\), the reverse process gives us \({y=\dfrac{4}{3} x^{3}}\).
+
+But this is incomplete. For we must remember that if we had started with \[ y=a x^{n}+C, \] where \({C}\) is any constant quantity whatever, we should equally have found \[ \frac{d y}{d x}=a n x^{n-1}. \]
+
+So, therefore, when we reverse the process we must always remember to add on this undetermined constant, even if we do not yet know what its value will be.
+
+This process, the reverse of differentiating, is called *integrating*; for it consists in finding the value of the whole quantity \({y}\) when you are given only an expression for \({d y}\) or for \({\dfrac{d y}{d x}}\). Hitherto we have as much as possible kept \({d y}\) and \({d x}\) together as a differential coefficient: henceforth we shall more often have to separate them.
+
+If we begin with a simple case, \[ \frac{d y}{d x}=x^{2}. \]
+
+We may write this, if we like, as \[ d y=x^{2} d x. \]
+
+Now this is a "differential equation" which informs us that an element of \({y}\) is equal to the corresponding element of \({x}\) multiplied by \({x^{2}}\). Now, what we want is the integral; therefore, write down with the proper symbol the instructions to integrate both sides, thus: \[ \int d y=\int x^{2} d x. \]
+
+[Note as to reading integrals: the above would be read thus:
+
+"*Integral dee-wy equals integral eks-squared dee-eks*."]
+
+We haven't yet integrated: we have only written down instructions to integrate—if we can. Let us try. Plenty of other fools can do it-why not we also? The left-hand side is simplicity itself. The sum of all the bits of \({y}\) is the same thing as \({y}\) itself. So we may at once put: \[ y=\int x^{2} d x. \]
+
+But when we come to the right-hand side of the equation we must remember that what we have got to sum up together is not all the \({dx}\) 's, but all such terms as \({x^{2} d x}\); and this will *not* be the same as \({x^{2} \int d x}\), because \({x^{2}}\) is not a constant. For some of the \({d x}\) 's will be multiplied by big values of \({x^{2}}\), and some will be multiplied by small values of \({x^{2}}\), according to what \({x}\) happens to be. So we must bethink ourselves as to what we know about this process of integration being the reverse of differentiation. Now, our rule for this reversed process—see p. 189 *ante*—when dealing with \({x^{n}}\) is "increase the power by one, and divide by the same number as this increased power." That is to say, \({x^{2} d x}\) will be changed to \({\tfrac{1}{3} x^{3}}\). Put this into the equation; but don't forget to add the "constant of integration" \({C}\) at the end. So we get: \[ y=\tfrac{1}{3} x^{3}+C. \]
+
+Footnote: [You may ask, what has become of the little \({d x}\) at the end? Well, remember that it was really part of the differential coefficient, and when changed over to the right-hand side, as in the \({x^{2} dx}\), serves as a reminder that \({x}\) is the independent variable with respect to which the operation is to be effected; and, as the result of the product being totalled up, the power of \({x}\) has increased by *one*. You will soon become familiar with all this.]
+
+You have actually performed the integration. How easy!
+
+Let us try another simple case.
+
+Let \[ \frac{d y}{d x}=a x^{12}, \] where \({a}\) is any constant multiplier. Well, we found when differentiating (see p. 27) that any constant factor in the value of \({y}\) reappeared unchanged in the value of \({\dfrac{d y}{d x}}\). In the reversed process of integrating, it will therefore also reappear in the value of \({y}\). So we may go to work as before, thus \[ \begin{aligned} d y & =a x^{12} \cdot d x, \\ \int d y & =\int a x^{12} \cdot d x, \\ \int d y & =a \int x^{12} d x, \\ y & =a \times \tfrac{1}{13} x^{13}+C. \end{aligned} \]
+
+So that is done. How easy!
+
+We begin to realize now that integrating is a process of *finding our way back*, as compared with differentiating. If ever, during differentiating, we have found any particular expression-in this example \({a x^{12}}\) —we can find our way back to the \({y}\) from which it was derived. The contrast between the two processes may be illustrated by the following remark due to a well-known teacher. If a stranger were set down in Trafalgar Square, and told to find his way to Euston Station, he might find the task hopeless. But if he had previously been personally conducted from Euston Station to Trafalgar Square, it would be comparatively easy to him to find his way back to Euston Station.
+
+Integration of the Sum or Difference of two Functions
+
+Let \[ \frac{d y}{d x}=x^{2}+x^{3}, \] then \[ d y=x^{2} d x+x^{3} d x. \]
+
+There is no reason why we should not integrate each term separately: for, as may be seen on p. 34, we found that when we differentiated the sum of two separate functions, the differential coefficient was simply the sum of the two separate differentiations. So, when we work backwards, integrating, the integration will be simply the sum of the two separate integrations.
+
+Our instructions will then be: \[ \begin{aligned} \int d y & =\int\left(x^{2}+x^{3}\right) d x \\ & =\int x^{2} d x+\int x^{3} d x \\ y & =\frac{1}{3} x^{3}+\frac{1}{4} x^{4}+C. \end{aligned} \]
+
+If either of the terms had been a negative quantity, the corresponding term in the integral would have also been negative. So that differences are as readily dealt with as sums.
+
+How to deal with Constant Terms
+
+Suppose there is in the expression to be integrated a constant term—such as this: \[ \frac{d y}{d x}=x^{n}+b. \]
+
+This is laughably easy. For you have only to remember that when you differentiated the expression \({y=a x}\), the result was \({\dfrac{d y}{dx}=a}\). Hence, when you work the other way and integrate, the constant reappears multiplied by \({x}\). So we get \[ \begin{aligned} d y & =x^{n} d x+b \cdot d x, \\ \int d y & =\int x^{n} d x+\int b d x, \\ y & =\frac{1}{n+1} x^{n+1}+b x+C. \end{aligned} \]
+
+Here are a lot of examples on which to try your newly acquired powers.
+
+* * *
+
+Examples
+
+(1) Given \({\dfrac{d y}{d x}=24 x^{11}}\). Find \({y. \quad}\) Ans. \({y=2x^{12}+C}\).
+
+(2) Find \({\int(a+b)(x+1) d x}\). It is \({(a+b) \int(x+1) d x}\) or \({\quad(a+b)\left[\int x d x+\int d x\right] \quad}\) or \({\quad(a+b)\left(\dfrac{x^{2}}{2}+x\right)+C}\).
+
+(3) Given \({\dfrac{d u}{d t}=g t^{\tfrac{1}{2}}}\). Find \({u}\). Ans. \({u=\tfrac{2}{3} g t^{\tfrac{3}{2}}+C}\).
+
+(4) \({\dfrac{d y}{d x}=x^{3}-x^{2}+x}\). Find \({y}\). \[ \begin{aligned} & d y=\left(x^{3}-x^{2}+x\right) d x \quad \text { or } \\ & d y=x^{3} d x-x^{2} d x+x d x; \quad y=\int x^{3} d x-\int x^{2} d x+\int x d x; \end{aligned} \] and \[ y=\frac{1}{4} x^{4}-\frac{1}{3} x^{3}+\frac{1}{2} x^{2}+C. \]
+
+(5) Integrate \({9.75 x^{2.25} d x}\). *Ans*. \({y=3 x^{3.25}+C}\).
+
+* * *
+
+All these are easy enough. Let us try another case.
+
+Let \({\quad\dfrac{d y}{d x}=a x^{-1}}\).
+
+Proceeding as before, we will write \[ d y=a x^{-1} \cdot d x, \quad \int d y=a \int x^{-1} d x. \]
+
+Well, but what is the integral of \({x^{-1} d x}\)?
+
+If you look back amongst the results of differentiating \({x^{2}}\) and \({x^{3}}\) and \({x^{n}}\), etc., you will find we never got \({x^{-1}}\) from any one of them as the value of \({\dfrac{d y}{d x}}\). We got \({3 x^{2}}\) from \({x^{3}}\); we got \({2 x}\) from \({x^{2}}\); we got 1 from \({x^{1}}\) (that is, from \({x}\) itself); but we did not get \({x^{-1}}\) from \({x^{0}}\), for two very good reasons. *First*, \({x^{0}}\) is simply \({=1}\), and is a constant, and could not have a differential coefficient. *Secondly*, even if it could be differentiated, its differential coefficient (got by slavishly following the usual rule) would be \({0 \times x^{-1}}\), and that multiplication by zero gives it zero value! Therefore when we now come to try to integrate \({x^{-1} dx}\), we see that it does not come in anywhere in the powers of \({x}\) that are given by the rule: \[ \int x^{n} d x=\frac{1}{n+1} x^{n+1}. \] It is an exceptional case.
+
+Well; but try again. Look through all the various differentials obtained from various functions of \({x}\), and try to find amongst them \({x^{-1}}\). A sufficient search will show that we actually did get \({\dfrac{d y}{d x}=x^{-1}}\) as the result of differentiating the function \({y=\log_{\epsilon} x}\) (see p. 145).
+
+Then, of course, since we know that differentiating \({\log_{\epsilon}x}\) gives us \({x^{-1}}\), we know that, by reversing the process, integrating \({d y=x^{-1} d x}\) will give us \({y=\log_{\epsilon} x}\). But we must not forget the constant factor \({a}\) that was given, nor must we omit to add the undetermined constant of integration. This then gives us as the solution to the present problem, \[ y=a \log_{\epsilon} x+C. \]
+
+*N.B.*—Here note this very remarkable fact, that we could not have integrated in the above case if we had not happened to know the corresponding differentiation. If no one had found out that differentiating \({\log_{\epsilon} x}\) gave \({x^{-1}}\), we should have been utterly stuck by the problem how to integrate \({x^{-1} d x}\). Indeed it should be frankly admitted that this is one of the curious features of the integral calculus:—that you can't integrate anything before the reverse process of differentiating something else has yielded that expression which you want to integrate. No one, even to-day, is able to find the general integral of the expression, \[ \frac{d y}{d x}=a^{-x^{2}}, \] because \({a^{-x^{{}2}}}\) has never yet been found to result from differentiating anything else.
+
+*Another simple case.*
+
+Find \({\int(x+1)(x+2) d x}\).
+
+On looking at the function to be integrated, you remark that it is the product of two different functions of \({x}\). You could, you think, integrate \({(x+1) d x}\) by itself, or \({(x+2) d x}\) by itself. Of course you could. But what to do with a product? None of the differentiations you have learned have yielded you for the differential coefficient a product like this. Failing such, the simplest thing is to multiply up the two functions, and then integrate. This gives us \[ \int\left(x^{2}+3 x+2\right) d x. \] And this is the same as \[ \int x^{2} d x+\int 3 x d x+\int 2 d x. \] And performing the integrations, we get \[ \frac{1}{3} x^{3}+\frac{3}{2} x^{2}+2 x+C. \]
+
+Some other Integrals
+
+Now that we know that integration is the reverse of differentiation, we may at once look up the differential coefficients we already know, and see from what functions they were derived. This gives us the following integrals ready made: \[ \begin{array}{lll} x^{-1} & (\text { p. 145); } & \\ \frac{1}{x+a} & (\text { p. 145); } & \int \frac{1}{x+a} d x \\ \epsilon^{x} & (\text { p. 139); } & \int \epsilon^{x} d x \\ \epsilon^{-x} & & \log_{\epsilon} x+C. \\ & & \int \epsilon^{-x} d x \\ & =\epsilon^{x}+C. \\ & =\epsilon^{-x}+C \end{array} \] (for if \({y=-\dfrac{1}{\epsilon^{x}}, \quad \dfrac{d y}{dx}=-\dfrac{\epsilon^{x} \times 0-1 \times \epsilon^{x}}{\epsilon^{2x}}=\epsilon^{-x}}\)). \[ \begin{array}{lll} \sin x & (\text { p. 165); } & \int \sin x d x= -\cos x + C. \\ \cos x & (\text { p. 163); } & \int \cos x d x= \sin x + C. \\ \end{array} \]
+
+Also we may deduce the following: \[ \log_{\epsilon} x; \quad \int \log_{\epsilon} x d x=x\left(\log_{\epsilon} x-1\right)+C \] (for if \({y=x \log_{\epsilon} x-x, \quad \dfrac{d y}{d x}=\dfrac{x}{x}+\log_{\epsilon} x-1=\log_{\epsilon} x}\)). \[ \begin{aligned} \log_{10} x; & & \int \log_{10} x d x & =0.4343 x\left(\log_{\epsilon} x-1\right)+C. \\ a^{x} & (\text { p. 146); } & \int a^{x} d x & =\frac{a^{x}}{\log_{\epsilon} a}+C. \\ \cos a x; & & \int \cos a x d x & =\frac{1}{a} \sin a x+C \end{aligned} \] (for if \({y=\sin a x, \dfrac{d y}{d x}=a \cos a x}\); hence to get \({\cos a x}\) one must differentiate \({y=\dfrac{1}{a} \sin a x}\)). \[ \sin a x; \quad \int \sin a x d x=-\frac{1}{a} \cos a x+C. \]
+
+Try also \({\cos ^{2} \theta}\); a little dodge will simplify matters: \[ \begin{align*} \cos 2 \theta=\cos ^{2} \theta-\sin ^{2} \theta=2 \cos ^{2} \theta-1; \\ \text{hence}\quad\cos ^{2} \theta=\frac{1}{2}(\cos 2 \theta+1), \end{align*} \] and \[ \begin{aligned} \int \cos ^{2} \theta d \theta & =\tfrac{1}{2} \int(\cos 2 \theta+1) d \theta \\ & =\tfrac{1}{2} \int \cos 2 \theta d \theta+\frac{1}{2} \int d \theta. \\ & =\frac{\sin 2 \theta}{4}+\frac{\theta}{2}+C.(\text { See also p. 225 }). \end{aligned} \]
+
+See also the Table of Standard Forms on pp. 249-251. You should make such a table for yourself, putting in it only the general functions which you have successfully differentiated and integrated. See to it that it grows steadily!
+
+On Double and Triple Integrals
+
+In many cases it is necessary to integrate some expression for two or more variables contained in it; and in that case the sign of integration appears more than once. Thus, \[ \iint f(x, y,) d x d y \] means that some function of the variables \({x}\) and \({y}\) has to be integrated for each. It does not matter in which order they are done. Thus, take the function \({x^{2}+y^{2}}\). Integrating it with respect to \({x}\) gives us: \[ \int\left(x^{2}+y^{2}\right) d x=\frac{1}{3} x^{3}+x y^{2}. \]
+
+Now, integrate this with respect to \({y}\): \[ \int\left(\frac{1}{3} x^{3}+x y^{2}\right) d y=\frac{1}{3} x^{3} y+\frac{1}{3} x y^{3}, \] to which of course a constant is to be added. If we had reversed the order of the operations, the result would have been the same.
+
+In dealing with areas of surfaces and of solids, we have often to integrate both for length and breadth, and thus have integrals of the form \[ \iint u \cdot d x d y, \] where \({u}\) is some property that depends, at each point, on \({x}\) and on \({y}\). This would then be called a *surface-integral*. It indicates that the value of all such elements as \({u \cdot d x \cdot dy}\) (that is to say, of the value of \({u}\) over a little rectangle \({dx}\) long and \({d y}\) broad) has to be summed up over the whole length and whole breadth.
+
+Similarly in the case of solids, where we deal with three dimensions. Consider any element of volume, the small cube whose dimensions are \({dx}\) \({d y}\) \({d z}\). If the figure of the solid be expressed by the function \({f(x, y, z)}\), then the whole solid will have the volume-integral, \[ \text { volume }=\iiint f(x, y, z) \cdot d x \cdot d y \cdot d z. \] Naturally, such integrations have to be taken between appropriate limits in each dimension; and the integration cannot be performed unless one knows in what way the boundaries of the surface depend on \({x}\), \({y}\), and \({z}\). If the limits for \({x}\) are from \({x_{1}}\) to \({x_{2}}\), those for \({y}\) from \({y_{1}}\) to \({y_{2}}\), and those for \({z}\) from \({z_{1}}\) to \({z_{2}}\), then clearly we have \[ \text { volume }=\int_{z 1}^{z 2} \int_{y 1}^{y 2} \int_{x 1}^{x 2} f(x, y, z) \cdot d x \cdot d y \cdot d z. \]
+
+Footnote: See p. 206 for integration between limits.
+
+There are of course plenty of complicated and difficult cases; but, in general, it is quite easy to see the significance of the symbols where they are intended to indicate that a certain integration has to be performed over a given surface, or throughout a given solid space.
+
+* * *
+
+*Exercises XVII.* (See p. 264 for the Answers.)
+
+(1) Find \({\int y d x}\) when \({y^{2}=4 a x}\).
+
+(2) Find \({\int \dfrac{3}{x^{4}} d x}\).
+
+(3) Find \({\int \dfrac{1}{a} x^{3} d x}\).
+
+(4) Find \({\int\left(x^{2}+a\right) d x}\).
+
+(5) Integrate \({5 x^{-\tfrac{7}{2}}}\).
+
+(6) Find \({\int\left(4 x^{3}+3 x^{2}+2 x+1\right) d x}\).
+
+(7) If \({\dfrac{d y}{d x}=\dfrac{a x}{2}+\dfrac{b x^{2}}{3}+\dfrac{c x^{3}}{4}}\); find \({y}\).
+
+(8) Find \({\int\left(\dfrac{x^{2}+a}{x+a}\right) d x}\).
+
+(9) Find \({\int(x+3)^{3} d x}\).
+
+(10) Find \({\int(x+2)(x-a) d x}\).
+
+(11) Find \({\int(\sqrt{x}+\sqrt[3]{x}) 3 a^{2} d x}\).
+
+(12) Find \({\int\left(\sin \theta-\dfrac{1}{2}\right) \dfrac{d \theta}{3}}\).
+
+(13) Find \({\int \cos ^{2} a \theta d \theta}\).
+
+(14) Find \({\int \sin ^{2} \theta d \theta}\).
+
+(15) Find \({\int \sin ^{2} a \theta d \theta}\).
+
+(16) Find \({\int \epsilon^{3 x} d x}\).
+
+(17) Find \({\int \dfrac{d x}{1+x}}\).
+
+(18) Find \({\int \dfrac{d x}{1-x}}\).
