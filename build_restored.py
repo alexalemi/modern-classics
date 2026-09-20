@@ -75,6 +75,8 @@ BLURBS = {
     "american-indian-stories": "Her childhood on the Yankton reservation, her "
                                "schooldays in the East, her stories, and her "
                                "1921 case against the Indian Bureau.",
+    "alice": "The 1907 Wonderland, with Rackham's colour plates at full size "
+             "and the Mouse's tale in its shape.",
     "hunting-of-the-snark": "An agony in eight fits, with Holiday's nine "
                             "illustrations and both of his cover designs.",
     "science-and-hypothesis": "Why one geometry cannot be more true than another, "

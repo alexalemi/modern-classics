@@ -93,7 +93,7 @@ def emph_safe(text):
 class Book:
     def __init__(self, here, zip_name, *, html_name=None, images_subdir=None,
                  drop=(), source_fixes=(), long_side=2000, skip_classes=(),
-                 transnote=True, flatten=()):
+                 transnote=True, flatten=(), replace=None):
         self.here = Path(here)
         self.dir = self.here.name
         self.zip = zipfile.ZipFile(self.here / "_src" / zip_name)
@@ -107,6 +107,9 @@ class Book:
         self.transnote = transnote
         # more wrapper classes to open, per book (the Snark's intro/maintext)
         self.flatten = {"pg_body_wrapper", "chapter", "section", "blockquot", "container"} | set(flatten)
+        # a better scan of a plate: {source name: local path}. The plate keeps
+        # its place and id from the transcription; only the pixels change.
+        self.replace = dict(replace or {})
 
     # ---------------------------------------------------------------- source
     def html(self):
@@ -426,7 +429,8 @@ def copy_plates(book, rows):
         f.unlink()
     names = {n.split("/")[-1]: n for n in book.zip.namelist()}
     for r in rows:
-        data = book.zip.read(names[r["source"]])
+        rp = book.replace.get(r["source"])
+        data = Path(rp).read_bytes() if rp else book.zip.read(names[r["source"]])
         im = Image.open(io.BytesIO(data))
         has_alpha = im.mode in ("RGBA", "LA") or (im.mode == "P" and "transparency" in im.info)
         if max(im.size) > book.long_side:
