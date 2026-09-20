@@ -61,9 +61,10 @@ def vote(book, id1, id2, start):
     for ident in (id1, id2):
         s = fetch(d, ident)
         if start:
-            i = s.lower().find(start.lower())
-            assert i >= 0, f"start phrase not in {ident}"
-            s = s[i:]
+            # OCR sets two spaces between words and breaks lines anywhere
+            m = re.search(r"\s+".join(map(re.escape, start.split())), s, re.I)
+            assert m, f"start phrase not in {ident}"
+            s = s[m.start():]
         scans.append(" ".join(words(s)))
     heads = set(words(" ".join(f.read_text().split("\n", 1)[0] for f in (d / "chapters").glob("*.txt"))))
     envt = (d / "env").read_text() if (d / "env").exists() else ""
