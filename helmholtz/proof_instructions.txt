@@ -1,0 +1,131 @@
+PROOFREADING AND PLATES: Hermann von Helmholtz, On the Sensations of Tone,
+translated by Alexander J. Ellis (second English edition, 1885; this copy
+the 1895 reprint)
+
+You are transcribing pages of a Victorian physics-and-music treatise for a
+RESTORED EDITION: the author's (and translator's) text, unchanged, in clean
+modern markup, formulas typeset, every figure and every passage of musical
+notation cut from the page and captioned. No transcription exists, so YOUR
+READING OF THE PAGE IMAGE IS THE TEXT. The OCR draft is a convenience only;
+it wrecks formulas, note names, tables and the small type.
+
+Read /home/alemi/projects/modern-classics/CAPTIONS.md before starting.
+
+FOR EACH LEAF NNN YOU ARE GIVEN
+  page image:  helmholtz/_src/png/NNN.png  (1900 px wide; Read it; for small
+               type, footnotes, note names, exponents or a figure number,
+               crop and enlarge with a short python/PIL script into YOUR OWN
+               subfolder of your scratch directory, e.g. scratch/h<first>/,
+               since other agents share the scratch directory, and Read it)
+  OCR draft:   helmholtz/_src/draft/NNN.txt
+YOU WRITE per leaf:
+  helmholtz/proof/NNN.txt      the text
+  helmholtz/proof/NNN.plates   figures and music passages on it (omit if none)
+Read the WHOLE page image, top to bottom, every time, INCLUDING every
+footnote and every line of small type.
+
+THE TEXT (proof/NNN.txt)
+- FIRST LINE: "page: <printed page number>" (roman for the prefaces, e.g.
+  "page: vii"), or "page: none"; then a blank line.
+- Every word the page prints, in order, EXCEPT the running head (e.g. "74
+  MUSICAL TONES OF STRINGS. PART I.") and the page number, and EXCEPT the
+  figure numbers and captions, which go in the .plates file.
+- Spelling, capitals, punctuation EXACTLY as printed ("characterised",
+  "colour", "shew" if printed). Do not modernise or correct. An obvious
+  misprint is transcribed as printed and listed in your report.
+- One paragraph per line; blank line between paragraphs. Join a word broken
+  at a line end; keep the hyphen only in a real compound.
+- ASCII " and '. Dashes as —. A page that opens mid-paragraph: first line
+  starts "+ ".
+- ELLIS'S ¶: a pilcrow printed in the LEFT MARGIN beside a line marks a
+  quarter of the page for his index. Write "¶" (with a space after it) at
+  the START of the text of the line it stands beside, inside the paragraph:
+  "... the fourth all other wind instruments. ¶ We now proceed..." if the
+  line begins with "We", or before the first word of that printed line
+  wherever it falls mid-sentence. Never drop one; count them in the report.
+- SQUARE BRACKETS are Ellis's own additions and are part of the text: keep
+  every [ and ] exactly as printed, including across paragraphs.
+
+MARKUP (the only markup there is)
+- *italic* for italic type (section run-in heads like "*Strings excited by
+  Striking.*—", emphasis, foreign words, titles).
+- ^^Small Capitals^^ for words in small capitals inside a line.
+- A HEADING on its own line: its own paragraph, as printed: "PART I.",
+  "CHAPTER IV.", "ON THE COMPOSITION OF VIBRATIONS.", "3. *Musical Tones of
+  Strings.*", "APPENDIX XX.", "SECTION A." etc.
+- FORMULAS: LaTeX. Inline \( ... \); displayed \[ ... \] written inside the
+  paragraph line where it falls (equation numbers with \tag{}). Plain
+  numbers in running prose ("132 vibrations") stay plain text. Fractions
+  and ratios in prose as printed ("3 : 2", "5/4"); a set-up ratio or
+  fraction in a formula as LaTeX.
+- NOTE NAMES are text, exactly as printed, with their marks: accents,
+  primes and commas (c', c'', C, C,, c₁ with subscripts written with the
+  Unicode subscript digits ₁ ₂ ₃, sharps ♯ and flats ♭ as those characters,
+  Ellis's special symbols as the nearest Unicode character with a note in
+  your report). If a symbol has no Unicode form, describe it in the report
+  and write [?] in the text.
+- TABLES: TAB rows, cells separated by " | ", one printed row per line,
+  column headings as the first row(s). Keep every cell, empty ones as "".
+  Numbers exactly; enlarge to check digits.
+- A FOOTNOTE: its own paragraph at the end of the file, "Footnote: " then
+  the mark and text as printed; the mark stays in the body. Several
+  paragraphs: further lines of the same block with no blank line. A
+  footnote continued from the previous page: "Footnote+ " then the text.
+- Verse, a letter, or set-off lines: each printed line on its own line
+  starting with a TAB.
+
+FIGURES AND MUSIC (the .plates file)
+- Every woodcut, diagram, and EVERY PASSAGE OF MUSICAL NOTATION (staff
+  notation, a line of notes, a chord example) is cut from the page. In the
+  text put "[Figure N]" as its own paragraph where it sits (N = its figure
+  number for a numbered figure; for music and unnumbered cuts use "m1",
+  "m2", ... numbered afresh on each leaf, e.g. "[Figure m1]"). If it sits
+  in the middle of a paragraph, write the rest of the paragraph after it
+  starting with "+ ".
+- proof/NNN.plates, one line per cut, TAB-separated, four fields:
+    <id>  <x0,y0,x1,y1[ - blank box ...]>  <printed label>  <caption>
+  id: as in the marker ("12", "m1"). Box: pixels in png/NNN.png holding
+  the figure or the WHOLE music passage (staff, clefs, notes, and any
+  words printed as part of the music, such as note names or numbers under
+  the staff), and nothing of the running text; if body text or another
+  cut intrudes, add " - " blank boxes to whiten it. FIND IT BY CROPPING
+  and reading the crop until it is right.
+  printed label: the book's words under or beside the cut, exactly
+  ("Fig. 12." or "Fig. 12. Siren of Seebeck."); empty if none.
+  caption: YOUR description (CAPTIONS.md), 10-40 words. For MUSIC say
+  what is written: the clef(s), how many bars, the notes or chord named
+  as the text names them, and what the passage illustrates in the text's
+  own words. Never invent notes you cannot read.
+
+REPORT (final message, SHORT; do not quote page text back):
+  NNN  page <n>  ¶: <count>  plates: <ids>  footnotes: <n>
+then misprints kept, anything uncertain, symbols with no Unicode form,
+and anything odd. Change no files other than your own proof/ files.
+
+RULINGS FROM THE PILOT (these override anything above that disagrees)
+1. ¶ IN EITHER MARGIN (right margin on odd pages) is the same mark: "¶ " at
+   the start of the text of the printed line it stands beside. Beside a
+   displayed formula: before the \[ . Beside a set-off line: after the TAB.
+   Beside a figure or music cut: at the start of the NEXT text after it.
+2. ITALIC AND WORD CHARACTERS. The renderer only sees *...* as italic when
+   the opening * does not follow a letter or digit. So:
+   - page-quarter letters glued to page numbers are ROMAN: "16d", "215d'",
+     "p. 220c" (never "16*d*");
+   - a note name with a superscript prefix puts the prefix INSIDE the
+     italics: "*¹¹a'*♭", "*⁷b*♭"; sharps/flats may stay outside;
+   - italic note names otherwise as printed: "*c'*", "*CE₁G*".
+3. FOOTNOTE MARKS: an asterisk mark is written ⁎ (U+204E), in the body and
+   at the start of the footnote ("Footnote: ⁎ ..."); † ‡ § ‖ as printed.
+   A bare * is only ever part of *italic*.
+4. Small-capital A.D. / B.C. are written "A.D." / "B.C." with no markup.
+   Small capitals opening a paragraph ("In", "The"): plain, no markers.
+5. The printer's space before ; : ? ! is closed up ("tone:", "said;").
+6. A music passage's printed title: if it carries no footnote mark, it is
+   the plate's printed label (and not in the text); with a mark, it stays
+   in the text and the label is empty.
+7. Stacked figured-bass numbers: \(\substack{6\\3}\). Equation lines
+   numbered on the left: "1) \quad ..." inside the display.
+8. BOX EDGES: find a cut's edges from dark-pixel row/column profiles
+   (PIL), then confirm by cropping; eyeballing clips double bars and
+   hairlines.
+9. Each agent keeps its scratch files in its own subfolder.
