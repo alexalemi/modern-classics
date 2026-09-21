@@ -144,6 +144,9 @@ BLURBS = {
     "russell-imp": "What a number is, and the sizes of infinity, written in "
                    "prison as the plain road into Principia Mathematica. The "
                    "1920 text, its formulas typeset.",
+    "verrill": "Every useful knot, from the square knot to the Turk's "
+               "head, with all 148 drawings described so the rope can be "
+               "followed.",
     "irish-fairy-tales": "Ten stories of Fionn, the Fianna and the Shi’, with "
                          "Rackham’s colour plates and drawings, and the "
                          "captions Gutenberg dropped.",
