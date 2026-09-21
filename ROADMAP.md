@@ -925,3 +925,35 @@ Done from Alex's 2026-09-20 request: Calculus Made Easy (restored).
 Ruled out: Rogers, Physics for the Inquiring Mind (1960), renewed by the
 author 21 Dec 1988 (RE414029), protected in the US to 2055; likewise his
 Teaching Physics for the Inquiring Mind (RE479510).
+
+### Working list, Alex, 2026-09-20, second batch (the titles not already done)
+
+From Alex's topic list of 2026-09-20. The titles on it that are already in
+the collection (Calculus Made Easy, Whitehead, Byrne, Symbolic Logic,
+Bridgman, Relativity, the Candle, Poincaré, Newcomb, Origin of Species, How
+Plants Grow, James, Wells, Cardozo, Holmes, the Federalist, Tocqueville,
+Russell's Problems, Plato's Euthyphro and Apology, Descartes' Discourse,
+Aristotle's Rhetoric, Erdnase) are not repeated; Helmholtz, Gray's Anatomy
+and Tarbell are in the first table. The copyright column is a FIRST READ.
+
+| Title | Author | First read |
+|---|---|---|
+| Elements of Algebra (English 1822) | Euler | PD |
+| Introduction to Mathematical Philosophy (1919) | Russell | PD (US, pre-1929) |
+| The Radio Amateur's Handbook, 1930 edition | ARRL | PD in the US since 1 Jan 2026 (1930 works); confirm the edition's date |
+| JetStream online school | National Weather Service | US government work, PD; a current web text, not an old book |
+| Handbook of Birds of Eastern North America (1895) | Frank M. Chapman | PD |
+| Microbe Hunters (1926) | Paul de Kruif | PD in the US since 2022 (1926 works) |
+| Garden Cities of To-morrow (1902) | Ebenezer Howard | PD |
+| The Elements of Style (1918) | William Strunk Jr. | PD; the 1918 privately printed text, not the later White revisions |
+| The Handyman's Book (1903) | Paul N. Hasluck | PD |
+| The Boston Cooking-School Cook Book (1896) | Fannie Farmer | PD |
+| The American Practical Navigator | Nathaniel Bowditch | US government work (current NGA edition); PD |
+| Farm Blacksmithing (1901) | J. M. Drew | PD |
+| The Dressmaker (1916) | Mary Brooks Picken | PD |
+| Knots, Splices and Rope Work (1917) | A. Hyatt Verrill | PD |
+| The American Woman's Home (1869) | Catharine Beecher and Harriet Beecher Stowe | PD |
+| The Practice and Science of Drawing (1913) | Harold Speed | PD |
+| Chess Fundamentals (1921) | José Raúl Capablanca | PD (US, pre-1929) |
+| Modern Magic (1876) | Professor Hoffmann (Angelo Lewis) | PD |
+| The Age of Fable (1855) | Thomas Bulfinch | PD; Gutenberg #4925 (The Age of Fable alone), #3327 and #56644 (Bulfinch's Mythology). Added by Alex 2026-09-20 |
