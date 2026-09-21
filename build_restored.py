@@ -150,6 +150,9 @@ BLURBS = {
     "howard": "The Three Magnets and the town of 32,000 in its belt of "
               "farmland: the book that invented the garden city, its "
               "diagrams transcribed.",
+    "speed": "Line and mass, rhythm and balance: a painter on what drawing "
+             "is and how to learn it, with all eighty-eight illustrations "
+             "described.",
     "irish-fairy-tales": "Ten stories of Fionn, the Fianna and the Shi’, with "
                          "Rackham’s colour plates and drawings, and the "
                          "captions Gutenberg dropped.",
