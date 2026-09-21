@@ -1,0 +1,15 @@
+page: 375
+
++ of length, and \(T\) the tension of the string. The differential equation of motion is then \[\mu \,.\, \frac{d^2y}{dt^2} = T \,.\, \frac{d^2y}{dx^2} \tag{1}\]
+
+Then, since the extremities of the string are assumed to be at rest, we must have \[y = 0 \text{ when } x = 0, \text{ and also when } x = l \tag{1a}\]
+
+The most general integral of the equation (1) which fulfils the conditions (1a) and corresponds to a periodic motion of the string, is ¶ \[\left.\begin{aligned} y = {} & A_1 \,.\, \sin\frac{\pi x}{l} \,.\, \cos 2\pi nt + A_2 \,.\, \sin\frac{2\pi x}{l} \,.\, \cos 4\pi nt \\ & + A_3 \,.\, \sin\frac{3\pi x}{l} \,.\, \cos 6\pi nt + \&c. \\ & + B_1 \,.\, \sin\frac{\pi x}{l} \,.\, \sin 2\pi nt + B_2 \,.\, \sin\frac{2\pi x}{l} \,.\, \sin 4\pi nt \\ & + B_3 \,.\, \sin\frac{3\pi x}{l} \,.\, \sin 6\pi nt + \&c. \end{aligned}\right\} \tag{1b}\] where \(n^2 = \frac{T}{4\mu l^2}\) and \(A_1, A_2, A_3\), &c., and \(B_1, B_2, B_3\), &c., are any constant coefficients, which can be determined when the form and velocity of the string are known for any determinate time \(t\).
+
+For \(t = 0\), the form of the string will be \[y = A_1 \,.\, \sin\frac{\pi x}{l} + A_2 \,.\, \frac{\sin 2\pi x}{l} + A_3 \,.\, \sin\frac{3\pi x}{l} + \&c. \tag{1c}\] and the velocity of the string will be ¶ \[\frac{dy}{dt} = 2\pi n \left(B_1 \,.\, \sin\frac{\pi x}{l} + 2B_2 \,.\, \sin\frac{2\pi x}{l} + 3B_3 \,.\, \sin\frac{3\pi x}{l} + \&c.\right) \tag{1d}\]
+
+Now suppose the string to have been drawn aside by a sharp point, and that the point was withdrawn at the time \(t = 0\), so that the vibration commenced at that moment, then for \(t = 0\) there was no velocity, that is \(\frac{dy}{dt}\) was \(= 0\) for all values of \(x\). This can only be the case when in equation (1d), \(0 = B_1 = B_2 = B_3 = \&c.\)
+
+The coefficients \(A_1, A_2, A_3\), &c., depend on the shape of the string at the time \(t = 0\). At the moment the sharp point quitted it the string must have assumed the position of fig. 18 A (p. 54a), that is, it must have formed two straight lines proceeding from the sharp point to the fixed extremities of the string. Supposing the position of the sharp point at that moment to be determined by \(x = a\) and \(y = b\), then for the time \(t = 0\), the value of \(y\), was \[y = \frac{bx}{a} \text{ if } a > x > 0 \tag{2}\] ¶ \[\text{and } y = b \,.\, \frac{l - x}{l - a} \text{ if } l > x > a \tag{2a}\] and the values of \(y\) in (1c) and (2), or else (2a) respectively, must be identical.
+
+To find the coefficient \(A_m\), the well-known method is to multiply both sides of the equation (1c) by \(\sin\frac{m\pi x}{l} \,.\, dx\), and to integrate between the limits \(x = 0\) and \(x = l\). In this case equation (1c) reduces to \[\int_0^l y \,.\, \sin\frac{m\pi x}{l} \,.\, dx = A_m \,.\, \int_0^l \sin^2\frac{m\pi x}{l} \,.\, dx \tag{2b}\] in which \(y\) must be replaced by its values in (2) and (2a). Performing the integrations indicated in (2b) we find \[A_m = \frac{2bl^2}{m^2\pi^2 a(l - a)} \,.\, \sin\frac{m\pi a}{l} \tag{3}\]

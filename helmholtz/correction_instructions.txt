@@ -1,0 +1,66 @@
+OCR CORRECTION PASS: Helmholtz, On the Sensations of Tone (Ellis, 1885)
+
+PUBLIC DOMAIN. Helmholtz (1821-1894) and his translator Ellis (1814-1890)
+died over 125 years ago; the page images are the 1895 printing, openly
+available at archive.org/details/onsensationsofto00helmrich. This is a free,
+non-commercial educational edition for the Modern Classics project.
+
+WHAT YOU DO. Each page already has a machine draft made from Archive.org's
+OCR, in this edition's markup: helmholtz/preproof/NNN.txt. You do NOT retype
+the page. You compare the draft with the page image and write only the
+CORRECTIONS, as fix blocks, into helmholtz/fixes/NNN.fix. Then you run
+
+    python3 helmholtz/apply_fixes.py NNN
+
+which applies your fixes and writes helmholtz/proof/NNN.txt. It refuses a
+block whose OLD text is not found exactly once; fix the block and rerun.
+
+THE TARGET is exactly the format in helmholtz/proof_instructions.txt: READ IT
+FIRST, including every RULING at its end (¶ marks, italics next to digits,
+⁎ for asterisk marks, footnotes, tables as TAB rows, LaTeX for formulas,
+note names, "+ " for a page that opens mid-paragraph, the "page:" line, and
+the .plates file for every figure and music passage). Everything that file
+says about the TEXT applies to the result of your fixes; everything it says
+about the .plates file applies unchanged (you still write proof/NNN.plates
+yourself, and put the [Figure N] markers in the text with fixes).
+
+FIX BLOCKS, one per correction, in reading order:
+
+    <<<
+    exact text now in the draft
+    ===
+    what it should be
+    >>>
+
+- HARD LIMIT: no block's NEW text may be longer than about 300 characters
+  (two or three printed lines). A footnote or paragraph with many errors is
+  fixed with SEVERAL SMALL BLOCKS, one per error, never replaced whole. The
+  draft's words are almost all right; your job is the ones that are not.
+  (Only a table or formula the OCR destroyed may be one longer block.)
+- Keep each OLD SHORT: the wrong word with just enough neighbouring words to
+  be unique ("characterised H by" -> "characterised ¶ by"). Never paste a
+  whole paragraph as OLD unless the paragraph is wrong throughout.
+- Italics and small capitals are fixes too: "the pianoforte, harp" ->
+  "the *pianoforte*, *harp*".
+- A missing paragraph break: OLD "... voice. Strings" NEW "... voice.\n\nStrings";
+  a wrong one the reverse. Footnotes the draft missed or misordered: move
+  them with fixes (OLD the footnote text, NEW empty; then insert it where it
+  belongs). A footnote continued from the previous page: "Footnote+ ".
+- The running head and page number: the draft drops them and writes
+  "page: N" from them; correct that line if it is wrong ("page: none" on a
+  page that prints no number).
+- A figure or music passage the OCR turned into debris: replace the debris
+  with the "[Figure N]" marker line (and write the .plates line).
+- A TABLE or a formula the OCR mangled beyond repair: one block replacing
+  the mangled span with the correct TAB rows or LaTeX.
+- A word broken at a line end: the draft closed the hyphen up; restore it
+  only for a real compound.
+
+Read the WHOLE page image, top to bottom, including every footnote; enlarge
+crops (PIL, into your own scratchpad subfolder) for small type, note names,
+exponents and figure numbers. After apply_fixes.py says ok, READ your
+proof/NNN.txt once against the image and fix anything still wrong.
+
+REPORT (final message, SHORT, never quoting page text):
+  NNN  page <n>  fixes: <count>  ¶: <count>  plates: <ids>  footnotes: <n>
+then misprints kept and anything uncertain.

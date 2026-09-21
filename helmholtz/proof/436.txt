@@ -1,0 +1,23 @@
+page: 408
+
++ and obtain as the equation of motion \[\frac{d^2z}{dr^2} + \frac{1}{r} \cdot \frac{dz}{dr} + \frac{1}{r^2} \cdot \frac{d^2z}{d\omega^2} = \mu \cdot \frac{d^2z}{dt^2} + \nu \cdot \frac{dz}{dt} - A \cdot \cos nt \tag{2}\]
+
+Of the various motions which the membrane could execute under these circumstances, we are interested solely in those which are maintained by the continuous periodical action of the force, and which must themselves have the same period. Let us consequently assume \[z = \zeta \cdot e^{int}, \text{ where } \mathrm{i} = \sqrt{(-1)} \tag{2a}\] and determine \(\zeta\) by the equation ¶ \[\frac{d^2\zeta}{dr^2} + \frac{1}{r} \cdot \frac{d\zeta}{dr} + \frac{1}{r^2} \cdot \frac{d^2\zeta}{d\omega^2} + (\mu n^2 - \mathrm{i}n\nu) \cdot \zeta = - A \tag{2b}\]
+
+In this case the real part of the value of \(z\) will satisfy equation (2) and correspond to a uniformly sustained oscillation of the membrane.
+
+Having thus eliminated the variable \(t\) from the differential equation, we proceed to do the same for \(\omega\) by means of the first limiting equation, after transforming both \(\zeta\) and the constant \(A\) into a series of cosines of uneven multiples of the angle \(\frac{\pi\omega}{2\epsilon} = h\omega\). It is well known that between the limits \(h\omega = + \frac{1}{2}\pi\) and \(- \frac{1}{2}\pi\) \[A = \frac{4A}{\pi} \cdot \left(\cos h\omega - \frac{1}{3} \cdot \cos 3h\omega + \frac{1}{5} \cdot \cos 5h\omega + \dots\right) \tag{3}\]
+
+If in the same way we put ¶ \[\zeta = s_1 \cdot \cos h\omega - \frac{1}{3} \cdot s_3 \cdot \cos 3h\omega + \frac{1}{5} \cdot s_5 \cdot \cos 5h\omega + \dots \tag{3a}\] then for each coefficient \(s_m\) we must have \[\left.\frac{\mathrm{d}^2s_m}{dr^2} + \frac{1}{r} \cdot \frac{ds_m}{dr} + \left(\mu n^2 - \mathrm{i}n\nu - \frac{m^2h^2}{r^2}\right) \cdot s_m = - \frac{4A}{\pi}\right\} \tag{3b}\]
+
+And since the first of our limiting conditions is satisfied by the equation (3a), whenever the series converges, there remain only the conditions that
+	1) \(s_m = 0\) for \(r = 0\),
+	2) \(s_m\) finite, for \(r = \infty\).
+
+It is easily seen that every \(s_m\) is perfectly determined by these conditions. For if there were two different functions which satisfied the equation (3b) and the two limiting conditions, then their difference, which we will call \(\delta\), would satisfy the ¶ conditions \[\frac{d^2\delta}{dr^2} + \frac{1}{r} \cdot \frac{d\delta}{dr} + \left(\mu n^2 - \mathrm{i}n\nu - \frac{m^2h^2}{r^2}\right) \cdot \delta = 0 \tag{3c}\] and hence be a Bessel's function, and at the same time we should have
+	1) \(\delta = 0\) for \(r = 0\),
+	2) \(\delta\) finite, for \(r = \infty\).
+
++ But these two conditions cannot be satisfied at the same time by a Bessel's function, when \(\nu\) has a value differing ever so little from 0. It is only when \(\nu = 0\), that is, when there is no friction, that the determination is insufficient. In that case oscillations once induced may continue for ever, even when there is no force to give fresh impulses.
+
+Particular integrals of the equation (3b) may be easily developed in the form of series, resembling the series for the related Bessel's functions which satisfy equation (3c). One of these series proceeds according to integral powers of \(r\) and is always convergent. But when the angle \(\epsilon\) is very small, the number of terms

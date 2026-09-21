@@ -1,0 +1,335 @@
+
+== OCR-correction pass (fixes/ + apply_fixes.py), from 2026-09-20 ==
+069 (p. 43): printed "some" for "same" near the top, KEPT. Asterisk note,
+  F-sharp partials: third written c'♯ -- the prime is under the sharp and
+  not visible; c'♯ is the correct partial. "res'onătors" with a breve.
+  Plates 16a, 16b (printed "Fig. 16 a.", "Fig. 16 b.").
+073 (p. 47): under-tone commas (A,♭ F,, D,, C,) read from pitch; the marks
+  are small in the scan. Draft folio misread "4".
+075 (p. 49): chapter subtitle had been drafted as a footnote; signature
+  letter "E" at the foot dropped.
+DRAFT BEHAVIOUR: the OCR often ends a paragraph at a margin ¶, so the draft
+  splits paragraphs there; correctors rejoin them.
+134-145, 193-195 (pp. 108-119, 167-169):
+  KEPT: 134 "vibrations,and"; 136 dagger note's "]" with no "["; 194
+  "Donder's"; 140 "tuned to b'♭" roman as printed. NORMALISED: 135 small
+  table's c'''♯ set italic like its neighbours.
+  SYMBOLS: Merkel/Trautmann "obscure" vowel mark = ‵ (U+2035) after the
+  letter, against ' for "clear"; Merkel's O with superscript a = Oᵃ; the
+  text's O with subscript a (139, 140) = Oₐ; Nᵍ; A° as printed.
+  UNCERTAIN: 135 big table, row 9 Ö column "Ö," (no accent visible), row 3
+  e' 330 and c' 262 (stray marks); Willis's Pet/See at c''''' and g'''''
+  (five primes). A ¶ beside a word broken at the line end goes before the
+  joined word (139, 140, 144). 145: the rule before CHAPTER VI is unmarked.
+  METHOD that got interleaved two-column footnotes past the size limit:
+  one block deletes the garbled region, then chained <=280-char blocks
+  rebuild the notes on a temporary anchor the last block removes.
+226-240 (pp. 200-212):
+  DUPLICATE LEAVES: 230 and 231 are second scans of pp. 202-203 (proofs
+  identical to 228, 229). Prep must drop them.
+  KEPT: 229/231 asterisk note prints "=" where a minus is meant
+  ("57·1824 = 52·8176 = 4·3648").
+  UNCERTAIN: 226 third ¶ between two lines, placed at the lower; 237
+  c'⁷b'♭ read by analogy with e'⁷b'♭ and g'⁷b'♭ (OCR lost it); 234 page
+  refs 141d', 141d, 33d, 94d', 94d, 57d' read from enlargement.
+  240: the interval table (8 x 7) replaced whole, as allowed.
+241-259 (pp. 213-231):
+  KEPT: 242 First Chord list numbered 1), 3), 4) with no 2); 243 "ast note"
+  for "last"; 248 "FA₁C₂ GB₁D" with no comma between the chords; 249 item
+  5) "40 − 12 = 18" where 30 − 12 is meant, and a comma for a full stop
+  after "Chord 12, 15, 40,"; 257 § note ends "§ 7,".
+  UNCERTAIN: 243 "one-sixth of C'' = 528"; 249 a faint half-printed ¶ in
+  the right footnote column, counted. 246: two ¶ beside two music cuts
+  both land at the next text ("¶ ¶"). 244 square natural sign = ♮.
+  MUSIC CUTS: the Interval/Ratio/Difference rows, chord numbers and labels
+  printed inside the cuts (243, 246-249, 252) are NOT in the text; they are
+  on the plates. Prep must caption them from the plate, not assume them.
+051-055, 083-085, 089-090 (pp. 25-64):
+  KEPT: 090 note prints a comma for the full stop before "This gives the
+  colour". 085 ink blot over the r of "or", written "or". Specks dropped
+  after "steamboat." (052) and "from" (084). Real compounds kept:
+  "wine-growing" (089), "span-grün" (090). 054: one long italic sentence
+  split into two spans at a comma (over EMPH's 400-character cap).
+  051: ¶ between "CHAPTER II." and its subtitle, set on the heading.
+260-275 (pp. 232-247):
+  262 opens Part III, prints no number. KEPT: 263 "Harmonic Tissues";
+  264 "esthetically" (Ellis throughout); 271 "the tonic Ansa.". 274
+  "contri vances" split with no hyphen, joined.
+  UNCERTAIN: Greek of Aristotle, Dionysius, Nicomachus (265, 266, 268, 269)
+  rebuilt from crops, accents/breathings on small type may differ; macrons
+  on Greek note names (Hypătē, Mĕsē) in 270/269; 270 tetrachord brace
+  labels; 271 Jones footnote's romanised Sanskrit (Náráyan, Rágas, ...),
+  and an ellipsis written where the OCR lost the words after "according
+  to Sóma" -- CHECK ON THE SCAN; 275 "some four bars".
+CONVENTION: a ¶ beside the second half of a word broken at a line end goes
+  BEFORE THE WHOLE WORD ("¶ circumstance"). One early proof writes
+  "our-¶ selves"; prep normalises any "-¶ " form.
+223-225, 276-281 (pp. 197-199, 248-253):
+  223: the OCR cut off every line's right margin; body rebuilt. The
+  16-harmonics table (17 columns) sits inside footnote † as rows after
+  the note. KEPT: row 23 prints 1518 under column 11, where 23 is not a
+  multiple of 11 and row 22's 1452 is blank -- probably a misplaced 1452;
+  dashes for some multiples (row 24 col 8, col 2 from row 26). 225
+  "201 - 100 = 101" plain in the prose.
+  279: Aristotle, Problems xix. 29 and 27, retyped in polytonic Greek;
+  CHECK breathings/accents on the short negative before its comma, the
+  capital opening "the actions", and the participle meaning "following".
+  223 header note names: ⁷b'♭, ¹¹f'', ¹³a'', ⁷b''♭.
+  CONVENTION OPEN: a page-quarter letter after a comma ("254c, d") -- the
+  second letter roman or italic varies between proofs; prep normalises.
+092-094, 125-132 (pp. 66-106):
+  129: section heading "7. Vowel Qualities of Tone." was missing from the
+  draft, added. KEPT: 128 prints the § mark twice (after "tones." and
+  "clarinet,") for one § note; both transcribed.
+  125: "Just discernible" printed vertically across column 2 of the
+  clarinet table, set in the first data row with "" below; cents table
+  dot leaders dropped, printed commas kept ("0,", "204,"); E,♭ with the
+  comma inside the italics. Signature marks dropped ("H 2", "F 2").
+302-311 (pp. 274-283):
+  KEPT: 307 "Nowthese"; 310 "considers, the scales"; 309 "vol i." (no
+  stop). 309 "Kiesewetter and von Hammer-Purgstall" / "Orientalist, and
+  the second" printed without word spaces, spaced here.
+  CONVENTIONS (now ruling 11): skhismic grave prefix = backtick; comma sign
+  ‿; barred notation with combining macron / low line.
+  UNCERTAIN: 302-303 "Related to c / g / F" relation lines, dash counts
+  approximate; 305 footnote's first barred example small and hard to read;
+  309 cents table as 4 columns, first row two empty cells.
+322-331 (pp. 294-303):
+  KEPT: 322 ‡ table left column G₁ where its row begins G; mode 5's first
+  note b♭ without its 1; "an added c:" colon for a stop; 323 "Mctrik";
+  323 continued § note has no closing bracket.
+  CONVENTIONS SET HERE (apply to 321, p. 293, modes 1-2 of the same
+  series): the braced chord-chain diagrams are unnumbered plates, the
+  mode label stays in the text as its own small-caps paragraph with any
+  note mark; chord chains in running text as "*c* + *e₁* - *g*"; cents
+  spaced "*c* 204 *d* 112"; small-caps centred headings in capitals. 330
+  "1 [C]⁎ 2 [C] 3 [C]" above the music kept as text (carries a mark).
+  Page-broken word "harmonious-" / "+ ness" left as printed; prep joins.
+  UNCERTAIN: 325 ¶ between a mode label and its diagram, put before the
+  label; 331 ¶ in blank space above a heading, put at the paragraph below;
+  324 "Geschichte der Musik" (broken e), "th? minor" read "the".
+282-291 (pp. 254-263):
+  KEPT: 287 scale 6 ends c where c' is expected; 287 † row 5 roman "d♯"
+  among italics, and a malformed sharp on g in row 4 (g♯). 291 stray dot
+  after 9/8 dropped as a speck.
+  CONVENTIONS: semitone tie = ⌣ (U+2323); 282 braced tetrachords c-f' cut
+  as plate m1; 291 braced ratios set as a third table row under the upper
+  note. A ¶ beside the last music cut, with only a footnote after it, goes
+  at the start of the footnote text (288, 289) -- CONFIRM IN PREP.
+  UNCERTAIN: 291 blotted last note of row 8's "(play ...)" read c'.
+296-301 (pp. 268-273):
+  KEPT: 299 "Third upper partial tones" row ends d'' (d''' expected); 297
+  carried-over note's scale ends c (c' expected); 296 Westphal note prints
+  "Hypc-" for Hypo-. 296 stray tick after "tonic." dropped as debris.
+  298: the later-Greek two-octave scheme is an unlabelled plate m1; the
+  fifteen key names set as one 15-row list, "later additions" cell on rows
+  13-15 where the brace sits; 297 brace joining Glarean's "Lydian" to modes
+  6 and 7 written "Lydian" in both rows. 301 damaged first scale line read
+  "c — —" from its neighbours. Short rules "–", long "—".
+312-321 (pp. 284-293):
+  312: Land's twelve Arabic scales, twelve cents tables with running totals
+  -- every total checked and correct. KEPT: 312 'Irāq scale E with a
+  superscript ¹ where every other case has subscript ₁ (`E¹); 313 one roman
+  E♭ among italic notes; 314 Greek "παὶ πίεσιν" as printed.
+  321 mode labels as small-caps paragraphs, chord-chain diagrams m2, m3.
+342-351 (pp. 314-323):
+  KEPT: 349 † note "sought o identify" (to printed o). Spacing only:
+  "exactly2 cents", "III.are" spaced. Spaced double sharps written ♯♯.
+  PREP MUST: 346 scales 9)-14) carry Ellis's Pythagorean minor Third sign
+  as a bare "|" in TAB set-off lines -- the renderers split " | " into
+  table cells. Convert that sign to ∣ (U+2223) in prep, and grep every
+  proof for bare " | " outside real tables.
+  UNCERTAIN: 342 low B printed "B," (comma below, not subscript 1), first
+  roman then italic, kept; 342 combinational-tone differences as their own
+  rows with an empty first cell; 345 asterisk marks as ⁎ before the note;
+  345 ¶ inside a table row before E; 348 final "C," of the meantone scale
+  roman; 348 †/349 † fractions 5⅓ cents; 351 "p. 77b" roman per ruling 2.
+  344 m1: the two-row harmonium tuning chain with braces, cut as a plate.
+352-361 (pp. 324-333):
+  358 opens CHAPTER XVII (the draft had "OF DISCORDS." as a footnote).
+  360: the whole page is the tabular expression of Fig. 61 (39 rows), set
+  as a footnote ("Footnote: ⁎") because its reference is in the Fig. 61
+  label -- AN INFERENCE, check in prep; 361 continues it (Table of
+  Roughness). Equal-temperament double bar written ‖ (U+2016), never ||.
+  KEPT: 357 53-division table A'♭ with a prime where A¹♭ fits the pattern;
+  its 17-degree row headed plain E though 386 cents is E₁; 353 Delezenne
+  "numérique" singular; 361 "following by its roughness".
+  353: "de", "premier", "semestre" print with a damaged e that looks like
+  c, read e. 357: Bosanquet's signs are a literal "\" and "/" before the
+  note ("\ *c*") -- CHECK THE RENDERER does not read the backslash as LaTeX.
+  352: space before a full stop after a closing bracket closed up.
+392-401 (pp. 364-373):
+  400 prints no number (Appendix I begins). KEPT: 394 "enchance"; 401
+  table row 8 b'♭ duplicating row 6; 401 "metal cubes" (tubes?).
+  401 braced "Neck funnel shaped" over rows 1-7 put in row 1 with "" below.
+  400 "electro-magnet(ic)" hyphen restored as elsewhere; "semirotation"
+  left closed. 393 "supra" roman as printed. Signatures "B B", "B B 2" out.
+332-341 (pp. 304-313):
+  KEPT: 340 display (8/9)⁶ = 2 × 74/73 where (9/8)⁶ is meant; 340 note
+  "The Italian names for b, b♭" (sense: b♭, b♮); 341 table perfect
+  Semitone 16/15 with 182 cents (16/15 is ~112); 341 equal Semitone printed
+  16/25 × 147/148 where 16/15 is meant; 335 ‡ chord 6 "e₁ + g₂♯ - b" with no
+  subscript on b; 336 ‡ d♯ without subscript (the sharp may hide one).
+  TODO IN PREP: 340 footnote writes "[?]" for FOUR glyphs with no Unicode
+  form (square-bottomed b, cursive German h, crossed two-stroke form, the
+  form it "degenerated into"), five occurrences. Cut each from the page
+  image as an inline glyph (the byrne ⟦g:ID⟧ mechanism) with alt text.
+  340 uses ⌞ ⌝ for the two-part stroke pair. 333: a lone ‡ outside the m3
+  cut kept as "+ ‡" paragraph. "organ-builders" (341) kept hyphenated.
+372-381 (pp. 344-353):
+  KEPT: 372 note first subminor-Seventh chord "E C G ⁷B♭" (probably
+  C E₁ G ⁷B♭); 373 first cents display d for d₁; 373 last display a₁♭
+  where the formula has a¹♭; 373 ratio 75/74 under c¹♭...d₁ (75/64 meant);
+  374 ⁎ note "d'♭" (d'''♭?); 376 stray second bracket before "Sixte"; 377
+  the flat after a¹ missing in the Ninth chord; 380 § note "d 114 d♭ 90 d"
+  (should end c?).
+  CONVENTIONS: brace-and-ratio displays as LaTeX \underset; stacked
+  fractions in prose as 7/4, mixed numbers \(7\tfrac{1}{9}\); the broken bar
+  as a plain | (PREP: same " | " hazard as 346); ‖ for equal temperament;
+  ♭♭ double flat. 379: the draft lost the last word of nearly every line.
+382-391 (pp. 354-363):
+  KEPT: 386 minor-case chord c¹♭ where e¹♭ is meant; 389 "a - c' + e₁'"
+  without a₁; 389 "b₁ - d' ... g" unprimed g.
+  386 rebuilt whole; ten unnumbered cuts m1-m10, four inside footnotes as
+  "[Figure mN]" on their own line in the note (FIRST TIME: check that prep
+  and the renderer accept a marker inside a footnote). The †, ‡ and §
+  marks sit INSIDE cuts m5/m6, so those notes have no mark in the body.
+  391: two asterisk marks in the body, one footnote here, attached to the
+  first; the second note presumably on p. 364. 389 chord pairs as TAB rows.
+412-421 (pp. 384-393, Appendix formulas) -- FOR THE FORMULA CHECK:
+  KEPT: 413 A_n, B_n formulas have t where τ is expected (eq. 2 has τ);
+  414 "p. 575b" (375b?), second sum of eq. (3) sin 2πx/L where nπx/L is
+  expected, "Hence after the time t"; 415 velocity printed with Greek ν
+  ("2ν") for v, next formula "Lt" for LT; 416 potential formula has no
+  symbol before "=", argument 2νπνt (2νπnt expected), "(1 + α)" roman 1
+  for l; 421 table rounding 139·83 vs 139·84 etc.
+  416 the constant is α (confirmed at zoom); on 417-421 the same constant
+  is italic a. 417 "Cæteris" (æ or œ). Mid-dot decimals kept (15·6).
+432-442 (pp. 404-414, Appendix formulas):
+  KEPT: 432 display prints α² where the text multiplies by a²; 435 "where
+  is a positive real constant" missing ν; 437 (4b) opens a parenthesis and
+  never closes it; "must be the infinite", "will be the finite" as
+  printed; 438 "when y = ± β" (½β meant?). 438 broken raised o in
+  "edition" written plain.
+  UNCERTAIN: 437 φ integral of (4), exponent read u^{−mh−1}; 435/439 the
+  coordinate paired with ξ set \upsilon, distinct from friction ν -- hard
+  to tell in the type. 434 "basilāris", "cochlĕa" kept with marks.
+402-411 (pp. 374-383):
+  404 REDONE: its first proof (by a batch the filter stopped) had a stray
+  "3" opening a paragraph and a line broken off at "by m"; moved to redo/.
+  402 and 403 came from the same stopped batch -- recheck in the QA pass.
+  KEPT (formula check): 411 first integral's upper limit roman "2i" for 2l
+  (\mathrm{i}); 411 y¹ second term (x − at − c) vs first (x + at − c);
+  408 first integral 2πnmB_m ∫₀ sin² has no upper limit (broken type?);
+  407 (8b) denominator "f² − Mm)²" no opening bracket, no square on m; 407
+  weights listed "M, T, η" where the formula uses μ; 406 (8a) second line
+  no closing square bracket after "pT . cos pl". 407 (9) "sin ²pl" written
+  \sin {}^2pl. 411 "p. 76d'" kept with its prime.
+446-455 (pp. 418-425):
+  DUPLICATE LEAVES: 452/453 are photographs of pp. 424-425 (book edges
+  visible); 454/455 clean scans of the same pages. Byte-identical proofs;
+  prep drops 452-453. (With 230-231: prep must dedupe by page number.)
+  KEPT: 447 "(c + d − 1) order" without "th"; 450 major-keys column C where
+  C♯ is meant; 450 "born at Hull, in 1783. and died"; 453/455 "art.18".
+  453/455 a mark after g♯ that could be subscript ₁ or a flaw, written g♯;
+  "théorique" (accent displaced in print). 452/454 Curwen's letter to the
+  Times kept as a footnote line, not set off.
+425-431, 443-445 (pp. 397-417):
+  KEPT (formula check): 429 "consonants" for constants; 429 resonance
+  maximum printed τ₂ = ¼π where the text implies ½π; 430 root term below
+  (4a) ¼b² where (4a) has ¼b⁴; 431 equation number (5) used twice; 444
+  "Appendix VI., p. 597c" (397c meant).
+  425: the draft carried text from ANOTHER PAGE at its top (hOCR page
+  bleed) -- worth a QA sweep of every proof's first paragraph against its
+  neighbour's last. 428 zigzag branch letter read l, not 1. 425 "vol. l."
+  (roman 50). 427 "+ ¶ ¶ between" (two ¶ beside a figure and next line).
+456-465 (pp. 426-435):
+  KEPT: 456 "ut ri mi fa sol", "Mme. É" (no stop); 457 "theoretica
+  reasons", "Universityof"; 463 Art. 15 "Then from art. 16" (13 meant?),
+  "p. 281c'"; 465 "inperceptibly"; 465 Art. 18 display 21·506 − 1·072
+  printed beside 20·534 (does not subtract; kept). 460 asterism ⁂;
+  Bosanquet's signs "/", "\ e", "\ \ c". 465 a 19-column note table
+  mid-paragraph. 461 entry 23 joined across the column break.
+362-371 (pp. 334-343):
+  KEPT: 362 6/3 for the just minor Third (checked enlarged); b¹ with a
+  superscript 1 heading the major-scale chain; "c + e" in the ‡ note; 366
+  stray "." in "c ± g . a₁"; 370 "a 702" for a₁; 16/2 for 16/9 under m4.
+  INCONSISTENT, PREP NORMALISES: a note with a prime before its subscript
+  is e₁' on 363 and e'₁ on 370. 365 "(d ♭ + f)" may have lost a ¹.
+476-485 (pp. 446-455, the tables of intervals):
+  KEPT: 477 art. 6 "less" with no "than" before 11290; 479 Ex. 2 of art. 12
+  result 1029·5707 where the rows sum to 1029·577; 483 art. 10 "10" no
+  stop; 483 row 76 "76.050" full-stop decimal; 484 row 200 "1 : ⁶√2 =
+  1·22462" and 485 row 450 "²⁴√2⁹ = 1·297" lacking "1 :". 480 PRINCIPAL
+  TABLE read cell by cell; many printed quotients and logs differ by one
+  in the last place from computed values (row 7 quotient 40, row 17 log
+  427) -- all kept; a computed-table check belongs in prep (the fleming
+  rule) but must REPORT, not correct.
+  485 row 500 radical index broken in print, written \sqrt[12]{2^5} from
+  the printed 1·3348. Ditto marks „. Quarter-tone sign 𝄳. Pencil figures
+  on 484 ignored.
+404, 486-494 (pp. 376, 456-464):
+  404 redone clean. KEPT: 404 section "3" printed without its closing
+  paren; 488 "Ducdene" (contents item 13); 494 "a note of the same in the
+  column" without "name". 494 damaged words "where the process" written out.
+  488-494: small type the OCR called footnotes is ordinary text; these
+  pages have no real footnotes. 491 duodene and 493 Duodenarium cut as
+  plates (their ruled/dotted boundaries carry meaning). 487 Table II
+  small-type deviations read with care (7th a'♯ −31, 47th gⁱᵛ −34, 53rd
+  aⁱᵛ −26) and its */† marks by position -- CHECK; Table III subminor
+  Second 14·2 and Zalzal's wostā 3·4 RECONSTRUCTED where the OCR lost them;
+  "Equal major Third" 4·0 as printed. 486 row 882 cents has no "ex." value.
+495-504 (pp. 465-474):
+  KEPT: 495 initial note D₂♯ 252 (D₃♯ elsewhere), first chord ends c' (c''
+  expected); 498 fork a¹'♭442·4 where the tuning paragraph says 422·4;
+  fifth-octave table ¹³a without primes and b''' for b₁'''; 499 b₁ without
+  a prime, "a¹♭ c'e¹'♭"; 502 "C major⁎ The" no stop, note chord list with
+  no comma, roman "A₁" once; 504 col. ⁷5 ⁷E♭♭ 153 where 123 is expected;
+  "as be, e". 497 smudged ⁷b♭ cell read 462 (= 7/4 × 264); "E¹,♭" written
+  E¹♭. 501 Duodenary Arrangement a TAB table; "PLAN OF KEYBOARD." plate m1.
+527-536 (pp. 497-506, App. XX pitch tables I and II):
+  All rebuilt from the image. TABLE FORM (the precedent for 537-546): one
+  TAB row per printed entry, " | " cells, headings first, wrapped place
+  entries joined, leader dots dropped, ditto „, date ranges 1740-1812.
+  KEPT: 527 "Fullham", "178 8" written 1788; 528 "Byolin & E.", "McLeod &
+  E"/"Koenig & E" no stop; 529 "441·10"; 530 "Robon's"; 531 "Fr. Com" no
+  stop, the Russian opera entry ends "...forks were"; 534 running title
+  "from Highest to Lowest" reversed; Table II dates differing from Table I
+  kept (Scheibler 1834a, Tomkin 1668a). 536 broken "Experiment ıl" read
+  Experimental. 506 builder rows matched by order (Shrewsbury).
+474-475, 519-526 (pp. 444-445, 489-496):
+  KEPT: 475 "18½ pairs or 37 beats in a second" (10 seconds meant); 519
+  "Absolutely the beats arising from imperfect Fifths and Sixths" (the
+  argument is Fifths and Fourths); 521 "4f'♯ = 3b" no prime on b; 523
+  "But ¾g is the correct d'" no prime on g. 525 Mersenne's sign after B ♮.
+  CHECK 520: the harmonium table's first column head "c" and one head cell
+  "'" came from the rebuild, not the page (probably c' and d'♯). 521: the
+  draft's stray footnote block was set-off matter, made ordinary text.
+583-586 (pp. 553-556):
+  KEPT: 585 "intonasion"; full stop after "d' 678" for a comma. 586 an "8"
+  the draft lost from the 12, 8, 8, 12, 8, 8, 12 division list restored.
+  585/586 damaged run-in heads read "Effect of Rust, &c., on
+  Tuning-forks." and "Flute Intonation."; "classical" damaged; "g'♯92",
+  "b'431" unspaced as printed; "(p. 520a' l. 5)" faint comma after.
+563-572 (pp. 533-542):
+  Small type without marks (563, 564, 567, 568) set as ordinary text, as
+  for pp. 456-464. 572: the draft dropped the page's first line; restored.
+  KEPT: 567 quoted conclusions "difference of tone" where phase is meant;
+  "the differences ... produces"; 563 unbalanced opening quote before
+  "Fifth (4 : 6)"; 565 "153c',note" spaced.
+  UNCERTAIN: 570 group c col. III damaged note read a' (g' fits the music);
+  570 group d col. VI voice 5 a 2 overprinted on another digit. 567 fork
+  table: the Cents row has 10 cells to the others' 11 (values sit between
+  columns in print). 571 two-sided table as 14 columns.
+544, 556 (pp. 514, 526), the last two leaves, 2026-09-20:
+  544: the Table of Non-Harmonic Scales (Old Greek Tetrachords; Al Farabi
+  after Land), 14 rows, rebuilt from the page image as TAB rows; row 1
+  (Olympos) col. III prints an em dash. "NON-HARMONIC SCALES." had been
+  drafted as a footnote. KEPT: "Javese" for Javanese.
+  556: KEPT: the 'popular have intervals, an opening quote never closed.
+  "Salêndro" italic only at its first occurrence, roman after, as
+  printed. A small tuning table interrupts a paragraph: three TAB lines
+  with "+ " continuation markers either side. The draft had a spurious ¶
+  on nearly every left-column line; three are real.
+ALL LEAVES PROOFED. 015-026 are the Contents and are not proofed on
+  purpose (the renderers make the contents); proof/ holds 564 leaves.

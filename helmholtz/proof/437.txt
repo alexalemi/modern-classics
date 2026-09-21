@@ -1,0 +1,23 @@
+page: 409
+
++ in this series which are necessary to determine \(s\) is very large, and hence the series cannot be used for determining the progress of the function.—A second series which proceeds according to negative powers of \(r\) and gives a second particular integral is semi-convergent, and will not become an algebraical function, unless \(h\) is an uneven number. But in the latter case the first mentioned series will be infinite in its separate terms.
+
+It is therefore preferable for our present purpose to obtain the expression for \(s\) in the form of definite integrals.
+
+Let \(\phi\) and \(\psi\) denote the following pair of integrals:— \[\left.\begin{aligned} \psi &= \int_0^{\frac{1}{2}\pi} e^{-\mathrm{i}\kappa r \cdot \sin t} \cdot \sin mht \cdot dt \\ \phi &= \int_1^{\infty} u^{-mh-1} \cdot e^{-\frac{1}{2} \cdot \mathrm{i}\kappa r \cdot \left(u + \frac{1}{u}\right)} \cdot du \end{aligned}\right\} \tag{4}\] where ¶ \[\kappa = \sqrt{(\mu n^2 - \mathrm{i} n \nu)} \tag{4a}\] and the sign of the root is so chosen that the possible part of \(\mathrm{i}\kappa\) is positive.
+
+Then \[s_m = \frac{4A}{\pi\kappa^2} \cdot (mh \cdot \psi + mh \cdot \phi \cdot \cos \tfrac{1}{2} mh\pi - 1 \tag{4b}\] which is the required expression for \(s_m\).
+
+To shew that the expression in (4b) really satisfies the equation (3b), substitute this value for \(s_m\) in that equation, and in differentiating under the integral signs of \(\psi\) and \(\phi\), use partial integration to eliminate the factors \(\cos t\) and \(\left(u - \frac{1}{u}\right)\) which appear under the integral signs.
+
+For \(r = 0\) we find ¶ \[\begin{aligned} \psi &= \int_0^{\frac{1}{2}\pi} \sin mht \cdot dt = \frac{1}{mh} \cdot \left(1 - \cos \frac{mh\pi}{2}\right) \\ \phi &= \int_1^{\infty} \frac{du}{u^{mh+1}} = \frac{1}{mh} \end{aligned}\] and hence \(s_m = 0\).
+
+For \(r = \infty\), we have \(\phi = \psi = 0\), and hence \[s_m = - \frac{4A}{\pi\kappa^2}.\]
+
+Hence the function \(s_m\) also satisfies the two limiting conditions, which have been already shewn to be sufficient to determine it.
+
+The equation (4b) may be used to determine the value of \(s_m\) when \(P\), the tension of the membrane in the direction \(x\), is infinitesimal. In this case, as (1b) shews, \(r\) must be the infinite; as also \(h\), of which the value is ¶ \[h = \frac{\pi \cdot \sqrt{Q}}{2 \cdot \sqrt{P} \cdot \tan \eta}.\]
+
+Hence putting \[r = h\rho\] \(\rho\) will be the finite, namely \[\rho = \frac{2x \cdot \tan \eta}{\pi \cdot \sqrt{Q}}.\]
+
+It is easily seen that under these circumstances \(mh\phi\) will \(= 0\). For we may write \[mh\phi = \int_1^{\infty} mh \cdot e^{-mh \cdot \log u - (l - \mathrm{i}\lambda) \cdot \frac{h\rho}{2} \cdot \left(u + \frac{1}{u}\right)} \cdot \frac{du}{u} \tag{5}\] where I have put \[\mathrm{i}\kappa = l - \mathrm{i}\lambda,\]
