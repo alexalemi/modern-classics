@@ -158,6 +158,9 @@ BLURBS = {
     "hoffmann": "Cards, coins, the cups and balls and the great stage "
                 "illusions, explained trick by trick, with every drawing "
                 "described.",
+    "conquest": "Envy, boredom, fatigue and fear of the neighbours, then "
+                "zest, affection and work: Russell's 1930 book for the "
+                "unhappy, not the learned.",
     "irish-fairy-tales": "Ten stories of Fionn, the Fianna and the Shi’, with "
                          "Rackham’s colour plates and drawings, and the "
                          "captions Gutenberg dropped.",
