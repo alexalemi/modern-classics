@@ -285,13 +285,16 @@ class Walker:
                     # lines are .verse/.line, or span.i0/i1/..., or bare text
                     # broken by <br> (James's one-line quotations were lost
                     # when only the first shape was known)
-                    vs = st.select(".verse, .line") or st.find_all("span", class_=re.compile(r"^i\d+$"))
+                    # ... and "iq" / "i2q", a line that opens on a quotation
+                    # mark and hangs it: matching only i\d+ dropped every
+                    # such line (Hoffmann's Byron couplet lost its first)
+                    vs = st.select(".verse, .line") or st.find_all("span", class_=re.compile(r"^i\d*q?$"))
                     if vs:
                         for v in vs:
                             t = clean(self.inline(v))
                             if t:
                                 c = " ".join(v.get("class") or [])
-                                m = re.search(r"indent(\d+)", c) or re.fullmatch(r"i(\d+)", c)
+                                m = re.search(r"indent(\d+)", c) or re.fullmatch(r"i(\d+)q?", c)
                                 lines.append("\t" + "  " * (int(m.group(1)) if m else 0) + t)
                     else:
                         for br in st.find_all("br"):

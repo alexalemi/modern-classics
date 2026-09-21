@@ -244,6 +244,16 @@ the worlds"), and only the scanned page image settled it. Worthington's
 two out-of-sequence times (0·014, 0·285) were likewise checked on the scan
 and are his own misprints, so they stand.
 
+A LONE ASTERISK THAT IS CONTENT IS DELETED BY emph_safe, and nothing
+notices (2026-09-20). Russell's Introduction to Mathematical Philosophy
+cites Principia by its star numbers ("vol. II. *110") and all fifteen had
+become "vol. II.  110"; Hoffmann's card rows ("1, 0, *, *, *, *") had
+become bare commas. Each prep now converts them before walking (✱ for
+Principia's star, ⁎ for an indifferent card). Grep any new source for a
+bare "*" beside a digit or a comma before prepping. The same walker also
+dropped verse lines classed "iq" (a hanging opening quote); restore_lib
+now takes i\d*q? spans.
+
 EMPHASIS IS ASKED OF THE RENDERER. emph_safe() keeps exactly the spans
 assemble.EMPH will render and removes every other asterisk. The first
 Worthington page shipped 16 literal asterisks from italic letters glued to

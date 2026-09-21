@@ -155,6 +155,9 @@ BLURBS = {
              "described.",
     "farmer": "Level measurements, from bread to the chafing-dish: the "
               "author's own 1910 revision, every photograph described.",
+    "hoffmann": "Cards, coins, the cups and balls and the great stage "
+                "illusions, explained trick by trick, with every drawing "
+                "described.",
     "irish-fairy-tales": "Ten stories of Fionn, the Fianna and the Shi’, with "
                          "Rackham’s colour plates and drawings, and the "
                          "captions Gutenberg dropped.",

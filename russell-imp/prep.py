@@ -59,6 +59,18 @@ def main():
         el.decompose()
     idx.decompose()
 
+    # PRINCIPIA'S STAR NUMBERS. Russell cites Principia Mathematica by its
+    # own numbering, "*110", which Gutenberg sets as "* 110"; the walker's
+    # emphasis cleaning deletes a lone asterisk, and all fifteen had become
+    # "vol. II.  110". They are written with Principia's sign, a star.
+    stars = soup.find_all(string=re.compile(r"(?<![\w*])\*\s?\d"))
+    nstar = 0
+    for t in stars:
+        new_t, k = re.subn(r"(?<![\w*])\*\s?(?=\d)", "\u2731", str(t))
+        nstar += k
+        t.replace_with(new_t)
+    assert nstar >= 15, nstar
+
     # formulas: SVG + data-tex -> LaTeX text
     n_inline = n_display = n_llap = 0
     for img in soup.find_all("img", attrs={"data-tex": True}):
