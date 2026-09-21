@@ -957,3 +957,4 @@ and Tarbell are in the first table. The copyright column is a FIRST READ.
 | Chess Fundamentals (1921) | José Raúl Capablanca | DONE 2026-09-20, restored (capablanca/): 150 diagrams captioned square by square |
 | Modern Magic (1876) | Professor Hoffmann (Angelo Lewis) | PD |
 | The Age of Fable (1855) | Thomas Bulfinch | DONE 2026-09-20, restored (bulfinch/): the 1855 text recovered from Gutenberg's 1913 revision by a two-scan vote. Added by Alex 2026-09-20 |
+| The Conquest of Happiness (1930) | Bertrand Russell | PD in the US since 1 Jan 2026 (1930 works); still in copyright in the UK/EU (Russell d. 1970). Gutenberg #77894; 1930 Allen & Unwin scans on Archive.org (conquest_happiness, dli.ernet.242732). Added by Alex 2026-09-20 |
