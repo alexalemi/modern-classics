@@ -1,0 +1,113 @@
+Chapter XIV: Incompatibility and the Theory of Deduction
+
+WE have now explored, somewhat hastily it is true, that part of the philosophy of mathematics which does not demand a critical examination of the idea of *class*. In the preceding chapter, however, we found ourselves confronted by problems which make such an examination imperative. Before we can undertake it, we must consider certain other parts of the philosophy of mathematics, which we have hitherto ignored. In a synthetic treatment, the parts which we shall now be concerned with come first: they are more fundamental than anything that we have discussed hitherto. Three topics will concern us before we reach the theory of classes, namely: (1) the theory of deduction, (2) propositional functions, (3) descriptions. Of these, the third is not logically presupposed in the theory of classes, but it is a simpler example of the *kind* of theory that is needed in dealing with classes. It is the first topic, the theory of deduction, that will concern us in the present chapter.
+
+Mathematics is a deductive science: starting from certain premisses, it arrives, by a strict process of deduction, at the various theorems which constitute it. It is true that, in the past, mathematical deductions were often greatly lacking in rigour; it is true also that perfect rigour is a scarcely attainable ideal. Nevertheless, in so far as rigour is lacking in a mathematical proof, the proof is defective; it is no defence to urge that common sense shows the result to be correct, for if we were to rely upon that, it would be better to dispense with argument altogether, rather than bring fallacy to the rescue of common sense. No appeal to common sense, or "intuition," or anything except strict deductive logic, ought to be needed in mathematics after the premisses have been laid down.
+
+Kant, having observed that the geometers of his day could not prove their theorems by unaided argument, but required an appeal to the figure, invented a theory of mathematical reasoning according to which the inference is never strictly logical, but always requires the support of what is called "intuition." The whole trend of modern mathematics, with its increased pursuit of rigour, has been against this Kantian theory. The things in the mathematics of Kant's day which cannot be *proved*, cannot be *known*—for example, the axiom of parallels. What can be known, in mathematics and by mathematical methods, is what can be deduced from pure logic. What else is to belong to human knowledge must be ascertained otherwise—empirically, through the senses or through experience in some form, but not *a priori*. The positive grounds for this thesis are to be found in *Principia Mathematica*, *passim*; a controversial defence of it is given in the *Principles of Mathematics*. We cannot here do more than refer the reader to those works, since the subject is too vast for hasty treatment. Meanwhile, we shall assume that all mathematics is deductive, and proceed to inquire as to what is involved in deduction.
+
+In deduction, we have one or more propositions called *premisses*, from which we infer a proposition called the *conclusion*. For our purposes, it will be convenient, when there are originally several premisses, to amalgamate them into a single proposition, so as to be able to speak of *the* premiss as well as of *the* conclusion. Thus we may regard deduction as a process by which we pass from knowledge of a certain proposition, the premiss, to knowledge of a certain other proposition, the conclusion. But we shall not regard such a process as *logical* deduction unless it is *correct*, *i.e.* unless there is such a relation between premiss and conclusion that we have a right to believe the conclusion if we know the premiss to be true. It is this relation that is chiefly of interest in the logical theory of deduction.
+
+In order to be able validly to infer the truth of a proposition, we must know that some other proposition is true, and that there is between the two a relation of the sort called "implication," *i.e.* that (as we say) the premiss "implies" the conclusion. (We shall define this relation shortly.) Or we may know that a certain other proposition is false, and that there is a relation between the two of the sort called "disjunction," expressed by "\(p\) or \(q\)," so that the knowledge that the one is false allows us to infer that the other is true. Again, what we wish to infer may be the *falsehood* of some proposition, not its truth. This may be inferred from the truth of another proposition, provided we know that the two are "incompatible," *i.e.* that if one is true, the other is false. It may also be inferred from the falsehood of another proposition, in just the same circumstances in which the truth of the other might have been inferred from the truth of the one; *i.e.* from the falsehood of \(p\) we may infer the falsehood of \(q\), when \(q\) implies \(p\). All these four are cases of inference. When our minds are fixed upon inference, it seems natural to take "implication" as the primitive fundamental relation, since this is the relation which must hold between \(p\) and \(q\) if we are to be able to infer the *truth* of \(q\) from the *truth* of \(p\). But for technical reasons this is not the best primitive idea to choose. Before proceeding to primitive ideas and definitions, let us consider further the various functions of propositions suggested by the above-mentioned relations of propositions.
+
+Footnote: We shall use the letters \(p\), \(q\), \(r\), \(s\), \(t\) to denote variable propositions.
+
+The simplest of such functions is the negative, "not-\(p\)." This is that function of \(p\) which is true when \(p\) is false, and false when \(p\) is true. It is convenient to speak of the truth of a proposition, or its falsehood, as its "truth-value"; *i.e.* *truth* is the "truth-value" of a true proposition, and *falsehood* of a false one. Thus not \(p\) has the opposite truth-value to \(p\).
+
+Footnote: This term is due to Frege.
+
+We may take next *disjunction*, "\(p\) or \(q\)." This is a function whose truth-value is truth when \(p\) is true and also when \(q\) is true, but is falsehood when both \(p\) and \(q\) are false.
+
+Next we may take *conjunction*, "\(p\) and \(q\)" This has truth for its truth-value when \(p\) and \(q\) are both true; otherwise it has falsehood for its truth-value.
+
+Take next *incompatibility*, *i.e.* "\(p\) and \(q\) are not both true." This is the negation of conjunction; it is also the disjunction of the negations of \(p\) and \(q\), *i.e.* it is "not-\(p\) or not-\(q\)." Its truth-value is truth when \(p\) is false and likewise when \(q\) is false; its truth-value is falsehood when \(p\) and \(q\) are both true.
+
+Last take *implication*, *i.e.* "\(p\) implies \(q\)," or "if \(p\), then \(q\)." This is to be understood in the widest sense that will allow us to infer the truth of \(q\) if we know the truth of \(p\). Thus we interpret it as meaning: "Unless \(p\) is false, \(q\) is true," or "either \(p\) is false or \(q\) is true." (The fact that "implies" is capable of other meanings does not concern us; this is the meaning which is convenient for us.) That is to say, "\(p\) implies \(q\)" is to mean "not-\(p\) or \(q\)": its truth-value is to be truth if \(p\) is false, likewise if \(q\) is true, and is to be falsehood if \(p\) is true and \(q\) is false.
+
+We have thus five functions: negation, disjunction, conjunction, incompatibility, and implication. We might have added others, for example, joint falsehood, "not-\(p\) and not-\(q\)," but the above five will suffice. Negation differs from the other four in being a function of *one* proposition, whereas the others are functions of *two*. But all five agree in this, that their truth-value depends only upon that of the propositions which are their arguments. Given the truth or falsehood of \(p\), or of \(p\) and \(q\) (as the case may be), we are given the truth or falsehood of the negation, disjunction, conjunction, incompatibility, or implication. A function of propositions which has this property is called a "truth-function."
+
+The whole meaning of a truth-function is exhausted by the statement of the circumstances under which it is true or false. "Not-\(p\)," for example, is simply that function of \(p\) which is true when \(p\) is false, and false when \(p\) is true: there is no further meaning to be assigned to it. The same applies to "\(p\) or \(q\)" and the rest. It follows that two truth-functions which have the same truth-value for all values of the argument are indistinguishable. For example, "\(p\) and \(q\)" is the negation of "not-\(p\) or not-\(q\)" and *vice versa*; thus either of these may be *defined* as the negation of the other. There is no further meaning in a truth-function over and above the conditions under which it is true or false.
+
+It is clear that the above five truth-functions are not all independent. We can define some of them in terms of others. There is no great difficulty in reducing the number to two; the two chosen in *Principia Mathematica* are negation and disjunction. Implication is then defined as "not-\(p\) or \(q\)"; incompatibility as "not-\(p\) or not-\(q\)"; conjunction as the negation of incompatibility. But it has been shown by Sheffer that we can be content with *one* primitive idea for all five, and by Nicod that this enables us to reduce the primitive propositions required in the theory of deduction to two non-formal principles and one formal one. For this purpose, we may take as our one indefinable either incompatibility or joint falsehood. We will choose the former.
+
+Footnote: *Trans. Am. Math. Soc.*, vol. XIV. pp. 481-488.
+
+Footnote: *Proc. Camb. Phil. Soc.*, vol. XIX., i., January 1917.
+
+Our primitive idea, now, is a certain truth-function called "incompatibility," which we will denote by \(p/q\). Negation can be at once defined as the incompatibility of a proposition with itself, *i.e.* "not-\(p\)" is defined as "\(p/p\)." Disjunction is the incompatibility of not-\(p\) and not-\(q\), *i.e.* it is \((p/p) | (q/q)\). Implication is the incompatibility of \(p\) and not-\(q\), *i.e.* \(p | (q/q)\). Conjunction is the negation of incompatibility, *i.e.* it is \((p/q) | (p/q)\). Thus all our four other functions are defined in terms of incompatibility.
+
+It is obvious that there is no limit to the manufacture of truth-functions, either by introducing more arguments or by repeating arguments. What we are concerned with is the connection of this subject with inference.
+
+If we know that \(p\) is true and that \(p\) implies \(q\), we can proceed to assert \(q\). There is always unavoidably *something* psychological about inference: inference is a method by which we arrive at new knowledge, and what is not psychological about it is the relation which allows us to infer correctly; but the actual passage from the assertion of \(p\) to the assertion of \(q\) is a psychological process, and we must not seek to represent it in purely logical terms.
+
+In mathematical practice, when we infer, we have always some expression containing variable propositions, say \(p\) and \(q\), which is known, in virtue of its form, to be true for all values of \(p\) and \(q\); we have also some other expression, part of the former, which is also known to be true for all values of \(p\) and \(q\); and in virtue of the principles of inference, we are able to drop this part of our original expression, and assert what is left. This somewhat abstract account may be made clearer by a few examples.
+
+Let us assume that we know the five formal principles of deduction enumerated in *Principia Mathematica*. (M. Nicod has reduced these to one, but as it is a complicated proposition, we will begin with the five.) These five propositions are as follows:—
+
+(1) "\(p\) or \(p\)" implies \(p\)—*i.e.* if either \(p\) is true or \(p\) is true, then \(p\) is true.
+
+(2) \(q\) implies "\(p\) or \(q\)"—*i.e.* the disjunction "\(p\) or \(q\)" is true when one of its alternatives is true.
+
+(3) "\(p\) or \(q\)" implies "\(q\) or \(p\)." This would not be required if we had a theoretically more perfect notation, since in the conception of disjunction there is no order involved, so that "\(p\) or \(q\)" and "\(q\) or \(p\)" should be identical. But since our symbols, in any convenient form, inevitably introduce an order, we need suitable assumptions for showing that the order is irrelevant.
+
+(4) If either \(p\) is true or "\(q\) or \(r\)" is true, then either \(q\) is true or "\(p\) or \(r\)" is true. (The twist in this proposition serves to increase its deductive power.)
+
+(5) If \(q\) implies \(r\), then "\(p\) or \(q\)" implies "\(p\) or \(r\)."
+
+These are the *formal* principles of deduction employed in *Principia Mathematica*. A formal principle of deduction has a double use, and it is in order to make this clear that we have cited the above five propositions. It has a use as the premiss of an inference, and a use as establishing the fact that the premiss implies the conclusion. In the schema of an inference we have a proposition \(p\), and a proposition "\(p\) implies \(q\)," from which we infer \(q\). Now when we are concerned with the principles of deduction, our apparatus of primitive propositions has to yield both the \(p\) and the "\(p\) implies \(q\)" of our inferences. That is to say, our rules of deduction are to be used, not *only* as *rules*, which is their use for establishing "\(p\) implies \(q\)" but *also* as substantive premisses, *i.e.* as the \(p\) of our schema. Suppose, for example, we wish to prove that if \(p\) implies \(q\), then if \(q\) implies \(r\) it follows that \(p\) implies \(r\). We have here a relation of three propositions which state implications. Put
+
+\(p_{1} = p\) implies \(q\), \(p_{2} = q\) implies \(r\), and \(p_{3} = p\) implies \(r\).
+
+Then we have to prove that \(p_{1}\) implies that \(p_{2}\) implies \(p_{3}\). Now take the fifth of our above principles, substitute not-\(p\) for \(p\), and remember that "not-\(p\) or \(q\)" is by definition the same as "\(p\) implies \(q\)." Thus our fifth principle yields:
+
+"If \(q\) implies \(r\), then '\(p\) implies \(q\)' implies '\(p\)implies \(r\),'" *i.e.* "\(p_{2}\)implies that \(p_{1}\) implies \(p_{3}\)." Call this proposition \(\mathrm A\).
+
+But the fourth of our principles, when we substitute not-\(p\), not-\(q\), for \(p\) and \(q\), and remember the definition of implication, becomes:
+
+"If \(p\) implies that \(q\) implies \(r\), then \(q\) implies that \(p\) implies \(r\)."
+
+Writing \(p_{2}\) in place of \(p\), \(p_{1}\) in place of \(q\), and \(p_{3}\) in place of \(r\), this becomes:
+
+"If \(p_{2}\) implies that \(p_{1}\) implies \(p_{3}\), then \(p_{1}\) implies that \(p_{2}\) implies \(p_{3}\)." Call this \(\mathrm B\).
+
+Now we proved by means of our fifth principle that
+
+"\(p_{2}\) implies that \(p_{1}\) implies \(p_{3}\)," which was what we called \(\mathrm A\).
+
+Thus we have here an instance of the schema of inference, since \(\mathrm A\) represents the \(p\) of our scheme, and \(\mathrm B\) represents the "\(p\) implies \(q\)." Hence we arrive at \(q\), namely,
+
+"\(p_{1}\) implies that \(p_{2}\) implies \(p_{3}\),"
+
+which was the proposition to be proved. In this proof, the adaptation of our fifth principle, which yields \(\mathrm A\), occurs as a substantive premiss; while the adaptation of our fourth principle, which yields \(\mathrm B\), is used to give the *form* of the inference. The formal and material employments of premisses in the theory of deduction are closely intertwined, and it is not very important to keep them separated, provided we realise that they are in theory distinct.
+
+The earliest method of arriving at new results from a premiss is one which is illustrated in the above deduction, but which itself can hardly be called deduction. The primitive propositions, whatever they may be, are to be regarded as asserted for all possible values of the variable propositions \(p\), \(q\), \(r\) which occur in them. We may therefore substitute for (say) \(p\) any expression whose value is always a proposition, *e.g.* not-\(p\), "\(s\) implies \(t\)," and so on. By means of such substitutions we really obtain sets of special cases of our original proposition, but from a practical point of view we obtain what are virtually new propositions. The legitimacy of substitutions of this kind has to be insured by means of a non-formal principle of inference.
+
+Footnote: No such principle is enunciated in *Principia Mathematica*, or in M. Nicod's article mentioned above. But this would seem to be an omission.
+
+We may now state the one formal principle of inference to which M. Nicod has reduced the five given above. For this purpose we will first show how certain truth-functions can be defined in terms of incompatibility. We saw already that
+
+\(p | (q/q)\) means "\(p\) implies \(q\)."
+
+We now observe that
+
+\(p | (q/r)\) means "\(p\) implies both \(q\) and \(r\)."
+
+For this expression means "\(p\) is incompatible with the incompatibility of \(q\) and \(r\)," *i.e.* "\(p\) implies that \(q\) and \(r\) are not incompatible," *i.e.* "\(p\) implies that \(q\) and \(r\) are both true"—for, as we saw, the conjunction of \(q\) and \(r\) is the negation of their incompatibility.
+
+Observe next that \(t | (t/t)\) means "\(t\) implies itself." This is a particular case of \(p | (q/q)\).
+
+Let us write \(\overline{p}\) for the negation of \(p\); thus \(\overline{p/s}\) will mean the negation of \(p/s\), *i.e.* it will mean the conjunction of \(p\) and \(s\). It follows that \[(s/q) | \overline{p/s}\] expresses the incompatibility of \(s/q\) with the conjunction of \(p\) and \(s\); in other words, it states that if \(p\) and \(s\) are both true, \(s/q\) is false, *i.e.* \(s\) and \(q\) are both true; in still simpler words, it states that \(p\) and \(s\) jointly imply \(s\) and \(q\) jointly.
+
+Now, put \[\begin{align*} P &= p | (q/r), \\ \pi &= t | (t/t), \\ Q &= (s/q) | \overline{p/s}. \end{align*}\] Then M. Nicod's sole formal principle of deduction is \[P | \pi/Q,\] in other words, \(\mathrm P\) implies both \(\pi\) and \(\mathrm Q\).
+
+He employs in addition one non-formal principle belonging to the theory of types (which need not concern us), and one corresponding to the principle that, given \(p\), and given that \(p\) implies \(q\), we can assert \(q\). This principle is:
+
+"If \(p | (r/q)\) is true, and \(p\) is true, then \(q\) is true."
+
+From this apparatus the whole theory of deduction follows, except in so far as we are concerned with deduction from or to the existence or the universal truth of "propositional functions," which we shall consider in the next chapter.
+
+There is? if I am not mistaken, a certain confusion in the minds of some authors as to the relation, between propositions, in virtue of which an inference is valid. In order that it may be *valid* to infer \(q\) from \(p\), it is only necessary that \(p\) should be true and that the proposition "not-\(p\) or \(q\)" should be true. Whenever this is the case, it is clear that \(q\) must be true. But inference will only in fact take place when the proposition "not-\(p\) or \(q\)" is *known* otherwise than through knowledge of not-\(p\) or knowledge of \(q\). Whenever \(p\) is false, "not-\(p\) or \(q\)" is true, but is useless for inference, which requires that \(p\) should be true. Whenever \(q\) is already known to be true, "not-\(p\) or \(q\)" is of course also known to be true, but is again useless for inference, since \(q\) is already known, and therefore does not need to be inferred. In fact, inference only arises when "not-\(p\) or \(q\)" can be known without our knowing already which of the two alternatives it is that makes the disjunction true. Now, the circumstances under which this occurs are those in which certain relations of form exist between \(p\) and \(q\). For example, we know that if \(r\) implies the negation of \(s\), then \(s\) implies the negation of \(r\). Between "\(r\) implies not-\(s\)" and "\(s\) implies not-\(r\)" there is a formal relation which enables us to *know* that the first implies the second, without having first to know that the first is false or to know that the second is true. It is under such circumstances that the relation of implication is practically useful for drawing inferences.
+
+But this formal relation is only required in order that we may be able to *know* that either the premiss is false or the conclusion is true. It is the truth of "not-\(p\) or \(q\)" that is required for the *validity* of the inference; what is required further is only required for the practical feasibility of the inference. Professor C. I. Lewis has especially studied the narrower, formal relation which we may call "formal deducibility." He urges that the wider relation, that expressed by "not-\(p\) or \(q\)" should not be called "implication." That is, however, a matter of words. Provided our use of words is consistent, it matters little how we define them. The essential point of difference between the theory which I advocate and the theory advocated by Professor Lewis is this: He maintains that, when one proposition \(q\) is "formally deducible" from another \(p\), the relation which we perceive between them is one which he calls "strict implication," which is not the relation expressed by "not-\(p\) or \(q\)" but a narrower relation, holding only when there are certain formal connections between \(p\) and \(q\). I maintain that, whether or not there be such a relation as he speaks of, it is in any case one that mathematics does not need, and therefore one that, on general grounds of economy, ought not to be admitted into our apparatus of fundamental notions; that, whenever the relation of "formal deducibility" holds between two propositions, it is the case that we can see that either the first is false or the second true, and that nothing beyond this fact is necessary to be admitted into our premisses; and that, finally, the reasons of detail which Professor Lewis adduces against the view which I advocate can all be met in detail, and depend for their plausibility upon a covert and unconscious assumption of the point of view which I reject. I conclude, therefore, that there is no need to admit as a fundamental notion any form of implication not expressible as a truth-function.
+
+Footnote: See *Mind*, vol. XXI., 1912, pp. 522-531; and vol. XXIII., 1914, pp. 240-247.

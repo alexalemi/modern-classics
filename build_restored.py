@@ -141,6 +141,9 @@ BLURBS = {
     "capablanca": "From the simplest mates to fourteen annotated games, by "
                   "the new world champion. Every diagram described square "
                   "by square.",
+    "russell-imp": "What a number is, and the sizes of infinity, written in "
+                   "prison as the plain road into Principia Mathematica. The "
+                   "1920 text, its formulas typeset.",
     "irish-fairy-tales": "Ten stories of Fionn, the Fianna and the Shi’, with "
                          "Rackham’s colour plates and drawings, and the "
                          "captions Gutenberg dropped.",
