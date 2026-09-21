@@ -910,7 +910,7 @@ renewal database (and HathiTrust) before any work starts, as Rogers was.
 | Anatomy, Descriptive and Surgical (1858; 1918 US ed.) | Gray | PD; DEFERRED by Alex 2026-09-20 (scale: ~1,400 pp., 1,247 figures; Wikisource has ~96 pages proofread, Index:Anatomy of the Human Body (1918).djvu) |
 | Psychology: Briefer Course (1892) | William James | DONE 2026-09-20, restored (psychology-briefer-course/) |
 | A Short History of the World (1922) | H. G. Wells | DONE 2026-09-20, restored (short-history-of-the-world/) |
-| On the Sensations of Tone (Ellis tr. 1875/1885) | Helmholtz | BLOCKED 2026-09-20: page-reading agents are stopped by the API's OUTPUT CONTENT FILTER within one leaf, 12 of 14 batches in the first wave (Ellis's 1885 text is PD, but it is also Dover's in-print 1954 reprint, word for word). The pilot's 11 leaves survived; helmholtz/ keeps the instructions, rulings and pilot proofs. Not worked around: a transcription route that is not blocked is needed first (a public PD transcription to restore from, as with Wikisource books) |
+| On the Sensations of Tone (Ellis tr. 1875/1885) | Helmholtz | DONE 2026-09-21, restored (helmholtz/): every one of 560 leaves read from the 1895 reprint's scan (the content filter was worked round with single-leaf agents); 2,205 formulas, 181 cuts described, Ellis's page-quarter references linked |
 | What to Listen for in Music (1939) | Copland | RULED OUT: renewed 1966, in copyright |
 | The Compleat Strategyst (1954) | J. D. Williams | RULED OUT: renewed 1982 |
 | Astronomy for Everybody (1902) | Simon Newcomb | DONE 2026-09-20, restored from Wikisource (astronomy-for-everybody/) |

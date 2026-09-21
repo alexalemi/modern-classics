@@ -110,6 +110,11 @@ def looks_like_prose_heading(h):
 # other book, because it is what catches the grimm shape (a section the
 # book numbered and the manifest never got).
 ORPHAN_OK = {
+    "helmholtz": "Helmholtz and Ellis number their subsections inside each "
+                 "chapter and appendix ('3. *Musical Tones of Strings.*', "
+                 "'IV. *Fourth Method, by Seven Place Logarithms.*'); they are "
+                 "h4 subheadings by design, the book's 56 sections being its "
+                 "chapters, appendices and Ellis's Sections A-N",
     "farmer": "Chapter XI (Fish) divides its shellfish into 'I. Bivalve "
               "Mollusks' and 'II. Crustaceans', subheadings inside the "
               "chapter. Checked: both are h4 on the assembled page.",
@@ -273,8 +278,10 @@ def sweep(book, verbose=False):
         ided = re.findall(r'<h[23][^>]*\sid="([^"]+)"', page)
         headings = len([i for i in ided if i not in furniture])
         dividers = sum(1 for m in manifest if m.get("part_before"))
+        # a page locator's link (assemble.LOC_LINK, helmholtz's "see p.
+        # 77c") goes to a place in the text, not to a section
         linked = len([i for i in re.findall(r'href="#([^"]+)"', page)
-                      if i != "contents"])
+                      if i != "contents" and not i.startswith("loc-")])
         if abs(linked - sections) > 1:
             out.append(f"{tag}: manifest has {sections} sections but the "
                        f"page links to {linked} — one may be missing or doubled")

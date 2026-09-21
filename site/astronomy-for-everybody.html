@@ -107,6 +107,20 @@ table.plates figcaption {
   display: none;
 }
 
+/* page locators: a printed page and quarter, for books that cite
+   themselves by them (Helmholtz: "see p. 77c") */
+span.loc {
+  font-size: 0.65em;
+  color: #888;
+  vertical-align: 0.3em;
+  padding: 0 0.15em;
+  font-style: normal;
+}
+a.ref {
+  color: inherit;
+  text-decoration: underline dotted;
+}
+
 figcaption {
   margin-top: 0.6em;
   font-family: Georgia, "Palatino Linotype", "Book Antiqua", serif;
@@ -536,13 +550,15 @@ figcaption {
 </figure>
 <p>This was the case in 1889 and again in 1900. The year following a slightly greater number will show themselves; and they will increase year after year for about five years. Then the frequency will begin to diminish, year after year, until the cycle is completed, when it will again begin to increase. These mutations have been traced back to the time of Galileo, although it was not till about 1825 that they were found by Schwabe to take place in a regular period.</p>
 <p>Years of greatest and least frequency, past and future are as follows:</p>
-<pre class="outline">	Greatest | Least
-	1871 | 1878
-	1882 | 1889
-	1893 | 1900
-	1904 | 1911
-	1916 | 1922
-	1927 | 1933</pre>
+<table class="math">
+<tr><td>Greatest</td><td>Least</td></tr>
+<tr><td>1871</td><td>1878</td></tr>
+<tr><td>1882</td><td>1889</td></tr>
+<tr><td>1893</td><td>1900</td></tr>
+<tr><td>1904</td><td>1911</td></tr>
+<tr><td>1916</td><td>1922</td></tr>
+<tr><td>1927</td><td>1933</td></tr>
+</table>
 <p>Another noteworthy law connected with the sun&#x27;s spots is that they are not found all over the sun; but only in certain regions of solar latitude. They are rather rare on the sun&#x27;s equator, but become more frequent as we go north or south of the equator till we get to fifteen degrees of latitude, north or south. From this region to twenty degrees the frequency is greatest; then it falls off, so that beyond thirty degrees a spot is rarely seen. These regions are shown in the accompanying figure, where the shading is darker the more frequent the spots. If we made a white globe to represent the sun, and made a black dot on it for every spot during a number of years, the dotting would make the globe look as represented in the figure.</p>
 <figure id="fig-as">
 <img src="images/astronomy-for-everybody/figas.jpg" alt="Fig. 18.—Frequency of Sun-spots in Different Latitudes on the Sun. — The sun drawn as a circle from north pole to south pole, with spots dotted in a band on either side of its equator, thickest in two belts and absent toward the poles." width="1100" height="1100" loading="lazy">
@@ -736,15 +752,17 @@ figcaption {
 <p>The angle by which an orbit is tipped from the plane of the ecliptic is called its <em>inclination</em>. The orbit of Mercury has the greatest inclination, more than 6°. The orbit of Venus is inclined 3° 24′; those of all the superior planets less, ranging from 0° 46′ in the case of Uranus to 2° 30′ in the case of Saturn.</p>
 <h4>Distances of the Planets</h4>
 <p>Leaving out Neptune, the distances of the planets follow very closely a rule known as Bode&#x27;s Law, after the astronomer who first pointed it out. It is this: Take the numbers 0, 3, 6, 12, etc., doubling each as we go along. Then add 4 to each number, and we shall hit very nearly on the scale of distances of all the planets except Neptune, thus:</p>
-<pre class="outline">	Mercury, | 0 + 4 = | 4; | actual distance | 4 to 40
-	Venus, | 3 + 4 = | 7; | actual distance | 7 to 40
-	Earth, | 6 + 4 = | 10; | actual distance | 10 to 40
-	Mars, | 12 + 4 = | 16; | actual distance | 15 to 40
-	Asteroids, | 24 + 4 = | 28; | actual distance | 20 to 40
-	Jupiter, | 48 + 4 = | 52; | actual distance | 52 to 40
-	Saturn, | 96 + 4 = | 100; | actual distance | 95 to 40
-	Uranus, | 192 + 4 = | 196; | actual distance | 192 to 40
-	Neptune, | 384 + 4 = | 388; | actual distance | 300 to 40</pre>
+<table class="math">
+<tr><td>Mercury,</td><td>0 + 4 =</td><td>4;</td><td>actual distance</td><td>4 to 40</td></tr>
+<tr><td>Venus,</td><td>3 + 4 =</td><td>7;</td><td>actual distance</td><td>7 to 40</td></tr>
+<tr><td>Earth,</td><td>6 + 4 =</td><td>10;</td><td>actual distance</td><td>10 to 40</td></tr>
+<tr><td>Mars,</td><td>12 + 4 =</td><td>16;</td><td>actual distance</td><td>15 to 40</td></tr>
+<tr><td>Asteroids,</td><td>24 + 4 =</td><td>28;</td><td>actual distance</td><td>20 to 40</td></tr>
+<tr><td>Jupiter,</td><td>48 + 4 =</td><td>52;</td><td>actual distance</td><td>52 to 40</td></tr>
+<tr><td>Saturn,</td><td>96 + 4 =</td><td>100;</td><td>actual distance</td><td>95 to 40</td></tr>
+<tr><td>Uranus,</td><td>192 + 4 =</td><td>196;</td><td>actual distance</td><td>192 to 40</td></tr>
+<tr><td>Neptune,</td><td>384 + 4 =</td><td>388;</td><td>actual distance</td><td>300 to 40</td></tr>
+</table>
 <p>On these actual distances we remark that astronomers do not use miles or other terrestrial measures to express distances between the heavenly bodies, for two reasons. In the first place, they are too short; to use them would be like stating the distance between two cities in centimetres. In the next place, distances in the heavens cannot be fixed with the necessary exactness in our measures, whereas, if we take the sun&#x27;s distance from the earth as the unit of measure, we can determine other distances between the planets with great precision in terms of this measure. So, to get the distances of the planets from the sun in astronomical measure, we have to divide the last numbers of the preceding table by ten, or insert a decimal point before the last figure of each.</p>
 <p>We have not in this table distracted the attention of the reader by using unnecessary decimals. Actually, the distance of Mercury is 0.387, etc.; we have simply called it 0.4 and multiplied it by 10 to get the proportion for comparing with Bode&#x27;s Law.</p>
 <h4>Kepler&#x27;s Laws</h4>
@@ -814,10 +832,12 @@ figcaption {
 <p>A few years ago the writer received a letter from the owner of a very large telescope in England stating that, by great care, he could see a very faint, round, and well-defined aureole of light around the planet Mars. He desired to know whether the object could be real, or how the appearance was to be explained. In reply, he was informed that such an appearance would be produced by the double reflection of light between the two inner lenses of the object-glass, provided their curvatures were nearly, but not exactly the same. It was suggested that he point the telescope at Sirius and see if a similar appearance did not surround the star. He probably found that such was the case.</p>
 <h4>Transits of Venus</h4>
 <p>The transits of Venus across the sun&#x27;s disk are among the rarest phenomena of astronomy, as they occur, on the average, only once in sixty years. For many centuries past and to come there will be a regular cycle, bringing about four transits in two hundred and forty-three years. The intervals between the transits are one hundred and five and a half years, eight years, one hundred and twenty-one and a half years, eight years; then one hundred and five and a half years again, and so on. The dates of the last six transits and the two next to come are as follows:</p>
-<pre class="outline">	1631, December 7, | 1874, December 9,
-	1639, December 4, | 1882, December 6,
-	1761, June 5, | 2004, June 8,
-	1769, June 3, | 2012, June 6.</pre>
+<table class="math">
+<tr><td>1631, December 7,</td><td>1874, December 9,</td></tr>
+<tr><td>1639, December 4,</td><td>1882, December 6,</td></tr>
+<tr><td>1761, June 5,</td><td>2004, June 8,</td></tr>
+<tr><td>1769, June 3,</td><td>2012, June 6.</td></tr>
+</table>
 <p>It will be seen that no person now living is likely to see this phenomenon, as the next transit does not occur until 2004. Yet, the time when Venus will appear upon the disk on June 8 of that year can now be predicted for any point on the earth&#x27;s surface, within a minute or two.</p>
 <p>The interest which has attached to these transits during the past century arose from the fact that they were supposed to afford the best method of determining the distance of the sun from the earth. This fact and the rarity of the phenomenon led to the last four transits being observed on a large scale. In 1761, and again in 1769, the leading maritime nations sent observers to various parts of the world to note the exact time at which the planet entered upon and left the sun&#x27;s disk. In 1874 and 1882, expeditions were fitted up on a large scale by the United States, Great Britain, France, and Germany. On the first of these occasions American parties occupied stations in China, Japan, and eastern Siberia on the north, and in Australia, New Zealand, Chatham Island, and Kerguelen Island in the south. In 1882 it was not necessary to send out so many expeditions, because the transit was visible in this country. In the southern hemisphere stations were occupied at the Cape of Good Hope and other points. The observations made by these expeditions proved of great value in determining the future motions of Venus, but it was found that other methods of determining the distance of the sun would lead to a more certain result.</p>
 <h3 id="ch-4-4">Chapter 4: The Planet Mars</h3>
@@ -963,16 +983,18 @@ figcaption {
 <p>In making known his discovery of the satellite Titan, Huyghens congratulated himself that the solar system was now complete. There were now seven great bodies and seven small ones, the magic number of each. But within the next thirty years Cassini exploded all this mysticism by discovering four more satellites. Then, after the lapse of a century, the great Herschel found yet two more. Finally, the eighth was found by Bond at the Harvard Observatory in 1848.</p>
 <p>In 1898 photographs of the sky taken at the South American branch of the Harvard Observatory showed a star near Saturn, but farther than the outermost known satellite, which seemed to be in a different position each night. It has not yet been decided whether this was a satellite, because Saturn has been among the countless faint stars of the Milky Way, among which the satellite might be lost.</p>
 <p>The following is a list of the eight satellites, with their distances from the planet in radii of the latter, their times of revolution, and the discoverer of each:</p>
-<pre class="outline">	<em>No.</em> | <em>Name.</em> | <em>Discoverer.</em> | <em>Date of Discovery.</em> | <em>Distance from Planet.</em> | <em>Time of Revolution.</em>
-	 |  |  |  |  | d. h.
-	1 | Mimas | Herschel | 1789 | 3.3 | 0 23
-	2 | Enceledas | Herschel | 1789 | 4.3 | 1 9
-	3 | Tethys | Cassini | 1684 | 5.3 | 1 21
-	4 | Dione | Cassini | 1684 | 6.8 | 2 18
-	5 | Rhea | Cassini | 1672 | 9.5 | 4 12
-	6 | Titan | Huyghens | 1655 | 21.7 | 15 23
-	7 | Hyperion | Bond | 1848 | 26.8 | 21 7
-	8 | Japetus | Cassini | 1671 | 64.4 | 70 22</pre>
+<table class="math">
+<tr><td><em>No.</em></td><td><em>Name.</em></td><td><em>Discoverer.</em></td><td><em>Date of Discovery.</em></td><td><em>Distance from Planet.</em></td><td><em>Time of Revolution.</em></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>d. h.</td></tr>
+<tr><td>1</td><td>Mimas</td><td>Herschel</td><td>1789</td><td>3.3</td><td>0 23</td></tr>
+<tr><td>2</td><td>Enceledas</td><td>Herschel</td><td>1789</td><td>4.3</td><td>1 9</td></tr>
+<tr><td>3</td><td>Tethys</td><td>Cassini</td><td>1684</td><td>5.3</td><td>1 21</td></tr>
+<tr><td>4</td><td>Dione</td><td>Cassini</td><td>1684</td><td>6.8</td><td>2 18</td></tr>
+<tr><td>5</td><td>Rhea</td><td>Cassini</td><td>1672</td><td>9.5</td><td>4 12</td></tr>
+<tr><td>6</td><td>Titan</td><td>Huyghens</td><td>1655</td><td>21.7</td><td>15 23</td></tr>
+<tr><td>7</td><td>Hyperion</td><td>Bond</td><td>1848</td><td>26.8</td><td>21 7</td></tr>
+<tr><td>8</td><td>Japetus</td><td>Cassini</td><td>1671</td><td>64.4</td><td>70 22</td></tr>
+</table>
 <p>The most noteworthy features of this list are the wide range of distances among the satellites, and the relation between the times of revolution of the four inner ones. The five inner ones seem to form a group by themselves. Then there is a gap exceeding in breadth the distance of the innermost of the five, when we have another group of two, Titan and Hyperion. Then there is a gap wider than the distance of Hyperion, outside of which comes Japetus, the outermost yet known.</p>
 <p>A curious relation among the periods is that the period of the third satellite is almost exactly twice that of the first; and that of the fourth almost twice that of the second. Also, four periods of Titan are almost exactly equal to three of Hyperion.</p>
 <p>The result of the latter relation is a certain very curious action of these two satellites on each other, through their mutual gravitation. To show this we give a diagram of the orbits. That of Hyperion, the outer of the two, is very eccentric, as will be seen by the figure. Suppose the satellites to be in conjunction at a certain moment; Titan, the inner and larger of the two at a point A, Hyperion at the point <em>a</em> just outside. At the end of sixty-five days Titan will have made three revolutions and Hyperion four, which will bring them again into conjunction at very nearly, but not exactly, the same point. Titan will have reached the point B, and Hyperion <em>b</em>. At a third conjunction the two will be a little above the line Bb, and so on. Really the conjunctions occur closer together than we have been able to draw them in the figure. In the course of nineteen years the point of conjunction will have slowly moved all round the circle, and the satellites will again be in conjunction at A.</p>
@@ -1037,10 +1059,12 @@ figcaption {
 <p>The fourth method also rests on gravitation. If we only knew the exact relation between the mass of the earth and that of the sun; that is to say, if we could determine precisely how many times heavier the sun is than the earth, we could compute at what distance the earth must be placed from the sun in order to revolve around it in one year. The only difficulty, therefore, is to weigh the earth against the sun. This is most exactly done by finding the change in the position of the orbit of Venus produced by the earth&#x27;s attraction. By comparing the positions of the orbit of Venus by its transits in 1761, 1769, 1874, and 1882, it is found that the orbit has a progressive motion, indicating that the mass of the sun is 332,600 times that of the earth and moon combined. Thus we are enabled to compute the distance of the sun by still another method.</p>
 <h4>Results of Measurements of the Sun&#x27;s Distance</h4>
 <p>We have described four methods of making this fundamental determination in astronomy, and in order that the reader may see just what degree of certainty and precision astronomical theory and measurements have reached, we give the separate results of these methods. The first column shows the parallax of the sun, which is the quantity actually used by astronomers. It is the same thing as the angle under which the equatorial radius of the earth would be seen by an observer at the distance of the sun from us. This is followed by the accompanying distance in miles.</p>
-<pre class="outline">	Measures of parallax | 8.800; Dist. 92,908,000 miles
-	Velocity of light | 8.778; Dist. 93,075,480 miles
-	Motion of moon | 8.784; Dist. 92,958,000 miles
-	Mass of the earth | 8.762; Dist. 93,113,000 miles</pre>
+<table class="math">
+<tr><td>Measures of parallax</td><td>8.800; Dist. 92,908,000 miles</td></tr>
+<tr><td>Velocity of light</td><td>8.778; Dist. 93,075,480 miles</td></tr>
+<tr><td>Motion of moon</td><td>8.784; Dist. 92,958,000 miles</td></tr>
+<tr><td>Mass of the earth</td><td>8.762; Dist. 93,113,000 miles</td></tr>
+</table>
 <p>The difference between these results is no greater than the liability of error wherever mathematical demonstrations and instrumental measurements of such extreme minuteness and complexity as these are required. From the close agreement between results reached by methods so widely different in their principles, we have a striking proof of the correctness of the astronomical views of the universe. Yet discrepancies exceeding a hundred thousand miles will not be tolerated by astronomers longer than is absolutely necessary.</p>
 <h3 id="ch-11">Chapter 11: Gravitation and the Weighing of the Planets</h3>
 <p>No work of the human intellect farther transcends what would seem possible to the ordinary thinker than the mathematical demonstrations of the motions of the heavenly bodies under the influence of their mutual gravitation. We have learned something of the orbits of the planets round the sun; but the following of the orbit is not the fundamental law of the planet&#x27;s motion; the latter is determined by gravitation alone. This law, as stated by Newton, is so comprehensive that nothing can be added. The law that every particle of matter in the universe attracts every other particle, with a force which varies inversely as the square of the distance between them, is the only law of nature which, so far as we know, is absolutely universal and invariable in its action. All the other processes of nature are in some way varied or modified by heat and cold, by time or place, by the presence or absence of other bodies. But no operation that man has ever been able to perform on matter changes its gravitation in the slightest. Two bodies gravitate by exactly the same amount, no matter what we do with them, no matter what obstacles we interpose between them, no matter how fast they move. All other natural forces admit of being investigated, but gravitation does not. Philosophers have attempted to explain it, or to find some cause for it, but nothing has yet been added to our knowledge by these attempts.</p>

@@ -455,6 +455,23 @@ def glyphs(text):
     return text
 
 
+# PAGE LOCATORS (helmholtz/, 2026-09-21). Ellis's Sensations of Tone cites
+# itself by page and QUARTER -- "see p. 77c" -- over a thousand times, and the
+# quarters are the pilcrows he printed in the margin. A reflowable edition has
+# no pages, so the prep writes each page start and each pilcrow as an anchor
+# token, {¶77} or {¶77c}, and each reference as a link token, {@77c|77c'},
+# whose text is the reference exactly as printed. The shapes are chosen so no
+# other book's text can contain them. The epub resolves the links across its
+# chapter files (build_ebook.resolve_locators).
+LOC_ANCHOR = re.compile(r"\{¶(\d+[a-d]?)\}")
+LOC_LINK = re.compile(r"\{@(\d+[a-d]?)\|([^{}|]+)\}")
+
+
+def locators(escaped):
+    escaped = LOC_ANCHOR.sub(lambda m: f'<span class="loc" id="loc-{m.group(1)}">{m.group(1)}</span>', escaped)
+    return LOC_LINK.sub(lambda m: f'<a class="ref" href="#loc-{m.group(1)}">{m.group(2)}</a>', escaped)
+
+
 def inline(escaped):
     """Every inline transform, in one place, for BOTH renderers.
     build_ebook.esct() calls this too, so the page and the epub cannot
@@ -473,8 +490,26 @@ def inline(escaped):
         held.append(mathml.to_mathml(tex, m.group(2) is not None))
         return f"\x00M{len(held) - 1}\x00"
     escaped = mathml.MATH.sub(hold, escaped)
-    out = glyphs(scripts(emphasis(escaped)))
+    out = locators(glyphs(scripts(emphasis(escaped))))
     return re.sub("\x00M(\\d+)\x00", lambda m: held[int(m.group(1))], out)
+
+
+def is_pipe_table(par):
+    """A TAB-INDENTED BLOCK WHOSE EVERY LINE CARRIES " | " IS A TABLE
+    (2026-09-21, for helmholtz/'s 2,739 rows). Before this only a block with
+    a formula or a plate became a table, and every other one was set as
+    <pre>, pipes and all: Farmer's contents, Hoffmann's card rows, Howard's
+    rent account, Newcomb's transits. Every line must open on a TAB, which
+    is how the preps set a table and not how a scan's ASCII art arrives
+    (candle-original's water diagram opens on spaces)."""
+    lines = [l for l in par.split("\n") if l.strip()]
+    return bool(lines) and all(l.startswith("\t") and " | " in l for l in lines)
+
+
+def table_cell(c):
+    # a proofreader's explicit empty cell (helmholtz: '""')
+    c = c.strip()
+    return "" if c == '""' else c
 
 
 def render_math_table(par):
@@ -486,7 +521,7 @@ def render_math_table(par):
     for line in par.split("\n"):
         if line.strip():
             # only the tab: a first cell may be empty (see build_ebook)
-            cells = [c.strip() for c in line.lstrip("\t").split(" | ")]
+            cells = [table_cell(c) for c in line.lstrip("\t").split(" | ")]
             rows.append("<tr>" + "".join(f"<td>{inline(html.escape(c))}</td>"
                                          for c in cells) + "</tr>")
     return '<table class="math">\n' + "\n".join(rows) + "\n</table>"
@@ -529,7 +564,7 @@ def render_body(text, figdir=None, site=None, bare_label=False):
             # other book's tables change.
             if figdir and FIGURE_INLINE.search(par):
                 out.append(render_plate_table(par, figdir, site, bare_label))
-            elif mathml.MATH.search(par):
+            elif mathml.MATH.search(par) or is_pipe_table(par):
                 out.append(render_math_table(par))
             else:
                 out.append(f'<pre class="outline">{inline(html.escape(par))}</pre>')

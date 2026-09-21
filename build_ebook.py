@@ -82,6 +82,28 @@ def esc(s):
     return html.escape(s, quote=False)
 
 
+def resolve_locators(textdir):
+    """A page-locator link (assemble.LOC_LINK) is written href="#loc-77c",
+    which is right on the one-file page and wrong in an epub, where the
+    anchor usually sits in another chapter file. Point each at its file.
+    A link whose anchor exists nowhere is a prep bug: stop."""
+    files = sorted(textdir.glob("*.xhtml"))
+    where = {}
+    for f in files:
+        for i in re.findall(r'id="(loc-[^"]+)"', f.read_text()):
+            assert i not in where, f"locator {i} twice"
+            where[i] = f.name
+    for f in files:
+        t = f.read_text()
+        def fix(m, name=f.name):
+            target = where.get(m.group(1))
+            assert target, f"{name}: link to missing locator {m.group(1)}"
+            return f'href="{"" if target == name else target}#{m.group(1)}"'
+        new = re.sub(r'href="#(loc-[^"]+)"', fix, t)
+        if new != t:
+            f.write_text(new)
+
+
 def esct(s):
     """esc(), plus super/subscript markup. For BODY TEXT only --
     never for a <title>, which must stay text."""
@@ -204,7 +226,7 @@ def classify_block(par):
         # takes this path, so no other book's tables move.
         if FIGURE_DIR[0] and assemble.FIGURE_INLINE.search(stripped):
             return "plates"
-        if mathml.MATH.search(stripped):
+        if mathml.MATH.search(stripped) or assemble.is_pipe_table(par.strip("\n")):
             return "table"             # mirrors assemble.render_math_table
         lines = [l.strip() for l in stripped.splitlines() if l.strip()]
         short = sum(1 for l in lines if len(l) < 65)
@@ -308,12 +330,20 @@ def render_block(par, kind):
     if ASTERISM.match(re.sub(r"\s+", " ", s)):
         return "\t\t\t<hr/>"
     if kind == "paragraph":
-        if is_all_caps(s) and len(s) < 200 and "\n" not in s and not re.search("[⟦⟪⟬]", s):
-            return f'\t\t\t<p class="subhead">{esc(nice_title(s))}</p>'
+        # a capitals line carrying emphasis is not a heading but a row of
+        # italic note names (helmholtz: "693 *F*♯ 683 *C*♯"); the page
+        # sets it as a paragraph too
+        if (is_all_caps(s) and len(s) < 200 and "\n" not in s and not re.search("[⟦⟪⟬]", s)
+                and not assemble.EMPH.search(s)):
+            return f'\t\t\t<p class="subhead">{assemble.locators(esc(nice_title(s)))}</p>'
         text = ERA.sub(r'<abbr epub:type="se:era">\1\2</abbr>', esct(s))
         return f"\t\t\t<p>{text}</p>"
     if kind == "subhead":
-        return f'\t\t\t<p class="subhead">{esc(s)}</p>'
+        # inlined like the page's <h4> (assemble.render_body): escaped only,
+        # an italic subhead shipped its asterisks and a page locator its
+        # braces (helmholtz, 2026-09-21). A line carrying a picture never
+        # classifies as a subhead, so esct's glyphs never fire here.
+        return f'\t\t\t<p class="subhead">{esct(s)}</p>'
     if kind == "plates":
         return render_plate_table(s)
     if kind == "table":
@@ -322,7 +352,7 @@ def render_block(par, kind):
         rows = []
         for line in par.split("\n"):
             if line.strip():
-                tds = "\n".join(f"\t\t\t\t\t\t<td>{esct(c.strip())}</td>"
+                tds = "\n".join(f"\t\t\t\t\t\t<td>{esct(assemble.table_cell(c))}</td>"
                                 for c in line.lstrip("\t").split(" | "))
                 rows.append(f"\t\t\t\t\t<tr>\n{tds}\n\t\t\t\t\t</tr>")
         return ("\t\t\t<table>\n\t\t\t\t<tbody>\n" + "\n".join(rows)
@@ -831,6 +861,10 @@ def main():
     # local.css additions — only rules actually used by the generated text
     used = "".join((textdir / f).read_text() for f in spine)
     rules = []
+    if 'class="loc"' in used:
+        rules.append('span.loc{\n\tfont-size: 0.65em;\n\tvertical-align: super;\n\tcolor: #888;\n}')
+    if 'class="ref"' in used:
+        rules.append('a.ref{\n\tcolor: inherit;\n\ttext-decoration: underline dotted;\n}')
     if 'class="subhead"' in used:
         rules.append('p.subhead{\n\tfont-style: italic;\n\tmargin-top: 1.5em;\n\ttext-indent: 0;\n}')
     if 'class="lines"' in used:
@@ -876,6 +910,7 @@ def main():
         t = f.read_text()
         if mathml.declare(t) != t:          # MathML namespace on <html>, see mathml.py
             f.write_text(mathml.declare(t))
+    resolve_locators(dest / "src/epub/text")
 
     # `se typogrify` turns an escaped &lt; back into a bare "<", which makes
     # the file unparseable for every step after it — and the error you get is

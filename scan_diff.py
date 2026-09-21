@@ -50,6 +50,31 @@ def fetch(d, ident):
     return cache.read_text(errors="replace")
 
 
+def opcodes(ew, sw, chunk=5000):
+    """difflib opcodes of ew against sw, in global indices. A long book
+    (helmholtz: 370,000 words) is aligned CHUNK words at a time against a
+    window of the scan that follows the last match, since one SequenceMatcher
+    over the whole book runs for hours. Short books take the one pass, so
+    their results are exactly what they were."""
+    if len(ew) <= 60000:
+        yield from difflib.SequenceMatcher(None, ew, sw, autojunk=False).get_opcodes()
+        return
+    j = 0
+    for i0 in range(0, len(ew), chunk):
+        part = ew[i0:i0 + chunk]
+        lo = max(0, j - 500)
+        win = sw[lo:lo + int(len(part) * 1.4) + 3000]
+        sm = difflib.SequenceMatcher(None, part, win, autojunk=False)
+        blocks = [b for b in sm.get_matching_blocks() if b.size]
+        for tag, i1, i2, j1, j2 in sm.get_opcodes():
+            # a chunk's ragged ends are the window's slack, not differences
+            if blocks and (i2 <= blocks[0].a or i1 >= blocks[-1].a + blocks[-1].size):
+                continue
+            yield tag, i0 + i1, i0 + i2, lo + j1, lo + j2
+        if blocks:
+            j = lo + blocks[-1].b + blocks[-1].size
+
+
 def vote(book, id1, id2, start):
     d = ROOT / book
     text = ""
@@ -73,8 +98,7 @@ def vote(book, id1, id2, start):
         if m:
             heads |= set(words(m.group(1)))
     out, found = [], []
-    sm = difflib.SequenceMatcher(None, ew, scans[0].split(), autojunk=False)
-    for tag, i1, i2, j1, j2 in sm.get_opcodes():
+    for tag, i1, i2, j1, j2 in opcodes(ew, scans[0].split()):
         # an INSERT is a word the print has and the edition lacks -- a dropped
         # word, which reads perfectly ("the law always approaching" for "the
         # law is always approaching"). Short ones only; long runs are page

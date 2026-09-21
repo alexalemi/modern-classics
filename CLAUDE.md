@@ -334,6 +334,38 @@ printed "billionth" and "sixpence" for "saxpence". Beware: Archive.org's
 typeset PDF -- not a witness. Three figure pairs (12/13, 38/39, 44/45)
 carried each other's numbers and were relabelled by Thompson's text.
 
+HELMHOLTZ, ON THE SENSATIONS OF TONE (helmholtz/, 2026-09-21), Ellis's
+1885 translation: the largest page-read edition, 560 leaves proofed from the
+1895 reprint's scan (fixes/ against the OCR draft, apply_fixes.py -> proof/),
+56 sections, 385,000 words, 2,205 formulas, 625 notes, 181 cuts.
+  THE APPARATUS IS KEPT, AS LINKS. Ellis cites his own pages by page and
+  QUARTER ("see p. 77c") and the quarters are his marginal pilcrows, three a
+  page (554 of 564 carry exactly three; a chapter opening prints two, the
+  first falling in the heading space). Each page start and pilcrow is a
+  locator token {¶77c}, each LETTERED reference a link {@77c|77c'}, rendered
+  by assemble.locators() in both renderers; build_ebook.resolve_locators
+  points each link at the right chapter file and stops on a link to nothing.
+  ONLY LETTERED REFERENCES LINK: a bare page number cites another book as
+  often as this one ("Hopkins, p. 113", "vol. lx. p. 449"), and a wrong link
+  is worse than none. Primes (second column) go to the unprimed quarter.
+  THE SECOND READING PAID AT ONCE (crosscheck.py, the epictetus rule): 11,966
+  words of notes continued from the page before were silently lost, because
+  the join went into a list already copied into the stream. Word ratio,
+  verify and every per-leaf count agreed with the loss.
+  A NOTE FOLLOWS THE PARAGRAPH THAT CITES IT, unless that paragraph runs on
+  overleaf; the first version set every note at the page's end, up to six
+  paragraphs from its mark.
+  A PROOF CHUNK MAY HOLD A PROSE LINE AND ITS TABLE ROWS WITH NO BLANK LINE,
+  and prose resuming after a table must not be joined into its last cell.
+  TWO SHARED FIXES: a TAB block whose every line carries " | " is now a table
+  in both renderers (eight books had shown literal pipes in <pre>), and the
+  epub's subheads go through esct(), because escaped-only subheads shipped
+  literal asterisks in twelve epubs (Gray's How Plants Grow: 118).
+  THE VOTE ON A BOOK THIS SIZE needs scan_diff.opcodes' chunked alignment
+  (one SequenceMatcher over 370k words did not finish in 15 minutes; chunked
+  it takes 3.5); of 1,473 agreeing readings a dictionary filter left four,
+  all Google-OCR artefacts ("Lectures on Sounds" is an italic comma).
+
 Covers come from the books' own plates where Commons has nothing large
 enough (build/covers/{book}.jpg with a placeholder `commons` name and a
 cover_note -- the kenzeiki precedent).

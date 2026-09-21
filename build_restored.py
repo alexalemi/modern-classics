@@ -158,6 +158,9 @@ BLURBS = {
     "hoffmann": "Cards, coins, the cups and balls and the great stage "
                 "illusions, explained trick by trick, with every drawing "
                 "described.",
+    "helmholtz": "Why some chords sound smooth and others rough: the "
+                 "physics of tone and the history of scales, in Ellis's "
+                 "annotated translation, every page read from the scan.",
     "conquest": "Envy, boredom, fatigue and fear of the neighbours, then "
                 "zest, affection and work: Russell's 1930 book for the "
                 "unhappy, not the learned.",

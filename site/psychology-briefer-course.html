@@ -107,6 +107,20 @@ table.plates figcaption {
   display: none;
 }
 
+/* page locators: a printed page and quarter, for books that cite
+   themselves by them (Helmholtz: "see p. 77c") */
+span.loc {
+  font-size: 0.65em;
+  color: #888;
+  vertical-align: 0.3em;
+  padding: 0 0.15em;
+  font-style: normal;
+}
+a.ref {
+  color: inherit;
+  text-decoration: underline dotted;
+}
+
 figcaption {
   margin-top: 0.6em;
   font-family: Georgia, "Palatino Linotype", "Book Antiqua", serif;
@@ -446,17 +460,19 @@ figcaption {
 <p>&quot;The delicacy of the tactile sense varies on different parts of the skin; it is greatest on the forehead, temples, and back of the forearm, where a weight of 2 milligr. pressing on an area of 9 sq. millim. can be felt.</p>
 <p>&quot;In order that the sense of touch may be excited neighboring skin-areas must be differently pressed. When the hand is immersed in a liquid, as mercury, which fits into all its inequalities and presses with practically the same weight on all neighboring immersed areas, the sense of pressure is only felt at a line along the surface, where the immersed and non-immersed parts of the skin meet.</p>
 <p>The Localizing Power of the Skin.—&quot;When the eyes are closed and a point of the skin is touched we can with some accuracy indicate the region stimulated; although tactile feelings are in general characters alike, they differ in something besides intensity by which we can distinguish them; some sub-sensation quality not rising definitely into prominence in consciousness must be present, comparable to the upper partials determining the timbre of a tone. The accuracy of the localizing power varies widely in different skin regions and is measured by observing the least distance which must separate two objects (as the blunted points of a pair of compasses) in order that they may be felt as two. The following table illustrates some of the differences observed:</p>
-<pre class="outline">	Tongue-tip | 1.1 mm. | (.04 inch)
-	Palm side of last phalanx of finger | 2.2 mm. | (.08 inch)
-	Red part of lips | 4.4 mm. | (.16 inch)
-	Tip of nose | 6.6 mm. | (.24 inch)
-	Back of second phalanx of finger | 11.0 mm. | (.44 inch)
-	Heel | 22.0 mm. | (.88 inch)
-	Back of hand | 30.8 mm. | (1.23 inches)
-	Forearm | 39.6 mm. | (1.58 inches)
-	Sternum | 44.0 mm. | (1.76 inches)
-	Back of neck | 52.8 mm. | (2.11 inches)
-	Middle of back | 66.0 mm. | (2.64 inches)</pre>
+<table class="math">
+<tr><td>Tongue-tip</td><td>1.1 mm.</td><td>(.04 inch)</td></tr>
+<tr><td>Palm side of last phalanx of finger</td><td>2.2 mm.</td><td>(.08 inch)</td></tr>
+<tr><td>Red part of lips</td><td>4.4 mm.</td><td>(.16 inch)</td></tr>
+<tr><td>Tip of nose</td><td>6.6 mm.</td><td>(.24 inch)</td></tr>
+<tr><td>Back of second phalanx of finger</td><td>11.0 mm.</td><td>(.44 inch)</td></tr>
+<tr><td>Heel</td><td>22.0 mm.</td><td>(.88 inch)</td></tr>
+<tr><td>Back of hand</td><td>30.8 mm.</td><td>(1.23 inches)</td></tr>
+<tr><td>Forearm</td><td>39.6 mm.</td><td>(1.58 inches)</td></tr>
+<tr><td>Sternum</td><td>44.0 mm.</td><td>(1.76 inches)</td></tr>
+<tr><td>Back of neck</td><td>52.8 mm.</td><td>(2.11 inches)</td></tr>
+<tr><td>Middle of back</td><td>66.0 mm.</td><td>(2.64 inches)</td></tr>
+</table>
 <p>The localizing power is a little more acute across the long axis of a limb than in it; and is better when the pressure is only strong enough to just cause a distinct tactile sensation than when it is more powerful; it is also very readily and rapidly improvable by practice.&quot; It seems to be naturally delicate in proportion as the skin which possesses it covers a more movable part of the body.</p>
 <figure id="fig-ax">
 <img src="images/psychology-briefer-course/figax.jpg" alt="Fig. 25. — A patch of skin divided into many small six-sided nerve-areas, with points a, b and c marked on it and a dotted outline d extending below." width="516" height="762" loading="lazy">
@@ -663,28 +679,46 @@ figcaption {
 <p>The reaction-time varies with the <em>individual</em> and his <em>age</em>. Old and uncultivated people have it long (nearly a second, in an old pauper observed by Exner). Children have it long (half a second, according to Herzen).</p>
 <p><em>Practice</em> shortens it to a quantity which is for each individual a minimum beyond which no farther reduction can be made. The aforesaid old pauper&#x27;s time was, after much practice, reduced to 0.1866 sec.</p>
 <p><em>Fatigue</em> lengthens it, and <em>concentration of attention</em> shortens it. The <em>nature of the signal</em> makes it vary. I here bring together the averages which have been obtained by some observers:</p>
-<pre class="outline">	 | Hirsch. | Hankel. | Exner. | Wundt.
-	Sound | 0.149 | 0.1505 | 0.1360 | 0.167
-	Light | 0.200 | 0.2246 | 0.1506 | 0.222
-	Touch | 0.182 | 0.1546 | 0.1337 | 0.213</pre>
+<table class="math">
+<tr><td></td><td>Hirsch.</td><td>Hankel.</td><td>Exner.</td><td>Wundt.</td></tr>
+<tr><td>Sound</td><td>0.149</td><td>0.1505</td><td>0.1360</td><td>0.167</td></tr>
+<tr><td>Light</td><td>0.200</td><td>0.2246</td><td>0.1506</td><td>0.222</td></tr>
+<tr><td>Touch</td><td>0.182</td><td>0.1546</td><td>0.1337</td><td>0.213</td></tr>
+</table>
 <p>It will be observed that <em>sound</em> is more promptly reacted on than either <em>sight</em> or <em>touch</em>. <em>Taste</em> and <em>smell</em> are slower than either. The <em>intensity of the signal</em> makes a difference. The intenser the stimulus the shorter the time. Herzen compared the reaction from a <em>corn</em> on the toe with that from the skin of the hand of the same subject. The two places were stimulated simultaneously, and the subject tried to react simultaneously with both hand and foot, but the foot always went quickest. When the sound skin of the foot was touched instead of the corn, it was the hand which always reacted first. <em>Intoxicants</em> on the whole lengthen the time, but much depends on the dose.</p>
 <p>Complicated Reactions.—These occur when some kind of intellectual operation accompanies the reaction. The rational place in which to report of them would be under the head of the various intellectual operations concerned. But certain persons prefer to see all these measurements bunched together regardless of context; so, to meet their views, I give the complicated reactions here.</p>
 <p>When we have to think before reacting it is obvious that there is no definite reaction-time of which we can talk—it all depends on how long we think. The only times we can measure are the <em>minimum</em> times of certain determinate and very simple intellectual operations. The <em>time required for discrimination</em> has thus been made a subject of experimental measurement. Wundt calls it <em>Unterscheidungszeit</em>. His subjects (whose simple reaction-time had previously been determined) were required to make a movement, always the same, the instant they discerned <em>which</em> of two or more signals they received. The <em>excess</em> of time occupied by these reactions <em>over the simple reaction-time</em>, in which only one signal was used and known in advance, measured, according to Wundt, the time required for the act of discrimination. It was found longer when four different signals were irregularly used than when only two were used. When two were used (the signals being the sudden appearance of a black or of a white object), the average times of three observers were respectively (in seconds)</p>
-<pre class="outline">	0.050 | 0.047 | 0.079</pre>
+<table class="math">
+<tr><td>0.050</td><td>0.047</td><td>0.079</td></tr>
+</table>
 <p>When four signals were used, a red and a green light being added to the others, it became, for the same observers,</p>
-<pre class="outline">	0.157 | 0.073 | 0.132</pre>
+<table class="math">
+<tr><td>0.157</td><td>0.073</td><td>0.132</td></tr>
+</table>
 <p>Prof. Cattell found he could get no results by this method, and reverted to one used by observers previous to Wundt and which Wundt had rejected. This is the <em>einfache Wahlmethode</em>, as Wundt calls it. The reacter awaits the signal and reacts if it is of one sort, but omits to act if it is of another sort. The reaction thus occurs after discrimination; the motor impulse cannot be sent to the hand until the subject knows what the signal is. Reacting in this way, Prof. Cattell found the increment of time required for distinguishing a white signal from no signal to be, in two observers,</p>
-<pre class="outline">	0.030 | and | 0.050;</pre>
+<table class="math">
+<tr><td>0.030</td><td>and</td><td>0.050;</td></tr>
+</table>
 <p>that for distinguishing one color from another was similarly</p>
-<pre class="outline">	0.100 | and | 0.110;</pre>
+<table class="math">
+<tr><td>0.100</td><td>and</td><td>0.110;</td></tr>
+</table>
 <p>that for distinguishing a certain color from ten other colors,</p>
-<pre class="outline">	0.105 | and | 0.117;</pre>
+<table class="math">
+<tr><td>0.105</td><td>and</td><td>0.117;</td></tr>
+</table>
 <p>that for distinguishing the letter A in ordinary print from the letter Z,</p>
-<pre class="outline">	0.142 | and | 0.137;</pre>
+<table class="math">
+<tr><td>0.142</td><td>and</td><td>0.137;</td></tr>
+</table>
 <p>that for distinguishing a given letter from all the rest of the alphabet (not reacting until that letter appeared),</p>
-<pre class="outline">	0.119 | and | 0.116;</pre>
+<table class="math">
+<tr><td>0.119</td><td>and</td><td>0.116;</td></tr>
+</table>
 <p>that for distinguishing a word from any of twenty-five other words, from</p>
-<pre class="outline">	0.118 | to | 0.158 sec.</pre>
+<table class="math">
+<tr><td>0.118</td><td>to</td><td>0.158 sec.</td></tr>
+</table>
 <p>—the difference depending on the length of the words and the familiarity of the language to which they belonged.</p>
 <p>Prof. Cattell calls attention to the fact that the time for distinguishing a word is often but little more than that for distinguishing a letter: &quot;We do not, therefore,&quot; he says, &quot;distinguish separately the letters of which a word is composed, but the word as a whole. The application of this in teaching children to read is evident.&quot;</p>
 <p>He also finds a great difference in the time with which various letters are distinguished, E being particularly bad.</p>
@@ -863,9 +897,11 @@ figcaption {
 <p>And similarly with the images of their person in the minds of others. I should not be extant now had I not become sensitive to looks of approval or disapproval on the faces among which my life is cast. Looks of contempt cast on other persons need affect me in no such peculiar way. My spiritual powers, again, must interest me more than those of other people, and for the same reason. I should not be here at all unless I had cultivated them and kept them from decay. And the same law which made me once care for them makes me care for them still.</p>
 <p>All these three things form the <em>natural Me</em>. But all these things are <em>objects</em>, properly so called, to the thought which at any time may be doing the thinking; and if the zoölogical and evolutionary point of view is the true one, there is no reason why one object <em>might</em> not arouse passion and interest as primitively and instinctively as any other. The phenomenon of passion is in origin and essence the same, whatever be the target upon which it is discharged; and what the target actually happens to be is solely a question of fact. I might conceivably be as much fascinated, and as primitively so, by the care of my neighbor&#x27;s body as by the care of my own. I <em>am</em> thus fascinated by the care of my child&#x27;s body. The only check to such exuberant non-egoistic interests is natural selection, which would weed out such as were very harmful to the individual or to his tribe. Many such interests, however, remain unweeded out—the interest in the opposite sex, for example, which seems in mankind stronger than is called for by its utilitarian need; and alongside of them remain interests, like that in alcoholic intoxication, or in musical sounds, which, for aught we can see, are without any utility whatever. The sympathetic instincts and the egoistic ones are thus coördinate. They arise, so far as we can tell, on the same psychologic level. The only difference between them is that the instincts called egoistic form much the larger mass.</p>
 <p>Summary.—The following table may serve for a summary of what has been said thus far. The empirical life of Self is divided, as below, into</p>
-<pre class="outline">	 | Material. | Social. | Spiritual.
-	Self-Seeking. | Bodily Appetites and Instincts. Love of Adornment, Foppery, Acquisitiveness, Constructiveness. Love of Home, etc. | Desire to Please, be Noticed, Admired, etc. Sociability, Emulation, Envy, Love, Pursuit of Honor, Ambition, etc. | Intellectual, Moral and Religious Aspirations, Conscientiousness.
-	Self-Estimation. | Personal Vanity, Modesty, etc. Pride of Wealth, Fear of Poverty. | Social and Family Pride, Vainglory, Snobbery, Humility, Shame, etc. | Sense of Moral or Mental Superiority, Purity, etc. Sense of Inferiority or of Guilt.</pre>
+<table class="math">
+<tr><td></td><td>Material.</td><td>Social.</td><td>Spiritual.</td></tr>
+<tr><td>Self-Seeking.</td><td>Bodily Appetites and Instincts. Love of Adornment, Foppery, Acquisitiveness, Constructiveness. Love of Home, etc.</td><td>Desire to Please, be Noticed, Admired, etc. Sociability, Emulation, Envy, Love, Pursuit of Honor, Ambition, etc.</td><td>Intellectual, Moral and Religious Aspirations, Conscientiousness.</td></tr>
+<tr><td>Self-Estimation.</td><td>Personal Vanity, Modesty, etc. Pride of Wealth, Fear of Poverty.</td><td>Social and Family Pride, Vainglory, Snobbery, Humility, Shame, etc.</td><td>Sense of Moral or Mental Superiority, Purity, etc. Sense of Inferiority or of Guilt.</td></tr>
+</table>
 <h4>B) The Self as Knower</h4>
 <p>The I, or &#x27;pure ego,&#x27; is a very much more difficult subject of inquiry than the Me. It is that which at any given moment <em>is</em> conscious, whereas the Me is only one of the things which it is conscious <em>of</em>. In other words, it is the <em>Thinker</em>; and the question immediately comes up, <em>what</em> is the thinker? Is it the passing state of consciousness itself, or is it something deeper and less mutable? The passing state we have seen to be the very embodiment of change (see Chapter XI). Yet each of us spontaneously considers that by &#x27;I,&#x27; he means something always the same. This has led most philosophers to postulate behind the passing state of consciousness a permanent Substance or Agent whose modification or act it is. This Agent is the thinker; the &#x27;state&#x27; is only its instrument or means. &#x27;Soul,&#x27; &#x27;transcendental Ego,&#x27; &#x27;Spirit,&#x27; are so many names for this more permanent sort of Thinker. Not discriminating them just yet, let us proceed to define our idea of the passing state of consciousness more clearly.</p>
 <p>The Unity of the Passing Thought.—Already, in speaking of &#x27;sensations,&#x27; from the point of view of Fechner&#x27;s idea of measuring them, we saw that there was no ground for calling them compounds. But what is true of sensations cognizing simple qualities is also true of thoughts with complex objects composed of many parts. This proposition unfortunately runs counter to a wide-spread prejudice, and will have to be defended at some length. Common-sense, and psychologists of almost every school, have agreed that whenever an object of thought contains many elements, the thought itself must be made up of just as many ideas, one idea for each element, all fused together in appearance, but really separate.</p>
@@ -1152,11 +1188,13 @@ figcaption {
 <p><em>Judicious methods</em> of remembering things are nothing but logical ways of conceiving them and working them into rational systems, classifying them, analyzing them into parts, etc., etc. All the sciences are such methods.</p>
 <p>Of <em>ingenious methods</em> many have been invented, under the name of technical memories. By means of these systems it is often possible to retain entirely disconnected facts, lists of names, numbers, and so forth, so multitudinous as to be entirely unrememberable in a natural way. The method consists usually in a framework learned mechanically, of which the mind is supposed to remain in secure and permanent possession. Then, whatever is to be remembered is deliberately associated by some fanciful analogy or connection with some part of this framework, and this connection thenceforward helps its recall. The best known and most used of these devices is the figure-alphabet. To remember numbers, e.g., a figure-alphabet is first formed, in which each numerical digit is represented by one or more letters. The number is then translated into such letters as will best make a word, if possible a word suggestive of the object to which the number belongs. The word will then be remembered when the numbers alone might be forgotten. The recent system of Loisette is a method, much less mechanical, of weaving the thing into associations which may aid its recall.</p>
 <p>Footnote: A common figure-alphabet is this:</p>
-<pre class="outline">	1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0
-	t | n | m | r | l | sh | g | f | b | s
-	d |  |  |  |  | j | k | v | p | c
-	 |  |  |  |  | ch | c |  |  | z
-	 |  |  |  |  | g | qu |  |  |</pre>
+<table class="math">
+<tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>0</td></tr>
+<tr><td>t</td><td>n</td><td>m</td><td>r</td><td>l</td><td>sh</td><td>g</td><td>f</td><td>b</td><td>s</td></tr>
+<tr><td>d</td><td></td><td></td><td></td><td></td><td>j</td><td>k</td><td>v</td><td>p</td><td>c</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>ch</td><td>c</td><td></td><td></td><td>z</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>g</td><td>qu</td><td></td><td>|</td></tr>
+</table>
 <p>Recognition.—If, however, a phenomenon be met with too often, and with too great a variety of contexts, although its image is retained and reproduced with correspondingly great facility, it fails to come up with any one particular setting, and the projection of it backwards to a particular past date consequently does not come about. We <em>recognize</em> but do not <em>remember</em> it—its associates form too confused a cloud. A similar result comes about when a definite setting is only nascently aroused. We then feel that we have seen the object already, but when or where we cannot say, though we may seem to ourselves to be on the brink of saying it. That nascent cerebral excitations can thus affect consciousness is obvious from what happens when we seek to remember a name. It tingles, it trembles on the verge, but does not come. Just such a tingling and trembling of unrecovered associates is the penumbra of recognition that may surround any experience and make it seem familiar, though we know not why.</p>
 <p>There is a curious experience which everyone seems to have had—the feeling that the present moment in its completeness has been experienced before—we were saying just this thing, in just this place, to just these people, etc. This &#x27;sense of preëxistence&#x27; has been treated as a great mystery and occasioned much speculation. Dr. Wigan considered it due to a dissociation of the action of the two hemispheres, one of them becoming conscious a little later than the other, but both of the same fact. I must confess that the quality of mystery seems to me here a little strained. I have over and over again in my own case succeeded in resolving the phenomenon into a case of memory, so indistinct that whilst some past circumstances are presented again, the others are not. The dissimilar portions of the past do not arise completely enough at first for the date to be identified. All we get is the present scene with a general suggestion of pastness about it. That faithful observer, Prof. Lazarus, interprets the phenomenon in the same way; and it is noteworthy that just as soon as the past context grows complete and distinct the emotion of weirdness fades from the experience.</p>
 <p>Forgetting.—In the practical use of our intellect, forgetting is as important a function as remembering. &#x27;Total recall&#x27; (see Chapter XVI) we saw to be comparatively rare in association. If we remembered everything, we should on most occasions be as ill off as if we remembered nothing. It would take as long for us to recall a space of time as it took the original time to elapse, and we should never get ahead with our thinking. All recollected times undergo, accordingly, what M. Ribot calls foreshortening; and this foreshortening is due to the omission of an enormous number of the facts which filled them. &quot;We thus reach the paradoxical result,&quot; says M. Ribot, &quot;that one condition of remembering is that we should forget. Without totally forgetting a prodigious number of states of consciousness, and momentarily forgetting a large number, we could not remember at all. Oblivion, except in certain cases, is thus no malady of memory, but a condition of its health and its life.&quot;</p>
@@ -1508,8 +1546,10 @@ figcaption {
 <p>Effort feels like an original force. We now see at one view when it is that effort complicates volition. It does so whenever a rarer and more ideal impulse is called upon to neutralize others of a more instinctive and habitual kind; it does so whenever strongly explosive tendencies are checked, or strongly obstructive conditions overcome. The <em>âme bien née</em>, the child of the sunshine, at whose birth the fairies made their gifts, does not need much of it in his life. The hero and the neurotic subject, on the other hand, do. Now our spontaneous way of conceiving the effort, under all these circumstances, is as an active force adding its strength to that of the motives which ultimately prevail. When outer forces impinge upon a body, we say that the resultant motion is in the line of least resistance, or of greatest traction. But it is a curious fact that our spontaneous language never speaks of volition with effort in this way. Of course if we proceed <em>a priori</em> and define the line of least resistance as the line that is followed, the physical law must also hold good in the mental sphere. But we <em>feel</em>, in all hard cases of volition, as if the line taken, when the rarer and more ideal motives prevail, were the line of greater resistance, and as if the line of coarser motivation were the more pervious and easy one, even at the very moment when we refuse to follow it. He who under the surgeon&#x27;s knife represses cries of pain, or he who exposes himself to social obloquy for duty&#x27;s sake, feels as if he were following the line of greatest temporary resistance. He speaks of conquering and overcoming his impulses and temptations.</p>
 <p>But the sluggard, the drunkard, the coward, never talk of their conduct in that way, or say they resist their energy, overcome their sobriety, conquer their courage, and so forth. If in general we class all springs of action as propensities on the one hand and ideals on the other, the sensualist never says of his behavior that it results from a victory over his ideals, but the moralist always speaks of his as a victory over his propensities. The sensualist uses terms of inactivity, says he forgets his ideals, is deaf to duty, and so forth; which terms seem to imply that the ideal motives <em>per se</em> can be annulled without energy or effort, and that the strongest mere traction lies in the line of the propensities. The ideal impulse appears, in comparison with this, a still small voice which must be artificially reinforced to prevail. Effort is what reinforces it, making things seem as if, while the force of propensity were essentially a fixed quantity, the ideal force might be of various amount. But what determines the amount of the effort when, by its aid, an ideal motive becomes victorious over a great sensual resistance? The very greatness of the resistance itself. If the sensual propensity is small, the effort is small. The latter is <em>made great</em> by the presence of a great antagonist to overcome. And if a brief definition of ideal or moral action were required, none could be given which would better fit the appearances than this: <em>It is action in the line of the greatest resistance</em>.</p>
 <p>The facts may be most briefly symbolized thus, P standing for the propensity, I for the ideal impulse, and E for the effort:</p>
-<pre class="outline">	I <em>per se</em> | &lt; | P.
-	I + E | &gt; | P.</pre>
+<table class="math">
+<tr><td>I <em>per se</em></td><td>&lt;</td><td>P.</td></tr>
+<tr><td>I + E</td><td>&gt;</td><td>P.</td></tr>
+</table>
 <p>In other words, if E adds itself to I, P immediately offers the least resistance, and motion occurs in spite of it.</p>
 <p>But the E does not seem to form an integral part of the I. It appears adventitious and indeterminate in advance. We can make more or less as we please, and <em>if</em> we make enough we can convert the greatest mental resistance into the least. Such, at least, is the impression which the facts spontaneously produce upon us. But we will not discuss the truth of this impression at present; let us rather continue our descriptive detail.</p>
 <p>Pleasure and Pain as Springs of Action.—Objects and thoughts of objects start our action, but the pleasures and pains which action brings modify its course and regulate it; and later the thoughts of the pleasures and the pains acquire themselves impulsive and inhibitive power. Not that the thought of a pleasure need be itself a pleasure, usually it is the reverse—<em>nessun maggior dolore</em>—as Dante says—and not that the thought of pain need be a pain, for, as Homer says, &quot;griefs are often afterwards an entertainment.&quot; But as present pleasures are tremendous reinforcers, and present pains tremendous inhibitors of whatever action leads to them, so the thoughts of pleasures and pains take rank amongst the thoughts which have most impulsive and inhibitive power. The precise relation which these thoughts hold to other thoughts is thus a matter demanding some attention.</p>

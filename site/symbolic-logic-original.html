@@ -107,6 +107,20 @@ table.plates figcaption {
   display: none;
 }
 
+/* page locators: a printed page and quarter, for books that cite
+   themselves by them (Helmholtz: "see p. 77c") */
+span.loc {
+  font-size: 0.65em;
+  color: #888;
+  vertical-align: 0.3em;
+  padding: 0 0.15em;
+  font-style: normal;
+}
+a.ref {
+  color: inherit;
+  text-decoration: underline dotted;
+}
+
 figcaption {
   margin-top: 0.6em;
   font-family: Georgia, "Palatino Linotype", "Book Antiqua", serif;
@@ -1046,10 +1060,12 @@ other with “No”, each of which we now know how to translate.</p>
 <p>(1)</p>
 <p>[“Some apples are not ripe.”]</p>
 <p>[Here we arrange thus:—]</p>
-<pre class="outline">	“Some” |  | Sign of Quantity.
-	“existing Things” |  | Subject.
-	“are” |  | Copula.
-	“not-ripe apples” |  | Predicate.</pre>
+<table class="math">
+<tr><td>“Some”</td><td></td><td>Sign of Quantity.</td></tr>
+<tr><td>“existing Things”</td><td></td><td>Subject.</td></tr>
+<tr><td>“are”</td><td></td><td>Copula.</td></tr>
+<tr><td>“not-ripe apples”</td><td></td><td>Predicate.</td></tr>
+</table>
 <p>[or thus:—]</p>
 <p>[“Some | existing Things | are | not-ripe apples.”]</p>
 <p>(2)</p>
@@ -1166,22 +1182,26 @@ genial friend, while he himself has nothing but the blank Diagram, and
 get that genial friend to question him on this Table, dodging about as
 much as possible. The Questions and Answers should be something like
 this:—</p>
-<pre class="outline">	Adjuncts of Classes. | Compartments, or Cells, assigned to them.
-	x | North | Half. |  | 
-	x′ | South | 〃 |  | 
-	y | West | 〃 |  | 
-	y′ | East | 〃 |  | 
-	xy | North - | West | Cell. | 
-	xy′ | 〃 | East | 〃 | 
-	x′y | South - | West | 〃 | 
-	x′y′ | 〃 | East | 〃 |</pre>
-<pre class="outline">	Q. |  | “Adjunct for West Half?”
-	A. |  | “y.”
-	Q. |  | “Compartment for xy′?”
-	A. |  | “North-East Cell.”
-	Q. |  | “Adjunct for South-West Cell?”
-	A. |  | “x′y.”
-	 |  | &amp;c., &amp;c.</pre>
+<table class="math">
+<tr><td>Adjuncts of Classes.</td><td>Compartments, or Cells, assigned to them.</td></tr>
+<tr><td>x</td><td>North</td><td>Half.</td><td></td><td></td></tr>
+<tr><td>x′</td><td>South</td><td>〃</td><td></td><td></td></tr>
+<tr><td>y</td><td>West</td><td>〃</td><td></td><td></td></tr>
+<tr><td>y′</td><td>East</td><td>〃</td><td></td><td></td></tr>
+<tr><td>xy</td><td>North -</td><td>West</td><td>Cell.</td><td></td></tr>
+<tr><td>xy′</td><td>〃</td><td>East</td><td>〃</td><td></td></tr>
+<tr><td>x′y</td><td>South -</td><td>West</td><td>〃</td><td></td></tr>
+<tr><td>x′y′</td><td>〃</td><td>East</td><td>〃 |</td></tr>
+</table>
+<table class="math">
+<tr><td>Q.</td><td></td><td>“Adjunct for West Half?”</td></tr>
+<tr><td>A.</td><td></td><td>“y.”</td></tr>
+<tr><td>Q.</td><td></td><td>“Compartment for xy′?”</td></tr>
+<tr><td>A.</td><td></td><td>“North-East Cell.”</td></tr>
+<tr><td>Q.</td><td></td><td>“Adjunct for South-West Cell?”</td></tr>
+<tr><td>A.</td><td></td><td>“x′y.”</td></tr>
+<tr><td></td><td></td><td>&amp;c., &amp;c.</td></tr>
+</table>
 <p>After a little practice, he will find himself able to do without the
 blank Diagram, and will be able to see it mentally (“in my mind’s
 eye, Horatio!”) while answering the questions of his genial friend. When
@@ -1736,19 +1756,21 @@ portion of that South Half, i.e. has the South-West Quarter;
 and m′ has the Outer portion of that South-West Quarter.”]]</p>
 <p>The Reader should now get his genial friend to question him on the Table
 given on the next page, in the style of the following specimen-Dialogue.</p>
-<pre class="outline">	Q. |  | Adjunct for South Half, Inner Portion?
-	A. |  | x′m.
-	Q. |  | Compartment for m′?
-	A. |  | The Outer Border.
-	Q. |  | Adjunct for North-East Quarter, Outer Portion?
-	A. |  | xy′m′.
-	Q. |  | Compartment for ym?
-	A. |  | West Half, Inner Portion.
-	Q. |  | Adjunct for South Half?
-	A. |  | x′.
-	Q. |  | Compartment for x′y′m?
-	A. |  | South-East Quarter, Inner Portion.
-	 |  | &amp;c. &amp;c.</pre>
+<table class="math">
+<tr><td>Q.</td><td></td><td>Adjunct for South Half, Inner Portion?</td></tr>
+<tr><td>A.</td><td></td><td>x′m.</td></tr>
+<tr><td>Q.</td><td></td><td>Compartment for m′?</td></tr>
+<tr><td>A.</td><td></td><td>The Outer Border.</td></tr>
+<tr><td>Q.</td><td></td><td>Adjunct for North-East Quarter, Outer Portion?</td></tr>
+<tr><td>A.</td><td></td><td>xy′m′.</td></tr>
+<tr><td>Q.</td><td></td><td>Compartment for ym?</td></tr>
+<tr><td>A.</td><td></td><td>West Half, Inner Portion.</td></tr>
+<tr><td>Q.</td><td></td><td>Adjunct for South Half?</td></tr>
+<tr><td>A.</td><td></td><td>x′.</td></tr>
+<tr><td>Q.</td><td></td><td>Compartment for x′y′m?</td></tr>
+<tr><td>A.</td><td></td><td>South-East Quarter, Inner Portion.</td></tr>
+<tr><td></td><td></td><td>&amp;c. &amp;c.</td></tr>
+</table>
 <pre class="outline">	Adjunct 
  of 
  Classes. | Compartments, or Cells, assigned to them.
@@ -3928,46 +3950,48 @@ be found</p>
 <p>§ 6</p>
 <p>Trios of Abstract Propositions, proposed as Syllogisms: to be
 examined</p>
-<pre class="outline">	1. | Some x are m; |  | No m are y′. |  | Some x are y.
-	2. | All x are m; |  | No y are m′. |  | No y are x′.
-	3. | Some x are m′; |  | All y′ are m. |  | Some x are y.
-	4. | All x are m; |  | No y are m. |  | All x are y′.
-	5. | Some m′ are x′; |  | No m′ are y. |  | Some x′ are y′.
-	6. | No x′ are m; |  | All y are m′. |  | All y are x′.
-	7. | Some m′ are x′; |  | All y′ are m′. |  | Some x′ are y′.
-	8. | No m′ are x′; |  | All y′ are m′. |  | All y′ are x.
-	9. | Some m are x′; |  | No m are y. |  | Some x′ are y′.
-	10. | All m′ are x′; |  | All m′ are y. |  | Some y are x′.
-	11. | All x are m′; |  | Some y are m. |  | Some y are x′.
-	12. | No x are m; |  | No m′ are y′. |  | No x are y′.
-	13. | No x are m; |  | All y′ are m. |  | All y′ are x′.
-	14. | All m′ are x′; |  | All m′ are y. |  | Some y are x′.
-	15. | Some m are x′; |  | All y are m′. |  | Some x′ are y′.
-	16. | No x′ are m; |  | All y′ are m′. |  | Some y′ are x.
-	17. | No m′ are x; |  | All m′ are y′. |  | Some x′ are y′.
-	18. | No x′ are m; |  | Some m are y. |  | Some x are y.
-	19. | Some m are x; |  | All m are y. |  | Some y are x′.
-	20. | No x′ are m′; |  | Some m′ are y′. |  | Some x are y′.
-	21. | No m are x; |  | All m are y′. |  | Some x′ are y′.
-	22. | All x′ are m; |  | Some y are m′. |  | All x′ are y′.
-	23. | All m are x; |  | No m′ are y′. |  | No x′ are y′.
-	24. | All x are m′; |  | All m′ are y. |  | All x are y.
-	25. | No x are m′; |  | All m are y. |  | No x are y′.
-	26. | All m are x′; |  | All y are m. |  | All y are x′.
-	27. | All x are m; |  | No m are y′. |  | All x are y.
-	28. | All x are m; |  | No y′ are m′. |  | All x are y.
-	29. | No x′ are m; |  | No m′ are y′. |  | No x′ are y′.
-	30. | All x are m; |  | All m are y′. |  | All x are y′.
-	31. | All x′ are m′; |  | No y′ are m′. |  | All x′ are y.
-	32. | No x are m; |  | No y′ are m′. |  | No x are y′.
-	33. | All m are x′; |  | All y′ are m. |  | All y′ are x′.
-	34. | All x are m′; |  | Some y are m′. |  | Some y are x.
-	35. | Some x are m; |  | All m are y. |  | Some x are y.
-	36. | All m are x′; |  | All y are m. |  | All y are x′.
-	37. | No m are x′; |  | All m are y′. |  | Some x are y′.
-	38. | No x are m; |  | No m are y′. |  | No x are y′.
-	39. | No m are x; |  | Some m are y′. |  | Some x′ are y′.
-	40. | No m are x′; |  | Some y are m. |  | Some x are y.</pre>
+<table class="math">
+<tr><td>1.</td><td>Some x are m;</td><td></td><td>No m are y′.</td><td></td><td>Some x are y.</td></tr>
+<tr><td>2.</td><td>All x are m;</td><td></td><td>No y are m′.</td><td></td><td>No y are x′.</td></tr>
+<tr><td>3.</td><td>Some x are m′;</td><td></td><td>All y′ are m.</td><td></td><td>Some x are y.</td></tr>
+<tr><td>4.</td><td>All x are m;</td><td></td><td>No y are m.</td><td></td><td>All x are y′.</td></tr>
+<tr><td>5.</td><td>Some m′ are x′;</td><td></td><td>No m′ are y.</td><td></td><td>Some x′ are y′.</td></tr>
+<tr><td>6.</td><td>No x′ are m;</td><td></td><td>All y are m′.</td><td></td><td>All y are x′.</td></tr>
+<tr><td>7.</td><td>Some m′ are x′;</td><td></td><td>All y′ are m′.</td><td></td><td>Some x′ are y′.</td></tr>
+<tr><td>8.</td><td>No m′ are x′;</td><td></td><td>All y′ are m′.</td><td></td><td>All y′ are x.</td></tr>
+<tr><td>9.</td><td>Some m are x′;</td><td></td><td>No m are y.</td><td></td><td>Some x′ are y′.</td></tr>
+<tr><td>10.</td><td>All m′ are x′;</td><td></td><td>All m′ are y.</td><td></td><td>Some y are x′.</td></tr>
+<tr><td>11.</td><td>All x are m′;</td><td></td><td>Some y are m.</td><td></td><td>Some y are x′.</td></tr>
+<tr><td>12.</td><td>No x are m;</td><td></td><td>No m′ are y′.</td><td></td><td>No x are y′.</td></tr>
+<tr><td>13.</td><td>No x are m;</td><td></td><td>All y′ are m.</td><td></td><td>All y′ are x′.</td></tr>
+<tr><td>14.</td><td>All m′ are x′;</td><td></td><td>All m′ are y.</td><td></td><td>Some y are x′.</td></tr>
+<tr><td>15.</td><td>Some m are x′;</td><td></td><td>All y are m′.</td><td></td><td>Some x′ are y′.</td></tr>
+<tr><td>16.</td><td>No x′ are m;</td><td></td><td>All y′ are m′.</td><td></td><td>Some y′ are x.</td></tr>
+<tr><td>17.</td><td>No m′ are x;</td><td></td><td>All m′ are y′.</td><td></td><td>Some x′ are y′.</td></tr>
+<tr><td>18.</td><td>No x′ are m;</td><td></td><td>Some m are y.</td><td></td><td>Some x are y.</td></tr>
+<tr><td>19.</td><td>Some m are x;</td><td></td><td>All m are y.</td><td></td><td>Some y are x′.</td></tr>
+<tr><td>20.</td><td>No x′ are m′;</td><td></td><td>Some m′ are y′.</td><td></td><td>Some x are y′.</td></tr>
+<tr><td>21.</td><td>No m are x;</td><td></td><td>All m are y′.</td><td></td><td>Some x′ are y′.</td></tr>
+<tr><td>22.</td><td>All x′ are m;</td><td></td><td>Some y are m′.</td><td></td><td>All x′ are y′.</td></tr>
+<tr><td>23.</td><td>All m are x;</td><td></td><td>No m′ are y′.</td><td></td><td>No x′ are y′.</td></tr>
+<tr><td>24.</td><td>All x are m′;</td><td></td><td>All m′ are y.</td><td></td><td>All x are y.</td></tr>
+<tr><td>25.</td><td>No x are m′;</td><td></td><td>All m are y.</td><td></td><td>No x are y′.</td></tr>
+<tr><td>26.</td><td>All m are x′;</td><td></td><td>All y are m.</td><td></td><td>All y are x′.</td></tr>
+<tr><td>27.</td><td>All x are m;</td><td></td><td>No m are y′.</td><td></td><td>All x are y.</td></tr>
+<tr><td>28.</td><td>All x are m;</td><td></td><td>No y′ are m′.</td><td></td><td>All x are y.</td></tr>
+<tr><td>29.</td><td>No x′ are m;</td><td></td><td>No m′ are y′.</td><td></td><td>No x′ are y′.</td></tr>
+<tr><td>30.</td><td>All x are m;</td><td></td><td>All m are y′.</td><td></td><td>All x are y′.</td></tr>
+<tr><td>31.</td><td>All x′ are m′;</td><td></td><td>No y′ are m′.</td><td></td><td>All x′ are y.</td></tr>
+<tr><td>32.</td><td>No x are m;</td><td></td><td>No y′ are m′.</td><td></td><td>No x are y′.</td></tr>
+<tr><td>33.</td><td>All m are x′;</td><td></td><td>All y′ are m.</td><td></td><td>All y′ are x′.</td></tr>
+<tr><td>34.</td><td>All x are m′;</td><td></td><td>Some y are m′.</td><td></td><td>Some y are x.</td></tr>
+<tr><td>35.</td><td>Some x are m;</td><td></td><td>All m are y.</td><td></td><td>Some x are y.</td></tr>
+<tr><td>36.</td><td>All m are x′;</td><td></td><td>All y are m.</td><td></td><td>All y are x′.</td></tr>
+<tr><td>37.</td><td>No m are x′;</td><td></td><td>All m are y′.</td><td></td><td>Some x are y′.</td></tr>
+<tr><td>38.</td><td>No x are m;</td><td></td><td>No m are y′.</td><td></td><td>No x are y′.</td></tr>
+<tr><td>39.</td><td>No m are x;</td><td></td><td>Some m are y′.</td><td></td><td>Some x′ are y′.</td></tr>
+<tr><td>40.</td><td>No m are x′;</td><td></td><td>Some y are m.</td><td></td><td>Some x are y.</td></tr>
+</table>
 <p>§ 7</p>
 <p>Trios of Concrete Propositions, proposed as Syllogisms: to be
 examined</p>
@@ -4798,10 +4822,12 @@ l = loving to gaze at the moon; m = prowling at night; n = suitable for
 pets; r = taking to me.</p>
 <h2 id="book-eight-chapter-ii-answers">Book Eight, Chapter II: Answers</h2>
 <p>Answers to § 1</p>
-<pre class="outline">	1.“All” |  | Sign of Quantity.
-	“persons represented by the Name ‘I’” (or “I’s”) |  | Subject.
-	“are” |  | Copula.
-	“persons who have been out for a walk” |  | Predicate.</pre>
+<table class="math">
+<tr><td>1.“All”</td><td></td><td>Sign of Quantity.</td></tr>
+<tr><td>“persons represented by the Name ‘I’” (or “I’s”)</td><td></td><td>Subject.</td></tr>
+<tr><td>“are”</td><td></td><td>Copula.</td></tr>
+<tr><td>“persons who have been out for a walk”</td><td></td><td>Predicate.</td></tr>
+</table>
 <p>or, more briefly,</p>
 <p>“All | ‘I’s | are | persons who have been out for a walk”.</p>
 <p>2. “All | ‘I’s | are | persons who feel better”.</p>
@@ -5326,10 +5352,12 @@ Class, of persons, whose peculiar Attribute is “represented by the Name
 Class cannot possibly contain more than one Member: hence the Sign of
 Quantity is “all”. The verb “have been” may be replaced by the phrase
 “are persons who have been”. The Proposition may be written thus:—</p>
-<pre class="outline">	“All” |  | Sign of Quantity.
-	“I’s” |  | Subject.
-	“are” |  | Copula.
-	“persons who have been out for a walk” |  | Predicate.</pre>
+<table class="math">
+<tr><td>“All”</td><td></td><td>Sign of Quantity.</td></tr>
+<tr><td>“I’s”</td><td></td><td>Subject.</td></tr>
+<tr><td>“are”</td><td></td><td>Copula.</td></tr>
+<tr><td>“persons who have been out for a walk”</td><td></td><td>Predicate.</td></tr>
+</table>
 <p>or, more briefly,</p>
 <p>“All | I’s | are | persons who have been out for a walk”.</p>
 <p>2. The Univ. and the Subject are the same as in Ex. 1. The Proposition
@@ -8384,10 +8412,12 @@ is untenable. The proof is as follows:—</p>
 <p>With regard to the relationship existing between the Class ‘xy’ and the
 two Classes ‘z’ and ‘not-z’, there are four conceivable states of
 things, viz.</p>
-<pre class="outline">	(1) | Some xy | are z, | and | some | are not-z;
-	(2) | 〃 | 〃 |  | none | 〃
-	(3) | No xy | 〃 |  | some | 〃
-	(4) | 〃 | 〃 |  | none | 〃</pre>
+<table class="math">
+<tr><td>(1)</td><td>Some xy</td><td>are z,</td><td>and</td><td>some</td><td>are not-z;</td></tr>
+<tr><td>(2)</td><td>〃</td><td>〃</td><td></td><td>none</td><td>〃</td></tr>
+<tr><td>(3)</td><td>No xy</td><td>〃</td><td></td><td>some</td><td>〃</td></tr>
+<tr><td>(4)</td><td>〃</td><td>〃</td><td></td><td>none</td><td>〃</td></tr>
+</table>
 <p>Of these four, No. (2) is equivalent to “All xy are z”, No. (3) is
 equivalent to “All xy are not-z”, and No. (4) is equivalent to “No xy
 exist.”</p>
@@ -8448,85 +8478,87 @@ Propositions of Relation, in terms of x and m | Book Four, Chapter II
 	IX. | Method of Subscripts. Formulæ and Rules for Syllogisms | Book Six, Chapter III</pre>
 <p>§ 2</p>
 <h4>Words &amp;c. explained</h4>
-<pre class="outline">	‘Abstract’ Proposition | Book Five, Chapter II
-	‘Adjuncts’ | Book One, Chapter I
-	‘Affirmative’ Proposition | Book Two, Chapter I
-	‘Attributes’ | Book One, Chapter I
-	‘Biliteral’ Diagram | Book Three, Chapter I
-	‘Biliteral’ Proposition | Book Three, Chapter III
-	‘Class’ | Book One, Chapter II
-	Classes, arbitrary limits of | Book One, Chapter III
-	Classes, subdivision of | Book One, Chapter III
-	‘Classification’ | Book One, Chapter II
-	‘Codivisional’ Classes | Book One, Chapter III
-	‘Complete’ Conclusion of a Sorites | Book Seven, Chapter I
-	‘Conclusion’ of a Sorites | Book Seven, Chapter I
-	‘Conclusion’ of a Syllogism | Book Five, Chapter I
-	‘Concrete’ Proposition | Book Five, Chapter II
-	‘Consequent’ in a Sorites | Book Seven, Chapter I
-	‘Consequent’ in a Syllogism | Book Five, Chapter I
-	‘Converse’ Propositions | Book Three, Chapter III
-	‘Conversion’ of a Proposition | Book Three, Chapter III
-	‘Copula’ of a Proposition | Book Two, Chapter I
-	‘Definition’ | Book One, Chapter V
-	‘Dichotomy’ | Book One, Chapter III
-	‘Differentia’ | Book One, Chapter II
-	‘Division’ | Book One, Chapter III
-	‘Eliminands’ of a Sorites | Book Seven, Chapter I
-	‘Eliminands’ of a Syllogism | Book Five, Chapter I
-	‘Entity’ | Book Six, Chapter I
-	‘Equivalent’ Propositions | Book Two, Chapter III
-	‘Fallacy’ | Book Six, Chapter III
-	‘Genus’ | Book One, Chapter II
-	‘Imaginary’ Class | Book One, Chapter II
-	‘Imaginary’ Name | Book One, Chapter IV
-	‘Individual’ | Book One, Chapter II
-	‘Like’, and ‘Unlike’, Signs of Terms | Book Six, Chapter I
-	‘Name’ | Book One, Chapter IV
-	‘Negative’ Proposition | Book Two, Chapter I
-	‘Normal’ form of a Proposition | Book Two, Chapter I
-	‘Normal’ form of a Proposition of Existence | Book Two, Chapter II
-	‘Normal’ form of a Proposition of Relation | Book Two, Chapter III
-	‘Nullity’ | Book Six, Chapter I
-	‘Partial’ Conclusion of a Sorites | Book Seven, Chapter I
-	‘Particular’ Proposition | Book Two, Chapter I
-	‘Peculiar’ Attributes | Book One, Chapter II
-	‘Predicate’ of a Proposition | Book Two, Chapter I
-	‘Predicate’ of a Proposition of Existence | Book Two, Chapter II
-	‘Predicate’ of a Proposition of Relation | Book Two, Chapter III
-	‘Premisses’ of a Sorites | Book Seven, Chapter I
-	‘Premisses’ of a Syllogism | Book Five, Chapter I
-	‘Proposition’ | Book Two, Chapter I
-	‘Proposition’ ‘in I’, ‘in E’, and ‘in A’ | Book Two, Chapter I
-	‘Proposition’ ‘in terms of’ certain Letters | Book Three, Chapter III
-	‘Proposition’ of Existence | Book Two, Chapter II
-	‘Proposition’ of Relation | Book Two, Chapter III
-	‘Real’ Class | Book One, Chapter II
-	‘Retinends’ of a Sorites | Book Seven, Chapter I
-	‘Retinends’ of a Syllogism | Book Five, Chapter I
-	‘Sign of Quantity’ in a Proposition | Book Two, Chapter I
-	‘Sitting on the Fence’ | Book Three, Chapter II
-	‘Some’, technical meaning of | Book Two, Chapter I
-	‘Sorites’ | Book Seven, Chapter I
-	‘Species’ | Book One, Chapter II
-	‘Subject’ of a Proposition | Book Two, Chapter I
-	‘Subject’ of a Proposition of Existence | Book Two, Chapter II
-	‘Subject’ of a Proposition of Relation | Book Two, Chapter III
-	‘Subscripts’ of Terms | Book Six, Chapter I
-	‘Syllogism’ | Book Five, Chapter I
-	Symbol ‘∴’ | Book Five, Chapter I
-	Symbol ‘†’ and ‘¶’ | Book Six, Chapter I
-	‘Terms’ of a Proposition | Book Two, Chapter I
-	‘Things’ | Book One, Chapter I
-	Translation of Proposition from ‘concrete’ to ‘abstract’ | Book Five, Chapter II
-	Translation of Proposition from ‘abstract’ to ‘subscript’ | Book Six, Chapter II
-	‘Triliteral’ Diagram | Book Four, Chapter I
-	‘Underscoring’ of letters | Book Seven, Chapter II
-	‘Uniliteral’ Proposition | Book Three, Chapter III
-	‘Universal’ Proposition | Book Two, Chapter I
-	‘Universe of Discourse’ (or ‘Univ.’) | Book Two, Chapter III
-	‘Unreal’ Class | Book One, Chapter II
-	‘Unreal’ Name | Book One, Chapter IV</pre>
+<table class="math">
+<tr><td>‘Abstract’ Proposition</td><td>Book Five, Chapter II</td></tr>
+<tr><td>‘Adjuncts’</td><td>Book One, Chapter I</td></tr>
+<tr><td>‘Affirmative’ Proposition</td><td>Book Two, Chapter I</td></tr>
+<tr><td>‘Attributes’</td><td>Book One, Chapter I</td></tr>
+<tr><td>‘Biliteral’ Diagram</td><td>Book Three, Chapter I</td></tr>
+<tr><td>‘Biliteral’ Proposition</td><td>Book Three, Chapter III</td></tr>
+<tr><td>‘Class’</td><td>Book One, Chapter II</td></tr>
+<tr><td>Classes, arbitrary limits of</td><td>Book One, Chapter III</td></tr>
+<tr><td>Classes, subdivision of</td><td>Book One, Chapter III</td></tr>
+<tr><td>‘Classification’</td><td>Book One, Chapter II</td></tr>
+<tr><td>‘Codivisional’ Classes</td><td>Book One, Chapter III</td></tr>
+<tr><td>‘Complete’ Conclusion of a Sorites</td><td>Book Seven, Chapter I</td></tr>
+<tr><td>‘Conclusion’ of a Sorites</td><td>Book Seven, Chapter I</td></tr>
+<tr><td>‘Conclusion’ of a Syllogism</td><td>Book Five, Chapter I</td></tr>
+<tr><td>‘Concrete’ Proposition</td><td>Book Five, Chapter II</td></tr>
+<tr><td>‘Consequent’ in a Sorites</td><td>Book Seven, Chapter I</td></tr>
+<tr><td>‘Consequent’ in a Syllogism</td><td>Book Five, Chapter I</td></tr>
+<tr><td>‘Converse’ Propositions</td><td>Book Three, Chapter III</td></tr>
+<tr><td>‘Conversion’ of a Proposition</td><td>Book Three, Chapter III</td></tr>
+<tr><td>‘Copula’ of a Proposition</td><td>Book Two, Chapter I</td></tr>
+<tr><td>‘Definition’</td><td>Book One, Chapter V</td></tr>
+<tr><td>‘Dichotomy’</td><td>Book One, Chapter III</td></tr>
+<tr><td>‘Differentia’</td><td>Book One, Chapter II</td></tr>
+<tr><td>‘Division’</td><td>Book One, Chapter III</td></tr>
+<tr><td>‘Eliminands’ of a Sorites</td><td>Book Seven, Chapter I</td></tr>
+<tr><td>‘Eliminands’ of a Syllogism</td><td>Book Five, Chapter I</td></tr>
+<tr><td>‘Entity’</td><td>Book Six, Chapter I</td></tr>
+<tr><td>‘Equivalent’ Propositions</td><td>Book Two, Chapter III</td></tr>
+<tr><td>‘Fallacy’</td><td>Book Six, Chapter III</td></tr>
+<tr><td>‘Genus’</td><td>Book One, Chapter II</td></tr>
+<tr><td>‘Imaginary’ Class</td><td>Book One, Chapter II</td></tr>
+<tr><td>‘Imaginary’ Name</td><td>Book One, Chapter IV</td></tr>
+<tr><td>‘Individual’</td><td>Book One, Chapter II</td></tr>
+<tr><td>‘Like’, and ‘Unlike’, Signs of Terms</td><td>Book Six, Chapter I</td></tr>
+<tr><td>‘Name’</td><td>Book One, Chapter IV</td></tr>
+<tr><td>‘Negative’ Proposition</td><td>Book Two, Chapter I</td></tr>
+<tr><td>‘Normal’ form of a Proposition</td><td>Book Two, Chapter I</td></tr>
+<tr><td>‘Normal’ form of a Proposition of Existence</td><td>Book Two, Chapter II</td></tr>
+<tr><td>‘Normal’ form of a Proposition of Relation</td><td>Book Two, Chapter III</td></tr>
+<tr><td>‘Nullity’</td><td>Book Six, Chapter I</td></tr>
+<tr><td>‘Partial’ Conclusion of a Sorites</td><td>Book Seven, Chapter I</td></tr>
+<tr><td>‘Particular’ Proposition</td><td>Book Two, Chapter I</td></tr>
+<tr><td>‘Peculiar’ Attributes</td><td>Book One, Chapter II</td></tr>
+<tr><td>‘Predicate’ of a Proposition</td><td>Book Two, Chapter I</td></tr>
+<tr><td>‘Predicate’ of a Proposition of Existence</td><td>Book Two, Chapter II</td></tr>
+<tr><td>‘Predicate’ of a Proposition of Relation</td><td>Book Two, Chapter III</td></tr>
+<tr><td>‘Premisses’ of a Sorites</td><td>Book Seven, Chapter I</td></tr>
+<tr><td>‘Premisses’ of a Syllogism</td><td>Book Five, Chapter I</td></tr>
+<tr><td>‘Proposition’</td><td>Book Two, Chapter I</td></tr>
+<tr><td>‘Proposition’ ‘in I’, ‘in E’, and ‘in A’</td><td>Book Two, Chapter I</td></tr>
+<tr><td>‘Proposition’ ‘in terms of’ certain Letters</td><td>Book Three, Chapter III</td></tr>
+<tr><td>‘Proposition’ of Existence</td><td>Book Two, Chapter II</td></tr>
+<tr><td>‘Proposition’ of Relation</td><td>Book Two, Chapter III</td></tr>
+<tr><td>‘Real’ Class</td><td>Book One, Chapter II</td></tr>
+<tr><td>‘Retinends’ of a Sorites</td><td>Book Seven, Chapter I</td></tr>
+<tr><td>‘Retinends’ of a Syllogism</td><td>Book Five, Chapter I</td></tr>
+<tr><td>‘Sign of Quantity’ in a Proposition</td><td>Book Two, Chapter I</td></tr>
+<tr><td>‘Sitting on the Fence’</td><td>Book Three, Chapter II</td></tr>
+<tr><td>‘Some’, technical meaning of</td><td>Book Two, Chapter I</td></tr>
+<tr><td>‘Sorites’</td><td>Book Seven, Chapter I</td></tr>
+<tr><td>‘Species’</td><td>Book One, Chapter II</td></tr>
+<tr><td>‘Subject’ of a Proposition</td><td>Book Two, Chapter I</td></tr>
+<tr><td>‘Subject’ of a Proposition of Existence</td><td>Book Two, Chapter II</td></tr>
+<tr><td>‘Subject’ of a Proposition of Relation</td><td>Book Two, Chapter III</td></tr>
+<tr><td>‘Subscripts’ of Terms</td><td>Book Six, Chapter I</td></tr>
+<tr><td>‘Syllogism’</td><td>Book Five, Chapter I</td></tr>
+<tr><td>Symbol ‘∴’</td><td>Book Five, Chapter I</td></tr>
+<tr><td>Symbol ‘†’ and ‘¶’</td><td>Book Six, Chapter I</td></tr>
+<tr><td>‘Terms’ of a Proposition</td><td>Book Two, Chapter I</td></tr>
+<tr><td>‘Things’</td><td>Book One, Chapter I</td></tr>
+<tr><td>Translation of Proposition from ‘concrete’ to ‘abstract’</td><td>Book Five, Chapter II</td></tr>
+<tr><td>Translation of Proposition from ‘abstract’ to ‘subscript’</td><td>Book Six, Chapter II</td></tr>
+<tr><td>‘Triliteral’ Diagram</td><td>Book Four, Chapter I</td></tr>
+<tr><td>‘Underscoring’ of letters</td><td>Book Seven, Chapter II</td></tr>
+<tr><td>‘Uniliteral’ Proposition</td><td>Book Three, Chapter III</td></tr>
+<tr><td>‘Universal’ Proposition</td><td>Book Two, Chapter I</td></tr>
+<tr><td>‘Universe of Discourse’ (or ‘Univ.’)</td><td>Book Two, Chapter III</td></tr>
+<tr><td>‘Unreal’ Class</td><td>Book One, Chapter II</td></tr>
+<tr><td>‘Unreal’ Name</td><td>Book One, Chapter IV</td></tr>
+</table>
 
 </body>
 </html>
