@@ -24,6 +24,7 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).parent
+SUF = ""                                   # "_kv" for the bwb_KV scan's leaves
 BLOCK = re.compile(r"^<<<\n(.*?)\n===\n(.*?)\n?>>>$", re.S | re.M)
 
 
@@ -32,8 +33,8 @@ def ascii_quotes(t):
 
 
 def apply(leaf):
-    draft = (HERE / "preproof" / f"{leaf}.txt").read_text()
-    fix = (HERE / "fixes" / f"{leaf}.fix").read_text()
+    draft = (HERE / f"preproof{SUF}" / f"{leaf}.txt").read_text()
+    fix = (HERE / f"fixes{SUF}" / f"{leaf}.fix").read_text()
     blocks = BLOCK.findall(fix)
     leftover = BLOCK.sub("", fix).strip()
     if leftover:
@@ -52,13 +53,17 @@ def apply(leaf):
 
     if not re.match(r"page: \S+\n\n", text):
         return f"{leaf}: first line must be 'page: N' then a blank line"
-    (HERE / "proof" / f"{leaf}.txt").write_text(text)
+    (HERE / f"proof{SUF}" / f"{leaf}.txt").write_text(text)
     return None
 
 
 def main(argv):
+    global SUF
     bad = 0
-    for leaf in argv[1:]:
+    args = argv[1:]
+    if args and args[0] == "kv":          # python3 fowler/apply_fixes.py kv 077
+        SUF, args = "_kv", args[1:]
+    for leaf in args:
         err = apply(leaf.zfill(3))
         if err:
             print(err)

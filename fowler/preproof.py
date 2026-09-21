@@ -26,8 +26,17 @@ import re
 import statistics
 from pathlib import Path
 
+import sys
+
 HERE = Path(__file__).parent
-SRC = HERE / "_src"
+# TWO SCANS. Pages 1-64 (and the pilots' 117 and 386) were proofed from the
+# Google copy, whose heavy inking fills the flat-topped 3 into an 8 and
+# which is torn on p. 19 and ghosted on p. 20. The rest come from
+# bwb_KV-748-554, a clean scan of the 1926 first impression:
+#     python3 fowler/preproof.py kv      # writes fowler/preproof_kv/NNN.txt
+SET = sys.argv[1] if len(sys.argv) > 1 else ""
+SRC = HERE / "_src" / SET if SET else HERE / "_src"
+OUT = HERE / (f"preproof_{SET}" if SET else "preproof")
 
 
 def pages():
@@ -113,7 +122,7 @@ def main():
     # running head's number badly: 118 of 247 folios it found agree); the
     # proofreader confirms it from the image
     pn = {p["leafNum"]: p["pageNumber"] for p in json.loads((SRC / "page_numbers.json").read_text())["pages"]}
-    out = HERE / "preproof"
+    out = OUT
     out.mkdir(exist_ok=True)
     for i, pg in enumerate(pages()):
         m = re.search(r'bbox 0 0 (\d+) (\d+)', pg)
