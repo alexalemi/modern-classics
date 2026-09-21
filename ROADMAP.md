@@ -945,7 +945,7 @@ and Tarbell are in the first table. The copyright column is a FIRST READ.
 | Handbook of Birds of Eastern North America (1895) | Frank M. Chapman | PD |
 | Microbe Hunters (1926) | Paul de Kruif | PD in the US since 2022 (1926 works) |
 | Garden Cities of To-morrow (1902) | Ebenezer Howard | PD |
-| The Elements of Style (1918) | William Strunk Jr. | PD; the 1918 privately printed text, not the later White revisions |
+| The Elements of Style (1918) | William Strunk Jr. | DONE 2026-09-20, restored (strunk/): the 1920 Harcourt text, Strunk alone, before White |
 | The Handyman's Book (1903) | Paul N. Hasluck | PD |
 | The Boston Cooking-School Cook Book (1896) | Fannie Farmer | PD |
 | The American Practical Navigator | Nathaniel Bowditch | US government work (current NGA edition); PD |
@@ -956,4 +956,4 @@ and Tarbell are in the first table. The copyright column is a FIRST READ.
 | The Practice and Science of Drawing (1913) | Harold Speed | PD |
 | Chess Fundamentals (1921) | José Raúl Capablanca | PD (US, pre-1929) |
 | Modern Magic (1876) | Professor Hoffmann (Angelo Lewis) | PD |
-| The Age of Fable (1855) | Thomas Bulfinch | PD; Gutenberg #4925 (The Age of Fable alone), #3327 and #56644 (Bulfinch's Mythology). Added by Alex 2026-09-20 |
+| The Age of Fable (1855) | Thomas Bulfinch | DONE 2026-09-20, restored (bulfinch/): the 1855 text recovered from Gutenberg's 1913 revision by a two-scan vote. Added by Alex 2026-09-20 |
