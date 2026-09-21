@@ -129,6 +129,9 @@ BLURBS = {
     "calculus-made-easy": "“What one fool can do, another can.” The 1914 "
                           "edition, with every formula typeset rather than "
                           "pictured.",
+    "strunk": "Eighteen numbered rules, the words most often misused, "
+              "and every faulty sentence beside its correction. The 1920 "
+              "text, before the later revisions.",
     "irish-fairy-tales": "Ten stories of Fionn, the Fianna and the Shi’, with "
                          "Rackham’s colour plates and drawings, and the "
                          "captions Gutenberg dropped.",
