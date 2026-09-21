@@ -110,6 +110,9 @@ def looks_like_prose_heading(h):
 # other book, because it is what catches the grimm shape (a section the
 # book numbered and the manifest never got).
 ORPHAN_OK = {
+    "farmer": "Chapter XI (Fish) divides its shellfish into 'I. Bivalve "
+              "Mollusks' and 'II. Crustaceans', subheadings inside the "
+              "chapter. Checked: both are h4 on the assembled page.",
     "capablanca": "Part One's thirty-three numbered sections ('9. A "
                   "Cardinal Principle') are h4 subheadings inside their six "
                   "chapters by design; prep.py asserts all 33 in order. "

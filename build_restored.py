@@ -153,6 +153,8 @@ BLURBS = {
     "speed": "Line and mass, rhythm and balance: a painter on what drawing "
              "is and how to learn it, with all eighty-eight illustrations "
              "described.",
+    "farmer": "Level measurements, from bread to the chafing-dish: the "
+              "author's own 1910 revision, every photograph described.",
     "irish-fairy-tales": "Ten stories of Fionn, the Fianna and the Shi’, with "
                          "Rackham’s colour plates and drawings, and the "
                          "captions Gutenberg dropped.",
