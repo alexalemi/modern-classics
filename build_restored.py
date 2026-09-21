@@ -135,6 +135,9 @@ BLURBS = {
     "bulfinch": "The myths of Greece and Rome, the East and the North, each "
                 "followed into the English poets who borrowed it. The "
                 "first edition's text of 1855.",
+    "de-kruif": "Leeuwenhoek, Pasteur, Koch, Reed and Ehrlich, one "
+                "discoverer to a chapter, told as adventure stories. The "
+                "1926 text, with its plates described.",
     "irish-fairy-tales": "Ten stories of Fionn, the Fianna and the Shi’, with "
                          "Rackham’s colour plates and drawings, and the "
                          "captions Gutenberg dropped.",
