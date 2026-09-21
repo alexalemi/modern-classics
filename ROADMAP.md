@@ -947,7 +947,7 @@ and Tarbell are in the first table. The copyright column is a FIRST READ.
 | Garden Cities of To-morrow (1902) | Ebenezer Howard | DONE 2026-09-20, restored (howard/): diagrams' lettering transcribed |
 | The Elements of Style (1918) | William Strunk Jr. | DONE 2026-09-20, restored (strunk/): the 1920 Harcourt text, Strunk alone, before White |
 | The Handyman's Book (1903) | Paul N. Hasluck | PD |
-| The Boston Cooking-School Cook Book (1896) | Fannie Farmer | PD |
+| The Boston Cooking-School Cook Book (1896) | Fannie Farmer | DONE 2026-09-20, restored (farmer/): Farmer's 1910 revision, every photograph described |
 | The American Practical Navigator | Nathaniel Bowditch | US government work (current NGA edition); PD |
 | Farm Blacksmithing (1901) | J. M. Drew | PD |
 | The Dressmaker (1916) | Mary Brooks Picken | PD |
@@ -955,6 +955,6 @@ and Tarbell are in the first table. The copyright column is a FIRST READ.
 | The American Woman's Home (1869) | Catharine Beecher and Harriet Beecher Stowe | PD |
 | The Practice and Science of Drawing (1913) | Harold Speed | DONE 2026-09-20, restored (speed/) |
 | Chess Fundamentals (1921) | José Raúl Capablanca | DONE 2026-09-20, restored (capablanca/): 150 diagrams captioned square by square |
-| Modern Magic (1876) | Professor Hoffmann (Angelo Lewis) | PD |
+| Modern Magic (1876) | Professor Hoffmann (Angelo Lewis) | DONE 2026-09-20, restored (hoffmann/): American edition with Vere's appendix, all 302 drawings described |
 | The Age of Fable (1855) | Thomas Bulfinch | DONE 2026-09-20, restored (bulfinch/): the 1855 text recovered from Gutenberg's 1913 revision by a two-scan vote. Added by Alex 2026-09-20 |
-| The Conquest of Happiness (1930) | Bertrand Russell | PD in the US since 1 Jan 2026 (1930 works); still in copyright in the UK/EU (Russell d. 1970). Gutenberg #77894; 1930 Allen & Unwin scans on Archive.org (conquest_happiness, dli.ernet.242732). Added by Alex 2026-09-20 |
+| The Conquest of Happiness (1930) | Bertrand Russell | DONE 2026-09-20, restored (conquest/). PD in the US since 1 Jan 2026 (1930 works); still in copyright in the UK/EU (Russell d. 1970). Gutenberg #77894; 1930 Allen & Unwin scans on Archive.org (conquest_happiness, dli.ernet.242732). Added by Alex 2026-09-20 |
