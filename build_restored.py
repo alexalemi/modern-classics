@@ -132,6 +132,9 @@ BLURBS = {
     "strunk": "Eighteen numbered rules, the words most often misused, "
               "and every faulty sentence beside its correction. The 1920 "
               "text, before the later revisions.",
+    "bulfinch": "The myths of Greece and Rome, the East and the North, each "
+                "followed into the English poets who borrowed it. The "
+                "first edition's text of 1855.",
     "irish-fairy-tales": "Ten stories of Fionn, the Fianna and the Shi’, with "
                          "Rackham’s colour plates and drawings, and the "
                          "captions Gutenberg dropped.",
