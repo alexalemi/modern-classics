@@ -147,6 +147,9 @@ BLURBS = {
     "verrill": "Every useful knot, from the square knot to the Turk's "
                "head, with all 148 drawings described so the rope can be "
                "followed.",
+    "howard": "The Three Magnets and the town of 32,000 in its belt of "
+              "farmland: the book that invented the garden city, its "
+              "diagrams transcribed.",
     "irish-fairy-tales": "Ten stories of Fionn, the Fianna and the Shi’, with "
                          "Rackham’s colour plates and drawings, and the "
                          "captions Gutenberg dropped.",
