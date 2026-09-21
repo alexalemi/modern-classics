@@ -939,21 +939,21 @@ and Tarbell are in the first table. The copyright column is a FIRST READ.
 | Title | Author | First read |
 |---|---|---|
 | Elements of Algebra (English 1822) | Euler | PD |
-| Introduction to Mathematical Philosophy (1919) | Russell | PD (US, pre-1929) |
+| Introduction to Mathematical Philosophy (1919) | Russell | DONE 2026-09-20, restored (russell-imp/): 1920 second edition, formulas typeset |
 | The Radio Amateur's Handbook, 1930 edition | ARRL | PD in the US since 1 Jan 2026 (1930 works); confirm the edition's date |
 | JetStream online school | National Weather Service | US government work, PD; a current web text, not an old book |
 | Handbook of Birds of Eastern North America (1895) | Frank M. Chapman | PD |
-| Microbe Hunters (1926) | Paul de Kruif | PD in the US since 2022 (1926 works) |
-| Garden Cities of To-morrow (1902) | Ebenezer Howard | PD |
+| Microbe Hunters (1926) | Paul de Kruif | DONE 2026-09-20, restored (de-kruif/) |
+| Garden Cities of To-morrow (1902) | Ebenezer Howard | DONE 2026-09-20, restored (howard/): diagrams' lettering transcribed |
 | The Elements of Style (1918) | William Strunk Jr. | DONE 2026-09-20, restored (strunk/): the 1920 Harcourt text, Strunk alone, before White |
 | The Handyman's Book (1903) | Paul N. Hasluck | PD |
 | The Boston Cooking-School Cook Book (1896) | Fannie Farmer | PD |
 | The American Practical Navigator | Nathaniel Bowditch | US government work (current NGA edition); PD |
 | Farm Blacksmithing (1901) | J. M. Drew | PD |
 | The Dressmaker (1916) | Mary Brooks Picken | PD |
-| Knots, Splices and Rope Work (1917) | A. Hyatt Verrill | PD |
+| Knots, Splices and Rope Work (1917) | A. Hyatt Verrill | DONE 2026-09-20, restored (verrill/): all 148 drawings described |
 | The American Woman's Home (1869) | Catharine Beecher and Harriet Beecher Stowe | PD |
-| The Practice and Science of Drawing (1913) | Harold Speed | PD |
-| Chess Fundamentals (1921) | José Raúl Capablanca | PD (US, pre-1929) |
+| The Practice and Science of Drawing (1913) | Harold Speed | DONE 2026-09-20, restored (speed/) |
+| Chess Fundamentals (1921) | José Raúl Capablanca | DONE 2026-09-20, restored (capablanca/): 150 diagrams captioned square by square |
 | Modern Magic (1876) | Professor Hoffmann (Angelo Lewis) | PD |
 | The Age of Fable (1855) | Thomas Bulfinch | DONE 2026-09-20, restored (bulfinch/): the 1855 text recovered from Gutenberg's 1913 revision by a two-scan vote. Added by Alex 2026-09-20 |
