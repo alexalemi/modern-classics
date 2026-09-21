@@ -138,6 +138,9 @@ BLURBS = {
     "de-kruif": "Leeuwenhoek, Pasteur, Koch, Reed and Ehrlich, one "
                 "discoverer to a chapter, told as adventure stories. The "
                 "1926 text, with its plates described.",
+    "capablanca": "From the simplest mates to fourteen annotated games, by "
+                  "the new world champion. Every diagram described square "
+                  "by square.",
     "irish-fairy-tales": "Ten stories of Fionn, the Fianna and the Shi’, with "
                          "Rackham’s colour plates and drawings, and the "
                          "captions Gutenberg dropped.",

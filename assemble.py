@@ -130,6 +130,14 @@ def is_subheading(par, next_par=None):
     if par[-1] in "?!" and (SPEAKER_TAG.match(par) or SENTENCE_BREAK.search(par)):
         return False
     words = par.split()
+    # A SECTION NUMBER IS NOT A WORD. "15. How to Mate with a Knight and a
+    # Bishop" is 4 capitals in 10 tokens with the "15." counted and passes
+    # at 4 of 9 without it. (Letting a word that opens on a quotation mark
+    # or bracket count by its first letter was tried as well and REGRESSED
+    # SIX BOOKS: every "(The Queen goes out.)" in the tragedies and every
+    # quoted footnote became a heading.)
+    if len(words) > 1 and re.fullmatch(r"\d+\.", words[0]):
+        words = words[1:]
     caps = sum(1 for w in words if w[0].isupper())
     return caps >= max(1, len(words) // 2)
 

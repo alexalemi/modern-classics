@@ -110,6 +110,10 @@ def looks_like_prose_heading(h):
 # other book, because it is what catches the grimm shape (a section the
 # book numbered and the manifest never got).
 ORPHAN_OK = {
+    "capablanca": "Part One's thirty-three numbered sections ('9. A "
+                  "Cardinal Principle') are h4 subheadings inside their six "
+                  "chapters by design; prep.py asserts all 33 in order. "
+                  "Checked: 33 numbered h4 on the assembled page.",
     "american-indian-stories": "the autobiographical essays number their "
                                "subsections afresh from I in each essay, "
                                "and V-VII occur only twice, so the repeat "
@@ -168,6 +172,12 @@ def orphan_source_headings(book, manifest):
     # now look for heading-shaped lines that match nothing we know about
     numbered, bare_orphans = [], []
     for i, raw in enumerate(lines):
+        # A TAB-INDENTED LINE IS A SET-OFF BLOCK, NEVER A HEADING: the
+        # renderer takes the <pre>/table branch before it would ever ask
+        # is_subheading, so asking here fired on Capablanca's one-move
+        # tables ("36. P × P Q × P") as numbered sections
+        if raw.startswith("\t"):
+            continue
         line = raw.strip()
         if not line or line in wanted:
             continue
