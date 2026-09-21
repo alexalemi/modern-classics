@@ -1,0 +1,134 @@
+OCR CORRECTION PASS: H. W. Fowler, A Dictionary of Modern English Usage (1926)
+
+PUBLIC DOMAIN. Fowler's Dictionary was published by the Clarendon Press in
+1926; works of 1926 entered the United States public domain on 1 January
+2022, and Fowler died in 1933, so it is also free in the United Kingdom and
+wherever the term is life plus seventy years. The page images are a scan of
+the 1926 printing, openly available at
+archive.org/details/a-dictionary-of-modern-english-usage. This is a free,
+non-commercial, educational RESTORED EDITION for the Modern Classics project
+(github.com/alexalemi/modern-classics): the author's text unchanged, in
+clean markup, with a proper ebook. (The 1965 Gowers revision is a different,
+copyrighted book and is NOT what these pages are.)
+
+WHAT YOU DO. Each page already has a machine draft made from the OCR:
+fowler/preproof/NNN.txt. You do NOT retype the page. You compare the draft
+with the page image, fowler/_src/png/NNN.png, and write only the
+CORRECTIONS, as fix blocks, into fowler/fixes/NNN.fix. Then run
+
+    python3 fowler/apply_fixes.py NNN
+
+which applies the fixes and writes fowler/proof/NNN.txt. It refuses a block
+whose OLD text is not found exactly once; fix the block and rerun. Then READ
+proof/NNN.txt once against the image and fix anything still wrong.
+
+FIX BLOCKS, one per correction, in reading order:
+
+    <<<
+    exact text now in the draft
+    ===
+    what it should be
+    >>>
+
+- HARD LIMIT: no block's NEW text longer than about 300 characters (two or
+  three printed lines). A paragraph with many errors takes SEVERAL SMALL
+  BLOCKS, never one replacement of the whole. Most of the draft's words are
+  right; your job is the ones that are not, and the markup.
+- Keep each OLD SHORT: the wrong word with just enough neighbours to be
+  unique. Markup is a fix too: "dislocate. See" -> "**dislocate.** See".
+- A line the OCR dropped entirely, or a span it destroyed: insert or
+  replace it with a block (still within the size limit; several if needed).
+
+THE TARGET FORMAT (what proof/NNN.txt must be when you are done)
+
+- FIRST LINE "page: N" with the printed page number (roman in the front
+  matter), or "page: none"; then a blank line. The draft's number comes from
+  a page map: CHECK it against the folio printed at the top of the page.
+- The page is TWO COLUMNS: the whole left column first, then the right. The
+  running head (two guide words and the folio) is NOT transcribed.
+- One paragraph per line; a blank line between paragraphs. An entry is a
+  paragraph; so is each numbered section of a long entry when the print
+  starts it on a new indented line. Join a word broken at a line end, and
+  keep the hyphen only in a real compound (to-day, well-known).
+- A paragraph that continues from the previous column or the previous page
+  starts "+ " (the left column's first paragraph when the page opens
+  mid-entry; the right column's first paragraph when it continues the left
+  column's last). The draft guesses these; CHECK every one.
+- Spelling, capitals and punctuation EXACTLY as printed: Fowler's "&",
+  "to-day", "shew" if printed, his spacing of "e.g." and "i.e.". Do not
+  modernise or correct. An obvious misprint is transcribed as printed and
+  listed in your report. ASCII " and '; dashes as —.
+- The printer's space before ; : ? ! is closed up ("tone:", "said;").
+
+MARKUP (the only markup there is)
+- **bold** for bold type: every HEADWORD at the start of an entry
+  ("**dislocate.** See ...", "**disposal, disposition.** In some ..."), and
+  any other bold the page prints. The bold span covers exactly the bold
+  letters; its punctuation goes inside if printed bold.
+- ^^SMALL CAPITALS^^ for words in small capitals. In this book they are the
+  CROSS-REFERENCES to other articles ("see ^^JUDGEMENT^^", "a ^^NEEDLESS
+  VARIANT^^", "see ^^-ABLE^^ 4"): write the letters as capitals, exactly as
+  they read, inside the carets, with anything else printed with them
+  (hyphens, parentheses, numbers) outside unless it is itself small
+  capitals.
+- *italic* for italic type: the illustrative quotations (Fowler prints his
+  examples in italic, separated by "/"), words discussed as words, foreign
+  words, titles. The italic span must not begin or end with a space, and an
+  italic letter glued to a number stays roman ("sense 2a").
+- PRONUNCIATION exactly as printed: the stress mark after a stressed
+  syllable as ASCII ' ("di'sputabl"), and the vowel marks as the Unicode
+  letters (ā ē ī ō ū, ă ĕ ĭ ŏ ŭ, ȧ, ü ...). If a mark has no Unicode form,
+  describe it in the report and write [?] in the text.
+- Greek, French, German and Latin as printed, with their accents.
+- A letter-section heading (the large "B" that opens the B entries) is its
+  own paragraph: just the letter.
+- A FOOTNOTE (rare): its own paragraph at the end of the file, "Footnote: "
+  then the mark and text; the mark stays in the body; an asterisk mark is
+  written ⁎. Continued from the previous page: "Footnote+ ".
+- A TABLE or set-out list: TAB rows, cells separated by " | ". Lines of
+  verse or set-off lines: each printed line on its own line starting with a
+  TAB.
+
+Read the WHOLE page image, both columns, top to bottom. Enlarge crops (PIL,
+into YOUR OWN subfolder of the scratchpad directory) wherever the type is
+hard to read, especially for italic spans, small capitals, and pronunciation
+marks. Keep scratch files in your own subfolder; change no files but your
+own fixes/NNN.fix and proof/NNN.txt.
+
+REPORT (final message, SHORT, never quoting page text):
+  NNN  page <n>  fixes: <count>  entries: <count>
+then misprints kept, anything uncertain, and anything odd.
+
+RULINGS FROM THE PILOT (these override anything above that disagrees)
+1. PAGE FURNITURE AT THE FOOT is not transcribed: the printer's signature
+   letter ("B") and the printer's job number ("1351" on p. 1) are not the
+   folio. A page that prints no folio (p. 1) keeps the draft's number from
+   the page map; only change "page:" when the printed folio disagrees.
+2. The display title over both columns on p. 1 ("A Dictionary of English
+   Usage") is not transcribed: the edition supplies its own title.
+3. Bold section numbers: mark "1.", "2." as **bold** only where they are
+   visibly in the headword's weight; if the whole page prints heavily and you
+   cannot tell, compare with the headword and with ordinary numbers in the
+   text, and say in the report what you decided.
+4. DAMAGED TYPE IS NOT A MISPRINT. Where a worn or broken letter prints as
+   another ("docs" with a broken e for "does", "rcjecting"), transcribe the
+   letter the printer set, the intended word. A misprint is a WRONG letter
+   printed cleanly; list only those as misprints kept.
+5. A stray folio or other page furniture the OCR planted in the middle of a
+   column (a bare "386" between two lines of an entry) is deleted.
+6. Lettered subsections run inline ("A. ... B. ...") stay in their
+   paragraph; only a subsection the print starts on a new indented line is a
+   paragraph of its own.
+7. Curly quotes in the draft are made ASCII by apply_fixes.py itself: never
+   edit proof/NNN.txt directly, since every correction must be a fix block
+   (re-applying the fixes rebuilds the file).
+8. A paragraph that continues from the left column into the right (same
+   page) is written as two lines, the second starting "+ ": the prep joins
+   them. Do the same across a page turn.
+9. SUFFIX AND PREFIX CROSS-REFERENCES are small capitals too (^^-ABLE^^,
+   ^^-EDLY^^, ^^-ER^^ & ^^-EST^^, ^^-OR^^): at this scan's resolution the
+   step between the larger first letter and the rest is faint, so crop and
+   compare letter heights before leaving any such suffix as plain capitals.
+10. The tie over a pair of vowels in a pronunciation ("oo" as in food, with
+   one curved mark spanning both letters) is the combining double breve,
+   U+035D, after the first letter: "o͝o".
