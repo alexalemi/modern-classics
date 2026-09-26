@@ -183,10 +183,12 @@ those captions are the author&rsquo;s and stand as printed.</p>
 
 
 def entry(d, title, author, date, page, epub, blurb, companion=False):
+    read = build_index.read_time(ROOT / d, "chapters" if companion else "modern_chapters")
     key, tab = build_index.first_year(date)
     bits = [f'{html.escape(author)} ({html.escape(build_index.dashes(date))})']
     if companion:
         bits.insert(0, "Original text of a retelling")
+    bits.append(read)
     if epub:
         bits.append(f'<a href="ebooks/{epub}">epub</a>')
     return key, build_index.render_card(page, f"covers/thumb/{d}.jpg", tab, title,

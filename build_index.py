@@ -235,9 +235,18 @@ def added(page):
     return build_feeds.added_date(page) or "9999"
 
 
-def read_time(bdir):
-    words = sum(len(f.read_text().split())
-                for f in (bdir / "modern_chapters").glob("*.txt"))
+# Not words anyone reads: TeX formulas (\(..\), \[..\]) and Helmholtz's
+# page locators ({¶77c}, {@77c|77c'}). Counted, they would put Calculus
+# Made Easy's and the Sensations of Tone's reading times far too high.
+NOT_WORDS = re.compile(r"\\\(.*?\\\)|\\\[.*?\\\]|\{[¶@][^}]*\}", re.S)
+
+
+def read_time(bdir, text_dir="modern_chapters"):
+    """~N-minute / ~N-hour read, from the text the page actually shows:
+    modern_chapters/ for a retelling or a restored edition (composed, with
+    its captions), chapters/ for the original text of a retelling."""
+    words = sum(len(NOT_WORDS.sub(" ", f.read_text()).split())
+                for f in (bdir / text_dir).glob("*.txt"))
     minutes = words / WORDS_PER_MINUTE
     if minutes < 100:
         m = max(10, round(minutes / 10) * 10)
@@ -347,7 +356,7 @@ PAGE = '''<!DOCTYPE html>
 </head>
 
 <body>
-<!-- one-ink printing: every cover is set in the page's navy on its paper -->
+<!-- one-ink printing: every cover is set in navy on cream stock -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <filter id="ink" color-interpolation-filters="sRGB">
     <feColorMatrix type="matrix" values=".33 .5 .17 0 0  .33 .5 .17 0 0  .33 .5 .17 0 0  0 0 0 1 0"/>
