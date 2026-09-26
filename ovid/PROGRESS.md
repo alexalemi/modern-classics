@@ -39,7 +39,7 @@ mis-rendered as a heading).
    epub link ebooks/ovid_metamorphoses.epub.
 4. `python3 build_feeds.py` AFTER committing the book (dates from the
    adding-commit). Two-commit deploy: commit book, regen feeds, commit
-   feeds, push. Update CLAUDE.md / ROADMAP.md / memory.
+   feeds, push. Update BOOKS.md / ROADMAP.md / memory.
 
 ## Then books 2–5 of the push (fresh prep each — raise the subagent cap
 ## first!): Cellini (Italian), Dante Inferno (Italian+crib), Homer Odyssey
@@ -87,7 +87,7 @@ episodes authoritatively, so don't over-brief plot (it drifts).
 5. `python3 build_ebook.py ovid` (network; sandbox off for Commons).
 6. `python3 build_feeds.py` AFTER committing the book (dates come from
    the adding-commit). Two-commit deploy: commit book, regen feeds,
-   commit feeds, push. Update CLAUDE.md / ROADMAP.md / memory.
+   commit feeds, push. Update BOOKS.md / ROADMAP.md / memory.
 
 ## Then books 2–5 of the push (fresh prep each; see ROADMAP + my plan):
 Cellini Autobiography (Italian; Symonds crib), Dante Inferno (Italian +

@@ -30,7 +30,7 @@ SE-XHTML, Wikisource-API, from-the-Latin, from-the-French.
   `lightvisibleinvi00thomrich`; there is no Gutenberg edition). Given
   thirteen months after Röntgen; the sixth lecture is on X-rays and
   quotes the discoverer's own interview. See thompson/FIGURES.md for
-  the plate recovery and CLAUDE.md for the OCR-source lessons.
+  the plate recovery and BOOKS.md for the OCR-source lessons.
 - **John Tyndall — Sound** (1867; third edition 1875) — 44 files,
   ~117k words, all 187 plates, plus Le Conte's 1858 paper on the
   sensitive flame and Tyndall's own note on acoustic reversibility.
@@ -86,7 +86,7 @@ SE-XHTML, Wikisource-API, from-the-Latin, from-the-French.
   volume, and the first with NO CRIB — there is no public-domain
   English Dōgen of any kind. Source: Eiheiji's own collected edition of
   1909 via ja.wikisource, with the transcription verified directly
-  against the NDL page images. See CLAUDE.md for the NDL IIIF route,
+  against the NDL page images. See BOOKS.md (dogen/) for the NDL IIIF route,
   which reaches any pre-1928 Japanese book.
 - **STILL AVAILABLE, same source**: volume 3 of the 1909 edition (NDL
   pid 823141, 306 pages) also carries the 正法眼藏隨聞記 (Zuimonki,

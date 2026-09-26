@@ -46,7 +46,7 @@ Cover these, in whatever order the particular book wants:
    choice was made: translated from the original rather than from an
    English version; verse set as prose and why; the whole thing, where
    most editions abridge; offensive material kept as the author wrote
-   it. The facts are in `CLAUDE.md` under the book's entry and in
+   it. The facts are in `BOOKS.md` under the book's entry and in
    `ebook_meta.json`'s `long_description`. Do not repeat the page
    header, which already says the book is an AI modernization.
 
@@ -143,3 +143,60 @@ That pass caught real errors, and it is the only defence there is: a
 well-written wrong fact renders perfectly, passes every mechanical check,
 and misinforms every reader of the page. Re-run it whenever a book is
 added.
+
+## Background and load-bearing details (moved from CLAUDE.md)
+
+Alex asked for these in September 2026, from an anthology of poems that
+gave each poem a headnote: "it made a huge difference on the experience".
+His one stylistic instruction was to AVOID MANNERED PROSE, which is half
+the specification and the reason the checker carries a banned-phrase
+list.
+
+FOUR THINGS THAT ARE LOAD-BEARING AND NOT OBVIOUS:
+
+1. IT LIVES AT THE BOOK ROOT, NEVER IN `modern_chapters/`. Everything in
+   that directory is measured against `chapters/` by verify.py's word
+   ratio and by the book's own check.py, so editorial matter dropped in
+   there reads as a translation that grew four hundred words from
+   nowhere. At the root it is invisible to both, which is correct: it is
+   not a retelling of anything.
+2. THE HEADING IS "Editor's Introduction", NOT "Introduction". TEN books
+   have an Introduction the AUTHOR wrote — Wollstonecraft's, Hobbes',
+   Carroll's, Smith's, Darwin's — and `build_chapter_files` makes an
+   epub filename by slugifying the title, so ours would have taken
+   `introduction.xhtml` and silently renamed theirs to
+   `introduction-2.xhtml`. The file carries NO heading line of its own;
+   both renderers supply it.
+3. sweep.py's SECTION COUNT HAD TO LEARN ABOUT IT. Check A compares page
+   headings against manifest sections with a tolerance of +/-1. An
+   unaccounted introduction heading passes — by spending the entire
+   slack, so every book with one would then be unable to report a
+   genuine off-by-one. `assemble.INTRO_ID` is now named as furniture
+   beside "contents". This is the nights lesson again: a check that
+   cannot fire is worse than no check, because it counts as coverage.
+4. IT IS RENDERED ON THE MODERN PAGE ONLY, never on the `--original`
+   companion. Its last paragraph says what THIS EDITION did -- "set as
+   prose", "nine bracketed notes have been added", "translated here in
+   full" -- and every one of those sentences is false of the source text
+   on the companion page. One artifact, two contexts, true in only one.
+   `se lint` m-030 also asks who wrote an `introduction` semantic, so
+   rebrand.py adds the `win` relator to producer-1 beside `trl`, keyed
+   off the SPINE rather than off a second copy of the fact.
+   THE EPUB HALF OF THAT RULE WAS A LATENT BUG FOR A WHILE:
+   assemble.render_introduction was gated on `original` from the start,
+   but build_ebook called build_introduction_file unconditionally, so a
+   companion edition would have GAINED an introduction the next time one
+   was rebuilt. Nothing had rebuilt one yet, so nothing showed it -- it
+   was found by verifying the shipped companion epubs rather than by
+   trusting that the page rule covered both renderers. When a rule spans
+   two renderers, check that BOTH were taught it.
+5. THE ONE DEFECT NO CHECK CAN SEE IS A WELL-WRITTEN WRONG FACT. An
+   introduction that says Boccaccio was in Naples during the plague
+   renders perfectly, passes every mechanical test, and misinforms every
+   reader of the page. check_introductions.py can only catch the gross
+   version — it requires the author to be named and a date to be given,
+   which is the cheap guard against an introduction about the wrong book
+   entirely. Everything finer is caught by reading, and by instructing
+   whoever writes one to leave out what they are not sure of rather than
+   round it up. The reports from the writing pass are worth keeping for
+   exactly that reason: they record what was deliberately omitted.
