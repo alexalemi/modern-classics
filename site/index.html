@@ -1,503 +1,775 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Modern Classics</title>
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
-<style>
-html {
-  max-width: 70ch;
-  padding: 3em 1em;
-  margin: auto;
-  line-height: 1.75;
-  font-size: 1.25em;
-  font-family: Georgia, "Palatino Linotype", "Book Antiqua", serif;
-}
-
-body {
-  color: #1d1d1d;
-}
-
-h1 {
-  margin-top: 1em;
-  text-align: center;
-}
-
-h2 {
-  font-size: 0.95em;
-  font-weight: normal;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #888;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 0.4em;
-  margin: 3em 0 1em;
-}
-
-p,ul,ol {
-  margin-bottom: 2em;
-}
-
-.subtitle {
-  text-align: center;
-  font-style: italic;
-  margin-top: -1em;
-  margin-bottom: 3em;
-}
-
-.book-list {
-  list-style: none;
-  padding: 0;
-}
-
-.book-list li {
-  margin-bottom: 1.75em;
-}
-
-.book-list a {
-  font-size: 1.15em;
-  text-decoration: none;
-  color: #333;
-}
-
-.book-list a:hover {
-  color: #000;
-  text-decoration: underline;
-}
-
-.author {
-  display: block;
-  font-size: 0.8em;
-  color: #666;
-  margin-top: 0.2em;
-}
-
-.blurb {
-  display: block;
-  font-size: 0.9em;
-  color: #444;
-  font-style: italic;
-  margin-top: 0.2em;
-}
-</style>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Yellowtail&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="site.css">
 </head>
 
 <body>
+<!-- one-ink printing: every cover is set in the page's navy on its paper -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="ink" color-interpolation-filters="sRGB">
+    <feColorMatrix type="matrix" values=".33 .5 .17 0 0  .33 .5 .17 0 0  .33 .5 .17 0 0  0 0 0 1 0"/>
+    <feComponentTransfer>
+      <feFuncR type="table" tableValues="0.106 0.957"/>
+      <feFuncG type="table" tableValues="0.192 0.937"/>
+      <feFuncB type="table" tableValues="0.302 0.886"/>
+    </feComponentTransfer>
+  </filter>
+</svg>
 
-<h1>Modern Classics</h1>
-<p class="subtitle">Classic texts, retold in contemporary English</p>
-<p class="subtitle" style="font-size: 0.8em;"><a href="restored.html">Restored editions</a> &middot; <a href="about.html">About</a> &middot; Follow along: <a href="feed.xml">RSS</a> &middot; <a href="opds.atom">OPDS catalog</a> for e-readers</p>
+<header class="masthead">
+  <h1>Modern Classics</h1>
+  <p class="motto">Classic texts, retold in contemporary English</p>
+  <nav><a href="restored.html">Restored editions</a> &middot; <a href="about.html">About</a> &middot; Follow along: <a href="feed.xml">RSS</a> &middot; <a href="opds.atom">OPDS catalog</a> for e-readers</nav>
+</header>
 
-<h2>Political Philosophy</h2>
-<ul class="book-list">
-  <li>
-    <a href="leviathan.html">Leviathan</a>
-    <span class="author">Thomas Hobbes (1651) &middot; ~16-hour read &middot; <a href="ebooks/thomas-hobbes_leviathan.epub">epub</a></span>
-    <span class="blurb">Why we need government at all &mdash; the founding argument of the modern state, written amid civil war.</span>
+<main>
+<h2>Epic, Myth &amp; Tragedy</h2>
+<ul class="deck">
+  <li class="card">
+    <a class="plate" href="odyssey.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/odyssey.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">c. 700 BC</div>
+      <h3><a href="odyssey.html">The Odyssey</a></h3>
+      <p class="author">Homer (c. 700 BC) &middot; ~9-hour read &middot; <a href="ebooks/homer_the-odyssey.epub">epub</a></p>
+      <p class="blurb">A soldier ten years trying to get home, a wife holding off a houseful of suitors, and a son who was a baby when he left. From the Greek, all twenty-four books, as prose.</p>
+    </div>
   </li>
-  <li>
-    <a href="two-treatises.html">Two Treatises of Government</a>
-    <span class="author">John Locke (1689) &middot; ~7-hour read &middot; <a href="ebooks/john-locke_two-treatises-of-government.epub">epub</a></span>
-    <span class="blurb">The demolition of the divine right of kings, and the case for government by consent.</span>
+  <li class="card">
+    <a class="plate" href="aeschylus.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/aeschylus.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">472 BC</div>
+      <h3><a href="aeschylus.html">The Seven Tragedies</a></h3>
+      <p class="author">Aeschylus (472–458 BC) &middot; ~5-hour read &middot; <a href="ebooks/aeschylus_the-seven-tragedies.epub">epub</a></p>
+      <p class="blurb">The Oresteia complete, with the Persians, the Seven, the Suppliants and Prometheus Bound — from the Greek: the scenes as fast modern prose, the odes as verse, and the net, the yoke and the lion cub kept in the same words every time.</p>
+    </div>
   </li>
-  <li>
-    <a href="social-contract.html">The Social Contract</a>
-    <span class="author">Jean-Jacques Rousseau (1762) &middot; ~3-hour read &middot; <a href="ebooks/jean-jacques-rousseau_the-social-contract.epub">epub</a></span>
-    <span class="blurb">The general will, the social contract, and the most famous opening line in political philosophy.</span>
+  <li class="card">
+    <a class="plate" href="sophocles.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/sophocles.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">c. 442 BC</div>
+      <h3><a href="sophocles.html">The Seven Tragedies</a></h3>
+      <p class="author">Sophocles (c. 442–401 BC) &middot; ~7-hour read &middot; <a href="ebooks/sophocles_the-seven-tragedies.epub">epub</a></p>
+      <p class="blurb">All seven surviving plays — Oedipus, Antigone, Ajax, Electra and the rest — from the Greek: the arguments as fast modern prose, the odes as verse, because the chorus was singing.</p>
+    </div>
   </li>
-  <li>
-    <a href="the-prince.html">The Prince</a>
-    <span class="author">Niccol&ograve; Machiavelli (1532) &middot; ~2-hour read &middot; <a href="ebooks/niccolo-machiavelli_the-prince.epub">epub</a></span>
-    <span class="blurb">The infamous handbook of power politics.</span>
+  <li class="card">
+    <a class="plate" href="euripides.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/euripides.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">438 BC</div>
+      <h3><a href="euripides.html">The Nineteen Plays</a></h3>
+      <p class="author">Euripides (438–405 BC) &middot; ~18-hour read &middot; <a href="ebooks/euripides_the-nineteen-plays.epub">epub</a></p>
+      <p class="blurb">Every surviving play, complete — Medea, the Bacchae, the Trojan Women, and the satyr play about blinding a giant — from the Greek: the arguments as fast modern prose, the songs as verse.</p>
+    </div>
   </li>
-  <li>
-    <a href="common-sense.html">Common Sense</a>
-    <span class="author">Thomas Paine (1776) &middot; ~90-minute read &middot; <a href="ebooks/thomas-paine_common-sense.epub">epub</a></span>
-    <span class="blurb">The pamphlet that talked America into independence.</span>
+  <li class="card">
+    <a class="plate" href="ovid.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/ovid.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">8 AD</div>
+      <h3><a href="ovid.html">Metamorphoses</a></h3>
+      <p class="author">Ovid (8 CE) &middot; ~9-hour read &middot; <a href="ebooks/ovid_metamorphoses.epub">epub</a></p>
+      <p class="blurb">The great storybook of classical myth — Daphne, Phaethon, Narcissus, Icarus, Orpheus, Pygmalion, Midas and hundreds more. All fifteen books, from the Latin.</p>
+    </div>
   </li>
-  <li>
-    <a href="burke.html">Reflections on the Revolution in France</a>
-    <span class="author">Edmund Burke (1790) &middot; ~7-hour read &middot; <a href="ebooks/edmund-burke_reflections-on-the-revolution-in-france.epub">epub</a></span>
-    <span class="blurb">The book that invented conservatism &mdash; a warning, written in 1790, that a society is not a machine you can take apart and rebuild to a drawing.</span>
+  <li class="card">
+    <a class="plate" href="inferno.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/inferno.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">c. 1308</div>
+      <h3><a href="inferno.html">Inferno</a></h3>
+      <p class="author">Dante Alighieri (c. 1308–1320) &middot; ~3-hour read &middot; <a href="ebooks/dante-alighieri_inferno.epub">epub</a></p>
+      <p class="blurb">Led down through Hell by a dead poet, Dante meets people he knew — popes, neighbours, a former teacher — still arguing Florentine politics. From the Italian, tercet for tercet.</p>
+    </div>
   </li>
-  <li>
-    <a href="catos-letters.html">Cato&#x27;s Letters</a>
-    <span class="author">John Trenchard and Thomas Gordon (1720&ndash;1723) &middot; ~3-hour read &middot; <a href="ebooks/john-trenchard-and-thomas-gordon_catos-letters.epub">epub</a></span>
-    <span class="blurb">Eighteen selected letters on liberty, power, and free speech &mdash; the columns that taught America to argue for revolution.</span>
+  <li class="card">
+    <a class="plate" href="purgatorio.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/purgatorio.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">c. 1308</div>
+      <h3><a href="purgatorio.html">Purgatorio</a></h3>
+      <p class="author">Dante Alighieri (c. 1308–1320) &middot; ~3-hour read &middot; <a href="ebooks/dante-alighieri_purgatorio.epub">epub</a></p>
+      <p class="blurb">The second book of the Comedy, where everyone is going to be saved and knows it — the dead embrace, tease, and ask after old friends. From the Italian, tercet for tercet.</p>
+    </div>
   </li>
-  <li>
-    <a href="utopia.html">Utopia</a>
-    <span class="author">Thomas More (1516) &middot; ~3-hour read &middot; <a href="ebooks/thomas-more_utopia.epub">epub</a></span>
-    <span class="blurb">The island where everything works — and the deadpan joke is that you can&#x27;t tell how much More means it.</span>
+  <li class="card">
+    <a class="plate" href="paradiso.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/paradiso.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">c. 1308</div>
+      <h3><a href="paradiso.html">Paradiso</a></h3>
+      <p class="author">Dante Alighieri (c. 1308–1321) &middot; ~3-hour read &middot; <a href="ebooks/dante-alighieri_paradiso.epub">epub</a></p>
+      <p class="blurb">The third book of the Comedy: heaven as a bird waiting for dawn and a baby reaching for milk, and Saint Peter calling the papacy a sewer. From the Italian, tercet for tercet.</p>
+    </div>
   </li>
-  <li>
-    <a href="federalist.html">The Federalist Papers</a>
-    <span class="author">Alexander Hamilton, James Madison, and John Jay (1787&ndash;1788) &middot; ~12-hour read &middot; <a href="ebooks/alexander-hamilton-james-madison-and-john-jay_the-federalist-papers.epub">epub</a></span>
-    <span class="blurb">The Constitution&#x27;s authors explain &mdash; and sell &mdash; their design.</span>
+</ul>
+
+<h2>Tales &amp; Novels</h2>
+<ul class="deck">
+  <li class="card">
+    <a class="plate" href="true-history.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/true-history.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">c. 175 AD</div>
+      <h3><a href="true-history.html">True History</a></h3>
+      <p class="author">Lucian of Samosata (c. 175 AD) &middot; ~1-hour read &middot; <a href="ebooks/lucian-of-samosata_true-history.epub">epub</a></p>
+      <p class="blurb">The first science fiction story: a voyage to the moon, war between planets, and a narrator who swears that he lies.</p>
+    </div>
   </li>
-  <li>
-    <a href="democracy.html">Democracy in America</a>
-    <span class="author">Alexis de Tocqueville (1835/1840) &middot; ~18-hour read &middot; <a href="ebooks/alexis-de-tocqueville_democracy-in-america.epub">epub</a></span>
-    <span class="blurb">A young Frenchman tours the United States and sees the democratic future &mdash; flaws and all.</span>
+  <li class="card">
+    <a class="plate" href="nights.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/nights.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">c. 800 AD</div>
+      <h3><a href="nights.html">The Thousand Nights and a Night</a></h3>
+      <p class="author">Anonymous (c. 800–1400) &middot; ~16-hour read &middot; <a href="ebooks/anonymous_the-thousand-nights-and-a-night.epub">epub</a></p>
+      <p class="blurb">Shahrazad&#x27;s frame and eighteen of the great tales — the Fisherman and the Jinni, the Hunchback, Sindbad, Aladdin, Ali Baba — with Burton&#x27;s fake-antique costume taken off.</p>
+    </div>
   </li>
-  <li>
-    <a href="democracy2.html">Democracy in America (From the French)</a>
-    <span class="author">Alexis de Tocqueville (1835/1840) &middot; ~19-hour read &middot; <a href="ebooks/alexis-de-tocqueville_de-la-democratie-en-amerique.epub">epub</a></span>
-    <span class="blurb">A second pass, translated directly from Tocqueville&#x27;s French.</span>
+  <li class="card">
+    <a class="plate" href="decameron.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/decameron.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1353</div>
+      <h3><a href="decameron.html">The Decameron</a></h3>
+      <p class="author">Giovanni Boccaccio (1353) &middot; ~19-hour read &middot; <a href="ebooks/giovanni-boccaccio_the-decameron.epub">epub</a></p>
+      <p class="blurb">Ten friends flee the plague and tell a hundred stories — bawdy, sly, and humane.</p>
+    </div>
   </li>
-  <li>
-    <a href="common-law.html">The Common Law</a>
-    <span class="author">Oliver Wendell Holmes Jr. (1881) &middot; ~8-hour read &middot; <a href="ebooks/oliver-wendell-holmes-jr_the-common-law.epub">epub</a> &middot; <a href="common-law-original.html">original text</a> (<a href="ebooks/oliver-wendell-holmes-jr_the-common-law-the-original-text.epub">epub</a>)</span>
-    <span class="blurb">The life of the law has not been logic: it has been experience &mdash; crime, tort, contract and inheritance traced back to rules whose reasons died centuries ago.</span>
+  <li class="card">
+    <a class="plate" href="quixote.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/quixote.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1605</div>
+      <h3><a href="quixote.html">Don Quixote</a></h3>
+      <p class="author">Miguel de Cervantes (1605/1615) &middot; ~30-hour read &middot; <a href="ebooks/miguel-de-cervantes_don-quixote.epub">epub</a></p>
+      <p class="blurb">A gentleman reads too many books of chivalry and rides out to fix the world with a labourer who talks in proverbs. Both volumes, all 126 chapters, from the Spanish.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="bunyan.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/bunyan.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1678</div>
+      <h3><a href="bunyan.html">The Pilgrim&#x27;s Progress</a></h3>
+      <p class="author">John Bunyan (1678/1684) &middot; ~8-hour read &middot; <a href="ebooks/john-bunyan_the-pilgrims-progress.epub">epub</a></p>
+      <p class="blurb">The most famous journey in English — the Slough of Despond, Vanity Fair, and the key called Promise that was in his pocket all along. Both parts complete.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="candide.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/candide.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1759</div>
+      <h3><a href="candide.html">Candide, or Optimism</a></h3>
+      <p class="author">Voltaire (1759) &middot; ~2-hour read &middot; <a href="ebooks/voltaire_candide-or-optimism.epub">epub</a></p>
+      <p class="blurb">Voltaire&#x27;s whirlwind satire of optimism in a broken world.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="grimm.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/grimm.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1812</div>
+      <h3><a href="grimm.html">Grimm&#x27;s Household Tales</a></h3>
+      <p class="author">Jacob and Wilhelm Grimm (1812–1857) &middot; ~20-hour read &middot; <a href="ebooks/jacob-and-wilhelm-grimm_grimms-household-tales.epub">epub</a></p>
+      <p class="blurb">All two hundred tales and ten legends, complete — the famous ones and the hundred and sixty that nobody prints.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="journey-center-earth.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/journey-center-earth.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1864</div>
+      <h3><a href="journey-center-earth.html">A Journey to the Center of the Earth</a></h3>
+      <p class="author">Jules Verne (1864) &middot; ~5-hour read &middot; <a href="ebooks/jules-verne_a-journey-to-the-center-of-the-earth.epub">epub</a></p>
+      <p class="blurb">A coded parchment, a dead Icelandic volcano, and a plunge into a lost world underground — complete from the French, not the mangled Victorian version.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="twenty-thousand-leagues.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/twenty-thousand-leagues.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1870</div>
+      <h3><a href="twenty-thousand-leagues.html">Twenty Thousand Leagues Under the Sea</a></h3>
+      <p class="author">Jules Verne (1870) &middot; ~10-hour read &middot; <a href="ebooks/jules-verne_twenty-thousand-leagues-under-the-sea.epub">epub</a></p>
+      <p class="blurb">Captain Nemo&#x27;s Nautilus carries three captives beneath every sea — the complete novel from Verne&#x27;s French, not the abridged Victorian version.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="eighty-days.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/eighty-days.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1872</div>
+      <h3><a href="eighty-days.html">Around the World in Eighty Days</a></h3>
+      <p class="author">Jules Verne (1872) &middot; ~5-hour read &middot; <a href="ebooks/jules-verne_around-the-world-in-eighty-days.epub">epub</a></p>
+      <p class="blurb">Phileas Fogg bets £20,000 that he can circle the globe in eighty days — complete from the French, with a final trick of the calendar.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="flatland.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/flatland.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1884</div>
+      <h3><a href="flatland.html">Flatland: A Romance of Many Dimensions</a></h3>
+      <p class="author">Edwin A. Abbott (1884) &middot; ~2-hour read &middot; <a href="ebooks/edwin-a-abbott_flatland-a-romance-of-many-dimensions.epub">epub</a></p>
+      <p class="blurb">Geometry as social satire: a square discovers the third dimension.</p>
+    </div>
+  </li>
+</ul>
+
+<h2>The Art of Living</h2>
+<ul class="deck">
+  <li class="card">
+    <a class="plate" href="memorabilia.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/memorabilia.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">c. 371 BC</div>
+      <h3><a href="memorabilia.html">The Memorabilia</a></h3>
+      <p class="author">Xenophon (c. 371 BC) &middot; ~4-hour read &middot; <a href="ebooks/xenophon_the-memorabilia.epub">epub</a></p>
+      <p class="blurb">Socrates remembered by his other student — practical, sociable, and useful, with the Choice of Heracles.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="ethics.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/ethics.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">c. 340 BC</div>
+      <h3><a href="ethics.html">Nicomachean Ethics</a></h3>
+      <p class="author">Aristotle (c. 340 BC) &middot; ~6-hour read &middot; <a href="ebooks/aristotle_nicomachean-ethics.epub">epub</a></p>
+      <p class="blurb">The original inquiry into the good life — happiness, virtue as habit, the mean, and friendship.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="theophrastus.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/theophrastus.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">c. 319 BC</div>
+      <h3><a href="theophrastus.html">Characters</a></h3>
+      <p class="author">Theophrastus (c. 319 BC) &middot; ~40-minute read &middot; <a href="ebooks/theophrastus_characters.epub">epub</a></p>
+      <p class="blurb">Thirty ruthless comic sketches of annoying Athenians — every one of them still alive and probably in your contacts.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="tusculan.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/tusculan.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">45 BC</div>
+      <h3><a href="tusculan.html">Tusculan Disputations</a></h3>
+      <p class="author">Cicero (45 BC) &middot; ~5-hour read &middot; <a href="ebooks/cicero_tusculan-disputations.epub">epub</a></p>
+      <p class="blurb">Five days on death, pain, grief, and the passions — from the Latin, with the Sword of Damocles.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="de-officiis.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/de-officiis.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">44 BC</div>
+      <h3><a href="de-officiis.html">On Duties</a></h3>
+      <p class="author">Cicero (44 BC) &middot; ~4-hour read &middot; <a href="ebooks/cicero_on-duties.epub">epub</a></p>
+      <p class="blurb">Cicero&#x27;s last book, a letter to his son — translated from the Latin: nothing dishonorable is ever truly useful.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="seneca.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/seneca.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">c. 65 AD</div>
+      <h3><a href="seneca.html">Moral Letters to Lucilius</a></h3>
+      <p class="author">Seneca (c. 65 AD) &middot; ~14-hour read &middot; <a href="ebooks/seneca_moral-letters-to-lucilius.epub">epub</a></p>
+      <p class="blurb">All 124 letters from a Stoic — a daily course in living, from saving time to facing the end.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="epictetus.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/epictetus.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">c. 108 AD</div>
+      <h3><a href="epictetus.html">The Discourses</a></h3>
+      <p class="author">Epictetus (c. 108 AD) &middot; ~8-hour read &middot; <a href="ebooks/epictetus_the-discourses.epub">epub</a></p>
+      <p class="blurb">The lectures the Enchiridion was cut down from — a former slave telling Rome&#x27;s young gentlemen that they are the ones in chains.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="enchiridion.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/enchiridion.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">c. 125 AD</div>
+      <h3><a href="enchiridion.html">The Enchiridion</a></h3>
+      <p class="author">Epictetus (c. 125 AD) &middot; ~30-minute read &middot; <a href="ebooks/epictetus_the-enchiridion.epub">epub</a></p>
+      <p class="blurb">The Stoic pocket manual — fifty-one drills for keeping your head, from a philosopher born enslaved.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="meditations.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/meditations.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">c. 170 AD</div>
+      <h3><a href="meditations.html">Meditations</a></h3>
+      <p class="author">Marcus Aurelius (c. 170–180 AD) &middot; ~3-hour read &middot; <a href="ebooks/marcus-aurelius_meditations.epub">epub</a></p>
+      <p class="blurb">A Roman emperor&#x27;s private notes to himself on how to live.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="boethius.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/boethius.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">524 AD</div>
+      <h3><a href="boethius.html">The Consolation of Philosophy</a></h3>
+      <p class="author">Boethius (524) &middot; ~3-hour read &middot; <a href="ebooks/boethius_the-consolation-of-philosophy.epub">epub</a></p>
+      <p class="blurb">Waiting to be executed, the last Roman philosopher is visited by Philosophy, who tells him that nothing he has lost was ever his. With all thirty-nine poems.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="dogen.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/dogen.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1227</div>
+      <h3><a href="dogen.html">The Practice Instructions</a></h3>
+      <p class="author">Dōgen (1227–1234) &middot; ~50-minute read &middot; <a href="ebooks/dogen_the-practice-instructions.epub">epub</a></p>
+      <p class="blurb">Three short manuals from the founder of Sōtō Zen: how to sit, how to study, and how to cook. From the Chinese.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="montaigne.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/montaigne.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1580</div>
+      <h3><a href="montaigne.html">Selected Essays</a></h3>
+      <p class="author">Michel de Montaigne (1580) &middot; ~9-hour read &middot; <a href="ebooks/michel-de-montaigne_selected-essays.epub">epub</a></p>
+      <p class="blurb">The man who invented the essay, talking to you across four centuries about death, friendship, cannibals, and himself.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="way-to-wealth.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/way-to-wealth.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1758</div>
+      <h3><a href="way-to-wealth.html">The Way to Wealth</a></h3>
+      <p class="author">Benjamin Franklin (1758) &middot; ~10-minute read &middot; <a href="ebooks/benjamin-franklin_the-way-to-wealth.epub">epub</a></p>
+      <p class="blurb">Poor Richard&#x27;s proverbs rolled into one sly speech — delivered to a crowd that applauds, then ignores it.</p>
+    </div>
+  </li>
+</ul>
+
+<h2>Philosophy</h2>
+<ul class="deck">
+  <li class="card">
+    <a class="plate" href="dialogues.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/dialogues.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">399 BC</div>
+      <h3><a href="dialogues.html">Dialogues</a></h3>
+      <p class="author">Plato (399–347 BC) &middot; ~45-hour read &middot; <a href="ebooks/plato_dialogues.epub">epub</a></p>
+      <p class="blurb">The complete dialogues — Socrates on trial, in the agora, and at the limits of knowledge.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="rhetoric.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/rhetoric.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">c. 335 BC</div>
+      <h3><a href="rhetoric.html">Rhetoric</a></h3>
+      <p class="author">Aristotle (c. 335 BC) &middot; ~5-hour read &middot; <a href="ebooks/aristotle_rhetoric.epub">epub</a></p>
+      <p class="blurb">The art of persuasion, from the Greek: argument, character and emotion — anger, fear, envy, the young and the old — then style, ending on “I have spoken; you have heard; judge.”</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="lucretius.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/lucretius.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">c. 55 BC</div>
+      <h3><a href="lucretius.html">On the Nature of Things</a></h3>
+      <p class="author">Lucretius (c. 55 BC) &middot; ~6-hour read &middot; <a href="ebooks/lucretius_on-the-nature-of-things.epub">epub</a></p>
+      <p class="blurb">Everything is atoms and empty space, the soul dies with the body, and the gods never lift a finger. From the Latin, the whole poem, as prose — ending, without consolation, on the plague at Athens.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="augustine.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/augustine.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">c. 400 AD</div>
+      <h3><a href="augustine.html">Confessions</a></h3>
+      <p class="author">Augustine of Hippo (c. 400 AD) &middot; ~8-hour read &middot; <a href="ebooks/augustine-of-hippo_confessions.epub">epub</a></p>
+      <p class="blurb">The first autobiography — the stolen pears, the garden at Milan, the night at Ostia — every sentence addressed to God, so that reading it is overhearing.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="philosophical-works.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/descartes.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1637</div>
+      <h3><a href="philosophical-works.html">Philosophical Works</a></h3>
+      <p class="author">René Descartes (1637–1644) &middot; ~7-hour read &middot; <a href="ebooks/rene-descartes_philosophical-works.epub">epub</a></p>
+      <p class="blurb">Descartes doubts everything and rebuilds from “I think, therefore I am.”</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="spinoza.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/spinoza.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1677</div>
+      <h3><a href="spinoza.html">Ethics</a></h3>
+      <p class="author">Baruch Spinoza (1677) &middot; ~6-hour read &middot; <a href="ebooks/baruch-spinoza_ethics.epub">epub</a></p>
+      <p class="blurb">God and Nature are one thing, free will is a name for our ignorance, and forty-eight emotions are defined in order — all set out like a geometry textbook.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="hume.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/hume.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1748</div>
+      <h3><a href="hume.html">An Enquiry Concerning Human Understanding</a></h3>
+      <p class="author">David Hume (1748) &middot; ~3-hour read &middot; <a href="ebooks/david-hume_an-enquiry-concerning-human-understanding.epub">epub</a></p>
+      <p class="blurb">Why experience can never prove the sun will rise tomorrow, and why Hume thinks that need not worry you.</p>
+    </div>
+  </li>
+</ul>
+
+<h2>Politics, War &amp; Law</h2>
+<ul class="deck">
+  <li class="card">
+    <a class="plate" href="sun-tzu.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/sun-tzu.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">5th c. BC</div>
+      <h3><a href="sun-tzu.html">The Art of War</a></h3>
+      <p class="author">Sun Tzu (c. 5th century BC) &middot; ~3-hour read &middot; <a href="ebooks/sun-tzu_the-art-of-war.epub">epub</a></p>
+      <p class="blurb">The oldest book on war, with the commentary most editions cut: two thousand years of Chinese generals arguing with Sun Tzu and with each other.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="utopia.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/utopia.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1516</div>
+      <h3><a href="utopia.html">Utopia</a></h3>
+      <p class="author">Thomas More (1516) &middot; ~3-hour read &middot; <a href="ebooks/thomas-more_utopia.epub">epub</a></p>
+      <p class="blurb">The island where everything works — and the deadpan joke is that you can&#x27;t tell how much More means it.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="the-prince.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/the-prince.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1532</div>
+      <h3><a href="the-prince.html">The Prince</a></h3>
+      <p class="author">Niccolò Machiavelli (1532) &middot; ~2-hour read &middot; <a href="ebooks/niccolo-machiavelli_the-prince.epub">epub</a></p>
+      <p class="blurb">The infamous handbook of power politics.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="leviathan.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/leviathan.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1651</div>
+      <h3><a href="leviathan.html">Leviathan</a></h3>
+      <p class="author">Thomas Hobbes (1651) &middot; ~15-hour read &middot; <a href="ebooks/thomas-hobbes_leviathan.epub">epub</a></p>
+      <p class="blurb">Why we need government at all — the founding argument of the modern state, written amid civil war.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="two-treatises.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/two-treatises.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1689</div>
+      <h3><a href="two-treatises.html">Two Treatises of Government</a></h3>
+      <p class="author">John Locke (1689) &middot; ~9-hour read &middot; <a href="ebooks/john-locke_two-treatises-of-government.epub">epub</a></p>
+      <p class="blurb">The demolition of the divine right of kings, and the case for government by consent.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="catos-letters.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/catos-letters.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1720</div>
+      <h3><a href="catos-letters.html">Cato&#x27;s Letters</a></h3>
+      <p class="author">John Trenchard and Thomas Gordon (1720–1723) &middot; ~3-hour read &middot; <a href="ebooks/john-trenchard-and-thomas-gordon_catos-letters.epub">epub</a></p>
+      <p class="blurb">Eighteen selected letters on liberty, power, and free speech — the columns that taught America to argue for revolution.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="social-contract.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/social-contract.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1762</div>
+      <h3><a href="social-contract.html">The Social Contract</a></h3>
+      <p class="author">Jean-Jacques Rousseau (1762) &middot; ~3-hour read &middot; <a href="ebooks/jean-jacques-rousseau_the-social-contract.epub">epub</a></p>
+      <p class="blurb">The general will, the social contract, and the most famous opening line in political philosophy.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="common-sense.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/common-sense.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1776</div>
+      <h3><a href="common-sense.html">Common Sense</a></h3>
+      <p class="author">Thomas Paine (1776) &middot; ~90-minute read &middot; <a href="ebooks/thomas-paine_common-sense.epub">epub</a></p>
+      <p class="blurb">The pamphlet that talked America into independence.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="federalist.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/federalist.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1787</div>
+      <h3><a href="federalist.html">The Federalist Papers</a></h3>
+      <p class="author">Alexander Hamilton, James Madison, and John Jay (1787–1788) &middot; ~15-hour read &middot; <a href="ebooks/alexander-hamilton-james-madison-and-john-jay_the-federalist-papers.epub">epub</a></p>
+      <p class="blurb">The Constitution&#x27;s authors explain — and sell — their design.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="burke.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/burke.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1790</div>
+      <h3><a href="burke.html">Reflections on the Revolution in France</a></h3>
+      <p class="author">Edmund Burke (1790) &middot; ~7-hour read &middot; <a href="ebooks/edmund-burke_reflections-on-the-revolution-in-france.epub">epub</a></p>
+      <p class="blurb">The book that invented conservatism — a warning, written in 1790, that a society is not a machine you can take apart and rebuild to a drawing.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="wollstonecraft.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/wollstonecraft.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1792</div>
+      <h3><a href="wollstonecraft.html">A Vindication of the Rights of Woman</a></h3>
+      <p class="author">Mary Wollstonecraft (1792) &middot; ~6-hour read &middot; <a href="ebooks/mary-wollstonecraft_a-vindication-of-the-rights-of-woman.epub">epub</a></p>
+      <p class="blurb">Not that women are equal, but that nobody knows what women are like, because their character is manufactured by their upbringing. Written in six weeks, and angrier than its reputation.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="democracy.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/democracy.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1835</div>
+      <h3><a href="democracy.html">Democracy in America</a></h3>
+      <p class="author">Alexis de Tocqueville (1835/1840) &middot; ~22-hour read &middot; <a href="ebooks/alexis-de-tocqueville_democracy-in-america.epub">epub</a></p>
+      <p class="blurb">A young Frenchman tours the United States and sees the democratic future — flaws and all.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="democracy2.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/democracy2.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1835</div>
+      <h3><a href="democracy2.html">Democracy in America (From the French)</a></h3>
+      <p class="author">Alexis de Tocqueville (1835/1840) &middot; ~22-hour read &middot; <a href="ebooks/alexis-de-tocqueville_de-la-democratie-en-amerique.epub">epub</a></p>
+      <p class="blurb">A second pass, translated directly from Tocqueville&#x27;s French.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="mill.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/mill.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1859</div>
+      <h3><a href="mill.html">On Liberty</a></h3>
+      <p class="author">John Stuart Mill (1859) &middot; ~3-hour read &middot; <a href="ebooks/john-stuart-mill_on-liberty.epub">epub</a></p>
+      <p class="blurb">One principle pushed as far as it will go: the only ground for interfering with anyone&#x27;s freedom is preventing harm to somebody else.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="subjection.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/subjection.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1869</div>
+      <h3><a href="subjection.html">The Subjection of Women</a></h3>
+      <p class="author">John Stuart Mill (1869) &middot; ~3-hour read &middot; <a href="ebooks/john-stuart-mill_the-subjection-of-women.epub">epub</a></p>
+      <p class="blurb">The companion to On Liberty — marriage as the law then stood was bondage, and the real obstacle is that most men cannot yet imagine living with an equal.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="common-law.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/common-law.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1881</div>
+      <h3><a href="common-law.html">The Common Law</a></h3>
+      <p class="author">Oliver Wendell Holmes Jr. (1881) &middot; ~9-hour read &middot; <a href="ebooks/oliver-wendell-holmes-jr_the-common-law.epub">epub</a> &middot; <a href="common-law-original.html">original text</a> (<a href="ebooks/oliver-wendell-holmes-jr_the-common-law-the-original-text.epub">epub</a>)</p>
+      <p class="blurb">The life of the law has not been logic: it has been experience — crime, tort, contract and inheritance traced back to rules whose reasons died centuries ago.</p>
+    </div>
   </li>
 </ul>
 
 <h2>Economics</h2>
-<ul class="book-list">
-  <li>
-    <a href="autobiography.html">The Autobiography of Benjamin Franklin</a>
-    <span class="author">Benjamin Franklin (1771&ndash;1790) &middot; ~4-hour read &middot; <a href="ebooks/benjamin-franklin_the-autobiography-of-benjamin-franklin.epub">epub</a></span>
-    <span class="blurb">The original American life story &mdash; runaway apprentice to statesman, told with a wink.</span>
+<ul class="deck">
+  <li class="card">
+    <a class="plate" href="wealth-of-nations.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/wealth-of-nations.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1776</div>
+      <h3><a href="wealth-of-nations.html">The Wealth of Nations</a></h3>
+      <p class="author">Adam Smith (1776) &middot; ~24-hour read &middot; <a href="ebooks/adam-smith_the-wealth-of-nations.epub">epub</a></p>
+      <p class="blurb">The book that invented economics: pins, markets, and the invisible hand.</p>
+    </div>
   </li>
-  <li>
-    <a href="way-to-wealth.html">The Way to Wealth</a>
-    <span class="author">Benjamin Franklin (1758) &middot; ~15-minute read &middot; <a href="ebooks/benjamin-franklin_the-way-to-wealth.epub">epub</a></span>
-    <span class="blurb">Poor Richard&#x27;s proverbs rolled into one sly speech &mdash; delivered to a crowd that applauds, then ignores it.</span>
+  <li class="card">
+    <a class="plate" href="population.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/malthus.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1798</div>
+      <h3><a href="population.html">An Essay on the Principle of Population</a></h3>
+      <p class="author">Thomas Robert Malthus (1798) &middot; ~5-hour read &middot; <a href="ebooks/thomas-robert-malthus_an-essay-on-the-principle-of-population.epub">epub</a></p>
+      <p class="blurb">Malthus&#x27; unsettling arithmetic of people and food.</p>
+    </div>
   </li>
-  <li>
-    <a href="wealth-of-nations.html">The Wealth of Nations</a>
-    <span class="author">Adam Smith (1776) &middot; ~22-hour read &middot; <a href="ebooks/adam-smith_the-wealth-of-nations.epub">epub</a></span>
-    <span class="blurb">The book that invented economics: pins, markets, and the invisible hand.</span>
-  </li>
-  <li>
-    <a href="population.html">An Essay on the Principle of Population</a>
-    <span class="author">Thomas Malthus (1798) &middot; ~4-hour read &middot; <a href="ebooks/thomas-robert-malthus_an-essay-on-the-principle-of-population.epub">epub</a></span>
-    <span class="blurb">Malthus&#x27; unsettling arithmetic of people and food.</span>
-  </li>
-  <li>
-    <a href="progress-and-poverty.html">Progress and Poverty</a>
-    <span class="author">Henry George (1879) &middot; ~12-hour read &middot; <a href="ebooks/henry-george_progress-and-poverty.epub">epub</a></span>
-    <span class="blurb">Why progress and poverty rise together &mdash; and George&#x27;s famous remedy, the land tax.</span>
-  </li>
-</ul>
-
-<h2>The Ancient World</h2>
-<ul class="book-list">
-  <li>
-    <a href="sun-tzu.html">The Art of War</a>
-    <span class="author">Sun Tzu (c. 5th century BC) &middot; ~4-hour read &middot; <a href="ebooks/sun-tzu_the-art-of-war.epub">epub</a></span>
-    <span class="blurb">The oldest book on war, with the commentary most editions cut: two thousand years of Chinese generals arguing with Sun Tzu and with each other.</span>
-  </li>
-  <li>
-    <a href="dialogues.html">Dialogues</a>
-    <span class="author">Plato (399&ndash;347 BC) &middot; ~42-hour read &middot; <a href="ebooks/plato_dialogues.epub">epub</a></span>
-    <span class="blurb">The complete dialogues &mdash; Socrates on trial, in the agora, and at the limits of knowledge.</span>
-  </li>
-  <li>
-    <a href="memorabilia.html">The Memorabilia</a>
-    <span class="author">Xenophon (c. 371 BC) &middot; ~4-hour read &middot; <a href="ebooks/xenophon_the-memorabilia.epub">epub</a></span>
-    <span class="blurb">Socrates remembered by his other student &mdash; practical, sociable, and useful, with the Choice of Heracles.</span>
-  </li>
-  <li>
-    <a href="ethics.html">Nicomachean Ethics</a>
-    <span class="author">Aristotle (c. 340 BC) &middot; ~6-hour read &middot; <a href="ebooks/aristotle_nicomachean-ethics.epub">epub</a></span>
-    <span class="blurb">The original inquiry into the good life &mdash; happiness, virtue as habit, the mean, and friendship.</span>
-  </li>
-  <li>
-    <a href="rhetoric.html">Rhetoric</a>
-    <span class="author">Aristotle (c. 335 BC) &middot; ~5-hour read &middot; <a href="ebooks/aristotle_rhetoric.epub">epub</a></span>
-    <span class="blurb">The art of persuasion, from the Greek: argument, character and emotion &mdash; anger, fear, envy, the young and the old &mdash; then style, ending on &ldquo;I have spoken; you have heard; judge.&rdquo;</span>
-  </li>
-  <li>
-    <a href="theophrastus.html">Characters</a>
-    <span class="author">Theophrastus (c. 319 BC) &middot; ~40-minute read &middot; <a href="ebooks/theophrastus_characters.epub">epub</a></span>
-    <span class="blurb">Thirty ruthless comic sketches of annoying Athenians &mdash; every one of them still alive and probably in your contacts.</span>
-  </li>
-  <li>
-    <a href="meditations.html">Meditations</a>
-    <span class="author">Marcus Aurelius (c. 170&ndash;180 AD) &middot; ~3-hour read &middot; <a href="ebooks/marcus-aurelius_meditations.epub">epub</a></span>
-    <span class="blurb">A Roman emperor&#x27;s private notes to himself on how to live.</span>
-  </li>
-  <li>
-    <a href="enchiridion.html">The Enchiridion</a>
-    <span class="author">Epictetus (c. 125 AD) &middot; ~30-minute read &middot; <a href="ebooks/epictetus_the-enchiridion.epub">epub</a></span>
-    <span class="blurb">The Stoic pocket manual &mdash; fifty-one drills for keeping your head, from a philosopher born enslaved.</span>
-  </li>
-  <li>
-    <a href="dogen.html">The Practice Instructions</a>
-    <span class="author">D&#x14D;gen (1227&ndash;1234) &middot; ~40-minute read &middot; <a href="ebooks/dogen_the-practice-instructions.epub">epub</a></span>
-    <span class="blurb">Three short manuals from the founder of Sōtō Zen: how to sit, how to study, and how to cook. From the Chinese.</span>
-  </li>
-  <li>
-    <a href="kenzeiki.html">The Illustrated Life of D&#x14D;gen</a>
-    <span class="author">Kenzei (c. 1470; illustrated 1806) &middot; ~90-minute read &middot; <a href="ebooks/kenzei_the-illustrated-life-of-dogen.epub">epub</a></span>
-    <span class="blurb">The oldest life of the founder of Sōtō Zen, written so that ordinary people could read it &mdash; with his letters, his kitchen rules, and the farmers&#x27; sworn statement about a coloured cloud.</span>
-  </li>
-  <li>
-    <a href="epictetus.html">The Discourses</a>
-    <span class="author">Epictetus (c. 108 AD) &middot; ~8-hour read &middot; <a href="ebooks/epictetus_the-discourses.epub">epub</a></span>
-    <span class="blurb">The lectures the Enchiridion was cut down from &mdash; a former slave telling Rome&#x27;s young gentlemen that they are the ones in chains.</span>
-  </li>
-  <li>
-    <a href="de-officiis.html">On Duties</a>
-    <span class="author">Cicero (44 BC) &middot; ~4-hour read &middot; <a href="ebooks/cicero_on-duties.epub">epub</a></span>
-    <span class="blurb">Cicero&#x27;s last book, a letter to his son &mdash; translated from the Latin: nothing dishonorable is ever truly useful.</span>
-  </li>
-  <li>
-    <a href="tusculan.html">Tusculan Disputations</a>
-    <span class="author">Cicero (45 BC) &middot; ~5-hour read &middot; <a href="ebooks/cicero_tusculan-disputations.epub">epub</a></span>
-    <span class="blurb">Five days on death, pain, grief, and the passions &mdash; from the Latin, with the Sword of Damocles.</span>
-  </li>
-  <li>
-    <a href="roman-lives.html">Roman Lives</a>
-    <span class="author">Plutarch (c. 100 AD) &middot; ~8-hour read &middot; <a href="ebooks/plutarch_roman-lives.epub">epub</a></span>
-    <span class="blurb">The fall of the Republic in five lives &mdash; Caesar, Cato, Cicero, Brutus, Antony &mdash; five angles on one catastrophe.</span>
-  </li>
-  <li>
-    <a href="seneca.html">Moral Letters to Lucilius</a>
-    <span class="author">Seneca (c. 65 AD) &middot; ~13-hour read &middot; <a href="ebooks/seneca_moral-letters-to-lucilius.epub">epub</a></span>
-    <span class="blurb">All 124 letters from a Stoic &mdash; a daily course in living, from saving time to facing the end.</span>
-  </li>
-  <li>
-    <a href="herodotus.html">The Histories</a>
-    <span class="author">Herodotus (c. 430 BC) &middot; ~15-hour read &middot; <a href="ebooks/herodotus_the-histories.epub">epub</a></span>
-    <span class="blurb">The first history book &mdash; Persia, Egypt, and the Greek wars, with magnificent detours.</span>
-  </li>
-  <li>
-    <a href="peloponnesian-war.html">History of the Peloponnesian War</a>
-    <span class="author">Thucydides (c. 431 BC) &middot; ~14-hour read &middot; <a href="ebooks/thucydides_history-of-the-peloponnesian-war.epub">epub</a></span>
-    <span class="blurb">Power, plague, and the ruin of Athens, by the first analytical historian.</span>
-  </li>
-  <li>
-    <a href="gallic-war.html">Commentaries on the Gallic War</a>
-    <span class="author">Julius Caesar (c. 50 BC) &middot; ~4-hour read &middot; <a href="ebooks/julius-caesar_commentaries-on-the-gallic-war.epub">epub</a></span>
-    <span class="blurb">Caesar&#x27;s own dispatches from the conquest of Gaul.</span>
-  </li>
-  <li>
-    <a href="augustine.html">Confessions</a>
-    <span class="author">Augustine of Hippo (c. 400 AD) &middot; ~13-hour read &middot; <a href="ebooks/augustine-of-hippo_confessions.epub">epub</a></span>
-    <span class="blurb">The first autobiography &mdash; the stolen pears, the garden at Milan, the night at Ostia &mdash; every sentence addressed to God, so that reading it is overhearing.</span>
-  </li>
-  <li>
-    <a href="boethius.html">The Consolation of Philosophy</a>
-    <span class="author">Boethius (524 AD) &middot; ~4-hour read &middot; <a href="ebooks/boethius_the-consolation-of-philosophy.epub">epub</a></span>
-    <span class="blurb">Waiting to be executed, the last Roman philosopher is visited by Philosophy, who tells him that nothing he has lost was ever his. With all thirty-nine poems.</span>
+  <li class="card">
+    <a class="plate" href="progress-and-poverty.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/progress-and-poverty.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1879</div>
+      <h3><a href="progress-and-poverty.html">Progress and Poverty</a></h3>
+      <p class="author">Henry George (1879) &middot; ~14-hour read &middot; <a href="ebooks/henry-george_progress-and-poverty.epub">epub</a></p>
+      <p class="blurb">Why progress and poverty rise together — and George&#x27;s famous remedy, the land tax.</p>
+    </div>
   </li>
 </ul>
 
-<h2>Philosophy &amp; Science</h2>
-<ul class="book-list">
-  <li>
-    <a href="montaigne.html">Selected Essays</a>
-    <span class="author">Michel de Montaigne (1580&ndash;1588) &middot; ~9-hour read &middot; <a href="ebooks/michel-de-montaigne_selected-essays.epub">epub</a></span>
-    <span class="blurb">The man who invented the essay, talking to you across four centuries about death, friendship, cannibals, and himself.</span>
+<h2>Histories &amp; Lives</h2>
+<ul class="deck">
+  <li class="card">
+    <a class="plate" href="peloponnesian-war.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/peloponnesian-war.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">c. 431 BC</div>
+      <h3><a href="peloponnesian-war.html">History of the Peloponnesian War</a></h3>
+      <p class="author">Thucydides (c. 431 BC) &middot; ~15-hour read &middot; <a href="ebooks/thucydides_history-of-the-peloponnesian-war.epub">epub</a></p>
+      <p class="blurb">Power, plague, and the ruin of Athens, by the first analytical historian.</p>
+    </div>
   </li>
-  <li>
-    <a href="galileo.html">Dialogue Concerning the Two Chief World Systems</a>
-    <span class="author">Galileo Galilei (1632) &middot; ~16-hour read &middot; <a href="ebooks/galileo-galilei_dialogue-concerning-the-two-chief-world-systems.epub">epub</a></span>
-    <span class="blurb">Four days of brilliant argument about whether the Earth moves &mdash; the vernacular bestseller that got its author hauled before the Inquisition, translated from Galileo&#x27;s own Italian.</span>
+  <li class="card">
+    <a class="plate" href="herodotus.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/herodotus.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">c. 430 BC</div>
+      <h3><a href="herodotus.html">The Histories</a></h3>
+      <p class="author">Herodotus (c. 430 BC) &middot; ~15-hour read &middot; <a href="ebooks/herodotus_the-histories.epub">epub</a></p>
+      <p class="blurb">The first history book — Persia, Egypt, and the Greek wars, with magnificent detours.</p>
+    </div>
   </li>
-  <li>
-    <a href="philosophical-works.html">Philosophical Works</a>
-    <span class="author">Ren&eacute; Descartes (1637&ndash;1644) &middot; ~5-hour read &middot; <a href="ebooks/rene-descartes_philosophical-works.epub">epub</a></span>
-    <span class="blurb">Descartes doubts everything and rebuilds from &ldquo;I think, therefore I am.&rdquo;</span>
+  <li class="card">
+    <a class="plate" href="gallic-war.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/gallic-war.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">50 BC</div>
+      <h3><a href="gallic-war.html">Commentaries on the Gallic War</a></h3>
+      <p class="author">Julius Caesar (50 BC) &middot; ~5-hour read &middot; <a href="ebooks/julius-caesar_commentaries-on-the-gallic-war.epub">epub</a></p>
+      <p class="blurb">Caesar&#x27;s own dispatches from the conquest of Gaul.</p>
+    </div>
   </li>
-  <li>
-    <a href="spinoza.html">Ethics</a>
-    <span class="author">Baruch Spinoza (1677) &middot; ~6-hour read &middot; <a href="ebooks/baruch-spinoza_ethics.epub">epub</a></span>
-    <span class="blurb">God and Nature are one thing, free will is a name for our ignorance, and forty-eight emotions are defined in order &mdash; all set out like a geometry textbook.</span>
+  <li class="card">
+    <a class="plate" href="roman-lives.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/roman-lives.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">c. 100 AD</div>
+      <h3><a href="roman-lives.html">Roman Lives</a></h3>
+      <p class="author">Plutarch (c. 100 AD) &middot; ~8-hour read &middot; <a href="ebooks/plutarch_roman-lives.epub">epub</a></p>
+      <p class="blurb">The fall of the Republic in five lives — Caesar, Cato, Cicero, Brutus, Antony — five angles on one catastrophe.</p>
+    </div>
   </li>
-  <li>
-    <a href="hume.html">An Enquiry Concerning Human Understanding</a>
-    <span class="author">David Hume (1748) &middot; ~5-hour read &middot; <a href="ebooks/david-hume_an-enquiry-concerning-human-understanding.epub">epub</a></span>
-    <span class="blurb">Why experience can never prove the sun will rise tomorrow, and why Hume thinks that need not worry you.</span>
+  <li class="card">
+    <a class="plate" href="kenzeiki.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/kenzeiki.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">c. 1470</div>
+      <h3><a href="kenzeiki.html">The Illustrated Life of Dōgen</a></h3>
+      <p class="author">Kenzei (c. 1470; illustrated edition 1806) &middot; ~80-minute read &middot; <a href="ebooks/kenzei_the-illustrated-life-of-dogen.epub">epub</a></p>
+      <p class="blurb">The oldest life of the founder of Sōtō Zen, written so that ordinary people could read it — with his letters, his kitchen rules, and the farmers&#x27; sworn statement about a coloured cloud.</p>
+    </div>
   </li>
-  <li>
-    <a href="wollstonecraft.html">A Vindication of the Rights of Woman</a>
-    <span class="author">Mary Wollstonecraft (1792) &middot; ~6-hour read &middot; <a href="ebooks/mary-wollstonecraft_a-vindication-of-the-rights-of-woman.epub">epub</a></span>
-    <span class="blurb">Not that women are equal, but that nobody knows what women are like, because their character is manufactured by their upbringing. Written in six weeks, and angrier than its reputation.</span>
+  <li class="card">
+    <a class="plate" href="cellini.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/cellini.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1558</div>
+      <h3><a href="cellini.html">The Life of Benvenuto Cellini</a></h3>
+      <p class="author">Benvenuto Cellini (1558–1567) &middot; ~13-hour read &middot; <a href="ebooks/benvenuto-cellini_the-life-of-benvenuto-cellini.epub">epub</a></p>
+      <p class="blurb">A Florentine goldsmith dictates his own life while he works: two popes, the sack of Rome, several killings, a prison escape, and the Perseus cast with the roof on fire. From the Italian.</p>
+    </div>
   </li>
-  <li>
-    <a href="mill.html">On Liberty</a>
-    <span class="author">John Stuart Mill (1859) &middot; ~5-hour read &middot; <a href="ebooks/john-stuart-mill_on-liberty.epub">epub</a></span>
-    <span class="blurb">One principle pushed as far as it will go: the only ground for interfering with anyone&#x27;s freedom is preventing harm to somebody else.</span>
-  </li>
-  <li>
-    <a href="subjection.html">The Subjection of Women</a>
-    <span class="author">John Stuart Mill (1869) &middot; ~4-hour read &middot; <a href="ebooks/john-stuart-mill_the-subjection-of-women.epub">epub</a></span>
-    <span class="blurb">The companion to On Liberty &mdash; marriage as the law then stood was bondage, and the real obstacle is that most men cannot yet imagine living with an equal.</span>
-  </li>
-  <li>
-    <a href="origin-of-species.html">On the Origin of Species</a>
-    <span class="author">Charles Darwin (1859) &middot; ~14-hour read &middot; <a href="ebooks/charles-darwin_on-the-origin-of-species.epub">epub</a></span>
-    <span class="blurb">Darwin&#x27;s patient, overwhelming case for evolution by natural selection.</span>
-  </li>
-  <li>
-    <a href="forces.html">On the Various Forces of Nature</a>
-    <span class="author">Michael Faraday (1860) &middot; ~2-hour read &middot; <a href="ebooks/michael-faraday_on-the-various-forces-of-nature.epub">epub</a> &middot; <a href="forces-original.html">original text</a> (<a href="ebooks/michael-faraday_on-the-various-forces-of-nature-the-original-text.epub">epub</a>)</span>
-    <span class="blurb">Six Christmas lectures for children on gravity, heat, magnetism and electricity, arriving at the discovery that they are one force in different forms. With the original figures.</span>
-  </li>
-  <li>
-    <a href="candle.html">The Chemical History of a Candle</a>
-    <span class="author">Michael Faraday (1861) &middot; ~3-hour read &middot; <a href="ebooks/michael-faraday_the-chemical-history-of-a-candle.epub">epub</a> &middot; <a href="candle-original.html">original text</a> (<a href="ebooks/michael-faraday_the-chemical-history-of-a-candle-the-original-text.epub">epub</a>)</span>
-    <span class="blurb">The most famous science lectures ever given: the whole of chemistry drawn out of one burning candle, ending with the news that you are a slow candle yourself.</span>
-  </li>
-  <li>
-    <a href="tyndall.html">Sound</a>
-    <span class="author">John Tyndall (1867/1875) &middot; ~8-hour read &middot; <a href="ebooks/john-tyndall_sound.epub">epub</a> &middot; <a href="tyndall-original.html">original text</a> (<a href="ebooks/john-tyndall_sound-the-original-text.epub">epub</a>)</span>
-    <span class="blurb">Sound taught with a row of five boys, a shivering glass tube and a flame that ducks at the letter S &mdash; then Tyndall discovers the invisible clouds that swallow fog signals on clear days.</span>
-  </li>
-  <li>
-    <a href="soap-bubbles.html">Soap Bubbles and the Forces Which Mould Them</a>
-    <span class="author">C. V. Boys (1890) &middot; ~2-hour read &middot; <a href="ebooks/c-v-boys_soap-bubbles-and-the-forces-which-mould-them.epub">epub</a> &middot; <a href="soap-bubbles-original.html">original text</a> (<a href="ebooks/c-v-boys_soap-bubbles-and-the-forces-which-mould-them-the-original-text.epub">epub</a>)</span>
-    <span class="blurb">Three Christmas lectures for children on why a bubble is round, why a jet of water breaks into beads, and how to make a fountain sing.</span>
-  </li>
-  <li>
-    <a href="fleming.html">Waves and Ripples in Water, Air, and Aether</a>
-    <span class="author">J. A. Fleming (1902) &middot; ~5-hour read &middot; <a href="ebooks/j-a-fleming_waves-and-ripples-in-water-air-and-aether.epub">epub</a> &middot; <a href="fleming-original.html">original text</a> (<a href="ebooks/j-a-fleming_waves-and-ripples-in-water-air-and-aether-the-original-text.epub">epub</a>)</span>
-    <span class="blurb">Six Christmas lectures arguing that a ripple, a ship&#x27;s wake, a sung note, a petal&#x27;s colour and Marconi&#x27;s new wireless signal are all one thing in different media.</span>
-  </li>
-  <li>
-    <a href="ball.html">Star-land</a>
-    <span class="author">Robert S. Ball (1889/1899) &middot; ~6-hour read &middot; <a href="ebooks/robert-s-ball_star-land.epub">epub</a> &middot; <a href="ball-original.html">original text</a> (<a href="ebooks/robert-s-ball_star-land-the-original-text.epub">epub</a>)</span>
-    <span class="blurb">The funniest of the Christmas lecturers takes you from the sun to the nebulae, measuring the sky with two children and a pair of scissors.</span>
-  </li>
-  <li>
-    <a href="thompson.html">Light Visible and Invisible</a>
-    <span class="author">Silvanus P. Thompson (1897) &middot; ~5-hour read &middot; <a href="ebooks/silvanus-p-thompson_light-visible-and-invisible.epub">epub</a> &middot; <a href="thompson-original.html">original text</a> (<a href="ebooks/silvanus-p-thompson_light-visible-and-invisible-the-original-text.epub">epub</a>)</span>
-    <span class="blurb">Six Christmas lectures on light, given thirteen months after the X-ray was announced. Asked what it is, its discoverer says: I do not know.</span>
+  <li class="card">
+    <a class="plate" href="autobiography.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/autobiography.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1771</div>
+      <h3><a href="autobiography.html">The Autobiography of Benjamin Franklin</a></h3>
+      <p class="author">Benjamin Franklin (1771–1790) &middot; ~4-hour read &middot; <a href="ebooks/benjamin-franklin_the-autobiography-of-benjamin-franklin.epub">epub</a></p>
+      <p class="blurb">The original American life story — runaway apprentice to statesman, told with a wink.</p>
+    </div>
   </li>
 </ul>
 
-<h2>Fiction &amp; Ideas</h2>
-<ul class="book-list">
-  <li>
-    <a href="cellini.html">The Life of Benvenuto Cellini</a>
-    <span class="author">Benvenuto Cellini (1558&ndash;1567) &middot; ~13-hour read &middot; <a href="ebooks/benvenuto-cellini_the-life-of-benvenuto-cellini.epub">epub</a></span>
-    <span class="blurb">A Florentine goldsmith dictates his own life while he works: two popes, the sack of Rome, several killings, a prison escape, and the Perseus cast with the roof on fire. From the Italian.</span>
+<h2>Science</h2>
+<ul class="deck">
+  <li class="card">
+    <a class="plate" href="galileo.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/galileo.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1632</div>
+      <h3><a href="galileo.html">Dialogue Concerning the Two Chief World Systems</a></h3>
+      <p class="author">Galileo Galilei (1632) &middot; ~14-hour read &middot; <a href="ebooks/galileo-galilei_dialogue-concerning-the-two-chief-world-systems.epub">epub</a></p>
+      <p class="blurb">Four days of brilliant argument about whether the Earth moves — the vernacular bestseller that got its author hauled before the Inquisition, translated from Galileo&#x27;s own Italian.</p>
+    </div>
   </li>
-  <li>
-    <a href="grimm.html">Grimm&#x27;s Household Tales</a>
-    <span class="author">Jacob and Wilhelm Grimm (1812&ndash;1857) &middot; ~20-hour read &middot; <a href="ebooks/jacob-and-wilhelm-grimm_grimms-household-tales.epub">epub</a></span>
-    <span class="blurb">All two hundred tales and ten legends, complete &mdash; the famous ones and the hundred and sixty that nobody prints.</span>
+  <li class="card">
+    <a class="plate" href="origin-of-species.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/origin-of-species.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1859</div>
+      <h3><a href="origin-of-species.html">On the Origin of Species</a></h3>
+      <p class="author">Charles Darwin (1859) &middot; ~16-hour read &middot; <a href="ebooks/charles-darwin_on-the-origin-of-species.epub">epub</a></p>
+      <p class="blurb">Darwin&#x27;s patient, overwhelming case for evolution by natural selection.</p>
+    </div>
   </li>
-  <li>
-    <a href="nights.html">The Thousand Nights and a Night</a>
-    <span class="author">Anonymous (c. 800&ndash;1400) &middot; ~16-hour read &middot; <a href="ebooks/anonymous_the-thousand-nights-and-a-night.epub">epub</a></span>
-    <span class="blurb">Shahrazad&#x27;s frame and eighteen of the great tales &mdash; the Fisherman and the Jinni, the Hunchback, Sindbad, Aladdin, Ali Baba &mdash; with Burton&#x27;s fake-antique costume taken off.</span>
+  <li class="card">
+    <a class="plate" href="forces.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/forces.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1860</div>
+      <h3><a href="forces.html">On the Various Forces of Nature</a></h3>
+      <p class="author">Michael Faraday (1860) &middot; ~3-hour read &middot; <a href="ebooks/michael-faraday_on-the-various-forces-of-nature.epub">epub</a> &middot; <a href="forces-original.html">original text</a> (<a href="ebooks/michael-faraday_on-the-various-forces-of-nature-the-original-text.epub">epub</a>)</p>
+      <p class="blurb">Six Christmas lectures for children on gravity, heat, magnetism and electricity, arriving at the discovery that they are one force in different forms. With the original figures.</p>
+    </div>
   </li>
-  <li>
-    <a href="lucretius.html">On the Nature of Things</a>
-    <span class="author">Lucretius (c. 55 BC) &middot; ~6-hour read &middot; <a href="ebooks/lucretius_on-the-nature-of-things.epub">epub</a></span>
-    <span class="blurb">Everything is atoms and empty space, the soul dies with the body, and the gods never lift a finger. From the Latin, the whole poem, as prose &mdash; ending, without consolation, on the plague at Athens.</span>
+  <li class="card">
+    <a class="plate" href="candle.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/candle.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1861</div>
+      <h3><a href="candle.html">The Chemical History of a Candle</a></h3>
+      <p class="author">Michael Faraday (1861) &middot; ~3-hour read &middot; <a href="ebooks/michael-faraday_the-chemical-history-of-a-candle.epub">epub</a> &middot; <a href="candle-original.html">original text</a> (<a href="ebooks/michael-faraday_the-chemical-history-of-a-candle-the-original-text.epub">epub</a>)</p>
+      <p class="blurb">The most famous science lectures ever given: the whole of chemistry drawn out of one burning candle, ending with the news that you are a slow candle yourself.</p>
+    </div>
   </li>
-  <li>
-    <a href="euripides.html">The Nineteen Plays</a>
-    <span class="author">Euripides (438&ndash;405 BC) &middot; ~19-hour read &middot; <a href="ebooks/euripides_the-nineteen-plays.epub">epub</a></span>
-    <span class="blurb">Every surviving play, complete &mdash; Medea, the Bacchae, the Trojan Women, and the satyr play about blinding a giant &mdash; from the Greek: the arguments as fast modern prose, the songs as verse.</span>
+  <li class="card">
+    <a class="plate" href="tyndall.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/tyndall.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1867</div>
+      <h3><a href="tyndall.html">Sound</a></h3>
+      <p class="author">John Tyndall (1867) &middot; ~9-hour read &middot; <a href="ebooks/john-tyndall_sound.epub">epub</a> &middot; <a href="tyndall-original.html">original text</a> (<a href="ebooks/john-tyndall_sound-the-original-text.epub">epub</a>)</p>
+      <p class="blurb">Sound taught with a row of five boys, a shivering glass tube and a flame that ducks at the letter S — then Tyndall discovers the invisible clouds that swallow fog signals on clear days.</p>
+    </div>
   </li>
-  <li>
-    <a href="aeschylus.html">The Seven Tragedies</a>
-    <span class="author">Aeschylus (472&ndash;458 BC) &middot; ~5-hour read &middot; <a href="ebooks/aeschylus_the-seven-tragedies.epub">epub</a></span>
-    <span class="blurb">The Oresteia complete, with the Persians, the Seven, the Suppliants and Prometheus Bound &mdash; from the Greek: the scenes as fast modern prose, the odes as verse, and the net, the yoke and the lion cub kept in the same words every time.</span>
+  <li class="card">
+    <a class="plate" href="ball.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/ball.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1889</div>
+      <h3><a href="ball.html">Star-land</a></h3>
+      <p class="author">Robert S. Ball (1889/1899) &middot; ~7-hour read &middot; <a href="ebooks/robert-s-ball_star-land.epub">epub</a> &middot; <a href="ball-original.html">original text</a> (<a href="ebooks/robert-s-ball_star-land-the-original-text.epub">epub</a>)</p>
+      <p class="blurb">The funniest of the Christmas lecturers takes you from the sun to the nebulae, measuring the sky with two children and a pair of scissors.</p>
+    </div>
   </li>
-  <li>
-    <a href="sophocles.html">The Seven Tragedies</a>
-    <span class="author">Sophocles (c. 442&ndash;401 BC) &middot; ~7-hour read &middot; <a href="ebooks/sophocles_the-seven-tragedies.epub">epub</a></span>
-    <span class="blurb">All seven surviving plays &mdash; Oedipus, Antigone, Ajax, Electra and the rest &mdash; from the Greek: the arguments as fast modern prose, the odes as verse, because the chorus was singing.</span>
+  <li class="card">
+    <a class="plate" href="soap-bubbles.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/soap-bubbles.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1890</div>
+      <h3><a href="soap-bubbles.html">Soap Bubbles and the Forces Which Mould Them</a></h3>
+      <p class="author">C. V. Boys (1890) &middot; ~2-hour read &middot; <a href="ebooks/c-v-boys_soap-bubbles-and-the-forces-which-mould-them.epub">epub</a> &middot; <a href="soap-bubbles-original.html">original text</a> (<a href="ebooks/c-v-boys_soap-bubbles-and-the-forces-which-mould-them-the-original-text.epub">epub</a>)</p>
+      <p class="blurb">Three Christmas lectures for children on why a bubble is round, why a jet of water breaks into beads, and how to make a fountain sing.</p>
+    </div>
   </li>
-  <li>
-    <a href="odyssey.html">The Odyssey</a>
-    <span class="author">Homer (c. 700 BC) &middot; ~9-hour read &middot; <a href="ebooks/homer_the-odyssey.epub">epub</a></span>
-    <span class="blurb">A soldier ten years trying to get home, a wife holding off a houseful of suitors, and a son who was a baby when he left. From the Greek, all twenty-four books, as prose.</span>
+  <li class="card">
+    <a class="plate" href="thompson.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/thompson.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1897</div>
+      <h3><a href="thompson.html">Light Visible and Invisible</a></h3>
+      <p class="author">Silvanus P. Thompson (1897) &middot; ~5-hour read &middot; <a href="ebooks/silvanus-p-thompson_light-visible-and-invisible.epub">epub</a> &middot; <a href="thompson-original.html">original text</a> (<a href="ebooks/silvanus-p-thompson_light-visible-and-invisible-the-original-text.epub">epub</a>)</p>
+      <p class="blurb">Six Christmas lectures on light, given thirteen months after the X-ray was announced. Asked what it is, its discoverer says: I do not know.</p>
+    </div>
   </li>
-  <li>
-    <a href="paradiso.html">Paradiso</a>
-    <span class="author">Dante Alighieri (c. 1308&ndash;1321) &middot; ~4-hour read &middot; <a href="ebooks/dante-alighieri_paradiso.epub">epub</a></span>
-    <span class="blurb">The third book of the Comedy: heaven as a bird waiting for dawn and a baby reaching for milk, and Saint Peter calling the papacy a sewer. From the Italian, tercet for tercet.</span>
-  </li>
-  <li>
-    <a href="purgatorio.html">Purgatorio</a>
-    <span class="author">Dante Alighieri (c. 1308&ndash;1320) &middot; ~4-hour read &middot; <a href="ebooks/dante-alighieri_purgatorio.epub">epub</a></span>
-    <span class="blurb">The second book of the Comedy, where everyone is going to be saved and knows it &mdash; the dead embrace, tease, and ask after old friends. From the Italian, tercet for tercet.</span>
-  </li>
-  <li>
-    <a href="inferno.html">Inferno</a>
-    <span class="author">Dante Alighieri (c. 1308&ndash;1320) &middot; ~4-hour read &middot; <a href="ebooks/dante-alighieri_inferno.epub">epub</a></span>
-    <span class="blurb">Led down through Hell by a dead poet, Dante meets people he knew &mdash; popes, neighbours, a former teacher &mdash; still arguing Florentine politics. From the Italian, tercet for tercet.</span>
-  </li>
-  <li>
-    <a href="quixote.html">Don Quixote</a>
-    <span class="author">Miguel de Cervantes (1605&ndash;1615) &middot; ~31-hour read &middot; <a href="ebooks/miguel-de-cervantes_don-quixote.epub">epub</a></span>
-    <span class="blurb">A gentleman reads too many books of chivalry and rides out to fix the world with a labourer who talks in proverbs. Both volumes, all 126 chapters, from the Spanish.</span>
-  </li>
-  <li>
-    <a href="pillow-problems.html">Pillow Problems</a>
-    <span class="author">Lewis Carroll (1893) &middot; ~2-hour read &middot; <a href="ebooks/lewis-carroll_pillow-problems.epub">epub</a> &middot; <a href="pillow-problems-original.html">original text</a> (<a href="ebooks/lewis-carroll_pillow-problems-the-original-text.epub">epub</a>)</span>
-    <span class="blurb">Seventy-two problems the author of Alice worked out in his head, in bed, in the dark &mdash; and an introduction saying exactly which thoughts he was keeping out.</span>
-  </li>
-  <li>
-    <a href="symbolic-logic.html">Symbolic Logic</a>
-    <span class="author">Lewis Carroll (1896) &middot; ~5-hour read &middot; <a href="ebooks/lewis-carroll_symbolic-logic.epub">epub</a> &middot; <a href="symbolic-logic-original.html">original text</a> (<a href="ebooks/lewis-carroll_symbolic-logic-the-original-text.epub">epub</a>)</span>
-    <span class="blurb">The author of Alice teaching logic to children as a board game with red and grey counters &mdash; cats that understand French, and a club with no members.</span>
-  </li>
-  <li>
-    <a href="euclid-rivals.html">Euclid and His Modern Rivals</a>
-    <span class="author">Lewis Carroll (1879/1885) &middot; ~5-hour read &middot; <a href="ebooks/lewis-carroll_euclid-and-his-modern-rivals.epub">epub</a></span>
-    <span class="blurb">The author of Alice puts every geometry textbook of his day on trial, as a farce: the ghost of Euclid against Herr Niemand, Mr. Nobody, who loses every case.</span>
-  </li>
-  <li>
-    <a href="tangled-tale.html">A Tangled Tale</a>
-    <span class="author">Lewis Carroll (1885) &middot; ~2-hour read &middot; <a href="ebooks/lewis-carroll_a-tangled-tale.epub">epub</a> &middot; <a href="tangled-tale-original.html">original text</a> (<a href="ebooks/lewis-carroll_a-tangled-tale-the-original-text.epub">epub</a>)</span>
-    <span class="blurb">Ten comic stories with a puzzle hidden in each &mdash; then Carroll&#x27;s gleeful review of the wrong answers his readers sent in.</span>
-  </li>
-  <li>
-    <a href="bunyan.html">The Pilgrim&#x27;s Progress</a>
-    <span class="author">John Bunyan (1678/1684) &middot; ~8-hour read &middot; <a href="ebooks/john-bunyan_the-pilgrims-progress.epub">epub</a></span>
-    <span class="blurb">The most famous journey in English &mdash; the Slough of Despond, Vanity Fair, and the key called Promise that was in his pocket all along. Both parts complete.</span>
-  </li>
-  <li>
-    <a href="ovid.html">Metamorphoses</a>
-    <span class="author">Ovid (8 CE) &middot; ~11-hour read &middot; <a href="ebooks/ovid_metamorphoses.epub">epub</a></span>
-    <span class="blurb">The great storybook of classical myth &mdash; Daphne, Phaethon, Narcissus, Icarus, Orpheus, Pygmalion, Midas and hundreds more. All fifteen books, from the Latin.</span>
-  </li>
-  <li>
-    <a href="true-history.html">True History</a>
-    <span class="author">Lucian of Samosata (c. 175 AD) &middot; ~1-hour read &middot; <a href="ebooks/lucian-of-samosata_true-history.epub">epub</a></span>
-    <span class="blurb">The first science fiction story: a voyage to the moon, war between planets, and a narrator who swears that he lies.</span>
-  </li>
-  <li>
-    <a href="decameron.html">The Decameron</a>
-    <span class="author">Giovanni Boccaccio (1353) &middot; ~20-hour read &middot; <a href="ebooks/giovanni-boccaccio_the-decameron.epub">epub</a></span>
-    <span class="blurb">Ten friends flee the plague and tell a hundred stories &mdash; bawdy, sly, and humane.</span>
-  </li>
-  <li>
-    <a href="candide.html">Candide, or Optimism</a>
-    <span class="author">Voltaire (1759) &middot; ~2-hour read &middot; <a href="ebooks/voltaire_candide-or-optimism.epub">epub</a></span>
-    <span class="blurb">Voltaire&#x27;s whirlwind satire of optimism in a broken world.</span>
-  </li>
-  <li>
-    <a href="twenty-thousand-leagues.html">Twenty Thousand Leagues Under the Sea</a>
-    <span class="author">Jules Verne (1870) &middot; ~12-hour read &middot; <a href="ebooks/jules-verne_twenty-thousand-leagues-under-the-sea.epub">epub</a></span>
-    <span class="blurb">Captain Nemo&#x27;s Nautilus carries three captives beneath every sea &mdash; the complete novel from Verne&#x27;s French, not the abridged Victorian version.</span>
-  </li>
-  <li>
-    <a href="eighty-days.html">Around the World in Eighty Days</a>
-    <span class="author">Jules Verne (1872) &middot; ~6-hour read &middot; <a href="ebooks/jules-verne_around-the-world-in-eighty-days.epub">epub</a></span>
-    <span class="blurb">Phileas Fogg bets £20,000 that he can circle the globe in eighty days &mdash; complete from the French, with a final trick of the calendar.</span>
-  </li>
-  <li>
-    <a href="journey-center-earth.html">A Journey to the Center of the Earth</a>
-    <span class="author">Jules Verne (1864) &middot; ~6-hour read &middot; <a href="ebooks/jules-verne_a-journey-to-the-center-of-the-earth.epub">epub</a></span>
-    <span class="blurb">A coded parchment, a dead Icelandic volcano, and a plunge into a lost world underground &mdash; complete from the French, not the mangled Victorian version.</span>
-  </li>
-  <li>
-    <a href="flatland.html">Flatland: A Romance of Many Dimensions</a>
-    <span class="author">Edwin A. Abbott (1884) &middot; ~2-hour read &middot; <a href="ebooks/edwin-a-abbott_flatland-a-romance-of-many-dimensions.epub">epub</a></span>
-    <span class="blurb">Geometry as social satire: a square discovers the third dimension.</span>
+  <li class="card">
+    <a class="plate" href="fleming.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/fleming.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1902</div>
+      <h3><a href="fleming.html">Waves and Ripples in Water, Air, and Aether</a></h3>
+      <p class="author">J. A. Fleming (1902) &middot; ~6-hour read &middot; <a href="ebooks/j-a-fleming_waves-and-ripples-in-water-air-and-aether.epub">epub</a> &middot; <a href="fleming-original.html">original text</a> (<a href="ebooks/j-a-fleming_waves-and-ripples-in-water-air-and-aether-the-original-text.epub">epub</a>)</p>
+      <p class="blurb">Six Christmas lectures arguing that a ripple, a ship&#x27;s wake, a sung note, a petal&#x27;s colour and Marconi&#x27;s new wireless signal are all one thing in different media.</p>
+    </div>
   </li>
 </ul>
 
+<h2>Mathematics &amp; Logic</h2>
+<ul class="deck">
+  <li class="card">
+    <a class="plate" href="euclid-rivals.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/euclid-rivals.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1879</div>
+      <h3><a href="euclid-rivals.html">Euclid and His Modern Rivals</a></h3>
+      <p class="author">Lewis Carroll (1879/1885) &middot; ~4-hour read &middot; <a href="ebooks/lewis-carroll_euclid-and-his-modern-rivals.epub">epub</a></p>
+      <p class="blurb">The author of Alice puts every geometry textbook of his day on trial, as a farce: the ghost of Euclid against Herr Niemand, Mr. Nobody, who loses every case.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="tangled-tale.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/tangled-tale.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1885</div>
+      <h3><a href="tangled-tale.html">A Tangled Tale</a></h3>
+      <p class="author">Lewis Carroll (1885) &middot; ~2-hour read &middot; <a href="ebooks/lewis-carroll_a-tangled-tale.epub">epub</a> &middot; <a href="tangled-tale-original.html">original text</a> (<a href="ebooks/lewis-carroll_a-tangled-tale-the-original-text.epub">epub</a>)</p>
+      <p class="blurb">Ten comic stories with a puzzle hidden in each — then Carroll&#x27;s gleeful review of the wrong answers his readers sent in.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="pillow-problems.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/pillow-problems.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1893</div>
+      <h3><a href="pillow-problems.html">Pillow Problems</a></h3>
+      <p class="author">Lewis Carroll (1893) &middot; ~2-hour read &middot; <a href="ebooks/lewis-carroll_pillow-problems.epub">epub</a> &middot; <a href="pillow-problems-original.html">original text</a> (<a href="ebooks/lewis-carroll_pillow-problems-the-original-text.epub">epub</a>)</p>
+      <p class="blurb">Seventy-two problems the author of Alice worked out in his head, in bed, in the dark — and an introduction saying exactly which thoughts he was keeping out.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="symbolic-logic.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/symbolic-logic.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <div class="copy">
+      <div class="tab">1896</div>
+      <h3><a href="symbolic-logic.html">Symbolic Logic</a></h3>
+      <p class="author">Lewis Carroll (1896) &middot; ~4-hour read &middot; <a href="ebooks/lewis-carroll_symbolic-logic.epub">epub</a> &middot; <a href="symbolic-logic-original.html">original text</a> (<a href="ebooks/lewis-carroll_symbolic-logic-the-original-text.epub">epub</a>)</p>
+      <p class="blurb">The author of Alice teaching logic to children as a board game with red and grey counters — cats that understand French, and a club with no members.</p>
+    </div>
+  </li>
+</ul>
+
+</main>
 </body>
 </html>

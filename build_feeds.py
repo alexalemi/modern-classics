@@ -92,6 +92,35 @@ def copy_covers(books):
             b["cover"] = None
 
 
+THUMB_SIZE = (300, 450)   # 2x a 150px-wide card image
+
+
+def make_thumbs():
+    """site/covers/thumb/<dir>.jpg for every cover, for the index cards.
+
+    The full covers are 1400x2100 and ~700 KB; an index of a hundred of
+    them would be ~80 MB. Regenerated when the cover is newer, and a
+    thumb whose cover is gone is removed -- a step that writes a SET of
+    files must own the set (the copy_figures lesson)."""
+    from PIL import Image
+    src_dir = ROOT / "site" / "covers"
+    out = src_dir / "thumb"
+    out.mkdir(exist_ok=True)
+    wanted = set()
+    for src in sorted(src_dir.glob("*.jpg")):
+        dest = out / src.name
+        wanted.add(dest.name)
+        if dest.exists() and dest.stat().st_mtime >= src.stat().st_mtime:
+            continue
+        with Image.open(src) as im:
+            im = im.convert("RGB")
+            im.thumbnail(THUMB_SIZE, Image.LANCZOS)
+            im.save(dest, "JPEG", quality=80, optimize=True, progressive=True)
+    for stale in out.glob("*.jpg"):
+        if stale.name not in wanted:
+            stale.unlink()
+
+
 def rfc822(iso):
     return email.utils.format_datetime(datetime.datetime.fromisoformat(iso))
 
@@ -182,6 +211,7 @@ def main():
 
     books = collect(base)
     copy_covers(books)
+    make_thumbs()
     (ROOT / "site" / "feed.xml").write_text(build_rss(books, base))
     # The SAME catalog is written twice, under two extensions. GitHub
     # Pages picks the Content-Type from the extension alone and cannot be

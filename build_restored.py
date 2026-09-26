@@ -40,6 +40,7 @@ import sys
 from pathlib import Path
 
 import assemble
+import build_index
 
 ROOT = Path(__file__).parent
 # the topics, in page order; every restored book's env names one (TOPIC=)
@@ -169,72 +170,9 @@ BLURBS = {
                          "captions Gutenberg dropped.",
 }
 
-HEAD = """<!DOCTYPE html>
-<html>
-<head>
-\t<meta charset="utf-8">
-\t<title>Restored Editions &mdash; Modern Classics</title>
-<style>
-html {
-  max-width: 70ch;
-  padding: 3em 1em;
-  margin: auto;
-  line-height: 1.75;
-  font-size: 1.25em;
-  font-family: Georgia, "Palatino Linotype", "Book Antiqua", serif;
-}
-
-body { color: #1d1d1d; }
-
-h1 { margin-top: 1em; text-align: center; }
-
-h2 {
-  font-size: 0.95em;
-  font-weight: normal;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #888;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 0.4em;
-  margin: 3em 0 1em;
-}
-
-p, ul, ol { margin-bottom: 2em; }
-
-.subtitle {
-  text-align: center;
-  font-style: italic;
-  margin-top: -1em;
-  margin-bottom: 3em;
-}
-
-.book-list { list-style: none; padding: 0; }
-.book-list li { margin-bottom: 1.75em; }
-.book-list a { font-size: 1.15em; text-decoration: none; color: #333; }
-.book-list a:hover { color: #000; text-decoration: underline; }
-
-.author { display: block; font-size: 0.8em; color: #666; margin-top: 0.2em; }
-.blurb { display: block; font-size: 0.9em; color: #444;
-         font-style: italic; margin-top: 0.2em; }
-
-.note {
-  font-size: 0.9em;
-  color: #444;
-  border-left: 3px solid #ddd;
-  padding-left: 1em;
-  margin-bottom: 3em;
-}
-</style>
-</head>
-
-<body>
-
-<h1>Restored Editions</h1>
-<p class="subtitle">The author&rsquo;s own words, properly presented</p>
-<p class="subtitle" style="font-size: 0.8em;"><a href="index.html">The
-retellings</a> &middot; <a href="about.html">About</a></p>
-
-<p class="note">Not every old book needs retelling. Some are already
+# The page shell, card and stylesheet are build_index's, shared by all
+# three front pages so they are one design and cannot drift apart.
+NOTE = """<p class="note">Not every old book needs retelling. Some are already
 clear and simply deserve a better edition than they have. In these
 volumes <strong>the prose is the author&rsquo;s, unchanged</strong>;
 what has been added is the apparatus &mdash; a caption and descriptive
@@ -243,20 +181,16 @@ reading on a real device. Where a book captioned its own illustrations,
 those captions are the author&rsquo;s and stand as printed.</p>
 """
 
-FOOT = "\n</body>\n</html>\n"
 
-
-def entry(title, author, date, page, epub, blurb, plates=None):
-    bits = [f'{html.escape(author)} ({html.escape(date)})']
+def entry(d, title, author, date, page, epub, blurb, companion=False):
+    key, tab = build_index.first_year(date)
+    bits = [f'{html.escape(author)} ({html.escape(build_index.dashes(date))})']
+    if companion:
+        bits.insert(0, "Original text of a retelling")
     if epub:
         bits.append(f'<a href="ebooks/{epub}">epub</a>')
-    line = " &middot; ".join(bits)
-    out = [f'  <li>\n    <a href="{page}">{html.escape(title)}</a>',
-           f'    <span class="author">{line}</span>']
-    if blurb:
-        out.append(f'    <span class="blurb">{blurb}</span>')
-    out.append("  </li>")
-    return "\n".join(out)
+    return key, build_index.render_card(page, f"covers/thumb/{d}.jpg", tab, title,
+                                        " &middot; ".join(bits), blurb)
 
 
 def plate_count(d):
@@ -307,32 +241,31 @@ def main():
         blurb = BLURBS.get(d.name, "")
         if n:
             blurb = (blurb + " " if blurb else "") + f"{n} plates."
-        row = entry(env["ORIGINAL_WORK"], env["AUTHOR"], env["DATE"],
-                    page, epub, blurb)
+        key, row = entry(d.name, env["ORIGINAL_WORK"], env["AUTHOR"], env["DATE"],
+                         page, epub, blurb, companion=(kind == "companion"))
         topic = env.get("TOPIC")
         if not topic:
             sys.exit(f"ERROR: {d.name}/env has no TOPIC= (one of {', '.join(TOPICS)})")
         assert topic in TOPICS, (d.name, topic)
         (native if kind == "native" else companion).append(
-            (n, d.name, row, topic, env["DATE"]))
+            (n, d.name, row, topic, key))
 
     # BY TOPIC (Alex, 2026-09-20). A companion (the original text of a
     # retelling) sits with its subject, marked as such, not in a list of
     # its own; within a topic, in order of first publication.
-    out = [HEAD]
-    rows = [(t, d, r, "native") for _, _, r, t, d in native] + \
-           [(t, d, r, "companion") for _, _, r, t, d in companion]
-    year = lambda d: int(re.match(r"\d+", d).group()) if re.match(r"\d+", d) else 9999
+    out = [NOTE]
+    rows = [(t, k, r) for _, _, r, t, k in native + companion]
     for topic in TOPICS:
-        these = sorted((x for x in rows if x[0] == topic), key=lambda x: year(x[1]))
+        these = sorted((x for x in rows if x[0] == topic), key=lambda x: x[1])
         if not these:
             continue
-        out.append(f"<h2>{html.escape(topic)}</h2>\n<ul class=\"book-list\">")
-        for _, _, r, kind in these:
-            out.append(r if kind == "native" else r.replace(
-                '<span class="author">', '<span class="author">Original text of a retelling &middot; ', 1))
-        out.append("</ul>")
-    (SITE / "restored.html").write_text("\n".join(out) + FOOT)
+        out.append(f'<h2>{html.escape(topic)}</h2>\n<ul class="deck">')
+        out += [r for _, _, r in these]
+        out.append("</ul>\n")
+    (SITE / "restored.html").write_text(build_index.page_shell(
+        "restored.html", "Restored Editions &mdash; Modern Classics",
+        "Restored Editions", "The author&rsquo;s own words, properly presented",
+        "\n".join(out)))
     print(f"wrote site/restored.html "
           f"({len(native)} edition(s), {len(companion)} companion(s))")
     return 0

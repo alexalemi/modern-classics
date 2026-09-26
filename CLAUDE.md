@@ -114,7 +114,11 @@ stitched back into single chapters; `part_before` entries become part
 dividers in the TOC and body). Subheadings, indented outlines, and paragraph
 rendering are handled by convention — see the docstring.
 
-Then add the book to `site/index.html`.
+Then put the book on the front page: add `SHELF=` to its `env` (one of
+`build_index.SHELVES`) and a one-line blurb to `build_index.BLURBS`, then
+`python3 build_feeds.py` (makes the cover thumbnail) and
+`python3 build_index.py`. `site/index.html` is generated — never edit it
+by hand. The build refuses a book with a shelf but no blurb, or no cover.
 
 ### 6. Editor's Introduction — context for a modern reader
 
