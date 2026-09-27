@@ -337,8 +337,8 @@ def render_block(par, kind):
         if (is_all_caps(s) and len(s) < 200 and "\n" not in s and not re.search("[⟦⟪⟬]", s)
                 and not assemble.EMPH.search(s)):
             return f'\t\t\t<p class="subhead">{assemble.locators(esc(nice_title(s)))}</p>'
-        text = ERA.sub(r'<abbr epub:type="se:era">\1\2</abbr>', esct(s))
-        return f"\t\t\t<p>{text}</p>"
+        text = ERA.sub(r'<abbr epub:type="se:era">\1\2</abbr>', esct(assemble.anchorless(s)))
+        return f"\t\t\t{assemble.para_open(s)}{text}</p>"
     if kind == "subhead":
         # inlined like the page's <h4> (assemble.render_body): escaped only,
         # an italic subhead shipped its asterisks and a page locator its

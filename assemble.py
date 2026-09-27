@@ -496,6 +496,18 @@ MARK_SC = re.compile(r"\^\^(?!\s)(.+?)(?<!\s)\^\^")
 MARK_ITAL = re.compile(r"\*(?!\s)([^*]+?)(?<!\s)\*")
 
 
+def para_open(s):
+    """A paragraph that OPENS on a dictionary anchor carries the anchor as
+    its own id (<p id="loc-...">), where an empty <span> would be a lint
+    error in the epub; an anchor elsewhere stays a span."""
+    m = MARK_ANCHOR.match(s) if MARKUP["on"] else None
+    return f'<p id="loc-{m.group(1)}">' if m else "<p>"
+
+
+def anchorless(s):
+    return MARK_ANCHOR.sub("", s, count=1) if MARKUP["on"] and MARK_ANCHOR.match(s) else s
+
+
 def set_markup(env):
     MARKUP["on"] = env.get("MARKUP") == "dictionary"
 
@@ -617,7 +629,7 @@ def render_body(text, figdir=None, site=None, bare_label=False):
             # section titles, and its titles are marked bold by the prep
             out.append(f"<h4>{inline(html.escape(s))}</h4>")
         else:
-            out.append(f"<p>{inline(html.escape(s))}</p>")
+            out.append(para_open(s) + f"{inline(html.escape(anchorless(s)))}</p>")
     while out and out[0] == "<hr>":
         out.pop(0)
     while out and out[-1] == "<hr>":

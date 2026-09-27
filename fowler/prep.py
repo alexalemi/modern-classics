@@ -204,6 +204,12 @@ NORMALISE = [
 
 
 def normalise(p):
+    # a single newline inside a prose paragraph (a fix block's leftover,
+    # 3 leaves: 076, 462, 486) is a space; set-out TAB lines keep theirs
+    if not p.startswith("\t"):
+        head, sep, rest = p.partition("\n\t")
+        head = re.sub(r"\s*\n\s*", " ", head)
+        p = head + sep + rest
     for a, b in NORMALISE:
         p = p.replace(a, b)
     # the printer's thin space in "e. g.", "i. e." -- the proofs mix both
