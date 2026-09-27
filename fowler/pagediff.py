@@ -26,14 +26,22 @@ def words(t):
 
 for n in sys.argv[1:]:
     w = words((HERE / "proof_kv" / f"{int(n):03d}.txt").read_text())
-    head = " ".join(w[:6])
-    i = SJ.find(head)
+    i = -1
+    for k in range(0, 60, 3):                          # skip respellings the OCR mangled
+        i = SJ.find(" ".join(w[k:k + 5]))
+        if i >= 0:
+            i = SJ.rfind(" ", 0, max(0, i - 1)) if k == 0 else i
+            # back up over the k words skipped
+            for _ in range(k):
+                i = SJ.rfind(" ", 0, max(0, i - 1))
+            i = max(i, 0)
+            break
     nxt = HERE / "proof_kv" / f"{int(n) + 1:03d}.txt"
     j = -1
     if nxt.exists():
         nw = words(nxt.read_text())
-        for k in range(0, 8):                          # skip a split first word
-            j = SJ.find(" ".join(nw[k:k + 6]), i + 1)
+        for k in range(0, 60, 3):                      # skip a split or mangled word
+            j = SJ.find(" ".join(nw[k:k + 5]), i + 1)
             if j > i:
                 break
     if i < 0 or j < 0:
