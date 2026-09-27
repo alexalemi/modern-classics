@@ -77,7 +77,12 @@ def load():
             printed, true = MISPRINTED_FOLIO[(d, n)]
             assert page == printed, (d, n, page)
             page = true
-        pars = [p for p in re.split(r"\n[ \t]*\n", body.strip("\n")) if p.strip()]
+        pars = []
+        for q in re.split(r"\n[ \t]*\n", body.strip("\n")):
+            if q.strip():
+                # a "+ " continuation that lost its blank line (a fix block's
+                # swallowed newline, 20 leaves) is still a continuation
+                pars += [q.split("\n+ ")[0]] + ["+ " + x for x in q.split("\n+ ")[1:]]
         pages.append((page, pars, f"{d}/{n:03d}"))
     want = ROMAN + [str(i) for i in range(1, len(pages) - len(ROMAN) + 1)]
     got = [p for p, _, _ in pages]
@@ -125,7 +130,7 @@ SEAM_HYPHEN = {
         "cas-tratable", "in-alterable", "unEng-lish", "constrain-edly",
         "allure-ments", "ponderous-ness", "phage-daena", "indiffer-ency",
         "amor-celments", "neces-sitarian", "hypo-thecate", "at-taque",
-        "sensi-tivize")},
+        "sensi-tivize", "protru-sile", "sub-limeness", "thinkable-ness")},
     # real compounds: out-of-the-way, ill-temper, case-endings,
     # anti-Saxonist, Leave-not-a-rack-behind, foul-mouthed, self-conscious
     # (the dictionary keeps these already; listed so the decision is
@@ -133,7 +138,8 @@ SEAM_HYPHEN = {
     # "seasick" as one word, so it is closed up.
     **{k: True for k in (
         "of-the", "ill-temper", "case-endings", "anti-Saxonist", "a-rack",
-        "foul-mouthed", "the-way", "self-conscious")},
+        "foul-mouthed", "the-way", "self-conscious", "non-defining",
+        "in-forms")},                     # "the in- forms": the prefix itself
 }
 SEAMS = []
 
@@ -172,6 +178,12 @@ def stream(pages):
             if p.startswith("+ **") and not p.startswith("+ ***") \
                     and not out[-1][1].rstrip().endswith("**"):
                 p = p[2:]           # a headword at a column top, flush like all headwords
+            if p.startswith("Footnote: "):
+                # a note is set after the paragraph that cites it (its mark ⁎)
+                note = p[len("Footnote: "):]
+                at = max(i for i, (_, q) in enumerate(out) if "⁎" in q)
+                out.insert(at + 1, [out[at][0], note])
+                continue
             if p.startswith("+ ") or p.startswith("+\t"):
                 assert out, (src, p[:60])
                 cont = p[2:] if p.startswith("+ ") else p[1:]
@@ -208,6 +220,8 @@ def normalise(p):
     p = re.sub(r"\^\^(-[A-Z()]+-?)\^\^ & \^\^(-[A-Z()]+-?)\^\^", r"^^\1 & \2^^", p)
     # "&c." after a small-caps reference renders alike inside or out
     p = p.replace(" &c.^^", "^^ &c.")
+    # an article title written **^^X^^** is **X** like the rest (ruling 30)
+    p = re.sub(r"^(\+ )?\*\*\^\^(.+?)\^\^(\.?)\*\*", r"\1**\2\3**", p)
     # 'x* *y' italic seams: one span
     p = re.sub(r"(?<=[^*\s])\* \*(?=[^*\s])", " ", p)
     return p
@@ -348,6 +362,9 @@ def general_articles(front_list):
                 GENERAL[refkey(m.group(1))] = m.group(1)
 
 
+QUALIFIER = re.compile(r"\s*((?:conj|rel\. pron|adj\. & adv|adj|adv|n|vb|v|prep|pron)\.?)(?=[\s,;])")
+
+
 def headwords(secs):
     """slug for every headword paragraph; key -> slug."""
     index, seen = {}, {}
@@ -365,7 +382,27 @@ def headwords(secs):
             s["stream"][j] = f"\u27e6#{sl}\u27e7" + p
             for k in keys(title):
                 index.setdefault(k, sl)
+            # a qualifier printed outside the bold ("**that** rel. pron.")
+            # tells same-spelt entries apart: THAT REL. PRON. names this one
+            q = QUALIFIER.match(p[m.end():])
+            if q:
+                index.setdefault(refkey(title + " " + q.group(1)), sl)
     return index
+
+
+SQUASHED = {}
+
+
+def squash(s):
+    return re.sub(r"[^a-z0-9]", "", s)
+
+
+def squash_index(index):
+    """squashed key -> slug, where the squashed form is unambiguous"""
+    seen = {}
+    for key, v in index.items():
+        seen.setdefault(squash(key), set()).add(v)
+    SQUASHED[id(index)] = {k: next(iter(v)) for k, v in seen.items() if len(v) == 1 and k}
 
 
 def lookup(index, k):
@@ -374,13 +411,21 @@ def lookup(index, k):
     unambiguous start of a long general-article title ("-EN VERBS" for
     "-EN VERBS FROM ADJECTIVES")."""
     k = re.sub(r"\s*&c\.?$", "", k).strip(" ,")
-    cands = [k, "s " + k,              # "'s INCONGRUOUS" prints its 's roman k + "s", k[:-1] if k.endswith("s") else None,
+    # "s " + k: the article 'S INCONGRUOUS is cited with its 's roman
+    cands = [k, "s " + k, k.rstrip("-") + "(-)" if k.endswith("-") else None, k + "s", k[:-1] if k.endswith("s") else None,
              k + "es", re.sub(r"\s*\(.*\)$", "", k),
              k[:-1] + "ies" if k.endswith("y") else None,
              re.sub(r"(?<=[a-z])-(?=[a-z])", " ", k)]
     for c in cands:
         if c and c in index:
             return index[c]
+    # punctuation and hyphens ignored: a line-end hyphen kept inside small
+    # caps ("COMMISSION-AIRE"), "(-)STICH" cited as "-STICH", "that, rel.
+    # pron." as "THAT REL. PRON."
+    sq = squash(k)
+    for c in (sq, sq + "s", sq[:-1] if sq.endswith("s") else None):
+        if c and c in SQUASHED.get(id(index), {}):
+            return SQUASHED[id(index)][c]
     pre = {v for key, v in index.items() if key.startswith(k + " ")}
     if len(pre) == 1:
         return pre.pop()
@@ -495,6 +540,7 @@ def main():
     secs = sections(paras)
     general_articles(secs[len(FRONT) - 1]["stream"])
     index = headwords(secs)
+    squash_index(index)
     stats, missed = link_refs(secs, index)
     list_miss = link_list(secs[len(FRONT) - 1], index)
     write(secs)
