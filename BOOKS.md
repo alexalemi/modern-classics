@@ -3544,3 +3544,35 @@ crop "1675x2512+1319+0" -- the original is 30000px wide, far over
 commons_url's 4200 gate, so the crop is in the 4000px RENDITION's
 coordinates. The poem opens on Venus and it is the one image everybody
 already knows.
+
+## fowler/ — H. W. Fowler, A Dictionary of Modern English Usage (1926), RESTORED EDITION
+
+No usable transcription: 748 pages page-read by Sonnet agents from two
+Archive.org scans of the first printing (Google a-dictionary-of-modern-
+english-usage for pp. iii-viii, 1-64 and 374-375; the cleaner bwb_KV-748-554
+for everything else), fixes/ and fixes_kv/ against the OCR drafts,
+correction_instructions.txt (32 rulings) and kv_agent_prompt.txt the
+standing instructions, proof_notes.txt the ledger of every reading kept.
+prep.py joins "+ " continuations and words broken at leaf ends (a hand list
+for what the dictionary cannot decide), anchors every bold headword, and
+links 7,609 of 7,685 small-capital cross-references and the List of General
+Articles (MARKUP=dictionary in env: bold, small caps, in-word italics and
+the links, in both renderers; off for every other book).
+  THE CHECKS THAT PAID: markcheck.py (span balance, and PAIRING the way the
+  renderer pairs, which found ~30 literal asterisks balanced counts hid);
+  lostwords.py (draft words missing from the proof: caught "brightsome" and
+  "forbears"); pagediff.py (a word diff of a leaf against another copy's OCR
+  of the same page: caught three phrases agents deleted as "noise"); the
+  two-copy vote (votecheck.py filters scan_diff --vote: "means love", "The
+  wages of sin", Falconet, dispassionately, deceit, eatables -- a clean
+  wrong letter in OUR copy that two other copies print right is worn type,
+  not a misprint); crosscheck.py (every proof word against chapters/, no
+  shared code: 0 lost, 0 gained).
+  AGENT FAILURE MODES, all now in the prompt: deleting printed words as
+  "spurious" (Fowler quotes bad sentences on purpose); heavy ink read as
+  bold, bold italic, bold small caps; section TITLES bolded (ruling 32:
+  bold numeral, roman title, roman synopsis -- my own early rulings to the
+  contrary were made on the heavy Google scan and were wrong); closing up a
+  line-end hyphen the sentence is ABOUT (well-known); inventing rulings.
+  Cover: Spitzweg, The Bookworm (c. 1850), Commons "File:Carl Spitzweg -
+  "The Bookworm".jpg", crop 1500x2250+0+150.
