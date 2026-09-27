@@ -236,7 +236,8 @@ def classify_block(par):
     # a line carrying an inline picture is a sentence of a proof, however
     # short (Byrne's "Construct [angle] (prop. I.22)"), and a subhead would
     # print its marker raw: subheads are escaped, not inlined
-    if assemble.is_subheading(stripped) and not re.search("[⟦⟪⟬]", stripped):
+    if assemble.is_subheading(stripped) and not re.search("[⟦⟪⟬]", stripped) \
+            and not assemble.MARKUP["on"]:
         return "subhead"
     return "paragraph"
 
@@ -800,6 +801,7 @@ def main():
     # inline pictures (Byrne): the chapter files sit in text/, the images in
     # images/, so an inline picture is referenced as ../images/gID.svg
     assemble.set_glyphs(book, "../images")
+    assemble.set_markup(env)
     all_meta = json.loads((ROOT / "ebook_meta.json").read_text())
     meta = dict(all_meta[book.name])
     FIGURE_DIR[0] = env.get("FIGURE_DIR")
@@ -865,6 +867,8 @@ def main():
         rules.append('span.loc{\n\tfont-size: 0.65em;\n\tvertical-align: super;\n\tcolor: #888;\n}')
     if 'class="ref"' in used:
         rules.append('a.ref{\n\tcolor: inherit;\n\ttext-decoration: underline dotted;\n}')
+    if 'class="sc"' in used:
+        rules.append('span.sc{\n\tfont-variant: small-caps;\n}')
     if 'class="subhead"' in used:
         rules.append('p.subhead{\n\tfont-style: italic;\n\tmargin-top: 1.5em;\n\ttext-indent: 0;\n}')
     if 'class="lines"' in used:

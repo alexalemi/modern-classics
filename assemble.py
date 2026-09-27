@@ -472,6 +472,40 @@ def locators(escaped):
     return LOC_LINK.sub(lambda m: f'<a class="ref" href="#loc-{m.group(1)}">{m.group(2)}</a>', escaped)
 
 
+# DICTIONARY MARKUP (fowler/, 2026-09-28). Fowler's Modern English Usage is
+# a dictionary: bold headwords, small-capital cross-references, and the
+# edition makes each headword an anchor and each reference a link. The prep
+# writes
+#   **x**            bold (a headword, an article title, a section numeral)
+#   ^^x^^            small capitals, already re-cased the way Fowler set them
+#   ⟦#SLUG⟧          an anchor, id="loc-SLUG"
+#   ⟦@SLUG|TEXT⟧     a link to it
+# and the anchors share the "loc-" namespace so build_ebook.resolve_locators
+# points each link at the right chapter file. OFF unless the book's env says
+# MARKUP=dictionary: other books carry "***" section breaks and OCR "^^" in
+# their sources, and nothing of theirs may change.
+MARKUP = {"on": False}
+MARK_ANCHOR = re.compile(r"⟦#([a-z0-9-]+)⟧")
+MARK_LINK = re.compile(r"⟦@([a-z0-9-]+)\|([^⟦⟧]+)⟧")
+MARK_BOLD = re.compile(r"\*\*(?!\s)(.+?)(?<!\s)\*\*(?!\*)")
+MARK_SC = re.compile(r"\^\^(?!\s)(.+?)(?<!\s)\^\^")
+
+
+def set_markup(env):
+    MARKUP["on"] = env.get("MARKUP") == "dictionary"
+
+
+def dictionary_markup(escaped):
+    if not MARKUP["on"]:
+        return escaped
+    escaped = MARK_ANCHOR.sub(lambda m: f'<span id="loc-{m.group(1)}"></span>', escaped)
+    escaped = MARK_LINK.sub(lambda m: f'<a class="ref" href="#loc-{m.group(1)}">{m.group(2)}</a>', escaped)
+    escaped = MARK_BOLD.sub(lambda m: f"<b>{m.group(1)}</b>", escaped)
+    escaped = MARK_SC.sub(lambda m: f'<span class="sc">{m.group(1)}</span>', escaped)
+    assert not re.search(r"⟦[#@]|\^\^", escaped), escaped[:160]
+    return escaped
+
+
 def inline(escaped):
     """Every inline transform, in one place, for BOTH renderers.
     build_ebook.esct() calls this too, so the page and the epub cannot
@@ -490,7 +524,7 @@ def inline(escaped):
         held.append(mathml.to_mathml(tex, m.group(2) is not None))
         return f"\x00M{len(held) - 1}\x00"
     escaped = mathml.MATH.sub(hold, escaped)
-    out = locators(glyphs(scripts(emphasis(escaped))))
+    out = locators(glyphs(scripts(emphasis(dictionary_markup(escaped)))))
     return re.sub("\x00M(\\d+)\x00", lambda m: held[int(m.group(1))], out)
 
 
@@ -572,7 +606,9 @@ def render_body(text, figdir=None, site=None, bare_label=False):
             rest = " ".join(l.strip() for l in lines[1:])
             out.append(f"<p><b>{html.escape(lines[0].strip())}</b>: "
                        f"{inline(html.escape(rest))}</p>")
-        elif is_subheading(s, nxt):
+        elif is_subheading(s, nxt) and not MARKUP["on"]:
+            # a dictionary's short entries ("banister. See BALUSTER") are not
+            # section titles, and its titles are marked bold by the prep
             out.append(f"<h4>{inline(html.escape(s))}</h4>")
         else:
             out.append(f"<p>{inline(html.escape(s))}</p>")
@@ -851,6 +887,7 @@ def main():
 
     if env.get("FIGURE_DIR"):
         set_glyphs(book, env["FIGURE_DIR"])
+    set_markup(env)
     sections = build_sections(book, load_manifest(book),
                               source="chapters" if args.original
                               else "modern_chapters", titles=args.original,
