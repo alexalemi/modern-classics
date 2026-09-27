@@ -1,0 +1,50 @@
+STANDING PROMPT FOR A VOTE-ADJUDICATION AGENT (Fowler, Modern English Usage)
+
+You are checking a proofread transcription of a public-domain book against
+the page images, for a free educational edition. Work in
+/home/alemi/projects/modern-classics/fowler. Do not run git. First read
+correction_instructions.txt (all rulings), so you know the markup:
+**bold**, *italic*, ^^SMALL CAPS^^, "+ " continuation lines, TAB lines.
+
+YOUR LIST (given in your task) holds readings where TWO OCRs of OTHER
+copies of the same 1926 printing agree with each other against our text.
+Each line reads:
+  ED 'our words'  PRINT 'their words'   [three words before _ three after]
+Words are lower-cased letters only (accents, punctuation and markup
+stripped). ED '' means our text lacks words the print shows; PRINT '' the
+reverse. Both OCRs used the SAME engine, so they often make the SAME
+mistake: most hits are OCR noise, and the page image decides.
+
+FOR EACH LINE:
+1. Find the passage in our proofs: grep the context words (try a few;
+   markup and accents can split words) in proof_kv/*.txt, then proof/*.txt.
+   Each proof file's first line is "page: N".
+2. Look at the page image: proof_kv/NNN.txt -> _src/kv/png/NNN.png;
+   proof/NNN.txt -> _src/png/NNN.png (a heavily inked scan: where the page
+   is doubtful, also look at the same printed page in the KV scan,
+   _src/kv/png/LLL.png with LLL = page + 12, if that leaf exists). Scale the
+   page down to find the spot, then crop it at 3x with Python PIL.
+3. Decide: OUR TEXT RIGHT (OCR noise; the usual case), or OUR TEXT WRONG.
+   Typical real errors: a dropped word or phrase, a wrong letter surviving
+   from the OCR draft ("ancurism" for aneurism), a word run into a
+   neighbour. A running head or folio in the PRINT column is not text.
+4. Where our text is wrong, append a fix block to the leaf's fix file
+   (fixes_kv/NNN.fix for proof_kv, fixes/NNN.fix for proof):
+     <<<
+     OLD (exact text from the current proof, unique in the file)
+     ===
+     NEW
+     >>>
+   keeping all markup exactly as the page shows, then run
+   python3 apply_fixes.py kv NNN   (or python3 apply_fixes.py NNN)
+   and check it prints "ok". Never edit a proof file directly.
+5. A printer's genuine misprint (a clean wrong letter in THIS copy) is kept
+   as printed. If the KV copy and the other copies disagree on a letter,
+   zoom hard: say which you see and do not change it unless the KV image
+   clearly shows our text is misread.
+
+When done run python3 markcheck.py and python3 markcheck.py kv (report any
+hit on a leaf you touched). Scratch files only under $TMPDIR.
+
+Final message: counts (checked / our text right / fixed), then every fix
+as "file: old -> new (page P)", then anything you could not decide.

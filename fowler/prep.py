@@ -475,8 +475,13 @@ def write(secs):
     manifest = []
     for i, s in enumerate(secs):
         body = s["title"] + "\n\n" + "\n\n".join(s["stream"]).rstrip() + "\n"
-        for d in ("chapters", "modern_chapters"):
-            (HERE / d / f"{i:03d}.txt").write_text(body)
+        (HERE / "modern_chapters" / f"{i:03d}.txt").write_text(body)
+        # chapters/ is the text as printed, without the edition's anchors
+        # and links: what verify.py and scan_diff.py compare
+        bare_text = re.sub("\u27e6#[^\u27e7]*\u27e7", "", body)
+        bare_text = re.sub("\u27e6@[^|\u27e7]*\\|([^\u27e7]*)\u27e7", r"\1", bare_text)
+        assert "\u27e6" not in bare_text
+        (HERE / "chapters" / f"{i:03d}.txt").write_text(bare_text)
         e = {"file": f"{i:03d}.txt", "title": s["title"], "part": 1, "of": 1}
         if i == len(FRONT):
             e["part_before"] = "The Dictionary"
