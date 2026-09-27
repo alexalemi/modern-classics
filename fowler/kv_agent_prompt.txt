@@ -70,7 +70,10 @@ never by editing the proof).
 
 When done, run `python3 fowler/markcheck.py` (it also PAIRS italic markers: fix every hit on your leaves) and `python3
 fowler/lostwords.py` (check any hit on your leaves against the image) and fix
-anything on your leaves. Scratch files: fowler/scratchpad/kNNN/ (NNN = your
+anything on your leaves. Also run `python3 fowler/pagediff.py NNN` for each
+leaf (a word diff against another copy's OCR of the same page) and account
+for every multi-word difference it prints: most are respellings or OCR
+noise, but a dropped or duplicated passage shows up there. Scratch files: fowler/scratchpad/kNNN/ (NNN = your
 first leaf) or $TMPDIR. Do not run git.
 
 Final message: one report line per leaf ("NNN  page P  fixes: F  entries:
