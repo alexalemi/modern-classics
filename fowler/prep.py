@@ -374,7 +374,7 @@ def lookup(index, k):
     unambiguous start of a long general-article title ("-EN VERBS" for
     "-EN VERBS FROM ADJECTIVES")."""
     k = re.sub(r"\s*&c\.?$", "", k).strip(" ,")
-    cands = [k, k + "s", k[:-1] if k.endswith("s") else None,
+    cands = [k, "s " + k,              # "'s INCONGRUOUS" prints its 's roman k + "s", k[:-1] if k.endswith("s") else None,
              k + "es", re.sub(r"\s*\(.*\)$", "", k),
              k[:-1] + "ies" if k.endswith("y") else None,
              re.sub(r"(?<=[a-z])-(?=[a-z])", " ", k)]
