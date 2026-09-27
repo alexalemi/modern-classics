@@ -1,0 +1,65 @@
+STANDING PROMPT FOR A KV PROOFING AGENT (Fowler, Modern English Usage)
+
+You are proofreading pages of a public-domain book for a free educational
+edition. Work in /home/alemi/projects/modern-classics. Read
+fowler/correction_instructions.txt in full, INCLUDING every numbered RULING at
+its end, and follow it exactly -- with ONE CHANGE OF PATHS: your pages come
+from a second, cleaner scan, so for each leaf NNN use page image
+fowler/_src/kv/png/NNN.png, draft fowler/preproof_kv/NNN.txt, fixes
+fowler/fixes_kv/NNN.fix, command `python3 fowler/apply_fixes.py kv NNN`
+(writes fowler/proof_kv/NNN.txt). The printed page is normally the leaf
+number minus 12, but ALWAYS read the folio and write what is printed. If a
+fix file for your leaf already exists, it is a previous agent's unfinished
+work: read it, keep what is right, and finish the job.
+
+For each leaf: write the fix blocks, run the command, then read the proof
+against the image and correct anything still wrong (always by fix blocks,
+never by editing the proof).
+
+- Pronunciation marks: zoom to at least 3x on every respelling and every
+  marked word list, INCLUDING the start of a respelling that wraps to the
+  next line; copy each mark exactly (short vowels BREVES, never carons; long
+  vowels MACRONS; a straight bar over two letters is ONE U+035E after the
+  first; a curved tie U+035D; an obscure italic vowel is *a*; a respelling
+  is roman unless the letters are visibly slanted -- in "Pl. -ō'mata" the
+  stem is roman and only the ending italic: -ō'*mata*).
+- Every headword is bold.
+- NUMERALS (ruling 32): a numbered section that opens its own paragraph has
+  a BOLD numeral and a ROMAN title ("**3.** The appealing *so*."); the
+  synopsis at the head of an article is roman after the bold article title
+  ("**GERUND.** 1. G. & gerundive. 2. ..."); numbers that all run inline in
+  one short entry are roman.
+- Bold italic (***x***) almost never occurs: a secondary headword or cited
+  phrase inside an entry is PLAIN italic. Report every *** you write.
+- A cross-reference in small caps is ^^...^^ even when the ink is heavy and
+  there is no "See" before it -- NEVER **^^...^^** inside a paragraph; a
+  general article's title at the start of its own paragraph is written
+  **TITLE.** (ruling 30).
+- Letter-spelling cross-references are small caps with the hyphens INSIDE:
+  ^^-LL-, -L-^^, ^^-ER & -EST^^, ^^-T-, -TT-^^.
+- A word broken by a line-end hyphen keeps ONE style across the break, and a
+  list of italic words that runs over a line end is ONE italic span.
+- A span that runs over a column or page break is CLOSED at the break and
+  reopened after the "+ " (ruling 14).
+- Check the first printed line of every column against the proof
+  (ruling 31), and whether it opens indented (new paragraph) or flush ("+ ").
+- The OCR sometimes MOVES text: a column-top clause or a line-end fragment
+  turns up in some other paragraph or at the foot of the column. A fragment
+  that is not where the OCR put it is NOT noise -- find where it belongs on
+  the page and put it there; delete only characters genuinely not printed
+  anywhere on the page.
+- Where the draft has lost italics over a whole passage, rebuild it word by
+  word from the image -- do not infer a word's style from a pattern: zoom.
+- Heavy ink is not bold: judge weight against a known neighbour on the same
+  line.
+- Fix-block format: the parser eats one newline right after === and right
+  before >>>, so a blank line at the very start or end of a NEW text needs
+  two newlines.
+
+When done, run `python3 fowler/markcheck.py kv` and `python3
+fowler/lostwords.py` (check any hit on your leaves against the image) and fix
+anything on your leaves. Scratch files: fowler/scratchpad/kNNN/ (NNN = your
+first leaf) or $TMPDIR. Do not run git.
+
+Final message: one report line per leaf ("NNN  page P  fixes: F  entries:
+E"), then misprints kept, anything uncertain, and every *** or **^^ you wrote.
