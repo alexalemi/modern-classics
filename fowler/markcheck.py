@@ -6,6 +6,11 @@ A paragraph must open and close every **bold**, *italic* and ^^small caps^^
 it uses. A "+ " continuation is checked together with the paragraph it
 continues, since ruling 14 closes a span at a column or leaf end and reopens
 it after the "+ ". Prints every paragraph that does not balance.
+
+It also PAIRS the italic markers the way the renderer does (assemble
+MARK_ITAL): an opening * takes a non-space after it and a closing * a
+non-space before it. Counts can balance while a marker stands on the wrong
+side of a space ("& * will"), and the page then shows a literal asterisk.
 """
 import re, glob
 from pathlib import Path
@@ -36,4 +41,11 @@ for d in ("proof", "proof_kv"):
         if b % 2 or i % 2 or s % 2:
             bad += 1
             print(f"{where}: bold {b} italic {i} smallcaps {s} | {p[:90]!r}")
+            continue
+        q = re.sub(r"\*\*(?!\s)(.+?)(?<!\s)\*\*(?!\*)", r"\1", p)
+        q = re.sub(r"\*(?!\s)([^*]+?)(?<!\s)\*", r"\1", q)
+        if "*" in q:
+            bad += 1
+            j = q.index("*")
+            print(f"{where}: italic markers do not pair | {q[max(0, j - 50):j + 30]!r}")
 print(bad, "unbalanced paragraphs")

@@ -489,6 +489,11 @@ MARK_ANCHOR = re.compile(r"⟦#([a-z0-9-]+)⟧")
 MARK_LINK = re.compile(r"⟦@([a-z0-9-]+)\|([^⟦⟧]+)⟧")
 MARK_BOLD = re.compile(r"\*\*(?!\s)(.+?)(?<!\s)\*\*(?!\*)")
 MARK_SC = re.compile(r"\^\^(?!\s)(.+?)(?<!\s)\^\^")
+# A dictionary italicises inside words ("n*th*", "stigm*a*", "*regard*ing")
+# and runs italic for whole paragraphs; EMPH refuses both (a letter before
+# the opening mark, 400 characters), so this mode sets its own. The prep
+# guarantees every asterisk is a marker: Fowler's printed star is ∗.
+MARK_ITAL = re.compile(r"\*(?!\s)([^*]+?)(?<!\s)\*")
 
 
 def set_markup(env):
@@ -502,7 +507,8 @@ def dictionary_markup(escaped):
     escaped = MARK_LINK.sub(lambda m: f'<a class="ref" href="#loc-{m.group(1)}">{m.group(2)}</a>', escaped)
     escaped = MARK_BOLD.sub(lambda m: f"<b>{m.group(1)}</b>", escaped)
     escaped = MARK_SC.sub(lambda m: f'<span class="sc">{m.group(1)}</span>', escaped)
-    assert not re.search(r"⟦[#@]|\^\^", escaped), escaped[:160]
+    escaped = MARK_ITAL.sub(lambda m: f"<em>{m.group(1)}</em>", escaped)
+    assert not re.search(r"⟦[#@]|\^\^|\*", escaped), escaped[:160]
     return escaped
 
 

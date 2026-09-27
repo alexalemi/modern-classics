@@ -162,6 +162,9 @@ BLURBS = {
     "helmholtz": "Why some chords sound smooth and others rough: the "
                  "physics of tone and the history of scales, in Ellis's "
                  "annotated translation, every page read from the scan.",
+    "fowler": "Which spelling, which plural, how to say it, and the "
+              "essays on Elegant Variation and the Split Infinitive: the "
+              "1926 first edition, every cross-reference a link.",
     "conquest": "Envy, boredom, fatigue and fear of the neighbours, then "
                 "zest, affection and work: Russell's 1930 book for the "
                 "unhappy, not the learned.",
