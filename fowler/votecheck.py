@@ -85,6 +85,11 @@ for line in Path(sys.argv[1]).read_text().splitlines():
             out["TYPO"].append(line)
     elif ed and pr and real(ed) and real(pr) and ed != pr:
         out["VARIANT"].append(line)
+    elif len(ed) == len(pr) == 1 and len(ed[0]) >= 5 and not real(ed) \
+            and sum(a != b for a, b in zip(ed[0], pr[0])) == 1 and len(ed[0]) == len(pr[0]):
+        # one letter apart, neither side a dictionary word ("falconel" for
+        # the printed Falconet, a proper name): read it
+        out["TYPO"].append(line)
 for k, v in out.items():
     print(f"== {k} ({len(v)})")
     print("\n".join(v))
