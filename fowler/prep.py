@@ -231,6 +231,12 @@ def slug(s):
     return re.sub(r"[^a-z0-9]+", "-", plain(s).lower()).strip("-")
 
 
+# a part-of-speech label after a headword ("affix, n.", "stave, vb",
+# "that, adj. & adv.") is not a form of the word
+POS = re.compile(r"(?:(?:n|nn|v|vb|vv|adj|adjj|adv|prep|pref|conj|pron|rel|pl|sing|"
+                 r"p\.p|intr|trans|&|and|or|\s)+\.?\s*)+")
+
+
 def keys(title):
     """The lookup keys a headword answers to: the whole title, each of its
     comma-, ')('- or '&'-separated forms ("sceptre, -ter" answers to
@@ -241,7 +247,10 @@ def keys(title):
     out = {t, t.strip("()")}
     for part in re.split(r"\)\s*\(|,|\s&\s", t):
         part = part.strip(" .,;:")
-        if part:
+        # "platen, -tt-": "-tt-" is platen's own inflexion, not a headword;
+        # a suffix part counts only in a title that is all suffixes
+        if part and (not part.startswith("-") or t.startswith("-")) \
+                and not POS.fullmatch(part):
             out.add(part)
     for k in list(out):
         out.add(re.sub(r"\s*\([^)]*\)$", "", k))

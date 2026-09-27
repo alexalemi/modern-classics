@@ -752,6 +752,30 @@ def reescape_lt(dest):
     return n
 
 
+BARE_AMP = re.compile(r"&(?!(?:[A-Za-z][A-Za-z0-9]*|#[0-9]+|#x[0-9A-Fa-f]+);)")
+
+
+def reescape_amp(dest):
+    """`se typogrify` also unescapes "&amp;c;" -- Fowler's "&c" printed
+    without its stop before a semicolon (p. 177, as printed) -- into "&c;",
+    which XML reads as an undefined entity. A bare ampersand that does not
+    open a real entity is invalid in every book, so escaping it back can
+    change nothing that was right."""
+    n = 0
+    for f in sorted((dest / "src/epub/text").glob("*.xhtml")):
+        s = f.read_text()
+        fixed = re.sub(r"&c;", "&amp;c;", s)
+        # typogrify's italics also land INSIDE attribute values ("nth" in
+        # id="loc-w-nth" became "<i>n</i>th"); a tag there is never valid
+        fixed = re.sub(r'((?:id|href)="[^"<>]*)<[^"]*?"',
+                       lambda m: re.sub(r"<[^>]*>", "", m.group(0)), fixed)
+        fixed = BARE_AMP.sub("&amp;", fixed)
+        if fixed != s:
+            f.write_text(fixed)
+            n += 1
+    return n
+
+
 def run(cmd, cwd, check=True):
     r = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True, input="y\n")
     if check and r.returncode not in (0, 18):  # 18 = NoResults on finder tools
@@ -933,6 +957,7 @@ def main():
                     "(\"h1 is less than h2\") in modern_chapters/ instead.")
     run([SE, "typogrify", "."], cwd=dest)
     reescape_lt(dest)
+    reescape_amp(dest)
     plain_fractions(dest)
     for step in (["clean", "."], ["build-manifest", "."],
                  ["build-spine", "."], ["build-title", "."]):
