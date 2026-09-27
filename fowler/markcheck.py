@@ -23,16 +23,27 @@ def tokens(p):
     s = p.count("^^")
     return b, i, s
 
+SPANS = ("***", "**", "^^", "*")
+
+
+def join_spans(a, b):
+    """Mirror prep.py's join_spans: a span closed at the end of a column or
+    leaf and reopened after the '+ ' is one span, merged with no space."""
+    for mk in SPANS:
+        if a.endswith(mk) and b.startswith(mk) and not b.startswith(mk + "*"):
+            if mk == "*" and (a.endswith("**") or b.startswith("**")):
+                continue
+            return a[: -len(mk)], b[len(mk):]
+    return a, b
+
 bad = 0
 for d in ("proof", "proof_kv"):
     units = []                                 # (where, text): "+ " joins the unit before it
     for f in sorted((HERE / d).glob("*.txt")):
         for k, p in enumerate(f.read_text().split("\n\n")[1:]):
             if p.startswith("+ ") and units:
-                prev, cont = units[-1][1], p[2:]
-                # a span left open at the break and reopened after "+ " is one span
-                if tokens(prev)[1] % 2 and cont.startswith("*") and not cont.startswith("**"):
-                    cont = cont[1:]
+                prev, cont = units[-1][1].rstrip(), p[2:].lstrip()
+                prev, cont = join_spans(prev, cont)
                 units[-1] = (units[-1][0], prev + " " + cont)
             else:
                 units.append((f"{d}/{f.name} para {k + 1}", p))
