@@ -1008,3 +1008,25 @@ For the economics gap (three books so far). Not yet screened:
   Jevons, The Coal Question; Bagehot, Lombard Street; Veblen, The Theory of
   the Leisure Class; Weber, The Protestant Ethic; Keynes, The Economic
   Consequences of the Peace.
+
+### Science shelf additions (Alex, 2026-09-28)
+Not yet screened. Names normalised from a spoken list:
+  Buffon, The Epochs of Nature (Des époques de la nature, 1778); Shen Kuo,
+  Dream Pool Essays (1088); Ramón y Cajal, Advice for a Young Investigator
+  (1897); Hero of Alexandria, Pneumatics; W. H. Bragg, Concerning the Nature
+  of Things (1925); T. H. Huxley, On a Piece of Chalk (1868); Galileo, Two
+  New Sciences (1638); Huygens, Cosmotheoros (1698); Redi, Experiments on
+  the Generation of Insects (1668); Steno, Prodromus (1669); Harvey, On the
+  Motion of the Heart (1628); Franklin, Experiments and Observations on
+  Electricity (1751); Lavoisier, Elements of Chemistry (1789); Humboldt,
+  Views of Nature; Helmholtz, Popular Lectures on Scientific Subjects (we
+  have his Sensations of Tone); Mach, Popular Scientific Lectures;
+  Poincaré, Science and Method (we have Science and Hypothesis); Perrin,
+  Atoms (Les Atomes, 1913); Wegener, The Origin of Continents and Oceans
+  (1915; English 1924); Newton, Opticks (1704); Maxwell, Matter and Motion
+  (1877); Perry, Spinning Tops (1890); Darwin, The Voyage of the Beagle
+  (1839); J. B. S. Haldane, Possible Worlds (1927); Russell, The ABC of
+  Relativity (1925).
+  Copyright to check: Bragg 1925, Haldane 1927 and Russell 1925 are US PD
+  (pre-1929) but may still be in copyright in the UK; Wegener's English
+  translation (1924) is PD in the US.
