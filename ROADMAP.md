@@ -959,3 +959,38 @@ and Tarbell are in the first table. The copyright column is a FIRST READ.
 | The Age of Fable (1855) | Thomas Bulfinch | DONE 2026-09-20, restored (bulfinch/): the 1855 text recovered from Gutenberg's 1913 revision by a two-scan vote. Added by Alex 2026-09-20 |
 | The Conquest of Happiness (1930) | Bertrand Russell | DONE 2026-09-20, restored (conquest/). PD in the US since 1 Jan 2026 (1930 works); still in copyright in the UK/EU (Russell d. 1970). Gutenberg #77894; 1930 Allen & Unwin scans on Archive.org (conquest_happiness, dli.ernet.242732). Added by Alex 2026-09-20 |
 | A Dictionary of Modern English Usage (1926) | H. W. Fowler | DONE 2026-09-28, restored (fowler/). PD in the US (1926 works, since 2022) and in the UK (Fowler d. 1933). NOT on Gutenberg: an OCR build, ~760 pages in double columns. Take the 1926 Clarendon printing (Archive.org dictionaryofmode0000hwfo_b7l9, bwb_T5-BCG-591, dli.ernet.29413, dli.bengal.10689.920, in.ernet.dli.2015.231095); later reprints to 1937 are the same text, but the 1965 Gowers revision is a different book and in copyright. Restored edition: Fowler's prose is the point. Added by Alex 2026-09-21 |
+
+## Gaps and a new list (Alex, 2026-09-28)
+
+THE GAPS: popular science from outside Britain, anything much outside
+Europe, the years 500-1300, and economics (three books). Nothing below is
+screened yet: copyright, sources and retelling-vs-restored all still to do.
+
+FOCUS FIRST (Alex): Euler's Letters to a German Princess, and Boltzmann's
+travel log.
+  - Euler, Lettres à une princesse d'Allemagne (1768-72): from the ORIGINAL
+    French (not Hunter's 1795 English), so a retelling/translation.
+  - Boltzmann, "Reise eines deutschen Professors ins Eldorado" (1905), in
+    Populäre Schriften (1905); Boltzmann d. 1906. German original.
+
+The rest of the list, in Alex's order:
+  Euler, Letters (above); Lasswitz, Two Planets (Auf zwei Planeten, 1897);
+  Fontenelle, Conversations on the Plurality of Worlds; Kepler, On the
+  Six-Cornered Snowflake & Somnium; Archimedes, The Sand Reckoner; Laplace,
+  Philosophical Essay on Probabilities; Carnot, Reflections on the Motive
+  Power of Fire; Boltzmann, Populäre Schriften; Icelandic sagas (Njal,
+  Egil, Grettir); Andersen's fairy tales; Collodi, Pinocchio; Verne, The
+  Mysterious Island and From the Earth to the Moon.
+Also: Apuleius, The Golden Ass; Rabelais, Gargantua and Pantagruel;
+  Lazarillo de Tormes; Basile, Tale of Tales; Pu Songling, Strange Tales;
+  Čapek, R.U.R.; Zhuangzi; Kenkō, Essays in Idleness & Chōmei, Hōjōki;
+  Sa'di, Gulistan; Gracián, Art of Worldly Wisdom; La Bruyère, Characters;
+  Ibn Tufayl, Hayy ibn Yaqzan; Erasmus, Praise of Folly; Machiavelli,
+  Discourses on Livy; Paine, Rights of Man; Beccaria, On Crimes and
+  Punishments; La Boétie, Voluntary Servitude; Weber, Science as a Vocation
+  & Politics as a Vocation; Bastiat, Economic Sophisms; Xenophon, Anabasis;
+  Cabeza de Vaca, Relación; Cardano, Book of My Life; Galileo, Starry
+  Messenger & The Assayer; Fabre, insect books; Euler, Elements of Algebra
+  (already listed above); Hooke, Micrographia; D'Arcy Thompson, On Growth
+  and Form; De Morgan, A Budget of Paradoxes; Hinton, Scientific Romances;
+  Johnston, Writing & Illuminating & Lettering.
