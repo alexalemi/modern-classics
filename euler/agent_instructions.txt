@@ -1,0 +1,94 @@
+EULER, "LETTRES A UNE PRINCESSE D'ALLEMAGNE" -- STANDING BRIEF
+Read this whole file, then running_notes.txt, before translating.
+
+WHAT THIS WORK IS
+A scholarly modernization of a canonical text in the history of science.
+Leonhard Euler (1707-1783), the greatest mathematician of his century,
+wrote these 234 letters in French between 1760 and 1762 from Berlin, to
+teach science and philosophy to a fifteen-year-old princess, Friederike
+Charlotte of Brandenburg-Schwedt, a niece of Frederick the Great, who was
+away at Magdeburg during the Seven Years' War. They were published at St
+Petersburg in 1768-72 and became the most read popular-science book of
+the century. Our source is Cournot's 1842 Paris reprint of the original
+text (OCR of a scan). There is an old English version (Hunter, 1795); do
+NOT use it or imitate it. You translate from the French, and your English
+is what readers will have.
+
+THE VOICE
+Patient, clear, courteous, delighted by his subject. Euler builds every
+idea from something the princess already knows (a foot, the road to
+Magdeburg, a clavichord, a candle) and never shows off. He addresses her
+as "V. A." (Votre Altesse): render "Your Highness", used as often as he
+uses it -- it is the texture of the book. Letter 1 opens "Madame," --
+render "Madam,". Keep his closing courtesies when he writes them, in
+plain modern form ("I have the honour to be..." may stay; it is his
+manners, not archaism). Keep his arguments as HIS arguments: the ether,
+his theory of light as vibration, his attacks on Leibniz's monads and on
+the Wolffians, his religious reasoning on prayer, the soul, providence
+and free will. Do not correct his science or add modern notes; render
+the eighteenth-century view faithfully and in measured register.
+
+THE STANDARD
+Faithful but not literal: every sentence, every example, every number, in
+his order. Modern, natural English at an eighth-grade-to-high-school
+level: split long French sentences, contractions where natural, no
+archaisms, no French word order. Complete: never summarise, never skip,
+never merge letters. English runs about the same length as the French.
+Units: keep his units (feet, inches, lines, German miles, toises, degrees)
+-- they are how he thinks; the running notes give the glosses already
+spent.
+
+THE SOURCE FILE
+chapters/NNN.txt holds several letters, each after a marker line
+"=== LETTER n (figures: first|second volume) ===". Each letter opens with
+a date line "(19 avril 1760.)" (OCR-mangled: "I76I" = 1761, "17C0" = 1760)
+and a title line ("De l'Étendue."), then the text.
+OCR damage: page breaks split paragraphs mid-sentence -- rejoin them; read
+through garbage characters to the obvious word; a passage genuinely
+unreadable: translate what is clear and mark [?]. Never invent.
+DROP Cournot's 1842 footnotes: paragraphs beginning "(1)", "(i)", "(x)",
+"(r)" etc. that give metric conversions, later discoveries, corrections
+("Le pied de Berlin vaut...", "La pensée d'Euler est inexacte...") --
+they are the editor's, not Euler's -- and drop their markers "(1)" in the
+text. Stray running heads that slipped through ("DE LA VITESSE. 7") also go.
+Rows of dots in the printed text ("......") are usually Euler's own
+ellipsis or a figure set in type -- not damage. Euler's own numbered paragraphs (I., II., ...), where they exist, stay.
+FIGURES: keep every figure reference, as "(Figure 12)" or "in Figure 12",
+using the number he gives. Letters to "(figures: second volume)" cite the
+second volume's plates; keep the number exactly -- do not renumber. Keep
+his letters on diagrams (A, B, C; line AB) exactly.
+TABLES and lists he sets out (musical ratios, the tones of the
+clavichord): one item per line, each line starting with a TAB, as one
+paragraph.
+
+FORMAT (exact)
+Line 1: the file heading given in your prompt, e.g. "Letters 1–5"
+Blank line. Then for each letter, in order:
+  Letter N: Title
+  (blank line)
+  _19 April 1760_.
+  (blank line)
+  the letter's paragraphs, separated by blank lines.
+N is the number in the marker line. Title: his title, translated and SHORTENED if
+needed: at most 8 words, Title Case, no final punctuation, under 60
+characters. MORE THAN HALF the words of the whole line "Letter N: Title"
+must be capitalized, or the page will not set it as a heading -- so
+cut "of the ... of the" chains ("On the Influence of the Freedom of Minds
+on the Events of the World" -> "How Free Minds Shape Events") ("On Extension",
+"On Speed", "The Twelve Tones of the Clavichord"). Keep "On ..." when
+he writes "De ..."/"Sur ...". Date: day Month year, in underscores, then a
+full stop after the closing underscore, exactly as shown; Include a
+place only when the source gives one (Letter 1: "_Berlin, 19 April
+1760_."). If the date is lost, write "_[date lost]_.".
+No other headings, no part lines, no notes of your own.
+Write euler/modern_chapters/NNN.txt (same number as the source file).
+
+SENSITIVE CONTENT: render religion, war (the Seven Years' War is on) and
+his polemics plainly as his. If you meet a remark about a people or race
+that is an aside and carries only contempt, translate it anyway but REPORT
+it in your notes with its letter number, so the editor can rule.
+
+RETURN: (a) one line per letter: number and what it teaches; (b)
+consistency notes for running_notes.txt: technical terms you settled
+(e.g. how you rendered "étendue", "force", "éther", "ton"), units glossed,
+forward references ("as I will show in a later letter"), anything flagged.

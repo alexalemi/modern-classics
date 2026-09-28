@@ -53,6 +53,8 @@ BLURBS = {
         'The funniest of the Christmas lecturers takes you from the sun to the nebulae, measuring the sky with two children and a pair of scissors.',
     'boltzmann':
         'The founder of statistical physics goes to teach at Berkeley in 1905 and writes it up as comedy: his Viennese stomach, a dry town, sung menus, and the joy of coming home.',
+    'euler':
+        'Twice a week for two years the greatest mathematician of his age wrote to a fifteen-year-old princess about sound, light, gravity, the soul, logic, lightning and telescopes. All 234 letters, from the French.',
     'boethius':
         'Waiting to be executed, the last Roman philosopher is visited by Philosophy, who tells him that nothing he has lost was ever his. With all thirty-nine poems.',
     'bunyan':

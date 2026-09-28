@@ -3600,3 +3600,46 @@ corrected two Gutenberg typos (mere, Crania). The introduction was
 fact-checked against modern geology: chalk is mostly coccoliths, and the
 Chalk sea was a shelf sea, so it says what changed rather than "still
 understood as he explains it". Cover: Friedrich, Chalk Cliffs on Rügen.
+
+## euler/ — Leonhard Euler, Letters to a German Princess (1768–72), from the French
+
+SOURCE: Cournot's 1842 Hachette reprint (Archive.org lettresdeleuleru01eule
+/ 02eule, djvu OCR), which prints the 1768–72 Petersburg text unretouched
+(Condorcet's 1787 edition cut and rewrote it) but renumbers the 234 letters
+as three series by subject (I 68, II 64, III 102). We number 1–234 as Euler
+did and keep Cournot's series as the three Parts. NOT Hunter's 1795 English.
+
+PREP (prep.py): a letter boundary is a LETTRE heading OR a date line with no
+heading just above it (the OCR lost several headings; nearly every letter
+has "(3 mai 1760.)"). The false positives were nine verso running heads the
+OCR split over two lines ("28 / Iʳᵉ PARTIE. / LETTRE VII."), dropped by
+ordinal; the series counts 68/64/102 are the checksum. Cournot's footnotes
+are left in the source and the translators drop them — they are easy to see
+("(1) Le pied de Berlin vaut...") and stripping them mechanically would eat
+the next letter's heading. 50 files of ~5k words.
+
+FIGURES: six folding plates (Tome I Pl. I–II, figs 1–89; Tome II Pl. I–IV,
+figs 1–127). Numbering RESTARTS in the second volume, at Letter 115; the
+text keeps the printed numbers and the introduction says so. Each whole
+plate is set (digit-free ids platea–platef, so no "Figure N" label) at the
+letter that first cites it; prep.py writes the same markers into chapters/
+so verify.py's figure check matches. Letter 4's two dot diagrams are
+typeset in the text (TAB lines).
+
+TRANSLATION: Sonnet agents, 000 alone then batches of 8–19. Ratio 0.94
+overall; 004 and 030 run ~0.77 because each loses a long Cournot note.
+Final orchestrator pass: American spelling (batches mixed colour/color),
+pre-established, freethinkers, Monsieur (not Mr.), Wolff, Mayer; fifteen
+letter titles shortened because assemble.is_subheading needs more than
+half the words of "Letter N: Title" capitalized — the brief now says so.
+Page-image fixes: Letter 3 (c‴ = 1,600 vibrations; the OCR lost the octave
+marks, the arithmetic restores them), Letter 4 (the dotted break is
+Euler's own), Letter 170 ("Lsi Jig. 11" is fig. 22, the compass card),
+Letter 199 (angles pio / PiO, eye at i in fig. 74). Lost days written as
+month only (L135, L234).
+
+VOICE: a patient teacher; "Your Highness" at his frequency; his ether,
+anti-Newtonian optics, anti-monad polemic and Calvinist theology rendered
+as his. No sensitive-content rulings were needed.
+
+COVER: Fragonard, Young Girl Reading (c. 1769, NGA).
