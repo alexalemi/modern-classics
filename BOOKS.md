@@ -3590,3 +3590,13 @@ half past one. SENSITIVE CONTENT: the railway-soot joke about Black people
 and its "Colleague" punchline are CUT (Alex, 2026-09-28, reversing his
 first "keep"); the introduction says so. Cover: William Keith, Mount
 Shasta from Castle Lake (Keith was a Berkeley painter).
+
+## chalk/ — T. H. Huxley, On a Piece of Chalk (1868), RESTORED EDITION
+
+The Norwich lecture in Huxley's 1894 Collected Essays VIII text, from
+Gutenberg #10060; four footnotes (note 4 cited twice, set once) as
+"Footnote:" paragraphs after their citing paragraph. Two-scan vote
+corrected two Gutenberg typos (mere, Crania). The introduction was
+fact-checked against modern geology: chalk is mostly coccoliths, and the
+Chalk sea was a shelf sea, so it says what changed rather than "still
+understood as he explains it". Cover: Friedrich, Chalk Cliffs on Rügen.

@@ -165,6 +165,9 @@ BLURBS = {
     "fowler": "Which spelling, which plural, how to say it, and the "
               "essays on Elegant Variation and the Split Infinitive: the "
               "1926 first edition, every cross-reference a link.",
+    "chalk": "What a carpenter's piece of chalk can tell working men about the "
+             "floor of the Atlantic, deep time and evolution: Huxley's Norwich "
+             "lecture of 1868.",
     "conquest": "Envy, boredom, fatigue and fear of the neighbours, then "
                 "zest, affection and work: Russell's 1930 book for the "
                 "unhappy, not the learned.",
