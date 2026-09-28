@@ -1030,3 +1030,46 @@ Not yet screened. Names normalised from a spoken list:
   Copyright to check: Bragg 1925, Haldane 1927 and Russell 1925 are US PD
   (pre-1929) but may still be in copyright in the UK; Wegener's English
   translation (1924) is PD in the US.
+
+### War and peace (Alex, 2026-09-28)
+A war shelf. Nothing screened yet; first-guess notes on sources and cribs
+(to verify before starting):
+  Clausewitz, On War (German, 1832; Graham's 1873 English is a PD crib; long).
+  The other six of the Seven Military Classics of China (Wuzi, Sima Fa,
+    Wei Liaozi, Six Secret Teachings, Three Strategies of Huang Shigong,
+    Questions and Replies of Tang Taizong and Li Weigong). We have Sun Tzu.
+    Classical Chinese with NO public-domain English crib (the no-crib/CJK
+    pipeline from dogen/; short texts).
+  Maurice, Strategikon (Greek, c. 600; no PD English -- Dennis 1984 is in
+    copyright; fills the 500-1300 gap).
+  Dunant, A Memory of Solferino (French, 1862; short; the founding of the
+    Red Cross).
+  Sergeant Bourgogne, Memoirs (French; the retreat from Moscow; 1899
+    English is PD).
+  Ardant du Picq, Battle Studies (French, 1880; 1920 US Army English PD).
+  Livy, the Hannibal books (Latin, Books 21-30; many PD English cribs).
+  Polybius, Histories (Greek; Shuckburgh 1889 PD; long, choose books).
+  Josephus, The Jewish War (Greek; Whiston 1737 PD).
+  Arrian, Anabasis of Alexander (Greek; Chinnock 1884 PD).
+  Vegetius, On Military Matters (Latin; Clarke 1767 PD).
+  Procopius, Wars and Secret History (Greek; Dewing's Loeb, 1914-, PD in
+    the US for pre-1929 volumes; 500-1300 gap).
+  The Tale of the Heike (Japanese, 13th-14th c.; Sadler's 1918-21 English
+    PD; long; fills 500-1300 and outside-Europe gaps).
+  Usama ibn Munqidh, Book of Contemplation / memoirs (Arabic, 12th c.;
+    Hitti's 1929 English entered US PD in 2025; 500-1300 and outside-
+    Europe gaps).
+  Joinville, Life of Saint Louis (Old French, c. 1309; Wedgwood 1906 PD).
+  Machiavelli, The Art of War (Italian, 1521; Farneworth 1775 PD). We have
+    The Prince.
+  Musashi, The Book of Five Rings (Japanese, 1645; no PD English -- no-crib
+    pipeline; short).
+  Tolstoy, Sevastopol Sketches (Russian, 1855; Maude translations PD).
+  Grant, Personal Memoirs (English, 1885-86; restored edition, or light
+    retelling).
+  Kant, Perpetual Peace (German, 1795; Campbell Smith 1903 PD; short).
+  Angell, The Great Illusion (English, 1910 edition; US PD; Angell d. 1967
+    so UK copyright to 2037; restored edition).
+Cheapest high-value first picks: Kant, Dunant, Musashi (short, one agent
+each); Arrian or Livy's Hannibal books (story-driven, strong cribs); the
+Heike and Usama for the gaps.
