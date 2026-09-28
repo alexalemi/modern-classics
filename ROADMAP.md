@@ -1082,3 +1082,8 @@ Heike and Usama for the gaps.
   except Euler's Algebra, which could instead be retold from the 1770 German
   with Hewlett's 1822 English as the crib. beecher/_src already holds
   Gutenberg #6598 (fetched 2026-09-20).
+  Haldane, "On Being the Right Size" (Harper's Magazine, March 1926; in
+  Possible Worlds, 1927) -- Alex, 2026-09-28. ~3k words, English: a
+  restored edition, one sitting. COPYRIGHT: US public domain since 2022;
+  Haldane d. 1964, so UK/life+70 copyright runs to the end of 2034. Needs a
+  ruling on publishing US-PD-only works (same question as Russell, Bragg).
