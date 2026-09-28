@@ -3576,3 +3576,17 @@ the links, in both renderers; off for every other book).
   line-end hyphen the sentence is ABOUT (well-known); inventing rulings.
   Cover: Spitzweg, The Bookworm (c. 1850), Commons "File:Carl Spitzweg -
   "The Bookworm".jpg", crop 1500x2250+0+150.
+
+## boltzmann/ — Ludwig Boltzmann, A German Professor's Journey into Eldorado (1905)
+
+"Reise eines deutschen Professors ins Eldorado", the comic essay closing
+Populäre Schriften (Leipzig, 1905), pp. 403-435, translated from the German
+(no public-domain English exists). Source: Archive.org
+populreschrifte00boltgoog OCR (roman type, clean); prep.py strips running
+heads and rejoins page-split paragraphs; three parts of ~3,600 words, one
+Sonnet agent each (Part 1 alone to set the voice). Ratio 1.11. The one
+garbled figure ("Vs^ Uhr", both scans) was read on the page image: ½2 Uhr,
+half past one. SENSITIVE CONTENT: the railway-soot joke about Black people
+and its "Colleague" punchline are CUT (Alex, 2026-09-28, reversing his
+first "keep"); the introduction says so. Cover: William Keith, Mount
+Shasta from Castle Lake (Keith was a Berkeley painter).

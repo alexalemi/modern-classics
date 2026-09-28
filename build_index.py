@@ -51,6 +51,8 @@ BLURBS = {
         'The original American life story — runaway apprentice to statesman, told with a wink.',
     'ball':
         'The funniest of the Christmas lecturers takes you from the sun to the nebulae, measuring the sky with two children and a pair of scissors.',
+    'boltzmann':
+        'The founder of statistical physics goes to teach at Berkeley in 1905 and writes it up as comedy: his Viennese stomach, a dry town, sung menus, and the joy of coming home.',
     'boethius':
         'Waiting to be executed, the last Roman philosopher is visited by Philosophy, who tells him that nothing he has lost was ever his. With all thirty-nine poems.',
     'bunyan':
