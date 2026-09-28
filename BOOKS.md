@@ -3643,3 +3643,59 @@ anti-Newtonian optics, anti-monad polemic and Calvinist theology rendered
 as his. No sensitive-content rulings were needed.
 
 COVER: Fragonard, Young Girl Reading (c. 1769, NGA).
+
+## fontenelle/ — Fontenelle, Conversations on the Plurality of Worlds (1686), from the French
+
+SOURCE: French Wikisource "Texte entier", Lyon (Leroy) 1800 printing of the
+final text, six evenings. prep.py: Preface + letter "To Monsieur L***" in
+000, one file per evening (5-6.5k words); the evening subtitles go into the
+heading line. Sonnet agents, all seven at once; ratio 0.96. VOICE: gallant,
+light, the Marquise sharper than the narrator. LOCKED: "vortex"; the First
+Evening's "All philosophy rests on just two things: curious minds and bad
+eyesight." RULINGS (running_notes.txt): CUT the Fourth Evening's "any more
+than most [Black people]" aside on the Mercurians' memory (the agent had
+hedged it with "or so it's said" -- a hedge makes a slur read as reported
+fact, worse not better); KEEP the First Evening's comic tour of nations
+(symmetry: the English are mocked first). The introduction says what was
+cut. COVER: Creti, Astronomical Observations: the Moon (1711), Vatican
+IIIF scan (the -FG photo is CC BY-SA; use the PD one).
+
+## turgot/ — Turgot, Reflections on the Formation and Distribution of Wealth (1766), from the French
+
+SOURCE: Daire's 1844 Œuvres (French Wikisource), 100 sections. TWO TRAPS:
+headings are irregular ("§ XLVII —" with no period, "§ C." with no dash),
+so split on r"§ [IVXLC]+\b"; and Du Pont de Nemours's "Observations" on
+Adam Smith follow § C inside the same page -- cut there, not at the first
+footnote. FORMAT: "Section N" (passes is_subheading) + the section's
+printed summary in italics, four parts of one essay. Ratio 0.99. Slavery
+(§§ 21-25, 39) kept as his argument, measured. COVER: Vernet, The
+Construction of a Road (1774) -- Turgot abolished the forced road labor.
+
+## hojoki/ — Kamo no Chōmei, An Account of My Hut (Hōjōki, 1212), from the Japanese
+
+SOURCE: Japanese Wikisource, 方丈記 (國文大觀, 1903). One file, 9,372
+characters, almost no paragraph breaks (the translator makes them). CJK: the
+word ratio is inert (verify prints 2896); measured 0.62 English words per
+source character, which is the band for kana-heavy wakan-konkō prose (cf.
+1.40 for Dōgen's kanbun). Brief applies readability-is-the-deliverable:
+allusions folded in (Vimalakīrti, Cūḍapanthaka), era years with Western
+years (orchestrator added Yōwa ~1181 and Saikō 855, which the agent left
+bare), clock hours converted. COVER: Kikuchi Yōsai's portrait of Chōmei,
+Zenken Kojitsu.
+
+## hayy/ — Ibn Tufayl, Hayy ibn Yaqzan (12th century), from the Arabic
+
+SOURCE: Arabic Wikisource (raw wikitext; the parse API rate-limits on this
+175 KB page). IT LACKS IBN TUFAYL'S PROLOGUE, and so does Shamela (same
+digital lineage); Hindawi 403s and Archive.org was down all of 2026-09-28.
+So 000 is the prologue retold from Ockley's 1708 English (Gutenberg #16831,
+footnotes stripped), declared in the introduction -- REPLACE WITH THE ARABIC
+when one is reachable (Gauthier's 1900 Algiers edition is Arabic + French).
+Story: four files split at paragraphs; ratio 1.41-1.59 English words per
+Arabic word (Arabic packs articles and prepositions into the word) -- the
+top of verify's 1.6 band, so a looser translator would fail it. Ockley used
+as crib only for a few corrupt sentences. Orchestrator fixes: two book
+titles Ockley's transliteration misled the agent on (al-Farabi's Excellent
+Religion, al-Ghazali's Breathing and Shaping); the "Alive, son of Awake" and
+Avicenna glosses de-duplicated. COVER: Aqa Mirak, Majnun with the Animals in
+the Desert (Khamsa of Shah Tahmasp, 1539-43).

@@ -55,6 +55,14 @@ BLURBS = {
         'The founder of statistical physics goes to teach at Berkeley in 1905 and writes it up as comedy: his Viennese stomach, a dry town, sung menus, and the joy of coming home.',
     'euler':
         'Twice a week for two years the greatest mathematician of his age wrote to a fifteen-year-old princess about sound, light, gravity, the soul, logic, lightning and telescopes. All 234 letters, from the French.',
+    'fontenelle':
+        'Six evenings in a moonlit garden, a young philosopher and a teasing Marquise, and the whole new astronomy: the first great book of popular science, from 1686.',
+    'turgot':
+        'How money, capital and interest grow out of a village of farmers, in a hundred short steps, written for two Chinese students ten years before Adam Smith.',
+    'hojoki':
+        'A poet who watched Kyoto burn, starve and shake builds a ten-foot hut in the hills and writes about impermanence. The whole of it, from 1212.',
+    'hayy':
+        'A child raised by a doe on a desert island discovers anatomy, fire, the stars and God by himself. The great philosophical tale of Muslim Spain.',
     'boethius':
         'Waiting to be executed, the last Roman philosopher is visited by Philosophy, who tells him that nothing he has lost was ever his. With all thirty-nine poems.',
     'bunyan':
