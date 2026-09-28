@@ -994,3 +994,17 @@ Also: Apuleius, The Golden Ass; Rabelais, Gargantua and Pantagruel;
   (already listed above); Hooke, Micrographia; D'Arcy Thompson, On Growth
   and Form; De Morgan, A Budget of Paradoxes; Hinton, Scientific Romances;
   Johnston, Writing & Illuminating & Lettering.
+
+### Economics additions (Alex, 2026-09-28)
+For the economics gap (three books so far). Not yet screened:
+  Joseph de la Vega, Confusión de Confusiones (1688); Turgot, Reflections on
+  the Formation and Distribution of Wealth; Galiani, Dialogues on the Grain
+  Trade; Jane Marcet, Conversations on Political Economy; Harriet Martineau,
+  Illustrations of Political Economy; Xenophon, Oeconomicus; Oresme, On
+  Money (De moneta); Graunt, Observations upon the Bills of Mortality; Petty,
+  Political Arithmetick; Mandeville, The Fable of the Bees; Hume, economic
+  essays; Say, Catechism of Political Economy; Ricardo, Principles; List,
+  National System of Political Economy; Marx, Wage Labour and Capital;
+  Jevons, The Coal Question; Bagehot, Lombard Street; Veblen, The Theory of
+  the Leisure Class; Weber, The Protestant Ethic; Keynes, The Economic
+  Consequences of the Peace.
