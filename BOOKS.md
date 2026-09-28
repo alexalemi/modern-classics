@@ -3699,3 +3699,18 @@ titles Ockley's transliteration misled the agent on (al-Farabi's Excellent
 Religion, al-Ghazali's Breathing and Shaping); the "Alive, son of Awake" and
 Avicenna glosses de-duplicated. COVER: Aqa Mirak, Majnun with the Animals in
 the Desert (Khamsa of Shah Tahmasp, 1539-43).
+
+## haldane/ — J. B. S. Haldane, On Being the Right Size (1926), RESTORED EDITION
+
+FIRST US-PUBLIC-DOMAIN-ONLY BOOK (Alex's ruling 2026-09-28: publish works PD
+in the US even if still in copyright elsewhere; say so in the introduction).
+Haldane d. 1964, so life+70 runs to 2034. SOURCE: the OCR layer of the 1927
+Chatto & Windus Possible Worlds scan at jbshaldane.org (pdf.jbshaldane.org
+host). THE WEB TEXT IS A DIFFERENT VERSION: marxists.org, Cabinet and the
+rest print "provided that the ground is fairly soft. A rat is killed, a man
+is broken"; 1927 prints "A rat would probably be killed, though it can fall
+safely from the eleventh story of a building; a man is killed" (page image
+p. 19), plus "simple kidney" (p. 20, not "single"), "principles", "passed",
+"the winter", "the air". Words from the print; paragraph breaks only from
+the web text. Soft hyphens (U+00AD) mark the print's line-end breaks; one
+real hyphen (oxygen-absorbing) fell at a line end. COVER: Dürer, Young Hare.

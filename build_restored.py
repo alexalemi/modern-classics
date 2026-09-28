@@ -165,6 +165,9 @@ BLURBS = {
     "fowler": "Which spelling, which plural, how to say it, and the "
               "essays on Elegant Variation and the Split Infinitive: the "
               "1926 first edition, every cross-reference a link.",
+    "haldane": "Why a mouse survives a fall down a mine shaft and a horse "
+               "splashes, why insects fear getting wet, and what size a state "
+               "should be: Haldane's essay, as printed in 1927.",
     "chalk": "What a carpenter's piece of chalk can tell working men about the "
              "floor of the Atlantic, deep time and evolution: Huxley's Norwich "
              "lecture of 1868.",
