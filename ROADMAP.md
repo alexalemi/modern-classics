@@ -1073,3 +1073,12 @@ A war shelf. Nothing screened yet; first-guess notes on sources and cribs
 Cheapest high-value first picks: Kant, Dunant, Musashi (short, one agent
 each); Arrian or Livy's Hannibal books (story-driven, strong cribs); the
 Heike and Usama for the gaps.
+
+### Re-flagged by Alex, 2026-09-28 (already listed 2026-09-20; priority up)
+  Euler, Elements of Algebra; Gray's Anatomy; Hasluck, The Handyman's Book;
+  Drew, Farm Blacksmithing; Picken, The Dressmaker; Beecher & Stowe, The
+  American Woman's Home. All are restored-edition candidates (English
+  originals, illustrated; plates need captions and alt text per CAPTIONS.md),
+  except Euler's Algebra, which could instead be retold from the 1770 German
+  with Hewlett's 1822 English as the crib. beecher/_src already holds
+  Gutenberg #6598 (fetched 2026-09-20).
