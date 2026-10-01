@@ -3642,6 +3642,16 @@ VOICE: a patient teacher; "Your Highness" at his frequency; his ether,
 anti-Newtonian optics, anti-monad polemic and Calvinist theology rendered
 as his. No sensitive-content rulings were needed.
 
+UNITS (Alex, 2026-09-30): German miles converted to modern miles and lines
+(1/12 inch) to fractions of an inch, overturning the first brief's "keep
+his units". 1 German mile ~ 4.6 mi; his 15 miles/degree -> 69, 24,000 ft
+per mile -> 5,280; every sum redone so his arithmetic still closes (L156's
+6,210 mi equator-to-pole = 3,622.5 + 2,587.5 from Berlin). Feet, inches,
+pounds kept: the Rhineland foot is within 3% of ours. His own slips stand
+converted: the sun at ~140 million mi in Letter 16 against ~70 million in
+Letter 224. Letter 161's 75/76 miles (a source slip) both -> 345.
+Crowns and ducats are money, not measures, and stay.
+
 COVER: Fragonard, Young Girl Reading (c. 1769, NGA).
 
 ## fontenelle/ — Fontenelle, Conversations on the Plurality of Worlds (1686), from the French
