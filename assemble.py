@@ -516,10 +516,16 @@ def anchorless(s):
 
 def set_markup(env):
     MARKUP["on"] = env.get("MARKUP") == "dictionary"
+    # MARKUP=bold (Bush's Science, the Endless Frontier, 2026-10-05): the
+    # 1945 printing sets its findings in bold type, and nothing else of the
+    # dictionary apparatus applies -- subheadings stay on.
+    MARKUP["bold"] = env.get("MARKUP") in ("dictionary", "bold")
 
 
 def dictionary_markup(escaped):
     if not MARKUP["on"]:
+        if MARKUP.get("bold"):
+            escaped = MARK_BOLD.sub(lambda m: f"<b>{m.group(1)}</b>", escaped)
         return escaped
     escaped = MARK_ANCHOR.sub(lambda m: f'<span id="loc-{m.group(1)}"></span>', escaped)
     escaped = MARK_LINK.sub(lambda m: f'<a class="ref" href="#loc-{m.group(1)}">{m.group(2)}</a>', escaped)

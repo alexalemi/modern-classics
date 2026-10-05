@@ -165,6 +165,14 @@ BLURBS = {
     "fowler": "Which spelling, which plural, how to say it, and the "
               "essays on Elegant Variation and the Split Infinitive: the "
               "1926 first edition, every cross-reference a link.",
+    "sabotage": "The OSS's 1944 manual for occupied Europe: slow the enemy "
+                "with dull tools, wrong switches and endless committees.",
+    "carson": "Rachel Carson's Conservation in Action booklets for the Fish "
+              "and Wildlife Service: four wildlife refuges, and why wild "
+              "creatures, like men, must have a place to live.",
+    "endless": "Vannevar Bush's 1945 report to the President: basic research "
+               "as the pacemaker of progress, and the plan that became the "
+               "National Science Foundation.",
     "kropotkin": "Cooperation among ants, birds, villagers, guildsmen and "
                  "strikers as a factor of evolution: Kropotkin's reply to "
                  "Huxley, in the revised edition of 1904.",

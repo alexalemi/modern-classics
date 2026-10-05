@@ -1,0 +1,82 @@
+STANDING INSTRUCTIONS: PAGE-READING RACHEL CARSON'S "CONSERVATION IN ACTION" BOOKLETS
+
+You are proofreading a restored edition: the exact text of five illustrated
+US Fish and Wildlife Service booklets (1947-1950) by Rachel Carson, a US
+government publication in the public domain. You read each assigned page
+from its IMAGE and write what is printed. Nothing is modernized, nothing
+corrected, nothing summarized.
+
+FILES (repo root /home/alemi/projects/modern-classics/carson/):
+  _src/pages/{book}-{NN}.png     the page image (150 dpi). READ THIS. It is the authority.
+  _src/draft/{book}-{NN}.txt     an OCR draft of the same page: a crib only. It has
+                                 misreadings, joins the two columns wrongly, and
+                                 mixes captions into the text. Never trust it over the image.
+  proof/{book}-{NN}.txt          WHAT YOU WRITE, one file per page.
+
+WHAT TO WRITE in proof/{book}-{NN}.txt:
+
+Line 1: "# {book} {NN}: KIND" where KIND is one of
+  cover, inside-cover, title, text, map, plate-only, blank, back-cover.
+
+Then, in READING ORDER (left column top to bottom, then right column top to
+bottom; a full-width block where it falls), each paragraph as one line,
+paragraphs separated by one blank line. Exact words, spelling, punctuation and
+capitals as printed, with these conventions:
+  - Italics as *word*. Book titles, Latin names, and the like.
+  - The opening words of a section are often set in SMALL CAPITALS ("THE
+    AMERICAN BRANT, a small goose"). Write them in normal sentence case
+    ("The American brant, a small goose"). Do NOT write ALL CAPS for small caps.
+  - Join words hyphenated at line ends (an end-of-line break of "migra-/tion"
+    is "migration"), but keep a hyphen that belongs to the word ("well-known").
+    If unsure, keep the hyphen and add the note "?hyphen" in the REPORT.
+  - Use curly quotes “ ” ‘ ’ and real dashes — as printed.
+  - If the page begins in the middle of a paragraph from the previous page,
+    start that first paragraph with the marker "⟨cont⟩ ". If the page ends in
+    the middle of a paragraph, end its last paragraph with " ⟨cont⟩".
+  - A section heading printed on its own line (rare): write it on its own line
+    preceded by "## ".
+  - A SECTION BREAK -- extra white space followed by a paragraph opening in
+    small capitals -- gets a line "* * *" before that paragraph (and only
+    then; an ordinary paragraph indent is not a break). A small-caps opening
+    at the very top of the text is not a break.
+  - Omit: page numbers, running heads, library stamps and call numbers
+    ("GOVT. I 49.36", "LIBRARY", shelf marks), and printers' furniture.
+
+ILLUSTRATIONS. Every drawing, photograph, map or decoration gets its own line,
+placed in the reading order where it sits on the page (between the paragraphs
+nearest it):
+  [PLATE x0 y0 x1 y1 | kind | caption]
+  - x0 y0 x1 y1 are the illustration's bounding box as FRACTIONS of the page
+    image's width and height (0.00 = left/top, 1.00 = right/bottom), two
+    decimals, generous rather than tight (include the whole drawing, not the
+    surrounding text).
+  - kind: drawing, photo, map, or ornament.
+  - caption: the PRINTED caption or legend, exactly, if there is one (map
+    legends included); otherwise leave it empty after the bar. Do not invent one.
+  - Text printed INSIDE a map or drawing (place names, arrows) is not body text:
+    leave it out of the paragraphs.
+
+COVER, TITLE, INSIDE COVER, BACK COVER pages: transcribe their printed words
+as plain lines (title, series number, author, illustrators, imprint, price),
+and mark their illustrations with PLATE lines like any other.
+
+DO NOT:
+  - delete a printed word because it looks wrong, repeated or ungrammatical. If
+    you think the print has an error, write what is printed and note it in the
+    REPORT as "?print: ...".
+  - "fix" spelling, modernize, or complete a broken sentence across a page
+    except with the ⟨cont⟩ markers.
+  - read heavy ink as bold. These booklets use roman, italic and small caps only;
+    captions may be in a heavier or italic face: write them as plain text.
+  - invent anything you cannot see. If a word is illegible write [?] and report it.
+
+CHECK YOUR WORK, for each page, before moving on:
+  python3 /home/alemi/projects/modern-classics/carson/pagecheck.py {book} {NN}
+It lists draft words missing from your proof (often a dropped line or a
+caption you left out) and proof words not in the draft (often your typo, or a
+draft misreading you rightly fixed). Look at the image for every item and fix
+your proof where the image says so.
+
+REPORT (your final reply): for each page, one line: "{book} {NN}: KIND, n
+paragraphs, m plates" plus any "?print", "?hyphen", "[?]" notes, and anything
+you were unsure of. Keep it short.

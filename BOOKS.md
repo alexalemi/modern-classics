@@ -3804,3 +3804,92 @@ the scans splice notes into the body; the 8-gram both-scans test is the
 useful form. Renderer change: assemble.is_subheading now refuses
 "Footnote:" lines (six short notes had become h4s).
 COVER: Bruno Liljefors, Wild Geese (1898, SMK).
+
+## sabotage/ — Office of Strategic Services, Simple Sabotage Field Manual (1944), RESTORED EDITION
+
+US GOVERNMENT WORK, public domain (17 U.S.C. 105). Text: Gutenberg #26184,
+checked with scan_diff.py against the OCR of a 1944 copy
+(SimpleSabotageFieldManualStrategicServicesProvisional, a stamped and smudged
+typescript: 27 residuals, all OCR damage except one). FIX: "(3) Production.
+Metals" is "Production: Metals" on p. 21, under the DECLASSIFIED stamp. The
+outline is kept as printed, the underlined heads as italics. Content: a
+historical document framed as such in the introduction (who it was for,
+1944), no operational commentary added. COVER: Menzel, The Iron Rolling Mill.
+
+## endless/ — Vannevar Bush, Science, the Endless Frontier (1945), RESTORED EDITION
+
+US GOVERNMENT WORK, public domain. NO CLEAN TRANSCRIPTION EXISTS (nsf.gov's
+HTML copy is gone; Wikisource and Gutenberg have none), so the words are a
+THREE-OCR VOTE (endless/prep.py): A = ABBYY layout of the 1945 GPO printing
+(scienceendlessfr00unit_0), the base and the only source of structure; B =
+the NSF's 1960 reprint (a fresh setting, so its line breaks differ); C = the
+Digital Library of India's scan of the 1945 printing. Votes run on LETTER
+RUNS, never whole tokens, so A's dashes, punctuation and italics stand (a
+whole-token vote turned "solely—which" into "solely which"). A word changes
+only when B and C agree against it, or A's is a non-word and B's a word; B
+alone never overrides a real 1945 word (it prints "page 32" where 1945 says
+26 — the reprint repaginated). The remaining ~40 readings were settled on
+the page images (endless/look.py crops the band) into FIXES.
+TRAPS: (1) BOLD. The 1945 printing sets Bush's findings in bold, ABBYY's
+bold flag misses them, but meanStrokeWidth does not (~96 vs ~58 roman):
+bold is set per paragraph from the stroke, rendered by the new MARKUP=bold
+(assemble.set_markup; subheadings stay on, unlike MARKUP=dictionary). (2)
+LINE-END HYPHENS are joined with a soft hyphen and settled after: a
+dictionary word closes up, two words keep the hyphen (civilian-controlled,
+well-being). (3) The OCR reads commas as full stops in Appendix 1's member
+lists ("professor of medicine. Harvard University"); fixed by rule inside
+an entry, confirmed on all three pages. (4) The budget table (p. 33) and
+"APPENDICES" divider: the table typed from the image, the divider dropped.
+SCOPE: the report, Roosevelt's letter, chart, table and Appendix 1; the four
+committee reports (Appendices 2-5, ~150 pp.) omitted, as the introduction
+says. Kept as printed: "endeavour", "underway", "war-time"; corrected as a
+misprint: "responsibile". COVER: Church, Twilight in the Wilderness (Cleveland).
+
+## carson/ — Rachel Carson, Conservation in Action (1947-1950), RESTORED EDITION
+
+US GOVERNMENT WORKS (Fish and Wildlife Service booklets), public domain.
+Five booklets in series order: Chincoteague (No. 1), Parker River (2),
+Mattamuskeet (4), Guarding Our Wildlife Resources (5), Bear River (8, with
+Vanez T. Wilson). SOURCES: ARLIS's Rachel Carson collection (arlis.org/docs/
+vol1/RachelCarson/) and npshistory.com's Conservation in Action scans; every
+booklet has two copies. TEXT: page readers (Sonnet agents, standing prompt
+carson/page_agent_prompt.txt) wrote proof/{book}-{NN}.txt, checked page by
+page against the scan's OCR (pagecheck.py: missing/extra words of 4+
+letters) and booklet by booklet against the second copy; Bear River was
+read twice from two scans (4 trivial differences in 5,000 words).
+CONTENT FILTER: the readers' output on Guarding pp. 5-10 was stopped twice
+by an automated filter (long verbatim reproduction), and once in the main
+loop. Those pages are built from the scan's own text layer (ocr_page.py:
+column gutter found as the x the fewest words cross) plus short word
+patches read on the images (guarding_ocr.py). Never ask an agent to emit a
+long verbatim passage of this booklet again; build from the OCR.
+PLATES: plates.py cuts 137 (44 drawings, 78 photos, 15 maps) from 300-dpi
+renders. Drawings and maps: box widened, text words masked with the LOCAL
+paper tone (a global fill left patches), tightened to ink. Photos: a
+density profile (dense_run) rather than a threshold, since caption debris
+and pale skies defeat a threshold. Text masking: only tokens with two
+letters in a row or a number (OCR of pen strokes is junk, and masking it
+painted over the drawings), any word overlapping the widened box (a text
+column's edge), never the reader's own box on ma02a (the refuge sign's
+lettering); BLANK clears body text set inside a map's frame (ch07a) and
+the flyway title beside the two inside-cover maps. Maps are not widened.
+IDS: plates.py writes fig{book}{page}{a}.jpg; prep.py renames them to
+letters-only ids in reading order (aa, ab ...: the plates are unnumbered,
+and assemble.figure_label labels any id with a digit "Figure N") and
+re-saves at 1200px, photos with a 1.2px blur against the halftone screen
+(72 MB -> 26). After rerunning plates.py, run `prep.py --prune`.
+CAPTIONS: the printed caption, then this edition's description
+(captions/batch-N.txt). TWO SONNET AGENTS WITH ~70 IMAGES EACH LOOPED: each
+pass filled the context with images, compaction restarted it, and after
+2,000+ tool calls neither had written a line. Six agents of ~23 plates,
+appending each line the moment it is written, finished in about a minute
+each. Their reports caught four bad crops (gu20a missed the cranes; the
+ma02a sign was masked away; title fragments on two maps) -- read them.
+A printed caption that runs across a spread (Parker pp. 12-13) is split
+across its plates in prep.CAPTION_SPLITS.
+PREP TRAPS: (1) a paragraph broken across a page joins to the LAST OPEN
+paragraph, not the last paragraph -- a map page can stand between the
+halves; (2) title pages are set in scattered lines, so the bylines are an
+explicit BYLINES dict read off the images (the year asserted against the
+proof); (3) headings that only repeat the booklet's title are dropped.
+COVER: Audubon/Havell, Canada Goose (1834, NGA, CC0).
