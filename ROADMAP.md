@@ -1087,3 +1087,13 @@ Heike and Usama for the gaps.
   restored edition, one sitting. COPYRIGHT: US public domain since 2022;
   Haldane d. 1964, so UK/life+70 copyright runs to the end of 2034. Needs a
   ruling on publishing US-PD-only works (same question as Russell, Bragg).
+
+### Next up, after Kropotkin's Mutual Aid (Alex, 2026-10-05)
+Restored editions of US federal works, public domain by law (17 U.S.C. 105):
+  - Rachel Carson, the Conservation in Action booklets (US Fish and Wildlife
+    Service, 1947-50), written as a federal employee; illustrated.
+  - Vannevar Bush, Science, the Endless Frontier (1945).
+  - OSS, Simple Sabotage Field Manual (1944).
+Also raised, not yet chosen: the Smyth Report (1945), NASA's history series,
+and the Situationist texts (Internationale Situationniste's "freely reproduced"
+notice; check each text's rights before treating it as free).
