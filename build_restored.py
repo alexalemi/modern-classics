@@ -165,6 +165,9 @@ BLURBS = {
     "fowler": "Which spelling, which plural, how to say it, and the "
               "essays on Elegant Variation and the Split Infinitive: the "
               "1926 first edition, every cross-reference a link.",
+    "perlman": "Civilization from Sumer to Detroit as the life of a monster, "
+               "Hobbes's Leviathan, and of everyone who walked away from it: "
+               "Perlman's 1983 polemic, with its Blake plates.",
     "haldane": "Why a mouse survives a fall down a mine shaft and a horse "
                "splashes, why insects fear getting wet, and what size a state "
                "should be: Haldane's essay, as printed in 1927.",

@@ -3724,3 +3724,45 @@ p. 19), plus "simple kidney" (p. 20, not "single"), "principles", "passed",
 "the winter", "the air". Words from the print; paragraph breaks only from
 the web text. Soft hyphens (U+00AD) mark the print's line-end breaks; one
 real hyphen (oxygen-absorbing) fell at a line end. COVER: Dürer, Young Hare.
+
+## perlman/ — Fredy Perlman, Against His-story, Against Leviathan! (1983), RESTORED EDITION
+
+US PUBLIC DOMAIN: Black & Red printed it with no copyright notice (the 2010
+third printing's verso has none; the 1983 scans on Archive.org are
+lend-only) and the Copyright Office's public records show no registration
+under the title or the name, so the 1976 Act's five-year cure never ran.
+Alex: "my understanding is it's public domain." Perlman d. 1985.
+
+THREE WITNESSES, NO KEYSTROKES SHARED (prep.py): The Anarchist Library's
+transcription (T, from a 2007 blog) carries paragraphs, italics, block
+quotes and section breaks; ABBYY (A, djvu.xml) and Tesseract (B, the
+"z-library" upload) OCRs of the SAME 2010 scan vote on every word. A and B
+differ in only ~130 places, and where they agree against T that is the
+print. T IS BAD: 908 word corrections (dropped words every ~125: "a network
+[of] computer centers", "a book [he] called"; five whole sentences or
+paragraphs dropped), 71 capitals (Perlman's "the State", "Civilization",
+"Spirit" flattened), 41 punctuation marks, and run-together words
+("Thefederated"). What the token vote cannot see: case and spacing (the
+first pass ignored both -- the chapter readers caught "SUmerian",
+"Thefederated"), insertions at a paragraph boundary (placed by the print's
+first-line indent), and spaced ellipses ". . .", which OCR tokenises.
+BOTH OCRs SHARE ONE MISREADING: the print's ç read as g (Provenge,
+Provengal, fagades). Perlman spells it "Provençe" throughout.
+THE SECOND READING (crosscheck.py, finished text against both OCRs) found
+one sentence the merge lost ("This news did not embolden potential
+rebels"); what remains in its list is deliberate.
+STRUCTURE: T's block quotes checked against the print's layout (bold,
+indented both sides); four were wrong (STRUCT_FIXES, leaves 95/180/181).
+MISPRINTS: only non-words corrected (apprently, himelf, Levianthanic...).
+Perlman typeset the book himself, so his own forms stand: Quatrocento,
+Cisterian, grizzly, Hisstorians, exercize, Michaelangelo, Nietszche.
+PLATES (plates.py): 24 chapter-head plates, two title vignettes, one pale
+closing vignette, cut by their ink and trimmed to the frame's bottom rule
+(chapter 1's "1." sat close enough to join). Captions describe; they do
+NOT name the Blake works, since Perlman never does and a wrong title is
+the defect no check sees. COVER: Blake, Behemoth and Leviathan (Job plate
+15, 1825), whose margin quotes "King over all the Children of Pride".
+INTRODUCTION: the history is unreliable in detail (four chapter readers
+found dozens of plain errors: Huns c. 200 CE, Attila sacking Rome, David
+building the Temple, Arbogast's invented papal alliance); the intro says
+so plainly and calls it myth-polemic, as Perlman did.
