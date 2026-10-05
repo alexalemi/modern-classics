@@ -122,8 +122,19 @@ def midword(text):
     return re.sub(r"(?<=[A-Za-z])\*([A-Za-z]{1,2})\*", r"\1", text)
 
 
+def curl(text):
+    """Straight quotes -> curly, while the context is still plain text. Left
+    to `se typogrify`, a closing quote after markup ('*x*' -> ‘<em>x</em>')
+    was curled as an opening one throughout the book. An apostrophe inside
+    a word (Gödel's) is a closing single quote."""
+    text = re.sub(r"(^|[\s(\[—“‘|])'", "\\1‘", text)
+    text = text.replace("'", "’")
+    text = re.sub(r'(^|[\s(\[—‘|])"', "\\1“", text)
+    return text.replace('"', "”")
+
+
 def exponents(text):
-    text = midword(text)
+    text = curl(midword(text))
     return re.sub(r"[^\s(),;:]*[\^_]\{[^\s]*", lambda m: latex(m.group(0).rstrip(".,;")) + m.group(0)[len(m.group(0).rstrip(".,;")):], text)
 
 
@@ -247,7 +258,7 @@ def place_notes(items, notes):
 
 
 def render(title, items, notes):
-    lines = [title, ""]
+    lines = [curl(title), ""]
     k = 0
     while k < len(items):
         kind, text = items[k][0], items[k][1]
@@ -272,11 +283,11 @@ def render(title, items, notes):
                 lines.append("")
             continue
         if kind == "H":
-            lines.append(text)
+            lines.append(curl(text))
         elif kind == "FN":
             lines.append(f"Footnote: {text.translate(SUP)} " + exponents(notes[text]))
         elif kind == "T":
-            lines.append(text)
+            lines.append(curl(text))
         else:
             lines.append(exponents(text))
         lines.append("")
@@ -302,7 +313,7 @@ def main():
         bare = re.sub(r"\[Figure (\w+): [^\]]*\]", r"[Figure \1]", text)
         (HERE / f"chapters/{i:03d}.txt").write_text(bare)
         (HERE / f"modern_chapters/{i:03d}.txt").write_text(text)
-        manifest.append({"file": f"{i:03d}.txt", "title": title, "part": 1, "of": 1})
+        manifest.append({"file": f"{i:03d}.txt", "title": curl(title), "part": 1, "of": 1})
     (HERE / "manifest.json").write_text(json.dumps(manifest, indent=1, ensure_ascii=False) + "\n")
     print(len(secs), "sections;", len(notes), "footnotes;", sum(len(t.split()) for t, _ in secs), "title words")
     for t, m in all_missing:
