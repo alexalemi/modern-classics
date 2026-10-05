@@ -3893,3 +3893,37 @@ halves; (2) title pages are set in scattered lines, so the bylines are an
 explicit BYLINES dict read off the images (the year asserted against the
 proof); (3) headings that only repeat the booklet's title are dropped.
 COVER: Audubon/Havell, Canada Goose (1834, NGA, CC0).
+
+## godel/ — Ernest Nagel & James R. Newman, Gödel's Proof (1958), RESTORED EDITION
+
+US PUBLIC DOMAIN BY NON-RENEWAL: registered A359592 (7 Oct 1958), no
+renewal in 1985-86 or anywhere by that number (copyright_check.py). BUT THE
+ACKNOWLEDGMENTS SAY SEVERAL DIAGRAMS CAME FROM THE JUNE 1956 SCIENTIFIC
+AMERICAN, and the magazine renewed that issue (RE195135, 1984). Alex's
+ruling (2026-10-05): text only, figures redrawn. So: Figs. 1-3 are drawn
+afresh from the mathematics (figures.py; the Pappus figure is constructed,
+and asserts its own collinearity), Tables 1-4 are set anew from their
+contents with this edition's own captions (prep.TABLES), and the printed
+captions -- which may be the magazine's words -- are dropped. The Appendix
+truth tables are the authors' own and are simply set. Read a book's
+acknowledgments for borrowed matter BEFORE starting (memory:
+copyright-renewal-lookup).
+SOURCE: one open scan (University of Florida, gdelsproof00nage); the four
+other Archive.org copies are lending-only. ONE WITNESS, so the words were
+page-read: draft.py writes per-leaf drafts from the ABBYY layout (indent ->
+paragraphs; line spacing ~80 px tells footnotes from ~100 px body;
+superscripts as ^{}), 13 Sonnet readers corrected them against the page
+image as PATCHES ONLY (fixes/NNN.txt, <<< old === new >>>, each matching
+exactly once; apply_fixes.py), never retyping pages. About 450 patches over
+117 leaves, finished in ~2 minutes per reader of ten leaves.
+NOTATION: ⊃ ∨ ∼ ∃ · in Unicode; superscript digits for plain exponents
+and footnote marks; an exponent Unicode cannot write (2^m, 3^{11²},
+p⁹_{m+10}) set as LaTeX by prep.latex. An italic letter against a roman
+one ("s*y*", the successor of y) cannot be marked -- assemble's emphasis
+refuses an asterisk after a letter -- so those few are set roman
+(prep.midword). Two-column axiom displays become tables (" | ").
+TRAPS: the readers' ⟨cont⟩ markers disagreed at five page breaks (a mark on
+one side only, or a false one before a footnote); prep reports any orphan.
+Old-style figures OCR as letters ("io" for page 10). The index is dropped;
+the Appendix cites 1958 page numbers, as the introduction says.
+COVER: Dürer, Melencolia I (1514).

@@ -142,7 +142,10 @@ page gets plain <math>; the epub needs MORE, all found by building:
     pandoc's inline style (x-012) and empty <mtd>/<mrow> (s-010; <mspace/>
     is the exempt filler).
   - `se build` renders MathML to PNG for the compatible epub through
-    Selenium/Firefox: export SE_CACHE_PATH to a writable directory, and
+    Selenium/Firefox: export SE_CACHE_PATH to a writable directory (the
+    sandbox makes ~/.cache read-only; `build/selenium` works, and the first
+    run downloads geckodriver from github.com and
+    release-assets.githubusercontent.com), and
     mathml.se_safe dodges its "cannot add ancestor as sibling" crash on
     nested groups in a superscript.
 The witnesses that mattered: a FORMULA-SEQUENCE diff against data-tex

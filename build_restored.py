@@ -170,6 +170,9 @@ BLURBS = {
     "carson": "Rachel Carson's Conservation in Action booklets for the Fish "
               "and Wildlife Service: four wildlife refuges, and why wild "
               "creatures, like men, must have a place to live.",
+    "godel": "Nagel and Newman's 1958 classic: how Gödel showed that "
+             "arithmetic holds truths it cannot prove, with the figures "
+             "redrawn.",
     "endless": "Vannevar Bush's 1945 report to the President: basic research "
                "as the pacemaker of progress, and the plan that became the "
                "National Science Foundation.",

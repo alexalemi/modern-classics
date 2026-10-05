@@ -1,0 +1,106 @@
+STANDING INSTRUCTIONS: PROOFREADING "GÖDEL'S PROOF" (1958)
+
+Context. This is a restored edition of Ernest Nagel and James R. Newman,
+Gödel's Proof (New York University Press, 1958): a US book whose copyright
+was never renewed, so it is in the US public domain. We are correcting the
+OCR of a scan, page by page, so the text reads exactly as printed.
+Working directory: /home/alemi/projects/modern-classics.
+
+For each leaf NNN you are given:
+  godel/draft/NNN.txt        the OCR draft (read it)
+  godel/_src/pages/NNN.png   the page image (view it with Read; once)
+You write:
+  godel/fixes/NNN.txt        corrections, as patch blocks (below)
+and check them with:
+  python3 godel/apply_fixes.py NNN     (prints the corrected page, or ERROR)
+
+DO NOT rewrite or reproduce whole pages. Write only patch blocks, each as
+small as it can be while matching exactly once. A page with no errors gets
+no fixes file at all.
+
+PATCH FORMAT (godel/fixes/NNN.txt):
+
+    <<<
+    exact text from the draft
+    ===
+    corrected text
+    >>>
+
+The old text must occur EXACTLY ONCE in the draft. Copy it from the draft
+file character for character (the draft has odd spacing and characters:
+copy them as they are). Include a few neighbouring words if needed to make
+it unique. Blocks apply in order, top to bottom. Write the file with a
+heredoc or Python, not by echo with fragile quoting. Run apply_fixes.py
+after writing; fix any ERROR (usually an old text that does not match).
+
+DRAFT MARKUP (keep it; fix it where the draft got it wrong):
+  # leaf NNN · page P     first line; never change it
+  ## Title                a chapter numeral or title, or a section heading
+                          ("## VII", "## Gödel's Proofs", "## A Gödel numbering")
+  ⟨cont⟩ text             a paragraph that began on the previous page
+  text ⟨cont⟩             a paragraph that continues onto the next page
+  > line                  displayed matter set apart from the paragraph:
+                          a formula, an example sentence, a numbered list
+                          item. One printed item per "> " line.
+  [FN 8] text             footnote 8 at the foot of the page
+  [FN cont] text          the end of a footnote begun on the previous page
+  Running heads and page numbers are already removed; if one is left,
+  delete it.
+
+WHAT TO CORRECT
+1. Every word to match the print: misread letters, missing or extra words,
+   wrong punctuation, quotation marks (the book uses ‘ ’ and “ ” — keep the
+   draft's straight quotes as they are, but fix a quote mark that is
+   missing or misread as something else), hyphens and dashes (— for the
+   printed em dash). The umlaut is already restored in "Gödel"; restore it
+   elsewhere too (Über, Sätze, ...).
+2. Italics: the draft marks italic as *...*. Make them match the print:
+   italic words, titles, and single-letter variables (p, q, x, y, n, F, G,
+   K, L...) printed in italics. Do not italicise logical symbols or digits.
+3. LOGICAL AND MATHEMATICAL SIGNS, always as these Unicode characters:
+     ⊃  horseshoe (if ... then)          ∨  wedge (or)
+     ∼  tilde (not)                      ·  centred dot (and)
+     ∃  reversed E (there is)            ×  multiplication
+     =  equals                           ′ ″  primes
+     superscript digits ⁰¹²³⁴⁵⁶⁷⁸⁹ for exponents (2⁶ × 3⁸) and for
+     footnote reference marks in the text (…Systeme”¹)
+     subscript digits ₀₁₂₃₄₅₆₇₈₉ (S₁, K₁)
+   The OCR turns ⊃ into "D" or "3", ∨ into "V" or "v", ∃ into "3", ∼ into
+   "~" or "-": correct all of them. An exponent that is not a plain number
+   (a letter, a sum, a nested power) is written ^{...}: p^{n}, 2^{k+1}.
+   Write a formula with spaces as printed: (p ∨ q) ⊃ (q ∨ p).
+4. Displayed matter the OCR scrambled (two columns read across, a formula
+   split over lines): retype it from the image. A TWO-COLUMN display
+   becomes one "> " line per item with " | " between the columns, e.g.
+     > 2. *p* ⊃ (*p* ∨ *q*), that is, if *p*, then either *p* or *q* | 2. If psychoanalysis is fashionable, then …
+   (one line per numbered item, the left column's text, " | ", the right
+   column's text, each column's wrapped lines joined into one).
+5. FIGURES AND TABLES (Fig. 1-3, Table 1-4, and any other diagram, drawn
+   figure or boxed table): replace whatever the OCR made of the figure,
+   its labels and its caption with ONE line:
+     [ART Table 4: number 243,000,000 decomposed into prime powers and read as 0 = 0]
+   naming the figure as printed and saying in a few words what it shows.
+   The caption printed under a figure or table is part of it: remove it
+   too -- the label ("Table 3", "Fig. 2") AND every line of explanation
+   set under it in smaller type (e.g. "Predicate Variables are associated
+   with the cubes of prime numbers greater than 10." under Table 3, or
+   "Model for a set of postulates about two classes..." under Fig. 1).
+   A table printed in several parts gets one [ART] line per part. (The editor redraws these by hand.) Ordinary text that merely
+   mentions a figure stays.
+6. Footnotes: each must be its own "[FN n]" line, in full, with the text
+   as printed; its reference mark in the body text is a superscript digit
+   at the right place. Fix a footnote the draft merged into the text or
+   the text merged into a footnote.
+7. Structure: a heading the draft missed becomes "## ..." on its own
+   (blank lines around it); a false heading (a stray line of text) is
+   restored to its paragraph. A paragraph wrongly split in two is joined;
+   one wrongly joined is split at the printed indent.
+
+Work leaf by leaf: write a leaf's fixes file and run apply_fixes.py on
+it BEFORE viewing the next image, so finished work is saved. If you lose
+track, list godel/fixes/ and continue with the first of your leaves that
+has no fixes file and that you have not checked.
+
+Report at the end: leaves done, number of blocks per leaf, anything you
+could not resolve (a word you could not read, a structure you were unsure
+of), and every [ART] line you wrote.
