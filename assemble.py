@@ -87,6 +87,12 @@ def is_subheading(par, next_par=None):
         return False
     if par[-1] in ".;:,—":
         return False
+    # A FOOTNOTE IS NEVER A TITLE (Kropotkin, 2026-10-05): restore_lib sets
+    # notes as "Footnote: ..." paragraphs, and a short bibliographic note
+    # with no closing stop ("Footnote: Dall, Alaska and its Resources")
+    # passed every test below and was set as six h4s in Mutual Aid.
+    if par.startswith("Footnote:"):
+        return False
     # A QUOTED LINE IS SPEECH, NOT A TITLE. Two-sentence dialogue slips
     # past the "?"/"!" rule below -- "\u201cYes. A Frenchman named
     # Passepartout.\u201d", "\u201cWorried? No.\u201d" -- and twenty-eight of

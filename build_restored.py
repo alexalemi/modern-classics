@@ -165,6 +165,9 @@ BLURBS = {
     "fowler": "Which spelling, which plural, how to say it, and the "
               "essays on Elegant Variation and the Split Infinitive: the "
               "1926 first edition, every cross-reference a link.",
+    "kropotkin": "Cooperation among ants, birds, villagers, guildsmen and "
+                 "strikers as a factor of evolution: Kropotkin's reply to "
+                 "Huxley, in the revised edition of 1904.",
     "perlman": "Civilization from Sumer to Detroit as the life of a monster, "
                "Hobbes's Leviathan, and of everyone who walked away from it: "
                "Perlman's 1983 polemic, with its Blake plates.",

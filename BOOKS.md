@@ -3766,3 +3766,41 @@ INTRODUCTION: the history is unreliable in detail (four chapter readers
 found dozens of plain errors: Huns c. 200 CE, Attila sacking Rome, David
 building the Temple, Arbogast's invented papal alliance); the intro says
 so plainly and calls it myth-polemic, as Perlman did.
+
+## kropotkin/ — Peter Kropotkin, Mutual Aid: A Factor of Evolution (1902), RESTORED EDITION
+
+THE TEXT IS THE 1904 REVISED AND CHEAPER EDITION (Heinemann), not 1902.
+Archive.org's two "1902" London scans are mislabelled: UCLA's
+(mutualaidfactor00kropiala) is the 1904 edition, Duke's two
+(mutualaidfactoro1902krop, mutualaid01krop) the 1914 impression of it.
+Gutenberg #4341 calls itself 1902 but cites a 1903 book (the Reichesberg
+note, absent from every scan): a later text, ASCII (every accent and æ
+stripped), notes renumbered per chapter, the APPENDIX (twelve notes,
+pp. 301-328) MISSING ENTIRELY, as on Wikisource.
+THE PIVOT IS THE PRINT (merge.py): UCLA's ABBYY XML gives every token with
+italics, superscript note references and font size; Duke B and C and
+Gutenberg T vote at each place. T only ever corrects A's misreadings, so
+Kropotkin's 1904 revisions stand. 76 conflicts read on the page.
+ZONES WERE THE HARD PART. ABBYY's font sizes drift within a page (11 to
+12.5 for one body) and it sometimes sizes a note like the body; what
+works: LINE SPACING relative to the page's 75th percentile (body ~75px,
+small type ~53-57), notes = the small-type run at the foot from the first
+line opening on a superscript, and GUTENBERG AS ORACLE (any 4+ word run
+matching its notes, chapter by chapter, is note text). Traps met: the
+Appendix is set in small type throughout (relative spacing); a page half
+notes made the median the notes' spacing; "CHAPTER III" at 12.5pt passed
+as body and shifted every later chapter by one against Gutenberg's notes
+(caught because note matching collapsed); line-end hyphens must join
+AFTER zoning, across the page's notes ("com-" | notes | "mit").
+NOTES: placed by Gutenberg's own reference markers carried through the
+alignment, falling back to the print's superscripts for 1904 additions;
+every one placed or prep stops (322). Continuations across pages verified.
+BOTH OCRs SHARE MISREADINGS in italic notes (Geographic, fhistoire, soeial,
+ot, scholce): OCR_WORDS, from a listing of every A==B-against-T word.
+Accents: no witness carries them (djvu strips them, ABBYY writes
+"Socie’te’s"), so ACCENT_MAP / APOS_ACCENT restore only certain forms.
+THE SECOND READING: crosscheck.py (Duke scans vs edition) is noisy because
+the scans splice notes into the body; the 8-gram both-scans test is the
+useful form. Renderer change: assemble.is_subheading now refuses
+"Footnote:" lines (six short notes had become h4s).
+COVER: Bruno Liljefors, Wild Geese (1898, SMK).
