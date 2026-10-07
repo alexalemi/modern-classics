@@ -1,0 +1,23 @@
+RE-BOXING DRAWINGS IN "THE TARBELL COURSE IN MAGIC", VOL. II
+
+Working directory: /home/alemi/projects/modern-classics. For each leaf
+NNNN you are given, view tarbell/_src/check/NNNN.png ONCE. It is the page
+with the current figure boxes drawn in red (each labelled with its figure
+number) and a blue grid every 0.1 of the width and height, numbered on the
+edges. Some boxes are wrong: one drawing's box takes in part of another,
+misses part of its own drawing, or sits beside the drawing.
+
+Fix tarbell/figs/NNNN.txt in place. Its lines are
+    Fig. N | x0 y0 x1 y1 | description
+with the box as fractions of the page (two decimals). Change ONLY the box
+numbers of the lines that are wrong; keep every label and description
+exactly. Each box must take in the whole of its drawing -- every line,
+hand, letter and its hand-lettered "FIG. N" -- and as little as possible
+of a NEIGHBOURING drawing or of body text. Where two drawings genuinely
+interlock (one overlapping the other in the print), a small overlap is
+fine; say so in your report. Use the grid to read positions accurately.
+Write the file with Python (read, replace the box, write), and do not
+touch any other file.
+
+Report per leaf: which boxes you changed (old -> new), and any drawing
+you could not separate.

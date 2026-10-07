@@ -3961,3 +3961,39 @@ INTRODUCTION: Catharine opposed women's suffrage -- said, with the book's
 own line that the Woman's Rights Conventions protest "absurd, unreasonable
 ideas" of womanhood. COVER: Lilly Martin Spencer, Kiss Me and You'll Kiss
 the 'Lasses (1856).
+
+## tarbell/ — Harlan Tarbell, The Tarbell Course in Magic, Volume II (1942), RESTORED EDITION
+
+COPYRIGHT: Tannen's revised edition, Vol. II, registered A168896 (1942);
+no renewal in the 1969-71 CCE volumes or the NYPL TSVs (COPYRIGHT.txt
+records the search). Vol. I (1941) and the 1927 course are separate
+questions -- check each volume on its own before doing another.
+TEXT: one open scan (Archive.org tarbellcourseinm0000unse, a later N. L.
+Magic Co. printing of the 1942 text). Gödel's page-reader pipeline at
+scale: draft.py drafts each leaf from hOCR (RUNHEAD drops "THE TARBELL
+COURSE IN MAGIC" and "Lesson NN -- ..." heads), 40 batches of Sonnet
+readers (page_prompt.txt) write patches (fixes/) and figure lines
+(figs/NNNN.txt: "Fig. N | box | description"), apply_fixes.py -> proof/.
+FIGURES: 1046 drawings. Tarbell RESTARTS his numbering with each trick,
+so a figure is known by leaf + order, never by number; prep matches each
+"[FIG n]" to its leaf's figs lines in order and reports any label
+mismatch. Ids are three letters (aaa...), so assemble prints no "Figure N"
+label over Tarbell's own. plates.py masks hOCR lines of 3+ lowercase
+dictionary words lying mostly inside a box (lettering on a drawing never
+qualifies), then trims to ink blobs. READERS' BOXES OVERLAP on crowded
+pages: an overlap scan (pairs on one leaf sharing >30% of the smaller
+box) and overlays with a 0.1 grid (rebox_prompt.txt) re-boxed 37 leaves;
+most bad boxes began INSIDE the neighbouring drawing. Then a contact sheet
+of every changed crop found the TRIM was the other half of the problem:
+the blob filter (keep >= 6% of the largest) dropped Tarbell's small
+"FIG. N" labels from correct boxes. Now a small blob is kept when it lies
+wholly in the reader's box near the drawing and touches no text; the
+padding is cleared of any OCR line wholly inside it (a heading) and any
+lower-case dictionary word reaching into it (a line end: "real knot").
+Three leaves get explicit MASK regions (79, 365: drawings sharing
+columns; 186: a line end in a corner). The faint text left in some crops is show-through from the reverse
+of the leaf, in the scan itself.
+Unnumbered rules and ornaments dropped; rabbit tailpieces kept.
+STRUCTURE: Dedication, Introduction, Lessons 20-33, Au Revoir. Long
+italic patter is split sentence by sentence (EMPH 400-char limit).
+COVER: Kellar's Levitation poster (Strobridge Litho, 1894).

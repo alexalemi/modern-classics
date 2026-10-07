@@ -1,0 +1,96 @@
+STANDING INSTRUCTIONS: PAGE READING "THE TARBELL COURSE IN MAGIC", VOL. II (1942)
+
+Context. A restored edition of Harlan Tarbell's The Tarbell Course in
+Magic, Revised Edition, Volume II (Lessons 20-33), Louis Tannen, 1942. It
+is in the US public domain (registered 1942, never renewed; see
+tarbell/COPYRIGHT.txt). It is a textbook of stage magic, written and
+illustrated by Tarbell. We are correcting the OCR of a scan page by page,
+and cutting out his drawings. Working directory:
+/home/alemi/projects/modern-classics.
+
+For each leaf NNNN you are given:
+  tarbell/draft/NNNN.txt        the OCR draft (read it)
+  tarbell/_src/pages/NNNN.png   the page image (view it with Read, ONCE)
+You write TWO files:
+  tarbell/fixes/NNNN.txt        text corrections, as patch blocks
+  tarbell/figs/NNNN.txt         the page's drawings, one line each
+and check the text with:
+  python3 tarbell/apply_fixes.py NNNN    (prints the corrected page, or ERROR)
+
+DO NOT rewrite or reproduce whole pages. Write only patch blocks, each as
+small as it can be while matching exactly once in the draft.
+
+PATCH FORMAT (tarbell/fixes/NNNN.txt):
+    <<<
+    exact text from the draft
+    ===
+    corrected text
+    >>>
+The old text must occur EXACTLY ONCE in the draft; copy it character for
+character (include neighbouring words to make it unique). Blocks apply in
+order. Write files with a heredoc or Python. Run apply_fixes.py and fix
+any ERROR. A page with no text errors gets no fixes file.
+
+DRAFT MARKUP (keep it; fix it where the draft is wrong):
+  # leaf NNNN            first line; never change it
+  paragraphs separated by blank lines
+  ## Title               a heading: a lesson title ("## Lesson 21: Magic with
+                         Wands"), a trick title ("## Vanishing Handkerchief
+                         Wand"), or a sub-heading the print sets apart
+                         ("## Effect", "## Preparation", "## To Perform",
+                         "## Note"). Headings are in title case, not caps.
+  ⟨cont⟩ text            first paragraph, if it continues from the
+                         previous page (starts mid-sentence)
+  text ⟨cont⟩            last paragraph, if it continues onto the next page
+  [FIG 12]               where a drawing stands in the flow of the page
+                         (see below); "[FIG 12-13]" for one drawing
+                         labelled with two numbers
+Running heads ("56 THE TARBELL COURSE IN MAGIC", "Lesson 21 -- MAGIC WITH
+WANDS 57") and page numbers are already removed; delete any that remain.
+
+WHAT TO CORRECT IN THE TEXT
+1. Every word to match the print: misread letters ("Norte" for Note,
+   "Maeic" for Magic), missing or extra words, punctuation, quotation
+   marks, dashes. Small capitals in the print are written in ordinary
+   case ("To Perform", not "To PERFORM"). Italic words as *word*.
+2. REMOVE everything the OCR read inside a drawing: its "Fig. 3" label,
+   letters (A, B), words lettered on the drawing, and stray symbols
+   ("FIG.3 ) iY = FIG.4", "Sec FIG.6"). Put "[FIG N]" on its own line
+   (a paragraph of its own) at the point where the drawing sits in the
+   reading order -- usually between the paragraphs it sits between. A
+   drawing beside a paragraph goes after that paragraph. A drawing that
+   interrupts a SENTENCE (the text resumes under it mid-sentence) goes
+   after the end of that paragraph: join the sentence back together.
+3. Keep the text's own references to figures ("run it through paper
+   tube, Fig. 3.") exactly as printed.
+4. Structure: fix headings the draft missed or invented; join a paragraph
+   wrongly split; split one wrongly joined at the printed indent.
+5. Tables or lists the OCR scrambled: retype them, one item per line,
+   items separated by blank lines.
+
+THE FIGURES FILE (tarbell/figs/NNNN.txt), one line per drawing:
+    Fig. N | x0 y0 x1 y1 | description
+  - "Fig. N" as printed ("Fig. 12-13" if one drawing carries two numbers;
+    "unnumbered" for a drawing with no number, e.g. a lesson's heading
+    picture or a portrait).
+  - x0 y0 x1 y1: the drawing's box as FRACTIONS of the page image (0 =
+    left/top, 1 = right/bottom), two decimals. Generous: include every
+    line and letter of the drawing, INCLUDING Tarbell's hand-lettered
+    "FIG. N" label (it is part of the drawing), and excluding the body
+    text around it.
+  - description: 12-35 words, plain and concrete, for a reader who
+    cannot see it -- what the drawing shows, using the text's words for
+    the props and moves ("the right hand palms the coin while the left
+    seems to take it"). No praise words. No square brackets, asterisks,
+    tabs or line breaks; end with a full stop.
+  A page with no drawing gets the single line:  none
+  Every "[FIG N]" you put in the text must have its line here, and every
+  line here its "[FIG N]" in the text.
+
+Work leaf by leaf: write both files and run apply_fixes.py for a leaf
+BEFORE viewing the next image. If you lose track, list tarbell/figs/ and
+continue with the first of your leaves that has no figs file.
+
+Report at the end: leaves done, drawings found, and anything unresolved
+(an unreadable word, a figure number missing or repeated, a structure you
+were unsure of).
