@@ -3927,3 +3927,37 @@ one side only, or a false one before a footnote); prep reports any orphan.
 Old-style figures OCR as letters ("io" for page 10). The index is dropped;
 the Appendix cites 1958 page numbers, as the introduction says.
 COVER: Dürer, Melencolia I (1514).
+
+## beecher/ — Catharine E. Beecher & Harriet Beecher Stowe, The American Woman's Home (1869), RESTORED EDITION
+
+TEXT: Gutenberg #6598 (DP, 2004), voted with scan_diff.py --vote against two
+scans of the 1869 J. B. Ford first edition (Cornell cu31924032631412; UC
+americanwomansho00beecrich). 110 corrections, generated as UNIQUE PHRASES
+(the word plus its neighbours, vote_fixes.json) so each is asserted to
+match once: whore/where, broad/bread, he/be, land/kind, ease/case... and
+the period spellings both copies print (unvail, milch, unfrequently,
+potass, stupified, Nasturtion). 51 residuals are OCR noise. The scans'
+OCR is double-spaced, so a --start phrase must be ONE word ("INSCRIBED").
+FIGURES: GUTENBERG'S TEXT HAS NONE -- 76 "[Illustration: Fig. N]" markers
+in five spellings, runs of several in one paragraph, two markers opening a
+paragraph of text, one "[Image: Panel screens]" that is no picture (Fig. 5
+is the screen), and Figs. 3, 17, 27 with no marker at all (placed after
+the paragraph that first cites them). All 81 pictures (frontispiece,
+engraved title, two chapter headpieces, Figs. 1-77) cut from the UC
+500-ppi scan: six Sonnet readers marked boxes from page images
+(figure_prompt.txt -> figs/batch-N.txt), plates.py widens, masks printed
+text lines that lie MOSTLY inside the box (ABBYY line boxes can run
+through a drawing beside them -- Fig. 35 lost FIRE), trims to ink blobs
+and drops thin edge bands (a label or a stray text line). Readers' boxes
+were wrong twice (Fig. 51/52 too low); figs/ allows a per-figure padding.
+Fetch single pages from the jp2 zip by URL (archive.org/download/ID/
+ID_jp2.zip/ID_jp2%2FID_NNNN.jp2): the whole zip stalled at 4 MB.
+STRUCTURE: the Contents' chapter summaries are set at each chapter head,
+italic phrase by phrase (EMPH spans max 400 chars). The heading right after
+a summary is the chapter title repeated and is dropped, whatever its
+wording (the body titles differ from the Contents; Gutenberg reads "The
+Case of Servants"). Kept: dedication, Appeal, Glossary. Dropped: Index.
+INTRODUCTION: Catharine opposed women's suffrage -- said, with the book's
+own line that the Woman's Rights Conventions protest "absurd, unreasonable
+ideas" of womanhood. COVER: Lilly Martin Spencer, Kiss Me and You'll Kiss
+the 'Lasses (1856).

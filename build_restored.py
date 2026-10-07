@@ -167,6 +167,9 @@ BLURBS = {
               "1926 first edition, every cross-reference a link.",
     "sabotage": "The OSS's 1944 manual for occupied Europe: slow the enemy "
                 "with dull tools, wrong switches and endless committees.",
+    "beecher": "Catharine Beecher and Harriet Beecher Stowe's 1869 manual of "
+               "domestic science, from house plans and ventilation to cooking "
+               "and the sick room, with its illustrations restored.",
     "carson": "Rachel Carson's Conservation in Action booklets for the Fish "
               "and Wildlife Service: four wildlife refuges, and why wild "
               "creatures, like men, must have a place to live.",

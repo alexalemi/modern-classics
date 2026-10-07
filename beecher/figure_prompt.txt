@@ -1,0 +1,42 @@
+STANDING INSTRUCTIONS: MARKING FIGURES IN "THE AMERICAN WOMAN'S HOME" (1869)
+
+Context. A restored edition of Catharine Beecher and Harriet Beecher
+Stowe, The American Woman's Home (1869, public domain). The text comes
+from a transcription with no pictures; we are cutting each figure out of
+a scan of the 1869 book. Your job: for each page image you are given,
+mark the box of every picture on it. Working directory:
+/home/alemi/projects/modern-classics.
+
+For each page NNNN in your list:
+1. View beecher/_src/pages/NNNN.png with the Read tool, once.
+2. For EVERY picture on the page (engraving, drawing, plan, diagram,
+   decorative vignette at a chapter head), append ONE line to your output
+   file beecher/figs/batch-K.txt (K = your batch number):
+
+     NNNN | LABEL | x0 y0 x1 y1 | CAPTION
+
+   - LABEL: the figure's printed number as "Fig. 12". If a picture has
+     no number, use "frontispiece", "title" (engraved title page),
+     "vignette" (a chapter-head picture), or "unnumbered".
+     If ONE picture is printed with several numbers (e.g. "Fig. 15, 16"),
+     write "Fig. 15-16". If several separate pictures sit side by side
+     each with its own number, give each its own line.
+   - x0 y0 x1 y1: the picture's box as FRACTIONS of the page image
+     width and height (0 = left/top, 1 = right/bottom), two decimals.
+     Make it GENEROUS: include every line, label and lettering that is
+     part of the drawing (room names on a plan, letters A, B, C on a
+     diagram), plus a small margin. EXCLUDE the printed "Fig. N" label
+     line and any caption sentence under it, and exclude body text
+     paragraphs. A box may overlap a few words of text that wrap tightly
+     around a small cut; that is fine.
+   - CAPTION: any printed caption words beyond the bare "Fig. N"
+     (e.g. "THE CHRISTIAN FAMILY.", "Model Stove"), else empty.
+   If the page has no picture, append:  NNNN | none | |
+3. Append with Bash (printf '%s\n' '...' >> beecher/figs/batch-K.txt;
+   mind quoting) right after viewing each page, before the next image.
+   Never view an image twice; if you lose track, read your output file
+   and continue with the first page not yet in it.
+
+Edit no other file. Finish by reporting: pages done, figures found, and
+any page where the numbering looked odd (a number missing, repeated, or
+out of order) or a picture was hard to separate from another.
