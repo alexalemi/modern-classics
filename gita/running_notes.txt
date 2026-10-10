@@ -1,0 +1,199 @@
+THE BHAGAVAD GITA -- RUNNING NOTES (the shared consistency ledger)
+Every agent reads this. The ORCHESTRATOR updates it between batches from
+the agents' returned notes. Everything here is LOCKED once written.
+
+--------------------------------------------------------------------
+PENDING RULINGS (Alex). Until ruled, follow the RECOMMENDED line.
+--------------------------------------------------------------------
+- 13.0, the vulgate-only verse (Arjuna's question): NOT translated.
+- Form: PROSE throughout; the 55 long-metre verses carried by register.
+- Verse numbers: written as {N} markers in drafts/, stripped on the page.
+- Speaker tag for bhagavan: "Krishna said:".
+- 11.32 kalo 'smi: "I am Time" (the full line is drafted by file 010's
+  agent around the pinned words "the destroyer of worlds").
+- 9.32: the Sanskrit's order and ambiguity kept (text_analysis 9).
+
+--------------------------------------------------------------------
+FORM (text_analysis 3; check.py asserts all of it)
+--------------------------------------------------------------------
+- Write gita/drafts/NNN.txt. Line 1: the manifest title exactly. Line 2:
+  blank. Then prose paragraphs. check.py writes modern_chapters/NNN.txt.
+- A marker {N} where verse N begins; {N-M} only where one English sentence
+  cannot be cut between verses (at most five verses in a range). Every
+  verse once, in order.
+- Speaker tags: own paragraph, exactly "Krishna said:" / "Arjuna said:" /
+  "Sanjaya said:" / "Dhritarashtra said:", only where the critical edition
+  has "uvaca" (chapters/NNN.txt shows them), and the next paragraph opens
+  with that verse's marker. Speech the critical edition does not tag is
+  reported speech inside the narration, in double quotation marks.
+- Prose only: no tabs, no verse lines, no markup, no ALL-CAPS line, real
+  em dashes " — " never "--", never hard-wrap after a hyphen.
+
+--------------------------------------------------------------------
+LOCKED VOCABULARY (text_analysis 6 is the full table)
+--------------------------------------------------------------------
+  karma -> action / deeds / work (NEVER "karma"); karmaphala -> the fruit
+  of action; yoga kept (glossed in the sentence at 2.39), yogi; buddhi ->
+  understanding; manas -> mind; ahamkara -> ego; atman -> self (lowercase,
+  never "Self"); dehin -> the one who lives in the body; brahman -> Brahman
+  (glossed once); Brahma the creator god; Brahmin the class; dharma by
+  sense (own duty / sacred laws / what is right / a just war), "dharma"
+  itself where the sacred order is the subject (1.1, 4.7-8, 18.66), glossed
+  once; gunas glossed once, goodness / passion / darkness, "of goodness"
+  etc. (never sattvic); prakrti / purusa -> nature / spirit; purusottama ->
+  the Supreme Person; ksetra / ksetrajna -> the field / the knower of the
+  field; samnyasa -> renunciation, tyaga -> giving up (distinct); jnana /
+  vijnana -> knowledge / insight; bhakti -> devotion; moksa -> freedom;
+  samsara -> the round of birth and death; yajna -> sacrifice; tapas ->
+  austerity; dana -> giving; deva / asura / raksasa -> gods / demons /
+  fiends; rsi -> seers; maya -> illusion; varna -> class (never "caste");
+  ksatriya -> warrior (glossed once, 2.31); vaishyas, shudras glossed at
+  9.32; Om Tat Sat kept; NO "avatar" (not in the text).
+  Pronouns for Krishna: lowercase me / my / you. No "thee", no "thou".
+
+--------------------------------------------------------------------
+NAMES AND EPITHETS
+--------------------------------------------------------------------
+- Plain ASCII spellings: Dhritarashtra, Sanjaya, Duryodhana, Drona,
+  Bhishma, Karna, Kripa, Ashvatthaman, Vikarna, Somadatta, Yuyudhana,
+  Virata, Drupada, Dhrishtaketu, Chekitana, the king of Kashi, Purujit,
+  Kuntibhoja, Shaibya, Yudhamanyu, Uttamaujas, Subhadra's son, the sons of
+  Draupadi, Yudhishthira, Nakula, Sahadeva, Shikhandi, Dhrishtadyumna,
+  Satyaki, Jayadratha; conches Panchajanya, Devadatta, Paundra,
+  Anantavijaya, Sughosha, Manipushpaka; Arjuna's bow Gandiva; Kurukshetra;
+  the Kurus, the Pandavas.
+- Every vocative epithet for Arjuna (Partha, Kaunteya, Bharata,
+  Dhananjaya, Gudakesha, Parantapa, mighty-armed, best of the Kurus ...)
+  and for Krishna (Keshava, Madhava, Janardana, Madhusudana, Govinda,
+  Hrishikesha, Achyuta, Varshneya ...) resolves to "Arjuna" / "Krishna",
+  or to plain English where its meaning is in play ("Krishna, you who
+  killed the demon Madhu" at 2.4). check.py bans the bare forms and "O X".
+- Dhritarashtra addressed by Sanjaya: "my king".
+
+--------------------------------------------------------------------
+FAMOUS LINES -- LOCKED WORDING (pinned in must_contain.txt)
+--------------------------------------------------------------------
+  2.19  ... it does not kill, and it is not killed.
+  2.20  It is never born, and it never dies.
+  2.22  ... throws off worn-out clothes and puts on new ones ...
+  2.47  Your right is to action alone, never to its fruits.
+  2.48  Evenness of mind is called yoga.
+  2.50  Yoga is skill in action.
+  3.35  Better your own duty done imperfectly than another's duty done well.
+        (18.47 repeats it; use the same words there.)
+  4.8   ... age after age.
+  9.26  ... a leaf, a flower, a fruit, or water ...
+  11.12 ... the light of a thousand suns ...
+  11.32 ... the destroyer of worlds ... (RULED by Alex 2026-10-09: "I am Time, the destroyer of worlds")
+  18.66 ... take refuge in me alone ...
+  Write the sentence around the locked words; do not paste the locked
+  words into a sentence that then says less than the verse.
+
+--------------------------------------------------------------------
+CRIB WARNINGS
+--------------------------------------------------------------------
+- Besant's numbering is corrected to the critical edition's in
+  reference/; trust the [C.V] labels there, not her printed ones.
+- Besant 11.15-49 is her blank verse: use reference/010_telang.txt.
+- variants.txt lists where the critical edition (OUR text) and Besant's
+  vulgate read differently. Follow chapters/.
+- Besant's footnotes are Theosophical in places; they are glosses for the
+  orchestrator's convenience, not content to carry.
+
+--------------------------------------------------------------------
+RATIO
+--------------------------------------------------------------------
+check.py band PROVISIONAL 1.6-3.6 (English words per Sanskrit verse word,
+speaker tags excluded). Besant's crib runs 1.75-2.32 per chapter. File 000
+is the catalogue OUTLIER (Besant 1.77): derive the real band from 000 PLUS
+one argumentative chapter (002 or 004), and record it here.
+
+--------------------------------------------------------------------
+DECISIONS LOG
+--------------------------------------------------------------------
+- 2026-10-09 Setup. 18 files, one per chapter, 700 verses. prep.py asserts
+  the counts; 650/700 verses agree exactly with Besant's Devanagari.
+- 2026-10-09 Besant misprints two English verse numbers that Wikisource
+  did not mark (17.19 printed "20", 18.14 printed "15"); prep.NUM_FIXES
+  corrects each, asserted to fire once.
+
+--------------------------------------------------------------------
+FILE NOTES (appended by the orchestrator after each batch)
+--------------------------------------------------------------------
+
+ALEX'S RULINGS, 2026-10-09
+- 11.32: "I am Time, the destroyer of worlds" (pinned in must_contain.txt).
+- Defaults confirmed for the book: prose throughout; no verse numbers on the
+  page; speaker tags "Krishna said:" (never "The Lord said:").
+- KSHATRIYA is used as a word, introduced once at 2.31 ("a kshatriya,
+  someone born to the warrior class"), in line with Brahmin / vaishya /
+  shudra at 18.41.
+
+BATCH 0 (voice, chapters 1-2). Ratios: ch1 2.15, ch2 2.32 (1.21x Besant).
+check.py's band is now 1.9-3.1 (projected 2.1-2.8). The orchestrator fixed
+check.py: the BANNED sweep now runs per paragraph (a tag paragraph followed
+by a verse opening "You..." no longer fires), and 2.11 was restored to "You
+are grieving for people who need no grief". Calibrate on drafts/001.txt.
+
+VOICE (copy it)
+- Contractions in speech ("Don't give in", "I can't stand still"). Plain,
+  short sentences.
+- A TAGGED speech has no quotation marks. An untagged speech inside
+  narration takes double quotes, reopened at each paragraph.
+- At most one vocative per sentence. Drop repeated epithets rather than
+  turning all of them into "Krishna".
+- Sanjaya's vocatives to Dhritarashtra (bharata, mahipate, prithivipate,
+  paramtapa at 2.9) -> "my king". dhartarashtran from Sanjaya -> "your sons".
+- Fold a name into the narration where the verse gives only a title: "the
+  oldest of the Kurus, Bhishma, grandfather to both armies".
+- Keep an epithet only where its meaning works: 2.4 "Krishna, you who
+  killed the demon Madhu, you who destroy your enemies"; kapidhvaja -> "whose
+  banner bears the monkey"; purusharshabha -> "finest of men"; naramgava
+  -> "a bull among men".
+- The {N} marker stays glued to the next word, and a line never ends on a
+  marker.
+
+GLOSSES SPENT (do not repeat): dharma (1.1, "the sacred order that holds
+the world together"); kshatriya (2.31); unmanifest (2.25, "beyond the reach
+of the senses", lowercase); Sankhya (2.39, "the way of reasoned
+knowledge"; recurs at 3.3, 5.4-5, 13.24, 18.13); yoga (2.39, "the
+discipline that yokes the whole mind to its work"; the yoke/yoga pun runs
+on, 2.50 "So yoke yourself to yoga"); the gunas (2.45, "the three strands
+that all of nature is woven from"); ego / ahamkara (2.71, "the sense of
+'I'"); Brahman (2.72, "the ultimate reality behind everything");
+brahmanirvana (2.72, "the nirvana of Brahman, its perfect peace").
+
+LOCKED TERMS (beyond text_analysis)
+  prajna -> wisdom (kept apart from buddhi -> understanding)
+  sthitaprajna -> a person of steady wisdom | sthitadhi -> a person of steady mind
+  REFRAIN prajna pratishthita -> "his wisdom stands firm" (identical every time)
+  samadhi -> deep concentration | bhavana -> inner focus | prasada -> serenity
+  vishaya / indriyartha -> the things of the senses
+  matrasparsha -> when your senses meet the things of the world
+  dvandva -> the pairs of opposites | yogakshema -> getting things and keeping them
+  papa -> sin | kashmala -> faintness of heart | klaibya -> unmanliness
+  svarga -> heaven | kripana (2.49) -> to be pitied (echoes Arjuna's pity)
+  dehin -> the one who lives in the body | atman -> the self | atmavan -> self-possessed
+  yukta / ayukta -> disciplined / the undisciplined | muni -> sage
+  buddhiyoga -> the discipline of understanding
+  dharmya yuddha -> a just war | svadharma -> your own duty
+  kuladharma -> the sacred laws of the family | adharma -> lawlessness
+  varnasamkara -> the mixing of the classes | sattva (2.45) -> goodness
+  matparah (2.61) -> with me as his highest goal
+
+
+ALL 18 CHAPTERS DRAFTED, 2026-10-09; CONSISTENCY PASS DONE. check.py: 18/18 clean,
+ratios 2.15-2.65. verify.py gita --min-ratio 1.7 --max-ratio 2.8 passes (9502 ->
+20300 words, overall 2.14). The pass changed 16 files: duplicate glosses
+stripped (first gloss kept); the yoga compounds unified ("the yoga of
+action / knowledge / meditation / practice / devotion"; buddhiyoga stays
+"the discipline of understanding"); yati -> "those who strive", tapasvin ->
+"ascetics"; astikya -> "belief in God"; kutastha -> "unchanging" (6.8, 12.3,
+15.16); "Krishna, Vasudeva's son" (7.19, 10.37, 11.50, 18.74); 18.65 =
+9.34; "God of gods", "Lord of all beings", "Time" (capital T, every kala);
+madbhava -> "my own state of being"; svadhyaya -> study / recitation of
+the Vedas. Backups: scratchpad/drafts_orig/.
+GLOSSES SPENT (added): Prajapati (3.10); yakshas (10.23, "the spirits of the
+wild"); Manu (4.1); Vayu (11.39).
+OPEN (minor): brahmacharya has three context renderings (6.14, 8.11, 17.14);
+6.37 ayati -> "does not master himself" (kept).

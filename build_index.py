@@ -57,6 +57,12 @@ BLURBS = {
         'Twice a week for two years the greatest mathematician of his age wrote to a fifteen-year-old princess about sound, light, gravity, the soul, logic, lightning and telescopes. All 234 letters, from the French.',
     'fontenelle':
         'Six evenings in a moonlit garden, a young philosopher and a teasing Marquise, and the whole new astronomy: the first great book of popular science, from 1686.',
+    'malory':
+        'The whole of Arthur, from the sword in the stone to the last battle, written by a knight in prison in 1469. All twenty-one Books, Tristram included.',
+    'gita':
+        'A warrior drops his bow rather than kill his own family, and his charioteer, who is God, answers him. All seven hundred verses, from the Sanskrit.',
+    'zarathustra':
+        'A prophet comes down from his mountain to say that God is dead and man is something to be overcome. From the German, without the King James costume.',
     'turgot':
         'How money, capital and interest grow out of a village of farmers, in a hundred short steps, written for two Chinese students ten years before Adam Smith.',
     'hojoki':

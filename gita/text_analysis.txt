@@ -1,0 +1,450 @@
+THE BHAGAVAD GITA -- TEXT ANALYSIS AND TRANSLATION STRATEGY
+(setup, 2026-10-09. Sections marked ALEX are decisions proposed, not yet ruled.)
+
+======================================================================
+1. THE SOURCE, AND WHAT IS TRANSLATED
+======================================================================
+
+THE TEXT TRANSLATED is the Sanskrit of the CRITICAL EDITION: the Bhagavad
+Gita as it stands in the Bhandarkar Oriental Research Institute's
+Mahabharata (Bhishma Parva, adhyayas 23-40), in the electronic text entered
+by Muneo Tokunaga et al. and revised by John Smith (Cambridge), served by
+GRETIL as bhgce__u.htm. IAST transliteration, one half-verse a line, every
+line tagged with its Gita and Mahabharata number. 700 verses, 18 chapters,
+counts 47 72 43 42 29 47 30 28 34 42 55 20 34 27 20 24 28 78 -- the standard
+count, which prep.py hard-codes and asserts.
+GRETIL's notice: "for reference purposes only; copyright and terms of usage
+as for source file." What this edition publishes is a new English
+translation of an ancient text; the Sanskrit itself is not reproduced on
+the page.
+
+THE SECOND SANSKRIT WITNESS is the Devanagari printed verse by verse in
+Besant's 1922 edition (the vulgate, the text of Shankara's commentary and
+of nearly every printed Gita). prep.py transliterates it and compares every
+verse to the critical edition with spelling, sandhi spacing and nasal
+spelling normalised away: 650 of 700 verses agree EXACTLY, and the 50 that
+differ (variants.txt) are almost all single-letter orthography (klaibya /
+klaivya, varttamana / vartamana). Two independent readings agreeing on 650
+verses, in order, is the evidence that the parse is complete and right.
+Real readings that differ: 1.28 (plural/singular "kinsmen"), 1.37
+(sabandhavan / svabandhavan), 7.11, 12.14, 13.17. FOLLOW THE CRITICAL
+EDITION; where Besant's English follows the other reading the crib is
+wrong for this source.
+
+THE ONE STRUCTURAL DIFFERENCE: the vulgate's chapter 13 opens with a verse
+the critical edition omits -- Arjuna asking about "nature and spirit, the
+field and the knower of the field, knowledge and what is to be known".
+Besant prints it as 13.1, so her chapter 13 runs to 35 and every number is
+one higher than the critical edition's. prep.py corrects her numbering
+(asserting that her 13.2 transliterates to the CE's 13.1) and sets the
+extra verse at the top of reference/012.txt as "13.0 -- VULGATE ONLY". ALEX:
+include it or not? Recommendation: NOT in the body (it is not in the text
+we translate, and the standard numbering every reader cites -- 13.1 "This
+body is called the field" -- is the critical edition's), and say in the
+editor's introduction that most printed Gitas have one more verse here.
+
+THE COLOPHONS. The vulgate closes each chapter "Thus in the Upanishad of the
+glorious Bhagavad Gita ... the chapter called The Yoga of ..."; the critical
+edition does not print them, being later than the poem. They are dropped
+from the body. They are, however, where the eighteen traditional chapter
+NAMES come from, and the headings are English renderings of them (section 7).
+
+THE CRIB (English): Annie Besant, The Bhagavad-Gita, 4th edition, G. A.
+Natesan, Madras, 1922 -- Wikisource's proofread transcription, verse by
+verse, with her footnotes, in reference/NNN.txt. She died in 1933; the
+edition is public domain in the US (Wikisource: PD-old / PD-US). This is
+NOT the 1905 Besant & Bhagavan Das word-by-word edition the brief hoped
+for, which was not found as a clean text. Besant is literal enough to be a
+crib and is clean and verse-aligned, which is what the method needs; she is
+also a THEOSOPHIST, and her English is a costume (section 4).
+In chapter 11, verses 15-49 (the hymn, in the long metre), Besant sets her
+own BLANK VERSE, padded to the line. For that stretch reference/010_telang.txt
+gives Telang's literal prose for the whole chapter.
+
+TELANG (Sacred Books of the East 8, 1882; 2nd ed. 1898) was the brief's
+first choice and is the most literal public-domain English. Both Archive.org
+OCRs were fetched (_src/telang_1882_djvu.txt, _src/telang_1898_djvu.txt).
+They are too damaged to be the per-verse crib: every diacritic is mangled
+("Arguna", "Pazdavas", "Dhvvztardsh/ra"), footnotes are interleaved with the
+text, the verse numbers survive only in running heads, and the chapter
+headings for II-VIII, XII, XVII and XVIII are unrecognisable. Chapter 11 is
+cut out by hand between asserted anchors (above); the rest is the
+orchestrator's reference for cruxes, not given to agents.
+
+SOURCE IDS (all fetched 2026-10-09, raw copies in gita/_src/):
+  Sanskrit  https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/2_epic/mbh/ext/bhgce__u.htm
+  Besant    https://en.wikisource.org/wiki/Bhagavad-Gita_(Besant_4th) (Discourse_1..18,
+            fetched with action=render); scan Index:"Bhagavad Gita - Annie Besant
+            4th edition.djvu"; PD-old / PD-US (d. 1933)
+  Telang    archive.org/details/bhagavadgtwithsa0008unse (2nd ed. 1898, used for
+            ch. 11) and archive.org/details/bhagavadgtwi00tela (1st ed. 1882,
+            Princeton, NOT_IN_COPYRIGHT); *_djvu.txt OCR
+  Arnold    https://www.gutenberg.org/ebooks/2388
+  Not used  GRETIL sa_bhagavadgItA-4comm (CC BY-NC-SA); sacred-texts.com
+            (403 to scripts); Besant & Bhagavan Das 1905 (no clean text found).
+
+ARNOLD (Gutenberg #2388, The Song Celestial, 1885) is a rhymed and blank
+verse paraphrase. Fetched for the record; not a crib.
+
+======================================================================
+2. WHAT THE BOOK IS
+======================================================================
+
+Eighteen chapters lifted out of the sixth book of the Mahabharata, the
+world's longest poem. Two branches of one royal family -- the five sons of
+Pandu (the Pandavas) and the hundred sons of the blind king Dhritarashtra
+(the Kauravas, led by Duryodhana) -- have brought their armies to the plain
+of Kurukshetra. The frame is double: the blind king asks his minister
+Sanjaya, who has been given the power to see the distant battle, what is
+happening; Sanjaya reports what he sees and hears. What he hears is a
+conversation in a chariot between the two armies. Arjuna, the Pandavas'
+greatest archer, sees his grandfather, his teacher, his cousins and his
+friends lined up to be killed, puts down his bow and refuses to fight. His
+charioteer Krishna -- his cousin and friend, and, as the poem reveals, God
+-- answers him for seventeen chapters.
+
+The argument, in order: grief rests on a mistake about what dies (2); you
+cannot stop acting, so act without clinging to the result (2-3); action
+offered as a sacrifice does not bind (3-4); renunciation means giving up
+attachment, not deeds (5); the disciplined, meditating mind (6); God as the
+source of everything, both higher and lower nature (7-9); God's glories,
+listed (10); God SEEN, as everything that exists and everything that
+destroys (11); devotion as the way open to anyone (12); the body as a field
+and the self as its knower (13); the three strands of nature (14); the
+world-tree and the Supreme Person (15); the divine and the demonic in
+people (16); three kinds of faith, food, sacrifice, austerity and giving
+(17); renunciation done right, duty by nature, and the last word: give up
+everything and come to me (18). Arjuna picks up his bow.
+
+======================================================================
+3. FORM
+======================================================================
+
+PROSE, paragraphed. The metre was measured, not assumed (prep.py counts
+syllables per half-verse): 645 verses are the 16-syllable sloka, the plain
+narrative metre of the whole epic; 55 are the 22-syllable tristubh --
+2.5-8, 2.20, 2.22, 2.29, 2.70, 8.9-11, 8.28, 9.20-21, 11.15-50 (the whole
+hymn), 15.2-5, 15.15. The long metre marks heightened moments, but it is
+not a different KIND of speech (the sung/spoken split of the drama shelf):
+the same speakers use both, mid-speech. So it is carried by REGISTER, not
+layout: the hymn of chapter 11 is the book's highest pitch and should read
+that way. chapters/NNN.txt tags each long-metre verse "(long metre)" so the
+translator knows. ALEX: the alternative is prose for the sloka and
+tab-indented verse for the 55 tristubh (the sophocles pattern).
+Recommendation: prose throughout -- the Gita is a dialogue whose reader
+wants to follow an argument (the lucretius ruling), and a verse block
+dropping into a speech mid-argument reads as a change of speaker it is not.
+
+VERSE NUMBERS. The Gita is cited by verse ("Gita 2.47") more than almost
+any book in the collection. The translation is written with a verse marker
+-- {47} -- where each verse begins, in gita/drafts/NNN.txt; check.py proves
+all 700 are there, once each, in order, and writes modern_chapters/NNN.txt
+with the markers removed. This is the coverage check (a dropped catalogue
+verse moves the word ratio by under one percent) and it keeps the citation
+data. ALEX: ship without visible numbers (the lucretius/ovid precedent,
+recommended for the reading page), or render them small in the margin,
+which would need a renderer change in assemble.py and build_ebook.py; the
+drafts make either possible without retranslating anything.
+
+SPEAKERS. The critical edition marks 55 changes of speaker with "X said"
+(uvaca). Each becomes its own paragraph, exactly "Krishna said:", "Arjuna
+said:", "Sanjaya said:", "Dhritarashtra said:", in the critical edition's
+places and nowhere else (check.py asserts sequence and position).
+"bhagavan" is a title, "the Blessed One"; the tag uses the plain name a
+fourteen-year-old can follow (ALEX may prefer "The Lord said:"). The vulgate
+adds four tags the critical edition lacks, all in chapter 1 (Besant prints
+"Arjuna said" at 1.21 and 1.28 and "Sanjaya said" at 1.24 and 1.47; checked
+by script against her text): where the critical edition has none, the speech sits inside Sanjaya's
+narration as reported speech in quotation marks ("... and Arjuna said to
+Krishna, 'Bring my chariot out between the two armies ...'"). Arjuna's
+whole lament at 1.28-46 is therefore Sanjaya quoting him, which is what
+the Sanskrit says, and it makes chapter 1 the story it is.
+
+======================================================================
+4. STYLE, TONE AND VOICE
+======================================================================
+
+The Sanskrit is plain, clear and spare -- the sloka is the epic's working
+metre, and the Gita's diction is simple beside the court poetry that came
+later. Its difficulty is not the sentences but the ideas, the technical
+words, and the density of address and epithet. A modern retelling should
+therefore be EASY TO READ AND HARD TO FORGET: short clear sentences, a
+teacher talking to a friend in a crisis.
+
+Three voices.
+- KRISHNA: a teacher with all the time in the world and none to waste;
+  patient, sometimes stern ("Where did this weakness come from, at a moment
+  like this?" 2.2), sometimes amused (he smiles before he starts, 2.10),
+  and, from chapter 7 on, speaking as God in the first person -- "I am the
+  taste in water" -- with complete calm. He repeats himself ON PURPOSE:
+  repetition is how this book teaches. Keep every repetition.
+- ARJUNA: a warrior, articulate, physically shaken (1.29-30: his limbs
+  give way, his mouth is dry, his bow slips from his hand), sharp when
+  confused ("You say one thing and then another," 3.2), awed and
+  terrified in chapter 11, and apologetic for having treated God as a
+  friend (11.41-44).
+- SANJAYA: the reporter, a little breathless, and at the very end openly
+  moved (18.74-78).
+
+READABILITY IS THE DELIVERABLE (Alex on the Dogen drafts). Every sentence
+one a bright fourteen-year-old could read aloud and follow, with every
+clause of the Sanskrit present. Where the text leans on something its
+hearers knew, tell it inside the sentence -- never a footnote: "Bhishma,
+the old commander, grandfather to both sides"; "the conch Panchajanya,
+made from the shell of a demon Krishna once killed" is TOO MUCH (not in
+the verse); "his conch, Panchajanya" is enough. Fold in what the sentence
+needs to be understood and nothing it does not.
+
+WHOSE ARCHAISM IS IT? The Sanskrit has none: it uses the ordinary second
+person, and Krishna and Arjuna are friends. "Thou", "thy", "the Blessed
+Lord", "the SELF", "the Unmanifested", the capital "Reason" for buddhi and
+reverential capitals on Krishna's pronouns ("Me", "My") are BESANT'S
+costume -- Victorian scripture-English and Theosophical capitals -- and none
+of it is in the Sanskrit (Devanagari has no capital letters). All of it
+goes, and check.py sweeps for it with no exemption list. Lowercase "me",
+"my", "you" for Krishna throughout; "God" capitalised only as the noun.
+
+======================================================================
+5. CHALLENGES
+======================================================================
+
+1. TECHNICAL VOCABULARY -- THE THREE OBSTRUCTION CLASSES AT ONCE. The Gita is
+   a philosophical text and its crib is a philosopher's calque (the
+   epictetus lesson: the archaism measure cannot see this). Worse, two of
+   its words are English words that now mean something else (FALSE FRIENDS):
+   - "karma" in the Gita means ACTION, deeds, work -- the thing you do. In
+     modern English it means cosmic payback. Never write "karma".
+   - "yoga" in the Gita is a discipline of mind and action, the yoking of
+     yourself to a purpose; modern English means a class with mats. Keep
+     the word -- the book's every chapter is named "the yoga of ..." and the
+     word is its subject -- but gloss it in the sentence at its first
+     working use (2.39) and keep it from meaning exercise.
+   Locked list: section 6 and running_notes.txt.
+
+2. EPITHETS AND VOCATIVES. Arjuna is addressed by a dozen names (Partha,
+   Kaunteya, Bharata, Dhananjaya, Gudakesha, Parantapa, "mighty-armed",
+   "best of the Kurus" ...), Krishna by a dozen more (Keshava, Madhava,
+   Janardana, Madhusudana, Govinda, Hrishikesha, Achyuta, Varshneya ...).
+   Many fill out the metre. Carried bare they are the single biggest
+   obstacle to a new reader, who cannot tell they are all one person.
+   RULE: resolve every one to "Arjuna" / "Krishna", or to plain English
+   where the meaning is doing work -- "Madhusudana", "slayer of the demon
+   Madhu", when Arjuna asks the killer of demons how he can kill his own
+   teachers (2.4); "you who make your enemies tremble" when Krishna is
+   shaming a warrior out of weakness (2.3). Not every vocative needs a
+   name in English, but keep the address so the dialogue still sounds
+   like two people talking. Dhritarashtra is "my king".
+
+3. CATALOGUES. Chapter 1's roll-call of warriors and conches, chapter 10's
+   glories ("of the Adityas I am Vishnu; of lights, the shining sun"),
+   chapter 11's gods and the warriors going into the mouths. NEVER
+   SUMMARISE A LIST: every name stays (check.py checks the names against
+   the Sanskrit). Make each name intelligible in a few words where needed
+   ("Bhrigu, greatest of the ancient seers"; "Ucchaihshravas, the horse
+   that rose from the ocean when the gods churned it for the nectar of
+   immortality" -- that one does need its story).
+
+4. ENUMERATIONS AND DEFINITIONS (8.1-4, 13.5-6, 18.13-15): Arjuna asks
+   what the technical terms MEAN (8.1: "What is Brahman? What is the
+   adhyatma? What is action?"). Where the question is about the word,
+   keep the word and give its meaning in the answer; elsewhere translate.
+
+5. DOUBLE MEANINGS THE ARGUMENT USES. 2.47's "fruit" is both result and
+   reward -- keep "fruit", it is plain English and the metaphor runs all
+   book long. Kurukshetra is "the field of the Kurus" and in 1.1 "the field
+   of dharma": the book opens on a pun that the whole poem unpacks; fold
+   both in. kala (11.32) is both "time" and "death" (ALEX, section 8).
+
+======================================================================
+6. LOCKED VOCABULARY (copied into running_notes.txt; caps spent)
+======================================================================
+
+  karma, karman          action, deeds, work. NEVER "karma".
+  karmaphala             the fruit(s) of action
+  karmayoga              the discipline of action / the way of action
+  yoga                   yoga (kept; glossed in the sentence at 2.39);
+                         yogin -> yogi; yukta -> disciplined, steady
+  buddhi                 understanding (never "Reason"); buddhiyoga ->
+                         the discipline of understanding
+  manas                  mind
+  ahamkara               ego (the sense of "I")
+  atman                  self, lowercase, never "Self"; reflexive uses are
+                         plain pronouns ("control yourself")
+  dehin, saririn         the one who lives in the body / the embodied self
+  paramatman             the supreme self
+  brahman                Brahman (glossed once: the ultimate reality behind
+                         everything); never "the Eternal", never "God"
+  Brahma                 Brahma, the creator god (8.17, 11.15) -- keep the
+                         two apart, and Brahmin (brahmana) for the class
+  brahmanirvana          the nirvana of Brahman (2.72, 5.24-26)
+  dharma                 by sense: one's own duty (svadharma), the family's
+                         sacred laws (kuladharma, 1.40-44), what is right /
+                         righteousness (4.7-8), a just war (dharmya yuddha,
+                         2.31-33); "dharma" kept, glossed once, where the
+                         sacred order itself is the subject (1.1, 4.7-8,
+                         18.66). adharma -> lawlessness / wrong
+  guna                   the three gunas -- glossed once, "the three strands
+                         nature is woven from"; sattva -> goodness, rajas ->
+                         passion, tamas -> darkness. Adjectives: "of
+                         goodness", "of passion", "of darkness"; never
+                         sattvic/rajasic/tamasic
+  prakrti / purusa       nature / spirit (the pair in 13); purusottama ->
+                         the Supreme Person
+  ksetra / ksetrajna     the field / the knower of the field
+  samnyasa / tyaga       renunciation / giving up (18.1-2 distinguishes them;
+                         keep them distinct everywhere)
+  jnana / vijnana        knowledge / insight
+  bhakti                 devotion; bhakta -> one who is devoted to me
+  moksa                  freedom; mukta -> free
+  samsara                the round of birth and death
+  yajna                  sacrifice; tapas -> austerity; dana -> giving
+  veda                   the Vedas
+  deva / asura           gods / demons; raksasa -> fiends
+  rsi / muni             seers / sage
+  maya                   illusion ("this divine illusion of mine, made of
+                         the gunas," 7.14)
+  varna                  class(es), never "caste"; caturvarnya -> the four
+                         classes; varnasamkara -> the mixing of the classes
+  ksatriya               a warrior / the warrior class (glossed once, 2.31)
+  vaisya, sudra          vaishyas, shudras -- glossed once in the sentence
+                         where first met (9.32): farmers, herders and
+                         traders; laborers who serve the other classes
+  Om, Tat, Sat           kept (17.23-27), with their meaning in the sentence
+  avatara                NOT IN THE TEXT. 4.6-8 say "I bring myself into
+                         being". Never import "avatar".
+  isvara                 the Lord
+Spelling of names: plain ASCII, sh for s/s, ch for c, ri for r, no
+diacritics: Dhritarashtra, Sanjaya, Duryodhana, Bhishma, Drona, Kripa,
+Ashvatthaman, Yudhishthira, Dhrishtadyumna, Shikhandi, Kurukshetra,
+Panchajanya, Gandiva, Brihaspati, Ucchaihshravas, Vishnu, Shiva.
+
+======================================================================
+7. HEADINGS
+======================================================================
+
+One file per chapter, "Chapter N: Title" (assemble.CHAP_LINE), no part
+dividers -- the poem has none (the traditional three groups of six are a
+commentator's). Titles render the vulgate colophon names:
+   1 Arjuna's Despair                         arjuna-visada
+   2 Understanding and Action                 sankhya
+   3 The Way of Action                        karma
+   4 Knowledge and the Giving Up of Action    jnana-karma-samnyasa
+   5 The Way of Renunciation                  karma-samnyasa
+   6 The Way of Meditation                    dhyana / atma-samyama
+   7 Knowledge and Insight                    jnana-vijnana
+   8 The Imperishable                         aksara-brahma
+   9 The Royal Secret                         raja-vidya-raja-guhya
+  10 The Divine Glories                       vibhuti
+  11 The Vision of the Universal Form         visvarupa-darsana
+  12 The Way of Devotion                      bhakti
+  13 The Field and the Knower of the Field    ksetra-ksetrajna-vibhaga
+  14 The Three Gunas                          gunatraya-vibhaga
+  15 The Supreme Person                       purusottama
+  16 The Divine and the Demonic               daivasura-sampad-vibhaga
+  17 The Three Kinds of Faith                 sraddhatraya-vibhaga
+  18 Freedom Through Renunciation             moksa-samnyasa
+
+======================================================================
+8. FAMOUS PASSAGES (must survive; wording LOCKED in running_notes.txt
+   and pinned in must_contain.txt)
+======================================================================
+
+  2.19  "it does not kill, and it is not killed"
+  2.20  "It is never born, and it never dies."
+  2.22  worn-out clothes: "throws off worn-out clothes and puts on new ones"
+  2.47  "Your right is to action alone, never to its fruits."
+  2.48  "Evenness of mind is called yoga."
+  2.50  "Yoga is skill in action."
+  3.35  "Better your own duty done imperfectly than another's duty done well."
+  4.7-8 "age after age"
+  9.26  "a leaf, a flower, a fruit, or water"
+  11.12 "the light of a thousand suns"
+  11.32 ALEX. kalo 'smi: "I am Time" -- the word means time, and time as the
+        destroyer, so death. Oppenheimer's "Now I am become Death, the
+        destroyer of worlds" goes back to the "Death" reading (Telang
+        already has "I am death, the destroyer of the worlds"); Besant has
+        "Time am I". There is no "now" and no "become" in the Sanskrit.
+        Options: (a) "I am Time, the destroyer of worlds" -- literal, and
+        recommended, folding the double sense into the sentence ("I am
+        Time, grown to my full strength, the destroyer of worlds, and I
+        have come to sweep these people away"); (b) "I am Death, the
+        destroyer of worlds" -- the line readers search for. The pin is
+        "the destroyer of worlds", which both satisfy; the full lock waits
+        for the ruling.
+  18.66 "take refuge in me alone"
+  PINS ARE PRESCRIPTIVE HERE, and provisional: they are the ledger's locked
+  wording, so the translation is written to them. Re-check each against the
+  finished file (the epictetus/lucretius rule: a pin from memory may demand
+  a word the author did not write), and loosen a pin to the part the
+  Sanskrit guarantees rather than reword a correct sentence.
+
+======================================================================
+9. SENSITIVE CONTENT -- A SACRED TEXT, AND A WAR
+======================================================================
+
+This is scripture for over a billion people, and its setting is a god
+urging a man to kill his relatives in battle. Scholarly modernization of a
+canonical text: a measured register; KRISHNA'S ARGUMENT AS HIS ARGUMENT,
+complete and in his terms; ARJUNA'S OBJECTIONS AS STRONG AS HE MAKES THEM;
+no editorialising, no softening, no sensationalising, and NO NOTE (the
+Verne rule: a note is the wink the rule forbids). Neither devotional nor
+skeptical -- the translator is a scholar who has loved this book all his
+life and does not need to defend it.
+Passages to render flat and entire:
+- The argument to fight: 2.31-38 (a warrior's duty; a just war is a door
+  to heaven; dishonour is worse than death; "kill and win the earth, or die
+  and win heaven"); 3.30; 11.32-34 ("they are already slain by me -- be
+  only the instrument"); 18.59-60.
+- 2.19-21: the self "does not kill and is not killed" -- the metaphysics
+  as metaphysics. It has been quoted to justify violence; that is not the
+  translator's business. Render it exactly.
+- 1.36-44: Arjuna's case -- killing the family destroys its sacred laws;
+  lawlessness corrupts the women of the family; the classes mix; the
+  ancestors fall, deprived of their offerings of rice and water. Fold the
+  ancestor rites into the sentence. It is Arjuna's argument and he means
+  it; keep "corrupted" and keep the logic chain exactly.
+- 4.13 and 18.41-48: the four classes created by God according to qualities
+  and work, the duties of each, and "better your own duty done imperfectly". Say
+  "class", not "caste"; no hedging.
+- 9.32: "even those born of sinful wombs -- women, vaishyas, and shudras --
+  reach the highest goal". The verse's point is INCLUSION and its premise
+  is a hierarchy; the syntax lets the three be read as examples of "those
+  born of sinful wombs" or as further categories, and commentators divide.
+  Keep the Sanskrit's order and its ambiguity; do not resolve it either
+  way. ALEX may want to rule on this one in advance.
+- 16.6-20: the demonic people, thrown "again and again into demonic wombs".
+- 18.67: do not tell this to anyone without discipline or devotion.
+- Krishna's claim to be God, the source and end of all: stated as he
+  states it. No "as he believed", no "the poem claims".
+
+======================================================================
+10. RATIO
+======================================================================
+
+8,474 Sanskrit words in the verse lines -- but a Sanskrit "word" here is a
+sandhi-joined compound, so the English runs far above the Latin's 1.7.
+Besant's literal English is 16,677 words, 1.97 overall and 1.75-2.32 per
+chapter; chapter 1, with its catalogue of names, is the lowest. A readable
+retelling resolves epithets (shorter), folds in allusions and unpacks
+compounds (longer), and should land ABOVE the crib: expect about 2.3-2.9,
+i.e. ~19,000-25,000 English words for the whole book. check.py's band
+(English words, speaker tags excluded, per Sanskrit verse word) is set
+PROVISIONALLY at 1.6-3.6 (the floor allows for chapter 1, a catalogue) and
+is re-derived from file 000 plus one argumentative chapter (the dogen rule:
+the predicted band for kanbun was wrong by half). verify.py counts the
+chapter file whole (headings, tags and verse numbers included; 9,502
+"words"), so its ratio runs about 0.89x check.py's: provisional
+`python3 verify.py gita --min-ratio 1.6 --max-ratio 3.3`, re-derived with
+the other.
+
+======================================================================
+11. PRECEDENTS USED
+======================================================================
+
+dogen/ and hojoki/ (readability correction; allusions folded in; record
+where you looked); lucretius/ and ovid/ (verse as prose; per-file crib;
+pins from the finished text); sophocles/euripides (form derived from the
+source and checked; speaker parity as THE decisive check; a short line the
+renderer would set as a heading); epictetus/ (technical calque; checks that
+exit nonzero and mirror the renderer); nights/ and augustine/ (whose
+archaism -- the translator's costume goes).

@@ -3997,3 +3997,66 @@ Unnumbered rules and ornaments dropped; rabbit tailpieces kept.
 STRUCTURE: Dedication, Introduction, Lessons 20-33, Au Revoir. Long
 italic patter is split sentence by sentence (EMPH 400-char limit).
 COVER: Kellar's Levitation poster (Strobridge Litho, 1894).
+
+## malory/ — Sir Thomas Malory, Le Morte d'Arthur (1485), MODERNIZATION of the English
+
+SOURCE: Standard Ebooks (Pollard's 1900 text of Caxton, spelling already
+modernised), with Gutenberg #1251/1252 as a second witness. 505 files: Caxton's
+preface (000) plus his 504 printed chapters, one per file (largest 1,404
+words, so no splits). Caxton's preface claims 507 chapters; the three-chapter
+gap is his own numbering (malory/check.py allows exactly those). Headings are
+Caxton's rubrics, modernised, as "Chapter N: ..." under word-form Book
+dividers. ALEX: the FULL run, Tristram included, translated in the order I-VII,
+XI-XXI, VIII-X. 345,262 -> 353,732 words, ratio 1.02 (verify band 0.85-1.3).
+A MODERNIZATION, so the bunyan precedent applies: the work is false friends
+("worship" = honour, "wood" = mad, "quest" = inquest, "bawdy" = dirty), not
+archaism. running_notes.txt holds about 400 locked renderings across seven
+rounds. Seam fixes the orchestrator made between rounds, all of the same
+kind (two parallel agents, two choices): duplicate glosses (hauberk, samite,
+the Knight of the Cart); place names (a recognisable place takes its modern
+name: Burgundy, Pavia); "fountain"/"well" -> "spring" everywhere, headings
+included; one spelling per person (Lucan, Bragwaine, Durnore, Glatisant,
+Bruin le Noire, Alice la Beale Pilgrim, Clarrus of Clermont). Pronouns for
+God take reverential capitals. Caxton misprints with a clear sense are
+rendered by sense, without comment. COVER: N. C. Wyeth, Arthur taking up
+Excalibur, from The Boy's King Arthur (1917).
+
+## gita/ — The Bhagavad Gita, from the Sanskrit
+
+SOURCE: GRETIL's typing of the Bhandarkar critical edition (Mahabharata,
+Bhishma Parva 23-40), 700 verses; Besant 1922 (Wikisource) is the per-verse
+crib, plus Telang's 1882 prose for chapter 11 (Besant versifies it). prep.py
+votes Besant's Devanagari against the critical edition (650/700 identical;
+variants.txt lists the rest). AGENTS WRITE gita/drafts/NNN.txt WITH {N}
+VERSE MARKERS; check.py proves all 700 verses are present once and in order,
+checks the 55 speaker tags against the critical edition, and only then writes
+modern_chapters/. Never edit modern_chapters/ by hand. Ratio 2.14 English
+words per Sanskrit word (verify band 1.7-2.8). ALEX: 11.32 = "I am Time, the
+destroyer of worlds". Prose throughout; no verse numbers on the page; dharma,
+yoga, Brahman and the gunas kept and glossed once; "kshatriya" introduced at
+2.31; 9.32 keeps the Sanskrit's ambiguity. A consistency pass after the
+parallel batches fixed 30 seams (backups in the session scratchpad). check.py
+originally flattened the whole file before its sweep, so a tag paragraph
+followed by "You..." fired as a mid-sentence capital pronoun; it now sweeps
+per paragraph. COVER: Krishna and Arjuna in the chariot, album painting,
+c. 1830 (British Museum).
+
+## zarathustra/ — Friedrich Nietzsche, Thus Spoke Zarathustra (1883-85), from the German
+
+SOURCE: Gutenberg #7205 (an OCR text, with 40 line-pinned fixes in prep.py),
+voted against zeno.org's Schlecta text; Common's 1909 English (Standard
+Ebooks) is the crib for sense only. 85 files, one discourse per file, plus
+three epigraph files; "On Old and New Tablets" is split at XVII. Ratio 1.17
+(band 0.95-1.45). The archaism is COMMON'S, not Nietzsche's: thou/ye/spake
+are banned by check.py. The Bible parody is carried by structure (refrains,
+parables, beatitudes), never by vocabulary. Locked: overman; go under / going
+over; the last man; will to power; the eternal recurrence; serpent (never
+snake); donkey, "Yeah-aw" (I-A = Ja); Lust -> joy (higher sense) / pleasure;
+Pobel -> mob vs Gesindel -> rabble; bose / schlecht -> evil / bad. The
+Midnight Song is a rhymed draft locked at setup (062 III, and 083 in its own
+German layout). The epigraphs quote earlier discourses verbatim (023 <- 022,
+046 <- 007, 064 <- 026). ORDERING TRAP: the orchestrator merged the Part Two
+notes before 032-035 reported, then patched the echo into the 062 agent by
+message. Merge only after every agent in a Part reports. COVER: Hodler, Lake
+Silvaplana in Autumn (1907): the lake where Nietzsche had the eternal
+recurrence.

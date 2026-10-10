@@ -1,0 +1,382 @@
+THUS SPOKE ZARATHUSTRA -- TEXT ANALYSIS AND TRANSLATION STRATEGY
+Friedrich Nietzsche, Also sprach Zarathustra: Ein Buch für Alle und Keinen
+(Parts One and Two 1883, Part Three 1884, Part Four printed privately in
+forty-odd copies in 1885). Translated FROM THE GERMAN (Gutenberg #7205),
+with Thomas Common's 1909 English (Standard Ebooks) as a crib only.
+
+This is a scholarly modernization of a canonical philosophical text. Every
+claim in it is Nietzsche's, rendered as his: measured, never softened,
+never sensationalized, never annotated.
+
+
+1. THE WORK AND ITS SHAPE
+
+A prophet, Zarathustra (Nietzsche borrows the name of the Persian founder
+of Zoroastrianism, the first to make good and evil the engine of the
+world, so that he can be the one to undo it), comes down from ten years of
+solitude on a mountain to teach. The Prologue is a story: the sun, the old
+saint in the forest who has not heard that God is dead, the marketplace
+crowd waiting for a tightrope walker, the speech about the overman and
+the last man, the crowd's jeering, the walker's fall and death, the
+corpse carried into the forest. Then come the discourses -- eighty short
+sermons and songs, each closed by the refrain "Thus spoke Zarathustra."
+Part One preaches to disciples in a town called the Motley Cow. Part Two
+returns to them on the Blessed Isles, and holds the three songs (Night,
+Dance, Grave) and the first statements of the will to power. Part Three
+is the homecoming and the confrontation with the "most abysmal thought",
+the eternal recurrence (the vision of the gateway, the shepherd and the
+snake, the Convalescent). Part Four is a comic, almost picaresque
+narrative: Zarathustra meets the "higher men" one by one (two kings with
+a donkey, a scholar of leeches, a magician, the retired last pope, the
+ugliest man who murdered God, a voluntary beggar, his own shadow), feeds
+them a Last Supper, watches them fall to worshipping the donkey, and
+leaves them at dawn when his sign, a laughing lion among doves, arrives.
+
+Structure, from Nietzsche's own contents list (asserted by prep.py and
+again, independently, by check.py): Prologue + 22 discourses / 22 / 16 /
+20 = 81 sections, plus the epigraphs that open Parts Two, Three and Four.
+85 files: one section per file, one epigraph per file, and "On Old and New
+Tablets" (5,057 German words, 30 numbered sections) split in two at its
+section XVII. 84,117 German words (\w-tokens) / 82,393 whitespace words.
+
+
+2. WHOSE ARCHAISM IS IT? (the governing decision)
+
+The crib screens at archaism 30.2 per 1,000 words, one of the highest
+measured in the collection, and almost all of it is one costume: thou /
+thee / ye / -eth / -est / spake / hath / verily / lo / unto. Apply the
+whose-archaism-is-it test feature by feature:
+
+  THE GRAMMAR IS COMMON'S. Nietzsche's German of 1883 uses du / ihr / Sie
+  exactly as any German of 1883 did: "du" is the ordinary intimate
+  singular, "ihr" the ordinary plural. Common turned both into King James
+  English, which makes Zarathustra MORE formal and remote than Nietzsche
+  wrote him -- the Augustine/Pusey case exactly. All of it goes, with no
+  exemption list. check.py sweeps it.
+
+  THE RHETORIC IS NIETZSCHE'S, and it is a deliberate parody of Luther's
+  Bible: the title formula "Also sprach" (Luther's "So spricht der Herr"),
+  "Wahrlich, ich sage euch" (Verily I say unto you), "Siehe!", parables,
+  beatitude-like series ("I love the one who..."), "Es sei denn, dass ihr
+  umkehret und werdet wie die Kindlein", the Last Supper, the litany at
+  the Donkey Festival, the Mount of Olives. A reader who cannot hear the
+  Bible under the sermon misses half the jokes and most of the blasphemy.
+  So the CADENCE STAYS -- parallelism, anaphora, refrains, the short
+  declarative, the apostrophe ("Oh my soul", "Oh noon"), the closing
+  formula -- and is carried in MODERN WORDS. The test is the register of
+  a modern English Bible, not the King James: "Truly I tell you", "Look!",
+  "unless you turn and become like little children". That is still
+  recognisably scripture to a modern ear and contains no word a
+  fourteen-year-old has to look up.
+
+  Locked consequences: "Also sprach Zarathustra." -> "Thus spoke
+  Zarathustra." (the book's English title and the refrain everyone knows;
+  "thus" is the ONE survival, and it is the formula, not the grammar).
+  "Wahrlich" -> "truly" ("Truly I tell you" for the full formula).
+  "Siehe!" -> "Look!" (never "Lo" or "Behold"). "O/Oh" -> "oh" (lowercase
+  unless it opens a sentence). No "thou" anywhere, including when
+  Zarathustra addresses Life, Eternity, his soul or the noon.
+
+THE HUME RULE ALSO APPLIES. Much of Zarathustra is already short, plain,
+and declarative ("God is dead." "Man is a rope." "Write with blood.").
+If a German sentence is already clear, the English should be clear in the
+same shape. Do not decorate it, explain it or "improve" it. A file in
+which every sentence has been rewritten has been damaged.
+
+
+3. VOICE
+
+A prophet who is also a poet, a satirist and, increasingly, a comedian.
+Four registers, often in one discourse:
+  - SERMON: rhythmic, parallel, aphoristic, addressed to "my brothers".
+  - SONG: the Night Song, Dance Songs, Grave Song, Seven Seals, the Song
+    of Melancholy, the Daughters of the Desert, the Midnight Song --
+    lyrical, intimate, incantatory.
+  - NARRATIVE: the Prologue and most of Part Four are storytelling, often
+    slapstick (the jester leaping over the tightrope walker, the leech
+    scholar with his arm in the swamp, the donkey's "Yeah-aw").
+  - MOCKERY: the scholars, poets, tarantulas, the "culture" of the present,
+    the higher men -- sharp, funny, contemptuous.
+Keep the register of each passage. The parody of solemnity is solemn on
+the surface: never wink at the reader.
+
+Nietzsche is a punster and a coiner of words. Rebuild every wordplay on
+the English word, never carry it over dead (the Quixote/Sancho lesson):
+  - untergehen / Untergang: the sun "goes under" at evening; Zarathustra
+    must "go under" as men call it -- descend to them and perish. LOCKED:
+    "go under / going under". Prologue 1 makes the sunset explicit once.
+  - über / unter: Übermensch / Untergang / Übergang / überwinden: overman,
+    going under, going across (a crossing), overcome. This is the reason
+    for "overman" (section 4).
+  - "Freuden- und Leidenschaften" (joy-passions and suffering-passions)
+    -> the title "On Joys and Passions"; inside, let the English play on
+    the passions that are joys and the passions that are sufferings.
+  - "Hinterweltler" (people of the world behind the world) -> "believers
+    in worlds behind".
+  - "unbefleckte Erkenntnis" parodies "unbefleckte Empfängnis" (the
+    Immaculate Conception) -> "Immaculate Perception".
+  - I-A, the donkey's bray, is also "Ja" (yes) -> "Yeah-aw" (section 4).
+  - Esel (donkey) / Eselin; Weib / Weiblein (little old woman); the
+    "tarantulas" (Taranteln) of equality.
+Allusions are folded into the sentence, never footnoted (the Verne rule):
+Zarathustra, the Motley Cow, the Blessed Isles, Ariadne, the Sibyl,
+Empedocles at Etna (Of Great Events), Luther's "Here I stand, I can do no
+other" (Daughters of the Desert), the Pope "retired" from service.
+
+
+4. LOCKED VOCABULARY
+
+  Übermensch -> overman (lowercase; "overmen" plural). WHY: "superman"
+  belongs to the comic book and to Shaw, and fixes the wrong picture
+  (a strong individual) where Nietzsche means a goal humanity has not yet
+  reached. Keeping the German would make the book's central word the one
+  word the reader cannot read, and would cut it off from the over/under
+  family the Prologue is built on (overman / going under / going across /
+  overcome). "Overman" keeps the family audible in English. The editor's
+  introduction gives the German once. (Decision flagged for Alex.)
+  der letzte Mensch -> the last man (the last men). Famous; locked.
+  der Mensch (as a kind) -> man ("Man is something that must be
+  overcome"; "Man is a rope"). Elsewhere "human beings", "people",
+  "humanity" as the sentence needs; die Menschen -> people / human beings.
+  der höhere Mensch -> the higher man (the higher men) -- Part Four's
+  visitors are all men, and the phrase is a title.
+  Mitleid / Mitleiden -> pity (never "compassion", which praises it);
+  die Mitleidigen -> the pitying.
+  Ekel -> disgust (the visceral word, "nausea" where physical).
+  Geist -> spirit ("the three metamorphoses of the spirit"; "the spirit of
+  gravity" for Geist der Schwere); "mind" only where plainly intellect.
+  Leib -> the body. das Ich -> the "I"; das Selbst -> the Self (capital S
+  inside "On the Despisers of the Body", where the two are opposed).
+  Wille zur Macht -> will to power. Wille -> will.
+  ewige Wiederkunft -> eternal recurrence ("the teacher of the eternal
+  recurrence"); wiederkommen -> come again / return.
+  der Augenblick (the gateway) -> "Moment" (the gateway's name), "moment".
+  der grosse Mittag -> the great noon. Mittag -> noon.
+  Tugend -> virtue. schenkende Tugend -> gift-giving virtue.
+  der Schaffende -> the creator; schaffen -> create.
+  der Erkennende -> the seeker of knowledge; Erkenntnis -> knowledge.
+  Einsamkeit -> solitude (Verlassenheit -> forsakenness: The Homecoming
+  sets them against each other).
+  der Nächste -> the neighbor; Nächstenliebe -> love of the neighbor;
+  Fernsten-Liebe -> love of the farthest.
+  die Viel-zu-Vielen -> the many-too-many.
+  Pöbel -> the mob; Gesindel -> the rabble (distinct words, kept distinct).
+  Volk -> the people; Völker -> peoples. Heerde -> the herd.
+  Weib -> woman; Frau -> woman / wife; Weiblein -> little old woman (the
+  diminutive is Nietzsche's and stays); Mann -> man.
+  meine Brüder -> my brothers (his address; not "my friends").
+  Thor / Thorheit -> fool / folly. heilig -> holy. Ja-sagen -> saying Yes;
+  "ein heiliges Ja-sagen" -> "a holy Yes".
+  Esel -> donkey (not "ass": modern Bibles use donkey, and "ass" sends a
+  fourteen-year-old's attention somewhere else). I-A -> "Yeah-aw" (keeps
+  both "yeah" and the bray; flagged for Alex).
+  Hinterwelt -> the world behind the world; Hinterweltler -> believers
+  in worlds behind.
+  Wahrlich -> truly; Siehe -> look; also sprach -> thus spoke.
+  Spelling: AMERICAN (neighbor, honor, color).
+
+  Rule of use: a locked term is locked in meaning AND in form; never
+  re-gloss it once the ledger marks it spent.
+
+
+5. FAMOUS PASSAGES (pinned in must_contain.txt; locked renderings)
+
+  Prologue 1: "Like you, I must *go under*, as men call it" (emphasis is his)
+  Prologue 2: "this old saint in his forest has not yet heard that God is
+    dead!" -- the line is *Gott todt*, emphasised: "that *God is dead*!"
+  Prologue 3: "I teach you the overman. Man is something that must be
+    overcome." / "The overman is the meaning of the earth." / "remain
+    faithful to the earth"
+  Prologue 4: "Man is a rope, tied between beast and overman -- a rope over
+    an abyss." / "What is great in man is that he is a bridge and not a
+    goal"
+  Prologue 5: "You must still have chaos in you to give birth to a dancing
+    star." / "What is love? What is creation? What is longing? What is a
+    star?" asks the last man, and blinks. / "We have invented happiness,"
+    say the last men, and they blink.
+  001: the spirit becomes a camel, the camel a lion, and the lion at last a
+    child; "a holy Yes".
+  007: "Write with blood, and you will discover that blood is spirit."
+    "I would believe only in a god who could dance."
+  011: "State is the name of the coldest of all cold monsters."
+  026 and the Part Four epigraph: "God is dead; God died of his pity for
+    man." / "Even God has his hell: it is his love of man."
+  048: the gateway named "Moment"; "Was that life? Well then! Once more!"
+  060: "I come again, with this sun, with this earth, with this eagle,
+    with this serpent"; "the teacher of the eternal recurrence".
+  062 and 083: the Midnight Song (locked text in running_notes.txt),
+    "All joy wants eternity".
+  063: "For I love you, oh eternity!" (seven times).
+  065: "Become who you are!"
+  080: "The desert grows: woe to him who harbors deserts!"
+  Also: "will to power", "the great noon", "Thus spoke Zarathustra."
+Every pin is a locked rendering in agent_instructions.txt; an agent who
+reaches one writes it exactly.
+
+
+6. HEADINGS AND CONVENTIONS
+
+TITLES. The German titles "Von den ..." are sermon titles (Latin "De ...").
+Locked as "On ..." -- the form modern English uses for a treatise or
+essay title -- and every title is in prep.TITLES and manifest.json, from
+which agents copy line 1 verbatim. Titles without "Von" stay without it
+("The Night Song", "The Leech"). Choices worth recording: "On the Three
+Metamorphoses" (the established English name; "transformation" in the
+body is fine); "On the Believers in Worlds Behind" (Hinterweltler; NOT
+"otherworldly", which means dreamy in English); "On Little Old and Young
+Women" (Weiblein); "On Involuntary Bliss" (wider Willen); "On Human
+Prudence"; "The Seven Seals (Or: The Yes-and-Amen Song)" (subtitle kept in
+the heading line); "The Magician" (Zauberer: a conjurer and a fraud, the
+Wagner portrait); "Retired" (Ausser Dienst: the last pope, out of
+service); "The Donkey Festival" (the medieval Feast of the Ass);
+"The Sleepwalker's Song" (Das Nachtwandler-Lied, the title in the first
+edition and in Gutenberg; later Archive editions renamed it "Das trunkne
+Lied", The Drunken Song, which is why many English readers know it so).
+
+PARTS. part_before "Part One" ... "Part Four", word form (PART_LINE trap),
+bare: Nietzsche gives the Parts no titles. (His "Vierter und letzter
+Theil" -- "Fourth and last Part" -- cannot be carried in a form
+build_ebook.parse_heading reads; flagged for Alex.)
+
+"DIE REDEN ZARATHUSTRA'S" (Zarathustra's Discourses) stands in the
+original between the Prologue and the first discourse, a heading with no
+text of its own. It closes file 000 as its last line, "Zarathustra’s
+Discourses", which the renderer sets as an h4 immediately above "On the
+Three Metamorphoses". (A part_before would make it a fifth Part and the
+epub would number the Parts 1-5; flagged for Alex.)
+
+EPIGRAPHS. Parts Two, Three and Four open on a motto quoted from
+Zarathustra himself (from 022, 007 and 026). Each is its own file
+(023, 046, 064) titled "Epigraph to Part Two" etc. -- the mill/de-kruif
+precedent -- carrying part_before. The quoted text MUST be word for word
+the rendering in the discourse it comes from, so the epigraph files are
+written after their sources. The citation is the last paragraph, in the
+form   Zarathustra, “On the Gift-Giving Virtue”
+(with the curly quotes and the comma: that form is what keeps
+assemble.is_subheading from setting it as a heading).
+
+NUMBERED SECTIONS. Nietzsche numbers the sections of longer discourses
+(1., 2., ...). They are lone roman-numeral lines ("III") in chapters/,
+reference/ and the translation; assemble sets a lone roman numeral as an
+h4. check.py asserts the sequence.
+
+VERSE. Prose discourses stay prose; songs set in lines stay in lines,
+tab-indented (assemble renders a tabbed block as <pre>). The lineation and
+the stanza breaks follow the GERMAN (chapters/), not the crib: the crib
+runs the Sibyl's rhyme in 067 as prose and divides 078/080 differently.
+Free verse stays free; where Nietzsche rhymes -- the Midnight Song (062,
+quoted line by line in 083), the Sibyl’s couplets (067), the Donkey
+Festival's little rhyme, the Song of Melancholy's refrains -- rhyme in
+English, never at the cost of sense. 6 files carry verse: 062, 067, 069,
+078, 080, 083.
+
+EMPHASIS. Nietzsche's letter-spaced words (_x_ in the source) are *x* in
+chapters/ and must land on the corresponding English word: same count of
+spans per file (check.py). Never add emphasis he did not have.
+
+DASHES. Nietzsche's dash is a large part of his voice ("—", "—:", a
+sentence left hanging "—"). Keep his pauses as real em dashes. Never "--".
+
+QUOTATION. Zarathustra's discourses are mostly unquoted direct speech.
+Narrative passages (Prologue, Part Four) use quotation marks; follow the
+German's quotation structure, curly quotes, single quotes inside double.
+
+
+7. SENSITIVE CONTENT -- render HIS argument as his
+
+Nietzsche is the most misread author in the collection, in both
+directions: conscripted by the people he despised and softened by his
+admirers. The edition does neither. Each ruling below is the reason the
+agent does NOT need to add, cut, or note anything.
+
+  - THE OVERMAN is a goal beyond humanity, offered as a meaning for the
+    earth; it is not a race, a nation, a party or a strongman. Render the
+    German; the text says what it means.
+  - WOMEN. "On Little Old and Young Women": Zarathustra gives his views
+    (woman as a riddle whose solution is pregnancy; man to be trained for
+    war, woman for the recreation of the warrior) and these are HIS, set
+    down plainly. The notorious last line -- "You are going to women? Do
+    not forget the whip!" -- is spoken by THE OLD WOMAN, as the "little
+    truth" she gives him to carry home wrapped up. The attribution IS the
+    ruling: make it unmistakable who says it, and change nothing else.
+    "Weiblein" is Nietzsche's own diminutive (the mulierculis precedent):
+    keep "little old woman". Elsewhere Life and Wisdom are women who
+    mock and outwit Zarathustra; that is his figure too.
+  - WAR AND WARRIORS. "You say it is the good cause that hallows even war?
+    I tell you: it is the good war that hallows every cause." Kept exact,
+    at the same pitch. Part of the book's argument is that "war" and
+    "warrior" are figures for the struggle for knowledge ("my brothers in
+    war"); do not resolve the ambiguity for the reader either way.
+  - THE MOB, THE RABBLE, THE MANY-TOO-MANY, THE HERD: contempt is the
+    point of those passages and stays. Pöbel and Gesindel are kept as two
+    words.
+  - "ON FREE DEATH" argues for dying at the right time, by choice, and
+    against both clinging to life and preaching weariness of it. A
+    philosophical argument in a measured register; nothing added,
+    nothing dramatized, nothing about method because the text has none.
+  - THE PALE CRIMINAL, PUNISHMENT, REVENGE ("On the Tarantulas": the
+    preachers of equality as tarantulas of revenge): render the argument.
+  - RELIGION. God is dead, the priests, the believers in worlds behind,
+    the retired pope, the ugliest man who murdered God, the Last Supper,
+    the Donkey Festival's litany (a parody of Revelation 7:12 and of the
+    Mass) -- blasphemy is the book's method and is kept at full strength,
+    in a measured voice, never in a sneering one.
+  - THE SIBYL'S RHYME (067, Conversation with the Kings): a drunken Sibyl
+    laments the decline of the world, "Rome's Caesar sank to beast, God
+    himself -- became a Jew!" It is Zarathustra's parody of the kings'
+    decline-talk, sung in mock-Sibylline couplets. Kept exactly, inside
+    the Sibyl's quotation marks, no softening and no note. (Nietzsche's
+    published contempt for the antisemites of his day belongs in the
+    editor's introduction if anywhere, never in the text.)
+  - "MEN", "BROTHERS": Zarathustra addresses men. Keep it; do not
+    modernize the audience.
+
+
+8. SOURCE NOTES
+
+German: Gutenberg #7205, credited to Peter Bellen. It keeps the first
+editions' orthography (Theil, gieng, diess, Noth, -niss), and it is an OCR
+text. prep.FIXES applies 40 line-pinned corrections:
+  - every "9." section number was read as "8." (four discourses);
+  - "gieng" was read as the REAL WORD "gierig" (greedy) seven times;
+  - "Es kommt die Weit des verächtlichsten Menschen" for "Zeit" -- in the
+    last-man passage itself; "Weit" for "Welt" in the Part Four motto;
+  - "Ring de Wiederkunft" seven times in the Seven Seals refrain;
+  - lost umlauts (fuhrt, Stuck), l read as I (wilI, VieIe), m for rn
+    (Göttem), and a dozen more. Each is commented in prep.py.
+These were found by witness.py, which diffs the Gutenberg text against
+zeno.org (Schlechta's 1954 edition, modernised spelling) after folding
+the spelling reform away. ~330 disagreements remain; they are compound
+spacing (mit einander / miteinander), elision (lieb / liebe, gehn /
+gehen), edition variants, and zeno's own typos, and were classified but
+not each adjudicated. A translator who finds a German word that makes no
+sense should check the crib, and report it -- do not silently correct.
+zeno is a witness only; nothing from it is published.
+
+Crib: Thomas Common's 1909 translation (the Levy Complete Works), from
+Standard Ebooks (cleaner than Gutenberg #1998, which adds Elisabeth
+Förster-Nietzsche's introduction and Ludovici's notes; neither is used).
+Common is literal and reliable on sense, and is the source of the whole
+"thou-and-eth" costume. Use him to check what a German sentence says,
+never for how to say it. Where he and the German differ (he occasionally
+normalizes, and runs some verse as prose), the German wins.
+
+
+9. RATIO AND CHECKS
+
+English/German whitespace-word ratio: the crib runs 0.99-1.17 per file
+(median 1.09). A complete modern rendering should land about 1.05-1.25.
+check.py FAILS outside 0.95-1.45, WARNS outside 1.02-1.32. Run verify as
+  python3 verify.py zarathustra --min-ratio 0.95 --max-ratio 1.45
+Expected English total: ~90,000-100,000 words.
+check.py: structure against Nietzsche's contents list; per file heading,
+sub-section sequence, "Thus spoke Zarathustra" parity, verse-block parity,
+emphasis parity, archaism sweep with no exemptions, banned terms,
+renderability (no paragraph that assemble would set as a heading), house
+form, ratio.
+RENDERABILITY IS A REAL RISK HERE: assemble.is_subheading sets any short
+one-line paragraph with mostly capitalised words and no full stop as an
+h4, and Zarathustra speaks in short exclamations ("Oh Zarathustra!").
+Lowercase "oh" and lowercase "overman" avoid most of it; check.py catches
+the rest, and the fix is a rewording inside the meaning, never a merged
+or dropped paragraph.

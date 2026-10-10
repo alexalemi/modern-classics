@@ -1,0 +1,315 @@
+THUS SPOKE ZARATHUSTRA -- RUNNING NOTES (the shared consistency ledger)
+Every agent reads this. The ORCHESTRATOR updates it between batches from
+the agents' returned notes; agents do not edit it.
+
+STATUS
+Setup complete 2026-10-09. Nothing translated. 85 files (000-084).
+
+TRANSLATION ORDER (dependencies are real -- the book quotes itself)
+1. 000 (the Prologue) ALONE, to set the voice. Update this ledger.
+2. Part One discourses 001-022 in batches of 4-6 files per agent.
+3. Epigraph 023 -- AFTER 022 (it quotes 022's last section).
+   Epigraph 046 -- AFTER 007 (quotes "On Reading and Writing").
+   Epigraph 064 -- AFTER 026 (quotes "On the Pitying").
+   Copy the quoted lines word for word from the finished discourse.
+4. Part Two 024-045; Part Three 047-063 (058+059 to ONE agent, in order;
+   062 before 083); Part Four 065-084 (077 "On the Higher Man" quotes and
+   answers much of the book: give it a late batch).
+5. Lock every refrain here as soon as it is first translated, so later
+   parts echo it exactly. Known echoes to watch:
+   - the soothsayer's "Alles ist leer, alles ist gleich, alles war!"
+     (042) -- recurs in 060, 065, 066, 073, 077 and elsewhere;
+   - "Der Mensch ist Etwas, das überwunden werden muss" (000) -- recurs
+     in 005, 058/059, 077 and elsewhere: ALWAYS "Man is something that
+     must be overcome.";
+   - Untergang / "go under" (000) throughout; "the great noon" (022 on);
+   - the rope, the tightrope walker, the jester (000) -- 058/059, 077;
+   - "Werde, der du bist" (065) is an echo of Pindar, unglossed;
+   - the gateway "Moment", the dwarf, the shepherd and the snake (048)
+     -- 060 returns to them;
+   - the Midnight Song (062) -- 083 quotes it a line per section;
+   - the mottos (023/046/064) as above. Copy the WORDS from the source
+     discourse; the epigraph file's own emphasis governs its *spans*
+     (023's German stresses *Augen*, 022's does not).
+
+LOCKED TEXT: THE MIDNIGHT SONG (062 section III; 083 quotes it line by
+line, one line per numbered section, and must use these lines exactly).
+The numbers are struck by a midnight bell; Nietzsche rhymes, so we rhyme.
+Lineation as in the German (tab-indented; the numbers indented one tab
+further than the lines, as in chapters/062.txt):
+
+		One!
+	Oh man, attend!
+		Two!
+	What does the deep midnight portend?
+		Three!
+	“I slept, I slept —,”
+		Four!
+	“From a deep dream I woke, at its end: —”
+		Five!
+	“The world is deep,”
+		Six!
+	“And deeper than the day could comprehend.”
+		Seven!
+	“Deep is its woe —,”
+		Eight!
+	“Joy — deeper still than misery:”
+		Nine!
+	“Woe says: Go!”
+		Ten!
+	“But all joy wants eternity —,”
+		Eleven!
+	“— wants deep, deep eternity!”
+		Twelve!
+
+(As in the German, the midnight's answer is quoted line by line, from
+"I slept" on. The orchestrator may revise this text once 062 is done;
+if so, 083 follows the revision. Flagged for Alex.)
+
+LOCKED SO FAR (beyond text_analysis 4)
+- Headings: copy from manifest.json. "Thus spoke Zarathustra." closes a
+  discourse wherever the German has "Also sprach Zarathustra."
+- "Zarathustra’s Discourses" is the last line of 000 only.
+- Epigraph citation form:  Zarathustra, “On the Gift-Giving Virtue”
+
+TONE CALIBRATION
+(to be filled from 000)
+
+CAPS SPENT (glossed once, never again)
+(none yet)
+
+SUSPECTED GERMAN MISPRINTS REPORTED BY AGENTS
+(none yet; prep.FIXES holds the 40 already corrected)
+
+
+BATCH 0 (voice: the Prologue, 000; 2026-10-09). Ratio 1.12. 172/172
+paragraphs. All nine Prologue pins landed. CALIBRATE ON 000.
+
+ORCHESTRATOR RULINGS (2026-10-09)
+- Ubermensch -> OVERMAN (the setup's recommendation; Alex may revisit).
+- Ubergang / Hinuber -> "going over" / "the ones who go over" (NOT "going
+  across"), to keep the over/under pair: "a going over and a going under".
+  This supersedes text_analysis section 3.
+- die Menschen, by sense: "mankind" for the collective object ("I love
+  mankind"); "men" in fixed phrases ("as men call it"); "people" for
+  individuals. Der Mensch as the species in the doctrine stays "man"
+  ("Man is something that must be overcome").
+- Klugheit / klug, by sense: "shrewd / shrewdest" for the serpent (the
+  proudest and shrewdest animal); "prudence" for the human virtue (the
+  title of 044, "On Human Prudence", stands).
+- Mid-discourse "also sprach Zarathustra" (lowercase-also, part of the
+  narration) -> "Zarathustra spoke ... like this:". The capital-T formula
+  "Thus spoke Zarathustra." is ONLY the discourse-closing refrain. check.py's
+  parity check is case-sensitive.
+- The quote marks on III paragraph 2 in the German are an artifact; they
+  were dropped.
+
+VOICE (copy it)
+- The biblical cadence is carried by STRUCTURE (parallelism, refrains,
+  short declaratives, apostrophe: "You great star!"), never by
+  vocabulary. The diction is plain modern English.
+- "Wahrlich" -> "Truly,". "Ich sage euch:" -> "I tell you:". "Siehe!" ->
+  "Look!". "oh" is lowercase mid-sentence. "Wehe" -> "Woe".
+- CONTRACTIONS only in comic or rough voices (hecklers, jesters, the
+  gravediggers, the hermit), NEVER in Zarathustra's discourses or the
+  narration.
+- Short German sentences stay short and the same shape; a long narrative
+  paragraph stays one paragraph. Spaced em dashes; keep the trailing
+  dashes.
+- Quote exactly what the German quotes. Speech-tag punctuation is modern;
+  inner quotes are single.
+
+LOCKED IN 000 (beyond text_analysis)
+  overman / overmen; go under / going under; the will to go under
+  zu Grunde gehen -> PERISH (kept apart from "go under")
+  the last man / the last men; the most contemptible man; Volk -> the people; Menge -> the crowd
+  tightrope walker; jester (Possenreisser) vs fool (Narr); a fellow in motley; gravediggers
+  the good and the just; the believers of the true faith
+  tablets of values; new values on new tablets; "the breaker, the lawbreaker"
+  the creator / fellow creators / fellow harvesters / celebrators
+  serpent (NEVER snake); Bildung -> culture
+  "Man is a rope, tied between beast and overman -- a rope over an abyss."
+  "What is great in man is that he is a bridge and not a goal"
+  Bleichgesicht -> pasty-face | Erdflo -> earth flea | Genugsamkeit -> easy satisfaction
+REFRAINS (copy them verbatim when echoed): "poverty and filth and a wretched
+contentment"; "The hour when you say:"; "I love the one who ..." / "I love
+those who ..."; "I am not the mouth for these ears"; "Look, I teach you the
+overman"; "Woe! The time is coming when ..."; "A light has dawned on me";
+"say the last men, and they blink"; "-- Thus began Zarathustra's going under."
+
+
+BATCH 1 (Part One, files 001-022; 2026-10-09). Ratios 1.07-1.21; check.py
+0 failures. All pins landed.
+
+RULINGS (orchestrator)
+- "Du-sollst" -> "You-shall" (a hyphenated noun; "Thou-shalt" is banned). "Ich
+  will" -> "I will".
+- soll vs muss: in the exact refrain "Man is something that must be
+  overcome", ALWAYS "must", even where the German has soll. A near-echo
+  that is not the refrain keeps its own verb ("My 'I' is something that
+  shall be overcome", 006).
+- A capital "Also sprach / Thus spoke" with a speaker OTHER than Zarathustra
+  is a parody of the formula: keep "Thus spoke" ("Thus spoke the iron to
+  the magnet:", 018). check.py's parity counts only "Thus spoke
+  Zarathustra." A narrative lowercase "also sprach" -> "spoke like this:".
+- Schlange -> serpent, generic snakes included; Natter -> adder. The 048
+  shepherd scene is "the shepherd and the serpent" (this overrides
+  text_analysis's "snake").
+- Untergang of a thing (a building) -> downfall; of a person / Zarathustra
+  -> going under.
+- Speeches running over several paragraphs are NOT re-opened with
+  quotation marks at each paragraph, following the German and 000.
+
+LOCKED (Part One)
+  das Ich / das Selbst -> the "I" (in quotes) / the Self (capital S)
+  Redlichkeit -> honesty | Hinterwelten -> worlds behind | Ding an sich -> thing in itself
+  Uber-Erden -> over-earths | Trubsal -> Gloom | Lehrstuhl -> (professor's) chair
+  tragsam -> load-bearing | das lastbare Thier -> the beast of burden
+  ein heiliges Nein / Ja -> a holy No / a holy Yes
+  Freudenschaften -> passions of joy | Hundin Sinnlichkeit -> the bitch Sensuality
+  Vereinsamung -> ISOLATION (kept apart from Einsamkeit -> solitude) | der Einsame -> the solitary one
+  schatzen / der Schatzende -> esteem / the esteemer | Werth -> value
+  Tafel der Guter -> a tablet of goods | Tafel des Guten -> a tablet of the good
+  Nachsten-Flucht / Fernsten-Liebe -> flight from the neighbor / love of the farthest
+  raten -> advise | Wahrsager -> SOOTHSAYER (as in 042)
+  bose / schlecht -> EVIL / BAD (keep this distinction everywhere)
+  Gemut -> nature | Erhebung / erhoben -> lifted up
+  Kriegsmann -> warrior | Soldat -> soldier | der Edle -> the noble man
+  Lustlinge -> pleasure-seekers | Wollust -> sensual pleasure / lust
+  der neue Gotze -> the new idol | die Uberflussigen -> the superfluous ones
+  the many-too-many | preachers of death | solemn jesters | Schauspieler -> actors
+  Erbarmliche -> wretched (check.py bans "pitiful") | Junger -> disciples
+  Selbstsucht -> selfishness | Gleichniss -> parable | Entartung -> degeneration
+  Art / Uber-Art -> kind / overkind | der Mensch der Erkenntniss -> the man of knowledge
+  der Erkennende -> the seeker of knowledge | Vollbringende -> the one who fulfills
+  Lasterung -> blasphemy | Nein-sager -> No-sayer | heil und heilig -> whole and holy
+  Sinn der Erde -> the meaning of the earth | Unsinn -> nonsense, the meaningless
+  the great noon (first used in 022 III) | Klugheit der Feigen -> the shrewdness of cowards
+
+ECHOES (copy verbatim)
+  "a wheel rolling out of itself, a first movement, a holy Yes" (001; 017 asks it as a question)
+  the town "that is called: the Motley Cow" (001)
+  "Blessed are the sleepy ones: for they shall soon nod off." (002)
+  "Write with blood, and you will discover that blood is spirit." (007)
+  "I would believe only in a god who could dance." (007)
+  "Hold your highest hope holy!" / "do not throw away the hero in your soul!" (008)
+  "it is the good war that hallows every cause" / "Let your peace be a victory!" (010)
+  "State is the name of the coldest of all cold monsters." (011)
+  "the rainbow and the bridges of the overman" (011)
+  "Flee, my friend, into your solitude" (012)
+  "Zarathustra saw many lands and many peoples" (015)
+  "Do I advise love of the neighbor? I would sooner advise flight from the neighbor and love of the farthest!" (016)
+  "And beware of the good and the just!" (017)
+  The whip line, inside the old woman's quotes: "You are going to women? Do not forget the whip!" (018)
+  "Ah, this poverty of the soul for two! ..." (020, echoing the Prologue)
+  "Remain faithful to the earth" / "serve the meaning of the earth" (022)
+  "Dead are all gods: now we want the overman to live." (022 III)
+  the narration formula "spoke ... like this: -- and his voice had changed." (022)
+  the staff "on whose golden handle a serpent coiled around the sun" (022 I)
+FOR THE 023 EPIGRAPH (quotes 022): open "-- and only when you have all denied
+me will I return to you." Then: "Truly, with other *eyes*, my brothers, I will
+then seek my lost ones; with another love I will then love you." (*eyes*
+emphasised in 023 only).
+FOR THE 046 EPIGRAPH (quotes 007): "Whoever climbs the highest mountains
+laughs at all tragic plays and all tragic solemnity." / "You look upward
+when you long to be lifted up. And I look down, because I am lifted up."
+SUSPECTED GERMAN MISPRINTS (Part One, all translated by sense): 002 "Wandelt"
+(lowercase), "mit dem gutem Schlafe", "auf meine Auge"; 003 "Und"; 021 a
+missing full stop before "Aber".
+
+
+BATCH 2 (Part Two, files 023-045; 2026-10-09). Ratios 1.03-1.22; check.py 0
+failures. Pins landed: "Even God has his hell: it is his love of man." /
+"God is dead; God died of his pity for man." (026); "will to power" (043).
+
+RULINGS (orchestrator)
+- LUST -> "joy" in the higher, life-affirming sense ("Life is a fountain of
+  joy"), building to the Midnight Song's "All joy wants eternity"; ->
+  "pleasure" in the ordinary or sensual sense.
+- Trubsal: "Gloom" with a capital ONLY as a name ("your cow, Gloom", 005);
+  otherwise lowercase "gloom".
+- Klapperschlangen -> "rattlesnakes" is allowed (a species name, and the
+  pun needs "rattle"); Schlange alone is still "serpent".
+- Follow the German's own address: "my friends" where it has meine Freunde,
+  "my brothers" where it has meine Bruder.
+- Nested quotes: double / single / double.
+
+LOCKED (Part Two)
+  Lehre -> teaching | Erloser -> Redeemer (as their title) / redeemers | erlosen -> redeem
+  Erlosung -> redemption | Muthmaassung -> conjecture ("God is a conjecture")
+  Seligkeit -> bliss | die Barmherzigen -> the merciful (vs die Mitleidigen -> the pitying)
+  der Bose -> the evil one | die gluckseligen Inseln -> the BLESSED ISLES
+  Wille zur Wahrheit -> the will to truth | Wahrhaftig -> truthful (vs Redlichkeit -> honesty)
+  der freie Geist -> the free spirit | Gesindel -> RABBLE | Pobel -> MOB
+  Born -> fountain | Brunnen -> well | Quell -> spring | Zugthiere -> draft animals
+  Knechte -> serfs | Laue -> lukewarm | Rachsuchtige -> vengeful ones
+  Ubermacht -> more-than-power | the tarantula and the serpent are "she"
+  Erhabene -> the sublime one(s) | Busser des Geistes -> a penitent of the spirit
+  Uber-Held -> the over-hero | Gegenwartigen -> you people of the present
+  Rein-Erkennenden -> the pure perceivers | Gelehrter -> scholar
+  das Ewig-Weibliche -> the Eternal-Feminine | Feuerhund -> the fire-dog ("Woof! Woof!")
+  Menschen-Klugheit -> human prudence | "Es war" -> "It was" | Widerwille -> the will's ill will
+  Geist der Rache -> the spirit of revenge | Zufall -> accident | Wahrsager -> soothsayer
+
+ECHOES (copy verbatim)
+  "All is empty, all is the same, all has been!" (the soothsayer, 042: for 060, 065, 066, 073, 077)
+  "So I willed it!" / "But so I will it! So shall I will it!" (043)
+  "the will's ill will against time and its 'It was.'" (043)
+  "For that man may be redeemed from revenge: that is for me the bridge to the highest hope, and a rainbow after long storms." (030)
+  "Life wants to climb, and in climbing to overcome itself." (030)
+  "And the poets lie too much." / "But Zarathustra too is a poet" (025, 040)
+  "Willing liberates" (025) | "Creating -- that is the great redemption from suffering" (025)
+  "shame, shame, shame -- that is the history of man!" (026) | "But all creators are hard." (026)
+  "There has never yet been an overman." / "all too human" (027)
+  "my lioness Wisdom"; "I have become mouth through and through" (024)
+  "Thoughts that come on doves' feet guide the world." / "It is the stillest words that bring the storm." (045)
+  "your fruits are ripe, but you are not ripe for your fruits!" (045)
+  "did you know that already?" (031)
+FOR THE 064 EPIGRAPH (quotes 026, verbatim, with NO trailing dash): "Ah, where in
+the world have greater follies happened than among the pitying? And what
+in the world has caused more suffering than the follies of the pitying?
+Woe to all lovers who do not yet have a height that is above their pity!
+Thus spoke the devil to me once: "Even God has his hell: it is his love of
+man." And recently I heard him say this word: "God is dead; God died of his
+pity for man."" Citation line: Zarathustra, "On the Pitying".
+FOR THE 046 EPIGRAPH (quotes 007): see the Batch 1 notes.
+
+BATCH 2 ADDENDUM (032-035, which reported after the Part Two merge)
+- "Also sang Zarathustra." -> "Thus sang Zarathustra." A capital "Also"
+  formula with another speaker or verb stays "Thus ..." ("Thus life once
+  taught me:", "Thus spoke my purity once").
+- Life, wisdom and eternity are lowercase when personified ("oh life!").
+  Life's pronoun follows the German (she in 033, it in 035).
+- The songs (032-034) are PROSE in chapters/: tabs only where the German
+  is lineated.
+- Bosheit -> malice | Weib -> woman (Life) | Frauenzimmer -> a female (Wisdom)
+  Werthschatzungen -> valuations | Selbst-Uberwindung -> self-overcoming (never "surpass")
+  Blick / Augenblick -> glance / "a twinkling of an eye" (1 Cor 15:52; separate from 048's "Moment")
+ECHOES: "Into your eye I looked not long ago, oh life! And I seemed to myself
+to be sinking into the unfathomable." and "a golden fishing rod" (033 ->
+062). "It is night: now all the leaping fountains speak more loudly. And my
+soul too is a leaping fountain." (032 frame). "I am God's advocate before the
+devil: and the devil is the spirit of gravity." (033). "And only where there
+are graves are there resurrections." (034). "Look, it said, I am that which
+must always overcome itself." / "Wherever I found something living, I found
+will to power" (035).
+
+
+BATCH 3 (Part Three, files 046-063; 2026-10-09). Ratios 1.12-1.25; check.py 0 failures. All pins landed. The Midnight Song is in 062 III (locked text); 083 MUST copy it byte for byte from 062.
+Per-file notes, as the orchestrator recorded them:
+[046-049] ratios 1.12-1.20. RULINGS: nested 'Moment.' is single-quoted (inside Zarathustra's speech); dash-colon is " —:" (the orchestrator fixed 027's " — :"); a capital narrative "Also sprach Zarathustra" -> "Thus spoke Zarathustra to himself..." (counts for parity).
+Locked: Thorweg -> gateway; Gasse -> lane; ewig wiederkommen -> come again eternally; abgrundlicher Gedanke -> abysmal thought; Gesicht -> vision; Erbarmen -> mercy (vs Mitleid -> pity); Zwerg -> dwarf; Gluck / Ungluck -> happiness / misfortune; Versucher -> seekers and tempters; Mitschaffender -> fellow creator.
+Echoes: "Praised be what makes hard!"; "You are going your way of greatness"; "It is out of the deepest that the highest must come to its height."; "All truth is crooked; time itself is a circle." (the dwarf, for 060); "Was *that* life? Well then! Once more!"; "No longer shepherd, no longer man, -- one transformed, surrounded with light, who *laughed*!"; "But happiness is a woman."
+[060-063] ratios 1.16-1.18. Pins exact. The Midnight Song (062 III) is the ledger's locked text, byte for byte; 083 must copy it. 063 refrain identical x7: "Oh how could I not burn for eternity, and for the wedding ring of rings -- the ring of recurrence!" / "Never yet have I found the woman by whom I wanted children, except this woman, whom I love: for I love you, oh eternity!" / "For I love you, oh eternity!"
+Echoes: "All is the same, nothing is worth it, knowledge chokes." (the soothsayer's 2nd formula: 066, 075); "-- Thus *ends* Zarathustra's going under."; "Everything goes, everything comes back; the wheel of being rolls eternally."; "you are the teacher of the eternal recurrence"; "I bit its head off and spat it away from me" (CHECK it matches 048's shepherd wording).
+Terms: Uberdruss -> weariness (vs Ekel -> disgust); Nu -> instant (Augenblick -> moment); Schicksal -> destiny; Loos -> lot; Ring der Wiederkunft -> the ring of recurrence; Wollust -> delight / lust / sensual pleasure by context.
+[050-053] ratios 1.14-1.23. Ergebung -> submission; Ja- und Amen-sagen -> Yes-and-Amen-saying; Ja-sager -> Yes-sayer; Zufall -> accident (Ohngefahr -> Chance); Ubermuth -> exuberance; Muthwille -> mischief; Himmel -> heaven / sky (the weather); erbarmen -> take mercy on; Gotze -> idol; Kramer -> shopkeepers; "Thus speaks Zarathustra the godless."; "Thus sang Zarathustra."
+Echoes: "The world is deep --: and deeper than the day could ever comprehend." (matches the Midnight Song); "I serve, you serve, we serve"; "Zarathustra's ape" / "the foaming fool"; "where one can no longer love, there one should -- *pass by*!"; "It is coming, it is near, the great noon!"; "I *am* Zarathustra, the godless!"; "the virtue that makes small".
+[058-059] ratios 1.18 / 1.25. Refrain "Break, break the old tablets!" (no "for me"); Tafel -> tablet; "Become hard!" (not emphasised). The orchestrator reverted 058 XI's pun "*science*" -> "*knowledge*" (sense first). 058 XI quotes 054: "Precisely this is godliness, that there are gods, but no God!" (the 054 agent was told).
+Renderings: Kramer -> shopkeeper; Schmarotzer -> parasite; Knechtschaft -> serfdom; Gewalt-Herr -> despot; neuer Adel -> new nobility; Welt-Verleumder -> world-slanderers; "All is vanity!"; Erz -> bronze.
+Echoes: "From now on let your honor be not where you come from, but where you are going!"; "what is falling, one should also push!"; "And let every day be lost to us on which we did not dance even once!"; "the laughing lion with the flock of doves" (for 084); "Oh you my will! You turning of all need, you *my* necessity!"
+Misprints: umzuschauen -> umzuschaffen; feinsten -> fernsten; "Ich sollt" -> "Ihr sollt".
+[054-057] ratios 1.16-1.24. 054's question form "Is this not precisely godliness, that there are gods, but no God?" -- Nietzsche himself turns it into a statement in 058 XI; both stand.
+LOCKED: Wollust -> "Sensual pleasure" (056 litany); Herrschsucht -> "Lust for power"; Selbstsucht -> selfishness; Selbst-Lust -> self-delight; Siech / Suchtig -> sick / craving; Allgenugsam -> the all-satisfied; gut / schlecht -> good / BAD; Knecht -> serf; knechtisch -> servile; Kreuzspinne -> cross-spider; ubertunchte Graber -> whitewashed tombs; Verlassenheit -> forsakenness; Weissager -> one who foreknows (NOT soothsayer); Nachtwachter -> night watchmen; Heutigen -> the people of today.
+ECHOES: "May my animals lead me! I found it more dangerous among men than among animals" (055); "*That* was forsakenness!"; "Everything among them talks;"; "Here the words and word-shrines of all being spring open for me..."; "This -- is now *my* way -- where is yours?"; "For *the* way -- it does not exist!"; "Always to say Yeah-aw" (the donkey's I-A, for 082); "they once -- *laughed* themselves to death!"; "There is One God! You shall have no other god besides me!"; "let us become like little children again and say "dear God"!"; "when I see donkeys drunk" (for Part Four).
+057 refrain: "so the spirit of gravity arranges it" (x4).

@@ -1,0 +1,457 @@
+LE MORTE D'ARTHUR — MODERNIZATION STRATEGY
+Sir Thomas Malory, finished 1469-70; printed by William Caxton, 1485
+Source: Standard Ebooks, after A. W. Pollard's 1900 text (Caxton in
+modernised spelling, his omissions supplied from Wynkyn de Worde's 1498)
+
+This is a scholarly modernization of a canonical fifteenth-century English
+text. The source is ALREADY ENGLISH, and its spelling has already been
+modernised by Pollard. What remains is the grammar, the vocabulary and,
+above all, the false friends. The precedent is bunyan/, not quixote/.
+
+
+1. WHAT THIS BOOK IS
+
+Malory was a Warwickshire knight who wrote the book in prison (he says so,
+twice) at the end of the Wars of the Roses, out of "certain books of
+French" and two English poems, and died before it was printed. Caxton
+found the manuscript, divided it into twenty-one Books and 504 chapters
+(his preface says 507; see section 9), wrote a one-line rubric for every
+chapter, and gave it the title of its last section. It is the book through
+which English has known King Arthur ever since: Tennyson, T. H. White,
+Steinbeck and every film come out of it.
+
+It is not a novel. It is a cycle: one long arc (Arthur's begetting, his
+kingdom, the Round Table at its height, the Grail quest that empties it,
+the love of Lancelot and Guinevere that splits it, the war that ends it)
+carrying dozens of knights' adventures that interlace, break off ("Now
+leave we Sir Tristram, and turn we unto Sir Lancelot") and resume. The
+nearest precedents in this project are the story cycles: decameron/ and
+nights/ for the interlace, quixote/ for the scale.
+
+Malory's own eight "tales", which Caxton's Books cut across:
+  Books I-IV      The tale of King Arthur (his rise; Balin; the wedding
+                  and the Round Table; Merlin's end; Morgan's plot)
+  Book V          Arthur and the Emperor Lucius (the war with Rome)
+  Book VI         Sir Lancelot du Lake
+  Book VII        Sir Gareth (Beaumains)
+  Books VIII-XII  Sir Tristram de Liones (with La Cote Male Taile,
+                  Lamorak, Palomides, Dinadan; XI-XII also carry
+                  Galahad's begetting and Lancelot's madness)
+  Books XIII-XVII The Quest of the Holy Grail
+  Books XVIII-XIX Lancelot and Guinevere (the poisoned apple, the Fair
+                  Maid of Astolat, Meliagaunce, the healing of Sir Urry)
+  Books XX-XXI    The Death of Arthur
+
+Word counts (body text, excluding rubrics): I 17.3k, II 10.3k, III 8.0k,
+IV 17.0k, V 9.0k, VI 12.2k, VII 24.5k, VIII 26.0k, IX 29.5k, X 62.9k,
+XI 8.9k, XII 7.6k, XIII 12.0k, XIV 5.4k, XV 3.3k, XVI 9.6k, XVII 14.9k,
+XVIII 19.1k, XIX 9.7k, XX 17.0k, XXI 9.5k. Total 333,882; with the
+504 rubrics and Caxton's preface the source files hold ~346k.
+
+
+2. WHY IT NEEDS A MODERNIZATION, AND WHAT KIND
+
+Malory is not HARD in the Hobbes or Gibbon way. His sentences are short
+and his syntax is the simplest in English literature: "and then... and
+so... and there..." There is nothing to unstack. The ROADMAP measured his
+archaism at 15.8 per 1,000, and that is the visible half: in the body
+text, thou 1,097, thee 623, thy 387, ye 2,871, hath 313, art 138,
+hast 127, anon 371, wit (as in "wit ye well") 494, hight 111, wist 158.
+A reader trips on these and knows it.
+
+The invisible half is the case for this volume, exactly as in bunyan/:
+FALSE FRIENDS. "Worship" (292x, plus worshipful/worshipfully 67x) means
+HONOUR AND RENOWN, not adoration, and a reader who meets "he won great
+worship" reads religion into a tournament. "Wood" means MAD. "Lusty"
+means VIGOROUS. "Gentle" means WELL-BORN. "Villain" means a PEASANT.
+"Pavilion" is a TENT. "Harness" is ARMOUR. "Quick" means ALIVE. "Let"
+usually means CAUSED ("let make a tomb" = had a tomb made) and sometimes
+HINDER. "Sad" means STEADFAST. "Cheer" is a face, a mood, or hospitality.
+"Or" means BEFORE. "An" means IF. The full list is section 5. A reader
+walks past every one of these confidently wrong, and that is the reader
+this edition is for.
+
+And there is a third obstacle peculiar to Malory: THERE IS NO QUOTATION
+PUNCTUATION AT ALL. Speech is run into narration ("Well, said Merlin, I
+know whom thou seekest"), whole exchanges sit inside one paragraph, and
+Malory slides from reported into direct speech in mid-sentence. Modern
+punctuation is one of the things CLAUDE.md says to modernize, and here it
+is the single largest gain in readability. See section 6.
+
+
+3. THE VOICE: PLAINNESS AND PACE ARE THE STYLE
+
+Malory's signature is the paratactic, fast, flat sentence. Deaths take one
+clause. Marvels are reported in the same tone as breakfast. The emotion
+comes from the plainness: "Then there was weeping and dolour out of
+measure." The great passages (the passing of Arthur, Ector's lament,
+Lancelot's last sight of Guinevere) are great because nothing is dressed
+up. The modern version must KEEP THAT. Concretely:
+
+- KEEP the "and"-chains and "then... and so..." linkage. Do not
+  subordinate them into "After X had done Y, Z, who was..." periods. A
+  run of short clauses joined by "and" is the voice, and it is perfectly
+  readable modern English. You MAY break a very long "and"-chain into two
+  or three sentences where a modern reader would lose the thread; start
+  the next one with "And" or "Then" or "So" as Malory does.
+- DO NOT ADD: no adjectives he did not write, no interior feeling he did
+  not state, no scene-setting, no motives. When Malory says "and so he
+  died", we say that.
+- DO NOT INTENSIFY. "Smote off his head" is "struck off his head", not a
+  spray of blood. Fights are reported in his formulae (they "lashed
+  together", "traced and traversed", "hurtled together like two boars")
+  and the formulae stay, modernized but recognisable, every time.
+- KEEP HIS NARRATOR. "As the French book saith", "as the book telleth",
+  "now leave we X and turn we to Y", "here endeth...", "to make short
+  tale" are Malory talking to us, and they stay as real sentences:
+  "as the French book says", "Now we leave Sir Tristram and turn to Sir
+  Lancelot", "to cut a long story short". The interlace formula is the
+  book's structure, not a tic (the bunyan dream-frame rule).
+- REGISTER: plain, a little formal in direct address between knights
+  ("Fair knight", "Sir", "my lord"), never slangy. Contractions are fine
+  in dialogue and in brisk narration; avoid modern idioms that date or
+  jar ("okay", "guy", "no way"). The target reads like a good modern
+  translation of a medieval romance: clean, quick, dignified.
+- PACE: a 600-word Caxton chapter should still read in two minutes.
+
+Two registers to keep distinct:
+  (a) the adventure books (I-XII): brisk, often funny (Dinadan is a real
+      comic character; Kay is a running joke; Beaumains' damsel insults
+      him for a whole Book) — play the comedy straight, as in bunyan;
+  (b) the Grail books (XIII-XVII): slower, allegorical, full of hermits
+      explaining dreams. The hermits' explanations are long and they stay
+      long; this is the book's theology and it is not padding.
+And the last four Books (XVIII-XXI) are tragedy, in the same plain
+voice, which is why they work.
+
+
+4. NAMES — LOCKED
+
+The famous names take their standard modern spellings; the rest keep
+Pollard's. Normalise every variant (Pollard has "Lancelot" 4x beside
+"Launcelot" 2,211x).
+
+  Launcelot -> Lancelot             Guenever -> Guinevere
+  Gawaine -> Gawain                 Agravaine -> Agravain
+  Uwaine / Ewain -> Uwain           Percivale -> Percival
+  La Beale Isoud -> Isolde the Fair Isoud la Blanche Mains ->
+  Isoud alone -> Isolde               Isolde of the White Hands
+  Margawse / Morgawse -> Morgause   Carlion -> Caerleon
+  Logris -> Logres                  Avilion -> Avalon
+  Sangreal / Sancgreal -> the Holy Grail (or "the Grail" once the
+                         referent is clear). Where Malory explains or
+                         plays on the word itself, keep "the Sangreal"
+                         and let the sentence gloss it.
+  damosel -> damsel                 Damosel of the Lake -> Damsel of the Lake
+
+UNCHANGED: Tristram, Palomides, Dinadan, Lamorak, Marhaus, Mark, Bors,
+Lionel, Ector, Kay, Gareth, Gaheris, Mordred, Bedivere, Lucan, Galahad,
+Pellinore, Pelles, Pellam, Elaine, Linet, Lionesse (the lady of Book VII),
+Liones (Tristram's country, "Tristram de Liones"), Beaumains, La Cote
+Male Taile, Bragwaine, Gouvernail, Joyous Gard, Benwick, Meliagaunce,
+Morgan le Fay, Nimue, Merlin, Uther Pendragon, Igraine, Excalibur,
+Camelot, Balin, Balan, Garlon, Accolon, Uriens, Lot, Anguish, Brastias,
+Dagonet, Galahalt, the Questing Beast, the Siege Perilous, the Round
+Table, the Dolorous Stroke.
+
+Epithets and by-names that are French stay French, glossed ONCE by the
+sentence on first appearance: Beaumains ("Fair-Hands", Kay's sneer at a
+kitchen boy's soft hands, Book VII); La Cote Male Taile ("the Badly Cut
+Coat", Book IX); le Fise de Dieu, du Lake, le Savage, le Desirous etc.
+stay as name-parts. "Sir" and "Dame" stay.
+
+SAME-NAME TRAPS, which will produce fluent wrong prose if misread:
+  - TWO ECTORS. Sir Ector, Arthur's foster-father and Kay's father
+    (Book I), and Sir Ector de Maris, Lancelot's half-brother (Book VI
+    on, and the speaker of the great lament in XXI.13). Never confuse
+    them; keep "de Maris" wherever Malory has it.
+  - SEVERAL ELAINES. Arthur's half-sister (I.2); Elaine, daughter of
+    King Pelles, mother of Galahad (XI-XII); Elaine le Blank, the Fair
+    Maid of Astolat (XVIII). Malory distinguishes them by context;
+    don't merge them.
+  - TWO ISOLDES: Isolde the Fair (Mark's queen) and Isolde of the White
+    Hands (Tristram's wife in Brittany).
+  - "the Lady of the Lake" is several women over the book (one is killed
+    by Balin in II.3; Nimue later holds the role). Follow the source.
+  - Gawain's brothers are Agravain, Gaheris, Gareth, and their half-
+    brother Mordred; Lot and Morgause are their parents. Their feud with
+    Pellinore's family (Lamorak, Percival, Tor) runs the whole book.
+
+
+5. FALSE FRIENDS AND ARCHAISMS — THE WORD LIST
+
+THE FALSE FRIENDS (a modern reader will NOT know to stop):
+  worship (292)      honour, renown, glory ("win worship" = win honour);
+                     NEVER religious unless the context is God
+  worshipful(ly)     honourable, honourably, renowned
+  disworship         dishonour, disgrace
+  wood (79)          mad, wild with rage ("wood wroth" = mad with rage)
+  lusty              vigorous, lively, eager; of May, "joyful". Not
+                     sexual. ("a lusty knight" = a fine vigorous knight)
+  gentle / gentleman well-born, noble; a gentleman is a man of rank
+  villain            a peasant, a low-born man; a churl. Insult by
+                     class, not by crime
+  pavilion (66)      tent
+  harness (88)       armour
+  quick              alive ("quick and dead")
+  let (460, mostly)  CAUSED, had done ("let make a cry" = had a
+                     proclamation made); occasionally HINDER ("without
+                     let"); never "allow" unless it means allow
+  sad                steadfast, sober, serious
+  cheer (120)        expression, mood; or welcome, hospitality ("made
+                     him great cheer" = gave him a warm welcome)
+  adventure (183)    a chance happening, a marvel met with on a quest;
+                     "by adventure" = by chance
+  deliver            free, release; as adjective, nimble, agile
+  dress (135)        prepare, set in order, turn ("dressed him to Sir
+                     Tristram" = squared up to / turned toward)
+  press (27)         the thick of the crowd or of the fighting
+  rescue             as now, but also "rescue" as noun = a relieving force
+  mischief           misfortune, harm, distress (stronger than now)
+  kind / kindly      nature / natural, by nature
+  noise              rumour, report, fame
+  suffer             allow, permit; endure
+  meat               food, a meal
+  presently          (rare here) at once
+  fellowship (183)   a company of knights; the Round Table as a body
+  avoid              leave, go away from
+  stint              stop
+  nice               (rare) foolish
+  courage            heart, spirit, desire
+  avail              profit, benefit
+  array             condition, state, clothing
+  debonair          gentle, gracious, kindly
+  jealous           as now, but also zealous, anxious
+  recreant          a knight who yields and begs for his life: the
+                    deepest disgrace; "recreant" may stay as a term if
+                    the sentence makes it plain ("yield, recreant" ->
+                    "yield and admit yourself beaten"; keep the shame)
+  paramour / leman  lover; carries no necessary sneer in Malory
+  wit (494)         to know; "wit ye well" = "believe me", "you may be
+                    sure", "know this"; never "wit" as humour
+  courteous         courtly, refined in manners; ok as is
+
+THE PLAIN ARCHAISMS (ordinary friction; they go):
+  thou/thee/thy/thine/ye -> you, your (see section 6 on thou)
+  hath, doth, art, hast, -eth, -est -> modern forms
+  anon -> at once, immediately     hight -> was called / was named
+  wist / wot -> knew / know        or / or ever -> before
+  an / and (= if) -> if            but if -> unless
+  fain -> gladly                   lief / liefer -> willing / rather
+  wroth -> angry                   ware -> aware
+  espied -> saw, spotted, noticed  withal / therewithal -> with that
+  nigh -> near                     yede -> went
+  mickle -> much                   certes -> certainly
+  sith -> since                    ere -> before
+  smote -> struck                  brast -> burst
+  gat -> got / fathered (a child)  brake -> broke
+  slew -> slew or killed (both are modern; "slew" suits combat)
+  rede -> advice                   bourder -> jester
+  truage -> tribute                brachet -> hound, little hound
+  paynim -> pagan                  passing (263) -> exceedingly, very
+  divers -> various, several       dole / dolour -> grief, sorrow
+  stour -> fight                   foin -> thrust
+  sore -> badly, severely, hard ("sore wounded" = badly wounded)
+  hurtle -> crash, collide         bushment -> ambush
+  siege (seat) -> seat (but "the Siege Perilous" stays)
+  me list / me lust -> I wish, I care to
+  do me to wit -> let me know      ado -> trouble; "had ado" = fought
+  Jesu -> Jesus                    Mary / Marry -> keep as oaths if clear
+
+ARMS AND CHIVALRY: keep the real technical words a fourteen-year-old can
+picture: joust, tournament, lance/spear, shield, helm (or helmet),
+hauberk (mail shirt; gloss once), sword, squire, page, dwarf, damsel,
+quest, siege (of a castle). "Overthrew him" = knocked him off his horse;
+say so where it isn't obvious. "Horse and man" stays. "Avoided his
+horse" = got clear of his horse. "Rashed off his helm" = tore off.
+
+SE's endnotes and glossary (reference/notes.txt, reference/glossary.txt)
+give Pollard's glosses of rarer words, by file. They are a crib.
+
+
+6. PUNCTUATION AND PARAGRAPHING — MODERNIZED
+
+- QUOTATION MARKS: every piece of direct speech gets straight double
+  quotes, with the speech tag set off in modern style:
+     Well, said Merlin, I know whom thou seekest
+  -> "Well," said Merlin, "I know who you're looking for."
+- MALORY SLIDES FROM REPORTED TO DIRECT SPEECH mid-sentence ("he
+  promised her that he would meet with Sir Dinadan... And there shall I
+  make ready for you"). Open the quote where the speaker's own words
+  begin, adding a short tag ("he said") only where the shift would
+  otherwise confuse. Do not convert his reported speech into direct
+  speech, or the reverse; follow him.
+- PARAGRAPHS: a new paragraph for each new speaker in a dialogue
+  exchange, as in any modern novel. This is the one place the paragraph
+  count should go UP. Malory's long narrative paragraphs may otherwise
+  stay as they are.
+- Letters, inscriptions and epitaphs: inside quotes, in the sentence.
+  Latin is kept where it is famous and translated in the same sentence
+  (see section 8). Tab indentation is NOT used (there is no verse in
+  the book), and nothing is ever set in all capitals.
+
+THOU AND YOU. Malory's knights switch between thou (to an inferior, an
+intimate, or an enemy being insulted) and ye (to an equal or superior).
+Modern English cannot do this with pronouns, and "thou" in a modern
+sentence is costume. Render all of it as "you" and carry the social
+temperature in the WORDS: a knight who drops to "thou" to insult another
+gets a curt, contemptuous sentence ("Defend yourself, traitor!"), not a
+polite one. The Pusey/Augustine reasoning (whose-archaism-is-it) does not
+apply here because the archaism IS the author's; it goes for the
+ordinary reason, that it now reads as fancy dress.
+
+OATHS: "by my head", "by the faith of my body", "Jesu defend me", "so
+God me help", "Mary" stay as oaths in modern dress ("God help me",
+"Jesus forbid", "on my life").
+
+
+7. SENSITIVE CONTENT — MEASURED REGISTER, NEITHER SANITIZED NOR
+   SENSATIONALIZED
+
+Malory is a fifteenth-century knight writing about knights. The book is
+full of killing, and its sexual plots turn on deception and on women
+treated as property. This edition renders all of it as MALORY'S account,
+in his own flat register, without editorial comment and without
+softening (the Verne rule: we do not agree with him and we do not correct
+him; a note is the wink the rule forbids). Specific cases:
+
+- THE BEGETTING OF ARTHUR (I.1-2). Uther wants another man's wife; she
+  refuses him and flees; he makes war on her husband; Merlin disguises
+  Uther as the husband, who is killed that same night; Uther lies with
+  Igraine, who believes he is her husband. Render exactly that, in
+  Malory's plain terms ("lay with", "slept with"); Igraine's refusal,
+  her flight and her private grief ("she mourned privily and held her
+  peace") are all in the source and all stay. No modern labelling,
+  no euphemism that hides the deception.
+- THE BEGETTING OF MORDRED (I.19-20). Arthur sleeps with Morgause, Lot's
+  wife, not knowing she is his half-sister; Merlin then tells him the
+  child will destroy him. Same register. Then THE MAY-DAY CHILDREN
+  (I.27): Arthur has every child born on May Day put to sea, and the
+  ship is wrecked. Malory reports it in two sentences and does not
+  defend it. Neither do we.
+- Galahad's begetting (XI.2-3): Elaine and her nurse use an enchanted
+  cup to make Lancelot believe she is Guinevere. Same treatment as
+  Uther's deception, mirrored; render it as plainly.
+- Lancelot and Guinevere. MALORY IS RETICENT and his reticence is a
+  famous choice ("whether they were abed or at other manner of
+  disports, me list not hereof make no mention, for love that time was
+  not as is now-a-days", XX.3). Keep the reticence. Never make the
+  affair more explicit than he does.
+- WOMEN AS PRIZES. Damsels are won, given, wagered and sometimes killed
+  (Gawain beheads a lady by accident, III.7; Pellinore ignores a lady's
+  cry and finds her dead, III.12-15; a castle's custom bleeds maidens,
+  II.13). Malory often judges these (the oath of the Round Table, III.15,
+  is partly written in response). Render the deeds and the judgements
+  both, as he gives them.
+- VIOLENCE. Report in his formulae, flat. No gore he did not write; no
+  softening of what he did ("clave his head to the teeth" stays as
+  "split his head to the teeth"). Executions by burning (Guinevere,
+  twice) are threatened in the plainest terms; keep them so.
+- SARACENS, PAYNIMS, TURKS. "Saracen" is kept: it is Palomides' identity
+  and a real medieval word with a real referent. "Paynim" -> "pagan".
+  "Miscreants" (XXI.13, of the Turks) -> "unbelievers": the word now
+  means "wrongdoers" and would give a false meaning. The crusading
+  ending (Bors, Ector and the others die fighting in the Holy Land "upon
+  a Good Friday for God's sake") stays exactly as Malory gives it.
+- CLASS CONTEMPT ("villain", "churl", the old saw in X.61, "whoso be
+  ruled by a villain born... the same villain shall destroy all the
+  gentlemen about him"): Malory's subject is a knightly class talking
+  about itself. Keep it; it is the author's argument.
+- SUICIDE (II.6, II.17 and others): reported plainly, as in the source.
+
+The test throughout is the project's: does the reader LOSE information,
+or GAIN a false one? (sensitive-content-tests). Here the answer is
+almost always to keep; ask the orchestrator before cutting anything.
+
+
+8. FAMOUS PASSAGES — LOCKED WORDING
+
+These must survive near-verbatim. The exact strings checked by verify.py
+are in must_contain.txt; the full locked renderings are in
+running_notes.txt and must be used as given.
+
+  I.5    The sword in the stone. The inscription in gold letters: "Whoever
+         pulls this sword out of this stone and anvil is the true-born
+         king of all England." (Caxton: "Whoso pulleth out this sword of
+         this stone and anvil, is rightwise king born of all England.")
+  I.25   Excalibur and the Lady of the Lake ("an arm clothed in white
+         samite, that held a fair sword in that hand").
+  XVIII.25  "The month of May": Malory's essay on true love; it ends,
+         of Guinevere, "while she lived she was a true lover, and
+         therefore she had a good end."
+  XXI.5  The passing of Arthur: Bedivere twice hides Excalibur and
+         lies; the third time "there came an arm and a hand above the
+         water and met it, and caught it, and so shook it three times
+         and brandished it"; "Comfort yourself... for there is no
+         trust left in me to trust in, for I will go into the vale of
+         Avalon to be healed of my grievous wound."
+  XXI.7  "Hic jacet Arthurus, rex quondam, rexque futurus": KEEP THE
+         LATIN, then English in the same sentence: "Here lies Arthur,
+         the once and future king." (Pollard spells "jacet"; keep that.)
+  XXI.13 Sir Ector de Maris' lament over Lancelot ("thou were the
+         courteoust knight that ever bare shield..."), locked in full in
+         running_notes.txt. The anaphora ("And you were... that
+         ever...") is the passage; keep every clause, in order.
+  XXI.13 Malory's prayer: "pray for me while I am alive, that God send
+         me good deliverance, and when I am dead, I pray you all pray for
+         my soul."
+  000    Caxton: "Do after the good and leave the evil" -> "Follow the
+         good and leave the evil, and it will bring you to good fame and
+         renown."
+
+Name-phrases that are part of the language and must appear: the sword in
+the stone (the phrase need not be Malory's, but the scene must), the
+Round Table, the Siege Perilous, the Questing Beast, the Dolorous Stroke,
+the Lady of the Lake, Excalibur, Camelot, Avalon, Joyous Gard, the Holy
+Grail.
+
+
+9. STRUCTURE, HEADINGS, AND WHAT CAXTON DID
+
+- Caxton's rubrics are part of the work (since 1485 they have been the
+  book's table of contents) and Caxton's preface explicitly claims them.
+  They are rendered as the chapter headings, modernized in the same
+  voice, in SENTENCE CASE, keeping his "How X did Y" shape:
+     Caxton: How Uther Pendragon made war on the duke of Cornwall, and
+             how by the mean of Merlin he lay by the duchess and gat
+             Arthur.
+     Ours:   Chapter 2: How Uther Pendragon made war on the Duke of
+             Cornwall, and how through Merlin he lay with the duchess and
+             fathered Arthur
+  All 504 are written in titles.json in advance and given to agents
+  verbatim. Agents never invent or "improve" a heading.
+- Each Book opens with a divider ("Book Seven: Sir Gareth, Whom Sir Kay
+  Called Beaumains") drawn from Caxton's own summary of the Books in
+  his preface. The divider comes from the manifest; agents NEVER write
+  it into a file.
+- Caxton's "Explicit liber primus" lines at Book ends are translated:
+  "Here ends the first book." / "Here ends the eighteenth book, and here
+  follows the nineteenth."
+- Caxton's preface says 507 chapters; there are 504. Three of his final
+  chapter numbers were wrong: Book IV skips XX (Pollard's note: "Misnumbered
+  XX by Caxton"), Book VII misnumbers XXV as XXVI ("setting the numeration
+  wrong to the end of the book"), and Book I's XXVIII is the preface's
+  slip (Caxton printed 27). Pollard renumbered; we follow Pollard.
+  check.py asserts this exactly.
+- The book's final chapter (XXI.13) holds Malory's own explicit and
+  prayer and then Caxton's colophon. Both are translated, both stay in
+  that file, in that order.
+
+
+10. RATIO AND COMPLETENESS
+
+EN->EN modernization runs close to 1:1. Bunyan landed 1.03, Grimm 0.99,
+Burton's Nights 1.04. Malory's archaisms are mostly the same length as
+their replacements ("anon" -> "at once" adds a word; "wit ye well that"
+-> "believe me," loses one), and quotation marks add nothing to the word
+count. Expect 0.95-1.10 per file; run verify with
+    python3 verify.py malory --min-ratio 0.85 --max-ratio 1.3
+Under 0.92 in a single file means something was summarised; read it.
+Because the files are short (median ~600 words), one dropped sentence
+moves the ratio a visible amount: that is a feature.
+
+THE WORST FAILURE MODE HERE IS NOT SUMMARY BUT DEDUPLICATION. Malory
+repeats himself on purpose: tournament after tournament, the same
+formulae ("and there he smote down Sir X, and Sir Y, and Sir Z"), lists
+of thirty knights by name. Every list stays complete, every repeated
+formula stays repeated. The lists of names are the book's roll of honour.

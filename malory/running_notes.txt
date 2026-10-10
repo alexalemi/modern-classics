@@ -1,0 +1,693 @@
+RUNNING NOTES — LE MORTE D'ARTHUR
+The shared consistency ledger. Every agent reads it; the orchestrator
+updates it between batches from what the agents return. Agents do NOT
+edit this file.
+
+STATUS: opened at setup, 2026-10-09. Nothing translated yet. Scope not yet
+decided by Alex (full run recommended). The first file to translate is
+001 (I.1), ALONE, as the voice pilot; then 002-027 (the rest of Book I)
+in batches before anything else runs in parallel.
+
+
+LOCKED — DECIDED IN ADVANCE, DO NOT RE-DECIDE
+
+Headings        titles.json / manifest.json, verbatim. Line 1 of every file
+                is the heading given in the prompt, character for character.
+Book dividers   NEVER written into a file. assemble.py emits them from the
+                manifest. A line "Book Seven: ..." in a file becomes the
+                chapter's heading and the real heading disappears.
+Rubric          chapters/NNN.txt opens on Caxton's rubric as its first
+                paragraph. It is rendered ONLY as the heading line; do not
+                translate it again as the first paragraph of the body.
+Names           text_analysis.txt section 4. Lancelot, Guinevere, Gawain,
+                Agravain, Uwain, Percival, Isolde (the Fair / of the White
+                Hands), Morgause, Caerleon, Logres, Avalon, the Holy Grail,
+                damsel. Meliagaunce everywhere, INCLUDING Book XIX, where
+                Pollard spells him "Meliagrance" ~70 times: one man, one
+                name. Galahalt (the "haut prince", lord of Surluse) is NOT
+                Galahad; VIII.27's rubric says "Galahad" for him and our
+                heading says Galahalt; follow the heading.
+Pronouns        thou/ye -> you; the insult in "thou" carried by word
+                choice (text_analysis section 6).
+Quotes          straight double quotes ", new paragraph per speaker.
+Spelling        British: honour, armour, marvellous, colour, grey.
+"Sir"           kept on every knight, every time Malory has it.
+"Saracen"       kept. "paynim" -> pagan. "miscreants" -> unbelievers.
+Sangreal        "the Holy Grail" / "the Grail"; "Sangreal" only where
+                Malory explains the word itself.
+Recurring formulae (render the same way every time; extend this list):
+  "wit ye well"            -> "believe me" / "you may be sure" (vary
+                              only between these two)
+  "Now leave we X and turn we unto Y"
+                           -> "Now we leave X and turn to Y."
+  "as the French book saith" -> "as the French book says"
+  "to make short tale"     -> "to cut a long story short"
+  "out of measure"         -> "beyond measure"
+  "horse and man"          -> "horse and man"
+  "he smote him down"      -> "he struck him down" / "he unhorsed him"
+                              (when it is a joust)
+  "lashed together"        -> "laid into each other" (fighting on foot)
+  "traced, traversed and foined" -> "circled, sidestepped and thrust"
+  "Explicit liber primus"  -> "Here ends the first book."
+  "Here followeth..."      -> "Here follows..."
+  "knight of the Round Table" -> as is; lower-case "knight"
+  "the noble knight"       -> as is; Malory's epithets stay
+  "Jesu mercy"             -> "Jesus have mercy"
+
+
+LOCKED PASSAGES — USE EXACTLY (the agent for that file is given these)
+
+005 (I.5), the inscription on the stone, in gold letters around the sword:
+  "Whoever pulls this sword out of this stone and anvil is the true-born
+  king of all England."
+
+025 (I.25): "...an arm clothed in white samite, that held a fair sword in
+  that hand." (keep "samite"; the sentence may gloss it as rich silk)
+
+456 (XVIII.25), last sentence of Malory's May essay: "...like Queen
+  Guinevere, of whom I make a little mention here, because while she lived
+  she was a true lover, and therefore she had a good end."
+
+496 (XXI.5):
+  - the third throw: "...and there came an arm and a hand above the water,
+    and met it, and caught it, and so shook it three times and brandished
+    it, and then the hand vanished with the sword into the water."
+  - "Comfort yourself," said the king, "and do as well as you can, for
+    there is no trust left in me to trust in. For I will go into the vale
+    of Avalon to be healed of my grievous wound. And if you never hear of
+    me again, pray for my soul."
+
+498 (XXI.7):
+  "...I will not say that it shall be so, but rather I will say: here in
+  this world he changed his life. But many men say that there is written
+  upon his tomb this verse: Hic jacet Arthurus, rex quondam, rexque
+  futurus. Here lies Arthur, the once and future king."
+  (Keep the Latin, then the English as its own sentence. Pollard spells
+  "jacet"; keep it.)
+
+504 (XXI.13), Sir Ector de Maris over Lancelot. Every clause, in order:
+  "Ah, Lancelot," he said, "you were the head of all Christian knights!
+  And now I dare say," said Sir Ector, "you, Sir Lancelot, lying there,
+  that you were never matched by any earthly knight's hand. And you were
+  the most courteous knight that ever bore shield. And you were the truest
+  friend to your lover that ever bestrode horse. And you were the truest
+  lover, of a sinful man, that ever loved woman. And you were the kindest
+  man that ever struck with sword. And you were the goodliest person that
+  ever came among the press of knights. And you were the meekest man and
+  the gentlest that ever ate in hall among ladies. And you were the
+  sternest knight to your mortal foe that ever put spear in the rest."
+  Then there was weeping and grief beyond measure.
+  (This is the one passage where the archaic-sounding words "bestrode",
+  "goodliest" and "the press of knights" are KEPT: the passage is famous
+  in this shape, and each is still English.)
+
+504, Malory's prayer: "...pray for me while I am alive, that God send me
+  good deliverance, and when I am dead, I pray you all, pray for my soul.
+  For this book was finished in the ninth year of the reign of King Edward
+  the Fourth, by Sir Thomas Malory, knight, as Jesus help him by his great
+  might, as he is the servant of Jesus both day and night."
+
+000, Caxton: "Follow the good and leave the evil, and it will bring you to
+  good fame and renown."
+
+
+FORWARD REFERENCES TO HONOUR
+
+- Mordred is Arthur's son by his half-sister Morgause (I.19-20) and is
+  saved from the May-Day ship (I.27). Malory does not mention it again
+  for a long time; when it returns in XX-XXI, "his son" must land.
+- Balin's sword (II.19) is set in a floating stone by Merlin and drawn by
+  Galahad (XIII.2-5). The two passages must name it the same way.
+- The Siege Perilous (III.2, XIII.4): Merlin's empty seat at the Round
+  Table, death to anyone but the destined knight. Same name, same gloss.
+- The Dolorous Stroke (II.15): Balin's wounding of King Pellam lays waste
+  three kingdoms; the Maimed King is healed only by Galahad (XVII).
+- Lamorak's murder by Gawain's brothers (X) and the Orkney-Pellinore feud
+  are paid off in XX-XXI. Gareth, who loved Lancelot best, is killed by
+  him unknowing in the rescue of Guinevere (XX.8); Gawain's grief and
+  hatred drive the end. Agravain and Mordred expose the lovers (XX.1-3).
+- Excalibur and its SCABBARD: Merlin tells Arthur the scabbard is worth
+  ten swords (I.25); Morgan steals it (IV.14). Keep "scabbard" as the word.
+- Elaine of Astolat's barge and letter (XVIII.20) is the source of
+  Tennyson's Lady of Shalott. Her letter stays a letter, in quotes.
+
+
+OPEN QUESTIONS (for Alex; see the setup report)
+
+- Scope: full run (recommended) or a selection.
+- Isolde vs Pollard's "Isoud". Locked as Isolde; reversible by sed until
+  the first Tristram book is translated.
+- Caxton's preface (000): included as the book's opening (recommended).
+
+
+BATCH 0 (voice, files 000-008, 2026-10-09). Ratio 1.02. Calibrate on 001-008, NOT on
+000: Caxton's preface is a different register and was left long-sentenced.
+
+VOICE, copied from 001-008:
+- Keep the "and"/"then"/"so" chains. Where a chain runs very long,
+  start a new sentence with And/Then/So. Never merge clauses into longer
+  sentences, and never add adjectives.
+- Speech tags are always inverted: "said Merlin", "said the king".
+- One paragraph per speaker. Narration after a closed quote starts its own
+  paragraph. No quote runs across a paragraph break (check.py requires
+  balanced quotes in every paragraph).
+- Reported speech that slides into direct speech: open the quote at the
+  speaker's own words.
+- The narrator's asides stay inside the sentence in parentheses: "(whether it
+  was St. Paul's or not, the French book does not say)".
+- "Sir" stays wherever Malory has it, even when premature ("Sir Arthur" in
+  I.5 before he is knighted).
+- The first CONTEMPTUOUS "thou" has not come up yet. Whoever meets it sets
+  the pattern (curt wording, not an archaism) and reports it.
+
+LOCKED RENDERINGS (added by batch 0)
+  I will well -> Gladly | by the faith of my body -> on my life
+  wonderly wroth -> furiously angry | made great joy -> rejoiced greatly
+  made great dole/sorrow -> grieved greatly | passing (adv.) -> exceedingly
+  weened -> thought/expected | made him great cheer -> gave him a welcome
+  upon pain of cursing -> on pain of excommunication
+  Four Evangelists -> the Four Gospels | postern -> back gate
+  pight pavilions -> pitched tents | issued out -> sallied out
+  stuff and garnish (a castle) -> stock and arm
+  cried X mercy -> begged X's pardon | commons -> common people
+  well beseen -> well equipped | surance -> guarantee
+  will or nill -> whether they like it or not
+  That is no mastery -> That's no great feat | scripture (on a stone) -> inscription
+  nourished brother -> foster brother
+  witch (of Merlin) -> wizard | battle (= army division) -> army / division
+  diseased -> unwell | every deal -> every bit | as longed to -> as befitted
+  but if -> unless | long or day -> long before daybreak | by means -> through go-betweens
+
+GLOSSES SPENT (do not gloss again): seneschal ("the steward over all your
+lands", I.6); necromancy ("the black art", I.2).
+
+NAMES (added): Sir Uwain le Blanchemains (002; majority spelling, as in 146
+and 233); Morgause (not Margawse); Caerleon; Gawain.
+
+INSTRUCTION CLARIFICATIONS
+- "The body starts at the second paragraph" applies to 001 onward. 000 has no
+  rubric, so its first paragraph is body text.
+- Caxton's preface keeps his own (wrong) chapter counts, as printed.
+- SWEEP_EXEMPT is empty and lives outside modern_chapters/. If check.py
+  flags a word, REWORD it; do not add an exemption.
+
+SCOPE DECIDED 2026-10-09 by Alex: FULL RUN, all 21 Books, in the order I-VII, XI-XXI, VIII-X.
+
+
+ROUND 1 (files 009-061, Books I-III, 2026-10-09). All ratios 0.96-1.07; check.py clean.
+The orchestrator removed duplicate glosses: hauberk is glossed ONLY in 016
+("his mail shirt"), samite ONLY in 025 ("a rich silk").
+
+CONTEMPTUOUS "THOU" (pattern now set): plain "you", made curt with clipped
+wording, a bare insult and contractions: "You fool," said the knight, "you
+want it for nothing." / "Now you're on foot, the same as us!" / "Knight,
+what are you staring at me for?" A "thou" from a knight to a peasant, or a
+familiar "thou", is a plain, neutral "you". churl -> peasant (as with villain).
+
+BOOK ENDS: "Explicit X. Sequitur ... liber." -> "Here ends X." on one line,
+then "Here follows the fourth book." (lowercase ordinal word) on the next.
+Book I ends "Here ends the first book."
+
+GLOSSES SPENT (in addition to the earlier ones): hauberk (016), samite
+(025), the Siege Perilous ("the Perilous Seat", 050), palfrey ("a lady's
+riding horse", 051), recreant ("a knight who begs for his life", 023),
+Excalibur ("Cut-steel", Malory's own, 030).
+
+LOCKED RENDERINGS (round 1)
+  men of arms -> men-at-arms | fore-riders -> scouts | hackney -> small riding horse
+  bachelors -> young knights | (am)bushment -> ambush | medley -> fight
+  the press -> the thick of the fighting | champaign -> open field
+  astonied / stonied -> stunned | defoiled -> trampled | gramercy -> Many thanks
+  leech -> doctor | habiliment -> equipment | myster -> need | dere -> harm
+  unnethe -> scarcely | bow-draught -> bowshot | void (from a horse) -> got clear of
+  void (the field) -> withdraw | marches -> borders | the guise -> the custom
+  dress spear -> lower; dress shield -> set his shield; dress him against -> square up to
+  couch (a spear) -> level | aventred spears -> set their spears in rest
+  jesseraunt -> short coat of double mail | courser -> warhorse
+  sieges (seats at the Table) -> seats | brachet -> little hound, then hound
+  uncouth -> strange(rs) | have ado with (a fight) -> fight
+  had ado with HER (sexual) -> lay with her
+  forfoughten -> worn out with fighting | I take no force -> I care nothing for
+  me repenteth / me forthinketh -> I regret it / I am sorry
+  by misadventure / by adventure -> by mischance / by chance
+  in open audience -> in the hearing of all | sib -> kin | apair -> weaken
+  noblesse -> nobility | I faute -> I lack | rode freshly -> rode briskly
+  raundon -> a great charge | cantels -> pieces | tamed (a helm) -> battered
+  gart -> forced | sued fast upon -> pressed hard upon | japes -> trifles
+  allowed -> praised | wallop -> gallop | lithe -> joint | glaive -> sword
+  maugre her head -> against her will | villainy (to a lady) -> dishonour
+  outrage -> a violent wrong | fordo -> undo | latten -> brass
+  germain -> closely related | me list not -> I don't care to
+  truncheon -> broken spear shaft | warrant / conduct -> protection
+  despite -> insult | behote -> promise | steven -> chance
+  paramour -> lady-love (held her to paramour -> kept her as his lover)
+  dight -> furnished | tray and tene -> sorrow and suffering
+  halsing -> embracing | stert -> leapt | hoar -> white-haired
+  semblant -> face | blessed him -> crossed himself
+  breathed (in a fight) -> stopped for breath | unhappy -> ill-fated / unlucky
+  hoved -> floated | mention (on a tomb) -> inscription | orgulous -> proud
+  boistous -> rough | faiter -> vagabond | "Evil be you found" -> "Ill met!"
+  lightly (a blow) -> swiftly | arrayment -> clothes | battles -> divisions
+  in my daunger -> in my power | purfle -> trimming | mantle -> cloak
+  lewd -> ignorant | wood out of measure -> mad with rage beyond measure
+  put the wite on -> put the blame on | puissance -> army | fountain / well -> spring
+  good tatches -> good qualities; "had no tatches of me" -> took after me in nothing
+  gentle (adj.) -> well-bred | gentleman -> man of noble birth
+  "quest" can mean an INQUEST: "a quest of ladies" -> "a jury of ladies"
+  "I will well" also means "I can well believe it" (016): check which sense
+  the haut prince (said of GALAHAD) -> "the high prince"
+  "the Dolorous Stroke": always capitalised
+
+NAMES (round 1): Cradelment (not Cradelmas); Uriens; Agwisance of Ireland
+(left as printed, possibly Anguish; open); Bagdemagus; Palomides; Lamorak
+(Pollard's "Lamerake" in I.24); Agravain; Lancelot du Lake; Lile of AVALON
+(Pollard's "Avelion"); Nauntes in BRITTANY (watch Britain vs Brittany); Borre
+(Arthur's son by Lionors); Griflet le Fise de Dieu; Lucas the butler; King
+Pellam of Listeneise; Garlon; Longius; Garnish of the Mount; Sir Tor (an earl,
+III.11); Nimue (Meliot's cousin, III.15); Hontzlake of Wentland; Meliot of
+Logurs. ELAINE TRAP: add Pellinore's daughter by the lady of the Rule (III.15).
+By-names: "the Knight with the Two Swords" (Balin); "the Knight with the
+Strange Beast" (Pellinore).
+
+THREADS (round 1, beyond the earlier list)
+- Balin's sword, "the marble stone floating on the water", drifts to Camelot
+  ("which in English is Winchester"); Galahad draws it in XIII. Its scabbard
+  is left for Galahad.
+- The pommel prophecy (II.19): Lancelot will kill the man he loved best,
+  Gawain.
+- Merlin's prophecy to Pellinore (III.15): "the man you trust most of any
+  man alive will leave you where you will be killed."
+- The ROUND TABLE OATH (III.15), clause by clause: no outrage or murder;
+  flee treason; mercy to those who ask for it (on pain of losing honour and
+  Arthur's lordship); always help ladies, damsels and gentlewomen (on pain
+  of death); no wrongful quarrel for law or worldly goods; renewed every
+  Pentecost. Later references must match.
+- Gawain's vow (III.8): always for ladies, never refusing mercy.
+- Gawain kills Pellinore in the tenth year after his knighting, avenging
+  Lot (II.10).
+- Mark will learn Merlin's name "when Sir Tristram is caught with his
+  sovereign lady" (II.8).
+- The poison plot against Arthur (III.14); Percival's sister's blood
+  (II.13); Merlin's bed, undone later by Lancelot (II.19).
+- Mordred is raised by "a good man" until fourteen (I.27); Merlin foretells
+  his own burial alive (I.20).
+
+
+ROUND 2 (files 062-119, Books IV-VI, 2026-10-09). All ratios 0.99-1.06; check.py clean.
+
+RULINGS (from the orchestrator)
+- PLACE NAMES: a recognisable modern place takes its modern English name:
+  Burgundy, Champagne, Germany (Almaine; Haut Almaine -> Upper Germany),
+  Pavia, Piacenza, Spoleto, Viterbo, Dauphiny, Lorraine, Tuscany, Lombardy,
+  North Wales (Northgalis), Avalon. "Little Britain" is glossed once (V.2,
+  "that is, Brittany"); after that it is Brittany. Obscure or legendary
+  places stay as Pollard prints them (Sessoine, Gore, Castle Chariot, the
+  Isle of Longtains).
+- "fountain" -> "spring" everywhere, INCLUDING headings (titles 4-28 and 10-8
+  were changed in the manifest).
+- CAXTON MISPRINTS: when the print is plainly corrupt and Malory's sense is
+  clear, render the sense, without comment (VI.10 "adventurous" ->
+  "adulterous"; VI.17 "his worship is not known" -> "is known"). Otherwise
+  follow the print.
+- BOOK ENDS: keep whatever descriptive clause Malory gives. "Here ends the
+  fifth book, of the conquest that King Arthur won against Lucius the
+  Emperor of Rome." / "Here follows the sixth book, which is of Sir Lancelot
+  du Lake." VI ends: "Here ends the noble tale of Sir Lancelot du Lake,
+  which is the sixth book." / "Here follows the tale of Sir Gareth of
+  Orkney, who was called Beaumains by Sir Kay, and is the seventh book."
+- sendal -> silk ("a fine silk", glossed once in V.7). Do NOT write "linen".
+
+GLOSSES SPENT (round 2): the hour of prime ("six in the morning", IV.8);
+the octave of St Hilary (V.1); wardrobe ("the department that keeps his
+gear", V.9); the Potestate ("Rome's governor", V.7); sendal (V.7); chrism
+("the holy anointing oil", V.12); Little Britain (V.2).
+
+LOCKED RENDERINGS (round 2)
+  admirals (Saracen commanders) -> EMIRS | Dutchmen -> Germans | Soudan -> Sultan
+  truage -> tribute | Procuror of the Public Weal -> Procurator of the Commonwealth
+  cogs / dromounds -> small boats / great warships | careful -> sorrowful
+  meiny -> household | broaches -> spits | coronal -> circlet on his helm
+  barbican -> gate-tower | kirtle -> coat | sea mark -> high-water mark
+  journey (a battle) -> engagement | husbandman -> farmer | knave -> servant
+  barbers -> barber-surgeons | keep the stale -> hold the position
+  fordeal / afterdeal -> advantage / disadvantage | avaled -> lowered
+  awk stroke -> backhand stroke | loos -> renown | priker -> hard rider
+  grame -> harm | teen -> pain | graithed -> made ready | detrenched -> cut to pieces
+  disperpled -> divided | everych -> each | enthronization -> enthronement
+  assotted -> besotted | dure -> last | quick (alive) -> alive | hie -> hurry
+  heavy (in mood) -> downcast | liege people -> true and loyal people
+  in my default -> through my failing | livelihood -> income / inheritance
+  blew the prise -> blew the horn call for the kill | DIGHT the hart -> dressed the hart
+  hard bestead -> in a hard spot | void horse -> spare horse | buffet -> blow
+  bated no cheer -> did not let his face fall | the cross (of a sword) -> crossguard
+  conditions -> character | No force -> No matter | What cheer? -> How are you?
+  fetch his range -> take his distance for the charge | Woe worth -> Cursed be
+  I wite thee -> I blame you | laund -> clearing | hoved (on land) -> waited
+  sennight -> a week | largeness -> generosity | discover me not -> do not give me away
+  cousin-germain -> first cousin | in privity -> in private | of counsel with -> in league with
+  turret -> tower | courtelage -> farmyard (or courtyard house, by context)
+  nighted -> night overtook them | recounter -> encounter | besants -> gold coins
+  gisarms -> battle-axes | canel bone -> collarbone | sikerness -> assurances
+  clipping -> embracing | overthwart -> across | plight his troth -> gave his solemn word
+  disherited -> robbed of his lands | leman -> lady-love | slade -> little valley
+  feuter / feutred -> set his spear in rest | cleight -> seized | painture -> painting
+  trasing and rasing -> pressing and slashing | gree -> prize | arson -> saddlebow
+  beaver -> visor | to-brast -> burst | scaffolds -> stands
+  betaught them to God -> commended them to God | a knight adventurous -> a knight-errant
+  very knight -> true knight | roasted, baken and sodden -> roasted, baked and boiled
+  I make mine avow -> I swear it | the press (at a tournament) -> the thick of the crowd
+  lunes -> leashes | falcon perigot -> peregrine falcon | makeless -> without equal
+  gest -> deed | for no treaties -> for any pleading
+
+NAMES (round 2): Accolon of Gaul; Manassen; Sir Damas; Sir ONTZLAKE (Damas's
+brother, NOT Hontzlake of Wentland); Gore (Morgan's land); Castle Chariot;
+Marhaus; Pelleas; Ettard; Sir Carados (Gawain's host in IV, not the King of
+Carados nor Turquine's brother Carados of the Dolorous Tower); the Duke of
+the South Marches; the Lady de Vawse; Earl Fergus; the giants Taulurd and
+Taulas; the Lady of the Rock; Edward and Hue of the Red Castle; Sagramore le
+Desirous; Dodinas le Savage; King ANGUISH of SCOTLAND in V (as printed);
+Cador of Cornwall; Constantine (Cador's son); Baudwin of Britain; Howell of
+Brittany; Priamus (later Duke of Lorraine); Galatine (Gawain's sword);
+Turquine; Belleus; Mador de la Porte; Gahalantine; Meliot de LOGRES (one
+spelling throughout); Hellawes of the Castle Nigramous; Phelot; Pedivere;
+Gaunter, Gilmere and Raynold. ELAINE TRAP: add King Ban's queen. Lancelot's
+baptismal name was Galahad (IV.1).
+
+THREADS (round 2)
+- The scabbard is gone for good: Morgan sank it in a lake (IV.14).
+- Gawain's strength "increased threefold" from nine o'clock until noon,
+  then fading. The six who outmatched him: Lancelot, Tristram, Bors,
+  Percival, Pelleas, Marhaus.
+- Pelleas never loves Gawain again; he is one of the four who achieve the
+  Grail; Nimue keeps him from fighting Lancelot.
+- Tristram will kill Marhaus; Fergus becomes Tristram's man; the mad
+  Tristram kills Taulas.
+- Constantine is named Arthur's heir (V.2) and succeeds him (XXI). In V the
+  regents are Baudwin and Constantine, not Mordred.
+- Arthur is crowned emperor in Rome at Christmas (V.12).
+- The rumour that Guinevere has enchanted Lancelot (VI.10); Lancelot
+  refuses lovers "for fear of God".
+- Hellawes built the Chapel Perilous for Lancelot and Gawain (VI.15).
+
+
+ROUND 3 (files 120-154 Book VII; 328-355 Books XI-XII; 2026-10-09). Ratios
+0.98-1.09; check.py clean. NOTE: Books VIII-X (files 155-327) are translated
+LAST, so files after 154 were written without them. Back-references to
+Tristram-book events are rendered from the source as written.
+
+RULINGS (round 3)
+- KITCHEN KNAVE -> "kitchen boy" everywhere (the orchestrator unified 120-128).
+  A bare "knave" used as an insult -> "lout". A knave who is a servant ->
+  servant.
+- WHITSUNDAY where Malory has Whitsunday; Pentecost where he has Pentecost;
+  Whitsuntide -> Whitsun. Never "Whit Sunday".
+- "fountain stone" meaning the baptismal font -> "the font". The
+  fountain -> spring rule does NOT apply here.
+- Misprint ruling applied: VII.33 "when Sir Gawaine saw her" -> Gareth;
+  VII.25 "Sir, said Arthur" (to his sister) -> "Sister". Accepted.
+- BOOK ENDS: where Malory gives "Thus endeth this tale of..." plus Caxton's
+  "Here followeth the eighth book, which is...", keep both, with their
+  clauses, and add no extra "Here ends the seventh book".
+
+GLOSSES SPENT (round 3): Beaumains ("Fair-hands", VII.1); La Cote Male Taile
+("the Badly Cut Coat", VII.2: the IX agent keeps Malory's OWN explanation
+there, but adds no new gloss); Wade ("the hero of the old songs", VII.9);
+the colour of Inde ("a deep blue", VII.11); harbingers ("the officers sent
+ahead to find lodging", VII.27); chief sewer ("the officer who sets the
+dishes on the table and tastes them", VII.35); churched ("as new mothers
+were", XI.3); Le Chevaler Mal Fet ("the knight who has done wrong", XII.6,
+which Malory repeats himself); the Suffragan of Carlisle ("the assistant
+bishop", XII.14).
+
+LOCKED RENDERINGS (round 3)
+  bawdy -> filthy / dirty (NOT lewd) | lusk -> lout | turner of broaches -> turner of spits
+  parage -> birth | kemps -> champions | brose -> broth | masteries -> contests of strength
+  mountenance of an hour -> the space of an hour | Not so hardy -> Don't you dare
+  in thy danger -> in your power | unhappy / unhappily (the damsel's taunt) -> ill-starred, by a fluke, by mere luck
+  pair of beads -> rosary | waits -> watchmen | by stigh or by street -> by path or by road
+  spered -> asked | thrang -> pushed his way | perdy -> by God | devoir -> duty
+  vengeable -> vengeful | is the wind in that door? -> is that the way the wind blows?
+  have and wield -> have and hold | stones of virtue -> stones of magic power
+  lust (sexual, VII.22) -> desire; lust (XI, "liking and lust") -> delight | lusty -> vigorous
+  strangeness -> coldness | at their large -> free of any lord | mean knights -> ordinary knights
+  be aknowen -> let it be known | gainest way -> shortest way | woodness -> frenzy
+  shaftmon -> a hand's breadth | wildsome -> desolate | gobbets -> lumps | gerfalcon -> gyrfalcon
+  to the utterance -> to the uttermost | double dyked -> with a double moat | hale and how -> heave-ho
+  paitrelles, surcingles -> breast straps, girths | forhewn -> hacked to pieces | abought -> paid dearly for
+  shent -> lost | shenship -> disgrace | cast of bread -> batches of loaves | spices -> spiced sweets
+  abraid -> started | retrayed -> drew back | stew -> steam bath | underne -> mid-morning
+  quarrels -> crossbow bolts | purely beseen -> finely dressed | Let me deal -> Leave it to me
+  That were me liefer -> I would rather have that | shriven -> make my confession
+  clatter (in sleep) -> chatter | by course of kind -> in the course of nature | araged -> raging
+  no bote -> too late to help | dawed -> revived | spere after -> ask after | haunt arms -> follow arms
+  siker -> sure | witting -> news | sperhawk -> sparrowhawk | minever -> ermine
+  hough-bone -> back of the knee | sad strokes -> heavy blows | wight (a knight) -> strong
+  naked (unarmed) -> without armour | unhilled -> uncovered | noised -> rumoured
+  "a perfect clean maiden" (of Percival) -> "a perfectly pure virgin" (he is a virgin; a Grail thread)
+  "I will well" -> by sense: Gladly / I am content / So much the better / I can well believe it
+
+NAMES (round 3): Linet (never Lynette) and Dame Lionesse of the Castle
+Perilous; the Castle Dangerous; Gringamore; Ironside, the Red Knight of the
+Red LAUNDS ("Launds" kept as part of the name); Persant of Inde (the Blue
+Knight), Pertolepe (Green), Perimones (Red, not Ironside), Percard (Black);
+Gherard and Arnold le Breusse; Kink Kenadon; Dame Laurel; the Duke de la
+Rowse; Bendelaine; the Brown Knight without Pity; Uwain les Avoutres (no
+"Sir"; NOT Uwain le Blanchemains); Galahalt "the noble prince"; Meliagaunce
+(for Pollard's Meliganus or Meliaganus); Carados of the Dolorous Tower is
+NOT King Carados of Scotland; Corbin; the Castle of Case; King Pelles
+(kinsman of Joseph of Arimathea); Dame Brisen; Bromel la Pleche; Pedivere of
+the Straight Marches (kept separate from VI's Pedivere); the Spear of
+Vengeance; Melion de Tartare; Aglovale; Percival de Galis; Lamorak de
+Galis; Goodewin and Gawdelin; Persides; Sir Bliant and Sir Selivant; the
+Castle Blank (Bliant's) is NOT the Joyous Isle (Pelles's gift); Breuse
+Saunce Pité; Castor; Helin le Blank (Bors's son); Galleron of Galway;
+Safere; Lonazep; Benwick (for Pollard's "Benoy"); Joseph of Arimathea.
+ELAINE TRAP: add Elaine, daughter of King Pelles and mother of Galahad
+(XI-XII), and Bors's daughter by King Brandegore's daughter (XI.4).
+
+THREADS (round 3)
+- 153: Gareth loves Lancelot above all and leaves Gawain's company because
+  Gawain "was vengeful, and where he hated he would be avenged by murder".
+  This sets up XX.8.
+- Gaheris marries Linet; Agravain marries Laurel; Persant, his brothers,
+  Ironside and the Duke de la Rowse join the Round Table (VII.35).
+- Galahad: "a full fifteen winters old", knighted at Pentecost, sits in the
+  Siege Perilous (XII.14 into XIII). The Grail maiden prophesies he will be
+  better than his father. "The best man of his kin except one" (XII.9).
+- Lancelot's shield on the Joyous Isle: all black, with a crowned queen in
+  silver and a knight kneeling before her.
+- Lancelot mad for two years; Guinevere spent twenty thousand pounds
+  searching; healed by the Grail at Corbin.
+- Sin keeps Lancelot from the Grail: "in these spiritual matters he shall
+  have many his betters" (XI.7).
+- Percival is a virgin, and his grudge against Kay and Mordred; the widow
+  says Gawain and Gaheris killed Pellinore "by treachery".
+- Palomides is christened, with Tristram and Galleron as godfathers (XII.14).
+
+
+ROUND 4 (files 356-431, Books XIII-XVII, the Grail; 2026-10-09). Ratios
+0.99-1.08; check.py clean.
+
+RULINGS (round 4)
+- PRONOUNS FOR GOD / CHRIST: REVERENTIAL CAPITALS, mid-sentence too: He, His,
+  Him, Himself, and You / Your in prayer ("Lord God, I thank You"). This is
+  the majority usage across 29 files; the orchestrator fixed the two
+  lowercase prayers. Christ speaking TO a person: a plain lowercase "you".
+  check.py is case-sensitive, so a capital "Thou" would slip through:
+  never write Thou / Thee / Thy.
+- "hart", never "stag" (the orchestrator unified 9 uses and title 17-9).
+- Hurlame's "dolorous stroke" on King Labor (XVII.3) stays LOWERCASE.
+  "the Dolorous Stroke", capitalised, means Balin's only. "the Waste Land"
+  is capitalised.
+- CORBIN / CARBONEK: keep whichever the source prints (it is the same
+  castle).
+- Sangreal: keep the word only where Malory glosses it ("the Sangreal,
+  which is called the Holy Vessel"); otherwise write "the Holy Grail".
+  "the Holy Vessel" and "the holy dish" stay as written.
+- A speech that runs over a paragraph or chapter break: close and reopen
+  the quotes at each paragraph; a file that opens mid-speech adds a short
+  tag ("the White Knight went on").
+- Percival's sister stays UNNAMED.
+
+GLOSSES SPENT (round 4): Michaelmas ("the end of September", XVI.1); the
+armour of Our Lord ("the vestments of the mass", XVII.9); King Pescheour
+("the Fisher King", XIII.18).
+
+LOCKED RENDERINGS (round 4)
+  minster -> the great church | defouled (in a joust) -> overthrown | chierte -> affection
+  again-say -> take back | felon paynim -> wicked pagan | flemed -> driven out
+  sewe -> follow | covetise -> covetousness | covin -> deceit | pilling -> plundering
+  nesh -> soft | duresse -> hardship | assoiled -> absolved | have my rights -> my last rites
+  parclos -> partition | pricking -> spurring | resemblaunt -> sign
+  multiplier of words -> spinner of words | drenched -> drowned | gad of steel -> spike
+  long on your sin -> because of your sin | flesh (as food) -> meat | bobaunce -> boastfulness
+  knew her fleshly -> knew her in the flesh | the ninth degree -> the ninth generation
+  rack (for bulls) -> hayrack | chair (a dream) -> chariot | the hair -> the hair shirt
+  worts -> roots and herbs | courtelage (at a hermitage) -> little garden
+  made sops -> soaked bread | benome -> taken away | stour -> fight
+  nigh attaint -> nearly spent | fell upright -> fell flat on his back
+  wanhope -> despair | unkindly -> unnatural | nist -> did not know
+  rought not -> cared nothing for | entermete -> meddle | erst -> before | make avaunt -> boast
+  engine (of the fiend) -> trickery | enchafed -> inflamed | warn her love -> refuse her love
+  Not for then -> Nevertheless | habergeon -> hauberk
+  scales of the haft -> grip plates of the hilt | begrip -> grasp | swallow of the sea -> whirlpool
+  noseling -> flat on his face | selar -> canopy | yerde -> branch | sprent -> sprinkled
+  houseled -> given communion | brent in love -> burned with desire | medled together -> lay together
+  alms-deed -> work of charity | miscreature -> unbeliever | wittiest -> cleverest
+  debonair / felon -> courteous / cruel | the secrets of the mass -> the silent prayers of the mass
+  the sacring -> the consecration | measle -> leprosy | monster (a marvel) -> unearthly prodigy
+  salle -> hall | noyed -> annoyed | made semblaunt -> made as if to | araged (stunned) -> overcome
+  the fellows -> the companions | Sheer-Thursday -> Maundy Thursday | ubblie -> a wafer
+  almeries -> chests | great clerks -> great SCHOLARS | hilled -> covered | greses -> steps
+  rivage -> shore | cleped -> called | unsiker -> unstable | "Holy Ghost" stays
+
+NAMES (round 4): Nacien the hermit; Petchere (the Fisher King); Vagon; King
+Evelake; Tolleme la Feintes; Mondrames; Joseph (son of Joseph of
+Arimathea); Melias de Lile; Abblasoure; Duke Lianour; the Castle of Maidens;
+the Queen of the Waste Lands (Percival's aunt); the Castle of Goothe; the
+Earl de Vale; Aguarus; Eliazar (son of Pelles); Argustus; Pridam le Noire;
+King Aniause; COLGREVANCE (never Calogrenant); King Bors de Ganis (the
+father); the Earl of Plains; Sir Ulfin; King Mordrains; King Labor; King
+Hurlame; Duke Josua; Collibe; the Isle of Turnance; the Port of Perilous
+Rock; Carteloise; the Serpent of the Fiend; Ertanax; Cain; the Sword with
+the Strange Girdles (its sheath "Mover of Blood"); the Tree of Life; the
+water of Mortaise / Mortoise; Sarras; the Maimed King (never named
+"Pellam" here); Earl Hernox; Estorause; Claudine (Claudas's son); Galahad's
+SPRING; Helin le Blank (for "Elian le Blank").
+
+THREADS (round 4)
+- Bors and Lancelot vow never to part "while our lives last" (XVII.23).
+- Galahad's charge: "remember this unstable world" (XVII.22-23); his
+  message "greet my lord Sir Lancelot, my father".
+- The Grail and the spear are taken up to heaven; the chronicle is kept "in
+  chests at Salisbury".
+- Gawain killed Bagdemagus (XVII.17), and Lancelot would have taken
+  vengeance on anyone but Gawain.
+- Over half the Round Table died on the quest; Ector, Gawain and Lionel came
+  home.
+- Lancelot's confession of his love for the queen ("these fourteen years",
+  XIII.20) and his promise to avoid her: it is broken in XVIII.1.
+- Gawain killed his sworn brother Uwain les Avoutres (XVI.2) and refused
+  penance; he gives up the quest (XVII.1).
+- Lancelot lay 24 days at Carbonek; Elaine (Galahad's mother) is dead.
+
+
+ROUND 5 (files 432-447, 457-504: Books XVIII-XXI; 2026-10-09). Ratios
+0.99-1.07; check.py clean. All the locked passages in XXI are exact (the
+Excalibur return, the vale of Avalon, the tomb, Ector's lament, the closing
+prayer, the colophon). 448-456 are still to merge.
+
+RULINGS (orchestrator, round 5)
+- LUCAN the butler everywhere (the orchestrator normalised Book I's "Lucas"
+  in 010-017). CLARRUS OF CLERMONT (for Clarras / Clarius / Cleremont).
+  VILLIERS THE VALIANT.
+- "the Launds" as Bellangere's French earldom -> "the Landes". "the Red
+  Knight of the Red Launds" keeps "Launds" (it is a by-name).
+- "noble Ector, and Troilus, and Alisander" -> Hector of Troy, Alexander:
+  the THIRD Ector trap. Watch for it.
+- "journey" by sense: travel -> journey; a battle -> engagement / this
+  day's work; a campaign -> campaign.
+- depart (= divide, share out) -> "divide" / "share out".
+- "Galahad, the haut prince" in a list of kings or tourneyers = GALAHALT,
+  "the high prince" (it is in XVIII, XIX and likely in VIII-X). A
+  "Galahad" who is actually Galahad stays.
+- Book ends with no Explicit: write only "Here follows the twenty-first
+  book." (no added "Here ends").
+- One gloss per term across the book: the orchestrator stripped the
+  duplicate Knight of the Cart gloss in XIX.13 (it is kept at XIX.5).
+
+GLOSSES SPENT (round 5): Maying (XIX.1); le Chevaler du Chariot ("the Knight
+of the Cart", XIX.5); werewolf (XIX.11); interdict (XX.13).
+
+LOCKED RENDERINGS (round 5)
+  privy draughts -> secret meetings | open-mouthed -> loose-tongued | distained -> dishonoured
+  God speed the right -> God defend the right | flatling -> flat | a sop of wine -> bread soaked in wine
+  leechcraft -> the doctors' care / doctoring | forfend / defend -> forbid
+  "false recreant" (of loyalty) -> false, faithless | burgess -> rich townsman
+  wilful poverty -> voluntary poverty | oweth -> owns | make aspies -> set watchers
+  caitiff -> wretched | old said saw -> old saying | well beseen (a lady) -> fine-looking
+  chariot -> cart | child of her chamber -> page | appeach / appeal (treason) -> accuse
+  estures -> passages | trap -> trapdoor | This day eight days -> a week from today
+  "Ha, ha" (an exclamation) -> "Ah" | Fie on / upon -> Shame on | mal engin -> evil intent
+  form (furniture) -> bench | dretched -> troubled | by a forecast -> by a plot laid beforehand
+  maugre (noun) -> ill will / blame | layne -> hide | disparpled -> scattered
+  mischieved -> ruined | courage (verb) -> hearten | despoiled into her smock -> stripped to her shift
+  ghostly father -> confessor | unware -> off guard | at debate -> at strife
+  overled -> domineered over | accordment -> agreement | enbraid -> reproach
+  brim -> fierce | the forward -> the vanguard | holpen -> healed
+  bulls under lead -> papal bulls sealed with lead | sarps -> girdles | ouches -> jewelled clasps
+  clerk (a bishop) -> churchman | redoubted -> revered | pike thee -> take yourself off
+  shende -> be the ruin of | deliverly -> nimbly | gar make -> have built
+  sonds -> messengers | new-fangle -> fickle | depraved -> slandered | cankered -> inveterate
+  cedle -> letter | chaflet -> platform | worms (a dream) -> dragons | wightly -> quickly
+  avision -> vision | blew beams -> blew bugles | bur (a spear) -> hand-guard
+  brain-pan -> skull | pillers -> plunderers | beads -> rosaries | holts hoar -> grey old woods
+  girdle (of a sword) -> belt | made a dole -> gave out alms | disease -> distress
+  unhap -> ill luck | soul-heal -> salvation | misliving -> sinful life | dirige -> dirge
+  orgule -> arrogance | careful -> sorrowful | dreary steven -> in a sorrowful voice
+  dwined -> wasted away | houseled and anealed -> given communion and anointed
+  dretching of swevens -> the troubling of dreams | quick and dead -> lived and died
+
+NAMES (round 5): Sir Brasias; Patrise of Ireland; Pinel le Savage; Elaine le
+Blank, "the Fair Maiden of Astolat" (Astolat "that is Guildford"); Sir
+Bernard of Astolat; Sir Tirre; Lavaine; the hermit Baudwin of Brittany;
+Ozanna le Cure Hardy; Epinogris; Aliduke; Bellangere le Beuse; Ladinas of
+the Forest Savage; Kay the Seneschal; Urre of the Mount; Felelolie;
+Alphegus; Bohart le Cure Hardy (kept as printed); Gingalin, Florence and
+Lovel (Gawain's sons); Gaunter, Gilmere and Raynold (the VI spellings);
+Pertolepe; Belliance le Orgulous; Kay the Stranger; Driant; Lambegus; the
+Bishop of Rochester; Dinas the Seneschal; Almesbury; Barham Down;
+Rennes; Sussex, Essex, Suffolk, Norfolk; Nimue, "the chief Lady of the
+Lake". "Bishop of Canterbury" as printed. ELAINE TRAP: add Elaine le Blank
+of Astolat.
+
+FACTS FROM LATER BOOKS FOR THE VIII-X AGENTS (keep them consistent):
+- Mark kills Tristram with a sword as he harps before Isolde; Bellangere le
+  Beuse (son of Alisander le Orphelin) kills Mark; Isolde dies swooning on
+  Tristram's body; Andred is among the dead (XIX.11, XX.6).
+- Gawain admits to Lamorak's death ("I killed him"); Pinel le Savage
+  (Lamorak's cousin) poisons the apple to avenge Lamorak (XVIII).
+- Joyous Gard is Lancelot's castle, later renamed the Dolorous Gard;
+  Lancelot is buried there.
+- Colgrevance (killed in XVI) and Bagdemagus (killed in XVII) reappear later:
+  Malory's own slips, kept as printed.
+
+THREADS (round 5, paid off): Lancelot is the queen's knight "in right or in
+wrong" (XVIII.7); Elaine of Astolat's death and her letter; the Knight of
+the Cart; Agravain and Mordred expose the lovers; Gareth killed unknowing;
+Gawain's vengeance and his "old wound"; Mordred named "King Arthur's son"
+(XX.19); Constantine succeeds; Bors, Ector, Blamore and Bleoberis die in the
+Holy Land.
+
+ROUND 5 ADDENDUM (448-456, XVIII.17-25). The May passage's lock is exact. Elaine's
+letter is one quoted paragraph. clean maiden -> pure maiden; paramour (of a
+man) -> lover; mass-penny -> the offering at her Mass; the button of his
+wound brast -> the seal of his wound burst open; the hunting terms (at the
+stalk and at the trest -> by stalking and lying in wait; feute -> scent;
+soil -> water); winter rasure -> the wasting of winter; licours ->
+lecherous. "Duke Galahalt of Surluse" (printed "Galahad"): GALAHALT
+throughout. Sir Baudwin of Brittany (the hermit) is kept as printed. Sir
+Brasias is kept (not merged with Brastias). Every file outside 155-327 is
+now done.
+
+
+ROUND 6 (Books VIII-IX, files 155-239; partial merge 2026-10-09). Ratios 0.97-1.05.
+The full per-range notes follow, as the orchestrator recorded them:
+[175-184] ratios 1.00-1.05. BRAGWAINE (not Brangwain): normalise after the round. Renderings: the loath word -> the shameful word; chief gentlewoman -> chief lady-in-waiting; love drink -> love potion / drink; muffled -> veiled; for-jousted -> outjousted; treatable -> ready to come to terms; better breathed -> had the better wind; "the highest knight" -> the tallest. Names: Galahalt (Breunor's son); Breunor of the Castle Pluere (not 121's Brewnor); King Carados (a judge) and the giant Carados (killed in 182); Lambegus; Sir Adtherp. Threads: Tristram and Blamore swear peace; "all the blood of Sir Lancelot loved Sir Tristram for ever"; Tristram's promise to Galahalt.
+ORCHESTRATOR FIXES: Brangwain -> BRAGWAINE everywhere (189, 234, 235); 121 "Brewnor" -> Bruin le Noire (La Cote Male Taile's own name, matching 196, 204, 467). Breunor of the Castle Pluere (178-180, Galahalt's father) is a DIFFERENT man.
+[155-164] ratios 0.97-1.03. Hunting gloss spent (157: horn calls, venery, chase, vermin). Names: Meliodas; Queen Elizabeth; King Faramon of France; Tramtrist (alias); Gumret le Petit; the Knight with the Black Shield (Palomides); the Dolorous Gard. Renderings: eme -> uncle; nurture -> good manners; eft -> again; lapped -> wrapped; degree -> prize; envy -> rivalry. Misprint flag: 157 "Cornwall" for Liones (kept as printed).
+[214-222] ratios 0.99-1.03. TAULAS (not Tauleas). Glosses: strake (horn call); pursuivants ("the heralds' messengers"). Renderings: lears -> cheeks; quested -> gave tongue; servage -> bondage; warison -> reward; trains -> wiles. Names: Kehydius; Matto le Breune; Dinant; Passe-Brewel (Tristram's horse); Pellounes; Persides de Bloise. Dinadan's jokes kept whole. Threads: Tristram's 10-year exile; Lancelot's kin carry Cornish shields.
+[232-239] ratios 1.01-1.04. IX end: "So here ends the story of this book, for it is the first book of Sir Tristram de Liones." / "Here follows the second book of Sir Tristram." Gloss: Uwain le Fise de Roy Ureine ("the son of King Uriens", 232). Proverb: "What is bred in the bone is hard to get out of the flesh." Roche Dure = "the Hard Rock". Names: Darras; Daname; the Abbey of the Black Cross; the Perilous Lake; Hemison. Threads: Morgan's shield (for X); Mark's oath on the crossguard.
+[196-204] ratios 1.01-1.03. Glosses: Maledisant / Bienpensant / Beauvivante (by the sentence). Names: Castle Orgulous; Pendragon; Surluse; Nerovens de Lile; Plenorius and his brothers; Brian de les Isles. Thread: Tristram's letter (he never lay with Isolde of the White Hands).
+[223-231] ratios 1.01-1.05. Dinadan's proverb: "however good a man is, he can still take a fall". Gloss: indented (a shield), "its colours cut in a zigzag" (228). Renderings: foot-hot -> at once; croup -> rump; blew to lodging -> sounded the end of the day; like a greyhound among conies -> like a greyhound among rabbits; the estates -> the great lords; commonalty -> the common people; departition -> going; by fair means or foul. Names: Pellounes; Persides; Briant of North Wales; Hew and Madok de la Montaine; Darras. Threads: Lancelot and nine others search for Tristram for a twelvemonth; Mordred is wounded by Persides.
+
+
+ROUNDS 6-7 COMPLETE (Books VIII-X, files 155-327; 2026-10-09). ALL 505 FILES DONE.
+verify.py passes (overall ratio 1.02); check.py clean.
+Final sweep (orchestrator): Bragwaine (never Brangwain); Bruin le Noire for La
+Cote Male Taile's own name (121 normalised); Durnore (262's Dornar); Glatisant
+(207's Galtisant); Alice la Beale Pilgrim (474 normalised); every "well"
+meaning a spring -> "spring", including headings 9-27, 9-32 and 10-82; "the
+stone monument" for the peron (326 aligned with 241); King Howell (heading
+8-35). Lucan the butler everywhere. "King with the Hundred Knights" (the
+majority form). unkindly (ungracious, of deeds) -> unworthy, by sense.

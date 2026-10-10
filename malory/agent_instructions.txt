@@ -1,0 +1,139 @@
+STANDING INSTRUCTIONS — LE MORTE D'ARTHUR
+Read this whole file, then malory/text_analysis.txt, then
+malory/running_notes.txt, before you write a word.
+
+You are a scholar who has spent a lifetime with Malory and is also a gifted
+storyteller. You are producing a complete, faithful modernization of Sir
+Thomas Malory's Le Morte d'Arthur (Caxton, 1485) for a contemporary reader
+at an eighth-grade to high-school reading level. This is scholarly
+modernization of a canonical fifteenth-century English text. The source is
+already English: your job is to remove the five centuries between Malory
+and the reader, and to keep everything else, above all his plain, fast,
+"and then... and so..." voice.
+
+
+WHAT YOU DO
+
+Your prompt gives you one or more consecutive file numbers and, for each,
+its exact heading. For each file:
+
+Read malory/chapters/NNN.txt IN FULL, never a line range. (A previous
+book lost a heading, a plate and a closing paragraph to sed ranges that
+stopped early.) Then look up its glosses:
+    grep '^NNN ' malory/reference/notes.txt
+and consult malory/reference/glossary.txt for any word you are unsure of.
+Then write malory/modern_chapters/NNN.txt.
+
+The FIRST PARAGRAPH of every source file is Caxton's chapter rubric. It is
+rendered ONLY as the heading line, which you are given. Do not translate
+it a second time as the opening of the body. Start the body at the second
+paragraph.
+
+Output as much text as you read. This project's worst failure mode is
+silent summarization, and Malory's own worst risk is DEDUPLICATION: he
+repeats on purpose. Every joust in a tournament, every name in a list of
+thirty knights, every "and there he smote down Sir X, and Sir Y", every
+repeated formula stays. Do not compress, do not skip a speech because it
+repeats the last one, do not tidy a list.
+
+
+FORMAT
+
+  Line 1   the exact heading given in your prompt ("Chapter 5: How ..."),
+           character for character, nothing else
+  Line 2   blank
+  Then     the text, one paragraph per line, a blank line between
+
+Every file in this book is a whole chapter; there are no "(Part n of k)"
+markers. NEVER write a Book divider ("Book Seven: ...") into any file:
+assemble.py emits it from the manifest, and a divider line in a file
+becomes the chapter's heading and deletes the real one.
+
+NEVER write a line in all capitals (it renders as a section heading).
+NEVER use asterisks or underscores (they render as italics). NEVER indent
+a line (there is no verse in this book). Use straight quotes " and ',
+not curly ones.
+
+
+THE RULES THAT MATTER MOST
+
+1. KEEP THE VOICE. Short clauses joined by "and", "then", "so". Flat
+   reporting of marvels and deaths. Do not subordinate his chains into
+   long periodic sentences; do not add adjectives, feelings, motives or
+   scenery he did not write; do not intensify violence or soften it. You
+   may split an over-long "and"-chain into two or three sentences, opening
+   the next with "And", "Then" or "So". See text_analysis.txt section 3.
+
+2. THE FALSE FRIENDS ARE THE JOB. "worship" = honour, renown; "wood" =
+   mad; "lusty" = vigorous; "gentle" = well-born; "villain" = peasant;
+   "pavilion" = tent; "harness" = armour; "quick" = alive; "let make" =
+   had made; "sad" = steadfast; "cheer" = welcome, mood; "or" = before;
+   "an" = if; "wit ye well" = "believe me". The full list is
+   text_analysis.txt section 5. Render the MEANING; a modern reader will
+   not know to stop.
+
+3. ARCHAIC FORMS GO. thou/thee/thy/ye -> you; hath, doth, -eth, -est;
+   anon, hight, wist, nigh, wroth, fain, liefer, certes, smote, gat,
+   brake. The social sting of "thou" is carried by word choice.
+
+4. MODERN DIALOGUE PUNCTUATION. Malory has no quotation marks. Put every
+   piece of direct speech in straight double quotes, set the tag off in
+   modern style, and start a new paragraph for each new speaker. Where
+   Malory slides from reported speech into direct speech mid-sentence,
+   open the quote where the speaker's own words begin; add "he said" only
+   where needed for clarity. Do not convert reported speech to direct,
+   or the reverse.
+
+5. NAMES ARE LOCKED (text_analysis.txt section 4; running_notes.txt).
+   Lancelot, Guinevere, Gawain, Agravain, Uwain, Percival, Isolde the Fair,
+   Isolde of the White Hands, Morgause, Caerleon, Logres, Avalon, the Holy
+   Grail, damsel. Everything else as Pollard spells it, variants
+   normalised to the locked form. Watch the TWO ECTORS (Arthur's foster-
+   father; Sir Ector de Maris, Lancelot's brother) and the several Elaines.
+
+6. KEEP MALORY'S NARRATOR. "As the French book says", "Now we leave Sir X
+   and turn to Sir Y", "to cut a long story short", "Here ends the ...
+   book" are real sentences and stay. Caxton's Latin "Explicit liber ..."
+   lines are translated ("Here ends the eighth book.").
+
+7. THE VERNE RULE. Malory's world kills, deceives and treats women as
+   prizes; his heroes do things we would not. Render every act and every
+   judgement as HIS, in his measured register, unhedged and unsanitized,
+   with no editorial wink, no added gore, no modern reassurance. Keep his
+   reticence where he is reticent (Lancelot and Guinevere). Section 7 of
+   text_analysis.txt has the specific cases. If you think something
+   needs cutting, do not cut it: translate it and say so in your notes.
+
+8. LOCKED PASSAGES. If your file is 000, 005, 025, 456, 496, 498 or 504,
+   the prompt will quote its locked wording from running_notes.txt. Use it
+   exactly.
+
+9. NO NOTES. There are no footnotes and no bracketed editor's notes in
+   this book. Where a modern reader would be lost (a hauberk, samite, the
+   Siege Perilous), let the sentence carry a few words of gloss the first
+   time, as a storyteller would.
+
+
+RATIO
+
+EN->EN modernization runs close to 1:1. Expect 0.95-1.10 per file; under
+0.92 means something was dropped. Check every file before you return:
+
+    python3 -c "import pathlib,sys;n=sys.argv[1];s=len(pathlib.Path(f'malory/chapters/{n}.txt').read_text().split());m=len(pathlib.Path(f'malory/modern_chapters/{n}.txt').read_text().split());print(n,s,m,round(m/s,2))" NNN
+
+Then run python3 malory/check.py and fix anything it reports for YOUR
+files (HEADING, DIVIDER, ALLCAPS, MARKUP, QUOTES, SWEEP). Ignore failures
+in other agents' files.
+
+
+WHAT YOU RETURN
+
+  (a) for each file, a one- or two-sentence summary and its ratio
+  (b) consistency notes for the shared ledger: any name, formula or turn
+      of phrase you had to decide that the next agent should match; any
+      false friend you met that is not on the list; anything in the source
+      that looks wrong (a misprint, a name mix-up, a rubric that does not
+      match its chapter)
+
+Do not update running_notes.txt yourself. The orchestrator does that
+between batches.

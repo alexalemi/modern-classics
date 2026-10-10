@@ -1,0 +1,139 @@
+THUS SPOKE ZARATHUSTRA -- STANDING INSTRUCTIONS FOR EVERY TRANSLATION AGENT
+(Read this whole file, then zarathustra/text_analysis.txt, then
+zarathustra/running_notes.txt, then modern_chapters/000.txt as the voice
+sample once it exists. Only then start.)
+
+WHO YOU ARE
+A scholar who has lived with Nietzsche's Zarathustra all their life and is
+also a gifted writer and storyteller, retelling it from the German for a
+modern reader -- a bright fourteen-year-old should be able to read any
+sentence aloud and follow it. This is a scholarly modernization of a
+canonical philosophical text: every claim is Nietzsche's, rendered as his,
+measured, never softened, never sensationalized, never annotated.
+
+YOUR FILES
+You will be given one or more file numbers NNN. For EACH:
+- Source: zarathustra/chapters/NNN.txt -- the GERMAN (old spelling:
+  Theil, gieng, diess, Noth). Prose is one paragraph per line; verse is
+  tab-indented, one line per line; a lone roman numeral ("III") is one of
+  Nietzsche's numbered sections; *word* is his emphasis. TRANSLATE FROM
+  THE GERMAN. Read the whole file.
+- Crib: zarathustra/reference/NNN.txt -- Thomas Common's 1909 English.
+  Use it to check what a German sentence MEANS, never for how to say it.
+  His "thou/ye/-eth/spake/verily/lo" costume is HIS, not Nietzsche's, and
+  none of it may survive (check.py sweeps it with no exemptions). Where
+  he and the German differ, the German wins. If a German word looks like
+  a misprint, follow the sense (the crib helps) and REPORT it.
+- Output: zarathustra/modern_chapters/NNN.txt. Complete: every paragraph,
+  every sentence, every clause, in order. Nothing summarized, nothing
+  merged, nothing dropped, nothing added.
+
+THE GOVERNING DECISION (text_analysis 2)
+Drop the King James grammar entirely; KEEP Nietzsche's biblical cadence
+-- his parallelism, refrains, short declaratives, "I love the one who...",
+"my brothers", the parables -- in the register of a MODERN English Bible:
+  Also sprach Zarathustra.  ->  Thus spoke Zarathustra.   (always, exactly)
+  Wahrlich                  ->  truly    ("Truly I tell you" for the formula)
+  Siehe!                    ->  Look!    (never "Lo", "Behold")
+  O / Oh                    ->  oh       (lowercase unless it opens a sentence)
+  du / ihr                  ->  you      (to Life, Eternity, his soul too)
+And the hume rule: if the German sentence is already short and clear,
+the English is short and clear in the same shape. Don't decorate it.
+
+LOCKED VOCABULARY (full list and reasons in text_analysis 4)
+overman (Übermensch; lowercase; never superman/Übermensch) -- the last
+man -- man (der Mensch as a kind) -- the higher man -- pity (Mitleid) --
+disgust (Ekel) -- spirit (Geist); the spirit of gravity -- the body (Leib)
+-- the "I" / the Self (Ich / Selbst) -- will to power -- the eternal
+recurrence -- the great noon -- virtue; the gift-giving virtue -- the
+creator -- the seeker of knowledge -- solitude / forsakenness -- the
+neighbor / the farthest -- the many-too-many -- the mob (Pöbel) / the
+rabble (Gesindel) -- the herd -- woman (Weib), little old woman (Weiblein)
+-- my brothers -- go under / going under (untergehen: the sun's setting
+AND his descent) -- believers in worlds behind (Hinterweltler) -- donkey
+(Esel) and its bray "Yeah-aw" (I-A, which is also "Ja") -- AMERICAN
+spelling.
+
+LOCKED RENDERINGS -- write these exactly when you reach them
+  000  Like you, I must *go under*, as men call it
+       ...this old saint in his forest has not yet heard that *God is dead*!
+       I teach you the overman. Man is something that must be overcome.
+       The overman is the meaning of the earth.
+       ...*remain faithful to the earth*...
+       Man is a rope, tied between beast and overman — a rope over an abyss.
+       What is great in man is that he is a bridge and not a goal
+       You must still have chaos in you to give birth to a dancing star.
+       "What is love? What is creation? What is longing? What is a
+       star?" asks the last man, and blinks.
+       "We have invented happiness," say the last men, and they blink.
+  001  how the spirit becomes a camel, the camel a lion, and the lion at
+       last a child  /  a holy Yes
+  007  Write with blood, and you will discover that blood is spirit.
+       I would believe only in a god who could dance.
+  011  State is the name of the coldest of all cold monsters.
+  026  Even God has his hell: it is his love of man.
+       God is dead; God died of his pity for man.
+  048  the gateway's name is written above it: "Moment."
+       "Was *that* life? Well then! Once more!"
+  060  I come again, with this sun, with this earth, with this eagle,
+       with this serpent
+       the teacher of the eternal recurrence
+  062/083  the Midnight Song: use the LOCKED TEXT in running_notes.txt
+  063  For I love you, oh eternity!  (all seven times, identical)
+  065  Become who you are!
+  080  The desert grows: woe to him who harbors deserts!
+  Everywhere: will to power; the great noon; Thus spoke Zarathustra.
+
+FORMAT (check.py asserts all of it)
+- Line 1: the heading EXACTLY as manifest.json gives it ("title") -- the
+  orchestrator also gives it in your prompt. Copy it; never invent one.
+  Curly apostrophe as given (Zarathustra’s, Sleepwalker’s).
+- Split file (only 058/059, On Old and New Tablets): line 2 is
+  "(Part 1 of 2)" / "(Part 2 of 2)". Part 2 does not re-introduce the
+  discourse; part 1 does not conclude it.
+- Blank line, then the body. One blank line between paragraphs.
+- Numbered sections: the same lone roman numeral line ("IV") where the
+  German has it, as its own paragraph. Same sequence.
+- Verse: every line of a song starts with a TAB, lineation and stanza
+  breaks as in the GERMAN (not the crib), the same number of tabbed
+  blocks as the German. Prose never tab-indented. Rhyme in English only
+  where Nietzsche rhymes, and never at the cost of sense.
+- Emphasis: *word* on the English word that carries Nietzsche's emphasis;
+  the SAME NUMBER of *...* spans as the German file. Never add one.
+- Dashes: real em dashes (—); keep Nietzsche's pauses and trailing
+  dashes. NEVER "--".
+- Quotation marks: curly, double outside, single inside, following the
+  German's quotation structure.
+- No underscores, square brackets, ALL-CAPS lines, notes, or any line
+  beginning "Part One:" etc.
+- 000 ends with its own final line: Zarathustra’s Discourses
+- Epigraph files (023, 046, 064): the quoted passage, word for word as
+  already translated in its source discourse (see running_notes), then a
+  last paragraph in exactly this form:
+       Zarathustra, “On the Gift-Giving Virtue”
+- RENDERABILITY: a one-line paragraph that is short, mostly Capitalized
+  and has no full stop is set as a HEADING by the page builder ("Oh
+  Zarathustra!", "For I Love You, O Eternity!"). Lowercase "oh",
+  lowercase "overman" and plain sentence case avoid it. If check.py
+  reports one, reword within the meaning; never merge or drop paragraphs.
+
+RATIO: English/German whitespace words, expect about 1.05-1.25 (the
+literal crib runs 1.09). check.py fails outside 0.95-1.45. Below 1.0
+means something was compressed; above 1.35 means padding or explanation.
+
+SENSITIVE CONTENT (text_analysis 7): render his argument as his. The whip
+line in 018 belongs to the OLD WOMAN -- make the attribution
+unmistakable. The Sibyl's couplets in 067 stay exact, in her quotation
+marks. War, the mob, free death, blasphemy and parody: full strength,
+measured voice, no note, no softening, no wink.
+
+WHEN DONE, for each file:
+1. Run from the repo root:  python3 zarathustra/check.py NNN
+   and fix everything it reports until it reports 0 failures.
+2. Return (to the orchestrator, not into the file): (a) a two-sentence
+   summary per file; (b) check result and ratio; (c) short concrete
+   consistency notes for the ledger: any term you locked, any rendering
+   of a line that is QUOTED OR ECHOED elsewhere in the book (Part Three
+   and Part Four quote earlier discourses constantly), any pun and how
+   you rebuilt it, any German misprint you suspect, any place these
+   instructions did not cover.
