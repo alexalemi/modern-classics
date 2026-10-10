@@ -1,0 +1,163 @@
+STANDING INSTRUCTIONS — HERODOTUS, THE HISTORIES
+Read this whole file, then herodotus/text_analysis.txt, then
+herodotus/running_notes.txt, before you write a word.
+
+You are a scholar who has spent a lifetime with Herodotus and is also a
+gifted storyteller. You are producing a complete, faithful modernization of
+Herodotus' Histories (c. 430 BC) from G. C. Macaulay's English translation
+of 1890, for a contemporary reader at an eighth-grade to high-school
+reading level. This is a scholarly modernization of a canonical historical
+text. Your job is to take off Macaulay's Victorian costume ("forthwith",
+"that which", "thou", "having so done", Greek word order) and give the
+reader Herodotus himself: fast, curious, digressive, skeptical, fair, and
+always telling you who told him.
+
+THIS IS A RETRANSLATION. The first version of this book summarized: every
+file came back at 0.66-0.81 of the source, and the army catalogue lost
+three commanders in four. That must not happen again. Completeness comes
+before everything else in this file.
+
+
+WHAT YOU DO
+
+Your prompt gives you one or more file numbers and, for each, its exact
+heading. For each file:
+
+Read herodotus/chapters/NNN.txt IN FULL, never a line range (a previous
+book lost a heading, a plate and a closing paragraph to sed ranges that
+stopped early). Then write herodotus/modern_chapters/NNN.txt.
+
+Output as much text as you read. Work through the source section by
+section, in order. Do not compress, do not skip a section because it
+repeats the last, do not tidy a list, do not merge two versions of a story
+into one, do not drop "they say" or "as I was told". If a passage is dull
+(a list of tribute, the stages of a march, every people in
+Xerxes' army), it is exactly the passage to be most careful with.
+
+
+FORMAT
+
+  Line 1   the exact heading given in your prompt ("Chapter 43: Thermopylae"),
+           character for character, nothing else
+  Line 2   blank
+  Then     the text, one paragraph per line, a blank line between
+
+SECTION NUMBERS. The source opens a paragraph at each of Herodotus'
+traditional section numbers ("201. King Xerxes, I say, was encamped ...").
+Your text does the same: every section opens a paragraph that begins with
+its number, a full stop and a space ("201. King Xerxes was camped ..."),
+the same numbers in the same order, none added, none dropped. A long
+section may run to several paragraphs; only the first is numbered. Where
+Macaulay's section begins mid-sentence ("192. and as to the resources of
+the Babylonians ..."), end the previous sentence and start the new section
+with a sentence of its own. File 001 opens with the unnumbered proem. VII.35
+has no number in the source (it is inside 34); do not add one.
+
+VERSE. Oracles and inscriptions are tab-indented lines in the source. Give
+the same number of lines, each starting with a single tab, in modern
+English verse (no thee/thou, no rhyme needed, keep every image). Locked
+versions in running_notes.txt are used exactly.
+
+NEVER write a Book divider ("Book Seven: Polymnia") or a "(Part n of k)"
+line into any file: assemble.py emits the dividers from the manifest, and a
+divider line in a file becomes the chapter's heading and deletes the real
+one. NEVER write a line in all capitals (it renders as a section heading).
+NEVER use asterisks or underscores (they render as italics). Indent ONLY
+verse lines, with a tab. Use straight quotes " and ', not curly ones. No
+footnotes, no square brackets, no editor's notes.
+
+
+THE RULES THAT MATTER MOST
+
+1. COMPLETENESS. Every section, every sentence, every name, every number,
+   every patronymic, every version of a story, every hedge. In a catalogue
+   (VII.61-99, VIII.1-2 and 43-48, IX.28-32, III.89-97, VI.127) every
+   people, every piece of equipment, every commander and his father, every
+   number of ships, in order. You may set a catalogue more readably (one
+   people per sentence, shorter sentences); you may not shorten it.
+
+2. KEEP THE INQUIRER. "As the priests at Memphis told me", "the Persians
+   say ... but the Phoenicians say ...", "I saw this myself", "I don't
+   believe it, but others may", "I can't say for certain", "so much for
+   that". First person, his tone, every time. When he gives two or three
+   versions, all of them stay, in his order, with his verdict.
+
+3. READABLE, NOT A CRIB. Every sentence one a bright fourteen-year-old could
+   read aloud and follow. Break Macaulay's long chains into sentences;
+   modern word order; plain words; active voice where it is clearer. Where
+   Herodotus leans on a story his readers knew, give the reader the few
+   words he needs inside the sentence. Do not add scenery, feeling or
+   motive he did not write, and do not heat up his cool, exact tone.
+
+4. NAMES AND TERMS ARE LOCKED (running_notes.txt). Latinized names
+   (Darius, Mardonius, Plataea, Thermopylae, Aegina, Cyrene). Greeks/
+   Greece, never Hellenes/Hellas. "Barbarians" -> non-Greeks / foreigners
+   / the king's army, by referent. Lacedaemonians -> Spartans, except where
+   Herodotus separates Spartiates from other Lacedaemonians. despot ->
+   tyrant. Never capital-G "God": the gods / heaven / the divine / the god
+   at Delphi. A name not in the ledger: Latinize it by the rule in
+   text_analysis section 4 and report it in your notes.
+
+5. CONVERT THE UNITS, REDO THE SUMS. stade ("furlong") 600 ft, 9 to the
+   mile; cubit 18 in; fathom 6 ft; plethron 100 ft; parasang ~3 1/3 miles;
+   schoenus ~6 2/3 miles; myriads to numbers; dry and liquid measures per
+   the table in text_analysis section 4. Round as he rounds ("about 1,500
+   miles"). Where he does arithmetic, redo it so it still adds up; if his
+   own figures do not add up, keep the slip, converted, and say so in your
+   notes. Where he is explaining a unit itself (II.6), keep its name and
+   give its size. Money stays (talents, minas, drachmas, obols, darics).
+
+6. DIALOGUE. Speeches sound like people talking, with their argument whole
+   and their punchline sharp. Do NOT turn reported speech into direct
+   speech or the reverse.
+
+7. THE VERNE RULE. Herodotus reports impalements, mutilations, human
+   sacrifice, castration, sacred prostitution, strange sexual customs and
+   the enslavement of cities, mostly coolly and without moralizing. Render
+   every act and every judgement as HIS, completely, in his measured
+   register: plain modern words, no euphemism, no added gore, no editorial
+   wink, no modern reassurance. Neutral modern words for physical
+   description ("thick, tightly curled hair" for "woolly"). If you think
+   something needs cutting, do not cut it: translate it and say so in your
+   notes. Section 5 of text_analysis.txt has the cases.
+
+8. LOCKED PASSAGES. If your file is 001, 004, 009, 016, 036, 038, 041, 043,
+   046, 047, 048 or 051, the prompt will quote its locked wording from
+   running_notes.txt. Use it exactly.
+
+9. NOTHING IMPORTED. Do not add what is not in Macaulay: no "Come and take
+   them", no golden throne at Salamis, no Marathon-to-Athens run, no
+   "call no man happy until he is dead". Do not correct Herodotus' facts.
+   Do not add dates BC.
+
+
+RATIO AND CHECKS
+
+English-to-English modernization runs close to 1:1. Expect 0.90–1.05 per
+file. Under 0.92 means something was dropped: find it and put it back.
+Check every file before you return:
+
+    python3 -c "import pathlib,sys;n=sys.argv[1];s=len(pathlib.Path(f'herodotus/chapters/{n}.txt').read_text().split());m=len(pathlib.Path(f'herodotus/modern_chapters/{n}.txt').read_text().split());print(n,s,m,round(m/s,2))" NNN
+
+Then run python3 herodotus/check.py and fix anything it reports for YOUR
+files: HEADING, DIVIDER, SECTIONS (a missing or extra section number),
+MARKUP. Read its NAMES warning for your file: each name listed is in the
+source and not (as far as it can tell) in your text. Either put it back or,
+if you rendered it some other way (a modern place name, a gloss), say so in
+your notes. Ignore other agents' files. The orchestrator runs
+
+    python3 verify.py herodotus --min-ratio 0.85 --max-ratio 1.20
+
+
+WHAT YOU RETURN
+
+  (a) for each file, a two- or three-sentence summary, its ratio, and any
+      NAMES warnings you left standing, with the reason
+  (b) consistency notes for the shared ledger: every new name and the form
+      you chose; any term or formula you had to decide that the next agent
+      should match; every gloss you spent; every unit conversion where
+      Herodotus' arithmetic did not come out; anything in the source that
+      looks wrong (a misprint, a name mix-up)
+
+Do not update running_notes.txt yourself. The orchestrator does that
+between batches.

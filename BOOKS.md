@@ -4060,3 +4060,42 @@ notes before 032-035 reported, then patched the echo into the 062 agent by
 message. Merge only after every agent in a Part reports. COVER: Hodler, Lake
 Silvaplana in Autumn (1907): the lake where Nietzsche had the eternal
 recurrence.
+
+## herodotus/ — Herodotus, The Histories (c. 430 BC), RETRANSLATED 2026-10-10
+
+SOURCE: Standard Ebooks' G. C. Macaulay (1890), with the Gutenberg Macaulay
+(herodotus.txt) as a second witness; herodotus/prep.py splits it into 51 files
+of ~5.7k words on Macaulay's section boundaries, and check.py verifies the
+heading, every section number in order, the markup, and a NAMES list (a
+capitalised word in the source that the modern file lacks — mostly
+Latinisation false alarms like Bosphorus/Bosporus; read them by hand, never
+"fix" to silence them). Nine word-form Book dividers ("Book One: Clio") and
+"Chapter N: <title>" headings; section numbers kept as "N. " at paragraph
+starts so any passage can be found in another edition. 285,036 -> 262,496
+words, ratio 0.92; verify band 0.85-1.20 (`verify.py herodotus --min-ratio
+0.85 --max-ratio 1.20`).
+WHY A RETRANSLATION: the Feb 2026 version (Opus 4.6, 25 files of 10-17k words
+from before the splitter's cap) ran 0.66-0.81 and summarised the Xerxes army
+catalogue outright. It is kept in legacy_v1/.
+THE RATIO HERE IS NOT A SUMMARISING SIGNAL ABOVE 0.85: modernising Macaulay
+removes words honestly ("thou dost", "I say", "that which", "these, I say",
+myriads spelled out -> numerals, sub-letter labels). Agents under 0.92 audited
+section by section and reported; they were forbidden to pad. Two real
+omissions were caught that way (IV.88 "tenfold", VII.150 a clause).
+RULINGS: Macaulay is the text, not the Greek (his forms win for obscure names:
+Salmoxis, Arisonymus, Archidemus; famous ones take the familiar form: Hamilcar
+son of Hanno for his Amilcas son of Annon); units in miles/feet/pounds at 9
+stades to the mile, EXCEPT where Herodotus computes with his own unit (the
+Royal Road, the parasang defined at VI.42, the medimni of VII.187) — then the
+unit is named and miles added, and his arithmetic slips are kept; money
+"pounds" -> minas; "barbarian" as a people -> non-Greeks/foreigners/the
+invader, kept only where a speaker's contempt is the point; "the Medes" for
+the Persian enemy -> the Persians, except where the name is the point; theos
+-> "a god"/"heaven", never capital-G God; Macaulay's interpolation brackets
+and sub-letters dropped, text kept; the VII.76 lacuna gets one plain sentence.
+The Verne rule for violence (impalements, castration, the VIII.33 rapes):
+plain words, nothing cut, nothing relished.
+SEAMS: a consistency pass after the last round moved ~30 duplicate glosses to
+their first occurrence (talent, hoplite, Phalerum, Libya, Pelasgians, the
+Pillars of Heracles...) and harmonised ~15 spellings; the orchestrator's
+merges fixed Chalcedon, Sacae, Alpeni, Tyrrhenia. COVER: unchanged.

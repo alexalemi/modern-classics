@@ -1259,3 +1259,9 @@ NEW FINDING, NOT FIXED: HERODOTUS IS COMPRESSED THROUGHOUT. Every file runs
 commanders in Macaulay against 9 in the modern text; whole peoples dropped).
 Its env says Opus 4.6. A full retranslation, resplit into ~7k parts, is the fix.
 That is Alex's decision.
+DONE 2026-10-10 (Alex: "All three"): retranslated in full by Opus 5.5 from the
+Standard Ebooks Macaulay, resplit into 51 files of ~5.7k words, Book dividers
+plus "Chapter N: Title" headings, Herodotus' section numbers kept. 285,036 ->
+262,496 words, ratio 0.92 (every file 0.88-0.97, each under 0.92 audited by
+section). The army catalogue (039) is complete and its fleet sums to 1,207.
+The old text is in herodotus/legacy_v1/. See BOOKS.md.

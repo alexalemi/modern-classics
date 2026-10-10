@@ -1,387 +1,354 @@
-TEXT ANALYSIS: The Histories
-Herodotus (G.C. Macaulay translation, c. 430 BC)
+TEXT ANALYSIS — HERODOTUS, THE HISTORIES
+Retranslation, set up 2026-10-10. Supersedes legacy_v1/text_analysis.txt.
 
-=== OVERVIEW ===
+This is a scholarly modernization of a canonical historical text: the
+founding work of Western history, written c. 430 BC, reaching us through
+G. C. Macaulay's English translation of 1890. Our job is to take Macaulay's
+Victorian English off Herodotus and give the reader Herodotus whole, in
+present-day English a fourteen-year-old can read aloud and follow.
 
-This is the foundational work of Western history — and one of the great
-entertainments of ancient literature. Herodotus of Halicarnassus set out to
-explain why the Greeks and Persians went to war, and along the way produced
-a sprawling, digressive, endlessly curious account of the entire known world:
-its peoples, customs, marvels, and conflicts. The work is ~287,000 words
-across 9 books (each named after a Muse), covering roughly a century of
-history from the rise of Croesus of Lydia through the Persian Wars,
-culminating in the Greek victories at Salamis and Plataea (480-479 BC).
 
-The Macaulay translation (1890) is faithful Victorian scholarly prose — accurate
-but stiff, burying Herodotus' natural storytelling energy under heavy syntax
-and archaism. This is a particularly high-value modernization because the
-original Greek was famously lively and conversational. Macaulay himself noted
-in his preface that Herodotus was not archaic even in his own time. A modern
-retelling restores the spirit better than the Victorian translation does.
+=== 0. WHY THIS IS A RETRANSLATION ===
 
-The work is structured as:
-- Book I (Clio), Ch 000-003: Croesus of Lydia, rise of Persia under Cyrus
-- Book II (Euterpe), Ch 004-006: Egypt — geography, customs, history, marvels
-- Book II cont., Ch 007-008: Egypt — religion, kings, the labyrinth
-- Book III (Thalia), Ch 009-011: Cambyses in Egypt, rise of Darius, Samos
-- Book III cont., Ch 012: Darius's consolidation, the provinces
-- Book IV (Melpomene), Ch 013-014: Scythia — peoples, customs, geography
-- Book IV cont., Ch 015-016: Darius's Scythian campaign, Libya
-- Book V (Terpsichore), Ch 017-018: Ionian revolt begins, Athens' rise
-- Book VI (Erato), Ch 019-020: Ionian revolt ends, Marathon
-- Book VI cont., Ch 021-022: Sparta, lead-up to the great invasion
-- Book VII (Polymnia), Ch 023-024: Xerxes' preparations, march to Greece
-- Book VII cont., Ch 025-026: Thermopylae
-- Book VIII (Urania), Ch 027-028: Artemisium and Salamis
-- Book VIII cont., Ch 029-030: Aftermath of Salamis, diplomacy
-- Book IX (Calliope), Ch 031-032: Plataea
-- Book IX cont., Ch 033: Mycale, end of the Persian Wars
+The first modernization (Feb 2026, now legacy_v1/) was made in 25 files of
+10-17k words each, before the project capped a file at about 7k words. A
+translating agent must WRITE as much as it reads, and those agents could
+not: every file came back at 0.66-0.81 of the source, and the army
+catalogue (VII.61-99) was plainly summarized: about 35 named commanders in
+Macaulay, 9 in the modern text, whole peoples gone. Nothing on the page
+announced the loss. The modern text read smoothly; it simply was not all
+there.
 
-=== STYLE AND TONE ===
+So the rule that governs everything below is COMPLETENESS. Every section,
+every sentence, every name, every number, every "as the priests told me",
+every version of a story Herodotus gives two of. The new files are 3.8-7.0k
+words, and check.py now counts Herodotus' own section numbers and the
+proper names in each file, so a dropped section fails outright and a
+thinned catalogue shows up as a list of missing names.
 
-Herodotus writes in several distinct registers that the modernization must
-handle differently:
 
-1. NARRATIVE HISTORY (the main thread — wars, politics, successions)
-   - Flowing, chronological, event-driven prose
-   - Macaulay renders this in connected but syntactically heavy Victorian style
-   - Example: "This Croesus was the first of the Barbarians who subdued certain
-     of the Hellenes and forced them to pay tribute, while others he gained
-     over and made them his friends"
-   - MODERNIZE: Keep the momentum. Shorten sentences. Make cause-and-effect
-     explicit. This should read like compelling narrative nonfiction.
+=== 1. THE SOURCE AND HOW IT WAS PREPARED ===
 
-2. ETHNOGRAPHIC DIGRESSIONS (Egypt, Scythia, Libya, India, etc.)
-   - Curious, detailed, sometimes wonder-struck, sometimes skeptical
-   - These are the soul of Herodotus — he's a travel writer as much as historian
-   - Example: "The pig is accounted by the Egyptians an abominable animal; and
-     first, if any of them in passing by touch a pig, he goes into the river
-     and dips himself forthwith in the water together with his garments"
-   - MODERNIZE: Make these feel like fascinating travel reportage. Preserve
-     the wonder and the specificity. These should be fun to read.
+Source: Standard Ebooks' text of Macaulay (fetch.sh pins the commit), built
+by SE from Gutenberg #2707/#2456 against the 1890 scans. The old
+herodotus.txt (Gutenberg-derived) is kept as the second witness; check.py
+holds each Book's word count to within 0.5% of it (they agree to 0.1%).
 
-3. SPEECHES AND DIALOGUE (Croesus and Solon, Xerxes and Artabanus, etc.)
-   - Dramatic, often featuring sharp exchanges and wisdom
-   - Less rhetorical than Thucydides — more like storytelling dialogue
-   - Example: Solon to Croesus: "count no man happy until he is dead"
-   - MODERNIZE: Make dialogue feel like actual conversation. Give speeches
-     rhythm and personality. These are character-defining moments.
+Apparatus. Macaulay's 1,454 notes (21.6k words) are textual criticism:
+Greek readings, manuscript variants, "or 'because she was ashamed'". They
+are the translator's apparatus, not the author's book, and they are
+dropped, with their reference numbers, as is his preface. The editor's
+introduction does their job for a modern reader. Where a note would have
+helped (a place, a custom, a god's Greek name), the storyteller lets the
+sentence carry a few words of gloss, as in every book in this collection.
 
-4. REPORTED ACCOUNTS AND ORAL TRADITION
-   - "The Egyptians say..." "The Persians tell this story..."
-   - Herodotus is explicit about his sources and their reliability
-   - Sometimes he reports multiple versions of the same event
-   - MODERNIZE: Preserve the attribution. Make the sourcing feel natural:
-     "According to the Persians..." or "The Egyptians have a different story..."
+Section numbers. Macaulay prints the traditional chapter numbers ("43.")
+that every edition and every scholar uses to cite Herodotus ("Hdt. 7.228").
+prep.py starts a paragraph at each one, so chapters/NNN.txt reads
+"43. Then when the army had come to the river Scamander ...". The agents
+KEEP them: each modern section opens a paragraph with the same number, so
+check.py can prove every section is present, once, in order. A section may
+run to several modern paragraphs; only the first carries the number.
+About 130 of Macaulay's sections begin mid-sentence ("192. and as to the
+resources ..."), because the traditional division cuts the Greek where it
+cuts it: in the modern text, end the previous sentence and open the new
+section on a sentence of its own. Whether the numbers SHOW on the page is
+a separate question, for Alex (see the setup report); keeping them in the
+files costs nothing either way.
 
-5. HERODOTUS' PERSONAL VOICE (editorial comments, skepticism, asides)
-   - The most precious register. Herodotus breaks in with "I think," "I was
-     told," "I have seen with my own eyes," "I am obliged to report what
-     is said, but not obliged to believe it"
-   - These moments make him feel human and present across 2,400 years
-   - MODERNIZE: Preserve and even slightly emphasize these. They're what make
-     Herodotus Herodotus. When he's skeptical, let the skepticism show.
+VII.35, the whipping of the Hellespont, has no number in either witness:
+Macaulay ran it on into VII.34. It is there, inside 34, and must be
+translated; check.py knows the exception.
 
-6. MARVELS AND WONDERS ({thaumata})
-   - Gold-digging ants, flying snakes, the Phoenix, giant crops
-   - Sometimes reported with belief, sometimes with doubt
-   - MODERNIZE: Keep the sense of wonder. Don't mock or undercut. Report
-     them as Herodotus does — with a mix of fascination and sometimes
-     gentle skepticism.
+Verse. The oracles and inscriptions (151 lines in 41 passages) are set as
+tab-indented lines, the house convention (quixote/, nights/), which renders
+as verse. See section 6.
 
-=== KEY CHALLENGES ===
+Structure. 51 files, each a whole chapter of 3.8-7.0k words, cut at
+narrative joints (never mid-story, never mid-sentence), under nine word-form
+Book dividers, "Book One: Clio" ... "Book Nine: Calliope", which assemble.py
+emits from the manifest. Chapter titles are editorial, new writing, as the
+Peloponnesian War's are; Herodotus' Books have no chapters of their own.
+Numbering runs 1-51 through the whole work (assemble.py anchors chapters as
+ch-N, so restarting per Book would collide). manifest.json carries each
+file's section range ("I.1-33").
 
-1. SENTENCE STRUCTURE
-   Macaulay's sentences often run 60-120 words with nested clauses, participle
-   chains, and delayed main verbs. These must be broken up while preserving
-   flow. The trick is making connections explicit with modern transitional
-   language rather than depending on clause subordination.
 
-2. FOOTNOTE NUMBERS IN THE TEXT
-   The Gutenberg text has superscript-style footnote numbers embedded inline
-   (e.g., "to the end that 1 neither the deeds of men..."). These must be
-   REMOVED during modernization — they break the flow and serve no purpose
-   in the retelling.
+=== 2. WHO HERODOTUS IS ON THE PAGE ===
 
-3. PROPER NOUNS AND GEOGRAPHY
-   Herodotus is saturated with proper nouns — hundreds of place names, personal
-   names with patronymics, ethnic designations, river names. Strategy:
-   - Keep all proper nouns in Macaulay's transliterations (they're standard)
-   - Drop most patronymics on subsequent mentions
-   - Add brief geographical context on first mention where helpful
-   - "Hellenes" → "Greeks" in most contexts (use "Hellenes" when Herodotus
-     is being formal or quoting)
-   - "Barbarians" → keep, but note on first use that it means "non-Greek-
-     speakers," not "savages"
+Herodotus is a storyteller first and an inquirer always. His Greek was
+plain, fluent Ionic, not archaic even to his own readers (Macaulay's preface
+says so), and it moves fast. Macaulay, aiming at "faithfulness to the
+manner of expression and to the structure of sentences", keeps the Greek
+word order and particles: "having so done", "these, I say", "that which",
+"forthwith", "thou", the delayed main verb. That is the costume we remove.
+It is the TRANSLATOR's archaism, not the author's (see memory
+whose-archaism-is-it): the Greek reader of 430 BC heard a lively voice, and
+so should ours.
 
-4. ARCHAIC VOCABULARY AND MACAULAY'S VICTORIANISMS
-   - "forthwith" → "immediately" or "right away"
-   - "set themselves to" → "began to"
-   - "make war upon" → "attack" or "go to war with"
-   - "in all points" → "in every way"
-   - "put in to" (a harbor) → "sailed into" or "landed at"
-   - "that which" → "what"
-   - "inasmuch as" → "since" or "because"
-   - "having so done" → "after doing this"
-   - "of a surety" → "certainly" or "without doubt"
-   - "the greater part of" → "most of"
-   - Passive constructions → active where possible
-   - Inverted word order → standard modern English order
-   - "it chanced that" → "it happened that" or just narrate directly
-   - "they say" / "it is said" → keep these (they're Herodotus' sourcing)
+His registers, and what to do with each:
 
-5. MACAULAY'S TRANSLITERATION CONVENTIONS
-   Some names use archaic transliteration:
-   - "Phenicians" → "Phoenicians"
-   - "Dareios" → "Darius"
-   - "Cambyses" → keep (this is standard)
-   - "Kyros" / "Cyrus" → "Cyrus" consistently
-   - "Kroisos" → "Croesus"
-   - "Xerxes" → keep
-   - "Hellas" → "Greece" (unless in speeches)
-   - "Hellenes" → "Greeks" (unless in formal/quotation context)
-   - "Lacedemon" / "Lacedemonians" → "Sparta" / "Spartans"
-   - "Kithairon" → "Cithaeron"
-   - "Plataiai" → "Plataea"
-   - "Thaleia" → "Thalia" (Muse name)
+NARRATIVE. Wars, successions, intrigues. Chronological, cause-and-effect,
+"and after this ... and then". Keep the momentum. Break Macaulay's 80-word
+chains into sentences a reader can hold, and make the connections explicit
+("so", "because", "but then"). Do not add scene-painting, emotion or motive
+he did not write. He is often laconic about horrors: stay laconic.
 
-6. FAMOUS PASSAGES
-   Several passages are so well-known they need careful handling:
-   - The proem ("This is the Inquiry of Herodotus...")
-   - Croesus and Solon ("Count no man happy until he is dead")
-   - The story of Gyges and Candaules' wife
-   - Croesus on the pyre
-   - The rise of Cyrus (the shepherd's child)
-   - Egyptian customs and marvels
-   - The debate on forms of government (democracy vs. oligarchy vs. monarchy)
-   - The 300 Spartans at Thermopylae
-   - Xerxes weeping at the Hellespont
-   - The Battle of Salamis
-   - "I am obliged to report what is said, but I am not obliged to believe it"
-   Strategy: Modernize the language but preserve the essential phrasing of
-   iconic lines. Make them clearer but recognizable.
+THE INQUIRER'S VOICE. The single most precious thing in the book, and what
+the old version thinned first. "As I was told by the priests at Memphis",
+"the Persians say ... but the Phoenicians say ...", "this I saw myself",
+"I do not believe it, but others may", "I cannot say for certain", "so
+much for that", "I have mentioned this before", "my account has from the
+start sought out the side-issues". Every one stays, in first person, in
+his tone: curious, skeptical, fair, occasionally pleased with himself.
+These are not padding; they ARE his method. When he gives two or three
+versions of a story, all of them stay, in his order, with his verdict.
 
-7. HERODOTUS' DIGRESSIONS
-   Herodotus is famous for his digressions — stories within stories within
-   stories. He'll be talking about the Persian invasion and suddenly spend
-   three chapters on Egyptian embalming practices. These are NOT flaws —
-   they're the best part. Preserve them. Signal them naturally: "But before
-   I get to that, let me tell you about..." or "Now, this requires some
-   background..."
+ETHNOGRAPHY AND MARVELS. Egypt, Scythia, Libya, India, Arabia, the edges
+of the world. Concrete, specific, wonder-struck and skeptical by turns.
+Render like the best travel writing: exact (every measurement, every
+ingredient, every step of the embalming), and never mocking. Report what
+he reports as his report.
 
-8. MULTIPLE ACCOUNTS
-   Herodotus frequently gives two or three versions of the same story:
-   "The Persians say X. The Greeks say Y. I myself think Z."
-   Preserve this structure — it's his method and it's honest.
+SPEECHES AND DIALOGUE. Solon and Croesus, Artabanus and Xerxes, the
+debate on government, Demaratus, Socles, Themistocles. Short, pointed,
+often epigrammatic. Make them sound like people talking, keep their
+argument whole, and keep the sharpness of the punchline. Do NOT turn
+reported speech into direct speech or the reverse: when Herodotus says
+that Dieneces said they would fight in the shade, he says it indirectly.
 
-9. SECTION NUMBERS
-   The original text has numbered sections (1., 2., 3., etc.) that are
-   traditional scholarly references. REMOVE these in the modernization —
-   they break narrative flow. The modernized text should read as continuous
-   prose organized by paragraphs, not numbered entries.
+LISTS. Catalogues of peoples and commanders (VII.61-99), of ships
+(VIII.1-2, VIII.43-48), of contingents and battle lines (IX.28-32), of
+tribute (III.89-97), of the stages of a march, of the kings of Egypt, of
+the suitors of Agariste (VI.127). These are the passages most at risk and
+they must survive name for name, number for number, and in order. A
+catalogue may be set more readably (shorter sentences, one people per
+sentence), never shortened.
 
-=== TRANSLATION PHILOSOPHY FOR THIS WORK ===
 
-The persona: A scholar who has spent a lifetime with Herodotus and who is also
-a gifted storyteller — someone who understands that Herodotus was the world's
-first great narrative journalist, not a dry chronicler. Think of someone like
-Robert Kaplan or Ryszard Kapuscinski retelling Herodotus in their own voice.
+=== 3. READABILITY (THE DELIVERABLE) ===
 
-Key principles specific to this work:
-- Herodotus is ENTERTAINING. This is not a difficult, academic text hidden
-  under Victorian prose — it's a lively, curious, funny, sometimes shocking
-  collection of stories. The modernization should bring that out.
-- The digressions are the heart of the work. Don't rush through them.
-- Preserve Herodotus' authorial personality. He's opinionated, skeptical,
-  sometimes credulous, always curious. When he says "I don't believe this,"
-  let the reader hear it.
-- This is history AND storytelling. Don't sacrifice one for the other.
-- Handle cultural differences honestly. Herodotus reports customs that modern
-  readers will find strange or disturbing. Report them as he does — without
-  judgment but with context.
-- Keep the sense of a vast, varied, endlessly surprising world.
+Alex's standing correction (memory: readability-is-the-deliverable): a
+faithful-but-opaque draft is a crib. Every sentence should be one a bright
+fourteen-year-old can read aloud and follow, with every clause of the source
+present and nothing summarized.
 
-=== VOCABULARY CONSISTENCY TABLE ===
+- Plain words. "forthwith" -> at once; "having so done" -> after this /
+  then; "that which" -> what; "inasmuch as" -> since; "it chanced that" ->
+  it happened that / narrate directly; "the greater part of" -> most of;
+  "made answer" -> answered; "set forth" -> explained / set out (by sense).
+- Modern word order; active voice where it is clearer.
+- thou/thee/thy/ye -> you, and every -est/-eth form goes.
+- Where Herodotus leans on a story his Greek readers knew (Io, the Argonauts,
+  Helen, the Heracleidae, Minos), let the sentence carry what the reader
+  needs in a few words. No footnotes, no brackets.
+- Patronymics are information and stay: "Leonidas son of Anaxandrides".
+  In a catalogue every one stays. In running narrative, where Macaulay
+  repeats a patronymic within a few sentences purely as Greek idiom, the
+  repeat may go; the first mention in each file keeps it.
 
-Macaulay Term → Modern Equivalent (use consistently)
----
-Hellenes/Hellas → Greeks/Greece (use "Hellenes" in speeches or formal contexts)
-Barbarians → non-Greeks (explain on first use), then "barbarians" with context
-Lacedemon/Lacedemonians → Sparta/Spartans
-the Mede/Median → Persia/Persian (except in compound phrases like "the Persian Wars")
-Phenicians → Phoenicians
-Erythraian Sea → Red Sea (or Persian Gulf, depending on context)
-talent(s) → talent(s) — gloss on first use ("a talent of silver — an enormous sum")
-stade/stades → stades (keep; gloss as ~600 feet on first use)
-parasang → parasang (keep; gloss as ~3.5 miles on first use)
-trireme → trireme (keep after first explanation as "three-banked warship")
-tyrant → tyrant (keep; explain on first use means "sole ruler," not necessarily cruel)
-confederacy → alliance / league
-circumvallation → siege wall
-panoply → full armor
-proxenus → diplomatic representative
-satrap → governor (or "satrap — the Persian governor")
-deme → district / township
-talent → talent (a unit of weight/currency — gloss first use)
-cubit → cubit (~18 inches, gloss first use)
-Dareios → Darius
-Kyros → Cyrus
-Kroisos → Croesus
-Aithiopia/Aithiopians → Ethiopia/Ethiopians
-Libye → Libya
-Skythia/Skythians → Scythia/Scythians
-Phenike → Phoenicia
-Neilos → the Nile
-Istros → the Danube (gloss: "the Istros — what we now call the Danube")
-Tanais → the Don
-Borysthenes → the Dnieper
-forthwith → immediately / right away
-inasmuch as → since / because
-set themselves to → began to
-make war upon → attack / go to war with
-of a surety → certainly
-the greater part of → most of
 
-=== CHAPTER-BY-CHAPTER NOTES ===
+=== 4. LOCKED VOCABULARY ===
 
-Ch 000 (Book I, secs 1-54): THE RISE OF CROESUS
-Opening of the entire work. The famous proem, then Herodotus' "warm-up" with
-the mythical kidnappings (Io, Europa, Medea, Helen), then into real history
-with Croesus of Lydia. The Croesus-Solon encounter is one of the most famous
-stories in all of history — "count no man happy until he is dead." Then
-Croesus' test of the oracles. This chapter sets the tone for everything:
-make it vivid, dramatic, and narratively compelling. Remove footnote numbers.
+The full table is in running_notes.txt; it is the ledger and wins over
+anything here. The decisions behind it:
 
-Ch 001 (Book I, secs 55-92): CROESUS' FALL AND LYDIA
-Croesus' alliance with Sparta, his war against Cyrus, the fall of Sardis,
-Croesus on the pyre (miraculous rescue), and the history of the Lydian
-dynasty. The pyre scene is famous and dramatic. The Gyges/Candaules story
-(one of the great anecdotes) may be here or in the previous chapter.
+NAMES. Conventional Latinized English forms, as in the published
+introduction and the old version: Darius, Croesus, Cyrus, Cambyses, Xerxes,
+Mardonius, Histiaeus, Psammetichus, Pisistratus, Miletus, Plataea,
+Thermopylae, Artemisium, Aegina, Cyrene, Athena, Dionysus, Halicarnassus.
+Macaulay's Greek-style forms (-os, k, -ai, -oi) are converted:
+Mardonios -> Mardonius, Kyrene -> Cyrene, Plataia -> Plataea, Thermopylai
+-> Thermopylae, Alcmaionidai -> Alcmaeonids. Rare names with no settled
+English form: Latinize by the same rule (-os -> -us, k -> c, ai -> ae,
+oi -> oe or -i in plurals) and record the choice in your notes.
 
-Ch 002 (Book I, secs 93-141): LYDIAN CUSTOMS AND THE RISE OF CYRUS
-Lydian marvels (Lydians invented coinage, dice, etc.), then Cyrus' origin
-story (the shepherd child, prophecy, exposure). This is fairy-tale material
-embedded in history — handle it with the same narrative energy as Herodotus.
+PEOPLES AND PLACES.
+- Hellenes / Hellas / Hellenic -> Greeks / Greece / Greek, always.
+- Barbarians. Herodotus' "barbaroi" means non-Greeks, anyone whose language
+  is not Greek; it is not an insult, and Herodotus admires many of them. In
+  the proem: "Greeks and non-Greeks". Elsewhere by referent: "non-Greeks" /
+  "foreigners" for the category; for Xerxes' army, "the Persians", "the
+  king's army", "the invaders", "the enemy" (it is a multi-national host:
+  "the Persians" is the Greeks' own shorthand and is acceptable). Do not use
+  "barbarian(s)" except where a Greek speaker is plainly being contemptuous.
+- Lacedaemonians / Lacedaemon -> Spartans / Sparta (the state) or Laconia
+  (the territory). EXCEPTION: where Herodotus counts Spartiates against the
+  other Lacedaemonians (Thermopylae VII.202, 228; Plataea IX.10-11, 28-29,
+  61, 85), keep the distinction: "Spartans" or "Spartan citizens" for the
+  Spartiates, "other Lacedaemonians (free men of the Laconian towns, not
+  citizens of Sparta)" glossed once, then "Lacedaemonians".
+- The Mede / the Medes: the Medes are a real people (Book I, the
+  catalogue) and stay Medes. Where Greeks call the Persian enemy "the Mede"
+  it becomes "the Persians"; "medize" -> "go over to the Persians".
+- Magians -> the Magi (one Magus).
+- Rivers and seas take their modern names where the identification is
+  certain: Ister -> the Danube; Borysthenes -> the Dnieper; Tanais -> the
+  Don; Tyras -> the Dniester; Hypanis -> the Bug; Pontus / Euxine -> the
+  Black Sea; Arabian Gulf -> the Red Sea; Erythraean Sea -> the Persian
+  Gulf where Herodotus means its head (Euphrates and Tigris mouths, Susa,
+  Ampe, the Phoenicians' origin in I.1), otherwise the Indian Ocean (his
+  "Southern Sea"). Where the identification is disputed (Araxes, Gerrhus,
+  Oarus, Lycus, the Scythian rivers in IV.48-57 other than those above),
+  keep Herodotus' name. Hellespont, Bosporus, Propontis (the Sea of
+  Marmara, glossed once), Nile, Halys, Euphrates stay.
+- Peoples and cities keep Herodotus' names; Ethiopians stay Ethiopians (his
+  word for the dark-skinned peoples south of Egypt and in the far east).
+- Ilion -> Troy.
 
-Ch 003 (Book I, secs 142-216): CYRUS' CONQUESTS AND DEATH
-Ionians, conquest of Babylon (the famous diversion of the Euphrates), Cyrus'
-campaigns, customs of various peoples, Cyrus' death fighting the Massagetae
-(Queen Tomyris — one of Herodotus' great female characters). Longer chapter.
-The Tomyris story is vivid and brutal.
+GODS. Greek names (Zeus, Apollo, Athena, Heracles, Dionysus, Hephaestus,
+Poseidon, Aphrodite). Herodotus' identifications of foreign gods with Greek
+ones stay as he makes them ("the Egyptians call Zeus Amun"). Macaulay's
+"God", "the Deity", "the divine power" for theos / to theion -> "the gods",
+"heaven" or "the divine", never a Christian capital-G God; "the god" when
+a particular god is meant (usually Apollo at Delphi: say "Apollo" or "the
+god at Delphi" where it helps). The Pythian prophetess -> the Pythia, the
+priestess at Delphi (glossed once). "Oracle" lower-case.
 
-Ch 004 (Book II, secs 1-45): EGYPT — THE LAND
-Opening of the Egypt book. Geography of the Nile, theories about its flooding
-(Herodotus evaluates and dismisses several), Egyptian customs that are the
-reverse of other peoples. This is Herodotus at his most ethnographic and
-curious. Make it read like brilliant travel writing.
+OFFICES AND THINGS. despot -> tyrant (a man who seized sole power outside
+the law; not necessarily cruel; glossed once); satrap -> governor (or
+"satrap, the governor of a province"); trireme stays (glossed once:
+three-banked warship); hoplite stays (heavy-armed infantryman); ephors stay
+(Sparta's five annual magistrates); polemarch: war-archon, glossed;
+proxenos -> representative / consul; Medism -> siding with the Persians.
 
-Ch 005 (Book II, secs 46-103): EGYPT — CUSTOMS AND RELIGION
-Egyptian religion, animal worship (cats, crocodiles, the sacred ibis),
-funeral practices, festivals. Dense ethnographic material. Herodotus is
-fascinated and sometimes scandalized. Keep the wonder and specificity.
+UNITS. Alex's standing rule for retellings (memory: modern-units-in-
+retellings): convert obsolete measures to modern US units and redo the sums
+so the reasoning still adds up. Herodotus defines his own units (II.6, V.53,
+VI.42); stade = 600 ft, parasang = 30 stades, schoenus = 60 stades. Table:
 
-Ch 006 (Book II, secs 104-145): EGYPT — HISTORY AND MARVELS
-Egyptian history through their kings, the labyrinth (Herodotus says it
-exceeds even the pyramids), Lake Moeris, stories of various pharaohs.
-Longest chapter — dense but full of amazing stories.
+    stade (Macaulay "furlong")  600 ft; 9 stades ~ 1 mile
+    plethron                    100 ft
+    fathom (orguia)             6 ft
+    cubit                       1.5 ft (18 in); the royal cubit is 3
+                                finger-widths longer, about 20 in
+    foot                        foot (the Greek foot is within 3%)
+    palm / finger / span        3 in / 3/4 in / 9 in
+    parasang                    about 3 1/3 miles
+    schoenus                    about 6 2/3 miles
+    aroura (Egyptian)           about 2/3 acre
+    medimnus                    about 1 1/2 bushels
+    artaba (Persian)            about 1 2/3 bushels
+    choenix                     about a quart
+    amphora / metretes          about 10 gallons
+    kotyle                      about half a pint
+    myriad                      10,000: "twelve myriads" -> 120,000
 
-Ch 007 (Book II, secs 146-182): EGYPT — LATE HISTORY
-Later Egyptian kings, Greek connections with Egypt, the oracle of Ammon.
-Wrapping up the Egyptian digression before returning to Persia.
+Round as Herodotus rounds: "about 1,500 miles", not "1,534.1 miles". When
+he does arithmetic (the Royal Road, V.53; the coast of Egypt, II.6-9; the
+Pontus, IV.85-86; Solon's days, I.32), redo it in the converted figures and
+check that it adds up the way his does; if his own figures do not add up,
+keep the slip, converted, and say so in your notes. Where he is talking ABOUT
+the unit (II.6: "those who have little land measure it in fathoms ..."),
+keep the unit's name and give its modern size. Days' journeys and days'
+sailing stay as they are.
 
-Ch 008 (Book III, secs 1-44): CAMBYSES IN EGYPT
-Cambyses' invasion of Egypt, his madness (killing the sacred bull, murdering
-his brother, his cruelty). One of Herodotus' great character studies —
-Cambyses as a cautionary tale of power and madness.
+Money is not a measure and stays: talents, minas, drachmas, obols, staters,
+darics. Gloss "talent" once (a huge sum: a talent of silver was about 57 lb
+of it). Where Herodotus gives a weight in talents of a physical object
+(Croesus' gold ingots and lion, I.50), keep talents and add the pounds once.
+Time stays: years, generations ("three generations make a hundred years",
+II.142), months, festivals by name.
 
-Ch 009 (Book III, secs 45-88): THE RISE OF DARIUS
-The fall of the Magi, the conspiracy of the Seven, the debate on forms of
-government (democracy vs. oligarchy vs. monarchy — one of the most famous
-passages in political philosophy), Darius wins the kingship by horse-trick.
 
-Ch 010 (Book III, secs 89-142): DARIUS' EMPIRE
-The twenty satrapies and their tributes, gold-digging ants of India (famous
-marvel), the edges of the world, stories from Samos and the tyrant Polycrates.
-Mix of administrative detail and wild stories.
+=== 5. SENSITIVE CONTENT ===
 
-Ch 011 (Book III, secs 143-160): DARIUS AND BABYLON
-Babylon's revolt and reconquest. The story of Zopyrus' self-mutilation to
-retake Babylon — one of Herodotus' most dramatic war stories.
+Herodotus describes, without flinching and mostly without moralizing: human
+sacrifice, impalement and crucifixion (Polycrates III.125, Artayctes IX.120,
+Pheretime IV.202), mutilation (Zopyrus III.154, Masistes' wife IX.112),
+castration and the eunuch trade (Panionius and Hermotimus VIII.104-106),
+a father fed his own son (Harpagus I.119), Scythian scalps, skull-cups and
+royal burials with strangled servants (IV.64-73), sacred prostitution in
+Babylon (I.199) and its marriage auction (I.196), public sex among certain
+peoples (I.203, III.101, IV.172, IV.180), the goat of Mendes (II.46),
+incest (Cambyses, III.31), the stripping of Candaules' wife (I.8-12), a
+Persian queen burying children alive (VII.114), the mass rapes and
+enslavements that follow sieges (VI.19, VI.32), ethnographic statements
+about hair, skin and diet (the Ethiopians of the catalogue, VII.70; the
+Indians, III.101).
 
-Ch 012 (Book IV, secs 1-63): SCYTHIA — THE PEOPLE
-Opening of the Scythian book. Origins of the Scythians (multiple accounts),
-geography of Scythia, the rivers, the peoples. Herodotus at his most
-ethnographic — cannabis-using Scythians, their burial customs, their
-nomadic life.
+The rule is the project's (memory: sensitive-content-tests; the Verne
+rule): render every act and every judgement as HIS, in his measured,
+reporting register, completely, with no added gore, no softening, no
+editorial wink and no modern reassurance. Herodotus' tone is usually cool
+and exact, and that coolness is part of the meaning; do not heat it up. Use
+plain modern words, not euphemism and not slang: "had sex with" or "slept
+with" where Macaulay says "lay with" or "had intercourse"; "slave"; "cut off
+his nose and ears". Ethnographic description stays description in modern
+neutral words ("thick, tightly curled hair" for Macaulay's "woolly";
+"dark-skinned"); no slur appears in Macaulay and none may appear in ours.
+Where he says he does not believe a report, his disbelief stays; where he
+believes something we would not, his belief stays, unhedged.
 
-Ch 013 (Book IV, secs 64-123): SCYTHIAN CUSTOMS AND NEIGHBORS
-Scythian warfare, scalping, skull-cups, customs. Then Darius' campaign
-into Scythia begins. Neighboring peoples: Amazons, cannibals, various
-tribes at the edges of the known world.
+Does the reader lose information or gain a false one? Herodotus' famous
+even-handedness ("custom is king", III.38) is itself a subject of the book;
+the reader should meet it exactly as strong as he wrote it.
 
-Ch 014 (Book IV, secs 124-205): DARIUS IN SCYTHIA AND LIBYA
-Darius' failed Scythian campaign (the Scythians' scorched-earth strategy),
-then a long digression on Libya — its peoples, customs, geography.
-Transition from Scythia to North Africa.
+If you think anything should be cut, do not cut it: translate it and say
+so in your notes.
 
-Ch 015 (Book V, secs 1-56): THE IONIAN REVOLT BEGINS
-Return to the main narrative thread. Megabazus in Thrace, the story of
-Histiaios and Aristagoras, the spark that lights the Ionian revolt.
-Important diplomatic maneuvering.
 
-Ch 016 (Book V, secs 57-126): ATHENS AND THE REVOLT
-The rise of Athens — Hippias, Cleisthenes, the birth of Athenian democracy.
-Athens and Eretria send help to the Ionians. The burning of Sardis — the
-event that will bring Persian vengeance. History is accelerating.
+=== 6. VERSE: ORACLES AND INSCRIPTIONS ===
 
-Ch 017 (Book VI, secs 1-61): THE FALL OF THE IONIANS
-The Ionian revolt collapses. The fall of Miletus. Naval battles. Sparta's
-internal politics (the two kings). Building toward Marathon.
+Macaulay renders the hexameter oracles and the epitaphs as loose English
+hexameters full of "hath" and "thou". Render them as modern English verse
+lines: one tab-indented line per source line, same number of lines, keeping
+every image (the tortoise boiling in bronze, the mule on the Median throne,
+the tunnies in the moonlit net, the wooden wall, divine Salamis). Plain,
+strong, a little elevated; oracles are meant to sound like oracles. No rhyme
+needed; no "thee". Locked versions of the most famous are in
+running_notes.txt.
 
-Ch 018 (Book VI, secs 62-140): MARATHON
-The lead-up and the battle itself — one of the decisive battles in world
-history. Miltiades, Pheidippides' run (the original Marathon), the battle
-on the plain. Then aftermath and aftermath stories. This should be thrilling.
 
-Ch 019 (Book VII, secs 1-42): XERXES PREPARES
-Xerxes decides to invade Greece. The great debate (Xerxes, Mardonius,
-Artabanus). Xerxes' dream. The massive preparations — the canal through
-Athos, the bridge of boats across the Hellespont. Xerxes weeps at the
-transience of human life. Dramatic irony throughout.
+=== 7. FAMOUS PASSAGES ===
 
-Ch 020 (Book VII, secs 43-118): THE MARCH
-The army marches. The famous catalogue of Xerxes' forces (like Homer's
-catalogue of ships). Xerxes at the Hellespont, the whipping of the sea.
-The army moves through Thrace. The sheer scale is staggering.
+Locked modern wordings are in running_notes.txt ("LOCKED PASSAGES"); the
+load-bearing phrases are in must_contain.txt, which verify.py checks. The
+agent for the file is given its passage verbatim.
 
-Ch 021 (Book VII, secs 119-168): GREECE RESPONDS
-Greek preparations to resist. The oracle's terrifying prophecies. Spartan
-and Athenian debate. Alliances form (and fail to form). Tension builds
-toward the confrontation.
+  001  the proem; Gyges on Candaules' wife (I.8); Arion and the dolphin;
+       Solon and Croesus (I.30-33), "do not call him happy yet, only lucky"
+  004  Croesus on the pyre calls "Solon" three times (I.86); peace and war,
+       sons and fathers (I.87)
+  009  Egypt the gift of the river (II.5)
+  016  "custom is king of all" (III.38)
+  036  Hippocleides dances away his marriage (VI.129)
+  038  Xerxes weeps at Abydos (VII.44-46); the Hellespont whipped (VII.35)
+  041  the wooden wall and divine Salamis (VII.140-143); "obliged to report
+       what is said" (VII.152)
+  043  Thermopylae: fighting in the shade (VII.226); the epitaphs (VII.228)
+  046  the royal couriers (VIII.98)
+  047  "as long as the sun keeps the course it keeps now" (VIII.143)
+  048  the Persian at Thersander's dinner (IX.16)
+  051  soft lands breed soft men (IX.122)
 
-Ch 022 (Book VII, secs 169-239): THERMOPYLAE
-The most famous last stand in history. Leonidas and the 300, the pass,
-Ephialtes' betrayal, the final fight. "Go tell the Spartans..." This must
-be gripping, vivid, and emotionally powerful. The chapter is longer because
-the battle narrative deserves space.
+Not Herodotus, and not to be imported: "Come and take them" and "Molon
+labe" (Plutarch); the golden throne at Salamis (Plutarch); "with your shield
+or on it" (Plutarch); "Rejoice, we conquer" and the Marathon-to-Athens run
+(later legend; Herodotus' Pheidippides runs Athens to Sparta, VI.105-106).
+The traditional proverb "call no man happy until he is dead" is the
+tradition's compression of I.32; our Solon says what Macaulay's says.
 
-Ch 023 (Book VIII, secs 1-67): ARTEMISIUM AND SALAMIS BEGINS
-Naval battles at Artemisium (simultaneous with Thermopylae), the Greek
-retreat, Athens evacuated, the fleet assembles at Salamis. Themistocles'
-genius and trickery.
 
-Ch 024 (Book VIII, secs 68-144): SALAMIS
-Artemisia's speech (one of Herodotus' great female characters), the battle
-itself — the narrow straits, Persian confidence, Greek desperation turned
-to triumph. One of the great naval battles in history. Then aftermath:
-Xerxes' retreat, diplomatic maneuvering.
+=== 8. RATIO AND LENGTH ===
 
-Ch 025 (Book IX, secs 1-50): PLATAEA BEGINS
-Mardonius in Greece, the lead-up to the final land battle. Diplomacy,
-maneuvering, Greek disunity. The armies face each other at Plataea.
+English to English modernization of a Victorian translator runs near 1:1
+(Thucydides from Crawley, 0.96; Malory, 1.02; memory note: ~1.0-1.05).
+Macaulay's word-for-word Greek syntax contracts in places ("that which" ->
+"what") and expands in others (glosses, unit conversions, unpacked
+participles). Expect 0.90–1.05 per file. Below 0.92 something was dropped.
 
-Ch 026 (Book IX, secs 51-122): PLATAEA AND THE END
-The battle of Plataea — the decisive land victory. Simultaneously, the
-battle of Mycale across the Aegean. The Persian Wars end. Herodotus'
-closing — the story of Cyrus' ancestor and the soft lands that make soft
-men. A perfect ending that circles back to the beginning.
+    python3 verify.py herodotus --min-ratio 0.85 --max-ratio 1.20
+
+The floor is set so that every file of the old version (0.66-0.81) would
+fail it. Source: 285,036 words; expected modern text about 285-305k.
+
+
+=== 9. ORDER OF WORK ===
+
+Pilot: file 001 ALONE (proem, Gyges, Arion, Solon): it sets the voice, the
+inquirer's hedges, verse handling and the first glosses. Review it against
+legacy_v1/modern_chapters/000.txt for readability and against the source for
+completeness before anything else runs. Then batches of 4-6, Book by Book,
+ledger updated between batches. Give 039 (the catalogue, VII.57-104) an
+agent of its own and read its NAMES output from check.py by hand.

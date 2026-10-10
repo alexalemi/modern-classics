@@ -1,0 +1,436 @@
+RUNNING NOTES — HERODOTUS, THE HISTORIES (retranslation)
+The shared consistency ledger. Every agent reads it; the orchestrator
+updates it between batches from what the agents return. Agents do NOT edit
+this file.
+
+STATUS: opened at setup, 2026-10-10. Nothing translated yet. The first file
+to translate is 001 (I.1-33), ALONE, as the voice pilot; then the rest of
+Book One (002-008) in batches before the other Books run in parallel.
+The old translation is in legacy_v1/; do not copy from it (it is
+compressed throughout) and do not read it unless your prompt tells you to.
+
+SITE WARNING (orchestrator): SHELF is still set in env and site/herodotus.html
+still exists, but modern_chapters/ is empty or partial until the book is
+done. build_index.py computes the read time from modern_chapters/ and will
+silently publish "~10-minute read" for Herodotus (sweep.py also sees an
+empty book). Do NOT regenerate the index or feeds, and do not rebuild
+site/herodotus.html, until all 51 files have passed verify.py and check.py.
+
+
+LOCKED — DECIDED IN ADVANCE, DO NOT RE-DECIDE
+
+Headings        manifest.json, verbatim. Line 1 of every file is the heading
+                given in the prompt, character for character
+                ("Chapter 39: The Great Review at Doriscus, and Xerxes
+                Questions Demaratus"). Every file is a whole chapter: there
+                are no "(Part n of k)" markers in this book.
+Book dividers   NEVER written into a file. assemble.py emits "Book Seven:
+                Polymnia" from the manifest. A divider line in a file
+                becomes the chapter's heading and deletes the real one.
+Section numbers Every section of the source opens a paragraph with its
+                number, "43. ", exactly as in chapters/NNN.txt, same
+                numbers, same order, none added, none dropped. A long
+                section may run to several paragraphs; only the first is
+                numbered. If Macaulay's section begins mid-sentence, finish
+                the previous sentence and start the section on a new one.
+                The proem (file 001, before "1.") has no number.
+                VII.35 has no number in the source (it sits inside 34):
+                do not add one.
+Quotes          straight double quotes ", single ' inside; new paragraph per
+                speaker in a real exchange.
+Spelling        American: honor, armor, marvelous, color, gray, center,
+                defense, traveler. (Matches the old version and the intro.)
+Numbers         words for one to ninety-nine and round hundreds in
+                narrative ("forty", "three hundred"); numerals for 1,000 and
+                up and for any figure in a list or a calculation
+                (1,700,000; 13,500). Myriads converted ("twelve myriads" ->
+                120,000).
+Possessives     classical names ending in -s take the apostrophe alone:
+                Darius', Croesus', Xerxes', Cambyses', Leonidas',
+                Herodotus'. Everything else 's. (The old version used both.)
+
+NAMES (Latinized; record every new one you settle in your notes)
+  Greeks/Greece/Greek (never Hellenes/Hellas)      non-Greeks (see below)
+  Spartans/Sparta/Laconia (see Lacedaemonians below)  Athenians
+  Darius  Croesus  Cyrus  Cambyses  Xerxes  Smerdis  Astyages  Harpagus
+  Mardonius  Artabanus  Artaphernes  Datis  Megabazus  Otanes  Histiaeus
+  Aristagoras  Demaratus  Cleomenes  Leonidas  Leotychides  Pausanias
+  Themistocles  Aristides  Miltiades  Pisistratus  Pisistratids  Hippias
+  Hipparchus  Cleisthenes  Alcmaeonids  Periander  Cypselus  Polycrates
+  Oroetes  Democedes  Zopyrus  Psammetichus  Necho  Apries  Amasis
+  Rhampsinitus  Cheops  Chephren  Mycerinus  Sesostris  Proteus
+  Tomyris  Artemisia  Gorgo  Pheretime  Battus  Arcesilaus  Gelon
+  Dieneces  Ephialtes  Megistias  Pheidippides  Hippocleides  Agariste
+  Gyges  Candaules  Arion  Solon  Tellus  Cleobis and Biton  Adrastus  Atys
+  Halicarnassus  Miletus  Sardis  Susa  Babylon  Ecbatana  Memphis
+  Plataea  Thermopylae  Artemisium  Salamis  Marathon  Mycale  Sestos
+  Abydos  Doriscus  Athos  Aegina  Cyrene  Samos  Delphi  Delos  Corinth
+  Cithaeron  Thessaly  Boeotia  Attica  Ionia  Lydia  Scythia  Libya
+  Athena  Dionysus  Heracles  Hephaestus  Zeus  Apollo  Poseidon  Pan
+  the Magi (one Magus)   the Pythia   Troy (for Ilion)
+  Rivers and seas: the Danube (Ister), the Dnieper (Borysthenes), the Don
+  (Tanais), the Dniester (Tyras), the Bug (Hypanis), the Black Sea (Pontus,
+  Euxine), the Red Sea (Arabian Gulf), the Persian Gulf / the Indian Ocean
+  (Erythraean Sea, by context: text_analysis section 4). Disputed rivers
+  keep Herodotus' name.
+
+TERMS
+  barbarians        -> non-Greeks / foreigners; for Xerxes' host the
+                       Persians / the king's army / the invaders / the enemy.
+                       Proem: "Greeks and non-Greeks". Gloss once (001):
+                       Herodotus' word means anyone who does not speak Greek.
+  Lacedaemonians    -> Spartans, EXCEPT where Herodotus separates Spartiates
+                       from other Lacedaemonians (VII.202, 228; IX.10-11,
+                       28-29, 61, 85): "Spartans"/"Spartan citizens" vs
+                       "other Lacedaemonians", glossed where it first occurs
+                       in the file.
+  the Mede          -> the Persians when Greeks mean the enemy; "medize" ->
+                       go over to the Persians. The Medes as a people stay.
+  despot            -> tyrant (gloss once: a man who seized sole power
+                       outside the law, not necessarily cruel)
+  God / the Deity / the divine power -> the gods / heaven / the divine;
+                       "the god" for a particular god; never capital-G God
+  the Pythian prophetess -> the Pythia (gloss once: Apollo's priestess at
+                       Delphi, who spoke his oracles)
+  satrap            -> governor, or "satrap" glossed once
+  trireme           -> trireme (gloss once: three-banked warship)
+  hoplites / heavy-armed -> hoplites (gloss once: heavy infantry)
+  ephors            -> ephors (gloss once)
+  "Athenian guest"  -> "my Athenian friend" (Croesus to Solon); xenos /
+                       guest-friend -> "friend" / "guest-friend" by context
+  marvels           -> wonders / marvels
+
+UNITS (convert; redo the sums: text_analysis section 4 has the full table)
+  stade (Macaulay "furlong") 600 ft, 9 to the mile   plethron 100 ft
+  fathom 6 ft   cubit 18 in (royal cubit ~20 in)   parasang ~3 1/3 miles
+  schoenus ~6 2/3 miles   aroura ~2/3 acre   medimnus ~1 1/2 bushels
+  artaba ~1 2/3 bushels   choenix ~a quart   amphora ~10 gallons
+  MONEY STAYS: talent, mina, drachma, obol, stater, daric.
+
+GLOSSES SPENT (do not re-gloss after the file named; the orchestrator fills
+this in as files land)
+  (none yet; 001 is expected to spend: barbarians/non-Greeks, tyrant,
+  the Pythia, talent)
+
+RECURRING FORMULAE (render the same way every time; extend this list)
+  "these, I say, ..."                    -> drop the tic; keep the sentence
+  "so far of this" / "so much about X"   -> "So much for X."
+  "as I was told by the priests"         -> "as the priests told me"
+  "they say" / "it is said"              -> keep, always
+  "I am not able to say with certainty"  -> "I can't say for certain"
+  "as I think" / "in my opinion"         -> keep, first person
+  "this I know of my own knowledge"      -> "this I know for myself"
+  "my history from the first has sought after additions" (IV.30)
+                                         -> "my account has gone looking for
+                                            side-stories from the start"
+
+
+LOCKED PASSAGES — USE EXACTLY (the agent for that file is given these)
+
+001 (proem, before I.1):
+  This is the account of the inquiry of Herodotus of Halicarnassus, set down
+  so that the deeds of men may not be forgotten with time, and so that the
+  great and marvelous works done by Greeks and non-Greeks alike may not lose
+  their fame; and above all, so that the reason they went to war with each
+  other may be remembered.
+
+001 (I.8, Gyges to Candaules):
+  When a woman takes off her clothes, she takes off her modesty with them.
+
+001 (I.32, Solon, the close of his answer):
+  ... but until he is dead, hold back: do not call him happy yet, only lucky.
+
+004 (I.87, Croesus to Cyrus):
+  No one is so foolish as to choose war over peace: in peace sons bury their
+  fathers, but in war fathers bury their sons.
+
+009 (II.5):
+  ... the Egypt that Greek ships sail to is land the Egyptians have been
+  given as an addition: it is a gift of the river.
+
+016 (III.38):
+  ... and I think Pindar was right when he said that custom is king of all.
+
+036 (VI.129):
+  "You have danced away your marriage, son of Tisander!"
+  "Hippocleides doesn't care!"
+
+038 (VII.46, Xerxes to Artabanus):
+  ... out of all these thousands, not one will be alive a hundred years
+  from now.
+
+041 (VII.141, the second oracle, 12 lines; lines 6 and 11-12, which
+VII.143 quotes again and must match):
+	At the last Zeus grants to Athena, the Trito-born, a wooden wall
+	...
+	Divine Salamis, you will bring death to the sons of women,
+	whether the grain is being sown or gathered in.
+
+041 (VII.152):
+  I am obliged to report what is said, but I am not obliged to believe all
+  of it, and let that hold for this whole history.
+
+043 (VII.226, reported speech, keep it indirect):
+  ... if the Medes hid the sun, they would be fighting in the shade instead
+  of in the sun.
+
+043 (VII.228, the two epitaphs, tab-indented, two lines each):
+	Here once four thousand men from the Peloponnese
+	stood and fought against three million.
+  ...
+	Stranger, go tell the Spartans that we lie
+	here in this place, obedient to their laws.
+
+046 (VIII.98, the couriers):
+  Neither snow nor rain nor heat nor the dark of night keeps them from
+  finishing their appointed stage at top speed.
+
+047 (VIII.143, the Athenians to Alexander):
+  As long as the sun keeps the course it keeps now, we will never come to
+  terms with Xerxes.
+
+048 (IX.16, the Persian to Thersander):
+  The bitterest pain a man can have is this: to understand much and have
+  power over nothing.
+
+051 (IX.122, Cyrus' answer):
+  Soft lands breed soft men. The same soil does not grow both wonderful
+  crops and men who are good at war.
+
+
+FORWARD REFERENCES TO HONOR
+  Herodotus promises and cross-refers constantly ("as I shall show in the
+  Assyrian history", which he never wrote; "as I said before"). Keep every
+  one as he wrote it, including the broken promises. Do not insert book or
+  chapter numbers into them.
+
+
+CONSISTENCY NOTES FROM AGENTS (orchestrator appends here, per batch)
+  (none yet)
+
+
+BATCH 0 (voice, file 001, I.1-33; 2026-10-10). Ratio 0.921. CALIBRATE ON 001.
+
+RATIO (the orchestrator revised it): a natural, COMPLETE modernisation of
+Macaulay runs about 0.90-1.00 (speech-heavy sections about 0.85, because "thou
+dost", "that which" and "I say" come off). verify's floor is 0.85 (lowered after round 2; see below). Below 0.92,
+do a section-by-section audit for drops; NEVER pad or import material to
+raise the ratio.
+
+VOICE (copy it)
+- Every "they say" / "the story goes" / "as I am told" / "as I said" stays,
+  in its place. Alternative versions keep their brackets ("Bias of Priene
+  (or, according to another version, Pittacus of Mytilene)").
+- Macaulay's tic "These, I say, ..." is dropped and the sentence kept.
+- Break 80-word chains into 10-25-word sentences, joined by So / But / Then
+  / When. Add nothing (no scenery, no motive). Keep his laconic closes ("He
+  chose to live.").
+- Direct speech stays direct and reported speech stays reported. "O king"
+  -> "My king"; thou -> you; contractions allowed in speech only.
+- Every paragraph opens "N. ". Long sections may have unnumbered follow-on
+  paragraphs. A section that ends mid-sentence in Macaulay is made whole
+  (full stop, then a new paragraph).
+- Glosses go inside the sentence or in a short parenthesis, never in an
+  editor's voice.
+- olbios -> happy; eutyches -> lucky (Solon, I.32; file 004's pyre scene
+  must keep the same pair). "the Deity / heaven is jealous".
+
+UNITS: stades are converted WITHOUT keeping the unit's name ("about five
+miles"), except where Herodotus is discussing the unit itself (II.6).
+Talents of money stay talents; a talent by weight gets pounds added. Redo
+the sums.
+
+GLOSSES SPENT (001): barbarians ("as the Greeks called anyone whose language
+was not Greek", I.2); Erythraean Sea -> the Persian Gulf, with "our sea" -> the
+Mediterranean (I.1); Euxine -> the Black Sea (I.6); the Pythia ("Apollo's
+priestess at Delphi who speaks his oracles", I.13); talent (I.14); tyrant ("a
+man who has seized sole power outside the law, not necessarily a cruel one",
+I.20); Paris; the Argo; Helen; the Cimmerians; mixing bowls; Amasis;
+dithyramb; the Orthian strain; intercalary months.
+
+NAMES (001): Latinised. Heraclids; Mermnads; Myrsilus; Candaules (the SE
+misprint "Clandaules" is a standing NAMES warning: ignore it); Gyges; Ardys;
+Sadyattes; Alyattes; Cyaxares; Deioces; Taras (NOT Tarentum, glossed "in
+southern Italy"); Arion of Methymna; Taenarum; Glaucus of Chios; Bias of
+Priene; Pittacus of Mytilene; Tellus; Cleobis and Biton. "Alexander son of
+Priam" is kept, glossed once as Paris.
+SE MISPRINTS (read by sense): I.7 Agrond -> Agron; I.22 "so on fact" -> "in
+fact"; I.26 "where" -> "were".
+
+
+ROUND 1 (files 002-011, I.34 - II.98; 2026-10-10). Ratios 0.903-0.96, all audited
+complete. The orchestrator will de-duplicate glosses in a consistency pass at
+the end. FROM NOW ON, CHECK THIS LIST BEFORE GLOSSING ANYTHING.
+
+GLOSSES SPENT (do not repeat): talent (I.14; by weight about 57 lb a talent);
+Pythia (I.13); tyrant (I.20); barbarians (I.2); Black Sea for Euxine (I.6);
+Erythraean Sea (rendered by context: the Persian Gulf, I.1 and I.180; the
+Indian Ocean, I.203 and II.8; "our Red Sea" is the Arabian Gulf, II.11);
+Danube for Ister (I.202); Pillars of Heracles ("the strait at the western end
+of the Mediterranean", II.33); Libya ("as the Greeks call Africa", II.16);
+Tyrrhenia ("the land of the Etruscans", I.94); Tartessus (I.163); Cyrnus =
+Corsica (I.165); a Cadmean victory (I.166); the Panionium ("the shrine of all
+the Ionians", I.143); the Prytaneum ("the town hall of Athens", I.146); deme
+(I.170); Minos (I.171); the royal cubit (I.178); artaba, choenix and medimnus
+(I.192); Loxias = Apollo (I.91); Athena Pronaea (I.92); Aphrodite Urania
+("Heavenly Aphrodite", I.105); Lake Maeotis = the Sea of Azov (I.104); the Magi
+("the Persian priestly caste", I.132); the Persian tiara (I.132); Athena
+Poliuchus (I.160); satrapy (I.192); Amphiaraus (I.52); Pytho = Delphi (I.54);
+enomoties, triecads, ephors, the Council of Elders (I.66); the king's
+Horsemen (I.67); the Dioscuri, the Charites, the phallus, the Pelasgians
+("the people who lived in Greece before the Greeks"), Helios, the
+Lychnocaia (II.43-62); the ichneumon and natron (II.67, 86); the Etesian
+winds (II.20); fathom, stade, parasang and schoenus (II.6).
+
+RULINGS
+- PACTYES (the manifest's form) throughout, not Pactyas.
+- olyra -> spelt (Macaulay's "maize" is his own anachronism).
+- Latinised names that check.py's NAMES matcher misses (Canobos -> Canopus,
+  Casion -> Casius, Maiotian -> Maeotis, Tyrsenians -> Tyrrhenians) are FINE:
+  a standing warning, not a miss.
+- Unnumbered closing lines in Macaulay ("These then are the Ionian
+  cities:") stand as short unnumbered paragraphs.
+- Herodotus' own slips and inconsistencies are kept (II.9 arithmetic;
+  I.113/117 spearmen vs eunuchs).
+- Sex and violence in plain words, in full (the Verne rule): "had sex
+  with", "prostitutes", the cannibal banquet. Nothing is cut.
+
+RATIO FLOOR LOWERED to 0.85 (orchestrator, 2026-10-10, after round 2). Complete files
+that are heavy on numbers or speech sit at 0.90-0.92, because numerals replace
+Macaulay's written-out numbers and his "thou dost" falls away. The old
+compressed files ran 0.66-0.81, so 0.85 still catches summarising. Below 0.92:
+audit section by section and report. NEVER tweak wording to clear a floor.
+Run verify with --min-ratio 0.85 --max-ratio 1.20.
+RULE: drop Macaulay's sub-section letters (II.121 a-f); each becomes an
+unnumbered follow-on paragraph.
+
+
+ROUND 2 (files 012-021, II.99 - IV.36; 2026-10-10). Ratios 0.901-0.935, all audited
+complete. Duplicates to clean at the end: trireme (II.158 and III.4: keep
+II.158); the Ichthyophagi (III.19 and III.? in 016: keep III.19).
+
+GLOSSES SPENT (round 2, adding to round 1): trireme ("the three-banked
+warships", II.158); the Amphictyons (II.180); aroura ("about two-thirds of an
+acre", II.141); Piromis ("a gentleman", II.143); Erythrabolus ("Red Soil");
+Teucrian = Trojan (II.114); Memnon (II.106); the Cypria (II.117); the Achaeans
+(II.120); Hades (II.122); the Ichthyophagi ("the Fish-Eaters", III.19); Carthage
+(III.19); Typhon (III.5); Apis = Epaphus (III.27); the "sacred disease" =
+epilepsy (III.33); the Pataeci (III.37); Corcyra = Corfu (III.48); the Euboean
+talent and mina (III.89); "the Removed" (III.93); storax (III.107); cassia
+(III.110); Nesaean horses (III.106); Iapygia ("the heel of Italy", III.138);
+Anacreon (III.121); the rivers Borysthenes = Dnieper, Tyras = Dniester,
+Hypanis = Bug, Tanais = Don (IV.5-20); Tauric = the Crimea (IV.3); the
+Cimmerian Bosporus (IV.12); Gadeira = Cadiz (IV.8); Hylaea "the Woodland" (IV.9);
+the Androphagi ("the Man-eaters"); the Melanchlaeni ("the Black Cloaks");
+Eileithyia; Hyperboreans / Hypernotians (IV.36).
+
+RULINGS (round 2)
+- Macaulay's money "pounds" -> MINAS (60 to the talent). Weights keep the
+  pound conversions.
+- Drop Macaulay's sub-section letters (II.121 a-f) and make each an
+  unnumbered paragraph.
+- Spellings: BOSPORUS; PACTYES; Necho; Sais (no diaeresis); Moeris; Canopic;
+  Milo (the wrestler); Taras / "the people of Taras".
+- Locked: "the Long-lived Ethiopians", "the Table of the Sun", "the Royal
+  Judges", "the Magus" (the false Smerdis), "the Slaughter of the Magi",
+  "This is the Nth province.", "heaven is jealous", "the hand of heaven was
+  in this", "custom is king of all", despot -> tyrant, men-at-arms ->
+  hoplites, Divine Providence -> "the forethought of the divine".
+- "barbarian" is kept as a word only where the usage itself is
+  Herodotus' point (II.158); otherwise non-Greeks / foreigners.
+- check.py ignores its NNN argument: filter its NAMES output for your
+  own file.
+
+
+ROUND 3 (files 022-031, IV.37 - V.126; 2026-10-10). Ratios 0.907-0.97, all
+audited complete. Duplicates to clean at the end: earth and water (IV.126 and
+V.17: keep IV.126); hecatomb (IV.150 and IV.179: keep IV.150); the Charites
+(II.50 and IV.175: keep II.50); the sons of Tyndareus (II.43, IV.145, V.75:
+keep the first); Propontis (IV.85 and V.122: keep IV.85); hoplite (gloss sits
+at V.111, move it to its first occurrence); Phalerum (gloss at V.85, move it to
+V.63).
+
+GLOSSES SPENT (round 3, adding to rounds 1-2): Hestia (IV.59); Papaeus
+("Father"); the Sacred Ways (IV.52); Propontis = the Sea of Marmara (IV.85);
+Istria (IV.78); Brentesium = Brindisi (IV.99); the Amazons (IV.110); EARTH AND
+WATER (IV.126); the Chersonese = the Gallipoli peninsula (IV.137); the sons of
+Tyndareus (IV.145, but see II.43); Oeolycus ("Sheep-Wolf"); the Furies;
+HECATOMB (IV.150); the purple-fisher (IV.151); the Lotus-Eaters (IV.177);
+aegis (IV.189); Isis (IV.186); the "Paean!" shout (V.1); Massalia = Marseille
+(V.9); the Hellanodicae (V.22); hero-temple (V.47); the suppliant's branch
+(V.51); the Panathenaea (V.56); rhapsodes (V.67); the Sicyonian tribe-names
+(V.68); naucraries (V.71); Euripus, Propylaea, cleruchs (V.77); Athena Polias
+and Erechtheus (V.82); PHALERUM ("the harbor of Athens"; first use V.63);
+Aeacus (V.89); Cypselus' name (kypsele); the Bacchiads; HOPLITE ("a
+heavy-armed foot soldier"); Zeus Stratius ("Zeus of Armies"); Cybebe.
+
+RULINGS (round 3)
+- Spellings: CHALCEDON (not Calchedon); ARTAPHERNES; SALMOXIS (Macaulay's
+  form); Agathyrsi = the people, Agathyrsus = the man; Heraeum; Sunium;
+  Garamantians; Platea is the ISLAND off Libya, Plataea the Boeotian town.
+- ass -> DONKEY, throughout.
+- Two DIFFERENT men share famous names: Histiaeus son of Tymnes of Termera and
+  Aristagoras son of Heraclides of Cyme. Give the patronymic or city every
+  time they appear, so the reader never takes them for the Milesians.
+- Units: 9 stades to the mile. EXCEPTION: where Herodotus computes WITH the
+  unit (the Royal Road, V.52-54) keep parasangs and stades by name and add
+  miles; his own arithmetic slips stay.
+- Macaulay is the text, not the Greek: Budini "blue-eyed and fair", "pine
+  cones", "white stone" stand.
+- Locked: "Libya, the land so rich in sheep"; "Master, remember the
+  Athenians."; "it is easier to deceive many people than one"; "the beginning
+  of troubles for Greeks and non-Greeks alike"; "equality under the law"
+  (isonomia); Senate -> "the Council"; "farming / nomad / Royal Scythians";
+  "the Maiden" (the Tauri's goddess); "Mother of the Black Sea" (Maeotis);
+  "Salamis in Cyprus" at first mention; "the wooden-walled city".
+- "barbarians" kept at V.22 (the exclusion is the point), per the round-2 rule.
+- Forward: 047 may echo V.22's "drawn to run in the first heat".
+
+
+ROUND 4 (files 032-041, VI.1 - VII.162; 2026-10-10). Ratios 0.882-0.965, all
+audited complete. Duplicates for the consistency pass: HELOTS (VI.59 and
+VI.75, and check for bare uses earlier: gloss once, at the first); the
+Chersonese (IV.137 and VI.33: keep IV.137); "the Earth goddesses" (036, Timo)
+vs "the goddesses of the underworld, Demeter and her daughter" (041, VII.153)
+vs "Demeter and her daughter" (034, VI.75): harmonise.
+
+GLOSSES SPENT (round 4): Thesmophoria (VI.16); Aegina the nymph (VI.35);
+Crius "Ram" (VI.50); Zeus Uranius "Zeus of the Sky" (VI.56); proxenoi
+"official hosts of visiting strangers" (VI.57); "dwellers around" (VI.58);
+HELOTS (VI.59); Demaratus "Prayed for by the People" (VI.63); Gymnopaedia
+(VI.67); Styx (VI.74); the hero Argos (VI.80); pentathlon (VI.92); Darius
+"Doer", Xerxes "Warrior", Artaxerxes "Great Warrior" (VI.98); Coele "the
+Hollow" (VI.103); POLEMARCH "the war-archon" (VI.109); Enneacrunus "the Nine
+Fountains" (VI.137); the Lemnian deed (VI.138); Musaeus (VII.6); the sons of
+Atreus (VII.20); Marsyas (VII.26); DARIC "the Persian gold coin" (VII.28);
+Gergithian Teucrians (VII.43); Achaemenid "the royal clan" (VII.117);
+Talthybius (VII.134); the Sicels "the native people of Sicily" (VI.22/VII.155:
+keep the first); Locri Epizephyrii "the Locri of the West".
+
+RULINGS (round 4)
+- theos: "a god" / "the god" / "heaven" / "something divine"; never capital-G
+  God.
+- Xerxes is addressed "my king" or "Master".
+- "the Medes" meaning the Persian enemy -> "the Persians", EXCEPT where the
+  name itself is the point ("Median dress", "the name of the Medes", the
+  Spartans' "King of the Medes").
+- Spartan senators -> "the Elders" (28), matching I.66 "Council of Elders".
+- "barbarian" as people -> non-Greeks / foreigners / "the invader"; as
+  Herodotus' adjective of judgement (VII.35) -> "barbarous".
+- Money pounds -> minas; medimnus -> "a bushel and a half".
+- Parasang kept by name where Herodotus defines it (VI.42) or computes with it.
+- Macaulay's interpolation brackets are dropped; the text inside is translated.
+- Spellings: Arisonymus, Archidemus, Cheidorus, Egesta, Salmoxis
+  (Macaulay's forms win); Rhegium; Etruscans (Tyrsenians); Aegilea (Eretria)
+  vs Aegleia (the Styrians' island); Cobon.
+- Locked: "Hippocleides doesn't care!"; "a wooden wall"; "Cruel Salamis" /
+  "Divine Salamis"; "I am obliged to report what is said, but I am not obliged
+  to believe all of it"; "not one will be alive a hundred years from now";
+  "men do not rule chance; chance rules men"; "in slander there are two
+  wrongdoers and one victim"; "Nothing comes about by itself"; "You stitched
+  this shoe, and Aristagoras put it on."; "on a razor's edge"; "the Nine Ways";
+  "guest-friends"; "Now I return to my earlier story."; "Pour it
+  Scythian-style."; "Demeter the Lawgiver"; Marathon's "about 6,400 of the
+  Persians ... and 192 of the Athenians".
+- WATCH: do not import phrasings from other translations of the Greek that are
+  not in Macaulay (032 caught one in a speech).
