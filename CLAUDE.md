@@ -27,7 +27,15 @@ Each book goes through these phases:
   SOURCE_NAME=Project Gutenberg          # optional attribution link
   SOURCE_URL=https://www.gutenberg.org/ebooks/NNNN
   MODERN_YEAR=2026
+  MODEL=Claude Opus 5.5                 # the model that did the translation
+  MODEL_EVIDENCE=how MODEL is known
   ```
+  MODEL is recorded so books can be revisited as models improve. Write the
+  model that translated `modern_chapters/` (subagents included). If a
+  subagent model was overridden, say so in MODEL_EVIDENCE. The fields for
+  books before 2026-10-09 were backfilled from the Co-Authored-By trailer on
+  the commit that first added `modern_chapters/`. `MODEL=unknown` marks the
+  22 early books whose commits carry no trailer.
 - Split the source into chapter files with `splitter.py`:
   ```
   python3 splitter.py {book}/source.txt --headings '^CHAPTER [IVXL]+\..*$'

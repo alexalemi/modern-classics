@@ -1097,3 +1097,141 @@ Restored editions of US federal works, public domain by law (17 U.S.C. 105):
 Also raised, not yet chosen: the Smyth Report (1945), NASA's history series,
 and the Situationist texts (Internationale Situationniste's "freely reproduced"
 notice; check each text's rights before treating it as free).
+
+## Missing-books sweep (2026-10-09)
+
+Alex asked what we have missed. Four research agents (Sonnet, each required
+to run screen.py and cite a URL for every claim) swept four gaps: women
+authors, 500-1500 Europe, outside Europe, and Western canon misses. Every
+title below was grepped against this file and BOOKS.md first. The headline
+numbers were re-run by the orchestrator, and all of them reproduced. Treat
+the "free modern English: none found" verdicts as a web search's result,
+not a clearance. Copyright and sources still need the usual check before
+work starts.
+
+STRONG: the reader is stuck, on the measured axes (arch / calq / sent / %>35)
+  Nietzsche, Thus Spoke Zarathustra (German #7205; Common's English #1998)
+      arch 30.2  sent 16.9  The most-read philosophy book in biblical
+      costume ("thou", "ye"). The costume is Common's, not Nietzsche's; see the
+      "whose archaism is it" note. The proven original-plus-crib pipeline.
+      ~100k words. No Nietzsche anywhere in the collection.
+  Nietzsche, The Genealogy of Morals (Kennedy #52319)
+      calq 37.4  sent 39.9  45%  The Darwin/Hume pattern. ~50k words. The
+      German id is still unconfirmed. Pairs with Zarathustra.
+  Lafayette, The Princess of Cleves (1678; French #20262; English #467)
+      sent 78.4  69%  The highest sentence score ever recorded here: semicolon
+      chains in an anonymous early English translation. ~50k words. The first
+      woman novelist in the collection. Lafayette's Princess de Montpensier
+      (#2365, ~11k words) could go alongside it as a short companion.
+  The Mabinogion (Guest 1849, #5160)
+      arch 25.9  The Welsh tales in Victorian faux-archaic prose. ~100k words with
+      notes. The Middle Welsh source is not yet located; without it this
+      is Guest-only, a modernisation of a translation.
+  Nibelungenlied (MHG #14915; Horton #59831, also on SE; Armour #3636)
+      arch 25.3  The proven pipeline. ~75-115k words. 500-1300 gap.
+  Malory, Le Morte d'Arthur (1485; SE, 348k words; #1251/1252)
+      arch 15.8  A modernisation of the English, like Bunyan, not a translation.
+      No free modern version. Needs a selection decision, or the full run at
+      Quixote scale.
+  Bhagavad Gita (Arnold #2388; Besant 1922 on Wikisource)
+      arch 27.3  88% verse  ~25k words. Answers the open question in "Further
+      afield": no free modern English found. The Sanskrit source is
+      unconfirmed. Apply the technical-calque measure (dharma, yoga,
+      karma) before starting.
+  Castiglione, The Book of the Courtier (Opdycke 1901, #67799)
+      sent 46.9  48%  ~150k words; may want the four books without the notes.
+      The Italian source is not yet located.
+
+POSSIBLE
+  Mahabharata, selections (Ganguli #15474-7: arch 23.8). The full text is ~1.8M
+    words, so a selection is mandatory (Nala and Damayanti, Savitri).
+  Shahnameh, selection (free English is Atkinson's abridgement #10315,
+    arch 14.1). Warner & Warner is not on Gutenberg; it needs a scan.
+  Ramayana (Griffith verse #24869, arch 17.1).
+  Margery Kempe (no free modern English; the Middle English source is
+    not located). The strongest "stuck" case for women authors, but it is
+    in the no-crib class.
+  Christine de Pizan, City of Ladies (no PD English found; the French
+    Cité is not located).
+  Cavendish, The Blazing-World (#51783, sent 43.7). English, ~40k words.
+  Milton, Areopagitica (#608, sent 43.7); Bacon, New Atlantis (#2434,
+    sent 39.9). Short English originals, so they could be bundled.
+  Montesquieu, Persian Letters (French #30268/#33856). No PD English on
+    Gutenberg, only 18th-century scans.
+  Dream of the Red Chamber (Joly #9603, sent 35.9; partial).
+  al-Ghazali, Deliverance from Error (Field #58977, calq 31.5; ~14k).
+  Beowulf; Gawain (Weston #66084); Froissart (Berners): borderline.
+
+STRUCK (clean free English exists, so they were measured and left alone)
+  Aristophanes (already struck), Plautus, Molière (Hoeper, PD), Petronius
+  (Firebaugh), Vitruvius (Morgan), Werther, Voltaire's shorter works,
+  Flammarion's Astronomy for Amateurs, Kierkegaard (only Hollander's 1923
+  selection is PD), Three Kingdoms (Brewitt-Taylor #77416), Botchan,
+  Shakuntala (Ryder), Genji (Waley, 4 of 6 vols on PG), the Pillow Book
+  (Waley), Murasaki's Diary, Giles' Strange Stories, the Panchatantra
+  (Ryder), Song of Roland, Chrétien (Comfort), Einhard, Gregory of Tours,
+  Bede, Villehardouin, Abelard and Heloise (Hughes is a loose paraphrase:
+  a faithfulness problem, not a readability one), Sévigné, Marie de
+  France (Mason), Teresa of Avila, Hrotsvit, Suetonius and Pliny's
+  letters (borderline).
+  Gilgamesh, Popol Vuh, Hildegard, Sor Juana, du Châtelet: no usable PD
+  English crib, so they belong to the no-crib class.
+
+## Audit of the 22 MODEL=unknown books (2026-10-09)
+
+Five Opus auditors each read source and modern text side by side, ran
+verify.py and checked file endings. The orchestrator re-checked the
+sharpest claims.
+VERDICT: none is legacy-API output (single files run 5-16k words, far past
+the old max_tokens 2048-4096), and NONE NEEDS RETRANSLATION. No
+truncation or summarizing was found, and the famous passages are intact.
+The 18 February books are early Claude Code subagent work (chapter-to-
+chapter notes, no ledger). Boethius, Enchiridion, Memorabilia and Way to
+Wealth are current-pipeline work that was committed by hand.
+
+CROSS-CUTTING
+- Literal " -- " dashes ship in 18 books (4,294 on site/dialogues.html):
+  democracy, wealth-of-nations, federalist, progress-and-poverty,
+  democracy2, two-treatises, decameron, descartes, dialogues, malthus,
+  origin-of-species, candide, herodotus, gallic-war, peloponnesian-war,
+  flatland, meditations, ball. Fix once: in the text, or in assemble.
+- No manifest.json (TOC headings invented per agent): origin-of-species
+  (six conventions), the-prince (bare "CHAPTER XVIII."), peloponnesian-war
+  (no Book dividers; the BOOKS table is in its old assemble.py),
+  gallic-war, federalist, malthus, meditations, candide, flatland,
+  common-sense.
+- No must_contain.txt in most of the February books.
+
+CONTENT SLIPS, all verified
+- origin 016: "gone cycling on" -> Darwin's "circling on" (the last paragraph).
+- federalist 001: "reason and free choice" -> "reflection and choice".
+- gallic-war 005: "charging Britons" in the Nervii siege. The 001/004/006
+  closers ("no doubt, to write the dispatches...") are invented, and the
+  "The year is 58 BC" openers in 001-004 should be cut or marked editorial.
+- democracy 033:25: an invented bracketed commentary on Tocqueville's
+  framing of slavery; delete it. The 1899 editor's notes are absorbed into
+  Tocqueville's voice in 012, 021, 032 and 104, and he is referred to in
+  the third person in 002, 003, 008, 013, 017 and 083. In 021 "barbarians"
+  was softened to "a foreign power". 14 leftover "-- Part N" h4 headings.
+- the-prince 021: the Bernabò da Milano example was dropped.
+- common-sense 004: an added gloss on Massanello ("a cautionary tale...").
+- two-treatises: § numbers were invented in 10 of 31 files and drift off
+  by one (030). Strip them or renumber them all.
+- progress-and-poverty: ~320 subheadings George never wrote, rendered as
+  h4. Strip them (keep 025's own "From ..." heads) or disclose them.
+- dialogues 037:972: archaic Parmenides residue ("do thou keep thy
+  thoughts").
+
+RENDERING
+- flatland: its 10 SVGs (flatland/images/) reach neither the page nor the
+  epub; the page shows 11 bare [Illustration]. Also: a hand-written
+  Contents block in 000, and chapters/024 is the Gutenberg licence.
+- decameron: 394 literal "> " song lines in 10 day-end files, and 5 rubrics
+  with literal asterisks (053, 054, 055, 095, 108).
+- wealth-of-nations 062: a stray trailing "Part Four" line renders as h4.
+- peloponnesian-war 026: an invented "THE NARRATIVE BREAKS OFF" heading.
+
+PRIORITY (reader impact): flatland and origin first, then the-prince,
+decameron and peloponnesian-war, then gallic-war, democracy and federalist.
+The rest are optional voice passes (Boethius's prose register, democracy2's
+formality) and are low value.
