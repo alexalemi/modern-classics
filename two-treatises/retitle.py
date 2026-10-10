@@ -73,6 +73,11 @@ def main():
                  "words": len(path.read_text().split())}
         if name in DIVIDERS:
             entry["part_before"] = DIVIDERS[name]
+        if re.fullmatch(r"Chapter \d+", title):
+            # Locke's untitled opening chapter: without a ": title" it
+            # misses assemble.CHAP_LINE and renders as an h2, level with
+            # the treatise divider, while its sibling chapters are h3.
+            entry["chapter"] = True
         manifest.append(entry)
 
     (BOOK / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")

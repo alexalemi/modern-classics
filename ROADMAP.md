@@ -1235,3 +1235,27 @@ PRIORITY (reader impact): flatland and origin first, then the-prince,
 decameron and peloponnesian-war, then gallic-war, democracy and federalist.
 The rest are optional voice passes (Boethius's prose register, democracy2's
 formality) and are low value.
+
+### Audit fixes — DONE 2026-10-10
+Everything in the audit list above is fixed, each with a repeatable script in
+the book's directory (retitle.py / fix_*.py):
+- 22,915 literal "--" became spaced em dashes in 17 books (Ball's ASCII tables
+  were left alone).
+- Real manifest.json files and "Chapter N: Title" headings for origin, the-prince,
+  federalist, malthus, meditations, candide, common-sense, gallic-war,
+  peloponnesian-war (8 Book dividers), flatland (2 Parts), decameron (10 Days)
+  and progress-and-poverty (10 Books).
+- Invented subheadings stripped: progress-and-poverty 336 (George's own 10
+  kept), peloponnesian-war 250, gallic-war 16.
+- Locke: 112 invented, drifting § numbers stripped.
+- Flatland's 10 plates are now on the page and in the epub, with captions.
+- The Decameron's 57 songs are set as verse.
+- Every content slip listed above is fixed, and democracy's absorbed editor
+  notes are relabelled.
+
+NEW FINDING, NOT FIXED: HERODOTUS IS COMPRESSED THROUGHOUT. Every file runs
+0.66-0.81 (25 files of 10-17k words each, from before the splitter's ~7k cap);
+018 (VII.43-118, the army catalogue) is 0.59 and plainly summarised (35
+commanders in Macaulay against 9 in the modern text; whole peoples dropped).
+Its env says Opus 4.6. A full retranslation, resplit into ~7k parts, is the fix.
+That is Alex's decision.
