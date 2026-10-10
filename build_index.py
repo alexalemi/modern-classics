@@ -61,6 +61,8 @@ BLURBS = {
         'The whole of Arthur, from the sword in the stone to the last battle, written by a knight in prison in 1469. All twenty-one Books, Tristram included.',
     'gita':
         'A warrior drops his bow rather than kill his own family, and his charioteer, who is God, answers him. All seven hundred verses, from the Sanskrit.',
+    'mysterious-island':
+        "Five Civil War escapees, a balloon, and an island where someone is watching — with Captain Nemo's censored history restored, from Verne's French.",
     'zarathustra':
         'A prophet comes down from his mountain to say that God is dead and man is something to be overcome. From the German, without the King James costume.',
     'turgot':

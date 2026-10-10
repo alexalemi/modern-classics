@@ -1,0 +1,437 @@
+TEXT ANALYSIS — The Mysterious Island
+(Jules Verne, L'Île mystérieuse, 1874–1875; Hetzel)
+TRANSLATED FROM THE FRENCH. The fourth book of the "Verne recovery"
+strand, after Twenty Thousand Leagues (twenty-thousand-leagues/), Around
+the World in Eighty Days (eighty-days/) and A Journey to the Center of the
+Earth (journey-center-earth/). THIS BOOK IS THE SEQUEL TO TWENTY THOUSAND
+LEAGUES: every name and term Nemo shares with that book is locked to
+twenty-thousand-leagues' renderings (see LOCKED TERMINOLOGY).
+
+SOURCES (all in _src/; see prep.py's docstring for the evidence)
+- BODY: French Wikisource, "L'Île mystérieuse", the Hetzel 1875 in-octavo
+  transcribed and proofread against the scan ("Textes validés").
+  https://fr.wikisource.org/wiki/L%E2%80%99%C3%8Ele_myst%C3%A9rieuse
+  fetched by fetch_wikisource.py into _src/wikisource/.
+- SECOND WITNESS: Project Gutenberg #14287 (French),
+  https://www.gutenberg.org/ebooks/14287. check.py diffs every chapter
+  against it word for word. It is NOT the body because it lacks three
+  things the Hetzel text has: Verne's 62 chapter summaries, his 25
+  footnotes, and the correct I.1/I.2 boundary (Gutenberg gives the
+  balloon's landing to chapter II). It also drops half a sentence in
+  I.19 ("et, s'il le faut même, en dissimuler absolument l'entrée...").
+  Otherwise the two agree word for word — no other difference longer
+  than four words in 204,000.
+- SENSE CRIB: Stephen W. White's translation (Philadelphia Evening
+  Telegraph, 1876), Gutenberg #8993, https://www.gutenberg.org/ebooks/8993,
+  sliced per chapter into reference/NNN.txt. White keeps Nemo's history
+  but cuts ~17% overall and far more in places (III.14 is half gone; a
+  dozen chapters lose a third — the list is in running_notes.txt). He
+  also RENAMES THE CAST (Neb, Herbert) and invents toponyms we do not
+  use. Consult him only for a hard sense question; translate the French.
+- NOT USED: W. H. G. Kingston's 1875 translation (Gutenberg #1268), the
+  one most English readers have met. Kingston renamed the cast
+  (Harding, Neb, Herbert, Pencroft) and rewrote Captain Nemo's life in
+  III.16: the nephew of Tipu Sultan, the hatred of England, the English
+  frigate, the death of his family in the rising of 1857 — removed or
+  reversed. This edition exists to restore exactly that.
+- Copyright: Verne d. 1905; the French is public domain everywhere.
+
+WHY THIS BOOK, AND WHY IT MATTERS THAT IT IS COMPLETE
+
+The Mysterious Island is the purest engineering fantasy ever written:
+five Union prisoners escape besieged Richmond by balloon in March 1865,
+are blown 7,000 miles across the Pacific, and land on an uncharted
+volcanic island with nothing — not a knife, not a match. Cyrus Smith,
+engineer, rebuilds civilization from first principles: fire, pottery,
+bricks, iron, steel, glass, soap, candles, nitroglycerin, guncotton, a
+hydraulic elevator, a telegraph. Every chapter is a problem solved with
+what is to hand. Around that runs a mystery — someone on the island is
+helping them — which resolves in Part Three into the death of Captain
+Nemo, the sequel to Twenty Thousand Leagues and the place where Verne
+finally tells who Nemo was: Prince Dakkar, an Indian prince who led the
+rising of 1857 against British rule.
+
+The two public-domain English versions fail it in opposite directions.
+Kingston (1875) is the one reprinted for a century, and it censors the
+book's climax for a British market. White (1876) keeps Nemo but cuts the
+engineering, which is the book's pleasure. A complete, accurate, modern
+retelling restores both halves.
+
+THE VOICES — six people, a dog and an orangutan
+
+- CYRUS SMITH — the engineer. Massachusetts-born, a scientist of the
+  first rank whom the Union put in charge of its railways during the
+  war; a Union staff officer when captured; abolitionist "by reason and by
+  heart".
+  Calm, precise, kind, never flustered, explains as he works. Verne's
+  hero of applied reason; never smug. Narration calls him "the engineer"
+  as often as by name — keep that.
+- GÉDÉON SPILETT — war correspondent of the New York Herald, cool under
+  fire, a crack shot, a sketcher, takes notes on everything (he keeps
+  the colony's records). Dry, brave, a little sardonic. He calls the
+  engineer "my dear Cyrus".
+- PENCROFF — the sailor (his baptismal name is Bonadventure, which is
+  how the boat gets its name in II.12), from the Vineyard (the
+  whaling island off Massachusetts). The book's comic engine and its
+  heart: loud, superstitious, boastful, devoted, a pipe-smoker whose
+  greatest tragedy is having no tobacco. Salty, quick, warm, never a
+  clown — he is the best practical hand in the colony. "Mr. Cyrus",
+  "Mr. Spilett".
+- HARBERT BROWN — fifteen, son of Pencroff's late captain, Pencroff's
+  ward; a keen young naturalist who names every plant and animal (the
+  book's Conseil, without the comedy). Earnest, brave, eager.
+- NAB (Nebuchadnezzar) — born on Smith's family estate to enslaved
+  parents, freed long ago by Smith, who chose to stay with him and
+  crossed the Confederate lines into Richmond to be near him. Thirty,
+  strong, gentle, cheerful, the colony's cook. VERNE GIVES NAB NO
+  DIALECT. His French is plain, correct, often warm and sometimes dry
+  ("Eh! Pencroff, if that's all the game you promised my master, it
+  won't take much of a fire to roast it"). Render it so. No invented
+  dialect, no "Massa" — that was the Victorian translators' doing, not
+  Verne's. See SENSITIVE CONTENT for every passage that touches race.
+- AYRTON — the man marooned on Tabor Island, quartermaster of the
+  Britannia turned mutineer under the name Ben Joyce (Captain Grant's
+  Children), found reduced to a wild state after twelve years alone;
+  redeemed by the colonists. Grave, ashamed, laconic, then steadily
+  braver. His remorse is the book's moral center.
+- CAPTAIN NEMO — appears only in III.15–17: old, dying, formal,
+  magnificent, bitter, still burning. Same voice as twenty-thousand-
+  leagues' Nemo (brilliant, formal, wounded, never campy).
+- TOP — Smith's dog. JUP — the orangutan who becomes the household's
+  servant ("Master Jup"). Both are characters; give them their comedy.
+
+STYLE AND TONE
+
+- ADVENTURE AND INGENUITY. Clear, propulsive modern prose; Verne's long
+  periods broken to natural rhythm; contractions welcome in dialogue,
+  fine in narration. The narrator is third-person, omniscient, with
+  Verne's wink ("as we shall see").
+- THE ENGINEERING IS THE BOOK. Every process stays complete and in
+  order: the watch-glass burning lens; the pottery kiln and the
+  brick count; the iron smelting by the Catalan method and the steel;
+  the pyrites, sulfuric acid, nitric acid, glycerin, soap and
+  nitroglycerin of I.17; the granite-wall triangulation of I.14 and the
+  latitude/longitude work; the candles, the glass, the elevator, the
+  boat's specifications (keel, beam, draft, rig), the windmill, the
+  telegraph battery, the guncotton. Do not compress a single step.
+  A process cut to "they made glass" is the summarization failure in
+  its worst form, because it reads smoothly. Make it LUCID: a bright
+  fourteen-year-old should be able to follow every step. Use the plain
+  modern chemical name where one exists (azotic acid = nitric acid;
+  potassium nitrate/saltpeter; iron sulfate) — Verne's science stays as
+  he wrote it otherwise (no silent corrections, dated or not).
+- NATURAL HISTORY likewise: Harbert's species (tragopans, couroucous,
+  kangaroos, peccaries, onaggas, koulas, culpeos, the capybara) stay,
+  with the standard English common name and Verne's Latin where he gives
+  it. Follow twenty-thousand-leagues' marine glossary where it overlaps
+  (dugong, sperm whale, right whale, etc.).
+- "Colonists" for les colons — Verne's word and the book's idea (they
+  colonize a desert island); "castaways" for les naufragés.
+
+LOCKED TERMINOLOGY (the full, growing list lives in running_notes.txt)
+
+PEOPLE: Cyrus Smith; Gédéon Spilett (keep Verne's accent — the
+journey-center-earth Graüben precedent); Pencroff; Harbert (Harbert Brown); Nab (full name Nebuchadnezzar, the
+English form of Verne's Nabuchodonosor); Top; Jup / Master Jup; Ayrton
+(alias Ben Joyce); Bob Harvey (the convicts' leader); Captain Nemo /
+Prince Dakkar. Real people: General Grant, Abraham Lincoln, Lee,
+Jefferson Davis; Lord Glenarvan, Captain Grant, the yacht Duncan, the
+Britannia (Captain Grant's Children).
+ADDRESS: "monsieur Smith" = "Mr. Smith"; Pencroff/Harbert -> Smith =
+"Mr. Cyrus" (monsieur Cyrus,
+110 times — keep Verne's sailor-familiar mix of title and first name);
+-> Spilett = "Mr. Spilett"; Smith -> Harbert = "my boy" (mon enfant);
+Spilett -> Smith = "my dear Cyrus"; "maître Pencroff" (teasing) =
+"Master Pencroff"; "maître Jup" = "Master Jup" (twenty-thousand-leagues'
+"Master Land" pattern). Nab -> Smith = "my master" (see SENSITIVE).
+Nemo -> Smith = "sir"; the colonists -> Nemo = "Captain".
+TWENTY THOUSAND LEAGUES LOCKS (match that book exactly): the Nautilus;
+Captain Nemo; Professor Aronnax, his servant Conseil, the Canadian Ned
+Land (Verne here calls Ned "un pêcheur canadien" — "a Canadian
+fisherman", as he wrote it); the frigate Abraham Lincoln; "Mobilis in
+Mobili" (Latin, kept; the French here prints "Mobilis in mobili");
+the salon; the platform; the organ (piano-organ); the dinghy (the
+Nautilus's canot); diving suit (scaphandre); electric bullets (balles
+électriques); the coral cemetery; Vigo Bay and the 1702 Spanish
+galleons; the Maelström; the Lofoten Islands; Candia/the Cretans
+("les Candiotes" = the Cretans); the book "Twenty Thousand Leagues
+Under the Sea" (Verne's title words in III.16: "un voyage qui se
+poursuivit pendant vingt mille lieues sous les mers" -> "a voyage of
+twenty thousand leagues under the sea" — leagues kept here, it is the
+title). Nemo's last words in Twenty Thousand Leagues were "Almighty God!
+Enough! Enough!"; here they are "God and country!" (Dieu et patrie !).
+NEMO'S HISTORY (III.16): Prince Dakkar; "son of a rajah of the then
+independent territory of Bundelkhand" (Verne: Bundelkund — normalize to
+the standard spelling, the 20k real-name rule); "nephew of the Indian
+hero Tipu Sultan" (Verne: Tippo-Saïb, i.e. Tipu Sahib — normalize to
+the name a modern reader can look up; flagged for Alex); "the great
+Sepoy Rebellion" for "la grande révolte des cipayes" (1857); "the
+Dakkar Crypt" (la crypte Dakkar, the colonists' name for Nemo's cave).
+PLACES (locked; Verne's own English where he gives it, else White's
+form, so the crib never contradicts the lock):
+  Lincoln Island; Tabor Island; Mount Franklin; Granite House (Verne:
+  Granite-house); the Chimneys (les Cheminées); Prospect Plateau
+  (plateau de Grande-Vue); Lake Grant; the Mercy (river); Red Creek
+  (creek Rouge); Glycerin Creek; Fall River (rivière de la Chute);
+  Union Bay; Washington Bay; Shark Gulf (golfe du Requin; Verne's
+  "Shark-gulf"); Claw Cape (cap Griffe; Verne's "Claw-cape"); North
+  Mandible Cape / South Mandible Cape / Mandible Cape; Safety Islet
+  (îlot du Salut; Verne's "Safety-island" — "Islet" because it is the
+  îlot); Jetsam Point (pointe de l'Épave); Reptile End (promontoire du
+  Reptile); Serpentine Peninsula; the Far West forests (forêts du
+  Far-West); Jacamar Wood; Shelduck Marsh (marais des Tadornes — the
+  plain bird name, not White's "Tadorns"); Balloon Harbor (port Ballon);
+  Grant Islet (îlot Grant); the corral; Sperm Whale Point (pointe des
+  Cachalots); Norfolk Island.
+SHIPS: the Bonadventure (Verne's spelling, Pencroff's own first name);
+the Speedy (the pirate brig); the Duncan; the Britannia; the
+Maria-Stella of the Vineyard (whaler).
+BOOKS: "Captain Grant's Children" (Les Enfants du capitaine Grant).
+TECHNICAL: guncotton (pyroxyle; journey-center-earth lock);
+nitroglycerin; the hydraulic elevator (ascenseur — US "elevator"); the
+battery (pile), the wire (fil), the telegraph; "torpedo" for torpille in
+its 1865 sense of a moored submarine mine — gloss it in the sentence on
+first use ("a torpedo — what sailors then called a submerged mine"),
+never a note; "canoe" for pirogue; "sloop" for the Bonadventure's rig.
+
+UNITS — THIS BOOK IS THE INVERSE OF THE OTHER VERNE NOVELS
+
+The precedents keep Verne's units as he wrote them: twenty-thousand-
+leagues kept metric plus his feet/miles; journey-center-earth kept
+metric, rendered toise as "fathom" and pouces as inches; eighty-days
+kept miles and pounds and DROPPED Verne's franc conversions of sterling
+sums. Alex's later rule (Euler, modern-units memory) converts OBSOLETE
+measures to modern US units. Here Verne wrote AMERICAN units, because
+the cast is American — pieds (225), milles (131+), yards, acres,
+gallons, pints, bushels, pounds, grains, degrees Fahrenheit — and then
+added metric conversions FOR FRENCH READERS, in parentheses and in
+footnotes. For an English reader the American unit is already the
+modern one. So:
+- KEEP feet, inches (pouces), miles, yards, acres, gallons, pints,
+  bushels, pounds (livres), grains, fathoms (brasses), knots, and
+  degrees Fahrenheit, with Verne's numbers unchanged.
+- DROP Verne's centigrade parentheticals after a Fahrenheit reading
+  ("huit degrés Fahrenheit (13 degrés centigrades au-dessous de zéro)"
+  -> "eight degrees Fahrenheit") — the eighty-days franc rule exactly.
+- CONVERT the one stand-alone centigrade reading (I.16: "a centigrade
+  thermometer ... ten to twelve degrees above zero") to Fahrenheit
+  ("fifty to fifty-four degrees") — all temperatures in this book are
+  Fahrenheit once translated, as the colonists' own thermometer is.
+- encablures -> "cable lengths" (Pencroff's world; a cable is about 200
+  yards — gloss once in the sentence if the distance matters).
+- lieues (outside the Twenty Thousand Leagues title): convert at Verne's
+  own 4 km = about 2.5 miles. Norfolk Island, "six lieues de tour" ->
+  "some fifteen miles around" (III.2).
+- Latitudes, longitudes and the arithmetic (I.14's 333-foot wall, the
+  wheat-grain multiplication, Washington's 77° 3′ 11″) stay exactly.
+- Say what was done in the editor's introduction.
+
+VERNE'S SLIPS — KEPT AS WRITTEN (the Verne rule: no silent corrections)
+- II.9: Cyrus Smith says Tabor Island lies "about a hundred and fifty
+  miles to the northeast". By the bottle's coordinates (Tabor 37°11′ S,
+  153° W; Lincoln 34°57′ S, 150°30′ W) it lies to the SOUTHWEST. Keep
+  "northeast".
+- II.9 recalls the first fix (I.14) as "longitude 150° to 155° west,
+  latitude 30° to 35° south"; I.14 itself said between the 35th and
+  37th parallels. Keep both as written. (eighty-days reconciled a date
+  given two ways for one event because its plot is a clock; nothing
+  here depends on the inconsistency, and Alex's brief says keep.)
+- I.2 footnote: "On April 5, Richmond fell to Grant" — Richmond fell on
+  April 3, 1865. The note is folded into the text (FOOTNOTES) with
+  Verne's date as he gave it.
+- III.16: Nemo kept Aronnax "seven months" (Twenty Thousand Leagues
+  says ten), and the chronology of Nemo's age and of Ayrton's twelve
+  years does not square with the earlier books. Verne's publisher
+  printed two notes admitting it (II.17, III.16). Keep the text as
+  written; drop the notes (see FOOTNOTES); the editor's introduction
+  should mention the discordance.
+- III.16 footnote 2 / II.10 footnote 2: see FOOTNOTES (one is a factual
+  slip we must not fold in).
+
+FOOTNOTES — 25 of Verne's own, one disposition each (no notes survive
+as notes; journey-center-earth: drop redundant conversions, fold the
+substantive inline at the reference point as a brief phrase)
+  I.1  [1] 46 m/s = 166 km/h (~42 leagues)       DROP (conversion)
+  I.1  [2] about 1,700 cubic meters              DROP (conversion)
+  I.2  [1] April 5: Richmond falls to Grant...   FOLD (history: one
+           clause — Richmond fell to Grant on April 5 (Verne's date; see
+           VERNE'S SLIPS), Lee withdrew, the Union cause triumphed)
+  I.6  [1] "famous author of a treatise on angling" FOLD as a gloss on
+           the name: Verne's "Isaac Walton" -> "Izaak Walton, the great
+           writer on angling" (real-name normalization)
+  I.7  [1] petrels: "sea birds that love storms" FOLD (one phrase)
+  I.8  [1] the yard = 0.9144 m                   DROP
+  I.11 [1] about 45 leagues of 4 km              DROP
+  I.12 [1] "creek" = Americans' word for a small stream  DROP (English)
+  I.12 [2] about 200 hectares                    DROP
+  I.13 [1] sunrise 5:33, sunset 6:17 at that season FOLD (the times)
+  I.14 [1] "the English foot, 30 cm"             DROP
+  I.18 [1] Granite-house: "house" = palace too   DROP (a gloss of English
+           for French readers)
+  I.19 [1] a gallon is about 4.5 liters          DROP
+  I.21 [1] a grain weighs 59 mg                  DROP
+  II.8 [1] an acre is 0.4046 ha                  DROP
+  II.10[1] Whale-Field = "champ des baleines"    DROP (gloss of English)
+  II.10[2] the Vineyard: "port of New York State" DROP — and do NOT fold:
+           Verne is wrong (Martha's Vineyard is in Massachusetts), and
+           folding it would print a false fact as ours. "The Vineyard"
+           stays as Pencroff's home, nothing added.
+  II.17[1] Publisher's note on Captain Grant's Children and date
+           discrepancies                          DROP (Hetzel's
+           apparatus; record for the introduction)
+  II.20[1] about 83 km/h                          DROP
+  III.2[1] Speedy = "active"                      DROP (English word)
+  III.6[1] a sailor's knot that stays tight      FOLD (one phrase)
+  III.6[2] the "garniture" = old canvas wrapped round the anchor cable
+           where it runs through the hawse        FOLD (one phrase)
+  III.11[1] "10 grammes" glossing "dix-huit grains" of quinine
+                                                  DROP — grains is the
+           unit kept, and the note is wrong anyway (18 grains is about
+           1.2 g); "eighteen grains of quinine" stands alone
+  III.16[1] Publisher's note: Nemo's story was published as Twenty
+           Thousand Leagues; same date caveat     DROP (as II.17)
+  III.16[2] "the rising of the Cretans, whom Captain Nemo did indeed
+           help" FOLD ("the Cretans in their rising", 20k's Candia)
+
+FAMOUS PASSAGES (locked; must_contain.txt checks them)
+- The opening shouted exchange in the balloon (I.1): "Are we going up
+  again?" / "No! Just the opposite! We're going down!" / "Worse than
+  that, Mr. Cyrus! We're falling!" ... and Smith's "Throw out
+  everything that has any weight! Everything! And God help us!" (as set in 000)
+- The naming of the island (I.11): "Let's name it after a great
+  citizen, my friends, the man who is fighting right now to defend the
+  unity of the American republic! Let's call it Lincoln Island!" — and
+  the next paragraph's dramatic irony: sixteen days later, Lincoln shot.
+- The self-naming (II.20): "Supernatural!" ... "No, Pencroff, but
+  mysterious, certainly."
+- One match (I.5): the single match that lights the colony's fire.
+- The fuel of the future (II.11): Smith's prophecy that water,
+  decomposed by electricity, will be the coal of the future. Keep his
+  "Water will be the coal of the future" line whole.
+- Nemo's history (III.16), complete: "Prince Dakkar hated. He hated the
+  only country where he had never been willing to set foot ... he hated
+  England"; the Sepoy Rebellion; his father, mother, wife and children
+  paying for him; "It was an English frigate, sir!" — every sentence
+  Kingston cut is in must_contain.
+- Nemo's death (III.17): "God and country!" — and "Mobilis in Mobili"
+  in his last look round the salon.
+- The last line (III.20): Captain Nemo's tomb, the rock in the Pacific.
+
+SENSITIVE CONTENT — scholarly modernization of a canonical historical
+text. Measured register; the author's argument rendered as HIS; never
+sensationalized, never bowdlerized. Decisions per passage, by the
+project's test (does the reader LOSE information or GAIN a false one?),
+logged here and in running_notes.txt. FLAGGED FOR ALEX where marked.
+
+1. NEMO'S ANTI-COLONIAL HISTORY (III.16) — FULL STRENGTH, NO NOTE. This
+   is the book's subject and the passage Kingston censored. Prince
+   Dakkar's hatred of England, the Sepoy Rebellion as a war of
+   independence ("those heroes who had risen to free their country"),
+   the price on his head, his family killed in his place, "Right, once
+   again, had fallen before might", the English frigate he sank — all
+   as Verne wrote it, Verne's sympathies and all. Verne's own aside —
+   "but civilization never retreats, and it seems to borrow every right
+   from necessity" — stays too: it is Verne's ambivalence, and the
+   reader needs it. "Indien"/"Indou" -> "Indian"/"Hindu" as Verne uses
+   them.
+2. THE CIVIL WAR AND SLAVERY. Verne's colonists are Union men and the
+   book is abolitionist ("America's immense effort against America
+   itself, to abolish slavery" is what reconciles Nemo to humanity).
+   "Sudistes" = "the Southerners"/"the Confederates"; "les séparatistes"
+   = "the secessionists". Lincoln's assassination "by a fanatic" kept.
+3. NAB — the word. Verne's narrator often calls Nab "le nègre" in place
+   of his name, as he calls Pencroff "the sailor" and Spilett "the
+   reporter". A dated WORD, not a dated claim (the Mill / Hume
+   precedent): render it "Nab" (or "Nab, a Black man" where the
+   description itself is the point, as in his introduction in I.2).
+   Never the period noun.
+4. NAB — his history (I.2): born to enslaved parents on Smith's estate,
+   freed by Smith "an abolitionist by reason and by heart", stayed out
+   of love, crossed the lines to Richmond. KEEP ENTIRE — it is the
+   author's subject and it answers for itself.
+5. NAB — "mon maître". Nab calls Smith "my master" (about 10 times; the
+   cry when he finds Smith alive is "Mon maître ! mon maître !"). In
+   English from a freed Black man this lands hard; but it is exactly
+   the relationship Verne depicts — a free man who chose to stay — and
+   Verne has said so two pages earlier. RECOMMENDATION: keep "my
+   master". FLAGGED FOR ALEX (alternative: "Mr. Cyrus", which erases
+   the difference Verne draws between Nab and Pencroff).
+6. NAB — two racial asides, CUT per the Boltzmann ruling (an aside, not
+   the subject; the reader gains a false impression, loses nothing):
+   (a) II.2: "Nab dansait... comme un nègre" -> "Nab danced for joy"
+       (the dance stays, the simile goes);
+   (b) I.12: "Nab and Pencroff, to whom the cooking naturally fell, the
+       one in his capacity as a Negro, the other in his capacity as a
+       sailor" -> "Nab and Pencroff, the colony's natural cooks" — the
+       cooking stays, the racial attribution goes. (Nab is the cook
+       because he is Smith's servant; Pencroff because ships' crews
+       cook — that much survives.)
+   FLAGGED FOR ALEX.
+7. NAB — "montrant ses dents étincelantes de blancheur" (I.11, when he
+   names Claw Cape). A stock period description; render "with a
+   dazzling grin" — the joy stays. FLAGGED (judgment call, minor).
+8. NAB AND JUP. II.8: Nab trains Jup and "one would have said the
+   negro and the ape understood each other when they talked together".
+   The friendship is plot; the noun makes it a sneer. Render with the
+   name ("Nab and the ape seemed to understand each other") — the
+   Mill rule again. The "ton supérieur" exchange (II.9):
+     Pencroff: "What a servant, Nab! What a servant!"
+     Nab: "My pupil — and soon my equal!"
+     Pencroff, laughing: "Your superior, you mean — because you talk,
+     Nab, and he doesn't!"
+   KEEP WHOLE. It is a servant-backtalk joke (Jup never answers back),
+   Pencroff's teasing of a friend he teases constantly, and Verne makes
+   the reason explicit in the line. Rendered with its reason intact it
+   reads as the joke Verne wrote. FLAGGED FOR ALEX because of its
+   proximity to (8) above.
+9. THE CONVICTS. Escaped Norfolk Island convicts turned pirates; Verne
+   is merciless to them and generous to the one who repents (Ayrton).
+   Render the violence (Harbert shot, the corral, the bodies found)
+   plainly, without relish. "Convicts" is Verne's English word.
+10. "MALAIS". The colonists fear Malay pirates — real 1860s piracy in
+   those seas; keep. One narrator's comparison generalizes the people:
+   "plus féroces que les Malais eux-mêmes" (III.2) -> "fiercer even
+   than the Malay pirates" — the comparison to the pirates stays, the
+   slur on a people goes.
+11. AYRTON'S WILD STATE (II.14–16): "un sauvage" = "a wild man" — it is
+   about a man reduced by solitude, not about any people.
+12. Animals: hunting, the dugong, the whale, the jaguar — as written.
+
+FORMAT
+- 62 files, one per chapter: Part One = I–XXII (000–021), Part Two =
+  I–XX (022–041), Part Three = I–XX (042–061). No splits (largest
+  chapter III.18, ~4,500 French words). Chapter numbers restart in each
+  Part, as Verne's do.
+- Part dividers (manifest "part_before", WORD form, never Roman, never
+  written by agents): "Part One: Shipwrecked in the Air"; "Part Two: The
+  Marooned Man"; "Part Three: The Secret of the Island". (Verne: Les
+  Naufragés de l'air / L'Abandonné / Le Secret de l'île. "L'Abandonné"
+  is the man who was abandoned — Ayrton, marooned for his crime; "The
+  Abandoned" is not English as a singular noun, and "The Castaway"
+  would blur him with the colonists, who are castaways too. FLAGGED.)
+- Headings: "Chapter N: Title", the exact string in manifest.json,
+  drawn from Verne's own summary for that chapter.
+- Verne's chapter SUMMARY ("L'ouragan de 1865. — Cris dans les airs.
+  — ...") is translated as the first paragraph under the heading,
+  wrapped in underscores: _The hurricane of 1865 — Cries in the air —
+  ..._ — it renders in italics, as Hetzel and White printed it. It is
+  Verne's text, so it stays (FLAGGED for Alex as a style choice;
+  default keep).
+- Source files: summary, body, then Verne's footnotes after a NOTES
+  line, with [n] markers at the reference points. Agents never copy
+  NOTES or [n] into the modern file (FOOTNOTES table above).
+- Tables and lists: the proportion in I.14 and the chest inventory in
+  II.2 as indented lines (assemble renders an indented block as <pre>);
+  so are the short stand-alone lines (the harpoon's "Maria-Stella /
+  Vineyard.", "BR..TAN.A", Nab's signed note, Nemo's device line),
+  because a bare short unpunctuated line renders as a heading;
+  the repeated "Instruments :" page-continuation header in II.2 appears
+  once. Verne's dot-row elisions (III.17, III.20) as literal dot
+  paragraphs. Straight quotes and apostrophes throughout.
+- Ratio: FR -> modern English narrative runs near 1:1; the three Verne
+  precedents landed 1.0–1.1. Verify with
+      python3 verify.py mysterious-island --min-ratio 0.9 --max-ratio 1.5
+  Dropped conversion notes and centigrade parentheticals cost a few
+  words; nothing else should. Expected modern total ~205–225k words
+  (French 204,102 including summaries and notes). Never pad.
+- After every batch: python3 mysterious-island/check.py --modern.

@@ -1,0 +1,732 @@
+RUNNING NOTES — consistency ledger (orchestrator-maintained)
+The Mysterious Island (Verne, 1874–1875), from the French.
+Agents read this; only the orchestrator edits it, between batches, from
+the agents' returned notes. Reasons go in with the rulings — the reason
+is what makes the next case decidable.
+
+LOCKED AT SETUP (2026-10-10) — see text_analysis.txt for the reasoning
+
+Names: Cyrus Smith ("the engineer"); Gédéon Spilett ("the reporter",
+New York Herald); Pencroff ("the sailor"; baptismal name Bonadventure);
+Harbert / Harbert Brown ("the boy"; fifteen); Nab (Nebuchadnezzar);
+Top (dog); Jup / Master Jup (orangutan); Ayrton (alias Ben Joyce); Bob
+Harvey; Captain Nemo / Prince Dakkar. NEVER the Victorian renamings:
+Neb, Herbert, Harding, Pencroft, Gideon.
+Address: "monsieur Smith" (about 17 times: Ayrton, Nemo, others) =
+"Mr. Smith"; Pencroff/Harbert -> Smith "Mr. Cyrus"; -> Spilett "Mr.
+Spilett"; Smith -> Harbert "my boy"; Spilett -> Smith "my dear Cyrus";
+Nab -> Smith "my master"; Nemo -> Smith "sir"; colonists -> Nemo
+"Captain". "maître Pencroff" (teasing) = "Master Pencroff".
+"les colons" = the colonists; "les naufragés" = the castaways.
+Places: Lincoln Island; Tabor Island; Granite House; the Chimneys;
+Prospect Plateau; Mount Franklin; Lake Grant; the Mercy; Union Bay;
+Washington Bay; Claw Cape; North/South Mandible Cape; Safety Islet;
+Jetsam Point; Reptile End; Serpentine Peninsula; Shark Gulf; Balloon
+Harbor; Fall River; Red Creek; Glycerin Creek; Shelduck Marsh; Jacamar
+Wood; the Far West forests; the corral; Grant Islet; Sperm Whale Point;
+the Dakkar Crypt; Norfolk Island.
+Ships: the Bonadventure; the Speedy; the Duncan; the Britannia; the
+Maria-Stella of the Vineyard. Book: "Captain Grant's Children".
+Twenty Thousand Leagues locks (match that book): the Nautilus; Professor
+Aronnax, Conseil, Ned Land; the frigate Abraham Lincoln; Mobilis in
+Mobili; the salon; the platform; the organ; the dinghy; diving suit;
+electric bullets; the coral cemetery; Vigo Bay; the Maelström; the
+Lofoten Islands; the Cretans (Candiotes).
+Nemo's history: Bundelkhand; Tipu Sultan; "the great Sepoy Rebellion".
+Technical: guncotton (pyroxyle); nitroglycerin; the hydraulic elevator;
+battery / wire / telegraph; "torpedo" = moored mine (gloss once, in the
+sentence, at first use — III.4/III.5); canoe (pirogue); sloop.
+Units: Verne's American units kept as written; centigrade parentheticals
+dropped; stand-alone centigrade -> Fahrenheit; encablures = cable
+lengths; lieues -> miles (x2.5) except the 20k title.
+Footnotes: the 25-row table in text_analysis; nothing survives as a
+note; no [n] marker, no NOTES block.
+Summary paragraph: translated, one paragraph, _in underscores_, items
+joined by " — ".
+
+Voices: Smith calm/exact/kind; Spilett cool/dry/brave; Pencroff salty,
+loud, warm, superstitious, competent (never a clown); Harbert eager
+naturalist; Nab plain and warm, sometimes dry, NO DIALECT; Ayrton grave,
+laconic; Nemo formal, wounded, never campy.
+
+Register: adventure plus ingenuity; complete processes, lucid steps,
+exact numbers; contractions fine; no notes; Verne's slips kept.
+Ratio: FR->EN near 1:1; expect 0.95–1.25; verify 0.9–1.5; never pad.
+
+SENSITIVE-CONTENT RULINGS (text_analysis numbers them 1–12). Flagged
+to Alex and AWAITING HIS ANSWER: #5 "my master", #6 the two cut asides,
+#7 the grin, #8 the "your superior" exchange, Part Two's title, the
+summaries-in-italics choice, Tipu Sultan. Until he answers, agents follow
+the recommendation as written; the orchestrator logs each instance's
+file and line here so a reversal is a sweep, not a re-translation.
+
+WHERE THE WHITE CRIB IS A TRAP (crib under 0.7 of the French — he cut a
+third or more; do not let it suggest what "belongs" in the chapter):
+  024 (II.3), 025 (II.4), 031 (II.10), 032 (II.11), 041 (II.20),
+  042 (III.1), 044 (III.3), 046 (III.5), 049 (III.8), 050 (III.9),
+  051 (III.10), 052 (III.11), and above all 055 (III.14, 0.51).
+
+EXACT HEADINGS (line 1 of each modern file; = manifest "title")
+  file  ch     FR words  heading
+  000   1-1   2446  Chapter 1: The Hurricane of 1865   [divider: Part One: Shipwrecked in the Air]
+  001   1-2   3282  Chapter 2: An Episode of the Civil War
+  002   1-3   2675  Chapter 3: The One Who Is Missing
+  003   1-4   3182  Chapter 4: The Chimneys
+  004   1-5   2948  Chapter 5: A Single Match
+  005   1-6   2899  Chapter 6: The Castaways' Inventory
+  006   1-7   3156  Chapter 7: Nab Has Not Come Back
+  007   1-8   3167  Chapter 8: Is Cyrus Smith Alive?
+  008   1-9   3449  Chapter 9: Cyrus Is Here
+  009  1-10   3253  Chapter 10: The Engineer's Invention
+  010  1-11   3688  Chapter 11: Lincoln Island
+  011  1-12   3287  Chapter 12: Setting the Watches
+  012  1-13   3789  Chapter 13: What They Found on Top
+  013  1-14   3154  Chapter 14: Measuring the Granite Wall
+  014  1-15   2946  Chapter 15: Iron and Steel
+  015  1-16   3036  Chapter 16: A Fight Under the Water
+  016  1-17   3509  Chapter 17: The New Waterfall
+  017  1-18   2974  Chapter 18: Through the Granite
+  018  1-19   3121  Chapter 19: Granite House
+  019  1-20   2700  Chapter 20: The Rainy Season
+  020  1-21   3075  Chapter 21: A Few Degrees Below Zero
+  021  1-22   4132  Chapter 22: The Mysterious Well
+  022   2-1   3093  Chapter 1: The Lead Pellet   [divider: Part Two: The Marooned Man]
+  023   2-2   3211  Chapter 2: The Chest on the Beach
+  024   2-3   3421  Chapter 3: The Fever Trees
+  025   2-4   3257  Chapter 4: A Forest for a Coastline
+  026   2-5   3775  Chapter 5: Wreckage in the Air
+  027   2-6   3553  Chapter 6: A New Servant
+  028   2-7   3362  Chapter 7: A Bridge over the Mercy
+  029   2-8   3439  Chapter 8: Guncotton
+  030   2-9   3549  Chapter 9: The Hydraulic Elevator
+  031  2-10   3382  Chapter 10: A Whale in Sight
+  032  2-11   3759  Chapter 11: The Fuel of the Future
+  033  2-12   4349  Chapter 12: An Unexpected Document
+  034  2-13   3243  Chapter 13: Tabor Island
+  035  2-14   3670  Chapter 14: A Fire Lit in Time
+  036  2-15   2921  Chapter 15: A Few Tears
+  037  2-16   3732  Chapter 16: Twelve Years on the Islet
+  038  2-17   3603  Chapter 17: Abandoned on Tabor Island
+  039  2-18   3346  Chapter 18: The Electric Telegraph
+  040  2-19   3307  Chapter 19: Memories of Home
+  041  2-20   3600  Chapter 20: Shark Gulf
+  042   3-1   3656  Chapter 1: Ruin or Rescue?   [divider: Part Three: The Secret of the Island]
+  043   3-2   3277  Chapter 2: Six Against Fifty
+  044   3-3   4199  Chapter 3: The Fog Lifts
+  045   3-4   3731  Chapter 4: Salvage
+  046   3-5   3034  Chapter 5: Pencroff's Grand Theories
+  047   3-6   3292  Chapter 6: Why the Wire Went Dead
+  048   3-7   2788  Chapter 7: A Sure and Faithful Messenger
+  049   3-8   1493  Chapter 8: The Convicts Near the Corral
+  050   3-9   3008  Chapter 9: No News of Nab
+  051  3-10   2461  Chapter 10: A Deadly Fever
+  052  3-11   3043  Chapter 11: An Inexplicable Mystery
+  053  3-12   3077  Chapter 12: A Lighted Window
+  054  3-13   3531  Chapter 13: Ayrton's Story
+  055  3-14   3426  Chapter 14: Three Years Have Passed
+  056  3-15   4301  Chapter 15: The Volcano Wakes
+  057  3-16   3376  Chapter 16: Captain Nemo
+  058  3-17   2670  Chapter 17: The Last Hours of Captain Nemo
+  059  3-18   4510  Chapter 18: The Dakkar Crypt
+  060  3-19   4021  Chapter 19: Fire Against Water
+  061  3-20   1768  Chapter 20: A Rock in the Pacific
+
+PER-FILE NOTES FOR THE PROMPTS (must_contain lines, set-pieces, traps)
+  000 I.1  VOICE-ESTABLISHING FILE — translate alone first. must_contain:
+       "Are we going up again?" / "Worse than that, Mr. Cyrus! We're
+       falling!" / "Throw out everything that has any weight". Footnotes
+       [1][2] are conversions: drop. Gutenberg ends this chapter early;
+       our (Hetzel) chapter includes the landing — translate all of it.
+  001 I.2  Nab's introduction: rulings #3 and #4 (history entire; "Nab,
+       a Black man" acceptable here where description is the point).
+       Footnote [1] (Richmond falls April 5): fold as a clause, KEEPING
+       Verne's "April 5" (Richmond actually fell April 3 — his slip,
+       not ours to correct).
+  004 I.5  The single match.
+  005 I.6  Footnote: Izaak Walton, folded.  006 I.7  petrels, folded.
+  010 I.11 The naming; must_contain "Let's call it Lincoln Island!";
+       ruling #7 (the grin). The full naming list sets the place locks.
+  011 I.12 Ruling #6(b): the cooking attribution cut.
+  012 I.13 Footnote: sunrise/sunset times, folded.
+  013 I.14 The 333-foot granite wall; the proportion as an indented
+       block (render 5000/15 as division); latitude and longitude kept
+       exactly.
+  014 I.15 Iron by the Catalan method; steel.
+  015 I.16 Stand-alone centigrade ("dix à douze degrés") -> "fifty to
+       fifty-four degrees Fahrenheit". Top's fight under the water.
+  011 I.12, 020 I.21, 021 I.22, 032 II.11, 039 II.18, 055 III.14:
+       Fahrenheit readings with
+       centigrade parentheticals — drop the parentheticals.
+  016 I.17 THE CHEMISTRY CHAPTER: pyrites -> iron sulfate -> sulfuric
+       acid; nitric acid; glycerin; soap; saltpeter; nitroglycerin.
+       Every step.
+  023 II.2 The chest inventory as an indented list (labels once);
+       ruling #6(a) (the dance simile cut).
+  029 II.8 Guncotton; ruling #8 (Nab and Jup).
+  030 II.9 The hydraulic elevator; glass; the exact position of the
+       island (indented coordinates); Tabor "northeast" KEPT; the first
+       fix as recalled KEPT; ruling #8 ("your superior" exchange).
+  031 II.10 The harpoon inscription as an indented block ("Maria-Stella"
+       / "Vineyard.") — a bare "Maria-Stella" line renders as a heading; footnote [2] NOT folded (Verne's wrong state).
+  032 II.11 must_contain "Water will be the coal of the future."
+  033 II.12 The Bonadventure named; the bottle document.
+  035 II.14 "BR..TAN.A" as an indented block (bare, it is a heading).
+  038 II.17 Ayrton's history; the publisher's note dropped.
+  039 II.18 The telegraph: battery, wire, alphabet dial — every step.
+  041 II.20 must_contain "No, Pencroff, but mysterious, certainly".
+  043 III.2 Norfolk Island "some fifteen miles around"; ruling #10.
+  044 III.3 the Speedy blown up. 045 III.4 "torpedo" (first use)
+       glossed in the sentence as a submerged mine.
+  050 III.9 Nab's note and signature as an indented block.
+  052 III.11 eighteen grains of quinine; footnote dropped.
+  056 III.15 The volcano wakes; the telegram; the Nautilus revealed.
+  057 III.16 THE BOOK'S HEART. Nemo's history at full strength —
+       ruling #1. must_contain: "Prince Dakkar", "nephew of the Indian
+       hero Tipu Sultan", "Prince Dakkar hated.", "he hated England",
+       "the great Sepoy Rebellion", "his father, his mother, his wife,
+       his children", "It was an English frigate, sir",
+       "twenty thousand leagues under the sea". 20k locks throughout.
+       Footnote [2] (the Cretans) folded; [1] dropped.
+  058 III.17 Nemo's death: "Mobilis in Mobili" (the device line as an
+       indented block), "God and country!";
+       dot-row elision kept.
+  061 III.20 Last line: "the tomb of the man who had been Captain Nemo".
+       Two dot rows kept.
+
+BATCH PLAN: 000 alone (voice); then batches of 5–6 in order; update this
+ledger between batches; run verify (0.9–1.5) and check.py --modern after
+each.
+
+(Batch notes appended below by the orchestrator.)
+
+BATCH 0 (voice, file 000, I.1; 2026-10-10). Ratio 1.03. CALIBRATE ON 000:
+read modern_chapters/000.txt before you write.
+- SUMMARY line: one _italic_ line, items joined by " — ", sentence case, no
+  final period; each French item a short literal phrase.
+- NARRATION: plain, propulsive; Verne's long periods cut into two or three
+  sentences. Narration mostly without contractions; dialogue with them.
+  Keep his exclamatory set pieces and repeated openings, and his narrator
+  asides as asides. "on eût pu constater" -> "anyone watching could have seen".
+- DIALOGUE: short, clipped modern speech; no added speaker tags where Verne has none.
+- Dates "March 23, 1865". Measurements spelled out in narration ("four
+  thousand five hundred feet"). Verne's own metric readings stay (the
+  barometer's "seven hundred and ten millimeters"); only his conversion
+  asides go. Money as Verne wrote it ("ten thousand francs in gold").
+- LOCKED, balloon: "the balloon" (never aerostat/airship); nacelle = "the
+  basket"; filet = "the net"; mailles = "the mesh"; cercle = "the ring";
+  appendice = "the neck"; enveloppe = "the envelope"; lest = "ballast"; the gas.
+- LOCKED, sea/storm: trombe = waterspout; sous le vent = "to leeward";
+  encablures = "cable lengths"; "the Maelström" capitalised; les naufragés =
+  "the castaways".
+- LOCKED lines: "Throw out everything that has any weight! Everything! And
+  God help us!"; "Let's save him! Let's save him!" (end of I.1).
+- GLOSSES SPENT (000): "three-reef breeze"; tidal bores; the Bureau Veritas.
+
+BATCH 1 (files 001-006, I.2-I.7; 2026-10-10). Ratios 1.01-1.06.
+CONVENTIONS fixed by the orchestrator: ellipsis is "..." (unspaced, as in
+twenty-thousand-leagues); Pencroff to Harbert "my boy" (never "my lad");
+train de bois "the timber raft" / "the raft".
+- NAMES & REAL PEOPLE: Massachusetts; Pittsburg Landing; Chattanooga; the
+  Potomac; Jonathan Forster; Harbert Brown "of New Jersey"; Daniel Defoe;
+  Izaak Walton; Wyss "who wrote The Swiss Family Robinson"; Selkirk; Raynal;
+  Juan Fernández; the Auckland Islands. Titles plain, not italic.
+- ADDRESS: Pencroff to Smith "Mr. Smith"/"Mr. Cyrus"; Harbert to Spilett "Mr.
+  Spilett"/"Sir".
+- CIVIL WAR terms: séparatistes = "the secessionists"; Sudistes = Southerners;
+  fédérés = the Confederates; Fédéraux = Federal; "the Union".
+- NAB (rulings applied): his history in I.2 entire — "a Black man, born on the
+  engineer's estate to a father and mother who were slaves ... Cyrus Smith, an
+  abolitionist ... had freed him long ago. The slave who had become a free man
+  had not wanted to leave his master." "a Black man" used ONLY there. "le
+  nègre" -> "Nab" / "poor Nab" / a pronoun. "son maître" -> "his master".
+  "les sauvages" meaning Pacific islanders -> "the islanders" (004 precedent;
+  NOT Ayrton's "un sauvage", ruling #11).
+- PLACES not yet named (use these descriptions until the naming chapter):
+  "the islet"; "the granite face" / "a granite rampart" with "a flat-cut face"
+  at its south end; "the high plateau"; the snowy peak 6-7 mi west; the river
+  ~100 ft wide at the mouth, bending left half a mile up; a natural rock
+  staircase 200 paces back from the bend; "the Chimneys" (quoted on first use
+  only), its passages shaped like "the printer's sign &".
+- NATURAL HISTORY: lithodomes (glossed 003: "They're not mussels. They're
+  lithodomes."); skuas; deodars (glossed 003); rock pigeons; jacamar;
+  couroucous (kept); tétras "grouse"; gélinotte "hazel grouse"; coq de
+  bruyère "heath cock"; Douglas firs; junipers; creepers (lianes); petrels
+  (glossed 006).
+- SEA: brasses "fathoms"; encâblure "cable length" (defined in dialogue in
+  006: about a hundred and twenty fathoms, six hundred feet); marée de syzygie
+  "a spring tide" (glossed 006); jusant "the ebb"; chenal "a narrow passage of
+  water".
+- LOCKED LINES: Grant "I never count my dead!"; William of Orange's "I need no
+  hope to undertake, nor success to persevere."; "Mr. Smith, have you had
+  enough of Richmond?"; "Bah! One more!"; "One single match is all we need!";
+  "Damnation!"; "Blasted box!"; "the Maker of all things"; "Providence".
+- GLOSSES SPENT: très débrouillard (I.2); Table Mountain (I.3); deodars,
+  lithodomes (I.4); Izaak Walton, Wyss (I.6); petrels, spring tide (I.7).
+- VERNE SLIPS KEPT: seven / six thousand miles from Richmond (I.2); April 5;
+  "eight miles" in the I.7 summary vs about six in the body.
+- THREADS: March 25-26 dates; the fire must be kept banked under ashes;
+  Pencroff's lost copper match box and pipe; Spilett's notebook (one page
+  torn out); tinder in a hollow of the central chamber; Top arrived neither
+  tired nor muddy (a mystery to keep); I.7 ends "The body was that of the
+  engineer Cyrus Smith." in a dune cave ~6 mi north of the Chimneys.
+
+BATCH 2 (files 007-012, I.8-I.13; 2026-10-10). Ratios 1.00-1.07.
+- PLACES now NAMED (I.11) — use only these: Lincoln Island; Union Bay;
+  Washington Bay; Mount Franklin; Lake Grant; Serpentine Peninsula; Reptile
+  End; Shark Gulf; North / South Mandible Cape; Claw Cape; the Mercy; Safety
+  Islet; Prospect Plateau; the Far West forests; the Chimneys; Red Creek (I.12);
+  Jacamar Wood (I.13). The cliff's corner at the river mouth is "the cut-off
+  corner (of the cliff)". Rejected joke names (Sperm Whale Point etc.) are
+  jokes in I.11 only.
+- From I.11 on they are "the colonists" (they voted it).
+- MOUNTAIN: two cones; the lower cut off at ~2,500 ft ("the first plateau");
+  the upper "like a huge round hat cocked over one ear"; summit 3,500 ft; "a
+  volcano dead and gone" (Part Three reverses this).
+- LOCKED: "Island or continent?" (recurs); "Cyrus is here! Ask Cyrus!";
+  "Some inexplicable things have happened here!" / "Inexplicable indeed!";
+  "the stretcher"; "the sailor's jacket"; "the burnt linen" (tinder);
+  "chemical matches"; briquet = "flint and steel"; "Hurrah!" (Pencroff);
+  "So long!"; "the Almighty"; "the help of Heaven"; the Lincoln speech and "Let's
+  call it Lincoln Island!" (placed, 010); "At the beginning" (I.13, quoted
+  later); "But the tobacco will come, like everything else!"; pot-au-feu =
+  "stew"; "the climbers".
+- ADDRESS: Smith teasing "Master Pencroff"; Smith to Spilett "my dear
+  Spilett"; Spilett to Pencroff "my good fellow" / "friend Pencroff"; Harbert
+  to Smith "sir" / "Mr. Cyrus"; Smith to Harbert "my boy".
+- SENSITIVE (applied): "a dazzling grin" (I.11, #7); "My master — always and
+  everywhere!"; I.12 cooking line -> "Nab and Pencroff, the colony's natural
+  cooks"; "les sauvages" (Pacific) -> "the islanders"; a general claim ->
+  "such peoples"; "les indigènes" -> "the natives" (neighbouring islanders who
+  might land) / "the local people" (Asia).
+- TECH VOCABULARY: kiln; potter's clay; "temper the clay with sand"; vents;
+  quicklime; "calcium carbonate — that is, limestone"; pipe clay; kaolin;
+  saltpeter = potassium nitrate; "the wire edge"; bracket fungus; mugwort; "a
+  fixed north-south line"; "the dip of the horizon"; sextant; refraction;
+  "true time and mean time"; "sodium-sulfur spring"; "spillway".
+- NATURAL HISTORY: capybara; stone pine / "stone-pine nuts"; sargassum;
+  wrack; tragopans; mouflons; kangaroos; maras = agoutis; lories; lyrebirds;
+  cockatoos; "mountain pheasants"; jacamar; Douglas firs; casuarinas; banksias.
+- GLOSSES SPENT: the Marquesas (I.9); solfataras, pozzolana, izards, stray
+  boulders (I.10); pteropod (I.11); New Holland, hydrogen sulfide (I.12); pipe
+  clay, the wire edge, dip of the horizon, sextant, refraction (I.13).
+- VERNE SLIPS KEPT: mile vs half mile and eight vs six miles (I.8); Beta
+  Centauri "believed to be the star nearest the Earth" (I.10); the 12h24
+  night vs footnote times (I.13); pines suggesting a higher latitude (I.9).
+- THREADS: Spilett's watch on Richmond/Washington time, never reset (I.14
+  longitude, noon April 16, Easter Sunday); plateau height 333 ft and Alpha
+  ~27° from the pole (I.14); Lake Grant's hidden outlet north (I.17); kiln
+  out, iron next; Pencroff has pipes but no tobacco; saltpeter beds; no bread
+  yet; bows and porcupine-quill arrows made; Top's collar = two knives;
+  Smith promises guns before war on the wild beasts.
+
+BATCH 3 (files 013-018, I.14-I.19; 2026-10-10). Ratios 1.01-1.06.
+- PLACES: GRANITE HOUSE (named I.18). Inside: "the upper cave" (later "the
+  attic"), "the cavern" / "the great hall", "the well" / "the lower well";
+  rooms: entrance hall, kitchen, dining room, bedroom, "guest room", "a long
+  storeroom". Outside: "the front of Granite House"; the ladder of 100 rungs
+  in two sections with a ledge "landing" ~40 ft up; "a hand-turned winch".
+- LAKE: déversoir = "the spillway"; the original one is "the old spillway"
+  (now blocked with cemented rocks, hidden by plantings); the breach is "the
+  new spillway" with the new waterfall dropping 300 ft to the beach (Fall
+  River not named yet). Before discovery, "an outlet" in general is fine.
+- GEOMETRY/POSITION (I.14): the proportion as a 4-space indented block;
+  333 ft; 37° S; 152° W; final range 35th-37th parallels, 150th-155th
+  meridians (Verne's 35-40 vs 35-37 slip kept); "the chronometer" (Spilett's
+  watch); "similar triangles"; "plumb line"; "the Tuamotus"; "Tahiti".
+- IRON/STEEL (I.15): "magnetic iron ore"; "the Catalan method"; "a bloom of
+  iron"; gangue "the waste rock around it"; fireclay; "the sealskin bellows";
+  cast iron; puddled / cementation steel; "the metallurgical period".
+- CHEMISTRY (I.17): "pyritic shale"; iron sulfate; "the mother liquor";
+  sulfuric acid; nitric acid; potassium nitrate = saltpeter; soda from burned
+  seaweed; glycerin by saponifying; "Here's nitroglycerin!"; "blasting
+  hole"; "fulminate caps"; guncotton (locked); "a water bath"; "a freezing
+  mixture"; Verne's own "ten liters" stays.
+- BIRDS on Safety Islet: pingouins "auks", manchots "penguins" ("diving birds
+  of the penguin kind", braying like a donkey).
+- LOCKED: "Whatever Cyrus pleases" / "If Cyrus says so!"; "The seals you
+  ordered, Mr. Cyrus!"; "Pencroff had struck the word 'impossible' out of the
+  dictionary of Lincoln Island."; "Here's our home."; "Nab was Nab."; "they
+  'knew'"; "a hundred cubits above the Robinsons of the old days"; "of all
+  teachers, necessity is the one people listen to most"; "Master Nab, the
+  cook"; kurrajong (fibre, I.19); "American rabbits" and "the warren";
+  "Oswego tea"; "wild boars"; "iron-tipped spears"; "A triple hurrah".
+- ADDRESS: Smith to Pencroff "my friend"; Spilett to Smith "my dear Cyrus" /
+  "Cyrus"; Pencroff occasionally "Mr. Smith" where the French has it.
+- SENSITIVE (applied): "the Aboriginal people of New South Wales" (indigènes,
+  Australia); "the local princes" (Malaysia); "natives" (Pencroff: "there
+  aren't any on our island"); "wild beasts on two legs and on four" (no
+  "savages"); "Malay pirates" kept; "his brave servant".
+- GLOSSES SPENT: similar triangles, plumb line, fulminate (I.14); Tubal-cain,
+  plantigrades, gangue, bloom, octahedrons (I.15); pyritic shale, mother
+  liquor, water bath, "transition" formations (I.17); Pluto/Neptune (I.18).
+- VERNE SLIPS KEPT: trade winds "from the northwest" and dugong "in the order
+  of cetaceans" (I.16); ore "northwest" vs northeast spurs; "carbonic acid"
+  (I.15); "ten times" gunpowder, nitroglycerin unexploded unless struck (I.17).
+- THREADS: Top's fury at the well and the dugong's "sharp blade" wound (I.22
+  "The Mysterious Well"); Smith and Spilett keep the mysteries from the
+  others; hydraulic elevator later (II.9); no window glass yet (shutters); no
+  bridge or boat over the Mercy; snares in I.22; guns need iron, steel,
+  saltpeter, charcoal, sulfur, mercury, nitric acid, lead ("we'll see later
+  on"); soap planned; oyster bed ~4 mi north of the Chimneys; the reporter
+  and Harbert are the hunters; Top climbs the ladder.
+
+BATCH 4 (files 019-024, I.20 - II.3; 2026-10-10). Ratios 1.00-1.06.
+Part One closes on "It was not a pebble..." / "It was a lead pellet."
+- PLACES named: SHELDUCK MARSH (I.21); JETSAM POINT (II.2). Unnamed still:
+  "the two little bridges"; "natural oyster pens" at the Mercy's mouth; "a
+  willow bed" (purple osiers) at the lake's north point; the waterfall camp
+  near the Mercy's sources, ~7 mi from Granite House.
+- BOATS: pirogue / canot d'écorce = "the (bark) canoe" ("our new ship", she);
+  "the sculling oar"; tholepins; gunwale; "the boat" for a larger canot.
+- THE CHEST (II.2) — use these names for its contents everywhere: 2 flintlock
+  guns; 2 PERCUSSION-CAP GUNS; 2 center-fire carbines; 5 cutlasses; 4
+  boarding sabers; 2 kegs of gunpowder (25 lb each); 12 boxes of percussion
+  caps; binoculars; telescope ("the spyglass" in use); case of drawing
+  compasses; pocket compass; Fahrenheit thermometer; aneroid barometer;
+  photographic outfit; iron kettle; tin-lined copper saucepans; aluminum
+  forks and spoons; small portable stove; the Bible (red pencil cross, Matthew
+  7:8 in an indented block: "Everyone who asks receives, and whoever seeks
+  finds."); atlas with French place names; Polynesian dictionary; six-volume
+  dictionary of natural science; 2 ledgers; twibill (glossed). Nothing bears a
+  maker's mark.
+- CANDLES & SUGAR: "tallow" vs "stearin candles"; saponify (glossed I.20);
+  boric-acid wicks; maple sap -> sugar loaves and tablets.
+- LOCKED: "Everything, my friends, everything can be of use to us ... Please
+  don't forget it."; "Never do anything by halves."; "That's God's secret";
+  "Nature has time on her side."; "The wind's turned woodcutter — let it get
+  on with it."; "Man is never perfect, and never satisfied."; "the engineer
+  was a book always ready, always open to the page each one needed"; "Mr.
+  Journalist" (Pencroff to Spilett); "They call them 'fever trees.'" /
+  "Because they give you fever?" / "No — because they prevent it!"; "Giants
+  are good for nothing!"; "Onward!"; "Mustard it is, then!"; "temporary
+  castaways"; "One would not dare to say so."; "Half a pound of tobacco!"
+- NATURAL HISTORY: culpeos (Pencroff: "foxes"); peccaries (tajaçu, collared
+  peccary — glossed I.22); "the cat family"; kauris; green turtle; "the order of
+  chelonians" (glossed II.1); eelgrass; tinamous; touraco-lories; true elms;
+  nettle trees; eucalyptus "of the myrtle family" (Verne's "Eucalyptus gunei"
+  kept); pintails, teal, snipe, shelducks, guillemots, bustards; "four-handed
+  creatures" (monkeys).
+- SENSITIVE (applied): "Nab danced for joy" (II.2, simile cut, #6a); "The Sami
+  and the Samoyeds" (Lapons -> Sami); "notre race" -> "men like us"; indigènes
+  (NZ) -> "the Maori people of New Zealand"; "Malay pirates" kept; Spilett's
+  "the Malays ... nasty scoundrels" kept as his remark about sea raiders.
+- UNITS: Fahrenheit stays ("eight degrees below zero" etc.); centigrade asides
+  go; Verne's "un mètre" -> "about three feet".
+- GLOSSES SPENT: saponify, boric-acid wick, panel saw (I.20); Saint Martin,
+  Boulle, "movables" (I.22); chelonians (II.1); twibill (II.2); flintlock vs
+  percussion caps (II.3).
+- VERNE SLIPS KEPT: "arithmetical progressions"; "eight hundred grains" per
+  ear (I.20); sunken Pacific continent, coral infusoria (I.21); "tigers"
+  (I.22).
+- THREADS: the lead pellet in the peccary (October 24); exploration of the
+  west coast and the Far West (II.3-II.4: they set off October 31, 5 a.m., full
+  moon in three days); clothing urgent: mouflons, a corral and poultry yard
+  (tinamous are the first residents); the single grain planted June 20;
+  Pencroff's tobacco; only Smith and Spilett know Top's fury at the well;
+  Harbert's doubtful smoke in the west (II.1); the turtle turned back over.
+
+BATCH 5 (files 025-030, II.4 - II.9; 2026-10-10). Ratios 0.98-1.07.
+- PLACES named: FALL RIVER (II.4); BALLOON HARBOR (II.5); GLYCERIN CREEK (II.7;
+  "Glycerin", matching nitroglycerin). Descriptions: "the ditch" (west side
+  of the plateau, 12x6 ft); "the bridge over the Mercy" (at "the bend of the
+  Mercy") with its "movable section"; "the little bridges" (liftable); "a
+  double palisade"; the poultry yard (200 sq yd, SE shore of the lake),
+  dovecote, stable, peccary sty; "the corral" near the sources of Red Creek,
+  at the foot of Mount Franklin's southern shoulder (curved palisade of ~100
+  stakes, double plank gate barred outside, plank sheds), reached by "the
+  Corral Road"; the road through the Far West to Balloon Harbor; "the
+  veranda" at the edge of Prospect Plateau. The plateau is "an irregular sort
+  of pentagon about four miles around".
+- GRANITE HOUSE now: "the elevator" ("the water engine", "a drum fitted with
+  paddles", "a large basket"; first run March 17) — no ladder in use after
+  II.9; glass panes in the windows; "the upper ladder" / "the lower ladder"
+  (before II.9); "the doorsill"; "the passage"; "the storeroom".
+- MASTER JUP (II.6): "Jupiter — Jup for short"; Pencroff talks to him as "my
+  boy" with a royal "we"; "wages" ("we'll double them later on"); drives "a
+  sort of light two-wheeled trap"; carries his cane like a gun. Ruling #8
+  applied (II.8): "Nab and the ape seemed to understand each other when they
+  talked together"; le maître / son élève = "the teacher ... his pupil". The
+  "Your superior" exchange (II.9) KEPT WHOLE. Jup's owners = "his masters"
+  (the colony).
+- BOAT: a decked boat of ~20 tons; II.5 says "rig her as a cutter" (Verne's
+  cotre there); the boat is "she"; "I'll take charge of sailing her".
+- GLASS (II.9): "the glassblower's 'pipe'"; "the batch"; fireclay crucibles;
+  sulfate of soda; panes; recipe 100 sand / 35 chalk / 40 sulfate of soda /
+  2-3 charcoal.
+- GUNCOTTON (II.8): "pyroxylin — that is, guncotton", then "guncotton";
+  "fuming nitric acid"; Verne's level, no more. Its centigrade ignition
+  figures -> "three hundred and thirty-eight degrees Fahrenheit instead of
+  four hundred and sixty-four".
+- NATURAL HISTORY: jaguar ("that ferocious rival of the tiger"); mastic
+  shrubs; crayfish; bamboo; koulas; onaggas ("halfway between the zebra and
+  the quagga", "pale yellowish-gray"); "alectors"; Chinese fan-winged ducks;
+  Cycas revoluta / "cycads" / "the bread tree"; "spruce beer" (black spruce);
+  elderberry "coffee"; "purple potatoes"; houbara bustards; shovelers; "the
+  roosters of Mozambique"; argalis; mouflons and wild goats in the corral.
+- LOCKED: "Except for tobacco, there's everything on this island!"; "You
+  can't smoke it, my poor Pencroff!"; "To the jaguars' house, then!"; "This
+  was not his first tiger."; "Beg your pardon, it is!"; "an island where
+  shirts grow on trees"; "It was a fortune that had fallen from the sky.";
+  "We'll see, Pencroff. We'll see."; "Who knows?"; "Boat ahoy!"; "The best
+  servants are the ones who talk the least."; "Too good!" (Smith); oaths "By
+  a thousand thousand devils!", "Well, a thousand pipes!", "You triple
+  scoundrel!"; "Heaven helps those who help themselves".
+- SENSITIVE (applied; NEW calls flagged for Alex): II.6 facial-angle
+  comparison to named peoples cut -> "not much smaller than a human
+  being's"; Pencroff's "moricaud" (of the ape) -> "hairy rascal"; "good
+  Nab"; "the Tartars" (Marco Polo) kept; "degenerate brothers" (monkeys) kept.
+- GLOSSES SPENT: upper reach, granite sill (II.4); Buffon (II.6); pile driver,
+  gallinaceous, the masons' "monkey" (II.7); pyroxylin, fuming nitric acid,
+  argalis (II.8); fulgurites (II.9).
+- VERNE SLIPS KEPT: Smith's two-hour estimate (II.4); Tabor "About a hundred
+  and fifty miles to the northeast", 153° / 37° 11′ (II.9); "the lime
+  supplied the chalk"; elder in the honeysuckle family.
+- THREADS: the ladder dropped by an unseen hand; a ship landed within three
+  months and left (II.5); the balloon cloth stored in a rock hollow then at
+  Granite House; Easter April 1 and "a remark ... would later lead to serious
+  consequences" (the boat and Tabor); decked boat to be built; Harbert has
+  grown two inches; corral stocked February 7; daily milk; no bread yet; no
+  tobacco; "Eleven months", March 24 anniversary.
+
+BATCH 6 (files 031-036, II.10 - II.15; 2026-10-10). Ratios 1.01-1.06.
+- THE BONADVENTURE (named II.12, launched October 10): 35 ft keel, 9 ft beam,
+  6 ft draft, decked, two cabins; rigged as a SLOOP (II.10; II.5's "cutter"
+  stays as written); mainsail, staysail, square running sail, topsail, jib;
+  "carvel-built" (glossed II.10); "ceiling" (glossed II.12); "bolt ropes";
+  "Captain Pencroff" (by vote); home port Balloon Harbor; "the Lincolnian
+  flag" (38th star for "the State of Lincoln") at the middle window of
+  Granite House. Verne's tonnage varies (20 / 15) — kept.
+- SAILING: "a broad reach"; "close-hauled" (glossed II.12); "dead
+  reckoning"; "make landfall"; "gaff topsail"; "beating to windward";
+  "changing tack"; "Luff, Pencroff, luff!"; "the tiller"; "the bulwarks".
+- TOBACCO FOUND (II.10): "Tobacco! Real tobacco!"; "Now there's nothing
+  missing on our island!"; "And Pencroff smoked, and smoked, and smoked!" —
+  the no-tobacco thread is CLOSED; pipes in the evenings; Jup has Pencroff's
+  old pipe.
+- WHEAT: five bushels April 15; "We'll eat bread." / "We'll make a mill."
+- WHALE (II.10): "southern right whale", she; harpoon block "Maria-Stella" /
+  "Vineyard."; "A ship from the Vineyard!"; whalebone traps; oil, stearin,
+  glycerin stocks.
+- FELT (II.11): fulling (glossed), suint, "fulling mill", "Lincolnian felt";
+  Verne's machine and fabric lists whole. "Water will be the coal of the
+  future." placed (II.11). "John Bennett" of the New York Herald (Verne's
+  first name kept). Degreasing water "a hundred and fifty-eight degrees
+  Fahrenheit" (orchestrator: stand-alone centigrade rule). "ten million
+  metric tons" (his metric quintals, exact).
+- TABOR (II.13-14): "the islet" ("a long oval", six miles around); "a kind
+  of cone"; "the house" (planks + tarred canvas); "BR..TAN.A" block ->
+  "Britannia!"; the bottle document block: "Castaway... Tabor Island: 153° W.
+  long. — 37° 11′ S. lat."
+- AYRTON (not yet named): "the prisoner" / "the castaway" / "the poor
+  wretch" (II.14); from II.15 "the stranger" (the colonists' name for him) and
+  "the marooned man", "the castaway of Tabor Island", "his patient". #11
+  applied: "a wild man", "a true man of the woods", "our wild man", "a wild
+  creature". "skin as dark as mahogany" (weathering) kept. "an Anglo-Saxon"
+  kept. Lines: "The soul doesn't die"; "Our humanity demands it."; "We went
+  looking for a human being, and it's a monster we're bringing back!";
+  "So you've become a man again, since you're weeping!".
+- LOCKED: "Who knows?"; "At least say 'our boat,' Pencroff!"; "whom chance
+  has made our son"; "Water! ... Water to heat water!"; "You were born too
+  soon, Pencroff"; "Bon voyage!"; "I saw nothing, and yet there is something
+  there!"; "a tot of wine every watch"; "Do you take our boat for a piece of
+  driftwood and the three of us for porpoises?"; "A harbor with a lighthouse,
+  a breakwater and a dry dock!"; "There, my master!"; "Granite House's
+  pharmacy of plants".
+- IDIOMS (not sensitive): "sitting cross-legged" (accroupi comme un turc);
+  "laid about him like a madman"; "chat-tigre" = "wildcat".
+- GLOSSES SPENT: carvel-built (II.10); fulling, suint, the spinning mule
+  (II.11); ceiling, ice plants (II.12); close-hauled (II.14).
+- VERNE SLIPS KEPT: Tabor "southwest" in II.13 vs "northeast" in II.9; 15
+  vs 20 tons; the coal arithmetic; John Benett's first name.
+- THREADS: the stranger brought to Granite House Oct 20; the experiment Oct
+  30; II.16 onward he works, speaks, confesses (Ayrton); the windmill and the
+  first bread are in II.16 (Verne's II.15 summary lists them early);
+  bridges raised every night; Smith explored the well alone August 3 and
+  keeps it secret; Top still growls at the well; the albatross message (June
+  30); the fire that guided them home was "plainly lit by Cyrus Smith" —
+  II.15 complicates this; "the doubting Pencroff".
+
+BATCH 7 (files 037-042, II.16 - III.1; 2026-10-10). Ratios 1.01-1.04.
+Part Two closes on "A ship!" / "And indeed, a ship was in sight of Lincoln
+Island!"
+- AYRTON named in II.17 (from then on "Ayrton"; Ben Joyce his alias). His
+  story: Lord and Lady Glenarvan ("a Scottish laird"), Captain John Mangles,
+  Mary and Robert Grant, Tom Austin "the first mate", the Duncan ("a steam
+  yacht", "the Scottish yacht", rigged as a brig, with "a funnel"), the
+  Britannia, "the quartermaster of the Britannia"; Ayrton says "Sir" / "Mr.
+  Smith" / "Gentlemen" / "Mr. Pencroff"; Smith to him "my friend" ("Comrade"
+  once). "the house at the corral" (finished December 20, ~20 ft from the
+  stables, 80+ mouflons). Locked: "Twelve years! Twelve years!"; "Am I free?"
+  / "You're free." / "Then goodbye!"; "You are honest men, you! And I!...";
+  Glenarvan's "I know where you are, Ayrton, and I know where to find you. I
+  will never forget it!"; "Ayrton, you are forgiven! And now, will you be our
+  companion?"; "Here is my hand!"; "I never threw any document into the sea!"
+  / "Never?" / "Never!"; "My duty."; "The black flag!"; "At your service,
+  gentlemen."
+- WINDMILL & BREAD (II.16): windshaft (glossed); bedstone / runner stone;
+  "the hopper"; "the chatterbox"; "the bolter"; first loaf December 2 — the
+  no-bread thread is CLOSED. hydrography (glossed).
+- TELEGRAPH (II.18): "drawplate"; "wire-drawers"; Becquerel's "battery";
+  "retort carbon" (glossed); "glass insulators"; "receiver" / "transmitter";
+  "electromagnet" (glossed); dial with the alphabet; the earth return; working
+  since February 12; corral 5 mi from Granite House by "the Corral Road".
+  Photography list kept (Verne's "hyposulfate of soda" kept).
+- SHIPS (III.1): "brig" ("a vessel of three to four hundred tons"); "on the
+  starboard tack"; "gaff"; "halyards"; "hawseholes"; "Malay proas" (pirate
+  craft, kept); "the sea raiders"; "pirates"; "convicts".
+- SAILING: "close-reefed"; "stand off from the land"; "the narrow entrance";
+  "sounding line"; "iron coasts"; "'cats' tails'" (cirrus, explained);
+  Pencroff's "belly" pun ("I'd sooner have a knife in my belly than a rock in
+  my Bonadventure's!") — reuse "belly" if it recurs.
+- SHARK GULF: "We're in the Shark's jaws"; "Right inside its jaws, my good
+  Nab!"; "like the fjords of Norway, only more barren still". Nab to Harbert
+  "Mr. Harbert".
+- THE MYSTERIES LIST (II.20) with refrain "Let's go on"; "Supernatural!" /
+  "Could our island be supernatural?" / "No, Pencroff, but mysterious,
+  certainly" (placed). Pencroff shares the island "with another master".
+- Civil War: "the American Union" (Confédération américaine — not
+  "Confederation"); "the Southern rebellion".
+- OATHS: "A thousand devils!" (Mille diables) — use this form; "Now look here,
+  Mr. Cyrus" (Ah çà).
+- SENSITIVE (applied): #11 "the former wild man of Tabor Island", "his wild
+  instincts", "becoming a wild man", "his brutish state"; indigènes ->
+  "the native people" (Patagonia), "the Aboriginal people" (Australia); "good
+  Nab"; "Wasn't his country wherever his master was?" (#5); "both of them,
+  being much inclined by their very natures to believe in marvels" (Pencroff
+  and Nab together) kept; "like a mesmerized subject under the spell of his
+  mesmerist".
+- UNITS: barometer "twenty-nine and nine-tenths inches" (mm aside dropped);
+  "fifty-eight degrees" (centigrade dropped); Verne's own "a hundred thousand
+  kilometers a second" kept.
+- GLOSSES SPENT: windshaft, hydrography (II.16); drawplate, retort carbon,
+  electromagnet (II.18); cats' tails (II.19).
+- VERNE SLIPS KEPT: "December" in early November (II.16); Ayrton's dates
+  (1852-1855; footnote dropped — for the introduction); "five months"
+  (II.19); 300 grains/min "nine thousand an hour", "five thousand five
+  hundred years" (II.18); "two and a half years" (III.1); Ayrton into Granite
+  House "middle of April" before May preparations (II.20).
+- THREADS for Part Three: the brig anchored ~1 1/4 mi off Granite House,
+  lights out, new moon, calm; mill sails down, windows screened, fires out;
+  the Bonadventure hidden in Balloon Harbor; Ayrton at the window ("My
+  duty."); Smith wonders if the pirates have an accomplice; Smith told
+  Spilett privately he never lit the October 19-20 fire; Top still barks at
+  the well and at the basalt wall; the telegraph sets up III.6 "Why the Wire
+  Went Dead"; Serpentine Peninsula's woods unexplored; notice for the Tabor
+  hut planned for early October.
+
+BATCH 8 (files 043-048, III.2 - III.7; 2026-10-10). Ratios 0.99-1.07.
+- THE CONVICTS: Bob Harvey (leader; "once a deep-sea merchant captain, now a
+  sea robber"); the brig SPEEDY ("She lives up to her name!"); Norfolk Island
+  ("some fifteen miles around", Mount Pitt); about fifty aboard. #10 placed:
+  "fiercer even than the Malay pirates!". The Speedy blew up in the channel
+  (III.3: "lifted irresistibly on a kind of waterspout ... split in two"). SIX
+  CONVICTS ashore, armed, landed near Jetsam Point. Words: convicts, pirates,
+  scoundrels, bandits, villains, wretches; Pencroff's ironic "those
+  gentlemen". Deaths plainly, no relish.
+- THE TORPEDO: glossed once in III.4 ("a torpedo — a mine, that is, laid
+  under the water!"); bare after. Found November 30 (Verne's date kept).
+- SALVAGE: clothes, linen, shoes, tafia ("a cheap rum made from sugarcane",
+  glossed III.4), hogsheads of tobacco, arms, cotton, tools, seeds, ~20
+  copper-lined powder kegs, chains, anchors, "pigs of cast iron", four
+  cannon, copper sheathing. Ship terms: strakes, keelson (glossed III.4),
+  false keel, poop, the powder magazine, the hold, bobstays, chainplates
+  (glossed III.2), the beak, forecastle, "the lower deck", "the companion
+  ladder".
+- THE BATTERY (III.5): four cannon "of cast steel" (later "forged steel",
+  breech-loading — both Verne's) hoisted to the doorsill; "gunports were cut
+  between the windows"; "a little Gibraltar"; "the battery" / "our battery";
+  "friction primer"; ranges ~3, ~4, ~5 miles.
+- WEAPONS: carabines = "carbines" (the two precision carbines carry nearly a
+  mile); fusils = "guns"; canons = "cannon"; boulet = "cannonball"; obus =
+  "shells".
+- TELEGRAPH (III.6): "the electric bell"; "pole No. 74"; "the wire's
+  broken!"; the break. Knots: "two half hitches", "chafing gear" (glossed
+  III.6), "a reef knot", "the bitt".
+- PLACES: "the creek that ran to the great waterfall" (the new spillway's
+  outflow — NOT Fall River); "the harbor road"; Nab's post on Glycerin Creek;
+  the old spillway's mouth now drowned by two small dams; "the gate of the
+  corral" (two halves, props inside); "the southern shoulder of Mount
+  Franklin"; III.2's summary "Grant Islet" is Verne's slip for Safety Islet —
+  kept in the summary only.
+- MEDICAL (III.7): "a bruised, torn wound"; "stupor"; "the pus"; "lint for
+  dressings" (glossed); "linen compresses"; "cooling herbal teas"; "a Sister
+  of Charity". Harbert's wound: in between the third and fourth ribs, out the
+  back, perhaps through the lung; kept on his left side. Shot November 11 at
+  the corral gate.
+- NOTES as indented blocks: Spilett's "Harbert wounded. We are at the corral.
+  ... Answer by Top." / Nab's "No pirates around Granite House. I won't budge.
+  Poor Mr. Harbert!"
+- LOCKED: "I have more than my duty to do"; "Hurrah for Bob Harvey!"; "Six
+  against fifty!" / "Who, then?" and "he pointed to the sky"; "Let's shoot
+  often, but let's shoot straight."; "Eight fewer!"; "That's what I was,
+  Pencroff!" / "But it's what you aren't anymore, my brave Ayrton!"; "It's
+  six against six"; "Therefore ... Therefore ... Therefore she had blown up.";
+  "All I can tell you is that it wasn't me!"; Pencroff's "a portrait of God
+  the Father"; "I was one of those jaguars, Mr. Pencroff"; "let's wait, and
+  attack only if we're attacked."; "I wouldn't give you half a dollar for our
+  Bonadventure."; "as sure as I'm Bonadventure Pencroff of the Vineyard";
+  "let's just put it down among the inexplicable things"; "To the corral!";
+  "They've killed him! ... My boy!"; "We need to keep our heads."; "God hear
+  you!"; "the faithful animal". Oaths: "A thousand devils!"; "By all the
+  thousand devils of hell!"; "Curse it!".
+- GLOSSES SPENT: the Sandwich Islands = Hawaii, the poop, the beak, bobstays,
+  chainplates (III.2); torpedo, tafia, strakes, keelson (III.4); two half
+  hitches, chafing gear (III.6); lint (III.7).
+- VERNE SLIPS KEPT: "Grant Islet" (III.2 summary); November 30 (III.4);
+  "nine days"; 4 1/2 vs 5 miles to the corral (III.6).
+- THREADS: Harbert wounded at the corral house (Ayrton's bed); Ayrton MISSING
+  with his ammunition, presumed killed; one convict killed by Smith's dagger
+  ("one of Bob Harvey's gang"); the telegraph dead; Nab alone at Granite
+  House; convicts watching the corral; someone used the Bonadventure and
+  returned her (anchor, knot, chafing gear); the expedition (set for November
+  20) postponed; Smith's "sure and faithful messenger" is Top.
+
+BATCH 9 (files 049-054, III.8 - III.13; 2026-10-10). Ratios 1.02-1.05.
+- THE MYSTERY'S VOCABULARY (locked, recurs through III.16-17): "the genie of
+  the island" (quoted at first, III.11) / "the genie himself" / Pencroff's
+  "Our genie, Nab, our genie!"; "the stranger" (the benefactor, l'inconnu);
+  "the superior being"; "this haughty protector"; "the island's dispenser of
+  justice"; "his island's own private god"; "A weapon that strikes like
+  lightning, and whose secret we don't have!"; "a small red spot — a kind of
+  bruise, barely visible" (the electric bullets, unnamed until III.16); "No
+  one! Nothing!".
+- "Dr. Spilett" (Pencroff's name for him from III.11 on); "The real doctor
+  remained to be found." / "We'll find him!"
+- FEVER (III.10-11): "quinine sulfate" (lid block "Quinine Sulfate."); "cinchona
+  bark"; "intermittent fever"; febrifuge and tertian (glossed III.10); "the
+  pernicious fever"; "the fever-free interval"; "goose flesh"; willow bark,
+  "salicin"; "about eighteen grains of the quinine".
+- VOLCANO (III.13, set-up for III.15): "the crater — that is, the safety
+  valve"; "the volcanic chimney"; "the island, which is the boiler ... the
+  volcano, which is the smokestack"; "dull rumblings"; "the age when fire
+  shaped the earth"; obsidian and labradorite; moraines.
+- NOTES as indented blocks: Nab's "Friday, 6 a.m." / "Plateau overrun by the
+  convicts!" / "Nab."
+- LOCKED: "Harbert's life comes before everything."; "What's a bullet through
+  the chest? A mere joke!"; "a bullet doesn't always reach its address!";
+  "One man's as good as another!" / "But is he as good as five?"; "I won't
+  die on the way!"; "Jup! Jup! Corral! Corral!"; "It's a pernicious fever!";
+  "whom they all loved like their own son"; "At that moment Top barked in a
+  strange way..."; "Masters of the island!..."; "Like true settlers"; "the
+  danger zone, to borrow an expression from the science of gunnery"; "Five
+  bodies, stretched out on the bank!"; "On my soul"; "Have it your way!";
+  "These wretches had been ready to murder Ayrton. They spared Ben Joyce!";
+  "Oh, the wretches! The bandits! The low-down scoundrels!"
+- SENSITIVE (applied): #3 "The brave fellow"; #5 "his master"; #9 the five
+  convicts' deaths and burial told plainly; Verne's convicts-and-wild-beasts
+  aside kept.
+- GLOSSES SPENT: febrifuge, tertian (III.10); "the age when fire shaped the
+  earth" (III.13); "the Fortunate Isles" (III.12).
+- VERNE SLIPS KEPT: Nov 29 / Nov 27 order and "Friday" (III.9); Harbert "was
+  eighteen"; "a hundred and four days"; "four months"; February 19-25 vs "a
+  whole week" (III.13); the temperate zone that isn't (III.12).
+- THREADS for the last chapters: 1868. ALL FIVE CONVICTS DEAD (found by the
+  corral brook Feb 19, buried in the forest). Ayrton alive, rescued, tells his
+  story (captive four months in the convicts' cave in the south valley). THE
+  BONADVENTURE DESTROYED by the convicts; a new ship of 30-40 tons begun (5-6
+  months). Tabor notice postponed. The mill, poultry-yard buildings and
+  stables burned (to rebuild). The volcano rumbling, no smoke yet. Search for
+  the protector covered the south valley, the northern lava valleys, the
+  crater and Shark Gulf — nothing. Back at Granite House Feb 25; March 25 the
+  third anniversary. Pencroff lied kindly to Harbert about Ayrton (III.8) —
+  resolved by Ayrton's return.

@@ -4099,3 +4099,43 @@ SEAMS: a consistency pass after the last round moved ~30 duplicate glosses to
 their first occurrence (talent, hoplite, Phalerum, Libya, Pelasgians, the
 Pillars of Heracles...) and harmonised ~15 spellings; the orchestrator's
 merges fixed Chalcedon, Sacae, Alpeni, Tyrrhenia. COVER: unchanged.
+
+## mysterious-island/ — Jules Verne, The Mysterious Island (1874-75), from the French
+
+SOURCE: French Wikisource's Hetzel 1875 text (proofread against the scan;
+mysterious-island/fetch_wikisource.py -> _src/wikisource/), with Gutenberg
+#14287 as a second witness that check.py compares word for word — Gutenberg
+lacks Verne's 62 chapter summaries and 25 footnotes, ends I.1 early and drops
+half a sentence in I.19. Crib: Stephen W. White's 1876 translation (Gutenberg
+#8993), cut per chapter into reference/; abridged ~17%, renames the cast. NOT
+USED: Kingston (1875), which censored Nemo's history in III.16. 62 files, one
+per chapter, three word-form Part dividers ("Part One: Shipwrecked in the
+Air", "Part Two: The Marooned Man", "Part Three: The Secret of the Island"),
+"Chapter N: Title" restarting in each Part, Verne's summary as an italic
+line under each heading. 204,102 -> ~210k words, ratio 1.03 (verify band
+0.9-1.5); `check.py --modern` checks heading, summary, notes, banned old
+names, would-be headings, quotes, and lists French numerals missing from the
+English (footnote markers and dropped centigrade asides are the expected
+hits).
+UNITS — THE REVERSE OF THE OTHER VERNES: the heroes are American, so Verne
+wrote feet, miles and Fahrenheit and added metric for French readers. The
+American units stay, the metric asides and conversion footnotes go, and a
+stand-alone centigrade figure (I.16, II.8, II.11, III.19) becomes Fahrenheit.
+Verne's own metric readings (a barometer in millimetres, "ten liters") stay.
+RULINGS (text_analysis.txt has the twelve; the batch sections of
+running_notes.txt log every instance by file): Nab speaks plain English, no
+dialect; "mon maître" = "my master"; the narrator's racial noun for him ->
+"Nab"; "a Black man" only in his I.2 history; two racial asides cut (I.12
+cooking, II.2 dancing); II.6's facial-angle comparison to named peoples cut
+and Pencroff's dark-skin slur for the ape -> "hairy rascal" (both flagged to
+Alex); the II.9 "Your superior" joke kept whole; "un sauvage" (Ayrton) = "a
+wild man"; "les sauvages" (Pacific islanders) = "the islanders"; "Malay
+pirates" kept; "Lapons" -> "the Sami"; Nemo's history at full strength, no
+note (eight must_contain pins on III.16 alone). Verne's slips kept (Tabor
+"northeast", the April 5 fall of Richmond, his dates that don't fit the two
+earlier books — the publisher's notes about them are dropped and the fact
+goes in the introduction).
+SEAMS: names fixed by the orchestrator between batches (Glycerin Creek, "the
+old spillway", "percussion-cap guns", "burnt linen", "my boy", the "..."
+ellipsis); then a consistency pass. COVER: Jules Férat, the balloon down on
+the sea, from the 1875 Hetzel edition.
