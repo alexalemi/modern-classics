@@ -461,9 +461,16 @@ def build_cover(book, env, meta, pages, paper, workdir, spine_override=None, pri
     if pages >= 48:
         safety = 0.0625 if spine >= 0.35 else 0.03125
         size = max(6.0, min(10.0, (spine - 2 * safety) * 72 * 0.62))
-        spinetext = (f'#place(top + left, dx: {sx0 + safety:.4f}in, block(width: {spine - 2 * safety:.4f}in, height: 100%, '
+        # the Emend mark (reversed: white E, light caret) at the foot of the
+        # spine, upright; the title is centred in the space above it
+        mw = min(0.28, 0.75 * (spine - 2 * safety))
+        mh = mw * 263 / 141                          # emend-mark viewBox aspect
+        foot = 0.5                                   # from the bleed edge: 0.375in above trim
+        spinetext = (f'#place(top + left, dx: {sx0 + safety:.4f}in, block(width: {spine - 2 * safety:.4f}in, height: {H - foot - mh - 0.15:.4f}in, '
                      f'align(center + horizon, rotate(90deg, reflow: true, text(fill: cmyk(0%, 0%, 0%, 0%), size: {size:.1f}pt, '
-                     f'[{esc(env["ORIGINAL_WORK"])} #h(1.5em) #emph[{esc(env["AUTHOR"])}]])))))')
+                     f'[{esc(env["ORIGINAL_WORK"])} #h(1.5em) #emph[{esc(env["AUTHOR"])}]])))))\n'
+                     f'#place(bottom + left, dx: {sx0 + spine / 2 - mw / 2:.4f}in, dy: -{foot:.4f}in, '
+                     f'image("brand/emend-mark-reversed.svg", width: {mw:.4f}in))')
     else:
         spinetext = "// under 48 pages: Ingram allows no spine text"
     # barcode: ours (100% black on white) when we have an ISBN, else the
@@ -681,6 +688,7 @@ def main():
     workdir = ROOT / "build" / "print" / book
     workdir.mkdir(parents=True, exist_ok=True)
     (workdir / "brand").mkdir(exist_ok=True)
+    shutil.copy(ROOT / "brand" / "emend-mark-reversed.svg", workdir / "brand")   # spine foot
     for name in ("emend-mark", "emend-wordmark"):
         shutil.copy(ROOT / "brand" / f"{name}.svg", workdir / "brand")
         # the cover's copies print the navy as pure black: an RGB navy
