@@ -28,9 +28,12 @@ from pathlib import Path
 import assemble  # find_epub, read_env
 
 ROOT = Path(__file__).parent
-# www is the no-redirect host: bare alexalemi.com 301s via plain http,
+# emend.press is the canonical host (GitHub Pages custom domain, set in the
+# repo's Pages settings; site/CNAME records it). Before 2026-10 the site
+# lived at www.alexalemi.com/modern-classics, which GitHub now redirects.
+# Historical note: www was the no-redirect host: bare alexalemi.com 301s via plain http,
 # which simple e-reader OPDS clients refuse to follow.
-DEFAULT_BASE = "https://www.alexalemi.com/modern-classics"
+DEFAULT_BASE = "https://emend.press"
 
 # book dir -> site page, where the page name differs from the dir name
 # The published filename now lives in each book's env as PAGE, read by

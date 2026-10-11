@@ -128,6 +128,19 @@ def build(key, navy=NAVY, red=RED, suffix=""):
     body = (f'<path fill="{navy}" d="{e_path}"/>\n'
             f'<path fill="{red}" d="{car}"/>')
     (OUT / f"emend-mark{suffix}.svg").write_text(svg(W, H, body, "Emend Press"))
+    if not suffix:
+        # favicon: the same mark on a square canvas, trimmed to a small
+        # margin so it fills a browser tab instead of shrinking to a sliver
+        m = 6
+        top, bot = pad - m, c_top + c_h + m
+        side = bot - top
+        x0f = pad + ew / 2 - side / 2
+        import math
+        side_i = math.ceil(side)
+        (OUT / "emend-favicon.svg").write_text(
+            f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{x0f:.2f} {top:.2f} {side_i} {side_i}" '
+            f'width="{side_i}" height="{side_i}" role="img" aria-label="Emend Press">\n'
+            f'<title>Emend Press</title>\n{body}\n</svg>\n')
 
     # ---- WORDMARK: EMEND (serif) / PRESS (sans), caret under the E ------
     size = 200.0
