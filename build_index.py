@@ -373,6 +373,7 @@ PAGE = '''<!DOCTYPE html>
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Yellowtail&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="site.css">
+	<link rel="icon" type="image/svg+xml" href="brand/emend-mark.svg">
 </head>
 
 <body>
@@ -389,6 +390,7 @@ PAGE = '''<!DOCTYPE html>
 </svg>
 
 <header class="masthead">
+  <a class="imprint" href="about.html"><img src="brand/emend-wordmark.svg" alt="Emend Press"></a>
   <h1>{h1}</h1>
   <p class="motto">{motto}</p>
   <nav>{nav}</nav>

@@ -960,6 +960,26 @@ and Tarbell are in the first table. The copyright column is a FIRST READ.
 | The Conquest of Happiness (1930) | Bertrand Russell | DONE 2026-09-20, restored (conquest/). PD in the US since 1 Jan 2026 (1930 works); still in copyright in the UK/EU (Russell d. 1970). Gutenberg #77894; 1930 Allen & Unwin scans on Archive.org (conquest_happiness, dli.ernet.242732). Added by Alex 2026-09-20 |
 | A Dictionary of Modern English Usage (1926) | H. W. Fowler | DONE 2026-09-28, restored (fowler/). PD in the US (1926 works, since 2022) and in the UK (Fowler d. 1933). NOT on Gutenberg: an OCR build, ~760 pages in double columns. Take the 1926 Clarendon printing (Archive.org dictionaryofmode0000hwfo_b7l9, bwb_T5-BCG-591, dli.ernet.29413, dli.bengal.10689.920, in.ernet.dli.2015.231095); later reprints to 1937 are the same text, but the 1965 Gowers revision is a different book and in copyright. Restored edition: Fowler's prose is the point. Added by Alex 2026-09-21 |
 
+### Candidate: D'Arcy Wentworth Thompson, On Growth and Form (Alex, 2026-10-10)
+
+RESTORED EDITION, not a retelling: Thompson is one of the great English
+prose stylists of science, and modernizing him would remove the reason to
+read him. The work is the apparatus: captions and alt text for several
+hundred figures (the transformation grids of fish, skulls and crabs above
+all), the mathematics typeset properly, an editor's introduction, a real
+epub -- the Royal Institution / Helmholtz / Euler pipeline (RESTORED.md,
+CAPTIONS.md).
+UNVERIFIED, CHECK BEFORE STARTING:
+- Copyright: the 1917 first edition (Cambridge) is US public domain by
+  date. The enlarged 1942 second edition needs a renewal check
+  (cce-renewals TSVs, see the copyright-renewal memory). Thompson died
+  1948, so both are UK public domain. Default to 1917 unless 1942 clears.
+- Source: locate a clean scan or transcription (Gutenberg / Internet
+  Archive / Wikisource) and record its id; the figures will need the
+  scan regardless of the text source.
+- Size: ~800 pages in 1917 -- a Helmholtz/Euler-scale project, and the
+  figure count is the real cost.
+
 ## Gaps and a new list (Alex, 2026-09-28)
 
 THE GAPS: popular science from outside Britain, anything much outside

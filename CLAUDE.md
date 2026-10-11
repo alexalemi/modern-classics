@@ -234,6 +234,24 @@ What to preserve:
   typogrify` unescapes `&lt;`, `&#x3C;` and `&#60;` alike into a bare `<`.
   The modern build refuses to proceed and asks for a rewording; the original
   build cannot reword its author, so it re-escapes after typogrify.
+- `build_print.py {book} [--isbn N --price 14.99 --spine W]` — 5x8 paperback
+  files for IngramSpark from the built epub (Typst; EB Garamond 11pt):
+  `{isbn}_txt.pdf` (grayscale) and `{isbn}_cov.pdf` (CMYK, our EAN-13+price
+  barcode), both PDF/X-3:2002 via Ghostscript, plus report.txt and proof/
+  contact sheets in build/print/{book}/. Specs and their source (Ingram's
+  File Creation Guide, Aug 2026) are in the docstring. Pass --spine from
+  Ingram's Cover Template Generator before uploading; the default is an
+  estimate. Cover colours are Typst cmyk() and RGB SVGs go through
+  -dUseFastColor so black stays pure K and total ink stays under 240%.
+- `brand/` — the Emend Press logos (Emend Press publishes the Modern
+  Classics series): `make_logo.py` outlines the type (Cormorant Garamond
+  SemiBold + Montserrat Medium, fonts via `fetch_fonts.sh`) so the SVGs need
+  no fonts; copies live in `site/brand/` (favicon, masthead, book pages).
+  `rebrand.py` puts the mark in every epub's imprint and colophon and names
+  Emend Press as publisher. BUMP `rebrand.VERSION` whenever rebrand's
+  rewrites change: build_ebook reuses se drafts, and a draft rewritten by an
+  older rebrand silently keeps the old wording; a stamp mismatch forces a
+  fresh draft. `rebuild_all.sh` rebuilds every epub and page.
 - `legacy/` — the original API-based batch translator and prompt templates,
   plus old book-specific assemblers. Reference only; see `legacy/README.md`
   (note: their `max_tokens` settings truncate full chapters).

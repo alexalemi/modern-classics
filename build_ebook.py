@@ -838,6 +838,11 @@ def main():
     slug = f"{slugify(author)}_{slugify(work)}"
     dest = BUILD_ROOT / slug
 
+    import rebrand
+    stamp = dest / ".rebrand-version"
+    if dest.exists() and (not stamp.exists()
+                          or stamp.read_text().strip() != rebrand.VERSION):
+        shutil.rmtree(dest)        # stale branding: see rebrand.VERSION
     if not dest.exists():
         BUILD_ROOT.mkdir(parents=True, exist_ok=True)
         run([SE, "create-draft", "--author", author, "--title", work],

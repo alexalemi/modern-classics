@@ -12,6 +12,17 @@ import re
 from pathlib import Path
 
 REPO = "https://github.com/alexalemi/modern-classics"
+PUBLISHER = "Emend Press"
+# BUMP THIS WHENEVER THE REWRITES BELOW CHANGE. build_ebook reuses each
+# book's se draft between runs, and these rewrites match SE's TEMPLATE text --
+# on a draft already rewritten by an older version they match nothing and the
+# old wording ships silently (found when Emend Press replaced Modern Classics
+# as publisher: every reused draft kept the old imprint). build_ebook throws
+# away any draft whose stamp differs and starts from a fresh create-draft.
+VERSION = "2026-10-11-emend-press"
+# the publisher's mark, in place of Standard Ebooks' logo (brand/make_logo.py)
+MARK = Path(__file__).resolve().parent / "brand" / "emend-mark.svg"
+MARK_ALT = "The Emend Press logo: a capital E with a red caret beneath it."
 
 
 
@@ -27,6 +38,7 @@ def esc(s):
 
 
 def apply(dest, env, meta, spine, original=False):
+    (dest / ".rebrand-version").write_text(VERSION + "\n")
     _content_opf(dest, env, meta, spine, original)
     pn = dest / "production-notes.md"
     if pn.exists() and not pn.read_text().strip():
@@ -34,9 +46,9 @@ def apply(dest, env, meta, spine, original=False):
     _imprint(dest, env, meta, original)
     _colophon(dest, env, meta, original)
     _uncopyright(dest, env, meta)
-    logo = dest / "src/epub/images/logo.svg"
-    if logo.exists():
-        logo.unlink()
+    # SE's logo.svg is replaced by the Emend Press mark, at the same path, so
+    # the imprint and colophon keep SE's structure with our publisher's logo
+    (dest / "src/epub/images/logo.svg").write_text(MARK.read_text())
 
 
 def _content_opf(dest, env, meta, spine=(), original=False):
@@ -51,13 +63,13 @@ def _content_opf(dest, env, meta, spine=(), original=False):
 
     # publisher block: Modern Classics
     t = t.replace('<dc:publisher id="publisher">Standard Ebooks</dc:publisher>',
-                  '<dc:publisher id="publisher">Modern Classics</dc:publisher>')
+                  f'<dc:publisher id="publisher">{PUBLISHER}</dc:publisher>')
     t = t.replace('<meta property="file-as" refines="#publisher">Standard Ebooks</meta>',
-                  '<meta property="file-as" refines="#publisher">Modern Classics</meta>')
+                  f'<meta property="file-as" refines="#publisher">{PUBLISHER}</meta>')
     t = t.replace('<link href="https://standardebooks.org/" refines="#publisher" rel="schema:url"/>',
                   f'<link href="{REPO}" refines="#publisher" rel="schema:url"/>')
     t = t.replace('<meta property="a11y:certifiedBy" refines="#conformance-statement">Standard Ebooks</meta>',
-                  '<meta property="a11y:certifiedBy" refines="#conformance-statement">Modern Classics</meta>')
+                  f'<meta property="a11y:certifiedBy" refines="#conformance-statement">{PUBLISHER}</meta>')
 
     # title/subtitle
     if env.get("SUBTITLE") and 'id="subtitle"' not in t:
@@ -217,23 +229,21 @@ def restored(env):
 def _imprint(dest, env, meta, original=False):
     p = dest / "src/epub/text/imprint.xhtml"
     t = p.read_text()
-    t = re.sub(r'\t*<img[^>]*logo\.svg[^>]*/>\n', "", t)
-    t = re.sub(r'<header>\s*<h2 epub:type="title">([^<]*)</h2>\s*</header>',
-               r'<h2 epub:type="title">\1</h2>', t)
+    t = re.sub(r'(<img[^>]*?)alt="[^"]*"([^>]*logo\.svg)', r'\1alt="%s"\2' % MARK_ALT, t)
     intro = (
         f'This ebook is a <a href="{REPO}">Modern Classics</a> restored '
-        f'edition: the author\u2019s own text, unchanged, with a caption and '
+        f'edition from {PUBLISHER}: the author\u2019s own text, unchanged, with a caption and '
         f'alt text written for every plate. It is not affiliated with or '
         f'endorsed by Standard Ebooks, whose open tooling and style manual '
         f'were used to produce it.'
         if restored(env) else
         f'This ebook is the companion original-text edition to a '
-        f'<a href="{REPO}">Modern Classics</a> retelling: the source text as '
+        f'<a href="{REPO}">Modern Classics</a> retelling from {PUBLISHER}: the source text as '
         f'published, so that a reader can see what the retelling is a '
         f'retelling of. It is not affiliated with or endorsed by Standard '
         f'Ebooks, whose open tooling and style manual were used to produce it.'
         if original else
-        f'This ebook is a <a href="{REPO}">Modern Classics</a> retelling: a '
+        f'This ebook is a <a href="{REPO}">Modern Classics</a> retelling from {PUBLISHER}: a '
         f'classic public domain text, retold in contemporary English with the '
         f'help of Claude, an AI model by Anthropic. It is not affiliated with '
         f'or endorsed by Standard Ebooks, whose open tooling and style manual '
@@ -267,7 +277,7 @@ def _imprint(dest, env, meta, original=False):
         'The original source text and artwork in this ebook are believed to be in the United States public domain')
     t = t.replace(
         'Standard Ebooks is a volunteer-driven project that produces ebook editions of public domain literature using modern typography, technology, and editorial standards, and distributes them free of cost. You can download this and other ebooks carefully produced for true book lovers at <a href="https://standardebooks.org/">standardebooks.org</a>.',
-        f'Modern Classics retells great books in a modern, conversational voice — faithful to the original meaning, and genuinely fun to read. The retelling is released under the MIT license; you can read all the books, and inspect every stage of how they were made, at <a href="{REPO}">github.com/alexalemi/modern-classics</a>.')
+        f'Modern Classics, a series from {PUBLISHER}, retells great books in a modern, conversational voice — faithful to the original meaning, and genuinely fun to read. The retelling is released under the MIT license; you can read all the books, and inspect every stage of how they were made, at <a href="{REPO}">github.com/alexalemi/modern-classics</a>.')
     p.write_text(t)
 
 
@@ -329,9 +339,7 @@ def _colophon(dest, env, meta, original=False):
                   + esc(env["ORIGINAL_WORK"]) + "</i>",
                   'epub:type="se:name.publication.%s">' % pub_semantic(meta)
                   + esc(env["ORIGINAL_WORK"]) + "</i>")
-    t = re.sub(r'\t*<img[^>]*logo\.svg[^>]*/>\n', "", t)
-    t = re.sub(r'<header>\s*<h2 epub:type="title">([^<]*)</h2>\s*</header>',
-               r'<h2 epub:type="title">\1</h2>', t)
+    t = re.sub(r'(<img[^>]*?)alt="[^"]*"([^>]*logo\.svg)', r'\1alt="%s"\2' % MARK_ALT, t)
     # ANCHOR ON THE PHRASE, NOT ON WHAT FOLLOWS IT. `se create-draft` writes
     # "was published in <time>YEAR</time> by <author>" for a named author but
     # "was published in <time>YEAR</time>." for an anonymous one, so matching
@@ -358,7 +366,7 @@ def _colophon(dest, env, meta, original=False):
           '<br/>\n\t\t\tby<br/>\n\t\t\t'
           '<b epub:type="z3998:personal-name">Alex Alemi</b> and Claude,')
     t = t.replace('This ebook was produced for<br/>\n\t\t\t<a href="https://standardebooks.org/">Standard Ebooks</a><br/>\n\t\t\tby<br/>\n\t\t\t<a href="PRODUCER_URL">PRODUCER_NAME</a>,<br/>',
-                  f'{made}\n\t\t\t<a href="{REPO}">Modern Classics</a>{by}<br/>')
+                  f'{made}\n\t\t\t<a href="{REPO}">Modern Classics</a>, a series from {PUBLISHER},{by}<br/>')
     src = env.get("SOURCE_URL")
     src_name = env.get("SOURCE_NAME", "Project Gutenberg")
     trl = env.get("TRANSLATOR") or env.get("TRANSLATORS")
