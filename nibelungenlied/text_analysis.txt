@@ -1,0 +1,460 @@
+THE NIBELUNGENLIED -- TEXT ANALYSIS AND TRANSLATION STRATEGY
+(written at setup, 2026-10-10. A scholarly modernization of a canonical
+medieval epic, from the Middle High German.)
+
+Sections: 1 source and edition; 2 the work and its shape; 3 the governing
+decision (prose); 4 voice; 5 locked vocabulary and names; 6 the narrator's
+formulas; 7 famous passages; 8 sensitive content; 9 headings and format;
+10 ratio and checks; 11 reception (for the introduction, NOT the text);
+12 open questions for Alex.
+
+
+1. SOURCE AND EDITION
+
+THE ROADMAP WAS WRONG ABOUT THE SOURCE. Gutenberg #14915 is not Middle High
+German: it is Karl Simrock's New High German verse translation (his last
+edition), and it follows the C version -- it ends "das ist das
+Nibelungenlied" (C's "daz ist der Nibelunge liet"), not B's "daz ist der
+Nibelunge nôt". It is kept in _src/ and was consulted once (strophe 524).
+
+THE TEXT WE TRANSLATE: Karl Bartsch's edition of the B version, "Der
+Nibelunge Nôt" (Leipzig: Brockhaus, 1870-80), in the raw form of the Oxford
+Text Archive's text 0202, as published by Bibliotheca Augustana (Ulrich
+Harsch). This is the standard reading text: Bartsch's numbering, revised
+by de Boor, is the standard numbering modern editions and translations
+cite (which ones: verify before the introduction). 39 Aventiuren, 2,379 strophes. MANUSCRIPT
+TRADITION: B (St. Gallen, Cod. Sang. 857, c. 1250), the "nôt" version,
+the older of the two redactions; not C (the "liet" version, about twenty
+years younger and more courtly) and not Lachmann's A.
+
+The OTA typing is lower-case and keeps manuscript-like spellings: v for u
+(vns, chvene = küene), ch for k (chvnech = künec), c for z (ecel = Etzel,
+ze/ce), and no length marks (maere = mære). A few late Aventiuren switch to
+u-spellings (uil, uon). Read through the spelling; the crib settles sense.
+
+Strophes Harsch supplied in italics where the OTA typing lacked them: 1, 3,
+18, 389, 523, 524. All are Bartsch's text. STROPHE 1 ("Uns ist in alten
+mæren wunders vil geseit") IS NOT IN MANUSCRIPT B: Bartsch, like every
+reading edition, prints it from A/C. It is the poem's most famous strophe
+and the edition keeps it (the introduction should say so in a sentence).
+
+prep.py repairs three strophes the OTA typing gives with three lines, from
+Reichert's diplomatic transcription of B (the second witness): 524 (B's
+line, which Bartsch moves here from 523), 1555, 2288. Each is asserted.
+
+CRIB: Daniel B. Shumway, The Nibelungenlied (Houghton Mifflin, 1909),
+Gutenberg #1151 -- a COMPLETE, LITERAL PROSE translation of Bartsch's B
+text, the same text we translate. It runs 1.05 English words per MHG word
+(1.01-1.16 per Aventiure), which is what complete-and-literal looks like.
+reference/NNN.txt holds his Adventure with note markers and endnotes
+removed. No strophe numbers, so alignment is per Aventiure.
+THE CRIB'S COSTUME: Shumway's preface says he made "the language to some
+extent archaic, especially in dialogue, in order to give the impression of
+age": ye, thou, spake, quoth, hight, wot, fain, an', "passing bold",
+"worship" (for êre), "hightide", "lordings", "thereto". None of it is the
+poet's (whose-archaism-is-it): MHG was the living language of its
+audience. check.py sweeps for all of it. Use him for what a strophe MEANS.
+
+NOT USED, and why (all measured, _src/):
+  Armour 1897 (#3636), prose, 0.94 of the MHG -- complete in its 39
+    Adventures but condensing (Shumway's preface names the habit:
+    prose translations that "retell the story instead of translating it").
+  Horton 1898 (#59831, also SE), Needler 1904 (#7321): verse; a verse
+    crib bends the sense to the rhyme. Lettsom 1850 (#38468): verse, and
+    Lachmann's A, a different text.
+  Simrock (#14915): C version, NHG verse, different numbering (~2,495).
+
+COPYRIGHT: Bartsch (d. 1888) and Shumway (1909) are public domain. The OTA
+typing and Harsch's supplements add no copyrightable expression to a
+public-domain text under US law (the project's existing ruling for
+transcriptions); OTA texts sometimes carry a non-commercial licence of
+their own, which Alex may want to look at (section 12). Reichert's
+diplomatic B is used only as a checking witness and is never reproduced.
+
+
+2. THE WORK AND ITS SHAPE
+
+An anonymous Austrian poet, working around 1200 (the scholarly consensus
+places him at or near the court of Bishop Wolfger of Passau; verify the
+phrasing before the introduction), gathered centuries-old heroic legend --
+the destruction of the Burgundian kingdom by the Huns in 436-37, Attila's
+death in 453, the Siegfried story the Norse also told -- into one long
+poem in four-line rhymed strophes, set in the courtly world of his own
+day. Two halves, which this edition marks with word-form Part dividers:
+
+  Part One: Siegfried            Aventiuren 1-19   (files 000-018)
+    Siegfried comes to Worms to win Kriemhild; helps Gunther win Brunhild
+    by deceit (twice); the queens' quarrel exposes the deceit; Hagen
+    murders Siegfried; Hagen sinks the Nibelung treasure in the Rhine.
+  Part Two: Kriemhild's Revenge  Aventiuren 20-39  (files 019-038)
+    Kriemhild marries Etzel, king of the Huns; after thirteen years she
+    invites her brothers; the Burgundians ride east knowing they will not
+    return; the feast becomes a massacre; the hall burns; Rüdiger dies
+    between two loyalties; Dietrich takes Gunther and Hagen; Kriemhild
+    kills them both; Hildebrand kills her.
+
+The division is the poem's: the first nineteen Aventiuren were the "first
+Rhenish part" for Simrock's Vorrede, and Armour prints Book I/Book II at the
+same seam. The dividers are "Part One: Siegfried" and "Part Two:
+Kriemhild's Revenge" (word form: assemble.PART_LINE would DELETE a Roman
+numeral). Chapters number 1-39 continuously across both Parts, as every
+edition numbers the Aventiuren: "Chapter 39" is the 39th Aventiure.
+
+ONE FILE PER AVENTIURE, no splits: the largest (20, 147 strophes, 5,020
+MHG words) projects to about 6,000-6,500 English, under the ~7k cap. The
+smallest (34, 19 strophes; 1, 19 strophes) stay whole: an Aventiure is the
+poem's own unit and every reader's reference.
+
+
+3. THE GOVERNING DECISION: PROSE
+
+THE ODYSSEY CASE, NOT THE INFERNO CASE. inferno/ kept verse, tercet for
+tercet, because the tercet is Dante's unit of thought and the line count
+can be held exact. odyssey/ went to prose (Alex's ruling) because the
+hexameter has no English shape that is not padding and 12,000 lines of it
+is a novel-length story a reader wants as prose. The Nibelungenstrophe is
+Homer's case: a long-line rhymed quatrain whose rhymes are carried by
+filler ("daz ist wâr", "der recke küene", "sît"), 9,500 long lines, a story
+told for its plot and its people. So: VIVID MODERN PROSE, every strophe's
+content present and in order, the poet's machinery kept instead of his
+metre (sections 4 and 6). Say in the front matter that it is prose.
+
+WHAT THE STROPHE STILL GIVES US: the strophe is the unit the reader can
+check, so every agent marks where each one begins ({N}, Bartsch's number)
+in a draft, and check.py proves all 2,379 present, once, in order (section
+10). The markers never reach the page.
+
+
+4. VOICE
+
+THE NARRATOR is a performer in front of an audience. He says "I", he
+addresses "you" ("now you can hear wonders told"), he tells you what he
+has heard and what he cannot tell, and above all he TELLS YOU THE ENDING
+IN ADVANCE, again and again (section 6). Keep his first person and his
+address to the listener; keep every intrusion. His register is plain,
+grave, sometimes dry, occasionally grimly funny (Volker's "fiddle bow",
+Hagen's toast). It is NOT courtly-precious and NOT Wagnerian.
+
+READABILITY IS THE DELIVERABLE (Alex, 2026-09-02): every sentence one a
+bright fourteen-year-old could read aloud and follow. Concretely:
+- Join the strophes into real paragraphs (typically two to five strophes
+  a paragraph, breaking at a change of scene or speaker); dialogue in
+  quotation marks with modern paragraphing.
+- Ceremony is plot here: who greets whom first, who rises, who rides
+  beside whom, who gives what gift, who stands at the stirrup. Keep all
+  of it, lucidly; the queens' quarrel and Hagen's refusal to rise are
+  about precisely this. Clothes, horses, gold and silk in their lists:
+  text, not decoration -- the poet's audience loved them; keep every item.
+- The rhyme-fillers: render each epithet at least as a word ("bold
+  Gernot"), never as a doubled phrase ("the bold, the brave warrior"
+  where the MHG has one idea); "daz ist wâr" and "daz sage ich iu" become
+  the narrator's own "truly", "believe me", "I tell you" -- kept as a
+  voice, not mechanically every time, never cut as a habit.
+- Fold what a reader needs into the sentence (the Verne rule; NO notes):
+  "the margrave -- the lord who guarded Etzel's western border --" once,
+  where it first matters; never a footnote, never a bracket.
+
+CHARACTERS (keep them distinct; the poem's power is in them):
+  Kriemhild: in Part One a young, proud, loving princess -- and the one
+    who unwittingly betrays Siegfried's weak spot. In Part Two grief made
+    iron: patient, calculating, still grieving; the poem calls her both
+    faithful and a she-devil. Render both; take no side the poem doesn't.
+  Siegfried: dazzling, generous, impulsive, boastful at first; loyal to
+    Gunther to the point of deceit; his dying speech is bitter and kind.
+  Gunther: the king, decent, weak, dependent on others' strength.
+  Hagen: the poem's most complex figure -- the murderer, the most loyal
+    vassal, the clear-eyed realist who knows they are riding to their
+    deaths and goes, sardonic, fearless, contemptuous. Never a cartoon
+    villain; never a hero the poem doesn't make him.
+  Brunhild: a warrior-queen of superhuman strength in her own land, a
+    humiliated wife at Worms. Proud, wronged, then nearly silent.
+  Volker: the knight-fiddler, Hagen's friend; wit and ferocity.
+  Rüdiger: the generous margrave, the poem's best man, destroyed by
+    oaths that cannot all be kept. His crisis (37) is the moral centre.
+  Dietrich: the exiled king among the Huns, grave, wise, reluctant;
+    Hildebrand his old armsmaster. Etzel: a mighty, generous, outwitted
+    king, not a monster. Giselher: the youngest, warm, innocent.
+
+
+5. LOCKED VOCABULARY AND NAMES
+
+NAMES (check.py fails the unlocked forms and warns on a missing locked
+one): Siegfried; Kriemhild; Gunther, Gernot, Giselher ("young Giselher");
+Ute (their mother); Dankrat (their father); Hagen of Tronje; Dankwart
+(Hagen's brother); Ortwin of Metz; Volker of Alzey, "Volker the fiddler";
+Gere; Eckewart; Rumold (master of the kitchen); Sindold; Hunold; Siegmund
+and Sieglinde (Siegfried's parents); Brunhild; Liudeger (of Saxony) and
+Liudegast (of Denmark); Alberich (the dwarf); Schilbung and Nibelung
+(the princes whose treasure Siegfried took); Balmung (Siegfried's sword,
+later Hagen's); Etzel (king of the Huns -- NEVER "Attila" in the text;
+the introduction makes the connection); Helche (Etzel's late queen);
+Ortlieb (Etzel and Kriemhild's son); Blödel (Etzel's brother); Werbel and
+Swemmel (Etzel's fiddlers, his envoys); Rüdiger of Pöchlarn ("the
+margrave"); Gotelind (his wife); Dietrich of Bern; Hildebrand; Wolfhart,
+Helfrich, Helmnot, Wolfwin, Wolfbrand, Sigestab, Ritschart, Gerbart,
+Wichart (Dietrich's men, "the Amelungs"); Iring of Denmark; Irnfried of
+Thuringia; Hawart of Denmark; Bishop Pilgrim of Passau; Else and Gelfrat
+(Bavarian lords); Ramung, Gibeche, Hornboge (Etzel's vassal princes).
+Umlauts kept: Rüdiger, Blödel, Pöchlarn.
+
+PEOPLES AND PLACES:
+  the Burgundians (Burgonden) -- the Nibelungs (see the RULE below) --
+  the Huns (Hiunen); the land of the Huns -- the Saxons, the Danes --
+  Worms on the Rhine; Xanten (Siegfried's home, in the Netherlands);
+  Isenland and its castle Isenstein (NEVER "Iceland": the poem's Isenland
+  is not the modern island, and the word would hand the reader a false
+  fact); Etzel's castle (Etzelnburg) -- route of the journey east, by
+  their modern names: Lorsch, the Danube, Passau, the Inn, Enns, Eferding,
+  Pöchlarn, Melk, Mautern, Traismauer, Tulln, Vienna, Wieselburg,
+  Esztergom (Gran) -- Bern (Dietrich's city: Verona. The poem first names
+  it in Aventiure 28 (file 027); give it there once, in the sentence --
+  "Hildebrand of Bern, the Italian city we call Verona" -- because "Bern"
+  alone hands a modern reader Switzerland), Metz, Alzey, Tronje, Spessart, the Vosges (Waskenwald).
+  RULE -- WHO ARE "THE NIBELUNGS"? In Part One the Nibelungs are
+  Siegfried's treasure-people and land; from Aventiure 25 on, the poem
+  calls the Burgundians "Nibelungs" (they now hold the treasure). Use
+  "Nibelungs" exactly where the poem does, "Burgundians" where it does;
+  never "correct" either. Where the shift first happens (Aventiure 25),
+  one clause in the sentence may say "the Burgundians -- the Nibelungs,
+  as they were called now --" if the sentence needs it.
+
+TITLES AND RANKS: künec / küneginne = king / queen; vogt = lord (or
+"ruler"); marcgrâve = margrave (glossed once in the sentence, 20); vürste
+= prince; herre = lord; vrouwe = lady (as address, "my lady"); magedîn /
+maget / juncvrouwe = girl / young lady / maiden (sparingly); ritter =
+knight; recke / degen / helt = warrior / fighter / hero (vary freely; not
+always "knight"); knehte = squires / young men; ingesinde = household,
+retinue; man (someone's "man") = vassal or "his men"; eigen man /
+eigenholt = BONDSMAN: a man who is another's property-in-service, owing
+tribute and duty -- this is the queens' quarrel (13-14) and it is locked;
+mâge / vriunde = kinsmen / family (vriunt is usually kin, not "friend").
+
+THE MORAL VOCABULARY (the poem turns on these; keep each in its lane):
+  triuwe        loyalty (faithfulness to a sworn bond: vassal to lord,
+                wife to husband, host to guest). The adjective getriuwe =
+                loyal, faithful. untriuwe / ungetriuwe = treachery,
+                treacherous, faithless. Never "troth", never "fealty".
+  êre           honour (also: honours = splendour, gifts, rank).
+                NEVER Shumway's "worship".
+  lop / prîs    renown / fame / praise.
+  ellen         courage.  küene = bold, brave.  snel = swift, quick.
+  übermuot      arrogance (Brunhild's, Hagen's, the Burgundians').
+  hôher muot    high spirits / pride (good sense).
+  leit          grief, sorrow; also the WRONG suffered ("Kriemhild's
+                wrong" -- in 23 "how she planned to avenge her wrongs").
+  liebe ... leit   joy ... sorrow; the poem's master pair (section 7).
+  nît / haz     hatred, malice, envy.  zorn = anger, rage.
+  râche         revenge.  mort = murder (Siegfried's death is "murder",
+                and the word is the poem's: ermort, mortlîch).
+  minne         love (also the memorial cup in 32; see section 7).
+  arebeit       hardship, struggle, ordeal (NOT "work").
+  nôt           distress, peril, extremity, doom; in the poem's last
+                words, "der Nibelunge nôt" = "the fall of the Nibelungs".
+  sælde         good fortune, blessing.  vâlant / vâlandinne = devil /
+                she-devil.  tiuvel = devil.
+  heiden / kristen  pagan / Christian (never "heathen" as a noun of
+                contempt; "pagan" is the plain word).
+
+OBJECTS AND CUSTOMS:
+  tarnkappe / tarnhût = the cloak of invisibility (gloss once, in the
+    sentence, when Hagen tells the story in 3 and when Siegfried uses it
+    in 6-7: it makes him invisible and gives him the strength of twelve
+    men); afterwards "the cloak", "his magic cloak". Never "Tarnkappe".
+  hort / schaz der Nibelunge = the Nibelung treasure (or "the treasure",
+    "the hoard" sparingly).  Balmung = the sword (named).
+  hôchgezît = festival / feast / celebration; the wedding where it is
+    one. NEVER "hightide" (Armour's calque).
+  bûhurt / buhurt = mock battle on horseback, a tournament melee (gloss
+    in the sentence the first time). tjost = joust. ros = horse/warhorse.
+  palas = the great hall.  kemenâte = the women's chambers, a lady's room.
+  münster = the cathedral (Worms, 14) / church.
+  videlære = fiddler; videlboge = fiddle bow (Volker's grim joke: his
+    sword is his bow; keep it, it is the poet's).
+  Units: a rast (484) is a day's stage of travel; render the distance as
+    "more than a hundred days' journey" (the sense) -- the poem's
+    exaggeration stays exaggerated. Money and measures are given as the
+    poem gives them ("twelve wagons", "a hundred pack-horses' load").
+
+ADDRESS: du / ir: the MHG switch between intimate du and formal ir
+carries tone in the queens' quarrel and in Hagen's insults; English
+"you" can't show it, so let the word choice carry it (curt, contemptuous,
+tender), never "thou". Kriemhild to Hagen in Part Two: icy formality.
+
+
+6. THE NARRATOR'S FORMULAS
+
+THE FORESHADOWING IS THE POEM'S MACHINE. Dozens of strophes end with the
+narrator telling you what it will cost: "sît" (later), "daz wart in sît
+leit", "des muosen sît engelten", "durch sîn eines sterben starp vil
+maneger muoter kint" (19). These are not decoration and a retelling that
+trims them has removed the book's tragic structure. RULES:
+- Every one is kept, in its strophe, at the end of its paragraph where
+  the MHG puts it at the end of a strophe.
+- A small stable core of words: "later", "in the end", "sorrow",
+  "cost ... their lives", "would regret it". Vary the sentence, keep the
+  core. Short, plain, ominous: "Later it cost many a mother's son his
+  life." "He would come to regret that bitterly."
+- Never comic, never melodramatic ("little did they know...!" is banned).
+The other formulas: "Now you can hear..." (the narrator's announcement);
+"as I have heard tell" (his source); "I cannot tell you..." (his limits);
+"there was great weeping" / lament (kept, varied, not multiplied). The
+greeting and arming formulas are kept at full length: they are scenes.
+
+
+7. FAMOUS PASSAGES -- LOCKED RENDERINGS (must_contain.txt pins them)
+
+  1     The old stories tell us many wonders: of heroes worthy of praise,
+        of great hardship, of joy and feasting, of weeping and lament;
+        and now you can hear wonders told of bold warriors' battles.
+        (Pin: "The old stories tell us many wonders")
+  13-14 Kriemhild's dream of the falcon torn by two eagles. Ute: "The
+        falcon you are raising is a noble man."  (pinned)
+  17    "...how love is repaid with sorrow in the end."  (pinned; it is
+        answered by 2378 -- the poem's frame. Keep the exact echo.)
+  19    "...for the death of that one man, many a mother's son would die."
+  86-101 Hagen's story of young Siegfried: the treasure, Alberich, the
+        dragon, the bath in its blood that made his skin like horn.
+  839   Kriemhild: "How could a vassal's concubine ever become a king's
+        wife?"  (pin: "concubine"; see section 8)
+  902   the linden leaf between his shoulders (Kriemhild to Hagen).
+  921   Kriemhild's dream of two boars hunting Siegfried across the
+        heath "and the flowers turned red".
+  988   "Then Kriemhild's husband fell among the flowers."  (pinned)
+  1960  Hagen's toast: "Let us drink to the dead, and pay for the king's
+        wine!" -- "trinken wir die minne": the memorial cup drunk to the
+        dead (Johannesminne). (Pin: "pay for the king's wine")
+  1961  Ortlieb's head falls into Kriemhild's lap. Plain. (section 8)
+  2153  Rüdiger: "Oh, God help me, wretched man that I am, that I ever
+        lived to see this!" -- the loyalties he cannot keep at once.
+  2371  Hagen: "No one knows where the treasure is now but God and me —
+        and from you, she-devil, it will stay hidden forever."
+        (Pin: "but God and me")
+  2378  "...as joy always turns to sorrow in the end."  (pinned)
+  2379  "Here the story ends: this is the fall of the Nibelungs."
+        (pinned; the last line of the book)
+
+
+8. SENSITIVE CONTENT -- RULINGS
+
+A canonical medieval epic about loyalty, deceit, murder and annihilation.
+Measured register throughout: render the poet's world as his, never
+sensationalize, never bowdlerize, never annotate, never add a modern
+judgement the poem does not make (the Verne rule; the herodotus/odyssey
+violence rule: plain words, nothing cut, nothing relished).
+
+1. THE VIOLENCE. The second half is a massacre: Hagen's beheading of the
+   ferryman (1562) and his attempt to drown the chaplain (1575-81); the
+   killing of the child Ortlieb at the table (1961); severed heads and
+   hands; the hall burned with the Burgundians inside (36); the survivors
+   drinking the blood of the dead to quench their thirst (2114-17); the
+   bodies thrown down the stairs (34); Gunther's head carried in by the
+   hair (2369); Kriemhild beheading the bound Hagen with Siegfried's sword
+   (2373); Hildebrand hewing Kriemhild to pieces (2376-77). The poet
+   narrates all of it at the same even pace. So do we: short sentences,
+   exact, no adjectives he did not use, no gore he did not write, no
+   softening ("killed" where he says beheaded is softening).
+2. THE BRIDAL NIGHTS (10). Brunhild ties Gunther hand and foot with her
+   belt and hangs him on a nail all night (637); the next night Siegfried,
+   invisible, overpowers her in the dark for Gunther, takes her ring and
+   belt, and withdraws; Gunther then sleeps with her, and with her
+   virginity her strength is gone (675-82). The poet plays the first
+   night half as farce and the second as a violent struggle. It is a
+   rape by proxy in all but name and the poem does not call it that.
+   Render it exactly as written: the farce as farce (Gunther's humiliation
+   is the joke, not Brunhild's), the struggle as a struggle, her loss of
+   strength as the poem states it, nothing explicit beyond the MHG, no
+   wink, no modern comment. The theft of ring and belt is plot: keep it
+   precise.
+3. THE QUARREL (14). Kriemhild calls Brunhild "mannes kebse": a vassal's
+   CONCUBINE (locked; the insult is exact and the word is clear), and
+   says (840) Siegfried was the first to sleep with her ("den minnet
+   êrste Sîvrit ... der dir den magetuom an gewan" -- "it wasn't my
+   brother who took your virginity"). Plain and adult, not coarse: these
+   are queens shouting on the cathedral steps. "Bondsman" is the other
+   locked insult (section 5).
+4. A WIFE BEATEN. Siegfried beats Kriemhild for having talked (894: "he
+   has beaten me black and blue for it"). One plain sentence, as written.
+5. RELIGION. Etzel is a pagan; Kriemhild's reluctance to marry a pagan
+   (1248, 1261) and her having Ortlieb baptized (1388); Christians and
+   pagans at Etzel's court (1335); the chaplain; Mass at Worms and at
+   Etzel's court. Plain, the poet's terms: "pagan", "Christian".
+6. THE HUNS. A people in the poem, not a slur; the poet is sometimes
+   contemptuous of their fighting and that is his narrator's view,
+   rendered as his. Etzel is not demonized and must not be.
+7. "SHE-DEVIL" (2371) and "the devil" (Gunther of Brunhild, 649):
+   Hagen's word and Gunther's, kept.
+8. LOYALTY. The poem shows triuwe destroying everyone who keeps it.
+   Render it neither as a virtue to admire nor as a pathology to
+   diagnose: as the poem's characters' iron obligation (see 11).
+
+
+9. HEADINGS AND FORMAT
+
+Headings (manifest "title"; agents copy them exactly), from the poem's own
+rubrics (manifest "mhg_title"), "How ..." kept as the rubric's form:
+  Chapter 1: The Nibelungs ... Chapter 39: How Lord Dietrich Overcame
+  Gunther and Hagen. part_before: 000 "Part One: Siegfried", 019 "Part
+  Two: Kriemhild's Revenge".
+Body: prose paragraphs, one blank line between; dialogue in straight
+double quotes, single inside; real em dashes (—); straight apostrophes.
+No tabs, no indentation, no markup, no notes, no part lines.
+DRAFTS: agents write drafts/NNN.txt with {N} strophe markers; check.py
+writes modern_chapters/ (section 10).
+
+
+10. RATIO AND CHECKS
+
+Ratio = English words / MHG words (the tabbed verse lines only). Shumway's
+complete literal prose is 1.05 overall, 1.01-1.16 per file. A readable
+retelling that joins strophes into sentences, resolves the filler and
+folds in what a reader needs lands ABOVE a literal crib: expect about
+1.1-1.35. PROVISIONAL check.py band 1.0-1.6; re-derive it from file 000
+(the dogen rule) and record the result in running_notes. BELOW SHUMWAY'S
+RATIO FOR THE FILE IS A RED FLAG FOR COMPRESSION; above ~1.45 means
+explaining or padding.
+verify.py counts chapters/ including the "[N]" lines (2,379 tokens, about
+3% of the denominator), so its figures run slightly under check.py's:
+run `python3 verify.py nibelungenlied --min-ratio 0.95 --max-ratio 1.55`
+(provisional, re-derive with the band). Expected total: about 90-110k
+English words from 81,430 MHG.
+
+check.py (see its docstring): source structure against witnesses prep did
+not produce (Reichert's B, divided into Aventiuren independently;
+Shumway's and Armour's 39; the 2,379 total); per draft, every strophe
+marked once and in order; heading, prose form, renderer, quotes, Shumway
+archaism sweep, unlocked name forms; locked names warned when missing.
+
+
+11. RECEPTION -- FOR THE INTRODUCTION, NEVER THE TEXT
+
+The poem was lost from view for two centuries and rediscovered in 1755
+(manuscript C at Hohenems). The nineteenth century made it "the German
+Iliad", a national epic, and the twentieth weaponized its central value:
+"Nibelungentreue" (Chancellor von Bülow, 1909, of Germany's loyalty to
+Austria-Hungary); Göring's speech of 30 January 1943 comparing the Sixth
+Army at Stalingrad to the Burgundians fighting on in the burning hall;
+Nazi schoolbook use. Wagner's Ring is a different work drawn mostly from
+the Norse sources (the Volsunga saga, the Edda), not this poem. None of
+this belongs in the retelling, which must neither glorify the loyalty
+(the reception's error) nor lecture against it (an anachronism the poem
+does not make). It belongs in the editor's introduction, along with: the
+anonymous poet and Passau; the historical Burgundians (436) and Attila
+(d. 453); Etzel = Attila, Dietrich = Theodoric (who was born after
+Attila died -- the legend's anachronism); the A/B/C manuscripts and that
+this is B; strophe 1 from A/C; and that this edition is prose.
+
+
+12. OPEN QUESTIONS FOR ALEX (recommendation first; agents follow it until
+he answers)
+
+a. Prose, not verse. RECOMMENDED (section 3).
+b. Source Bartsch/B via Augustana-OTA; crib Shumway. RECOMMENDED. OTA's
+   own licence terms for text 0202 are unverified: the words are
+   Bartsch's (PD); the typing adds nothing copyrightable in the US.
+c. "Isenland" not "Iceland". RECOMMENDED.
+d. "Rüdiger of Pöchlarn" (modern name, as malory/ gave recognisable
+   places their modern names) vs. the traditional "Rüdiger of
+   Bechelaren" (Edwards). RECOMMENDED Pöchlarn, weakly; the other
+   Danube towns take modern names either way.
+e. Part dividers "Part One: Siegfried" / "Part Two: Kriemhild's Revenge".
+f. Etzel stays Etzel in the text; Attila only in the introduction.

@@ -1,0 +1,567 @@
+ON THE GENEALOGY OF MORALS -- TEXT ANALYSIS AND TRANSLATION STRATEGY
+Friedrich Nietzsche, Zur Genealogie der Moral. Eine Streitschrift
+(Leipzig: C. G. Naumann, 1887; written in Sils-Maria in July 1887, in
+about three weeks). Translated FROM THE GERMAN (the Colli-Montinari text
+via Nietzsche Source, eKGWB/GM, which keeps the first edition's
+spelling), with Horace B. Samuel's 1913 English (Standard Ebooks) as a
+crib for sense only.
+
+This is a scholarly modernization of a canonical philosophical text.
+Every claim in it is Nietzsche's, rendered as his: measured, never
+softened, never sensationalized, never annotated.
+
+
+1. THE WORK AND ITS SHAPE
+
+A "polemic" -- Nietzsche's word, on the title page -- in three essays,
+written as a supplement to Beyond Good and Evil (1886) and the most
+sustained argument he ever published. Its question: where did our
+morality come from, and what is it worth? His answer is a history, told
+as a psychologist and a philologist, of how three things came to be.
+
+  PREFACE (8 sections). We seekers of knowledge do not know ourselves.
+    How his doubts about the origin of good and evil began (as a boy of
+    thirteen); his quarrel with Paul Rée and the "English" genealogists;
+    the real question is the VALUE of morality, not just its history;
+    how to read him (slowly, "like a cow": rumination).
+  ESSAY ONE: "Good and Evil," "Good and Bad" (17). Two moralities.
+    Noble morality says "we are good" first and "bad" (schlecht) is an
+    afterthought: the common, the low. Slave morality starts from hatred
+    of the masters -- "evil" (böse) -- and calls itself "good" only by
+    contrast. The priestly revaluation; the Jews as the priestly people
+    who began "the slave revolt in morality" (his thesis, restated from "Beyond Good and Evil");
+    ressentiment that becomes creative; the lambs and the birds of prey;
+    "the doer is a fiction added to the deed"; Rome against Judea; the
+    closing Note proposing a prize essay on the history of moral concepts.
+  ESSAY TWO: "Guilt," "Bad Conscience," and the Like (25). Man as the
+    animal that is entitled to make promises; memory burned in by pain;
+    guilt (Schuld) descends from debt (Schulden); punishment as the
+    creditor's pleasure in cruelty; the origin of justice and the state
+    (the "pack of blond beasts of prey" that founds it); bad conscience as
+    instinct turned inward when man was shut inside society; the debt to
+    the ancestors becomes the debt to God; Christianity's "stroke of
+    genius" (God paying himself); the Greek gods as the opposite use of
+    gods; the man of the future, who will redeem us from the ideal --
+    "Zarathustra the godless".
+  ESSAY THREE: What Is the Meaning of Ascetic Ideals? (28) Opens on a
+    motto from Zarathustra; Nietzsche calls the essay a commentary on it.
+    What ascetic ideals mean to artists (Wagner's Parsifal), philosophers
+    (Schopenhauer, Kant's "disinterested" beauty), priests (the ascetic
+    priest as physician and shepherd of the sick herd, who redirects
+    ressentiment: "you yourself are to blame"), and to science (the will
+    to truth is the last form of the ascetic ideal). "Man would rather
+    will nothingness than not will" -- the essay's first and last line.
+
+Structure (asserted by check.py against zeno.org's contents page and
+Standard Ebooks' section ids, neither produced by our pipeline): Preface
+8 + 17 + 25 + 28 = 78 numbered sections, plus the front note, the
+Preface dateline, the Note closing Essay One, and the Essay Three motto.
+
+14 FILES (prep.GROUPS), cut only at section boundaries:
+  000 Preface 1-8                    2,530 German words
+  001-003 Essay One 1-9 / 10-13 / 14-17 + Note
+  004-007 Essay Two 1-6 / 7-11 / 12-17 / 18-25
+  008-013 Essay Three 1-7 / 8-11 / 12-16 / 17-20 / 21-24 / 25-28
+45,919 German words; Samuel's crib 51,740 (1.13).
+
+
+2. WHOSE DIFFICULTY IS IT? (the governing decision)
+
+Zarathustra's obstacle was a costume -- Common's King James grammar --
+and removing it was the job. The Genealogy's crib screens differently:
+calque 37.4, sentence 39.9 (45% of sentences over 35 words), archaism low.
+Apply the whose-archaism-is-it test feature by feature:
+
+  THE SENTENCE LENGTH IS NIETZSCHE'S. His German runs in long chains:
+  clause, dash, parenthesis, colon, a second thought, an ironic aside,
+  "…". That is his voice -- quick, combative, talking over the reader's
+  objection -- and it is also the main thing that stops a fourteen-year-
+  old. Ruling: SPLIT a long sentence where the meaning allows it, at its
+  own joints (a colon, a semicolon, a dash that begins a new thought),
+  and keep every clause. KEEP his rhetoric: the dash that throws in a
+  second thought, the colon that delivers the punch, the rhetorical
+  question, the "…" that trails off knowingly, the "— —" of a pause, the
+  imagined interlocutor ("— 'But why are you still talking about
+  nobler ideals?'"). A sentence he made short and hard stays short and
+  hard ("Here is the workshop." "The deed is everything.").
+
+  THE CALQUES ARE SAMUEL'S (and Levy's house style). They are what the
+  calque score measured: "transvaluation" (Umwerthung), "resentment"
+  for Ressentiment (which in English means mere annoyance), "the morality
+  of morals" (Sittlichkeit der Sitte, a sense-destroying pun), "sacerdotal"
+  for priesterlich, "the instinct of cruelty", "physiological failures",
+  "pathos of distance", "ens", Latinate abstraction everywhere. Each of
+  these gets a locked plain rendering in section 4, or, where the term is
+  one the book TURNS ON, a locked term glossed once inside a sentence.
+
+  THE PHILOLOGY IS THE ARGUMENT. Essay One argues from etymology
+  (schlecht/schlicht, bonus/bellum, esthlos, malus/melas, the Gaelic
+  "fin") and Essay Two from a pun (Schuld/Schulden). These cannot be
+  "modernized away"; they are made readable (section 5).
+
+THE HUME RULE APPLIES. Where the German is already clear, plain and
+short, the English is clear, plain and short in the same shape. A file
+in which every sentence has been rewritten has been damaged.
+
+
+3. VOICE
+
+A scholar who is spoiling for a fight. Four registers, often in one
+section:
+  - ARGUMENT: close, dialectical, every step visible; he anticipates
+    objections and answers them.
+  - POLEMIC: sarcasm, contempt, mock-politeness ("I beg your pardon"),
+    name-calling of the "English psychologists", Dühring, the
+    antisemites, the "beautiful souls". Sharp, funny, never shrill.
+  - PROPHECY and lyric: the "great health", the man of the future, the
+    "Let us take a look" passages, the end of Essay Two. Elevated, but in
+    plain words.
+  - DRAMA: he stages scenes -- the workshop where ideals are made (I 14,
+    a dialogue with "Mr. Rash-and-Curious"), the lambs and the birds of
+    prey, the creditor at the debtor's body, the priest and his sick
+    flock.
+He addresses "us", "we seekers of knowledge", "my readers", "you";
+keep the second person where he uses it, and his "we".
+He loves a coinage and a scare-quote: render the coinage with a
+hyphenated or plain English coinage ("the will-to-nothingness"), and
+keep his quotation marks around words he is holding at arm's length
+(the "good", "free will", "objectivity").
+Contractions: only in imagined voices and quoted sneers, never in his
+argument. American spelling.
+
+
+4. LOCKED VOCABULARY (and the reason for each)
+
+CROSS-BOOK LOCKS, shared with zarathustra/ (same author, same edition):
+  Übermensch -> overman (no instance in GM; lock carried for any echo)
+  Wille zur Macht -> will to power
+  der Erkennende / wir Erkennenden -> seeker(s) of knowledge
+    ("we seekers of knowledge", Preface 1 and III 12, 24)
+  Erkenntniss -> knowledge
+  böse / schlecht -> evil / bad (zarathustra 056's lock; here it is the
+    whole of Essay One -- see below)
+  Pöbel -> the mob; Gesindel -> the rabble (distinct)
+  Heerde -> the herd; Heerden-Thier -> herd animal
+  Mitleid -> pity (never compassion: it praises what he attacks)
+  Ekel -> disgust; der Ekel am Menschen -> disgust with man
+  Weib -> woman; Weibchen / Weiblein -> his diminutive stays
+    ("little woman", "little hysterical cultured woman")
+  der Mensch -> man (the species, in the argument: "man is the sick
+    animal"); people / human beings / humanity as the sentence needs
+  Geist -> spirit; geistig -> spiritual, or "of the mind" where plainly
+    intellect (geistigste Rache -> "the most spiritual revenge")
+  heilig -> holy; Priester -> priest; Wahrheit -> truth
+  Zarathustra's own lines quoted here use zarathustra's renderings
+    (the Essay III motto; "Zarathustra the godless")
+
+GOOD / BAD / EVIL -- the distinction the first essay turns on.
+  gut -> good. schlecht -> bad. böse -> evil. NEVER interchange them,
+  never use "wicked" or "base" for either. "Gut und Schlecht" -> "good
+  and bad" (the noble pair); "Gut und Böse" -> "good and evil" (the
+  slave pair). When he puts the words in quotes, keep the quotes.
+  "Jenseits von Gut und Böse" -> "Beyond Good and Evil", which
+  "at least does NOT mean 'Beyond Good and Bad'" (I 17).
+  schlimm -> bad / harmful ("das Schlimme"), but where it could be
+  mistaken for schlecht inside Essay One, prefer "harmful", "ill".
+  schlecht / schlicht (I 4): "schlecht" once meant "schlicht" -- plain,
+  simple, common. Keep both German words in this one passage and gloss
+  them in the sentence (section 5).
+
+MASTERS AND SLAVES.
+  Herren-Moral -> master morality; Sklaven-Moral -> slave morality
+  der Sklavenaufstand in der Moral -> the slave revolt in morality
+    (his phrase, emphasised in I 7; locked, never "slave revolt in morals")
+  vornehm -> noble (the "good = noble = powerful" equation of I 7
+    turns on it; "aristocratic" only where he says aristokratisch)
+  Vornehmheit -> nobility; die Vornehmen -> the noble
+  edel -> noble too (where he uses it of character), wohlgeboren ->
+    well-born; gemein -> common; niedrig -> low; Plebejer -> plebeian
+  Herr -> master; Knecht -> servant; Sklave -> slave
+  Pathos der Distanz -> "pathos of distance" (his term; glossed ONCE in
+    I 2 inside the sentence -- the lasting feeling of height and
+    difference that the noble have toward those below)
+  Rangordnung -> order of rank
+  die Herrschenden -> the rulers; die Ohnmächtigen -> the powerless
+
+RESSENTIMENT -- kept in French, as he kept it.
+  Nietzsche wrote the French word in a German book, on purpose: no
+  German word said what he meant. English "resentment" means everyday
+  annoyance and loses the technical sense (the impotent's lasting,
+  inward, revengeful hatred, which in the end CREATES values). So:
+  "ressentiment", lowercase, roman (not italic: his emphasis gets the
+  asterisks), glossed ONCE inside the sentence at its first real use
+  (I 10) -- e.g. "ressentiment -- the impotent, festering hatred of
+  people who cannot strike back". "Mensch des Ressentiment" -> "the man
+  of ressentiment". "resentment" is banned (check.py).
+
+THE PRIESTLY REVALUATION.
+  Umwerthung (aller Werthe) -> revaluation (of all values). Not Levy's
+  "transvaluation", a word no reader uses.
+  Werth -> value; Werthschätzung / Werthung -> valuation, evaluation
+  Werthe schaffen -> create values
+  Sittlichkeit der Sitte -> "the morality of custom" (his term from
+  Daybreak; glossed once at its first use, Preface 4 (000): the long prehistoric age when being
+  moral simply meant obeying custom). Not "morality of morals".
+  das asketische Ideal -> the ascetic ideal; asketische Ideale ->
+  ascetic ideals; der asketische Priester -> the ascetic priest
+  Askese -> asceticism; Asket -> ascetic
+
+GUILT AND DEBT -- the pun is the argument.
+  German Schuld means BOTH "guilt" and "debt"; Schulden is "debts";
+  schuldig "guilty" and "owing". English has no single word. Ruling:
+  - Schuld (moral) -> guilt; Schulden / Schuld (money) -> debt(s);
+    Schuldner -> debtor; Gläubiger -> creditor.
+  - II 4, where he states the thesis ("that the central moral concept
+    Schuld, 'guilt', took its origin from the very material concept
+    Schulden, 'debts'"): give BOTH German words, once, in the sentence,
+    and say plainly that in German they are one word. That one sentence
+    makes the rest of the essay readable. Nowhere else does the German
+    appear.
+  - Where the argument depends on the double sense (II 4-8, 19-22),
+    let the English carry it with "owe / owing / debt / guilt" side by
+    side ("the feeling of guilt, of owing"). Never a footnote.
+  - II 21 "Schuld und Pflicht" -> guilt and duty; "Verschuldung" ->
+    indebtedness; "Schuldgefühl" -> the feeling of guilt.
+  III 15 "Ich leide: daran muss irgend Jemand schuld sein" -> "I am
+    suffering: someone must be to blame for this" ... "you yourself are
+    to blame for yourself!" (schuld sein = to be to blame).
+
+CONSCIENCE AND MEMORY.
+  das schlechte Gewissen -> the bad conscience (always; never "guilty
+  conscience": that collapses the very thing he is separating from guilt)
+  Gewissen -> conscience; Gewissensbiss -> the sting of conscience
+  Verinnerlichung -> internalization ("what I call the internalization
+  of man", II 16)
+  Gedächtniss -> memory; Vergesslichkeit -> forgetfulness (active!)
+  Mnemotechnik -> the technique of memory (mnemonics)
+  das souveraine Individuum -> the sovereign individual
+  versprechen dürfen -> to be entitled to make promises ("an animal
+  that is entitled to make promises")
+  Verantwortlichkeit -> responsibility
+  Strafe -> punishment; Vergeltung -> retribution; Rache -> revenge
+  Grausamkeit -> cruelty; Gerechtigkeit -> justice; Gnade -> mercy
+  (II 10's "self-overcoming of justice" is mercy, Gnade).
+  Selbstaufhebung -> self-overcoming (II 10, III 27) -- WHY: he glosses
+  it himself in III 27 as "Selbstüberwindung", and "self-cancellation"
+  loses the law of life he means; keep the pair visible in III 27 as
+  "self-overcoming" for Selbstüberwindung and "an act of self-
+  cancellation" for Selbstaufhebung there only.
+
+THE BLOND BEAST.
+  die blonde Bestie -> the blond beast (I 11, three times; II 17 "a
+  pack of blond beasts of prey"). Locked, never softened, never
+  explained in the text. See section 7.
+  Raubthier -> beast of prey; Raubvogel -> bird of prey; Lamm -> lamb
+  Herren-Rasse -> master race (II 17: his phrase, kept; see section 7)
+  Rasse -> race (in his 19th-century sense: a stock, a people, a class
+  of descent; he says "races" of the noble Romans, Arabs, Japanese)
+
+THE ASCETIC PRIEST AND THE SICK.
+  der Kranke / die Kranken -> the sick; Krankheit -> sickness
+  krankhaft -> morbid; Verunglückte (physiologisch) -> the failures, the
+  physiologically botched ("those who turned out badly" -- plain words,
+  not Samuel's "physiological failures")
+  Wohlgerathenheit / die Wohlgerathenen -> those who turned out well
+  Hirt -> shepherd; Heerde -> herd
+  Heiland -> Savior (III 9, 14, 15, 17: the German word means both
+    healer and savior, and he plays on the doctor-priest; carry it in
+    the sentence at its first use in III 14: "the 'Savior,' the healer")
+  Sünde -> sin; Sünder -> sinner; Erlösung -> redemption
+  der Wille zur Wahrheit -> the will to truth
+  Wissenschaft -> science, in his broad sense (all disciplined inquiry,
+    scholarship included); "scholarship" where he means philology
+  der freie Geist -> the free spirit; Freigeist -> free spirit (lowercase)
+  das Nichts -> nothingness ("will nothingness")
+  der Wille zum Nichts -> the will to nothingness
+  horror vacui -> horror vacui, glossed in the sentence ("its horror of
+    a vacuum") -- III 1, once
+
+OTHER FIXED TERMS.
+  Streitschrift -> polemic. Abhandlung -> essay. Vorrede -> preface.
+  Genealogie -> genealogy. Herkunft -> origin / descent; Ursprung ->
+  origin (he contrasts neither; "origin" is fine for both).
+  Moral -> morality (the system); moralisch -> moral
+  Vorurtheil -> prejudice. Instinkt -> instinct. Affekt -> affect,
+  passion, emotion (by context; "affect" only in a list of technical
+  psychology). Lust / Unlust -> pleasure / displeasure.
+  "Englische Psychologen" -> "the English psychologists" (his target;
+  he includes the German Paul Rée among them). Keep the label.
+  der Täter / das Thun -> the doer / the deed (I 13; "the doer is merely
+  a fiction added to the deed -- the deed is everything").
+  das "Ding an sich" -> the "thing in itself"
+  Spelling: AMERICAN (honor, color, skeptic).
+  Book titles: in double quotes, as he gives them ("Beyond Good and
+  Evil", "Daybreak", "The Gay Science", "Human, All Too Human", "The
+  Wanderer and His Shadow"), never italics (the asterisks are his
+  emphasis only).
+
+Rule of use: a locked term is locked in meaning AND in form; once the
+ledger marks a gloss spent, it is never re-glossed.
+
+
+5. FOREIGN LANGUAGES, THE PHILOLOGY, CITATIONS
+
+The reader is fourteen, reads no Latin or Greek, and has no first
+edition of Nietzsche's earlier books. Nietzsche's readers had all three.
+  GREEK (I 5, I 10, II 23's Homer, III 22, III 26 Anacreon): Greek
+  script is TRANSLITERATED (esthlos, kakos, deilos, agathos, melas,
+  gennaios, rhathymia, oizyros, anolbos, tlemon, dystychein, xymphora,
+  eu prattein, chasm' odonton), in roman type, each followed by its
+  meaning in the sentence. Reasons: a fourteen-year-old cannot sound
+  out Greek letters, and Alex's e-reader fonts lack the script (the
+  CrossPoint note). check.py bans Greek characters. Where Nietzsche's
+  point is the etymology, make the point visible ("esthlos, which at
+  root means one who IS, who is real, who is true").
+  GERMAN WORDS THE ARGUMENT TURNS ON: kept, once, inside the sentence,
+  with the English beside them: schlecht / schlicht (I 4), Schuld /
+  Schulden (II 4), Heiland (III 14), Gut / Böse / Schlecht in the essay
+  titles only where he discusses the words as words. Otherwise
+  everything is English.
+  LATIN, FRENCH, ITALIAN: TRANSLATED inside the sentence, every time.
+  Tiny tags that English readers know may stay, with the meaning in the
+  same sentence (pathos of distance is English already; "par
+  excellence"; "fiat justitia"). Specifically: bonus / bellum / duonus
+  (I 5) keep the Latin words because they ARE the argument; malus /
+  melas likewise; "hic niger est" (Horace: "that man is black-hearted
+  -- beware of him") translated in the sentence; I 15's long Latin
+  passage from Tertullian (De spectaculis 29-30) and the line from
+  Thomas Aquinas -> ENGLISH, complete, every clause, inside Nietzsche's
+  quotation marks, with "Tertullian writes, in Latin:" or similar
+  if needed; Nietzsche's own German parenthesis inside the Latin (that
+  from here on Tertullian means the Jews, with the Talmudic name for
+  Jesus's mother) stays as his aside. II 5's Twelve Tables "si plus
+  minusve secuerunt, ne fraude esto" -> English. III 7 "pereat mundus,
+  fiat philosophia, fiat philosophus, fiam!" -> English ("let the world
+  perish, but let there be philosophy, the philosopher -- ME!"). III 9
+  "nitimur in vetitum" (Ovid) -> English ("we strive for the
+  forbidden"). Stendhal's "une promesse de bonheur" (III 6) -> "a
+  promise of happiness"; "le désintéressement" -> "disinterestedness".
+  Pascal's "il faut s'abêtir" (III 17) -> "one must make oneself
+  stupid". "morbidezza" (III 1) -> "a little languid softness". The
+  rule is the Verne rule: the reader gets the meaning in the sentence,
+  never a footnote, never untranslated.
+  CITATIONS OF HIS OWN BOOKS: Nietzsche cites earlier books by the page
+  of their first editions ("Jenseits von Gut und Böse" p. 118;
+  Morgenröthe S. 17 ff.). KEEP each citation, with its numbers, as
+  given -- ("Beyond Good and Evil," p. 118) -- so that nothing is lost
+  and a later sweep can convert them to section numbers if Alex
+  decides so (flagged; the section equivalents are NOT to be supplied
+  from memory). check.py's numeral warning watches them.
+  "vergleiche oben Seite 30" (II 11) points back into this book, to
+  I 14, where the men of ressentiment call their revenge "the triumph
+  of justice" (checked at setup). Render: "(compare Essay One, section
+  14, above)".
+
+
+6. HEADINGS AND CONVENTIONS
+
+HEADINGS (manifest.json, copied verbatim, straight quotes):
+  000          Preface
+  001-003      Essay One: "Good and Evil," "Good and Bad"
+  004-007      Essay Two: "Guilt," "Bad Conscience," and the Like
+  008-013      Essay Three: What Is the Meaning of Ascetic Ideals?
+  The Essays are top-level sections (no part dividers); build_ebook
+  reads "Essay One:" as label Essay, ordinal 1. Titles follow the
+  established English names (Kaufmann's form for Two and Three), which
+  is also how a reader will search for them. (Flagged for Alex.)
+  Split files: line 1 the heading, line 2 "(Part n of k)", and no other
+  divider. Parts 2+ open on their first section numeral.
+
+SECTION NUMBERS: each of Nietzsche's numbered sections opens on a lone
+roman numeral line ("XIII"), as in zarathustra/: assemble sets a lone
+roman numeral as an h4, but a lone "13" as a stray paragraph. The
+number is the same number; any passage can still be found in another
+edition by essay and section. (Flagged for Alex.)
+
+FRONT NOTE (000, first paragraph): the 1887 title page's verso,
+"Dem letztveröffentlichten 'Jenseits von Gut und Böse' zur Ergänzung und
+Verdeutlichung beigegeben." -> locked:
+  *Added to my most recently published book, "Beyond Good and Evil," as a supplement and clarification.*
+(eKGWB omits it; prep takes it from zeno. It is part of the book as
+published, the CLAUDE.md dedication rule.)
+
+DATELINE (000, last paragraph): locked
+  *Sils-Maria*, Upper Engadine, in July 1887.
+(the terminal full stop keeps assemble from setting it as a heading).
+
+THE NOTE CLOSING ESSAY ONE (003): "Anmerkung." -> "Note." opening the
+paragraph, then the prize question as its own paragraph in quotation
+marks and emphasis (locked in running_notes), then the second note
+paragraph. It is Nietzsche's, in small type in the original; it is
+ordinary text here.
+
+THE ESSAY THREE MOTTO (008, before section I): two paragraphs, locked
+from zarathustra 007 (GM's version drops "Brave" and reads "sie liebt"):
+  Carefree, mocking, violent — that is how wisdom wants *us*: she is a woman, she only ever loves a warrior.
+  Thus spoke Zarathustra.
+Nietzsche says in Preface 8 that the essay is a commentary on this
+"aphorism"; the Preface agent renders that sentence knowing so.
+
+VERSE: one block only, the three Homer lines in II 23 (Odyssey
+1.32-34, Zeus on Aegisthus), tab-indented, three lines, in quotation
+marks as in the German. Plain modern verse, no rhyme (Nietzsche gives
+Voss's unrhymed hexameters).
+
+EMPHASIS: his letter-spaced words are *x* in chapters/ and land on the
+corresponding English word: the SAME number of spans per file
+(check.py). Never add emphasis. 1,000+ spans in the book: this is a
+real feature of his voice ("*we* are good"), not decoration.
+
+DASHES AND ELLIPSES: his "—" (spaced em dash) and his "…" (one
+character) stay as real characters; "— —" stays. Never "--".
+
+QUOTATION MARKS: straight double quotes outside, straight single
+inside (the collection's convention; zarathustra/ used curly, which is
+the one difference between the two Nietzsche books -- flagged). His
+„..." scare-quotes become "...".
+
+
+7. SENSITIVE CONTENT -- render HIS argument as his
+
+The Genealogy is the Nietzsche text most often conscripted: by the
+Nazis (the "blond beast", "master race", the Jews and the slave revolt)
+and, in the other direction, softened by admirers. This edition does
+neither. Each ruling is why the agent needs to add, cut, or note
+NOTHING. The context belongs in the editor's introduction, never in the
+text.
+
+  THE BLOND BEAST (I 11, II 17). Nietzsche's image is the LION -- the
+  "blond" beast of prey -- for the predatory freedom of every noble
+  caste, and he names them himself in the same sentence: "the Roman,
+  Arabian, Germanic, Japanese nobility, Homeric heroes, Scandinavian
+  Vikings". It is not a racial category in his text; it is a metaphor
+  across peoples, and in the same section he says that between the old
+  Germanic tribes and "us Germans" there is "hardly a conceptual, let
+  alone a blood relationship". Render every word of it, including the
+  admiration and the horror he expresses, at full strength. Never gloss
+  it, never apologize for it, never sharpen it.
+  "MASTER RACE" (II 17, Herren-Rasse) and "ARYAN" (I 5, I 11, III 26):
+  his 1880s philological vocabulary; Herren-Rasse in II 17 is the
+  conquering caste that founds the state ("a pack of blond beasts of
+  prey, a conquering master race"). Kept literally, as he wrote it,
+  because the later meaning is exactly what a reader must be able to
+  check against the text. I 5's colour etymology (malus/melas, the
+  dark-haired pre-Aryan population, the "blond, conquering race",
+  Virchow's map, the Celts as blond) is 19th-century philology and
+  race-anthropology; render it as his argument, plainly, with his
+  own hedges ("perhaps", "at least the Gaelic offered me").
+  THE JEWS (I 7, I 8, I 9, I 16; III 22): his thesis that the slave
+  revolt in morality begins with the Jews, "that priestly people", is
+  a claim about the history of VALUES, stated with his mixture of
+  hostility and awe (I 7: "the truly great haters in world history
+  have always been priests"; I 16: "the priestly people of ressentiment
+  par excellence, in whom there dwelt an unequaled genius for popular
+  morality" -- set beside "similarly gifted peoples, the Chinese or the
+  Germans", to feel "what is of the first rank and what of the fifth"). Render it exactly, in a measured voice, with his
+  emphasis; do not soften "hatred" or "revenge", do not heighten them.
+  "Israel" stays "Israel"; "Judäa" -> Judea; "Rom gegen Judäa, Judäa
+  gegen Rom" -> "Rome against Judea, Judea against Rome" (pinned).
+  III 22's contempt for the New Testament next to his praise of the
+  Old Testament stays exactly.
+  HIS ANTI-ANTISEMITISM (II 11, III 14, III 26): his contempt for the
+  antisemites of his day -- II 11 "this plant blooms most beautifully
+  today among anarchists and antisemites"; III 14 Dühring, "that Berlin
+  apostle of revenge ... the most indecent and repulsive moral bigmouth
+  in Germany today", "even among his own kind, the antisemites"; III 26 "these latest speculators in
+  idealism, the antisemites, who roll their eyes in a Christian-Aryan-
+  bourgeois manner" -- is AS STRONG as anything in the book and is
+  rendered at the same full strength. Neither side of his position is
+  allowed to soften the other.
+  II 7 "NEGER". Nietzsche cites doctors who treated "der Neger" (taken,
+  he says, "as representatives of prehistoric man") for internal
+  inflammations, to argue that pain hurt less in earlier times.
+  Ruling (the sensitive-content test: does the reader lose information
+  or gain a false one?): the CLAIM stays exactly, with his parenthesis;
+  the noun is rendered "Black Africans", the ordinary descriptive noun
+  of today, as "Neger" was the ordinary descriptive noun of 1887 German
+  ethnography. The English period word would add an insult the
+  sentence does not make; the modern noun hides nothing he said.
+  (Flagged for Alex.)
+  WOMEN: II 7's "hysterisches Bildungs-Weibchen" (his diminutive:
+  "a single hysterical little cultured woman"), III 1's "the angelic
+  look of a pretty, fat animal", III 14's "the sick woman", III 8 the
+  mother instinct, the Zarathustra motto: his, set down plainly, the
+  diminutives kept (the mulierculis precedent).
+  CRUELTY AND PUNISHMENT (II 3, 5, 6, 13): the catalogue of old German
+  punishments (stoning, breaking on the wheel, quartering, boiling in
+  oil, flaying, cutting flesh from the breast), the creditor's right to
+  cut flesh from the debtor, "seeing suffering does you good, making
+  suffer, even more so": plain words, every item, nothing relished,
+  nothing skipped (the Verne rule; the Herodotus precedent).
+  RELIGION: his attack on Christianity, the priest, the "stroke of
+  genius" of God paying himself, the Pauline and Lutheran passages,
+  "God as our longest lie" (III 24): full strength, measured voice.
+  OTHER PEOPLES: "the Chinese", "the Bogos" (III 14, a people of
+  Eritrea: name them so in the sentence), "the Indians in India" (III
+  17, the Aryan settlers' decline in the climate -- his theory), the
+  Brahmins, Buddhism: as he wrote them, names modernized only in
+  spelling.
+
+
+8. SOURCE NOTES
+
+German: eKGWB/GM from Nietzsche Source (fetch.sh), the digital form of
+the Colli-Montinari critical edition, KGW VI.2 (1968), which follows the
+first edition (Naumann, 1887) in spelling and Sperrdruck. There is NO
+German Genealogie on Project Gutenberg (confirmed 2026-10-10 against the
+complete Nietzsche list, author/779), nor on German Wikisource or the
+Deutsches Textarchiv; the ROADMAP's "German id still unconfirmed" is
+resolved as "none exists". prep.py converts: Sperrdruck -> *x*
+(including one "bolditalic" span in III 27), ϑ -> θ, one stray Latin u
+in a Greek word (I 11 rhathymia), section numbers -> roman lines, the
+Homer hexameters -> one tabbed block, the dateline joined.
+
+Second witness: zeno.org (Schlechta, Werke in drei Bänden, 1954, marked
+"Gemeinfrei"), compared word for word by check.py after folding the
+spelling reform. Result at setup: all 78 sections agree, except (a)
+Schlechta's page references to his OWN edition in place of Nietzsche's
+first-edition page numbers (Preface 4, II 2, II 6), (b) Schlechta's
+transliteration of the Greek in I 10, and (c) compound spacing (in
+Sonderheit / insonderheit). No text is missing on either side. The
+one line taken from zeno is the title-page note (section 6).
+
+Copyright: Nietzsche's text (1887) is public domain everywhere. The
+eKGWB critical text reproduces it; its editorial apparatus (not
+fetched, not used) is the editors'. Nietzsche Source's site states no
+licence terms we could find. zeno is the explicitly public-domain
+fallback; switching would change nothing but spelling. (Flagged.)
+
+Crib: Horace B. Samuel's translation (1913, vol. 13 of Oscar Levy's
+Complete Works), from Standard Ebooks; the same text is Gutenberg
+#52319, whose credit line also names J. M. Kennedy (who translated the
+volume's other contents -- the ROADMAP's "Kennedy #52319" is a
+misattribution). SE's section ids match eKGWB exactly (8/17/25/28), so
+the crib is cut per file by section (reference/NNN.txt); Samuel's eleven
+"H. B. S." endnotes are removed. Samuel is literal and reliable on
+sense, and he keeps Nietzsche's sentence structure, which is exactly
+why he scores 39.9 on sentence length. Use him to check what a German
+sentence says. Never borrow his words: "transvaluation", "resentment",
+"morality of morals", "physiological failures", "sacerdotal".
+
+
+9. RATIO AND CHECKS
+
+English/German whitespace-word ratio: Samuel's literal crib runs
+1.08-1.19 per file (1.13 overall). A complete modern rendering should
+land about 1.10-1.28 (zarathustra ran 1.17 on a 1.09 crib): splitting
+sentences, translating the Latin (I 15 alone is ~400 Latin words), and
+the in-sentence glosses all add words. check.py FAILS outside 0.95-1.45
+and WARNS outside 1.05-1.32. Run verify as
+  python3 verify.py genealogy --min-ratio 0.95 --max-ratio 1.45
+Expected English total: ~51,000-58,000 words.
+
+check.py (source): structure against zeno and SE; manifest form;
+the zeno word-for-word witness.
+check.py --modern (per file): exact heading and part marker; the
+section-numeral sequence; emphasis-span parity; verse-block parity;
+renderability (no paragraph the page builder would set as a heading);
+straight quotes; no "--", "_", brackets, ALL-CAPS lines or notes;
+banned forms (resentment, transvaluation, morality of morals, Greek
+script, German labels, archaisms); the LOCKS (pinned renderings);
+German numerals absent from the English (warnings); ratio.
+
+RENDERABILITY: assemble.is_subheading sets any short one-line
+paragraph with mostly capitalized words and no closing full stop as a
+heading. Nietzsche has very few one-line paragraphs, but the dateline,
+the motto attribution and a book title alone on a line are all
+candidates -- the locks above end on a full stop for that reason.

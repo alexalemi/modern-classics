@@ -1,0 +1,466 @@
+TEXT ANALYSIS — The Princess of Cleves, with The Princess of Montpensier
+Madame de Lafayette (Marie-Madeleine Pioche de La Vergne, comtesse de La
+Fayette, 1634-1693). La Princesse de Montpensier (1662) and La Princesse
+de Clèves (1678), both published anonymously. TRANSLATED FROM THE FRENCH.
+
+The first novel by a woman in the collection, and the book usually called
+the first modern novel in French: a love story told almost entirely from
+inside the mind of a sixteen-year-old wife, in a prose so restrained that
+its biggest events are a confession, a silence, and a refusal.
+
+SOURCES (all in _src/; prep.py's docstring holds the evidence)
+
+  BODY: French Wikisource, both works from ONE validated transcription
+  ("Textes validés"): Lepetit, Œuvres complètes de Mesdames de La Fayette,
+  de Tencin et de Fontaines (Paris, 1820), tome 2. Modernised spelling
+  ("était", not "étoit"). check.py proves the files are letter for letter
+  that transcription.
+  SECOND WITNESS: Gutenberg #20262 (Sledd & Gorrell, Ginn 1896), a school
+  edition in 17th-century spelling, ABRIDGED by about a quarter: it drops
+  the King's passion for Diane in the second paragraph, Madame de Chartres's
+  whole history of Diane, the Sancerre and Madame de Tournon story, the
+  Anne Boleyn history and more. Every word it does have is in ours
+  (check.py, one-way). That abridgement is also why the ROADMAP's "~50k
+  words" was low: Clèves is 60,147 French words (whitespace count; plus
+  Barbin's 100-word note), Montpensier 11,096.
+  FRONT MATTER: "Le libraire au lecteur", Barbin's 100-word note from the
+  first edition (taken from the 1689 Barbin printing on Wikisource; Lepetit
+  omits it). File 000.
+  CRIB, CLÈVES: Thomas Sergeant Perry's translation (Boston, 1891), the
+  archive.org OCR, sliced per file into reference/001-012. Complete,
+  accurate, plain 19th-century English; OCR noise. Runs 0.93-1.01 of the
+  French. Perry divides the novel into FIVE parts; we follow Lafayette's
+  four. NOT USED: Gutenberg #467, the anonymous early English version
+  (the sweep's 78.4 sentence score is its semicolon chains) -- kept in
+  _src/ only.
+  CRIB, MONTPENSIER: Oliver C. Colt's translation (Gutenberg #2365), MODERN
+  and free ("I have altered the exact way in which it is told"), probably
+  in copyright: sense only, never a phrase.
+
+STRUCTURE (manifest.json; prep.py)
+
+  Clèves has four untitled Parts and no chapters. Each Part (~15k words)
+  is three files, cut by hand at scene changes; Montpensier (Lepetit
+  prints it as three huge paragraphs) is two files, cut mid-paragraph at
+  the court ballet. 15 files, 71,343 French words.
+
+    000        The Publisher to the Reader   (divider "The Princess of
+                                               Cleves" sits above it)
+    001-003    Part One     4,878 / 4,334 / 5,958
+    004-006    Part Two     4,766 / 4,919 / 5,247
+    007-009    Part Three   4,801 / 5,021 / 5,589
+    010-012    Part Four    5,068 / 4,295 / 5,271
+    013-014    The Princess of Montpensier   5,145 / 5,951
+
+  The headings are WORD FORM ("Part One"), so assemble.PART_LINE (which
+  needs a Roman numeral or a digit) can never delete them. Every file of a
+  split section opens on the section title and then "(Part n of k)".
+
+
+THE BOOK
+
+What happens. Autumn 1558 to the winter of 1559-60, the last year of Henri
+II. Mademoiselle de Chartres, sixteen, the richest heiress in France,
+raised by her widowed mother on the principle that a woman's only
+happiness lies in loving her husband, comes to court and is married to the
+Prince of Cleves, who adores her; she respects him and does not love him.
+At a royal ball she dances, without an introduction, with the Duke of
+Nemours, the most accomplished man at court, and the two fall in love at
+sight. Neither ever says so for most of the book. Her mother, dying, sees
+it and warns her. The rest is a sequence of public scenes in which
+private feeling must not show and does: a stolen portrait, a fall from a
+horse, a lost love letter that belongs to someone else, the tournament
+where the King is killed. To protect herself she does what no wife had
+done in a novel before: she tells her husband she loves someone else and
+asks him to take her away from court -- and Nemours, hidden, overhears.
+The husband dies of grief and suspicion. She is free, Nemours is free,
+he proposes, and she refuses him, for her husband's memory and for her
+own peace of mind, and withdraws from the world.
+
+The roll-call. The opening ~2,500 words are a parade of the real court of
+Henri II: the King, Diane de Poitiers, Catherine de' Medici, Mary Stuart,
+the Guises, the Constable, the princes of the blood, each in a sentence
+of superlatives. Lafayette's readers knew them all from the memoirs of
+Brantôme; ours do not. This is the book's single biggest obstacle, and it
+is at the front door. See NAMES below for the remedy: a short identifying
+phrase INSIDE the sentence, never a note.
+
+Embedded histories. Four long told stories, each in a character's voice,
+each a mirror of the main plot: Madame de Chartres on Diane de Poitiers
+and the late King's court (002-003, ~3,000 words, a political history of
+mistresses and factions); the Prince of Cleves on Sancerre and Madame de
+Tournon, a woman who deceived two men at once (003-004); the Queen Dauphine
+on Anne Boleyn (004-005); the Vidame de Chartres on his three-way affair
+with the Queen and Madame de Thémines (006-007). They are long speeches in
+the French with no quotation marks; in English they become quoted speech
+over several paragraphs (FORMAT).
+
+Montpensier (1662) is the sketch for Clèves: the religious wars under
+Charles IX, 1567-1572; a young wife, Renée d'Anjou-Mézières, married by
+family policy to the Prince of Montpensier while in love with the Duke of
+Guise; a loyal friend, the Count of Chabannes, who loves her hopelessly
+and carries her letters; a jealous husband; a rival prince (the Duke of
+Anjou, the future Henri III). Faster, more plot, and harsher: she yields
+(as far as letters and one night visit go), is betrayed, and dies.
+Chabannes is killed in the St. Bartholomew's Day Massacre. The last
+sentence is a moral. Read side by side, the two show Lafayette learning
+to move the drama from events into the mind.
+
+THEMES. Appearances and truth ("what appears is almost never the truth");
+the court as a machine of watching; love as a disturbance of the mind
+rather than a romance; a woman's "repos" -- her calm, her peace of mind --
+set against passion; sincerity, and what it costs; the mother's education
+and what it can and cannot protect; marriage as alliance; jealousy as
+knowledge that destroys. The novel never states a thesis; it analyses.
+
+
+STYLE, TONE, AND THE VOICE TO KEEP
+
+Restraint. Lafayette states feelings in abstract nouns (passion,
+inclination, trouble, embarras, douleur) and almost never describes a body,
+a room, a face, the weather. Her drama is in the precision of the
+analysis: what she felt, then what she thought, then why she was wrong.
+KEEP THAT. Never add sensory description, inner monologue, gestures or
+emotion she does not state. Never add an exclamation mark she does not
+have. Never "show" what she "tells": her telling IS the style.
+
+Precision. Each long sentence is a chain of reasoning -- causes, then
+consequences, then qualifications: "elle trouvait également impossible que
+son mari eût parlé, et qu'il n'eût pas parlé". Modern English cuts the
+semicolon chains into sentences, but every logical joint must survive:
+because, but, so, nevertheless, all the same, which meant that. Cut the
+CHAIN, never the LOGIC. A paragraph of four modern sentences must make
+the same argument, in the same order, as the French period.
+
+Maxims. The narrator generalises in the present tense: "Les personnes
+galantes sont toujours bien aises qu'un prétexte leur donne lieu de
+parler à ceux qui les aiment." These are La Rochefoucauld's form (he was
+her closest friend): keep each as one crisp sentence, present tense.
+
+The superlatives of the roll-call ("the most perfect", "incomparable", "a
+masterpiece of nature") are a convention of portraiture, not gush; keep
+them -- they are also the ironic setup for a court where nothing is what
+it seems.
+
+Register. A court of exquisite manners, rendered for a fourteen-year-old
+reading aloud. Plain modern words; short-to-medium sentences; no slang, no
+"okay", no "guy", no therapy words (trauma, obsessed, toxic, closure). In
+dialogue contractions are fine where speech would use them; narration
+stays slightly more formal than speech, and never chatty. The
+readability test (memory note: readability is the deliverable): every
+sentence one a bright fourteen-year-old could read aloud and follow, with
+every clause of the French present and nothing summarised.
+
+Dialogue. Lafayette runs speech into narration with no quotation marks
+("Vous m'estimez plus que je ne vaux, répliqua madame de Clèves en
+soupirant"). Make it standard English dialogue: quotation marks, a new
+paragraph for each speaker, tags kept modest ("said", "replied",
+"answered", "went on" -- not "hissed", "breathed"). Indirect speech in the
+French stays indirect in English.
+
+Pronouns and address: "vous" is always "you" (no thou -- Lafayette's
+couples address each other as vous). In direct address keep "Madame" and
+"Monsieur" ("Madame, I beg you..."), "Sire" to the King, "Your Majesty"
+for queens. "Ma fille" = "my daughter" or "my child".
+
+
+FALSE FRIENDS AND LAFAYETTE'S MORAL VOCABULARY (the technical-calque
+class: memory note technical-calque-justification). Counts are in the
+Clèves text. These words look like English and mean something else; a
+reader who meets "her inclination for him" or "a gallantry" sails past
+having understood less than the French says.
+
+  galanterie (22)  love affairs; the court's business of courtship;
+                   "les malheurs d'une galanterie" = "the misery of a love
+                   affair". The opening's "la magnificence et la
+                   galanterie" is the one place to keep "gallantry" (it is
+                   pinned in must_contain) -- the court's whole elegant
+                   culture of love.
+  galant (31)      of a man: a ladies' man, devoted to love affairs ("Ce
+                   prince était galant" = "This king loved women"); "les
+                   personnes galantes" = "people in love" / "people with
+                   love affairs"; "une femme galante" = a woman of many
+                   affairs. Rarely "gallant".
+  amant (34)       the man who loves (and usually courts) her: "suitor",
+                   "admirer", "the man she loved"; "lover" ONLY where the
+                   French makes a liaison plain.
+  maîtresse (42)   the woman a man loves and courts, his "lady"; "mistress"
+                   ONLY for an acknowledged liaison (the King and Diane,
+                   Henry VIII and Anne Boleyn). Nemours "avait plusieurs
+                   maîtresses" = he was courting several women. "maîtresse
+                   de sa personne et de l'état" (Diane) = "mistress of his
+                   person and of the state" -- keep Lafayette's pun.
+                   "Je vous aime comme ma maîtresse" (Cleves to his wife,
+                   010): "I love you the way a man loves a woman he is
+                   courting" -- the point is that marriage has not cooled
+                   him.
+  passion (122)    "passion" or "love" -- the strong word; keep it strong.
+  inclination (32) the pull of feeling toward someone, weaker and earlier
+                   than passion: "attraction", "her feelings for him",
+                   "the way her heart leaned toward him". NEVER bare
+                   "inclination".
+  repos (26)       LOCKED: "peace of mind" when it is hers or Cleves's
+                   inner calm (the word her final refusal turns on: "les
+                   raisons de mon repos"); "rest", "quiet", "calm" for
+                   ordinary uses (a night's rest, the peace of Paris).
+  devoir (31)      "duty".  vertu (24) "virtue" (the book turns on it --
+                   keep the word).  bienséance (13) "propriety", "what was
+                   proper", "decorum".
+  gloire (7)       honor, pride, reputation -- NOT "glory".
+  honnête / honnêteté   decent, honorable / courtesy, decency, good
+                   faith; "honnête homme" = a gentleman.
+  mérite (22)      worth, merit, distinction.  agrément (9) charm.
+  esprit (100)     mind / intelligence / wit, by context.
+  aimable          attractive, charming, lovable -- not "amiable".
+  bien fait        handsome, well made.
+  commerce (11)    dealings, company, relations, correspondence ("le
+                   commerce des femmes" = the company of women); never
+                   trade.
+  intelligence     "avoir une intelligence avec" = a secret understanding.
+  aventure (39)    affair, incident, episode, story -- rarely "adventure".
+  trouble          agitation, confusion, distress -- not "trouble".
+  embarras         awkwardness, a dilemma, an impossible position.
+  inquiétude       anxiety, restlessness, unease.
+  déplaisir        grief, distress (strong).  ennui (1) torment, misery
+                   (the 17th-century word is strong).  chagrin  sorrow,
+                   vexation.  douleur  grief, pain.  affliction  grief.
+  étonnement / étonné   shock / stunned (strong, not mild surprise).
+  parti            a marriage match ("un grand parti" = a great match); a
+                   course of action ("prendre un parti" = make a decision);
+                   a faction.
+  établissement    a settled position; for a girl, a marriage that settles
+                   her.
+  faire sa cour    pay court, attend at court.  le cercle  the Queen's
+                   evening reception ("the circle", glossed once).
+  la cour          the court.  le monde  society, "the world".
+  filles d'honneur maids of honor.  gentilhomme  a gentleman (in someone's
+                   service).  écuyer  equerry, squire.
+  les princes du sang   the princes of the blood -- glossed once, in the
+                   sentence: the royal family's own branches, next in line
+                   to the throne.
+
+
+NAMES AND TITLES (LOCKED -- the full list, with first-mention epithets,
+is in running_notes.txt)
+
+The rule. French personal titles stay French with the person's name
+(Madame de Cleves, Monsieur de Nemours, the Vidame de Chartres, the
+Chevalier de Guise, the Marshal de Saint-André); great territorial and
+royal titles take the English "of" as English history writes them (the
+Duke of Guise, the Duke of Nemours, the Cardinal of Lorraine, the King of
+Navarre, the Prince of Condé, the Prince of Cleves, the Duke of Alba).
+French royals keep French names (Henri II, François I, François the
+Dauphin, Charles IX, Elisabeth of France); English and Spanish ones
+take English names (Henry VIII, Anne Boleyn, Catherine of Aragon,
+Cardinal Wolsey, Mary Tudor, Queen Elizabeth, Philip II, the Emperor
+Charles V). No accent on "Cleves" anywhere in English (the title has
+none); other accents kept (Élisabeth -> Elisabeth is the one exception,
+following the title's simplicity and Perry; Thémines, Saint-André,
+Coulommiers keep theirs). "Mercœur" is written "Mercoeur".
+
+The heroine: "Mademoiselle de Chartres" until her marriage, then "Madame
+de Cleves" (Lafayette's "cette princesse" = "she", or her name where
+"she" is unclear -- NEVER "the princess", which in this court could be
+four women).
+Her husband: "the Prince of Cleves" (le prince de Clèves), "Monsieur de
+Cleves" (M. de Clèves). NEVER the bare surname "Cleves" for him -- it
+would blur him into his wife. "her husband" whenever Lafayette's "son
+mari" is the sense. check.py fails any "Cleves" not preceded by "de" or
+"of".
+Nemours: "Monsieur de Nemours" (M. de Nemours, 311 times); "the Duke of
+Nemours" (le duc de Nemours). In NARRATION the bare "Nemours" may vary
+the rhythm -- sparingly, never in a character's mouth except where
+Lafayette drops the title too. Lafayette's "ce prince" for him = "he" or
+his name.
+Mary Stuart: "the Queen Dauphine" -- for BOTH "la reine dauphine" and
+"madame la dauphine" (the court's name for her: Queen of Scots in her
+own right, married to the Dauphin). In Part Four, after Henri II's
+death, Lafayette sometimes still writes "la reine dauphine": keep "the
+Queen Dauphine"; where she is plainly "la reine" (the new queen), write
+"the young Queen".
+Catherine de' Medici: "the Queen" (la reine); "the Queen Mother" (la
+reine mère) after the King's death. Lafayette never names her in Clèves;
+the first mention in each file may say "the Queen, Catherine de'
+Medici," -- the one name this edition adds, because a modern reader
+cannot otherwise tell three queens apart. (Montpensier names her
+itself.)
+Diane de Poitiers: "Madame de Valentinois" / "the Duchess of
+Valentinois" exactly as the French alternates; first mention per file
+may add "the King's mistress".
+"Madame" as a ROYAL title (capital M, no surname) is a trap: Lafayette
+uses it for the King's sister Marguerite de France ("Madame, sœur du roi",
+001; she marries the Duke of Savoy) AND for the King's eldest daughter
+Élisabeth ("le mariage de Madame" when the Duke of Alba comes to marry
+her, 005 and 009; in 008 "chez la reine et chez Madame ... chez madame
+Marguerite, sœur du roi" are two different women in one sentence).
+Never leave a bare royal "Madame" in English (it reads as a form of
+address): write "Madame Marguerite" for the sister, "Madame Elisabeth"
+for the daughter, deciding from context -- the Spanish match is
+Elisabeth's, the Savoy match Marguerite's; Perry's crib names the woman
+when in doubt. Report each call. A third Marguerite, the late King's
+sister, Duchess of Alençon and later Queen of Navarre, author of the
+Heptameron ("dont vous avez vu les contes", 005), keeps all her titles.
+In Montpensier "Madame" is Marguerite de Valois, Charles IX's sister (the
+future Queen Margot): "Madame Marguerite" there too.
+"Madame Élisabeth" (Henri II's daughter, married by proxy to Philip II)
+= "Madame Elisabeth" / "Elisabeth of France"; after the marriage "the
+Queen of Spain".
+"le roi dauphin" / "M. le dauphin" = "the Dauphin" (François, Mary's
+husband; King François II in Part Four: "the young King").
+
+THE VIDAME. "the Vidame de Chartres", "the Vidame" -- Madame de Chartres's
+brother, the heroine's uncle. The word is untranslatable and the reader
+needs one handhold, folded into the sentence at his first appearance in
+001 (no parentheses, no note) -- e.g. that "Vidame" was an old title his
+family, a branch of the great house of Vendôme, still bore. Thereafter
+"the Vidame", and in other files "the Vidame de Chartres, her uncle" at
+first mention.
+
+UNITS AND MONEY: almost none. "lieue" (Coulommiers is "à une demi-lieue";
+Champigny) -> miles at 2.5 per lieue, rounded as Lafayette rounds ("half
+a league" -> "a mile or so"). Ages and dates stay as written.
+
+DATES AND LAFAYETTE'S HISTORY. The history is hers and stays hers --
+including her compressions and her errors (the Verne rule: no silent
+corrections, no notes). She is accurate on most of it; where she is not,
+the introduction can say so, the translation does not.
+
+
+FAMOUS PASSAGES (pinned in must_contain.txt as short anchor phrases;
+agent_instructions gives each to the file that holds it)
+
+  001  "La magnificence et la galanterie n'ont jamais paru en France avec
+       tant d'éclat..." -> must contain "magnificence and gallantry".
+  002  "Si vous jugez sur les apparences en ce lieu-ci, vous serez souvent
+       trompée : ce qui paraît n'est presque jamais la vérité." -> "what
+       appears is almost never the truth".
+  003  Madame de Chartres dying: "ne craignez point de prendre des partis
+       trop rudes et trop difficiles" -> "too harsh and too difficult".
+  008  The confession: "je vais vous faire un aveu que l'on n'a jamais fait
+       à son mari" -> "a confession that no wife has ever made to her
+       husband". Cleves's answer: "je me trouve le plus malheureux homme
+       qui ait jamais été" -> "the unhappiest man who ever lived".
+  012  "je sacrifie beaucoup à un devoir qui ne subsiste que dans mon
+       imagination" -> "a duty that exists only in my imagination".
+       "les raisons de mon repos" -> "my peace of mind" (the locked
+       word). The last sentence: "sa vie, qui fut assez courte, laissa des
+       exemples de vertu inimitables" -> "inimitable virtue".
+  013  "l'amour ne laissait pas de trouver sa place parmi tant de
+       désordres" -> "love still found its place".
+  014  Chabannes, "le plus parfait ami qui fut jamais" -> "the most
+       perfect friend"; the last line, "si la vertu et la prudence eussent
+       conduit toutes ses actions" -> "if virtue and prudence had guided
+       all her actions".
+
+
+SENSITIVE CONTENT -- scholarly modernization of a canonical historical text
+
+Frame: two canonical French novels about the real court of the Valois,
+written by a woman of Louis XIV's court. Measured register throughout;
+render every judgement as Lafayette's own; never sensationalise, never
+bowdlerise, never editorialise.
+
+1. Adultery at court is a fact of the setting: the King and Diane de
+   Poitiers, François I and the Duchess of Étampes, Henry VIII and Anne
+   Boleyn. Lafayette states it plainly and without salaciousness; so do
+   we. Nothing is more explicit in English than in French.
+2. A sixteen-year-old married for family policy; the mother's teaching
+   that a woman's happiness is in loving her husband; a husband's
+   possessiveness; the heroine's sense that a woman's reputation is her
+   whole fortune. Render these as the characters' convictions in their
+   world, with their full dignity. No modern irony, no feminist gloss,
+   no softening. (The introduction, not the text, gives the context.)
+3. Death of grief. Cleves dies of a fever brought on by jealousy, and
+   tells his wife she is the cause; she half believes it. Keep its full
+   weight, no melodrama.
+4. Violence: the King's wound at the tournament (009: a splinter of
+   Montgomery's lance "lui donna dans l'œil, et y demeura") and his death
+   -- as Lafayette tells it, briefly; Saint-Vallier condemned to the
+   block and reprieved on the scaffold (003); Anne Boleyn's fall and
+   execution (005) -- as told. No added detail.
+5. Religion and the Wars of Religion (Montpensier, and the Cardinal of
+   Lorraine "defending the Catholic religion, which was beginning to be
+   attacked" in 001). Lafayette writes as a Catholic of 1662/1678: Anne
+   Boleyn learned "les teintures de la religion nouvelle" and Henry VIII
+   dragged England into "le malheureux changement" (005) -- "the new
+   religion", "that unhappy change": her view, in her words, no
+   correction. Montpensier ends with the St. Bartholomew's Day Massacre
+   (1572; "la Saint-Barthelemi" -> "St. Bartholomew's Day"), which she
+   calls "cet horrible dessein": keep "horrible", keep "to wipe out the
+   Huguenots" (exterminer) at full strength -- her own condemnation; give
+   "Huguenots" the handhold "the French Protestants" once. Chabannes, a
+   Huguenot turned Catholic, is murdered in it by the people hiding him:
+   as written.
+6. The Duke of Anjou's threats, the Prince of Montpensier's rage, the
+   night visit at Champigny: as written; nothing added.
+7. "Maures" (the ballet entrée of Moors, Montpensier 014): "a Moorish
+   entrée", "costumed as Moors" -- a court ballet costume, kept.
+No slurs, no dialect, no racial content beyond (7) has been found. Any
+call an agent makes goes in its consistency notes.
+
+
+FORMAT
+
+- Line 1: the exact heading from the manifest ("Part One"; "The Princess
+  of Montpensier"; "The Publisher to the Reader").
+- Split files (every Part, and Montpensier): line 1 heading, blank, then
+  "(Part n of k)", blank, then the text. EVERY part repeats the heading
+  (assemble drops each file's first line; a part that opened on prose
+  would lose a sentence). Parts 2+ never re-introduce the Part; non-final
+  parts never conclude it.
+- No "Part ...:" divider lines, no "The Princess of Cleves" line (the
+  manifest carries the divider), no notes, no brackets, no translator's
+  asides.
+- Paragraphs: re-paragraph freely for modern reading -- Lepetit's run to
+  770 words, Montpensier is three paragraphs for 11,000 words. A new
+  paragraph for each speaker; long speeches may run over several
+  paragraphs. Keep the ORDER of everything.
+- Long told stories and long speeches: standard English convention --
+  each paragraph of the speech opens with " and only the last closes.
+  Speech inside a told story takes single quotes ('...').
+- Letters: the lost letter (006, 794 words, in « » in the French) and
+  any other letter read out: introduced in narration, then ordinary
+  quoted paragraphs (multi-paragraph convention). No indented block (the
+  page would set a long letter as preformatted text), and no bare short
+  line (assemble.py turns a short unpunctuated line into a heading;
+  check.py --modern fails it).
+- Straight quotes and apostrophes only (" and '), never curly; no « ».
+- Italics (_underscores_) only for a book title or an emphasised word the
+  French marks; Lafayette marks almost none.
+
+
+RATIO: FR -> EN here runs close to 1:1 (Perry 0.93-1.01). A complete,
+natural modern translation with dialogue paragraphing and the occasional
+in-sentence gloss lands about 1.0-1.25. verify.py:
+    python3 verify.py princess-of-cleves --min-ratio 0.9 --max-ratio 1.5
+Never pad; never summarise. A file under 0.95 is suspect: compare it
+against the French paragraph by paragraph.
+
+
+DECISIONS FOR ALEX (recommendation first; agents follow it until he says
+otherwise; the orchestrator logs each instance by file)
+
+A. Barbin's "Le libraire au lecteur" as file 000 -- RECOMMEND KEEP (100
+   words, in the first edition; it calls the anonymous author "il", which
+   is half the story of a woman's novel in 1678). Easy to drop: delete the
+   manifest entry and move the divider to 001.
+B. Montpensier after Clèves, as a second section of the same book --
+   RECOMMEND (the historical order of the settings, 1558-59 then
+   1567-72; Clèves is the reason for the volume). Alternative: Montpensier
+   first, in order of writing.
+C. Names: titles kept ("Monsieur de Nemours"), the bare "Nemours" allowed
+   in narration, the husband never bare "Cleves" -- RECOMMEND.
+D. Naming Catherine de' Medici at first mention per file although
+   Lafayette never does -- RECOMMEND (three queens otherwise blur).
+E. A "Who's who at the court of Henri II" cast list. The book's real
+   obstacle is the opening roll-call. RECOMMEND the in-sentence epithets
+   now (running_notes lists one per figure) and decide on a cast list at
+   assembly time: it would be new writing outside modern_chapters/
+   (beside introduction.txt), so it cannot ride through verify.py.
+F. Source edition: Lepetit 1820 (validated, modern spelling) rather than
+   the 1678/1689 Barbin text (Wikisource has only the 1689 printing, 50%
+   proofread). RECOMMEND Lepetit; the substantive variants check.py found
+   against the 1678-based school text are a handful of words.
+G. Author name: env AUTHOR "Madame de La Fayette" (the form of Wikisource,
+   Gutenberg, and the BnF); "Lafayette" in running prose is equally
+   standard. Alex's call.

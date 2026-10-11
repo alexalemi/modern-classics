@@ -4139,3 +4139,73 @@ SEAMS: names fixed by the orchestrator between batches (Glycerin Creek, "the
 old spillway", "percussion-cap guns", "burnt linen", "my boy", the "..."
 ellipsis); then a consistency pass. COVER: Jules Férat, the balloon down on
 the sea, from the 1875 Hetzel edition.
+
+## genealogy/ — Friedrich Nietzsche, On the Genealogy of Morals (1887), from the German
+
+SOURCE: Nietzsche Source's eKGWB/GM (Colli-Montinari, first-edition
+spelling), fetched by genealogy/fetch.sh into _src/; Horace B. Samuel's 1913
+English (Standard Ebooks) cut per file into reference/ as the crib for sense
+only. 14 files cut only at section boundaries (prep.GROUPS): Preface (000),
+Essay One (001-003), Essay Two (004-007), Essay Three (008-013); word-form
+"Essay One: ..." dividers, Nietzsche's Roman section numerals kept as
+subheadings and restarting in each essay (no duplicate anchors: assemble
+checks out). 45,919 German words, ratio 1.15. WHOSE DIFFICULTY: the
+sentence length is Nietzsche's (split at his own joints, every clause kept);
+the calques are Samuel's ("transvaluation", "sacerdotal" -- banned).
+Locked: ressentiment (in French, glossed once in I 10), bad conscience,
+slave revolt in morality, blond beast, ascetic ideal, will to power, pathos
+of distance, the morality of custom; Schuld/Schulden given once (II 4).
+RULINGS: II 7 "der Neger" -> "Black Africans", his claim kept as written
+and named in the introduction; his antisemitism-attacks and his remarks on
+Jews, priests and women at full strength. TRANSLATED by Fable 5.1 subagents
+(Opus quota low); a light readability polish by Opus 5.5 per essay
+(2026-10-11) for carried-over German idioms. COVER: Edvard Munch's crayon study
+for his posthumous portrait of Nietzsche (1906, Munch Museum).
+
+## princess-of-cleves/ — Madame de Lafayette, The Princess of Cleves (1678), with The Princess of Montpensier (1662), from the French
+
+SOURCE: French Wikisource's validated Lepetit 1820 text (fetch_wikisource.py;
+check.py proves the files letter for letter), Barbin's "Le libraire au
+lecteur" from the 1689 printing as file 000. Second witness Gutenberg #20262
+(Sledd & Gorrell 1896), a school edition abridged by a quarter; check.py
+compares one way. Cribs: Perry (1891) for Cleves, Colt (Gutenberg #2365) for
+Montpensier. 15 files: Cleves in Lafayette's FOUR parts (Perry has five),
+three files each, cut by hand at scene changes; Montpensier last, two files.
+71,343 French words, ratio 1.02 (verify --min-ratio 0.9 --max-ratio 1.5).
+SEAMS: 002 ends and 003 opens inside Madame de Chartres's speech; 003 ends
+and 004 opens inside Cleves's Tournon story; 006/007 inside the Vidame's.
+Every royal "Madame" resolved to a name (Marguerite, Elisabeth, Claude);
+"Monsieur de Cleves" never bare "Cleves". READABILITY: Fable wrote
+French-in-English in 001 and 003 (ledger BATCH 0 correction); both were
+revised by Opus 5.5, which also translated 002 and 004 (2026-10-11).
+COVER: François Clouet's drawing of Mary Stuart in white mourning (1561) --
+she is the Queen Dauphine of the novel.
+
+## nibelungenlied/ — The Nibelungenlied (c. 1200), from the Middle High German
+
+SOURCE: Bartsch's edition of manuscript B ("Der Nibelunge Nôt") in the
+Oxford Text Archive typing (text 0202) as published by Bibliotheca Augustana
+(fetch.sh -> _src/augustana/). NOT Gutenberg #14915, which the ROADMAP
+named: that is Simrock's modern German verse of the C version. Crib:
+Shumway's complete literal prose (1909, Gutenberg #1151), cut per Aventiure
+into reference/; Armour (1897) measured and not used. 39 files, one per
+Aventiure, "Chapter N: Title" with Part One / Part Two dividers; 2,379
+strophes. PIPELINE: agents write drafts/NNN.txt with a {N} marker at every
+strophe; `check.py NNN` asserts every strophe once and in order, sweeps
+Shumway's archaisms with no exemptions, and writes modern_chapters/NNN.txt
+(edit drafts/, never modern_chapters/). Per-file ratio floor = that file's
+Shumway ratio minus 0.05; book ~1.08. PROSE, not verse (the odyssey/
+precedent); the foreshadowing kept strophe-final and closing its paragraph.
+Locked: Etzel (never Attila), Isenland/Isenstein (never Iceland), Pöchlarn,
+"the Nibelungs" only where the poem says it, triuwe = loyalty, eigen man =
+bondsman, margrave glossed once (Av20), nine locked lines incl. [1960],
+[2371], [2378], [2379]. OTA TYPING ERRORS translated from Bartsch's reading
+but NOT repaired in chapters/ (no copy of Reichert's B transcription to
+hand): [1110] line 1 (a stray copy of another line; Gernot speaks), [1559]
+lines rotated, [1961] "the king's lap" (Bartsch: the queen's), [1981] "der
+vogt von rine" where the sense is Dietrich; smaller typos logged in
+running_notes.txt ROUND 2. Shumway's errors found and overruled are logged
+there too ([1077], [1277] thirty thousand marks, [1903] Dankwart kills
+Blödel, [1971], [2094]). TRANSLATED by Fable 5.1 subagents throughout.
+COVER: Carl Rahl, Kriemhild at Siegfried's body names Hagen as his murderer
+and swears revenge (1835).

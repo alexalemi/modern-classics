@@ -43,6 +43,12 @@ TITLES = {
 
 # One line per book, and a blurb has no other home. Keyed by book directory.
 BLURBS = {
+    'genealogy':
+        "Where do good and evil come from? Nietzsche's three essays on masters and slaves, debts and guilt, and the priests who taught us to hate ourselves, from the German.",
+    'princess-of-cleves':
+        'A young wife, a perfect husband and the most dazzling man at the court of Henri II: the first great psychological novel, with the novella that led to it, from the French.',
+    'nibelungenlied':
+        "Siegfried murdered at a forest spring, and his widow's revenge thirteen years later at the court of the Huns: the great German epic, every strophe, in modern prose.",
     'aeschylus':
         'The Oresteia complete, with the Persians, the Seven, the Suppliants and Prometheus Bound — from the Greek: the scenes as fast modern prose, the odes as verse, and the net, the yoke and the lion cub kept in the same words every time.',
     'augustine':

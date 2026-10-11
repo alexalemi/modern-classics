@@ -1,0 +1,288 @@
+RUNNING NOTES — consistency ledger (orchestrator-maintained)
+The Nibelungenlied (c. 1200), from the Middle High German (Bartsch, B).
+Agents read this; only the orchestrator edits it, between batches, from
+the agents' returned notes. Reasons go in with the rulings — the reason
+is what makes the next case decidable. Merge a batch's notes only after
+EVERY agent in the batch has reported (the zarathustra ordering trap).
+
+LOCKED AT SETUP (2026-10-10) — see text_analysis.txt for the reasoning
+
+Form: modern prose, one file per Aventiure, drafts/NNN.txt with {N}
+strophe markers (Bartsch numbers); check.py writes modern_chapters/.
+Headings: "Chapter N: Title" exactly as manifest.json; N = Aventiure,
+1-39 continuous. Dividers (manifest only, never in a file): before 000
+"Part One: Siegfried", before 019 "Part Two: Kriemhild's Revenge".
+
+Names: Siegfried; Kriemhild; Gunther; Gernot; young Giselher; Ute;
+Dankrat; Hagen of Tronje; Dankwart (Hagen's brother, "Dankwart the
+swift"); Ortwin of Metz (Hagen's nephew); Volker of Alzey, "Volker the
+fiddler"; Gere; Eckewart; Rumold (master of the kitchen); Sindold
+(cupbearer); Hunold (chamberlain); Siegmund and Sieglinde; Brunhild;
+Liudeger of Saxony; Liudegast of Denmark; Alberich; Schilbung and
+Nibelung; Balmung; Etzel (never Attila); Helche; Ortlieb; Blödel; Werbel
+and Swemmel; Rüdiger of Pöchlarn, "the margrave"; Gotelind; Dietrich of
+Bern; Hildebrand; Wolfhart; Iring of Denmark; Irnfried of Thuringia;
+Hawart; Bishop Pilgrim of Passau; Else and Gelfrat.
+Places: Worms; Xanten; Isenland, Isenstein (never Iceland); Etzel's
+castle; Danube towns by modern name (Passau, Pöchlarn, Melk, Mautern,
+Traismauer, Tulln, Vienna). Bern: first named in Aventiure 28 (027, Hildebrand
+"von berne"); gloss it there once, in the sentence, as Verona.
+"The Nibelungs": as the poem uses it — Siegfried's people in Part One,
+the Burgundians from Aventiure 25 on. Never "corrected".
+
+Terms: loyalty / loyal / treachery (triuwe); honor (êre — never
+"worship"); grief, sorrow, wrong (leit); joy ... sorrow (liebe ... leit);
+arrogance (übermuot); courage (ellen); hatred, malice (nît); murder
+(mort); hardship (arebeit); vassal / his men (man); BONDSMAN (eigen man,
+eigenholt); kinsmen (mâge, vriunde); margrave (glossed once, 20);
+festival / feast / wedding (hôchgezît — never "hightide"); the cloak of
+invisibility (glossed at first use in 3 and again when used in 6-7: also
+gives the strength of twelve men, 337), then "the cloak"; the Nibelung
+treasure (hort); fiddle bow (videlboge); pagan (heiden); she-devil
+(vâlandinne); concubine (kebse). American spelling.
+
+Locked lines (agent_instructions LOCKED RENDERINGS; must_contain pins):
+[1] [14] [17] [839] [988] [1960] [2371] [2378] [2379].
+
+Voice: a performer-narrator ("I", "you", "as I have heard"); grave,
+plain, dry, sometimes grimly funny; every foreshadowing kept (core
+words: later, in the end, sorrow, cost ... their lives, regret).
+Ratio: English/MHG verse words; Shumway 1.01-1.16; expect 1.1-1.35;
+check.py band 1.0-1.6 PROVISIONAL — re-derive from 000 and record here.
+Quotes straight; em dashes real; no notes, brackets, markup.
+
+VOICE FILE (000) — to be filled in by the orchestrator after 000:
+  ratio landed: ...   band re-derived: ...
+  formulas settled: ...
+
+
+PER-FILE NOTES (what is special in each Aventiure)
+
+PART ONE: SIEGFRIED
+000 (Av 1, str 1-19) The opening strophe [1] (locked; from A/C, not in B).
+    The court at Worms and its officers (a catalogue: keep every name and
+    office). Kriemhild's falcon dream [13]-[14] (locked [14]); her vow
+    against love; [17] locked; [19] "many a mother's son" — the first
+    great foreshadowing. Strophes 3 and 18 are A/C additions (italic in
+    the source): translate them.
+001 (Av 2, 20-43) Siegfried's youth at Xanten; his knighting festival;
+    lavish gift-giving (keep the lists).
+002 (Av 3, 44-138) Siegfried rides to Worms to woo Kriemhild. Hagen
+    tells his story [86]-[101]: Schilbung and Nibelung, the treasure,
+    Balmung, Alberich and the cloak (FIRST GLOSS of the cloak), the
+    dragon and the bath in its blood — skin like horn [100]. Siegfried's
+    provocative challenge to Gunther and its defusing: tone matters
+    (insolence, restraint, Ortwin's and Hagen's anger, Gernot's peace).
+003 (Av 4, 139-264) The Saxon-Danish war: Liudeger and Liudegast's
+    challenge; Siegfried leads; battle; captured kings; the victory
+    messenger to Kriemhild; the victory festival. The longest battle of
+    Part One; keep tactics, numbers, wounds.
+004 (Av 5, 265-324) Siegfried first sees Kriemhild at the festival; the
+    greeting; a year of service. Courtly love vocabulary: plain words.
+005 (Av 6, 325-388) Brunhild introduced ([326]: the contest for her
+    hand); Siegfried's bargain (his help for Kriemhild); the cloak
+    (gloss again briefly in use: strength of twelve men, [337]); the
+    clothes-making (a long, loved catalogue — keep it); the voyage.
+    Note: B closes Aventiure 5 with [325]; Bartsch opens 6 with it.
+006 (Av 7, 389-481) Arrival at Isenstein; Siegfried poses as Gunther's
+    vassal and holds his stirrup [398] — THE LIE THE QUEENS' QUARREL WILL
+    TURN ON; keep it exact. The games: stone, javelin, leap, Siegfried
+    invisible doing the work. Hagen and Dankwart's unease, disarmed guests.
+007 (Av 8, 482-528) Siegfried sails alone to the Nibelung land; fights
+    the giant gatekeeper and Alberich (keep the comic-grim fight);
+    returns with a thousand Nibelung warriors. [524] was repaired from
+    B (prep LINE_FIXES); [523] line 4 and [524] are Bartsch's C readings.
+008 (Av 9, 529-578) Siegfried as messenger to Worms; the reward he
+    refuses and then gives away; preparations to receive Brunhild.
+009 (Av 10, 579-689) The double wedding; the bridal nights: [637] the
+    nail; [649] Gunther's confession to Siegfried; [675]-[682] the second
+    night, ring and belt taken [679]-[680] — text_analysis 8.2, read it.
+010 (Av 11, 690-723) Siegfried and Kriemhild go to Xanten; he is crowned;
+    Kriemhild's son is named Gunther and Brunhild's son Siegfried ([716], [718]), each for the other's house — keep both.
+011 (Av 12, 724-777) Brunhild, brooding on the "bondsman" who never pays
+    service, persuades Gunther to invite them; the envoys' journey.
+012 (Av 13, 778-813) The guests arrive at Worms; the festival.
+013 (Av 14, 814-876) THE QUARREL. Bondsman [822]; the cathedral steps;
+    [839] locked (concubine); [840] the virginity accusation; the ring
+    and belt produced; Siegfried's oath; Hagen's resolve. text_analysis
+    8.3. Keep the precise sequence of who enters the church first.
+014 (Av 15, 877-915) Hagen's false war; Kriemhild reveals the linden
+    leaf [902] and sews a cross on the garment to mark the spot; [894]
+    Siegfried has beaten her for talking (8.4).
+015 (Av 16, 916-1001) THE MURDER. Kriemhild's dreams [921] (flowers
+    turned red) and [924] (two mountains); the hunt; Siegfried's catch of
+    the bear (a comic interlude — keep its fun); the race to the spring
+    [973]-[977]; Hagen's spear through the cross [981]; Siegfried's fight
+    with his shield [983]-[984]; [988] locked; his dying words
+    [989]-[995] (bitter and kind); the poet's own judgement of the deed.
+016 (Av 17, 1002-1072) Hagen leaves the body at Kriemhild's door; her
+    grief; the bier-ordeal (the wounds bleed when the murderer comes near,
+    [1043]-[1045]); the funeral; [1066] she is doused with water to
+    revive her.
+017 (Av 18, 1073-1100) Siegmund goes home; Kriemhild stays at Worms.
+018 (Av 19, 1101-1142) The treasure brought from the Nibelung land
+    (Alberich's farewell to it); her generosity alarms Hagen; Hagen sinks
+    the treasure in the Rhine "at Loche" [1137] (keep the poem's place name: "at Lochheim" is a guess); the brothers' oath of secrecy.
+
+PART TWO: KRIEMHILD'S REVENGE
+019 (Av 20, 1143-1289) The largest file. Etzel, a widower, a pagan
+    [1145]; Rüdiger sent to woo; Hagen's warning; Kriemhild's refusal
+    ([1248] a Christian marrying a pagan) and Rüdiger's private oath
+    [1256]-[1258] that he will avenge any wrong done her — THE OATH THAT
+    DESTROYS HIM IN 37; keep it exact. "Margrave" glossed here.
+020 (Av 21, 1290-1335) Kriemhild's journey east: Passau, Bishop
+    Pilgrim, Pöchlarn, Gotelind; Etzel's court of Christians and pagans
+    [1334]-[1335].
+021 (Av 22, 1336-1386) The meeting at Tulln; the wedding at Vienna; the
+    many peoples in Etzel's train. Dietrich appears (as "Dietrich", no
+    "of Bern" in the MHG here; do not add it -- Bern is first named in
+    Aventiure 28).
+022 (Av 23, 1387-1421) Thirteen years; Ortlieb born and baptized [1388];
+    Kriemhild's brooding [1394]-[1395]; she asks Etzel to invite her
+    brothers.
+023 (Av 24, 1422-1505) Werbel and Swemmel's embassy to Worms; Hagen
+    alone argues against going; Ute's dream.
+024 (Av 25, 1506-1585) The journey: the water-women's prophecy
+    [1533]-[1574] (wild mermaids, wise women — render "water-sprites" or
+    "mermaids" and keep both scenes), the ferryman beheaded [1562], the
+    chaplain thrown overboard and saved [1575]-[1580], Hagen smashes the
+    boat [1581]. Here the Burgundians become "the Nibelungs".
+025 (Av 26, 1586-1649) Hagen tells the prophecy [1588]-[1589]; the night
+    fight with Gelfrat and Else's Bavarians; Eckewart asleep on the march.
+026 (Av 27, 1650-1717) At Pöchlarn: Rüdiger's hospitality; Giselher
+    betrothed to Rüdiger's daughter; the gifts — Gotelind's shield to
+    Hagen [1701] (it returns in 36), Rüdiger's sword to Gernot (with
+    which Gernot will kill him). Keep every gift precise.
+027 (Av 28, 1718-1757) Arrival; FIRST "of Bern" (Hildebrand, Dietrich):
+    gloss Bern once as Verona, in the sentence; Dietrich's warning; Kriemhild greets only
+    Giselher; Hagen's answer about the treasure; the weapons not given up
+    [1746].
+028 (Av 29, 1758-1817) Hagen and Volker sit before Kriemhild's hall;
+    Hagen with Balmung across his knees refuses to rise [1780]-[1784] (Volker urges rising; Hagen refuses); Volker's
+    fiddle bow like a sword [1785]; Hagen openly confesses the murder.
+029 (Av 30, 1818-1848) The night watch: Volker plays them to sleep; the
+    armed Huns turn back.
+030 (Av 31, 1849-1920) Mass (Christians and pagans [1851]); the tourna-
+    ment; Volker kills a Hun dandy [1886]-[1890]; Etzel stops the fight;
+    Ortlieb brought to the table; Hagen's ominous remark [1918].
+031 (Av 32, 1921-1950) Blödel attacks Dankwart's squires in the hostel;
+    the massacre of the squires; Dankwart fights his way to the hall.
+032 (Av 33, 1951-2008) [1960] locked toast; [1961] Ortlieb killed (8.1);
+    the hall fight; Dietrich leads Etzel and Kriemhild out; the doors
+    held; [2004] Volker "fiddling" with the Huns.
+033 (Av 34, 2009-2027) The dead thrown down the stairs; Hagen taunts
+    Etzel; Kriemhild's offer of gold for Hagen's head.
+034 (Av 35, 2028-2080) Iring of Denmark's attack and death; Irnfried and
+    Hawart killed.
+035 (Av 36, 2081-2134) Negotiation fails; Kriemhild has the hall set on
+    fire; the Burgundians drink blood [2114]-[2117] (8.1); dawn.
+036 (Av 37, 2135-2234) RÜDIGER. His dilemma [2153] (locked-ish: "Oh,
+    God help me, wretched man that I am, that I ever lived to see this!"
+    — text_analysis 7); his release of Giselher's betrothal; Hagen asks
+    for his shield and Rüdiger gives it [2194]-[2197] — the most famous
+    gesture of the poem, keep every word; Rüdiger and Gernot kill each
+    other with Rüdiger's gift [2220]; Etzel's lion-roar of grief [2234].
+037 (Av 38, 2235-2323) Dietrich's men want Rüdiger's body; Wolfhart's
+    taunts; the Amelungs and the Burgundians destroy each other: Volker
+    killed by Hildebrand, Wolfhart and Giselher kill each other;
+    Hildebrand flees wounded. [2288] repaired from B (LINE_FIXES).
+038 (Av 39, 2324-2379) Dietrich takes Gunther and Hagen alive and hands
+    them over; Kriemhild's demand for the treasure [2368]; Gunther's
+    head carried by the hair [2369]; [2371] locked; Kriemhild beheads
+    Hagen with Balmung [2373]; Hildebrand kills her [2376]-[2377]; [2378]
+    and [2379] locked — the last line of the book.
+
+
+BATCH LOG (orchestrator adds a section per batch below)
+
+BATCH 0 (voice, 000-002, Aventiuren 1-3; Fable 5.1; ratios 1.14/1.16/1.08,
+at Shumway's own density). CALIBRATE ON drafts/002.txt.
+- RATIO RULE (orchestrator): per-file floor = that file's Shumway ratio
+  (manifest shumway_words/mhg_words) minus 0.05; ceiling ~1.35; expect
+  1.05-1.25. Under the floor: audit strophe by strophe and report; never pad.
+- Narration: plain, grave, unhurried; short declaratives joined by "and";
+  no courtly-precious diction, no Wagner. Epithets single words ("bold
+  Siegfried", "strong Hagen", "young Giselher"). Lists kept item by item.
+- Narrator's "I"/"you" kept where the MHG has it ("as I have said", "believe
+  me", "it is the plain truth"), never added.
+- Foreshadowing: every one kept, short, and a strophe-final foreshadow CLOSES
+  ITS PARAGRAPH. Core words: "would lose their lives", "Later...", "In the end
+  they died wretchedly", "so much joy ... and so much sorrow too". NEVER
+  "little did they know".
+- Paragraphs of 2-5 strophes; break at scene/speaker change and after a
+  closing foreshadow; markers at sentence starts, before an opening quote.
+- Dialogue: modern, direct, no contractions between lords; long speeches
+  re-open each paragraph with a quote mark.
+- RULINGS: unmarried Kriemhild = "princess" (küneginne) until her marriage;
+  Ute "queen". "the hero from the Netherlands" (locked). "Sieglinde's son",
+  "Ute's son" as the MHG has them. Siegmund "Prince"/"King" as the MHG
+  alternates; "Father Siegmund" in address. "high love" (hohe minne).
+  "take the sword" (be knighted). "midsummer". Offices: steward (Ortwin),
+  marshal (Dankwart), cupbearer (Sindold), chamberlain (Hunold), master of
+  the kitchen (Rumold). Gear: coats of mail, shield-boss, javelin, pack-horses,
+  harness, reins, breast-straps. "traveling entertainers" (varende diete).
+  übermuot = "arrogance" (one admiring use at [68] "in higher spirits").
+- GLOSSES SPENT: buhurt [34] "the buhurt, the mock battle on horseback"; the
+  cloak [97] "the cloak of invisibility" (its strength-of-twelve gloss still
+  owed at [337]). "margrave" bare at [9]; its gloss stays at Aventiure 20.
+- FAMOUS LINES placed: [1], [14], [17] verbatim; [19] "For the death of that
+  one man, many a mother's son would die."; [100] "his skin turned to horn".
+- Shumway errs (MHG wins): his extra strophe after Xanten (not in B — not
+  translated); [15] mother not brother; [75] horses not sumpters. Report others.
+- Poem's own inconsistencies kept as written (e.g. [59] vs [64]).
+
+ROUND 1 (files 004-018, Part One; Fable 5.1; ratios 1.05-1.13, all strophes
+present). LOCKS added for Part Two:
+- Kriemhild is "the queen" after her wedding (Av10); "Lady Kriemhild" where
+  the MHG has vrouwe. Brunhild "the queen" (reigning). "Kriemhild's husband"
+  (der Kriemhilde man) as the formula. "the hero from the Netherlands";
+  "Siegfried of the Netherlands". "the lord of the Rhine" / "the king of the
+  Rhine" (vogt / künec von Rine). "the host" (wirt). "Sir King" in address.
+- Eckewart: "Count Eckewart" where the MHG says grave, "Margrave" where it
+  says marcgrave (the poem's own). "Margrave Gere" (bare title; the margrave
+  gloss is owed at Aventiure 20 with Rüdiger). Dankwart "marshal".
+- GLOSSES SPENT: buhurt [34]; cloak of invisibility [97] and its strength of
+  twelve [337]-[338]; matins [1004]; schelch [937]; morning gift [1116];
+  gebende [572] (married women's headdresses). Use all bare from now on.
+- Vocabulary: bondsman / bondswoman / concubine (Av14, exact); "vassal" for
+  des küneges man; "service" (dienest); "the cathedral" (münster); "the great
+  hall" (palas); "the chamber" (kemenate); chamberlain (kamerære) — but
+  Alberich is "the keeper" of the treasure; "the Nibelung treasure"; "the
+  messenger's reward"; "samite"; "palfreys"; "belt" (never girdle); "the bier";
+  "coffin"; "her enemy Hagen"; "the hero of Tronje" (variant epithet).
+- Units: mîle -> first "the old long miles", thereafter "long miles"; never a
+  guessed conversion.
+- Places: Isenstein; "the Vosges forest"; "the Spessart forest"; "the Rhine at
+  Loche"; "the riverbank in front of Worms"; "Nibelung's castle in the border
+  country of Norway".
+- KRIEMHILD'S LINES Part Two echoes: [1012] "If I knew who did this, I would
+  plot his death for the rest of my life"; [1046] "Gunther and Hagen, you did
+  this."; [1010] "Brunhild planned this, and Hagen did it."; Hagen [1131] "Let
+  me be the guilty one"; [774] "The Nibelung treasure is locked in his hand."
+- Part One ends [1142]: "She was loyal to him; most people grant her that."
+- check.py: never let a {N} marker end a line.
+- KNOWN OTA MISPRINT: [1110] line 1 is a stray copy of [1100] line 1; the
+  translation follows Bartsch (Gernot speaking). prep.py needs the repair.
+
+ROUND 2 (files 025-038, Part Two end; Fable 5.1, 2026-10-11; ratios 1.05-1.13, all strophes present). Per-file notes:
+[025] Av26 ratio 1.09. "Möringen" [1591] (new place name); Gelfrat "the margrave of Bavaria"; "a hero with his hands"; "six red-gold arm-rings" [1634]; "a heavy pole" (schalte); [1597] OTA "verlivgen" misprint for urliugen; foreshadows [1595],[1598] closing.
+[026] Av27 ratio 1.06. Nudung, Witege; gifts: Gunther armor, Gernot "a fine sword" (=036 "the sword Rüdiger had given him"), Hagen Nudung's shield, Dankwart clothes, Volker twelve arm-rings; "the young margravine"; "My wife and I are exiles here"; foreshadows placed.
+[027] Av28 ratio 1.07. BERN GLOSSED [1718] "the Italian city we call Verona"; Aldrian, Walther of Spain, Hildegund; first "she-devil" [1748] (Dietrich); [1747] "If I knew who did it, he would have to die."; OTA [1720][1727][1735] gaps supplied from sense.
+[028] Av29 ratio 1.05. "the prince of Bern" [1804] bare; morat glossed [1812]; "comrade-in-arms" (hergeselle); "Arrogant Hagen" [1783]; [1789]-[1791] confession "Yes, I am Hagen, who killed Siegfried"; "the man from Spain" [1797] unnamed; [1785] OTA "vnder vorhte" for ane vorhte.
+[029] Av30 ratio 1.13. "shield-watch" (schiltwahte) unglossed; ellende "us strangers"/"far from home"; "stroke of my fiddle bow" [1821] (OTA gegenslalch misprint of gigenslac); "Hagen, my friend" [1838]; [1836] "in front of the door" (Shumway "tower" wrong); foreshadow [1848] closes file.
+[030] Av31 ratio 1.08. Schrutan, Gibeche, Ramung, Hornboge [1880]; Nudung; Ortlieb "the young king"; [1902] "Siegfried will not be avenged by Dietrich's hand."; [1912] "How could a woman ever do anything more terrible for revenge?"; [1918] "marked for death". Shumway errs: [1903] Dankwart (not Hagen) later kills Blödel; [1913] no "four".
+[031] Av32 ratio 1.10. [1934] MHG "chvneginne" (queen) vs Shumway "king" -- followed MHG. "Nudung's bride" [1927] depends on 030. "Aldrian's son" Dankwart; "the treacherous Huns" once (ungetriuwen); foreshadows kept.
+[032] Av33 ratio 1.13. [1960] locked line placed. Ortlieb plain [1961]. OTA [1961] "dem chvenege" (king's lap) -- rendered queen's lap per Bartsch; [1981] OTA "vogt von rine" where sense needs Dietrich -- rendered "lord of Bern". Shumway errs [1971] Giselher, [1998], [2005]. Volker fiddle jokes kept.
+[033] Av34 ratio 1.06. spilman "minstrel" alternating with "fiddler" (lock?); volkes trost "the leaders of this people"; gold over your shield-rim [2021]/[2025]; vezel shield-strap; "eat the prince's bread" [2027]; boese "Wretched king" [2023]; foreshadow [2019]. [2026] MHG "nv weiz ich wes si bitent" (no negation; Shumway/de Boor negate) -- followed our text. OTA typos [2014][2017][2018] harmless.
+[034] Av35 ratio 1.12. "Margrave Iring of Denmark"; "Hawart's vassal"; "the Dane"; Irnfried "the landgrave" bare; sword "Waske" [2051]; "the murderous, grim man" [2060]; [2062] OTA "wunden" for winden (rendered gusts); [2079] "in front of the tower".
+[035] Av36 ratio 1.13. Blood-drinking plain [2114]-[2117]; "we are still here" formula x2; "an evil/wretched festival"; "Sir Hagen" [2116]. OTA [2089] drops Kriemhild's name (supplied), [2103][2108][2129]. Shumway errs [2094] (Gunther speaks, not Giselher), [2110].
+[036] Av37 ratio 1.06. OATH echo [2149]/[2151] of [1257]-[1258]; [2150] "That I would lose my soul, I never swore."; dilemma [2153]-[2154] one paragraph; shield gift [2194]-[2197]; Gernot/Rüdiger gift-sword [2219]-[2221]; "Sir King" (Rüdiger to Etzel). Shumway "berserker" [2206] not in MHG. OTA [2194] missing verb (fuorte), [2233].
+[037] Av38 ratio 1.06. "the hero/lord of Bern"; "lord of the Amelungs"; "Master Hildebrand"; Sigestab; "We are exiles too" [2263]; Volker/Wolfhart fiddle-string taunts; [2319],[2323] "Alas, that no one can die of grief!"; OTA misprints [2236][2282][2294][2298][2321] (vnschulde = unsælde).
+[038] Av39 ratio 1.06. Locks [2371][2378][2379] placed; "Sir Hagen" (Hildebrand); Waskenstein "in the Vosges" [2344]; Walther of Spain named; "the exiles" [2364]; [2377] "hewn to pieces" kept in its strophe.
+ORCHESTRATOR HARMONISATION: 'Sir King' (003 'Lord King' changed), 'Sir Hagen' in address (002 changed), 019 'Prince Rüdiger' -> 'Lord Rüdiger'. spilman = 'the minstrel', videlaere = 'the fiddler' (both used for Volker, as the poem alternates).
+
+ROUND 1, Part Two files 019-024 (Fable 5.1, 2026-10-10; merged 2026-10-11):
+[019] Av20 ratio 1.10. MARGRAVE GLOSS SPENT [1153] 'the lord who guarded Etzel's western border'; 'good Rüdiger of Pöchlarn'; Gotelind 'the margrave's wife'/'the margravine'; THE OATH [1256]-[1258] verbatim for 036 to echo ('you will be the first to right my wrongs'); [1277] THIRTY thousand marks (Shumway wrong); 'Prince Rüdiger' per lock (may read oddly — consistency pass to judge); added tag 'Hagen answered:' [1210].
+[021] Av22 ratio 1.05. Traismauer; Hainburg; Wieselburg; Etzel's castle; peoples catalogue; 'Etzel, Botelung's son'; Whitsunday (lock or Pentecost?); Herrat named; Dietrich bare (no 'of Bern' until 027).
+[023] Av24 ratio 1.10. spilman 'minstrel' / videlære 'fiddler' (rule); Esztergom; Bavaria; Swabia; 'the margravine'; Gotelind; [1459] 'I killed her husband with my own hand.'; [1461] 'a very long memory for a wrong'; added tag 'The king said:' [1443]; Rumold 'make love to lovely women' [1467]; Brunhild's last appearance [1485].
+[024] Av25 ratio 1.08. 'the Nibelungs, as they were called now' SPENT [1526] (bare after); Hadeburg; second mermaid 'Sieglinde'; Else 'the lord of this border country'; 'the man of Tronje'; Volker introduced [1584] without 'of Alzey'; 'squires' (knehte); CHECK Schwanfeld vs Bartsch; OTA [1559] lines rotated (translated in Bartsch order; prep note); ferryman's head flung into the river.

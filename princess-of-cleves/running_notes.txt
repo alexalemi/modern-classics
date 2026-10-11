@@ -1,0 +1,377 @@
+RUNNING NOTES — consistency ledger (orchestrator-maintained)
+The Princess of Cleves (1678), with The Princess of Montpensier (1662),
+Madame de Lafayette, from the French.
+Agents read this; only the orchestrator edits it, between batches, from
+the agents' returned notes. Reasons go in with the rulings -- the reason
+is what makes the next case decidable.
+
+LOCKED AT SETUP (2026-10-10) -- text_analysis.txt has the reasoning
+
+THE RULE FOR NAMES. French personal titles stay French with the name
+(Madame de Cleves, Monsieur de Nemours, the Vidame de Chartres, the
+Chevalier de Guise, the Marshal de Saint-André, Madame de Valentinois);
+great territorial and royal titles take English "of" (the Duke of Guise,
+the Duke of Nemours, the Prince of Cleves, the Cardinal of Lorraine, the
+King of Navarre, the Prince of Condé, the Duke of Alba, the Duke of Savoy,
+the Duke of Ferrara, the Duke of Nevers, the Duchess of Valentinois).
+French royals in French (Henri II, François I, François the Dauphin,
+Charles IX); English and Spanish royals in English (Henry VIII, Anne
+Boleyn, Catherine of Aragon, Cardinal Wolsey, Mary Tudor, Queen
+Elizabeth, Philip II, the Emperor Charles V). "Cleves" never takes an
+accent; "Elisabeth" never takes one either; "Mercoeur" is spelled oe.
+
+TWO ELISABETHS, THREE MARGUERITES, TWO MARYS -- keep them apart:
+  Élisabeth (Henri II's daughter, married by proxy to Philip II of Spain
+    through the Duke of Alba) = "Madame Elisabeth", "Elisabeth of France";
+    after the wedding "the Queen of Spain".
+  Élisabeth of England (001, 004: Nemours's marriage project) = "Queen
+    Elizabeth", "Elizabeth of England" (English spelling).
+  Marguerite de France, Henri II's sister, who marries the Duke of Savoy
+    = "Madame Marguerite" (for "Madame, sœur du roi").
+  Marguerite, sister of François I, Duchess of Alençon, later Queen of
+    Navarre, author of the Heptameron (005) -- all her titles.
+  Marguerite de Valois, Charles IX's sister (Montpensier) = "Madame
+    Marguerite".
+  Mary Stuart = "the Queen Dauphine". Mary Tudor ("Marie, reine
+    d'Angleterre", 001, 004) = "Mary Tudor, Queen of England" / "Queen
+    Mary".
+  A bare royal "Madame" never survives into English: decide from context
+  whether it is Marguerite (the sister; the Savoy match) or Elisabeth (the
+  daughter; the Spanish match, the Duke of Alba) -- Perry names her when
+  in doubt -- and REPORT the call.
+
+THE CAST (Clèves). The epithet may be used at the FIRST mention in EACH
+file (parallel agents cannot know what the previous file glossed); after
+that, the plain name.
+  Mademoiselle de Chartres / Madame de Cleves (after the wedding, 002) --
+    "she", or her name where "she" is unclear; NEVER "the princess".
+  the Prince of Cleves / Monsieur de Cleves -- "her husband, the Prince
+    of Cleves"; never the bare surname "Cleves" (check.py fails it).
+  the Duke of Nemours / Monsieur de Nemours -- "Nemours" allowed in
+    narration, sparingly.
+  Madame de Chartres -- "her mother, Madame de Chartres" (dies in 003).
+  the Vidame de Chartres / the Vidame -- "her uncle, the Vidame de
+    Chartres" (001 folds in what a vidame is).
+  the King -- Henri II; dies in 009 ("the late King" thereafter).
+  the Queen -- "the Queen, Catherine de' Medici"; "the Queen Mother"
+    after 009.
+  the Queen Dauphine -- "the Queen Dauphine, Mary Stuart"; in Part Four
+    "the young Queen" where she is plainly "la reine".
+  the Dauphin -- François, Mary's husband; "the young King" in Part Four
+    (François II, crowned at Reims, 010).
+  Madame de Valentinois / the Duchess of Valentinois -- "Diane de
+    Poitiers, Duchess of Valentinois, the King's mistress".
+  the Constable / the Constable de Montmorency -- "the Constable de
+    Montmorency, the King's chief minister".
+  Monsieur d'Anville -- "the Constable's son, Monsieur d'Anville";
+    in love with the Queen Dauphine.
+  the Duke of Guise; the Cardinal of Lorraine (his brother); the
+    Chevalier de Guise (his younger brother, later the Grand Prior; Madame
+    de Cleves's other suitor); "the Guises" (MM. de Guise).
+  the Marshal de Saint-André -- "one of the King's favorites".
+  the King of Navarre; the Prince of Condé; the Duke of Nevers (Cleves's
+    father, dies in 002); Madame de Nevers (his sister-in-law).
+  Madame de Martigues -- one of the Queen Dauphine's ladies; the Vidame
+    loves her; Madame de Cleves's friend.
+  Madame de Mercoeur -- Nemours's sister; her house is near Coulommiers.
+  Chastelart -- "a favorite of Monsieur d'Anville's" (001/002); carries
+    the lost letter to the Queen Dauphine (006).
+  Lignerolles -- Nemours's young favorite, sent to England.
+  Monsieur de Randan -- the King's envoy to Queen Elizabeth.
+  the Count of Montgomery -- whose lance kills the King (009).
+  In the told stories: Sancerre, Estouteville, Madame de Tournon (004);
+  Madame de Thémines, Madame d'Amboise (006-007); the Duchess of Étampes
+  (003); the Viscountess Rochford (005).
+  "the princes of the blood" -- glossed once per file at most, in the
+  sentence.
+
+THE CAST (Montpensier, 013-014).
+  Mademoiselle de Mézières (with the s) / the Princess of Montpensier.
+  the Prince of Montpensier (her husband); the Duchess of Montpensier
+    (his mother).
+  the Duke of Guise (Henri, "le Balafré" -- not named so by Lafayette);
+    "the Duke of Maine" (Lafayette's "duc du Maine", Guise's younger
+    brother -- her form, kept); the Cardinal of Lorraine and the Duke of
+    Aumale (Guise's uncles).
+  the Count of Chabannes / Chabannes (Lafayette spells "Chabanes": the
+    family name is Chabannes, which we use).
+  the Duke of Anjou -- "the King's brother, the Duke of Anjou" (later
+    Henri III; do not say so in the text).
+  Madame Marguerite (Charles IX's sister); Charles IX ("the King");
+    Catherine de' Medici ("the Queen Mother"); Madame de Noirmoutier; the
+    Princess of Porcien ("princesse de Portien"); the Admiral de
+    Châtillon ("the Admiral de Châtillon, the Huguenot leader" -- Coligny;
+    Lafayette does not say Coligny and neither do we).
+  Places: Champigny (Lafayette "Champigni"); Loches; Poitiers; La
+    Rochelle; Moncontour; Saint-Jean-d'Angély; Paris; Blois.
+  "huguenots" = "the Huguenots" (once per file: "the Huguenots, the
+    French Protestants"); "la Saint-Barthelemi" = "St. Bartholomew's
+    Day".
+
+PLACES (Clèves): the Louvre; the Tournelles (the royal palace by the
+Bastille); the rue Saint-Antoine; Coulommiers (the Cleves country house)
+and its pavilion; Chambord (Lafayette "Chambort"); Blois; Reims
+(Lafayette "Rheims"); Cercamp (the peace talks); Brussels; Fontainebleau.
+"lieue" -> miles at 2.5, rounded.
+
+VOCABULARY LOCKS (false friends; full table in text_analysis):
+  repos = "peace of mind" (her inner calm); "rest"/"quiet" otherwise.
+  inclination = "attraction" / "her feelings for him" -- never bare
+    "inclination" (check.py fails it).
+  galanterie = love affairs, courtship; "gallantry" only in the first
+    sentence (pinned).
+  galant (of a person) = a ladies' man / given to love affairs.
+  amant = suitor, admirer, the man who loves her; "lover" only for a plain
+    liaison.  maîtresse = the woman he loves / is courting; "mistress"
+    only for a plain liaison (the King and Diane; Henry and Anne).
+  gloire = honor, pride, reputation (not glory).  bienséance = propriety.
+  vertu = virtue.  devoir = duty.  honnête homme = gentleman.
+  commerce = dealings, company, relations.  aventure = affair, incident,
+    story.  trouble = agitation.  embarras = awkward position, dilemma.
+  inquiétude = anxiety.  déplaisir, ennui = grief, torment (strong).
+  étonnement = shock.  parti = a match / a course / a faction.
+  le cercle = the Queen's evening reception.
+
+ADDRESS: "Madame" / "Monsieur" kept in direct address; "Sire" to the
+King; "Your Majesty" to queens; "ma fille" = "my daughter", "my child";
+"vous" always "you".
+
+VOICES
+  Madame de Cleves -- reserved, grave, sincere, self-scrutinising; few
+    words in public; lucid and firm when she finally argues (012).
+  Monsieur de Cleves -- generous, honorable, deeply in love; eloquent in
+    grief; bitter at the end, never a villain.
+  Nemours -- witty and dazzling in company (the astrology talk, 005; the
+    ball talk, 003); ardent and humble alone with her; quick at a white
+    lie for her sake.
+  Madame de Chartres -- worldly, lucid, tender, didactic; she teaches by
+    telling history.
+  the Queen Dauphine -- lively, warm, gossipy, imprudent.
+  the Vidame -- a frank, self-aware man of the world, ruefully funny
+    about his own entanglements.
+  the King -- affable, courteous, fond.  the Queen -- cold, proud, exacting.
+  (Montpensier) Guise ardent and ambitious; Chabannes devoted, eloquent,
+    self-sacrificing; the Prince of Montpensier jealous and violent;
+    Anjou proud and menacing; the Princess vain of being loved, quick,
+    imprudent.
+
+REGISTER: restraint and precision. Cut the semicolon chains, never the
+logic. No added description, gesture or emotion; no added exclamation
+marks; maxims as crisp present-tense sentences; superlatives of the
+roll-call kept. Modern, plain, never slangy. Contractions in dialogue
+where natural; narration a shade more formal.
+
+FORMAT: line 1 the exact heading; split files "(Part n of k)" on line 3;
+quoted dialogue, a paragraph per speaker; long told stories and letters
+in the multi-paragraph quote convention (each paragraph opens with ",
+only the last closes), speech inside a story in single quotes; no
+indented blocks, no short bare lines, no notes, straight quotes only.
+Ratio: expect 1.0-1.25 of the French; verify 0.9-1.5; never pad.
+
+EXACT HEADINGS (line 1 of each modern file = manifest "title")
+  file  FR words  heading                         marker
+  000     100     The Publisher to the Reader     (none)
+  001   4,878     Part One                        (Part 1 of 3)
+  002   4,334     Part One                        (Part 2 of 3)
+  003   5,958     Part One                        (Part 3 of 3)
+  004   4,766     Part Two                        (Part 1 of 3)
+  005   4,919     Part Two                        (Part 2 of 3)
+  006   5,247     Part Two                        (Part 3 of 3)
+  007   4,801     Part Three                      (Part 1 of 3)
+  008   5,021     Part Three                      (Part 2 of 3)
+  009   5,589     Part Three                      (Part 3 of 3)
+  010   5,068     Part Four                       (Part 1 of 3)
+  011   4,295     Part Four                       (Part 2 of 3)
+  012   5,271     Part Four                       (Part 3 of 3)
+  013   5,145     The Princess of Montpensier     (Part 1 of 2)
+  014   5,951     The Princess of Montpensier     (Part 2 of 2)
+The divider "The Princess of Cleves" is in the manifest (on 000): never
+write it in a file.
+
+PER-FILE NOTES (what is special in each source file)
+
+000  Barbin's note "Le libraire au lecteur", 1678 spelling (Autheur,
+     sçait, &). One paragraph; the publisher speaks ("je"); the author is
+     "il" -- keep "he"/"his" (pinned: "the author could not bring himself
+     to reveal his name"). No marker.
+001  The roll-call: Henri II and Diane; the Queen; Elisabeth, Mary Stuart,
+     Madame Marguerite; the great men one by one (Navarre, Guise, the
+     Cardinal, the Chevalier, Condé, Nevers and his son Cleves, the
+     Vidame, NEMOURS -- the portrait to make dazzling); the factions; the
+     Constable's marriage schemes; the peace talks at Cercamp; Mary
+     Tudor's death and the English project (Queen Elizabeth, Lignerolles,
+     Randan). Then Mademoiselle de Chartres arrives, her mother's
+     education (the famous lesson on the dangers of love affairs and the
+     happiness of loving one's husband), the jeweller's shop where Cleves
+     first sees her. This file carries the heaviest load of names in the
+     book: one identifying phrase each, inside the sentence, and keep the
+     sentences moving. Pin: "magnificence and gallantry". Gloss
+     "vidame" here.
+002  The cabals around the match: the Chevalier de Guise and Cleves both
+     in love; the Duke of Nevers forbids; Madame de Chartres aims at the
+     Prince Dauphin (the Duke of Montpensier's son -- "prince dauphin" is
+     his title, not the King's heir: say so in the sentence), the Vidame
+     enlists the Queen Dauphine through d'Anville, and the match is
+     blocked; the Queen Dauphine's warning; Nevers dies; Cleves proposes; the marriage at the
+     Louvre; Cleves's grief that she does not love him. Nemours returns
+     from Brussels; THE BALL (the betrothal of Claude de France and the
+     Duke of Lorraine): the King makes them dance without being
+     introduced. Madame de Chartres begins her lesson on the court. Pin:
+     "what appears is almost never the truth".
+003  Opens INSIDE Madame de Chartres's speech: the history of Diane de
+     Poitiers and François I's court (Saint-Vallier, the Duchess of
+     Étampes, the Dauphin's death, the Duke of Orléans) -- a long told
+     story, multi-paragraph quote convention. Then Nemours in love; the
+     ball at the Marshal de Saint-André's that she does not attend, and
+     the talk of lovers and balls at the Queen Dauphine's; Madame de
+     Chartres sees the truth; her illness and DEATHBED SPEECH (pin: "too
+     harsh and too difficult"); her death. Cleves takes his wife to the
+     country and begins the Tournon story: the file ENDS on "and I will
+     tell you the whole story" -- non-final part, do not conclude.
+004  Opens INSIDE Cleves's speech (the Sancerre / Madame de Tournon /
+     Estouteville story, told to his wife; Sancerre's own words nested in
+     single quotes). Cleves's maxim on sincerity -- she will remember it
+     (008). Return to court; the Queen Dauphine's news of the English
+     project and the rumour that Nemours is in love with someone unknown
+     ("Quel poison pour madame de Clèves..."). Mid-Part, opens on the
+     heading + (Part 1 of 3).
+005  Madame Elisabeth's marriage announced (Madame = Elisabeth here; the
+     Spanish match). Nemours's visit at her bedside; she avoids him;
+     Cleves's illness; the evening at the Queen's: horoscopes and
+     predictions (the King's story of his foretold death in a duel -- keep
+     it plain, it comes true in 009). The Queen Dauphine's history of Anne
+     Boleyn and Henry VIII (told story; Lafayette's Catholic view of "the
+     new religion", kept). The miniature portraits: NEMOURS STEALS HER
+     PORTRAIT and she sees him do it. The tournament proclaimed (the
+     formal cartel of challenge -- a list of rules; keep it as prose).
+006  The tennis match and Nemours's fall from his horse: she betrays her
+     fear in public; the Chevalier de Guise sees it. The lost letter
+     (Chastelart gives it to the Queen Dauphine; everyone thinks it fell
+     from Nemours's pocket): THE LETTER, 794 words in « » -- introduce it
+     in narration, then ordinary quoted paragraphs. Her night of jealousy.
+     The Vidame confesses to Nemours that the letter is his and begins his
+     story of the Queen, Madame de Thémines and Madame de Martigues --
+     the file ENDS inside the Vidame's story (non-final; do not conclude).
+007  Opens INSIDE the Vidame's story (continue the quotation; the Queen's
+     speeches nested in single quotes). Nemours agrees to help; Madame
+     d'Amboise's note; Nemours and Cleves visit her; the rewriting of the
+     letter together -- an afternoon of happiness she will regret.
+     Jealousy, first felt. Part Three opens on the Vidame's sentence, not
+     on narration: heading, (Part 1 of 3), then the speech.
+008  To Coulommiers. Nemours, at his sister's house nearby, hides in the
+     pavilion and OVERHEARS THE CONFESSION (pins: "a confession that no
+     wife has ever made to her husband"; "the unhappiest man who ever
+     lived"). Cleves's anguish; Nemours tells the story, disguised, to the
+     Vidame; the Duke of Alba arrives to marry Madame Elisabeth.
+009  The Queen Dauphine's supper: the confession is all over court, told
+     back to Madame de Cleves as an anonymous "aventure" -- with Nemours
+     standing by the bed. The night of mutual accusation between husband
+     and wife. The weddings (Madame = Elisabeth at the betrothal; on the
+     eve of his death the King has "Madame, sa sœur" married to Savoy =
+     Madame Marguerite); the tournament; THE KING'S WOUND (Montgomery's
+     lance; as told, no added detail) and death at the Tournelles; Diane's
+     "I have no master yet"; the Queen Mother's barbed courtesy to the
+     young Queen. Ends Part Three.
+010  Opens on the new reign: the Cardinal of Lorraine and the Queen Mother;
+     the court's reshuffle; the coronation at Reims; Chambord. Cleves's
+     "you have made me the unhappiest man in the world" and "I love you as
+     a man loves a woman he is courting" (see the maîtresse note). Madame
+     de Martigues's visit to Coulommiers; Nemours's second journey; the
+     NIGHT IN THE PAVILION: she ties ribbons in his colors on an Indian
+     cane, before his portrait; he watches from the garden, does not dare
+     enter; Cleves's gentleman spies. Nemours under the willows.
+011  Nemours's visit to Madame de Mercoeur and the pavilion by day; the
+     gentleman's report; CLEVES'S FEVER AND DEATH (his last speech: keep
+     every reproach and every tenderness); her grief; Nemours keeps away;
+     the silk-worker's back room, rented by a handsome stranger who "draws"
+     the gardens and never works -- its window looks into hers; the garden
+     outside the city where she finds Nemours lying lost in thought in an
+     open summer-house, and he walks off with a low bow without seeing
+     who it is ("S'il eût su ce qu'il évitait..."). The file ends on the
+     morning after: he is at the window.
+012  Nemours resolves to speak; the Vidame arranges it; THE LAST INTERVIEW
+     (her whole argument: men's passion does not survive eternal ties;
+     Cleves was perhaps the only man who could love within marriage; her
+     repos and her duty) -- pins: "a duty that exists only in my
+     imagination", "my peace of mind". Her flight to the Pyrenees, her
+     illness, her retreat to the convent; Nemours's last attempt; the last
+     sentence (pin: "inimitable virtue").
+013  Montpensier I. Lepetit's three huge paragraphs: re-paragraph freely.
+     The wars of religion under Charles IX; Mademoiselle de Mézières
+     promised to the Duke of Maine, married to the Prince of Montpensier,
+     in love with Guise; Champigny; Chabannes, the Huguenot-turned-
+     Catholic friend, falls in love with her and declares himself; the
+     peace; the court; Guise returns. Pin: "love still found its place".
+     Non-final part: it ends mid-paragraph in the French, before the
+     King's marriage festivities -- end on that sentence, do not conclude.
+014  Montpensier II. Opens on the court ballet (the King's marriage to
+     Maximilian's daughter; the Moorish entrée; the mistaken mask -- the
+     Duke of Anjou hears what was meant for Guise). Anjou's threat; the
+     night visit at Champigny that Chabannes arranges; the husband
+     surprises Chabannes; the St. Bartholomew's Day Massacre ("cet
+     horrible dessein"); Chabannes murdered; Guise's new love, Madame de
+     Noirmoutier; the princess's death. Pins: "the most perfect friend",
+     "if virtue and prudence had guided all her actions".
+
+SENSITIVE-CONTENT RULINGS (text_analysis numbers them 1-7): adultery as
+court fact, plainly; the marriage, the mother's teaching and the
+husband's possessiveness rendered with full dignity, no modern irony;
+the King's wound and Anne Boleyn's fall as told, nothing added;
+Lafayette's Catholic view in her words; the Massacre "horrible" and
+"wipe out the Huguenots" at full strength; "a Moorish entrée". Agents
+REPORT every call; the orchestrator logs them here by file.
+
+AWAITING ALEX (text_analysis DECISIONS A-G): Barbin's note kept as 000;
+Montpensier after Clèves; titles kept / bare "Nemours" / never bare
+"Cleves"; Catherine de' Medici named at first mention; a cast list later
+or not; the Lepetit text; the author's name form. Agents follow the
+recommendations meanwhile.
+
+BATCH LOG
+(empty -- the orchestrator adds name/term calls, seams and sensitive
+calls here after each batch)
+
+BATCH 0 (voice, 000-001; Fable 5.1; ratios 1.12 / 0.99). Expect 0.95-1.15.
+- ORCHESTRATOR READABILITY CORRECTION (read before anything else): 001 is
+  accurate but in places it is FRENCH IN ENGLISH WORDS. Do not copy these;
+  write what an English writer would say:
+    "The Queen's presence gave sanction to hers" -> "The Queen's presence made
+      hers respectable"
+    "made her find a great sweetness in reigning" -> "made reigning very sweet
+      to her"
+    "most beautiful and best made, of either sex" -> "the handsomest men and
+      most beautiful women"
+    "never failed to be found" -> "were always to be found"
+    "fill with honor the place of his father" -> "be a worthy successor to his
+      father"
+  Test every sentence: would a good modern English novelist write it? If it
+  only makes sense because you know the French, rewrite it. Keep Lafayette's
+  restraint (no added feeling, gesture or description) — restraint is not
+  stiffness. The consistency pass will bring 001 into line with this.
+- Narration: plain, slightly formal, past tense, no contractions; speech may
+  use contractions. Feelings NAMED, never shown. Portrait superlatives whole.
+- Chains: each French period -> 2-4 sentences, cut at colon/semicolon, every
+  joint carried by an explicit connective ("but", "so", "Yet", "In short").
+  Keep a si...que result clause whole.
+- Dialogue: lead-in ends with a colon; speech its own paragraph; straight
+  double quotes; indirect speech stays indirect.
+- Cast: never "ce prince" -> "the prince"; use the name; repeat the name when
+  two of a sex are in play. One identifying phrase at first mention in a file.
+  "Monsieur de Cleves" where the French has M. de Clèves, "the Prince of
+  Cleves" where it has le prince; never bare "Cleves".
+- GLOSSES SPENT (001): "the hour of the circle, her evening reception";
+  vidame and "princes of the blood" (in the Vidame sentence).
+- RENDERINGS: galant (the King) "a ladies' man"; "mistress of his person and
+  of the state" (the pun); amants "suitors"; honnêtes gens "people of taste
+  and breeding"; honnête femme "a virtuous woman"; glorieuse "extremely
+  proud"; courses de bagues "riding at the ring"; paume "tennis"; chiffres
+  "monogram"; Charles-Quint "the Emperor Charles V"; ennui = "boredom" when
+  paired with idleness (the strong sense "torment" elsewhere).
+- CAST ADDITIONS: Monsieur de Montmorency = the Constable's ELDEST son
+  (married to Madame Diane), NOT the Constable; Monsieur d'Anville = the
+  second son; Madame Diane = Diane de France, the King's legitimated
+  daughter (a second Diane, NOT de Poitiers); the Constable = "the Constable
+  de Montmorency", Lafayette's own clause for his power, no "chief minister".
+- ROYAL "MADAME" in 001: always Madame Marguerite, the King's sister. "les
+  reines" = the Queen and the Queen Dauphine. "Mesdames, filles du roi" =
+  "the King's daughters".
