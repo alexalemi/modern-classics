@@ -4257,3 +4257,293 @@ there too ([1077], [1277] thirty thousand marks, [1903] Dankwart kills
 Blödel, [1971], [2094]). TRANSLATED by Fable 5.1 subagents throughout.
 COVER: Carl Rahl, Kriemhild at Siegfried's body names Hagen as his murderer
 and swears revenge (1835).
+
+## solferino/ — Henry Dunant, A Memory of Solferino (1862), from the French
+
+SOURCE: the FIRST edition (Geneva: Fick, 1862, "not for sale"), French
+Wikisource "Un souvenir de Solférino", proofread 100% against the djvu scan
+(pp. 4-118). prep.py fetches the rendered page (action=render), numbers
+Dunant's 31 footnotes and sets each as a "NOTE n:" paragraph after the
+paragraph that cites it, joins superscript ordinals ("70 e" -> "70e"), and
+cuts at seven pinned paragraph openings. NO CRIB: the American Red Cross's
+1939 translation was RENEWED (R402843, 18 Jan 1967; NYPL cce-renewals
+1967-1.tsv), so no PD English exists; the introduction says so. check.py is
+the second witness: note parity, no [n] markers, a per-file numeral diff,
+and no "ambulance" (1859 French = field hospital).
+DIVISIONS: none in the original. Seven files with plain descriptive
+headings of ours (The Battle / The Night and the Morning After /
+Castiglione / The Road to Brescia / The Hospitals of Brescia / Milan /
+A Proposal); no "Chapter N", since Dunant numbered nothing.
+TRANSLATION: the session agent alone (Opus 5.5), 000 first, no subagents.
+30,072 -> 29,838 words, ratio 0.99 (files 0.97-1.01). Present tense kept
+where he writes the battle in the present. Footnotes folded as
+"Author's note:" paragraphs, none dropped. UNITS: his lieue is the 4 km one
+(he gives the front as both "cinq lieues" and "plus de vingt kilomètres"):
+-> about twelve miles; 5 km -> three miles; six lieues -> fifteen; trois
+cents lieues -> 750; feet kept. Real-name normalization: "Norman Bettun" ->
+Norman Bethune (the Toronto anatomist), "Leipsick" -> Leipzig.
+RULINGS: the wounds, amputations, looting, Croats finishing off the wounded,
+the Austrian officer's "real barbarians" (quoted speech) and the
+"Latin race" aside all KEPT at his register. The Mont Fontana phrase "avec la rage de l'Africain et le fanatisme du
+Musulman" was cut in draft and RESTORED by Alex (2026-10-12); the
+introduction names it. COVER: Giovanni Fattori, The Italian Camp after the Battle of Magenta
+(1861-62), Sisters of Charity at a hospital wagon; the Commons file is
+7304px, so the crop is in the 3840px rendition's coordinates.
+
+## perpetual-peace/ — Immanuel Kant, Toward Perpetual Peace (1795/1796), from the German
+
+SOURCE: Gutenberg #46873, the PGDP text of the 1795 first edition
+(Nicolovius), plus the 1796 "Zweiter Zusatz: Geheimer Artikel" from the
+Akademie-Ausgabe VIII 368-369 (korpora.org, http only; AA prints 1796),
+spliced in by prep.py in AA spelling, four paragraphs as Smith has them.
+A full word diff of AA against #46873 found nothing else but spelling, a
+dozen single words, and note 4's corrected freedom tautology (applied).
+TRAP: #46873 indents a footnote's later paragraphs like its first; read
+as body text they made notes 2, 3 and 4 look ENLARGED in 1796 -- they
+are not. prep joins indented continuations into the Footnote paragraph
+(and the "* * *" that follows note 15 is indented too). Crib: M. Campbell
+Smith (1903, #50922), cut per file into reference/, her introduction and
+[Tr.] notes dropped. 8 files at Kant's joints: untitled preface
+("Preface", ours), Section One, Section Two in two parts (cut between
+Definitive Articles 1 and 2), First and Second Supplement, Appendix One
+and Two; article theses as italic quoted paragraphs under "Preliminary
+Article N" / "First Definitive Article for Perpetual Peace" subheads.
+Kant's 16 notes kept as "Footnote:" paragraphs. 16,698 German words,
+ratio 1.15 (Smith runs 1.3). Locked: republican (separation of powers +
+representation) vs democracy ("necessarily a despotism"), league vs
+state of nations, right to visit vs right to be a guest, moral politician
+vs political moralist, Recht = right. "Nation of devils" is here; the
+crooked timber is NOT (1784 Idea) -- the introduction says so.
+Two hundred German miles -> "some nine hundred miles". "Negerländer" ->
+"the lands of Black Africa" (genealogy precedent). Colonialism, Arctic
+ethnography and the denial of a right of rebellion kept as written.
+Translated directly by the Opus 5.5 agent, no subagents. COVER: Gottlieb
+Doebler, portrait of Kant (1791), the painted oval is the picture's own.
+
+## five-rings/ — Miyamoto Musashi, The Book of Five Rings (Gorin no Sho, 1645), from the Japanese
+
+NO CRIB: no public-domain English exists (Harris 1974 onward all in
+copyright, none used); say so in the intro (sun-tzu/dogen precedent).
+SOURCE: not on ja.wikisource or Aozora. 宮本武蔵遺蹟顕彰会 ed., 宮本武蔵
+(Kinkōdō 1909), ch. 9, NDL pid 992019, PDM, frames 97-141; the copy then
+held by the Maeda family of Tamana, Higo, each scroll ending on the
+Musashi -> Terao Magonojō (1645) -> Terao Katsunobu -> Yamamoto Gensuke
+(1667) colophon. TEXT LAYER = NDL Lab full-text OCR
+(lab.ndl.go.jp/dl/api/book/fulltext-json/992019, saved in source/),
+proved against page images (f103 R char for char; f117, f118, f122, f99,
+f140, f105, f106 read). Traps, all in prep.py: 〓 pair = kunoji repeat
+mark, single = 敎 (every one image-read); the letter-spaced signature
+新 免 武 藏 and small 口傳 are single-char blocks a height filter drops;
+seven article heads misread/fused/dropped (多敵の位 lost entirely, f118)
+-> HEAD_FIX; column order must cluster by centre x, not round xmax.
+chapters/ = one unbroken line per scroll (heads in 【】) so verify's
+word ratio is honestly "not checked"; reading copy in
+source/gorin_paragraphed.txt. RATIO: 0.73-0.77 English words per CJK
+char (Void 0.87), band 0.65-0.95 in check.py, which also counts article
+heads against subheadings (8/36/27/9) and checks colophons. 18,778
+words. RULINGS: 兵法 = "strategy" (one word must cover duel and battle;
+"small scale / large scale" for 一分/大分); 太刀 long sword vs 脇差
+short sword; refrains kept as refrains ("Examine this well."); 枕をおさふる
+kana-initial wordplay rebuilt on English initials ("the 's' of
+'strike'"); 鼠頭午首 printed with 午, rendered ox (牛); ken/sun/ri
+converted. Single agent, no subagents. COVER: the Shimada Museum portrait
+of Musashi holding his two swords, traditionally a self-portrait
+(Commons 宮本武蔵自画像.jpg), clothed, crop to full figure.
+
+## story-book-of-science/ — Jean-Henri Fabre, The Story-Book of Science (1869; tr. 1917), RESTORED EDITION
+
+The first book for young readers (about 8–14). Le Livre d'histoires
+(Delagrave, 1869, "lectures courantes pour toutes les écoles") in Florence
+Constable Bicknell's translation from the nineteenth French edition,
+Century Co., New York, 1917; Gutenberg #56795 HTML (69 plates + labels).
+screen.py arch 0.07, sent 20.9: restored, not retold. TOPIC=Life sciences
+(about half the eighty chapters are living things; the rest metals, cloth,
+printing, weather, volcanoes, astronomy). 90,215 words; ratio 1.00 by
+construction. Headings keep Roman "Chapter I:" (alice/farmer precedent).
+
+PREP (restore_lib): Gutenberg's verse (lg-container/line in2) and
+footnotes (ids f1–f4, no fn anchors) are re-classed into the walker's
+shapes before walking; printed labels in div.ic001 become "caption".
+Witness: per-chapter multiset of raw-HTML words (regex, no walker code)
+equal to emitted words in all 81 sections. Votes: scan_diff --vote fabr
+fabruoft and fabr bickgoog; two Gutenberg typos restored (everywhere,
+"must be spun"), the print's own misprints left corrected (notes.txt).
+The two Internet Archive OCRs share ABBYY's R→B misreads ("Barely are the
+clouds"); the Google OCR breaks the tie.
+HEADINGS from the chapter heads, not the Contents, which differs three
+times (The Numerous Family / A NUMEROUS FAMILY, The Metals / METALS,
+Running Water / RUNNING WATERS), all confirmed on the scans. "Waves Salt
+Seaweeds" printed with wide spaces, no punctuation: kept so.
+TEXT AS PRINTED (Alex, 2026-10-12): no softening, no correcting of dated
+science; the introduction says where it has moved on. Only typography
+touched: the drop-cap lead-in words set in Gutenberg as capitals ("ONE
+evening", "UNCLE PAUL showed") are put in sentence case; the motto "Sursum
+corda" from the half-title closes the front section after a break; the
+La Fontaine footnote follows the poem; label italics (a), (b) set roman
+because captions are escaped.
+PLATES: several are American and do not match the French text
+(Copper Head for the viper, American Hornet, Yellowstone for Iceland's
+Geyser, Virginian no. 604); Ch. XLIX's letters A and B are on neither
+locomotive. Reported, captioned as drawn. Bicknell's dates not found
+(LoC no2015060902 has none): the introduction says the translation's
+status outside the US is unestablished.
+Cover: Fabre's own watercolor, Pleurotus phosphoreus (Omphalotus), 1878,
+MNHN, cropped to drop the museum watermark and stamp.
+
+## looking-glass/ — Lewis Carroll, Through the Looking-Glass, and What Alice Found There (1871), RESTORED EDITION
+
+Text: Gutenberg #12 (Millennium Fulcrum 1.7, the first-edition text: no
+1896 Preface, no Wasp in a Wig). Gutenberg has NO Tenniel pictures and
+no other PG edition does (#23718 is audio). PLATES: cut from Archive.org
+`throughlooking00carr`, Gettysburg College's 1872 Macmillan first edition
+at 500 ppi; its rebinding keeps the red cloth covers at the back (leaves
+251, 256). Leaves in _src/scan/, boxes in prep.py (ABBYY ocr_photo zones
+united with the leaf's large ink components, +14 px, paper levelled to
+white, greyscale); three wrapped pictures (Tiger-lily, Humpty on the
+wall, the feast) have their beside-text painted out. 54 plates: Tenniel's
+50, the chess diagram (replacing Gutenberg's redrawn fig01), the mirror
+"Jabberwocky" stanza (Gutenberg letter-reverses it; the book prints true
+mirror type), front and back covers. Placement: before the first
+paragraph or stanza that begins after the picture's top on its page;
+every anchor asserted unique. Furniture placements: frontispiece closes
+the Dramatis Personae section; the shaken Red Queen heads ch. X and the
+kitten closes ch. XI (the two facing spreads).
+
+GUTENBERG #12 IS A BAD TRANSCRIPTION. The two-scan vote (1872 + Macmillan
+1922, throughlookinggl1922carr) found 46 readings, every one read on the
+1872 page; a single-witness pass (dictionary-word substitutions and
+insertions vs the 1872 OCR, then the 1922 OCR and the page) found 14 more,
+among them the Queens' "Substraction" (twice; both printings) and the
+Messenger's "sullen tone"; the plain diff found a whole dropped sentence
+of Humpty's ("ah, you may turn pale ... did you?"). All 61 are TEXT_FIXES
+in prep.py, restoring the print (wicked wicked, liked,
+"Wexes", "I speaks English", "a stupid name enough", Q.'s 4th in the
+moves...). The 1922 printing carries Carroll's later revisions ("laughed
+loud, but managed"), so it can confirm but not overrule the 1872 page.
+NOT CHECKED: punctuation and capitalisation (the vote compares words).
+
+Witnesses in prep: raw-HTML words (inline tags removed unspaced, since PG
+italicises inside words) minus exactly what was removed == emitted words
+— it caught rebuild_poems dropping "would" from a verse line
+(BeautifulSoup .contents mutated while appended); every verse line once;
+Contents vs TITLES. Ratio 1.00. Moves table: White's 11th move has no
+reply, so the empty cell is '""' (a trailing empty cell is stripped and
+the row stops being a table row).
+
+Plates go out at long_side=1300 (site/images 22 MB, Alice 8.6 MB):
+wood-engraved hatching is expensive; 1500 px was 27 MB.
+
+Cover: Tenniel's frontispiece, the White Knight with Alice
+(File:Alice knight.jpg, 1654x2484). Topic: Stories and verse.
+
+Five-rings note (orchestrator, 2026-10-12): one sentence in 000 had Musashi
+say "The Japanese word is heihō ... I will call it strategy" in his own first
+person; folded into his sentence as an appositive. A translator's choice never
+goes in the author's mouth.
+
+## robin-hood/ — Howard Pyle, The Merry Adventures of Robin Hood (1883), MODERNIZATION of the English, for young readers
+
+SOURCE: Gutenberg #10148 (diffed against #964: the same transcription to
+within four words). Both follow a later resetting that DROPPED PYLE'S
+STRUCTURE — Prologue, Parts First-Eighth of two or three chapters, Epilogue,
+and an italic summary heading each Part. prep.py restores the Parts and the
+nine summaries from the 1883 Scribner first edition (archive.org
+merryadventureso00pylerich, UC copy), transcribed by hand. The three
+"THUS END the Merry Adventures..." paragraphs, which #10148 sets under the
+Epilogue heading, go back to the end of chapter 20, in italics (in 1883 they
+stood on a page of their own). 28 files: Preface, Prologue, chapters 1-20
+numbered continuously (Pyle numbered I-III within each Part), Epilogue;
+five chapters split in two. 111,430 -> 114,257 words, ratio 1.03 (verify
+band 0.85-1.3; per file 1.00-1.05). check.py: costume sweep (thou/quoth/
+"marry,"/-eth verbs ...; exempt by exact phrase only), headings, part
+markers, plate ORDER per file, balanced italics, no Footnote paragraphs.
+THE COSTUME IS PYLE'S (whose-archaism-is-it): screen.py 29.8/1000, above
+Burton. All of it off. Kept as printed: the Kirklees epitaph (verbatim, a
+plain meaning folded in after it), the beggars' cant in ch 16 (the joke is
+that Robin can't understand it; Pyle's footnote gloss folded in, "Dakkar" ->
+Thomas Dekker), and the titles Pyle lettered into his plates (quoted in the
+captions). Saints' oaths kept; Gaffer Swanthold kept. Will Scarlet is Robin's
+NEPHEW (Pyle's "coz"/"cousin" -> nephew throughout). Scores and rods
+converted. The #10148 transcription has scanning slips (shine=thine, I
+wet=I wot, I bow=I trow, without new=without flaw, food=flood ...);
+rendered by sense. Pyle's own inconsistencies kept (Sir Richard's debt is
+400 pounds in ch 13 and "five hundred" in the cellarer's mouth in ch 14;
+the bridegroom's name changes inside "May Ellen's Wedding").
+AUDIENCE: the collection's first book aimed at readers ~10-14; the voice
+lock is in running_notes.txt. Songs (about twenty) stay rhymed verse, every
+stanza; song titles render as h4.
+RULING FOR ALEX: the Part divider TITLES ("Part One: The Sheriff Tries Three
+Times") are this edition's — Pyle printed only "Part First" + summary. Said
+in the introduction. Easy to drop to bare "Part One" in prep.py if unwanted.
+PLATES: 44 of the 49 in the 1883 list of illustrations (frontispiece, 22
+full-page plates, Preface/Part/Epilogue head- and tail-pieces, Finis). NOT
+carried: fly-leaf ornament, ornamented title, Contents head-piece, List of
+Illustrations head- and tail-piece (front matter this edition does not
+reproduce) cropped from the 1883
+scan by plates.py (ink-trimmed; text-page pieces boxed by hand; paper
+levelled to white; 13 MB). Gutenberg's HTML has only 12. Ids are words, not
+numbers, so no "Figure N" label (Pyle never numbered them); "front" renders
+as Frontispiece. Full-page plates are placed at the moment they show, not
+where the binding put them. Captions in captions.tsv, filled into
+modern_chapters by `prep.py --captions` (captions are Pyle's lettered title
++ a description). The 1883 margin side-notes and small unlisted chapter
+ornaments are not carried.
+COVER: N. C. Wyeth, the outlaws above Nottingham, from Creswick's Robin Hood
+(1917), Commons File:N. C. Wyeth Robin Hood Nottingham 1917 illustration.jpg
+(2528x3562, PD), crop 2375x3562+76+0. No nudity. (The agent proposed Wyeth's
+833px cover illustration; too small for a cover.)
+
+## pyle-arthur/ — Howard Pyle, The Story of King Arthur and His Knights (1903), MODERNIZATION of the English
+
+The first book for young readers (aimed at 10-14) and the first of Pyle's
+four Arthur volumes; a sibling to robin-hood/. SOURCE: Gutenberg #60184,
+the illustrated HTML of the 1903 Scribner first edition; prep.py parses the
+HTML (bs4) into 35 files: Foreword, then two Books — The Book of King
+Arthur (Prologue + three Parts) and The Book of Three Worthies (Foreword,
+Prologue, three Parts: Merlin, Pelleas, Gawain). Each Part opens on a short
+italic address to the reader, which is its own section headed "Foreword"
+(chapter: true). No file over 6k words, so no splits. 113,764 -> 110,787
+words, ratio 0.97 (every file 0.95-1.06; default verify band).
+DIVIDERS ARE TWO-LEVEL on the democracy2 precedent ("The Book of King
+Arthur, Part One: The Winning of Kinghood"): a bare "Part One: ..." would
+give both Books' Part One the same anchor. Chapters restart at 1 in every
+Part, as Pyle numbers them; unique_ids keeps the anchors apart.
+WHOSE ARCHAISM: Pyle's ("thou", "quoth", "Lo!", "hight"), invented in 1902;
+taken off completely (a grep sweep finds none). Ceremony kept as content:
+"Sir Knight", "my lord", "fair lady".
+NAMES: same person as in our malory/ -> Malory's modern form (Gawain,
+Uwain, Gaheris, Lancelot, Agravain, Baudwin, Accolon, Uriens, Rience,
+Pelleas, Morgan le Fay, Nimue, Caerleon, Tintagil, Damas, Durnore,
+Aglovale, Lamorak, Lucan the Butler); Pyle's own people keep his names
+(Margaise, Vivien, Tintagalon, Parcenet, Ettard, Engamore). Pyle's family
+tree contradicts itself (Prologue: Morgan m. Lot, Margaise m. Uriens; 013
+and 018 make Uwain Morgan's son; 028 swaps Gawain's and Uwain's fathers):
+KEPT as he wrote it, said in the introduction.
+SIDENOTES: Pyle's 306 marginal summaries are kept as italic one-line
+paragraphs written "*...*." — THE STOP OUTSIDE THE ASTERISK, or
+is_subheading (which sees par[-1] == "*") sets a name-heavy sidenote as a
+heading. Inscriptions (sword, shields, Round Table seats) the same way.
+Pyle's wholly italic paragraphs (Part forewords, Conclusions) are set
+roman: EMPH spans stop at 400 characters and the asterisks would print.
+PLATES: all 53 of Pyle's drawings that carry a picture (plates, headpieces,
+tailpieces; dropped: the case, the Contents/List-of-Illustrations head and
+tail pieces with the lists themselves, and five repeated ornament bands).
+Digit-free ids pinned in plates.json; a full-page plate facing a chapter
+opening moves inside that chapter. Captions are new writing
+(captions.txt -> `prep.py --captions`): Pyle's printed title, modernized,
+then a description. The pictures keep Pyle's LETTERING ("Sir Gawaine",
+"Queen Morgana") above prose that says Gawain, Morgan — a stated ruling.
+fetch_plates.py replaces Gutenberg's 550px thumbnails with 1600px crops
+from archive.org storyofkingarthu00pylerich (a 1909 printing of the same
+plates), located by FFT template matching against the thumbnail; the drawn
+title page stays Gutenberg's (the scan's says 1909); 52 of 53 plates
+scored 0.57-0.97 against their thumbnails, every crop checked on a contact
+sheet. prep.py never overwrites a plate already on disk, so a rerun cannot
+put the thumbnails back. _src/ (zip + 83 MB of page scans) is NOT in
+.gitignore: add books/pyle-arthur/_src/.
+SEAMS fixed by the orchestrator: duplicate glosses (Seneschal, misericord,
+palfrey, lodestone), Damas le Noir, a bracketed "black friars" note folded
+into the narration. Small source slips rendered by sense: 007 portcullis
+"let fall" before the knight rides out -> "raised"; 023 "shield" for
+"sheath" (twice). COVER: Pyle, "How Arthur Drew Forth ye Sword" (1903),
+Commons "Arthur-Pyle How Arthur drew forth ye sword.JPG" — check the crop.

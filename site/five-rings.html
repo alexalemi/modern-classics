@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>The Book of Five Rings &mdash; Miyamoto Musashi</title>
+	<meta name="description" content="A swordsman who fought more than sixty duels and never lost one writes down his school in five scrolls, from posture and timing to reading an opponent. Retold from the Japanese of 1645. Retold in modern English, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/five-rings.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="The Book of Five Rings — Miyamoto Musashi">
+	<meta property="og:description" content="A swordsman who fought more than sixty duels and never lost one writes down his school in five scrolls, from posture and timing to reading an opponent. Retold from the Japanese of 1645. Retold in modern English, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/five-rings.html">
+	<meta property="og:image" content="https://emend.press/brand/share.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
+	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
+	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=navigation" title="Modern Classics OPDS catalog" href="opds.atom">
+	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+	<link rel="preload" href="fonts/libre-caslon-text-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+	<style>
+/* Fonts for every page (front pages and book pages), served from this site
+   rather than Google Fonts: a third-party
+   stylesheet blocked rendering for ~0.8 s on mobile (PageSpeed, 2026-10-12).
+   Oswald, Yellowtail and Libre Caslon Text (SIL Open Font License), latin and
+   latin-ext subsets as Google serves them, in site/fonts/. */
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* The book pages. Shared by every page assemble.py writes; fonts in fonts.css.
+
+   LEGIBILITY FIRST. The running text is set in the best screen serif the
+   reader's own device has (Charter on Apple, Sitka Text on Windows, Georgia
+   or Noto Serif elsewhere), near-black on white, 19-20px, ~66 characters to
+   the line. The Emend look (Libre Caslon Text, navy, the cream band, Oswald
+   labels) is kept to the title band, the headings and the controls. */
+
+:root {
+  --page:  #ffffff;
+  --text:  #1c1c1c;
+  --ink:   #1b314d;     /* navy: headings, links, buttons */
+  --cream: #f4efe2;
+  --soft:  #5a6472;
+  --rule:  #ddd6c8;
+  --link:  #1f4f86;
+  --plate-bg: #ffffff;
+  --reading: Charter, "Bitstream Charter", "Sitka Text", Georgia, "Noto Serif", serif;
+  --display: "Libre Caslon Text", Georgia, serif;
+  --label:   "Oswald", "Arial Narrow", sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page:  #14181e;
+    --text:  #e4e0d8;
+    --ink:   #e8e2d4;
+    --cream: #1d2430;
+    --soft:  #a3adba;
+    --rule:  #343c48;
+    --link:  #9cc2e6;
+  }
+  /* plates and diagrams are drawn on white paper; keep them on it, slightly dimmed */
+  figure img { opacity: .92; }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html {
+  background: var(--page);
+  color: var(--text);
+  font-size: 20px;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--reading);
+  line-height: 1.65;
+  font-kerning: normal;
+}
+
+main { max-width: 34rem; margin: 0 auto; padding: 0 1rem 5rem; }
+
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+
+/* ---------- title band ---------- */
+
+.title-block {
+  background: var(--cream);
+  padding: 1.6rem 1rem 1.8rem;
+  margin-bottom: 2rem;
+}
+.title-inner {
+  max-width: 44rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.8rem;
+  align-items: center;
+}
+.title-block .series {
+  grid-column: 1 / -1;
+  margin: 0 0 0.2rem;
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.title-block .series a { color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 0.55rem; }
+.title-block .series a:hover span { text-decoration: underline; }
+.title-block .series img { height: 1.8rem; width: auto; }
+.cover img {
+  display: block;
+  width: 150px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+}
+.title-text { min-width: 0; }
+h1 {
+  font: 700 2rem/1.15 var(--display);
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+  text-align: left;
+}
+.title-line { margin: 0 0 0.3rem; font-size: 0.95rem; color: var(--ink); }
+.title-line.byline { font-weight: 700; }
+.dates { margin: 0 0 0.9rem; font-size: 0.85rem; color: var(--soft); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.button {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid var(--ink);
+  font: 500 0.75rem/1.2 var(--label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+}
+.button.primary { background: var(--ink); color: var(--page); }
+.button:hover { text-decoration: underline; }
+
+/* phones: a small cover beside the title, so the text starts sooner */
+@media (max-width: 36rem) {
+  .title-block { padding: 1.1rem 1rem 1.4rem; }
+  .title-inner { grid-template-columns: 76px 1fr; gap: 0.9rem; align-items: start; }
+  .cover img { width: 76px; height: 114px; }
+  h1 { font-size: 1.45rem; }
+  .actions { grid-column: 1 / -1; }
+}
+
+/* ---------- running text ---------- */
+
+.intro-note { font-style: italic; font-size: 0.9rem; color: var(--soft); }
+
+h2, h3, h4 {
+  font-family: var(--display);
+  color: var(--ink);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+h2 { font-size: 1.45rem; margin: 3.2rem 0 1rem; }
+h3 { font-size: 1.2rem; margin: 2.8rem 0 0.9rem; }
+h4, h3.sub { font-size: 1rem; margin: 2rem 0 0.8rem; font-style: italic; }
+h2.center { text-align: center; font-size: 1.6rem; margin-top: 4rem; }
+
+p, ul, ol { margin: 0 0 1.15em; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+blockquote {
+  margin: 1.5em 0 1.5em 1em;
+  padding-left: 1em;
+  border-left: 3px solid var(--rule);
+  font-style: italic;
+}
+blockquote p { margin-bottom: 0.8em; }
+
+pre.outline {
+  font-family: var(--reading);
+  white-space: pre-wrap;
+  line-height: 1.6;
+  margin: 0 0 1.15em;
+}
+
+img.glyph { vertical-align: middle; display: inline; }
+span.frac, span.stack { display: inline-block; vertical-align: middle; text-align: center; }
+span.frac > span, span.stack > span { display: block; }
+span.frac > span.num { border-bottom: 1px solid currentColor; }
+span.stack.brace { border-left: 2px solid currentColor; border-right: 2px solid currentColor; border-radius: 0.6em; padding: 0 0.3em; }
+math { font-size: 1.05em; }
+
+figure { margin: 2.2em auto; text-align: center; }
+figure + figure { margin-top: 1em; }
+figure img { max-width: 100%; height: auto; background: var(--plate-bg); }
+figcaption {
+  margin-top: 0.6em;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--soft);
+  text-align: left;
+}
+
+table.plates { width: 100%; margin: 2.5em 0; border-collapse: collapse; line-height: 1.5; }
+table.plates td { padding: 0.4em 0.8em; vertical-align: middle; border-bottom: 1px solid var(--rule); }
+table.plates tr:last-child td { border-bottom: none; }
+table.plates figure, table.plates figure + figure { margin: 0.4em auto; }
+table.plates figcaption { display: none; }
+
+/* page locators: a printed page and quarter, for books that cite
+   themselves by them (Helmholtz: "see p. 77c") */
+span.loc { font-size: 0.65em; color: var(--soft); vertical-align: 0.3em; padding: 0 0.15em; font-style: normal; }
+a.ref { color: inherit; text-decoration: underline dotted; }
+span.sc { font-variant: small-caps; }
+.center { text-align: center; }
+.subtitle { text-align: center; font-style: italic; }
+
+/* ---------- contents ---------- */
+
+nav.contents h2 { margin-top: 0; }
+.toc-book { font-family: var(--display); font-weight: 700; margin: 1.2em 0 0.4em; color: var(--ink); }
+.toc-list { list-style: none; padding-left: 1.2em; margin: 0 0 1em; }
+.toc-list li { margin-bottom: 0.3em; line-height: 1.4; }
+nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
+
+/* ---------- reading aids (book.js) ---------- */
+
+.resume {
+  margin: 0 0 1.5rem;
+  padding: 0.7rem 1rem;
+  background: var(--cream);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+.resume[hidden] { display: none; }
+
+.to-contents {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 5;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--page);
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+.to-contents.show { opacity: .92; pointer-events: auto; }
+
+@media (max-width: 36rem) {
+  html { font-size: 18px; }
+}
+
+@media print {
+  .title-block { background: none; }
+  .actions, .to-contents, .resume { display: none; }
+}
+</style>
+	<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "The Book of Five Rings", "author": {"@type": "Person", "name": "Miyamoto Musashi"}, "inLanguage": "en", "url": "https://emend.press/five-rings.html", "description": "A swordsman who fought more than sixty duels and never lost one writes down his school in five scrolls, from posture and timing to reading an opponent. Retold from the Japanese of 1645. Retold in modern English, free to read online and as an ebook.", "publisher": {"@type": "Organization", "name": "Emend Press", "url": "https://emend.press/", "logo": "https://emend.press/apple-touch-icon.png"}, "isAccessibleForFree": true, "isPartOf": {"@type": "BookSeries", "name": "Modern Classics", "url": "https://emend.press/"}, "datePublished": "2026", "bookEdition": "Modern English retelling", "isBasedOn": {"@type": "Book", "name": "The Book of Five Rings", "author": {"@type": "Person", "name": "Miyamoto Musashi"}, "datePublished": "1645"}, "workExample": {"@type": "Book", "bookFormat": "https://schema.org/EBook", "encodingFormat": "application/epub+zip", "url": "https://emend.press/ebooks/miyamoto-musashi_the-book-of-five-rings.epub"}}</script>
+</head>
+
+<body>
+<header class="title-block">
+	<div class="title-inner">
+		<p class="series"><a href="./#retellings" title="Back to the library"><picture><source srcset="brand/emend-mark-reversed.svg" media="(prefers-color-scheme: dark)"><img src="brand/emend-mark.svg" alt="" width="141" height="263"></picture><span>Modern Classics</span></a></p>
+		<div class="title-text">
+			<h1>The Book of Five Rings</h1>
+			<p class="title-line">Gorin no Sho (五輪書), retold from the Japanese</p>
+			<p class="title-line byline">by Miyamoto Musashi</p>
+			<p class="dates"><s>1645</s> 2026</p>
+			<ul class="actions"><li><a class="button primary" href="ebooks/miyamoto-musashi_the-book-of-five-rings.epub" download>Download epub</a></li><li><a class="button" href="#contents">Contents</a></li></ul>
+		</div>
+	</div>
+</header>
+
+<main>
+	<div class="intro-note"><p><i>This is an AI modernization of The Book of Five Rings into contemporary English. The original is available from <a href="https://dl.ndl.go.jp/pid/992019">NDL Digital Collections (Miyamoto Musashi, 1909)</a>. Also available as an <a href="ebooks/miyamoto-musashi_the-book-of-five-rings.epub">epub</a>.</i></p></div>
+	<p class="resume" hidden>Continue reading: <a href="#contents"></a></p>
+
+	<hr>
+<section aria-labelledby="editors-introduction">
+<h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
+<p>Miyamoto Musashi (about 1584–1645) was a Japanese swordsman who, by his own count, fought more than sixty duels between the ages of thirteen and twenty-nine and never lost one. He also fought in battles, taught his own school of swordsmanship, and was a painter whose ink pictures of birds still hang in Japanese museums. In 1640 he settled in Kumamoto, on the southern island of Kyushu, as a guest of its lord, Hosokawa Tadatoshi. In the tenth month of 1643, at about sixty, he went up to a cave on Mount Iwato outside the town and began this book. He dated the finished scrolls to the fifth month of 1645, early summer, and gave them to his pupil Terao Magonojō a week before he died.</p>
+<p>By then Japan had been largely at peace since 1615. The Tokugawa shoguns had ended more than a century of civil war, and a warrior class trained for battle had very little fighting left to do. Fencing schools multiplied, each with its secret techniques and its fees. Musashi wrote against all of that. His book is a manual for the members of one school, in five scrolls named for the five elements of Buddhist teaching. Earth lays out what strategy is and why his school uses two swords. Water gives the technique: posture, gaze, grip, footwork, the five guards, and some thirty named moves. Fire is about fighting itself, timing and initiative and reading an opponent. Wind takes apart the other schools. Void is one page on what is left when the technique is learned.</p>
+<p>Two things will help. Musashi uses one word, heihō, for a duel between two men and for a battle between armies, because he holds that they work by the same principles; this edition calls it &quot;strategy&quot; throughout and keeps his phrases &quot;on the small scale&quot; and &quot;on the large scale.&quot; And he writes for students standing in front of him with swords in their hands. He repeats himself on purpose, ends almost every article with &quot;examine this well,&quot; and sometimes says outright that a point can only be shown, not written.</p>
+<p>The original manuscript is lost, and the book survives in copies that differ in small ways. This edition is translated in full from the Japanese text printed in 1909 by a society formed to honor Musashi&#x27;s memory, which took it from a copy then held by a family in Higo; each scroll ends on its line of transmission, from Musashi to his pupil and on to later copyists, and those lines are kept as printed. No public-domain English translation exists, so none was used. Japanese era dates are given with their Western years, and Japanese measures are converted.</p>
+</section>
+
+	<hr>
+<nav class="contents" aria-labelledby="contents">
+<h2 id="contents">Contents</h2>
+<p><a href="#the-earth-scroll">The Earth Scroll</a></p>
+<p><a href="#the-water-scroll">The Water Scroll</a></p>
+<p><a href="#the-fire-scroll">The Fire Scroll</a></p>
+<p><a href="#the-wind-scroll">The Wind Scroll</a></p>
+<p><a href="#the-void-scroll">The Void Scroll</a></p>
+</nav>
+
+<hr>
+<article>
+<section aria-labelledby="the-earth-scroll">
+<h2 id="the-earth-scroll">The Earth Scroll</h2>
+<h3 class="sub">Preface</h3>
+<p>For many years I have trained in the Way of strategy, in the school I call Niten Ichiryū, the Two Heavens as One, and now for the first time I mean to set it down in writing. It is early in the tenth month of Kan&#x27;ei 20, late in the year 1643. I have climbed Mount Iwato in Higo, on the island of Kyushu, to bow to heaven, pay my respects to Kannon, the goddess of mercy, and kneel before the Buddha. I am a warrior born in the province of Harima, Shinmen Musashi, Fujiwara no Genshin, and I have piled up sixty years.</p>
+<p>From my youth my heart was set on the Way of strategy. I fought my first duel at thirteen, against a strategist of the Shintō school named Arima Kihei, and I beat him. At sixteen I beat a powerful strategist named Akiyama, from the province of Tajima. At twenty-one I went up to the capital, Kyoto, met strategists from all over the country, and fought a number of duels, and there was not one I failed to win. After that I traveled from province to province, met strategists of every school, and fought more than sixty times, and I never once lost. All of that happened between the ages of thirteen and twenty-eight or twenty-nine.</p>
+<p>When I was past thirty and looked back, I saw that I had not won because I had mastered strategy. Perhaps I had some natural gift for the Way and never strayed from the order of heaven; or perhaps the other schools were simply not good enough. After that I trained morning and evening, trying to reach a deeper principle, and I found that I had come into the Way of strategy, without forcing it, when I was about fifty. Since then I have had nothing left to search for, and I let the days and months go by. I take the principle of strategy as my guide into every other art and skill, and so in nothing at all have I needed a teacher.</p>
+<p>In writing this book I am not borrowing the old sayings of Buddhism or of Confucius, and I am not drawing on old war chronicles or old books of tactics. To show the way my school sees things, and its true spirit, I take the Way of heaven and the goddess Kannon as my mirror, and I take up my brush and begin to write on the night of the tenth day of the tenth month, at the first stroke of the hour of the Tiger, about four in the morning.</p>
+<h3 class="sub">Earth</h3>
+<p>Strategy, heihō, the way of fighting, which covers a duel between two men and a battle between armies alike, is the craft of the warrior houses. A commander above all must practice it, and the common soldier ought to know this Way too. Yet in the world today there is not one warrior who truly understands the Way of strategy.</p>
+<p>Look first at the Ways that are plain for all to see. Buddhism is a Way of saving people. Confucian learning is a Way of setting the study of letters in order. Doctors follow a Way of curing illnesses. Poets teach the Way of poetry. Then there are the men of taste who practice the tea ceremony, the archers, and every other art and skill besides; people practice them as they please and love them as they choose. Few people love the Way of strategy.</p>
+<p>A warrior is supposed to follow the &quot;two Ways of the pen and the sword&quot; and to take pleasure in both; that is the warrior&#x27;s Way. Even if he has no talent for it, every warrior must practice strategy as far as his station allows. If you try to guess what most warriors think, it seems they believe the warrior&#x27;s Way is nothing but a readiness to die. But a readiness to die does not belong to warriors alone. A monk, a woman, a farmer, and people of still lower station all know duty and feel shame, and can make up their minds to die when they must; in that, there is no difference between them. The warrior&#x27;s practice of strategy is founded on doing better than others in everything. He wins a sword fight against one man, or a battle against several, and so makes a name and a place for himself, for his lord&#x27;s sake and for his own. All this he does by the power of strategy.</p>
+<p>Again, some people will think that even if you learn the Way of strategy, it will be of no use when the real moment comes. On that point: to train so that it is useful at any time, and to teach it so that it is useful in everything, is the true Way of strategy.</p>
+<h3 class="sub">The Way of Strategy</h3>
+<p>In China and in Japan alike, those who practice this Way have been called masters of strategy. A warrior cannot leave it unstudied. In recent times there are men who make a living as &quot;strategists,&quot; but what they teach is swordsmanship and nothing more. The priests of the Kashima and Katori shrines in Hitachi province have founded schools, saying they hand down a teaching from the gods, and they travel from province to province teaching people; but that is a recent thing. Since ancient times there has been a list of the &quot;ten abilities and seven arts,&quot; and in it there is one called rikata, &quot;the useful skills,&quot; which is counted as an art. But once you call it the useful skills, it cannot be limited to swordsmanship. If all you know is the technique of the sword, you will not truly know even the sword, and you will certainly never live up to the law of strategy.</p>
+<p>Look at the world, and you see people turning their arts into goods for sale. They think of themselves as goods for sale, and they make every tool they own into something to sell. Of the two, the flower and the fruit, there is more flower than fruit. In the Way of strategy above all, men dress it up in bright colors and make it bloom, show off their techniques, and talk of their first school and their second school, hoping to make a profit by teaching this Way or by learning it. Who was it who said, &quot;Half-learned strategy is the root of grave wounds&quot;? He was right.</p>
+<p>People make their way in the world by four Ways: the warrior, the farmer, the craftsman, and the merchant.</p>
+<p>The first is the Way of the farmer. The farmer lays in all kinds of tools, keeps his mind on the turning of the four seasons without a moment&#x27;s rest, and so passes the springs and autumns. That is the Way of the farmer.</p>
+<p>The second is the Way of trade. A man who brews sake, for example, gets the tools he needs, earns his profit from good brewing and bad, and so makes his living. All trade is like this: each man works for himself and lives by his profit. That is the Way of the merchant.</p>
+<p>The third is the warrior. A warrior should have all sorts of weapons made and understand the virtues of each one; that, surely, is the warrior&#x27;s Way. A warrior who does not take care of his weapons and has never learned what each is good for is a warrior of rather shallow habits, isn&#x27;t he?</p>
+<p>The fourth is the Way of the craftsman. In carpentry a man skillfully makes all kinds of tools, learns to use each one well, keeps his plans true with the carpenter&#x27;s square and the inked line, and works at his craft without rest to make his living.</p>
+<p>These are the four Ways of the warrior, the farmer, the craftsman, and the merchant.</p>
+<p>I am going to describe strategy by comparing it to the Way of the carpenter. I compare it to carpentry because both are a matter of houses. We speak of the noble houses and the warrior houses and the four great clans; of a house that falls and a house that lasts; of a school, a style, a house. Since we say &quot;house,&quot; I compare strategy to the carpenter&#x27;s Way. The word for carpenter, daiku, is written with the characters for &quot;great craft,&quot; and since the Way of strategy is a great craft, I describe it in terms of the carpenter. If you want to learn strategy, think hard about this book. Let the teacher be the needle and the student the thread, and practice without ever stopping.</p>
+<h3 class="sub">Strategy Compared to Carpentry</h3>
+<p>The commander is like the master carpenter. He knows the measure of the whole realm, sets the measure of his province right, and knows the measure of his own household; that is the master&#x27;s Way. The master carpenter knows the plans and measurements of temples, pagodas, and halls, and the drawings of palaces and towers, and he directs his men and raises houses. In this the master carpenter and the master of a warrior house are the same.</p>
+<p>When you build a house, you sort the timber. Wood that is straight, free of knots, and good to look at goes for the front pillars. Wood that has a few knots but is straight and strong goes for the inner pillars. Wood that is a little weak but has no knots and looks handsome is used for sills, lintels, doors, and sliding screens, each piece in its place. Wood that is knotted and crooked but strong is used where the house needs strength; you study the house well, see where its strength must lie, and put it there. Use your timber like this and the house will stand for a long time without falling. And even among the lumber, wood that is knotty, crooked, and weak can be used for scaffolding, and later for firewood.</p>
+<p>When the master carpenter employs his men, he knows which are good, which are average, and which are poor. One does the alcove, another the doors and screens, another the sills, lintels, and ceilings, each set to the work that suits him. The poor ones lay the floor joists, and the worse ones whittle wedges. If he judges his men like this and uses them well, the work goes forward and is done neatly. &quot;Going forward and done neatly&quot; means letting nothing slide; knowing what matters most; knowing whether a man&#x27;s spirit is high, middling, or low; putting heart into the men; and knowing what is too much to ask. All of these belong to the master&#x27;s frame of mind. The principle of strategy is just like this.</p>
+<h3 class="sub">The Way of Strategy for the Soldier</h3>
+<p>The soldier is like the carpenter himself. The carpenter sharpens his own tools, makes all kinds of clamps and jigs, and carries them in his toolbox. He takes his orders from the master; he shapes the pillars and the crossbeams with the adze, planes the shelves of the alcove, carves openwork and relief, keeps everything true to the square, and finishes even the corners and the fiddly moldings neatly. That is the carpenter&#x27;s law. When a carpenter has learned the work well with his own hands and knows the square and the line, he becomes a master.</p>
+<p>A good carpenter&#x27;s habit is to carry tools that cut well and to sharpen them whenever he has a spare moment. With those tools he makes cupboards, bookshelves, desks, and tables, and even lanterns, chopping boards, and pot lids, all of them skillfully; that is what a carpenter is for. The soldier is just like this. Examine this well.</p>
+<p>A good carpenter takes care that his work does not warp, that the joints fit, that everything is planed smooth, that nothing is merely rubbed and polished for show, and that nothing shrinks or twists later on. If you want to learn this Way, put your heart into every point I write down, and examine each one well.</p>
+<h3 class="sub">Why This Book Is in Five Scrolls</h3>
+<p>I divide the Way into five parts, one scroll for each, to make the principle of each one clear, and I write them as Earth, Water, Fire, Wind, and Void.</p>
+<p>In the Earth scroll I set out the outline of the Way of strategy and the way my school sees it. With swordsmanship alone you cannot reach the true Way. You come to know the small things from the large ones, and you reach the deep from the shallow. Because this first scroll levels the ground for a straight road, I call it Earth.</p>
+<p>The second is the Water scroll. Take water as your model, and your mind becomes like water. Water takes the shape of whatever holds it, square or round; it can be a single drop, and it can be the ocean. Water has the color of a deep blue pool. Taking its clearness as my model, I write about my school in this scroll. If you see clearly the principle of swordsmanship, so that you can beat one opponent whenever you choose, then you can beat anyone in the world. The spirit of beating one man is the same against a thousand or ten thousand. A commander&#x27;s strategy turns the small into the large, the way a sculptor builds a giant statue of the Buddha from a model one foot high. Things like this are hard to write down in detail. To know ten thousand things from one thing is the principle of strategy. I write about my school in this Water scroll.</p>
+<p>The third is the Fire scroll. In it I write about fighting. Fire can grow large or small and has a fierce spirit, so I write about battle here. The Way of battle is the same whether it is one man against one man or ten thousand against ten thousand. Make your mind large, then make it small, and look carefully. The large is easy to see; the small is hard to see. The reason is this: a great army cannot change course on the spot, but one man changes as quickly as his mind does, and so the small is hard to know. Examine this well. The things in this Fire scroll happen in an instant, so you must practice them every day until they feel ordinary, so that your mind does not change when the moment comes; that is the heart of strategy. And so I write about fighting and winning in the Fire scroll.</p>
+<p>The fourth is the Wind scroll. I call it the Wind scroll because it is not about my school but about the strategy of the other schools in the world. The word for wind, fū, also means a style, as when we say the old style and the new style, or the style of this house or that one. So in this scroll I set down clearly what the other schools of the world do, and that is the wind. If you do not know other things well, you cannot truly understand your own. In every Way and every task there is the danger of wandering off the path. Even if you work at your Way every day, if your mind turns aside from it, you may think you are on a good road, but seen from the straight path it is not the true Way. If you do not follow the true Way to the very end, a small twist in your mind will later become a large one. Examine this. It is natural that the world thinks the strategy of other schools is only swordsmanship. My strategy, in its principles and its techniques, is something else altogether. To show what passes for strategy in the world, I write about the other schools in the Wind scroll.</p>
+<p>The fifth is the Void scroll. I call this scroll Void, kū, which means emptiness, what has no shape at all, because once you begin to speak of the void, what is there left to call the deepest teaching, and what to call the first steps? Once you have grasped the principle, you leave the principle behind. In the Way of strategy you become free of your own accord, and wonders happen of their own accord. When the moment comes, you know its rhythm, and you strike by itself and hit by itself. All of this is the Way of the void. How a man enters the true Way by himself is what I write down in the Void scroll.</p>
+<h3 class="sub">Why My School Is Called Two Swords</h3>
+<p>Here is why I speak of two swords. Every warrior, commander or soldier, wears two swords at his waist as part of his duty. In the old days they were called the tachi and the katana; today they are called the katana and the wakizashi. I will call them the long sword and the short sword. There is no need to explain in detail why a warrior carries these two. In our country, whether he knows the reason or not, it is the warrior&#x27;s Way to wear both at his belt. To make the use of the two clear, I call my school Nitō Ichiryū, the Two Swords as One. The spear and the halberd count as weapons of war, but they are called &quot;outside weapons,&quot; because they are not worn at the belt.</p>
+<p>In my school a beginner takes the long sword in one hand and the short sword in the other and trains with both; that is the real thing. When you are about to throw your life away, you want to make use of every weapon you have. To die with your weapons unused and still in your belt is not what anyone would want. But when you hold something in each hand, it is hard to move both left and right as you wish. So the point of training with two is to learn to handle the long sword with one hand.</p>
+<p>Big weapons such as the spear and the halberd cannot be helped; they need both hands. But the long sword and the short sword are both weapons meant to be held in one hand. Holding the long sword in both hands is bad on horseback, bad when you are running, bad in marshes and flooded rice fields, on stony ground, on steep paths, and in crowds. If you have a bow or a spear in your left hand, or any other weapon, you must use the sword with one hand. So holding the sword with both hands is not the true Way. If you cannot kill a man with one hand, then by all means use both; that takes no time at all. But first, to learn to swing the long sword with one hand, my school uses two swords, and so you learn to swing the long sword one-handed.</p>
+<p>Everyone finds the long sword heavy and hard to swing the first time he picks it up. But everything is hard at the start. The bow is hard to draw at first, and the halberd hard to swing. Once you are used to each weapon, you grow strong at the bow, and once you have the knack of the long sword you gain the strength of the Way and it swings easily. The path of the long sword does not mean swinging it fast; you will learn about this in the second scroll, Water. The long sword is swung in open spaces and the short sword in narrow ones; that is the basic idea of the Way. In my school you can win with a long weapon, and you can win with a short one. That is why I do not fix the length of the sword. The spirit of my school is to win with whatever you have.</p>
+<p>Two swords are better than one when you fight many men by yourself, or when you go in after a man who has barricaded himself inside a house. I need not write about such things in detail now. From one thing, know ten thousand. Once you have mastered the Way of strategy, there is nothing you will not see. Examine this well.</p>
+<h3 class="sub">What the Word Strategy Means</h3>
+<p>In this Way, people have long called a man who has mastered the sword a &quot;strategist.&quot; In the other martial arts, a man who shoots the bow well is called an archer, a man who has mastered the gun is called a gunner, a man who can handle a spear is called a spearman, and a man who has learned the halberd is called a halberdier. By that logic, a man who has learned the sword ought to be called a long-swordsman or a short-swordsman. The bow, the gun, the spear, and the halberd are all weapons of the warrior houses, and all of them belong to the Way of strategy. Even so, it makes sense that strategy takes its name from the sword. It is by the virtue of the sword that the realm is kept in order and a man keeps himself in order, so the sword is where the whole Way comes together.</p>
+<p>Once you have the virtue of the sword, one man can beat ten. If one man can beat ten, then a hundred can beat a thousand, and a thousand can beat ten thousand. And so in my school&#x27;s strategy one man and ten thousand men are the same thing, and every law a warrior lives by is called strategy.</p>
+<p>Confucian scholars, Buddhist monks, men of taste, masters of etiquette, and dancers: their Ways are not the warrior&#x27;s Way. Yet even if a Way is not your own, if you know many Ways broadly, you will meet each of them in everything you do. For every person, the important thing is to polish his own Way well.</p>
+<h3 class="sub">Knowing the Uses of Weapons</h3>
+<p>When you understand the uses of weapons, you see that each weapon has its occasion and its moment. The short sword does best in a cramped room, or when you close in right against your opponent&#x27;s body. The long sword is useful almost anywhere. On the battlefield the halberd is somewhat inferior to the spear: the spear takes the lead, and the halberd comes after. Between two men of the same training, the spear is a little stronger. But both the spear and the halberd, depending on the situation, are of little use in tight places, and they are no good against a man barricaded inside a house. They are weapons for the battlefield only, and on the battlefield they are essential. But if you learn their indoor uses, think about fine details, and forget the true Way, they will fail you when it counts.</p>
+<p>The bow is useful in battle for advancing and falling back, and since it can shoot quickly from beside the spearmen and from the edges of the lines, it is especially good in a battle on open ground. In a siege, or when the enemy is more than about forty yards away, it falls short. These days not only archery but all the arts are all flower and very little fruit. Arts like that are no use when it matters, however many advantages they are said to have. From inside a fortress, nothing beats the gun. In a battle on open ground, too, the gun has many advantages before the fighting begins, but once the fighting starts it falls short. One virtue of the bow is that you can see the arrows you shoot; the trouble with the gun is that you cannot see the bullet. Examine this well.</p>
+<p>As for the horse, the important thing is that it be strong, steady, and free of bad habits. With all weapons it is the same: the horse should walk well, the long sword and short sword should cut well, the spear and halberd should pierce well, and the bow and gun should be strong and sound. Do not have favorites among your weapons. Too much is the same as too little. Do not copy other people; choose weapons that suit you and fit your hand. It is bad for a commander or a soldier to like some things and dislike others. Think this through.</p>
+<h3 class="sub">Rhythm in Strategy</h3>
+<p>Everything has its rhythm, the timing by which things happen, but the rhythm of strategy is especially hard to master without training. The rhythms we can see plainly in the world are those of dancing and of musicians with their pipes and strings; these are all rhythms that fit together and run true. In the martial arts too, shooting the bow, firing the gun, even riding a horse, all have their rhythm and timing. In no art or skill may you go against the rhythm.</p>
+<p>There is rhythm even in things you cannot see. In a warrior&#x27;s life there is a rhythm by which he rises in his lord&#x27;s service and a rhythm by which he falls, a rhythm of things going as they should and a rhythm of things going wrong. In trade there is a rhythm of growing rich, and a rhythm by which even riches run out. Each Way has rhythms of its own. Think carefully about the rhythm by which things flourish and the rhythm by which they decline.</p>
+<p>The rhythms of strategy are many. First, know the rhythm that fits, and learn to tell it from the rhythm that does not. Among rhythms large and small, slow and fast, know the rhythm that strikes home, know the rhythm of the interval between, and know the rhythm that runs against your opponent&#x27;s: that is the core of strategy. If you cannot learn to tell the rhythm that runs against, your strategy will never be sure. In a fight, you learn each opponent&#x27;s rhythm, use a rhythm he does not expect, and win by drawing the rhythm of the void out of the rhythm of wisdom. In every scroll, rhythm is what I write about most. Examine what I have written, and train at it well.</p>
+<p>If you practice my school&#x27;s Way of strategy morning after morning and evening after evening, your mind will grow wide of its own accord. This is the strategy of the many and of the one that I hand on to the world, set down in writing for the first time in five scrolls: Earth, Water, Fire, Wind, and Void.</p>
+<p>For anyone who wants to learn my strategy, there are rules for following the Way:</p>
+<p>First, think of nothing that is dishonest.</p>
+<p>Second, train in the Way.</p>
+<p>Third, get to know all the arts.</p>
+<p>Fourth, learn the Ways of all the crafts.</p>
+<p>Fifth, understand the gain and the loss in everything.</p>
+<p>Sixth, learn to judge the true worth of all things.</p>
+<p>Seventh, perceive and understand what cannot be seen with the eyes.</p>
+<p>Eighth, pay attention even to small things.</p>
+<p>Ninth, do nothing that is of no use.</p>
+<p>Keep principles like these in your heart, and train in the Way of strategy. In this Way above all, unless you can see the straight path broadly, you will never become a master of strategy. Once you have learned this law, there is no reason you should lose even alone against twenty or thirty opponents. First, never let strategy leave your mind, and work at the straight Way; then you will beat others with your hands, and beat them with your eyes as well. Train until your whole body moves freely, and you will beat others with your body. Grow at home in this Way, and you will beat others with your mind. Once you reach that point, how could you lose to anyone?</p>
+<p>And in strategy on the large scale, you win by having good men, you win by commanding your troops, you win by conducting yourself rightly, you win by governing the province, you win by caring for the people, and you win by upholding the laws and customs of the world. To know how not to lose to others in any Way at all, and so to protect yourself and your good name: that is the Way of strategy.</p>
+<p>Shōhō 2, the twelfth day of the fifth month (June 1645). Shinmen Musashi.
+To Terao Magonojō.
+Kanbun 7, the fifth day of the second month (1667). Terao Yumeyo Katsunobu, his seal.
+To Yamamoto Gensuke.</p>
+</section>
+<section aria-labelledby="the-water-scroll">
+<h2 id="the-water-scroll">The Water Scroll</h2>
+<p>The spirit of my school, the Two Heavens as One, takes water as its model and practices the methods that work. So I call this the Water scroll, and in it I set down my school&#x27;s way with the sword. None of this Way can be written down exactly as the mind knows it. But even if my words do not always run smoothly, the principle should come through on its own. Think over every word and every character written here. If you read it roughly, you will go wrong again and again.</p>
+<p>I write about the principles of strategy as if it were a duel between one man and another, but it is essential to see them broadly, as the principles of a battle between ten thousand men and ten thousand. In this Way above all, if you mistake the path even a little, if you lose your way at all, you will fall onto a bad road. Just reading what I write here will not bring you to the Way of strategy. When you take what is written here and make it your own, do not think that you are reading it, or that you are learning it, and do not make an imitation of it. Treat it as a principle that you found in your own mind, always put yourself in its place, and think it through.</p>
+<h3 class="sub">The Mind in Strategy</h3>
+<p>In the Way of strategy, your state of mind should be no different from your everyday mind. In daily life and in a fight alike, without the slightest change, keep your mind broad and straight. Do not draw it tight, and do not let it go slack in the least. Do not let it lean to one side; keep it in the middle. Let your mind sway quietly, and never let that swaying stop, not even for an instant. Examine this well.</p>
+<p>When your body is still, your mind is not still. When you are moving at top speed, your mind is not hurried at all. The mind is not dragged along by the body, and the body is not dragged along by the mind. Be on your guard in your mind, not in your body. Let your mind lack nothing, and do not let it slip in the least. On the surface your mind may seem weak, but keep it strong at the bottom, and do not let anyone read it.</p>
+<p>If you are small, know all about large things in your mind; if you are big, know small things well. Big or small, the important thing is to keep your mind straight and not to be led astray by the size of your own body. Keep your mind clear and wide inside, and put wisdom in that wide place. Polish your wisdom and your mind without ever letting up. Sharpen your wisdom: learn what is right and wrong in the world, know the good and bad of all things, go through all the arts and skills, each in its own Way, and make sure that no one in the world can fool you in the least. Then your mind becomes the wisdom of strategy. The wisdom of strategy is something quite different from other wisdom. On the battlefield, when everything is happening at once, master the principles of strategy and keep your mind unmoved. Examine this well.</p>
+<h3 class="sub">The Body in Strategy</h3>
+<p>Here is how to hold yourself. Do not let your face tip down, or tip up, or lean, or twist. Keep your eyes steady, and do not wrinkle your forehead, but draw your brows together a little. Keep your eyeballs from moving, and try not to blink. Narrow your eyes slightly. Keep your face calm and pleasant, the line of your nose straight, and your chin pushed slightly forward. Keep the back of your neck straight, and put strength into the nape. From the shoulders down, feel your whole body as one piece. Lower both shoulders, keep your spine straight, and do not stick your bottom out. Put strength into your legs from the knees down to the toes, and push your belly out so that your hips do not bend. There is a teaching called &quot;tightening the wedge&quot;: brace your belly against the scabbard of your short sword so that your sash does not come loose. In everything, it is essential to make your everyday posture your fighting posture, and your fighting posture your everyday posture. Examine this well.</p>
+<h3 class="sub">The Gaze in Strategy</h3>
+<p>Your gaze should be broad and wide. There are two ways of seeing: the eye that perceives, which is called kan, and the eye that looks, which is called ken. Perceive strongly and look weakly. See what is far away as if it were close, and what is close as if it were far away. This is the heart of strategy. To know your opponent&#x27;s sword without looking at his sword in the least is one of the great points of strategy. Work this out for yourself.</p>
+<p>This way of using your eyes is the same in strategy on the small scale and on the large. It is essential to see to both sides without moving your eyeballs. You cannot learn this in a hurry, in the middle of a crisis. Learn what is written here, make this gaze your gaze at all times, and never let it change, whatever happens. Examine this well.</p>
+<h3 class="sub">How to Hold the Long Sword</h3>
+<p>Hold the long sword with your thumb and forefinger a little loose, your middle finger neither tight nor slack, and your ring finger and little finger tight. Any slack in your grip is bad. Take up your sword thinking that it is a thing for cutting your opponent. Even when you cut, your grip should not change, and your hands should not stiffen. If you have to knock his sword aside, or catch it, or strike it, or press it down, change only your thumb and forefinger a little, and whatever happens, hold your sword thinking that you will cut.</p>
+<p>Your grip when you try out a blade by cutting a test object and your grip when you cut in a fight are no different from the grip for cutting a man. In general, whether with the sword or with the hands, I dislike anything that fixes in place. A fixed hand is a dead hand. A hand that does not fix is a living hand. Take this well to heart.</p>
+<h3 class="sub">Footwork</h3>
+<p>When you move your feet, lift your toes a little and step firmly on your heels. Your steps may be long or short, slow or fast, as the moment requires, but always move as if you were walking normally. There are three kinds of footwork I dislike: jumping feet, floating feet, and stamping feet. One of the important things in this Way is called yin-yang footwork, and it is essential. Yin-yang footwork means never moving one foot alone. When you cut, when you draw back, even when you parry, you step right and left, right and left, like yin and yang. Never, never step with one foot only. Examine this well.</p>
+<h3 class="sub">The Five Guards</h3>
+<p>The five guards are the upper guard, the middle guard, the lower guard, the guard on the right side, and the guard on the left side. A guard, or kamae, is the way you hold your sword as you face your opponent. The guards are divided into five, but all of them exist for cutting a man. There are no guards besides these five. Whichever guard you take, do not think about taking a guard; think only about cutting. Whether a guard should be large or small depends on the situation, so choose what serves you best.</p>
+<p>The upper, middle, and lower guards are the solid guards. The two side guards are the guards for adapting. You use the right and left guards where the space above you is blocked, or where one side is blocked, and you choose right or left to suit the place. One of the important things in this Way is this: understand that the highest of the guards is the middle guard. The middle guard is what guards are for. Look at it as strategy on the large scale: the middle guard is the commander&#x27;s seat, and the other four guards follow the commander. Examine this well.</p>
+<h3 class="sub">The Path of the Sword</h3>
+<p>To know the path of the sword means this. If you know its line well, you can swing freely even the sword you always wear at your side, holding it with two fingers. If you try to swing the sword fast, you leave the path of the sword and it becomes hard to swing. Swing the sword calmly, only as fast as it swings well. If you try to swing it fast, the way you would flick a fan or a little knife, you leave the path of the sword and it is hard to swing. That is called &quot;knife-chopping,&quot; and you cannot cut a man with a long sword that way.</p>
+<p>When you strike downward, bring the sword back up along the path that raises it easily. When you swing it sideways, bring it back sideways, returning it along a good path. Stretch your elbows out wide and swing strongly. That is the path of the sword. If you learn to use the five forms of my strategy, the path of your sword will become settled and your sword will swing easily. Train at this well.</p>
+<h3 class="sub">The Five Forms: The First Form</h3>
+<p>The first form: take the middle guard, with the point of your sword toward your opponent&#x27;s face. As you close in on him and he strikes at you, turn his sword aside to the right and ride over it. When he strikes again, strike back with the point of your sword flipped over, and leave your sword where it lands after striking his down. When he strikes once more, knock his hands up from below. That is the first form.</p>
+<p>To tell the truth, you cannot understand these five forms just from reading them. The forms are something you practice with sword in hand, to learn the path of the sword. Through these five lines of the sword you learn your own sword&#x27;s path, and you can read any strike your opponent makes. They show you that there are no guards for the two swords other than these five. Train at this.</p>
+<h3 class="sub">The Second Form</h3>
+<p>The second form: take the upper guard, and as your opponent strikes, strike him in the same instant. If you miss him, leave your sword where it is, and as he strikes again, scoop up from below and strike. A further strike is done the same way. Within this form there are all kinds of states of mind and all kinds of rhythm. If you train in my school by means of this form, you will come to know the five paths of the sword in detail, and you will be able to win in any way at all. Practice it.</p>
+<h3 class="sub">The Third Form</h3>
+<p>The third form: hold your sword in the lower guard, as if it were simply hanging from your hand, and as your opponent strikes, knock his hands from below. When you go for his hands and he tries to strike your sword down, let his stroke pass in a rhythm of getting over it, and after his stroke cut across his upper arm. With the lower guard you stop his strike at the very moment he makes it. The lower guard comes into use whether things are moving fast or slow. Take up your sword and train at this.</p>
+<h3 class="sub">The Fourth Form</h3>
+<p>The fourth form: hold your sword level in the guard on your left side, and knock your opponent&#x27;s striking hands from below. When you knock from below and he tries to strike your sword down, keep your mind on knocking his hands, follow the path of the sword just as it is, and cut upward on a slant, toward the space above your own shoulder. That is the path of the sword. And when he strikes again, you win by following the path of the sword. Examine this well.</p>
+<h3 class="sub">The Fifth Form</h3>
+<p>The fifth form: hold your sword level in the guard on your right side. Read where your opponent&#x27;s strike is coming from, swing your sword up on a slant from low at your side into the upper guard, and cut straight down from above. This too is for knowing the path of the sword well. Once you have the knack of this form, you can swing even a heavy sword freely.</p>
+<p>I will not write about these five forms in detail. You learn the path of the sword as my school teaches it, you learn the rhythms in general, and you learn to read your opponent&#x27;s sword; and for all of that, these five forms are where you season your hands, over and over. Even in a real fight, by seasoning these paths of the sword you read your opponent&#x27;s mind, and with all kinds of rhythms you can win in any way. Think carefully about this.</p>
+<h3 class="sub">The Guard That Is No Guard</h3>
+<p>The guard that is no guard means that there should really be no such thing as &quot;taking a guard&quot; with the sword. Still, since there are five places to hold it, you may call them guards. Wherever you hold your sword, hold it according to your opponent, the place, and the situation, so that it is easiest to cut him.</p>
+<p>The upper guard, lowered a little as the moment requires, becomes the middle guard. The middle guard, raised a little when that serves, becomes the upper guard. The lower guard, raised a little as the occasion requires, becomes the middle guard. The side guards too, brought a little toward the center depending on the situation, become the middle or lower guard. And so the principle is that there are guards, and there are no guards.</p>
+<p>First and foremost, once you have taken up your sword, whatever you do, your mind is on cutting your opponent. You may catch his cutting sword, knock it aside, strike it, stick to it, or touch it, but understand that every one of these is a step toward cutting him. If you think about catching, or about knocking aside, or striking, or sticking, or touching, your cut will fall short. It is essential to think of everything as a step toward cutting. Examine this well.</p>
+<p>In strategy on the large scale, the way you draw up your troops is a guard too, and every part of it exists for winning the battle. Fixing in place is bad. Think this through.</p>
+<h3 class="sub">The One-Beat Strike</h3>
+<p>Among the rhythms for striking your opponent there is one called the one-beat strike. You get within the distance where you and he can reach each other, and then, before he has made up his mind, without moving your body and without letting your intention show, you strike as fast and as directly as you possibly can. To strike before he even has the thought of pulling back, dodging, or striking is the rhythm of one beat. Learn this rhythm well, and train at striking fast in the rhythm of the interval.</p>
+<h3 class="sub">The Two-Step Rhythm</h3>
+<p>The two-step rhythm: when you are about to strike and your opponent is the kind who quickly pulls back or quickly knocks your sword away, make as if to strike, and then strike him when he has tensed and then gone slack; strike him when he has pulled back and gone slack. That is the two-step strike. You will hardly manage this strike from what I have written here alone, but once you are shown it, you will understand it at once.</p>
+<h3 class="sub">The No-Thought Strike</h3>
+<p>When your opponent is about to strike and you are about to strike, your body becomes a striking body and your mind a striking mind, and your hands strike from out of nothing, late but fast and strong. This is called the strike of no thought and no design, munen musō, and it is the most important strike of all. You will meet this strike again and again. Learn it well and train at it.</p>
+<h3 class="sub">The Running-Water Strike</h3>
+<p>The running-water strike: when you and your opponent are locked together, sword against sword, and he tries quickly to pull back, quickly to dodge, quickly to knock your sword aside, make your body and your mind large and strike with your sword trailing behind your body, as slowly as you can, as if the water were pooling, broadly and strongly. Once you have learned this strike, it is a sure one. It is essential to read what kind of opponent you face.</p>
+<h3 class="sub">The Chance Hit</h3>
+<p>When you strike out and your opponent tries to block your sword or knock it away, with that one strike you hit his head or his legs, whatever is there, along a single path of the sword. That is the chance hit. Learn this strike very well; it comes up all the time. Exchange blows with partners often, and work it out.</p>
+<h3 class="sub">The Flint-Spark Hit</h3>
+<p>The flint-spark hit is when your opponent&#x27;s sword and yours are almost touching, and without raising your sword at all, you strike as strongly as you possibly can. You must strike fast, with three things strong: your legs strong, your body strong, your hands strong. You cannot do this strike without practicing it again and again. Train at it well, and it will land hard.</p>
+<h3 class="sub">The Red-Leaf Strike</h3>
+<p>The red-leaf strike means knocking down your opponent&#x27;s sword and then taking your own sword back in hand, the way a red leaf drops from the tree. When he holds his sword out in front of you and means to strike, to knock your sword aside, or to parry, strike his sword hard with the no-thought strike or the flint-spark strike, and keep pressing after it, your point slanting downward, and his sword will certainly fall. Train at this strike and knocking a sword down becomes easy. Practice it well.</p>
+<h3 class="sub">The Body in Place of the Sword</h3>
+<p>You could also call this the sword in place of the body. In general, when you strike at an opponent, your body and your sword do not strike at the same instant. As the chance for the strike requires, you put your body into striking position first, and your sword strikes on its own, without regard to your body. Sometimes your body stays where it is and your sword does the striking, but usually your body goes first and your sword strikes after. Examine this well and practice the strike.</p>
+<h3 class="sub">Striking and Hitting</h3>
+<p>Striking and hitting are two different things. To strike means that whatever kind of strike it is, you have decided on it and you strike it surely. Hitting is only running into him. However hard you hit, even if your opponent drops dead on the spot, it is still a hit. A strike is something you mean to do. Examine this. Hitting your opponent&#x27;s hand or leg is a hit; you hit him first, so that you can strike hard afterward. Hitting is about the same as touching. Once you have learned this well, you will see that the two are entirely different. Work this out for yourself.</p>
+<h3 class="sub">The Short-Armed Monkey</h3>
+<p>The body of the short-armed monkey, shūkō, means not reaching out with your hands. When you close in on your opponent, without the slightest thought of reaching out with your hands, you get your body in quickly, before he strikes. If you think about reaching out with your hands, your body will always stay back, so you move your whole body in quickly. In the time it takes for hands to meet, your body can easily get in. Examine this well.</p>
+<h3 class="sub">Lacquer and Glue</h3>
+<p>The body of lacquer and glue, shikkō, means sticking close to your opponent as you close in and not coming away. When you close in on him, stick to him with your head, your body, and your legs, and stick firmly. Everyone gets his face and feet in quickly, but his body hangs back. Press your body tight against his and stick to him with no gap at all between you. Examine this well.</p>
+<h3 class="sub">Comparing Heights</h3>
+<p>Comparing heights means this. Whenever you close in on your opponent, do not let yourself shrink. Stretch your legs, stretch your hips, stretch your neck, and go in strongly. Put your face beside his face, as if the two of you were measuring who is taller, and make yourself so tall that you are sure you have won. Going in strongly like this is essential. Think it through.</p>
+<h3 class="sub">Sticking</h3>
+<p>Your opponent strikes and you strike, and when he parries, you stick your sword to his and go in. Sticking means your sword does not come away from his easily, but go in without too much force. When you stick to his sword and go in, it does no harm to go in as calmly as you like. There is a difference between sticking and tangling: sticking is strong, and tangling is weak. Understand the difference.</p>
+<h3 class="sub">The Body Blow</h3>
+<p>The body blow means going in right up against your opponent and hitting him with your body. Turn your face a little to the side, push your left shoulder forward, and hit him in the chest. Make your body as strong as you can, and go in with a springing rhythm, in time with your breath. Once you have learned to go in like this, it is strong enough to throw your opponent back twelve or eighteen feet. It can hit him hard enough to kill. Train at this well.</p>
+<h3 class="sub">The Three Parries</h3>
+<p>The three parries: when you close in on your opponent and he strikes, parry his sword by sweeping it away over your right shoulder, while moving your sword as if to thrust at his eyes. Next, the &quot;thrusting parry&quot;: parry his striking sword by moving as if to thrust at his right eye, thrusting in as if to pin his neck. Last, when he strikes and you are going in with the short sword, do not worry much about parrying his sword; go in as if to punch him in the face with your left hand. These are the three parries. Think of making a fist of your left hand and punching him in the face. Train at this well.</p>
+<h3 class="sub">Stabbing at the Face</h3>
+<p>Stabbing at the face means this. When you and your opponent face each other, sword against sword, in the space between his sword and yours you must always be thinking of thrusting your sword point at his face. If you mean to thrust at his face, his face and body will lean back. Once you make him lean back, you have all sorts of ways to win. Think this through. In a fight, once your opponent&#x27;s body leans back, you have already won. So never forget to stab at the face. In your practice of strategy, train at this.</p>
+<h3 class="sub">Stabbing at the Heart</h3>
+<p>Stabbing at the heart means this. In a fight, when you are hemmed in above and on the sides, so that you cannot cut at all, you thrust at your opponent. To slip his sword, show him the back of your blade straight on, draw your sword back without letting the point waver, and thrust at his chest. This is especially useful when you are tired, or when your sword will not cut. Think carefully about this.</p>
+<h3 class="sub">Katsu-Totsu</h3>
+<p>Katsu-totsu is two shouts. When you have attacked and are pressing your opponent hard and he is about to strike back, bring your sword up from below as if to thrust at him, and strike with the return stroke. Do both in a quick rhythm: &quot;Katsu!&quot; as you thrust upward, &quot;Totsu!&quot; as you strike. This rhythm comes up all the time in an exchange of blows. The way to do katsu-totsu is to raise your point as if you were going to thrust, and strike in the very same moment. Practice this rhythm well and examine it.</p>
+<h3 class="sub">The Knocking Parry</h3>
+<p>The knocking parry: when you and your opponent are exchanging blows, clang and clang again, knock his striking sword aside with yours and strike. Knocking here does not mean knocking hard, and it does not mean parrying. You meet his striking sword, knock it, and strike him faster than the knock. The essential thing is to take the initiative with the knock and take it again with the strike. If you get the rhythm of the knock right, then however hard he strikes, a small knock is enough to keep your sword point from dropping. Learn this well and examine it.</p>
+<h3 class="sub">Fighting Many Opponents</h3>
+<p>Fighting many opponents is what you do when you fight a crowd by yourself. Draw your long sword and your short sword, and hold them spread wide to the left and right, flung out to the sides. Even though the enemy comes at you from all four directions, the idea is to drive them all around to one side. Read which of them are in front and which behind as they come, meet whoever advances first, and meet him quickly. Keep your eyes wide, read where each of them will strike from, and cut with your right sword and your left sword crossing past each other at once. Waiting is bad. Quickly return to the guards at both sides, cut hard into whoever comes forward, drive them back in confusion, and go straight at the next one who comes forward and cut him down too.</p>
+<p>Do everything you can to drive them into a line, like fish strung on a cord, and when you see them piling up on one another, sweep in hard without leaving them an opening. If you only chase them where they are crowded together, you will get nowhere. And if you keep waiting for them to come out one after another, you are waiting, and you will get nowhere. Catch their rhythm, see where they are breaking, and win.</p>
+<p>From time to time, gather a large number of partners and drive them about in practice. Once you have the feeling of it, one opponent or ten or twenty are all easy. Practice this well and examine it.</p>
+<h3 class="sub">The Principle of Crossing Swords</h3>
+<p>This principle of crossing swords is where you learn how strategy wins with the sword. I will not write it down in detail; practice well, and learn for yourself how to win. In general, it is the sword that shows the true Way of strategy. This is taught by word of mouth.</p>
+<h3 class="sub">The One Strike</h3>
+<p>By the spirit called &quot;the one strike,&quot; you win for certain. It is hard to understand unless you study strategy well. If you train at this well, strategy becomes part of you, and you win as you please. Practice this well.</p>
+<h3 class="sub">Direct Transmission</h3>
+<p>The spirit of direct transmission, jikitsū, is the true Way of the Two Swords as One, received and handed on. It is essential to train well and make your whole body into this strategy. This is taught by word of mouth.</p>
+<p>What I have written above is my school&#x27;s swordsmanship, set down in outline in this scroll. To learn to beat others with the sword in strategy, you first use the five forms to learn the five guards. You learn the path of the sword, and your whole body becomes free. Your mind sharpens, and you come to know the rhythm of the Way. Your sword and your hands grow skilled of themselves, and your body and feet move just as your mind wishes. Then you beat one man, and you beat two, and you come to know what is good and bad in strategy.</p>
+<p>Practice what is in this book article by article, fight opponents, and little by little gain the principles of the Way. Keep them in your mind always, but without hurrying; whenever you get your hands on them, learn their worth; cross swords with anyone at all and learn his mind. A journey of a thousand miles is made one step at a time. Take your time, and understand that practicing this law is a warrior&#x27;s duty. Today, beat yesterday&#x27;s self; tomorrow, beat those less skilled than you; and later, beat those more skilled. Do as this book says, and never let your mind wander onto a side road.</p>
+<p>However many opponents you beat, if you go against what you were taught, it is not the true Way. Once this principle rises in your mind, you will understand how one man can beat dozens. And then, with the wisdom of swordsmanship, you will master strategy on the large scale and on the small. A thousand days of practice is called forging, and ten thousand days of practice is called tempering. Examine this well.</p>
+<p>Shōhō 2, the thirteenth day of the fifth month (June 1645). Shinmen Musashi.
+To Terao Magonojō.
+Kanbun 7, the fifth day of the second month (1667). Terao Yumeyo Katsunobu, his seal.
+To Yamamoto Gensuke.</p>
+</section>
+<section aria-labelledby="the-fire-scroll">
+<h2 id="the-fire-scroll">The Fire Scroll</h2>
+<p>In the strategy of the Two Swords as One, I think of fighting as fire, and so I set down what I have to say about fighting and winning in this scroll, and call it the Fire scroll.</p>
+<p>To begin with, people everywhere think of the principles of strategy as small things. Some learn the tricks of the fingertips, the wrist, a matter of six inches or four. Some take up a fan and learn how to win by being a little quicker or a little later with the forearm. Others practice with bamboo swords to learn some small advantage of speed, training their hands to be quick and their feet to be quick, and they make a speciality of a little advantage of speed.</p>
+<p>In my strategy, I have staked my life in fight after fight and learned to tell the line between life and death. I have learned the path of the sword, learned how strong or weak an opponent&#x27;s strike is, learned the uses of the edge and the back of the blade, and trained at the work of cutting a man down. In all that, small and weak techniques never even entered my mind. And when a man is in full armor, the little tricks are the last thing he would think of. My Way of strategy is to fight for your life, alone against five or ten men, and to know for certain the way to win. And so, between the principle by which one man beats ten and the principle by which a thousand men beat ten thousand, what difference could there be? Examine this well.</p>
+<p>Still, in your everyday practice you cannot gather a thousand or ten thousand men and learn this Way with them. Even alone, with a sword in your hand, you can weigh up the cunning of each opponent, learn his strengths and weaknesses and his methods, and through the wisdom and virtue of strategy master the way to defeat ten thousand men. Become a master of this Way. Make up your mind firmly: &quot;In all the world, who else can reach my straight Way of strategy? Who else can master it?&quot; Then forge yourself in the morning and temper yourself in the evening, polish your skill to the end, and afterward you alone will be free. You will find wonders happening of themselves, and powers beyond understanding. This is the spirit of the warrior who practices the law of strategy.</p>
+<h3 class="sub">The Lay of the Ground</h3>
+<p>When you read the ground, you take a position &quot;with the sun on your back,&quot; which means you take your guard with the sun behind you. If the place does not let you put the sun behind you, try to keep it on your right side. Indoors it is the same: keep the light behind you or on your right. Make sure the space behind you is not cramped, leave room on your left, and keep the space on your right side close as you take your guard. At night, too, where you can see your opponent, put the fire behind you and keep the light on your right; understand that it is the same, and take your guard that way. There is a saying, &quot;look down on the enemy&quot;: take your guard, as far as you can, on ground that is even slightly higher. Indoors, think of the seat of honor as the high ground.</p>
+<p>When the fighting starts and you drive your opponent around, drive him toward your left. Make sure the bad ground is behind him. In every case, the important thing is to drive him onto bad ground. When he is on bad ground, there is a saying, &quot;do not let him see the ground&quot;: do not give him a chance to turn his head and look, and press him hard, never letting up. Indoors, too, when you drive him against a sill, a lintel, a door, a sliding screen, a veranda, or a pillar, it is the same: do not let him see the ground. In every case, drive your opponent toward bad footing, or toward something in the way at his side. Use the advantages of the ground, and win by the ground. Make this your spirit, examine it well, and train at it.</p>
+<h3 class="sub">The Three Initiatives</h3>
+<p>There are three ways of taking the initiative. The first is the initiative you take when you attack your opponent yourself; this is called the initiative of attack. The second is the initiative you take when your opponent attacks you; this is called the initiative of waiting. The third is the initiative you take when you attack and he attacks at the same moment; this is called the initiative of both together. These are the three initiatives. At the start of any fight there is no initiative besides these three. Since how you take the initiative decides whether you win, the initiative is the first thing in strategy. There is a great deal to say about the initiative, but since you win by taking whatever advantage the moment offers as your initiative, reading your opponent&#x27;s mind, and using the wisdom of strategy, I cannot write it all down in detail.</p>
+<p>First, the initiative of attack. When you mean to attack, you stay quiet and then suddenly attack fast; that is one initiative. Or you are strong and fast on the surface but keep something in reserve at the bottom; that is another. Or you make your mind as strong as you can, move your feet only a little faster than usual, and the moment you reach your opponent&#x27;s side you rush him hard; that is another. Or you let your mind go free, and from beginning to middle to end you keep the same spirit of crushing him, and you win with a mind that is strong all the way to the bottom. All of these are the initiative of attack.</p>
+<p>Second, the initiative of waiting. When your opponent attacks you, you do not react at all, and you let yourself look weak; then, when he comes close, you pull sharply and strongly away, make as if to leap at him, see where he slackens, and win at once, strongly. That is one initiative. Again, when he attacks, you come out still more strongly yourself, and in the interval when the rhythm of his attack changes, you take your chance and win right there. That is the principle of the initiative of waiting.</p>
+<p>Third, the initiative of both together. When your opponent attacks fast, you attack him quietly and strongly, and when he comes close, you make your body taut and sudden, and when you see him ease off, you win at once, strongly. Or when your opponent attacks quietly, you attack him lightly and a little fast, and when he comes close you rush him once, hard, and then, following what he shows you, win strongly. That is the initiative of both together.</p>
+<p>This is hard to explain in detail. Use what is written here to work it out for yourself in general. You will not always be the one to attack when you take these three initiatives; they depend on the moment and on the principle. But if you can, it is better to attack first yourself and keep your opponent turning. Whatever the initiative, the spirit is to win for certain by the wisdom of strategy. Train at this well.</p>
+<h3 class="sub">Holding Down the Pillow</h3>
+<p>Holding down the pillow means not letting your opponent raise his head. In the Way of strategy, in a contest above all, it is bad to let him move you around and to find yourself following behind him. Whatever happens, you want to move him around as you please. Of course your opponent is thinking the same, and you are thinking it too, so you cannot manage it unless you read what he is doing. In strategy you stop his strike, press down his thrust, tear yourself loose from his grip, and so on.</p>
+<p>Holding down the pillow means this: once you have the true Way and you come up against your opponent, you see the first stirring of whatever he means to do before he does it, and you hold down the very first letter of &quot;strike,&quot; the &quot;s,&quot; so that he never gets to the rest. That is the spirit of holding down the pillow. In the same way, you hold down the &quot;a&quot; of &quot;attack,&quot; the &quot;j&quot; of &quot;jump,&quot; the &quot;c&quot; of &quot;cut&quot;; it is all the same spirit. When he tries his techniques on you, let him go ahead with the ones that are no use, and hold down the ones that are useful so that he cannot do them; that is the heart of strategy. But if you are always trying to hold down whatever he does, holding down this and holding down that, you are already behind him. First, while you yourself do whatever you do according to the Way, you hold down the beginning of every technique he thinks of trying, so that nothing he does is of any use, and you handle him as you like. That is the mark of a master of strategy, and it comes from training. Examine holding down the pillow well.</p>
+<h3 class="sub">Crossing at the Ford</h3>
+<p>&quot;Crossing at the ford&quot; is this. When you cross the sea, there are narrow straits to cross, and there are long stretches of sea a hundred miles wide; the place where you cross is called the ford. In a man&#x27;s passage through the world, too, there will be many places in his lifetime where he must cross at the ford. On a sea voyage you know where the crossing is, you know your ship, you know the weather; and even without other ships sailing with you, you take your chances as the moment allows. Sometimes you rely on a side wind, sometimes you take a following wind, and if the wind changes, you know that you can still reach harbor by rowing the last five or seven miles. That is how you take the helm and cross at the ford.</p>
+<p>Take that spirit into your passage through the world: when something great is at stake, think of it as crossing at the ford. In fighting, too, crossing at the ford is essential. You read your opponent&#x27;s strength, you know your own skill, and by that principle you cross the ford, just as a good boatman crosses a sea road. Once you have crossed the ford, you can rest easy. Crossing the ford means finding your opponent&#x27;s weak spot and putting yourself ahead of him; then, in general, you have already won. In strategy large or small, the spirit of crossing at the ford is essential. Examine this well.</p>
+<h3 class="sub">Knowing the Condition</h3>
+<p>Seeing the condition of things means this. In strategy on the large scale, you learn whether the enemy is rising or declining, you learn the mood of the enemy&#x27;s troops, you take in the situation of the battlefield, you read the enemy&#x27;s condition well, and you decide how your own troops will attack. You understand where, by the principles of this strategy, you can be sure of winning, and you fight knowing how to take the initiative. And in strategy on the small scale too, you learn your opponent&#x27;s school, you size up his character, and you find his strengths and weaknesses. You do something he does not expect, you learn his highs and lows, you learn the rhythm of the intervals between, and you take the initiative; that is essential. If your wisdom is strong, you will always see the condition of things. Once you are free in strategy, you will read your opponent&#x27;s mind well and find many ways to win. Work this out for yourself.</p>
+<h3 class="sub">Treading Down the Sword</h3>
+<p>The spirit of treading down the sword is something used all the time in strategy. First, in strategy on the large scale: when the enemy shoots at you with bows and guns, or opens any kind of attack, if you wait until after he has loosed his arrows and fired his guns, and only then attack, he will be fitting new arrows to his bows and loading powder into his guns, and you will find it hard to break in. The idea is to attack quickly, while he is still shooting. If you attack quickly, he will hardly be able to use his arrows, and he will not be able to fire his guns. The spirit is that as soon as he does anything, you take the advantage and win by treading down whatever he does.</p>
+<p>In strategy on the small scale too, if you strike after your opponent&#x27;s sword has struck, it becomes clang and clang again, and you get nowhere. Think of treading his striking sword under your feet: beat it the moment it comes out, so that he can never strike a second time. Treading is not only done with the feet. Understand that you tread with your body, tread with your mind, and of course tread with your sword, so that he never gets a second chance. This is the spirit of taking the initiative in everything. It does not mean colliding with him at the same moment; it means coming right behind his move. Examine this well.</p>
+<h3 class="sub">Knowing the Collapse</h3>
+<p>Everything can collapse. A house collapses, a man collapses, an enemy collapses, all because the moment comes and they fall out of rhythm. In strategy on the large scale, it is essential to catch the rhythm of the enemy&#x27;s collapse and to drive after him without missing the moment. If you miss the breath of his collapse, he may recover. In strategy on the small scale too, during a fight your opponent will lose his rhythm and you will see the beginnings of his collapse. If you are careless at that moment, he will recover, start afresh, and you will get nowhere. It is essential to seize on that crack and chase him down so surely that he cannot get his face up again. Chase him with a straight, strong spirit, and strike so that you knock him away for good and he cannot recover. Think carefully about what striking him away means. If you do not break away cleanly, you will be sluggish. Work this out for yourself.</p>
+<h3 class="sub">Becoming the Enemy</h3>
+<p>Becoming the enemy means putting yourself in your opponent&#x27;s place and thinking as he does. In the world we see that when a thief has holed up inside a house, people think of him as a fearsome enemy. But if you become that enemy and think as he does, he feels that the whole world is against him, that he has run in somewhere and has no way out. The man holed up inside is a pheasant, and the man who goes in to kill him is a hawk. Think this through.</p>
+<p>In strategy on the large scale too, people think of the enemy as strong and become overcautious. But if you have good troops, know the principles of strategy well, and understand clearly how to beat the enemy, there is nothing to worry about. In strategy on the small scale too, put yourself in your opponent&#x27;s place. He will think that against someone who understands strategy well, who is strong in its principles and skilled in its Way, he is sure to lose. Examine this well.</p>
+<h3 class="sub">Letting Go of the Four Hands</h3>
+<p>Letting go of the four hands means this. When you and your opponent are of the same mind, pushing against each other with four hands locked, the fight goes nowhere. If you think you are getting locked like that, give up that idea at once and find another principle by which to win. In strategy on the large scale too, if you are in a four-hands frame of mind, things go nowhere and you lose men. It is essential to let go of that idea quickly and win by a principle the enemy does not expect. In strategy on the small scale too, if you think you are getting locked four hands to four hands, change your mind at once, read your opponent, and learn to win by a principle that is entirely different. Think carefully about this.</p>
+<h3 class="sub">Moving the Shade</h3>
+<p>Moving the shade is for when you cannot see into your opponent&#x27;s mind. In strategy on the large scale, when you cannot read the enemy at all, you make as if to launch a strong attack yourself, and you see what plan he reveals. Once you have seen his plan, it is easy to win by some other principle. And in strategy on the small scale, when your opponent holds his sword behind him, or to the side, you make a sudden move to strike, and he will show his intention in his sword. Once it is shown and you know it, you take the advantage at once and you are sure to win. If you are careless, you will miss the rhythm. Examine this well.</p>
+<h3 class="sub">Holding Down the Shadow</h3>
+<p>Holding down the shadow is for when you can see that your opponent means to attack. In strategy on the large scale, it is called holding down his technique as he tries to use it. If you show him strongly that you are holding down what he hopes to gain, he will be held back by your strength and change his mind. Then you change your own mind too, and from an empty mind you take the initiative and win. In strategy on the small scale too, you stop the strong urge rising in him with a rhythm that works for you, and in the rhythm of his stopping you take your chance and seize the initiative. Think this through.</p>
+<h3 class="sub">Passing It On</h3>
+<p>Things pass from one to another in everything. Sleepiness passes from one person to the next; a yawn passes from one person to the next; even time passes. In strategy on the large scale, when you see that the enemy is restless and in a hurry to get things done, act as if it does not concern you in the least and show him how relaxed and slow you are, and the enemy will catch it from you and slacken. When you think it has passed to him, you, with an empty mind, attack fast and strong and win. In strategy on the small scale too, the heart of it is to let your body and mind be slow and easy, catch the moment your opponent slackens, and win by attacking strongly and quickly, taking the initiative.</p>
+<p>There is something similar called making him drunk. One part of it is boredom, one part is carelessness, and one part is a weakening of the spirit. Think this through.</p>
+<h3 class="sub">Upsetting Him</h3>
+<p>There is upset in everything. One kind comes from danger, the second from something beyond your power, the third from something you never expected. Examine this well. In strategy on the large scale, it is essential to upset the enemy. Attack furiously where the enemy does not expect it, and before he can make up his mind, take the initiative and win by your own advantage. In strategy on the small scale too, it is essential to look slow and easy at first, then suddenly attack hard, and as his mind swings up and down, not let him catch his breath, but take your chance at once and win. Examine this well.</p>
+<h3 class="sub">Frightening Him</h3>
+<p>Fear is in everything: it is a mind frightened by what it does not expect. In strategy on the large scale too, you can frighten the enemy with more than what is right in front of his eyes. You frighten him with a noise, or by making a small force seem large, or by suddenly appearing from the side; that is where fear comes from. Catch the rhythm of his fear and win by that advantage. In strategy on the small scale, frighten him with your body, frighten him with your sword, frighten him with your voice; do something he never expected, and use the advantage of his fear to win then and there. That is essential. Examine this well.</p>
+<h3 class="sub">Blending In</h3>
+<p>Blending in means this. When you and your opponent are close, both pushing hard against each other and getting nowhere, you blend in with him right there, so that the two of you are mixed into one, and while you are mixed together, you win by the advantage you find. That is essential. In strategy large and small, when the two sides are separate and both are straining against each other so that neither can win, blend into the enemy at once until there is no line between you; find your advantage there, see how to win from inside, and win strongly. That is the heart of it. Examine this well.</p>
+<h3 class="sub">Touching the Corner</h3>
+<p>Touching the corner means this. When you push against something strong, you cannot push it straight back. In strategy on the large scale, look over the enemy&#x27;s troops and strike at the corner of the strong part that juts out, and so gain the advantage. As the corner weakens, the whole army weakens with it. Even while it is weakening, it is essential to keep attacking corner after corner and take the victory. In strategy on the small scale too, if you injure the corners of your opponent&#x27;s body, his body will weaken a little; once he begins to give way, he is easy to beat. Examine this well and learn the way to win. That is the heart of it.</p>
+<h3 class="sub">Confusing Him</h3>
+<p>Confusing him means not letting your opponent be sure of anything. In strategy on the large scale, you read the enemy&#x27;s mind on the battlefield and, by the wisdom of your strategy, pull his mind this way and that. Make him think of this and that, make him think you are slow and then fast, and when you catch the rhythm in which his mind falls into confusion, you see how to win for certain. And in strategy on the small scale, you try all kinds of techniques as the moment allows: make as if to strike, or make as if to thrust, or make him think you are closing in, and when you catch the first sign of his confusion, you win as you please. That is the heart of fighting. Examine this well.</p>
+<h3 class="sub">The Three Shouts</h3>
+<p>The three shouts are the shout at the beginning, the shout in the middle, and the shout at the end, and they are used in three different ways. It is essential to shout according to the situation. A shout is a show of force, so people shout at a fire, shout into the wind and waves; a shout shows strength. In strategy on the large scale, the shout at the start of a battle should be as loud and full as you can make it. The shout during the fighting is low in pitch, a shout from the bottom of the belly as you attack. After you have won, you shout loud and strong. These are the three shouts.</p>
+<p>In strategy on the small scale too, to move your opponent you make as if to strike and shout &quot;Ei!&quot; first, and you bring your sword out after the shout. And after you have struck him down, you shout, and that shout tells that you have won. These are called the shout before and the shout after. You never shout loudly at the same moment as your sword strikes. If you shout during the fight, it is a shout that rides the rhythm, and it is pitched low. Examine this well.</p>
+<h3 class="sub">Weaving Through</h3>
+<p>Weaving through means this. In a large battle, when both sides have drawn up their troops and the enemy is strong, you attack one side of the enemy, and when you see it breaking, you leave it and go at another strong point. In general, the idea is to weave back and forth, the way a mountain path winds. In strategy on the small scale, when you face a great many opponents, this is also the heart of it. You do not try to beat every one where he stands; when one side gives way, you go at another strong point. Catch their rhythm, and in a good rhythm think of weaving left and right, watching for what they show you as you go at them. Once you have measured the enemy and you are cutting your way through, you do not have the slightest thought of drawing back; you win strongly. That is the principle. When you close in on a single strong opponent, too, the spirit is the same. Weaving through means never knowing how to take a single step back and always pressing on. Think carefully about this.</p>
+<h3 class="sub">Crushing</h3>
+<p>Crushing means looking on your opponent as weak, making yourself the stronger, and crushing him. That is the heart of it. In strategy on the large scale, when you see that the enemy has few men, or even if he has many, when his troops are confused and showing weakness, you crush him: you pile on from the top and crush him flat. If the crushing is weak, he may come back at you. Think carefully about the feeling of crushing something in the palm of your hand. And in strategy on the small scale too, when your opponent is less skilled than you, or when he loses his rhythm and starts to fall back, it is essential not to give him a moment to breathe, not to let him meet your eye, but to crush him straight down. It is vital not to let him get up again in the least. Examine this well.</p>
+<h3 class="sub">Mountain and Sea</h3>
+<p>The spirit of mountain and sea means that it is bad to do the same thing over and over in a fight. Doing the same thing twice cannot be helped, but you should never do it three times. When you try a technique on your opponent and it does not work the first time, you may rush in with it once more, but if that gets you nowhere, suddenly try something entirely different. If that does not work either, try something different again. So if he thinks &quot;mountain,&quot; come at him as the sea; if he thinks &quot;sea,&quot; come at him as the mountain. That is the Way of strategy. Examine this well.</p>
+<h3 class="sub">Knocking the Bottom Out</h3>
+<p>Knocking the bottom out means this. When you fight an opponent, by the principles of the Way you may seem to have won on the surface, but because his spirit has not been put out, he may be beaten on the surface while his heart underneath is not beaten. When that happens, you suddenly change your mind, put out his spirit, and see that he is beaten from the bottom of his heart. That is the heart of it. You can knock the bottom out with the sword, with your body, or with your mind; you cannot learn it in only one way. Once he has collapsed from the bottom, you need not leave any of your attention on him. Otherwise you must leave your attention on him; if you keep your attention on him, he will find it hard to come back. In strategy large and small, train well at knocking the bottom out.</p>
+<h3 class="sub">Becoming New</h3>
+<p>Becoming new means this. When you and your opponent are fighting and things become tangled and get nowhere, you shake off your old spirit and think of everything as if you were starting afresh. Catch the new rhythm, and you will see how to win. Becoming new means that whenever you feel yourself grinding against your opponent, you change your mind at once and win by an entirely different principle. In strategy on the large scale, too, it is essential to understand becoming new. With the wisdom of strategy you see it at once. Examine this well.</p>
+<h3 class="sub">Rat&#x27;s Head, Ox&#x27;s Neck</h3>
+<p>Rat&#x27;s head, ox&#x27;s neck means this. When you and your opponent are both fixed on small details in a fight and things are getting tangled, always think of the Way of strategy as &quot;rat&#x27;s head, ox&#x27;s neck, rat&#x27;s head, ox&#x27;s neck&quot;: in the middle of the tiniest detail, suddenly make your mind large, and switch between small and large. That is one of the ways a strategist sets his mind. It is vital for a warrior to think &quot;rat&#x27;s head, ox&#x27;s neck&quot; even in his everyday mind. In strategy on the large scale and the small, never leave this spirit. Examine this well.</p>
+<h3 class="sub">The Commander Knows the Soldiers</h3>
+<p>The commander knows his soldiers means this. Whenever it comes to a fight and you have reached the Way as you want it, practice this law without stopping. When you have the wisdom of strategy, think of everyone who is your enemy as your own soldiers, understand that you can make them do what you want, and mean to move the enemy about as you please. You are the commander, and the enemy is your soldiers. Work this out for yourself.</p>
+<h3 class="sub">Letting Go of the Hilt</h3>
+<p>There are many meanings to letting go of the hilt. There is the spirit of winning with no sword, and there is the spirit of not winning even with the sword. I will not write down all the places the mind goes with this. Train at it well.</p>
+<h3 class="sub">The Body Like a Rock</h3>
+<p>The body like a rock means that once you have mastered the Way of strategy, you suddenly become like a great rock, so that nothing can strike you and nothing can move you. This is taught by word of mouth.</p>
+<p>What I have written above is only what I have kept on thinking about in my school&#x27;s swordsmanship, set down as it came to me. Since I am writing down these principles for the first time, things may have got jumbled, before and after, and it is hard to explain them in detail. Even so, for those who want to learn this Way, it should serve as a guide for the mind.</p>
+<p>Ever since my youth I have set my heart on the Way of strategy. I have seasoned my hands and seasoned my body in swordsmanship itself, I have been through every kind of state of mind, and I have looked into the other schools. Some of them talk their way out of things with words; some do fine, fiddly things with their hands, and make a show that looks good to people. But there is not one grain of the true spirit in any of it. Of course, people who learn such things believe they are training the body and training the mind, but all of it turns into a sickness of the Way that lingers long afterward, and it is the beginning of the straight Way of strategy rotting away in the world and the Way falling into ruin. When swordsmanship becomes the true Way, and you fight an opponent and win, this law never changes in the least. If you gain the wisdom of my strategy and practice what is straight, you can have no doubt that you will win.</p>
+<p>Shōhō 2, the twelfth day of the fifth month (June 1645). Shinmen Musashi.
+To Terao Magonojō.
+Kanbun 7, the fifth day of the second month (1667). Terao Yumeyo Katsunobu, his seal.
+To Yamamoto Gensuke.</p>
+</section>
+<section aria-labelledby="the-wind-scroll">
+<h2 id="the-wind-scroll">The Wind Scroll</h2>
+<p>Knowing the Ways of other schools of strategy: in this scroll, which I call the Wind scroll, I write down the strategy of the other schools. Without knowing the Ways of other schools, you cannot be sure you understand the Way of your own.</p>
+<p>When I look into the strategy of others, I find some who take up a big long sword, make strength their speciality, and do their technique that way. Others, under the name of &quot;the small sword,&quot; pursue the Way with a short sword. Others pile up a great number of sword techniques and teach their Way by guards, calling some of them the &quot;outer&quot; teachings and some of them the &quot;inner.&quot; Further on in this scroll I will show clearly that none of these is the true Way, and make known what is good and bad, right and wrong, about each. The principles of my school are a different thing altogether.</p>
+<p>The other schools have turned their art into a way of earning a living; they have dressed it in bright colors, made it bloom, and made it into something to sell. Is that why they are not the true Way? Or is it that they think of the world&#x27;s strategy small, as swordsmanship and nothing else, and learn to swing a sword and train the body, and think that winning means quick and seasoned hands? Either way, none of them is a sure Way. I write down the failings of the other schools one by one in this scroll. Examine them well, and understand the principles of the Two Swords as One.</p>
+<h3 class="sub">Schools That Use an Extra-Long Sword</h3>
+<p>There are other schools that are fond of an extra-long sword. From the standpoint of my strategy, I judge them to be weak schools. The reason is that these other schools do not know the principle of beating an opponent by any means at all, so they count the length of the sword as an advantage and hope to win from far away. That is why they are fond of long swords. People say &quot;an inch longer is an inch ahead,&quot; but that is the talk of people who know nothing of strategy. To try to win from far away by length, without the principles of strategy, comes from a weak spirit, and that is why I judge it weak strategy.</p>
+<p>If your opponent comes close, close enough to grapple, then the longer your sword is, the harder it is to strike with it. You cannot swing it freely; the long sword becomes a burden, and you are worse off than a man with a little short sword or with his bare hands. People who like long swords have their excuses, but those are reasons that hold only for themselves. Seen from the true Way of the world, they make no sense. If you do not have a long sword and have only a short one, are you sure to lose? There are places where the space above, below, or to the sides is cramped, and there are rooms where only the short sword can be used. A spirit that favors length is a sign of doubt about strategy, and it is a bad spirit. Some people are not strong. Some, because of their build, cannot wear a long sword. Since ancient times it has been said that &quot;the large includes the small,&quot; so I do not dislike length for no reason. What I dislike is a spirit that leans toward length.</p>
+<p>In strategy on the large scale, the long sword is a large army and the short sword is a small army. Is it impossible to fight a battle with a small army against a large one? There are many examples of a small army beating a large one. In my school I dislike that kind of narrow, one-sided spirit. Examine this well.</p>
+<h3 class="sub">The &quot;Strong Sword&quot; of Other Schools</h3>
+<p>There should be no such thing as a strong sword or a weak sword. A sword swung with a strong spirit is a rough sword, and you can hardly win by roughness alone. And if you speak of a strong sword, then when you go to cut a man and try to cut him hard, by force, your sword will not cut. Even when you test a blade by cutting, it is bad to try to cut hard.</p>
+<p>No one, when he is cutting at an enemy, thinks, &quot;Now I will cut weakly&quot; or &quot;Now I will cut strongly.&quot; When you mean only to cut a man down and kill him, you have no thought of strength, and of course no thought of weakness either; you think only of what will kill him. If you use a strong sword and knock his sword hard, you will knock too far, and that is always bad. If you hit his sword hard, your own sword may break. And so there is no such thing as a strong sword.</p>
+<p>In strategy on the large scale, if you have strong troops and mean to win strongly in battle, the enemy too will have strong men and mean to fight hard. Both are the same. In everything, you cannot win unless you win by principle. In my Way I do not think of forcing anything in the least; the spirit is to win in any way at all by the wisdom of strategy. Think this through.</p>
+<h3 class="sub">Schools That Use a Short Sword</h3>
+<p>To think of winning with a short sword alone is not the true Way. Since ancient times we have called them the tachi and the katana, which makes clear that one is long and one is short. In the world, a strong man swings even a large sword lightly, so there is no reason for him to insist on a short one. That is why such men take up long weapons, and carry even spears and halberds.</p>
+<p>The spirit of thinking that with a short sword you will cut into the gaps when your opponent swings, or leap in and grab him, is one-sided and bad. And aiming at gaps means that you are always a step behind and always looking tangled, so I dislike it. If you try to close in on your opponent with a short weapon, grapple with him, and seize him, it will be no use in the middle of a great host of enemies. A man who has mastered the short sword may think he will cut through a crowd, leaping and whirling about as he pleases, but all of it becomes what is called a parrying sword, and he gets lost in the confusion; it is not a sure Way.</p>
+<p>Better to keep yourself strong and straight, drive others around, make them leap and jump, attack so that they fall into confusion, and make winning surely the heart of it. That is the Way. The same principle holds in strategy on the large scale. Better to use the weight of numbers, drive the enemy into disorder, and crush him at once: that is the heart of strategy.</p>
+<p>When people in the world learn things, if they practice day in and day out parrying, slipping, dodging, and ducking, their minds are dragged along by that Way, and they end up being pushed around by others. Since the Way of strategy is straight and true, the essential spirit is to drive others around by right principle and make them follow you. Examine this well.</p>
+<h3 class="sub">Schools With Many Sword Techniques</h3>
+<p>Teaching people a great number of sword techniques is turning the Way into something to sell. Knowing many techniques is meant to impress beginners with how deep it all is. That is a spirit strategy dislikes. The reason is that to think there are many different ways to cut a man is a confused way of thinking.</p>
+<p>In this world there is no other way of cutting a man. Whether you know strategy or not, man or woman or child, there are not many ways to strike, slash, and cut. If there are any others, they are only thrusting and sweeping. Since it is a Way of cutting, there is no reason for there to be many techniques. Still, depending on the place and the circumstances, where the space above you or to the side is cramped, there is a way of holding the sword so that it does not catch on anything; and so there should be five ways, the five directions.</p>
+<p>To add anything beyond these, to twist your hands, bend your body, leap, and spring aside to cut a man, is not the true Way. You cannot cut a man by twisting, you cannot cut him by bending, you cannot cut him by leaping, and you cannot cut him by springing aside; none of it is of any use at all. In my strategy, it is essential to keep your posture and your mind straight, to make your opponent twist and warp, and to win at the point where his mind is twisted and bent. Examine this well.</p>
+<h3 class="sub">Schools That Rely on Guards</h3>
+<p>To make guards the main thing is a mistake. Guards in the world are for times when there is no enemy. The reason is this: setting up laws and precedents, saying &quot;this is how it was done in the old days&quot; and &quot;this is the law of today,&quot; has no place in the Way of winning and losing. What you must do is contrive to make things bad for your opponent.</p>
+<p>In everything, to take a guard means relying on not being moved. To fortify a castle, or to set up a camp, is meant to stay strong and immovable even when attacked; that is ordinary. But in the Way of winning and losing in strategy, you always set your mind on taking the first move, and again the first move. The spirit of taking a guard is the spirit of waiting for the other man to move first. Think this through.</p>
+<p>In the Way of winning and losing in strategy, you make the other man&#x27;s guard move, you do what he never expected, you confuse him, you upset him, you frighten him, and you win by catching the rhythm in which he is thrown off. So I dislike the guard, which is a spirit of being a step behind. That is why in my Way there is what I call the guard that is no guard: there are guards, and there are no guards.</p>
+<p>In strategy on the large scale too, it is the heart of battle to learn how many men the enemy has, take in the battlefield, know the condition of your own troops, use the advantage, draw up your troops, and start the fight. Whether the enemy strikes first or you strike first makes twice the difference. To think that holding your sword in a good guard, parrying the enemy&#x27;s sword well, and knocking it aside well is what matters is the same as setting up spears and halberds as a palisade. When you strike the enemy, your spirit should be strong enough to pull up the posts of the palisade and use them as spears and halberds. Examine this well.</p>
+<h3 class="sub">What Other Schools Fix Their Eyes On</h3>
+<p>Some schools speak of where to fix your eyes. Depending on the school, some fix their eyes on the opponent&#x27;s sword, others on his hands; some fix their eyes on his face, others on his feet. If you try to fix your eyes on one particular thing like that, your mind gets confused, and it becomes what is called a sickness of strategy.</p>
+<p>Here is why. A man who plays kemari, the court football, does not stare at the ball, but he can kick it up the side of his leg, keep it in the air, and kick it while running around; when you are at home in something, you have no need to watch it with your eyes. Jugglers, too, once they are at home in their art, can balance a door panel on their nose and keep a whole set of swords in the air like balls. None of them is fixing his eyes on anything, but since they handle these things constantly, they see what they need to see on their own.</p>
+<p>In the Way of strategy, too, once you know each opponent, have learned how heavy or light a man&#x27;s mind is, and have mastered the Way, you see everything, down to how far or near his sword is and how fast or slow. In strategy, where you fix your eyes is, in general, on the other man&#x27;s mind. In strategy on the large scale, too, your eyes are fixed on the condition of the enemy&#x27;s troops.</p>
+<p>Of the two ways of seeing, perceiving and looking, make the eye that perceives strong, and see into your opponent&#x27;s mind; see the condition of the battlefield; fix your eyes broadly, see how the fight is going, see who is strong and who is weak at each moment, and win surely. That is the heart of it. In strategy large or small, you never fix your eyes narrowly. As I wrote before, if you fix your eyes on small things in detail, you forget the large things, your mind becomes confused, and you let a sure victory slip away. Examine this principle well and train at it.</p>
+<h3 class="sub">Footwork in Other Schools</h3>
+<p>In other schools there are many quick steps for treading the ground, called floating feet, jumping feet, springing feet, stamping feet, crow&#x27;s feet, and so on. From the standpoint of my strategy, I find all of these lacking.</p>
+<p>I dislike floating feet because in a fight the feet always want to float, so the Way is to tread as firmly as you can. I do not care for jumping feet either. A jump has a moment of starting and a moment of settling, and since there is no reason to jump again and again, jumping feet are bad. Springing feet, with their spirit of springing, get you nowhere. Stamping feet are waiting feet, and I dislike them especially. Besides these there are crow&#x27;s feet and all sorts of quick steps. But you may have to cross swords with an enemy in a marsh or a swampy field, in the mountains or a river, on stony ground or a narrow path, and in some places you cannot jump or spring, and there are places where quick steps are impossible.</p>
+<p>In my strategy there is nothing special about the feet: it is like walking along an ordinary road. Following your opponent&#x27;s rhythm, when you hurry and when you are still, you keep your body in balance, neither short of the mark nor beyond it, and your feet should never be unsteady.</p>
+<p>In strategy on the large scale, too, moving your feet is essential. The reason is that if you attack fast and carelessly, without knowing the enemy&#x27;s mind, you will be out of rhythm and find it hard to win. And if your footwork is too slow, you will not spot the moment when the enemy is confused and starting to break; you will let the victory slip and be unable to settle the fight quickly. It is essential to see the moment when the enemy is confused and breaking, and to win without giving him the slightest chance to recover. Train at this well.</p>
+<h3 class="sub">Speed in Other Schools</h3>
+<p>Speed in strategy is not the true Way. Speed means that something is out of step with the rhythm of things; that is why we call things fast or slow. Once you are expert in a Way, you do not look fast.</p>
+<p>There are men called fast runners who can travel a hundred miles or more in a day; but even they do not run fast from morning to night. A man with no talent for the road may seem to run all day long and still get nowhere. In the Noh theater, when a poor singer sings along with a fine one, he falls behind and feels rushed. And when the drums play the stately piece Oimatsu, The Old Pine, the music is calm, but a poor drummer still falls behind or runs ahead. The piece Takasago is lively, but it is bad to play it fast. &quot;Fast stumbles,&quot; as they say, and is out of time. Of course slow is bad too. When an expert does something, it looks unhurried, yet there are no gaps in it. Whatever a well-trained person does never looks rushed. Learn the principle of the Way from these examples.</p>
+<p>In the Way of strategy above all, speed is bad. The reason is that, depending on the place, in a marsh or a swampy field for instance, neither body nor feet can move quickly. With a sword, there is all the less reason to cut quickly. If you try to cut quickly, it is not like flicking a fan or a knife; one quick flick, and it does not cut at all. Think carefully about this.</p>
+<p>In strategy on the large scale too, a spirit of speed and hurry is bad. If you have the spirit of holding down the pillow, you will never be in the least late. When someone is carelessly fast, you go against him and become calm, and you do not get dragged along by him. That is essential. Work out this spirit and train at it.</p>
+<h3 class="sub">The &quot;Inner&quot; and &quot;Outer&quot; Teachings of Other Schools</h3>
+<p>In matters of strategy, what should be called &quot;outer&quot; and what &quot;inner&quot;? In some arts, depending on the case, people speak of &quot;secret teachings&quot; and &quot;hidden traditions,&quot; and there are inner and outer levels. But when it comes to the principle of crossing swords with an opponent, it is not as if you fight with the outer teaching and cut with the inner.</p>
+<p>In the way I teach my strategy, I first have a beginner practice the techniques that come easily to him, and I teach him first the principles he can grasp quickly. As for things his mind cannot yet reach, I watch for the moment when his mind loosens, and only then, little by little, do I teach him the deeper principles. But in general, since I have him learn what fits each situation as he faces it, there is no such thing as inner and outer.</p>
+<p>So it is in the world: if you go searching deep into the mountains and want to go deeper still, you come out again at the entrance. In any Way, there are times for the inner, and there are times when it is good to bring out the outer. In the principle of fighting, what is there to hide, and what to reveal? So in handing on my Way, I do not care for written oaths and pledges sworn on pain of punishment. I look at the wisdom of the person who is learning this Way, teach him the straight Way, have him throw away the bad habits of all the false ways of strategy, and let him enter, of his own accord, the true Way of the warrior&#x27;s law, and come to a mind that has no doubts. That is the way my strategy is taught. Train at this well.</p>
+<p>Above, I have set down in outline in this Wind scroll the strategy of other schools, in nine articles. I ought to describe each school clearly, from its outer teachings to its inner ones, but I have deliberately not written down the names of any school or of any of their secret teachings. The reason is that each school&#x27;s view and each Way&#x27;s explanations vary from person to person, as each one sees fit, so that even within one school there are small differences. So, for the sake of later times, I have not written down which school is which. I have divided the other schools broadly into nine kinds. Seen from the straight principle of the Way of the world and of people, leaning toward length, making a principle of shortness, leaning toward strength or weakness, roughness or fineness, are all crooked Ways; so even if I do not lay out the outer and inner teachings of the other schools, everyone should be able to see it.</p>
+<p>In my school, there is no inner or outer to the sword, and no fixed form to the guard. Only to understand its virtue with your mind: that is the heart of strategy.</p>
+<p>Shōhō 2, the twelfth day of the fifth month (June 1645). Shinmen Musashi.
+To Terao Magonojō.
+Kanbun 7, the fifth day of the second month (1667). Terao Yumeyo Katsunobu, his seal.
+To Yamamoto Gensuke.</p>
+</section>
+<section aria-labelledby="the-void-scroll">
+<h2 id="the-void-scroll">The Void Scroll</h2>
+<p>The Way of strategy of the Two Swords as One: I write it down here as the Void scroll.</p>
+<p>The idea of the void, kū, is this. Where there is nothing, where nothing can be known, we call it the void. The void, of course, is nothing. Knowing what exists, you know what does not exist: that is the void.</p>
+<p>In the world, people who see things wrongly look at what they do not understand and call it the void. That is not the true void; it is only a confused mind. In the Way of strategy too, when a warrior following his Way does not know the warrior&#x27;s law, that is not the void. He has all sorts of confusions, cannot see what to do, and calls that the void, but it is not the true void.</p>
+<p>A warrior learns the Way of strategy surely, works hard at the other martial arts as well, and is not in the least in the dark about the Way a warrior must walk. His mind has no confusion in it. Every morning and every hour he never slackens; he polishes both parts of his mind, the heart that feels and the will that decides, and sharpens both his eyes, the eye that perceives and the eye that looks. When there is not the slightest cloud left, when the clouds of confusion have cleared away, know that this is the true void.</p>
+<p>Until you know the true Way, whether you follow the Buddha&#x27;s law or the law of the world, each of you will think that your own way is sure and good. But if you look at it from the straight path of the mind, and measure it against the great square and line of the world, you will see that each person&#x27;s private favoritism and each person&#x27;s crooked eye has turned him away from the true Way. Know that spirit, make what is straight your foundation, take the true mind as your Way, practice strategy broadly, rightly, and clearly, and grasp the large view. Then take the void as the Way, and see the Way as the void.</p>
+<p>In the void there is good and no evil. Wisdom exists. Principle exists. The Way exists. The mind is void.</p>
+<p>Shōhō 2, the twelfth day of the fifth month (June 1645). Shinmen Musashi.
+To Terao Magonojō.</p>
+</section>
+</article>
+</main>
+<a class="to-contents" href="#contents">Contents</a>
+<script src="book.js" defer></script>
+</body>
+</html>

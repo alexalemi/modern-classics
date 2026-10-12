@@ -1,0 +1,197 @@
+TEXT ANALYSIS — Howard Pyle, The Story of King Arthur and His Knights (1903)
+
+Source: Project Gutenberg #60184 (illustrated HTML of the 1903 Scribner
+first edition). 113,160 words in 35 files. See prep.py for structure.
+
+
+1. WHAT THE BOOK IS
+
+The first of Pyle's four Arthur books (Champions of the Round Table 1905,
+Sir Launcelot and His Companions 1907, The Grail and the Passing of Arthur
+1910). Written and drawn by Pyle for young readers, after his Robin Hood
+(1883). Two Books in one volume:
+
+  The Book of King Arthur: Prologue (Uther, Merlin's sword in the anvil);
+    Part One, The Winning of Kinghood (Kay's broken sword; Arthur draws
+    the sword; the kings' trial); Part Two, The Winning of a Sword (Sir
+    Myles, the Sable Knight = King Pellinore, the Lady of the Lake,
+    Excalibur); Part Three, The Winning of a Queen (Arthur disguised as a
+    gardener's boy at Cameliard; the White Champion; Guinevere; the
+    wedding and the founding of the Round Table).
+  The Book of Three Worthies: Foreword, Prologue (the war of the five
+    kings, Morgan's island of Avalon, Arthur's healing); Part One, The
+    Story of Merlin (Vivien, the Valley of Joyousness, Merlin's
+    entombment, Morgan's plot, Accolon, the lost scabbard); Part Two, The
+    Story of Sir Pelleas (the May-day quest, Ettard, Parcenet, Gawain's
+    betrayal, the Lady of the Lake's necklace); Part Three, The Story of
+    Sir Gawain (the white hart, Arthur in the enchanted castle, the old
+    woman in the hut, Gawain's marriage — Pyle's version of the loathly
+    lady).
+
+Pyle's sources are Malory (often closely, often freely) plus Tennyson
+(Vivien) and his own invention (Tintagalon, Arthur as a gardener's lad,
+Parcenet, much of the Pelleas story's second half). He rearranges family
+trees: in Pyle, Igraine's daughter Margaise marries Uriens of Gore and
+Morgan le Fay marries Lot of Orkney (Malory has it the other way round:
+Morgause marries Lot). These are HIS choices and stand.
+
+
+2. STYLE, TONE, AND WHOSE ARCHAISM IT IS
+
+Pyle wrote in 1902 in an English no one ever spoke: mock-Elizabethan
+costume ("thou", "quoth he", "I do perceive", "Lo!", "hight", "wist",
+"certes", "gramercy", "damoiselle", "in this wise", "for to"). screen.py
+scores it arch 26.3. THE COSTUME IS PYLE'S INVENTION, NOT THE PERIOD'S
+(memory: whose-archaism-is-it). It is not Malory's fifteenth-century
+English either. Taking it off removes nothing Pyle's own first readers
+had: an American child in 1903 read this as "olden-days" flavour, which a
+modern reader gets from the armour, the castles and the ceremony, not
+from "thee".
+
+What is genuinely Pyle's, and must survive:
+  - WONDER. The marvels are told plainly and lovingly — the blue-steel
+    blade, the lake of enchantment, the white hart. Keep every colour,
+    jewel, flower, cloth and light he names.
+  - CEREMONY. Courtesy is the subject. Knights greet, challenge, yield,
+    swear and give thanks with formality. Keep the formality in the
+    CONTENT (titles, bows, "my lord", "fair lady", "Sir Knight", oaths)
+    while making the grammar modern.
+  - THE NARRATOR. Pyle talks to the reader: "So hearken unto that which I
+    have written", "as you shall presently hear", the moral addresses at
+    the ends of Parts ("may that Faith heal all your wounds of sorrow").
+    Every one stays, as warm direct address ("Now listen to what
+    follows", "I hope that you too...").
+  - THE MORAL. Pyle believes knighthood is a model of courage, humility
+    and courtesy for children. His sermons are sincere; render them
+    sincerely, without irony and without trimming.
+  - HUMOR. Gawain's rough tongue, Kay's bluster, the Duke of North
+    Umber's pomposity, the gardener's lad's cap. Keep the comedy sharp.
+
+Sentences: Pyle chains clauses with "and ... and ... wherefore ... so
+that". For readers of 10-14, break the chains into two or three
+sentences; keep the "And so...", "Then..." rhythm of a told tale.
+
+
+3. VOICE TARGET
+
+A storyteller reading aloud to a bright twelve-year-old: vivid, clear,
+stirring, a little grand where the moment is grand. Plain modern words.
+Contractions in dialogue are allowed where they make speech natural
+(villains, Gawain, Kay, servants), sparingly in the narration and in
+solemn or royal speech. No slang, no anachronism ("okay", "kids",
+"guys"), no winks at the reader.
+
+
+4. LOCKED NAMES (same person as in our Malory, books/malory/ -> Malory's
+   modern form; Pyle's own characters keep Pyle's names)
+
+  Gawaine -> Gawain             Ewaine -> Uwain
+  Geharris / Geheris -> Gaheris Launcelot -> Lancelot
+  Agravaine -> Agravain         Baudwain / Bodwain -> Baudwin
+  Accalon -> Accolon            Urien / Uriens -> Uriens
+  Ryence -> Rience              Pellias -> Pelleas
+  Morgana le Fay -> Morgan le Fay  Nymue -> Nimue
+  Carleon -> Caerleon           Camiliard -> Cameliard
+  Tintegal (the Duke) -> Tintagil  Durnure -> Durnore
+  Domas -> Damas                Percival of Gales -> Percival of Wales
+  Uther-Pendragon -> Uther Pendragon ("the Pendragonship" -> the High
+  Kingship / the title of Pendragon)
+  KEPT AS PYLE HAS THEM: Margaise (Pyle's, not Malory's Morgause — she
+  marries Uriens here), Vivien (Pyle's/Tennyson's name for the damsel who
+  traps Merlin), Tintagalon (Pyle's castle), Parcenet, Engamore of
+  Malverat, Adresack, Ettard, Sir Myles, Ector of Bonmaison, Ontzlake,
+  Mador, Balamorgineas, Brandemere, Sorloise, Dinador, Marvaise of Leisle,
+  Tor, Baudemagus, King Leodegrance, Mordaunt Duke of North Umber, Lady
+  of the Lake, the Sable Knight, the White Champion, Excalibur, Camelot,
+  Avalon, the Valley of Joyousness, Arroy, Grantmesnle.
+
+
+5. VOCABULARY MAPPINGS (archaic -> modern)
+
+  thou/thee/thy/ye -> you/your; hath/doth/-eth/-est -> modern verbs
+  quoth he -> he said; spake -> spoke; brake -> broke; smote -> struck
+  hight -> named, called; wist -> knew; wot -> know
+  certes -> truly / surely; gramercy -> thank you / many thanks
+  lo! / behold! -> Look! / and there... / and suddenly (vary; often
+     dissolve into the sentence: "Lo! beyond the bridge was a castle" ->
+     "And there, beyond the bridge, stood a castle")
+  I do perceive -> I see / I can tell
+  wherefore -> so / and that is why; whereupon -> at that
+  whiles -> while; betwixt -> between; nigh -> near / nearly
+  for to (do) -> to (do); an (if) -> if; belike -> probably
+  assay (n./v.) -> test, trial, attempt / try; "made assay" -> tried
+  approve himself -> prove himself; avouch -> vouch, swear
+  puissant -> mighty; dolorous -> sorrowful, grievous
+  damoiselle / damsel -> damsel (kept: a young lady, as in Malory);
+     "maiden" for variety where natural
+  esquire -> squire; esquire-at-arms -> squire
+  Seneschal -> KEPT, glossed once (003): "Seneschal — the officer who
+     runs the king's household"
+  pavilion -> pavilion (a large tent; glossed once), tent for variety
+  umbril / umbrel -> visor; habergeon / hauberk -> coat of mail
+  Faerie / Faëry -> Fairyland; "of Faëry" -> fairy
+  Courts of Chivalry -> tournaments / the courts of chivalry
+  mandate -> summons, command
+  rightwise King -> rightful King
+  King-born -> born to be king
+  ne'theless -> nevertheless / even so
+  anon / presently (= soon) -> soon, right away
+  "in this wise" -> "like this" / "these words"; often drop
+  "made an end of speaking" -> "finished speaking"
+  "of a sudden" -> suddenly
+  Numbers: "four hundred, eighty and six" -> four hundred and eighty-six.
+
+
+6. CHALLENGES
+
+  - FALSE FRIENDS: "gentle" = well-born, courteous; "presently" = soon
+    (sometimes "at once"); "cunning" = skilful (cunning work); "lusty" =
+    strong, vigorous; "silly" (rare) = simple; "quick" = alive; "glad"
+    stays; "an affair-at-arms" = a fight/duel; "condition" = rank;
+    "quality" = rank; "despite" = contempt, insult; "fain" = gladly.
+  - Pyle's feast days: Christmastide, Candlemas (early February — say
+    so once), Easter, Pentecost (Whitsunday). Keep them.
+  - Pyle's book citations (Robert de Boron's Roman de Merlin; "the old
+    book"): keep as he gives them.
+  - Inscriptions on the sword and shields: set as their own paragraph in
+    italics (*...*), one line, modern words, keeping the formula: "Whoever
+    pulls this sword out of the anvil is the rightful King of England,
+    born to the crown."
+
+
+7. CONTENT NEEDING CARE (the Verne rule: render the author's world as his)
+
+  - Violence: jousts, sword fights, a few deaths (the Duke of North Umber,
+    Accolon), wounds and blood described plainly. Keep at Pyle's level —
+    neither sharpen nor soften.
+  - Vivien and Merlin: Pyle makes Vivien a beautiful, cold, ambitious
+    damsel who charms an old man's love and turns his magic against him.
+    No sexual content in Pyle; add none.
+  - Ettard, Pelleas, Gawain: Pyle softens Malory's version (Malory's
+    night in the pavilion is gone; Gawain courts Ettard while under the
+    spell of the Lady of the Lake's necklace). Keep Pyle's version.
+  - Sir Gawain's story uses the beheading game (Arthur strikes off the
+    knight-enchanter's head and the knight picks it up) and the riddle of
+    what women most desire ("their own will"). Keep both as Pyle tells
+    them.
+  - The old woman in the hut: Pyle describes her ugliness at length
+    before she becomes the beautiful lady. Keep the description as his;
+    don't make it crueller or kinder.
+  - Pyle's Christianity (blessings, prayers, the Archbishop, "by the Grace
+    of God"): keep as sincere.
+  - Ideals of womanhood and service ("the Lady Guinevere, the most
+    beautiful lady in the world"; damsels rewarded with knights) are his
+    world; keep them, no editorial distance.
+
+
+8. FAMOUS PASSAGES (also in must_contain.txt)
+
+  - The inscription on the sword in the anvil (001).
+  - Arthur drawing the sword the first time (003): he "set his hand to
+    the hilt" and drew it out easily.
+  - The Lady of the Lake's gift of Excalibur and Merlin's question about
+    the sword and the scabbard: the scabbard is worth ten of the sword,
+    because whoever wears it can lose no blood (009).
+  - The covenant of the Round Table (016).
+  - Merlin's question about the sword and the scabbard (009).
+  Wording for the pinned phrases is fixed in running_notes.txt LOCKED.

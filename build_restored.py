@@ -58,6 +58,8 @@ SITE = ROOT / "site"
 # fact-check pass had just removed from that book's introduction. A fact
 # copied into a second place comes back wrong.
 BLURBS = {
+    "looking-glass": "Alice as a White pawn on a board of brooks and hedges, with all fifty of Tenniel's pictures cut from the first edition.",
+    "story-book-of-science": "Uncle Paul tells his nephews and niece true stories of ants, silk, spiders, thunder, volcanoes and bees: Fabre's schoolbook, in Bicknell's 1917 translation.",
     "tangled-tale": "Carroll’s ten Knots as they ran in The Monthly Packet, "
                     "with his answers and Frost’s drawings.",
     "pillow-problems": "Seventy-two problems solved in bed in the dark, in "

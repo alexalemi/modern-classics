@@ -44,6 +44,16 @@ TITLES = {
 
 # One line per book, and a blurb has no other home. Keyed by book directory.
 BLURBS = {
+    'pyle-arthur':
+        "The boy who pulled the sword from the anvil, the arm that rose from the lake with Excalibur, a king disguised as a gardener's boy, and Merlin's last enchantment: Howard Pyle's 1903 Arthur for young readers, with all his own drawings.",
+    'robin-hood':
+        "The fight on the log bridge, the golden arrow, the Sheriff fooled at his own table and the King in disguise in Sherwood: every adventure and every song of Pyle's book for young readers, with forty-four of his own pictures.",
+    'solferino':
+        'A Swiss traveler stumbles on the bloodiest battle in a generation, spends a week nursing its wounded in a village church, and writes the book that founded the Red Cross. From the French of 1862.',
+    'perpetual-peace':
+        "Kant's mock peace treaty: six things states must stop doing, three things peace requires, and a secret article that kings should listen to philosophers, from the German.",
+    'five-rings':
+        'A swordsman who fought more than sixty duels and never lost one writes down his school in five scrolls, from posture and timing to reading an opponent. Retold from the Japanese of 1645.',
     'genealogy':
         "Where do good and evil come from? Nietzsche's three essays on masters and slaves, debts and guilt, and the priests who taught us to hate ourselves, from the German.",
     'princess-of-cleves':
