@@ -19,8 +19,359 @@
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=navigation" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 	<link rel="preload" href="fonts/libre-caslon-text-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="stylesheet" href="fonts.css">
-	<link rel="stylesheet" href="book.css">
+	<style>
+/* Fonts for every page (front pages and book pages), served from this site
+   rather than Google Fonts: a third-party
+   stylesheet blocked rendering for ~0.8 s on mobile (PageSpeed, 2026-10-12).
+   Oswald, Yellowtail and Libre Caslon Text (SIL Open Font License), latin and
+   latin-ext subsets as Google serves them, in site/fonts/. */
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* The book pages. Shared by every page assemble.py writes; fonts in fonts.css.
+
+   LEGIBILITY FIRST. The running text is set in the best screen serif the
+   reader's own device has (Charter on Apple, Sitka Text on Windows, Georgia
+   or Noto Serif elsewhere), near-black on white, 19-20px, ~66 characters to
+   the line. The Emend look (Libre Caslon Text, navy, the cream band, Oswald
+   labels) is kept to the title band, the headings and the controls. */
+
+:root {
+  --page:  #ffffff;
+  --text:  #1c1c1c;
+  --ink:   #1b314d;     /* navy: headings, links, buttons */
+  --cream: #f4efe2;
+  --soft:  #5a6472;
+  --rule:  #ddd6c8;
+  --link:  #1f4f86;
+  --plate-bg: #ffffff;
+  --reading: Charter, "Bitstream Charter", "Sitka Text", Georgia, "Noto Serif", serif;
+  --display: "Libre Caslon Text", Georgia, serif;
+  --label:   "Oswald", "Arial Narrow", sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page:  #14181e;
+    --text:  #e4e0d8;
+    --ink:   #e8e2d4;
+    --cream: #1d2430;
+    --soft:  #a3adba;
+    --rule:  #343c48;
+    --link:  #9cc2e6;
+  }
+  /* plates and diagrams are drawn on white paper; keep them on it, slightly dimmed */
+  figure img { opacity: .92; }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html {
+  background: var(--page);
+  color: var(--text);
+  font-size: 20px;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--reading);
+  line-height: 1.65;
+  font-kerning: normal;
+}
+
+main { max-width: 34rem; margin: 0 auto; padding: 0 1rem 5rem; }
+
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+
+/* ---------- title band ---------- */
+
+.title-block {
+  background: var(--cream);
+  padding: 1.6rem 1rem 1.8rem;
+  margin-bottom: 2rem;
+}
+.title-inner {
+  max-width: 44rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.8rem;
+  align-items: center;
+}
+.title-block .series {
+  grid-column: 1 / -1;
+  margin: 0 0 0.2rem;
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.title-block .series a { color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 0.55rem; }
+.title-block .series a:hover span { text-decoration: underline; }
+.title-block .series img { height: 1.8rem; width: auto; }
+.cover img {
+  display: block;
+  width: 150px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+}
+.title-text { min-width: 0; }
+h1 {
+  font: 700 2rem/1.15 var(--display);
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+  text-align: left;
+}
+.title-line { margin: 0 0 0.3rem; font-size: 0.95rem; color: var(--ink); }
+.title-line.byline { font-weight: 700; }
+.dates { margin: 0 0 0.9rem; font-size: 0.85rem; color: var(--soft); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.button {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid var(--ink);
+  font: 500 0.75rem/1.2 var(--label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+}
+.button.primary { background: var(--ink); color: var(--page); }
+.button:hover { text-decoration: underline; }
+
+/* phones: a small cover beside the title, so the text starts sooner */
+@media (max-width: 36rem) {
+  .title-block { padding: 1.1rem 1rem 1.4rem; }
+  .title-inner { grid-template-columns: 76px 1fr; gap: 0.9rem; align-items: start; }
+  .cover img { width: 76px; height: 114px; }
+  h1 { font-size: 1.45rem; }
+  .actions { grid-column: 1 / -1; }
+}
+
+/* ---------- running text ---------- */
+
+.intro-note { font-style: italic; font-size: 0.9rem; color: var(--soft); }
+
+h2, h3, h4 {
+  font-family: var(--display);
+  color: var(--ink);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+h2 { font-size: 1.45rem; margin: 3.2rem 0 1rem; }
+h3 { font-size: 1.2rem; margin: 2.8rem 0 0.9rem; }
+h4, h3.sub { font-size: 1rem; margin: 2rem 0 0.8rem; font-style: italic; }
+h2.center { text-align: center; font-size: 1.6rem; margin-top: 4rem; }
+
+p, ul, ol { margin: 0 0 1.15em; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+blockquote {
+  margin: 1.5em 0 1.5em 1em;
+  padding-left: 1em;
+  border-left: 3px solid var(--rule);
+  font-style: italic;
+}
+blockquote p { margin-bottom: 0.8em; }
+
+pre.outline {
+  font-family: var(--reading);
+  white-space: pre-wrap;
+  line-height: 1.6;
+  margin: 0 0 1.15em;
+}
+
+img.glyph { vertical-align: middle; display: inline; }
+span.frac, span.stack { display: inline-block; vertical-align: middle; text-align: center; }
+span.frac > span, span.stack > span { display: block; }
+span.frac > span.num { border-bottom: 1px solid currentColor; }
+span.stack.brace { border-left: 2px solid currentColor; border-right: 2px solid currentColor; border-radius: 0.6em; padding: 0 0.3em; }
+math { font-size: 1.05em; }
+
+figure { margin: 2.2em auto; text-align: center; }
+figure + figure { margin-top: 1em; }
+figure img { max-width: 100%; height: auto; background: var(--plate-bg); }
+figcaption {
+  margin-top: 0.6em;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--soft);
+  text-align: left;
+}
+
+table.plates { width: 100%; margin: 2.5em 0; border-collapse: collapse; line-height: 1.5; }
+table.plates td { padding: 0.4em 0.8em; vertical-align: middle; border-bottom: 1px solid var(--rule); }
+table.plates tr:last-child td { border-bottom: none; }
+table.plates figure, table.plates figure + figure { margin: 0.4em auto; }
+table.plates figcaption { display: none; }
+
+/* page locators: a printed page and quarter, for books that cite
+   themselves by them (Helmholtz: "see p. 77c") */
+span.loc { font-size: 0.65em; color: var(--soft); vertical-align: 0.3em; padding: 0 0.15em; font-style: normal; }
+a.ref { color: inherit; text-decoration: underline dotted; }
+span.sc { font-variant: small-caps; }
+.center { text-align: center; }
+.subtitle { text-align: center; font-style: italic; }
+
+/* ---------- contents ---------- */
+
+nav.contents h2 { margin-top: 0; }
+.toc-book { font-family: var(--display); font-weight: 700; margin: 1.2em 0 0.4em; color: var(--ink); }
+.toc-list { list-style: none; padding-left: 1.2em; margin: 0 0 1em; }
+.toc-list li { margin-bottom: 0.3em; line-height: 1.4; }
+nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
+
+/* ---------- reading aids (book.js) ---------- */
+
+.resume {
+  margin: 0 0 1.5rem;
+  padding: 0.7rem 1rem;
+  background: var(--cream);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+.resume[hidden] { display: none; }
+
+.to-contents {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 5;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--page);
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+.to-contents.show { opacity: .92; pointer-events: auto; }
+
+@media (max-width: 36rem) {
+  html { font-size: 18px; }
+}
+
+@media print {
+  .title-block { background: none; }
+  .actions, .to-contents, .resume { display: none; }
+}
+</style>
 	<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "Philosophical Works", "author": {"@type": "Person", "name": "René Descartes"}, "inLanguage": "en", "url": "https://emend.press/philosophical-works.html", "description": "Descartes doubts everything and rebuilds from “I think, therefore I am.” Retold in modern English, free to read online and as an ebook.", "publisher": {"@type": "Organization", "name": "Emend Press", "url": "https://emend.press/", "logo": "https://emend.press/apple-touch-icon.png"}, "isAccessibleForFree": true, "isPartOf": {"@type": "BookSeries", "name": "Modern Classics", "url": "https://emend.press/"}, "image": "https://emend.press/covers/descartes.jpg", "datePublished": "2026", "bookEdition": "Modern English retelling", "isBasedOn": {"@type": "Book", "name": "Philosophical Works", "author": {"@type": "Person", "name": "René Descartes"}}, "workExample": {"@type": "Book", "bookFormat": "https://schema.org/EBook", "encodingFormat": "application/epub+zip", "url": "https://emend.press/ebooks/rene-descartes_philosophical-works.epub"}}</script>
 </head>
 
@@ -318,7 +669,7 @@
 </section>
 <section aria-labelledby="synopsis-of-the-six-following-meditations">
 <h2 id="synopsis-of-the-six-following-meditations">Synopsis of the Six Following Meditations</h2>
-<h4>Synopsis of the Six Following Meditations</h4>
+<h3 class="sub">Synopsis of the Six Following Meditations</h3>
 <p>In the First Meditation, I lay out the reasons why we can doubt just about everything — especially the existence of physical objects — at least as long as we have no better foundations for the sciences than the ones we&#x27;ve relied on so far. Now, the usefulness of such extreme doubt might not be obvious at first. But it&#x27;s actually enormously valuable, because it frees us from every prejudice, gives the mind the easiest possible path for pulling itself away from the senses, and ultimately makes it impossible for us to doubt whatever truths we discover afterward.</p>
 <p>In the Second Meditation, the mind — exercising its own freedom — supposes that nothing it has even the slightest reason to doubt actually exists. But in doing so, it discovers that it itself must exist. This point is critically important, because it allows the mind to easily tell the difference between what belongs to it (that is, to its intellectual nature) and what belongs to the body.</p>
 <p>Now, some readers might expect me to argue for the immortality of the soul at this stage. So let me explain why I don&#x27;t. My aim was to write nothing that I couldn&#x27;t demonstrate with precision. That meant I had to follow the same approach geometers use: establish all the building blocks a conclusion depends on before arriving at the conclusion itself.</p>
@@ -406,8 +757,8 @@
 </section>
 <section aria-labelledby="meditation-iii-of-god-that-he-exists">
 <h2 id="meditation-iii-of-god-that-he-exists">Meditation III: Of God: That He Exists</h2>
-<h4>Meditation III</h4>
-<h4>Of God: That He Exists</h4>
+<h3 class="sub">Meditation III</h3>
+<h3 class="sub">Of God: That He Exists</h3>
 <p>I&#x27;m now going to close my eyes, stop my ears, and shut out all my senses. I&#x27;ll even try to erase from my mind every image of physical things — or at least, since that&#x27;s nearly impossible, I&#x27;ll treat those images as empty and meaningless. Holding a conversation only with myself and looking carefully at my own nature, I&#x27;ll try to build, step by step, a deeper and more familiar understanding of who I am.</p>
 <p>I am a thinking, conscious thing — a being that doubts, affirms, denies, knows a few things and is ignorant of many, that loves, hates, wills, refuses, that imagines and perceives. As I noted before, even if the things I perceive or imagine have no reality outside of me, I can still be sure that those ways of being conscious — what I&#x27;m calling perceptions and imaginings — do exist in me, as aspects of my thought.</p>
 <p>In what I&#x27;ve just said, I think I&#x27;ve summed up everything I truly know — or at least everything I was aware of knowing up to this point. Now I want to push further and look carefully to see if there&#x27;s anything else in myself that I haven&#x27;t noticed yet. I&#x27;m certain that I am a thinking thing. But does that tell me what&#x27;s actually required for me to be certain of any truth? In this first piece of knowledge, the only thing that gives me assurance is the clear and distinct perception of what I&#x27;m affirming. That wouldn&#x27;t be enough to guarantee truth if it were possible for something I clearly and distinctly perceived to turn out to be false. So it seems I can now adopt a general rule: everything I perceive very clearly and distinctly is true.</p>
@@ -465,8 +816,8 @@
 </section>
 <section aria-labelledby="meditation-iv-of-truth-and-error">
 <h2 id="meditation-iv-of-truth-and-error">Meditation IV: Of Truth and Error</h2>
-<h4>Meditation IV</h4>
-<h4>Of Truth and Error</h4>
+<h3 class="sub">Meditation IV</h3>
+<h3 class="sub">Of Truth and Error</h3>
 <p>Over the past few days, I&#x27;ve gotten used to pulling my mind away from the senses. I&#x27;ve carefully observed that we actually know very little with certainty about physical objects — that we know much more about the human mind, and still more about God himself. So now I can easily turn my attention away from things I can sense or imagine, and focus instead on things that are purely intelligible — things that exist apart from all matter.</p>
 <p>And the idea I have of the human mind — as a thinking thing, not extended in length, width, or depth, sharing none of the properties of a body — is incomparably clearer and more distinct than my idea of any physical object. When I consider that I doubt (in other words, that I&#x27;m an incomplete and dependent being), the idea of a complete and independent being — that is, God — comes to mind with such clarity and distinctness that, simply from the fact that this idea exists in me, or that I who possess it exist, I can conclude with total confidence that God exists and that my own existence depends absolutely on him at every moment.</p>
 <p>And now I think I can see a path leading from the contemplation of the true God — in whom all the treasures of knowledge and wisdom are contained — to knowledge of everything else in the universe.</p>
@@ -534,7 +885,7 @@
 </section>
 <section aria-labelledby="meditation-vi-of-the-existence-of-material-things-and-of-the-real-distinction-between-the-mind-and-body-of-man">
 <h2 id="meditation-vi-of-the-existence-of-material-things-and-of-the-real-distinction-between-the-mind-and-body-of-man">Meditation VI: Of the Existence of Material Things, and of the Real Distinction Between the Mind and Body of Man</h2>
-<h4>Meditation VI</h4>
+<h3 class="sub">Meditation VI</h3>
 <p>Of the Existence of Material Things, and of the Real Distinction Between the Mind and Body of Man</p>
 <p>The only question left to investigate is whether physical things exist. On this question, I at least know for certain that they can exist, insofar as they are the subject matter of pure mathematics, since I can conceive of them clearly and distinctly in that respect. There&#x27;s no doubt that God has the power to produce everything I can distinctly conceive, and I&#x27;ve never considered anything impossible for him unless I ran into a contradiction when trying to conceive it properly. Furthermore, the faculty of imagination that I possess — a faculty I&#x27;m aware of using whenever I turn my attention to physical things — gives me reason to think they exist. Here&#x27;s why: when I carefully consider what imagination actually is, I find that it&#x27;s simply a particular application of my knowing faculty to a body that is immediately present to it, and which therefore exists.</p>
 <p>To make this clearer, let me point out the difference between imagination and pure understanding. Take this example: when I imagine a triangle, I don&#x27;t merely understand that it&#x27;s a figure with three sides. At the same time, I also visualize those three sides as present before my mind&#x27;s eye, through a kind of inner mental focus. That&#x27;s what I call imagining. But if I want to think about a chiliogon — a thousand-sided figure — I can certainly understand that it&#x27;s a figure with a thousand sides, just as easily as I understand that a triangle has three. But I can&#x27;t imagine those thousand sides the way I can the three sides of a triangle. I can&#x27;t picture them as present before my mind&#x27;s eye. And although, out of habit, I always try to picture something whenever I think about physical objects, so that in thinking of a chiliogon I may vaguely picture some sort of figure in my mind, this picture is clearly not a chiliogon. It&#x27;s no different from the image I&#x27;d form if I were thinking of a myriogon — a ten-thousand-sided figure — or any other figure with a lot of sides. This vague picture would be useless for discovering the properties that distinguish a chiliogon from other polygons. But if the question is about a pentagon, it&#x27;s true that I can understand its shape without the help of imagination, just as I can with a chiliogon. But I can also imagine it, by focusing my mind&#x27;s attention on its five sides and the area they enclose. So I notice that a special mental effort is needed for the act of imagining — an effort not required for pure understanding. This special effort clearly reveals the difference between imagination and pure intellection.</p>
@@ -806,17 +1157,17 @@
 </section>
 <section aria-labelledby="part-two-of-the-principles-of-material-things">
 <h2 id="part-two-of-the-principles-of-material-things">Part Two: Of the Principles of Material Things</h2>
-<h4>I. The Reasons That Prove the Existence of Material Things</h4>
+<h3 class="sub">I. The Reasons That Prove the Existence of Material Things</h3>
 <p>Although we are all fairly convinced that material things exist, we previously called this into question and counted the belief in their existence among the prejudices of childhood. So now we need to investigate the grounds on which we can know this truth with certainty.</p>
 <p>First, there is no doubt that every perception we have comes to us from some object different from our mind. After all, it is not within our power to choose which perception we experience rather than another — our perceptions depend entirely on whatever object is affecting our senses. We might still ask whether that object is God or something different from God. But because we perceive — or rather, because our senses prompt us to clearly and distinctly grasp — a certain matter that is extended in length, breadth, and thickness, whose various parts have different shapes and motions, and which gives rise to our sensations of color, smell, pain, and so on, God would without question deserve to be called a deceiver if he directly presented this idea of extended matter to our minds himself, or caused it to be presented by some object that had no extension, shape, or motion.</p>
 <p>For we clearly conceive of this matter as entirely distinct from God and from ourselves (that is, from our minds). We even seem to clearly recognize that our idea of matter is formed on the occasion of objects existing outside our minds — objects to which the idea is in every way similar.</p>
 <p>But since God cannot deceive us — for deception is contradictory to his nature, as we have already established — we must conclude without hesitation that there really does exist a certain object extended in length, breadth, and thickness, possessing all the properties we clearly grasp as belonging to extended things. This extended substance is what we call body or matter.</p>
-<h4>II. How We Know That the Human Body Is Closely Connected to the Mind</h4>
+<h3 class="sub">II. How We Know That the Human Body Is Closely Connected to the Mind</h3>
 <p>We should also conclude that a certain body is more closely united to our mind than any other. We can see this because pain and other sensations affect us without any warning, and the mind recognizes that these sensations do not come from itself alone. They do not belong to the mind insofar as it is a thinking thing, but only insofar as it is united to another thing — something extended and movable — which is called the human body. But this is not the place to discuss that matter in detail.</p>
-<h4>III. Our Senses Do Not Show Us Things As They Really Are</h4>
+<h3 class="sub">III. Our Senses Do Not Show Us Things As They Really Are</h3>
 <p>It will be enough to note that the perceptions of the senses should be understood as relating to this intimate union of the human body and mind. Our senses usually make us aware of what, in external objects, may be useful or harmful to this union, but they do not show us those objects as they really are in themselves — except perhaps occasionally and by accident.</p>
 <p>Once we have taken this observation on board, we can easily set aside the prejudices that come from relying on the senses. Instead, we can turn to our understanding alone by carefully reflecting on the ideas that nature has implanted in it.</p>
-<h4>IV. The Nature of Body Consists Not in Weight, Hardness, or Color, but in Extension Alone</h4>
+<h3 class="sub">IV. The Nature of Body Consists Not in Weight, Hardness, or Color, but in Extension Alone</h3>
 <p>In this way, we will discover that the nature of matter or body, considered in general, does not consist in its being hard, heavy, colored, or in any other quality that affects our senses. It consists simply in its being a substance extended in length, breadth, and depth.</p>
 <p>Consider hardness: all we actually know about it from the senses is that the parts of hard bodies resist the motion of our hands when we touch them. But if every time we reached toward something, all the bodies in that spot moved away as quickly as our hands approached, we would never feel any hardness — and yet we would have no reason to think those bodies had lost what makes them bodies. So the nature of body does not consist in hardness.</p>
 <p>The same can be shown for weight, color, and all other qualities of this kind that we perceive in physical matter. We can strip them all away, and the body still remains a body. It follows that the nature of body depends on none of these properties.</p>
@@ -824,67 +1175,67 @@
 <p>Two issues still stand in the way of fully accepting that the true nature of body consists in extension alone.</p>
 <p>The first is the widespread belief that most bodies can be rarefied and condensed — that is, when rarefied they have more extension than when condensed. Some thinkers have even gone so far as to distinguish between the substance of a body and its quantity, and between quantity itself and extension.</p>
 <p>The second issue is this: where we conceive only of extension in length, breadth, and depth, we do not normally say that a body is there. We say only that there is space, or even empty space — and most people believe this &quot;empty space&quot; is a mere nothing.</p>
-<h4>VI. How Rarefaction Really Works</h4>
+<h3 class="sub">VI. How Rarefaction Really Works</h3>
 <p>Regarding rarefaction and condensation: anyone who pays careful attention to their own thinking, and accepts only what they are clearly aware of, will realize that these processes involve nothing more than a change of shape in the body being rarefied or condensed.</p>
 <p>In other words, rare (low-density) bodies are those that have many gaps between their parts, and these gaps are filled by other bodies. Dense bodies, on the other hand, are those whose parts have moved closer together, reducing or eliminating these gaps entirely. When the gaps are completely closed, the body becomes absolutely dense.</p>
 <p>But here is the key point: a body, when condensed, does not actually have less extension than when its parts are spread apart over a larger space. We should not count the extension of the pores or gaps — which the body&#x27;s own parts do not occupy when it is rarefied — as belonging to that body. That extension belongs to the other bodies filling those gaps. It is just like a sponge full of water: we do not think that each part of the sponge has become larger because the sponge is swollen with water. We recognize that the sponge&#x27;s pores are simply wider, and the body of the sponge is therefore spread over a larger space.</p>
-<h4>VII. Rarefaction Cannot Be Explained Any Other Way</h4>
+<h3 class="sub">VII. Rarefaction Cannot Be Explained Any Other Way</h3>
 <p>And honestly, I cannot see the force of the arguments that have led some to say that rarefaction results from an increase in the body&#x27;s own quantity. It is much better to explain it the way we explain a sponge.</p>
 <p>True, when air or water is rarefied, we cannot see the pores that have enlarged, or the new body that has come in to fill them. But it is far less reasonable to invent some unintelligible explanation — just to give a verbal, merely apparent account of rarefaction — than it is to conclude that there are pores or gaps between the parts that have grown larger and been filled with some new body. We should not hesitate to accept this explanation just because we cannot perceive this new body with our senses. There is no reason to believe that we must be able to perceive every body that exists with our senses.</p>
 <p>We can see that rarefaction is very easy to explain in this way, and impossible to explain any other way. After all, there would be an obvious contradiction in supposing that a body could gain extension that it did not have before, without the addition of new extended substance — in other words, without the addition of another body. It is impossible to conceive of added extension or quantity without the substance that has that extension or quantity, as will become even clearer from what follows.</p>
 <p>VIII. Quantity, Number, and Extension Differ from the Substance They Belong to Only in Our Way of Thinking</p>
 <p>Quantity differs from extended substance, and number from the thing numbered, not in reality but only in our thought. For example, we can think about the entire nature of a physical substance that fills a space of ten feet, without paying attention to that specific measure of ten feet. The reason is obvious: the thing we are thinking about has the same nature in any part of that space as it does in the whole. Conversely, we can think about the number ten, or about a continuous quantity of ten feet, without thinking about any specific substance. The concept of the number ten is clearly the same whether we are counting ten feet, ten apples, or ten of anything else. And we can think about a continuous quantity of ten feet without thinking about this or that particular substance — though we cannot think about it without some extended substance of which it is the quantity.</p>
 <p>In reality, however, it is impossible to take away even the smallest part of such quantity or extension without also removing an equal amount of the substance. And conversely, we cannot reduce the substance without also reducing the quantity or extension by the same amount.</p>
-<h4>IX. Those Who Distinguish Substance from Extension or Quantity Are Confused</h4>
+<h3 class="sub">IX. Those Who Distinguish Substance from Extension or Quantity Are Confused</h3>
 <p>Some people may express themselves differently on this point, but I am nevertheless convinced they do not actually think differently from what I have just said. When they distinguish physical substance from extension or quantity, they either mean nothing at all by the word &quot;substance,&quot; or they are forming a confused idea of non-physical substance in their minds and mistakenly applying it to what is physical — while leaving to extension the true idea of physical substance. They then call this extension an &quot;accident,&quot; but with such obvious inconsistency that it is easy to see their words do not match their actual thoughts.</p>
-<h4>X. What Space, or Internal Place, Is</h4>
+<h3 class="sub">X. What Space, or Internal Place, Is</h3>
 <p>Space — or internal place — and the physical substance contained in it are not different in reality. They differ only in how we typically think about them.</p>
 <p>For in truth, the very same extension in length, breadth, and depth that constitutes space also constitutes body. The only difference lies in this: when it comes to body, we think of extension as particular to that body, and we think of it as changing location when the body moves. When it comes to space, we give extension a more general, abstract character. After we remove a body from a certain space, we do not think we have removed the extension of that space along with it. The extension seems to remain, as long as the space keeps the same size and shape and maintains its position relative to the surrounding bodies by which we define it.</p>
-<h4>XI. How Space Is Really the Same as Body</h4>
+<h3 class="sub">XI. How Space Is Really the Same as Body</h3>
 <p>It is actually easy to see that the same extension which makes up the nature of body also makes up the nature of space, and that these two things differ from each other only the way a genus or species differs from an individual. Consider this: take the idea we have of any body — a stone, for instance — and strip away everything that is not essential to its being a body.</p>
 <p>First, hardness can go: if the stone were melted or ground to powder, it would lose its hardness but would not stop being a body. Color can go too: we have seen stones so transparent they are essentially colorless. Weight can go: fire is extremely light, yet it is still a body. And finally, we can remove cold, heat, and every other quality of this kind — either because these are not considered part of the stone itself, or because changing them does not cause the stone to stop being a body.</p>
 <p>After this process of elimination, we find that nothing remains in the idea of body except that it is something extended in length, breadth, and depth. And this is exactly what is contained in our idea of space — not just space that is filled with body, but even what is called empty space.</p>
-<h4>XII. How Space Differs from Body in Our Way of Thinking</h4>
+<h3 class="sub">XII. How Space Differs from Body in Our Way of Thinking</h3>
 <p>There is, however, a difference in how we think about them. If we remove a stone from the space it occupied, we think of its extension as being removed along with it, since we regard the extension as particular to and inseparable from the stone. But at the same time, we suppose that the extension of the place where the stone was still remains — even though that place is now occupied by wood, water, air, or some other body, or even if it is supposed to be empty. We think this because we are now considering extension in general, and we believe the same extension can be common to stones, wood, water, air, and other bodies — and even to a vacuum, if there is such a thing — provided the space keeps the same size and shape and maintains the same position relative to the external bodies that define it.</p>
-<h4>XIII. What External Place Is</h4>
+<h3 class="sub">XIII. What External Place Is</h3>
 <p>The reason for this is that the words &quot;place&quot; and &quot;space&quot; signify nothing really different from the body that is said to be in a place. They merely designate that body&#x27;s size, shape, and position relative to other bodies. To determine a thing&#x27;s position, we need to refer to certain other bodies that we treat as stationary. Depending on which bodies we choose as our reference points, we can say that the same thing both does and does not change its place at the same time.</p>
 <p>For example, when a ship is sailing out to sea, a person sitting at the stern can be said to stay in one place — if we are looking at the parts of the ship, since he maintains the same position relative to them. But if we look to the neighboring shores, the same person seems to be constantly changing place, since he is steadily moving away from one shore and toward another. And further, if we suppose that the earth itself is rotating, carrying everything from west to east at the same rate that the ship moves from east to west, we will again say the person at the stern has not changed his place — because his place will be determined by certain points that we imagine to be fixed in the heavens.</p>
 <p>But if we finally become convinced that there are no truly fixed points anywhere in the universe — as will later be shown to be probable — we will conclude from this that nothing has a permanent place except insofar as we fix it in our minds.</p>
-<h4>XIV. The Difference Between Place and Space</h4>
+<h3 class="sub">XIV. The Difference Between Place and Space</h3>
 <p>The terms &quot;place&quot; and &quot;space&quot; do differ in meaning, however. &quot;Place&quot; emphasizes position more than size or shape, while &quot;space&quot; makes us think primarily of size and shape. We often say that one thing has taken the place of another, even though it does not have exactly the same size or shape. But we would not say it occupies the same space unless it does. When something&#x27;s position changes, we say its place has changed, even if the size and shape remain the same. So when we say that a thing is in a particular place, we mean only that it is situated in a certain way relative to other objects. And when we add that it occupies a certain space, we mean in addition that it has a specific size and shape that exactly fill that space.</p>
-<h4>XV. How External Place Is Properly Understood as the Surface of the Surrounding Body</h4>
+<h3 class="sub">XV. How External Place Is Properly Understood as the Surface of the Surrounding Body</h3>
 <p>We never distinguish space from extension in length, breadth, and depth. Sometimes, however, we think of place as being in the thing placed, and other times as being outside it. Internal place is no different from space. But external place can be understood as the surface that immediately surrounds the thing placed.</p>
 <p>It should be noted that by &quot;surface&quot; here we do not mean any part of the surrounding body. We mean only the boundary between the surrounding body and the surrounded body — which is nothing more than a mode, not a thing in itself. Or at least, we are speaking of surface in general, which is not part of one body more than another, and which is always considered the same so long as it retains the same size and shape.</p>
 <p>Even if the entire surrounding body were replaced, along with its surface, we would not say that the body inside it had changed its place — as long as it maintained the same position relative to the other bodies we treat as stationary. For example, if a boat is being carried in one direction by the current of a river, and pushed in the opposite direction by the wind with equal force, so that its position relative to the banks does not change, we would readily say it remains in the same place — even though the water surrounding it is constantly being replaced.</p>
-<h4>XVI. A Vacuum, in the Philosophical Sense, Is Impossible</h4>
+<h3 class="sub">XVI. A Vacuum, in the Philosophical Sense, Is Impossible</h3>
 <p>As for a vacuum in the philosophical sense of the word — that is, a space in which there is absolutely no substance — it is clear that no such thing exists. The extension of space (or internal place) is not different from the extension of body. Since a body has extension in length, breadth, and depth, and that is our reason for concluding it is a substance, it would be flatly contradictory to say that nothing can have extension. So we must draw the same conclusion about supposedly empty space: since there is extension in it, there must also be substance in it.</p>
-<h4>XVII. The Word &quot;Vacuum&quot; in Everyday Use Does Not Exclude All Body</h4>
+<h3 class="sub">XVII. The Word &quot;Vacuum&quot; in Everyday Use Does Not Exclude All Body</h3>
 <p>In everyday usage, when we use the word &quot;vacuum,&quot; we do not actually mean a place or space in which there is absolutely nothing. We mean only a place where there is none of the things we expect to find there.</p>
 <p>A pitcher made to hold water is called &quot;empty&quot; when it is merely full of air. A fishpond is said to have &quot;nothing&quot; in it when it has no fish, even though it is full of water. A cargo ship is said to be &quot;empty&quot; when, instead of the merchandise it was designed to carry, it is loaded only with sand as ballast. And in the same way, we call a space &quot;empty&quot; when it contains nothing we can detect with our senses, even though it may contain real, self-existing matter.</p>
 <p>For we do not normally pay attention to the bodies around us unless they produce impressions on our sense organs that are strong enough for us to perceive them. If, forgetting what these words properly mean, we go on to suppose that a space we called &quot;empty&quot; contains not just no detectable object, but no object at all, we will be making the same mistake as if we decided that the air inside a pitcher is not a real substance just because, in everyday speech, the pitcher is said to be empty.</p>
-<h4>XVIII. How to Correct Our Preconceptions About the Vacuum</h4>
+<h3 class="sub">XVIII. How to Correct Our Preconceptions About the Vacuum</h3>
 <p>Nearly all of us have fallen into this error from our earliest years. Observing that there is no necessary connection between a container and the particular body it holds, we assumed that God could at least remove a body from a container without anything else having to take its place.</p>
 <p>To correct this false belief, we need to recognize that while there is no necessary connection between a container and the particular body inside it, there is an absolutely necessary connection between the concave shape of the container and the extension that must fill that cavity. It is no more contradictory to conceive of a mountain without a valley than to conceive of such a cavity without the extension it contains — or that extension apart from an extended substance. For, as we have repeatedly said, nothing cannot have extension.</p>
 <p>So if someone asks what would happen if God removed all the body from a container without allowing any other body to take its place, the answer must be this: the sides of the container would come together. For when two bodies have nothing between them, they must be touching each other. It is plainly contradictory for two bodies to be separated — for there to be a distance between them — and yet for that distance to be nothing at all. Every distance is a mode of extension, and therefore cannot exist without an extended substance.</p>
-<h4>XIX. The Preceding Discussion Confirms What Was Said About Rarefaction</h4>
+<h3 class="sub">XIX. The Preceding Discussion Confirms What Was Said About Rarefaction</h3>
 <p>Now that we have established that the nature of physical substance consists only in its being an extended thing, and that this extension is no different from the extension we attribute to space (however empty it seems), several things follow easily.</p>
 <p>First, it is impossible for any part of matter to occupy more space at one time than at another — and so rarefaction can only work in the way explained above (through the filling of pores by other bodies).</p>
 <p>Second, there cannot be more matter in a container when it is filled with lead, gold, or any other body — however heavy or hard — than when it contains only air and is thought to be empty. The quantity of matter a body contains does not depend on its weight or hardness, but only on its extension, which is always the same for the same container.</p>
-<h4>XX. There Are No Atoms, Because Matter Is Infinitely Divisible</h4>
+<h3 class="sub">XX. There Are No Atoms, Because Matter Is Infinitely Divisible</h3>
 <p>We also discover from this that there cannot exist any atoms — that is, parts of matter that are by their very nature indivisible. No matter how small we suppose these parts to be, since they must still be extended, we can always divide any one of them in thought into two or more smaller parts. And so we must acknowledge that they are divisible. For there is nothing we can divide in thought that we do not thereby recognize to be genuinely divisible. If we were to judge something indivisible, our judgment would contradict what we know about it.</p>
 <p>Even if we were to suppose that God had reduced a particle of matter to such extreme smallness that no creature could divide it further, we still could not properly call it indivisible. Although God may have made it so that no created being has the power to divide it, he could not have deprived himself of the ability to do so, since it is absolutely impossible for God to diminish his own omnipotence, as we noted before. Therefore, strictly speaking, even the smallest extended particle is always divisible, because that is its very nature.</p>
-<h4>XXI. The Extension of the World Is Indefinite</h4>
+<h3 class="sub">XXI. The Extension of the World Is Indefinite</h3>
 <p>We further discover that this world — the whole universe of physical substance — is extended without limit. Wherever we try to set a boundary, we can still imagine spaces beyond it that are indefinitely extended, and we perceive that these spaces are truly as we imagine them — that is, they really do exist. They therefore contain physical substance that extends indefinitely, since, as we have already shown at length, the idea of extension that we conceive in any space is exactly the same as the idea of physical substance.</p>
 <p>XXII. The Earth and the Heavens Are Made of the Same Matter, and There Cannot Be a Plurality of Worlds</p>
 <p>It also follows easily from all this that the earth and the heavens are made of the same matter. Even if there were infinitely many worlds, they would all be made of this same matter. A plurality of worlds is therefore impossible, because we clearly understand that the matter whose nature consists solely in being an extended substance already completely fills all the imaginable spaces where these other worlds could be. We cannot find in ourselves the idea of any other kind of matter.</p>
-<h4>XXIII. All Variation in Matter Comes from Motion</h4>
+<h3 class="sub">XXIII. All Variation in Matter Comes from Motion</h3>
 <p>There is therefore only one kind of matter in the entire universe, and we know it solely by its being extended. All the properties we can clearly identify as belonging to it come down to one thing: its capacity to be divided and moved in its parts. Accordingly, matter is capable of every change that can arise from the motion of its parts. Merely dividing matter in thought does not change it in any way. All real variation in matter — all diversity of form — depends on motion.</p>
 <p>Even the ancient philosophers seem to have recognized this universally. They said that nature was the principle of motion and rest, and by &quot;nature&quot; they meant whatever it is that makes physical things behave the way we observe them to behave.</p>
-<h4>XXIV. What Motion Is in the Common Sense of the Term</h4>
+<h3 class="sub">XXIV. What Motion Is in the Common Sense of the Term</h3>
 <p>Motion — and here I mean local motion, because I cannot conceive of any other kind, and so I do not think we should suppose any other kind exists in nature — in the ordinary sense of the word, is nothing more than the action by which a body passes from one place to another.</p>
 <p>Just as we noted above that the same thing can be said to both change and not change its place at the same time, we can also say that the same thing is both moving and not moving simultaneously. A person sitting in a ship that is setting sail, for example, thinks he is moving if he looks at the shore he has left and considers it fixed. But he does not think he is moving if he looks at the ship itself, among whose parts he always maintains the same position.</p>
 <p>Moreover, because we are used to thinking that motion requires action and that rest is the absence of action, the seated person is more properly said to be at rest than in motion, since he is not conscious of performing any action.</p>
-<h4>XXV. What Motion Is Properly Speaking</h4>
+<h3 class="sub">XXV. What Motion Is Properly Speaking</h3>
 <p>But if, instead of relying on ordinary usage, which has no real foundation, we want to understand what motion really is, we can define it more precisely as follows: motion is the transfer of one part of matter, or one body, from the vicinity of those bodies that are in immediate contact with it and that we regard as at rest, to the vicinity of other bodies.</p>
 <p>By &quot;one body&quot; or &quot;one part of matter,&quot; I mean everything that is transferred together as a unit, even if it may be made up of many parts that have their own separate motions. And I say it is the transfer itself, not the force or action that causes the transfer. I make this distinction to show that motion is always in the thing that moves, not in the thing that causes the movement — a distinction we are not usually careful enough to make.</p>
 <p>Furthermore, I understand motion to be a mode of the moving thing, not a substance in its own right — just as shape is a property of the thing that has a shape, and rest is a property of the thing at rest.</p>
@@ -962,7 +1313,7 @@
 <h2 id="appendix" class="center">Appendix</h2>
 <section aria-labelledby="definitions-postulates-axioms-and-propositions">
 <h2 id="definitions-postulates-axioms-and-propositions">Definitions, Postulates, Axioms and Propositions</h2>
-<h4>DEFINITIONS</h4>
+<h3 class="sub">DEFINITIONS</h3>
 <p>I. By the term &quot;thought,&quot; I mean everything that is in us in such a way that we are immediately aware of it. So all the operations of the will, the intellect, the imagination, and the senses are thoughts. But I use the word &quot;immediately&quot; on purpose, to exclude whatever merely follows from or depends on our thoughts. For example, voluntary motion has thought as its source, but the motion itself is not a thought. Walking is not a thought, but our awareness or perception of our walking is.</p>
 <p>II. By the word &quot;idea,&quot; I mean the form of any thought through whose immediate perception I am conscious of that thought. In other words, I cannot say anything with understanding without thereby confirming that I have the idea of what my words signify. And so I apply the term &quot;idea&quot; not just to the images painted in the imagination. In fact, I do not apply it to those images insofar as they exist in the physical imagination — that is, insofar as they are depicted in certain parts of the brain — but only insofar as they inform the mind itself when it turns its attention to that part of the brain.</p>
 <p>III. By the &quot;objective reality&quot; of an idea, I mean the being or existence of the thing represented by the idea, insofar as that being exists in the idea. In the same way, we can speak of an &quot;objective perfection&quot; or an &quot;objective design,&quot; and so on. For whatever we conceive to be in the objects of our ideas exists objectively — that is, by representation — in the ideas themselves.</p>
@@ -973,7 +1324,7 @@
 <p>VIII. The substance that we understand to be supremely perfect — in which we conceive nothing that involves any defect or limitation of perfection — is called &quot;God.&quot;</p>
 <p>IX. When we say that some attribute is contained in the nature or concept of a thing, this is the same as saying that the attribute is true of that thing, or that it can be genuinely affirmed of it.</p>
 <p>X. Two substances are said to be &quot;really distinct&quot; when each of them can exist without the other.</p>
-<h4>POSTULATES</h4>
+<h3 class="sub">POSTULATES</h3>
 <p>First, I ask my readers to consider how weak the reasons are that have led them up to now to trust their senses, and how uncertain all the judgments are that they have built on that trust. I ask them to turn this thought over in their minds long enough and often enough that they eventually develop the habit of no longer placing such confident faith in the senses. I believe this is necessary for anyone who wants to be capable of grasping metaphysical truths.</p>
 <p>Second, I ask them to reflect on their own mind — on all those attributes of the mind that they will find they cannot doubt, even if they were to suppose that everything they have ever received from the senses is entirely false. They should keep reflecting on this until they have developed the habit of conceiving the mind clearly, and of believing that it is easier to know than any physical object.</p>
 <p>Third, I ask them to carefully examine those self-evident propositions that they will find within themselves, such as: the same thing cannot both be and not be at the same time; nothing cannot be the productive cause of anything; and others like these. In this way, they should exercise the natural clarity of understanding they have been given — a clarity that the perceptions of the senses tend to disturb and obscure. They should exercise it, I say, in its pure state, freed from the objects of sense. If they do, the truth of the following axioms will become very clear to them.</p>
@@ -981,7 +1332,7 @@
 <p>Fifth, I ask them to spend significant time contemplating the supremely perfect Being. Among other things, they should consider that the ideas of all other natures contain merely possible existence, but the idea of God contains not just possible but absolutely necessary existence. From this alone, without any further reasoning, they will discover that God exists. And this will be no less self-evident than the fact that two is an even number and three is an odd one, or any other truth of this kind. For there are certain truths that are immediately obvious to some people without proof, though others may need a chain of reasoning to grasp them.</p>
 <p>Sixth, I ask them to carefully consider all the examples of clear and distinct perception, and all the examples of obscure and confused perception, that I discussed in my Meditations. In this way, they should train themselves to distinguish what is clearly known from what is obscure. This skill is better learned through examples than through rules, and I believe I have opened up — or at least touched on — all the relevant examples in that work.</p>
 <p>Seventh, I ask my readers, noting that they have never discovered any falsehood in things they clearly perceived, and that they have never found truth (except by accident) in things they perceived only obscurely, to consider how utterly irrational it would be — merely because of certain prejudices of the senses or some hypothesis involving unknown elements — to doubt what is clearly and distinctly perceived by the pure understanding. If they do this, they will readily accept the following axioms as true and beyond doubt. I will admit that several of these axioms could have been explained more fully, and that they ought perhaps to have been presented as theorems rather than axioms, had I wanted to be more precise.</p>
-<h4>AXIOMS</h4>
+<h3 class="sub">AXIOMS</h3>
 <p>I. Nothing exists of which we cannot ask: what is the cause of its existence? This question can even be asked about God — not because God needs any cause in order to exist, but because the very immensity of his nature is itself the cause (or reason) why he needs no cause for his existence.</p>
 <p>II. The present moment does not depend on the one that immediately preceded it. For this reason, no less a cause is needed to preserve a thing in existence than was needed to produce it in the first place.</p>
 <p>III. No actually existing thing, and no perfection of an actually existing thing, can have nothing — or something nonexistent — as the cause of its existence.</p>

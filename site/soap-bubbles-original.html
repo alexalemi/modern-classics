@@ -19,8 +19,359 @@
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=navigation" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 	<link rel="preload" href="fonts/libre-caslon-text-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="stylesheet" href="fonts.css">
-	<link rel="stylesheet" href="book.css">
+	<style>
+/* Fonts for every page (front pages and book pages), served from this site
+   rather than Google Fonts: a third-party
+   stylesheet blocked rendering for ~0.8 s on mobile (PageSpeed, 2026-10-12).
+   Oswald, Yellowtail and Libre Caslon Text (SIL Open Font License), latin and
+   latin-ext subsets as Google serves them, in site/fonts/. */
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* The book pages. Shared by every page assemble.py writes; fonts in fonts.css.
+
+   LEGIBILITY FIRST. The running text is set in the best screen serif the
+   reader's own device has (Charter on Apple, Sitka Text on Windows, Georgia
+   or Noto Serif elsewhere), near-black on white, 19-20px, ~66 characters to
+   the line. The Emend look (Libre Caslon Text, navy, the cream band, Oswald
+   labels) is kept to the title band, the headings and the controls. */
+
+:root {
+  --page:  #ffffff;
+  --text:  #1c1c1c;
+  --ink:   #1b314d;     /* navy: headings, links, buttons */
+  --cream: #f4efe2;
+  --soft:  #5a6472;
+  --rule:  #ddd6c8;
+  --link:  #1f4f86;
+  --plate-bg: #ffffff;
+  --reading: Charter, "Bitstream Charter", "Sitka Text", Georgia, "Noto Serif", serif;
+  --display: "Libre Caslon Text", Georgia, serif;
+  --label:   "Oswald", "Arial Narrow", sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page:  #14181e;
+    --text:  #e4e0d8;
+    --ink:   #e8e2d4;
+    --cream: #1d2430;
+    --soft:  #a3adba;
+    --rule:  #343c48;
+    --link:  #9cc2e6;
+  }
+  /* plates and diagrams are drawn on white paper; keep them on it, slightly dimmed */
+  figure img { opacity: .92; }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html {
+  background: var(--page);
+  color: var(--text);
+  font-size: 20px;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--reading);
+  line-height: 1.65;
+  font-kerning: normal;
+}
+
+main { max-width: 34rem; margin: 0 auto; padding: 0 1rem 5rem; }
+
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+
+/* ---------- title band ---------- */
+
+.title-block {
+  background: var(--cream);
+  padding: 1.6rem 1rem 1.8rem;
+  margin-bottom: 2rem;
+}
+.title-inner {
+  max-width: 44rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.8rem;
+  align-items: center;
+}
+.title-block .series {
+  grid-column: 1 / -1;
+  margin: 0 0 0.2rem;
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.title-block .series a { color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 0.55rem; }
+.title-block .series a:hover span { text-decoration: underline; }
+.title-block .series img { height: 1.8rem; width: auto; }
+.cover img {
+  display: block;
+  width: 150px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+}
+.title-text { min-width: 0; }
+h1 {
+  font: 700 2rem/1.15 var(--display);
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+  text-align: left;
+}
+.title-line { margin: 0 0 0.3rem; font-size: 0.95rem; color: var(--ink); }
+.title-line.byline { font-weight: 700; }
+.dates { margin: 0 0 0.9rem; font-size: 0.85rem; color: var(--soft); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.button {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid var(--ink);
+  font: 500 0.75rem/1.2 var(--label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+}
+.button.primary { background: var(--ink); color: var(--page); }
+.button:hover { text-decoration: underline; }
+
+/* phones: a small cover beside the title, so the text starts sooner */
+@media (max-width: 36rem) {
+  .title-block { padding: 1.1rem 1rem 1.4rem; }
+  .title-inner { grid-template-columns: 76px 1fr; gap: 0.9rem; align-items: start; }
+  .cover img { width: 76px; height: 114px; }
+  h1 { font-size: 1.45rem; }
+  .actions { grid-column: 1 / -1; }
+}
+
+/* ---------- running text ---------- */
+
+.intro-note { font-style: italic; font-size: 0.9rem; color: var(--soft); }
+
+h2, h3, h4 {
+  font-family: var(--display);
+  color: var(--ink);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+h2 { font-size: 1.45rem; margin: 3.2rem 0 1rem; }
+h3 { font-size: 1.2rem; margin: 2.8rem 0 0.9rem; }
+h4, h3.sub { font-size: 1rem; margin: 2rem 0 0.8rem; font-style: italic; }
+h2.center { text-align: center; font-size: 1.6rem; margin-top: 4rem; }
+
+p, ul, ol { margin: 0 0 1.15em; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+blockquote {
+  margin: 1.5em 0 1.5em 1em;
+  padding-left: 1em;
+  border-left: 3px solid var(--rule);
+  font-style: italic;
+}
+blockquote p { margin-bottom: 0.8em; }
+
+pre.outline {
+  font-family: var(--reading);
+  white-space: pre-wrap;
+  line-height: 1.6;
+  margin: 0 0 1.15em;
+}
+
+img.glyph { vertical-align: middle; display: inline; }
+span.frac, span.stack { display: inline-block; vertical-align: middle; text-align: center; }
+span.frac > span, span.stack > span { display: block; }
+span.frac > span.num { border-bottom: 1px solid currentColor; }
+span.stack.brace { border-left: 2px solid currentColor; border-right: 2px solid currentColor; border-radius: 0.6em; padding: 0 0.3em; }
+math { font-size: 1.05em; }
+
+figure { margin: 2.2em auto; text-align: center; }
+figure + figure { margin-top: 1em; }
+figure img { max-width: 100%; height: auto; background: var(--plate-bg); }
+figcaption {
+  margin-top: 0.6em;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--soft);
+  text-align: left;
+}
+
+table.plates { width: 100%; margin: 2.5em 0; border-collapse: collapse; line-height: 1.5; }
+table.plates td { padding: 0.4em 0.8em; vertical-align: middle; border-bottom: 1px solid var(--rule); }
+table.plates tr:last-child td { border-bottom: none; }
+table.plates figure, table.plates figure + figure { margin: 0.4em auto; }
+table.plates figcaption { display: none; }
+
+/* page locators: a printed page and quarter, for books that cite
+   themselves by them (Helmholtz: "see p. 77c") */
+span.loc { font-size: 0.65em; color: var(--soft); vertical-align: 0.3em; padding: 0 0.15em; font-style: normal; }
+a.ref { color: inherit; text-decoration: underline dotted; }
+span.sc { font-variant: small-caps; }
+.center { text-align: center; }
+.subtitle { text-align: center; font-style: italic; }
+
+/* ---------- contents ---------- */
+
+nav.contents h2 { margin-top: 0; }
+.toc-book { font-family: var(--display); font-weight: 700; margin: 1.2em 0 0.4em; color: var(--ink); }
+.toc-list { list-style: none; padding-left: 1.2em; margin: 0 0 1em; }
+.toc-list li { margin-bottom: 0.3em; line-height: 1.4; }
+nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
+
+/* ---------- reading aids (book.js) ---------- */
+
+.resume {
+  margin: 0 0 1.5rem;
+  padding: 0.7rem 1rem;
+  background: var(--cream);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+.resume[hidden] { display: none; }
+
+.to-contents {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 5;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--page);
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+.to-contents.show { opacity: .92; pointer-events: auto; }
+
+@media (max-width: 36rem) {
+  html { font-size: 18px; }
+}
+
+@media print {
+  .title-block { background: none; }
+  .actions, .to-contents, .resume { display: none; }
+}
+</style>
 	<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "Soap Bubbles and the Forces Which Mould Them: The Original Text", "author": {"@type": "Person", "name": "C. V. Boys"}, "inLanguage": "en", "url": "https://emend.press/soap-bubbles-original.html", "description": "Three Christmas lectures for children on why a bubble is round, why a jet of water breaks into beads, and how to make a fountain sing. The original text, unmodernized: free to read online.", "publisher": {"@type": "Organization", "name": "Emend Press", "url": "https://emend.press/", "logo": "https://emend.press/apple-touch-icon.png"}, "isAccessibleForFree": true, "isPartOf": {"@type": "BookSeries", "name": "Modern Classics", "url": "https://emend.press/"}, "image": "https://emend.press/covers/soap-bubbles.jpg", "datePublished": "1890", "workExample": {"@type": "Book", "bookFormat": "https://schema.org/EBook", "encodingFormat": "application/epub+zip", "url": "https://emend.press/ebooks/c-v-boys_soap-bubbles-and-the-forces-which-mould-them-the-original-text.epub"}}</script>
 </head>
 
@@ -66,19 +417,19 @@
 </section>
 <section aria-labelledby="dedication">
 <h2 id="dedication">Dedication</h2>
-<h4>TO</h4>
+<h3 class="sub">TO</h3>
 <p>G. F. RODWELL,</p>
-<h4>THE FIRST</h4>
+<h3 class="sub">THE FIRST</h3>
 <p>SCIENCE-MASTER APPOINTED AT MARLBOROUGH COLLEGE,</p>
-<h4>This Book is Dedicated</h4>
-<h4>BY THE AUTHOR</h4>
+<h3 class="sub">This Book is Dedicated</h3>
+<h3 class="sub">BY THE AUTHOR</h3>
 <p>AS A TOKEN OF ESTEEM AND GRATITUDE,</p>
-<h4>AND IN THE HOPE THAT</h4>
-<h4>IT MAY EXCITE IN A FEW YOUNG PEOPLE SOME SMALL</h4>
-<h4>FRACTION OF THE INTEREST AND ENTHUSIASM WHICH</h4>
-<h4>HIS ADVENT AND HIS LECTURES AWAKENED</h4>
-<h4>IN THE AUTHOR, UPON WHOM THE LIGHT</h4>
-<h4>OF SCIENCE THEN SHONE FOR</h4>
+<h3 class="sub">AND IN THE HOPE THAT</h3>
+<h3 class="sub">IT MAY EXCITE IN A FEW YOUNG PEOPLE SOME SMALL</h3>
+<h3 class="sub">FRACTION OF THE INTEREST AND ENTHUSIASM WHICH</h3>
+<h3 class="sub">HIS ADVENT AND HIS LECTURES AWAKENED</h3>
+<h3 class="sub">IN THE AUTHOR, UPON WHOM THE LIGHT</h3>
+<h3 class="sub">OF SCIENCE THEN SHONE FOR</h3>
 <p>THE FIRST TIME.</p>
 </section>
 <section aria-labelledby="preface">
@@ -474,66 +825,66 @@
 <section aria-labelledby="practical-hints-how-to-do-these-experiments-yourself">
 <h2 id="practical-hints-how-to-do-these-experiments-yourself">Practical Hints: How to Do These Experiments Yourself</h2>
 <p>I hope that the following practical hints may be found useful by those who wish themselves to successfully perform the experiments already described.</p>
-<h4>Drop with India-rubber Surface</h4>
+<h3 class="sub">Drop with India-rubber Surface</h3>
 <p>A sheet of thin india-rubber, about the thickness of that used in air-balls, as it appears before they have been blown out, must be stretched over a ring of wood or metal eighteen inches in diameter, and securely wired round the edge. The wire will hold the india-rubber better if the edge is grooved. This does not succeed if tried on a smaller scale. This experiment was shown by Sir W. Thomson at the Royal Institution.</p>
-<h4>Jumping Frame</h4>
+<h3 class="sub">Jumping Frame</h3>
 <p>This is easily made by taking a light glass globe about two inches in diameter, such, for instance, as a silvered ball used to ornament a Christmas-tree or the bulb of a pipette, which is what I used. Pass through the open necks of the bulb a piece of wire about one-twentieth of an inch in diameter, and fix it permanently and water-tight upon the wire by working into the necks melted sealing-wax. An inch or two above the globe, fasten a flat frame of thin wire by soldering, or if this is too difficult, by tying and sealing-wax. A lump of lead must then be fastened or hung on to the lower end, and gradually scraped away until the wire frame will just be unable to force its way through the surface of the water. None of the dimensions or materials mentioned are of importance.</p>
-<h4>Paraffined Sieve</h4>
+<h3 class="sub">Paraffined Sieve</h3>
 <p>Obtain a piece of copper wire gauze with about twenty wires to the inch, and cut out from it a round piece about eight inches in diameter. Lay it on a round block, of such a size that it projects about one inch all round. Then gently go round and round with the hands pressing the edge down and keeping it flat above, until the sides are evenly turned down all round. This is quite easy, because the wires can allow of the kind of distortion necessary. Then wind round the turned-up edge a few turns of thick wire to make the sides stiff. This ought to be soldered in position, but probably careful wiring will be good enough.</p>
 <p>Melt some paraffin wax or one or two paraffin candles of the best quality in a clean flat dish, not over the fire, which would be dangerous, but on a hot plate. When melted and clear like water, dip the sieve in, and when all is hot quickly take it out and knock it once or twice on the table to shake the paraffin out of the holes. Leave upside down until cold, and then be careful not to scratch or rub off the paraffin. This had best be done in a place where a mess is of no consequence.</p>
 <p>There is no difficulty in filling it or in setting it to float upon water.</p>
-<h4>Narrow Tubes and Capillarity</h4>
+<h3 class="sub">Narrow Tubes and Capillarity</h3>
 <p>Get some quill-glass tube from a chemist, that is, tube about the size of a pen. If it is more than, say, a foot long, cut off a piece by first making a firm scratch in one place with a three-cornered file, when it will break at the place easily. To make very narrow tube from this, hold it near the ends in the two hands very lightly, so that the middle part is high up in the brightest part of an ordinary bright and flat gas flame. Keep it turning until at last it becomes so soft that it is difficult to hold it straight. It can then be bent into any shape, but if it is wanted to be drawn out it must be held still longer until the black smoke upon it begins to crack and peel up. Then quickly take it out of the flame, and pull the two ends apart, when a long narrow tube will be formed between. This can be made finer or coarser by regulating the heat and the manner in which it is pulled out. No directions will tell any one so much as a very little practice. For drawing out tubes the flame of a Bunsen burner or of a blow-pipe is more convenient; but for bending tubes nothing is so good as the flat gas flame. Do not clean off smoke till the tubes are cold, and do not hurry their cooling by wetting or blowing upon them. In the country where gas is not to be had, the flame of a large spirit-lamp can be made to do, but it is not so good as a gas-flame. The narrower these tubes are, the higher will clean water be observed to rise in them. To colour the water, paints from a colour-box must not be used. They are not liquid, and will clog the very fine tubes. Some dye that will quite dissolve (as sugar does) must be used. An aniline dye, called soluble blue, does very well. A little vinegar added may make the colour last better.</p>
-<h4>Capillarity between Plates</h4>
+<h3 class="sub">Capillarity between Plates</h3>
 <p>Two plates of flat glass, say three to five inches square, are required. Provided they are quite clean and well wetted there is no difficulty. A little soap and hot water will probably be sufficient to clean them.</p>
-<h4>Tears of Wine</h4>
+<h3 class="sub">Tears of Wine</h3>
 <p>These are best seen at dessert in a glass about half filled with port. A mixture of from two to three parts of water, and one part of spirits of wine containing a very little rosaniline (a red aniline dye), to give it a nice colour, may be used, if port is not available. A piece of the dye about as large as a mustard-seed will be enough for a large wine-glass. The sides of the glass should be wetted with the wine.</p>
-<h4>Cat-Boxes</h4>
+<h3 class="sub">Cat-Boxes</h3>
 <p>Every school-boy knows how to make these. They are not the boxes made by cutting slits in paper. They are simply made by folding, and are then blown out like the &quot;frog,&quot; which is also made of folded paper.</p>
-<h4>Liquid Beads</h4>
+<h3 class="sub">Liquid Beads</h3>
 <p>Instead of melting gold, water rolled on to a table thickly dusted with lycopodium, or other fine dust, or quicksilver rolled or thrown upon a smooth table, will show the difference in the shape of large and small beads perfectly. A magnifying-glass will make the difference more evident. In using quicksilver, be careful that none of it falls on gold or silver coins, or jewellery, or plate, or on the ornamental gilding on book-covers. It will do serious damage.</p>
-<h4>Plateau&#x27;s Experiment</h4>
+<h3 class="sub">Plateau&#x27;s Experiment</h3>
 <p>To perform this with very great perfection requires much care and trouble. It is easy to succeed up to a certain point. Pour into a clean bottle about a table-spoonful of salad-oil, and pour upon it a mixture of nine parts by volume spirits of wine (not methylated spirits), and seven parts of water. Shake up and leave for a day if necessary, when it will be found that the oil has settled together by itself. Fill a tumbler with the same mixture of spirit and water, and then with a fine glass pipe, dipping about half-way down, slowly introduce a very little water. This will make the liquid below a little heavier. Dip into the oil a pipe and take out a little by closing the upper end with the finger, and carefully drop this into the tumbler. If it goes to the bottom, a little more water is required in the lower half of the tumbler. If by chance it will not sink at all, a little more spirit is wanted in the upper half. At last the oil will just float in the middle of the mixture. More can then be added, taking care to prevent it from touching the sides. If the liquid below is ever so little heavier, and the liquid above ever so little lighter than oil, the drop of oil perhaps as large as a halfpenny will be almost perfectly round. It will not appear round if seen through the glass, because the glass magnifies it sideways, but not up and down, as may be seen by holding a coin in the liquid just above it. To see the drop in its true shape the vessel must either be a globe, or one side must be made of flat glass.</p>
 <p>Spinning the oil so as to throw off a ring is not material, but if the reader can contrive to fix a disc about the size of a threepenny-piece upon a straight wire, and spin it round without shaking it, then he will see the ring break off, and either return if the rotation is quickly stopped, or else break up into three or four perfect little balls. The disc should be wetted with oil before being dipped into the mixture of spirit and water.</p>
-<h4>A Good Mixture for Soap-Bubbles</h4>
+<h3 class="sub">A Good Mixture for Soap-Bubbles</h3>
 <p>Common yellow soap is far better than most of the fancy soaps, which generally contain a little soap and a lot of rubbish. Castille soap is very good, and this may be obtained from any chemist.</p>
 <p>Bubbles blown with soap and water alone do not last long enough for many of the experiments described, though they may sometimes be made to succeed. Plateau added glycerine, which greatly improves the lasting quality. The glycerine should be pure; common glycerine is not good, but Price&#x27;s answers perfectly. The water should be pure distilled water, but if this is not available, clean rain-water will do. Do not choose the first that runs from a roof after a spell of dry weather, but wait till it has rained for some time, the water that then runs off is very good, especially if the roof is blue slate or glass. If fresh rain-water is not to be had, the softest water should be employed that can be obtained. Instead of Castille soap, Plateau found that a pure soap prepared from olive-oil is still better. This is called oleate of soda. It should be obtained freshly prepared from a manufacturing chemist. Old, dry stuff that has been kept a long time is not so good. I have always used a modification of Plateau&#x27;s formula, which Professors Reinold and Rucker found to answer so well. They used less glycerine than Plateau. It is best made as follows. Fill a clean stoppered bottle three-quarters full of water. Add one-fortieth part of its weight of oleate of soda, which will probably float on the water. Leave it for a day, when the oleate of soda will be dissolved. Nearly fill up the bottle with Price&#x27;s glycerine and shake well, or pour it into another clean bottle and back again several times. Leave the bottle, stoppered of course, for about a week in a dark place. Then with a syphon, that is, a bent glass tube which will reach to the bottom inside and still further outside, draw off the clear liquid from the scum which will have collected at the top. Add one or two drops of strong liquid ammonia to every pint of the liquid. Then carefully keep it in a stoppered bottle in a dark place. Do not get out this stock bottle every time a bubble is to be blown, but have a small working bottle. Never put any back into the stock. In making the liquid do not warm or filter it. Either will spoil it. Never leave the stoppers out of the bottles or allow the liquid to be exposed to the air more than is necessary. This liquid is still perfectly good after two years&#x27; keeping. I have given these directions very fully, not because I feel sure that all the details are essential, but because it exactly describes the way I happen to make it, and because I have never found any other solution so good. Castille soap, Price&#x27;s glycerine, and rain-water will almost certainly answer every purpose, and the same proportions will probably be found to work well.</p>
-<h4>Rings for Bubbles</h4>
+<h3 class="sub">Rings for Bubbles</h3>
 <p>These may be made of any kind of wire. I have used tinned iron about one-twentieth of an inch in diameter. The joint should be smoothly soldered without lumps. If soldering is a difficulty, then use the thinnest wire that is stiff enough to support the bubbles steadily, and make the joint by twisting the end of the wire round two or three times. Rings two inches in diameter are convenient. I have seen that dipping the rings in melted paraffin is recommended, but I have not found any advantage from this. The nicest material for the light rings is thin aluminium wire, about as thick as a fine pin (No. 26 to 30, B. W. G.), and as this cannot be soldered, the ends must be twisted. If this is not to be had, very fine wire, nearly as fine as a hair (No. 36, B. W. G.), of copper or of any other metal, will answer. The rings should be wetted with the soap mixture before a bubble is placed upon them, and must always be well washed and dried when done with.</p>
-<h4>Threads in Ring</h4>
+<h3 class="sub">Threads in Ring</h3>
 <p>There is no difficulty in showing these experiments. The ring with the thread may be dipped in the soap solution, or stroked across with the edge of a piece of paper or india-rubber sheet that has been dipped in the liquid, so as to form a film on both sides of the thread. A needle that has also been wetted with the soap may be used to show that the threads are loose. The same needle held for a moment in a candle-flame supplies a convenient means of breaking the film.</p>
-<h4>Blow out Candle with Soap-Bubble</h4>
+<h3 class="sub">Blow out Candle with Soap-Bubble</h3>
 <p>For this, the bubble should be blown on the end of a short wide pipe, spread out at one end to give a better hold for the bubble. The tin funnel supplied with an ordinary gazogene answers perfectly. This should be washed before it is used again for filling the gazogene.</p>
 <p>Bubbles balanced against one another</p>
 <p>These experiments are most conveniently made on a small scale. Pieces of thin brass tube, three-eighths or half an inch in diameter, are suitable. It is best to have pieces of apparatus, specially prepared with taps, for easily and quickly stopping the air from leaving either bubble, and for putting the two bubbles into communication when required. It should not be difficult to contrive to perform the experiments, using india-rubber connecting tubes, pinched with spring clips to take the place of taps. There is one little detail which just makes the difference between success and failure. This is to supply a mouth-piece for blowing the bubble, made of glass tube, which has been drawn out so fine that these little bubbles cannot be blown out suddenly by accident. It is very difficult, otherwise, to adjust the quantity of air in such small bubbles with any accuracy. In balancing a spherical against a cylindrical bubble, the short piece of tube, into which the air is supplied, must be made so that it can be easily moved to or from a fixed piece of the same size closed at the other end. Then the two ends of the short tube must have a film spread over them with a piece of paper, or india-rubber, but there must be no film stretched across the end of the fixed tube. The two tubes must at first be near together, until the spherical bubble has been formed. They may then be separated gradually more and more, and air blown in so as to keep the sides of the cylinder straight, until the cylinder is sufficiently long to be nearly unstable. It will then far more evidently show, by its change of form, than it would if it were short, when the pressure due to the spherical bubble exactly balances that due to a cylindrical one. If the shadow of the bubbles, or an image formed by a lens on a screen, is then measured, it will be found that the sphere has a diameter which is very accurately double that of the cylinder.</p>
-<h4>Thaumatrope for showing the Formation and Oscillations of Drops</h4>
+<h3 class="sub">Thaumatrope for showing the Formation and Oscillations of Drops</h3>
 <p>The experiment showing the formation of water-drops can be very perfectly imitated, and the movements actually made visible, without any necessity for using liquids at all, by simply converting Fig. 35 (at end of book) into the old-fashioned instrument called a thaumatrope. What will then be seen is a true representation, because the forms in the figure are copies of a series of photographs taken from the moving drops at the rate of forty-three photographs in two seconds.[2]</p>
 <p>Note: For particulars see Philosophical Magazine, September 1890.</p>
 <p>Obtain a piece of good card-board as large as the figure, and having brushed it all over on one side with thin paste, lay the figure upon it, and press it down evenly. Place it upon a table, and cover it with a few thicknesses of blotting-paper, and lay over all a flat piece of board large enough to cover it. Weights sufficient to keep it all flat may be added. This must be left all night at least, until the card is quite dry, or else it will curl up and be useless. Now with a sharp chisel or knife, but a chisel if possible, cut out the forty-three slits near the edge, accurately following the outline indicated in black and white, and keeping the slits as narrow as possible. Then cut a hole in the middle, so as to fit the projecting part of a sewing-machine cotton-reel, and fasten the cotton-reel on the side away from the figure with glue or small nails. It must be fixed exactly in the middle. The edge should of course be cut down to the outside of the black rim.</p>
 <p>Now having found a pencil or other rod on which the cotton-reel will freely turn, use this as an axle, and holding the disc up in front of a looking-glass, and in a good light, slowly and steadily make it turn round. The image of the disc seen through the slit in the looking-glass will then perfectly represent every feature of the growing and falling drop. As the drop grows it will gradually become too heavy to be supported, a waist will then begin to form which will rapidly get narrower, until the drop at last breaks away. It will be seen to continue its fall until it has disappeared in the liquid below, but it has not mixed with this, and so it will presently appear again, having bounced out of the liquid. As it falls it will be seen to vibrate as the result of the sudden release from the one-sided pull. The neck which was drawn out will meanwhile have gathered itself in the form of a little drop, which will then be violently hit by the oscillations of the remaining pendant drop above, and driven down. The pendant drop will be seen to vibrate and grow at the same time, until it again breaks away as before, and so the phenomena are repeated.</p>
 <p>In order to perfectly reproduce the experiment, the axle should be firmly held upon a stand, and the speed should not exceed one turn in two seconds.</p>
 <p>The effect is still more real if a screen is placed between the disc and the mirror, which will only allow one of the drops to be seen.</p>
-<h4>Water-drops in Paraffin and Bisulphide of Carbon</h4>
+<h3 class="sub">Water-drops in Paraffin and Bisulphide of Carbon</h3>
 <p>All that was said in describing the Plateau experiment applies here. Perfectly spherical and large drops of water can be formed in a mixture so made that the lower parts are very little heavier, and the upper parts very little lighter, than water. The addition of bisulphide of carbon makes the mixture heavier. This liquid--bisulphide of carbon--is very dangerous, and has a most dreadful smell, so that it had better not be brought into the house. The form of a hanging drop, and the way in which it breaks off, can be seen if water is used in paraffin alone, but it is much more evident if a little bisulphide of carbon is mixed with the paraffin, so that water will sink slowly in the mixture. Pieces of glass tube, open at both ends from half an inch to one inch in diameter, show the action best. Having poured some water coloured blue into a glass vessel, and covered it to a depth of several inches with paraffin, or the paraffin mixture, dip the pipe down into the water, having first closed the upper end with the thumb or the palm of the hand. On then removing the hand, the water will rush up inside the tube. Again close the upper end as before, and raise the tube until the lower end is well above the water, though still immersed in the paraffin. Then allow air to enter the pipe very slowly by just rolling the thumb the least bit to one side. The water will escape slowly and form a large growing drop, the size of which, before it breaks away, will depend on the density of the mixture and the size of the tube.</p>
 <p>To form a water cylinder in the paraffin the tube must be filled with water as before, but the upper end must now be left open. Then when all is quiet the tube is to be rather rapidly withdrawn in the direction of its own length, when the water which was within it will be left behind in form of a cylinder, surrounded by the paraffin. It will then break up into spheres so slowly, in the case of a large tube, that the operation can be watched. The depth of paraffin should be quite ten times the diameter of the tube.</p>
 <p>To make bubbles of water in the paraffin, the tube must be dipped down into the water with the upper end open all the time, so that the tube is mostly filled with paraffin. It must then be closed for a moment above and raised till the end is completely out of the water. Then if air is allowed to enter slowly, and the tube is gently raised, bubbles of water filled with paraffin will be formed which can be made to separate from the pipe, like soap-bubbles from a &quot;churchwarden,&quot; by a suitable sudden movement. If a number of water-drops are floating in the paraffin in the pipe, and this can be easily arranged, then the bubbles made will contain possibly a number of other drops, or even other bubbles. A very little bisulphide of carbon poured carefully down a pipe will form a heavy layer above the water, on which these compound bubbles will remain floating.</p>
 <p>Cylindrical bubbles of water in paraffin may be made by dipping the pipe down into the water and withdrawing it quickly without ever closing the top at all. These break up into spherical bubbles in the same way that the cylinder of liquid broke up into spheres of liquid.</p>
-<h4>Beaded Spider-webs</h4>
+<h3 class="sub">Beaded Spider-webs</h3>
 <p>These are found in the spiral part of the webs of all the geometrical spiders. The beautiful geometrical webs may be found out of doors in abundance in the autumn, or in green-houses at almost any time of the year. To mount these webs so that the beads may be seen, take a small flat ring of any material, or a piece of card-board with a hole cut out with a gun-wad cutter, or otherwise. Smear the face of the ring, or the card, with a very little strong gum. Choose a freshly-made web, and then pass the ring, or the card, across the web so that some of the spiral web (not the central part of the web) remains stretched across the hole. This must be done without touching or damaging the pieces that are stretched across, except at their ends. The beads are too small to be seen with the naked eye. A strong magnifying-glass, or a low power microscope, will show the beads and their marvellous regularity. The beads on the webs of very young spiders are not so regular as those on spiders that are fully grown. Those beautiful beads, easily visible to the naked eye, on spider lines in the early morning of an autumn day, are not made by the spider, but are simply dew. They very perfectly show the spherical form of small water-drops.</p>
-<h4>Photographs of Water-jets</h4>
+<h3 class="sub">Photographs of Water-jets</h3>
 <p>These are easily taken by the method described by Mr. Chichester Bell. The flash of light is produced by a short spark from a few Leyden-jars. The fountain, or jet, should be five or six feet away from the spark, and the photographic plate should be held as close to the stream of water as is possible without touching. The shadow is then so definite that the photograph, when taken, may be examined with a powerful lens, and will still appear sharp. Any rapid dry plate will do. The room, of course, must be quite dark when the plate is placed in position, and the spark then made. The regular breaking up of the jet may be effected by sound produced in almost any way. The straight jet, of which Fig. 41 is a representation, magnified about three and a quarter times, was regularly broken up by simply whistling to it with a key. The fountains were broken up regularly by fastening the nozzle to one end of a long piece of wood clamped at the end to the stand of a tuning-fork, which was kept sounding by electrical means. An ordinary tuning-fork, made to rest when sounding against the wooden support of the nozzle, will answer quite as well, but is not quite so convenient. The jet will break up best to certain notes, but it may be tuned to a great extent by altering the size of the orifice or the pressure of the water, or both.</p>
-<h4>Fountain and Sealing-wax</h4>
+<h3 class="sub">Fountain and Sealing-wax</h3>
 <p>It is almost impossible to fail over this very striking yet simple experiment. A fountain of almost any size, at any rate between one-fiftieth and a quarter of an inch in the smooth part, and up to eight feet high, will cease to scatter when the sealing-wax is rubbed with flannel and held a few feet away. A suitable size of fountain is one about four feet high, coming from an orifice anywhere near one-sixteenth of an inch in diameter. The nozzle should be inclined so that the water falls slightly on one side. The sealing-wax may be electrified by being rubbed on the coat-sleeve, or on a piece of fur or flannel which is dry. It will then make little pieces of paper or cork dance, but it will still act on the fountain when it has ceased to produce any visible effect on pieces of paper, or even on a delicate gold-leaf electroscope.</p>
-<h4>Bouncing Water-jets</h4>
+<h3 class="sub">Bouncing Water-jets</h3>
 <p>This beautiful experiment of Lord Rayleigh&#x27;s requires a little management to make it work in a satisfactory manner. Take a piece of quill-glass tube and draw it out to a very slight extent (see a former note), so as to make a neck about one-eighth of an inch in diameter at the narrowest part. Break the tube just at this place, after first nicking it there with a file. Connect each of these tubes by means of an india-rubber pipe, or otherwise, with a supply of water in a bottle, and pinch the tubes with a screw-clip until two equal jets of water are formed. So hold the nozzles that these meet in their smooth portions at every small angle. They will then for a short time bounce away from one another without mixing. If the air is very dusty, if the water is not clean, or if air-bubbles are carried along in the pipes, the two jets will at once join together. In the arrangement that I used in the lantern, the two nozzles were nearly horizontal, one was about half an inch above the other, and they were very slightly converging. They were fastened in their position by melting upon them a little sealing-wax. India-rubber pipes connected them with two bottles about six inches above them, and screw-clips were used to regulate the supply. One of the bottles was made to stand on three pieces of sealing-wax to electrically insulate it, and the corresponding nozzle was only held by its sealing-wax fastening. The water in the bottles had been filtered, and one was coloured blue. If these precautions are taken, the jets will remain distinct quite long enough, but are instantly caused to recombine by a piece of electrified sealing-wax six or eight feet away. They may be separated again by touching the water issuing near one nozzle with the finger, which deflects it; on quietly removing the finger the jet takes up its old position and bounces off the other as before. They can thus be separated and made to combine ten or a dozen times in a minute.</p>
-<h4>Fountain and Intermittent Light</h4>
+<h3 class="sub">Fountain and Intermittent Light</h3>
 <p>This can be successfully shown to a large number of people at once only by using an electric arc, but there is no occasion to produce this light if not more than one person at a time wishes to see the evolution of the drops. It is then merely necessary to make the fountain play in front of a bright background such as the sky, to break it up with a tuning-fork or other musical sound as described, and then to look at it through a card disc equally divided near the edge into spaces about two or three inches wide, with a hole about one-eighth of an inch in diameter between each pair of spaces. A disc of card five inches in diameter, with six equidistant holes half an inch from the edge, answers well. The disc must be made to spin by any means very regularly at such a speed that the tuning-fork, or stretched string if this be used, when looked at through the holes, appears quiet, or nearly quiet, when made to vibrate. The separate drops will then be seen, and everything described in the preceding pages, and a great deal more, will be evident. This is one of the most fascinating experiments, and it is well worth while to make an effort to succeed. The little motor that I used is one of Cuttriss and Co.&#x27;s P. 1. motors, which are very convenient for experiments of this kind. It was driven by four Grove&#x27;s cells. These make it rotate too fast, but the speed can be reduced by moving the brushes slightly towards the position used for reversing the motor, until the speed is almost exactly right. It is best to arrange that it goes only just too fast, then the speed can be perfectly regulated by a very light pressure of the finger on the end of the axle.</p>
-<h4>Mr. Chichester Bell&#x27;s Singing Water-jet</h4>
+<h3 class="sub">Mr. Chichester Bell&#x27;s Singing Water-jet</h3>
 <p>For these experiments a very fine hole about one seventy-fifth of an inch in diameter is most suitable. To obtain this, Mr. Bell holds the end of a quill-glass tube in a blow-pipe flame, and constantly turns it round and round until the end is almost entirely closed up. He then suddenly and forcibly blows into the pipe. Out of several nozzles made in this way, some are sure to do well. Lord Rayleigh makes nozzles generally by cementing to the end of a glass (or metal) pipe a piece of thin sheet metal in which a hole of the required size has been made. The water pressure should be produced by a head of about fifteen feet. The water must be quite free from dust and from air-bubbles. This may be effected by making it pass through a piece of tube stuffed full of flannel, or cotton-wool, or something of the kind to act as a filter. There should be a yard or so of good black india-rubber tube, about one-eighth of an inch in diameter inside, between the filter and the nozzle. It is best not to take the water direct from the water-main, but from a cistern about fifteen feet above the nozzle. If no cistern is available, a pail of water taken up-stairs, with a pipe coming down, is an excellent substitute, and this has the further advantage that the head of water can be easily changed so as to arrive at the best result.</p>
 <p>The rest of the apparatus is very simple. It is merely necessary to stretch and tie over the end of a tube about half an inch in diameter a piece of thin india-rubber sheet, cut from an air-ball that has not been blown out. The tube, which may be of metal or of glass, may either be fastened to a heavy foot, in which case a side tube must be joined to it, as in Fig. 47, or it may be open at both ends and be held in a clamp. It is well to put a cone of card-board on the open end (Fig. 48), if the sound is to be heard by many at a time. If the experimenter alone wishes to hear as well as possible when faint sounds are produced, he should carry a piece of smooth india-rubber tube about half an inch in diameter from the open end to his ear. This, however, would nearly deafen him with such loud noises as the tick of a watch.</p>
-<h4>Bubbles and Ether</h4>
+<h3 class="sub">Bubbles and Ether</h3>
 <p>Experiments with ether must be performed with great care, because, like the bisulphide of carbon, it is dangerously inflammable. The bottle of ether must never be brought near a light. If a large quantity is spilled, the heavy vapour is apt to run along the floor and ignite at a fire, even on the other side of a room. Any vessel may be filled with the vapour of ether by merely pouring the liquid upon a piece of blotting-paper reaching up to the level of the edge. Very little is required, say half a wine-glassful, for a basin that would hold a gallon or more. In a draughty place the vapour will be lost in a short time. Bubbles can be set to float upon the vapour without any difficulty. They may be removed in five or ten seconds by means of one of the small light rings with a handle, provided that the ring is wetted with the soap solution and has no film stretched across it. If taken to a light at a safe distance the bubble will immediately burst into a blaze. If a neighbouring light is not close down to the table, but well up above the jar on a stand, it may be near with but little risk. To show the burning vapour, the same wide tube that was used to blow out the candle will answer well. The pear shape of the bubble, owing to its increased weight after being held in the vapour for ten or fifteen seconds, is evident enough on its removal, but the falling stream of heavy vapour, which comes out again afterwards, can only be shown if its shadow is cast upon a screen by means of a bright light.</p>
-<h4>Experiment with Internal Bubbles</h4>
+<h3 class="sub">Experiment with Internal Bubbles</h3>
 <p>For these experiments, next to a good solution, the pipe is of the greatest importance. A &quot;churchwarden&quot; is no use. A glass pipe 5/16 inch in diameter at the mouth is best. If this is merely a tube bent near the end through a right angle, moisture condensed in the tube will in time run down and destroy the bubble occasionally, which is very annoying in a difficult experiment. I have made for myself the pipe of which Fig. 67 is a full size representation, and I do not think that it is possible to improve upon this. Those who are not glass-blowers will be able, with the help of cork, to make a pipe with a trap as shown in Fig. 68, which is as good, except in appearance and handiness.</p>
 <p>In knocking bubbles together to show that they do not touch, care must be taken to avoid letting either bubble meet any projection in the other, such as the wire ring, or a heavy drop of liquid. Either will instantly destroy the two bubbles. There is also a limit to the violence which may be used, which experience will soon indicate.</p>
 <p>In pushing a bubble through a ring smaller than itself, by means of a flat film on another ring, it is important that the bubble should not be too large; but a larger bubble can be pushed through than would be expected. It is not so easy to push it up as down because of the heavy drop of liquid, which it is difficult to completely drain away.</p>
@@ -552,7 +903,7 @@
 <p>The pipe must in every case be made to enter the highest point of a bubble in order to start an internal one. If it is pushed horizontally through the side, the inner bubble is sure to break. If the inner bubble is being blown with gas, it will soon tend to rise. The pipe must then be turned over in such a manner that the inner bubble does not creep along it, and so meet the outer one where penetrated by the pipe. A few trials will show what is meant. The inner bubble may then be allowed to rest against the top of the outer one while being enlarged. When it is desired after withdrawing the pipe to blow more air or gas into either the inner or the outer bubble, it is not safe after inserting the pipe again to begin to blow at once; the film which is now stretched across the mouth of the pipe will probably become a third bubble, and this, under the circumstances, is almost certain to cause a failure. An instantaneous withdrawal of the air destroys this film by drawing it into the pipe. Air or gas may then be blown without danger.</p>
 <p>If the same experiment is performed upon a light ring with cotton and paper attached, the left hand will be occupied in holding this ring, and then the gas must be controlled by the foot, or by a friend. The light ring should be quite two inches in diameter. If, when the inner bubble has begun to carry away the ring, &amp;c., the paper is caught hold of, it is possible, by a judicious pull, to cause the two bubbles to leave the ring and so escape into the air one inside the other. For this purpose the smallest ring that will carry the paper should be used. With larger rings the same effect may be produced by inclining the ring, and so allowing the outer bubble to peel off, or by placing the mouth of the pipe against the ring and blowing a third bubble in real contact with the ring and the outer bubble. This will assist the peeling process.</p>
 <p>To blow three bubbles, one inside the other two, is more difficult. The following plan I have found to be fairly certain. First blow above the ring a bubble the size of a large orange. Then take a small ring about an inch in diameter, with a straight wire coming down from one side to act as a handle, and after wetting it with the solution, pass it carefully up through the fixed ring so that the small ring is held well inside the bubble. Now pass the pipe, freshly dipped in the solution, into the outer or No. 1 bubble until it is quite close to the small ring, and begin to blow the No. 2 bubble. This must be started with the pipe almost in contact with the inner ring, as the film on this ring would destroy a bubble that had attained any size. Withdraw the pipe, dip it into the liquid, and insert it into the inner bubble, taking care to keep these two bubbles from meeting anywhere. Now blow a large gas-bubble, which may rest against the top of No. 2 while it is growing. No. 2 may now rest against the top of No. 1 without danger. Remove pipe from No. 3 by gently lowering it, and let some gas into No. 2 to make it lighter, and at the same time diminish the pressure between Nos. 2 and 3. Presently the small ring can be peeled off No. 2 and removed altogether. But if there is a difficulty in accomplishing this, withdraw the pipe from No. 2 and blow air into No. 1 to enlarge it, which will make the process easier. Then remove the pipe from No. 1. The three bubbles are now resting one inside the other. By blowing a fourth bubble, as described above, against the fixed ring, No. 1 bubble will peel off, and the three will float away. No. 1 can, while peeling, be transferred to a light wire ring from which paper, &amp;c. are suspended. This description sounds complicated, but after a little practice the process can be carried out almost with certainty in far less time than it takes to describe it; in fact, so quickly can it be done, and so simple does it appear, that no one would suppose that so many details had to be attended to.</p>
-<h4>Bubbles and Electricity</h4>
+<h3 class="sub">Bubbles and Electricity</h3>
 <p>These experiments are on the whole the most difficult to perform successfully. The following details should be sufficient to prevent failure. Two rings are formed at the end of a pair of wires about six inches long in the straight part. About one inch at the opposite end from the ring is turned down at a right angle. These turned-down ends rest in two holes drilled vertically in a non-conductor such as ebonite, about two or three inches apart. Then if all is right the two rings are horizontal and at the same level, and they may be moved towards or away from one another. Separate them a few inches, and blow a bubble above or below each, making them nearly the same size. Then bring the two rings nearer together until the bubbles just, and only just, rest against one another. Though they may be hammered together without joining, they will not remain long resting in this position, as the convex surfaces can readily squeeze out the air. The ebonite should not be perfectly warm and dry, for it is then sure to be electrified, and this will give trouble. It must not be wet, because then it will conduct, and the sealing-wax will produce no result. If it has been used as the support for the rings for some of the previous experiments, it will have been sufficiently splashed by the bursting of bubbles to be in the best condition. It must, however, be well wiped occasionally.</p>
 <p>A stick of sealing-wax should be held in readiness under the arm, in a fold or two of dry flannel or fur. If the wax is very strongly electrified, it is apt to be far too powerful, and to cause the bubbles, when it is presented to them, to destroy each other. A feeble electrification is sufficient; then the instant it is exposed the bubbles coalesce. The wax may be brought so near one bubble in which another one is resting, that it pulls them to one side, but the inner one is screened from electrical action by the outer one. It is important not to bring the wax very near, as in that case the bubble will be pulled so far as to touch it, and so be broken. The wetting of the wax will make further electrification very uncertain. In showing the difference between an inner and an outer bubble, the same remarks with regard to undue pressure, electrification, or loss of time apply. I have generally found that it is advisable in this experiment not to drain the drops from both the bubbles, as their weight seems to steady them; the external bubble may be drained, and if it is not too large, the process of electrically joining the outer bubbles, without injury to the inner one, may be repeated many times. I once caused eight or nine single bubbles to unite with the outer one of a pair in succession before it became too unwieldy for more accessions to be possible.</p>
 <hr>

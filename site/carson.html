@@ -19,8 +19,359 @@
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=navigation" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 	<link rel="preload" href="fonts/libre-caslon-text-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="stylesheet" href="fonts.css">
-	<link rel="stylesheet" href="book.css">
+	<style>
+/* Fonts for every page (front pages and book pages), served from this site
+   rather than Google Fonts: a third-party
+   stylesheet blocked rendering for ~0.8 s on mobile (PageSpeed, 2026-10-12).
+   Oswald, Yellowtail and Libre Caslon Text (SIL Open Font License), latin and
+   latin-ext subsets as Google serves them, in site/fonts/. */
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* The book pages. Shared by every page assemble.py writes; fonts in fonts.css.
+
+   LEGIBILITY FIRST. The running text is set in the best screen serif the
+   reader's own device has (Charter on Apple, Sitka Text on Windows, Georgia
+   or Noto Serif elsewhere), near-black on white, 19-20px, ~66 characters to
+   the line. The Emend look (Libre Caslon Text, navy, the cream band, Oswald
+   labels) is kept to the title band, the headings and the controls. */
+
+:root {
+  --page:  #ffffff;
+  --text:  #1c1c1c;
+  --ink:   #1b314d;     /* navy: headings, links, buttons */
+  --cream: #f4efe2;
+  --soft:  #5a6472;
+  --rule:  #ddd6c8;
+  --link:  #1f4f86;
+  --plate-bg: #ffffff;
+  --reading: Charter, "Bitstream Charter", "Sitka Text", Georgia, "Noto Serif", serif;
+  --display: "Libre Caslon Text", Georgia, serif;
+  --label:   "Oswald", "Arial Narrow", sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page:  #14181e;
+    --text:  #e4e0d8;
+    --ink:   #e8e2d4;
+    --cream: #1d2430;
+    --soft:  #a3adba;
+    --rule:  #343c48;
+    --link:  #9cc2e6;
+  }
+  /* plates and diagrams are drawn on white paper; keep them on it, slightly dimmed */
+  figure img { opacity: .92; }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html {
+  background: var(--page);
+  color: var(--text);
+  font-size: 20px;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--reading);
+  line-height: 1.65;
+  font-kerning: normal;
+}
+
+main { max-width: 34rem; margin: 0 auto; padding: 0 1rem 5rem; }
+
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+
+/* ---------- title band ---------- */
+
+.title-block {
+  background: var(--cream);
+  padding: 1.6rem 1rem 1.8rem;
+  margin-bottom: 2rem;
+}
+.title-inner {
+  max-width: 44rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.8rem;
+  align-items: center;
+}
+.title-block .series {
+  grid-column: 1 / -1;
+  margin: 0 0 0.2rem;
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.title-block .series a { color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 0.55rem; }
+.title-block .series a:hover span { text-decoration: underline; }
+.title-block .series img { height: 1.8rem; width: auto; }
+.cover img {
+  display: block;
+  width: 150px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+}
+.title-text { min-width: 0; }
+h1 {
+  font: 700 2rem/1.15 var(--display);
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+  text-align: left;
+}
+.title-line { margin: 0 0 0.3rem; font-size: 0.95rem; color: var(--ink); }
+.title-line.byline { font-weight: 700; }
+.dates { margin: 0 0 0.9rem; font-size: 0.85rem; color: var(--soft); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.button {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid var(--ink);
+  font: 500 0.75rem/1.2 var(--label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+}
+.button.primary { background: var(--ink); color: var(--page); }
+.button:hover { text-decoration: underline; }
+
+/* phones: a small cover beside the title, so the text starts sooner */
+@media (max-width: 36rem) {
+  .title-block { padding: 1.1rem 1rem 1.4rem; }
+  .title-inner { grid-template-columns: 76px 1fr; gap: 0.9rem; align-items: start; }
+  .cover img { width: 76px; height: 114px; }
+  h1 { font-size: 1.45rem; }
+  .actions { grid-column: 1 / -1; }
+}
+
+/* ---------- running text ---------- */
+
+.intro-note { font-style: italic; font-size: 0.9rem; color: var(--soft); }
+
+h2, h3, h4 {
+  font-family: var(--display);
+  color: var(--ink);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+h2 { font-size: 1.45rem; margin: 3.2rem 0 1rem; }
+h3 { font-size: 1.2rem; margin: 2.8rem 0 0.9rem; }
+h4, h3.sub { font-size: 1rem; margin: 2rem 0 0.8rem; font-style: italic; }
+h2.center { text-align: center; font-size: 1.6rem; margin-top: 4rem; }
+
+p, ul, ol { margin: 0 0 1.15em; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+blockquote {
+  margin: 1.5em 0 1.5em 1em;
+  padding-left: 1em;
+  border-left: 3px solid var(--rule);
+  font-style: italic;
+}
+blockquote p { margin-bottom: 0.8em; }
+
+pre.outline {
+  font-family: var(--reading);
+  white-space: pre-wrap;
+  line-height: 1.6;
+  margin: 0 0 1.15em;
+}
+
+img.glyph { vertical-align: middle; display: inline; }
+span.frac, span.stack { display: inline-block; vertical-align: middle; text-align: center; }
+span.frac > span, span.stack > span { display: block; }
+span.frac > span.num { border-bottom: 1px solid currentColor; }
+span.stack.brace { border-left: 2px solid currentColor; border-right: 2px solid currentColor; border-radius: 0.6em; padding: 0 0.3em; }
+math { font-size: 1.05em; }
+
+figure { margin: 2.2em auto; text-align: center; }
+figure + figure { margin-top: 1em; }
+figure img { max-width: 100%; height: auto; background: var(--plate-bg); }
+figcaption {
+  margin-top: 0.6em;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--soft);
+  text-align: left;
+}
+
+table.plates { width: 100%; margin: 2.5em 0; border-collapse: collapse; line-height: 1.5; }
+table.plates td { padding: 0.4em 0.8em; vertical-align: middle; border-bottom: 1px solid var(--rule); }
+table.plates tr:last-child td { border-bottom: none; }
+table.plates figure, table.plates figure + figure { margin: 0.4em auto; }
+table.plates figcaption { display: none; }
+
+/* page locators: a printed page and quarter, for books that cite
+   themselves by them (Helmholtz: "see p. 77c") */
+span.loc { font-size: 0.65em; color: var(--soft); vertical-align: 0.3em; padding: 0 0.15em; font-style: normal; }
+a.ref { color: inherit; text-decoration: underline dotted; }
+span.sc { font-variant: small-caps; }
+.center { text-align: center; }
+.subtitle { text-align: center; font-style: italic; }
+
+/* ---------- contents ---------- */
+
+nav.contents h2 { margin-top: 0; }
+.toc-book { font-family: var(--display); font-weight: 700; margin: 1.2em 0 0.4em; color: var(--ink); }
+.toc-list { list-style: none; padding-left: 1.2em; margin: 0 0 1em; }
+.toc-list li { margin-bottom: 0.3em; line-height: 1.4; }
+nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
+
+/* ---------- reading aids (book.js) ---------- */
+
+.resume {
+  margin: 0 0 1.5rem;
+  padding: 0.7rem 1rem;
+  background: var(--cream);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+.resume[hidden] { display: none; }
+
+.to-contents {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 5;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--page);
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+.to-contents.show { opacity: .92; pointer-events: auto; }
+
+@media (max-width: 36rem) {
+  html { font-size: 18px; }
+}
+
+@media print {
+  .title-block { background: none; }
+  .actions, .to-contents, .resume { display: none; }
+}
+</style>
 	<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "Conservation in Action", "author": {"@type": "Person", "name": "Rachel Carson"}, "inLanguage": "en", "url": "https://emend.press/carson.html", "description": "Rachel Carson's Conservation in Action booklets for the Fish and Wildlife Service: four wildlife refuges, and why wild creatures, like men, must have a place to live. A restored edition, free to read online and as an ebook.", "publisher": {"@type": "Organization", "name": "Emend Press", "url": "https://emend.press/", "logo": "https://emend.press/apple-touch-icon.png"}, "isAccessibleForFree": true, "isPartOf": {"@type": "BookSeries", "name": "Modern Classics", "url": "https://emend.press/"}, "image": "https://emend.press/covers/carson.jpg", "workExample": {"@type": "Book", "bookFormat": "https://schema.org/EBook", "encodingFormat": "application/epub+zip", "url": "https://emend.press/ebooks/rachel-carson_conservation-in-action.epub"}}</script>
 </head>
 
@@ -251,7 +602,7 @@
 <img src="images/carson/figau.jpg" alt="A road map of the Delmarva peninsula headed How to Reach the Chincoteague Refuge, showing Routes 13, 113, 213, 175, 40 and 50, the towns along them, ferries, and the cities of Wilmington, Baltimore, Washington and Norfolk." width="949" height="1200" loading="lazy">
 <figcaption>A road map of the Delmarva peninsula headed How to Reach the Chincoteague Refuge, showing Routes 13, 113, 213, 175, 40 and 50, the towns along them, ferries, and the cities of Wilmington, Baltimore, Washington and Norfolk.</figcaption>
 </figure>
-<h4>How to Reach the Chincoteague Refuge</h4>
+<h3 class="sub">How to Reach the Chincoteague Refuge</h3>
 <p>Chincoteague is about 290 miles by road from New York, and 200 from Philadelphia or Washington. Cars coming from the north should take U. S. Highway 13 down the Eastern Shore peninsula to State Road 175, then follow this road over a series of causeways through the coastal marshes to Chincoteague Island. From the south, cars cross from Norfolk to Cape Charles, then continue north on route 13 to route 175. Permission to visit the refuge may be obtained from the Refuge Manager, Chincoteague National Wildlife Refuge, Chincoteague, Va. The Manager can also give information about hiring a boat for transportation to Assateague Island which is separated from Chincoteague Island by a narrow channel.</p>
 </section>
 <section aria-labelledby="parker-river-a-national-wildlife-refuge">
@@ -530,7 +881,7 @@
 <img src="images/carson/figbz.jpg" alt="Buffleheads — Drawing of two small ducks on open water, one swimming with its large white-patched head in view and one flying overhead, with a small flock flying near a distant shoreline." width="1200" height="881" loading="lazy">
 <figcaption>Buffleheads — Drawing of two small ducks on open water, one swimming with its large white-patched head in view and one flying overhead, with a small flock flying near a distant shoreline.</figcaption>
 </figure>
-<h4>Swanquarter</h4>
+<h3 class="sub">Swanquarter</h3>
 <p>The Swanquarter National Wildlife Refuge, like Swanquarter Bay and the town of Swanquarter, takes its name from the great flocks of swans that the early settlers found each winter in all the waters of the region. Swanquarter Refuge still has its wintering swans, although in much smaller numbers than at nearby Mattamuskeet. At Swanquarter the ducks now greatly outnumber either swans or geese.</p>
 <p>This refuge was established chiefly for the diving ducks which include such important game species as redheads, scaups, goldeneyes, and buffleheads.</p>
 <p>One of the principal winter foods of the divers was eelgrass. In the 1930’s, a disease swept the eelgrass beds along the entire coast, but at Swanquarter, as well as in other sections, this important plant now is showing encouraging signs of recovery. As the patches of eelgrass spread over its bays again, Swanquarter may be expected to attract even larger numbers of divers than are found there today.</p>
@@ -545,7 +896,7 @@
 <img src="images/carson/figcb.jpg" alt="Snow geese — Drawing of a white goose in flight, wings spread and neck stretched forward, with black wing tips; a second, smaller goose flies in the upper left corner." width="1200" height="929" loading="lazy">
 <figcaption>Snow geese — Drawing of a white goose in flight, wings spread and neck stretched forward, with black wing tips; a second, smaller goose flies in the upper left corner.</figcaption>
 </figure>
-<h4>Pea Island</h4>
+<h3 class="sub">Pea Island</h3>
 <p>The Pea Island National Wildlife Refuge lies in a section that only recently was one of the most remote and inaccessible places on the Atlantic coast—the North Carolina banks south of Roanoke Island—bounded on one side by Pamlico Sound, on the other by the open Atlantic. These narrow barrier islands, consisting of beach, dunes, and marsh, are roadless and have been considered beyond the limits of automobile travel. Now jeeps and command cars make travel over the trackless beaches possible, although still hazardous and demanding skill; magazine articles and newspapers proclaim the quaintness of this unspoiled land with its scattered fishing villages, and the mounting influx of sport fishermen and tourists is fast destroying the solitude that was Pea Island’s.</p>
 <p>The Pea Island refuge begins at Oregon Inlet and runs south almost to the town of Rodanthe. It includes about 5,880 acres. This narrow island is one of the winter homes of the greater snow goose, accommodating probably half of the entire population of this bird, of which there are not more than 20 to 30 thousand in the world. Many Canada geese and brant come here, as well as practically all species of ducks that winter anywhere on the North Carolina coast. Pea Island is one of the finest places on the coast to observe the seasonal migrations of the shorebirds, of which two species—the willet and Wilson’s plover—nest on the refuge.</p>
 <p>Since the refuge was established in 1938, much development work has been done to stabilize the dunes and to create fresh water marshes by building dykes.</p>
@@ -583,7 +934,7 @@
 <p>While the enforcement of laws to protect and foster wildlife must remain a governmental responsibility, conservation in the United States owes much of its effectiveness to the interest and participation of individuals and private organizations. Some of these groups sponsor research, some acquire and maintain lands for sanctuaries, others actively work to restore and improve wildlife habitats. By their advocacy of constructive measures and their opposition to waste and destruction of our natural resources, these organizations collectively represent a powerful force for conservation.</p>
 <p>The pages that follow tell briefly the story of wildlife conservation in North America, with examples chosen largely from the United States. They describe the difficulties and discouragements of attempting to preserve our wildlife in a modern world, in which the advance of civilization is too often a destructive one. These problems are not confined to the United States; they are met, with differences only of detail and degree, wherever a nation is fighting to preserve its natural resources.</p>
 <p>Like the resource it seeks to protect, wildlife conservation must be dynamic, changing as conditions change, seeking always to become more effective. We in the United States have much to accomplish before we can feel assured of passing on to future generations a land as richly endowed in natural wealth as the one we live in.</p>
-<h4>Migratory Birds—A Hemisphere Resource</h4>
+<h3 class="sub">Migratory Birds—A Hemisphere Resource</h3>
 <p>The nations of the Western Hemisphere have one great living resource which they possess in common—the migratory birds. Including long-range migrants like the plovers, sandpipers, hawks, ducks, swallows, and warblers, these birds belong to all the countries of North, Central, and South America, and of the Caribbean region. In their migrations between summer and winter homes they freely cross international boundaries, and some range all the way from the southern part of South America to the shores of the Arctic Ocean.</p>
 <p>Like all living creatures, the migratory birds must have food, shelter, and suitable conditions for breeding. No one country has it in its power to provide all these requirements for the migrants, for the birds pass only a part of the year in any one place. For example, Canada and Alaska contain most of the breeding areas of North American waterfowl; the United States of America, Mexico, Central America, and parts of South America contain the wintering grounds, which are equally important for the survival of the birds.</p>
 <p>Recognizing this basic conservation fact, the United States and Great Britain concluded a Migratory Bird Treaty in 1916. This treaty obligated both contracting governments to protect ducks, geese, and most other migratory birds. A similar treaty, including also the protection of game mammals, was concluded between the United States and Mexico in 1937. In 1941 many of the countries of the Western Hemisphere joined in the Inter-American Convention on Nature Protection and Wildlife Preservation. While indicating the interest of the signatory countries in conservation, this instrument is very general with no provision for active measures. There is, therefore, a need for additional treaties similar to those between the United States and Great Britain and Mexico, aimed specifically at the protection of migratory birds.</p>
@@ -649,7 +1000,7 @@
 <img src="images/carson/figcq.jpg" alt="American bison on the National Bison Range, Montana — Photograph of one dark bison grazing with its head down, seen in side view against the sky on a grassy hillside." width="1200" height="765" loading="lazy">
 <figcaption>American bison on the National Bison Range, Montana — Photograph of one dark bison grazing with its head down, seen in side view against the sky on a grassy hillside.</figcaption>
 </figure>
-<h4>Big Game Mammals</h4>
+<h3 class="sub">Big Game Mammals</h3>
 <p>When colonists from the Old World first came to North America, immense numbers of wild animals inhabited the continent. To these early settlers, it must have seemed that the deer, bear, elk, moose, and other large game animals could never be reduced seriously in numbers, so great then was their abundance.</p>
 <p>For furs, for food, and later for sport these North American mammals were hunted relentlessly. Forests were cut down, prairies were transformed into cultivated lands, plains became grazing lands for domesticated stock. Soon there were not enough of the wilderness areas that the wild animals needed. From this cause, and from unregulated and often wanton slaughter, their numbers declined to a small remnant of the original herds.</p>
 <p>Perhaps the best-known of all the native mammals, the American bison, ran a swift course to near extinction. By 1890, there were probably no more than 500 of these animals remaining in the United States, although once there may have been 50 million.</p>
@@ -677,7 +1028,7 @@
 <img src="images/carson/figcu.jpg" alt="Below: Elk at Jackson Hole, Wyoming — A line of elk, at least four, walk across open snow, the one at left carrying antlers and a smaller animal partly hidden behind it." width="1200" height="487" loading="lazy">
 <figcaption>Below: Elk at Jackson Hole, Wyoming — A line of elk, at least four, walk across open snow, the one at left carrying antlers and a smaller animal partly hidden behind it.</figcaption>
 </figure>
-<h4>Saving Endangered Species</h4>
+<h3 class="sub">Saving Endangered Species</h3>
 <p>Of its native bird fauna, North America has had the unhappy experience of seeing several species reduced to the point of actual extinction. Such vanished species include the great auk, the passenger pigeon, the heath hen, the Labrador duck, the Carolina paroquet, and probably the Eskimo curlew. For these birds, the conservation movement in the United States came too late. A few others, like the trumpeter swan and the whooping crane, have come perilously close to extermination, but small populations remain.</p>
 <p>To protect one of the few remaining colonies of the trumpeter swan, the largest and one of the most beautiful of North American waterfowl, the Red Rock Lakes Refuge was established by the United States Government in 1935. The Red Rock Lakes lie in a high and remote valley in the mountains of southern Montana. Here the swans find plenty of food, good nesting cover, and freedom from disturbance. The winters are severe, but large springs at the head of the chain of lakes keep an area of open water. This is important, because this remnant colony seems to have lost the migratory instinct of its ancestors, and remains in the vicinity throughout the year.</p>
 <p>Since the refuge was established, the swan population in the United States has increased from 75 birds in 1935 to 350 in 1947. About half of this number are at Red Rock Lakes, the remainder in nearby Yellowstone Park and on adjacent small lakes. The Fish and Wildlife Service has transferred small numbers of young swans from Red Rock Lakes to Oregon, Nevada, and Wyoming, where new colonies may eventually be established.</p>
@@ -691,7 +1042,7 @@
 </figure>
 <p>The whooping crane is in even more serious danger. According to the latest estimate there are not more than 30 of these picturesque birds left on the North American continent today. Agricultural developments in the central part of the United States and in the Canadian prairies have destroyed most of its breeding grounds. The few survivors nest in some remote Canadian marshlands, and winter on the coast of the Gulf of Mexico. The Fish and Wildlife Service has established the 47,000-acre Aransas Refuge in Texas to help provide suitable wintering areas. About 25 of the birds are found at Aransas each winter.</p>
 <p>The conservation of the whooping crane is made especially difficult by its annual migration of 3,000 miles through the interior of the continent, which exposes it to great dangers, although for many years it has been given full legal protection. Discovery of its nesting grounds and protection of the birds while raising their young, together with increased public interest in the enforcement of existing laws, may in time rescue this bird from its present precarious situation.</p>
-<h4>Cooperation in Wildlife Restoration</h4>
+<h3 class="sub">Cooperation in Wildlife Restoration</h3>
 <p>The wildlife resources belong to all the people; to conserve them successfully the landowners and the local and Federal governments, through their various conservation agencies, must coordinate their efforts in a program with clearly defined goals. In the United States, such cooperation is now achieving excellent results in practical conservation.</p>
 <p>In 1937, the Congress of the United States adopted legislation known as the Federal Aid in Wildlife Restoration Act, making possible active conservation programs in all of the States, and in Alaska, Hawaii, Puerto Rico, and the Virgin Islands. Several hundred cooperative projects are now under way, including surveys and investigations, acquisition of land, and development of wildlife habitats.</p>
 <p>The need of surveys and research to discover basic facts is now widely recognized. Today every State has its staff of wildlife technicians. Before the Federal-Aid program was begun many of them — perhaps half — had none. Many States, especially those with large populations of game mammals, make annual population surveys, which form the basis of game laws regulating open or closed seasons.</p>
@@ -746,7 +1097,7 @@
 <img src="images/carson/figdi.jpg" alt="Seining for sardines on the coast of California — Seen from above, a fishing boat with two masts floats on open water with a small boat alongside, and a wide curve of floats marks the net encircling the water around it." width="1200" height="1130" loading="lazy">
 <figcaption>Seining for sardines on the coast of California — Seen from above, a fishing boat with two masts floats on open water with a small boat alongside, and a wide curve of floats marks the net encircling the water around it.</figcaption>
 </figure>
-<h4>Marine Fisheries</h4>
+<h3 class="sub">Marine Fisheries</h3>
 <p>Throughout the world, the most important sources of protein food are the marine fisheries. In the Western Hemisphere, these fisheries have a long history of exploitation. They were the basis of the first organized industry in the New World. Fishing by European vessels was carried on along the shores of eastern North America long before the original colonies were established. During the first difficult years of gaining a foothold on strange shores, the fisheries were a ready source of food for the colonists. They provided the first items of export trade by the New England settlements. During the four centuries since the first Old World vessel crossed to the North American banks, they have provided employment and profit for many thousands of our citizens, and recreation for additional millions.</p>
 <p>From their small beginning, the fisheries have spread to all parts of our coastline and have been established in many lakes and rivers of the interior. Collectively, these industries yield a commercial catch of 4 to 5 billion pounds annually, and employ about 125,000 fishermen. Marine species make up more than 90 percent of the total tonnage.</p>
 <p>The heaviest producers among United States marine fisheries are the pelagic or surface-living species like the sardines, menhaden, tuna, and sea herrings. As a group, these fishes are widely used for canning, yield high quality meal and oil, are seldom eaten fresh. The large group of bottom-feeding fish found on offshore banks, most abundantly in northern latitudes, are the chief sources of supply of the fresh fish markets. These include chiefly the members of the cod family, some of the rockfishes, and the flatfishes like the flounders and halibut. The most valuable fisheries in the United States are those for salmon, of which the largest quantity comes from Alaska. Other species with high market value include such shellfish as shrimp, oysters, clams, crabs, and lobsters.</p>
@@ -818,7 +1169,7 @@
 <img src="images/carson/figdx.jpg" alt="Trout fishing in Yosemite National Park, California — A man in a hat stands on a large boulder beside a shallow, rocky stream, casting a line, with tall evergreen trees rising behind him." width="1066" height="1200" loading="lazy">
 <figcaption>Trout fishing in Yosemite National Park, California — A man in a hat stands on a large boulder beside a shallow, rocky stream, casting a line, with tall evergreen trees rising behind him.</figcaption>
 </figure>
-<h4>Inland Fishery Resources</h4>
+<h3 class="sub">Inland Fishery Resources</h3>
 <p>The fisheries of the inland lakes, ponds, and streams are probably the most important single recreational resource possessed by the United States. It is estimated on the basis of license statistics and other information that about 20 million persons engage in sport fishing each year. The annual catch of these fishermen probably amounts to at least 250 million pounds. The inland waters also support commercial fisheries. These, however, are conducted on a much smaller scale than the marine fisheries, and their total yield—about 85 million pounds—is a small fraction of the oceanic harvest. In addition to the catch of organized commercial fisheries, an unknown but fairly large poundage of fresh-water fish is caught by individuals fishing for their own use as food.</p>
 <p>On the whole, the fresh-water fisheries are more easily harmed by human activities than the great ocean fisheries, which, by their very remoteness, are largely immune to injury except from overfishing. The inland waters, on the other hand, can be poisoned by industrial pollution, depleted by diversion of water for irrigation, or choked with erosion silt. Compared with this destruction of their essential habitat, the damage to fresh-water fishes by excessive fishing is, except for particular localities, relatively slight.</p>
 <p>In early attempts to manage fresh water fisheries, chief reliance was placed on artificial propagation in hatcheries. This activity is still extremely important, particularly in relation to trout. In fishing waters near large centers of population, or in public recreational areas like the National Parks, sport fishing could not be maintained throughout a season without regular plantings of hatchery fish. Now, it is realized, however, that hatching and stocking fish must be accompanied by the protection and restoration of habitat.</p>
@@ -859,7 +1210,7 @@
 <img src="images/carson/figef.jpg" alt="A close view of a small group of large fur seals lying and sitting among dark rocks, several raising their heads and showing their flippers." width="1200" height="724" loading="lazy">
 <figcaption>A close view of a small group of large fur seals lying and sitting among dark rocks, several raising their heads and showing their flippers.</figcaption>
 </figure>
-<h4>International Cooperation in Fishery Conservation</h4>
+<h3 class="sub">International Cooperation in Fishery Conservation</h3>
 <p>Fur seals.—One of the most impressive stories in the history of conservation is that of the North American fur seals. These seals, concentrated during their breeding season on the Pribilof Islands in Bering Sea, were once on the verge of extinction; by careful management based on international agreement, they have been fully restored. This herd now contains about 80 percent of all the fur seals in the world, smaller herds being found off Uruguay, the Cape of Good Hope, and in the Western Pacific off Siberia.</p>
 <p>When the Pribilof Islands were discovered in 1786 by the Russian navigator, Gerassim Pribilof, there were probably 4 million seals on the Islands. About a hundred years later, in 1867, the United States acquired possession of the seals through the purchase of Alaska and the adjacent islands from Russia. During the interval, intensive sealing had reduced the herd to about 3 million.</p>
 <p>Ruthless exploitation of the fur seals continued. Besides the excessive kill, the most harmful practice was pelagic sealing, or the killing of seals at sea. This was done by the fishermen of several countries—Canada, the United States, and Japan. It was particularly destructive because it often resulted in the killing of the mother seals, whose pups then died of starvation.</p>
@@ -899,7 +1250,7 @@
 <img src="images/carson/figej.jpg" alt="El Zarco trout hatchery at Salazar, Mexico — A long, light-colored building stands at the edge of a forested mountainside, with rows of small rectangular ponds laid out on the open ground in front of it." width="1200" height="886" loading="lazy">
 <figcaption>El Zarco trout hatchery at Salazar, Mexico — A long, light-colored building stands at the edge of a forested mountainside, with rows of small rectangular ponds laid out on the open ground in front of it.</figcaption>
 </figure>
-<h4>Inter-American Cooperation in Conservation</h4>
+<h3 class="sub">Inter-American Cooperation in Conservation</h3>
 <p>The study and solution of conservation problems of common interest to the people of all the American Republics has been aided during the past ten years by the United States Government through its Interdepartmental Committee on Scientific and Cultural Cooperation. This Committee implements resolutions concerning technical cooperation adopted by conferences of American Republics. Its program provides a practical plan, through exchanges of information and technical skills, for conserving and developing the fishery and wildlife resources of the American Republics. Some of these resources belong only to one or two nations; others, especially the migratory fishes and birds, move freely across international boundaries, and their conservation is important to all nations which share them.</p>
 <p>The first of these cooperative projects was carried out with the Government of Peru, which had become interested in investigating the extent of its fishery resources and, if possible, increasing them. In 1941, at the request of Peru, the United States sent a mission of three fishery experts, equipped with a fishing vessel and special gear and apparatus, to explore the Peruvian fisheries. Expenses were paid by the Peruvian Government. At the time of the investigation, the problem of increasing supplies of protein foods was made especially urgent because of disturbed world conditions. The mission assembled much basic information and made specific recommendations for the development of the industry and more efficient utilization of its products.</p>
 <p>Similar requests from other nations followed. A survey of the entire Caribbean area was made in 1942. As was true of most sections of Latin America, little was known about the extent and potential productiveness of the fisheries of the Caribbean. Critical wartime conditions made increased local production of foodstuffs a necessity. The mission covered some 30,000 miles of coastline and was completed in about seven months. It visited every capital city, and made field surveys of fishing areas in almost every country.</p>

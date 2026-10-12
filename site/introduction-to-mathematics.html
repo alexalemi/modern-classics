@@ -19,8 +19,359 @@
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=navigation" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 	<link rel="preload" href="fonts/libre-caslon-text-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="stylesheet" href="fonts.css">
-	<link rel="stylesheet" href="book.css">
+	<style>
+/* Fonts for every page (front pages and book pages), served from this site
+   rather than Google Fonts: a third-party
+   stylesheet blocked rendering for ~0.8 s on mobile (PageSpeed, 2026-10-12).
+   Oswald, Yellowtail and Libre Caslon Text (SIL Open Font License), latin and
+   latin-ext subsets as Google serves them, in site/fonts/. */
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* The book pages. Shared by every page assemble.py writes; fonts in fonts.css.
+
+   LEGIBILITY FIRST. The running text is set in the best screen serif the
+   reader's own device has (Charter on Apple, Sitka Text on Windows, Georgia
+   or Noto Serif elsewhere), near-black on white, 19-20px, ~66 characters to
+   the line. The Emend look (Libre Caslon Text, navy, the cream band, Oswald
+   labels) is kept to the title band, the headings and the controls. */
+
+:root {
+  --page:  #ffffff;
+  --text:  #1c1c1c;
+  --ink:   #1b314d;     /* navy: headings, links, buttons */
+  --cream: #f4efe2;
+  --soft:  #5a6472;
+  --rule:  #ddd6c8;
+  --link:  #1f4f86;
+  --plate-bg: #ffffff;
+  --reading: Charter, "Bitstream Charter", "Sitka Text", Georgia, "Noto Serif", serif;
+  --display: "Libre Caslon Text", Georgia, serif;
+  --label:   "Oswald", "Arial Narrow", sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page:  #14181e;
+    --text:  #e4e0d8;
+    --ink:   #e8e2d4;
+    --cream: #1d2430;
+    --soft:  #a3adba;
+    --rule:  #343c48;
+    --link:  #9cc2e6;
+  }
+  /* plates and diagrams are drawn on white paper; keep them on it, slightly dimmed */
+  figure img { opacity: .92; }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html {
+  background: var(--page);
+  color: var(--text);
+  font-size: 20px;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--reading);
+  line-height: 1.65;
+  font-kerning: normal;
+}
+
+main { max-width: 34rem; margin: 0 auto; padding: 0 1rem 5rem; }
+
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+
+/* ---------- title band ---------- */
+
+.title-block {
+  background: var(--cream);
+  padding: 1.6rem 1rem 1.8rem;
+  margin-bottom: 2rem;
+}
+.title-inner {
+  max-width: 44rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.8rem;
+  align-items: center;
+}
+.title-block .series {
+  grid-column: 1 / -1;
+  margin: 0 0 0.2rem;
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.title-block .series a { color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 0.55rem; }
+.title-block .series a:hover span { text-decoration: underline; }
+.title-block .series img { height: 1.8rem; width: auto; }
+.cover img {
+  display: block;
+  width: 150px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+}
+.title-text { min-width: 0; }
+h1 {
+  font: 700 2rem/1.15 var(--display);
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+  text-align: left;
+}
+.title-line { margin: 0 0 0.3rem; font-size: 0.95rem; color: var(--ink); }
+.title-line.byline { font-weight: 700; }
+.dates { margin: 0 0 0.9rem; font-size: 0.85rem; color: var(--soft); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.button {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid var(--ink);
+  font: 500 0.75rem/1.2 var(--label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+}
+.button.primary { background: var(--ink); color: var(--page); }
+.button:hover { text-decoration: underline; }
+
+/* phones: a small cover beside the title, so the text starts sooner */
+@media (max-width: 36rem) {
+  .title-block { padding: 1.1rem 1rem 1.4rem; }
+  .title-inner { grid-template-columns: 76px 1fr; gap: 0.9rem; align-items: start; }
+  .cover img { width: 76px; height: 114px; }
+  h1 { font-size: 1.45rem; }
+  .actions { grid-column: 1 / -1; }
+}
+
+/* ---------- running text ---------- */
+
+.intro-note { font-style: italic; font-size: 0.9rem; color: var(--soft); }
+
+h2, h3, h4 {
+  font-family: var(--display);
+  color: var(--ink);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+h2 { font-size: 1.45rem; margin: 3.2rem 0 1rem; }
+h3 { font-size: 1.2rem; margin: 2.8rem 0 0.9rem; }
+h4, h3.sub { font-size: 1rem; margin: 2rem 0 0.8rem; font-style: italic; }
+h2.center { text-align: center; font-size: 1.6rem; margin-top: 4rem; }
+
+p, ul, ol { margin: 0 0 1.15em; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+blockquote {
+  margin: 1.5em 0 1.5em 1em;
+  padding-left: 1em;
+  border-left: 3px solid var(--rule);
+  font-style: italic;
+}
+blockquote p { margin-bottom: 0.8em; }
+
+pre.outline {
+  font-family: var(--reading);
+  white-space: pre-wrap;
+  line-height: 1.6;
+  margin: 0 0 1.15em;
+}
+
+img.glyph { vertical-align: middle; display: inline; }
+span.frac, span.stack { display: inline-block; vertical-align: middle; text-align: center; }
+span.frac > span, span.stack > span { display: block; }
+span.frac > span.num { border-bottom: 1px solid currentColor; }
+span.stack.brace { border-left: 2px solid currentColor; border-right: 2px solid currentColor; border-radius: 0.6em; padding: 0 0.3em; }
+math { font-size: 1.05em; }
+
+figure { margin: 2.2em auto; text-align: center; }
+figure + figure { margin-top: 1em; }
+figure img { max-width: 100%; height: auto; background: var(--plate-bg); }
+figcaption {
+  margin-top: 0.6em;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--soft);
+  text-align: left;
+}
+
+table.plates { width: 100%; margin: 2.5em 0; border-collapse: collapse; line-height: 1.5; }
+table.plates td { padding: 0.4em 0.8em; vertical-align: middle; border-bottom: 1px solid var(--rule); }
+table.plates tr:last-child td { border-bottom: none; }
+table.plates figure, table.plates figure + figure { margin: 0.4em auto; }
+table.plates figcaption { display: none; }
+
+/* page locators: a printed page and quarter, for books that cite
+   themselves by them (Helmholtz: "see p. 77c") */
+span.loc { font-size: 0.65em; color: var(--soft); vertical-align: 0.3em; padding: 0 0.15em; font-style: normal; }
+a.ref { color: inherit; text-decoration: underline dotted; }
+span.sc { font-variant: small-caps; }
+.center { text-align: center; }
+.subtitle { text-align: center; font-style: italic; }
+
+/* ---------- contents ---------- */
+
+nav.contents h2 { margin-top: 0; }
+.toc-book { font-family: var(--display); font-weight: 700; margin: 1.2em 0 0.4em; color: var(--ink); }
+.toc-list { list-style: none; padding-left: 1.2em; margin: 0 0 1em; }
+.toc-list li { margin-bottom: 0.3em; line-height: 1.4; }
+nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
+
+/* ---------- reading aids (book.js) ---------- */
+
+.resume {
+  margin: 0 0 1.5rem;
+  padding: 0.7rem 1rem;
+  background: var(--cream);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+.resume[hidden] { display: none; }
+
+.to-contents {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 5;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--page);
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+.to-contents.show { opacity: .92; pointer-events: auto; }
+
+@media (max-width: 36rem) {
+  html { font-size: 18px; }
+}
+
+@media print {
+  .title-block { background: none; }
+  .actions, .to-contents, .resume { display: none; }
+}
+</style>
 	<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "An Introduction to Mathematics", "author": {"@type": "Person", "name": "Alfred North Whitehead"}, "inLanguage": "en", "url": "https://emend.press/introduction-to-mathematics.html", "description": "What mathematics is, from variables to the calculus, by the co-author of Principia Mathematica. Typeset from the transcription's TeX. A restored edition, free to read online and as an ebook.", "publisher": {"@type": "Organization", "name": "Emend Press", "url": "https://emend.press/", "logo": "https://emend.press/apple-touch-icon.png"}, "isAccessibleForFree": true, "isPartOf": {"@type": "BookSeries", "name": "Modern Classics", "url": "https://emend.press/"}, "image": "https://emend.press/covers/introduction-to-mathematics.jpg", "datePublished": "1911", "workExample": {"@type": "Book", "bookFormat": "https://schema.org/EBook", "encodingFormat": "application/epub+zip", "url": "https://emend.press/ebooks/alfred-north-whitehead_an-introduction-to-mathematics.epub"}}</script>
 </head>
 
@@ -167,7 +518,7 @@
 <p>However, we have now got our formula for the force of attraction. If we call this force <math alttext="F" xmlns="http://www.w3.org/1998/Math/MathML"><mi>F</mi></math>, it is <math alttext="F = k\dfrac{mM}{d^{2}}" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>F</mi><mo>=</mo><mi>k</mi><mfrac><mrow><mi>m</mi><mi>M</mi></mrow><msup><mi>d</mi><mn>2</mn></msup></mfrac></mrow></math>, giving the correlation between the variables <math alttext="F" xmlns="http://www.w3.org/1998/Math/MathML"><mi>F</mi></math>, <math alttext="m" xmlns="http://www.w3.org/1998/Math/MathML"><mi>m</mi></math>, <math alttext="M" xmlns="http://www.w3.org/1998/Math/MathML"><mi>M</mi></math>, and <math alttext="d" xmlns="http://www.w3.org/1998/Math/MathML"><mi>d</mi></math>. We all know the story of how it was found out. Newton, it states, was sitting in an orchard and watched the fall of an apple, and then the law of universal gravitation burst upon</p>
 <p>his mind. It may be that the final formulation of the law occurred to him in an orchard, as well as elsewhere—and he must have been somewhere. But for our purposes it is more instructive to dwell upon the vast amount of preparatory thought, the product of many minds and many centuries, which was necessary before this exact law could be formulated. In the first place, the mathematical habit of mind and the mathematical procedure explained in the previous two chapters had to be generated; otherwise Newton could never have thought of a formula representing the force between <em>any</em> two masses</p>
 <p>at <em>any</em> distance. Again, what are the meanings</p>
-<h4>of the terms employed, Force, Mass, Distance?</h4>
+<h3 class="sub">of the terms employed, Force, Mass, Distance?</h3>
 <p>Take the easiest of these terms, Distance. It seems very obvious to us to conceive all material things as forming a definite geometrical whole, such that the distances of the various parts are measurable in terms of some unit length, such as a mile or a yard. This is almost the first aspect of a material structure which occurs to us. It is the gradual outcome of the study of geometry and of the theory of measurement. Even now, in certain cases, other modes of thought are convenient. In a mountainous country distances are often reckoned in hours. But leaving distance, the other terms, Force and Mass, are much more obscure. The exact comprehension of the ideas which Newton</p>
 <p>meant to convey by these words was of slow growth, and, indeed, Newton himself was the first man who had thoroughly mastered the true general principles of Dynamics.</p>
 <p>Throughout the middle ages, under the influence of Aristotle, the science was entirely</p>
@@ -472,7 +823,7 @@
 <p><math alttext="\begin{aligned} (+3, +1) + (+2, +6) &amp;= (+5, +7), \\ (+3, -1) + (-2, -6) &amp;= (+1, -7), \\ (+3, +1) + (-3, -1) &amp;= (0, 0). \end{aligned}" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mtable><mtr><mtd columnalign="right"><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mn>3</mn><mo>,</mo><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mn>2</mn><mo>,</mo><mo>+</mo><mn>6</mn><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left"><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mn>5</mn><mo>,</mo><mo>+</mo><mn>7</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right"><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mn>3</mn><mo>,</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>2</mn><mo>,</mo><mo>−</mo><mn>6</mn><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left"><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mn>1</mn><mo>,</mo><mo>−</mo><mn>7</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right"><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mn>3</mn><mo>,</mo><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>3</mn><mo>,</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left"><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mtd></mtr></mtable></math></p>
 <p>The meaning of subtraction is now settled for us. We find that</p>
 <p><math alttext="(x, y) - (u, v) = (x - u, y - v)." display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>−</mo><mi>u</mi><mo>,</mo><mi>y</mi><mo>−</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow></math></p>
-<h4>Thus</h4>
+<h3 class="sub">Thus</h3>
 <p><math alttext="(+3, +2) - (+1, +1) = (+2, +1)," display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mn>3</mn><mo>,</mo><mo>+</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mn>1</mn><mo>,</mo><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mn>2</mn><mo>,</mo><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mrow></math></p>
 <p>and</p>
 <p><math alttext="(+1, -2) - (+2, -4) = (-1, +2)," display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mn>1</mn><mo>,</mo><mo>−</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mn>2</mn><mo>,</mo><mo>−</mo><mn>4</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo>,</mo><mo>+</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mrow></math></p>
@@ -480,7 +831,7 @@
 <p><math alttext="(-1, -2) - (+2, +3) = (-3, -5)." display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo>,</mo><mo>−</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><mo>+</mo><mn>2</mn><mo>,</mo><mo>+</mo><mn>3</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>3</mn><mo>,</mo><mo>−</mo><mn>5</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow></math></p>
 <p>It is easy to see that</p>
 <p><math alttext="(x, y) - (u, v) = (x, y) + (-u, -v)." display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mi>u</mi><mo>,</mo><mo>−</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow></math></p>
-<h4>Also</h4>
+<h3 class="sub">Also</h3>
 <p><math alttext="(x, y) - (x, y) = (0, 0)." display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow></math></p>
 <p>Hence <math alttext="(0, 0)" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow></math> is to be looked on as the zero ordered couple. For example</p>
 <p><math alttext="(x, y) + (0, 0) = (x, y)." display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow></math></p>
@@ -693,7 +1044,7 @@
 <p>he must have felt that, apart from minor extensions, the subject was practically exhausted; and if he could have foreseen the history of science for more than a thousand years, it would have confirmed his belief. Yet in truth the really fruitful ideas in connection with this branch of mathematics had not yet been even touched on, and no one had guessed their supremely important applications in nature. No more impressive warning can be given to those who would confine knowledge and research to what is apparently useful, than the reflection that conic sections were studied for eighteen hundred years merely as an abstract science, without a thought of any utility other than to satisfy the craving for knowledge on the part of mathematicians, and that then at the end of this long period of abstract study, they</p>
 <p>were found to be the necessary key with which to attain the knowledge of one of the most important laws of nature.</p>
 <p>Meanwhile the entirely distinct study of astronomy had been going forward. The</p>
-<h4>great Greek astronomer Ptolemy (died 168 A.D.)</h4>
+<h3 class="sub">great Greek astronomer Ptolemy (died 168 A.D.)</h3>
 <p>published his standard treatise on the subject in the University of Alexandria, explaining the apparent motions among the fixed stars of the sun and planets by the conception of the earth at rest and the sun and the planets circling round it. During the next thirteen hundred years the number and the accuracy of the astronomical observations increased, with the result that the description of the motions of the planets on Ptolemy’s hypothesis had to be made more and more complicated. Copernicus (born</p>
 <p>1473 A.D. and died 1543 A.D.) pointed out that the motions of these heavenly bodies could be explained in a simpler manner if the sun were supposed to rest, and the earth and planets were conceived as moving round it. However, he still thought of these motions as essentially circular, though modified by a set of small corrections arbitrarily superimposed on the primary circular motions. So the matter stood when Kepler was born at Stuttgart</p>
 <p>in Germany in 1571 A.D. There were two sciences, that of the geometry of conic sections and that of astronomy, both of which</p>
@@ -777,7 +1128,7 @@
 <p>from fig. 21 that in <math alttext="y = \dfrac{1}{x}" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>y</mi><mo>=</mo><mfrac><mn>1</mn><mi>x</mi></mfrac></mrow></math>, if we keep to positive values only and exclude the origin, we obtain a continuous function. Similarly the same function, if we keep to negative values only, excluding the origin, is continuous. Again the function which is graphed in fig. 20 is continuous between <math alttext="B" xmlns="http://www.w3.org/1998/Math/MathML"><mi>B</mi></math> and <math alttext="C_{1}" xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>C</mi><mn>1</mn></msub></math>, and between <math alttext="C_{1}" xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>C</mi><mn>1</mn></msub></math> and <math alttext="C_{2}" xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>C</mi><mn>2</mn></msub></math>, and between <math alttext="C_{2}" xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>C</mi><mn>2</mn></msub></math> and <math alttext="C_{3}" xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>C</mi><mn>3</mn></msub></math>, and so on, always in each case excluding the end points. It is, however, easy to find functions such that their discontinuities occur at all points. For example, consider a function <math alttext="f(x)" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></math>, such that when <math alttext="x" xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi></math> is any fractional number <math alttext="f(x) = 1" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn></mrow></math>, and when <math alttext="x" xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi></math> is any incommensurable number <math alttext="f(x) = 2" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>2</mn></mrow></math>. This function is discontinuous at all points.</p>
 <p>Finally, we will look a little more closely at the definition of continuity given above. We have said that a function is continuous when its value only alters gradually for gradual alterations of the argument, and is discontinuous when it can alter its value by sudden jumps. This is exactly the sort of definition which satisfied our mathematical forefathers and no longer satisfies modern mathematicians. It is worth while to spend some time over it; for when we understand the modern objections to it, we shall have gone a long way towards the understanding of the spirit of modern mathematics. The</p>
 <p>whole difference between the older and the newer mathematics lies in the fact that vague half-metaphorical terms like “gradually” are no longer tolerated in its exact statements. Modern mathematics will only admit statements and definitions and arguments which exclusively employ the few simple ideas about number and magnitude and variables on which the science is founded. Of two numbers one can be greater or less than the other; and one can be such and such a multiple of the other; but there is no relation of “graduality” between two numbers, and hence the term is inadmissible. Now this may seem at first sight to be great pedantry. To this charge there are two answers. In the first place, during the first half of the nineteenth century it was found by some great mathematicians, especially Abel in</p>
-<h4>Sweden, and Weierstrass in Germany, that</h4>
+<h3 class="sub">Sweden, and Weierstrass in Germany, that</h3>
 <p>large parts of mathematics as enunciated in the old happy-go-lucky manner were simply wrong. Macaulay in his essay on Bacon</p>
 <p>contrasts the certainty of mathematics with the uncertainty of philosophy; and by way of a rhetorical example he says, “There has been no reaction against Taylor’s theorem.”</p>
 <p>He could not have chosen a worse example. For, without having made an examination of English text-books on mathematics contemporary with the publication of this essay, the</p>
@@ -1019,7 +1370,7 @@
 <p>Thus three terms will do for the whole interval,</p>
 <p>though, of course, for some parts of the interval it is more than is necessary. Notice that, because <math alttext="1 + x + x^{2} + \dots + x^{n} + \dots" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>1</mn><mo>+</mo><mi>x</mi><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>…</mi><mo>+</mo><msup><mi>x</mi><mi>n</mi></msup><mo>+</mo><mi>…</mi></mrow></math> is convergent (though not uniformly) throughout the interval <math alttext="-1" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>−</mo><mn>1</mn></mrow></math> to <math alttext="+1" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>+</mo><mn>1</mn></mrow></math>, for each value of <math alttext="x" xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi></math> in the interval some number of terms <math alttext="n" xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math> can be found which will satisfy a desired standard of approximation; but, as we take <math alttext="x" xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi></math> nearer and nearer to either end value <math alttext="+1" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>+</mo><mn>1</mn></mrow></math> or <math alttext="-1" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>−</mo><mn>1</mn></mrow></math>, larger and larger values of <math alttext="n" xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math> have to be employed.</p>
 <p>It is curious that this important distinction between uniform and non-uniform convergence was not published till 1847 by Stokes—afterwards,</p>
-<h4>Sir George Stokes—and later, independently in 1850 by Seidel, a German</h4>
+<h3 class="sub">Sir George Stokes—and later, independently in 1850 by Seidel, a German</h3>
 <p>mathematician.</p>
 <p>The critical points, where non-uniform convergence comes in, are not necessarily at the limits of the interval throughout which convergence holds. This is a speciality belonging to the geometric series.</p>
 <p>In the case of the geometric series <math alttext="1 + x + x^{2} + \dots + x^{n} + \dots" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>1</mn><mo>+</mo><mi>x</mi><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>…</mi><mo>+</mo><msup><mi>x</mi><mi>n</mi></msup><mo>+</mo><mi>…</mi></mrow></math>, a simple algebraic expression <math alttext="\dfrac{1}{1 - x}" xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mi>x</mi></mrow></mfrac></math> can be given for its limit in its interval of convergence. But this is not always the case. Often we can prove a series to be convergent within a certain interval, though we know nothing more about its limit except that it is the limit of the series.</p>
@@ -1232,7 +1583,7 @@
 </section>
 <section aria-labelledby="bibliography">
 <h2 id="bibliography">Bibliography</h2>
-<h4>Note on the Study of Mathematics</h4>
+<h3 class="sub">Note on the Study of Mathematics</h3>
 <p>The difficulty that beginners find in the study of this science is due to the large amount of technical detail which has been allowed to accumulate in the elementary text-books, obscuring the important ideas.</p>
 <p>The first subjects of study, apart from a knowledge of arithmetic which is presupposed, must be elementary geometry and elementary algebra. The courses in both subjects should be short, giving only the necessary ideas; the algebra should be studied graphically, so that in practice the ideas of elementary coordinate geometry are also being assimilated. The next pair of subjects should be elementary trigonometry and the coordinate geometry of the straight line and circle. The latter subject is a short one; for it really merges into the algebra. The student is then prepared to enter upon conic sections, a very short course of geometrical conic sections and a longer one of analytical conics. But in all these courses great care should be taken not to overload the mind with more</p>
 <p>detail than is necessary for the exemplification of the fundamental ideas.</p>

@@ -19,8 +19,359 @@
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=navigation" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 	<link rel="preload" href="fonts/libre-caslon-text-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="stylesheet" href="fonts.css">
-	<link rel="stylesheet" href="book.css">
+	<style>
+/* Fonts for every page (front pages and book pages), served from this site
+   rather than Google Fonts: a third-party
+   stylesheet blocked rendering for ~0.8 s on mobile (PageSpeed, 2026-10-12).
+   Oswald, Yellowtail and Libre Caslon Text (SIL Open Font License), latin and
+   latin-ext subsets as Google serves them, in site/fonts/. */
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* The book pages. Shared by every page assemble.py writes; fonts in fonts.css.
+
+   LEGIBILITY FIRST. The running text is set in the best screen serif the
+   reader's own device has (Charter on Apple, Sitka Text on Windows, Georgia
+   or Noto Serif elsewhere), near-black on white, 19-20px, ~66 characters to
+   the line. The Emend look (Libre Caslon Text, navy, the cream band, Oswald
+   labels) is kept to the title band, the headings and the controls. */
+
+:root {
+  --page:  #ffffff;
+  --text:  #1c1c1c;
+  --ink:   #1b314d;     /* navy: headings, links, buttons */
+  --cream: #f4efe2;
+  --soft:  #5a6472;
+  --rule:  #ddd6c8;
+  --link:  #1f4f86;
+  --plate-bg: #ffffff;
+  --reading: Charter, "Bitstream Charter", "Sitka Text", Georgia, "Noto Serif", serif;
+  --display: "Libre Caslon Text", Georgia, serif;
+  --label:   "Oswald", "Arial Narrow", sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page:  #14181e;
+    --text:  #e4e0d8;
+    --ink:   #e8e2d4;
+    --cream: #1d2430;
+    --soft:  #a3adba;
+    --rule:  #343c48;
+    --link:  #9cc2e6;
+  }
+  /* plates and diagrams are drawn on white paper; keep them on it, slightly dimmed */
+  figure img { opacity: .92; }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html {
+  background: var(--page);
+  color: var(--text);
+  font-size: 20px;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--reading);
+  line-height: 1.65;
+  font-kerning: normal;
+}
+
+main { max-width: 34rem; margin: 0 auto; padding: 0 1rem 5rem; }
+
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+
+/* ---------- title band ---------- */
+
+.title-block {
+  background: var(--cream);
+  padding: 1.6rem 1rem 1.8rem;
+  margin-bottom: 2rem;
+}
+.title-inner {
+  max-width: 44rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.8rem;
+  align-items: center;
+}
+.title-block .series {
+  grid-column: 1 / -1;
+  margin: 0 0 0.2rem;
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.title-block .series a { color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 0.55rem; }
+.title-block .series a:hover span { text-decoration: underline; }
+.title-block .series img { height: 1.8rem; width: auto; }
+.cover img {
+  display: block;
+  width: 150px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+}
+.title-text { min-width: 0; }
+h1 {
+  font: 700 2rem/1.15 var(--display);
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+  text-align: left;
+}
+.title-line { margin: 0 0 0.3rem; font-size: 0.95rem; color: var(--ink); }
+.title-line.byline { font-weight: 700; }
+.dates { margin: 0 0 0.9rem; font-size: 0.85rem; color: var(--soft); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.button {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid var(--ink);
+  font: 500 0.75rem/1.2 var(--label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+}
+.button.primary { background: var(--ink); color: var(--page); }
+.button:hover { text-decoration: underline; }
+
+/* phones: a small cover beside the title, so the text starts sooner */
+@media (max-width: 36rem) {
+  .title-block { padding: 1.1rem 1rem 1.4rem; }
+  .title-inner { grid-template-columns: 76px 1fr; gap: 0.9rem; align-items: start; }
+  .cover img { width: 76px; height: 114px; }
+  h1 { font-size: 1.45rem; }
+  .actions { grid-column: 1 / -1; }
+}
+
+/* ---------- running text ---------- */
+
+.intro-note { font-style: italic; font-size: 0.9rem; color: var(--soft); }
+
+h2, h3, h4 {
+  font-family: var(--display);
+  color: var(--ink);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+h2 { font-size: 1.45rem; margin: 3.2rem 0 1rem; }
+h3 { font-size: 1.2rem; margin: 2.8rem 0 0.9rem; }
+h4, h3.sub { font-size: 1rem; margin: 2rem 0 0.8rem; font-style: italic; }
+h2.center { text-align: center; font-size: 1.6rem; margin-top: 4rem; }
+
+p, ul, ol { margin: 0 0 1.15em; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+blockquote {
+  margin: 1.5em 0 1.5em 1em;
+  padding-left: 1em;
+  border-left: 3px solid var(--rule);
+  font-style: italic;
+}
+blockquote p { margin-bottom: 0.8em; }
+
+pre.outline {
+  font-family: var(--reading);
+  white-space: pre-wrap;
+  line-height: 1.6;
+  margin: 0 0 1.15em;
+}
+
+img.glyph { vertical-align: middle; display: inline; }
+span.frac, span.stack { display: inline-block; vertical-align: middle; text-align: center; }
+span.frac > span, span.stack > span { display: block; }
+span.frac > span.num { border-bottom: 1px solid currentColor; }
+span.stack.brace { border-left: 2px solid currentColor; border-right: 2px solid currentColor; border-radius: 0.6em; padding: 0 0.3em; }
+math { font-size: 1.05em; }
+
+figure { margin: 2.2em auto; text-align: center; }
+figure + figure { margin-top: 1em; }
+figure img { max-width: 100%; height: auto; background: var(--plate-bg); }
+figcaption {
+  margin-top: 0.6em;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--soft);
+  text-align: left;
+}
+
+table.plates { width: 100%; margin: 2.5em 0; border-collapse: collapse; line-height: 1.5; }
+table.plates td { padding: 0.4em 0.8em; vertical-align: middle; border-bottom: 1px solid var(--rule); }
+table.plates tr:last-child td { border-bottom: none; }
+table.plates figure, table.plates figure + figure { margin: 0.4em auto; }
+table.plates figcaption { display: none; }
+
+/* page locators: a printed page and quarter, for books that cite
+   themselves by them (Helmholtz: "see p. 77c") */
+span.loc { font-size: 0.65em; color: var(--soft); vertical-align: 0.3em; padding: 0 0.15em; font-style: normal; }
+a.ref { color: inherit; text-decoration: underline dotted; }
+span.sc { font-variant: small-caps; }
+.center { text-align: center; }
+.subtitle { text-align: center; font-style: italic; }
+
+/* ---------- contents ---------- */
+
+nav.contents h2 { margin-top: 0; }
+.toc-book { font-family: var(--display); font-weight: 700; margin: 1.2em 0 0.4em; color: var(--ink); }
+.toc-list { list-style: none; padding-left: 1.2em; margin: 0 0 1em; }
+.toc-list li { margin-bottom: 0.3em; line-height: 1.4; }
+nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
+
+/* ---------- reading aids (book.js) ---------- */
+
+.resume {
+  margin: 0 0 1.5rem;
+  padding: 0.7rem 1rem;
+  background: var(--cream);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+.resume[hidden] { display: none; }
+
+.to-contents {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 5;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--page);
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+.to-contents.show { opacity: .92; pointer-events: auto; }
+
+@media (max-width: 36rem) {
+  html { font-size: 18px; }
+}
+
+@media print {
+  .title-block { background: none; }
+  .actions, .to-contents, .resume { display: none; }
+}
+</style>
 	<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "On the Origin of Species", "author": {"@type": "Person", "name": "Charles Darwin"}, "inLanguage": "en", "url": "https://emend.press/origin-of-species.html", "description": "Darwin's patient, overwhelming case for evolution by natural selection. Retold in modern English, free to read online and as an ebook.", "publisher": {"@type": "Organization", "name": "Emend Press", "url": "https://emend.press/", "logo": "https://emend.press/apple-touch-icon.png"}, "isAccessibleForFree": true, "isPartOf": {"@type": "BookSeries", "name": "Modern Classics", "url": "https://emend.press/"}, "image": "https://emend.press/covers/origin-of-species.jpg", "datePublished": "2026", "bookEdition": "Modern English retelling", "isBasedOn": {"@type": "Book", "name": "On the Origin of Species", "author": {"@type": "Person", "name": "Charles Darwin"}, "datePublished": "1859"}, "workExample": {"@type": "Book", "bookFormat": "https://schema.org/EBook", "encodingFormat": "application/epub+zip", "url": "https://emend.press/ebooks/charles-darwin_on-the-origin-of-species.epub"}}</script>
 </head>
 
@@ -1115,454 +1466,454 @@
 <section aria-labelledby="glossary-of-key-scientific-terms-used-in-this-book">
 <h2 id="glossary-of-key-scientific-terms-used-in-this-book">Glossary of Key Scientific Terms Used in This Book</h2>
 <p>(I owe thanks to Mr. W. S. Dallas for this glossary, which was included because several readers told me that some of the terms I used were unclear. Mr. Dallas has tried to explain the terms in as plain a form as possible.)</p>
-<h4>Aberrant</h4>
+<h3 class="sub">Aberrant</h3>
 <p>Species or groups of animals or plants that differ significantly from their closest relatives, making them hard to classify in the same group.</p>
-<h4>Aberration (in Optics)</h4>
+<h3 class="sub">Aberration (in Optics)</h3>
 <p>When light passes through a curved lens, the rays passing through different parts of the lens come to a focus at slightly different distances. This is called spherical aberration. At the same time, the lens acts like a prism and separates white light into its component colors, each focusing at a different distance. This is chromatic aberration.</p>
-<h4>Abnormal</h4>
+<h3 class="sub">Abnormal</h3>
 <p>Departing from the usual rule or pattern.</p>
-<h4>Aborted</h4>
+<h3 class="sub">Aborted</h3>
 <p>An organ is said to be aborted when its development was arrested at a very early stage.</p>
-<h4>Albinism</h4>
+<h3 class="sub">Albinism</h3>
 <p>Albinos are animals that lack the normal pigments (coloring substances) characteristic of their species in the skin and its coverings (fur, feathers, etc.). Albinism is the condition of being an albino.</p>
-<h4>Algae</h4>
+<h3 class="sub">Algae</h3>
 <p>A group of plants that includes ordinary seaweeds and the stringy, filamentous weeds found in fresh water.</p>
-<h4>Alternation of Generations</h4>
+<h3 class="sub">Alternation of Generations</h3>
 <p>A mode of reproduction found in many lower animals, in which an egg produces a form that looks completely different from its parent. This intermediate form then reproduces the parent form — not by laying eggs, but by budding or dividing. The cycle then repeats.</p>
-<h4>Ammonites</h4>
+<h3 class="sub">Ammonites</h3>
 <p>A group of extinct, spiral, chambered shells related to the living nautilus. Unlike the nautilus, the internal walls separating each chamber had complex, wavy patterns where they met the outer shell wall.</p>
-<h4>Analogy</h4>
+<h3 class="sub">Analogy</h3>
 <p>A resemblance between structures that comes from having a similar function rather than a shared ancestry — for example, the wings of insects and birds. Such structures are called analogous, and each is an analogue of the other.</p>
-<h4>Animalcule</h4>
+<h3 class="sub">Animalcule</h3>
 <p>A tiny animal, usually one visible only under a microscope.</p>
-<h4>Annelids</h4>
+<h3 class="sub">Annelids</h3>
 <p>A class of worms whose bodies show a more or less clear division into rings or segments, usually equipped with appendages for movement and with gills. This group includes marine worms, earthworms, and leeches.</p>
-<h4>Antennae</h4>
+<h3 class="sub">Antennae</h3>
 <p>Jointed sensory organs attached to the head in insects, crustaceans, and centipedes, distinct from the mouthparts.</p>
-<h4>Anthers</h4>
+<h3 class="sub">Anthers</h3>
 <p>The tips of the stamens in flowers, where pollen (the fertilizing dust) is produced.</p>
-<h4>Aplacentalia / Aplacentata / Aplacental Mammals</h4>
+<h3 class="sub">Aplacentalia / Aplacentata / Aplacental Mammals</h3>
 <p>See Mammalia.</p>
-<h4>Archetypal</h4>
+<h3 class="sub">Archetypal</h3>
 <p>Relating to the archetype — the idealized primitive body plan on which all members of a group appear to be organized.</p>
-<h4>Articulata</h4>
+<h3 class="sub">Articulata</h3>
 <p>A major division of the animal kingdom characterized by having the body surface divided into rings called segments, some of which bear jointed legs. Includes insects, crustaceans, and centipedes.</p>
-<h4>Asymmetrical</h4>
+<h3 class="sub">Asymmetrical</h3>
 <p>Having two sides that are not alike.</p>
-<h4>Atrophied</h4>
+<h3 class="sub">Atrophied</h3>
 <p>Having had development arrested at a very early stage; shrunken or wasted away.</p>
-<h4>Balanus</h4>
+<h3 class="sub">Balanus</h3>
 <p>The genus that includes common acorn barnacles, which live in abundance on rocky seacoasts.</p>
-<h4>Batrachians</h4>
+<h3 class="sub">Batrachians</h3>
 <p>A class of animals related to reptiles but undergoing a distinctive metamorphosis: the young are typically aquatic and breathe through gills before transforming into adults. Examples include frogs, toads, and newts. (Now generally called amphibians.)</p>
-<h4>Boulders</h4>
+<h3 class="sub">Boulders</h3>
 <p>Large blocks of rock that have been transported, usually by glaciers, and are typically found embedded in clay or gravel.</p>
-<h4>Brachiopoda</h4>
+<h3 class="sub">Brachiopoda</h3>
 <p>A class of marine soft-bodied animals with a two-valved (two-part) shell. They attach to underwater objects by a stalk that passes through an opening in one valve, and they have fringed arms that sweep food toward the mouth.</p>
-<h4>Branchiae</h4>
+<h3 class="sub">Branchiae</h3>
 <p>Gills — organs for breathing underwater.</p>
-<h4>Branchial</h4>
+<h3 class="sub">Branchial</h3>
 <p>Relating to gills.</p>
-<h4>Cambrian System</h4>
+<h3 class="sub">Cambrian System</h3>
 <p>A series of very ancient rocks from the Paleozoic era, lying between the Laurentian and Silurian systems. Until recently, these were considered the oldest rocks containing fossils.</p>
-<h4>Canidae</h4>
+<h3 class="sub">Canidae</h3>
 <p>The dog family, including dogs, wolves, foxes, jackals, and related species.</p>
-<h4>Carapace</h4>
+<h3 class="sub">Carapace</h3>
 <p>The shell covering the front part of the body in crustaceans; also applied to the hard plates of barnacles.</p>
-<h4>Carboniferous</h4>
+<h3 class="sub">Carboniferous</h3>
 <p>The geological formation that includes, among other rocks, the coal measures. It belongs to the oldest (Paleozoic) system of rock formations.</p>
-<h4>Caudal</h4>
+<h3 class="sub">Caudal</h3>
 <p>Of or relating to the tail.</p>
-<h4>Cephalopods</h4>
+<h3 class="sub">Cephalopods</h3>
 <p>The most advanced class of mollusks (soft-bodied animals), characterized by having the mouth surrounded by fleshy arms or tentacles, most of which bear suckers in living species. Examples include cuttlefish and the nautilus.</p>
-<h4>Cetacea</h4>
+<h3 class="sub">Cetacea</h3>
 <p>An order of mammals including whales and dolphins, with fish-shaped bodies, hairless skin, and only the front limbs developed (as flippers).</p>
-<h4>Chelonia</h4>
+<h3 class="sub">Chelonia</h3>
 <p>An order of reptiles including turtles and tortoises.</p>
-<h4>Cirripedes</h4>
+<h3 class="sub">Cirripedes</h3>
 <p>An order of crustaceans including barnacles and acorn shells. Their larvae look like typical crustacean young, but as adults they permanently attach to surfaces — either directly or by a stalk — and enclose their bodies in a shell made of several chalky plates. Two of these plates can open to let out a bundle of curled, jointed tentacles (which are actually modified limbs).</p>
-<h4>Coccus</h4>
+<h3 class="sub">Coccus</h3>
 <p>A genus of insects including the cochineal bug. The male is a tiny, winged fly, while the female is typically a motionless, berry-shaped mass.</p>
-<h4>Cocoon</h4>
+<h3 class="sub">Cocoon</h3>
 <p>A case, usually made of silk, in which many insects wrap themselves during their second or resting stage (the pupa). In this book, &quot;cocoon stage&quot; is used to mean the pupal stage.</p>
-<h4>Coelospermous</h4>
+<h3 class="sub">Coelospermous</h3>
 <p>A term for fruits of the carrot family (Umbelliferae) that have the seed hollowed out on its inner face.</p>
-<h4>Coleoptera</h4>
+<h3 class="sub">Coleoptera</h3>
 <p>Beetles — an order of insects with biting mouthparts and a first pair of wings that are hardened into protective covers (elytra), which typically meet in a straight line down the middle of the back, shielding the membranous flying wings beneath.</p>
-<h4>Column</h4>
+<h3 class="sub">Column</h3>
 <p>A specialized structure in orchid flowers in which the stamens, style, and stigma (the reproductive parts) are fused together.</p>
-<h4>Compositae / Compositous Plants</h4>
+<h3 class="sub">Compositae / Compositous Plants</h3>
 <p>Plants whose flower heads are made up of many tiny individual flowers (florets) packed together, with the base of the head enclosed by a shared outer covering. Examples include daisies and dandelions.</p>
-<h4>Confervae</h4>
+<h3 class="sub">Confervae</h3>
 <p>Stringy, filamentous weeds found in fresh water.</p>
-<h4>Conglomerate</h4>
+<h3 class="sub">Conglomerate</h3>
 <p>A rock made up of fragments of other rocks or pebbles, cemented together by some binding material.</p>
-<h4>Corolla</h4>
+<h3 class="sub">Corolla</h3>
 <p>The second layer of a flower, usually made up of the colored, leaf-like petals. These may be separate or fused together at the base or throughout.</p>
-<h4>Correlation</h4>
+<h3 class="sub">Correlation</h3>
 <p>The regular co-occurrence of one feature or characteristic with another.</p>
-<h4>Corymb</h4>
+<h3 class="sub">Corymb</h3>
 <p>A cluster of flowers in which the lower flowers have longer stalks, so that all the flowers end up roughly at the same height, forming a flat-topped arrangement.</p>
-<h4>Cotyledons</h4>
+<h3 class="sub">Cotyledons</h3>
 <p>The first leaves of a plant, also called seed leaves.</p>
-<h4>Crustaceans</h4>
+<h3 class="sub">Crustaceans</h3>
 <p>A class of jointed-limbed animals whose body covering is usually hardened by calcium deposits, and who breathe through gills. Examples include crabs, lobsters, and shrimp.</p>
-<h4>Curculio</h4>
+<h3 class="sub">Curculio</h3>
 <p>An old name for the beetles known as weevils, which have four-jointed feet and a head drawn out into a snout-like beak, with the antennae attached to its sides.</p>
-<h4>Cutaneous</h4>
+<h3 class="sub">Cutaneous</h3>
 <p>Of or relating to the skin.</p>
-<h4>Degradation</h4>
+<h3 class="sub">Degradation</h3>
 <p>The wearing down of land by the action of the sea or weather.</p>
-<h4>Denudation</h4>
+<h3 class="sub">Denudation</h3>
 <p>The wearing away of the earth&#x27;s surface by water.</p>
-<h4>Devonian System / Devonian Formation</h4>
+<h3 class="sub">Devonian System / Devonian Formation</h3>
 <p>A series of Paleozoic rocks that includes the Old Red Sandstone.</p>
-<h4>Dicotyledons / Dicotyledonous Plants</h4>
+<h3 class="sub">Dicotyledons / Dicotyledonous Plants</h3>
 <p>A major class of plants characterized by having two seed leaves, by forming new wood between the bark and the old wood (outward growth), and by having leaves with branching, net-like veins. Their flower parts are generally in multiples of five.</p>
-<h4>Differentiation</h4>
+<h3 class="sub">Differentiation</h3>
 <p>The process by which parts or organs that are more or less united in simpler life forms become separated and specialized.</p>
-<h4>Dimorphic</h4>
+<h3 class="sub">Dimorphic</h3>
 <p>Having two distinct forms. Dimorphism is the condition of the same species appearing in two different forms.</p>
-<h4>Dioecious</h4>
+<h3 class="sub">Dioecious</h3>
 <p>Having male and female reproductive organs on separate individuals.</p>
-<h4>Diorite</h4>
+<h3 class="sub">Diorite</h3>
 <p>A type of greenstone (a dark ignite rock).</p>
-<h4>Dorsal</h4>
+<h3 class="sub">Dorsal</h3>
 <p>Of or relating to the back.</p>
-<h4>Edentata</h4>
+<h3 class="sub">Edentata</h3>
 <p>An order of mammals characterized by the absence of at least the middle front teeth in both jaws. Examples include sloths and armadillos.</p>
-<h4>Elytra</h4>
+<h3 class="sub">Elytra</h3>
 <p>The hardened front wings of beetles, which serve as protective covers for the membranous hind wings that are the actual flight organs.</p>
-<h4>Embryo</h4>
+<h3 class="sub">Embryo</h3>
 <p>The young animal developing within the egg or womb.</p>
-<h4>Embryology</h4>
+<h3 class="sub">Embryology</h3>
 <p>The study of how embryos develop.</p>
-<h4>Endemic</h4>
+<h3 class="sub">Endemic</h3>
 <p>Native to and found only in a particular area.</p>
-<h4>Entomostraca</h4>
+<h3 class="sub">Entomostraca</h3>
 <p>A division of crustaceans in which all body segments are usually distinct, the gills are attached to the feet or mouthparts, and the feet are fringed with fine hairs. They are generally small in size.</p>
-<h4>Eocene</h4>
+<h3 class="sub">Eocene</h3>
 <p>The earliest of the three divisions of the Tertiary geological period. Rocks of this age contain a small proportion of shells identical to species still living today.</p>
-<h4>Ephemerous Insects</h4>
+<h3 class="sub">Ephemerous Insects</h3>
 <p>Insects related to the mayfly.</p>
-<h4>Fauna</h4>
+<h3 class="sub">Fauna</h3>
 <p>All the animal species naturally living in a particular country or region, or that lived during a given geological period.</p>
-<h4>Felidae</h4>
+<h3 class="sub">Felidae</h3>
 <p>The cat family.</p>
-<h4>Feral</h4>
+<h3 class="sub">Feral</h3>
 <p>Having returned to a wild state after being domesticated or cultivated.</p>
-<h4>Flora</h4>
+<h3 class="sub">Flora</h3>
 <p>All the plant species growing naturally in a particular country, or that existed during a given geological period.</p>
-<h4>Florets</h4>
+<h3 class="sub">Florets</h3>
 <p>Small, often simplified flowers packed together into a dense cluster or head, as in grasses and dandelions.</p>
-<h4>Foetal</h4>
+<h3 class="sub">Foetal</h3>
 <p>Of or relating to the fetus (an embryo in the course of development).</p>
-<h4>Foraminifera</h4>
+<h3 class="sub">Foraminifera</h3>
 <p>A group of very simple, generally tiny animals with a jelly-like body that can extend and retract delicate thread-like projections for grasping food. They have a shell made of calcium or sand, usually divided into chambers and riddled with tiny holes.</p>
-<h4>Fossiliferous</h4>
+<h3 class="sub">Fossiliferous</h3>
 <p>Containing fossils.</p>
-<h4>Fossorial</h4>
+<h3 class="sub">Fossorial</h3>
 <p>Adapted for digging. The fossorial Hymenoptera are a group of wasp-like insects that burrow into sandy soil to build nests for their young.</p>
-<h4>Frenum</h4>
+<h3 class="sub">Frenum</h3>
 <p>(plural: Frena) A small band or fold of skin.</p>
-<h4>Fungi</h4>
+<h3 class="sub">Fungi</h3>
 <p>(singular: Fungus) A group of non-photosynthetic organisms, of which mushrooms, toadstools, and molds are familiar examples.</p>
-<h4>Furcula</h4>
+<h3 class="sub">Furcula</h3>
 <p>The forked bone (wishbone) formed by the fused collarbones in many birds, such as the chicken.</p>
-<h4>Gallinaceous Birds</h4>
+<h3 class="sub">Gallinaceous Birds</h3>
 <p>An order of birds of which the chicken, turkey, and pheasant are well-known examples.</p>
-<h4>Gallus</h4>
+<h3 class="sub">Gallus</h3>
 <p>The genus of birds that includes the domestic chicken.</p>
-<h4>Ganglion</h4>
+<h3 class="sub">Ganglion</h3>
 <p>A cluster of nerve cells from which nerves branch out, acting as a local nerve center.</p>
-<h4>Ganoid Fishes</h4>
+<h3 class="sub">Ganoid Fishes</h3>
 <p>Fishes covered with distinctive enameled, bony scales. Most of them are now extinct.</p>
-<h4>Germinal Vesicle</h4>
+<h3 class="sub">Germinal Vesicle</h3>
 <p>A tiny sac within animal eggs from which the development of the embryo begins.</p>
-<h4>Glacial Period</h4>
+<h3 class="sub">Glacial Period</h3>
 <p>A period of extreme cold during which enormous ice sheets spread across the earth&#x27;s surface. Glacial periods have occurred repeatedly throughout geological history, but the term usually refers to the end of the Tertiary epoch, when nearly all of Europe experienced arctic-like conditions. (Commonly known as the Ice Age.)</p>
-<h4>Gland</h4>
+<h3 class="sub">Gland</h3>
 <p>An organ that produces and releases some particular substance from the blood (in animals) or sap (in plants). The cells that produce coloring material are called pigment cells.</p>
-<h4>Glottis</h4>
+<h3 class="sub">Glottis</h3>
 <p>The opening of the windpipe into the throat (esophagus).</p>
-<h4>Gneiss</h4>
+<h3 class="sub">Gneiss</h3>
 <p>A rock similar to granite in composition but with a layered or banded structure, formed by the transformation of sedimentary rock after it solidified.</p>
-<h4>Grallatores</h4>
+<h3 class="sub">Grallatores</h3>
 <p>The wading birds (storks, cranes, snipes, etc.), typically having long legs that are bare of feathers above the ankle, with no webbing between the toes.</p>
-<h4>Granite</h4>
+<h3 class="sub">Granite</h3>
 <p>A rock made up essentially of crystals of feldspar and mica embedded in quartz.</p>
-<h4>Habitat</h4>
+<h3 class="sub">Habitat</h3>
 <p>The natural home of a plant or animal.</p>
-<h4>Hemiptera</h4>
+<h3 class="sub">Hemiptera</h3>
 <p>An order (or suborder) of insects with a jointed beak-like mouthpart, and front wings that are hard and horny at the base but thin and membranous at the tips, where they overlap. This group includes the true bugs.</p>
-<h4>Hermaphrodite</h4>
+<h3 class="sub">Hermaphrodite</h3>
 <p>Having both male and female reproductive organs in the same individual.</p>
-<h4>Homology</h4>
+<h3 class="sub">Homology</h3>
 <p>The relationship between body parts that share the same developmental origin, whether in different animals (such as a human arm, a horse&#x27;s foreleg, and a bird&#x27;s wing) or in the same individual (such as the front and hind legs of a four-legged animal, or the repeating segments of a worm or centipede). The latter is called serial homology. Parts related in this way are called homologous, and each is the homologue of the other. In plants, the different parts of a flower are homologous to one another and are generally considered homologous to leaves.</p>
-<h4>Homoptera</h4>
+<h3 class="sub">Homoptera</h3>
 <p>An order (or suborder) of insects that, like the Hemiptera, have a jointed beak, but whose front wings are either entirely membranous or entirely leathery. Cicadas, froghoppers, and aphids are familiar examples.</p>
-<h4>Hybrid</h4>
+<h3 class="sub">Hybrid</h3>
 <p>The offspring of two distinct species.</p>
-<h4>Hymenoptera</h4>
+<h3 class="sub">Hymenoptera</h3>
 <p>An order of insects with biting jaws and usually four membranous wings with relatively few veins. Bees and wasps are familiar examples.</p>
-<h4>Hypertrophied</h4>
+<h3 class="sub">Hypertrophied</h3>
 <p>Excessively or abnormally enlarged.</p>
-<h4>Ichneumonidae</h4>
+<h3 class="sub">Ichneumonidae</h3>
 <p>A family of wasp-like insects whose members lay their eggs inside the bodies or eggs of other insects. (Parasitic wasps.)</p>
-<h4>Imago</h4>
+<h3 class="sub">Imago</h3>
 <p>The final, fully developed (usually winged) adult stage of an insect, capable of reproduction.</p>
-<h4>Indigenes</h4>
+<h3 class="sub">Indigenes</h3>
 <p>The original, native animal or plant inhabitants of a region.</p>
-<h4>Inflorescence</h4>
+<h3 class="sub">Inflorescence</h3>
 <p>The arrangement of flowers on a plant.</p>
-<h4>Infusoria</h4>
+<h3 class="sub">Infusoria</h3>
 <p>A group of microscopic organisms originally named because they were first observed in water that had been used to soak plant material. They have a jelly-like body enclosed in a thin membrane, covered partly or entirely with tiny vibrating hairs (cilia), which they use to swim and to sweep food particles toward their mouths.</p>
-<h4>Insectivorous</h4>
+<h3 class="sub">Insectivorous</h3>
 <p>Feeding on insects.</p>
-<h4>Invertebrata / Invertebrate Animals</h4>
+<h3 class="sub">Invertebrata / Invertebrate Animals</h3>
 <p>Animals that do not have a backbone or spinal column.</p>
-<h4>Lacunae</h4>
+<h3 class="sub">Lacunae</h3>
 <p>Spaces among the tissues of some lower animals that serve as substitutes for blood vessels, allowing body fluids to circulate.</p>
-<h4>Lamellated</h4>
+<h3 class="sub">Lamellated</h3>
 <p>Furnished with thin, plate-like layers.</p>
-<h4>Larva</h4>
+<h3 class="sub">Larva</h3>
 <p>(plural: Larvae) The first stage of an insect&#x27;s life after hatching from the egg, when it usually takes the form of a grub, caterpillar, or maggot.</p>
-<h4>Larynx</h4>
+<h3 class="sub">Larynx</h3>
 <p>The upper part of the windpipe, where it opens into the throat.</p>
-<h4>Laurentian</h4>
+<h3 class="sub">Laurentian</h3>
 <p>A group of extremely ancient, heavily altered rocks, widely found along the St. Lawrence River (hence the name). The earliest known traces of living organisms were found in these rocks.</p>
-<h4>Leguminosae</h4>
+<h3 class="sub">Leguminosae</h3>
 <p>The plant family represented by peas and beans. Their flowers are irregular: one petal stands upright like a banner, while two others form a sheath enclosing the stamens and pistil. The fruit is a pod (legume).</p>
-<h4>Lemuridae</h4>
+<h3 class="sub">Lemuridae</h3>
 <p>A group of primates distinct from monkeys, with some features resembling insect-eating mammals. They have curved or twisted nostrils and a claw (rather than a flat nail) on the first toe of their hind feet.</p>
-<h4>Lepidoptera</h4>
+<h3 class="sub">Lepidoptera</h3>
 <p>An order of insects with a coiled, tube-like mouthpart (proboscis) and four large wings covered with tiny scales. This group includes butterflies and moths.</p>
-<h4>Littoral</h4>
+<h3 class="sub">Littoral</h3>
 <p>Living along the seashore.</p>
-<h4>Loess</h4>
+<h3 class="sub">Loess</h3>
 <p>A fine-grained, chalky deposit of recent (post-Tertiary) age, found extensively in the Rhine valley.</p>
-<h4>Malacostraca</h4>
+<h3 class="sub">Malacostraca</h3>
 <p>The higher division of the crustaceans, including the familiar crabs, lobsters, shrimp, woodlice, and sand hoppers.</p>
-<h4>Mammalia</h4>
+<h3 class="sub">Mammalia</h3>
 <p>The highest class of animals, including the ordinary hairy four-legged animals, the whales, and humans. They are characterized by giving birth to live young and nourishing them with milk from the mother&#x27;s mammary glands.</p>
 <p>A key difference in embryonic development divides this class into two major groups. In one, a structure called the placenta forms a blood-vessel connection between the embryo and the mother — these are the placental mammals, and they make up the vast majority of the class. In the other group, no placenta forms, and the young are born in a very undeveloped state — these are the aplacental mammals, which include the marsupials and the monotremes (like the platypus).</p>
-<h4>Mammiferous</h4>
+<h3 class="sub">Mammiferous</h3>
 <p>Having mammary glands (milk-producing organs). See Mammalia.</p>
-<h4>Mandibles</h4>
+<h3 class="sub">Mandibles</h3>
 <p>In insects, the first (uppermost) pair of jaws, which are typically hard, horn-like biting organs. In birds, the term refers to both upper and lower jaws with their horny coverings. In four-legged animals, the mandible is specifically the lower jaw.</p>
-<h4>Marsupials</h4>
+<h3 class="sub">Marsupials</h3>
 <p>An order of mammals in which the young are born at a very early, undeveloped stage and are carried by the mother in a belly pouch (marsupium) while they continue nursing. Examples include kangaroos and opossums. See Mammalia.</p>
-<h4>Maxillae</h4>
+<h3 class="sub">Maxillae</h3>
 <p>In insects, the second (lower) pair of jaws, made up of several segments and equipped with jointed appendages called palps (feelers).</p>
-<h4>Melanism</h4>
+<h3 class="sub">Melanism</h3>
 <p>The opposite of albinism — an excess of dark coloring material (pigment) in the skin and its coverings.</p>
-<h4>Metamorphic Rocks</h4>
+<h3 class="sub">Metamorphic Rocks</h3>
 <p>Sedimentary rocks that have been transformed, usually by heat, after they were originally deposited and hardened.</p>
-<h4>Mollusca</h4>
+<h3 class="sub">Mollusca</h3>
 <p>A major division of the animal kingdom, including soft-bodied animals usually protected by a shell. Their nerve centers show no consistent general arrangement. Commonly known as &quot;shellfish,&quot; though the group also includes cuttlefish, snails, slugs, whelks, oysters, mussels, and cockles.</p>
-<h4>Monocotyledons / Monocotyledonous Plants</h4>
+<h3 class="sub">Monocotyledons / Monocotyledonous Plants</h3>
 <p>Plants whose seedlings produce only a single seed leaf (cotyledon). They are characterized by stems that lack distinct rings of growth (endogenous growth), leaves with mostly parallel veins, and flower parts in multiples of three. Examples include grasses, lilies, orchids, and palms.</p>
-<h4>Moraines</h4>
+<h3 class="sub">Moraines</h3>
 <p>Piles of rock debris carried and deposited by glaciers.</p>
-<h4>Morphology</h4>
+<h3 class="sub">Morphology</h3>
 <p>The study of form and structure, independent of function.</p>
-<h4>Mysis-Stage</h4>
+<h3 class="sub">Mysis-Stage</h3>
 <p>A stage in the development of certain crustaceans (such as prawns) during which they closely resemble the adults of a related, slightly more primitive genus called Mysis.</p>
-<h4>Nascent</h4>
+<h3 class="sub">Nascent</h3>
 <p>Just beginning to develop.</p>
-<h4>Natatory</h4>
+<h3 class="sub">Natatory</h3>
 <p>Adapted for swimming.</p>
-<h4>Nauplius-Form</h4>
+<h3 class="sub">Nauplius-Form</h3>
 <p>The earliest larval stage in the development of many crustaceans, especially the more primitive ones. At this stage, the animal has a short body with only faint signs of segmentation and three pairs of fringed limbs. (This form was originally described as a separate genus called Nauplius before its true nature was understood.)</p>
-<h4>Neuration</h4>
+<h3 class="sub">Neuration</h3>
 <p>The pattern of veins in insect wings.</p>
-<h4>Neuters</h4>
+<h3 class="sub">Neuters</h3>
 <p>Incompletely developed females in certain social insects (such as ants and bees) that do all the work of the colony. They are also called workers.</p>
-<h4>Nictitating Membrane</h4>
+<h3 class="sub">Nictitating Membrane</h3>
 <p>A semitransparent &quot;third eyelid&quot; that can slide across the eye in birds and reptiles, either to protect against bright light or to sweep away dust and other particles.</p>
-<h4>Ocelli</h4>
+<h3 class="sub">Ocelli</h3>
 <p>Simple eyes (as opposed to compound eyes) found in insects, usually located on top of the head between the two large compound eyes.</p>
-<h4>Oesophagus</h4>
+<h3 class="sub">Oesophagus</h3>
 <p>The gullet — the tube connecting the throat to the stomach.</p>
-<h4>Oolitic</h4>
+<h3 class="sub">Oolitic</h3>
 <p>A major series of rocks from the Mesozoic era, named for the texture of some of its layers, which appear to be made up of masses of tiny, egg-shaped chalky grains.</p>
-<h4>Operculum</h4>
+<h3 class="sub">Operculum</h3>
 <p>A hard plate used by many snails and other mollusks to seal the opening of their shell. In barnacles, the opercular valves are the plates that close the shell opening.</p>
-<h4>Orbit</h4>
+<h3 class="sub">Orbit</h3>
 <p>The bony socket that holds the eye.</p>
-<h4>Organism</h4>
+<h3 class="sub">Organism</h3>
 <p>Any organized living thing, whether plant or animal.</p>
-<h4>Orthospermous</h4>
+<h3 class="sub">Orthospermous</h3>
 <p>A term for fruits of the carrot family (Umbelliferae) that have a straight seed.</p>
-<h4>Osculant</h4>
+<h3 class="sub">Osculant</h3>
 <p>Forms or groups that appear to be intermediate between, and connecting, other groups.</p>
-<h4>Ova</h4>
+<h3 class="sub">Ova</h3>
 <p>Eggs.</p>
-<h4>Ovarium / Ovary (in plants)</h4>
+<h3 class="sub">Ovarium / Ovary (in plants)</h3>
 <p>The lower part of the pistil (the female organ of a flower), containing the ovules (developing seeds). After the other flower parts fall away, the ovary typically grows into the fruit.</p>
-<h4>Ovigerous</h4>
+<h3 class="sub">Ovigerous</h3>
 <p>Egg-bearing.</p>
-<h4>Ovules (of plants)</h4>
+<h3 class="sub">Ovules (of plants)</h3>
 <p>Seeds in their earliest stage of development.</p>
-<h4>Pachyderms</h4>
+<h3 class="sub">Pachyderms</h3>
 <p>A group of mammals named for their thick skins, including elephants, rhinoceroses, and hippopotamuses.</p>
-<h4>Palaeozoic</h4>
+<h3 class="sub">Palaeozoic</h3>
 <p>The oldest system of rock formations that contain fossils.</p>
-<h4>Palpi</h4>
+<h3 class="sub">Palpi</h3>
 <p>Jointed sensory appendages attached to some mouthparts in insects and crustaceans.</p>
-<h4>Papilionaceae</h4>
+<h3 class="sub">Papilionaceae</h3>
 <p>A plant family (see Leguminosae) whose flowers are called papilionaceous, meaning &quot;butterfly-like,&quot; because the large upper petals spread out and resemble butterfly wings.</p>
-<h4>Parasite</h4>
+<h3 class="sub">Parasite</h3>
 <p>An organism (animal or plant) that lives on or inside another organism and feeds at its expense.</p>
-<h4>Parthenogenesis</h4>
+<h3 class="sub">Parthenogenesis</h3>
 <p>The production of offspring from unfertilized eggs or seeds — reproduction without mating.</p>
-<h4>Pedunculated</h4>
+<h3 class="sub">Pedunculated</h3>
 <p>Supported on a stem or stalk. For example, the pedunculate oak has its acorns borne on stalks.</p>
-<h4>Peloria / Pelorism</h4>
+<h3 class="sub">Peloria / Pelorism</h3>
 <p>The appearance of symmetrical, regular flowers on a plant that normally produces irregular, asymmetrical flowers.</p>
-<h4>Pelvis</h4>
+<h3 class="sub">Pelvis</h3>
 <p>The bony arch to which the hind limbs of vertebrate animals are attached.</p>
-<h4>Petals</h4>
+<h3 class="sub">Petals</h3>
 <p>The individual leaves of the corolla (the second ring of flower parts). They are usually delicate in texture and brightly colored.</p>
-<h4>Phyllodineous</h4>
+<h3 class="sub">Phyllodineous</h3>
 <p>Having flattened, leaf-like twigs or leaf stalks that function in place of true leaves.</p>
-<h4>Pigment</h4>
+<h3 class="sub">Pigment</h3>
 <p>The coloring material produced in the outer layers of animals. The cells that produce it are called pigment cells.</p>
-<h4>Pinnate</h4>
+<h3 class="sub">Pinnate</h3>
 <p>Having leaflets arranged on either side of a central stalk, like a feather.</p>
-<h4>Pistils</h4>
+<h3 class="sub">Pistils</h3>
 <p>The female organs of a flower, located at the center of the other floral parts. A pistil is generally made up of three parts: the ovary (at the base), the style (the stalk), and the stigma (the tip).</p>
-<h4>Placentalia / Placentata / Placental Mammals</h4>
+<h3 class="sub">Placentalia / Placentata / Placental Mammals</h3>
 <p>See Mammalia.</p>
-<h4>Plantigrades</h4>
+<h3 class="sub">Plantigrades</h3>
 <p>Four-legged animals that walk on the entire sole of the foot, like bears.</p>
-<h4>Plastic</h4>
+<h3 class="sub">Plastic</h3>
 <p>Easily changed or molded; flexible in form.</p>
-<h4>Pleistocene Period</h4>
+<h3 class="sub">Pleistocene Period</h3>
 <p>The most recent portion of the Tertiary epoch. (Now recognized as the geological period of the great Ice Ages.)</p>
-<h4>Plumule (in plants)</h4>
+<h3 class="sub">Plumule (in plants)</h3>
 <p>The tiny bud that appears between the seed leaves of a newly germinated plant — the beginning of the shoot.</p>
-<h4>Plutonic Rocks</h4>
+<h3 class="sub">Plutonic Rocks</h3>
 <p>Rocks thought to have been formed by volcanic or heat-driven processes deep within the earth.</p>
-<h4>Pollen</h4>
+<h3 class="sub">Pollen</h3>
 <p>The male reproductive element in flowering plants, usually a fine dust produced by the anthers. When pollen grains land on the stigma, they send out tiny tubes (pollen tubes) that grow down through the flower&#x27;s tissues until they reach the ovary, bringing about fertilization.</p>
-<h4>Polyandrous (flowers)</h4>
+<h3 class="sub">Polyandrous (flowers)</h3>
 <p>Flowers having many stamens (male organs).</p>
-<h4>Polygamous Plants</h4>
+<h3 class="sub">Polygamous Plants</h3>
 <p>Plants that produce a mixture of flower types: some with only male organs, some with only female organs, and some with both. These different flower types may appear on the same plant or on different plants of the same species.</p>
-<h4>Polymorphic</h4>
+<h3 class="sub">Polymorphic</h3>
 <p>Occurring in many different forms.</p>
-<h4>Polyzoary</h4>
+<h3 class="sub">Polyzoary</h3>
 <p>The shared structure formed by the individual units of colonial animals called Polyzoa (bryozoans), such as the familiar sea mats.</p>
-<h4>Prehensile</h4>
+<h3 class="sub">Prehensile</h3>
 <p>Able to grasp or grip.</p>
-<h4>Prepotent</h4>
+<h3 class="sub">Prepotent</h3>
 <p>Having a greater or dominant power or influence (used especially of one parent&#x27;s traits dominating in offspring).</p>
-<h4>Primaries</h4>
+<h3 class="sub">Primaries</h3>
 <p>The feathers at the wingtip of a bird, attached to the part of the wing that corresponds to the human hand.</p>
-<h4>Processes</h4>
+<h3 class="sub">Processes</h3>
 <p>Projecting parts of bones, usually serving as attachment points for muscles, ligaments, or other structures.</p>
-<h4>Propolis</h4>
+<h3 class="sub">Propolis</h3>
 <p>A sticky, resinous substance that honeybees collect from the opening buds of various trees, used to seal gaps in the hive.</p>
-<h4>Protean</h4>
+<h3 class="sub">Protean</h3>
 <p>Extremely variable; taking many forms.</p>
-<h4>Protozoa</h4>
+<h3 class="sub">Protozoa</h3>
 <p>The simplest major group of animals. These organisms are made of a jelly-like material and show barely any trace of distinct organs. The group includes infusorians, foraminifers, sponges, and some other forms.</p>
-<h4>Pupa</h4>
+<h3 class="sub">Pupa</h3>
 <p>(plural: Pupae) The second stage in an insect&#x27;s development, from which it emerges as the fully formed, winged, reproductive adult. In most insects, the pupal stage is spent in a state of rest. The chrysalis is the pupal stage of butterflies.</p>
-<h4>Radicle</h4>
+<h3 class="sub">Radicle</h3>
 <p>The tiny root of an embryonic plant.</p>
-<h4>Ramus</h4>
+<h3 class="sub">Ramus</h3>
 <p>One half of the lower jaw in mammals. The part that rises up to connect with the skull is called the ascending ramus.</p>
-<h4>Range</h4>
+<h3 class="sub">Range</h3>
 <p>The geographic area over which a plant or animal is naturally found. &quot;Range in time&quot; refers to the span of geological periods during which a species or group existed, as shown by fossils.</p>
-<h4>Retina</h4>
+<h3 class="sub">Retina</h3>
 <p>The delicate inner lining of the eye, formed by nerve fibers spreading from the optic nerve, which detects light and sends visual information to the brain.</p>
-<h4>Retrogression</h4>
+<h3 class="sub">Retrogression</h3>
 <p>Backward or reverse development. When an animal becomes less complex or less well-organized as it matures — contrary to what its early developmental stages and evolutionary relationships would predict — it is said to undergo retrograde development or metamorphosis.</p>
-<h4>Rhizopods</h4>
+<h3 class="sub">Rhizopods</h3>
 <p>A group of very simple animals (Protozoa) with a jelly-like body that can push out root-like extensions or threads, which they use for movement and for capturing food. The most important order within this group is the Foraminifera.</p>
-<h4>Rodents</h4>
+<h3 class="sub">Rodents</h3>
 <p>The gnawing mammals — rats, rabbits, and squirrels, for example. They are especially characterized by having a single pair of chisel-shaped front teeth in each jaw, with a wide gap between these and the grinding teeth at the back.</p>
-<h4>Rubus</h4>
+<h3 class="sub">Rubus</h3>
 <p>The genus of plants that includes blackberries and raspberries (brambles).</p>
-<h4>Rudimentary</h4>
+<h3 class="sub">Rudimentary</h3>
 <p>Very poorly or incompletely developed; often referring to structures that appear to be evolutionary leftovers. (Also called vestigial.)</p>
-<h4>Ruminants</h4>
+<h3 class="sub">Ruminants</h3>
 <p>Mammals that chew the cud, such as cattle, sheep, and deer. They have split hooves and lack front teeth in the upper jaw.</p>
-<h4>Sacral</h4>
+<h3 class="sub">Sacral</h3>
 <p>Relating to the sacrum — the bone, usually formed from several fused vertebrae, to which the sides of the pelvis are attached in vertebrate animals.</p>
-<h4>Sarcode</h4>
+<h3 class="sub">Sarcode</h3>
 <p>The jelly-like material that makes up the bodies of the simplest animals (Protozoa). (Now generally called protoplasm or cytoplasm.)</p>
-<h4>Scutellae</h4>
+<h3 class="sub">Scutellae</h3>
 <p>The horny, scale-like plates that typically cover the feet of birds, especially on the front surface.</p>
-<h4>Sedimentary Formations</h4>
+<h3 class="sub">Sedimentary Formations</h3>
 <p>Rocks formed from sediment deposited by water.</p>
-<h4>Segments</h4>
+<h3 class="sub">Segments</h3>
 <p>The repeating ring-like divisions that make up the body of a jointed animal (arthropod) or segmented worm (annelid).</p>
-<h4>Sepals</h4>
+<h3 class="sub">Sepals</h3>
 <p>The leaf-like parts of the calyx, the outermost ring of a typical flower. They are usually green, but sometimes brightly colored.</p>
-<h4>Serratures</h4>
+<h3 class="sub">Serratures</h3>
 <p>Teeth like those of a saw — small, pointed, evenly spaced projections along an edge.</p>
-<h4>Sessile</h4>
+<h3 class="sub">Sessile</h3>
 <p>Attached directly without a stem or stalk.</p>
-<h4>Silurian System</h4>
+<h3 class="sub">Silurian System</h3>
 <p>A very ancient system of fossil-bearing rocks from the early part of the Paleozoic era.</p>
-<h4>Specialisation</h4>
+<h3 class="sub">Specialisation</h3>
 <p>The evolutionary process by which a particular organ becomes devoted to a particular function.</p>
-<h4>Spinal Cord</h4>
+<h3 class="sub">Spinal Cord</h3>
 <p>The central nerve pathway in vertebrates, running from the brain down through the arches of the vertebrae (backbones), giving off nearly all the nerves that connect to the body&#x27;s various organs.</p>
-<h4>Stamens</h4>
+<h3 class="sub">Stamens</h3>
 <p>The male organs of flowering plants, arranged in a ring inside the petals. Each stamen usually consists of a filament (stalk) topped by an anther, which is the essential part where pollen is produced.</p>
-<h4>Sternum</h4>
+<h3 class="sub">Sternum</h3>
 <p>The breastbone.</p>
-<h4>Stigma</h4>
+<h3 class="sub">Stigma</h3>
 <p>The tip of the pistil in flowering plants — the surface that receives pollen.</p>
-<h4>Stipules</h4>
+<h3 class="sub">Stipules</h3>
 <p>Small leaf-like structures found at the base of the leaf stalks in many plants.</p>
-<h4>Style</h4>
+<h3 class="sub">Style</h3>
 <p>The stalk-like middle part of the pistil, rising from the ovary and supporting the stigma at its tip.</p>
-<h4>Subcutaneous</h4>
+<h3 class="sub">Subcutaneous</h3>
 <p>Located beneath the skin.</p>
-<h4>Suctorial</h4>
+<h3 class="sub">Suctorial</h3>
 <p>Adapted for sucking.</p>
 <p>Sutures (of the skull)</p>
 <p>The lines where the bones of the skull meet and join together.</p>
-<h4>Tarsus</h4>
+<h3 class="sub">Tarsus</h3>
 <p>(plural: Tarsi) The jointed foot segments of arthropods such as insects.</p>
-<h4>Teleostean Fishes</h4>
+<h3 class="sub">Teleostean Fishes</h3>
 <p>The familiar bony fishes of today, with fully hardened (ossified) skeletons and horny scales.</p>
-<h4>Tentacula / Tentacles</h4>
+<h3 class="sub">Tentacula / Tentacles</h3>
 <p>Flexible, fleshy organs used for grasping or sensing, found in many lower animals.</p>
-<h4>Tertiary</h4>
+<h3 class="sub">Tertiary</h3>
 <p>The most recent major geological era before the current one, immediately preceding the world as we know it today.</p>
-<h4>Trachea</h4>
+<h3 class="sub">Trachea</h3>
 <p>The windpipe — the passage through which air reaches the lungs.</p>
-<h4>Tridactyle</h4>
+<h3 class="sub">Tridactyle</h3>
 <p>Three-fingered or three-toed, or composed of three movable parts joined to a common base.</p>
-<h4>Trilobites</h4>
+<h3 class="sub">Trilobites</h3>
 <p>An extinct group of crustacean-like animals, somewhat resembling woodlice in shape and, like some woodlice, able to roll into a ball. Their fossils are found only in Paleozoic rocks, most abundantly in Silurian-age formations.</p>
-<h4>Trimorphic</h4>
+<h3 class="sub">Trimorphic</h3>
 <p>Occurring in three distinct forms.</p>
-<h4>Umbelliferae</h4>
+<h3 class="sub">Umbelliferae</h3>
 <p>A plant family (the carrot family) in which the flowers — each with five stamens and a pistil bearing two styles — grow on stalks that radiate from a central point like the ribs of an umbrella, bringing all flowers in the cluster (called an umbel) to roughly the same level. Examples include parsley and carrots.</p>
-<h4>Ungulata</h4>
+<h3 class="sub">Ungulata</h3>
 <p>Hoofed mammals.</p>
-<h4>Unicellular</h4>
+<h3 class="sub">Unicellular</h3>
 <p>Made up of a single cell.</p>
-<h4>Vascular</h4>
+<h3 class="sub">Vascular</h3>
 <p>Containing blood vessels.</p>
-<h4>Vermiform</h4>
+<h3 class="sub">Vermiform</h3>
 <p>Worm-shaped.</p>
-<h4>Vertebrata / Vertebrate Animals</h4>
+<h3 class="sub">Vertebrata / Vertebrate Animals</h3>
 <p>The highest division of the animal kingdom, named for the backbone (spine) found in most members. The backbone is made up of many individual bones called vertebrae, which form the core of the skeleton and protect the central nervous system (the brain and spinal cord).</p>
-<h4>Whorls</h4>
+<h3 class="sub">Whorls</h3>
 <p>The circles or spirals in which the parts of a plant are arranged around its central stem or axis.</p>
-<h4>Workers</h4>
+<h3 class="sub">Workers</h3>
 <p>See Neuters.</p>
-<h4>Zoea-Stage</h4>
+<h3 class="sub">Zoea-Stage</h3>
 <p>An early larval stage in the development of many higher crustaceans. (The name comes from &quot;Zoea,&quot; which was once thought to be a separate genus before scientists realized these were just juvenile forms.)</p>
-<h4>Zooids</h4>
+<h3 class="sub">Zooids</h3>
 <p>In many lower animals (such as corals and jellyfish), reproduction happens in two ways: through eggs and through a process of budding (with or without separating from the parent). The budded form is often very different from the form that hatches from an egg. The full life cycle of the species includes both forms — and these apparently individual organisms produced between one sexual generation and the next are called zooids.</p>
 </section>
 </article>

@@ -19,8 +19,359 @@
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=navigation" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 	<link rel="preload" href="fonts/libre-caslon-text-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="stylesheet" href="fonts.css">
-	<link rel="stylesheet" href="book.css">
+	<style>
+/* Fonts for every page (front pages and book pages), served from this site
+   rather than Google Fonts: a third-party
+   stylesheet blocked rendering for ~0.8 s on mobile (PageSpeed, 2026-10-12).
+   Oswald, Yellowtail and Libre Caslon Text (SIL Open Font License), latin and
+   latin-ext subsets as Google serves them, in site/fonts/. */
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* The book pages. Shared by every page assemble.py writes; fonts in fonts.css.
+
+   LEGIBILITY FIRST. The running text is set in the best screen serif the
+   reader's own device has (Charter on Apple, Sitka Text on Windows, Georgia
+   or Noto Serif elsewhere), near-black on white, 19-20px, ~66 characters to
+   the line. The Emend look (Libre Caslon Text, navy, the cream band, Oswald
+   labels) is kept to the title band, the headings and the controls. */
+
+:root {
+  --page:  #ffffff;
+  --text:  #1c1c1c;
+  --ink:   #1b314d;     /* navy: headings, links, buttons */
+  --cream: #f4efe2;
+  --soft:  #5a6472;
+  --rule:  #ddd6c8;
+  --link:  #1f4f86;
+  --plate-bg: #ffffff;
+  --reading: Charter, "Bitstream Charter", "Sitka Text", Georgia, "Noto Serif", serif;
+  --display: "Libre Caslon Text", Georgia, serif;
+  --label:   "Oswald", "Arial Narrow", sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page:  #14181e;
+    --text:  #e4e0d8;
+    --ink:   #e8e2d4;
+    --cream: #1d2430;
+    --soft:  #a3adba;
+    --rule:  #343c48;
+    --link:  #9cc2e6;
+  }
+  /* plates and diagrams are drawn on white paper; keep them on it, slightly dimmed */
+  figure img { opacity: .92; }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html {
+  background: var(--page);
+  color: var(--text);
+  font-size: 20px;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--reading);
+  line-height: 1.65;
+  font-kerning: normal;
+}
+
+main { max-width: 34rem; margin: 0 auto; padding: 0 1rem 5rem; }
+
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+
+/* ---------- title band ---------- */
+
+.title-block {
+  background: var(--cream);
+  padding: 1.6rem 1rem 1.8rem;
+  margin-bottom: 2rem;
+}
+.title-inner {
+  max-width: 44rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.8rem;
+  align-items: center;
+}
+.title-block .series {
+  grid-column: 1 / -1;
+  margin: 0 0 0.2rem;
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.title-block .series a { color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 0.55rem; }
+.title-block .series a:hover span { text-decoration: underline; }
+.title-block .series img { height: 1.8rem; width: auto; }
+.cover img {
+  display: block;
+  width: 150px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+}
+.title-text { min-width: 0; }
+h1 {
+  font: 700 2rem/1.15 var(--display);
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+  text-align: left;
+}
+.title-line { margin: 0 0 0.3rem; font-size: 0.95rem; color: var(--ink); }
+.title-line.byline { font-weight: 700; }
+.dates { margin: 0 0 0.9rem; font-size: 0.85rem; color: var(--soft); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.button {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid var(--ink);
+  font: 500 0.75rem/1.2 var(--label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+}
+.button.primary { background: var(--ink); color: var(--page); }
+.button:hover { text-decoration: underline; }
+
+/* phones: a small cover beside the title, so the text starts sooner */
+@media (max-width: 36rem) {
+  .title-block { padding: 1.1rem 1rem 1.4rem; }
+  .title-inner { grid-template-columns: 76px 1fr; gap: 0.9rem; align-items: start; }
+  .cover img { width: 76px; height: 114px; }
+  h1 { font-size: 1.45rem; }
+  .actions { grid-column: 1 / -1; }
+}
+
+/* ---------- running text ---------- */
+
+.intro-note { font-style: italic; font-size: 0.9rem; color: var(--soft); }
+
+h2, h3, h4 {
+  font-family: var(--display);
+  color: var(--ink);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+h2 { font-size: 1.45rem; margin: 3.2rem 0 1rem; }
+h3 { font-size: 1.2rem; margin: 2.8rem 0 0.9rem; }
+h4, h3.sub { font-size: 1rem; margin: 2rem 0 0.8rem; font-style: italic; }
+h2.center { text-align: center; font-size: 1.6rem; margin-top: 4rem; }
+
+p, ul, ol { margin: 0 0 1.15em; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+blockquote {
+  margin: 1.5em 0 1.5em 1em;
+  padding-left: 1em;
+  border-left: 3px solid var(--rule);
+  font-style: italic;
+}
+blockquote p { margin-bottom: 0.8em; }
+
+pre.outline {
+  font-family: var(--reading);
+  white-space: pre-wrap;
+  line-height: 1.6;
+  margin: 0 0 1.15em;
+}
+
+img.glyph { vertical-align: middle; display: inline; }
+span.frac, span.stack { display: inline-block; vertical-align: middle; text-align: center; }
+span.frac > span, span.stack > span { display: block; }
+span.frac > span.num { border-bottom: 1px solid currentColor; }
+span.stack.brace { border-left: 2px solid currentColor; border-right: 2px solid currentColor; border-radius: 0.6em; padding: 0 0.3em; }
+math { font-size: 1.05em; }
+
+figure { margin: 2.2em auto; text-align: center; }
+figure + figure { margin-top: 1em; }
+figure img { max-width: 100%; height: auto; background: var(--plate-bg); }
+figcaption {
+  margin-top: 0.6em;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--soft);
+  text-align: left;
+}
+
+table.plates { width: 100%; margin: 2.5em 0; border-collapse: collapse; line-height: 1.5; }
+table.plates td { padding: 0.4em 0.8em; vertical-align: middle; border-bottom: 1px solid var(--rule); }
+table.plates tr:last-child td { border-bottom: none; }
+table.plates figure, table.plates figure + figure { margin: 0.4em auto; }
+table.plates figcaption { display: none; }
+
+/* page locators: a printed page and quarter, for books that cite
+   themselves by them (Helmholtz: "see p. 77c") */
+span.loc { font-size: 0.65em; color: var(--soft); vertical-align: 0.3em; padding: 0 0.15em; font-style: normal; }
+a.ref { color: inherit; text-decoration: underline dotted; }
+span.sc { font-variant: small-caps; }
+.center { text-align: center; }
+.subtitle { text-align: center; font-style: italic; }
+
+/* ---------- contents ---------- */
+
+nav.contents h2 { margin-top: 0; }
+.toc-book { font-family: var(--display); font-weight: 700; margin: 1.2em 0 0.4em; color: var(--ink); }
+.toc-list { list-style: none; padding-left: 1.2em; margin: 0 0 1em; }
+.toc-list li { margin-bottom: 0.3em; line-height: 1.4; }
+nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
+
+/* ---------- reading aids (book.js) ---------- */
+
+.resume {
+  margin: 0 0 1.5rem;
+  padding: 0.7rem 1rem;
+  background: var(--cream);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+.resume[hidden] { display: none; }
+
+.to-contents {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 5;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--page);
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+.to-contents.show { opacity: .92; pointer-events: auto; }
+
+@media (max-width: 36rem) {
+  html { font-size: 18px; }
+}
+
+@media print {
+  .title-block { background: none; }
+  .actions, .to-contents, .resume { display: none; }
+}
+</style>
 	<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "The Wealth of Nations", "author": {"@type": "Person", "name": "Adam Smith"}, "inLanguage": "en", "url": "https://emend.press/wealth-of-nations.html", "description": "The book that invented economics: pins, markets, and the invisible hand. Retold in modern English, free to read online and as an ebook.", "publisher": {"@type": "Organization", "name": "Emend Press", "url": "https://emend.press/", "logo": "https://emend.press/apple-touch-icon.png"}, "isAccessibleForFree": true, "isPartOf": {"@type": "BookSeries", "name": "Modern Classics", "url": "https://emend.press/"}, "image": "https://emend.press/covers/wealth-of-nations.jpg", "datePublished": "2026", "bookEdition": "Modern English retelling", "isBasedOn": {"@type": "Book", "name": "The Wealth of Nations", "author": {"@type": "Person", "name": "Adam Smith"}, "datePublished": "1776"}, "workExample": {"@type": "Book", "bookFormat": "https://schema.org/EBook", "encodingFormat": "application/epub+zip", "url": "https://emend.press/ebooks/adam-smith_the-wealth-of-nations.epub"}}</script>
 </head>
 
@@ -436,8 +787,8 @@
 <p>The total advantages and disadvantages of different jobs and investments must, within the same area, be either perfectly equal or constantly moving toward equality. If some job in a neighborhood were obviously more or less attractive than the rest, people would flood into it in the first case or abandon it in the second, until its advantages returned to the same level as everything else. This, at least, is what would happen in a society where things followed their natural course — where there was perfect freedom, and where everyone was free to pick whatever occupation they wanted and to switch whenever they felt like it. Self-interest alone would drive people toward the good jobs and away from the bad ones.</p>
 <p>Actual wages and profits, of course, vary enormously across Europe depending on the type of work or investment. But this variation comes from two sources: partly from certain features of the jobs themselves that compensate for low pay in some cases and offset high pay in others, and partly from European government policies that never leave things in a state of perfect freedom.</p>
 <p>Examining these features and policies will divide this chapter into two parts.</p>
-<h4>Part One</h4>
-<h4>Inequalities Arising from the Nature of the Jobs Themselves</h4>
+<h3 class="sub">Part One</h3>
+<h3 class="sub">Inequalities Arising from the Nature of the Jobs Themselves</h3>
 <p>As far as I&#x27;ve been able to observe, five main factors compensate for low pay in some jobs and offset high pay in others. First, how pleasant or unpleasant the work is. Second, how easy and cheap, or difficult and expensive, it is to learn. Third, how steady or irregular the employment is. Fourth, how much trust must be placed in the workers. And fifth, how likely or unlikely success is.</p>
 <p>First: Wages vary with how easy or hard, clean or dirty, and respectable or disreputable the work is.</p>
 <p>In most places, averaged over the year, a journeyman tailor earns less than a journeyman weaver. His work is much easier. A journeyman weaver earns less than a journeyman smith. His work isn&#x27;t always easier, but it&#x27;s much cleaner. A journeyman blacksmith, though he&#x27;s a skilled worker, rarely earns as much in twelve hours as a coal miner — who is just an ordinary laborer — earns in eight. The blacksmith&#x27;s work isn&#x27;t quite as dirty, is less dangerous, and takes place in daylight above ground.</p>
@@ -667,7 +1018,7 @@
 </section>
 <section aria-labelledby="digression-on-the-changing-value-of-silver-over-the-last-four-centuries">
 <h2 id="digression-on-the-changing-value-of-silver-over-the-last-four-centuries">Digression on the Changing Value of Silver Over the Last Four Centuries</h2>
-<h4>First Period</h4>
+<h3 class="sub">First Period</h3>
 <p>In 1350, and for some time before that, the average price of a quarter of wheat in England appears to have been no less than four ounces of silver (Tower-weight), equal to about twenty shillings in today&#x27;s money. From that price, it seems to have gradually fallen to two ounces of silver — about ten shillings in today&#x27;s money — the price we find it at by the beginning of the sixteenth century, where it stayed until around 1570.</p>
 <p>In 1350, the 25th year of Edward III&#x27;s reign, a law called the Statute of Laborers was enacted. In its preamble, it complains bitterly about the insolence of servants who were trying to raise their wages. It therefore orders that all servants and laborers must from now on be content with the same wages and liveries they had been receiving in the 20th year of the king&#x27;s reign and the four years before that. (&quot;Liveries&quot; in those days meant not just clothing but food and provisions.) Under this law, their livery wheat was not to be valued higher than tenpence a bushel anywhere, and the master always had the option of paying them in either wheat or money.</p>
 <p>Tenpence a bushel, then, was considered a very moderate price for wheat in 1350 — otherwise it wouldn&#x27;t have taken a special statute to force servants to accept it instead of their usual food provisions. And it had been considered a reasonable price ten years earlier, in the 16th year of the king&#x27;s reign, which is the reference point the statute uses. Now, in the 16th year of Edward III, tenpence contained about half an ounce of silver (Tower-weight) and was roughly equal to half a crown in today&#x27;s money. Four ounces of silver (Tower-weight), therefore — equal to six shillings and eightpence in the money of those times, and to roughly twenty shillings today — must have been considered a moderate price for a quarter (eight bushels) of wheat.</p>
@@ -806,18 +1157,18 @@
 <p>The increase of European wealth, combined with the popular belief that the quantity of precious metals naturally grows along with wealth and that their value falls as their quantity rises, may incline many people to think that silver&#x27;s value is still declining in the European market. The gradually rising price of many raw agricultural products may reinforce this opinion even further.</p>
 <p>But I&#x27;ve already tried to show that an increase in the quantity of precious metals resulting from a country&#x27;s growing wealth does not tend to diminish their value. Gold and silver flow to rich countries for the same reason all luxuries and curiosities do — not because they&#x27;re cheaper there than in poorer countries, but because they&#x27;re more expensive, because a better price is offered for them. It&#x27;s the higher price that attracts them, and as soon as that price advantage disappears, they stop flowing.</p>
 <p>I&#x27;ve also already tried to show that — setting aside grain and other crops raised entirely by human industry — all other kinds of raw produce (cattle, poultry, game, useful minerals, and so on) naturally grow more expensive as a society advances in wealth and development. Though such commodities may come to exchange for more silver than before, it doesn&#x27;t follow that silver has become cheaper or that it buys less labor. Rather, these commodities have become more expensive — they buy more labor than before. It&#x27;s not just their nominal price that rises, but their real price. The increase in their nominal price is the effect not of any decline in silver&#x27;s value, but of a rise in their real value.</p>
-<h4>Different Effects of Progress on Three Sorts of Raw Produce</h4>
+<h3 class="sub">Different Effects of Progress on Three Sorts of Raw Produce</h3>
 <p>These different types of raw produce can be divided into three categories.</p>
 <p>The first includes those things that human industry can barely increase at all. The second includes those it can multiply in proportion to demand. The third includes those where the effectiveness of human industry is either limited or uncertain.</p>
 <p>As wealth and development advance, the real price of the first category may rise without any definite ceiling. The real price of the second, though it may rise significantly, has a natural upper limit it can&#x27;t pass for long. The real price of the third, while it naturally tends to rise with development, may — depending on circumstances — sometimes fall, sometimes stay flat, and sometimes rise more or less, as various factors make human industry more or less successful in increasing the supply.</p>
-<h4>First Category: Things That Can&#x27;t Be Multiplied</h4>
+<h3 class="sub">First Category: Things That Can&#x27;t Be Multiplied</h3>
 <p>The first type of raw produce whose price rises with progress is that which human industry can barely increase at all. This includes things that nature produces only in limited quantities and that, being highly perishable, can&#x27;t be stockpiled across seasons. Most rare and unusual birds and fish fall into this category, along with many types of game, nearly all wild fowl, all migratory birds in particular, and many other things.</p>
 <p>When wealth and the luxury that comes with it increase, the demand for these rises too — but no amount of human effort can increase the supply much beyond what it already was. The quantity stays roughly the same while the competition to buy them continually intensifies, so their price can rise to any degree of extravagance, with no definite ceiling. If woodcocks became fashionable enough to sell for twenty guineas each, no amount of human effort could increase the number brought to market much beyond what it is today.</p>
 <p>The extravagant prices the Romans paid at the height of their grandeur for rare birds and fish can easily be explained in this way. These high prices weren&#x27;t the result of silver being less valuable in those times — they were the result of such rarities being incredibly valuable, since human industry couldn&#x27;t multiply them at will.</p>
 <p>In fact, the real value of silver was higher in Rome, for some time before and after the fall of the Republic, than it is across most of Europe today. Three sestertii, equal to about sixpence sterling, was the price the Republic paid for a modius (about a peck) of Sicilian tithe wheat. This price was probably below the average market price, since the obligation to deliver wheat at this rate was effectively a tax on Sicilian farmers. When the Romans needed more grain than the tithe provided, they were required by treaty to pay four sestertii (eightpence sterling) per peck for the surplus — and this was probably considered the moderate and reasonable contract price of those times. That&#x27;s equivalent to about twenty-one shillings per quarter. Before the recent years of scarcity, twenty-eight shillings per quarter was the ordinary contract price for English wheat, which is inferior in quality to Sicilian wheat and generally sells for less in the European market. Silver&#x27;s value in those ancient times must therefore have stood to its present value in roughly a three-to-four ratio — that is, three ounces of silver would then have bought the same quantity of labor and goods that four ounces buy today.</p>
 <p>So when we read in Pliny that Seius bought a white nightingale as a gift for the Empress Agrippina for six thousand sestertii (about fifty pounds in today&#x27;s money), and that Asinius Celer purchased a red mullet for eight thousand sestertii (about sixty-six pounds, thirteen shillings, and fourpence today), the extravagance of these prices — however astonishing it may seem — actually appears about one-third less extreme than it really was. Their real price — the amount of labor and subsistence traded for them — was about one-third higher than the nominal figures suggest to us today. Seius paid the equivalent of what sixty-six pounds, thirteen shillings, and fourpence would command in today&#x27;s labor and goods. Asinius Celer paid what eighty-eight pounds, seventeen shillings, nine and one-third pence would command.</p>
 <p>What caused these extravagant prices was not the abundance of silver, but the abundance of labor and subsistence that these Romans had at their disposal beyond their own needs. The amount of silver they commanded was actually quite a bit less than what the same quantity of labor and subsistence would have bought them today.</p>
-<h4>Second Category: Things That Can Be Multiplied in Proportion to Demand</h4>
+<h3 class="sub">Second Category: Things That Can Be Multiplied in Proportion to Demand</h3>
 <p>The second type of raw produce whose price rises with progress is that which human industry can multiply to match demand. This includes useful plants and animals that nature produces in wild abundance in uncultivated countries — so abundantly that they&#x27;re worth little or nothing. As farming advances, these are gradually displaced by more profitable crops. Over a long stretch of development, their quantity continually shrinks while demand for them continually grows. Their real value — the real amount of labor they can command — gradually rises until it eventually becomes just as profitable to raise them deliberately as to grow anything else on the most fertile, best-cultivated land. Once it reaches that point, it can&#x27;t go much higher. If it did, more land and labor would quickly be devoted to increasing the supply.</p>
 <p>Take cattle, for example. When their price rises high enough that cultivating land specifically to raise cattle feed becomes as profitable as growing grain, it can&#x27;t easily go higher. If it did, more cropland would soon be converted to pasture. The spread of tillage reduces the amount of natural grazing land, shrinking the supply of meat the country produces without deliberate effort, while simultaneously increasing the number of people who have grain — or the equivalent purchasing power — to exchange for meat. The price of meat, and therefore of cattle, must gradually rise until it becomes as profitable to use the best farmland for raising animal feed as for growing grain.</p>
 <p>But this can only happen late in the progress of development. Until farming has expanded enough to push cattle prices to this level, those prices must be continually rising if the country is advancing at all. Some parts of Europe may not yet have reached this threshold. Scotland certainly hadn&#x27;t before the union with England. If Scottish cattle had always been confined to the Scottish market — in a country where the amount of land useful only for grazing is so large relative to land suitable for other purposes — it&#x27;s hard to imagine their price could ever have risen high enough to make it profitable to cultivate land specifically for feeding them.</p>
@@ -845,7 +1196,7 @@
 <p>No country&#x27;s land can ever be completely cultivated and improved until the price of every product that human industry must raise on it has gotten high enough to pay for the full cost of improvement and cultivation. To do that, the price of each product must be sufficient, first, to cover the rent of good grain land (since that sets the standard for the rent of most other cultivated land) and, second, to cover the farmer&#x27;s labor and expenses as well as they are covered on good grain land — in other words, to replace his capital along with its ordinary profits.</p>
 <p>This rise in the price of each product must obviously come before the improvement and cultivation of the land intended to produce it. Profit is the whole point of improvement, and nothing deserves that name if loss is its inevitable result. And loss is the inevitable result of improving land to produce something whose price can never cover the expense. If the complete improvement and cultivation of the country is — as it most certainly is — the greatest of all public benefits, then the rising price of all these different kinds of raw produce should not be seen as a public disaster. It should be recognized for what it is: the necessary forerunner and companion of the greatest of all public benefits.</p>
 <p>This rise in the nominal or money price of all these products has not been the result of any decline in silver&#x27;s value, but of a rise in their real price. They have become worth not only more silver but also more labor and subsistence than before. Since it costs more labor and subsistence to bring them to market, they represent or are equivalent to more when they get there.</p>
-<h4>Third Category</h4>
+<h3 class="sub">Third Category</h3>
 <p>The third and final type of raw produce whose price naturally rises with development is that where human industry&#x27;s ability to increase the quantity is either limited or uncertain. Although the real price of these products naturally tends to rise with development, different circumstances may make human industry more or less successful in boosting the supply. As a result, the real price may sometimes actually fall, sometimes stay the same across very different periods of development, and sometimes rise more or less within the same period.</p>
 <p>Some kinds of raw produce are, by their nature, appendages to other kinds, so that the quantity of one that any country can supply is necessarily limited by the quantity of the other. The amount of wool or raw hides a country can produce, for example, is necessarily limited by the number of cattle — large and small — kept in it. The state of the country&#x27;s development and the nature of its agriculture determine this number.</p>
 <p>The same forces that gradually raise the price of meat as economic development progresses should, you might think, have the same effect on the prices of wool and raw hides, raising them in roughly the same proportion. And they probably would, if the market for these products were just as narrow in the early stages of development as the market for meat. But the extent of their respective markets is typically very different.</p>
@@ -2028,7 +2379,7 @@
 <h2 id="a-digression-on-the-grain-trade-and-grain-laws">A Digression on the Grain Trade and Grain Laws</h2>
 <p>I can&#x27;t finish this chapter on subsidies without pointing out that the praise heaped on the law establishing the grain export subsidy, and on the whole regulatory system connected with it, is completely undeserved. A careful look at the nature of the grain trade and the main British laws governing it will make this perfectly clear. The enormous importance of this subject must justify the length of this digression.</p>
 <p>The grain merchant&#x27;s trade is made up of four distinct branches, which, though sometimes handled by the same person, are by nature four separate businesses. These are: first, the trade of the inland dealer; second, the trade of the merchant who imports grain for domestic consumption; third, the trade of the merchant who exports domestic grain for foreign consumption; and fourth, the trade of the carrier — the merchant who imports grain in order to re-export it.</p>
-<h4>I. The Inland Grain Dealer</h4>
+<h3 class="sub">I. The Inland Grain Dealer</h3>
 <p>The interest of the inland grain dealer and that of the general public, however contradictory they may seem at first, are — even in the worst years of scarcity — exactly the same. It&#x27;s in the dealer&#x27;s interest to raise the price of his grain as high as the real scarcity of the season warrants, but it can never be in his interest to raise it any higher. By raising the price, he discourages consumption and forces everyone — particularly the lower classes — to economize. If he raises the price too high, he discourages consumption so much that the season&#x27;s supply will outlast the season&#x27;s demand and still be around when the next harvest arrives. He then risks not only losing a considerable part of his grain to natural spoilage, but having to sell the remainder for much less than he could have gotten for it months earlier. On the other hand, if he doesn&#x27;t raise the price high enough, he fails to discourage consumption sufficiently. If the season&#x27;s supply runs short before the new crop comes in, not only does he lose potential profit, but the people are exposed — instead of the hardships of a shortage — to the dreadful horrors of famine.</p>
 <p>It&#x27;s in the people&#x27;s interest that their daily, weekly, and monthly consumption be proportioned as precisely as possible to the season&#x27;s supply. The inland grain dealer&#x27;s interest is exactly the same. By supplying the public as closely as he can judge in this proportion, he maximizes both his sales price and his profit. His knowledge of the crop&#x27;s condition and his daily, weekly, and monthly sales records enable him to judge — with more or less accuracy — how closely supply and demand are actually matched. Without intending to serve the public interest, he is necessarily led, by his own self-interest, to treat them even in years of scarcity much as a prudent ship captain sometimes must treat his crew. When the captain foresees that provisions are likely to run short, he puts the crew on reduced rations. If he sometimes does this out of excessive caution when it wasn&#x27;t strictly necessary, the inconvenience to his crew is minor compared to the danger, misery, and ruin they might face from less careful management. Similarly, even if the grain dealer sometimes raises prices somewhat higher than the scarcity actually warrants out of excessive caution or greed, the inconvenience this causes the public — which at least ensures they won&#x27;t face famine at the end of the season — is trivial compared to what they might suffer from a more relaxed approach at the beginning. The grain dealer himself is the most likely person to suffer from excessive caution. Not only from the public outrage it provokes, but (even if he escapes that) from the surplus grain he&#x27;ll inevitably be stuck with at season&#x27;s end — grain he&#x27;ll have to sell for much less if the next season turns out to be good.</p>
 <p>If it were possible for one great company to gain control of an entire country&#x27;s grain supply, it might be in their interest to do what the Dutch are said to do with the spices of the Moluccas: destroy or throw away a large part to keep up the price of the rest. But it&#x27;s virtually impossible — even through the force of law — to establish such a comprehensive monopoly on grain. And wherever the law leaves the trade free, grain is of all commodities the least likely to be monopolized by a few big players buying up most of the supply. Its total value far exceeds what any few private fortunes could purchase. And even if they could afford it, the way grain is produced makes it impractical. In every civilized country, grain is the commodity with the largest annual consumption, and more labor goes into producing it than any other product. When grain first comes from the ground, it&#x27;s divided among a greater number of owners than any other commodity, and these owners are necessarily scattered across the entire countryside — they can&#x27;t be gathered in one place like manufacturers. These original owners either sell directly to local consumers or supply inland dealers who sell to consumers. The inland grain trade therefore involves far more participants than the trade in any other commodity, and their dispersed locations make it completely impossible for them to form any kind of collective scheme. If any one dealer finds himself with more grain than he can sell at the current price before the next harvest, he&#x27;d never dream of keeping the price artificially high for his own loss and his competitors&#x27; benefit. He&#x27;d immediately lower his price to clear his inventory before the new crop arrives. The same motives that govern one dealer govern all of them, compelling them to sell at whatever price, in their best judgment, matches the season&#x27;s actual scarcity or abundance.</p>
@@ -2060,13 +2411,13 @@
 <p>The average quantity of grain exported from Britain, according to the same author, is no more than one thirty-first of annual production. So for encouraging farming by providing a market for domestic grain, the domestic trade is about 30 times more important than the export trade.</p>
 <p>I don&#x27;t have great faith in political arithmetic, and I don&#x27;t vouch for the precision of either calculation. I mention them only to show that, in the judgment of the most experienced and knowledgeable observers, the domestic grain trade is vastly more important than the foreign one. The remarkable cheapness of grain in the years just before the export subsidy was established may reasonably be attributed, at least in part, to this statute of Charles II, which had been enacted about twenty-five years earlier — enough time to produce its full effect.</p>
 <p>A very few words will cover what I have to say about the other three branches of the grain trade.</p>
-<h4>II. The Merchant Importer of Foreign Grain</h4>
+<h3 class="sub">II. The Merchant Importer of Foreign Grain</h3>
 <p>The trade of the merchant who imports foreign grain for domestic consumption obviously contributes directly to supplying the home market, and must therefore be immediately beneficial to the general public. It does tend to lower the average money price of grain somewhat, but it doesn&#x27;t reduce grain&#x27;s real value — the quantity of labor it can support. If imports were always free, our farmers and landowners would probably, on average, get less money for their grain than they do now, when imports are for the most part effectively banned. But the money they received would be worth more — it would buy more of all other goods and employ more labor. Their real wealth and real income would be the same as now, even though expressed in a smaller amount of silver. They would be neither unable nor unwilling to grow as much grain as they currently do.</p>
 <p>On the contrary, since the rise in silver&#x27;s real value (which results from lowering the money price of grain) also lowers the money price of all other goods, it gives the country&#x27;s industry a competitive advantage in every foreign market, thereby encouraging and expanding that industry. But the size of the home market for grain depends on the country&#x27;s overall level of industry — on the number of people who produce other things and therefore have other things (or the money from selling other things) to exchange for grain. In every country, the home market is the nearest, most convenient, and also the largest and most important market for grain. The rise in silver&#x27;s real value that results from a lower average money price of grain tends to expand this largest and most important market, thereby encouraging rather than discouraging grain production.</p>
 <p>Under a statute of Charles II, the import of wheat was subjected to a duty of sixteen shillings per quarter whenever the domestic price was below fifty-three shillings fourpence, and to eight shillings whenever the price was below four pounds. The lower threshold has, for over a century, been reached only during severe shortages. The higher threshold has, as far as I know, never been reached at all. Yet until wheat rose above this higher price, it faced a very heavy duty, and until it rose above the lower price, the duty effectively amounted to a ban. Similar restrictions were imposed on other grains, at rates and duties almost equally high. Later laws increased these duties even further.</p>
 <p>The suffering that strict enforcement of these laws might have caused during years of scarcity would probably have been very great. But in such emergencies, enforcement was generally suspended by temporary statutes that permitted grain imports for a limited time. The very need for these temporary exceptions proves how badly designed the permanent law was.</p>
 <p>These import restrictions, though enacted before the export subsidy, were inspired by the same spirit and the same principles. However harmful in themselves, some kind of import restrictions became necessary once the export subsidy existed. If, when wheat was at or near forty-eight shillings per quarter, foreign grain could have been imported duty-free or at only a small duty, it could have been immediately re-exported with the subsidy — a massive loss to the public treasury and a complete perversion of the subsidy&#x27;s purpose, which was to expand the market for domestically grown grain, not for foreign grain.</p>
-<h4>III. The Merchant Exporter of Domestic Grain</h4>
+<h3 class="sub">III. The Merchant Exporter of Domestic Grain</h3>
 <p>The trade of the merchant who exports grain for foreign consumption certainly doesn&#x27;t contribute directly to keeping the home market well supplied. But it does so indirectly. Whatever the usual source of domestic supply — whether homegrown or imported — the home market can never be reliably well stocked unless more grain is usually grown or imported than the country itself consumes. But unless the surplus can normally be exported, growers will be careful never to produce more, and importers never to import more, than bare domestic consumption requires. The market will rarely be oversupplied — but it will generally be undersupplied, because the people whose business it is to provide grain will always be afraid of getting stuck with unsold inventory. Banning exports limits the country&#x27;s agricultural development to what its own population can consume. Allowing exports enables agriculture to expand to serve foreign demand as well.</p>
 <p>Under a statute of Charles II, grain exports were permitted whenever wheat was below forty shillings per quarter. A later statute of the same reign extended this to forty-eight shillings. A third allowed exports at all higher prices. A small duty was payable to the king on exports, but since all grains were valued very low in the official tariff book, this amounted to only a shilling on wheat, fourpence on oats, and sixpence on other grains per quarter. Under the act of William and Mary that established the subsidy, this small duty was effectively waived whenever wheat was under forty-eight shillings. A later act explicitly eliminated it at all higher prices.</p>
 <p>The export trade was thus not only encouraged by a subsidy but made much freer than the domestic trade. Under the last of these statutes, grain could be bought up at any price for export. But it could not be bought up for domestic resale unless the price was below forty-eight shillings per quarter. As I&#x27;ve already shown, the inland dealer&#x27;s interest can never be opposed to the public&#x27;s interest. The exporter&#x27;s interest, however, sometimes can be. If his own country is suffering from a shortage while a neighboring country faces famine, it might be in his interest to ship grain to the latter in quantities that would severely worsen the shortage at home. These export-friendly statutes weren&#x27;t really aimed at keeping the domestic market well supplied. Their real goal — under the pretense of encouraging agriculture — was to push the money price of grain as high as possible, creating what amounted to a permanent shortage at home. Import restrictions limited the home market to domestic production, even in times of great scarcity. Export encouragements — allowing exports even when wheat hit forty-eight shillings — prevented the home market from enjoying its own full harvest, even in times of considerable scarcity. The frequent need for temporary laws banning exports and suspending import duties — emergency measures Britain has been forced to adopt again and again — proves how poorly designed the permanent system was. If the system had been good, there would have been no need to keep abandoning it.</p>
@@ -2074,7 +2425,7 @@
 <p>But very few countries have fully adopted this open system. Freedom in the grain trade is almost everywhere more or less restricted, and in many countries is constrained by regulations so absurd that they frequently turn the unavoidable hardship of a shortage into the horrifying catastrophe of a famine. These poorly governed countries&#x27; demand for grain can sometimes become so desperate that a small neighboring country experiencing its own mild shortage wouldn&#x27;t dare supply them without risking the same catastrophe at home. The terrible policies of one country can thus make it dangerous for another country to adopt what would otherwise be the best policy. Completely free exports, however, would be much less risky in large countries, where production is so great that the supply could rarely be significantly affected by any likely volume of exports.</p>
 <p>In a small Swiss canton, or one of the little Italian states, it might sometimes be necessary to restrict grain exports. In great countries like France or England, it almost never is. Besides, preventing a farmer from selling his goods at all times in the best market is clearly a sacrifice of the ordinary principles of justice to some notion of national interest — a type of government action that should be reserved for, and can only be pardoned in, cases of the most urgent necessity. The price at which grain exports are banned, if they&#x27;re ever to be banned, should always be very high.</p>
 <p>The laws concerning grain may everywhere be compared to the laws concerning religion. People feel so personally invested in what relates to their livelihood in this world, or to their happiness in the next, that government must yield to their passions and, for the sake of public peace, establish whatever system they approve of. It&#x27;s perhaps for this reason that we so rarely find a reasonable system established with regard to either of these two vital matters.</p>
-<h4>IV. The Merchant Carrier</h4>
+<h3 class="sub">IV. The Merchant Carrier</h3>
 <p>The trade of the merchant carrier — the importer of foreign grain in order to re-export it — contributes to keeping the home market well stocked. Re-exporting grain isn&#x27;t his direct intention, but he&#x27;ll generally be willing to sell it domestically, even for considerably less than he might expect in a foreign market, because this saves him the cost of loading and unloading, freight, and insurance. The inhabitants of a country that becomes, through the carrying trade, a warehouse and distribution center for supplying other countries can very rarely find themselves short. Even though the carrying trade might somewhat reduce the average money price of grain domestically, it wouldn&#x27;t lower its real value — it would only raise the real value of silver somewhat.</p>
 <p>The carrying trade in grain was effectively banned in Britain under normal circumstances by the high import duties (most of which had no drawback), and in emergencies, when scarcity led to temporary suspension of those duties, exports were always banned. Under this system of laws, the carrying trade was prohibited in every situation.</p>
 <p>This system of laws — the whole framework connected to the export subsidy — therefore deserves none of the praise it has received. The improvement and prosperity of Great Britain, so often credited to these laws, can easily be explained by other causes. The security that British law gives to every person — the assurance that they will enjoy the fruits of their own labor — is by itself enough to make any country flourish, despite these and twenty other absurd trade regulations. This security was perfected by the Glorious Revolution, around the same time the subsidy was established. The natural effort of every individual to better his own condition, when allowed to operate with freedom and security, is so powerful a force that it alone — without any help — is capable not only of carrying a society to wealth and prosperity, but of overcoming a hundred foolish obstacles that misguided laws constantly put in its way. The effect of these obstacles is always, to some degree, either to restrict its freedom or to undermine its security. In Britain, industry is perfectly secure; and though it&#x27;s far from perfectly free, it&#x27;s as free or freer than in any other part of Europe.</p>
@@ -2667,9 +3018,9 @@
 <h2 id="chapter-1-part-three-the-expense-of-public-works-and-public-institutions">Chapter 1, Part Three: The Expense of Public Works and Public Institutions</h2>
 <p>The third and final duty of government is building and maintaining those public institutions and public works that may be enormously beneficial to society as a whole, but whose profits could never repay the expense for any individual or small group. No individual or small group can therefore be expected to build or maintain them. The cost of performing this duty, like the others, varies greatly at different stages of society.</p>
 <p>After the public institutions needed for defense and the administration of justice — both already discussed — the main remaining public works are of two kinds: those that facilitate the nation&#x27;s commerce, and those that promote the education of the people. The educational institutions are themselves of two kinds: those for educating the young, and those for instructing people of all ages. The question of how to most properly fund these different public works and institutions will divide this third part of the chapter into three sections.</p>
-<h4>Section I</h4>
-<h4>Public Works and Institutions for Facilitating Commerce</h4>
-<h4>First: Those Necessary for Facilitating Commerce in General</h4>
+<h3 class="sub">Section I</h3>
+<h3 class="sub">Public Works and Institutions for Facilitating Commerce</h3>
+<h3 class="sub">First: Those Necessary for Facilitating Commerce in General</h3>
 <p>That building and maintaining the public works which facilitate a country&#x27;s commerce — good roads, bridges, navigable canals, harbors, and the like — must cost very different amounts at different stages of development is obvious without any proof. The cost of making and maintaining a country&#x27;s public roads must increase with the annual output of its economy — that is, with the quantity and weight of goods that need to be transported on those roads. A bridge&#x27;s strength must suit the number and weight of the vehicles likely to cross it. The depth and water supply of a navigable canal must match the number and size of the boats likely to use it. A harbor&#x27;s capacity must match the number of ships likely to take shelter in it.</p>
 <p>It doesn&#x27;t seem necessary for the expense of these public works to come from the government&#x27;s general tax revenue. Most of them can easily be managed in a way that generates enough of their own revenue to cover their costs, without burdening the general public.</p>
 <p>A highway, a bridge, or a navigable canal can usually be both built and maintained by a modest toll on the vehicles that use them. A harbor can be funded by a moderate duty on the tonnage of ships that load or unload there. The mint — another institution for facilitating commerce — not only covers its own costs in many countries but actually generates a small profit for the government. The post office — another such institution — not only covers its own costs in almost every country but generates very substantial revenue.</p>
@@ -2743,9 +3094,9 @@
 <p>In 1724, the company had taken up whale fishing. It had no monopoly on this, but as long as it was in the business, no other British firm seems to have tried it. Of eight whaling voyages, only one turned a profit. After the eighth and final voyage, when they sold their ships and equipment, they found their total loss — capital and interest included — exceeded two hundred and thirty-seven thousand pounds.</p>
 <p>In 1722, the company petitioned Parliament to split its enormous capital of over thirty-three million pounds in two: one half to be treated as ordinary government bonds, safe from the company&#x27;s trading losses; the other half to remain as trading capital, exposed to those losses. The petition was too reasonable to refuse. In 1733, they petitioned again for three-fourths of the trading capital to be converted to bond status, leaving only one-fourth for trading. By then, both their bond and trading stocks had been reduced by several million through government repayments, so this remaining quarter amounted to only about three million six hundred and sixty-three thousand pounds. In 1748, the Treaty of Aix-la-Chapelle settled all the company&#x27;s claims against Spain under the Asiento contract. Its trade with the Spanish West Indies was terminated, the rest of its trading capital was converted to bonds, and the company ceased to be a trading company in any respect.</p>
 <p>It&#x27;s worth noting that in its annual ship trade — the only trade it was ever expected to profit from — the South Sea Company faced competition both abroad and at home. At Cartagena, Portobelo, and Veracruz, it competed with Spanish merchants bringing European goods from Cadiz. In England, it competed with English merchants importing Spanish colonial goods from Cadiz. The goods of both Spanish and English merchants may have carried somewhat higher duties. But the losses caused by the negligence, waste, and theft of the company&#x27;s own employees probably amounted to a heavier tax than all those duties combined. That a joint stock company could successfully conduct any branch of foreign trade in open, fair competition with private traders seems contrary to all experience.</p>
-<h4>Book V, Chapter I — The Expenses of Government</h4>
-<h4>Part Three, Section I (continued)</h4>
-<h4>The East India Company and the Limits of Joint Stock Enterprise</h4>
+<h3 class="sub">Book V, Chapter I — The Expenses of Government</h3>
+<h3 class="sub">Part Three, Section I (continued)</h3>
+<h3 class="sub">The East India Company and the Limits of Joint Stock Enterprise</h3>
 <p>The old English East India Company was established in 1600 by a charter from Queen Elizabeth. For its first twelve voyages to India, it seems to have operated as a regulated company, with separate investments in each voyage, though using only the company&#x27;s own ships. In 1612, it merged into a joint stock. Its charter was exclusive, and though not confirmed by act of Parliament, it was at the time considered to convey a genuine monopoly. For many years, therefore, it wasn&#x27;t much bothered by unauthorized competitors.</p>
 <p>Its capital never exceeded seven hundred and forty-four thousand pounds, with fifty pounds being one share. This wasn&#x27;t so large that it provided either a pretext for gross negligence and waste or a cover for serious embezzlement. Despite some extraordinary losses — caused partly by the hostility of the Dutch East India Company and partly by other mishaps — it conducted a successful trade for many years.</p>
 <p>But over time, as the principles of liberty became better understood, it grew increasingly doubtful whether a royal charter not confirmed by Parliament could actually convey a legal monopoly. Court rulings on this question were inconsistent, shifting with the political winds. Unauthorized competitors multiplied. Through the late reign of Charles II, the entire reign of James II, and into the reign of William III, they reduced the old company to great distress.</p>
@@ -2914,7 +3265,7 @@
 <p>Beyond the expenses needed to carry out the government&#x27;s various duties, a certain amount must also be spent on maintaining the dignity of the head of state. This expense varies with both the level of a society&#x27;s development and its form of government.</p>
 <p>In a wealthy and advanced society, where all classes of people are spending more and more on their homes, furniture, dining, clothing, and carriages, it can hardly be expected that the head of state alone should resist the trend. Naturally — or rather, inevitably — the leader becomes more extravagant in all these areas too. The dignity of the office practically demands it.</p>
 <p>Since a monarch is elevated far above his subjects to a greater degree than the leader of a republic is above his fellow citizens, greater expense is needed to support that greater dignity. We naturally expect more splendor in the court of a king than in the residence of a governor or mayor.</p>
-<h4>Conclusion of Chapter I</h4>
+<h3 class="sub">Conclusion of Chapter I</h3>
 <p>The expense of national defense, and the expense of supporting the dignity of the head of state, are both incurred for the benefit of the entire society. It&#x27;s therefore reasonable that they should be funded by the general contributions of the whole society, with everyone contributing as close to proportionally to their means as possible.</p>
 <p>The expense of administering justice can also, without doubt, be considered as benefiting the whole society. There is nothing wrong, therefore, with funding it through general taxation. The people who actually create this expense, however, are those whose wrongful behavior makes it necessary to seek justice through the courts. And the people who most directly benefit from it are those whom the courts either restore to their rights or protect in them. The cost of administering justice may therefore be quite properly covered by fees paid by one or both of these groups, as the circumstances of each case require — that is, by court fees. It shouldn&#x27;t be necessary to tap the general revenue for this purpose, except for prosecuting criminals who don&#x27;t have the means to pay those fees themselves.</p>
 <p>Local or provincial expenses that benefit only a particular area — the cost of policing a particular town or district, for example — should be funded by local or provincial revenue, and should not be a burden on the general revenue of the nation. It&#x27;s unfair for the entire country to pay for an expense whose benefits are confined to one part of it.</p>
@@ -3032,7 +3383,7 @@
 <p>To require every citizen to declare publicly, under oath, the total amount of his fortune doesn&#x27;t seem to be considered a hardship in these Swiss cantons. In Hamburg, it would be considered the greatest hardship imaginable. Merchants involved in risky commercial ventures all tremble at the thought of being forced to reveal the true state of their finances at any time. They foresee that the ruin of their credit and the collapse of their projects would too often be the result. A sober and frugal people who are strangers to such risky ventures don&#x27;t feel they have any reason for such secrecy.</p>
 <p>In Holland, soon after William of Orange was elevated to the office of stadtholder, a tax of two percent — called the &quot;fiftieth penny&quot; — was imposed on the entire wealth of every citizen. Everyone assessed himself and paid in the same way as in Hamburg, and the tax was generally believed to have been paid honestly. The people at that time had the greatest affection for their new government, which they had just established through a general uprising. The tax was meant to be paid only once, to relieve the state in a particular emergency. Indeed, it was too heavy to be permanent. In a country where the market interest rate rarely exceeds three percent, a two percent tax amounts to thirteen shillings and fourpence per pound on the highest net income typically earned from capital. It&#x27;s a tax that very few people could pay without eating into their capital itself. In a particular emergency, people may, out of great public spirit, make a huge effort and even give up part of their capital to help the state. But they can&#x27;t keep doing this for long, and if they did, the tax would soon ruin them so completely that they&#x27;d be totally unable to support the state any longer.</p>
 <p>The tax on capital imposed by England&#x27;s land tax bill, though proportioned to capital, isn&#x27;t meant to diminish or take away any part of that capital. It&#x27;s meant only as a tax on the interest income from capital, proportioned to the tax on land rent — so that when the land tax is four shillings per pound, the capital tax is four shillings per pound too. The tax in Hamburg, and the even more moderate taxes in Unterwalden and Zurich, are likewise meant to be taxes not on capital itself, but on the interest or net income from capital. The Dutch tax was meant to be a tax on capital itself.</p>
-<h4>Taxes on the Profits of Particular Occupations</h4>
+<h3 class="sub">Taxes on the Profits of Particular Occupations</h3>
 <p>In some countries, special taxes are imposed on the profits from capital — sometimes when it&#x27;s employed in particular types of trade, and sometimes when it&#x27;s employed in agriculture.</p>
 <p>Examples of the first kind in England include the tax on hawkers and peddlers, the tax on hired coaches and sedan chairs, and the fee that pub owners pay for a license to sell beer and spirits. During a recent war, another tax of this kind was proposed on shops. Since the war had been fought to protect the nation&#x27;s trade, it was argued, the merchants who stood to profit from it ought to help pay for it.</p>
 <p>However, a tax on profits earned in any particular line of business can never ultimately fall on the business owners themselves (who must, in normal circumstances, earn their reasonable profit and, where competition is free, can rarely earn more than that). The tax always falls on consumers, who end up paying for the tax the business owner advances — and usually with some markup on top.</p>
@@ -3083,7 +3434,7 @@
 <section aria-labelledby="article-four-taxes-intended-to-fall-on-every-kind-of-income">
 <h2 id="article-four-taxes-intended-to-fall-on-every-kind-of-income">Article Four: Taxes Intended to Fall on Every Kind of Income</h2>
 <p>Taxes intended to fall equally on every kind of income are poll taxes and taxes on consumer goods. These must be paid out of whatever income the taxpayer happens to have — whether from the rent on his land, the profits from his capital, or the wages of his labor.</p>
-<h4>Poll Taxes</h4>
+<h3 class="sub">Poll Taxes</h3>
 <p>If poll taxes are meant to be proportioned to each person&#x27;s fortune or income, they become entirely arbitrary. A person&#x27;s financial situation changes from day to day, and without an investigation more intolerable than any tax — and repeated at least once a year — it can only be guessed at. Each person&#x27;s assessment must therefore depend mostly on the good or bad mood of his assessors, making the whole thing arbitrary and uncertain.</p>
 <p>If poll taxes are proportioned not to estimated fortune but to social rank, they become entirely unequal, since people of the same rank frequently have very different levels of wealth.</p>
 <p>So if you try to make such taxes equal, they become arbitrary and uncertain. If you try to make them certain and not arbitrary, they become unequal. Whether the tax is light or heavy, uncertainty is always a serious grievance. In a light tax, a considerable degree of inequality can be tolerated. In a heavy one, inequality is completely intolerable.</p>
@@ -3092,7 +3443,7 @@
 <p>In England, the various poll taxes never produced the revenue that had been expected — or that they might have produced if they&#x27;d been strictly enforced. In France, the poll tax always produces the expected amount. England&#x27;s mild government, when it assessed people by rank for the poll tax, was content with whatever that assessment happened to produce. It demanded no compensation for the losses the state might suffer from those who couldn&#x27;t pay or those who wouldn&#x27;t pay (and there were many of both), and who, through lenient enforcement, were never forced to pay. France&#x27;s more severe government assigns each administrative district a certain sum that the regional administrator must collect however he can. If any province complains of being overtaxed, it may get a proportional reduction the following year. But it must pay in the meantime. The administrator, to make sure he collected his district&#x27;s full assessment, was empowered to set the total higher than needed, so that the failure or inability of some taxpayers would be covered by overcharging the rest. Until 1765, setting this surplus assessment was left entirely to his discretion. That year, the royal council took this power for itself. In the provincial poll tax, as observed by the thoroughly well-informed author of the <em>Memoirs on French Taxation</em>, the share that falls on the nobility and on those whose privileges exempt them from the taille is the smallest. The largest share falls on those subject to the taille, who are assessed for the poll tax at a rate proportional to what they pay in taille.</p>
 <p>Poll taxes, insofar as they fall on the lower classes, are really direct taxes on wages and carry all the same drawbacks as such taxes.</p>
 <p>Poll taxes are cheap to collect, and when strictly enforced, they provide a very reliable government revenue. This is why poll taxes are very common in countries where the comfort and security of ordinary people receive little attention. In general, however, only a small part of public revenue in any great country has ever come from such taxes, and whatever they&#x27;ve raised could always have been found through some other means far less burdensome to the people.</p>
-<h4>Taxes on Consumer Goods</h4>
+<h3 class="sub">Taxes on Consumer Goods</h3>
 <p>The impossibility of taxing people in proportion to their income through any poll tax seems to have inspired the invention of taxes on consumer goods. Unable to tax its subjects&#x27; income directly and proportionally, the state tries to tax it indirectly by taxing their spending — which, it&#x27;s assumed, will in most cases be roughly proportional to their income. Spending is taxed by taxing the consumer goods on which it&#x27;s spent.</p>
 <p>Consumer goods are either necessities or luxuries.</p>
 <p>By &quot;necessities&quot; I mean not only the goods absolutely essential for survival, but also whatever the customs of the country make it shameful for any respectable person, even of the lowest class, to go without. A linen shirt, for example, isn&#x27;t strictly necessary for life. The Greeks and Romans lived perfectly comfortably without linen. But in modern Europe, a respectable day-laborer would be ashamed to appear in public without a linen shirt. Going without one would suggest a disgraceful level of poverty that nobody is supposed to fall into without extreme irresponsibility. In the same way, custom has made leather shoes a necessity of life in England. The poorest respectable person of either sex would be ashamed to be seen without them. In Scotland, custom has made them a necessity for the lowest class of men, but not for women of the same class, who may walk around barefoot without any disgrace. In France, they&#x27;re a necessity for neither sex — the poorest people of both sexes appear in public without any embarrassment, sometimes in wooden clogs and sometimes barefoot. So by &quot;necessities&quot; I include not only what nature requires, but what the established rules of decency have made necessary for the poorest people. Everything else I call luxuries — without meaning to cast the slightest disapproval on their moderate use. Beer and ale in Britain, and wine even in wine-producing countries, I classify as luxuries. A person of any rank can abstain from these drinks entirely without any reproach. Nature doesn&#x27;t require them for survival, and nowhere does custom make it indecent to live without them.</p>

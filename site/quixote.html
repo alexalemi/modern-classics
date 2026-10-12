@@ -19,8 +19,359 @@
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=navigation" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 	<link rel="preload" href="fonts/libre-caslon-text-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="stylesheet" href="fonts.css">
-	<link rel="stylesheet" href="book.css">
+	<style>
+/* Fonts for every page (front pages and book pages), served from this site
+   rather than Google Fonts: a third-party
+   stylesheet blocked rendering for ~0.8 s on mobile (PageSpeed, 2026-10-12).
+   Oswald, Yellowtail and Libre Caslon Text (SIL Open Font License), latin and
+   latin-ext subsets as Google serves them, in site/fonts/. */
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* The book pages. Shared by every page assemble.py writes; fonts in fonts.css.
+
+   LEGIBILITY FIRST. The running text is set in the best screen serif the
+   reader's own device has (Charter on Apple, Sitka Text on Windows, Georgia
+   or Noto Serif elsewhere), near-black on white, 19-20px, ~66 characters to
+   the line. The Emend look (Libre Caslon Text, navy, the cream band, Oswald
+   labels) is kept to the title band, the headings and the controls. */
+
+:root {
+  --page:  #ffffff;
+  --text:  #1c1c1c;
+  --ink:   #1b314d;     /* navy: headings, links, buttons */
+  --cream: #f4efe2;
+  --soft:  #5a6472;
+  --rule:  #ddd6c8;
+  --link:  #1f4f86;
+  --plate-bg: #ffffff;
+  --reading: Charter, "Bitstream Charter", "Sitka Text", Georgia, "Noto Serif", serif;
+  --display: "Libre Caslon Text", Georgia, serif;
+  --label:   "Oswald", "Arial Narrow", sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page:  #14181e;
+    --text:  #e4e0d8;
+    --ink:   #e8e2d4;
+    --cream: #1d2430;
+    --soft:  #a3adba;
+    --rule:  #343c48;
+    --link:  #9cc2e6;
+  }
+  /* plates and diagrams are drawn on white paper; keep them on it, slightly dimmed */
+  figure img { opacity: .92; }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html {
+  background: var(--page);
+  color: var(--text);
+  font-size: 20px;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--reading);
+  line-height: 1.65;
+  font-kerning: normal;
+}
+
+main { max-width: 34rem; margin: 0 auto; padding: 0 1rem 5rem; }
+
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+
+/* ---------- title band ---------- */
+
+.title-block {
+  background: var(--cream);
+  padding: 1.6rem 1rem 1.8rem;
+  margin-bottom: 2rem;
+}
+.title-inner {
+  max-width: 44rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.8rem;
+  align-items: center;
+}
+.title-block .series {
+  grid-column: 1 / -1;
+  margin: 0 0 0.2rem;
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.title-block .series a { color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 0.55rem; }
+.title-block .series a:hover span { text-decoration: underline; }
+.title-block .series img { height: 1.8rem; width: auto; }
+.cover img {
+  display: block;
+  width: 150px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+}
+.title-text { min-width: 0; }
+h1 {
+  font: 700 2rem/1.15 var(--display);
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+  text-align: left;
+}
+.title-line { margin: 0 0 0.3rem; font-size: 0.95rem; color: var(--ink); }
+.title-line.byline { font-weight: 700; }
+.dates { margin: 0 0 0.9rem; font-size: 0.85rem; color: var(--soft); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.button {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid var(--ink);
+  font: 500 0.75rem/1.2 var(--label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+}
+.button.primary { background: var(--ink); color: var(--page); }
+.button:hover { text-decoration: underline; }
+
+/* phones: a small cover beside the title, so the text starts sooner */
+@media (max-width: 36rem) {
+  .title-block { padding: 1.1rem 1rem 1.4rem; }
+  .title-inner { grid-template-columns: 76px 1fr; gap: 0.9rem; align-items: start; }
+  .cover img { width: 76px; height: 114px; }
+  h1 { font-size: 1.45rem; }
+  .actions { grid-column: 1 / -1; }
+}
+
+/* ---------- running text ---------- */
+
+.intro-note { font-style: italic; font-size: 0.9rem; color: var(--soft); }
+
+h2, h3, h4 {
+  font-family: var(--display);
+  color: var(--ink);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+h2 { font-size: 1.45rem; margin: 3.2rem 0 1rem; }
+h3 { font-size: 1.2rem; margin: 2.8rem 0 0.9rem; }
+h4, h3.sub { font-size: 1rem; margin: 2rem 0 0.8rem; font-style: italic; }
+h2.center { text-align: center; font-size: 1.6rem; margin-top: 4rem; }
+
+p, ul, ol { margin: 0 0 1.15em; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+blockquote {
+  margin: 1.5em 0 1.5em 1em;
+  padding-left: 1em;
+  border-left: 3px solid var(--rule);
+  font-style: italic;
+}
+blockquote p { margin-bottom: 0.8em; }
+
+pre.outline {
+  font-family: var(--reading);
+  white-space: pre-wrap;
+  line-height: 1.6;
+  margin: 0 0 1.15em;
+}
+
+img.glyph { vertical-align: middle; display: inline; }
+span.frac, span.stack { display: inline-block; vertical-align: middle; text-align: center; }
+span.frac > span, span.stack > span { display: block; }
+span.frac > span.num { border-bottom: 1px solid currentColor; }
+span.stack.brace { border-left: 2px solid currentColor; border-right: 2px solid currentColor; border-radius: 0.6em; padding: 0 0.3em; }
+math { font-size: 1.05em; }
+
+figure { margin: 2.2em auto; text-align: center; }
+figure + figure { margin-top: 1em; }
+figure img { max-width: 100%; height: auto; background: var(--plate-bg); }
+figcaption {
+  margin-top: 0.6em;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--soft);
+  text-align: left;
+}
+
+table.plates { width: 100%; margin: 2.5em 0; border-collapse: collapse; line-height: 1.5; }
+table.plates td { padding: 0.4em 0.8em; vertical-align: middle; border-bottom: 1px solid var(--rule); }
+table.plates tr:last-child td { border-bottom: none; }
+table.plates figure, table.plates figure + figure { margin: 0.4em auto; }
+table.plates figcaption { display: none; }
+
+/* page locators: a printed page and quarter, for books that cite
+   themselves by them (Helmholtz: "see p. 77c") */
+span.loc { font-size: 0.65em; color: var(--soft); vertical-align: 0.3em; padding: 0 0.15em; font-style: normal; }
+a.ref { color: inherit; text-decoration: underline dotted; }
+span.sc { font-variant: small-caps; }
+.center { text-align: center; }
+.subtitle { text-align: center; font-style: italic; }
+
+/* ---------- contents ---------- */
+
+nav.contents h2 { margin-top: 0; }
+.toc-book { font-family: var(--display); font-weight: 700; margin: 1.2em 0 0.4em; color: var(--ink); }
+.toc-list { list-style: none; padding-left: 1.2em; margin: 0 0 1em; }
+.toc-list li { margin-bottom: 0.3em; line-height: 1.4; }
+nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
+
+/* ---------- reading aids (book.js) ---------- */
+
+.resume {
+  margin: 0 0 1.5rem;
+  padding: 0.7rem 1rem;
+  background: var(--cream);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+.resume[hidden] { display: none; }
+
+.to-contents {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 5;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--page);
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+.to-contents.show { opacity: .92; pointer-events: auto; }
+
+@media (max-width: 36rem) {
+  html { font-size: 18px; }
+}
+
+@media print {
+  .title-block { background: none; }
+  .actions, .to-contents, .resume { display: none; }
+}
+</style>
 	<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "Don Quixote", "author": {"@type": "Person", "name": "Miguel de Cervantes"}, "inLanguage": "en", "url": "https://emend.press/quixote.html", "description": "A gentleman reads too many books of chivalry and rides out to fix the world with a labourer who talks in proverbs. Both volumes, all 126 chapters, from the Spanish. Retold in modern English, free to read online and as an ebook.", "publisher": {"@type": "Organization", "name": "Emend Press", "url": "https://emend.press/", "logo": "https://emend.press/apple-touch-icon.png"}, "isAccessibleForFree": true, "isPartOf": {"@type": "BookSeries", "name": "Modern Classics", "url": "https://emend.press/"}, "image": "https://emend.press/covers/quixote.jpg", "datePublished": "2026", "bookEdition": "Modern English retelling", "isBasedOn": {"@type": "Book", "name": "Don Quixote", "author": {"@type": "Person", "name": "Miguel de Cervantes"}}, "workExample": {"@type": "Book", "bookFormat": "https://schema.org/EBook", "encodingFormat": "application/epub+zip", "url": "https://emend.press/ebooks/miguel-de-cervantes_don-quixote.epub"}}</script>
 </head>
 
@@ -201,7 +552,7 @@
 <h2 id="to-the-duke-of-b-jar">To the Duke of Béjar</h2>
 <p>Marquis of Gibraleón, Count of Benalcázar and Bañares, Viscount of La Puebla de Alcocer, Lord of the towns of Capilla, Curiel and Burguillos</p>
 <p>Trusting in the generous welcome and the honour that Your Excellency shows to books of every kind, as a prince so inclined to favour the fine arts — and above all those which, being noble, do not stoop to serve the common crowd or to make money out of it — I have determined to bring The Ingenious Gentleman Don Quixote of La Mancha into the light under the shelter of Your Excellency&#x27;s most illustrious name. And with the respect I owe to greatness of that order, I beg you to receive him kindly into your protection, so that in your shadow he may dare to appear safely before the judgement of certain persons who, keeping strictly within the bounds of their own ignorance, are in the habit of condemning other men&#x27;s work with more severity than justice. For he goes out stripped of that precious ornament of elegance and learning which usually clothes works composed in the houses of men who know things; and I trust that when Your Excellency&#x27;s good sense considers how well I meant it, you will not despise the smallness of so humble a service.</p>
-<h4>Miguel de Cervantes Saavedra</h4>
+<h3 class="sub">Miguel de Cervantes Saavedra</h3>
 </section>
 <section aria-labelledby="prologue">
 <h2 id="prologue">Prologue</h2>
@@ -236,7 +587,7 @@
 <section aria-labelledby="verses-for-the-book-of-don-quixote-of-la-mancha">
 <h2 id="verses-for-the-book-of-don-quixote-of-la-mancha">Verses for the Book of Don Quixote of La Mancha</h2>
 <p>[Modern note: what follows is a set of commendatory poems supposedly written by Amadís of Gaul, Orlando, the Lady Oriana and other characters out of the very romances the book is attacking — a parody of the puffs that real books of the day carried at the front. Two of them are in what the Spanish calls versos de cabo roto, &quot;broken-tail verse&quot;: the last syllable of every line is lopped off. It makes the rhyme and mocks affected poets at the same time, and the English does the same thing, so read the half-words aloud and let your ear finish them.]</p>
-<h4>Urganda the Unknown</h4>
+<h3 class="sub">Urganda the Unknown</h3>
 <pre class="outline">	If you&#x27;d reach the good and wi-,
 	book, and go with careful ste-,
 	no smart aleck will be ab-
@@ -306,8 +657,8 @@
 	for the fellow who brings out pa-
 	to entertain young ladi-
 	writes any old nonsense that come-.</pre>
-<h4>Amadís of Gaul, to Don Quixote of La Mancha</h4>
-<h4>Sonnet</h4>
+<h3 class="sub">Amadís of Gaul, to Don Quixote of La Mancha</h3>
+<h3 class="sub">Sonnet</h3>
 <pre class="outline">	You who copied out the weeping life
 	that I led, absent and disdained, up there
 	on the great bare crag of the Poor Rock,
@@ -322,8 +673,8 @@
 <pre class="outline">	you will keep a clear name for courage;
 	your country will stand first among them all;
 	and your wise author, unique in the world, alone.</pre>
-<h4>Don Belianís of Greece, to Don Quixote of La Mancha</h4>
-<h4>Sonnet</h4>
+<h3 class="sub">Don Belianís of Greece, to Don Quixote of La Mancha</h3>
+<h3 class="sub">Sonnet</h3>
 <pre class="outline">	I broke, I hacked, I dented, said and did
 	more than any knight errant in the world;
 	I was skilful, I was brave, I was arrogant;
@@ -338,8 +689,8 @@
 <pre class="outline">	But although my luck was always seen
 	perched above the very horn of the moon,
 	I envy your exploits, great Quixote!</pre>
-<h4>The Lady Oriana, to Dulcinea of El Toboso</h4>
-<h4>Sonnet</h4>
+<h3 class="sub">The Lady Oriana, to Dulcinea of El Toboso</h3>
+<h3 class="sub">Sonnet</h3>
 <pre class="outline">	Oh, that I had, lovely Dulcinea,
 	for greater comfort and for greater peace,
 	set Miraflores down in El Toboso,
@@ -354,8 +705,8 @@
 <pre class="outline">	Then I should have been envied and not envious,
 	and the time that was sad would have been merry,
 	and I should have had the pleasures without the bill.</pre>
-<h4>Gandalín, Squire to Amadís of Gaul, to Sancho Panza, Squire to Don Quixote</h4>
-<h4>Sonnet</h4>
+<h3 class="sub">Gandalín, Squire to Amadís of Gaul, to Sancho Panza, Squire to Don Quixote</h3>
+<h3 class="sub">Sonnet</h3>
 <pre class="outline">	Hail, famous man, to whom Fortune,
 	when she put you into the squiring trade,
 	arranged things so gently and so sensibly
@@ -370,7 +721,7 @@
 <pre class="outline">	Hail again, Sancho! So good a man
 	that to you alone our Spanish Ovid
 	makes his bow — and a smack on the back of the neck with it.</pre>
-<h4>From El Donoso, the Motley Poet, to Sancho Panza and Rocinante</h4>
+<h3 class="sub">From El Donoso, the Motley Poet, to Sancho Panza and Rocinante</h3>
 <pre class="outline">	I am Sancho Panza, squi-
 	to the Manchegan Don Quixo-.
 	I took to my heels and r-
@@ -381,7 +732,7 @@
 	according to Celesti-,
 	a book, in my opinion, divi-
 	if it had hidden the human part a bit be-.</pre>
-<h4>To Rocinante</h4>
+<h3 class="sub">To Rocinante</h3>
 <pre class="outline">	I am Rocinante, the famo-,
 	great-grandson of the great Babie-.
 	For the sin of being thi-
@@ -392,8 +743,8 @@
 	which I picked up from Lazari-
 	when, to steal the wine from the blind ma-,
 	I taught him the trick with the stra-.</pre>
-<h4>Orlando Furioso, to Don Quixote of La Mancha</h4>
-<h4>Sonnet</h4>
+<h3 class="sub">Orlando Furioso, to Don Quixote of La Mancha</h3>
+<h3 class="sub">Sonnet</h3>
 <pre class="outline">	If you are not a peer, you have had none:
 	you could have been a peer among a thousand peers;
 	nor can there be one where you are to be found,
@@ -408,8 +759,8 @@
 <pre class="outline">	But mine you shall be, if you tame the proud Moor
 	and the fierce Scythian, who between them call us
 	equals in love, and equal in bad luck.</pre>
-<h4>The Knight of Phoebus, to Don Quixote of La Mancha</h4>
-<h4>Sonnet</h4>
+<h3 class="sub">The Knight of Phoebus, to Don Quixote of La Mancha</h3>
+<h3 class="sub">Sonnet</h3>
 <pre class="outline">	My sword was never the equal of yours,
 	Spanish Phoebus, courtier full of curiosity;
 	nor was my hand, that was a lightning-bolt
@@ -424,8 +775,8 @@
 <pre class="outline">	But you, illustrious Gothic Quixote,
 	are eternal in the world for Dulcinea&#x27;s sake,
 	and she, for yours, is famous, chaste and wise.</pre>
-<h4>From Solisdán, to Don Quixote of La Mancha</h4>
-<h4>Sonnet</h4>
+<h3 class="sub">From Solisdán, to Don Quixote of La Mancha</h3>
+<h3 class="sub">Sonnet</h3>
 <pre class="outline">	Albeit, Sir Quixote, that such foolishness
 	hath tumbled all thy brainpan out of joint,
 	yet shall no man reproach thee ever
@@ -440,8 +791,8 @@
 <pre class="outline">	in such mischance let this be thy comfort:
 	that Sancho Panza was a poor go-between,
 	he a fool, she hard, and thou no lover at all.</pre>
-<h4>Dialogue between Babieca and Rocinante</h4>
-<h4>Sonnet</h4>
+<h3 class="sub">Dialogue between Babieca and Rocinante</h3>
+<h3 class="sub">Sonnet</h3>
 <pre class="outline">	B. How is it, Rocinante, you&#x27;re so thin?
 	R. Because one never eats, and always works.
 	B. But what about the barley and the straw?
@@ -3851,7 +4202,7 @@
 <p>With this I sent him off, and with this I take my leave, offering Your Excellency The Labours of Persiles and Sigismunda, a book I shall finish within four months, Deo volente; and which must be either the worst or the best that has been composed in our language — I mean of the books of entertainment. And I say that I repent of having said the worst, because according to my friends&#x27; opinion it is bound to reach the highest degree of goodness possible.</p>
 <p>May Your Excellency come back in the health that is wished for you; for Persiles will by then be ready to kiss your hands, and I your feet, as the servant I am of Your Excellency&#x27;s. From Madrid, the last day of October of sixteen hundred and fifteen.</p>
 <p>Your Excellency&#x27;s servant,</p>
-<h4>Miguel de Cervantes Saavedra</h4>
+<h3 class="sub">Miguel de Cervantes Saavedra</h3>
 </section>
 </section>
 <section class="part" aria-labelledby="part-two-1615">

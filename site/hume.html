@@ -19,8 +19,359 @@
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=navigation" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 	<link rel="preload" href="fonts/libre-caslon-text-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="stylesheet" href="fonts.css">
-	<link rel="stylesheet" href="book.css">
+	<style>
+/* Fonts for every page (front pages and book pages), served from this site
+   rather than Google Fonts: a third-party
+   stylesheet blocked rendering for ~0.8 s on mobile (PageSpeed, 2026-10-12).
+   Oswald, Yellowtail and Libre Caslon Text (SIL Open Font License), latin and
+   latin-ext subsets as Google serves them, in site/fonts/. */
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* The book pages. Shared by every page assemble.py writes; fonts in fonts.css.
+
+   LEGIBILITY FIRST. The running text is set in the best screen serif the
+   reader's own device has (Charter on Apple, Sitka Text on Windows, Georgia
+   or Noto Serif elsewhere), near-black on white, 19-20px, ~66 characters to
+   the line. The Emend look (Libre Caslon Text, navy, the cream band, Oswald
+   labels) is kept to the title band, the headings and the controls. */
+
+:root {
+  --page:  #ffffff;
+  --text:  #1c1c1c;
+  --ink:   #1b314d;     /* navy: headings, links, buttons */
+  --cream: #f4efe2;
+  --soft:  #5a6472;
+  --rule:  #ddd6c8;
+  --link:  #1f4f86;
+  --plate-bg: #ffffff;
+  --reading: Charter, "Bitstream Charter", "Sitka Text", Georgia, "Noto Serif", serif;
+  --display: "Libre Caslon Text", Georgia, serif;
+  --label:   "Oswald", "Arial Narrow", sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page:  #14181e;
+    --text:  #e4e0d8;
+    --ink:   #e8e2d4;
+    --cream: #1d2430;
+    --soft:  #a3adba;
+    --rule:  #343c48;
+    --link:  #9cc2e6;
+  }
+  /* plates and diagrams are drawn on white paper; keep them on it, slightly dimmed */
+  figure img { opacity: .92; }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html {
+  background: var(--page);
+  color: var(--text);
+  font-size: 20px;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--reading);
+  line-height: 1.65;
+  font-kerning: normal;
+}
+
+main { max-width: 34rem; margin: 0 auto; padding: 0 1rem 5rem; }
+
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+
+/* ---------- title band ---------- */
+
+.title-block {
+  background: var(--cream);
+  padding: 1.6rem 1rem 1.8rem;
+  margin-bottom: 2rem;
+}
+.title-inner {
+  max-width: 44rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.8rem;
+  align-items: center;
+}
+.title-block .series {
+  grid-column: 1 / -1;
+  margin: 0 0 0.2rem;
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.title-block .series a { color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 0.55rem; }
+.title-block .series a:hover span { text-decoration: underline; }
+.title-block .series img { height: 1.8rem; width: auto; }
+.cover img {
+  display: block;
+  width: 150px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+}
+.title-text { min-width: 0; }
+h1 {
+  font: 700 2rem/1.15 var(--display);
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+  text-align: left;
+}
+.title-line { margin: 0 0 0.3rem; font-size: 0.95rem; color: var(--ink); }
+.title-line.byline { font-weight: 700; }
+.dates { margin: 0 0 0.9rem; font-size: 0.85rem; color: var(--soft); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.button {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid var(--ink);
+  font: 500 0.75rem/1.2 var(--label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+}
+.button.primary { background: var(--ink); color: var(--page); }
+.button:hover { text-decoration: underline; }
+
+/* phones: a small cover beside the title, so the text starts sooner */
+@media (max-width: 36rem) {
+  .title-block { padding: 1.1rem 1rem 1.4rem; }
+  .title-inner { grid-template-columns: 76px 1fr; gap: 0.9rem; align-items: start; }
+  .cover img { width: 76px; height: 114px; }
+  h1 { font-size: 1.45rem; }
+  .actions { grid-column: 1 / -1; }
+}
+
+/* ---------- running text ---------- */
+
+.intro-note { font-style: italic; font-size: 0.9rem; color: var(--soft); }
+
+h2, h3, h4 {
+  font-family: var(--display);
+  color: var(--ink);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+h2 { font-size: 1.45rem; margin: 3.2rem 0 1rem; }
+h3 { font-size: 1.2rem; margin: 2.8rem 0 0.9rem; }
+h4, h3.sub { font-size: 1rem; margin: 2rem 0 0.8rem; font-style: italic; }
+h2.center { text-align: center; font-size: 1.6rem; margin-top: 4rem; }
+
+p, ul, ol { margin: 0 0 1.15em; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+blockquote {
+  margin: 1.5em 0 1.5em 1em;
+  padding-left: 1em;
+  border-left: 3px solid var(--rule);
+  font-style: italic;
+}
+blockquote p { margin-bottom: 0.8em; }
+
+pre.outline {
+  font-family: var(--reading);
+  white-space: pre-wrap;
+  line-height: 1.6;
+  margin: 0 0 1.15em;
+}
+
+img.glyph { vertical-align: middle; display: inline; }
+span.frac, span.stack { display: inline-block; vertical-align: middle; text-align: center; }
+span.frac > span, span.stack > span { display: block; }
+span.frac > span.num { border-bottom: 1px solid currentColor; }
+span.stack.brace { border-left: 2px solid currentColor; border-right: 2px solid currentColor; border-radius: 0.6em; padding: 0 0.3em; }
+math { font-size: 1.05em; }
+
+figure { margin: 2.2em auto; text-align: center; }
+figure + figure { margin-top: 1em; }
+figure img { max-width: 100%; height: auto; background: var(--plate-bg); }
+figcaption {
+  margin-top: 0.6em;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--soft);
+  text-align: left;
+}
+
+table.plates { width: 100%; margin: 2.5em 0; border-collapse: collapse; line-height: 1.5; }
+table.plates td { padding: 0.4em 0.8em; vertical-align: middle; border-bottom: 1px solid var(--rule); }
+table.plates tr:last-child td { border-bottom: none; }
+table.plates figure, table.plates figure + figure { margin: 0.4em auto; }
+table.plates figcaption { display: none; }
+
+/* page locators: a printed page and quarter, for books that cite
+   themselves by them (Helmholtz: "see p. 77c") */
+span.loc { font-size: 0.65em; color: var(--soft); vertical-align: 0.3em; padding: 0 0.15em; font-style: normal; }
+a.ref { color: inherit; text-decoration: underline dotted; }
+span.sc { font-variant: small-caps; }
+.center { text-align: center; }
+.subtitle { text-align: center; font-style: italic; }
+
+/* ---------- contents ---------- */
+
+nav.contents h2 { margin-top: 0; }
+.toc-book { font-family: var(--display); font-weight: 700; margin: 1.2em 0 0.4em; color: var(--ink); }
+.toc-list { list-style: none; padding-left: 1.2em; margin: 0 0 1em; }
+.toc-list li { margin-bottom: 0.3em; line-height: 1.4; }
+nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
+
+/* ---------- reading aids (book.js) ---------- */
+
+.resume {
+  margin: 0 0 1.5rem;
+  padding: 0.7rem 1rem;
+  background: var(--cream);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+.resume[hidden] { display: none; }
+
+.to-contents {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 5;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--page);
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+.to-contents.show { opacity: .92; pointer-events: auto; }
+
+@media (max-width: 36rem) {
+  html { font-size: 18px; }
+}
+
+@media print {
+  .title-block { background: none; }
+  .actions, .to-contents, .resume { display: none; }
+}
+</style>
 	<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "An Enquiry Concerning Human Understanding", "author": {"@type": "Person", "name": "David Hume"}, "inLanguage": "en", "url": "https://emend.press/hume.html", "description": "Why experience can never prove the sun will rise tomorrow, and why Hume thinks that need not worry you. Retold in modern English, free to read online and as an ebook.", "publisher": {"@type": "Organization", "name": "Emend Press", "url": "https://emend.press/", "logo": "https://emend.press/apple-touch-icon.png"}, "isAccessibleForFree": true, "isPartOf": {"@type": "BookSeries", "name": "Modern Classics", "url": "https://emend.press/"}, "image": "https://emend.press/covers/hume.jpg", "datePublished": "2026", "bookEdition": "Modern English retelling", "isBasedOn": {"@type": "Book", "name": "An Enquiry Concerning Human Understanding", "author": {"@type": "Person", "name": "David Hume"}, "datePublished": "1748"}, "workExample": {"@type": "Book", "bookFormat": "https://schema.org/EBook", "encodingFormat": "application/epub+zip", "url": "https://emend.press/ebooks/david-hume_an-enquiry-concerning-human-understanding.epub"}}</script>
 </head>
 
@@ -113,7 +464,7 @@
 </section>
 <section aria-labelledby="section-four-sceptical-doubts-about-how-the-mind-works">
 <h2 id="section-four-sceptical-doubts-about-how-the-mind-works">Section Four: Sceptical Doubts About How the Mind Works</h2>
-<h4>Part One</h4>
+<h3 class="sub">Part One</h3>
 <p>Everything human reason can enquire into falls naturally into two kinds: <em>Relations of Ideas</em> and <em>Matters of Fact</em>. Of the first kind are geometry, algebra and arithmetic — in short, every statement that is certain either immediately or by proof. <em>That the square of the hypotenuse is equal to the square of the two sides</em> is a proposition expressing a relation between those figures. <em>That three times five is equal to the half of thirty</em> expresses a relation between those numbers. Propositions of this kind can be discovered by thought alone, without depending on anything that exists anywhere in the universe. If there had never been a circle or a triangle in nature, the truths Euclid proved would keep their certainty and their evidence for ever.</p>
 <p>Matters of fact — the second thing human reason enquires into — are not established in that way, and our evidence for them, however strong, is not of the same kind. The contrary of every matter of fact is still possible, because it never involves a contradiction and the mind conceives it just as easily and clearly as if it agreed perfectly with reality. (A matter of fact, in the sense used throughout this book, is a claim about how the world actually stands — one that could have been otherwise, and that no amount of reasoning alone will settle.) <em>That the sun will not rise tomorrow</em> is a perfectly intelligible proposition and involves no more contradiction than the statement <em>that it will rise</em>. So it would be useless to try to prove it false. If it were provably false, it would involve a contradiction, and the mind could never conceive it clearly.</p>
 <p>It may be worth some curiosity, then, to ask what sort of evidence it is that assures us of any real existence or matter of fact beyond what our senses are reporting now and what our memory has recorded. This part of philosophy has been little worked on, by ancients or moderns alike, so our doubts and mistakes in pursuing so important an enquiry may be the more excusable — we are marching down difficult roads with no guide. They may even do some good, by arousing curiosity and destroying the unquestioning confidence that is the ruin of all reasoning and free enquiry. Finding defects in the received philosophy, if there are any, will not discourage anybody, I imagine, but do what such discoveries usually do: provoke an attempt at something fuller and more satisfactory than has yet been offered to the public.</p>
@@ -126,7 +477,7 @@
 <p>In a word: every effect is a distinct event from its cause. It could not therefore have been discovered in the cause, and the first imagining of it, in advance of experience, must be entirely arbitrary. Even once it has occurred to us, joining it to the cause must seem equally arbitrary, since there are always plenty of other effects that must strike reason as just as consistent and just as natural. It is no use pretending, then, that we can settle any single event, or infer any cause or effect, without the help of observation and experience.</p>
 <p>This shows us why no philosopher who is rational and modest has ever claimed to give the ultimate cause of any natural operation, or to display clearly the working of the power that produces any single effect in the universe. It is admitted that the most human reason can do is reduce the principles behind natural phenomena to a greater simplicity, and resolve many particular effects into a few general causes, by reasoning from analogy, experience and observation. But the causes of those general causes we shall never discover, however hard we try, and no particular explanation of them will ever satisfy us. These ultimate springs and principles are entirely closed off from human curiosity. Elasticity, gravity, cohesion, the passing on of motion by impact: these are probably the ultimate causes and principles we shall ever find in nature, and we may count ourselves lucky enough if careful enquiry and reasoning can trace particular phenomena back to them, or somewhere near them. The most perfect philosophy of the natural kind only postpones our ignorance a little; the most perfect philosophy of the moral or metaphysical kind perhaps only uncovers more of it. So the observation of human blindness and weakness is what all philosophy comes to, and it meets us at every turn however hard we try to dodge it.</p>
 <p>Nor can geometry, brought in to help natural philosophy, ever repair this defect or lead us to knowledge of ultimate causes, for all the exactness of reasoning it is so justly famous for. Every branch of applied mathematics proceeds on the assumption that nature has established certain laws in her operations, and uses abstract reasoning either to help experience discover those laws or to work out how they apply in particular cases where some precise distance or quantity is involved. It is a law of motion, discovered by experience, that the force of a moving body is in the compound ratio of its mass and its velocity — and consequently that a small force may move the greatest obstacle or lift the greatest weight, if by some contrivance we can raise the velocity of that force enough to overmatch what it is working against. Geometry helps us apply this law by giving us the exact dimensions of all the parts and shapes that can go into a machine of any kind; but the discovery of the law itself is owed entirely to experience, and all the abstract reasoning in the world could never have brought us a step nearer it. When we reason in advance of experience, and consider an object or a cause simply as it appears to the mind, independently of all observation, it could never suggest to us the idea of some distinct object as its effect — much less show us the inseparable and unbreakable connection between them. A man would have to be very shrewd indeed to discover by reasoning that crystal is the effect of heat and ice the effect of cold, without having previously seen what heat and cold do.</p>
-<h4>Part Two</h4>
+<h3 class="sub">Part Two</h3>
 <p>But we have still not reached any tolerable answer to the question we began with. Every solution raises a new question as hard as the last, and leads us further on. When it is asked, &quot;What is the nature of all our reasoning about matters of fact?&quot; the proper answer seems to be that it is founded on the relation of cause and effect. When it is asked next, &quot;What is the foundation of all our reasoning and conclusions about that relation?&quot; the answer can be given in one word: experience. But if we go on sifting and ask, &quot;What is the foundation of all conclusions drawn from experience?&quot; that raises a new question, and one that may be harder to solve and to explain. Philosophers who give themselves airs of superior wisdom and self-sufficiency have a hard time of it when they meet inquisitive people, who push them out of every corner they retreat into and are certain to drive them at last into some awkward dilemma. The best way to avoid that embarrassment is to be modest in our claims, and even to point out the difficulty ourselves before anyone else raises it. That way we can make a sort of merit out of our own ignorance.</p>
 <p>In this section I shall set myself an easy task and claim only to give a negative answer to the question raised. What I say is this: even after we have experience of cause and effect at work, the conclusions we draw from that experience are <em>not</em> founded on reasoning, or on any process of the understanding. That answer has to be both explained and defended.</p>
 <p>It must be granted that nature has kept us at a great distance from all her secrets, and has given us knowledge only of a few surface qualities of things, while she hides from us the powers and principles on which everything those things do entirely depends. Our senses tell us the colour, weight and texture of bread; but neither sense nor reason can ever tell us what qualities make it fit to nourish and sustain a human body. Sight or touch gives us the idea of a body actually moving; but as to that remarkable force or power which would carry a moving body on for ever through a continual change of place, and which bodies never lose except by passing it on to others — of that we can form no conception whatever. Yet in spite of this ignorance of natural powers and principles, whenever we see the same perceptible qualities we always assume the same hidden powers behind them, and expect effects like the ones we have met with before. If a body of the same colour and texture as the bread we have eaten before is put in front of us, we have no hesitation in repeating the experiment, and confidently expect the same nourishment and support.</p>
@@ -142,7 +493,7 @@
 </section>
 <section aria-labelledby="section-five-a-sceptical-solution-to-these-doubts">
 <h2 id="section-five-a-sceptical-solution-to-these-doubts">Section Five: A Sceptical Solution to These Doubts</h2>
-<h4>Part One</h4>
+<h3 class="sub">Part One</h3>
 <p>A passion for philosophy, like a passion for religion, seems open to one particular danger: that although it aims at correcting our behaviour and rooting out our vices, careless handling may let it do nothing but feed a tendency we already had, and drive the mind with more determined resolve towards the side that already <em>draws</em> too hard through the natural bias of our temperament. Certainly, while we aspire to the magnificent steadiness of the philosophic sage, and try to keep all our pleasures inside our own minds, we may in the end make our philosophy — like that of Epictetus and the other <em>Stoics</em> — into nothing but a more refined system of selfishness, and reason ourselves out of all virtue along with all social enjoyment. While we study the vanity of human life attentively, and turn all our thoughts to how empty and fleeting riches and honours are, we may all the while be flattering our natural laziness, which hates the bustle of the world and the drudgery of business and is looking for a reasonable-sounding excuse to indulge itself completely.</p>
 <p>There is, though, one kind of philosophy that seems little exposed to this danger, because it chimes in with no disorderly passion of the mind and cannot mix itself with any natural inclination: the Academic, or Sceptical, philosophy. (The Academics are the sceptical school that grew out of Plato&#x27;s Academy.) They are always talking about doubt and suspended judgement, about the danger of deciding in a hurry, about confining the enquiries of the understanding within very narrow bounds and giving up every speculation that falls outside ordinary life and practice. Nothing, then, could be more opposed than such a philosophy to the mind&#x27;s lazy sprawl, its rash arrogance, its lofty pretensions and its superstitious credulity. Every passion is mortified by it except the love of truth, and that passion never is and never can be carried too far. It is surprising, then, that a philosophy which must in almost every case be harmless should be the object of so much groundless abuse. But perhaps the very thing that makes it so innocent is what chiefly exposes it to public hatred. Flattering no irregular passion, it wins few supporters; opposing so many vices and follies, it makes itself plenty of enemies, who brand it as libertine, profane and irreligious.</p>
 <p>Nor need we fear that this philosophy, in trying to confine our enquiries to ordinary life, will ever undermine the reasoning of ordinary life and carry its doubts far enough to destroy action as well as speculation. Nature will always assert her rights and prevail in the end over any abstract reasoning whatever. Suppose we conclude, as in the last section, that in all reasoning from experience the mind takes a step that no argument supports: there is no danger that the reasoning almost all our knowledge depends on will ever be damaged by the discovery. If the mind is not moved by argument to take that step, it must be moved by some other principle of equal weight and authority — and that principle will keep its hold as long as human nature stays the same. What that principle is may well be worth the trouble of finding out.</p>
@@ -154,7 +505,7 @@
 <p>It is worth remarking here, though, that although our conclusions from experience carry us beyond memory and the senses, and assure us of facts that happened in the most distant places and the remotest ages, there must always be some fact present to the senses or memory to start from. A man who found the remains of grand buildings in a deserted country would conclude that it had once been settled by civilised inhabitants; but if nothing of the kind came before him, he could never form such an inference. We learn the events of former ages from history — but then we have to read the volumes that contain the information, and work our inferences back from one piece of testimony to another until we reach the eyewitnesses of those distant events. In a word, unless we start from some fact present to memory or the senses, our reasoning would be merely hypothetical, and however well the individual links held together, the whole chain of inferences would have nothing to hang from, nor could we ever reach knowledge of any real existence by it. If I ask why you believe some particular fact you are telling me, you must give me a reason, and the reason will be some other fact connected with it. But since you cannot go on that way for ever, you must end at last at some fact present to your memory or senses — or else admit that your belief has no foundation at all.</p>
 <p>So what is the conclusion of the whole business? A simple one, though it must be admitted it is a good way from the usual theories of philosophy. All belief in matter of fact or real existence comes merely from some object present to the memory or senses, together with a customary conjunction between that object and some other. Or in other words: having found on many occasions that two kinds of object — flame and heat, snow and cold — have always gone together, then if flame or snow is presented to the senses again, the mind is carried by custom to expect heat or cold, and to <em>believe</em> that the quality does exist and will show itself on a closer approach. This belief is the necessary result of putting the mind in such a position. It is an operation of the soul which, when we are so placed, is as unavoidable as feeling love when we are done a kindness, or hatred when we are injured. All these operations are a kind of natural instinct, which no reasoning or process of thought can either produce or prevent.</p>
 <p>At this point we might quite properly stop our philosophical researches. On most questions we can never take a single step further, and on all questions we must end here at last, however restlessly and curiously we enquire. But our curiosity will still be pardonable, perhaps even creditable, if it carries us on to further research, and makes us examine more closely the nature of this <em>belief</em> and of the <em>customary conjunction</em> it comes from. That way we may meet with some explanations and analogies that satisfy — at any rate those who love the abstract sciences and can enjoy speculations that keep a degree of doubt about them however carefully they are made. Readers of a different taste will find the rest of this section is not written for them, and the enquiries that follow can be understood perfectly well without it.</p>
-<h4>Part Two</h4>
+<h3 class="sub">Part Two</h3>
 <p>Nothing is freer than human imagination. Though it cannot go beyond the original stock of ideas supplied by the inner and outer senses, it has unlimited power to mix, combine, separate and divide those ideas into every variety of fiction and vision. It can invent a train of events with every appearance of reality, assign them a particular time and place, conceive them as actually existing, and paint them out to itself with every detail belonging to a historical fact that it believes with the greatest certainty. So where does the difference between such a fiction and a belief lie? Not merely in some special idea attached to the conception that commands our assent and missing from every acknowledged fiction. For since the mind has authority over all its ideas, it could attach this particular idea to any fiction it liked, and would therefore be able to believe whatever it pleased — which is contrary to what we find every day. We can join the head of a man to the body of a horse in our imagination; but it is not in our power to believe that such an animal has ever really existed.</p>
 <p>It follows that the difference between <em>fiction</em> and <em>belief</em> lies in some sentiment or feeling attached to the second and not the first, which does not depend on the will and cannot be summoned at pleasure. It must be aroused by nature, like every other sentiment, and must arise from the particular situation the mind is in at that moment. Whenever an object is presented to the memory or senses, the force of custom immediately carries the imagination to conceive the object usually joined with it — and that conception comes with a feeling different from the loose daydreams of fancy. That is the whole nature of belief. Since there is no matter of fact we believe so firmly that we cannot conceive the contrary, there would be no difference between the conception we assent to and the one we reject, were it not for some feeling that marks one off from the other. If I see a billiard ball rolling towards another on a smooth table, I can easily conceive it stopping on contact. There is no contradiction in the idea; but it still feels very different from the conception in which I picture the impact and the passing on of the motion from one ball to the other.</p>
 <p>If we tried to give a <em>definition</em> of this feeling, we should probably find the task very difficult if not impossible — much as if we tried to define the feeling of cold, or the passion of anger, to a creature who had never experienced them. Belief is the true and proper name of this feeling, and nobody is ever at a loss for what the word means, because every man is conscious of the feeling at every moment. It may not be out of place, though, to attempt a <em>description</em> of it, in the hope of arriving at some analogies that explain it better. What I say is that belief is nothing but a more vivid, lively, forcible, firm and steady conception of an object than the imagination alone can ever manage. This string of terms may look unphilosophical, but it is meant only to express the act of mind that makes realities — or what we take for realities — more present to us than fictions, gives them more weight in our thinking, and lets them exert more influence over the passions and the imagination. As long as we agree about the thing, there is no need to argue about the words.</p>
@@ -180,7 +531,7 @@
 </section>
 <section aria-labelledby="section-seven-the-idea-of-necessary-connection">
 <h2 id="section-seven-the-idea-of-necessary-connection">Section Seven: The Idea of Necessary Connection</h2>
-<h4>Part One</h4>
+<h3 class="sub">Part One</h3>
 <p>The great advantage the mathematical sciences have over the moral ones is that mathematical ideas, being perceptible, are always clear and definite; the smallest distinction between them is immediately noticeable, and the same terms go on expressing the same ideas without ambiguity or drift. An oval is never mistaken for a circle, nor a hyperbola for an ellipse. An isosceles triangle and a scalene one are marked off by more exact boundaries than vice and virtue, right and wrong. If a term is defined in geometry, the mind readily substitutes the definition for the term on every occasion; and even where no definition is used, the object itself can be presented to the senses and steadily grasped that way. But the finer feelings of the mind, the operations of the understanding, the various agitations of the passions — though genuinely distinct in themselves — easily slip away from us when we survey them by reflection, and it is not in our power to summon back the original object every time we need to look at it. Ambiguity gradually creeps into our reasoning this way. Objects that merely resemble each other get taken for the same, and the conclusion ends up a long way from the premises.</p>
 <p>Still, one may safely say that if these sciences are viewed properly, their advantages and disadvantages roughly cancel out and leave them level. If the mind retains the ideas of geometry clear and definite more easily, it also has to carry on a much longer and more intricate chain of reasoning, and compare ideas much further apart, to reach that science&#x27;s deeper truths. And if moral ideas are apt to slide into obscurity and confusion without extreme care, the inferences in such enquiries are always much shorter, and the intermediate steps far fewer, than in the sciences of quantity and number. In fact there is scarcely a proposition in Euclid so simple that it does not have more parts than any piece of moral reasoning that stays clear of fantasy. When we can trace the principles of the human mind through a few steps, we may be well satisfied with our progress, considering how soon nature bars all our enquiries into causes and reduces us to admitting our ignorance. The chief obstacle to progress in the moral or metaphysical sciences, then, is the obscurity of the ideas and the ambiguity of the terms. The chief difficulty in mathematics is the length of the inferences and the reach of thought needed to form any conclusion. And our progress in natural philosophy is probably held back mainly by the lack of the right experiments and phenomena, which are often found by accident and cannot always be produced when they are wanted, even by the most diligent enquiry. Since moral philosophy seems so far to have advanced less than either geometry or physics, we may conclude that if there is any difference among these sciences in this respect, the difficulties obstructing the first require greater care and greater ability to overcome.</p>
 <p>No ideas in metaphysics are more obscure and uncertain than those of <em>power, force, energy</em> or <em>necessary connection</em>, which we are obliged to handle at every moment in every enquiry. So in this section I shall try, if possible, to fix the precise meaning of these terms, and thereby remove some part of the obscurity that people complain of so much in this kind of philosophy.</p>
@@ -207,7 +558,7 @@
 <p>But if we want a more philosophical refutation of this theory, perhaps the following two reflections will do.</p>
 <p><em>First</em>, it seems to me that this theory of the universal action of the Supreme Being is too bold ever to carry conviction with a man who is sufficiently aware of the weakness of human reason and the narrow limits it works within. However logical the chain of arguments leading to it, there must arise a strong suspicion — if not an absolute certainty — that it has carried us clean beyond the reach of our faculties, when it leads to conclusions so extraordinary and so remote from ordinary life and experience. We have got into fairyland long before we reach the last steps of the theory, and <em>there</em> we have no reason to trust our usual methods of argument, or to think our usual analogies and probabilities carry any authority. Our line is too short to sound such immense depths. And however we may flatter ourselves that every step we take is guided by a kind of likelihood and experience, we may be sure this imagined experience has no authority when we apply it to subjects lying entirely outside the sphere of experience. But we shall have occasion to touch on this later.</p>
 <p><em>Second</em>, I cannot see any force in the arguments this theory is founded on. We are ignorant, true, of the way bodies act on one another; their force is entirely incomprehensible. But are we not equally ignorant of the manner or force by which a mind — even the supreme mind — acts either on itself or on a body? Where, I ask you, do we get any idea of it? We have no feeling or consciousness of such a power in ourselves. We have no idea of the Supreme Being except what we learn from reflecting on our own faculties. So if our ignorance were a good reason for rejecting anything, it would lead us to deny all energy in the Supreme Being just as much as in the grossest matter. We understand the operations of the one quite as little as the other. Is it any harder to conceive that motion may arise from impact than that it may arise from an act of will? All we know, in both cases, is our own profound ignorance.</p>
-<h4>Part Two</h4>
+<h3 class="sub">Part Two</h3>
 <p>But to hurry towards a conclusion of this argument, which has already run on too long: we have looked in vain for an idea of power or necessary connection in every source it could be supposed to come from. It appears that in single instances of bodies acting, the closest scrutiny can never show us anything but one event following another, without our being able to grasp any force by which the cause operates, or any connection between it and its supposed effect. The same difficulty arises when we consider mind acting on body — where we observe the body&#x27;s motion following the mind&#x27;s act of will, but cannot observe or conceive the tie binding motion and will together, or the energy by which the mind produces the effect. The will&#x27;s authority over its own faculties and ideas is not a whit more comprehensible. So on the whole there does not appear, anywhere in nature, a single instance of connection that we can conceive. All events seem entirely loose and separate. One event follows another, but we can never observe any tie between them. They seem <em>conjoined</em> but never <em>connected</em>. And since we can have no idea of anything that never appeared to our outward senses or inward feeling, the necessary conclusion <em>seems</em> to be that we have no idea of connection or power at all, and that these words are completely without meaning, whether used in philosophical reasoning or in ordinary life.</p>
 <p>But there is still one way of avoiding this conclusion, and one source we have not yet examined. When any natural object or event is put in front of us, no amount of shrewdness can discover, or even guess, without experience, what event will follow from it, or carry our foresight beyond the object immediately present to memory and the senses. Even after a single instance in which we have seen one particular event follow another, we are not entitled to form a general rule or predict what will happen in similar cases — it is rightly reckoned unpardonable rashness to judge the whole course of nature from one experiment, however careful. But when one particular kind of event has always, in every instance, been joined with another, we no longer hesitate to predict the one on the appearance of the other, and to use the reasoning that alone can assure us of any matter of fact. We then call the one object the <em>Cause</em> and the other the <em>Effect</em>. We suppose there is some connection between them, some power in the one by which it infallibly produces the other, acting with the greatest certainty and the strongest necessity.</p>
 <p>It appears, then, that this idea of a necessary connection among events arises from a number of similar instances of the constant conjunction of those events, and that the idea can never be suggested by any one of those instances, surveyed in every possible light and position. But there is nothing in a number of instances that is not in every single instance, supposed exactly similar — nothing except this: that after a repetition of similar instances, habit carries the mind, on the appearance of one event, to expect its usual companion and to believe it will occur. So this connection that we <em>feel</em> in the mind, this customary transition of the imagination from one object to its usual companion, is the feeling or impression from which we form the idea of power or necessary connection. There is nothing else in the case. Consider the subject from every side and you will never find any other origin for the idea. That is the sole difference between one instance, from which we can never get the idea of connection, and a number of similar instances, which suggest it. The first time a man saw motion passed on by impact, as in the collision of two billiard balls, he could not say that the one event was <em>connected</em> with the other, only that it was <em>conjoined</em> with it. After observing several instances of the kind, he pronounces them <em>connected</em>. What change has occurred to give rise to this new idea of <em>connection</em>? Nothing but this: he now <em>feels</em> the events to be connected in his imagination, and can readily predict the one from the appearance of the other. So when we say that one object is connected with another, all we mean is that they have acquired a connection in our thought, and give rise to the inference by which each becomes proof of the other&#x27;s existence. This is a somewhat extraordinary conclusion, but it seems to rest on sufficient evidence. Nor is its evidence weakened by any general distrust of the understanding, or sceptical suspicion of every conclusion that is new and strange. No conclusions could suit scepticism better than ones that make discoveries about the weakness and narrow limits of human reason.</p>
@@ -218,7 +569,7 @@
 </section>
 <section aria-labelledby="section-eight-liberty-and-necessity">
 <h2 id="section-eight-liberty-and-necessity">Section Eight: Liberty and Necessity</h2>
-<h4>Part One</h4>
+<h3 class="sub">Part One</h3>
 <p>You might reasonably expect that in questions argued over with great eagerness ever since science and philosophy began, the disputants would at least have agreed on what the terms mean, and that in the course of two thousand years our enquiries would have got past the words to the real subject of the controversy. How easy it seems to give exact definitions of the terms used in an argument, and to make those definitions, rather than the mere sound of words, the thing examined afterwards. But look at the matter more closely and we shall be inclined to draw exactly the opposite conclusion. From the single fact that a controversy has been kept going a long time and is still undecided, we may guess that there is some ambiguity in the language, and that the disputants attach different ideas to the terms. Since the faculties of the mind are supposed to be naturally alike in everybody — otherwise nothing could be more pointless than reasoning or arguing together — it would be impossible, if people attached the same ideas to their terms, for them to go on holding different opinions about the same subject for so long, especially when they communicate their views and each side turns itself in every direction looking for arguments to defeat the other. It is true that if people take up questions lying entirely beyond human capacity — the origin of worlds, say, or the arrangement of the realm of spirits — they may beat the air in fruitless contests for a very long time and never arrive at any settled conclusion. But if the question concerns some subject of ordinary life and experience, one would think nothing could keep the dispute undecided so long except some ambiguous expressions, which hold the antagonists apart and stop them ever getting to grips with each other.</p>
 <p>This has been the case in the long-disputed question of liberty and necessity — and to such a remarkable degree that, unless I am much mistaken, we shall find that all mankind, learned and ignorant alike, have always held the same opinion on the subject, and that a few intelligible definitions would have ended the whole controversy at once. I admit the dispute has been so thoroughly worked over on all sides, and has led philosophers into such a labyrinth of obscure sophistry, that it would be no wonder if a sensible reader spared himself the trouble and turned a deaf ear to a question he can expect neither instruction nor entertainment from. But the way the argument is set out here may perhaps renew his attention: it has more novelty, it promises at least some settling of the controversy, and it will not trouble him with any intricate or obscure reasoning.</p>
 <p>So I hope to show that everyone has always agreed on the doctrine both of necessity and of liberty, on any reasonable sense that can be given to those terms, and that the whole controversy has so far turned merely on words. We shall begin by examining the doctrine of necessity.</p>
@@ -244,7 +595,7 @@
 <p>But to go on with this reconciling project on the question of liberty and necessity — the most contentious question in metaphysics, the most contentious science — it will not take many words to prove that all mankind have always agreed on the doctrine of liberty as well as on that of necessity, and that here too the whole dispute has been merely verbal. What is meant by liberty, when it is applied to voluntary actions? We surely cannot mean that actions have so little connection with motives, inclinations and circumstances that the one does not follow from the other with a certain uniformity, and that the one gives us no inference by which to conclude the other exists. For those are plain and acknowledged matters of fact. By liberty, then, we can only mean <em>a power of acting or not acting, according to the determinations of the will</em> — that is, if we choose to stay still, we may, and if we choose to move, we may. Now this conditional liberty is universally allowed to belong to everyone who is not a prisoner in chains. So here there is nothing to dispute.</p>
 <p>Whatever definition we give of liberty, we should be careful to observe two requirements: <em>first</em>, that it be consistent with plain matter of fact, and <em>second</em>, that it be consistent with itself. If we observe these, and make our definition intelligible, I am persuaded that all mankind will be found to be of one opinion about it.</p>
 <p>It is universally allowed that nothing exists without a cause of its existence, and that chance, strictly examined, is a merely negative word and does not mean any real power existing anywhere in nature. But it is claimed that some causes are necessary and some are not. Here, then, is the advantage of definitions. Let anyone <em>define</em> a cause without including a <em>necessary connection</em> with its effect as part of the definition, and let him show clearly where the idea expressed by that definition comes from — and I shall readily give up the whole controversy. But if the account given above is accepted, this must be quite impossible. If objects did not have a regular conjunction with one another, we should never have formed any notion of cause and effect; and it is this regular conjunction that produces the inference of the understanding, which is the only connection we can have any grasp of at all. Anyone attempting a definition of cause that leaves out these circumstances will be obliged to use either unintelligible terms or terms synonymous with the one he is trying to define. And if the definition above is admitted, then liberty — when it is opposed to necessity rather than to constraint — is the same thing as chance, which everybody allows does not exist.</p>
-<h4>Part Two</h4>
+<h3 class="sub">Part Two</h3>
 <p>There is no method of reasoning more common in philosophical disputes, and none more blameworthy, than trying to refute a hypothesis by claiming it has dangerous consequences for religion and morality. When an opinion leads to absurdities it is certainly false; but an opinion is not certainly false because it is dangerous. Such lines of attack ought to be given up altogether: they do nothing to discover truth and serve only to make an opponent odious. I say this generally, without claiming any advantage from it. I frankly submit to an examination of that kind, and shall venture to say that the doctrines both of necessity and of liberty, as explained above, are not merely consistent with morality but absolutely essential to it.</p>
 <p>Necessity can be defined two ways, matching the two definitions of <em>cause</em> it forms an essential part of. It consists either in the constant conjunction of like objects, or in the understanding&#x27;s inference from one object to another. Now necessity in both these senses — which are at bottom the same — has universally, if tacitly, been allowed in the schools, in the pulpit and in ordinary life to belong to the human will; nobody has ever claimed to deny that we can draw inferences about human actions, or that those inferences rest on the experienced union of like actions with like motives, inclinations and circumstances. The only points on which anyone can differ are these. He may refuse to give the name of necessity to this property of human actions — but as long as the meaning is understood, I hope the word can do no harm. Or he may maintain that something further can be discovered in the operations of matter. But that, it must be admitted, can be of no consequence to morality or religion, whatever it may be to natural philosophy. We may be mistaken in asserting that there is no idea of any other necessity in the actions of bodies; but we certainly attribute nothing to the actions of the mind that everyone does not readily allow. We change nothing in the received orthodox system regarding the will — only what it says about material objects and causes. So nothing could be more harmless, at the very least, than this doctrine.</p>
 <p>Since all law is founded on rewards and punishments, it is assumed as a fundamental principle that these motives have a regular and uniform influence on the mind, producing good actions and preventing bad ones. We may give that influence whatever name we like; but since it is regularly joined with the action, it must count as a <em>cause</em>, and be regarded as an instance of the very necessity we are establishing here.</p>
@@ -268,7 +619,7 @@
 </section>
 <section aria-labelledby="section-ten-miracles">
 <h2 id="section-ten-miracles">Section Ten: Miracles</h2>
-<h4>Part One</h4>
+<h3 class="sub">Part One</h3>
 <p>There is an argument in Dr. Tillotson&#x27;s writings against the <em>real presence</em> which is as concise and elegant and strong as any argument could possibly be against a doctrine so little worth a serious refutation. It is acknowledged on all sides, says that learned prelate, that the authority of scripture and of tradition alike rests merely on the testimony of the apostles, who were eyewitnesses to the miracles by which our Saviour proved his divine mission. Our evidence for the truth of the <em>Christian</em> religion, then, is weaker than the evidence of our own senses — because even in the first authors of our religion it was no stronger, and it must obviously weaken as it passes from them to their disciples; nor can anyone place as much confidence in their testimony as in what his senses directly show him. But weaker evidence can never overthrow stronger. So even if the doctrine of the real presence were revealed in scripture as plainly as you like, it would be directly contrary to the rules of sound reasoning to assent to it. It contradicts the senses, while the scripture and tradition it is supposed to rest on carry less evidence than the senses do — considered, that is, merely as external evidence, and not brought home to each person&#x27;s heart by the immediate operation of the Holy Spirit.</p>
 <p>Nothing is so convenient as a decisive argument of this kind, which must at least <em>silence</em> the most arrogant bigotry and free us from its impertinent demands. I flatter myself that I have found an argument of a similar sort which, if it is sound, will be an everlasting check among the wise and learned to superstitious delusion of every kind, and consequently will be useful as long as the world lasts. For that long, I imagine, accounts of miracles and marvels will go on being found in every history, sacred and profane.</p>
 <p>Though experience is our only guide in reasoning about matters of fact, it must be admitted that this guide is not entirely infallible and in some cases is apt to mislead us. A man in our climate who expected better weather in any week of June than in one of December would be reasoning soundly and in accordance with experience — though he may certainly turn out, in the event, to be wrong. Notice, however, that in such a case he would have no cause to complain of experience, because experience usually warns us of the uncertainty in advance, through the contrariety of events that careful observation reveals. Not all effects follow from their supposed causes with the same certainty. Some events are found in every country and every age to have been constantly joined together; others are found to be more variable and to disappoint our expectations sometimes. So in our reasoning about matters of fact there are all imaginable degrees of assurance, from the highest certainty down to the feeblest kind of moral evidence.</p>
@@ -282,7 +633,7 @@
 <p>But to raise the probability against the testimony of witnesses further, let us suppose that the fact they assert, instead of being merely marvellous, is genuinely miraculous; and suppose too that the testimony taken by itself amounts to a complete proof. In that case there is proof against proof, of which the stronger must prevail — but still with its force reduced in proportion to that of its opponent.</p>
 <p>A miracle is a violation of the laws of nature; and since a firm and unalterable experience has established those laws, the proof against a miracle, from the very nature of the fact, is as complete as any argument from experience can possibly be. Why is it more than probable that all men must die; that lead cannot remain suspended in the air by itself; that fire consumes wood and is put out by water — unless it is that these events are found to agree with the laws of nature, and that preventing them would require a violation of those laws, in other words a miracle? Nothing counts as a miracle if it ever happens in the common course of nature. It is no miracle that a man apparently in good health should die suddenly, because that kind of death, though more unusual than others, has often been observed to happen. But it is a miracle that a dead man should come back to life, because that has never been observed in any age or country. There must therefore be a uniform experience against every miraculous event, or the event would not deserve the name. And since a uniform experience amounts to a proof, we have here a direct and full <em>proof</em>, from the nature of the fact, against the existence of any miracle — and such a proof cannot be destroyed, nor the miracle made credible, except by an opposite and stronger proof.</p>
 <p>The plain consequence is this, and it is a general maxim worth our attention: &quot;That no testimony is sufficient to establish a miracle, unless the testimony be of such a kind that its falsehood would be more miraculous than the fact which it endeavours to establish; and even in that case there is a mutual destruction of arguments, and the superior only gives us an assurance suitable to that degree of force which remains after deducting the inferior.&quot; When somebody tells me he has seen a dead man restored to life, I immediately consider whether it is more probable that this person is deceiving or is deceived, or that the thing he reports really happened. I weigh the one miracle against the other, and according to which I find the greater, I give my decision — and I always reject the greater miracle. Only if the falsehood of his testimony would be more miraculous than the event he relates, and not before, can he claim to command my belief.</p>
-<h4>Part Two</h4>
+<h3 class="sub">Part Two</h3>
 <p>In the reasoning so far we have supposed that the testimony a miracle rests on might possibly amount to a complete proof, and that the falsehood of that testimony would be a real marvel. But it is easy to show that we have been far too generous in the concession, and that no miraculous event has ever been established on evidence so full.</p>
 <p>For <em>first</em>, there is not to be found in all of history a single miracle attested by a sufficient number of men of such unquestioned good sense, education and learning as to secure us against any delusion on their part; of such undoubted integrity as to put them beyond all suspicion of any design to deceive others; of such credit and reputation in the eyes of the world as to have a great deal to lose if they were caught in a falsehood; and at the same time attesting facts performed so publicly, and in so celebrated a part of the world, as to make detection unavoidable. All these circumstances are needed to give us full assurance in human testimony.</p>
 <p><em>Second</em>, there is a principle in human nature which, strictly examined, will be found to weaken enormously the assurance we might get from human testimony about any marvel. The maxim we usually go by in our reasoning is that objects we have no experience of resemble those we have; that what we have found most usual is always most probable; and that where arguments conflict we should prefer the one founded on the greatest number of past observations. But though we readily reject a fact that is unusual and incredible in an ordinary degree by following this rule, the mind does not always keep to it when we go further: when something utterly absurd and miraculous is asserted, the mind is if anything readier to admit it, on account of the very circumstance that ought to destroy its authority. The passions of <em>surprise</em> and <em>wonder</em> aroused by miracles are agreeable emotions, and so give us a perceptible leaning towards belief in the events that produce them. This goes so far that even people who cannot enjoy the pleasure directly, and cannot believe the miraculous events they are told about, still love to share in the satisfaction at second hand, and take pride and delight in arousing the wonder of others.</p>
@@ -347,7 +698,7 @@
 </section>
 <section aria-labelledby="section-twelve-the-academic-or-sceptical-philosophy">
 <h2 id="section-twelve-the-academic-or-sceptical-philosophy">Section Twelve: The Academic, or Sceptical, Philosophy</h2>
-<h4>Part One</h4>
+<h3 class="sub">Part One</h3>
 <p>No subject has produced a greater quantity of philosophical reasoning than the existence of God and the refutation of the fallacies of <em>Atheists</em> — and yet the most religious philosophers still dispute whether any man could be blind enough to be a speculative atheist. How are we to reconcile these contradictions? The knights errant who wandered about ridding the world of dragons and giants never entertained the slightest doubt that those monsters existed.</p>
 <p>The <em>Sceptic</em> is another enemy of religion who naturally provokes the indignation of every divine and every graver philosopher — though it is certain that nobody has ever met such an absurd creature, or talked with a man who had no opinion or principle at all on any subject of action or speculation. This raises a very natural question: what is meant by a sceptic? And how far is it possible to push these philosophical principles of doubt?</p>
 <p>There is a kind of scepticism <em>antecedent</em> to all study and philosophy, much recommended by Descartes and others as a sovereign preservative against error and hasty judgement. It urges a universal doubt, not only of all our former opinions and principles but of our very faculties — whose reliability, they say, we must establish by a chain of reasoning deduced from some original principle that could not possibly be deceptive. But there is no such original principle with any privilege over others that are self-evident and convincing; and even if there were, we could not advance a single step beyond it except by using the very faculties we are supposed to distrust already. So Cartesian doubt, if any human creature could ever actually attain it — which plainly nobody can — would be entirely incurable, and no reasoning could ever bring us to a state of conviction about anything.</p>
@@ -364,7 +715,7 @@
 <p>This, then, is a subject on which the deeper and more philosophical sceptics will always triumph, when they set out to introduce a universal doubt into every field of human knowledge. Do you follow the instincts of nature, they may say, in trusting the evidence of the senses? But those instincts lead you to believe that the perception, the sensible image, is itself the external object. Do you disown that principle in order to embrace the more rational opinion that perceptions are only representations of something external? Then you have departed from your natural inclinations and your most obvious feelings — and still cannot satisfy your reason, which can never find any convincing argument from experience to prove that perceptions are connected with any external object at all.</p>
 <p>There is another sceptical point of the same kind, drawn from the deepest philosophy, which might deserve our attention if it were worth diving so deep to find arguments that serve so little serious purpose. It is universally granted by modern enquirers that all the perceptible qualities of objects — hard, soft, hot, cold, white, black and the rest — are merely secondary, and do not exist in the objects themselves but are perceptions of the mind, with no external original that they represent. If this is granted for the secondary qualities, it must follow for the supposed primary qualities of extension and solidity too; the latter have no better claim to the name than the former. The idea of extension is acquired entirely from sight and touch; and if all the qualities perceived by the senses are in the mind and not in the object, the same conclusion must reach the idea of extension, which depends wholly on those sensible ideas. Nothing can save us from this conclusion except asserting that the ideas of primary qualities are reached by <em>Abstraction</em> — an opinion which, examined closely, turns out to be unintelligible and even absurd. An extension that is neither tangible nor visible cannot possibly be conceived; and a tangible or visible extension that is neither hard nor soft, black nor white, is equally beyond human conception. Let anyone try to conceive a triangle in general, which is neither <em>Isosceles</em> nor <em>Scalene</em> and has no particular length or proportion of sides, and he will soon see the absurdity of all the scholastic notions about abstraction and general ideas.</p>
 <p>So the first philosophical objection to the evidence of the senses, and to belief in external existence, is that such a belief, if it rests on natural instinct, is contrary to reason, and if it is referred to reason, is contrary to natural instinct — while carrying no rational evidence with it that would convince an impartial enquirer. The second objection goes further and presents the belief as contrary to reason outright, at least if it is a principle of reason that all sensible qualities are in the mind and not in the object. Strip matter of all its intelligible qualities, primary and secondary alike, and you virtually annihilate it, leaving only a certain unknown, inexplicable <em>something</em> as the cause of our perceptions — a notion so imperfect that no sceptic will think it worth arguing against.</p>
-<h4>Part Two</h4>
+<h3 class="sub">Part Two</h3>
 <p>It may look like a very extravagant attempt for the sceptics to try to destroy <em>reason</em> by argument and reasoning; yet that is the grand aim of all their enquiries. They try to find objections both to our abstract reasonings and to those concerning matter of fact.</p>
 <p>The chief objection to all <em>abstract</em> reasoning comes from the ideas of space and time — ideas which in ordinary life, viewed carelessly, are perfectly clear, but which under the scrutiny of the deeper sciences (and they are the chief object of those sciences) yield principles that seem full of absurdity and contradiction. No priestly <em>dogma</em>, invented on purpose to tame the rebellious reason of mankind, ever shocked common sense more than the doctrine of the infinite divisibility of extension, with all its consequences, as they are pompously set out by every geometer and metaphysician with a kind of triumph. A real quantity infinitely smaller than any finite quantity, containing quantities infinitely smaller than itself, and so on for ever: this is a structure so bold and prodigious that it is too heavy for any supposed demonstration to hold up, because it shocks the clearest and most natural principles of human reason. But what makes the matter more extraordinary is that these seemingly absurd opinions are supported by the clearest and most natural chain of reasoning, and it is not possible for us to allow the premises without admitting the consequences. Nothing could be more convincing than all the conclusions about the properties of circles and triangles — and yet once those are accepted, how can we deny that the angle of contact between a circle and its tangent is infinitely smaller than any angle made by straight lines; that as you increase the diameter of the circle without limit, this angle of contact grows smaller without limit; and that the angle of contact between other curves and their tangents may be infinitely smaller still than any circle&#x27;s, and so on for ever? The demonstration of these principles seems as unexceptionable as the one proving that the three angles of a triangle equal two right angles, though the latter opinion is natural and easy and the former is big with contradiction. Reason here seems thrown into a kind of amazement and suspense which, without any sceptic&#x27;s prompting, gives her a distrust of herself and of the ground she stands on. She sees a full light illuminating certain places — but that light borders on the profoundest darkness, and between the two she is so dazzled and confounded that she can scarcely pronounce with certainty on anything at all.</p>
 <p>The absurdity of these bold pronouncements of the abstract sciences becomes, if anything, still more palpable with time than with extension. An infinite number of real parts of time, passing in succession and used up one after another, looks like so evident a contradiction that no man whose judgement has not been corrupted rather than improved by the sciences could ever, one would think, bring himself to admit it.</p>
@@ -372,7 +723,7 @@
 <p>The sceptical objections to <em>moral</em> evidence, to reasoning about matters of fact, are either <em>popular</em> or <em>philosophical</em>. The popular ones are drawn from the natural weakness of human understanding; from the contradictory opinions held in different ages and nations; from the way our judgement varies in sickness and health, youth and age, prosperity and adversity; from the perpetual self-contradiction of each individual&#x27;s opinions; and other points of that kind. There is no need to dwell on this. These objections are weak. Since in ordinary life we reason about fact and existence at every moment, and could not possibly survive without continually using this kind of argument, no popular objection drawn from it can be enough to destroy that evidence. The great overthrower of <em>Pyrrhonism</em>, of the excessive principles of scepticism, is action, and employment, and the occupations of ordinary life. These principles may flourish and triumph in the schools, where it is indeed difficult if not impossible to refute them. But as soon as they leave the shade, and are set against the more powerful principles of our nature by the presence of real objects that stir our passions, they vanish like smoke and leave the most determined sceptic in the same condition as the rest of us.</p>
 <p>So the sceptic had better keep to his proper sphere and set out the <em>philosophical</em> objections, which come from deeper researches. Here he seems to have ample grounds for triumph. He rightly insists that all our evidence for any matter of fact lying beyond the testimony of sense or memory is drawn entirely from cause and effect; that we have no idea of that relation except of two objects which have frequently been found <em>conjoined</em>; that we have no argument to convince us that objects frequently conjoined in our experience will also be conjoined in the same way in other cases; and that nothing leads us to this inference but custom, a certain instinct of our nature, which is admittedly hard to resist, but which like other instincts may be deceptive. While the sceptic presses these points, he shows his strength — or rather, in truth, his own weakness and ours — and seems, for the moment at least, to destroy all conviction. These arguments could be set out at greater length, if any lasting good to society could ever be expected to come of them.</p>
 <p>For here is the chief and most confounding objection to <em>excessive</em> scepticism: that no lasting good can ever come of it, so long as it retains its full force. We need only ask such a sceptic <em>what he means, and what he proposes by all these curious researches.</em> He is immediately at a loss and does not know what to answer. A Copernican or a Ptolemaist, each supporting his own system of astronomy, may hope to produce a conviction in his audience that will last. A Stoic or an Epicurean puts forward principles which may not last, but which do have an effect on conduct. But a Pyrrhonian cannot expect his philosophy to have any constant influence on the mind — or that if it did, the influence would be good for society. On the contrary, he must acknowledge, if he will acknowledge anything, that all human life would perish if his principles universally and steadily prevailed. All talk, all action would cease immediately, and people would lie in a total lethargy until the unmet necessities of nature put an end to their miserable existence. It is true that so fatal an outcome is very little to be feared. Nature is always too strong for principle. And though a Pyrrhonian may throw himself and others into a momentary amazement by his profound reasoning, the first and most trivial event in life will put all his doubts to flight and leave him exactly like the philosophers of every other sect, in every point of action and speculation — or like people who never troubled themselves with philosophy at all. When he wakes from his dream he will be the first to join in the laugh against himself, and to admit that all his objections are mere amusement, and can show nothing except the whimsical condition of mankind, who must act and reason and believe, even though they cannot by their most diligent enquiry satisfy themselves about the foundation of these operations, or remove the objections that may be raised against them.</p>
-<h4>Part Three</h4>
+<h3 class="sub">Part Three</h3>
 <p>There is, however, a more <em>mitigated</em> scepticism, an <em>academic</em> philosophy, which may be both lasting and useful, and which may partly result from this Pyrrhonism, this <em>excessive</em> scepticism, once its indiscriminate doubts have been corrected to some extent by common sense and reflection. Most people are naturally inclined to be positive and dogmatic in their opinions; and while they see things from one side only and have no idea of any counterbalancing argument, they throw themselves headlong into whatever principles they are inclined to, with no patience for anyone who thinks otherwise. To hesitate or weigh things up perplexes their understanding, checks their passion and suspends their action. So they are impatient to escape a state they find so uncomfortable, and think they can never get far enough away from it by the violence of their assertions and the obstinacy of their belief. But if such dogmatic reasoners could be made aware of the strange infirmities of human understanding, even at its best and most careful, the reflection would naturally inspire more modesty and reserve, and would reduce their high opinion of themselves and their prejudice against their opponents. The unlearned may reflect on the disposition of the learned, who with all the advantages of study are commonly still diffident in their conclusions; and if any of the learned are inclined by temperament to haughtiness, a small dose of Pyrrhonism might reduce their pride, by showing them that the few advantages they have gained over their fellows are trifling compared with the universal perplexity inherent in human nature. In general there is a degree of doubt, caution and modesty which ought always to accompany a sound reasoner in every kind of enquiry and decision.</p>
 <p>Another kind of <em>mitigated</em> scepticism which may be of benefit to mankind, and which may follow naturally from Pyrrhonian doubts, is the limiting of our enquiries to the subjects best suited to the narrow capacity of human understanding. Human <em>imagination</em> is naturally sublime, delighted with whatever is remote and extraordinary, and running unchecked into the most distant parts of space and time to escape the objects custom has made too familiar. Sound <em>Judgement</em> does the opposite: it avoids all distant and lofty enquiries and confines itself to ordinary life and to the subjects of daily practice and experience, leaving the more sublime topics to the ornaments of poets and orators, or to the arts of priests and politicians. Nothing can help bring us to so wholesome a resolution more than being thoroughly convinced, once, of the force of Pyrrhonian doubt, and of the impossibility of anything but the strong power of natural instinct freeing us from it. Those with a bent for philosophy will still carry on their researches, reflecting that besides the immediate pleasure of the occupation, philosophical conclusions are nothing but the reflections of ordinary life, made methodical and corrected. But they will never be tempted to go beyond ordinary life, so long as they keep in mind the imperfection of the faculties they are using, their narrow reach and their inexact operation. While we cannot give a satisfactory reason why we believe, after a thousand trials, that a stone will fall or fire burn, how can we ever satisfy ourselves about any conclusion we may form concerning the origin of worlds, and the state of nature from and to eternity?</p>
 <p>This narrow limiting of our enquiries is in every respect so reasonable that the slightest examination of the natural powers of the human mind, compared with their objects, is enough to recommend it to us. We shall then find what the proper subjects of science and enquiry are.</p>

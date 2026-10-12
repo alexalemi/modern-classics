@@ -19,8 +19,359 @@
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=navigation" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 	<link rel="preload" href="fonts/libre-caslon-text-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="stylesheet" href="fonts.css">
-	<link rel="stylesheet" href="book.css">
+	<style>
+/* Fonts for every page (front pages and book pages), served from this site
+   rather than Google Fonts: a third-party
+   stylesheet blocked rendering for ~0.8 s on mobile (PageSpeed, 2026-10-12).
+   Oswald, Yellowtail and Libre Caslon Text (SIL Open Font License), latin and
+   latin-ext subsets as Google serves them, in site/fonts/. */
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* The book pages. Shared by every page assemble.py writes; fonts in fonts.css.
+
+   LEGIBILITY FIRST. The running text is set in the best screen serif the
+   reader's own device has (Charter on Apple, Sitka Text on Windows, Georgia
+   or Noto Serif elsewhere), near-black on white, 19-20px, ~66 characters to
+   the line. The Emend look (Libre Caslon Text, navy, the cream band, Oswald
+   labels) is kept to the title band, the headings and the controls. */
+
+:root {
+  --page:  #ffffff;
+  --text:  #1c1c1c;
+  --ink:   #1b314d;     /* navy: headings, links, buttons */
+  --cream: #f4efe2;
+  --soft:  #5a6472;
+  --rule:  #ddd6c8;
+  --link:  #1f4f86;
+  --plate-bg: #ffffff;
+  --reading: Charter, "Bitstream Charter", "Sitka Text", Georgia, "Noto Serif", serif;
+  --display: "Libre Caslon Text", Georgia, serif;
+  --label:   "Oswald", "Arial Narrow", sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page:  #14181e;
+    --text:  #e4e0d8;
+    --ink:   #e8e2d4;
+    --cream: #1d2430;
+    --soft:  #a3adba;
+    --rule:  #343c48;
+    --link:  #9cc2e6;
+  }
+  /* plates and diagrams are drawn on white paper; keep them on it, slightly dimmed */
+  figure img { opacity: .92; }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html {
+  background: var(--page);
+  color: var(--text);
+  font-size: 20px;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--reading);
+  line-height: 1.65;
+  font-kerning: normal;
+}
+
+main { max-width: 34rem; margin: 0 auto; padding: 0 1rem 5rem; }
+
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+
+/* ---------- title band ---------- */
+
+.title-block {
+  background: var(--cream);
+  padding: 1.6rem 1rem 1.8rem;
+  margin-bottom: 2rem;
+}
+.title-inner {
+  max-width: 44rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.8rem;
+  align-items: center;
+}
+.title-block .series {
+  grid-column: 1 / -1;
+  margin: 0 0 0.2rem;
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.title-block .series a { color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 0.55rem; }
+.title-block .series a:hover span { text-decoration: underline; }
+.title-block .series img { height: 1.8rem; width: auto; }
+.cover img {
+  display: block;
+  width: 150px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+}
+.title-text { min-width: 0; }
+h1 {
+  font: 700 2rem/1.15 var(--display);
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+  text-align: left;
+}
+.title-line { margin: 0 0 0.3rem; font-size: 0.95rem; color: var(--ink); }
+.title-line.byline { font-weight: 700; }
+.dates { margin: 0 0 0.9rem; font-size: 0.85rem; color: var(--soft); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.button {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid var(--ink);
+  font: 500 0.75rem/1.2 var(--label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+}
+.button.primary { background: var(--ink); color: var(--page); }
+.button:hover { text-decoration: underline; }
+
+/* phones: a small cover beside the title, so the text starts sooner */
+@media (max-width: 36rem) {
+  .title-block { padding: 1.1rem 1rem 1.4rem; }
+  .title-inner { grid-template-columns: 76px 1fr; gap: 0.9rem; align-items: start; }
+  .cover img { width: 76px; height: 114px; }
+  h1 { font-size: 1.45rem; }
+  .actions { grid-column: 1 / -1; }
+}
+
+/* ---------- running text ---------- */
+
+.intro-note { font-style: italic; font-size: 0.9rem; color: var(--soft); }
+
+h2, h3, h4 {
+  font-family: var(--display);
+  color: var(--ink);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+h2 { font-size: 1.45rem; margin: 3.2rem 0 1rem; }
+h3 { font-size: 1.2rem; margin: 2.8rem 0 0.9rem; }
+h4, h3.sub { font-size: 1rem; margin: 2rem 0 0.8rem; font-style: italic; }
+h2.center { text-align: center; font-size: 1.6rem; margin-top: 4rem; }
+
+p, ul, ol { margin: 0 0 1.15em; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+blockquote {
+  margin: 1.5em 0 1.5em 1em;
+  padding-left: 1em;
+  border-left: 3px solid var(--rule);
+  font-style: italic;
+}
+blockquote p { margin-bottom: 0.8em; }
+
+pre.outline {
+  font-family: var(--reading);
+  white-space: pre-wrap;
+  line-height: 1.6;
+  margin: 0 0 1.15em;
+}
+
+img.glyph { vertical-align: middle; display: inline; }
+span.frac, span.stack { display: inline-block; vertical-align: middle; text-align: center; }
+span.frac > span, span.stack > span { display: block; }
+span.frac > span.num { border-bottom: 1px solid currentColor; }
+span.stack.brace { border-left: 2px solid currentColor; border-right: 2px solid currentColor; border-radius: 0.6em; padding: 0 0.3em; }
+math { font-size: 1.05em; }
+
+figure { margin: 2.2em auto; text-align: center; }
+figure + figure { margin-top: 1em; }
+figure img { max-width: 100%; height: auto; background: var(--plate-bg); }
+figcaption {
+  margin-top: 0.6em;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--soft);
+  text-align: left;
+}
+
+table.plates { width: 100%; margin: 2.5em 0; border-collapse: collapse; line-height: 1.5; }
+table.plates td { padding: 0.4em 0.8em; vertical-align: middle; border-bottom: 1px solid var(--rule); }
+table.plates tr:last-child td { border-bottom: none; }
+table.plates figure, table.plates figure + figure { margin: 0.4em auto; }
+table.plates figcaption { display: none; }
+
+/* page locators: a printed page and quarter, for books that cite
+   themselves by them (Helmholtz: "see p. 77c") */
+span.loc { font-size: 0.65em; color: var(--soft); vertical-align: 0.3em; padding: 0 0.15em; font-style: normal; }
+a.ref { color: inherit; text-decoration: underline dotted; }
+span.sc { font-variant: small-caps; }
+.center { text-align: center; }
+.subtitle { text-align: center; font-style: italic; }
+
+/* ---------- contents ---------- */
+
+nav.contents h2 { margin-top: 0; }
+.toc-book { font-family: var(--display); font-weight: 700; margin: 1.2em 0 0.4em; color: var(--ink); }
+.toc-list { list-style: none; padding-left: 1.2em; margin: 0 0 1em; }
+.toc-list li { margin-bottom: 0.3em; line-height: 1.4; }
+nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
+
+/* ---------- reading aids (book.js) ---------- */
+
+.resume {
+  margin: 0 0 1.5rem;
+  padding: 0.7rem 1rem;
+  background: var(--cream);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+.resume[hidden] { display: none; }
+
+.to-contents {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 5;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--page);
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+.to-contents.show { opacity: .92; pointer-events: auto; }
+
+@media (max-width: 36rem) {
+  html { font-size: 18px; }
+}
+
+@media print {
+  .title-block { background: none; }
+  .actions, .to-contents, .resume { display: none; }
+}
+</style>
 	<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "The Expert at the Card Table", "author": {"@type": "Person", "name": "S. W. Erdnase"}, "inLanguage": "en", "url": "https://emend.press/erdnase.html", "description": "The 1902 manual of card handling, at the card table and on the stage, with all of M. D. Smith's drawings from life. A restored edition, free to read online and as an ebook.", "publisher": {"@type": "Organization", "name": "Emend Press", "url": "https://emend.press/", "logo": "https://emend.press/apple-touch-icon.png"}, "isAccessibleForFree": true, "isPartOf": {"@type": "BookSeries", "name": "Modern Classics", "url": "https://emend.press/"}, "image": "https://emend.press/covers/erdnase.jpg", "datePublished": "1902", "workExample": {"@type": "Book", "bookFormat": "https://schema.org/EBook", "encodingFormat": "application/epub+zip", "url": "https://emend.press/ebooks/s-w-erdnase_the-expert-at-the-card-table.epub"}}</script>
 </head>
 
@@ -188,7 +539,7 @@
 </section>
 <section aria-labelledby="erdnase-system-of-blind-shuffles">
 <h2 id="erdnase-system-of-blind-shuffles">Erdnase System of Blind Shuffles</h2>
-<h4>Position for Shuffle</h4>
+<h3 class="sub">Position for Shuffle</h3>
 <p>The deck is held much as usual in the left palm, but more diagonally, so that the first finger from the second joint lies up against the outer end, the first joint of the little finger curled in against the inner end, the second and third fingers slightly curled in against the bottom, and the thumb resting on the top, near the outer end, about the middle. The right hand, when about to shuffle, seizes the under portion at the ends between the thumb and second and third fingers, and the first finger rests on the upper side. (See Fig. 1.) This position, and especially that of the first and little fingers of the left hand, is essential for the process of blind shuffling and stocking. The first and little fingers hold and locate the Jogs, which, in connection with the Break, the Run, and the Throw, make this new mode of stocking and culling possible. The position is easy and quite natural in appearance. There is no strain on the fingers. The deck fits fairly on its side, across the palm, and the left-hand fingers are in much the same position as they would naturally take when the hand is about half closed. It is an excellent manner of holding the deck for the true shuffle, and should be strictly adhered to on all occasions.</p>
 </section>
 <section aria-labelledby="blind-shuffles">
@@ -198,7 +549,7 @@
 <img src="images/erdnase/figaa.png" alt="Fig. 1. — The position for the hand shuffle: the deck lies on its side across the left palm, and the right hand seizes the under portion at the ends between thumb and second and third fingers." width="585" height="586" loading="lazy">
 <figcaption>Fig. 1. — The position for the hand shuffle: the deck lies on its side across the left palm, and the right hand seizes the under portion at the ends between thumb and second and third fingers.</figcaption>
 </figure>
-<h4>I. To Retain Top Stock</h4>
+<h3 class="sub">I. To Retain Top Stock</h3>
 <p>Under cut about half deck, in-jog first card and shuffle off. Under cut to in-jog and throw on top.</p>
 <p>This is the very simplest form of the blind shuffle and leaves the upper portion of the deck in the same order. The shuffle may be continued ad libitum.</p>
 <p>The reader who has prepared himself with a knowledge of the position given for hand shuffling, and the definitions of the list of terms, will have no difficulty in understanding the above directions, and executing the blind at the very first attempt. However, as a first lesson in the A, B, C of card manipulation, the following description of the action is given at length, viz.:</p>
@@ -208,14 +559,14 @@
 <figcaption>Fig. 2. — The deck lying on its side in the left hand, seen from beneath with the bottom card&#x27;s face showing and the left fingers curled in against it.</figcaption>
 </figure>
 <p>The weak point about the foregoing blind is that the last movement is a throw, or under cut, and it may be noticed that only part of the deck is actually shuffled. This objection is entirely overcome by the use of the break, which is illustrated in the following blind shuffle.</p>
-<h4>II. To Retain Top Stock and Shuffle Whole Deck</h4>
+<h3 class="sub">II. To Retain Top Stock and Shuffle Whole Deck</h3>
 <p>Under cut about three-quarters of deck, in-jog first card and shuffle off. Under cut again about three-quarters of deck, forming break at in-jog (see Fig. 3), shuffle off to break and throw balance on top. This blind apparently shuffles the entire deck, but really leaves the top portion in the original order.</p>
 <figure id="fig-ac">
 <img src="images/erdnase/figac.png" alt="Fig. 3. — Both hands at the under cut, the right hand seizing the under portion while a break is held at the in-jog; the space between the two packets shows at the end of the deck." width="666" height="414" loading="lazy">
 <figcaption>Fig. 3. — Both hands at the under cut, the right hand seizing the under portion while a break is held at the in-jog; the space between the two packets shows at the end of the deck.</figcaption>
 </figure>
 <p>There should be no difficulty in forming the break. The right thumb presses slightly upward on the in-jog card when seizing the under portion, and the space created is held by squeezing the ends. It should be done altogether by touch, although from the position it is in, the operator might glance at it without being noticed. It is practically impossible for a spectator to see it unless immediately behind the performer. When shuffling off to the break, the right hand holds the cards firmly and the right thumb gives the warning by the sense of touch when the break is reached. If desired, the right hand may shuffle off, quite carelessly, several cards at a time, and throw the last lot up to the break, by slightly decreasing the pressure on the ends. Above all, a uniformity of time and action must be maintained, though it is not at all essential to the blind to shuffle rapidly.</p>
-<h4>III. To Retain the Bottom Stock and Shuffle Whole Deck</h4>
+<h3 class="sub">III. To Retain the Bottom Stock and Shuffle Whole Deck</h3>
 <p>Under cut about three-quarters of the deck and shuffle off about two-thirds, then in-jog one card and throw balance on top. Under cut to and include in-jog card (see Fig. 4), and shuffle off.</p>
 <figure id="fig-ad">
 <img src="images/erdnase/figad.png" alt="Fig. 4. — The under cut taken to and including the jog card: the right hand draws out the lower packet, and a small space shows in the deck where the thumb tip has entered the opening." width="646" height="463" loading="lazy">
@@ -232,7 +583,7 @@
 </section>
 <section aria-labelledby="blind-riffles">
 <h2 id="blind-riffles">Blind Riffles</h2>
-<h4>I. To Retain the Top Stock</h4>
+<h3 class="sub">I. To Retain the Top Stock</h3>
 <p>Upper cut about half the deck with right hand, place two packets end to end on the table in the usual position for riffling. Seize both packets at sides close to adjoining ends between the third finger and thumb of each hand, and rest the hands on the outer ends of packets. Raise the thumb corners, and at the same moment in-jog the top card of the left-hand packet by drawing it in a little over the left thumb, with the first finger of the left hand. The first and second fingers of the left hand conceal both the jog and the action. (See Fig. 5.) Then begin to release, and spring or riffle into each other the ends of the lower cards with both thumbs, but more rapidly with the left thumb, so that the left packet, with the exception of the top card (which is retained on top of the left thumb) will have been riffled in before the right thumb has released the cards of the top stock. Continue the action with the right thumb until all are released, then release last card held by the left thumb. (See Fig. 6.)</p>
 <figure id="fig-ae">
 <img src="images/erdnase/figae.png" alt="Fig. 5. — The top stock riffle begun: two packets end to end on the table, both hands resting on their outer ends, the left first and second fingers covering the in-jogged top card of the left packet." width="878" height="334" loading="lazy">
@@ -249,7 +600,7 @@
 </figure>
 <p>This riffle, though requiring considerable explanation, is quite simple, and as easily executed as the true. There is no hesitation in the thumb action, although one moves more rapidly than the other. The movements are natural; the positions of the hands are regular, and even the manner of pushing in the cards is the customary one of many players.</p>
 <p>But, as intimated, to retain the top stock in the riffle is the exception. In most instances, when the blind is used, it is to retain the bottom stock, and that process which is next described, is even simpler and easier of execution, and more perfect in deception.</p>
-<h4>II. To Retain the Bottom Stock</h4>
+<h3 class="sub">II. To Retain the Bottom Stock</h3>
 <p>Upper cut about half deck with right hand and place the two packets end to end in position for riffle. Seize both packets at sides close to adjoining ends between second finger and thumb of each hand, the third and little fingers curled in, with the first joints resting on top of packets. Raise thumb corners and release bottom stock first with left thumb, then continue action with both thumbs until all cards are riffled in. (See Fig. 8.) Push both packets together in the ordinary manner and square up.</p>
 <figure id="fig-ah">
 <img src="images/erdnase/figah.png" alt="Fig. 8. — The position for the bottom stock riffle: each packet held at the sides near the adjoining ends between second finger and thumb, the thumb corners raised and springing together at the middle." width="918" height="422" loading="lazy">
@@ -274,18 +625,18 @@
 <section aria-labelledby="blind-cuts">
 <h2 id="blind-cuts">Blind Cuts</h2>
 <p>The blind cut is a natural sequence to the blind shuffle or riffle. As the cards are cut in almost all games, there would be little advantage derived from clever shuffling, were the order to be subsequently disturbed in cutting. The able card handler with a player on his right to blind cut, has the game well in hand. Yet though the advantages are greatly increased by the assistance of an ally, the reader will learn how it is quite possible to play alone and still have a very tolerable percentage of the chances in one&#x27;s favor. Both hands are invariably used to make a blind cut. The first described is an excellent one for retaining either the top or bottom stock and is in common use among professional players.</p>
-<h4>I. To Retain Bottom Stock. Top Losing One Card</h4>
+<h3 class="sub">I. To Retain Bottom Stock. Top Losing One Card</h3>
 <p>Seize the deck with left hand at sides, near end, between second finger and thumb, the first finger tip pressing on top. Seize the upper portion of deck with the right hand, at sides, near end, between the second finger and thumb. Raise the deck slightly with both hands and pull out the upper portion with the right hand, but retain the top card in the left hand by pressing on it with the left first finger tip. (See Fig. 11.) Immediately drop the left-hand packet on the table and bring the right-hand packet down on top with a slight swing, and square up.</p>
 <p>The action is very simple and easy to execute, the movements are perfectly natural and regular, and, if performed gracefully, is very deceiving. The process displaces the top card. sending it to the middle, and if this blind is used when the top stock is to be retained, an extra card is placed there during the shuffle.</p>
 <figure id="fig-ak">
 <img src="images/erdnase/figak.png" alt="Fig. 11. — Blind cut No. I: the right hand pulls out the upper portion at the sides between second finger and thumb, while the left first finger tip presses on the top card and keeps it back." width="1089" height="488" loading="lazy">
 <figcaption>Fig. 11. — Blind cut No. I: the right hand pulls out the upper portion at the sides between second finger and thumb, while the left first finger tip presses on the top card and keeps it back.</figcaption>
 </figure>
-<h4>II. To Retain the Complete Stock</h4>
+<h3 class="sub">II. To Retain the Complete Stock</h3>
 <p>The following is a very bold and bare-faced blind, but if cleverly executed it appears natural:</p>
 <p>Seize the deck at sides near the ends between the second finger and thumb of each hand, but the left hand seizing the under portion, and the right hand the top portion. Draw out the under portion rapidly with the left hand and place it quickly over towards the dealer, the right hand following slowly and with an upward swing, drops the top portion again on top.</p>
 <p>The movements are natural and the blind can be accomplished very neatly. If the plan of drawing off the top portion with the left hand is tried, and then the right following more slowly with the under packet, it will be seen that the identical movements are made in the true cut. It is the movement towards the dealer that makes the blind possible.</p>
-<h4>III. To Retain the Top Stock</h4>
+<h3 class="sub">III. To Retain the Top Stock</h3>
 <p>The next two methods of blind cuts are among the most subtle and indetectible manoeuvers in card handling. The design and use of the break originated with us, and by its aid blind run cuts can be alternated with the blind riffle, until the most critical skeptic will admit that any prearrangement or knowledge of the cards must be hopelessly lost in bewildering confusion.</p>
 <figure id="fig-al">
 <img src="images/erdnase/figal.png" alt="Fig. 12. — Forming the break in blind cut No. III, seen from the performer&#x27;s side: the right-hand packet has come down on top, and the thumbs hold a narrow space between the two packets at one end." width="910" height="417" loading="lazy">
@@ -297,7 +648,7 @@
 <img src="images/erdnase/figam.png" alt="Fig. 13. — The run cut to the break: the right hand holds the deck up while the left thumb and second finger draw off the upper portion in small packets, which lie dropped one on another beneath." width="998" height="443" loading="lazy">
 <figcaption>Fig. 13. — The run cut to the break: the right hand holds the deck up while the left thumb and second finger draw off the upper portion in small packets, which lie dropped one on another beneath.</figcaption>
 </figure>
-<h4>IV. To Retain the Bottom Stock</h4>
+<h3 class="sub">IV. To Retain the Bottom Stock</h3>
 <p>Seize deck at sides, near the ends between the thumb and second finger of each hand, raise a little from the table and draw out the bottom stock with the thumb and finger of the right hand and let the left-hand packet fall on the table. Bring the right-hand packet down on top, retaining the hold until the break is formed by the left thumb, which is held at the edge of the under packet in readiness. Square up the deck and raise it again from the table with both hands; draw off top packet to the break with the left hand and drop it on the table. Then continue the left-hand action, drawing off small packets, dropping them one on the other, and throw the last packet on top with the right hand. This leaves the bottom stock intact. The action is much the same as the preceding blind, the difference being in the position of the break.</p>
 <p>It is very important to adopt the proper positions for the fingers in these cuts. The deck should be as much exposed as possible, and the open manner of the whole process makes the blind so much more effective. The cards are handled solely by the second fingers and thumbs. The third fingers are curled up against the ends of the deck and assist in squaring up, and keeping the cards even. The first fingers are curled up on top so as to be out of the way and not obstruct the view.</p>
 <p>To form the break, keep the left hand in the position it occupies as it drops the packet on the table, the finger and thumb held open apparently to seize the deck again when the right-hand packet is placed on top. This enables the left thumb to aid in forming the break the instant the two packets are brought together. The right hand packet is placed on top with a sidling movement instead of straight down, which greatly facilitates the forming of the break, and also prevents the sound from indicating that a space is held. There is nothing difficult about the performance of these blinds. With a perfect understanding, they can be fairly well executed on the first attempt.</p>
@@ -305,20 +656,20 @@
 </section>
 <section aria-labelledby="combination-riffle-and-cuts">
 <h2 id="combination-riffle-and-cuts">Combination Riffle and Cuts</h2>
-<h4>V. To Retain Bottom Stock. Riffle II and Cut IV</h4>
+<h3 class="sub">V. To Retain Bottom Stock. Riffle II and Cut IV</h3>
 <p>Execute Riffle II. Then execute Cut IV. Then Riffle II again. Then draw off with left hand about half the deck in small packets, bring the right hand over on top with the balance, and form a break in squaring up. Then pull out under packet with the right hand and execute Riffle II again. Then pull out a small packet from the middle of deck with the right hand and throw on top. Then draw out about half from the bottom with right hand and form break. Square up, draw out under part again with right hand and execute Riffle II and so on to any extent.</p>
 </section>
 <section aria-labelledby="fancy-blind-cuts">
 <h2 id="fancy-blind-cuts">Fancy Blind Cuts</h2>
 <p>The next blind described is in common use among advantage players, and while it has an excellent appearance to the uninitiated, we consider it far inferior to Cuts III and IV as a card table ruse. The principal objection is that, once known as a blind, it can never be worked again, as the action is showy and easily recognized.</p>
-<h4>I. To Retain the Complete Stock</h4>
+<h3 class="sub">I. To Retain the Complete Stock</h3>
 <p>Seize the deck at sides, near ends, between second finger and thumb of each hand. Draw out about one-third of deck from bottom with right second finger and thumb, and place on top but retain hold. Then hook up about half of the under part, with the third finger and thumb of right hand, and raise the whole deck from the table with both hands. Now suddenly draw out the middle packet with the right second finger and thumb, the lower packet with the left second finger and thumb, and release the top packet with the right second finger, which will allow it to fall on the table. (See Fig. 14.) Drop the left hand packet on top, and then the right packet.</p>
 <p>The hands must be separated rapidly, and with some degree of skill, to allow the top packet to fall fairly on the table, but this is the only hurried movement in the cut. The other two packets are thrown on top carelessly and without haste. A little practice is required to execute the ruse gracefully. It is pretty and well worthy of an effort to acquire. We have elaborated upon this cut, and the following formula for a four throw blind is the outcome:</p>
 <figure id="fig-an">
 <img src="images/erdnase/figan.png" alt="Fig. 14. — The three-packet fancy blind cut: both hands raise the deck from the table and separate, the right hand drawing out the middle packet, the left the lower one, as the top packet is let fall." width="942" height="455" loading="lazy">
 <figcaption>Fig. 14. — The three-packet fancy blind cut: both hands raise the deck from the table and separate, the right hand drawing out the middle packet, the left the lower one, as the top packet is let fall.</figcaption>
 </figure>
-<h4>II. To Retain the Complete Stock</h4>
+<h3 class="sub">II. To Retain the Complete Stock</h3>
 <p>Seize the deck at sides, near ends, between the second finger and thumb of right hand, and the second and third fingers and thumb of left hand. Draw out about one-quarter of deck from bottom with right hand and place on top, retaining hold. Then slightly raise about one-third of the under packet with the second finger of the left hand, then seize about one-half the remaining lower packet with the third finger of the right hand, holding the last or under portion firmly with the third finger of the left hand. Raise the whole deck from the table and separate both hands suddenly (see Fig. 15), letting the upper packet which is released by the right second finger fall on the table. Then drop lower packet in left hand, then packet in right hand, then last packet in left hand, one on the other, and square up.</p>
 <figure id="fig-ao">
 <img src="images/erdnase/figao.png" alt="Fig. 15. — The four throw blind cut: both hands raise the divided deck and separate it suddenly, the packets held at the sides by second and third fingers and thumbs, standing staggered one above another." width="931" height="523" loading="lazy">

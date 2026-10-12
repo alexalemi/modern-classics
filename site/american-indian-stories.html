@@ -19,8 +19,359 @@
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=navigation" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 	<link rel="preload" href="fonts/libre-caslon-text-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="stylesheet" href="fonts.css">
-	<link rel="stylesheet" href="book.css">
+	<style>
+/* Fonts for every page (front pages and book pages), served from this site
+   rather than Google Fonts: a third-party
+   stylesheet blocked rendering for ~0.8 s on mobile (PageSpeed, 2026-10-12).
+   Oswald, Yellowtail and Libre Caslon Text (SIL Open Font License), latin and
+   latin-ext subsets as Google serves them, in site/fonts/. */
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* The book pages. Shared by every page assemble.py writes; fonts in fonts.css.
+
+   LEGIBILITY FIRST. The running text is set in the best screen serif the
+   reader's own device has (Charter on Apple, Sitka Text on Windows, Georgia
+   or Noto Serif elsewhere), near-black on white, 19-20px, ~66 characters to
+   the line. The Emend look (Libre Caslon Text, navy, the cream band, Oswald
+   labels) is kept to the title band, the headings and the controls. */
+
+:root {
+  --page:  #ffffff;
+  --text:  #1c1c1c;
+  --ink:   #1b314d;     /* navy: headings, links, buttons */
+  --cream: #f4efe2;
+  --soft:  #5a6472;
+  --rule:  #ddd6c8;
+  --link:  #1f4f86;
+  --plate-bg: #ffffff;
+  --reading: Charter, "Bitstream Charter", "Sitka Text", Georgia, "Noto Serif", serif;
+  --display: "Libre Caslon Text", Georgia, serif;
+  --label:   "Oswald", "Arial Narrow", sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page:  #14181e;
+    --text:  #e4e0d8;
+    --ink:   #e8e2d4;
+    --cream: #1d2430;
+    --soft:  #a3adba;
+    --rule:  #343c48;
+    --link:  #9cc2e6;
+  }
+  /* plates and diagrams are drawn on white paper; keep them on it, slightly dimmed */
+  figure img { opacity: .92; }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html {
+  background: var(--page);
+  color: var(--text);
+  font-size: 20px;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--reading);
+  line-height: 1.65;
+  font-kerning: normal;
+}
+
+main { max-width: 34rem; margin: 0 auto; padding: 0 1rem 5rem; }
+
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+
+/* ---------- title band ---------- */
+
+.title-block {
+  background: var(--cream);
+  padding: 1.6rem 1rem 1.8rem;
+  margin-bottom: 2rem;
+}
+.title-inner {
+  max-width: 44rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.8rem;
+  align-items: center;
+}
+.title-block .series {
+  grid-column: 1 / -1;
+  margin: 0 0 0.2rem;
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.title-block .series a { color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 0.55rem; }
+.title-block .series a:hover span { text-decoration: underline; }
+.title-block .series img { height: 1.8rem; width: auto; }
+.cover img {
+  display: block;
+  width: 150px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+}
+.title-text { min-width: 0; }
+h1 {
+  font: 700 2rem/1.15 var(--display);
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+  text-align: left;
+}
+.title-line { margin: 0 0 0.3rem; font-size: 0.95rem; color: var(--ink); }
+.title-line.byline { font-weight: 700; }
+.dates { margin: 0 0 0.9rem; font-size: 0.85rem; color: var(--soft); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.button {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid var(--ink);
+  font: 500 0.75rem/1.2 var(--label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+}
+.button.primary { background: var(--ink); color: var(--page); }
+.button:hover { text-decoration: underline; }
+
+/* phones: a small cover beside the title, so the text starts sooner */
+@media (max-width: 36rem) {
+  .title-block { padding: 1.1rem 1rem 1.4rem; }
+  .title-inner { grid-template-columns: 76px 1fr; gap: 0.9rem; align-items: start; }
+  .cover img { width: 76px; height: 114px; }
+  h1 { font-size: 1.45rem; }
+  .actions { grid-column: 1 / -1; }
+}
+
+/* ---------- running text ---------- */
+
+.intro-note { font-style: italic; font-size: 0.9rem; color: var(--soft); }
+
+h2, h3, h4 {
+  font-family: var(--display);
+  color: var(--ink);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+h2 { font-size: 1.45rem; margin: 3.2rem 0 1rem; }
+h3 { font-size: 1.2rem; margin: 2.8rem 0 0.9rem; }
+h4, h3.sub { font-size: 1rem; margin: 2rem 0 0.8rem; font-style: italic; }
+h2.center { text-align: center; font-size: 1.6rem; margin-top: 4rem; }
+
+p, ul, ol { margin: 0 0 1.15em; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+blockquote {
+  margin: 1.5em 0 1.5em 1em;
+  padding-left: 1em;
+  border-left: 3px solid var(--rule);
+  font-style: italic;
+}
+blockquote p { margin-bottom: 0.8em; }
+
+pre.outline {
+  font-family: var(--reading);
+  white-space: pre-wrap;
+  line-height: 1.6;
+  margin: 0 0 1.15em;
+}
+
+img.glyph { vertical-align: middle; display: inline; }
+span.frac, span.stack { display: inline-block; vertical-align: middle; text-align: center; }
+span.frac > span, span.stack > span { display: block; }
+span.frac > span.num { border-bottom: 1px solid currentColor; }
+span.stack.brace { border-left: 2px solid currentColor; border-right: 2px solid currentColor; border-radius: 0.6em; padding: 0 0.3em; }
+math { font-size: 1.05em; }
+
+figure { margin: 2.2em auto; text-align: center; }
+figure + figure { margin-top: 1em; }
+figure img { max-width: 100%; height: auto; background: var(--plate-bg); }
+figcaption {
+  margin-top: 0.6em;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--soft);
+  text-align: left;
+}
+
+table.plates { width: 100%; margin: 2.5em 0; border-collapse: collapse; line-height: 1.5; }
+table.plates td { padding: 0.4em 0.8em; vertical-align: middle; border-bottom: 1px solid var(--rule); }
+table.plates tr:last-child td { border-bottom: none; }
+table.plates figure, table.plates figure + figure { margin: 0.4em auto; }
+table.plates figcaption { display: none; }
+
+/* page locators: a printed page and quarter, for books that cite
+   themselves by them (Helmholtz: "see p. 77c") */
+span.loc { font-size: 0.65em; color: var(--soft); vertical-align: 0.3em; padding: 0 0.15em; font-style: normal; }
+a.ref { color: inherit; text-decoration: underline dotted; }
+span.sc { font-variant: small-caps; }
+.center { text-align: center; }
+.subtitle { text-align: center; font-style: italic; }
+
+/* ---------- contents ---------- */
+
+nav.contents h2 { margin-top: 0; }
+.toc-book { font-family: var(--display); font-weight: 700; margin: 1.2em 0 0.4em; color: var(--ink); }
+.toc-list { list-style: none; padding-left: 1.2em; margin: 0 0 1em; }
+.toc-list li { margin-bottom: 0.3em; line-height: 1.4; }
+nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
+
+/* ---------- reading aids (book.js) ---------- */
+
+.resume {
+  margin: 0 0 1.5rem;
+  padding: 0.7rem 1rem;
+  background: var(--cream);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+.resume[hidden] { display: none; }
+
+.to-contents {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 5;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--page);
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+.to-contents.show { opacity: .92; pointer-events: auto; }
+
+@media (max-width: 36rem) {
+  html { font-size: 18px; }
+}
+
+@media print {
+  .title-block { background: none; }
+  .actions, .to-contents, .resume { display: none; }
+}
+</style>
 	<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "American Indian Stories", "author": {"@type": "Person", "name": "Zitkala-Ša"}, "inLanguage": "en", "url": "https://emend.press/american-indian-stories.html", "description": "Her childhood on the Yankton reservation, her schooldays in the East, her stories, and her 1921 case against the Indian Bureau. A restored edition, free to read online and as an ebook.", "publisher": {"@type": "Organization", "name": "Emend Press", "url": "https://emend.press/", "logo": "https://emend.press/apple-touch-icon.png"}, "isAccessibleForFree": true, "isPartOf": {"@type": "BookSeries", "name": "Modern Classics", "url": "https://emend.press/"}, "image": "https://emend.press/covers/american-indian-stories.jpg", "datePublished": "1921", "workExample": {"@type": "Book", "bookFormat": "https://schema.org/EBook", "encodingFormat": "application/epub+zip", "url": "https://emend.press/ebooks/zitkala-sa_american-indian-stories.epub"}}</script>
 </head>
 
@@ -83,7 +434,7 @@
 </section>
 <section aria-labelledby="impressions-of-an-indian-childhood">
 <h2 id="impressions-of-an-indian-childhood">Impressions of an Indian Childhood</h2>
-<h4>I. My Mother</h4>
+<h3 class="sub">I. My Mother</h3>
 <p>A wigwam of weather-stained canvas stood at the base of some irregularly ascending hills. A footpath wound its way gently down the sloping land till it reached the broad river bottom; creeping through the long swamp grasses that bent over it on either side, it came out on the edge of the Missouri.</p>
 <p>Here, morning, noon, and evening, my mother came to draw water from the muddy stream for our household use. Always, when my mother started for the river, I stopped my play to run along with her. She was only of medium height. Often she was sad and silent, at which times her full arched lips were compressed into hard and bitter lines, and shadows fell under her black eyes. Then I clung to her hand and begged to know what made the tears fall.</p>
 <p>&quot;Hush; my little daughter must never talk about my tears&quot;; and smiling through them, she patted my head and said, &quot;Now let me see how fast you can run today.&quot; Whereupon I tore away at my highest possible speed, with my long black hair blowing in the breeze.</p>
@@ -99,7 +450,7 @@
 <p>&quot;Well, it happened on the day we moved camp that your sister and uncle were both very sick. Many others were ailing, but there seemed to be no help. We traveled many days and nights; not in the grand, happy way that we moved camp when I was a little girl, but we were driven, my child, driven like a herd of buffalo. With every step, your sister, who was not as large as you are now, shrieked with the painful jar until she was hoarse with crying. She grew more and more feverish. Her little hands and cheeks were burning hot. Her little lips were parched and dry, but she would not drink the water I gave her. Then I discovered that her throat was swollen and red. My poor child, how I cried with her because the Great Spirit had forgotten us!</p>
 <p>&quot;At last, when we reached this western country, on the first weary night your sister died. And soon your uncle died also, leaving a widow and an orphan daughter, your cousin Warca-Ziwin. Both your sister and uncle might have been happy with us today, had it not been for the heartless paleface.&quot;</p>
 <p>My mother was silent the rest of the way to our wigwam. Though I saw no tears in her eyes, I knew that was because I was with her. She seldom wept before me.</p>
-<h4>II. The Legends</h4>
+<h3 class="sub">II. The Legends</h3>
 <p>During the summer days my mother built her fire in the shadow of our wigwam.</p>
 <p>In the early morning our simple breakfast was spread upon the grass west of our tepee. At the farthest point of the shade my mother sat beside her fire, toasting a savory piece of dried meat. Near her, I sat upon my feet, eating my dried meat with unleavened bread, and drinking strong black coffee.</p>
 <p>The morning meal was our quiet hour, when we two were entirely alone. At noon, several who chanced to be passing by stopped to rest, and to share our luncheon with us, for they were sure of our hospitality.</p>
@@ -120,7 +471,7 @@
 <p>It was a long story of a woman whose magic power lay hidden behind the marks upon her face. I fell asleep before the story was completed.</p>
 <p>Ever after that night I felt suspicious of tattooed people. Wherever I saw one I glanced furtively at the mark and round about it, wondering what terrible magic power was covered there.</p>
 <p>It was rarely that such a fearful story as this one was told by the camp fire. Its impression was so acute that the picture still remains vividly clear and pronounced.</p>
-<h4>III. The Beadwork</h4>
+<h3 class="sub">III. The Beadwork</h3>
 <p>Soon after breakfast mother sometimes began her beadwork. On a bright, clear day, she pulled out the wooden pegs that pinned the skirt of our wigwam to the ground, and rolled the canvas part way up on its frame of slender poles. Then the cool morning breezes swept freely through our dwelling, now and then wafting the perfume of sweet grasses from newly burnt prairie.</p>
 <p>Untying the long tasseled strings that bound a small brown buckskin bag, my mother spread upon a mat beside her bunches of colored beads, just as an artist arranges the paints upon his palette. On a lapboard she smoothed out a double sheet of soft white buckskin; and drawing from a beaded case that hung on the left of her wide belt a long, narrow blade, she trimmed the buckskin into shape. Often she worked upon small moccasins for her small daughter. Then I became intensely interested in her designing. With a proud, beaming face, I watched her work. In imagination, I saw myself walking in a new pair of snugly fitting moccasins. I felt the envious eyes of my playmates upon the pretty red beads decorating my feet.</p>
 <p>Close beside my mother I sat on a rug, with a scrap of buckskin in one hand and an awl in the other. This was the beginning of my practical observation lessons in the art of beadwork. From a skein of finely twisted threads of silvery sinews my mother pulled out a single one. With an awl she pierced the buckskin, and skillfully threaded it with the white sinew. Picking up the tiny beads one by one, she strung them with the point of her thread, always twisting it carefully after every stitch.</p>
@@ -138,7 +489,7 @@
 <p>They planted their moccasined feet firmly upon my shadow to stay it, and I arose. Again my shadow slipped away, and moved as often as I did. Then we gave up trying to catch my shadow.</p>
 <p>Before this peculiar experience I have no distinct memory of having recognized any vital bond between myself and my own shadow. I never gave it an afterthought.</p>
 <p>Returning our borrowed belts and trinkets, we rambled homeward. That evening, as on other evenings, I went to sleep over my legends.</p>
-<h4>IV. The Coffee-Making</h4>
+<h3 class="sub">IV. The Coffee-Making</h3>
 <p>One summer afternoon my mother left me alone in our wigwam while she went across the way to my aunt&#x27;s dwelling.</p>
 <p>I did not much like to stay alone in our tepee for I feared a tall, broad-shouldered crazy man, some forty years old, who walked loose among the hills. Wiyaka-Napbina (Wearer of a Feather Necklace) was harmless, and whenever he came into a wigwam he was driven there by extreme hunger. He went nude except for the half of a red blanket he girdled around his waist. In one tawny arm he used to carry a heavy bunch of wild sunflowers that he gathered in his aimless ramblings. His black hair was matted by the winds, and scorched into a dry red by the constant summer sun. As he took great strides, placing one brown bare foot directly in front of the other, he swung his long lean arm to and fro.</p>
 <p>Frequently he paused in his walk and gazed far backward, shading his eyes with his hand. He was under the belief that an evil spirit was haunting his steps. This was what my mother told me once, when I sneered at such a silly big man. I was brave when my mother was near by, and Wiyaka-Napbina walking farther and farther away.</p>
@@ -154,7 +505,7 @@
 <p>Lifting the lid, I found nothing but coffee grounds in the bottom. I set the pot on a heap of cold ashes in the centre, and filled it half full of warm Missouri River water. During this performance I felt conscious of being watched. Then breaking off a small piece of our unleavened bread, I placed it in a bowl. Turning soon to the coffeepot, which would never have boiled on a dead fire had I waited forever, I poured out a cup of worse than muddy warm water. Carrying the bowl in one hand and cup in the other, I handed the light luncheon to the old warrior. I offered them to him with the air of bestowing generous hospitality.</p>
 <p>&quot;How! how!&quot; he said, and placed the dishes on the ground in front of his crossed feet. He nibbled at the bread and sipped from the cup. I sat back against a pole watching him. I was proud to have succeeded so well in serving refreshments to a guest all by myself. Before the old warrior had finished eating, my mother entered. Immediately she wondered where I had found coffee, for she knew I had never made any, and that she had left the coffeepot empty. Answering the question in my mother&#x27;s eyes, the warrior remarked, &quot;My granddaughter made coffee on a heap of dead ashes, and served me the moment I came.&quot;</p>
 <p>They both laughed, and mother said, &quot;Wait a little longer, and I shall build a fire.&quot; She meant to make some real coffee. But neither she nor the warrior, whom the law of our custom had compelled to partake of my insipid hospitality, said anything to embarrass me. They treated my best judgment, poor as it was, with the utmost respect. It was not till long years afterward that I learned how ridiculous a thing I had done.</p>
-<h4>V. The Dead Man&#x27;s Plum Bush</h4>
+<h3 class="sub">V. The Dead Man&#x27;s Plum Bush</h3>
 <p>One autumn afternoon many people came streaming toward the dwelling of our near neighbor. With painted faces, and wearing broad white bosoms of elk&#x27;s teeth, they hurried down the narrow footpath to Haraka Wambdi&#x27;s wigwam. Young mothers held their children by the hand, and half pulled them along in their haste. They overtook and passed by the bent old grandmothers who were trudging along with crooked canes toward the centre of excitement. Most of the young braves galloped hither on their ponies. Toothless warriors, like the old women, came more slowly, though mounted on lively ponies. They sat proudly erect on their horses. They wore their eagle plumes, and waved their various trophies of former wars.</p>
 <p>In front of the wigwam a great fire was built, and several large black kettles of venison were suspended over it. The crowd were seated about it on the grass in a great circle. Behind them some of the braves stood leaning against the necks of their ponies, their tall figures draped in loose robes which were well drawn over their eyes.</p>
 <p>Young girls, with their faces glowing like bright red autumn leaves, their glossy braids falling over each ear, sat coquettishly beside their chaperons. It was a custom for young Indian women to invite some older relative to escort them to the public feasts. Though it was not an iron law, it was generally observed.</p>
@@ -168,7 +519,7 @@
 <p>&quot;Never pluck a single plum from this brush, my child, for its roots are wrapped around an Indian&#x27;s skeleton. A brave is buried here. While he lived he was so fond of playing the game of striped plum seeds that, at his death, his set of plum seeds were buried in his hands. From them sprang up this little bush.&quot;</p>
 <p>Eyeing the forbidden fruit, I trod lightly on the sacred ground, and dared to speak only in whispers until we had gone many paces from it. After that time I halted in my ramblings whenever I came in sight of the plum bush. I grew sober with awe, and was alert to hear a long-drawn-out whistle rise from the roots of it. Though I had never heard with my own ears this strange whistle of departed spirits, yet I had listened so frequently to hear the old folks describe it that I knew I should recognize it at once.</p>
 <p>The lasting impression of that day, as I recall it now, is what my mother told me about the dead man&#x27;s plum bush.</p>
-<h4>VI. The Ground Squirrel</h4>
+<h3 class="sub">VI. The Ground Squirrel</h3>
 <p>In the busy autumn days my cousin Warca-Ziwin&#x27;s mother came to our wigwam to help my mother preserve foods for our winter use. I was very fond of my aunt, because she was not so quiet as my mother. Though she was older, she was more jovial and less reserved. She was slender and remarkably erect. While my mother&#x27;s hair was heavy and black, my aunt had unusually thin locks.</p>
 <p>Ever since I knew her she wore a string of large blue beads around her neck,—beads that were precious because my uncle had given them to her when she was a younger woman. She had a peculiar swing in her gait, caused by a long stride rarely natural to so slight a figure. It was during my aunt&#x27;s visit with us that my mother forgot her accustomed quietness, often laughing heartily at some of my aunt&#x27;s witty remarks.</p>
 <p>I loved my aunt threefold: for her hearty laughter, for the cheerfulness she caused my mother, and most of all for the times she dried my tears and held me in her lap, when my mother had reproved me.</p>
@@ -181,7 +532,7 @@
 <p>I have few memories of winter days at this period of my life, though many of the summer. There is one only which I can recall.</p>
 <p>Some missionaries gave me a little bag of marbles. They were all sizes and colors. Among them were some of colored glass. Walking with my mother to the river, on a late winter day, we found great chunks of ice piled all along the bank. The ice on the river was floating in huge pieces. As I stood beside one large block, I noticed for the first time the colors of the rainbow in the crystal ice. Immediately I thought of my glass marbles at home. With my bare fingers I tried to pick out some of the colors, for they seemed so near the surface. But my fingers began to sting with the intense cold, and I had to bite them hard to keep from crying.</p>
 <p>From that day on, for many a moon, I believed that glass marbles had river ice inside of them.</p>
-<h4>VII. The Big Red Apples</h4>
+<h3 class="sub">VII. The Big Red Apples</h3>
 <p>The first turning away from the easy, natural flow of my life occurred in an early spring. It was in my eighth year; in the month of March, I afterward learned. At this age I knew but one language, and that was my mother&#x27;s native tongue.</p>
 <p>From some of my playmates I heard that two paleface missionaries were in our village. They were from that class of white men who wore big hats and carried large hearts, they said. Running direct to my mother, I began to question her why these two strangers were among us. She told me, after I had teased much, that they had come to take away Indian boys and girls to the East. My mother did not seem to want me to talk about them. But in a day or two, I gleaned many wonderful stories from my playfellows concerning the strangers.</p>
 <p>&quot;Mother, my friend Judéwin is going home with the missionaries. She is going to a more beautiful country than ours; the palefaces told her so!&quot; I said wistfully, wishing in my heart that I too might go.</p>
@@ -210,7 +561,7 @@
 </section>
 <section aria-labelledby="the-school-days-of-an-indian-girl">
 <h2 id="the-school-days-of-an-indian-girl">The School Days of an Indian Girl</h2>
-<h4>I. The Land of Red Apples</h4>
+<h3 class="sub">I. The Land of Red Apples</h3>
 <p>There were eight in our party of bronzed children who were going East with the missionaries. Among us were three young braves, two tall girls, and we three little ones, Judéwin, Thowin, and I.</p>
 <p>We had been very impatient to start on our journey to the Red Apple Country, which, we were told, lay a little beyond the great circular horizon of the Western prairie. Under a sky of rosy apples we dreamt of roaming as freely and happily as we had chased the cloud shadows on the Dakota plains. We had anticipated much pleasure from a ride on the iron horse, but the throngs of staring palefaces disturbed and troubled us.</p>
 <p>On the train, fair women, with tottering babies on each arm, stopped their haste and scrutinized the children of absent mothers. Large men, with heavy bundles in their hands, halted near by, and riveted their glassy blue eyes upon us.</p>
@@ -225,7 +576,7 @@
 <p>&quot;Oh, I want my mother and my brother Dawée! I want to go to my aunt!&quot; I pleaded; but the ears of the palefaces could not hear me.</p>
 <p>From the table we were taken along an upward incline of wooden boxes, which I learned afterward to call a stairway. At the top was a quiet hall, dimly lighted. Many narrow beds were in one straight line down the entire length of the wall. In them lay sleeping brown faces, which peeped just out of the coverings. I was tucked into bed with one of the tall girls, because she talked to me in my mother tongue and seemed to soothe me.</p>
 <p>I had arrived in the wonderful land of rosy skies, but I was not happy, as I had thought I should be. My long travel and the bewildering sights had exhausted me. I fell asleep, heaving deep, tired sobs. My tears were left to dry themselves in streaks, because neither my aunt nor my mother was near to wipe them away.</p>
-<h4>II. The Cutting of My Long Hair</h4>
+<h3 class="sub">II. The Cutting of My Long Hair</h3>
 <p>The first day in the land of apples was a bitter-cold one; for the snow still covered the ground, and the trees were bare. A large bell rang for breakfast, its loud metallic voice crashing through the belfry overhead and into our sensitive ears. The annoying clatter of shoes on bare floors gave us no peace. The constant clash of harsh noises, with an undercurrent of many voices murmuring an unknown tongue, made a bedlam within which I was securely tied. And though my spirit tore itself in struggling for its lost freedom, all was useless.</p>
 <p>A paleface woman, with white hair, came up after us. We were placed in a line of girls who were marching into the dining room. These were Indian girls, in stiff shoes and closely clinging dresses. The small girls wore sleeved aprons and shingled hair. As I walked noiselessly in my soft moccasins, I felt like sinking to the floor, for my blanket had been stripped from my shoulders. I looked hard at the Indian girls, who seemed not to care that they were even more immodestly dressed than I, in their tightly fitting clothes. While we marched in, the boys entered at an opposite door. I watched for the three young braves who came in our party. I spied them in the rear ranks, looking as uncomfortable as I felt. A small bell was tapped, and each of the pupils drew a chair from under the table. Supposing this act meant they were to be seated, I pulled out mine and at once slipped into it from one side. But when I turned my head, I saw that I was the only one seated, and all the rest at our table remained standing. Just as I began to rise, looking shyly around to see how chairs were to be used, a second bell was sounded. All were seated at last, and I had to crawl back into my chair again. I heard a man&#x27;s voice at one end of the hall, and I looked around to see him. But all the others hung their heads over their plates. As I glanced at the long chain of tables, I caught the eyes of a paleface woman upon me. Immediately I dropped my eyes, wondering why I was so keenly watched by the strange woman. The man ceased his mutterings, and then a third bell was tapped. Every one picked up his knife and fork and began eating. I began crying instead, for by this time I was afraid to venture anything more.</p>
 <p>But this eating by formula was not the hardest trial in that first day. Late in the morning, my friend Judéwin gave me a terrible warning. Judéwin knew a few words of English; and she had overheard the paleface woman talk about cutting our long, heavy hair. Our mothers had taught us that only unskilled warriors who were captured had their hair shingled by the enemy. Among our people, short hair was worn by mourners, and shingled hair by cowards!</p>
@@ -234,7 +585,7 @@
 <p>I watched my chance, and when no one noticed, I disappeared. I crept up the stairs as quietly as I could in my squeaking shoes,—my moccasins had been exchanged for shoes. Along the hall I passed, without knowing whither I was going. Turning aside to an open door, I found a large room with three white beds in it. The windows were covered with dark green curtains, which made the room very dim. Thankful that no one was there, I directed my steps toward the corner farthest from the door. On my hands and knees I crawled under the bed, and cuddled myself in the dark corner.</p>
 <p>From my hiding place I peered out, shuddering with fear whenever I heard footsteps near by. Though in the hall loud voices were calling my name, and I knew that even Judéwin was searching for me, I did not open my mouth to answer. Then the steps were quickened and the voices became excited. The sounds came nearer and nearer. Women and girls entered the room. I held my breath and watched them open closet doors and peep behind large trunks. Some one threw up the curtains, and the room was filled with sudden light. What caused them to stoop and look under the bed I do not know. I remember being dragged out, though I resisted by kicking and scratching wildly. In spite of myself, I was carried downstairs and tied fast in a chair.</p>
 <p>I cried aloud, shaking my head all the while until I felt the cold blades of the scissors against my neck, and heard them gnaw off one of my thick braids. Then I lost my spirit. Since the day I was taken from my mother I had suffered extreme indignities. People had stared at me. I had been tossed about in the air like a wooden puppet. And now my long hair was shingled like a coward&#x27;s! In my anguish I moaned for my mother, but no one came to comfort me. Not a soul reasoned quietly with me, as my own mother used to do; for now I was only one of many little animals driven by a herder.</p>
-<h4>III. The Snow Episode</h4>
+<h3 class="sub">III. The Snow Episode</h3>
 <p>A short time after our arrival we three Dakotas were playing in the snowdrift. We were all still deaf to the English language, excepting Judéwin, who always heard such puzzling things. One morning we learned through her ears that we were forbidden to fall lengthwise in the snow, as we had been doing, to see our own impressions. However, before many hours we had forgotten the order, and were having great sport in the snow, when a shrill voice called us. Looking up, we saw an imperative hand beckoning us into the house. We shook the snow off ourselves, and started toward the woman as slowly as we dared.</p>
 <p>Judéwin said: &quot;Now the paleface is angry with us. She is going to punish us for falling into the snow. If she looks straight into your eyes and talks loudly, you must wait until she stops. Then, after a tiny pause, say, &#x27;No.&#x27;&quot; The rest of the way we practiced upon the little word &quot;no.&quot;</p>
 <p>As it happened, Thowin was summoned to judgment first. The door shut behind her with a click.</p>
@@ -250,14 +601,14 @@
 <p>Within a year I was able to express myself somewhat in broken English. As soon as I comprehended a part of what was said and done, a mischievous spirit of revenge possessed me. One day I was called in from my play for some misconduct. I had disregarded a rule which seemed to me very needlessly binding. I was sent into the kitchen to mash the turnips for dinner. It was noon, and steaming dishes were hastily carried into the dining-room. I hated turnips, and their odor which came from the brown jar was offensive to me. With fire in my heart, I took the wooden tool that the paleface woman held out to me. I stood upon a step, and, grasping the handle with both hands, I bent in hot rage over the turnips. I worked my vengeance upon them. All were so busily occupied that no one noticed me. I saw that the turnips were in a pulp, and that further beating could not improve them; but the order was, &quot;Mash these turnips,&quot; and mash them I would! I renewed my energy; and as I sent the masher into the bottom of the jar, I felt a satisfying sensation that the weight of my body had gone into it.</p>
 <p>Just here a paleface woman came up to my table. As she looked into the jar, she shoved my hands roughly aside. I stood fearless and angry. She placed her red hands upon the rim of the jar. Then she gave one lift and stride away from the table. But lo! the pulpy contents fell through the crumbled bottom to the floor! She spared me no scolding phrases that I had earned. I did not heed them. I felt triumphant in my revenge, though deep within me I was a wee bit sorry to have broken the jar.</p>
 <p>As I sat eating my dinner, and saw that no turnips were served, I whooped in my heart for having once asserted the rebellion within me.</p>
-<h4>IV. The Devil</h4>
+<h3 class="sub">IV. The Devil</h3>
 <p>Among the legends the old warriors used to tell me were many stories of evil spirits. But I was taught to fear them no more than those who stalked about in material guise. I never knew there was an insolent chieftain among the bad spirits, who dared to array his forces against the Great Spirit, until I heard this white man&#x27;s legend from a paleface woman.</p>
 <p>Out of a large book she showed me a picture of the white man&#x27;s devil. I looked in horror upon the strong claws that grew out of his fur-covered fingers. His feet were like his hands. Trailing at his heels was a scaly tail tipped with a serpent&#x27;s open jaws. His face was a patchwork: he had bearded cheeks, like some I had seen palefaces wear; his nose was an eagle&#x27;s bill, and his sharp-pointed ears were pricked up like those of a sly fox. Above them a pair of cow&#x27;s horns curved upward. I trembled with awe, and my heart throbbed in my throat, as I looked at the king of evil spirits. Then I heard the paleface woman say that this terrible creature roamed loose in the world, and that little girls who disobeyed school regulations were to be tortured by him.</p>
 <p>That night I dreamt about this evil divinity. Once again I seemed to be in my mother&#x27;s cottage. An Indian woman had come to visit my mother. On opposite sides of the kitchen stove, which stood in the center of the small house, my mother and her guest were seated in straight-backed chairs. I played with a train of empty spools hitched together on a string. It was night, and the wick burned feebly. Suddenly I heard some one turn our door-knob from without.</p>
 <p>My mother and the woman hushed their talk, and both looked toward the door. It opened gradually. I waited behind the stove. The hinges squeaked as the door was slowly, very slowly pushed inward.</p>
 <p>Then in rushed the devil! He was tall! He looked exactly like the picture I had seen of him in the white man&#x27;s papers. He did not speak to my mother, because he did not know the Indian language, but his glittering yellow eyes were fastened upon me. He took long strides around the stove, passing behind the woman&#x27;s chair. I threw down my spools, and ran to my mother. He did not fear her, but followed closely after me. Then I ran round and round the stove, crying aloud for help. But my mother and the woman seemed not to know my danger. They sat still, looking quietly upon the devil&#x27;s chase after me. At last I grew dizzy. My head revolved as on a hidden pivot. My knees became numb, and doubled under my weight like a pair of knife blades without a spring. Beside my mother&#x27;s chair I fell in a heap. Just as the devil stooped over me with outstretched claws my mother awoke from her quiet indifference, and lifted me on her lap. Whereupon the devil vanished, and I was awake.</p>
 <p>On the following morning I took my revenge upon the devil. Stealing into the room where a wall of shelves was filled with books, I drew forth The Stories of the Bible. With a broken slate pencil I carried in my apron pocket, I began by scratching out his wicked eyes. A few moments later, when I was ready to leave the room, there was a ragged hole in the page where the picture of the devil had once been.</p>
-<h4>V. Iron Routine</h4>
+<h3 class="sub">V. Iron Routine</h3>
 <p>A loud-clamoring bell awakened us at half-past six in the cold winter mornings. From happy dreams of Western rolling lands and unlassoed freedom we tumbled out upon chilly bare floors back again into a paleface day. We had short time to jump into our shoes and clothes, and wet our eyes with icy water, before a small hand bell was vigorously rung for roll call.</p>
 <p>There were too many drowsy children and too numerous orders for the day to waste a moment in any apology to nature for giving her children such a shock in the early morning. We rushed downstairs, bounding over two high steps at a time, to land in the assembly room.</p>
 <p>A paleface woman, with a yellow-covered roll book open on her arm and a gnawed pencil in her hand, appeared at the door. Her small, tired face was coldly lighted with a pair of large gray eyes.</p>
@@ -266,7 +617,7 @@
 <p>Once I lost a dear classmate. I remember well how she used to mope along at my side, until one morning she could not raise her head from her pillow. At her deathbed I stood weeping, as the paleface woman sat near her moistening the dry lips. Among the folds of the bedclothes I saw the open pages of the white man&#x27;s Bible. The dying Indian girl talked disconnectedly of Jesus the Christ and the paleface who was cooling her swollen hands and feet.</p>
 <p>I grew bitter, and censured the woman for cruel neglect of our physical ills. I despised the pencils that moved automatically, and the one teaspoon which dealt out, from a large bottle, healing to a row of variously ailing Indian children. I blamed the hard-working, well-meaning, ignorant woman who was inculcating in our hearts her superstitious ideas. Though I was sullen in all my little troubles, as soon as I felt better I was ready again to smile upon the cruel woman. Within a week I was again actively testing the chains which tightly bound my individuality like a mummy for burial.</p>
 <p>The melancholy of those black days has left so long a shadow that it darkens the path of years that have since gone by. These sad memories rise above those of smoothly grinding school days. Perhaps my Indian nature is the moaning wind which stirs them now for their present record. But, however tempestuous this is within me, it comes out as the low voice of a curiously colored seashell, which is only for those ears that are bent with compassion to hear it.</p>
-<h4>VI. Four Strange Summers</h4>
+<h3 class="sub">VI. Four Strange Summers</h3>
 <p>After my first three years of school, I roamed again in the Western country through four strange summers.</p>
 <p>During this time I seemed to hang in the heart of chaos, beyond the touch or voice of human aid. My brother, being almost ten years my senior, did not quite understand my feelings. My mother had never gone inside of a schoolhouse, and so she was not capable of comforting her daughter who could read and write. Even nature seemed to have no place for me. I was neither a wee girl nor a tall one; neither a wild Indian nor a tame one. This deplorable situation was the effect of my brief course in the East, and the unsatisfactory &quot;teenth&quot; in a girl&#x27;s years.</p>
 <p>It was under these trying conditions that, one bright afternoon, as I sat restless and unhappy in my mother&#x27;s cabin, I caught the sound of the spirited step of my brother&#x27;s pony on the road which passed by our dwelling. Soon I heard the wheels of a light buckboard, and Dawée&#x27;s familiar &quot;Ho!&quot; to his pony. He alighted upon the bare ground in front of our house. Tying his pony to one of the projecting corner logs of the low-roofed cottage, he stepped upon the wooden doorstep.</p>
@@ -286,7 +637,7 @@
 <p>After an uncertain solitude, I was suddenly aroused by a loud cry piercing the night. It was my mother&#x27;s voice wailing among the barren hills which held the bones of buried warriors. She called aloud for her brothers&#x27; spirits to support her in her helpless misery. My fingers Grey icy cold, as I realized that my unrestrained tears had betrayed my suffering to her, and she was grieving for me.</p>
 <p>Before she returned, though I knew she was on her way, for she had ceased her weeping, I extinguished the light, and leaned my head on the window sill.</p>
 <p>Many schemes of running away from my surroundings hovered about in my mind. A few more moons of such a turmoil drove me away to the eastern school. I rode on the white man&#x27;s iron steed, thinking it would bring me back to my mother in a few winters, when I should be grown tall, and there would be congenial friends awaiting me.</p>
-<h4>VII. Incurring My Mother&#x27;s Displeasure</h4>
+<h3 class="sub">VII. Incurring My Mother&#x27;s Displeasure</h3>
 <p>In the second journey to the East I had not come without some precautions. I had a secret interview with one of our best medicine men, and when I left his wigwam I carried securely in my sleeve a tiny bunch of magic roots. This possession assured me of friends wherever I should go. So absolutely did I believe in its charms that I wore it through all the school routine for more than a year. Then, before I lost my faith in the dead roots, I lost the little buckskin bag containing all my good luck.</p>
 <p>At the close of this second term of three years I was the proud owner of my first diploma. The following autumn I ventured upon a college career against my mother&#x27;s will.</p>
 <p>I had written for her approval, but in her reply I found no encouragement. She called my notice to her neighbors&#x27; children, who had completed their education in three years. They had returned to their homes, and were then talking English with the frontier settlers. Her few words hinted that I had better give up my slow attempt to learn the white man&#x27;s ways, and be content to roam over the prairies and find my living upon wild roots. I silenced her by deliberate disobedience.</p>
@@ -308,7 +659,7 @@
 </section>
 <section aria-labelledby="an-indian-teacher-among-indians">
 <h2 id="an-indian-teacher-among-indians">An Indian Teacher Among Indians</h2>
-<h4>I. My First Day</h4>
+<h3 class="sub">I. My First Day</h3>
 <p>Though an illness left me unable to continue my college course, my pride kept me from returning to my mother. Had she known of my worn condition, she would have said the white man&#x27;s papers were not worth the freedom and health I had lost by them. Such a rebuke from my mother would have been unbearable, and as I felt then it would be far too true to be comfortable.</p>
 <p>Since the winter when I had my first dreams about red apples I had been traveling slowly toward the morning horizon. There had been no doubt about the direction in which I wished to go to spend my energies in a work for the Indian race. Thus I had written my mother briefly, saying my plan for the year was to teach in an Eastern Indian school. Sending this message to her in the West, I started at once eastward.</p>
 <p>Thus I found myself, tired and hot, in a black veiling of car smoke, as I stood wearily on a street corner of an old-fashioned town, waiting for a car. In a few moments more I should be on the school grounds, where a new work was ready for my inexperienced hands.</p>
@@ -319,7 +670,7 @@
 <p>&quot;Ah ha! so you are the little Indian girl who created the excitement among the college orators!&quot; he said, more to himself than to me. I thought I heard a subtle note of disappointment in his voice. Looking in from where he stood, with one sweeping glance, he asked if I lacked anything for my room.</p>
 <p>After he turned to go, I listened to his step until it grew faint and was lost in the distance. I was aware that my car-smoked appearance had not concealed the lines of pain on my face.</p>
 <p>For a short moment my spirit laughed at my ill fortune, and I entertained the idea of exerting myself to make an improvement. But as I tossed my hat off a leaden weakness came over me, and I felt as if years of weariness lay like water-soaked logs upon me. I threw myself upon the bed, and, closing my eyes, forgot my good intention.</p>
-<h4>II. A Trip Westward</h4>
+<h3 class="sub">II. A Trip Westward</h3>
 <p>One sultry month I sat at a desk heaped up with work. Now, as I recall it, I wonder how I could have dared to disregard nature&#x27;s warning with such recklessness. Fortunately, my inheritance of a marvelous endurance enabled me to bend without breaking.</p>
 <p>Though I had gone to and fro, from my room to the office, in an unhappy silence, I was watched by those around me. On an early morning I was summoned to the superintendent&#x27;s office. For a half-hour I listened to his words, and when I returned to my room I remembered one sentence above the rest. It was this: &quot;I am going to turn you loose to pasture!&quot; He was sending me West to gather Indian pupils for the school, and this was his way of expressing it.</p>
 <p>I needed nourishment, but the midsummer&#x27;s travel across the continent to search the hot prairies for overconfident parents who would intrust their children to strangers was a lean pasturage. However, I dwelt on the hope of seeing my mother. I tried to reason that a change was a rest. Within a couple of days I started toward my mother&#x27;s home.</p>
@@ -345,13 +696,13 @@
 <p>My shattered energy was unable to hold longer any faith, and I cried out desperately: &quot;Mother, don&#x27;t pray again! The Great Spirit does not care if we live or die! Let us not look for good or justice: then we shall not be disappointed!&quot;</p>
 <p>&quot;Sh! my child, do not talk so madly. There is Taku Iyotan Wasaka, to which I pray,&quot; she answered, as she stroked my head again as she used to do when I was a smaller child.</p>
 <p>Footnote: An absolute Power.</p>
-<h4>III. My Mother&#x27;s Curse upon White Settlers</h4>
+<h3 class="sub">III. My Mother&#x27;s Curse upon White Settlers</h3>
 <p>One black night mother and I sat alone in the dim starlight, in front of our wigwam. We were facing the river, as we talked about the shrinking limits of the village. She told me about the poverty-stricken white settlers, who lived in caves dug in the long ravines of the high hills across the river.</p>
 <p>A whole tribe of broad-footed white beggars had rushed hither to make claims on those wild lands. Even as she was telling this I spied a small glimmering light in the bluffs.</p>
 <p>&quot;That is a white man&#x27;s lodge where you see the burning fire,&quot; she said. Then, a short distance from it, only a little lower than the first, was another light. As I became accustomed to the night, I saw more and more twinkling lights, here and there, scattered all along the wide black margin of the river.</p>
 <p>Still looking toward the distant firelight, my mother continued: &quot;My daughter, beware of the paleface. It was the cruel paleface who caused the death of your sister and your uncle, my brave brother. It is this same paleface who offers in one palm the holy papers, and with the other gives a holy baptism of firewater. He is the hypocrite who reads with one eye, &#x27;Thou shalt not kill,&#x27; and with the other gloats upon the sufferings of the Indian race.&quot; Then suddenly discovering a new fire in the bluffs, she exclaimed, &quot;Well, well, my daughter, there is the light of another white rascal!&quot;</p>
 <p>She sprang to her feet, and, standing firm beside her wigwam, she sent a curse upon those who sat around the hated white man&#x27;s light. Raising her right arm forcibly into line with her eye, she threw her whole might into her doubled fist as she shot it vehemently at the strangers. Long she held her outstretched fingers toward the settler&#x27;s lodge, as if an invisible power passed from them to the evil at which she aimed.</p>
-<h4>IV. Retrospection</h4>
+<h3 class="sub">IV. Retrospection</h3>
 <p>Leaving my mother, I returned to the school in the East. As months passed over me, I slowly comprehended that the large army of white teachers in Indian schools had a larger missionary creed than I had suspected.</p>
 <p>It was one which included self-preservation quite as much as Indian education. When I saw an opium-eater holding a position as teacher of Indians, I did not understand what good was expected, until a Christian in power replied that this pumpkin-colored creature had a feeble mother to support. An inebriate paleface sat stupid in a doctor&#x27;s chair, while Indian patients carried their ailments to untimely graves, because his fair wife was dependent upon him for her daily food.</p>
 <p>I find it hard to count that white man a teacher who tortured an ambitious Indian youth by frequently reminding the brave changeling that he was nothing but a &quot;government pauper.&quot;</p>
@@ -391,7 +742,7 @@
 </section>
 <section aria-labelledby="the-soft-hearted-sioux">
 <h2 id="the-soft-hearted-sioux">The Soft-Hearted Sioux</h2>
-<h4>I</h4>
+<h3 class="sub">I</h3>
 <p>Beside the open fire I sat within our tepee. With my red blanket wrapped tightly about my crossed legs, I was thinking of the coming season, my sixteenth winter. On either side of the wigwam were my parents. My father was whistling a tune between his teeth while polishing with his bare hand a red stone pipe he had recently carved. Almost in front of me, beyond the center fire, my old grandmother sat near the entranceway.</p>
 <p>She turned her face toward her right and addressed most of her words to my mother. Now and then she spoke to me, but never did she allow her eyes to rest upon her daughter&#x27;s husband, my father. It was only upon rare occasions that my grandmother said anything to him. Thus his ears were open and ready to catch the smallest wish she might express. Sometimes when my grandmother had been saying things which pleased him, my father used to comment upon them. At other times, when he could not approve of what was spoken, he used to work or smoke silently.</p>
 <p>On this night my old grandmother began her talk about me. Filling the bowl of her red stone pipe with dry willow bark, she looked across at me.</p>
@@ -402,7 +753,7 @@
 <p>&quot;My son, be always active. Do not dislike a long hunt. Learn to provide much buffalo meat and many buckskins before you bring home a wife.&quot; Presently my father gave the pipe to my grandmother, and he took his turn in the exhortations.</p>
 <p>&quot;Ho, my son, I have been counting in my heart the bravest warriors of our people. There is not one of them who won his title in his sixteenth winter. My son, it is a great thing for some brave of sixteen winters to do.&quot;</p>
 <p>Not a word had I to give in answer. I knew well the fame of my warrior father. He had earned the right of speaking such words, though even he himself was a brave only at my age. Refusing to smoke my grandmother&#x27;s pipe because my heart was too much stirred by their words, and sorely troubled with a fear lest I should disappoint them, I arose to go. Drawing my blanket over my shoulders, I said, as I stepped toward the entranceway: &quot;I go to hobble my pony. It is now late in the night.&quot;</p>
-<h4>II</h4>
+<h3 class="sub">II</h3>
 <p>Nine winters&#x27; snows had buried deep that night when my old grandmother, together with my father and mother, designed my future with the glow of a camp fire upon it.</p>
 <p>Yet I did not grow up the warrior, huntsman, and husband I was to have been. At the mission school I learned it was wrong to kill. Nine winters I hunted for the soft heart of Christ, and prayed for the huntsmen who chased the buffalo on the plains.</p>
 <p>In the autumn of the tenth year I was sent back to my tribe to preach Christianity to them. With the white man&#x27;s Bible in my hand, and the white man&#x27;s tender heart in my breast, I returned to my own people.</p>
@@ -414,7 +765,7 @@
 <p>Upon a mat lay my father, with furrowed face and gray hair. His eyes and cheeks were sunken far into his head. His sallow skin lay thin upon his pinched nose and high cheekbones. Stooping over him, I took his fevered hand. &quot;How, Ate?&quot; I greeted him. A light flashed from his listless eyes and his dried lips parted. &quot;My son!&quot; he murmured, in a feeble voice. Then again the wave of joy and recognition receded. He closed his eyes, and his hand dropped from my open palm to the ground.</p>
 <p>Looking about, I saw an old woman sitting with bowed head. Shaking hands with her, I recognized my mother. I sat down between my father and mother as I used to do, but I did not feel at home. The place where my old grandmother used to sit was now unoccupied. With my mother I bowed my head. Alike our throats were choked and tears were streaming from our eyes; but far apart in spirit our ideas and faiths separated us. My grief was for the soul unsaved; and I thought my mother wept to see a brave man&#x27;s body broken by sickness.</p>
 <p>Useless was my attempt to change the faith in the medicine-man to that abstract power named God. Then one day I became righteously mad with anger that the medicine-man should thus ensnare my father&#x27;s soul. And when he came to chant his sacred songs I pointed toward the door and bade him go! The man&#x27;s eyes glared upon me for an instant. Slowly gathering his robe about him, he turned his back upon the sick man and stepped out of our wigwam. &quot;Ha, ha, ha! my son, I can not live without the medicine-man!&quot; I heard my father cry when the sacred man was gone.</p>
-<h4>III</h4>
+<h3 class="sub">III</h3>
 <p>On a bright day, when the winged seeds of the prairie-grass were flying hither and thither, I walked solemnly toward the centre of the camping-ground. My heart beat hard and irregularly at my side. Tighter I grasped the sacred book I carried under my arm. Now was the beginning of life&#x27;s work.</p>
 <p>Though I knew it would be hard, I did not once feel that failure was to be my reward. As I stepped unevenly on the rolling ground, I thought of the warriors soon to wash off their war-paints and follow me.</p>
 <p>At length I reached the place where the people had assembled to hear me preach. In a large circle men and women sat upon the dry red grass. Within the ring I stood, with the white man&#x27;s Bible in my hand. I tried to tell them of the soft heart of Christ.</p>
@@ -427,7 +778,7 @@
 <p>&quot;Listen!&quot; he went on. &quot;Which one of you who have eyed the young man can see through his bosom and warn the people of the nest of young snakes hatching there? Whose ear was so acute that he caught the hissing of snakes whenever the young man opened his mouth? This one has not only proven false to you, but even to the Great Spirit who made him. He is a fool! Why do you sit here giving ear to a foolish man who could not defend his people because he fears to kill, who could not bring venison to renew the life of his sick father? With his prayers, let him drive away the enemy! With his soft heart, let him keep off starvation! We shall go elsewhere to dwell upon an untainted ground.&quot;</p>
 <p>With this he disbanded the people. When the sun lowered in the west and the winds were quiet, the village of cone-shaped tepees was gone. The medicine-man had won the hearts of the people.</p>
 <p>Only my father&#x27;s dwelling was left to mark the fighting-ground.</p>
-<h4>IV</h4>
+<h3 class="sub">IV</h3>
 <p>From a long night at my father&#x27;s bedside I came out to look upon the morning. The yellow sun hung equally between the snow-covered land and the cloudless blue sky. The light of the new day was cold. The strong breath of winter crusted the snow and fitted crystal shells over the rivers and lakes. As I stood in front of the tepee, thinking of the vast prairies which separated us from our tribe, and wondering if the high sky likewise separated the soft-hearted Son of God from us, the icy blast from the North blew through my hair and skull. My neglected hair had grown long and fell upon my neck.</p>
 <p>My father had not risen from his bed since the day the medicine-man led the people away. Though I read from the Bible and prayed beside him upon my knees, my father would not listen. Yet I believed my prayers were not unheeded in heaven.</p>
 <p>&quot;Ha, ha, ha! my son,&quot; my father groaned upon the first snowfall. &quot;My son, our food is gone. There is no one to bring me meat! My son, your soft heart has unfitted you for everything!&quot; Then covering his face with the buffalo-robe, he said no more. Now while I stood out in that cold winter morning, I was starving. For two days I had not seen any food. But my own cold and hunger did not harass my soul as did the whining cry of the sick old man.</p>
@@ -445,7 +796,7 @@
 <p>Tired and haunted I reached the door of the wigwam. Carrying the food before me, I entered with it into the tepee.</p>
 <p>&quot;Father, here is food!&quot; I cried, as I dropped the meat near my mother. No answer came. Turning about, I beheld my gray-haired father dead! I saw by the unsteady firelight an old gray-haired skeleton lying rigid and stiff.</p>
 <p>Out into the open I started, but the snow at my feet became bloody.</p>
-<h4>V</h4>
+<h3 class="sub">V</h3>
 <p>On the day after my father&#x27;s death, having led my mother to the camp of the medicineman, I gave myself up to those who were searching for the murderer of the paleface.</p>
 <p>They bound me hand and foot. Here in this cell I was placed four days ago.</p>
 <p>The shrieking winter winds have followed me hither. Rattling the bars, they howl unceasingly: &quot;Your soft heart! your soft heart will see me die before you bring me food!&quot; Hark! something is clanking the chain on the door. It is being opened. From the dark night without a black figure crosses the threshold.    It is the guard. He comes to warn me of my fate. He tells me that tomorrow I must die. In his stern face I laugh aloud. I do not fear death.</p>
@@ -641,25 +992,25 @@
 <p>In this undertaking there must be cooperation of head, heart and hand. We serve both our own government and a voiceless people within our midst. We would open the door of American opportunity to the red man and encourage him to find his rightful place in our American life. We would remove the barriers that hinder his normal development.</p>
 <p>Wardship is no substitute for American citizenship, therefore we seek his enfranchisement. The many treaties made in good faith with the Indian by our government we would like to see equitably settled. By a constructive program we hope to do away with the &quot;piecemeal legislation&quot; affecting Indians here and there which has proven an exceedingly expensive and disappointing method.</p>
 <p>Do you know what <em>your</em> Bureau of Indian Affairs, in Washington, D.C., really is? How it is organized and how it deals with wards of the nation? This is our first study. Let us be informed of facts and then we may formulate our opinions. In the remaining space allowed me I shall quote from the report of the Bureau of Municipal Research, in their investigation of the Indian Bureau, published by them in the September issue, 1915, No. 65, &quot;Municipal Research,&quot; 261 Broadway, New York City. This report is just as good for our use today as when it was first made, for very little, if any, change has been made in the administration of Indian Affairs since then.</p>
-<h4>Prefatory Note</h4>
+<h3 class="sub">Prefatory Note</h3>
 <p>&quot;While this report was printed for the information of members of Congress, it was not made a part of the report of the Joint Commission of Congress, at whose request it was prepared, and is not available for distribution.&quot;</p>
-<h4>Unpublished Digest of Statutory and Treaty Provisions Governing Indian Funds</h4>
+<h3 class="sub">Unpublished Digest of Statutory and Treaty Provisions Governing Indian Funds</h3>
 <p>&quot;When in 1913 inquiry was made into the accounting and reporting methods of the Indian Office by the President&#x27;s Commission on Economy and Efficiency, it was found there was no digest of the provisions of statutes and treaties with Indian tribes governing Indian funds and the trust obligations of the government. Such a digest was therefore prepared. It was not completed, however, until after Congress adjourned March 4, 1913. Then, instead of being published, it found its way into the pigeon-holes in the Interior Department and the Civil Service Commission, where the working papers and unpublished reports of the commission were ordered stored. The digest itself would make a document of about three hundred pages.&quot;</p>
-<h4>Unpublished Outline of Organization</h4>
+<h3 class="sub">Unpublished Outline of Organization</h3>
 <p>&quot;By order of the President, the commission, in cooperation with various persons assigned to this work, also prepared at great pains a complete analysis of the organization of every department, office and commission of the federal government as of July 1, 1912. This represented a complete picture of the government as a whole in summary outline; it also represented an accurate picture of every administrative bureau, office, and of every operative or field station, and showed in his working relation each of the 500,000 officers and employes in the public service. The report in typewritten form was one of the working documents used in the preparation of the &#x27;budget&#x27; submitted by President Taft to Congress in February, 1913. The &#x27;budget&#x27; was ordered printed by Congress, but the cost thereof was to be charged against the President&#x27;s appropriation. There was not enough money remaining in this appropriation to warrant the printing of the report on organization. It, therefore, also found repose in a dark closet.&quot;</p>
-<h4>Too Voluminous to Be Made Part of This Series</h4>
+<h3 class="sub">Too Voluminous to Be Made Part of This Series</h3>
 <p>&quot;Congress alone could make the necessary provision for the publication of these materials; the documents are too voluminous to be printed as a part of this series, even if official permission were granted. It is again suggested, however, that the data might be made readily accessible and available to students by placing in manuscript division of the Library of Congress one copy of the unpublished reports and working papers of the President&#x27;s Commission on Economy and Efficiency. This action was recommended by the commission, but the only official action taken was to order that the materials be placed under lock and key in the Civil Service Commission.&quot;</p>
-<h4>Need for Special Care in Management</h4>
+<h3 class="sub">Need for Special Care in Management</h3>
 <p>&quot;The need for special care in the management of Indian Affairs lies in the fact that in theory of law the Indian has not the rights of a citizen. He has not even the rights of a foreign resident. The Indian individually does not have access to the courts; he can not individually appeal to the administrative and judicial branches of the public service for the enforcement of his rights. He himself is considered as a ward of the United States. His property and funds are held in trust.    The Indian Office is the agency of the government for administering both the guardianship of the Indian and the trusteeship of his properties.&quot;</p>
-<h4>Conditions Adverse to Good Administration</h4>
+<h3 class="sub">Conditions Adverse to Good Administration</h3>
 <p>&quot;The legal status of the Indian and his property is the condition which makes it incumbent on the government to assume the obligation of protector. What is of special interest in this inquiry is to note the conditions under which the Indian Office has been required to conduct its business. In no other relation are the agents of the government under conditions more adverse to efficient administration. The influence which make for the infidelity to trusteeship, for subversion of properties and funds, for the violation of physical and moral welfare have been powerful. The opportunities and inducements are much greater than those which have operated with ruinous effect on other branches of public service and on the trustees and officers of our great private corporations. In many instances, the integrity of these have been broken down.&quot;</p>
-<h4>Government Machinery Inadequate</h4>
+<h3 class="sub">Government Machinery Inadequate</h3>
 <p>&quot;   Behind the sham protection, which operated largely as a blind to publicity, have been at all times great wealth in the form of Indian funds to be subverted; valuable lands, mines, oil fields, and other natural resources to be despoiled or appropriated to the use of the trader; and large profits to be made by those dealing with trustees who were animated by motives of gain. This has been the situation in which the Indian Service has been for more than a century—the Indian during all this time having his rights and properties to greater or less extent neglected; the guardian, the government, in many instances, passive to conditions which have contributed to his undoing.&quot;</p>
-<h4>Opportunities Still Present</h4>
+<h3 class="sub">Opportunities Still Present</h3>
 <p>&quot;And still, due to the increasing value of his remaining estate, there is left an inducement to fraud, corruption, and institutional incompetence almost beyond the possibility of comprehension. The properties and funds of the Indians today are estimated at not less than one thousand millions of dollars. There is still a great obligation to be discharged, which must run through many years. The government itself owes many millions of dollars for Indian moneys which it has converted to its own use, and it is of interest to note that it does not know and the officers do not know what is the present condition of the Indian funds in their keeping.&quot;</p>
-<h4>Primary Defects</h4>
+<h3 class="sub">Primary Defects</h3>
 <p>&quot;   The story of the mismanagement of Indian Affairs is only a chapter in the history of the mismanagement of corporate trusts. The Indian has been the victim of the same kind of neglect, the same abortive processes, the same malpractices as have the life insurance policyholders, the bank depositor, the industrial and transportation shareholder. The form of organization of the trusteeship has been one which does not provide for independent audit and supervision. The institutional methods and practices have been such that they do not provide either a fact basis for official judgment or publicity of facts which, if made available, would supply evidence of infidelity. In the operation of this machinery, there has not been the means provided for effective official scrutiny and the public conscience could not be reached.&quot;</p>
-<h4>Ample Precedents to Be Followed</h4>
+<h3 class="sub">Ample Precedents to Be Followed</h3>
 <p>&quot;Precedents to be followed are ample. In private corporate trusts that have been mismanaged a basis of appeal has been found only when some favorable circumstance has brought to light conditions so shocking as to cause those people who have possessed political power, as a matter of self-protection, to demand a thorough reorganization and revision of methods. The same motive has lain back of legislation for the Indian. But the motive to political action has been less effective, for the reason that in the past the Indians who have acted in self-protection have either been killed or placed in confinement. All the machinery of government has been set to work to repress rather than to provide adequate means for justly dealing with a large population which had no political rights.&quot;—Edict Magazine.</p>
 </section>
 </article>

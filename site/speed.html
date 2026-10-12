@@ -19,8 +19,359 @@
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=navigation" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 	<link rel="preload" href="fonts/libre-caslon-text-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="stylesheet" href="fonts.css">
-	<link rel="stylesheet" href="book.css">
+	<style>
+/* Fonts for every page (front pages and book pages), served from this site
+   rather than Google Fonts: a third-party
+   stylesheet blocked rendering for ~0.8 s on mobile (PageSpeed, 2026-10-12).
+   Oswald, Yellowtail and Libre Caslon Text (SIL Open Font License), latin and
+   latin-ext subsets as Google serves them, in site/fonts/. */
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* The book pages. Shared by every page assemble.py writes; fonts in fonts.css.
+
+   LEGIBILITY FIRST. The running text is set in the best screen serif the
+   reader's own device has (Charter on Apple, Sitka Text on Windows, Georgia
+   or Noto Serif elsewhere), near-black on white, 19-20px, ~66 characters to
+   the line. The Emend look (Libre Caslon Text, navy, the cream band, Oswald
+   labels) is kept to the title band, the headings and the controls. */
+
+:root {
+  --page:  #ffffff;
+  --text:  #1c1c1c;
+  --ink:   #1b314d;     /* navy: headings, links, buttons */
+  --cream: #f4efe2;
+  --soft:  #5a6472;
+  --rule:  #ddd6c8;
+  --link:  #1f4f86;
+  --plate-bg: #ffffff;
+  --reading: Charter, "Bitstream Charter", "Sitka Text", Georgia, "Noto Serif", serif;
+  --display: "Libre Caslon Text", Georgia, serif;
+  --label:   "Oswald", "Arial Narrow", sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page:  #14181e;
+    --text:  #e4e0d8;
+    --ink:   #e8e2d4;
+    --cream: #1d2430;
+    --soft:  #a3adba;
+    --rule:  #343c48;
+    --link:  #9cc2e6;
+  }
+  /* plates and diagrams are drawn on white paper; keep them on it, slightly dimmed */
+  figure img { opacity: .92; }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html {
+  background: var(--page);
+  color: var(--text);
+  font-size: 20px;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--reading);
+  line-height: 1.65;
+  font-kerning: normal;
+}
+
+main { max-width: 34rem; margin: 0 auto; padding: 0 1rem 5rem; }
+
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+
+/* ---------- title band ---------- */
+
+.title-block {
+  background: var(--cream);
+  padding: 1.6rem 1rem 1.8rem;
+  margin-bottom: 2rem;
+}
+.title-inner {
+  max-width: 44rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.8rem;
+  align-items: center;
+}
+.title-block .series {
+  grid-column: 1 / -1;
+  margin: 0 0 0.2rem;
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.title-block .series a { color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 0.55rem; }
+.title-block .series a:hover span { text-decoration: underline; }
+.title-block .series img { height: 1.8rem; width: auto; }
+.cover img {
+  display: block;
+  width: 150px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+}
+.title-text { min-width: 0; }
+h1 {
+  font: 700 2rem/1.15 var(--display);
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+  text-align: left;
+}
+.title-line { margin: 0 0 0.3rem; font-size: 0.95rem; color: var(--ink); }
+.title-line.byline { font-weight: 700; }
+.dates { margin: 0 0 0.9rem; font-size: 0.85rem; color: var(--soft); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.button {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid var(--ink);
+  font: 500 0.75rem/1.2 var(--label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+}
+.button.primary { background: var(--ink); color: var(--page); }
+.button:hover { text-decoration: underline; }
+
+/* phones: a small cover beside the title, so the text starts sooner */
+@media (max-width: 36rem) {
+  .title-block { padding: 1.1rem 1rem 1.4rem; }
+  .title-inner { grid-template-columns: 76px 1fr; gap: 0.9rem; align-items: start; }
+  .cover img { width: 76px; height: 114px; }
+  h1 { font-size: 1.45rem; }
+  .actions { grid-column: 1 / -1; }
+}
+
+/* ---------- running text ---------- */
+
+.intro-note { font-style: italic; font-size: 0.9rem; color: var(--soft); }
+
+h2, h3, h4 {
+  font-family: var(--display);
+  color: var(--ink);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+h2 { font-size: 1.45rem; margin: 3.2rem 0 1rem; }
+h3 { font-size: 1.2rem; margin: 2.8rem 0 0.9rem; }
+h4, h3.sub { font-size: 1rem; margin: 2rem 0 0.8rem; font-style: italic; }
+h2.center { text-align: center; font-size: 1.6rem; margin-top: 4rem; }
+
+p, ul, ol { margin: 0 0 1.15em; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+blockquote {
+  margin: 1.5em 0 1.5em 1em;
+  padding-left: 1em;
+  border-left: 3px solid var(--rule);
+  font-style: italic;
+}
+blockquote p { margin-bottom: 0.8em; }
+
+pre.outline {
+  font-family: var(--reading);
+  white-space: pre-wrap;
+  line-height: 1.6;
+  margin: 0 0 1.15em;
+}
+
+img.glyph { vertical-align: middle; display: inline; }
+span.frac, span.stack { display: inline-block; vertical-align: middle; text-align: center; }
+span.frac > span, span.stack > span { display: block; }
+span.frac > span.num { border-bottom: 1px solid currentColor; }
+span.stack.brace { border-left: 2px solid currentColor; border-right: 2px solid currentColor; border-radius: 0.6em; padding: 0 0.3em; }
+math { font-size: 1.05em; }
+
+figure { margin: 2.2em auto; text-align: center; }
+figure + figure { margin-top: 1em; }
+figure img { max-width: 100%; height: auto; background: var(--plate-bg); }
+figcaption {
+  margin-top: 0.6em;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--soft);
+  text-align: left;
+}
+
+table.plates { width: 100%; margin: 2.5em 0; border-collapse: collapse; line-height: 1.5; }
+table.plates td { padding: 0.4em 0.8em; vertical-align: middle; border-bottom: 1px solid var(--rule); }
+table.plates tr:last-child td { border-bottom: none; }
+table.plates figure, table.plates figure + figure { margin: 0.4em auto; }
+table.plates figcaption { display: none; }
+
+/* page locators: a printed page and quarter, for books that cite
+   themselves by them (Helmholtz: "see p. 77c") */
+span.loc { font-size: 0.65em; color: var(--soft); vertical-align: 0.3em; padding: 0 0.15em; font-style: normal; }
+a.ref { color: inherit; text-decoration: underline dotted; }
+span.sc { font-variant: small-caps; }
+.center { text-align: center; }
+.subtitle { text-align: center; font-style: italic; }
+
+/* ---------- contents ---------- */
+
+nav.contents h2 { margin-top: 0; }
+.toc-book { font-family: var(--display); font-weight: 700; margin: 1.2em 0 0.4em; color: var(--ink); }
+.toc-list { list-style: none; padding-left: 1.2em; margin: 0 0 1em; }
+.toc-list li { margin-bottom: 0.3em; line-height: 1.4; }
+nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
+
+/* ---------- reading aids (book.js) ---------- */
+
+.resume {
+  margin: 0 0 1.5rem;
+  padding: 0.7rem 1rem;
+  background: var(--cream);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+.resume[hidden] { display: none; }
+
+.to-contents {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 5;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--page);
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+.to-contents.show { opacity: .92; pointer-events: auto; }
+
+@media (max-width: 36rem) {
+  html { font-size: 18px; }
+}
+
+@media print {
+  .title-block { background: none; }
+  .actions, .to-contents, .resume { display: none; }
+}
+</style>
 	<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "The Practice and Science of Drawing", "author": {"@type": "Person", "name": "Harold Speed"}, "inLanguage": "en", "url": "https://emend.press/speed.html", "description": "Line and mass, rhythm and balance: a painter on what drawing is and how to learn it, with all eighty-eight illustrations described. A restored edition, free to read online and as an ebook.", "publisher": {"@type": "Organization", "name": "Emend Press", "url": "https://emend.press/", "logo": "https://emend.press/apple-touch-icon.png"}, "isAccessibleForFree": true, "isPartOf": {"@type": "BookSeries", "name": "Modern Classics", "url": "https://emend.press/"}, "image": "https://emend.press/covers/speed.jpg", "datePublished": "1913", "workExample": {"@type": "Book", "bookFormat": "https://schema.org/EBook", "encodingFormat": "application/epub+zip", "url": "https://emend.press/ebooks/harold-speed_the-practice-and-science-of-drawing.epub"}}</script>
 </head>
 
@@ -131,7 +482,7 @@
 <img src="images/speed/figab.jpg" alt="Plate II. Drawing by Leonardo da Vinci from the Royal Collection at Windsor Copyright photo, Braun &amp; Co. — A young woman&#x27;s head and shoulders in profile to the right, her hair gathered up behind with loose curls over the ear, modelled in fine parallel lines; the shoulders and neckline are only lightly outlined." width="527" height="845" loading="lazy">
 <figcaption>Plate II. Drawing by Leonardo da Vinci from the Royal Collection at Windsor Copyright photo, Braun &amp; Co. — A young woman&#x27;s head and shoulders in profile to the right, her hair gathered up behind with loose curls over the ear, modelled in fine parallel lines; the shoulders and neckline are only lightly outlined.</figcaption>
 </figure>
-<h4>Fromentin&#x27;s</h4>
+<h3 class="sub">Fromentin&#x27;s</h3>
 <p>&quot;Art is the expression of the invisible by means of the visible&quot;</p>
 <p>expresses the same idea, and it is this that gives to art its high place among the works of man.</p>
 <p>Beautiful things seem to put us in correspondence with a world the harmonies of which are more perfect, and bring a deeper peace than this imperfect life seems capable of yielding of itself. Our moments of peace are, I think, always associated with some form of beauty, of this spark of harmony within corresponding with some infinite source without. Like a mariner&#x27;s compass, we are restless until we find repose in this one direction. In moments of beauty (for beauty is, strictly speaking, a state of mind rather than an attribute of certain objects, although certain things have the power of inducing it more than others) we seem to get a glimpse of this deeper truth behind the things of sense. And who can say but that this sense, dull enough in most of us, is not an echo of a greater harmony existing somewhere the other side of things, that we dimly feel through them, evasive though it is.</p>
@@ -373,7 +724,7 @@
 <img src="images/speed/figas.jpg" alt="Diagram III. A Device for Enabling Students to Observe Appearances as a Flat Subject — The frame&#x27;s rectangular opening, 7 inches by 5, crossed by threads forming a grid of equal squares; dotted lines show the thread carried behind the card between holes, from the starting point A to the finishing point B." width="456" height="457" loading="lazy">
 <figcaption>Diagram III. A Device for Enabling Students to Observe Appearances as a Flat Subject — The frame&#x27;s rectangular opening, 7 inches by 5, crossed by threads forming a grid of equal squares; dotted lines show the thread carried behind the card between holes, from the starting point A to the finishing point B.</figcaption>
 </figure>
-<h4>Fixing Positions of Salient Points</h4>
+<h3 class="sub">Fixing Positions of Salient Points</h3>
 <p>Vertical and horizontal lines are also of the utmost importance in that first consideration for setting out a drawing, namely the fixing of salient points, and getting their relative Positions. Fig. Z, on Diagram IV, will illustrate what is meant. Let A B C D E be assumed to be points of some importance in an object you wish to draw. Unaided, the placing of these points would be a matter of considerable difficulty. But if you assume a vertical line drawn from A, the positions of B, C, D, and E can be observed in relation to it by noting the height and length of horizontal lines drawn from them to this vertical line. This vertical can be drawn by holding a plumb line at arm&#x27;s length (closing one eye, of course) and bringing it to a position where it will cover the point A on your subject. The position of the other points on either side of this vertical line can then be observed. Or a knitting-needle can be held vertically before you at arm&#x27;s length, giving you a line passing through point A. The advantage of the needle is that comparative measurements can be taken with it.</p>
 <figure id="fig-at">
 <img src="images/speed/figat.jpg" alt="Diagram IV. Showing Three Principles of Construction Used in Observing Fig. X, Masses; Fig. Y, Curves; Fig. Z, Position of Points — Fig. X, an irregular shape enclosed by straight blocking-in lines touching its flatter edges. Fig. Y, a double curve from B up to A, its turning point C joined to both ends by straight lines. Fig. Z, a vertical from A to X with points B, C, D and E fixed by horizontals to it." width="472" height="633" loading="lazy">
@@ -600,7 +951,7 @@
 <p>In almost all compositions a rhythmic flow of lines can be traced. Not necessarily a flow of actual lines (although these often exist); they may be only imaginary lines linking up or massing certain parts, and bringing them into conformity with the rhythmic conception of the whole. Or again, only a certain stress and flow in the forms, suggesting line movements. But these line movements flowing through your panel are of the utmost importance; they are like the melodies and subjects of a musical symphony, weaving through and linking up the whole composition.</p>
 <p>Often, the line of a contour at one part of a picture is picked up again by the contour of some object at another part of the composition, and although no actual line connects them, a unity is thus set up between them. (See Diagrams XV and XVI, illustrating line compositions of pictures by Botticelli and Paolo Veronese). This imaginary following through of contours across spaces in a composition should always be looked out for and sought after, as nothing serves to unite a picture like this relationship of remote parts. The flow of these lines will depend on the nature of the subject: they will be more gracious and easy, or more vigorous and powerful, according to the demands of your subject.</p>
 <p>This linking up of the contours applies equally well to the drawing of a single figure or even a head or hand, and the student should always be on the look out for this uniting quality. It is a quality of great importance in giving unity to a composition.</p>
-<h4>Parallelism</h4>
+<h3 class="sub">Parallelism</h3>
 <p>When groups of lines in a picture occur parallel to each other they produce an accentuation of the particular quality the line may contain, a sort of sustained effect, like a sustained chord on an organ, the effect of which is much bigger than that of the same chord struck staccato. This sustained quality has a wonderful influence in steadying and uniting your work.</p>
 <p>This parallelism can only be used successfully with the simplest lines, such as a straight line or a simple curve; it is never advisable except in decorative patterns to be used with complicated shapes. Blake is very fond of the sustained effect parallelism gives, and uses the repetition of curved and straight lines very often in his compositions. Note in Plate I of the Job series, Plate XXXI, the use made of this sustaining quality in the parallelism of the sheep&#x27;s backs in the background and the parallel upward flow of the lines of the figures. In Plate II you see it used in the curved lines of the figures on either side of the throne above, and in the two angels with the scroll at the left-hand corner. Behind these two figures you again have its use accentuating by repetition the peaceful line of the backs of the sheep. The same thing can be seen in Plate XXXI, B, where the parallelism of the back lines of the sheep and the legs of the seated figures gives a look of peace contrasting with the violence of the messenger come to tell of the destruction of Job&#x27;s sons. The emphasis that parallelism gives to the music of particular lines is well illustrated in all Blake&#x27;s work. He is a mine of information on the subject of line rhythm. Compare A with Plate XXXI, C; note how the emotional quality is dependent in both cases on the parallelism of the upward flow of the lines. How also in Plate I he has carried the vertical feeling even into the sheep in the front, introducing little bands of vertical shading to carry through the vertical lines made by the kneeling figures. And in the last plate, &quot;So the Lord blessed the latter end of Job more than the beginning,&quot; note how the greater completeness with which the parallelism has been carried out has given a much greater emphasis to the effect, expressing a greater exaltation and peace than in Plate XXXI, A. Notice in Plate XXXI, D, where &quot;The just, upright man is laughed to scorn,&quot; how this power of emphasis is used to increase the look of scorn hurled at Job by the pointing fingers of his three friends.</p>
 <p>Of the use of this principle in curved forms, the repetition of the line of the back in stooping figures is a favourite device with Blake. There will be found instances of this in Plate XXXII, E and G. (Further instances will be found on reference to Plates VII, VIII, XIII, and XVII, in Blake&#x27;s Job.) In the last instance it is interesting to note how he has balanced the composition, which has three figures kneeling on the right and only one on the left. By losing the outline of the third figure on the right and getting a double line out of the single figure on the left by means of the outline of the mass of hair, and also by shading this single figure more strongly, he has contrived to keep a perfect balance. The head of Job is also turned to the left, while he stands slightly on that side, still further balancing the three figures on the right. (This does not show so well in the illustration here reproduced as in the original print.)</p>
@@ -617,7 +968,7 @@
 <img src="images/speed/figbo.jpg" alt="Plate XXXII. When the Almighty was yet with me, when my children were about me. (Plate II, Blake&#x27;s Job) With dreams upon my bed Thou scarest me, and affrightest me with visions. (Plate XI, Blake&#x27;s Job) Printed the wrong way up in order to show that the look of horror is not solely dependent on the things represented but belongs to the rhythm, the pattern of the composition. And my servant Job shall pray for you. (Plate XVIII, Blake&#x27;s Job) When the morning-stars sang together, and all the sons of God shouted for joy. (Plate XIV, Blake&#x27;s Job) — Four engravings from Blake&#x27;s Job. E: God enthroned above Job&#x27;s seated family. F: a serpent-wrapped figure over Job amid flames and demons, turned on its side. G: Job with arms spread at an altar, figures bowed either side. H: angels with raised arms above God and Job&#x27;s family." width="581" height="834" loading="lazy">
 <figcaption>Plate XXXII. When the Almighty was yet with me, when my children were about me. (Plate II, Blake&#x27;s Job) With dreams upon my bed Thou scarest me, and affrightest me with visions. (Plate XI, Blake&#x27;s Job) Printed the wrong way up in order to show that the look of horror is not solely dependent on the things represented but belongs to the rhythm, the pattern of the composition. And my servant Job shall pray for you. (Plate XVIII, Blake&#x27;s Job) When the morning-stars sang together, and all the sons of God shouted for joy. (Plate XIV, Blake&#x27;s Job) — Four engravings from Blake&#x27;s Job. E: God enthroned above Job&#x27;s seated family. F: a serpent-wrapped figure over Job amid flames and demons, turned on its side. G: Job with arms spread at an altar, figures bowed either side. H: angels with raised arms above God and Job&#x27;s family.</figcaption>
 </figure>
-<h4>The Horizontal and the Vertical</h4>
+<h3 class="sub">The Horizontal and the Vertical</h3>
 <p>The horizontal and the vertical are two very important lines, the horizontal being associated with calm and contemplation and the vertical with a feeling of elevation. As was said above, their relation to the sides of the composition to which they are parallel in rectangular pictures is of great importance in uniting the subject to its bounding lines and giving it a well-knit look, conveying a feeling of great stability to a picture.</p>
 <p>How impressive and suggestive of contemplation is the long line of the horizon on a calm day at sea, or the long, horizontal line of a desert plain! The lack of variety, with all the energy and vitality that accompany it, gives one a sense of peace and rest, a touch of infinity that no other lines can convey. The horizontal lines which the breeze makes on still water, and which the sky often assumes at sunset, affect us from the same harmonic cause.</p>
 <p>The stone pine and the cypress are typical instances of the sublime associated with the vertical in nature. Even a factory chimney rising above a distant town, in spite of its unpleasant associations, is impressive, not to speak of the beautiful spires of some of our Gothic cathedrals, pointing upwards. How well Constable has used the vertical sublimity of the spire of Salisbury Cathedral can be seen in his picture, at the Victoria and Albert Museum, where he has contrasted it with the gay tracery of an arch of elm trees. Gothic cathedrals generally depend much on this vertical feeling of line for their impressiveness.</p>
@@ -650,7 +1001,7 @@
 <img src="images/speed/figbt.jpg" alt="Diagram XII. A, B, C — Three small outline heads. A: a front face, vertical furrows between the brows crossed by the horizontal brow line. B: a profile with an upright forehead and level eyebrow. C: a profile whose forehead bulges forward in a curve." width="114" height="485" loading="lazy">
 <figcaption>Diagram XII. A, B, C — Three small outline heads. A: a front face, vertical furrows between the brows crossed by the horizontal brow line. B: a profile with an upright forehead and level eyebrow. C: a profile whose forehead bulges forward in a curve.</figcaption>
 </figure>
-<h4>The Right Angle</h4>
+<h3 class="sub">The Right Angle</h3>
 <p>The combination of the vertical with the horizontal produces one of the strongest and most arresting chords that you can make, and it will be found to exist in most pictures and drawings where there is the expression of dramatic power. The cross is the typical example of this. It is a combination of lines that instantly rivets the attention, and has probably a more powerful effect upon the mind—quite apart from anything symbolised by it—than any other simple combinations that could have been devised. How powerful is the effect of a vertical figure, or even a post, seen cutting the long horizontal line of the horizon on the sea-shore. Or a telegraph post by the side of the road, seen against the long horizontal line of a hill at sunset. The look of power given by the vertical lines of a contracted brow is due to the same cause. The vertical furrows of the brow continuing the lines of the nose, make a continuous vertical which the horizontal lines of the brow cross (see Fig. A in the illustration). The same cause gives the profile a powerful look when the eyebrows make a horizontal line contrasting with the vertical line of the forehead (Fig. B). Everybody knows the look of power associated with a square brow: it is not that the square forehead gives the look of a larger brain capacity, for if the forehead protrudes in a curved line, as at C, the look of power is lost, although there is obviously more room for brains.</p>
 <p>This power of the right angle is well exemplified in Watts&#x27; &quot;Love and Death,&quot; here reproduced, Plate XXXV. In this noble composition, in the writer&#x27;s opinion one of the most sublime expressions produced by nineteenth-century art, the irresistible power and majesty of the slowly advancing figure of Death is largely due to the right angle felt through the pose. Not getting it in the contour, Watts has boldly introduced it by means of shading the farther arm and insisting on the light upper edge of the outstretched arm and hand, while losing somewhat the, outline of the head beyond. Note also the look of power the insistence on square forms in the drapery gives this figure. The expression is still further emphasised by the hard square forms of the steps, and particularly by the strong horizontal line of the first step so insisted on, at right angles to the vertical stand of the figure; and also the upright lines of the doorway above. In contrast with the awful sublimity of this figure of Death, how touching is the expression of the little figure of Love, trying vainly to stop the inevitable advance. And this expression is due to the curved lines on which the action of the figure is hung, and the soft undulating forms of its modelling. Whereas the figure of Death is all square lines and flat crisp planes, the whole hanging on a dramatic right angle; this figure is all subtle fullness both of contour and modelling melting one into the other, the whole hung upon a rich full curve starting at the standing foot of the advancing figure. And whereas the expression of Death is supported and emphasised by the hard, square forms and texture of the stone steps, the expression of Love is supported and emphasised by the rounded forms and soft texture of the clustering roses. On this contrast of line and form, so in sympathy with the profound sentiment to which this picture owes its origin, the expressive power of this composition will be found to depend.</p>
 <figure id="fig-bu">
@@ -674,7 +1025,7 @@
 <figcaption>Plate XXXVI. The Surrender of Breda Velázquez (Prado) Photo Anderson — Two commanders meet before a row of upright spears, one bowing to hand over a key while the other lays a hand on his shoulder, with a dark horse at the right and a smoking landscape beyond.</figcaption>
 </figure>
 <p>When vertical, horizontal, or diagonal lines are referred to, it must not be assumed that one means in all cases naked lines. There is no pure vertical line in a stone pine or cypress tree, nor pure horizontal line in a stretch of country, but the whole swing of their lines is vertical or horizontal. And in the same way, when one speaks of a composition being hung upon a diagonal, it is seldom that a naked diagonal line exists in the composition, but the general swing is across the panel in harmony with one or other diagonal. And when this is so, there is a unity set up between the design and its boundaries. A good instance of vertical, horizontal, and diagonal lines to unite a picture is Velázquez&#x27;s &quot;The Surrender of Breda,&quot; here reproduced. Note the vertical chord in the spears on the left, continued in the leg of the horse and front leg of the figure receiving the key, and the horizontal line made by the dark mass of distant city, to be continued by the gun carried over the shoulder of the figure with the slouch hat behind the principal group. Velázquez has gone out of his way to get this line, as it could hardly have been the fashion to carry a gun in this position, pointing straight at the head of the man behind. Horizontal lines also occur in the sky and distant landscape, one running right through the group of spears. The use of the diagonal is another remarkable thing in the lines of this picture. If you place a ruler on the slanting line of the flag behind the horse&#x27;s head to the right, you find it is exactly parallel to a diagonal drawn from the top right-hand corner to the lower left-hand corner. Another line practically parallel to this diagonal is the line of the sword belonging to the figure offering the key, the feeling of which is continued in the hand and key of this same figure. It may be noted also that the back right leg of the horse in the front is parallel to the other diagonal, the under side of it being actually on the diagonal and thus brought into relation with the bounding lines of the picture. And all these lines, without the artifice being too apparent, give that well-knit, dignified look so in harmony with the nature of the subject.</p>
-<h4>Curved Lines</h4>
+<h3 class="sub">Curved Lines</h3>
 <p>Curved lines have not the moral integrity of straight lines. Theirs is not so much to minister to the expression of the sublime as to woo us to the beauteous joys of the senses. They hold the secrets of charm. But without the steadying power of straight lines and flatnesses, curves get out of hand and lose their power. In architecture the rococo style is an example of this excess. While all expressions of exuberant life and energy, of charm and grace depend on curved lines for their effect, yet in their most refined and beautiful expression they err on the side of the square forms rather than the circle. When the uncontrolled use of curves approaching the circle and volute are indulged in, unrestrained by the steadying influence of any straight lines, the effect is gross. The finest curves are full of restraint, and excessive curvature is a thing to be avoided in good drawing. We recognise this integrity of straight lines when we say anybody is &quot;an upright man&quot; or is &quot;quite straight,&quot; wishing to convey the impression of moral worth.</p>
 <p>Rubens was a painter who gloried in the unrestrained expression of the zeal to live and drink deeply of life, and glorious as much of his work is, and wonderful as it all is, the excessive use of curves and rounded forms in his later work robs it of much of its power and offends us by its grossness. His best work is full of squarer drawing and planes.</p>
 <p>Always be on the look out for straightnesses in curved forms and for planes in your modelling.</p>
@@ -776,7 +1127,7 @@
 <p>As to variety of shape, many things that were said about lines apply equally to the spaces enclosed by them. It is impossible to write of the rhythmic possibilities that the infinite variety of shapes possessed by natural objects contain, except to point out how necessary the study of nature is for this. Variety of shape is one of the most difficult things to invent, and one of the commonest things in nature. However imaginative your conception, and no matter how far you may carry your design, working from imagination, there will come a time when studies from nature will be necessary if your work is to have the variety that will give life and interest. Try and draw from imagination a row of elm trees of about the same height and distance apart, and get the variety of nature into them; and you will see how difficult it is to invent. On examining your work you will probably discover two or three pet forms repeated, or there may be only one. Or try and draw some cumulus clouds from imagination, several groups of them across a sky, and you will find how often again you have repeated unconsciously the same forms. How tired one gets of the pet cloud or tree of a painter who does not often consult nature in his pictures. Nature is the great storehouse of variety; even a piece of coal will suggest more interesting rock-forms than you can invent. And it is fascinating to watch the infinite variety of graceful forms assumed by the curling smoke from a cigarette, full of suggestions for beautiful line arrangements. If this variety of form in your work is allowed to become excessive it will overpower the unity of your conception. It is in the larger unity of your composition that the imaginative faculty will be wanted, and variety in your forms should always be subordinated to this idea.</p>
 <p>Nature does not so readily suggest a scheme of unity, for the simple reason that the first condition of your picture, the four bounding lines, does not exist in nature. You may get infinite suggestions for arrangements, and should always be on the look out for them, but your imagination will have to relate them to the rigorous conditions of your four bounding lines, and nature does not help you much here. But when variety in the forms is wanted, she is pre-eminent, and it is never advisable to waste inventive power where it is so unnecessary.</p>
 <p>But although nature does not readily suggest a design fitting the conditions of a panel her tendency is always towards unity of arrangement. If you take a bunch of flowers or leaves and haphazard stuff them into a vase of water, you will probably get a very chaotic arrangement. But if you leave it for some time and let nature have a chance you will find that the leaves and flowers have arranged themselves much more harmoniously. And if you cut down one of a group of trees, what a harsh discordant gap is usually left; but in time nature will, by throwing a bough here and filling up a gap there, as far as possible rectify matters and bring all into unity again. I am prepared to be told this has nothing to do with beauty but is only the result of nature&#x27;s attempts to seek for light and air. But whatever be the physical cause, the fact is the same, that nature&#x27;s laws tend to pictorial unity of arrangement.</p>
-<h4>Variety of Tone Values</h4>
+<h3 class="sub">Variety of Tone Values</h3>
 <p>It will be as well to try and explain what is meant by tone values. All the masses or tones (for the terms are often used interchangeably) that go to the making of a visual impression can be considered in relation to an imagined scale from white, to represent the lightest, to black, to represent the darkest tones. This scale of values does not refer to light and shade only, but light and shade, colour, and the whole visual impression are considered as one mosaic of masses of different degrees of darkness or lightness. A dark object in strong light may be lighter than a white object in shadow, or the reverse: it will depend on the amount of reflected light. Colour only matters in so far as it affects the position of the mass in this imagined scale of black and white. The correct observation of these tone values is a most important matter, and one of no little difficulty.</p>
 <p>The word tone is used in two senses, in the first place when referring to the individual masses as to their relations in the scale of &quot;tone values&quot;; and secondly when referring to the musical relationship of these values to a oneness of tone idea governing the whole impression. In very much the same way you might refer to a single note in music as a tone, and also to the tone of the whole orchestra. The word values always refers to the relationship of the individual masses or tones in our imagined scale from black to white. We say a picture is out of value or out of tone when some of the values are darker or lighter than our sense of harmony feels they should be, in the same way as we should say an instrument in an orchestra was out of tone or tune when it was higher or lower than our sense of harmony allowed. Tone is so intimately associated with the colour of a picture that it is a little difficult to treat of it apart, and it is often used in a sense to include colour in speaking of the general tone. We say it has a warm tone or a cold tone.</p>
 <p>There is a particular rhythmic beauty about a well-ordered arrangement of tone values that is a very important part of pictorial design. This music of tone has been present in art in a rudimentary way since the earliest time, but has recently received a much greater amount of attention, and much new light on the subject has been given by the impressionist movement and the study of the art of China and Japan, which is nearly always very beautiful in this respect.</p>
@@ -790,7 +1141,7 @@
 <p>They are most dramatic and intense when the contrasts are great and the jumps from dark to light sudden.</p>
 <p>The sympathetic charm of half-light effects is due largely to the tones being of this middle range only; whereas the striking dramatic effect of a storm clearing, in which you may get a landscape brilliantly lit by the sudden appearance of the sun, seen against the dark clouds of the retreating storm, owes much of its dramatic quality to contrast. The strong contrasts of tone values coupled with the strong colour contrast between the warm sunlit land and the cold angry blue of the storm, gives such a scene much dramatic effect and power.</p>
 <p>The subject of values will be further treated in dealing with unity of tone.</p>
-<h4>Variety in Quality and Texture</h4>
+<h3 class="sub">Variety in Quality and Texture</h3>
 <p>Variety in quality and nature is almost too subtle to write about with any prospect of being understood. The play of different qualities and textures in the masses that go to form a picture must be appreciated at first hand, and little can be written about it. Oil paint is capable of almost unlimited variety in this way. But it is better to leave the study of such qualities until you have mastered the medium in its more simple aspects.</p>
 <p>The particular tone music of which we were speaking is not helped by any great use of this variety. A oneness of quality throughout the work is best suited to exhibit it. Masters of tone, like Whistler, preserve this oneness of quality very carefully in their work, relying chiefly on the grain of a rough canvas to give the necessary variety and prevent a deadness in the quality of the tones.</p>
 <p>But when more force and brilliancy are wanted, some use of your paint in a crumbling, broken manner is necessary, as it catches more light, thus increasing the force of the impression. Claude Monet and his followers in their search for brilliancy used this quality throughout many of their paintings, with new and striking results. But it is at the sacrifice of many beautiful qualities of form, as this roughness of surface does not lend itself readily to any finesse of modelling. In the case of Claude Monet&#x27;s work, however, this does not matter, as form with all its subtleties is not a thing he made any attempt at exploiting. Nature is sufficiently vast for beautiful work to be done in separate departments of vision, although one cannot place such work on the same plane with successful pictures of wider scope. And the particular visual beauty of sparkling light and atmosphere, of which he was one of the first to make a separate study, could hardly exist in a work that aimed also at the significance of beautiful form, the appeal of form, as was explained in an earlier chapter, not being entirely due to a visual but to a mental perception, into which the sense of touch enters by association. The scintillation and glitter of light destroys this touch idea, which is better preserved in quieter lightings.</p>
@@ -869,7 +1220,7 @@
 <p>But Watteau&#x27;s great accomplishment was in doing this without degenerating into feeble prettiness, and this he did by an insistence on character in his figures, particularly his men. His draperies also are always beautifully drawn and full of variety, never feeble and characterless. The landscape backgrounds are much more lacking in this respect, nothing ever happened there, no storms have ever bent his graceful tree-trunks, and the incessant gradations might easily become wearisome. But possibly the charm in which we delight would be lost, did the landscape possess more character. At any rate there is enough in the figures to prevent any sickly prettiness, although I think if you removed the figures the landscape would not be tolerable.</p>
 <p>But the followers of Watteau seized upon the prettiness and gradually got out of touch with the character, and if you compare Boucher&#x27;s heads, particularly his men&#x27;s heads, with Watteau&#x27;s you may see how much has been lost.</p>
 <p>The following are three examples of this gradated tone composition (see Diagram XXIV, Diagram XXV, Diagram XXVI):</p>
-<h4>Watteau: &quot;Embarquement pour L&#x27;Île de Cythère.&quot;</h4>
+<h3 class="sub">Watteau: &quot;Embarquement pour L&#x27;Île de Cythère.&quot;</h3>
 <p>This is a typical Watteau composition, founded on a rhythmic play of gradated tones and gradated edges. Flat tones and hard edges are avoided. Beginning at the centre of the top with a strongly accented note of contrast, the dark tone of the mass of trees gradates into the ground and on past the lower right-hand corner across the front of the picture, until, when nearing the lower left-hand corner, it reverses the process and from dark to light begins gradating light to dark, ending somewhat sharply against the sky in the rock form to the left. The rich play of tone that is introduced in the trees and ground, &amp;c., blinds one at first to the perception of this larger tone motive, but without it the rich variety would not hold together. Roughly speaking the whole of this dark frame of tones from the accented point of the trees at the top to the mass of the rock on the left, may be said to gradate away into the distance; cut into by the wedge-shaped middle tone of the hills leading to the horizon.</p>
 <p>Breaking across this is a graceful line of figures, beginning on the left where the mass of rock is broken by the little flight of cupids, and continuing across the picture until it is brought up sharply by the light figure under the trees on the right. Note the pretty clatter of spots this line of figures brings across the picture, introducing light spots into the darker masses, ending up with the strongly accented light spot of the figure on the right; and dark spots into the lighter masses, ending up with the figures of the cupids dark against the sky.</p>
 <p>Steadying influences in all this flux of tone are introduced by the vertical accent of the tree-stem and statue in the dark mass on the right, by the horizontal line of the distance on the left, the outline of the ground in the front, and the straight staffs held by some of the figures.</p>
@@ -879,7 +1230,7 @@
 <figcaption>Diagram XXV. Showing the Principle on Which the Mass or Tone Rhythm Is Arranged in Turner&#x27;s Picture in the National Gallery of British Art, &quot;Ulysses Deriding Polyphemus&quot; — A charcoal scribble of Turner&#x27;s picture: the pale sails of a ship rise sharply into a dark mass on the left, dark rocks and ships&#x27; prows meet the light of the rising sun at the horizon, and dark and light tones sweep in broad arcs across the sky.</figcaption>
 </figure>
 <p>Of course nature contains every conceivable variety of tone-music, but it is not to be found by unintelligent copying except in rare accidents. Emerson says, &quot;Although you search the whole world for the beautiful you&#x27;ll not find it unless you take it with you,&quot; and this is true to a greater extent of rhythmic tone arrangements.</p>
-<h4>Turner: &quot;Ulysses deriding Polyphemus.&quot;</h4>
+<h3 class="sub">Turner: &quot;Ulysses deriding Polyphemus.&quot;</h3>
 <p>Turner was very fond of these gradated tone compositions, and carried them to a lyrical height to which they had never before attained. His &quot;Ulysses deriding Polyphemus,&quot; in the National Gallery of British Art, is a splendid example of his use of this principle. A great unity of expression is given by bringing the greatest dark and light together in sharp contrast, as is done in this picture by the dark rocks and ships&#x27; prows coming against the rising sun. From this point the dark and light masses gradate in different directions until they merge above the ships&#x27; sails. These sails cut sharply into the dark mass as the rocks and ship on the extreme right cut sharply into the light mass. Note also the edges where they are accented and come sharply against the neighbouring mass, and where they are lost, and the pleasing quality this play of edges gives.</p>
 <p>Stability is given by the line of the horizon and waves in front, and the masts of the ships, the oars, and, in the original picture, a feeling of radiating lines from the rising sun. Without these steadying influences these compositions of gradated masses would be sickly and weak.</p>
 <p>Corot: 2470 Collection Chauchard, Louvre.</p>
@@ -900,10 +1251,10 @@
 <h2 id="xv-balance">XV. Balance</h2>
 <p>There seems to be a strife between opposing forces at the basis of all things, a strife in which a perfect balance is never attained, or life would cease. The worlds are kept on their courses by such opposing forces, the perfect equilibrium never being found, and so the vitalising movement is kept up. States are held together on the same principle, no State seeming able to preserve a balance for long; new forces arise, the balance is upset, and the State totters until a new equilibrium has been found. It would seem, however, to be the aim of life to strive after balance, any violent deviation from which is accompanied by calamity.</p>
 <p>And in art we have the same play of opposing factors, straight lines and curves, light and dark, warm and cold colour oppose each other. Were the balance between them perfect, the result would be dull and dead. But if the balance is very much out, the eye is disturbed and the effect too disquieting. It will naturally be in pictures that aim at repose that this balance will be most perfect. In more exciting subjects less will be necessary, but some amount should exist in every picture, no matter how turbulent its motive; as in good tragedy the horror of the situation is never allowed to overbalance the beauty of the treatment.</p>
-<h4>Between Straight Lines and Curves</h4>
+<h3 class="sub">Between Straight Lines and Curves</h3>
 <p>Let us consider in the first place the balance between straight lines and curves. The richer and fuller the curves, the more severe should be the straight lines that balance them, if perfect repose is desired. But if the subject demands excess of movement and life, of course there will be less necessity for the balancing influence of straight lines. And on the other hand, if the subject demands an excess of repose and contemplation, the bias will be on the side of straight lines. But a picture composed entirely of rich, rolling curves is too disquieting a thing to contemplate, and would become very irritating. Of the two extremes, one composed entirely of straight lines would be preferable to one with no squareness to relieve the richness of the curves. For straight lines are significant of the deeper and more permanent things of life, of the powers that govern and restrain, and of infinity; while the rich curves (that is, curves the farthest removed from the straight line) seem to be expressive of uncontrolled energy and the more exuberant joys of life. Vice may be excess in any direction, but asceticism has generally been accepted as a nobler vice than voluptuousness. The rococo art of the eighteenth century is an instance of the excessive use of curved forms, and, like all excesses in the joys of life, it is vicious and is the favourite style of decoration in vulgar places of entertainment. The excessive use of straight lines and square forms may be seen in some ancient Egyptian architecture, but this severity was originally, no doubt, softened by the use of colour, and in any case it is nobler and finer than the vicious cleverness of rococo art.</p>
 <p>We have seen how the Greeks balanced the straight lines of their architectural forms with the rich lines of the sculpture which they used so lavishly on their temples. But the balance was always kept on the side of the square forms and never on the side of undue roundness. And it is on this side that the balance would seem to be in the finest art. Even the finest curves are those that approach the straight line rather than the circle, that err on the side of flatnesses rather than roundnesses.</p>
-<h4>Between Flat and Gradated Tones</h4>
+<h3 class="sub">Between Flat and Gradated Tones</h3>
 <p>What has been said about the balance of straight lines and curves applies equally well to tones, if for straight lines you substitute flat tones, and for curved lines gradated tones. The deeper, more permanent things find expression in the wider, flatter tones, while an excess of gradations makes for prettiness, if not for the gross roundnesses of vicious modelling.</p>
 <p>Often when a picture is hopelessly out of gear and &quot;mucked up,&quot; as they say in the studio, it can be got on the right road again by reducing it to a basis of flat tones, going over it and painting out the gradations, getting it back to a simpler equation from which the right road to completion can be more readily seen. Overmuch concern with the gradations of the smaller modelling is a very common reason of pictures and drawings getting out of gear. The less expenditure of tone values you can express your modelling with, the better, as a general rule. The balance in the finest work is usually on the side of flat tones rather than on the side of gradated tones. Work that errs on the side of gradations, like that of Greuze, however popular its appeal, is much poorer stuff than work that errs on the side of flatness in tone, like Giotto and the Italian primitives, or Puvis de Chavannes among the moderns.</p>
 <p>Between Light and Dark Tones.</p>
@@ -1071,7 +1422,7 @@
 <p>In the earlier history of art it was not so necessary to insist on the limitations imposed by different mediums. With their more limited knowledge of the phenomena of vision, the early masters had not the same opportunities of going astray in this respect. But now that the whole field of vision has been discovered, and that the subtlest effects of light and atmosphere are capable of being represented, it has become necessary to decide how far complete accuracy of representation will help the particular impression you may intend your picture or drawing to create. The danger is that in producing a complete illusion of representation, the particular vitality of your medium, with all the expressive power it is capable of yielding, may be lost.</p>
 <p>Perhaps the chief difference between the great masters of the past and many modern painters is the neglect of this principle. They represented nature in terms of whatever medium they worked in, and never overstepped this limitation. Modern artists, particularly in the nineteenth century, often attempted to copy nature, the medium being subordinated to the attempt to make it look like the real thing. In the same way, the drawings of the great masters were drawings. They did not attempt anything with a point that a point was not capable of expressing. The drawings of many modern artists are full of attempts to express tone and colour effects, things entirely outside the true province of drawing. The small but infinitely important part of nature that pure drawing is capable of conveying has been neglected, and line work, until recently, went out of fashion in our schools.</p>
 <p>There is something that makes for power in the limitations your materials impose. Many artists whose work in some of the more limited mediums is fine, are utterly feeble when they attempt one with so few restrictions as oil paint. If students could only be induced to impose more restraint upon themselves when they attempt so difficult a medium as paint, it would be greatly to the advantage of their work. Beginning first with monochrome in three tones, as explained in a former chapter, they might then take for figure work ivory black and Venetian red. It is surprising what an amount of colour effect can be got with this simple means, and how much can be learned about the relative positions of the warm and cold colours. Do not attempt the full range of tone at first, but keep the darks rather lighter and the lights darker than nature. Attempt the full scale of tone only when you have acquired sufficient experience with the simpler range, and gradually add more colours as you learn to master a few. But restraints are not so fashionable just now as unbridled licence. Art students start in with a palette full of the most amazing colours, producing results that it were better not to discuss. It is a wise man who can discover his limitations and select a medium the capacities of which just tally with his own. To discover this, it is advisable to try many, and below is a short description of the chief ones used by the draughtsman. But very little can be said about them, and very little idea of their capacities given in a written description; they must be handled by the student, and are no doubt capable of many more qualities than have yet been got out of them.</p>
-<h4>Lead Pencil</h4>
+<h3 class="sub">Lead Pencil</h3>
 <p>This well-known medium is one of the most beautiful for pure line work, and its use is an excellent training to the eye and hand in precision of observation. Perhaps this is why it has not been so popular in our art schools lately, when the charms of severe discipline are not so much in favour as they should be. It is the first medium we are given to draw with, and as the handiest and most convenient is unrivalled for sketch-book use.</p>
 <p>It is made in a large variety of degrees, from the hardest and greyest to the softest and blackest, and is too well known to need much description. It does not need fixing.</p>
 <p>For pure line drawing nothing equals it, except silver point, and great draughtsmen, like Ingres, have always loved it. It does not lend itself so readily to any form of mass drawing. Although it is sometimes used for this purpose, the offensive shine that occurs if dark masses are introduced is against its use in any but very lightly shaded work.</p>

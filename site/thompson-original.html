@@ -19,8 +19,359 @@
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=navigation" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 	<link rel="preload" href="fonts/libre-caslon-text-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="stylesheet" href="fonts.css">
-	<link rel="stylesheet" href="book.css">
+	<style>
+/* Fonts for every page (front pages and book pages), served from this site
+   rather than Google Fonts: a third-party
+   stylesheet blocked rendering for ~0.8 s on mobile (PageSpeed, 2026-10-12).
+   Oswald, Yellowtail and Libre Caslon Text (SIL Open Font License), latin and
+   latin-ext subsets as Google serves them, in site/fonts/. */
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* The book pages. Shared by every page assemble.py writes; fonts in fonts.css.
+
+   LEGIBILITY FIRST. The running text is set in the best screen serif the
+   reader's own device has (Charter on Apple, Sitka Text on Windows, Georgia
+   or Noto Serif elsewhere), near-black on white, 19-20px, ~66 characters to
+   the line. The Emend look (Libre Caslon Text, navy, the cream band, Oswald
+   labels) is kept to the title band, the headings and the controls. */
+
+:root {
+  --page:  #ffffff;
+  --text:  #1c1c1c;
+  --ink:   #1b314d;     /* navy: headings, links, buttons */
+  --cream: #f4efe2;
+  --soft:  #5a6472;
+  --rule:  #ddd6c8;
+  --link:  #1f4f86;
+  --plate-bg: #ffffff;
+  --reading: Charter, "Bitstream Charter", "Sitka Text", Georgia, "Noto Serif", serif;
+  --display: "Libre Caslon Text", Georgia, serif;
+  --label:   "Oswald", "Arial Narrow", sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page:  #14181e;
+    --text:  #e4e0d8;
+    --ink:   #e8e2d4;
+    --cream: #1d2430;
+    --soft:  #a3adba;
+    --rule:  #343c48;
+    --link:  #9cc2e6;
+  }
+  /* plates and diagrams are drawn on white paper; keep them on it, slightly dimmed */
+  figure img { opacity: .92; }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html {
+  background: var(--page);
+  color: var(--text);
+  font-size: 20px;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--reading);
+  line-height: 1.65;
+  font-kerning: normal;
+}
+
+main { max-width: 34rem; margin: 0 auto; padding: 0 1rem 5rem; }
+
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+
+/* ---------- title band ---------- */
+
+.title-block {
+  background: var(--cream);
+  padding: 1.6rem 1rem 1.8rem;
+  margin-bottom: 2rem;
+}
+.title-inner {
+  max-width: 44rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.8rem;
+  align-items: center;
+}
+.title-block .series {
+  grid-column: 1 / -1;
+  margin: 0 0 0.2rem;
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.title-block .series a { color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 0.55rem; }
+.title-block .series a:hover span { text-decoration: underline; }
+.title-block .series img { height: 1.8rem; width: auto; }
+.cover img {
+  display: block;
+  width: 150px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+}
+.title-text { min-width: 0; }
+h1 {
+  font: 700 2rem/1.15 var(--display);
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+  text-align: left;
+}
+.title-line { margin: 0 0 0.3rem; font-size: 0.95rem; color: var(--ink); }
+.title-line.byline { font-weight: 700; }
+.dates { margin: 0 0 0.9rem; font-size: 0.85rem; color: var(--soft); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.button {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid var(--ink);
+  font: 500 0.75rem/1.2 var(--label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+}
+.button.primary { background: var(--ink); color: var(--page); }
+.button:hover { text-decoration: underline; }
+
+/* phones: a small cover beside the title, so the text starts sooner */
+@media (max-width: 36rem) {
+  .title-block { padding: 1.1rem 1rem 1.4rem; }
+  .title-inner { grid-template-columns: 76px 1fr; gap: 0.9rem; align-items: start; }
+  .cover img { width: 76px; height: 114px; }
+  h1 { font-size: 1.45rem; }
+  .actions { grid-column: 1 / -1; }
+}
+
+/* ---------- running text ---------- */
+
+.intro-note { font-style: italic; font-size: 0.9rem; color: var(--soft); }
+
+h2, h3, h4 {
+  font-family: var(--display);
+  color: var(--ink);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+h2 { font-size: 1.45rem; margin: 3.2rem 0 1rem; }
+h3 { font-size: 1.2rem; margin: 2.8rem 0 0.9rem; }
+h4, h3.sub { font-size: 1rem; margin: 2rem 0 0.8rem; font-style: italic; }
+h2.center { text-align: center; font-size: 1.6rem; margin-top: 4rem; }
+
+p, ul, ol { margin: 0 0 1.15em; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+blockquote {
+  margin: 1.5em 0 1.5em 1em;
+  padding-left: 1em;
+  border-left: 3px solid var(--rule);
+  font-style: italic;
+}
+blockquote p { margin-bottom: 0.8em; }
+
+pre.outline {
+  font-family: var(--reading);
+  white-space: pre-wrap;
+  line-height: 1.6;
+  margin: 0 0 1.15em;
+}
+
+img.glyph { vertical-align: middle; display: inline; }
+span.frac, span.stack { display: inline-block; vertical-align: middle; text-align: center; }
+span.frac > span, span.stack > span { display: block; }
+span.frac > span.num { border-bottom: 1px solid currentColor; }
+span.stack.brace { border-left: 2px solid currentColor; border-right: 2px solid currentColor; border-radius: 0.6em; padding: 0 0.3em; }
+math { font-size: 1.05em; }
+
+figure { margin: 2.2em auto; text-align: center; }
+figure + figure { margin-top: 1em; }
+figure img { max-width: 100%; height: auto; background: var(--plate-bg); }
+figcaption {
+  margin-top: 0.6em;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--soft);
+  text-align: left;
+}
+
+table.plates { width: 100%; margin: 2.5em 0; border-collapse: collapse; line-height: 1.5; }
+table.plates td { padding: 0.4em 0.8em; vertical-align: middle; border-bottom: 1px solid var(--rule); }
+table.plates tr:last-child td { border-bottom: none; }
+table.plates figure, table.plates figure + figure { margin: 0.4em auto; }
+table.plates figcaption { display: none; }
+
+/* page locators: a printed page and quarter, for books that cite
+   themselves by them (Helmholtz: "see p. 77c") */
+span.loc { font-size: 0.65em; color: var(--soft); vertical-align: 0.3em; padding: 0 0.15em; font-style: normal; }
+a.ref { color: inherit; text-decoration: underline dotted; }
+span.sc { font-variant: small-caps; }
+.center { text-align: center; }
+.subtitle { text-align: center; font-style: italic; }
+
+/* ---------- contents ---------- */
+
+nav.contents h2 { margin-top: 0; }
+.toc-book { font-family: var(--display); font-weight: 700; margin: 1.2em 0 0.4em; color: var(--ink); }
+.toc-list { list-style: none; padding-left: 1.2em; margin: 0 0 1em; }
+.toc-list li { margin-bottom: 0.3em; line-height: 1.4; }
+nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
+
+/* ---------- reading aids (book.js) ---------- */
+
+.resume {
+  margin: 0 0 1.5rem;
+  padding: 0.7rem 1rem;
+  background: var(--cream);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+.resume[hidden] { display: none; }
+
+.to-contents {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 5;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--page);
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+.to-contents.show { opacity: .92; pointer-events: auto; }
+
+@media (max-width: 36rem) {
+  html { font-size: 18px; }
+}
+
+@media print {
+  .title-block { background: none; }
+  .actions, .to-contents, .resume { display: none; }
+}
+</style>
 	<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "Light Visible and Invisible: The Original Text", "author": {"@type": "Person", "name": "Silvanus P. Thompson"}, "inLanguage": "en", "url": "https://emend.press/thompson-original.html", "description": "Six Christmas lectures on light, given thirteen months after the X-ray was announced. Asked what it is, its discoverer says: I do not know. The original text, unmodernized: free to read online.", "publisher": {"@type": "Organization", "name": "Emend Press", "url": "https://emend.press/", "logo": "https://emend.press/apple-touch-icon.png"}, "isAccessibleForFree": true, "isPartOf": {"@type": "BookSeries", "name": "Modern Classics", "url": "https://emend.press/"}, "image": "https://emend.press/covers/thompson.jpg", "datePublished": "1897", "workExample": {"@type": "Book", "bookFormat": "https://schema.org/EBook", "encodingFormat": "application/epub+zip", "url": "https://emend.press/ebooks/silvanus-p-thompson_light-visible-and-invisible-the-original-text.epub"}}</script>
 </head>
 
@@ -307,7 +658,7 @@
 <p>THE method of teaching Geometrical Optics upon the lines of the wave-theory, which is the key-note to this Lecture, has been followed systematically by the author for fifteen years in his regular courses of instruction in Optics to students attending his lectures in Physics. The treatment of the subject before the audience attending the Christmas course at the Royal Institution, many of whom were juveniles, was necessarily simplified and popularised ; but the essential features of the method remain.</p>
 <p>The author also published a brief notice of this method of teaching the subject in 1889 in a paper entitled &quot;Notes on Geometrical Optics,&quot; read before the Physical Society of London, and printed in the Philosophical Magazine (October 1889, p. 232).</p>
 <p>As the development of the method in the present lecture is so slight, the author deems it expedient to add as an Appendix a few further points showing the application to the establishment of formulae for lenses and mirrors. These are, in fact, established much more readily on this basis than by the cumbrous methods that are consecrated by their adoption in every text-book of Geometrical Optics.</p>
-<h4>Basis of the Method</h4>
+<h3 class="sub">Basis of the Method</h3>
 <p>In treating optics from the new standpoint, we have to think about surfaces instead of thinking about mere lines. Waves march always at right angles to their surfaces ; a change in the form of the surface alters the direction of march. The wave -surface is to be considered instead of the &quot; ray.&quot; The curvature of the surface therefore becomes the all-important consideration. All that any lens or mirror or any system oj lenses or mirrors can do to a wave of light is to imprint a curvatitre upon the surface of the wave. If the wave is initially a plane-wave, then the curvature imprinted upon it by the lens or mirror will result in making it either march toward a point (a real focus) or march as from a point (a virtual focus). If the wave possesses an initial curvature, then all that the lens or mirror can do is to imprint another curvature upon its surface, the resultant curvature being simply the algebraic sum of the initial and the impressed curvatures. As will be seen, in the new method the essential thing to know about a lens or mirror is the curvature which it can imprint on a plane wave : this is, indeed, nothing else than what the opticians call its &quot; power &quot; ; the focal power being inversely proportional to the so-called focal length. Another but less vital point in the method, is the advantage of using instead of the so-called index of refraction a quantity reciprocally related to it, and here denominated the velocity-constant. The use of the index of refraction dates from a time anterior to the discovery that refraction was a mere consequence of the difference of velocity of the waves in different media. The index of refraction is a mere ratio between the sines (or originally the cosecants) of the observed angles of incidence and refraction. The uselessness of clinging to it as a foundation for lens formulae is shown by the simple fact that, in order to accomplish the very first stage of reasoning in the orthodox way of establishing the formulae, we abandon the sines and write simply the corresponding angles, as Kepler did before the law of Snell was discovered. The elementary formulae of lenses are, in fact, where Kepler left them. It is now common knowledge that the speed of light, on which refraction depends, is less in optically dense media than in air. The speed of light in air is not materially different from one thousand million feet per second, or thirty thousand million centimetres per second. If we take the speed of light in air as unity, then the numeric expressing the speed in denser media, such as glass or water, will be a quantity less than unity, and will differ for light of different wave-lengths. It is here preferred to take the speed of light in air, rather than in vacua, as unity, because lenses and optical instruments in general are used in the air. The numeric expressing the relative velocity in any medium is called its &quot; velocity-constant &quot; ; it is the reciprocal of the index of refraction. The velocityconstant, for mean (yellow) light, for water is about 0.75 ; that of crown glass 0.65 ; that of flint glass from 0.61 to 0.56, according to its density.</p>
 <p>The Newtonian definition of curvature as the reciprocal of the radius has a special significance in the present method of treating optics : for some of the most important of lens and mirror formulas consist simply of terms which are reciprocals of lengths, that is to say of terms which are curvatures. The more modern definition of curvature as rate of change of angle per unit length of the curve (Thomson and Tait&#x27;s Natural Philosophy, vol. i. p. 5) is equivalent to Newton&#x27;s ; for if in going along an arc of length δs, the direction changes by an amount δθ, the curvature is δθ/δs. But the angle δθ = δs/r, where r is the radius of curvature; hence the curvature = δs/rδs = 1/r.</p>
 <p>There is, however, another way of measuring curvature, which, though correct only as a first approximation, is eminently useful in considering optical problems. This way consists in measuring the bulge of the arc subtended by a chord of given length.</p>
@@ -345,7 +696,7 @@
              is, the velocity of light in that
              medium compared with the velocity in
              air, taken as unity</pre>
-<h4>Expansion of Curvatures</h4>
+<h3 class="sub">Expansion of Curvatures</h3>
 <p>If the curvature R of a wave at any point is known it is easy to calculate the curvature at any other point at distance d farther from or nearer to the centre, the formula for the new curvature R′ being as follows:</p>
 <pre class="outline">    R′ = R · 1/(1 ± Rd)                         [1]</pre>
 <p>The + sign must be taken where the new point is farther from the centre than the point for which the curvature R is specified ; the — sign when it is nearer the centre. This proposition is of use in dealing with thick lenses, and with thin lenses at a given distance apart.</p>
@@ -382,7 +733,7 @@
 <p>It is easy, however, to prove any one of the several cases that may arise, without in this way relying upon the principle of superposition.</p>
 <p>In the case of a lens, the curvature F<sub>1</sub> imprinted on a plane wave by entrance at the first surface may be regarded as an initial curvature of the wave which emerges through the second surface. Emergence into air will, as shown above, alter the curvature by augmenting it in the ratio of 1 to h, and superpose upon it the focal curvature F<sub>2</sub> due to the second surface. Hence the whole resultant curvature F imprinted by a thin lens on the plane wave will be</p>
 <pre class="outline">    F = (1/h)F<sub>1</sub> + F<sub>2</sub></pre>
-<h4>But</h4>
+<h3 class="sub">But</h3>
 <pre class="outline">    F<sub>1</sub> = R<sub>1</sub>(1 − h),</pre>
 <p>and</p>
 <pre class="outline">    F<sub>2</sub> = − R<sub>2</sub> (1 − h)/h ;</pre>
@@ -404,13 +755,13 @@
 <pre class="outline">    F = F<sub>2</sub> + (1/h)F<sub>1</sub> · 1/(1 ± F<sub>1</sub>d)               [12]</pre>
 <p>or</p>
 <pre class="outline">    F = { R<sub>1</sub> · 1/(1 ± R<sub>1</sub>(1 − h)d) − R<sub>2</sub> } (1 − h)/h   [13]</pre>
-<h4>Universal Formula for Lenses</h4>
+<h3 class="sub">Universal Formula for Lenses</h3>
 <p>The principle of superposition at once gives the universal formula for all lenses bounded by identical media on the two sides:</p>
 <pre class="outline">    V = U + F ;                                 [14]</pre>
 <p>or, in words, the resultant curvature is the algebraic sum of the initial curvature and the impressed curvature. This may again be compared with the formula in current notation:</p>
 <pre class="outline">    1/v = 1/f − 1/u.</pre>
 <p>The difference in sign attributed to the term 1/u arises from conventions adopted in the two systems.</p>
-<h4>Formula for Two Thin Lenses at a Distance Apart</h4>
+<h3 class="sub">Formula for Two Thin Lenses at a Distance Apart</h3>
 <p>The principle of expansion of curvature at once gives us as the equivalent focal power</p>
 <pre class="outline">    F = F<sub>2</sub> + F<sub>1</sub> · 1/(1 + F<sub>1</sub>d)                   [15]</pre>
 <p>where F<sub>1</sub> and F<sub>2</sub> are the focal powers of the first and second lenses, and d the distance between them. F will be in dioptries if F<sub>1</sub> and F<sub>2</sub> are in dioptries and d in metric units. If the two thin lenses are close together, the resultant power is simply the algebraic sum of the powers of the separate lenses. One simply adds the dioptries of the separate lenses to find the resultant dioptries.</p>
@@ -426,7 +777,7 @@
 <figcaption><b>Figures 41 and 42</b> &mdash; Left, Fig. 41 — the plane mirror SMS&#x27;: the wave that would have reached A goes back an equal distance to B, so the curvature is simply reversed. Right, Fig. 42 — the curved mirror: the wave goes back from M to B, and BA, the curvature imprinted, is twice AM, the curvature of the mirror itself.</figcaption>
 </figure>
 <pre class="outline">    F = 2R                                     [17]</pre>
-<h4>In Cambridge notation</h4>
+<h3 class="sub">In Cambridge notation</h3>
 <pre class="outline">    1/f = 2/r,</pre>
 <p>or</p>
 <pre class="outline">    f = r/2.</pre>
@@ -444,7 +795,7 @@
 <p>Colour and wave-length — Rainbow tints — The spectrum of visible colours — Spectrum made by prism — Spectrum made by grating — Composition of white light — Experiments on mixing colours — Analysis of colours — Blue and yellow mixed make white, not green — Complementary tints — Contrast tints produced by fatigue of eye — Other effects of persistence of vision — Zoetrope — Animatograph</p>
 <p>WAVES of light are not all of the same wave-length. The difference of size makes itself known to our eyes as colour. Just as the sounds of different wave-lengths produce in our ears perceptible differences in pitch, so the lights of different wave-lengths produce in our eyes different sensations, which we call colour. Any simple kind of light — I am not speaking here of mixtures — can be described in two ways; either (i) by stating the colour-sensation which it produces on the eye, or (2) more accurately, by stating what its wave-length or the frequency of its vibrations is. To ascertain the wavelength of any particular kind of simple light may not be a very easy matter, but when once it has been measured, the statement of the wave-length is an accurate description.</p>
 <p>To begin then, here is a table in which I have set down, in their order according to wave-length, biggest first, the various kinds of simple light that are visible to the eye.</p>
-<h4>TABLE I. — COLOURS OF THE SPECTRUM</h4>
+<h3 class="sub">TABLE I. — COLOURS OF THE SPECTRUM</h3>
 <pre class="outline">    Name of colour        Wave-length in     Wave-length in
                           millionths of      millionths of a
                           an inch            centimetre
@@ -634,7 +985,7 @@
 <p>Footnote: Not as thrown on the screen. But the eye can be trained to detect the plane of polarisation, for example, of light from the blue sky, which is naturally polarised in directions at right angles to the position of the sun. The training consists in being able to recognise certain appearances called &quot; Haidinger&#x27;s brushes&quot; which result from the feeble polarising properties of the refracting structures of the eye.</p>
 <p>Then, you understand, that as natural light is not polarised in any particular direction, if we want to get polarised light we must do something to it to polarise it. But how ?</p>
 <p>Footnote: According to the researches of Fizeau, at least 50,000, on the average, in ordinary light. Prof. Michelson&#x27;s more recent experiments, in which he has obtained interference between two waves the paths of which differed by more than 20 cm. or 1,000,000 wavelengths, prove that the average number of wavelets in each train must be reckoned in millions.</p>
-<h4>TABLE III. — POLARISERS</h4>
+<h3 class="sub">TABLE III. — POLARISERS</h3>
 <p>Nature of Apparatus.</p>
 <pre class="outline">    How it works                    Apparatus
     ---------------------------------------------------------
@@ -703,7 +1054,7 @@
 <img src="images/thompson/fig83.png" alt="The third modification of the Nicol prism, with the oblique cut running from FM to GN between two of the terminal edges, ready for the two halves to be transposed and cemented along their natural faces." width="602" height="668" loading="lazy">
 <figcaption><b>Figure 83</b> &mdash; The third modification of the Nicol prism, with the oblique cut running from FM to GN between two of the terminal edges, ready for the two halves to be transposed and cemented along their natural faces.</figcaption>
 </figure>
-<h4>Prisms made in Nicol&#x27;s way</h4>
+<h3 class="sub">Prisms made in Nicol&#x27;s way</h3>
 <figure id="fig-84">
 <img src="images/thompson/fig84.png" alt="The diamond-shaped end face of a Nicol prism. The vibrations that get through are those running parallel to the shorter diagonal; those parallel to the longer diagonal are the ones thrown out." width="309" height="374" loading="lazy">
 <figcaption><b>Figure 84</b> &mdash; The diamond-shaped end face of a Nicol prism. The vibrations that get through are those running parallel to the shorter diagonal; those parallel to the longer diagonal are the ones thrown out.</figcaption>
@@ -765,7 +1116,7 @@
 <figcaption><b>Figure 95</b> &mdash; Newton&#x27;s rings — the coloured circles produced by the film of air between a flat piece of glass and a very slightly curved one, with the black spot at the centre where the two touch.</figcaption>
 </figure>
 <p>so produced. Where the two pieces of glass touch there is a central dark spot ; around this centre there are coloured rings of light of the several &quot;orders.&quot; The tints are set forth in the accompanying Table. Those of the first order, beginning with black, are very dull, and end with a dark purple or &quot;transition tint,&quot; after which the colours of the second order follow almost those of the spectrum, except that there is no good green. At the end of the second order comes again a purple &quot;transition tint,&quot; after which the third order gives a sort of spectrum series with a good green but with a poor yellow. To the third order succeeds a fourth with paler tints, mostly green and red, then a still paler fifth, followed by higher orders that are still less distinct. The corresponding thicknesses of the film are given in millionth parts of an inch. For producing the kindred set of Newton&#x27;s tints by means of thin films of selenite in the dark field of the polariscope much greater thicknesses must be used, because the phenomenon is due to the difference between the two velocities of the two sets of vibrations. Thus to produce a retardation of J wave, and therefore give the same whitish tint as an air-film 5.5 millionths of an inch thick, a piece of selenite must be used the thickness of which is about 1/1000 inch. The tints so produced — see p. 145 — are not precisely identical with the air film tints because of the modifying effect of dispersion in the selenite.</p>
-<h4>Table IV — Tints of Newton&#x27;s Colours of Thin Films</h4>
+<h3 class="sub">Table IV — Tints of Newton&#x27;s Colours of Thin Films</h3>
 <pre class="outline">    Order   Film thickness      Tint in reflected light
             (millionths of an inch)
     ---------------------------------------------------
@@ -1032,7 +1383,7 @@
 </section>
 <section aria-labelledby="lecture-five-the-invisible-spectrum-the-infra-red-part">
 <h2 id="lecture-five-the-invisible-spectrum-the-infra-red-part">Lecture Five: The Invisible Spectrum — the Infra-Red Part</h2>
-<h4>THE INVISIBLE SPECTRUM (iNFRA-RED PART)</h4>
+<h3 class="sub">THE INVISIBLE SPECTRUM (iNFRA-RED PART)</h3>
 <p>How to sift out the invisible infra-red light from the visible light — Experiments on the absorption and transmission of invisible infra-red light — It is cut off by transparent glass, but transmitted by opaque ebonite — Use of radiometer — Use of thermopile and bolometer — &quot;Heat-indicating&quot; paint — Experiments on the reflexion, refraction and polarisation of invisible infrared Hght — Discovery by Hertz of propagation of electric waves — Hertzian waves are really gigantic waves of invisible light — Experiments on the properties of Hertzian waves ; their reflexion, refraction and polarisation — Inference that all 1 light-waves, visible and invisible, are really electric waves of different sizes.</p>
 <p>TODAY we deal with those waves of invisible light which lie beyond the red end of the spectrum. They are invisible to us because their wave-lengths are longer than any to which the nerve-structures of our eyes are sensitive ; or, to put it in the inverse way, because their vibrations are of a frequency lower than any within our range of optical perception.</p>
 <p>Just as the ultra-violet waves have a shorter wave-length and a higher frequency than the visible waves, and have to be detected by their chemical, luminescent, and diselectrifying effects, so the infra-red waves of larger wave-length and lower frequency have to be detected and investigated by other physical effects than that of sight. The chief physical effect produced by these long infra-red waves is that of warming the things upon which they fall. For this reason they are sometimes called the calorific waves ; and the invisible light of this kind is sometimes * called &quot;radiant heat.&quot;</p>
@@ -1184,7 +1535,7 @@
 <p>In 1886 Lodge, investigating the theory of lightning conductors, carried out a long series of experiments on the discharge of small condensers, leading him to the observation of electric oscillations and of the travelling of electric waves as guided by wires. Hertz taking up the problem put to him by von Helmholtz, threw himself into investigating the influence of non-conducting media on the propagation of electric sparks. By March 1888 he had succeeded not only in producing electric oscillations and electric waves by the apparatus described above (Fig. 114, p. 215), but in demonstrating that these waves could be reflected and refracted like ordinary light.</p>
 <p>The result of the publication of Hertz&#x27;s work was immediate and widespread. To those continental physicists who had hitherto ignored Maxwell&#x27;s theory, or who were unaware of the proofs accumulated by British physicists, Hertz&#x27;s work was nothing short of a revelation. Scientific Europe precipitated itself upon the production of electric oscillations, as if eager to make up lost headway. The revelation was the more significant, since for those who had not accepted the ideas of Faraday and Maxwell as to action in the medium, it meant the abandonment of all the other electrical theories then extant which were based on the now untenable principle of action at a distance. None the less heartily was Hertz&#x27;s work welcomed in England by those who were already disciples of Maxwell. They saw in it the crowning proofs of a theory which on other grounds they had already accepted as true. To adopt Oliver Lodge&#x27;s words, by the end of 1888 the science of electricity had definitely annexed to itself the domain of optics, and had become an imperial science.</p>
 <p>Since 1888 much has been done to complete the experimental verification of the complete analogy between electric waves and waves of light. Of these the more important are briefly noticed on pp. 221-229 above. Suffice it here to say that there is no known physical property possessed by waves of ordinary light that has not been found to be also correspondingly a property of the longer invisible waves produced by purely electric means. By reason of their greater wave-length they will pass through many substances opaque to ordinary light, such as stone and brick walls, and through fogs and mists.</p>
-<h4>A Hertz-wave Model</h4>
+<h3 class="sub">A Hertz-wave Model</h3>
 <p>Subsequently to the delivery of these lectures, and while this volume was preparing for the press, the author devised a wave-motion model to illustrate mechanically the propagation of a wave from a Hertz oscillator to a Hertz resonator. This apparatus, which is depicted in Fig. 129, should be compared with Fig. 114, p. 215. In this model the &quot; oscillator &quot; is a heavy mass of brass hung by cords, and having a definite time of swing. The &quot; resonator &quot; is a brass circle hung at the other end of the apparatus by a trifilar suspension. They are adjusted by lengthening or shortening the cords so as to have identical periods of oscillation. Between them, to represent the intervening medium and transmit the energy in waves, is a row of inter-connected pendulums (on a plan somewhat similar to one suggested in 1877 by Osborne Reynolds) consisting each of a lead bullet hung by a V thread, the separate Vs overlapping one another so that no bullet can swing without communicating some of its motion to its next neighbour. On drawing the oscillator aside and letting it go it sets up a transverse wave which is propagated along the row of balls in a manner easily followed by the eye, and which, on reaching the resonator at the other end, sets it into vibration.</p>
 <figure id="fig-129">
 <img src="images/thompson/fig129.png" alt="The Hertz-wave model. A heavy brass mass hangs at one end as the oscillator and a brass ring at the other as the resonator, with a long row of lead bullets on overlapping V threads between them to carry the wave across." width="964" height="1500" loading="lazy">

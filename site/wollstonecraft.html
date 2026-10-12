@@ -19,8 +19,359 @@
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=navigation" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 	<link rel="preload" href="fonts/libre-caslon-text-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="stylesheet" href="fonts.css">
-	<link rel="stylesheet" href="book.css">
+	<style>
+/* Fonts for every page (front pages and book pages), served from this site
+   rather than Google Fonts: a third-party
+   stylesheet blocked rendering for ~0.8 s on mobile (PageSpeed, 2026-10-12).
+   Oswald, Yellowtail and Libre Caslon Text (SIL Open Font License), latin and
+   latin-ext subsets as Google serves them, in site/fonts/. */
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* The book pages. Shared by every page assemble.py writes; fonts in fonts.css.
+
+   LEGIBILITY FIRST. The running text is set in the best screen serif the
+   reader's own device has (Charter on Apple, Sitka Text on Windows, Georgia
+   or Noto Serif elsewhere), near-black on white, 19-20px, ~66 characters to
+   the line. The Emend look (Libre Caslon Text, navy, the cream band, Oswald
+   labels) is kept to the title band, the headings and the controls. */
+
+:root {
+  --page:  #ffffff;
+  --text:  #1c1c1c;
+  --ink:   #1b314d;     /* navy: headings, links, buttons */
+  --cream: #f4efe2;
+  --soft:  #5a6472;
+  --rule:  #ddd6c8;
+  --link:  #1f4f86;
+  --plate-bg: #ffffff;
+  --reading: Charter, "Bitstream Charter", "Sitka Text", Georgia, "Noto Serif", serif;
+  --display: "Libre Caslon Text", Georgia, serif;
+  --label:   "Oswald", "Arial Narrow", sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page:  #14181e;
+    --text:  #e4e0d8;
+    --ink:   #e8e2d4;
+    --cream: #1d2430;
+    --soft:  #a3adba;
+    --rule:  #343c48;
+    --link:  #9cc2e6;
+  }
+  /* plates and diagrams are drawn on white paper; keep them on it, slightly dimmed */
+  figure img { opacity: .92; }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html {
+  background: var(--page);
+  color: var(--text);
+  font-size: 20px;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--reading);
+  line-height: 1.65;
+  font-kerning: normal;
+}
+
+main { max-width: 34rem; margin: 0 auto; padding: 0 1rem 5rem; }
+
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+
+/* ---------- title band ---------- */
+
+.title-block {
+  background: var(--cream);
+  padding: 1.6rem 1rem 1.8rem;
+  margin-bottom: 2rem;
+}
+.title-inner {
+  max-width: 44rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.8rem;
+  align-items: center;
+}
+.title-block .series {
+  grid-column: 1 / -1;
+  margin: 0 0 0.2rem;
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.title-block .series a { color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 0.55rem; }
+.title-block .series a:hover span { text-decoration: underline; }
+.title-block .series img { height: 1.8rem; width: auto; }
+.cover img {
+  display: block;
+  width: 150px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+}
+.title-text { min-width: 0; }
+h1 {
+  font: 700 2rem/1.15 var(--display);
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+  text-align: left;
+}
+.title-line { margin: 0 0 0.3rem; font-size: 0.95rem; color: var(--ink); }
+.title-line.byline { font-weight: 700; }
+.dates { margin: 0 0 0.9rem; font-size: 0.85rem; color: var(--soft); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.button {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid var(--ink);
+  font: 500 0.75rem/1.2 var(--label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+}
+.button.primary { background: var(--ink); color: var(--page); }
+.button:hover { text-decoration: underline; }
+
+/* phones: a small cover beside the title, so the text starts sooner */
+@media (max-width: 36rem) {
+  .title-block { padding: 1.1rem 1rem 1.4rem; }
+  .title-inner { grid-template-columns: 76px 1fr; gap: 0.9rem; align-items: start; }
+  .cover img { width: 76px; height: 114px; }
+  h1 { font-size: 1.45rem; }
+  .actions { grid-column: 1 / -1; }
+}
+
+/* ---------- running text ---------- */
+
+.intro-note { font-style: italic; font-size: 0.9rem; color: var(--soft); }
+
+h2, h3, h4 {
+  font-family: var(--display);
+  color: var(--ink);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+h2 { font-size: 1.45rem; margin: 3.2rem 0 1rem; }
+h3 { font-size: 1.2rem; margin: 2.8rem 0 0.9rem; }
+h4, h3.sub { font-size: 1rem; margin: 2rem 0 0.8rem; font-style: italic; }
+h2.center { text-align: center; font-size: 1.6rem; margin-top: 4rem; }
+
+p, ul, ol { margin: 0 0 1.15em; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+blockquote {
+  margin: 1.5em 0 1.5em 1em;
+  padding-left: 1em;
+  border-left: 3px solid var(--rule);
+  font-style: italic;
+}
+blockquote p { margin-bottom: 0.8em; }
+
+pre.outline {
+  font-family: var(--reading);
+  white-space: pre-wrap;
+  line-height: 1.6;
+  margin: 0 0 1.15em;
+}
+
+img.glyph { vertical-align: middle; display: inline; }
+span.frac, span.stack { display: inline-block; vertical-align: middle; text-align: center; }
+span.frac > span, span.stack > span { display: block; }
+span.frac > span.num { border-bottom: 1px solid currentColor; }
+span.stack.brace { border-left: 2px solid currentColor; border-right: 2px solid currentColor; border-radius: 0.6em; padding: 0 0.3em; }
+math { font-size: 1.05em; }
+
+figure { margin: 2.2em auto; text-align: center; }
+figure + figure { margin-top: 1em; }
+figure img { max-width: 100%; height: auto; background: var(--plate-bg); }
+figcaption {
+  margin-top: 0.6em;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--soft);
+  text-align: left;
+}
+
+table.plates { width: 100%; margin: 2.5em 0; border-collapse: collapse; line-height: 1.5; }
+table.plates td { padding: 0.4em 0.8em; vertical-align: middle; border-bottom: 1px solid var(--rule); }
+table.plates tr:last-child td { border-bottom: none; }
+table.plates figure, table.plates figure + figure { margin: 0.4em auto; }
+table.plates figcaption { display: none; }
+
+/* page locators: a printed page and quarter, for books that cite
+   themselves by them (Helmholtz: "see p. 77c") */
+span.loc { font-size: 0.65em; color: var(--soft); vertical-align: 0.3em; padding: 0 0.15em; font-style: normal; }
+a.ref { color: inherit; text-decoration: underline dotted; }
+span.sc { font-variant: small-caps; }
+.center { text-align: center; }
+.subtitle { text-align: center; font-style: italic; }
+
+/* ---------- contents ---------- */
+
+nav.contents h2 { margin-top: 0; }
+.toc-book { font-family: var(--display); font-weight: 700; margin: 1.2em 0 0.4em; color: var(--ink); }
+.toc-list { list-style: none; padding-left: 1.2em; margin: 0 0 1em; }
+.toc-list li { margin-bottom: 0.3em; line-height: 1.4; }
+nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
+
+/* ---------- reading aids (book.js) ---------- */
+
+.resume {
+  margin: 0 0 1.5rem;
+  padding: 0.7rem 1rem;
+  background: var(--cream);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+.resume[hidden] { display: none; }
+
+.to-contents {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 5;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--page);
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+.to-contents.show { opacity: .92; pointer-events: auto; }
+
+@media (max-width: 36rem) {
+  html { font-size: 18px; }
+}
+
+@media print {
+  .title-block { background: none; }
+  .actions, .to-contents, .resume { display: none; }
+}
+</style>
 	<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "A Vindication of the Rights of Woman", "author": {"@type": "Person", "name": "Mary Wollstonecraft"}, "inLanguage": "en", "url": "https://emend.press/wollstonecraft.html", "description": "Not that women are equal, but that nobody knows what women are like, because their character is manufactured by their upbringing. Written in six weeks, and angrier than its reputation. Retold in modern English, free to read online and as an ebook.", "publisher": {"@type": "Organization", "name": "Emend Press", "url": "https://emend.press/", "logo": "https://emend.press/apple-touch-icon.png"}, "isAccessibleForFree": true, "isPartOf": {"@type": "BookSeries", "name": "Modern Classics", "url": "https://emend.press/"}, "image": "https://emend.press/covers/wollstonecraft.jpg", "datePublished": "2026", "bookEdition": "Modern English retelling", "isBasedOn": {"@type": "Book", "name": "A Vindication of the Rights of Woman", "author": {"@type": "Person", "name": "Mary Wollstonecraft"}, "datePublished": "1792"}, "workExample": {"@type": "Book", "bookFormat": "https://schema.org/EBook", "encodingFormat": "application/epub+zip", "url": "https://emend.press/ebooks/mary-wollstonecraft_a-vindication-of-the-rights-of-woman.epub"}}</script>
 </head>
 
@@ -414,7 +765,7 @@
 <section aria-labelledby="chapter-five-criticisms-of-the-writers-who-have-made-women-objects-of-pity-bordering-on-contempt">
 <h2 id="chapter-five-criticisms-of-the-writers-who-have-made-women-objects-of-pity-bordering-on-contempt">Chapter Five: Criticisms of the Writers Who Have Made Women Objects of Pity, Bordering on Contempt</h2>
 <p>It remains now to examine the opinions plausibly maintained in certain modern publications on the female character and female education, which have set the tone for most of what is said, more casually, about women.</p>
-<h4>Section One: Rousseau</h4>
+<h3 class="sub">Section One: Rousseau</h3>
 <p>I shall begin with Rousseau, and give a sketch of his character of women in his own words, with comments and reflections in between. My comments, it is true, all spring from a few simple principles and might have been deduced from what I have already said; but the artificial structure has been raised with so much ingenuity that it seems necessary to attack it in more detail, and to make the application myself.</p>
 <p>Sophia, says Rousseau, should be as perfect a woman as Emilius is a man; and to make her so, we must examine the character nature has given to her sex.</p>
 <p>He then proceeds to prove that women ought to be weak and passive because a woman has less bodily strength than a man; from which he infers that she was formed to please him and to be subject to him, and that it is her duty to make herself <em>agreeable</em> to her master, this being the grand end of her existence.</p>
@@ -486,7 +837,7 @@
 <p>If we really were created only to flutter out our hour and die, then let us indulge our sensibility by all means, and laugh at the severity of reason. Yet even then, alas, we should want strength of body and mind, and life would be lost in feverish pleasures or wearisome languor.</p>
 <p>But the system of education I so earnestly wish to see exploded seems to take for granted what ought never to be taken for granted: that virtue shields us from the accidents of life, and that fortune, slipping off her blindfold, will smile on a well-educated girl and bring an Emilius or a Telemachus along in her hand. Whereas in fact the reward virtue promises her followers is plainly confined to their own hearts; and often they must contend with the most vexatious worldly cares and put up with the vices and moods of relations they can never feel any friendship for.</p>
 <p>There have been many women in the world who, instead of being supported by the reason and virtue of their fathers and brothers, have strengthened their own minds by struggling against those men&#x27;s vices and follies — and who have never met a hero in the shape of a husband to pay them the debt humankind owed them and perhaps restore their reason to its natural dependent state, handing back to man the usurped prerogative of rising above opinion.</p>
-<h4>Section Two: Dr. Fordyce&#x27;s Sermons</h4>
+<h3 class="sub">Section Two: Dr. Fordyce&#x27;s Sermons</h3>
 <p>Dr. Fordyce&#x27;s sermons have long formed part of a young woman&#x27;s library; girls at school are even allowed to read them. But I should dismiss them instantly from my own pupil&#x27;s shelf if I wanted to strengthen her understanding by leading her to form sound principles on a broad basis — or even if I were only anxious to cultivate her taste, though the sermons must be allowed to contain a good many sensible observations.</p>
 <p>Dr. Fordyce may have had a very praiseworthy end in view; but these discourses are written in such an affected style that on that account alone, and even if I had nothing to object to in his <em>mellifluous</em> precepts, I should not let girls read them, unless I intended to hunt every spark of nature out of their composition and melt every human quality down into female weakness and artificial grace. I say artificial, because true grace arises from some kind of independence of mind.</p>
 <p>Children, careless of pleasing anyone and anxious only to amuse themselves, are often very graceful; and the nobility, who have mostly lived among inferiors and always had money at command, acquire a graceful ease of bearing which should rather be called a habitual grace of body than that higher gracefulness which is really an expression of the mind. This mental grace, unnoticed by vulgar eyes, often flashes across a rough face and lights up every feature, showing simplicity and independence of mind. Then we read characters of immortality in the eye and see the soul in every gesture, though at rest neither the face nor the limbs may have much beauty to recommend them, nor the manner anything remarkable enough to attract general attention. Most people, however, look for something more <em>tangible</em> in the way of beauty; yet simplicity is generally admired when people do not stop to consider what they are admiring — and can there be simplicity without sincerity? But enough of these remarks, which are somewhat rambling, though the subject naturally called them up.</p>
@@ -504,7 +855,7 @@
 <p>Is the following portrait not the portrait of a house slave? &quot;I am astonished at the folly of many women who are still reproaching their husbands for leaving them alone, for preferring this or that company to theirs, for treating them with this or the other mark of disregard or indifference — when, to tell the truth, they have themselves largely to blame. Not that I would justify the men in anything wrong on their side. But if you had behaved to them with more <em>respectful observance</em> and a more <em>equal tenderness; studying their humours, overlooking their mistakes, submitting to their opinions</em> in matters of indifference, passing over little instances of unevenness, caprice or temper, giving <em>soft</em> answers to hasty words, complaining as seldom as possible, and making it your daily care to relieve their anxieties and anticipate their wishes, to enliven the dull hour and call up ideas of happiness — if you had pursued this conduct, I do not doubt that you would have kept and even increased their esteem, so far as to secure every degree of influence that could conduce to their virtue or to your mutual satisfaction; and your house might this day have been the home of domestic bliss.&quot; Such a woman ought to be an angel — or else she is an ass; for I can discern no trace of human character in this domestic drudge, neither reason nor passion, whose whole being is absorbed into a tyrant&#x27;s.</p>
 <p>Still, Dr. Fordyce must have very little acquaintance with the human heart if he really supposed such conduct would bring back a wandering love, instead of exciting contempt. No: beauty and gentleness and the rest may win a heart, but esteem, the only lasting affection, can only be got by virtue supported by reason. It is respect for the understanding that keeps tenderness for the person alive.</p>
 <p>Since these volumes are so often put into the hands of young people, I have taken more notice of them than, strictly speaking, they deserve; but as they have helped to spoil the taste and weaken the understanding of so many of my fellow creatures, I could not pass over them in silence.</p>
-<h4>Section Three: Dr. Gregory&#x27;s Legacy to His Daughters</h4>
+<h3 class="sub">Section Three: Dr. Gregory&#x27;s Legacy to His Daughters</h3>
 <p>Such fatherly concern runs through Dr. Gregory&#x27;s Legacy to His Daughters that I begin the work of criticism with affectionate respect. But since this little volume has many attractions to recommend it to the most respectable part of my sex, I cannot silently pass over arguments that so plausibly support opinions which I believe have had the most damaging effect on the morals and manners of the female world.</p>
 <p>His easy, familiar style is particularly suited to the tenor of his advice, and the melancholy tenderness that his respect for the memory of a beloved wife spreads through the whole work makes it very affecting. Yet there is a degree of concise elegance visible in many passages that disturbs this sympathy, and we come upon the author when we only expected to meet the father.</p>
 <p>Besides, having two objects in view, he seldom held steadily to either. Wishing to make his daughters amiable, and afraid that unhappiness would be the only consequence of instilling sentiments that might draw them out of the track of common life without enabling them to act with a matching independence and dignity, he checks the natural flow of his thoughts and advises neither one thing nor the other.</p>
@@ -528,7 +879,7 @@
 <p>The subject of amusements is treated too cursorily, and in the same spirit.</p>
 <p>When I come to friendship, love and marriage it will be found that we differ materially in opinion. I shall not anticipate here what I have to say on those important subjects, but confine my remarks to the general tenor of his — to that cautious family prudence, and those confined views of a partial, unenlightened affection, which shut out pleasure and improvement in the vain hope of warding off sorrow and error, and which, in guarding the heart and mind so carefully, destroy all their energy as well. It is far better to be often deceived than never to trust; to be disappointed in love than never to love; to lose a husband&#x27;s fondness than to forfeit his esteem.</p>
 <p>How happy it would be for the world, and for individuals too, if all this useless anxiety to attain worldly happiness on a confined plan were turned into an anxious desire to improve the understanding. &quot;Wisdom is the principal thing: <em>therefore</em> get wisdom; and with all your getting, get understanding.&quot; &quot;How long, you simple ones, will you love simplicity, and hate knowledge?&quot; says Wisdom to the daughters of men.</p>
-<h4>Section Four: Against the Prerogative of Man</h4>
+<h3 class="sub">Section Four: Against the Prerogative of Man</h3>
 <p>I do not mean to go through all the writers who have written on the manners of women; that would only be going over the old ground, for they have generally written in the same strain. But in attacking the boasted prerogative of man — the prerogative that may emphatically be called the iron sceptre of tyranny, the original sin of tyrants — I declare against all power built on prejudice, however venerable with age.</p>
 <p>If the submission demanded is founded on justice, there is no appealing to a higher power, for God is justice itself. Let us, then, as children of the same parent, and not bastards merely because we were born later, reason together, and learn to submit to the authority of reason when her voice is distinctly heard. But if it can be shown that this throne of prerogative rests on nothing but a chaotic mass of prejudices with no inherent principle of order to hold them together — or on an elephant, or a tortoise, or even the mighty shoulders of a son of the earth — then those who dare to brave the consequences may escape, without any breach of duty and without sinning against the order of things.</p>
 <p>While reason raises man above the brutal herd, and death is big with promises, only those are subject to blind authority who have no reliance on their own strength. &quot;They are free who will be free!&quot;</p>
@@ -555,7 +906,7 @@
 <p>I will not call her understanding masculine, because I do not admit any such arrogant assumption of reason; but I maintain that it was a sound one, and that her judgment, the matured fruit of profound thinking, proved that a woman can acquire judgment in the fullest sense of the word. Possessing more penetration than shrewdness and more understanding than fancy, she writes with a sober energy and a closeness of argument; yet sympathy and benevolence give her sentiments an interest and give her arguments the vital heat that forces a reader to weigh them.</p>
 <p>Footnote: Since I agree with Mrs. Macaulay about many branches of education, I refer the reader to her valuable work rather than quoting her sentiments in support of my own.</p>
 <p>When I first thought of writing these criticisms I anticipated Mrs. Macaulay&#x27;s approval with a little of that sanguine ardour it has been the business of my life to hold down; but I soon heard, with the sickly qualm of disappointed hope and the still seriousness of regret, that she was no more.</p>
-<h4>Section Five: Lord Chesterfield&#x27;s Letters</h4>
+<h3 class="sub">Section Five: Lord Chesterfield&#x27;s Letters</h3>
 <p>In surveying the various works that have been written on education, Lord Chesterfield&#x27;s Letters must not be passed over in silence. Not that I mean to analyse his unmanly, immoral system, or even to pick out the useful shrewd remarks that occur in his frivolous correspondence. I only mean to make a few reflections on their avowed purpose: the art of acquiring an early knowledge of the world. It is an art that preys secretly, like the worm in the bud, on the expanding powers, and turns to poison the generous juices that should be rising with vigour in a young frame and inspiring warm affections and great resolves.</p>
 <p>For everything, says the wise man, there is a season; and who would look for the fruits of autumn during the kindly months of spring? But this is mere declamation, and I mean to reason with those worldly-wise instructors who, instead of cultivating the judgment, instil prejudices, and harden a heart that gradual experience would only have cooled. An early acquaintance with human infirmity, or what is called knowledge of the world, is in my opinion the surest way to contract the heart and damp that natural youthful ardour which produces not only great talents but great virtues. For the vain attempt to bring forth the fruit of experience before the sapling has put out its leaves only exhausts its strength and prevents it taking a natural form — just as the form and strength of cooling metals are injured when the attraction that holds them together is disturbed.</p>
 <p>Tell me, you who have studied the human mind, is it not a strange way of fixing principles to show young people that principles are seldom stable? And how can they be fortified into habits when they are proved fallacious by example? Why should the ardour of youth be damped like this, and the luxuriance of fancy cut back to the quick? This dry caution may guard a character against worldly mischances, it is true; but it will infallibly rule out any excellence in virtue or in knowledge. The stumbling block that suspicion throws across every path will prevent any vigorous exertion of genius or benevolence, and life will be stripped of its most alluring charm long before its calm evening, when a man should be able to retire into contemplation for comfort and support.</p>
@@ -868,7 +1219,7 @@
 <section aria-labelledby="chapter-thirteen-examples-of-the-folly-that-women-s-ignorance-produces-with-closing-reflections-on-a-revolution-in-the-manners-of-women">
 <h2 id="chapter-thirteen-examples-of-the-folly-that-women-s-ignorance-produces-with-closing-reflections-on-a-revolution-in-the-manners-of-women">Chapter Thirteen: Examples of the Folly That Women&#x27;s Ignorance Produces, with Closing Reflections on a Revolution in the Manners of Women</h2>
 <p>There are many follies more or less peculiar to women: sins against reason, of commission as well as omission, though all of them flow from ignorance or prejudice. I shall point out only those that seem damaging to their moral character. And in criticizing them I particularly want to prove that the weakness of mind and body which men have tried by various motives to perpetuate prevents women from discharging the very duty peculiar to their sex. For when weakness of body will not let them nurse their children, and weakness of mind makes them spoil their tempers — is woman then in a natural state?</p>
-<h4>Section One: Fortune-Tellers and Credulity</h4>
+<h3 class="sub">Section One: Fortune-Tellers and Credulity</h3>
 <p>One glaring instance of the weakness that comes from ignorance claims attention first, and calls for severe reproof.</p>
 <p>In this city a number of lurking leeches make a living, infamously, by working on the credulity of women, pretending to cast nativities, to use the technical phrase. And many women who, proud of their rank and fortune, look down on ordinary people with sovereign contempt show by this credulity that the distinction is arbitrary, and that they have not cultivated their minds enough to rise above vulgar prejudices. Women, never having been led to consider the knowledge of their duty as the one thing needful to know, or to live in the present moment by discharging it, are very anxious to peep into the future, to learn what they have to expect that might make life interesting, and to fill up the vacuum of ignorance.</p>
 <p>I must be allowed to remonstrate seriously with the ladies who follow these idle inventions; for ladies, mistresses of families, are not ashamed to drive in their own carriages to the fortune-teller&#x27;s door. And if any of them should read this book, I beg them to answer the following questions in their own hearts, remembering that they are in the presence of God.</p>
@@ -895,7 +1246,7 @@
 <p>Merely to suppose that an all-wise and powerful Being, as good as he is great, should create a being while foreseeing that after fifty or sixty years of feverish existence it would be plunged into never-ending woe is blasphemy. What will the worm feed on that is never to die? On folly, on ignorance, you say. I should blush with indignation to draw the natural conclusion, if I could set it down, and should wish to withdraw myself from the wing of my God. On such a supposition, I speak with reverence, he would be a consuming fire. We should wish, though vainly, to fly from his presence, when fear had absorbed love and darkness enveloped all his counsels.</p>
 <p>I know that many devout people boast of submitting blindly to the will of God, as to an arbitrary sceptre or rod, on the same principle as the Indians worship the devil. In other words, like people in the common concerns of life, they do homage to power and cringe under the foot that can crush them. Rational religion, on the contrary, is submission to the will of a being so perfectly wise that everything he wills must be directed by the proper motive, and must be reasonable.</p>
 <p>And if that is how we respect God, can we give credit to the mysterious insinuations that insult his laws? Can we believe, though it stared us in the face, that he would work a miracle to authorize confusion by sanctioning an error? We must either accept these impious conclusions, or treat with contempt every promise to restore a diseased body to health by supernatural means, or to foretell incidents that only God can foresee.</p>
-<h4>Section Two: Sentiment and the Reading of Novels</h4>
+<h3 class="sub">Section Two: Sentiment and the Reading of Novels</h3>
 <p>Another instance of that feminine weakness of character so often produced by a confined education is a romantic twist of the mind, which has very properly been called <em>sentimental</em>.</p>
 <p>Women, subjected by ignorance to their own sensations and taught to look for happiness only in love, refine on sensual feelings and adopt metaphysical notions about that passion which lead them shamefully to neglect the duties of life — and often, in the middle of these sublime refinements, they plunge into actual vice.</p>
 <p>These are the women who are amused by the reveries of stupid novelists, who, knowing little of human nature, work up stale tales and describe meretricious scenes, all retailed in a sentimental jargon that equally corrupts the taste and draws the heart aside from its daily duties. I do not mention the understanding, because, never having been exercised, its slumbering energies lie inactive, like the lurking particles of fire that are supposed to pervade all matter.</p>
@@ -913,7 +1264,7 @@
 <p>In one respect, however, the majority of both sexes are alike, and show an equal want of taste and modesty. Ignorant women, forced to be chaste to preserve their reputations, let their imaginations revel in the unnatural and meretricious scenes sketched by the novel-writers of the day, dismissing as insipid the sober dignity and matronly grace of history; while men carry the same vitiated taste into life, and fly for amusement to the wanton, away from the unsophisticated charms of virtue and the grave respectability of sense.</p>
 <p>Footnote: I am not now referring to that superiority of mind which leads to the creation of ideal beauty, when life, surveyed with a penetrating eye, appears a tragicomedy in which little can be found to satisfy the heart without the help of fancy.</p>
 <p>Besides, reading novels makes women, and ladies of fashion particularly, very fond of using strong expressions and superlatives in conversation; and though the dissipated, artificial life they lead prevents them from cherishing any strong legitimate passion, the language of passion in affected tones slips forever off their glib tongues, and every trifle produces those phosphoric flashes that only mimic the flame of passion in the dark.</p>
-<h4>Section Three: Dress and Vanity</h4>
+<h3 class="sub">Section Three: Dress and Vanity</h3>
 <p>Ignorance, and the mistaken cunning that nature sharpens in weak heads as a principle of self-preservation, make women very fond of dress, and produce all the vanity such a fondness may naturally be expected to breed, to the exclusion of emulation and magnanimity.</p>
 <p>I agree with Rousseau that the physical part of the art of pleasing consists in ornament; and for that very reason I would guard girls against the contagious fondness for dress so common among weak women, so that they may not stop at the physical part. Yet weak indeed are the women who imagine they can please for long without the aid of the mind — in other words, without the moral art of pleasing. And the moral art, if it is not a profanation to use the word art of a grace that is the effect of virtue rather than the motive for action, is never found together with ignorance. The sportiveness of innocence, so pleasing to refined libertines of both sexes, is quite different in essence from this superior gracefulness.</p>
 <p>A strong inclination for outward ornament always appears in barbarous states — only there it is the men and not the women who adorn themselves; for wherever women are allowed to be so far on a level with men, society has advanced at least one step in civilization.</p>
@@ -928,12 +1279,12 @@
 <pre class="outline">	&quot;Matter too soft a lasting mark to bear,
 	And best distinguish&#x27;d by black, brown, or fair.&quot;</pre>
 <p>The cruellest wounds will soon heal, of course, and they may still people the world and dress to please men — all the purposes that certain celebrated writers have allowed they were created to fill.</p>
-<h4>Section Four: The Sensibility Women Are Supposed to Have</h4>
+<h3 class="sub">Section Four: The Sensibility Women Are Supposed to Have</h3>
 <p>Women are supposed to have more sensibility, and even more humanity, than men, and their strong attachments and instantaneous emotions of compassion are offered as proof. But the clinging affection of ignorance has seldom anything noble in it, and can mostly be resolved into selfishness, like the affection of children and of animals. I have known many weak women whose sensibility was entirely engrossed by their husbands; and as for their humanity, it was very faint indeed, or rather it was only a passing emotion of compassion. &quot;Humanity does not consist in a squeamish ear,&quot; says an eminent orator. &quot;It belongs to the mind as well as the nerves.&quot;</p>
 <p>But this kind of exclusive affection, though it degrades the individual, should not be brought forward as proof of the inferiority of the sex, because it is the natural consequence of confined views. Even women of superior sense, having their attention turned to little employments and private plans, rarely rise to heroism unless they are spurred on by love; and love as a heroic passion, like genius, appears only once in an age. So I agree with the moralist who asserts &quot;that women have seldom so much generosity as men&quot;, and that their narrow affections, to which justice and humanity are often sacrificed, make the sex apparently inferior — especially as those affections are commonly inspired by men. But I maintain that the heart would expand as the understanding gained strength, if women were not kept down from their cradles.</p>
 <p>I know that a little sensibility and a great deal of weakness will produce a strong attachment between the sexes, and that reason must cement friendship; so I allow that more friendship is to be found in the male world than the female, and that men have a higher sense of justice. The exclusive affections of women do indeed resemble Cato&#x27;s most unjust love for his country. He wished to crush Carthage not to save Rome but to promote its vainglory; and it is generally to principles like these that humanity is sacrificed, for genuine duties support each other.</p>
 <p>Besides, how can women be just or generous when they are the slaves of injustice?</p>
-<h4>Section Five: The Rearing of Children</h4>
+<h3 class="sub">Section Five: The Rearing of Children</h3>
 <p>Since the rearing of children — that is, laying a foundation of sound health of body and mind in the rising generation — has justly been insisted on as woman&#x27;s peculiar destination, the ignorance that unfits her for it must be contrary to the order of things. And I maintain that women&#x27;s minds can take in much more than they are given, and ought to, or they will never become sensible mothers. Many men attend to the breeding of horses and oversee the running of the stable who would think themselves degraded — strange want of sense and feeling! — by paying any attention to the nursery. Yet how many children are absolutely murdered by the ignorance of women! And when they escape, and are destroyed neither by unnatural negligence nor by blind fondness, how few are properly managed as far as the infant mind goes! So that a child which has been allowed to grow vicious at home is sent to school to have its spirit broken; and the methods used there, which must be used to keep a number of children in order, scatter the seeds of nearly every vice in soil that has just been forcibly torn up.</p>
 <p>I have sometimes compared the struggles of these poor children, who ought never to have felt restraint and would not have needed to if they had always been held with an even hand, to the despairing plunges of a spirited filly I once watched being broken on a beach: its feet sinking deeper into the sand every time it tried to throw its rider, until at last it sullenly submitted.</p>
 <p>I have always found horses, an animal I am attached to, very tractable when they are treated with humanity and steadiness; so I doubt whether the violent methods used to break them do not do them real harm. I am certain, at any rate, that a child should never be forcibly tamed like that after being injudiciously allowed to run wild; for every violation of justice and reason in the treatment of children weakens their reason. And children take on a character so early that the base of the moral character is fixed, experience leads me to infer, before their seventh year — the very period during which women are allowed the sole management of them. Afterwards it too often happens that half the business of education is correcting, and very imperfectly if it is done in a hurry, the faults they would never have acquired if their mothers had had more understanding.</p>
@@ -943,7 +1294,7 @@
 <p>But a woman with a sound constitution may fulfil the duties of a mother and still keep her person scrupulously neat, and help to support her family if that is necessary, or improve her mind by reading and by conversation with both sexes indiscriminately. For nature has ordered things so wisely that if women nursed their own children they would preserve their own health, and there would be such an interval between the birth of each child that we should seldom see a house full of babies. And if they followed a plan of conduct and did not waste their time following the fashionable vagaries of dress, the management of household and children need not shut them out of literature, nor prevent them from attaching themselves to a science with the steady eye that strengthens the mind, or practising one of the fine arts that cultivate the taste.</p>
 <p>But visiting to display finery, card-playing and balls, not to mention the idle bustle of a morning&#x27;s trifling, draw women away from their duty and make them insignificant — make them pleasing, in the present sense of the word, to every man except their husband. For a round of pleasures in which the affections are never exercised cannot be said to improve the understanding, though it is mistakenly called seeing the world; and such senseless intercourse, which becomes a habitual necessity even after it has stopped amusing anyone, makes the heart cold and averse to duty.</p>
 <p>But until there is more equality in society, until ranks are confounded and women freed, we shall not see that dignified domestic happiness whose simple grandeur ignorant or vitiated minds cannot relish; nor will the important task of education ever be properly begun until a woman&#x27;s person is no longer preferred to her mind. For it would be as sensible to expect corn from weeds, or figs from thistles, as to expect a foolish, ignorant woman to be a good mother.</p>
-<h4>Section Six: Concluding Reflections</h4>
+<h3 class="sub">Section Six: Concluding Reflections</h3>
 <p>It is not necessary to tell the sagacious reader, now that I come to my concluding reflections, that the discussion of this subject consists merely in laying open a few simple principles and clearing away the rubbish that obscured them. But not all readers are sagacious, so I must be allowed to add some explanatory remarks to bring the subject home to reason — to that sluggish reason which supinely takes opinions on trust and then obstinately defends them to spare itself the labour of thinking.</p>
 <p>Moralists have unanimously agreed that unless virtue is nursed by liberty it will never gain its proper strength; and what they say of man I extend to humankind, insisting that in every case morals must be fixed on unchanging principles, and that no being can be called rational or virtuous who obeys any authority but that of reason.</p>
 <p>To make women truly useful members of society, I argue that they should be led, by having their understandings cultivated on a large scale, to acquire a rational love of their country founded on knowledge; for it is obvious that we take little interest in what we do not understand. And to show why this general knowledge matters so much, I have tried to show that private duties are never properly fulfilled unless the understanding enlarges the heart, and that public virtue is only an aggregate of private virtue. But the distinctions established in society undermine both, by beating out the solid gold of virtue until it is nothing but the tinsel covering of vice. For while wealth makes a man more respectable than virtue does, wealth will be sought before virtue; and while women&#x27;s persons are caressed when a childish simper shows an absence of mind, the mind will lie fallow. Yet true voluptuousness must come from the mind. For what can equal the sensations produced by mutual affection supported by mutual respect? What are the cold or feverish caresses of appetite but sin embracing death, compared with the modest overflowings of a pure heart and an exalted imagination? Yes, let me tell the libertine of fancy, when he despises understanding in a woman, that the mind he disregards is what gives life to the enthusiastic affection from which rapture, short-lived as it is, can alone flow — and that without virtue an attachment between the sexes must gutter out like a tallow candle in the socket, leaving an intolerable disgust behind. To prove it I need only observe that men who have wasted a great part of their lives among women, seeking pleasure with them in eager thirst, hold the meanest opinion of the sex. Virtue, true refiner of joy! If foolish men were to frighten you off the earth in order to give free rein to all their appetites unchecked, some sensual fellow of taste would scale the heavens to invite you back, to give their pleasure a zest.</p>

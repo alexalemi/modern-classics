@@ -214,8 +214,10 @@ books/{book}/              # One directory per book
   reading" kept in the reader's own localStorage). Book pages set their
   running text in the reader's own best screen serif for legibility; the
   Emend fonts are for the title band, headings and controls only. Dark mode
-  follows the system setting. CSS/JS changes need no page rebuild; a change
-  to `site/template.html` does (assemble every book). The front page lists
+  follows the system setting. fonts.css and book.css are INLINED into every
+  book page by assemble.py (render-blocking otherwise), so a change to them,
+  or to `site/template.html`, needs every book re-assembled; site.css,
+  site.js and book.js are plain links. The front page lists
   BOTH collections (retellings, then restored editions via
   `build_restored.section()`); restored.html remains for old links.
 - `seo.py` — search and link-preview plumbing. `seo.BASE`

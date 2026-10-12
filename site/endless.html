@@ -19,8 +19,359 @@
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=navigation" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 	<link rel="preload" href="fonts/libre-caslon-text-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="stylesheet" href="fonts.css">
-	<link rel="stylesheet" href="book.css">
+	<style>
+/* Fonts for every page (front pages and book pages), served from this site
+   rather than Google Fonts: a third-party
+   stylesheet blocked rendering for ~0.8 s on mobile (PageSpeed, 2026-10-12).
+   Oswald, Yellowtail and Libre Caslon Text (SIL Open Font License), latin and
+   latin-ext subsets as Google serves them, in site/fonts/. */
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* The book pages. Shared by every page assemble.py writes; fonts in fonts.css.
+
+   LEGIBILITY FIRST. The running text is set in the best screen serif the
+   reader's own device has (Charter on Apple, Sitka Text on Windows, Georgia
+   or Noto Serif elsewhere), near-black on white, 19-20px, ~66 characters to
+   the line. The Emend look (Libre Caslon Text, navy, the cream band, Oswald
+   labels) is kept to the title band, the headings and the controls. */
+
+:root {
+  --page:  #ffffff;
+  --text:  #1c1c1c;
+  --ink:   #1b314d;     /* navy: headings, links, buttons */
+  --cream: #f4efe2;
+  --soft:  #5a6472;
+  --rule:  #ddd6c8;
+  --link:  #1f4f86;
+  --plate-bg: #ffffff;
+  --reading: Charter, "Bitstream Charter", "Sitka Text", Georgia, "Noto Serif", serif;
+  --display: "Libre Caslon Text", Georgia, serif;
+  --label:   "Oswald", "Arial Narrow", sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page:  #14181e;
+    --text:  #e4e0d8;
+    --ink:   #e8e2d4;
+    --cream: #1d2430;
+    --soft:  #a3adba;
+    --rule:  #343c48;
+    --link:  #9cc2e6;
+  }
+  /* plates and diagrams are drawn on white paper; keep them on it, slightly dimmed */
+  figure img { opacity: .92; }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html {
+  background: var(--page);
+  color: var(--text);
+  font-size: 20px;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--reading);
+  line-height: 1.65;
+  font-kerning: normal;
+}
+
+main { max-width: 34rem; margin: 0 auto; padding: 0 1rem 5rem; }
+
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+
+/* ---------- title band ---------- */
+
+.title-block {
+  background: var(--cream);
+  padding: 1.6rem 1rem 1.8rem;
+  margin-bottom: 2rem;
+}
+.title-inner {
+  max-width: 44rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.8rem;
+  align-items: center;
+}
+.title-block .series {
+  grid-column: 1 / -1;
+  margin: 0 0 0.2rem;
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.title-block .series a { color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 0.55rem; }
+.title-block .series a:hover span { text-decoration: underline; }
+.title-block .series img { height: 1.8rem; width: auto; }
+.cover img {
+  display: block;
+  width: 150px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+}
+.title-text { min-width: 0; }
+h1 {
+  font: 700 2rem/1.15 var(--display);
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+  text-align: left;
+}
+.title-line { margin: 0 0 0.3rem; font-size: 0.95rem; color: var(--ink); }
+.title-line.byline { font-weight: 700; }
+.dates { margin: 0 0 0.9rem; font-size: 0.85rem; color: var(--soft); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.button {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid var(--ink);
+  font: 500 0.75rem/1.2 var(--label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+}
+.button.primary { background: var(--ink); color: var(--page); }
+.button:hover { text-decoration: underline; }
+
+/* phones: a small cover beside the title, so the text starts sooner */
+@media (max-width: 36rem) {
+  .title-block { padding: 1.1rem 1rem 1.4rem; }
+  .title-inner { grid-template-columns: 76px 1fr; gap: 0.9rem; align-items: start; }
+  .cover img { width: 76px; height: 114px; }
+  h1 { font-size: 1.45rem; }
+  .actions { grid-column: 1 / -1; }
+}
+
+/* ---------- running text ---------- */
+
+.intro-note { font-style: italic; font-size: 0.9rem; color: var(--soft); }
+
+h2, h3, h4 {
+  font-family: var(--display);
+  color: var(--ink);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+h2 { font-size: 1.45rem; margin: 3.2rem 0 1rem; }
+h3 { font-size: 1.2rem; margin: 2.8rem 0 0.9rem; }
+h4, h3.sub { font-size: 1rem; margin: 2rem 0 0.8rem; font-style: italic; }
+h2.center { text-align: center; font-size: 1.6rem; margin-top: 4rem; }
+
+p, ul, ol { margin: 0 0 1.15em; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+blockquote {
+  margin: 1.5em 0 1.5em 1em;
+  padding-left: 1em;
+  border-left: 3px solid var(--rule);
+  font-style: italic;
+}
+blockquote p { margin-bottom: 0.8em; }
+
+pre.outline {
+  font-family: var(--reading);
+  white-space: pre-wrap;
+  line-height: 1.6;
+  margin: 0 0 1.15em;
+}
+
+img.glyph { vertical-align: middle; display: inline; }
+span.frac, span.stack { display: inline-block; vertical-align: middle; text-align: center; }
+span.frac > span, span.stack > span { display: block; }
+span.frac > span.num { border-bottom: 1px solid currentColor; }
+span.stack.brace { border-left: 2px solid currentColor; border-right: 2px solid currentColor; border-radius: 0.6em; padding: 0 0.3em; }
+math { font-size: 1.05em; }
+
+figure { margin: 2.2em auto; text-align: center; }
+figure + figure { margin-top: 1em; }
+figure img { max-width: 100%; height: auto; background: var(--plate-bg); }
+figcaption {
+  margin-top: 0.6em;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--soft);
+  text-align: left;
+}
+
+table.plates { width: 100%; margin: 2.5em 0; border-collapse: collapse; line-height: 1.5; }
+table.plates td { padding: 0.4em 0.8em; vertical-align: middle; border-bottom: 1px solid var(--rule); }
+table.plates tr:last-child td { border-bottom: none; }
+table.plates figure, table.plates figure + figure { margin: 0.4em auto; }
+table.plates figcaption { display: none; }
+
+/* page locators: a printed page and quarter, for books that cite
+   themselves by them (Helmholtz: "see p. 77c") */
+span.loc { font-size: 0.65em; color: var(--soft); vertical-align: 0.3em; padding: 0 0.15em; font-style: normal; }
+a.ref { color: inherit; text-decoration: underline dotted; }
+span.sc { font-variant: small-caps; }
+.center { text-align: center; }
+.subtitle { text-align: center; font-style: italic; }
+
+/* ---------- contents ---------- */
+
+nav.contents h2 { margin-top: 0; }
+.toc-book { font-family: var(--display); font-weight: 700; margin: 1.2em 0 0.4em; color: var(--ink); }
+.toc-list { list-style: none; padding-left: 1.2em; margin: 0 0 1em; }
+.toc-list li { margin-bottom: 0.3em; line-height: 1.4; }
+nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
+
+/* ---------- reading aids (book.js) ---------- */
+
+.resume {
+  margin: 0 0 1.5rem;
+  padding: 0.7rem 1rem;
+  background: var(--cream);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+.resume[hidden] { display: none; }
+
+.to-contents {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 5;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--page);
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+.to-contents.show { opacity: .92; pointer-events: auto; }
+
+@media (max-width: 36rem) {
+  html { font-size: 18px; }
+}
+
+@media print {
+  .title-block { background: none; }
+  .actions, .to-contents, .resume { display: none; }
+}
+</style>
 	<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "Science, the Endless Frontier", "author": {"@type": "Person", "name": "Vannevar Bush"}, "inLanguage": "en", "url": "https://emend.press/endless.html", "description": "Vannevar Bush's 1945 report to the President: basic research as the pacemaker of progress, and the plan that became the National Science Foundation. A restored edition, free to read online and as an ebook.", "publisher": {"@type": "Organization", "name": "Emend Press", "url": "https://emend.press/", "logo": "https://emend.press/apple-touch-icon.png"}, "isAccessibleForFree": true, "isPartOf": {"@type": "BookSeries", "name": "Modern Classics", "url": "https://emend.press/"}, "image": "https://emend.press/covers/endless.jpg", "datePublished": "1945", "workExample": {"@type": "Book", "bookFormat": "https://schema.org/EBook", "encodingFormat": "application/epub+zip", "url": "https://emend.press/ebooks/vannevar-bush_science-the-endless-frontier.epub"}}</script>
 </head>
 
@@ -115,30 +466,30 @@
 <h2 id="summary-of-the-report">Summary of the Report</h2>
 <p>“New frontiers of the mind are before us, and if they are pioneered with the same vision, boldness, and drive with which we have waged this war we can create a fuller and more fruitful employment and a fuller and more fruitful life.”</p>
 <p>—Franklin D. Roosevelt, November 17, 1944.</p>
-<h4>Scientific Progress Is Essential</h4>
+<h3 class="sub">Scientific Progress Is Essential</h3>
 <p>Progress in the war against disease depends upon a flow of new scientific knowledge. New products, new industries, and more jobs require continuous additions to knowledge of the laws of nature, and the application of that knowledge to practical purposes. Similarly, our defense against aggression demands new knowledge so that we can develop new and improved weapons. This essential, new knowledge can be obtained only through basic scientific research.</p>
 <p>Science can be effective in the national welfare only as a member of a team, whether the conditions be peace or war. But without scientific progress no amount of achievement in other directions can insure our health, prosperity, and security as a nation in the modern world.</p>
-<h4>For the War Against Disease</h4>
+<h3 class="sub">For the War Against Disease</h3>
 <p>We have taken great strides in the war against disease. The death rate for all diseases in the Army, including overseas forces, has been reduced from 14.1 per thousand in the last war to 0.6 per thousand in this war. In the last 40 years life expectancy has increased from 49 to 65 years, largely as a consequence of the reduction in the death rates of infants and children. But we are far from the goal. The annual deaths from one or two diseases far exceed the total number of American lives lost in battle during this war. A large fraction of these deaths in our civilian population cut short the useful lives of our citizens. Approximately 7,000,000 persons in the United States are mentally ill and their care costs the public over $175,000,000 a year. Clearly much illness remains for which adequate means of prevention and cure are not yet known.</p>
 <p>The responsibility for basic research in medicine and the underlying sciences, so essential to progress in the war against disease, falls primarily upon the medical schools and universities. Yet we find that the traditional sources of support for medical research in the medical schools and universities, largely endowment income, foundation grants, and private donations, are diminishing and there is no immediate prospect of a change in this trend. Meanwhile, the cost of medical research has been rising. If we are to maintain the progress in medicine which has marked the last 25 years, the Government should extend financial support to basic medical research in the medical schools and in universities.</p>
-<h4>For Our National Security</h4>
+<h3 class="sub">For Our National Security</h3>
 <p>The bitter and dangerous battle against the U-boat was a battle of scientific techniques—and our margin of success was dangerously small. The new eyes which radar has supplied can sometimes be blinded by new scientific developments. V-2 was countered only by capture of the launching sites.</p>
 <p>We cannot again rely on our allies to hold off the enemy while we struggle to catch up. There must be more—and more adequate—military research in peacetime. It is essential that the civilian scientists continue in peacetime some portion of those contributions to national security which they have made so effectively during the war. This can best be done through a civilian-controlled organization with close liaison with the Army and Navy, but with funds direct from Congress, and the clear power to initiate military research which will supplement and strengthen that carried on directly under the control of the Army and Navy.</p>
-<h4>And for the Public Welfare</h4>
+<h3 class="sub">And for the Public Welfare</h3>
 <p>One of our hopes is that after the war there will be full employment. To reach that goal the full creative and productive energies of the American people must be released. To create more jobs we must make new and better and cheaper products. We want plenty of new, vigorous enterprises. But new products and processes are not born full-grown. They are founded on new principles and new conceptions which in turn result from basic scientific research. Basic scientific research is scientific capital. Moreover, we cannot any longer depend upon Europe as a major source of this scientific capital. Clearly, more and better scientific research is one essential to the achievement of our goal of full employment.</p>
 <p>How do we increase this scientific capital? First, we must have plenty of men and women trained in science, for upon them depends both the creation of new knowledge and its application to practical purposes. Second, we must strengthen the centers of basic research which are principally the colleges, universities, and research institutes. These institutions provide the environment which is most conducive to the creation of new scientific knowledge and least under pressure for immediate, tangible results. With some notable exceptions, most research in industry and in Government involves application of existing scientific knowledge to practical problems. It is only the colleges, universities, and a few research institutes that devote most of their research efforts to expanding the frontiers of knowledge.</p>
 <p>Expenditures for scientific research by industry and Government increased from $140,000,000 in 1930 to $309,000,000 in 1940. Those for the colleges and universities increased from $20,000,000 to $31,- 000,000, while those for the research institutes declined from $5,200,- 000 to $4,500,000 during the same period. If the colleges, universities, and research institutes are to meet the rapidly increasing demands of industry and Government for new scientific knowledge, their basic research should be strengthened by use of public funds.</p>
 <p>For science to serve as a powerful factor in our national welfare, applied research both in Government and in industry must be vigorous. To improve the quality of scientific research within the Government, steps should be taken to modify the procedures for recruiting, classifying, and compensating scientific personnel in order to reduce the present handicap of governmental scientific bureaus in competing with industry and the universities for top-grade scientific talent. To provide coordination of the common scientific activities of these governmental agencies as to policies and budgets, a permanent Science Advisory Board should be created to advise the executive and legislative branches of Government on these matters.</p>
 <p>The most important ways in which the Government can promote industrial research are to increase the flow of new scientific knowledge through support of basic research, and to aid in the development of scientific talent. In addition, the Government should provide suitable incentives to industry to conduct research, (a) by clarification of present uncertainties in the Internal Revenue Code in regard to the deductibility of research and development expenditures as current charges against net income, and (b) by strengthening the patent system so as to eliminate uncertainties which now bear heavily on small industries and so as to prevent abuses which reflect discredit upon a basically sound system. In addition, ways should be found to cause the benefits of basic research to reach industries which do not now utilize new scientific knowledge.</p>
-<h4>We Must Renew Our Scientific Talent</h4>
+<h3 class="sub">We Must Renew Our Scientific Talent</h3>
 <p>The responsibility for the creation of new scientific knowledge—and for most of its application—rests on that small body of men and women who understand the fundamental laws of nature and are skilled in the techniques of scientific research. We shall have rapid or slow advance on any scientific frontier depending on the number of highly qualified and trained scientists exploring it.</p>
 <p>The deficit of science and technology students who, but for the war, would have received bachelor’s degrees is about 150,000. It is estimated that the deficit of those obtaining advanced degrees in these fields will amount in 1955 to about 17,000—for it takes at least 6 years from college entry to achieve a doctor’s degree or its equivalent in science or engineering. The real ceiling on our productivity of new scientific knowledge and its application in the war against disease, and the development of new products and new industries, is the number of trained scientists available.</p>
 <p>The training of a scientist is a long and expensive process. Studies clearly show that there are talented individuals in every part of the population, but with few exceptions, those without the means of buying higher education go without it. If ability, and not the circumstance of family fortune, determines who shall receive higher education in science, then we shall be assured of constantly improving quality at every level of scientific activity. The Government should provide a reasonable number of undergraduate scholarships and graduate fellowships in order to develop scientific talent in American youth. The plans should be designed to attract into science only that proportion of youthful talent appropriate to the needs of science in relation to the other needs of the nation for high abilities.</p>
-<h4>Including Those in Uniform</h4>
+<h3 class="sub">Including Those in Uniform</h3>
 <p>The most immediate prospect of making up the deficit in scientific personnel is to develop the scientific talent in the generation now in uniform. Even if we should start now to train the current crop of high-school graduates none would complete graduate studies before 1951. The Armed Services should comb their records for men who, prior to or during the war, have given evidence of talent for science, and make prompt arrangements, consistent with current discharge plans, for ordering those who remain in uniform, as soon as militarily possible, to duty at institutions here and overseas where they can continue their scientific education. Moreover, the Services should see that those who study overseas have the benefit of the latest scientific information resulting from research during the war.</p>
-<h4>The Lid Must Be Lifted</h4>
+<h3 class="sub">The Lid Must Be Lifted</h3>
 <p>While most of the war research has involved the application of existing scientific knowledge to the problems of war, rather than basic research, there has been accumulated a vast amount of information relating to the application of science to particular problems. Much of this can be used by industry. It is also needed for teaching in the colleges and universities here and in the Armed Forces Institutes overseas. Some of this information must remain secret, but most of it should be made public as soon as there is ground for belief that the enemy will not be able to turn it against us in this war. To select that portion which should be made public, to coordinate its release, and definitely to encourage its publication, a Board composed of Army, Navy, and civilian scientific members should be promptly established.</p>
-<h4>A Program for Action</h4>
+<h3 class="sub">A Program for Action</h3>
 <p>The Government should accept new responsibilities for promoting the flow of new scientific knowledge and the development of scientific talent in our youth. These responsibilities are the proper concern of the Government, for they vitally affect our health, our jobs, and our national security. It is in keeping also with basic United States policy that the Government should foster the opening of new frontiers and this is the modern way to do it. For many years the Government has wisely supported research in the agricultural colleges and the benefits have been great. The time has come when such support should be extended to other fields.</p>
 <p>The effective discharge of these new responsibilities will require the full attention of some over-all agency devoted to that purpose. There is not now in the permanent Governmental structure receiving its funds from Congress an agency adapted to supplementing the support of basic research in the colleges, universities, and research institutes, both in medicine and the natural sciences, adapted to supporting research on new weapons for both Services, or adapted to administering a program of science scholarships and fellowships.</p>
 <p>Therefore I recommend that a new agency for these purposes be established. Such an agency should be composed of persons of broad interest and experience, having an understanding of the peculiarities of scientific research and scientific education. It should have stability of funds so that long-range programs may be undertaken. It should recognize that freedom of inquiry must be preserved and should leave internal control of policy, personnel, and the method and scope of research to the institutions in which it is carried on. It should be fully responsible to the President and through him to the Congress for its program.</p>
@@ -413,9 +764,9 @@
 </section>
 <section aria-labelledby="appendix-1-committees-consulted">
 <h2 id="appendix-1-committees-consulted">Appendix 1: Committees Consulted</h2>
-<h4>Question</h4>
+<h3 class="sub">Question</h3>
 <p>“With particular reference to the war of science against disease, what can be done now to organize a program for continuing in the future the work which has been done in medicine and related sciences?”</p>
-<h4>Committee</h4>
+<h3 class="sub">Committee</h3>
 <p>Dr. W. W. Palmer, chairman; bard professor of medicine, Columbia University; director of medical service of Presbyterian Hospital, New York City.</p>
 <p>Dr. Homer W. Smith, secretary; director, physiology laboratory, School of Medicine, New York University.</p>
 <p>Dr. Kenneth B. Turner, assistant secretary; assistant professor of medicine, Columbia University.</p>
@@ -425,9 +776,9 @@
 <p>Dr. Alton Ochsner, professor of surgery and head of the department of surgery at Tulane University School of Medicine.</p>
 <p>Dr. Linus Pauling, head of the division of chemistry and chemical engineering and director of the chemical laboratories at the California Institute of Technology.</p>
 <p>Dr. James J. Waring, professor of medicine, University of Colorado School of Medicine.</p>
-<h4>Question</h4>
+<h3 class="sub">Question</h3>
 <p>“What can the Government do now and in the future to aid research activities by public and private organizations? The proper roles of public and of private research, and their interrelation, should be carefully considered.”</p>
-<h4>Committee</h4>
+<h3 class="sub">Committee</h3>
 <p>Dr. Isaiah Bowman, chairman; president of Johns Hopkins University.</p>
 <p>Dr. J. T. Tate, vice chairman; research professor of physics, University of Minnesota.</p>
 <p>Dr. W. Rupert Maclaurin, secretary; professor of economics, Massachusetts Institute of Technology.</p>
@@ -445,9 +796,9 @@
 <p>Dr. Warren Weaver, director for natural sciences, Rockefeller Foundation.</p>
 <p>Dr. Robert E. Wilson, chairman of the board, Standard Oil Co. of Indiana.</p>
 <p>Dr. William E. Wrather, director, U. S. Geological Survey.</p>
-<h4>Question</h4>
+<h3 class="sub">Question</h3>
 <p>“Can an effective program be proposed for discovering and developing scientific talent in American youth so that the continuing future of scientific research in this country may be assured on a level comparable to what has been done during the war?”</p>
-<h4>Committee</h4>
+<h3 class="sub">Committee</h3>
 <p>Dr. Henry Allen Moe, chairman; secretary-general of the John Simon Guggenheim Memorial Foundation.</p>
 <p>Mr. Lawrence K. Frank, secretary.</p>
 <p>Mr. Henry Chauncey, assistant secretary.</p>
@@ -464,9 +815,9 @@
 <p>Dr. Harlow Shapley, director of the Harvard College Observatory.</p>
 <p>Dr. Hugh S. Taylor, dean of the Graduate School, Princeton University.</p>
 <p>Dr. E. B. Wilson, professor of vital statistics, Harvard University School of Public Health.</p>
-<h4>Question</h4>
+<h3 class="sub">Question</h3>
 <p>“What can be done, consistent with military security, and with the prior approval of the military authorities, to make known to the world as soon as possible the contributions which have been made during our war effort to scientific knowledge?”</p>
-<h4>Committee</h4>
+<h3 class="sub">Committee</h3>
 <p>Dr. Irvin Stewart, chairman; executive secretary of the Office of Scientific Research and Development; director of the Committee on Scientific Aids to Learning of the National Research Council.</p>
 <p>Mr. Cleveland Norcross, secretary; executive assistant to the executive secretary of the Office of Scientific Research and Development.</p>
 <p>Dr. J. P. Baxter III, president of Williams College; historian of the Office of Scientific Research and Development.</p>

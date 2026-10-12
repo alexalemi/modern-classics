@@ -19,8 +19,359 @@
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=navigation" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 	<link rel="preload" href="fonts/libre-caslon-text-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="stylesheet" href="fonts.css">
-	<link rel="stylesheet" href="book.css">
+	<style>
+/* Fonts for every page (front pages and book pages), served from this site
+   rather than Google Fonts: a third-party
+   stylesheet blocked rendering for ~0.8 s on mobile (PageSpeed, 2026-10-12).
+   Oswald, Yellowtail and Libre Caslon Text (SIL Open Font License), latin and
+   latin-ext subsets as Google serves them, in site/fonts/. */
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* The book pages. Shared by every page assemble.py writes; fonts in fonts.css.
+
+   LEGIBILITY FIRST. The running text is set in the best screen serif the
+   reader's own device has (Charter on Apple, Sitka Text on Windows, Georgia
+   or Noto Serif elsewhere), near-black on white, 19-20px, ~66 characters to
+   the line. The Emend look (Libre Caslon Text, navy, the cream band, Oswald
+   labels) is kept to the title band, the headings and the controls. */
+
+:root {
+  --page:  #ffffff;
+  --text:  #1c1c1c;
+  --ink:   #1b314d;     /* navy: headings, links, buttons */
+  --cream: #f4efe2;
+  --soft:  #5a6472;
+  --rule:  #ddd6c8;
+  --link:  #1f4f86;
+  --plate-bg: #ffffff;
+  --reading: Charter, "Bitstream Charter", "Sitka Text", Georgia, "Noto Serif", serif;
+  --display: "Libre Caslon Text", Georgia, serif;
+  --label:   "Oswald", "Arial Narrow", sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page:  #14181e;
+    --text:  #e4e0d8;
+    --ink:   #e8e2d4;
+    --cream: #1d2430;
+    --soft:  #a3adba;
+    --rule:  #343c48;
+    --link:  #9cc2e6;
+  }
+  /* plates and diagrams are drawn on white paper; keep them on it, slightly dimmed */
+  figure img { opacity: .92; }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html {
+  background: var(--page);
+  color: var(--text);
+  font-size: 20px;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--reading);
+  line-height: 1.65;
+  font-kerning: normal;
+}
+
+main { max-width: 34rem; margin: 0 auto; padding: 0 1rem 5rem; }
+
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+
+/* ---------- title band ---------- */
+
+.title-block {
+  background: var(--cream);
+  padding: 1.6rem 1rem 1.8rem;
+  margin-bottom: 2rem;
+}
+.title-inner {
+  max-width: 44rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.8rem;
+  align-items: center;
+}
+.title-block .series {
+  grid-column: 1 / -1;
+  margin: 0 0 0.2rem;
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.title-block .series a { color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 0.55rem; }
+.title-block .series a:hover span { text-decoration: underline; }
+.title-block .series img { height: 1.8rem; width: auto; }
+.cover img {
+  display: block;
+  width: 150px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+}
+.title-text { min-width: 0; }
+h1 {
+  font: 700 2rem/1.15 var(--display);
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+  text-align: left;
+}
+.title-line { margin: 0 0 0.3rem; font-size: 0.95rem; color: var(--ink); }
+.title-line.byline { font-weight: 700; }
+.dates { margin: 0 0 0.9rem; font-size: 0.85rem; color: var(--soft); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.button {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid var(--ink);
+  font: 500 0.75rem/1.2 var(--label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+}
+.button.primary { background: var(--ink); color: var(--page); }
+.button:hover { text-decoration: underline; }
+
+/* phones: a small cover beside the title, so the text starts sooner */
+@media (max-width: 36rem) {
+  .title-block { padding: 1.1rem 1rem 1.4rem; }
+  .title-inner { grid-template-columns: 76px 1fr; gap: 0.9rem; align-items: start; }
+  .cover img { width: 76px; height: 114px; }
+  h1 { font-size: 1.45rem; }
+  .actions { grid-column: 1 / -1; }
+}
+
+/* ---------- running text ---------- */
+
+.intro-note { font-style: italic; font-size: 0.9rem; color: var(--soft); }
+
+h2, h3, h4 {
+  font-family: var(--display);
+  color: var(--ink);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+h2 { font-size: 1.45rem; margin: 3.2rem 0 1rem; }
+h3 { font-size: 1.2rem; margin: 2.8rem 0 0.9rem; }
+h4, h3.sub { font-size: 1rem; margin: 2rem 0 0.8rem; font-style: italic; }
+h2.center { text-align: center; font-size: 1.6rem; margin-top: 4rem; }
+
+p, ul, ol { margin: 0 0 1.15em; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+blockquote {
+  margin: 1.5em 0 1.5em 1em;
+  padding-left: 1em;
+  border-left: 3px solid var(--rule);
+  font-style: italic;
+}
+blockquote p { margin-bottom: 0.8em; }
+
+pre.outline {
+  font-family: var(--reading);
+  white-space: pre-wrap;
+  line-height: 1.6;
+  margin: 0 0 1.15em;
+}
+
+img.glyph { vertical-align: middle; display: inline; }
+span.frac, span.stack { display: inline-block; vertical-align: middle; text-align: center; }
+span.frac > span, span.stack > span { display: block; }
+span.frac > span.num { border-bottom: 1px solid currentColor; }
+span.stack.brace { border-left: 2px solid currentColor; border-right: 2px solid currentColor; border-radius: 0.6em; padding: 0 0.3em; }
+math { font-size: 1.05em; }
+
+figure { margin: 2.2em auto; text-align: center; }
+figure + figure { margin-top: 1em; }
+figure img { max-width: 100%; height: auto; background: var(--plate-bg); }
+figcaption {
+  margin-top: 0.6em;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--soft);
+  text-align: left;
+}
+
+table.plates { width: 100%; margin: 2.5em 0; border-collapse: collapse; line-height: 1.5; }
+table.plates td { padding: 0.4em 0.8em; vertical-align: middle; border-bottom: 1px solid var(--rule); }
+table.plates tr:last-child td { border-bottom: none; }
+table.plates figure, table.plates figure + figure { margin: 0.4em auto; }
+table.plates figcaption { display: none; }
+
+/* page locators: a printed page and quarter, for books that cite
+   themselves by them (Helmholtz: "see p. 77c") */
+span.loc { font-size: 0.65em; color: var(--soft); vertical-align: 0.3em; padding: 0 0.15em; font-style: normal; }
+a.ref { color: inherit; text-decoration: underline dotted; }
+span.sc { font-variant: small-caps; }
+.center { text-align: center; }
+.subtitle { text-align: center; font-style: italic; }
+
+/* ---------- contents ---------- */
+
+nav.contents h2 { margin-top: 0; }
+.toc-book { font-family: var(--display); font-weight: 700; margin: 1.2em 0 0.4em; color: var(--ink); }
+.toc-list { list-style: none; padding-left: 1.2em; margin: 0 0 1em; }
+.toc-list li { margin-bottom: 0.3em; line-height: 1.4; }
+nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
+
+/* ---------- reading aids (book.js) ---------- */
+
+.resume {
+  margin: 0 0 1.5rem;
+  padding: 0.7rem 1rem;
+  background: var(--cream);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+.resume[hidden] { display: none; }
+
+.to-contents {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 5;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--page);
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+.to-contents.show { opacity: .92; pointer-events: auto; }
+
+@media (max-width: 36rem) {
+  html { font-size: 18px; }
+}
+
+@media print {
+  .title-block { background: none; }
+  .actions, .to-contents, .resume { display: none; }
+}
+</style>
 	<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "Euclid and His Modern Rivals", "author": {"@type": "Person", "name": "Lewis Carroll"}, "inLanguage": "en", "url": "https://emend.press/euclid-rivals.html", "description": "The author of Alice puts every geometry textbook of his day on trial, as a farce: the ghost of Euclid against Herr Niemand, Mr. Nobody, who loses every case. Retold in modern English, free to read online and as an ebook.", "publisher": {"@type": "Organization", "name": "Emend Press", "url": "https://emend.press/", "logo": "https://emend.press/apple-touch-icon.png"}, "isAccessibleForFree": true, "isPartOf": {"@type": "BookSeries", "name": "Modern Classics", "url": "https://emend.press/"}, "image": "https://emend.press/covers/euclid-rivals.jpg", "datePublished": "2026", "bookEdition": "Modern English retelling", "isBasedOn": {"@type": "Book", "name": "Euclid and His Modern Rivals", "author": {"@type": "Person", "name": "Lewis Carroll"}}, "workExample": {"@type": "Book", "bookFormat": "https://schema.org/EBook", "encodingFormat": "application/epub+zip", "url": "https://emend.press/ebooks/lewis-carroll_euclid-and-his-modern-rivals.epub"}}</script>
 </head>
 
@@ -115,7 +466,7 @@
 <h2 id="act-one-scene-two">Act One, Scene Two</h2>
 <p>&quot;The rule of many is not good. Let there be one ruler, one king.&quot; — Homer, Iliad, II. 204</p>
 <p>[MINOS sleeping. To him enters the PHANTASM OF EUCLID. Minos opens his eyes and regards him with a blank and stony gaze, without betraying the slightest surprise or even interest.]</p>
-<h4>§ 1. A Priori Reasons for Retaining Euclid&#x27;s Manual</h4>
+<h3 class="sub">§ 1. A Priori Reasons for Retaining Euclid&#x27;s Manual</h3>
 <p>Euclid. Now, what is it you really require in a Manual of Geometry?</p>
 <p>Minos. Excuse me — but, with all respect to a shade whose name I have reverenced from early boyhood, is that not rather an abrupt way of starting a conversation? Remember, we are twenty centuries apart in history, and consequently have never had a personal interview until now. Surely a few preliminary remarks —</p>
 <p>Euclid. Centuries are long, my good sir, but my time tonight is short, and I never was a man of many words. So kindly waive all ceremony and answer my question.</p>
@@ -156,7 +507,7 @@
 <p>Euclid. Unless, then, it should appear that one of my Modern Rivals — whose logical sequence is incompatible with mine — is so decidedly better in his treatment of really important topics as to make it worth suffering all the inconvenience of a change of numbers, you would not recognise his demand to supersede my Manual?</p>
 <p>Minos. On that point let me quote Mr. Wilson again. In his Preface, page 15, he says: &quot;In a few years I hope that our leading mathematicians will have published, perhaps in concert, one or more text-books of Geometry, not inferior, to say the least, to those of France, and that they will supersede Euclid by the sheer force of superior merit.&quot;</p>
 <p>Euclid. And I should be quite content to be so superseded. &quot;A fair field and no favour&quot; is all I ask.</p>
-<h4>§ 2. Method of Procedure in Examining Modern Rivals</h4>
+<h3 class="sub">§ 2. Method of Procedure in Examining Modern Rivals</h3>
 <p>Minos. You wish me, then, to compare your book with those of your Modern Rivals?</p>
 <p>Euclid. Yes. But in doing it I must beg you to bear in mind that a Modern Rival will not have proved his case if he succeeds only in showing</p>
 <p>(1) that certain Propositions might with advantage be left out — for a teacher would be free to do that, so long as he left the logical sequence complete; or</p>
@@ -208,7 +559,7 @@
 <p>Minos. A charming companion! And his name?</p>
 <p>Euclid. Phantasms have no names — only numbers. You may call him &quot;Herr Niemand&quot;, or, if you prefer it, &quot;Number one hundred and twenty-three million four hundred and fifty-six thousand seven hundred and eighty-nine.&quot;</p>
 <p>Minos. For constant use, I prefer &quot;Herr Niemand&quot;. Let us now consider the question of separating Problems and Theorems.</p>
-<h4>§ 3. The Combination, or Separation, of Problems and Theorems</h4>
+<h3 class="sub">§ 3. The Combination, or Separation, of Problems and Theorems</h3>
 <p>Euclid. I shall be glad to hear first the reasons given for separating them, and will then tell you my reasons for mixing them.</p>
 <p>Minos. I understand that the Committee of the Association for the Improvement of Geometrical Teaching, in their Report on the Syllabus of the Association, consider the separation &quot;equivalent to the assertion of the principle that, while Problems are from their very nature dependent for the form, and even the possibility, of their solution on the arbitrary limitation of the instruments allowed to be used, Theorems, being truths involving no arbitrary element, ought to be exhibited in a form and sequence independent of such limitations.&quot; They add, however, that &quot;it is probable that most teachers would prefer to introduce Problems, not as a separate section of Geometry, but rather in connection with the Theorems with which they are essentially related.&quot;</p>
 <p>Euclid. It seems rather a strange proposal, to print the Propositions in one order and read them in another. But a stronger objection is that several of the Problems are Theorems as well — I. 46, for instance.</p>
@@ -224,7 +575,7 @@
 <p>Euclid. That will be an excellent plan. It will both give you a clear view of the field of your enquiry, and let you recognise at once any doubtful Axioms you may meet with.</p>
 <p>Minos. Will you favour me, then, with your views on the matter?</p>
 <p>Euclid. Willingly. It is a subject which, I need hardly say, I considered very carefully before deciding what Definitions and Axioms to adopt.</p>
-<h4>§ 4. Syllabus of Propositions Relating to Pairs of Lines</h4>
+<h3 class="sub">§ 4. Syllabus of Propositions Relating to Pairs of Lines</h3>
 <p>Let us begin with the simplest possible case: a Pair of infinite Lines which have two common points, and which therefore coincide wholly. Let us consider how such a Pair may be defined, and what other properties it has.</p>
 <p>After that we will take a Pair of Lines which have a common point and a separate point — &quot;a separate point&quot; being one that lies on one of the Lines but not on the other — and which therefore have no other common point; and we will treat it in the same way.</p>
 <p>And in the third place we will take a Pair of Lines which have no common point.</p>
@@ -296,7 +647,7 @@
 <p>Euclid. Certainly. You may take them as lying on either side you like, and at zero distances. The only case excluded is where both points are outside the other Line, and on opposite sides of it.</p>
 <p>Minos. I understand you.</p>
 <p>Euclid. We shall find the Table of Propositions which I now lay before you very convenient to refer to. I have placed contranominal Propositions — that is, Propositions of the form &quot;All X is Y&quot;, &quot;All not-Y is not-X&quot; — in the same section.</p>
-<h4>Table I</h4>
+<h3 class="sub">Table I</h3>
 <p>Containing twenty Propositions, of which some are undisputed Axioms and the rest real and valid Theorems, deducible from undisputed Axioms.</p>
 <p>[N.B. Those marked * have been proposed as Axioms.]</p>
 <p>* 1. A Pair of Lines which have two common points are coincidental.</p>
@@ -354,7 +705,7 @@
 <p>(1) they are equally inclined to any transversal;
 (2) they are equidistantial from each other.</p>
 <p>These Propositions, with the addition of my own I. 30 and I. 32 and certain others, I will now arrange in a tabular form, placing Contranominals in the same section.</p>
-<h4>Table II</h4>
+<h3 class="sub">Table II</h3>
 <p>Containing eighteen Propositions, of which no one is an undisputed Axiom, but all are real and valid Theorems, which, though not deducible from undisputed Axioms, are such that if any one be admitted as an Axiom the rest can be proved.</p>
 <p>[N.B. Those marked * have been, or parts of them have been, proposed as Axioms.]</p>
 <p>1. A Pair of separational Lines are equally inclined to any transversal. [I. 29.]</p>
@@ -382,21 +733,21 @@
 <p>18. (a) If a side of a Triangle be produced, the exterior angle is equal to the two interior opposite angles together. [I. 32.]</p>
 <p>(b) The angles of a Triangle are together equal to two right angles. [I. 32.]</p>
 <p>You will find it convenient to have the Propositions that have been proposed as Axioms repeated in a Table by themselves.</p>
-<h4>Table III</h4>
+<h3 class="sub">Table III</h3>
 <p>Containing five Propositions, taken from Table II, which have been proposed as Axioms.</p>
-<h4>Euclid&#x27;s Axiom</h4>
+<h3 class="sub">Euclid&#x27;s Axiom</h3>
 <p>A Pair of Lines which have a separate point, and make with a certain transversal two interior angles on one side of it together less than two right angles, are intersectional on that side.</p>
 <p>[This is one case of II. 2, with an additional statement as to the side of the transversal on which the Lines will meet.]</p>
-<h4>T. Simpson&#x27;s Axiom</h4>
+<h3 class="sub">T. Simpson&#x27;s Axiom</h3>
 <p>A Pair of Lines which have a separate point, and of which one has two points on the same side of, and not equidistant from, the other, are intersectional.</p>
 <p>[This is II. 7.]</p>
-<h4>Clavius&#x27;s Axiom</h4>
+<h3 class="sub">Clavius&#x27;s Axiom</h3>
 <p>Through a given Point, outside a given Line, a Line may be drawn equidistantial from the given Line.</p>
 <p>[This is part of II. 8.]</p>
-<h4>Playfair&#x27;s Axiom</h4>
+<h3 class="sub">Playfair&#x27;s Axiom</h3>
 <p>A Pair of intersectional Lines cannot both be separational from the same Line.</p>
 <p>[This is II. 16 (a).]</p>
-<h4>R. Simpson&#x27;s Axiom</h4>
+<h3 class="sub">R. Simpson&#x27;s Axiom</h3>
 <p>A Line cannot recede from and then approach another; nor can one approach and then recede from another while on the same side of it.</p>
 <p>[This is II. 17.]</p>
 <p>Minos. In the predicate of 2, what right have you to say &quot;are intersectional&quot;? The true contradictory of &quot;separational&quot; would be &quot;have a common point&quot;.</p>
@@ -418,7 +769,7 @@
 <p>Euclid. I can do it with eleven. You will grant me, I think, that when two Propositions are contranominal, so that each can be proved from the other, I may select either of the two for my series of proofs, and need not include both?</p>
 <p>Minos. Certainly.</p>
 <p>Euclid. Here are the proofs, which you can read afterwards at your leisure. (See Appendix III.)</p>
-<h4>§ 5. Playfair&#x27;s Axiom</h4>
+<h3 class="sub">§ 5. Playfair&#x27;s Axiom</h3>
 <p>Euclid. The next general question to be discussed is the proposed substitution of Playfair&#x27;s Axiom for mine. As to mine, I am quite ready to admit that it is not axiomatic until Proposition 17 has been proved. What is an Axiom at one stage of our knowledge is often anything but an Axiom at an earlier stage.</p>
 <p>Minos. The great question is whether it is axiomatic then.</p>
 <p>Euclid. I am quite aware of that; and it is because this is not only the great question of the whole First Book, but also the crucial test by which my method, compared with those of my Modern Rivals, must stand or fall, that I beg your patience in speaking of a matter which cannot possibly be dismissed in a few words.</p>
@@ -481,7 +832,7 @@
 <p>But so far you have only answered Playfair. What do you say to the objection raised by Mr. Potts? &quot;A stronger objection appears to be that the converse of it forms Euclid I. 17; for both the assumed Axiom and its converse should be so obvious as not to require formal demonstration.&quot;</p>
 <p>Euclid. Why, I say that I deny the general law he lays down. (It is of course the technical converse he means, not the logical one. &quot;All X is Y&quot; has for its technical converse &quot;All Y is X&quot;; for its logical converse, &quot;Some Y is X&quot;.) Let him try his law on the Axiom &quot;All right angles are equal&quot;, and its technical converse &quot;All equal angles are right&quot;!</p>
 <p>Minos. I withdraw the objection.</p>
-<h4>§ 6. The Principle of Superposition</h4>
+<h3 class="sub">§ 6. The Principle of Superposition</h3>
 <p>Minos. The next subject is the principle of superposition. You use it twice only, in Propositions 4 and 8, in the First Book; but the modern fancy is to use it on every possible occasion. The Syllabus indicates, to use the words of the Committee, &quot;the free use of this principle as desirable in many cases where Euclid prefers to keep it out of sight.&quot;</p>
 <p>Euclid. Give me an instance of this modern method.</p>
 <p>Minos. It is proposed to prove I. 5 by taking up the isosceles Triangle, turning it over, and then laying it down again upon itself.</p>
@@ -499,7 +850,7 @@
 <p>Minos. No. They adopt the names D and E.</p>
 <p>Euclid. It is very like making a new Triangle!</p>
 <p>Minos. It is indeed. I think you have quite disposed of the claims of superposition. The only remaining subject for discussion is the omission of the diagonals in Book II.</p>
-<h4>§ 7. The Omission of Diagonals in Euclid II</h4>
+<h3 class="sub">§ 7. The Omission of Diagonals in Euclid II</h3>
 <p>Euclid. Let us test it on my II. 4. We will go through my proof of it, and then the proof given by some writer who ignores the diagonal, supplying if necessary any of those gaps in argument which my Modern Rivals so often indulge in, and which give their proofs a delusive air of neatness and brevity.</p>
 <p>&quot;If a Line be divided into any two parts, the square of the whole Line is equal to the squares of the two parts together with twice their rectangle.&quot;</p>
 <figure id="fig-4">
@@ -560,7 +911,7 @@
 </section>
 <section aria-labelledby="act-two-scene-two-legendre">
 <h2 id="act-two-scene-two-legendre">Act Two, Scene Two: Legendre</h2>
-<h4>Legendre</h4>
+<h3 class="sub">Legendre</h3>
 <p>&quot;Fine by degrees, and beautifully less.&quot;</p>
 <p>Niemand. I lay before you Éléments de Géométrie, by Monsieur A. M. Legendre, the fourteenth edition, 1860.</p>
 <p>Minos. Let me begin by asking you — since I regard you and your client as one in this matter — how you define a straight Line.</p>
@@ -599,7 +950,7 @@
 </section>
 <section aria-labelledby="act-two-scene-three-cooley">
 <h2 id="act-two-scene-three-cooley">Act Two, Scene Three: Cooley</h2>
-<h4>Cooley</h4>
+<h3 class="sub">Cooley</h3>
 <p>&quot;The verbal solemnity of a hollow logic.&quot;</p>
 <p>Cooley, Preface, p. 20.</p>
 <p>Niemand. I have now the honour to lay before you The Elements of Geometry, simplified and explained, by W. D. Cooley, A.B., published in 1860.</p>
@@ -630,7 +981,7 @@
 </section>
 <section aria-labelledby="act-two-scene-four-cuthbertson">
 <h2 id="act-two-scene-four-cuthbertson">Act Two, Scene Four: Cuthbertson</h2>
-<h4>Cuthbertson</h4>
+<h3 class="sub">Cuthbertson</h3>
 <p>&quot;Thou art so near, and yet so far.&quot;</p>
 <p>Modern Song.</p>
 <p>Niemand. I now lay before you Euclidian Geometry, by Francis Cuthbertson, M.A., late Fellow of Corpus Christi College, Cambridge, Head Mathematical Master of the City of London School; published in 1874.</p>
@@ -691,7 +1042,7 @@
 </section>
 <section aria-labelledby="act-two-scene-five-henrici">
 <h2 id="act-two-scene-five-henrici">Act Two, Scene Five: Henrici</h2>
-<h4>Henrici</h4>
+<h3 class="sub">Henrici</h3>
 <p>&quot;In order that an aggregate of elements may be called a spread, it is necessary that they follow continuously.&quot; — Henrici&#x27;s Art of Dining, p. 12.</p>
 <p>Niemand. I lay before you Elementary Geometry: Congruent Figures, by Olaus Henrici, Ph.D., F.R.S., Professor of Pure Mathematics in University College, London, 1879.</p>
 <p>Minos. What is your Definition of a Line?</p>
@@ -912,7 +1263,7 @@
 <p>The book is, I think, very hard for beginners to master; the majority of the new Theorems are much more fitted for exercises than to be embodied in a text-book; and, to crown all, the ambitious attempt to construct a proof of Playfair&#x27;s Axiom is, as we have seen, a lamentable failure.</p>
 <p>I think I cannot better conclude my review of this book than by giving you, in two parallel columns, Euclid&#x27;s Propositions I. 18 and 19, and Mr. Henrici&#x27;s proposed substitute for them, at p. 107.</p>
 <p>(turn over.)</p>
-<h4>Euclid</h4>
+<h3 class="sub">Euclid</h3>
 <p>The greater side of a Triangle is opposite to the greater angle.</p>
 <figure id="fig-8">
 <img src="images/euclid-rivals/fig8.png" alt="Euclid I. 18. In the triangle ABC, AC is greater than AB; AD is cut off equal to AB and BD joined." width="604" height="391" loading="lazy">
@@ -922,7 +1273,7 @@
 <p>From AC cut off AD equal to AB, and draw BD.</p>
 <p>Then, since AB = AD, ∴ the angle ABD = the angle ADB; but the angle ADB is exterior to the Triangle BCD, and ∴ greater than the angle C;</p>
 <p>∴ the angle ABD also is greater than the angle C; much more is the angle ABC greater than the angle C. Q.E.D.</p>
-<h4>Henrici</h4>
+<h3 class="sub">Henrici</h3>
 <figure id="fig-9">
 <img src="images/euclid-rivals/fig9.png" alt="Henrici&#x27;s substitute for the same Proposition: AD bisects the angle A, and B&#x27; is where B falls when the figure is folded along AD, so that DB takes up the position DB&#x27;." width="1259" height="756" loading="lazy">
 <figcaption><b>Figure 9</b> &mdash; Henrici&#x27;s substitute for the same Proposition: AD bisects the angle A, and B&#x27; is where B falls when the figure is folded along AD, so that DB takes up the position DB&#x27;.</figcaption>
@@ -930,7 +1281,7 @@
 <p>Let us now suppose a Triangle ABC, in which the bisector of the angle BAC is not an axis of symmetry. Then the contra-positive form of the theorem of § 162 tells us that AB is not equal to AC, that the angle B is not equal to the angle C, and that the bisector AD of the angle A is not perpendicular to BC, and hence that the two angles ADB and ADC are unequal. Between these angles there exists the relation</p>
 <p>&quot;the angle ADB + the angle DBA = the angle C + the angle CDA&quot;,</p>
 <p>for each sum makes with half the angle A an angle of continuation. Hence it follows that, if the angle ABC is greater than the angle C, the angle BDA is less than the angle CDA.</p>
-<h4>Euclid</h4>
+<h3 class="sub">Euclid</h3>
 <p>The greater angle of a Triangle is opposite to the greater side.</p>
 <figure id="fig-10">
 <img src="images/euclid-rivals/fig10.png" alt="Euclid I. 19, the converse: the angle B is greater than the angle C, and it is to be shown that AC is greater than AB." width="622" height="384" loading="lazy">
@@ -941,7 +1292,7 @@
 <p>It is not equal, for then the angle B would equal the angle C.</p>
 <p>It is not less, for then the angle B would be less than the angle C.</p>
 <p>∴ AC is greater than AB. Q.E.D.</p>
-<h4>Henrici</h4>
+<h3 class="sub">Henrici</h3>
 <p>If we now fold the figure along AD, then AB will fall along AC; and B will fall between A and C if we suppose that AB is the shorter of the two unequal Lines AB and AC. The line DB therefore takes the position DB&#x27; within the angle ADC. But the angle AB&#x27;D, which equals the angle ABC, is exterior to the triangle B&#x27;DC, and ∴ greater than the angle C.</p>
 <p>Conversely, if the angle ADB is less than the angle ADC, the line DB&#x27; will fall within the angle ADC, and ∴ B&#x27; will fall between A and C; that is, AB will be less than AC. This always happens (see above) if the angle ABC is greater than the angle C, for then the angle BDA is less than the angle CDA.</p>
 <p>Theorem. In every Triangle the greater side is opposite to the greater angle; and conversely, the greater angle is opposite to the greater side.</p>
@@ -953,7 +1304,7 @@
 </section>
 <section aria-labelledby="act-two-scene-six-wilson-pierce-and-willock">
 <h2 id="act-two-scene-six-wilson-pierce-and-willock">Act Two, Scene Six: Wilson, Pierce and Willock</h2>
-<h4>§ 1. Wilson</h4>
+<h3 class="sub">§ 1. Wilson</h3>
 <p>&quot;There is moreover a logic besides that of mere reasoning.&quot;</p>
 <p>Wilson, Preface, p. xiii.</p>
 <p>Niemand. You have made but short work of four of the five methods of treating Parallels.</p>
@@ -1340,7 +1691,7 @@
 <p>The sum total of the chief defects which I have noticed is as follows: fourteen of Euclid&#x27;s Theorems in Book I omitted; seven unaxiomatic Axioms; six instances of Petitio Principii.</p>
 <p>The abundant specimens of logical inaccuracy, and of loose writing generally, which I have here collected would, I feel sure, in a mere popular treatise be discreditable; in a scientific treatise, however modestly put forth, deplorable; but in a treatise avowedly put forth as a model of logical precision, and intended to supersede Euclid, they are simply monstrous.</p>
 <p>My ultimate conclusion on your Manual is that it has no claim whatever to be adopted as the Manual for purposes of teaching and examination.</p>
-<h4>§ 2. Pierce</h4>
+<h3 class="sub">§ 2. Pierce</h3>
 <p>&quot;Dum brevis esse laboro, obscurus fio.&quot;</p>
 <p>Niemand. I lay before you An Elementary Treatise on Plane and Solid Geometry, by Benjamin Pierce, A.M., Perkins Professor of Astronomy and Mathematics in Harvard University, published in 1872.</p>
 <p>Minos. As I have already considered, at great length, the subject of direction as treated by Mr. Wilson, I need not trouble you as to any matters where Mr. Pierce&#x27;s treatment does not materially differ from his. Is there any material difference in the treatment of a straight line?</p>
@@ -1386,7 +1737,7 @@
 <p>Niemand. At any rate we have Euclid I. 47 in our § 256.</p>
 <p>Minos. Oh, no doubt! Long after going through ratios, which necessarily include incommensurables; and long after the Axiom (§ 99) &quot;Infinitely small quantities may be neglected&quot;! No, no: so far as beginners are concerned, there is no Euclid I. 47 in this book!</p>
 <p>My conclusion is that, however useful this Manual may be to an advanced student, it is not adapted to the wants of a beginner.</p>
-<h4>§ 3. Willock</h4>
+<h3 class="sub">§ 3. Willock</h3>
 <p>&quot;This work... no doubt, has its faults.&quot;</p>
 <p>Willock, Preface, p. 1.</p>
 <p>Niemand. I lay before you The Elementary Geometry of the Right Line and Circle, by W. A. Willock, D.D., formerly Fellow of Trinity College, Dublin, published in 1875.</p>
@@ -1480,7 +1831,7 @@
 <h2 id="act-three" class="center">Act Three</h2>
 <section aria-labelledby="act-three-scene-one-chauvenet-loomis-morell-reynolds-and-wright">
 <h2 id="act-three-scene-one-chauvenet-loomis-morell-reynolds-and-wright">Act Three, Scene One: Chauvenet, Loomis, Morell, Reynolds and Wright</h2>
-<h4>§ 1. The Other Modern Rivals</h4>
+<h3 class="sub">§ 1. The Other Modern Rivals</h3>
 <p>&quot;But mice, and rats, and such small deer,
 Have been Tom&#x27;s food for seven long year.&quot;</p>
 <p>Minos. I consider the question, as to whether Euclid&#x27;s system and numeration should be abandoned or retained, to be now set at rest. The subject of Parallels being disposed of, no minor points of difference can possibly justify the abandonment of our old friend in favour of any Modern Rival. Still, it will be worth while to examine the other writers whose works you have brought with you, as they may furnish some valuable suggestions for the improvement of Euclid&#x27;s Manual.</p>
@@ -1496,7 +1847,7 @@ Have been Tom&#x27;s food for seven long year.&quot;</p>
 <p>Minos. And which Proposition of Table II do they assume?</p>
 <p>Niemand. Playfair&#x27;s, or else its equivalent, &quot;only one Line can be drawn, parallel to a given Line, through a given point outside it.&quot;</p>
 <p>Minos. Now let us take them one by one.</p>
-<h4>§ 2. Chauvenet</h4>
+<h3 class="sub">§ 2. Chauvenet</h3>
 <p>&quot;Where Washington hath left
 His awful memory
 A light for after times!&quot;</p>
@@ -1506,12 +1857,12 @@ A light for after times!&quot;</p>
 <p>P. 26, Pr. 54, asserts the equidistance of Parallels. This might be interpolated as Euclid I. 34. B.</p>
 <p>Another new Theorem, that angles whose sides are parallel, each to each, are equal — which I observe is a great favourite with the Modern Rivals — seems to me a rather clumsy and uninteresting extension of Euclid I. 29.</p>
 <p>I see several Propositions which might well be inserted as exercises on Euclid (for example Pr. 39, &quot;Every point in the bisector of an angle is equally distant from the sides&quot;), but which are hardly of sufficient importance to be included as Propositions; and others (for example Pr. 40, &quot;The bisectors of the three angles of a Triangle meet in the same point&quot;) which seem to belong more properly to Euclid III or IV. I have no other remarks to make on this book, which seems well and clearly written.</p>
-<h4>§ 3. Loomis</h4>
+<h3 class="sub">§ 3. Loomis</h3>
 <p>&quot;Like — but oh! how different!&quot;</p>
 <p>Niemand. I lay before you Elements of Geometry, by Elias Loomis, LL.D., Professor of Natural Philosophy and Astronomy in Yale College; a revised edition, 1876.</p>
 <p>Minos. I read in the Preface (p. 10) &quot;The present volume follows substantially the order of Blanchet&#x27;s Legendre, while the form of the demonstrations is modelled after the more logical method of Euclid.&quot; He has not, however, adopted the method of infinite series, which constitutes the crucial distinction between that writer and Euclid.</p>
 <p>The Propositions are pretty nearly in Euclid&#x27;s order: with a few changes in order and numeration, the book would be a modernised Euclid, the only important differences being the adoption of Playfair&#x27;s Axiom and the omission of the diagonals in Euclid II. I have no hostile criticisms to offer. Our American cousins set us an excellent example in the art of brief, and yet lucid, mathematical writing.</p>
-<h4>§ 4. Morell</h4>
+<h3 class="sub">§ 4. Morell</h3>
 <p>&quot;Quis custodiet ipsos custodes? Quis inspiciet ipsos inspectores?&quot;</p>
 <p>Niemand. I lay before you Euclid Simplified, compiled from the most important French works, approved by the University of Paris and the Minister of Public Instruction, by Mr. J. R. Morell, formerly H.M. Inspector of Schools, published in 1875.</p>
 <p>Minos. What have you about Lines, to begin with?</p>
@@ -1648,7 +1999,7 @@ Therefore, All men are dogs.&quot;</p>
 <p>Minos. Then the whole proof breaks down entirely?</p>
 <p>Niemand. We cannot deny it.</p>
 <p>Minos. Let us turn to the next author.</p>
-<h4>§ 5. Reynolds</h4>
+<h3 class="sub">§ 5. Reynolds</h3>
 <p>&quot;Though this be madness, yet there&#x27;s method in&#x27;t.&quot;</p>
 <p>Niemand. I lay before you Modern Methods in Elementary Geometry, by E. M. Reynolds, M.A., Mathematical Master in Clifton College, Modern Side; published in 1868.</p>
 <p>Minos. The first remark I have to make on it is that the Definitions and Axioms are scattered through the book, instead of being placed together at the beginning, and that there is no index to them, so that the reader only comes on them by chance: it is quite impossible to refer to them.</p>
@@ -1657,7 +2008,7 @@ Therefore, All men are dogs.&quot;</p>
 <p>P. 61. In Th. 11 (of Book III) it is stated that Parallelograms, on equal bases and between the same Parallels, &quot;may always be placed so that their equal bases coincide&quot;, and it is clearly assumed that they will still be &quot;between the same Parallels&quot;. And again, at p. 63, the altitude of a Parallelogram is defined as &quot;the perpendicular distance of the opposite side from the base&quot;, clearly assuming that there is only one such distance. In both these passages the Theorem is assumed, &quot;Parallels are equidistant from each other&quot;, of which no proof has been given, though of course it might have been easily deduced from Th. 16 (p. 19).</p>
 <p>The Theorems in Euclid II are here proved algebraically, which I hold to be emphatically a change for the worse, chiefly because it brings in the difficult subject of incommensurable magnitudes, which should certainly be avoided in a book meant for beginners.</p>
 <p>I have little else to remark on in this book. Several of the new Theorems in it seem to me to be premature, for example Th. 19 and the rest on &quot;Loci&quot;; but the sins of omission are more serious. He actually leaves out Euclid I. 7, 17, 21 (2nd part), 24, 25, 26 (2nd part), 48, and II. 1, 2, 3, 8, 9, 10, 12, 13. Moreover he separates Problems and Theorems, which I hold to be a mistake. I will not trouble you with any further remarks.</p>
-<h4>§ 6. Wright</h4>
+<h3 class="sub">§ 6. Wright</h3>
 <p>&quot;Defects of execution unquestionably exist.&quot;</p>
 <p>Wright, Preface, p. 10.</p>
 <p>Niemand. I lay before you The Elements of Plane Geometry, by E. P. Wright, Teacher of Mathematics in University College School, London; the second edition, 1871.</p>
@@ -1681,7 +2032,7 @@ Leander, Mr. Ekenhead, and I did.&quot;</p>
 </section>
 <section aria-labelledby="act-three-scene-two-the-syllabus-and-wilson-s-syllabus-manual">
 <h2 id="act-three-scene-two-the-syllabus-and-wilson-s-syllabus-manual">Act Three, Scene Two: The Syllabus, and Wilson&#x27;s Syllabus-Manual</h2>
-<h4>§ 1. The Syllabus of the Geometrical Association, 1878</h4>
+<h3 class="sub">§ 1. The Syllabus of the Geometrical Association, 1878</h3>
 <p>&quot;Nos numerus sumus.&quot;</p>
 <p>Niemand. The last book to be examined is Mr. Wilson&#x27;s new Manual, founded on the Syllabus of the Geometrical Association.</p>
 <p>Minos. We had better begin by examining the Syllabus itself. I own that I could have wished to do this in the presence of some member of the Committee, who might have supplied a few details for what is at present little more than a skeleton; but that, I fear, is out of the question.</p>
@@ -1729,7 +2080,7 @@ Leander, Mr. Ekenhead, and I did.&quot;</p>
 <p>Now let us regard OA &quot;as lying between the other two&quot;. Which are &quot;the angles which it makes with the other two&quot;? For this Line OA — which you rightly call the mean, lying being always mean — makes, be pleased to observe, four angles altogether: two with OB, and two with OC.</p>
 <p>Nostradamus. I cannot answer your question. You confuse me.</p>
 <p>Minos. I need not have troubled you. I see that I can obtain an answer from the Syllabus itself. It says, at the end of Def. 11, &quot;when the angle contained by two lines is spoken of without qualification, the minor conjugate angle is to be understood.&quot; Here we have a case in point, as these angles are spoken of without qualification. So that the angles alluded to are both of them minor conjugate angles, and lie on the same side of OA. And these we are told to call adjacent angles!</p>
-<h4>How do you define a Right Angle?</h4>
+<h3 class="sub">How do you define a Right Angle?</h3>
 <p>Nostradamus. As in Euclid.</p>
 <p>Minos. Let me hear it, if you please. You know Euclid has no major or minor conjugate angles.</p>
 <p>Nostradamus reads.</p>
@@ -1825,7 +2176,7 @@ Leander, Mr. Ekenhead, and I did.&quot;</p>
 <p>Your Definition of Right Angle is a failure.</p>
 <p>You substitute Playfair&#x27;s Axiom for Euclid&#x27;s 12th.</p>
 <p>All these things are very poor compensation indeed for the vital changes you propose — the separation of Problems and Theorems, and the abandonment of Euclid&#x27;s order and numeration. Restore the Problems (which are also Theorems) to their proper places, keep to Euclid&#x27;s numbering (interpolating your new Propositions where you please), and your Syllabus may yet prove to be a valuable addition to the literature of Elementary Geometry.</p>
-<h4>§ 2. Wilson&#x27;s Syllabus-Manual</h4>
+<h3 class="sub">§ 2. Wilson&#x27;s Syllabus-Manual</h3>
 <p>&quot;No followers allowed.&quot;</p>
 <p>The Times&#x27; advertisement-sheet, passim.</p>
 <p>Niemand. I lay before you Elementary Geometry, following the Syllabus prepared by the Geometrical Association, by J. M. Wilson, M.A., 1878.</p>
@@ -1950,7 +2301,7 @@ Leander, Mr. Ekenhead, and I did.&quot;</p>
 <h2 id="act-four-euclid-s-manual">Act Four: Euclid&#x27;s Manual</h2>
 <p>&quot;Old friends are best.&quot;</p>
 <p>[Scene as before. Time, the early dawn. Minos slumbering uneasily, having fallen forwards upon the table, his forehead resting on the inkstand. To him enter Euclid on tip-toe, followed by the phantasms of Archimedes, Pythagoras, Aristotle, Plato, and others, who have come to see fair play.]</p>
-<h4>§ 1. Treatment of Pairs of Lines</h4>
+<h3 class="sub">§ 1. Treatment of Pairs of Lines</h3>
 <p>Euclid. Are all gone?</p>
 <p>Minos. &quot;Be cheerful, sir:
 Our revels now are ended: these our actors,
@@ -1975,7 +2326,7 @@ Are melted into air, into thin air!&quot;</p>
 <p>Minos. I should wish, in the first place, to lay before you the general charges which have been brought against you; then to discuss your treatment of Lines and Angles, as contrasted with that of your Rivals; and lastly the omissions, alterations and additions proposed by them.</p>
 <p>Euclid. Good. Let us begin.</p>
 <p>Minos. I will take the general charges under three headings: Construction, Demonstration, and Style. And first as to Construction.</p>
-<h4>§ 2. Euclid&#x27;s Constructions</h4>
+<h3 class="sub">§ 2. Euclid&#x27;s Constructions</h3>
 <p>I am told that you indulge too much in &quot;arbitrary restrictions&quot;. Mr. Reynolds says (Pref. p. vi) &quot;The arbitrary restrictions of Euclid involve him in various inconsistencies, and exclude his constructions from use. When, for instance, in order to mark off a length upon a straight Line, he requires us to describe five Circles, an equilateral Triangle, one straight line of limited, and two of unlimited length, he condemns his system to a divorce from practice at once and from sound reason.&quot;</p>
 <p>Euclid. Mr. Reynolds has misunderstood me: I do not require all that construction in Prop. 3. To explain my meaning I must go back to Prop. 2, and I must ask your patience while I make a few general remarks on construction. The machinery I allow consists of a pencil, a ruler, and a pair of compasses to be used for drawing a Circle about a given centre and passing through a given point — that is what I mean by &quot;at any distance&quot; — but not to be used for transferring distances from one part of a diagram to another until it has been shown that such transference can be effected by the machinery already allowed.</p>
 <p>Minos. But why not allow such transference without proving that possibility?</p>
@@ -1989,7 +2340,7 @@ Are melted into air, into thin air!&quot;</p>
 <p>Minos. Their charge against you is &quot;the exclusion of hypothetical constructions&quot;. Mr. Wilson says (Pref. p. i) &quot;The exclusion of hypothetical constructions may be mentioned as a self-imposed restriction which has made the confused order of his first book necessary, without any compensating advantage.&quot;</p>
 <p>Euclid. In reply, I cannot do better than refer you to Mr. Todhunter&#x27;s Essay on Elementary Geometry (p. 186): &quot;Confused order is rather a contradictory expression,&quot; and what follows.</p>
 <p>Minos. Your reply is satisfactory. Mr. Wilson himself is an instance of the danger of such a method. Three times at least (pp. 46, 70, 88) he produces Lines to meet without attempting to prove that they will meet.</p>
-<h4>§ 3. Euclid&#x27;s Demonstrations</h4>
+<h3 class="sub">§ 3. Euclid&#x27;s Demonstrations</h3>
 <p>Minos. The next heading is Demonstration. You are charged with an &quot;invariably syllogistic form of reasoning&quot; (Wilson, Pref. p. i).</p>
 <p>Euclid. Do you know, I am vain enough to think that a merit rather than a defect? Let me quote what Mr. Cuthbertson says on this point (Pref. p. vii): &quot;Euclid&#x27;s mode of demonstration, in which the conclusion of each step is preceded by reasoning expressed with all the exactness of the minor premiss of a syllogism, of which some previous proposition is the major premiss, has been adopted as offering a good logical training, and also as being peculiarly adapted for teaching large classes, rendering it possible for the teacher to call first upon one, then upon another, and so on, to take up any link in the chain of argument.&quot; Perhaps even Mr. Wilson&#x27;s own book would not be the worse if the reasoning were a trifle more syllogistic!</p>
 <p>Minos. A fair retort. You are also charged with &quot;too great length of demonstration&quot;. Mr. Wilson says (Pref. p. i) &quot;The real objections to Euclid as a text-book are... the length of his demonstrations.&quot; And Mr. Cooley says (Pref. p. 1) &quot;The important and fertile theorems, which crown the heights in this field of knowledge, are here all retained, and those only are omitted which seem to be but the steps of a needlessly protracted ascent. The short road thus opened will be found perfectly solid in construction, and at the same time far less tedious and fatiguing than the circuitous one hitherto in vogue.&quot;</p>
@@ -1998,11 +2349,11 @@ Are melted into air, into thin air!&quot;</p>
 <p>Euclid. I think you had better refer him to Mr. Wilson and Mr. Cooley: they will answer him, and he in his turn will confute them!</p>
 <p>Minos. The last charge relating to demonstration is, in Mr. Wilson&#x27;s words (Pref. p. viii), &quot;the constant reference to general Axioms and general Propositions, which are no clearer in the general statement than they are in the particular instance&quot; — which practice, he says, makes the study of Geometry &quot;unnecessarily stiff, obscure, tedious and barren.&quot;</p>
 <p>Euclid. One advantage of making a general statement, and afterwards referring to it instead of repeating it, is that you have to go through the mental process of affirming or proving the truth once for all: apparently Mr. Wilson would have you begin de novo and think out the truth every time you need it! But the great reason for always referring back to your universal, instead of affirming the particular — Mr. Wilson is merely starting the old logical hare &quot;Is the syllogism a Petitio Principii?&quot; — is that the truth of the particular does not rest on any data peculiar to itself, but on general principles applicable to all similar cases; and that, unless those general principles prove the conclusion for all cases, they cannot be warranted to prove it for any one selected case. If, for instance, I see a hundred men, and am told that some assertion is true of ninety-nine of them, but am not told that it is true of all, I am not justified in affirming it of any selected man, for he might chance to be the excepted one. Now the assertion, that the truth of the particular case under notice depends on general principles and not on peculiar circumstances, is neither more nor less than the assertion of the universal affirmative which Mr. Wilson deprecates.</p>
-<h4>§ 4. Euclid&#x27;s Style</h4>
+<h3 class="sub">§ 4. Euclid&#x27;s Style</h3>
 <p>Minos. Quite satisfactory. I will now take the third heading, namely Style.</p>
 <p>You are charged with Artificiality, Unsuggestiveness, and Want of Simplicity. Mr. Wilson says (Pref. p. i) &quot;The real objections to Euclid as a text-book are his artificiality... and his unsuggestiveness&quot;; and again, &quot;he has sacrificed, to a great extent, simplicity and naturalness in his demonstrations, without any corresponding gain in grasp or cogency.&quot;</p>
 <p>Euclid. Well, really I cannot deal with general charges like these. I prefer to abide by the verdict of my readers during these two thousand years. As to unsuggestiveness, that is a charge which cannot, I admit, be retorted on Mr. Wilson: his book is very suggestive — of remarks which, perhaps, would not be wholly &quot;music to his ear&quot;!</p>
-<h4>§ 5. Euclid&#x27;s Treatment of Lines and Angles</h4>
+<h3 class="sub">§ 5. Euclid&#x27;s Treatment of Lines and Angles</h3>
 <p>Minos. Let us now take the subjects of Right Lines and Angles; and first, the Right Line.</p>
 <p>I see, by reference to the original, that you define it as a Line &quot;which lies evenly as to points on it&quot;. That of course is only an attempt to give the mind a grasp of the idea. It leads to no geometrical results, I think?</p>
 <p>Euclid. No; nor does any definition of it that I have yet seen.</p>
@@ -2032,7 +2383,7 @@ Are melted into air, into thin air!&quot;</p>
 <p>As to right angles, it has been suggested that your Axiom &quot;all right angles are equal to one another&quot; is capable of proof as a Theorem.</p>
 <p>Euclid. I do not object to the interpolation of such a Theorem, though there is very little to distinguish so simple a Theorem from an Axiom.</p>
 <p>Minos. Let us now consider the omissions, alterations and additions which have been proposed by your Modern Rivals.</p>
-<h4>§ 6. Omissions, Alterations and Additions Suggested by Modern Rivals</h4>
+<h3 class="sub">§ 6. Omissions, Alterations and Additions Suggested by Modern Rivals</h3>
 <p>Euclid. Which of my Theorems have my Modern Rivals proposed to omit?</p>
 <p>Minos. Without dwelling on such extreme cases as that of Mr. Pierce, who omits no less than 19 of the 35 Theorems in your First Book, I may say that the only two as to which I have found anything like unanimity are I. 7 and II. 8.</p>
 <p>Euclid. As to I. 7, I have several reasons to urge in favour of retaining it.</p>
@@ -2078,7 +2429,7 @@ Are melted into air, into thin air!&quot;</p>
 <p>&quot;Of all the Lines which can be drawn to a Line from a point without it, the perpendicular is least; and, of the rest, that which is nearer to the perpendicular is less than one more remote; and the lesser is nearer than the greater; and from the same point only two equal Lines can be drawn to the other Line, one on each side of the perpendicular.&quot;</p>
 <p>Euclid. I like it on the whole, though so long an enunciation will be alarming to beginners. But it is strictly analogous to III. 7. Introduce it by all means in the revised edition of my Manual. It will be well, however, to lay it down as a general rule that no Proposition shall be so interpolated unless it be of such importance and value as to be thought worthy of being quoted as proved, in the same way in which candidates in examinations are now allowed to quote Propositions of mine.</p>
 <p>Minos. (with a fearful yawn) Well! I have no more to say.</p>
-<h4>§ 7. The Summing-Up</h4>
+<h3 class="sub">§ 7. The Summing-Up</h3>
 <p>Euclid. &quot;The cock doth craw, the day doth daw,&quot; and all respectable ghosts ought to be going home. Let me carry with me the hope that I have convinced you of the importance, if not the necessity, of retaining my order and numbering, and my method of treating straight Lines, angles, right angles, and (most especially) Parallels. Leave me these untouched, and I shall look on with great contentment while other changes are made — while my proofs are abridged and improved, while alternative proofs are appended to mine, and while new Problems and Theorems are interpolated.</p>
 <p>In all these matters my Manual is capable of almost unlimited improvement.</p>
 <p>[To the sound of slow music, Euclid and the other ghosts &quot;heavily vanish&quot;, according to Shakespeare&#x27;s approved stage-direction. Minos wakes with a start, and betakes himself to bed, &quot;a sadder and a wiser man&quot;.]</p>

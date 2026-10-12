@@ -19,8 +19,359 @@
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=navigation" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 	<link rel="preload" href="fonts/libre-caslon-text-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="stylesheet" href="fonts.css">
-	<link rel="stylesheet" href="book.css">
+	<style>
+/* Fonts for every page (front pages and book pages), served from this site
+   rather than Google Fonts: a third-party
+   stylesheet blocked rendering for ~0.8 s on mobile (PageSpeed, 2026-10-12).
+   Oswald, Yellowtail and Libre Caslon Text (SIL Open Font License), latin and
+   latin-ext subsets as Google serves them, in site/fonts/. */
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* The book pages. Shared by every page assemble.py writes; fonts in fonts.css.
+
+   LEGIBILITY FIRST. The running text is set in the best screen serif the
+   reader's own device has (Charter on Apple, Sitka Text on Windows, Georgia
+   or Noto Serif elsewhere), near-black on white, 19-20px, ~66 characters to
+   the line. The Emend look (Libre Caslon Text, navy, the cream band, Oswald
+   labels) is kept to the title band, the headings and the controls. */
+
+:root {
+  --page:  #ffffff;
+  --text:  #1c1c1c;
+  --ink:   #1b314d;     /* navy: headings, links, buttons */
+  --cream: #f4efe2;
+  --soft:  #5a6472;
+  --rule:  #ddd6c8;
+  --link:  #1f4f86;
+  --plate-bg: #ffffff;
+  --reading: Charter, "Bitstream Charter", "Sitka Text", Georgia, "Noto Serif", serif;
+  --display: "Libre Caslon Text", Georgia, serif;
+  --label:   "Oswald", "Arial Narrow", sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page:  #14181e;
+    --text:  #e4e0d8;
+    --ink:   #e8e2d4;
+    --cream: #1d2430;
+    --soft:  #a3adba;
+    --rule:  #343c48;
+    --link:  #9cc2e6;
+  }
+  /* plates and diagrams are drawn on white paper; keep them on it, slightly dimmed */
+  figure img { opacity: .92; }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html {
+  background: var(--page);
+  color: var(--text);
+  font-size: 20px;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--reading);
+  line-height: 1.65;
+  font-kerning: normal;
+}
+
+main { max-width: 34rem; margin: 0 auto; padding: 0 1rem 5rem; }
+
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+
+/* ---------- title band ---------- */
+
+.title-block {
+  background: var(--cream);
+  padding: 1.6rem 1rem 1.8rem;
+  margin-bottom: 2rem;
+}
+.title-inner {
+  max-width: 44rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.8rem;
+  align-items: center;
+}
+.title-block .series {
+  grid-column: 1 / -1;
+  margin: 0 0 0.2rem;
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.title-block .series a { color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 0.55rem; }
+.title-block .series a:hover span { text-decoration: underline; }
+.title-block .series img { height: 1.8rem; width: auto; }
+.cover img {
+  display: block;
+  width: 150px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+}
+.title-text { min-width: 0; }
+h1 {
+  font: 700 2rem/1.15 var(--display);
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+  text-align: left;
+}
+.title-line { margin: 0 0 0.3rem; font-size: 0.95rem; color: var(--ink); }
+.title-line.byline { font-weight: 700; }
+.dates { margin: 0 0 0.9rem; font-size: 0.85rem; color: var(--soft); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.button {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid var(--ink);
+  font: 500 0.75rem/1.2 var(--label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+}
+.button.primary { background: var(--ink); color: var(--page); }
+.button:hover { text-decoration: underline; }
+
+/* phones: a small cover beside the title, so the text starts sooner */
+@media (max-width: 36rem) {
+  .title-block { padding: 1.1rem 1rem 1.4rem; }
+  .title-inner { grid-template-columns: 76px 1fr; gap: 0.9rem; align-items: start; }
+  .cover img { width: 76px; height: 114px; }
+  h1 { font-size: 1.45rem; }
+  .actions { grid-column: 1 / -1; }
+}
+
+/* ---------- running text ---------- */
+
+.intro-note { font-style: italic; font-size: 0.9rem; color: var(--soft); }
+
+h2, h3, h4 {
+  font-family: var(--display);
+  color: var(--ink);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+h2 { font-size: 1.45rem; margin: 3.2rem 0 1rem; }
+h3 { font-size: 1.2rem; margin: 2.8rem 0 0.9rem; }
+h4, h3.sub { font-size: 1rem; margin: 2rem 0 0.8rem; font-style: italic; }
+h2.center { text-align: center; font-size: 1.6rem; margin-top: 4rem; }
+
+p, ul, ol { margin: 0 0 1.15em; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+blockquote {
+  margin: 1.5em 0 1.5em 1em;
+  padding-left: 1em;
+  border-left: 3px solid var(--rule);
+  font-style: italic;
+}
+blockquote p { margin-bottom: 0.8em; }
+
+pre.outline {
+  font-family: var(--reading);
+  white-space: pre-wrap;
+  line-height: 1.6;
+  margin: 0 0 1.15em;
+}
+
+img.glyph { vertical-align: middle; display: inline; }
+span.frac, span.stack { display: inline-block; vertical-align: middle; text-align: center; }
+span.frac > span, span.stack > span { display: block; }
+span.frac > span.num { border-bottom: 1px solid currentColor; }
+span.stack.brace { border-left: 2px solid currentColor; border-right: 2px solid currentColor; border-radius: 0.6em; padding: 0 0.3em; }
+math { font-size: 1.05em; }
+
+figure { margin: 2.2em auto; text-align: center; }
+figure + figure { margin-top: 1em; }
+figure img { max-width: 100%; height: auto; background: var(--plate-bg); }
+figcaption {
+  margin-top: 0.6em;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--soft);
+  text-align: left;
+}
+
+table.plates { width: 100%; margin: 2.5em 0; border-collapse: collapse; line-height: 1.5; }
+table.plates td { padding: 0.4em 0.8em; vertical-align: middle; border-bottom: 1px solid var(--rule); }
+table.plates tr:last-child td { border-bottom: none; }
+table.plates figure, table.plates figure + figure { margin: 0.4em auto; }
+table.plates figcaption { display: none; }
+
+/* page locators: a printed page and quarter, for books that cite
+   themselves by them (Helmholtz: "see p. 77c") */
+span.loc { font-size: 0.65em; color: var(--soft); vertical-align: 0.3em; padding: 0 0.15em; font-style: normal; }
+a.ref { color: inherit; text-decoration: underline dotted; }
+span.sc { font-variant: small-caps; }
+.center { text-align: center; }
+.subtitle { text-align: center; font-style: italic; }
+
+/* ---------- contents ---------- */
+
+nav.contents h2 { margin-top: 0; }
+.toc-book { font-family: var(--display); font-weight: 700; margin: 1.2em 0 0.4em; color: var(--ink); }
+.toc-list { list-style: none; padding-left: 1.2em; margin: 0 0 1em; }
+.toc-list li { margin-bottom: 0.3em; line-height: 1.4; }
+nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
+
+/* ---------- reading aids (book.js) ---------- */
+
+.resume {
+  margin: 0 0 1.5rem;
+  padding: 0.7rem 1rem;
+  background: var(--cream);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+.resume[hidden] { display: none; }
+
+.to-contents {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 5;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--page);
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+.to-contents.show { opacity: .92; pointer-events: auto; }
+
+@media (max-width: 36rem) {
+  html { font-size: 18px; }
+}
+
+@media print {
+  .title-block { background: none; }
+  .actions, .to-contents, .resume { display: none; }
+}
+</style>
 	<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "Cato's Letters", "author": {"@type": "Person", "name": "John Trenchard and Thomas Gordon"}, "inLanguage": "en", "url": "https://emend.press/catos-letters.html", "description": "Eighteen selected letters on liberty, power, and free speech — the columns that taught America to argue for revolution. Retold in modern English, free to read online and as an ebook.", "publisher": {"@type": "Organization", "name": "Emend Press", "url": "https://emend.press/", "logo": "https://emend.press/apple-touch-icon.png"}, "isAccessibleForFree": true, "isPartOf": {"@type": "BookSeries", "name": "Modern Classics", "url": "https://emend.press/"}, "image": "https://emend.press/covers/catos-letters.jpg", "datePublished": "2026", "bookEdition": "Modern English retelling", "isBasedOn": {"@type": "Book", "name": "Cato's Letters", "author": {"@type": "Person", "name": "John Trenchard and Thomas Gordon"}}, "workExample": {"@type": "Book", "bookFormat": "https://schema.org/EBook", "encodingFormat": "application/epub+zip", "url": "https://emend.press/ebooks/john-trenchard-and-thomas-gordon_catos-letters.epub"}}</script>
 </head>
 
@@ -103,7 +454,7 @@
 <p>Valerius Maximus tells us that when Lentulus Marcellinus, the Roman consul, complained in a popular assembly of the overgrown power of Pompey, the whole people answered him with a shout of approval. At which the consul told them: &quot;Shout on, gentlemen, shout on. Use those bold signs of liberty while you may, for I do not know how long they will be allowed you.&quot;</p>
 <p>God be thanked, we Englishmen have neither lost our liberties nor stand in danger of losing them. Let us always cherish this matchless blessing, almost peculiar to ourselves, so that our posterity, many ages from now, may credit their freedom to our zeal. The defense of liberty is a noble, a heavenly office — one that can be performed only where liberty exists. For, as the same Valerius Maximus observes: what is liberty without Cato? No more than Cato without liberty.</p>
 <p>I am, etc.</p>
-<h4>G</h4>
+<h3 class="sub">G</h3>
 </section>
 <section aria-labelledby="letter-25-the-destructive-spirit-of-arbitrary-power">
 <h2 id="letter-25-the-destructive-spirit-of-arbitrary-power">Letter 25: The Destructive Spirit of Arbitrary Power</h2>
@@ -141,7 +492,7 @@ Under a blind dependency on one!</p>
 <p>From all this we may see what a fatal and crying crime it would be, in any free country, to break the confidence between the prince and his people. When loyalty is once turned into indifference, indifference will soon be turned into hatred; hatred will be repaid with hatred; resentment may produce tyranny, and rage may produce rebellion. There is no mischief that this mutual mistrust and aversion may not bring forth. The blackest traitors, therefore, are those who are the first authors of so terrible an evil — and so are those who would endeavor to protect them.</p>
 <p>Henry III of Castile said that he feared the curses of his people more than he did the arms of his enemies. In that saying he showed as much wisdom as humanity: for while he was loved at home, he had nothing to fear from abroad, and the curses of his subjects were the likeliest means of bringing the arms of his enemies upon him.</p>
 <p>I am, etc.</p>
-<h4>G</h4>
+<h3 class="sub">G</h3>
 </section>
 <section aria-labelledby="letter-31-the-weakness-and-inconsistencies-of-human-nature">
 <h2 id="letter-31-the-weakness-and-inconsistencies-of-human-nature">Letter 31: The Weakness and Inconsistencies of Human Nature</h2>
@@ -165,7 +516,7 @@ Under a blind dependency on one!</p>
 <p>The hardships and distresses of this year show all too plainly the rogueries and depredations of the last. Villainy was let loose among us, and every man tried to entrap and ruin his neighbor in order to enrich himself. Honesty was browbeaten and driven into corners; humanity was extinguished; all friendship was abolished; even the distinction of kindred and the ties of blood were thrown aside. A raging passion for immoderate gain had made men universally and intensely hard-hearted; they were everywhere devouring one another. And yet the directors and their accomplices, the acting instruments of all this outrageous madness and mischief, set up for wonderfully pious persons even while they were defying Almighty God and plundering men — and they set apart a fund of subscriptions for charitable uses. That is to say: they mercilessly made a whole people beggars, and charitably supported a few needy and worthless favorites. I do not doubt that if the villainy had gone on with success, their names would have been handed down to posterity with praise, as the names of other public robbers have been. We have historians and ode-makers now living who are very fit for such a task. It is certain that most people did, at one time, believe the directors to be great and worthy persons; and an honest country clergyman told me last summer, on the road, that Sir John was an excellent public-spirited person — for he had beautified his chancel.</p>
 <p>On the whole, we must not judge one another by our fair pretensions and our best actions, since the worst men do some good, and all men make fine professions. We must judge men by the whole of their conduct, and by its effects. Thorough honesty requires great and long proof, since many a man long thought honest has at length proved a knave. And it is from judging without proof — or on too little proof, or on false proof — that mankind continues unhappy.</p>
 <p>I am, etc.</p>
-<h4>G</h4>
+<h3 class="sub">G</h3>
 </section>
 <section aria-labelledby="letter-33-cautions-against-the-encroachments-of-power">
 <h2 id="letter-33-cautions-against-the-encroachments-of-power">Letter 33: Cautions Against the Encroachments of Power</h2>
@@ -184,7 +535,7 @@ Under a blind dependency on one!</p>
 <p>Some have said that magistrates, being accountable to none but God, ought to know no other restraint. But this reasoning is as frivolous as it is wicked. No good man cares how many punishments and penalties stand in the way of an offense he never intends to commit: a man who does not mean to commit murder is not sorry that murder is punished with death. And as for wicked men, their being accountable to a God whom they do not fear is no security to us against their folly and malice; and to say that we ought to have no security against them is to insult common sense, and to give the lie to the first law of nature — the law of self-preservation. Human reason says that no obedience and no regard are due to rulers who govern by no rule but their appetite. Such men are not rulers; they are outlaws, who, being at defiance with God and man, are protected by no law of God or of reason. By what precept, moral or divine, are we forbidden to kill a wolf, or burn an infected ship? Is it unlawful to prevent wickedness and misery, and to resist the authors of them? Are crimes sanctified by their size? Is the man who robs a country and murders ten thousand less a criminal than the man who steals single guineas and takes single lives? Is there any sin in preventing, restraining, or resisting the greatest sin that can be committed — the oppression and destruction of mankind wholesale? Surely there never were such open, such shameless, such self-serving impostors as the advocates for lawless power! It is a damnable sin to oppress them; yet it is a damnable sin to oppose them when they oppress others, or grow rich by the oppression! Let them be hurt ever so little themselves — let them merely imagine they have been hurt — and they are the loudest of all men in their complaints, and the most outrageous in their behavior. But when others are plundered, oppressed, and butchered, complaints become sedition, and seeking redress becomes damnation. Is this not to be the authors of all wickedness and all falsehood?</p>
 <p>To conclude: power without control belongs to God alone, and no man ought to be trusted with what no man is equal to. In truth, there are so many passions, so many inconsistencies, and so much selfishness in human nature that we can scarcely be too much on our guard against each other. The only security we can have that men will be honest is to make it their interest to be honest; and the best defense we can have against their being knaves is to make it terrible to them to be knaves. And since there are many men who are wicked in some stations who would be innocent in others, the best way is to make wickedness unsafe in any station.</p>
 <p>I am, etc.</p>
-<h4>G</h4>
+<h3 class="sub">G</h3>
 </section>
 <section aria-labelledby="letter-35-of-public-spirit">
 <h2 id="letter-35-of-public-spirit">Letter 35: Of Public Spirit</h2>
@@ -208,7 +559,7 @@ Under a blind dependency on one!</p>
 <p>In those countries, if the judgment of the people were consulted, things would go better. But the people are despised, and their governors count them happy enough so long as they do not eat grass; and having no representatives and no share in the government, they have no remedy. Their misery, indeed, is such that their condition would be greatly improved if they could trade places with the beasts of the field: for then, being destined to be eaten, they would be better fed. What a misfortune for them that their governors are not cannibals! O happy Britain — may you remain so forever!</p>
 <p>For a conclusion: since the preservation of property is the source of national happiness, whoever violates property, or lessens or endangers it, is — common sense says — an enemy to his country; and public spirit says that he should feel its vengeance. As yet in England, we can speak such bold truths; and we never dread to see the day when it will be safer for one man to be a traitor than for another man, or for a whole people, to call him one. Wherever public spirit is found dangerous, she will soon be seen dead.</p>
 <p>I am, etc.</p>
-<h4>G</h4>
+<h3 class="sub">G</h3>
 </section>
 <section aria-labelledby="letter-38-the-right-of-the-people-to-judge-of-government">
 <h2 id="letter-38-the-right-of-the-people-to-judge-of-government">Letter 38: The Right of the People to Judge of Government</h2>
@@ -236,7 +587,7 @@ Under a blind dependency on one!</p>
 <p>By the Bill of Rights and the Act of Settlement, at the Revolution, a right is asserted to the people: the right of applying to the King and to Parliament, by petition and address, for the redress of public grievances and mismanagements — when such there are, and of that the people are left to judge. Here, principally, lies the difference between free countries and enslaved ones: in the free, the magistrates must consult the voice and interest of the people; in the enslaved, the private will, interest, and pleasure of the governors are the sole ends and motives of their administration.</p>
 <p>Such is the difference between England and Turkey — a difference that the men who say private citizens have no right to concern themselves with government would flatly abolish. They would convert magistrates into pashas, and bring the spirit of popery into politics. The late Revolution stands upon the very opposite maxim; and that any man dares contradict that maxim since the Revolution would be astonishing, did we not know that in every country there are hirelings who would betray it for a sop.</p>
 <p>I am, etc.</p>
-<h4>G</h4>
+<h3 class="sub">G</h3>
 </section>
 <section aria-labelledby="letter-42-considerations-on-the-nature-of-laws">
 <h2 id="letter-42-considerations-on-the-nature-of-laws">Letter 42: Considerations on the Nature of Laws</h2>
@@ -279,7 +630,7 @@ Under a blind dependency on one!</p>
 <p>Virtue is the one and only nobility, says Juvenal. Do you want to be counted upright, and to hold fast to justice in deed and word? Then first show me the goodness of your mind.</p>
 <p>We cannot bring more natural advantages into the world than other men do; but we can acquire more virtue in it than we generally bother to acquire. To be great is not in every man&#x27;s power; but to be good is in the power of all. In this, every man can stand on a level with every other, the lowest with the highest — and men might thus come to be morally, as well as naturally, equal.</p>
 <p>I am, etc.</p>
-<h4>G</h4>
+<h3 class="sub">G</h3>
 </section>
 <section aria-labelledby="letter-59-liberty-proved-to-be-the-unalienable-right-of-all-mankind">
 <h2 id="letter-59-liberty-proved-to-be-the-unalienable-right-of-all-mankind">Letter 59: Liberty Proved to Be the Unalienable Right of All Mankind</h2>
@@ -309,7 +660,7 @@ Under a blind dependency on one!</p>
 <p>This was the case with Richard II, Edward II, and James II; and it will ever be the case under the same circumstances. No society of men will groan under oppressions any longer than they know how to throw them off — whatever unnatural whimsies and fairy notions idle, sedentary babblers may utter from colleges and cloisters, teaching others, for vile self-serving ends, doctrines which they themselves are famous for not practicing.</p>
 <p>Upon this principle — the people judging for themselves and resisting lawless force — stands our late happy Revolution, and with it the just and rightful title of our most excellent sovereign King George to the scepter of these realms: a scepter which he has swayed, and I do not doubt will ever sway, to his own honor, and to the honor, protection, and prosperity of us his people.</p>
 <p>I am, etc.</p>
-<h4>T</h4>
+<h3 class="sub">T</h3>
 </section>
 <section aria-labelledby="letter-60-all-government-instituted-by-men-for-the-good-of-men">
 <h2 id="letter-60-all-government-instituted-by-men-for-the-good-of-men">Letter 60: All Government Instituted by Men, for the Good of Men</h2>
@@ -334,7 +685,7 @@ Under a blind dependency on one!</p>
 <p>This was the ancient constitution of England. Our kings had neither revenues large enough, nor offices profitable and numerous enough at their disposal, to corrupt any considerable number of members — nor any force to frighten them with. Besides, the same Parliament seldom or never met twice. Serving in it was found to be a burden, not a source of profit; so it was thought reasonable that all qualified men should take their turns leaving their families and their private affairs to serve the public, and their boroughs paid their expenses. The only grievance then was that Parliaments were not called together often enough to redress the wrongs the people suffered from the court in the intervals; and so a law was made in Edward III&#x27;s time that Parliaments should be held once a year.</p>
 <p>But this law, like the late Queen&#x27;s Peace, did not execute itself. The court seldom convened Parliaments except when it wanted money, or had other purposes of its own to serve — and sometimes it raised money without them. That arbitrary proceeding brought numberless miseries upon the public, and, in the reign of King Charles I, a long and bloody civil war. In that reign an act was passed providing that Parliaments should assemble of their own accord if they were not summoned as the law directed — an act worthily repealed at the restoration of King Charles II. And in the same generous fit, a great revenue was granted him for life, and continued to his brother. By these means those princes were enabled to keep standing troops, to corrupt Parliaments or to live without them, and to commit such acts of power as brought on — indeed forced the people into — the late happy Revolution. Soon afterward a new act was passed requiring Parliaments to be freshly chosen once every three years; and that law too was repealed, upon his Majesty&#x27;s accession to the throne, so that the present Parliament might have time to rectify the abuses we labor under, and to make regulations fit to prevent them all in the future. All of which, we are told, has since been happily accomplished; and, I bless God, we are told that the people will have the opportunity, at another election, to thank them for their great services to their country. I shall always be ready, for my part, to do them honor, and to pay them my acknowledgments in the most effective manner in my power. But more of this in the papers to come.</p>
 <p>I am, etc.</p>
-<h4>T</h4>
+<h3 class="sub">T</h3>
 </section>
 <section aria-labelledby="letter-61-how-free-governments-are-to-be-framed-so-as-to-last">
 <h2 id="letter-61-how-free-governments-are-to-be-framed-so-as-to-last">Letter 61: How Free Governments Are to Be Framed So As to Last</h2>
@@ -353,7 +704,7 @@ Under a blind dependency on one!</p>
 <p>It is a most scandalous slander on his faithful servants to suggest that any of them, conscious of guilt and crimes, could fear the strictest and most rigorous inspection of their proceedings. Some of them have already stood the fiery trial and come off triumphant, to general applause. They have, besides, the advantage of his Majesty&#x27;s most gracious pardon — which they did not need, and which was not passed for their sakes. Who, then, can suspect that patriots so uncorrupt, so prudent, and so popular would dishonor their master, give up the constitution, ruin their country, and make themselves objects of universal scorn, detestation, and cursing, by advising the most odious, dangerous, and destructive measures that counselors ever gave a prince?</p>
 <p>And it is a most ungrateful return to our illustrious representatives to suggest such a thing of men who left their domestic concerns to serve their country at their own expense, and without any personal advantage; who have bestowed their labors on the public for a good deal longer than the people who sent them had at first any right to expect; who have spent all that time correcting the abuses that had crept into our constitution; who have assisted his Majesty through two very useful and necessary wars; who have regulated our finances and the expense of our guards and garrisons, and corrected many abuses in the fleet and the civil administration; and who have taken effectual vengeance on everyone concerned in promoting, procuring, aiding, or assisting the late dreadful South Sea project. After so many things done by them for the public honor and prosperity, I say, it is the basest ingratitude to surmise that any of them would give up the very constitution they were chosen — and have taken such pains — to preserve.</p>
 <p>I do confess that if an invasion were to be feared from Muscovy, Mecklenburg, Spain, or Civitavecchia; if new provinces were to be acquired abroad, new armies raised, or new fleets fitted out for warlike expeditions; if new provision were wanted for the Civil List, new taxes to be levied, or new companies to be erected to pay off the public debts; if the universities needed further regulating, or any inspection were called for into the swelling fees and exactions of civil officers; if there were the least ground to suspect bribery or corruption in any place where it ought not to be; or if there were any new project on foot to banish tyrannical and popish principles far out of the land — in such a scene of affairs, I say, I dare not be quite so positive in asserting that we ought to gamble, and leave to pure chance, what we already have in hand. But as matters stand, we are in a happy state of indolence and security, at peace with all the world and with our own consciences. Little more money can be squeezed from the people, most of it being already in certain hands — which, by the rules of good policy, unites dominion with property. Our benefactors, moreover, are generous and honorable; our boroughs are neither insensible nor ungrateful; nor are the counties themselves inexorable to shining merit. So it is much to be hoped that another Parliament may be chosen every bit as deserving as this one, and as zealous for the public interest — or, at worst, there are honest and well-tried measures at hand which will undoubtedly make it so. And I offer this as a conclusive, and I think a most convincing, argument that the kingdom will be obliged with a new election.</p>
-<h4>T</h4>
+<h3 class="sub">T</h3>
 </section>
 <section aria-labelledby="letter-62-the-nature-and-extent-of-liberty">
 <h2 id="letter-62-the-nature-and-extent-of-liberty">Letter 62: The Nature and Extent of Liberty</h2>
@@ -384,7 +735,7 @@ Under a blind dependency on one!</p>
 <p>But if such a prince&#x27;s own disposition is evil, what must be the forlorn condition of his people, and what door of hope can remain for common protection? The best princes often have evil counselors; the bad will have no other. And in that case, what bounds can be set to their fury, and to the havoc they will make? The instruments and advisers of tyranny and plunder always thrive best, and come nearest their goals, when plunder and tyranny run highest: the more that is stripped from the people, the greater their share. We may therefore expect every evil to befall such a people, without expecting extravagantly. No happiness, no security — only certain misery, and a vile and precarious life: these are the blessed terms of such a government. A government of this kind necessarily introduces every evil, and by the same necessity neither must nor can redress any of them.</p>
 <p>The nature of such a prince&#x27;s education — bred up, as he always is, in perpetual flattery — makes him haughty and ignorant; and the nature of his government, which subsists by brutish severity and oppression, makes him cruel. He is inaccessible except through his ministers, whose study and interest is to keep him from knowing, or helping, the condition of his miserable people. Their master&#x27;s knowledge of his own affairs would break in upon their scheme and their power. They are not likely to lay before him accounts of grievances they themselves have caused; and if the grievances are the effects of his own barbarity and his own commands, he will not hear them.</p>
 <p>Even where absolute princes are not tyrants, their ministers will be tyrants. But in truth it is impossible for an arbitrary prince to be anything else, since oppression is absolutely necessary to his remaining arbitrary. Without giving his people liberty, he cannot make them happy; and by giving them liberty, he gives up his own power. So, to be and remain arbitrary, he is doomed to be a tyrant in his own defense. The oppression of the people; corruption, wicked counselors, and pernicious maxims in the court; and everywhere baseness, ignorance, and chains — these must support tyranny, or it cannot be supported. In such governments, therefore, there are inevitable grievances without possible redress, and misery without mitigation or remedy. Whatever is good for the people is bad for their governors; and what is good for the governors is destructive to the people.</p>
-<h4>G</h4>
+<h3 class="sub">G</h3>
 </section>
 <section aria-labelledby="letter-63-civil-liberty-produces-all-civil-blessings">
 <h2 id="letter-63-civil-liberty-produces-all-civil-blessings">Letter 63: Civil Liberty Produces All Civil Blessings</h2>
@@ -406,7 +757,7 @@ Under a blind dependency on one!</p>
 <p>I showed in my last letter that an arbitrary prince cannot protect his people even if he wants to; I add here that he dares not. It would disgust the instruments of his power and the sharers in his oppression, who consider the people&#x27;s property the perquisites of their office, and who claim the privilege of being little tyrants as payment for making him a great one. Every kindness to his subjects becomes a grievance to his servants; and he must push his tyranny to its full height for their sakes, or they will do it for him. The instances are rare, if there are any at all, of an absolute monarch protecting his people in earnest against the depredations of his ministers and soldiers without its costing him his life — Roman history supplies many examples. For this the emperor Pertinax was murdered; so was Galba.</p>
 <p>Machiavelli has told us that it is impossible for such a prince to please both the people and his soldiers: the one will not be satisfied without protection, nor the other without plunder. To satisfy the people, he must give up his power; to satisfy his soldiers, he must give up his people. So to remain what he is, and to protect himself from the violence of his own followers, he must countenance all their villainies and oppressions, and be himself no more than an imperial thief at the head of a band of thieves — a character for which he is generally well qualified by the base and cruel maxims of that kind of power, and by the vile education almost always given to such a prince by the worst and most infamous of all men, his supple and lying sycophants.</p>
 <p>Even the Christian religion can do little or no good in lands of tyranny, now that miracles have ceased; instead it is made to do infinite harm, corrupted and perverted into a deadly engine in the hands of a tyrant and his impostors, used to rivet his subjects&#x27; chains and to confirm them as thorough wretches, slaves, and ignorants. Indeed, I cannot say that such countries have the Christian religion among them at all; they only use its lovely name to countenance abominable falsehoods, nonsense, and heavy oppression, and to defend a furious and implacable bigotry — which is the direct character and spirit of Mahometanism, and destroys the very genius and first principles of Christianity. All this will be shown further hereafter. I shall conclude with observing that arbitrary monarchy is a constant war upon heaven and earth — against the souls, as well as the bodies and properties, of men.</p>
-<h4>G</h4>
+<h3 class="sub">G</h3>
 </section>
 <section aria-labelledby="letter-68-property-and-commerce-secure-in-a-free-government-only">
 <h2 id="letter-68-property-and-commerce-secure-in-a-free-government-only">Letter 68: Property and Commerce Secure in a Free Government Only</h2>
@@ -444,7 +795,7 @@ Under a blind dependency on one!</p>
 <p>Such examples show what promising methods these governors take to multiply people, trade, and riches.</p>
 <p>As for the politer arts, I grant that several of them have flourished under some of the Popes themselves, and under other arbitrary princes — painting, architecture, sculpture, and music. But these arts, and their refinements, owed nothing to that sort of government. It was by liberty alone, and by the privileges granted to their practitioners, that men came to excel in them; they never would have excelled on the common footing of the princes&#x27; other subjects. To make them excellent, the princes had to make them free. And so even tyrants, the enemies of liberty, were forced to come begging to liberty for their furniture, their luxury, their pomp, their pleasure, and their entertainment; and for those particular purposes they granted it to particular men. The rest of their subjects they left in the condition of brutes, in livelihood and in knowledge alike. For it is liberty, more than shape, that makes the difference between a man and a beast; reason without liberty proves little better than none, and sometimes worse. Servitude mars all genius; neither a pen nor a paintbrush is of any use in a hand that is manacled.</p>
 <p>I am, etc.</p>
-<h4>G</h4>
+<h3 class="sub">G</h3>
 </section>
 <section aria-labelledby="letter-84-property-the-first-principle-of-power">
 <h2 id="letter-84-property-the-first-principle-of-power">Letter 84: Property the First Principle of Power</h2>
@@ -463,7 +814,7 @@ Under a blind dependency on one!</p>
 <p>Before I conclude this letter, I will observe only this: some of the greatest events in human affairs need no caballing of different interests, no joint councils, no concerted and regular measures to bring them about. And so, in great public emergencies, oppressors will find no safety in the apparent opposition of parties — for parties are like a pair of shears, which cut only what comes between them, precisely when they seem most to threaten each other. When nature has prepared the way, everything tends toward its proper center; and though men will dally for a while and play with their lesser interests, at last they fall mechanically into their great ones, often without intending it or knowing it. Men will always feel their strength when they cannot reason about it, or are afraid to. I could name a party that for above thirty years has acted in the interests of liberty, and for most of that time could not bear the sound of the word — until at last great numbers of them were caught by the very principles they most detested. I intend this as a seasonable caution to all who have the honor to sit at the helm of states, or to advise princes who may someday need such a reminder.</p>
 <p>In my next letter I shall try to show, on the principles laid down here, that England at present is capable of no other form of government than the one it enjoys, and has a right to enjoy; and that a certain neighboring state will preserve the constitution it now possesses only with very great difficulty.</p>
 <p>I am, etc.</p>
-<h4>T</h4>
+<h3 class="sub">T</h3>
 </section>
 <section aria-labelledby="letter-106-of-plantations-and-colonies">
 <h2 id="letter-106-of-plantations-and-colonies">Letter 106: Of Plantations and Colonies</h2>
@@ -482,7 +833,7 @@ Under a blind dependency on one!</p>
 <p>As for our southern plantations, we are already on a tolerable footing there. Their products are so different in kind from our own that they can never compete with us; and the climates are so unhealthy that no more people will go or stay there than are needed to raise the commodities we want. They can never be dangerous to us. But our northern colonies are healthy climates, and can raise all or most of the commodities our own country produces. They increase constantly in people, and will go on increasing; and without the precautions I have described, they must, by the natural course of human affairs, come to compete with most branches of our trade, work up our best manufactures themselves, and at last grow too powerful and unruly to be governed for our interest alone. Since the way lies open to us to prevent so much mischief, to do so much good, and to add so much wealth and power to Great Britain by making those countries the storehouses of our naval supplies, I hope we will not throw all these advantages away as a favor to the interests of a few private gentlemen, or even of a few counties.</p>
 <p>We have had a sample of this sort of wisdom already, in the law prohibiting Irish cattle. The cattle used to be brought to England lean, in exchange for our goods, and fattened here; now they are slaughtered and shipped abroad directly from Ireland, and we lose the whole carrying trade, the merchants&#x27; profit, and the market for the goods we once sent to buy them. And lately we have passed another such prudent law, to block the import of Irish woolens — which has driven the Irish to wear none of ours, to make all or most of their own cloth themselves, to export great quantities of every sort by smuggling, and to send the greater part of their raw wool to rival nations. It is only thanks to the plague in France, to their Mississippi Company, and to the total collapse of their credit that we have not lost a great part of that manufacture altogether. True, we have made some notable provision to fence in the cuckoo — to make the whole people of that kingdom enforce a law which it is every man&#x27;s interest there not to enforce; and it is enforced accordingly.</p>
 <p>Sometime hereafter I will consider that kingdom in relation to the interest of Great Britain. For now I will say only this: Ireland is too powerful to be treated as a mere colony; and if we mean to keep the Irish our friends, the best way to do it is to imitate the example of merchants and shopkeepers — when their apprentices have learned the trade and know the customers, and their time is up, take them into partnership rather than let them set up for themselves next door.</p>
-<h4>T</h4>
+<h3 class="sub">T</h3>
 </section>
 <section aria-labelledby="letter-115-the-encroaching-nature-of-power">
 <h2 id="letter-115-the-encroaching-nature-of-power">Letter 115: The Encroaching Nature of Power</h2>
@@ -501,7 +852,7 @@ Under a blind dependency on one!</p>
 <p>This is how the Roman people checked power and the men who held it; and when any power had grown completely ungovernable, they abolished it. So they expelled Tarquin, and monarchy with him, having first suffered a great deal under it; and they prospered spectacularly without it. Even that royal government had been tightly limited. The first Roman kings were little more than generals for life. They had no veto in the senate; they could make neither war nor peace; and even in the administration of justice an appeal lay from them to the people — as is clear in the case of the surviving Horatius, who killed his own sister. Servius Tullius made laws, Tacitus tells us, which even the kings had to obey. By confining the power of the crown within proper bounds, he gained power without bounds in the affections of the people. But the insolent Tarquin smashed through every bound, and acted so openly against the law and against the people of Rome that they had no remedy left but to expel him and his whole line — which they did, with glorious success.</p>
 <p>Afterwards the power of a dictator was granted from time to time, and proved very useful; but it was always limited to a fixed number of months, and there are cases where even the dictator could not do as he pleased, but was overruled by the judgment of the people. And when Rome came to have great and distant territories, and great armies, the Romans decided the dictatorial power was too great and too dangerous to trust to any subject, and set it aside entirely. It was never used again — until it was violently usurped, first by Sulla, then by Caesar. And then Rome lost its liberty.</p>
 <p>I am, etc.</p>
-<h4>T</h4>
+<h3 class="sub">T</h3>
 </section>
 <section aria-labelledby="letter-138-cato-s-farewell">
 <h2 id="letter-138-cato-s-farewell">Letter 138: Cato&#x27;s Farewell</h2>
@@ -515,7 +866,7 @@ Under a blind dependency on one!</p>
 <p>It is certain that the capacities of men would carry them much further than they are allowed to go, if they were not cramped by custom, by narrow education, and by narrow principles taken from the very men who design and draw advantage from their ignorance. I have grieved to see men of large and extensive genius — men who seemed made by nature to carry human knowledge many degrees beyond where it has yet gone, and to free their country and mankind from the servile, wicked notions drilled into them by prating pedants and babbling impostors — I say, I have grieved to see such capacities spent entirely on whims, idle speculations, empty notions, fairy-dreams, and party distinctions; all of it tending to shrink and embitter the mind, to stifle and oppress the faculties, and to turn men into the dupes and machines of ambitious, proud, and greedy churchmen, or of corrupt statesmen. Nor can I see how this great evil will ever be cured until we change the education of our youth: let gentlemen be bred by gentlemen, and not by monks and pedants. Let the pedants dream on, by all means, with their bellies full of college ale and their heads full of college distinctions; but they ought not to be trusted with the education of our nobility and gentry until they have some of their own.</p>
 <p>And now let me repeat, once more, that I could not possibly have taken up this undertaking — so troublesome to myself, and, I hope, of some benefit to my countrymen — with any view to my own personal advantage. I hope no one thinks so meanly of my understanding as to believe I meant to win favor with any of the powers of this world by attacking vice, corruption, and folly wherever and in whomever I found them. I knew what I was walking into. I knew I would have to walk over burning ploughshares; that I must provoke numerous and powerful societies and parties; that I must disturb nests of hornets, and sometimes venture too near the lion&#x27;s den — sometimes within reach of Jove&#x27;s own thunder. I knew that men in possession of reverence would not bear being told they did not deserve it; that those who rioted in power, and fattened on the public&#x27;s misfortune, would hear very unwillingly that their power was a trust held for the public&#x27;s advantage and not their own; that every motive of honor, virtue, and religion obliged them to serve and protect the people out of whose industry and wealth they were so richly rewarded; and that they deserved the severest punishment if they did otherwise. I had all this before my eyes. But armed with innocence, and animated by love of God and mankind, I resolved to brave the danger, in defiance of the worst that could happen to me, in the service of my country — and I have braved it. I now have the pleasure of seeing great numbers of my fellow subjects approve my endeavors and embrace my opinions. And so I here lay down this paper, and with it the most virtuous and noble subject that can employ the human soul: the subject of religion and government.</p>
 <p>I am, etc.</p>
-<h4>T and G</h4>
+<h3 class="sub">T and G</h3>
 </section>
 </article>
 </main>

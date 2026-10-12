@@ -19,8 +19,359 @@
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=navigation" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 	<link rel="preload" href="fonts/libre-caslon-text-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="stylesheet" href="fonts.css">
-	<link rel="stylesheet" href="book.css">
+	<style>
+/* Fonts for every page (front pages and book pages), served from this site
+   rather than Google Fonts: a third-party
+   stylesheet blocked rendering for ~0.8 s on mobile (PageSpeed, 2026-10-12).
+   Oswald, Yellowtail and Libre Caslon Text (SIL Open Font License), latin and
+   latin-ext subsets as Google serves them, in site/fonts/. */
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* The book pages. Shared by every page assemble.py writes; fonts in fonts.css.
+
+   LEGIBILITY FIRST. The running text is set in the best screen serif the
+   reader's own device has (Charter on Apple, Sitka Text on Windows, Georgia
+   or Noto Serif elsewhere), near-black on white, 19-20px, ~66 characters to
+   the line. The Emend look (Libre Caslon Text, navy, the cream band, Oswald
+   labels) is kept to the title band, the headings and the controls. */
+
+:root {
+  --page:  #ffffff;
+  --text:  #1c1c1c;
+  --ink:   #1b314d;     /* navy: headings, links, buttons */
+  --cream: #f4efe2;
+  --soft:  #5a6472;
+  --rule:  #ddd6c8;
+  --link:  #1f4f86;
+  --plate-bg: #ffffff;
+  --reading: Charter, "Bitstream Charter", "Sitka Text", Georgia, "Noto Serif", serif;
+  --display: "Libre Caslon Text", Georgia, serif;
+  --label:   "Oswald", "Arial Narrow", sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page:  #14181e;
+    --text:  #e4e0d8;
+    --ink:   #e8e2d4;
+    --cream: #1d2430;
+    --soft:  #a3adba;
+    --rule:  #343c48;
+    --link:  #9cc2e6;
+  }
+  /* plates and diagrams are drawn on white paper; keep them on it, slightly dimmed */
+  figure img { opacity: .92; }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html {
+  background: var(--page);
+  color: var(--text);
+  font-size: 20px;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--reading);
+  line-height: 1.65;
+  font-kerning: normal;
+}
+
+main { max-width: 34rem; margin: 0 auto; padding: 0 1rem 5rem; }
+
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+
+/* ---------- title band ---------- */
+
+.title-block {
+  background: var(--cream);
+  padding: 1.6rem 1rem 1.8rem;
+  margin-bottom: 2rem;
+}
+.title-inner {
+  max-width: 44rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.8rem;
+  align-items: center;
+}
+.title-block .series {
+  grid-column: 1 / -1;
+  margin: 0 0 0.2rem;
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.title-block .series a { color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 0.55rem; }
+.title-block .series a:hover span { text-decoration: underline; }
+.title-block .series img { height: 1.8rem; width: auto; }
+.cover img {
+  display: block;
+  width: 150px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+}
+.title-text { min-width: 0; }
+h1 {
+  font: 700 2rem/1.15 var(--display);
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+  text-align: left;
+}
+.title-line { margin: 0 0 0.3rem; font-size: 0.95rem; color: var(--ink); }
+.title-line.byline { font-weight: 700; }
+.dates { margin: 0 0 0.9rem; font-size: 0.85rem; color: var(--soft); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.button {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid var(--ink);
+  font: 500 0.75rem/1.2 var(--label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+}
+.button.primary { background: var(--ink); color: var(--page); }
+.button:hover { text-decoration: underline; }
+
+/* phones: a small cover beside the title, so the text starts sooner */
+@media (max-width: 36rem) {
+  .title-block { padding: 1.1rem 1rem 1.4rem; }
+  .title-inner { grid-template-columns: 76px 1fr; gap: 0.9rem; align-items: start; }
+  .cover img { width: 76px; height: 114px; }
+  h1 { font-size: 1.45rem; }
+  .actions { grid-column: 1 / -1; }
+}
+
+/* ---------- running text ---------- */
+
+.intro-note { font-style: italic; font-size: 0.9rem; color: var(--soft); }
+
+h2, h3, h4 {
+  font-family: var(--display);
+  color: var(--ink);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+h2 { font-size: 1.45rem; margin: 3.2rem 0 1rem; }
+h3 { font-size: 1.2rem; margin: 2.8rem 0 0.9rem; }
+h4, h3.sub { font-size: 1rem; margin: 2rem 0 0.8rem; font-style: italic; }
+h2.center { text-align: center; font-size: 1.6rem; margin-top: 4rem; }
+
+p, ul, ol { margin: 0 0 1.15em; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+blockquote {
+  margin: 1.5em 0 1.5em 1em;
+  padding-left: 1em;
+  border-left: 3px solid var(--rule);
+  font-style: italic;
+}
+blockquote p { margin-bottom: 0.8em; }
+
+pre.outline {
+  font-family: var(--reading);
+  white-space: pre-wrap;
+  line-height: 1.6;
+  margin: 0 0 1.15em;
+}
+
+img.glyph { vertical-align: middle; display: inline; }
+span.frac, span.stack { display: inline-block; vertical-align: middle; text-align: center; }
+span.frac > span, span.stack > span { display: block; }
+span.frac > span.num { border-bottom: 1px solid currentColor; }
+span.stack.brace { border-left: 2px solid currentColor; border-right: 2px solid currentColor; border-radius: 0.6em; padding: 0 0.3em; }
+math { font-size: 1.05em; }
+
+figure { margin: 2.2em auto; text-align: center; }
+figure + figure { margin-top: 1em; }
+figure img { max-width: 100%; height: auto; background: var(--plate-bg); }
+figcaption {
+  margin-top: 0.6em;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--soft);
+  text-align: left;
+}
+
+table.plates { width: 100%; margin: 2.5em 0; border-collapse: collapse; line-height: 1.5; }
+table.plates td { padding: 0.4em 0.8em; vertical-align: middle; border-bottom: 1px solid var(--rule); }
+table.plates tr:last-child td { border-bottom: none; }
+table.plates figure, table.plates figure + figure { margin: 0.4em auto; }
+table.plates figcaption { display: none; }
+
+/* page locators: a printed page and quarter, for books that cite
+   themselves by them (Helmholtz: "see p. 77c") */
+span.loc { font-size: 0.65em; color: var(--soft); vertical-align: 0.3em; padding: 0 0.15em; font-style: normal; }
+a.ref { color: inherit; text-decoration: underline dotted; }
+span.sc { font-variant: small-caps; }
+.center { text-align: center; }
+.subtitle { text-align: center; font-style: italic; }
+
+/* ---------- contents ---------- */
+
+nav.contents h2 { margin-top: 0; }
+.toc-book { font-family: var(--display); font-weight: 700; margin: 1.2em 0 0.4em; color: var(--ink); }
+.toc-list { list-style: none; padding-left: 1.2em; margin: 0 0 1em; }
+.toc-list li { margin-bottom: 0.3em; line-height: 1.4; }
+nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
+
+/* ---------- reading aids (book.js) ---------- */
+
+.resume {
+  margin: 0 0 1.5rem;
+  padding: 0.7rem 1rem;
+  background: var(--cream);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+.resume[hidden] { display: none; }
+
+.to-contents {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 5;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--page);
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+.to-contents.show { opacity: .92; pointer-events: auto; }
+
+@media (max-width: 36rem) {
+  html { font-size: 18px; }
+}
+
+@media print {
+  .title-block { background: none; }
+  .actions, .to-contents, .resume { display: none; }
+}
+</style>
 	<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "Garden Cities of To-morrow", "author": {"@type": "Person", "name": "Ebenezer Howard"}, "inLanguage": "en", "url": "https://emend.press/howard.html", "description": "The Three Magnets and the town of 32,000 in its belt of farmland: the book that invented the garden city, its diagrams transcribed. A restored edition, free to read online and as an ebook.", "publisher": {"@type": "Organization", "name": "Emend Press", "url": "https://emend.press/", "logo": "https://emend.press/apple-touch-icon.png"}, "isAccessibleForFree": true, "isPartOf": {"@type": "BookSeries", "name": "Modern Classics", "url": "https://emend.press/"}, "image": "https://emend.press/covers/howard.jpg", "datePublished": "1902", "workExample": {"@type": "Book", "bookFormat": "https://schema.org/EBook", "encodingFormat": "application/epub+zip", "url": "https://emend.press/ebooks/ebenezer-howard_garden-cities-of-to-morrow.epub"}}</script>
 </head>
 
@@ -104,7 +455,7 @@
 <p>“If they wanted a permanent remedy of the evil they must remove the cause; they must back the tide, and stop the migration of the people into the towns, and get the people back to the land. The interest and the safety of the towns themselves were involved in the solution of the problem.”—<em>Daily Chronicle</em>, 6th November, 1891.</p>
 <p>Dean Farrar says:</p>
 <p>“We are becoming a land of great cities. Villages are stationary or receding; cities are enormously increasing. And if it be true that great cities tend more and more to become the graves of the physique of our race, can we wonder at it when we see the houses so foul, so squalid, so ill-drained, so vitiated by neglect and dirt?”</p>
-<h4>Dr. Rhodes, at the Demographic Congress, called attention to</h4>
+<h3 class="sub">Dr. Rhodes, at the Demographic Congress, called attention to</h3>
 <p>“the migration which was going on from the English agricultural districts. In Lancashire and other manufacturing districts 35 per cent. of the population were over 60 years of age, but in agricultural districts they would have over 60 per cent. Many of the cottages were so abominable that they could not call them houses, and the people so deteriorated in physique that they were not able to do the amount of work which able-bodied persons should do. Unless something was done to make the lot of the agricultural labourer better, the exodus would go on, with what results in the future he dared not say.”—<em>Times</em>, 15th August, 1891.</p>
 <p>The Press, Liberal, Radical, and Conservative, views this grave symptom of the time with the same alarm. The <em>St. James’s Gazette</em>, on June 6, 1892, remarks:</p>
 <p>“How best to provide the proper antidote against the greatest danger of modern existence is a question of no mean significance.”</p>
@@ -185,7 +536,7 @@
 <p>From these considerations, surely it is obvious that the “<em>rate-rent</em>” which the farmer will be willing to pay into the treasury of Garden City will be considerably higher than the <em>rent</em> he would be willing to pay to a private landlord, who, besides increasing his rent as the farmer makes his land more valuable, will also leave him with the full burden of local taxation resting upon him. In short the plan proposed embraces a system of sewage-disposal which will return to the soil in a transmuted form many of those products the growth of which, by exhausting its natural fertility, demand elsewhere the application of manures so expensive that the farmer becomes sometimes blinded to their necessity, and it also embraces a system of rate-rents by which many of the farmer’s hard-earned sovereigns, hitherto lost to him by being paid away to his landlord, shall return to his exhausted exchequer, not indeed in the form in which they left it, but in a variety of useful forms, such as roads, schools, markets, which will assist him most materially, though indirectly, in his work, but which, under present conditions, entail so severe a burden as to make him naturally slow to see their inherent necessity, and even to look upon some of them with suspicion and dislike. Who can doubt that if the farm and the farmer can be placed under conditions so healthful and natural alike in a physical and moral sense, the willing soil and the hopeful farmer will alike respond to their new environment—the soil becoming more fertile by every blade of grass it yields, the farmer richer by every penny of rate-rent he contributes?</p>
 <p>We are now in a position to see that the rate-rent which will be readily paid by farmer, small occupier, and allotment holder, would be considerably greater than the rent he paid before (1) because of the presence of a new town population demanding new and more profitable farm products, in respect of which railway charges can be largely saved; (2) by the due return to the soil of its natural elements; (3) by the just, equitable, and natural conditions on which the land is held; and (4) by reason of the fact that the rent now paid is <em>rate and rent</em>, while the rent formerly paid left the rates to be paid by the tenant.</p>
 <p>But certain as it is that the “<em>rate-rent</em>” would represent a very considerable increase over the bare <em>rent</em> formerly paid by the tenants on the estate, it is still very much a matter of conjecture what the “rate-rent” would be; and we shall, therefore, be acting prudently if we greatly under-estimate the “rate-rent” which would probably be offered. If, then, in view of all the circumstances, we estimate that the <em>farming population</em> of Garden City will be prepared to pay for rates and rent 50 per cent. more than they before paid for <em>rent alone</em>, we shall reach the following result:—</p>
-<h4><em>Estimated Gross Revenue from Agricultural Estate.</em></h4>
+<h3 class="sub"><em>Estimated Gross Revenue from Agricultural Estate.</em></h3>
 <table class="math">
 <tr><td>Original rent paid by tenants of 5,000 acres, say</td><td>£6,500</td></tr>
 <tr><td>Add 50 per cent. for contributions to rates and sinking fund,</td><td>3,250</td></tr>
@@ -272,40 +623,40 @@
 </table>
 <p>Besides the above expenditure, a considerable outlay would be incurred in respect of markets, water supply, lighting, tramways, and other revenue-yielding undertakings. But these items of expenditure are almost invariably attended with considerable profits, which go in aid of rates. No calculation, therefore, need be made in respect of these.</p>
 <p>I will now deal separately with most of the items in the above estimate.</p>
-<h4><em>A. Roads and Streets.</em></h4>
+<h3 class="sub"><em>A. Roads and Streets.</em></h3>
 <p>The first point to be observed under this head is that the cost of making new streets to meet the growth of population is generally not borne by the ground landlord nor defrayed out of the rates. It is usually paid by the building-owner before the local authorities will consent to take the road over as a free gift. It is obvious, therefore, that the greater part of the £100,000 <em>might</em> be struck out. Experts will also not forget that the cost of the road sites is elsewhere provided for. In considering the question of the actual sufficiency of the estimate, they will also remember that of the boulevards one-half and of the streets and avenues one-third may be regarded as in the nature of park, and the cost of laying out and maintenance of these portions of the roads is dealt with under the head “Parks.” They will also note that road-making materials would probably be found near at hand, and that, the railway relieving the streets of most of the heavy traffic, the more expensive methods of paving need not be resorted to. The cost, £4,000 per mile, would, however, be doubtless inadequate if subways are constructed, as probably they ought to be. The following consideration, however, has led me not to estimate for these. Subways are, where useful, a source of economy. The cost of maintaining roads is lessened, as the continual breaking-up for laying and repairing of water, gas, and electric mains is avoided, while any waste from leaky pipes is quickly detected, and thus the subways <em>pay</em>. Their cost should, therefore, be debited rather to cost of water, gas, and electric supplies, and these services are almost invariably a source of revenue to the Company or Corporation which constructs them.</p>
-<h4><em>B. Country Roads.</em></h4>
+<h3 class="sub"><em>B. Country Roads.</em></h3>
 <p>These roads are only 40 feet wide, and £1,200 a mile is ample. The cost of sites has in this case to be defrayed out of estimate.</p>
-<h4><em>C. Circular Railway and Bridges.</em></h4>
+<h3 class="sub"><em>C. Circular Railway and Bridges.</em></h3>
 <p>The cost of site is elsewhere provided for (<em>see</em> p. 40). The cost of maintenance does not, of course, include working expenses, locomotives, etc. To cover these a charge based on cost might be made to traders using the line. It should also be noticed that, as in the case of roads, by showing that the expense of this undertaking could be defrayed out of the rate-rent, I am proving more than I undertook to prove. I am proving that the rate-rent is sufficient to provide for landlords’ rent, for such purposes as are usually defrayed out of rent, <em>and also for greatly extending the area of municipal activity</em>.</p>
 <p>It may here be well to point out that this circle railway not only will save the trader the expense of carting to and from his warehouse or factory, but will enable him to claim a rebate from the railway company. Section 4 of the Railway and Canal Tariff Act, 1894, enacts: “Whenever merchandise is received or delivered by a railway company at any siding or branch railway not belonging to the company, and a dispute arises between the railway company and the consignor or consignee of such merchandise, as to any allowance or rebate from the rates charged to such consignor or consignee, in respect that the railway company does not provide station accommodation or perform terminal services, the Railway and Canal Commissioners shall have jurisdiction to hear and determine what, if any, is a just and reasonable allowance or rebate.”</p>
-<h4><em>D. Schools.</em></h4>
+<h3 class="sub"><em>D. Schools.</em></h3>
 <p>This estimate of £12 per school place represents what was only a few years ago (1892) the average cost per child of the London School Board for building, architect, and clerk of the works, and for furniture and fittings; and no one can doubt that buildings greatly superior to those in London could be obtained for this sum. The saving in sites has been already dealt with, but it may be remarked that in London the cost per child for sites has been £6 11s 10d.</p>
 <p>As showing how ample this estimate is, it may be observed that the cost of schools which have been proposed to be built by a private company at Eastbourne, “with a view of keeping out the School Board,” is estimated at £2,500 for 400 places, or but little more than half the sum per school place provided in the estimate for Garden City.</p>
 <p>The cost of maintenance, £3 per head, is probably sufficient, in view of the fact that the “expenditure per scholar in actual average attendance” in England and Wales, as given in the Report of the Committee of Council on Education, 1896-97, c. 8545, is £2 11s. 11½d. It must be especially noticed, too, that the whole cost of education is, in these estimates, assumed to be borne by Garden City, though a considerable part would be, in the ordinary course, borne by the National Exchequer. The amount of income per scholar in actual average attendance in England and Wales, as given in the same report, is £1 1s. 2d. as against a rate in Garden City of £3. So that I am again, in the case of the schools, as in the case of roads and circle railway, proving more than I set out to prove.</p>
-<h4><em>E. Town Hall and Expenses of Management.</em></h4>
+<h3 class="sub"><em>E. Town Hall and Expenses of Management.</em></h3>
 <p>It is to be noticed that the estimates of the various undertakings are intended to cover professional direction and supervision of architects, engineers, teachers, etc. The £2,000 for maintenance and working expenses under this head is, therefore, intended to include only the salaries of town clerk and of officials other than those comprised under special heads, together with incidental expenses.</p>
-<h4><em>F. Library, and G. Museum.</em></h4>
+<h3 class="sub"><em>F. Library, and G. Museum.</em></h3>
 <p>The latter is usually and the former not infrequently elsewhere provided for out of funds other than rates. So, here again, I am more than proving my case.</p>
-<h4><em>H. Parks and Road Ornamentation.</em></h4>
+<h3 class="sub"><em>H. Parks and Road Ornamentation.</em></h3>
 <p>This item of cost would not be incurred until the undertaking was in a thoroughly sound financial condition, and the park space for a considerable period might be a source of revenue as agricultural land. Further, much of the park space would probably be left in a state of nature. Forty acres of this park space is road ornamentation, but the planting of trees and shrubs would not entail great expense. Again, a considerable part of the area would be reserved for cricket-fields, lawn-tennis courts, and other playgrounds, and the clubs using public grounds might perhaps be called upon to contribute to the expense of keeping these in order, as is customary elsewhere.</p>
-<h4><em>I. Sewage.</em></h4>
+<h3 class="sub"><em>I. Sewage.</em></h3>
 <p>All that need be said on this subject has been said in Chap. i., page 25, and Chap. ii., page 32.</p>
-<h4><em>K. Interest.</em></h4>
+<h3 class="sub"><em>K. Interest.</em></h3>
 <p>The money to construct the public works with which we have been dealing is supposed to be borrowed at 4½ per cent. The question here arises—a question partly dealt with in Chap. iv.—what is the security for those who lend money on the “B” debentures?</p>
 <p>My answer is three-fold.</p>
 <p>(1) Those who advance money to effect any improvements on land have a security the safety of which is in reality largely determined by the effectiveness with which the money so advanced is spent; and, applying this truism, I venture to say that, for effectiveness of expenditure, no money which the investing public has been for many years asked to subscribe for improvements of a like nature has an equal security, whether it be measured by miles of road, acres of park, or numbers of school children well provided for.</p>
 <p>(2) Those who advance money to effect improvements on land have a security the safety of which is largely determined by the consideration, aye or no, are other and yet more valuable works to be simultaneously carried out by others at their own expense, which other works are to become a security in respect of the first-mentioned advance; and, applying this second truism, I say that, as the money for effecting the public improvements here described would only be asked for as and when other improvements—factories, houses, shops, etc. (costing far more money than the public works necessary at any given period)—were about to be built or were in process of building, the quality of the security would be a very high one.</p>
 <p>(3) It is difficult to name a better security than that offered when money is to be expended in converting an agricultural estate into an urban, and this of the very best known type.</p>
 <p>That the scheme is in reality a 3 per cent. security, and would in its later stages become so, I entertain little doubt; but I do not forget that, though its points of novelty are the very elements which really <em>make</em> it secure, they may not make it <em>seem</em> so, and that those who are merely looking out for an investment may eye it with some distrust because of its novelty. We shall have in the first instance to look to those who will advance money with somewhat mixed motives—public spirit, love of enterprise, and possibly, as to some persons, with a lurking belief that they will be able to dispose of their debentures at a premium, as they probably will. Therefore, I put down 4½ per cent., but if anyone’s conscience prick him he may tender at 2 or 2½, or may even advance money without interest.</p>
-<h4><em>L. Sinking Fund.</em></h4>
+<h3 class="sub"><em>L. Sinking Fund.</em></h3>
 <p>This sinking fund, which provides for the extinction of the debt in thirty years, compares most favourably with that usually provided by local bodies for works of so permanent a character. The Local Government Board frequently allows loans to be created with a sinking fund extending over much longer periods. It is to be remembered also that an additional sinking fund for the landed estate has been already provided (<em>see</em> Chapter iv., p. 42).</p>
 <p><em>M. Balance available for Rates levied by Local Bodies within whose jurisdiction the estate is situated.</em></p>
 <p>It will be seen that the whole scheme of Garden City will make extremely few demands upon the resources of outside local authorities. Roads, sewers, schools, parks, libraries, etc., will be provided out of the funds of the new “municipality,” and in this way the whole scheme will come to the agriculturists at present on the estate very much like “a rate in aid”; for, as rates are only raised for the purpose of public expenditure, it follows that, there being little or no fresh call upon the rates while the number of ratepayers is greatly increased, the rate per head must fall. I do not, however, forget that there are some functions which such a voluntary organisation as Garden City could not take over, such as the police and the administration of the poor-law. As to the latter, it is believed that the whole scheme will in the long run make such rates unnecessary, as Garden City will provide, at all events from the time when the estate has been fully paid for, pensions for all its needy old citizens. Meantime and from the very outset it is doing its full share of charitable work. It has allotted sites of 30 acres for various institutions, and at a later stage will doubtless be prepared to assume the whole cost of maintaining them.</p>
 <p>With regard to police rates, it is not believed that these can be largely increased by the coming into the town of 30,000 citizens, who, for the most part, will be of the law-abiding class; for, there being but one landlord, and this the community, it will not be difficult to prevent the creation of those surroundings which make the intervention of the police so frequently necessary. (<em>See</em> Chapter vii.)</p>
 <hr>
 <p>I have, I think, now fully established my contention that the rate-rent which would be willingly offered by the tenants of Garden City, in respect of the advantages afforded them, would be amply sufficient, (1) to pay landlord’s rent in the form of interest on debentures; (2) to provide a sinking fund for the entire abolition of landlord’s rent; and (3) to provide for the municipal needs of the town without recourse to any Act of Parliament for the enforcement of rates—the community depending solely on the very large powers it possesses as a landlord.</p>
-<h4><em>N. Revenue-bearing Expenditure.</em></h4>
+<h3 class="sub"><em>N. Revenue-bearing Expenditure.</em></h3>
 <p>If the conclusion already arrived at—that the experiment advocated affords an outlet for an extremely effective expenditure of labour and capital—is sound in regard to objects the cost of which is usually defrayed out of rates, that conclusion must, I think, be equally sound in regard to tramways, lighting, water-supply, and the like, which, when carried on by municipalities, are usually made a source of revenue, thus relieving the rate-payer by making his rates lighter. And as I have added nothing to the proposed revenue for any prospective profits on such undertakings, I do not propose to make any estimate of expenditure.</p>
 <p>Footnote: “Birmingham rates are relieved to the extent of £50,000 a year out of profits on gas. The Electrical Committee of Manchester has promised to pay £10,000 this year to the city fund, in relief of rates out of a net profit of over £16,000.”—<em>Daily Chronicle</em>, 9th June, 1897.</p>
 </section>
@@ -316,22 +667,22 @@
 <p>Bearing this in mind, the municipality of Garden City will, at the outset, exercise great caution, and not attempt too much. The difficulty of raising the necessary funds with which to carry on municipal undertakings would be greatly increased if the Board of Management attempted to do everything; and, in the prospectus to be ultimately issued, a clear statement will be made of what the Corporation undertakes to do with the moneys entrusted to it, and this will at first embrace little more than those things which experience has proved municipalities can perform better than individuals. Tenants, too, will, it is obvious, be far more ready to offer adequate “rate-rents” if they are given distinctly to understand to what purpose those “rate-rents” are to be devoted, and after those things are done, and done well, little difficulty will be placed in the way of further appropriate extensions of the field of municipal enterprise.</p>
 <p>Our answer, then, to the question, what field is to be covered by municipal enterprise, is this. Its extent will be measured simply by the willingness of the tenants to pay rate-rents, and will grow in proportion as municipal work is done efficiently and honestly, or decline as it is done dishonestly or inefficiently. If, for example, the tenants find that a very small additional contribution, recently made in the shape of “rate-rent,” has enabled the authorities to provide an excellent supply of water for all purposes, and they are convinced that so good a result at so small a cost would not have been achieved through the agency of any private undertaking working for a profit, they will naturally be willing and even anxious that further hopeful-looking experiments in municipal work should be undertaken. The site of Garden City may, in this respect, be compared with Mr. and Mrs. Boffin’s famous apartment, which, the reader of Dickens will remember, was furnished at one end to suit the taste of Mrs. Boffin, who was “a dab at fashion,” while at the other end it was furnished to conform to the notions of solid comfort which so gratified Mr. Boffin, but with the mutual understanding between the parties that if Mr. B. should get by degrees to be “a high-flyer” at fashion, then Mrs. B.’s carpet would gradually “come for’arder,” whilst if Mrs. B. should become “less of a dab at fashion,” Mrs. B.’s carpet would “go back’arder.” So, in Garden City, if the inhabitants become greater “dabs” at co-operation, the municipality will “come for’arder”; if they become less “dabs” at co-operation, the municipality will “go back’arder”; while the relative number of positions occupied by municipal workers and non-municipal workers at any period will very fairly reflect the skill and integrity of the public administration and the degree of value which is therefore associated with municipal effort.</p>
 <p>But the municipality of Garden City, besides setting its face against any attempt to embark upon too large a field of enterprise, will so frame its constitution that the responsibility for each branch of the municipal service will be thrown directly upon the officers of that branch and not be practically lost sight of because loosely thrown upon the larger central body—a plan which makes it difficult for the public to perceive where any leakage or friction may be taking place. The constitution is modelled upon that of a large and well-appointed business, which is divided into various departments, each department being expected to justify its own continued existence—its officers being selected, not so much for their knowledge of the business generally as for their special fitness for the work of their department.</p>
-<h4>The Board of Management</h4>
+<h3 class="sub">The Board of Management</h3>
 <p>consists of—</p>
 <p>(1) The Central Council.</p>
 <p>(2) The Departments.</p>
-<h4>THE CENTRAL COUNCIL (<em>see</em> Diagram 5)</h4>
+<h3 class="sub">THE CENTRAL COUNCIL (<em>see</em> Diagram 5)</h3>
 <p>In this council (or its nominees) are vested the rights and powers of the community as sole landlord of Garden City. Into its treasury are paid (after provision has been made for landlord’s rent and sinking fund) all rate-rents received from its tenants, as well as the profits derived from its various municipal undertakings, and these, we have seen, are amply sufficient to discharge all public burdens without any resort to the expedient of compulsory rates. The powers possessed by the Central Council are, it may be noticed in passing, more ample than those possessed by other municipal bodies, for whilst most of these enjoy only such powers as are expressly conferred on them by Acts of Parliament, the Central Council of Garden City exercises on behalf of the people those wider rights, powers and privileges which are enjoyed by landlords under the common law. The private owner of land can do with his land and with the revenue he derives from it what he pleases so long as he is not a nuisance to his neighbour; while, on the other hand, public bodies which acquire land or obtain power to levy rates by Acts of Parliament, can only use that land or spend those rates for such purposes as are expressly prescribed by those Acts. But Garden City is in a greatly superior position, for, by stepping as a <em>quasi</em> public body into the rights of a private landlord, it becomes at once clothed with far larger powers for carrying out the will of the people than are possessed by other local bodies, and thus solves to a large extent the problem of local self-government.</p>
 <p>But the Central Council, though possessing these large powers, delegates many of them, for convenience of administration, to its various departments, retaining, however, responsibility for—</p>
 <p>(1) The general plan on which the estate is laid out.</p>
 <p>(2) The amount of money voted to each of the various spending departments, as schools, roads, parks, etc.</p>
 <p>(3) Such measure of oversight and control of the departments as is necessary to preserve a general unity and harmony, but no more.</p>
-<h4>The Departments</h4>
+<h3 class="sub">The Departments</h3>
 <p>These are divided into various groups—for example:</p>
 <p>(A) Public Control.</p>
 <p>(B) Engineering.</p>
 <p>(C) Social Purposes.</p>
-<h4>Group a, Public Control</h4>
+<h3 class="sub">Group a, Public Control</h3>
 <p>This group may consist of the following sub-groups:</p>
 <p>Finance.</p>
 <p>Assessment.</p>
@@ -346,7 +697,7 @@
 <p>This department settles the terms and conditions under which leases shall be granted, and the nature of the covenants to be entered into by and with the Central Council.</p>
 <p><em>Inspection.</em></p>
 <p>This department carries out such reasonable duties in relation to inspection as the municipality, in its capacity of landlord, may with the tenants of the municipality mutually agree upon.</p>
-<h4>Group B, Engineering</h4>
+<h3 class="sub">Group B, Engineering</h3>
 <p>This group may consist of the following departments—some of which would be later creations.</p>
 <p>Roads.</p>
 <p>Subways.</p>
@@ -361,14 +712,14 @@
 <p>Water-supply.</p>
 <p>Motive-power &amp; Lighting.</p>
 <p>Messages.</p>
-<h4>Group C, Social and Educational</h4>
+<h3 class="sub">Group C, Social and Educational</h3>
 <p>This group is also divided into various departments, dealing with:—</p>
 <p>Education.</p>
 <p>Libraries.</p>
 <p>Baths and Wash-houses.</p>
 <p>Music.</p>
 <p>Recreation.</p>
-<h4><em>Election of Members of Board of Management.</em></h4>
+<h3 class="sub"><em>Election of Members of Board of Management.</em></h3>
 <p>Members (who may be men or women) are elected by the rate-renters to serve on one or more departments, and the Chairmen and Vice-Chairmen of the departments constitute the Central Council.</p>
 <p>Under such a constitution it is believed that the community would have the readiest means of rightly estimating the work of its servants, and, at election times, would have clear and distinct issues brought before it. The candidates would not be expected to specify their views upon a hundred and one questions of municipal policy upon which they had no definite opinions, and which would probably not give rise within their term of office to the necessity for recording their votes, but would simply state their views as to some special question or group of questions, a sound opinion upon which would be of urgent importance to the electors, because immediately connected with the welfare of the town.</p>
 </section>

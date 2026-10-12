@@ -19,8 +19,359 @@
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=navigation" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 	<link rel="preload" href="fonts/libre-caslon-text-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="stylesheet" href="fonts.css">
-	<link rel="stylesheet" href="book.css">
+	<style>
+/* Fonts for every page (front pages and book pages), served from this site
+   rather than Google Fonts: a third-party
+   stylesheet blocked rendering for ~0.8 s on mobile (PageSpeed, 2026-10-12).
+   Oswald, Yellowtail and Libre Caslon Text (SIL Open Font License), latin and
+   latin-ext subsets as Google serves them, in site/fonts/. */
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* The book pages. Shared by every page assemble.py writes; fonts in fonts.css.
+
+   LEGIBILITY FIRST. The running text is set in the best screen serif the
+   reader's own device has (Charter on Apple, Sitka Text on Windows, Georgia
+   or Noto Serif elsewhere), near-black on white, 19-20px, ~66 characters to
+   the line. The Emend look (Libre Caslon Text, navy, the cream band, Oswald
+   labels) is kept to the title band, the headings and the controls. */
+
+:root {
+  --page:  #ffffff;
+  --text:  #1c1c1c;
+  --ink:   #1b314d;     /* navy: headings, links, buttons */
+  --cream: #f4efe2;
+  --soft:  #5a6472;
+  --rule:  #ddd6c8;
+  --link:  #1f4f86;
+  --plate-bg: #ffffff;
+  --reading: Charter, "Bitstream Charter", "Sitka Text", Georgia, "Noto Serif", serif;
+  --display: "Libre Caslon Text", Georgia, serif;
+  --label:   "Oswald", "Arial Narrow", sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page:  #14181e;
+    --text:  #e4e0d8;
+    --ink:   #e8e2d4;
+    --cream: #1d2430;
+    --soft:  #a3adba;
+    --rule:  #343c48;
+    --link:  #9cc2e6;
+  }
+  /* plates and diagrams are drawn on white paper; keep them on it, slightly dimmed */
+  figure img { opacity: .92; }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html {
+  background: var(--page);
+  color: var(--text);
+  font-size: 20px;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--reading);
+  line-height: 1.65;
+  font-kerning: normal;
+}
+
+main { max-width: 34rem; margin: 0 auto; padding: 0 1rem 5rem; }
+
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+
+/* ---------- title band ---------- */
+
+.title-block {
+  background: var(--cream);
+  padding: 1.6rem 1rem 1.8rem;
+  margin-bottom: 2rem;
+}
+.title-inner {
+  max-width: 44rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.8rem;
+  align-items: center;
+}
+.title-block .series {
+  grid-column: 1 / -1;
+  margin: 0 0 0.2rem;
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.title-block .series a { color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 0.55rem; }
+.title-block .series a:hover span { text-decoration: underline; }
+.title-block .series img { height: 1.8rem; width: auto; }
+.cover img {
+  display: block;
+  width: 150px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+}
+.title-text { min-width: 0; }
+h1 {
+  font: 700 2rem/1.15 var(--display);
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+  text-align: left;
+}
+.title-line { margin: 0 0 0.3rem; font-size: 0.95rem; color: var(--ink); }
+.title-line.byline { font-weight: 700; }
+.dates { margin: 0 0 0.9rem; font-size: 0.85rem; color: var(--soft); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.button {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid var(--ink);
+  font: 500 0.75rem/1.2 var(--label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+}
+.button.primary { background: var(--ink); color: var(--page); }
+.button:hover { text-decoration: underline; }
+
+/* phones: a small cover beside the title, so the text starts sooner */
+@media (max-width: 36rem) {
+  .title-block { padding: 1.1rem 1rem 1.4rem; }
+  .title-inner { grid-template-columns: 76px 1fr; gap: 0.9rem; align-items: start; }
+  .cover img { width: 76px; height: 114px; }
+  h1 { font-size: 1.45rem; }
+  .actions { grid-column: 1 / -1; }
+}
+
+/* ---------- running text ---------- */
+
+.intro-note { font-style: italic; font-size: 0.9rem; color: var(--soft); }
+
+h2, h3, h4 {
+  font-family: var(--display);
+  color: var(--ink);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+h2 { font-size: 1.45rem; margin: 3.2rem 0 1rem; }
+h3 { font-size: 1.2rem; margin: 2.8rem 0 0.9rem; }
+h4, h3.sub { font-size: 1rem; margin: 2rem 0 0.8rem; font-style: italic; }
+h2.center { text-align: center; font-size: 1.6rem; margin-top: 4rem; }
+
+p, ul, ol { margin: 0 0 1.15em; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+blockquote {
+  margin: 1.5em 0 1.5em 1em;
+  padding-left: 1em;
+  border-left: 3px solid var(--rule);
+  font-style: italic;
+}
+blockquote p { margin-bottom: 0.8em; }
+
+pre.outline {
+  font-family: var(--reading);
+  white-space: pre-wrap;
+  line-height: 1.6;
+  margin: 0 0 1.15em;
+}
+
+img.glyph { vertical-align: middle; display: inline; }
+span.frac, span.stack { display: inline-block; vertical-align: middle; text-align: center; }
+span.frac > span, span.stack > span { display: block; }
+span.frac > span.num { border-bottom: 1px solid currentColor; }
+span.stack.brace { border-left: 2px solid currentColor; border-right: 2px solid currentColor; border-radius: 0.6em; padding: 0 0.3em; }
+math { font-size: 1.05em; }
+
+figure { margin: 2.2em auto; text-align: center; }
+figure + figure { margin-top: 1em; }
+figure img { max-width: 100%; height: auto; background: var(--plate-bg); }
+figcaption {
+  margin-top: 0.6em;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--soft);
+  text-align: left;
+}
+
+table.plates { width: 100%; margin: 2.5em 0; border-collapse: collapse; line-height: 1.5; }
+table.plates td { padding: 0.4em 0.8em; vertical-align: middle; border-bottom: 1px solid var(--rule); }
+table.plates tr:last-child td { border-bottom: none; }
+table.plates figure, table.plates figure + figure { margin: 0.4em auto; }
+table.plates figcaption { display: none; }
+
+/* page locators: a printed page and quarter, for books that cite
+   themselves by them (Helmholtz: "see p. 77c") */
+span.loc { font-size: 0.65em; color: var(--soft); vertical-align: 0.3em; padding: 0 0.15em; font-style: normal; }
+a.ref { color: inherit; text-decoration: underline dotted; }
+span.sc { font-variant: small-caps; }
+.center { text-align: center; }
+.subtitle { text-align: center; font-style: italic; }
+
+/* ---------- contents ---------- */
+
+nav.contents h2 { margin-top: 0; }
+.toc-book { font-family: var(--display); font-weight: 700; margin: 1.2em 0 0.4em; color: var(--ink); }
+.toc-list { list-style: none; padding-left: 1.2em; margin: 0 0 1em; }
+.toc-list li { margin-bottom: 0.3em; line-height: 1.4; }
+nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
+
+/* ---------- reading aids (book.js) ---------- */
+
+.resume {
+  margin: 0 0 1.5rem;
+  padding: 0.7rem 1rem;
+  background: var(--cream);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+.resume[hidden] { display: none; }
+
+.to-contents {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 5;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--page);
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+.to-contents.show { opacity: .92; pointer-events: auto; }
+
+@media (max-width: 36rem) {
+  html { font-size: 18px; }
+}
+
+@media print {
+  .title-block { background: none; }
+  .actions, .to-contents, .resume { display: none; }
+}
+</style>
 	<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "Symbolic Logic", "author": {"@type": "Person", "name": "Lewis Carroll"}, "inLanguage": "en", "url": "https://emend.press/symbolic-logic.html", "description": "The author of Alice teaching logic to children as a board game with red and grey counters — cats that understand French, and a club with no members. Retold in modern English, free to read online and as an ebook.", "publisher": {"@type": "Organization", "name": "Emend Press", "url": "https://emend.press/", "logo": "https://emend.press/apple-touch-icon.png"}, "isAccessibleForFree": true, "isPartOf": {"@type": "BookSeries", "name": "Modern Classics", "url": "https://emend.press/"}, "image": "https://emend.press/covers/symbolic-logic.jpg", "datePublished": "2026", "bookEdition": "Modern English retelling", "isBasedOn": {"@type": "Book", "name": "Symbolic Logic", "author": {"@type": "Person", "name": "Lewis Carroll"}, "datePublished": "1896"}, "workExample": {"@type": "Book", "bookFormat": "https://schema.org/EBook", "encodingFormat": "application/epub+zip", "url": "https://emend.press/ebooks/lewis-carroll_symbolic-logic.epub"}}</script>
 </head>
 
@@ -194,7 +545,7 @@ February 21, 1896.</p>
 <section aria-labelledby="book-one-chapter-iii-division">
 <h2 id="book-one-chapter-iii-division">Book One, Chapter III: Division</h2>
 <p>§ 1</p>
-<h4>Introductory</h4>
+<h3 class="sub">Introductory</h3>
 <p>&quot;Division&quot; is a Mental Process in which we think of a certain Class of Things and imagine that we have divided it into two or more smaller Classes.</p>
 <p>[Thus we might think of the Class &quot;books&quot; and imagine that we had divided it into the two smaller Classes &quot;bound books&quot; and &quot;unbound books&quot;; or into the three Classes &quot;books priced at less than a shilling&quot;, &quot;shilling-books&quot;, &quot;books priced at more than a shilling&quot;; or into the twenty-six Classes &quot;books whose names begin with A&quot;, &quot;books whose names begin with B&quot;, and so on.]</p>
 <p>A Class obtained by a certain Division is said to be &quot;codivisional&quot; with every Class obtained by that same Division.</p>
@@ -204,7 +555,7 @@ February 21, 1896.</p>
 <p>[Thus the Class &quot;bound books&quot; is codivisional with itself.</p>
 <p>[Similarly, the Battle of Waterloo may be said to have been &quot;contemporary&quot; with itself.]]</p>
 <p>§ 2</p>
-<h4>Dichotomy</h4>
+<h3 class="sub">Dichotomy</h3>
 <p>If we think of a certain Class and imagine that we have picked a smaller Class out of it, then plainly the Remainder of the large Class does not possess the Differentia of that smaller Class. Hence the Remainder may be regarded as another smaller Class, whose Differentia can be made out of the first one by putting the word &quot;not&quot; in front of it; and we may imagine that we have divided the Class we first thought of into two smaller Classes whose Differentiae are contradictory. This kind of Division is called &quot;Dichotomy&quot;.</p>
 <p>[For example, we may divide &quot;books&quot; into the two Classes whose Differentiae are &quot;old&quot; and &quot;not-old&quot;.]</p>
 <p>In carrying out this Process we may sometimes find that the Attributes we have chosen are used so loosely in ordinary conversation that it is not easy to decide which Things belong to the one Class and which to the other. In such a case we should have to lay down some arbitrary rule about where the one Class ends and the other begins.</p>
@@ -251,17 +602,17 @@ or (2) a whole Class, regarded as one single Thing.</p>
 <p>[Thus we may define a &quot;Treasure&quot; as a &quot;valuable Thing&quot;. Here we regard &quot;Things&quot; as the Genus and &quot;valuable&quot; as the Differentia.]</p>
 <p>The following Examples of this Process may be taken as models for working others.</p>
 <p>[Note that in each Definition the Substantive representing a Member (or Members) of the Genus is printed in Capitals.]</p>
-<h4>1. Define &quot;a Treasure.&quot;</h4>
+<h3 class="sub">1. Define &quot;a Treasure.&quot;</h3>
 <p>Ans. &quot;a valuable Thing.&quot;</p>
-<h4>2. Define &quot;Treasures.&quot;</h4>
+<h3 class="sub">2. Define &quot;Treasures.&quot;</h3>
 <p>Ans. &quot;valuable Things.&quot;</p>
-<h4>3. Define &quot;a Town.&quot;</h4>
+<h3 class="sub">3. Define &quot;a Town.&quot;</h3>
 <p>Ans. &quot;a material artificial Thing, consisting of houses and streets.&quot;</p>
-<h4>4. Define &quot;Men.&quot;</h4>
+<h3 class="sub">4. Define &quot;Men.&quot;</h3>
 <p>Ans. &quot;material, living Things, belonging to the Animal Kingdom, having two hands and two feet&quot;;</p>
 <p>or else</p>
 <p>&quot;Animals having two hands and two feet.&quot;</p>
-<h4>5. Define &quot;London.&quot;</h4>
+<h3 class="sub">5. Define &quot;London.&quot;</h3>
 <p>Ans. &quot;the material artificial Thing, which consists of houses and streets, and has four million inhabitants&quot;;</p>
 <p>or else</p>
 <p>&quot;the Town which has four million inhabitants.&quot;</p>
@@ -274,7 +625,7 @@ or (2) a whole Class, regarded as one single Thing.</p>
 <section aria-labelledby="book-two-chapter-i-propositions-generally">
 <h2 id="book-two-chapter-i-propositions-generally">Book Two, Chapter I: Propositions Generally</h2>
 <p>§ 1</p>
-<h4>Introductory</h4>
+<h3 class="sub">Introductory</h3>
 <p>Note that from here on the word &quot;some&quot; is to be taken as meaning &quot;one or more&quot;.</p>
 <p>The word &quot;Proposition&quot;, as used in ordinary conversation, may be applied to any word or phrase that conveys information of any kind whatever.</p>
 <p>[Thus the words &quot;yes&quot; and &quot;no&quot; are Propositions in the ordinary sense of the word; and so are the phrases &quot;you owe me five farthings&quot; and &quot;I don&#x27;t!&quot;</p>
@@ -288,14 +639,14 @@ or (2) a whole Class, regarded as one single Thing.</p>
 <p>Two Propositions that convey the same information are said to be &quot;equivalent&quot;.</p>
 <p>[Thus the two Propositions &quot;I see John&quot; and &quot;John is seen by me&quot; are equivalent.]</p>
 <p>§ 2</p>
-<h4>Normal form of a Proposition</h4>
+<h3 class="sub">Normal form of a Proposition</h3>
 <p>A Proposition in normal form has four parts:</p>
 <p>(1) The word &quot;some&quot;, or &quot;no&quot;, or &quot;all&quot;. (This word, which tells us how many Members of the Subject are also Members of the Predicate, is called the &quot;Sign of Quantity&quot;.)</p>
 <p>(2) Name of Subject.</p>
 <p>(3) The verb &quot;are&quot; (or &quot;is&quot;). (This is called the &quot;Copula&quot;.)</p>
 <p>(4) Name of Predicate.</p>
 <p>§ 3</p>
-<h4>Various kinds of Propositions</h4>
+<h3 class="sub">Various kinds of Propositions</h3>
 <p>A Proposition beginning with &quot;Some&quot; is said to be &quot;Particular&quot;. It is also called &quot;a Proposition in I&quot;.</p>
 <p>[Note that it is called &quot;Particular&quot; because it refers to a part of the Subject only.]</p>
 <p>A Proposition beginning with &quot;No&quot; is said to be &quot;Universal Negative&quot;. It is also called &quot;a Proposition in E&quot;.</p>
@@ -329,7 +680,7 @@ or (2) a whole Class, regarded as one single Thing.</p>
 <section aria-labelledby="book-two-chapter-iii-propositions-of-relation">
 <h2 id="book-two-chapter-iii-propositions-of-relation">Book Two, Chapter III: Propositions of Relation</h2>
 <p>§ 1</p>
-<h4>Introductory</h4>
+<h3 class="sub">Introductory</h3>
 <p>A Proposition of Relation, of the kind to be discussed here, has for its Terms two Species of the same Genus, such that each of the two Names conveys the idea of some Attribute the other does not.</p>
 <p>[Thus the Proposition &quot;Some merchants are misers&quot; is of the right kind, since &quot;merchants&quot; and &quot;misers&quot; are Species of the same Genus &quot;men&quot;; and since the Name &quot;merchants&quot; conveys the idea of the Attribute &quot;mercantile&quot; and the Name &quot;misers&quot; the idea of the Attribute &quot;miserly&quot;, neither of which ideas is conveyed by the other Name.</p>
 <p>[But the Proposition &quot;Some dogs are setters&quot; is not of the right kind. It is true that &quot;dogs&quot; and &quot;setters&quot; are Species of the same Genus &quot;animals&quot;; but it is not true that the Name &quot;dogs&quot; conveys the idea of any Attribute not conveyed by the Name &quot;setters&quot;. Propositions of that sort will be discussed in Part II.]]</p>
@@ -338,7 +689,7 @@ or (2) a whole Class, regarded as one single Thing.</p>
 <p>[Note that although its Sign of Quantity tells us how many Members of its Subject are also Members of its Predicate, it does not tell us the exact number: in fact it deals with only three numbers, which are, in ascending order, &quot;0&quot;, &quot;1 or more&quot;, and &quot;the total number of Members of the Subject&quot;.]</p>
 <p>It is called &quot;a Proposition of Relation&quot; because what it does is to assert that a certain relationship holds between its Terms.</p>
 <p>§ 2</p>
-<h4>Reduction of a Proposition of Relation to Normal form</h4>
+<h3 class="sub">Reduction of a Proposition of Relation to Normal form</h3>
 <p>The Rules for doing this are as follows.</p>
 <p>(1) Find the Subject — that is, find what Class we are talking about.</p>
 <p>(2) If the verb governed by the Subject is not the verb &quot;are&quot; (or &quot;is&quot;), put in its place a phrase beginning with &quot;are&quot; (or &quot;is&quot;).</p>
@@ -453,7 +804,7 @@ or (2) a whole Class, regarded as one single Thing.</p>
  order like the ones I am used to | are | examples not
  understood by me.&quot;]]</pre>
 <p>§ 3</p>
-<h4>A Proposition of Relation, beginning with &quot;All&quot;, is a Double Proposition</h4>
+<h3 class="sub">A Proposition of Relation, beginning with &quot;All&quot;, is a Double Proposition</h3>
 <p>A Proposition of Relation beginning with &quot;All&quot; asserts, as we already know, that &quot;All Members of the Subject are Members of the Predicate&quot;. Plainly this contains, as part of what it tells us, the smaller Proposition &quot;Some Members of the Subject are Members of the Predicate&quot;.</p>
 <p>[Thus the Proposition &quot;All bankers are rich men&quot; plainly contains the smaller Proposition &quot;Some bankers are rich men&quot;.]</p>
 <p>The question now arises: what is the rest of the information this Proposition gives us?</p>
@@ -602,7 +953,7 @@ or (2) a whole Class, regarded as one single Thing.</p>
 <section aria-labelledby="book-three-chapter-iii-representation-of-propositions">
 <h2 id="book-three-chapter-iii-representation-of-propositions">Book Three, Chapter III: Representation of Propositions</h2>
 <p>§ 1</p>
-<h4>Introductory</h4>
+<h3 class="sub">Introductory</h3>
 <p>From here on, in stating Propositions such as &quot;Some x-Things exist&quot; or &quot;No x-Things are y-Things&quot;, I shall leave out the word &quot;Things&quot;, which the Reader can supply for himself, and shall write them &quot;Some x exist&quot; or &quot;No x are y&quot;.</p>
 <p>[Note that the word &quot;Things&quot; is used here in a special sense, as explained in Book Three, Chapter I.]</p>
 <p>A Proposition containing only one of the Letters used as Symbols for Attributes is said to be &quot;Uniliteral&quot;.</p>
@@ -612,7 +963,7 @@ or (2) a whole Class, regarded as one single Thing.</p>
 <p>A Proposition is said to be &quot;in terms of&quot; the Letters it contains, whether or not they carry accents.</p>
 <p>[Thus &quot;Some xy′ exist&quot;, &quot;No x′ are y&quot;, and so on, are said to be in terms of x and y.]</p>
 <p>§ 2</p>
-<h4>Representation of Propositions of Existence</h4>
+<h3 class="sub">Representation of Propositions of Existence</h3>
 <p>Let us take first the Proposition &quot;Some x exist&quot;.</p>
 <p>[Note that this Proposition is, as explained in Book Two, Chapter III, equivalent to &quot;Some existing Things are x-Things&quot;.]</p>
 <figure id="fig-3">
@@ -662,7 +1013,7 @@ or (2) a whole Class, regarded as one single Thing.</p>
 <p>[In the &quot;books&quot; example this Proposition would be &quot;No old books exist&quot;.</p>
 <p>[So it is a Double Proposition, and is equivalent to the two Propositions &quot;No old English books exist&quot; and &quot;No old foreign books exist&quot;.]]</p>
 <p>§ 3</p>
-<h4>Representation of Propositions of Relation</h4>
+<h3 class="sub">Representation of Propositions of Relation</h3>
 <p>Let us take first the Proposition &quot;Some x are y&quot;.</p>
 <figure id="fig-8">
 <img src="images/symbolic-logic/fig8.png" alt="&quot;Some x are y&quot; — a Red Counter in the North-West Cell, the space the North Half and the West Half have in common." width="101" height="101" loading="lazy">
@@ -1416,7 +1767,7 @@ A. &quot;No x′y exist&quot; = &quot;No x′ are y&quot; = &quot;No y are x′&
 <section aria-labelledby="book-five-chapter-ii-problems-in-syllogisms">
 <h2 id="book-five-chapter-ii-problems-in-syllogisms">Book Five, Chapter II: Problems in Syllogisms</h2>
 <p>§ 1</p>
-<h4>Introductory</h4>
+<h3 class="sub">Introductory</h3>
 <p>When the Terms of a Proposition are represented by words, it is said to be &quot;concrete&quot;; when by letters, &quot;abstract&quot;.</p>
 <p>To translate a Proposition from concrete into abstract form, we fix on a Univ., regard each Term as a Species of it, and choose a letter to represent its Differentia.</p>
 <p>[For example, suppose we want to translate &quot;Some soldiers are brave&quot; into abstract form. We may take &quot;men&quot; as Univ. and regard &quot;soldiers&quot; and &quot;brave men&quot; as Species of the Genus &quot;men&quot;; and we may choose x for the peculiar Attribute of &quot;soldiers&quot; — say &quot;military&quot; — and y for &quot;brave&quot;. Then the Proposition may be written &quot;Some military men are brave men&quot;, that is, &quot;Some x-men are y-men&quot;, that is (leaving out &quot;men&quot;, as explained in Book Three, Chapter III) &quot;Some x are y.&quot;</p>
@@ -1757,7 +2108,7 @@ A. &quot;No x′y exist&quot; = &quot;No x′ are y&quot; = &quot;No y are x′&
 <section aria-labelledby="book-six-chapter-iii-syllogisms">
 <h2 id="book-six-chapter-iii-syllogisms">Book Six, Chapter III: Syllogisms</h2>
 <p>§ 1</p>
-<h4>Representation of Syllogisms</h4>
+<h3 class="sub">Representation of Syllogisms</h3>
 <p>We already know how to represent each of the three Propositions of a Syllogism in subscript form. Once that is done, all we need besides is to write the three expressions in a row, with &quot;†&quot; between the Premisses and &quot;¶&quot; before the Conclusion.</p>
 <p>[Thus the Syllogism</p>
 <pre class="outline">[&quot;No x are m′;
@@ -1767,7 +2118,7 @@ A. &quot;No x′y exist&quot; = &quot;No x′ are y&quot; = &quot;No y are x′&
 <p>[xm′0 † m1y′0 ¶ xy′0]</p>
 <p>[When a Proposition has to be translated from concrete form into subscript form, the Reader will find it handy, just at first, to translate it into abstract form and from there into subscript form. But after a little practice he will find it quite easy to go straight from concrete form to subscript form.]]</p>
 <p>§ 2</p>
-<h4>Formulae for solving Problems in Syllogisms</h4>
+<h3 class="sub">Formulae for solving Problems in Syllogisms</h3>
 <p>Once we have found the Conclusion to a given Pair of Premisses by Diagrams, and have represented the Syllogism in subscript form, we have a Formula by which we can at once find — without having to use Diagrams again — the Conclusion to any other Pair of Premisses with the same subscript forms.</p>
 <p>[Thus the expression</p>
 <p>[xm0 † ym′0 ¶ xy0]</p>
@@ -1788,7 +2139,7 @@ A. &quot;No x′y exist&quot; = &quot;No x′ are y&quot; = &quot;No y are x′&
 <p>[that is, in concrete form,]</p>
 <p>[&quot;No gluttons are strong&quot;.]]</p>
 <p>I shall now take three different forms of Pairs of Premisses and work out their Conclusions once for all by Diagrams, and so obtain some useful Formulae. I shall call them &quot;Fig. I&quot;, &quot;Fig. II&quot; and &quot;Fig. III&quot;.</p>
-<h4>Fig. I</h4>
+<h3 class="sub">Fig. I</h3>
 <p>This covers any Pair of Premisses which are both Nullities and which contain Unlike Eliminands.</p>
 <p>The simplest case is</p>
 <table class="plates">
@@ -1824,7 +2175,7 @@ x′1m0 † y1m′0 (which proves x′1y0 † y1x′0).]]</p>
 <pre class="outline">(2) A Retinend asserted in the Premisses to exist may be
  asserted to exist in the Conclusion.</pre>
 <p>[Note that Rule (1) is simply the Formula put into words.]</p>
-<h4>Fig. II</h4>
+<h3 class="sub">Fig. II</h3>
 <p>This covers any Pair of Premisses of which one is a Nullity and the other an Entity, and which contain Like Eliminands.</p>
 <p>The simplest case is</p>
 <table class="plates">
@@ -1849,7 +2200,7 @@ m1x0 † y′m1 (which ¶ x′y′1).]]</p>
 <pre class="outline">A Nullity and an Entity, with Like Eliminands, yield an
  Entity in which the Nullity-Retinend changes its Sign.</pre>
 <p>[Note that this Rule is simply the Formula put into words.]</p>
-<h4>Fig. III</h4>
+<h3 class="sub">Fig. III</h3>
 <p>This covers any Pair of Premisses which are both Nullities and which contain Like Eliminands asserted to exist.</p>
 <p>The simplest case is</p>
 <p>xm0 † ym0 † m1</p>
@@ -1938,7 +2289,7 @@ Two Nullities, with Like Eliminands asserted to exist, yield an Entity, in which
 <p>So there is no Conclusion.</p>
 <p>[Work Examples § 4, 12–20 (Book Eight, Chapter I); § 5, 13–24 (Book Eight, Chapter I); § 6, 1–6 (Book Eight, Chapter I); § 7, 1–3 (Book Eight, Chapter I). Also read Note (A) in the Notes.]</p>
 <p>§ 3</p>
-<h4>Fallacies</h4>
+<h3 class="sub">Fallacies</h3>
 <p>Any argument that deceives us by seeming to prove what it does not really prove may be called a &quot;Fallacy&quot; (from the Latin verb fallo, &quot;I deceive&quot;); but the particular kind to be discussed now consists of a Pair of Propositions proposed as the Premisses of a Syllogism which yield no Conclusion.</p>
 <p>When each of the proposed Premisses is a Proposition in I, or E, or A — the only kinds we are concerned with now — the Fallacy can be detected by the &quot;Method of Diagrams&quot;, simply by setting them out on a Triliteral Diagram and noticing that they yield no information that can be transferred to the Biliteral Diagram.</p>
 <p>But suppose we were working by the &quot;Method of Subscripts&quot; and had to deal with a Pair of proposed Premisses that happened to be a &quot;Fallacy&quot;: how could we be certain they would yield no Conclusion?</p>
@@ -1973,7 +2324,7 @@ Two Nullities, with Like Eliminands asserted to exist, yield an Entity, in which
 <figcaption><b>Figure 143</b> &mdash; The same three O&#x27;s, with a &quot;I&quot; on the fence in the Outer Portion of the North Half and another on the fence in the Outer Portion of the West Half.</figcaption>
 </figure></td></tr>
 </table>
-<h4>(2) Fallacy of Unlike Eliminands with an Entity-Premiss</h4>
+<h3 class="sub">(2) Fallacy of Unlike Eliminands with an Entity-Premiss</h3>
 <p>Here the given Pair may be represented by (xm0 † ym′1), with or without x1 or m1.</p>
 <p>Set out on Triliteral Diagrams, these are:</p>
 <table class="plates">
@@ -1989,7 +2340,7 @@ Two Nullities, with Like Eliminands asserted to exist, yield an Entity, in which
 <figcaption><b>Figure 146</b> &mdash; An O in each of the two Inner Cells of the North Half, a &quot;I&quot; on the fence in the Inner Portion of the South Half, and a &quot;I&quot; on the fence in the Outer Portion of the West Half.</figcaption>
 </figure></td></tr>
 </table>
-<h4>(3) Fallacy of two Entity-Premisses</h4>
+<h3 class="sub">(3) Fallacy of two Entity-Premisses</h3>
 <p>Here the given Pair may be represented either by (xm1 † ym1) or by (xm1 † ym′1).</p>
 <p>Set out on Triliteral Diagrams, these are:</p>
 <table class="plates">
@@ -2051,7 +2402,7 @@ Two Nullities, with Like Eliminands asserted to exist, yield an Entity, in which
 <section aria-labelledby="book-seven-chapter-ii-problems-in-soriteses">
 <h2 id="book-seven-chapter-ii-problems-in-soriteses">Book Seven, Chapter II: Problems in Soriteses</h2>
 <p>§ 1</p>
-<h4>Introductory</h4>
+<h3 class="sub">Introductory</h3>
 <p>The Problems we shall have to solve are of this form:</p>
 <p>&quot;Given three or more Propositions of Relation proposed as Premisses: find what Conclusion, if any, is consequent from them.&quot;</p>
 <p>We will limit ourselves for the present to Problems that can be worked by the Formulae of Fig. I (see Book Six, Chapter III). Those needing other Formulae are rather too hard for beginners.</p>
@@ -2060,7 +2411,7 @@ Two Nullities, with Like Eliminands asserted to exist, yield an Entity, in which
 (2) The Method of Underscoring.</p>
 <p>We shall discuss these separately.</p>
 <p>§ 2</p>
-<h4>Solution by the Method of Separate Syllogisms</h4>
+<h3 class="sub">Solution by the Method of Separate Syllogisms</h3>
 <p>The Rules for doing this are as follows.</p>
 <p>(1) Name the &quot;Universe of Discourse&quot;.</p>
 <pre class="outline"> (2) Construct a Dictionary, making a, b, c and so on stand
@@ -2158,8 +2509,8 @@ Two Nullities, with Like Eliminands asserted to exist, yield an Entity, in which
  ∴ a1e′0]</pre>
 <p>[Note that in working a Sorites by this process we may begin with whichever Premiss we choose.]]</p>
 <p>§ 3</p>
-<h4>Solution by the Method of Underscoring</h4>
-<h4>Consider the Pair of Premisses</h4>
+<h3 class="sub">Solution by the Method of Underscoring</h3>
+<h3 class="sub">Consider the Pair of Premisses</h3>
 <p>xm0 † ym′0</p>
 <p>which yield the Conclusion xy0</p>
 <p>We see that in order to get this Conclusion we must eliminate m and m′ and write x and y together in one expression.</p>
@@ -4246,7 +4597,7 @@ to the Attribute &quot;that can be solved&quot;.</p>
 <p>The Proposition may be written:</p>
 <p>&quot;No | riddles that can be solved | are | riddles that interest me&quot;.</p>
 <p>§ 2</p>
-<h4>Method of Diagrams</h4>
+<h3 class="sub">Method of Diagrams</h3>
 <p>Solutions for § 4, Nos. 1–12</p>
 <table class="plates">
 <tr><td>1.</td><td>No m are x′;All m′ are y.</td><td><figure id="fig-201">
@@ -4679,7 +5030,7 @@ No unhealthy people are strong.
 </figure></td><td>There is no Conclusion.</td></tr>
 </table>
 <p>§ 3</p>
-<h4>Method of Subscripts</h4>
+<h3 class="sub">Method of Subscripts</h3>
 <p>Solutions for § 4</p>
 <pre class="outline">1. mx′0 † m′1y′0 ¶ x′y′0 [Fig. I. 
  that is &quot;No x′ are y′.&quot;</pre>
@@ -6128,7 +6479,7 @@ that is ¶ b1e0</p>
 <section aria-labelledby="addressed-to-teachers">
 <h2 id="addressed-to-teachers">Addressed to Teachers</h2>
 <p>§ 1</p>
-<h4>Introductory</h4>
+<h3 class="sub">Introductory</h3>
 <p>There are several matters too hard to discuss with Learners which nevertheless need explaining to any Teachers into whose hands this book may fall, so that they may thoroughly understand what my Symbolic Method is, and how it differs from the many other Methods already published.</p>
 <p>They are these:</p>
 <pre class="outline">The &quot;Existential Import&quot; of Propositions.
@@ -6141,7 +6492,7 @@ that is ¶ b1e0</p>
  My Method of treating Syllogisms and Soriteses.
  Some account of Parts II and III.</pre>
 <p>§ 2</p>
-<h4>The &quot;Existential Import&quot; of Propositions</h4>
+<h3 class="sub">The &quot;Existential Import&quot; of Propositions</h3>
 <p>The writers and editors of the Logical text-books that run in the ordinary grooves — whom I shall refer to hereafter by the, I hope inoffensive, title &quot;The Logicians&quot; — take on this subject what seems to me a far humbler position than is at all necessary. They speak of the Copula of a Proposition &quot;with bated breath&quot;, almost as though it were a living, conscious Entity, able to declare for itself what it chose to mean, and as though we poor human creatures had nothing to do but find out its sovereign will and pleasure and submit to it.</p>
 <p>Against that view, I maintain that the writer of a book is fully entitled to attach whatever meaning he likes to any word or phrase he means to use. If I find an author saying at the beginning of his book, &quot;Let it be understood that by the word &#x27;black&#x27; I shall always mean &#x27;white&#x27;, and that by the word &#x27;white&#x27; I shall always mean &#x27;black&#x27;,&quot; I meekly accept his ruling, however ill-judged I may think it.</p>
 <p>And so, on the question whether a Proposition is or is not to be understood as asserting the existence of its Subject, I maintain that every writer may adopt his own rule — provided, of course, that it is consistent with itself and with the accepted facts of Logic.</p>
@@ -6247,7 +6598,7 @@ E and A &quot;assert&quot;, but I does not.</p>
 <p>(This last Proposition is, in my system, an affirmative one, since I should read it &quot;are not-choristers&quot;; but in dealing with &quot;The Logicians&quot; I may fairly treat it as a negative one, since they would read it &quot;are-not choristers&quot;.)</p>
 <p>If you, dear Reader, declare after full consideration of these Pairs of Premisses that you cannot deduce a Conclusion from any of them — why, all I can say is that, like the Duke in Patience, you &quot;will have to be contented with our heart-felt sympathy&quot;! [See Note (C) in the Notes to the Appendix.]</p>
 <p>§ 5</p>
-<h4>Euler&#x27;s Method of Diagrams</h4>
+<h3 class="sub">Euler&#x27;s Method of Diagrams</h3>
 <p>Diagrams seem to have been used at first to represent Propositions only. In Euler&#x27;s well-known Circles, each was supposed to contain a Class, and the Diagram consisted of two circles which exhibited the relations of inclusion and exclusion holding between the two Classes.</p>
 <figure id="fig-272">
 <img src="images/symbolic-logic/fig272.png" alt="Euler&#x27;s Circles — a small circle lettered x lying wholly inside a larger circle lettered y." width="201" height="201" loading="lazy">
@@ -6272,7 +6623,7 @@ E and A &quot;assert&quot;, but I does not.</p>
 <p>Note that all Euler&#x27;s Diagrams assert &quot;Some not-x are not-y&quot;. Apparently it never occurred to him that this might sometimes fail to be true!</p>
 <p>Now to represent &quot;All x are y&quot; the first of these Diagrams would do; and to represent &quot;No x are y&quot; the third would do. But to represent any Particular Proposition at least three Diagrams would be needed, to cover all the possible cases — and for &quot;Some not-x are not-y&quot;, all four.</p>
 <p>§ 6</p>
-<h4>Venn&#x27;s Method of Diagrams</h4>
+<h3 class="sub">Venn&#x27;s Method of Diagrams</h3>
 <p>Let us write &quot;not-x&quot; as &quot;x′&quot;.</p>
 <p>Mr. Venn&#x27;s Method of Diagrams is a great advance on the above.</p>
 <p>He uses the last of the Diagrams above to represent any relation he likes between x and y, simply by shading a Compartment known to be empty and putting a + in one known to be occupied.</p>
@@ -6311,7 +6662,7 @@ E and A &quot;assert&quot;, but I does not.</p>
 <p>For six letters Mr. Venn suggests that we might use two Diagrams like the one above, one for the f-part and the other for the not-f-part of all the other combinations. &quot;This&quot;, he says, &quot;would give the desired 64 subdivisions.&quot; It would, however, give only 62 closed Compartments, plus one infinite area, which the two Classes a′b′c′d′e′f and a′b′c′d′e′f′ would have to share between them.</p>
 <p>Beyond six letters Mr. Venn does not go.</p>
 <p>§ 7</p>
-<h4>My Method of Diagrams</h4>
+<h3 class="sub">My Method of Diagrams</h3>
 <p>My Method of Diagrams is like Mr. Venn&#x27;s in giving separate Compartments to the various Classes, and in marking those Compartments as occupied or as empty; but it differs from his in giving the Universe of Discourse a closed area of its own, so that the Class which under Mr. Venn&#x27;s liberal rule has been ranging at will through Infinite Space is suddenly dismayed to find itself &quot;cabin&#x27;d, cribb&#x27;d, confined&quot; in a limited Cell like any other Class! I also use straight-sided instead of curved Figures, and I mark an occupied Cell with a &quot;I&quot; — meaning that there is at least one Thing in it — and an empty Cell with a &quot;O&quot;, meaning that there is no Thing in it.</p>
 <p>For two letters I use this Diagram, in which the North Half is assigned to &quot;x&quot;, the South to &quot;not-x&quot; (or &quot;x′&quot;), the West to y and the East to y′. So the N.W. Cell holds the xy-Class, the N.E. Cell the xy′-Class, and so on.</p>
 <figure id="fig-282">
@@ -6352,7 +6703,7 @@ E and A &quot;assert&quot;, but I does not.</p>
 </figure>
 <p>Finally, for ten letters I arrange 4 Octoliteral Diagrams like the one above in a square, assigning them to the 4 Classes mn, mn′, m′n and m′n′. We have now got 1024 Cells.</p>
 <p>§ 8</p>
-<h4>Solution of a Syllogism by various Methods</h4>
+<h3 class="sub">Solution of a Syllogism by various Methods</h3>
 <p>The best way, I think, to exhibit the differences between these various Methods of solving Syllogisms will be to take a concrete example and solve it by each Method in turn. Let us take as our example No. 29 (see Book Eight, Chapter I).</p>
 <pre class="outline">&quot;No philosophers are conceited;
  Some conceited persons are not gamblers.
@@ -6512,7 +6863,7 @@ E and A &quot;assert&quot;, but I does not.</p>
 <p>xm0 † my′1 ¶ x′y′1</p>
 <p>that is, &quot;Some persons who are not philosophers are not gamblers.&quot;</p>
 <p>§ 9</p>
-<h4>My Method of treating Syllogisms and Soriteses</h4>
+<h3 class="sub">My Method of treating Syllogisms and Soriteses</h3>
 <p>Of all the strange things to be met with in the ordinary text-books of Formal Logic, perhaps the strangest is the violent contrast between their ways of dealing with these two subjects. They have elaborately discussed no fewer than nineteen different forms of Syllogism — each with its own special and exasperating Rules, the whole constituting an almost useless machine for practical purposes, many of the Conclusions being incomplete and many perfectly legitimate forms being ignored — while they have limited Soriteses to two forms only, of childish simplicity, and have dignified these with special names, apparently under the impression that no other forms were possible!</p>
 <p>As to Syllogisms, I find that their nineteen forms, along with a score of others they have ignored, can all be arranged under three forms, each with a very simple Rule of its own; and the only question the Reader has to settle in working any one of the 101 Examples given in Book Eight, Chapter I of this book is &quot;Does it belong to Fig. I, II or III?&quot;</p>
 <p>As to Soriteses, the only two forms recognised by the text-books are the Aristotelian, whose Premisses are a series of Propositions in A so arranged that the Predicate of each is the Subject of the next, and the Goclenian, whose Premisses are the very same series written backwards. Goclenius, it seems, was the first to notice the startling fact that inverting the order of a Syllogism&#x27;s Premisses does not affect its force, and to apply this discovery to a Sorites. If we may assume — as surely we may? — that he is the same man as that transcendent genius who first noticed that 4 times 5 is the same thing as 5 times 4, we may apply to him what somebody (Edmund Yates, I think it was) said of Tupper: &quot;here is a man who, beyond all others of his generation, has been favoured with Glimpses of the Obvious!&quot;</p>
@@ -6526,7 +6877,7 @@ E and A &quot;assert&quot;, but I does not.</p>
  ∴ All a are h.</pre>
 <p>may be arranged syllogistically, and I find there are no fewer than sixteen such orders: 12345, 21345, 23145, 23415, 23451, 32145, 32415, 32451, 34215, 34251, 34521, 43215, 43251, 43521, 45321, 54321. Of these the first and the last have been dignified with names; the other fourteen — first enumerated by an obscure Writer on Logic towards the end of the Nineteenth Century — remain without a name!</p>
 <p>§ 10</p>
-<h4>Some account of Parts II and III</h4>
+<h3 class="sub">Some account of Parts II and III</h3>
 <p>In Part II will be found some of the matters mentioned in this Appendix: the &quot;Existential Import&quot; of Propositions, the use of a negative Copula, and the theory that &quot;two negative Premisses prove nothing&quot;. I shall also extend the range of Syllogisms by bringing in Propositions containing alternatives (such as &quot;Not-all x are y&quot;), Propositions containing 3 or more Terms (such as &quot;All ab are c&quot;, which, taken with &quot;Some bc′ are d&quot;, would prove &quot;Some d are a′&quot;), and so on. I shall also discuss Soriteses containing Entities, and the very puzzling subjects of Hypotheticals and Dilemmas. In the course of Part II I hope to go over all the ground usually covered in the text-books used in our Schools and Universities, and to enable my Readers to solve Problems of the same kind as — and far harder than — those at present set in their Examinations.</p>
 <p>In Part III I hope to deal with many curious and out-of-the-way subjects, some of which are not so much as mentioned in any of the treatises I have met with. In this Part will be found such matters as the Analysis of Propositions into their Elements (let the Reader who has never gone into this branch of the subject try to make out for himself what additional Proposition would be needed to turn &quot;Some a are b&quot; into &quot;Some a are bc&quot;), the treatment of Numerical and Geometrical Problems, the construction of Problems, and the solution of Syllogisms and Soriteses containing Propositions more complex than any I have used in Part II.</p>
 <p>I will conclude with nine Problems, as a taste of what is coming in Part II. I shall be very glad to receive from any Reader who thinks he has solved any one of them — more especially if he has done so without using any Method of Symbols — what he takes to be its complete Conclusion.</p>
@@ -6693,7 +7044,7 @@ E and A &quot;assert&quot;, but I does not.</p>
 <section aria-labelledby="index">
 <h2 id="index">Index</h2>
 <p>§ 1</p>
-<h4>Tables</h4>
+<h3 class="sub">Tables</h3>
 <table class="math">
 <tr><td>I.</td><td>Biliteral Diagram. Attributes of Classes, and Compartments, or Cells, assigned to them</td><td>Book Three, Chapter I</td></tr>
 <tr><td>II.</td><td>Biliteral Diagram. Representation of Uniliteral Propositions of Existence</td><td>Book Three, Chapter III</td></tr>
@@ -6706,7 +7057,7 @@ E and A &quot;assert&quot;, but I does not.</p>
 <tr><td>IX.</td><td>Method of Subscripts. Formulae and Rules for Syllogisms</td><td>Book Six, Chapter III</td></tr>
 </table>
 <p>§ 2</p>
-<h4>Words and Phrases Explained</h4>
+<h3 class="sub">Words and Phrases Explained</h3>
 <table class="math">
 <tr><td>&#x27;Abstract&#x27; Proposition</td><td>Book Five, Chapter II</td></tr>
 <tr><td>&#x27;Adjuncts&#x27;</td><td>Book One, Chapter I</td></tr>

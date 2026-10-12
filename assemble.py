@@ -605,7 +605,10 @@ def find_speakers(pars):
     return {name for name, n in counts.items() if n >= 3}
 
 
-def render_body(text, figdir=None, site=None, bare_label=False):
+def render_body(text, figdir=None, site=None, bare_label=False, sub="h4"):
+    # `sub` is the subheading level: one below the section's own heading, so
+    # the outline never skips a level (an h2 section's subheads are h3s,
+    # styled as before by class="sub"; PageSpeed flagged h2 -> h4 jumps).
     pars = [p.rstrip() for p in re.split(r"\n\s*\n", text) if p.strip()]
     speakers = find_speakers(pars)
     out = []
@@ -640,7 +643,8 @@ def render_body(text, figdir=None, site=None, bare_label=False):
         elif is_subheading(s, nxt) and not MARKUP["on"]:
             # a dictionary's short entries ("banister. See BALUSTER") are not
             # section titles, and its titles are marked bold by the prep
-            out.append(f"<h4>{inline(html.escape(s))}</h4>")
+            cls = ' class="sub"' if sub != "h4" else ""
+            out.append(f"<{sub}{cls}>{inline(html.escape(s))}</{sub}>")
         else:
             out.append(para_open(s) + f"{inline(html.escape(anchorless(s)))}</p>")
     while out and out[0] == "<hr>":
@@ -695,7 +699,7 @@ def render_introduction(book, original=False):
         return ""
     return (f'\n\t<hr>\n<section aria-labelledby="{INTRO_ID}">\n'
             f'<h2 id="{INTRO_ID}">{html.escape(INTRO_HEADING)}</h2>\n'
-            f'{render_body(text)}\n</section>\n')
+            f'{render_body(text, sub="h3")}\n</section>\n')
 
 
 def strip_front(lines, expect_heading):
@@ -890,7 +894,8 @@ def build_body(sections, figdir=None, site=None, bare_label=False):
         tag = "h3" if s["is_chapter"] else "h2"
         out.append(f'<section aria-labelledby="{s["id"]}">')
         out.append(f'<{tag} id="{s["id"]}">{html.escape(s["heading"])}</{tag}>')
-        out.append(render_body(s["body"], figdir, site, bare_label))
+        out.append(render_body(s["body"], figdir, site, bare_label,
+                               sub="h4" if tag == "h3" else "h3"))
         out.append("</section>")
     if in_part:
         out.append("</section>")
@@ -1025,6 +1030,12 @@ def main():
     page = (root / "site" / "template.html").read_text()
     for key, val in {
         "{{HEAD}}": head,
+        # fonts.css + book.css INLINED (4.5 KB): as <link>s they blocked the
+        # first paint for ~0.6 s on PageSpeed's mobile run, and next to a
+        # multi-megabyte book they cost nothing. So a change to either file
+        # needs every book page re-assembled.
+        "{{STYLE}}": "<style>\n" + (root / "site" / "fonts.css").read_text()
+                     + (root / "site" / "book.css").read_text() + "</style>",
         "{{JSONLD}}": jsonld,
         "{{COVER}}": cover,
         "{{ACTIONS}}": actions,

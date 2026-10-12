@@ -19,8 +19,359 @@
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=navigation" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 	<link rel="preload" href="fonts/libre-caslon-text-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="stylesheet" href="fonts.css">
-	<link rel="stylesheet" href="book.css">
+	<style>
+/* Fonts for every page (front pages and book pages), served from this site
+   rather than Google Fonts: a third-party
+   stylesheet blocked rendering for ~0.8 s on mobile (PageSpeed, 2026-10-12).
+   Oswald, Yellowtail and Libre Caslon Text (SIL Open Font License), latin and
+   latin-ext subsets as Google serves them, in site/fonts/. */
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* The book pages. Shared by every page assemble.py writes; fonts in fonts.css.
+
+   LEGIBILITY FIRST. The running text is set in the best screen serif the
+   reader's own device has (Charter on Apple, Sitka Text on Windows, Georgia
+   or Noto Serif elsewhere), near-black on white, 19-20px, ~66 characters to
+   the line. The Emend look (Libre Caslon Text, navy, the cream band, Oswald
+   labels) is kept to the title band, the headings and the controls. */
+
+:root {
+  --page:  #ffffff;
+  --text:  #1c1c1c;
+  --ink:   #1b314d;     /* navy: headings, links, buttons */
+  --cream: #f4efe2;
+  --soft:  #5a6472;
+  --rule:  #ddd6c8;
+  --link:  #1f4f86;
+  --plate-bg: #ffffff;
+  --reading: Charter, "Bitstream Charter", "Sitka Text", Georgia, "Noto Serif", serif;
+  --display: "Libre Caslon Text", Georgia, serif;
+  --label:   "Oswald", "Arial Narrow", sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page:  #14181e;
+    --text:  #e4e0d8;
+    --ink:   #e8e2d4;
+    --cream: #1d2430;
+    --soft:  #a3adba;
+    --rule:  #343c48;
+    --link:  #9cc2e6;
+  }
+  /* plates and diagrams are drawn on white paper; keep them on it, slightly dimmed */
+  figure img { opacity: .92; }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html {
+  background: var(--page);
+  color: var(--text);
+  font-size: 20px;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--reading);
+  line-height: 1.65;
+  font-kerning: normal;
+}
+
+main { max-width: 34rem; margin: 0 auto; padding: 0 1rem 5rem; }
+
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+
+/* ---------- title band ---------- */
+
+.title-block {
+  background: var(--cream);
+  padding: 1.6rem 1rem 1.8rem;
+  margin-bottom: 2rem;
+}
+.title-inner {
+  max-width: 44rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.8rem;
+  align-items: center;
+}
+.title-block .series {
+  grid-column: 1 / -1;
+  margin: 0 0 0.2rem;
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.title-block .series a { color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 0.55rem; }
+.title-block .series a:hover span { text-decoration: underline; }
+.title-block .series img { height: 1.8rem; width: auto; }
+.cover img {
+  display: block;
+  width: 150px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+}
+.title-text { min-width: 0; }
+h1 {
+  font: 700 2rem/1.15 var(--display);
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+  text-align: left;
+}
+.title-line { margin: 0 0 0.3rem; font-size: 0.95rem; color: var(--ink); }
+.title-line.byline { font-weight: 700; }
+.dates { margin: 0 0 0.9rem; font-size: 0.85rem; color: var(--soft); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.button {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid var(--ink);
+  font: 500 0.75rem/1.2 var(--label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+}
+.button.primary { background: var(--ink); color: var(--page); }
+.button:hover { text-decoration: underline; }
+
+/* phones: a small cover beside the title, so the text starts sooner */
+@media (max-width: 36rem) {
+  .title-block { padding: 1.1rem 1rem 1.4rem; }
+  .title-inner { grid-template-columns: 76px 1fr; gap: 0.9rem; align-items: start; }
+  .cover img { width: 76px; height: 114px; }
+  h1 { font-size: 1.45rem; }
+  .actions { grid-column: 1 / -1; }
+}
+
+/* ---------- running text ---------- */
+
+.intro-note { font-style: italic; font-size: 0.9rem; color: var(--soft); }
+
+h2, h3, h4 {
+  font-family: var(--display);
+  color: var(--ink);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+h2 { font-size: 1.45rem; margin: 3.2rem 0 1rem; }
+h3 { font-size: 1.2rem; margin: 2.8rem 0 0.9rem; }
+h4, h3.sub { font-size: 1rem; margin: 2rem 0 0.8rem; font-style: italic; }
+h2.center { text-align: center; font-size: 1.6rem; margin-top: 4rem; }
+
+p, ul, ol { margin: 0 0 1.15em; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+blockquote {
+  margin: 1.5em 0 1.5em 1em;
+  padding-left: 1em;
+  border-left: 3px solid var(--rule);
+  font-style: italic;
+}
+blockquote p { margin-bottom: 0.8em; }
+
+pre.outline {
+  font-family: var(--reading);
+  white-space: pre-wrap;
+  line-height: 1.6;
+  margin: 0 0 1.15em;
+}
+
+img.glyph { vertical-align: middle; display: inline; }
+span.frac, span.stack { display: inline-block; vertical-align: middle; text-align: center; }
+span.frac > span, span.stack > span { display: block; }
+span.frac > span.num { border-bottom: 1px solid currentColor; }
+span.stack.brace { border-left: 2px solid currentColor; border-right: 2px solid currentColor; border-radius: 0.6em; padding: 0 0.3em; }
+math { font-size: 1.05em; }
+
+figure { margin: 2.2em auto; text-align: center; }
+figure + figure { margin-top: 1em; }
+figure img { max-width: 100%; height: auto; background: var(--plate-bg); }
+figcaption {
+  margin-top: 0.6em;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--soft);
+  text-align: left;
+}
+
+table.plates { width: 100%; margin: 2.5em 0; border-collapse: collapse; line-height: 1.5; }
+table.plates td { padding: 0.4em 0.8em; vertical-align: middle; border-bottom: 1px solid var(--rule); }
+table.plates tr:last-child td { border-bottom: none; }
+table.plates figure, table.plates figure + figure { margin: 0.4em auto; }
+table.plates figcaption { display: none; }
+
+/* page locators: a printed page and quarter, for books that cite
+   themselves by them (Helmholtz: "see p. 77c") */
+span.loc { font-size: 0.65em; color: var(--soft); vertical-align: 0.3em; padding: 0 0.15em; font-style: normal; }
+a.ref { color: inherit; text-decoration: underline dotted; }
+span.sc { font-variant: small-caps; }
+.center { text-align: center; }
+.subtitle { text-align: center; font-style: italic; }
+
+/* ---------- contents ---------- */
+
+nav.contents h2 { margin-top: 0; }
+.toc-book { font-family: var(--display); font-weight: 700; margin: 1.2em 0 0.4em; color: var(--ink); }
+.toc-list { list-style: none; padding-left: 1.2em; margin: 0 0 1em; }
+.toc-list li { margin-bottom: 0.3em; line-height: 1.4; }
+nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
+
+/* ---------- reading aids (book.js) ---------- */
+
+.resume {
+  margin: 0 0 1.5rem;
+  padding: 0.7rem 1rem;
+  background: var(--cream);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+.resume[hidden] { display: none; }
+
+.to-contents {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 5;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--page);
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+.to-contents.show { opacity: .92; pointer-events: auto; }
+
+@media (max-width: 36rem) {
+  html { font-size: 18px; }
+}
+
+@media print {
+  .title-block { background: none; }
+  .actions, .to-contents, .resume { display: none; }
+}
+</style>
 	<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "Dialogues", "author": {"@type": "Person", "name": "Plato"}, "inLanguage": "en", "url": "https://emend.press/dialogues.html", "description": "The complete dialogues — Socrates on trial, in the agora, and at the limits of knowledge. Retold in modern English, free to read online and as an ebook.", "publisher": {"@type": "Organization", "name": "Emend Press", "url": "https://emend.press/", "logo": "https://emend.press/apple-touch-icon.png"}, "isAccessibleForFree": true, "isPartOf": {"@type": "BookSeries", "name": "Modern Classics", "url": "https://emend.press/"}, "image": "https://emend.press/covers/dialogues.jpg", "datePublished": "2026", "bookEdition": "Modern English retelling", "isBasedOn": {"@type": "Book", "name": "Dialogues", "author": {"@type": "Person", "name": "Plato"}}, "workExample": {"@type": "Book", "bookFormat": "https://schema.org/EBook", "encodingFormat": "application/epub+zip", "url": "https://emend.press/ebooks/plato_dialogues.epub"}}</script>
 </head>
 
@@ -659,14 +1010,14 @@ You will not tell: for where there is fear there is also reverence.&quot;</p>
   Cebes
   Crito
   An attendant of the prison</pre>
-<h4>Setting: The prison of Socrates</h4>
+<h3 class="sub">Setting: The prison of Socrates</h3>
 <p>Echecrates: Were you actually there in the prison with Socrates, Phaedo, on the day he drank the poison?</p>
 <p>Phaedo: I was, Echecrates. I was there.</p>
 <p>Echecrates: I&#x27;d love to hear about his death. What did he say in his last hours? We were told he died by taking poison, but nobody knew anything beyond that. No one from Phlius goes to Athens anymore, and it&#x27;s been ages since any traveler from Athens has come our way, so we never got a clear account.</p>
 <p>Phaedo: You didn&#x27;t hear about the trial?</p>
 <p>Echecrates: Yes, someone told us about the trial. But we couldn&#x27;t understand why, after being condemned, he wasn&#x27;t put to death right away. Why the long delay? What was the reason for that?</p>
 <p>Phaedo: It was a matter of timing, Echecrates. The stern of the ship that Athens sends to Delos happened to be crowned the day before his trial.</p>
-<h4>Echecrates: What ship is that?</h4>
+<h3 class="sub">Echecrates: What ship is that?</h3>
 <p>Phaedo: It&#x27;s the ship that, according to Athenian tradition, Theseus sailed to Crete when he took those fourteen young people with him and saved both them and himself. The story goes that the Athenians made a vow to Apollo at the time: if they were saved, they&#x27;d send a mission to Delos every year. And they&#x27;ve kept this custom ever since. The whole period of the voyage to Delos and back, from the moment the priest of Apollo crowns the stern of the ship, is a sacred season during which the city isn&#x27;t allowed to be polluted by public executions. When the winds blow against the ship, the round trip can take quite a while. As I was saying, the ship was crowned the day before the trial, and that&#x27;s why Socrates lay in prison all that time and wasn&#x27;t put to death until long after his conviction.</p>
 <p>Echecrates: And what was the manner of his death, Phaedo? What was said and done? Which of his friends were with him? Or did the authorities forbid them from being present, so that he died alone?</p>
 <p>Phaedo: No, several of them were with him.</p>
@@ -676,13 +1027,13 @@ You will not tell: for where there is fear there is also reverence.&quot;</p>
 <p>Phaedo: I had the strangest feeling being in his company that day. I couldn&#x27;t quite believe I was present at the death of a friend, and yet I didn&#x27;t feel sorry for him, Echecrates. He died so fearlessly, and his words and manner were so noble and gracious, that he seemed blessed to me. I thought that in going to the other world, he must surely have a divine calling, and that if any man was ever going to be happy when he arrived there, it would be Socrates. So I didn&#x27;t pity him, even though you&#x27;d think that would be natural at such a moment. But at the same time, I didn&#x27;t feel the pleasure I usually feel in philosophical conversation — and philosophy was what we talked about. I felt pleasure, yes, but mixed in was this strange current of pain, because I kept remembering that he was about to die. All of us felt this double pull. We were laughing and weeping by turns — especially Apollodorus. You know the kind of man he is?</p>
 <p>Echecrates: Yes.</p>
 <p>Phaedo: He was completely beside himself. And all the rest of us were deeply moved.</p>
-<h4>Echecrates: Who was there?</h4>
+<h3 class="sub">Echecrates: Who was there?</h3>
 <p>Phaedo: Of native Athenians, besides Apollodorus, there were Critobulus and his father Crito, Hermogenes, Epigenes, Aeschines, and Antisthenes. Also Ctesippus from the deme of Paeania, Menexenus, and some others. Plato, if I&#x27;m not mistaken, was ill.</p>
-<h4>Echecrates: Were there any foreigners?</h4>
+<h3 class="sub">Echecrates: Were there any foreigners?</h3>
 <p>Phaedo: Yes — Simmias, Cebes, and Phaedondes from Thebes, and Euclid and Terpison from Megara.</p>
-<h4>Echecrates: What about Aristippus and Cleombrotus?</h4>
+<h3 class="sub">Echecrates: What about Aristippus and Cleombrotus?</h3>
 <p>Phaedo: No, they were said to be in Aegina.</p>
-<h4>Echecrates: Anyone else?</h4>
+<h3 class="sub">Echecrates: Anyone else?</h3>
 <p>Phaedo: I think that&#x27;s nearly everyone.</p>
 <p>Echecrates: Well then, what did you talk about?</p>
 <p>Phaedo: I&#x27;ll start from the beginning and try to repeat the whole conversation. In the days before, we&#x27;d been in the habit of gathering early in the morning at the courthouse where the trial had taken place, which is near the prison. We&#x27;d wait there talking with one another until the doors opened — they didn&#x27;t open very early — and then we&#x27;d go in and generally spend the day with Socrates. On this last morning, we gathered even earlier than usual, because the evening before, when we left the prison, we&#x27;d heard that the sacred ship had arrived from Delos. So we arranged to meet at our usual place as early as possible.</p>
@@ -693,7 +1044,7 @@ You will not tell: for where there is fear there is also reverence.&quot;</p>
 <p>Cebes: I&#x27;m glad you mentioned Aesop, Socrates. It reminds me of a question that lots of people have been asking — Evenus the poet asked me about it just the other day, and he&#x27;s sure to ask again. So if you&#x27;d like me to have an answer ready for him, you might as well tell me what to say. He wanted to know why you, who never wrote a line of poetry before, are now that you&#x27;re in prison turning Aesop&#x27;s fables into verse, and also composing a hymn to Apollo.</p>
 <p>Socrates: Tell him the truth, Cebes — that I had no intention of competing with him or his poems. I knew that wouldn&#x27;t be easy! I was trying to work out a scruple I had about the meaning of certain dreams. Throughout my life, I&#x27;ve often had a recurring dream telling me to &quot;compose music.&quot; The same dream kept coming, sometimes in one form, sometimes another, but always with the same message: &quot;Cultivate music and work at it.&quot; Until now, I&#x27;d always assumed this was just encouraging me to keep doing philosophy, which has been the pursuit of my life and is the noblest and finest form of music. The dream was telling me to do what I was already doing — like spectators shouting &quot;Run!&quot; at a runner who&#x27;s already running. But I wasn&#x27;t completely sure. Maybe the dream meant music in the ordinary sense. And since I&#x27;m under a death sentence, and the festival gave me a reprieve, I figured I should play it safe and satisfy the scruple by composing some verses before I go. So first I wrote a hymn to the god of the festival, and then, realizing that a real poet shouldn&#x27;t just string words together but should invent stories — and I&#x27;m no storyteller — I took some of Aesop&#x27;s fables that I had at hand and knew well, and turned the first ones I came across into verse. Tell Evenus this, Cebes. Tell him to be of good cheer, and say that I&#x27;d have him come after me, if he&#x27;s a wise man, and not delay. It looks like today is my day — the Athenians say I must go.</p>
 <p>Simmias: What a message for a man like Evenus! From what I know of him, he&#x27;s not going to take your advice unless he absolutely has to.</p>
-<h4>Socrates: Why — isn&#x27;t Evenus a philosopher?</h4>
+<h3 class="sub">Socrates: Why — isn&#x27;t Evenus a philosopher?</h3>
 <p>Simmias: I think he is.</p>
 <p>Socrates: Then he, or anyone who truly has the spirit of philosophy, will be willing to die — though he won&#x27;t take his own life, since that&#x27;s held to be wrong.</p>
 <p>Here he shifted his position, swinging his legs off the couch and placing his feet on the ground. He sat this way for the rest of the conversation.</p>
@@ -780,7 +1131,7 @@ You will not tell: for where there is fear there is also reverence.&quot;</p>
 <p>And what about self-control — what people usually mean by it, the ability to govern your passions and not be ruled by them? Doesn&#x27;t that belong specifically to those who care least about the body and spend their lives in philosophy?</p>
 <p>Simmias: It must.</p>
 <p>Socrates: Because here&#x27;s the thing: the courage and self-control of other people, if you really examine them, are contradictions.</p>
-<h4>Simmias: How so?</h4>
+<h3 class="sub">Simmias: How so?</h3>
 <p>Socrates: You know that most people regard death as a great evil?</p>
 <p>Simmias: Very much so.</p>
 <p>Socrates: And the &quot;courageous&quot; among them face death only because they&#x27;re afraid of something worse, right?</p>
@@ -815,7 +1166,7 @@ You will not tell: for where there is fear there is also reverence.&quot;</p>
 <p>Cebes: Very true.</p>
 <p>Socrates: Good. Now — isn&#x27;t there an opposite of life, the way sleep is the opposite of waking?</p>
 <p>Cebes: There is.</p>
-<h4>Socrates: What is it?</h4>
+<h3 class="sub">Socrates: What is it?</h3>
 <p>Cebes: Death.</p>
 <p>Socrates: And these, since they&#x27;re opposites, are generated from each other, with two transitional processes between them?</p>
 <p>Cebes: Of course.</p>
@@ -844,7 +1195,7 @@ You will not tell: for where there is fear there is also reverence.&quot;</p>
 <p>Socrates: Then here&#x27;s another way we arrive at the same conclusion: the living come from the dead, just as the dead come from the living. And if this is true, it&#x27;s very strong evidence that the souls of the dead must exist somewhere, from which they return.</p>
 <p>Cebes: Yes, Socrates. The conclusion seems to follow necessarily from what we&#x27;ve agreed to.</p>
 <p>Socrates: And I think we can show that our agreements were fair, Cebes. Consider this: if the process of generation only went in one direction, in a straight line, with no return or circle back to the opposite — then eventually everything would end up in the same state, and generation would stop entirely.</p>
-<h4>Cebes: What do you mean?</h4>
+<h3 class="sub">Cebes: What do you mean?</h3>
 <p>Socrates: It&#x27;s simple. Let me illustrate with sleep. If there were no alternation between sleeping and waking — if falling asleep weren&#x27;t balanced by waking up — then eventually the story of the sleeping Endymion would be meaningless, because everything else would be asleep too, and he&#x27;d be indistinguishable from anything else. Or if things only combined and never divided, we&#x27;d end up with the chaos that Anaxagoras described, everything mixed together.</p>
 <p>In the same way, my dear Cebes, if everything that has life eventually dies, and after dying stays dead without coming back to life — wouldn&#x27;t the inevitable result be that eventually everything dies and nothing is alive? Even if the living originally sprang from something other than the dead, if everything that lives eventually dies and stays dead, how could the end result be anything but universal death?</p>
 <p>Cebes: There&#x27;s no way around it, Socrates. Your argument seems absolutely right.</p>
@@ -857,7 +1208,7 @@ You will not tell: for where there is fear there is also reverence.&quot;</p>
 <p>Socrates: Here it is. We&#x27;d agree, wouldn&#x27;t we, that what a person recollects, they must have known at some earlier time?</p>
 <p>Simmias: Yes.</p>
 <p>Socrates: And can we agree on what kind of knowledge counts as recollection? What I mean is this: when a person perceives something — sees or hears or otherwise experiences it — and that experience makes them think of something else, something that belongs to a different kind of knowledge, isn&#x27;t that fairly called recollection?</p>
-<h4>Simmias: What do you mean?</h4>
+<h3 class="sub">Simmias: What do you mean?</h3>
 <p>Socrates: Here&#x27;s an example. Knowing what a lyre is isn&#x27;t the same as knowing what a particular person looks like, right?</p>
 <p>Simmias: Right.</p>
 <p>Socrates: But you know what happens to lovers. When they see a lyre, or a piece of clothing, or anything else that their beloved used to use, they recognize the lyre, and at the same time their mind forms an image of the person it belonged to. That&#x27;s recollection. In the same way, seeing Simmias might make you think of Cebes, and there are endless examples like this.</p>
@@ -927,7 +1278,7 @@ You will not tell: for where there is fear there is also reverence.&quot;</p>
 <p>Simmias: It must be so.</p>
 <p>Socrates: And when did our souls acquire this knowledge? Not since we were born as human beings?</p>
 <p>Simmias: No.</p>
-<h4>Socrates: Then before that?</h4>
+<h3 class="sub">Socrates: Then before that?</h3>
 <p>Simmias: Yes.</p>
 <p>Socrates: Then our souls must have existed before they took human form, Simmias — and during that earlier existence, they must have possessed intelligence.</p>
 <p>Simmias: Unless these ideas are given to us at the very moment of birth, Socrates? That&#x27;s the only other possibility.</p>
@@ -1016,14 +1367,14 @@ You will not tell: for where there is fear there is also reverence.&quot;</p>
 <p>Socrates: But no one who hasn&#x27;t pursued philosophy, no one who isn&#x27;t completely pure when they depart, is allowed into the company of the gods. Only the lover of knowledge is admitted. And this is exactly why, Simmias and Cebes, the true devotees of philosophy hold out against all physical desires and refuse to give in to them. It&#x27;s not because they fear poverty or financial ruin, like the lovers of money. And it&#x27;s not because they dread dishonor or disgrace, like the lovers of power.</p>
 <p>Cebes: No, that wouldn&#x27;t suit them at all.</p>
 <p>Socrates: Not at all. Those who truly care about their souls, and don&#x27;t merely spend their lives shaping and decorating the body, say goodbye to all of that. They refuse to walk the path of the blind. When philosophy offers them purification and release from evil, they feel they shouldn&#x27;t resist her. They follow wherever she leads.</p>
-<h4>Cebes: What do you mean?</h4>
+<h3 class="sub">Cebes: What do you mean?</h3>
 <p>Socrates: I&#x27;ll tell you. The lovers of knowledge realize that when philosophy first received their soul, she was a complete prisoner of the body. She could only view reality through the bars of her cage, never directly by herself. She was wallowing in total ignorance. And the worst part was that her desires had made her an accomplice in her own captivity.</p>
 <p>Philosophy saw how terrible this imprisonment was — and saw that the soul was bringing it upon herself — and gently took her in hand, comforting her and trying to set her free. Philosophy pointed out that the eyes and ears and all the other senses are full of deception. She urged the soul to withdraw from them as much as possible, to gather herself into herself, to trust only in herself and in her own direct apprehension of reality, and to distrust whatever comes through other channels, since such things are physical and changeable, while what she perceives through her own nature is intelligible and invisible.</p>
 <p>The soul of a true philosopher understands that she shouldn&#x27;t resist this liberation. So she abstains from pleasures and desires, pains and fears, as much as she can. Because she knows that when a person experiences intense pleasure or pain, fear or desire, the harm isn&#x27;t just what you&#x27;d expect — losing your health or wasting your money on your appetites. No, the real harm is far worse, the greatest and most terrible evil of all, one that most people never even think about.</p>
-<h4>Cebes: What evil is that, Socrates?</h4>
+<h3 class="sub">Cebes: What evil is that, Socrates?</h3>
 <p>Socrates: This: when the feeling of pleasure or pain is at its most intense, the soul is tricked into believing that whatever produces that intense feeling is the most real and true thing there is. But it isn&#x27;t — those are merely physical things.</p>
 <p>And isn&#x27;t this exactly when the soul is most enslaved by the body?</p>
-<h4>Cebes: How so?</h4>
+<h3 class="sub">Cebes: How so?</h3>
 <p>Socrates: Because each pleasure and pain acts like a nail, pinning the soul to the body, riveting her there until she becomes like the body and believes that whatever the body says is true. By agreeing with the body and sharing its delights, she&#x27;s forced to adopt the body&#x27;s habits and ways. A soul like this will never be pure when she departs for the world below. She&#x27;ll always be infected by the body. And so she sinks into another body and takes root there, and has no share in communion with what is divine and pure and simple.</p>
 <p>Cebes: That is so true, Socrates.</p>
 <p>Socrates: And this, Cebes, is why the true lovers of knowledge are self-controlled and courageous — not for the reasons the world thinks.</p>
@@ -1050,18 +1401,18 @@ You will not tell: for where there is fear there is also reverence.&quot;</p>
 <p>All of us, as we said to each other afterward, felt deeply unsettled by what they said. We&#x27;d been so firmly convinced by the earlier arguments, and now to have our confidence shaken like this was disorienting. It cast doubt not just on the previous reasoning, but on anything anyone might argue in the future. Maybe we were simply incapable of judging, or maybe there really was nothing solid to believe in.</p>
 <p>Echecrates: By heaven, Phaedo, I feel the same way. As you were talking, I found myself asking: what argument can I ever trust again? The argument that the soul is a harmony has always had a powerful hold on me, and when Simmias brought it up, it came back to me at once, like a belief I&#x27;d always held. Now I need to start all over and find a new argument to convince me that the soul survives death. Tell me, I beg you — how did Socrates handle this? Did he seem shaken, the way the rest of you were? Or did he take on the challenge calmly? And was his response strong, or weak? Tell me everything as exactly as you can.</p>
 <p>Phaedo: Echecrates, I&#x27;ve often marveled at Socrates, but never more than that day. That he could answer wasn&#x27;t surprising — he always could. What amazed me was, first, the gentle and warm and approving way he received what the young men said, and then how quickly he sensed the wound the argument had inflicted on us, and how readily he healed it. He was like a general rallying a defeated army, urging them to regroup and return to the battle.</p>
-<h4>Echecrates: What happened next?</h4>
+<h3 class="sub">Echecrates: What happened next?</h3>
 <p>Phaedo: I&#x27;ll tell you. I was sitting close to him, on his right side, on a low stool, while he was on a couch that was quite a bit higher. He stroked my head and pressed the hair along the back of my neck — he had a habit of playing with my hair — and then he said:</p>
 <p>Socrates: Tomorrow, Phaedo, I suppose these fine locks of yours will be cut off.</p>
 <p>Phaedo: Yes, Socrates, I suppose they will.</p>
 <p>Socrates: Not if you take my advice.</p>
-<h4>Phaedo: What should I do with them?</h4>
+<h3 class="sub">Phaedo: What should I do with them?</h3>
 <p>Socrates: Today — not tomorrow — if this argument dies and we can&#x27;t bring it back to life, you and I should both shave our heads in mourning. If I were you, and the argument slipped away from me, and I couldn&#x27;t hold my ground against Simmias and Cebes, I&#x27;d take an oath like the Argives — not to grow my hair back until I&#x27;d renewed the fight and won.</p>
 <p>Phaedo: But they say even Heracles couldn&#x27;t take on two opponents at once.</p>
 <p>Socrates: Then summon me, and I&#x27;ll be your Iolaus before the sun goes down.</p>
 <p>Phaedo: I&#x27;ll summon you — but not as Heracles calling for Iolaus. More like Iolaus calling for Heracles.</p>
 <p>Socrates: That works just as well. But first, we need to be careful about something.</p>
-<h4>Phaedo: Careful about what?</h4>
+<h3 class="sub">Phaedo: Careful about what?</h3>
 <p>Socrates: We need to avoid becoming misologists — haters of argument. Just as there are misanthropes, haters of people, there are misologists, haters of ideas. And both come from the same source: inexperience.</p>
 <p>Here&#x27;s how misanthropy works. You trust someone completely — you think they&#x27;re perfectly honest, dependable, and true. Then they turn out to be deceitful and dishonest. Then it happens again, and again, especially with people you thought were your closest and most trusted friends. After enough betrayals, you end up hating everyone and believing there&#x27;s no good in anyone at all. You&#x27;ve seen this happen?</p>
 </section>
@@ -1245,7 +1596,7 @@ Endure, my heart — you&#x27;ve suffered worse than this.&quot;</p>
 <p>Yes, certainly.</p>
 <p>And is there an opposite to life?</p>
 <p>There is.</p>
-<h4>What is it?</h4>
+<h3 class="sub">What is it?</h3>
 <p>Death.</p>
 <p>Then the soul will never accept the opposite of what she always brings — as we&#x27;ve already established?</p>
 <p>Impossible, said Cebes.</p>
@@ -1959,7 +2310,7 @@ Endure, my heart — you&#x27;ve suffered worse than this.&quot;</p>
   Hippias, a Sophist
   Prodicus, a Sophist
   Callias, a wealthy Athenian</pre>
-<h4>Scene: The house of Callias</h4>
+<h3 class="sub">Scene: The house of Callias</h3>
 <p>Companion: Where have you been, Socrates? Actually, I barely need to ask — I know you&#x27;ve been chasing after the gorgeous Alcibiades. I saw him just the other day, and I have to say, he&#x27;s got a beard now — a real one. He&#x27;s a man. But between you and me, he&#x27;s still stunning.</p>
 <p>Socrates: What&#x27;s a beard got to do with it? Don&#x27;t you agree with Homer, who says &quot;youth is most charming when the beard first appears&quot;? That&#x27;s exactly where Alcibiades is right now.</p>
 <p>Companion: Fair enough. So how did it go? Have you been spending time with him? Was he receptive?</p>
@@ -1968,13 +2319,13 @@ Endure, my heart — you&#x27;ve suffered worse than this.&quot;</p>
 <p>Socrates: Much more beautiful, actually.</p>
 <p>Companion: What are you talking about — a citizen or a foreigner?</p>
 <p>Socrates: A foreigner.</p>
-<h4>Companion: From where?</h4>
+<h3 class="sub">Companion: From where?</h3>
 <p>Socrates: Abdera.</p>
 <p>Companion: And you&#x27;re seriously telling me that this stranger is more beautiful to you than the son of Cleinias?</p>
 <p>Socrates: Isn&#x27;t the wiser always more beautiful, my friend?</p>
 <p>Companion: So you&#x27;ve actually met someone wise?</p>
 <p>Socrates: The wisest man alive, if you&#x27;re willing to give that title to Protagoras.</p>
-<h4>Companion: Wait — Protagoras is in Athens?</h4>
+<h3 class="sub">Companion: Wait — Protagoras is in Athens?</h3>
 <p>Socrates: He&#x27;s been here two days.</p>
 <p>Companion: And you&#x27;ve just come from seeing him?</p>
 <p>Socrates: I have. We talked for hours.</p>
@@ -2436,7 +2787,7 @@ thought him still speaking; still stood fixed to hear.&quot;</p>
 <p>He agreed.</p>
 <p>Well then, I said, tell us: what do the courageous charge toward? The same things as cowards?</p>
 <p>No, he answered.</p>
-<h4>Different things, then?</h4>
+<h3 class="sub">Different things, then?</h3>
 <p>Yes, he said.</p>
 <p>Do cowards go where it&#x27;s safe, and the courageous where there&#x27;s danger?</p>
 <p>That&#x27;s what people say, Socrates.</p>
@@ -2506,7 +2857,7 @@ thought him still speaking; still stood fixed to hear.&quot;</p>
   Chaerephon
   Gorgias
   Polus</pre>
-<h4>Scene: The house of Callicles</h4>
+<h3 class="sub">Scene: The house of Callicles</h3>
 <p><b>Callicles</b>: Well, as the saying goes, the wise man shows up late for the fight but right on time for the party.</p>
 <p><b>Socrates</b>: Are we late for a party?</p>
 <p><b>Callicles</b>: The best kind. Gorgias just gave us a magnificent performance.</p>
@@ -3772,7 +4123,7 @@ Leave these subtleties to others&quot; —</p>
   Socrates
   Alcibiades
   A troop of revelers</pre>
-<h4>Scene: The House of Agathon</h4>
+<h3 class="sub">Scene: The House of Agathon</h3>
 <p>As for what you&#x27;re asking about, I think I&#x27;m pretty well prepared to tell you. Just the day before yesterday, I was walking from my home in Phalerum into the city when someone I know spotted me from behind and called out in a joking voice: &quot;Hey! Apollodorus! You Phalerian man! Wait up!&quot;</p>
 <p>So I stopped, as requested. And he said, &quot;I&#x27;ve been looking for you, Apollodorus. I wanted to ask you about those speeches on love — the ones given by Socrates, Alcibiades, and the others at Agathon&#x27;s dinner party. A man named Phoenix, Philip&#x27;s son, told someone who told me about them, but his account was pretty vague. He did say you&#x27;d know the whole story, so would you fill me in? And who better to report the words of your dear friend Socrates? But first tell me — were you actually at this dinner?&quot;</p>
 <p>Your source, Glaucon, must have been very vague indeed if you think the party was recent, or that I could possibly have been there.</p>
@@ -3827,7 +4178,7 @@ All right. The speeches on love went like this — but I&#x27;d better start fro
 <p>Everyone expressed their agreement and urged Phaedrus to start.</p>
 <p>Now, Aristodemus didn&#x27;t remember every word that was said, and I don&#x27;t remember every word he told me. But I&#x27;ll give you what I thought was most worth remembering, and what the main speakers said.</p>
 <hr>
-<h4>PHAEDRUS&#x27; SPEECH</h4>
+<h3 class="sub">PHAEDRUS&#x27; SPEECH</h3>
 <p>Phaedrus opened by declaring that Love is a great god, worthy of wonder among both gods and mortals — but especially wonderful in his origin. He&#x27;s the eldest of the gods, and that&#x27;s a high honor. The proof? Love has no parents that anyone can name. No poet, no historian has ever said who his mother and father were. As Hesiod puts it:</p>
 <pre class="outline">  &quot;First came Chaos, then broad-breasted Earth,
   the eternal foundation of all things,
@@ -3845,7 +4196,7 @@ All right. The speeches on love went like this — but I&#x27;d better start fro
 <hr>
 <p>That, more or less, was Phaedrus&#x27; speech. Some other speeches followed that Aristodemus couldn&#x27;t remember. The next one he recalled was Pausanias&#x27;.</p>
 <hr>
-<h4>PAUSANIAS&#x27; SPEECH</h4>
+<h3 class="sub">PAUSANIAS&#x27; SPEECH</h3>
 <p>&quot;Phaedrus,&quot; Pausanias began, &quot;I don&#x27;t think the question has been framed quite right. We&#x27;ve been asked to praise Love as if there&#x27;s only one kind. But there isn&#x27;t. If there were only one Love, your approach would be fine. But since there&#x27;s more than one, we should first figure out which Love deserves our praise. Let me try to fix this. First I&#x27;ll tell you which Love is praiseworthy, and then I&#x27;ll try to praise him in a way he deserves.</p>
 <p>&quot;We all know that Love is inseparable from Aphrodite. If there were only one Aphrodite, there would be only one Love. But there are two Aphrodites, so there must be two Loves. And there are two Aphrodites, aren&#x27;t there? The elder one, who has no mother, is the daughter of Uranus — we call her Heavenly Aphrodite. The younger is the daughter of Zeus and Dione — we call her Common Aphrodite. It follows that the Love who works alongside Common Aphrodite is Common Love, and the other is Heavenly Love. All the gods deserve praise, of course, but we need to distinguish between their natures.</p>
 <p>&quot;Here&#x27;s the principle: no action is inherently good or evil. Take what we&#x27;re doing right now — drinking, singing, talking. None of these are good or evil in themselves. It all depends on how you do them. Done well, they&#x27;re good. Done badly, they&#x27;re evil. And love works the same way: not all love is noble or worthy of praise, only the kind that inspires us to love nobly.</p>
@@ -3870,7 +4221,7 @@ All right. The speeches on love went like this — but I&#x27;d better start fro
 <p>&quot;I&#x27;ll do both,&quot; said Eryximachus. &quot;I&#x27;ll speak in your place, and you speak in mine. While I&#x27;m talking, here&#x27;s what you should do: hold your breath for as long as you can. If that doesn&#x27;t work, gargle with a little water. And if they still won&#x27;t quit, find something to tickle your nose with and make yourself sneeze. Sneeze once or twice, and even the most stubborn hiccups will give up.&quot;</p>
 <p>&quot;Get on with your speech,&quot; said Aristophanes. &quot;I&#x27;ll try your remedies.&quot;</p>
 <hr>
-<h4>ERYXIMACHUS&#x27; SPEECH</h4>
+<h3 class="sub">ERYXIMACHUS&#x27; SPEECH</h3>
 <p>Eryximachus spoke as follows:</p>
 <p>&quot;Since Pausanias started off well but ended rather weakly, I feel I should supply what he left out. He was right that there are two kinds of Love. But my medical expertise tells me that this double Love isn&#x27;t only found in human souls attracted to beauty. It exists in the bodies of all animals, in the things that grow from the earth — in practically everything that exists. My profession has taught me how vast and universal the dominion of Love really is, extending over all things human and divine alike. Let me begin with medicine, to do honor to my craft.</p>
 <p>&quot;The human body contains both kinds of love, and they are fundamentally different. The healthy part of the body desires one thing; the diseased part desires something else. As Pausanias was saying, it&#x27;s honorable to gratify the good and dishonorable to gratify the bad. The same applies to the body: the good, healthy elements should be encouraged, while the bad, diseased elements should be discouraged. That, in essence, is what medicine is — the science of understanding the body&#x27;s loves and desires, knowing when to satisfy them and when to deny them. The best doctor is the one who can tell healthy desire from unhealthy desire, who can transform one into the other, who knows when to create desire and when to eliminate it, and who can make the body&#x27;s warring elements into loving friends.</p>
@@ -3889,7 +4240,7 @@ All right. The speeches on love went like this — but I&#x27;d better start fro
 <p>&quot;You&#x27;re right, you&#x27;re right,&quot; said Aristophanes, laughing. &quot;Forget I said anything. But please don&#x27;t watch me like a hawk. I&#x27;m nervous enough as it is. I&#x27;m not worried about saying something funny — that&#x27;s what I do, that&#x27;s what my Muse expects of me — I&#x27;m worried about saying something ridiculous.&quot;</p>
 <p>&quot;You think you can take a shot at me and just walk away?&quot; said Eryximachus. &quot;All right, all right. If you&#x27;re very careful and remember that I&#x27;ll hold you accountable, I might let you off.&quot;</p>
 <hr>
-<h4>ARISTOPHANES&#x27; SPEECH</h4>
+<h3 class="sub">ARISTOPHANES&#x27; SPEECH</h3>
 <p>Aristophanes said he intended to take a completely different approach from Pausanias and Eryximachus.</p>
 <p>&quot;The way I see it,&quot; he said, &quot;human beings have completely failed to grasp the power of Love. If they understood it, they&#x27;d have built him the grandest temples and altars and offered the most magnificent sacrifices. But none of that has happened, and it absolutely should have, because of all the gods, Love is the one who loves humanity most. He&#x27;s our helper. He&#x27;s our healer. He cures the condition that, more than anything else, keeps the human race from being happy.</p>
 <p>&quot;I&#x27;m going to try to explain his power to you, and then you can spread the word.</p>
@@ -3930,7 +4281,7 @@ All right. The speeches on love went like this — but I&#x27;d better start fro
 <p>&quot;You&#x27;re absolutely right, Phaedrus,&quot; said Agathon. &quot;I have no problem starting my speech. I&#x27;ll have plenty of other chances to talk with Socrates.</p>
 <p>&quot;Let me begin by explaining how I intend to speak, and then I&#x27;ll speak.</p>
 <hr>
-<h4>AGATHON&#x27;S SPEECH</h4>
+<h3 class="sub">AGATHON&#x27;S SPEECH</h3>
 <p>&quot;The previous speakers all seem to have been congratulating humanity on the benefits Love provides, rather than praising the god himself. Nobody has described what Love actually is — what his nature is like. Well, the correct way to praise anything is to first describe the thing itself, and then talk about what it causes. So let me begin with Love&#x27;s nature, and then turn to his gifts.</p>
 <p>&quot;I say — and I hope the gods won&#x27;t be offended — that of all the blessed gods, Love is the most blessed, because he is the most beautiful and the best. Here is why he is the most beautiful:</p>
 <p>&quot;First, Phaedrus, he is the youngest of the gods. And Love himself provides the proof — he runs from old age, which, fast as it is, catches up with most of us faster than we&#x27;d like. Love despises old age and won&#x27;t go near it. Youth and Love are constant companions. Like attracts like, as the proverb says. I agreed with much of what Phaedrus said, but I can&#x27;t agree that Love is older than Kronos and Iapetus. No! I say Love is the youngest of the gods, and forever young. Those ancient acts among the gods that Hesiod and Parmenides describe — the castrations, the chains, all that violence — those happened under the rule of Necessity, not Love. If Love had been reigning back then, there would have been no mutilation, no binding, no brutality. There would have been peace and tenderness, as there has been ever since Love took charge.</p>
@@ -5678,11 +6029,11 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>So let&#x27;s put a stop to these tales, before they breed moral laziness in the young.</p>
 <p>By all means, he replied.</p>
 <p>Now, we&#x27;ve been deciding which kinds of subjects should and shouldn&#x27;t be discussed. Let&#x27;s make sure we haven&#x27;t missed anything. We&#x27;ve already covered how gods, demigods, heroes, and the underworld should be treated.</p>
-<h4>What remains?</h4>
+<h3 class="sub">What remains?</h3>
 <p>What should we say about human beings? That&#x27;s clearly the part we haven&#x27;t gotten to yet.</p>
 <p>Clearly.</p>
 <p>But we can&#x27;t answer that question right now, my friend.</p>
-<h4>Why not?</h4>
+<h3 class="sub">Why not?</h3>
 <p>Because, if I&#x27;m not mistaken, we&#x27;ll have to say that poets and storytellers commit the most serious errors when they tell us that wicked people are often happy and good people miserable, that injustice pays off as long as you don&#x27;t get caught, and that justice is a loss for the just person and a gain for everyone else. We&#x27;ll forbid them from saying these things and command them to sing the opposite.</p>
 <p>Of course we will, he replied.</p>
 <p>But if you agree with me on that, then I&#x27;d say you&#x27;ve already conceded the fundamental principle we&#x27;ve been arguing for all along.</p>
@@ -6525,7 +6876,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>You, he said.</p>
 <p>Why me specifically? I asked again.</p>
 <p>Because we think you&#x27;re being lazy, he said. You&#x27;re trying to cheat us out of a whole section of the argument — and it&#x27;s an important one. You just breezed right past it, thinking we wouldn&#x27;t notice. As if it&#x27;s obvious to everyone that when it comes to women and children, &quot;friends share everything in common.&quot;</p>
-<h4>And wasn&#x27;t I right about that, Adeimantus?</h4>
+<h3 class="sub">And wasn&#x27;t I right about that, Adeimantus?</h3>
 <p>Yes, he said, but what&#x27;s &quot;right&quot; in this case — like everything else — needs to be explained. &quot;Community&quot; can mean a lot of things. So please, tell us what kind of community you mean. We&#x27;ve been waiting for you to say something about the family life of your citizens. How will they bring children into the world? How will they raise them? What exactly is this &quot;community of women and children&quot;? Because we&#x27;re convinced that getting this right — or wrong — will have a massive impact on the state, for good or for evil. And now, since the question is still hanging, and you&#x27;re already moving on to the next thing, we&#x27;ve decided — as you just heard — not to let you off the hook until you give us a full account.</p>
 <p>You can count me in on that decision, said Glaucon.</p>
 <p>And without further ado, said Thrasymachus, consider all of us equally agreed.</p>
@@ -6582,7 +6933,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>Because I think many people fall into it without meaning to. When they think they&#x27;re reasoning, they&#x27;re actually just arguing — because they can&#x27;t properly define and divide the concept they&#x27;re talking about. They end up chasing verbal distinctions in a spirit of combat rather than genuine inquiry.</p>
 <p>Yes, he said, that happens all the time. But how does that apply to us?</p>
 <p>Very directly. There&#x27;s a real danger that we&#x27;re falling into a purely verbal dispute.</p>
-<h4>How so?</h4>
+<h3 class="sub">How so?</h3>
 <p>We&#x27;re fiercely insisting that different natures should have different occupations — and that&#x27;s literally true. But we never stopped to consider what we actually mean by &quot;sameness&quot; and &quot;difference&quot; of nature. We never asked: same or different in what respect? When we assigned different pursuits to different natures, we didn&#x27;t define our terms.</p>
 <p>No, he said. We never did.</p>
 <p>I said: suppose, by way of illustration, we asked whether bald men and hairy men have opposite natures. If we agree they do, then if bald men are good cobblers, we&#x27;d have to forbid hairy men from cobbling — and vice versa.</p>
@@ -6691,7 +7042,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>Because, I said, our rulers will frequently need to use deception and manipulation for the good of their citizens. We agreed earlier that such methods, used like medicine, can be justified.</p>
 <p>And we were right to say that.</p>
 <p>And this &quot;medicinal&quot; approach will come up a lot when it comes to marriage and reproduction.</p>
-<h4>How so?</h4>
+<h3 class="sub">How so?</h3>
 <p>Here&#x27;s the principle we&#x27;ve already established, I said. The best men should be paired with the best women as often as possible, and the inferior with the inferior as rarely as possible. The children of the first group should be raised, while those of the second should not — if we want to keep the flock in top condition. And all of this must be kept secret from everyone except the rulers, or the guardian class will erupt in rebellion.</p>
 <p>We should establish regular festivals, I said, where we bring the brides and grooms together. There&#x27;ll be sacrifices and wedding songs composed by our poets. The number of marriages will be left to the rulers&#x27; discretion — their goal is to keep the population stable. They&#x27;ll need to factor in wars, diseases, and other threats, so the state stays neither too large nor too small.</p>
 <p>Certainly, he said.</p>
@@ -6706,7 +7057,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>As it should be, I replied. But let&#x27;s press on with our plan. We said the parents should be in the prime of life.</p>
 <p>Yes.</p>
 <p>And what counts as &quot;the prime&quot;? Something like twenty years for a woman and thirty for a man.</p>
-<h4>Which specific years?</h4>
+<h3 class="sub">Which specific years?</h3>
 <p>A woman should begin bearing children for the state at twenty and continue until forty. A man should begin at twenty-five — once he&#x27;s passed the point where his energy peaks — and continue until fifty-five.</p>
 <p>Yes, he said. For both sexes, those are the years of peak physical and mental vitality.</p>
 <p>Anyone older or younger than these limits who takes part in the public breeding program will be committing an unholy and unjust act. Their child — if it sneaks into existence — will have been conceived without the blessings of the sacrifices and prayers that the priestesses, priests, and the whole city offer at every wedding, praying that each new generation will be better and more useful than their good and useful parents. Instead, their child will be the offspring of darkness and uncontrolled desire.</p>
@@ -6750,7 +7101,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>&quot;Slaves.&quot;</p>
 <p>And what do rulers in other states call each other?</p>
 <p>&quot;Fellow rulers.&quot;</p>
-<h4>And in ours?</h4>
+<h3 class="sub">And in ours?</h3>
 <p>&quot;Fellow guardians.&quot;</p>
 <p>Now, in other states, could you find a ruler who&#x27;d call one colleague &quot;my friend&quot; and another &quot;a stranger with no connection to me&quot;?</p>
 <p>Yes, all the time.</p>
@@ -6806,7 +7157,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>The remaining question, I said, is whether this kind of community is actually possible among humans — as it is among other animals — and if so, how?</p>
 <p>You&#x27;ve anticipated exactly what I was going to ask.</p>
 <p>As far as war goes, I said, there&#x27;s no difficulty in seeing how they&#x27;ll manage.</p>
-<h4>How?</h4>
+<h3 class="sub">How?</h3>
 <p>They&#x27;ll go on campaigns together, obviously, and bring along any children strong enough to watch — just the way the children of craftsmen observe their parents at work long before they take up the craft themselves. The children won&#x27;t just watch, either. They&#x27;ll help out and make themselves useful in war, serving their fathers and mothers. Haven&#x27;t you noticed how potters&#x27; children watch and help at the wheel for a long time before they&#x27;re allowed to touch it?</p>
 <p>Yes, I have.</p>
 <p>And should potters be more careful about giving their children experience than our guardians?</p>
@@ -6842,7 +7193,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>And each should shake his hand?</p>
 <p>I agree to that too.</p>
 <p>But you probably won&#x27;t agree with my next proposal.</p>
-<h4>What is it?</h4>
+<h3 class="sub">What is it?</h3>
 <p>That he should kiss — and be kissed by — each of them.</p>
 <p>Absolutely! said Glaucon. I&#x27;d go even further: while the campaign lasts, no one whom he wants to kiss should be allowed to refuse him. That way, if any soldier is in love — with a young man or a woman — he&#x27;ll have extra incentive to win the prize of valor.</p>
 <p>Excellent, I said. We&#x27;ve already established that the bravest men will get more marriage opportunities and will be chosen for pairing more often than others, so they&#x27;ll have the most children.</p>
@@ -6863,7 +7214,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>And for all time to come, we&#x27;ll treat their graves with the reverence due to heroes. The same honors will go to anyone judged exceptionally good, whether they die in battle, of old age, or by any other means.</p>
 <p>Very right, he said.</p>
 <p>Now — how should our soldiers treat their enemies?</p>
-<h4>In what respect?</h4>
+<h3 class="sub">In what respect?</h3>
 <p>First, slavery. Should Greeks enslave other Greeks? Or should they spare them — and encourage other Greeks to do the same — keeping in mind that the whole Greek world could someday fall under barbarian domination?</p>
 <p>Sparing them is infinitely better.</p>
 <p>Then no Greek should be enslaved by our citizens. That&#x27;s a rule they&#x27;ll follow and recommend to all other Greeks.</p>
@@ -6919,7 +7270,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>And is our theory any less valid because we can&#x27;t prove such a state could actually come into being?</p>
 <p>Surely not.</p>
 <p>That&#x27;s the truth. But if you want me to try to show how — and under what conditions — this state is most likely to become real, I&#x27;ll need you to grant me the same things you granted before.</p>
-<h4>What things?</h4>
+<h3 class="sub">What things?</h3>
 <p>Are ideals ever perfectly realized? Doesn&#x27;t every word express more than the fact? Doesn&#x27;t reality always, necessarily, fall short of the theory? What do you say?</p>
 <p>I agree.</p>
 <p>Then don&#x27;t insist that I prove the actual state will match the ideal in every respect. If we can show how a city might be governed in a way that comes close to what we&#x27;ve described, you&#x27;ll have to admit we&#x27;ve found the possibility you demanded. Isn&#x27;t that enough?</p>
@@ -6927,7 +7278,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>Then let me try to identify what single flaw in existing states causes them to be governed so badly, and what&#x27;s the smallest change that could bring a state into this better form. Ideally, one change. If not, two. If not, as few and as minor as possible.</p>
 <p>Agreed, he said.</p>
 <p>I think, I said, that there&#x27;s one single change that could transform a state — though it&#x27;s neither small nor easy. But it is possible.</p>
-<h4>What is it?</h4>
+<h3 class="sub">What is it?</h3>
 <p>Now I come face to face with what I&#x27;ve been calling the greatest wave. But the words will be spoken, even if the wave breaks and drowns me in ridicule and contempt. Listen carefully.</p>
 <p>Speak, he said.</p>
 <p>I said: Unless philosophers become kings, or the kings and princes of this world acquire the spirit and power of philosophy — unless political greatness and wisdom are united in the same person, and all those lesser natures who chase one while ignoring the other are forced to step aside — cities will never be free from their afflictions. Nor will the human race. Only then will this state of ours have any chance of coming to life and seeing the light of day.</p>
@@ -6959,7 +7310,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>Those who are lovers of the vision of truth, I said.</p>
 <p>That sounds right, he said, but what do you mean by it?</p>
 <p>I&#x27;d have trouble explaining it to just anyone. But I&#x27;m sure you&#x27;ll grant me this.</p>
-<h4>What?</h4>
+<h3 class="sub">What?</h3>
 <p>That since beauty and ugliness are opposites, they&#x27;re two distinct things.</p>
 <p>Of course.</p>
 <p>And since they&#x27;re two, each of them is one?</p>
@@ -6967,7 +7318,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>The same goes for justice and injustice, good and evil, and every other quality. Taken individually, each is one. But through their various combinations with actions, bodies, and each other, each appears to be many.</p>
 <p>Right.</p>
 <p>And this is the distinction I&#x27;m drawing between the lovers of spectacle — the practical, art-loving crowd — and the people I&#x27;m talking about, who alone deserve the title &quot;philosopher.&quot;</p>
-<h4>How so?</h4>
+<h3 class="sub">How so?</h3>
 <p>The lovers of sights and sounds, I said, are fond of beautiful tones, colors, shapes, and all the things crafted from them. But their minds can&#x27;t grasp the nature of Beauty itself — absolute Beauty.</p>
 <p>That&#x27;s true.</p>
 <p>And how few are those who can reach the vision of Beauty itself!</p>
@@ -7092,7 +7443,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>Let&#x27;s start with this: philosophical minds are always drawn to the kind of knowledge that reveals eternal reality — the kind that doesn&#x27;t shift with the tides of creation and destruction.</p>
 <p>Further, I said, let&#x27;s agree that they love all of true reality. They won&#x27;t voluntarily give up any part of it, whether great or small, more prestigious or less — just like we said about lovers and ambitious people.</p>
 <p>And if they&#x27;re going to be what we described, is there another quality they need?</p>
-<h4>What quality?</h4>
+<h3 class="sub">What quality?</h3>
 <p>Truthfulness. They&#x27;ll never willingly let falsehood into their minds. They&#x27;ll hate it. They&#x27;ll love the truth.</p>
 <p>Yes, that can safely be said of them.</p>
 <p>&quot;Can be&quot; isn&#x27;t strong enough, my friend. Say &quot;must be.&quot; Because anyone who&#x27;s passionately in love with something can&#x27;t help loving everything that&#x27;s connected to it.</p>
@@ -7107,18 +7458,18 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>That&#x27;s absolutely certain.</p>
 <p>A person like that is bound to be self-controlled, not greedy. The things that drive other people to chase and hoard money have no hold on him.</p>
 <p>There&#x27;s another test of the philosophical nature we need to consider.</p>
-<h4>What&#x27;s that?</h4>
+<h3 class="sub">What&#x27;s that?</h3>
 <p>There shouldn&#x27;t be any pettiness in their soul. Nothing is more hostile to a mind that&#x27;s always reaching for the whole of things, both divine and human, than small-mindedness.</p>
 <p>Exactly right, he replied.</p>
 <p>So how could someone with true greatness of mind — someone who contemplates all of time and all of existence — think that human life is such a big deal?</p>
-<h4>Or fear death?</h4>
+<h3 class="sub">Or fear death?</h3>
 <p>Then cowardice and pettiness have no place in real philosophy?</p>
 <p>None at all.</p>
 <p>And someone who&#x27;s well-balanced, not greedy, not petty, not a braggart, not a coward — could such a person ever be unjust or difficult to deal with?</p>
 <p>Impossible.</p>
 <p>So when you&#x27;re looking at whether someone has a philosophical soul, even in youth, watch for this: are they just and gentle, or rude and antisocial?</p>
 <p>There&#x27;s another thing we should check.</p>
-<h4>What?</h4>
+<h3 class="sub">What?</h3>
 <p>Whether they enjoy learning. Because nobody loves what causes them pain and frustration and barely any progress.</p>
 <p>Certainly not.</p>
 <p>And if someone is forgetful — if nothing they learn sticks — won&#x27;t they end up like an empty jar?</p>
@@ -7154,7 +7505,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>And tell him this: he&#x27;s right that the best philosophers are useless to society. But tell him to blame that uselessness on the people who refuse to use them — not on the philosophers themselves. It&#x27;s not natural for a navigator to beg the sailors to let him steer. That&#x27;s not how it works. And the old saying that &quot;the wise should go knocking on the doors of the rich&quot; — the clever person who came up with that was lying. The truth is: when you&#x27;re sick, whether you&#x27;re rich or poor, you go to the doctor. And when you need to be governed, you go to the person who knows how to govern. A ruler who&#x27;s worth anything doesn&#x27;t beg his subjects to be ruled by him. No — the rulers we have now are a different breed entirely. They&#x27;re exactly like those mutinous sailors. And the real helmsmen — they&#x27;re the ones the sailors dismiss as stargazers and good-for-nothings.</p>
 <p>Precisely, he said.</p>
 <p>So for these reasons, and among people like these, philosophy — the noblest pursuit of all — isn&#x27;t likely to be respected by the opposing crowd. But the worst damage to philosophy isn&#x27;t done by its opponents. It&#x27;s done by its own so-called followers — the same people your critic was talking about when he said that most philosophers are total rogues and even the best are useless. And I agreed with him.</p>
-<h4>Yes?</h4>
+<h3 class="sub">Yes?</h3>
 <p>And now we&#x27;ve explained why the good ones are useless?</p>
 <p>True.</p>
 <p>Then shall we go on to show that most of them getting corrupted is also inevitable — and that this isn&#x27;t philosophy&#x27;s fault either?</p>
@@ -7177,7 +7528,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>I&#x27;ll try to explain. Everyone would agree that a nature with all the qualities we listed for a philosopher — that&#x27;s a rare plant. You don&#x27;t see it often among people.</p>
 <p>Rare indeed.</p>
 <p>And think of how many powerful forces there are to destroy it!</p>
-<h4>What forces?</h4>
+<h3 class="sub">What forces?</h3>
 <p>Here&#x27;s the strangest part: the philosopher&#x27;s own virtues — courage, self-control, and the rest — every one of these admirable qualities actually works to corrupt and distract the soul that possesses them from philosophy.</p>
 <p>That is strange, he replied.</p>
 <p>Then add in all the so-called good things in life — beauty, wealth, physical strength, powerful family connections, political influence. You get the idea. These also have a corrupting and distracting effect.</p>
@@ -7196,7 +7547,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>In a moment like that, what happens to a young person&#x27;s heart? What kind of private education could possibly hold up against the flood of popular opinion? Won&#x27;t he be swept away? Won&#x27;t he end up adopting whatever the crowd calls good and bad? Won&#x27;t he do what they do, become what they are?</p>
 <p>Yes, Socrates, he said. He&#x27;d have no choice.</p>
 <p>And yet, I said, there&#x27;s an even greater force I haven&#x27;t mentioned.</p>
-<h4>What&#x27;s that?</h4>
+<h3 class="sub">What&#x27;s that?</h3>
 <p>The gentle persuasion of fines, property seizure, or death — which these popular educators, the public, use when their words aren&#x27;t enough.</p>
 <p>Yes, they certainly do. And they don&#x27;t hold back.</p>
 <p>So what private Sophist, what individual teacher, could possibly compete against all that?</p>
@@ -7240,7 +7591,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>And so philosophy is left abandoned, her marriage incomplete. Her rightful partners have deserted her. While they go off living false, unworthy lives, other people — seeing that she has no one to protect her — move in and dishonor her. They&#x27;re the ones who produce all those accusations you mentioned: that some of philosophy&#x27;s followers are worthless, and most deserve the harshest punishment.</p>
 <p>That&#x27;s certainly what people say.</p>
 <p>And no wonder! Think of the mediocre little people who spot this territory lying open — a field full of impressive-sounding names and grand titles. Like prisoners escaping jail who duck into a temple for sanctuary, these people leap from their petty trades into philosophy. And the ones who make the jump are probably the cleverest at their own shabby crafts. Because even in her degraded condition, philosophy retains a dignity that no trade can match. And that attracts plenty of people whose natures are defective — whose souls are stunted and deformed by years of menial work, just as their bodies are bent by their trades.</p>
-<h4>Isn&#x27;t that unavoidable?</h4>
+<h3 class="sub">Isn&#x27;t that unavoidable?</h3>
 <p>Aren&#x27;t they just like a bald little tinker who&#x27;s just gotten out of debtor&#x27;s prison and come into a fortune? He takes a bath, puts on a new suit, decks himself out like a bridegroom — and goes off to marry his master&#x27;s daughter, left poor and without protectors?</p>
 <p>A perfect comparison.</p>
 <p>And what kind of children will come from marriages like that? Won&#x27;t they be low-quality and illegitimate?</p>
@@ -7260,11 +7611,11 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>Yes, I replied — ours, in most respects. But remember, I said earlier that there would always need to be some living authority in the state who holds the same vision of the constitution that guided you as you were laying down the laws.</p>
 <p>That was said, he replied.</p>
 <p>Yes, but not satisfactorily. You all kept raising objections that showed the discussion would be long and difficult. And what still remains is the hardest part.</p>
-<h4>What&#x27;s left?</h4>
+<h3 class="sub">What&#x27;s left?</h3>
 <p>The question of how philosophy can be practiced in a way that doesn&#x27;t destroy the state. Because all great ventures involve risk. &quot;The good is hard,&quot; as they say.</p>
 <p>Still, he said, let&#x27;s clear this up. Then we&#x27;ll be done.</p>
 <p>It won&#x27;t be lack of will that holds me back, I said — only lack of ability, if anything. But you can judge my eagerness for yourselves. And notice how boldly I&#x27;m about to declare that states should pursue philosophy in a completely different way than they do now.</p>
-<h4>How so?</h4>
+<h3 class="sub">How so?</h3>
 <p>Right now, I said, the students of philosophy are too young. They&#x27;re barely out of childhood, and they squeeze in philosophy around the practical business of making money and running a household. Even the ones considered most philosophical — when they get within sight of the really difficult part, meaning dialectic — they drop out. Later in life, if someone invites them to a lecture, they might go and consider it a big event. But they think philosophy is a side hobby, not their real business. And when they get old, their philosophical light goes out more completely than the sun of Heraclitus — because unlike his sun, it never reignites.</p>
 <p>What should they do instead? he asked.</p>
 <p>Exactly the opposite. When they&#x27;re young, their studies and whatever philosophy they learn should be age-appropriate. During this period, as they&#x27;re growing toward adulthood, the main focus should be on their bodies — building the physical foundation they&#x27;ll need in the service of philosophy. As they mature and their minds ripen, intensify the training of their souls. And when their physical strength fades and they&#x27;re past the age for military and civic duties — then let them roam free in philosophy and do nothing else of consequence. That is, if they&#x27;re going to live well in this life and crown it with the same happiness in the next.</p>
@@ -7314,7 +7665,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>Good. Then let&#x27;s take it as settled. Now, will anyone deny that the sons of kings or princes might be born with philosophical natures?</p>
 <p>No one would deny that.</p>
 <p>And if such children were born, will anyone claim they&#x27;d inevitably be corrupted? Even we admit they&#x27;d be hard to save. But in the entire course of time, not a single one could survive? Who would dare say that?</p>
-<h4>Who indeed!</h4>
+<h3 class="sub">Who indeed!</h3>
 <p>But look, I said — one would be enough. One philosopher with a city willing to obey him, and he could bring into reality the ideal state that everyone now considers impossible.</p>
 <p>Yes, one is enough.</p>
 <p>If the ruler established the laws and institutions we&#x27;ve described, it&#x27;s surely possible that the citizens would be willing to obey.</p>
@@ -7346,7 +7697,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>You may remember, I said, that we divided the soul into three parts and distinguished the natures of justice, self-control, courage, and wisdom.</p>
 <p>If I&#x27;d forgotten that, he said, I wouldn&#x27;t deserve to hear any more.</p>
 <p>And do you remember the qualification we made before that discussion?</p>
-<h4>What qualification?</h4>
+<h3 class="sub">What qualification?</h3>
 <p>We said that seeing these virtues in their full perfection required a longer and more difficult path. At the end of that road, they&#x27;d appear clearly. But we could sketch out a rough version that was consistent with what we&#x27;d discussed so far. You all said that was good enough, and so we proceeded — in a way that seemed to me rather imprecise. But whether you were satisfied, that&#x27;s your call.</p>
 <p>Yes, he said. The others and I thought you gave us a fair account.</p>
 <p>But my friend, I said, in matters like these, any account that falls short of the whole truth isn&#x27;t really a fair measure. Nothing incomplete is the measure of anything. Though people are often content to stop there, thinking they&#x27;ve searched far enough.</p>
@@ -7389,7 +7740,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>I do wish, I replied, that I could pay you the full account — the parent, not just the offspring. But take this as interest on the loan. Just be careful that I don&#x27;t accidentally pay you in counterfeit, though I have no intention of deceiving you.</p>
 <p>We&#x27;ll be careful. Go ahead.</p>
 <p>Good. But first I need to remind you of something we&#x27;ve discussed before — and on many other occasions.</p>
-<h4>What&#x27;s that?</h4>
+<h3 class="sub">What&#x27;s that?</h3>
 <p>The old story: there are many beautiful things and many good things — many instances of each kind. We use the word &quot;many&quot; to describe them all.</p>
 <p>True, he said.</p>
 <p>And then there&#x27;s beauty itself and goodness itself. For each thing that comes in many instances, there&#x27;s a single Form — one unifying idea — which we call the essence of each.</p>
@@ -7434,7 +7785,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>Now, the thing that gives truth to what&#x27;s known and gives the knower the power to know — that is what I call the Form of the Good. It&#x27;s the cause of knowledge and truth, insofar as truth is something we can know. And beautiful as both truth and knowledge are, you&#x27;ll be right to think the Good is something even more beautiful than either. Just as light and sight are like the sun but aren&#x27;t the sun, so knowledge and truth are like the Good but aren&#x27;t the Good. The Good holds an even higher place of honor.</p>
 <p>What an extraordinary beauty that must be, he said — if it produces both knowledge and truth but surpasses them in beauty! You surely don&#x27;t mean pleasure?</p>
 <p>God forbid, I replied. But consider the analogy from another angle.</p>
-<h4>What angle?</h4>
+<h3 class="sub">What angle?</h3>
 <p>The sun doesn&#x27;t just make things visible. It also gives them growth, nourishment, and existence — though the sun itself isn&#x27;t existence.</p>
 <p>Right.</p>
 <p>In the same way, the Good doesn&#x27;t just give things the power to be known. It gives them their very being and reality — though the Good itself isn&#x27;t being. It surpasses being in dignity and power.</p>
@@ -7455,7 +7806,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>Would you agree that these two sections differ in their degree of truth? That the image stands to the original as opinion stands to knowledge?</p>
 <p>Absolutely.</p>
 <p>Now consider how the intelligible realm is divided.</p>
-<h4>How?</h4>
+<h3 class="sub">How?</h3>
 <p>Like this: in the lower section, the soul uses the objects from the visible realm as images. It works from assumptions — hypotheses — and instead of moving upward to a first principle, it moves downward toward a conclusion. In the higher section, the soul moves beyond hypotheses to a principle that stands above all assumptions. It doesn&#x27;t use images at all. It proceeds through the Forms themselves, using only the Forms.</p>
 <p>I don&#x27;t quite follow, he said.</p>
 <p>Let me try again. You&#x27;ll understand better after some examples. You know that students of geometry, arithmetic, and the related sciences start by assuming certain things — odd and even numbers, various types of angles and figures, and so on. These are their hypotheses. They take them as given, obvious, needing no justification. They don&#x27;t bother explaining them to themselves or anyone else. Starting from these assumptions, they work step by step until they reach a consistent conclusion.</p>
@@ -7557,12 +7908,12 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>Good. Then shall we figure out how to produce such guardians — how to bring them from darkness into light, the way some people are said to have ascended from the underworld to the realm of the gods?</p>
 <p>By all means, he replied.</p>
 <p>And this journey, I said, isn&#x27;t a simple flip — like turning over a game piece. It&#x27;s the turning of a soul from a day that&#x27;s barely better than night to the true day of being. That ascent from below — that&#x27;s what we&#x27;re calling true philosophy.</p>
-<h4>Right?</h4>
+<h3 class="sub">Right?</h3>
 <p>So we need to ask: what kind of knowledge has the power to make this happen? What kind of study draws the soul from becoming to being?</p>
 <p>And something else just occurred to me: remember, our young people are supposed to be warrior-athletes too.</p>
 <p>Yes, that was established.</p>
 <p>Then this knowledge we&#x27;re looking for needs an additional quality.</p>
-<h4>What quality?</h4>
+<h3 class="sub">What quality?</h3>
 <p>It has to be useful in war.</p>
 <p>Yes, if possible.</p>
 <p>Now, there were two parts to the education we set up earlier, weren&#x27;t there?</p>
@@ -7573,9 +7924,9 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>You remember that perfectly, I said. Music really doesn&#x27;t have what we need. But then what subject does? Because we also ruled out all the practical crafts as too lowly.</p>
 <p>Right, he said. But if we&#x27;ve excluded music, physical training, and the practical crafts, what&#x27;s left?</p>
 <p>Well, I said, if there&#x27;s nothing specifically left from our earlier curriculum, we&#x27;ll have to find something universal — something that cuts across all fields.</p>
-<h4>Like what?</h4>
+<h3 class="sub">Like what?</h3>
 <p>Something that every art, every science, every kind of thinking makes use of. Something everyone has to learn as a basic part of education.</p>
-<h4>What is it?</h4>
+<h3 class="sub">What is it?</h3>
 <p>The humble skill of telling one from two from three. In a word: number and calculation. Don&#x27;t all arts and sciences depend on these?</p>
 <p>Yes.</p>
 <p>Including the art of war?</p>
@@ -7593,12 +7944,12 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>Here&#x27;s what I mean. Some things we perceive don&#x27;t push the mind to think further, because our senses handle them just fine. But other things — our senses give us such contradictory information about them that the mind absolutely has to step in and investigate.</p>
 <p>You&#x27;re talking about optical illusions, he said — things that look different at different distances, or tricks of light and shadow.</p>
 <p>No, I said, that&#x27;s not what I mean at all.</p>
-<h4>Then what?</h4>
+<h3 class="sub">Then what?</h3>
 <p>What I mean is this: some perceptions don&#x27;t produce contradictions. The sense experience is consistent, so the mind isn&#x27;t provoked to think. But others are inherently contradictory — the sense gives you opposite information at the same time — and that&#x27;s what forces thought into action. Let me illustrate.</p>
 <p>Here are three fingers — a little finger, a ring finger, and a middle finger.</p>
 <p>All right.</p>
 <p>Assume you&#x27;re looking at them up close. Now here&#x27;s the key point.</p>
-<h4>What is it?</h4>
+<h3 class="sub">What is it?</h3>
 <p>Each of them is equally a finger — whether you look at the one in the middle or on the end, whether it&#x27;s light or dark, thick or thin. It makes no difference. A finger is a finger. In these cases, the mind isn&#x27;t compelled to ask, &quot;Wait — what is a finger?&quot; because sight never suggests that a finger is anything other than a finger.</p>
 <p>True.</p>
 <p>So there&#x27;s nothing here that provokes or stimulates thought.</p>
@@ -7653,7 +8004,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>I agree.</p>
 <p>So for all these reasons, arithmetic is the kind of knowledge our best minds should be trained in. It must not be neglected.</p>
 <p>Then let&#x27;s make it our first required subject. And next — should we look at the closely related science?</p>
-<h4>You mean geometry?</h4>
+<h3 class="sub">You mean geometry?</h3>
 <p>Exactly.</p>
 <p>Well, he said, the parts of geometry relevant to warfare are obviously important. Setting up camp, occupying positions, closing up or extending a line of troops, executing maneuvers in battle or on the march — a general who knows geometry will be far better at all of it than one who doesn&#x27;t.</p>
 <p>True, I said, but for all that, you only need a little geometry — or arithmetic, for that matter. The real question is about the higher, more advanced geometry: does it help the soul see the Form of the Good? Because that&#x27;s our test. Everything that compels the soul to turn toward that place — where the fullest perfection of being exists, which the soul must see by any means possible — that&#x27;s what concerns us.</p>
@@ -7661,11 +8012,11 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>So: if geometry forces us to contemplate being, it&#x27;s relevant. If it only deals with becoming, it isn&#x27;t.</p>
 <p>Agreed.</p>
 <p>But here&#x27;s the thing — anyone with even a basic knowledge of geometry knows that the way geometers actually talk is completely at odds with this lofty view.</p>
-<h4>How so?</h4>
+<h3 class="sub">How so?</h3>
 <p>They&#x27;re always going on about practical operations — &quot;squaring this,&quot; &quot;extending that,&quot; &quot;applying one thing to another&quot; — as if the whole point were hands-on construction. They confuse the necessities of geometry with the needs of everyday life. But the real object of the entire science is knowledge — knowledge of what eternally is.</p>
 <p>Certainly, he said.</p>
 <p>Then we need to acknowledge something further?</p>
-<h4>What?</h4>
+<h3 class="sub">What?</h3>
 <p>That the knowledge geometry aims at is knowledge of the eternal — not of anything that comes into being and passes away.</p>
 <p>That, he replied, is easy to grant. It&#x27;s true.</p>
 <p>Then, my noble friend, geometry draws the soul toward truth. It creates the spirit of philosophy. It lifts up what we&#x27;ve shamefully allowed to sink down.</p>
@@ -7710,13 +8061,13 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>Yes, I said. And everything else in our program will need the same kind of elevation, if our legislation is to be worth anything. But can you think of any other suitable study?</p>
 <p>Not off the top of my head, he said.</p>
 <p>Well, I said, motion doesn&#x27;t come in just one form. It comes in many. Two of them are obvious — even to minds like ours. Others might require a sharper intelligence.</p>
-<h4>Which two?</h4>
+<h3 class="sub">Which two?</h3>
 <p>The one we&#x27;ve been discussing — astronomy — is the first. The second is its counterpart.</p>
-<h4>What&#x27;s that?</h4>
+<h3 class="sub">What&#x27;s that?</h3>
 <p>Think about it this way, I said. As the eyes are designed for astronomy, so the ears are designed for the study of harmony. These are sister sciences — the Pythagoreans say so, and we agree with them. Right, Glaucon?</p>
 <p>Yes, he replied.</p>
 <p>And since it&#x27;s a complex subject, I said, we should go and learn from the Pythagoreans. They can tell us about the further applications of these sciences. But through all of this, we must never lose sight of our real goal.</p>
-<h4>Which is?</h4>
+<h3 class="sub">Which is?</h3>
 <p>The perfection that all knowledge ought to reach — and that our students must attain and not fall short of. The same thing applies in harmonics as in astronomy. The teachers of harmony — just like the astronomers — waste their labor when they limit themselves to what can be heard.</p>
 <p>By heaven, yes! he said. It&#x27;s practically a comedy watching them. They talk about their &quot;condensed intervals&quot; and lean in close to the strings, practically pressing their ears against them like people trying to eavesdrop through a wall. One faction claims they can detect a note between two others and have found the smallest possible interval, the basic unit of measurement. The other faction insists the two notes sound the same. Both groups put their ears ahead of their minds.</p>
 <p>You mean, I said, those experts who torture the strings and rack them on the pegs. I could extend the metaphor — talk about the accusations they level against the strings, the charges of being too eager or too reluctant to sound — but I&#x27;ll spare you. What I mean is that these people aren&#x27;t the ones I&#x27;m talking about. I&#x27;m talking about the Pythagoreans, the ones we said we&#x27;d consult about harmony. Because even they make the same mistake as the astronomers: they study the numbers in the harmonies they can hear, but they never get to the real problems — they never ask why some numbers are inherently harmonious and others aren&#x27;t.</p>
@@ -7779,12 +8130,12 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>We need to be careful about all of this. If the people we introduce to this vast system of education and training are sound in body and mind, justice herself will have no complaint against us. We&#x27;ll be the saviors of the state. But if we select the wrong people, the result will be the exact opposite — and we&#x27;ll drown philosophy in an even greater flood of ridicule than she endures now.</p>
 <p>That would be shameful, he said.</p>
 <p>It certainly would, I said. Though I may be making myself a bit ridiculous right now, getting so worked up.</p>
-<h4>How so?</h4>
+<h3 class="sub">How so?</h3>
 <p>I forgot we were just having a conversation and got a little too passionate. When I looked at philosophy and saw how shamefully she&#x27;s been trampled, I couldn&#x27;t help feeling angry at the people responsible. My anger made me too intense.</p>
 <p>It didn&#x27;t seem that way to me, he said. I was listening.</p>
 <p>Well, it felt that way to me. But here&#x27;s an important point: in our earlier selection we chose older men. We can&#x27;t do that here. We can&#x27;t listen to Solon when he says you can learn many things as you grow old — you can&#x27;t learn much better than you can run. Youth is the time for extraordinary effort.</p>
 <p>Then arithmetic and geometry and all the foundational subjects that prepare for dialectic should be introduced in childhood — but not as compulsory drudgery.</p>
-<h4>Why not?</h4>
+<h3 class="sub">Why not?</h3>
 <p>Because a free person shouldn&#x27;t learn anything like a slave. Physical exercise done under compulsion doesn&#x27;t harm the body. But knowledge forced into the mind won&#x27;t stick.</p>
 <p>True.</p>
 <p>So don&#x27;t use force, I said. Let early education be a kind of play. That way you&#x27;ll also be better able to discover each child&#x27;s natural ability.</p>
@@ -7792,7 +8143,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>And you remember that we said the children should be taken to observe battles from horseback — brought close, when it was safe, and given a taste of war, like young hunting dogs getting their first taste of blood?</p>
 <p>Yes, I remember.</p>
 <p>The same principle applies across the board. In every area — physical challenges, lessons, danger — whoever shows the most natural ability should be placed on a select list.</p>
-<h4>At what age?</h4>
+<h3 class="sub">At what age?</h3>
 <p>When their required physical training is over. Those two or three years of intensive athletics are basically useless for anything else — sleep and exercise are enemies of learning. And physical performance is itself one of the most important tests we put them through.</p>
 <p>Certainly, he replied.</p>
 <p>After that, at age twenty, the selected group will be promoted. The subjects they learned without any particular order during childhood will now be drawn together. They&#x27;ll begin to see how these disciplines relate to each other and to the nature of reality.</p>
@@ -7801,7 +8152,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>I agree.</p>
 <p>These are the things you need to watch for. The students who show the greatest ability in this kind of synthesis — and who are also the steadiest in learning, in military duty, and in every other responsibility — when they reach thirty, you select them from the larger group, elevate them to even greater honors, and test them through dialectic to see which of them can let go of their eyes and their other senses and travel with truth toward being itself.</p>
 <p>And here, my friend, you need to be very careful.</p>
-<h4>Why so careful?</h4>
+<h3 class="sub">Why so careful?</h3>
 <p>Don&#x27;t you see the damage dialectic has already done?</p>
 <p>What damage? he said.</p>
 <p>Its students are infected with lawlessness.</p>
@@ -7905,7 +8256,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>Now what kind of man corresponds to this form of government? How did he come into being, and what&#x27;s he like?</p>
 <p>I think, said Adeimantus, that in his competitive spirit, he&#x27;s not unlike our friend Glaucon.</p>
 <p>Maybe, I said. He might be like Glaucon in that one respect. But in other ways he&#x27;s very different.</p>
-<h4>How so?</h4>
+<h3 class="sub">How so?</h3>
 <p>He&#x27;d be more assertive and less educated, though still a friend of culture. He&#x27;d be a good listener but no great speaker. Someone like this tends to be harsh with slaves — unlike the truly educated person, who has too much self-respect for that. He&#x27;d be courteous to free citizens and remarkably obedient to authority. He loves power and honors, and claims the right to rule — not because he&#x27;s articulate or has any other intellectual qualification, but because he&#x27;s a soldier who&#x27;s proven himself in battle. He&#x27;s also a lover of athletics and hunting.</p>
 <p>Yes, he said, that&#x27;s the character type that matches timocracy.</p>
 <p>When he&#x27;s young, a man like this will look down on money. But as he gets older, he&#x27;ll be more and more attracted to it, because there&#x27;s a streak of greed in him. He isn&#x27;t single-mindedly devoted to virtue, because he&#x27;s lost his best guardian.</p>
@@ -7932,7 +8283,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>Should I start by describing how the change from timocracy to oligarchy happens?</p>
 <p>Yes.</p>
 <p>Well, I said, you don&#x27;t need much insight to see how one turns into the other.</p>
-<h4>How?</h4>
+<h3 class="sub">How?</h3>
 <p>The piling up of gold in private hands is what ruins a timocracy. People invent illegal ways to spend their money. What do they or their wives care about the law?</p>
 <p>Not much, he said.</p>
 <p>And then one person, seeing another getting rich, tries to outdo him. Before long, the whole population becomes obsessed with money.</p>
@@ -7953,19 +8304,19 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>You mean they&#x27;d wreck the ship, he said.</p>
 <p>Yes. And isn&#x27;t the same true of governing anything?</p>
 <p>I&#x27;d imagine so.</p>
-<h4>Including a city?</h4>
+<h3 class="sub">Including a city?</h3>
 <p>Especially a city, he said — since governing a city is the greatest and hardest task of all.</p>
 <p>So that&#x27;s the first major flaw of oligarchy.</p>
 <p>Right. And here&#x27;s another one just as bad.</p>
-<h4>What&#x27;s that?</h4>
+<h3 class="sub">What&#x27;s that?</h3>
 <p>The inevitable split: an oligarchic state isn&#x27;t one state but two — a state of the rich and a state of the poor, living in the same place, constantly conspiring against each other.</p>
 <p>That&#x27;s at least as bad, he said.</p>
 <p>And here&#x27;s another ugly feature: for the same reason, they can&#x27;t wage war effectively. Either they arm the common people, in which case they&#x27;re more afraid of their own soldiers than of the enemy, or they don&#x27;t call them up, in which case they go into battle as the oligarchs they are — too few to fight, just as they&#x27;re too few to govern. And on top of that, their love of money makes them unwilling to pay for a war.</p>
-<h4>How disgraceful!</h4>
+<h3 class="sub">How disgraceful!</h3>
 <p>And remember what we said before: under this kind of system, the same people end up doing everything — farming, trading, fighting — all at once. Does that seem right to you?</p>
 <p>Not at all.</p>
 <p>There&#x27;s yet another evil — maybe the worst of all — and this state is the first where it appears.</p>
-<h4>What is it?</h4>
+<h3 class="sub">What is it?</h3>
 <p>A man can sell everything he owns, and someone else can buy it all up. After the sale, the seller goes on living in the city, but he&#x27;s no part of it anymore. He&#x27;s not a tradesman, not a craftsman, not a cavalryman, not a soldier — just a poor, helpless creature.</p>
 <p>Yes, he said, that&#x27;s an evil that first shows up in this kind of state.</p>
 <p>And oligarchy certainly doesn&#x27;t prevent it. You get both extremes — enormous wealth and utter poverty — side by side.</p>
@@ -7989,7 +8340,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>Then let&#x27;s move on from oligarchy — the government where rulers are chosen for their wealth. Let&#x27;s consider the nature and origin of the individual who corresponds to this state.</p>
 <p>By all means.</p>
 <p>Doesn&#x27;t the timocratic man turn into the oligarchic man something like this?</p>
-<h4>How?</h4>
+<h3 class="sub">How?</h3>
 <p>The timocratic man has a son. At first, the son emulates his father and follows in his footsteps. But then one day he watches his father crash against the state like a ship on a hidden reef. Everything is lost. His father might have been a general or some other high-ranking officer who gets dragged into court on trumped-up charges by informers and is either put to death, exiled, or stripped of his citizenship and all his property.</p>
 <p>That&#x27;s very plausible, he said.</p>
 <p>The son has witnessed all of this. He&#x27;s ruined. Fear has taught him to knock ambition and passion headfirst off the throne of his soul. Humbled by poverty, he turns to moneymaking and, through penny-pinching, hard labor, and miserly savings, he scrapes together a fortune. Don&#x27;t you think he&#x27;ll then seat the greedy, acquisitive part of himself on that empty throne and let it play king — decked out in crown and chain and sword?</p>
@@ -8009,7 +8360,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>No, he said. If he were, he&#x27;d never have made a blind god the director of his life&#x27;s chorus, or given Wealth the place of highest honor.</p>
 <p>Excellent! I said. But consider this: precisely because he lacks cultivation, he harbors drone-like desires inside him — the kind a pauper or a criminal would have — desires that are forcibly kept down by his general self-discipline.</p>
 <p>You want to know where to find proof of his hidden corruption?</p>
-<h4>Where should I look?</h4>
+<h3 class="sub">Where should I look?</h3>
 <p>Watch what happens when he&#x27;s put in charge of an orphan&#x27;s estate, or any situation where he has a great opportunity to cheat.</p>
 <p>Ah.</p>
 <p>Then you&#x27;ll see clearly enough. In his ordinary dealings, where his reputation for honesty is on the line, he keeps his bad impulses in check — but not because he&#x27;s genuinely convinced they&#x27;re wrong, and not because he&#x27;s tamed them through reason. It&#x27;s purely out of necessity and fear. He&#x27;s scared of losing what he has.</p>
@@ -8039,7 +8390,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>Meanwhile, the moneylenders stoop as they walk and pretend not even to notice the people they&#x27;ve already ruined. They sink their stingers — that is, their money — into the next unsuspecting victim, collecting interest upon interest, breeding a whole family of returns from the original sum. And so they multiply both drones and paupers throughout the state.</p>
 <p>Yes, he said, there are plenty of both — that&#x27;s for certain.</p>
 <p>The crisis flares up like a fire, and they refuse to put it out — either by limiting how people can use their own property, or by another remedy.</p>
-<h4>What other remedy?</h4>
+<h3 class="sub">What other remedy?</h3>
 <p>The next best thing, and one that has the advantage of forcing citizens to watch their character: make a rule that everyone enters into voluntary contracts at their own risk. There&#x27;d be far less predatory lending, and the evils we&#x27;ve been talking about would shrink dramatically.</p>
 <p>Yes, they would.</p>
 <p>But as things stand, the rulers — driven by the motives I&#x27;ve described — treat their subjects badly. Meanwhile, they and their allies, especially the young men of the ruling class, live in luxury and idleness, both physically and mentally. They do nothing and can&#x27;t resist either pleasure or pain.</p>
@@ -8140,7 +8491,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>Tell me, my friend: how does tyranny arise? That it has a democratic origin is obvious.</p>
 <p>It is.</p>
 <p>And doesn&#x27;t tyranny spring from democracy in much the same way that democracy springs from oligarchy — after a fashion?</p>
-<h4>How so?</h4>
+<h3 class="sub">How so?</h3>
 <p>The goal that oligarchy set for itself, and the principle on which it ran, was the accumulation of wealth — am I right?</p>
 <p>Yes.</p>
 <p>And it was the insatiable desire for wealth — along with the neglect of everything else for the sake of moneymaking — that destroyed oligarchy?</p>
@@ -8150,7 +8501,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>Freedom, I replied. In a democracy, you&#x27;ll hear that freedom is the state&#x27;s greatest glory — and that it&#x27;s the only kind of state where a truly free person would want to live.</p>
 <p>Yes, they say that constantly.</p>
 <p>So here&#x27;s what I was getting at: it&#x27;s the insatiable desire for freedom, combined with the neglect of everything else, that destabilizes democracy and creates the demand for tyranny.</p>
-<h4>How?</h4>
+<h3 class="sub">How?</h3>
 <p>When a democracy that&#x27;s thirsting for freedom gets bad leaders presiding over the feast, and drinks too deeply of the strong wine of liberty, then — unless the rulers are extremely accommodating and pour a generous glass — the people call them to account and punish them, branding them as cursed oligarchs.</p>
 <p>Yes, he replied, that&#x27;s a common occurrence.</p>
 <p>And meanwhile, I said, the people insult loyal citizens by calling them willing slaves and nobodies. They want subjects who act like rulers and rulers who act like subjects. These are the people democracy praises and honors, in public and private alike. In such a state, isn&#x27;t it inevitable that freedom expands without limit?</p>
@@ -8183,11 +8534,11 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>Now, to see what we&#x27;re dealing with more clearly, let&#x27;s imagine that democracy is divided — as it actually is — into three classes. The first: freedom creates even more drones in a democracy than there were in the oligarchy.</p>
 <p>True.</p>
 <p>And in a democracy, they&#x27;re far more powerful.</p>
-<h4>How so?</h4>
+<h3 class="sub">How so?</h3>
 <p>Because in an oligarchy, they&#x27;re shut out of office and kept on the margins, so they can&#x27;t train or build strength. But in a democracy, they&#x27;re practically the entire ruling power. The most aggressive ones do the talking and the acting, while the rest sit buzzing around the speaker&#x27;s platform, shouting down anyone on the other side. In democracies, the drones run almost everything.</p>
 <p>Exactly right, he said.</p>
 <p>Then there&#x27;s a second class that&#x27;s always separating itself from the mass.</p>
-<h4>What&#x27;s that?</h4>
+<h3 class="sub">What&#x27;s that?</h3>
 <p>The orderly, businesslike types. In a nation of merchants, they&#x27;re inevitably the richest.</p>
 <p>Naturally.</p>
 <p>They&#x27;re the most squeezable, and they produce the most honey for the drones.</p>
@@ -8211,7 +8562,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>This — and nothing else — is the root from which a tyrant grows. When he first appears on the scene, he comes as a protector.</p>
 <p>Yes, that&#x27;s perfectly clear.</p>
 <p>How does a protector begin to turn into a tyrant? Clearly, it&#x27;s when he does what the man in the legend of the Arcadian temple of Zeus Lycaeus is said to do.</p>
-<h4>What legend?</h4>
+<h3 class="sub">What legend?</h3>
 <p>The story goes that whoever tastes the entrails of a single human victim, minced up with the entrails of other sacrificial animals, is destined to become a wolf. Haven&#x27;t you heard it?</p>
 <p>Yes.</p>
 <p>In the same way, the people&#x27;s protector — with the mob at his disposal — doesn&#x27;t hold back from shedding the blood of his fellow citizens. He drags people to court on false charges and has them killed, tasting the blood of his own people with unholy lips. Some he destroys, others he exiles, hinting all the while at debt cancellation and land redistribution. After all this, isn&#x27;t his fate sealed? He must either be killed by his enemies or transform from man to wolf — that is, become a tyrant.</p>
@@ -8260,7 +8611,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>By the dog! I said. More drones! Every variety, from every corner of the world.</p>
 <p>Yes, he said.</p>
 <p>But won&#x27;t he also want to recruit locally?</p>
-<h4>How?</h4>
+<h3 class="sub">How?</h3>
 <p>He&#x27;ll take citizens&#x27; slaves away from them, free the slaves, and enlist them in his bodyguard.</p>
 <p>Absolutely, he said. And they&#x27;ll be his most loyal troops.</p>
 <p>What a blessed creature this tyrant is! He&#x27;s killed off his real friends and replaced them with this crew.</p>
@@ -8297,7 +8648,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>Last of all comes the tyrannical man. We still need to ask: how does he develop out of the democratic man? And how does he live — happily or miserably?</p>
 <p>Yes, said Adeimantus, he&#x27;s the only one left.</p>
 <p>There&#x27;s a preliminary question, though, I said, that we still haven&#x27;t fully answered.</p>
-<h4>What question?</h4>
+<h3 class="sub">What question?</h3>
 <p>I don&#x27;t think we&#x27;ve done a thorough enough job of sorting out the nature and number of our appetites, I said. Until we get that right, the whole inquiry will stay muddled.</p>
 <p>Well, he said, it&#x27;s not too late to fix that.</p>
 <p>Very true, I said. Here&#x27;s the point I want to nail down. Some of our unnecessary pleasures and appetites are, I believe, downright lawless. Everyone seems to have them, but in some people they&#x27;re kept in check by the laws and by reason — the better desires win out, and those lawless urges either vanish entirely or become few and feeble. In other people, though, they&#x27;re stronger and more numerous.</p>
@@ -8421,13 +8772,13 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>I don&#x27;t think he&#x27;s quite reached the peak of misery yet.</p>
 <p>Then who&#x27;s more miserable?</p>
 <p>Someone I&#x27;m about to describe.</p>
-<h4>Who?</h4>
+<h3 class="sub">Who?</h3>
 <p>The person with a tyrannical nature who has the added misfortune of actually becoming a public tyrant — who doesn&#x27;t just live privately but is forced to rule.</p>
 <p>Based on what we&#x27;ve said, I&#x27;d guess you&#x27;re right, he said.</p>
 <p>Yes, I replied. But in an argument this important, we shouldn&#x27;t guess. This is the biggest question there is — the question of good and evil.</p>
 <p>Very true, he said.</p>
 <p>Let me offer an illustration, I said, that might shed some light.</p>
-<h4>What&#x27;s your illustration?</h4>
+<h3 class="sub">What&#x27;s your illustration?</h3>
 <p>Think about the wealthy individuals in cities who own a large number of slaves. They&#x27;re like tyrants in miniature — they both have people under them. The only difference is the tyrant has more.</p>
 <p>Yes, that&#x27;s the difference.</p>
 <p>Now, you know these slave-owners live securely and have nothing to fear from their slaves?</p>
@@ -8457,9 +8808,9 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>And shall I add: &quot;whether or not gods and men can see it&quot;?</p>
 <p>Add it, he said.</p>
 <p>Good. That&#x27;s our first proof, I said. And here&#x27;s a second one that might carry some weight.</p>
-<h4>What is it?</h4>
+<h3 class="sub">What is it?</h3>
 <p>The second proof, I said, comes from the nature of the soul. We divided the soul into three parts, just as we divided the state. I think this division gives us another way to demonstrate the point.</p>
-<h4>How so?</h4>
+<h3 class="sub">How so?</h3>
 <p>It seems to me that three kinds of pleasure correspond to these three parts of the soul — along with three kinds of desire and three governing principles.</p>
 <p>What do you mean? he asked.</p>
 <p>There&#x27;s one part of the soul we learn with, I said. Another part we get angry with. And the third part — it has so many forms we couldn&#x27;t give it a single name, so we just called it the appetitive part, because of the sheer intensity of its desires for eating, drinking, sex, and other physical pleasures. We also called it money-loving, because money is the main tool for satisfying those desires.</p>
@@ -8502,7 +8853,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>Yes.</p>
 <p>And the tool we need for making this judgment — reason — it doesn&#x27;t belong to the money-lover or the honor-lover, does it? It belongs to the philosopher.</p>
 <p>Of course.</p>
-<h4>What tool?</h4>
+<h3 class="sub">What tool?</h3>
 <p>Reason. And reasoning is the philosopher&#x27;s specialty.</p>
 <p>Correct.</p>
 <p>Now, I said — if wealth and profit were the right criterion, then the money-lover&#x27;s praise and blame would be most trustworthy.</p>
@@ -8528,7 +8879,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>A kind of resting point for the soul, in between the two — is that what you&#x27;d call it?</p>
 <p>Yes.</p>
 <p>Now, you know what people say when they&#x27;re sick?</p>
-<h4>What?</h4>
+<h3 class="sub">What?</h3>
 <p>That there&#x27;s nothing more pleasant than being healthy. But they never realized health was the greatest pleasure until they got sick.</p>
 <p>Yes, I know, he said.</p>
 <p>And you&#x27;ve heard people in terrible pain say there&#x27;s nothing more pleasant than the pain stopping?</p>
@@ -8559,7 +8910,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>That&#x27;s true.</p>
 <p>And doesn&#x27;t the same apply to the anticipation of future pleasures and pains?</p>
 <p>Yes.</p>
-<h4>Want an illustration?</h4>
+<h3 class="sub">Want an illustration?</h3>
 <p>Sure.</p>
 <p>Imagine, I said, that the world has an upper region, a lower region, and a middle region.</p>
 <p>OK.</p>
@@ -8725,13 +9076,13 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>And the craftsman who makes either one builds his bed or table according to the Form. That&#x27;s how we&#x27;d put it. But no craftsman actually makes the Forms themselves. How could he?</p>
 <p>He couldn&#x27;t.</p>
 <p>Now here&#x27;s an interesting artist. Tell me what you think of him.</p>
-<h4>Who?</h4>
+<h3 class="sub">Who?</h3>
 <p>Someone who makes everything that every other craftsman makes.</p>
 <p>What an extraordinary person!</p>
 <p>Wait — it gets better. This is someone who can make not just every kind of tool, but plants and animals too, including himself and everything else — the earth and sky, the gods, everything in heaven and under the earth. He makes it all.</p>
 <p>He must be some kind of wizard, Glaucon said.</p>
 <p>Oh, you&#x27;re skeptical? Think about it. Are you saying there&#x27;s no such maker? Or do you see that, in a certain sense, you could make all these things yourself?</p>
-<h4>How?</h4>
+<h3 class="sub">How?</h3>
 <p>It&#x27;s easy, actually. There are plenty of ways. The quickest is to grab a mirror and spin it around. In no time you&#x27;ve &quot;made&quot; the sun, the sky, the earth, yourself, other animals, plants — everything we just mentioned. Right there in the mirror.</p>
 <p>Sure, he said. But those would just be appearances. Not real things.</p>
 <p>Exactly, I said. Now you&#x27;re getting somewhere. And the painter is that kind of maker too — a creator of appearances. Isn&#x27;t he?</p>
@@ -8754,7 +9105,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>So there are three kinds of beds and three artists responsible for them: God, the carpenter, and the painter.</p>
 <p>Yes, three.</p>
 <p>Now, God — whether by choice or necessity — made one bed in nature. Just one. Two or more such ideal beds have never existed and never will.</p>
-<h4>Why not?</h4>
+<h3 class="sub">Why not?</h3>
 <p>Because if he&#x27;d made even two, there would still have to be a third behind them — the Form that both of them embody. And that would be the real bed, not the other two.</p>
 <p>That&#x27;s true, he said.</p>
 <p>God knew this. He wanted to be the real maker of a real bed — not just a particular maker of a particular bed. So he created one bed that is, by its very nature, unique.</p>
@@ -8862,7 +9213,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>But in all these situations, is a person consistent within himself? Or is there the same kind of internal conflict we saw with sight — where the same person holds contradictory views about the same things? Actually, I don&#x27;t need to raise this again. We already established that the soul is full of thousands of such contradictions at any given moment.</p>
 <p>We did, he said. And we were right.</p>
 <p>Yes. But there&#x27;s something we left out that we need to address now.</p>
-<h4>What&#x27;s that?</h4>
+<h3 class="sub">What&#x27;s that?</h3>
 <p>We said that a good person who suffers misfortune — losing a son or something else they treasure — will bear the loss with more composure than most people.</p>
 <p>We did.</p>
 <p>But will he feel no grief at all? Or should we say that while he can&#x27;t help grieving, he&#x27;ll keep his grief in check?</p>
@@ -8876,7 +9227,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>And when a person is pulled in two opposite directions about the same thing, we said that necessarily implies two different principles within him.</p>
 <p>It does.</p>
 <p>One is ready to follow the law&#x27;s guidance.</p>
-<h4>How so?</h4>
+<h3 class="sub">How so?</h3>
 <p>The law says that patience in suffering is best. We shouldn&#x27;t give way to grief, because we never really know whether such events are good or evil. Nothing is gained by impatience. And no human misfortune is ultimately of great importance. Besides, grief gets in the way of the one thing we need most at such moments.</p>
 <p>What&#x27;s that? he asked.</p>
 <p>Taking counsel about what&#x27;s happened. When the dice have fallen, we should arrange our affairs the way reason says is best. We shouldn&#x27;t be like children who&#x27;ve taken a tumble — clutching the spot where it hurts and wasting time wailing. Instead, we should train the soul to apply a remedy as quickly as possible: pick up what&#x27;s fallen, heal what&#x27;s hurt, replace the crying with the art of recovery.</p>
@@ -8899,7 +9250,7 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>So can it really be right to admire someone else for doing what we ourselves would despise and be ashamed of?</p>
 <p>No, he said. That certainly isn&#x27;t reasonable.</p>
 <p>Actually, I said, it is quite reasonable — from one angle.</p>
-<h4>What angle?</h4>
+<h3 class="sub">What angle?</h3>
 <p>Think about it. When misfortune strikes, we feel a natural hunger to relieve our pain through weeping and lamentation. That&#x27;s the appetite that reason holds in check in our own lives. But in the theater, it&#x27;s somebody else&#x27;s suffering. Our better nature — not fully trained by reason or habit — lets the sympathetic part off its leash, because the grief belongs to another person. The spectator tells himself there&#x27;s no shame in pitying someone who claims to be a good man and is crying about his troubles. The pleasure feels like a pure gain. Why be uptight and lose both the enjoyment and the poem?</p>
 <p>But hardly anyone stops to think about this: the evil we absorb from other people&#x27;s suffering seeps into us. Feed the feeling of pity on fictional sorrow, and when real sorrow comes, you&#x27;ll find it much harder to hold back.</p>
 <p>How true! he said.</p>
@@ -8969,14 +9320,14 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>If the soul is immortal — as we&#x27;ve just proven — then it must be the simplest, purest kind of thing. It can&#x27;t be a patchwork of many different elements.</p>
 <p>I suppose not.</p>
 <p>Its immortality is proven by what we just argued, and there are many other proofs. But to see the soul as it truly is — not as we see it now, damaged by its partnership with the body and by all the other miseries of mortal life — you&#x27;d need to contemplate it with the eye of reason, in its original purity. Then its beauty would be revealed, and justice and injustice and everything we&#x27;ve discussed would be far clearer. What we&#x27;ve said so far describes the soul as it currently appears. But its present condition is like that of the sea-god Glaucus. You can hardly make out his original form anymore — his limbs are broken off and battered by the waves, crusted over with seaweed and shells and stones, until he looks more like a monster than like himself. That&#x27;s the condition we see the soul in, disfigured by ten thousand injuries. But that&#x27;s not where we should look, Glaucon.</p>
-<h4>Where, then?</h4>
+<h3 class="sub">Where, then?</h3>
 <p>At the soul&#x27;s love of wisdom. Consider what she reaches for, what company she seeks, how she&#x27;s drawn to the immortal, the eternal, the divine — since she&#x27;s kin to them. Imagine what she&#x27;d become if she followed that calling completely, carried by a divine impulse out of the ocean where she now lies, stripped of all the stones and shells and earthy encrustation that have grown over her because she feeds on earthly things — all those &quot;good things of this life,&quot; as people call them. Then you&#x27;d see her as she really is: whether she has one shape or many, and what her true nature is. But about her present condition and the forms she takes in this life, I think we&#x27;ve said enough.</p>
 <p>We have, he agreed.</p>
 <p>And so, I said, we&#x27;ve fulfilled the conditions of our argument. We haven&#x27;t relied on the rewards and glories of justice that Homer and Hesiod celebrate. We&#x27;ve shown that justice, all by itself, is the best thing for the soul, all by itself. A person should do what&#x27;s just whether or not he has the Ring of Gyges — even if he had the ring and the helmet of Hades on top of it.</p>
 <p>Now, Glaucon, there&#x27;s no harm in also counting up how many and how great are the rewards that justice and the other virtues bring the soul — from gods and from human beings, in this life and after death.</p>
 <p>None at all, he said.</p>
 <p>Then will you pay me back what you borrowed during the argument?</p>
-<h4>What did I borrow?</h4>
+<h3 class="sub">What did I borrow?</h3>
 <p>The assumption that the just person should appear unjust and the unjust person should appear just. You argued that even if the true situation couldn&#x27;t possibly escape the notice of gods and humans, we should make that assumption anyway — so we could weigh pure justice against pure injustice. Remember?</p>
 <p>I&#x27;d be a poor friend if I&#x27;d forgotten.</p>
 <p>Good. Now that the verdict is in, I&#x27;m reclaiming justice&#x27;s reputation on her behalf. The estimation she actually deserves from gods and humans — let it be restored. We&#x27;ve proven she delivers real benefit, not illusion, to those who truly possess her. Now let&#x27;s give her back the appearance too — the reputation that&#x27;s rightfully hers.</p>
@@ -9251,7 +9602,7 @@ ancient Greek literary world.</p>
   Melesias, son of Thucydides
   Their sons
   Nicias, Laches, Socrates</pre>
-<h4>Or, Courage</h4>
+<h3 class="sub">Or, Courage</h3>
 <p><b>Lysimachus</b>: You&#x27;ve seen the man fighting in armor, Nicias and Laches. But we didn&#x27;t tell you at the time why my friend Melesias and I asked you to come along and watch. I think we might as well be honest about that now — we certainly shouldn&#x27;t hold anything back from you. The truth is, we wanted your advice. Some people laugh at the whole idea of asking others for advice, and when you do ask them, they won&#x27;t say what they really think. They just try to guess what you want to hear and tell you that. But we know you&#x27;re both men of sound judgment, and you&#x27;ll say exactly what you think. So we&#x27;ve brought you into our confidence.</p>
 <p>Here&#x27;s what this is all about. Melesias and I have two sons. That&#x27;s his boy — named Thucydides, after his grandfather. And this is mine, also named after his grandfather: Aristides. We&#x27;ve made up our minds to give these boys the best upbringing we can, and not just let them run wild the way young men so often do once they&#x27;re past childhood. We want to start right now and do everything in our power for them.</p>
 <p>Now, since you both have sons of your own, we figured you&#x27;d have given some thought to their training and education. And if by chance you haven&#x27;t, well — consider this a reminder that you should. We&#x27;d like you to join us in fulfilling what&#x27;s really a shared responsibility.</p>
@@ -9554,7 +9905,7 @@ Yes, father, that&#x27;s him.</p>
   Lysis
   Ctesippus</pre>
 <p>Scene: A newly built wrestling school outside the walls of Athens.</p>
-<h4>Or, Friendship</h4>
+<h3 class="sub">Or, Friendship</h3>
 <p>I was walking from the Academy straight to the Lyceum, taking the outer road that runs close along the city wall. When I reached the postern gate by the fountain of Panops, I ran into Hippothales, the son of Hieronymus, and Ctesippus from the deme of Paeania, along with a group of young men standing around them. Hippothales spotted me coming and called out, &quot;Where are you coming from, Socrates, and where are you headed?&quot;</p>
 <p>&quot;I&#x27;m going from the Academy straight to the Lyceum,&quot; I said.</p>
 <p>&quot;Well, come straight to us instead,&quot; he said. &quot;Come on, join us. It&#x27;ll be worth your time.&quot;</p>
@@ -9946,7 +10297,7 @@ Yes, father, that&#x27;s him.</p>
 </section>
 <section aria-labelledby="charmides">
 <h2 id="charmides">Charmides</h2>
-<h4>Or, On Temperance</h4>
+<h3 class="sub">Or, On Temperance</h3>
 <pre class="outline">Persons of the dialogue:
   Socrates, who is the narrator
   Charmides
@@ -10338,7 +10689,7 @@ Yes, father, that&#x27;s him.</p>
   Euthydemus
   Dionysodorus
   Ctesippus</pre>
-<h4>Scene: The Lyceum</h4>
+<h3 class="sub">Scene: The Lyceum</h3>
 <p><b>Crito</b>: So who was that person you were talking with yesterday at the Lyceum, Socrates? There was such a mob around you I couldn&#x27;t get close enough to hear anything. But I caught a glimpse of him over everyone&#x27;s heads, and it looked like you were talking with some foreigner. Who was he?</p>
 <p><b>Socrates</b>: There were two of them, Crito. Which one do you mean?</p>
 <p><b>Crito</b>: The one sitting second from you on the right. In the middle was young Cleinias, son of Axiochus — he&#x27;s really shot up, by the way. He&#x27;s about the same age as my Critobulus, but he&#x27;s way ahead of him, and very handsome. The other one looked thin and younger than he probably is.</p>
@@ -12949,7 +13300,7 @@ Sure, if you&#x27;d like.</p>
 <p>So we went to find him. He was at home, in the middle of giving a bridle to a metalworker to be fitted. When he was done with the smith, his brothers explained why we&#x27;d come. He greeted me as someone he remembered from my earlier visit, and we asked him to repeat the conversation. At first he wasn&#x27;t eager — he complained about how much work it would be — but eventually he agreed.</p>
 <p>He told us that Pythodorus had described the arrival of Parmenides and Zeno in Athens. They came for the great festival of the Panathenaea. Parmenides was about sixty-five at the time — his hair was very white with age, but he was still a handsome man. Zeno was nearly forty, tall and good-looking. In his youth, it was said, he had been Parmenides&#x27; beloved.</p>
 <p>They were staying with Pythodorus in the Ceramicus, just outside the city walls. Socrates — who was then a very young man — came to see them, along with many others. They wanted to hear Zeno&#x27;s writings, which had been brought to Athens for the first time on this visit. Zeno read them aloud himself, while Parmenides was out. He was almost done when Pythodorus came in, bringing Parmenides and a man named Aristoteles — who later became one of the Thirty Tyrants — and they caught the tail end of the reading. Pythodorus had heard Zeno read these arguments before.</p>
-<h4>THE CHALLENGE TO ZENO</h4>
+<h3 class="sub">THE CHALLENGE TO ZENO</h3>
 <p>When the reading was finished, Socrates asked that the first thesis of the first argument be read again. After it was, he said:</p>
 <p>&quot;What exactly are you arguing here, Zeno? You&#x27;re saying that if reality is many things, then those things must be both like and unlike — but that&#x27;s impossible, because what&#x27;s like can&#x27;t be unlike, and what&#x27;s unlike can&#x27;t be like. Is that your position?&quot;</p>
 <p>&quot;Exactly,&quot; said Zeno.</p>
@@ -12957,13 +13308,13 @@ Sure, if you&#x27;d like.</p>
 <p>&quot;No,&quot; said Zeno, &quot;you&#x27;ve understood my purpose exactly.&quot;</p>
 <p>&quot;I see, Parmenides,&quot; said Socrates, &quot;that Zeno here isn&#x27;t just your friend — he&#x27;s practically your literary alter ego. He&#x27;s saying the same thing you say, just from a different angle, and trying to make us think he&#x27;s telling us something new. You say in your poem that the All is One, and you give excellent proofs. He turns around and says there is no Many, and backs it up with overwhelming evidence. You affirm unity; he denies plurality. You&#x27;re both saying the same thing from opposite directions — and you&#x27;ve fooled the world into thinking you&#x27;re making different arguments. That&#x27;s a level of artistry most of us can&#x27;t match.&quot;</p>
 <p>&quot;Well, Socrates,&quot; said Zeno with a smile, &quot;you track an argument like a Spartan hound. But you haven&#x27;t quite understood the real motive behind my work. It&#x27;s not as artificial as you think. There was no grand scheme, no intention to deceive anyone. The truth is, I wrote these arguments to defend Parmenides against people who mocked him — people who tried to show that his claim that reality is one leads to ridiculous and contradictory results. My answer was to hit back: I showed that their own hypothesis — that reality is many — leads to consequences even more ridiculous than the ones they complained about. It was youthful pugnacity, not the ambition of an older man. And actually, someone stole my copy before I meant to publish it, so I never even chose to make it public. But apart from that detail, Socrates, your analysis is perfectly right.&quot;</p>
-<h4>SOCRATES&#x27; THEORY OF FORMS</h4>
+<h3 class="sub">SOCRATES&#x27; THEORY OF FORMS</h3>
 <p>&quot;Fair enough,&quot; said Socrates. &quot;But let me ask you this, Zeno. Don&#x27;t you think there&#x27;s a Form of Likeness in itself, and another Form of Unlikeness — the opposite of Likeness? And that you and I and everything else we call &#x27;many&#x27; participate in these two Forms? Things that participate in Likeness become like to that degree; things that participate in Unlikeness become unlike to that degree. And some things participate in both, and so they&#x27;re both like and unlike at the same time.</p>
 <p>&quot;What&#x27;s so surprising about that? Now, if someone could prove that Likeness itself becomes unlike, or Unlikeness itself becomes like — that would genuinely amaze me. But there&#x27;s nothing extraordinary about showing that ordinary things, which merely participate in Likeness and Unlikeness, turn out to have both qualities.</p>
 <p>&quot;The same goes for the One and the Many. If someone could show me that the One itself — the Form of Unity — is many, or that the Many itself is one, I&#x27;d be truly astonished. But it&#x27;s no big deal to prove that I am both many and one. When someone wants to show I&#x27;m many, they point out I have a right side and a left side, a front and a back, upper and lower halves — I can&#x27;t deny I participate in plurality. When they want to show I&#x27;m one, they point out that of the seven of us here, I&#x27;m one person who participates in unity. Both are true, and neither is paradoxical.</p>
 <p>&quot;Same thing with wood, stones, and everything else. If you show that such things are both one and many, fine — you&#x27;ve shown that the one and the many coexist. But you haven&#x27;t shown that the Many is one or the One is many. That would just be a truism, not a paradox.</p>
 <p>&quot;But here&#x27;s what would really impress me: if someone could take the abstract Forms themselves — Likeness and Unlikeness, One and Many, Rest and Motion — the things grasped by pure reason — and show that they can mix and separate among themselves. That, Zeno, you&#x27;ve handled with real energy. But as I said, I&#x27;d be far more amazed if someone could show that the same kind of puzzle and entanglement you&#x27;ve demonstrated in visible things also exists in the Forms themselves — in the things we grasp through reason alone.&quot;</p>
-<h4>PARMENIDES&#x27; CRITIQUE</h4>
+<h3 class="sub">PARMENIDES&#x27; CRITIQUE</h3>
 <p>While Socrates was speaking, Pythodorus kept watching Parmenides and Zeno. They weren&#x27;t entirely pleased with the direction the argument was heading, but they listened intently, glancing at each other from time to time with smiles that seemed to express admiration. When Socrates finished, Parmenides spoke up.</p>
 <p>&quot;Socrates,&quot; he said, &quot;I admire your philosophical instincts. Tell me — was this distinction your own idea? This separation between the Forms themselves and the things that participate in them? Do you believe there&#x27;s a Form of Likeness that exists apart from whatever likeness we ourselves possess? A Form of the One, of the Many, and of everything else Zeno mentioned?&quot;</p>
 <p>&quot;I do,&quot; said Socrates.</p>
@@ -12975,7 +13326,7 @@ Sure, if you&#x27;d like.</p>
 <p>&quot;Certainly not,&quot; said Socrates. &quot;Those things just are what they appear to be. I&#x27;m afraid it would be absurd to suppose there&#x27;s a Form of them. But I admit it bothers me sometimes. I start to wonder whether maybe everything has a Form — but then I pull back, because I&#x27;m afraid of falling into a bottomless pit of nonsense. So I return to the kinds of things I was just talking about — Justice, Beauty, Goodness — and I focus my attention on those.&quot;</p>
 <p>&quot;That, Socrates,&quot; said Parmenides, &quot;is because you&#x27;re still young. The time will come — if I&#x27;m not mistaken — when philosophy will get a firmer grip on you, and you won&#x27;t look down on even the lowliest things. Right now, you care too much about what people think. But tell me: you&#x27;re saying there are certain Forms, and other things participate in them and get their names from that participation? Things become similar by participating in Similarity, great by participating in Greatness, just and beautiful by participating in Justice and Beauty?&quot;</p>
 <p>&quot;Yes,&quot; said Socrates, &quot;that&#x27;s exactly what I mean.&quot;</p>
-<h4>THE WHOLE-OR-PART DILEMMA</h4>
+<h3 class="sub">THE WHOLE-OR-PART DILEMMA</h3>
 <p>&quot;Then does each thing participate in the whole Form, or just a part of it? Is there any other way to participate?&quot;</p>
 <p>&quot;I don&#x27;t see how there could be,&quot; Socrates said.</p>
 <p>&quot;So do you think the whole Form — which is one thing — is present in its entirety in each of the many things that participate in it?&quot;</p>
@@ -12998,7 +13349,7 @@ Sure, if you&#x27;d like.</p>
 <p>&quot;Completely absurd!&quot;</p>
 <p>&quot;Then how, Socrates, can things participate in the Forms, if they can&#x27;t participate as wholes or as parts?&quot;</p>
 <p>&quot;That,&quot; said Socrates, &quot;is not an easy question to answer.&quot;</p>
-<h4>THE THIRD MAN ARGUMENT</h4>
+<h3 class="sub">THE THIRD MAN ARGUMENT</h3>
 <p>&quot;Well,&quot; said Parmenides, &quot;what about this problem?&quot;</p>
 <p>&quot;What problem?&quot;</p>
 <p>&quot;I imagine the way you arrive at a single Form for each kind goes something like this: you look at a number of great things, and when you see them all together, there seems to be one single nature common to them all. So you conclude that Greatness is one thing.&quot;</p>
@@ -13006,7 +13357,7 @@ Sure, if you&#x27;d like.</p>
 <p>&quot;But now consider: if you hold Greatness itself in your mind alongside the great things that participate in it, and compare them all together — won&#x27;t another Greatness appear? One that seems to be the source of the greatness they all share?&quot;</p>
 <p>&quot;It would seem so.&quot;</p>
 <p>&quot;Then you&#x27;d have a new Form of Greatness, on top of the original Greatness and the particular great things. And then another one above all of those, in virtue of which they&#x27;re all great. And so on — each Form, instead of being one, multiplies infinitely.&quot;</p>
-<h4>THE FORMS AS THOUGHTS</h4>
+<h3 class="sub">THE FORMS AS THOUGHTS</h3>
 <p>&quot;But wait,&quot; said Socrates. &quot;Maybe the Forms are just thoughts — they exist only in our minds, Parmenides. That way, each Form would still be one, and you&#x27;d avoid the infinite multiplication problem.&quot;</p>
 <p>&quot;So, can there be a thought that&#x27;s a thought of nothing?&quot;</p>
 <p>&quot;That&#x27;s impossible,&quot; he said.</p>
@@ -13020,7 +13371,7 @@ Sure, if you&#x27;d like.</p>
 <p>&quot;There&#x27;s no escaping that conclusion.&quot;</p>
 <p>&quot;Then,&quot; said Parmenides, &quot;if you say everything else participates in the Forms, doesn&#x27;t that mean either that everything is made of thoughts and everything thinks — or that there are thoughts that exist but don&#x27;t think at all?&quot;</p>
 <p>&quot;Neither of those makes any sense,&quot; said Socrates. &quot;Here&#x27;s what I think makes more sense, Parmenides: the Forms are like patterns fixed in the nature of things. Other things resemble them — they&#x27;re copies of them. &#x27;Participation&#x27; really just means resemblance.&quot;</p>
-<h4>THE RESEMBLANCE REGRESS</h4>
+<h3 class="sub">THE RESEMBLANCE REGRESS</h3>
 <p>&quot;But,&quot; said Parmenides, &quot;if the copy resembles the Form, mustn&#x27;t the Form also resemble the copy? Isn&#x27;t resemblance a two-way street — like can only be like what&#x27;s like it?&quot;</p>
 <p>&quot;It must be.&quot;</p>
 <p>&quot;And when two things are alike, don&#x27;t they share in the same Form?&quot;</p>
@@ -13033,7 +13384,7 @@ Sure, if you&#x27;d like.</p>
 <p>&quot;It would seem so.&quot;</p>
 <p>&quot;Do you see, then, Socrates, how enormous the difficulty is, if you maintain that Forms exist as absolute, independent realities?&quot;</p>
 <p>&quot;I do see that.&quot;</p>
-<h4>THE GREATEST DIFFICULTY</h4>
+<h3 class="sub">THE GREATEST DIFFICULTY</h3>
 <p>&quot;And let me tell you,&quot; said Parmenides, &quot;you&#x27;ve only begun to grasp how deep the problems go when you separate each Form off on its own.&quot;</p>
 <p>&quot;What do you mean?&quot;</p>
 <p>&quot;There are many problems, but the greatest is this: if someone argues that these Forms, being what we say they must be, are fundamentally unknowable to us — you couldn&#x27;t prove them wrong. Not unless the challenger had extraordinary ability and was willing to follow a long and painstaking demonstration. Otherwise, they&#x27;d remain unconvinced and insist the Forms can&#x27;t be known.&quot;</p>
@@ -13072,7 +13423,7 @@ Sure, if you&#x27;d like.</p>
 <p>&quot;Yes, we did say that.&quot;</p>
 <p>&quot;So if God has this perfect authority and this perfect knowledge, his authority can&#x27;t govern us, and his knowledge can&#x27;t know us or any human thing. Just as our authority doesn&#x27;t extend to the gods and our knowledge can&#x27;t grasp anything divine, so too, by the very same reasoning, the gods — being gods — are neither our masters nor able to know human affairs.&quot;</p>
 <p>&quot;But surely,&quot; said Socrates, &quot;to say that God lacks knowledge is monstrous.&quot;</p>
-<h4>THE WAY FORWARD</h4>
+<h3 class="sub">THE WAY FORWARD</h3>
 <p>&quot;These, Socrates,&quot; said Parmenides, &quot;are just a few — and only a few — of the difficulties that arise if the Forms really exist and you insist each one is an absolute unity. Anyone who hears the case against them will deny that the Forms exist at all. And even if they do exist, he&#x27;ll say they must be unknowable to human beings. He&#x27;ll seem to have good reasons on his side, and he&#x27;ll be extremely hard to convince. It would take a person of extraordinary ability to learn that everything has its own class and absolute essence. And even more remarkable would be the person who discovers all this on their own, works through the problems thoroughly, and can teach it all to others.&quot;</p>
 <p>&quot;I agree with you, Parmenides,&quot; said Socrates. &quot;What you say is very much what I think too.&quot;</p>
 <p>&quot;And yet, Socrates,&quot; said Parmenides, &quot;if someone, fixing their attention on these difficulties and others like them, does away with the Forms entirely — refuses to admit that every individual thing has its own determinate Form, always one and the same — they&#x27;ll destroy the very power of reasoning. They&#x27;ll have nothing for the mind to rest on. You seem to have noticed this yourself.&quot;</p>
@@ -13097,7 +13448,7 @@ Sure, if you&#x27;d like.</p>
 <p>&quot;By all means,&quot; said Zeno.</p>
 <p>&quot;And who will answer my questions?&quot; said Parmenides. &quot;I propose the youngest. He&#x27;ll be the most agreeable, the most likely to say what he really thinks, and his answers will give me time to catch my breath.&quot;</p>
 <p>&quot;That&#x27;s me, Parmenides,&quot; said Aristoteles. &quot;I&#x27;m the youngest, and I&#x27;m at your service. Ask, and I&#x27;ll answer.&quot;</p>
-<h4>HYPOTHESIS I.a: IF THE ONE IS (taken strictly) — What follows for the One itself</h4>
+<h3 class="sub">HYPOTHESIS I.a: IF THE ONE IS (taken strictly) — What follows for the One itself</h3>
 <p>&quot;Very well,&quot; said Parmenides. &quot;If the One is — if it truly is one — then it can&#x27;t be many, can it?&quot;</p>
 <p>&quot;No, it can&#x27;t.&quot;</p>
 <p>&quot;Then it can&#x27;t have parts, and it can&#x27;t be a whole.&quot;</p>
@@ -13606,7 +13957,7 @@ Sure, if you&#x27;d like.</p>
 <p>&quot;So neither does the One touch the others, nor the others touch the One — since there is no contact.&quot;</p>
 <p>&quot;There isn&#x27;t.&quot;</p>
 <p>&quot;Therefore, for all these reasons, the One both touches and does not touch — both itself and the others.&quot;</p>
-<h4>EQUAL AND UNEQUAL</h4>
+<h3 class="sub">EQUAL AND UNEQUAL</h3>
 <p>&quot;Next: is the One equal and unequal to itself and the others?&quot;</p>
 <p>&quot;How do you mean?&quot;</p>
 <p>&quot;If the One were greater or less than the others, or the others greater or less than the One, that wouldn&#x27;t be because of their being the One and the others as such. It would only be if, in addition to being what they are, they also had equality, or if one side had Greatness and the other Smallness — or vice versa.&quot;</p>
@@ -13669,7 +14020,7 @@ Sure, if you&#x27;d like.</p>
 <p>&quot;Necessarily.&quot;</p>
 <p>&quot;So once again, the One is equal in number to, and more than, and fewer than, both itself and all the others.&quot;</p>
 <p>&quot;It is.&quot;</p>
-<h4>TIME AND BECOMING</h4>
+<h3 class="sub">TIME AND BECOMING</h3>
 <p>&quot;Does the One also participate in time? Does it become older and younger than itself and the others — and also neither younger nor older?&quot;</p>
 <p>&quot;What do you mean?&quot;</p>
 <p>&quot;If the One is, then &#x27;being&#x27; must be attributed to it.&quot;</p>
@@ -13787,7 +14138,7 @@ Sure, if you&#x27;d like.</p>
 <p>&quot;Quite right.&quot;</p>
 <p>&quot;And there&#x27;s a name and a description for it. It is named and described. And everything of this kind that belongs to other things also belongs to the One.&quot;</p>
 <p>&quot;That is certainly true.&quot;</p>
-<h4>THE INSTANT (The Moment Between)</h4>
+<h3 class="sub">THE INSTANT (The Moment Between)</h3>
 <p>&quot;Now, one more time — for the third time — let&#x27;s consider this: if the One is both one and many, as we&#x27;ve described, and is also neither one nor many, and participates in time — then, insofar as it&#x27;s one, mustn&#x27;t it sometimes participate in being, and insofar as it&#x27;s not one, sometimes not participate in being?&quot;</p>
 <p>&quot;Necessarily.&quot;</p>
 <p>&quot;But can it participate in being at the very time it&#x27;s not participating? Or not participate at the very time it is?&quot;</p>
@@ -13832,7 +14183,7 @@ Sure, if you&#x27;d like.</p>
 <p>&quot;It seems so.&quot;</p>
 <p>&quot;All these, then, are the consequences for the One, if the One has being.&quot;</p>
 <p>&quot;Yes.&quot;</p>
-<h4>HYPOTHESIS I.aa: IF THE ONE IS — What follows for the Others</h4>
+<h3 class="sub">HYPOTHESIS I.aa: IF THE ONE IS — What follows for the Others</h3>
 <p>&quot;But shouldn&#x27;t we also consider what happens to the others, if the One is?&quot;</p>
 <p>&quot;We should.&quot;</p>
 <p>&quot;Then let&#x27;s show what consequences follow for the things other than the One, if the One is.&quot;</p>
@@ -13897,7 +14248,7 @@ Sure, if you&#x27;d like.</p>
 <p>&quot;They are.&quot;</p>
 <p>&quot;And they&#x27;re the same and different from one another, and in motion and at rest, and subject to every sort of opposite property. All of this can be proved without difficulty, since we&#x27;ve already shown they have the properties we described.&quot;</p>
 <p>&quot;That&#x27;s right.&quot;</p>
-<h4>HYPOTHESIS I.bb: IF THE ONE IS (taken strictly) — What follows for the Others</h4>
+<h3 class="sub">HYPOTHESIS I.bb: IF THE ONE IS (taken strictly) — What follows for the Others</h3>
 <p>&quot;Now let&#x27;s set aside the further development of these points — they&#x27;re evident enough. Let&#x27;s go back and consider: if the One is, is the opposite equally true of the others?&quot;</p>
 <p>&quot;By all means.&quot;</p>
 <p>&quot;If the One is, what must happen to the others? Let&#x27;s ask.&quot;</p>
@@ -14057,7 +14408,7 @@ Sure, if you&#x27;d like.</p>
 <p>&quot;Yes.&quot;</p>
 <p>&quot;So the One-that-is-not, being altered, both comes into being and is destroyed. And not being altered, it neither comes into being nor is destroyed. And so the One-that-is-not both comes into being and is destroyed — and neither comes into being nor is destroyed.&quot;</p>
 <p>&quot;Right.&quot;</p>
-<h4>HYPOTHESIS II.b: IF THE ONE IS NOT (taken absolutely) — What follows for the One</h4>
+<h3 class="sub">HYPOTHESIS II.b: IF THE ONE IS NOT (taken absolutely) — What follows for the One</h3>
 <p>&quot;Now let&#x27;s go back to the beginning once more, and see whether the same conclusions follow or different ones.&quot;</p>
 <p>&quot;Let&#x27;s do that.&quot;</p>
 <p>&quot;If the One is not, we&#x27;re asking: what follows for the One?&quot;</p>
@@ -14147,7 +14498,7 @@ Sure, if you&#x27;d like.</p>
 <p>&quot;They must.&quot;</p>
 <p>&quot;And they&#x27;ll appear to be the same and yet different from one another, in contact with themselves yet separated, having every kind of motion and every kind of rest, coming into being and being destroyed and in neither state. They&#x27;ll have all such properties — as we could easily spell out — if the One is not and the many are.&quot;</p>
 <p>&quot;Very true.&quot;</p>
-<h4>HYPOTHESIS II.bb: IF THE ONE IS NOT (taken absolutely) — What follows for the Others</h4>
+<h3 class="sub">HYPOTHESIS II.bb: IF THE ONE IS NOT (taken absolutely) — What follows for the Others</h3>
 <p>&quot;Now, one last time. Let&#x27;s go back to the beginning and ask: if the One is not, and the others of the One are — what follows?&quot;</p>
 <p>&quot;Let&#x27;s ask.&quot;</p>
 <p>&quot;First, the others will not be one.&quot;</p>
@@ -16289,7 +16640,7 @@ That&#x27;s quite likely too.</p>
 </section>
 <section aria-labelledby="philebus-part-1">
 <h2 id="philebus-part-1">Philebus (Part 1)</h2>
-<h4>Part 1</h4>
+<h3 class="sub">Part 1</h3>
 <pre class="outline">Persons of the dialogue:
   Socrates
   Protarchus
@@ -17728,7 +18079,7 @@ Third: the model that the generated thing resembles (the eternal Form).</p>
 </section>
 <section aria-labelledby="timaeus-part-2">
 <h2 id="timaeus-part-2">Timaeus (Part 2)</h2>
-<h4>Timaeus (continuing)</h4>
+<h3 class="sub">Timaeus (continuing)</h3>
 <p>Before going further, we need to get clear about rest and motion, or the discussion ahead will run into all kinds of trouble. I&#x27;ve said something about this already, but one more point needs making: motion never exists where everything is uniform. Think about it. Nothing can move without a mover, and there can&#x27;t be a mover unless there&#x27;s something to be moved. Motion requires both — and where both exist, things can&#x27;t be uniform. So let&#x27;s assign rest to uniformity and motion to non-uniformity. And what causes non-uniformity? Inequality — whose origin we&#x27;ve already described.</p>
 <p>But one puzzle remains: why don&#x27;t the elements, once sorted into their separate kinds, simply stop moving through one another and changing places? Here&#x27;s the explanation. The revolution of the universe embraces all four elements, and since that revolution is circular and tends to press everything together, it squeezes the whole and refuses to leave any space empty. That&#x27;s why fire, above all, penetrates everywhere, with air second (being the second-finest element), and the other two following according to their own degrees of fineness. Bodies made of the largest particles have the largest gaps left in their structure; bodies made of the smallest particles have the least. The compression of the cosmic squeeze pushes the small particles into the gaps between the big ones. So small sits next to large, the smaller divides the greater, the greater compacts the lesser, and everything is carried up and down and back and forth toward its proper region — because as each thing changes size, it changes its place in space. In this way an inequality is generated that never goes away, and it keeps the elements in perpetual motion, now and always.</p>
 <p>Next, notice that there are several kinds of fire. First, flame. Second, the emanations of flame that don&#x27;t burn but only give light to the eyes. Third, the glow that remains in red-hot embers after the flame has gone out. The same goes for air: the brightest and clearest kind is called aether, the murkiest kind is mist and darkness, and there are other nameless varieties produced by the inequality of the triangles.</p>
@@ -19649,7 +20000,7 @@ Your words are excellent, Athenian, and I&#x27;ll do as you say.</p>
 </section>
 <section aria-labelledby="laws-book-viii">
 <h2 id="laws-book-viii">Laws — Book VIII</h2>
-<h4>Book 8</h4>
+<h3 class="sub">Book 8</h3>
 <p><b>Athenian</b>: Next, with the help of the Delphian oracle, we need to establish festivals and make laws about them. We have to determine which sacrifices will be good for the city and to which gods they should be offered. But when and how often they should be offered — that&#x27;s something we can partly regulate ourselves.</p>
 <p><b>Cleinias</b>: The number, yes.</p>
 <p><b>Athenian</b>: Then let&#x27;s start by setting the number. Let the total be 365 — one for every day — so that at least one magistrate is always sacrificing to some god or divine spirit on behalf of the city, its citizens, and their property. The interpreters, priests, priestesses, and prophets should meet with the guardians of the law and fill in the details that the legislator necessarily has to leave out. And really, they&#x27;re exactly the right people to notice what&#x27;s been left out.</p>

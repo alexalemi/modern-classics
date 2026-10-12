@@ -19,8 +19,359 @@
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=navigation" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 	<link rel="preload" href="fonts/libre-caslon-text-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="stylesheet" href="fonts.css">
-	<link rel="stylesheet" href="book.css">
+	<style>
+/* Fonts for every page (front pages and book pages), served from this site
+   rather than Google Fonts: a third-party
+   stylesheet blocked rendering for ~0.8 s on mobile (PageSpeed, 2026-10-12).
+   Oswald, Yellowtail and Libre Caslon Text (SIL Open Font License), latin and
+   latin-ext subsets as Google serves them, in site/fonts/. */
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* The book pages. Shared by every page assemble.py writes; fonts in fonts.css.
+
+   LEGIBILITY FIRST. The running text is set in the best screen serif the
+   reader's own device has (Charter on Apple, Sitka Text on Windows, Georgia
+   or Noto Serif elsewhere), near-black on white, 19-20px, ~66 characters to
+   the line. The Emend look (Libre Caslon Text, navy, the cream band, Oswald
+   labels) is kept to the title band, the headings and the controls. */
+
+:root {
+  --page:  #ffffff;
+  --text:  #1c1c1c;
+  --ink:   #1b314d;     /* navy: headings, links, buttons */
+  --cream: #f4efe2;
+  --soft:  #5a6472;
+  --rule:  #ddd6c8;
+  --link:  #1f4f86;
+  --plate-bg: #ffffff;
+  --reading: Charter, "Bitstream Charter", "Sitka Text", Georgia, "Noto Serif", serif;
+  --display: "Libre Caslon Text", Georgia, serif;
+  --label:   "Oswald", "Arial Narrow", sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page:  #14181e;
+    --text:  #e4e0d8;
+    --ink:   #e8e2d4;
+    --cream: #1d2430;
+    --soft:  #a3adba;
+    --rule:  #343c48;
+    --link:  #9cc2e6;
+  }
+  /* plates and diagrams are drawn on white paper; keep them on it, slightly dimmed */
+  figure img { opacity: .92; }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html {
+  background: var(--page);
+  color: var(--text);
+  font-size: 20px;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--reading);
+  line-height: 1.65;
+  font-kerning: normal;
+}
+
+main { max-width: 34rem; margin: 0 auto; padding: 0 1rem 5rem; }
+
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+
+/* ---------- title band ---------- */
+
+.title-block {
+  background: var(--cream);
+  padding: 1.6rem 1rem 1.8rem;
+  margin-bottom: 2rem;
+}
+.title-inner {
+  max-width: 44rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.8rem;
+  align-items: center;
+}
+.title-block .series {
+  grid-column: 1 / -1;
+  margin: 0 0 0.2rem;
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.title-block .series a { color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 0.55rem; }
+.title-block .series a:hover span { text-decoration: underline; }
+.title-block .series img { height: 1.8rem; width: auto; }
+.cover img {
+  display: block;
+  width: 150px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+}
+.title-text { min-width: 0; }
+h1 {
+  font: 700 2rem/1.15 var(--display);
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+  text-align: left;
+}
+.title-line { margin: 0 0 0.3rem; font-size: 0.95rem; color: var(--ink); }
+.title-line.byline { font-weight: 700; }
+.dates { margin: 0 0 0.9rem; font-size: 0.85rem; color: var(--soft); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.button {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid var(--ink);
+  font: 500 0.75rem/1.2 var(--label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+}
+.button.primary { background: var(--ink); color: var(--page); }
+.button:hover { text-decoration: underline; }
+
+/* phones: a small cover beside the title, so the text starts sooner */
+@media (max-width: 36rem) {
+  .title-block { padding: 1.1rem 1rem 1.4rem; }
+  .title-inner { grid-template-columns: 76px 1fr; gap: 0.9rem; align-items: start; }
+  .cover img { width: 76px; height: 114px; }
+  h1 { font-size: 1.45rem; }
+  .actions { grid-column: 1 / -1; }
+}
+
+/* ---------- running text ---------- */
+
+.intro-note { font-style: italic; font-size: 0.9rem; color: var(--soft); }
+
+h2, h3, h4 {
+  font-family: var(--display);
+  color: var(--ink);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+h2 { font-size: 1.45rem; margin: 3.2rem 0 1rem; }
+h3 { font-size: 1.2rem; margin: 2.8rem 0 0.9rem; }
+h4, h3.sub { font-size: 1rem; margin: 2rem 0 0.8rem; font-style: italic; }
+h2.center { text-align: center; font-size: 1.6rem; margin-top: 4rem; }
+
+p, ul, ol { margin: 0 0 1.15em; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+blockquote {
+  margin: 1.5em 0 1.5em 1em;
+  padding-left: 1em;
+  border-left: 3px solid var(--rule);
+  font-style: italic;
+}
+blockquote p { margin-bottom: 0.8em; }
+
+pre.outline {
+  font-family: var(--reading);
+  white-space: pre-wrap;
+  line-height: 1.6;
+  margin: 0 0 1.15em;
+}
+
+img.glyph { vertical-align: middle; display: inline; }
+span.frac, span.stack { display: inline-block; vertical-align: middle; text-align: center; }
+span.frac > span, span.stack > span { display: block; }
+span.frac > span.num { border-bottom: 1px solid currentColor; }
+span.stack.brace { border-left: 2px solid currentColor; border-right: 2px solid currentColor; border-radius: 0.6em; padding: 0 0.3em; }
+math { font-size: 1.05em; }
+
+figure { margin: 2.2em auto; text-align: center; }
+figure + figure { margin-top: 1em; }
+figure img { max-width: 100%; height: auto; background: var(--plate-bg); }
+figcaption {
+  margin-top: 0.6em;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--soft);
+  text-align: left;
+}
+
+table.plates { width: 100%; margin: 2.5em 0; border-collapse: collapse; line-height: 1.5; }
+table.plates td { padding: 0.4em 0.8em; vertical-align: middle; border-bottom: 1px solid var(--rule); }
+table.plates tr:last-child td { border-bottom: none; }
+table.plates figure, table.plates figure + figure { margin: 0.4em auto; }
+table.plates figcaption { display: none; }
+
+/* page locators: a printed page and quarter, for books that cite
+   themselves by them (Helmholtz: "see p. 77c") */
+span.loc { font-size: 0.65em; color: var(--soft); vertical-align: 0.3em; padding: 0 0.15em; font-style: normal; }
+a.ref { color: inherit; text-decoration: underline dotted; }
+span.sc { font-variant: small-caps; }
+.center { text-align: center; }
+.subtitle { text-align: center; font-style: italic; }
+
+/* ---------- contents ---------- */
+
+nav.contents h2 { margin-top: 0; }
+.toc-book { font-family: var(--display); font-weight: 700; margin: 1.2em 0 0.4em; color: var(--ink); }
+.toc-list { list-style: none; padding-left: 1.2em; margin: 0 0 1em; }
+.toc-list li { margin-bottom: 0.3em; line-height: 1.4; }
+nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
+
+/* ---------- reading aids (book.js) ---------- */
+
+.resume {
+  margin: 0 0 1.5rem;
+  padding: 0.7rem 1rem;
+  background: var(--cream);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+.resume[hidden] { display: none; }
+
+.to-contents {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 5;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--page);
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+.to-contents.show { opacity: .92; pointer-events: auto; }
+
+@media (max-width: 36rem) {
+  html { font-size: 18px; }
+}
+
+@media print {
+  .title-block { background: none; }
+  .actions, .to-contents, .resume { display: none; }
+}
+</style>
 	<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "A Tangled Tale", "author": {"@type": "Person", "name": "Lewis Carroll"}, "inLanguage": "en", "url": "https://emend.press/tangled-tale.html", "description": "Ten comic stories with a puzzle hidden in each — then Carroll's gleeful review of the wrong answers his readers sent in. Retold in modern English, free to read online and as an ebook.", "publisher": {"@type": "Organization", "name": "Emend Press", "url": "https://emend.press/", "logo": "https://emend.press/apple-touch-icon.png"}, "isAccessibleForFree": true, "isPartOf": {"@type": "BookSeries", "name": "Modern Classics", "url": "https://emend.press/"}, "image": "https://emend.press/covers/tangled-tale.jpg", "datePublished": "2026", "bookEdition": "Modern English retelling", "isBasedOn": {"@type": "Book", "name": "A Tangled Tale", "author": {"@type": "Person", "name": "Lewis Carroll"}, "datePublished": "1885"}, "workExample": {"@type": "Book", "bookFormat": "https://schema.org/EBook", "encodingFormat": "application/epub+zip", "url": "https://emend.press/ebooks/lewis-carroll_a-tangled-tale.epub"}}</script>
 </head>
 
@@ -142,7 +493,7 @@
 <p>&quot;That doesn&#x27;t follow from the data,&quot; said Balbus, getting up out of the easy chair where he had been dozing over The Little Mendip Gazette. &quot;They may all be single rooms. Still, we may as well see them. I shall be glad to stretch my legs a bit.&quot;</p>
 <p>An unprejudiced bystander might have objected that the operation was unnecessary, and that this long, lanky creature would have been better off with shorter legs; but no such thought occurred to his loving pupils. One on each side, they did their best to keep up with his gigantic strides, while Hugh repeated the sentence from their father&#x27;s letter, just arrived from abroad, that he and Lambert had been puzzling over.</p>
 <p>&quot;He says a friend of his, the Governor of — what was that name again, Lambert?&quot;</p>
-<h4>(&quot;Kgovjni,&quot; said Lambert.)</h4>
+<h3 class="sub">(&quot;Kgovjni,&quot; said Lambert.)</h3>
 <p>&quot;Well, yes. The Governor of whatever-it-is wants to give a very small dinner party, and he means to invite his father&#x27;s brother-in-law, his brother&#x27;s father-in-law, his father-in-law&#x27;s brother, and his brother-in-law&#x27;s father. And we&#x27;re to work out how many guests there will be.&quot;</p>
 <p>There was an anxious pause.</p>
 <p>&quot;How large did he say the pudding was to be?&quot; said Balbus at last. &quot;Take its volume, divide by the volume of what each man can eat, and the quotient —&quot;</p>
@@ -209,7 +560,7 @@
 <p>Another shriek of engine whistles, another heaving of springboards, another living avalanche flung into two trains as they flashed past; and the travellers were off again.</p>
 <p>Each gazed eagerly out of her carriage window, holding up a handkerchief as a signal to her friend. A rush and a roar. Two trains shot past each other in a tunnel, and two travellers leaned back in their corners with a sigh — or rather with two sighs — of relief.</p>
 <p>&quot;One!&quot; Clara murmured to herself. &quot;Won! It&#x27;s a word of good omen. This time, at any rate, the victory will be mine!&quot;</p>
-<h4>But was it?</h4>
+<h3 class="sub">But was it?</h3>
 </section>
 <section aria-labelledby="knot-four-the-dead-reckoning">
 <h2 id="knot-four-the-dead-reckoning">Knot Four: The Dead Reckoning</h2>
@@ -475,7 +826,7 @@
 <p>&quot;Well, that displaces two pints of water. What becomes of them? Why, if there were no more cylinder they would lie comfortably on top and fill the jar up to the twelve-inch mark. But unfortunately there is more cylinder, taking up half the space between the ten-inch and the twelve-inch marks, so only one pint of water can be accommodated there. What becomes of the other pint? Why, if there were no more cylinder it would lie on top and fill the jar up to the thirteen-inch mark. But unfortunately —</p>
 <p>&quot;Shade of Newton!&quot; he exclaimed, in sudden accents of terror. &quot;When does the water stop rising?&quot;</p>
 <p>A bright idea struck him. &quot;I&#x27;ll write a little essay on it,&quot; he said.</p>
-<h4>Balbus&#x27;s Essay</h4>
+<h3 class="sub">Balbus&#x27;s Essay</h3>
 <p>&quot;When a solid is immersed in a liquid, it is well known that it displaces a portion of the liquid equal to itself in bulk, and that the level of the liquid rises by just as much as it would rise if a quantity of liquid had been added equal in bulk to the solid. Lardner says that precisely the same process occurs when a solid is only partly immersed: the quantity of liquid displaced then equals the portion of the solid that is under, and the rise in level is in proportion.</p>
 <p>&quot;Suppose a solid to be held above the surface of a liquid and partly immersed. A portion of the liquid is displaced, and the level of the liquid rises. But by this rise in level a little more of the solid is of course immersed, and so there is a fresh displacement of a second portion of the liquid, and a consequent rise of level. Again, this second rise of level causes a further immersion, and in consequence another displacement of liquid and another rise. It is self-evident that this process must continue until the entire solid is immersed, and that the liquid will then begin to immerse whatever is holding the solid — which, being connected with it, must for the time be considered part of it.</p>
 <p>&quot;If you hold a stick six feet long with its end in a tumbler of water, and wait long enough, you must eventually be immersed. The question of where the water is supplied from — which belongs to a high branch of mathematics, and is therefore beyond our present scope — does not apply to the sea. Let us therefore take the familiar case of a man standing at the edge of the sea at low tide, with a solid in his hand which he partly immerses. He remains steadfast and unmoved, and we all know that he must be drowned. The multitudes who perish daily in this manner to attest a philosophical truth, and whose bodies the unreasoning wave casts sullenly upon our thankless shores, have a truer claim to be called the martyrs of science than a Galileo or a Kepler. To use Kossuth&#x27;s eloquent phrase, they are the unnamed demigods of the nineteenth century.&quot;</p>
@@ -546,7 +897,7 @@
 <p>&quot;It&#x27;s hardly fair,&quot; muttered Hugh, &quot;to give us such a jumble as this to work out!&quot;</p>
 <p>&quot;Fair?&quot; Clara echoed bitterly. &quot;Well!&quot;</p>
 <p>And to all my readers I can only repeat gentle Clara&#x27;s last words —</p>
-<h4>Fare-well!</h4>
+<h3 class="sub">Fare-well!</h3>
 <p>&quot;A knot!&quot; said Alice. &quot;Oh, do let me help to undo it!&quot;</p>
 </section>
 </section>
@@ -573,7 +924,7 @@
 <p>A Marlborough Boy and Putney Walker deserve honourable mention for their algebraic solutions, being the only two who have seen that the question leads to an indeterminate equation.</p>
 <p>E. W. brings a charge of untruthfulness against the aged knight — a serious charge, for he was the very pink of chivalry. She says: &quot;According to the data given, the time at the summit affords no clue to the total distance. It does not enable us to state precisely, to an inch, how much level and how much hill there was on the road.&quot;</p>
 <p>&quot;Fair damsel,&quot; the aged knight replies, &quot;if, as I surmise, thy initials denote Early Womanhood, bethink thee that the word &#x27;enable&#x27; is thine, not mine. I did but ask the time of reaching the hilltop as my condition for further parley. If now thou wilt not grant that I am a truth-loving man, then will I affirm that those same initials denote Envenomed Wickedness!&quot;</p>
-<h4>Class List</h4>
+<h3 class="sub">Class List</h3>
 <pre class="outline">	I.
 	A Marlborough Boy.
 	Putney Walker.</pre>
@@ -604,7 +955,7 @@ Money Spinner.</p>
 </section>
 <section aria-labelledby="answers-to-knot-two">
 <h2 id="answers-to-knot-two">Answers to Knot Two</h2>
-<h4>The Dinner Party</h4>
+<h3 class="sub">The Dinner Party</h3>
 <p>Problem. &quot;The Governor of Kgovjni wants to give a very small dinner party, and invites his father&#x27;s brother-in-law, his brother&#x27;s father-in-law, his father-in-law&#x27;s brother, and his brother-in-law&#x27;s father. Find the number of guests.&quot;</p>
 <p>Answer. &quot;One.&quot;</p>
 <p>In the genealogy below, males are shown by capitals and females by small letters. The Governor is E and his guest is C.</p>
@@ -615,7 +966,7 @@ Money Spinner.</p>
 <p>Ten answers have been received. Of these one is wrong: Galanthus Nivalis Major, who insists on inviting two guests, one of them being the Governor&#x27;s wife&#x27;s brother&#x27;s father. If she had taken his sister&#x27;s husband&#x27;s father instead, she would have found it possible to reduce the guests to one.</p>
 <p>Of the nine who send right answers, Sea-Breeze is the very faintest breath that ever bore the name. She simply states that the Governor&#x27;s uncle might fulfil all the conditions &quot;by intermarriages&quot;! Wind of the western sea, you have had a very narrow escape. Be thankful to appear in the Class List at all.</p>
 <p>Bog-Oak and Bradshaw of the Future use genealogies that require 16 people instead of 14, by inviting the Governor&#x27;s father&#x27;s sister&#x27;s husband instead of his father&#x27;s wife&#x27;s brother. I cannot think this so good a solution as one that needs only 14. Caius and Valentine deserve special mention as the only two who have supplied genealogies.</p>
-<h4>Class List</h4>
+<h3 class="sub">Class List</h3>
 <pre class="outline">	I.
 	Bee.
 	Caius.
@@ -628,7 +979,7 @@ Money Spinner.</p>
 	Bradshaw of the Future.</pre>
 <pre class="outline">	III.
 	Sea-Breeze.</pre>
-<h4>The Lodgings</h4>
+<h3 class="sub">The Lodgings</h3>
 <p>Problem. &quot;A Square has 20 doors on each side, and each side contains 21 equal parts. The doors are numbered all round, beginning at one corner. From which of the four — Nos. 9, 25, 52, 73 — is the sum of the distances to the other three least?&quot;</p>
 <p>Answer. &quot;From No. 9.&quot;</p>
 <figure id="fig-9">
@@ -651,7 +1002,7 @@ Money Spinner.</p>
 <p>Of the five partly right solutions, Rags and Tatters and Mad Hatter, who send one answer between them, make No. 25 six units from the corner instead of five. Cheam, E. R. D. L. and Meggy Potts leave openings at the corners of the Square, which are not in the data; and Cheam moreover gives values for the distances without any hint that they are only approximations.</p>
 <p>Crophi and Mophi make the bold and unfounded assumption that there were really 21 houses on each side instead of the 20 stated by Balbus. &quot;We may assume,&quot; they add, &quot;that the doors of Nos. 21, 42, 63 and 84 are invisible from the centre of the Square&quot;! What, I wonder, is there that Crophi and Mophi would not assume?</p>
 <p>Of the five who are wholly right, I think Bradshaw of the Future, Caius, Clifton C. and Martreb deserve special praise for their full analytical solutions. Matthew Matticks picks out No. 9 and proves it to be the right house in two ways, very neatly and ingeniously — but why he picks it out does not appear. It is an excellent synthetic proof, but it lacks the analysis the other four supply.</p>
-<h4>Class List</h4>
+<h3 class="sub">Class List</h3>
 <pre class="outline">	I.
 	Bradshaw of the Future.
 	Caius.
@@ -691,7 +1042,7 @@ Money Spinner.</p>
 <p>Bridget rightly says that the westerly traveller met a train every 6 minutes for 2 hours, but wrongly makes the number 20; it should be 21. G. E. B. adopts Bo-Peep&#x27;s method, but wrongly strikes out, for the easterly traveller, the train that started at the beginning of the previous 2 hours. Mary thinks a train met on arrival must not be counted, even when it was met on an earlier occasion.</p>
 <p>The 3 who are wholly right but for the unfortunate &quot;Clara&quot; theory are F. Lee, G. S. C. and X. A. B.</p>
 <p>And now, descend, ye classic Ten, who have solved the whole problem. Your names are Aix-les-Bains, Algernon Bray (thanks for a friendly remark, which comes with a warmth of heart that not even the Atlantic could chill), Arvon, Bradshaw of the Future, Fifee, H. L. R., J. L. O., Omega, S. S. G., and Waiting for the Train. Several of these have put Clara provisionally into the easterly train, but they seem to have understood that the data do not settle the point.</p>
-<h4>Class List</h4>
+<h3 class="sub">Class List</h3>
 <pre class="outline">	I.
 	Aix-les-Bains.
 	Algernon Bray.
@@ -724,7 +1075,7 @@ Money Spinner.</p>
 <p>Winifred, on the plea that &quot;one must have a starting point,&quot; assumes — what I fear is a mere guess — that No. 1 weighed 5½ lb. The rest all do it, wholly or partly, by guesswork.</p>
 <p>The problem is of course, as any algebraist sees at once, a case of simultaneous simple equations. It is, however, easily solved by arithmetic alone; and when that is so, I hold that it is bad workmanship to use the more complex method. I have not this time given extra credit to arithmetical solutions; but in future problems I shall, other things being equal, give the highest marks to those who use the simplest machinery.</p>
 <p>I have put into Class I those whose answers seemed particularly short and neat, and into Class III those that seemed particularly long or clumsy. Of this last set, A. C. M., Furze-Bush, James, Partridge, R. W. and Waiting for the Train have sent long wandering solutions in which the substitutions follow no definite method, but seem to have been made to see what would come of them. Chilpome and Dublin Boy omit some of the working. Arvon Marlborough Boy only finds the weight of one sack.</p>
-<h4>Class List</h4>
+<h3 class="sub">Class List</h3>
 <pre class="outline">	I.
 	B. E. D.
 	C. H.
@@ -805,7 +1156,7 @@ Money Spinner.</p>
 <p>Fifee sends a folio page of solution, which deserved a better fate. She offers 3 answers, in each of which 10 pictures are marked with 30 marks: in one she gives 2 crosses to 6 pictures, in another to 7, and in the third she gives 2 oughts to 5 — thus in every case ignoring the conditions. (I pause to remark that the condition &quot;2 crosses to 4 or 5 pictures&quot; can only mean &quot;either to 4 or else to 5.&quot; If, as one competitor holds, it might mean any number not less than 4, then the words &quot;or 5&quot; would be superfluous.)</p>
 <p>I. E. A. — and I am happy to say that none of these bloodless phantoms appear this time in the class list; is it IDEA with the D left out? — gives 2 crosses to 6 pictures. She then takes me to task for using the word &quot;ought&quot; instead of &quot;nought.&quot; No doubt, to one who thus rebels against the rules laid down for her guidance, the word must be distasteful. But does I. E. A. not remember the parallel case of &quot;adder&quot;? That creature was originally &quot;a nadder&quot;; then the two words took to batting the poor N backwards and forwards like a shuttlecock, the final state of the game being &quot;an adder.&quot; May not &quot;a nought&quot; have similarly become &quot;an ought&quot;? At any rate, oughts and crosses is a very old game. I don&#x27;t think I ever heard it called noughts and crosses.</p>
 <p>In the following Class List, I hope the solitary occupant of Class III will sheathe her claws when she hears how narrow an escape she has had of not being named at all. Her account of the process by which she got the answer is so meagre that, like the nursery tale of &quot;Jack-a-Minory&quot; — I trust I. E. A. will be merciful about the spelling — it is scarcely to be distinguished from zero.</p>
-<h4>Class List</h4>
+<h3 class="sub">Class List</h3>
 <pre class="outline">	I.
 	Guy.
 	Old Cat.
@@ -823,7 +1174,7 @@ Money Spinner.</p>
 <p>Problem 1. A and B began the year with only £1,000 apiece. They borrowed nothing; they stole nothing. On the following New Year&#x27;s Day they had £60,000 between them. How did they do it?</p>
 <p>Solution. They went that day to the Bank of England. A stood in front of it, while B went round and stood behind it.</p>
 <p>Two answers have been received, both worthy of great honour. Addlepate makes them borrow &quot;0&quot; and steal &quot;0,&quot; and uses both ciphers by putting them at the right-hand end of the £1,000, thus producing £100,000, which is well over the mark. But — or, to put it in Latin, At — Spes Infracta has solved it even more ingeniously. With the first cipher she turns the 1 of the £1,000 into a 9 and adds the result to the original sum, thus getting £10,000; and in that, by means of the other 0, she turns the 1 into a 6, hitting the exact £60,000.</p>
-<h4>Class List</h4>
+<h3 class="sub">Class List</h3>
 <pre class="outline">	I.
 	At Spes Infracta.</pre>
 <pre class="outline">	II.
@@ -845,7 +1196,7 @@ Money Spinner.</p>
 <p>The fourth set actually put Mimi at the top, arranging them as &quot;Mimi, Zuzu, Lolo.&quot; They are Marquis and Co., Martreb, S. B. B. (the first initial is scarcely legible; it may be meant for a J), and Stanza.</p>
 <p>The fifth set consists of An Ancient Fish and Camel. These ill-assorted comrades, by dint of foot and fin, have scrambled into the right answer; but as their method is wrong, of course it counts for nothing. An Ancient Fish also has very ancient and fishlike ideas about how numbers represent merit: she says &quot;Lolo gains 2½ on Mimi.&quot; Two and a half what? Fish, fish, art thou in thy duty?</p>
 <p>Of the five winners I put Balbus and The Elder Traveller slightly below the other three — Balbus for defective reasoning, the other for scanty working. Balbus gives two reasons for saying that adding the marks is not the right method, and then adds, &quot;it follows that the decision must be made by multiplying the marks together.&quot; This is hardly more logical than saying, &quot;This is not Spring; therefore it must be Autumn.&quot;</p>
-<h4>Class List</h4>
+<h3 class="sub">Class List</h3>
 <pre class="outline">	I.
 	Dinah Mite.
 	E. B. D. L.
@@ -901,7 +1252,7 @@ Money Spinner.</p>
 <p>Now try the other method. &quot;I seed somebody a-running, but he was well gone before ever I got nigh the place. So I just took a look round in the garden. And I noticed the footmarks, where the chap had come right across your flower beds. They was good big footmarks, sure-ly. And I noticed as the left foot went down at the heel ever so much deeper than the other. And I says to myself, &#x27;The chap&#x27;s been a big hulking chap, and he goes lame on his left foot.&#x27; And I rubs my hand on the wall where he got over, and there was soot on it, and no mistake. So I says to myself, &#x27;Now where can I light on a big man, in the chimbley-sweep line, what&#x27;s lame of one foot?&#x27; And I flashes up permiscuous, and I says, &#x27;It&#x27;s Bill Sykes!&#x27; says I.&quot; There is your algebraical policeman — a higher intellectual type, to my thinking, than the other.</p>
 <p>Little Jack&#x27;s solution calls for a word of praise, as he has written out what really is an algebraical proof in words, without representing any of his facts as equations. If it is all his own, he will make a good algebraist in time to come. I beg to thank Simple Susan for some kind words of sympathy, to the same effect as those received from Old Cat.</p>
 <p>Hecla and Martreb are the only two who have used a method certain either to produce the answer or else to prove it impossible; so they must share the highest honours between them.</p>
-<h4>Class List</h4>
+<h3 class="sub">Class List</h3>
 <pre class="outline">	I.
 	Hecla.
 	Martreb.</pre>
@@ -965,11 +1316,11 @@ Money Spinner.</p>
 </section>
 <section aria-labelledby="answers-to-knot-eight">
 <h2 id="answers-to-knot-eight">Answers to Knot Eight</h2>
-<h4>The Pigs</h4>
+<h3 class="sub">The Pigs</h3>
 <p>Problem. Place twenty-four pigs in four sties so that, as you go round and round, you always find the number in each sty nearer to ten than the number in the last.</p>
 <p>Answer. Place 8 pigs in the first sty, 10 in the second, none in the third, and 6 in the fourth. Ten is nearer to ten than 8 is; none is nearer to ten than 10 is; 6 is nearer to ten than none is; and 8 is nearer to ten than 6 is.</p>
 <p>This problem is noticed by only two correspondents. Balbus says &quot;it certainly cannot be solved mathematically, nor do I see how to solve it by any verbal quibble.&quot; Nolens Volens makes Her Radiancy change the direction in which she goes round — and even then is obliged to add that &quot;the pigs must be carried in front of her&quot;!</p>
-<h4>The Grurmstipths</h4>
+<h3 class="sub">The Grurmstipths</h3>
 <p>Problem. Omnibuses start from a certain point, in both directions, every 15 minutes. A traveller setting out on foot at the same time as one of them meets another in 12½ minutes. When will he be overtaken by one?</p>
 <p>Answer. In 6¼ minutes.</p>
 <p>Solution. Let a be the distance an omnibus goes in 15 minutes, and x the distance from the starting point to where the traveller is overtaken.</p>
@@ -978,14 +1329,14 @@ Money Spinner.</p>
 <p>Four answers have been received, of which two are wrong.</p>
 <p>Dinah Mite rightly states that the overtaking omnibus reached the point where they met the other omnibus 5 minutes after they left, but wrongly concludes that, going 5 times as fast, it would overtake them in another minute. The travellers are five minutes&#x27; walk ahead of the omnibus, and must walk a quarter of that distance further before the omnibus overtakes them — which is a fifth of the distance covered by the omnibus in the same time, and will take another 1¼ minutes.</p>
 <p>Nolens Volens tries it by a process like Achilles and the Tortoise. He rightly states that when the overtaking omnibus leaves the gate the travellers are a fifth of a ahead, and that it will take the omnibus 3 minutes to cover that distance; during which time, he tells us, the travellers go a fifteenth of a — this should be a twenty-fifth. The travellers being now a fifteenth of a ahead, he concludes that the work remaining is for the travellers to go a sixtieth of a while the omnibus goes a twelfth. The principle is correct, and might have been applied earlier.</p>
-<h4>Class List</h4>
+<h3 class="sub">Class List</h3>
 <pre class="outline">	I.
 	Balbus.
 	Delta.</pre>
 </section>
 <section aria-labelledby="answers-to-knot-nine">
 <h2 id="answers-to-knot-nine">Answers to Knot Nine</h2>
-<h4>The Buckets</h4>
+<h3 class="sub">The Buckets</h3>
 <p>Problem. Lardner states that a solid immersed in a fluid displaces an amount equal to itself in bulk. How can this be true of a small bucket floating in a larger one?</p>
 <p>Solution. By &quot;displaces,&quot; Lardner means &quot;occupies a space which might be filled with water without any change in the surroundings.&quot; If the part of the floating bucket that is above the water could be annihilated, and the rest of it turned into water, the surrounding water would not shift its position — which agrees with Lardner&#x27;s statement.</p>
 <p>Five answers have been received, none of which explains the difficulty arising from the well-known fact that a floating body weighs the same as the fluid it displaces.</p>
@@ -993,17 +1344,17 @@ Money Spinner.</p>
 <p>Magpie says the fallacy is &quot;the assumption that one body can displace another from a place where it isn&#x27;t,&quot; and that Lardner&#x27;s assertion is incorrect except when the containing vessel &quot;was originally full to the brim.&quot; But whether a thing floats depends on the present state of affairs, not on past history.</p>
 <p>Old King Cole takes the same view as Hecla. Tympanum and Vindex assume that &quot;displaced&quot; means &quot;raised above its original level,&quot; and merely explain how it comes about that the water so raised is less in bulk than the immersed part of the bucket — thereby landing themselves, or rather setting themselves afloat, in the same boat as Hecla.</p>
 <p>I regret that there is no Class List to publish for this problem.</p>
-<h4>Balbus&#x27;s Essay</h4>
+<h3 class="sub">Balbus&#x27;s Essay</h3>
 <p>Problem. Balbus states that if a certain solid is immersed in a certain vessel of water, the water will rise through a series of distances — two inches, one inch, half an inch, and so on — a series which has no end. He concludes that the water will rise without limit. Is this true?</p>
 <p>Solution. No. This series can never reach 4 inches, since however many terms we take, we always fall short of 4 inches by an amount equal to the last term taken.</p>
 <p>Three answers have been received, but only two seem to me worthy of honours.</p>
 <p>Tympanum says that the statement about the stick &quot;is merely a blind, to which the old answer may well be applied: solvitur ambulando&quot; — it is solved by walking — &quot;or rather mergendo,&quot; by sinking. I trust Tympanum will not test this in his own person by taking the place of the man in Balbus&#x27;s Essay. He would infallibly be drowned.</p>
 <p>Old King Cole rightly points out that the series 2, 1, and so on is a decreasing geometrical progression; while Vindex rightly identifies the fallacy as that of Achilles and the Tortoise.</p>
-<h4>Class List</h4>
+<h3 class="sub">Class List</h3>
 <pre class="outline">	I.
 	Old King Cole.
 	Vindex.</pre>
-<h4>The Garden</h4>
+<h3 class="sub">The Garden</h3>
 <p>Problem. An oblong garden, half a yard longer than it is wide, consists entirely of a gravel path, spirally arranged, a yard wide and 3,630 yards long. Find the dimensions of the garden.</p>
 <p>Answer. 60 by 60½.</p>
 <p>Solution. The number of yards, and fractions of a yard, walked along a straight stretch of path is evidently the same as the number of square yards, and fractions of a square yard, contained in that stretch; and the distance covered in passing through a square yard at a corner is evidently a yard. So the area of the garden is 3,630 square yards: that is, if x is the width, x(x + ½) = 3,630. Solving this quadratic, we find x = 60. So the dimensions are 60 and 60½.</p>
@@ -1017,7 +1368,7 @@ Money Spinner.</p>
 <p>Of the seven who are right, Dinah Mite, Janet, Magpie and Taffy make the same assumption as C. G. L. and Co. They then solve by a quadratic. Magpie also tries it by arithmetical progression, but fails to notice that the first and last coils have special values.</p>
 <p>Alumnus Etonae attempts to prove what C. G. L. assumes, but does it by a particular instance, taking a garden 6 by 5½. He ought to have proved it generally: what is true of one number is not always true of others. Old King Cole solves it by an arithmetical progression. It is right, but too lengthy to be worth as much as a quadratic.</p>
 <p>Vindex proves it very neatly, by pointing out that a yard of path measured along the middle represents a square yard of garden, &quot;whether we consider the straight stretches of path or the square yards at the angles, in which the middle line goes half a yard in one direction and then turns a right angle and goes half a yard in another.&quot;</p>
-<h4>Class List</h4>
+<h3 class="sub">Class List</h3>
 <pre class="outline">	I.
 	Vindex.</pre>
 <pre class="outline">	II.
@@ -1031,7 +1382,7 @@ Money Spinner.</p>
 </section>
 <section aria-labelledby="answers-to-knot-ten">
 <h2 id="answers-to-knot-ten">Answers to Knot Ten</h2>
-<h4>The Chelsea Pensioners</h4>
+<h3 class="sub">The Chelsea Pensioners</h3>
 <p>Problem. If 70 per cent have lost an eye, 75 per cent an ear, 80 per cent an arm, and 85 per cent a leg, what percentage, at the very least, must have lost all four?</p>
 <p>Answer. Ten.</p>
 <p>Solution. I adopt Polar Star&#x27;s, as being better than my own. Adding the wounds together we get 70 + 75 + 80 + 85 = 310, among 100 men; which gives 3 to each, and 4 to 10 men. So the least percentage is 10.</p>
@@ -1044,7 +1395,7 @@ Money Spinner.</p>
 <p>The sides of this illogical octagon are as follows, in alphabetical order: Algernon Bray, Dinah Mite, G. S. C., Jane E., J. D. W., Magpie (who makes the delightful remark &quot;therefore 90 per cent have two of something,&quot; recalling to memory that fortunate monarch with whom Xerxes was so pleased that &quot;he gave him ten of everything!&quot;), S. S. G., and Tokio.</p>
 <p>Bradshaw of the Future and T. R. do the question piecemeal — on the principle that the 70 per cent and the 75 per cent, though begun from opposite ends of the 100, must overlap by at least 45 per cent, and so on. This is quite correct working, but not, I think, quite the best way of doing it.</p>
 <p>The other five competitors will, I hope, feel themselves sufficiently glorified by being placed in the first class, without my composing a Triumphal Ode for each.</p>
-<h4>Class List</h4>
+<h3 class="sub">Class List</h3>
 <pre class="outline">	I.
 	Old Cat.
 	Old Hen.
@@ -1063,9 +1414,9 @@ Money Spinner.</p>
 	Magpie.
 	S. S. G.
 	Tokio.</pre>
-<h4>Change of Day</h4>
+<h3 class="sub">Change of Day</h3>
 <p>I must postpone indefinitely the geographical problem — partly because I have not yet received the statistics I am hoping for, and partly because I am so entirely puzzled by it myself. When an examiner is himself dimly hovering between a second class and a third, how is he to decide anybody else&#x27;s position?</p>
-<h4>The Sons&#x27; Ages</h4>
+<h3 class="sub">The Sons&#x27; Ages</h3>
 <p>Problem. &quot;At first, two of the ages are together equal to the third. A few years afterwards, two of them are together double the third. When the number of years since the first occasion is two-thirds of the sum of the ages on that occasion, one age is 21. What are the other two?&quot;</p>
 <p>Answer. &quot;15 and 18.&quot;</p>
 <p>Solution. Let the ages at first be x, y and (x + y). Now if a + b = 2c, then (a − n) + (b − n) = 2(c − n), whatever the value of n. So the second relationship, if it was ever true, was always true; and therefore it was true at the start. But it cannot be true that x and y together are double (x + y). So it must be true of (x + y) together with either x or y, and it does not matter which we take. Assume, then, that (x + y) + x = 2y; that is, y = 2x.</p>
@@ -1084,7 +1435,7 @@ Money Spinner.</p>
 <p>Among those who have earned the highest honours, Algernon Bray solves the problem quite correctly, but adds that there is nothing to rule out the supposition that all the ages were fractional. This would make the number of answers infinite. Let me meekly protest that I never intended my readers to devote the rest of their lives to writing out answers.</p>
 <p>E. M. Rix points out that if fractional ages are allowed, any one of the three sons might be the one coming of age; but she rightly rejects this on the ground that it would make the problem indeterminate.</p>
 <p>White Sugar is the only one to have detected an oversight of mine. I had forgotten the possibility — which of course ought to be allowed for — that the son who came of age that year need not have done so by that day, so that he might be only 20. This gives a second solution: 20, 24, 28. Well said, pure Crystal! Verily, thy fair discourse hath been as sugar.</p>
-<h4>Class List</h4>
+<h3 class="sub">Class List</h3>
 <pre class="outline">	I.
 	Algernon Bray.
 	An Old Fogey.
@@ -1105,7 +1456,7 @@ Money Spinner.</p>
 <p>I have received more than one remonstrance about my assertion, in the Chelsea Pensioners problem, that it was illogical to conclude from the datum &quot;70 per cent have lost an eye&quot; that 30 per cent have not. Algernon Bray offers as a parallel case: &quot;suppose Tommy&#x27;s father gives him 4 apples and he eats one of them — how many has he left?&quot;, and says &quot;I think we are justified in answering, 3.&quot; I think so too. There is no &quot;must&quot; there, and the data are evidently meant to fix the answer exactly. But if the question set me were &quot;how many must he have left?&quot;, I should understand the data to mean that his father gave him 4 at least, and may have given him more.</p>
 <p>I take this opportunity of thanking those who have sent, along with their answers to the Tenth Knot, either regrets that there are no more Knots to come or petitions that I should go back on my decision to bring them to an end. I am most grateful for their kind words; but I think it wisest to end what was at best a lame attempt. &quot;The stretched metre of an antique song&quot; is beyond my compass, and my puppets were neither distinctly in my life, like those I now address, nor yet distinctly out of it, like Alice and the Mock Turtle.</p>
 <p>Yet let me at least imagine, as I lay down the pen, that I carry with me into my silent life, dear reader, a farewell smile from your unseen face, and a kindly farewell pressure from your unfelt hand. And so, good night! Parting is such sweet sorrow that I shall say &quot;good night&quot; till it be morrow.</p>
-<h4>THE END</h4>
+<h3 class="sub">THE END</h3>
 </section>
 </section>
 </article>

@@ -19,8 +19,359 @@
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=navigation" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 	<link rel="preload" href="fonts/libre-caslon-text-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="stylesheet" href="fonts.css">
-	<link rel="stylesheet" href="book.css">
+	<style>
+/* Fonts for every page (front pages and book pages), served from this site
+   rather than Google Fonts: a third-party
+   stylesheet blocked rendering for ~0.8 s on mobile (PageSpeed, 2026-10-12).
+   Oswald, Yellowtail and Libre Caslon Text (SIL Open Font License), latin and
+   latin-ext subsets as Google serves them, in site/fonts/. */
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* The book pages. Shared by every page assemble.py writes; fonts in fonts.css.
+
+   LEGIBILITY FIRST. The running text is set in the best screen serif the
+   reader's own device has (Charter on Apple, Sitka Text on Windows, Georgia
+   or Noto Serif elsewhere), near-black on white, 19-20px, ~66 characters to
+   the line. The Emend look (Libre Caslon Text, navy, the cream band, Oswald
+   labels) is kept to the title band, the headings and the controls. */
+
+:root {
+  --page:  #ffffff;
+  --text:  #1c1c1c;
+  --ink:   #1b314d;     /* navy: headings, links, buttons */
+  --cream: #f4efe2;
+  --soft:  #5a6472;
+  --rule:  #ddd6c8;
+  --link:  #1f4f86;
+  --plate-bg: #ffffff;
+  --reading: Charter, "Bitstream Charter", "Sitka Text", Georgia, "Noto Serif", serif;
+  --display: "Libre Caslon Text", Georgia, serif;
+  --label:   "Oswald", "Arial Narrow", sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page:  #14181e;
+    --text:  #e4e0d8;
+    --ink:   #e8e2d4;
+    --cream: #1d2430;
+    --soft:  #a3adba;
+    --rule:  #343c48;
+    --link:  #9cc2e6;
+  }
+  /* plates and diagrams are drawn on white paper; keep them on it, slightly dimmed */
+  figure img { opacity: .92; }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html {
+  background: var(--page);
+  color: var(--text);
+  font-size: 20px;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--reading);
+  line-height: 1.65;
+  font-kerning: normal;
+}
+
+main { max-width: 34rem; margin: 0 auto; padding: 0 1rem 5rem; }
+
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+
+/* ---------- title band ---------- */
+
+.title-block {
+  background: var(--cream);
+  padding: 1.6rem 1rem 1.8rem;
+  margin-bottom: 2rem;
+}
+.title-inner {
+  max-width: 44rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.8rem;
+  align-items: center;
+}
+.title-block .series {
+  grid-column: 1 / -1;
+  margin: 0 0 0.2rem;
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.title-block .series a { color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 0.55rem; }
+.title-block .series a:hover span { text-decoration: underline; }
+.title-block .series img { height: 1.8rem; width: auto; }
+.cover img {
+  display: block;
+  width: 150px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+}
+.title-text { min-width: 0; }
+h1 {
+  font: 700 2rem/1.15 var(--display);
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+  text-align: left;
+}
+.title-line { margin: 0 0 0.3rem; font-size: 0.95rem; color: var(--ink); }
+.title-line.byline { font-weight: 700; }
+.dates { margin: 0 0 0.9rem; font-size: 0.85rem; color: var(--soft); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.button {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid var(--ink);
+  font: 500 0.75rem/1.2 var(--label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+}
+.button.primary { background: var(--ink); color: var(--page); }
+.button:hover { text-decoration: underline; }
+
+/* phones: a small cover beside the title, so the text starts sooner */
+@media (max-width: 36rem) {
+  .title-block { padding: 1.1rem 1rem 1.4rem; }
+  .title-inner { grid-template-columns: 76px 1fr; gap: 0.9rem; align-items: start; }
+  .cover img { width: 76px; height: 114px; }
+  h1 { font-size: 1.45rem; }
+  .actions { grid-column: 1 / -1; }
+}
+
+/* ---------- running text ---------- */
+
+.intro-note { font-style: italic; font-size: 0.9rem; color: var(--soft); }
+
+h2, h3, h4 {
+  font-family: var(--display);
+  color: var(--ink);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+h2 { font-size: 1.45rem; margin: 3.2rem 0 1rem; }
+h3 { font-size: 1.2rem; margin: 2.8rem 0 0.9rem; }
+h4, h3.sub { font-size: 1rem; margin: 2rem 0 0.8rem; font-style: italic; }
+h2.center { text-align: center; font-size: 1.6rem; margin-top: 4rem; }
+
+p, ul, ol { margin: 0 0 1.15em; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+blockquote {
+  margin: 1.5em 0 1.5em 1em;
+  padding-left: 1em;
+  border-left: 3px solid var(--rule);
+  font-style: italic;
+}
+blockquote p { margin-bottom: 0.8em; }
+
+pre.outline {
+  font-family: var(--reading);
+  white-space: pre-wrap;
+  line-height: 1.6;
+  margin: 0 0 1.15em;
+}
+
+img.glyph { vertical-align: middle; display: inline; }
+span.frac, span.stack { display: inline-block; vertical-align: middle; text-align: center; }
+span.frac > span, span.stack > span { display: block; }
+span.frac > span.num { border-bottom: 1px solid currentColor; }
+span.stack.brace { border-left: 2px solid currentColor; border-right: 2px solid currentColor; border-radius: 0.6em; padding: 0 0.3em; }
+math { font-size: 1.05em; }
+
+figure { margin: 2.2em auto; text-align: center; }
+figure + figure { margin-top: 1em; }
+figure img { max-width: 100%; height: auto; background: var(--plate-bg); }
+figcaption {
+  margin-top: 0.6em;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--soft);
+  text-align: left;
+}
+
+table.plates { width: 100%; margin: 2.5em 0; border-collapse: collapse; line-height: 1.5; }
+table.plates td { padding: 0.4em 0.8em; vertical-align: middle; border-bottom: 1px solid var(--rule); }
+table.plates tr:last-child td { border-bottom: none; }
+table.plates figure, table.plates figure + figure { margin: 0.4em auto; }
+table.plates figcaption { display: none; }
+
+/* page locators: a printed page and quarter, for books that cite
+   themselves by them (Helmholtz: "see p. 77c") */
+span.loc { font-size: 0.65em; color: var(--soft); vertical-align: 0.3em; padding: 0 0.15em; font-style: normal; }
+a.ref { color: inherit; text-decoration: underline dotted; }
+span.sc { font-variant: small-caps; }
+.center { text-align: center; }
+.subtitle { text-align: center; font-style: italic; }
+
+/* ---------- contents ---------- */
+
+nav.contents h2 { margin-top: 0; }
+.toc-book { font-family: var(--display); font-weight: 700; margin: 1.2em 0 0.4em; color: var(--ink); }
+.toc-list { list-style: none; padding-left: 1.2em; margin: 0 0 1em; }
+.toc-list li { margin-bottom: 0.3em; line-height: 1.4; }
+nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
+
+/* ---------- reading aids (book.js) ---------- */
+
+.resume {
+  margin: 0 0 1.5rem;
+  padding: 0.7rem 1rem;
+  background: var(--cream);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+.resume[hidden] { display: none; }
+
+.to-contents {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 5;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--page);
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+.to-contents.show { opacity: .92; pointer-events: auto; }
+
+@media (max-width: 36rem) {
+  html { font-size: 18px; }
+}
+
+@media print {
+  .title-block { background: none; }
+  .actions, .to-contents, .resume { display: none; }
+}
+</style>
 	<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "The Memorabilia", "author": {"@type": "Person", "name": "Xenophon"}, "inLanguage": "en", "url": "https://emend.press/memorabilia.html", "description": "Socrates remembered by his other student — practical, sociable, and useful, with the Choice of Heracles. Retold in modern English, free to read online and as an ebook.", "publisher": {"@type": "Organization", "name": "Emend Press", "url": "https://emend.press/", "logo": "https://emend.press/apple-touch-icon.png"}, "isAccessibleForFree": true, "isPartOf": {"@type": "BookSeries", "name": "Modern Classics", "url": "https://emend.press/"}, "image": "https://emend.press/covers/memorabilia.jpg", "datePublished": "2026", "bookEdition": "Modern English retelling", "isBasedOn": {"@type": "Book", "name": "The Memorabilia", "author": {"@type": "Person", "name": "Xenophon"}}, "workExample": {"@type": "Book", "bookFormat": "https://schema.org/EBook", "encodingFormat": "application/epub+zip", "url": "https://emend.press/ebooks/xenophon_the-memorabilia.epub"}}</script>
 </head>
 
@@ -66,7 +417,7 @@
 <article>
 <section aria-labelledby="book-i">
 <h2 id="book-i">Book I</h2>
-<h4>Chapter 1</h4>
+<h3 class="sub">Chapter 1</h3>
 <p>I have often wondered what arguments the men who indicted Socrates could possibly have used to convince the Athenians that he deserved to die. The indictment ran like this: &quot;Socrates is guilty of refusing to recognize the gods recognized by the state, of importing strange new divinities of his own, and of corrupting the young.&quot;</p>
 <p>Start with the first charge. What evidence did they ever produce that Socrates refused to recognize the state&#x27;s gods? Did he fail to sacrifice? Did he ignore divination? Just the opposite. He was regularly seen offering sacrifice, at home and at the public altars of the city, and he relied on divination just as openly. In fact his famous saying, &quot;A divinity gives me a sign,&quot; was on everyone&#x27;s lips — and if I had to guess, that phrase is exactly what gave rise to the charge of importing new divinities. But there was nothing newer in his case than in anyone else&#x27;s who believes the gods send guidance. People everywhere rely on omens of every kind: the flight or cry of birds, a stray remark, a chance meeting, the entrails of a sacrificed animal. And even by the ordinary understanding, nobody thinks it&#x27;s the bird itself, or the stranger you happen to pass, that knows what will benefit you — it&#x27;s the gods who use these things as instruments to signal it. Socrates believed exactly that. The only difference was that where most people say a bird or a passerby &quot;turned them back&quot; or &quot;urged them on,&quot; Socrates said what he actually meant: &quot;The divinity,&quot; he said, &quot;gives me a sign.&quot; He constantly advised his friends to do this or avoid that on the authority of that divine sign — and the plain fact is that those who took his advice did well, while those who ignored it lived to regret it. Now think about what that implies. Obviously he had no wish to look like a fraud or a fool in front of the people he saw every day. But he would have looked like both if he kept announcing revelations from a god and the god kept making him wrong. Clearly he would never have risked predicting anything unless he trusted that his words would come true. And where could that trust rest except on a god? And if he trusted the gods, how can anyone say he didn&#x27;t recognize them?</p>
 <p>There is another side to how he guided the people close to him. For the ordinary business of life, his advice was simple: act however you judge best. But where the outcome was genuinely beyond calculating, he told his friends to consult the oracle about whether to go ahead at all. &quot;No one,&quot; he would say, &quot;who wants to run a household or a city well — no one who hopes to steer the ship of state — can do without help from above.&quot; Of course, he granted, carpentry, building, metalwork, farming, the management of people, along with the theory behind these crafts and the sciences of arithmetic, economics, and strategy — all of that can be studied and mastered by the human mind. But even in these fields, he said, the gods keep the most important part for themselves, hidden from mortal eyes. A man can sow a field perfectly and still not know who will harvest the crop. He can build a beautiful house and not know who will live in it. A general cannot be sure a campaign will pay off; a politician cannot be sure his leadership will end in good or in disaster. A man who marries a lovely wife hoping for happiness cannot know whether she will bring him grief instead, and a man who builds powerful alliances in the city cannot know whether those very alliances will get him exiled. To imagine that all of this lies within human judgment, with nothing left to the gods, was, Socrates thought, madness. But it was just as absurd to run to Heaven with questions we are perfectly equipped to answer by learning — as if you should ask an oracle, &quot;Should I hire an experienced driver for my carriage, or a man who has never held the reins?&quot; or &quot;Should I put a sailor in command of my ship, or a landsman?&quot; The same goes for anything you can settle by counting, weighing, or measuring. Pestering the gods with questions like that struck him as a kind of profanity. &quot;Our duty is plain,&quot; he would say. &quot;Where the gods have given us the ability to work things out for ourselves, let&#x27;s use it. But where the answer is hidden, let&#x27;s seek it from above, through divination — for the gods give signs to anyone they favor.&quot;</p>
@@ -75,7 +426,7 @@
 <p>Now, where Socrates&#x27; opinions were unknown to the public, it&#x27;s no great surprise that the jury got him wrong. But that they ignored facts everyone knew — that is astonishing.</p>
 <p>At one point Socrates served on the Council, and he had sworn the councilor&#x27;s oath to act in accordance with the laws. It so happened that he was presiding over the Popular Assembly on the day it was seized by the urge to condemn the nine generals — Thrasyllus, Erasinides, and the rest — to death by a single collective vote, which was illegal. And despite the fury of the crowd and the threats of several powerful men, he refused to put the question to a vote. Keeping faith with his oath mattered more to him than gratifying the people in their injustice or shielding himself from the threats of the mighty. The truth is that his belief about how the gods watch over men was very different from most people&#x27;s. The majority seem to imagine that the gods know some things and are ignorant of others. Socrates was convinced that the gods know everything — what is said, what is done, and what is deliberated in the silent chambers of the heart — that they are present everywhere, and that they give signs to men about everything that concerns men.</p>
 <p>So I come back to where I began. It amazes me that the Athenians ever let themselves be persuaded that Socrates was anything but sound-minded about the gods. This was a man who never once said or did an impious thing regarding them — a man whose every word and every act concerning the gods matched, word for word and deed for deed, everything we recognize as the deepest piety.</p>
-<h4>Chapter 2</h4>
+<h3 class="sub">Chapter 2</h3>
 <p>Just as surprising to me is the belief that Socrates corrupted the young. Here was a man who, beyond everything I have already said, kept his appetites and passions under the strictest control; who could endure winter&#x27;s cold, summer&#x27;s heat, and every kind of hard work better than almost anyone; who had trained himself to need so little that even on the scantiest means he never lacked enough. Is it believable that such a man made others irreverent, or lawless, or self-indulgent, or soft in the face of hard work? Far from it. He was the saving of many, by kindling in them a passion for virtue and the hope that if they managed themselves carefully they could grow truly beautiful and good. Not that he ever set up as a teacher of virtue. But by being so visibly good himself, he made the people who spent time with him hope that by imitating him they might one day come to resemble him.</p>
 <p>Nor should anyone conclude from this that he neglected his own body, or approved of those who neglected theirs. Stuffing yourself and then sweating it off with overwork was a regimen he condemned; the right plan, he thought, was to eat as much as the appetite genuinely welcomed and work it off with moderate exercise — a habit healthy for the body and no obstacle to the care of the soul. And there was nothing showy or affected about him: no dandyism of cloak or shoes, no soft living of any kind.</p>
 <p>Least of all did he make his companions greedy for money. He curbed every other craving in them, and he refused to make a profit from the one craving they had for his company. By taking no payment, he believed, he was guarding his own freedom. People who charged fees for their conversation he branded as sellers of their own persons, since the fee obliges them to talk for the benefit of whoever pays. What amazed him was that anyone possessing virtue would demand money as its price, instead of counting the real profit — an honest friend gained — as reward enough. As if a soul newly awakened to honor could ever forget its debt to its greatest benefactor!</p>
@@ -140,7 +491,7 @@
 <p>Socrates himself was the very opposite of all that. He was plainly a lover of the people — indeed, of all mankind. Though he had many devoted admirers, citizens and foreigners alike, he never charged anyone a fee for his company, but gave freely to all from the riches of his soul. Some of his hearers took the fragments they had received from him for nothing and sold them at high prices to everyone else; and they were no lovers of the people as he was, for they refused to talk with anyone who could not pay. In the eyes of the whole world, Socrates brought his city more honor and richer luster than Lichas, whose name is a byword, ever brought Sparta. Lichas made himself famous by feasting and entertaining the foreign visitors at the Gymnopaediae, Sparta&#x27;s great festival; Socrates spent a lifetime pouring out his substance in the greatest of benefits, given to everyone who cared to receive them. He made those who kept his company better people, and sent them on their way rejoicing.</p>
 <p>I can come to no other conclusion, then, but this: being so good a man, Socrates deserved honor from the state rather than death. And that, I would argue, is the strictly legal view of the case. What does the law demand? If a man is proved a thief, a clothes-stealer, a pickpocket, a housebreaker, a kidnapper, a robber of temples, the penalty is death. And of all men, no one stood further from those crimes than Socrates.</p>
 <p>To the state he was never the cause of any harm — no disaster in war, no civil strife, no treason, no mischief of any kind. And his private life was as blameless as his public one. He never hurt a single soul, never deprived anyone of any good or inflicted any evil, and no one ever so much as accused him of doing so. Where, then, is his liability under the indictment? Far from refusing to recognize the gods, as the indictment claimed, he was conspicuous above all men for his service to heaven. Far from corrupting the young — the charge the prosecutor pressed hardest — he was known for laboring to free his companions from base desires, and to kindle in them a passion for that loveliest and most queenly of virtues, the one without which states and families crumble. Conducting himself so, did he not deserve high honor from Athens?</p>
-<h4>Chapter 3</h4>
+<h3 class="sub">Chapter 3</h3>
 <p>I have said that Socrates helped the people around him partly by the example he set and partly by what he said. To back that up, let me write down what I remember, beginning with religion and everything that concerns the gods.</p>
 <p>In word and deed alike, he followed the rule the Pythia, Apollo&#x27;s priestess at Delphi, gives to anyone who asks how to handle a sacrifice, or honoring ancestors, or anything of that kind. Her answer is: &quot;Follow the law and custom of your own city, and you will be acting piously.&quot; That is how Socrates behaved, and that is what he urged others to do; people who acted on any other principle he considered fussy and full of themselves.</p>
 <p>His prayer was simple: &quot;Give me what is best for me.&quot; The gods, he said, know best what the good things actually are. Praying for gold or silver or absolute power made no more sense than praying for a particular throw of the dice, or a particular turn in a battle — things whose consequences no one can foresee.</p>
@@ -162,7 +513,7 @@
 <p>&quot;Yes,&quot; I said, &quot;but the tarantula injects something when it bites.&quot;</p>
 <p>&quot;You fool — and you think these beautiful creatures inject nothing with a kiss, just because you can&#x27;t see the poison? Don&#x27;t you know that this wild beast people call &#x27;beauty in its bloom&#x27; is deadlier than any tarantula? The spider at least has to touch you. This thing needs no contact at all — let a man merely look at it, even from far off, and it injects something into him that drives him mad. Maybe that&#x27;s why the Loves are called &#x27;archers&#x27;: because beauty wounds from a distance. My advice to you, Xenophon, is that whenever you catch sight of one of these beautiful faces, you run for your life and don&#x27;t look back. And to you, Critobulus: go abroad for a year. Even that may barely be long enough for the wound to heal.&quot;</p>
 <p>That, he said, is how anyone on unsteady footing should handle the affairs of Aphrodite, just as with food and drink: keep to what the soul could do without entirely, if the body didn&#x27;t require it — and even then, nothing that stirs up trouble. But he himself, plainly, was armed at every point and could not be touched. He found it easier to keep away from beauty in its fullest bloom than most men find it to refuse weeds and garbage. To sum up: in eating and drinking and all these temptations of the senses, the equipment of his soul made him independent. He could honestly claim that his modest pleasures were no smaller than the pleasures of people who work so hard to get theirs — and his pains were far fewer.</p>
-<h4>Chapter 4</h4>
+<h3 class="sub">Chapter 4</h3>
 <p>There is a view in circulation, based on what certain people say and write about Socrates — guesswork in both cases — that however good he was at firing men up about virtue in theory, he was incapable of actually leading them to it. Those who hold this view should weigh carefully not just the way he used cross-examination to take down people who imagined they knew everything, but also his everyday conversation with the friends who spent their time in his company. Then let them decide whether he was incapable of making his companions better.</p>
 <p>I will start with a conversation I once heard him have about divinity with Aristodemus, &quot;the little,&quot; as he was called. Socrates had noticed that Aristodemus neither sacrificed to the gods nor paid any attention to divination — in fact, he made fun of people who did.</p>
 <p>&quot;Tell me, Aristodemus,&quot; he began, &quot;are there any human beings you admire for their genius?&quot;</p>
@@ -189,10 +540,10 @@
 <p>&quot;When they treat me the way you say they treat you,&quot; said Aristodemus, &quot;and send me counselors to tell me what to do and what to avoid — then I&#x27;ll believe.&quot;</p>
 <p>&quot;Send you counselors! And when the people of Athens consult the oracle and the gods answer — you&#x27;re an Athenian, aren&#x27;t you? Don&#x27;t you think the answer is addressed to you too? When they send portents to warn the cities of Greece, or all mankind — you&#x27;re a man, a Greek. Aren&#x27;t those meant for you as well? Or are you the one person singled out for divine neglect? Again: do you suppose the gods could have planted in human hearts the belief that they have power to do us good or harm, if they had no such power? Wouldn&#x27;t men have found out the fraud in all this time? Don&#x27;t you see that the wisest and longest-lasting of human institutions — cities and whole peoples — are always the most god-fearing, and that in the individual, the riper the age and judgment, the deeper the religion? My good man,&quot; he went on, &quot;take this to heart. Your own mind, inside you, turns and directs your body as it pleases; in the same way you ought to believe that the wisdom dwelling in the whole universe disposes of all things as it sees fit. Your eye can range over many miles — is the eye of God powerless to take in everything at a glance? Your soul can dwell in thought on affairs here, or in Egypt, or in Sicily — is the thought of God not sufficient to care for everything at once? With human beings, you learn who is willing to return your kindness by doing them acts of service; you get at the secret of a man&#x27;s wisdom by asking his advice. Try the gods the same way: serve them, and see whether they will counsel you in matters hidden from mortal sight. You will discover that the Godhead is of such nature and such greatness as to see all things and hear all things at once, to be present everywhere, and to let nothing escape its watchful care.&quot;</p>
 <p>To my mind, talk like this made his companions hold back from anything unholy, shameful, or unjust — not only when other men could see them, but even when they were alone, since they had to believe that nothing they did could escape the eye of Heaven.</p>
-<h4>Chapter 5</h4>
+<h3 class="sub">Chapter 5</h3>
 <p>I suppose everyone will grant that self-control is a noble thing for a man to possess. If so, consider whether talk like the following was likely to lead his listeners toward it. &quot;Gentlemen,&quot; he would say, &quot;if a war broke out and we wanted to choose the man best able to save us and defeat the enemy, would we pick someone we knew to be a slave to his belly, to wine, to lust — a man who folds at the first hardship or nods off on watch? Could we expect a man like that to save us, or to beat anybody? Or suppose a man near the end of his life wanted to find someone to educate his sons, guard his unmarried daughters, and keep his property safe — would he consider a man without self-control fit for any of those trusts? Why, no one would put his flocks and herds, his storehouses and barns, or the oversight of his work in the hands of a slave with no self-control. If someone offered us a steward or an errand boy of that character as a free gift, we&#x27;d turn him down. And if a man won&#x27;t accept a slave without self-control, how hard should the master work to avoid deserving the same label himself? It&#x27;s not with the intemperate as with the greedy and the grasping. Those men, whatever they take from others, can at least be said to enrich themselves. But the man with no self-control can&#x27;t claim to be a blessing to himself while he&#x27;s a curse to his neighbors. The harm he does others is nothing next to the harm that falls back on himself — for the height of harm is to ruin not just your own house and property but your own body and your own soul. And in company: who enjoys a guest who obviously cares more for the wine and the food than for the friends beside him — who shortchanges his comrades of their due affection to fawn over a mistress? Doesn&#x27;t it come down to this: every honest man should treat self-control as the very cornerstone of virtue, and lay it first as the foundation of his soul? Without it, who can learn anything good or practice it to any degree worth mentioning? What slave of pleasure won&#x27;t end up degraded in body and soul together? By Hera, every free man should pray to be spared having such a slave — and every man enslaved to such pleasures should beg Heaven to send him good masters, because that is the one hope of rescue left to him.&quot;</p>
 <p>Well-tempered words — but his self-control showed even more in his actions than in his talk. He was master not only of the pleasures of the body but of those that money feeds, too. His belief was that a man who takes money from any chance donor sets up a master over himself, and binds himself to a slavery as degrading as any there is.</p>
-<h4>Chapter 6</h4>
+<h3 class="sub">Chapter 6</h3>
 <p>Some conversations Socrates had with Antiphon the sophist also deserve a place in this record. Antiphon was hoping to lure Socrates&#x27; companions away from him, and he came up to Socrates once in their presence with this challenge: &quot;Socrates, I always assumed that people who study philosophy were supposed to grow happier by the day. But you seem to have harvested a very different crop from yours. You live — no, exist — in a style no slave would put up with from his master. Your food and drink are the cheapest to be had. The one shabby cloak you own serves you summer and winter alike, and you go the whole year round without shoes on your feet or a shirt on your back. Then again, you won&#x27;t take money or earn it — though the mere pursuit of money is a pleasure, and having it makes life sweeter and more independent. Now, teachers in every field generally try to shape their pupils into copies of themselves. If that&#x27;s what you intend for your companions, you ought to call yourself a professor of misery.&quot;</p>
 <p>To this challenge Socrates replied: &quot;One thing is clear to me, Antiphon: you&#x27;ve painted such a vivid picture of my miserable life that I&#x27;m sure you would sooner die than live it. So let&#x27;s look at what you actually find so hard about it. Is it that a man who takes payment is bound by contract to finish the work he&#x27;s paid for, while I, who take nothing, am under no obligation to talk with anyone I don&#x27;t choose? Do you look down on my diet because what I eat is less wholesome or less strengthening than what you eat — or because my food is scarcer and more expensive to come by? Or does what your money buys at the market simply taste better than what mine doesn&#x27;t? Don&#x27;t you know that the sharper your appetite, the less you need sauces, and the keener your thirst, the less you crave exotic drinks? As for clothes — people change them on account of cold or heat, and wear boots and shoes only so their feet won&#x27;t blister and keep them from walking. Well, then: have you ever known me to stay indoors more than the next man because of the cold? Have you ever seen me fighting anyone for a spot in the shade because of the heat? Don&#x27;t you know that even a naturally weak man can, by exercise and practice, come to outdo a natural giant who neglects his body — beat him at the very thing he&#x27;s trained in, and bear the strain more easily? Yet apparently you won&#x27;t accept that I, who am forever training myself to endure whatever may land on the body, can face every hardship more easily than someone like you, who perhaps hasn&#x27;t practiced. And if it&#x27;s a question of escaping slavery to the belly, or to sleep, or to lust — can you suggest any better protection than having something you love more: a counter-charm that delights you not only while you&#x27;re using it, but with the hope of all the good it will keep on doing you? And this much you certainly do know: joy doesn&#x27;t come to the man who feels he&#x27;s succeeding at nothing. It belongs to the man who&#x27;s convinced things are moving forward for him — in his farming, in the working of his ship, in any of the thousand and one jobs a man may turn his hand to. He gets to look at his work and think, &#x27;I am doing well.&#x27; But is all that pleasure put together half as sweet as the consciousness of becoming a better person yourself, and of gaining better and better friends? That, for my part, is what I go on believing.</p>
 <p>&quot;Now suppose your friends or your country need help. Which of us has more free time to give them — the man who lives the way I live today, or the man who lives in the style you consider so fortunate? Which of us takes to a soldier&#x27;s life more easily — the man who can&#x27;t get by without expensive comforts, or the one for whom whatever comes to hand is enough? Which of us cracks first in a siege and begs for terms — the man of elaborate wants, or the man who gets along happily on whatever is easiest to find? You, Antiphon, seem to think happiness consists of luxury and extravagance. I hold a different creed: to want nothing at all is an attribute of God; to want as little as possible is to come nearest the divine; and since the divine is mightiest, whatever comes closest to the divine is next mightiest.&quot;</p>
@@ -200,13 +551,13 @@
 <p>To this assault Socrates answered: &quot;Antiphon, among us it&#x27;s held that beauty and wisdom have this in common: there is an honorable way and a shameful way to dispose of each. The man who sells his beauty buys himself an ugly name; but if a man discerns a fine soul in his admirer and makes that man his friend, we call the choice a sensible one. So it is with wisdom. The man who sells it for money to the first bidder, we call a sophist — as much as to say, a man who prostitutes his wisdom. But if that same man recognizes a noble nature in someone, teaches him every good thing he knows, and makes a friend of him, we say he&#x27;s doing exactly what a good and generous citizen ought to do. I have my tastes, Antiphon, like anyone else. One man delights in a good horse, another in his hounds, another in his fighting cocks; my delight is good friends. Whatever good thing I have, I teach it to them, and I introduce them to others who I think will help them along the road to virtue. And the treasures the wise men of old have left behind, written in their books — I unroll those and read them through together with my friends, and if we spot anything good, we pick it out eagerly, and we count it great gain if we can only grow in friendship with one another.&quot;</p>
 <p>Listening to this talk, I couldn&#x27;t help reflecting that he, the teacher, was a man to be envied — and that we, his listeners, were being led by him toward beauty and nobility of soul.</p>
 <p>On yet another occasion this same Antiphon asked Socrates how he expected to make statesmen of other people when he didn&#x27;t take part in politics himself — assuming he even knew how. &quot;Let me put a question to you, Antiphon,&quot; Socrates replied. &quot;Which is the more statesmanlike course: to practice politics single-handed, or to make it my business to turn out as many people as possible who are fit for the work?&quot;</p>
-<h4>Chapter 7</h4>
+<h3 class="sub">Chapter 7</h3>
 <p>Let&#x27;s consider, finally, whether by steering his companions away from quackery and false pretenses he wasn&#x27;t also spurring them directly toward virtue. He used to say there was no better road to a good name than actually becoming good at whatever you want to be reputed good at. And he drove the truth of that home like this: &quot;Think what a man would be forced to do if he wanted to be considered a good flute player without really being one. He&#x27;d have to copy the good players in all the externals of the art, wouldn&#x27;t he? First of all, since those artists travel in style with a long train of attendants, he must have the same. Next, since they can command the applause of a crowd, he must pack the hall with hired clappers. But one thing is certain: he must never actually give a performance, or he&#x27;ll be exposed on the spot and laughed at — not just as a bad flute player, but as a miserable fraud. And now look at him: a mountain of expenses to meet, not one advantage to show for them, and a rotten reputation on top of it all. What&#x27;s left for him but a life stale and unprofitable, the scorn and mockery of everyone? Or take another case. Suppose a man wanted to be thought a good general, or a good ship&#x27;s pilot, without being anything of the kind. Picture how it goes for him. One of two misfortunes: either, for all his longing to seem qualified in these matters, he can&#x27;t convince anyone — which is bad enough — or he succeeds, which is worse. Because it stands to reason that a man appointed to steer a ship or lead an army without the knowledge for it will quickly destroy the very people he&#x27;d least want to hurt, and make a sorry exit from the stage himself.&quot;</p>
 <p>By one example after another he would show, in the same way, that it doesn&#x27;t pay to appear rich, or brave, or strong, without really being the thing you pretend. &quot;Sooner or later,&quot; he said, &quot;demands will be laid on you that are beyond your power to meet, and when you fail exactly where everyone believed you capable, the world will give you no sympathy.&quot; &quot;I call that man a cheat, and a great cheat too,&quot; he would say, &quot;who talks money or goods out of someone by persuasion and defrauds him. But the biggest imposter of all is the man who has deluded his city into believing he is fit to lead it, when all the while he is worthless.&quot;</p>
 </section>
 <section aria-labelledby="book-ii">
 <h2 id="book-ii">Book II</h2>
-<h4>Chapter 1</h4>
+<h3 class="sub">Chapter 1</h3>
 <p>If talk like that steered his listeners away from fakery and false pretenses, then I am just as sure that talk like the following pushed his companions to practice self-control and endurance: self-control in eating, drinking, sleep, and sexual desire; endurance of cold, heat, hard work, and pain. He had noticed that one of his companions had gotten far too loose with himself in all these areas, so he took the question straight to him.</p>
 <p>&quot;Tell me, Aristippus,&quot; said Socrates, &quot;suppose two boys were handed over to you to educate — one to be trained for ruling, the other with no claim to rule anything at all. How would you bring each of them up? Shall we start our inquiry at the very beginning, with the basic matter of food?&quot;</p>
 <p>&quot;Food is certainly the place to start,&quot; said Aristippus. &quot;It&#x27;s a first necessity. No man alive can do without it.&quot;</p>
@@ -260,7 +611,7 @@
 <p>&quot;At this point, as Prodicus tells it, Vice broke in. &#x27;Do you see, Heracles, how long and hard the road is that this woman would march you down to reach her festivities? I will take you to happiness by a short and easy road.&#x27;</p>
 <p>&quot;Then Virtue spoke. &#x27;You wretched creature — what good thing do you have? What do you know of pleasure, when you won&#x27;t lift hand or foot to earn it? You don&#x27;t even wait for desire to arrive: you&#x27;re stuffed before you&#x27;re hungry and drunk before you&#x27;re thirsty. To make eating possible at all you have to invent armies of cooks and confectioners; to make drinking possible you lay down the costliest wines and run around hunting for ice in the middle of summer. To help you sleep, soft blankets aren&#x27;t enough — you need feather beds and rockers to rock you, because your drowsiness comes not from work but from having absolutely nothing to do. Even the natural appetite of love you force before its time, by every trick you can invent, using men as if they were women. That is how you educate your friends: dragging them through outrages by night and sleeping them through the most precious hours of the day. You are immortal, but the gods have cast you out of their company, and good men despise you. The sweetest sound of all — the sound of your own praise — you have never heard; and the fairest of all sights you have never seen, for you have never once beheld a fine deed done by your own hand. Who would believe a word you say? Who would give you anything you needed? What sane man would dare to join your reveling crew? Your followers are a sorry sight: while they&#x27;re young their bodies are feeble, and when they&#x27;re old their minds are foolish. Through their youth they&#x27;re kept sleek and idle at no cost of effort; through old age they drag themselves along, withered and wretched — ashamed of everything they&#x27;ve done, and crushed by everything still left to do. They raced through their pleasures in their youth and stored up the bitterness for the end. But my company is with the gods, and with the good among men; no fine deed, divine or human, is done without me. I am honored first among the gods, and honored among the men whose right it is to honor me: a beloved fellow-worker to craftsmen, a faithful guardian of house and land to owners, a kindly helper to servants, a good partner in the labors of peace, a steadfast ally in the work of war, and the best of companions in friendship. My friends enjoy their food and drink with real pleasure and no fuss, because they wait until they want it; and sleep comes sweeter to them than to the idle. They aren&#x27;t bitter about giving it up, either, and they never let it crowd out their duty. Among my people, the young delight in the praise of their elders and the old take pride in the honor of the young; they remember their past deeds with pleasure and are glad to do today&#x27;s work well. Because of me they are dear to the gods, loved by their friends, and honored by their countries. And when the appointed end comes, they do not lie forgotten and dishonored — their memory blooms on, and their praise is sung forever. Toils like these, Heracles, child of noble parents, are yours to take up; and if you endure them, the most blessed happiness there is will belong to you.&#x27;</p>
 <p>&quot;That, Aristippus, is a rough sketch of how Prodicus tells the education of Heracles by Virtue — though he dressed his thoughts, I admit, in far more magnificent language than I&#x27;ve managed just now. It might be worth your while to take some of this to heart, and to give a little thought to the part of your life that still lies ahead.&quot;</p>
-<h4>Chapter 2</h4>
+<h3 class="sub">Chapter 2</h3>
 <p>He once noticed that Lamprocles, the elder of his sons, was in a foul temper with his mother, and he took the boy aside.</p>
 <p>&quot;Tell me, son,&quot; he said, &quot;have you ever heard of people being called ungrateful?&quot;</p>
 <p>&quot;Of course,&quot; the young man replied.</p>
@@ -295,7 +646,7 @@
 <p>&quot;And the stranger you happen to travel with, by land or sea — the chance acquaintances you fall in with — is it nothing to you whether these people become friends or not, or do you admit their goodwill is worth taking some trouble to earn?&quot;</p>
 <p>&quot;It&#x27;s worth it.&quot;</p>
 <p>&quot;So that&#x27;s where we&#x27;ve landed: you&#x27;re prepared to pay attention to this stranger and that one, but to your mother, who loves you more than anyone else does, you owe no service and no allegiance? Don&#x27;t you know that the state ignores ordinary ingratitude — it brings no charges against people who fail to return a kindness — but for one case it saves its penalties? If a man fails to give his parents the service and respect he owes them, the law lays its finger on him: his name is struck from the roll, and he is barred from holding the archonship — as much as to say that sacrifices offered for the state by such a man would be no offerings at all, being tainted with impiety, and that nothing else he did could be done &#x27;well and justly&#x27; either. More than that: if a man neglects to tend his dead parents&#x27; grave, the state looks into it when it examines its magistrates for office. So, my son, if you have any sense, you will beg your mother&#x27;s pardon — before the gods take you for an ungrateful man and refuse to do you good, and before your fellow men notice how you neglect your parents and despise you for it with one voice, leaving you stranded in a desert without a friend. Because once people get the idea that here is a man ungrateful to his own parents, nobody will believe that a kindness done to him would be anything but thrown away.&quot;</p>
-<h4>Chapter 3</h4>
+<h3 class="sub">Chapter 3</h3>
 <p>Two brothers he knew well, Chaerephon and Chaerecrates, had fallen out, and this had caught his attention. When he next saw the younger of the two, he raised the matter with him.</p>
 <p>&quot;Tell me, Chaerecrates — you&#x27;re not one of those strange people, surely, who believe property is better and more precious than a brother? Property is a senseless thing that needs protecting; a brother is a sensible, feeling being who can do the protecting. Besides, a man has plenty of property and only one of him. And here&#x27;s another marvel: a man counts his brother a loss because his brother&#x27;s goods aren&#x27;t his own — yet he doesn&#x27;t count his fellow citizens a loss, though their possessions aren&#x27;t his either. In their case he has the wit to see that living securely among many people, with enough for himself, beats owning a whole city&#x27;s wealth and living in dangerous isolation; but apply the same reasoning to brothers, and suddenly nobody&#x27;s listening. Again, a man of means will buy slaves because he wants help with his work, and he&#x27;ll go out and acquire friends because he needs their support — but his brother? Who cares about brothers? Apparently a friend can be found in any ordinary citizen, but not in your own flesh and blood. And yet coming from the same parents and being nursed at the same breast is a great head start toward friendship — even animals feel a natural pull toward the creatures they were raised with. On top of all that, the world respects a man with brothers more than a man who stands alone and has to fight his own battles.&quot;</p>
 <p>&quot;I grant you, Socrates,&quot; Chaerecrates answered, &quot;that when the quarrel is a small one, a man ought to bear with his brother and not shun him over some trifle. A brother of the right sort is a blessing, just as you say. But when he&#x27;s the exact opposite of that, why should a man attempt the impossible?&quot;</p>
@@ -319,17 +670,17 @@
 <p>&quot;And suppose I do all that,&quot; said Chaerecrates, &quot;and for all my trying he&#x27;s no better?&quot;</p>
 <p>&quot;At the worst, you will have shown yourself a good, honest, brotherly man, and he will stand exposed as a sorry creature that kindness is wasted on. But I don&#x27;t expect anything of the sort. My belief is that the moment he hears your challenge, he&#x27;ll leap into the contest, and out of sheer competitive pride he&#x27;ll strain to outdo you in kindness of word and deed.</p>
 <p>&quot;Right now the two of you are like a pair of hands that God made to help each other but that have quit their work and taken to hindering each other instead — like a pair of feet fashioned on the divine plan to work together, which have given that up in order to trip each other. Isn&#x27;t it plain mindless stupidity to use for harm what was made for help? And in making two brothers, it seems to me, God intends more benefit for each than he gets from two hands, or two feet, or two eyes, or any of the other pairs a man is born with. Ask your hands to work together at two points more than a fathom apart — six feet — and they can&#x27;t do it; your feet can&#x27;t stretch across even a single fathom; your eyes, for all the range we claim for them, can&#x27;t see the front and back of an object at the same time even up close. But two brothers bound in friendship can work for each other&#x27;s good with whole seas between them.&quot;</p>
-<h4>Chapter 4</h4>
+<h3 class="sub">Chapter 4</h3>
 <p>I once heard him discuss the related subject of friendship itself, in terms that seemed to me exactly calculated to help a man choose his friends well and use them well.</p>
 <p>He had heard it said, times without number, that of all possessions none equals a good and honest friend; and yet, as far as he could see, most people troubled themselves about anything sooner than acquiring friends. Houses, fields, slaves, cattle, furniture of every sort — these they worked hard to get and strove hard to keep; but the greatest blessing of all, which by their own admission a friend is, hardly one man in a hundred ever thought about gaining, or about keeping the friends he already had. Let a friend and a household slave fall sick at the same time, and watch what happens: the master promptly fetches the doctor for his slave and spares no pains or expense on his recovery, while the friend in the same condition gets barely a thought. If both die, he is visibly upset about the slave — that, as he reckons it, is a real loss — while his friend&#x27;s death leaves his position, as he sees it, untouched. And so, though he would never dream of leaving his other possessions neglected and uncared for, the friend, who asks for nothing, gets nothing.</p>
 <p>And the crowning example, he said, is this: however much ordinary property people own, most of them at least know how much of it there is. But ask a man to count his friends — not so very long a list, after all — and he can&#x27;t do it; and if, to oblige you, he starts naming names, he&#x27;ll soon take back some he had already put down. That is how much thought people spend on their friends.</p>
 <p>And yet set any other possession beside a good friend, and which comes off better? A horse has its worth; so does a yoke of oxen; but who can measure the worth of a worthy friend? Kinder and more constant than the most faithful of slaves, he is the one possession that truly deserves the name &quot;good for everything.&quot; Look at the post he assigns himself: wherever his friends&#x27; welfare falls short, he steps in to make up the lack; their interests, private and public alike, are his concern. Is a kindness wanted somewhere? He throws in his full weight. Does some terror loom? He is on hand to help and defend — spending his money, spending his energy, joining in persuasion or, if it comes to that, in force. He is the man who gladdens the prosperous in their hour of success and steadies those whose footing has nearly gone. Whatever a man&#x27;s own hands can do for him, whatever his eyes can see and his ears hear and his feet can cover, a friend&#x27;s good offices will match; and often enough, what a man has failed to accomplish for himself, has missed seeing or hearing or getting, a friend acting on his behalf will achieve for him. And still — though people will carefully tend a tree for the sake of its fruit — more than half the world pays only a lazy, drifting attention to this richest of all possessions, a friend.</p>
-<h4>Chapter 5</h4>
+<h3 class="sub">Chapter 5</h3>
 <p>I remember another argument of his whose whole effect was to push the listener into self-examination — to make him ask himself, &quot;What am I actually worth to my friends?&quot; It came about like this. He had noticed that one of his companions was neglecting a friend who was hard pressed by poverty. So, in front of the neglectful man and several others, he put his questions to the poor man himself, Antisthenes.</p>
 <p>&quot;Tell me, Antisthenes,&quot; he said, &quot;do friends have their values, the way household slaves do? One slave may be worth two minae, another only half a mina, a third five, a fourth as much as ten; and they say that Nicias, the son of Niceratus, paid a whole talent for a superintendent for his silver mines. So I&#x27;ve been putting the question to myself: do friends, like slaves, have their market prices?&quot;</p>
 <p>&quot;No doubt about it,&quot; Antisthenes replied. &quot;I know a man I would rather have as my friend than be paid two minae, and another I wouldn&#x27;t value at half a mina, and a third I wouldn&#x27;t part with for ten — and then there&#x27;s one whose friendship would be cheap even if it cost me all the money and effort in the world to win it.&quot;</p>
 <p>&quot;Well then,&quot; Socrates went on, &quot;if that&#x27;s so, wouldn&#x27;t it be a good thing for every man to examine himself and ask what he happens to be worth to his friends — and then try to make himself as valuable as possible, so that his friends won&#x27;t be tempted to give him up? How often I hear the complaint: &#x27;My friend So-and-so has dropped me,&#x27; or &#x27;A man I counted a friend sold me out for a mina.&#x27; And every time I hear it, the question comes to me: if the owner of a worthless slave is ready to sell him to any buyer for whatever he&#x27;ll fetch, isn&#x27;t there at least a strong temptation to let a worthless friend go when there&#x27;s something to be gained on the exchange? What I never see is good slaves being sold off that way — or good friends lightly given up.&quot;</p>
-<h4>Chapter 6</h4>
+<h3 class="sub">Chapter 6</h3>
 <p>Then there is the question of testing — how do you tell whether a friend is worth winning before you commit? On that subject, I think what Socrates said to Critobulus could not fail to be instructive.</p>
 <p>&quot;Tell me,&quot; he said, &quot;suppose we found ourselves in need of a good and honest friend — how would we go about finding one? First, I suppose, we would look for a man who is master of his appetites: not ruled by his belly, not addicted to wine or sex or sleep or laziness. No one enslaved to tyrants like those could do his duty by himself or by his friends, could he?&quot;</p>
 <p>&quot;Certainly not,&quot; Critobulus answered.</p>
@@ -394,7 +745,7 @@
 <p>&quot;What a wonderfully good friend you are to me, Socrates! If I have any merit that entitles me to win a friend, you&#x27;ll lend me a hand — otherwise, you&#x27;d rather not invent even the smallest fiction for my benefit.&quot;</p>
 <p>&quot;And which way do you think I&#x27;d help you more — by praising you falsely, or by persuading you to try to be a good man? If it isn&#x27;t obvious, look at it by the light of a few examples. Suppose I want to make a shipowner your friend, and I start by praising you to him falsely: &#x27;You&#x27;ll find him a good pilot.&#x27; He takes me at my word and hands his ship over to you — you, who have no idea how to steer one. What can you expect but to wreck the ship and yourself together? Or suppose by the same sort of lying I persuade the whole city to entrust its fortunes to you — &#x27;a born commander,&#x27; I say, &#x27;a practiced lawyer, a natural statesman.&#x27; The odds are that you and the city both come to grief through you. Or take a case from everyday life: by my lies I persuade some private citizen to hand you his affairs as &#x27;a careful, businesslike man with a real head for management.&#x27; When the test came, wouldn&#x27;t your administration be ruinous, and the figure you cut ridiculous? No, my dear friend, there is one road only — the shortest, the safest, the best — and it is simply this: whatever you want to be thought good at, try to be good at. Run through all the virtues men can name, and you&#x27;ll find there isn&#x27;t one that can&#x27;t be increased by learning and practice. Those, Critobulus, are the principles I think we should hunt on. If you see it differently, teach me — I&#x27;m all attention.&quot;</p>
 <p>&quot;Really, Socrates,&quot; said Critobulus, &quot;I&#x27;d be ashamed to argue against a word of it. If I did, what I said would be neither noble nor true.&quot;</p>
-<h4>Chapter 7</h4>
+<h3 class="sub">Chapter 7</h3>
 <p>He had two ways of dealing with his friends&#x27; difficulties. Where ignorance was the trouble, he treated it with a dose of common sense; where want and poverty were to blame, he taught them to help one another according to their means. Let me set down some incidents I know of firsthand. Once, for instance, he came across Aristarchus wearing the look of a man with a black cloud over him, and greeted him like this:</p>
 <p>&quot;You seem to have something weighing on your mind, Aristarchus. If so, you should share the load with your friends. Perhaps together we can lighten it a little.&quot;</p>
 <p>&quot;I&#x27;m in desperate straits, Socrates, and that&#x27;s the truth,&quot; Aristarchus answered. &quot;Ever since the civil strife broke out in the city, what with the rush of people down to Piraeus and all the banishments, my poor stranded female relatives have descended on me. Sisters, nieces, cousins — they&#x27;ve all come flocking to me for protection. I have fourteen free-born souls under my one roof, I tell you, and how are we supposed to live? We can get nothing from the land — the enemy holds it. Nothing from my houses in town — the city is nearly empty. No one will buy the furniture, and there&#x27;s no money to be borrowed anywhere; you&#x27;d have better luck finding it lying in the road than getting it out of a banker. It&#x27;s a hard thing, Socrates, to stand by and watch your relatives starve — and impossible to feed so many in times like these.&quot;</p>
@@ -421,7 +772,7 @@
 <p>&quot;Honestly, Socrates,&quot; Aristarchus answered, &quot;what you say is so good that although until now I haven&#x27;t been willing to borrow — knowing that once the money was spent I&#x27;d have no way to repay it — I think I can bring myself to do it now, to raise a fund for the work.&quot;</p>
 <p>So capital was raised and wool was bought. The women worked while they ate their breakfast and worked on until supper ended the day, and the house grew cheerful instead of gloomy. Frowns gave way to smiles; instead of eyeing one another sideways with suspicion, they looked each other happily in the face. The women loved their kinsman for his kindness; he grew attached to them as helpers. In the end he came to Socrates and told him with delight how matters stood — &quot;and now,&quot; he added, &quot;they accuse me of being the only drone in the house, eating the bread of idleness.&quot;</p>
 <p>&quot;Then why not tell them the fable of the dog?&quot; said Socrates. &quot;Once upon a time, when animals could talk, the story goes, a sheep said to her master, &#x27;It&#x27;s a strange thing, master: we sheep give you fleeces and lambs and cheese, and you give us nothing we don&#x27;t crop from the ground ourselves — while this dog of yours, who gives you nothing of the kind, gets shares of the very food from your own mouth.&#x27; The dog heard her and answered promptly, &#x27;And so I should — for I&#x27;m the one who keeps you safe and sound, so that you aren&#x27;t stolen by men or carried off by wolves. If I didn&#x27;t stand guard over you, you couldn&#x27;t so much as graze in the field for fear of being killed.&#x27; And at that, so the tale goes, the sheep admitted the dog was rightly honored above them. So tell your flock that you are the dog in the fable — their guardian and overseer — and it&#x27;s thanks to you that they can do their work and live their lives in safety, with no one to harm them.&quot;</p>
-<h4>Chapter 8</h4>
+<h3 class="sub">Chapter 8</h3>
 <p>At another time he ran into an old friend he had not seen in years, and greeted him: &quot;Where in the world have you appeared from, Eutherus?&quot;</p>
 <p>&quot;From abroad, Socrates — I got back just before the war ended,&quot; he answered. &quot;But at the moment, from right here in the city. Since we lost our holdings across the border, and my father left me nothing in Attica, I have to stay home now and earn my bread with my own hands. It seems better than begging from other people — especially since I own nothing I could borrow against.&quot;</p>
 <p>&quot;And how long do you expect your body to hold up, working for wages like that?&quot;</p>
@@ -433,7 +784,7 @@
 <p>&quot;And yet the men who run the departments of a city aren&#x27;t considered slaves for managing public property. If anything, they&#x27;re considered freer than most.&quot;</p>
 <p>&quot;To put it plainly, Socrates, I simply can&#x27;t stomach being answerable to anyone.&quot;</p>
 <p>&quot;And yet, Eutherus, it&#x27;s hard to find any work that doesn&#x27;t make you answerable to somebody. It&#x27;s difficult to do anything at all without some mistake, and even if you managed to do it flawlessly, it would be difficult to escape unfair criticism. I wonder whether you get through your present work entirely free of complaints. No? Then here&#x27;s what you should do. Avoid the fault-finders and attach yourself to fair-minded, considerate people. Take on what you can do with a good grace, and decline what you feel you can&#x27;t. And whatever you do take on, throw your whole heart into it and make it your finest work. That is the way to silence the critics and ease your own difficulties at a stroke. Life will run more smoothly, the risks will shrink, and your old age will be provided for.&quot;</p>
-<h4>Chapter 9</h4>
+<h3 class="sub">Chapter 9</h3>
 <p>At another time, I know, he heard Crito remark that life in Athens was no easy thing for a man who wanted to mind his own business.</p>
 <p>&quot;Right at this moment,&quot; Crito went on, &quot;there&#x27;s a set of men threatening me with lawsuits — not because they have any wrongdoing to charge me with, but simply because they&#x27;ve concluded I would rather pay them off than be bothered any further.&quot;</p>
 <p>&quot;Tell me, Crito,&quot; Socrates replied, &quot;you keep dogs to drive the wolves off your sheep, don&#x27;t you?&quot;</p>
@@ -444,7 +795,7 @@
 <p>So they sought out Archedemus — a practical man with a clever tongue in his head, but poor. He wasn&#x27;t the sort to make money by hook or by crook; he loved honesty, and he was too good-natured himself to earn a living shaking people down. Crito would take the opportunity at harvest time to set aside small presents for Archedemus — grain, oil, wine, wool, whatever staples the farm produced — and he would invite him to a sacrificial feast, and show him attention in other ways. Archedemus came to feel that he had a harbor of refuge in Crito&#x27;s house, and he could not do enough for his patron. Before long he had hunted up a whole list of offenses that could be lodged against Crito&#x27;s shakedown artists — and not only their many crimes but their many enemies as well. Presently he prosecuted one of them in a public suit, the kind where the court decides what the defendant must suffer or what he must pay. The man, knowing how much he had to answer for, tried everything to get free of Archedemus — but Archedemus would not let go. He held on until the informer not only dropped his grip on Crito but paid Archedemus a sum of money on top of it.</p>
 <p>Once Archedemus had won this victory and a few others like it, what followed is easy to guess. It was just like when a shepherd gets an especially good dog: the other shepherds all want to pasture their flocks nearby, so they can get the benefit of the dog too. A number of Crito&#x27;s friends came begging him to let Archedemus be their guardian as well, and Archedemus was overjoyed to do Crito the favor. So it came about that not only Crito lived in peace, but his friends did too. If anyone Archedemus was on bad terms with threw it in his face that he took his patron&#x27;s favors and paid for them in flattery, he had his answer ready: &quot;Which is more shameful — to accept kindnesses from good and honest men and repay them, so that I make such men my friends and the scoundrels my enemies? Or to wrong decent, honorable men and make enemies of them, on the off chance of winning a few rogues to my side — and the certainty of ruining the company I keep?&quot;</p>
 <p>From then on Archedemus was Crito&#x27;s right hand, and the rest of Crito&#x27;s friends held him in honor.</p>
-<h4>Chapter 10</h4>
+<h3 class="sub">Chapter 10</h3>
 <p>I can also cite, from my own knowledge, the following discussion; the arguments were addressed to Diodorus, one of his companions.</p>
 <p>&quot;Tell me, Diodorus,&quot; Socrates said, &quot;if one of your slaves runs away, do you take trouble to recover him?&quot;</p>
 <p>&quot;More than that,&quot; Diodorus answered. &quot;I call in others to help, and I post a reward for bringing him back.&quot;</p>
@@ -457,7 +808,7 @@
 </section>
 <section aria-labelledby="book-iii">
 <h2 id="book-iii">Book III</h2>
-<h4>Chapter 1</h4>
+<h3 class="sub">Chapter 1</h3>
 <p>Men who set their hearts on honorable distinction got the same kind of help from Socrates: in each case he spurred them to work steadily at the thing they aimed for. The stories that follow will show what I mean.</p>
 <p>He heard one day that Dionysodorus had arrived in Athens, advertising himself as a teacher of the whole art of generalship. Now, one of the young men in his company made no secret of wanting to be elected general, so Socrates said to him:</p>
 <p>&quot;It would be outrageous, wouldn&#x27;t it, for a man who wants to be a general to throw away the slightest chance of learning the duties of the office? The city ought to fine and punish a man like that far more severely than the imposter who takes a contract to carve a statue without ever having learned sculpture. During a war the whole fortune of the state is placed in the general&#x27;s hands, with all the danger that entails; enormous good or enormous harm follows, depending on whether he succeeds or bungles. So I put it to you, young man: wouldn&#x27;t a candidate who works hard at getting elected but never bothers to learn the job richly deserve that fine?&quot;</p>
@@ -479,11 +830,11 @@
 <p>&quot;And yet there are countless situations in which the same order of march or battle simply won&#x27;t do.&quot;</p>
 <p>&quot;I assure you, he drew none of those fine distinctions.&quot;</p>
 <p>&quot;He didn&#x27;t, did he? Good heavens! Then go back to him and ply him with questions. If he really has the science, and has any shame left in him, he&#x27;ll blush to have taken your money and sent you away empty-handed.&quot;</p>
-<h4>Chapter 2</h4>
+<h3 class="sub">Chapter 2</h3>
 <p>Another time he fell in with a man who had been elected general and master of war, and greeted him with this:</p>
 <p>&quot;Why do you suppose Homer calls Agamemnon &#x27;shepherd of the people&#x27;? Could it be to show that just as a shepherd must care for his sheep — keep them safe, see they have everything they need, and secure the purpose they&#x27;re raised for — so a general must care for his soldiers: keep them safe, keep them supplied, and achieve the purpose they soldier for? And that purpose is to get the mastery of the enemy and so add to their own good fortune and happiness. Or tell me, why does Homer praise Agamemnon by calling him &#x27;both a good king and a mighty warrior&#x27;? Doesn&#x27;t &#x27;mighty warrior&#x27; mean not merely a man who stands and fights bravely himself, but one who inspires the same fighting spirit in his whole army? And &#x27;good king&#x27; — not merely a man who defends his own life gallantly, but one who is the source of happiness for everyone he rules? A man isn&#x27;t chosen king so that he can take good care of himself, however nobly; he&#x27;s chosen so that the people who chose him may find happiness through him. And why do men go to war at all, if not to make life better? Why do they elect generals, if not to have guides toward that goal? So the man who takes on the office is bound to provide, for the people who elected him, the very thing they elected him to provide. It would be hard to find a nobler ambition than that — or anything more shameful than its opposite.&quot;</p>
 <p>That was how he handled the question, what is the virtue of a good leader? — and by stripping away everything superficial, he laid bare the kernel of the matter: the job of every leader is to make the people he leads happy.</p>
-<h4>Chapter 3</h4>
+<h3 class="sub">Chapter 3</h3>
 <p>The following conversation I can also vouch for — with a young man who had just been elected hipparch, commander of the cavalry.</p>
 <p>&quot;Can you tell us, young man, what made you want the cavalry command?&quot; Socrates asked. &quot;What were you after? Surely not just the honor of riding at the head of the knights — even the mounted archers get that; they ride out in front of the commanders themselves.&quot;</p>
 <p>&quot;You&#x27;re right.&quot;</p>
@@ -525,7 +876,7 @@
 <p>&quot;It stands to reason.&quot;</p>
 <p>&quot;Then don&#x27;t hesitate. Try to guide your men onto that road. You&#x27;ll profit by it yourself, and so, through you, will your fellow citizens.&quot;</p>
 <p>&quot;I will certainly try,&quot; he answered.</p>
-<h4>Chapter 4</h4>
+<h3 class="sub">Chapter 4</h3>
 <p>Another time, seeing Nicomachides on his way back from the elections, he asked him, &quot;Who were elected generals, Nicomachides?&quot;</p>
 <p>&quot;Isn&#x27;t it just like them, these Athenians?&quot; he said. &quot;Just like them, I tell you! They don&#x27;t elect me — me, who have worn myself out with military service ever since my name first went on the muster-roll, as captain, as colonel, with all these wounds from the enemy to show for it&quot; — and here, suiting the action to the word, he bared his arms and displayed the scars of old wounds — &quot;no, they pass over me and elect Antisthenes! A man who has never served a day in the infantry, who never did one brilliant thing in the cavalry that I ever heard of, and who has no science at all, as far as I can tell, except piling up money.&quot;</p>
 <p>&quot;Well, isn&#x27;t that one point in his favor?&quot; Socrates returned. &quot;He ought to be able to keep the troops supplied.&quot;</p>
@@ -559,7 +910,7 @@
 <p>&quot;And isn&#x27;t it in the interest of both to get the upper hand of those enemies?&quot;</p>
 <p>&quot;Certainly. But you&#x27;re leaving something out: what good will organization and the art of management be when it comes to actual fighting?&quot;</p>
 <p>&quot;That is exactly where they&#x27;ll be of most use,&quot; said Socrates. &quot;The good manager knows that nothing pays so well as victory in battle, and nothing is so ruinous and expensive as defeat. So he will eagerly seek out and provide everything that makes for victory, and painstakingly discover and guard against everything that leads to defeat. When he sees his forces ready and ripe for victory, he will fight with all his energy — and, just as important, while they are not yet ready, he will be careful not to fight. Don&#x27;t look down on men with a genius for management, Nicomachides. Handling private business differs from handling the business of the state only in scale. In every other respect the parallel holds, and above all in this: neither can be done without human beings, and the human beings who conduct private affairs and public affairs are of one and the same type. The men who prosper in either sphere are those who know the secret of dealing with people; the men who lack it strike a false note in both.&quot;</p>
-<h4>Chapter 5</h4>
+<h3 class="sub">Chapter 5</h3>
 <p>It is worth setting down here a conversation Socrates had with Pericles — the son of the great statesman Pericles, not the father himself. Socrates opened it:</p>
 <p>&quot;I must tell you, Pericles, I&#x27;m expecting great things for our military affairs once you&#x27;re elected general. Athens&#x27; standing should rise, and we should get the upper hand over our enemies.&quot;</p>
 <p>&quot;I wish with all my heart it would turn out as you say, Socrates,&quot; Pericles replied, &quot;but how any of that is supposed to happen, I honestly can&#x27;t see.&quot;</p>
@@ -606,7 +957,7 @@
 <p>&quot;Then don&#x27;t you think a corps of young, able-bodied Athenians, equipped with lighter arms and holding that mountain rampart of ours, would be a thorn in the enemy&#x27;s side and a splendid bulwark for our own countryside?&quot;</p>
 <p>&quot;I think all of these would be useful measures, Socrates, decidedly.&quot;</p>
 <p>&quot;Then if they please you,&quot; Socrates replied, &quot;try, best of men, to make them real. Whatever part of them you carry out will be an honor to you and a blessing to the state; and wherever you fall short, you&#x27;ll do no harm to the city and no discredit to yourself.&quot;</p>
-<h4>Chapter 6</h4>
+<h3 class="sub">Chapter 6</h3>
 <p>Glaucon, the son of Ariston, had set his heart so fiercely on leading the state that nothing could stop him from giving public speeches — though he was not yet twenty. His friends and relatives tried and failed to keep him from making himself ridiculous and getting hauled down from the speaker&#x27;s platform. The one man who succeeded was Socrates, who took a kindly interest in the young man for the sake of Charmides, his uncle, and of Plato, his brother. Here is how it happened. Socrates ran into him, and first, to get him to listen at all, held him with an opening like this:</p>
 <p>&quot;Ah, Glaucon — so you&#x27;ve decided to become the leading man of the state?&quot;</p>
 <p>&quot;I have, Socrates.&quot;</p>
@@ -648,7 +999,7 @@
 <p>&quot;On the other hand,&quot; said Socrates, &quot;a man can&#x27;t even run his own household well without knowing, first, what it needs, and then taking pains to supply it item by item. Now, this city consists of more than ten thousand households, and it&#x27;s not easy to look after so many at once — so why didn&#x27;t you start by practicing on one of them, and try to build up your own uncle&#x27;s? It could use the help. If your strength holds for that one case, you can take on more; but if you can&#x27;t relieve one household, how could you possibly hope to manage thousands? If a man can&#x27;t carry fifty pounds, it&#x27;s absurd for him to try to carry a hundred.&quot;</p>
 <p>&quot;Oh, I&#x27;d be glad enough to help my uncle&#x27;s house,&quot; said Glaucon, &quot;if only my uncle would be persuaded to listen to me.&quot;</p>
 <p>&quot;So,&quot; said Socrates, &quot;you can&#x27;t persuade your uncle — and you imagine you&#x27;ll be able to make the whole Athenian people, uncle included, obey you? Be careful, Glaucon, that in your thirst for glory and reputation you don&#x27;t end up with the opposite. Don&#x27;t you see how dangerous it is to say or do things beyond the range of your knowledge? Think of the people you know whose talk or conduct plainly overshoots what they understand: do they earn more praise for it, or more blame? Are they admired, or despised? Then think of the people who do know what they&#x27;re saying and doing, and I think you&#x27;ll find that in every field, the ones who win reputation and admiration come from the ranks of the most knowledgeable, while the disreputable, the mean, and the contemptible rise out of some depth of ignorance and dullness. So if reputation and admiration as a statesman is what you thirst for, make sure of one accomplishment above all: knowledge, as thorough as you can get, of the work you mean to do. If you enter public life with that to set you apart from everyone else, I wouldn&#x27;t be at all surprised if you reached your ambition quite easily.&quot;</p>
-<h4>Chapter 7</h4>
+<h3 class="sub">Chapter 7</h3>
 <p>Charmides, the son of Glaucon, was, as Socrates could see, a man of real ability and influence — far more capable, in fact, than most of the people active in politics at the time. But he was also a man who shrank from speaking before the people or taking any hand in the business of the state. So Socrates put this to him:</p>
 <p>&quot;Tell me, Charmides — suppose a man were good enough to win a victory in the great games and take the crown, bringing honor to himself and making his country more glorious throughout Greece, and yet he refused to compete. What kind of person would you call him?&quot;</p>
 <p>&quot;Soft and cowardly, obviously,&quot; he answered.</p>
@@ -663,7 +1014,7 @@
 <p>&quot;Yes — and that&#x27;s exactly what I&#x27;m determined to teach you,&quot; said Socrates. &quot;You feel no such shyness before the wisest and most powerful men, yet you&#x27;re ashamed to open your mouth in front of the weakest and dullest. Who is it among them that overawes you? The fullers? The cobblers? The carpenters, the coppersmiths, the merchants, the farmers, the traders in the marketplace calculating how to buy cheap and sell dear? Because those are the individual atoms the Popular Assembly is made of. How is your behavior any different from a champion athlete quailing before a crowd of amateurs? You can argue comfortably with the leading statesmen of the city — some of whom look down on you — and you stand head and shoulders above the practiced public speakers; and yet the moment you face a set of people who have never given politics a thought in their lives, and who certainly never dreamed of looking down on you, you&#x27;re afraid to open your mouth for terror of being laughed at.&quot;</p>
 <p>&quot;Well, you&#x27;ll admit,&quot; he answered, &quot;that the Popular Assembly does quite often laugh at sound argument.&quot;</p>
 <p>&quot;So do the others,&quot; said Socrates. &quot;And that&#x27;s precisely what astonishes me: you handle those grand people easily enough when they turn to mockery, and yet you&#x27;ve convinced yourself you can&#x27;t stand up to a crowd of ordinary men. My good friend, don&#x27;t be ignorant of yourself! Don&#x27;t fall into the commonest mistake there is — the mistake of people who rush off to investigate everyone else&#x27;s business and never turn to examine their own. Don&#x27;t shirk that duty like a coward. Brace yourself to pay real attention to who you are; and as for public affairs, if there is any way they can be improved through you, don&#x27;t neglect them. When politics goes well, it isn&#x27;t only the mass of your fellow citizens who profit — it&#x27;s your personal friends, and, not least, yourself.&quot;</p>
-<h4>Chapter 8</h4>
+<h3 class="sub">Chapter 8</h3>
 <p>Once Aristippus set out to cross-examine Socrates the way Socrates had once cross-examined him. Socrates, wanting the discussion to benefit the people around him, answered not like a debater guarding his argument against tricks, but like a man convinced that nothing matters more than doing what is right.</p>
 <p>Aristippus asked him whether he knew of anything good. His plan was this: if Socrates said yes and named some particular good — food, drink, money, health, strength, courage — Aristippus would show that the thing named was sometimes bad. But Socrates knew that when something troubles us, what we want is whatever will end the trouble, and he answered in exactly the best way.</p>
 <p>&quot;Are you asking me,&quot; he said, &quot;whether I know something good for fever?&quot;</p>
@@ -689,7 +1040,7 @@
 <p>&quot;If you mean to build the perfect house, shouldn&#x27;t you plan to make it as pleasant and as useful to live in as possible?&quot; And once that was admitted: &quot;It&#x27;s pleasant to have the house cool in summer and warm in winter, isn&#x27;t it?&quot; And when that was granted too: &quot;Now, in a house facing south, the winter sun slants in under the porch, while in summer, when it passes right overhead, the roof gives us welcome shade. If that&#x27;s what we want, then we should build the south side higher, to catch the winter sun, and the north side lower, to keep out the cold winds. To put it in a word: the pleasantest and most beautiful home is the one where the owner can find the most agreeable retreat in every season and store his belongings in the greatest safety.&quot;</p>
 <p>Paintings and ornamental moldings, he said, rob you of more pleasure than they give.</p>
 <p>The best site for a temple or an altar, he maintained, was a spot visible from far off and untrodden by human feet: it does the worshipper good to lift up his eyes from a distance and offer his prayer, and good to approach the holy place clean and undefiled.</p>
-<h4>Chapter 9</h4>
+<h3 class="sub">Chapter 9</h3>
 <p>Asked once whether courage could be taught or came by nature, he answered: &quot;I think that just as one body is naturally stronger than another for hard work, so one soul is naturally tougher than another in the face of danger — I certainly notice that people raised under the same laws and customs differ widely in daring. But I believe that every nature can be strengthened toward courage by learning and practice. It&#x27;s obvious that Scythians and Thracians wouldn&#x27;t dare take up shield and spear and fight Spartans; and it&#x27;s just as obvious that Spartans would refuse to face Thracians armed only with light shields and javelins, or Scythians with nothing but bows and arrows. And as far as I can see, the same holds everywhere: men differ from one another by nature, but they improve by practice and attention. Which makes one thing clear — everyone, quick-witted or slow, should learn and practice the things he wants to excel in.&quot;</p>
 <p>Between wisdom and self-control he drew no line. If a man could recognize the things that are beautiful and good well enough to live by them, and knew the shameful things well enough to avoid them, Socrates judged him wise and self-controlled at once.</p>
 <p>When he was pressed further — did he consider people wise and self-controlled who know what is right but don&#x27;t do it? — he answered: &quot;No more than I consider them unwise and out of control. Everyone, I take it, chooses from the options open to him whatever he thinks serves his interest best, and then does it. So I hold that people who act wrongly and crookedly are neither wise nor self-controlled.&quot;</p>
@@ -702,7 +1053,7 @@
 <p>If anyone objected that a tyrant has the option of not listening to good advice, he would answer: &quot;How does he have that option, with a penalty hanging over everyone who disobeys wise counsel? In whatever matter he disobeys good advice, he will go wrong, I presume — and going wrong, he will pay for it.&quot; And to the suggestion that the tyrant could simply have the wise man killed: &quot;Do you think a man who destroys his best ally gets off free, or suffers only some slight, passing loss? Is that the way to save himself, do you think — or the fastest way to his own destruction?&quot;</p>
 <p>When someone asked him what the best pursuit for a man was, he answered: &quot;Doing well.&quot; Asked next whether he counted good luck a pursuit, he said: &quot;Quite the opposite — luck and doing are poles apart, in my view. To stumble into something desirable without seeking it, I call good luck; to do a thing well through learning and practice, I call doing well — and the people who make that the serious business of their lives seem to me to be doing well indeed.&quot;</p>
 <p>The best men and the dearest to God, he went on, are those who do their work well — in farming, the work of the farm; in medicine, the work of healing; in politics, the work of the state. A man who does nothing well, he added, is good for nothing and dear to no god.</p>
-<h4>Chapter 10</h4>
+<h3 class="sub">Chapter 10</h3>
 <p>Then again, whenever chance brought him into conversation with someone who possessed an art and practiced it for a living, he never failed to be useful to that kind of person too. Stepping one day into the studio of Parrhasius the painter, he fell into conversation with him.</p>
 <p>&quot;Parrhasius,&quot; he said, &quot;painting is a representation of visible things, isn&#x27;t it? With your colors you painters copy and reproduce, as closely as you can, hollows and heights, dark and light, hard and soft, rough and smooth, the freshness of youth and the wrinkles of age — don&#x27;t you?&quot;</p>
 <p>&quot;That&#x27;s right,&quot; he answered. &quot;So we do.&quot;</p>
@@ -750,7 +1101,7 @@
 <p>&quot;It can&#x27;t.&quot;</p>
 <p>&quot;You mean,&quot; Socrates continued, &quot;that what fits is not the exactly modeled breastplate, but the one that doesn&#x27;t gall the wearer in use?&quot;</p>
 <p>&quot;You&#x27;ve hit the very point, Socrates,&quot; said Pistias. &quot;You understand the matter exactly.&quot;</p>
-<h4>Chapter 11</h4>
+<h3 class="sub">Chapter 11</h3>
 <p>There was in the city at that time a beautiful woman named Theodota — the kind of woman who kept company with any admirer who could win her favor. One of the group happened to mention her, saying her beauty was beyond words. &quot;Painters flock to her to paint her portrait,&quot; he added, &quot;and she shows them as much of that beauty as decency allows.&quot; &quot;Then we had better go and see her,&quot; said Socrates, &quot;since you clearly can&#x27;t grasp what&#x27;s &#x27;beyond words&#x27; by listening to words.&quot; &quot;Then follow me right now,&quot; said the man who had brought her up, and off they went to visit Theodota. They found her posing for a painter, and stood watching. When the painter had finished, Socrates spoke up.</p>
 <p>&quot;Gentlemen, should we be thanking Theodota for showing us her beauty, or should she be thanking us for coming to look? Doesn&#x27;t it work like this — if the showing profits her more, the debt is hers; but if the looking benefits us more, then we owe her.&quot;</p>
 <p>Someone said that was a fair way to put it.</p>
@@ -791,12 +1142,12 @@
 <p>&quot;Ah, but I don&#x27;t want to be drawn to you,&quot; he said. &quot;I want you to come to me.&quot;</p>
 <p>&quot;Then I&#x27;ll come. Only — will you be at home to me?&quot;</p>
 <p>&quot;Yes, I&#x27;ll welcome you — unless someone dearer still has me engaged, and I have to be &#x27;not at home.&#x27;&quot;</p>
-<h4>Chapter 12</h4>
+<h3 class="sub">Chapter 12</h3>
 <p>Noticing that one of his companions, a young man named Epigenes, was in poor physical condition, he said, &quot;You have the body of a man who never trains, Epigenes.&quot;</p>
 <p>&quot;Well, I&#x27;m a private citizen, not an athlete in training.&quot;</p>
 <p>&quot;You are exactly as much in training,&quot; said Socrates, &quot;as any man who ever competed at Olympia — unless you consider the contest for life itself, the one the Athenians will hold against their enemies whenever the day comes, a small matter. And it&#x27;s no small number of men who die in the dangers of war because their bodies failed them, or who save their lives shamefully. Many are taken prisoner for the same reason, and if that&#x27;s their luck, spend the rest of their days in slavery; or they land in desperate straits, pay out ransom worth more than everything they own, and drag through the rest of life destitute of bare necessities. Many earn a coward&#x27;s reputation when the real culprit was an unfit body. Do you shrug off these penalties of bad condition? Do you think you&#x27;d bear them lightly? I imagine what a man goes through to keep himself fit is far lighter — far pleasanter, even — by comparison. Or is it your position that bad condition is healthier and generally more useful than good? Do you sneer at everything a sound body brings? Because everything that follows from fitness is the opposite of what follows from neglect. The fit man is healthy and strong. Many a man has come through the ordeal of war safely on that account alone, and walked through all its horrors with his dignity intact. Many have rescued friends with nothing else to lean on, or done real service to their country and been judged worthy of gratitude for it — winning great reputation and the highest honors the state can give, living out the rest of their lives the happier and the brighter for it, and leaving their children a better start in life.</p>
 <p>&quot;Just because our city doesn&#x27;t require military training in public is no reason to neglect it in private — it&#x27;s a reason to work at it all the harder. You can be sure there is no contest of any kind, and no undertaking whatsoever, in which you&#x27;ll be worse off for having your body well prepared. Everything men do, the body is a help in doing. And in every use we make of it, it matters enormously that it be in the best possible condition. Even where you&#x27;d think the body counted least — in thinking — who doesn&#x27;t know the terrible stumbles men make because their health is bad? Forgetfulness, despondency, irritability, madness — they take advantage of poor condition to assault the mind so violently that they can drive out everything a man knows. But the man in good bodily shape has ample security. He runs no such risk of breaking down; his fitness works toward the very opposite of what neglect produces — and what wouldn&#x27;t a sensible man endure for results like those? Besides, it&#x27;s a disgrace for a man to grow old through sheer neglect before ever seeing what he might have become with his body at its full strength and beauty. And that sight is denied to the man who neglects himself — for it does not come of its own accord.&quot;</p>
-<h4>Chapter 13</h4>
+<h3 class="sub">Chapter 13</h3>
 <p>Once, when a man was furious because he had said good day to a passer-by and gotten no greeting back, Socrates said, &quot;That&#x27;s ridiculous. If you&#x27;d run into a man with a wretched body, you wouldn&#x27;t be angry — but you stumble on a soul in a somewhat boorish state, and that offends you.&quot;</p>
 <p>To another man who complained that he took no pleasure in eating, he said, &quot;Acumenus has a good prescription for that.&quot; &quot;What is it?&quot; the man asked. &quot;Stop eating,&quot; he said. &quot;Once you do, life will be pleasanter, cheaper, and healthier.&quot;</p>
 <p>Someone else grumbled that the drinking-water in his house was warm. &quot;Then when you want a warm bath,&quot; said Socrates, &quot;it will be waiting for you.&quot;</p>
@@ -821,7 +1172,7 @@
 <p>&quot;Well then — suppose you had had to carry his load. How would you have fared?&quot;</p>
 <p>&quot;Badly. Or rather, I couldn&#x27;t have carried it at all.&quot;</p>
 <p>&quot;What an admission! To be capable of so much less work than a slave boy — does that sound to you like a man in good condition?&quot;</p>
-<h4>Chapter 14</h4>
+<h3 class="sub">Chapter 14</h3>
 <p>When people dined together and some brought little food while others brought a great deal, Socrates would tell the servant either to put the small contributions into the common stock or to serve a share of them around to everyone. The men with the grand provisions were then ashamed not to take their share of the common stock — and ashamed, in turn, not to throw their own supplies in as well. So in went the grand provisions with the rest; and since they now got no more than the men who brought little, they soon stopped spending money on delicacies.</p>
 <p>At one supper Socrates noticed that a member of the party had pushed aside his bread and was working on the delicacies alone. The conversation happened to be about names — what actions each word properly applies to — so Socrates put it to the company: &quot;Can we say why we call a man a &#x27;relish-eater&#x27;? What exactly does he do to earn the name? Everyone adds a relish to his bread when he can get one, but surely that alone doesn&#x27;t make him a relish-eater — does it?&quot;</p>
 <p>&quot;Hardly,&quot; said one of the company.</p>
@@ -834,12 +1185,12 @@
 </section>
 <section aria-labelledby="book-iv">
 <h2 id="book-iv">Book IV</h2>
-<h4>Chapter 1</h4>
+<h3 class="sub">Chapter 1</h3>
 <p>That was Socrates: so helpful in every situation and in every way that nobody with ordinary sensitivity who watched him could miss the fact that time spent in his company — anywhere, under any circumstances — was a priceless gain. Even the memory of him, once he was gone, was no small benefit to those who had grown used to his company and welcomed him. And he was just as helpful to his friends in his playful moods as in his serious ones.</p>
 <p>Take that saying so often on his lips: &quot;I am in love with so-and-so.&quot; It was obvious to everyone that what drew his soul was never a beautiful body in its bloom, but a soul unfolding toward virtue. And he spotted these &quot;good natures&quot; by certain signs: quickness to learn whatever they turned their attention to; a memory that held on to what they had learned; and a real passion for the studies that help a person manage a household or a state — for dealing well, in general, with people and human affairs. People like that, he maintained, needed only an education to become happy themselves, to run their own households happily, and to be able to make other people — whole states or single individuals — happy as well.</p>
 <p>He had a different approach for different kinds of people. Those who thought their natural gifts were so good they could look down on learning, he taught this lesson: it is precisely the most gifted nature that needs training and education most. Look at horses, he would say. It is the spirited, fiery thoroughbred that, if properly broken in as a colt, grows into a superb and serviceable animal — but left unbroken, turns out completely unmanageable and good for nothing. Or take dogs: a puppy that shows the appetite for hard work and the eagerness to go after wild game that mark a fine breed will, if raised well, prove excellent for the hunt or any other useful work; but neglect his training and he turns into a stupid, frantic brute who cannot obey the simplest command. It is exactly the same with human beings. The young man with the best natural endowment — the strongest spirit, the firmest determination to carry through whatever he takes in hand — will, if trained and taught what is right to do, become a supremely good and useful man. He does what is best, on the grandest scale. But leave that same young man ignorant and untrained, and he becomes not just very bad but very dangerous. Lacking the knowledge to see what is right to do, he will often put his hand to villainy, and the very size and force of his character make it impossible to rein him in or turn him off his evil course. So in his case too the achievements come on the grandest scale — but the worst.</p>
 <p>Then there was the type so swollen with pride in his riches that he considered himself excused from any further education — since &quot;money makes the man,&quot; and his wealth would be quite enough to get him whatever he wanted and win him honors from an admiring world. Socrates would bring such people back to their senses. Wasn&#x27;t it folly, he would point out, to suppose that without instruction a man could draw the line between what helps and what harms in conduct? And folly again to suppose that, without being able to draw that line, a man could use wealth alone to get whatever he liked, or find the useful path lying plain in front of him? Wasn&#x27;t it the height of simplicity to think that a man who cannot work to any profit can be doing well, or be equipped in any adequate way for the business of life? And the height of simplicity again to think that mere wealth, without real knowledge, could buy a reputation for some excellence — or that without such a reputation a man could win distinction and fame?</p>
-<h4>Chapter 2</h4>
+<h3 class="sub">Chapter 2</h3>
 <p>Then there was a third type: the people convinced they had already received the best education there is, and proud of their wisdom. Let me describe how he dealt with these.</p>
 <p>Euthydemus &quot;the handsome&quot; had, Socrates learned, collected a large library of the most celebrated poets and philosophers, and on the strength of it he already considered himself more than a match for anyone his age in wisdom — and fully expected, before long, to outshine them all in his capacity for speech and action alike. At first, being too young to enter the marketplace, he would settle himself in a saddler&#x27;s shop nearby whenever he had business to conduct. So that is where Socrates went, taking a few of his companions along. Someone opened by raising a question: was it through keeping company with the wise, or by his own unaided talent, that Themistocles had risen so far above his fellow citizens that the whole city instinctively turned to him whenever it needed a capable man? Socrates, aiming to stir up Euthydemus, answered that it was charmingly naive to believe that the minor arts couldn&#x27;t be mastered without qualified teachers, while leadership of the state — the greatest concern of all — was supposed to drop into a man&#x27;s lap by itself, like a windfall.</p>
 <p>On a later visit, Euthydemus was there but visibly keeping his distance, as though the last thing he wanted was to appear to admire Socrates for wisdom. So Socrates remarked, &quot;Gentlemen, it&#x27;s obvious from how our friend Euthydemus spends his time that once he comes of age, he won&#x27;t hold back his advice when the state puts a question up for debate. And you can imagine the elegant opening he has prepared for his speeches, given how anxious he is not to be suspected of ever learning anything from anybody. Clearly he&#x27;ll begin like this: &#x27;Men of Athens, I have never at any time learned anything from anyone. When I heard of a man able in speech and action, I made no attempt to meet him. I never troubled to find myself a teacher among those who know. Quite the reverse: I have steadily avoided not merely learning from others, but even the faintest appearance of it. However, whatever occurs to me on its own, I will gladly share with you.&#x27; Wouldn&#x27;t that opening suit a candidate for city physician just as well? He could begin, &#x27;Men of Athens, I have never studied medicine under anybody, and I never sought out any doctor as my teacher. In fact I have been constantly on my guard, not only against learning anything from the profession, but against the least appearance of knowing medicine at all. Nevertheless, if you&#x27;ll grant me the post, I promise to do my best to pick up the skill — by experimenting on you.&#x27;&quot; Everyone present laughed at that opening speech, and the matter dropped there.</p>
@@ -984,7 +1335,7 @@
 <p>&quot;Then if that&#x27;s how things stand, we&#x27;ll have to class those kings among the people — and some owners of small estates, provided they manage them well, among the rich?&quot;</p>
 <p>&quot;My own dull wits force me to admit it,&quot; said Euthydemus. &quot;I begin to think my best course is to keep my mouth shut altogether. A little more of this and I&#x27;ll be proved to know absolutely nothing.&quot; And he went away crestfallen, in an agony of self-contempt, convinced that he was truly no better than a slave.</p>
 <p>Many of those whom Socrates reduced to this same condition refused ever to come near him again — and those, for his part, he wrote off as blockheads. But Euthydemus had the wit to see that his one hope of becoming a man worth anything was to spend as much time with Socrates as he possibly could. From that day on he never left his side except when he had to, and even began imitating some of his teacher&#x27;s habits and practices. And Socrates, once he saw how matters stood with him, stopped rattling him and began explaining, in the simplest and plainest way, what he believed a man most needed to know and to practice.</p>
-<h4>Chapter 3</h4>
+<h3 class="sub">Chapter 3</h3>
 <p>Socrates, it should be clear by now, was in no hurry for his companions to become skilled speakers, men of action, or clever inventors — not until they had first laid a solid foundation of self-control. Men who had those abilities without that saving virtue, he believed, only became worse men, with greater power to do harm. So his first concern was to instill in his companions a wise attitude toward the gods. Others who were present on particular occasions have recorded how he talked with people on this theme; I will confine myself to one discussion with Euthydemus that I heard myself.</p>
 <p>&quot;Tell me, Euthydemus,&quot; Socrates began, &quot;has it ever struck you how carefully the gods have provided for everything human beings need?&quot;</p>
 <p>&quot;No,&quot; he said, &quot;I can&#x27;t say it ever has.&quot;</p>
@@ -1017,7 +1368,7 @@
 <p>&quot;Believe me, Socrates,&quot; Euthydemus replied, &quot;there&#x27;s no danger of my neglecting the divine power, even a little. That&#x27;s not what worries me. What discourages me is the thought that no human soul could ever repay the kindness of the gods with the gratitude it deserves.&quot;</p>
 <p>&quot;Don&#x27;t let that discourage you,&quot; he said. &quot;You know what answer the god at Delphi gives to everyone who comes asking, &#x27;How shall I return thanks to heaven?&#x27; — &#x27;According to the law and custom of your city.&#x27; And the law and custom everywhere, I take it, is that a man should please the gods with offerings according to the ability that is in him. How could a man honor the gods more beautifully or more devoutly than by doing exactly what they themselves command? Only he must not slacken or fall short of his ability — because when a man does that, it&#x27;s plain enough that at that moment he is not honoring the gods at all. So honor the gods not grudgingly but according to your ability; and when you have done that, be of good cheer and expect the greatest blessings. For where else should a sensible man look for great blessings, if not from those with the greatest power to help him? And how else can he hope to win them, except by pleasing his helpers? And how can he please them better than by obeying them as fully as he can?&quot;</p>
 <p>By words like these — and by conduct that matched his words — Socrates shaped and molded the hearts of his companions, making them at once more devout and more virtuous.</p>
-<h4>Chapter 4</h4>
+<h3 class="sub">Chapter 4</h3>
 <p>Where justice was concerned, he made no secret of his opinion — and he did not merely state it, he demonstrated it in action. In private life he was law-abiding and helpful to everyone he dealt with; in public he obeyed the magistrates in everything the laws required, in the life of the city and on military service alike, so that he stood out as a model of loyalty for everyone else. Three occasions in particular proved it. First, when he was serving as president of the Popular Assembly, he refused to let the sovereign people take an illegal vote, and stood on the side of the laws against a surge of popular feeling that, I think, would have broken any other man. Again, when the Thirty tried to give him orders that ran contrary to the laws, he refused to obey — when they forbade him to converse with the young, and when they ordered him and certain other citizens to arrest a man to be put to death, he stood out alone, on the ground that the orders they were giving him were against the laws. And finally, when he stood trial on the charge Meletus brought, he refused to play the usual courtroom game. Everyone knew that defendants won their acquittals by flattering the judges, by begging and appealing for pity in ways the laws forbade, and that many a man owed his life to exactly those methods. But Socrates would not do a single thing in court, however customary, that was not strictly legal; and though he could easily have been acquitted with only a slight bending of the rules, he chose to abide by the laws and die rather than break them and live.</p>
 <p>He argued this position in conversation again and again, with one person after another; and one discussion in particular, with Hippias of Elis, on the subject of justice, has come to my knowledge.</p>
 <p>Hippias had just arrived back in Athens after a long absence, and happened to be present while Socrates was telling some listeners how astonishing it was that if a man wanted someone taught to be a shoemaker or a carpenter or a metalworker or a horseman, he would know exactly where to send him. &quot;They say,&quot; he added, &quot;that if you want your horse or your ox trained properly, the world is full of instructors. But if you want to learn justice yourself, or have your son or your slave taught it, you have no idea where to find such instruction.&quot;</p>
@@ -1096,7 +1447,7 @@
 <p>&quot;Not the opposite, Socrates — heaven forbid! If God himself could not legislate justly, hardly anyone else could.&quot;</p>
 <p>&quot;It would seem, then, Hippias, that the gods themselves are well pleased that the lawful and the just should be one and the same.&quot;</p>
 <p>By such words and such conduct, teaching by example and by precept alike, he helped make those who came near him more upright and more just.</p>
-<h4>Chapter 5</h4>
+<h3 class="sub">Chapter 5</h3>
 <p>And now I want to show how he made his companions more capable in action. First of all, since his creed was that self-control is the indispensable foundation of any noble achievement, he showed himself to his companions as a man disciplined beyond all others; and then, by conversation and discussion, he encouraged them toward self-control above everything else. He kept the things that lead to virtue constantly in his own mind, and kept reminding everyone he met of them. One conversation of his with Euthydemus on the subject of self-control has come to my knowledge, and it will serve to illustrate.</p>
 <p>&quot;Tell me, Euthydemus,&quot; he began, &quot;do you believe freedom is a noble and magnificent possession, whether for a man or for a state?&quot;</p>
 <p>&quot;I can&#x27;t conceive of a nobler or more magnificent one,&quot; he answered.</p>
@@ -1137,7 +1488,7 @@
 <p>&quot;Furthermore, if there is any joy in learning something beautiful and good, or in the patient discipline that lets a man keep his body in shape, manage his household well, make himself useful to his friends and his city, and master his enemies — pursuits that bring not only the greatest advantages but the deepest satisfactions — it is the self-controlled who reap those fruits in the very doing of them, while the man with no self-control has no share in any of them. For who, we may fairly say, has less claim to such things than the man least able to do them — tied down as he is to chasing whatever pleasure lies nearest to hand?&quot;</p>
 <p>Euthydemus replied: &quot;Socrates, you seem to me to be saying that a man who is mastered by the pleasures of the body has nothing to do with virtue at all.&quot;</p>
 <p>&quot;And what is the difference, Euthydemus,&quot; he asked, &quot;between a man without self-control and the dullest of beasts? If a man abandons every high aim, gives up searching for what is best, and strives only to gratify his sense of pleasure, how is he better than the silliest of cattle? No — it is given to the self-controlled alone to search out the things of highest worth, and, sorting them out by kinds in word and in deed, to choose the good deliberately and hold back from the bad. That is how a man becomes best and happiest,&quot; he added, &quot;and most capable of reasoning and discussion. The very word &#x27;discussion&#x27; — dialectic — comes from people getting together to deliberate in common, sorting things by kinds. So a man ought to prepare himself for that as thoroughly as he can, and pursue it with earnest resolution beyond everything else; for that is the road to excellence, and that is what makes a man fittest to lead his fellows and strongest in debate.&quot;</p>
-<h4>Chapter 6</h4>
+<h3 class="sub">Chapter 6</h3>
 <p>Now let me try to explain how Socrates developed this skill in dialectic among his companions. He was firmly convinced that a man who knows what each thing really is can explain that knowledge to others — and that a man who lacks it will, unsurprisingly, stumble himself and trip up everyone else along with him. That is why he never stopped examining, together with his companions, what each thing that exists truly is. It would be a long business to go through all the definitions he arrived at, so I will give just enough examples to show his method. Take, first, his investigation of piety. The inquiry ran, fairly represented, something like this.</p>
 <p>&quot;Tell me, Euthydemus,&quot; he said, &quot;what sort of thing do you take piety to be?&quot;</p>
 <p>&quot;Something supremely fine and excellent, surely,&quot; Euthydemus answered.</p>
@@ -1262,7 +1613,7 @@
 <p>&quot;That is my opinion.&quot;</p>
 <p>By carrying the argument back to its starting point this way, the truth became plain even to the disputant himself.</p>
 <p>His own way of conducting a discussion was to proceed step by step, from one point of general agreement to the next. &quot;There,&quot; he would say, &quot;lies the real security of reasoning.&quot; And for that reason he was more successful at winning the assent of his hearers than anyone I have ever known. He used to say that Homer gave Odysseus the title of a safe speaker precisely because he had the gift of leading a discussion from one commonly accepted opinion to another.</p>
-<h4>Chapter 7</h4>
+<h3 class="sub">Chapter 7</h3>
 <p>That Socrates declared his own opinions frankly and simply to those who kept his company is, I think, proved well enough by the instances I have already recorded. But he was just as eager to make his companions independent — able to stand on their own feet in every undertaking their abilities suited them for — and that is what I hope to show now.</p>
 <p>Of all the men I have ever known, he took the greatest care to find out what each of his companions really knew. Everything a beautiful and good man ought to know, he was most zealous to teach, so far as his own knowledge reached; and where it did not reach, he would introduce his friends to those who knew. And he did not fail to teach them how far an educated man should carry his practical knowledge of any given subject.</p>
 <p>Take geometry. Everyone, he said, should learn geometry at least far enough to be able, when the need arises, to take over a piece of land or hand one on, to divide it up, or to assign a portion of it for cultivation — and to do it all by accurate measurement. That much geometry was so simple, so easy to pick up, that a man had only to put his mind to the business of measuring and he could learn the size of a field and walk away knowing exactly how it was reckoned. But he could not approve of pursuing geometry all the way to its unintelligible diagrams. What use those might be, he said, he failed to see — and he was not ignorant of these deep matters himself. Such studies, he said, were enough to eat up a man&#x27;s whole life and keep him from many other, more useful things.</p>
@@ -1271,7 +1622,7 @@
 <p>Socrates also urged the study of arithmetic — but here, as everywhere, he warned the learner against empty and idle over-elaboration. Up to the limit set by usefulness, he was ready to join in any inquiry and follow out any argument with his companions; but there he stopped.</p>
 <p>He particularly pressed his companions to take the utmost care of their health. They should learn all they could from the experts; and beyond that, each man should watch his own case throughout his life and discover for himself what food, what drink, and what kind of work suited him best, and how to use them so as to live the healthiest possible life. A man who studied his own constitution that way, he said, would be hard put to find a doctor who could better diagnose or prescribe what his health required.</p>
 <p>And when anyone wanted help of a kind no human wisdom could supply, he advised him to turn to divination. The man who knows the means by which the gods give signs to men concerning their affairs, he said, will never find himself without divine guidance.</p>
-<h4>Chapter 8</h4>
+<h3 class="sub">Chapter 8</h3>
 <p>Now suppose someone were to set Socrates&#x27; claim — that the divine sign told him what he should and should not do — against the fact that the jury sentenced him to death, and conclude that this proved him guilty of lying, or of deluding himself, about this &quot;divinity&quot; of his. Let such a person consider two things. First, Socrates was by then so far advanced in years that if he had not died when he did, his life would have reached its natural end soon afterward. Second, as things turned out, he escaped the bitterest part of life — the years that dull every mind — and in exchange he got to display the full strength of his soul and win glory besides: partly by a defense unmatched for its truthfulness, its frankness, and its integrity, and partly by bearing the sentence of death with perfect gentleness and courage. For it is admitted on all sides that no man in living memory ever met death more nobly. After the sentence he had to live on for thirty days, because it was the month of the Delia — Apollo&#x27;s festival — and the law allows no one to die at the public executioner&#x27;s hand until the sacred embassy returns from the island of Delos. Through the whole of that month, as every one of his friends can testify, his life went on exactly as before. There was nothing to mark any difference between those days and the days that came before them, in the steady evenness of his courage — and his had always been a life of marvelous cheerfulness and calm content.</p>
 <p>(Stop and ask: how could a man die more nobly or more beautifully than that? Or put it this way: dying so, his death was the noblest and most beautiful a man could die; being the most beautiful, it was also the most fortunate and heaven-blessed; and being the most blessed, it was the most precious in the sight of God.)</p>
 <p>Now let me add some things about him that I heard from Hermogenes, the son of Hipponicus. He said that even after Meletus had filed the indictment, he used to hear Socrates conversing about anything and everything rather than the trial hanging over him, and he ventured to suggest that Socrates ought to be thinking about his line of defense. Socrates&#x27; first answer was: &quot;Don&#x27;t you think I have been practicing it my whole life long?&quot; And when Hermogenes asked how, he explained that he had passed his days doing nothing else but examining what is just and what is unjust — right and wrong — doing the right and holding back from the wrong; &quot;and that conduct,&quot; he added, &quot;I count the finest practice for a defense a man could ask for.&quot; Hermogenes came back to the point and pleaded with him: &quot;Don&#x27;t you see, Socrates, how often an Athenian jury, swayed by clever argument, condemns innocent people to death and acquits real criminals?&quot; &quot;I assure you, Hermogenes,&quot; Socrates replied, &quot;every time I have tried to turn my thoughts to the defense I am to make before the court, the divine sign has opposed me.&quot; &quot;How strange!&quot; Hermogenes exclaimed. &quot;Do you find it strange,&quot; Socrates went on, &quot;that God should judge it better for me to close my life now? Don&#x27;t you know that up to this very moment I would not concede to any man that he has lived a better or a happier life than mine? The best life, I hold, belongs to those who work hardest at becoming as good as they can be, and the happiest to those who feel most keenly that they are growing in goodness — and so far, that is exactly the good fortune I see fallen to my lot. I have found it so not just in casual encounters with others, but by strict comparison between myself and others, and in that conviction I stand to this day. And not I alone: my friends hold the same conviction about me — not for the weak reason that they are my friends and love me, or every man&#x27;s friends would feel the same about theirs, but because they are persuaded that keeping my company makes them better. But if I am destined to live on, I suppose I shall have to pay the penalties of old age in full: to see and hear less keenly, to fail in force of mind, to leave school — as it were — a duller student than I came, less learned and more forgetful; to fall, in short, from whatever I once stood highest in, and grow daily worse at the very things I once did best. If I couldn&#x27;t feel the change, the life left over would scarcely be worth living; but given that I must feel it, then the existence left to me could only turn insipid and joyless — a death in life, stripped of everything that makes life sweet. And if it is reserved for me to die unjustly, then the shame lies on those who unjustly kill me. If injustice is shameful, how can any unjust act whatever fail to be shameful? But where is the disgrace to me if others fail to judge me justly or treat me rightly? I see before me a long line of men who have walked this road, and I see the reputations they left among posterity — how differently people speak of those who did the wrong and those who suffered it. And I know that though I die today, mankind will remember me very differently from the men who put me to death. The witness that outlives me will say this: that I never at any time wronged any man or made him worse, but always tried to make the people who kept my company better.&quot;</p>

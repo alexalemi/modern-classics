@@ -19,8 +19,359 @@
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=navigation" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 	<link rel="preload" href="fonts/libre-caslon-text-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="stylesheet" href="fonts.css">
-	<link rel="stylesheet" href="book.css">
+	<style>
+/* Fonts for every page (front pages and book pages), served from this site
+   rather than Google Fonts: a third-party
+   stylesheet blocked rendering for ~0.8 s on mobile (PageSpeed, 2026-10-12).
+   Oswald, Yellowtail and Libre Caslon Text (SIL Open Font License), latin and
+   latin-ext subsets as Google serves them, in site/fonts/. */
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Caslon Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/libre-caslon-text-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/yellowtail-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* The book pages. Shared by every page assemble.py writes; fonts in fonts.css.
+
+   LEGIBILITY FIRST. The running text is set in the best screen serif the
+   reader's own device has (Charter on Apple, Sitka Text on Windows, Georgia
+   or Noto Serif elsewhere), near-black on white, 19-20px, ~66 characters to
+   the line. The Emend look (Libre Caslon Text, navy, the cream band, Oswald
+   labels) is kept to the title band, the headings and the controls. */
+
+:root {
+  --page:  #ffffff;
+  --text:  #1c1c1c;
+  --ink:   #1b314d;     /* navy: headings, links, buttons */
+  --cream: #f4efe2;
+  --soft:  #5a6472;
+  --rule:  #ddd6c8;
+  --link:  #1f4f86;
+  --plate-bg: #ffffff;
+  --reading: Charter, "Bitstream Charter", "Sitka Text", Georgia, "Noto Serif", serif;
+  --display: "Libre Caslon Text", Georgia, serif;
+  --label:   "Oswald", "Arial Narrow", sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page:  #14181e;
+    --text:  #e4e0d8;
+    --ink:   #e8e2d4;
+    --cream: #1d2430;
+    --soft:  #a3adba;
+    --rule:  #343c48;
+    --link:  #9cc2e6;
+  }
+  /* plates and diagrams are drawn on white paper; keep them on it, slightly dimmed */
+  figure img { opacity: .92; }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html {
+  background: var(--page);
+  color: var(--text);
+  font-size: 20px;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--reading);
+  line-height: 1.65;
+  font-kerning: normal;
+}
+
+main { max-width: 34rem; margin: 0 auto; padding: 0 1rem 5rem; }
+
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+
+/* ---------- title band ---------- */
+
+.title-block {
+  background: var(--cream);
+  padding: 1.6rem 1rem 1.8rem;
+  margin-bottom: 2rem;
+}
+.title-inner {
+  max-width: 44rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.8rem;
+  align-items: center;
+}
+.title-block .series {
+  grid-column: 1 / -1;
+  margin: 0 0 0.2rem;
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.title-block .series a { color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 0.55rem; }
+.title-block .series a:hover span { text-decoration: underline; }
+.title-block .series img { height: 1.8rem; width: auto; }
+.cover img {
+  display: block;
+  width: 150px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+}
+.title-text { min-width: 0; }
+h1 {
+  font: 700 2rem/1.15 var(--display);
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+  text-align: left;
+}
+.title-line { margin: 0 0 0.3rem; font-size: 0.95rem; color: var(--ink); }
+.title-line.byline { font-weight: 700; }
+.dates { margin: 0 0 0.9rem; font-size: 0.85rem; color: var(--soft); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.button {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  border: 1px solid var(--ink);
+  font: 500 0.75rem/1.2 var(--label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+}
+.button.primary { background: var(--ink); color: var(--page); }
+.button:hover { text-decoration: underline; }
+
+/* phones: a small cover beside the title, so the text starts sooner */
+@media (max-width: 36rem) {
+  .title-block { padding: 1.1rem 1rem 1.4rem; }
+  .title-inner { grid-template-columns: 76px 1fr; gap: 0.9rem; align-items: start; }
+  .cover img { width: 76px; height: 114px; }
+  h1 { font-size: 1.45rem; }
+  .actions { grid-column: 1 / -1; }
+}
+
+/* ---------- running text ---------- */
+
+.intro-note { font-style: italic; font-size: 0.9rem; color: var(--soft); }
+
+h2, h3, h4 {
+  font-family: var(--display);
+  color: var(--ink);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+h2 { font-size: 1.45rem; margin: 3.2rem 0 1rem; }
+h3 { font-size: 1.2rem; margin: 2.8rem 0 0.9rem; }
+h4, h3.sub { font-size: 1rem; margin: 2rem 0 0.8rem; font-style: italic; }
+h2.center { text-align: center; font-size: 1.6rem; margin-top: 4rem; }
+
+p, ul, ol { margin: 0 0 1.15em; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+blockquote {
+  margin: 1.5em 0 1.5em 1em;
+  padding-left: 1em;
+  border-left: 3px solid var(--rule);
+  font-style: italic;
+}
+blockquote p { margin-bottom: 0.8em; }
+
+pre.outline {
+  font-family: var(--reading);
+  white-space: pre-wrap;
+  line-height: 1.6;
+  margin: 0 0 1.15em;
+}
+
+img.glyph { vertical-align: middle; display: inline; }
+span.frac, span.stack { display: inline-block; vertical-align: middle; text-align: center; }
+span.frac > span, span.stack > span { display: block; }
+span.frac > span.num { border-bottom: 1px solid currentColor; }
+span.stack.brace { border-left: 2px solid currentColor; border-right: 2px solid currentColor; border-radius: 0.6em; padding: 0 0.3em; }
+math { font-size: 1.05em; }
+
+figure { margin: 2.2em auto; text-align: center; }
+figure + figure { margin-top: 1em; }
+figure img { max-width: 100%; height: auto; background: var(--plate-bg); }
+figcaption {
+  margin-top: 0.6em;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--soft);
+  text-align: left;
+}
+
+table.plates { width: 100%; margin: 2.5em 0; border-collapse: collapse; line-height: 1.5; }
+table.plates td { padding: 0.4em 0.8em; vertical-align: middle; border-bottom: 1px solid var(--rule); }
+table.plates tr:last-child td { border-bottom: none; }
+table.plates figure, table.plates figure + figure { margin: 0.4em auto; }
+table.plates figcaption { display: none; }
+
+/* page locators: a printed page and quarter, for books that cite
+   themselves by them (Helmholtz: "see p. 77c") */
+span.loc { font-size: 0.65em; color: var(--soft); vertical-align: 0.3em; padding: 0 0.15em; font-style: normal; }
+a.ref { color: inherit; text-decoration: underline dotted; }
+span.sc { font-variant: small-caps; }
+.center { text-align: center; }
+.subtitle { text-align: center; font-style: italic; }
+
+/* ---------- contents ---------- */
+
+nav.contents h2 { margin-top: 0; }
+.toc-book { font-family: var(--display); font-weight: 700; margin: 1.2em 0 0.4em; color: var(--ink); }
+.toc-list { list-style: none; padding-left: 1.2em; margin: 0 0 1em; }
+.toc-list li { margin-bottom: 0.3em; line-height: 1.4; }
+nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
+
+/* ---------- reading aids (book.js) ---------- */
+
+.resume {
+  margin: 0 0 1.5rem;
+  padding: 0.7rem 1rem;
+  background: var(--cream);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+.resume[hidden] { display: none; }
+
+.to-contents {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 5;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--page);
+  font: 500 0.7rem/1 var(--label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+.to-contents.show { opacity: .92; pointer-events: auto; }
+
+@media (max-width: 36rem) {
+  html { font-size: 18px; }
+}
+
+@media print {
+  .title-block { background: none; }
+  .actions, .to-contents, .resume { display: none; }
+}
+</style>
 	<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "Star-land", "author": {"@type": "Person", "name": "Robert S. Ball"}, "inLanguage": "en", "url": "https://emend.press/ball.html", "description": "The funniest of the Christmas lecturers takes you from the sun to the nebulae, measuring the sky with two children and a pair of scissors. Retold in modern English, free to read online and as an ebook.", "publisher": {"@type": "Organization", "name": "Emend Press", "url": "https://emend.press/", "logo": "https://emend.press/apple-touch-icon.png"}, "isAccessibleForFree": true, "isPartOf": {"@type": "BookSeries", "name": "Modern Classics", "url": "https://emend.press/"}, "image": "https://emend.press/covers/ball.jpg", "datePublished": "2026", "bookEdition": "Modern English retelling", "isBasedOn": {"@type": "Book", "name": "Star-land", "author": {"@type": "Person", "name": "Robert S. Ball"}}, "workExample": {"@type": "Book", "bookFormat": "https://schema.org/EBook", "encodingFormat": "application/epub+zip", "url": "https://emend.press/ebooks/robert-s-ball_star-land.epub"}}</script>
 </head>
 
@@ -127,7 +478,7 @@
 <p>On the other hand, by climbing the mountain he has got above the lower regions of the air. He has not, it is true, reached even halfway to the upper surface of it — that is still very far over his head — but the higher layers of the atmosphere are so very thin that they make most indifferent blankets. The Alpine climber on the summit has therefore thrown off the best part of his blankets and taken a chill, while the heat he gains by his closer approach to the sun is imperceptible. Perhaps you will now be able to understand why perpetual snow lies on the tops of the great mountains. They are chilled because they have not so many air blankets as the snug valleys beneath.</p>
 <p>The brightness of the sun is among the most wonderful things in nature, and there are three points I want you to remember; then you will indeed agree with Milton that the sun is &quot;with surpassing glory crowned.&quot;</p>
 <p>First, think of the beauty and brilliance of a lovely day in June. Then remember that all this flood of light comes from a single lamp at a most tremendous distance. And thirdly, recollect that the sun is not like a bull&#x27;s-eye lantern concentrating all its light for our particular benefit: he spreads it equally in every direction, and we on this earth do not receive the two-thousand-millionth part of what he pours out so lavishly. When we think of the brightness of daylight, and of the distance the light has come, and that nature has fitted no vast lenses to aim it in our direction, we begin to understand the sun&#x27;s true magnificence.</p>
-<h4>Further Benefits We Receive from the Sun</h4>
+<h3 class="sub">Further Benefits We Receive from the Sun</h3>
 <p>I want to show you how great our gratitude to the sun ought to be. On a bright summer&#x27;s day, when we are revelling in the warmth and enjoying the gladness of the sunshine, no words are needed to convince us of the usefulness and the kindness of sunbeams. So we will not take midsummer. Let us take midwinter.</p>
 <p>Take this very Christmas season, when the days are short and cheerless and the nights are long and dark and cold. We might be tempted to think the sun had nearly forgotten us. It is true that he seems to pay us only occasional visits, and that between fog and cloud we in England see little enough of him. But visible or invisible, the sun tends us without ceasing, and provides for our welfare in ways we do not always remember.</p>
 <p>Let me give you an illustration of what I mean. You will go back this dull cold afternoon to the happy home where your Christmas holidays are being enjoyed. It will be quite dark before you get there, for the sun sets so very early on these wintry days. You will gather round a cheerful fire. The curtains will be drawn, the lamps lit, and the disagreeable weather outside forgotten in the warmth and light within. Five o&#x27;clock has come, the pretty wicker table has been set beside your mother&#x27;s chair, and on it are the cups and saucers and the fancy teapot. Under the table is a little shelf with some tempting cakes and a tender muffin. Two or three welcome friends have joined the little group, and a delightful half-hour is certain to follow.</p>
@@ -152,14 +503,14 @@
 <p>That nice muffin was baked by the sun, toasted by the sun, and made from wheat grown by the sun. If the wheat was ground in a windmill, then the sun raised the wind that turned the mill. Perhaps the flour-mill was driven by steam — in which case the sun, long ago, provided the coal for the boiler. The miller might have lived by a river and used a water-mill; but if he did, then here again it was the sun that actually did the work, for the sun raised that water to the clouds, and after it had fallen as rain and was on its way back to the sea, its descent was put to use turning the water-wheel. The water gets its power to turn the mill from the fact that it is running downhill; but it could not run down unless it had first been carried up. So it is indeed the sun that drives the water-wheel.</p>
 <p>Nor can the baker do without the sun&#x27;s help even if he rejects windmills and steam-mills and water-mills alike, and determines to grind the corn himself with a pestle and mortar. Here, at least, you might think it is a man&#x27;s own sinews and muscles doing the work — and so it is. But you are mistaken if you think the sun has given no indispensable help. The sun has provided the power that moves the baker&#x27;s arms just as surely as it raised the wind that turned the windmill. The force exerted in grinding with the pestle came from the food the man has eaten; that food was grown by the sun, and the man got from the food the energy the food had got from the sun&#x27;s heat. So look at it whichever way you please: even for the grinding of the wheat for the muffin at your tea party, you are wholly indebted to the sun.</p>
 <p>It is the sun that has bleached the tablecloth to that snowy whiteness. The sun has given the bright colours that look so pretty in the girls&#x27; dresses. With how much meaning we can say, and feel, that light is pleasant to the eye — and what prettier name than Little Sunbeam could we have for the darling child who makes our home so bright?</p>
-<h4>The Distance of the Sun</h4>
+<h3 class="sub">The Distance of the Sun</h3>
 <p>The sun is a very long way off. It is not easy for you to imagine so great a distance, but if you want to learn astronomy you must make the attempt. This is the first measurement we shall have to make on our way to that far-off country called Star-land; and long as we shall find it to be, we shall have to deal later with distances very much longer.</p>
 <p>When you are out in the street, or taking a walk in the country, you can see at once that this man is near, or that house is far, or that mountain is many miles away. This is because you have other objects in between to help you judge. You see, for instance, that there are a number of houses and farmyards, and you notice hedges dividing one field from another between you and the mountain. You see woods and parks too, and perhaps stretches of moorland running up the slopes. You have a sense of how big farmyards and fields are, and of how wide woods and moors are; and putting all this together you realise that the mountain must be miles away.</p>
 <p>But when we look at the sun we have no such conveniently placed helps for judging his distance. There is nothing in between, and merely gazing at the sun tells us very little. We must go to the astronomer and ask him how far off he has found the sun to be — and then beg from him some explanation of the method he used in making the measurement.</p>
 <p>It has been found that the sun is on average about ninety-three million miles from the earth, though sometimes it is a little further and sometimes a little nearer.</p>
 <p>Let us first try to count 93,000,000. The easiest way is to get the clock to do it for us, and here is a sum I would suggest you work out. How long will the clock have to tick before it has made as many ticks as there are miles between the earth and the sun? Every minute the clock makes 60 ticks, and in 24 hours the total comes to 86,400. Divide that into 93,000,000 and you will find that more than 1076 days — nearly three years — would be needed for the clock to finish the task.</p>
 <p>We may look at it another way, and ask how long an express train would take to go all the way from the earth to the sun. Suppose the train travels at 40 miles an hour. Running for a whole day and a whole night without stopping, it would cover 960 miles; in a year it would cover 350,400 miles; and dividing that into 93,000,000 we reach the conclusion that a train at 40 miles an hour would have to travel not merely for days, nor for weeks, nor even for years, but for centuries. Not until 265 years had gone by would the mighty journey be over. Even if King Charles I had been present when the train began to move, it would not have arrived yet. Nobody who set out on that train could expect to see the end of the trip. That would not come until the time of his great-great-grandchildren.</p>
-<h4>How Astronomers Measure the Distances of the Heavenly Bodies</h4>
+<h3 class="sub">How Astronomers Measure the Distances of the Heavenly Bodies</h3>
 <p>I shall have to speak so often of the distances of the heavenly bodies that I may as well explain, once for all, how we have been able to find out what those distances are. It would be a very puzzling business if we tried to describe it fully, but the principle of the method is not at all difficult.</p>
 <p>Do you know why you have been given two eyes? One of the reasons, undoubtedly, is to help you judge distances. You see that this boy (Figure 4) judges the distance of his finger by how far his two eyes have to turn inwards to look at it. In much the same way we judge the distance of a heavenly body by making observations of it from two different stations.</p>
 <figure id="fig-4">
@@ -189,7 +540,7 @@
 <p>Astronomers must of course choose two stations far more widely separated than the ones in our little experiment. Indeed, the greater the interval between the two stations, the better. They need a much greater distance than from one side of this room to the other, or from one side of London to the other. If it were merely a balloon we were looking at, then when one observer on one side of London and another on the opposite side had shaped their cards carefully, we should be able to work out the height of the balloon quite easily. But the sun is so much further off than any balloon could ever be that we must separate the observers far more widely. Even the breadth of England would not be enough, so we must set them further and further apart until they are as widely divided as any two people on this earth can be.</p>
 <p>One astronomer takes his position at A (Figure 7) and the other at the opposite side, at B, so that both can see the sun. They must use a far more accurate way of measuring the angles than cutting cards with scissors; and since the astronomer at A cannot see his friend at B, measuring the angles accurately is no easy matter. But we need not trouble ourselves with those difficulties now. It is enough for the present to know that the angles are measured with delicate and very accurate instruments. Nor do the astronomers make a little sketch such as served our purpose; they make a calculation, which is a far more accurate way of arriving at a true measurement.</p>
 <p>The astronomers know the size of the earth, and so they know how many thousands of miles lie between the two stations where the observations are made. That distance plays the same part in their calculation as the length of the table did in our sketch. From each end of the line they set off an angle, just as we did; and the astronomer must use the principle of similar triangles out of Euclid, just as we had to. At last, having calculated the sides of their triangle, they obtain the distance of the sun.</p>
-<h4>The Apparent Smallness of Distant Objects</h4>
+<h3 class="sub">The Apparent Smallness of Distant Objects</h3>
 <figure id="fig-8">
 <img src="images/ball/fig8.jpg" alt="The nearer you are, the bigger the globe looks. The girl standing close must turn her eyes right up and right down to take it all in; the boy, further off, sees the whole of it at a glance." width="476" height="197" loading="lazy">
 <figcaption><b>Figure 8</b> &mdash; The nearer you are, the bigger the globe looks. The girl standing close must turn her eyes right up and right down to take it all in; the boy, further off, sees the whole of it at a glance.</figcaption>
@@ -209,7 +560,7 @@
 <p>If you went up in a balloon you would at first see only the houses and the objects immediately about you; but as you rose, the view would widen and widen. You would see that London was surrounded by countryside; and then, as you soared higher, the sea would come into view and you would be able to trace the coasts east and west and south. If somehow you could go higher than any balloon could carry you, the whole of the British Isles would presently lie spread out beneath you like a map. Higher and higher, and the continent of Europe would gradually open out, until at last the great oceans and even other continents came into sight — and then you would see that our whole earth is indeed a globe.</p>
 <p>The higher you went, the less distinctly you would be able to make out the details on the surface. At last the outlines of continents and oceans would fade, and you would begin to lose any sense of the shape of the earth itself. Long before you had reached the distance of the sun, the earth would look merely as the planet Venus looks to us now.</p>
 <p>It is instructive to consider how small our earth would seem if we could view it from the sun. Think of that very familiar little globe, a lawn-tennis ball, which is two and three-quarter inches across. Now suppose a tennis ball were on the opposite side of the street, or further off still — suppose it were half a mile away. What could you expect to see of it? And yet the earth, seen from the sun, would look no bigger than a tennis ball looks from half a mile.</p>
-<h4>The Shape and Size of the Sun</h4>
+<h3 class="sub">The Shape and Size of the Sun</h3>
 <p>We have spoken of the heat of the sun, how hot he is, and of the distance of the sun, how far off he is. Now we must say a little about his size, and about his shape.</p>
 <p>It is plain that the sun is round — that it has the shape of a ball. We are sure of this because although a plate is circular, if it were held so that we saw it edge-on from a distance it would not look round at all. The sun is always turning, and it always looks like a circle; so we are certain that its true shape must be globular, and not merely circular like a flat plate.</p>
 <p>In the middle of the day, when the sun stands high in the heavens, it is impossible for us to form any notion of his size. People will make very different estimates of how big he looks. Some will say he looks as large as a dinner plate — but such statements mean nothing unless we say where the plate is to be held. If it is near the eye, the plate may of course hide the sun, and everything else besides. If the plate were about a hundred feet away it would often hide the sun. If it were more than a hundred feet away it could not hide the sun completely; and the further off the plate, the smaller it would seem.</p>
@@ -229,7 +580,7 @@
 <p>A tennis ball will not do; it is far too big. The fact is that the width of the earth is less than the hundredth part of the width of the sun, whereas the tennis ball is a quarter the width of the football. So we must choose something a good deal smaller. I try a marble, even the smallest marble I can find; but on measuring it I find that a hundred such marbles laid side by side would be far longer than the width of the football. I must look for something smaller still. A grain of small-sized shot gives the right size for our model of the earth: about a hundred of those grains laid side by side will stretch to the width of the football.</p>
 <p>Now you will be able to form some idea of how enormous the sun really is. Think how big this earth is when we begin to travel about it. What a tremendous voyage it is to New Zealand — and even then we have only gone halfway round the globe. Then consider that the sun is bigger than the earth in the same proportion as that football is bigger than that grain of shot.</p>
 <p>If a million such grains of shot were melted down and cast into a single globe, it would still not be as large as that football. If a million globes the size of our earth could be joined together, they would no doubt make a vast globe, but not one as large as the sun. Think of a single house with three or four people living in it, and then think of this mighty London with its millions of inhabitants. The house stands for our earth, and great London for the sun.</p>
-<h4>The Spots on the Sun</h4>
+<h3 class="sub">The Spots on the Sun</h3>
 <p>I have shown you that the sun is intensely hot, and a very long way off, and enormously big. Now we must describe what the surface of the sun looks like when we examine it closely.</p>
 <figure id="fig-12">
 <img src="images/ball/fig12.jpg" alt="Looking at the sun. A small telescope on a stand, its eyepiece drawn out a little further than usual, throws the sun&#x27;s own picture onto a screen — where a whole roomful of young astronomers can study it at once, and nobody&#x27;s eyes are at risk." width="399" height="430" loading="lazy">
@@ -264,7 +615,7 @@
 <img src="images/ball/fig17.jpg" alt="How the sun turns round. Six views of the same face, five days apart: a spot appears at the left edge, crosses the disc, vanishes round the back, and in a little under four weeks is home again." width="432" height="286" loading="lazy">
 <figcaption><b>Figure 17</b> &mdash; How the sun turns round. Six views of the same face, five days apart: a spot appears at the left edge, crosses the disc, vanishes round the back, and in a little under four weeks is home again.</figcaption>
 </figure>
-<h4>Appearances Seen During a Total Eclipse of the Sun</h4>
+<h3 class="sub">Appearances Seen During a Total Eclipse of the Sun</h3>
 <p>For a great deal of our knowledge about the sun we are indebted to the moon. It sometimes happens that the moon comes between us and the sun and produces an eclipse. At first you might think an eclipse could only have the effect of preventing us seeing anything of the sun at all; but in fact it reveals the most beautiful and interesting objects, whose existence we should otherwise know nothing about.</p>
 <p>The great luminary has curious appendages which are quite hidden in ordinary circumstances. In the full glare of day the dazzling splendour of the sun blots them out, for they shine with a comparatively feeble light. It fortunately happens that the moon is just large enough to cut off the whole of the direct light from the sun — or rather, I should say, from the central parts of the sun. Around that central and more familiar part, from which the brilliance chiefly comes, is a remarkable fringe of delicate and beautiful objects. They are no doubt self-luminous, but with a light so feeble that amid the full blaze of sunlight they are invisible. When the moon so kindly stops all the stronger beams, these faint objects spring into view, and we have the exquisite spectacle of a total eclipse. The ones I want to mention particularly are the corona and the prominences.</p>
 <figure id="fig-18">
@@ -292,7 +643,7 @@
 <p>At two points of this ruddy fringe — which happen, curiously enough, to be nearly opposite each other — two colossal flames have burst out. They reach to a vast distance, quite one-third of the width of the sun.</p>
 <p>You can judge the violence of these outbreaks from the remarkable changes going on in them all the time. These great flames may indeed be said to flicker; only, considering their size, we must allow them a little more time than we should for flames of ordinary dimensions. The great flame on the left was plainly already fading when it was first seen. In a quarter of an hour it had broken into fragments, some of which could still be seen floating in the sun&#x27;s atmosphere. Ten minutes more, and its light had almost entirely gone. Surely these are changes of extraordinary rapidity, when we remember the size of the thing: this prominence was nearly 300,000 miles high — about thirty-seven times the width of our earth.</p>
 <p>Great as these prominences are, others have been recorded that are larger still. One has been seen to rush upwards at 200,000 miles an hour — more than two hundred times the speed of the swiftest rifle bullet.</p>
-<h4>Night and Day</h4>
+<h3 class="sub">Night and Day</h3>
 <p>The sun is bright and the earth is dark. The sun gives light and heat; the earth receives light and heat. We should be in utter darkness were it not for the sun — or at least, all the light we should have, beyond our trifling artificial lights, would come from the feeble twinkle of the stars. The moon would be no use, for the brightness of the moon is merely reflected sunlight. If the sun&#x27;s light were completely put out we should never see the moon again, and we should also lose from the sky a few other bodies we call the planets — Jupiter and Venus, Mars and Saturn. But the stars would be just as before, for they do not depend on the sun for their light. Indeed, we shall see later that every star is itself a sun.</p>
 <p>Picture the earth receiving a stream of sunbeams. They fall on one half of our globe and give it the brightness of day. The other half receives no sunlight at all; it is in shadow, and there the darkness of night prevails. The boundary between light and dark is not quite sharp, for the pleasant twilight softens it a little, so that we pass gradually from day into night.</p>
 <p>Watching the sun&#x27;s progress through the day, we see him rise far away in the east, then move gradually across the heavens past the south, and in the evening sink to the west, set, and disappear. All through the night the sun is moving round the far side of the earth, lighting New Zealand and Japan and other distant countries, and then gradually working round to the east, where he starts afresh to give us a new day here.</p>
@@ -300,7 +651,7 @@
 <p>But here there was a difficulty. If the sun were chilled down every evening by dropping into the water hundreds of miles away to the west, how did it come up early next morning as fresh and as hot as ever, hundreds of miles away to the east? That seemed hard indeed to account for.</p>
 <p>Some said we had an entirely new sun every day: the gods started a sun far off in the east, and after it had run its course it perished in the west, and all night the gods were busy preparing a new one for the following day. But this was felt to be such a waste of good suns that a more economical theory was proposed afterwards.</p>
 <p>The ancients believed that the continents of the earth, so far as they knew them, were surrounded by a limitless ocean, and that away to the north there were high mountains and ice and snow which barred any approach to that ocean from the civilised world. Vulcan was the presiding deity who navigated those wastes of water, and to him was entrusted the responsible duty of saving the sun from extinction. He kept a great boat ready, so that when the sun was just dropping into the ocean at sunset he caught it, and all through the night he paddled with his glorious cargo round by the north. The glow of the sun on its voyage could even be traced sometimes in summer over the great highlands to the north — that, at any rate, was how they accounted for the long midsummer twilight. After a tedious night&#x27;s rowing Vulcan came round to the east in good time for sunrise. Then he shot the sun up with such terrific force that it would carry right across the sky, and the industrious deity paddled back for all he was worth the way he had come, so as to be ready to catch it again in the evening and repeat his never-ending task.</p>
-<h4>The Daily Rotation of the Earth</h4>
+<h3 class="sub">The Daily Rotation of the Earth</h3>
 <p>Vulcan and his boat were a pretty way of accounting for the sun&#x27;s apparent motion. The chief drawback was that it was all work and no play for poor Vulcan. There were a few other difficulties too.</p>
 <p>Ships&#x27; captains told us that they had sailed out on the great sea, and that far from finding the ocean stretching on and on as one flat plain for ever, the water seemed to curve away — so that in fact, after sailing far enough in the same direction, they would be brought back to the place they had started from. They knew something about the north as well, and they told us there could be no such ocean as the one Vulcan was supposed in this fable to navigate. It also turned out that ships had been voyaging all over the globe, night and day, in every direction, and that no captain had ever seen the sun come down to the sea — still less met Vulcan in the course of his incessant travels.</p>
 <p>So it was discovered that the earth could not be a never-ending flat, but must be a globe, poised freely in space with nothing holding it up. It was then thought that the change from day to night might be explained by supposing that the sun really did go round the earth, through the space beneath our feet. That is, after all, what it seems to do.</p>
@@ -329,7 +680,7 @@
 <p>Here, then, is a way of testing my assertion that this theatre is turning. I mark a line on the table directly beneath the path of the ball. If we could wait an hour or so, we should see that the ball&#x27;s swing appeared to have shifted to a direction at an angle to where it began. But it is really the table that has moved; the direction the ball swings in is unaltered.</p>
 <p>We cannot wait so long, however, and so I show you the ingenious method Professor Dewar has devised. With a beam of the electric light he has managed to magnify the effect so much that in a single minute it is quite obvious that this whole room is turning with respect to the swing of the pendulum. This celebrated experiment proves, by direct inspection, that the earth must be rotating. By measuring the motion we could even calculate the length of the day — though I do not say it would be an accurate way of doing it.</p>
 <p>The proper way to find how long the earth takes to turn round is by observing the stars. Fix on any star you please and note its position tonight; then observe the moment when the star is in the same place tomorrow, and the interval that has passed is the true length of one complete rotation. Accurately measured, it comes to 23 hours 56 minutes 4 seconds — about four minutes shorter than the ordinary day measured from one noon to the next.</p>
-<h4>Annual Motion of the Earth Round the Sun</h4>
+<h3 class="sub">Annual Motion of the Earth Round the Sun</h3>
 <figure id="fig-23">
 <img src="images/ball/fig23.jpg" alt="The changes of the sun with the seasons. Looking south at noon: the midwinter sun barely clears the rooftops, while the midsummer sun at the same hour stands high overhead." width="280" height="527" loading="lazy">
 <figcaption><b>Figure 23</b> &mdash; The changes of the sun with the seasons. Looking south at noon: the midwinter sun barely clears the rooftops, while the midsummer sun at the same hour stands high overhead.</figcaption>
@@ -378,7 +729,7 @@
 <p>Lord Dufferin, in his delightful account of a cruise called Letters from High Latitudes, gives an entertaining illustration of the perplexities that endless daylight can cause. Everything went happily until the fatal moment when the yacht crossed the Arctic Circle. Then dire tribulation broke out among the poultry.</p>
 <p>A fine cock was the cause of the trouble. Knowing his duty, he always liked to be particular about performing the important task of crowing at sunrise, and he could do it quite regularly so long as the yacht stayed in reasonable latitudes where the sun behaved properly. But once they had crossed the Arctic Circle the cock was faced with an entirely new state of affairs. The sun never set in the evening, and consequently never had to rise in the morning.</p>
 <p>What was the distracted bird to do? He did everything. He burst into occasional fits of terrific crowing at all hours; then he gave up crowing altogether; then, finding that did not mend matters, he took to crowing incessantly. Exhaustion was followed by delirium; and rather than live any longer in a universe where the sun was capable of pranks so heartless, the indignant fowl flung himself from the vessel and perished in the Arctic Ocean.</p>
-<h4>The Changes of the Seasons</h4>
+<h3 class="sub">The Changes of the Seasons</h3>
 <figure id="fig-27">
 <img src="images/ball/fig27.jpg" alt="The changes of the seasons. Four positions of the earth around the sun, with the axis leaning the same way in all of them: at A the North Pole is tipped towards the sun and never leaves the daylight; at C, six months later, it is tipped away and never comes out of the dark." width="657" height="278" loading="lazy">
 <figcaption><b>Figure 27</b> &mdash; The changes of the seasons. Four positions of the earth around the sun, with the axis leaning the same way in all of them: at A the North Pole is tipped towards the sun and never leaves the daylight; at C, six months later, it is tipped away and never comes out of the dark.</figcaption>
@@ -393,7 +744,7 @@
 <p>The sun lights half the earth. In the left-hand position in Figure 27, which is summer, the North Pole is tipped over towards the sun and lies in the bright half. There is continual day at the North Pole, and night is unknown there at this season, because the earth&#x27;s turning will not carry the Pole, nor the regions near it, into the dark hemisphere. That is why the Arctic regions have perpetual day at this time of year.</p>
 <p>Now look at the position of England while the northern hemisphere is tilted towards the sun and enjoying the full splendour of midsummer. As the earth turns, England gradually crosses the boundary between light and shadow and enters the darkened hemisphere, and then it is night in England. But you will see from the figure that the day is much longer than the night — and that is why we have those fine long days in summer.</p>
 <p>Now look at a different scene six months later. The earth has reached the other side of the sun, but its axis has stayed parallel to itself, so the North Pole is now tilted entirely away from the sun. The earth goes on turning as before, but its motion never brings the North Pole or the surrounding Arctic regions out of the dark hemisphere, so the night there must be unbroken. The long continuous day of the polar midsummer is dearly bought with the gloom and cold of a winter in which there is no sun for many weeks together. Notice too how England&#x27;s circumstances have changed. In each twenty-four hours it lies much longer in the dark half of the earth than in the bright, so there is only a short day followed by a long night.</p>
-<h4>Sunshine at the North Pole</h4>
+<h3 class="sub">Sunshine at the North Pole</h3>
 <p>It is one of the privileges of astronomers to be able to predict events thousands of years ahead, and to describe things accurately although they have never seen them and nobody else has ever seen them either. No one has yet reached the North Pole; but whenever they do, we can tell them a great deal about what they will find there. We may leave it to Jules Verne to describe how the journey is to be made and how the party is to be kept alive when it arrives. I shall give you a picture of the changing seasons, and of how the stars look, as seen from that spot.</p>
 <p>Let us prepare, then, to make our observations from that very peculiar place, the North Pole. I suppose eternal ice and snow are to be found there. I don&#x27;t think it would be a pleasant residence. However, we shall arrange to arrive on Midsummer Day, prepared to stay a year.</p>
 <p>The first question to settle is where to put the hut. In a cold country it is important to get the aspect right, and we are in the habit of saying that a southerly aspect is the best and warmest, while north and east suggest nothing but chills and discomfort. But what is a southerly aspect at the North Pole — or rather, what is not a southerly aspect? Whichever way we look from the North Pole we are facing due south. There is no such thing there as east or west; every way is southward. It is truly an odd part of the earth. The only place at all like it is the South Pole, from which every direction is north.</p>
@@ -429,7 +780,7 @@
 <p>Of course this earth-lit side of the moon cannot compare in brilliance with the sun-lit side; but the brightness is still perceptible, so that when we look at the moon from here we see this glow spread over the whole of the dark part. We see the feebly lit globe clasped in the brilliant arms of the crescent.</p>
 <p>At a later phase the dark part of the moon stops being visible altogether, and for two reasons. First, the bright side of the earth is by then not so fully turned towards the moon, so the earth-shine it receives is not so strong. And second, the growing sun-lit part of the moon has so much more glow that the fainter light is overpowered by contrast.</p>
 <p>You must remember that more light does not always increase the number of things that can be seen — sometimes it has the opposite effect. Have we not already noticed how the brightness of day makes the stars invisible? The moon herself, seen in full daylight, looks no brighter than a small scrap of white cloud.</p>
-<h4>The Size of the Moon</h4>
+<h3 class="sub">The Size of the Moon</h3>
 <p>It is not easy to answer the question I am sometimes asked: &quot;Is the moon very big?&quot; I would meet it with another question: &quot;Is a cat a big animal?&quot;</p>
 <p>The fact is there is no such thing as absolute bigness or smallness. The cat is no doubt a small animal compared with the tiger; but I think a mouse would tell you the cat was quite a big animal — rather too big, indeed, in the mouse&#x27;s opinion. And the tiger himself is small compared with an elephant, while the mouse is large compared with a fly.</p>
 <p>When we talk about the bigness or smallness of a body we must always consider what we are comparing it with. In speaking of the moon it is natural to compare it with our own globe, and then we can say that the moon is a small body.</p>
@@ -456,7 +807,7 @@
 <p>So we learn that if the moon were exactly one-fourth the diameter of the earth, its surface would be one-sixteenth of the earth&#x27;s. No doubt it would have made our subject a little easier and simpler if the moon had been created somewhat smaller than it is; but as the universe has not been constructed solely for the purposes of these talks about Star-land, we must take things as we find them.</p>
 <p>The proportion is not four; it is more nearly 3⅔. So the relative surfaces of the two bodies come to the square of 11/3 — that is, of 3⅔ — or about 13½. In other words, the whole extent of our globe&#x27;s surface is about thirteen and a half times that of the moon.</p>
 <p>The face of the full moon, being half of the moon&#x27;s whole surface, is therefore about one twenty-seventh part of the earth&#x27;s surface, taking continents, oceans, seas and islands all together. The British Empire and the Russian Empire are each of them as large as the face of the full moon.</p>
-<h4>How Eclipses Are Produced</h4>
+<h3 class="sub">How Eclipses Are Produced</h3>
 <p>The moon is the attendant, the satellite, of the earth, serving the earth&#x27;s needs by softening the darkness of our nights. The earth goes round the sun on its yearly journey of 365 days; the moon goes round the earth once every twenty-seven days. The moon&#x27;s motion is therefore a very complicated one, since it is moving round a body which is itself constantly in motion (Figure 33).</p>
 <p>You will see from your almanacs every year that certain eclipses are due; and after what we have said about the sun and the moon it will be easy to understand how eclipses come about. There are two different kinds. Sometimes you will see an eclipse of the moon, and sometimes one of those eclipses of the sun we spoke of in the last lecture.</p>
 <p>You may be surprised to find with what accuracy eclipses can be predicted. We can name not only those that will happen this year and next, but those that will appear a hundred or a thousand years from now; or we can calculate backwards just as easily, and work out the circumstances of eclipses that happened thousands of years ago. That shows how well we have learned the way the moon moves.</p>
@@ -482,14 +833,14 @@
 <p>The eclipses we have been speaking of can of course only be seen by day, when the sun is up. Eclipses of the moon, which are seen at night, are caused by the earth coming between the sun and the moon. At night the sun is under our feet on the other side of the earth, and the earth throws a long shadow upwards. If the moon enters that shadow, the sunlight is plainly cut off, either partly or wholly; and since the moon shines by no light of her own but only by light borrowed from the sun, it follows that when she is buried in the shadow all the direct light is intercepted and she must lose her brilliance. That is what we call a lunar eclipse. It is total if the moon is entirely in the shadow, and partial if she is only partly in it.</p>
 <p>A lunar eclipse is visible to everybody on the dark hemisphere of the earth, if the clouds will keep out of the way; so a great many more people can usually see a lunar eclipse than a solar one, which is only visible from a limited part of the earth. That is why the lunar eclipse is the more familiar spectacle of the two.</p>
 <p>When the moon is entirely within the shadow, you might naturally think she would become completely invisible. That is not always so. It is a curious fact that in the depth of a total eclipse the moon is often still visible, glowing with a copper-coloured light bright enough to let some of the chief markings on her surface be clearly made out.</p>
-<h4>Effect of the Moon&#x27;s Distance on Its Appearance</h4>
+<h3 class="sub">Effect of the Moon&#x27;s Distance on Its Appearance</h3>
 <p>We are now going to take a good look at the moon and examine the various objects marked on it. There is a peculiar interest about this particular orb, because it is much the nearest of all the heavenly bodies to our globe, and therefore the one we can see best. Every other object — sun, star or planet — is hundreds, or perhaps thousands, of times as far away.</p>
 <p>It is right that we should want to learn all we can about the bodies in space. We know that the earth is a great ball, and we can see that there are many other such bodies. Some are much larger and some smaller than the globe we live on; some are dark bodies like the earth, and the moon is one of them. Is it not reasonable to make a special effort to find out all we can about this interesting neighbour?</p>
 <p>Close as the moon is to us compared with other objects in space, when we put its distance in ordinary measure it is a very long way off — about 240,000 miles, a length nearly as great as all the railways in the world put together.</p>
 <p>An express train running forty miles an hour would cover 240 miles in six hours, so the whole distance to the moon would take 6000 hours; travelling day and night without stopping, you would make the journey in 250 days. To take another illustration: if you wound a thread ten times round the equator of the earth, it would be long enough to stretch from the earth to the moon. Or suppose a cannon could be built strong enough to be fired with a report loud enough to be heard 240,000 miles away — the sound would only reach that distance a fortnight after the gun went off.</p>
 <p>The moon is too far off for us to make out the particular features on its surface with the unaided eye. Suppose there were a mighty city like London on the moon, with great buildings and teeming millions of people, and you went out on a fine night to take a look at our neighbour. What do you think you would be able to see of the great lunar metropolis? Would you see its streets full of omnibuses, or even its great buildings? Would you see St Paul&#x27;s and Westminster, the great parks and the river? Of all these things your unaided eye would show you almost nothing.</p>
 <p>Let me give you a little illustration. Suppose you made a tiny model of London, complete in every part, with the streets, the buildings, the bridges, the railways, the parks and the Thames all in their true proportions — and suppose the miniature city were so small that it would stand on a penny postage stamp. Surely everything would look very insignificant even if you held the model in your hand and examined it with a magnifying glass. But suppose it were put on the other side of the table, or the other side of the room, or the other side of the street. Even St Paul&#x27;s Cathedral would by then have ceased to be distinguishable. And yet the distance would still be nowhere near great enough: you would have to put the little model a quarter of a mile away before it would be in the right position to illustrate how a lunar London appears to the unaided eye.</p>
-<h4>A Talk About Telescopes</h4>
+<h3 class="sub">A Talk About Telescopes</h3>
 <p>The astronomer will not be content with a mere naked-eye inspection of a world as interesting as the moon. He will get a telescope to help his sight. The word &quot;telescope&quot; means a contrivance for looking at objects a long way off. We have explained that the further an object is, the smaller it appears; and the telescope allows us largely to get round this inconvenience, by making a distant object look larger.</p>
 <p>Telescopes differ greatly in form, and instruments are large or small according to the purpose they are wanted for. Perhaps the most useful practical application of the telescope is by the officer on duty aboard a ship. He is generally provided with a pair of them bound together to make the binocular.</p>
 <p>You all know this useful contrivance — or at any rate the opera glass, which is used for purposes more familiar to landsmen. The ship&#x27;s telescope, or the binocular, or the opera glass, is feeble in power compared with the great instruments of the observatory. The officer on the ship will generally be satisfied with a telescope that shows what he is interested in at about one-third of its actual distance. Suppose his attention is drawn to a great steamer three miles off. He wants to see her more clearly, so he takes a look through his binocular; and at once the vessel is so transformed that she seems only one mile away. The apparent dimensions of the object are increased threefold: the hull is three times as long, the masts and the funnel three times as high, the sailors three times as tall. Various things aboard too small to be seen at three miles are visible from one mile, and it is to that apparent distance the ship has now been brought.</p>
@@ -518,7 +869,7 @@
 <figcaption><b>Figure 38</b> &mdash; The Yerkes telescope of the University of Chicago, the most powerful ever built, its object glass 40 inches across.</figcaption>
 </figure>
 <p>This instrument is no doubt a large one, but in recent years many much greater have been built. The most powerful telescope ever erected is the great Yerkes instrument belonging to the University of Chicago, shown in Figure 38. Its object glass is 40 inches across.</p>
-<h4>How the Telescope Aids Us in Viewing the Moon</h4>
+<h3 class="sub">How the Telescope Aids Us in Viewing the Moon</h3>
 <p>Those in charge of an observatory are often visited by people who, coming to see the wonders of the heavens and finding instruments of such great size, not unnaturally expect the views they get of the heavenly bodies to be correspondingly magnificent. So they are, no doubt; but it frequently happens that the pictures even the greatest telescope can show fall far short of the ideal ones the visitors have conjured up in their imaginations, and they go away sadly disappointed.</p>
 <p>This is especially true of the moon. I have known people who, on getting a view of the moon through a great telescope, were surprised not to find vast mountain ranges looking as big to them as the Alps, or mighty deserts over which the eye could roam for thousands of miles. They have sometimes expected to behold stupendous volcanoes which not only were, but looked, as big as Vesuvius. Others seem to have thought they ought to see the moon so clearly that the fields would be plainly visible; and some would not have been much astonished to make out houses and farmyards, and perhaps even cocks and hens.</p>
 <p>There are various ways of estimating the apparent size of an object, but the size the moon appears to me to have in a great telescope may be illustrated by taking an orange in your hand and looking at the innumerable little marks and specks on its skin. The amount of detail your eye will show you on the orange is about the amount a good telescope will show you on the moon. A desert on the moon a hundred miles across corresponds to a mark about an eighth of an inch across on the orange.</p>
@@ -534,7 +885,7 @@
 <p>&quot;What has this to do with the moon?&quot; you will say. We shall soon see. In thirty-six yards there are 5184 quarters of an inch; and since we need not be very particular about the figures, we may say in round numbers that the distance at which we could no longer make out the dot was about five thousand times the width of the dot itself.</p>
 <p>You need not, then, expect to see anything on the moon — or on anything else — that is not at least as wide as a five-thousandth part of the distance you are viewing it from. The great telescope practically puts the moon at a distance of 240 miles, and a five-thousandth part of that is about eighty yards. So a round object on the moon about eighty yards across would be just glimpsed as the merest dot in the most powerful telescope, and to attract any attention a lunar object would have to be much larger than that.</p>
 <p>If St Paul&#x27;s Cathedral stood on a lunar plain it would be visible in our great telescopes. It is true we could see no details; we should not be able to tell a cathedral from a town hall. There would just be something visible, so that an artist sketching that part would put down a mark with his pencil to show that something was there. This shows us that we need not expect to see objects on the moon, even with the mightiest telescopes, unless they are of great size.</p>
-<h4>Telescopic Views of Lunar Scenery</h4>
+<h3 class="sub">Telescopic Views of Lunar Scenery</h3>
 <p>I have already warned you not to expect too much even from the biggest telescope; and by way of caution I may perhaps tell you a story I once heard about an astronomer who had a great one. It was a very famous instrument, and people often came to the observatory at night to enjoy a look at the heavens. Sometimes these visitors were grave philosophers; frequently they were not very accomplished men of science.</p>
 <p>One evening such a visitor arrived, sent in his name and an introduction to the astronomer, and asked to be admitted to the temple of mystery. The astronomer courteously welcomed the stranger and asked what he particularly wished to see.</p>
 <p>&quot;Oh!&quot; said the visitor, &quot;I have come specially to see the moon — that is the object I am particularly interested in.&quot;</p>
@@ -570,7 +921,7 @@
 <img src="images/ball/fig43.jpg" alt="How we found the height of the flagstaff — measure the shadow it throws at noon, and a short calculation gives you the pole." width="416" height="283" loading="lazy">
 <figcaption><b>Figure 43</b> &mdash; How we found the height of the flagstaff — measure the shadow it throws at noon, and a short calculation gives you the pole.</figcaption>
 </figure>
-<h4>On the Origin of the Lunar Craters</h4>
+<h3 class="sub">On the Origin of the Lunar Craters</h3>
 <p>We must now offer an explanation of the curious rings which are the most characteristic features of the moon. To account for them we must look for a moment at some objects on the earth.</p>
 <p>You have all heard of volcanoes, or burning mountains, such as Vesuvius or Etna, which break out from time to time into violent eruption and send out great showers of ash and torrents of molten lava. In the Sandwich Islands there is a celebrated volcano called Kilauea. It is like a vast lake of lava, so hot that it is actually molten and glows like red-hot iron. The adventurous tourist who visits this crater can climb to the brink of the lofty range of cliffs that surrounds it and gaze down on the fiery sea beneath.</p>
 <p>Suppose that by some great change the internal heat keeping this mighty basin aglow were to decline and go out. The sea of lava would cease to be liquid, and would in the end grow hard and cold; and we should then have an immense flat plain surrounded by a range of cliffs. Examples of extinct craters of just this kind can be found elsewhere in the Sandwich Islands today.</p>
@@ -592,7 +943,7 @@
 <p>Recall our little experiment with the two cooling globes of iron. Imagine those globes keeping their relative proportions, but one of them 8000 miles across and the other 2000. Ages will no doubt pass before they part with enough heat for their surfaces to cool and solidify. But we may be sure that the small globe will cool faster, that its outside will harden sooner than the large one&#x27;s, and that long after the small globe has grown cold to the centre the large one may still be keeping some of its original heat.</p>
 <p>We can thus readily understand why all the volcanoes on the moon have stopped: their day is over. It is over because the moon, being so small, has grown so cold that it can no longer sustain the internal fires needed for a volcanic outbreak. Our earth, being so much bigger, has cooled more slowly. It has no doubt lost its high surface temperature, and its volcanic energy has probably fallen off from what it once was; but there is still power enough in the subterranean fires to wake us occasionally with a Krakatoa, or to supply Vesuvius with material and vigour for its more frequent outbursts.</p>
 <p>The argument shows us that the time must come at last when this earth will have parted with so much of its heat that it can no longer produce volcanic phenomena — and then we shall pass into that exhausted stage which the moon reached ages ago.</p>
-<h4>The Movements of the Moon</h4>
+<h3 class="sub">The Movements of the Moon</h3>
 <p>Although the moon goes round and round the earth incessantly, she always manages to avoid giving us a view of what is on the other side. Our satellite always turns the same face towards the earth, and we may reasonably guess that the other side is covered, like the side we know, with rings and other traces of former volcanoes.</p>
 <p>In this respect the moon is quite a peculiar object. The other great heavenly bodies, such as the sun or Jupiter, turn on their axes and show us now one side and now another with complete impartiality. The way the moon revolves can be illustrated by taking your watch and chain and, holding the chain at the centre, swinging the watch round in a circle. At every point of its path the ring of the watch points, of course, to the centre where the chain is held. Imagine your eye at that centre, to stand for the earth, and the movement of the watch shows you how the moon goes round it.</p>
 <p>There is one more point I must explain about the moon before we close this lecture. Nothing is more familiar than the fact that a heavy body will fall to the ground; and it hardly matters what the body is made of. You see I have a small iron ball in one hand and a cork in the other. I drop them at the same moment and they reach the ground together. Perhaps you would have expected the cork to lag behind the iron. I try the experiment again and again, and you can see no difference in the times of their fall — though I do not say this would hold if they were dropped from the top of the Monument.</p>
@@ -610,7 +961,7 @@
 <p>Fire off a ball with a still greater charge than before, and the path is much longer — but the ball still curves down and falls to the earth in the end. Now make one final shot with a charge powerful enough, and away flies the ball, this time following the curve of the earth; for the earth&#x27;s attraction has the effect of bending its path out of a straight line into this circular form.</p>
 <p>By the time the ball has travelled a quarter of the way round it is no nearer the earth than it was at first, nor has it lost any of its original speed. So in spite of its long journey the ball has practically as much energy as when it first left the muzzle. Away it flies round another quarter of the earth, and still in the same condition it completes the third quarter and the fourth, returning to the point it started from. If we have cleared the cannon out of the way, the ball will fly over the mountain top again without having lost any speed on its voyage round the earth. It is therefore in a fit state to start round again, and so to revolve about the earth permanently.</p>
 <p>If, then, a great ball 2000 miles across had once been fired with the proper velocity from the top of a mountain 240,000 miles high, that ball would go on circling round and round the earth for ever; and even if the mountain and the cannon disappeared, the motion would be kept up indefinitely. This illustration will at any rate show you how the moon can go on revolving round the earth continuously, notwithstanding that the earth is constantly pulling our satellite down towards its surface.</p>
-<h4>On the Possibility of Life in the Moon</h4>
+<h3 class="sub">On the Possibility of Life in the Moon</h3>
 <p>Astronomers are often asked whether any animals can be living on the moon. No observation we can make with the telescope will answer that question directly. There are great plains to be seen on the moon, of course; but even if there were elephants tramping across them, our telescopes could not show us. Nor will our instruments say straight off whether plants or trees flourish there. The mammoth trees of California are so big that a tunnel has been cut through the trunk of one, large enough for a carriage and pair to drive through; but even trees as big as that would not be visible on the moon from the most famous observatories.</p>
 <p>Let us think what we should experience ourselves if we could by some marvellous means be carried from the earth to its satellite and set to explore that new and wonderful country. Alas — we should find it utterly impossible to live there for an hour, or even for a minute. Troops of difficulties would beset us at once.</p>
 <p>The first would be the want of air. Think for a moment how invariably air is present around our own globe. Climb to the top of a high mountain, or take a lofty voyage in a balloon, and you are bathed in air the whole time. It is air that holds up the balloon, just as a cork is held up by water. In all circumstances we must have air to breathe. In that air is oxygen, and we must have oxygen supplied to our lungs without a break to refresh our blood. We need that oxygen to be diluted, too, with a much larger quantity of nitrogen, for our lungs and our circulation are fitted for living in that particular mixture of gases we find here.</p>
@@ -651,7 +1002,7 @@
 <p>The planets are all members of the great family that depends on the sun. Venus and the earth may be considered the pair of twins, alike in size and weight. Mercury and Mars are the babies of the system. The big brothers are Jupiter and Saturn. All of them go round the sun and draw their light and heat from his beams.</p>
 <p>We should like to get a little closer to some of our fellow planets and learn their actual geography. Unfortunately, even in the most favourable circumstances they are a very long way off. They are many millions of miles away, and always at least a hundred times as far as the moon.</p>
 <p>Far off as the planets may be, astronomers have known of their existence for ages. I can give you a curious proof of this. You remember we said the first and second days of the week were named after the sun and the moon — Sun-day, and Moon-day, or Monday. Let us look at the others. Tuesday is not quite so obvious, but translate it into French and we have Mardi at once; that word means nothing but Mars&#x27; day, and our Tuesday means exactly the same. Wednesday is readily interpreted too by the French Mercredi, Mercury&#x27;s day; Venus corresponds to Friday; Jupiter&#x27;s day is Thursday, and Saturn&#x27;s day is naturally Saturday. The familiar names of the days of the week are thus tied to the seven moving heavenly bodies that have been known for uncounted ages.</p>
-<h4>How to Make a Drawing of Our System</h4>
+<h3 class="sub">How to Make a Drawing of Our System</h3>
 <p>I want everyone who reads this book to make a little drawing of the sun and the planets. The apparatus you will need is a pair of compasses — any sort that will hold a bit of pencil will do — and a small scale marked in inches and parts of an inch; any carpenter&#x27;s rule will answer.</p>
 <p>The drawing is meant to give you a notion of the true sizes and positions of the fine family of which the earth is one member. The figure I have given here (Figure 46) is not on so large a scale as the one I am about to describe and want you to use. Try to do the work neatly, and then pin your little drawings up where you can see them every day until you are quite at home with what we mean by the solar system.</p>
 <figure id="fig-46">
@@ -678,7 +1029,7 @@
 <p>To appreciate properly where the earth stands among its brothers and sisters in the sun&#x27;s family, you will need your compasses for another little sketch, one that fairly represents the sizes of the four bodies themselves. Remember that the last drawing showed nothing whatever about the sizes of the bodies; it only showed the dimensions of the paths they move in.</p>
 <p>Mercury is the smallest globe of the four, so we shall open the compasses half an inch and draw a circle for it. The earth and Venus are so nearly the same size — though the earth is a trifle the larger — that we need not try to show the difference, so we shall represent both by circles of 1¼ inches radius. Mars, like Mercury, is smaller than the earth, and the circle representing it will have a radius of ¾ of an inch.</p>
 <p>You should draw these figures neatly and, with a little shading, make them look like globes. It would be better still to make actual models, taking care of course to give each of them exactly the right size. A comparative view of the principal planets is shown in Figure 47.</p>
-<h4>The Planet Mercury</h4>
+<h3 class="sub">The Planet Mercury</h3>
 <p>Quicksilver is a bright and pretty metal, and unlike every other metal it is a liquid in ordinary circumstances. If you spill quicksilver it is a difficult business gathering it up again: it breaks into little drops which you cannot easily pick up with your fingers, for they slip away and escape your grasp. Quicksilver will run easily through a hole so small that water would hardly pass, and it is so heavy that an iron nail or a bunch of keys will float on it.</p>
 <p>This heavy, bright, nimble metal is known by another name besides quicksilver: a chemist would call it mercury. And the astronomers use exactly the same word for a pretty, bright, nimble and heavy planet that seems to do its best to escape our sight. Hard as Mercury is to see, it was discovered so long ago that all record of who discovered it is lost.</p>
 <p>You must take special pains if you want to see the planet Mercury, for during the greater part of the year it cannot be seen at all. Every now and then a glimpse is to be had, but you must be on the alert just after sunset, or up very early in the morning to catch it just before sunrise. Mercury is always found in attendance on the sun, so you must look for him near the sun — low down in the west in the evening, or low down in the east in the morning. For the right time of year to look, you must consult the almanac.</p>
@@ -713,7 +1064,7 @@
 <figcaption><b>Figure 49</b> &mdash; Relative weights of Mercury and the earth — it takes twenty-five globes the size of Mercury to balance one earth.</figcaption>
 </figure>
 <p>We hardly know anything about what the globe of Mercury may be like. We can see little or nothing of the nature of its surface. We only make out that the planet is a ball brightly lit by the sun, and we cannot satisfactorily distinguish permanent features on it as we can on some of the other planets.</p>
-<h4>The Planet Venus</h4>
+<h3 class="sub">The Planet Venus</h3>
 <p>You will have no difficulty recognising Venus, but you must choose the right time to look for her. In the first place, never expect to see Venus very late at night. Look for the planet in the evening as soon as it is dark, towards the west; or in the morning, a little before sunrise, towards the east.</p>
 <p>I do not say you can always see Venus, either before sunrise or after sunset. For a large part of the year the planet is not to be seen at all. You should therefore consult the almanac, and unless you find Venus given as an evening star or a morning star, you need not trouble to look for her.</p>
 <p>I may tell you, too, that Venus can never be an evening star and a morning star at the same time. If you can see her this evening after sundown, there is no use getting up early tomorrow to look for her again. She will stay a splendid object after sunset for several weeks, then gradually disappear from the west, and a couple of months later she will be the morning star in the east.</p>
@@ -731,7 +1082,7 @@
 <img src="images/ball/fig50.jpg" alt="To show that Venus shines by sunlight. The sun has set for the young astronomer at his telescope, but not for Venus; the sunbeams still strike her, and he sees part of the lit side as a crescent." width="440" height="347" loading="lazy">
 <figcaption><b>Figure 50</b> &mdash; To show that Venus shines by sunlight. The sun has set for the young astronomer at his telescope, but not for Venus; the sunbeams still strike her, and he sees part of the lit side as a crescent.</figcaption>
 </figure>
-<h4>The Transit of Venus</h4>
+<h3 class="sub">The Transit of Venus</h3>
 <p>We might naturally suppose from Figure 46 that Venus must pass directly between the earth and the sun at every revolution, and therefore that what is called the transit of Venus across the sun ought to happen each time between her appearance as the evening star and her next appearance as the morning star.</p>
 <p>No doubt on each of those occasions Venus does seem to approach the sun closely; but the orbits of Venus and the earth do not lie quite in the same plane, so the planet usually passes just above or just below the sun, and it is a very rare event indeed for her to come right in front of him.</p>
 <p>But it does happen sometimes. It happened in the year 1874, for instance, and again in 1882. Alas, I cannot hold out to you the prospect of ever seeing another such spectacle. There will be no further transit of Venus until the year 2004 — though there will be another eight years after that, in 2012.</p>
@@ -749,12 +1100,12 @@
 <p>An immense amount of trouble was taken in 1882, as in 1874, to observe this rare event. Expeditions were sent to various places over the earth where the circumstances were favourable. I do not suppose there was ever any other celestial event that aroused so much interest.</p>
 <p>The reason it attracted so much attention was not only its beauty or its rarity: it was that the transit of Venus gives us a valuable means of finding the distance of the sun. When observations of the transit made at opposite sides of the earth are brought together, we can calculate from them the distance of Venus; and knowing that, we can find the distance of the sun, and the distances and sizes of the planets.</p>
 <p>This is very valuable information, though you would have to read some rather hard books on astronomy to understand clearly how the transit of Venus tells us all these wonderful things. I may say, however, that the principle of the method is really the same as the one we used in the first lecture with the two cards and the base-line. And when you remember that neither we, nor our children, nor scarcely even our grandchildren will ever see another transit of Venus, you will perhaps not be surprised that we tried to make the most of the ones that fell in our own time.</p>
-<h4>Venus as a World</h4>
+<h3 class="sub">Venus as a World</h3>
 <p>Although Venus shows such pretty crescents in the telescope, I must say that in other respects a view of the planet is rather disappointing. She is dressed in such a very bright suit of sunbeams that we can see little more than the sunbeams themselves, and can hardly make out anything of the real nature of the planet underneath. We can sometimes detect faint markings on the globe, but it is impossible even to guess what the country of Venus is like. This is greatly to be regretted, for Venus comes comparatively close to the earth and is a world so like our own in size and other circumstances that we feel a legitimate curiosity to know more about her.</p>
 <p>The markings, faint as they are, have nevertheless been definite enough to let some sharp-sighted astronomers answer a question of much interest. They have made it plain that in one most important respect Venus is very unlike our earth. Our globe of course turns on its axis once a day, whereas Venus takes no less than 225 days for each rotation. In fact she turns in such a way that she always keeps the same face to the sun. The inhabitants of Venus will therefore find perpetual day on one side of their globe and everlasting night on the other.</p>
 <p>Venus is one of the few globes that might conceivably be the home of beings not very different from ourselves. In one respect especially — that of weight — she resembles the earth so closely that the bodies we actually possess would probably serve, so far as strength goes, for living on the sister planet. Our present muscles would not be needlessly strong, as they would be on the moon, nor should we find them too weak, as they would certainly prove on one of the very heavy bodies of our system.</p>
 <p>Nor need the temperature of Venus be thought to present any insuperable difficulty. She is of course nearer the sun than we are; but climate depends on other conditions besides nearness to the sun, so the question whether Venus would be too hot for us could not be settled offhand. The composition of the atmosphere surrounding the planet would be the most material point in deciding whether beings from the earth could live there. I think it in the highest degree unlikely that the atmosphere of Venus should happen to suit us in the necessary particulars, and therefore I think there is not much likelihood that Venus is inhabited by any men, women or children resembling those on this earth.</p>
-<h4>The Planet Mars and His Movements</h4>
+<h3 class="sub">The Planet Mars and His Movements</h3>
 <p>The path of the earth lies between the orbits of Venus and Mars. It is natural for us to try to learn what we can about our neighbours; we ought at least to know something of the people who live next door on either side. But I have already said that we cannot observe very much on Venus. With Mars the case is very different. He is a planet we are fortunately able to study minutely, and he is full of interest when we examine him through a good telescope.</p>
 <p>We must of course wait for the right season for observing Mars, since he is not always visible. Such seasons come round about every two years, and then for months together Mars is a brilliant object in the sky every night. Nor need he be looked for in the early morning or just after sunset, in the way we have described for Venus and Mercury. When Mars is at his best he reaches his highest point at midnight, and he can generally be seen for hours beforehand and followed for hours afterwards.</p>
 <p>You may, however, find some difficulty in recognising him: you probably would not at first be able to tell Mars from a fixed star. He is a ruddy object, no doubt, but some stars are ruddy too, and at best that is a very insecure way of identifying him. I cannot give you any more general directions, except that you should get your papa to point Mars out to you the next time he is visible. It is just conceivable that papa himself may not know how to find Mars — in which case, the sooner he gets a set of star maps and starts teaching himself, and you, the better it will be for you both.</p>
@@ -798,7 +1149,7 @@
 <p>It is also important to notice that the sun is not at the centre of the ellipse the planet describes. The sun is nearer one end than the other, and its actual position must be carefully noted. Suppose some mighty giant were setting out to draw an exact path for the earth, or for Mars. He would of course need millions of miles of string to produce a curve big enough — and one of the nails he used would have to be driven right into the sun.</p>
 <p>The astronomer states the facts more precisely. He calls each of the points marked by the tacks, round which the string is looped, a focus of the ellipse; the two together are the foci; and as the planet describes its orbit, the sun lies exactly at one of the foci.</p>
 <p>The ellipse is a curve nature is very fond of reproducing. A brilliant beam spreads out from an electric light; hold a globe in the beam and let its shadow fall on a sheet of paper, and the shadow is an ellipse. Hold the sheet square-on and the shadow is a circle; tilt it, and you get a beautiful oval; and by gradually changing the position you can get a greatly elongated curve. Indeed you can produce an ellipse of almost any form this way. The electric light is not essential either: any ordinary bright lamp with a small flame will do, and by taking balls of different sizes and putting them in various positions you can make ellipses great and small.</p>
-<h4>The Discoveries Made by Tycho and Kepler</h4>
+<h3 class="sub">The Discoveries Made by Tycho and Kepler</h3>
 <p>It was through the observations of a celebrated old astronomer named Tycho Brahe that the true shape of a planet&#x27;s path came afterwards to be determined. Tycho lived in the days before telescopes were invented. He had few of the excellent measuring contrivances we have in our observatories. Let us take a look at this fine old astronomer as he sits among his curious astronomical machines.</p>
 <figure id="fig-56">
 <img src="images/ball/fig56.jpg" alt="Tycho Brahe in his observatory. The great quadrant on the wall, the assistant at the sighting slit, another at the clock and a third writing the observation down — and one of the King of Denmark&#x27;s great hounds asleep at his feet." width="433" height="689" loading="lazy">
@@ -827,7 +1178,7 @@
 <p>The peril we face at the other end of the orbit is of the opposite kind. We are then a long way from the sun, and the pull it can exert on the earth is correspondingly weakened. Care is needed then in case we should escape altogether from the sun&#x27;s warmth and his guidance. So we must give the sun time to exert his power and call the earth back; and accordingly we move as slowly as possible, until the sun overcomes the earth&#x27;s inclination to fly off and we begin to return.</p>
 <p>You may remember that when we were speaking about the moon I showed you how a body might revolve round the earth in a circle under the influence of an attraction towards the earth&#x27;s centre. So long as the path is really a circle, the force with which the earth pulls the body stays the same. In just the same way a body could revolve round the sun in a circle, and there too the sun&#x27;s attraction would stay the same all the way round.</p>
 <p>But now we have a much more difficult case to consider. If the body does not always stay at the same distance, the sun&#x27;s power will not be the same at different places. Whenever the object is near the sun the attraction will be greater than when it is further off. When the distance between the two bodies is doubled, for instance, the pull is reduced to a quarter of what it was before.</p>
-<h4>The Discoveries Made by Newton</h4>
+<h3 class="sub">The Discoveries Made by Newton</h3>
 <p>I have now some great discoveries to tell you about, made by Sir Isaac Newton. He was not an astronomer who looked much through a telescope, though he made many remarkable experiments. He used to sit in his study and think, and then draw figures with his pencil and make long calculations. At last he was able to answer these questions: what is the reason a planet moves in an ellipse? Why should it move in this curve rather than any other? And why should the ellipse be so placed that the sun lies at one of the foci?</p>
 <p>If the planet had run uniformly round its course, Newton would have found his task impossible. But I have already explained that the motion is not uniform. I described how the planet hurries along at extra speed at certain parts of its path, and lingers at others; how in fact it never keeps the same rate for a single minute of the whole journey. Kepler had shown how to make a timetable for that journey. Just as the captain on a long voyage keeps a record of each day&#x27;s run, showing that today he made 170 miles, tomorrow perhaps 200, the next day 210, and the day after fell back to 120, so Kepler gave rules by which the log of a planet on its voyage round the sun could be so faithfully kept that every day&#x27;s run was accurately recorded.</p>
 <p>When Newton began his work, one of the first questions he had to consider was this. Suppose a great globe like a planet, or a small globe like a marble, or an irregular body like an ordinary stone, were thrown out into space and then left to follow its course with no force whatever acting on it — where would it go?</p>
@@ -869,7 +1220,7 @@
 <img src="images/ball/fig59.jpg" alt="The effect of attraction. The heavy ball on its long wire swings past the powerful magnet and is wrenched aside into a curve — the sun and a planet, in miniature, on the lecture-room floor." width="419" height="319" loading="lazy">
 <figcaption><b>Figure 59</b> &mdash; The effect of attraction. The heavy ball on its long wire swings past the powerful magnet and is wrenched aside into a curve — the sun and a planet, in miniature, on the lecture-room floor.</figcaption>
 </figure>
-<h4>The Geography of Mars</h4>
+<h3 class="sub">The Geography of Mars</h3>
 <p>We shall now say something about the geography of our fellow planet — a subject that seems all the more interesting because Mars is so like the earth in many ways. We need a fairly good telescope to see him well; but when such an instrument is turned on the planet, a beautiful picture of another world is unfolded (Figure 60). There are many things visible on his surface, though we must always remember that even with our most powerful telescopes the planet still appears a long way off.</p>
 <figure id="fig-60">
 <img src="images/ball/fig60.jpg" alt="Views of Mars. The lower picture shows the horn-shaped Kaiser Sea near the centre; the upper shows the opposite face of the planet, brought round by its rotation." width="629" height="362" loading="lazy">
@@ -896,7 +1247,7 @@
 <p>It has lately been suggested that the continents of Mars are occasionally flooded with water. There are also signs of clouds hanging over the Martian lands, though in this respect the inhabitants of that planet get off much better than we do. A certain amount of atmosphere always surrounds Mars, though far less of it than we have here.</p>
 <p>As to the composition of that atmosphere we know nothing. For all we can tell it might be a gas so poisonous that a single breath would be fatal to us; or, if it held oxygen in much greater proportion than our own air, it might be fatal simply from the excitement to our circulation that an over-supply of stimulant would produce. I do not think it in the least likely that our lives could be supported on Mars, even if we could get there. We need certain conditions of climate as well, and those would probably be entirely different from anything we should find on Mars.</p>
 <p>Many remarkable observations of Mars have lately been made by Mr Percival Lowell. It now seems very doubtful how far our former division of the planet into continents and oceans can be maintained. Mr Lowell has paid particular attention to a wonderful system of lines on its surface, to which the name of &quot;canals&quot; has been given, and which often show such regularity as would almost suggest that they had been laid down under intelligent guidance.</p>
-<h4>The Satellites of Mars</h4>
+<h3 class="sub">The Satellites of Mars</h3>
 <p>When Mars appeared in his full splendour in 1877, he was for the first time honoured with the notice of instruments capable of doing him justice. I do not mean that he had not been carefully observed at earlier appearances; but a great improvement had recently been made in telescopes, and so it was under specially favourable auspices that his return was welcomed in 1877. That year will always be celebrated in astronomical history for a beautiful discovery made by Professor Asaph Hall, the illustrious astronomer at Washington.</p>
 <p>Before I can explain what the discovery was, I must have a little talk about moons — or satellites, as they are often called. You know that we have one moon, constantly going round the earth and accompanying it on its long voyage round the sun. But the earth is only a planet, and there are many other planets which are worlds like ours. It is natural to compare these worlds; and since we have one moon, why should the other planets not have moons too? If there are children in one house in a square, why should there not be children in the other houses?</p>
 <p>We find that some of the other planets do have satellites, but they do not seem to be handed round very evenly. In fact they are allotted about as capriciously as children would be in eight houses taken at random.</p>
@@ -919,7 +1270,7 @@
 <p>Now that they know exactly what to look for, a good many astronomers have observed the satellites of Mars. A superb telescope is nevertheless required; indeed you could not find a better test of an instrument&#x27;s excellence than to see whether it will show these delicate objects.</p>
 <p>But do not imagine that having a good telescope and a clear sky is all that is needed for making astronomical discoveries. You might just as well say that putting a first-rate cricket bat in a man&#x27;s hands will ensure his making a grand score. Every boy knows that the bat does not make the cricketer, and I can assure him that the telescope does not make the astronomer either. In both cases there is some element of luck, no doubt. But of this you may be certain: as it is the man that makes the score and not the bat, so it is the astronomer that makes the discovery and not his telescope.</p>
 <p>Deimos and Phobos were the names, according to Homer, of the two personages whose duty it was to attend on the god Mars and yoke his horses. A conclave of classical scholars and astronomers appropriately decided that Deimos and Phobos should be the names of the two satellites of the planet that bears his name.</p>
-<h4>How the Telescope Aids in Viewing Faint Objects</h4>
+<h3 class="sub">How the Telescope Aids in Viewing Faint Objects</h3>
 <p>So far we have been talking about large planets which, if not as big as our earth, are at least as big as our moon. But now we must say a few words about a number of little planets, many of them so very small that a million of them rolled together would not make a globe as big as this earth. You cannot see these little objects with the unaided eye, and even with a telescope they look like nothing more than very small stars.</p>
 <p>I have often been asked why it is that a telescope lets us see objects, both faint and small, which our unaided eyes fail to show us. Perhaps this is a good opportunity to say a few words on the subject. I think we can explain the usefulness of the telescope by examining our own eyes.</p>
 <p>The eye undergoes a remarkable transformation when its owner passes out of darkness into a brilliantly lit room (Figure 64). Here you see two views of an eye, and you notice the great difference between them. They are not meant to be the eyes of two different people, nor the two eyes of one person; they are two conditions of the same eye. They are meant to show two states of a collier&#x27;s eye: the right shows it when he is above ground in bright daylight, the left when he has gone down the coal pit to his useful work in the dark regions below.</p>
@@ -935,7 +1286,7 @@
 <p>These changes of the pupil explain how the telescope helps our eyes when we want to make out faint objects such as the little planets. Such bodies are invisible to the unaided eye because our pupils are not large enough to grasp light enough for the purpose. Even opened to the utmost, they need something to let them open wider still. We must therefore borrow help from some device that will have the same effect as enlarging the pupil beyond the limits nature has actually given it. What we want is something like a funnel, to turn a broad beam of rays into a narrow one.</p>
 <p>Let me explain what I mean with an illustration. Suppose it is raining heavily and you want to fill a bucket with water. Put the bucket out in the middle of a field and it will never fill; but bring it to where the rain-shoot from a house roof is running down, and it will be overflowing in a few moments. The reason of course is that the broad roof of the house has caught a vast number of drops and brought them all together into the narrow shoot, and so the bucket is filled.</p>
 <p>In the same way the telescope gathers up the rays of light falling on the object glass and condenses them into a small beam that can enter the eye. We thus have something nearly equivalent to an eye with a pupil as big as the object glass. The effect of a grand telescope amounts to increasing the pupil from the size of a threepenny piece to that of a dinner plate — or even a great deal larger.</p>
-<h4>The Asteroids or Small Planets</h4>
+<h3 class="sub">The Asteroids or Small Planets</h3>
 <p>An asteroid looks like a tiny star, and indeed the two are very often mistaken for one another. If we could get close to them we should see a wide difference. We should find the asteroid to be a dark planet like our earth, lit only by rays from the sun; whereas the star, small and faint as it may seem, is itself a bright sun, at such a vast distance that it is only visible as a small point. The star is millions of times as far from us as the planet, and utterly different in every respect.</p>
 <p>It is a curious fact that the planets should happen to resemble the stars so closely. We can find something like it in quite another part of nature. Visit a good entomological collection and you will be shown some of the wonderful leaf-like insects. These creatures have wings formed exactly to imitate the leaves of trees, with the stalks and veins completely represented. When one of them lies at rest with its wings folded among a number of leaves, it would be almost impossible to see through the disguise.</p>
 <p>This mimicry is no doubt an ingenious device to deceive the birds and other enemies that want to eat the insect. There is, however, one test the cunning bird could apply: leaves do not move about of their own accord, and leaf-insects do. If the bird will only have the patience to wait, he will see a pair of the seeming leaves move — and then the deception is a deception no longer, and he gobbles up the poor insect.</p>
@@ -968,7 +1319,7 @@
 <img src="images/ball/fig65.jpg" alt="The orbits of the four giant planets — Jupiter&#x27;s twelve-year circuit innermost, then Saturn, then Uranus, and Neptune out at the boundary of the system." width="442" height="407" loading="lazy">
 <figcaption><b>Figure 65</b> &mdash; The orbits of the four giant planets — Jupiter&#x27;s twelve-year circuit innermost, then Saturn, then Uranus, and Neptune out at the boundary of the system.</figcaption>
 </figure>
-<h4>Jupiter</h4>
+<h3 class="sub">Jupiter</h3>
 <p>Of all these bodies Jupiter is by far the greatest. He is indeed greater than all the other planets rolled into one. The relative insignificance of the earth beside him is well shown by the fact that if you took 1200 globes each as big as our earth and made them into a single globe, it would only be as large as the greatest of the planets. A comparison of the sizes of the earth and Jupiter is shown in Figure 66.</p>
 <figure id="fig-66">
 <img src="images/ball/fig66.jpg" alt="Jupiter and the earth compared. It would take 1200 globes the size of ours to build the one beside it." width="294" height="219" loading="lazy">
@@ -990,7 +1341,7 @@
 <p>Where is Jupiter to get this heat? Have we not seen that the great planet is far more distant from the sun than we are? In fact the intensity of the sun&#x27;s heat on Jupiter is not more than a twenty-fifth part of what we get from the same source. We can hardly believe the sun supplied the heat to make those great clouds, so we must look about for an additional source — and it can only be inside the planet itself.</p>
 <p>So far as internal heat goes, Jupiter seems to be in much the same state now as our earth was ages ago, before its surface had cooled to its present temperature. Being so much larger than the earth, he has been slower to part with his heat; and the planet seems not to have had time yet to cool enough for water to stay on his surface. So the planet&#x27;s internal heat supplies an explanation of his clouds.</p>
 <p>We may remark, too, that just as the present condition of Jupiter shows us the early condition of our earth, so the present condition of the earth foreshadows the future in store for Jupiter — when he has had time to cool down, and the waters that now exist as vapour are condensed into oceans on his surface.</p>
-<h4>The Satellites of Jupiter</h4>
+<h3 class="sub">The Satellites of Jupiter</h3>
 <p>Every owner of a telescope delights in turning it on Jupiter, both for the spectacle the globe itself affords and for the sight of the wonderful system of moons attending the giant planet. Fortunately the four satellites of Jupiter are within reach of even the most modest telescope, and their incessant changes of position, relative to Jupiter and to one another, give them a never-ending interest for the astronomer.</p>
 <p>Compared with the torpid performance of our own moon, which takes a month to complete a circuit of the earth, Jupiter&#x27;s moons are wonderfully brisk and lively. Nor are they small bodies like the satellites of Mars: the second of Jupiter&#x27;s satellites is quite as big as our moon, and the other three are very much larger. It is true, though, that they look insignificant beside Jupiter&#x27;s own enormous bulk.</p>
 <p>The innermost of these little bodies flies right round in a period of one day and eighteen or nineteen hours, while the outermost takes a little more than a fortnight — rather more than half the time our moon needs for a complete revolution. Jupiter&#x27;s satellites are too far away for us to see much of their structure or appearance even with mighty telescopes; it is of course their great distance that makes them look so insignificant. They would be bright enough to be seen as small stars were it not that, lying so close to Jupiter, they are drowned by his overpowering brightness.</p>
@@ -1004,7 +1355,7 @@
 <p>Since Jupiter is five times as far from the sun as we are, the light from the sun to Jupiter takes forty minutes on the journey, and the light from Jupiter to the earth takes something similar. When we look at Jupiter and his moons we do not see him as he is now, but as he was more than half an hour ago — the interval varying somewhat with our changing distance from the planet. Sometimes the light from Jupiter reaches us in as little as thirty-two minutes, sometimes it takes as much as forty-eight; so the journey sometimes needs a quarter of an hour more than it does at other times.</p>
 <p>Now we can understand that irregularity in Jupiter&#x27;s satellites which puzzled the early astronomers. An eclipse sometimes appeared a quarter of an hour before it was expected, because the earth was then as near to Jupiter as it could be, while the calculations had been made from observations taken when Jupiter was at his greatest distance. It was these eclipses of the satellites that first suggested the possibility that light must have a measurable speed. Once that was taken into account, the occasional lateness of the eclipses was found to be satisfactorily explained; confirmation came in from other sources, and so the discovery of the velocity of light was completely established.</p>
 <p>Professor Barnard, while studying Jupiter in 1892 with the splendid refractor at the Lick Observatory, saw a very small point of light nearer the planet than the nearest of the four known satellites. Further examination showed that this little object was indeed another satellite; so Jupiter has a fifth moon besides the four that have been known so long. This little body is so small and faint that it can only be made out under the most favourable conditions and with the most powerful telescopes.</p>
-<h4>Saturn</h4>
+<h3 class="sub">Saturn</h3>
 <p>Next outside Jupiter, on the frontier of the ancient planetary system, revolves another grand planet called Saturn. His distance from us is sometimes nearly a thousand million miles, and he needs more than a quarter of a century to complete each revolution.</p>
 <p>Some people do not pronounce the names of the planets quite correctly. I have heard of a gardener with a taste for astronomy who occasionally begins to talk about the planets Juniper and Citron; probably you will know which he means. The ancients had discovered Saturn to be a planet, for though he looks like a star, his movement through the constellations could not escape notice once attention was paid to the heavens.</p>
 <figure id="fig-68">
@@ -1016,7 +1367,7 @@
 <p>The ring — or rather the series of rings — surrounding the planet is also shown in Figure 68. These appendages are not fastened to the globe of Saturn by any material bond. They are poised in space without any support, while the globe of the planet proper stands symmetrically inside them.</p>
 <p>I have made a model showing Saturn with his rings, but I have had to fasten the rings to the globe with little pieces of wire, since there is no mechanical way of poising the rings of a model without support as they are poised around the planet. If we throw the beam of the electric lamp on the little planet, we see the shadow it casts on its own ring. Similar shadows can be seen on the real Saturn in the sky, and they prove that the planet does not shine by its own light but by the sunlight falling on it. Here again we see the wide difference between a planet and a star: if our sun were put out, Saturn and all the other planets would vanish from the sky, while the stars would of course twinkle on as before.</p>
 <p>There are three rings round Saturn. They all lie in the same plane, and they are so thin that when they are turned edge-on to us the whole system almost disappears, except in very powerful telescopes. The outer and the inner bright rings are separated by a dark line which can be traced the whole way round. At the inner edge of the inner ring begins that strange structure called the crape ring, which reaches halfway in towards the globe of the planet. The most remarkable thing about the crape ring is that it is semi-transparent: we can sometimes see the globe of the planet through this strange curtain. The crape ring can only be seen with a powerful telescope; the other two are within the reach of very moderate instruments.</p>
-<h4>The Nature of the Rings</h4>
+<h3 class="sub">The Nature of the Rings</h3>
 <p>For the explanation of the nature of Saturn&#x27;s rings we are indebted to the calculations of mathematicians. You might perhaps have thought nothing could be simpler than to suppose the rings were stiff plates of solid material. But the question cannot be settled that way. We know the ring could not bear the strain of the planet&#x27;s attraction if it were a solid body.</p>
 <p>I may illustrate the argument with some familiar facts about bridges. Where the span is small — where a road has to cross a railway, a canal or a river — the arch is of course the proper kind of structure. There is a specially beautiful arch over the river Dee at Chester. But for a longer bridge, masonry arches will not do. Where a considerable span has to be crossed, as at the Menai Straits, or a gigantic one, as at the Firth of Forth, arches must be abandoned and iron bridges of a totally different construction used instead.</p>
 <p>Arches cannot be used beyond a certain span because the strain on the materials becomes too great for them to withstand. Every stone in an arch is squeezed by intense pressure, and there is a limit beyond which even the stoutest stone cannot be relied on. As soon as the span is so great that the stones are squeezed as hard as is compatible with safety, the size limit for that form of arch has been reached.</p>
@@ -1033,7 +1384,7 @@
 <p>Saturn has other claims on our attention besides his rings. He has an elaborate retinue of satellites — no fewer than nine of them; though some are very faint objects, and not nearly as interesting as the system attending Jupiter. The ninth was discovered quite recently by Professor W. H. Pickering of Harvard College Observatory. This little moon, for which the name Phoebe has been suggested, is further from the planet than any of the others. It is a minute object shining as a star of the 15th or 16th magnitude, and goes round the planet in a period of about sixteen months.</p>
 <p>Saturn was the last and outermost of the planets known to the ancients. His path lay on the frontier of the solar system as they knew it; and the magnificence of the planet itself, with its attendant lights and its marvellous rings, made it worthy indeed of so dignified a position. These five planets — Mercury, Venus, Mars, Jupiter and Saturn — made up, with the sun and the moon, the seven &quot;planets&quot; of the ancients. They were supposed to complete the solar system; and more than that, the existence of any other member was thought impossible.</p>
 <p>In modern times two more planets have been discovered. I am not referring now to those little bodies that run about in scores between Mars and Jupiter. I mean two grand first-class planets, far bigger than our earth. One is Uranus, which revolves far outside Saturn; the other is Neptune, which is further still, and whose mighty orbit takes in the whole planetary system within its circuit. To complete its journey round the sun, no less than 165 years is required.</p>
-<h4>William Herschel</h4>
+<h3 class="sub">William Herschel</h3>
 <p>I must begin the account of this discovery by telling you a little story.</p>
 <p>In the middle of the eighteenth century there lived at Hanover a teacher of music named Isaac Herschel. He had a family of ten children, and he did the best for them that his scanty means allowed. William was the fourth of his children, and he inherited his father&#x27;s talent for music, as most of his brothers and sisters did.</p>
 <p>He was a bright, clever boy at school, and made such good progress with his music that by the time he was fourteen he was playing in the military band of the Hanoverian Guards. Then war broke out between France and England; and as Hanover was at that time under the English crown, the French invaded it, and a battle was fought in which the poor Hanoverian Guards suffered terribly. Young Herschel spent the night after the battle in a ditch, and came to the conclusion that he did not like fighting — though he was only a bandsman — and resolved to change his profession.</p>
@@ -1061,7 +1412,7 @@
 <figcaption><b>Figure 70</b> &mdash; The grinding tool — cast iron, turned to the right shape in a lathe and divided across into squares.</figcaption>
 </figure>
 <p>When the amateur astronomer has finished this part of the task, all the great difficulties of his telescope are conquered. The tube may be made of wood, and a square tube will do just as well as a round one. He must also provide a small mirror for the top of the tube, which has to be perfectly flat. Preparing this needs much care, for it is not as easy as you might suppose to get an accurately flat surface. One way is to take three pieces and grind each pair of them together until every pair touches all over; then they must certainly all be flat. One more part is wanted, an eyepiece, and this presents no difficulty: a single glass lens can be made to answer, and your telescope is complete.</p>
-<h4>The Discovery of Uranus</h4>
+<h3 class="sub">The Discovery of Uranus</h3>
 <p>It was in the year 1774 that Herschel first had a view of the heavens through a telescope of his own making. In the early part of his career he does not seem to have made any important discoveries. He was gradually preparing himself for the great achievement that would make his name famous.</p>
 <p>It was on the 13th of March 1781 that the organist of the Octagon Chapel at Bath turned his telescope on the constellation of the Twins and began to look at one star after another.</p>
 <p>You must know that a star merely looks like a little point in a telescope. Even the greatest instrument will only make a star look brighter; it will never show it with a perceptible disc. Looking over the stars that night, Herschel&#x27;s attention was arrested by one object which did look larger when magnified, and which therefore was not a star.</p>
@@ -1083,13 +1434,13 @@
 <p>When Uranus was observed on those earlier occasions and mistaken for a star, its place had been carefully recorded. Those records are now of the utmost use, because they show us the planet&#x27;s past history — and they seem all the more valuable when we remember that Uranus takes no less than eighty-four years to complete a single revolution round the sun. So, since the planet was discovered in 1781, it had completed one revolution by 1865, and is now (1899) about a third of the way round another. The earlier observations reach back almost 200 years, so that altogether we have more or less information about the planet&#x27;s movements over two and a half circuits.</p>
 <p>Uranus is a great deal bigger than the earth, as you will see from the view of the comparative sizes of the planets (Figure 47). It appears to be of a bluish hue; but we cannot tell whether it turns on its axis — or rather I should say we cannot see whether it turns on its axis, for we can hardly doubt that it does.</p>
 <p>Despite the great distance of Uranus from the earth, we have been able to put this planet in the weighing scales just as we did the nearer ones, and we assert with confidence that Uranus is fifteen times as heavy as our earth. For this information we are indebted to its satellites.</p>
-<h4>The Satellites of Uranus</h4>
+<h3 class="sub">The Satellites of Uranus</h3>
 <p>You must use a very good telescope to see the satellites of Uranus. They are four in number and bear the names Ariel, Umbriel, Titania and Oberon. The innermost, Ariel, completes a journey round the planet in two days and a half; Oberon, the most distant, takes thirteen days and a half.</p>
 <p>A planet is always tending to pull its satellite down, and the satellite is saved from falling by the speed at which it revolves. The heavier the planet, the faster its satellites must go round. To take an illustration from our own moon: we know that if the earth were made four times heavier than it is, the moon would have to spin round twice as fast to stay in the same orbit. The speed at which the satellites of Uranus revolve therefore gives us a measure of the planet&#x27;s mass. If Uranus were heavier than he is, his satellites would go round faster; if he were lighter, they would take longer.</p>
 <p>Uranus too seems greatly swollen with cloud, in the same way as Jupiter and Saturn. Indeed, if our earth were as big as Uranus it would weigh four or five times as much as Uranus does. So we are certain that Uranus must be made of materials less dense on the whole than those our earth is made of.</p>
 <p>There is another singular circumstance about the moons of Uranus. I have told you that every body revolving round another by gravitation describes an ellipse; but of course there are many different kinds of that curve, and some may be nearly circles. There is nothing whatever to prevent a satellite revolving round its primary in an exact circle, if it is started properly — in the right direction and at the right speed. All four satellites of this planet seem to revolve in circles so perfect that we can draw an accurate picture of the system with a pair of compasses.</p>
 <p>It is further to be noticed that the four circles seem to lie exactly in one plane. The orbits of the other great planets, and of their satellites, lie in planes tilted at less than 35° to the ecliptic, the plane the earth moves in. Here again the satellites of Uranus are exceptional: the plane they lie in stands up almost square to the plane in which the planet&#x27;s own motion is performed. The moons of Uranus seem to have been given a twist by some accident we are not able to account for.</p>
-<h4>The Discovery of Neptune</h4>
+<h3 class="sub">The Discovery of Neptune</h3>
 <p>The boundaries of the solar system had been much extended by the discovery of Uranus; but they were destined to be enlarged further still by the detection of another vast planet revolving far outside Uranus, whose orbit forms, so far as we know at present, the outline of the whole planetary system.</p>
 <p>I have here to describe one of the greatest discoveries ever made. It is not the magnificence of the outermost planet itself I am referring to, though it is indeed bigger than Uranus. I am thinking rather of the way the discovery was made.</p>
 <p>I mean no disrespect to Herschel when I say that the discovery of Uranus was chiefly a stroke of good fortune; but let me put it that way in order to bring out as strongly as I can how utterly different was the train of ideas that led to Neptune. Herschel merely looked at one star after another until he suddenly came upon the planet, having beforehand not the slightest notion that any such planet was likely to exist. But Neptune was shown to exist before it had ever been seen — and indeed the man who first saw the planet, and knew it for a planet, was not its discoverer.</p>
@@ -1146,7 +1497,7 @@
 <p>Sketches of the various planets, or of the face of the sun, may show slight differences from time to time but are always characteristic enough — just as a photographic portrait will identify a person even though the passing years bring some change in his appearance. But a drawing of a comet is almost useless for identification. You might as well try to identify a cloud, or a puff of smoke, by making a picture of it. Draw a comet at one appearance and sketch particularly the ample tail it is provided with; and the next time it comes round it may very possibly have two tails, or possibly no tail at all.</p>
 <p>We can therefore place no reliance on a comet&#x27;s personal appearance in trying to identify it. The highway it follows through the sky is the only means of recognition, for a comet, if undisturbed by other objects, will never change its actual orbit. But even this method often fails, for it not infrequently happens that in the course of its erratic movements the comet gets into fearful trouble with other heavenly bodies. In such a case the poor comet is sometimes driven so completely off its road that it has to make an entirely new path for itself, and our efforts to identify it are thrown into confusion. It has happened that a second comet, or even a third, is found in nearly the same track; but whether these are wholly different objects, or merely parts of the same original one, it is often impossible to determine.</p>
 <p>The great majority of comets can only be seen with a telescope, and hardly a year passes without at least a few of these faint objects being detected. The number of really brilliant comets that can be seen in a lifetime, however, could be counted on the fingers.</p>
-<h4>Encke&#x27;s Comet</h4>
+<h3 class="sub">Encke&#x27;s Comet</h3>
 <p>We have already mentioned the little body called Encke&#x27;s comet, discovered by an astronomer at Marseilles. It was in the year 1818 that he was scanning the heavens with a small telescope when an object caught his attention. It was not one of those grand long-tailed comets that everyone notices; this body was so faint that it appeared merely as a very small cloud of light, and was recognised as a comet by the fact that it was moving.</p>
 <p>There happen to be other bodies in the sky very like comets. We call them nebulae, and we shall have something to say about them later. It is remarkable that just as a planet is liable to be mistaken for a star, so a comet is liable to be mistaken for a nebula. In each case, however, movement is the test by which the planet or the comet is at once detected. A nebula stays always in one place, like a star, whereas a comet is incessantly moving. Indeed, with a telescope you can actually watch a comet stealing past the stars that lie near it.</p>
 <p>You know that an object a very long way off may appear to move slowly although it is really moving very fast. Look at a steamer near the horizon at sea: in a minute or two it will not appear to have shifted its position appreciably — but that is because it is far off. If you were near the ship you would see her dashing along at perhaps fifteen or twenty miles an hour. In the same way a comet seems to move slowly because it is at such a great distance; whereas in fact, at the time we see it, it is moving faster than any steamer, faster than any express train, faster than any cannon-ball.</p>
@@ -1163,7 +1514,7 @@
 <p>If at any part of its track the body did have to pierce its way through some material — even the thinnest possible air — the unsubstantial nature of cometary material would show at once. The motion would be impeded and the body&#x27;s path would change. A comet may in this way be made very instructive, for it will show us whether space really is as empty as we sometimes suppose.</p>
 <p>Through the greater part of its course, the flimsy little Encke tears along with such ease and speed that there seems to be nothing at all to impede it; and so we learn that space is generally empty. But when the comet begins to wheel round the sun, the freedom of its movement seems to be checked. The unsubstantial object has to force its way with a difficulty it did not meet while it was moving round the greater part of its orbit. From this we learn that there is a thin diffused atmosphere surrounding the sun. We cannot say that it is like our own air; its composition is quite different, and almost the only way we know of its existence is the evidence this comet affords.</p>
 <p>In a former lecture I showed how Encke&#x27;s comet told us the mass of the planet Mercury; now we see how the travels of the same body give us information about the sun himself. I ought to add, however, that some more recent observations seem not to have confirmed the belief that there is resistance of the kind we have just been considering.</p>
-<h4>The Great Comet of Halley</h4>
+<h3 class="sub">The Great Comet of Halley</h3>
 <p>I dare say you would find it more interesting to talk about some big bright comet than about an object as faint as Encke&#x27;s. Unfortunately most of the fine comets pay our system only a single visit. There is only one really splendid object of the kind that comes back to us with anything like regularity.</p>
 <p>It was last seen in the year 1835, and I am glad to tell you it is coming again: it is expected about the year 1910.</p>
 <p>You may ask how we can feel sure that such a prediction will turn out correct. The fact is that this comet has been watched for a great many centuries. We find ancient records, some of them nearly 2000 years old, of the appearance of grand comets; and several of these fit in with the supposition that there is a body completing its journey in a period of about seventy-five or seventy-six years. There are of course thousands of other comets recorded in those old books as well; but what I mean is that among the records a number are found which clearly indicate successive returns of this one particular body.</p>
@@ -1179,14 +1530,14 @@
 <p>Was it not wonderful that mathematicians should be able to find out all these things merely from knowing the track the comet was expected to follow? Clairaut, who devoted himself to the problem, suggested that there might also be disturbances from other causes he knew nothing of, and that consequently the expected return might be a month out either way. Great indeed was the admiration in astronomical circles when, true to prediction, the comet blazed out upon the world within the limits of time Clairaut had specified.</p>
 <p>The remarkable fulfilment of this prophecy entitles us to speak with confidence about the comet&#x27;s past performances. Among all the appearances of Halley&#x27;s comet over the last two thousand years, perhaps the most remarkable is the one in the year 1066. I am sure you will all remember that date from your English history: it is the year of the Conquest.</p>
 <p>In those days they did not understand astronomy as we understand it now. They used to think of a comet as a fearful portent of evil, sent to threaten some frightful calamity — a pestilence, a war, a famine, or something else equally disagreeable. So in the year of the Conquest the appearance of so terrifying an object in the sky was a very significant omen indeed. Attention was concentrated on the spectacle, and a picture of Halley&#x27;s comet as it appeared to the somewhat terrified imaginations of the people of that day has been preserved for us. There is a celebrated tapestry at Bayeux on which historical incidents are shown in beautifully worked pictures, and on that fabric we have a view of Halley&#x27;s comet in a quaint and rather ludicrous aspect. You will read of this comet too in the early pages of Tennyson&#x27;s Harold.</p>
-<h4>How the Telegraph Is Used for Comets</h4>
+<h3 class="sub">How the Telegraph Is Used for Comets</h3>
 <p>In these days the study of comets is pursued with energy. Observatories are placed all over the world, and whenever a comet is discovered the news is spread among those likely to be interested. Suppose one is discovered in the southern hemisphere: the astronomers there write to warn the northern observatories. But comets often move faster than Her Majesty&#x27;s mails, so the telegraph has to be called on.</p>
 <p>The kind of message needed is one that will give the position and the movements of the body. It necessarily involves a good many figures and words, so it is desirable to abbreviate as much as possible for the sake of economy. There is a further difficulty in using the telegraph, because such messages are unintelligible to anyone not specially versed in astronomy. Skilful as telegraph clerks are, they can hardly be expected to be familiar with the technicalities of astronomers. The clerk at the receiving end is handed a message he does not clearly understand; the clerk at the other end did not understand the message given to him either; and between the two of them it has happened that they have transformed the message into something which not only they do not understand but which, unfortunately, nobody else can understand either.</p>
 <p>These difficulties have been got over by an agreement among astronomers which is so simple and interesting that I must tell you of it.</p>
 <p>The kind of message that gives the place of a comet will contain sentences of this sort: &quot;One hundred and twenty-three degrees and forty-five minutes.&quot; Surely it would be an advantage to replace all those words with a single word, particularly if that reduced the risk of error. And this is what the astronomers&#x27; telegraphic arrangement lets them do.</p>
 <p>There is a certain excellent dictionary known as Worcester&#x27;s. I am sure that when Mr Worcester compiled his work he had not the slightest notion of the odd use it would occasionally be put to. Every astronomer taking part in the comet scheme must have a copy of the book.</p>
 <p>To send the message I have just quoted, he takes up his dictionary and turns to page 123. Then he counts down the column to the forty-fifth word on that page, which he finds to be &quot;constituent&quot;; and by this plan the message, or at least this part of it, is just that one word: &quot;constituent.&quot; The astronomer who receives the message and wants to interpret it takes up his own copy of Worcester&#x27;s Dictionary and looks up &quot;constituent.&quot; He sees that it is on page 123 and that it is the forty-fifth word down that page — and so he knows the message means one hundred and twenty-three degrees and forty-five minutes.</p>
-<h4>The Parabola</h4>
+<h3 class="sub">The Parabola</h3>
 <p>Generally speaking, great comets come to us once and are then never seen again. Such bodies do not move in closed ovals or ellipses; they follow another kind of curve, like the one shown in Figure 74. It is a curve every boy ought to know. In fact one of his earliest accomplishments was learning to make a parabola — though he did not call it by any name so fine as that. Every time a ball is thrown into the air it describes part of the beautiful curve geometers know by that word (Figure 74). Indeed, you could not throw a ball so that it described any other curve at all. No boy could throw a stone in a truly horizontal line: it will always curve down a little, and will always in fact be part of a parabola.</p>
 <figure id="fig-74">
 <img src="images/ball/fig74.jpg" alt="The path of a projectile is a parabola. Throw a ball and this is the curve it must describe; you could not make it describe any other." width="427" height="263" loading="lazy">
@@ -1212,7 +1563,7 @@
 <p>I can illustrate what happens like this. Here is a heavy weight hanging from the ceiling on a wire. It hangs straight down, of course, and there it is kept by the pull of the earth. Now suppose I draw the weight aside and let it swing: the motion continues like the beat of a pendulum. The weight is always being pulled as near to the earth as possible; but when it gets to the lowest point it does not stay there. It passes through that point and rises up the other side.</p>
 <p>The reason is that the weight has gathered speed by the time it reaches the lowest point, and by virtue of that speed it passes through the position where it would naturally rest and actually climbs the other side, against the earth&#x27;s pull, which is dragging it back the whole time. This illustrates how a comet can pass by, and even recede from, the body that is continually attracting it.</p>
 <p>A few words of caution must be added. Suppose you had an ellipse so long that the comet would take thousands and thousands of years to complete a circuit. Then the part of the ellipse the comet travels during the time we can see it is so like a parabola that we might well be mistaken about it. A geometer will tell us that if one end of an ellipse were carried further and further away, the end that stayed with us would grow more and more like this curve. So some of the comets that seem to move in parabolas may really be moving in extremely elongated ellipses, and may after excessively long periods come back to visit us again.</p>
-<h4>The Materials of a Comet</h4>
+<h3 class="sub">The Materials of a Comet</h3>
 <p>A comet is made of very unsubstantial material. We can show this in a very interesting way when we see one moving across the sky between the earth and the stars. Sometimes a comet will pass over a cluster of very small stars, so faint that the lightest cloud that ever crosses the sky would be quite enough to hide them; yet the stars are distinctly visible right through the comet, even though it may be hundreds of thousands of miles thick. This shows how exceedingly flimsy a comet&#x27;s substance is: a few feet of haze or mist will put out the brightest star, while this immense curtain of comet-stuff, whatever it is made of, is practically transparent.</p>
 <p>I have often told you that we are able to weigh the heavenly bodies; but a comet gives us a great deal of trouble. You see that the weighing machine must be of a very delicate kind if you are to weigh a very light object.</p>
 <p>Take, for example, a little lock of golden hair, which no doubt generally has a value quite independent of how many grains it contains. Suppose, however, that we were curious enough to want to know its weight. One of those beautiful balances in our laboratories would tell us; indeed, if you snipped a little fragment off a single hair, the balance would be sensitive enough to weigh that. But if you had nothing but a common pair of scales such as would do for the parcel post, you could never weigh anything as light as a lock of hair. To begin with, you have no small enough weights; and even if you had, they would be no use, for the scale is too coarse to register such a trifle.</p>
@@ -1242,7 +1593,7 @@
 <p>If the comet moves in an elliptical orbit and so comes back time after time to be invigorated by a good roasting from the sun, it will of course try to manufacture a tail on each approach. But the quantity of material available for making tails is limited to what the comet started with; no fresh supply can be added. If, then, it spends a portion every time it comes round, an inevitable consequence follows.</p>
 <p>Suppose a boy is given a sovereign when he goes back to school, and that every time he passes the pastry-cook&#x27;s shop some of his money disappears in a manner I dare say you can guess. I need not tell you that before long the sovereign will have vanished entirely. In just the same way comets cannot escape the natural consequences of their extravagance. Their store of tail-making substance must gradually diminish; at each successive return the tails must generally decline in size and magnificence; until at last the necessary material has all been squandered, and we have the pitiful spectacle of a comet with no tail at all.</p>
 <p>The gigantic size of comets must astonish us. A pebble tossed into a river would not be more completely engulfed than our whole earth is when it enters the tail of one of these bodies. But now we pass by a sudden transition to the very smallest bodies of all — little objects so minute that you could carry them in your waistcoat pocket. You will perhaps be surprised that such things can play an important part in our system, and have a momentous connection with mighty comets.</p>
-<h4>Meteors</h4>
+<h3 class="sub">Meteors</h3>
 <p>If you look out of your window at the midnight sky, or take a walk on a fine clear night, you will occasionally see a streak of light dash across the heavens, making what is called a falling star, or a shooting star (Figure 77).</p>
 <p>It is not really one of the regular stars that has darted from its place. The objects we are now talking about are quite different from stars proper. To begin with, shooting stars are comparatively close to us when we see them, and they are very small — whereas the stars themselves are enormous globes far bigger than our earth, often bigger even than the sun.</p>
 <p>Sometimes a great shooting star is seen which makes a tremendous blaze of light, as bright as the moon or brighter still. These we call meteors, and you will be very fortunate if you ever see a really fine one. Astronomers cannot predict them as they predict the appearances of the planets; bright meteors come quite unexpectedly, and it is a matter of chance who has the privilege of seeing them. But it is not the great meteors we are going to speak of particularly. They are often not as interesting as the small ones.</p>
@@ -1267,7 +1618,7 @@
 <p>The shooting star may have 100 times the pace of the rifle bullet; and multiplying 100 by 100 we get 10,000. So the heat produced by the shooting star before its motion was arrested in dashing through the air would be 10,000 times what the rifle bullet gained in its flight. If the temperature of the bullet rose only a single degree by friction, the shooting star might gain 10,000 degrees — and that would be enough to melt and boil away any object that ever existed. We need not be surprised, then, that friction through the air, and friction alone, has proved cause enough to produce all the heat needed to account for the most brilliant of meteors.</p>
 <p>It is rather fortunate for us that meteors do come in at this frightful speed. If the little bodies moved only as fast as a rifle bullet, or even four or five times as fast, they would pelt down on the earth in solid form. On rare occasions bodies from the heavens do strike the ground; but the great majority of those that fall are entirely transformed into harmless vapour.</p>
 <p>Indeed the earth would be almost uninhabitable from this cause alone were it not for the protection the air affords. All day and all night innumerable missiles would be whizzing about us; and though many of them are undoubtedly very small, at 100 times the speed of a rifle bullet the fusillade would be most unpleasant. It is the intense hurry of these celestial bullets to get at us that is the very source of our safety: it dissipates them into streaks of harmless vapour.</p>
-<h4>What Becomes of the Shooting Stars</h4>
+<h3 class="sub">What Becomes of the Shooting Stars</h3>
 <p>When we throw a lump of coal on the fire, all that is soon left is a little pinch of ash, and the rest of the coal has vanished. You might think it had been annihilated altogether; but that is not nature&#x27;s way. Nothing is ever completely destroyed; it is merely transformed, changed into something else. The greater part of the coal has united with oxygen taken from the air and formed a new gas, which has gone up the chimney. Every particle that was in the coal can be accounted for in this way, and in the act of transformation heat is given out.</p>
 <p>A meteor is transformed too, but the substance it contains is not lost, though it is changed into glowing vapour. It is known that with enough heat any substance can be turned into vapour, just as water can be boiled into steam.</p>
 <p>Look at an electric light flashing between two pieces of carbon. Carbon is one of the most difficult substances to melt; yet such is the intense heat generated by the electric current that the carbon is not only melted but actually turned into vapour — and it is that vapour, glowing with heat, that gives us the brilliant light. In the same way iron can be made red-hot, then white-hot, then boiled and turned into an iron vapour, if we may call it so. There is indeed plenty of such iron vapour in the universe; quantities of it surround the sun and some of the stars.</p>
@@ -1283,7 +1634,7 @@
 <p>The snowball has grown by taking material in from outside; and as it grew heavier and heavier it lapped up more and more snow as it rolled, so that with every increase in size its capacity for growing larger still increased too.</p>
 <p>I want you to think of our earth as a snowball rolling on through space, gathering up and taking into itself, every day and every hour and every minute, the little shooting stars it meets on its way. No doubt the yearly accumulation is a very small quantity compared with the whole size of the earth; but the earth is always drawing material in and — now, at all events — never giving any back. Carry that process on long enough and astonishing results may follow.</p>
 <p>You have all heard many maxims on this subject: how every little saving will in the end reach a respectable, or a gigantic, total. Nature abounds with illustrations of the principle. All the water that thunders over Niagara is merely a sufficient number of little raindrops collected together. Our earth has been gradually hoarding up, through countless ages, all the meteoric dust that has rained on it; and the larger the earth grows, the bigger the net it spreads and the greater its power of capturing wandering bodies. So our earth, ages and ages ago, may have been considerably smaller than it is now — and a large proportion of this globe we live on may have come from the little shooting stars that rain incessantly onto its surface.</p>
-<h4>Grand Meteors</h4>
+<h3 class="sub">Grand Meteors</h3>
 <p>I dare say many of those here will have opportunities in the course of their lives of seeing some of the great meteors, or fireballs, that are occasionally displayed. Generally speaking about a hundred of these splendid objects are recorded every year. We are never warned that they are coming; they take us unawares, so we have no chance of making proper arrangements to see them. There is only the chance that those fortunate enough to see one will have noted the circumstances accurately enough for us to make use of their observations.</p>
 <figure id="fig-78">
 <img src="images/ball/fig78.jpg" alt="How to find the height of a meteor. Two observers far apart — one at London, one at York — each note how high above their own horizon it appeared, and a little Euclid does the rest." width="398" height="283" loading="lazy">
@@ -1297,7 +1648,7 @@
 <p>It began over Kansas at about seventy-five miles up, and flew from there for a thousand miles at ten or fifteen miles a second, until it disappeared somewhere near Lake Ontario. Over a certain region between Chicago and St Louis the great ball of fire burst into a number of pieces, forming a cluster of glowing stars that seemed to chase one another across the sky. That cluster must have been about forty miles long and five miles wide; and when the explosion happened a most terrific noise was produced, so loud that many thought it was an earthquake.</p>
 <p>A remarkable circumstance shows the tremendous height at which the explosion took place. The meteor had burst into pieces, the display was all over and beginning to be forgotten — and yet nothing had been heard. It was not until a quarter of an hour after the explosion had been seen that a fearful crash was heard at Bloomington. The explosion had actually occurred 180 miles from the spot; and since sound takes five seconds to travel a mile, you can easily calculate that the noise needed a quarter of an hour for its journey. What a tremendous noise it must have been!</p>
 <p>Shooting stars come in every grade of brightness. Beginning with the more gorgeous objects, which have been compared to the moon or even to the sun himself, we come down to others as bright as Venus or Jupiter, and others again as bright as stars of various degrees. The fainter shooting stars are far more numerous than the conspicuous ones; indeed there are multitudes so extremely feeble that the unaided eye cannot show them at all, and they only become visible in a telescope. It is not uncommon, while watching the heavens at night, to notice a faint streak of light dashing across the field of the instrument. That is a shooting star invisible except through the telescope.</p>
-<h4>The Great November Showers</h4>
+<h3 class="sub">The Great November Showers</h3>
 <figure id="fig-79">
 <img src="images/ball/fig79.jpg" alt="A great shower of shooting stars — meteors falling in dozens, in scores, in hundreds, all seeming to stream out from one point in the sky." width="451" height="474" loading="lazy">
 <figcaption><b>Figure 79</b> &mdash; A great shower of shooting stars — meteors falling in dozens, in scores, in hundreds, all seeming to stream out from one point in the sky.</figcaption>
@@ -1338,7 +1689,7 @@
 <p>It is true that the meteors themselves do not generally seem to come all the way from that place. It is the direction of their luminous trails, produced backwards, that carries the eye to the radiant (Figure 81). If a meteor were actually seen at the radiant it would certainly be coming straight towards us, and would not appear as a streak of light at all; it would merely look like a star suddenly blazing into splendour and then sinking back into invisibility. Every meteor appearing near that point is aimed very nearly at the observer, and its path therefore seems greatly foreshortened.</p>
 <p>I can illustrate this with a long straight rod. If I point it directly at you, you can only see the end; if I point it nearly at you, it seems very much shortened. During the great shower of 1866 many meteors could be seen so close to the radiant in Leo that they seemed merely short marks in the sky; and some, indeed, seemed nothing but star-like points swelling into brilliance and then going out.</p>
 <p>This is why we call this system of shooting stars the Leonids. They bear the name because their radiant lies in the constellation Leo; and unless the direction of a shooting star comes from that point it is not a Leonid. Even then it would not be a Leonid unless the date were right — the 13th of November, or within a day of it. So we have two characteristics belonging to a system of shooting stars: the date on which they occur, and the point they radiate from.</p>
-<h4>Other Great Showers</h4>
+<h3 class="sub">Other Great Showers</h3>
 <p>To illustrate what I have said, let us speak of another system of shooting stars. They are due every August, from the 9th to the 11th, and their directions diverge from a point in the constellation Perseus. I may remind you of the dates of this shower, as well as of the November meteors we have just spoken of, by quoting the following production:</p>
 <pre class="outline">    If you November&#x27;s stars would see,
     About the fourteenth watching be.
@@ -1353,7 +1704,7 @@
 <p>There is a comet discovered by the astronomer Biela. It is a small object, needing a telescope to show it, and it completes each revolution in about seven years — or rather, I should say, that used to be the time the comet spent on its journey, for a life of trouble and disaster seems lately to have all but extinguished the unfortunate object.</p>
 <p>In 1872 the comet was due in our neighbourhood; and on the night of the 27th of November that same year the earth crossed its track, and in doing so the shower of shooting stars was seen. This was a remarkable coincidence. We crossed the comet&#x27;s path at the very time we knew the comet ought to be there; and though we did not see the comet, we saw a shower of shooting stars — and a wonderful shower too.</p>
 <p>So peculiar a circumstance suggested at once that the comet and the shooting stars must somehow be connected. And this is a suggestion we can test another way. We know the comet&#x27;s history, and we know that at the very time of the shower it was approaching from the direction of the constellation Andromeda — from the very quarter, in fact, that the shooting stars had themselves travelled from. Taking all these things together, it seems impossible to doubt that the shoal of shooting stars was, if not the comet itself, something closely connected with that famous body.</p>
-<h4>Meteorites</h4>
+<h3 class="sub">Meteorites</h3>
 <p>Some years ago a farmer living near Rowton in Shropshire noticed a hole on a path in one of his fields, made suddenly by some mysterious and unknown agent. The labourers nearby told him they had just heard a remarkable noise; and when the farmer put his hand down into the hole he felt something hot at the bottom of it. He took a spade and dug the strange body up, and found it to be a piece of iron weighing about seven pounds. He was naturally amazed at such an occurrence, and brought the body home with him.</p>
 <p>Where did that piece of iron come from? It is plain it cannot always have been in the ground: the noise and the freshly made hole show that, and so does the fact that the iron was hot — a piece of iron a few feet below the earth&#x27;s surface cannot stay warm for any length of time. It is therefore clear that the iron must have fallen from the sky.</p>
 <p>This is a marvellous notion. Indeed it seemed so incredible that at first people refused to believe that stones, or solid lumps of iron, could fall from the heavens to the earth. But they had to believe it; the evidence was too conclusive.</p>
@@ -1382,14 +1733,14 @@
 <p>We may therefore give up any hope of making a practical map of our system on this scale if Sirius is to have its proper place. Let us take some other star, then; and we shall naturally try the nearest of all. It is one we do not know in this part of the world, but people living in the southern hemisphere are well acquainted with it. Its name is Alpha Centauri. Even for this star we should need a drawing three or four miles long, if the distance from the earth to the sun is to be one inch.</p>
 <p>You see what an isolated position our sun and his planets occupy. The members of the family are all close together, and the nearest neighbours are at enormous distances.</p>
 <p>There is a good reason for this separation. The stars are very pretty, and perfectly harmless to us where they are; but they might be very troublesome neighbours if they were much closer to our system. It is well that they are so far off. They would be constantly making disturbances in the sun&#x27;s family if they were near at hand — sometimes dragging us into unpleasantly great heat by bringing us too close to the sun, sometimes producing a coolness by pulling us away from him, which would be quite as disagreeable.</p>
-<h4>The Stars Are Suns</h4>
+<h3 class="sub">The Stars Are Suns</h3>
 <p>We are about to discuss one of the grandest truths in the whole of nature.</p>
 <p>We have seen that this sun of ours is a magnificent globe immensely larger than the greatest of his planets, and that the greatest of those planets is immensely larger than this earth. But now we are to learn that our sun is only a star — and not nearly so bright a star as many of those that shine over our heads every night.</p>
 <p>We are comparatively close to the sun, so we are able to enjoy his beautiful light and cheering heat. Each of those other myriad stars is a sun too, and the splendour of those distant suns is often far greater than our own; but we are so enormously far from them that they appear dwindled into insignificance.</p>
 <p>To judge fairly between our sun and a sun like Sirius, we should have to stand halfway between the two. It is impossible to make an impartial estimate when we find ourselves close beside one star and a million times as far from the other. Once we allow for the imperfection of our point of view, we can grasp the majestic truth that the sun is no more than a star, and that the other stars are no less than suns.</p>
 <p>This gives us an imposing idea of the extent and magnificence of the universe we are placed in. Look up at the sky at night: you see a host of stars. Try to think that every one of them is itself a sun. It may well be that those suns have planets circling round them; but it is hopeless for us to expect to see such planets.</p>
 <p>If you were standing on one of those stars and looking back towards our system, you would not see the sun as the brilliant and gorgeous object we know so well. If you could see him at all, he would look merely like a star, not nearly as bright as many you can see at night. Even with the biggest of telescopes to help you, you could never make out from one of those bodies the planets that surround the sun. No astronomer among the stars could see Jupiter, even if his sight were a thousand times as good and his telescope a thousand times as powerful as any sight or telescope we know. An object as minute as our earth would of course be still more hopelessly beyond any possibility of vision.</p>
-<h4>The Numbers of the Stars</h4>
+<h3 class="sub">The Numbers of the Stars</h3>
 <p>To count the stars is a task beyond the power of man to accomplish.</p>
 <p>Even without a telescope we can see a great multitude of stars from this part of the world; and there are many constellations in the southern hemisphere that never rise above our horizon. If we went to the equator and waited there for twelve months, all the stars in the heavens would in turn have come into view. An astronomer, Houzeau, who had the patience to count them, made the number about 6000. That is the naked-eye estimate of the star population of the heavens. But if instead of relying on unaided sight you get the help of a little telescope, you will be astounded at the enormous multitude of stars it discloses.</p>
 <figure id="fig-82">
@@ -1413,7 +1764,7 @@
 <p>Consider the multiplicity of beings and objects in a ship: the captain and the crew, the passengers, the cabins, the engines, the boats, the rigging, the stores. Think of all the varied interests gathered there — and then reflect that out on the ocean at night the sole indication of this elaborate structure&#x27;s existence was the few beams of light that happened to shine out of it.</p>
 <p>Now raise your eyes to the stars. There are the twinkling lights. We cannot see what they illuminate; we can only guess what untold wealth of non-luminous bodies may lie near them. But we may feel certain that just as the few gleaming lights of a ship are utterly inadequate to give a notion of the nature and contents of an Atlantic steamer, so the twinkling stars are utterly inadequate to give even the faintest conception of the extent and the interest of the universe.</p>
 <p>We merely see the self-luminous bodies. Of the multitudes of objects, and the elaborate systems of which those bodies are only the conspicuous points, we see nothing and we know very little. We are, however, entitled to infer from an examination of our own star — the sun — and of the beautiful system surrounding it, that these other suns may be splendidly attended too. That is quite as reasonable a supposition as that a set of lights seen at night on the Atlantic indicates the existence of a fine ship.</p>
-<h4>The Clusters of Stars</h4>
+<h3 class="sub">The Clusters of Stars</h3>
 <p>On a clear night you can often see a track of faint light stretching across the sky, which astronomers know as the Milky Way. It runs down below the horizon and on round the earth, forming a girdle about the heavens.</p>
 <p>When we examine the Milky Way with a telescope we find, to our amazement, that it consists of myriads of stars, so small and so faint that we cannot distinguish them individually; we merely see the glow made by their collected rays. And remembering that our sun is a star, and that the Milky Way surrounds us, it would almost seem that our sun is itself one of the host of stars forming this cluster.</p>
 <figure id="fig-83">
@@ -1424,7 +1775,7 @@
 <p>But there are other clusters. Here is a picture of one known as the Globular Cluster in the Centaur (Figure 83). It is a ball of stars so far away that, however large those several suns may really be, they have dwindled to extremely small points of light.</p>
 <p>A homely illustration may show what a globular cluster looks like in a good telescope. I take a pepper pot and shake it out over a sheet of white paper until there is a little heap at the centre with other grains scattered loosely about. Now imagine every one of those grains of pepper turned into a tiny electric light, and you have some idea of what a cluster of stars looks like through a telescope of sufficient power.</p>
 <p>There are multitudes of such groups scattered through the depths of space, and they need our biggest telescopes to show them properly. We have seen that our sun is a star, only one of the magnificent cluster forming the Milky Way; and we have seen that there are other groups scattered through the length and depth of space. This is how we get a notion of the rank our earth holds in the scheme of celestial things.</p>
-<h4>The Rank of the Earth as a Globe in Space</h4>
+<h3 class="sub">The Rank of the Earth as a Globe in Space</h3>
 <p>Let me give an illustration to explain more fully the relation the earth bears to the other globes that abound through space — and you must allow me to draw a little on my imagination.</p>
 <p>I shall suppose that Her Majesty&#x27;s mails extend not only over this globe but communicate with other worlds; that postal arrangements exist between Mars and the earth, between the sun and Orion — in fact everywhere throughout the whole extent of the universe. Let us consider how our letters ought to be addressed.</p>
 <p>Take the case of Mr John Smith, merchant, who lives at 1001 Piccadilly; and let us suppose Mr Smith&#x27;s business is so extensive that it reaches not only all over this globe but away through space. Suppose the firm has a correspondent living — let us say — in the constellation of the Great Bear. When that man of business wants to write to Mr Smith from those remote regions, what address must he put on the letter, so that the Postmaster-General of the universe shall make no mistake about delivering it? He will write as follows:</p>
@@ -1445,7 +1796,7 @@
 <p>But from his correspondent in the Great Bear the address would still be incomplete. They cannot see our earth from there, and even the sun himself looks only like a small star — one, in fact, of thousands of stars elsewhere. Still, each star can be distinguished, and our sun may be recognised from the Great Bear by some designation. We shall add the line &quot;Near the Sun&quot;, and then I think that from that constellation, or from any of the other stars around us, Mr John Smith&#x27;s address may be regarded as complete.</p>
 <p>But Mr Smith&#x27;s correspondence may be wider still. He may have an agent living in the cluster of Perseus, or on some object fainter and more distant yet. Then &quot;Near the Sun&quot; is utterly inadequate as a final line, for the sun — if it can be seen from there at all — will have the significance of an exceedingly minute star, no more to be given a special name than each of the several leaves on the trees of a forest.</p>
 <p>What that distant correspondent will know is not the earth, nor the sun, but only the cluster of stars in which the sun is a single unit. Again we use our own name for the cluster and call it the &quot;Milky Way&quot;; and when we have added that line, Mr John Smith&#x27;s address is as complete as circumstances will permit. I think a letter posted to him anywhere ought now to reach its destination. To perfect it, however, we shall finish with one line more: &quot;The Universe.&quot;</p>
-<h4>The Distances of the Stars</h4>
+<h3 class="sub">The Distances of the Stars</h3>
 <p>I must now tell you something about the distances of the stars. I shall not attempt to explain fully how astronomers make such measurements, but I will give you some notion of how it is done.</p>
 <p>You may remember I showed you how we found the distance of a ball hung from the ceiling. The principle of the method for finding a star&#x27;s distance is much the same, except that we make the two observations not from the two ends of a table, nor even from opposite sides of the earth, but from two opposite points of the earth&#x27;s orbit — which are therefore 186,000,000 miles apart.</p>
 <p>Imagine that on Midsummer Day, standing on the earth here, I measure with a piece of card the angle between the star and the sun. Six months later, on Midwinter Day, when the earth is at the opposite point of its orbit, I again measure the angle between the same star and the sun; and now we can determine the star&#x27;s distance by making a triangle.</p>
@@ -1480,7 +1831,7 @@
 <p>And when you did get there and asked for a ticket at a hundred miles for a penny, do you think you would get any change? No doubt it would take some little time to count the money; but when it was counted, the clerk would tell you there was not enough — that he must have nearly two hundred millions of pounds more.</p>
 <p>That will give some notion of the distance of the nearest star. And we may multiply it by ten, by a hundred, even by a thousand, and still not reach the distance of some of the remoter stars the telescope shows us.</p>
 <p>Because the stars are so immensely far away, we can only see them as mere points of light. We can never see a star as a globe with markings on it like the moon or one of the planets. Indeed the better the telescope, the smaller the star appears — though of course its brightness increases with every addition to the light-grasping power of the instrument.</p>
-<h4>The Brightness and Colour of Stars</h4>
+<h3 class="sub">The Brightness and Colour of Stars</h3>
 <p>Another thing to notice is the way stars are arranged in classes according to their lustre. The brightest, of which there are about twenty, are said to be of the first magnitude. Those just below the first rank as the second; those just below the second are reckoned the third; and so on. The smallest points your unaided eyes will show you are of about the sixth magnitude. The telescope then reveals stars fainter and fainter, down to what we call the seventeenth or eighteenth magnitude, and even lower. The number of stars in each class increases greatly among the small ones.</p>
 <p>Most of the stars are white, though many are of a somewhat ruddy hue. There are a few telescopic points that are intensely red; some show beautiful golden tints; and others are blue or green.</p>
 <p>There are some curious stars that change their brilliance regularly. Let me try to illustrate the nature of these variables.</p>
@@ -1492,7 +1843,7 @@
 </figure>
 <p>This imaginary gas lamp is exactly paralleled by a star called Algol, in the constellation Perseus (Figure 84), which goes through the very series of changes I have described. Ordinarily it is a bright star of the second magnitude; and whatever the cause may be, it performs its variations with marvellous uniformity. Algol has always arrested the attention of those who watched the heavens, and in early times it was looked on as the eye of a Demon.</p>
 <p>There are many other stars that change in brightness. Most of them need much longer periods than Algol; and sometimes a new star that nobody has ever seen before will suddenly kindle into brilliance. It is now known that the bright star Algol is attended by a dark companion, and that this dark star sometimes comes between Algol and the observer and cuts off the light. That is how the loss of brightness is produced.</p>
-<h4>Double Stars</h4>
+<h3 class="sub">Double Stars</h3>
 <p>Whenever you get a chance of looking at the heavens through a telescope, you should ask to be shown what is called a double star.</p>
 <p>There are many stars in the heavens which look quite unremarkable to the unaided eye but which a good telescope shows at once to be of a complex nature. These are what we call double stars: two quite distinct stars placed so close together that the unaided eye cannot separate them, though under the magnifying power of the telescope they are seen apart. To give you some notion of what these objects are like, I shall briefly describe three of them.</p>
 <p>The first lies in that best known of constellations, the Great Bear. If you look at his tail, which is made of three stars, you will see a small star near the middle one of the three. We call that little star Alcor; but it is the brighter star near Alcor that I want to draw your attention to. The sharpest eye would never suspect that it is composed of two stars close together. Even a small telescope, however, shows that it is; and this is the easiest observation, and the first, that a young astronomer should make on turning a telescope to the heavens. You will not, of course, imagine that I mean Alcor to be the second component of the double star. It is the bright star near Alcor that is the double.</p>
@@ -1506,7 +1857,7 @@
 <p>There is often so much diffused light around the bright stars seen in a telescope, and so much twinkling in certain states of the atmosphere, that stars appear to dance about in a rather puzzling fashion — especially to someone unused to astronomical observation. I remember hearing of a gentleman who once came to visit an observatory. The astronomer showed him Castor through a powerful telescope as a fine specimen of a double star; and then, by way of improving his little lesson, mentioned that one of these stars was revolving round the other. &quot;Oh, yes,&quot; said the visitor, &quot;I saw them going round and round in the telescope.&quot; He would, however, have had to wait a few centuries with his eye at the instrument before he was entitled to say so.</p>
 <p>Double stars also frequently delight us with beautifully contrasted colours. I dare say you have often noticed the red and green lights used in railway signal lamps. Imagine one of those red lights and one of those green ones far up in the sky and placed close together, and you have some idea of what a coloured double star looks like — though perhaps I should add that the hues in the heavenly bodies are not as vividly different as our railway people find necessary.</p>
 <p>There is a particularly beautiful double star of this kind in the constellation of the Swan. You could make an imitation of it by boring two holes with a red-hot needle in a piece of card and covering one of them with a small bit of the topaz-coloured gelatine that Christmas crackers are made with, colouring the other with blue gelatine. A slide made on this principle, put into the lantern, gives a very good representation of the two stars on the screen. There are many other coloured doubles besides this one; and indeed it is noteworthy that we hardly ever find a blue or a green star by itself in the sky. It is always a member of one of these pairs.</p>
-<h4>How We Find What the Stars Are Made Of</h4>
+<h3 class="sub">How We Find What the Stars Are Made Of</h3>
 <p>Here is a piece of stone. If I wanted to know what it was made of, I should ask a chemist. He would take it into his laboratory, crush it to powder, and then, with his test tubes and the liquids in his bottles and his weighing scales and his other apparatus, tell me all about it: so much of this, so much of that, plenty of this, none at all of that.</p>
 <p>But now suppose you ask this chemist to tell you what the sun is made of, or one of the stars. You have no sample of it to give him — how then can he possibly find out anything about it? Well, he can tell you a good deal; and this is the wonderful discovery I want to explain to you.</p>
 <p>We now turn the gas down and I kindle a brilliant red light. Perhaps some of those I see before me have occasionally ventured on the somewhat dangerous practice of making fireworks. If there is any boy here who has ever built a sky-rocket, and put in the little balls at the top that burn with such vivid colours when the explosion comes, he will know that the substance which tinged that red fire must have been strontium. He will recognise it by the colour, because strontium gives a red light that nothing else will give.</p>
@@ -1534,7 +1885,7 @@
 <figcaption><b>Figure 85</b> &mdash; How to split up a ray of light. The wedge of glass bends the blue further aside than the red, and the beam that looked so pure and simple opens out into the whole rainbow.</figcaption>
 </figure>
 <p>I am sure it will interest everybody to know that the elements the stars contain are not altogether different from those our earth is made of. It is true there may be substances in the stars that we know nothing of here; but it is certain that many of the commonest elements on earth are present in the most distant bodies. I shall mention only one, the metal iron. That useful substance has been found in some of the stars which lie at almost incalculable distances from the earth.</p>
-<h4>The Nebulae</h4>
+<h3 class="sub">The Nebulae</h3>
 <p>As we draw towards the close of these lectures I must say a few words about some dim and mysterious objects we have not yet mentioned. They are what are called nebulae, or little clouds; and in one sense they are justly called little, for each of them takes up only a very small spot in the sky compared with what an ordinary cloud in our own air would fill.</p>
 <p>The nebulae are, however, objects of the most stupendous proportions. If our earth and thousands of millions of bodies quite as big were all put together, they would not be nearly as great as one of these nebulae.</p>
 <p>Astronomers reckon the nebulae by thousands, though I must add that most of them are apparently faint and uninteresting. A nebula is sometimes liable to be mistaken for a comet; but a comet, as I have explained, is at once distinguished by the fact that it moves and changes its appearance from hour to hour, whereas scores of years may pass without any change in the look or the position of a nebula.</p>
@@ -1564,7 +1915,7 @@
 <p>We can make many experiments with smoke-rings. Here, for instance, I take a box that is empty so far as smoke goes; but air-rings can still be driven out of it. You cannot see them, but you can feel them even at the other side of the room, and, as you see, they will blow out a candle.</p>
 <p>I can also shoot invisible air-rings at a column of smoke; and when the missile strikes the smoke it makes a little commotion and comes out on the other side, carrying enough smoke with it to make itself visible, with the solid black-looking ring of air seen inside.</p>
 <p>More striking still is another way of producing these rings. I charge this box with ammonia, and you cannot see the rings that come from it. There is a column of the vapour of hydrochloric acid, which you cannot see either. But when the invisible ring enters the invisible column, a sudden union takes place between the vapour of the ammonia and the vapour of the hydrochloric acid; the result is a solid white substance in extremely fine dust, which renders the ring instantly visible.</p>
-<h4>What the Nebulae Are Made Of</h4>
+<h3 class="sub">What the Nebulae Are Made Of</h3>
 <p>There is a fundamental difference between the illumination of the little rings I have shown you and that of the great rings in the heavens. I had to light our smoke with the electric lamp, for otherwise you would not have been able to see it. The white substance formed by the union of ammonia and hydrochloric acid has of course no more light of its own than a piece of chalk; it needs light falling on it from elsewhere to make it visible. If the ring nebula in Lyra were made of such material, we could not see it at all.</p>
 <p>The sunlight which lights the planets might of course light up an object like the ring, if it were comparatively near us; but Lyra is at such a stupendous distance that any light the sun could send out there would be as feeble as the light we receive from a fixed star. Could we show our smoke-rings, for instance, if instead of the electric lamp I merely cut a hole in the ceiling and let the feeble twinkle of a star in the Great Bear shine through? In just the same way, sunbeams would be utterly powerless to light anything at those stellar distances.</p>
 <p>If the sun were extinguished altogether, the calamity would no doubt be a very dire one so far as we are concerned; but the effect on the other celestial bodies — moon and planets excepted — would be of the very slightest description. All the stars of heaven would go on shining as before. Not a point in one of the constellations would be altered; not a variation in brightness, not a change in the hue of any star could be noticed. The thousands of nebulae and clusters would be absolutely unchanged.</p>
@@ -1576,7 +1927,7 @@
 <p>We are not left entirely in doubt about the constitution of these gaseous nebulae, for we can pass their light through the prism in the way I explained when we were speaking of the stars. Distant as that ring in Lyra may be, it is interesting to learn that the ingredients it is made of are not entirely different from substances we know on our own earth.</p>
 <p>The water in this glass, and every drop of water anywhere, is formed by the union of two gases, one of which is hydrogen. This is an extremely light material, as you can see from the little balloon that rises so prettily when filled with it. Hydrogen also burns very readily, though the flame is almost invisible; and when I blow a jet of oxygen through the hydrogen I produce a little flame of very intense heat. I hold a steel pen in that flame, for instance, and it glows and sputters and falls away in white-hot drops.</p>
 <p>It is needless to say that, as a constituent of water, hydrogen is one of the most important elements on this earth. It is therefore of interest to learn that hydrogen, in one form or another, is a constituent of the most distant objects in space the telescope has revealed.</p>
-<h4>Photographing the Nebulae</h4>
+<h3 class="sub">Photographing the Nebulae</h3>
 <p>In recent years we have learnt a great deal about the nebulae through the help photography has given us.</p>
 <p>Look at this group of stars forming the beautiful little configuration known as the Pleiades (Figure 89). It looks like a miniature of the Great Bear; indeed it would be far more appropriate to call the Pleiades the Little Bear than to give that title to a quite different constellation, as has unfortunately been done.</p>
 <p>The Pleiades form a group containing six or seven stars visible to the ordinary eye, though people with exceptionally good sight can usually see a few more. In an opera glass the Pleiades become a beautiful spectacle, though in a large telescope the stars appear too far apart to make a really effective cluster.</p>
@@ -1605,7 +1956,7 @@
 <p>How is so rapid a change in a star&#x27;s lustre to be accounted for? In a few days its brightness had undergone an extraordinary increase. This does not tell us for certain that the star lay in the glowing gas; but the most rational explanation I have heard offered is one due, I believe, to my friend Mr Monck. He has suggested that the sudden outbreak of brilliance might be accounted for on the same principles by which we explain the ignition of meteors in our own atmosphere. If a dark star, moving at terrific speed through space, were suddenly to plunge into a dense region of the nebula, heat and light must be given off in abundance enough to transform the star into a brilliant object.</p>
 <p>If, therefore, we knew the distance of that star at the time it was in Andromeda, we should of course learn the distance of that interesting object. This has been attempted; and it has been shown that the Great Nebula must be very much further from us than the star whose distance I tried a little while ago to give you some notion of.</p>
 <p>We thus realise the enormous size of the Great Nebula. It appears that if we laid down on a map of this object, accurately to scale, a map of the solar system — the sun in the centre and all the planets round it in their true proportions, out to the boundary traced by Neptune — that area, vast as it is, would be a mere speck on the drawing. Our system would have to be enormously bigger before it covered anything like the area of sky one of these great objects takes in. Here is a sketch of a nebula (Figure 91), and beside it I have marked a dot to indicate our solar system. We may feel confident that the Great Nebula is at the very least as mighty as that proportion suggests.</p>
-<h4>Conclusion</h4>
+<h3 class="sub">Conclusion</h3>
 <p>And now, my young friends, I am drawing near the close of this course of lectures, which has occupied us — not unprofitably, I hope you will think — for part of our Christmas holidays.</p>
 <p>We have spoken of the sun and the moon, of comets and of stars, and I have frequently had occasion to mention the relative position of our earth in the universe. It is no doubt a noble globe we inhabit; but I have failed in my purpose if I have not shown you how insignificant this earth is beside the vast extent of some of the other bodies that abound in space.</p>
 <p>We have, however, been given a feeling of curiosity that makes us long to know of things beyond the confines of our own earth. Astronomers can tell us a little — too often only a little. That is a star, they will say, and That is a planet, and That is so big, and That so far: such is the meagre style of information we often have to be content with.</p>
@@ -1689,10 +2040,10 @@
 <p>It remains for me to add a few words that will help you find the planets. It is of course impossible to show objects like Jupiter, Saturn, Venus, Mars and Mercury on maps of the heavens, because these bodies are constantly moving about, and if their places were right today they would be wrong tomorrow. The almanac will be necessary here. You must find out from it what planets are visible and in what part of the sky they lie. Then you must compare your maps with the heavens; and when you find a bright star-like body that is not shown on your maps, you may conclude at once that it is the planet.</p>
 <p>Star-like as these objects are to the unaided eye, the resemblance is dispelled at once when we use a telescope. A star is only a bright point of light, and white; a planet shows a visible shape. This is at least the case with the five planets I have named, for there are others — Uranus and Neptune — that are too far off to be much more than star-like points in ordinary telescopes. The minor planets would not interest you.</p>
 <p>I hope that reading Star-land will at all events induce you to make a beginning in the study of the heavens, if you have not done so already. If you have the advantage of a telescope, so much the better; but if that is impossible, make the best use of your own eyes. Do not put it off, and do not wait until you can get somebody to teach you. If it is clear this very night, go out and find the Great Bear and the Pole Star, and as many of the other constellations as you can — and begin your career as an astronomer at once.</p>
-<h4>Table of Useful Astronomical Facts</h4>
+<h3 class="sub">Table of Useful Astronomical Facts</h3>
 <p>The sun&#x27;s mean distance from the earth is 92,700,000 miles; his diameter is 865,000 miles, and he rotates in a period of between 25 and 26 days.</p>
 <p>The moon&#x27;s mean distance from the earth is 238,000 miles; the diameter of the moon is 2160 miles, and the time of its revolution round the earth is 27.322 days.</p>
-<h4>The Planets</h4>
+<h3 class="sub">The Planets</h3>
 <pre class="outline">  --------+---------------+---------------+-----------+-----------------
           | Mean Distance | Periodic Time | Diameter  |
           | from the Sun  | of Revolution | of Planet | Axial Rotation.
@@ -1709,7 +2060,7 @@
   Uranus  |     1,780     | 30,687        |  31,700   |     Unknown.
   Neptune |     2,780     | 60,127        |  34,500   |     Unknown.
   --------+---------------+---------------+-----------+-----------------</pre>
-<h4>The Satellites of Mars</h4>
+<h3 class="sub">The Satellites of Mars</h3>
 <pre class="outline">  ----------+--------------------+-------------------
     Name.   | Mean Distance from |  Periodic Time.
             |  Centre of Mars.   |
@@ -1718,7 +2069,7 @@
   Phobos    |   5,800 miles.     |  7    39    14
   Deimos    |  14,500   ”        | 30    17    54
   ----------+--------------------+-------------------</pre>
-<h4>The Satellites of Jupiter</h4>
+<h3 class="sub">The Satellites of Jupiter</h3>
 <pre class="outline">  ----------+--------------------+-------------------------
     Name.   | Mean Distance from |     Periodic Time.
             | Centre of Jupiter. |
@@ -1730,7 +2081,7 @@
   IV        |  1,170,000   ”     |  16    16    32     11
   V         |    112,400   ”     |  --    11    57    (?)
   ----------+--------------------+--------------------------</pre>
-<h4>The Satellites of Saturn</h4>
+<h3 class="sub">The Satellites of Saturn</h3>
 <pre class="outline">  ----------+--------------------+-------------------------
     Name.   | Mean Distance from |     Periodic Time.
             | Centre of Saturn.  |
@@ -1746,7 +2097,7 @@
   Iapetus   |  2,280,000   ”     |  79     7    54     40.4
   ----------+--------------------+-------------------------</pre>
 <p>A ninth satellite was discovered in August 1898 by Professor W. H. Pickering, but its mean distance and periodic time have not yet been determined precisely.</p>
-<h4>The Satellites of Uranus</h4>
+<h3 class="sub">The Satellites of Uranus</h3>
 <pre class="outline">  ----------+--------------------+---------------
     Name.   | Mean Distance from | Periodic Time.
             | Centre of Uranus.  |     Days.
@@ -1756,7 +2107,7 @@
   Titania   |   272,000   ”      |    8.705897
   Oberon    |   363,000   ”      |   13.463269
   ----------+--------------------+---------------</pre>
-<h4>The Satellite of Neptune</h4>
+<h3 class="sub">The Satellite of Neptune</h3>
 <pre class="outline">  ----------+--------------------+---------------
     Name.   | Mean Distance from | Periodic Time.
             | Centre of Neptune. |     Days.
