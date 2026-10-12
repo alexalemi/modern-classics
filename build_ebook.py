@@ -636,6 +636,12 @@ def prepare_cover(dest, meta):
     cache = ROOT / "build" / "covers"
     cache.mkdir(parents=True, exist_ok=True)
     src = cache / f"{meta['dir']}.jpg"
+    if art.get("generated") and not src.exists():
+        # a cover drawn by gencover/ (the Dover-style series): rendered,
+        # never fetched; deterministic from its seed
+        sys.path.insert(0, str(ROOT / "gencover"))
+        import make as gencover_make
+        gencover_make.render(meta["dir"])
     if not src.exists():
         import urllib.request
         # TIMEOUT AND AN EXPLICIT FAILURE, both learned the hard way. A cover
@@ -689,6 +695,19 @@ def prepare_cover(dest, meta):
                         str(out)], check=True)
         if out.stat().st_size <= 1_500_000:  # se lint f-016 cap
             break
+
+
+def untitle_cover(dest):
+    """A cover that carries its own title (gencover/) must not get se's
+    title box and lettering printed over it a second time: keep the image,
+    drop the box and the outlined title and author."""
+    f = dest / "src/epub/images/cover.svg"
+    t = f.read_text()
+    t2 = re.sub(r'\s*<path class="title-box"[^>]*/>', "", t)
+    t2 = re.sub(r'\s*<g aria-label="[^"]*">.*?</g>', "", t2, flags=re.S)
+    if t2 == t:
+        raise SystemExit("untitle_cover: se's cover.svg layout changed; title box not found")
+    f.write_text(t2)
 
 
 LONE_LT = re.compile(r"<(?![/!?a-zA-Z])")
@@ -971,6 +990,8 @@ def main():
     rebrand.order_spine(dest, spine)
     run([SE, "build-toc", "."], cwd=dest)
     run([SE, "build-images", "."], cwd=dest)
+    if meta.get("cover", {}).get("titled"):
+        untitle_cover(dest)
     run([SE, "prepare-release", "."], cwd=dest)
     run([SE, "clean", "."], cwd=dest)
 

@@ -69,6 +69,17 @@ is too wide for a 2:3 cut to hold both men, so it keeps Vercingetorix and the
 edge of Caesar). Byrne's Euclid traded its Book I.47 page for Ribera's
 "Euclid" (c. 1630-1635, Getty), at Alex's request. CHECK EVERY NEW COVER for a
 page around the picture, not only for what the picture shows.
+Later the same day, a second pass. catos-letters: Hogarth's South Sea Scheme
+(nude figure) -> a hand-coloured engraving after Edward Matthew Ward, "The South
+Sea Bubble, a Scene in 'Change Alley in 1720" (painting 1847, Tate), Commons
+"File:South Sea Bubble.jpg", 2239x1510, crop 1006x1509+560+0 (upscaled 1.39x).
+leviathan: the low-res print scan -> the ink drawing in the presentation
+manuscript for Charles II (BL Egerton 1910), Commons "File:Drawing of frontispiece
+of Leviathan.jpg"; 4488px, so the 3840px rendition, crop 1934x2901+1180+0. No 2:3
+cut of the giant holds both sword and crozier; this one keeps crown, face and
+crozier. Re-crops to drop frame, mat or museum marks: flatland 1680x2520+100+180
+(gallery frame), galileo 2473x3710+250+132 (paper margin), memorabilia
+1460x2190+525+122 (frame and the "124545" label; clips the leftmost figure).
 Borderline and kept: Blake's Ancient of Days (science-and-hypothesis) and
 West's Franklin with cherubs (autobiography). The per-book "Cover:" notes
 below for these nine describe the SUPERSEDED covers.
@@ -4215,7 +4226,8 @@ and named in the introduction; his antisemitism-attacks and his remarks on
 Jews, priests and women at full strength. TRANSLATED by Fable 5.1 subagents
 (Opus quota low); a light readability polish by Opus 5.5 per essay
 (2026-10-11) for carried-over German idioms. COVER: Edvard Munch's crayon study
-for his posthumous portrait of Nietzsche (1906, Munch Museum).
+for his posthumous portrait of Nietzsche (1906, Munch Museum); crop
+1900x2850+320+140 (2026-10-12) keeps off the torn sheet edge and colour target.
 
 ## princess-of-cleves/ — Madame de Lafayette, The Princess of Cleves (1678), with The Princess of Montpensier (1662), from the French
 
@@ -4234,7 +4246,8 @@ Every royal "Madame" resolved to a name (Marguerite, Elisabeth, Claude);
 French-in-English in 001 and 003 (ledger BATCH 0 correction); both were
 revised by Opus 5.5, which also translated 002 and 004 (2026-10-11).
 COVER: François Clouet's drawing of Mary Stuart in white mourning (1561) --
-she is the Queen Dauphine of the novel.
+she is the Queen Dauphine of the novel. Crop 2462x3693+700+185 (2026-10-12)
+drops the library stamp, the pencilled "24" and the "Marie Stuart" inscription.
 
 ## nibelungenlied/ — The Nibelungenlied (c. 1200), from the Middle High German
 
@@ -4395,7 +4408,10 @@ locomotive. Reported, captioned as drawn. Bicknell's dates not found
 (LoC no2015060902 has none): the introduction says the translation's
 status outside the US is unestablished.
 Cover: Fabre's own watercolor, Pleurotus phosphoreus (Omphalotus), 1878,
-MNHN, cropped to drop the museum watermark and stamp.
+MNHN, cropped to drop the museum watermark and stamp. The original is 4800px
+wide, so the cover comes from the 3840px rendition and the crop (1706x2559+1032+55,
+2026-10-12) is in ITS coordinates; the old crop used the original's and left the
+stamp in. No 2:3 cut holds the whole cluster: both side caps are clipped.
 
 ## looking-glass/ — Lewis Carroll, Through the Looking-Glass, and What Alice Found There (1871), RESTORED EDITION
 

@@ -21,7 +21,17 @@ to keep reading.
 
 ## Length and shape
 
-300 to 500 words. Three to five paragraphs. The check allows 200-650.
+300 to 500 words is the usual size, but a book that needs more may take it
+(Alex relaxed the limit on 2026-10-12): three to six paragraphs, and the
+check allows 200-900.
+
+THE COVER NOTE. Every book also has `{book}/cover.txt`: one paragraph,
+25-120 words, on the cover art: what it shows, who made it and when, and why
+it is on this book. assemble.read_introduction appends it as the
+introduction's closing paragraph, labelled *On the cover.*, so it reaches the
+page, the epub and the print edition alike. Facts only from the cover's
+record (ebook_meta.json, the BOOKS.md COVER line) or what is visible in the
+picture.
 
 Cover these, in whatever order the particular book wants:
 

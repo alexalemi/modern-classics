@@ -31,7 +31,7 @@ from pathlib import Path
 import assemble
 
 ROOT = Path(__file__).parent
-MIN_WORDS, MAX_WORDS = 200, 650
+MIN_WORDS, MAX_WORDS = 200, 900   # relaxed by Alex 2026-10-12 (was 650)
 
 # Each entry is (regex, why). Case-insensitive. Keep every addition
 # justified by something that actually appeared -- a list nobody can
@@ -151,6 +151,35 @@ def check(book):
         bad.append(f"never names the author ({env.get('AUTHOR')})")
     if not (YEAR.search(text) or CENTURY.search(text)):
         bad.append("gives no date: no year and no century named")
+    bad += check_cover(book)
+    return bad
+
+
+COVER_MIN, COVER_MAX = 25, 120
+
+
+def check_cover(book):
+    """cover.txt: why this picture is on this book (rendered by
+    assemble.read_introduction as the introduction's closing paragraph).
+    One paragraph, plain, the same manners as the introduction."""
+    path = book / "cover.txt"
+    if not path.exists():
+        return ["no cover.txt (the cover note)"]
+    text = " ".join(path.read_text().split())
+    bad = []
+    n = len(text.split())
+    if not COVER_MIN <= n <= COVER_MAX:
+        bad.append(f"cover.txt: {n} words, want {COVER_MIN}-{COVER_MAX}")
+    if "\n\n" in path.read_text().strip():
+        bad.append("cover.txt: more than one paragraph")
+    if "--" in text:
+        bad.append("cover.txt: contains '--'")
+    if "*" in assemble.EMPH.sub("", text):
+        bad.append("cover.txt: an emphasis marker does not match assemble.EMPH")
+    for pat, why in BANNED:
+        m = re.search(pat, text, re.I)
+        if m:
+            bad.append(f"cover.txt mannered: {m.group(0)!r} ({why})")
     return bad
 
 

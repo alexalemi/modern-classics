@@ -555,19 +555,10 @@ COVER = r"""// colours set in CMYK at the source (Ingram: CMYK, total ink <= 240
 #set page(width: %(W).4fin, height: %(H).4fin, margin: 0pt, fill: cream)
 #set text(font: "EB Garamond", fill: navy)
 // spine
-#place(top + left, dx: %(sx0).4fin, rect(width: %(spine).4fin, height: 100%%, fill: navy, stroke: none))
+#place(top + left, dx: %(sx0).4fin, rect(width: %(spine).4fin, height: 100%%, fill: %(spinefill)s, stroke: none))
 %(spinetext)s
 // front
-#place(top + left, dx: %(fx).4fin, dy: 0.85in, block(width: %(fw).4fin, align(center)[
-  #image(%(art)s, width: 3.9in, height: 3.4in, fit: "contain")
-  #v(0.35in)
-  #text(size: 25pt, %(title)s) \
-  #v(0.12in)
-  #text(size: 13pt, style: "italic", fill: kblack, %(author)s) \
-  #v(0.08in)
-  #text(size: 9.5pt, fill: kblack, tracking: 0.08em, smallcaps(lower(%(retold)s)))
-]))
-#place(bottom + left, dx: %(fx).4fin, dy: -0.55in, block(width: %(fw).4fin, align(center, image("brand/emend-wordmark-cover.svg", height: 0.42in))))
+%(front)s
 // back: blurb, imprint, barcode area (kept clear)
 #place(top + left, dx: %(bx).4fin, dy: 0.95in, block(width: 3.9in, [
   #set par(justify: true, spacing: 0.8em)
@@ -577,6 +568,18 @@ COVER = r"""// colours set in CMYK at the source (Ingram: CMYK, total ink <= 240
 #place(bottom + left, dx: %(bx).4fin, dy: -0.55in, image("brand/emend-mark-cover.svg", height: 0.5in))
 %(barcode)s
 """
+
+
+FRONT = r"""#place(top + left, dx: %(fx).4fin, dy: 0.85in, block(width: %(fw).4fin, align(center)[
+  #image(%(art)s, width: 3.9in, height: 3.4in, fit: "contain")
+  #v(0.35in)
+  #text(size: 25pt, %(title)s) \
+  #v(0.12in)
+  #text(size: 13pt, style: "italic", fill: kblack, %(author)s) \
+  #v(0.08in)
+  #text(size: 9.5pt, fill: kblack, tracking: 0.08em, smallcaps(lower(%(retold)s)))
+]))
+#place(bottom + left, dx: %(fx).4fin, dy: -0.55in, block(width: %(fw).4fin, align(center, image("brand/emend-wordmark-cover.svg", height: 0.42in))))"""
 
 
 def prep_art(src, dst, tac=235):
@@ -636,11 +639,45 @@ def build_cover(book, env, meta, pages, paper, workdir, spine_override=None, pri
         barcode = (f'#place(bottom + left, dx: {0.125 + TRIM_W - 0.5 - 1.85:.4f}in, dy: -0.5in, '
                    f'rect(width: 1.85in, height: 1.1in, fill: white, stroke: none))')
     blurb = "\n\n".join(esc(p) for p in meta.get("long_description", [meta.get("description", "")]))
-    doc = COVER % dict(navy=NAVY, cream=CREAM, W=W, H=H, sx0=sx0, spine=spine, spinetext=spinetext,
-                       fx=sx0 + spine, fw=TRIM_W + 0.125, bx=0.125 + 0.55, bcx=0.125 + TRIM_W - 0.5 - 2.0,
-                       art=tstr("cover-art.jpg"), title=tstr(env["ORIGINAL_WORK"]), author=tstr(env["AUTHOR"]),
-                       retold=tstr("Restored edition" if restored else "Retold in contemporary English"),
-                       blurb=blurb, barcode=barcode)
+    if art.exists() and not meta.get("cover", {}).get("titled"):
+        # a painting: the series title band over the art (gencover/artcover.py),
+        # which then serves as a titled front like the generated covers
+        sys.path.insert(0, str(ROOT / "gencover"))
+        import artcover
+        framed = workdir / "cover-framed.jpg"
+        artcover.compose(book, art_path=art if (ROOT / "site/covers" / f"{book}.jpg").exists() is False else None).save(framed, quality=95)
+        prep_art(framed, workdir / "cover-art.jpg")
+        titled = True
+    else:
+        titled = meta.get("cover", {}).get("titled")
+        if meta.get("cover", {}).get("generated"):
+            # redraw the design at print resolution: its texture should be
+            # drawn at the size it prints, not stretched from 1400px
+            sys.path.insert(0, str(ROOT / "gencover"))
+            import make as gencover_make
+            hi = gencover_make.render(book, scale=1.25, out=workdir / "cover-hi.jpg")
+            prep_art(hi, workdir / "cover-art.jpg")
+    if titled:
+        # a titled cover: it IS the front, full bleed
+        front = (f'#place(top + left, dx: {sx0 + spine:.4f}in, block(width: {TRIM_W + 0.125:.4f}in, height: 100%, '
+                 f'clip: true, image("cover-art.jpg", width: 100%, height: 100%, fit: "cover")))')
+    else:
+        front = FRONT % dict(fx=sx0 + spine, fw=TRIM_W + 0.125, art=tstr("cover-art.jpg"),
+                             title=tstr(env["ORIGINAL_WORK"]), author=tstr(env["AUTHOR"]),
+                             retold=tstr("Restored edition" if restored else "Retold in contemporary English"))
+    spinefill = "navy"
+    if titled and art.exists():
+        # a Dover-style cover wraps its field colour round the spine: sample
+        # the art's top-left corner (the field) and set it as CMYK
+        from PIL import Image
+        src = workdir / "cover-framed.jpg" if (workdir / "cover-framed.jpg").exists() else art
+        r, g, b = [v / 255 for v in Image.open(src).convert("RGB").crop((20, 20, 80, 80)).resize((1, 1)).getpixel((0, 0))]
+        k = 1 - max(r, g, b)
+        c, m, y = ((1 - x - k) / (1 - k) if k < 1 else 0 for x in (r, g, b))
+        if r + g + b < 2.4:          # a light field (Byrne's cream) keeps the navy spine
+            spinefill = f"cmyk({c*100:.0f}%, {m*100:.0f}%, {y*100:.0f}%, {k*100:.0f}%)"
+    doc = COVER % dict(W=W, H=H, sx0=sx0, spine=spine, spinetext=spinetext, front=front, spinefill=spinefill,
+                       bx=0.125 + 0.55, blurb=blurb, barcode=barcode)
     (workdir / "cover.typ").write_text(doc)
     pdf, _ = typst(workdir, "cover")
     return pdf, spine, (W, H)

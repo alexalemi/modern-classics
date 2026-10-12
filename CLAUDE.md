@@ -135,8 +135,8 @@ not show nudity; see "COVERS: NO NUDITY" in BOOKS.md for the line.
 
 ### 6. Editor's Introduction — context for a modern reader
 
-Every book carries `{book}/introduction.txt`: 300-500 words of NEW
-WRITING telling the reader who wrote this, when, what was happening, what
+Every book carries `{book}/introduction.txt`: usually 300-500 words of NEW
+WRITING (more when the book needs it; the check allows 200-900) telling the reader who wrote this, when, what was happening, what
 the book was for, what convention would otherwise read as strange, and
 what this edition did. `assemble.py` renders it on the page above the
 Contents and `build_ebook.py` makes it the epub's first frontmatter
@@ -284,6 +284,31 @@ books/{book}/              # One directory per book
   the floor; the sheets catch what they cannot (a split table, a chapter
   in the wrong place, front matter in the body). Gödel's Proof's first
   proof had five of these and passed every original check.
+- `gencover/` — generated covers (Alex, 2026-10-12), in the manner of the
+  1950s-60s Dover science paperbacks: a spot-colour field, the title knocked
+  out of it, and ONE DIAGRAM TAKEN FROM THE BOOK (its own figure or worked
+  example; pictures of objects, like a candle, did not work and were
+  dropped). `press.py` simulates the printing: separate ink plates,
+  misregistered, multiplied where they overlap, hand-wobbled pen strokes,
+  paper grain; `p.use(ink)` returns a PEN bound to that plate. `designs.py`
+  holds one function per book (COVERS); `make.py` renders into
+  build/covers/{book}.jpg. ebook_meta `cover` is then {"generated": true,
+  "titled": true, "seed": N, ...} with the old artwork kept under
+  "previous"; build_ebook renders it if missing and strips se's title box
+  (untitle_cover), rebrand writes a "drawn for this edition" colophon, and
+  build_print redraws it at print resolution (scale 1.25). Quote on a
+  cover only verbatim from our text, and check it. 27 books so far: the
+  whole math shelf and most of the science shelf.
+  `artcover.py` composes the PRINT front for a painting cover: the series'
+  title band (coloured by SHELF, SHELF_INK) over the artwork full bleed,
+  FOCUS per book where the band would hide the subject (Millais's bubble).
+  The website keeps the full-size painting.
+- `{book}/cover.txt` — the cover note, one paragraph closing the editor's
+  introduction (see INTRODUCTIONS.md). `{book}/tags.txt` — hidden search
+  terms (subjects, ideas, form, language, era, places, people, "kids" only
+  for books meant for children); build_index puts them, the shelf/topic and
+  the catalogue subjects in each card's data-tags, and the filter box
+  matches at the start of words.
 - `brand/` — the Emend Press logos (Emend Press publishes the Modern
   Classics series): `make_logo.py` outlines the type (Cormorant Garamond
   SemiBold + Montserrat Medium, fonts via `fetch_fonts.sh`) so the SVGs need

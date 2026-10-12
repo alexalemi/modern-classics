@@ -25,7 +25,7 @@ PUBLISHER = "Emend Press"
 # old wording ships silently (found when Emend Press replaced Modern Classics
 # as publisher: every reused draft kept the old imprint). build_ebook throws
 # away any draft whose stamp differs and starts from a fresh create-draft.
-VERSION = "2026-10-11-emend-press-site"
+VERSION = "2026-10-12-generated-covers"
 # the publisher's mark, in place of Standard Ebooks' logo (brand/make_logo.py)
 MARK = Path(__file__).resolve().parent / "brand" / "emend-mark.svg"
 MARK_ALT = "The Emend Press logo: a capital E with a red caret beneath it."
@@ -396,6 +396,13 @@ def _colophon(dest, env, meta, original=False):
         artist = (f'<a href="{art["artist_wiki"]}">{esc(art["artist"])}</a>'
                   if art.get("artist_wiki") else f'<b epub:type="z3998:personal-name">{esc(art["artist"])}</b>')
         t = t.replace('<a href="COVER_ARTIST_WIKI_URL">COVER_ARTIST_NAME</a>', artist)
+    if art.get("generated"):
+        # a gencover/ design: drawn here, not adapted from a painting, and its
+        # lettering is not se's League Spartan (that is the title page only)
+        t = re.sub(r'<p>The cover page is adapted from<br/>.*?The cover and title pages feature the<br/>',
+                   '<p>The cover was drawn for this edition by Emend Press,<br/>\n\t\t\t'
+                   'after the Dover science paperbacks of the 1950s and 1960s.<br/>\n\t\t\t'
+                   'The title page features the<br/>', t, count=1, flags=re.S)
     t = re.sub(r'You can check for updates to this ebook.*?</a>\.</p>',
                f'You can find this ebook, and the whole Modern Classics library, at<br/>\n\t\t\t<a href="{SITE}/">emend.press</a>.</p>', t, flags=re.S)
     t = t.replace('The volunteer-driven Standard Ebooks project relies on readers like you to submit typos, corrections, and other improvements. Anyone can contribute at <a href="https://standardebooks.org/">standardebooks.org</a>.',

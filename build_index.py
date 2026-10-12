@@ -21,6 +21,7 @@ site/covers/thumb/, made by build_feeds.make_thumbs().
 """
 import paths
 import html
+import json
 import re
 import sys
 from pathlib import Path
@@ -348,15 +349,69 @@ def card(b):
 # ---- shared by build_restored.py and build_about.py, so the three pages
 # ---- are one design and cannot drift apart
 
+_META = None
+
+
+def search_terms(book):
+    """Hidden words the filter box matches besides what the card shows
+    (Alex, 2026-10-12: searching a topic found nothing): the book's
+    books/{book}/tags.txt, its shelf or topic, the edition kind, and the
+    catalogue subjects and genre from ebook_meta.json."""
+    global _META
+    if _META is None:
+        _META = json.load(open(ROOT / "ebook_meta.json"))
+    d = paths.book_dir(book)
+    terms = []
+    if (d / "tags.txt").exists():
+        terms += [t.strip() for t in (d / "tags.txt").read_text().replace("\n", ",").split(",") if t.strip()]
+    env = (d / "env").read_text() if (d / "env").exists() else ""
+    for key in ("SHELF", "TOPIC"):
+        m = re.search(rf"^{key}=(.*)$", env, re.M)
+        if m:
+            terms.append(m.group(1))
+    terms.append("restored edition" if re.search(r"^EDITION=restored", env, re.M) else "retelling")
+    meta = _META.get(book, {})
+    terms += [s[0] for s in meta.get("subjects", [])]
+    if meta.get("genre"):
+        terms.append(meta["genre"])
+    seen, out = set(), []
+    for t in terms:
+        k = t.lower()
+        if k not in seen:
+            seen.add(k); out.append(t)
+    return " | ".join(out)
+
+
+_PAGES = None
+
+
+def page_to_book(page):
+    """The book directory behind a card's page: a page may carry its env
+    PAGE= name (descartes is philosophical-works.html) and an original-text
+    companion is {page}-original.html."""
+    global _PAGES
+    if _PAGES is None:
+        _PAGES = {}
+        for d in paths.all_books():
+            if (d / "env").exists():
+                m = re.search(r"^PAGE=(.*)$", (d / "env").read_text(), re.M)
+                _PAGES[m.group(1).strip() if m else d.name] = d.name
+    stem = page.rsplit("/", 1)[-1].rsplit(".", 1)[0]
+    stem = stem[:-len("-original")] if stem.endswith("-original") else stem
+    return _PAGES.get(stem)
+
+
 def render_card(page, thumb, tab, title, meta_html, blurb):
     """One book: cover plate, year tab, title, meta line (already HTML),
-    blurb (plain text)."""
+    blurb (plain text). data-tags carries search_terms() for the filter."""
+    book = page_to_book(page)
+    tags = search_terms(book) if book else ""
     stem = thumb.rsplit(".", 1)[0]       # covers/thumb/<dir>, see build_feeds.make_thumbs
     plate = (f'<a class="plate" href="{page}" tabindex="-1" aria-hidden="true">'
              f'<img src="{thumb}" srcset="{stem}-160.webp 160w, {stem}-240.webp 240w" '
              f'sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" '
              f'loading="lazy" decoding="async"></a>')
-    return f'''  <li class="card">
+    return f'''  <li class="card" data-tags="{esc(tags)}">
     {plate}
     <div class="copy">
       <div class="tab">{esc(tab)}</div>

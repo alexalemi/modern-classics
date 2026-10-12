@@ -679,7 +679,15 @@ def read_introduction(book):
     if not path.exists():
         return None
     text = path.read_text().strip("\n").rstrip()
-    return text or None
+    if not text:
+        return None
+    # the cover note (Alex, 2026-10-12): why this picture is on this book,
+    # kept in its own file so the introduction's word band stays its own,
+    # and closing the introduction on the page, in the epub and in print
+    cover = book / "cover.txt"
+    if cover.exists() and cover.read_text().strip():
+        text += "\n\n*On the cover.* " + " ".join(cover.read_text().split())
+    return text
 
 
 def render_introduction(book, original=False):
