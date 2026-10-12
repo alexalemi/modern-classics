@@ -127,6 +127,8 @@ Then put the book on the front page: add `SHELF=` to its `env` (one of
 `python3 build_feeds.py` (makes the cover thumbnail) and
 `python3 build_index.py`. `site/index.html` is generated — never edit it
 by hand. The build refuses a book with a shelf but no blurb, or no cover.
+The cover (ebook_meta.json `cover`, a public-domain artwork on Commons) must
+not show nudity; see "COVERS: NO NUDITY" in BOOKS.md for the line.
 
 ### 6. Editor's Introduction — context for a modern reader
 

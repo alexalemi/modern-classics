@@ -25,6 +25,40 @@ Standard-Ebooks-XHTML source pattern), the Tusculan Disputations
 Nicomachean Ethics (ethics/ — locked-glossary pattern for
 terminology-heavy works).
 
+## COVERS: NO NUDITY (Alex, 2026-10-12)
+
+The covers now travel as link-preview cards and will go on printed books, so
+none may show nudity. Shirtless men and bare backs or shoulders are fine;
+exposed breasts or genitals, nude figures (statues and sketches included) are
+not. A contact-sheet audit of all 135 covers that day replaced nine, the new
+choices in ebook_meta.json (each with its crop):
+- lucretius: Botticelli's Birth of Venus -> Joseph Wright of Derby, "Vesuvius
+  in Eruption, with a View over the Islands in the Bay of Naples" (c. 1776).
+  Book VI explains volcanoes and Etna.
+- herodotus: David's Leonidas at Thermopylae -> Honthorst, "Solon and Croesus"
+  (1624), the Histories' opening story; the crop keeps Croesus and Solon.
+- euripides: Delacroix's Medea -> Evelyn De Morgan, "Medea" (1889).
+- boethius: Burne-Jones' Wheel of Fortune -> the Coëtivy Master, "Philosophy
+  Instructing Boethius on the Role of God" (Getty). The Commons file is wider
+  than commons_url's 4200 gate, so it arrives as a 3840px rendition; the crop is
+  in that rendition's coordinates. The Wellcome chromolithograph of the same
+  scene was rejected: its Commons file is CC BY, not public domain.
+- memorabilia: Carracci's Choice of Heracles (a nude Heracles and Vice) -> the
+  "Plato's Academy" mosaic from Pompeii (Naples, MANN 124545). Its date is
+  given only as "the 1st century": sources disagree on BC or AD.
+- ovid: Waterhouse's Apollo and Daphne -> Poussin, "Landscape during a
+  Thunderstorm with Pyramus and Thisbe" (1651). The introduction's sentence
+  naming the cover was changed to match.
+- sophocles: Moreau's Oedipus and the Sphinx -> Antoni Brodowski, "Oedipus and
+  Antigone" (1828).
+- social-contract: David's Tennis Court Oath sketch (the figures are drawn
+  nude) -> Allan Ramsay's portrait of Rousseau (1766).
+- cellini: a photograph of the nude Perseus model -> Niklaus Manuel, "Saint
+  Eligius in His Workshop" (1515), a goldsmith's shop.
+Borderline and kept: Blake's Ancient of Days (science-and-hypothesis) and
+West's Franklin with cherubs (autobiography). The per-book "Cover:" notes
+below for these nine describe the SUPERSEDED covers.
+
 The "Founders' Library" push (July 2026) is COMPLETE: all 13 works of
 the founding generation's shared bookshelf (see the 2026-07-22 DEVLOG
 entry), including Seneca's complete Moral Letters, Plutarch's Roman
@@ -108,7 +142,7 @@ quotes around the whole tale; reserve quotes for framing remarks and
 character dialogue, single quotes for dialogue nested inside. Names use
 the familiar forms; resolve Ovid's cult-title periphrasis to plain names.
 Epitaphs/inscriptions and the hyacinth's "AI, AI" stay mixed-case (never
-all-caps — assemble.py reads an all-caps line as a heading). Cover:
+all-caps — assemble.py reads an all-caps line as a heading). Cover (SUPERSEDED 2026-10-12, see COVERS: NO NUDITY):
 Waterhouse's "Apollo and Daphne" (1908), Commons "Apollo and Daphne
 waterhouse.jpg", crop "860x1219+38+0" (light width-crop to cut aspect
 stretch without clipping the figures). NOTE: files 013–029 were
@@ -1825,7 +1859,7 @@ of endless life all at once", which is what Aquinas takes over whole —
 plus "every fortune is good fortune", the wheel, and Orpheus and
 Eurydice by name. Note what the eternity pin does NOT say: not
 "everlasting", not "for ever". All at once.
-Cover: Burne-Jones' "The Wheel of Fortune" (1883), Commons "File:
+Cover (SUPERSEDED 2026-10-12, see COVERS: NO NUDITY): Burne-Jones' "The Wheel of Fortune" (1883), Commons "File:
 Edward Burne-Jones - The Wheel of Fortune - Google Art Project.jpg",
 crop "2967x4450+0+0" — Fortune with her hand on the wheel and the
 slave, the crowned king and the laurelled poet bound to it. The canvas
@@ -2716,7 +2750,7 @@ sympathetic phrase slipped in on her behalf that he did not write. A
 modern reader will notice what Cellini does not notice, and doing that
 noticing for them destroys it. Same for the girl he calls Scorzone,
 got with child at fifteen and handed back to an aunt with a dowry.
-Cover: a 19th-century albumen photograph of CELLINI'S OWN BRONZE MODEL
+Cover (SUPERSEDED 2026-10-12, see COVERS: NO NUDITY): a 19th-century albumen photograph of CELLINI'S OWN BRONZE MODEL
 for the Perseus (Bargello), Commons "File:Ontwerp voor sculptuur van
 Perseus door Cellini in het Museo Nazionale te Florence,
 RP-F-00-509.jpg", crop "2313x3470+935+870" — the plate only, cut out of
@@ -3317,7 +3351,7 @@ both sides of Antigone, the household slaves are slaves.
 `se lint` m-052 wants dcterms:alternative because "Seven" is a number
 word: alt_title "The 7 Tragedies" in ebook_meta. m-056 wants the
 author linked in the long description; Sophocles is not named there.
-Cover: Moreau's "Oedipus and the Sphinx" (1864, the Met, CC0),
+Cover (SUPERSEDED 2026-10-12, see COVERS: NO NUDITY): Moreau's "Oedipus and the Sphinx" (1864, the Met, CC0),
 Commons "File:Oedipus and the Sphinx MET DP-14201-023.jpg", crop
 "2020x3030+26+250" -- the original is 2072x4000, under the 4200 gate,
 so the crop is in its own coordinates; it takes the faces and the
@@ -3477,7 +3511,7 @@ the last word; Apollo's rape of Creusa stated as plainly as the Greek
 states it; Hippolytus' speech against women at full force; Iphigenia's
 consent; Hecuba blinding Polymestor with no condemnation; Agave carrying
 her son's head; the slavery of the Trojan plays; the satyrs' obscenity.
-Cover: Delacroix's "Medea about to Kill her Children" (1862), Commons
+Cover (SUPERSEDED 2026-10-12, see COVERS: NO NUDITY): Delacroix's "Medea about to Kill her Children" (1862), Commons
 "File:Médée furieuse - Eugène Delacroix - Musée du Louvre Peintures RF
 1402.jpg", crop "1900x2850+0+0" -- at 1900 wide it is under commons_url's
 4200 gate, so the crop is in the ORIGINAL's coordinates and takes the
@@ -3538,7 +3572,7 @@ baked into them" is kept exactly, inside his climate argument -- a
 colour named and no claim made about anybody (the paradiso XXVII and
 inferno XXXIV precedent). THE POEM ENDS ON THE PLAGUE AT ATHENS with no
 consolation and no summing up, exactly as the manuscripts leave it.
-Cover: Botticelli's "The Birth of Venus" (c. 1485), Commons "File:Sandro
+Cover (SUPERSEDED 2026-10-12, see COVERS: NO NUDITY): Botticelli's "The Birth of Venus" (c. 1485), Commons "File:Sandro
 Botticelli - La nascita di Venere - Google Art Project - edited.jpg",
 crop "1675x2512+1319+0" -- the original is 30000px wide, far over
 commons_url's 4200 gate, so the crop is in the 4000px RENDITION's
