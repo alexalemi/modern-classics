@@ -32,7 +32,7 @@ Each book gets more care than a single "please modernize this" prompt. The proce
 
 5. **Assembly.** The chapters become the web pages here and epubs built with the Standard Ebooks toolchain, with covers from public-domain paintings.
 
-An honest caveat: these are AI retellings, and despite the checks, a turn of phrase may occasionally drift from the original's nuance. Treat these as a friendly first encounter, not a scholarly edition — and if a book grabs you, go read a real translation of the original. Every page links to the source text for exactly that reason. If you spot something off, [tell me](https://github.com/alexalemi/modern-classics).
+An honest caveat: these are AI retellings, and despite the checks, a turn of phrase may occasionally drift from the original's nuance. Treat these as a friendly first encounter, not a scholarly edition — and if a book grabs you, go read a real translation of the original. Every page links to the source text for exactly that reason. If you spot something off, [tell me](mailto:contact@emend.press).
 
 ## Following along
 

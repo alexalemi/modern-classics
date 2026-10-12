@@ -361,8 +361,10 @@ NAV = {
 
 
 def nav(current):
-    links = [f'<a href="{href}">{label}</a>' for href, label in NAV.items()
-             if href != current]
+    # the front page is linked as "./" so the address bar shows emend.press/,
+    # not emend.press/index.html (GitHub Pages serves index.html at /)
+    links = [f'<a href="{"./" if href == "index.html" else href}">{label}</a>'
+             for href, label in NAV.items() if href != current]
     return (" &middot; ".join(links) + ' &middot; Follow along: <a href="feed.xml">RSS</a>'
             ' &middot; <a href="opds.atom">OPDS catalog</a> for e-readers')
 

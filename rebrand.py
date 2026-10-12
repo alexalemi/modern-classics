@@ -11,7 +11,13 @@ import json
 import re
 from pathlib import Path
 
+# REPO survives ONLY inside each epub's dc:identifier (uid): an opaque id,
+# never shown as a link. Changing it would make every reader's library see
+# each book as a new title, and assemble.find_epub matches on its tail.
+# Nothing a reader sees links to the repository (Alex, 2026-10-11).
 REPO = "https://github.com/alexalemi/modern-classics"
+SITE = "https://emend.press"
+CONTACT = "contact@emend.press"
 PUBLISHER = "Emend Press"
 # BUMP THIS WHENEVER THE REWRITES BELOW CHANGE. build_ebook reuses each
 # book's se draft between runs, and these rewrites match SE's TEMPLATE text --
@@ -19,7 +25,7 @@ PUBLISHER = "Emend Press"
 # old wording ships silently (found when Emend Press replaced Modern Classics
 # as publisher: every reused draft kept the old imprint). build_ebook throws
 # away any draft whose stamp differs and starts from a fresh create-draft.
-VERSION = "2026-10-11-emend-press"
+VERSION = "2026-10-11-emend-press-site"
 # the publisher's mark, in place of Standard Ebooks' logo (brand/make_logo.py)
 MARK = Path(__file__).resolve().parent / "brand" / "emend-mark.svg"
 MARK_ALT = "The Emend Press logo: a capital E with a red caret beneath it."
@@ -67,7 +73,7 @@ def _content_opf(dest, env, meta, spine=(), original=False):
     t = t.replace('<meta property="file-as" refines="#publisher">Standard Ebooks</meta>',
                   f'<meta property="file-as" refines="#publisher">{PUBLISHER}</meta>')
     t = t.replace('<link href="https://standardebooks.org/" refines="#publisher" rel="schema:url"/>',
-                  f'<link href="{REPO}" refines="#publisher" rel="schema:url"/>')
+                  f'<link href="{SITE}/" refines="#publisher" rel="schema:url"/>')
     t = t.replace('<meta property="a11y:certifiedBy" refines="#conformance-statement">Standard Ebooks</meta>',
                   f'<meta property="a11y:certifiedBy" refines="#conformance-statement">{PUBLISHER}</meta>')
 
@@ -106,7 +112,7 @@ def _content_opf(dest, env, meta, spine=(), original=False):
     sources = []
     if env.get("SOURCE_URL"):
         sources.append(env["SOURCE_URL"])
-    sources.append(f"{REPO}/tree/main/{book}")
+    sources.append(f"{SITE}/{env.get('PAGE', book)}{'-original' if original else ''}.html")
     t = t.replace("<dc:source>TRANSCRIPTION_URL</dc:source>",
                   f"<dc:source>{sources[0]}</dc:source>")
     if len(sources) > 1:
@@ -231,19 +237,19 @@ def _imprint(dest, env, meta, original=False):
     t = p.read_text()
     t = re.sub(r'(<img[^>]*?)alt="[^"]*"([^>]*logo\.svg)', r'\1alt="%s"\2' % MARK_ALT, t)
     intro = (
-        f'This ebook is a <a href="{REPO}">Modern Classics</a> restored '
+        f'This ebook is a <a href="{SITE}/">Modern Classics</a> restored '
         f'edition from {PUBLISHER}: the author\u2019s own text, unchanged, with a caption and '
         f'alt text written for every plate. It is not affiliated with or '
         f'endorsed by Standard Ebooks, whose open tooling and style manual '
         f'were used to produce it.'
         if restored(env) else
         f'This ebook is the companion original-text edition to a '
-        f'<a href="{REPO}">Modern Classics</a> retelling from {PUBLISHER}: the source text as '
+        f'<a href="{SITE}/">Modern Classics</a> retelling from {PUBLISHER}: the source text as '
         f'published, so that a reader can see what the retelling is a '
         f'retelling of. It is not affiliated with or endorsed by Standard '
         f'Ebooks, whose open tooling and style manual were used to produce it.'
         if original else
-        f'This ebook is a <a href="{REPO}">Modern Classics</a> retelling from {PUBLISHER}: a '
+        f'This ebook is a <a href="{SITE}/">Modern Classics</a> retelling from {PUBLISHER}: a '
         f'classic public domain text, retold in contemporary English with the '
         f'help of Claude, an AI model by Anthropic. It is not affiliated with '
         f'or endorsed by Standard Ebooks, whose open tooling and style manual '
@@ -277,7 +283,7 @@ def _imprint(dest, env, meta, original=False):
         'The original source text and artwork in this ebook are believed to be in the United States public domain')
     t = t.replace(
         'Standard Ebooks is a volunteer-driven project that produces ebook editions of public domain literature using modern typography, technology, and editorial standards, and distributes them free of cost. You can download this and other ebooks carefully produced for true book lovers at <a href="https://standardebooks.org/">standardebooks.org</a>.',
-        f'Modern Classics, a series from {PUBLISHER}, retells great books in a modern, conversational voice — faithful to the original meaning, and genuinely fun to read. The retelling is released under the MIT license; you can read all the books, and inspect every stage of how they were made, at <a href="{REPO}">github.com/alexalemi/modern-classics</a>.')
+        f'Modern Classics, a series from {PUBLISHER}, retells great books in a modern, conversational voice — faithful to the original meaning, and genuinely fun to read. The retelling is released under the MIT license; you can read all the books at <a href="{SITE}/">emend.press</a>.')
     p.write_text(t)
 
 
@@ -366,7 +372,7 @@ def _colophon(dest, env, meta, original=False):
           '<br/>\n\t\t\tby<br/>\n\t\t\t'
           '<b epub:type="z3998:personal-name">Alex Alemi</b> and Claude,')
     t = t.replace('This ebook was produced for<br/>\n\t\t\t<a href="https://standardebooks.org/">Standard Ebooks</a><br/>\n\t\t\tby<br/>\n\t\t\t<a href="PRODUCER_URL">PRODUCER_NAME</a>,<br/>',
-                  f'{made}\n\t\t\t<a href="{REPO}">Modern Classics</a>, a series from {PUBLISHER},{by}<br/>')
+                  f'{made}\n\t\t\t<a href="{SITE}/">Modern Classics</a>, a series from {PUBLISHER},{by}<br/>')
     src = env.get("SOURCE_URL")
     src_name = env.get("SOURCE_NAME", "Project Gutenberg")
     trl = env.get("TRANSLATOR") or env.get("TRANSLATORS")
@@ -391,9 +397,9 @@ def _colophon(dest, env, meta, original=False):
                   if art.get("artist_wiki") else f'<b epub:type="z3998:personal-name">{esc(art["artist"])}</b>')
         t = t.replace('<a href="COVER_ARTIST_WIKI_URL">COVER_ARTIST_NAME</a>', artist)
     t = re.sub(r'You can check for updates to this ebook.*?</a>\.</p>',
-               f'You can find this ebook, and the whole Modern Classics library, at<br/>\n\t\t\t<a href="{REPO}">github.com/alexalemi/modern-classics</a>.</p>', t, flags=re.S)
+               f'You can find this ebook, and the whole Modern Classics library, at<br/>\n\t\t\t<a href="{SITE}/">emend.press</a>.</p>', t, flags=re.S)
     t = t.replace('The volunteer-driven Standard Ebooks project relies on readers like you to submit typos, corrections, and other improvements. Anyone can contribute at <a href="https://standardebooks.org/">standardebooks.org</a>.',
-                  f'Corrections and improvements are welcome — open an issue or pull request at <a href="{REPO}">github.com/alexalemi/modern-classics</a>.')
+                  f'Corrections and improvements are welcome: write to <a href="mailto:{CONTACT}">{CONTACT}</a>.')
     p.write_text(t)
 
 
@@ -433,7 +439,7 @@ def _uncopyright(dest, env, meta):
     p = dest / "src/epub/text/uncopyright.xhtml"
     t = p.read_text()
     t = t.replace("<a href=\"https://standardebooks.org/\">standardebooks.org</a>",
-                  f"<a href=\"{REPO}\">github.com/alexalemi/modern-classics</a>")
+                  f"<a href=\"{SITE}/\">emend.press</a>")
     t = t.replace("Standard Ebooks", "Modern Classics")
     p.write_text(t)
 
