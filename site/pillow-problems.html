@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Pillow Problems &mdash; Lewis Carroll</title>
+	<meta name="description" content="Seventy-two problems the author of Alice worked out in his head, in bed, in the dark — and an introduction saying exactly which thoughts he was keeping out. Retold in modern English, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/pillow-problems.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="Pillow Problems — Lewis Carroll">
+	<meta property="og:description" content="Seventy-two problems the author of Alice worked out in his head, in bed, in the dark — and an introduction saying exactly which thoughts he was keeping out. Retold in modern English, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/pillow-problems.html">
+	<meta property="og:image" content="https://emend.press/covers/share/pillow-problems.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,27 +192,31 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>Pillow Problems</h1>
-	<h3>Seventy-two problems solved in the head, in the dark</h3>
-	<h3>by Lewis Carroll</h3>
+	<p class="title-line">Seventy-two problems solved in the head, in the dark</p>
+	<p class="title-line">by Lewis Carroll</p>
 	<p class="center">
 	<s>1893</s> 2026
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is an AI modernization of Pillow Problems into contemporary English. The original is available from <a href="https://www.gutenberg.org/ebooks/79080">Project Gutenberg</a>. Also available as an <a href="ebooks/lewis-carroll_pillow-problems.epub">epub</a>. <a href="pillow-problems-original.html">The original text is also here</a>.</i></p>
 
 	<hr>
+<section aria-labelledby="editors-introduction">
 <h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
 <p>Lewis Carroll published Pillow Problems in 1893, as the second part of a series he called Curiosa Mathematica. The seventy-two problems in it were all worked out the same way: lying awake at night, in the dark, in his head, before a diagram was drawn or a line written down. Geometry, algebra, and a good deal of probability. Five beggars divide a sack of pennies. A bag holds one counter, which is either black or white. A wine company&#x27;s travelling salesman is quietly robbing it. A billiard table is triangular, with a pocket at each corner.</p>
 <p>The Introduction is the reason to read the book. Carroll wants it understood that he is not recommending mathematics as a cure for insomnia. He has never had insomnia, and he changed the title from &quot;sleepless nights&quot; to &quot;wakeful hours&quot; because kind friends kept writing to sympathise with an illness he did not have. What he offers the problems as is a remedy for &quot;the harassing thoughts that are apt to invade a wholly-unoccupied mind&quot;. Then he says which thoughts he means: sceptical ones that seem for a moment to uproot the firmest faith, blasphemous ones that dart unbidden into the most reverent souls, unholy ones that torture the fancy that would fain be pure. It is a careful and devout man telling you what happens to him at three in the morning, and two pages later the trigonometry starts.</p>
 <p>He is very funny about himself. The Introduction ends with a list of his own errors in the earlier edition — in No. 55 he put &quot;tan&quot; for &quot;sin&quot;; elsewhere, he says, he was apparently under the delusion that a sin B sin C was the same thing as sin A times bc — and he hopes the reader will find more, since the pleasure of the discovery, and the intellectual superiority the reader will thereby recognise in himself over the author, may repay the time the book has cost him.</p>
 <p>The book comes in three parts that share one numbering: the Questions, then the Answers, then the full Solutions. The mathematics has been reset in modern notation. Carroll&#x27;s factorial sign was a vertical bar with the number written under it, and it is written 3! here; his decimal point sat at mid height and is now a full stop; &quot;&amp;c.&quot; is &quot;etc.&quot;. That is the opposite of the decision taken for his Symbolic Logic, also in this collection, where the old vocabulary is kept because the argument is built out of it. Here the notation carries none of the argument. His own terms of art are untouched — a Tetragon is still a Tetragon — and the solutions have been left compressed, because their compression is the point of a book about what a mind can hold in the dark. Euclid and His Modern Rivals and A Tangled Tale are here too.</p>
+</section>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p><a href="#preface-to-the-fourth-edition">Preface to the Fourth Edition</a></p>
 <p><a href="#preface-to-the-second-edition">Preface to the Second Edition</a></p>
@@ -195,8 +225,11 @@ figcaption {
 <p><a href="#chapter-i-questions">Chapter I: Questions</a></p>
 <p><a href="#chapter-ii-answers">Chapter II: Answers</a></p>
 <p><a href="#chapter-iii-solutions">Chapter III: Solutions</a></p>
+</nav>
 
 <hr>
+<article>
+<section aria-labelledby="preface-to-the-fourth-edition">
 <h2 id="preface-to-the-fourth-edition">Preface to the Fourth Edition</h2>
 <figure id="fig-front">
 <img src="images/pillow-problems/front.jpg" alt="Frontispiece" width="500" height="613" loading="lazy">
@@ -218,6 +251,8 @@ figcaption {
 <p>C. L. D.</p>
 <p>Christ Church, Oxford.
 March, 1895.</p>
+</section>
+<section aria-labelledby="preface-to-the-second-edition">
 <h2 id="preface-to-the-second-edition">Preface to the Second Edition</h2>
 <p>The principal changes made in this Second Edition of Pillow-Problems are these.</p>
 <p>(1) After the numeral that precedes each Question, Answer or Solution, references are given to the pages where the corresponding matter may be found.</p>
@@ -238,6 +273,8 @@ March, 1895.</p>
 <p>C. L. D.</p>
 <p>Christ Church, Oxford.
 September, 1893.</p>
+</section>
+<section aria-labelledby="introduction">
 <h2 id="introduction">Introduction</h2>
 <p>Nearly all of the following seventy-two Problems are genuine &quot;Pillow-Problems&quot;, having been solved in the head while lying awake at night. (I have put the exact dates of some of them on record.) No. 37 and one or two others belong to the daylight, having been solved on a solitary walk; but every one of them was worked out to the very end before any diagram was drawn or a single word of the solution written down. I generally wrote down the answer first of all, and afterwards the question and its solution. In No. 70, for instance, the very first words I wrote down were these: &quot;(1) down back-edge; up again; down again; and so on; (2) about 0.7 of the way down the back-edge; (3) about 18° 18′; (4) about 14°.&quot; Those answers are not quite correct; but at least they are genuine, being the results of mental work only. &quot;A poor thing, Sir, but mine own!&quot;</p>
 <p>My motive for publishing these Problems, with the solutions I worked out in my head, is most certainly not any wish to display powers of mental calculation. Mine, I feel sure, are nothing out of the way, and I have no doubt there are many mathematicians who could produce much shorter and better solutions mentally. It is not for such people that I intend my little book, but rather for the much larger class of ordinary mathematicians who have perhaps never tried this resource when they needed something to occupy the mind, and who will, I hope, be encouraged by seeing what can be done after a little practice by a man of average mathematical powers, and will try the experiment for themselves, and find in it as much benefit and comfort as I have.</p>
@@ -271,6 +308,8 @@ September, 1893.</p>
 May, 1893.</p>
 <p>FOOTNOTES:</p>
 <p>[1] In the trigonometrical Problems, I have used symbols of my own to stand for the words &quot;sine&quot; and &quot;cosine&quot;. [Modern note: this edition writes &quot;sin&quot; and &quot;cos&quot;; Carroll explains and describes his own two symbols in the Preface to the Fourth Edition.]</p>
+</section>
+<section aria-labelledby="subjects-classified">
 <h2 id="subjects-classified">Subjects Classified</h2>
 <p>Arithmetic. No. 31.</p>
 <p>Algebra:
@@ -289,6 +328,8 @@ Solid. No. 67.</p>
 <p>Differential Calculus:
 Maxima and Minima. No. 33.</p>
 <p>Transcendental Probabilities. No. 72.</p>
+</section>
+<section aria-labelledby="chapter-i-questions">
 <h2 id="chapter-i-questions">Chapter I: Questions</h2>
 <p>[Modern note: each Question, Answer and Solution carries the same number, so Answer 5 and Solution 5 belong to Question 5. Carroll&#x27;s original printed the page numbers here as well; in an edition with no pages, the number does the work.]</p>
 <h4>Problem 1</h4>
@@ -539,6 +580,8 @@ Maxima and Minima. No. 33.</p>
 <h4>Problem 72</h4>
 <p>A bag contains 2 counters, of which nothing is known except that each is either black or white. Find out their colours without taking them out of the bag.</p>
 <p>[8/9/87]</p>
+</section>
+<section aria-labelledby="chapter-ii-answers">
 <h2 id="chapter-ii-answers">Chapter II: Answers</h2>
 <h4>Answer 5</h4>
 <p>Two-thirds.</p>
@@ -699,6 +742,8 @@ Locus are</p>
 the way down the back-edge. (3) About 18.65°. (4) About 14.53°.</p>
 <h4>Answer 72</h4>
 <p>One is black, and the other white.</p>
+</section>
+<section aria-labelledby="chapter-iii-solutions">
 <h2 id="chapter-iii-solutions">Chapter III: Solutions</h2>
 <h4>Solution 1</h4>
 <p>Let u, v be the Nos.</p>
@@ -2668,6 +2713,9 @@ things would not give this chance).</p>
 one black counter and one white.</p>
 <p>Q.E.F.</p>
 <p>THE END.</p>
+</section>
+</article>
+</main>
 
 </body>
 </html>

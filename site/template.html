@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{{TITLE}} &mdash; {{AUTHOR}}</title>
+	{{HEAD}}
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +141,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,24 +182,30 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>{{TITLE}}</h1>
-{{SUBTITLE_BLOCK}}	<h3>by {{AUTHOR}}</h3>
+{{SUBTITLE_BLOCK}}	<p class="title-line">by {{AUTHOR}}</p>
 	<p class="center">
 	{{DATE_LINE}}
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	{{INTRO}}
 {{INTRODUCTION}}
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 {{TOC}}
+</nav>
 
 <hr>
+<article>
 {{BODY}}
+</article>
+</main>
 
 </body>
 </html>

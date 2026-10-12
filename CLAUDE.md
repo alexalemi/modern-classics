@@ -198,6 +198,12 @@ What to preserve:
 - `splitter.py` — source text → `chapters/` + `manifest.json` (heading-regex
   or legacy splits-file mode; Gutenberg stripping; oversize auto-split)
 - `verify.py` — mechanical completeness/consistency checks before assembly
+- `seo.py` — search and link-preview plumbing. `seo.BASE`
+  (https://emend.press) is the canonical host, the one place it is written
+  (build_feeds reads it). Every page gets a description (the shelf blurb),
+  a canonical link and Open Graph/Twitter tags; build_feeds makes the
+  1200x630 share cards (site/covers/share/, cover + title + wordmark);
+  build_index writes sitemap.xml and 404.html. site/robots.txt is static.
 - `build_restored.py` — site/restored.html, the Restored Editions page,
   derived from env (ORIGINAL_TEXT companions, EDITION=restored natives).
 - `CAPTIONS.md` — the captioning spec for restored editions.

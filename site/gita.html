@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>The Bhagavad Gita &mdash; Vyasa</title>
+	<meta name="description" content="A warrior drops his bow rather than kill his own family, and his charioteer, who is God, answers him. All seven hundred verses, from the Sanskrit. Retold in modern English, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/gita.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="The Bhagavad Gita — Vyasa">
+	<meta property="og:description" content="A warrior drops his bow rather than kill his own family, and his charioteer, who is God, answers him. All seven hundred verses, from the Sanskrit. Retold in modern English, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/gita.html">
+	<meta property="og:image" content="https://emend.press/covers/share/gita.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,28 +192,32 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>The Bhagavad Gita</h1>
-	<h3>The Song of the Lord, retold from the Sanskrit: all eighteen chapters and seven hundred verses, complete, as modern prose</h3>
-	<h3>by Vyasa</h3>
+	<p class="title-line">The Song of the Lord, retold from the Sanskrit: all eighteen chapters and seven hundred verses, complete, as modern prose</p>
+	<p class="title-line">by Vyasa</p>
 	<p class="center">
 	<s>c. 200 BC</s> 2026
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is an AI modernization of The Bhagavad Gita into contemporary English. The original is available from <a href="https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/2_epic/mbh/ext/bhgce__u.htm">GRETIL (the critical edition of the Mahabharata, Bhishma Parva 23-40)</a>. Also available as an <a href="ebooks/vyasa_the-bhagavad-gita.epub">epub</a>.</i></p>
 
 	<hr>
+<section aria-labelledby="editors-introduction">
 <h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
 <p>The Bhagavad Gita, &quot;the Song of the Lord,&quot; is eighteen chapters of the Mahabharata, the longest epic in Sanskrit. Tradition names its author as Vyasa, who is also a character in the epic. Nobody knows who actually composed it or exactly when. Scholars place the poem in its present form somewhere between about the second century BC and the second century AD, and many think it grew in stages. It runs to seven hundred verses, almost all in the short couplet called the shloka.</p>
 <p>The epic tells of a war between two branches of one royal family, the Kurus. The five Pandava brothers have been cheated out of their kingdom by their cousins, the hundred sons of the blind king Dhritarashtra, led by the eldest, Duryodhana. Every attempt at peace has failed. The Gita opens on the field of Kurukshetra, with both armies drawn up and the battle about to begin. Arjuna, the third Pandava brother and the greatest archer of his age, asks his charioteer to drive out between the lines. Looking across, he sees his teachers, his great-uncle and his cousins, and he drops his bow and refuses to fight. His charioteer is Krishna, his friend and kinsman, who is also God. The rest of the poem is Krishna&#x27;s answer.</p>
 <p>That answer moves from the self that does not die when the body is killed, to the duty of acting without being driven by the reward, to the paths of knowledge, meditation and devotion, and finally to a vision of Krishna&#x27;s universal form, which shows Arjuna the whole world, both armies included, pouring into the mouths of Time. The whole conversation is reported by Sanjaya, the king&#x27;s minister, who has been given the power to see the battlefield from far away. So every chapter is told to Dhritarashtra, the father of the men Arjuna is being urged to kill.</p>
 <p>A few things will help. The speakers are named at each change, as they are in the Sanskrit. Krishna and Arjuna are called by dozens of epithets in the original; here they are simply Krishna and Arjuna, except where an epithet&#x27;s meaning matters. A handful of Sanskrit words are kept because English has no single equivalent: dharma, yoga, Brahman and the three gunas. Each is explained in the sentence the first time it appears. Arjuna&#x27;s class, the kshatriyas, were the warriors and rulers, and much of Krishna&#x27;s argument turns on what a warrior owes.</p>
 <p>This edition is translated from the Sanskrit of the Bhandarkar Oriental Research Institute&#x27;s critical edition of the Mahabharata, which does not include one verse found in some printings at the start of chapter 13. The verse is rendered as prose. One line will look unfamiliar: J. Robert Oppenheimer, who had studied Sanskrit, remembered Krishna&#x27;s words in chapter 11 as &quot;Now I am become Death, the destroyer of worlds.&quot; The Sanskrit says &quot;Time,&quot; and so does this translation.</p>
+</section>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <ul class="toc-list">
 <li><a href="#ch-1">Chapter 1: Arjuna&#x27;s Despair</a></li>
@@ -209,8 +239,11 @@ figcaption {
 <li><a href="#ch-17">Chapter 17: The Three Kinds of Faith</a></li>
 <li><a href="#ch-18">Chapter 18: Freedom Through Renunciation</a></li>
 </ul>
+</nav>
 
 <hr>
+<article>
+<section aria-labelledby="ch-1">
 <h3 id="ch-1">Chapter 1: Arjuna&#x27;s Despair</h3>
 <p>Dhritarashtra said:</p>
 <p>Sanjaya, tell me. My sons and the sons of Pandu have gathered at
@@ -314,6 +347,8 @@ unarmed and did not fight back, it would be better for me.&quot;</p>
 <p>With these words, there on the battlefield, Arjuna sank down onto
 the seat of his chariot. He let his bow and arrows fall, and his heart
 was drowned in grief.</p>
+</section>
+<section aria-labelledby="ch-2">
 <h3 id="ch-2">Chapter 2: Understanding and Action</h3>
 <p>Sanjaya said:</p>
 <p>Arjuna sat there overwhelmed by pity, sunk in despair, his eyes so
@@ -497,6 +532,8 @@ without ego, the sense of &quot;I,&quot; finds peace.</p>
 ultimate reality behind everything. Whoever reaches it is never confused
 again. Whoever stays in it, even at the hour of death, reaches the
 nirvana of Brahman, its perfect peace.</p>
+</section>
+<section aria-labelledby="ch-3">
 <h3 id="ch-3">Chapter 3: The Way of Action</h3>
 <p>Arjuna said:</p>
 <p>Krishna, if you think understanding is better than action, then why
@@ -602,6 +639,8 @@ Higher than the mind is the understanding. And higher than the
 understanding is he — the self. Know, then, what is higher than the
 understanding. Steady yourself by your self, Arjuna, and kill this enemy
 that takes the form of desire, so hard to get at.</p>
+</section>
+<section aria-labelledby="ch-4">
 <h3 id="ch-4">Chapter 4: Knowledge and the Giving Up of Action</h3>
 <p>Krishna said:</p>
 <p>I taught this yoga, which never perishes, to Vivasvat, the sun.
@@ -709,6 +748,8 @@ who has cut his doubt to pieces with knowledge, and who is
 self-possessed, Arjuna. So take up your own sword of knowledge, cut
 away this doubt that was born of ignorance and is sitting in your heart,
 and hold fast to yoga. Stand up, Arjuna!</p>
+</section>
+<section aria-labelledby="ch-5">
 <h3 id="ch-5">Chapter 5: The Way of Renunciation</h3>
 <p>Arjuna said:</p>
 <p>Krishna, you praise renunciation of action, and then you praise yoga
@@ -789,6 +830,8 @@ for good.</p>
 <p>Whoever knows me as the one who enjoys every sacrifice and every
 austerity, the great Lord of all the worlds, the friend of all beings,
 reaches peace.</p>
+</section>
+<section aria-labelledby="ch-6">
 <h3 id="ch-6">Chapter 6: The Way of Meditation</h3>
 <p>Krishna said:</p>
 <p>The person who does the work he has to do without leaning on the
@@ -908,6 +951,8 @@ than the learned, and the yogi is greater than those who perform the
 rites. So be a yogi, Arjuna. And of all yogis, the one who loves me
 with faith, whose inmost self has gone to me — I count him the most
 disciplined of all.</p>
+</section>
+<section aria-labelledby="ch-7">
 <h3 id="ch-7">Chapter 7: Knowledge and Insight</h3>
 <p>Krishna said:</p>
 <p>Arjuna, listen to how you will come to know me completely, beyond
@@ -982,6 +1027,8 @@ me together with the adhibhuta, what belongs to the world of beings, the
 adhidaiva, what belongs to the gods, and the adhiyajna, what belongs to
 sacrifice, will know me even at the hour of death, with their minds held
 steady.</p>
+</section>
+<section aria-labelledby="ch-8">
 <h3 id="ch-8">Chapter 8: The Imperishable</h3>
 <p>Arjuna said:</p>
 <p>Krishna, Supreme Person, what is that Brahman? What is the adhyatma?
@@ -1055,6 +1102,8 @@ all times, be disciplined in yoga. There is a reward of merit laid
 down for the Vedas, for sacrifices, for austerities, and for giving. The
 yogi who knows all this goes beyond every one of those rewards, and
 reaches the supreme place, where everything began.</p>
+</section>
+<section aria-labelledby="ch-9">
 <h3 id="ch-9">Chapter 9: The Royal Secret</h3>
 <p>Krishna said:</p>
 <p>Now, because you do not find fault, I will tell you the deepest
@@ -1142,6 +1191,8 @@ seers! Since you have come into this passing and joyless world, worship
 me. Keep your mind on me; be devoted to me; sacrifice to me; bow
 down to me. Disciplining yourself this way, with me as your highest
 goal, you will come to me.</p>
+</section>
+<section aria-labelledby="ch-10">
 <h3 id="ch-10">Chapter 10: The Divine Glories</h3>
 <p>Krishna said:</p>
 <p>Listen again, Arjuna, to my highest word. You take delight in what I
@@ -1253,6 +1304,8 @@ whatever is splendid or mighty, understand that every one of these was
 born from a single spark of my brilliance.</p>
 <p>But what use is it to you, Arjuna, to know all this in detail? I
 hold up this whole world with a single fragment of myself, and remain.</p>
+</section>
+<section aria-labelledby="ch-11">
 <h3 id="ch-11">Chapter 11: The Vision of the Universal Form</h3>
 <p>Arjuna said:</p>
 <p>Out of kindness to me, you have told me the highest secret, the
@@ -1417,6 +1470,8 @@ known like this, and seen as I truly am, and entered into.</p>
 <p>Whoever does my work, whoever has me as his highest goal, whoever
 is devoted to me, free from attachment, without hatred for any creature:
 that person comes to me, Arjuna.</p>
+</section>
+<section aria-labelledby="ch-12">
 <h3 id="ch-12">Chapter 12: The Way of Devotion</h3>
 <p>Arjuna said:</p>
 <p>There are those who are always disciplined, devoted to you, who
@@ -1469,6 +1524,8 @@ full of devotion: that man is dear to me.</p>
 <p>But those who hold to this nectar of immortality, this teaching of
 what is right, just as I have given it, full of faith, with me as their
 highest goal, devoted to me: they are the dearest of all to me.</p>
+</section>
+<section aria-labelledby="ch-13">
 <h3 id="ch-13">Chapter 13: The Field and the Knower of the Field</h3>
 <p>Krishna said:</p>
 <p>This body, Arjuna, is called the field. The one who knows it is
@@ -1553,6 +1610,8 @@ whole field, Arjuna.</p>
 <p>Those who see with the eye of knowledge this difference between the
 field and the knower of the field, and see how beings are set free from
 nature, go to the highest.</p>
+</section>
+<section aria-labelledby="ch-14">
 <h3 id="ch-14">Chapter 14: The Three Gunas</h3>
 <p>Krishna said:</p>
 <p>I will tell you once more the highest knowledge, the best of all
@@ -1616,6 +1675,8 @@ is said to have gone beyond the gunas.</p>
 straying, goes beyond these gunas and is fit to become Brahman. For
 I am the foundation of Brahman, of the immortal that never perishes, of
 the eternal law, and of a happiness that is complete.</p>
+</section>
+<section aria-labelledby="ch-15">
 <h3 id="ch-15">Chapter 15: The Supreme Person</h3>
 <p>Krishna said:</p>
 <p>There is a tree, they say, that never perishes: the ashvattha fig,
@@ -1671,6 +1732,8 @@ Person knows everything, Arjuna, and worships me with his whole being.
 So I have told you this most secret teaching, Arjuna, you who are
 without fault. Whoever understands it will be wise, and will have done
 everything there is to do.</p>
+</section>
+<section aria-labelledby="ch-16">
 <h3 id="ch-16">Chapter 16: The Divine and the Demonic</h3>
 <p>Krishna said:</p>
 <p>Fearlessness, purity of heart, standing firm in the yoga of
@@ -1733,6 +1796,8 @@ whatever his desires tell him does not reach perfection, or happiness,
 or the highest goal. So let the scriptures be your authority in
 deciding what you should do and what you should not. Know what the rules
 of scripture say, and then do your work here in the world.</p>
+</section>
+<section aria-labelledby="ch-17">
 <h3 id="ch-17">Chapter 17: The Three Kinds of Faith</h3>
 <p>Arjuna said:</p>
 <p>Krishna, what about people who set aside the rules of scripture but
@@ -1806,6 +1871,8 @@ well. But whatever is offered in the fire, or given, or done as
 austerity, or done at all, without faith, is called asat, &quot;unreal,&quot;
 Arjuna. It counts for nothing, either after death or here in this
 world.</p>
+</section>
+<section aria-labelledby="ch-18">
 <h3 id="ch-18">Chapter 18: Freedom Through Renunciation</h3>
 <p>Arjuna said:</p>
 <p>Krishna, mighty one, I want to know the truth about renunciation,
@@ -1996,6 +2063,9 @@ and again.</p>
 <p>Wherever Krishna is, the master of yoga, and wherever Arjuna is,
 the archer, there you will find good fortune, victory, prosperity, and
 wise rule that does not waver. That is what I believe.</p>
+</section>
+</article>
+</main>
 
 </body>
 </html>

@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Pillow Problems &mdash; Lewis Carroll</title>
+	<meta name="description" content="Seventy-two problems the author of Alice worked out in his head, in bed, in the dark — and an introduction saying exactly which thoughts he was keeping out. The original text, unmodernized: free to read online.">
+	<link rel="canonical" href="https://emend.press/pillow-problems-original.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="Pillow Problems — Lewis Carroll (original text)">
+	<meta property="og:description" content="Seventy-two problems the author of Alice worked out in his head, in bed, in the dark — and an introduction saying exactly which thoughts he was keeping out. The original text, unmodernized: free to read online.">
+	<meta property="og:url" content="https://emend.press/pillow-problems-original.html">
+	<meta property="og:image" content="https://emend.press/covers/share/pillow-problems.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,20 +192,22 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>Pillow Problems</h1>
-	<h3>Seventy-two problems solved in the head, in the dark</h3>
-	<h3>by Lewis Carroll</h3>
+	<p class="title-line">Seventy-two problems solved in the head, in the dark</p>
+	<p class="title-line">by Lewis Carroll</p>
 	<p class="center">
 	1893
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is the original text of Pillow Problems, as it was published, for readers who want to see what the modernization is a modernization of. Every plate carries a caption and alt text written for this edition; the words of the book are the author's, unchanged. <a href="pillow-problems.html">The modern retelling is here</a>. The original is available from <a href="https://www.gutenberg.org/ebooks/79080">Project Gutenberg</a>. Also available as an <a href="ebooks/lewis-carroll_pillow-problems-the-original-text.epub">epub</a>.</i></p>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p><a href="#preface-to-the-fourth-edition">Preface to the Fourth Edition</a></p>
 <p><a href="#preface-to-the-second-edition">Preface to the Second Edition</a></p>
@@ -188,8 +216,11 @@ figcaption {
 <p><a href="#chapter-i-questions">Chapter I: Questions</a></p>
 <p><a href="#chapter-ii-answers">Chapter II: Answers</a></p>
 <p><a href="#chapter-iii-solutions">Chapter III: Solutions</a></p>
+</nav>
 
 <hr>
+<article>
+<section aria-labelledby="preface-to-the-fourth-edition">
 <h2 id="preface-to-the-fourth-edition">Preface to the Fourth Edition</h2>
 <figure id="fig-front">
 <img src="images/pillow-problems/front.jpg" alt="Frontispiece" width="500" height="613" loading="lazy">
@@ -236,6 +267,8 @@ having 2 + 3 &gt; 4, they fail to fulfil the second, as 2<sup>2</sup> + 3<sup>2<
 <p>C. L. D.</p>
 <p>CH. CH., OXFORD. 
 March, 1895.</p>
+</section>
+<section aria-labelledby="preface-to-the-second-edition">
 <h2 id="preface-to-the-second-edition">Preface to the Second Edition</h2>
 <p>THE principal changes, made in this Second Edition of
 &quot;Pillow-Problems&quot;, are as follows:—</p>
@@ -309,6 +342,8 @@ whatever which have property &#x27;α&#x27;.&quot;</p>
 <p>C. L. D.</p>
 <p>CH. CH., OXFORD. 
 September, 1893.</p>
+</section>
+<section aria-labelledby="introduction">
 <h2 id="introduction">Introduction</h2>
 <p>NEARLY all of the following seventy-two Problems are veritable
 &quot;Pillow-Problems&quot;, having been solved, in the head, while lying awake
@@ -506,6 +541,8 @@ May, 1893.</p>
 <p>[1]
 In the trigonometrical Problems, I have used the symbols
 ⫙ and ⌓, to represent the words &#x27;sine&#x27; and &#x27;cosine&#x27;.</p>
+</section>
+<section aria-labelledby="subjects-classified">
 <h2 id="subjects-classified">Subjects Classified</h2>
 <p>Arithmetic. No. 31.</p>
 <p>Algebra:—
@@ -527,6 +564,8 @@ Solid. No. 67.</p>
 <p>Differential Calculus:—
 Maxima and Minima. No. 33.</p>
 <p>Transcendental Probabilities. No. 72.</p>
+</section>
+<section aria-labelledby="chapter-i-questions">
 <h2 id="chapter-i-questions">Chapter I: Questions</h2>
 <h4>Problem 1</h4>
 <p>Find a general formula for two squares whose sum = 2.</p>
@@ -1009,6 +1048,8 @@ them out of the bag.</p>
 <p>[2] 
 The numerals, placed in parentheses, indicate the pages where the
 corresponding matter may be found.</p>
+</section>
+<section aria-labelledby="chapter-ii-answers">
 <h2 id="chapter-ii-answers">Chapter II: Answers</h2>
 <h4>Answer 5</h4>
 <p>Two-thirds.</p>
@@ -1171,6 +1212,8 @@ Locus are</p>
 the way down the back-edge. (3) About 18.65°. (4) About 14.53°.</p>
 <h4>Answer 72</h4>
 <p>One is black, and the other white.</p>
+</section>
+<section aria-labelledby="chapter-iii-solutions">
 <h2 id="chapter-iii-solutions">Chapter III: Solutions</h2>
 <h4>Solution 1</h4>
 <p>Let u, v be the Nos.</p>
@@ -3200,6 +3243,9 @@ things would not give this chance).</p>
 one black counter and one white.</p>
 <p>Q.E.F.</p>
 <p>THE END.</p>
+</section>
+</article>
+</main>
 
 </body>
 </html>

@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Twenty Thousand Leagues Under the Sea &mdash; Jules Verne</title>
+	<meta name="description" content="Captain Nemo&#x27;s Nautilus carries three captives beneath every sea — the complete novel from Verne&#x27;s French, not the abridged Victorian version. Retold in modern English, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/twenty-thousand-leagues.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="Twenty Thousand Leagues Under the Sea — Jules Verne">
+	<meta property="og:description" content="Captain Nemo&#x27;s Nautilus carries three captives beneath every sea — the complete novel from Verne&#x27;s French, not the abridged Victorian version. Retold in modern English, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/twenty-thousand-leagues.html">
+	<meta property="og:image" content="https://emend.press/covers/share/twenty-thousand-leagues.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,27 +192,31 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>Twenty Thousand Leagues Under the Sea</h1>
-	<h3>A tour of the underwater world aboard Captain Nemo&#x27;s Nautilus — translated fresh from Verne&#x27;s French</h3>
-	<h3>by Jules Verne</h3>
+	<p class="title-line">A tour of the underwater world aboard Captain Nemo&#x27;s Nautilus — translated fresh from Verne&#x27;s French</p>
+	<p class="title-line">by Jules Verne</p>
 	<p class="center">
 	<s>1870</s> 2026
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is an AI modernization of Twenty Thousand Leagues Under the Sea into contemporary English. The original is available from <a href="https://www.gutenberg.org/ebooks/5097">Project Gutenberg</a>. Also available as an <a href="ebooks/jules-verne_twenty-thousand-leagues-under-the-sea.epub">epub</a>.</i></p>
 
 	<hr>
+<section aria-labelledby="editors-introduction">
 <h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
 <p>Jules Verne published Twenty Thousand Leagues Under the Sea in 1870, after running it in instalments in the family magazine his publisher Hetzel produced. It belongs to the long series of adventure novels Hetzel marketed as the Voyages extraordinaires, and it is the one that did the most to invent science fiction as a form. The story opens in 1866 with ships all over the world reporting collisions with something enormous and fast in the open sea. A French marine biologist, Professor Pierre Aronnax, joins the American expedition sent to hunt it down, and is pulled overboard along with his servant Conseil and a Canadian harpooner named Ned Land. What picks them out of the water is the thing they were hunting: a submarine called the Nautilus, commanded by a man who calls himself Captain Nemo, which is Latin for nobody.</p>
 <p>Submarines were not new in 1870 — hand-cranked boats had been built and had killed a warship in the American Civil War six years earlier — and that is exactly what Verne is writing against. The Nautilus runs on electricity, which its captain extracts from the sea itself, and the book&#x27;s real subject is the claim that a man could cut himself off from every government on land and live entirely off the ocean. So the engineering matters. The long stretches where Aronnax counts the ship&#x27;s fittings, reckons her displacement, or lists the fish going past the saloon window are not padding to be skipped; they are the argument that the thing would work, and they are kept here in full.</p>
 <p>For a century English readers met this book only through Lewis Mercier&#x27;s 1873 version, which cut close to a quarter of the text, mangled the science because the translator did not follow it, and toned down Nemo&#x27;s rage at empire. Verne&#x27;s standing in English as a writer of boys&#x27; books is largely the result of translations like that one. This edition is made from Verne&#x27;s French, complete, as are the other Verne novels in this collection.</p>
 <p>Three things are worth knowing going in. Conseil never addresses Aronnax as &quot;you&quot; — he speaks to his employer in the third person, and the flat courtesy of it is his whole comedy. Verne&#x27;s measurements are metric and his leagues are distance travelled, not depth: the title counts the length of the voyage. And Nemo tells you almost nothing about himself for a very long time, which is deliberate. The scenes people remember are the underwater funeral in the coral, the pearl diver at Ceylon, and the hunting party that walks out across the sea floor in diving suits.</p>
+</section>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p><a href="#a-runaway-reef">A Runaway Reef</a></p>
 <p><a href="#for-and-against">For and Against</a></p>
@@ -236,8 +266,11 @@ figcaption {
 <p><a href="#a-massacre">A Massacre</a></p>
 <p><a href="#captain-nemo-s-last-words">Captain Nemo&#x27;s Last Words</a></p>
 <p><a href="#conclusion">Conclusion</a></p>
+</nav>
 
 <hr>
+<article>
+<section aria-labelledby="a-runaway-reef">
 <h2 id="a-runaway-reef">A Runaway Reef</h2>
 <p>The year 1866 was marked by a bizarre event, an unexplained and altogether inexplicable phenomenon that no one, surely, has forgotten. To say nothing of the rumors that stirred up the populations of the ports and inflamed the public mind far inland across whole continents, it was the seafaring men above all who were shaken. Merchants and shipowners, sea captains, skippers and masters throughout Europe and America, naval officers of every country, and, in their wake, the governments of the various states on both continents — all of them took the matter with the utmost seriousness.</p>
 <p>The fact was that, for some time now, several ships had met with &quot;an enormous thing&quot; out on the open sea: a long object, tapered like a spindle, sometimes glowing with a strange light, and vastly larger and faster than any whale.</p>
@@ -266,6 +299,8 @@ figcaption {
 <p>The engineers then set about examining the Scotia, which was placed in dry dock. They could not believe their eyes. Two and a half meters below the waterline gaped a clean tear, in the shape of an isosceles triangle. The break in the metal plating was of perfect sharpness — it could not have been cut more cleanly with a punch press. So the piercing tool that had made it must have been tempered to an uncommon hardness — and, after being launched with prodigious force and thus driving through a plate four centimeters thick, it had had to withdraw itself by a backward motion that was truly inexplicable.</p>
 <p>Such was this latest incident, and its result was to fire up public opinion all over again. From this moment on, in fact, every maritime disaster that had no clearly determined cause was laid at the monster&#x27;s door. This fantastic animal was made to shoulder the blame for all these shipwrecks, whose number is unfortunately considerable; for out of the three thousand ships whose loss is recorded every year at the Bureau Veritas, the number of steamships and sailing vessels presumed lost with all hands for want of news comes to no fewer than two hundred!</p>
 <p>And so it was the &quot;monster&quot; that, justly or unjustly, was accused of their disappearance; and, thanks to it, communication between the various continents growing more and more dangerous, the public spoke out and demanded, in no uncertain terms, that the seas be rid at last, and at any price, of this formidable creature.</p>
+</section>
+<section aria-labelledby="for-and-against">
 <h2 id="for-and-against">For and Against</h2>
 <p>At the time these events took place, I was on my way home from a scientific expedition into the Badlands of Nebraska, in the United States. In my capacity as assistant professor at the Museum of Natural History in Paris, I had been attached to the expedition by the French government. After six months in Nebraska, laden with precious collections, I reached New York toward the end of March. My departure for France was set for the first days of May. In the meantime, then, I was busy sorting and classifying my mineralogical, botanical, and zoological treasures, when the incident of the Scotia occurred.</p>
 <p>I was thoroughly up to date on the question of the hour — and how could I not have been? I had read and reread every American and European newspaper without getting any closer to the truth. The mystery intrigued me. Unable to form an opinion, I drifted from one extreme to the other. That there was something out there could not be doubted, and the skeptics were cordially invited to lay a finger on the wound in the Scotia&#x27;s side.</p>
@@ -303,6 +338,8 @@ figcaption {
 <p>&quot;Sir,</p>
 <p>If you would care to join the expedition of the Abraham Lincoln, the government of the Union will be pleased to see France represented by you in this undertaking. Commander Farragut has a cabin at your disposal.</p>
 <h4>Very cordially yours, J. B. HOBSON, Secretary of the Navy.&quot;</h4>
+</section>
+<section aria-labelledby="as-master-pleases">
 <h2 id="as-master-pleases">As Master Pleases</h2>
 <p>Three seconds before J.-B. Hobson&#x27;s letter arrived, I no more dreamed of chasing the Unicorn than of attempting the Northwest Passage. Three seconds after reading the letter from the honorable Secretary of the Navy, I understood at last that my true calling, the single purpose of my life, was to hunt down this troubling monster and rid the world of it.</p>
 <p>And yet I had just come back from a grueling expedition, worn out and hungry for rest. I longed for nothing but to see my own country again, my friends, my little lodging at the Jardin des Plantes, my dear and precious collections! But nothing could hold me back. I forgot everything — the fatigue, the friends, the collections — and without another moment&#x27;s thought I accepted the American government&#x27;s offer.</p>
@@ -360,6 +397,8 @@ figcaption {
 <p>Then the frigate, following along the New Jersey side the admirable right bank of the river, all lined with villas, passed between the forts, which saluted it with their heaviest guns. The Abraham Lincoln answered by lowering and raising three times the American flag, its thirty-nine stars blazing at the mizzen peak; then, altering course to take the buoyed channel that curves around into the inner bay formed by the point of Sandy Hook, it skimmed that sandy spit where a few thousand spectators cheered it one more time.</p>
 <p>The procession of boats and tenders kept following the frigate, and left it only when they came abreast of the lightship whose two beacons mark the entrance to the New York channels.</p>
 <p>Three o&#x27;clock was striking just then. The pilot climbed down into his boat and rejoined the little schooner waiting for him to leeward. The fires were stoked; the propeller beat the waves faster; the frigate ran along the low yellow coast of Long Island, and at eight o&#x27;clock in the evening, having lost the lights of Fire Island to the northwest, it steamed at full speed out onto the dark waters of the Atlantic.</p>
+</section>
+<section aria-labelledby="ned-land">
 <h2 id="ned-land">Ned Land</h2>
 <p>Commander Farragut was a fine sailor, worthy of the frigate he commanded. Ship and man were one; he was her very soul. On the question of the cetacean not a shadow of doubt crossed his mind, and he would not allow the animal&#x27;s existence to be argued aboard his vessel. He believed in it the way certain devout old women believe in the Leviathan — by faith, not by reason. The monster existed; he would rid the seas of it; he had sworn as much. He was a kind of Knight of Rhodes, a Dieudonné de Gozon marching out to meet the serpent that plagued his island. Either Commander Farragut would kill the narwhal, or the narwhal would kill Commander Farragut. There was no middle ground.</p>
 <p>The ship&#x27;s officers shared their chief&#x27;s opinion. You should have heard them talk, debate, argue, calculate the various odds of an encounter, and scan the vast reach of the ocean. More than one volunteered for a watch up in the topgallant crosstrees who, under any other circumstances, would have cursed the chore. As long as the sun traced its daily arc, the masts were crowded with sailors who couldn&#x27;t hold still — the planks of the deck fairly scorched their feet. And yet the Abraham Lincoln had not yet cut through the suspect waters of the Pacific with her prow.</p>
@@ -417,6 +456,8 @@ figcaption {
 <p>&quot;Because... it just isn&#x27;t true!&quot; the Canadian answered, unknowingly reproducing a famous reply of Arago&#x27;s.</p>
 <p>But that answer proved nothing but the harpooner&#x27;s obstinacy. That day I pressed him no further. The Scotia&#x27;s accident could not be denied. The hole existed so plainly that it had had to be plugged, and I don&#x27;t think the existence of a hole can be demonstrated more categorically than that. Now, that hole had not made itself, and since it had not been produced by underwater rocks or underwater machines, it was necessarily due to the piercing tool of some animal.</p>
 <p>Now, in my opinion — and for all the reasons deduced above — that animal belonged to the branch of vertebrates, to the class of mammals, to the group of the fish-shaped, and finally to the order of cetaceans. As for the family in which it ranked — whale, sperm whale, or dolphin — as for the genus it belonged to, as for the species in which it ought to be classed, that was a question to be cleared up later on. To settle it, one would have to dissect this unknown monster; to dissect it, catch it; to catch it, harpoon it — which was Ned Land&#x27;s affair; to harpoon it, sight it — which was the crew&#x27;s affair; and to sight it, meet it — which was the affair of chance.</p>
+</section>
+<section aria-labelledby="at-a-venture">
 <h2 id="at-a-venture">At a Venture</h2>
 <p>For a while the Abraham Lincoln&#x27;s voyage passed without incident. But one occasion arose that threw Ned Land&#x27;s marvelous skill into sharp relief and showed just how much confidence we ought to place in him.</p>
 <p>Off the Falklands, on June 30, the frigate spoke with some American whalers, and we learned that none of them had seen anything of the narwhal. But one of them, the captain of the Monroe, knowing that Ned Land was aboard the Abraham Lincoln, asked for his help in hunting a whale that had come into view. Commander Farragut, eager to see Ned Land at work, gave him leave to go across to the Monroe. And fortune served our Canadian so well that, instead of one whale, he harpooned two at a single double stroke — striking one clean through the heart and taking the other after a chase of only a few minutes!</p>
@@ -459,6 +500,8 @@ figcaption {
 <p>&quot;When one has the honor of being a scholar like Master, one doesn&#x27;t lay oneself open to —&quot;</p>
 <p>Conseil couldn&#x27;t finish his compliment. In the midst of the general silence, a voice had just made itself heard. It was the voice of Ned Land, and Ned Land was shouting:</p>
 <p>&quot;Ahoy! The thing in question, to leeward, off our beam!&quot;</p>
+</section>
+<section aria-labelledby="at-full-steam">
 <h2 id="at-full-steam">At Full Steam</h2>
 <p>At that shout the whole crew rushed toward the harpooner — commander, officers, mates, sailors, ship&#x27;s boys, right down to the engineers who abandoned their engine and the stokers who left their furnaces. The order to stop had been given, and the frigate was now only coasting on her own momentum.</p>
 <p>The darkness was deep just then, and good as the Canadian&#x27;s eyes were, I wondered how he had seen anything, and what it was he could have seen. My heart was pounding fit to burst.</p>
@@ -564,6 +607,8 @@ figcaption {
 <p>All at once his arm shot out violently, and the harpoon was hurled. I heard the ringing clang of the weapon, which seemed to have struck some hard body.</p>
 <p>The electric glow went out suddenly, and two enormous waterspouts crashed down onto the frigate&#x27;s deck, running like a torrent from bow to stern, knocking men off their feet, snapping the lashings of the spare spars.</p>
 <p>A frightful shock followed, and, flung over the rail before I had time to catch hold of anything, I was hurled into the sea.</p>
+</section>
+<section aria-labelledby="a-whale-of-unknown-species">
 <h2 id="a-whale-of-unknown-species">A Whale of Unknown Species</h2>
 <p>Startled as I was by that sudden plunge, I nonetheless kept a very clear impression of my sensations.</p>
 <p>At first I was dragged down to a depth of about twenty feet. I am a strong swimmer — without claiming to rival Byron and Edgar Poe, who are masters of the art — and the fall did not make me lose my head. Two vigorous kicks brought me back to the surface.</p>
@@ -655,6 +700,8 @@ figcaption {
 <p>But it was hard to make yourself heard over the deafening beat of the propeller. Fortunately, the sinking motion stopped.</p>
 <p>Suddenly a noise of ironwork violently shoved came from inside the boat. A plate lifted, a man appeared, let out a strange cry, and instantly vanished.</p>
 <p>A few moments later, eight burly fellows, their faces veiled, appeared in silence and dragged us down into their formidable machine.</p>
+</section>
+<section aria-labelledby="mobilis-in-mobili">
 <h2 id="mobilis-in-mobili">Mobilis in Mobili</h2>
 <p>The abduction had been so brutally carried out, and with such lightning speed, that neither my companions nor I had had time to collect ourselves. I don&#x27;t know what they felt as they were shoved into this floating prison, but for my own part a quick shudder ran cold across my skin. Who were we dealing with? Some new breed of pirate, no doubt, plundering the sea in their own fashion.</p>
 <p>The narrow hatch had scarcely closed above me when a deep darkness swallowed me whole. My eyes, still soaked with the light outside, could make out nothing. I felt my bare feet grip the rungs of an iron ladder. Ned Land and Conseil, seized just as roughly, came down after me. At the foot of the ladder a door swung open, then shut again immediately behind us with a resounding clang.</p>
@@ -722,6 +769,8 @@ figcaption {
 <p>&quot;And I&#x27;m asleep already!&quot; answered Ned Land.</p>
 <p>My two companions stretched out on the cabin&#x27;s mat and were soon plunged into a deep sleep.</p>
 <p>For my part, I gave in less easily to that violent need for sleep. Too many thoughts crowded my mind, too many unanswerable questions pressed upon me, too many images held my eyelids half open. Where were we? What strange power was carrying us off? I felt — or rather thought I felt — the vessel sinking toward the sea&#x27;s most remote layers. Violent nightmares beset me. In those mysterious refuges I glimpsed a whole world of unknown animals, and this submarine boat seemed one of their own kind — alive, moving, formidable like them! Then my brain quieted, my imagination melted into a vague drowsiness, and I soon fell into a heavy, dismal sleep.</p>
+</section>
+<section aria-labelledby="ned-land-s-tempers">
 <h2 id="ned-land-s-tempers">Ned Land&#x27;s Tempers</h2>
 <p>How long that sleep lasted, I have no idea; but it must have been a long one, for it left us fully rested from our exhaustion. I was the first to wake. My companions hadn&#x27;t stirred yet, and lay stretched out in their corner like two inert masses.</p>
 <p>I had barely risen from that passably hard bunk when I felt my head clear and my mind sharpen. I set about examining our cell all over again.</p>
@@ -792,6 +841,8 @@ figcaption {
 <p>Before I could make a move to stop him, the Canadian had hurled himself on the poor man; he had knocked him down; he had him by the throat. The steward was choking under that powerful grip.</p>
 <p>Conseil was already trying to pry the harpooner&#x27;s half-suffocated victim out of his hands, and I was about to join my efforts to his, when I was suddenly nailed to the spot by these words, spoken in French:</p>
 <p>&quot;Calm yourself, Ned Land, and you, Professor, be so good as to hear me out!&quot;</p>
+</section>
+<section aria-labelledby="the-man-of-the-seas">
 <h2 id="the-man-of-the-seas">The Man of the Seas</h2>
 <p>It was the commander of the vessel who had spoken.</p>
 <p>At those words, Ned Land sprang to his feet. The steward, nearly throttled, staggered out at a sign from his master; and such was the commander&#x27;s authority aboard his own ship that not a single gesture betrayed the resentment this man must surely have felt toward the Canadian. Conseil, curious in spite of himself, and I, dumbfounded, waited in silence for the scene to reach its end.</p>
@@ -875,6 +926,8 @@ figcaption {
 <p>&quot;Yes! I love it! The sea is everything! It covers seven tenths of the globe. Its breath is pure and healthful. It is the vast desert where man is never alone, for he feels life quivering at his side. The sea is only the vehicle of a supernatural and prodigious existence; it is nothing but movement and love; it is the Living Infinite, as one of your poets put it. And indeed, Professor, nature reveals herself there through her three kingdoms—mineral, vegetable, animal. The last of these is broadly represented in it by the four groups of zoophytes, by three classes of articulates, by five classes of mollusks, by three classes of vertebrates—the mammals, the reptiles, and those countless legions of fish, an endless order of animals numbering more than thirteen thousand species, of which only a tenth belong to fresh water. The sea is the vast reservoir of nature. It was by the sea that the globe began, so to speak, and who knows but that it will end by it too! There lies supreme tranquility. The sea does not belong to despots. On its surface they may still exercise their iniquitous rights, do battle, devour one another, carry across it every terrestrial horror. But thirty feet below its surface, their power ceases, their influence dies out, their might disappears! Ah, sir—live, live in the bosom of the seas! There alone is independence! There I acknowledge no masters! There I am free!&quot;</p>
 <p>Captain Nemo fell silent all at once, in the midst of this enthusiasm that had come pouring out of him. Had he let himself be carried beyond his usual reserve? Had he said too much? For a few moments he paced back and forth, greatly agitated. Then his nerves grew calm, his face resumed its accustomed coldness, and, turning toward me:</p>
 <p>&quot;Now, Professor,&quot; he said, &quot;if you wish to visit the Nautilus, I am at your service.&quot;</p>
+</section>
+<section aria-labelledby="the-nautilus">
 <h2 id="the-nautilus">The Nautilus</h2>
 <p>Captain Nemo rose. I followed him. A double door at the far end of the room swung open, and I stepped into a chamber the same size as the one I had just left.</p>
 <p>It was a library. Tall bookcases of black rosewood, inlaid with copper, held on their broad shelves a great many volumes bound alike. They ran the whole curve of the room and ended along the bottom in wide divans, upholstered in brown leather, that offered the most comfortable of curves. Light reading-stands on rollers, which could be pushed away or drawn near at will, let you rest your open book on them. At the center stood a large table strewn with pamphlets, among which a few already old newspapers showed. Electric light flooded this whole harmonious ensemble, falling from four frosted globes half sunk in the scrollwork of the ceiling. I gazed with real wonder at this room so ingeniously fitted out, and I could scarcely believe my eyes.</p>
@@ -924,6 +977,8 @@ figcaption {
 <p>Captain Nemo pointed me to a seat.</p>
 <p>&quot;Please sit down,&quot; he said.</p>
 <p>I sat, and he began to speak in these terms:</p>
+</section>
+<section aria-labelledby="everything-by-electricity">
 <h2 id="everything-by-electricity">Everything by Electricity</h2>
 <p>&quot;Professor,&quot; said Captain Nemo, pointing to the instruments hanging on the walls of his cabin, &quot;here are the devices the navigation of the Nautilus requires. In here, as in the salon, I have them always before my eyes, and they tell me my position and my exact heading in the middle of the Ocean. Some of them you&#x27;ll recognize: the thermometer, which gives the temperature inside the Nautilus; the barometer, which weighs the pressure of the air and predicts changes in the weather; the hygrometer, which marks the degree of dryness in the atmosphere; the storm-glass, whose mixture, as it breaks down, announces the coming of a storm; the compass, which steers my course; the sextant, which by the height of the sun tells me my latitude; the chronometers, which allow me to calculate my longitude; and finally the day and night glasses, which serve me to scan every point of the horizon when the Nautilus has risen back to the surface of the waves.&quot;</p>
 <p>&quot;These are the ordinary instruments of any navigator,&quot; I answered, &quot;and I know how they&#x27;re used. But here are others that no doubt answer to the particular demands of the Nautilus. This dial I see, with a needle traveling across it — isn&#x27;t that a pressure gauge?&quot;</p>
@@ -986,6 +1041,8 @@ figcaption {
 <p>There was a mystery here, but I didn&#x27;t press to learn it. How could electricity act with such power? Where did this almost unlimited force take its origin? Was it in its excessive tension, obtained by coils of some new kind? Was it in its transmission, which an unknown system of levers could amplify to infinity? That was what I couldn&#x27;t grasp.</p>
 <p>&quot;Captain Nemo,&quot; I said, &quot;I take note of the results and I don&#x27;t try to explain them. I saw the Nautilus maneuvering in front of the Abraham Lincoln, and I know what to make of its speed. But moving isn&#x27;t enough. You have to see where you&#x27;re going! You have to be able to steer right, left, up, down! How do you reach the great depths, where you meet a growing resistance measured in hundreds of atmospheres? How do you rise back to the surface of the Ocean? And how, finally, do you hold yourself at whatever level suits you? Am I being indiscreet in asking you?&quot;</p>
 <p>&quot;Not at all, Professor,&quot; the captain answered me, after a slight hesitation, &quot;since you must never leave this underwater boat. Come into the salon. It&#x27;s our real study, and there you&#x27;ll learn everything you need to know about the Nautilus!&quot;</p>
+</section>
+<section aria-labelledby="some-figures">
 <h2 id="some-figures">Some Figures</h2>
 <p>A moment later we were seated on a divan in the lounge, cigars between our lips. The captain laid before me a set of drawings that gave the plan, section, and elevation of the Nautilus. Then he began his description in these words:</p>
 <p>&quot;Here, Professor Aronnax, are the various dimensions of the vessel that carries you. It&#x27;s a very elongated cylinder with conical ends. It closely resembles the shape of a cigar — a shape already adopted in London for several craft of the same kind. The length of this cylinder, from tip to tip, is exactly seventy meters, and its beam, at its widest point, is eight meters. So it isn&#x27;t built quite to the ratio of one to ten, like your fast steamers, but its lines are long enough and its run prolonged enough that the displaced water slips away easily and puts up no resistance to its passage.</p>
@@ -1041,6 +1098,8 @@ figcaption {
 <p>&quot;You&#x27;re rich, then?&quot;</p>
 <p>&quot;Infinitely rich, sir — I could pay off France&#x27;s ten billion of debt without the slightest inconvenience!&quot;</p>
 <p>I stared hard at the strange man who spoke to me this way. Was he trading on my credulity? The future would tell.</p>
+</section>
+<section aria-labelledby="the-black-current">
 <h2 id="the-black-current">The Black Current</h2>
 <p>The portion of the globe covered by water has been reckoned at three million eight hundred thirty-two thousand five hundred fifty-eight square myriameters — more than thirty-eight million hectares. This liquid mass comprises two billion two hundred fifty million cubic miles, and would form a sphere sixty leagues in diameter weighing three quintillion tons. To grasp that number, you have to tell yourself that a quintillion is to a billion what a billion is to one — that is, there are as many billions in a quintillion as there are single units in a billion. And this mass of water is roughly the quantity that all the rivers of the earth would pour out over the span of forty thousand years.</p>
 <p>During the geological ages, the age of fire was followed by the age of water. In the beginning the ocean was universal. Then, little by little, in the Silurian period, mountain peaks appeared, islands emerged and vanished again under partial floods, showed themselves once more, fused together, formed continents, and at last the land settled geographically into the shape we see today. The solid had wrested from the liquid thirty-seven million six hundred fifty-seven thousand square miles — twelve thousand nine hundred sixteen million hectares.</p>
@@ -1149,6 +1208,8 @@ figcaption {
 <p>I waited for Captain Nemo. But he didn&#x27;t appear. The clock read five.</p>
 <p>Ned Land and Conseil went back to their cabin. I returned to my own room. My dinner was waiting there, ready. It consisted of a turtle soup made from the most delicate hawksbills, a red mullet with white, slightly flaky flesh — its liver, prepared separately, made a delicious dish — and fillets of that meat of the emperor holocanthus, whose flavor struck me as superior to salmon&#x27;s.</p>
 <p>I spent the evening reading, writing, thinking. Then, as sleep crept over me, I stretched out on my bed of eelgrass and fell into a deep sleep, while the Nautilus slid along through the swift current of the Black River.</p>
+</section>
+<section aria-labelledby="an-invitation-by-letter">
 <h2 id="an-invitation-by-letter">An Invitation by Letter</h2>
 <p>The next day, November 9, I woke only after a long twelve-hour sleep. Conseil came, as was his habit, to ask &quot;how Master had passed the night&quot; and to offer his services. He had left his friend the Canadian sleeping like a man who had never done anything else his whole life.</p>
 <p>I let the good fellow chatter away to his heart&#x27;s content without answering him much. My mind was on Captain Nemo&#x27;s absence during our session the day before, and I hoped to see him again today.</p>
@@ -1241,6 +1302,8 @@ Captain NEMO.</p>
 <p>&quot;I&#x27;ll argue no more,&quot; I replied, rising from the table, &quot;and I have nothing left to do but take up my rifle. Wherever you go, I&#x27;ll go.&quot;</p>
 <p>Captain Nemo led me toward the stern of the Nautilus, and, passing by the cabin of Ned and Conseil, I called my two companions, who followed us at once.</p>
 <p>Then we came to a cell located alongside, near the engine room, in which we were to put on our walking gear.</p>
+</section>
+<section aria-labelledby="a-walk-across-the-plains">
 <h2 id="a-walk-across-the-plains">A Walk Across the Plains</h2>
 <p>This cell was, strictly speaking, the arsenal and the changing room of the Nautilus. A dozen diving suits hung along the wall, waiting for anyone who cared to go walking.</p>
 <p>When Ned Land laid eyes on them, he made no secret of how little he wanted to climb into one.</p>
@@ -1279,6 +1342,8 @@ Captain NEMO.</p>
 <p>Arrived at this depth of three hundred feet, I could still perceive the sun&#x27;s rays, but faintly. Their intense brilliance had given way to a reddish twilight, a halfway state between day and night. Still, we could see well enough to make our way, and there was no need yet to switch on the Ruhmkorff apparatus.</p>
 <p>At that moment Captain Nemo stopped. He waited until I had rejoined him, and with a finger he pointed out to me some dark masses that stood out in the shadows a short distance off.</p>
 <p>&quot;That is the forest of Crespo Island,&quot; I thought — and I was not mistaken.</p>
+</section>
+<section aria-labelledby="an-underwater-forest">
 <h2 id="an-underwater-forest">An Underwater Forest</h2>
 <p>We had reached at last the edge of this forest — surely one of the finest in all Captain Nemo&#x27;s vast domain. He regarded it as his own, claiming over it the very rights the first men held in the first days of the world. And who, after all, would have disputed his ownership of this underwater estate? What bolder pioneer would ever have come, axe in hand, to clear its shadowy thickets?</p>
 <p>This forest was made up of great tree-like plants, and the moment we passed beneath its towering arches, my eyes were struck at once by a singular arrangement of their branches — an arrangement I had never observed until then.</p>
@@ -1313,6 +1378,8 @@ Captain NEMO.</p>
 <p>Very luckily, these voracious animals see poorly. They passed without noticing us, grazing us with their brownish fins, and we escaped, as if by a miracle, a danger surely greater than meeting a tiger in the depths of a forest.</p>
 <p>Half an hour later, guided by the electric trail, we reached the Nautilus. The outer door had been left open, and Captain Nemo closed it again the moment we were back in the first cell. Then he pressed a button. I heard the pumps working inside the vessel, I felt the water sinking around me, and in a few moments the cell was completely emptied. The inner door then opened, and we passed into the changing room.</p>
 <p>There, our diving suits were stripped off, not without some trouble, and, thoroughly worn out, faint with hunger and sleep, I made my way back to my cabin, filled with wonder at this astonishing excursion to the bottom of the seas.</p>
+</section>
+<section aria-labelledby="four-thousand-leagues-under-the-pacific">
 <h2 id="four-thousand-leagues-under-the-pacific">Four Thousand Leagues Under the Pacific</h2>
 <p>The next morning, November 18, I had fully recovered from the exhaustion of the day before, and I climbed up onto the platform just as the Nautilus&#x27;s first officer was pronouncing his daily phrase. It occurred to me then that it must have to do with the state of the sea — or rather that it meant: &quot;We have nothing in sight.&quot;</p>
 <p>And indeed, the ocean was deserted. Not a sail on the horizon. The heights of Crespo Island had vanished during the night. The sea drank in all the colors of the spectrum except the blue, reflecting that in every direction and taking on a magnificent shade of indigo. A watered-silk pattern of broad bands rippled regularly across the swelling waves.</p>
@@ -1363,6 +1430,8 @@ Captain NEMO.</p>
 <p>What a scene! We stood mute, our hearts pounding, before this shipwreck caught in the act and, so to speak, photographed in its final minute! And already I could see, their eyes ablaze, enormous sharks advancing, drawn by this bait of human flesh!</p>
 <p>Meanwhile the Nautilus, maneuvering, turned around the sunken ship, and for an instant I was able to read on its stern board:</p>
 <p>Florida, Sunderland.</p>
+</section>
+<section aria-labelledby="vanikoro">
 <h2 id="vanikoro">Vanikoro</h2>
 <p>That terrible spectacle was only the first in a whole series of maritime disasters that the Nautilus was to encounter along its course. Ever since it had begun following more frequented waters, we often caught sight of wrecked hulls rotting away between the surface and the deep, and, lower down, cannons, cannonballs, anchors, chains, and a thousand other iron objects being devoured by rust.</p>
 <p>Meanwhile, still carried along by the Nautilus — where we lived as though cut off from the world — on December 11 we came within sight of the Pomotou archipelago, Bougainville&#x27;s old &quot;dangerous group,&quot; which stretches across a span of five hundred leagues from east-southeast to west-northwest, between 13°30′ and 23°50′ south latitude, and 125°30′ and 151°30′ west longitude, from Ducie Island to Lazareff Island. The archipelago covers an area of three hundred and seventy square leagues and is made up of some sixty clusters of islands, among which one notes the Gambier group, over which France has imposed its protectorate. These islands are coral formations. A slow but ceaseless upheaval, driven by the labor of the polyps, will one day link them all together. Then this new island will later fuse with the neighboring archipelagos, and a fifth continent will stretch from New Zealand and New Caledonia all the way to the Marquesas.</p>
@@ -1435,6 +1504,8 @@ Captain NEMO.</p>
 <p>Captain Nemo showed me a tin box, stamped with the arms of France and entirely corroded by the salt water. He opened it, and I saw a bundle of yellowed papers, still legible.</p>
 <p>They were the very instructions of the Minister of the Navy to Commander La Pérouse, annotated in the margins in the hand of Louis XVI!</p>
 <p>&quot;Ah! It&#x27;s a fine death for a sailor!&quot; said Captain Nemo then. &quot;A coral tomb is a peaceful grave, and may heaven grant that my companions and I never have any other!&quot;</p>
+</section>
+<section aria-labelledby="the-torres-strait">
 <h2 id="the-torres-strait">The Torres Strait</h2>
 <p>During the night of December 27th to 28th, the Nautilus left the waters of Vanikoro behind at a headlong speed. Her course was southwest, and in three days she covered the seven hundred and fifty leagues that separate the La Pérouse group from the southeastern point of Papua.</p>
 <p>Early on the morning of January 1, 1863, Conseil joined me on the platform.</p>
@@ -1508,6 +1579,8 @@ Captain NEMO.</p>
 <p>&quot;Good!&quot; I said. &quot;There go Master Land&#x27;s rash ways, starting up again!&quot;</p>
 <p>&quot;Don&#x27;t be afraid, Professor Aronnax,&quot; the Canadian replied, &quot;and pull hard! I don&#x27;t ask twenty-five minutes to serve you up a dish of my own making.&quot;</p>
 <p>At half past eight, the Nautilus&#x27;s dinghy ran gently aground on a beach of sand, having safely cleared the coral ring that encircled the island of Gueboroar.</p>
+</section>
+<section aria-labelledby="a-few-days-ashore">
 <h2 id="a-few-days-ashore">A Few Days Ashore</h2>
 <p>Setting foot on land made a strong impression on me. Ned Land tested the ground with his foot, as though to take possession of it. Yet it had been only two months since we had become, in Captain Nemo&#x27;s phrase, the &quot;passengers of the Nautilus&quot; — which is to say, in plain fact, the prisoners of her commander.</p>
 <p>In a few minutes we were within gunshot of the shore. The soil was almost entirely made of coral, but certain beds of dried-up torrents, strewn with fragments of granite, showed that the island dated from some primordial formation. The whole horizon lay hidden behind a curtain of magnificent forest. Enormous trees, some of them reaching two hundred feet, were linked one to another by garlands of vines — real natural hammocks, rocked by a light breeze. There were mimosas, ficus, casuarinas, teaks, hibiscus, pandanus, palms, all mingled in profusion, and beneath the shelter of their green vault, at the foot of their giant trunks, grew orchids, legumes, and ferns.</p>
@@ -1632,6 +1705,8 @@ Captain NEMO.</p>
 <p>&quot;What if we didn&#x27;t go back to the Nautilus tonight?&quot; said Conseil.</p>
 <p>&quot;What if we never went back?&quot; added Ned Land.</p>
 <p>At that moment a stone came falling at our feet and cut short the harpooner&#x27;s proposal.</p>
+</section>
+<section aria-labelledby="captain-nemo-s-thunderbolt">
 <h2 id="captain-nemo-s-thunderbolt">Captain Nemo&#x27;s Thunderbolt</h2>
 <p>We had been looking toward the forest, without getting up, my hand frozen halfway to my mouth, Ned Land&#x27;s completing its errand.</p>
 <p>&quot;A stone doesn&#x27;t fall out of the sky,&quot; said Conseil, &quot;unless it has earned the name of a meteorite.&quot;</p>
@@ -1770,6 +1845,8 @@ Captain NEMO.</p>
 <p>That word explained everything to me. It was no longer a rail, but a metal cable, fully charged with the ship&#x27;s electricity, running up to the platform. Anyone who touched it felt a tremendous shock — and that shock would have been fatal, had Captain Nemo sent the whole current of his apparatus into this conductor! One could truly say that between himself and his attackers he had stretched an electric net that no one could cross unharmed.</p>
 <p>Meanwhile the terrified Papuans had beaten a retreat, wild with fear. And we, half laughing, were comforting and rubbing down the wretched Ned Land, who was swearing like a man possessed.</p>
 <p>But at that instant the Nautilus, lifted by the last swells of the tide, left its bed of coral at that fortieth minute exactly fixed by the captain. Its propeller beat the waters with a majestic slowness. Its speed built up little by little, and, sailing on the surface of the Ocean, it left behind, safe and sound, the dangerous passages of the Torres Strait.</p>
+</section>
+<section aria-labelledby="gri-somnia">
 <h2 id="gri-somnia">Ægri Somnia</h2>
 <p>The next day, January 10, the Nautilus resumed its course between two waters, but at a remarkable speed that I could not put at less than thirty-five miles an hour. Its propeller turned so fast that I could neither follow nor count its revolutions.</p>
 <p>When I reflected that this marvelous electric agent, having given the Nautilus its motion, its heat, and its light, also protected the ship against attacks from outside and transformed it into a sacred ark that no profaner could touch without being struck down by lightning, my admiration knew no bounds — and from the machine it climbed at once to the engineer who had created it.</p>
@@ -1840,6 +1917,8 @@ Captain NEMO.</p>
 <p>At that moment the luminous globe that lit the cell went out and left us in deep darkness. Ned Land was not slow to fall asleep, and — what astonished me — Conseil too gave way to a heavy drowsiness. I was asking myself what could have brought on this imperious need for sleep in him, when I felt my own brain steeping in a thick torpor. My eyes, which I wanted to keep open, closed in spite of me. I was in the grip of a painful hallucination. Plainly, some sleeping drug had been mixed into the food we had just eaten. So prison was not enough to hide Captain Nemo&#x27;s plans from us — sleep had to be added to it as well!</p>
 <p>I heard then the panels closing again. The undulations of the sea, which had set up a slight rolling motion, ceased. Had the Nautilus, then, left the surface of the ocean? Had it gone back down into the motionless stratum of the waters?</p>
 <p>I tried to resist sleep. It was impossible. My breathing weakened. I felt a deadly cold freeze my heavy, half-paralyzed limbs. My eyelids, true caps of lead, fell over my eyes. I could not lift them. A morbid sleep, full of hallucinations, took hold of my whole being. Then the visions faded, and left me in a total annihilation.</p>
+</section>
+<section aria-labelledby="the-coral-kingdom">
 <h2 id="the-coral-kingdom">The Coral Kingdom</h2>
 <p>The next morning I woke with my head remarkably clear. To my great surprise, I was in my own room. My companions, no doubt, had been carried back to their cabin without noticing it any more than I had. What had happened during the night, they knew as little as I did myself, and to unravel that mystery I could count on nothing but the chances of the future.</p>
 <p>Then I thought of leaving my room. Was I once more free, or still a prisoner? Entirely free. I opened the door, made my way along the passageways, and climbed the central staircase. The panels, shut the evening before, now stood open. I came out onto the platform.</p>
@@ -1919,7 +1998,10 @@ Captain NEMO.</p>
 <p>&quot;There lies our peaceful cemetery, a few hundred feet beneath the surface of the waves!&quot;</p>
 <p>&quot;Your dead sleep there in peace, at least, Captain, beyond the reach of the sharks!&quot;</p>
 <p>&quot;Yes, sir,&quot; Captain Nemo answered gravely, &quot;beyond the reach of the sharks — and of men!&quot;</p>
+</section>
+<section class="part" aria-labelledby="part-two">
 <h2 id="part-two" class="center">Part Two</h2>
+<section aria-labelledby="the-indian-ocean">
 <h2 id="the-indian-ocean">The Indian Ocean</h2>
 <p>Here begins the second part of this voyage under the seas. The first had ended with that moving scene in the coral cemetery, which left a deep impression on my mind. So this, then, was how Captain Nemo&#x27;s whole life unfolded, in the heart of that immense sea — even his grave he had made ready in the most impenetrable of its depths. There, not one of the ocean&#x27;s monsters would come to trouble the last sleep of those companions of the Nautilus, those friends, bound to one another in death as surely as in life! &quot;Nor any man, either!&quot; the captain had added.</p>
 <p>Always that same wild, implacable distrust of human society!</p>
@@ -1970,6 +2052,8 @@ Captain NEMO.</p>
 <p>&quot;Yes, my boy, and don&#x27;t try to reckon the number of these infusoria! You&#x27;d never manage it, for, if I&#x27;m not mistaken, some navigators have floated on these milk seas for more than forty miles.&quot;</p>
 <p>I do not know whether Conseil heeded my advice, but he seemed to sink into deep reflection, no doubt trying to calculate how many fifths of a millimeter forty square miles contain. As for me, I went on observing the phenomenon. For several hours the Nautilus cleaved with its ram these whitish waves, and I noticed that it glided noiselessly over this soapy water, as if it were floating in those eddies of foam that the currents and countercurrents of bays sometimes leave between them.</p>
 <p>Toward midnight, the sea suddenly took back its ordinary hue; but behind us, all the way to the limits of the horizon, the sky, reflecting the whiteness of the waves, seemed for a long time steeped in the vague glimmers of an aurora borealis.</p>
+</section>
+<section aria-labelledby="a-new-proposal-from-captain-nemo">
 <h2 id="a-new-proposal-from-captain-nemo">A New Proposal from Captain Nemo</h2>
 <p>On February 28, when the Nautilus rose to the surface at noon at 9°4′ north latitude, it came in sight of land lying eight miles to the west. The first thing I made out was a cluster of mountains, about two thousand feet high, whose shapes had been molded into the most fanciful outlines. Once the reading was taken, I went back into the salon, and when the bearing had been plotted on the chart, I recognized that we stood off the island of Ceylon — that pearl hanging from the lower lobe of the Indian peninsula.</p>
 <p>I went to the library to look for some book about this island, one of the most fertile on the globe. As it happened, I found a volume by Sirr H. C., esq., titled Ceylon and the Cingalese. Back in the salon, I first noted down the bearings of Ceylon, on which antiquity had lavished so many different names. It lay between 5°55′ and 9°49′ north latitude, and between 79°42′ and 82°4′ longitude east of the Greenwich meridian; its length was two hundred and seventy-five miles; its maximum width, one hundred and fifty miles; its circumference, nine hundred miles; its area, twenty-four thousand four hundred and forty-eight miles — in other words, a little smaller than Ireland.</p>
@@ -2088,6 +2172,8 @@ Captain NEMO.</p>
 <p>&quot;Me?&quot; said Conseil. &quot;I&#x27;ll be frank with Master.&quot;</p>
 <p>&quot;That&#x27;s the spirit,&quot; I thought.</p>
 <p>&quot;If Master faces the sharks,&quot; said Conseil, &quot;I don&#x27;t see why his faithful servant shouldn&#x27;t face them right alongside him!&quot;</p>
+</section>
+<section aria-labelledby="a-pearl-worth-ten-million">
 <h2 id="a-pearl-worth-ten-million">A Pearl Worth Ten Million</h2>
 <p>Night came on. I went to bed. I slept badly. Sharks played a leading role in my dreams, and I found it both entirely fitting and entirely unfitting, that old etymology that traces the French word for shark — requin — back to the word requiem.</p>
 <p>The next morning, at four o&#x27;clock, I was woken by the steward Captain Nemo had assigned specially to my service. I got up quickly, dressed, and went into the salon.</p>
@@ -2177,6 +2263,8 @@ Captain NEMO.</p>
 <p>There I fell to reflecting on the incidents of our excursion to the Manaar bank. Two observations came out of it inevitably. One bore on the unequaled daring of Captain Nemo, the other on his devotion to a human being — one of the representatives of that race he was fleeing beneath the seas. Whatever he might say, this strange man had not yet managed to kill his heart entirely.</p>
 <p>When I made this observation to him, he answered in a slightly moved tone:</p>
 <p>&quot;That Indian, Professor, is an inhabitant of the land of the oppressed, and I am still, and to my last breath I will remain, a man of that land!&quot;</p>
+</section>
+<section aria-labelledby="the-red-sea">
 <h2 id="the-red-sea">The Red Sea</h2>
 <p>Over the course of January 29, the island of Ceylon dropped below the horizon, and the Nautilus, running at twenty miles an hour, slipped into that labyrinth of channels which separates the Maldives from the Laccadives. It even skirted Kittan Island, a bit of land of madreporic origin, discovered by Vasco da Gama in 1499 and one of the nineteen principal islands of that Laccadive archipelago, lying between 10° and 14°30′ north latitude and between 69° and 50°72′ east longitude.</p>
 <p>By then we had covered sixteen thousand two hundred and twenty miles, or seven thousand five hundred leagues, since our starting point in the seas of Japan.</p>
@@ -2283,6 +2371,8 @@ To name it but the Red Sea now.</p>
 <p>&quot;Sir,&quot; the captain answered, &quot;there can be nothing secret between people who are never to part.&quot;</p>
 <p>I let the insinuation pass and waited for Captain Nemo&#x27;s account.</p>
 <p>&quot;Professor,&quot; he said, &quot;it was a simple piece of naturalist&#x27;s reasoning that led me to discover this passage, which I alone know. I had noticed that in the Red Sea and in the Mediterranean there exist a certain number of fish of absolutely identical species — snake-eels, butterfish, rainbow wrasse, parrotfish, sand-smelts, flying fish. Certain of this fact, I asked myself whether there wasn&#x27;t some communication between the two seas. If there was, the underground current would necessarily run from the Red Sea to the Mediterranean, simply because of the difference in their levels. So I caught a great many fish in the neighborhood of Suez. I slipped a copper ring over their tails and threw them back into the sea. A few months later, off the coast of Syria, I recovered several specimens of my fish, still wearing their telltale rings. The communication between the two seas was thus proved to me. I searched for it with my Nautilus, I found it, I ventured into it — and before long, Professor, you too will have passed through my Arabian Tunnel!&quot;</p>
+</section>
+<section aria-labelledby="the-arabian-tunnel">
 <h2 id="the-arabian-tunnel">The Arabian Tunnel</h2>
 <p>That same day I reported to Conseil and Ned Land the part of the conversation that concerned them directly. When I told them that within two days we would be in the waters of the Mediterranean, Conseil clapped his hands, but the Canadian only shrugged.</p>
 <p>&quot;An underwater tunnel!&quot; he cried. &quot;A passage between the two seas! Who ever heard of such a thing?&quot;</p>
@@ -2383,6 +2473,8 @@ To name it but the Red Sea now.</p>
 <p>At ten thirty-five, Captain Nemo let go of the wheel, and turning to me:</p>
 <p>&quot;The Mediterranean,&quot; he said.</p>
 <p>In less than twenty minutes, the Nautilus, carried along by that torrent, had crossed the Isthmus of Suez.</p>
+</section>
+<section aria-labelledby="the-greek-archipelago">
 <h2 id="the-greek-archipelago">The Greek Archipelago</h2>
 <p>The next day, February 12, at daybreak, the Nautilus rose to the surface of the waves. I rushed up onto the platform. Three miles to the south the hazy silhouette of Pelusium took shape. A torrent had carried us from one sea to the other. But that tunnel, easy enough to run down, must surely be impossible to climb back up.</p>
 <p>Toward seven o&#x27;clock, Ned and Conseil joined me. These two inseparable companions had slept soundly, without troubling themselves in the least over the exploits of the Nautilus.</p>
@@ -2509,6 +2601,8 @@ To name it but the Red Sea now.</p>
 <p>An order was given. The Nautilus came about and drew away from that furnace it couldn&#x27;t brave with impunity. A quarter of an hour later, we were breathing at the surface of the waves.</p>
 <p>The thought then came to me that if Ned Land had chosen these waters to carry out our escape, we would never have come out alive from this sea of fire.</p>
 <p>The next day, February 16, we left that basin which, between Rhodes and Alexandria, counts depths of three thousand meters, and the Nautilus, passing well off Cerigo, left the Greek archipelago behind, after doubling Cape Matapan.</p>
+</section>
+<section aria-labelledby="the-mediterranean-in-forty-eight-hours">
 <h2 id="the-mediterranean-in-forty-eight-hours">The Mediterranean in Forty-Eight Hours</h2>
 <p>The Mediterranean — the blue sea above all others, the &quot;Great Sea&quot; of the Hebrews, &quot;the sea&quot; of the Greeks, the mare nostrum of the Romans; fringed with orange groves, aloes, cactus, and maritime pines, sweet with the scent of myrtle, framed by rugged mountains, steeped in a pure and transparent air yet endlessly worked upon by the fires of the earth — is a whole world unto itself. It is here, on its shores and its waters, Michelet says, that a man is tempered anew in one of the mightiest climates on the globe.</p>
 <p>But beautiful as it is, I could catch no more than a hurried glimpse of this basin, whose surface covers two million square kilometers. Captain Nemo&#x27;s personal knowledge failed me here as well, for the enigmatic man did not appear once during this high-speed crossing. I reckon that the Nautilus traveled some six hundred leagues beneath the waves of this sea, and it covered that distance in twice twenty-four hours. Setting out on the morning of February 16 from the waters off Greece, by the 18th, at sunrise, we had cleared the Strait of Gibraltar.</p>
@@ -2554,6 +2648,8 @@ To name it but the Red Sea now.</p>
 <p>Meanwhile the Nautilus, indifferent and swift, ran at full propeller through the midst of these ruins. On February 18, toward three in the morning, it presented itself at the entrance to the Strait of Gibraltar.</p>
 <p>There are two currents there: an upper current, long recognized, which brings the ocean&#x27;s waters into the basin of the Mediterranean; and then a lower counter-current, whose existence reasoning has demonstrated today. In effect, the sum of the Mediterranean&#x27;s waters, ceaselessly swelled by the flow of the Atlantic and by the rivers emptying into it, ought to raise the level of this sea year by year, for its evaporation is not enough to restore the balance. And yet it does not, and one has naturally had to admit the existence of a lower current that, through the Strait of Gibraltar, pours the Mediterranean&#x27;s overflow into the basin of the Atlantic.</p>
 <p>A true fact, indeed. And it was this counter-current the Nautilus took advantage of. It advanced rapidly through the narrow pass. For an instant I could make out the admirable ruins of the temple of Hercules, sunk — according to Pliny and Avienus — along with the low island that once bore it up, and a few minutes later we were floating on the waves of the Atlantic.</p>
+</section>
+<section aria-labelledby="vigo-bay">
 <h2 id="vigo-bay">Vigo Bay</h2>
 <p>The Atlantic! That vast sheet of water, twenty-five million square miles across, nine thousand miles long and, on average, two thousand seven hundred wide. A great sea almost unknown to the ancients — except perhaps to the Carthaginians, those Dutchmen of antiquity, who on their trading voyages followed the western coasts of Europe and Africa. An ocean whose shores, winding in parallel curves, embrace an immense perimeter, watered by the greatest rivers in the world — the St. Lawrence, the Mississippi, the Amazon, the Plata, the Orinoco, the Niger, the Senegal, the Elbe, the Loire, the Rhine — bringing it the waters of the most civilized nations and the wildest lands alike. A magnificent plain, forever furrowed by the ships of every nation, sheltered under every flag in the world, and closed off at either end by those two dreaded headlands, the terror of navigators — Cape Horn and the Cape of Storms.</p>
 <p>The Nautilus was cutting through its waters with the edge of its ram, having covered nearly ten thousand leagues in three and a half months — a run longer than one of the earth&#x27;s great circles. Where were we bound now, and what did the future hold for us?</p>
@@ -2632,6 +2728,8 @@ To name it but the Red Sea now.</p>
 <p>&quot;Barren!&quot; he shot back, kindling. &quot;So you believe, sir, that these riches are lost when it&#x27;s I who gather them up? Is it for myself, in your opinion, that I take the trouble to collect these treasures? Who tells you I don&#x27;t put them to good use? Do you think I&#x27;m unaware that there are suffering beings, oppressed races on this earth — the wretched to be relieved, the victims to be avenged? Don&#x27;t you understand?&quot;</p>
 <p>Captain Nemo stopped on these last words, regretting perhaps that he had said too much. But I had guessed. Whatever the motives that had forced him to seek independence beneath the seas, above all else he had remained a man! His heart still throbbed for the sufferings of humanity, and his vast charity went out to enslaved races as much as to individuals.</p>
 <p>And I understood, then, for whom those millions were destined that Captain Nemo had shipped off when the Nautilus was cruising in the waters of insurgent Crete!</p>
+</section>
+<section aria-labelledby="a-vanished-continent">
 <h2 id="a-vanished-continent">A Vanished Continent</h2>
 <p>The next morning, February 19, I saw Ned come into my cabin. I had been expecting him. He looked thoroughly crestfallen.</p>
 <p>&quot;Well, Professor?&quot; he said.</p>
@@ -2700,6 +2798,8 @@ To name it but the Red Sea now.</p>
 <p>We stayed in that spot for a full hour, gazing at the vast plain under the glow of the lava, which now and then flared to a startling intensity. The seething deep within sent quick shudders running across the crust of the mountain. Deep sounds, transmitted with perfect clarity through this liquid element, echoed back with a majestic breadth.</p>
 <p>At that moment the moon appeared for an instant through the mass of the waters and cast a few pale rays over the sunken continent. It was only a glimmer, but the effect was beyond describing. The captain rose, took one last look at the immense plain; then with his hand he signaled me to follow him.</p>
 <p>We came down the mountain quickly. Once past the mineral forest, I caught sight of the Nautilus&#x27;s beacon shining like a star. The captain walked straight toward it, and we were back aboard just as the first tints of dawn were whitening the surface of the Ocean.</p>
+</section>
+<section aria-labelledby="the-undersea-coal-mines">
 <h2 id="the-undersea-coal-mines">The Undersea Coal Mines</h2>
 <p>The next day, February 20, I woke very late. The exhaustion of the night had stretched my sleep until eleven o&#x27;clock. I dressed quickly. I was eager to know which way the Nautilus was heading. The instruments told me she was still running south at a speed of twenty miles an hour, at a depth of a hundred meters.</p>
 <p>Conseil came in. I told him about our nighttime excursion, and since the panels were open, he could still catch a glimpse of that submerged continent.</p>
@@ -2782,6 +2882,8 @@ To name it but the Red Sea now.</p>
 <p>Three quarters of an hour later we had finished our circular walk and were back on board. The men of the crew were just then finishing loading the stores of sodium, and the Nautilus could have left at once.</p>
 <p>Yet Captain Nemo gave no order. Did he mean to wait for night and slip out in secret through his underwater passage? Perhaps.</p>
 <p>Be that as it may, the next day the Nautilus, having left her home port, was sailing well clear of any land, a few meters below the waves of the Atlantic.</p>
+</section>
+<section aria-labelledby="the-sargasso-sea">
 <h2 id="the-sargasso-sea">The Sargasso Sea</h2>
 <p>The Nautilus had not changed course. For the moment, then, every hope of returning to European waters had to be set aside. Captain Nemo held his heading due south. Where was he taking us? I did not dare imagine it.</p>
 <p>That day the Nautilus crossed a singular stretch of the Atlantic Ocean. No one is unaware of the great current of warm water known as the Gulf Stream. After emerging from the channels of Florida, it makes for Spitsbergen. But before it reaches the Gulf of Mexico, at about the forty-fourth degree of north latitude, this current splits into two arms; the main one heads toward the coasts of Ireland and Norway, while the second bends south at the latitude of the Azores, then strikes the shores of Africa and, tracing a long oval, comes back around toward the Antilles.</p>
@@ -2833,6 +2935,8 @@ To name it but the Red Sea now.</p>
 <p>&quot;Hold on tight.&quot;</p>
 <p>I had not yet had time to grasp why the captain gave me this warning when I was flung down onto the carpet.</p>
 <p>At a signal from the captain, its propeller engaged and its planes set vertical, the Nautilus, carried up like a balloon into the air, shot upward with dizzying speed. It sliced through the mass of the waters with a resonant shudder. Not a single detail was visible. In four minutes it had covered the four leagues that separated it from the surface of the ocean, and, after breaking the surface like a flying fish, it fell back, sending the waves spurting to a prodigious height.</p>
+</section>
+<section aria-labelledby="sperm-whales-and-right-whales">
 <h2 id="sperm-whales-and-right-whales">Sperm Whales and Right Whales</h2>
 <p>During the night of March 13th to 14th, the Nautilus resumed its course toward the south. I assumed that once we reached the latitude of Cape Horn it would swing west, cross into the Pacific, and finish its voyage around the world. It did nothing of the kind. It kept climbing toward the far southern regions. Where on earth did it mean to go? The Pole? That was madness. I was beginning to think that the captain&#x27;s recklessness more than justified Ned Land&#x27;s fears.</p>
 <p>For some time now the Canadian had stopped talking to me about his escape plans. He had grown less talkative, almost silent. I could see how heavily this long imprisonment weighed on him. I could feel the anger banking up inside him. Whenever he crossed paths with the captain, his eyes lit with a dark fire, and I was always afraid his natural violence would carry him to some extreme.</p>
@@ -2965,6 +3069,8 @@ To name it but the Red Sea now.</p>
 <p>The captain offered me a cup of this milk, still warm. I couldn&#x27;t help showing him my distaste for the drink. He assured me it was excellent, and in no way different from cow&#x27;s milk.</p>
 <p>I tasted it and agreed. So it was a useful reserve for us, since this milk, in the form of salt butter or cheese, was bound to bring a pleasant variety to our usual fare.</p>
 <p>From that day on, I noticed with unease that Ned Land&#x27;s feelings toward Captain Nemo were turning worse and worse, and I resolved to keep a close watch on the Canadian&#x27;s every move.</p>
+</section>
+<section aria-labelledby="the-ice-barrier">
 <h2 id="the-ice-barrier">The Ice Barrier</h2>
 <p>The Nautilus had resumed its unwavering course toward the south. It ran down the fiftieth meridian at a considerable speed. Did it mean, then, to reach the Pole? I didn&#x27;t think so, for up to now every attempt to climb to that point of the globe had failed. And the season, besides, was already far advanced, since March 13 in the antarctic lands answers to September 13 in the northern regions — the start of the equinoctial period.</p>
 <p>On March 14 I spotted floating ice at 55° latitude, mere pallid fragments twenty to twenty-five feet across, forming reefs on which the sea broke. The Nautilus was holding to the surface of the ocean. Ned Land, who had already fished in the arctic seas, was familiar with this spectacle of icebergs. Conseil and I were admiring it for the first time.</p>
@@ -3066,6 +3172,8 @@ To name it but the Red Sea now.</p>
 <p>My eyes never left the pressure gauge. We kept rising, following a diagonal along the resplendent surface that glittered under the electric rays. The ice barrier sloped away above and below in long ramps. It thinned out mile by mile.</p>
 <p>At last, at six in the morning, on that memorable day of March 19, the salon door opened. Captain Nemo appeared.</p>
 <p>&quot;The open sea!&quot; he said to me.</p>
+</section>
+<section aria-labelledby="the-south-pole">
 <h2 id="the-south-pole">The South Pole</h2>
 <p>I rushed up to the platform. Yes! Open sea. Only a few scattered chunks of ice here and there, a handful of drifting icebergs; far off, a wide expanse of water; a whole world of birds in the air, and myriads of fish beneath the waves, which — depending on the depth — shaded from deep blue to olive green. The thermometer read three degrees Celsius above zero. It was like a kind of relative springtime, sealed away behind that ice barrier whose distant masses stood out along the northern horizon.</p>
 <p>&quot;Are we at the Pole?&quot; I asked the captain, my heart pounding.</p>
@@ -3162,6 +3270,8 @@ To name it but the Red Sea now.</p>
 <p>&quot;In my own, Professor!&quot;</p>
 <p>And so saying, Captain Nemo unfurled a black flag, bearing a gold N quartered upon its field. Then, turning back toward the sun, whose last rays were licking the horizon of the sea:</p>
 <p>&quot;Farewell, sun!&quot; he cried. &quot;Vanish, radiant star! Set beneath this open sea, and let a night six months long spread its shadows over my new domain!&quot;</p>
+</section>
+<section aria-labelledby="accident-or-incident">
 <h2 id="accident-or-incident">Accident or Incident?</h2>
 <p>The next morning, March 22, at six o&#x27;clock, the preparations for departure began. The last glimmers of twilight were melting away into night. The cold was biting. The constellations blazed with startling intensity. At the zenith glittered that magnificent Southern Cross, the polestar of the Antarctic regions.</p>
 <p>The thermometer read twelve degrees below zero, and when the wind freshened it bit at us in sharp stings. The ice was thickening on the open water. The sea was beginning to freeze over on every side. Great blackish patches, spread across its surface, warned of the young ice about to form. Clearly, the southern basin, frozen through the six months of its winter, was utterly inaccessible. What became of the whales during that season? No doubt they went beneath the ice pack in search of more navigable seas. As for the seals and walruses, used to living in the harshest climates, they stayed on in these frozen waters. These animals have the instinct to dig holes in the ice-fields and keep them permanently open. They come to those holes to breathe; and once the birds, driven off by the cold, have migrated north, these marine mammals remain the sole masters of the polar continent.</p>
@@ -3257,6 +3367,8 @@ To name it but the Red Sea now.</p>
 <p>&quot;Yes, Professor. The iceberg, in turning over, has closed off every way out.&quot;</p>
 <p>&quot;We&#x27;re blocked?&quot;</p>
 <p>&quot;Yes.&quot;</p>
+</section>
+<section aria-labelledby="for-want-of-air">
 <h2 id="for-want-of-air">For Want of Air</h2>
 <p>So there it was: all around the Nautilus, above and below, an impenetrable wall of ice. We were prisoners of the ice pack. The Canadian brought one of his massive fists down on a table. Conseil said nothing. I looked at the captain. His face had settled back into its usual calm. He stood with his arms crossed, thinking. The Nautilus no longer stirred.</p>
 <p>Then the captain spoke.</p>
@@ -3348,6 +3460,8 @@ To name it but the Red Sea now.</p>
 <p>At that moment the pressure gauge showed we were no more than twenty feet from the surface. A single field of ice separated us from the open air. Couldn&#x27;t it be broken?</p>
 <p>Perhaps! In any case, the Nautilus was going to try. I felt her take a slanting position, dropping her stern and raising her ram. A single intake of water had been enough to break her balance. Then, driven by her powerful screw, she attacked the ice field from below like a colossal battering ram. She split it little by little, drew back, charged again at full speed against the field that was tearing apart, and finally, carried by one supreme burst, she flung herself onto the icy surface and crushed it under her weight.</p>
 <p>The panel was opened — torn open, one might say — and pure air came flooding into every part of the Nautilus.</p>
+</section>
+<section aria-labelledby="from-cape-horn-to-the-amazon">
 <h2 id="from-cape-horn-to-the-amazon">From Cape Horn to the Amazon</h2>
 <p>How I came to be up on the platform, I couldn&#x27;t say. Perhaps the Canadian had carried me there. But I was breathing — I was drinking in the living air of the sea. Beside me my two companions were drunk on those cool, fresh molecules. Poor wretches too long starved of food can&#x27;t fling themselves recklessly on the first meal set before them; but we had no need to hold back. We could fill our lungs to bursting with the atoms of that atmosphere, and it was the breeze, the breeze itself, that poured this voluptuous intoxication into us.</p>
 <p>&quot;Ah,&quot; Conseil kept saying, &quot;oxygen — how good it is! Master needn&#x27;t be afraid to breathe. There&#x27;s plenty for everyone.&quot;</p>
@@ -3420,6 +3534,8 @@ To name it but the Red Sea now.</p>
 <p>The remoras, tossed into the sea, at once began their work and went to fix themselves to the breastplates of the turtles. Their grip was so tenacious that they would have torn apart sooner than let go. They were hauled aboard, and with them the turtles to which they clung.</p>
 <p>In this way we took several loggerheads, a meter across, weighing two hundred kilos. Their shells, covered with large, thin, transparent, brown horny plates flecked with white and yellow, made them very valuable. Besides, they were excellent from the standpoint of eating, as were the green turtles, which are of an exquisite flavor.</p>
 <p>This catch ended our stay in the waters off the Amazon, and, when night came, the Nautilus regained the open sea.</p>
+</section>
+<section aria-labelledby="the-giant-squid">
 <h2 id="the-giant-squid">The Giant Squid</h2>
 <p>For several days the Nautilus kept steadily away from the American coast. Clearly it had no wish to venture into the waters of the Gulf of Mexico or the Caribbean Sea. There would have been no shortage of water beneath its keel — the average depth of those seas is eighteen hundred meters — but no doubt those waters, strewn with islands and furrowed by steamers, did not suit Captain Nemo.</p>
 <p>On April 16 we raised Martinique and Guadeloupe, at a distance of about thirty miles. For a moment I caught sight of their high peaks.</p>
@@ -3532,6 +3648,8 @@ To name it but the Red Sea now.</p>
 <p>Ned bowed without answering him.</p>
 <p>The battle had lasted a quarter of an hour. The monsters, beaten, mutilated, struck to death, at last gave way and vanished beneath the waves.</p>
 <p>Captain Nemo, red with blood, motionless beside the beacon, gazed at the sea that had swallowed one of his companions, and great tears ran from his eyes.</p>
+</section>
+<section aria-labelledby="the-gulf-stream">
 <h2 id="the-gulf-stream">The Gulf Stream</h2>
 <p>None of us will ever be able to forget that terrible scene of April 20. I wrote it down under the pressure of a violent emotion. Since then I have gone back over the account. I read it aloud to Conseil and the Canadian. They found it accurate as to the facts, but inadequate as to the effect. To paint such scenes as those, one would need the pen of the most illustrious of our poets, the author of The Toilers of the Sea.</p>
 <p>I have said that Captain Nemo wept as he gazed out over the waves. His grief was immense. This was the second companion he had lost since our arrival aboard. And what a death! That friend, crushed, smothered, broken in the fearsome arm of a devilfish, ground to pulp between its iron mandibles, would never rest with his shipmates in the peaceful waters of the coral cemetery!</p>
@@ -3612,6 +3730,8 @@ To name it but the Red Sea now.</p>
 <p>Through the open windows of the salon, I saw great terrified fish that passed like phantoms through the burning waters. Some of them were struck by lightning before my very eyes!</p>
 <p>The Nautilus went on descending. I thought it would find calm at a depth of fifteen meters. No. The upper layers were too violently agitated. We had to go seek rest as far down as fifty meters, in the very bowels of the sea.</p>
 <p>But there, what tranquility, what silence, what a peaceful realm! Who would have said that a terrible hurricane was raging just then on the surface of that ocean?</p>
+</section>
+<section aria-labelledby="latitude-47-24-longitude-17-28">
 <h2 id="latitude-47-24-longitude-17-28">Latitude 47°24′, Longitude 17°28′</h2>
 <p>In the wake of that storm we had been thrown back to the east. Every hope of escaping onto the approaches of New York or of the St. Lawrence had vanished. Poor Ned, in despair, shut himself away as thoroughly as Captain Nemo. Conseil and I no longer left each other&#x27;s side.</p>
 <p>I said the Nautilus had been carried off to the east. I should have said, more precisely, to the northeast. For several days it wandered now over the surface of the waves, now beneath, in the midst of those fogs so dreaded by sailors. They are caused chiefly by the melting of the ice, which keeps the air here saturated with moisture. How many ships have been lost in these waters, running in to make out the uncertain lights of the coast! How many disasters owed to these dense, blinding banks of fog! How many shocks upon these reefs whose breaking surf is drowned out by the roar of the wind! How many collisions between vessels, in spite of their running lights, in spite of the warnings of their whistles and their alarm bells!</p>
@@ -3668,6 +3788,8 @@ To name it but the Red Sea now.</p>
 <p>&quot;In her day this ship was called the Marseillais. She carried seventy-four guns and was launched in 1762. On August 13, 1778, commanded by La Poype-Vertrieux, she fought boldly against the Preston. On July 4, 1779, she took part with Admiral d&#x27;Estaing&#x27;s squadron in the capture of Grenada. On September 5, 1781, she joined the Comte de Grasse&#x27;s action in Chesapeake Bay. In 1794 the French Republic changed her name. On April 16 of that same year she joined Villaret-Joyeuse&#x27;s squadron at Brest, charged with escorting a convoy of wheat coming from America under the command of Admiral Van Stabel. On the 11th and 12th of Prairial, Year Two, this squadron met the English ships. Professor, today is the 13th of Prairial, the first of June, 1868. Seventy-four years ago to the day, at this very spot, at latitude 47°24′ and longitude 17°28′, this ship, after a heroic fight, dismasted of all three of her masts, the water in her holds, a third of her crew out of action, chose to go down with her three hundred and fifty-six sailors rather than surrender — and nailing her colors to her stern, she vanished beneath the waves to the cry of: Long live the Republic!&quot;</p>
 <p>&quot;The Vengeur!&quot; I cried.</p>
 <p>&quot;Yes, Professor. The Vengeur! A fine name!&quot; murmured Captain Nemo, folding his arms.</p>
+</section>
+<section aria-labelledby="a-massacre">
 <h2 id="a-massacre">A Massacre</h2>
 <p>The way he had said it, the suddenness of the whole scene, the history of that patriot ship recounted so coldly at first, and then the emotion with which the strange man had spoken his last words, that name Vengeur — whose meaning could not escape me — all of it came together to strike deep into my mind. My eyes never left the captain. He, his hands stretched out toward the sea, was gazing with a burning eye at that glorious wreck. Perhaps I would never know who he was, where he had come from, where he was going — but more and more I saw the man break free of the scholar. It was no ordinary misanthropy that had shut Captain Nemo and his companions inside the hull of the Nautilus, but a hatred, monstrous or sublime, that time could not weaken.</p>
 <p>Was that hatred still hunting for vengeance? The future would soon teach me.</p>
@@ -3761,6 +3883,8 @@ To name it but the Red Sea now.</p>
 <p>Then the doomed ship went down faster. Its tops, crowded with victims, came into view, then the crosstrees, bending under clusters of men, and finally the very peak of its mainmast. Then the dark mass vanished, and with it that crew of corpses, dragged down by a tremendous whirlpool...</p>
 <p>I turned back toward Captain Nemo. That terrible dispenser of justice, that veritable archangel of hatred, was still watching. When it was all over, Captain Nemo went to the door of his cabin, opened it, and went in. I followed him with my eyes.</p>
 <p>On the far bulkhead, beneath the portraits of his heroes, I saw the portrait of a woman, still young, and of two little children. Captain Nemo gazed at them for a few moments, stretched out his arms to them, and, sinking to his knees, broke into sobs.</p>
+</section>
+<section aria-labelledby="captain-nemo-s-last-words">
 <h2 id="captain-nemo-s-last-words">Captain Nemo&#x27;s Last Words</h2>
 <p>The panels had slid shut over that terrifying sight, but the light had not been given back to the salon. Inside the Nautilus there was nothing but darkness and silence. It was leaving that place of desolation, a hundred feet below the surface, with prodigious speed. Where was it going? North or south? Where was this man fleeing to, after his horrible act of vengeance?</p>
 <p>I had gone back to my cabin, where Ned and Conseil were sitting in silence. I felt an unconquerable horror for Captain Nemo. Whatever he had suffered at the hands of men, he had no right to punish like this. He had made me, if not the accomplice, then at least the witness of his revenge! That was already too much.</p>
@@ -3825,6 +3949,8 @@ To name it but the Red Sea now.</p>
 <p>&quot;We have to hold on,&quot; said Ned, &quot;and screw the bolts back down! By staying fastened to the Nautilus, we can still save ourselves...!&quot;</p>
 <p>He had not finished speaking when there came a splintering crack. The bolts gave way, and the dinghy, torn from its socket, was flung like a stone from a sling into the middle of the whirlpool.</p>
 <p>My head struck an iron rib, and with that violent shock I lost consciousness.</p>
+</section>
+<section aria-labelledby="conclusion">
 <h2 id="conclusion">Conclusion</h2>
 <p>Here, then, is the conclusion of this voyage beneath the seas. What happened during that night, how the dinghy tore free of the Maelström&#x27;s terrible pull, how Ned Land, Conseil, and I came out of that abyss alive — I could never say. But when I came back to myself, I was lying in a fisherman&#x27;s hut on one of the Lofoten Islands. My two companions, safe and sound, were beside me, gripping my hands. We threw our arms around one another and wept.</p>
 <p>For the moment there is no thought of getting back to France. Between northern Norway and the south the means of travel are few and far between, and so I am forced to wait for the steamer that makes its twice-monthly run from the North Cape.</p>
@@ -3832,6 +3958,10 @@ To name it but the Red Sea now.</p>
 <p>Will anyone believe me? I don&#x27;t know. And it hardly matters, in the end. What I can affirm now is my right to speak of those seas, beneath which, in less than ten months, I crossed twenty thousand leagues — of that underwater tour of the world that unveiled so many wonders to me across the Pacific, the Indian Ocean, the Red Sea, the Mediterranean, the Atlantic, and the seas of the far south and the far north.</p>
 <p>But what has become of the Nautilus? Did it withstand the grip of the Maelström? Is Captain Nemo still alive? Is he pursuing his terrible reprisals beneath the ocean, or did he stop short at that last slaughter? Will the waves one day bring us the manuscript that holds the whole story of his life? Will I ever learn this man&#x27;s name? Will the sunken warship tell us, by its nationality, the nationality of Captain Nemo?</p>
 <p>I hope so. And I hope, too, that his powerful vessel conquered the sea in its most dreadful whirlpool, and that the Nautilus survived where so many ships have perished! If that is so — if Captain Nemo still inhabits that ocean, the country he adopted as his own — then may the hatred be stilled in that fierce heart! May the contemplation of so many wonders quench the spirit of vengeance in him! May the avenger fade away, and the man of science go on with the peaceful exploration of the seas! If his destiny is strange, it is sublime as well. Have I not understood that for myself? Did I not live ten months of that other-than-natural existence? And so, to that question posed six thousand years ago by Ecclesiastes — &quot;Who has ever been able to sound the depths of the abyss?&quot; — two men among all men now have the right to answer. Captain Nemo and I.</p>
+</section>
+</section>
+</article>
+</main>
 
 </body>
 </html>

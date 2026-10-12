@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Simple Sabotage Field Manual &mdash; Office of Strategic Services</title>
+	<meta name="description" content="The OSS&#x27;s 1944 manual for occupied Europe: slow the enemy with dull tools, wrong switches and endless committees. A restored edition, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/sabotage.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="Simple Sabotage Field Manual — Office of Strategic Services">
+	<meta property="og:description" content="The OSS&#x27;s 1944 manual for occupied Europe: slow the enemy with dull tools, wrong switches and endless committees. A restored edition, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/sabotage.html">
+	<meta property="og:image" content="https://emend.press/covers/share/sabotage.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,28 +192,32 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>Simple Sabotage Field Manual</h1>
-	<h3>Strategic Services Field Manual No. 3, 17 January 1944</h3>
-	<h3>by Office of Strategic Services</h3>
+	<p class="title-line">Strategic Services Field Manual No. 3, 17 January 1944</p>
+	<p class="title-line">by Office of Strategic Services</p>
 	<p class="center">
 	1944
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is a restored edition of Simple Sabotage Field Manual: the author's own words, unchanged. The original is available from <a href="https://archive.org/details/SimpleSabotageFieldManualStrategicServicesProvisional">Internet Archive (scan of the 1944 typescript)</a>. Also available as an <a href="ebooks/office-of-strategic-services_simple-sabotage-field-manual.epub">epub</a>. <a href="restored.html">More restored editions</a>.</i></p>
 
 	<hr>
+<section aria-labelledby="editors-introduction">
 <h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
 <p>The Office of Strategic Services was the United States&#x27; intelligence and special-operations agency in the Second World War. It was created in 1942 under William J. Donovan, a New York lawyer and decorated veteran of the First World War, and it ran spies, propaganda and resistance operations behind enemy lines until it was dissolved in 1945. The Central Intelligence Agency, founded in 1947, is its successor. This manual is one of its field manuals, dated 17 January 1944 and issued with a short covering memorandum signed by Donovan.</p>
 <p>It was not written for agents. Its readers were meant to be ordinary people in enemy-occupied countries: factory hands, railwaymen, clerks, telephone operators. The idea, set out in its opening sections, is that an occupied population can hurt an enemy war economy without explosives, training or great risk, through countless small acts that look like carelessness: a tool left dull, a wrong switch, a misfiled order, a meeting that never reaches a decision. The manual explains what such sabotage can achieve, how to persuade people to do it, and how to keep them safe from detection, and then lists suggestions by kind of target, from buildings and factories to railways, telephones and power lines.</p>
 <p>The section most often quoted today is the eleventh, &quot;General Interference with Organizations and Production&quot;. Its advice to insist on doing everything &quot;through channels&quot;, to refer every question to a committee, to haggle over the wording of communications and to reopen decisions already made reads, eighty years later, as a description of ordinary office life. Management writers have cited it for that reason, and it is the part of the manual most people have heard of.</p>
 <p>It should be read as a document of its war: instructions for undermining an occupying army in 1944, written in the confident, practical voice of military doctrine, by an agency that measured success by enemy production lost.</p>
 <p>This is a restored edition of the manual as issued, with Donovan&#x27;s memorandum and the five numbered sections, keeping the manual&#x27;s own lettered and numbered outline. The text is that of Project Gutenberg, checked word by word against a scan of a 1944 copy, which bears a later &quot;declassified&quot; stamp; one heading is corrected from it. As a work of the United States government, the manual is in the public domain.</p>
+</section>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p><a href="#memorandum">Memorandum</a></p>
 <p><a href="#1-introduction">1. Introduction</a></p>
@@ -195,8 +225,11 @@ figcaption {
 <p><a href="#3-motivating-the-saboteur">3. Motivating the Saboteur</a></p>
 <p><a href="#4-tools-targets-and-timing">4. Tools, Targets, and Timing</a></p>
 <p><a href="#5-specific-suggestions-for-simple-sabotage">5. Specific Suggestions for Simple Sabotage</a></p>
+</nav>
 
 <hr>
+<article>
+<section aria-labelledby="memorandum">
 <h2 id="memorandum">Memorandum</h2>
 <p>Office of Strategic Services, Washington, D. C., 17 January 1944.</p>
 <p>This Simple Sabotage Field Manual Strategic Services (Provisional) is published for the information and guidance of all concerned and will be used as the basic doctrine for Strategic Services training for this subject.</p>
@@ -204,15 +237,21 @@ figcaption {
 <p>The instructions may be placed in separate pamphlets or leaflets according to categories of operations but should be distributed with care and not broadly. They should be used as a basis of radio broadcasts only for local and special cases and as directed by the theater commander.</p>
 <p>AR 380-5, pertaining to handling of secret documents, will be complied with in the handling of this Manual.</p>
 <p>—William J. Donovan.</p>
+</section>
+<section aria-labelledby="1-introduction">
 <h2 id="1-introduction">1. Introduction</h2>
 <p>The purpose of this paper is to characterize simple sabotage, to outline its possible effects, and to present suggestions for inciting and executing it.</p>
 <p>Sabotage varies from highly technical <em>coup de main</em> acts that require detailed planning and the use of specially-trained operatives, to innumerable simple acts which the ordinary individual citizen-saboteur can perform. This paper is primarily concerned with the latter type. Simple sabotage does not require specially prepared tools or equipment; it is executed by an ordinary citizen who may or may not act individually and without the necessity for active connection with an organized group; and it is carried out in such a way as to involve a minimum danger of injury, detection, and reprisal.</p>
 <p>Where destruction is involved, the weapons of the citizen-saboteur are salt, nails, candles, pebbles, thread, or any other materials he might normally be expected to possess as a householder or as a worker in his particular occupation. His arsenal is the kitchen shelf, the trash pile, his own usual kit of tools and supplies. The targets of his sabotage are usually objects to which he has normal and inconspicuous access in everyday life.</p>
 <p>A second type of simple sabotage requires no destructive tools whatsoever and produces physical damage, if any, by highly indirect means. It is based on universal opportunities to make faulty decisions, to adopt a noncooperative attitude, and to induce others to follow suit. Making a faulty decision may be simply a matter of placing tools in one spot instead of another. A non-cooperative attitude may involve nothing more than creating an unpleasant situation among one’s fellow workers, engaging in bickerings, or displaying surliness and stupidity.</p>
 <p>This type of activity, sometimes referred to as the “human element,” is frequently responsible for accidents, delays, and general obstruction even under normal conditions. The potential saboteur should discover what types of faulty decisions and the operations are <em>normally</em> found in this kind of work and should then devise his sabotage so as to enlarge that “margin for error.”</p>
+</section>
+<section aria-labelledby="2-possible-effects">
 <h2 id="2-possible-effects">2. Possible Effects</h2>
 <p>Acts of simple sabotage are occurring throughout Europe. An effort should be made to add to their efficiency, lessen their detectability, and increase their number. Acts of simple sabotage, multiplied by thousands of citizen-saboteurs, can be an effective weapon against the enemy. Slashing tires, draining fuel tanks, starting fires, starting arguments, acting stupidly, short-circuiting electric systems, abrading machine parts will waste materials, manpower, and time. Occurring on a wide scale, simple sabotage will be a constant and tangible drag on the war effort of the enemy.</p>
 <p>Simple sabotage may also have secondary results of more or less value. Widespread practice of simple sabotage will harass and demoralize enemy administrators and police. Further, success may embolden the citizen-saboteur eventually to find colleagues who can assist him in sabotage of greater dimensions. Finally, the very practice of simple sabotage by natives in enemy or occupied territory may make these individuals identify themselves actively with the United Nations war effort, and encourage them to assist openly in periods of Allied invasion and occupation.</p>
+</section>
+<section aria-labelledby="3-motivating-the-saboteur">
 <h2 id="3-motivating-the-saboteur">3. Motivating the Saboteur</h2>
 <p>To incite the citizen to the active practice of simple sabotage and to keep him practicing that sabotage over sustained periods is a special problem.</p>
 <p>Simple sabotage is often an act which the citizen performs according to his own initiative and inclination. Acts of destruction do not bring him any personal gain and may be completely foreign to his habitually conservationist attitude toward materials and tools. Purposeful stupidity is contrary to human nature. He frequently needs pressure, stimulation or assurance, and information and suggestions regarding feasible methods of simple sabotage.</p>
@@ -233,6 +272,8 @@ figcaption {
 <p>(2) Try to commit acts for which large numbers of people could be responsible. For instance, if you blow out the wiring in a factory at a central fire box, almost anyone could have done it. On-the-street sabotage after dark, such as you might be able to carry out against a military car or truck, is another example of an act for which it would be impossible to blame you.</p>
 <p>(3) Do not be afraid to commit acts for which you might be blamed directly, so long as you do so rarely, and as long as you have a plausible excuse: you dropped your wrench across an electric circuit because an air raid had kept you up the night before and you were half-dozing at work. Always be profuse in your apologies. Frequently you can “get away” with such acts under the cover of pretending stupidity, ignorance, over-caution, fear of being suspected of sabotage, or weakness and dullness due to undernourishment.</p>
 <p>(4) After you have committed an act of easy sabotage, resist any temptation to wait around and see what happens. Loiterers arouse suspicion. Of course, there are circumstances when it would be suspicious for you to leave. If you commit sabotage on your job, you should naturally stay at your work.</p>
+</section>
+<section aria-labelledby="4-tools-targets-and-timing">
 <h2 id="4-tools-targets-and-timing">4. Tools, Targets, and Timing</h2>
 <p>The citizen-saboteur cannot be closely controlled. Nor is it reasonable to expect that simple sabotage can be precisely concentrated on specific types of target according to the requirements of a concrete military situation. Attempts to control simple sabotage according to developing military factors, moreover, might provide the enemy with intelligence of more or less value in anticipating the date and area of notably intensified or notably slackened military activity.</p>
 <p>Sabotage suggestions, of course, should be adapted to fit the area where they are to be practiced. Target priorities for general types of situations likewise can be specified, for emphasis at the proper time by the underground press, freedom stations, and cooperating propaganda.</p>
@@ -250,6 +291,8 @@ figcaption {
 <p>Among such facilities are roads, railroads, auto mobiles, trucks, motor-cycles, bicycles, trains, and trams.</p>
 <p>(2) Any communications facilities which can be used by the authorities to transmit instructions or morale material should be the objects of simple sabotage. These include telephone, telegraph and power systems, radio, newspapers, placards, and public notices.</p>
 <p>(3) Critical materials, valuable in themselves or necessary to the efficient functioning of transportation and communication, also should become targets for the citizen-saboteur. These may include oil, gasoline, tires, food, and water.</p>
+</section>
+<section aria-labelledby="5-specific-suggestions-for-simple-sabotage">
 <h2 id="5-specific-suggestions-for-simple-sabotage">5. Specific Suggestions for Simple Sabotage</h2>
 <p>It will not be possible to evaluate the desirability of simple sabotage in an area without having in mind rather specifically what individual acts and results are embraced by the definition of simple sabotage.</p>
 <p>A listing of specific acts follows, classified according to types of target. This list is presented as a growing rather than a complete outline of the methods of simple sabotage. As new techniques are developed, or new fields explored, it will be elaborated and expanded.</p>
@@ -493,6 +536,9 @@ figcaption {
 <p>(i) Cry and sob hysterically at every occasion, especially when confronted by government clerks.</p>
 <p>(j) Boycott all movies, entertainments, concerts, newspapers which are in any way connected with the quisling authorities.</p>
 <p>(k) Do not cooperate in salvage schemes.</p>
+</section>
+</article>
+</main>
 
 </body>
 </html>

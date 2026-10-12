@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>The Nineteen Plays &mdash; Euripides</title>
+	<meta name="description" content="Every surviving play, complete — Medea, the Bacchae, the Trojan Women, and the satyr play about blinding a giant — from the Greek: the arguments as fast modern prose, the songs as verse. Retold in modern English, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/euripides.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="The Nineteen Plays — Euripides">
+	<meta property="og:description" content="Every surviving play, complete — Medea, the Bacchae, the Trojan Women, and the satyr play about blinding a giant — from the Greek: the arguments as fast modern prose, the songs as verse. Retold in modern English, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/euripides.html">
+	<meta property="og:image" content="https://emend.press/covers/share/euripides.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,28 +192,32 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>The Nineteen Plays</h1>
-	<h3>From the Greek: every surviving play, complete — the spoken scenes as modern prose, the sung odes as verse</h3>
-	<h3>by Euripides</h3>
+	<p class="title-line">From the Greek: every surviving play, complete — the spoken scenes as modern prose, the sung odes as verse</p>
+	<p class="title-line">by Euripides</p>
 	<p class="center">
 	<s>438-405 BC</s> 2026
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is an AI modernization of The Nineteen Plays into contemporary English. The original is available from <a href="https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0087">Perseus Digital Library</a>. Also available as an <a href="ebooks/euripides_the-nineteen-plays.epub">epub</a>.</i></p>
 
 	<hr>
+<section aria-labelledby="editors-introduction">
 <h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
 <p>Nineteen plays by Euripides survive, more than by Aeschylus and Sophocles together, and this volume has all of them, complete. He was the youngest of the three, born around 480 BC, and he won the prize at the Athenian festival only four times in his life, far less often than either of the others. Aristophanes made a career of mocking him, and put him on stage in a comedy the year after he died, arguing with Aeschylus over which of them was the better poet. He left Athens near the end and died in Macedonia in 406.</p>
 <p>The number nineteen is partly an accident. The other two survive in what looks like a set of school selections; Euripides survives in that plus a run of plays from a complete edition, alphabetically consecutive in Greek, which happened to come through. So this book contains the famous ones and also plays nobody chose. Medea kills her children to punish their father and is given the last word. Pentheus is torn apart by his own mother, who walks on stage carrying his head and thinking it is a lion&#x27;s. Hecuba, an old queen with nothing left, blinds the man who murdered her son. Helen turns out never to have gone to Troy at all. And there is Cyclops, the only complete satyr play left from the Greek theatre, in which Odysseus blinds a giant with the help of a chorus of drunk and cowardly goat-men. Rhesus is here too; its authorship was already disputed in antiquity.</p>
 <p>He wrote the plainest Greek of the three, and was mocked for it in his own time as the language of the marketplace. His people talk like people: nurses, farmers, slaves, a terrified Phrygian eunuch, and kings who argue like men in a lawcourt. The formal debate is the engine of nearly every play, and both sides are good, which is the difficulty and the point. He also invented the solo aria, and there are more songs by actors here than by the chorus.</p>
 <p>Greek tragedy has two registers, and the metre says which is which. This edition keeps them apart: the spoken scenes are modern prose, the sung parts are set as verse, indented and unrhymed. The rhyme in the old verse translations was the translator&#x27;s own and has gone. This is one of three volumes here, with Aeschylus and Sophocles, and together they hold every Greek tragedy that survives.</p>
 <p>Nothing is softened. The speeches against women stand as their speakers make them, and so do the accusations against the gods that got the author called an atheist. The plays about the fall of Troy are about women being handed out as slaves, and say so.</p>
+</section>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p class="toc-book">Alcestis (438 BC)</p>
 <ul class="toc-list">
@@ -265,9 +295,13 @@ figcaption {
 <ul class="toc-list">
 <li><a href="#rhesus">Rhesus</a></li>
 </ul>
+</nav>
 
 <hr>
+<article>
+<section class="part" aria-labelledby="alcestis-438-bc">
 <h2 id="alcestis-438-bc" class="center">Alcestis (438 BC)</h2>
+<section aria-labelledby="alcestis">
 <h3 id="alcestis">Alcestis</h3>
 <p>(Pherae, in Thessaly, before the house of Admetus. Apollo comes out of
 it, carrying his bow.)</p>
@@ -1658,7 +1692,11 @@ will not deny it.</p>
 	What we counted on did not happen,
 	and for what no one counted on, a god found a way.
 	That is how this business ended.</pre>
+</section>
+</section>
+<section class="part" aria-labelledby="medea-431-bc">
 <h2 id="medea-431-bc" class="center">Medea (431 BC)</h2>
+<section aria-labelledby="medea">
 <h3 id="medea">Medea</h3>
 <p>(Corinth, in front of the house where Jason and Medea have lived. The
 Nurse comes out alone.)</p>
@@ -3147,7 +3185,11 @@ bitter end of your marriage to me.</p>
 	What we counted on did not happen,
 	and for what no one counted on, a god found a way.
 	That is how this business ended.</pre>
+</section>
+</section>
+<section class="part" aria-labelledby="the-children-of-heracles-c-430-bc">
 <h2 id="the-children-of-heracles-c-430-bc" class="center">The Children of Heracles (c. 430 BC)</h2>
+<section aria-labelledby="the-children-of-heracles">
 <h3 id="the-children-of-heracles">The Children of Heracles</h3>
 <p>(Marathon, in the country of Athens, in front of the temple of Zeus.
 Iolaus, an old man, sits at the altar with the young sons of Heracles
@@ -4284,7 +4326,11 @@ land again.</p>
 	I think the same. Go, attendants.
 	Nothing that comes from us
 	will leave a stain on our kings.</pre>
+</section>
+</section>
+<section class="part" aria-labelledby="hippolytus-428-bc">
 <h2 id="hippolytus-428-bc" class="center">Hippolytus (428 BC)</h2>
+<section aria-labelledby="hippolytus">
 <h3 id="hippolytus">Hippolytus</h3>
 <p>(Trozen, in front of the house of Theseus. A statue of Aphrodite
 stands on one side of the door and a statue of Artemis on the other.
@@ -5904,7 +5950,11 @@ will remember what you have done.</p>
 	There will be a beating of many tears.
 	When the great fall, the news of it
 	deserves grief, and takes a stronger hold.</pre>
+</section>
+</section>
+<section class="part" aria-labelledby="andromache-c-425-bc">
 <h2 id="andromache-c-425-bc" class="center">Andromache (c. 425 BC)</h2>
+<section aria-labelledby="andromache">
 <h3 id="andromache">Andromache</h3>
 <p>(Phthia, in Thessaly, before the house of Neoptolemus. Beside the house
 stands the shrine of Thetis, with the statue of the goddess and an
@@ -7226,7 +7276,11 @@ would never make things go badly for him.</p>
 	What we counted on did not happen,
 	and for what no one counted on, a god found a way.
 	That is how this business ended.</pre>
+</section>
+</section>
+<section class="part" aria-labelledby="hecuba-c-424-bc">
 <h2 id="hecuba-c-424-bc" class="center">Hecuba (c. 424 BC)</h2>
+<section aria-labelledby="hecuba">
 <h3 id="hecuba">Hecuba</h3>
 <p>(The Greek camp on the shore of the Thracian Chersonese, in front of
 Agamemnon&#x27;s tent. The Ghost of Polydorus appears.)</p>
@@ -8637,7 +8691,11 @@ to her dead.)</p>
 	Go to the harbour, friends, and to the tents,
 	to taste the labour of slaves
 	under masters. Necessity is hard.</pre>
+</section>
+</section>
+<section class="part" aria-labelledby="the-suppliants-c-423-bc">
 <h2 id="the-suppliants-c-423-bc" class="center">The Suppliants (c. 423 BC)</h2>
+<section aria-labelledby="the-suppliants">
 <h3 id="the-suppliants">The Suppliants</h3>
 <p>(Eleusis, in front of the temple of Demeter. Aethra, the mother of
 Theseus, sits at the altar. Around her, in a ring, stand the old women
@@ -9998,7 +10056,11 @@ safety from now on.</p>
 	Let us go, Adrastus, and give our oaths
 	to this man and his city. What they have laboured for,
 	on our behalf, deserves our reverence.</pre>
+</section>
+</section>
+<section class="part" aria-labelledby="electra-c-420-bc">
 <h2 id="electra-c-420-bc" class="center">Electra (c. 420 BC)</h2>
+<section aria-labelledby="electra">
 <h3 id="electra">Electra</h3>
 <p>(Before a farmer&#x27;s cottage in the hill country on the border of Argos.
 It is still dark. The Farmer comes out of the house.)</p>
@@ -11619,7 +11681,11 @@ released from these troubles.</p>
 	Goodbye. And whoever among mortals can fare well,
 	and is not worn down by some blow of fortune,
 	that is the one who lives a happy life.</pre>
+</section>
+</section>
+<section class="part" aria-labelledby="heracles-c-416-bc">
 <h2 id="heracles-c-416-bc" class="center">Heracles (c. 416 BC)</h2>
+<section aria-labelledby="heracles">
 <h3 id="heracles">Heracles</h3>
 <p>(Thebes, in front of the house of Heracles. Amphitryon, an old man, sits
 at the altar of Zeus the Saviour with Megara and her three small sons.
@@ -13201,7 +13267,11 @@ to the bodies.)</p>
 <pre class="outline">Chorus.
 	We go, pitiful, with many tears,
 	having lost the greatest of our friends.</pre>
+</section>
+</section>
+<section class="part" aria-labelledby="the-trojan-women-415-bc">
 <h2 id="the-trojan-women-415-bc" class="center">The Trojan Women (415 BC)</h2>
+<section aria-labelledby="the-trojan-women">
 <h3 id="the-trojan-women">The Trojan Women</h3>
 <p>(The Greek camp on the shore at Troy, the morning after the city fell.
 Smoke rises from the ruins behind. In front of the tents where the
@@ -14659,7 +14729,11 @@ to him as his prize.</p>
 <pre class="outline">Chorus.
 	Io, poor city. And still,
 	set your foot forward, to the Achaean ships.</pre>
+</section>
+</section>
+<section class="part" aria-labelledby="iphigenia-among-the-taurians-c-414-bc">
 <h2 id="iphigenia-among-the-taurians-c-414-bc" class="center">Iphigenia Among the Taurians (c. 414 BC)</h2>
+<section aria-labelledby="iphigenia-among-the-taurians">
 <h3 id="iphigenia-among-the-taurians">Iphigenia Among the Taurians</h3>
 <p>(The land of the Taurians, on the shore of the Black Sea. In front of
 the temple of Artemis stands an altar, stained dark, with trophies hung
@@ -16414,7 +16488,11 @@ and keep my sister&#x27;s holy image safe.</p>
 	Great Victory, holy one,
 	stay with me all my life,
 	and never stop crowning me.</pre>
+</section>
+</section>
+<section class="part" aria-labelledby="ion-c-413-bc">
 <h2 id="ion-c-413-bc" class="center">Ion (c. 413 BC)</h2>
+<section aria-labelledby="ion">
 <h3 id="ion">Ion</h3>
 <p>(Delphi, in front of the temple of Apollo. It is not yet light. Hermes
 comes in.)</p>
@@ -18536,7 +18614,11 @@ Apollo, son of Zeus and Leto, goodbye. Whoever&#x27;s house is being driven
 hard by disaster should honour the gods and keep his courage. In the end
 the good get what they deserve, and the bad, being what they are, never
 do well.</p>
+</section>
+</section>
+<section class="part" aria-labelledby="helen-412-bc">
 <h2 id="helen-412-bc" class="center">Helen (412 BC)</h2>
+<section aria-labelledby="helen">
 <h3 id="helen">Helen</h3>
 <p>(Egypt, on the island of Pharos, in front of the royal palace. The tomb
 of Proteus stands before the doors. Helen is sitting on it.)</p>
@@ -20621,7 +20703,11 @@ not to be found in many women.</p>
 	What we counted on did not happen,
 	and for what no one counted on, a god found a way.
 	That is how this business ended.</pre>
+</section>
+</section>
+<section class="part" aria-labelledby="the-phoenician-women-c-410-bc">
 <h2 id="the-phoenician-women-c-410-bc" class="center">The Phoenician Women (c. 410 BC)</h2>
+<section aria-labelledby="the-phoenician-women">
 <h3 id="the-phoenician-women">The Phoenician Women</h3>
 <p>(Thebes, in front of the royal house. Jocasta, an old woman dressed in
 black, comes out of it alone.)</p>
@@ -22690,7 +22776,11 @@ he has to bear.</p>
 	Great Victory, holy one,
 	stay with me all my life,
 	and never stop crowning me.</pre>
+</section>
+</section>
+<section class="part" aria-labelledby="orestes-408-bc">
 <h2 id="orestes-408-bc" class="center">Orestes (408 BC)</h2>
+<section aria-labelledby="orestes">
 <h3 id="orestes">Orestes</h3>
 <p>(Argos, in front of the palace of Agamemnon. Orestes lies asleep on a
 bed that has been carried out of the house, wrapped in his cloak.
@@ -24874,7 +24964,11 @@ Menelaus, and with your oracles, Apollo.</p>
 	Great Victory, holy one,
 	stay with me all my life,
 	and never stop crowning me.</pre>
+</section>
+</section>
+<section class="part" aria-labelledby="the-bacchae-405-bc">
 <h2 id="the-bacchae-405-bc" class="center">The Bacchae (405 BC)</h2>
+<section aria-labelledby="the-bacchae">
 <h3 id="the-bacchae">The Bacchae</h3>
 <p>(Thebes, in front of the royal house of Pentheus. To one side is the
 tomb of Semele, fenced off, still smoking, with vines trained over it.
@@ -26497,7 +26591,11 @@ the house.)</p>
 	What we counted on did not happen,
 	and for what no one counted on, a god found a way.
 	That is how this business ended.</pre>
+</section>
+</section>
+<section class="part" aria-labelledby="iphigenia-at-aulis-405-bc">
 <h2 id="iphigenia-at-aulis-405-bc" class="center">Iphigenia at Aulis (405 BC)</h2>
+<section aria-labelledby="iphigenia-at-aulis">
 <h3 id="iphigenia-at-aulis">Iphigenia at Aulis</h3>
 <p>(Night, on the beach at Aulis, in front of Agamemnon&#x27;s tent. The Greek
 fleet lies drawn up along the shore. Agamemnon comes out carrying a
@@ -28533,7 +28631,11 @@ May it go well with you.</p>
 	Go gladly, son of Atreus, to the land of Phrygia,
 	and gladly come back,
 	with the finest spoils of Troy in your hands, for me.</pre>
+</section>
+</section>
+<section class="part" aria-labelledby="cyclops-date-unknown">
 <h2 id="cyclops-date-unknown" class="center">Cyclops (date unknown)</h2>
+<section aria-labelledby="cyclops">
 <h3 id="cyclops">Cyclops</h3>
 <p>(Sicily, at the foot of Mount Etna, in front of a great cave. It is the
 home of the Cyclops Polyphemus. Old Silenus comes out of it, bald and
@@ -29490,7 +29592,11 @@ shore.)</p>
 <p>Chorus.
 And we are shipmates of this Odysseus now. From here on, we are the
 slaves of Dionysus.</p>
+</section>
+</section>
+<section class="part" aria-labelledby="rhesus-date-unknown">
 <h2 id="rhesus-date-unknown" class="center">Rhesus (date unknown)</h2>
+<section aria-labelledby="rhesus">
 <h3 id="rhesus">Rhesus</h3>
 <p>(The Trojan camp on the plain in front of Troy, in the middle of the
 night. Hector is asleep on a bed of leaves. The sentries of the night
@@ -30624,6 +30730,10 @@ made free.</p>
 	Perhaps the god who is on our side
 	will give us the victory.</pre>
 <p>(They go out. The sun is up.)</p>
+</section>
+</section>
+</article>
+</main>
 
 </body>
 </html>

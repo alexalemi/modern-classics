@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>A Tangled Tale &mdash; Lewis Carroll</title>
+	<meta name="description" content="Ten comic stories with a puzzle hidden in each — then Carroll&#x27;s gleeful review of the wrong answers his readers sent in. The original text, unmodernized: free to read online.">
+	<link rel="canonical" href="https://emend.press/tangled-tale-original.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="A Tangled Tale — Lewis Carroll (original text)">
+	<meta property="og:description" content="Ten comic stories with a puzzle hidden in each — then Carroll&#x27;s gleeful review of the wrong answers his readers sent in. The original text, unmodernized: free to read online.">
+	<meta property="og:url" content="https://emend.press/tangled-tale-original.html">
+	<meta property="og:image" content="https://emend.press/covers/share/tangled-tale.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,20 +192,22 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>A Tangled Tale</h1>
-	<h3>Ten Knots, and the Author&#x27;s Answers to His Readers</h3>
-	<h3>by Lewis Carroll</h3>
+	<p class="title-line">Ten Knots, and the Author&#x27;s Answers to His Readers</p>
+	<p class="title-line">by Lewis Carroll</p>
 	<p class="center">
 	1885
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is the original text of A Tangled Tale, as it was published, for readers who want to see what the modernization is a modernization of. Every plate carries a caption and alt text written for this edition; the words of the book are the author's, unchanged. <a href="tangled-tale.html">The modern retelling is here</a>. The original is available from <a href="https://www.gutenberg.org/ebooks/29042">Project Gutenberg</a>. Also available as an <a href="ebooks/lewis-carroll_a-tangled-tale-the-original-text.epub">epub</a>.</i></p>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p><a href="#to-my-pupil">To My Pupil</a></p>
 <p><a href="#preface">Preface</a></p>
@@ -206,13 +234,18 @@ figcaption {
 <p><a href="#answers-to-knot-eight">Answers to Knot Eight</a></p>
 <p><a href="#answers-to-knot-nine">Answers to Knot Nine</a></p>
 <p><a href="#answers-to-knot-ten">Answers to Knot Ten</a></p>
+</nav>
 
 <hr>
+<article>
+<section aria-labelledby="to-my-pupil">
 <h2 id="to-my-pupil">To My Pupil</h2>
 <pre class="outline">	Beloved pupil! Tamed by thee,
 	Addish-, Subtrac-, Multiplica-tion,
 	Division, Fractions, Rule of Three,
 	Attest thy deft manipulation!</pre>
+</section>
+<section aria-labelledby="preface">
 <h2 id="preface">Preface</h2>
 <p>This Tale originally appeared as a serial in The Monthly Packet,
 beginning in April, 1880. The writer&#x27;s intention was to embody in each
@@ -224,7 +257,10 @@ Magazine.</p>
 <p>L. C.</p>
 <p>October, 1885.</p>
 <p>A TANGLED TALE.</p>
+</section>
+<section class="part" aria-labelledby="the-knots">
 <h2 id="the-knots" class="center">The Knots</h2>
+<section aria-labelledby="knot-one-excelsior">
 <h2 id="knot-one-excelsior">Knot One: Excelsior</h2>
 <figure id="fig-1">
 <img src="images/tangled-tale/fig1.jpg" alt="&quot;AT A PACE OF SIX MILES IN THE HOUR.&quot;" width="339" height="500" loading="lazy">
@@ -272,6 +308,8 @@ trudged betwixt three and nine of the clock.&quot;</p>
 the deep wrinkles that chased each other across his manly brow, revealed
 the abyss of arithmetical agony into which one chance question had
 plunged him.</p>
+</section>
+<section aria-labelledby="knot-two-eligible-apartments">
 <h2 id="knot-two-eligible-apartments">Knot Two: Eligible Apartments</h2>
 <pre class="outline">	&quot;Straight down the crooked lane,
 	And all round the square.&quot;</pre>
@@ -409,6 +447,8 @@ as he put pens, ink, and paper before his hapless pupils, and left the
 room.</p>
 <p>&quot;I say! It&#x27;ll be a job!&quot; said Hugh.</p>
 <p>&quot;Rather!&quot; said Lambert.</p>
+</section>
+<section aria-labelledby="knot-three-mad-mathesis">
 <h2 id="knot-three-mad-mathesis">Knot Three: Mad Mathesis</h2>
 <p>&quot;I waited for the train.&quot;</p>
 <p>&quot;Well, they call me so because I am a little mad, I suppose,&quot; she
@@ -504,6 +544,8 @@ a sigh—or rather with two sighs—of relief. &quot;One!&quot; Clara murmured t
 herself. &quot;Won! It&#x27;s a word of good omen. This time, at any rate, the
 victory will be mine!&quot;</p>
 <h4>But was it?</h4>
+</section>
+<section aria-labelledby="knot-four-the-dead-reckoning">
 <h2 id="knot-four-the-dead-reckoning">Knot Four: The Dead Reckoning</h2>
 <p>&quot;I did dream of money-bags to-night.&quot;</p>
 <p>Noonday on the open sea within a few degrees of the Equator is apt to be
@@ -630,6 +672,8 @@ five natives looked at the Captain. The Captain looked at nobody: his
 eyes were cast down, and he seemed to be saying softly to himself
 &quot;Contemplate one another, gentlemen, if such be your good pleasure. I
 contemplate Myself!&quot;</p>
+</section>
+<section aria-labelledby="knot-five-oughts-and-crosses">
 <h2 id="knot-five-oughts-and-crosses">Knot Five: Oughts and Crosses</h2>
 <p>&quot;Look here, upon this picture, and on this.&quot;</p>
 <p>&quot;And what made you choose the first train, Goosey?&quot; said Mad Mathesis,
@@ -738,6 +782,8 @@ rather perplexed at their manner.</p>
 <p>&quot;They&#x27;re real darlings!&quot; she soliloquised. &quot;I wonder why they pity me
 so!&quot; And she wandered on, murmuring to herself &quot;It must have two good
 marks, and——&quot;</p>
+</section>
+<section aria-labelledby="knot-six-her-radiancy">
 <h2 id="knot-six-her-radiancy">Knot Six: Her Radiancy</h2>
 <pre class="outline">	&quot;One piecee thing that my have got,
 	Maskee
@@ -881,6 +927,8 @@ The end of all this will be glory!&quot;</p>
 <p>&quot;Glory without the L!&quot; was all the poor old man could say, as he rocked
 himself to and fro on the malachite bench. &quot;Glory without the L!&quot;</p>
 <p>[A] &quot;Maskee,&quot; in Pigeon-English, means &quot;without.&quot;</p>
+</section>
+<section aria-labelledby="knot-seven-petty-cash">
 <h2 id="knot-seven-petty-cash">Knot Seven: Petty Cash</h2>
 <p>&quot;Base is the slave that pays.&quot;</p>
 <p>&quot;Aunt Mattie!&quot;</p>
@@ -1012,6 +1060,8 @@ Clara turned from one tablet to another, vainly trying to collect her
 thoughts. Her mind was a blank, and all human expression was rapidly
 fading out of her face.</p>
 <p>A gloomy silence ensued.</p>
+</section>
+<section aria-labelledby="knot-eight-de-omnibus-rebus">
 <h2 id="knot-eight-de-omnibus-rebus">Knot Eight: De Omnibus Rebus</h2>
 <pre class="outline">	&quot;This little pig went to market:
 	This little pig staid at home.&quot;</pre>
@@ -1094,6 +1144,8 @@ And once more the travellers passed on in silence—a silence only broken
 by the distant squeals of the unfortunate little pigs, who were still
 being provisionally transferred from sty to sty, under the personal
 superintendence of the Commander-in-Chief.</p>
+</section>
+<section aria-labelledby="knot-nine-a-serpent-with-corners">
 <h2 id="knot-nine-a-serpent-with-corners">Knot Nine: A Serpent with Corners</h2>
 <pre class="outline">	&quot;Water, water, every where,
 	Nor any drop to drink.&quot;</pre>
@@ -1219,6 +1271,8 @@ perplexing view of the subject.</p>
 </figure>
 <p>[B] Note by the writer.—For the above Essay I am indebted to
 a dear friend, now deceased.</p>
+</section>
+<section aria-labelledby="knot-ten-chelsea-buns">
 <h2 id="knot-ten-chelsea-buns">Knot Ten: Chelsea Buns</h2>
 <p>&quot;Yea, buns, and buns, and buns!&quot;</p>
 <p>Old Song.</p>
@@ -1402,7 +1456,11 @@ work out!&quot;</p>
 <p>And to all my readers I can but repeat the last words of gentle Clara—</p>
 <h4>Fare-well!</h4>
 <p>&quot;A knot!&quot; said Alice. &quot;Oh, do let me help to undo it!&quot;</p>
+</section>
+</section>
+<section class="part" aria-labelledby="the-answers">
 <h2 id="the-answers" class="center">The Answers</h2>
+<section aria-labelledby="answers-to-knot-one">
 <h2 id="answers-to-knot-one">Answers to Knot One</h2>
 <p>Problem.—&quot;Two travellers spend from 3 o&#x27;clock till 9 in walking along
 a level road, up a hill, and home again: their pace on the level being 4
@@ -1530,6 +1588,8 @@ dreary mountainside!&quot;</p>
 	Of very small account.</pre>
 <p>Simple Susan. 
 Money Spinner.</p>
+</section>
+<section aria-labelledby="answers-to-knot-two">
 <h2 id="answers-to-knot-two">Answers to Knot Two</h2>
 <p>§ 1. The Dinner Party.</p>
 <p>Problem.—&quot;The Governor of Kgovjni wants to give a very small dinner
@@ -1659,6 +1719,8 @@ sufficient to answer the question. As to the other, it is interesting to
 know that the question &quot;answers itself,&quot; and I am sure it does the
 question great credit: still I fear I cannot enter it on the list of
 winners, as this competition is only open to human beings.</p>
+</section>
+<section aria-labelledby="answers-to-knot-three">
 <h2 id="answers-to-knot-three">Answers to Knot Three</h2>
 <p>Problem.—(1) &quot;Two travellers, starting at the same time, went
 opposite ways round a circular railway. Trains start each way every 15
@@ -1778,6 +1840,8 @@ J. L. O.</p>
 <p>F. Lee. 
 G. S. C. 
 X. A. B.</p>
+</section>
+<section aria-labelledby="answers-to-knot-four">
 <h2 id="answers-to-knot-four">Answers to Knot Four</h2>
 <p>Problem.—&quot;There are 5 sacks, of which Nos. 1, 2, weigh 12 lbs.; Nos.
 2, 3, 13½ lbs.; Nos. 3, 4, 11½ lbs.; Nos. 4, 5, 8 lbs.; Nos. 1, 3,
@@ -1911,6 +1975,8 @@ James.
 Partridge. 
 R. W. 
 Waiting for the Train.</p>
+</section>
+<section aria-labelledby="answers-to-knot-five">
 <h2 id="answers-to-knot-five">Answers to Knot Five</h2>
 <p>Problem.—To mark pictures, giving 3 x&#x27;s to 2 or 3, 2 to 4 or 5, and 1
 to 9 or 10; also giving 3 o&#x27;s to 1 or 2, 2 to 3 or 4 and 1 to 8 or 9; so
@@ -1974,6 +2040,8 @@ F. Lee.
 H. Vernon.</p>
 <p>III.</p>
 <p>Cat.</p>
+</section>
+<section aria-labelledby="answers-to-knot-six">
 <h2 id="answers-to-knot-six">Answers to Knot Six</h2>
 <p>Problem 1.—A and B began the year with only 1,000l. a-piece.
 They borrowed nought; they stole nought. On the next New-Year&#x27;s Day they
@@ -2093,6 +2161,8 @@ them to waste so much time and trouble. I can only repeat that a
 literal interpretation of &quot;fill&quot; would seem to me to require that
 every picture in the gallery should be marked. Vis Inertiæ would have
 been in the First Class if she had sent in the solution she now offers.</p>
+</section>
+<section aria-labelledby="answers-to-knot-seven">
 <h2 id="answers-to-knot-seven">Answers to Knot Seven</h2>
 <p>Problem.—Given that one glass of lemonade, 3 sandwiches, and 7
 biscuits, cost 1s. 2d.; and that one glass of lemonade, 4
@@ -2374,6 +2444,8 @@ Bradshaw of the Future.</p>
 <p>Old King Cole.</p>
 <p>§ 7 (14 steps).</p>
 <p>Theseus.</p>
+</section>
+<section aria-labelledby="answers-to-correspondents">
 <h2 id="answers-to-correspondents">Answers to Correspondents</h2>
 <p>I have received several letters on the subjects of Knots II. and VI.,
 which lead me to think some further explanation desirable.</p>
@@ -2496,6 +2568,8 @@ the plea that I was &quot;quite certain of being correct.&quot; I trust that the
 knot-untiers and I are not on such terms as those!</p>
 <p>I beg to thank G. B. for the offer of a puzzle—which, however, is too
 like the old one &quot;Make four 9&#x27;s into 100.&quot;</p>
+</section>
+<section aria-labelledby="answers-to-knot-eight">
 <h2 id="answers-to-knot-eight">Answers to Knot Eight</h2>
 <p>§ 1. The Pigs.</p>
 <p>Problem.—Place twenty-four pigs in four sties so that, as you go
@@ -2546,6 +2620,8 @@ principle is correct, and might have been applied earlier.</p>
 <p>I.</p>
 <p>Balbus. 
 Delta.</p>
+</section>
+<section aria-labelledby="answers-to-knot-nine">
 <h2 id="answers-to-knot-nine">Answers to Knot Nine</h2>
 <p>§ 1. The Buckets.</p>
 <p>Problem.—Lardner states that a solid, immersed in a fluid, displaces
@@ -2672,6 +2748,8 @@ Old King Cole.</p>
 Janet. 
 Magpie. 
 Taffy.</p>
+</section>
+<section aria-labelledby="answers-to-knot-ten">
 <h2 id="answers-to-knot-ten">Answers to Knot Ten</h2>
 <p>§ 1. The Chelsea Pensioners.</p>
 <p>Problem.—If 70 per cent. have lost an eye, 75 per cent. an ear, 80
@@ -2898,6 +2976,10 @@ sweet sorrow, that I shall say &quot;good night!&quot; till it be morrow.</p>
 <h4>THE END</h4>
 <p>LONDON: RICHARD CLAY AND SONS, PRINTERS.</p>
 <p>[TURN OVER.</p>
+</section>
+</section>
+</article>
+</main>
 
 </body>
 </html>

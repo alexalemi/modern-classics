@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>American Indian Stories &mdash; Zitkala-Ša</title>
+	<meta name="description" content="Her childhood on the Yankton reservation, her schooldays in the East, her stories, and her 1921 case against the Indian Bureau. A restored edition, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/american-indian-stories.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="American Indian Stories — Zitkala-Ša">
+	<meta property="og:description" content="Her childhood on the Yankton reservation, her schooldays in the East, her stories, and her 1921 case against the Indian Bureau. A restored edition, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/american-indian-stories.html">
+	<meta property="og:image" content="https://emend.press/covers/share/american-indian-stories.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,27 +192,31 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>American Indian Stories</h1>
-	<h3>by Zitkala-Ša</h3>
+	<p class="title-line">by Zitkala-Ša</p>
 	<p class="center">
 	1921
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is a restored edition of American Indian Stories: the author's own words, unchanged. The original is available from <a href="https://www.gutenberg.org/ebooks/10376">Project Gutenberg</a>. Also available as an <a href="ebooks/zitkala-sa_american-indian-stories.epub">epub</a>. <a href="restored.html">More restored editions</a>.</i></p>
 
 	<hr>
+<section aria-labelledby="editors-introduction">
 <h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
 <p>Zitkala-Ša published American Indian Stories in Washington in 1921, near the end of twenty years of writing and public work. The first three pieces appeared in the Atlantic Monthly in 1900 and tell her own life: a childhood with her mother on the Yankton reservation in South Dakota; being taken east at the age of eight by missionaries who promised a land of red apples, to a boarding school where her long hair was cut; and the years when she taught at an Indian school herself and came to doubt what such schools were for. The Great Spirit is her 1902 Atlantic essay &quot;Why I Am a Pagan&quot; under a new title. The Trial Path, The Soft-Hearted Sioux and A Warrior&#x27;s Daughter first appeared in Harper&#x27;s and Everybody&#x27;s, and the book&#x27;s acknowledgments page names them all. It names no earlier home for the rest.</p>
 <p>By 1921 she was living in Washington, married to Raymond Bonnin and signing herself Gertrude Bonnin, and working for Indian rights. She had been an officer of the Society of American Indians. The last piece, America&#x27;s Indian Problem, is a political essay, and most of it quotes a 1915 report on the management of the Indian Bureau. Three years later, in 1924, Congress made citizens of all American Indians born in the United States who were not citizens already.</p>
 <p>A few things are worth knowing before starting. &quot;Paleface&quot; is her plain word for white people. The &quot;iron horse&quot; is the train. The Dakota words she keeps are mostly names, and the one footnote glosses Taku Iyotan Wasaka. Subsections in the autobiographical pieces are numbered, most with a short title of their own.</p>
 <p>Copies of the 1921 printing do not all agree. In at least one, the missionary&#x27;s candies on the train are followed by two sentences about the trouble they caused later, and The Great Spirit ends on the last line of the 1902 essay: &quot;If this is Paganism, then at present, at least, I am a Pagan.&quot; Other copies lack both and end the essay on a new paragraph about the robe of the Great Spirit. This edition follows those copies, which is also the text Project Gutenberg transcribed.</p>
 <p>This is a restored edition: her words are unchanged. The Gutenberg text was compared word by word with two scans of the 1921 book. Where both copies print a period spelling that Gutenberg modernised, such as intrust and gayly, this edition goes back to print; the printer&#x27;s plain misprints stay corrected. The epigraph and the acknowledgments page, which Gutenberg left out, are restored, and the publisher&#x27;s advertisement at the back is not. It also adds modern typesetting, a proper ebook, and this introduction.</p>
+</section>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p><a href="#epigraph">Epigraph</a></p>
 <p><a href="#acknowledgments">Acknowledgments</a></p>
@@ -200,14 +230,21 @@ figcaption {
 <p><a href="#a-dream-of-her-grandfather">A Dream of Her Grandfather</a></p>
 <p><a href="#the-widespread-enigma-concerning-blue-star-woman">The Widespread Enigma Concerning Blue-Star Woman</a></p>
 <p><a href="#america-s-indian-problem">America&#x27;s Indian Problem</a></p>
+</nav>
 
 <hr>
+<article>
+<section aria-labelledby="epigraph">
 <h2 id="epigraph">Epigraph</h2>
 <pre class="outline">	&quot;There is no great; there is no small; in the mind that causeth all&quot;</pre>
+</section>
+<section aria-labelledby="acknowledgments">
 <h2 id="acknowledgments">Acknowledgments</h2>
 <p>To The Atlantic Monthly for permission to reprint from its 1900 issue &quot;Impressions of an Indian Childhood,&quot; &quot;The School Days of an Indian Girl,&quot; &quot;An Indian Teacher Among Indians,&quot; and from its 1902 issue, &quot;Why I Am a Pagan.&quot;</p>
 <p>To Harper&#x27;s Magazine for permission to reprint from its 1901 issues, &quot;The Trial Path,&quot; and &quot;The Soft-Hearted Sioux.&quot;</p>
 <p>To Everybody&#x27;s Magazine for permission to reprint from its 1902 issue, &quot;A Warrior&#x27;s Daughter.&quot;</p>
+</section>
+<section aria-labelledby="impressions-of-an-indian-childhood">
 <h2 id="impressions-of-an-indian-childhood">Impressions of an Indian Childhood</h2>
 <h4>I. My Mother</h4>
 <p>A wigwam of weather-stained canvas stood at the base of some irregularly ascending hills. A footpath wound its way gently down the sloping land till it reached the broad river bottom; creeping through the long swamp grasses that bent over it on either side, it came out on the edge of the Missouri.</p>
@@ -333,6 +370,8 @@ figcaption {
 <p>&quot;Yes, Dawée, my daughter, though she does not understand what it all means, is anxious to go. She will need an education when she is grown, for then there will be fewer real Dakotas, and many more palefaces. This tearing her away, so young, from her mother is necessary, if I would have her an educated woman. The palefaces, who owe us a large debt for stolen lands, have begun to pay a tardy justice in offering some education to our children. But I know my daughter must suffer keenly in this experiment. For her sake, I dread to tell you my reply to the missionaries. Go, tell them that they may take my little daughter, and that the Great Spirit shall not fail to reward them according to their hearts.&quot;</p>
 <p>Wrapped in my heavy blanket, I walked with my mother to the carriage that was soon to take us to the iron horse. I was happy. I met my playmates, who were also wearing their best thick blankets. We showed one another our new beaded moccasins, and the width of the belts that girdled our new dresses. Soon we were being drawn rapidly away by the white man&#x27;s horses. When I saw the lonely figure of my mother vanish in the distance, a sense of regret settled heavily upon me. I felt suddenly weak, as if I might fall limp to the ground. I was in the hands of strangers whom my mother did not fully trust. I no longer felt free to be myself, or to voice my own feelings. The tears trickled down my cheeks, and I buried my face in the folds of my blanket. Now the first step, parting me from my mother, was taken, and all my belated tears availed nothing.</p>
 <p>Having driven thirty miles to the ferryboat, we crossed the Missouri in the evening. Then riding again a few miles eastward, we stopped before a massive brick building. I looked at it in amazement, and with a vague misgiving, for in our village I had never seen so large a house. Trembling with fear and distrust of the palefaces, my teeth chattering from the chilly ride, I crept noiselessly in my soft moccasins along the narrow hall, keeping very close to the bare wall. I was as frightened and bewildered as the captured young of a wild creature.</p>
+</section>
+<section aria-labelledby="the-school-days-of-an-indian-girl">
 <h2 id="the-school-days-of-an-indian-girl">The School Days of an Indian Girl</h2>
 <h4>I. The Land of Red Apples</h4>
 <p>There were eight in our party of bronzed children who were going East with the missionaries. Among us were three young braves, two tall girls, and we three little ones, Judéwin, Thowin, and I.</p>
@@ -429,6 +468,8 @@ figcaption {
 <p>There were two prizes given, that night, and one of them was mine!</p>
 <p>The evil spirit laughed within me when the white flag dropped out of sight, and the hands which hurled it hung limp in defeat.</p>
 <p>Leaving the crowd as quickly as possible, I was soon in my room. The rest of the night I sat in an armchair and gazed into the crackling fire. I laughed no more in triumph when thus alone. The little taste of victory did not satisfy a hunger in my heart. In my mind I saw my mother far away on the Western plains, and she was holding a charge against me.</p>
+</section>
+<section aria-labelledby="an-indian-teacher-among-indians">
 <h2 id="an-indian-teacher-among-indians">An Indian Teacher Among Indians</h2>
 <h4>I. My First Day</h4>
 <p>Though an illness left me unable to continue my college course, my pride kept me from returning to my mother. Had she known of my worn condition, she would have said the white man&#x27;s papers were not worth the freedom and health I had lost by them. Such a rebuke from my mother would have been unbearable, and as I felt then it would be far too true to be comfortable.</p>
@@ -486,6 +527,8 @@ figcaption {
 <p>At last, one weary day in the schoolroom, a new idea presented itself to me. It was a new way of solving the problem of my inner self. I liked it. Thus I resigned my position as teacher; and now I am in an Eastern city, following the long course of study I have set for myself. Now, as I look back upon the recent past, I see it from a distance, as a whole. I remember how, from morning till evening, many specimens of civilized peoples visited the Indian school. The city folks with canes and eyeglasses, the countrymen with sunburnt cheeks and clumsy feet, forgot their relative social ranks in an ignorant curiosity. Both sorts of these Christian palefaces were alike astounded at seeing the children of savage warriors so docile and industrious.</p>
 <p>As answers to their shallow inquiries they received the students&#x27; sample work to look upon. Examining the neatly figured pages, and gazing upon the Indian girls and boys bending over their books, the white visitors walked out of the schoolhouse well satisfied: they were educating the children of the red man! They were paying a liberal fee to the government employees in whose able hands lay the small forest of Indian timber.</p>
 <p>In this fashion many have passed idly through the Indian schools during the last decade, afterward to boast of their charity to the North American Indian. But few there are who have paused to question whether real life or long-lasting death lies beneath this semblance of civilization.</p>
+</section>
+<section aria-labelledby="the-great-spirit">
 <h2 id="the-great-spirit">The Great Spirit</h2>
 <p>When the spirit swells my breast I love to roam leisurely among the green hills; or sometimes, sitting on the brink of the murmuring Missouri, I marvel at the great blue overhead. With half-closed eyes I watch the huge cloud shadows in their noiseless play upon the high bluffs opposite me, while into my ear ripple the sweet, soft cadences of the river&#x27;s song. Folded hands lie in my lap, for the time forgot. My heart and I lie small upon the earth like a grain of throbbing sand. Drifting clouds and tinkling waters, together with the warmth of a genial summer day, bespeak with eloquence the loving Mystery round about us. During the idle while I sat upon the sunny river brink, I grew somewhat, though my response be not so clearly manifest as in the green grass fringing the edge of the high bluff back of me.</p>
 <p>At length retracing the uncertain footpath scaling the precipitous embankment, I seek the level lands where grow the wild prairie flowers. And they, the lovely little folk, soothe my soul with their perfumed breath.</p>
@@ -508,6 +551,8 @@ figcaption {
 <p>Thither he hurried forth with his afternoon sermon. I watched him as he hastened along, his eyes bent fast upon the dusty road till he disappeared at the end of a quarter of a mile.</p>
 <p>The little incident recalled to mind the copy of a missionary paper brought to my notice a few days ago, in which a &quot;Christian&quot; pugilist commented upon a recent article of mine, grossly perverting the spirit of my pen. Still I would not forget that the pale-faced missionary and the hoodooed aborigine are both God&#x27;s creatures, though small indeed their own conceptions of Infinite Love. A wee child toddling in a wonder world, I prefer to their dogma my excursions into the natural gardens where the voice of the Great Spirit is heard in the twittering of birds, the rippling of mighty waters, and the sweet breathing of flowers.</p>
 <p>Here, in a fleeting quiet, I am awakened by the fluttering robe of the Great Spirit. To my innermost consciousness the phenomenal universe is a royal mantle, vibrating with His divine breath. Caught in its flowing fringes are the spangles and oscillating brilliants of sun, moon, and stars.</p>
+</section>
+<section aria-labelledby="the-soft-hearted-sioux">
 <h2 id="the-soft-hearted-sioux">The Soft-Hearted Sioux</h2>
 <h4>I</h4>
 <p>Beside the open fire I sat within our tepee. With my red blanket wrapped tightly about my crossed legs, I was thinking of the coming season, my sixteenth winter. On either side of the wigwam were my parents. My father was whistling a tune between his teeth while polishing with his bare hand a red stone pipe he had recently carved. Almost in front of me, beyond the center fire, my old grandmother sat near the entranceway.</p>
@@ -569,6 +614,8 @@ figcaption {
 <p>The shrieking winter winds have followed me hither. Rattling the bars, they howl unceasingly: &quot;Your soft heart! your soft heart will see me die before you bring me food!&quot; Hark! something is clanking the chain on the door. It is being opened. From the dark night without a black figure crosses the threshold.    It is the guard. He comes to warn me of my fate. He tells me that tomorrow I must die. In his stern face I laugh aloud. I do not fear death.</p>
 <p>Yet I wonder who shall come to welcome me in the realm of strange sight. Will the loving Jesus grant me pardon and give my soul a soothing sleep? or will my warrior father greet me and receive me as his son? Will my spirit fly upward to a happy heaven? or shall I sink into the bottomless pit, an outcast from a God of infinite love?</p>
 <p>Soon, soon I shall know, for now I see the east is growing red. My heart is strong. My face is calm. My eyes are dry and eager for new scenes. My hands hang quietly at my side. Serene and brave, my soul awaits the men to perch me on the gallows for another flight. I go.</p>
+</section>
+<section aria-labelledby="the-trial-path">
 <h2 id="the-trial-path">The Trial Path</h2>
 <p>It was an autumn night on the plain. The smoke-lapels of the cone-shaped tepee flapped gently in the breeze. From the low night sky, with its myriad fire points, a large bright star peeped in at the smoke-hole of the wigwam between its fluttering lapels, down upon two Dakotas talking in the dark. The mellow stream from the star above, a maid of twenty summers, on a bed of sweetgrass, drank in with her wakeful eyes. On the opposite side of the tepee, beyond the centre fireplace, the grandmother spread her rug. Though once she had lain down, the telling of a story has aroused her to a sitting posture.</p>
 <p>Her eyes are tight closed. With a thin palm she strokes her wind-shorn hair.</p>
@@ -599,6 +646,8 @@ figcaption {
 <p>The woman ceased her talking. But only the deep breathing of the girl broke the quiet, for now the night wind had lulled itself to sleep.</p>
 <p>&quot;Hinnu! hinnu! Asleep! I have been talking in the dark, unheard. I did wish the girl would plant in her heart this sacred tale,&quot; muttered she, in a querulous voice.</p>
 <p>Nestling into her bed of sweet-scented grass, she dozed away into another dream. Still the guardian star in the night sky beamed compassionately down upon the little tepee on the plain.</p>
+</section>
+<section aria-labelledby="a-warrior-s-daughter">
 <h2 id="a-warrior-s-daughter">A Warrior&#x27;s Daughter</h2>
 <p>In the afternoon shadow of a large tepee, with red-painted smoke lapels, sat a warrior father with crossed shins. His head was so poised that his eye swept easily the vast level land to the eastern horizon line.</p>
 <p>He was the chieftain&#x27;s bravest warrior. He had won by heroic deeds the privilege of staking his wigwam within the great circle of tepees.</p>
@@ -673,6 +722,8 @@ figcaption {
 <p>A forefinger she presses to her lip. The young man arouses himself from his stupor. His senses belie him. Before his wide-open eyes the old bent figure straightens into its youthful stature. Tusee herself is beside him. With a stroke upward and downward she severs the cruel cords with her sharp blade. Dropping her blanket from her shoulders, so that it hangs from her girdled waist like a skirt, she shakes the large bundle into a light shawl for her lover. Quickly she spreads it over his bare back.</p>
 <p>&quot;Come!&quot; she whispers, and turns to go; but the young man, numb and helpless, staggers nigh to falling.</p>
 <p>The sight of his weakness makes her strong. A mighty power thrills her body. Stooping beneath his outstretched arms grasping at the air for support, Tusee lifts him upon her broad shoulders. With half-running, triumphant steps she carries him away into the open night.</p>
+</section>
+<section aria-labelledby="a-dream-of-her-grandfather">
 <h2 id="a-dream-of-her-grandfather">A Dream of Her Grandfather</h2>
 <p>Her grandfather was a Dakota &quot;medicine man.&quot; Among the Indians of his day he was widely known for his successful healing work. He was one of the leading men of the tribe and came to Washington, D.C., with one of the first delegations relative to affairs concerning the Indian people and the United States government.</p>
 <p>His was the first band of the Great Sioux Nation to make treaties with the government in the hope of bringing about an amicable arrangement between the red and white Americans. The journey to the nation&#x27;s capital was made almost entirely on pony-back, there being no railroads, and the Sioux delegation was beset with many hardships on the trail. His visit to Washington, in behalf of peace among men, proved to be his last earthly mission. From a sudden illness, he died and was buried here.</p>
@@ -683,6 +734,8 @@ figcaption {
 <p>The gift was a fantastic thing, of texture far more delicate than a spider&#x27;s filmy web. It was a vision! A picture of an Indian camp, not painted on canvas nor yet written. It was dream-stuff, suspended in the thin air, filling the inclosure of the cedar wood container. As she looked upon it, the picture grew more and more real, exceeding the proportions of the chest. It was all so illusive a breath might have blown it away; yet there it was, real as life,—a circular camp of white cone-shaped tepees, astir with Indian people. The village crier, with flowing head-dress of eagle plumes, mounted on a prancing white pony, rode within the arena. Indian men, women and children stopped in groups and clusters, while bright painted faces peered out of tepee doors, to listen to the chieftain&#x27;s crier.</p>
 <p>At this point, she, too, heard the full melodious voice. She heard distinctly the Dakota words he proclaimed to the people. &quot;Be glad! Rejoice! Look up, and see the new day dawning! Help is near! Hear me, every one.&quot;</p>
 <p>She caught the glad tidings and was thrilled with new hope for her people.</p>
+</section>
+<section aria-labelledby="the-widespread-enigma-concerning-blue-star-woman">
 <h2 id="the-widespread-enigma-concerning-blue-star-woman">The Widespread Enigma Concerning Blue-Star Woman</h2>
 <p>It was summer on the western plains. Fields of golden sunflowers facing eastward, greeted the rising sun. Blue-Star Woman, with windshorn braids of white hair over each ear, sat in the shade of her log hut before an open fire. Lonely but unmolested she dwelt here like the ground squirrel that took its abode nearby,—both through the easy tolerance of the land owner. The Indian woman held a skillet over the burning embers. A large round cake, with long slashes in its center, was baking and crowding the capacity of the frying pan.</p>
 <p>In deep abstraction Blue-Star Woman prepared her morning meal. &quot;Who am I?&quot; had become the obsessing riddle of her life. She was no longer a young woman, being in her fifty-third year. In the eyes of the white man&#x27;s law, it was required of her to give proof of her membership in the Sioux tribe. The unwritten law of heart prompted her naturally to say, &quot;I am a being. I am Blue-Star Woman. A piece of earth is my birthright.&quot;</p>
@@ -741,6 +794,8 @@ figcaption {
 <p>Finally came the day of his release. There was rejoicing over all the land. The desolate hills that harbored wailing voices nightly now were hushed and still. Only gladness filled the air. A crowd gathered around the jail to greet the chieftain. His son stood at the entrance way, while the guard unlocked the prison door. Serenely quiet, the old Indian chief stepped forth. An unseen stone in his path caused him to stumble slightly, but his son grasped him by the hand and steadied his tottering steps. He led him to a heavy lumber wagon drawn by a small pony team which he had brought to take him home. The people thronged about him—hundreds shook hands with him and went away singing native songs of joy for the safe return to them of their absent one.</p>
 <p>Among the happy people came Blue-Star Woman&#x27;s two nephews. Each shook the chieftain&#x27;s hand. One of them held out an ink pad saying, &quot;We are glad we were able to get you out of jail. We have great influence with the Indian Bureau in Washington, D.C. When you need help, let us know. Here press your thumb in this pad.&quot; His companion took from his pocket a document prepared for the old chief&#x27;s signature, and held it on the wagon wheel for the thumb mark. The chieftain was taken by surprise. He looked into his son&#x27;s eyes to know the meaning of these two men. &quot;It is our agreement,&quot; he explained to his old father. &quot;I pledged to pay them half of your land if they got you out of jail.&quot;</p>
 <p>The old chieftain sighed, but made no comment. Words were vain. He pressed his indelible thumb mark, his signature it was, upon the deed, and drove home with his son.</p>
+</section>
+<section aria-labelledby="america-s-indian-problem">
 <h2 id="america-s-indian-problem">America&#x27;s Indian Problem</h2>
 <p>The hospitality of the American aborigine, it is told, saved the early settlers from starvation during the first bleak winters. In commemoration of having been so well received, Newport erected &quot;a cross as a sign of English dominion.&quot; With sweet words he quieted the suspicions of Chief Powhatan, his friend. He &quot;told him that the arms (of the cross) represented Powhatan and himself, and the middle their united league.&quot;</p>
 <p>DeSoto and his Spaniards were graciously received by the Indian Princess Cofachiqui in the South. While on a sight-seeing tour they entered the ancestral tombs of those Indians. DeSoto &quot;dipped into the pearls and gave his two joined hands full to each cavalier to make rosaries of, he said, to say prayers for their sins on. We imagine if their prayers were in proportion to their sins they must have spent the most of their time at their devotions.&quot;</p>
@@ -769,6 +824,9 @@ figcaption {
 <p>&quot;   The story of the mismanagement of Indian Affairs is only a chapter in the history of the mismanagement of corporate trusts. The Indian has been the victim of the same kind of neglect, the same abortive processes, the same malpractices as have the life insurance policyholders, the bank depositor, the industrial and transportation shareholder. The form of organization of the trusteeship has been one which does not provide for independent audit and supervision. The institutional methods and practices have been such that they do not provide either a fact basis for official judgment or publicity of facts which, if made available, would supply evidence of infidelity. In the operation of this machinery, there has not been the means provided for effective official scrutiny and the public conscience could not be reached.&quot;</p>
 <h4>Ample Precedents to Be Followed</h4>
 <p>&quot;Precedents to be followed are ample. In private corporate trusts that have been mismanaged a basis of appeal has been found only when some favorable circumstance has brought to light conditions so shocking as to cause those people who have possessed political power, as a matter of self-protection, to demand a thorough reorganization and revision of methods. The same motive has lain back of legislation for the Indian. But the motive to political action has been less effective, for the reason that in the past the Indians who have acted in self-protection have either been killed or placed in confinement. All the machinery of government has been set to work to repress rather than to provide adequate means for justly dealing with a large population which had no political rights.&quot;—Edict Magazine.</p>
+</section>
+</article>
+</main>
 
 </body>
 </html>

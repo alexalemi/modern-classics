@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>The Consolation of Philosophy &mdash; Boethius</title>
+	<meta name="description" content="Waiting to be executed, the last Roman philosopher is visited by Philosophy, who tells him that nothing he has lost was ever his. With all thirty-nine poems. Retold in modern English, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/boethius.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="The Consolation of Philosophy — Boethius">
+	<meta property="og:description" content="Waiting to be executed, the last Roman philosopher is visited by Philosophy, who tells him that nothing he has lost was ever his. With all thirty-nine poems. Retold in modern English, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/boethius.html">
+	<meta property="og:image" content="https://emend.press/covers/share/boethius.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,28 +192,32 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>The Consolation of Philosophy</h1>
-	<h3>Written in prison awaiting execution: Philosophy comes to the condemned man and argues him out of self-pity</h3>
-	<h3>by Boethius</h3>
+	<p class="title-line">Written in prison awaiting execution: Philosophy comes to the condemned man and argues him out of self-pity</p>
+	<p class="title-line">by Boethius</p>
 	<p class="center">
 	<s>524</s> 2026
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is an AI modernization of The Consolation of Philosophy into contemporary English. The original is available from <a href="https://standardebooks.org/ebooks/boethius/the-consolation-of-philosophy/h-r-james">Standard Ebooks</a>. Also available as an <a href="ebooks/boethius_the-consolation-of-philosophy.epub">epub</a>.</i></p>
 
 	<hr>
+<section aria-labelledby="editors-introduction">
 <h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
 <p>In 523 Boethius was the most powerful civilian official in Italy. He was a Roman aristocrat serving Theodoric, the Ostrogothic king who then ruled the peninsula; he had been consul, his two sons had been consuls together the year before, and he had set out to translate the whole of Plato and Aristotle into Latin, getting as far as most of Aristotle&#x27;s logic before he was stopped. He had set out to translate all of Plato and Aristotle into Latin before the language was lost. Then he defended a senator accused of treasonable correspondence with Constantinople, was charged with the same offence himself, condemned without a hearing, and held in custody at Pavia. He wrote this book there, and was executed shortly afterwards.</p>
 <p>It opens with him feeling sorry for himself, writing verses about his own misfortune with the Muses of poetry standing at his elbow. A tall woman appears in the cell, throws the Muses out for making the sickness worse, and identifies herself as Philosophy. The rest is a conversation between the two of them across five books: on Fortune and what she ever promised, on what happiness actually is, on why the wicked appear to prosper, and finally on whether God&#x27;s knowing tomorrow leaves anything for a person to decide. He never mentions his sentence again.</p>
 <p>The book alternates prose argument with poems — thirty-nine of them, one after most chapters. They are not ornament. Philosophy uses them deliberately, as a change of medicine, and they carry the argument restated as feeling. All thirty-nine are here, as verse, and they are unrhymed, because Boethius wrote them unrhymed in some twenty-eight different classical metres. The rhyme in the Victorian English this edition works from was the translator&#x27;s own addition. Abridged editions cut the poems, which removes half the book.</p>
 <p>There is not one Christian doctrine in it. No scripture, no Christ, no resurrection, nothing that would place its author in any church — a Christian under sentence of death consoling himself entirely by argument. That matters because of who read it afterwards. For a thousand years this was the book educated Europe actually had by heart: Alfred the Great put it into Old English, Chaucer into Middle English, Elizabeth I into her own hand. Fortune&#x27;s wheel is in every medieval manuscript because of Book Two, where Fortune stops being a figure of speech and speaks in her own defence.</p>
 <p>The definition of eternity in Book Five — the complete and perfect possession of endless life all at once — is the one Aquinas took over whole. It is also, given where the man was sitting, the point of the whole exercise.</p>
+</section>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p class="toc-book">Book One: The Sorrows of Boethius</p>
 <ul class="toc-list">
@@ -244,9 +274,13 @@ figcaption {
 <li><a href="#ch-5-5">Chapter 5: Rising from Reason to a Higher Standpoint</a></li>
 <li><a href="#ch-6-5">Chapter 6: Eternity, and Why Foreseeing Does Not Compel</a></li>
 </ul>
+</nav>
 
 <hr>
+<article>
+<section class="part" aria-labelledby="book-one">
 <h2 id="book-one" class="center">Book One: The Sorrows of Boethius</h2>
+<section aria-labelledby="song-i-boethius-complaint">
 <h3 id="song-i-boethius-complaint">Song I: Boethius&#x27; Complaint</h3>
 <pre class="outline">	I who once wrote songs with pleasure,
 		in the flourishing of my days,
@@ -292,6 +326,8 @@ figcaption {
 		so lightly that I was a happy man?
 	Anyone who could fall this far
 		was never firmly founded.</pre>
+</section>
+<section aria-labelledby="ch-1">
 <h3 id="ch-1">Chapter 1: Philosophy Appears and Drives Out the Muses</h3>
 <p>While I was brooding like this in silence, setting down my miserable complaints with my pen, it seemed to me that a woman appeared standing over my head, and her face was more than usually worth reverence. Her eyes burned like fire and saw further than human eyes see; her colour was fresh and her strength showed no sign of wearing out — and yet she was full of years, and plainly did not belong to our age at all. Her height was hard to judge. One moment she was no taller than anyone else; the next her forehead seemed to strike the sky, and when she lifted her head higher still she began to pierce into the heavens themselves and to defeat the eyes of anyone watching her. Her clothes were made of some imperishable stuff, woven of the finest thread with the most delicate workmanship; and she had made them herself with her own hands, as she told me later. Their beauty had been somewhat dulled by age and neglect, and they had the grimy look marble takes on when it is left out in the weather. Along the bottom edge was woven the Greek letter Π, which stands for the practical life; at the top the letter θ, for the life of thought; and between the two, steps like a staircase leading from the lower letter to the upper one. The robe had also been torn by violent hands, each of which had snatched away whatever it could grab. In her right hand she held a notebook, and in her left a staff.</p>
 <p>And when she saw the Muses of Poetry standing by my bed, dictating the words of my lament, she was angry for a moment and her eyes flashed. &quot;Who,&quot; she said, &quot;let these stagey little tarts in to see a sick man? They have no medicine for his illness; they feed it with sweet poison. These are the ones who kill off the rich crop of reason with the barren thorns of feeling, who get people&#x27;s minds used to being ill instead of setting them free. If it were some ordinary man your charms were seducing, as is usually the way with you, I would mind less. I should not have wasted my own work on him. But this man was brought up on the philosophy of Elea and the Academy. Go on, get out, you sirens — your sweetness does not last. Leave him to my Muses to look after and heal.&quot;</p>
@@ -328,6 +364,8 @@ figcaption {
 		put out, his neck in chains,
 	and forced down by the heavy weight,
 	his eyes are fastened to dull earth.</pre>
+</section>
+<section aria-labelledby="ch-2">
 <h3 id="ch-2">Chapter 2: Boethius Struck Dumb</h3>
 <p>&quot;But the time,&quot; she said, &quot;calls for treatment rather than complaint.&quot; Then, fixing her eyes full on me: &quot;Are you that man,&quot; she said, &quot;who was once fed on my milk and brought up on my food, and who grew from it into the full strength of a grown mind? And I had given you armour that would have made you unbeatable, if you had not thrown it away first. Do you know me? Why do you say nothing? Is it shame or astonishment that has struck you dumb? I would rather it were shame; but as I can see, it is a stupor that has come over you.&quot;</p>
 <p>Then, when she saw that I was not merely not answering but mute and altogether unable to speak, she laid her hand gently on my chest and said: &quot;There is no danger. This is lethargy, the usual illness of a mind that has been taken in. He has forgotten himself for a while; he will get his memory back easily enough, if he first recognises me. And so that he can, let me wipe his eyes clear of the fog of mortal things.&quot; And with a fold of her robe she dried my eyes, which were swimming with tears.</p>
@@ -342,6 +380,8 @@ figcaption {
 		and set the imprisoned daylight free,
 	and all at once the shining god streams out
 	and strikes our dazzled eyes with his own beams.</pre>
+</section>
+<section aria-labelledby="ch-3">
 <h3 id="ch-3">Chapter 3: Boethius Recognises Philosophy</h3>
 <p>In the same way the clouds of my depression broke up. I saw the clear sky, and got back the power to recognise my doctor&#x27;s face. So when I had lifted my eyes and looked steadily at her, I saw it was my old nurse Philosophy, in whose house I had spent my time since I was young.</p>
 <p>&quot;Why,&quot; I said, &quot;mistress of every excellence, have you come down from above into the loneliness of my exile? Is it so that you can be falsely accused along with me?&quot;</p>
@@ -370,6 +410,8 @@ figcaption {
 	and run from the field like a coward;
 	without knowing it he has forged
 	the chains his own neck must wear.</pre>
+</section>
+<section aria-labelledby="ch-4">
 <h3 id="ch-4">Chapter 4: The Story of His Ruin</h3>
 <p>&quot;Do you follow?&quot; she asked. &quot;Are my words getting into your mind? Or are you like &#x27;the donkey listening to the lyre&#x27;? Why are you crying? Why are the tears running down your face?</p>
 <p>&quot;&#x27;Speak out, do not hide it in your heart.&#x27;</p>
@@ -436,6 +478,8 @@ figcaption {
 	Master, tell the waves to fall.
 		And guide the ways of earth by that
 	same order You keep in Your heaven.</pre>
+</section>
+<section aria-labelledby="ch-5">
 <h3 id="ch-5">Chapter 5: The Sickness Is in His Mind, Not His Fortune</h3>
 <p>When I had poured out my grievances in this long unbroken wail, she, with a calm face and not in the least put out by my complaints, said:</p>
 <p>&quot;When I saw you miserable and in tears, I knew at once that you were wretched and an exile. But how distant an exile I would not have known if your own speech had not told me. And yet how far from your country have you really been banished? Say rather that you have wandered off — or, if you insist on calling it banishment, that you have banished yourself, since nobody else could ever lawfully have had that power over you.</p>
@@ -462,6 +506,8 @@ figcaption {
 		in that great plan of his.
 	So whoever leaves the proper order
 	will regret how it turns out.</pre>
+</section>
+<section aria-labelledby="ch-6">
 <h3 id="ch-6">Chapter 6: The Three Things He Has Forgotten</h3>
 <p>&quot;First, then, will you let me test the state of your mind with a few questions, so that I can work out how to begin the cure?&quot;</p>
 <p>&quot;Ask whatever you like,&quot; I said, &quot;and I will answer.&quot;</p>
@@ -512,7 +558,11 @@ figcaption {
 	drive grief away.
 		The mind these rule
 	is chained and blind.</pre>
+</section>
+</section>
+<section class="part" aria-labelledby="book-two">
 <h2 id="book-two" class="center">Book Two: The Vanity of Fortune’s Gifts</h2>
+<section aria-labelledby="ch-1-2">
 <h3 id="ch-1-2">Chapter 1: Fortune&#x27;s Nature Is Caprice</h3>
 <p>After that she was silent for a while; and when a measured pause in her talk had brought my flagging attention back, she began: &quot;If I have properly worked out the character and the causes of your illness, you are wasting away with a regretful longing for the fortune you used to have. It is the change in that fortune, as you see it, that has done all this to your mind.</p>
 <p>&quot;I know that Siren&#x27;s many tricks perfectly well — the deadly charm of the friendship she pretends to have for her victims while she is scheming to trap them, and how she abandons them without warning and leaves them flattened under a grief they cannot carry. Think about her nature, her character, what she is worth, and you will soon admit that in her you neither possessed nor have lost anything of any value. I do not think I need take much trouble bringing this back to you, since even while she was still with you, even while she was making a fuss of you, you used to attack her in manly terms and tell her off with maxims out of my own holy storehouse.</p>
@@ -532,6 +582,8 @@ figcaption {
 	and it is a fine wonder when in a single hour
 	she shows her favourite lifted high into bliss
 	and then dropped headlong into the pit of misery.</pre>
+</section>
+<section aria-labelledby="ch-2-2">
 <h3 id="ch-2-2">Chapter 2: Fortune Speaks in Her Own Defence</h3>
 <p>&quot;Now I should like to argue with you a little in Fortune&#x27;s own words. You judge whether her case is a fair one.</p>
 <p>&quot;&#x27;Man,&#x27; she might say, &#x27;why do you come after me every day with your complaints? What harm have I done you? What goods of yours have I taken away? Pick any judge you like and let us argue in front of him about who rightfully owns wealth and rank. If you can show me that any one of these things really belongs to a mortal man, I will freely grant that the things you claim are yours.</p>
@@ -560,6 +612,8 @@ figcaption {
 		makes the frantic craving grow?
 	No man is rich whose fear
 	sees grim Want always at the door.</pre>
+</section>
+<section aria-labelledby="ch-3-2">
 <h3 id="ch-3-2">Chapter 3: How Brilliant His Fortunes Once Were</h3>
 <p>&quot;If Fortune argued against you like that, you would certainly have nothing to say in reply; or, if you can find some justification for your complaints, you must show me what it is. I will give you room to speak.&quot;</p>
 <p>Then I said: &quot;Your arguments are plausible, certainly — soaked in the honeyed sweetness of music and rhetoric. But their charm lasts only while they are sounding in the ear; a wretched man&#x27;s sense of his own misfortunes lies deeper than that, in the heart. So when the sound has stopped vibrating in the air, the grief that lives in the heart is felt again, and more bitterly.&quot;</p>
@@ -587,6 +641,8 @@ figcaption {
 	count happiness as brief as a dream.
 	One law only stands fast:
 	created things do not last.</pre>
+</section>
+<section aria-labelledby="ch-4-2">
 <h3 id="ch-4-2">Chapter 4: Happiness Is Not Anywhere Outside You</h3>
 <p>Then I said: &quot;What you say is true, nurse of every excellence, and I cannot deny how astonishing the swift career of my fortune was. But that is exactly what galls me more cruelly when I remember it. In bad fortune the sharpest sting of misery is to <em>have been</em> happy.&quot;</p>
 <p>&quot;Well,&quot; she said, &quot;if you are paying the penalty for a mistaken belief, you cannot fairly lay the blame on circumstances. If it is the happiness Fortune gives that moves you — mere name though it is — then come and reckon up with me how rich you are in the number and weight of your blessings.</p>
@@ -623,6 +679,8 @@ figcaption {
 	and rest undisturbed;
 	you will live your days serene
 	and laugh at the temper of the sky.</pre>
+</section>
+<section aria-labelledby="ch-5-2">
 <h3 id="ch-5-2">Chapter 5: Riches Bring Anxiety, Not Contentment</h3>
 <p>&quot;But since my arguments are beginning to have a soothing effect on your mind, I think I may turn to somewhat stronger remedies. Come, then: suppose the gifts of Fortune were not fleeting and passing. What is there in them that could ever really become yours, or that does not lose value when it is looked at steadily and weighed fairly?</p>
 <p>&quot;Are riches precious, I ask you, because of your nature or because of their own? What are they but gold and heaps of money? And these fine things show their quality better in the spending than in the hoarding; for I take it to be plain that greed always makes men hateful, while generosity brings a good name. But what is transferred to somebody else cannot stay in your own possession; and if that is so, then money is only precious when it is given away, and by being handed to others stops being yours.</p>
@@ -660,6 +718,8 @@ figcaption {
 		who first uncovered the hidden store of gold
 	and dug out — dangerous treasure —
 		the gems that would rather have stayed hidden.</pre>
+</section>
+<section aria-labelledby="ch-6-2">
 <h3 id="ch-6-2">Chapter 6: High Office Without Virtue</h3>
 <p>&quot;And what am I to say about rank and power, by which you hope to reach the sky because you do not know what real power and dignity are? Yet when rank and power have fallen to the worst sort of men, has any Etna, belching flame and a flood of fire, ever done such damage? I think you remember how your ancestors tried to abolish the consulship, which had been the foundation of their liberties, because of the overbearing pride of the consuls — and how for that same pride they had already abolished the title of king.</p>
 <p>&quot;And if, as happens only rarely, these privileges are given to good men, the only thing that pleases us is the virtue of the men who hold them. So it turns out that honour does not come to virtue from rank, but to rank from virtue.</p>
@@ -686,6 +746,8 @@ figcaption {
 		on the frenzy of Nero&#x27;s will?
 	It is a bad day when the evil heart
 		is handed the sword as well.</pre>
+</section>
+<section aria-labelledby="ch-7">
 <h3 id="ch-7">Chapter 7: Fame Against the Size of the Universe</h3>
 <p>Then I said: &quot;You know yourself that ambition for worldly success has had little hold on me. What I did want was scope for action, in case virtue should waste away for lack of exercise.&quot;</p>
 <p>Then she said: &quot;This is that &#x27;last infirmity&#x27; which can still tempt minds that are of noble quality but have not yet been shaped into any fine refinement by bringing the virtues to completion — I mean the love of glory, and of a reputation for great services done to the state. And yet consider with me how poor and insubstantial a thing that glory is.</p>
@@ -724,6 +786,8 @@ figcaption {
 		is lengthened by fame&#x27;s mortal breath.
 	What waits for you, when this is taken too,
 		is a second death at the end.</pre>
+</section>
+<section aria-labelledby="ch-8">
 <h3 id="ch-8">Chapter 8: The One Service Bad Fortune Does</h3>
 <p>&quot;But so that you do not think I am waging an implacable war against Fortune, I admit there is a time when the deceitful goddess does men good — I mean when she shows herself, uncovers her face, and admits what she really is. Perhaps you do not follow me yet. What I am trying to say is a strange thing, and that is why I can hardly find words to make my meaning clear.</p>
 <p>&quot;I truly believe that Bad Fortune is more use to men than Good Fortune. Good Fortune, when she wears the look of happiness and seems to be at her most affectionate, is always lying; Bad Fortune is always truthful, since by changing she shows how inconstant she is. The one deceives, the other teaches. The one chains up the minds of those who enjoy her favour with the appearance of a good that is not there; the other sets them free by letting them know how fragile happiness is. So you may see the one fickle, shifting like the wind, and always self-deceived; and the other sober, alert and watchful, precisely because adversity has disciplined her.</p>
@@ -761,7 +825,11 @@ figcaption {
 	you are blessed, you sons of men,
 	if the love that rules the sky
 	is enthroned high in your hearts.</pre>
+</section>
+</section>
+<section class="part" aria-labelledby="book-three">
 <h2 id="book-three" class="center">Book Three: True Happiness and False</h2>
+<section aria-labelledby="ch-1-3">
 <h3 id="ch-1-3">Chapter 1: The Promise to Lead Him to True Happiness</h3>
 <p>She stopped; but I stood fixed by the sweetness of the song, wondering and eager, my ears still straining to listen. And then after a moment I said: &quot;You supreme comfort of the exhausted mind, what refreshment you have brought me, as much by the sweetness of your singing as by the weight of your argument! I really do not think I shall be unequal to Fortune&#x27;s blows in future. So I no longer dread the remedies you said were a little too severe for my strength; on the contrary, I am eager to hear about them and I ask for them urgently.&quot;</p>
 <p>Then she said: &quot;I noticed you fastening on my words silently and intently, and I was expecting this state of mind in you — or, to put it more truthfully, I brought it about myself. What is left is the sort of thing that bites on the tongue and turns sweet once it is inside. But since you say you are keen to hear it, how you would burn to, if you could see where it is my job to lead you!&quot;</p>
@@ -782,6 +850,8 @@ figcaption {
 		in her rose-coloured chariot.
 	So drive the false happiness out of your mind
 		and you will see the true one.</pre>
+</section>
+<section aria-labelledby="ch-2-3">
 <h3 id="ch-2-3">Chapter 2: The Five Things People Mistake for Happiness</h3>
 <p>For a little while she stayed gazing fixedly, withdrawn as it were into the stately chamber of her own mind; then she began:</p>
 <p>&quot;All mortal creatures, in the anxious aims that keep them busy in so many different pursuits, take many roads but are all trying to reach one goal: happiness. Now <em>the good</em> is what a man cannot want anything further once he has got it. This is the supreme good of all, containing every particular good inside itself; so that if anything at all were still missing from it, it could not be the supreme good, since something would be left outside that could still be wanted. It is clear, then, that happiness is a condition made perfect by the assembling of every good thing together.</p>
@@ -834,6 +904,8 @@ figcaption {
 	except the one that in the appointed way
 	joins the end back to the beginning
 	and spins in a steady circle.</pre>
+</section>
+<section aria-labelledby="ch-3-3">
 <h3 id="ch-3-3">Chapter 3: Riches Only Add to What You Want</h3>
 <p>&quot;You creatures of earth have some glimmer of where you came from, however faint; and though the vision is dim and clouded, you do somehow make out the true end of happiness, and so nature&#x27;s aim leads you towards it — towards the true good — while error in many forms leads you off. Consider whether men are able to win happiness by the means through which they think they will reach the goal they have set.</p>
 <p>&quot;Truly, if wealth or rank or any of the rest brings with it something that seems to lack no good at all, then we too admit that some people are made happy by getting these things. But if they cannot keep their promises, and are moreover short of many good things, is the happiness men look for in them not plainly shown up as a false front?</p>
@@ -871,6 +943,8 @@ figcaption {
 		as long as he draws breath,
 	and his riches will not go with him
 		when his eyes close in death.</pre>
+</section>
+<section aria-labelledby="ch-4-3">
 <h3 id="ch-4-3">Chapter 4: High Position Cannot Command Respect</h3>
 <p>&quot;Very well, but public office clothes the man who gets it in honour and reverence. Do offices of state, then, have the power to plant virtue in the minds of the men who hold them and drive out vice? No: they tend rather to advertise wickedness than to chase it away, and that is why we are indignant that honours so often fall to the most wicked of men. Catullus, for instance, calls Nonius an &#x27;ulcer&#x27; even though he was &#x27;sitting in the curule chair&#x27;. Do you not see what infamy high position brings on bad men? Their unworthiness would certainly be less conspicuous if their rank did not draw the public eye onto them.</p>
 <p>&quot;In your own case: would all these dangers ever have persuaded you to think of sharing office with Decoratus, once you had seen in him the mind of a crooked hanger-on and informer? No. We cannot reckon men worthy of reverence because of their office when we reckon them unworthy of the office itself. But if you saw a man endowed with wisdom, could you suppose him not worthy of reverence, or not worthy of the wisdom he was endowed with?&quot;</p>
@@ -889,6 +963,8 @@ figcaption {
 		the inglorious offices of state
 	on respected men. So are we to call
 		those blessed whom such promotion made great?</pre>
+</section>
+<section aria-labelledby="ch-5-3">
 <h3 id="ch-5-3">Chapter 5: Sovereignty Cannot Even Buy Safety</h3>
 <p>&quot;Well then, are sovereignty and being close to kings able to confer power? Does the happiness of kings last for ever? Antiquity is full of examples, and so are our own days, of kings whose happiness turned into disaster. What a glorious power, which is not even effective at preserving itself!</p>
 <p>&quot;And if happiness has its source in sovereign power, then surely happiness is reduced, and misery brought in instead, in so far as that power falls short of being complete. But however widely human sovereignty is extended, there must still be more peoples left over whom any particular king holds no sway. Now at whatever point the power that happiness depends on stops, powerlessness creeps in and makes wretchedness. So by this reckoning there must be a balance of wretchedness in a king&#x27;s lot.</p>
@@ -907,6 +983,8 @@ figcaption {
 	if he cannot drive away
 	the anxiety that haunts him and the black misery,
 	then in his power he is powerless.</pre>
+</section>
+<section aria-labelledby="ch-6-3">
 <h3 id="ch-6-3">Chapter 6: Fame, and the Splendour That Is Somebody Else&#x27;s</h3>
 <p>&quot;Again: how misleading and how cheap a thing glory often is. The tragic poet puts it well:</p>
 <p>&quot;&#x27;Reputation, you fool, how many times have you raised some low-born nobody up into pride!&#x27;</p>
@@ -924,6 +1002,8 @@ figcaption {
 	If you would look at where your being came from, and at God&#x27;s supreme design,
 	nobody is degenerate and nobody base, unless by the taint of sin
 	and by cherishing vice he foully stains where he came from in heaven.</pre>
+</section>
+<section aria-labelledby="ch-7-2">
 <h3 id="ch-7-2">Chapter 7: Pleasure Begins in Restlessness and Ends in Regret</h3>
 <p>&quot;Then what shall I say about the pleasures of the body? Wanting them is full of uneasiness; having your fill of them is full of regret. What illnesses, what unbearable pains they usually bring on the bodies of the people who enjoy them — the fruits of wrongdoing, as it were. What sweetness the first stimulus of pleasure may have, I do not know; but that pleasure ends painfully anyone can understand who cares to recall his own bodily appetites. And if these can make happiness, there is no reason why animals should not be happy too, since everything they do is eagerly aimed at satisfying the body&#x27;s wants.</p>
 <p>&quot;I know, of course, that the sweetness of a wife and children ought to be a fine thing; and yet it was only too true to nature, what somebody said about a man who found his tormentors in his own sons. How galling that sort of thing would be, I have to remind you, since you have never had any such experience and are not uneasy about it now. In a case like that I agree with my servant Euripides, who said that a man with no children was fortunate in his misfortune.&quot;</p>
@@ -934,6 +1014,8 @@ figcaption {
 	who has lost her hoard of honey,
 		she flies off, but leaves the sting
 		rankling deep in the heart.</pre>
+</section>
+<section aria-labelledby="ch-8-2">
 <h3 id="ch-8-2">Chapter 8: All Five Fail, and Each Brings Its Own Harm</h3>
 <p>&quot;There is no doubt, then, that these roads do not lead to happiness, and cannot bring anyone to the goal they promise. Now I will show you very briefly what serious evils are involved in following them.</p>
 <p>&quot;Just consider. Is it your object to pile up money? Then you must wrench it away from whoever has it now. Do you mean to put on the splendour of high office? Then you must beg from the men who have it in their gift; you who want to outdo everybody else in honour must lower yourself into the humble posture of a petitioner. Do you long for power? Then you must face danger, because you will be at the mercy of your subjects&#x27; plots. Is glory your aim? Then you are lured on through every kind of hardship, and there is an end of your peace of mind. Do you want to lead a life of pleasure? But who does not despise a man who is the slave of the weakest and cheapest thing there is, the body?</p>
@@ -971,6 +1053,8 @@ figcaption {
 	and when after all that trouble
 	they have grasped the false good — ah, then, too late —
 	let them make out the true one.</pre>
+</section>
+<section aria-labelledby="ch-9">
 <h3 id="ch-9">Chapter 9: The Error Is Breaking the One Good into Pieces</h3>
 <p>&quot;That is probably enough to set out the shape of false happiness; and if it is now clear to your eyes, the next step is to show what true happiness is.&quot;</p>
 <p>&quot;I can see clearly enough,&quot; I said, &quot;that independence is not to be found in wealth, nor power in sovereignty, nor reverence in high office, nor fame in glory, nor real joy in pleasures.&quot;</p>
@@ -1060,6 +1144,8 @@ figcaption {
 	of every devoted soul: to see your face
 	is the end and the beginning — one and the same
 	the guide, the traveller, the road and the goal.</pre>
+</section>
+<section aria-labelledby="ch-10">
 <h3 id="ch-10">Chapter 10: That Happiness Exists, and That It Is God</h3>
 <p>&quot;Now that you have seen what the shape of the imperfect good is, and the shape of the perfect one too, I think the next thing is to show how this perfection of happiness is built up. And here I think it right to ask first whether any excellence of the kind you have just defined can exist in the nature of things at all — in case we are being taken in by an empty fiction of thought that nothing real answers to. But it cannot be denied that such a thing does exist, and is, so to speak, the source of everything good. For anything called imperfect is called imperfect because it is deprived of some perfection; so it follows that whenever imperfection is found in any particular respect, there must necessarily be a perfection in that same respect as well. For if there were no such perfection, it is impossible to conceive how the so-called <em>im</em>perfection could have come into existence at all. Nature does not make a beginning with things that are mutilated and incomplete; she starts from what is whole and perfect, and falls away afterwards into these feeble, inferior productions. So if there is, as we showed earlier, a happiness of a frail and imperfect kind, there can be no doubt that there is also a happiness that is substantial and perfect.&quot;</p>
 <p>&quot;Your conclusion is perfectly true, and perfectly certain,&quot; I said.</p>
@@ -1121,6 +1207,8 @@ figcaption {
 	keeps clear of dark and ruined souls.
 	Anyone who has once seen <em>this</em> light
 	will not call the sunbeam bright.</pre>
+</section>
+<section aria-labelledby="ch-11">
 <h3 id="ch-11">Chapter 11: Everything Alive Wants to Stay One, and Unity Is Good</h3>
 <p>&quot;I quite agree,&quot; I said. &quot;All your reasonings really do hold together admirably.&quot;</p>
 <p>Then she said: &quot;What price would you put on the gift, if you were to come to know absolute good?&quot;</p>
@@ -1173,6 +1261,8 @@ figcaption {
 		truth&#x27;s secret sparks are alive?
 	And if Plato&#x27;s teaching does not go wrong,
 	all learning is remembering what we forgot.</pre>
+</section>
+<section aria-labelledby="ch-12">
 <h3 id="ch-12">Chapter 12: Goodness Governs the World, and the Paradox of Evil</h3>
 <p>Then I said: &quot;I agree with Plato with all my heart. Indeed, this is now the second time these things have been brought back to my mind — first I lost them through the clogging contact of the body, and then through the weight of heavy grief.&quot;</p>
 <p>Then she went on: &quot;If you will think back over what you have already admitted, it will not be long before you also recollect the thing you confessed yourself ignorant of a while ago.&quot;</p>
@@ -1293,7 +1383,11 @@ figcaption {
 	at the darkness you have left,
 	your weak and wandering eyes
 	have lost the matchless prize.</pre>
+</section>
+</section>
+<section class="part" aria-labelledby="book-four">
 <h2 id="book-four" class="center">Book Four: Good and Ill Fortune</h2>
+<section aria-labelledby="ch-1-4">
 <h3 id="ch-1-4">Chapter 1: Why the Wicked Prosper</h3>
 <p>Philosophy sang these verses through to the end, softly and sweetly, without losing any of the dignity of her language or the seriousness of her tone. Then, since I was still unable to forget the sorrow lodged deep in me, I broke in just as she was about to say something more, and cried:</p>
 <p>&quot;You who guide me into the way of the true light, everything your voice has said from the beginning until now has plainly seemed to me divine when I consider it in itself, and put beyond any possibility of overthrow by the force of your arguments. What is more, these truths have not been entirely unfamiliar to me before now, though indignation at my wrongs made me forget them for a while. But look — here is the very chief cause of my grief: that while there is a good ruler of the universe, it is possible for evil to exist at all, and still more possible for it to go unpunished. Surely you must see how thoroughly that deserves to astonish anyone. But a greater wonder follows it. While wickedness reigns and flourishes, virtue not only goes without its reward, but is actually pushed down and trampled under the feet of the wicked, and suffers the punishment that crime should have had. That this should happen under the rule of a God who knows everything and can do everything, but wills nothing but good, cannot be wondered at enough or lamented enough.&quot;</p>
@@ -1335,6 +1429,8 @@ figcaption {
 		you will certainly see
 	that the tyrants whole nations fear
 	live down here in wretched exile.</pre>
+</section>
+<section aria-labelledby="ch-2-4">
 <h3 id="ch-2-4">Chapter 2: The Good Alone Have Power</h3>
 <p>Then I said: &quot;Your promises really are wonderfully large; and yet I do not doubt you can make them good. Only, having raised such hopes, do not keep me in suspense.&quot;</p>
 <p>&quot;Learn first, then,&quot; she said, &quot;how power always attends the good, while the bad are left entirely without strength. Each of these truths proves the other. Since good and evil are opposites, if it is made plain that good is power, the feebleness of evil is clearly seen; and conversely, if the frailty of evil is shown, the strength of good is known from it. Still, to win wider credit for my conclusion, I will follow both paths, and get confirmation for what I say first in one direction and then in the other.</p>
@@ -1390,6 +1486,8 @@ figcaption {
 	sorrow torments his spirit, and empty hopes lead him on.
 	Then you will admit it: one unlucky wretch, oppressed by many masters,
 	who never does what he wants, but lives in the helplessness of slavery.</pre>
+</section>
+<section aria-labelledby="ch-3-4">
 <h3 id="ch-3-4">Chapter 3: Reward and Punishment Are Never Absent</h3>
 <p>&quot;You see, then, what filth unrighteous deeds are sunk in, and with what splendour righteousness shines. From which it is clear that goodness never goes without its reward, nor crime without its punishment. For in every kind of transaction the thing for whose sake the action is done may fairly be counted the reward of that action — just as the wreath the race is run for is the prize offered for running. Now we have shown that happiness is the very good for whose sake everything is done. So absolute good is offered as the common prize, so to speak, of all human actions. But this is a reward that cannot possibly be separated from the good man, since anyone without good cannot properly be called good at all; so righteous dealing never misses its reward. Let the wicked rage as violently as they like: the crown will not fall from the wise man&#x27;s head, and will not wither. Other men&#x27;s unrighteousness cannot pluck their proper glory from righteous souls. If the reward that the righteous soul delights in were received from outside, then it could be taken away by whoever gave it, or by somebody else; but since it is conferred by his own righteousness, he will lose his prize only when he has stopped being righteous. Finally, since every prize is wanted because it is believed to be good, who can count a man who possesses good as being without reward? And what a prize it is — the finest and grandest of all! Remember the corollary I insisted on so particularly a little while back, and reason like this: since absolute good is happiness, it is clear that all good men must be happy for the very reason that they are good. But it was agreed that those who are happy are gods. So the prize of the good is one that no length of time can wear down, no man&#x27;s power reduce, no man&#x27;s unrighteousness tarnish: it is Godhood itself. And this being so, the wise man cannot doubt that punishment is inseparable from the bad. For since good and bad, and likewise reward and punishment, are opposites, it necessarily follows that corresponding to everything we see accruing as the reward of the good there is some penalty attached as the punishment of evil. So just as righteousness is itself the reward of the righteous, wickedness is itself the punishment of the unrighteous. Now nobody who is visited with punishment doubts that he is visited with an evil. So if they were only willing to weigh up their own case, could <em>they</em> think themselves free of punishment, when wickedness, the worst of all evils, has not merely touched them but stained them through?</p>
 <p>&quot;And look at it from the opposite point of view too — the point of view of the good — and see what a penalty attends the wicked. You learned a little while ago that whatever is, is one, and that unity itself is good. So on this reckoning, whatever falls away from goodness stops existing; which means that the bad stop being what they were, and only the outward appearance is left to show that they were once men. So by their perversion into badness they have lost their true human nature. And further, since righteousness alone can raise men above the human level, unrighteousness must necessarily degrade below the human level those it has thrown out of the human condition. So it turns out that you cannot count a man human when you see he has been transformed by vice. The violent plunderer of other men&#x27;s goods, inflamed with greed, surely looks like a wolf. The bold restless spirit, forever squabbling in the law courts, is like some yelping dog. The secret schemer, who takes pleasure in fraud and stealth, is the fox&#x27;s own brother. The passionate man, frantic with rage, we might believe to be animated by the soul of a lion. The coward and the runaway, afraid where there is nothing to fear, may be compared to the timid deer. The man sunk in ignorance and stupidity lives like a dull donkey. The light, inconstant man, never sticking long to one thing, is a bird for all the world. The man who wallows in foul and unclean lusts is sunk in the pleasures of a filthy pig. So it comes about that the man who stops being a man by abandoning righteousness cannot pass into a godlike condition, but actually turns into a brute beast.&quot;</p>
@@ -1444,6 +1542,8 @@ figcaption {
 	which work their way in subtly
 	and leave the body whole
 	but deeply infect the soul.</pre>
+</section>
+<section aria-labelledby="ch-4-4">
 <h3 id="ch-4-4">Chapter 4: The Wicked Are Unhappier When They Succeed</h3>
 <p>Then I said: &quot;That is very true. I can see that vicious men, though they keep the outward form of a man, are rightly said to be changed into beasts as far as their spiritual nature goes. But since their cruel and polluted minds work off their rage in destroying the good, I wish they were not allowed that licence.&quot;</p>
 <p>&quot;Nor are they,&quot; she said, &quot;as will be shown in its proper place. And yet if that licence you believe they are allowed were taken away from them, the punishment of the wicked would be largely remitted. For, incredible as it may seem to some, it must necessarily be true that the bad are more unfortunate when they have carried out what they wanted than when they cannot get it done. If it is wretched to will an evil, it is more wretched to have been able to accomplish one; for without the power, the wretched will would come to nothing. And so those whom you see willing crime, being able to commit it, and committing it, must necessarily be the victims of a threefold wretchedness, since each of these states has its own measure of wretchedness.&quot;</p>
@@ -1494,6 +1594,8 @@ figcaption {
 	it is only that their lands and their laws are not the same.
 		If <em>you</em> want to give each man his due, then know this:
 	the good must have your love, and the bad have a claim on your pity.</pre>
+</section>
+<section aria-labelledby="ch-5-4">
 <h3 id="ch-5-4">Chapter 5: Why the Distribution Looks Like Chance</h3>
 <p>At this I said: &quot;I see how there is a happiness and a misery founded on what the righteous and the wicked actually deserve. Even so, I keep wondering whether there is not some good and evil in fortune as ordinary people understand it. Surely no sensible man would rather be exiled, poor and disgraced, than live prosperously in his own country, powerful, wealthy and high in honour. Indeed, the work of wisdom shows more clearly in its working when the happiness of rulers is passed on somehow to the people around them — especially considering that prison, and the law, and the other pains of legal punishment are properly owed only to mischievous citizens, on whose account they were set up in the first place. And so I am extremely puzzled about why all this is completely reversed: why the good are harried with the penalties that crime deserves and the bad carry off the rewards of virtue. I am longing to hear from you what reason there could be for such an unjust state of disorder. I should certainly wonder less if I could believe that everything was the confused result of chance. But as it is, my belief that God governs the world adds one amazement to another. For seeing that He sometimes assigns good fortune to the good and harsh fortune to the bad, and then again deals harshly with the good and gives the bad their hearts&#x27; desire, how does this differ from chance, unless some reason is found for it all?&quot;</p>
 <p>&quot;There is nothing surprising in it,&quot; she said, &quot;if everything is thought random and confused when the principle of order is not known. And although you do not know the causes this great system depends on, still, since a good ruler governs the world, do not doubt for your part that everything is rightly done.&quot;</p>
@@ -1522,6 +1624,8 @@ figcaption {
 		at any unexpected change.
 	But wonder goes out of an enlightened mind
 	as soon as ignorance stops blinding it.</pre>
+</section>
+<section aria-labelledby="ch-6-4">
 <h3 id="ch-6-4">Chapter 6: Fate and Providence</h3>
 <p>&quot;True,&quot; I said; &quot;but since it is your business to unfold the hidden causes of things and explain principles that are veiled in darkness, please tell me your own conclusions on this matter, since the wonder of it disturbs my mind more than anything else.&quot;</p>
 <p>A smile played for a moment on her lips as she answered: &quot;You are calling me to the greatest of all subjects of inquiry, a task the most exhaustive treatment barely covers. Its nature is such that as fast as one doubt is cut away, countless others spring up like the Hydra&#x27;s heads; and there would be no limit to their sprouting again unless we put them down with the living fire of the mind. For the subject takes in the questions of the essential simplicity of providence, the order of fate, unforeseen chance, divine knowledge and predestination, and the freedom of the will. How heavy all that weighs you can judge for yourself. But since knowing these things is also part of the treatment of your illness, we will try to give them some consideration, in spite of the narrow limits of our time. What is more, you must do without the pleasures of music and song for a while, if you find any delight in them, while I weave the connected chain of reasons together in its proper order.&quot;</p>
@@ -1600,6 +1704,8 @@ figcaption {
 	back in its course, and longs
 	to flow again to that Source
 	from which its being was first taken.</pre>
+</section>
+<section aria-labelledby="ch-7-3">
 <h3 id="ch-7-3">Chapter 7: All Fortune Is Good Fortune</h3>
 <p>&quot;Do you see, then, what follows from everything we have said?&quot;</p>
 <p>&quot;No; what follows?&quot;</p>
@@ -1669,7 +1775,11 @@ figcaption {
 		lead the way to heaven! Do not turn
 		your backs and run from the fight;
 	win the struggle on earth, and the stars are your reward.</pre>
+</section>
+</section>
+<section class="part" aria-labelledby="book-five">
 <h2 id="book-five" class="center">Book Five: Free Will and God’s Foreknowledge</h2>
+<section aria-labelledby="ch-1-5">
 <h3 id="ch-1-5">Chapter 1: Is There Any Such Thing as Chance?</h3>
 <p>She stopped, and was about to move on in her discourse to set out other matters, when I broke in and said: &quot;Your exhortation is excellent, and just what suits your high authority. But I am experiencing at this very moment one of the many difficulties which, as you said a moment ago, surround the question of providence. I want to know whether you think there is any such thing as chance at all, and if there is, what it is.&quot;</p>
 <p>Then she answered: &quot;I am anxious to keep my promise in full, and to open you a way back to your native land. As for these matters, useful as they are to know, they are a little off the path of our design, and I am afraid that digressions may tire you out and leave you unequal to finishing the direct journey to our goal.&quot;</p>
@@ -1704,6 +1814,8 @@ figcaption {
 		seems to run most unrestrained,
 	chance herself is reined and bitted,
 		and knows the curb of law.</pre>
+</section>
+<section aria-labelledby="ch-2-5">
 <h3 id="ch-2-5">Chapter 2: Whether a Human Being Is Free</h3>
 <p>&quot;I am following carefully,&quot; I said, &quot;and I agree that it is as you say. But in this series of linked causes, is there any freedom left to our will? Or does the chain of fate bind the very movements of our souls as well?&quot;</p>
 <p>&quot;There is freedom,&quot; she said. &quot;Indeed, no creature can be rational unless it is endowed with free will. For whatever has the natural use of reason has the faculty of judging between things, and distinguishes for itself what is to be avoided and what wanted. Now everyone seeks what he judges desirable and avoids what he thinks should be avoided. So beings endowed with reason also possess the faculty of freely choosing and refusing. But I do not suppose this faculty is equal in all of them. The higher divine beings have a clear-sighted judgment, an uncorrupted will, and an effective power of getting what they want. Human souls are necessarily freer while they remain in the contemplation of the divine mind, less free when they pass into bodily form, and less free again when they are wrapped in earthly limbs. But when they are handed over to vices and fall away from possession of their own proper reason, then their condition is complete slavery. For when they let their gaze drop from the light of the highest truth to the lower world where darkness rules, ignorance soon blinds their sight; they are troubled by ruinous passions, and by giving way and consenting to those passions they help along the slavery they are caught in, and are in a way led captive by their very freedom. Yet He who sees all things from eternity looks on all this with the eyes of His providence, and assigns to each what its merits have destined for it:</p>
@@ -1727,6 +1839,8 @@ figcaption {
 		and no eyes but His
 	survey the whole world — none at all.
 	<em>Him</em>, then, you may truly call the Sun.</pre>
+</section>
+<section aria-labelledby="ch-3-5">
 <h3 id="ch-3-5">Chapter 3: The Problem: Foreknowledge Seems to Destroy Freedom</h3>
 <p>Then I said: &quot;But now I am perplexed all over again by a still harder problem.&quot;</p>
 <p>&quot;And what is that?&quot; she said. &quot;Though in fact I can guess what is troubling you.&quot;</p>
@@ -1772,6 +1886,8 @@ figcaption {
 		he gropes in the uncertain light,
 	and by the part that still survives
 	he strives bravely to win back the whole.</pre>
+</section>
+<section aria-labelledby="ch-4-5">
 <h3 id="ch-4-5">Chapter 4: Knowledge Depends on the Knower, Not the Thing Known</h3>
 <p>Then she said: &quot;This debate about providence is an old one. Cicero discusses it vigorously in his book on divination, and you yourself have pondered the problem long and hard; yet nobody has had diligence and perseverance enough to find a solution. And the reason for the obscurity is that the movement of human reasoning cannot cope with the simplicity of divine foreknowledge. If any conception of its nature could be framed at all, no shadow of uncertainty would be left. So, with a view to making this clear and plain at last, I will begin by looking at the arguments that sway you.</p>
 <p>&quot;First, I want to know why you are dissatisfied with the proposed solution — the one that says that since the fact of foreknowledge is not thought to be the cause of the necessity of future events, foreknowledge should not be counted any obstacle to freedom of the will. Now surely the only ground on which you argue for the necessity of the future is that things foreknown cannot fail to happen. But if, as you were ready to acknowledge a moment ago, the fact of foreknowledge imposes no necessity on future things, what reason is there for supposing that the outcomes of voluntary action are constrained to a fixed result? Suppose, for the sake of argument and to see what follows, we assume there is no foreknowledge at all. Are willed actions tied down to any necessity in <em>this</em> case?&quot;</p>
@@ -1824,6 +1940,8 @@ figcaption {
 		makes the message clear,
 	and combines the dumb external signs
 	with the forms hidden inside it.</pre>
+</section>
+<section aria-labelledby="ch-5-5">
 <h3 id="ch-5-5">Chapter 5: Rising from Reason to a Higher Standpoint</h3>
 <p>&quot;Now in the case of bodies that have sensation, the qualities of external objects do affect the sense organs, and the activity of the mind is preceded by a bodily affection that calls out the mind&#x27;s action on itself and stimulates the forms lying inactive within it until that moment. Yet even so, if in these bodies with sensation the mind is not merely written on by passive affection, but by its own power sorts out the impressions supplied to the body, how much more must intelligences free of all bodily affections use their own mental activities in their sorting, instead of conforming to external objects? So on these principles various modes of knowing belong to distinct and different kinds of being. To creatures with no power of movement — shellfish and other such creatures that cling to rocks and grow there — belongs Sense alone, with no other way of gaining knowledge. To beasts that can move, in whom some capacity for seeking and avoiding seems to have arisen, belongs Imagination as well. Thought belongs only to the human race, as Intelligence belongs to Divinity alone. From which it follows that the form of knowledge that surpasses the rest is the one that by its own nature knows not only its proper object but the objects of the other forms of knowledge too.</p>
 <p>&quot;But what if Sense and Imagination were to contradict Thought and declare that the universal Thought believes it sees is nothing at all? For the object of Sense and Imagination cannot be universal. So either the judgment of Reason is true and there is no sense-object; or else, since they know perfectly well that many objects are presented to Sense and Imagination, the conception of Reason is empty of content, since it looks at what is perceived by Sense and is particular as though it were something &#x27;universal&#x27;. Suppose, further, that Reason replies that it does indeed contemplate the object of both Sense and Imagination under the form of universality, while Sense and Imagination cannot aspire to knowledge of the universal, since what they know cannot go beyond bodily shapes; and that in knowing reality we ought rather to trust the stronger and more perfect faculty of judgment. In a dispute of that kind, should not we, in whom the faculty of reasoning is planted as well as the faculties of imagining and perceiving, take Reason&#x27;s side?</p>
@@ -1845,6 +1963,8 @@ figcaption {
 	you whose gaze is fixed on heaven, who hold your face up high:
 	lift your soul up as well, in case it stains its heavenly worth
 	and your eyes alone look upward while your mind clings to the ground.</pre>
+</section>
+<section aria-labelledby="ch-6-5">
 <h3 id="ch-6-5">Chapter 6: Eternity, and Why Foreseeing Does Not Compel</h3>
 <p>&quot;Since, then, as we proved a moment ago, everything that is known is known not according to its own nature but according to the nature of the faculty that grasps it, let us now consider, as far as we lawfully may, what the divine essence is like, so that we can understand what its knowledge is like too.</p>
 <p>&quot;God is eternal: on this judgment all rational beings agree. So let us consider what eternity is, for that word reveals both the divine nature and the divine knowledge. Now, eternity is the complete and perfect possession of endless life all at once. What that means becomes clearer if you compare it with things in time. For whatever lives in time is a present moving out of the past into the future, and nothing set in time can hold the whole space of its own life together at once. It has not yet got hold of tomorrow&#x27;s state, and it has already lost yesterday&#x27;s; and even in today&#x27;s life you live no longer than one brief passing moment. So whatever is subject to the condition of time — even if, as Aristotle thought about the world, it never has a beginning or an end, and its life is stretched out over the whole extent of time&#x27;s infinity — is still not the kind of thing that can rightly be thought eternal. For it does not include and embrace the whole space of an infinite life at once; it has no present hold on the things to come, which have not happened yet. Accordingly, what includes and possesses the whole fullness of an unending life at once, with nothing future missing from it and nothing past escaped out of it, is what is rightly called eternal. It must necessarily be always present to itself in full self-possession, and hold the infinity of moving time in an abiding present.</p>
@@ -1858,6 +1978,10 @@ figcaption {
 <p>&quot;Surely not.&quot;</p>
 <p>&quot;Quite right; for the divine vision anticipates everything that is coming and transforms and reduces it to the form of its own present knowledge. It does not vary in its foreknowledge, as you suppose, alternating between this and that; in a single flash it forestalls and includes all your changes of mind without itself altering. And God has received this ever-present comprehension and survey of all things not from the outcome of future events but from the simplicity of His own nature. This also resolves the objection that offended you a little while ago — that our future doings were being spoken of as though they supplied the cause of God&#x27;s knowledge. For this faculty of knowledge, embracing all things in its immediate awareness, has itself fixed the bounds of all things, and owes nothing to what comes after.</p>
 <p>&quot;And all this being so, the freedom of man&#x27;s will stands unshaken, and the laws are not unjust, since their rewards and punishments are held out to wills that no necessity binds. God, who foreknows all things, still looks down from above, and the ever-present eternity of His vision runs alongside the future character of all our acts, dispensing rewards to the good and punishments to the bad. Our hopes and prayers too are not fixed on God in vain, and when they are rightly directed they cannot fail of their effect. So stand against vice, practise virtue, lift up your souls to right hopes, offer humble prayers to Heaven. A great necessity of righteousness is laid on you, if you will not hide it from yourselves — seeing that everything you do is done before the eyes of a Judge who sees all things.&quot;</p>
+</section>
+</section>
+</article>
+</main>
 
 </body>
 </html>

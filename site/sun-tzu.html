@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>The Art of War &mdash; Sun Tzu</title>
+	<meta name="description" content="The oldest book on war, with the commentary most editions cut: two thousand years of Chinese generals arguing with Sun Tzu and with each other. Retold in modern English, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/sun-tzu.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="The Art of War — Sun Tzu">
+	<meta property="og:description" content="The oldest book on war, with the commentary most editions cut: two thousand years of Chinese generals arguing with Sun Tzu and with each other. Retold in modern English, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/sun-tzu.html">
+	<meta property="og:image" content="https://emend.press/covers/share/sun-tzu.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,28 +192,32 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>The Art of War</h1>
-	<h3>The oldest military treatise in the world, retold from Lionel Giles&#x27;s 1910 translation, with the commentary of eleven Chinese generals and scholars who spent two thousand years arguing about it</h3>
-	<h3>by Sun Tzu</h3>
+	<p class="title-line">The oldest military treatise in the world, retold from Lionel Giles&#x27;s 1910 translation, with the commentary of eleven Chinese generals and scholars who spent two thousand years arguing about it</p>
+	<p class="title-line">by Sun Tzu</p>
 	<p class="center">
 	<s>c. 5th century BC</s> 2026
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is an AI modernization of The Art of War into contemporary English. The original is available from <a href="https://www.gutenberg.org/ebooks/132">Project Gutenberg</a>. Also available as an <a href="ebooks/sun-tzu_the-art-of-war.epub">epub</a>.</i></p>
 
 	<hr>
+<section aria-labelledby="editors-introduction">
 <h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
 <p>The Art of War is thirteen short chapters, about six thousand Chinese characters in the original. Tradition gives it to Sun Tzu, a general in the service of the king of Wu in the fifth century BC. Scholars have argued for a long time about whether he existed and how much of the text is his. What is not in question is that Chinese soldiers were reading it by the third century AD and have gone on reading it ever since.</p>
 <p>It is not a manual of drill or of battlefield tactics. Its argument is that war ruins the state that wages it, that no country has ever yet profited from a long one, and that the whole business therefore turns on knowing more than the other side and moving before he is ready. The most quoted line in it says that to win a hundred battles out of a hundred is not the height of skill; the height of skill is to break the enemy&#x27;s resistance without fighting.</p>
 <p>Two things about this edition need saying first. It is a modernization of an English translation and not a translation from the Chinese, because nobody working on this collection reads classical Chinese. What has been made readable here is the version Lionel Giles published in 1910. Giles was a sinologist at the British Museum and the son of the Giles of the Wade-Giles spelling system, which is why the names here are Ts&#x27;ao Kung and Tu Mu rather than Cao Cao and Du Mu.</p>
 <p>The second thing is that more than half of this book was not written by Sun Tzu. Giles printed the classical commentary alongside the text, and that is the reason to read his edition rather than one of the many that give the bare verses. Eleven commentators appear. The earliest is Ts&#x27;ao Kung, who is Cao Cao, the warlord of the Three Kingdoms; he annotated the book around AD 200, and once sentenced himself to death under his own order against damaging standing crops. Tu Mu was a poet of the Tang. The others are officials and soldiers of later dynasties. They gloss Sun Tzu, they illustrate him out of the histories, and they contradict him and each other, sometimes rudely.</p>
 <p>Three voices share the page, and the page labels them. A numbered verse is Sun Tzu. A paragraph beginning &quot;Commentary&quot; is somebody else, usually a commentator named in its first words, sometimes Giles explaining what the commentators are fighting about. A paragraph beginning &quot;Footnote&quot; is always Giles, who is an Edwardian scholar with opinions, a weakness for comparisons to Napoleon and Cromwell, and several of the best remarks in the book.</p>
+</section>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p><a href="#chapter-one-laying-plans">Chapter One: Laying Plans</a></p>
 <p><a href="#chapter-two-waging-war">Chapter Two: Waging War</a></p>
@@ -202,8 +232,11 @@ figcaption {
 <p><a href="#chapter-eleven-the-nine-situations">Chapter Eleven: The Nine Situations</a></p>
 <p><a href="#chapter-twelve-the-attack-by-fire">Chapter Twelve: The Attack by Fire</a></p>
 <p><a href="#chapter-thirteen-the-use-of-spies">Chapter Thirteen: The Use of Spies</a></p>
+</nav>
 
 <hr>
+<article>
+<section aria-labelledby="chapter-one-laying-plans">
 <h2 id="chapter-one-laying-plans">Chapter One: Laying Plans</h2>
 <p>Commentary: Ts&#x27;ao Kung, defining what the Chinese title of this chapter means, says it refers to the deliberations held in the temple set aside for the general&#x27;s temporary use — or, as we should say, in his tent. See verse 26.</p>
 <p>1. Sun Tzu said: The art of war is of vital importance to the State.</p>
@@ -257,6 +290,8 @@ figcaption {
 <p>26. Now the general who wins a battle makes many calculations in his temple before the battle is fought.</p>
 <p>Commentary: Chang Yu tells us that in ancient times it was customary to set aside a temple for the use of a general who was about to take the field, so that he could work out his plan of campaign there.</p>
 <p>The general who loses a battle makes few calculations beforehand. So many calculations lead to victory and few calculations to defeat — and how much worse is no calculation at all! It is by attending to this point that I can foresee who is likely to win and who to lose.</p>
+</section>
+<section aria-labelledby="chapter-two-waging-war">
 <h2 id="chapter-two-waging-war">Chapter Two: Waging War</h2>
 <p>Commentary: Ts&#x27;ao Kung notes: &quot;He who wishes to fight must first count the cost&quot; — which prepares us for the discovery that the subject of this chapter is not what the title suggests, but is chiefly a consideration of ways and means.</p>
 <p>1. Sun Tzu said: In war, where you have in the field a thousand swift chariots, as many heavy chariots, and a hundred thousand soldiers in armour,</p>
@@ -293,6 +328,8 @@ figcaption {
 <p>19. In war, then, let your great object be victory, not long campaigns.</p>
 <p>Commentary: As Ho Shih remarks, &quot;War is not a thing to be trifled with.&quot; Sun Tzu is restating here the main lesson this chapter exists to enforce.</p>
 <p>20. So we may know that the leader of armies holds the people&#x27;s fate in his hands: he is the man on whom it depends whether the nation shall be at peace or in peril.</p>
+</section>
+<section aria-labelledby="chapter-three-attack-by-stratagem">
 <h2 id="chapter-three-attack-by-stratagem">Chapter Three: Attack by Stratagem</h2>
 <p>1. Sun Tzu said: In the practical art of war, the best thing of all is to take the enemy&#x27;s country whole and intact; shattering and destroying it is not so good. In the same way it is better to capture an army entire than to destroy it — better to capture a regiment, a detachment or a company entire than to destroy them.</p>
 <p>Commentary: According to the Ssu-ma Fa, the equivalent of an army corps nominally consisted of 12,500 men. According to Ts&#x27;ao Kung, the equivalent of a regiment held 500 men, a detachment anything between 100 and 500, and a company between 5 and 100. For the last two, however, Chang Yu gives the exact figures of 100 and 5.</p>
@@ -356,6 +393,8 @@ figcaption {
 <p>Commentary: Li Ch&#x27;uan cites the case of Fu Chien, prince of Ch&#x27;in, who in A.D. 383 marched with a vast army against the Chin Emperor. Warned not to despise an enemy who could command the services of men like Hsieh An and Huan Ch&#x27;ung, he boasted: &quot;I have the population of eight provinces behind me, infantry and horsemen to the number of a million; they could dam the Yangtse itself simply by throwing their whips into it. What have I to fear?&quot; Soon afterwards his forces were disastrously routed at the Fei River, and he had to beat a hasty retreat.</p>
 <p>If you know neither the enemy nor yourself, you will lose every battle.</p>
 <p>Commentary: Chang Yu said: &quot;Knowing the enemy lets you take the offensive; knowing yourself lets you stand on the defensive.&quot; And he adds: &quot;Attack is the secret of defence; defence is the planning of an attack.&quot; It would be hard to find a better summary of the root principle of war.</p>
+</section>
+<section aria-labelledby="chapter-four-tactical-dispositions">
 <h2 id="chapter-four-tactical-dispositions">Chapter Four: Tactical Dispositions</h2>
 <p>Commentary: Ts&#x27;ao Kung explains what the Chinese words of this chapter&#x27;s title mean: &quot;marching and countermarching on the part of the two armies with a view to discovering each other&#x27;s condition.&quot; Tu Mu says: &quot;It is through the dispositions of an army that its condition can be discovered. Conceal your dispositions and your condition stays secret, which leads to victory; show them and your condition becomes obvious, which leads to defeat.&quot; Wang Hsi remarks that a good general can &quot;secure success by modifying his tactics to meet the enemy&#x27;s&quot;.</p>
 <p>1. Sun Tzu said: The good fighters of old first put themselves beyond the possibility of defeat, and then waited for a chance to defeat the enemy.</p>
@@ -400,6 +439,8 @@ figcaption {
 <p>19. A victorious army against a routed one is like a pound&#x27;s weight in the scale against a single grain.</p>
 <p>Commentary: Literally, &quot;a victorious army is like an <em>i</em> (20 oz.) weighed against a <em>shu</em> (1/24 oz.); a routed army is a <em>shu</em> weighed against an <em>i</em>.&quot; The point is simply the enormous advantage a disciplined force flushed with victory has over one demoralized by defeat. Legge, in his note on Mencius, I. 2. ix. 2, makes the <em>i</em> 24 Chinese ounces and corrects Chu Hsi&#x27;s statement that it equalled only 20. But Li Ch&#x27;uan of the T&#x27;ang dynasty gives the same figure here as Chu Hsi.</p>
 <p>20. The onrush of a conquering force is like the bursting of pent-up waters into a chasm a thousand fathoms deep. So much for tactical dispositions.</p>
+</section>
+<section aria-labelledby="chapter-five-energy">
 <h2 id="chapter-five-energy">Chapter Five: Energy</h2>
 <p>1. Sun Tzu said: Controlling a large force works on the same principle as controlling a few men: it is merely a question of dividing up their numbers.</p>
 <p>Commentary: That is, cutting the army up into regiments, companies and so on, with subordinate officers commanding each. Tu Mu reminds us of Han Hsin&#x27;s famous reply to the first Han Emperor, who once asked him: &quot;How large an army do you think I could lead?&quot; &quot;Not more than 100,000 men, your Majesty.&quot; &quot;And you?&quot; asked the Emperor. &quot;Oh,&quot; he answered, &quot;the more the better.&quot;</p>
@@ -446,6 +487,8 @@ figcaption {
 <p>Commentary: Ts&#x27;ao Kung calls this &quot;the use of natural or inherent power&quot;.</p>
 <p>23. So the energy developed by good fighting men is like the momentum of a round stone rolled down a mountain thousands of feet high. So much for the subject of energy.</p>
 <p>Commentary: The chief lesson of this chapter, in Tu Mu&#x27;s opinion, is the paramount importance in war of rapid movement and sudden rushes. &quot;Great results,&quot; he adds, &quot;can be achieved this way with small forces.&quot;</p>
+</section>
+<section aria-labelledby="chapter-six-weak-points-and-strong">
 <h2 id="chapter-six-weak-points-and-strong">Chapter Six: Weak Points and Strong</h2>
 <p>Commentary: Chang Yu tries to explain the sequence of the chapters: &quot;Chapter Four, on Tactical Dispositions, dealt with the offensive and the defensive; Chapter Five, on Energy, with direct and indirect methods. The good general first acquaints himself with the theory of attack and defence, then turns to direct and indirect methods. He studies the art of varying and combining these two before going on to weak and strong points. For the use of direct or indirect methods arises out of attack and defence, and the perception of weak and strong points depends in turn on those methods. That is why the present chapter comes immediately after the one on Energy.&quot;</p>
 <p>1. Sun Tzu said: Whoever is first in the field and waits for the enemy to come will be fresh for the fight; whoever is second in the field and has to hurry to battle will arrive exhausted.</p>
@@ -519,6 +562,8 @@ figcaption {
 <p>Commentary: Literally, &quot;have no invariable seat&quot;.</p>
 <p>There are short days and long; the moon has its waning and its waxing.</p>
 <p>Commentary: Compare Chapter Five, verse 6. The point of the passage is simply to illustrate the lack of fixity in war by the changes constantly taking place in nature. The comparison is not a very happy one, though, because the regularity of the phenomena Sun Tzu mentions has no parallel in war at all.</p>
+</section>
+<section aria-labelledby="chapter-seven-manoeuvring">
 <h2 id="chapter-seven-manoeuvring">Chapter Seven: Manoeuvring</h2>
 <p>1. Sun Tzu said: In war, the general receives his commands from the sovereign.</p>
 <p>2. Having gathered an army and concentrated his forces, he must blend and harmonize its different elements before he pitches his camp.</p>
@@ -608,6 +653,8 @@ figcaption {
 <p>Do not press a desperate enemy too hard.</p>
 <p>Commentary: Ch&#x27;en Hao quotes the saying: &quot;Birds and beasts brought to bay will use their claws and teeth.&quot; Chang Yu says: &quot;If your adversary has burned his boats and smashed his cooking pots, and is ready to stake everything on one battle, he must not be pushed to extremities.&quot; Ho Shih illustrates the meaning with a story from the life of Fu Yen-ch&#x27;ing. That general, together with his colleague Tu Chung-wei, was surrounded by a vastly superior army of Khitans in A.D. 945. The country was bare and desert-like, and the little Chinese force was soon in dire straits for want of water. The wells they dug ran dry, and the men were reduced to squeezing lumps of mud and sucking out the moisture. Their ranks thinned rapidly, until at last Fu Yen-ch&#x27;ing exclaimed: &quot;We are desperate men. Far better to die for our country than to go into captivity with our hands in fetters.&quot; A strong gale happened to be blowing from the north-east, darkening the air with dense clouds of sandy dust. Tu Chung-wei was for waiting until it had died down before deciding on a final attack; but luckily another officer, Li Shou-cheng, was quicker to see an opportunity: &quot;They are many and we are few, but in the middle of this sandstorm our numbers will not be visible; victory will go to whoever fights hardest, and the wind will be our best ally.&quot; So Fu Yen-ch&#x27;ing made a sudden and wholly unexpected onslaught with his cavalry, routed the enemy and broke through to safety.</p>
 <p>37. Such is the art of warfare.</p>
+</section>
+<section aria-labelledby="chapter-eight-variation-of-tactics">
 <h2 id="chapter-eight-variation-of-tactics">Chapter Eight: Variation of Tactics</h2>
 <p>Commentary: The heading means literally &quot;The Nine Variations&quot;. But since Sun Tzu does not appear to enumerate them, and since he has already told us (Chapter Five, verses 6 to 11) that such departures from the ordinary course are practically innumerable, we have little option but to follow Wang Hsi, who says that &quot;nine&quot; stands for an indefinitely large number: &quot;All it means is that in warfare we ought to vary our tactics to the utmost degree… I do not know what Ts&#x27;ao Kung makes these Nine Variations out to be, but it has been suggested that they are connected with the Nine Situations&quot; of Chapter Eleven. That is the view Chang Yu adopts. The only other possibility is that something has been lost — a supposition to which the unusual shortness of the chapter lends some weight.</p>
 <p>1. Sun Tzu said: In war, the general receives his commands from the sovereign, gathers his army and concentrates his forces.</p>
@@ -656,6 +703,8 @@ figcaption {
 <p>Commentary: Here again Sun Tzu does not mean that the general should be careless of his troops&#x27; welfare. All he wants to stress is the danger of sacrificing any important military advantage to his men&#x27;s immediate comfort. That is a short-sighted policy, because in the long run the troops will suffer more from the defeat, or at best the prolonging of the war, that follows from it. A mistaken feeling of pity will often lead a general to relieve a besieged city, or reinforce a hard-pressed detachment, against his military instincts. It is now generally admitted that our repeated efforts to relieve Ladysmith in the South African War were so many strategic blunders that defeated their own purpose. And in the end relief came through the very man who set out with the firm resolve to stop subordinating the interests of the whole to sentiment in favour of a part. An old soldier of one of our generals who failed most conspicuously in that war once tried, I remember, to defend him to me on the ground that he was always &quot;so good to his men&quot;. By that plea, had he only known it, he was condemning him out of Sun Tzu&#x27;s own mouth.</p>
 <p>13. These are the five besetting sins of a general, ruinous to the conduct of war.</p>
 <p>14. When an army is overthrown and its leader killed, the cause will surely be found among these five dangerous faults. Let them be a subject for meditation.</p>
+</section>
+<section aria-labelledby="chapter-nine-the-army-on-the-march">
 <h2 id="chapter-nine-the-army-on-the-march">Chapter Nine: The Army on the March</h2>
 <p>Commentary: The contents of this interesting chapter are better indicated by verse 1 than by the heading.</p>
 <p>1. Sun Tzu said: We come now to the question of encamping the army and observing signs of the enemy. Pass quickly over mountains, and keep near valleys.</p>
@@ -778,6 +827,8 @@ figcaption {
 <p>Commentary: Tu Mu says: &quot;In time of peace a general ought to show kindly confidence in his men and also make his authority respected, so that when they come to face the enemy his orders are carried out and discipline is maintained, because they all trust and look up to him.&quot; What Sun Tzu says in verse 44, however, would lead one rather to expect something like: &quot;If a general is always confident that his orders will be carried out,&quot; and so on.</p>
 <p>the gain will be mutual.</p>
 <p>Commentary: Chang Yu says: &quot;The general has confidence in the men under his command, and the men are docile, having confidence in him. So the gain is mutual.&quot; He quotes a pregnant sentence from Wei Liao Tzu, chapter 4: &quot;The art of giving orders is not to try to rectify minor blunders and not to be swayed by petty doubts.&quot; Vacillation and fussiness are the surest way of sapping an army&#x27;s confidence.</p>
+</section>
+<section aria-labelledby="chapter-ten-terrain">
 <h2 id="chapter-ten-terrain">Chapter Ten: Terrain</h2>
 <p>Commentary: Only about a third of the chapter, verses 1 to 13, deals with terrain; the subject is treated more fully in Chapter Eleven. The &quot;six calamities&quot; are discussed in verses 14 to 20, and the rest of the chapter is again a string of desultory remarks — though perhaps no less interesting for that.</p>
 <p>1. Sun Tzu said: We may distinguish six kinds of terrain, namely: (1) accessible ground;</p>
@@ -855,6 +906,8 @@ figcaption {
 <p>Commentary: The reason being, according to Tu Mu, that he has taken his measures so thoroughly as to make victory certain beforehand. &quot;He does not move recklessly,&quot; says Chang Yu, &quot;so when he does move he makes no mistakes.&quot;</p>
 <p>31. Hence the saying: If you know the enemy and know yourself, your victory will not be in doubt; if you know Heaven and know Earth, you may make your victory complete.</p>
 <p>Commentary: Li Ch&#x27;uan sums up: &quot;Given a knowledge of three things — the affairs of men, the seasons of heaven and the natural advantages of earth — victory will always crown your battles.&quot;</p>
+</section>
+<section aria-labelledby="chapter-eleven-the-nine-situations">
 <h2 id="chapter-eleven-the-nine-situations">Chapter Eleven: The Nine Situations</h2>
 <p>1. Sun Tzu said: The art of war recognises nine varieties of ground: (1) dispersive ground; (2) facile ground; (3) contentious ground; (4) open ground; (5) ground of intersecting highways; (6) serious ground; (7) difficult ground; (8) hemmed-in ground; (9) desperate ground.</p>
 <p>2. When a chieftain fights in his own territory, it is dispersive ground.</p>
@@ -1045,6 +1098,8 @@ figcaption {
 <p>Commentary: Tu Mu says: &quot;Conform to the enemy&#x27;s tactics until a favourable opportunity offers; then come forth and engage in a battle that shall prove decisive.&quot;</p>
 <p>68. At first, then, exhibit the coyness of a maiden, until the enemy gives you an opening; afterwards emulate the rapidity of a running hare, and it will be too late for the enemy to oppose you.</p>
 <p>Commentary: As the hare is noted for its extreme timidity, the comparison hardly seems a happy one. But of course Sun Tzu was thinking only of its speed. The words have been taken to mean: you must flee from the enemy as quickly as an escaping hare; but Tu Mu rightly rejects this.</p>
+</section>
+<section aria-labelledby="chapter-twelve-the-attack-by-fire">
 <h2 id="chapter-twelve-the-attack-by-fire">Chapter Twelve: The Attack by Fire</h2>
 <p>Commentary: Rather more than half the chapter (verses 1 to 13) is devoted to the subject of fire, after which the author branches off into other topics.</p>
 <p>1. Sun Tzu said: There are five ways of attacking with fire. The first is to burn soldiers in their camp;</p>
@@ -1097,6 +1152,8 @@ figcaption {
 <p>Commentary: The Wu State was destined to be a melancholy example of this saying.</p>
 <p>nor can the dead ever be brought back to life.</p>
 <p>22. Hence the enlightened ruler is heedful, and the good general full of caution. This is the way to keep a country at peace and an army intact.</p>
+</section>
+<section aria-labelledby="chapter-thirteen-the-use-of-spies">
 <h2 id="chapter-thirteen-the-use-of-spies">Chapter Thirteen: The Use of Spies</h2>
 <p>1. Sun Tzu said: Raising a host of a hundred thousand men and marching them great distances entails heavy loss on the people and a drain on the resources of the State. The daily expenditure will amount to a thousand ounces of silver.</p>
 <p>Commentary: Compare Chapter Two, verses 1, 13 and 14.</p>
@@ -1172,6 +1229,9 @@ figcaption {
 <p>Commentary: Tu Mu closes with a note of warning: &quot;Just as water, which carries a boat from bank to bank, may also be the means of sinking it, so reliance on spies, while productive of great results, is often the cause of utter destruction.&quot;</p>
 <p>Spies are a most important element in war, because on them depends an army&#x27;s ability to move.</p>
 <p>Commentary: Chia Lin says that an army without spies is like a man without ears or eyes.</p>
+</section>
+</article>
+</main>
 
 </body>
 </html>

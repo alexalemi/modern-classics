@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Microbe Hunters &mdash; Paul de Kruif</title>
+	<meta name="description" content="Leeuwenhoek, Pasteur, Koch, Reed and Ehrlich, one discoverer to a chapter, told as adventure stories. The 1926 text, with its plates described. A restored edition, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/de-kruif.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="Microbe Hunters — Paul de Kruif">
+	<meta property="og:description" content="Leeuwenhoek, Pasteur, Koch, Reed and Ehrlich, one discoverer to a chapter, told as adventure stories. The 1926 text, with its plates described. A restored edition, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/de-kruif.html">
+	<meta property="og:image" content="https://emend.press/covers/share/de-kruif.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,27 +192,31 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>Microbe Hunters</h1>
-	<h3>by Paul de Kruif</h3>
+	<p class="title-line">by Paul de Kruif</p>
 	<p class="center">
 	1926
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is a restored edition of Microbe Hunters: the author's own words, unchanged. Every plate carries a caption and alt text written for this edition, beginning with the label the book printed. The original is available from <a href="https://www.gutenberg.org/ebooks/77842">Project Gutenberg</a>. Also available as an <a href="ebooks/paul-de-kruif_microbe-hunters.epub">epub</a>. <a href="restored.html">More restored editions</a>.</i></p>
 
 	<hr>
+<section aria-labelledby="editors-introduction">
 <h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
 <p>Paul de Kruif (1890–1971) was trained as a bacteriologist at the University of Michigan and worked for a time at the Rockefeller Institute in New York, before he left the laboratory to write about it. His first large piece of work outside it was the science in Sinclair Lewis&#x27;s novel Arrowsmith, published in 1925, the story of a young doctor who wants to do research. Microbe Hunters came out the following year. It was a best seller, and it has been in print ever since.</p>
 <p>It tells the story of the discovery of microbes and of the diseases they cause, one discoverer to a chapter. It begins with Antony Leeuwenhoek, a Dutch dry-goods merchant who ground his own lenses and in the 1670s saw what he called little animals swimming in a drop of rain water. It goes on through Spallanzani, who showed that they do not arise from nothing, and Pasteur and Koch, who proved that particular microbes cause particular diseases. Then come Roux and Behring and their antitoxin, Metchnikoff and the cells that eat microbes, and the men who traced Texas fever to ticks, sleeping sickness to the tsetse fly, malaria to the mosquito and yellow fever to another mosquito. It ends with Paul Ehrlich searching through hundreds of compounds for a &quot;magic bullet,&quot; a chemical that would kill a microbe and spare the patient.</p>
 <p>De Kruif writes in short bursts, with exclamation marks, and with a reporter&#x27;s eye for a quarrel. He calls his scientists by their surnames like old friends, and he gives them dialogue and private thoughts that no record preserves. It reads like a set of adventure stories, and it is on the side of its heroes. The rivals they fought and the doubters they proved wrong come off badly, and some of those quarrels look different to historians now.</p>
 <p>A few things belong to 1926. The one footnote reports a spiral-shaped microbe as the possible cause of yellow fever; that claim did not survive, and the cause turned out to be a virus. Some of the words he uses for peoples and nations were ordinary then and are not now. These are part of the book and are left as he wrote them.</p>
 <p>This is a restored edition, and de Kruif&#x27;s words are unchanged. The text is the Project Gutenberg transcription of the first edition of 1926, compared word by word with two scanned copies of that printing. It keeps his epigraph and dedication and all of the book&#x27;s plates: eight full-page plates, seven of them portraits, and the small drawings of microbes and glassware in the text. Each plate now has a description, which also serves as its alt text. The index, whose page numbers mean nothing in a reflowable book, is omitted. The edition also adds modern typesetting, an ebook, and this introduction.</p>
+</section>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p><a href="#epigraph-and-dedication">Epigraph and Dedication</a></p>
 <p><a href="#i-leeuwenhoek-first-of-the-microbe-hunters">I. Leeuwenhoek: First of the Microbe Hunters</a></p>
@@ -201,12 +231,17 @@ figcaption {
 <p><a href="#x-ross-vs-grassi-malaria">X. Ross vs. Grassi: Malaria</a></p>
 <p><a href="#xi-walter-reed-in-the-interest-of-science-and-for-humanity">XI. Walter Reed: In the Interest of Science—and for Humanity!</a></p>
 <p><a href="#xii-paul-ehrlich-the-magic-bullet">XII. Paul Ehrlich: The Magic Bullet</a></p>
+</nav>
 
 <hr>
+<article>
+<section aria-labelledby="epigraph-and-dedication">
 <h2 id="epigraph-and-dedication">Epigraph and Dedication</h2>
 <pre class="outline">	“The gods are frankly human, sharing in the weaknesses of mankind, yet not untouched with a halo of divine Romance.”
 	—E. H. Blakeney</pre>
 <h4>To Rhea</h4>
+</section>
+<section aria-labelledby="i-leeuwenhoek-first-of-the-microbe-hunters">
 <h2 id="i-leeuwenhoek-first-of-the-microbe-hunters">I. Leeuwenhoek: First of the Microbe Hunters</h2>
 <h4>I</h4>
 <p>Two hundred and fifty years ago an obscure man named Leeuwenhoek looked for the first time into a mysterious new world peopled with a thousand different kinds of tiny beings, some ferocious and deadly, others friendly and useful, many of them more important to mankind than any continent or archipelago.</p>
@@ -297,6 +332,8 @@ figcaption {
 <p>“Hoogvliet, my friend, be so good as to have those two letters on the table translated into Latin.... Send them to London to the Royal Society....”</p>
 <p>So he kept his promise made fifty years before, and Hoogvliet wrote, along with those last letters: “I send you, learned sirs, this last gift of my dying friend, hoping that his final word will be agreeable to you.”</p>
 <p>So he passed, this first of the microbe hunters. You will read of Spallanzani, who was much more brilliant, of Pasteur who had a thousand times his imagination, of Robert Koch who did much more immediate apparent good in lifting the torments that microbes bring to men—these and all the others have much more fame to-day. But not one of them has been so completely honest, so appallingly accurate as this Dutch janitor, and all of them could take lessons from his splendid common sense.</p>
+</section>
+<section aria-labelledby="ii-spallanzani-microbes-must-have-parents">
 <h2 id="ii-spallanzani-microbes-must-have-parents">II. Spallanzani: Microbes Must Have Parents!</h2>
 <h4>I</h4>
 <p>“Leeuwenhoek is dead, it is too bad, it is a loss that cannot be made good. Who now will carry on the study of the little animals?” asked the learned men of the Royal Society in England, asked Réaumur and the brilliant Academy in Paris. Their question did not wait long for an answer, for the janitor of Delft had hardly closed his eyes in 1723 for the long sleep that he had earned so well, when another microbe hunter was born, in 1729 a thousand miles away in Scandiano in northern Italy. This follower of Leeuwenhoek was Lazzaro Spallanzani, a strange boy who lisped verses while he fashioned mudpies; who forgot mudpies to do fumbling childish and cruel experiments with beetles and bugs and flies and worms. Instead of pestering his parents with questions, he examined living things in nature, by pulling legs and wings off them, by trying to stick them back on again. He must find out how things worked; he didn’t care so very much what they looked like.</p>
@@ -423,6 +460,8 @@ figcaption {
 <p>Great Egyptian kings kept their names alive for posterity by having the court undertaker embalm them into expensive and gorgeous mummies. The Greeks and Romans had their likenesses wrought into dignified statues. Paintings exist of a hundred other distinguished men. What is left for us to see of the marvelous Spallanzani?</p>
 <p>In Pavia there is a modest little bust of him and in the museum near by, if you are interested, you may see—his bladder. What better epitaph could there be for Spallanzani? What relic could more perfectly suggest the whole of his passion to find truth, that passion which stopped at nothing, which despised conventions, which laughed at hardship, which ignored bad taste and the feeble pretty fitness of things?</p>
 <p>He knew his bladder was diseased. “Well, have it out after I’m dead,” you can hear him whisper as he lay dying. “Maybe you’ll find an astonishing new fact about diseased bladders.” That was the spirit of Spallanzani. This was the very soul of that cynical, sniffingly curious, coldly reasoning century of his—the century that discovered few practical things—but the same century that built the high clean house for Faraday and Pasteur, for Arrhenius and Emil Fischer and Ernest Rutherford to work in.</p>
+</section>
+<section aria-labelledby="iii-pasteur-microbes-are-a-menace">
 <h2 id="iii-pasteur-microbes-are-a-menace">III. Pasteur: Microbes Are a Menace!</h2>
 <h4>I</h4>
 <p>In 1831, thirty-two years after the magnificent Spallanzani died, microbe hunting had come to a standstill once more. The sub-visible animals were despised and forgotten while other sciences were making great leaps ahead; clumsy horribly coughing locomotives were scaring the horses of Europe and America; the telegraph was getting ready to be invented. Marvelous microscopes were being devised, but no man had come to squint through these machines—no man had come to prove to the world that miserable little animals could do useful work which no complicated steam engine could attempt; there was no hint of the somber fact that these wretched microbes could kill their millions of human beings mysteriously and silently, that they were much more efficient murderers than the guillotine or the cannon of Waterloo.</p>
@@ -592,6 +631,8 @@ figcaption {
 <p>Then at the next meeting Pasteur told the Academy of how he had quarantined his grape-vines against yeasts: “Is it not worthy of attention,” he shouted, “that in this vineyard of Arbois, and this would be true of millions of acres of vineyards all over the world, there was at the moment I made these experiments, not a speck of soil which was not capable of fermenting grapes into wine; and is it not remarkable that, on the contrary, the soil of my hothouses could not do this? And why? Because at a definite moment, I covered this soil with some glass....”</p>
 <p>Then he jumped to marvelous predictions, prophecies that have since his time come true, he leaped to poetry, I say, that makes you forget his vulgar wrangling with his dead friend Bernard. “Must we not believe, as well, that a day will come when preventive measures that are easy to apply, will arrest those plagues ...” and he painted them a lurid picture of the terrible yellow fever that just then had changed the gay streets of New Orleans into a desolation. He made them shiver to hear of the black plague on the far banks of the Volga. Finally he made them hope....</p>
 <p>Meanwhile in a little village in Eastern Germany a young stubborn round-headed Prussian doctor was starting on his road to those very miracles that Pasteur was prophesying—this young doctor was doing strange experiments with mice in time stolen from his practice. He was devising ingenious ways to handle microbes so that he could be dead sure he was handling only one kind—he was learning to do a thing that Pasteur with all his brilliant skill had never succeeded in doing. Let us leave Pasteur for a while—even though he is on the threshold of his most exciting experiments and funniest arguments—let us leave him for a chapter and go with Robert Koch, while he is learning to do fantastic, and marvelously important things with those microbes which had been subjects of Pasteur’s kingdom for so many years.</p>
+</section>
+<section aria-labelledby="iv-koch-the-death-fighter">
 <h2 id="iv-koch-the-death-fighter">IV. Koch: The Death Fighter</h2>
 <h4>I</h4>
 <p>In those astounding and exciting years between 1860 and 1870, when Pasteur was saving vinegar industries and astonishing emperors and finding out what ailed sick silkworms, a small, serious, and nearsighted German was learning to be a doctor at the University of Göttingen. His name was Robert Koch. He was a good student, but while he hacked at cadavers he dreamed of going tiger-hunting in the jungle. Conscientiously he memorized the names of several hundred bones and muscles, but the fancied moan of the whistles of steamers bound for the East chased this Greek and Latin jargon out of his head.</p>
@@ -768,6 +809,8 @@ figcaption {
 <p>As it is so often the case, alas, in violent scientific controversies, both sides were partly right and partly wrong. Every event of the past forty years has shown that Koch was right when he said that people can never have cholera without swallowing his comma bacillus. And the years that have gone by have revealed that Pettenkofer’s experiment pointed out a mystery behind the curtains of the unknown, and these obscuring draperies have not now even begun to be lifted by modern microbe hunters. Murderous germs are everywhere, sneaking into all of us, yet they are able to assassinate only some of us, and that question of the strange resistance of the rest of us is still just as much an unsolved puzzle as it was in those days of the roaring eighteen-eighties when men were ready to risk dying to prove that they were right.</p>
 <p>For, make no mistake, Pettenkofer walked within an inch of death; other microbe hunters have since then swallowed cultures of virulent cholera microbes by accident—and died horribly.</p>
 <p>But we come to the end of the great days of Robert Koch, and the exploits of Louis Pasteur begin once more to push Koch and all other microbe hunters into the background of the world’s attention. Let us leave Koch while his ambitious but well-meaning countrymen prepare, without knowing it, a disaster for him, a tragedy that, alas, has partly tarnished the splendor of his trapping of the microbes that murder animals and men with anthrax and cholera and tuberculosis. But before you read the perfect and brilliant <em>finale</em> of the gorgeous career of Pasteur, I beg leave to remove my hat and make bows of respect to Koch—the man who really <em>proved</em> that microbes are our most deadly enemies, who brought microbe hunting near to being a science, the man who is now the partly forgotten captain of an obscure heroic age.</p>
+</section>
+<section aria-labelledby="v-pasteur-and-the-mad-dog">
 <h2 id="v-pasteur-and-the-mad-dog">V. Pasteur: And the Mad Dog</h2>
 <h4>I</h4>
 <p>Do not think for a moment that Pasteur allowed his fame and name to be forgotten in the excitement kicked up by the sensational proofs of Koch that microbes murder men. It is certain that less of a hound for sniffing out microbes, less of a poet, less of a master at keeping people wide-eyed with their mouths open, would have been shoved off into a fairly complete oblivion by such events—but not Pasteur!</p>
@@ -960,6 +1003,8 @@ figcaption {
 <p>But there is another end of his career that I like to think of more—and that was the day, in 1892, of Pasteur’s seventieth birthday—when a medal was given to him at a great meeting held to honor him, at the Sorbonne in Paris. Lister was there, and many other famous men from other nations, and in tier upon tier, above these magnificoes who sat in the seats of honor, were the young men of France—the students of the Sorbonne and the colleges and the high schools. There was a great buzz of young voices—all at once a hush, as Pasteur limped up the aisle, leaning on the arm of the President of the French Republic. And then—it is the kind of business that is usually pulled off to welcome generals and that kind of hero who has directed the futile butchering of thousands of enemies—the band of the Republican Guard blared out into a triumphal march.</p>
 <p>Lister, the prince of surgeons, rose from his seat and hugged Pasteur and the gray-bearded important men and the boys in the top galleries cried and shook the walls with the roar of their cheering. At last the old microbe hunter gave his speech—the voice of the fierce arguments was gone and his son had to speak it for him—and his last words were a hymn of hope, not so much for the saving of life as a kind of religious cry for a new way of life for men. It was to the students, to the boys of the high schools he was calling:</p>
 <p>“... Do not let yourselves be tainted by a deprecating and barren skepticism, do not let yourselves be discouraged by the sadness of certain hours which pass over nations. Live in the serene peace of laboratories and libraries. Say to yourselves first: What have I done for my instruction? and, as you gradually advance, What have I done for my country? until the time comes when you may have the immense happiness of thinking that you have contributed in some way to the progress and good of humanity....”</p>
+</section>
+<section aria-labelledby="vi-roux-and-behring-massacre-the-guinea-pigs">
 <h2 id="vi-roux-and-behring-massacre-the-guinea-pigs">VI. Roux and Behring: Massacre the Guinea-Pigs</h2>
 <h4>I</h4>
 <p>It was to save babies that they killed so many guinea-pigs!</p>
@@ -1056,6 +1101,8 @@ figcaption {
 <p>But even if the diphtheria antitoxin is not a sure cure, we already know that the experiments of Roux and Behring have not been in vain. It is a story still too recent, too much in the newspapers to be a part of this history—but to-day, in New York under the superb leadership of Dr. Park, and all over America, and in Germany, hundreds of thousands of babies and school-children are being ingeniously and safely turned into so many small factories for the making of antitoxin, so that they will never get diphtheria at all. Under the skins of these youngsters go wee doses of that terrible poison fatal to so many big dogs—but it is a poison fantastically changed so that it is harmless to a week-old baby!</p>
 <p>There is every hope, if fathers and mothers can only be convinced and allow their children to undergo three small safe pricks of a syringe needle, that diphtheria will no longer be the murderer that it has been for ages.</p>
 <p>And for this men will thank those first crude searchings of Loeffler and Roux and Behring.</p>
+</section>
+<section aria-labelledby="vii-metchnikoff-the-nice-phagocytes">
 <h2 id="vii-metchnikoff-the-nice-phagocytes">VII. Metchnikoff: The Nice Phagocytes</h2>
 <h4>I</h4>
 <p>Microbe hunting has always been a queer humpty-dumpty business.</p>
@@ -1153,6 +1200,8 @@ figcaption {
 <p>“This germ,” explained Metchnikoff, “by making the acid of sour milk, will chase the wild poisonous bacilli out of the intestine.” He began drinking huge draughts of sour milk himself, and later, for years, he fed himself cultivations of the Bulgarian bacillus. He wrote large books about his new theory and a serious English journal acclaimed them to be the most important scientific treatises since Darwin’s “Origin of Species.” The Bulgarian bacillus became a rage, companies were formed, and their directors grew rich off selling these silly bacilli. Metchnikoff let them use his name (though Olga insists he never made a franc from that) for the label.</p>
 <p>For nearly twenty years Metchnikoff austerely lived to the letter of his new theory. He neither drank alcoholic drinks nor did he smoke. He permitted himself no debaucheries. He was examined incessantly by the most renowned specialists of the age. His rolls were sent to him in separate sterilized paper bags so that they would be free from the wild, auto-intoxicating bacilli. He constantly tested his various juices and excretions. In those years he got down untold gallons of sour milk and swallowed billions of the beneficent bacilli of Bulgaria....</p>
 <p>And he died at the age of seventy-one.</p>
+</section>
+<section aria-labelledby="viii-theobald-smith-ticks-and-texas-fever">
 <h2 id="viii-theobald-smith-ticks-and-texas-fever">VIII. Theobald Smith: Ticks and Texas Fever</h2>
 <h4>I</h4>
 <p>It was Theobald Smith who made mankind turn a corner. He was the first, and remains the captain of American microbe hunters. He poked his nose—following the reasoning of some plain farmers—around a sharp turn and came upon amazing things; and now this history tells what Smith saw and what the trail-breakers who came after him found.</p>
@@ -1210,6 +1259,8 @@ figcaption {
 <h4>VII</h4>
 <p>And so, with this report, Theobald Smith made mankind turn a corner, showed men an entirely new and fantastic way a disease may be carried—by an insect. And only by that insect. Wipe out that insect, dip all of your cattle to kill all their ticks, keep your northern cattle in fields where there are no ticks, and Texas fever will disappear from the earth. To-day whole states are dipping their cattle and to-day Texas fever which once threatened the great myriads of American cattle is no longer a matter for concern. But that is only the beginning of the beneficent deeds of this plain report, this classic unappreciated and completely out of print. For presently, on the veldt and in the dangerous bush of southern Africa, a burly Scotch surgeon-major swore at the bite of a tsetse fly—and wondered what else besides merely annoying one, these tsetse flies might do. And a little later in India, and at the same time in Italy, an Englishman and an Italian listened to the whining song of swarms of mosquitoes, and dreamed and wondered and planned strange experiments——</p>
 <p>But those are the stories the next chapters will celebrate. They tell of ancient plagues now in reach of mankind’s complete control—they tell of a deadly yellow disease now almost entirely abolished. They tell of men projecting pictures of swarming human life and turreted cities of the future reaching up and up, built on jungles now fit only for man-killing wild beasts and lizards. It was this now nearly forgotten microbe hunting of Theobald Smith that first gave men the right to have visions of a world transformed.</p>
+</section>
+<section aria-labelledby="ix-bruce-trail-of-the-tsetse">
 <h2 id="ix-bruce-trail-of-the-tsetse">IX. Bruce: Trail of the Tsetse</h2>
 <h4>I</h4>
 <p>“Young man!”—the face of the Director-General of the British Army Medical Service changed from an irritated red to an indignant mauve-color—“young man, I will send you to India, I will send you to Zanzibar, I will send you to Timbuctoo—I will send you anywhere I please”—(the majestic old gentleman was shouting now, and his face was a positively furious purple) “but you may be damned sure I shall not send you to Natal!...” Reverberations....</p>
@@ -1315,6 +1366,8 @@ figcaption {
 <p>That experiment was the injection of the nagana trypanosomes, not into one, or a hundred—but a thousand human beings.</p>
 <h4>IX</h4>
 <p>But there was grisly hope left in the old Viking. “<em>At present</em> it is impossible,” he said, while he believed that somewhere, somewhen, men may be found, in the mass, who will be glad to die for truth. And as you will see, in a story of a band of American buck-privates in another chapter, there are beginnings of such spirit even now. But when great armies of men so offer themselves, to fight death, just as they now delight to fight each other, it will be because they are led on by captains such as David Bruce.</p>
+</section>
+<section aria-labelledby="x-ross-vs-grassi-malaria">
 <h2 id="x-ross-vs-grassi-malaria">X. Ross vs. Grassi: Malaria</h2>
 <h4>I</h4>
 <p>The last ten years of the nineteenth century were as unfortunate for ticks, bugs, and gnats as they were glorious for the microbe hunters. Theobald Smith had started them off by scotching the ticks that carried Texas fever; a little later and six thousand miles away David Bruce, stumbling through the African bush, got onto the trail of the tsetse fly, accused him, convicted him. How melancholy and lean have been the years, since then, for that murderous tick whose proper name is <em>Bo-ophilus bovis</em>, and you may be sure that since those searchings of David Bruce, the tsetses have had to bootleg for the blood of black natives and white hunters, and missionaries. And now alas for mosquitoes! Malaria must be wiped from the earth. Malaria can be destroyed! Because, by the middle of 1899, two wrangling and not too dignified microbe hunters had proved that the mosquito—and only one particular kind of mosquito—was the criminal in the malaria mystery.</p>
@@ -1466,6 +1519,8 @@ figcaption {
 <p>There was Grassi—justifiably purple with indignation, writing violent papers in reply.... You cannot blame him! But why will such searchers scuffle, when there are so many things left to find? You would think—of course it would be so in a novel—that they could have ignored each other, or could have said: “The facts of science are greater than the little men who find those facts!”—and then have gone on searching, and saving.</p>
 <p>For the fight has only just begun. The day I finish this tale, it is twenty-five years after the perfect experiment of Grassi, comes this news item from Tokio—it is stuck away down in a corner of an inside page of a newspaper:</p>
 <p>“The population of the Ryukyu Islands, which lie between Japan and Formosa, is rapidly dying off.... Malaria is blamed principally. In eight villages of the Yaeyama group ... not a single baby has been born for the last thirty years. In Nozoko village ... one sick old woman was the only inhabitant....”</p>
+</section>
+<section aria-labelledby="xi-walter-reed-in-the-interest-of-science-and-for-humanity">
 <h2 id="xi-walter-reed-in-the-interest-of-science-and-for-humanity">XI. Walter Reed: In the Interest of Science—and for Humanity!</h2>
 <h4>I</h4>
 <p>With yellow fever it was different—there were no brawls about it.</p>
@@ -1558,6 +1613,8 @@ figcaption {
 <p>But what of Private Kissenger, of Ohio, who stood that test, in the interest of science—and for humanity? He didn’t die from yellow fever. And they prevailed upon him, at last, to accept one hundred and fifteen dollars and a gold watch, which was presented to him in the presence of the officers and men of Columbia barracks. He didn’t die—but what was worse, as the yellow fever germs went out of him, a paralysis crept into him—now he sits, counting the hours on his gold watch. But what luck! At the last account he had a good wife to support him by taking in washing.</p>
 <p>And what of the others? Time is too short to deal with those others—and besides I do not know what has become of them. So it is that this strange crew has made rendezvous, each one with his special and particular fate—this strange crew who put the capstone on that most marvelous ten years of the microbe hunters, that crew who worked together so that now, in 1926, there is hardly enough of the poison of yellow fever left in the world to put on the points of six pins....</p>
 <p>So it is that the good death fighter, David Bruce, should eat his words: “It is impossible, at present, to experiment with human beings.”</p>
+</section>
+<section aria-labelledby="xii-paul-ehrlich-the-magic-bullet">
 <h2 id="xii-paul-ehrlich-the-magic-bullet">XII. Paul Ehrlich: The Magic Bullet</h2>
 <h4>I</h4>
 <p>Two hundred and fifty years ago, Antony Leeuwenhoek, who was a matter-of-fact man, looked through a magic eye, saw microbes, and so began this history. He would certainly have snorted a contemptuous Dutch sort of snort at anybody who called his microscope a magic eye.</p>
@@ -1661,6 +1718,9 @@ figcaption {
 <p>And he was an owlish man! “You say a great work of the mind, a wonderful scientific achievement?” he repeated after a worshiper who told him that was what the discovery of 606 was.</p>
 <p>“My dear colleague,” said Paul Ehrlich, “for seven years of misfortune I had one moment of good luck!”</p>
 <h4>end of Microbe Hunters</h4>
+</section>
+</article>
+</main>
 
 </body>
 </html>

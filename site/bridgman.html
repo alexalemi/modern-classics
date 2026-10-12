@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Dimensional Analysis &mdash; P. W. Bridgman</title>
+	<meta name="description" content="What a pendulum, a drop of liquid and an airplane model have in common: the Π theorem, read from the 1922 printing. A restored edition, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/bridgman.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="Dimensional Analysis — P. W. Bridgman">
+	<meta property="og:description" content="What a pendulum, a drop of liquid and an airplane model have in common: the Π theorem, read from the 1922 printing. A restored edition, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/bridgman.html">
+	<meta property="og:image" content="https://emend.press/covers/share/bridgman.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,26 +192,30 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>Dimensional Analysis</h1>
-	<h3>by P. W. Bridgman</h3>
+	<p class="title-line">by P. W. Bridgman</p>
 	<p class="center">
 	1922
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is a restored edition of Dimensional Analysis: the author's own words, unchanged. The original is available from <a href="https://archive.org/details/dimensionalanaly00bridrich">Internet Archive</a>. Also available as an <a href="ebooks/p-w-bridgman_dimensional-analysis.epub">epub</a>. <a href="restored.html">More restored editions</a>.</i></p>
 
 	<hr>
+<section aria-labelledby="editors-introduction">
 <h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
 <p>Percy Williams Bridgman (1882–1961) spent his whole working life at Harvard, where he made his name squeezing things. He built presses that reached pressures no one had reached before and measured what happened to metals, liquids and crystals inside them, and in 1946 he was given the Nobel Prize in Physics for that work. This short book comes from a different side of him. In the spring of 1920 he gave five lectures on dimensional analysis to the physics graduate students at Harvard, and Yale University Press published them in 1922.</p>
 <p>Dimensional analysis is the trick of finding out how a result must depend on its causes by keeping track of units alone. A pendulum&#x27;s period can only be built out of its length, its mass, the pull of gravity and the size of its swing, and there is essentially one way to combine those into something measured in seconds. Every physics student used the method, and Bridgman thought hardly anyone understood why it worked or when it failed. His preface says there was nowhere a systematic account of its principles, and that the misconceptions about it had spread into published speculation. The book is that account. Its centre is the Π theorem, which Edgar Buckingham had set out in 1914, and it works through dozens of problems, from pendulums and drops of liquid to the scale models on which airplane design was then being tested, and the constants of radiation.</p>
 <p>Two things are worth knowing before starting. First, Bridgman keeps asking what the numbers in a formula are the numbers of, and he answers in terms of the &quot;rules of operation&quot; by which each quantity is measured. Five years later he made that idea the basis of The Logic of Modern Physics, and this is one of the places it began. Second, the physics is that of 1920: units are centimetres, grams and seconds; the radiation constants come from Planck&#x27;s formula as it then stood; radiation still travels through &quot;the ether&quot;, though Bridgman has no patience for speculation about its &quot;true&quot; dimensions. The small raised numbers in the text point to the reference lists at the end of each chapter, which cite journals in the abbreviations of the day (Phys. Rev., Phil. Mag., Nat.).</p>
 <p>This is a restored edition. Bridgman&#x27;s words are unchanged. No transcription of the book existed, so every page of the 1922 printing was read from the scan, and the words were then checked against two other copies. The formulas, about eleven hundred of them, are typeset as mathematics rather than pictured, and each was read twice from the page. A few slips in the printing, a misspelt word and an exponent or two that do not match the working, are kept as printed. The index, which was page numbers only, is left out.</p>
+</section>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p><a href="#preface">Preface</a></p>
 <ul class="toc-list">
@@ -199,8 +229,11 @@ figcaption {
 <li><a href="#chapter-viii-applications-to-theoretical-physics">Chapter VIII: Applications to Theoretical Physics</a></li>
 </ul>
 <p><a href="#problems">Problems</a></p>
+</nav>
 
 <hr>
+<article>
+<section aria-labelledby="preface">
 <h2 id="preface">Preface</h2>
 <p>The substance of the following pages was given as a series of five lectures to the Graduate Conference in Physics of Harvard University in the spring of 1920.</p>
 <p>The growing use of the methods of dimensional analysis in technical physics, as well as the importance of the method in theoretical investigations, makes it desirable that every physicist should have this method of analysis at his command. There is, however, nowhere a systematic exposition of the principles of the method. Perhaps the reason for this lack is the feeling that the subject is so simple that any formal presentation is superfluous. There do, nevertheless, exist important misconceptions as to the fundamental character of the method and the details of its use. These misconceptions are so widespread, and have so profoundly influenced the character of many speculations, as I shall try to show by many illustrative examples, that I have thought an attempt to remove the misconceptions well worth the effort.</p>
@@ -208,6 +241,8 @@ figcaption {
 <p>The introductory chapter is addressed to those who already have some acquaintance with the general method. Probably most readers will be of this class. I have tried to show in this chapter by actual examples what are the most important questions in need of discussion. The reader to whom the subject is entirely new may omit this chapter without trouble.</p>
 <p>I am under especial obligation to the papers of Dr. Edgar Buckingham on this subject. I am also much indebted to Mr. M. D. Hersey of the Bureau of Standards, who a number of years ago presented Dr. Buckingham&#x27;s results to the Conference in a series of lectures.</p>
 <p>September, 1920.</p>
+</section>
+<section aria-labelledby="chapter-i-introductory">
 <h3 id="chapter-i-introductory">Chapter I: Introductory</h3>
 <p>Applications of the methods of dimensional analysis to simple problems, particularly in mechanics, are made by every student of physics. Let us analyze a few such problems in order to refresh our minds and get before us some of the questions which must be answered in a critical examination of the processes and assumptions underlying the correct application of the general method.</p>
 <p>We consider first the illustrative problem used in nearly every introduction to this subject, that of the simple pendulum. Our endeavor is to find, without going through a detailed solution of the problem, certain relations which must be satisfied by the various measurable quantities in which we are interested. The usual procedure is as follows. We first make a list of all the quantities on which the answer may be supposed to depend; we then write down the dimensions of these quantities, and then we demand that these quantities be combined into a functional relation in such a way that the relation remains true no matter what the size of the units in terms of which the quantities are measured.</p>
@@ -298,6 +333,8 @@ figcaption {
 <p>Must the functions descriptive of phenomena be restricted to the sum of products of powers of the variables?</p>
 <p>What kinds of quantity should we choose as the fundamentals in terms of which to measure the others? In particular, how many kinds of fundamental units are there? Is it legitimate to reduce the number of fundamental units as far as possible by the introduction of definitions in accord with experimental facts?</p>
 <p>Finally, what is the criterion for neglecting a certain kind of quantity in any problem, as for example the viscosity in the heat flow problem, and what is the character of the result which we will get, approximate or exact? And if approximate, how good is the approximation?</p>
+</section>
+<section aria-labelledby="chapter-ii-dimensional-formulas">
 <h3 id="chapter-ii-dimensional-formulas">Chapter II: Dimensional Formulas</h3>
 <p>In the introductory chapter we considered some special problems which raised a number of questions that must be answered before we can hope to really master the method of dimensional analysis. Let us now begin the formal development of the subject, keeping these questions in mind to be answered as we proceed.</p>
 <p>The purpose of dimensional analysis is to give certain information about the relations which hold between the measurable quantities associated with various phenomena. The advantage of the method is that it is rapid; it enables us to dispense with making a complete analysis of the situation such as would be involved in writing down the equations of motion of a mechanical system, for example, but on the other hand it does not give as complete information as might be obtained by carrying through a detailed analysis.</p>
@@ -346,6 +383,8 @@ figcaption {
 <p>The difference between the dimensional formula and the qualitative formula or quality of a thing is that, according to the definitions of the writers quoted above, the dimensions &quot;are arbitrary,&quot; are &quot;merely a matter of definition and depend entirely upon the system of units we adopt,&quot; whilst the quality is an expression of the absolute nature, and never varies, no matter what system of units we adopt. For this to be true, no qualities must be suppressed.</p>
 <h4>References</h4>
 <p>(1) R. C. Tolman, Phys. Rev. 6, 1915, p. 226, footnote.</p>
+</section>
+<section aria-labelledby="chapter-iii-on-the-use-of-dimensional-formulas-in-changing-units">
 <h3 id="chapter-iii-on-the-use-of-dimensional-formulas-in-changing-units">Chapter III: On the Use of Dimensional Formulas in Changing Units</h3>
 <p>We saw in the last chapter how to obtain the dimensional formula of any quantity in terms of the quantities which we chose by definition to make fundamental. Our method of analysis showed also the connection between the numerical magnitude of the derived quantity and the fundamental quantities. Thus if length enters to the first power in the dimensional formula, we saw that the number measuring that quantity is doubled when the unit of length is halved, or the numerical measures are inversely as the size of the unit, raised to the power indicated in the dimensional formula.</p>
 <p>Let us consider a concrete example. What is a velocity of 88 feet per second when expressed in miles per hour? The dimensional formula of a velocity is <math alttext="LT^{-1}" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>L</mi><msup><mi>T</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></math>. Now if our unit of length is made larger in the ratio of a mile to a foot, that is, in the ratio of 5280 to 1, the velocity will be multiplied by the factor 1/5280, because length enters in the dimensional formula to the first power. And similarly, if the unit of time is made larger in the ratio of the hour to the second, that is, in the ratio of 3600 to 1, the velocity will be multiplied by the factor 3600, because time enters the dimensional formula to the inverse first power. To change from feet per second to miles per hour we therefore multiply by 3600/5280, and in this particular case the result is <math alttext="88 \times 3600/5280" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>88</mn><mo>×</mo><mn>3600</mn><mi>/</mi><mn>5280</mn></mrow></math>, or 60 miles per hour.</p>
@@ -384,6 +423,8 @@ figcaption {
 <p>(1) D. L. Webster, Sci. 46, 187, 1917.</p>
 <p>A. Lodge, Nat. 38, 281, 1888.</p>
 <p>(2) A. Buchholz, Ann. Phys. 51, 678, 1916.</p>
+</section>
+<section aria-labelledby="chapter-iv-the-theorem">
 <h3 id="chapter-iv-the-theorem">Chapter IV: The Π Theorem</h3>
 <p>In the second chapter we saw that the dimensional formulas of all the quantities with which we shall have to deal are expressible as products of powers of the fundamental quantities. Let us see what inferences this enables us to draw about the forms of the relations which may hold between the various measurable quantities connected with a natural phenomenon.</p>
 <p>We also saw in the second chapter that at least sometimes the functional relation will involve certain so-called dimensional constants as well as measurable quantities. We met two examples of dimensional constants, namely, the gravitational constant, and the velocity of light in empty space, and we assigned dimensional formulas to these constants. Now it is most important to notice that these two dimensional constants had dimensional formulas of the type proved to be necessary for the measurable quantities, namely, they were expressible as products of powers of the fundamental quantities. This is no accident, but it is true of all the dimensional constants with which we shall have to deal. The proof can best be given later when we have obtained a little clearer insight into the nature of a dimensional constant. A certain apparent exception, the so-called logarithmic constant, will also be dealt with later. We may remark here, however, that one class of dimensional constant must obviously be of this form. We saw that if we start with an empirical equation which experimentally has been found to be true from measurements with a particular set of units, this equation can be made to hold for all sizes of the units by the device of introducing as a factor with each measurable quantity a dimensional constant of dimensions the reciprocal of those of the measured quantity. Since the dimensions of every measured quantity are products of powers, the dimensions of the reciprocal must also be products of powers, and the theorem is proved for this restricted class of dimensional constants. We will for the present accept as true the statement that all dimensional constants have this type of dimensional formula.</p>
@@ -427,6 +468,8 @@ figcaption {
 <p>&quot;It also seems absurd that the dimensions of a unit of electricity should have fractional powers, since such quantities as <math alttext="M^{\frac{1}{2}}" xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>M</mi><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></math> and <math alttext="L^{\frac{1}{2}}" xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>L</mi><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></math> are meaningless.&quot;</p>
 <p>W. Williams, Phil. Mag. 34, 234, 1892.</p>
 <p>&quot;So long, however, as <math alttext="L" xmlns="http://www.w3.org/1998/Math/MathML"><mi>L</mi></math>, <math alttext="M" xmlns="http://www.w3.org/1998/Math/MathML"><mi>M</mi></math>, and <math alttext="T" xmlns="http://www.w3.org/1998/Math/MathML"><mi>T</mi></math> are fundamental units, we cannot expect fractional powers to occur. . . . Now all dynamical conceptions are built up ultimately in terms of these three ideas, mass, length, and time, and since the process is synthetical, building up the complex from the simple, it becomes expressed in conformity with the principles of Algebra by integral powers of <math alttext="L" xmlns="http://www.w3.org/1998/Math/MathML"><mi>L</mi></math>, <math alttext="M" xmlns="http://www.w3.org/1998/Math/MathML"><mi>M</mi></math>, and <math alttext="T" xmlns="http://www.w3.org/1998/Math/MathML"><mi>T</mi></math>. . . . Obviously if mass, length, and time are to be ultimate physical conceptions, we cannot give interpretations to fractional powers of <math alttext="L" xmlns="http://www.w3.org/1998/Math/MathML"><mi>L</mi></math>, <math alttext="M" xmlns="http://www.w3.org/1998/Math/MathML"><mi>M</mi></math>, and <math alttext="T" xmlns="http://www.w3.org/1998/Math/MathML"><mi>T</mi></math>, because we cannot analyze the corresponding ideas to anything simpler. We should thus be unable, according to any physical theory, to give interpretations to formulae involving fractional powers of the fundamental units.&quot;</p>
+</section>
+<section aria-labelledby="chapter-v-dimensional-constants-and-the-number-of-fundamental-units">
 <h3 id="chapter-v-dimensional-constants-and-the-number-of-fundamental-units">Chapter V: Dimensional Constants and the Number of Fundamental Units</h3>
 <p>The essential result which we have obtained in the <math alttext="\Pi" xmlns="http://www.w3.org/1998/Math/MathML"><mi>Π</mi></math> theorem is in the restriction which it places on the number of arguments of the arbitrary function. The fewer the arguments, the more restricted the function, and the greater our information about the answer. Thus if the problem is such that there are four variables, and three fundamental kinds of unit, our analysis shows that there is only one dimensionless product, which we can determine, and that some function of this product is zero. This is equivalent to saying, in this special case, that the product itself is some constant, and we have complete information as to the nature of the solution, except for the numerical value of the constant. This was the nature of the solution which we found for the pendulum problem. If it had not been for the dimensional analysis, any conceivable relation between the four arguments might have been possible, and we should have had absolutely no information about the solution. Similarly, if there are two more variables than fundamental kind of quantity, there will be two dimensionless products. The solution is an arbitrary function of these two products put equal to zero, which may be solved for one of the products as a function of the other. This was the case with the heat transfer problem already treated. It certainly gives more information to know that the solution is of this form than merely to know that there is some function of the five variables which vanishes, which was all that we could say before we applied our analysis.</p>
 <p>It is to our advantage, evidently, that the number of arguments which are to be connected by the functional relation should be as small as possible. Now the variables which enter the functional relation to which our analysis has been applied comprise all the variables which can change in numerical magnitude under the conditions of the problem. These variables are of two kinds. First are the physical variables, which are the measures of certain physical quantities, and which may change in magnitude over the domain to which our result is to apply. The numbers measuring these physical quantities may also change when the size of the fundamental units changes. In the second place, there may be other arguments of the nature of coefficients in the equation which do not change in numerical magnitude when the physical system alone changes, but which change in magnitude when the size of the fundamental measuring units changes. It is these which we have called dimensional constants. Now in any actual case we are interested only in the physical problem, and are interested in finding a relation between the physically variable quantities. The dimensional constants are to be regarded as an evil, to be tolerated only if they make possible more information about the physical variables.</p>
@@ -449,6 +492,8 @@ figcaption {
 <p>(1) Fourier, Theorie de Chaleur, 160.</p>
 <p>As dealing with the general question of the proper number of fundamental units may be mentioned</p>
 <p>E. Buckingham, Nat. 96, 208, and 396, 1915.</p>
+</section>
+<section aria-labelledby="chapter-vi-examples-illustrative-of-dimensional-analysis">
 <h3 id="chapter-vi-examples-illustrative-of-dimensional-analysis">Chapter VI: Examples Illustrative of Dimensional Analysis</h3>
 <p>Let us in the first place recapitulate the results of the preceding chapter. Before undertaking a dimensional analysis we are to imagine ourselves as making an analysis to the extent of deciding the nature of the problem, and enumerating the physical variables which would enter the equations of motion (in the general sense) and also the dimensional coefficients required in writing down the equations of motion. The dimensions of all these variables are then to be written in terms of the fundamental units. These fundamental units are to be chosen for each particular problem in such a way that their number is as large as possible without involving the introduction of compensating dimensional constants into the equations of motion. The dimensionless products of the variables are then to be formed in accordance with the <math alttext="\Pi" xmlns="http://www.w3.org/1998/Math/MathML"><mi>Π</mi></math> theorem, choosing the products in such a way from the great variety possible that the variables in which we are particularly interested may stand conspicuously by themselves. Having formed the products, the <math alttext="\Pi" xmlns="http://www.w3.org/1998/Math/MathML"><mi>Π</mi></math> theorem gives immediately the functional relation.</p>
 <p>In the following illustrative examples we have particularly to consider the proper number of fundamental units, and the most convenient way of choosing the dimensionless products. The matter of dimensional constants we regard as clear.</p>
@@ -630,6 +675,8 @@ figcaption {
 <p>G. F. Fitzgerald, Phil. Mag. 27, 323, 1889. This article is quoted entire.</p>
 <p>&quot;Some attention has lately been called to the question of the dimensions of the electromagnetic units, but the following suggestion seems to have escaped notice.</p>
 <p>&quot;The electrostatic system of units may be defined as one in which the electric inductive capacity is <em>assumed</em> to have zero dimensions, and the electromagnetic system is one in which the magnetic inductive capacity is assumed to have zero dimensions. Now if we take a system in which the dimensions of both these quantities are the same, and of the dimensions of a slowness, <em>i.e.,</em> the inverse of a velocity <math alttext="(T/L)" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo stretchy="true" form="prefix">(</mo><mi>T</mi><mi>/</mi><mi>L</mi><mo stretchy="true" form="postfix">)</mo></mrow></math>, the two systems become identical, as regards dimensions, and differ only by a numerical coefficient, just as centimeters and kilometers do. There seems a naturalness in this result which justifies the assumption that these inductive capacities are really of the nature of a slowness. It seems possible that they are related to the reciprocal of the square root of the mean energy of turbulence of the ether.&quot;</p>
+</section>
+<section aria-labelledby="chapter-vii-applications-of-dimensional-analysis-to-model-experiments-other-engineering-applications">
 <h3 id="chapter-vii-applications-of-dimensional-analysis-to-model-experiments-other-engineering-applications">Chapter VII: Applications of Dimensional Analysis to Model Experiments. Other Engineering Applications</h3>
 <p>Hitherto we have applied dimensional analysis to problems which could be solved in other ways, and therefore have been able to check our results. There are, however, in engineering practise a large number of problems so complicated that the exact solution is not obtainable. Under these conditions dimensional analysis enables us to obtain certain information about the form of the result which could be obtained in practise only by experiments with an impossibly wide variation of the arguments of the unknown function. In order to apply dimensional analysis we merely have to know what kind of a physical system it is that we are dealing with, and what the variables are which enter the equation; we do not even have to write the equations down explicitly, much less solve them. In many cases of this sort, the partial information given by dimensional analysis may be combined with measurements on only a part of the totality of physical systems covered by the analysis, so that together all the information needed is obtained with much less trouble and expense than would otherwise be possible. This method is coming to be of more and more importance in technical studies, and has recently received a considerable impetus from the necessities of airplane design. The method has received wide use at the National Physical Laboratory in England, and at the Bureau of Standards in this country, and has been described in numerous papers. At the Bureau of Standards Dr. Edgar Buckingham has been largely instrumental in putting the results of dimensional analysis into such a form that they may be easily applied, and in making a number of important applications.</p>
 <p>The nature of the results obtainable by this method may be illustrated by a very simple example. Suppose that it is desired to construct a very large and expensive pendulum of accurately predetermined time of swing. Dimensional analysis shows that the time of oscillation of the entire system of all pendulums is given by the formula <math alttext="t = \text{Const} \sqrt{l/g}" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>t</mi><mo>=</mo><mtext mathvariant="normal">Const</mtext><msqrt><mrow><mi>l</mi><mi>/</mi><mi>g</mi></mrow></msqrt></mrow></math>. Hence to determine the time of any pendulum whatever, it is sufficient to determine by experiment only the value of the constant in the equation. The constant may evidently be found by a single experiment on a pendulum of any length whatever. The experimental pendulum may be made as simple as we please, and by measuring the time of swing of it, the time of swing of the projected large pendulum may be obtained.</p>
@@ -669,6 +716,8 @@ figcaption {
 <p>Aeronautical Instruments Circulars of the Bureau of Standards, No. 30, 1919, and No. 32, 1918.</p>
 <p>W. L. Cowley and H. Levy, Aeronautics in Theory and Experiment, Longmans, Green and Co., 1918, Chap. IV.</p>
 <p>E. B. Wilson, Aeronautics, John Wiley and Sons, 1920, Chap. XI.</p>
+</section>
+<section aria-labelledby="chapter-viii-applications-to-theoretical-physics">
 <h3 id="chapter-viii-applications-to-theoretical-physics">Chapter VIII: Applications to Theoretical Physics</h3>
 <p>The methods of dimensional analysis are worthy of playing a much more important part as a tool in theoretical investigation than has hitherto been realized. No investigator should allow himself to proceed to the detailed solution of a problem until he has made a dimensional analysis of the nature of the solution which will be obtained, and convinced himself by appeal to experiment that the points of view embodied in the underlying equations are sound.</p>
 <p>Probably one difficulty that has been particularly troublesome in theoretical applications has been the matter of dimensional constants; it is in just such theoretical investigations that dimensional constants are most likely to appear, and with no clear conception of the nature of a dimensional constant or when to expect its appearance, hesitancy is natural in applying the method. But after the discussion of the preceding pages, the matter of dimensional constants should now be readily handled in any special problem.</p>
@@ -805,6 +854,8 @@ figcaption {
 <p>(7) A. S. Eddington, Report on Gravitation, Lon. Phys. Soc., 1918, p. 91.</p>
 <p>(8) R. C. Tolman, Phys. Rev. 3, 244, 1914.</p>
 <p>(9) Private communication from Lewis.</p>
+</section>
+<section aria-labelledby="problems">
 <h2 id="problems">Problems</h2>
 <p>1. The gas constant in the equation <math alttext="pv = RT" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>p</mi><mi>v</mi><mo>=</mo><mi>R</mi><mi>T</mi></mrow></math>, has the value 0.08207 when the pressure <math alttext="p" xmlns="http://www.w3.org/1998/Math/MathML"><mi>p</mi></math> is expressed in atmospheres, the volume <math alttext="v" xmlns="http://www.w3.org/1998/Math/MathML"><mi>v</mi></math> is the volume in liters of 1 gm mol, and <math alttext="T" xmlns="http://www.w3.org/1998/Math/MathML"><mi>T</mi></math> is absolute Centigrade degrees. What is <math alttext="R" xmlns="http://www.w3.org/1998/Math/MathML"><mi>R</mi></math> when <math alttext="p" xmlns="http://www.w3.org/1998/Math/MathML"><mi>p</mi></math> is expressed in <math alttext="\text{dynes/cm}^2" xmlns="http://www.w3.org/1998/Math/MathML"><msup><mtext mathvariant="normal">dynes/cm</mtext><mn>2</mn></msup></math> and <math alttext="v" xmlns="http://www.w3.org/1998/Math/MathML"><mi>v</mi></math> is in <math alttext="\text{cm}^3" xmlns="http://www.w3.org/1998/Math/MathML"><msup><mtext mathvariant="normal">cm</mtext><mn>3</mn></msup></math>?</p>
 <p>2. The thermal conductivity of copper is 0.92 cal. per <math alttext="\text{cm}^2" xmlns="http://www.w3.org/1998/Math/MathML"><msup><mtext mathvariant="normal">cm</mtext><mn>2</mn></msup></math> per sec per 1° per cm temperature gradient. What is it in B.T.U. per hour per square foot for a temperature gradient of 1° Fahrenheit per foot? (This last is the engineering unit.)</p>
@@ -838,6 +889,9 @@ figcaption {
 <p>30. An electron is projected with velocity <math alttext="v" xmlns="http://www.w3.org/1998/Math/MathML"><mi>v</mi></math> through a magnetic field at right angles to its velocity. Given that the radius of curvature of its path is directly proportional to its velocity, show that the radius of curvature is also proportional to the mass of the electron, and inversely proportional to the field and the charge.</p>
 <p>31. In all electrodynamical problems into whose solution the velocity of light enters, the unit of time may be so defined that the velocity of light is unity, and two fundamental units, of mass and time, suffice. Write the dimensions of the various electric and magnetic quantities in terms of these units. Obtain the formula for the mass of an electron in terms of its mass and radius. . . . Problems involving the gravitational constant may also be solved with only the units of mass and length as fundamental. Discuss the formula for the mass of the electron with gravitational units.</p>
 <p>32. The Rydberg constant (of the dimensions of a frequency) derived by Bohr&#x27;s argument for a hydrogen atom is of the form <math alttext="N = \text{Const}\, m e^4/h^3" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>N</mi><mo>=</mo><mtext mathvariant="normal">Const</mtext><mspace width="0.167em"></mspace><mi>m</mi><msup><mi>e</mi><mn>4</mn></msup><mi>/</mi><msup><mi>h</mi><mn>3</mn></msup></mrow></math>, where <math alttext="e" xmlns="http://www.w3.org/1998/Math/MathML"><mi>e</mi></math> and <math alttext="m" xmlns="http://www.w3.org/1998/Math/MathML"><mi>m</mi></math> are the mass and the charge of the electron, and <math alttext="h" xmlns="http://www.w3.org/1998/Math/MathML"><mi>h</mi></math> is Planck&#x27;s quantum of action.</p>
+</section>
+</article>
+</main>
 
 </body>
 </html>

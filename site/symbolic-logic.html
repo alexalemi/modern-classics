@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Symbolic Logic &mdash; Lewis Carroll</title>
+	<meta name="description" content="The author of Alice teaching logic to children as a board game with red and grey counters — cats that understand French, and a club with no members. Retold in modern English, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/symbolic-logic.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="Symbolic Logic — Lewis Carroll">
+	<meta property="og:description" content="The author of Alice teaching logic to children as a board game with red and grey counters — cats that understand French, and a club with no members. Retold in modern English, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/symbolic-logic.html">
+	<meta property="og:image" content="https://emend.press/covers/share/symbolic-logic.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,28 +192,32 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>Symbolic Logic</h1>
-	<h3>Part I, Elementary</h3>
-	<h3>by Lewis Carroll</h3>
+	<p class="title-line">Part I, Elementary</p>
+	<p class="title-line">by Lewis Carroll</p>
 	<p class="center">
 	<s>1896</s> 2026
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is an AI modernization of Symbolic Logic into contemporary English. The original is available from <a href="https://www.gutenberg.org/ebooks/28696">Project Gutenberg</a>. Also available as an <a href="ebooks/lewis-carroll_symbolic-logic.epub">epub</a>. <a href="symbolic-logic-original.html">The original text is also here</a>.</i></p>
 
 	<hr>
+<section aria-labelledby="editors-introduction">
 <h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
 <p>Lewis Carroll published this in 1896, two years before he died, and hoped it would be taken up in schools and in private families as a healthy mental recreation, which he said would repay ten times the labour he had spent on it. The advertisement at the front promises Parts II and III — &quot;should life, and health, and opportunity be granted me&quot; — and lists their contents. He never wrote them.</p>
 <p>Part I teaches the whole of elementary formal logic — propositions, syllogisms, soriteses, fallacies — and teaches it as a board game. You draw a square and divide it into cells, each standing for a combination of attributes. You lay a red counter in a cell to say that something of that kind exists, and a grey one to say that nothing does, and then you read the conclusion off the board. Carroll sold the blank diagrams and nine counters through Macmillan for threepence. He is writing for children of twelve and fourteen, and he does not talk down to them for a sentence.</p>
 <p>The difficulty is not that the book is hard. It is that the logic that came after him threw his vocabulary away, so a reader with modern training is worse off than one with none. A Premiss is what we spell premise. The Eliminands are the terms a syllogism gets rid of; the Retinends are the ones it keeps. Univ. is the Universe of Discourse, the class of things under discussion. The diagram has a compass geography — the North Half, the Inner portion, the West — and those are coordinates on the board, not descriptions. All of it is kept here exactly as he wrote it, capital letters included, because in this book the words are the machine and it does not run without them. The opposite decision was taken for his Pillow Problems, also in this collection, where the old notation carries no part of the argument and has been modernised; A Tangled Tale and Euclid and His Modern Rivals are here as well.</p>
 <p>He is funny throughout. Cats understand French. Three ruffians plead guilty, so no verdict is returned and a whole syllogism collapses. A friend founds a club on strictly logical principles and announces that some of its members are millionaires, though the club has no members at all. The address &quot;To Learners&quot; is a short account of how to read a hard book: begin at the beginning, do not dip, do not go on until you understand, and find a genial friend to talk the difficulties over with.</p>
 <p>Two things have been added and one has been changed. The original prints three hundred and eight diagrams and never says what is drawn on them, so a caption has been written for each, naming which cell holds which counter; several hundred page references now point to chapters instead. And five exercises whose terms were racial or antisemitic have had those terms replaced. The logic is indifferent to what the classes are called, and this is a book that asks a child of twelve to handle the propositions as their own.</p>
+</section>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p><a href="#advertisement">Advertisement</a></p>
 <p><a href="#part-ii-advanced">Part II. Advanced</a></p>
@@ -235,16 +265,25 @@ figcaption {
 <p><a href="#addressed-to-teachers">Addressed to Teachers</a></p>
 <p><a href="#notes-to-the-appendix">Notes to the Appendix</a></p>
 <p><a href="#index">Index</a></p>
+</nav>
 
 <hr>
+<article>
+<section aria-labelledby="advertisement">
 <h2 id="advertisement">Advertisement</h2>
 <p>An envelope containing two blank Diagrams — a Biliteral and a Triliteral one — together with 9 counters (4 Red and 5 Grey) may be had from Messrs. Macmillan for 3d., or 4d. by post.</p>
 <p>I shall be grateful to any Reader of this book who will point out any mistakes or misprints he happens to notice in it, or any passage he thinks is not clearly expressed.</p>
 <p>I have a quantity of manuscript in hand for Parts II and III, and hope to be able — should life, and health, and opportunity be granted me — to publish them in the course of the next few years. Their contents will be as follows.</p>
+</section>
+<section aria-labelledby="part-ii-advanced">
 <h2 id="part-ii-advanced">Part II. Advanced</h2>
 <p>Further investigations into the subjects of Part I. Propositions of other forms, such as &quot;Not-all x are y&quot;. Triliteral and Multiliteral Propositions, such as &quot;All abc are de&quot;. Hypotheticals. Dilemmas. And so on.</p>
+</section>
+<section aria-labelledby="part-iii-transcendental">
 <h2 id="part-iii-transcendental">Part III. Transcendental</h2>
 <p>The analysis of a Proposition into its Elements. Numerical and Geometrical Problems. The Theory of Inference. The Construction of Problems. And many other Curiosa Logica.</p>
+</section>
+<section aria-labelledby="preface-to-the-fourth-edition">
 <h2 id="preface-to-the-fourth-edition">Preface to the Fourth Edition</h2>
 <p>The chief alterations since the First Edition have been made in the Chapter on &quot;Classification&quot; (Book One, Chapters II and III) and in the Book on &quot;Propositions&quot; (Book Two, Chapters I to III). The chief additions have been the questions on words and phrases added to the Examination Papers in Book Seven, Chapter II, and the Notes inserted in the Notes and in the section Addressed to Teachers.</p>
 <p>In Book One, Chapter II, I have adopted a new definition of &quot;Classification&quot; which lets me treat the whole Universe as a &quot;Class&quot;, and so do away with the very awkward phrase &quot;a Set of Things&quot;.</p>
@@ -262,6 +301,8 @@ figcaption {
 <p>L. C.</p>
 <p>29, Bedford Street, Strand.
 Christmas, 1896.</p>
+</section>
+<section aria-labelledby="to-learners">
 <h2 id="to-learners">To Learners</h2>
 <p>[Note: some remarks addressed to Teachers will be found in the Appendix.]</p>
 <p>The Learner who wants to test the question fairly — whether this little book does or does not supply the materials for a thoroughly interesting mental recreation — is earnestly advised to adopt the following Rules.</p>
@@ -279,7 +320,10 @@ Christmas, 1896.</p>
 <p>L. C.</p>
 <p>29, Bedford Street, Strand.
 February 21, 1896.</p>
+</section>
+<section class="part" aria-labelledby="book-one">
 <h2 id="book-one" class="center">Book One</h2>
+<section aria-labelledby="book-one-chapter-i-introductory">
 <h2 id="book-one-chapter-i-introductory">Book One, Chapter I: Introductory</h2>
 <p>The Universe contains &quot;Things&quot;.</p>
 <p>[For example: &quot;I&quot;, &quot;London&quot;, &quot;roses&quot;, &quot;redness&quot;, &quot;old English books&quot;, &quot;the letter I received yesterday&quot;.]</p>
@@ -290,6 +334,8 @@ February 21, 1896.</p>
 <p>Any Attribute, or any Set of Attributes, may be called an &quot;Adjunct&quot;.</p>
 <p>[This word is introduced simply to save the constant repetition of the phrase &quot;Attribute or Set of Attributes&quot;.</p>
 <p>[Thus we may say that a rose has the Attribute &quot;red&quot; — or the Adjunct &quot;red&quot;, whichever we prefer; or we may say that it has the Adjunct &quot;red, scented and full-blown&quot;.]]</p>
+</section>
+<section aria-labelledby="book-one-chapter-ii-classification">
 <h2 id="book-one-chapter-ii-classification">Book One, Chapter II: Classification</h2>
 <p>&quot;Classification&quot;, or the forming of Classes, is a Mental Process in which we imagine that we have put certain Things together in a group. Such a group is called a &quot;Class&quot;.</p>
 <p>The Process can be carried out in three different ways.</p>
@@ -307,6 +353,8 @@ February 21, 1896.</p>
 <p>[Thus &quot;London&quot; may be regarded as the one-Member Class picked out of the Class &quot;towns&quot;, having as its Differentia &quot;having four million inhabitants&quot;.]</p>
 <p>A Class containing two or more Members is sometimes regarded as one single Thing. Regarded that way, it may possess an Adjunct that no Member of it possesses on its own.</p>
 <p>[Thus the Class &quot;the soldiers of the Tenth Regiment&quot;, regarded as one single Thing, may possess the Attribute &quot;formed in square&quot;, which no Member of it possesses on his own.]</p>
+</section>
+<section aria-labelledby="book-one-chapter-iii-division">
 <h2 id="book-one-chapter-iii-division">Book One, Chapter III: Division</h2>
 <p>§ 1</p>
 <h4>Introductory</h4>
@@ -338,6 +386,8 @@ February 21, 1896.</p>
 (3) foreign old;
 (4) foreign new.]</p>
 <p>[The Reader will easily see that these are the very same four Classes as before.]]</p>
+</section>
+<section aria-labelledby="book-one-chapter-iv-names">
 <h2 id="book-one-chapter-iv-names">Book One, Chapter IV: Names</h2>
 <p>The word &quot;Thing&quot;, which conveys the idea of a Thing without any idea of an Adjunct, represents any single Thing. Any other word (or phrase) which conveys the idea of a Thing together with the idea of an Adjunct represents any Thing that possesses that Adjunct — that is, it represents any Member of the Class to which that Adjunct is peculiar.</p>
 <p>Such a word (or phrase) is called a &quot;Name&quot;; and if there is an existing Thing which it represents, it is said to be a Name of that Thing.</p>
@@ -357,6 +407,8 @@ February 21, 1896.</p>
 or (2) a whole Class, regarded as one single Thing.</p>
 <p>[Thus, when I say &quot;Some soldiers of the Tenth Regiment are tall&quot;, or &quot;The soldiers of the Tenth Regiment are brave&quot;, I am using the Name &quot;soldiers of the Tenth Regiment&quot; in the first sense; it is just as if I were pointing at each of them separately and saying &quot;This soldier of the Tenth Regiment is tall&quot;, &quot;That soldier of the Tenth Regiment is tall&quot;, and so on.</p>
 <p>[But when I say &quot;The soldiers of the Tenth Regiment are formed in square&quot;, I am using the phrase in the second sense; it is just as if I were saying &quot;The Tenth Regiment is formed in square&quot;.]]</p>
+</section>
+<section aria-labelledby="book-one-chapter-v-definitions">
 <h2 id="book-one-chapter-v-definitions">Book One, Chapter V: Definitions</h2>
 <p>Plainly, every Member of a Species is also a Member of the Genus out of which that Species was picked, and it possesses the Differentia of that Species. Hence it can be represented by a Name in two parts: one part a Name representing any Member of the Genus, the other the Differentia of that Species. Such a Name is called a &quot;Definition&quot; of any Member of that Species, and to give it such a Name is to &quot;define&quot; it.</p>
 <p>[Thus we may define a &quot;Treasure&quot; as a &quot;valuable Thing&quot;. Here we regard &quot;Things&quot; as the Genus and &quot;valuable&quot; as the Differentia.]</p>
@@ -378,7 +430,11 @@ or (2) a whole Class, regarded as one single Thing.</p>
 <p>&quot;the Town which has four million inhabitants.&quot;</p>
 <p>[Note that we use the article &quot;the&quot; here instead of &quot;a&quot;, because we happen to know that there is only one such Thing.</p>
 <p>[The Reader can set himself any number of Examples of this Process simply by choosing the Name of any common Thing — &quot;house&quot;, &quot;tree&quot;, &quot;knife&quot; — making a Definition for it, and then testing his answer against any English Dictionary.]]</p>
+</section>
+</section>
+<section class="part" aria-labelledby="book-two">
 <h2 id="book-two" class="center">Book Two</h2>
+<section aria-labelledby="book-two-chapter-i-propositions-generally">
 <h2 id="book-two-chapter-i-propositions-generally">Book Two, Chapter I: Propositions Generally</h2>
 <p>§ 1</p>
 <h4>Introductory</h4>
@@ -411,6 +467,8 @@ or (2) a whole Class, regarded as one single Thing.</p>
 <p>A Proposition whose Subject is an Individual is to be regarded as Universal.</p>
 <p>[Take as an example the Proposition &quot;John is not well&quot;. This of course implies that there is an Individual whom the speaker means when he says &quot;John&quot;, and whom the listener knows to be meant. Hence the Class &quot;men referred to by the speaker when he says &#x27;John&#x27;&quot; is a one-Member Class, and the Proposition is equivalent to &quot;All the men who are referred to by the speaker when he says &#x27;John&#x27; are not well&quot;.]</p>
 <p>Propositions are of two kinds: &quot;Propositions of Existence&quot; and &quot;Propositions of Relation&quot;. They shall be discussed separately.</p>
+</section>
+<section aria-labelledby="book-two-chapter-ii-propositions-of-existence">
 <h2 id="book-two-chapter-ii-propositions-of-existence">Book Two, Chapter II: Propositions of Existence</h2>
 <p>A &quot;Proposition of Existence&quot;, when in normal form, has for its Subject the Class &quot;existing Things&quot;.</p>
 <p>Its Sign of Quantity is &quot;Some&quot; or &quot;No&quot;.</p>
@@ -430,6 +488,8 @@ or (2) a whole Class, regarded as one single Thing.</p>
 (3) &quot;The Class &#x27;men 50 feet high&#x27; does not exist&quot;;
 (4) &quot;There are not any men 50 feet high&quot;;
 (5) &quot;There are no men 50 feet high&quot;.]]</p>
+</section>
+<section aria-labelledby="book-two-chapter-iii-propositions-of-relation">
 <h2 id="book-two-chapter-iii-propositions-of-relation">Book Two, Chapter III: Propositions of Relation</h2>
 <p>§ 1</p>
 <h4>Introductory</h4>
@@ -637,12 +697,18 @@ or (2) a whole Class, regarded as one single Thing.</p>
  and
  &quot;No | existing Things | are | poor bankers.&quot;]]</pre>
 <p>[Work Examples § 1, 1–4 (Book Eight, Chapter I).]</p>
+</section>
+</section>
+<section class="part" aria-labelledby="book-three">
 <h2 id="book-three" class="center">Book Three</h2>
+<section aria-labelledby="the-biliteral-diagram">
 <h2 id="the-biliteral-diagram">The Biliteral Diagram</h2>
 <figure id="fig-1">
 <img src="images/symbolic-logic/fig1.png" alt="The Biliteral Diagram — a square divided into four Cells, lettered xy and xy prime along the North Half and x prime y and x prime y prime along the South Half." width="101" height="101" loading="lazy">
 <figcaption><b>Figure 1</b> &mdash; The Biliteral Diagram — a square divided into four Cells, lettered xy and xy prime along the North Half and x prime y and x prime y prime along the South Half.</figcaption>
 </figure>
+</section>
+<section aria-labelledby="book-three-chapter-i-symbols-and-cells">
 <h2 id="book-three-chapter-i-symbols-and-cells">Book Three, Chapter I: Symbols and Cells</h2>
 <p>First, let us suppose that the Diagram above is an enclosure assigned to a certain Class of Things which we have chosen as our &quot;Universe of Discourse&quot;, or, more briefly, our &quot;Univ.&quot;</p>
 <p>[For example, we might say &quot;Let Univ. be &#x27;books&#x27;&quot;; and we might imagine the Diagram to be a large table assigned to all &quot;books&quot;.]</p>
@@ -687,12 +753,16 @@ or (2) a whole Class, regarded as one single Thing.</p>
 <tr><td></td><td>and so on, and so on.</td></tr>
 </table>
 <p>After a little practice he will find he can do without the blank Diagram altogether, and will see it mentally — &quot;in my mind&#x27;s eye, Horatio!&quot; — while answering his genial friend&#x27;s questions. Once he has got that far, he may safely go on to the next Chapter.</p>
+</section>
+<section aria-labelledby="book-three-chapter-ii-counters">
 <h2 id="book-three-chapter-ii-counters">Book Three, Chapter II: Counters</h2>
 <p>Let us agree that a Red Counter placed inside a Cell shall mean &quot;This Cell is occupied&quot; — that is, &quot;There is at least one Thing in it.&quot;</p>
 <p>Let us also agree that a Red Counter placed on the partition between two Cells shall mean &quot;The Compartment made up of these two Cells is occupied, but it is not known whereabouts in it the occupants are.&quot; So it may be taken to mean &quot;At least one of these two Cells is occupied; possibly both are.&quot;</p>
 <p>Our ingenious American cousins have invented a phrase for the state of a man who has not yet made up his mind which of two political parties to join: such a man is said to be &quot;sitting on the fence&quot;. The phrase describes the condition of the Red Counter exactly.</p>
 <p>Let us also agree that a Grey Counter placed inside a Cell shall mean &quot;This Cell is empty&quot; — that is, &quot;There is nothing in it.&quot;</p>
 <p>[The Reader had better provide himself with 4 Red Counters and 5 Grey ones.]</p>
+</section>
+<section aria-labelledby="book-three-chapter-iii-representation-of-propositions">
 <h2 id="book-three-chapter-iii-representation-of-propositions">Book Three, Chapter III: Representation of Propositions</h2>
 <p>§ 1</p>
 <h4>Introductory</h4>
@@ -960,6 +1030,8 @@ and we should then convert it by interchanging its Terms, so that it would be]</
 <figcaption><b>Figure 43</b> &mdash; A Red Counter in each of the two East Cells.</figcaption>
 </figure></td></tr>
 </table>
+</section>
+<section aria-labelledby="book-three-chapter-iv-interpretation-of-the-biliteral-diagram">
 <h2 id="book-three-chapter-iv-interpretation-of-the-biliteral-diagram">Book Three, Chapter IV: Interpretation of the Biliteral Diagram</h2>
 <p>The Diagram is supposed to be set before us with certain Counters placed on it, and the problem is to find out what Proposition, or Propositions, the Counters represent.</p>
 <p>Since the process is simply the reverse of the one discussed in the previous Chapter, we can help ourselves to the results obtained there, as far as they go.</p>
@@ -1028,7 +1100,11 @@ A. &quot;No x′y exist&quot; = &quot;No x′ are y&quot; = &quot;No y are x′&
  and so on, and so on.</pre>
 <p>At first the Examinee will need to have the Board and Counters in front of him; but he will soon learn to do without them, and to answer with his eyes shut or gazing into vacancy.</p>
 <p>[Work Examples § 1, 5–8 (Book Eight, Chapter I).]</p>
+</section>
+</section>
+<section class="part" aria-labelledby="book-four">
 <h2 id="book-four" class="center">Book Four</h2>
+<section aria-labelledby="the-triliteral-diagram">
 <h2 id="the-triliteral-diagram">The Triliteral Diagram</h2>
 <figure id="fig-50">
 <img src="images/symbolic-logic/fig50.png" alt="The Biliteral Diagram of Book Three — a square divided into four Cells, lettered xy and xy′ across the North Half and x′y and x′y′ across the South Half." width="201" height="201" loading="lazy">
@@ -1038,6 +1114,8 @@ A. &quot;No x′y exist&quot; = &quot;No x′ are y&quot; = &quot;No y are x′&
 <img src="images/symbolic-logic/fig51.png" alt="The Triliteral Diagram — the same square with an Inner Square drawn inside it, cutting each of the four Cells into two. The four Inner Cells, lettered xym, xy′m, x′ym and x′y′m, make up the Inner Square; the four Outer Cells, lettered xym′, xy′m′, x′ym′ and x′y′m′, make up the Outer Border." width="201" height="201" loading="lazy">
 <figcaption><b>Figure 51</b> &mdash; The Triliteral Diagram — the same square with an Inner Square drawn inside it, cutting each of the four Cells into two. The four Inner Cells, lettered xym, xy′m, x′ym and x′y′m, make up the Inner Square; the four Outer Cells, lettered xym′, xy′m′, x′ym′ and x′y′m′, make up the Outer Border.</figcaption>
 </figure>
+</section>
+<section aria-labelledby="book-four-chapter-i-symbols-and-cells">
 <h2 id="book-four-chapter-i-symbols-and-cells">Book Four, Chapter I: Symbols and Cells</h2>
 <p>First, let us suppose that the left-hand Diagram above is the Biliteral Diagram we have been using in Book Three, and that we change it into a Triliteral Diagram by drawing an Inner Square, so as to cut each of its 4 Cells into 2 parts and so make 8 Cells in all. The right-hand Diagram shows the result.</p>
 <p>[The Reader is strongly advised, in reading this Chapter, not to keep looking back at the Diagrams above, but to make a large copy of the right-hand one for himself with no letters on it, to have it beside him as he reads, and to keep his finger on whichever part of it he is reading about.]</p>
@@ -1101,6 +1179,8 @@ A. &quot;No x′y exist&quot; = &quot;No x′ are y&quot; = &quot;No y are x′&
 <tr><td>x′y′m</td><td>South-East Quarter, Inner Portion.</td></tr>
 <tr><td>x′y′m′</td><td>South-East Quarter, Outer Portion.</td></tr>
 </table>
+</section>
+<section aria-labelledby="book-four-chapter-ii-representation-of-propositions-in-terms-of-x-and-m">
 <h2 id="book-four-chapter-ii-representation-of-propositions-in-terms-of-x-and-m">Book Four, Chapter II: Representation of Propositions in terms of x and m</h2>
 <p>§ 1</p>
 <p>Representation of Propositions of Existence in terms of x and m, or of y and m</p>
@@ -1269,6 +1349,8 @@ A. &quot;No x′y exist&quot; = &quot;No x′ are y&quot; = &quot;No y are x′&
 <figcaption><b>Figure 88</b> &mdash; A Red Counter inside the East Half&#x27;s Outer Portion, and a Grey Counter in each of the two Outer Cells of the West Half.</figcaption>
 </figure></td><td>All m′ are y′</td></tr>
 </table>
+</section>
+<section aria-labelledby="book-four-chapter-iii-two-propositions-of-relation-on-one-diagram">
 <h2 id="book-four-chapter-iii-two-propositions-of-relation-on-one-diagram">Book Four, Chapter III: Two Propositions of Relation on One Diagram</h2>
 <p>The Reader had better now begin drawing little Diagrams for himself and marking them with the Digits &quot;I&quot; and &quot;O&quot; instead of using the Board and Counters. He may put a &quot;I&quot; for a Red Counter — read it as &quot;There is at least one Thing here&quot; — and a &quot;O&quot; for a Grey Counter — read it as &quot;There is nothing here&quot;.</p>
 <p>The Pair of Propositions we shall have to represent will always be one in terms of x and m and the other in terms of y and m.</p>
@@ -1361,6 +1443,8 @@ A. &quot;No x′y exist&quot; = &quot;No x′ are y&quot; = &quot;No y are x′&
 </figure></td></tr>
 </table>
 <p>[Work Examples § 1, 9–12 (Book Eight, Chapter I); § 2, 1–20 (Book Eight, Chapter I).]</p>
+</section>
+<section aria-labelledby="book-four-chapter-iv-interpretation-of-the-triliteral-diagram">
 <h2 id="book-four-chapter-iv-interpretation-of-the-triliteral-diagram">Book Four, Chapter IV: Interpretation of the Triliteral Diagram</h2>
 <p>The problem before us is this: given a marked Triliteral Diagram, find out what Propositions of Relation, in terms of x and y, are represented on it.</p>
 <p>The best plan for a beginner is to draw a Biliteral Diagram beside it and transfer from the one to the other all the information he can. He can then read the Propositions he wants off the Biliteral Diagram. After a little practice he will be able to do without the Biliteral Diagram and read the result off the Triliteral Diagram itself.</p>
@@ -1444,7 +1528,11 @@ A. &quot;No x′y exist&quot; = &quot;No x′ are y&quot; = &quot;No y are x′&
 <p>[The S.E. Quarter does not yield enough information to use.]</p>
 <p>[We read the result off as &quot;All y are x.&quot;]]</p>
 <p>[Review Tables V and VI (Book Four, Chapter II). Work Examples § 1, 13–16 (Book Eight, Chapter I); § 2, 21–32 (Book Eight, Chapter I); § 3, 1–20 (Book Eight, Chapter I).]</p>
+</section>
+</section>
+<section class="part" aria-labelledby="book-five">
 <h2 id="book-five" class="center">Book Five</h2>
+<section aria-labelledby="book-five-chapter-i-introductory">
 <h2 id="book-five-chapter-i-introductory">Book Five, Chapter I: Introductory</h2>
 <p>When a Trio of Biliteral Propositions of Relation is such that:</p>
 <pre class="outline">(1) all their six Terms are Species of the same Genus,
@@ -1487,6 +1575,8 @@ A. &quot;No x′y exist&quot; = &quot;No x′ are y&quot; = &quot;No y are x′&
 <pre class="outline">[&quot;All cats understand French;
    Some chickens are cats;
    ∴ Some chickens understand French&quot;.]]</pre>
+</section>
+<section aria-labelledby="book-five-chapter-ii-problems-in-syllogisms">
 <h2 id="book-five-chapter-ii-problems-in-syllogisms">Book Five, Chapter II: Problems in Syllogisms</h2>
 <p>§ 1</p>
 <h4>Introductory</h4>
@@ -1784,7 +1874,11 @@ A. &quot;No x′y exist&quot; = &quot;No x′ are y&quot; = &quot;No y are x′&
 <p>[And then your innocent friend will say &quot;Hum! Ha! I must think that over a bit!&quot;]</p>
 <p>[You may then explain to him, as a convenient test of whether a Syllogism is sound, that if circumstances can be invented which would make the Conclusion false without interfering with the truth of the Premisses, the Syllogism must be unsound.]]</p>
 <p>[Review Tables V to VIII (Book Four, Chapter II). Work Examples § 4, 7–12 (Book Eight, Chapter I); § 5, 7–12 (Book Eight, Chapter I); § 6, 1–10 (Book Eight, Chapter I); § 7, 1–6 (Book Eight, Chapter I).]</p>
+</section>
+</section>
+<section class="part" aria-labelledby="book-six">
 <h2 id="book-six" class="center">Book Six</h2>
+<section aria-labelledby="book-six-chapter-i-introductory">
 <h2 id="book-six-chapter-i-introductory">Book Six, Chapter I: Introductory</h2>
 <p>Let us agree that &quot;x1&quot; shall mean &quot;Some existing Things have the Attribute x&quot;, or, more briefly, &quot;Some x exist&quot;; and that &quot;xy1&quot; shall mean &quot;Some xy exist&quot;, and so on. Such a Proposition may be called an &quot;Entity&quot;.</p>
 <p>[Note that when there are two letters in the expression it does not matter in the least which stands first: &quot;xy1&quot; and &quot;yx1&quot; mean exactly the same.]</p>
@@ -1794,6 +1888,8 @@ A. &quot;No x′y exist&quot; = &quot;No x′ are y&quot; = &quot;No y are x′&
 <p>Also that &quot;¶&quot; shall mean &quot;would, if true, prove&quot;.</p>
 <p>[Thus &quot;x0 ¶ xy0&quot; means &quot;The Proposition &#x27;No x exist&#x27; would, if true, prove the Proposition &#x27;No xy exist&#x27;&quot;.]</p>
 <p>When two Letters are both accented, or both unaccented, they are said to have &quot;Like Signs&quot;, or to be &quot;Like&quot;; when one is accented and the other is not, they are said to have &quot;Unlike Signs&quot;, or to be &quot;Unlike&quot;.</p>
+</section>
+<section aria-labelledby="book-six-chapter-ii-representation-of-propositions-of-relation">
 <h2 id="book-six-chapter-ii-representation-of-propositions-of-relation">Book Six, Chapter II: Representation of Propositions of Relation</h2>
 <p>Let us take first the Proposition &quot;Some x are y&quot;.</p>
 <p>This, we know, is equivalent to the Proposition of Existence &quot;Some xy exist&quot; (see Book Three, Chapter III). So it may be represented by the expression &quot;xy1&quot;.</p>
@@ -1820,6 +1916,8 @@ A. &quot;No x′y exist&quot; = &quot;No x′ are y&quot; = &quot;No y are x′&
 <p>It will be handy to remember that in translating a Proposition beginning with &quot;All&quot; from abstract form into subscript form, or the other way round, the Predicate changes sign — that is, it changes from positive to negative, or else from negative to positive.</p>
 <p>[Thus the Proposition &quot;All y are x′&quot; becomes &quot;y1x0&quot;, where the Predicate changes from x′ to x.</p>
 <p>[Again, the expression &quot;x′1y′0&quot; becomes &quot;All x′ are y&quot;, where the Predicate changes from y′ to y.]]</p>
+</section>
+<section aria-labelledby="book-six-chapter-iii-syllogisms">
 <h2 id="book-six-chapter-iii-syllogisms">Book Six, Chapter III: Syllogisms</h2>
 <p>§ 1</p>
 <h4>Representation of Syllogisms</h4>
@@ -2081,7 +2179,11 @@ Two Nullities, with Like Eliminands asserted to exist, yield an Entity, in which
 <p>If their Eliminands are Like, it is a case of Fig. II; if Unlike, it is a case of &quot;Fallacy of Unlike Eliminands with an Entity-Premiss&quot;.</p>
 <p>(4) If they are a Pair of Entities, it is a case of &quot;Fallacy of two Entity-Premisses&quot;.</p>
 <p>[Work Examples § 4, 1–11 (Book Eight, Chapter I); § 5, 1–12 (Book Eight, Chapter I); § 6, 7–12 (Book Eight, Chapter I); § 7, 7–12 (Book Eight, Chapter I).]</p>
+</section>
+</section>
+<section class="part" aria-labelledby="book-seven">
 <h2 id="book-seven" class="center">Book Seven</h2>
+<section aria-labelledby="book-seven-chapter-i-introductory">
 <h2 id="book-seven-chapter-i-introductory">Book Seven, Chapter I: Introductory</h2>
 <p>When a Set of three or more Biliteral Propositions is such that all their Terms are Species of the same Genus, and they are also so related that two of them taken together yield a Conclusion, which taken with another of them yields another Conclusion, and so on until all have been taken, then plainly, if the original Set were true, the last Conclusion would be true as well.</p>
 <p>Such a Set, with the last Conclusion tacked on, is called a &quot;Sorites&quot;. The original Set of Propositions is called its &quot;Premisses&quot;; each of the intermediate Conclusions is called a &quot;Partial Conclusion&quot; of the Sorites; the last Conclusion is called its &quot;Complete Conclusion&quot;, or, more briefly, its &quot;Conclusion&quot;; the Genus of which all the Terms are Species is called its &quot;Universe of Discourse&quot;, or, more briefly, its &quot;Univ.&quot;; the Terms used as Eliminands in the Syllogisms are called its &quot;Eliminands&quot;; and the two Terms that are retained, and so appear in the Conclusion, are called its &quot;Retinends&quot;.</p>
@@ -2108,6 +2210,8 @@ Two Nullities, with Like Eliminands asserted to exist, yield an Entity, in which
    All h are e′.
            ∴ All h are d&quot;.]</pre>
 <p>[In the Sorites above, the 3 Partial Conclusions are the Propositions &quot;No a are c′&quot;, &quot;No a are d′&quot; and &quot;No d′ are e′&quot;; but if the Premisses were arranged in other ways, other Partial Conclusions might be obtained. Thus the order 4, 1, 5, 2, 3 yields the Partial Conclusions &quot;No e′ are b′&quot;, &quot;All h are b&quot; and &quot;All h are c&quot;. There are nine Partial Conclusions to this Sorites altogether, and the Reader will find it an interesting task to make them all out for himself.]]</p>
+</section>
+<section aria-labelledby="book-seven-chapter-ii-problems-in-soriteses">
 <h2 id="book-seven-chapter-ii-problems-in-soriteses">Book Seven, Chapter II: Problems in Soriteses</h2>
 <p>§ 1</p>
 <h4>Introductory</h4>
@@ -2319,9 +2423,15 @@ that is, ¶ a1e′0;]</p>
 <p>XV. § 5, 89–93; § 6, 37, 38; § 7, 37; § 8, 28; § 9, 19, 38, 57. What is a &quot;Syllogism&quot;? And what are its &quot;Premisses&quot; and its &quot;Conclusion&quot;?</p>
 <p>XVI. § 5, 94–97; § 6, 39; § 7, 38, 39; § 8, 29; § 9, 20, 39, 58. What is a &quot;Sorites&quot;? And what are its &quot;Premisses&quot;, its &quot;Partial Conclusions&quot; and its &quot;Complete Conclusion&quot;?</p>
 <p>XVII. § 5, 98–101; § 6, 40; § 7, 40; § 8, 30; § 9, 21, 41, 59, 60. What are the &quot;Universe of Discourse&quot;, the &quot;Eliminands&quot; and the &quot;Retinends&quot; of a Syllogism? And of a Sorites?</p>
+</section>
+</section>
+<section class="part" aria-labelledby="book-eight">
 <h2 id="book-eight" class="center">Book Eight</h2>
+<section aria-labelledby="examples-answers-and-solutions">
 <h2 id="examples-answers-and-solutions">Examples, Answers, and Solutions</h2>
 <p>[N.B. Every Example below is answered in Chapter II and worked in full in Chapter III.]</p>
+</section>
+<section aria-labelledby="book-eight-chapter-i-examples">
 <h2 id="book-eight-chapter-i-examples">Book Eight, Chapter I: Examples</h2>
 <p>§ 1</p>
 <p>Propositions of Relation, to be reduced to normal form</p>
@@ -3663,6 +3773,8 @@ sheet; n = written by Brown.</p>
 d = detested by me; e = in this house; h = kangaroos; k = killing mice;
 l = loving to gaze at the moon; m = prowling at night; n = suitable for
 pets; r = taking to me.</p>
+</section>
+<section aria-labelledby="book-eight-chapter-ii-answers">
 <h2 id="book-eight-chapter-ii-answers">Book Eight, Chapter II: Answers</h2>
 <p>Answers to § 1</p>
 <table class="math">
@@ -4185,6 +4297,8 @@ pets; r = taking to me.</p>
 <p>58. No cheque of yours, received by me, is payable to order.</p>
 <p>59. I cannot read any of Brown&#x27;s letters.</p>
 <p>60. I always avoid a kangaroo.</p>
+</section>
+<section aria-labelledby="book-eight-chapter-iii-solutions">
 <h2 id="book-eight-chapter-iii-solutions">Book Eight, Chapter III: Solutions</h2>
 <p>§ 1</p>
 <p>Propositions of Relation reduced to normal form</p>
@@ -6164,6 +6278,8 @@ that is ¶ b1e0</p>
 (7)hn̳ 
 ¶ a′h0 † h1, that is ¶ h1a′0</p>
 <p>that is I always avoid a kangaroo.</p>
+</section>
+<section aria-labelledby="notes">
 <h2 id="notes">Notes</h2>
 <p>(A) [See Book Six, Chapter III.]</p>
 <p>One of the favourite objections brought against the Science of Logic by its detractors is that a Syllogism has no real validity as an argument, since it involves the Fallacy of Petitio Principii — that is, &quot;Begging the Question&quot;, the essence of which is that the whole Conclusion is already contained in one of the Premisses.</p>
@@ -6171,6 +6287,8 @@ that is ¶ b1e0</p>
 <p>Thus in Fig. I the Premiss xm0 empties the Inner Cell of the N.W. Quarter, while the Premiss ym0 empties its Outer Cell. So it takes the two Premisses to empty the whole of the N.W. Quarter, and so to prove the Conclusion xy0.</p>
 <p>Again, in Fig. II the Premiss xm0 empties the Inner Cell of the N.W. Quarter. The Premiss ym1 merely tells us that the Inner Portion of the W. Half is occupied, so that we may place a &quot;I&quot; somewhere in it; but if that were all our information we should not know which Cell to put it in, and it would have to &quot;sit on the fence&quot;. It is only when we learn from the other Premiss that the upper of those two Cells is empty that we feel entitled to place the &quot;I&quot; in the lower Cell, and so to prove the Conclusion x′y1.</p>
 <p>Lastly, in Fig. III the information that m exists merely entitles us to place a &quot;I&quot; somewhere in the Inner Square — but it has a large choice of fences to sit on! It takes the Premiss xm0 to drive it out of the N. Half of that Square, and the Premiss ym0 to drive it out of the W. Half. So it takes the two Premisses to drive it into the Inner Portion of the S.E. Quarter, and so to prove the Conclusion x′y′1.</p>
+</section>
+<section aria-labelledby="addressed-to-teachers">
 <h2 id="addressed-to-teachers">Addressed to Teachers</h2>
 <p>§ 1</p>
 <h4>Introductory</h4>
@@ -6705,6 +6823,8 @@ E and A &quot;assert&quot;, but I does not.</p>
  And so, between them both,
  They licked the platter clean.&quot;</pre>
 <p>Solve this as a Sorites Problem, taking lines 3 and 4 as the Conclusion to be proved. You may use as Premisses not only everything asserted here, but also everything we may reasonably understand to be implied.</p>
+</section>
+<section aria-labelledby="notes-to-the-appendix">
 <h2 id="notes-to-the-appendix">Notes to the Appendix</h2>
 <p>(A) [See the Appendix, § 2.]</p>
 <p>It may perhaps occur to the Reader who has studied Formal Logic that the argument applied here to the Propositions I and E will apply equally well to the Propositions I and A — since in the ordinary text-books the Propositions &quot;All xy are z&quot; and &quot;Some xy are not z&quot; are treated as Contradictories. So it may seem to him that the argument might have been put like this:</p>
@@ -6732,6 +6852,8 @@ E and A &quot;assert&quot;, but I does not.</p>
 <pre class="outline">&quot;No conceited child of mine is greedy&quot;;
  &quot;None of my boys could solve this problem&quot;;
  &quot;Some unlearned boys are not choristers.&quot;</pre>
+</section>
+<section aria-labelledby="index">
 <h2 id="index">Index</h2>
 <p>§ 1</p>
 <h4>Tables</h4>
@@ -6829,6 +6951,10 @@ E and A &quot;assert&quot;, but I does not.</p>
 <tr><td>&#x27;Unreal&#x27; Class</td><td>Book One, Chapter II</td></tr>
 <tr><td>&#x27;Unreal&#x27; Name</td><td>Book One, Chapter IV</td></tr>
 </table>
+</section>
+</section>
+</article>
+</main>
 
 </body>
 </html>

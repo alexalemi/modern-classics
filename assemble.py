@@ -692,8 +692,9 @@ def render_introduction(book, original=False):
     text = read_introduction(book)
     if text is None:
         return ""
-    return (f'\n\t<hr>\n<h2 id="{INTRO_ID}">{html.escape(INTRO_HEADING)}</h2>\n'
-            f'{render_body(text)}\n')
+    return (f'\n\t<hr>\n<section aria-labelledby="{INTRO_ID}">\n'
+            f'<h2 id="{INTRO_ID}">{html.escape(INTRO_HEADING)}</h2>\n'
+            f'{render_body(text)}\n</section>\n')
 
 
 def strip_front(lines, expect_heading):
@@ -873,14 +874,25 @@ def build_toc(sections):
 
 
 def build_body(sections, figdir=None, site=None, bare_label=False):
-    out = []
+    """Each section is a <section> named by its heading; a part divider opens
+    a <section class="part"> that holds every section up to the next divider,
+    so the HTML outline is the book's own (Part > Chapter)."""
+    out, in_part = [], False
     for s in sections:
         if s["part_before"]:
+            if in_part:
+                out.append("</section>")
             pid = slugify(s["part_before"].split(":")[0])
+            out.append(f'<section class="part" aria-labelledby="{pid}">')
             out.append(f'<h2 id="{pid}" class="center">{html.escape(s["part_before"])}</h2>')
+            in_part = True
         tag = "h3" if s["is_chapter"] else "h2"
+        out.append(f'<section aria-labelledby="{s["id"]}">')
         out.append(f'<{tag} id="{s["id"]}">{html.escape(s["heading"])}</{tag}>')
         out.append(render_body(s["body"], figdir, site, bare_label))
+        out.append("</section>")
+    if in_part:
+        out.append("</section>")
     return "\n".join(out)
 
 
@@ -924,7 +936,8 @@ def main():
                               restore=args.original)
 
     subtitle = env.get("SUBTITLE", "")
-    subtitle_block = f"\t<h3>{html.escape(subtitle)}</h3>\n" if subtitle else ""
+    subtitle_block = (f'\t<p class="title-line">{html.escape(subtitle)}</p>\n'
+                      if subtitle else "")
     if env.get("SOURCE_URL"):
         name = env.get("SOURCE_NAME", env["SOURCE_URL"])
         source_sentence = (f' The original is available from '
@@ -974,8 +987,17 @@ def main():
                  f'contemporary English.{source_sentence}{epub_sentence}'
                  f'{original_sentence}</i></p>')
 
+    import seo
+    head = seo.head_tags(
+        f"{stem}.html",
+        f"{title} — {env['AUTHOR']}" + (" (original text)" if args.original else ""),
+        seo.describe(book.name, args.original,
+                     env.get("EDITION", "").lower() == "restored")
+        or f"{title} by {env['AUTHOR']}, from the Modern Classics library.",
+        seo.share_image(book.name), kind="book")
     page = (root / "site" / "template.html").read_text()
     for key, val in {
+        "{{HEAD}}": head,
         "{{TITLE}}": title,
         "{{AUTHOR}}": html.escape(env["AUTHOR"]),
         "{{DATE_LINE}}": date_line,

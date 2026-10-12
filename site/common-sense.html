@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Common Sense &mdash; Thomas Paine</title>
+	<meta name="description" content="The pamphlet that talked America into independence. Retold in modern English, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/common-sense.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="Common Sense — Thomas Paine">
+	<meta property="og:description" content="The pamphlet that talked America into independence. Retold in modern English, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/common-sense.html">
+	<meta property="og:image" content="https://emend.press/covers/share/common-sense.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,27 +192,31 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>Common Sense</h1>
-	<h3>by Thomas Paine</h3>
+	<p class="title-line">by Thomas Paine</p>
 	<p class="center">
 	<s>1776</s> 2026
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is an AI modernization of Common Sense into contemporary English. Also available as an <a href="ebooks/thomas-paine_common-sense.epub">epub</a>.</i></p>
 
 	<hr>
+<section aria-labelledby="editors-introduction">
 <h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
 <p>Thomas Paine had been in America a little over a year when he wrote this. He was born at Thetford in Norfolk in 1737, made corsets for a living, worked twice as a tax collector and was dismissed both times, and landed at Philadelphia at the end of 1774 with a letter of introduction from Benjamin Franklin and not much else. Common Sense was published anonymously in January 1776, credited on the title page to an Englishman. The text here is the enlarged edition of 14 February, which adds the appendix.</p>
 <p>The argument it makes was a minority one at the time. Fighting had been going on since Lexington and Concord in April 1775, but most colonists still understood the quarrel as being with Parliament and the ministry, and still hoped for terms. Loyalty to the King was the thing not in question. Paine attacks the King, and behind the King the whole idea of kings, and then says plainly that the colonies should separate now and set up a government of their own. Nobody had put it in print like that before. The pamphlet sold something like a hundred thousand copies in three months, in a country of roughly two and a half million people, and it was reprinted, pirated and read aloud everywhere. Paine took no profit from it.</p>
 <p>The other thing he did deliberately was write it in the plainest English he could manage, for readers who were not gentlemen. There are no Latin tags and no display of classical learning. The arguments are made out of things a farmer or a shipwright already knew: a continent is bigger than an island, a child outgrows milk, nature does not make the satellite larger than the planet. That decision is the reason the pamphlet worked, and it is the ancestor of what this whole collection is trying to do.</p>
 <p>The case runs in four sections. Government is a necessary evil and not the same thing as society. Monarchy has no warrant in nature and, Paine argues at length out of the book of Samuel, none in scripture either; hereditary succession is worse, and William the Conqueror was a French bastard who landed with an armed gang. Reconciliation is finished. America has the timber, the ports and the men to manage alone, and no national debt. The appendix answers the King&#x27;s speech to Parliament and then turns on the Quakers, who had declared against the war.</p>
 <p>Paine is funny, rude and in a hurry, and the pamphlet ends on the sentence about having it in our power to begin the world over again. Locke&#x27;s Two Treatises of Government, which supplies much of the underlying theory, and the Federalist Papers, which argue about what to build eleven years later, are both in this collection.</p>
+</section>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p><a href="#common-sense">Common Sense</a></p>
 <p><a href="#introduction">Introduction</a></p>
@@ -195,8 +225,11 @@ figcaption {
 <p><a href="#thoughts-on-the-present-state-of-american-affairs">Thoughts on the Present State of American Affairs</a></p>
 <p><a href="#of-the-present-ability-of-america-with-some-additional-reflections">Of the Present Ability of America, with Some Additional Reflections</a></p>
 <p><a href="#appendix">Appendix</a></p>
+</nav>
 
 <hr>
+<article>
+<section aria-labelledby="common-sense">
 <h2 id="common-sense">Common Sense</h2>
 <h4>Addressed to the Inhabitants of America</h4>
 <p>On the following subjects:</p>
@@ -212,6 +245,8 @@ Or those whom choice and common good ordain.&quot;
 — Thomson</p>
 <p>Philadelphia
 Printed and sold by W. &amp; T. Bradford, February 14, 1776.</p>
+</section>
+<section aria-labelledby="introduction">
 <h2 id="introduction">Introduction</h2>
 <p>The ideas in the following pages may not yet be popular enough to win widespread approval. When people have gone a long time without questioning whether something is wrong, it starts to look right on the surface, and the first reaction is always a loud outcry in defense of the way things have always been done. But that noise dies down quickly. Time makes more converts than reason.</p>
 <p>When power has been violently abused for long enough, people naturally begin to question whether that power was ever legitimate in the first place — and they end up questioning things they never would have thought about if they hadn&#x27;t been pushed to the breaking point. The King of England has taken it upon himself to personally back Parliament in what he calls their rights, and since the good people of this country are crushed under the weight of that partnership, they have every right to examine the claims of both King and Parliament — and to reject the overreach of either one.</p>
@@ -221,6 +256,8 @@ Printed and sold by W. &amp; T. Bradford, February 14, 1776.</p>
 <p>P.S. The publication of this new edition has been delayed in order to address any attempts to argue against the case for independence — if any such attempts had appeared. Since no response has come, it&#x27;s now safe to assume that none will, since the window for producing one has long since passed.</p>
 <p>As for who wrote this — that&#x27;s entirely beside the point. What matters is the argument itself, not the person making it. But it may be worth saying that the author has no ties to any political faction and is influenced by nothing other than reason and principle.</p>
 <h4>Philadelphia, February 14, 1776</h4>
+</section>
+<section aria-labelledby="of-the-origin-and-design-of-government-in-general-with-concise-remarks-on-the-english-constitution">
 <h2 id="of-the-origin-and-design-of-government-in-general-with-concise-remarks-on-the-english-constitution">Of the Origin and Design of Government in General, with Concise Remarks on the English Constitution</h2>
 <p>Some writers have confused society with government so badly that they&#x27;ve left almost no distinction between the two. But they aren&#x27;t just different — they have completely different origins. Society is produced by our wants, and government by our wickedness. Society promotes our happiness in a positive way, by bringing people together. Government does it in a negative way, by restraining our worst impulses. One encourages connection; the other creates divisions. Society is a patron. Government is a punisher.</p>
 <p>Society, in every form, is a blessing. But government, even at its best, is nothing more than a necessary evil — and at its worst, an intolerable one. When we suffer the same miseries under a government that we&#x27;d expect to suffer in a country with no government at all, our pain is sharpened by knowing that we ourselves are paying for the very thing that&#x27;s hurting us. Government, like dress, is the badge of lost innocence; the palaces of kings are built on the ruins of paradise. If everyone&#x27;s conscience were clear, consistent, and impossible to ignore, we wouldn&#x27;t need any other lawgiver. But since that&#x27;s not the case, people find it necessary to give up part of their property to pay for the protection of the rest. And they do this based on the same common sense that, in every other situation, tells them to choose the lesser of two evils. So if security is the whole point and purpose of government, it follows beyond argument that whichever form of government is most likely to give us that security, at the least cost and greatest benefit, is the one we should prefer.</p>
@@ -248,6 +285,8 @@ Printed and sold by W. &amp; T. Bradford, February 14, 1776.</p>
 <p>The fondness of the English for their own system of government by King, Lords, and Commons comes more from national pride than from reason. Individuals are undoubtedly safer in England than in some other countries. But the will of the King is just as much the law of the land in Britain as it is in France — the only difference being that instead of coming directly from the King&#x27;s mouth, it&#x27;s handed to the people in the more intimidating form of an act of Parliament. The fate of Charles the First only made kings more subtle — not more just.</p>
 <p>So, setting aside all national pride and prejudice in favor of familiar systems and traditions, the plain truth is this: whatever freedom exists in England is owed entirely to the character of the English people, not to the design of the English government. Without that character, the Crown would be every bit as oppressive in England as it is in Turkey.</p>
 <p>An investigation into the constitutional flaws of the English system of government is urgently needed right now. Just as we can never be in a position to do justice to others while we&#x27;re under the influence of some deep bias, we can&#x27;t do justice to ourselves while we&#x27;re chained to an old prejudice. A man who&#x27;s devoted to a bad relationship is in no position to choose or judge a good one. In the same way, any attachment to a broken system of government will make it impossible for us to recognize a good one.</p>
+</section>
+<section aria-labelledby="of-monarchy-and-hereditary-succession">
 <h2 id="of-monarchy-and-hereditary-succession">Of Monarchy and Hereditary Succession</h2>
 <p>Since all of mankind was originally created equal, that equality could only have been destroyed by something that came later. The distinction between rich and poor can mostly be explained without resorting to harsh words like oppression and greed. Oppression is often the result of wealth, but rarely the cause of it. And while greed might keep a person from going broke, it usually makes them too scared to ever get truly rich.</p>
 <p>But there&#x27;s another, far greater distinction — one that has no natural or religious justification — and that&#x27;s the division of people into kings and subjects. Male and female are distinctions of nature. Good and bad are distinctions made by heaven. But how one group of men came to be so elevated above everyone else, set apart like some separate species — that&#x27;s worth looking into. And it&#x27;s worth asking whether they&#x27;ve been a source of happiness or misery for the human race.</p>
@@ -277,6 +316,8 @@ Printed and sold by W. &amp; T. Bradford, February 14, 1776.</p>
 <p>If we look at what a king actually does, we&#x27;ll find that in some countries they do nothing at all. They wander through their lives without bringing pleasure to themselves or benefit to the nation, then exit the stage and leave their successors to repeat the same pointless routine. In absolute monarchies, the king handles all civil and military affairs — which is exactly what the children of Israel had in mind when they demanded a king, asking &quot;that he may judge us, go out before us, and fight our battles.&quot; But in countries where the king is neither a judge nor a general — as in England — you&#x27;d be hard-pressed to figure out what he actually does.</p>
 <p>The closer any government gets to a republic, the less there is for a king to do. It&#x27;s actually hard to find the right name for England&#x27;s government. Sir William Meredith called it a republic, but in its current state, it doesn&#x27;t deserve that name. The corrupt influence of the Crown, which controls all political appointments, has so thoroughly swallowed up the power and eaten away the integrity of the House of Commons — the republican part of the constitution — that the government of England is nearly as monarchical as France or Spain. People argue over labels without understanding what they mean. Because it&#x27;s the republican part of the English constitution that the English people are proud of — namely, the freedom to elect a House of Commons from among their own people. And it&#x27;s easy to see that when republican virtue dies, slavery follows. Why is the English constitution sick? Because monarchy has poisoned the republic. The Crown has devoured the Commons.</p>
 <p>In England, a king has little to do besides make war and hand out government jobs — which, in plain terms, means impoverishing the nation and setting people against each other. A pretty nice gig, being paid eight hundred thousand pounds a year and worshiped on top of it! Of more worth is one honest man to society, and in the sight of God, than all the crowned ruffians that ever lived.</p>
+</section>
+<section aria-labelledby="thoughts-on-the-present-state-of-american-affairs">
 <h2 id="thoughts-on-the-present-state-of-american-affairs">Thoughts on the Present State of American Affairs</h2>
 <p>In the following pages I offer nothing more than simple facts, plain arguments, and common sense. The only thing I ask of the reader is this: set aside your prejudices and assumptions, let your reason and your feelings guide you, and think beyond just today. Hold on to the best qualities of your character — or rather, don&#x27;t let go of them — and take the broadest possible view of what lies ahead.</p>
 <p>Volumes have been written about the struggle between England and America. People from all walks of life have jumped into the debate, for different reasons and with different goals, but none of it has mattered. The time for debate is over. Now it comes down to arms, as a last resort. The King chose to escalate this to violence, and the continent has accepted the challenge.</p>
@@ -335,6 +376,8 @@ Printed and sold by W. &amp; T. Bradford, February 14, 1776.</p>
 <p>To talk about friendship with people our reason tells us we cannot trust, and whom our wounds — suffered a thousand times over — instruct us to despise, is madness and folly. Every day erodes the little that remains of kinship between us and them. Can there be any reason to hope that as the relationship dies, affection will somehow grow? Or that we&#x27;ll get along better when we have ten times more and far bigger issues to fight about than we&#x27;ve ever had?</p>
 <p>You who preach harmony and reconciliation — can you give us back the time that&#x27;s been lost? Can you restore innocence to what&#x27;s already been violated? You can no more reconcile Britain and America. The last cord is now broken. The people of England are writing addresses against us. There are injuries that nature cannot forgive — she would stop being nature if she did. The lover cannot forgive the one who ravaged what he loves, any more than this continent can forgive the murders committed by Britain. God has planted in us these unquenchable feelings for good and wise purposes. They are the guardians of His image in our hearts. They are what distinguish us from common animals. The social contract itself would dissolve, and justice would be wiped from the face of the earth, if we were numb to these feelings. Robbers and murderers would often escape punishment if the injuries we feel didn&#x27;t provoke us to seek justice.</p>
 <p>O you that love mankind! You that dare oppose, not only the tyranny, but the tyrant, stand forth! Every spot of the old world is overrun with oppression. Freedom has been hunted around the globe. Asia and Africa have long driven her out. Europe treats her like a stranger, and England has given her notice to leave. Oh, receive the fugitive — and prepare in time an asylum for all mankind.</p>
+</section>
+<section aria-labelledby="of-the-present-ability-of-america-with-some-additional-reflections">
 <h2 id="of-the-present-ability-of-america-with-some-additional-reflections">Of the Present Ability of America, with Some Additional Reflections</h2>
 <p>I have never met a single person, in England or America, who didn&#x27;t admit that a separation between the two countries would happen sooner or later. And there is no topic on which we&#x27;ve shown less good judgment than in trying to figure out the &quot;right time&quot; for the continent to become independent.</p>
 <p>Since everyone agrees it will happen and only disagrees about when, let&#x27;s clear up the confusion and take a broad look at where things stand — and try, if we can, to identify the exact right moment. But we don&#x27;t have to look far. The search ends immediately, because the time has found us. The way everything has come together at once — this remarkable union of circumstances — proves it.</p>
@@ -397,6 +440,8 @@ Printed and sold by W. &amp; T. Bradford, February 14, 1776.</p>
 <p>Fourth — Imagine we published a statement to the world&#x27;s governments, laying out the suffering we&#x27;ve endured and the peaceful methods we tried before resorting to conflict. Imagine we declared that, unable to live happily or safely under the cruelty of the British Crown, we had been forced to cut all ties — while assuring every nation of our peaceful intentions and our desire to trade with them. A document like that would do more good for this continent than a ship full of petitions sent to Britain.</p>
 <p>Under our current status as British subjects, we can&#x27;t be properly received or heard by any foreign government. The diplomatic traditions of every court in the world work against us, and they will continue to work against us until we declare our independence and take our place among the nations.</p>
 <p>These steps may seem strange and difficult at first. But like every other step we&#x27;ve already taken, they&#x27;ll soon feel natural and normal. Until independence is declared, the continent will feel like a person who keeps putting off something unpleasant, day after day — knowing it has to be done, dreading the start of it, wishing it were already over, and haunted constantly by the knowledge that it can&#x27;t be avoided any longer.</p>
+</section>
+<section aria-labelledby="appendix">
 <h2 id="appendix">Appendix</h2>
 <p>Since the first edition of this pamphlet was published — or rather, on the very same day it came out — the King&#x27;s Speech arrived in this city. If the spirit of prophecy had directed the timing of this publication, it could not have picked a better moment. The bloodthirstiness of the one proved the necessity of the other. People read it as an act of revenge. And the Speech, instead of terrifying anyone, actually cleared the path for the bold principles of independence.</p>
 <p>Polite silence, whatever its motive, does real damage when it gives even the slightest respectability to evil actions. If we accept that principle, it follows naturally that the King&#x27;s Speech — a masterpiece of villainy — deserved and still deserves a universal condemnation from both Congress and the people. And yet, because the domestic peace of a nation depends heavily on the purity of what we might call its public standards, it is often better to pass over some things in silent contempt than to introduce new forms of protest that might threaten the very stability we rely on. Perhaps it is mainly due to this careful restraint that the King&#x27;s Speech has not already been publicly burned.</p>
@@ -458,6 +503,9 @@ Printed and sold by W. &amp; T. Bradford, February 14, 1776.</p>
 <p>Third, because it threatens to undo the continental harmony and friendship that you yourselves, through your generous and charitable donations, have helped to build — and preserving that harmony matters enormously to us all.</p>
 <p>And here, without anger or resentment, I bid you farewell. I sincerely wish that, as both human beings and Christians, you may always fully and without interruption enjoy every civil and religious right — and may, in your turn, be the means of securing those rights for others. But may the example you have unwisely set, of mixing religion with politics, be rejected and condemned by every inhabitant of America.</p>
 <p>THE END.</p>
+</section>
+</article>
+</main>
 
 </body>
 </html>

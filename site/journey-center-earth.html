@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>A Journey to the Center of the Earth &mdash; Jules Verne</title>
+	<meta name="description" content="A coded parchment, a dead Icelandic volcano, and a plunge into a lost world underground — complete from the French, not the mangled Victorian version. Retold in modern English, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/journey-center-earth.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="A Journey to the Center of the Earth — Jules Verne">
+	<meta property="og:description" content="A coded parchment, a dead Icelandic volcano, and a plunge into a lost world underground — complete from the French, not the mangled Victorian version. Retold in modern English, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/journey-center-earth.html">
+	<meta property="og:image" content="https://emend.press/covers/share/journey-center-earth.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,27 +192,31 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>A Journey to the Center of the Earth</h1>
-	<h3>A fiery professor, his reluctant nephew, and a stoic Icelandic guide descend a volcano toward the Earth&#x27;s core — translated fresh from Verne&#x27;s French</h3>
-	<h3>by Jules Verne</h3>
+	<p class="title-line">A fiery professor, his reluctant nephew, and a stoic Icelandic guide descend a volcano toward the Earth&#x27;s core — translated fresh from Verne&#x27;s French</p>
+	<p class="title-line">by Jules Verne</p>
 	<p class="center">
 	<s>1864</s> 2026
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is an AI modernization of A Journey to the Center of the Earth into contemporary English. The original is available from <a href="https://www.gutenberg.org/ebooks/4791">Project Gutenberg</a>. Also available as an <a href="ebooks/jules-verne_a-journey-to-the-center-of-the-earth.epub">epub</a>.</i></p>
 
 	<hr>
+<section aria-labelledby="editors-introduction">
 <h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
 <p>Jules Verne published A Journey to the Center of the Earth in 1864, early in the long run of adventure novels his publisher Hetzel issued as the Voyages extraordinaires. It begins in Hamburg in May 1863, in the house of Professor Otto Lidenbrock, a mineralogist with a bad temper and a first-rate mind, who has just bought a secondhand Icelandic manuscript. A scrap of parchment falls out of it covered in runes. The runes turn out to be a coded Latin message left by a sixteenth-century alchemist named Arne Saknussemm, and it gives directions: go down into the crater of a dead volcano in Iceland, and you will reach the center of the Earth.</p>
 <p>The narrator is Lidenbrock&#x27;s nephew Axel, who does not want to go, says so at length, and goes. He is the reason the book works. He is frightened for most of it, he is honest about being frightened, and his running commentary on his uncle&#x27;s certainties is funny in a way Verne&#x27;s reputation does not prepare anyone for. The third man is Hans, an Icelandic eider-hunter hired as a guide, who says almost nothing across the whole descent and saves the party repeatedly without appearing to hurry.</p>
 <p>What is underneath was an open scientific question in 1864, not a fantasy. Verne has his two geologists argue it out on the page: one holds that the Earth&#x27;s interior is molten and that the heat rises steadily with depth, which would make the trip impossible, and the other does not. The arguments are real arguments of the period, and none of the science has been quietly corrected here. Neither have the numbers — Verne tracks depth, temperature, barometric pressure and compass bearing the whole way down, and the tracking is what makes a hole in the ground feel like a place.</p>
 <p>English readers were badly served by this book for well over a century. The Victorian translations cut and rewrote it freely, and one went so far as to rename the characters, which is why some older editions have a Professor Hardwigg and a nephew called Harry. This edition is made from Verne&#x27;s French and is complete, as are the two other Verne novels in this collection. Saknussemm&#x27;s runes and his Latin are kept exactly as printed, along with the puzzle of how to read them, because the decipherment in the opening chapters is one of the best things in Verne and it is meant to be worked through rather than watched.</p>
+</section>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p><a href="#chapter-1">Chapter 1</a></p>
 <p><a href="#chapter-2">Chapter 2</a></p>
@@ -233,8 +263,11 @@ figcaption {
 <p><a href="#chapter-43">Chapter 43</a></p>
 <p><a href="#chapter-44">Chapter 44</a></p>
 <p><a href="#chapter-45">Chapter 45</a></p>
+</nav>
 
 <hr>
+<article>
+<section aria-labelledby="chapter-1">
 <h2 id="chapter-1">Chapter 1</h2>
 <p>On Sunday, the 24th of May, 1863, my uncle, Professor Lidenbrock, came rushing back to his little house at No. 19 König-strasse, one of the oldest streets in the old quarter of Hamburg.</p>
 <p>Martha, our good housekeeper, must have thought she was terribly behind, because dinner was only just beginning to sing on the kitchen stove.</p>
@@ -269,6 +302,8 @@ figcaption {
 <p>All in all, one could live happily in that little house on König-strasse, despite its owner&#x27;s fits of impatience — because, for all his rather brutal way of going about things, he loved me no less for it. But the man simply did not know how to wait; he was in more of a hurry than nature itself.</p>
 <p>When, back in April, he had planted seedlings of mignonette or morning glory in the china pots of his sitting room, every morning he would go and faithfully tug them by the leaves to hurry their growth along.</p>
 <p>With an eccentric like that, there was nothing to do but obey. So I dashed into his study.</p>
+</section>
+<section aria-labelledby="chapter-2">
 <h2 id="chapter-2">Chapter 2</h2>
 <p>That study was a genuine museum. Every specimen the mineral kingdom has to offer was there, labeled and arranged in the most perfect order, according to the three great divisions of minerals: the flammable, the metallic, and the stony.</p>
 <p>How well I knew them, those trinkets of the science of mineralogy! How many times, instead of loafing about with boys my own age, had I amused myself dusting these graphites, these anthracites, these coals, these lignites, these peats! And the bitumens, the resins, the organic salts that had to be shielded from the least speck of dust! And these metals, from iron all the way up to gold, whose relative value vanished before the absolute equality of scientific specimens! And all these stones, enough to rebuild the house on König-strasse from scratch — even with a fine extra bedroom, which I could have made very good use of!</p>
@@ -318,6 +353,8 @@ figcaption {
 <p>&quot;It&#x27;s a sign of some grave event to come!&quot; the old servant went on, shaking her head.</p>
 <p>In my opinion it was a sign of nothing at all — nothing except a frightful scene when my uncle found his dinner devoured.</p>
 <p>I was down to my last shrimp when a thundering voice tore me from the delights of dessert. In a single bound I was out of the dining room and into the study.</p>
+</section>
+<section aria-labelledby="chapter-3">
 <h2 id="chapter-3">Chapter 3</h2>
 <p>&quot;It&#x27;s runic, obviously,&quot; said the professor, knitting his brows. &quot;But there&#x27;s a secret in it, and I&#x27;ll dig it out, or else—&quot;</p>
 <p>A violent gesture finished the thought.</p>
@@ -386,6 +423,8 @@ figcaption {
 <p>But — who could have foreseen it! A violent blow of his fist shook the table. The ink leaped, the pen jumped out of my hands.</p>
 <p>&quot;That&#x27;s not it!&quot; cried my uncle. &quot;It doesn&#x27;t make any sense!&quot;</p>
 <p>Then, crossing the study like a cannonball, plunging down the stairs like an avalanche, he hurled himself into König-strasse and fled away as fast as his legs would carry him.</p>
+</section>
+<section aria-labelledby="chapter-4">
 <h2 id="chapter-4">Chapter 4</h2>
 <p>&quot;He&#x27;s gone out?&quot; cried Martha, hurrying up at the sound of the street door, which had slammed shut hard enough to shake the whole house.</p>
 <p>&quot;Yes,&quot; I answered, &quot;gone right out!&quot;</p>
@@ -420,6 +459,8 @@ figcaption {
 <p>I was in a state of excitement almost impossible to describe.</p>
 <p>&quot;No! No! It shall not be,&quot; I said forcefully. &quot;And since I can keep such an idea from ever entering my tyrant&#x27;s head, I will. Turning this document over and over, he might just stumble on the key by chance. Let&#x27;s destroy it!&quot;</p>
 <p>There was still a bit of fire glowing in the hearth. I snatched up not only the sheet of paper but Saknussemm&#x27;s parchment as well; with a feverish hand I was about to fling the whole lot onto the coals and wipe out this dangerous secret — when the study door opened. My uncle appeared.</p>
+</section>
+<section aria-labelledby="chapter-5">
 <h2 id="chapter-5">Chapter 5</h2>
 <p>I barely had time to lay the wretched document back on the table.</p>
 <p>Professor Lidenbrock seemed deep in thought. The one idea that ruled him wouldn&#x27;t give him a moment&#x27;s peace; he had plainly turned the matter over, dissected it, brought every resource of his imagination to bear on it during his walk, and now he was coming back to try some fresh angle.</p>
@@ -480,6 +521,8 @@ figcaption {
 <p>&quot;You&#x27;ll pack my trunk.&quot;</p>
 <p>&quot;What!&quot; I cried.</p>
 <p>&quot;And your own!&quot; answered the merciless professor, striding into the dining room.</p>
+</section>
+<section aria-labelledby="chapter-6">
 <h2 id="chapter-6">Chapter 6</h2>
 <p>At those words a shiver ran through my whole body. Still, I kept my composure. I even resolved to put on a brave face. Only scientific arguments could stop Professor Lidenbrock — and there were some, good ones, against the very possibility of such a journey. Go to the center of the earth! What madness! I saved my debating skills for the right moment and turned my attention to dinner.</p>
 <p>No need to repeat my uncle&#x27;s curses when he found the table cleared. It all got sorted out. Good Martha was set free again. She ran to the market and did so well that an hour later my hunger was satisfied and I was coming back to a sense of the situation.</p>
@@ -556,6 +599,8 @@ figcaption {
 <p>&quot;And why not? Can&#x27;t we count on electrical phenomena to light our way, and even on the atmosphere itself, which its own pressure may render luminous as we near the center?&quot;</p>
 <p>&quot;Yes,&quot; I said, &quot;yes! That&#x27;s possible, after all.&quot;</p>
 <p>&quot;It&#x27;s certain,&quot; my uncle answered triumphantly. &quot;But silence, do you hear! Silence about all of this, and let no one so much as dream of discovering the center of the earth before we do.&quot;</p>
+</section>
+<section aria-labelledby="chapter-7">
 <h2 id="chapter-7">Chapter 7</h2>
 <p>And so that memorable session came to an end. The whole conversation had left me feverish. I stumbled out of my uncle&#x27;s study half stunned, and there wasn&#x27;t enough air in all the streets of Hamburg to bring me around, so I made for the banks of the Elbe, over by the steam ferry that links the town with the Harburg railway.</p>
 <p>Was I really convinced by what I&#x27;d just heard? Hadn&#x27;t I simply buckled under Professor Lidenbrock&#x27;s sheer force of will? Was I actually supposed to take seriously his decision to go to the center of the earth? Had I just been listening to the crazed ravings of a lunatic, or the scientific deductions of a great genius? Where, in all of it, did the truth leave off and the delusion begin?</p>
@@ -637,6 +682,8 @@ figcaption {
 <p>&quot;Graüben!&quot; I cried.</p>
 <p>&quot;Go, my dear Axel, go,&quot; she told me. &quot;You&#x27;re leaving your fiancée behind, but you&#x27;ll find your wife waiting when you return.&quot;</p>
 <p>I held Graüben tight in my arms and took my seat in the carriage. From the doorstep, Martha and the girl sent us a last farewell; then the two horses, spurred on by their driver&#x27;s whistle, sprang off at a gallop down the Altona road.</p>
+</section>
+<section aria-labelledby="chapter-8">
 <h2 id="chapter-8">Chapter 8</h2>
 <p>Altona, really just a suburb of Hamburg, is the terminus of the Kiel railway, the one that would carry us down to the shore of the Belt. In less than twenty minutes we had crossed into Holstein.</p>
 <p>At half past six the carriage pulled up in front of the station. My uncle&#x27;s countless parcels, his bulky travel gear, were unloaded, carried, weighed, labeled, and loaded again into the baggage car, and by seven o&#x27;clock we were seated face to face in the same compartment. The whistle screamed, the locomotive lurched into motion. We were off.</p>
@@ -689,6 +736,8 @@ figcaption {
 <p>Nevertheless I had to stand up, hold myself straight, and look. My first lesson in vertigo lasted an hour. When at last I was allowed to go back down and set my foot on the solid pavement of the streets, I ached in every limb.</p>
 <p>&quot;We&#x27;ll start again tomorrow,&quot; said my professor.</p>
 <p>And in fact, for five days, I went back to this dizzying exercise, and, like it or not, I made noticeable progress in the art of &quot;lofty contemplation.&quot;</p>
+</section>
+<section aria-labelledby="chapter-9">
 <h2 id="chapter-9">Chapter 9</h2>
 <p>The day of departure arrived. The evening before, the obliging Mr. Thomson had brought us pressing letters of recommendation for Count Trampe, the governor of Iceland; for Mr. Pietursson, the bishop&#x27;s coadjutor; and for Mr. Finsen, the mayor of Reykjavik. In return, my uncle gave him the warmest of handshakes.</p>
 <p>On the 2nd, at six in the morning, our precious baggage was safely aboard the Valkyrie. The captain led us to some rather cramped cabins set beneath a sort of deckhouse.</p>
@@ -740,6 +789,8 @@ figcaption {
 <p>Their costume consisted of a coarse blouse of black wool, known throughout the Scandinavian countries by the name of &quot;vadmel,&quot; a broad-brimmed hat, trousers with a red border, and a piece of leather folded into the shape of a shoe.</p>
 <p>The women, with sad, resigned faces of a rather pleasant cast but without expression, were dressed in a bodice and skirt of dark &quot;vadmel&quot;; unmarried girls wore, over their hair braided into garlands, a little cap of brown knitting; married women wrapped their heads in a colored kerchief, topped with a crest of white linen.</p>
 <p>After a good long walk, when I came back into Mr. Fridriksson&#x27;s house, my uncle was already there in the company of his host.</p>
+</section>
+<section aria-labelledby="chapter-10">
 <h2 id="chapter-10">Chapter 10</h2>
 <p>Dinner was ready, and Professor Lidenbrock fell on it ravenously, for the forced fasting aboard ship had turned his stomach into a bottomless pit. The meal was more Danish than Icelandic, and unremarkable in itself; but our host, more Icelandic than Danish, reminded me of the heroes of ancient hospitality. It was plain to me that we were more at home in his house than he was himself.</p>
 <p>The conversation ran in the native tongue, which my uncle laced with German and Mr. Fridriksson with Latin, so that I could follow it. It turned on scientific questions, as befits men of learning; but Professor Lidenbrock kept himself under the most extreme reserve, and with every sentence his eyes charged me to keep absolute silence about our plans.</p>
@@ -809,6 +860,8 @@ figcaption {
 <p>&quot;Because he doesn&#x27;t arrive until tomorrow.&quot;</p>
 <p>&quot;Tomorrow it is, then,&quot; my uncle answered with a sigh.</p>
 <p>This momentous conversation ended a few moments later with warm thanks from the German professor to the Icelandic one. Over the course of that dinner my uncle had learned some important things — among them the story of Saknussemm, the reason behind his mysterious document, the fact that our host would not be joining his expedition, and that as early as the next day a guide would be at his command.</p>
+</section>
+<section aria-labelledby="chapter-11">
 <h2 id="chapter-11">Chapter 11</h2>
 <p>That evening I took a short stroll along the shores of Reykjavik, then came back early to my bed of thick planks, where I slept a deep sleep.</p>
 <p>When I woke, I heard my uncle talking away at great length in the next room. I got up at once and hurried to join him.</p>
@@ -852,6 +905,8 @@ figcaption {
 <p>At five in the morning, the whinnying of four horses pawing the ground beneath my window woke me. I dressed in haste and went down into the street. There, Hans was finishing loading our baggage without, so to speak, stirring a muscle. And yet he worked with uncommon skill. My uncle made more noise than headway, and the guide seemed to pay very little attention to his instructions.</p>
 <p>Everything was done by six o&#x27;clock. Mr. Fridriksson shook our hands. My uncle thanked him in Icelandic, and very warmly, for his kind hospitality. As for me, I sketched out some cordial farewell in my best Latin; then we climbed into the saddle, and with his last goodbye Mr. Fridriksson sent after me this line that Virgil might have written expressly for us, travelers uncertain of the road:</p>
 <p>Et quacunque viam dederit fortuna sequamur.</p>
+</section>
+<section aria-labelledby="chapter-12">
 <h2 id="chapter-12">Chapter 12</h2>
 <p>We had set out under an overcast but settled sky. No tiring heat to dread, no disastrous rain. Perfect weather for tourists.</p>
 <p>The sheer pleasure of riding on horseback across an unknown country made me easygoing about the start of the whole business. I gave myself up entirely to the holiday-maker&#x27;s happiness, all appetite and freedom. I was beginning to make my peace with the expedition.</p>
@@ -895,6 +950,8 @@ figcaption {
 <p>I understood perfectly the necessity of waiting for a certain moment of the tide to undertake the crossing of the fjord — the moment when the sea, having reached its greatest height, stands slack. Then the ebb and flow have no perceptible pull, and the ferry runs no risk of being swept off, either to the bottom of the gulf or clear out into the open ocean.</p>
 <p>The favorable instant didn&#x27;t come until six in the evening; my uncle, myself, the guide, two ferrymen, and the four horses took our places in a sort of flat, rather flimsy barge. Used as I was to the steam ferries of the Elbe, I found the boatmen&#x27;s oars a sorry sort of machinery. It took more than an hour to cross the fjord; but in the end the passage came off without mishap.</p>
 <p>Half an hour later we reached the &quot;aoalkirkja&quot; of Gardär.</p>
+</section>
+<section aria-labelledby="chapter-13">
 <h2 id="chapter-13">Chapter 13</h2>
 <p>By rights it should have been dark, but at the sixty-fifth parallel the daylight of the polar regions was no surprise to me. In Iceland, through the months of June and July, the sun never sets.</p>
 <p>Even so, the temperature had dropped. I was cold, and above all I was hungry. Welcome, then, was the &quot;böer&quot; that opened its doors to take us in.</p>
@@ -930,6 +987,8 @@ figcaption {
 <p>The horses marched well; the difficulties of the ground did not stop them. For my part, I was beginning to grow very tired; my uncle stayed as firm and upright as on the first day, and I couldn&#x27;t help admiring him as much as I admired the hunter, who looked on this whole expedition as a simple stroll.</p>
 <p>On Saturday, the 20th of June, at six in the evening, we reached Büdir, a small town on the seashore, and the guide claimed his agreed-upon pay. My uncle settled up with him. It was Hans&#x27;s own family — his uncles and first cousins, in fact — who offered us their hospitality; we were well received, and if it had been up to me, without imposing too far on the kindness of these good people, I would gladly have recovered from the fatigues of the journey among them. But my uncle, who had nothing to recover from, saw things otherwise, and the next morning we had to climb back onto our good beasts.</p>
 <p>The ground felt the nearness of the mountain, whose granite roots pushed up out of the earth like those of an old oak. We were skirting the volcano&#x27;s immense base. The professor never took his eyes off it; he gestured, he seemed to challenge it and to say: &quot;There stands the giant I am going to tame!&quot; At last, after twenty-four hours&#x27; march, the horses stopped of their own accord at the door of the presbytery of Stapi.</p>
+</section>
+<section aria-labelledby="chapter-14">
 <h2 id="chapter-14">Chapter 14</h2>
 <p>Stapi is a village of maybe thirty huts, built straight onto the lava under sunlight bounced back at it by the volcano. It sits at the head of a small fjord walled in by a rampart of the strangest kind.</p>
 <p>As everyone knows, basalt is a brown rock of igneous origin, and it takes on regular shapes whose arrangement can catch you off guard. Here nature works like a geometer, building the way a human being would, as if she had wielded the square, the compass, and the plumb line. Everywhere else she makes her art out of great masses flung down without order, cones barely sketched, half-finished pyramids, and the odd, wandering run of her lines; but here, meaning to set an example of regularity, and getting there ahead of the very first architects, she created an order so severe that neither the splendors of Babylon nor the wonders of Greece ever surpassed it.</p>
@@ -976,6 +1035,8 @@ figcaption {
 <p>It was nine o&#x27;clock in the morning. The rector and his towering shrew were waiting in front of their door. No doubt they meant to bid us the host&#x27;s final farewell to the traveler. But this farewell took the unexpected form of a formidable bill, on which they&#x27;d charged us for the very air of the parsonage — foul air, I dare say. This worthy couple was fleecing us like a Swiss innkeeper and putting a fine price on their overrated hospitality.</p>
 <p>My uncle paid without haggling. A man setting out for the center of the earth wasn&#x27;t going to quibble over a few rixdales.</p>
 <p>That settled, Hans gave the signal to leave, and a few moments later we had left Stapi behind.</p>
+</section>
+<section aria-labelledby="chapter-15">
 <h2 id="chapter-15">Chapter 15</h2>
 <p>The Sneffels is five thousand feet high. With its double cone, it caps a band of trachyte that breaks away from the island&#x27;s mountain system. From where we set out, you couldn&#x27;t yet make out its two peaks against the gray backdrop of the sky. All I could see was an enormous cap of snow pulled low over the giant&#x27;s brow.</p>
 <p>We walked single file, the hunter leading the way, climbing narrow paths where two people couldn&#x27;t have gone side by side. That made conversation just about impossible.</p>
@@ -1011,6 +1072,8 @@ figcaption {
 <p>Without knowing any Danish, I understood we had to follow Hans as fast as we could. He began to circle the cone of the crater, but at a slant, to make the walking easier. Soon the whirlwind crashed down on the mountain, which shuddered under the blow; the stones caught in the eddies of the wind flew in a shower, as in an eruption. Luckily, we were on the opposite slope, sheltered from all danger. Without the guide&#x27;s precaution, our bodies — shredded, ground to dust — would have come raining down far away, like the product of some unknown meteor.</p>
 <p>Even so, Hans did not think it prudent to spend the night on the flanks of the cone. We continued our ascent in zigzags; the fifteen hundred feet that remained to climb took nearly five hours; the detours, the slants, and the countermarches measured at least three leagues. I was finished. I was going under, from cold and hunger. The air, a little thin now, wasn&#x27;t enough for my lungs to work on.</p>
 <p>At last, at eleven o&#x27;clock at night, in total darkness, the summit of the Sneffels was reached — and, before going to shelter inside the crater, I had time to catch sight of &quot;the midnight sun&quot; at the lowest point of its course, throwing its pale rays over the sleeping island at my feet.</p>
+</section>
+<section aria-labelledby="chapter-16">
 <h2 id="chapter-16">Chapter 16</h2>
 <p>Supper was wolfed down in a hurry, and our little troop bedded down as best it could. The mattress was hard, the shelter flimsy, the whole situation thoroughly miserable — five thousand feet above sea level. And yet my sleep that night was uncommonly peaceful, one of the best I&#x27;d had in a long while. I didn&#x27;t even dream.</p>
 <p>The next morning we woke half frozen in the sharp, biting air, under the rays of a glorious sun. I left my granite bed and went to drink in the magnificent scene unrolling before my eyes.</p>
@@ -1059,6 +1122,8 @@ figcaption {
 <p>&quot;Forüt!&quot; said the guide calmly.</p>
 <p>&quot;Forward!&quot; answered my uncle.</p>
 <p>It was thirteen minutes past one in the afternoon.</p>
+</section>
+<section aria-labelledby="chapter-17">
 <h2 id="chapter-17">Chapter 17</h2>
 <p>The real journey now began.</p>
 <p>Up to this point the labor had outweighed the difficulties; now the difficulties were about to be born in earnest beneath our feet.</p>
@@ -1106,6 +1171,8 @@ figcaption {
 <p>And when, stretched out on my back, I opened my eyes, I saw a bright point at the far end of that tube three thousand feet long, which had turned into a gigantic telescope.</p>
 <p>It was a star, stripped of all its twinkling, and which, by my calculations, must be Sigma of the Little Bear.</p>
 <p>Then I fell into a deep sleep.</p>
+</section>
+<section aria-labelledby="chapter-18">
 <h2 id="chapter-18">Chapter 18</h2>
 <p>At eight in the morning a ray of daylight came to wake us. The thousand facets of lava on the walls caught it as it passed and scattered it like a shower of sparks.</p>
 <p>The glow was strong enough to let us make out the things around us.</p>
@@ -1166,6 +1233,8 @@ figcaption {
 <p>&quot;Yes — or figures are no longer figures!&quot;</p>
 <p>The professor&#x27;s calculations were correct. We had already passed by six thousand feet the greatest depths ever reached by man, such as the mines of Kitz-Bahl in the Tyrol and those of Wüttemberg in Bohemia.</p>
 <p>The temperature, which should have been eighty-one degrees at that spot, was barely fifteen. It gave one singularly much to think about.</p>
+</section>
+<section aria-labelledby="chapter-19">
 <h2 id="chapter-19">Chapter 19</h2>
 <p>The next morning, Tuesday the 30th of June, at six o&#x27;clock, we took up the descent again.</p>
 <p>We were still following the lava gallery — a genuine natural ramp, gentle as those inclined slopes that still take the place of a staircase in old houses. So it went until seventeen minutes past noon, the precise instant when we caught up with Hans, who had just stopped.</p>
@@ -1215,6 +1284,8 @@ figcaption {
 <p>&quot;And what&#x27;s that?&quot;</p>
 <p>&quot;The lack of water.&quot;</p>
 <p>&quot;Well then! We&#x27;ll put ourselves on rations, Axel.&quot;</p>
+</section>
+<section aria-labelledby="chapter-20">
 <h2 id="chapter-20">Chapter 20</h2>
 <p>And so it came to rationing. Our supply couldn&#x27;t last more than three days. That was the grim arithmetic I worked out at supper that evening. And, worst of all, we had little hope of striking a live spring in these strata of the transition period.</p>
 <p>All the next day the gallery unrolled its endless arches ahead of us. We walked almost without a word. Hans&#x27;s silence was catching.</p>
@@ -1252,6 +1323,8 @@ figcaption {
 <p>&quot;Because by tomorrow the water will be gone completely.&quot;</p>
 <p>&quot;And will the courage be gone too?&quot; said the Professor, fixing me with a stern eye.</p>
 <p>I didn&#x27;t dare answer him.</p>
+</section>
+<section aria-labelledby="chapter-21">
 <h2 id="chapter-21">Chapter 21</h2>
 <p>The next day we set out at dawn. We had to hurry. We were five days&#x27; march from the crossroads.</p>
 <p>I won&#x27;t dwell on the miseries of our retreat. My uncle bore them with the fury of a man who knows he isn&#x27;t the stronger; Hans, with the resignation of his peaceable nature; and I — I admit it — complaining and despairing, unable to steel my heart against this run of bad luck.</p>
@@ -1303,6 +1376,8 @@ figcaption {
 <p>&quot;Hear me out,&quot; the professor went on, forcing his voice. &quot;While you were lying there without moving, I went to scout the shape of that gallery. It drops straight down into the bowels of the globe, and in a few hours it&#x27;ll bring us to the granite mass. There we&#x27;re bound to find abundant springs. The nature of the rock demands it, and instinct agrees with logic in backing my conviction. Now here&#x27;s what I have to propose. When Columbus asked his crews for three days to find new lands, his crews — sick, terrified — nonetheless granted his request, and he discovered the New World. I, the Columbus of these underground regions, ask you for just one more day. If, when that time is up, I haven&#x27;t found the water we&#x27;re missing, I swear to you, we&#x27;ll go back up to the surface of the earth.&quot;</p>
 <p>In spite of my irritation, I was moved by those words, and by the violence my uncle was doing himself to speak that way.</p>
 <p>&quot;All right!&quot; I cried. &quot;Let it be as you wish, and may God reward your superhuman energy. You&#x27;ve only a few hours left to try your luck. Let&#x27;s go!&quot;</p>
+</section>
+<section aria-labelledby="chapter-22">
 <h2 id="chapter-22">Chapter 22</h2>
 <p>The descent began again, this time down the new gallery. Hans walked in front, as was his habit. We hadn&#x27;t gone a hundred paces when the professor, running his lamp along the walls, cried out:</p>
 <p>&quot;Here are the primitive formations! We&#x27;re on the right road! On, on!</p>
@@ -1328,6 +1403,8 @@ figcaption {
 <p>Why was he leaving? Was Hans abandoning us? My uncle was asleep. I wanted to shout. My voice could find no passage between my parched lips. The darkness had grown deep, and the last sounds had just died away.</p>
 <p>&quot;Hans is abandoning us!&quot; I cried. &quot;Hans! Hans!&quot;</p>
 <p>These words — I cried them inside myself. They went no further. And yet, after that first instant of terror, I was ashamed of my suspicions against a man whose conduct had until now been nothing but blameless. His leaving could not be a flight. Instead of going back up the gallery, he was going down it. Evil designs would have drawn him upward, not down. This reasoning calmed me a little, and my thoughts turned another way. Hans, that placid man — only some serious motive could have torn him from his rest. Was he going, then, in search of something? Had he heard, during the silent night, some murmur whose whisper had not reached me?</p>
+</section>
+<section aria-labelledby="chapter-23">
 <h2 id="chapter-23">Chapter 23</h2>
 <p>For a whole hour my fevered brain churned through every reason that could have made our unflappable hunter act as he had. The most absurd ideas tangled themselves together in my head. I honestly thought I was going mad.</p>
 <p>But at last a sound of footsteps came echoing up from the depths of the gulf. Hans was climbing back. A wavering light began to slide along the walls, then broke out through the mouth of the passage. Hans appeared.</p>
@@ -1390,6 +1467,8 @@ figcaption {
 <p>&quot;I&#x27;m doing better than coming around — I&#x27;m already there.&quot;</p>
 <p>&quot;One moment! Let&#x27;s begin by taking a few hours&#x27; rest.&quot;</p>
 <p>I really had forgotten it was night. The chronometer took it upon itself to remind me. Soon each of us, sufficiently restored and refreshed, fell into a deep sleep.</p>
+</section>
+<section aria-labelledby="chapter-24">
 <h2 id="chapter-24">Chapter 24</h2>
 <p>By the next day we had already forgotten everything we&#x27;d suffered. My first surprise was that I was no longer thirsty, and I asked why. The little stream murmuring at my feet answered for me.</p>
 <p>We ate breakfast and drank our fill of that excellent iron-rich water. I felt thoroughly revived and ready to go a long way. Why shouldn&#x27;t a man as certain of himself as my uncle succeed, with a guide as resourceful as Hans and a nephew as &quot;determined&quot; as I was? Those were the fine ideas slipping into my brain! If anyone had suggested climbing back up to the summit of the Sneffels, I&#x27;d have refused with indignation.</p>
@@ -1424,6 +1503,8 @@ figcaption {
 <p>&quot;Bah! Axel, nothing could be more natural! Aren&#x27;t there coal mines at Newcastle that run out under the waves?&quot;</p>
 <p>The professor might find the situation perfectly simple, but the thought of strolling around beneath a mass of water didn&#x27;t stop nagging at me. And yet, whether it was the plains and mountains of Iceland hanging over our heads or the waters of the Atlantic, it made little difference in the end, so long as the granite framework held solid. Besides, I got used to the idea soon enough, for the corridor — now straight, now winding, as capricious in its slopes as in its turns, but always running southeast and always sinking deeper — carried us quickly to great depths.</p>
 <p>Four days later, on the evening of Saturday, July 18th, we reached a kind of fairly large grotto; my uncle handed Hans his three rix-dollars for the week, and it was decided that the next day would be a day of rest.</p>
+</section>
+<section aria-labelledby="chapter-25">
 <h2 id="chapter-25">Chapter 25</h2>
 <p>So I woke on Sunday morning without the usual nagging worry of an immediate departure. And even though we were down in the deepest of abysses, that wasn&#x27;t such an unpleasant feeling. Besides, we&#x27;d grown used to this troglodyte existence. I barely gave a thought to the sun, the stars, the moon, the trees, the houses, the towns — all those terrestrial luxuries that creatures under the sky have convinced themselves they can&#x27;t live without. As fossils now, we snapped our fingers at those useless marvels.</p>
 <p>The grotto formed a vast hall. Across its granite floor the faithful little stream ran quietly along. At such a distance from its source, its water had cooled to the surrounding temperature and could be drunk without any trouble.</p>
@@ -1494,6 +1575,8 @@ figcaption {
 <p>In the sixteenth century, neither the barometer nor the pressure gauge had been invented; so how could Saknussemm ever have determined his arrival at the center of the globe?</p>
 <p>But I kept that objection to myself and waited to see what would happen.</p>
 <p>The rest of the day passed in calculations and conversation. I agreed with Professor Lidenbrock on everything, and I envied the perfect indifference of Hans, who, without hunting for effects and causes, went blindly wherever destiny led him.</p>
+</section>
+<section aria-labelledby="chapter-26">
 <h2 id="chapter-26">Chapter 26</h2>
 <p>I have to admit it: so far things had been going well, and it would have been poor manners to complain. If the average level of &quot;difficulties&quot; didn&#x27;t rise, we couldn&#x27;t fail to reach our goal. And what glory then! I had actually started reasoning like Lidenbrock. Seriously. Was it the strange world I was living in that did it? Perhaps.</p>
 <p>For several days, steeper slopes — some of them frighteningly vertical — carried us deep into the interior mass. On certain days we gained a league and a half to two leagues toward the center. Perilous descents, during which Hans&#x27;s skill and his marvelous coolness were a great help to us. That impassive Icelander devoted himself with an incomprehensible ease, and thanks to him we got past more than one bad stretch we&#x27;d never have cleared on our own.</p>
@@ -1519,6 +1602,8 @@ figcaption {
 <p>So I bent down to plunge my forehead into the water of the Hansbach!</p>
 <h4>Imagine my astonishment!</h4>
 <p>It was dry, rough granite I set my hands to! The stream no longer ran at my feet!</p>
+</section>
+<section aria-labelledby="chapter-27">
 <h2 id="chapter-27">Chapter 27</h2>
 <p>I cannot paint my despair. No word in any human language could capture what I felt. I had been buried alive, with the prospect of dying in the tortures of hunger and thirst.</p>
 <p>Without thinking, I dragged my burning hands across the ground. How parched that rock felt to me!</p>
@@ -1546,6 +1631,8 @@ figcaption {
 <p>What a terrible cry escaped me! On the surface of the earth, in the depths of the blackest night, light never entirely surrenders its rights; it is diffuse, it is subtle, but however little of it remains, the retina of the eye ends by perceiving it. Here, nothing. The absolute shadow made of me a blind man in the fullest sense of the word.</p>
 <p>Then my mind gave way. I got to my feet, arms thrown out before me, groping in the most agonizing way; I broke into a run, hurling my steps at random through that inextricable labyrinth, forever descending, racing through the earth&#x27;s crust like some creature of the underground faults — calling, shouting, howling — soon bruised on the jutting rocks, falling and getting up again bloodied, trying to drink the blood that streamed over my face, and forever waiting for some unforeseen wall to offer my head an obstacle to smash itself against!</p>
 <p>Where did that mad race take me? I shall never know. After several hours — no doubt at the very end of my strength — I fell like a lifeless mass along the wall, and I lost all sense of my own existence.</p>
+</section>
+<section aria-labelledby="chapter-28">
 <h2 id="chapter-28">Chapter 28</h2>
 <p>When I came back to life, my face was wet — but wet with tears. How long that stupor lasted, I couldn&#x27;t say. I no longer had any way of measuring time. Never was there a solitude like mine, never an abandonment so complete.</p>
 <p>The fall had cost me a great deal of blood. I could feel myself drenched in it! Oh, how I wished I were dead — and that the dying were still to be done! I wanted no more thoughts. I drove every idea away, and, beaten down by the pain, I rolled myself against the far wall.</p>
@@ -1640,6 +1727,8 @@ figcaption {
 <p>So I got up. I dragged myself rather than walked. The slope was fairly steep; I let myself slide down it.</p>
 <p>Soon the speed of my descent grew at a frightening rate, and threatened to turn into an outright fall. I no longer had the strength to stop myself.</p>
 <p>All at once the ground gave way beneath my feet. I felt myself rolling, bouncing off the jagged edges of a vertical gallery — a true well. My head struck a sharp rock, and I lost consciousness.</p>
+</section>
+<section aria-labelledby="chapter-29">
 <h2 id="chapter-29">Chapter 29</h2>
 <p>When I came to, I was lying in a kind of half-darkness, stretched out on a pile of thick blankets. My uncle was keeping watch, scanning my face for some last flicker of life. At my first sigh he took my hand; at my first glance he let out a cry of joy.</p>
 <p>&quot;He&#x27;s alive! He&#x27;s alive!&quot; he shouted.</p>
@@ -1694,6 +1783,8 @@ figcaption {
 <p>What! Set sail! So we had a river, a lake, a sea at our disposal? Was some vessel riding at anchor in an inner harbor somewhere?</p>
 <p>My curiosity was roused to the highest pitch. My uncle tried in vain to hold me back. When he saw that my impatience would do me more harm than satisfying it, he gave in.</p>
 <p>I dressed quickly; and, by way of extra precaution, I wrapped myself in one of the blankets and stepped out of the grotto.</p>
+</section>
+<section aria-labelledby="chapter-30">
 <h2 id="chapter-30">Chapter 30</h2>
 <p>At first I saw nothing. My eyes, unused to the light, snapped shut. When I managed to open them again, I was left even more stunned than amazed.</p>
 <p>&quot;The sea!&quot; I cried.</p>
@@ -1747,6 +1838,8 @@ figcaption {
 <p>But the illusion faded quickly. We were indeed the only living creatures in this underground world. During certain lulls in the wind, a silence deeper than the silences of the desert came down over the barren rocks and weighed on the surface of the ocean. I tried then to pierce the distant mists, to tear apart that curtain thrown across the mysterious back of the horizon. What questions crowded onto my lips? Where did this sea end? Where did it lead? Would we ever be able to reach its opposite shores?</p>
 <p>My uncle, for his part, had no doubt of it. As for me, I longed for it and dreaded it at the same time.</p>
 <p>After an hour spent contemplating this wondrous spectacle, we took the way back along the beach to regain our grotto, and it was under the sway of the strangest thoughts that I fell into a deep sleep.</p>
+</section>
+<section aria-labelledby="chapter-31">
 <h2 id="chapter-31">Chapter 31</h2>
 <p>The next morning I woke up completely cured. I decided a swim would do me a world of good, and I went and plunged for a few minutes into the waters of this underground Mediterranean. That name, if any sea ever earned it, this one certainly did.</p>
 <p>I came back to breakfast with a fine appetite. Hans knew how to cook our little menu; he had water and fire at his disposal, so he was able to add a bit of variety to our usual fare. For dessert he served us a few cups of coffee, and never did that delicious drink taste better to me than it did just then.</p>
@@ -1818,6 +1911,8 @@ figcaption {
 <p>&quot;Are you convinced?&quot; said my uncle.</p>
 <p>&quot;Convinced above all that it&#x27;s unbelievable!&quot;</p>
 <p>By the evening of the next day, thanks to the guide&#x27;s skill, the raft was finished. It was ten feet long by five wide; the surtarbrandur beams, lashed together with strong ropes, made a solid surface, and once launched, this improvised craft floated calmly on the waters of the Lidenbrock Sea.</p>
+</section>
+<section aria-labelledby="chapter-32">
 <h2 id="chapter-32">Chapter 32</h2>
 <p>On August 13 we woke early. The day had come to try out a new mode of travel—fast and, best of all, hardly any work.</p>
 <p>A mast made of two poles lashed together, a yard formed from a third, a sail borrowed from our blankets: that was the whole rig of the raft. There was no shortage of rope. The whole thing was solid.</p>
@@ -1880,6 +1975,8 @@ figcaption {
 <p>&quot;No, I had a moment of hallucination, but it&#x27;s passed. Everything all right otherwise?&quot;</p>
 <p>&quot;Yes! Good breeze, fine sea! We&#x27;re running fast, and if my reckoning hasn&#x27;t misled me, we can&#x27;t be long in making land.&quot;</p>
 <p>At these words I get up, I search the horizon; but the line of the water still blends into the line of the clouds.</p>
+</section>
+<section aria-labelledby="chapter-33">
 <h2 id="chapter-33">Chapter 33</h2>
 <p>Saturday, August 15. The sea keeps up its monotonous sameness. No land in sight. The horizon looks impossibly far off.</p>
 <p>My head is still heavy from the violence of my dream.</p>
@@ -1944,6 +2041,8 @@ figcaption {
 <p>Suddenly the Ichthyosaurus and the Plesiosaurus vanish, carving out a genuine maelstrom in the water. Is the battle going to finish in the depths of the sea?</p>
 <p>But all at once an enormous head shoots up out of the water — the head of the Plesiosaurus. The monster is wounded to death. I no longer see its immense shell. Only its long neck rears up, drops, rises again, curves, lashes the waves like a gigantic whip and writhes like a cut worm. The water sprays out to a considerable distance. It blinds us. But soon the reptile&#x27;s death-throes near their end, its movements slacken, its contortions subside, and that long length of serpent stretches out like an inert mass on the calmed waters.</p>
 <p>As for the Ichthyosaurus — has it gone back to its undersea cavern, or is it going to reappear on the surface of the sea?</p>
+</section>
+<section aria-labelledby="chapter-34">
 <h2 id="chapter-34">Chapter 34</h2>
 <p>Wednesday, August 19. Luckily the wind, blowing hard, let us flee the scene of the battle in a hurry. Hans is still at the tiller. My uncle, roused out of his all-consuming thoughts by the incidents of that fight, has sunk back into his impatient contemplation of the sea.</p>
 <p>The voyage takes up its monotonous sameness again — and I have no desire to break it at the price of yesterday&#x27;s dangers.</p>
@@ -1998,6 +2097,8 @@ figcaption {
 <p>I stay a few more minutes, contemplating the geyser. I notice that its jet is irregular in its fits, that it sometimes slackens, then picks up again with fresh vigor, which I put down to the changing pressure of the vapors piling up in its reservoir.</p>
 <p>At last we set off, rounding the very steep rocks to the south. Hans has taken advantage of the halt to put the raft back in order.</p>
 <p>But before shoving off I make a few observations to calculate the distance covered, and I note them in my journal. We have crossed two hundred and seventy leagues of sea since Port Graüben, and we are six hundred and twenty leagues from Iceland, under England.</p>
+</section>
+<section aria-labelledby="chapter-35">
 <h2 id="chapter-35">Chapter 35</h2>
 <p>Friday, August 21.—By morning the magnificent geyser had vanished. The wind had freshened and carried us swiftly away from Axel Islet. The bellowing died out little by little.</p>
 <p>The weather, if I may put it that way, is about to change. The air is thickening with vapors, and those vapors carry with them the electricity generated by the evaporation of the saline waters. The clouds sink noticeably lower and take on a uniform olive tint; the electric rays can barely pierce this opaque curtain, dropped over the stage where the drama of the tempests is about to be played.</p>
@@ -2046,6 +2147,8 @@ figcaption {
 <p>Tuesday, August 25.—I am coming out of a long faint. The storm goes on; the lightning is loose like a brood of serpents let slip into the air.</p>
 <p>Are we still on the sea? Yes—and swept along at an incalculable speed. We have passed beneath England, beneath the Channel, beneath France, beneath all of Europe, perhaps! .......................................................</p>
 <p>A new sound makes itself heard! Plainly, the sea breaking on rocks!... But then... ....................................................... .......................................................</p>
+</section>
+<section aria-labelledby="chapter-36">
 <h2 id="chapter-36">Chapter 36</h2>
 <p>Here ends what I called &quot;the ship&#x27;s log,&quot; so luckily saved from the wreck. I pick up my story as before.</p>
 <p>What happened when the raft smashed against the reefs of the coast, I couldn&#x27;t say. I felt myself flung into the waves, and if I escaped death, if my body wasn&#x27;t torn apart on the sharp rocks, it was only because Hans&#x27;s powerful arm hauled me out of the abyss.</p>
@@ -2119,6 +2222,8 @@ figcaption {
 <p>He signaled me to examine the instrument. A cry of surprise escaped me. The point of the needle marked north where we assumed south to be! It pointed toward the beach instead of showing the open sea!</p>
 <p>I shook the compass, I examined it; it was in perfect working order. Whatever position I forced the needle into, it stubbornly took up that same unexpected direction.</p>
 <p>So there was no longer any doubt: during the storm a shift of wind had occurred without our noticing it, and it had carried the raft back toward the very shores my uncle believed he was leaving behind him.</p>
+</section>
+<section aria-labelledby="chapter-37">
 <h2 id="chapter-37">Chapter 37</h2>
 <p>It would be impossible for me to paint the succession of feelings that shook Professor Lidenbrock—the stupefaction, the disbelief, and finally the rage. Never had I seen a man so thoroughly thrown at first, so infuriated after. The exhaustion of the crossing, the dangers we&#x27;d run, all of it to do over again! We had gone backward instead of forward!</p>
 <p>But my uncle quickly got the upper hand of himself.</p>
@@ -2149,6 +2254,8 @@ figcaption {
 <p>&quot;Axel! Axel! A human head!&quot;</p>
 <p>&quot;A human head, Uncle?&quot; I answered, no less stunned.</p>
 <p>&quot;Yes, my nephew! Ah, Monsieur Milne-Edwards! Ah, Monsieur de Quatrefages! Why aren&#x27;t you here where I am—I, Otto Lidenbrock!&quot;</p>
+</section>
+<section aria-labelledby="chapter-38">
 <h2 id="chapter-38">Chapter 38</h2>
 <p>To understand this speech my uncle delivered to those illustrious French scientists, you have to know that a fact of the highest importance in paleontology had come to light shortly before we left.</p>
 <p>On March 28, 1863, laborers digging under the direction of Monsieur Boucher de Perthes in the quarries of Moulin-Quignon, near Abbeville in the department of the Somme, in France, found a human jawbone fourteen feet below the surface of the ground. It was the first fossil of its kind ever brought up into broad daylight. Beside it lay stone axes and worked flints, colored and coated by time with a uniform patina.</p>
@@ -2181,6 +2288,8 @@ figcaption {
 <p>The professor fell silent, and I burst into unanimous applause. Besides, my uncle was right, and men more learned than his nephew would have been hard put to argue against him.</p>
 <p>Another sign. This fossilized body was not the only one in the immense boneyard. Other bodies turned up at every step we took through that dust, and my uncle could choose the most marvelous of these specimens to convince the skeptics.</p>
 <p>In truth, it was an astonishing spectacle — these generations of men and animals mingled together in that cemetery. But a grave question presented itself, one we did not dare to resolve. Had these living beings slid down toward the shores of the Lidenbrock Sea by some convulsion of the ground, at a time when they were already reduced to dust? Or rather, had they lived here, in this underground world, beneath this artificial sky, born and dying like the inhabitants of the earth above? Until now, only the sea monsters, only the fish, had appeared to us alive! Might some man of the abyss still be wandering across these deserted shores?</p>
+</section>
+<section aria-labelledby="chapter-39">
 <h2 id="chapter-39">Chapter 39</h2>
 <p>For another half hour our feet trod those beds of bones. We pressed on, driven by a burning curiosity. What other marvels did this cavern hold, what treasures for science? My eyes braced for every surprise, my imagination for every astonishment.</p>
 <p>The shores of the sea had long since vanished behind the hills of the ossuary. The reckless professor, careless of losing his way, dragged me far into the distance. We advanced in silence, bathed in the electric waves. By some phenomenon I cannot explain—thanks to the light&#x27;s diffusion, complete now in every direction—the glow fell evenly on every face of every object. Its source no longer sat at any fixed point in space, and it cast no shadow whatever. You would have thought yourself standing at high noon in high summer, in the heart of the equatorial regions, beneath the vertical rays of the sun. Every trace of vapor had disappeared. The rocks, the far-off mountains, a few confused masses of distant forest, took on a strange look under that equal wash of luminous fluid. We were like that fantastical figure of Hoffmann&#x27;s who lost his shadow.</p>
@@ -2235,6 +2344,8 @@ figcaption {
 <p>There, on a slab of granite, two mysterious letters appeared, half eaten away—the two initials of the bold and fantastical traveler:</p>
 <p>* ᛐ * ᚼ *</p>
 <p>&quot;A. S.!&quot; cried my uncle. &quot;Arne Saknussemm! Always Arne Saknussemm!&quot;</p>
+</section>
+<section aria-labelledby="chapter-40">
 <h2 id="chapter-40">Chapter 40</h2>
 <p>Since the beginning of the journey I had lived through no end of astonishments; I might have believed myself safe from further surprises, past being amazed by anything. And yet, at the sight of those two letters carved there three hundred years ago, I stood in a stupor that bordered on idiocy. Not only was the learned alchemist&#x27;s signature there to be read on the rock, but the very stylus that had traced it lay in my hands. Short of the most stubborn bad faith, I could no longer doubt the traveler&#x27;s existence or the reality of his journey.</p>
 <p>While these thoughts whirled through my head, Professor Lidenbrock gave himself over to a fit of praise for Arne Saknussemm that was frankly a touch operatic.</p>
@@ -2286,6 +2397,8 @@ figcaption {
 <p>A single spark was now enough to set this formidable engine going.</p>
 <p>&quot;Until tomorrow,&quot; said the Professor.</p>
 <p>I had to resign myself and wait yet another six long hours!</p>
+</section>
+<section aria-labelledby="chapter-41">
 <h2 id="chapter-41">Chapter 41</h2>
 <p>The next day, Thursday, August 27, was a famous date in that underground voyage. I can&#x27;t call it to mind even now without dread setting my heart pounding all over again. From that moment on, our reason, our judgment, our ingenuity counted for nothing — we became the playthings of the forces of the earth.</p>
 <p>By six we were up. The moment was near to blast our way with powder through the crust of granite.</p>
@@ -2327,6 +2440,8 @@ figcaption {
 <p>After a fairly long stretch of time, the speed of our rush redoubled. I could tell by the beating of the air on my face. The slope of the waters was becoming extreme. I truly believe we were no longer sliding. We were falling. I had within me the sense of an almost vertical drop. My uncle&#x27;s hand and Hans&#x27;s, clamped on my arms, held me back with all their strength.</p>
 <p>Suddenly, after an immeasurable time, I felt something like a shock; the raft hadn&#x27;t struck any solid body, but it had abruptly stopped in its fall. A waterspout, an immense liquid column, crashed down on its surface. I was suffocated. I was drowning.</p>
 <p>Yet this sudden flood didn&#x27;t last. In a few seconds I found myself in open air, which I gulped down in great lungfuls. My uncle and Hans were gripping my arm hard enough to break it, and the raft still bore all three of us.</p>
+</section>
+<section aria-labelledby="chapter-42">
 <h2 id="chapter-42">Chapter 42</h2>
 <p>I suppose it must have been about ten o&#x27;clock at night. The first of my senses to work again after that last assault was hearing. Almost at once—for it truly was an act of hearing—I heard silence fall in the gallery, coming after those roars that had filled my ears for long hours. At last my uncle&#x27;s words reached me like a murmur:</p>
 <p>&quot;We&#x27;re going up!&quot;</p>
@@ -2393,6 +2508,8 @@ figcaption {
 <p>The professor, this time, answered only with a gesture of anger.</p>
 <p>Then an unconquerable terror seized my brain and never let go. I had the sense of an imminent catastrophe, one such as the boldest imagination could not have conceived. An idea, at first vague and uncertain, was hardening into a certainty in my mind. I pushed it away, but it came back stubbornly. I didn&#x27;t dare put it into words. Yet a few involuntary observations settled my conviction; by the doubtful light of the torch I noticed wild, disordered movements in the granite layers; a phenomenon was clearly about to occur, one in which electricity played a part; and then this excessive heat, this boiling water!... I resolved to check the compass.</p>
 <p>It had gone mad!</p>
+</section>
+<section aria-labelledby="chapter-43">
 <h2 id="chapter-43">Chapter 43</h2>
 <p>Yes, gone mad! The needle leaped from pole to pole in violent jerks, ran through every point on the dial, and spun as though it had been seized by vertigo.</p>
 <p>I knew well enough that, according to the most widely accepted theories, the mineral crust of our globe is never in a state of absolute rest; the changes brought on by the decomposition of internal matter, the churning of the great liquid currents, the action of magnetism—all of these work ceaselessly to shake it, even when the creatures scattered across its surface never suspect the least tremor beneath them. So the phenomenon alone would not have frightened me especially—or at least it would not have planted a truly terrible idea in my mind.</p>
@@ -2448,6 +2565,8 @@ figcaption {
 <p>Since then, I&#x27;ve thought about this odd phenomenon without finding a satisfying explanation. Still, it seems clear to me that we did not occupy the volcano&#x27;s main chimney, but rather a side conduit, where the effect made itself felt as a kind of recoil.</p>
 <p>How many times this maneuver repeated itself, I couldn&#x27;t say; all I can affirm is that with each renewal of the motion we were launched with growing force, as though carried off by an actual projectile. During the moments of pause, we suffocated; during the moments of propulsion, the scorching air cut off my breath. For an instant I dreamed of the bliss of finding myself suddenly in the hyperborean regions, in a cold thirty degrees below zero. My overexcited imagination wandered across the snowfields of the arctic lands, and I longed for the moment when I would roll myself over the icy carpets of the pole! Little by little, in any case, my head, battered by these repeated jolts, gave way. Without Hans&#x27;s arms, more than once I would have cracked my skull against the granite wall.</p>
 <p>I&#x27;ve kept, then, no clear memory of what happened during the hours that followed. I have a confused sense of continuous detonations, of the shaking of the rock mass, of a whirling motion that seized the raft. It rocked upon waves of lava, in the midst of a rain of ash. The roaring flames wrapped around it. A hurricane, as though driven from some immense fan, fed the underground fires. One last time, Hans&#x27;s face appeared to me in a glow of flame, and after that I felt nothing but the grim horror of the condemned man lashed to the mouth of a cannon, at the instant the shot goes off and scatters his limbs through the air.</p>
+</section>
+<section aria-labelledby="chapter-44">
 <h2 id="chapter-44">Chapter 44</h2>
 <p>When I opened my eyes again, I felt the guide&#x27;s powerful hand gripping me by the belt. With his other hand he was holding up my uncle. I wasn&#x27;t badly hurt — just battered, aching all over. I found myself lying on the slope of a mountain, two steps from a chasm into which the slightest movement would have sent me plunging. Hans had saved me from death as I rolled down the flank of the crater.</p>
 <p>&quot;Where are we?&quot; asked my uncle, who seemed thoroughly annoyed at being back on the surface of the earth.</p>
@@ -2514,6 +2633,8 @@ figcaption {
 <p>An hour after leaving the olive wood, we arrived at the port of San Vicenzo, where Hans claimed the wages of his thirteenth week of service, which were counted out to him with warm handshakes.</p>
 <p>At that moment, though he didn&#x27;t share our very natural emotion, he did at least give himself over to an extraordinary display of feeling.</p>
 <p>With the tips of his fingers he pressed our two hands lightly, and broke into a smile.</p>
+</section>
+<section aria-labelledby="chapter-45">
 <h2 id="chapter-45">Chapter 45</h2>
 <p>Here is the conclusion of a story that even the people most accustomed to being astonished by nothing will refuse to believe. But I have armored myself in advance against human incredulity.</p>
 <p>We were received by the fishermen of Stromboli with all the consideration owed to castaways. They gave us clothes and food. After forty-eight hours&#x27; wait, on August 31, a little speronare carried us to Messina, where a few days&#x27; rest cured us of all our exhaustion.</p>
@@ -2551,6 +2672,9 @@ figcaption {
 <p>&quot;During the storm on the Lidenbrock Sea, that ball of fire, the one that magnetized all the iron on the raft, quite simply threw our compass out of true!&quot;</p>
 <p>&quot;Ah!&quot; cried the Professor, bursting out laughing, &quot;so it was a trick of the electricity, was it?&quot;</p>
 <p>From that day on, my uncle was the happiest of scientists, and I the happiest of men — for my pretty Virland girl, giving up her position as ward, took her place in the house on König-strasse in the double capacity of niece and wife. Needless to add, her uncle was the illustrious Professor Otto Lidenbrock, corresponding member of every scientific, geographical, and mineralogical society in the five parts of the world.</p>
+</section>
+</article>
+</main>
 
 </body>
 </html>

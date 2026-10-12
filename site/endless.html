@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Science, the Endless Frontier &mdash; Vannevar Bush</title>
+	<meta name="description" content="Vannevar Bush&#x27;s 1945 report to the President: basic research as the pacemaker of progress, and the plan that became the National Science Foundation. A restored edition, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/endless.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="Science, the Endless Frontier — Vannevar Bush">
+	<meta property="og:description" content="Vannevar Bush&#x27;s 1945 report to the President: basic research as the pacemaker of progress, and the plan that became the National Science Foundation. A restored edition, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/endless.html">
+	<meta property="og:image" content="https://emend.press/covers/share/endless.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,28 +192,32 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>Science, the Endless Frontier</h1>
-	<h3>A Report to the President on a Program for Postwar Scientific Research, July 1945</h3>
-	<h3>by Vannevar Bush</h3>
+	<p class="title-line">A Report to the President on a Program for Postwar Scientific Research, July 1945</p>
+	<p class="title-line">by Vannevar Bush</p>
 	<p class="center">
 	1945
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is a restored edition of Science, the Endless Frontier: the author's own words, unchanged. Every plate carries a caption and alt text written for this edition, beginning with the label the book printed. The original is available from <a href="https://archive.org/details/scienceendlessfr00unit_0">Internet Archive (scan of the 1945 Government Printing Office edition)</a>. Also available as an <a href="ebooks/vannevar-bush_science-the-endless-frontier.epub">epub</a>. <a href="restored.html">More restored editions</a>.</i></p>
 
 	<hr>
+<section aria-labelledby="editors-introduction">
 <h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
 <p>Vannevar Bush was an electrical engineer, a former dean of engineering at the Massachusetts Institute of Technology and, from 1939, president of the Carnegie Institution of Washington. In the Second World War he ran American civilian science: first the National Defense Research Committee and then, from 1941, the Office of Scientific Research and Development, which placed contracts with universities and companies for radar, the proximity fuze, the mass production of penicillin and much else, and which started the atomic bomb project before the Army took it over.</p>
 <p>On 17 November 1944 President Roosevelt wrote to Bush asking four questions about the peace: how to release what the war had taught, how to carry on the fight against disease, how the government should aid research, and how to find and train scientific talent. Bush and his associates had a hand in drafting that letter. Roosevelt died in April 1945, and Bush sent this report to President Truman on 5 July 1945, with the reports of the four advisory committees he had appointed bound in after it.</p>
 <p>Its argument is that new knowledge comes from basic research, done without thought of practical ends, mostly in universities; that industry will not pay for enough of it and the war has used up the stock; and that the government should therefore fund it steadily, through grants and contracts, without directing it. To do so Bush proposed one new agency, a National Research Foundation run by citizens chosen for their interest in research, which would also support military research, medical research and scholarships.</p>
 <p>The report fixed the phrase &quot;basic research&quot; in American policy and is still cited whenever that funding is debated. Its plan took five years to become law. Congress argued over who should control the agency, Truman vetoed a bill in 1947 because its director would not have answered to the President, and when the National Science Foundation was created in 1950 it was smaller than Bush had asked for. By then military and medical research had gone to other agencies.</p>
 <p>This is a restored edition of the report as printed by the Government Printing Office in July 1945. It includes Bush&#x27;s letter of transmittal, Roosevelt&#x27;s letter, the summary, the six chapters, the organization chart and the budget table, and Appendix 1, which lists the committees consulted. The committee reports, Appendices 2 to 5, some 150 further pages, are not included. No clean transcription existed. The text is voted from three scans, two of the 1945 printing and one of the National Science Foundation&#x27;s 1960 reprint, with doubtful readings settled on the 1945 page images. The bold type marks the findings Bush set in bold. As a work of the United States government, the report is in the public domain.</p>
+</section>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p><a href="#letter-of-transmittal">Letter of Transmittal</a></p>
 <p><a href="#president-roosevelt-s-letter">President Roosevelt’s Letter</a></p>
@@ -201,8 +231,11 @@ figcaption {
 <li><a href="#ch-6">Chapter 6: The Means to the End</a></li>
 </ul>
 <p><a href="#appendix-1-committees-consulted">Appendix 1: Committees Consulted</a></p>
+</nav>
 
 <hr>
+<article>
+<section aria-labelledby="letter-of-transmittal">
 <h2 id="letter-of-transmittal">Letter of Transmittal</h2>
 <p>Office of Scientific Research and Development · 1530 P Street, NW. · Washington 25, D. C. · July 5, 1945.</p>
 <p>Dear Mr. President:</p>
@@ -220,6 +253,8 @@ figcaption {
 <p>(s) V. Bush, <em>Director</em>.</p>
 <p>The President of the United States, The White House,</p>
 <p>Washington, D. C.</p>
+</section>
+<section aria-labelledby="president-roosevelt-s-letter">
 <h2 id="president-roosevelt-s-letter">President Roosevelt’s Letter</h2>
 <p>The White House · Washington, D. C. · November 17, 1944.</p>
 <p>Dear Dr. Bush: The Office of Scientific Research and Development, of which you are the Director, represents a unique experiment of team-work and cooperation in coordinating scientific research and in applying existing scientific knowledge to the solution of the technical problems paramount in war. Its work has been conducted in the utmost secrecy and carried on without public recognition of any kind; but its tangible results can be found in the communiques coming in from the battlefronts all over the world. Some day the full story of its achievements can be told.</p>
@@ -238,6 +273,8 @@ figcaption {
 <p>Dr. Vannevar Bush,</p>
 <p>Office of Scientific Research and Development,</p>
 <p>Washington, D. C.</p>
+</section>
+<section aria-labelledby="summary-of-the-report">
 <h2 id="summary-of-the-report">Summary of the Report</h2>
 <p>“New frontiers of the mind are before us, and if they are pioneered with the same vision, boldness, and drive with which we have waged this war we can create a fuller and more fruitful employment and a fuller and more fruitful life.”</p>
 <p>—Franklin D. Roosevelt, November 17, 1944.</p>
@@ -269,6 +306,8 @@ figcaption {
 <p>The effective discharge of these new responsibilities will require the full attention of some over-all agency devoted to that purpose. There is not now in the permanent Governmental structure receiving its funds from Congress an agency adapted to supplementing the support of basic research in the colleges, universities, and research institutes, both in medicine and the natural sciences, adapted to supporting research on new weapons for both Services, or adapted to administering a program of science scholarships and fellowships.</p>
 <p>Therefore I recommend that a new agency for these purposes be established. Such an agency should be composed of persons of broad interest and experience, having an understanding of the peculiarities of scientific research and scientific education. It should have stability of funds so that long-range programs may be undertaken. It should recognize that freedom of inquiry must be preserved and should leave internal control of policy, personnel, and the method and scope of research to the institutions in which it is carried on. It should be fully responsible to the President and through him to the Congress for its program.</p>
 <p>Early action on these recommendations is imperative if this nation is to meet the challenge of science in the crucial years ahead. On the wisdom with which we bring science to bear in the war against disease, in the creation of new industries, and in the strengthening of our Armed Forces depends in large measure our future as a nation.</p>
+</section>
+<section aria-labelledby="ch-1">
 <h3 id="ch-1">Chapter 1: Introduction</h3>
 <h4>Scientific Progress Is Essential</h4>
 <p>We all know how much the new drug, penicillin, has meant to our grievously wounded men on the grim battlefronts of this war—the countless lives it has saved—the incalculable suffering which its use has prevented. Science and the great practical genius of this nation made this achievement possible.</p>
@@ -293,6 +332,8 @@ figcaption {
 <p>Many of the lessons learned in the war-time application of science under Government can be profitably applied in peace. The Government is peculiarly fitted to perform certain functions, such as the coordination and support of broad programs on problems of great national importance. But we must proceed with caution in carrying over the methods which work in wartime to the very different conditions of peace. We must remove the rigid controls which we have had to impose, and recover freedom of inquiry and that healthy competitive scientific spirit so necessary for expansion of the frontiers of scientific knowledge.</p>
 <p>Scientific progress on a broad front results from the free play of free intellects, working on subjects of their own choice, in the manner dictated by their curiosity for exploration of the unknown. Freedom of inquiry must be preserved under any plan for Government support of science in accordance with the Five Fundamentals listed on page 26.</p>
 <p>The study of the momentous questions presented in President Roosevelt’s letter has been made by able committees working diligently. This report presents conclusions and recommendations based upon the studies of these committees which appear in full as the appendices. Only in the creation of one over-all mechanism rather than several does this report depart from the specific recommendations of the committees. The members of the committees have reviewed the recommendations in regard to the single mechanism and have found this plan thoroughly acceptable.</p>
+</section>
+<section aria-labelledby="ch-2">
 <h3 id="ch-2">Chapter 2: The War Against Disease</h3>
 <h4>In War</h4>
 <p>The death rate for all diseases in the Army, including the overseas forces, has been reduced from 14.1 per thousand in the last war to 0.6 per thousand in this war.</p>
@@ -320,6 +361,8 @@ figcaption {
 <p>Between World War I and World War II the United States overtook all other nations in medical research and assumed a position of world leadership. To a considerable extent this progress reflected the liberal financial support from university endowment income, gifts from individuals, and foundation grants in the 20’s. The growth of research departments in medical schools has been very uneven, however, and in consequence most of the important work has been done in a few large schools. This should be corrected by building up the weaker institutions, especially in regions which now have no strong medical research activities.</p>
 <p>The traditional sources of support for medical research, largely endowment income, foundation grants, and private donations, are diminishing, and there is no immediate prospect of a change in this trend. Meanwhile, research costs have steadily risen. More elaborate and expensive equipment is required, supplies are more costly, and the wages of assistants are higher. Industry is only to a limited extent a source of funds for basic medical research.</p>
 <p><b>It is clear that if we are to maintain the progress in medicine which has marked the last 25 years, the Government should extend financial support to basic medical research in the medical schools and in the universities, through grants both for research and for fellowships. The amount which can be effectively spent in the first year should not exceed 5 million dollars. After a program is under way perhaps 20 million dollars a year can be spent effectively.</b></p>
+</section>
+<section aria-labelledby="ch-3">
 <h3 id="ch-3">Chapter 3: Science and the Public Welfare</h3>
 <h4>Relation to National Security</h4>
 <p>In this war it has become clear beyond all doubt that scientific research is absolutely essential to national security. The bitter and dangerous battle against the U-boat was a battle of scientific techniques—and our margin of success was dangerously small. The new eyes which radar supplied to our fighting forces quickly evoked the development of scientific countermeasures which could often blind them. This again represents the ever continuing battle of techniques. The V-1 attack on London was finally defeated by three devices developed during this war and used superbly in the field. V-2 was countered only by capture of the launching sites.</p>
@@ -378,6 +421,8 @@ figcaption {
 <p>In providing Government support, however, we must endeavor to preserve as far as possible the private support of research both in industry and in the colleges, universities, and research institutes. These private sources should continue to carry their share of the financial burden.</p>
 <h4>The Cost of a Program</h4>
 <p>It is estimated that an adequate program for Federal support of basic research in the colleges, universities, and research institutes and for financing important applied research in the public interest, will cost about 10 million dollars at the outset and may rise to about 50 million dollars annually when fully underway at the end of perhaps 5 years.</p>
+</section>
+<section aria-labelledby="ch-4">
 <h3 id="ch-4">Chapter 4: Renewal of Our Scientific Talent</h3>
 <h4>Nature of the Problem</h4>
 <p>The responsibility for the creation of new scientific knowledge rests on that small body of men and women who understand the fundamental laws of nature and are skilled in the techniques of scientific research. While there will always be the rare individual who will rise to the top without benefit of formal education and training, he is the exception and even he might make a more notable contribution if he had the benefit of the best education we have to offer. I cannot improve on President Conant’s statement that:</p>
@@ -411,6 +456,8 @@ figcaption {
 <p><b>To encourage and enable a larger number of young men and women of ability to take up science as a career, and in order gradually to reduce the deficit of trained scientific personnel, it is recommended that provision be made for a reasonable number of (a) undergraduate scholarships and graduate fellowships and (b) fellowships for advanced training and fundamental research. The details should be worked out with reference to the interests of the several States and of the universities and colleges; and care should be taken not to impair the freedom of the institutions and individuals concerned.</b></p>
 <p>The program proposed by the Moe Committee in Appendix 4 would provide 24,000 undergraduate scholarships and 900 graduate fellowships and would cost about $30,000,000 annually when in full operation. Each year under this program 6,000 undergraduate scholarships would be made available to high school graduates, and 300 graduate fellowships would be offered to college graduates. Approximately the scale of allowances provided for under the educational program for returning veterans has been used in estimating the cost of this program.</p>
 <p>The plan is, further, that all those who receive such scholarships or fellowships in science should be enrolled in a National Science Reserve and be liable to call into the service of the Government, in connection with scientific or technical work in time of war or other national emergency declared by Congress or proclaimed by the President. Thus, in addition to the general benefits to the nation by reason of the addition to its trained ranks of such a corps of scientific workers, there would be a definite benefit to the nation in having these scientific workers on call in national emergencies. The Government would be well advised to invest the money involved in this plan even if the benefits to the nation were thought of solely—which they are not—in terms of national preparedness.</p>
+</section>
+<section aria-labelledby="ch-5">
 <h3 id="ch-5">Chapter 5: A Problem of Scientific Reconversion</h3>
 <h4>Effects of Mobilization of Science for War</h4>
 <p>We have been living on our fat. For more than 5 years many of our scientists have been fighting the war in the laboratories, in the factories and shops, and at the front. We have been directing the energies of our scientists to the development of weapons and materials and methods, on a large number of relatively narrow projects initiated and controlled by the Office of Scientific Research and Development and other Government agencies. Like troops, the scientists have been mobilized, and thrown into action to serve their country in time of emergency. But they have been diverted to a greater extent than is generally appreciated from the search for answers to the fundamental problems—from the search on which human welfare and progress depends. This is not a complaint—it is a fact. The mobilization of science behind the lines is aiding the fighting men at the front to win the war and to shorten it; and it has resulted incidentally in the accumulation of a vast amount of experience and knowledge of the application of science to particular problems, much of which can be put to use when the war is over. Fortunately, this country had the scientists—and the time—to make this contribution and thus to advance the date of victory.</p>
@@ -430,6 +477,8 @@ figcaption {
 <p>The release of information from security regulations is but one phase of the problem. The other is to provide for preparation of the material and its publication in a form and at a price which will facilitate dissemination and use. In the case of the Office of Scientific Research and Development, arrangements have been made for the preparation of manuscripts, while the staffs under our control are still assembled and in possession of the records, as soon as the pressure for production of results for this war has begun to relax.</p>
 <p>We should get this scientific material to scientists everywhere with great promptness, and at as low a price as is consistent with suitable format. We should also get it to the men studying overseas so that they will know what has happened in their absence.</p>
 <p><b>It is recommended that measures which will encourage and facilitate the preparation and publication of reports be adopted forthwith by all agencies, governmental and private, possessing scientific information released from security control.</b></p>
+</section>
+<section aria-labelledby="ch-6">
 <h3 id="ch-6">Chapter 6: The Means to the End</h3>
 <h4>New Responsibilities for Government</h4>
 <p>One lesson is clear from the reports of the several committees attached as appendices. The Federal Government should accept new responsibilities for promoting the creation of new scientific knowledge and the development of scientific talent in our youth.</p>
@@ -524,6 +573,8 @@ figcaption {
 <p>The National Research Foundation herein proposed meets the urgent need of the days ahead. The form of the organization suggested is the result of considerable deliberation. The form is important. The very successful pattern of organization of the National Advisory Committee for Aeronautics, which has promoted basic research on problems of flight during the past thirty years, has been carefully considered in proposing the method of appointment of Members of the Foundation and in defining their responsibilities. Moreover, whatever program is established it is vitally important that it satisfy the Five Fundamentals.</p>
 <p>The Foundation here proposed has been described only in outline. The excellent reports of the committees which studied these matters are attached as appendices. They will be of aid in furnishing detailed suggestions.</p>
 <p>Legislation is necessary. It should be drafted with great care. Early action is imperative, however, if this nation is to meet the challenge of science and fully utilize the potentialities of science. On the wisdom with which we bring science to bear against the problems of the coming years depends in large measure our future as a nation.</p>
+</section>
+<section aria-labelledby="appendix-1-committees-consulted">
 <h2 id="appendix-1-committees-consulted">Appendix 1: Committees Consulted</h2>
 <h4>Question</h4>
 <p>“With particular reference to the war of science against disease, what can be done now to organize a program for continuing in the future the work which has been done in medicine and related sciences?”</p>
@@ -587,6 +638,9 @@ figcaption {
 <p>Dr. A. N. Richards, vice president of the University of Pennsylvania in charge of Medical Affairs; chairman of the Committee on Medical Research of the Office of Scientific Research and Development.</p>
 <p>Dr. M. A. Tuve, director, applied physics laboratory, Johns Hopkins University; staff member of the department of Terrestrial Magnetism of the Carnegie Institution of Washington.</p>
 <p>Mr. Carroll L. Wilson, executive assistant to the Director of the Office of Scientific Research and Development.</p>
+</section>
+</article>
+</main>
 
 </body>
 </html>

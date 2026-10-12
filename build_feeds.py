@@ -26,6 +26,7 @@ import subprocess
 from pathlib import Path
 
 import assemble  # find_epub, read_env
+import seo
 
 ROOT = Path(__file__).parent
 # emend.press is the canonical host (GitHub Pages custom domain, set in the
@@ -33,7 +34,8 @@ ROOT = Path(__file__).parent
 # lived at www.alexalemi.com/modern-classics, which GitHub now redirects.
 # Historical note: www was the no-redirect host: bare alexalemi.com 301s via plain http,
 # which simple e-reader OPDS clients refuse to follow.
-DEFAULT_BASE = "https://emend.press"
+# The host itself is written once, in seo.BASE (canonical links use it too).
+DEFAULT_BASE = seo.BASE
 
 # book dir -> site page, where the page name differs from the dir name
 # The published filename now lives in each book's env as PAGE, read by
@@ -215,6 +217,7 @@ def main():
     books = collect(base)
     copy_covers(books)
     make_thumbs()
+    seo.make_share_cards()
     (ROOT / "site" / "feed.xml").write_text(build_rss(books, base))
     # The SAME catalog is written twice, under two extensions. GitHub
     # Pages picks the Content-Type from the extension alone and cannot be

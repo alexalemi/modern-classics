@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>The Chemical History of a Candle &mdash; Michael Faraday</title>
+	<meta name="description" content="The most famous science lectures ever given: the whole of chemistry drawn out of one burning candle, ending with the news that you are a slow candle yourself. Retold in modern English, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/candle.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="The Chemical History of a Candle — Michael Faraday">
+	<meta property="og:description" content="The most famous science lectures ever given: the whole of chemistry drawn out of one burning candle, ending with the news that you are a slow candle yourself. Retold in modern English, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/candle.html">
+	<meta property="og:image" content="https://emend.press/covers/share/candle.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,20 +192,22 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>The Chemical History of a Candle</h1>
-	<h3>Six Christmas lectures for young people at the Royal Institution, drawing the whole of chemistry out of a burning candle — with the separate Lecture on Platinum, and all thirty-eight of the original figures</h3>
-	<h3>by Michael Faraday</h3>
+	<p class="title-line">Six Christmas lectures for young people at the Royal Institution, drawing the whole of chemistry out of a burning candle — with the separate Lecture on Platinum, and all thirty-eight of the original figures</p>
+	<p class="title-line">by Michael Faraday</p>
 	<p class="center">
 	<s>1861</s> 2026
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is an AI modernization of The Chemical History of a Candle into contemporary English. The original is available from <a href="https://www.gutenberg.org/ebooks/14474">Project Gutenberg</a>. Also available as an <a href="ebooks/michael-faraday_the-chemical-history-of-a-candle.epub">epub</a>. <a href="candle-original.html">The original text is also here</a>.</i></p>
 
 	<hr>
+<section aria-labelledby="editors-introduction">
 <h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
 <p>Michael Faraday started the Royal Institution&#x27;s Christmas lectures for young people in 1825, and they have run ever since. He gave nineteen of the courses himself. This is the last of them, delivered over Christmas 1860 and the new year of 1861, when he was sixty-nine and near the end of his working life, and it is the most famous course of popular science lectures ever given. Several other volumes from the same series are in this collection, including his own course of the previous winter, On the Various Forces of Nature, which came first.</p>
 <p>The device is one candle, and he never drops it. Every question in chemistry is reached by asking something about the flame burning on the table in front of him. How does the wax get up the wick? Why is the flame that shape? Why is it bright? What does it take out of the air, and what does it put back? By the fourth lecture he is making water out of hydrogen and oxygen and taking it apart again; by the sixth he has got from the candle to coal gas, to the air itself, and finally to the audience, because breathing turns out to be the same chemistry as burning and the analogy between a life and a taper is not a figure of speech. The separate Lecture on Platinum, given in February 1861 and appended by the first edition, is here too.</p>
@@ -187,8 +215,10 @@ figcaption {
 <p>His chemical names are the old ones, and they are kept. He reasons with carbonic acid and carbonic oxide, so those stay his words, each glossed once with the modern name and then left alone. A reader who finishes the book can go and read other Victorian chemistry.</p>
 <p>The lectures were taken down and edited by William Crookes, a chemist who was about to make his own name. His explanatory notes sat at the back of the 1861 book behind page numbers; here each one is printed beside the passage it explains, marked as an editor&#x27;s note, and written in his dry third-person register rather than Faraday&#x27;s. All thirty-eight of the original woodcuts are restored, with descriptive captions.</p>
 <p>The last page of the sixth lecture is the part people quote. It is a wish addressed to the children, and it is kept close to word for word.</p>
+</section>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p><a href="#preface">Preface</a></p>
 <p><a href="#lecture-one-a-candle-the-flame-its-sources-structure-movement-and-brightness">Lecture One: A Candle — the Flame, Its Sources, Structure, Movement and Brightness</a></p>
@@ -198,8 +228,11 @@ figcaption {
 <p><a href="#lecture-five-oxygen-in-the-air-what-the-atmosphere-is-and-carbonic-acid">Lecture Five: Oxygen in the Air — What the Atmosphere Is, and Carbonic Acid</a></p>
 <p><a href="#lecture-six-carbon-and-coal-gas-breathing-and-how-like-a-candle-it-is">Lecture Six: Carbon and Coal Gas — Breathing, and How Like a Candle It Is</a></p>
 <p><a href="#lecture-on-platinum">Lecture on Platinum</a></p>
+</nav>
 
 <hr>
+<article>
+<section aria-labelledby="preface">
 <h2 id="preface">Preface</h2>
 <p>From the primitive pine torch to the paraffin candle — what a wide interval, and what a vast contrast between them! The means a man adopts to light his home at night stamp his position at once on the scale of civilisation. The liquid bitumen of the far East, blazing in rough vessels of baked earth; the Etruscan lamp, exquisite in form and yet ill suited to its office; the whale, seal or bear fat filling the hut of the Eskimo or the Lapp with odour rather than light; the huge wax candle on the glittering altar; the row of gas lamps along our streets — all of them have their stories to tell. All of them, if they could speak — and after their own fashion they can — might warm our hearts by telling how they have served man&#x27;s comfort, his love of home, his labour and his devotion.</p>
 <p>Surely, among the millions of fire-worshippers and fire-users who have passed away in earlier ages, some must have pondered the mystery of fire; perhaps a few clear minds guessed shrewdly near the truth. Think how long man has lived in hopeless ignorance of it. Think that only within a span that a single lifetime could cover has the truth been known.</p>
@@ -207,6 +240,8 @@ figcaption {
 <p>The candle itself is now made to light up the dark places of nature; the blowpipe and the prism are adding to our knowledge of the earth&#x27;s crust. But the torch had to come first.</p>
 <p>Among the readers of this book a few may devote themselves to increasing the stores of knowledge. The Lamp of Science must burn. Alere flammam — feed the flame.</p>
 <p>W. Crookes.</p>
+</section>
+<section aria-labelledby="lecture-one-a-candle-the-flame-its-sources-structure-movement-and-brightness">
 <h2 id="lecture-one-a-candle-the-flame-its-sources-structure-movement-and-brightness">Lecture One: A Candle — the Flame, Its Sources, Structure, Movement and Brightness</h2>
 <p>In return for the honour you do us by coming to see what we get up to here, I mean to lay before you, in the course of these lectures, the chemical history of a candle. I have taken this subject before, and if it were left to my own wishes I would rather repeat it almost every year — so abundant is the interest attached to it, and so wonderful is the variety of ways in which it opens out into every department of science. There is not a single law governing any part of this universe which does not come into play here, and get touched upon in these phenomena. There is no better, there is no more open door by which you can enter into the study of natural philosophy, than by considering the physical phenomena of a candle. So I trust I shall not disappoint you by choosing this rather than some newer topic — which could not possibly be better, even supposing it were as good.</p>
 <p>And before I go on, let me say this as well. Our subject is a great one, and I mean to treat it honestly, seriously and scientifically; and yet I intend to leave out of account all those among us who are grown up. I claim the privilege of speaking to young people as a young person myself. I have done so before, and, if you will allow me, I shall do so again. And although I stand here knowing that the words I speak are going out to the world, that shall not stop me from talking in the same familiar way to those whom I count nearest to me on this occasion.</p>
@@ -282,6 +317,8 @@ figcaption {
 <figcaption><b>Figure 6</b> &mdash; The succession of separate shapes that make up a large flame. They never exist together; the eye sees them following one another so fast that it takes them all in at once.</figcaption>
 </figure>
 <p>It is too bad that we have got no further than my game of snapdragon; but we must not on any account keep you past your time. It will be a lesson to me in future to hold you more strictly to the science of the thing, instead of taking up so much of your time with these illustrations.</p>
+</section>
+<section aria-labelledby="lecture-two-brightness-of-the-flame-the-air-a-candle-needs-and-the-water-it-makes">
 <h2 id="lecture-two-brightness-of-the-flame-the-air-a-candle-needs-and-the-water-it-makes">Lecture Two: Brightness of the Flame — the Air a Candle Needs, and the Water It Makes</h2>
 <p>Last time we met we were occupied with the general character and arrangement of the liquid part of a candle, and with the way that liquid gets to the place of burning. You see that when we have a candle burning fairly in a steady, regular atmosphere, it takes a shape something like the one in the diagram, and looks quite uniform, though very curious in its character.</p>
 <p>And now I must ask your attention to the means by which we can find out what happens in any particular part of the flame — why it happens, what it does in happening, and where, after all, the whole candle goes to. Because, as you know very well, a candle brought before us and burned disappears, if it burns properly, without leaving the least trace of dirt in the candlestick; and that is a very curious circumstance.</p>
@@ -348,6 +385,8 @@ figcaption {
 <p>I am going to put this balloon — not into action, because that is not my object — but to show you the effect produced by those products which rise from the candle, as they rise here from the furnace. [The balloon was held over the chimney, and immediately began to fill.] You see how ready it is to go up; but we must not let it, because it might come against those upper gas lights, and that would be very inconvenient. [The upper gas lights were turned out, at the lecturer&#x27;s request, and the balloon was allowed to ascend.]</p>
 <p>Does that not show you what a large bulk of matter is being given off? Now, all the products of that candle are going through this tube [placing a large glass tube over a candle], and you will see presently that the tube becomes quite opaque. Suppose I take another candle, put it under a jar, and set a light on the other side, just to show you what is going on. You see the sides of the jar go cloudy and the light begins to burn feebly. It is the products, you see, that make the light so dim, and the same thing makes the sides of the jar so opaque.</p>
 <p>If you go home and take a spoon that has been out in the cold air and hold it over a candle — not so as to soot it — you will find it becomes dim, just as that jar is dim. If you can get a silver dish, or something of that sort, you will make the experiment better still. And now, just to carry your thoughts forward to the time when we next meet, let me tell you that it is water which causes the dimness; and when we meet again I will show you that we can make it take the form of a liquid without any difficulty.</p>
+</section>
+<section aria-labelledby="lecture-three-the-products-water-from-the-burning-what-water-is-made-of-and-hydrogen">
 <h2 id="lecture-three-the-products-water-from-the-burning-what-water-is-made-of-and-hydrogen">Lecture Three: The Products — Water from the Burning, What Water Is Made Of, and Hydrogen</h2>
 <p>I dare say you remember that when we parted we had just mentioned the word &quot;products&quot; from the candle. When a candle burns we found that we could, by careful adjustment, get various products from it. There was one substance which we did not get when the candle was burning properly, and that was charcoal, or smoke. And there was another substance that went up from the flame which did not appear as smoke but took some other form, and made part of that general current which rises from the candle, becomes invisible, and escapes. There were other products to mention as well. You remember that in that rising current beginning at the candle, we found one part could be condensed against a cold spoon, or a clean plate, or any other cold thing, and another part could not.</p>
 <p>We will take the condensable part first and examine it; and, strange to say, we find that this part of the product is simply water — nothing but water. Last time I mentioned it only in passing, saying that water was produced among the condensable products of the candle. But today I want to draw your attention to water, so that we may examine it carefully, both in relation to this subject and with respect to its general existence over the surface of the globe.</p>
@@ -439,6 +478,8 @@ figcaption {
 <p>And now we must try to find some further proof of the general character and composition of water; and for that I will keep you a little longer, so that at our next meeting we may be better prepared for the subject. We have the power of arranging that zinc, which you saw acting on water with the help of an acid, in such a way as to make all the power come out at the place where we want it. Behind me I have a voltaic pile, and just at the end of this lecture I am going to show you its character and power, so that you may see what we shall be dealing with when we next meet. I am holding the ends of the wires which bring the power from behind me, and which I shall make act on water.</p>
 <p>We have already seen what a power of combustion the potassium has, and the zinc, and the iron filings; but none of them shows such energy as this. [The lecturer here made contact between the two terminal wires of the battery, and a brilliant flash of light was produced.] This light is in fact produced by a forty-zinc power of burning. It is a power I can carry about in my hands, through these wires, as I please — although if I applied it wrongly to myself it would destroy me in an instant, for it is a most intense thing. The power you see put out here while you count five [bringing the poles into contact, and showing the electric light] is equal to the power of several thunderstorms; so great is its force. And so that you may see what intense energy it has, I will take the ends of the wires that carry the power from the battery, and with it I dare say I can burn this iron file. Now, this is a chemical power; and when we next meet I shall apply it to water and show you what results we can produce.</p>
 <p>Editor&#x27;s note: Professor Faraday has calculated that as much electricity is required to decompose one grain of water as there is in a very powerful flash of lightning.</p>
+</section>
+<section aria-labelledby="lecture-four-hydrogen-in-the-candle-burns-into-water-and-oxygen-the-other-half-of-water">
 <h2 id="lecture-four-hydrogen-in-the-candle-burns-into-water-and-oxygen-the-other-half-of-water">Lecture Four: Hydrogen in the Candle Burns into Water — and Oxygen, the Other Half of Water</h2>
 <p>I see you are not tired of the candle yet, or I am sure you would not be interested in the subject the way you are.</p>
 <p>When our candle was burning we found that it produced water exactly like the water we have around us; and on examining that water further we found in it that curious body hydrogen — the light substance, some of which is in this jar. We afterwards saw the burning powers of that hydrogen, and that it produced water. And I think I introduced to your notice an apparatus which I said very briefly was an arrangement of chemical force, or power, or energy, so adjusted as to bring its power to us along these wires. I said I would use that force to pull water to pieces and see what else there is in water besides hydrogen; because, you remember, when we passed the water through the iron tube we by no means got back the weight of water we put in as steam, although a very large quantity of gas came off. We have now to see what the other substance is.</p>
@@ -517,6 +558,8 @@ figcaption {
 <p>So now I think you will see the whole history of water with reference to oxygen and the air, from what has been said. Why does a piece of potassium decompose water? Because it finds oxygen in the water. What is set free when I put it in the water, as I am about to do again? It sets hydrogen free, and the hydrogen burns; but the potassium itself combines with the oxygen. This piece of potassium, in taking the water apart — water, you may say, derived from the burning of the candle — takes away the oxygen which the candle took from the air, and so sets the hydrogen free.</p>
 <p>And if I take a piece of ice and put a piece of potassium on it, the beautiful affinities relating oxygen and hydrogen are such that the ice will absolutely set fire to the potassium. I show you this today to enlarge your ideas of these things, and so that you may see how greatly results are modified by circumstances. There is the potassium on the ice, producing a sort of volcanic action.</p>
 <p>It will be my business when we next meet, having pointed out these anomalous actions, to show you that we meet with none of these extra and strange effects — none of these strange and injurious actions — when we are burning not merely a candle but gas in our streets, or fuel in our fireplaces, so long as we keep within the laws that Nature has laid down for our guidance.</p>
+</section>
+<section aria-labelledby="lecture-five-oxygen-in-the-air-what-the-atmosphere-is-and-carbonic-acid">
 <h2 id="lecture-five-oxygen-in-the-air-what-the-atmosphere-is-and-carbonic-acid">Lecture Five: Oxygen in the Air — What the Atmosphere Is, and Carbonic Acid</h2>
 <p>We have now seen that we can produce hydrogen and oxygen from the water we obtained from the candle. The hydrogen, you know, comes from the candle; the oxygen, you believe, comes from the air. But then you have a right to ask me: &quot;How is it that the air and the oxygen do not burn the candle equally well?&quot; If you remember what happened when I put a jar of oxygen over a piece of candle, you will recall that the burning was of a very different kind from the burning that goes on in air. Now, why is that? It is a very important question, and one I shall try to make you understand: it bears very closely on the nature of the atmosphere, and matters a great deal to us.</p>
 <p>We have several tests for oxygen besides the mere burning of bodies. You have seen a candle burnt in oxygen and in air; you have seen phosphorus burnt in air and in oxygen; and you have seen iron filings burnt in oxygen. But we have other tests besides these, and I am going to mention one or two in order to carry your conviction and your experience further.</p>
@@ -616,6 +659,8 @@ figcaption {
 </figure>
 <p>But first of all I will take one of these little balloons filled with air. I am not quite sure where the carbonic acid is; we will just sound the depth and see whereabouts its level lies. There, you see, we have the bladder floating on the carbonic acid; and if I evolve some more of the gas, the bladder will be lifted higher. There it goes — the jar is nearly full. And now I will see whether I can blow a soap bubble and float it the same way. [The lecturer here blew a soap bubble and let it fall into the jar of carbonic acid, where it floated midway.] It is floating, just as the balloon floated, by virtue of the greater weight of the carbonic acid compared with air.</p>
 <p>And now, having given you so far the history of carbonic acid — its sources in the candle, and its physical properties and weight — when we next meet I shall show you what it is composed of, and where it gets its elements from.</p>
+</section>
+<section aria-labelledby="lecture-six-carbon-and-coal-gas-breathing-and-how-like-a-candle-it-is">
 <h2 id="lecture-six-carbon-and-coal-gas-breathing-and-how-like-a-candle-it-is">Lecture Six: Carbon and Coal Gas — Breathing, and How Like a Candle It Is</h2>
 <p>A lady who honours me by her presence at these lectures has put me under a further obligation by sending me these two candles from Japan, which I presume are made of that substance I mentioned in an earlier lecture. You see they are even more highly ornamented than the French candles, and I suppose, judging by their appearance, that they are candles of luxury. They have a remarkable peculiarity about them, namely a hollow wick — that beautiful feature which Argand introduced into the lamp and made so valuable.</p>
 <p>To those who receive such presents from the East I may just say that this and similar materials gradually undergo a change which gives their surface a dull, dead look; but they can easily be restored to their original beauty if the surface is rubbed with a clean cloth or a silk handkerchief, so as to polish away the little roughness. That brings the colours back. I have rubbed one of these candles, and you can see the difference between it and the other, which has not been polished but could be restored by the same process. Notice too that these moulded candles from Japan are made more conical than the moulded candles of this part of the world.</p>
@@ -698,6 +743,8 @@ figcaption {
 <p>How beautifully that shows you the difference in the degree to which bodies act in this way! In the one case the substance will wait any length of time until the bodies associated with it are made active by heat; in the other, as in the process of respiration, it waits no time at all. In the lungs, as soon as the air enters, it unites with the carbon; even at the lowest temperature the body can bear short of being frozen, the action begins at once, producing the carbonic acid of respiration. And so all things go on fitly and properly. Thus you see the analogy between respiration and burning is made still more beautiful and striking.</p>
 <p>Indeed, all I can say to you at the end of these lectures — for we must come to an end at one time or another — is to express a wish that you may, in your generation, be fit to compare to a candle; that you may, like it, shine as lights to those about you; that, in all your actions, you may justify the beauty of the taper by making your deeds honourable and effectual in the discharge of your duty to your fellow-men.</p>
 <p>Editor&#x27;s note: Lead pyrophorus is made by heating dry tartrate of lead in a glass tube (closed at one end and drawn out to a fine point at the other) until no more vapours are evolved. The open end of the tube is then to be sealed before the blowpipe. When the tube is broken and the contents shaken out into the air, they burn with a red flash.</p>
+</section>
+<section aria-labelledby="lecture-on-platinum">
 <h2 id="lecture-on-platinum">Lecture on Platinum</h2>
 <p>Delivered before the Royal Institution on Friday, 22 February 1861.</p>
 <p>Whether I was to have the honour of appearing before you this evening or not seemed doubtful on one or two points. One of them I will mention immediately; the other may or may not appear in the course of the hour that follows.</p>
@@ -784,6 +831,9 @@ figcaption {
 <p>We shall now show you this same process of boiling the silver, thrown on a screen from the electric lamp in front of you. And while Dr. Tyndall is kindly getting the lamp ready for the purpose, let me tell you that Deville proposes to throw out in this way all the extraneous things I have spoken of, except two — namely iridium and rhodium. It so happens, he says, that iridium and rhodium make the metal more capable of resisting the attacks of acids than platinum is by itself. Alloys are compounded with up to 25 per cent of rhodium and iridium, which increases the chemical inertness of the platinum, and its malleability and other physical properties as well.</p>
 <p>[The image of the voltaic discharge through vapour of silver was now thrown onto the screen.] What you have on the screen now is an inverted image of what you saw when we heated the silver before. The fine stream you see around the silver is the discharge of the electric force taking place, giving that glorious green light you see in the ray; and if Dr. Tyndall will open the top of the lamp, you will see the quantity of fumes that come out of the opening, showing you at once the volatility of silver.</p>
 <p>I have now finished this imperfect account. It is only an apology for not having brought the process itself before you. I have done the best I could under the circumstances; and I know your kindness well, for if I were not sure that I could trust to it, I would not appear here as often as I have done. The gradual loss of my memory and of my other faculties is making itself painfully evident to me, and every time I appear before you it takes the continued remembrance of your kindness to enable me to get through my task. If I should happen to go on too long, or should fail to do what you might wish, remember that it is you who are to blame, for wishing me to remain. I have wanted to retire, as I think every man ought to do before his faculties become impaired; but I must confess that the affection I have for this place, and for those who come to this place, is such that I hardly know when the proper time has come.</p>
+</section>
+</article>
+</main>
 
 </body>
 </html>

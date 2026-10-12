@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>The Discourses &mdash; Epictetus</title>
+	<meta name="description" content="The lectures the Enchiridion was cut down from — a former slave telling Rome&#x27;s young gentlemen that they are the ones in chains. Retold in modern English, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/epictetus.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="The Discourses — Epictetus">
+	<meta property="og:description" content="The lectures the Enchiridion was cut down from — a former slave telling Rome&#x27;s young gentlemen that they are the ones in chains. Retold in modern English, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/epictetus.html">
+	<meta property="og:image" content="https://emend.press/covers/share/epictetus.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,27 +192,31 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>The Discourses</h1>
-	<h3>The full lectures behind the Enchiridion: a former slave teaching Rome&#x27;s young gentlemen what freedom actually is</h3>
-	<h3>by Epictetus</h3>
+	<p class="title-line">The full lectures behind the Enchiridion: a former slave teaching Rome&#x27;s young gentlemen what freedom actually is</p>
+	<p class="title-line">by Epictetus</p>
 	<p class="center">
 	<s>c. 108 AD</s> 2026
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is an AI modernization of The Discourses into contemporary English. The original is available from <a href="https://standardebooks.org/ebooks/epictetus/discourses/george-long">Standard Ebooks</a>. Also available as an <a href="ebooks/epictetus_the-discourses.epub">epub</a>.</i></p>
 
 	<hr>
+<section aria-labelledby="editors-introduction">
 <h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
 <p>Epictetus taught in a rented room in Nicopolis, a provincial town on the west coast of Greece, sometime around the year 108. He had been born a slave in Phrygia, owned in Rome by a freedman of Nero&#x27;s, and was lame in one leg. After he was freed he taught in Rome until Domitian threw the philosophers out of the city, and he never went back. His students were the sons of Roman gentlemen, sent to acquire a little philosophy before going into public life, and much of the book is him telling them that they are the ones in chains.</p>
 <p>He wrote none of this down. A pupil named Arrian did, and says in the covering letter that he wrote out whatever he heard as nearly as he could in the man&#x27;s own words, that the notes were for himself, and that he did not publish them. Four books survive of an original eight. What that shorthand preserves is a classroom rather than a treatise: he answers hecklers, loses patience, breaks off to ask a student whether he came here to be flattered or to be improved, and tells the room that a philosopher&#x27;s school is a surgery and that they should be leaving it in pain rather than in pleasure. It is where the drills of the Enchiridion come from, with the arguments left in, and it is a good deal funnier than the handbook.</p>
 <p>The translation this edition works from is George Long&#x27;s, and it is worth saying why it needed redoing, because nothing in Long sounds old. The trouble is that he renders Greek technical terms with ordinary English words that look transparent and are not. Phantasia becomes appearance, prohairesis becomes will, dogma becomes opinion. A reader who meets the phrase the right use of appearances slides past it having understood nothing, and it is one of the two or three things the whole course is about. An appearance is whatever presents itself to your mind before you have agreed to it — the thought that this is a disaster, arriving unbidden — and the work is in the pause before you assent. The will, in Long&#x27;s sense, is the faculty that does the agreeing, and it is the only thing Epictetus says nobody can take from you.</p>
 <p>His subject is freedom, argued by a man who had been somebody&#x27;s property. Say what you like about a consul, he says: a man who flatters to keep his position is more a slave than one who has been sold three times. His recommendation that a life can be ended when it is no longer worth living, the open door, recurs throughout and is given here as the argument he made, with no modern note attached. So is Book Three chapter one, a long attack on a young man for plucking his body hair. Marcus Aurelius read these lectures and says so; his notebook is in this collection as the Meditations, alongside Seneca&#x27;s letters and the Enchiridion.</p>
+</section>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p><a href="#introduction">Introduction</a></p>
 <p><a href="#arrian-s-letter-to-lucius-gellius">Arrian&#x27;s Letter to Lucius Gellius</a></p>
@@ -297,8 +327,11 @@ figcaption {
 <li><a href="#ch-12-4">Chapter 12: On Attention</a></li>
 <li><a href="#ch-13-4">Chapter 13: Against Those Who Too Readily Tell Their Own Business</a></li>
 </ul>
+</nav>
 
 <hr>
+<article>
+<section aria-labelledby="introduction">
 <h2 id="introduction">Introduction</h2>
 <p>Very little is known about the life of Epictetus. He is said to have been born at Hierapolis in Phrygia, a town between the Maeander and one of its branches, the Lycus. Hierapolis is mentioned in Paul&#x27;s letter to the Colossians (Colossians 4:13), from which it has been concluded that there was a Christian church there in the apostle&#x27;s time. The date of Epictetus&#x27; birth is unknown. The only recorded fact about his early life is that he was a slave in Rome, and that his master was Epaphroditus, a dissolute freedman of the emperor Nero. There is a story that this master broke his slave&#x27;s leg by torturing him; but it is better to trust the evidence of Simplicius, the commentator on the Encheiridion, or Manual, who says that Epictetus was physically weak and lame from an early age. How he came to be a slave is not stated, though it has been asserted in modern times that his parents sold the child. I have found no authority for that.</p>
 <p>We may suppose that the young slave showed intelligence, since his master sent him — or allowed him to go — to the lectures of Gaius Musonius Rufus, an eminent Stoic philosopher. It may seem strange that such a master should have wanted his slave turned into a philosopher, but Jean-Jacques Garnier, author of a Mémoire sur les ouvrages d&#x27;Épictète, explains the matter very well in a letter to Johann Schweighäuser. Garnier writes: &quot;Epictetus, born at Hierapolis in Phrygia of poor parents, apparently owed the advantages of a good education to a fashion common at the end of the Republic and under the first emperors, by which the great men of Rome liked to count grammarians, poets, rhetoricians and philosophers among their many slaves — much as rich financiers in later ages have been moved to assemble large and costly libraries. This is the only supposition that can explain to us how a wretched child, born as poor as Irus, came to receive a good education, and how a rigid Stoic came to be the slave of Epaphroditus, an officer of the Imperial guard. For we cannot suppose that the confidant and manager of Nero&#x27;s debaucheries would have wanted such a slave out of any liking for Stoic doctrine, or for his own use.&quot;</p>
@@ -310,12 +343,17 @@ figcaption {
 <p>Upton remarks, in a note on Book Three, chapter 23, that &quot;there are many passages in these dissertations which are ambiguous or rather confused on account of the small questions, and because the matter is not expanded by oratorical copiousness, not to mention other causes.&quot; The discourses of Epictetus were, it is supposed, spoken without preparation, so that one thing after another would come into the speaker&#x27;s mind as he went (Wolf). Schweighäuser likewise observes that the thread of the argument is sometimes obscure because words needed to show the connection of thought have been left out. The reader will therefore find that he cannot always understand Epictetus unless he reads him very carefully, and some passages more than once. He must think and reflect as well, or he will miss the meaning. I do not say the book is worth all this trouble. Every man must judge that for himself. But I should not have translated it if I had not thought it worth studying, and I think all books of this kind need careful reading, if they are worth reading at all.</p>
 <p>The text of Epictetus is corrupt in places, and that corruption causes a few difficulties. They are not numerous enough, however, to cause or even to allow much variety among translations. This will explain why many parts of my translation are the same, or nearly the same, as Carter&#x27;s. Where that happened, I did not think it necessary to alter my version merely so that it should differ from hers. I made my translation first, and then compared it with hers and with the Latin. I hope I have not made many blunders. I do not suppose I have made none.</p>
 <p>The last and best edition of the Discourses, the Encheiridion and the fragments is Johann Schweighäuser&#x27;s, in six octavo volumes. It contains Simplicius&#x27; commentary on the Encheiridion and two volumes of useful notes on the Discourses. These notes are selected from Wolf, Upton and a few other commentators, but a large part of them are Schweighäuser&#x27;s own, and he was an excellent scholar and a very sensible man. I have read all of them, and I have used them. Many of the notes to this translation are my own.</p>
+</section>
+<section aria-labelledby="arrian-s-letter-to-lucius-gellius">
 <h2 id="arrian-s-letter-to-lucius-gellius">Arrian&#x27;s Letter to Lucius Gellius</h2>
 <p>I did not write these Discourses of Epictetus the way a man writes a book, and I did not make them public myself — indeed, I say I did not write them at all. Whatever I heard him say, I tried to set down in his own words, as nearly as I could, so that I would have a record afterwards of how he thought and how freely he spoke.</p>
 <p>They are, naturally enough, the sort of thing one man says to another on the spur of the moment, not the sort of thing anyone writes for others to read. Being what they are, I have no idea how they came into the public&#x27;s hands, without either my consent or my knowledge.</p>
 <p>It matters little to me if I am thought incompetent as a writer, and it matters not at all to Epictetus if anyone despises what he said. At the time he was speaking, it was plain that he had no other aim than to move the minds of the people listening toward the best things. If these Discourses do that, they will have done what I think the words of philosophers ought to do. If they do not, then let whoever reads them know this much: when Epictetus delivered them, the man who heard him could not help being affected exactly as Epictetus meant him to be. And if the Discourses on the page do not manage it, then perhaps the fault is mine — or perhaps it could not have been otherwise.</p>
 <p>Farewell.</p>
+</section>
+<section class="part" aria-labelledby="book-one">
 <h2 id="book-one" class="center">Book One</h2>
+<section aria-labelledby="ch-1">
 <h3 id="ch-1">Chapter 1: What Is Up to Us and What Is Not</h3>
 <p>Of all our capacities, you will find not one that can examine itself — and therefore not one that can approve or disapprove of anything. Except one. I will come to it.</p>
 <p>Take the art of grammar. How far does its power of examination reach? As far as judging what is written and spoken. And music? As far as judging melody. Does either of them examine itself? Not at all. If you have to write to your friend, grammar will tell you which words to use; whether to write at all, grammar will not tell you. The same with music and musical sound: whether this is the moment to sing and play the lyre, or to do neither, music will not tell you.</p>
@@ -347,6 +385,8 @@ figcaption {
 <p>It has not been taken.</p>
 <p>&quot;Then let us go to Aricia,&quot; he said, &quot;and have dinner.&quot;</p>
 <p>This is what it means to have studied what a man ought to study: to have made desire and avoidance proof against being blocked, proof against everything you would rather not meet. I have to die. If now, then I am dying now. If in a little while, then I will dine, since it is the dinner hour, and die afterwards. How? Like a man handing back what was never his.</p>
+</section>
+<section aria-labelledby="ch-2">
 <h3 id="ch-2">Chapter 2: How to Keep Your Own Character in Every Situation</h3>
 <p>Only to a rational creature is the irrational unbearable. What is rational, he can bear. Blows are not naturally unbearable. How so? Look at the Spartans, who take a whipping calmly once they have learned that the whipping makes sense. Hanging yourself is not unbearable either: the moment you form the judgment that it is the rational thing, off you go and hang yourself. In short, if we look, we shall find that nothing gives a human being so much pain as what he finds irrational, and nothing draws him so strongly as what he finds rational.</p>
 <p>But the rational and the irrational look different to different people, exactly as the good and the bad do, and the profitable and the unprofitable. That, above all, is why we need training: to learn how to fit our preconception of the rational and the irrational to particular cases, in line with nature. And in settling what is rational and what is not, we do not only weigh up externals; we also take into account what suits the particular person.</p>
@@ -374,6 +414,8 @@ figcaption {
 <p>Somebody asked: how is each of us to work out what suits his own character?</p>
 <p>How is it, he replied, that when the lion attacks, the bull alone discovers what he can do and puts himself in front of the whole herd? Plainly, having the power and knowing you have it come together; so any of us who has such power will not be in the dark about it. But a bull is not made all at once, and neither is a brave man. We have to train through the winter for the summer&#x27;s campaign, and not go rushing at what is none of our business.</p>
 <p>Only think what price you are selling your own will at. If for no other reason, then at least for this one: do not sell it cheap. The great and superior sort of thing may belong to Socrates and his like. Then why, if this is our nature too, are there not a great many more of us like him? Do all horses turn out fast? Are all dogs good on a scent? Well then — since I am naturally slow, am I to take no trouble on that account? I hope not. Epictetus is no better than Socrates; but if he is not worse, that is enough for me. I shall never be a Milo, and yet I do not neglect my body. I shall never be a Croesus, and yet I do not neglect my property. And in general we do not give up looking after anything just because we despair of being the best at it.</p>
+</section>
+<section aria-labelledby="ch-3">
 <h3 id="ch-3">Chapter 3: What Follows from God Being the Father of All</h3>
 <p>If a man could really assent to this doctrine as he ought — that we are all descended from God in a special way, and that God is the father of men and of gods alike — I do not think he would ever have a low or shabby thought about himself again. If Caesar adopted you, nobody could stand your arrogance. And if you know that you are the son of Zeus, will you not be puffed up?</p>
 <p>Yet we are not. Two things are mixed together in the making of a man: a body, which we share with the animals, and reason and intelligence, which we share with the gods. And most of us lean toward the wretched, mortal kinship, and only a few toward the divine and happy one.</p>
@@ -381,6 +423,8 @@ figcaption {
 <p>Wretched it is. But you have something better than a bit of flesh. Why neglect the better thing, and cling to this?</p>
 <p>Because of that kinship with the flesh, some of us who lean toward it turn into wolves — treacherous, faithless, out to do harm. Some turn into lions, savage and wild and untameable. But most of us turn into foxes, or something worse. What else is a slanderer, a man with malice in him, but a fox — or some meaner and more miserable animal still?</p>
 <p>So look to it. Take care you do not become one of these wretched things.</p>
+</section>
+<section aria-labelledby="ch-4">
 <h3 id="ch-4">Chapter 4: On Making Progress</h3>
 <p>The man who is making progress has learned from the philosophers that desire means desiring good things and avoidance means avoiding bad ones. He has learned, too, that a man gets no happiness and no peace of mind except by never failing to get what he desires and never falling into what he wants to avoid. So he strips desire away from himself altogether and puts it off for the time being, and he directs avoidance only at things that depend on his will. Because if he tries to avoid anything outside his will, he knows he will sooner or later run into the very thing he wanted to dodge, and be miserable.</p>
 <p>Now if virtue promises good fortune and peace of mind and happiness, then progress toward virtue is certainly progress toward each of those as well. Whatever the finished thing brings us to, progress is an approach to that point.</p>
@@ -397,6 +441,8 @@ figcaption {
 <p>Who talks like that? Do you suppose I mean some nobody, some man of no standing? Does Priam not say it? Does Oedipus not say it? Every king in the plays says it. For what is tragedy but the sufferings of men who set store by externals, put into that kind of verse? If a man has to be taught by a made-up story that nothing outside his will has anything to do with him, then for my part I am glad of the story, if it lets me live happily and undisturbed. What you want is for you to decide.</p>
 <p>So what does Chrysippus give us? The answer is: knowing that these things are not lies — the things that happiness comes from and peace of mind grows out of. Take my books and you will learn how true, how much in line with nature, are the things that leave me undisturbed.</p>
 <p>What great good fortune! What a great benefactor, to show us the road! Men have raised temples and altars everywhere to Triptolemus, because he gave us cultivated food. But to the man who found the truth and brought it to light and passed it on to everybody — not the truth about how to stay alive, but about how to live well — which of you has built an altar for that, or a temple, or dedicated a statue, or worships God on account of it? We sacrifice to the gods because they gave us the vine and the wheat. And because they brought forth in the human mind that fruit by which they meant to show us the truth about happiness — for that we will not thank God?</p>
+</section>
+<section aria-labelledby="ch-5">
 <h3 id="ch-5">Chapter 5: Against the Academics</h3>
 <p>If a man sets himself against plain facts, said Epictetus, it is not easy to find an argument that will change his mind. This is not because the man is strong or because the teacher is weak. When a man has been refuted and then sets hard, like stone, what argument is going to reach him?</p>
 <p>There are two ways of setting hard: the understanding can do it, and so can the sense of shame — when a man has made up his mind neither to assent to what is obvious nor to give up contradicting it. Most of us dread the deadening of the body, and would do anything to prevent it; the deadening of the soul we do not care about. And with the soul, if a man is in such a state that he cannot take anything in or follow anything at all, we say he is in a bad way; but if his sense of shame and self-respect has gone dead, we actually call that strength.</p>
@@ -405,6 +451,8 @@ figcaption {
 <p>Is there no difference at all, then, between the one impression and the other?</p>
 <p>&quot;None.&quot;</p>
 <p>Am I still to argue with this man? What fire, what iron, am I to put to him to make him feel that he has gone dead? He does feel it, and pretends he does not. He is worse off than a corpse. One man does not see the contradiction: he is in a bad way. Another sees it and is not moved by it and does not improve: he is in a worse way still. His self-respect and his sense of shame have been cut out of him, and his reason has not been cut away but brutalised. And am I to call this strength of mind? Certainly not — unless we are also going to call it strength in men who have lost all shame about sex, and so say and do in public whatever comes into their heads.</p>
+</section>
+<section aria-labelledby="ch-6">
 <h3 id="ch-6">Chapter 6: On Providence</h3>
 <p>From anything at all that exists or happens in the world it is easy to praise Providence, provided a man has two things: the capacity to see what belongs to each person and each thing and what happens to it, and a grateful temper. Without those two, one man will not see what things are good for, and another will not be thankful for them even when he does see.</p>
 <p>If God had made colours but not made the power of seeing them, what use would they have been? None whatever. And the other way round: if He had made the power of sight but had not made objects for that power to fall on, what use would it have been then? None whatever. Well, suppose He had made both, and had not made light? No use again. Who is it, then, who fitted this to that and that to this? Who fitted the knife to its sheath and the sheath to the knife? Nobody?</p>
@@ -426,6 +474,8 @@ figcaption {
 <p>But no. You sit there trembling in case something happens, and weeping and moaning and groaning over what does happen, and then you blame the gods. What can come of such smallness of spirit but irreverence? And God has not only given us these capacities, by which we shall be able to bear anything that happens without being crushed or broken by it: like a good king and a true father, He has given them to us unblocked, subject to no compulsion, nothing standing in their way, and put them entirely in our own power — without even keeping back for Himself any power of blocking or hindering them.</p>
 <p>And you, who were given these powers free and for your own, do not use them. You do not even see what you were given, or who gave it. Some of you are blind to the giver and will not so much as acknowledge your benefactor; others, out of smallness of spirit, take to fault-finding and bringing charges against God.</p>
 <p>Yet I will show you that you have powers and means for greatness of spirit and courage. What powers you have for fault-finding and making accusations — that you can show me.</p>
+</section>
+<section aria-labelledby="ch-7">
 <h3 id="ch-7">Chapter 7: On the Use of Trick Arguments and Hypotheticals</h3>
 <p>Handling trick arguments and hypothetical ones, and those that draw their conclusions out of questioning — in a word, handling arguments of every such kind — has to do with the duties of life, though most people do not know it. In every matter we are asking how the wise and good man is to find the right road and the right method of dealing with it. So let people either say that a serious man will not go down into the contest of question and answer, or else that if he does go down into it, he will take no care to avoid conducting himself rashly and carelessly in the questioning and the answering. And if they will allow neither of those, they must admit that some inquiry ought to be made into the very subjects on which questioning and answering are chiefly employed.</p>
 <p>For what is the aim of reasoning? To establish true propositions, to get rid of false ones, and to withhold assent where a thing is not plain. Is it enough, then, to have learned only that much?</p>
@@ -442,6 +492,8 @@ figcaption {
 <p>Slave, where was there a father here for you to kill? What you have done is the only fault it was possible to commit here.</p>
 <p>That is exactly the remark I made to Rufus when he found fault with me for failing to spot the one thing left out of a certain syllogism. I suppose, I said, that I have burnt down the Capitol.</p>
 <p>Slave, he replied, was the thing left out here the Capitol? Or are these the only crimes there are — burning the Capitol and killing your father? To use the impressions put before you rashly and foolishly and carelessly; to fail to follow an argument, or a demonstration, or a piece of sophistry; in a word, not to see in questioning and answering what is consistent with what we have granted and what is not — is there no error in that?</p>
+</section>
+<section aria-labelledby="ch-8">
 <h3 id="ch-8">Chapter 8: Why Logical Skill Is Not Safe in the Untrained</h3>
 <p>There are as many ways of varying the forms of arguments and enthymemes in argument as there are of exchanging equivalent expressions for one another. Here is an instance. If you have borrowed and not repaid, you owe me the money. You have not borrowed and you have not repaid; therefore you do not owe me the money. To do this skilfully suits no man better than the philosopher. If an enthymeme is an incomplete syllogism, then plainly a man trained in the complete syllogism must be just as expert in the incomplete one.</p>
 <p>Why, then, do we not train ourselves and each other in this way? Because — I answer — as things stand, even though we do not train in these matters, and even though I at least do not draw you away from the study of how to live, we still make no progress in virtue. So what are we to expect if we take this occupation on as well? Especially since it would not merely be an occupation drawing us away from more necessary things: it would also be a cause of conceit and arrogance, and no small one.</p>
@@ -449,6 +501,8 @@ figcaption {
 <p>&quot;What then — was Plato not a philosopher?&quot;</p>
 <p>And was Hippocrates not a physician? But you see how Hippocrates writes. Does Hippocrates write like that in his capacity as a physician? Why do you jumble together things that happen to have been combined in the same men? And if Plato was handsome and strong, ought I to set about becoming handsome or strong myself, as though that were necessary for philosophy, on the ground that a certain philosopher was handsome and a philosopher at once? Will you not see the difference, and distinguish what men become philosophers in respect of from what belongs to them in other respects? And if I were a philosopher, ought you to be made lame as well?</p>
 <p>What of it, then? Am I taking these capacities of yours away from you? Not at all — no more than I take away the power of sight. But if you ask me what the good of a man is, I can name you nothing but a certain condition of the will with regard to impressions.</p>
+</section>
+<section aria-labelledby="ch-9">
 <h3 id="ch-9">Chapter 9: What Follows from Our Kinship with God</h3>
 <p>If what the philosophers say about the kinship of God and man is true, what is left for men to do but what Socrates did — never, when asked what country he belonged to, answer &quot;Athenian&quot; or &quot;Corinthian&quot;, but &quot;a citizen of the world&quot;?</p>
 <p>Why do you say you are an Athenian, instead of saying you belong only to the little corner your poor body happened to be dropped in at birth? Plainly you name yourself Athenian or Corinthian from the wider thing that has the greater authority — the thing that takes in not only that corner and your whole household, but the entire country your ancestors came down to you from.</p>
@@ -464,6 +518,8 @@ figcaption {
 <p>A man once asked me to write to Rome on his behalf. Most people thought he had been unlucky: he had been a man of rank and rich, and had been stripped of everything, and was living here. I wrote for him in a humble tone. He read the letter, handed it back to me and said: &quot;I wanted your help, not your pity. Nothing bad has happened to me.&quot;</p>
 <p>In the same way Musonius Rufus used to test me by saying: this and that will be done to you by your master. And when I answered that these were the sort of things that happen in the ordinary course of human affairs — then why, he said, should I ask him for anything when I can get it from you? For in fact what a man has from himself it is pointless and foolish to take from someone else. Am I, who can get greatness of spirit and a generous temper from myself, to take land and money or public office from you? I hope not. I will not be so ignorant of what I already own.</p>
 <p>But when a man is cowardly and small, what else is there to do for him but write letters about him as you would about a corpse? Please make us a present of the body of so-and-so, and a pint of thin blood. For such a person really is a carcass and a pint of blood, and nothing more. If he were anything more, he would know that no man is made miserable by another.</p>
+</section>
+<section aria-labelledby="ch-10">
 <h3 id="ch-10">Chapter 10: Against Those Chasing Promotion in Rome</h3>
 <p>If we applied ourselves to our own work as busily as the old men at Rome apply themselves to the business they are employed on, perhaps we too might get something done.</p>
 <p>I know a man older than myself who is now superintendent of the corn supply at Rome. I remember when he came through here on his way back from exile, and what he said as he went over the events of his earlier life — how he declared that from his return onward he would attend to nothing but spending the rest of his days in quiet and peace. How little of life is left to me, he said.</p>
@@ -473,6 +529,8 @@ figcaption {
 <p>Well then — am I saying that man is a creature made to do nothing? Certainly not. We are active. Take me: as soon as the day comes I remind myself briefly of what I have to go over with my pupils. Then straight away I say to myself, and what is it to me how a certain person reads? The first thing for me is to get some sleep.</p>
 <p>And what likeness is there anyway between what they do and what we do? Look at what they do and you will see. What do they do all day long but make up accounts, hold enquiries, give and take advice about a little grain, a scrap of land and profits of that sort? Is it the same thing to receive a petition and read in it, &quot;I beg you to allow me to export a small quantity of corn,&quot; and to read one that runs, &quot;I beg you to learn from Chrysippus how the world is administered, and what place the rational creature holds in it; and to consider who you are, and what your good and your bad consist of&quot;? Are these things alike? Do they call for the same amount of care? Is it as disgraceful to neglect the one as the other?</p>
 <p>Well then — are we the only lazy ones, the only ones who love our sleep? No: much more it is you young men. When we old men see young men playing we are eager to join in and play too; and if I saw you keen and hard at work, I should be far more eager still to join you in the serious business.</p>
+</section>
+<section aria-labelledby="ch-11">
 <h3 id="ch-11">Chapter 11: On Family Affection</h3>
 <p>A magistrate came to visit him, and Epictetus asked him about various matters, and among them whether he had a wife and children. The man said he had.</p>
 <p>And how do you find it?</p>
@@ -537,6 +595,8 @@ figcaption {
 <p>From this day, then, we shall enquire into nothing else and examine nothing else — not what quality or condition anything has, not land, not slaves, not horses, not dogs — nothing but judgments.</p>
 <p>&quot;I hope so.&quot;</p>
 <p>You see, then, that you will have to become a scholar, a creature everyone laughs at, if you really mean to make an examination of your own judgments. And that this is not the work of a single hour or a single day, you know yourself.</p>
+</section>
+<section aria-labelledby="ch-12">
 <h3 id="ch-12">Chapter 12: On Being Content</h3>
 <p>About the gods, there are some who say no divine being exists. Others say one exists, but is idle and indifferent and takes no thought for anything. A third group say such a being exists and does take thought, but only about great things and heavenly things, and about nothing on earth. A fourth group say the divine takes thought about earthly things as well as heavenly ones, but only in a general way, not about particular cases. And there is a fifth group, to which Odysseus and Socrates belong, who say: &quot;I do not move without your knowing it.&quot;</p>
 <p>So before anything else we have to enquire about each of these opinions, and whether it is stated truly or not. For if there are no gods, how can following them be our proper end? And if they exist but take care of nothing, how in that case can it be right to follow them either? And even if they do exist and do look after things, if nothing is communicated from them to men — and in fact to me — how is it right even then?</p>
@@ -559,6 +619,8 @@ figcaption {
 <p>Well — were you allowed to step forward beforehand and make your selection and say, let this man couple with this woman at this moment, so that I may be produced? You were not. Your parents had to exist first, and then you had to be begotten. Of what sort of parents? Of the sort they were. Well then, since they are what they are, is no remedy given to you?</p>
 <p>If you did not know what the power of sight was for, you would be unlucky and wretched if you shut your eyes when colours were put in front of them. But you possess greatness of spirit and nobility for every event that can happen, and you do not know you possess them — are you not more unlucky and wretched than that? Things are brought right up to you that match the power you have, and you turn that power away precisely at the moment when you ought to be holding it open and alert.</p>
 <p>Why not thank the gods instead, that they have set you above the things they did not put in your power, and made you accountable only for the things that are? For your parents they have left you free of responsibility; the same for your brothers, and your body, and property, and death and life. What have they made you responsible for, then? For the one thing that is in your power: the right use of impressions. Why drag onto yourself the things you are not answerable for? That is simply making trouble for yourself.</p>
+</section>
+<section aria-labelledby="ch-13">
 <h3 id="ch-13">Chapter 13: How to Do Everything in a Way That Pleases the Gods</h3>
 <p>Somebody asked how a man might eat in a way that pleases the gods. He answered:</p>
 <p>If he can eat justly and contentedly, evenly, moderately and in good order, will that not please the gods as well? And when you have asked for hot water and the slave has not heard you, or has heard and brought it only lukewarm, or is not even to be found in the house — then not to be irritated, not to burst with temper, is that not pleasing to the gods?</p>
@@ -566,6 +628,8 @@ figcaption {
 <p>Slave yourself — will you not put up with your own brother, who has Zeus for his ancestor, who is like a son sprung from the same seed and the same descent from above? And if you have been put in some higher position, are you going to make a tyrant of yourself straight away? Will you not remember who you are, and whom you are ruling? That they are your kinsmen, brothers by nature, the offspring of Zeus?</p>
 <p>&quot;But I bought them. They did not buy me.&quot;</p>
 <p>Do you see which way you are looking? Toward the earth, toward the pit, toward these wretched laws of dead men — and not toward the laws of the gods.</p>
+</section>
+<section aria-labelledby="ch-14">
 <h3 id="ch-14">Chapter 14: That God Watches Everything</h3>
 <p>Somebody asked him how a man could become convinced that everything he does is under God&#x27;s eye. He answered:</p>
 <p>Do you not think that all things are bound together into one?</p>
@@ -580,6 +644,8 @@ figcaption {
 <p>And who told you that you have power equal to Zeus? All the same, He has set beside every man a guardian, each man&#x27;s own guardian spirit, and put him in that spirit&#x27;s charge — a guardian who never sleeps and is never deceived. To what better or more careful guardian could He have entrusted each of us?</p>
 <p>So when you have shut the doors and made it dark inside, remember never to say that you are alone. You are not: God is within, and your guardian spirit is within, and what need have they of light to see what you are doing?</p>
 <p>To this God you ought to swear an oath, just as soldiers swear to Caesar. But they, who are hired for pay, swear to put Caesar&#x27;s safety above everything. And you, who have received so many and such great favours — will you not swear? Or having sworn, will you not stand by it? And what will you swear? Never to disobey, never to bring charges, never to find fault with anything He has given, and never to do or suffer unwillingly anything that must be. Is this oath like the soldiers&#x27;? They swear to put no man above Caesar; here men swear to put themselves above everything.</p>
+</section>
+<section aria-labelledby="ch-15">
 <h3 id="ch-15">Chapter 15: What Philosophy Promises</h3>
 <p>A man was consulting him about how to persuade his brother to stop being angry with him. Epictetus replied:</p>
 <p>Philosophy does not undertake to secure any external thing for a man. If it did, it would be taking on something outside its own province. The carpenter&#x27;s material is wood; the sculptor&#x27;s is bronze; and the material of the art of living is each man&#x27;s own life.</p>
@@ -589,6 +655,8 @@ figcaption {
 <p>Bring him to me and I will tell him. To you I have nothing to say about his anger.</p>
 <p>The man consulting him said: &quot;What I want to know is this. Even if my brother is not reconciled with me, how am I to keep myself in a state that is in line with nature?&quot;</p>
 <p>Nothing great, said Epictetus, is produced all at once — not even a grape or a fig. If you tell me now that you want a fig, I shall answer that it takes time. Let it flower first, then set fruit, then ripen. So the fruit of a fig tree is not brought to perfection suddenly, in a single hour, and you expect to have the fruit of a man&#x27;s mind in so short a time and so easily? Do not expect it, even if I tell you that you can.</p>
+</section>
+<section aria-labelledby="ch-16">
 <h3 id="ch-16">Chapter 16: On Providence in the Smallest Things</h3>
 <p>Do not be surprised that for the other animals everything the body needs is provided — not only food and drink but bedding too — and that they need no shoes, no bedclothes, no clothing, while we need all these extras. They were not made for themselves but for service, and it would not have been fitting to make them so that they needed other things. Just think what it would be for us to have to look after cattle and donkeys as well as ourselves — how they should be clothed and shod, and how they should eat and drink.</p>
 <p>Soldiers stand ready for their commander already shod, clothed and armed; it would be a hard business for the tribune to go round shoeing and clothing his thousand men. In the same way nature has made the animals that are meant for service ready and equipped, needing no further care. So one small boy with a stick drives the cattle along.</p>
@@ -597,6 +665,8 @@ figcaption {
 <p>Not so, you say: the human animal ought to have been left without any marks of distinction, and each of us should have had to announce, &quot;I am a man.&quot; But is the sign not beautiful, and fitting, and worthy of respect? How much more beautiful than a cock&#x27;s comb, how much more becoming than a lion&#x27;s mane! And so we ought to keep the signs God has given us. We ought not to throw them away, nor to blur the distinctions between the sexes as far as we can manage it.</p>
 <p>Are these the only works of providence in us? What words could be enough to praise them and set them out as they deserve? If we had any sense, should we be doing anything else, in company and alone, but singing hymns to the deity and blessing him and telling over his benefits? Should we not sing this hymn to God as we dig and plough and eat? &quot;Great is God, who has given us these tools to work the ground with. Great is God, who has given us hands, and the power of swallowing, and a stomach, and growth we never feel happening, and breathing while we are asleep.&quot; This is what we ought to sing on every occasion — and to sing the greatest and most divine hymn of all for his giving us the power to understand these things and to use them in the proper way.</p>
 <p>Well then: since most of you have gone blind, ought there not to be somebody to fill this office and sing the hymn to God on everyone&#x27;s behalf? What else can I do, a lame old man, but sing hymns to God? If I were a nightingale, I would do a nightingale&#x27;s part; if I were a swan, a swan&#x27;s. But as it is I am a rational creature, and I ought to praise God. This is my work. I do it, and I will not desert this post as long as I am allowed to keep it — and I urge you to join in the same song.</p>
+</section>
+<section aria-labelledby="ch-17">
 <h3 id="ch-17">Chapter 17: Why Logic Is Necessary</h3>
 <p>Since reason is the capacity that analyses and perfects everything else, and ought not itself to go unanalysed, what is it to be analysed by? Plainly either by itself or by something else. If by something else, then that other thing is either reason too, or something superior to reason — which is impossible. And if it is reason, then who is to analyse that reason? If that reason does the job for itself, then our reason can do it for itself as well. And if we are going to need something further, the business goes on forever and never ends. So reason is analysed by itself.</p>
 <p>Yes — but curing our judgments is more urgent, and things of that sort.</p>
@@ -622,6 +692,8 @@ figcaption {
 <p>No: it is not what is put in front of you that compels, but your judgment that it is better to do such-and-such than to die. In that case it was your own judgment that compelled you — will compelled will. If God had made that part of himself which he took from himself and gave to us capable of being blocked or compelled, either by himself or by another, he would not be God, and he would not be taking care of us as he ought.</p>
 <p>This, says the diviner, is what I find in the victims: these are the signs given to you. If you choose, you are free. If you choose, you will blame no one and bring charges against no one. Everything at once will be according to your own mind and the mind of God.</p>
 <p>It is for the sake of that divination that I go to this diviner, and to the philosopher — not admiring the man for his interpreting, but admiring the things he interprets.</p>
+</section>
+<section aria-labelledby="ch-18">
 <h3 id="ch-18">Chapter 18: Why We Should Not Be Angry at Other People&#x27;s Mistakes</h3>
 <p>If what the philosophers say is true — that in every man there is one governing principle: in assent, the conviction that a thing is so; in dissent, the conviction that it is not; in suspending judgment, the conviction that it is uncertain; and likewise, in any movement toward a thing, the conviction that it is to the man&#x27;s advantage; and if it is impossible to think one thing advantageous and want another, or to judge one thing proper and move toward another — then why are we angry with the crowd?</p>
 <p>&quot;They are thieves and robbers,&quot; you may say.</p>
@@ -639,6 +711,8 @@ figcaption {
 <p>Who is the unbeatable man, then? The one whom nothing outside his will can disturb.</p>
 <p>Then I go over his circumstances one after another, as I would with an athlete. He has come off victorious in the first bout — well then, what about the second? And what if it is very hot? And what if it is at Olympia? Just so here. Throw money in his way: he will despise it. Well, put a young girl in his way — what then? And what if it is in the dark? What if it is a little reputation? Or abuse? Or praise? Or death? He can beat all of them.</p>
 <p>And what if it is in blazing heat? What if it is in the rain? What if he is in a black mood? What if he is asleep? He will win even then. This is my unbeatable athlete.</p>
+</section>
+<section aria-labelledby="ch-19">
 <h3 id="ch-19">Chapter 19: How to Behave Toward Tyrants</h3>
 <p>If a man has some advantage, or thinks he has when he has not, and if he is untrained, he is bound to be puffed up by it. The tyrant, for instance, says: &quot;I am master of everything.&quot;</p>
 <p>And what can you do for me? Can you give me a desire that nothing can block? How could you? Do you have the unfailing power of avoiding what you want to avoid? Do you have the power of moving toward an object without going wrong? And where did you get such a power? Come — when you are on a ship, do you trust yourself or the helmsman? And in a chariot, whom do you trust but the driver? And how is it in all the other arts? Just the same. So where does this power of yours lie?</p>
@@ -667,6 +741,8 @@ figcaption {
 <p>Carve it on a stone and it will survive. But come — what memory of you will there be outside Nicopolis?</p>
 <p>&quot;But I shall wear a golden crown.&quot;</p>
 <p>If you want a crown so badly, get a crown of roses and put that on. You will look far more elegant.</p>
+</section>
+<section aria-labelledby="ch-20">
 <h3 id="ch-20">Chapter 20: On Reason, and How It Examines Itself</h3>
 <p>Every art and every capacity has certain things it particularly examines. When the capacity is of the same kind as the objects it examines, it necessarily examines itself as well; when it is of a different kind, it cannot. The shoemaker&#x27;s art, for instance, works on leather, but is itself something entirely distinct from leather, and so it does not examine itself. The grammarian&#x27;s art works on speech; is the art itself speech? Not at all — and that is why it cannot examine itself.</p>
 <p>Now reason: what has nature given it for? For the right use of impressions. And what is reason itself? A system built out of certain impressions. So by its own nature it also has the capacity of examining itself.</p>
@@ -676,11 +752,15 @@ figcaption {
 <p>But this is a matter that needs much preparation and much labour and study. Well — did you expect to acquire the greatest of all the arts with a small effort? And yet the chief doctrine of the philosophers is very short. Read Zeno&#x27;s writings if you want to see. How few words it takes to say that man&#x27;s end is to follow the gods, and that the nature of the good is the right use of impressions.</p>
 <p>But if you say, &quot;What is God? What is an impression? What is particular nature, and what is universal nature?&quot; — then a great many words are needed. And if Epicurus turns up and says the good must be in the body, then again many words are needed, and we have to be taught what the leading thing in us is, the fundamental and substantial thing. As it is not likely that a snail&#x27;s good lies in its shell, is it likely that a man&#x27;s good lies in his body?</p>
 <p>But you yourself, Epicurus, possess something better than that. What is it in you that deliberates? What is it that examines everything? What is it that forms the judgment about the body itself, that the body is the principal part? And why do you light your lamp and work for us and write so many books? Is it so that we shall not be ignorant of the truth — who we are and what we are in relation to you? So the discussion takes a great many words.</p>
+</section>
+<section aria-labelledby="ch-21">
 <h3 id="ch-21">Chapter 21: Against Those Who Want to Be Admired</h3>
 <p>When a man holds the position in life that properly belongs to him, he does not stand about gaping after things outside it. Man, what is it you want to happen to you? I am satisfied if I desire and avoid in line with nature, if I move toward a thing and away from it as I am naturally formed to do, and likewise in my intentions and my plans and my assent.</p>
 <p>Then why do you strut in front of us as though you had swallowed a spit?</p>
 <p>&quot;What I have always wanted is that the people who meet me should admire me, and the people following me should exclaim: what a great philosopher.&quot;</p>
 <p>And who are these people you want to be admired by? Are they not the very people you are in the habit of calling mad? Well then — do you want to be admired by madmen?</p>
+</section>
+<section aria-labelledby="ch-22">
 <h3 id="ch-22">Chapter 22: On Preconceptions</h3>
 <p>Preconceptions are common to all men, and one preconception does not contradict another. Which of us does not take it that the good is useful and worth choosing, and that in all circumstances we ought to follow it and go after it? Which of us does not take it that justice is beautiful and fitting?</p>
 <p>So where does the contradiction come in? It comes in fitting the preconceptions to particular cases. When one man says, &quot;He did well, he is a brave man,&quot; and another says, &quot;Not at all — he acted like a fool,&quot; that is where the quarrels between men begin.</p>
@@ -698,12 +778,16 @@ figcaption {
 <p>So what are we to do? This is the question the true philosopher is in labour with. As things stand I do not see what the good is or what the bad is. Am I not mad? Yes.</p>
 <p>But suppose I put the good somewhere among the things that depend on the will. Everyone will laugh at me. Some grey-haired man will come along with a lot of gold rings on his fingers, and shake his head and say: listen, my boy. It is quite right that you should study philosophy; but you ought to have some brains as well. All this you are doing is silly. You learn the syllogism from philosophers — but you know better than any philosopher how to behave.</p>
 <p>Man, if I know it, then why are you blaming me? What am I to say to this slave? If I say nothing he will burst. I have to put it like this: forgive me, as you would forgive a man in love. I am not my own master. I am mad.</p>
+</section>
+<section aria-labelledby="ch-23">
 <h3 id="ch-23">Chapter 23: Against Epicurus</h3>
 <p>Even Epicurus sees that we are social by nature; but having once located our good in the husk, he cannot go on to say anything else. On the other side he strongly maintains that we ought not to admire or accept anything cut off from the nature of the good — and he is right to maintain it.</p>
 <p>How is it, then, that we feel any misgiving, if we have no natural affection for our children? Why do you advise the wise man not to bring up children? Why are you afraid he may fall into trouble that way? Does he fall into trouble on account of the mouse that lives in his house? What does he care if a little mouse in the house squeaks at him?</p>
 <p>But Epicurus knows that once a child is born it is no longer in our power not to love it and care about it. That is why he says that a man with any sense does not go into politics either — he knows what a man in politics has to do. If you mean to behave among men as you would among a swarm of flies, what is stopping you?</p>
 <p>And knowing this, Epicurus still dares to say that we should not bring up children. But a sheep does not desert its young, nor does a wolf. And is a man to desert his child? What do you mean — that we should be as stupid as sheep? They do not desert their young. As savage as wolves? Not even wolves desert their young.</p>
 <p>Come now: who would take your advice if he saw his child fall on the ground and start crying? For my part I think that even if your own mother and father had been told by an oracle that you would say what you have just said, they would not have thrown you away.</p>
+</section>
+<section aria-labelledby="ch-24">
 <h3 id="ch-24">Chapter 24: How to Wrestle with Circumstances</h3>
 <p>It is circumstances that show what men are. So when a difficulty falls on you, remember that God has matched you, like a wrestling coach, against a rough young opponent.</p>
 <p>&quot;What for?&quot; you may say.</p>
@@ -721,6 +805,8 @@ figcaption {
 <p>So when you go up to one of these men, remember that you are going up to a tragic figure — not to the actor, but to Oedipus himself.</p>
 <p>&quot;But such a man is happy: he walks about with a crowd around him.&quot; And I place myself among the crowd and walk about with them too.</p>
 <p>In sum, remember this: the door is open. Do not be more timid than small children. When a thing does not please them they say, &quot;I won&#x27;t play any more.&quot; So you: when things look to you like that, say, I won&#x27;t play any more, and be off. But if you stay, do not complain.</p>
+</section>
+<section aria-labelledby="ch-25">
 <h3 id="ch-25">Chapter 25: On the Same Subject</h3>
 <p>If these things are true, and if we are not being silly or acting a part when we say that a man&#x27;s good is in the will and his evil too, and that everything else has nothing to do with us — why are we still disturbed? Why are we still afraid? The things we have been busy about are in nobody&#x27;s power, and the things that are in other people&#x27;s power we do not care about. What sort of trouble have we left?</p>
 <p>&quot;Give me instructions.&quot;</p>
@@ -745,6 +831,8 @@ figcaption {
 <p>&quot;Strip him.&quot; What do you mean, him? Take hold of his coat and strip that off. &quot;I have insulted you.&quot; Much good may it do you.</p>
 <p>This was Socrates&#x27; practice, and it is why he always had the same face. But we would rather practise and study anything at all than the means by which we might be unblocked and free.</p>
 <p>&quot;Philosophers talk in paradoxes,&quot; you say. And are there no paradoxes in the other arts? What is more paradoxical than puncturing a man&#x27;s eye so that he may see? If somebody said that to a man who knew nothing of surgery, would he not laugh at him? So where is the wonder if in philosophy too many things that are true look paradoxical to the inexperienced?</p>
+</section>
+<section aria-labelledby="ch-26">
 <h3 id="ch-26">Chapter 26: What the Rule of Life Is</h3>
 <p>While somebody was reading out hypothetical arguments, Epictetus said:</p>
 <p>This too is a hypothetical law — that we must accept what follows from the hypothesis. But long before that law comes the law of life: that we must act in line with nature. If we want to observe what is natural in every matter and every circumstance, then plainly in everything we ought to aim at not letting the consequence escape us, and at not admitting the contradictory.</p>
@@ -756,6 +844,8 @@ figcaption {
 <p>Well then, said Epictetus: if a man has not the ability to follow a complex argument, do we trust him when he gives praise? Do we trust him when he gives blame? Do we allow that he is able to form a judgment about good or bad? And if such a man blames somebody, does the man care about the blame? And if he praises somebody, is that man puffed up — when in so small a matter as a hypothetical syllogism the man praising him cannot see what follows from the hypothesis?</p>
 <p>This, then, is where philosophy begins: a man&#x27;s perception of the state of his own governing part. When a man knows it is weak, he will not use it on the hardest things. But as it is, men who cannot swallow a mouthful buy whole volumes and try to bolt them down; and so they vomit them up again, or get indigestion, and then come the cramps and the running colds and the fevers. They ought to have considered what they were capable of.</p>
 <p>In theory it is easy to convince an ignorant man; in the business of real life nobody offers himself up to be convinced, and we hate the man who has convinced us. But Socrates advised us not to live a life that goes unexamined.</p>
+</section>
+<section aria-labelledby="ch-27">
 <h3 id="ch-27">Chapter 27: The Ways Impressions Come at Us, and What Defenses We Have</h3>
 <p>Impressions come to us in four ways. Either things are as they appear; or they are not, and do not appear to be; or they are, and do not appear to be; or they are not, and yet appear to be. And in all four cases hitting the mark is the business of an educated man.</p>
 <p>Whatever it is that troubles us, that is what we must apply the remedy to. If the sophisms of Pyrrho and the Academics are what trouble us, we must apply the remedy there. If it is the persuasiveness of impressions, by which some things look good when they are not, then let us look for a remedy for that. If it is habit that troubles us, we must try to find help against habit. And what help is there against habit? The opposite habit.</p>
@@ -771,6 +861,8 @@ figcaption {
 <p>&quot;How do you know it?&quot;</p>
 <p>When I mean to swallow something I never carry it to your mouth, always to my own. When I mean to take bread I never take hold of a broom; I go straight to the bread as to a target. And you yourselves, who do away with the evidence of the senses — do you behave any differently? Which of you, meaning to go into a bath, ever walked into a mill?</p>
 <p>What follows, then? Ought we not to hold on with all our strength to this too — maintaining the common view, and fortifying ourselves against the arguments aimed at it? Who denies that we ought? Well, the man who is able should do it, the man who has the leisure. But the man who trembles and is thrown and is broken inside had better spend his time on something else.</p>
+</section>
+<section aria-labelledby="ch-28">
 <h3 id="ch-28">Chapter 28: Why We Should Not Be Angry at People; and What Counts as Small and Great</h3>
 <p>What is the cause of assenting to anything? The fact that it appears true. So it is not possible to assent to what appears untrue. Why? Because this is the nature of the understanding: to lean toward the true, to be dissatisfied with the false, and to withhold assent where things are uncertain.</p>
 <p>What is the proof? Persuade yourself, if you can, that it is night now. You cannot. Take away your conviction that it is day. You cannot. Persuade yourself, or unpersuade yourself, that the stars are even in number. Impossible.</p>
@@ -796,6 +888,8 @@ figcaption {
 <p>Let us come to the rules. Produce your preconceptions. It is because this is neglected that we cannot wonder enough at what men do. When we mean to judge weights, we do not judge by guesswork. Where we mean to judge straight from crooked, we do not judge by guesswork. In every case where it is in our interest to know the truth of a matter, not one of us ever does anything by guesswork. But in the things that depend on the first and only cause of doing right or wrong, of happiness or unhappiness, of good luck or bad — there alone we are careless and reckless. There we have nothing like a balance and nothing like a rule: an impression turns up, and straight away I act on it.</p>
 <p>Am I to suppose I am better than Achilles or Agamemnon, then — that they, by following their impressions, do and suffer such great evils, while for me the impression is quite good enough?</p>
 <p>And what tragedy has any other beginning? The Atreus of Euripides — what is it? An impression. The Oedipus of Sophocles? An impression. The Phoenix? An impression. The Hippolytus? An impression. What sort of a man do you suppose he is, then, who pays no attention to this matter? And what do we call the people who follow every impression? We call them madmen. And are we behaving any differently?</p>
+</section>
+<section aria-labelledby="ch-29">
 <h3 id="ch-29">Chapter 29: On Steadiness</h3>
 <p>The nature of the good is a certain kind of will; the nature of the bad is a certain kind of will. What are externals, then? Materials for the will, which the will works on and by which it gets its own good or evil. How does it get the good? By not overvaluing the materials. Judgments about the materials, if they are right, make the will good; twisted and distorted judgments make it bad.</p>
 <p>God has laid down this law, and says: if you want anything good, get it from yourself. You say: no, I will have it from somebody else. Do not. Get it from yourself.</p>
@@ -835,6 +929,8 @@ figcaption {
 <p>For what is a master? A man is not another man&#x27;s master. Death is, and life, and pleasure and pain. Bring Caesar to me without these things and you will see how steady I am. But when he comes with them, thundering and lightening, and I am afraid of them — what am I doing then but recognising my master, like the runaway slave? So long as I have any respite from these terrors I stand as the runaway slave stands in the theatre: I bathe, I drink, I sing — and I do all of it in terror and unease. But if I once free myself from my masters — that is, from the things that make masters formidable — what trouble have I left? What master have I now?</p>
 <p>Well then: ought we to announce all this to everybody? No. We ought to accommodate ourselves to the untaught and say: this man is recommending to me what he thinks good for himself. I excuse him.</p>
 <p>Socrates excused the jailer too, the man who had charge of him in prison and wept when Socrates was about to drink the poison. How generously he grieves for us, he said. Does he say to the jailer that this is why we sent the women away? No: he says that to his friends, who were able to take it in. The jailer he treats as a child.</p>
+</section>
+<section aria-labelledby="ch-30">
 <h3 id="ch-30">Chapter 30: What to Have Ready When Things Get Hard</h3>
 <p>When you are going in to see some great man, remember that somebody else is watching what happens from above, and that it is him you ought to please rather than the other. So the one who watches from above asks you:</p>
 <p>&quot;In the schools, what did you use to say about exile and chains and death and disgrace?&quot;</p>
@@ -854,7 +950,11 @@ figcaption {
 <p>&quot;Do you still say this now?&quot;</p>
 <p>I say the same now.</p>
 <p>Then go in to the great man boldly, remembering these things, and you will see what a young man who has studied them looks like among men who have not. For my part I imagine you will be thinking something like this: why do we make such great and elaborate preparations for nothing? Is this the thing men call power? Is this the antechamber? These the chamberlains? These the armed guards? Was it for this that I listened to so many lectures? All this is nothing — and I had been preparing myself as though for something great.</p>
+</section>
+</section>
+<section class="part" aria-labelledby="book-two">
 <h2 id="book-two" class="center">Book Two</h2>
+<section aria-labelledby="ch-1-2">
 <h3 id="ch-1-2">Chapter 1: Why Confidence and Caution Are Not Opposites</h3>
 <p>The philosophers&#x27; view may strike some people as a paradox, but let us examine as best we can whether it is true that everything can be done both cautiously and confidently. Caution looks in a way like the opposite of confidence, and opposites are never consistent with each other.</p>
 <p>What seems to many a paradox in this matter is, I think, of this kind. If we asserted that we ought to use caution and confidence about the same things, men could fairly accuse us of joining what cannot be joined. But as it is, where is the difficulty in what has been said? If it is true — as has often been said and often proved — that the nature of good lies in the use of impressions, and the nature of evil likewise, and that things outside our will admit of neither, what paradox are the philosophers asserting when they say that where things do not depend on the will you should use confidence, and where they do depend on the will you should use caution?</p>
@@ -890,6 +990,8 @@ figcaption {
 <p>That is the proper display for a young man who has come out of the schools. Leave the rest to others; let nobody ever hear a word from you about it; and if anyone praises you for it, do not accept it — think yourself nobody and think you know nothing. Show only that you know this one thing: how never to be disappointed of your desire and never to fall into what you would avoid.</p>
 <p>Let other men labour at court cases and problems and syllogisms. You labour at thinking about death, chains, the rack, exile — and do it all with confidence, relying on the one who called you to these sufferings, who judged you worthy of the post where, being stationed, you will show what the rational governing power can do when it takes its stand against forces outside our will.</p>
 <p>And then this paradox will no longer look impossible or paradoxical: that a man ought to be cautious and courageous at once — courageous toward things that do not depend on the will, and cautious in the things that are within its power.</p>
+</section>
+<section aria-labelledby="ch-2-2">
 <h3 id="ch-2-2">Chapter 2: On Peace of Mind</h3>
 <p>Consider, you who are going into court, what it is you want to keep hold of and what you want to succeed in. If you want to keep a will that is in line with nature, you have complete security, complete ease, no troubles at all. If you want to keep what is in your own power and is naturally free, and you are content with that, what else is there to worry about? Who is master of such things? Who can take them away? If you choose to be self-respecting and trustworthy, who will not allow it? If you choose not to be restrained or compelled, who is going to force you to desire what you think you should not desire, or to avoid what you do not think fit to avoid?</p>
 <p>But what do you say? The judge will decide something against you that looks frightening. But how can he make you suffer in trying to avoid it as well? So when the pursuit of things and the avoiding of them is in your power, what else is there to worry about? Let this be your opening, your statement of the case, your proof, your victory, your closing speech, and your applause.</p>
@@ -906,11 +1008,15 @@ figcaption {
 <p>For the same reason it is ridiculous to say, &quot;Suggest something to me.&quot;</p>
 <p>What should I suggest? &quot;Well, shape my mind so that it can adapt to any event.&quot; That is exactly as if a man who could not read said, &quot;Tell me what to write when a name is put to me.&quot; If I tell him to write Dion, and then somebody comes along and puts to him not Dion but Theon, what will happen? What will he write? But if you have practised writing, you are ready to write whatever is called for. If you have not, what can I suggest now? If the circumstances call for something else, what will you say, or what will you do?</p>
 <p>Remember this general rule, then, and you will need no suggestions. But if you stand gaping after externals, you must of necessity wander up and down at your master&#x27;s will. And who is the master? Whoever has power over the things you are trying to get or trying to avoid.</p>
+</section>
+<section aria-labelledby="ch-3-2">
 <h3 id="ch-3-2">Chapter 3: To Those Who Send People to Philosophers with a Recommendation</h3>
 <p>Diogenes answered a man who asked him for a letter of recommendation very well. &quot;That you are a man,&quot; he said, &quot;he will know as soon as he sees you. Whether you are good or bad he will know if he has the experience to tell the good from the bad; and if he has not, he will never know it, though I write to him ten thousand times.&quot;</p>
 <p>It is exactly as if a silver coin asked to be recommended to somebody for testing. If the man is skilled at testing silver, he will know what you are — you will recommend yourself.</p>
 <p>So in life too we ought to have a skill of the same sort as with coin, so that a man can say, as the assayer of silver says: bring me any coin you like and I will test it. With syllogisms I could say: bring me any man you please and I will pick out for you the man who knows how to resolve syllogisms from the man who does not. Why? Because I know how to resolve syllogisms myself. I have the very power a man must have if he is to identify the men who have it.</p>
 <p>But in life, how do I behave? At one moment I call a thing good, and at the next I call it bad. What is the reason? The opposite of what holds with syllogisms: ignorance and inexperience.</p>
+</section>
+<section aria-labelledby="ch-4-2">
 <h3 id="ch-4-2">Chapter 4: Against a Man Caught in Adultery</h3>
 <p>Epictetus was saying that a man is made for trustworthiness, and that whoever undermines trustworthiness undermines the very thing that makes a man a man, when in came one of those who pass for men of letters — a man who had once been caught in adultery in the city. Epictetus went on:</p>
 <p>If we lay aside the trustworthiness we were made for, and start scheming after our neighbour&#x27;s wife, what are we doing? What but pulling down and destroying? Destroying whom? The man who can be trusted, the man with self-respect, the man who keeps what is holy. Is that all? Are we not also pulling down neighbourliness, and friendship, and the community? And where does that put us?</p>
@@ -923,6 +1029,8 @@ figcaption {
 <p>Then when they have taken their seats, go and throw one of them out, if you think that is proper. Women are common by nature in just this way. When the lawgiver, like the host at a feast, has distributed them, will you not look for your own portion instead of pilfering and pawing what belongs to somebody else?</p>
 <p>&quot;But I am a man of letters, and I understand Archedemus.&quot;</p>
 <p>Then understand Archedemus, and be an adulterer, and a man nobody can trust; and instead of a man, be a wolf or an ape. What difference is there?</p>
+</section>
+<section aria-labelledby="ch-5-2">
 <h3 id="ch-5-2">Chapter 5: How Greatness of Spirit Goes with Taking Care</h3>
 <p>The materials themselves are indifferent; the use of them is not. So how is a man to keep his firmness and his peace of mind, and at the same time be careful, and neither reckless nor slack? By copying men who play at dice. The counters are indifferent, the dice are indifferent. How do I know what the throw will be? But to use the throw carefully and skilfully — that is my business.</p>
 <p>So in life too the chief business is this: distinguish things and separate them out, and say: externals are not in my power; the will is in my power. Where am I to look for good and bad? Inside, in what is my own. And in what does not belong to you, never use the words good or bad, or profit or loss, or anything of the kind.</p>
@@ -941,6 +1049,8 @@ figcaption {
 <p>&quot;What — must I be brought to trial? Must this man have a fever, and that man go to sea, and another die, and another be condemned?&quot;</p>
 <p>Yes. In such a body, in such a universe of things, among so many living together, it is impossible that such things should not happen, some to one and some to another. Your duty, since you have come here, is to say what you ought and to arrange these matters as is fitting.</p>
 <p>Then somebody says: &quot;I shall charge you with doing me wrong.&quot; Much good may it do you. I have done my part; whether you have done yours, you must see to. And there is some danger there too — that it may escape your notice.</p>
+</section>
+<section aria-labelledby="ch-6-2">
 <h3 id="ch-6-2">Chapter 6: On Things That Are Neither Good nor Bad</h3>
 <p>A hypothetical proposition is indifferent; the judgment about it is not — that is either knowledge or opinion or error. In the same way life is indifferent, and the use of it is not.</p>
 <p>So when somebody tells you that these things too are indifferent, do not become slack; and when somebody urges you to be careful about them, do not become abject and struck with admiration for material things.</p>
@@ -969,6 +1079,8 @@ figcaption {
 <p>Why do you go up to Rome, then, as though it were something great? It is not worth all this preparation, that a well-born young man should say afterwards, &quot;It was not worth listening to so much, and writing so much, and sitting so long beside an old man who is not worth much.&quot;</p>
 <p>Only remember the division by which what is yours is separated from what is not. Never claim anything that belongs to others. A tribunal and a prison are each a place, one high and one low; but the will can be kept the same in both, if you choose to keep it the same. And we shall be imitators of Socrates when we are able to write hymns in prison.</p>
 <p>But in the state we are in now, consider whether we could bear to have somebody in prison say to us: would you like me to read you some hymns? &quot;Why are you bothering me? Do you not know the troubles I am in? Can I listen to hymns in circumstances like these?&quot; What circumstances? &quot;I am going to die.&quot; And are other men going to be immortal?</p>
+</section>
+<section aria-labelledby="ch-7-2">
 <h3 id="ch-7-2">Chapter 7: How to Use Divination</h3>
 <p>Out of an unreasonable regard for divination, many of us leave many duties undone. What more can the diviner see than death, or danger, or disease, or things of that general kind? So if I have to expose myself to danger for a friend, and if it is my duty even to die for him, what need have I of divination?</p>
 <p>Have I not a diviner inside me, who has told me the nature of good and evil and explained the signs of both? What need have I to consult the entrails of victims or the flight of birds? And why do I submit when he says, &quot;It is in your interest&quot;? Does he know what is in my interest? Does he know what good is? Has he learned the signs of good and evil as he learned the signs in the entrails? If he knows those signs, then he knows the signs of the beautiful and the ugly too, and of the just and the unjust.</p>
@@ -978,6 +1090,8 @@ figcaption {
 <p>What should we do, then? We ought to come to divination without desire and without avoidance — as a traveller asks a man he meets which of two roads leads where he is going, with no wish for it to be the right-hand one rather than the left, since he has no wish to take any road but the one that leads to his destination.</p>
 <p>That is how we ought to come to God as our guide: as we use our eyes, not asking them to show us the things we would prefer, but taking the appearances of things as the eyes present them.</p>
 <p>But as it is, we take the augur&#x27;s hand trembling, and while we call on God we plead with the augur: &quot;Master, have mercy on me. Let me come safely out of this trouble.&quot; Wretch, would you have anything other than what is best? And is there anything better than what pleases God? Why do you do your utmost to corrupt your judge and lead your adviser astray?</p>
+</section>
+<section aria-labelledby="ch-8-2">
 <h3 id="ch-8-2">Chapter 8: What the Nature of the Good Is</h3>
 <p>God is beneficial. And the good is beneficial too. So it follows that where the nature of God is, there the nature of the good is also.</p>
 <p>What is the nature of God, then? Flesh? &quot;Certainly not.&quot; An estate in land? &quot;By no means.&quot; Fame? &quot;No.&quot; Is it intelligence, knowledge, right reason? &quot;Yes.&quot;</p>
@@ -1003,6 +1117,8 @@ figcaption {
 <p>That is how I will show myself to you: trustworthy, self-respecting, noble, undisturbed.</p>
 <p>What, and immortal too, and exempt from old age and sickness? No — dying as a god dies, falling sick as a god falls sick. This power I have; this I can do. The rest I do not have, and cannot do.</p>
 <p>I will show you the sinews of a philosopher. What sinews are those? A desire that is never disappointed. An avoidance that never lands on the thing it would avoid. An impulse that is proper, a purpose that is careful, an assent that is not rash. These you shall see.</p>
+</section>
+<section aria-labelledby="ch-9-2">
 <h3 id="ch-9-2">Chapter 9: How We Claim the Title of Philosopher Because We Cannot Live Up to Being Human</h3>
 <p>It is no small thing just to do this one thing: to fulfil the promise a man&#x27;s nature makes. For what is a man? The answer is: a rational and mortal creature. And by the rational part, what are we separated from? From wild beasts. And from what else? From sheep and animals like them.</p>
 <p>So take care to do nothing like a wild beast. If you do, you have lost the character of a man; you have not kept your promise. See that you do nothing like a sheep — and if you do, in that case too the man is lost.</p>
@@ -1017,6 +1133,8 @@ figcaption {
 <p>For what is the difference between expounding these doctrines and expounding those of men who hold the opposite? Sit down now and expound the opinions of Epicurus by the rules of the art, and perhaps you will expound them more usefully than Epicurus himself. Why call yourself a Stoic, then? Why deceive the crowd? Why act the part of a Jew when you are a Greek?</p>
 <p>Do you not see on what grounds each man is called a Jew, or a Syrian, or an Egyptian? When we see a man leaning both ways we are used to saying, this man is no Jew, he is only acting the part. But when he takes on the feelings of a man who has been steeped in the doctrine and has adopted that sect, then he is one in fact, and he is called one.</p>
 <p>So we too, dipped falsely, are Jews in name and something else in fact. Our feelings do not match our words. We are a long way from practising what we say, and from what we are proud of as though we knew it. And so, being unable to fulfil even what the character of a man promises, we take on the profession of a philosopher as well — a burden as heavy as if a man who cannot carry ten pounds tried to lift the stone that Ajax lifted.</p>
+</section>
+<section aria-labelledby="ch-10-2">
 <h3 id="ch-10-2">Chapter 10: How to Work Out Your Duties from the Names You Bear</h3>
 <p>Consider who you are. In the first place, a man — that is, one who has nothing superior to his own will, and everything else subject to it, while the will itself he holds unenslaved and free.</p>
 <p>So consider what reason has separated you from. It has separated you from wild beasts; it has separated you from the flocks. Beyond that, you are a citizen of the world and a part of it — not one of the parts that serve, but one of the parts that rule, since you are capable of following the divine administration and of thinking about how things are connected.</p>
@@ -1037,6 +1155,8 @@ figcaption {
 <p>First consider what hurt is, and remember what you have heard from the philosophers. If the good lies in the will and the bad in the will too, then see whether what you are saying does not come to this: since that man has hurt himself by doing me an injustice, am I not to hurt myself by doing him one?</p>
 <p>Why do we not put it to ourselves in some such way? Where there is any injury to the body or to our property, there we find harm; but where the same thing happens to the will, there — you suppose — there is no harm. The man who has been deceived, or who has done an unjust act, suffers nothing in his head, or his eye, or his hip, and he does not lose his estate; and we want nothing except that these things should be safe.</p>
 <p>But whether we shall have a will that is self-respecting and trustworthy, or shameless and faithless, we do not care in the least — except in the school, and there only as far as a few words go. And that is why our progress is limited to those few words, and beyond them does not exist in the slightest degree.</p>
+</section>
+<section aria-labelledby="ch-11-2">
 <h3 id="ch-11-2">Chapter 11: Where Philosophy Begins</h3>
 <p>Philosophy begins — for the man who comes to it the right way, through the door — with an awareness of his own weakness and inability in the things that matter.</p>
 <p>We come into the world with no innate notion of a right-angled triangle, or of a quarter tone, or of a semitone; we learn each of these by a sort of instruction according to an art, and that is why men who do not know them do not think they know them. But as for good and evil, beautiful and ugly, fitting and unfitting, happiness and misfortune, proper and improper, what we ought to do and what we ought not — who ever came into the world without an inborn idea of these?</p>
@@ -1065,6 +1185,8 @@ figcaption {
 <p>What is the matter put before us for enquiry? Pleasure, let us say. Put it to the standard; throw it into the balance. Ought the good to be the sort of thing we can properly have confidence in? Yes. And the sort of thing we ought to trust? It ought to be. Is it right to trust anything insecure? No. And is pleasure secure? No. Then take it and throw it out of the scale, and drive it far away from the place where the good things stand.</p>
 <p>And if you are not sharp-sighted and one balance is not enough for you, bring another. Is it right to be lifted up over what is good? Yes. Is it proper, then, to be lifted up over a present pleasure? Take care not to say that it is; and if you do say it, I shall not think you worth even the balance.</p>
 <p>This is how things are tested and weighed, when the standards are ready. And philosophising is this: examining the standards and establishing them. Using them once they are known is the work of a wise and good man.</p>
+</section>
+<section aria-labelledby="ch-12-2">
 <h3 id="ch-12-2">Chapter 12: On Argument and Discussion</h3>
 <p>What a man must learn in order to practise the art of argument has been set out accurately by our philosophers. But as for the proper use of it, we have no practice at all.</p>
 <p>Give any one of us you like an uneducated man to argue with, and he cannot find out how to handle him. He shifts the man a little, and then if the man answers off the point he does not know what to do with him, and either abuses him or laughs at him and says, &quot;He is uneducated; you can do nothing with him.&quot;</p>
@@ -1081,6 +1203,8 @@ figcaption {
 <p>And are these the best things you have, or do you possess something else better than all of them? &quot;What sort of thing do you mean?&quot; I mean the thing that uses all these, and tests each of them, and deliberates. &quot;Do you mean the soul?&quot; You are right, that is what I mean. &quot;In truth I do think the soul is a far better thing than anything else I possess.&quot;</p>
 <p>Then can you show us how you have taken care of the soul? It is hardly likely that a man as wise as you, with a reputation in the city, would thoughtlessly and carelessly let the most valuable thing he owns go neglected and perish. &quot;Certainly not.&quot; But have you taken care of it yourself? And did you learn how from somebody else, or work out the means on your own?</p>
 <p>And here comes the danger. First, that he may say, &quot;What business is this of yours, my good man? Who are you?&quot; And then, if you go on bothering him, that he may raise his hands and hit you. I was an admirer of this method of teaching myself once, until I fell into these dangers.</p>
+</section>
+<section aria-labelledby="ch-13-2">
 <h3 id="ch-13-2">Chapter 13: On Anxiety</h3>
 <p>When I see a man anxious I say: what does this man want? If he did not want something outside his power, how could he be anxious?</p>
 <p>This is why a lute player singing on his own has no anxiety, but is anxious when he comes into the theatre, even if he has a good voice and plays well. He wants not only to sing well but to be applauded — and that is not in his power. Where he has skill, he has confidence. Bring him any single person who knows nothing about music and the musician does not care. But where he knows nothing and has had no practice, there he is anxious.</p>
@@ -1109,6 +1233,8 @@ figcaption {
 <p>Then tell the truth, unhappy man, and stop bragging, and stop claiming to be a philosopher, and stop refusing to admit who your masters are. So long as you offer this handle in your body, follow every man who is stronger than you.</p>
 <p>Socrates used to practise speaking — he who talked as he did to the tyrants, to the jurymen, and in his prison. Diogenes had practised speaking — he who spoke as he did to Alexander, to the pirates, to the man who bought him. These men were confident in what they had practised.</p>
 <p>But you go off to your own affairs and never leave them. Go and sit in a corner and weave syllogisms and set them to somebody else. There is no man in you who can govern a state.</p>
+</section>
+<section aria-labelledby="ch-14-2">
 <h3 id="ch-14-2">Chapter 14: To Naso</h3>
 <p>A certain Roman came in with his son and listened to one reading. Epictetus said: This is the method of instruction — and stopped. When the Roman asked him to go on, he said:</p>
 <p>Every art, while it is being taught, is laborious to a man who does not know it and has no skill in it. The things that come out of the arts show their use at once, in the purpose they were made for, and most of them have something attractive and pleasing about them. It is no pleasure to stand and watch a shoemaker learning his trade; but the shoe is useful, and not unpleasant to look at either. Watching a smith at his training is very disagreeable to a bystander who knows nothing of the art; but the work shows what the art is for. And you will see this much more clearly with music: if you are present while somebody is learning, the drill will seem thoroughly disagreeable, and yet the results of music are pleasant and delightful even to people who know nothing about it.</p>
@@ -1130,6 +1256,8 @@ figcaption {
 <p>But there are a few who attend the fair as men who love to look on and consider: what is the world? Who governs it? Has it no governor? How is it possible that a city or a household cannot last even the shortest time without an administrator and a guardian, and that a system so great and so beautiful should be run in such good order and yet without purpose, by chance? So there is an administrator. What kind, and how does he govern? And who are we, whom he produced, and what for? Have we some connection with him and some relation to him, or none?</p>
 <p>That is how these few are affected; and then they apply themselves to this one thing only, to examine the meeting, and then to go away.</p>
 <p>And what of it? They are laughed at by the crowd, as the sightseers at a fair are laughed at by the traders. And if the cattle had any understanding, they would laugh at anybody who admired anything but fodder.</p>
+</section>
+<section aria-labelledby="ch-15-2">
 <h3 id="ch-15-2">Chapter 15: Against Those Who Stubbornly Stick to What They Have Decided</h3>
 <p>When some people have heard that a man ought to be firm, and that the will is naturally free and not subject to compulsion while everything else is subject to blocking and to slavery and lies in other men&#x27;s power, they suppose they ought to hold without deviation to everything they have decided.</p>
 <p>But in the first place what has been decided ought to be sound. I want tone in a body — but the tone a healthy body has, an athlete&#x27;s body. If it is plain to me that you have the tone of a man in a frenzy, and you boast of it, I shall tell you: man, go and find a doctor. That is not tone; that is the loss of it.</p>
@@ -1151,6 +1279,8 @@ figcaption {
 <p>And why is that?</p>
 <p>&quot;I have decided.&quot;</p>
 <p>You may be sure that with the very same energy you are now using to refuse it, there is nothing to stop you at some point leaning without any reason toward taking money, and then saying: I have decided. As in a diseased body full of fluxes the humour flows now to these parts and now to those, so a sick soul does not know which way to lean; and if to that leaning and that movement obstinacy is added as well, then the trouble is past help and past cure.</p>
+</section>
+<section aria-labelledby="ch-16-2">
 <h3 id="ch-16-2">Chapter 16: That We Do Not Practice Applying Our Judgments About Good and Evil</h3>
 <p>Where is the good? In the will. Where is the evil? In the will. Where is neither of them? In the things outside the will.</p>
 <p>Well then — does anybody among us think about these lessons outside the schoolroom? Does anybody practise on his own, giving answers to things as he would to questions? Is it day? Yes. Is it night? No. Well, is the number of the stars even? I cannot say.</p>
@@ -1184,6 +1314,8 @@ figcaption {
 <p>What would Hercules have been if he had sat at home? He would have been Eurystheus, not Hercules. And in his travels through the world, how many close friends did he have? But nothing was dearer to him than God. That is why he was believed to be the son of God — and he was. In obedience to God he went about clearing away injustice and lawlessness.</p>
 <p>But you are not Hercules and cannot clear away other men&#x27;s wickedness; and you are not Theseus either, able to clear the evils out of Attica. Clear away your own. Out of yourself, out of your own thoughts, cast — instead of Procrustes and Sciron — sadness, fear, desire, envy, spite, greed, softness, lack of self-control.</p>
 <p>And it is not possible to throw these things out except by looking to God alone, fixing your affections on him alone, and being consecrated to his commands. If you choose anything else, you will follow with sighs and groans whatever is stronger than yourself, always looking for peace of mind and never able to find it — because you look for it where it is not, and neglect to look where it is.</p>
+</section>
+<section aria-labelledby="ch-17-2">
 <h3 id="ch-17-2">Chapter 17: How to Fit Preconceptions to Particular Cases</h3>
 <p>What is the first business of the man who takes up philosophy? To throw away conceit. It is impossible for a man to begin learning what he thinks he already knows.</p>
 <p>As to what ought to be done and ought not to be done, and good and bad, and beautiful and ugly, we all talk about them at random and then go to the philosophers. On these matters we praise, we censure, we accuse, we blame, we pass judgment about what is honourable and dishonourable. And why do we go to the philosophers? Because we want to learn what we do not think we know. And what is that? Theorems. We want to learn what philosophers say, as something elegant and sharp; and some want to learn so as to profit by it.</p>
@@ -1211,6 +1343,8 @@ figcaption {
 <p>And after that you do not even look for anybody to give you advice — you are annoyed if you hear the sort of thing I am saying. Then you say: &quot;A bad-tempered old fellow. When I was leaving he did not weep, and he did not say, &#x27;What danger you are going into! If you come through safe, my child, I will light lamps for it.&#x27; That is what a kindly man would do.&quot;</p>
 <p>It will be a great thing indeed if you do come back safe, and well worth lighting lamps over — for such a person as you. You ought to be immortal, of course, and exempt from disease.</p>
 <p>So, as I say, throwing away this conceit of thinking we know something useful, we must come to philosophy as we come to geometry and to music. Otherwise we shall not so much as approach making progress, though we read every collection and commentary of Chrysippus, and Antipater&#x27;s and Archedemus&#x27; as well.</p>
+</section>
+<section aria-labelledby="ch-18-2">
 <h3 id="ch-18-2">Chapter 18: How to Fight Against Impressions</h3>
 <p>Every habit and every capacity is kept up and increased by the acts that correspond to it: the habit of walking by walking, the habit of running by running. If you want to be a good reader, read; if a writer, write. But when you have not read for thirty days running and have done something else instead, you will see the result. In the same way, lie down for ten days and then get up and try to take a long walk, and you will see how weak your legs have got.</p>
 <p>So, in general, if you want to make anything a habit, do it; and if you do not want to make it a habit, do not do it — get into the way of doing something else instead.</p>
@@ -1229,6 +1363,8 @@ figcaption {
 <p>And what greater storm is there than the one that comes from violent impressions that drive reason out? What is the storm itself but an impression? Take away the fear of death and bring on as much thunder and lightning as you please, and you will find what calm and clear weather there is in the governing part.</p>
 <p>But if you are once beaten and say you will win next time, and then say the same thing again, be sure that you will end in such a wretched and feeble condition that you will not even notice afterwards that you are doing wrong; you will start making excuses for it. And then you will prove the truth of Hesiod&#x27;s line:</p>
 <pre class="outline">	The man who puts things off wrestles with troubles all his life.</pre>
+</section>
+<section aria-labelledby="ch-19-2">
 <h3 id="ch-19-2">Chapter 19: Against Those Who Take Up Philosophy Only in Words</h3>
 <p>The argument called the Master Argument seems to have been put forward from principles of this sort. There is a general contradiction between these three propositions, any two of them being in contradiction with the third. The propositions are: that everything past must necessarily be true; that an impossibility does not follow from a possibility; and that something is possible which neither is true nor ever will be.</p>
 <p>Diodorus, noticing this contradiction, used the force of the first two to prove that nothing is possible which is not true and never will be. Another man will hold the other two — that something is possible which is neither true nor ever will be, and that an impossibility does not follow from a possibility — but will not allow that everything past is necessarily true; which is what the followers of Cleanthes seem to think, and Antipater defended them at length. Others again maintain the other pair — that something is possible which is neither true nor will be, and that everything past is necessarily true — and then have to maintain that an impossibility can follow from a possibility. But holding all three is impossible, because of the contradiction between them.</p>
@@ -1263,6 +1399,8 @@ figcaption {
 <p>When I see a craftsman with his material lying beside him, I expect the work. Well, here is the craftsman and here is the material — what are we short of? Is the thing not teachable? It is. Is it not in our power, then? It is the only thing of all things that is in our power. Wealth is not in our power, nor health, nor reputation, nor in a word anything else except the right use of impressions. That alone is by nature free of restraint; that alone is free of obstruction.</p>
 <p>So why do you not finish the work? Tell me the reason. It is either my fault that you do not finish it, or your own, or it lies in the nature of the thing. The thing itself is possible, and the only thing in our power. So it remains that the fault is in me, or in you — or, nearer the truth, in both.</p>
 <p>Well then: are you willing that we should at last start bringing such a purpose into this school, and take no notice of the past? Only let us make a beginning. Trust me, and you will see.</p>
+</section>
+<section aria-labelledby="ch-20-2">
 <h3 id="ch-20-2">Chapter 20: Against the Epicureans and the Academics</h3>
 <p>Propositions that are true and evident have to be used even by the men who contradict them; and perhaps the greatest proof that a thing is evident is that even the man who denies it turns out to need it at the same moment.</p>
 <p>For instance, if a man denies that anything is universally true, plainly he has to make the contradictory statement: that nothing is universally true. Wretch, will you not admit even this? For what is it but affirming that whatever is universally affirmed is false?</p>
@@ -1291,6 +1429,8 @@ figcaption {
 <p>But what they are going to say, and about what, and to whom, and what their hearers will learn from the talk — that they do not care about in the smallest degree. Nor whether some well-born young man, after hearing such talk, may take harm from it; nor whether, having taken harm, he may lose every seed of his own good nature. Nor whether we are helping an adulterer to be shameless in what he does; nor whether some public embezzler may find a clever excuse in these doctrines; nor whether another man who neglects his parents may be confirmed in his boldness by this teaching.</p>
 <p>So what, in your view, is good or bad? This, or that?</p>
 <p>Why should a man say anything more in answer to people like these, or give them any reason, or listen to any reason from them, or try to convince them? By Zeus, one might much sooner expect to change the minds of men who have lost all shame about sex than of men who have gone this deaf and this blind to their own troubles.</p>
+</section>
+<section aria-labelledby="ch-21-2">
 <h3 id="ch-21-2">Chapter 21: On Inconsistency</h3>
 <p>There are some things men admit readily and others they do not. Nobody will admit that he is a fool or that he lacks understanding; quite the contrary — you will hear every man saying, &quot;I wish my luck were equal to my understanding.&quot;</p>
 <p>But men readily admit that they are timid. &quot;I am rather timid, I confess; but in other respects you will not find me a fool.&quot; A man will not readily admit that he lacks self-control, and that he is unjust he will not admit at all. He will certainly not admit that he is envious or a busybody. Most men will admit that they are soft-hearted.</p>
@@ -1310,6 +1450,8 @@ figcaption {
 <p>&quot;And how are they going to be useful to me?&quot;</p>
 <p>Man, did you ask whether they are useful to you, or whether they are useful in general? Let a man with dysentery ask me whether vinegar is useful; I shall say it is. &quot;Will it be useful to me, then?&quot; I shall say: no. First get the discharge stopped and the ulcers closed.</p>
 <p>And you, gentlemen — first cure your ulcers and stop your discharge. Get your mind quiet, bring it into the school free of distraction, and then you will know what power reason has.</p>
+</section>
+<section aria-labelledby="ch-22-2">
 <h3 id="ch-22-2">Chapter 22: On Friendship</h3>
 <p>Whatever a man applies himself to seriously, he naturally loves. Do men apply themselves seriously to things that are bad? Not at all. To things that do not concern them in any way? Not to those either. So it remains that they apply themselves seriously only to things that are good; and if they apply themselves seriously to them, they love them too.</p>
 <p>So whoever understands what good is can also know how to love. But the man who cannot tell good from bad, and cannot tell what is neither good nor bad from either — how can he have the power of loving? To love, then, is in the power of the wise alone.</p>
@@ -1341,6 +1483,8 @@ figcaption {
 <p>&quot;But this woman is my wife, and we have lived together so long.&quot; And how long did Eriphyle live with Amphiaraus, and bear him children, and many of them? But a necklace came between them. And what is a necklace? It is the opinion about such things. That was the brutish principle; that was what broke the friendship of husband and wife apart; that was what would not let the wife be a wife or the mother be a mother.</p>
 <p>So let every man among you who has seriously resolved either to be a friend himself or to have another man as a friend cut these opinions out, hate them, and drive them out of his soul. And then, first of all, he will not reproach himself, or be at odds with himself, or change his mind, or torture himself. And in the second place, to another man like himself he will be altogether and completely a friend. And with a man unlike himself he will be patient, kind, gentle, ready to pardon him for his ignorance and for being mistaken in the greatest matters; but he will be harsh to nobody, being thoroughly convinced of Plato&#x27;s doctrine that every mind is deprived of truth unwillingly.</p>
 <p>If you cannot do that, you can still do everything else that friends do — drink together, lodge together, sail together. You may even be born of the same parents; so are snakes. But neither they nor you will be friends, so long as you keep these brutish and accursed opinions.</p>
+</section>
+<section aria-labelledby="ch-23-2">
 <h3 id="ch-23-2">Chapter 23: On the Power of Speaking</h3>
 <p>Every man reads a book with more pleasure, or at least more easily, if it is written in a finer hand. So every man will also listen more readily to what is spoken, if it is put in fitting and becoming words. We must not say, then, that there is no such thing as a capacity for expression. To say so is the mark of an irreverent man, and of a cowardly one as well.</p>
 <p>Of an irreverent man, because he undervalues the gifts that come from God — as if he were doing away with the usefulness of sight or hearing. Has God given you eyes for nothing? Has he put into them for nothing a spirit so strong and so cunningly contrived that it reaches a long way off and shapes the forms of what is seen? What messenger is so swift and so watchful? And has he made the air in between so efficient and so elastic for nothing, that vision passes through it when it is set moving? And has he made light for nothing, without which nothing else would be of any use?</p>
@@ -1370,6 +1514,8 @@ figcaption {
 <p>And with that purpose in front of you, if some little turn of phrase pleases you, or some theorems please you, do you settle down among them and choose to live there, forgetting what is at home? And do you say, &quot;These things are fine&quot;? Who says they are not fine — but only as a road home, as inns are.</p>
 <p>What stops you being an unlucky man even if you speak like Demosthenes? What stops you, if you can resolve syllogisms like Chrysippus, from being wretched, from grieving, from envying — in a word, from being disturbed and unhappy? Nothing.</p>
 <p>So you see that these were inns, worth nothing, and that the purpose set before you was something else. When I talk like this to some people they think I am rejecting care about speaking, or care about theorems. I am not rejecting the care. I am rejecting the settling down among these things forever and putting our hopes in them. If a man does harm to his hearers by this teaching, count me too among the men who do that harm; for when I see one thing that is most excellent and supreme, I am not able to say that something else is, in order to please you.</p>
+</section>
+<section aria-labelledby="ch-24-2">
 <h3 id="ch-24-2">Chapter 24: To a Man Epictetus Did Not Think Much Of</h3>
 <p>A certain person said to him: &quot;I have often wanted to hear you, and I came to you, and you never gave me any answer. Now, if it is possible, I beg you to say something to me.&quot;</p>
 <p>Epictetus said: Do you think that as there is an art in everything else, so there is an art in speaking, and that a man who has the art will speak skilfully and a man who has not will speak unskilfully?</p>
@@ -1401,6 +1547,8 @@ figcaption {
 <p>&quot;But I am rich too.&quot; Are you richer than Agamemnon? &quot;But I am handsome too.&quot; Are you handsomer than Achilles? &quot;But I have beautiful hair as well.&quot; Did Achilles not have more beautiful hair, and golden? And he did not comb it elegantly or dress it. &quot;But I am strong too.&quot; Can you lift as great a stone as Hector or Ajax? &quot;But I am well-born as well.&quot; Is your mother a goddess? Is your father sprung from Zeus? And what good did any of that do him, when he sat weeping over a girl? &quot;But I am an orator.&quot; And was he not? Do you not see how he handled the most skilful of the Greeks in speaking, Odysseus and Phoenix, and stopped their mouths?</p>
 <p>That is all I have to say to you — and I say even this unwillingly. Why? Because you have not roused me. What am I to look to in order to be roused, as men who know horses are roused by a fine one? To your body? You treat it disgracefully. To your clothes? They are luxurious. To your behaviour, to your look? They are as good as nothing.</p>
 <p>When you want to listen to a philosopher, do not say to him, &quot;You tell me nothing.&quot; Only show yourself worth being spoken to, fit to be spoken to — and you will see how you move the speaker.</p>
+</section>
+<section aria-labelledby="ch-25-2">
 <h3 id="ch-25-2">Chapter 25: That Logic Cannot Be Skipped</h3>
 <p>When one of the men present said, &quot;Convince me that logic is necessary,&quot; he answered:</p>
 <p>Do you want me to prove it to you?</p>
@@ -1410,6 +1558,8 @@ figcaption {
 <p>And how will you know whether I am cheating you with my argument?</p>
 <p>The man had nothing to say.</p>
 <p>Do you see, said Epictetus, that you are admitting logic is necessary yourself — since without it you cannot even know this much, whether logic is necessary or not?</p>
+</section>
+<section aria-labelledby="ch-26-2">
 <h3 id="ch-26-2">Chapter 26: What Is Really Going On in a Mistake</h3>
 <p>Every error contains a contradiction. Since the man who goes wrong does not want to go wrong but to be right, plainly he is not doing what he wants.</p>
 <p>What does the thief want to do? What is in his own interest. So if the theft is not in his interest, he is not doing what he wants.</p>
@@ -1417,7 +1567,11 @@ figcaption {
 <p>So the man who is strong in argument, and has the power of urging others on and refuting them, is the man who can show each person the contradiction he is going wrong through, and prove clearly that he is not doing what he wants and is doing what he does not want. Show a man that, and he will withdraw from what he is doing of his own accord; and as long as you do not show it, do not be surprised if he keeps on. He does what he does because it looks to him like the right thing.</p>
 <p>That is why Socrates, trusting to this power, used to say: I am not in the habit of calling any other witness to what I say. I am always satisfied with the man I am arguing with; I ask him for his opinion and call him as my witness, and though he is only one man, he does instead of all of them.</p>
 <p>For Socrates knew what moves a rational soul: it is like a pair of scales, and then it must tip, whether it chooses to or not. Show the rational governing part a contradiction and it will back away from it. And if you do not show it, blame yourself rather than the man who is not convinced.</p>
+</section>
+</section>
+<section class="part" aria-labelledby="book-three">
 <h2 id="book-three" class="center">Book Three</h2>
+<section aria-labelledby="ch-1-3">
 <h3 id="ch-1-3">Chapter 1: On Personal Beauty and Finery</h3>
 <p>A young man who studied rhetoric came to see Epictetus with his hair done more carefully than usual and the rest of him dressed up. Epictetus said:</p>
 <p>Tell me whether you do not think that some dogs are beautiful and some horses, and so with all the other animals.</p>
@@ -1464,6 +1618,8 @@ figcaption {
 <p>Up to now I have not dared to tell you that you are ugly, because I think you are readier to hear anything else than that. But see what Socrates says to Alcibiades, the most beautiful and blooming of men. &quot;Try, then, to be beautiful.&quot; And what does he tell him? Dress your hair and pluck the hairs off your legs? Nothing of the kind. Adorn your will; get rid of your bad opinions.</p>
 <p>And what about the body? Leave it as nature made it. Somebody else has looked after that; entrust it to him.</p>
 <p>What then — is a man to go uncleaned? Certainly not. But clean what you are and what nature made you. A man should be clean as a man, a woman as a woman, a child as a child. You say no. Then let us pluck out the lion&#x27;s mane too, so that he shall not go uncleaned, and the cock&#x27;s comb, since he ought to be cleaned as well. Cleaned, yes — but as a cock, and the lion as a lion, and the hunting dog as a hunting dog.</p>
+</section>
+<section aria-labelledby="ch-2-3">
 <h3 id="ch-2-3">Chapter 2: What a Student Making Progress Should Train In, and What We Neglect</h3>
 <p>There are three areas in which a man who intends to be wise and good has to train himself.</p>
 <p>The first concerns desires and avoidances: that he may not fail to get what he desires, and may not fall into what he does not want. The second concerns impulses toward a thing and away from it, and in general doing what a man ought to do — that he may act in order, with reason, and not carelessly. The third concerns freedom from deception and rashness in judgment, and in general it concerns assent.</p>
@@ -1480,6 +1636,8 @@ figcaption {
 <p>Go away now and read Archedemus. And then if a mouse drops down and makes a noise, you are a dead man. Such a death is waiting for you as came to — what was the man&#x27;s name? — Crinis; and he too was proud, because he understood Archedemus.</p>
 <p>Wretch, will you not let go of things that are no concern of yours at all? These things suit men who can learn them without being thrown — men who can say: &quot;I am not subject to anger, or grief, or envy. I am not blocked, I am not restrained. What is left for me? I have leisure, I am at peace. Let us see how we must deal with shifting arguments; let us see how a man who has granted a hypothesis is not to be dragged into something absurd.&quot;</p>
 <p>Such things belong to them. It is right for men who are doing well to light a fire and have dinner, and, if they like, to sing and dance too. But you come to me and hoist the sails when the ship is going down.</p>
+</section>
+<section aria-labelledby="ch-3-3">
 <h3 id="ch-3-3">Chapter 3: What a Good Person Should Work On, and What We Should Practice Most</h3>
 <p>The material of the wise and good man is his own governing part, as the body is the material of the doctor and of the trainer who rubs men with oil, and the land is the material of the farmer. And the business of the wise and good man is to use impressions in line with nature.</p>
 <p>Now just as it is the nature of every soul to assent to the true, to dissent from the false, and to hold back over what is uncertain, so it is its nature to be moved toward desiring the good and avoiding the bad, and to feel neither way about what is neither good nor bad.</p>
@@ -1498,6 +1656,8 @@ figcaption {
 <p>These are the bad opinions we ought to root out, and this is where all our effort should go. For what is weeping and lamenting? Opinion. What is bad luck? Opinion. What is civil strife, disagreement, blame, accusation, irreverence, empty talk? All of these are opinions and nothing else — opinions about things outside the will, as though those things were good and bad.</p>
 <p>Let a man shift these opinions over to the things inside the will, and I will guarantee that he will be steady and constant, whatever the state of things around him.</p>
 <p>The soul is like a dish of water, and impressions are like the ray of light falling on the water. When the water is disturbed the ray seems to be disturbed too, though it is not. So when a man is seized with dizziness, it is not the arts and the virtues that are thrown into confusion but the spirit they are impressed on; and if the spirit is restored to its settled state, they are restored too.</p>
+</section>
+<section aria-labelledby="ch-4-3">
 <h3 id="ch-4-3">Chapter 4: Against a Man Who Cheered Too Loudly in the Theater</h3>
 <p>The governor of Epirus had shown his support for an actor in an unseemly way and had been publicly criticised for it. Afterwards he told Epictetus that he had been criticised and that he was annoyed with the men who criticised him. Epictetus said:</p>
 <p>What harm were they doing? They were taking sides too, just as you were.</p>
@@ -1509,6 +1669,8 @@ figcaption {
 <p>What would you have, then? That you should do as you please and they should not even say what they please? What is surprising about it? Do farmers not abuse Zeus when he gets in their way? Do sailors not abuse him? Do people ever stop abusing Caesar? And what of it? Does Zeus not know? Is what is said not reported to Caesar? And what does Caesar do? He knows that if he punished everybody who abused him he would have nobody left to rule.</p>
 <p>So when you go into the theatre you ought to say — not &quot;Let Sophron be crowned&quot;, but this: &quot;Come, let me keep my will in this matter in line with nature. No man is dearer to me than myself, so it would be ridiculous for me to be hurt in order that some actor may be crowned. Whom do I want to win the prize, then? The actor who does win it. And so the man I want to win will always win.&quot;</p>
 <p>&quot;But I want Sophron crowned.&quot; Hold as many games as you like in your own house — Nemean, Pythian, Isthmian, Olympian — and proclaim him the victor. But in public do not claim more than your share, and do not try to take for yourself what belongs to everybody. And if you will not agree to that, then put up with being abused: when you behave like the crowd, you put yourself on their level.</p>
+</section>
+<section aria-labelledby="ch-5-3">
 <h3 id="ch-5-3">Chapter 5: Against Those Who Go Home Because They Are Ill</h3>
 <p>&quot;I am ill here,&quot; said one of the pupils, &quot;and I want to go home.&quot;</p>
 <p>At home, I suppose, you were never ill? Do you not consider whether you are doing anything here that might be useful to the training of your will, so that it may be put right? Because if you are doing nothing toward that end, you came for nothing. Go away. Look after your business at home.</p>
@@ -1526,6 +1688,8 @@ figcaption {
 <p>&quot;Better at what — at using nice little phrases?&quot; Man, do not say that. &quot;At little points of theory?&quot; What are you talking about? &quot;And in fact I do not see what else philosophers spend their time on.&quot;</p>
 <p>Does it seem nothing to you never to have found fault with anybody, God or man? To have blamed nobody? To carry the same face always, going out and coming in? That is what Socrates knew — and yet he never said he knew anything or taught anything. If any man asked him for nice little phrases or little theories, he would take him off to Protagoras or Hippias; and if a man came asking for greens, he would take him to the gardener.</p>
 <p>So which of you has that purpose? If you really had it, you would be content in illness, and in hunger, and in death. And if any of you has ever been in love with a charming girl, he knows I am telling the truth.</p>
+</section>
+<section aria-labelledby="ch-6-3">
 <h3 id="ch-6-3">Chapter 6: Miscellaneous Remarks</h3>
 <p>Somebody asked how it was that, although reason is more cultivated now than it used to be, greater progress was made in earlier times.</p>
 <p>In what respect, he answered, is it more cultivated now, and in what respect was the progress greater then? Because in whatever respect it is more cultivated now, in that respect the progress will be found now too.</p>
@@ -1534,6 +1698,8 @@ figcaption {
 <p>The good man is unbeatable, because he does not enter a contest where he is not the stronger. If you want his land and everything on it, take the land; take his slaves, take his public office, take his poor body. But you will not make his desire fail of what it goes after, nor his avoidance fall into what he would escape. The only contest he enters is over things within the power of his will. How can he not be unbeatable?</p>
 <p>Somebody asked what common sense is, and Epictetus replied: There is a kind of common hearing that only tells one vocal sound from another, while the hearing that tells musical sounds apart is not common but trained. In the same way there are certain things that men who are not altogether twisted see by the common notions everybody has. A mind constituted that way is called common sense.</p>
 <p>It is not easy to encourage weak young men — no easier than holding soft cheese with a hook. But men with a good natural disposition cling to reason all the harder when you try to turn them away from it. This is why Rufus generally tried to discourage his pupils: he used it as a test of who had a good natural disposition and who had not. He used to say, &quot;As a stone thrown upward will be brought down to earth by its own nature, so the man whose mind is naturally good turns all the more toward what he is naturally inclined to, the harder you push him away.&quot;</p>
+</section>
+<section aria-labelledby="ch-7-3">
 <h3 id="ch-7-3">Chapter 7: To the Governor of the Free Cities, Who Was an Epicurean</h3>
 <p>The administrator came to visit him, and the man was an Epicurean. Epictetus said:</p>
 <p>It is proper for us who are not philosophers to make enquiries of you who are — as men coming to a strange city make enquiries of the citizens, of people who know the place — about what the best thing in the world is, so that we too, having enquired, may go after what is best and look at it, as visitors do with the sights of a city.</p>
@@ -1578,6 +1744,8 @@ figcaption {
 <p>So you can a donkey.</p>
 <p>That is not governing men. Govern us as rational creatures. Show us what is good for us and we will follow it; show us what is bad for us and we will turn away from it. Make us imitators of yourself, as Socrates made men imitators of himself. He was a governor of men in the true sense: he made them submit their desires to him, and their avoidances, and their movements toward a thing and away from it.</p>
 <p>&quot;Do this. Do not do that. If you disobey, I will throw you into prison.&quot; That is not governing men as rational creatures. But I say: act as Zeus has ordained; and if you do not, you will feel the penalty, you will be punished. And what will the punishment be? Nothing but not having done your duty. You will lose the character of a man who is trustworthy, self-respecting, decent. Do not look for heavier penalties than those.</p>
+</section>
+<section aria-labelledby="ch-8-3">
 <h3 id="ch-8-3">Chapter 8: How to Train Yourself Against Impressions</h3>
 <p>As we train ourselves against trick questions, so we ought to train ourselves daily against impressions; because impressions put questions to us too.</p>
 <p>So-and-so&#x27;s son has died. Answer: that is not within the power of the will; it is not an evil. A father has disinherited his son. What do you think of it? It is outside the power of the will; not an evil. Caesar has condemned somebody. Outside the power of the will; not an evil. The man is crushed by it. Being crushed depends on the will: that is an evil. He has borne the sentence bravely. That is within the power of the will: that is a good.</p>
@@ -1585,6 +1753,8 @@ figcaption {
 <p>Your son is dead. What has happened? Your son is dead. Nothing more? Nothing. Your ship is lost. What has happened? Your ship is lost. A man has been taken off to prison. What has happened? He has been taken off to prison. That he has come off badly in it — every man adds that out of his own opinion.</p>
 <p>&quot;But Zeus does not do right in these matters.&quot; Why? Because he has made you able to endure? Because he has made you great in spirit? Because he has taken from what happens to you the power of being an evil? Because it is in your power to be happy while you suffer what you suffer? Because he has opened the door for you when things do not please you? Man, go out, and stop complaining.</p>
 <p>If you would like to know how the Romans feel about philosophers, listen to this. Italicus, who had the highest reputation among them, was once annoyed with his own friends while I was there, and said, as though he were suffering something unbearable: &quot;I cannot stand it — you are killing me. You will turn me into that man there.&quot; And he pointed at me.</p>
+</section>
+<section aria-labelledby="ch-9-3">
 <h3 id="ch-9-3">Chapter 9: To a Lawyer Going Up to Rome for a Lawsuit</h3>
 <p>A man came to him who was going up to Rome about a lawsuit concerning his rank. Epictetus asked why he was going to Rome, and the man then asked what Epictetus thought about the business. Epictetus replied:</p>
 <p>If you are asking me what you will do in Rome — whether you will win or lose — I have no rule about that. But if you ask me how you will fare, I can tell you: if your judgments are right, you will fare well; if they are false, you will fare badly. For in every man the cause of his acting is a judgment.</p>
@@ -1609,6 +1779,8 @@ figcaption {
 <p>And when I have these things in line with nature, why should I not spend my studies on reason as well? I have leisure; my mind is not pulled about. What shall I do, having nothing to distract me? What have I got that suits a man better than this?</p>
 <p>When you have nothing to do you are disturbed; you go to the theatre, or wander about with no purpose. Why should a philosopher not work at improving his reason? You busy yourself with crystal vessels, I with the syllogism called the Liar; you with fluorspar vessels, I with the one called the Denying. To you everything you have looks small; to me everything I have looks great. Your desire cannot be satisfied; mine is satisfied already.</p>
 <p>It is like children putting a hand into a narrow-necked jar to get figs and nuts. If they fill the hand they cannot get it out, and then they cry. Drop a few and you will get your hand out. And you — part with some of your desires. Do not desire many things, and you will have what you want.</p>
+</section>
+<section aria-labelledby="ch-10-3">
 <h3 id="ch-10-3">Chapter 10: How to Bear Being Ill</h3>
 <p>When the need for each judgment arises, we ought to have it ready: at breakfast, the judgments that have to do with breakfast; in the bath, those that concern the bath; in bed, those that concern bed.</p>
 <pre class="outline">	Let sleep not fall upon your weary eyes
@@ -1631,11 +1803,15 @@ figcaption {
 <p>A man with a fever has the chance to do this; and if he does it, he has what belongs to him. It is not a philosopher&#x27;s business to look after externals — not his wine, nor his oil, nor his poor body — but his own governing power. And how must he treat externals? So far as not to be careless about them.</p>
 <p>Where is there reason for fear, then? Where is there any longer reason for anger, or for fear about what belongs to others, about things of no value?</p>
 <p>We ought to have these two principles ready. First: that nothing is good or bad except the will. Second: that we ought not to lead events but to follow them. &quot;My brother ought not to have treated me like that.&quot; No — but he will answer for that; and however he behaves, I will conduct myself toward him as I ought. That is my own business; the other is somebody else&#x27;s. Nobody can stop me in mine; the other thing can be blocked.</p>
+</section>
+<section aria-labelledby="ch-11-3">
 <h3 id="ch-11-3">Chapter 11: More Miscellaneous Remarks</h3>
 <p>There are certain penalties fixed, as if by law, for men who disobey the divine administration. Whoever thinks anything good except what depends on the will — let him envy, let him crave, let him flatter, let him be thrown about. Whoever thinks anything else evil — let him grieve, let him lament, let him weep, let him be unhappy. And yet, punished as severely as that, we cannot stop.</p>
 <p>Remember what the poet says about the stranger:</p>
 <pre class="outline">	Stranger, I must not — not even if a worse man comes.</pre>
 <p>This can be applied to a father as well: I must not, even if a worse man than you should come, treat a father unworthily; for all fathers come from Zeus the father. And the same about a brother, for all come from Zeus who presides over kinsmen. And so in the other relations of life we shall find Zeus watching.</p>
+</section>
+<section aria-labelledby="ch-12-3">
 <h3 id="ch-12-3">Chapter 12: On Training</h3>
 <p>We ought not to make our training consist in means that are against nature and calculated to astonish people; if we do, we who call ourselves philosophers will be no different from street performers. It is difficult to walk a rope — difficult and dangerous too. Ought we to practise rope-walking for that reason, or setting up a palm tree, or throwing our arms round statues? Not at all.</p>
 <p>Not everything difficult and dangerous is fit for practice. What is fit is whatever helps toward working out the thing set before us. And what is set before us to work out? To live with desire and avoidance unrestrained. And what is that? Neither to be disappointed of what you desire nor to fall into what you would avoid. That is what training ought to aim at.</p>
@@ -1649,6 +1825,8 @@ figcaption {
 <p>The third topic concerns assent, and has to do with what is persuasive and attractive. As Socrates said we ought not to live a life without examination, so we ought not to accept an impression without examination, but should say: wait, let me see what you are and where you come from — like the sentry at night who says, show me your password. Have you the signal from nature that an impression must have to be accepted?</p>
 <p>And finally, whatever means men use on the body when they train it, if these tend in any way toward desire and avoidance, they too may be fit means of training. But if they are for show, they mark a man who has turned toward something external, who is hunting for something else and looking for spectators to say, &quot;What a great man.&quot;</p>
 <p>This is why Apollonius put it well: when you mean to train yourself for your own benefit, and you are thirsty in hot weather, take a mouthful of cold water, spit it out, and tell nobody.</p>
+</section>
+<section aria-labelledby="ch-13-3">
 <h3 id="ch-13-3">Chapter 13: What Loneliness Is, and What Kind of Person Is Truly Alone</h3>
 <p>Loneliness is a certain condition of a helpless man. A man is not lonely just because he is by himself, any more than a man among crowds is not lonely.</p>
 <p>So when we have lost a brother, or a son, or a friend we used to lean on, we say we have been left lonely — though we are often in Rome, though such a crowd goes by us, though so many people live in the same place, and though we sometimes have a great number of slaves. The man who counts as lonely is understood to be a helpless one, exposed to anybody who wants to harm him.</p>
@@ -1667,12 +1845,16 @@ figcaption {
 <p>Practise sometimes living like a man in poor health, so that at some point you may live like a man in health. Go without food, drink water, hold off from desire altogether sometimes, so that at some point you may desire in accordance with reason; and if in accordance with reason, then when you have something good in you, you will desire well.</p>
 <p>Not at all — we want to live like wise men straight away and be useful to mankind. Useful how? What are you doing? Have you been useful to yourself? But I suppose you want to urge them on. You, urge them on! You want to be useful to them. Then show them by your own example what sort of men philosophy makes, and stop trifling.</p>
 <p>When you are eating, do good to the men eating with you; when you are drinking, to the men drinking with you. By giving way to everybody, yielding, putting up with them — do them good that way, and do not spit your bad temper over them.</p>
+</section>
+<section aria-labelledby="ch-14-3">
 <h3 id="ch-14-3">Chapter 14: Further Miscellaneous Remarks</h3>
 <p>As bad tragic actors cannot sing alone but only in company with many, so some men cannot walk about alone. Man, if you are anything, walk alone and talk to yourself, and do not hide in the chorus. Examine yourself a little at last; look around; stir yourself up, so that you may know who you are.</p>
 <p>When a man drinks water, or does anything else for the sake of training, he tells everybody about it whenever he gets the chance: &quot;I drink water.&quot; Is that what you drink water for — for the purpose of drinking water? Man, if it is good for you to drink it, drink. And if not, you are being ridiculous. But if it is good for you and you do drink it, say nothing about it to men who dislike water-drinkers. What — do you want to please those very men?</p>
 <p>Of the things men do, some are done for their own sake, some as the occasion arises, some with an eye to circumstances, some to fall in with other people, and some according to a settled plan of life.</p>
 <p>There are two things you must root out of men: arrogance and distrust. Arrogance is the opinion that you lack nothing; distrust is the opinion that you cannot be happy with so many circumstances pressing round you. Arrogance is removed by being refuted, and Socrates was the first man to practise that. And to learn that the thing is not impossible, enquire and search. The search will do you no harm; and in a way this is what philosophising is — to look for how it is possible to use desire and avoidance without being blocked.</p>
 <p>&quot;I am better than you: my father was a consul.&quot; Another says, &quot;I have been a tribune and you have not.&quot; If we were horses, would you say: my father was faster? I have plenty of barley and fodder, and elegant harness? And if, while you were saying it, I said: very well, let us race, then. Well — is there nothing in a man corresponding to running in a horse, by which we can tell which is the better and which the worse? Is there not self-respect, good faith, justice? Show yourself better in those, so that you may be better as a man. If you tell me that you can land a heavy kick, I shall tell you that you are proud of what a donkey does.</p>
+</section>
+<section aria-labelledby="ch-15-3">
 <h3 id="ch-15-3">Chapter 15: Why We Should Think Before We Start Anything</h3>
 <p>In every act, consider what comes before it and what follows from it, and then go on to the act. If you do not consider, you will start off full of spirit, having given no thought to the consequences; and afterwards, when some of them have shown themselves, you will drop the thing shamefully.</p>
 <p>&quot;I want to win at the Olympic games.&quot; And so do I, by the gods — it is a fine thing. But consider what comes before and what follows, and then, if it is good for you, take the thing on.</p>
@@ -1684,6 +1866,8 @@ figcaption {
 <p>Do you suppose you can be a philosopher and go on doing what you do every day? Do you suppose you can eat as you eat now, drink as you drink now, and be angry and out of temper in the same way? You must go without sleep, work hard, master certain desires, leave your family, be looked down on by your slave, laughed at by the men you meet, and come off worse in everything — in office, in honours, in the law courts.</p>
 <p>When you have thought all this over thoroughly, then, if you think proper, come to philosophy — if you want to get, in exchange for these things, freedom from being thrown about, and liberty, and peace of mind. And if you have not thought it over, do not come near philosophy. Do not behave like children: a philosopher one moment, then a tax collector, then a public speaker, then an agent of Caesar. These things do not go together. You must be one man, either good or bad. You must work either at your own governing part or at externals — either at what is inside or at what is outside. That is, you must take the place either of a philosopher or of one of the crowd.</p>
 <p>Somebody said to Rufus, when Galba had been murdered: &quot;Is the world governed by Providence now?&quot; And Rufus answered: &quot;Did I ever, even in passing, build an argument on Galba that the world is governed by Providence?&quot;</p>
+</section>
+<section aria-labelledby="ch-16-3">
 <h3 id="ch-16-3">Chapter 16: Why We Should Be Careful About the Company We Keep</h3>
 <p>If a man mixes often with other people — for conversation, or drinking together, or social life generally — he must either become like them or bring them round to his own way. Put a piece of dead charcoal next to a burning one, and either the dead one puts the other out or the burning one lights it.</p>
 <p>Since the danger is so great, we must be careful about entering into these intimacies with ordinary people, and remember that it is impossible to keep company with a man covered in soot and not get some of the soot on yourself.</p>
@@ -1695,6 +1879,8 @@ figcaption {
 <p>You too, then: bring in other habits than the ones you have. Fix your judgments and train yourself in them. But you do not. You go from here to a show, to a gladiator display, to the exercise ground, to the circus; then you come back here, and then off you go again to those places, and always the same people.</p>
 <p>And there is no good habit in it, no attention, no care about yourself, no watching of this kind: how shall I use the impressions put before me? In line with nature or against it? How am I answering them? As I ought, or as I ought not? Am I saying to the things outside the will that they are nothing to me?</p>
 <p>If you are not yet in this condition, run from your old habits, run from the crowd, if you ever intend to begin to be something.</p>
+</section>
+<section aria-labelledby="ch-17-3">
 <h3 id="ch-17-3">Chapter 17: On Providence and Why the Wicked Prosper</h3>
 <p>When you bring a charge against Providence, consider it, and you will find the thing has happened according to reason.</p>
 <p>&quot;Yes, but the unjust man has the advantage.&quot;</p>
@@ -1707,6 +1893,8 @@ figcaption {
 <p>So remember always, and keep it ready, that this is a law of nature: the superior has the advantage of the inferior in the thing he is superior in. And you will never be upset.</p>
 <p>&quot;But my wife treats me badly.&quot; Well: if anybody asks you what this is, say, my wife treats me badly. Is there nothing more? Nothing. &quot;My father gives me nothing.&quot; What is this? My father gives me nothing. Is there nothing else? Nothing.</p>
 <p>But to say that this is an evil is something that has to be added on from outside, and added falsely. This is why we must get rid, not of poverty, but of our opinion about poverty — and then we shall be happy.</p>
+</section>
+<section aria-labelledby="ch-18-3">
 <h3 id="ch-18-3">Chapter 18: Why No News Should Disturb You</h3>
 <p>When something is reported to you that is of a kind to disturb you, have this principle ready: the news is about nothing within the power of your will.</p>
 <p>Can any man report to you that you have formed a bad judgment, or had a bad desire? Not at all. But perhaps he will report that somebody has died. What is that to you? He may report that somebody is speaking ill of you. What is that to you? Or that your father is plotting something. Against whom? Against your will? How could he? Against your poor body, then, and your little property? You are perfectly safe: it is not against you.</p>
@@ -1715,12 +1903,16 @@ figcaption {
 <p>And on your side, it is your duty to make your defence firmly, with self-respect, and without anger; and if you do not, you too lose the character of a son, of a man of decent behaviour, of a generous man.</p>
 <p>Well then, is the judge out of danger? No — he is in equal danger. So why are you still afraid of his verdict? What have you to do with somebody else&#x27;s evil? Making a bad defence is your own evil; guard against that alone. Being condemned or not condemned is another man&#x27;s act, and so it is another man&#x27;s evil.</p>
 <p>Somebody threatens you. Me? No. He blames you. Let him see to how he manages his own affairs. He is going to condemn you unjustly. He is a wretched man.</p>
+</section>
+<section aria-labelledby="ch-19-3">
 <h3 id="ch-19-3">Chapter 19: The Difference Between an Ordinary Person and a Philosopher</h3>
 <p>The first difference between an ordinary man and a philosopher is this. The ordinary man says, &quot;Alas for me, on account of my little child, my brother, my father.&quot; The philosopher, if he is ever forced to say &quot;Alas for me&quot;, stops and adds: &quot;on my own account.&quot;</p>
 <p>For nothing outside the will can block or damage the will; only the will can block or damage itself. So if we lean this way ourselves — so that when we come off badly we blame ourselves, and remember that nothing else is the cause of being thrown or of losing our peace of mind except our own opinion — then I swear to you by all the gods that we have made progress.</p>
 <p>But as things stand we have gone another way from the very beginning. While we were still children, if we ever stumbled through carelessness, the nurse did not scold us: she beat the stone. And what had the stone done? Ought the stone to have moved out of the way on account of your child&#x27;s carelessness?</p>
 <p>Again, if we came out of the bath and found nothing to eat, the tutor never checked our appetite: he flogged the cook. Man, did we make you tutor to the cook and not to the child? Correct the child. Improve him.</p>
 <p>And so, even when we are grown, we are like children. A man with no music is a child in music; a man with no letters is a child in learning; a man with no teaching is a child in life.</p>
+</section>
+<section aria-labelledby="ch-20-3">
 <h3 id="ch-20-3">Chapter 20: How Everything External Can Be Turned to Advantage</h3>
 <p>With impressions that come through the eyes, nearly everybody has allowed that good and evil are in us and not in externals. Nobody calls it good that it is day, or bad that it is night, or calls it the greatest evil that somebody thinks three are four. What do men say instead? They say that knowledge is good and error is bad — so that even where falsehood itself is concerned there is a good result: knowing that it is false.</p>
 <p>It ought to be the same in life. Is health a good thing and sickness a bad one? No, man. What is it, then? To be healthy, and healthy in the right way, is good; to be healthy in a bad way is bad. So it is possible to get an advantage even out of illness, I tell you.</p>
@@ -1735,6 +1927,8 @@ figcaption {
 <p>You say: no, take care you do not fall ill, it is a bad thing. That is exactly as if you said: take care never to get the impression that three are four, that is bad. Man, how is it bad? If I think about it as I ought, how will it damage me? Will it not even do me good?</p>
 <p>So if I think as I ought about poverty, about disease, about holding no office, is that not enough for me? Will it not be an advantage? Then why should I go on looking for good and evil in externals?</p>
 <p>And what happens? These doctrines are maintained here, and nobody carries them home. Straight away every man is at war with his slave, with his neighbours, with the men who sneered at him, with the men who laughed at him. Good luck to Lesbius, who proves every day that I know nothing.</p>
+</section>
+<section aria-labelledby="ch-21-3">
 <h3 id="ch-21-3">Chapter 21: Against Those Who Rush to Set Up as Teachers</h3>
 <p>Men who have taken in bare theorems want to bring them straight up again, as people with a bad stomach do with food. Digest the thing first, and do not vomit it up like that. If you do not digest it, the thing really does become an emetic — raw food, unfit to eat.</p>
 <p>But after you have digested it, show us some change in your governing part, as athletes show in their shoulders what they have trained at and what they have eaten, and as men who have taken up a trade show what they have learned. The carpenter does not come along and say, &quot;Hear me talk about carpentry.&quot; He takes on the building of a house, builds it, and proves that he knows the art.</p>
@@ -1754,6 +1948,8 @@ figcaption {
 <p>Why do you take chances in matters of the greatest importance, then? Why are you careless? Why do you take on a thing that in no way suits you? Leave it to men who can do it, and do it well. Do not bring disgrace on philosophy by your own acts, and do not be one of the men who give it a bad name.</p>
 <p>If theorems please you, sit still and turn them over on your own — but never say you are a philosopher, and do not let anybody else say it. Say instead: he is mistaken; my desires are no different from what they were before, my activity is not directed at other objects, I do not assent to other things, and in the use of impressions I have not changed at all from what I was.</p>
 <p>This is what you must think and say about yourself, if you want to think as you ought. And if not, take your chances and go on doing what you are doing — it suits you.</p>
+</section>
+<section aria-labelledby="ch-22-3">
 <h3 id="ch-22-3">Chapter 22: On the Cynic Life</h3>
 <p>One of his pupils, who seemed inclined toward the Cynic life, asked Epictetus what sort of man a Cynic ought to be, and what the idea of the thing was.</p>
 <p>We shall look into that at leisure, said Epictetus. But I have this much to say to you: a man who takes on so great a matter without God is hateful to God, and has no other purpose than to disgrace himself in public.</p>
@@ -1848,6 +2044,8 @@ figcaption {
 	of all men, but of me above all.
 	— Iliad vi 490.</pre>
 <p>So he was conscious of what he was fit for, and knew what she was not.</p>
+</section>
+<section aria-labelledby="ch-23-3">
 <h3 id="ch-23-3">Chapter 23: To Those Who Read and Lecture to Show Off</h3>
 <p>First tell yourself who you want to be, and then do what you are doing accordingly. We see this in nearly everything else. Men who take up athletics first settle what they want to be, and then do what follows. If a man is a long-distance runner there is a certain diet, a certain kind of walking, rubbing and exercise; if he is a sprinter, all of it is different; if he is a pentathlete, more different still. You will find the same in the crafts. If you are a carpenter you will have such and such things; if a metalworker, such and such.</p>
 <p>Whatever we do, if we refer it to no end we shall be doing it for nothing; and if we refer it to the wrong end we shall miss the mark.</p>
@@ -1881,6 +2079,8 @@ figcaption {
 <p>What is the style of exhortation? Being able to show a man, or many men, the struggle they are actually in, and that they are thinking about anything rather than what they really want. They want the things that lead to happiness and they look for them in the wrong place.</p>
 <p>And in order to do that, a thousand seats have to be set out and men invited to listen, and you have to go up into the pulpit in a fine robe and describe the death of Achilles. Stop, I beg you by the gods, spoiling good words and good acts as far as you possibly can.</p>
 <p>Nothing has more power in exhortation than a speaker showing his hearers that he needs them. But tell me: who, hearing you read or lecture, is anxious about himself, or turns to reflect on himself? Who, going out, says, &quot;The philosopher hit me there; I must stop doing these things&quot;? Does he not rather say to somebody — even if you have a great reputation — &quot;He spoke finely about Xerxes&quot;? And another says, &quot;No, about the battle of Thermopylae.&quot; Is this what listening to a philosopher means?</p>
+</section>
+<section aria-labelledby="ch-24-3">
 <h3 id="ch-24-3">Chapter 24: Why We Should Not Be Moved by Longing for What Is Not Up to Us</h3>
 <p>Do not let what is against nature in another man be an evil to you. You were not made by nature to be depressed along with others, or unhappy along with them, but to be happy along with them.</p>
 <p>If a man is unhappy, remember that his unhappiness is his own fault. God made all men to be happy and undisturbed, and gave them the means: certain things belonging to each as his own, and other things not as his own. The things subject to blocking and compulsion and loss are not a man&#x27;s own; the things not subject to blocking are. And the nature of good and evil — as was fitting for one who takes care of us and protects us like a father — he made our own.</p>
@@ -1986,6 +2186,8 @@ figcaption {
 <p>Keep these things always to hand, and exercise them on your own, and hold them in readiness, and you will never be in want of somebody to comfort and strengthen you. For it is not shameful to have nothing to eat; it is shameful not to have reason enough to keep off fear and sorrow.</p>
 <p>And if you once win exemption from sorrow and fear, will there be any tyrant for you any longer, or any tyrant&#x27;s guard, or any of Caesar&#x27;s attendants? Will any appointment to office at court cause you pain? Will the men who sacrifice on the Capitol on being named to certain functions cause any pain to you, who have received so great an authority from Zeus?</p>
 <p>Only do not make a proud display of it, and do not boast of it; show it by your acts. And if nobody notices, be satisfied that you yourself are in a healthy state, and happy.</p>
+</section>
+<section aria-labelledby="ch-25-3">
 <h3 id="ch-25-3">Chapter 25: To Those Who Give Up</h3>
 <p>Look at the things you set out to do at the start: which you have secured and which you have not; and how pleased you are when you remember the one and how pained about the other. And if it is possible, recover the things you failed at.</p>
 <p>For we must not flinch when we are engaged in the greatest of contests; we must take the blows. The contest before us is not in wrestling or in the all-in fight, where both the winner and the loser may have great merit or very little, and may in truth be very lucky or very unlucky. Our contest is for good fortune and happiness themselves.</p>
@@ -1996,6 +2198,8 @@ figcaption {
 <p>And when you found fault with somebody the other day, were you not doing the act of a spiteful man, of a trifling chatterer? Did you not feed the habit in yourself by adding the corresponding acts to it? And when you were overpowered by the girl, did you come off unharmed?</p>
 <p>So why do you talk about what you did before? You ought, I think, to remember what you did as slaves remember the blows they have taken, and to keep off the same faults.</p>
 <p>But the two cases are not alike. With slaves it is the pain that causes the memory; and with your faults, what is the pain, what is the punishment? When have you ever been in the habit of running from bad acts? Then sufferings of the testing kind are useful to us, whether we choose them or not.</p>
+</section>
+<section aria-labelledby="ch-26-3">
 <h3 id="ch-26-3">Chapter 26: To Those Who Are Afraid of Being Poor</h3>
 <p>Are you not ashamed to be more cowardly and meaner than runaway slaves? How do they leave their masters when they run? What estates do they count on, what servants do they rely on? Do they not steal a little, enough for the first few days, and after that make their way over land or sea, contriving one method after another of keeping themselves alive? And what runaway slave ever died of hunger?</p>
 <p>But you are afraid that necessities may fail you, and you lie awake at night over it. Wretch, are you so blind that you cannot see the road that the want of necessities leads to?</p>
@@ -2044,7 +2248,11 @@ figcaption {
 <p>The people who provide it for others. You will be ill as Manes is ill.</p>
 <p>And what will the end of the illness be? Anything but death?</p>
 <p>Then will you not consider that this — not death, but the fear of death — is the chief of all evils for a man, and the chief mark of a mean spirit and of cowardice? Train yourself against that fear, then; that is my advice. Let all your reasoning tend that way, and your exercises, and your reading. And you will know that this, and only this, is how men are made free.</p>
+</section>
+</section>
+<section class="part" aria-labelledby="book-four">
 <h2 id="book-four" class="center">Book Four</h2>
+<section aria-labelledby="ch-1-4">
 <h3 id="ch-1-4">Chapter 1: On Freedom</h3>
 <p>He is free who lives as he wishes to live; who is subject to no compulsion, no blocking, no force; whose impulses to action are unobstructed, whose desires reach their object, and who does not fall into what he would avoid.</p>
 <p>Who chooses to live in error? Nobody. Who chooses to live deceived, liable to mistake, unjust, uncontrolled, discontented, mean? Nobody. So not one bad man lives as he wishes, and therefore not one of them is free.</p>
@@ -2215,6 +2423,8 @@ figcaption {
 <p>For you will know by experience that the words are true; that there is no profit to men who have obtained the things that are prized and eagerly chased after; and that to men who have not yet obtained them there is an imagination that when these things come, everything good will come with them. And then, when they have come, the fever is the same, the tossing to and fro is the same, the surfeit, the longing for what is not there.</p>
 <p>For freedom is not won by getting full possession of the things you want, but by taking away the wanting.</p>
 <p>And so that you may know this is true: as you have laboured for those things, transfer your labour to these. Keep vigil for the sake of acquiring a judgment that will make you free. Pay court to a philosopher instead of to a rich old man. Be seen at a philosopher&#x27;s door — you will not disgrace yourself by being seen there. You will not go away empty or without profit if you go to the philosopher as you should. And if you do not succeed, at least try. The attempt is nothing to be ashamed of.</p>
+</section>
+<section aria-labelledby="ch-2-4">
 <h3 id="ch-2-4">Chapter 2: On Close Friendships</h3>
 <p>Before everything else you must attend to this: never to be so closely tied to any of your old companions or friends that you come down to doing the same things he does. If you do not keep this rule, you will ruin yourself.</p>
 <p>And if the thought comes into your mind, &quot;I shall seem disobliging to him, and he will not feel the same about me,&quot; remember that nothing is done without cost, and that it is not possible for a man who stops doing the same things to be the same man he was.</p>
@@ -2224,6 +2434,8 @@ figcaption {
 <p>If it is better to be modest and orderly than to have a man say, &quot;He is a jolly fellow,&quot; then give up the rest, renounce it, turn away from it, have nothing to do with such men.</p>
 <p>But if that does not suit you, then turn to the opposite altogether: throw away all shame about sex, be an adulterer, act accordingly, and you will get what you want. And jump up in the theatre and bawl your praise of the dancer.</p>
 <p>But characters as different as these cannot be mixed. You cannot play both Thersites and Agamemnon. If you mean to be Thersites, you must be humpbacked and bald; if Agamemnon, you must be tall and handsome and love the men placed under your command.</p>
+</section>
+<section aria-labelledby="ch-3-4">
 <h3 id="ch-3-4">Chapter 3: What We Should Trade for What</h3>
 <p>Keep this thought ready when you lose something external: what you have got in its place. And if it is worth more, never say, &quot;I have suffered a loss&quot; — not if you have got a horse instead of a donkey, or an ox instead of a sheep; not if you have got a good action instead of a bit of money; not if instead of idle chatter you have got the peace of mind that suits a man; not if instead of dirty talk you have got self-respect.</p>
 <p>If you remember this, you will always keep your character as it ought to be. And if you do not, consider that your opportunities are being wasted, and that whatever trouble you take over yourself you are going to throw away and overturn.</p>
@@ -2235,6 +2447,8 @@ figcaption {
 <p>But I must claim nothing else — not body, nor property, nor office, nor good report, nor in fact anything. He does not allow me to claim them; if he had chosen to, he would have made them good for me. But he has not, and so I cannot break his commands.</p>
 <p>Preserve in everything what is your own good; and as for everything else, take it as it is allowed, and behave reasonably about it, and be content with that alone. If you do not, you will be unlucky; you will fail in everything; you will be blocked and obstructed.</p>
 <p>These are the laws that have been sent from there; these are the orders. A man ought to be an expounder of these laws and submit to these, not to those of Masurius and Cassius.</p>
+</section>
+<section aria-labelledby="ch-4-4">
 <h3 id="ch-4-4">Chapter 4: To Those Who Want a Quiet Life</h3>
 <p>Remember that it is not only the desire for power and riches that makes us mean and subject to others, but the desire for peace and leisure and travel and learning as well. To put it plainly, whatever the external thing may be, the value we set on it puts us in subjection to somebody.</p>
 <p>So what difference is there between wanting to be a senator and not wanting to be one? What difference between wanting power and being content with private life? What difference between saying &quot;I am wretched, I have nothing to do, I am tied to my books like a corpse&quot; and saying &quot;I am wretched, I have no leisure for reading&quot;? Salutations and power are external and outside the will — and so is a book.</p>
@@ -2281,6 +2495,8 @@ figcaption {
 <p>Remembering these rules, take joy in what is present and be content with the things that come in season. If you see something you have learned and enquired about turning up in the course of your life, be delighted at it. If you have laid aside or reduced a bad disposition and the habit of abusing people; if you have done the same with rash temper, foul language, hastiness, sluggishness; if you are not moved by what used to move you, or not in the same way — then you can hold a festival every day: today because you behaved well in one act, tomorrow because you behaved well in another.</p>
 <p>How much greater a reason is this for sacrificing than a consulship or the governorship of a province? These things come to you from yourself and from the gods. Remember this: who gives these things, and to whom, and for what purpose.</p>
 <p>If you nourish yourself on these thoughts, do you still think it makes any difference where you are happy, where you please God? Are the gods not equally distant from every place? Do they not see what is going on equally from every place?</p>
+</section>
+<section aria-labelledby="ch-5-4">
 <h3 id="ch-5-4">Chapter 5: Against the Quarrelsome and the Aggressive</h3>
 <p>The wise and good man neither quarrels with anybody himself nor, so far as he can prevent it, allows anybody else to. An example of this, as of everything else, is set before us in the life of Socrates, who not only avoided quarrels himself on every occasion but would not let others quarrel either.</p>
 <p>See in Xenophon&#x27;s Symposium how many quarrels he settled; how he put up with Thrasymachus and Polus and Callicles; how he put up with his wife, and with his son when he tried to refute him and pick holes in him. For he remembered well that no man has another man&#x27;s governing part in his power. So he wanted nothing except what was his own.</p>
@@ -2311,6 +2527,8 @@ figcaption {
 <p>But this is my business: no tyrant shall check my will, and no master; the many shall not check me, who am only one; the stronger shall not check me, who am the weaker. God gives this power of being unchecked to every man.</p>
 <p>These judgments make love in a household, agreement in a state, peace among nations, and gratitude to God. They make a man confident about externals in everything, as about things belonging to others, as about things of no value.</p>
 <p>We are certainly able to write and read these things, and to praise them when they are read, but we do not come anywhere near being convinced of them. So what is said about the Spartans — lions at home, but foxes in Ephesus — will fit us too: lions in the school, but foxes outside it.</p>
+</section>
+<section aria-labelledby="ch-6-4">
 <h3 id="ch-6-4">Chapter 6: Against Those Who Complain of Being Pitied</h3>
 <p>&quot;I am hurt,&quot; a man says, &quot;at being pitied.&quot;</p>
 <p>Is the fact of your being pitied something that concerns you, or the men who pity you? And is it in your power to stop the pity?</p>
@@ -2347,6 +2565,8 @@ figcaption {
 <p>Go over your acts. Where did I leave out the things that lead to living well? What have I done that was unfriendly or unsociable? What have I failed to do in these matters that I ought to have done?</p>
 <p>The difference in desires and actions and wishes being so great, then, would you still have the same share as other men in things you have not laboured at and they have? And are you surprised when they pity you, and annoyed?</p>
 <p>But they are not annoyed if you pity them. Why? Because they are convinced that they have what is good, and you are not convinced. That is why you are not satisfied with your own but want what they have; while they are satisfied with theirs and do not want what you have. Because if you were really convinced that where the good is concerned it is you who possess it and they who have missed it, you would not even have given a thought to what they say about you.</p>
+</section>
+<section aria-labelledby="ch-7-4">
 <h3 id="ch-7-4">Chapter 7: On Being Free from Fear</h3>
 <p>What makes a tyrant formidable? The guards, you say, and their swords, and the men of the bedchamber, and the men who keep out those who want to come in.</p>
 <p>Then why is a child not afraid when you bring him to the tyrant while the guards are there? Is it because the child does not understand these things? And if a man does understand what guards are, and that they have swords, and comes to the tyrant precisely because he wants to die on account of some circumstance and is looking for an easy death at another man&#x27;s hand — is he afraid of the guards? No: because he wants the very thing that makes the guards formidable.</p>
@@ -2384,6 +2604,8 @@ figcaption {
 <p>And who stops you being occupied with them and looking after them? And who has a better stock of books, of leisure, of people to help him?</p>
 <p>Only turn your mind to these things at last; attend, if only for a short time, to your own governing part. Consider what this thing is that you possess, and where it came from — the thing that uses all the others and tests them and picks and rejects.</p>
 <p>But so long as you busy yourself with externals, you will possess those as no other man does — and you will have this thing exactly as you choose to have it: dirty and neglected.</p>
+</section>
+<section aria-labelledby="ch-8-4">
 <h3 id="ch-8-4">Chapter 8: Against Those Who Rush to Put On the Philosopher&#x27;s Cloak</h3>
 <p>Never praise or blame a man on account of things that are common to everybody, and do not credit him with any skill or lack of skill on that account; and so you will be free of rashness and of spite.</p>
 <p>This man bathes very quickly. Does he do wrong, then? Certainly not. What does he do? He bathes very quickly. Is everything done well, then? By no means: acts that come from right judgments are done well, and acts that come from bad judgments are done badly. But until you know the judgment a man does each thing from, neither praise nor blame the act.</p>
@@ -2418,6 +2640,8 @@ figcaption {
 <p>Let us ripen in the natural way. Why do you strip us bare? Why do you force us? We cannot bear the open air yet. Let the root grow; then let it put out the first joint, then the second, then the third. And then the fruit will force its own way out naturally, even if I do not choose it.</p>
 <p>For who that is pregnant and full of such great principles does not also feel his own powers and move toward the acts that answer to them? A bull is not ignorant of his own nature and his own powers when a wild beast appears, and does not wait for somebody to urge him on; nor does a dog when he sees a wild animal.</p>
 <p>And if I have the powers of a good man, shall I wait for you to prepare me for my own proper acts? At present I have not got them — believe me. So why do you want me withered before my time, as you have been withered?</p>
+</section>
+<section aria-labelledby="ch-9-4">
 <h3 id="ch-9-4">Chapter 9: To a Man Who Had Turned Shameless</h3>
 <p>When you see another man holding office, set against it the fact that you do not have the desire for office. When you see another man rich, see what you possess instead of riches; because if you possess nothing instead of them, you are miserable, but if you do not have the desire for riches, know that you possess more than he does, and something worth much more.</p>
 <p>Another man has a handsome wife: you have the satisfaction of not desiring a handsome wife. Do these things seem small to you? And how much would these very men give — the rich, the powerful, the men who live with handsome women — to be able to despise riches and power and the very women they love and enjoy?</p>
@@ -2434,6 +2658,8 @@ figcaption {
 <p>See what the trainers of boys do. Has the boy fallen? Get up, they say, and wrestle again until you are made strong. Do something of the same kind yourself — for be assured that nothing is more workable than the human soul. You have only to exercise the will, and the thing is done, it is set right. And on the other hand, only nod off, and the thing is lost; because ruin comes from within, and so does help.</p>
 <p>&quot;And then what good do I get?&quot;</p>
 <p>And what greater good than this are you looking for? From a shameless man you will become a modest one; from a disorderly man, an orderly one; from a faithless man, a faithful one; from a man of unbridled habits, a sober one. If you are looking for anything more than that, go on doing what you are doing: not even a god can help you now.</p>
+</section>
+<section aria-labelledby="ch-10-4">
 <h3 id="ch-10-4">Chapter 10: What We Should Despise and What We Should Value</h3>
 <p>All men&#x27;s difficulties are about external things; their helplessness is about externals. What shall I do? How will it be? How will it turn out? Will this happen, or that? These are all the words of men who are turning toward things outside the power of the will.</p>
 <p>Who says, &quot;How am I to avoid assenting to what is false? How am I to avoid turning away from the truth?&quot; If a man has a good enough disposition to be anxious about these things, I shall remind him: why are you anxious? The thing is in your own power. Be easy; do not be hasty in assenting before you apply the natural rule.</p>
@@ -2468,6 +2694,8 @@ figcaption {
 	— Iliad xix 321.</pre>
 <p>Why is this your evil? Then instead of getting rid of it, do you blame your mother for not foretelling it to you, so that you might have gone on grieving from that moment?</p>
 <p>What do you think — do you not suppose Homer wrote this so that we might learn that men of the noblest birth, the strongest, the richest, the handsomest, are not prevented from being utterly wretched and unlucky, when they do not hold the judgments they ought to hold?</p>
+</section>
+<section aria-labelledby="ch-11-4">
 <h3 id="ch-11-4">Chapter 11: On Cleanliness</h3>
 <p>Some people raise the question whether the social feeling is contained in man&#x27;s nature. And yet I think these same people would have no doubt that a love of cleanliness certainly is; and that if man is distinguished from the other animals by anything, he is distinguished by this.</p>
 <p>When we see some other animal cleaning itself, we usually remark on it with surprise and add that the animal is behaving like a man. And on the other hand, if a man blames an animal for being dirty, we say at once, as though making an excuse for it, that of course the animal is not a human creature. So we suppose there is something superior in man, and that we first receive it from the gods.</p>
@@ -2501,6 +2729,8 @@ figcaption {
 <p>Man, you have water. Wash it.</p>
 <p>Here is a young man worth loving; here is an old man worth loving and being loved by in return; a fit person to be entrusted with a son&#x27;s education, to whom daughters and young men shall come as the occasion arises — so that the teacher may deliver his lessons to them on a dunghill.</p>
 <p>Let it not be so. Every deviation comes from something that is in man&#x27;s nature; but this deviation comes near to being something that is not in man&#x27;s nature at all.</p>
+</section>
+<section aria-labelledby="ch-12-4">
 <h3 id="ch-12-4">Chapter 12: On Attention</h3>
 <p>When you have let your attention go for a short time, do not imagine you will get it back whenever you choose. Have this thought ready instead: because of the fault you committed today, your affairs must be in a worse state for everything that follows.</p>
 <p>In the first place — and this causes the most trouble — a habit of not attending is formed in you; and then a habit of putting your attention off. And by putting it off, you drive away, again and again, the happiness of life, and proper behaviour, and being and living in line with nature.</p>
@@ -2522,6 +2752,8 @@ figcaption {
 <p>What then? Is it possible to be free of faults, if you do all this? It is not possible; but this is possible: to direct your efforts unceasingly at being faultless. We must be content if, by never letting this attention go, we escape at least a few errors.</p>
 <p>But when you say, &quot;Tomorrow I will start paying attention,&quot; you must be told that what you are saying is: &quot;Today I will be shameless, careless of time and place, mean. It will be in other men&#x27;s power to give me pain. Today I will be quick-tempered and envious.&quot;</p>
 <p>See how many evil things you are allowing yourself. If it is good to use attention tomorrow, how much better to use it today? If it is in your interest to attend tomorrow, much more today — so that you may be able to do it tomorrow too, and not put it off again to the day after.</p>
+</section>
+<section aria-labelledby="ch-13-4">
 <h3 id="ch-13-4">Chapter 13: Against Those Who Too Readily Tell Their Own Business</h3>
 <p>When a man seems to us to have talked frankly about his own affairs, how is it that we are drawn into revealing our own secrets to him in turn, and think this is being frank ourselves?</p>
 <p>In the first place, because it seems unfair to have listened to a neighbour&#x27;s business and not tell him ours in return. And next, because we think we shall not look like frank men if we say nothing about our own affairs. Indeed men often say, &quot;I have told you all my business, and will you tell me nothing of yours? Where is that done?&quot;</p>
@@ -2541,6 +2773,10 @@ figcaption {
 <p>Show me that when one man tells another his affairs, the man who tells them is faithful and self-respecting. If that were so, I would go about telling my affairs to every man, if that would make me faithful and self-respecting. But it is not so; it takes principles that are not common.</p>
 <p>So if you see a man busy about things that do not depend on his will, and putting his will in subjection to them, you must understand that this man has ten thousand people to compel him and block him. He needs no pitch and no wheel to make him declare what he knows: a little girl&#x27;s nod, if it comes to that, will move him — the coaxing of somebody from Caesar&#x27;s court, the desire for an office or an inheritance, and endless things of the same kind.</p>
 <p>So among your general principles you must remember that talk about secret matters requires good faith, and requires judgments to match it. And where are we to find those easily now? Or if you cannot answer that, let somebody point me out a man who can say: I care only about what is my own, about what cannot be blocked, about what is free by nature. This I hold to be the nature of the good; and let everything else be as it is allowed to be. I do not concern myself.</p>
+</section>
+</section>
+</article>
+</main>
 
 </body>
 </html>

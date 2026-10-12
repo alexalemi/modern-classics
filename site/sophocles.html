@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>The Seven Tragedies &mdash; Sophocles</title>
+	<meta name="description" content="All seven surviving plays — Oedipus, Antigone, Ajax, Electra and the rest — from the Greek: the arguments as fast modern prose, the odes as verse, because the chorus was singing. Retold in modern English, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/sophocles.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="The Seven Tragedies — Sophocles">
+	<meta property="og:description" content="All seven surviving plays — Oedipus, Antigone, Ajax, Electra and the rest — from the Greek: the arguments as fast modern prose, the odes as verse, because the chorus was singing. Retold in modern English, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/sophocles.html">
+	<meta property="og:image" content="https://emend.press/covers/share/sophocles.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,28 +192,32 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>The Seven Tragedies</h1>
-	<h3>From the Greek: all seven surviving plays, complete — the spoken scenes as modern prose, the sung odes as verse</h3>
-	<h3>by Sophocles</h3>
+	<p class="title-line">From the Greek: all seven surviving plays, complete — the spoken scenes as modern prose, the sung odes as verse</p>
+	<p class="title-line">by Sophocles</p>
 	<p class="center">
 	<s>c. 442-401 BC</s> 2026
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is an AI modernization of The Seven Tragedies into contemporary English. The original is available from <a href="https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0185">Perseus Digital Library</a>. Also available as an <a href="ebooks/sophocles_the-seven-tragedies.epub">epub</a>.</i></p>
 
 	<hr>
+<section aria-labelledby="editors-introduction">
 <h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
 <p>Sophocles lived from about 496 to 406 BC, all of it in Athens, through the city&#x27;s best years and most of the war that ended them. He wrote well over a hundred plays and won the prize more often than anyone. He also held public office, and was elected one of the ten generals. Seven of the plays survive. They are the ones everybody has heard of and hardly anybody has read: a king who hunts down a murderer and finds it is himself, a young woman who buries her brother against the law and is walled up alive for it, a soldier who goes mad in the night, slaughters a field of sheep believing they are the generals who have wronged him, and kills himself when he understands what he has done.</p>
 <p>All seven are here, which means the four that usually get dropped are here too: Heracles poisoned by his wife with what she believes is a love charm, Electra waiting fifteen years for her brother to come home and kill their mother, Philoctetes left on an island because the army could not stand the smell of his wound, and the old blind Oedipus arriving at Athens to die, which was produced after the author&#x27;s own death, in 401.</p>
 <p>The practical facts of the theatre are worth having. The plays were written for a competition at a festival of Dionysus, performed once, outdoors, in daylight, to an audience in the thousands who had to follow every word in real time. All the parts were played by men in masks, and there were only three speaking actors, so one actor took several roles and two characters could never be on stage as the same man. Alongside them stood a chorus of fifteen, who sang and danced. Sophocles is the one credited with adding that third actor.</p>
 <p>The chorus sang; the scenes were spoken; and the Greek metre says which is which, line by line. This edition keeps the two apart, so the spoken scenes are modern prose and the sung odes are set as verse, indented and unrhymed. The rhyme in the old translations is the translator&#x27;s own addition and has gone. This is one of three volumes here, with Aeschylus and Euripides, and together they hold every Greek tragedy that survives.</p>
 <p>Nothing is softened. Ajax&#x27;s reasons for killing himself are given as the argument they are. Antigone says she would not have done this for a husband or a child. The messenger describes the blinding exactly. The gods in these plays are not just, and nobody the play agrees with ever says they are.</p>
+</section>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p class="toc-book">Ajax (c. 442 BC)</p>
 <ul class="toc-list">
@@ -217,9 +247,13 @@ figcaption {
 <ul class="toc-list">
 <li><a href="#oedipus-at-colonus">Oedipus at Colonus</a></li>
 </ul>
+</nav>
 
 <hr>
+<article>
+<section class="part" aria-labelledby="ajax-c-442-bc">
 <h2 id="ajax-c-442-bc" class="center">Ajax (c. 442 BC)</h2>
+<section aria-labelledby="ajax">
 <h3 id="ajax">Ajax</h3>
 <p>(Before Ajax&#x27;s hut, at the far end of the Greek camp at Troy. Night is
 just over. Odysseus is studying the ground. Athena is present, but only
@@ -1798,7 +1832,11 @@ accept what you say, and I will go.</p>
 	There is a great deal a man can know once he has seen it.
 	Before he sees it, nobody can prophesy
 	what is coming, or how he will come out of it.</pre>
+</section>
+</section>
+<section class="part" aria-labelledby="antigone-c-441-bc">
 <h2 id="antigone-c-441-bc" class="center">Antigone (c. 441 BC)</h2>
+<section aria-labelledby="antigone">
 <h3 id="antigone">Antigone</h3>
 <p>(Thebes, in front of the royal house. It is just before dawn. Antigone
 has brought Ismene out through the courtyard gates.)</p>
@@ -3255,7 +3293,11 @@ much silence can weigh as much.</p>
 	Great words from boasting men
 	are paid for with great blows,
 	and in old age they teach good sense.</pre>
+</section>
+</section>
+<section class="part" aria-labelledby="oedipus-the-king-c-429-bc">
 <h2 id="oedipus-the-king-c-429-bc" class="center">Oedipus the King (c. 429 BC)</h2>
+<section aria-labelledby="oedipus-the-king">
 <h3 id="oedipus-the-king">Oedipus the King</h3>
 <p>(Before the palace at Thebes. People of every age sit on the altar
 steps holding suppliants&#x27; branches. Oedipus comes out.)</p>
@@ -5071,7 +5113,11 @@ look at his fortune with envy? See what a sea of terrible trouble he
 has come into. So, while a mortal is still waiting to see that final
 day, count no one happy until he has crossed the boundary of his life
 without suffering pain.</p>
+</section>
+</section>
+<section class="part" aria-labelledby="the-women-of-trachis-date-unknown">
 <h2 id="the-women-of-trachis-date-unknown" class="center">The Women of Trachis (date unknown)</h2>
+<section aria-labelledby="the-women-of-trachis">
 <h3 id="the-women-of-trachis">The Women of Trachis</h3>
 <p>(Trachis, in front of the house where Deianeira and her children live
 as guests. Deianeira comes out alone.)</p>
@@ -6512,7 +6558,11 @@ this ruin.</p>
 <p>And you, girl — do not stay behind at the house either. You have seen
 great deaths, fresh ones, and many sufferings never suffered before,
 and there is nothing in any of it that is not Zeus.</p>
+</section>
+</section>
+<section class="part" aria-labelledby="electra-c-410-bc">
 <h2 id="electra-c-410-bc" class="center">Electra (c. 410 BC)</h2>
+<section aria-labelledby="electra">
 <h3 id="electra">Electra</h3>
 <p>(Mycenae. Before the palace of the house of Pelops, at first light.
 The Tutor, an old man, comes in with Orestes and Pylades.)</p>
@@ -8293,7 +8343,11 @@ wickedness.</p>
 	Seed of Atreus, after so much suffering,
 	you have come out at last, into freedom,
 	made whole by what was done today.</pre>
+</section>
+</section>
+<section class="part" aria-labelledby="philoctetes-409-bc">
 <h2 id="philoctetes-409-bc" class="center">Philoctetes (409 BC)</h2>
+<section aria-labelledby="philoctetes">
 <h3 id="philoctetes">Philoctetes</h3>
 <p>(A rocky shore on Lemnos. Odysseus and Neoptolemus have just landed,
 with one sailor. Odysseus keeps back from the rocks.)</p>
@@ -10041,7 +10095,11 @@ Then kiss the ground goodbye, and come.</p>
 	Let us all go now, together,
 	after a prayer to the nymphs of the sea
 	to come and see us safely home.</pre>
+</section>
+</section>
+<section class="part" aria-labelledby="oedipus-at-colonus-401-bc">
 <h2 id="oedipus-at-colonus-401-bc" class="center">Oedipus at Colonus (401 BC)</h2>
+<section aria-labelledby="oedipus-at-colonus">
 <h3 id="oedipus-at-colonus">Oedipus at Colonus</h3>
 <p>(The edge of a grove at Colonus, a mile or so outside Athens. Oedipus,
 blind and old, comes in led by Antigone.)</p>
@@ -12225,6 +12283,10 @@ What do you mean, my lord — ruler of Athens?</p>
 	Stop now. Do not raise
 	the lament any higher.
 	All this stands settled. It holds.</pre>
+</section>
+</section>
+</article>
+</main>
 
 </body>
 </html>

@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>The Age of Fable &mdash; Thomas Bulfinch</title>
+	<meta name="description" content="The myths of Greece and Rome, the East and the North, each followed into the English poets who borrowed it. The first edition&#x27;s text of 1855. A restored edition, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/bulfinch.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="The Age of Fable — Thomas Bulfinch">
+	<meta property="og:description" content="The myths of Greece and Rome, the East and the North, each followed into the English poets who borrowed it. The first edition&#x27;s text of 1855. A restored edition, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/bulfinch.html">
+	<meta property="og:image" content="https://emend.press/covers/share/bulfinch.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,26 +192,30 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>The Age of Fable</h1>
-	<h3>by Thomas Bulfinch</h3>
+	<p class="title-line">by Thomas Bulfinch</p>
 	<p class="center">
 	1855
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is a restored edition of The Age of Fable: the author's own words, unchanged. The original is available from <a href="https://www.gutenberg.org/ebooks/56644">Project Gutenberg</a>. Also available as an <a href="ebooks/thomas-bulfinch_the-age-of-fable.epub">epub</a>. <a href="restored.html">More restored editions</a>.</i></p>
 
 	<hr>
+<section aria-labelledby="editors-introduction">
 <h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
 <p>Thomas Bulfinch (1796–1867) was a Boston man, the son of the architect Charles Bulfinch, and a graduate of Harvard. He spent most of his working life as a clerk in a Boston bank, and spent his evenings on the classics. The Age of Fable, published in 1855, was the result, and he dedicated it to Longfellow. He followed it with The Age of Chivalry in 1858 and Legends of Charlemagne in 1863. After his death the three were bound together as Bulfinch&#x27;s Mythology, and for a century that was how most English-speaking readers first met the Greek and Roman myths.</p>
 <p>His preface says exactly what he meant the book to do. It was not for scholars. It was for a reader of English poetry who kept meeting Niobe, the Parcae and the judgment of Paris in Milton and Byron and did not know who they were. So he retold the stories, mostly from Ovid and Virgil, in plain prose, and after almost every one he quoted the English poets who had used it, from Spenser to Longfellow. The quotations are the point of the book: each myth is followed into the poetry that borrowed it. The later chapters go beyond Greece and Rome, to Egyptian, Hindu and Norse mythology and to the Druids, mostly from the scholarship of his day.</p>
 <p>Three things will seem strange now. The gods have their Roman names, Jupiter and Juno and Minerva, because those were the names the English poets used; the first chapter gives the Greek names beside them. Bulfinch also says plainly that he left out stories and parts of stories &quot;offensive to pure taste and good morals,&quot; so a good deal of Ovid is missing or quietly softened. And the chapters on the East describe other religions as a Boston reader of 1855 would have understood them. All of this is Bulfinch&#x27;s, and it stands as he wrote it.</p>
 <p>This is a restored edition, and it gives Bulfinch&#x27;s own text of 1855. The transcription it is built from follows a revised edition of 1913. That edition replaced his preface with one of its own, respelled many words, and changed a number of readings. This edition compared it word by word with two scanned copies of the first edition, and wherever both copies agree it follows them. It restores the dedication to Longfellow and the 1855 preface. It keeps the list of Proverbial Expressions, the Latin tags the chapters point to, and names the chapter each one belongs to in place of a page number. The 1913 plates, maps and glossary, which were not Bulfinch&#x27;s, are left out, and so is his index. The edition also adds modern typesetting, an ebook, and this introduction.</p>
+</section>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p><a href="#dedication">Dedication</a></p>
 <p><a href="#preface">Preface</a></p>
@@ -231,14 +261,19 @@ figcaption {
 <p><a href="#chapter-xl-the-death-of-baldur-the-elves-runic-letters-iceland-teutonic-mythology-nibelungen-lied">Chapter XL: The Death of Baldur — the Elves — Runic Letters — Iceland — Teutonic Mythology — Nibelungen Lied</a></p>
 <p><a href="#chapter-xli-the-druids-iona">Chapter XLI: The Druids — Iona</a></p>
 <p><a href="#proverbial-expressions">Proverbial Expressions</a></p>
+</nav>
 
 <hr>
+<article>
+<section aria-labelledby="dedication">
 <h2 id="dedication">Dedication</h2>
 <pre class="outline">	To Henry Wadsworth Longfellow,
 	the poet alike of the many and of the few,
 	this attempt to popularize mythology,
 	and extend the enjoyment of elegant literature,
 	is respectfully inscribed.</pre>
+</section>
+<section aria-labelledby="preface">
 <h2 id="preface">Preface</h2>
 <p>If no other knowledge deserves to be called useful but that which helps to enlarge our possessions or to raise our station in society, then Mythology has no claim to the appellation. But if that which tends to make us happier and better can be called useful, then we claim that epithet for our subject. For Mythology is the handmaid of literature; and literature is one of the best allies of virtue and promoters of happiness.</p>
 <p>Without a knowledge of mythology much of the elegant literature of our own language cannot be understood and appreciated. When Byron calls Rome “the Niobe of nations,” or says of Venice, “She looks a Sea-Cybele fresh from ocean,” he calls up to the mind of one familiar with our subject illustrations more vivid and striking than the pencil could furnish, but which are lost to the reader ignorant of mythology. Milton abounds in similar allusions. The short poem “Comus” contains more than thirty such, and the ode “On the Morning of the Nativity” half as many. Through “Paradise Lost” they are scattered profusely. This is one reason why we often hear persons by no means illiterate say that they cannot enjoy Milton. But were these persons to add to their more solid acquirements the easy learning of this little volume, much of the poetry of Milton which has appeared to them “harsh and crabbed” would be found “musical as is Apollo’s lute.” Our citations, taken from more than twenty-five poets, from Spenser to Longfellow, will show how general has been the practice of borrowing illustrations from mythology.</p>
@@ -267,6 +302,8 @@ figcaption {
 	With man as with their friend; and at this day
 	’Tis Jupiter who brings whate’er is great,
 	And Venus who brings every thing that’s fair.”</pre>
+</section>
+<section aria-labelledby="chapter-i-introduction">
 <h2 id="chapter-i-introduction">Chapter I: Introduction</h2>
 <p>The religions of ancient Greece and Rome are extinct. The so-called divinities of Olympus have not a single worshipper among living men. They belong now not to the department of theology, but to those of literature and taste. There they still hold their place, and will continue to hold it, for they are too closely connected with the finest productions of poetry and art, both ancient and modern, to pass into oblivion.</p>
 <p>We propose to tell the stories relating to them which have come down to us from the ancients, and which are alluded to by modern poets, essayists, and orators. Our readers may thus at the same time be entertained by the most charming fictions which fancy has ever created, and put in possession of information indispensable to every one who would read with intelligence the elegant literature of his own day.</p>
@@ -415,6 +452,8 @@ figcaption {
 <p>————</p>
 <p>N.B.—It is to be observed that in proper names the final e and es are to be sounded. Thus Cybele and Penates are words of three syllables. But Proserpine and Thebes are exceptions, and to be pronounced as English words. In the Index at the close of the volume we shall mark the accented syllable in all words which appear to require it.</p>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-ii-prometheus-and-pandora">
 <h2 id="chapter-ii-prometheus-and-pandora">Chapter II: Prometheus and Pandora</h2>
 <p>The creation of the world is a problem naturally fitted to excite the liveliest interest of man, its inhabitant. The ancient pagans, not having the information on the subject which we derive from the pages of Scripture, had their own way of telling the story, which is as follows:</p>
 <p>Before earth and sea and heaven were created, all things wore one aspect, to which we give the name of Chaos—a confused and shapeless mass, nothing but dead weight, in which, however, slumbered the seeds of things. Earth, sea, and air were all mixed up together; so the earth was not solid, the sea was not fluid, and the air was not transparent. God and Nature at last interposed, and put an end to this discord, separating earth from sea, and heaven from both. The fiery part, being the lightest, sprang up, and formed the skies; the air was next in weight and place. The earth, being heavier, sank below; and the water took the lowest place, and buoyed up the earth.</p>
@@ -471,6 +510,8 @@ figcaption {
 	And share with him—the unforgiven—
 	His vulture and his rock?”</pre>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-iii-apollo-and-daphne-pyramus-and-thisbe-cephalus-and-procris">
 <h2 id="chapter-iii-apollo-and-daphne-pyramus-and-thisbe-cephalus-and-procris">Chapter III: Apollo and Daphne — Pyramus and Thisbe — Cephalus and Procris</h2>
 <p>The slime with which the earth was covered by the waters of the flood produced an excessive fertility, which called forth every variety of production, both bad and good. Among the rest, Python, an enormous serpent, crept forth, the terror of the people, and lurked in the caves of Mount Parnassus. Apollo slew him with his arrows—weapons which he had not before used against any but feeble animals, hares, wild goats, and such game. In commemoration of this illustrious conquest he instituted the Pythian games, in which the victor in feats of strength, swiftness of foot, or in the chariot race was crowned with a wreath of beech leaves; for the laurel was not yet adopted by Apollo as his own tree.</p>
 <p>The famous statue of Apollo called the Belvedere represents the god after this victory over the serpent Python. To this Byron alludes in his “Childe Harold,” iv., 161:</p>
@@ -546,6 +587,8 @@ figcaption {
 	His song was still, ‘Sweet Air, O come!’
 	While Echo answered, ‘Come, sweet Air!’ ”</pre>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-iv-juno-and-her-rivals-io-and-callisto-diana-and-act-on-latona-and-the-rustics">
 <h2 id="chapter-iv-juno-and-her-rivals-io-and-callisto-diana-and-act-on-latona-and-the-rustics">Chapter IV: Juno and Her Rivals, Io and Callisto — Diana and Actæon — Latona and the Rustics</h2>
 <p>Juno one day perceived it suddenly grow dark, and immediately suspected that her husband had raised a cloud to hide some of his doings that would not bear the light. She brushed away the cloud, and saw her husband on the banks of a glassy river, with a beautiful heifer standing near him. Juno suspected the heifer’s form concealed some fair nymph of mortal mould—as was, indeed the case; for it was Io, the daughter of the river god Inachus, whom Jupiter had been flirting with, and, when he became aware of the approach of his wife, had changed into that form.</p>
 <p>Juno joined her husband, and noticing the heifer praised its beauty, and asked whose it was, and of what herd. Jupiter, to stop questions, replied that it was a fresh creation from the earth. Juno asked to have it as a gift. What could Jupiter do? He was loath to give his mistress to his wife; yet how refuse so trifling a present as a simple heifer? He could not, without exciting suspicion; so he consented. The goddess was not yet relieved of her suspicions; so she delivered the heifer to Argus, to be strictly watched.</p>
@@ -637,6 +680,8 @@ figcaption {
 	Where grew the arts of war and peace,
 	Where Delos rose and Phœbus sprung!”</pre>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-v-pha-ton">
 <h2 id="chapter-v-pha-ton">Chapter V: Phaëton</h2>
 <p>Phaëton was the son of Apollo and the nymph Clymene. One day a schoolfellow laughed at the idea of his being the son of the god, and Phaëton went in rage and shame and reported it to his mother. “If,” said he, “I am indeed of heavenly birth, give me, mother, some proof of it, and establish my claim to the honor.” Clymene stretched forth her hands towards the skies, and said, “I call to witness the Sun which looks down upon us, that I have told you the truth. If I speak falsely, let this be the last time I behold his light. But it needs not much labor to go and inquire for yourself; the land whence the Sun rises lies next to ours. Go and demand of him whether he will own you as a son.” Phaëton heard with delight. He travelled to India, which lies directly in the regions of sunrise; and, full of hope and pride, approached the goal whence his parent begins his course.</p>
 <p>The palace of the Sun stood reared aloft on columns, glittering with gold and precious stones, while polished ivory formed the ceilings, and silver the doors. The workmanship surpassed the material; for upon the walls Vulcan had represented earth, sea, and skies, with their inhabitants. In the sea were the nymphs, some sporting in the waves, some riding on the backs of fishes, while others sat upon the rocks and dried their sea-green hair. Their faces were not all alike, nor yet unlike,—but such as sisters’ ought to be. The earth had its towns and forests and rivers and rustic divinities. Over all was carved the likeness of the glorious heaven; and on the silver doors the twelve signs of the zodiac, six on each side.</p>
@@ -687,6 +732,8 @@ figcaption {
 	And murmurs as the ocean murmurs there.”
 	—Gebir, Book I.</pre>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-vi-midas-baucis-and-philemon">
 <h2 id="chapter-vi-midas-baucis-and-philemon">Chapter VI: Midas — Baucis and Philemon</h2>
 <p>Bacchus, on a certain occasion, found his old school-master and foster-father, Silenus, missing. The old man had been drinking, and in that state wandered away, and was found by some peasants, who carried him to their king, Midas. Midas recognized him, and treated him hospitably, entertaining him for ten days and nights with an unceasing round of jollity. On the eleventh day he brought Silenus back, and restored him in safety to his pupil. Whereupon Bacchus offered Midas his choice of a reward, whatever he might wish. He asked that whatever he might touch should be changed into gold. Bacchus consented, though sorry that he had not made a better choice. Midas went his way, rejoicing in his new-acquired power, which he hastened to put to the test. He could scarce believe his eyes when he found a twig of an oak, which he plucked from the branch, become gold in his hand. He took up a stone; it changed to gold. He touched a sod; it did the same. He took an apple from the tree; you would have thought he had robbed the garden of the Hesperides. His joy knew no bounds, and as soon as he got home, he ordered the servants to set a splendid repast on the table. Then he found to his dismay that whether he touched bread, it hardened in his hand; or put a morsel to his lips, it defied his teeth. He took a glass of wine, but it flowed down his throat like melted gold.</p>
 <p>In consternation at the unprecedented affliction, he strove to divest himself of his power; he hated the gift he had lately coveted. But all in vain; starvation seemed to await him. He raised his arms, all shining with gold, in prayer to Bacchus, begging to be delivered from his glittering destruction. Bacchus, merciful deity, heard and consented. “Go,” said he, “to the River Pactolus, trace the stream to its fountain-head, there plunge your head and body in, and wash away your fault and its punishment.” He did so, and scarce had he touched the waters before the gold-creating power passed into them, and the river-sands became changed into gold, as they remain to this day.</p>
@@ -747,6 +794,8 @@ figcaption {
 	Which still their ancient nature keep
 	By lodging folks disposed to sleep.”</pre>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-vii-proserpine-glaucus-and-scylla">
 <h2 id="chapter-vii-proserpine-glaucus-and-scylla">Chapter VII: Proserpine — Glaucus and Scylla</h2>
 <p>When Jupiter and his brothers had defeated the Titans and banished them to Tartarus, a new enemy rose up against the gods. They were the giants Typhon, Briareus, Enceladus, and others. Some of them had a hundred arms, others breathed out fire. They were finally subdued and buried alive under Mount Ætna, where they still sometimes struggle to get loose, and shake the whole island with earthquakes. Their breath comes up through the mountain, and is what men call the eruption of the volcano.</p>
 <p>The fall of these monsters shook the earth, so that Pluto was alarmed, and feared that his kingdom would be laid open to the light of day. Under this apprehension, he mounted his chariot, drawn by black horses, and took a circuit of inspection to satisfy himself of the extent of the damage. While he was thus engaged, Venus, who was sitting on Mount Eryx playing with her boy Cupid, espied him, and said, “My son, take your darts with which you conquer all, even Jove himself, and send one into the breast of yonder dark monarch, who rules the realm of Tartarus. Why should he alone escape? Seize the opportunity to extend your empire and mine. Do you not see that even in heaven some despise our power? Minerva the wise, and Diana the huntress, defy us; and there is that daughter of Ceres, who threatens to follow their example. Now do you, if you have any regard for your own interest or mine, join these two in one.” The boy unbound his quiver, and selected his sharpest and truest arrow; then straining the bow against his knee, he attached the string, and, having made ready, shot the arrow with its barbed point right into the heart of Pluto.</p>
@@ -838,6 +887,8 @@ figcaption {
 	The ceaseless wonders of this ocean-bed,” &amp;c.
 	—Keats.</pre>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-viii-pygmalion-dryope-venus-and-adonis-apollo-and-hyacinthus">
 <h2 id="chapter-viii-pygmalion-dryope-venus-and-adonis-apollo-and-hyacinthus">Chapter VIII: Pygmalion — Dryope — Venus and Adonis — Apollo and Hyacinthus</h2>
 <p>Pygmalion saw so much to blame in women that he came at last to abhor the sex, and resolved to live unmarried. He was a sculptor, and had made with wonderful skill a statue of ivory, so beautiful that no living woman came anywhere near it. It was indeed the perfect semblance of a maiden that seemed to be alive, and only prevented from moving by modesty. His art was so perfect that it concealed itself and its product looked like the workmanship of nature. Pygmalion admired his own work, and at last fell in love with the counterfeit creation. Oftentimes he laid his hand upon it as if to assure himself whether it were living or not, and could not even then believe that it was only ivory. He caressed it, and gave it presents such as young girls love,—bright shells and polished stones, little birds and flowers of various hues, beads and amber. He put raiment on its limbs, and jewels on its fingers, and a necklace about its neck. To the ears he hung earrings and strings of pearls upon the breast. Her dress became her, and she looked not less charming than when unattired. He laid her on a couch spread with cloths of Tyrian dye, and called her his wife, and put her head upon a pillow of the softest feathers, as if she could enjoy their softness.</p>
 <p>The festival of Venus was at hand—a festival celebrated with great pomp at Cyprus. Victims were offered, the altars smoked, and the odor of incense filled the air. When Pygmalion had performed his part in the solemnities, he stood before the altar and timidly said, “Ye gods, who can do all things, give me, I pray you, for my wife”—he dared not say “my ivory virgin,” but said instead—“one like my ivory virgin.” Venus, who was present at the festival, heard him and knew the thought he would have uttered; and as an omen of her favor, caused the flame on the altar to shoot up thrice in a fiery point into the air. When he returned home, he went to see his statue, and leaning over the couch, gave a kiss to the mouth. It seemed to be warm. He pressed its lips again, he laid his hand upon the limbs; the ivory felt soft to his touch and yielded to his fingers like the wax of Hymettus. While he stands astonished and glad, though doubting, and fears he may be mistaken, again and again with a lover’s ardor he touches the object of his hopes. It was indeed alive! The veins when pressed yielded to the finger and again resumed their roundness. Then at last the votary of Venus found words to thank the goddess, and pressed his lips upon lips as real as his own. The virgin felt the kisses and blushed, and opening her timid eyes to the light, fixed them at the same moment on her lover. Venus blessed the nuptials she had formed, and from this union Paphos was born, from whom the city, sacred to Venus, received its name.</p>
@@ -901,6 +952,8 @@ figcaption {
 <p>An allusion to Hyacinthus will also be recognized in Milton’s “Lycidas”:</p>
 <pre class="outline">	“Like to that sanguine flower inscribed with woe.”</pre>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-ix-ceyx-and-halcyone-or-the-halcyon-birds">
 <h2 id="chapter-ix-ceyx-and-halcyone-or-the-halcyon-birds">Chapter IX: Ceyx and Halcyone: or, the Halcyon Birds</h2>
 <p>Ceyx was king of Thessaly, where he reigned in peace, without violence or wrong. He was son of Hesperus, the Day-star, and the glow of his beauty reminded one of his father. Halcyone, the daughter of Æolus, was his wife, and devotedly attached to him. Now Ceyx was in deep affliction for the loss of his brother, and direful prodigies following his brother’s death made him feel as if the gods were hostile to him. He thought best, therefore, to make a voyage to Claros in Ionia, to consult the oracle of Apollo. But as soon as he disclosed his intention to his wife Halcyone, a shudder ran through her frame, and her face grew deadly pale. “What fault of mine, dearest husband, has turned your affection from me? Where is that love of me that used to be uppermost in your thoughts? Have you learned to feel easy in the absence of Halcyone? Would you rather have me away?” She also endeavored to discourage him, by describing the violence of the winds, which she had known familiarly when she lived at home in her father’s house,—Æolus being the god of the winds, and having as much as he could do to restrain them. “They rush together,” said she, “with such fury that fire flashes from the conflict. But if you must go,” she added, “dear husband, let me go with you, otherwise I shall suffer not only the real evils which you must encounter, but those also which my fears suggest.”</p>
 <p>These words weighed heavily on the mind of King Ceyx, and it was no less his own wish than hers to take her with him, but he could not bear to expose her to the dangers of the sea. He answered, therefore, consoling her as well as he could, and finished with these words: “I promise, by the rays of my father the Day-star, that if fate permits I will return before the moon shall have twice rounded her orb.” When he had thus spoken, he ordered the vessel to be drawn out of the shiphouse, and the oars and sails to be put aboard. When Halcyone saw these preparations she shuddered, as if with a presentiment of evil. With tears and sobs she said farewell, and then fell senseless to the ground.</p>
@@ -936,6 +989,8 @@ figcaption {
 	That broodest o’er the troubled sea of the mind
 	Till it is hushed and smooth.”</pre>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-x-vertumnus-and-pomona">
 <h2 id="chapter-x-vertumnus-and-pomona">Chapter X: Vertumnus and Pomona</h2>
 <p>The Hamadryads were Wood-nymphs. Pomona was of this class, and no one excelled her in love of the garden and the culture of fruit. She cared not for forests and rivers, but loved the cultivated country, and trees that bear delicious apples. Her right hand bore for its weapon not a javelin, but a pruning-knife. Armed with this, she busied herself at one time to repress the too luxuriant growths, and curtail the branches that straggled out of place; at another, to split the twig and insert therein a graft, making the branch adopt a nursling not its own. She took care, too, that her favorites should not suffer from drought, and led streams of water by them, that the thirsty roots might drink. This occupation was her pursuit, her passion; and she was free from that which Venus inspires. She was not without fear of the country people, and kept her orchard locked, and allowed not men to enter. The Fauns and Satyrs would have given all they possessed to win her, and so would old Sylvanus, who looks young for his years, and Pan, who wears a garland of pine leaves around his head. But Vertumnus loved her best of all; yet he sped no better than the rest. O how often, in the disguise of a reaper, did he bring her corn in a basket, and looked the very image of a reaper! With a hay band tied round him, one would think he had just come from turning over the grass. Sometimes he would have an ox-goad in his hand, and you would have said he had just unyoked his weary oxen. Now he bore a pruning-hook, and personated a vine-dresser; and again, with a ladder on his shoulder, he seemed as if he was going to gather apples. Sometimes he trudged along as a discharged soldier, and again he bore a fishing-rod, as if going to fish. In this way he gained admission to her again and again, and fed his passion with the sight of her.</p>
 <p>One day he came in the guise of an old woman, her gray hair surmounted with a cap, and a staff in her hand. She entered the garden and admired the fruit. “It does you credit, my dear,” she said, and kissed her, not exactly with an old woman’s kiss. She sat down on a bank, and looked up at the branches laden with fruit which hung over her. Opposite was an elm entwined with a vine loaded with swelling grapes. She praised the tree and its associated vine, equally. “But,” said she, “if the tree stood alone, and had no vine clinging to it, it would have nothing to attract or offer us but its useless leaves. And equally the vine, if it were not twined round the elm, would lie prostrate on the ground. Why will you not take a lesson from the tree and the vine, and consent to unite yourself with some one? I wish you would. Helen herself had not more numerous suitors, nor Penelope, the wife of shrewd Ulysses. Even while you spurn them, they court you,—rural deities and others of every kind that frequent these mountains. But if you are prudent and want to make a good alliance, and will let an old woman advise you,—who loves you better than you have any idea of,—dismiss all the rest and accept Vertumnus, on my recommendation. I know him as well as he knows himself. He is not a wandering deity, but belongs to these mountains. Nor is he like too many of the lovers nowadays, who love any one they happen to see; he loves you, and you only. Add to this, he is young and handsome, and has the art of assuming any shape he pleases, and can make himself just what you command him. Moreover, he loves the same things that you do, delights in gardening, and handles your apples with admiration. But now he cares nothing for fruits nor flowers, nor anything else, but only yourself. Take pity on him, and fancy him speaking now with my mouth. Remember that the gods punish cruelty, and that Venus hates a hard heart, and will visit such offences sooner or later. To prove this, let me tell you a story, which is well known in Cyprus to be a fact; and I hope it will have the effect to make you more merciful.</p>
@@ -955,6 +1010,8 @@ figcaption {
 	Beneath the spreading tamarind, that shakes,
 	Fanned by the breeze, its fever-cooling fruit.”</pre>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-xi-cupid-and-psyche">
 <h2 id="chapter-xi-cupid-and-psyche">Chapter XI: Cupid and Psyche</h2>
 <p>A certain king and queen had three daughters. The charms of the two elder were more than common, but the beauty of the youngest was so wonderful that the poverty of language is unable to express its due praise. The fame of her beauty was so great that strangers from neighboring countries came in crowds to enjoy the sight, and looked on her with amazement, paying her that homage which is due only to Venus herself. In fact Venus found her altars deserted, while men turned their devotion to this young virgin. As she passed along, the people sang her praises, and strewed her way with chaplets and flowers.</p>
 <p>This perversion of homage due only to the immortal powers to the exaltation of a mortal gave great offence to the real Venus. Shaking her ambrosial locks with indignation, she exclaimed, “Am I then to be eclipsed in my honors by a mortal girl? In vain then did that royal shepherd, whose judgment was approved by Jove himself, give me the palm of beauty over my illustrious rivals, Pallas and Juno. But she shall not so quietly usurp my honors. I will give her cause to repent of so unlawful a beauty.”</p>
@@ -1051,6 +1108,8 @@ figcaption {
 	And sparkling thus on brow so white
 	Tells us we’ve Psyche here to-night.”</pre>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-xii-cadmus-the-myrmidons">
 <h2 id="chapter-xii-cadmus-the-myrmidons">Chapter XII: Cadmus — the Myrmidons</h2>
 <p>Jupiter, under the disguise of a bull, had carried away Europa, the daughter of Agenor, king of Phœnicia. Agenor commanded his son Cadmus to go in search of his sister, and not to return without her. Cadmus went and sought long and far for his sister, but could not find her, and not daring to return unsuccessful, consulted the oracle of Apollo to know what country he should settle in. The oracle informed him that he should find a cow in the field, and should follow her wherever she might wander, and where she stopped, should build a city and call it Thebes. Cadmus had hardly left the Castalian cave, from which the oracle was delivered, when he saw a young cow slowly walking before him. He followed her close, offering at the same time his prayers to Phœbus. The cow went on till she passed the shallow channel of Cephisus and came out into the plain of Panope. There she stood still, and raising her broad forehead to the sky, filled the air with her lowings. Cadmus gave thanks, and stooping down kissed the foreign soil, then lifting his eyes, greeted the surrounding mountains. Wishing to offer a sacrifice to Jupiter, he sent his servants to seek pure water for a libation. Near by there stood an ancient grove which had never been profaned by the axe, in the midst of which was a cave, thick covered with the growth of bushes, its roof forming a low arch, from beneath which burst forth a fountain of purest water. In the cave lurked a horrid serpent with a crested head and scales glittering like gold. His eyes shone like fire, his body was swollen with venom, he vibrated a triple tongue, and showed a triple row of teeth. No sooner had the Tyrians dipped their pitchers in the fountain, and the in-gushing waters made a sound, than the glittering serpent raised his head out of the cave and uttered a fearful hiss. The vessels fell from their hands, the blood left their cheeks, they trembled in every limb. The serpent, twisting his scaly body in a huge coil, raised his head so as to overtop the tallest trees, and while the Tyrians from terror could neither fight nor fly, slew some with his fangs, others in his folds, and others with his poisonous breath.</p>
 <p>Cadmus, having waited for the return of his men till midday, went in search of them. His covering was a lion’s hide, and besides his javelin he carried in his hand a lance, and in his breast a bold heart, a surer reliance than either. When he entered the wood, and saw the lifeless bodies of his men, and the monster with his bloody jaws, he exclaimed, “O faithful friends, I will avenge you, or share your death.” So saying he lifted a huge stone and threw it with all his force at the serpent. Such a block would have shaken the wall of a fortress, but it made no impression on the monster. Cadmus next threw his javelin, which met with better success, for it penetrated the serpent’s scales, and pierced through to his entrails. Fierce with pain, the monster turned back his head to view the wound, and attempted to draw out the weapon with his mouth, but broke it off, leaving the iron point rankling in his flesh. His neck swelled with rage, bloody foam covered his jaws, and the breath of his nostrils poisoned the air around. Now he twisted himself into a circle, then stretched himself out on the ground like the trunk of a fallen tree. As he moved onward, Cadmus retreated before him, holding his spear opposite to the monster’s opened jaws. The serpent snapped at the weapon and attempted to bite its iron point. At last Cadmus, watching his chance, thrust the spear at a moment when the animal’s head thrown back came against the trunk of a tree, and so succeeded in pinning him to its side. His weight bent the tree as he struggled in the agonies of death.</p>
@@ -1073,6 +1132,8 @@ figcaption {
 <p>“Standing before the altar I raised my eyes to heaven. ‘O Jupiter,’ I said, ‘if thou art indeed my father, and art not ashamed of thy offspring, give me back my people, or take me also away!’ At these words a clap of thunder was heard. ‘I accept the omen,’ I cried; ‘O may it be a sign of a favorable disposition towards me!’ By chance there grew by the place where I stood an oak with wide-spreading branches, sacred to Jupiter. I observed a troop of ants busy with their labor, carrying minute grains in their mouths and following one another in a line up the trunk of the tree. Observing their numbers with admiration, I said, ‘Give me, O father, citizens as numerous as these, and replenish my empty city.’ The tree shook and gave a rustling sound with its branches, though no wind agitated them. I trembled in every limb, yet I kissed the earth and the tree. I would not confess to myself that I hoped, yet I did hope. Night came on and sleep took possession of my frame oppressed with cares. The tree stood before me in my dreams, with its numerous branches all covered with living, moving creatures. It seemed to shake its limbs and throw down over the ground a multitude of those industrious grain-gathering animals, which appeared to gain in size, and grow larger and larger, and by and by to stand erect, lay aside their superfluous legs and their black color, and finally to assume the human form. Then I awoke, and my first impulse was to chide the gods who had robbed me of a sweet vision and given me no reality in its place. Being still in the temple, my attention was caught by the sound of many voices without; a sound of late unusual to my ears. While I began to think I was yet dreaming, Telamon, my son, throwing open the temple gates, exclaimed: ‘Father, approach, and behold things surpassing even your hopes!’ I went forth; I saw a multitude of men, such as I had seen in my dream, and they were passing in procession in the same manner. While I gazed with wonder and delight they approached and kneeling hailed me as their king. I paid my vows to Jove, and proceeded to allot the vacant city to the new-born race, and to parcel out the fields among them. I called them Myrmidons, from the ant (myrmex) from which they sprang. You have seen these persons; their dispositions resemble those which they had in their former shape. They are a diligent and industrious race, eager to gain, and tenacious of their gains. Among them you may recruit your forces. They will follow you to the war, young in years and bold in heart.”</p>
 <p>This description of the plague is copied by Ovid from the account which Thucydides, the Greek historian, gives of the plague of Athens. The historian drew from life, and all the poets and writers of fiction since his day, when they have had occasion to describe a similar scene, have borrowed their details from him.</p>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-xiii-nisus-and-scylla-echo-and-narcissus-clytie-hero-and-leander">
 <h2 id="chapter-xiii-nisus-and-scylla-echo-and-narcissus-clytie-hero-and-leander">Chapter XIII: Nisus and Scylla — Echo and Narcissus — Clytie — Hero and Leander</h2>
 <h4>Nisus and Scylla</h4>
 <p>Minos, king of Crete, made war upon Megara. Nisus was king of Megara, and Scylla was his daughter. The siege had now lasted six months and the city still held out, for it was decreed by fate that it should not be taken so long as a certain purple lock, which glittered among the hair of King Nisus, remained on his head. There was a tower on the city walls, which overlooked the plain where Minos and his army were encamped. To this tower Scylla used to repair, and look abroad over the tents of the hostile army. The siege had lasted so long that she had learned to distinguish the persons of the leaders. Minos, in particular, excited her admiration. Arrayed in his helmet, and bearing his shield, she admired his graceful deportment; if he threw his javelin skill seemed combined with force in the discharge; if he drew his bow Apollo himself could not have done it more gracefully. But when he laid aside his helmet, and in his purple robes bestrode his white horse with its gay caparisons, and reined in its foaming mouth, the daughter of Nisus was hardly mistress of herself; she was almost frantic with admiration. She envied the weapon that he grasped, the reins that he held. She felt as if she could, if it were possible, go to him through the hostile ranks; she felt an impulse to cast herself down from the tower into the midst of his camp, or to open the gates to him, or to do anything else, so only it might gratify Minos. As she sat in the tower, she talked thus with herself: “I know not whether to rejoice or grieve at this sad war. I grieve that Minos is our enemy; but I rejoice at any cause that brings him to my sight. Perhaps he would be willing to grant us peace, and receive me as a hostage. I would fly down, if I could, and alight in his camp, and tell him that we yield ourselves to his mercy. But then, to betray my father! No! rather would I never see Minos again. And yet no doubt it is sometimes the best thing for a city to be conquered, when the conqueror is clement and generous. Minos certainly has right on his side. I think we shall be conquered; and if that must be the end of it, why should not love unbar the gates to him, instead of leaving it to be done by war? Better spare delay and slaughter if we can. And O if any one should wound or kill Minos! No one surely would have the heart to do it; yet ignorantly, not knowing him, one might. I will, I will surrender myself to him, with my country as a dowry, and so put an end to the war. But how? The gates are guarded, and my father keeps the keys; he only stands in my way. O that it might please the gods to take him away! But why ask the gods to do it? Another woman, loving as I do, would remove with her own hands whatever stood in the way of her love. And can any other woman dare more than I? I would encounter fire and sword to gain my object; but here there is no need of fire and sword. I only need my father’s purple lock. More precious than gold to me, that will give me all I wish.”</p>
@@ -1241,6 +1302,8 @@ figcaption {
 	That tale is old, but love anew
 	May nerve young hearts to prove as true.”</pre>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-xiv-minerva-niobe">
 <h2 id="chapter-xiv-minerva-niobe">Chapter XIV: Minerva — Niobe</h2>
 <h4>Minerva</h4>
 <p>Minerva, the goddess of wisdom, was the daughter of Jupiter. She was said to have leaped forth from his brain, mature, and in complete armor. She presided over the useful and ornamental arts, both those of men—such as agriculture and navigation—and those of women,—spinning, weaving, and needlework. She was also a warlike divinity; but it was defensive war only that she patronized, and she had no sympathy with Mars’s savage love of violence and bloodshed. Athens was her chosen seat, her own city, awarded to her as the prize of a contest with Neptune, who also aspired to it. The tale ran that in the reign of Cecrops, the first king of Athens, the two deities contended for the possession of the city. The gods decreed that it should be awarded to that one who produced the gift most useful to mortals. Neptune gave the horse; Minerva produced the olive. The gods gave judgment that the olive was the more useful of the two, and awarded the city to the goddess; and it was named after her, Athens, her name in Greek being Athene.</p>
@@ -1330,6 +1393,8 @@ figcaption {
 	Now murdering the young Niobes.”</pre>
 <p>Sir Richard Blackmore was a physician, and at the same time a very prolific and very tasteless poet, whose works are now forgotten, unless when recalled to mind by some wit like Moore for the sake of a joke.</p>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-xv-the-gr-or-gray-maids-perseus-medusa-atlas-andromeda">
 <h2 id="chapter-xv-the-gr-or-gray-maids-perseus-medusa-atlas-andromeda">Chapter XV: The Grææ or Gray-Maids — Perseus — Medusa — Atlas — Andromeda</h2>
 <h4>The Grææ and the Gorgons</h4>
 <p>The Grææ were three sisters who were gray-haired from their birth, whence their name. The Gorgons were monstrous females with huge teeth like those of swine, brazen claws, and snaky hair. None of these beings make much figure in mythology except Medusa, the Gorgon, whose story we shall next advert to. We mention them chiefly to introduce an ingenious theory of some modern writers, namely, that the Gorgons and Grææ were only personifications of the terrors of the sea, the former denoting the strong billows of the wide open main, and the latter the white-crested waves that dash against the rocks of the coast. Their names in Greek signify the above epithets.</p>
@@ -1418,6 +1483,8 @@ figcaption {
 	The Briton Samor; at his rising awe
 	Went abroad, and the riotous hall was mute.”</pre>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-xvi-monsters">
 <h2 id="chapter-xvi-monsters">Chapter XVI: Monsters</h2>
 <h4>Giants, Sphinx, Pegasus and Chimæra, Centaurs, Griffin, and Pygmies</h4>
 <p>Monsters, in the language of mythology, were beings of unnatural proportions or parts, usually regarded with terror, as possessing immense strength and ferocity, which they employed for the injury and annoyance of men. Some of them were supposed to combine the members of different animals; such were the Sphinx and Chimæra; and to these all the terrible qualities of wild beasts were attributed, together with human sagacity and faculties. Others, as the giants, differed from men chiefly in their size; and in this particular we must recognize a wide distinction among them. The human giants, if so they may be called, such as the Cyclopes, Antæus, Orion, and others, must be supposed not to be altogether disproportioned to human beings, for they mingled in love and strife with them. But the superhuman giants, who warred with the gods, were of vastly larger dimensions. Tityus, we are told, when stretched on the plain, covered nine acres, and Enceladus required the whole of Mount Ætna to be laid upon him to keep him down.</p>
@@ -1497,6 +1564,8 @@ figcaption {
 	Hath from his wakeful custody purloined
 	His guarded gold,” &amp;c.</pre>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-xvii-the-golden-fleece-medea">
 <h2 id="chapter-xvii-the-golden-fleece-medea">Chapter XVII: The Golden Fleece — Medea</h2>
 <h4>The Golden Fleece</h4>
 <p>In very ancient times there lived in Thessaly a king and queen named Athamas and Nephele. They had two children, a boy and a girl. After a time Athamas grew indifferent to his wife, put her away, and took another. Nephele suspected danger to her children from the influence of the stepmother, and took measures to send them out of her reach. Mercury assisted her, and gave her a ram with a golden fleece, on which she set the two children, trusting that the ram would convey them to a place of safety. The ram vaulted into the air with the children on his back, taking his course to the East, till when crossing the strait that divides Europe and Asia, the girl, whose name was Helle, fell from his back into the sea, which from her was called the Hellespont,—now the Dardanelles. The ram continued his career till he reached the kingdom of Colchis, on the eastern shore of the Black Sea, where he safely landed the boy Phryxus, who was hospitably received by Æetes, king of the country. Phryxus sacrificed the ram to Jupiter, and gave the Golden Fleece to Æetes, who placed it in a consecrated grove, under the care of a sleepless dragon.</p>
@@ -1585,6 +1654,8 @@ figcaption {
 	Or seek to hide thy damned parricide
 	Where peace and justice dwell for evermore?”</pre>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-xviii-meleager-and-atalanta">
 <h2 id="chapter-xviii-meleager-and-atalanta">Chapter XVIII: Meleager and Atalanta</h2>
 <p>One of the heroes of the Argonautic expedition was Meleager, son of Œneus and Althea, king and queen of Calydon. Althea, when her son was born, beheld the three destinies, who, as they spun their fatal thread, foretold that the life of the child should last no longer than a brand then burning upon the hearth. Althea seized and quenched the brand, and carefully preserved it for years, while Meleager grew to boyhood, youth, and manhood. It chanced, then, that Œneus, as he offered sacrifices to the gods, omitted to pay due honors to Diana; and she, indignant at the neglect, sent a wild boar of enormous size to lay waste the fields of Calydon. Its eyes shone with blood and fire, its bristles stood like threatening spears, its tusks were like those of Indian elephants. The growing corn was trampled, the vines and olive trees laid waste, the flocks and herds were driven in wild confusion by the slaughtering foe. All common aid seemed vain; but Meleager called on the heroes of Greece to join in a bold hunt for the ravenous monster. Theseus and his friend Pirithous, Jason, Peleus, afterwards the father of Achilles, Telamon the father of Ajax, Nestor, then a youth, but who in his age bore arms with Achilles and Ajax in the Trojan war,—these and many more joined in the enterprise. With them came Atalanta, the daughter of Iasius, king of Arcadia. A buckle of polished gold confined her vest, an ivory quiver hung on her left shoulder, and her left hand bore the bow. Her face blent feminine beauty with the best graces of martial youth. Meleager saw and loved.</p>
 <p>But now already they were near the monster’s lair. They stretched strong nets from tree to tree; they uncoupled their dogs, they tried to find the footprints of their quarry in the grass. From the wood was a descent to marshy ground. Here the boar, as he lay among the reeds, heard the shouts of his pursuers, and rushed forth against them. One and another is thrown down and slain. Jason throws his spear, with a prayer to Diana for success; and the favoring goddess allows the weapon to touch, but not to wound, removing the steel point of the spear even in its flight. Nestor, assailed, seeks and finds safety in the branches of a tree. Telamon rushes on, but stumbling at a projecting root, falls prone. But an arrow from Atalanta at length for the first time tastes the monster’s blood. It is a slight wound, but Meleager sees and joyfully proclaims it. Anceus, excited to envy by the praise given to a female, loudly proclaims his own valor, and defies alike the boar and the goddess who had sent it; but as he rushes on, the infuriated beast lays him low with a mortal wound. Theseus throws his lance, but it is turned aside by a projecting bough. The dart of Jason misses its object, and kills instead one of their own dogs. But Meleager, after one unsuccessful stroke, drives his spear into the monster’s side, then rushes on and despatches him with repeated blows.</p>
@@ -1614,6 +1685,8 @@ figcaption {
 	Or at least, like Hippomenes, turns her astray
 	By the golden illusions he flings in her way.”</pre>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-xix-hercules-hebe-and-ganymede">
 <h2 id="chapter-xix-hercules-hebe-and-ganymede">Chapter XIX: Hercules — Hebe and Ganymede</h2>
 <h4>Hercules</h4>
 <p>Hercules was the son of Jupiter and Alcmena. As Juno was always hostile to the offspring of her husband by mortal mothers, she declared war against Hercules from his birth. She sent two serpents to destroy him as he lay in his cradle, but the precocious infant strangled them with his own hands. He was, however, by the arts of Juno rendered subject to Eurystheus and compelled to perform all his commands. Eurystheus enjoined upon him a succession of desperate adventures, which are called the “Twelve Labors of Hercules.” The first was the fight with the Nemean lion. The valley of Nemea was infested by a terrible lion. Eurystheus ordered Hercules to bring him the skin of this monster. After using in vain his club and arrows against the lion, Hercules strangled the animal with his hands. He returned carrying the dead lion on his shoulders; but Eurystheus was so frightened at the sight of it and at this proof of the prodigious strength of the hero, that he ordered him to deliver the account of his exploits in future outside the town.</p>
@@ -1686,6 +1759,8 @@ figcaption {
 	And let it fill the Dædal cups like fire.”</pre>
 <p>The beautiful legend of the “Choice of Hercules” may be found in the “Tatler,” No. 97.</p>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-xx-theseus-d-dalus-castor-and-pollux">
 <h2 id="chapter-xx-theseus-d-dalus-castor-and-pollux">Chapter XX: Theseus — Dædalus — Castor and Pollux</h2>
 <h4>Theseus</h4>
 <p>Theseus was the son of Ægeus, king of Athens, and of Æthra, daughter of the king of Trœzen. He was brought up at Trœzen, and when arrived at manhood was to proceed to Athens and present himself to his father. Ægeus on parting from Æthra, before the birth of his son, placed his sword and shoes under a large stone and directed her to send his son to him when he became strong enough to roll away the stone and take them from under it. When she thought the time had come, his mother led Theseus to the stone, and he removed it with ease and took the sword and shoes. As the roads were infested with robbers, his grandfather pressed him earnestly to take the shorter and safer way to his father’s country—by sea; but the youth, feeling in himself the spirit and the soul of a hero, and eager to signalize himself like Hercules, with whose fame all Greece then rang, by destroying the evil-doers and monsters that oppressed the country, determined on the more perilous and adventurous journey by land.</p>
@@ -1746,6 +1821,8 @@ figcaption {
 	If once the great Twin Brethren
 	Sit shining on the sails.”</pre>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-xxi-bacchus-ariadne">
 <h2 id="chapter-xxi-bacchus-ariadne">Chapter XXI: Bacchus — Ariadne</h2>
 <h4>Bacchus</h4>
 <p>Bacchus was the son of Jupiter and Semele. Juno, to gratify her resentment against Semele, contrived a plan for her destruction. Assuming the form of Beroë, her aged nurse, she insinuated doubts whether it was indeed Jove himself who came as a lover. Heaving a sigh, she said, “I hope it will turn out so, but I can’t help being afraid. People are not always what they pretend to be. If he is indeed Jove, make him give some proof of it. Ask him to come arrayed in all his splendors, such as he wears in heaven. That will put the matter beyond a doubt.” Semele was persuaded to try the experiment. She asks a favor, without naming what it is. Jove gives his promise, and confirms it with the irrevocable oath, attesting the river Styx, terrible to the gods themselves. Then she made known her request. The god would have stopped her as she spake, but she was too quick for him. The words escaped, and he could neither unsay his promise nor her request. In deep distress he left her and returned to the upper regions. There he clothed himself in his splendors, not putting on all his terrors, as when he overthrew the giants, but what is known among the gods as his lesser panoply. Arrayed in this, he entered the chamber of Semele. Her mortal frame could not endure the splendors of the immortal radiance. She was consumed to ashes.</p>
@@ -1791,6 +1868,8 @@ figcaption {
 	And is unto the stars an ornament,
 	Which round about her move in order excellent.”</pre>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-xxii-the-rural-deities-erisichthon-rh-cus-the-water-deities-camen-winds">
 <h2 id="chapter-xxii-the-rural-deities-erisichthon-rh-cus-the-water-deities-camen-winds">Chapter XXII: The Rural Deities — Erisichthon — Rhœcus — the Water Deities — Camenæ — Winds</h2>
 <h4>The Rural Deities</h4>
 <p>Pan, the god of woods and fields, of flocks and shepherds, dwelt in grottos, wandered on the mountains and in valleys, and amused himself with the chase or in leading the dances of the nymphs. He was fond of music, and as we have seen, the inventor of the syrinx, or shepherd’s pipe, which he himself played in a masterly manner. Pan, like other gods who dwelt in forests, was dreaded by those whose occupations caused them to pass through the woods by night, for the gloom and loneliness of such scenes dispose the mind to superstitious fears. Hence sudden fright without any visible cause was ascribed to Pan, and called a Panic terror.</p>
@@ -1932,6 +2011,8 @@ figcaption {
 	. . . and silky soft
 	Favonius breathe still softer or be chid!”</pre>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-xxiii-achelous-and-hercules-admetus-and-alcestis-antigone-penelope">
 <h2 id="chapter-xxiii-achelous-and-hercules-admetus-and-alcestis-antigone-penelope">Chapter XXIII: Achelous and Hercules — Admetus and Alcestis — Antigone — Penelope</h2>
 <h4>Achelous and Hercules</h4>
 <p>The river-god Achelous told the story of Erisichthon to Theseus and his companions, whom he was entertaining at his hospitable board, while they were delayed on their journey by the overflow of his waters. Having finished his story, he added, “But why should I tell of other persons’ transformations when I myself am an instance of the possession of this power? Sometimes I become a serpent, and sometimes a bull, with horns on my head. Or I should say I once could do so; but now I have but one horn, having lost one.” And here he groaned and was silent.</p>
@@ -1997,6 +2078,8 @@ figcaption {
 <p>Penelope is another of those mythic heroines whose beauties were rather those of character and conduct than of person. She was the daughter of Icarius, a Spartan prince. Ulysses, king of Ithaca, sought her in marriage, and won her, over all competitors. When the moment came for the bride to leave her father’s house, Icarius, unable to bear the thoughts of parting with his daughter, tried to persuade her to remain with him, and not accompany her husband to Ithaca. Ulysses gave Penelope her choice, to stay or go with him. Penelope made no reply, but dropped her veil over her face. Icarius urged her no further, but when she was gone erected a statue to Modesty on the spot where they parted.</p>
 <p>Ulysses and Penelope had not enjoyed their union more than a year when it was interrupted by the events which called Ulysses to the Trojan war. During his long absence, and when it was doubtful whether he still lived, and highly improbable that he would ever return, Penelope was importuned by numerous suitors, from whom there seemed no refuge but in choosing one of them for her husband. Penelope, however, employed every art to gain time, still hoping for Ulysses’ return. One of her arts of delay was engaging in the preparation of a robe for the funeral canopy of Laertes, her husband’s father. She pledged herself to make her choice among the suitors when the robe was finished. During the day she worked at the robe, but in the night she undid the work of the day. This is the famous Penelope’s web, which is used as a proverbial expression for anything which is perpetually doing but never done. The rest of Penelope’s history will be told when we give an account of her husband’s adventures.</p>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-xxiv-orpheus-and-eurydice-arist-us-amphion-linus-thamyris-marsyas-melampus-mus-us">
 <h2 id="chapter-xxiv-orpheus-and-eurydice-arist-us-amphion-linus-thamyris-marsyas-melampus-mus-us">Chapter XXIV: Orpheus and Eurydice — Aristæus — Amphion — Linus — Thamyris — Marsyas — Melampus — Musæus</h2>
 <h4>Orpheus and Eurydice</h4>
 <p>Orpheus was the son of Apollo and the Muse Calliope. He was presented by his father with a Lyre and taught to play upon it, which he did to such perfection that nothing could withstand the charm of his music. Not only his fellow-mortals but wild beasts were softened by his strains, and gathering round him laid by their fierceness, and stood entranced with his lay. Nay, the very trees and rocks were sensible to the charm. The former crowded round him and the latter relaxed somewhat of their hardness, softened by his notes.</p>
@@ -2090,6 +2173,8 @@ figcaption {
 	Drew iron tears down Pluto’s cheek,
 	And made Hell grant what love did seek.”</pre>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-xxv-arion-ibycus-simonides-sappho">
 <h2 id="chapter-xxv-arion-ibycus-simonides-sappho">Chapter XXV: Arion — Ibycus — Simonides — Sappho</h2>
 <p>The poets whose adventures compose this chapter were real persons some of whose works yet remain, and their influence on poets who succeeded them is yet more important than their poetical remains. The adventures recorded of them in the following stories rest on the same authority as other narratives of the “Age of Fable,” that is, of the poets who have told them. In their present form, the first two are translated from the German, Arion from Schlegel, and Ibycus from Schiller.</p>
 <h4>Arion</h4>
@@ -2148,6 +2233,8 @@ figcaption {
 	Childe Harold hailed Leucadia’s cape afar;” &amp;c.</pre>
 <p>Those who wish to know more of Sappho and her “leap” are referred to the “Spectator,” Nos. 223 and 229. See also Moore’s “Evenings in Greece.”</p>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-xxvi-endymion-orion-aurora-and-tithonus-acis-and-galatea">
 <h2 id="chapter-xxvi-endymion-orion-aurora-and-tithonus-acis-and-galatea">Chapter XXVI: Endymion — Orion — Aurora and Tithonus — Acis and Galatea</h2>
 <h4>Diana and Endymion</h4>
 <p>Endymion was a beautiful youth who fed his flock on Mount Latmos. One calm, clear night Diana, the moon, looked down and saw him sleeping. The cold heart of the virgin goddess was warmed by his surpassing beauty, and she came down to him, kissed him, and watched over him while he slept.</p>
@@ -2238,6 +2325,8 @@ figcaption {
 	Love taught him shame, and shame with love at strife
 	Soon taught the sweet civilities of life.”</pre>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-xxvii-the-trojan-war">
 <h2 id="chapter-xxvii-the-trojan-war">Chapter XXVII: The Trojan War</h2>
 <p>Minerva was the goddess of wisdom, but on one occasion she did a very foolish thing; she entered into competition with Juno and Venus for the prize of beauty. It happened thus: At the nuptials of Peleus and Thetis all the gods were invited with the exception of Eris, or Discord. Enraged at her exclusion, the goddess threw a golden apple among the guests, with the inscription, “For the fairest.” Thereupon Juno, Venus, and Minerva each claimed the apple. Jupiter, not willing to decide in so delicate a matter, sent the goddesses to Mount Ida, where the beautiful shepherd Paris was tending his flocks, and to him was committed the decision. The goddesses accordingly appeared before him. Juno promised him power and riches, Minerva glory and renown in war, and Venus the fairest of women for his wife, each attempting to bias his decision in her own favor. Paris decided in favor of Venus and gave her the golden apple, thus making the two other goddesses his enemies. Under the protection of Venus, Paris sailed to Greece, and was hospitably received by Menelaus, king of Sparta. Now Helen, the wife of Menelaus, was the very woman whom Venus had destined for Paris, the fairest of her sex. She had been sought as a bride by numerous suitors, and before her decision was made known, they all, at the suggestion of Ulysses, one of their number, took an oath that they would defend her from all injury and avenge her cause if necessary. She chose Menelaus, and was living with him happily when Paris became their guest. Paris, aided by Venus, persuaded her to elope with him, and carried her to Troy, whence arose the famous Trojan war, the theme of the greatest poems of antiquity, those of Homer and Virgil.</p>
 <p>Menelaus called upon his brother chieftains of Greece to fulfil their pledge, and join him in his efforts to recover his wife. They generally came forward, but Ulysses, who had married Penelope, and was very happy in his wife and child, had no disposition to embark in such a troublesome affair. He therefore hung back and Palamedes was sent to urge him. When Palamedes arrived at Ithaca Ulysses pretended to be mad. He yoked an ass and an ox together to the plough and began to sow salt. Palamedes, to try him, placed the infant Telemachus before the plough, whereupon the father turned the plough aside, showing plainly that he was no madman, and after that could no longer refuse to fulfil his promise. Being now himself gained for the undertaking, he lent his aid to bring in other reluctant chiefs, especially Achilles. This hero was the son of that Thetis at whose marriage the apple of Discord had been thrown among the goddesses. Thetis was herself one of the immortals, a sea-nymph, and knowing that her son was fated to perish before Troy if he went on the expedition, she endeavored to prevent his going. She sent him away to the court of King Lycomedes, and induced him to conceal himself in the disguise of a maiden among the daughters of the king. Ulysses, hearing he was there, went disguised as a merchant to the palace and offered for sale female ornaments, among which he had placed some arms. While the king’s daughters were engrossed with the other contents of the merchant’s pack, Achilles handled the weapons and thereby betrayed himself to the keen eye of Ulysses, who found no great difficulty in persuading him to disregard his mother’s prudent counsels and join his countrymen in the war.</p>
@@ -2335,6 +2424,8 @@ figcaption {
 	And peaceful slept the mighty Hector’s shade.”
 	—Pope.</pre>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-xxviii-the-fall-of-troy-return-of-the-greeks-orestes-and-electra">
 <h2 id="chapter-xxviii-the-fall-of-troy-return-of-the-greeks-orestes-and-electra">Chapter XXVIII: The Fall of Troy — Return of the Greeks — Orestes and Electra</h2>
 <h4>The Fall of Troy</h4>
 <p>The story of the Iliad ends with the death of Hector, and it is from the Odyssey and later poems that we learn the fate of the other heroes. After the death of Hector, Troy did not immediately fall, but receiving aid from new allies still continued its resistance. One of these allies was Memnon, the Æthiopian prince, whose story we have already told. Another was Penthesilea, queen of the Amazons, who came with a band of female warriors. All the authorities attest their valor and the fearful effect of their war cry. Penthesilea slew many of the bravest warriors, but was at last slain by Achilles. But when the hero bent over his fallen foe, and contemplated her beauty, youth, and valor, he bitterly regretted his victory. Thersites, an insolent brawler and demagogue, ridiculed his grief, and was in consequence slain by the hero.</p>
@@ -2416,6 +2507,8 @@ figcaption {
 <h4>Troy</h4>
 <p>The facts relating to the city of Troy are still unknown to history. Antiquarians have long sought for the actual city and some record of its rulers. The most interesting explorations were those conducted about 1890 by the German scholar, Henry Schliemann, who believed that at the mound of Hissarlik, the traditional site of Troy, he had uncovered the ancient capital. Schliemann excavated down below the ruins of three or four settlements, each revealing an earlier civilization, and finally came upon some royal jewels and other relics said to be “Priam’s Treasure.” Scholars are by no means agreed as to the historic value of these discoveries.</p>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-xxix-adventures-of-ulysses-the-lotus-eaters-cyclopes-circe-sirens-scylla-and-charybdis-calypso">
 <h2 id="chapter-xxix-adventures-of-ulysses-the-lotus-eaters-cyclopes-circe-sirens-scylla-and-charybdis-calypso">Chapter XXIX: Adventures of Ulysses — the Lotus-Eaters — Cyclopes — Circe — Sirens — Scylla and Charybdis — Calypso</h2>
 <h4>Return of Ulysses</h4>
 <p>The romantic poem of the Odyssey is now to engage our attention. It narrates the wanderings of Ulysses (Odysseus in the Greek language) in his return from Troy to his own kingdom Ithaca.</p>
@@ -2496,6 +2589,8 @@ figcaption {
 	Stern Mentor urged from high to yonder tide;
 	While thus of both bereft the nymph-queen doubly sighed.”</pre>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-xxx-the-ph-acians-fate-of-the-suitors">
 <h2 id="chapter-xxx-the-ph-acians-fate-of-the-suitors">Chapter XXX: The Phæacians — Fate of the Suitors</h2>
 <h4>The Phæacians</h4>
 <p>Ulysses clung to the raft while any of its timbers kept together, and when it no longer yielded him support, binding the girdle around him, he swam. Minerva smoothed the billows before him and sent him a wind that rolled the waves towards the shore. The surf beat high on the rocks and seemed to forbid approach; but at length finding calm water at the mouth of a gentle stream, he landed, spent with toil, breathless and speechless and almost dead. After some time, reviving, he kissed the soil, rejoicing, yet at a loss what course to take. At a short distance he perceived a wood, to which he turned his steps. There, finding a covert sheltered by intermingling branches alike from the sun and the rain, he collected a pile of leaves and formed a bed, on which he stretched himself, and heaping the leaves over him, fell asleep.</p>
@@ -2572,6 +2667,8 @@ figcaption {
 	It may be we shall touch the Happy Isles,
 	And see the great Achilles whom we knew;” &amp;c.</pre>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-xxxi-adventures-of-neas-the-harpies-dido-palinurus">
 <h2 id="chapter-xxxi-adventures-of-neas-the-harpies-dido-palinurus">Chapter XXXI: Adventures of Æneas — the Harpies — Dido — Palinurus</h2>
 <h4>Adventures of Æneas</h4>
 <p>We have followed one of the Grecian heroes, Ulysses, in his wanderings on his return home from Troy, and now we propose to share the fortunes of the remnant of the conquered people, under their chief Æneas, in their search for a new home, after the ruin of their native city. On that fatal night when the wooden horse disgorged its contents of armed men, and the capture and conflagration of the city were the result, Æneas made his escape from the scene of destruction, with his father, and his wife, and young son. The father, Anchises, was too old to walk with the speed required, and Æneas took him upon his shoulders. Thus burdened, leading his son and followed by his wife, he made the best of his way out of the burning city; but, in the confusion, his wife was swept away and lost.</p>
@@ -2624,6 +2721,8 @@ figcaption {
 <p>Footnote: See Proverbial Expressions.</p>
 <p>Æneas followed the directions of the Sibyl. His mother, Venus, sent two of her doves to fly before him and show him the way, and by their assistance he found the tree, plucked the branch, and hastened back with it to the Sibyl.</p>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-xxxii-the-infernal-regions-the-sibyl">
 <h2 id="chapter-xxxii-the-infernal-regions-the-sibyl">Chapter XXXII: The Infernal Regions — the Sibyl</h2>
 <h4>The Infernal Regions</h4>
 <p>As at the commencement of our series we have given the pagan account of the creation of the world, so as we approach its conclusion we present a view of the regions of the dead, depicted by one of their most enlightened poets, who drew his doctrines from their most esteemed philosophers. The region where Virgil locates the entrance to this abode is perhaps the most strikingly adapted to excite ideas of the terrific and preternatural of any on the face of the earth. It is the volcanic region near Vesuvius, where the whole country is cleft with chasms, from which sulphurous flames arise, while the ground is shaken with pent-up vapors, and mysterious sounds issue from the bowels of the earth. The lake Avernus is supposed to fill the crater of an extinct volcano. It is circular, half a mile wide, and very deep, surrounded by high banks, which in Virgil’s time were covered with a gloomy forest. Mephitic vapors rise from its waters, so that no life is found on its banks, and no birds fly over it. Here, according to the poet, was the cave which afforded access to the infernal regions, and here Æneas offered sacrifices to the infernal deities, Proserpine, Hecate, and the Furies. Then a roaring was heard in the earth, the woods on the hill-tops were shaken, and the howling of dogs announced the approach of the deities. “Now,” said the Sibyl, “summon up your courage, for you will need it.” She descended into the cave, and Æneas followed. Before the threshold of hell they passed through a group of beings who are enumerated as Griefs and avenging Cares, pale Diseases and melancholy Age, Fear and Hunger that tempt to crime, Toil, Poverty, and Death,—forms horrible to view. The Furies spread their couches there, and Discord, whose hair was of vipers tied up with a bloody fillet. Here also were the monsters, Briareus, with his hundred arms, Hydras hissing, and Chimæras breathing fire. Æneas shuddered at the sight, drew his sword and would have struck, but the Sibyl restrained him. They then came to the black river Cocytus, where they found the ferryman, Charon, old and squalid, but strong and vigorous, who was receiving passengers of all kinds into his boat, magnanimous heroes, boys and unmarried girls, as numerous as the leaves that fall at autumn, or the flocks that fly southward at the approach of winter. They stood pressing for a passage and longing to touch the opposite shore. But the stern ferryman took in only such as he chose, driving the rest back. Æneas, wondering at the sight, asked the Sibyl, “Why this discrimination?” She answered, “Those who are taken on board the bark are the souls of those who have received due burial rites; the host of others who have remained unburied are not permitted to pass the flood, but wander a hundred years, and flit to and fro about the shore, till at last they are taken over.” Æneas grieved at recollecting some of his own companions who had perished in the storm. At that moment he beheld Palinurus, his pilot, who fell overboard and was drowned. He addressed him and asked him the cause of his misfortune. Palinurus replied that the rudder was carried away, and he, clinging to it, was swept away with it. He besought Æneas most urgently to extend to him his hand and take him in company to the opposite shore. But the Sibyl rebuked him for the wish thus to transgress the laws of Pluto; but consoled him by informing him that the people of the shore where his body had been wafted by the waves should be stirred up by prodigies to give it due burial, and that the promontory should bear the name of Cape Palinurus, which it does to this day. Leaving Palinurus consoled by these words, they approached the boat. Charon, fixing his eyes sternly upon the advancing warrior, demanded by what right he, living and armed, approached that shore. To which the Sibyl replied that they would commit no violence, that Æneas’s only object was to see his father, and finally exhibited the golden branch, at sight of which Charon’s wrath relaxed, and he made haste to turn his bark to the shore, and receive them on board. The boat, adapted only to the light freight of bodiless spirits, groaned under the weight of the hero. They were soon conveyed to the opposite shore. There they were encountered by the three-headed dog, Cerberus, with his necks bristling with snakes. He barked with all his three throats till the Sibyl threw him a medicated cake which he eagerly devoured, and then stretched himself out in his den and fell asleep. Æneas and the Sibyl sprang to land. The first sound that struck their ears was the wailing of young children, who had died on the threshold of life, and near to these were they who had perished under false charges. Minos presides over them as judge, and examines the deeds of each. The next class was of those who had died by their own hand, hating life and seeking refuge in death. O how willingly would they now endure poverty, labor, and any other infliction, if they might but return to life! Next were situated the regions of sadness, divided off into retired paths, leading through groves of myrtle. Here roamed those who had fallen victims to unrequited love, not freed from pain even by death itself. Among these, Æneas thought he descried the form of Dido, with a wound still recent. In the dim light he was for a moment uncertain, but approaching, perceived it was indeed herself. Tears fell from his eyes, and he addressed her in the accents of love. “Unhappy Dido! was then the rumor true that you had perished? and was I, alas! the cause? I call the gods to witness that my departure from you was reluctant, and in obedience to the commands of Jove; nor could I believe that my absence would cost you so dear. Stop, I beseech you, and refuse me not a last farewell.” She stood for a moment with averted countenance, and eyes fixed on the ground, and then silently passed on, as insensible to his pleadings as a rock. Æneas followed for some distance; then, with a heavy heart, rejoined his companion and resumed his route.</p>
@@ -2676,6 +2775,8 @@ figcaption {
 	As worldly schemes resemble Sibyl’s leaves,
 	The good man’s days to Sibyl’s books compare,
 	The price still rising as in number less.”</pre>
+</section>
+<section aria-labelledby="chapter-xxxiii-camilla-evander-nisus-and-euryalus-mezentius-turnus">
 <h2 id="chapter-xxxiii-camilla-evander-nisus-and-euryalus-mezentius-turnus">Chapter XXXIII: Camilla — Evander — Nisus and Euryalus — Mezentius — Turnus</h2>
 <p>Æneas, having parted from the Sibyl and rejoined his fleet, coasted along the shores of Italy and cast anchor in the mouth of the Tiber. The poet, having brought his hero to this spot, the destined termination of his wanderings, invokes his Muse to tell him the situation of things at that eventful moment. Latinus, third in descent from Saturn, ruled the country. He was now old and had no male descendant, but had one charming daughter, Lavinia, who was sought in marriage by many neighboring chiefs, one of whom, Turnus, king of the Rutulians, was favored by the wishes of her parents. But Latinus had been warned in a dream by his father Faunus, that the destined husband of Lavinia should come from a foreign land. From that union should spring a race destined to subdue the world.</p>
 <p>Our readers will remember that in the conflict with the Harpies one of those half-human birds had threatened the Trojans with dire sufferings. In particular she predicted that before their wanderings ceased they should be pressed by hunger to devour their tables. This portent now came true; for as they took their scanty meal, seated on the grass, the men placed their hard biscuit on their laps, and put thereon whatever their gleanings in the woods supplied. Having despatched the latter they finished by eating the crusts. Seeing which, the boy Iulus said playfully, “See, we are eating our tables.” Æneas caught the words and accepted the omen. “All hail, promised land!” he exclaimed, “this is our home, this our country.” He then took measures to find out who were the present inhabitants of the land, and who their rulers. A hundred chosen men were sent to the village of Latinus, bearing presents and a request for friendship and alliance. They went and were favorably received. Latinus immediately concluded that the Trojan hero was no other than the promised son-in-law announced by the oracle. He cheerfully granted his alliance and sent back the messengers mounted on steeds from his stables, and loaded with gifts and friendly messages.</p>
@@ -2723,6 +2824,8 @@ figcaption {
 	Flies o’er th’ unbending corn or skims along the main.”
 	—Essay on Criticism.</pre>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-xxxiv-pythagoras-egyptian-deities-oracles">
 <h2 id="chapter-xxxiv-pythagoras-egyptian-deities-oracles">Chapter XXXIV: Pythagoras — Egyptian Deities — Oracles</h2>
 <h4>Pythagoras</h4>
 <p>The teachings of Anchises to Æneas, respecting the nature of the human soul, were in conformity with the doctrines of the Pythagoreans. Pythagoras (born five hundred and forty years B.C.) was a native of the island of Samos, but passed the chief portion of his life at Crotona in Italy. He is therefore sometimes called “the Samian,” and sometimes “the philosopher of Crotona.” When young he travelled extensively, and it is said visited Egypt, where he was instructed by the priests in all their learning, and afterwards journeyed to the East, and visited the Persian and Chaldean Magi, and the Brahmins of India.</p>
@@ -2872,6 +2975,8 @@ figcaption {
 	As from the Pythian’s mystic cave of yore,
 	Those oracles which set the world in flame,
 	Nor ceased to burn till kingdoms were no more.”</pre>
+</section>
+<section aria-labelledby="chapter-xxxv-origin-of-mythology-statues-of-gods-and-goddesses-poets-of-mythology">
 <h2 id="chapter-xxxv-origin-of-mythology-statues-of-gods-and-goddesses-poets-of-mythology">Chapter XXXV: Origin of Mythology — Statues of Gods and Goddesses — Poets of Mythology</h2>
 <h4>Origin of Mythology</h4>
 <p>Having reached the close of our series of stories of Pagan mythology, an inquiry suggests itself. “Whence came these stories? Have they a foundation in truth, or are they simply dreams of the imagination?” Philosophers have suggested various theories on the subject; and 1. The Scriptural theory; according to which all mythological legends are derived from the narratives of Scripture, though the real facts have been disguised and altered. Thus Deucalion is only another name for Noah, Hercules for Samson, Arion for Jonah, &amp;c. Sir Walter Raleigh, in his “History of the World,” says, “Jubal, Tubal, and Tubal-Cain were Mercury, Vulcan, and Apollo, inventors of Pasturage, Smithing, and Music. The Dragon which kept the golden apples was the serpent that beguiled Eve. Nimrod’s tower was the attempt of the Giants against Heaven.” There are doubtless many curious coincidences like these, but the theory cannot without extravagance be pushed so far as to account for any great proportion of the stories.</p>
@@ -3018,6 +3123,8 @@ figcaption {
 	And, if aught true in poet’s visions be,
 	My name and fame have immortality.”</pre>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-xxxvi-modern-monsters-the-ph-nix-basilisk-unicorn-salamander">
 <h2 id="chapter-xxxvi-modern-monsters-the-ph-nix-basilisk-unicorn-salamander">Chapter XXXVI: Modern Monsters — the Phœnix — Basilisk — Unicorn — Salamander</h2>
 <h4>Modern Monsters</h4>
 <p>There is a set of imaginary beings which seem to have been the successors of the “Gorgons, Hydras, and Chimeras dire” of the old superstitions, and, having no connection with the false gods of Paganism, to have continued to enjoy an existence in the popular belief after Paganism was superseded by Christianity. They are mentioned perhaps by the classical writers, but their chief popularity and currency seem to have been in more modern times. We seek our accounts of them not so much in the poetry of the ancients as in the old natural history books and narrations of travellers. The accounts which we are about to give are taken chiefly from the Penny Cyclopedia.</p>
@@ -3082,6 +3189,8 @@ figcaption {
 	And is Lorenzo’s salamander-heart
 	Cold and untouched amid these sacred fires?”</pre>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-xxxvii-eastern-mythology-zoroaster-hindu-mythology-castes-buddha-grand-lama">
 <h2 id="chapter-xxxvii-eastern-mythology-zoroaster-hindu-mythology-castes-buddha-grand-lama">Chapter XXXVII: Eastern Mythology — Zoroaster — Hindu Mythology — Castes — Buddha — Grand Lama</h2>
 <h4>Zoroaster</h4>
 <p>Our knowledge of the religion of the ancient Persians is principally derived from the Zendavesta, or sacred books of that people. Zoroaster was the founder of their religion, or rather the reformer of the religion which preceded him. The time when he lived is doubtful, but it is certain that his system became the dominant religion of Western Asia from the time of Cyrus (550 B.C.) to the conquest of Persia by Alexander the Great. Under the Macedonian monarchy the doctrines of Zoroaster appear to have been considerably corrupted by the introduction of foreign opinions, but they afterwards recovered their ascendency.</p>
@@ -3179,6 +3288,8 @@ figcaption {
 	Ercoco, and the less maritime kings,
 	Mombaza and Quiloa and Melind.”</pre>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-xxxviii-northern-mythology-valhalla-the-valkyrior">
 <h2 id="chapter-xxxviii-northern-mythology-valhalla-the-valkyrior">Chapter XXXVIII: Northern Mythology — Valhalla — the Valkyrior</h2>
 <h4>Northern Mythology</h4>
 <p>The stories which have engaged our attention thus far relate to the mythology of southern regions. But there is another branch of ancient superstitions which ought not to be entirely overlooked, especially as it belongs to the nations from which we, through our English ancestors, derive our origin. It is that of the northern nations, called Scandinavians, who inhabited the countries now known as Sweden, Denmark, Norway, and Iceland. These mythological records are contained in two collections called the Eddas, of which the oldest is in poetry and dates back to the year 1056, the more modern or prose Edda being of the date of 1640.</p>
@@ -3217,6 +3328,8 @@ figcaption {
 <p>So Frey obtained Gerda, the most beautiful of all women, for his wife, but he lost his sword.</p>
 <p>This story, entitled “Skirnir For,” and the one immediately preceding it, “Thrym’s Quida,” will be found poetically told in Longfellow’s “Poets and Poetry of Europe.”</p>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-xxxix-thor-s-visit-to-jotunheim">
 <h2 id="chapter-xxxix-thor-s-visit-to-jotunheim">Chapter XXXIX: Thor’s Visit to Jotunheim</h2>
 <h4>Thor’s Visit to Jotunheim, the Giant’s Country</h4>
 <p>One day the god Thor, with his servant Thialfi, and accompanied by Loki, set out on a journey to the giant’s country. Thialfi was of all men the swiftest of foot. He bore Thor’s wallet, containing their provisions. When night came on they found themselves in an immense forest, and searched on all sides for a place where they might pass the night, and at last came to a very large hall, with an entrance that took the whole breadth of one end of the building. Here they lay down to sleep, but towards midnight were alarmed by an earthquake which shook the whole edifice. Thor, rising up, called on his companions to seek with him a place of safety. On the right they found an adjoining chamber, into which the others entered, but Thor remained at the doorway with his mallet in his hand, prepared to defend himself, whatever might happen. A terrible groaning was heard during the night, and at dawn of day Thor went out and found lying near him a huge giant, who slept and snored in the way that had alarmed them so. It is said that for once Thor was afraid to use his mallet, and as the giant soon waked up, Thor contented himself with simply asking his name.</p>
@@ -3245,6 +3358,8 @@ figcaption {
 <p>“Nay,” said Utgard-Loki, “it behooves me to tell thee the truth, now thou art out of the city, which so long as I live and have my way thou shalt never enter again. And, by my troth, had I known beforehand that thou hadst so much strength in thee, and wouldst have brought me so near to a great mishap, I would not have suffered thee to enter this time. Know then that I have all along deceived thee by my illusions; first in the forest, where I tied up the wallet with iron wire so that thou couldst not untie it. After this thou gavest me three blows with thy mallet; the first, though the least, would have ended my days had it fallen on me, but I slipped aside and thy blows fell on the mountain, where thou wilt find three glens, one of them remarkably deep. These are the dints made by thy mallet. I have made use of similar illusions in the contests you have had with my followers. In the first, Loki, like hunger itself, devoured all that was set before him, but Logi was in reality nothing else than Fire, and therefore consumed not only the meat, but the trough which held it. Hugi, with whom Thialfi contended in running, was Thought, and it was impossible for Thialfi to keep pace with that. When thou in thy turn didst attempt to empty the horn, thou didst perform, by my troth, a deed so marvellous that had I not seen it myself I should never have believed it. For one end of that horn reached the sea, which thou wast not aware of, but when thou comest to the shore thou wilt perceive how much the sea has sunk by thy draughts. Thou didst perform a feat no less wonderful by lifting up the cat, and to tell thee the truth, when we saw that one of his paws was off the floor, we were all of us terror-stricken, for what thou tookest for a cat was in reality the Midgard serpent that encompasseth the earth, and he was so stretched by thee that he was barely long enough to enclose it between his head and tail. Thy wrestling with Elli was also a most astonishing feat, for there was never yet a man, nor ever will be, whom Old Age, for such in fact was Elli, will not sooner or later lay low. But now, as we are going to part, let me tell thee that it will be better for both of us if thou never come near me again, for shouldst thou do so, I shall again defend myself by other illusions, so that thou wilt only lose thy labor and get no fame from the contest with me.”</p>
 <p>On hearing these words Thor in a rage laid hold of his mallet and would have launched it at him, but Utgard-Loki had disappeared, and when Thor would have returned to the city to destroy it, he found nothing around him but a verdant plain.</p>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-xl-the-death-of-baldur-the-elves-runic-letters-iceland-teutonic-mythology-nibelungen-lied">
 <h2 id="chapter-xl-the-death-of-baldur-the-elves-runic-letters-iceland-teutonic-mythology-nibelungen-lied">Chapter XL: The Death of Baldur — the Elves — Runic Letters — Iceland — Teutonic Mythology — Nibelungen Lied</h2>
 <h4>The Death of Baldur</h4>
 <p>Baldur the Good, having been tormented with terrible dreams indicating that his life was in peril, told them to the assembled gods, who resolved to conjure all things to avert from him the threatened danger. Then Frigga, the wife of Odin, exacted an oath from fire and water, from iron and all other metals, from stones, trees, diseases, beasts, birds, poisons, and creeping things, that none of them would do any harm to Baldur. Odin, not satisfied with all this, and feeling alarmed for the fate of his son, determined to consult the prophetess Angerbode, a giantess, mother of Fenris, Hela, and the Midgard serpent. She was dead, and Odin was forced to seek her in Hela’s dominions. This Descent of Odin forms the subject of Gray’s fine ode beginning,—</p>
@@ -3334,6 +3449,8 @@ figcaption {
 <p>The Dusk of the Gods portrays at the opening the three norns or fates weaving and measuring the thread of destiny. It is the beginning of the end. The perfect pair, Siegfried and Brunhild, appear in all the glory of their life, splendid ideals of manhood and womanhood. But Siegfried goes out into the world to achieve deeds of prowess. He gives her the Nibelungen ring to keep as a pledge of his love till his return. Meanwhile Alberich also has begotten a son, Hagan, to achieve for him the possession of the ring. He is partly of the Gibichung race, and works through Günther and Gutrune, half-brother and half-sister to him. They beguile Siegfried to them, give him a magic draught which makes him forget Brunhild and fall in love with Gutrune. Under this same spell, he offers to bring Brunhild for wife to Günther. Now is Valhalla full of sorrow and despair. The gods fear the end. Wotan murmurs, “O that she would give back the ring to the Rhine.” But Brunhild will not give it up,—it is now her pledge of love. Siegfried comes, takes the ring, and Brunhild is now brought to the Rhine castle of the Gibichungs, but Siegfried under the spell does not love her. She is to be wedded to Günther. She rises in wrath and denounces Siegfried. But at a hunting banquet Siegfried is given another magic draught, remembers all, and is slain by Hagan by a blow in the back, as he calls on Brunhild’s name in love. Then comes the end. The body of Siegfried is burned on a funeral pyre, a grand funeral march is heard, and Brunhild rides into the flames and sacrifices herself for love’s sake; the ring goes back to the Rhine-daughters; and the old world—of the gods of Valhalla, of passion and sin—is burnt up with flames, for the gods have broken moral law, and coveted power rather than love, gold rather than truth, and therefore must perish. They pass, and a new era, the reign of love and truth, has begun.</p>
 <p>Those who wish to study the differences in the legends of the Nibelungen Lied and the Nibelungen Ring, and the way in which Wagner used this ancient material, are referred to Professor W. C. Sawyer’s book on “Teutonic Legends in the Nibelungen Lied and the Nibelungen Ring,” where the matter is treated in full detail. For a very thorough and clear analysis of the Ring as Wagner gives it, with a study of the musical motifs, probably nothing is better for general readers than the volume “The Epic of Sounds,” by Freda Winworth. The more scholarly work of Professor Lavignac is indispensable for the student of Wagner’s dramas. There is much illuminating comment on the sources and materials in “Legends of the Wagner Drama” by J. L. Weston.</p>
 <p>————</p>
+</section>
+<section aria-labelledby="chapter-xli-the-druids-iona">
 <h2 id="chapter-xli-the-druids-iona">Chapter XLI: The Druids — Iona</h2>
 <h4>Druids</h4>
 <p>The Druids were the priests or ministers of religion among the ancient Celtic nations in Gaul, Britain, and Germany. Our information respecting them is borrowed from notices in the Greek and Roman writers, compared with the remains of Welsh and Gaelic poetry still extant.</p>
@@ -3404,6 +3521,8 @@ figcaption {
 	Well hast thou done, frail child of clay!
 	Thy humble powers that stately shrine
 	Tasked high and hard—but witness mine!”</pre>
+</section>
+<section aria-labelledby="proverbial-expressions">
 <h2 id="proverbial-expressions">Proverbial Expressions</h2>
 <h4>No. 1. Chapter V</h4>
 <pre class="outline">	Materiem superabat opus.—Ovid.
@@ -3472,6 +3591,9 @@ figcaption {
 	Adspicit et moriens dulces reminiscitur Argos.—Virgil.</pre>
 <p>He falls, unhappy, by a wound intended for another; looks up to the skies, and dying remembers sweet Argos.</p>
 <h4>FOOTNOTES</h4>
+</section>
+</article>
+</main>
 
 </body>
 </html>

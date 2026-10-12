@@ -299,7 +299,10 @@ def main():
     (SITE / "restored.html").write_text(build_index.page_shell(
         "restored.html", "Restored Editions &mdash; Modern Classics",
         "Restored Editions", "The author&rsquo;s own words, properly presented",
-        "\n".join(out)))
+        "\n".join(out),
+        description="Restored editions of classic books: the author's own "
+                    "words, unchanged, with new captions, introductions and "
+                    "proper ebooks. Free to read online, from Emend Press."))
     print(f"wrote site/restored.html "
           f"({len(native)} edition(s), {len(companion)} companion(s))")
     return 0

@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Purgatorio &mdash; Dante Alighieri</title>
+	<meta name="description" content="The second book of the Comedy, where everyone is going to be saved and knows it — the dead embrace, tease, and ask after old friends. From the Italian, tercet for tercet. Retold in modern English, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/purgatorio.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="Purgatorio — Dante Alighieri">
+	<meta property="og:description" content="The second book of the Comedy, where everyone is going to be saved and knows it — the dead embrace, tease, and ask after old friends. From the Italian, tercet for tercet. Retold in modern English, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/purgatorio.html">
+	<meta property="og:image" content="https://emend.press/covers/share/purgatorio.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,28 +192,32 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>Purgatorio</h1>
-	<h3>The second book of the Divine Comedy, from the Italian: thirty-three cantos up the mountain, kept in Dante&#x27;s tercets and set in clear modern English</h3>
-	<h3>by Dante Alighieri</h3>
+	<p class="title-line">The second book of the Divine Comedy, from the Italian: thirty-three cantos up the mountain, kept in Dante&#x27;s tercets and set in clear modern English</p>
+	<p class="title-line">by Dante Alighieri</p>
 	<p class="center">
 	<s>c. 1308-1320</s> 2026
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is an AI modernization of Purgatorio into contemporary English. The original is available from <a href="https://www.gutenberg.org/ebooks/998">Project Gutenberg</a>. Also available as an <a href="ebooks/dante-alighieri_purgatorio.epub">epub</a>.</i></p>
 
 	<hr>
+<section aria-labelledby="editors-introduction">
 <h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
 <p>This is the middle book of the poem Dante Alighieri wrote in exile between about 1308 and his death in 1321. He had been condemned in Florence in 1302 and could not go back on pain of burning. The poem is in three parts, all of them in this collection: the Inferno goes down through Hell, the Purgatorio climbs a mountain, and the Paradiso goes out through the spheres. Each can be read on its own, and this one is the part that readers who know only the Inferno are most surprised by.</p>
 <p>Hell is a place where nothing can change. Purgatory is the opposite. Everyone on this mountain is going to be saved, knows it, and is being altered on the way up, so the suffering here — stones, sewn eyelids, smoke, fire, hunger — is entered willingly and has an end. Nobody argues his sentence. Seven terraces take the seven deadly sins in order, and Dante and Virgil climb them one at a time, stopping at nightfall because on this mountain you are not allowed to climb in the dark.</p>
 <p>That clock is the thing to watch. This is the only one of the three parts with weather and a time of day. There is a sunrise on the shore, three nights on the steps, three dreams before dawn, and a sun whose position Dante checks constantly. It is also the warmest of the three. The dead here embrace, tease, apologise, remember meals, and ask to be prayed for. A musician sings a love song Dante himself wrote and the whole crowd stands still to listen until an old man shouts at them to get moving. A Florentine sits behind a rock making fun of the climb.</p>
 <p>It is a poem about poets and about whether being good at anything is worth much. Dante keeps putting writers in front of the reader — one on the emptiness of fame, one converted by reading Virgil without Virgil ever knowing, one who names the new style Dante writes in. That thread pays off at the top of the mountain, where Virgil, who has brought him this far, has to stop.</p>
 <p>The translation is from the Italian and keeps the shape: thirty-three cantos, 4,755 lines, three-line stanzas in the same number and order. The rhyme is not attempted, because terza rima cannot cross into English without padding. The Latin is left as Latin, since the souls are singing it and it is meant to be heard as singing. One exception is logged: eight lines near the summit are in Provençal, and those are given in English, because there was no room to gloss them and a hole in the poem is worse than a lost surface.</p>
+</section>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <ul class="toc-list">
 <li><a href="#canto-one">Canto One</a></li>
@@ -224,8 +254,11 @@ figcaption {
 <li><a href="#canto-thirty-two">Canto Thirty-Two</a></li>
 <li><a href="#canto-thirty-three">Canto Thirty-Three</a></li>
 </ul>
+</nav>
 
 <hr>
+<article>
+<section aria-labelledby="canto-one">
 <h3 id="canto-one">Canto One</h3>
 <pre class="outline">	To run over better waters the little boat
 	of my talent hoists its sail now,
@@ -363,6 +396,8 @@ figcaption {
 	And here is the marvel: the humble plant
 	he chose grew again exactly as it was,</pre>
 <pre class="outline">	instantly, in the place where he had pulled it.</pre>
+</section>
+<section aria-labelledby="canto-two">
 <h3 id="canto-two">Canto Two</h3>
 <pre class="outline">	The sun had already reached the horizon
 	over Jerusalem, on the other side of the world,
@@ -497,6 +532,8 @@ figcaption {
 	leave the singing and make for the hillside,
 	like a man who goes without knowing where he comes out;</pre>
 <pre class="outline">	and we were no slower in leaving than they were.</pre>
+</section>
+<section aria-labelledby="canto-three">
 <h3 id="canto-three">Canto Three</h3>
 <pre class="outline">	Although that sudden flight
 	had scattered them across the plain,
@@ -643,6 +680,8 @@ figcaption {
 	telling my good Constance how you have seen me,
 	and about this ban as well;</pre>
 <pre class="outline">	for here we gain a great deal by the prayers of those over there.&quot;</pre>
+</section>
+<section aria-labelledby="canto-four">
 <h3 id="canto-four">Canto Four</h3>
 <pre class="outline">	When, through pleasure or through pain
 	that one of our faculties takes in,
@@ -783,6 +822,8 @@ figcaption {
 	and saying: &quot;Come now; you see the sun
 	is at its noon here, and on the far shore of the world</pre>
 <pre class="outline">	night is already setting its foot on Morocco.&quot;</pre>
+</section>
+<section aria-labelledby="canto-five">
 <h3 id="canto-five">Canto Five</h3>
 <pre class="outline">	I had already left those shades
 	and was following in my guide&#x27;s footsteps
@@ -920,6 +961,8 @@ figcaption {
 	Siena made me; Maremma unmade me:
 	he knows it, the husband who first put a ring on me</pre>
 <pre class="outline">	and married me with his jewel, and then had me killed.&quot;</pre>
+</section>
+<section aria-labelledby="canto-six">
 <h3 id="canto-six">Canto Six</h3>
 <pre class="outline">	When a game of dice breaks up,
 	the one who has lost stays behind unhappy,
@@ -1072,6 +1115,8 @@ figcaption {
 	you will see yourself like a sick woman
 	who can find no rest on the feathers,</pre>
 <pre class="outline">	but fends off her pain by turning over.</pre>
+</section>
+<section aria-labelledby="canto-seven">
 <h3 id="canto-seven">Canto Seven</h3>
 <pre class="outline">	After the dignified and joyful greetings
 	had been repeated three and four times,
@@ -1209,6 +1254,8 @@ figcaption {
 	looking upwards, is William, marquis of Monferrato,
 	whose capture by the town of Alessandria, and the war that followed,</pre>
 <pre class="outline">	set Monferrato and the Canavese weeping.&quot;</pre>
+</section>
+<section aria-labelledby="canto-eight">
 <h3 id="canto-eight">Canto Eight</h3>
 <pre class="outline">	It was already the hour that turns the longing
 	of men at sea and softens their hearts,
@@ -1349,6 +1396,8 @@ figcaption {
 	will be nailed into the middle of your head
 	with bigger nails than other men&#x27;s talk,</pre>
 <pre class="outline">	if the course of judgment does not stop.&quot;</pre>
+</section>
+<section aria-labelledby="canto-nine">
 <h3 id="canto-nine">Canto Nine</h3>
 <pre class="outline">	The dawn, the mistress of old Tithonus,
 	was already whitening the eastern balcony,
@@ -1495,6 +1544,8 @@ figcaption {
 	the impression one usually gets
 	when people are singing to an organ:</pre>
 <pre class="outline">	now you can make out the words and now you cannot.</pre>
+</section>
+<section aria-labelledby="canto-ten">
 <h3 id="canto-ten">Canto Ten</h3>
 <pre class="outline">	When we were inside the threshold of the gate
 	which the bad love of souls leaves unused,
@@ -1635,6 +1686,8 @@ figcaption {
 	according as they had more and less on their backs;
 	and the one who had the most patience in his bearing</pre>
 <pre class="outline">	seemed, weeping, to be saying: &quot;I can do no more.&quot;</pre>
+</section>
+<section aria-labelledby="canto-eleven">
 <h3 id="canto-eleven">Canto Eleven</h3>
 <pre class="outline">	&quot;Our Father, who are in the heavens,
 	not shut in there, but out of the greater love
@@ -1778,6 +1831,8 @@ figcaption {
 	but a short time will pass before your fellow citizens
 	teach you what begging is, and then you will be able to explain it.</pre>
 <pre class="outline">	That deed took those boundaries away from him.&quot;</pre>
+</section>
+<section aria-labelledby="canto-twelve">
 <h3 id="canto-twelve">Canto Twelve</h3>
 <pre class="outline">	Side by side, like oxen going in a yoke,
 	I went along with that loaded soul
@@ -1915,6 +1970,8 @@ figcaption {
 	I found only six of the letters
 	that the angel with the keys had cut on my forehead:</pre>
 <pre class="outline">	and looking at that, my guide smiled.</pre>
+</section>
+<section aria-labelledby="canto-thirteen">
 <h3 id="canto-thirteen">Canto Thirteen</h3>
 <pre class="outline">	We were at the top of the stairway,
 	where the mountain that cures whoever climbs it
@@ -2070,6 +2127,8 @@ figcaption {
 	who put their hopes in Talamone, their new harbour, and will lose
 	more hope there than in digging for the Diana, the lost underground river;</pre>
 <pre class="outline">	but the admirals of that harbour will lose most of all.&quot;</pre>
+</section>
+<section aria-labelledby="canto-fourteen">
 <h3 id="canto-fourteen">Canto Fourteen</h3>
 <pre class="outline">	&quot;Who is this man who goes round our mountain
 	before death has given him flight,
@@ -2222,6 +2281,8 @@ figcaption {
 	showing you its eternal beauties,
 	and your eye looks only at the ground;</pre>
 <pre class="outline">	so he who sees everything beats you.&quot;</pre>
+</section>
+<section aria-labelledby="canto-fifteen">
 <h3 id="canto-fifteen">Canto Fifteen</h3>
 <pre class="outline">	As much of the sky as the sun, which is always
 	playing about like a child, travels
@@ -2368,6 +2429,8 @@ figcaption {
 	towards us, as dark as night,
 	and there was nowhere to get out of its way.</pre>
 <pre class="outline">	It took our eyes and the clean air from us.</pre>
+</section>
+<section aria-labelledby="canto-sixteen">
 <h3 id="canto-sixteen">Canto Sixteen</h3>
 <pre class="outline">	The dark of Hell, and of a night stripped
 	of every planet, under a poor sky
@@ -2514,6 +2577,8 @@ figcaption {
 	and going white already, and I must leave
 	before I am seen by the angel, who is there.&quot;</pre>
 <pre class="outline">	So he turned back, and would not hear me any more.</pre>
+</section>
+<section aria-labelledby="canto-seventeen">
 <h3 id="canto-seventeen">Canto Seventeen</h3>
 <pre class="outline">	Remember, reader, if ever in the mountains
 	a fog caught you through which you could see
@@ -2654,6 +2719,8 @@ figcaption {
 	is wept for in three circles above us;
 	but how it is talked of as threefold</pre>
 <pre class="outline">	I keep quiet about, so that you may search it out yourself.&quot;</pre>
+</section>
+<section aria-labelledby="canto-eighteen">
 <h3 id="canto-eighteen">Canto Eighteen</h3>
 <pre class="outline">	The high teacher had put an end
 	to his reasoning, and was looking closely
@@ -2800,6 +2867,8 @@ figcaption {
 	and I wandered so from one to another
 	that I closed my eyes with the drifting,</pre>
 <pre class="outline">	and turned my thinking into a dream.</pre>
+</section>
+<section aria-labelledby="canto-nineteen">
 <h3 id="canto-nineteen">Canto Nineteen</h3>
 <pre class="outline">	At the hour before dawn, when the day&#x27;s heat
 	can no longer warm away the cold of the moon,
@@ -2946,6 +3015,8 @@ figcaption {
 	good in herself, so long as our house
 	does not make her wicked by its example;</pre>
 <pre class="outline">	and she alone is left me over there.&quot;</pre>
+</section>
+<section aria-labelledby="canto-twenty">
 <h3 id="canto-twenty">Canto Twenty</h3>
 <pre class="outline">	Will fights badly against a better will;
 	so, against my own pleasure, to please him,
@@ -3098,6 +3169,8 @@ figcaption {
 	and I did not dare to ask, because of the hurry,
 	nor could I see anything there by myself:</pre>
 <pre class="outline">	so I went on, timid and full of thought.</pre>
+</section>
+<section aria-labelledby="canto-twenty-one">
 <h3 id="canto-twenty-one">Canto Twenty-One</h3>
 <pre class="outline">	The natural thirst for knowledge that is never satisfied
 	except with the living water the poor Samaritan woman
@@ -3235,6 +3308,8 @@ figcaption {
 	how great is the love that warms me towards you,
 	when I forget our emptiness</pre>
 <pre class="outline">	and treat shades as if they were solid things.&quot;</pre>
+</section>
+<section aria-labelledby="canto-twenty-two">
 <h3 id="canto-twenty-two">Canto Twenty-Two</h3>
 <pre class="outline">	The angel was already left behind us,
 	the angel who had turned us to the sixth circle,
@@ -3390,6 +3465,8 @@ figcaption {
 	that fed the Baptist in the desert;
 	and so he is glorious and as great</pre>
 <pre class="outline">	as the Gospel makes plain to you.&quot;</pre>
+</section>
+<section aria-labelledby="canto-twenty-three">
 <h3 id="canto-twenty-three">Canto Twenty-Three</h3>
 <pre class="outline">	While I was driving my eyes through the green leaves,
 	the way a man does
@@ -3524,6 +3601,8 @@ figcaption {
 	and I pointed to him — &quot;and this other is that shade
 	for whom just now every slope of your kingdom</pre>
 <pre class="outline">	shook, as it let him out of itself.&quot;</pre>
+</section>
+<section aria-labelledby="canto-twenty-four">
 <h3 id="canto-twenty-four">Canto Twenty-Four</h3>
 <pre class="outline">	Neither did the talking make the walking slower,
 	nor the walking the talking, but we went on
@@ -3679,6 +3758,8 @@ figcaption {
 	lights that the love of taste does not smoke up
 	too much longing in their breasts,</pre>
 <pre class="outline">	but who hunger always for what is just!&quot;</pre>
+</section>
+<section aria-labelledby="canto-twenty-five">
 <h3 id="canto-twenty-five">Canto Twenty-Five</h3>
 <pre class="outline">	It was an hour when the climb allowed no dawdling,
 	for the sun had left the circle of noon
@@ -3819,6 +3900,8 @@ figcaption {
 	for all the time the fire burns them:
 	with such care and with such food</pre>
 <pre class="outline">	the wound must be sewn up at the last.</pre>
+</section>
+<section aria-labelledby="canto-twenty-six">
 <h3 id="canto-twenty-six">Canto Twenty-Six</h3>
 <pre class="outline">	While we went along the edge like that,
 	one in front of another, and the good master
@@ -3968,6 +4051,8 @@ figcaption {
 	which guides you to the top of the stairway,
 	remember my pain at the right time!&quot;</pre>
 <pre class="outline">	Then he hid himself in the fire that refines them.</pre>
+</section>
+<section aria-labelledby="canto-twenty-seven">
 <h3 id="canto-twenty-seven">Canto Twenty-Seven</h3>
 <pre class="outline">	As the sun stands when it shoots its first rays
 	over Jerusalem, where its maker shed his blood,
@@ -4111,6 +4196,8 @@ figcaption {
 	Your judgment is free, upright and whole,
 	and it would be a fault not to act on its will:</pre>
 <pre class="outline">	so I crown and mitre you over yourself.&quot;</pre>
+</section>
+<section aria-labelledby="canto-twenty-eight">
 <h3 id="canto-twenty-eight">Canto Twenty-Eight</h3>
 <pre class="outline">	Eager now to search inside and about
 	the divine forest, thick and living,
@@ -4260,6 +4347,8 @@ figcaption {
 	to my poets, and saw that they had heard
 	the last conclusion with a smile;</pre>
 <pre class="outline">	then I turned my face back to the beautiful lady.</pre>
+</section>
+<section aria-labelledby="canto-twenty-nine">
 <h3 id="canto-twenty-nine">Canto Twenty-Nine</h3>
 <pre class="outline">	Singing like a woman in love,
 	she went on, at the end of her words:
@@ -4415,6 +4504,8 @@ figcaption {
 	a thunderclap was heard, and those worthy people
 	seemed to be forbidden to go further,</pre>
 <pre class="outline">	stopping there with the leading standards.</pre>
+</section>
+<section aria-labelledby="canto-thirty">
 <h3 id="canto-thirty">Canto Thirty</h3>
 <pre class="outline">	When the seven candlesticks, the seven stars of the highest heaven,
 	which never knew setting or rising
@@ -4561,6 +4652,8 @@ figcaption {
 	if Lethe were crossed and such food
 	were tasted without any payment</pre>
 <pre class="outline">	of repentance that sheds tears.&quot;</pre>
+</section>
+<section aria-labelledby="canto-thirty-one">
 <h3 id="canto-thirty-one">Canto Thirty-One</h3>
 <pre class="outline">	&quot;Oh you who are on the other side of the holy river,&quot;
 	turning the point of her speech towards me,
@@ -4707,6 +4800,8 @@ figcaption {
 	trying to render you as you appeared there,
 	where the sky in its harmony overshadowed you,</pre>
 <pre class="outline">	when you unveiled yourself in the open air?</pre>
+</section>
+<section aria-labelledby="canto-thirty-two">
 <h3 id="canto-thirty-two">Canto Thirty-Two</h3>
 <pre class="outline">	My eyes were so fixed and intent
 	on slaking their ten years&#x27; thirst
@@ -4868,6 +4963,8 @@ figcaption {
 	he untied the monster and dragged it off through the wood,
 	so far that he made a shield of the trees alone</pre>
 <pre class="outline">	between me and the whore and the new beast.</pre>
+</section>
+<section aria-labelledby="canto-thirty-three">
 <h3 id="canto-thirty-three">Canto Thirty-Three</h3>
 <pre class="outline">	&quot;Deus, venerunt gentes&quot;, O God, the heathen have come into your inheritance,
 	now three of them and now four, alternating the sweet psalm,
@@ -5014,6 +5111,9 @@ figcaption {
 	made new again, as new plants are
 	renewed with new leaves,</pre>
 <pre class="outline">	pure and ready to rise to the stars.</pre>
+</section>
+</article>
+</main>
 
 </body>
 </html>

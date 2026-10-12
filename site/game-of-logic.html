@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>The Game of Logic &mdash; Lewis Carroll</title>
+	<meta name="description" content="Logic as a board game with red and grey counters, the rulebook for the card that came in its envelope. A restored edition, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/game-of-logic.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="The Game of Logic — Lewis Carroll">
+	<meta property="og:description" content="Logic as a board game with red and grey counters, the rulebook for the card that came in its envelope. A restored edition, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/game-of-logic.html">
+	<meta property="og:image" content="https://emend.press/covers/share/game-of-logic.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,26 +192,30 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>The Game of Logic</h1>
-	<h3>by Lewis Carroll</h3>
+	<p class="title-line">by Lewis Carroll</p>
 	<p class="center">
 	1887
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is a restored edition of The Game of Logic: the author's own words, unchanged. Every plate carries a caption and alt text written for this edition, beginning with the label the book printed. The original is available from <a href="https://www.gutenberg.org/ebooks/4763">Project Gutenberg</a>. Also available as an <a href="ebooks/lewis-carroll_the-game-of-logic.epub">epub</a>. <a href="restored.html">More restored editions</a>.</i></p>
 
 	<hr>
+<section aria-labelledby="editors-introduction">
 <h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
 <p>Lewis Carroll was the pen name of Charles Dodgson, a mathematics lecturer at Christ Church, Oxford, and the author of Alice&#x27;s Adventures in Wonderland. The Game of Logic was his first attempt to teach logic to children. It was first printed in 1886 and published by Macmillan in 1887, and every copy came with an envelope holding a card board and nine counters, four red and five grey. The book is the rulebook for that board.</p>
 <p>The idea is simple and was new. A proposition such as &quot;Some new Cakes are nice&quot; is shown by putting a counter on a square divided into compartments: the upper half holds the new Cakes, the left half the nice ones, and so on. A red counter means there is at least one thing in that compartment, a grey counter means there is none, and a counter placed on a dividing line means there is something on one side or the other. Two propositions laid out on the larger board, with its inner square for a third attribute, can then be read off to give a conclusion. That is a syllogism, found by moving counters instead of by memorising rules. Carroll worked the method out more fully in Symbolic Logic, which this collection also has in both a retelling and his original text.</p>
 <p>He wrote it for children and never talks down to them. The Cakes are new or old, nice or not-nice; the examples include dragons, crocodiles, lobsters and a man who asks how many strawberries grow in the sea. The second chapter asks questions and the third answers them, so a reader can test himself and then look. The last chapter, Hit or Miss, is a long list of pairs of premisses for practice, some of which lead to no conclusion at all.</p>
 <p>This is a restored edition, and the words are Carroll&#x27;s. The text is Project Gutenberg&#x27;s, checked against two scans of the 1887 printing, which corrected about a dozen words the transcription had changed or dropped. Carroll&#x27;s italics, which the transcription had turned into capitals, are restored with the case the print gives them. The diagrams were set in type in 1887, and they are redrawn here from the transcription and checked one by one against the printed page. Each has a description for readers who cannot see it. Where Carroll sends the reader to a page for an answer, the reference now names the section. The practice sentences are reproduced as he printed them, including several about Jews and Gentiles.</p>
+</section>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p><a href="#frontispiece">Frontispiece</a></p>
 <p><a href="#dedication">Dedication</a></p>
@@ -197,8 +227,11 @@ figcaption {
 <li><a href="#chapter-iii-crooked-answers">Chapter III: Crooked Answers</a></li>
 <li><a href="#chapter-iv-hit-or-miss">Chapter IV: Hit or Miss</a></li>
 </ul>
+</nav>
 
 <hr>
+<article>
+<section aria-labelledby="frontispiece">
 <h2 id="frontispiece">Frontispiece</h2>
 <figure id="fig-aa">
 <img src="images/game-of-logic/figaa.png" alt="The larger Diagram, empty: outer compartments 9, 10, 15 and 16 around a central Square for m holding 11, 12, 13 and 14, lettered x, x&#x27;, y, y&#x27;." width="342" height="358" loading="lazy">
@@ -213,6 +246,8 @@ figcaption {
 <img src="images/game-of-logic/figab.png" alt="The smaller Diagram, empty: compartments 5 and 6 above, 7 and 8 below, with x above the cross, x&#x27; below, y left and y&#x27; right." width="230" height="254" loading="lazy">
 <figcaption>The smaller Diagram, empty: compartments 5 and 6 above, 7 and 8 below, with x above the cross, x&#x27; below, y left and y&#x27; right.</figcaption>
 </figure>
+</section>
+<section aria-labelledby="dedication">
 <h2 id="dedication">Dedication</h2>
 <pre class="outline">	To my Child-friend.</pre>
 <pre class="outline">	I charm in vain; for never again,
@@ -233,15 +268,21 @@ figcaption {
 	Adown its willowy way:
 	May no sigh vex, no care perplex,
 	My loving little friend!</pre>
+</section>
+<section aria-labelledby="nota-bene">
 <h2 id="nota-bene">Nota Bene</h2>
 <p>With each copy of this Book is given an Envelope, containing a Diagram (similar to the frontispiece) on card, and nine Counters, four red and five grey.</p>
 <p>The Envelope, &amp;c. can be had separately, at 3d. each.</p>
 <p>The Author will be very grateful for suggestions, especially from beginners in Logic, of any alterations, or further explanations, that may seem desirable. Letters should be addressed to him at &quot;29, Bedford Street, Covent Garden, London.&quot;</p>
+</section>
+<section aria-labelledby="preface">
 <h2 id="preface">Preface</h2>
 <pre class="outline">	&quot;There foam&#x27;d rebellious Logic, gagg&#x27;d and bound.&quot;</pre>
 <p>This Game requires nine Counters—four of one colour and five of another: say four red and five grey.</p>
 <p>Besides the nine Counters, it also requires one Player, <em>at least</em>. I am not aware of any Game that can be played with <em>less</em> than this number: while there are several that require <em>more</em>: take Cricket, for instance, which requires twenty-two. How much easier it is, when you want to play a Game, to find <em>one</em> Player than twenty-two. At the same time, though one Player is enough, a good deal more amusement may be got by two working at it together, and correcting each other&#x27;s mistakes.</p>
 <p>A second advantage, possessed by this Game, is that, besides being an endless source of amusement (the number of arguments, that may be worked by it, being infinite), it will give the Players a little instruction as well. But is there any great harm in <em>that</em>, so long as you get plenty of amusement?</p>
+</section>
+<section aria-labelledby="chapter-i-new-lamps-for-old">
 <h3 id="chapter-i-new-lamps-for-old">Chapter I: New Lamps for Old</h3>
 <pre class="outline">	&quot;Light come, light go.&quot;</pre>
 <h4>§ 1. Propositions</h4>
@@ -600,6 +641,8 @@ figcaption {
 <p>&quot;But why is this?&quot; you will say. &quot;Do you mean to tell us that all these Logicians are wrong?&quot; Far from it, dear Reader! From <em>their</em> point of view, they are perfectly right. But they do not include, in their system, anything like <em>all</em> the possible forms of Syllogisms.</p>
 <p>They have a sort of nervous dread of Attributes beginning with a negative particle. For example, such Propositions as &quot;All not-x are y,&quot; &quot;No x are not-y,&quot; are quite outside their system. And thus, having (from sheer nervousness) excluded a quantity of very useful forms, they have made rules which, though quite applicable to the few forms which they allow of, are no use at all when you consider all possible forms.</p>
 <p>Let us not quarrel with them, dear Reader! There is room enough in the world for both of us. Let us quietly take our broader system: and, if they choose to shut their eyes to all these useful forms, and to say &quot;They are not Syllogisms at all!&quot; we can but stand aside, and let them Rush upon their Fate! There is scarcely anything of yours, upon which it is so dangerous to Rush, as your Fate. You may Rush upon your Potato-beds, or your Strawberry-beds, without doing much harm: you may even Rush upon your Balcony (unless it is a new house, built by contract, and with no clerk of the works) and may survive the foolhardy enterprise: but if you once Rush upon your <em>Fate</em>—why, you must take the consequences!</p>
+</section>
+<section aria-labelledby="chapter-ii-cross-questions">
 <h3 id="chapter-ii-cross-questions">Chapter II: Cross Questions</h3>
 <pre class="outline">	&quot;The Man in the Wilderness asked of me
 	 &#x27;How many strawberries grow in the sea?&#x27;&quot;</pre>
@@ -986,6 +1029,8 @@ figcaption {
 <p>31. There are no fish that cannot swim; Some skates are fish.</p>
 <p>32. All passionate people are unreasonable; Some orators are passionate.</p>
 <p>[See Chapter III, § 7]</p>
+</section>
+<section aria-labelledby="chapter-iii-crooked-answers">
 <h3 id="chapter-iii-crooked-answers">Chapter III: Crooked Answers</h3>
 <pre class="outline">	&quot;I answered him, as I thought good,
 	 &#x27;As many as red-herrings grow in the wood&#x27;.&quot;</pre>
@@ -1771,6 +1816,8 @@ figcaption {
 	Some y are m.</pre>
 <pre class="outline">	i.e.  Some orators are unreasonable.</pre>
 <p>[See remarks on No. 7, p. 60.]</p>
+</section>
+<section aria-labelledby="chapter-iv-hit-or-miss">
 <h3 id="chapter-iv-hit-or-miss">Chapter IV: Hit or Miss</h3>
 <pre class="outline">	&quot;Thou canst not hit it, hit it, hit it,
 	 Thou canst not hit it, my good man.&quot;</pre>
@@ -1908,6 +1955,9 @@ figcaption {
 <p>It is supposed to be spoken by a fond mother, in answer to a friend&#x27;s cautious suggestion that she is perhaps a <em>little</em> overdoing it, in the way of lessons, with her children.</p>
 <p>101. &quot;Well, they&#x27;ve got their own way to make in the world. <em>We</em> can&#x27;t leave them a fortune apiece. And money&#x27;s not to be had, as <em>you</em> know, without money&#x27;s worth: they must <em>work</em> if they want to live. And how are they to work, if they don&#x27;t know anything? Take my word for it, there&#x27;s no place for ignorance in <em>these</em> times! And all authorities agree that the time to learn is when you&#x27;re young. One&#x27;s got no memory afterwards, worth speaking of. A child will learn more in an hour than a grown man in five. So those, that have to learn, must learn when they&#x27;re young, if ever they&#x27;re to learn at all. Of course that doesn&#x27;t do unless children are <em>healthy</em>: I quite allow <em>that</em>. Well, the doctor tells me no children are healthy unless they&#x27;ve got a good colour in their cheeks. And only just look at my darlings! Why, their cheeks bloom like peonies! Well, now, they tell me that, to keep children in health, you should never give them more than six hours altogether at lessons in the day, and at least two half-holidays in the week. And that&#x27;s <em>exactly</em> our plan I can assure you! We never go beyond six hours, and every Wednesday and Saturday, as ever is, not one syllable of lessons do they do after their one o&#x27;clock dinner! So how you can imagine I&#x27;m running any risk in the education of my precious pets is more than I can understand, I promise you!&quot;</p>
 <p><em>THE END</em>.</p>
+</section>
+</article>
+</main>
 
 </body>
 </html>

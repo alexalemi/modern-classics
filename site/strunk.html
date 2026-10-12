@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>The Elements of Style &mdash; William Strunk Jr.</title>
+	<meta name="description" content="Eighteen numbered rules, the words most often misused, and every faulty sentence beside its correction. The 1920 text, before the later revisions. A restored edition, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/strunk.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="The Elements of Style — William Strunk Jr.">
+	<meta property="og:description" content="Eighteen numbered rules, the words most often misused, and every faulty sentence beside its correction. The 1920 text, before the later revisions. A restored edition, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/strunk.html">
+	<meta property="og:image" content="https://emend.press/covers/share/strunk.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,27 +192,31 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>The Elements of Style</h1>
-	<h3>by William Strunk Jr.</h3>
+	<p class="title-line">by William Strunk Jr.</p>
 	<p class="center">
 	1920
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is a restored edition of The Elements of Style: the author's own words, unchanged. The original is available from <a href="https://www.gutenberg.org/ebooks/37134">Project Gutenberg</a>. Also available as an <a href="ebooks/william-strunk-jr_the-elements-of-style.epub">epub</a>. <a href="restored.html">More restored editions</a>.</i></p>
 
 	<hr>
+<section aria-labelledby="editors-introduction">
 <h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
 <p>William Strunk Jr. (1869–1946) taught English at Cornell University for more than forty years. In 1918 he had a short handbook printed at his own expense for the students in his composition course, and revised it the following year. This edition reproduces the version Harcourt, Brace and Howe published in New York in 1920, which carries both of those earlier copyrights on its back. It is Strunk&#x27;s book alone. The version most readers know is a later one, revised and enlarged in 1959 by E. B. White, who had been one of his students at Cornell in 1919.</p>
 <p>The book is short because Strunk thought a short book was the only kind a student would use. He explains in the first chapter that it gives three rules for the comma instead of a score or more, and one for the semicolon, because those four cover nearly every sentence a student will write. The rest, he says, is better learned from an instructor looking at the student&#x27;s own work. What follows is a chapter of rules for usage, a chapter of principles of composition, a few matters of form, an alphabetical list of words and expressions commonly misused, a list of words often misspelled, and a set of exercises. The rules are numbered so that a teacher could write a number in the margin of a paper instead of an explanation. Rule 13 is &quot;Omit needless words.&quot;</p>
 <p>Most of the teaching is done by examples, and many of them come in pairs: a faulty sentence and the same sentence put right. Strunk also quotes Stevenson, Hazlitt, Browning, Wordsworth and Coleridge, whose Ancient Mariner appears in the exercises in two versions, from 1798 and 1800, to show what punctuation can change.</p>
 <p>A few things will read as dated. The writer is always &quot;he.&quot; Some spellings have changed since 1920, such as &quot;to-day.&quot; A few of the usages Strunk objects to are now standard. His reading list in the first chapter names style manuals of his day. These are part of the book&#x27;s record of its time and are left as he wrote them.</p>
 <p>This is a restored edition, and Strunk&#x27;s words are unchanged. In the printed book the paired examples stand in two columns, the fault on the left. A page that reflows has no columns, so each pair is set here as two lines, the fault first and the correction beneath it. The entries of the fourth and fifth chapters, printed in bold, are set in italic. Each numbered rule has its own heading, so the rules can be found from the Contents. Nine misprints corrected by the Project Gutenberg transcribers stay corrected. The text was compared word by word with a scan of Cornell&#x27;s copy of the 1920 printing, which is the copy that transcription was made from. The edition also adds modern typesetting, an ebook, and this introduction.</p>
+</section>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p><a href="#i-introductory">I. Introductory</a></p>
 <p class="toc-book">II. Elementary Rules of Usage</p>
@@ -217,15 +247,21 @@ figcaption {
 <p><a href="#v-words-and-expressions-commonly-misused">V. Words and Expressions Commonly Misused</a></p>
 <p><a href="#vi-spelling">VI. Spelling</a></p>
 <p><a href="#vii-exercises-on-chapters-ii-and-iii">VII. Exercises on Chapters II and III</a></p>
+</nav>
 
 <hr>
+<article>
+<section aria-labelledby="i-introductory">
 <h2 id="i-introductory">I. Introductory</h2>
 <p>This book aims to give in brief space the principal requirements of plain English style. It aims to lighten the task of instructor and student by concentrating attention (in Chapters II and III) on a few essentials, the rules of usage and principles of composition most commonly violated. In accordance with this plan it lays down three rules for the use of the comma, instead of a score or more, and one for the use of the semicolon, in the belief that these four rules provide for all the internal punctuation that is required by nineteen sentences out of twenty. Similarly, it gives in Chapter III only those principles of the paragraph and the sentence which are of the widest application. The book thus covers only a small portion of the field of English style. The experience of its writer has been that once past the essentials, students profit most by individual instruction based on the problems of their own work, and that each instructor has his own body of theory, which he may prefer to that offered by any textbook.</p>
 <p>The numbers of the sections may be used as references in correcting manuscript.</p>
 <p>The writer&#x27;s colleagues in the Department of English in Cornell University have greatly helped him in the preparation of his manuscript. Mr. George McLane Wood has kindly consented to the inclusion under Rule 10 of some material from his <em>Suggestions to Authors</em>.</p>
 <p>The following books are recommended for reference or further study: in connection with Chapters II and IV, F. Howard Collins, <em>Author and Printer</em> (Henry Frowde); Chicago University Press, <em>Manual of Style</em>; T. L. De Vinne, <em>Correct Composition</em> (The Century Company); Horace Hart, <em>Rules for Compositors and Printers</em> (Oxford University Press); George McLane Wood, <em>Extracts from the Style-Book of the Government Printing Office</em> (United States Geological Survey); in connection with Chapters III and V, <em>The King&#x27;s English</em> (Oxford University Press); Sir Arthur Quiller-Couch, <em>The Art of Writing</em> (Putnam), especially the chapter, Interlude on Jargon; George McLane Wood, <em>Suggestions to Authors</em> (United States Geological Survey); John Lesslie Hall, <em>English Usage</em> (Scott, Foresman and Co.); James P. Kelley, <em>Workmanship in Words</em> (Little, Brown and Co.). In these will be found full discussions of many points here briefly treated and an abundant store of illustrations to supplement those given in this book.</p>
 <p>It is an old observation that the best writers sometimes disregard the rules of rhetoric. When they do so, however, the reader will usually find in the sentence some compensating merit, attained at the cost of the violation. Unless he is certain of doing as well, he will probably do best to follow the rules. After he has learned, by their guidance, to write plain English adequate for everyday uses, let him look, for the secrets of style, to the study of the masters of literature.</p>
+</section>
+<section class="part" aria-labelledby="ii-elementary-rules-of-usage">
 <h2 id="ii-elementary-rules-of-usage" class="center">II. Elementary Rules of Usage</h2>
+<section aria-labelledby="1-form-the-possessive-singular-of-nouns-by-adding-s">
 <h3 id="1-form-the-possessive-singular-of-nouns-by-adding-s">1. Form the possessive singular of nouns by adding ’s.</h3>
 <p>Follow this rule whatever the final consonant. Thus write,</p>
 <pre class="outline">	Charles&#x27;s friend
@@ -237,6 +273,8 @@ figcaption {
 	the laws of Moses
 	the temple of Isis</pre>
 <p>The pronominal possessives <em>hers</em>, <em>its</em>, <em>theirs</em>, <em>yours</em>, and <em>oneself</em> have no apostrophe.</p>
+</section>
+<section aria-labelledby="2-in-a-series-of-three-or-more-terms-with-a-single-conjunction-use-a-comma-after-each-term-except-the-last">
 <h3 id="2-in-a-series-of-three-or-more-terms-with-a-single-conjunction-use-a-comma-after-each-term-except-the-last">2. In a series of three or more terms with a single conjunction, use a comma after each term except the last.</h3>
 <p>Thus write,</p>
 <pre class="outline">	red, white, and blue
@@ -245,6 +283,8 @@ figcaption {
 <p>This is also the usage of the Government Printing Office and of the Oxford University Press.</p>
 <p>In the names of business firms the last comma is omitted, as,</p>
 <pre class="outline">	Brown, Shipley &amp; Co.</pre>
+</section>
+<section aria-labelledby="3-enclose-parenthetic-expressions-between-commas">
 <h3 id="3-enclose-parenthetic-expressions-between-commas">3. Enclose parenthetic expressions between commas.</h3>
 <pre class="outline">	The best way to see a country, unless you are pressed for time, is to travel on foot.</pre>
 <p>This rule is difficult to apply; it is frequently hard to decide whether a single word, such as <em>however</em>, or a brief phrase, is or is not parenthetic. If the interruption to the flow of the sentence is but slight, the writer may safely omit the commas. But whether the interruption be slight or considerable, he must never insert one comma and omit the other. Such punctuation as</p>
@@ -275,6 +315,8 @@ figcaption {
 <pre class="outline">	Partly by hard fighting, partly by diplomatic skill, they enlarged their dominions to the east, and rose to royal rank with the possession of Sicily, exchanged afterwards for Sardinia.</pre>
 <p>Other illustrations may be found in sentences quoted under Rules 4, 5, 6, 7, 16, and 18.</p>
 <p>The writer should be careful not to set off independent clauses by commas: see under Rule 5.</p>
+</section>
+<section aria-labelledby="4-place-a-comma-before-a-conjunction-introducing-a-co-ordinate-clause">
 <h3 id="4-place-a-comma-before-a-conjunction-introducing-a-co-ordinate-clause">4. Place a comma before a conjunction introducing a co-ordinate clause.</h3>
 <pre class="outline">	The early records of the city have disappeared, and the story of its first years can no longer be reconstructed.
 	The situation is perilous, but there is still one chance of escape.</pre>
@@ -294,6 +336,8 @@ figcaption {
 <p>When the subject is the same for both clauses and is expressed only once, a comma is required if the connective is <em>but</em>. If the connective is <em>and</em>, the comma should be omitted if the relation between the two statements is close or immediate.</p>
 <pre class="outline">	I have heard his arguments, but am still unconvinced.
 	He has had several years&#x27; experience and is thoroughly competent.</pre>
+</section>
+<section aria-labelledby="5-do-not-join-independent-clauses-by-a-comma">
 <h3 id="5-do-not-join-independent-clauses-by-a-comma">5. Do not join independent clauses by a comma.</h3>
 <p>If two or more clauses, grammatically complete and not joined by a conjunction, are to form a single compound sentence, the proper mark of punctuation is a semicolon.</p>
 <pre class="outline">	Stevenson&#x27;s romances are entertaining; they are full of exciting adventures.
@@ -312,6 +356,8 @@ figcaption {
 <p>Note that in these examples the relation is not one of cause or consequence. Also in the colloquial form of expression,</p>
 <pre class="outline">	I hardly knew him, he was so changed,</pre>
 <p>a comma, not a semicolon, is required. But this form of expression is inappropriate in writing, except in the dialogue of a story or play, or perhaps in a familiar letter.</p>
+</section>
+<section aria-labelledby="6-do-not-break-sentences-in-two">
 <h3 id="6-do-not-break-sentences-in-two">6. Do not break sentences in two.</h3>
 <p>In other words, do not use periods for commas.</p>
 <pre class="outline">	I met them on a Cunard liner several years ago. Coming home from Liverpool to New York.
@@ -321,6 +367,8 @@ figcaption {
 <pre class="outline">	Again and again he called out. No reply.</pre>
 <p>The writer must, however, be certain that the emphasis is warranted, and that he will not be suspected of a mere blunder in syntax or in punctuation.</p>
 <p>Rules 3, 4, 5, and 6 cover the most important principles in the punctuation of ordinary sentences; they should be so thoroughly mastered that their application becomes second nature.</p>
+</section>
+<section aria-labelledby="7-a-participial-phrase-at-the-beginning-of-a-sentence-must-refer-to-the-grammatical-subject">
 <h3 id="7-a-participial-phrase-at-the-beginning-of-a-sentence-must-refer-to-the-grammatical-subject">7. A participial phrase at the beginning of a sentence must refer to the grammatical subject.</h3>
 <pre class="outline">	Walking slowly down the road, he saw a woman accompanied by two children.</pre>
 <p>The word <em>walking</em> refers to the subject of the sentence, not to the woman. If the writer wishes to make it refer to the woman, he must recast the sentence:</p>
@@ -337,7 +385,11 @@ figcaption {
 <p>Sentences violating this rule are often ludicrous.</p>
 <pre class="outline">	Being in a dilapidated condition, I was able to buy the house very cheap.
 	Wondering irresolutely what to do next, the clock struck twelve.</pre>
+</section>
+</section>
+<section class="part" aria-labelledby="iii-elementary-principles-of-composition">
 <h2 id="iii-elementary-principles-of-composition" class="center">III. Elementary Principles of Composition</h2>
+<section aria-labelledby="8-make-the-paragraph-the-unit-of-composition-one-paragraph-to-each-topic">
 <h3 id="8-make-the-paragraph-the-unit-of-composition-one-paragraph-to-each-topic">8. Make the paragraph the unit of composition: one paragraph to each topic.</h3>
 <p>If the subject on which you are writing is of slight extent, or if you intend to treat it very briefly, there may be no need of subdividing it into topics. Thus a brief description, a brief summary of a literary work, a brief account of a single incident, a narrative merely outlining an action, the setting forth of a single idea, any one of these is best written in a single paragraph. After the paragraph has been written, examine it to see whether subdivision will not improve it.</p>
 <p>Ordinarily, however, a subject requires subdivision into topics, each of which should be made the subject of a paragraph. The object of treating each topic in a paragraph by itself is, of course, to aid the reader. The beginning of each paragraph is a signal to him that a new step in the development of the subject has been reached.</p>
@@ -365,6 +417,8 @@ figcaption {
 <p>In treating either of these last two subjects, the writer would probably find it necessary to subdivide one or more of the topics here given.</p>
 <p>As a rule, single sentences should not be written or printed as paragraphs. An exception may be made of sentences of transition, indicating the relation between the parts of an exposition or argument. Frequent exceptions are also necessary in textbooks, guidebooks, and other works in which many topics are treated briefly.</p>
 <p>In dialogue, each speech, even if only a single word, is a paragraph by itself; that is, a new paragraph begins with each change of speaker. The application of this rule, when dialogue and narrative are combined, is best learned from examples in well-printed works of fiction.</p>
+</section>
+<section aria-labelledby="9-as-a-rule-begin-each-paragraph-with-a-topic-sentence-end-it-in-conformity-with-the-beginning">
 <h3 id="9-as-a-rule-begin-each-paragraph-with-a-topic-sentence-end-it-in-conformity-with-the-beginning">9. As a rule, begin each paragraph with a topic sentence, end it in conformity with the beginning.</h3>
 <p>Again, the object is to aid the reader. The practice here recommended enables him to discover the purpose of each paragraph as he begins to read it, and to retain this purpose in mind as he ends it. For this reason, the most generally useful kind of paragraph, particularly in exposition and argument, is that in which</p>
 <p>(a) the topic sentence comes at or near the beginning;</p>
@@ -386,6 +440,8 @@ figcaption {
 	He picked up the heavy lamp from the table and began to explore.
 	Another flight of steps, and they emerged on the roof.</pre>
 <p>The brief paragraphs of animated narrative, however, are often without even this semblance of a topic sentence. The break between them serves the purpose of a rhetorical pause, throwing into prominence some detail of the action.</p>
+</section>
+<section aria-labelledby="10-use-the-active-voice">
 <h3 id="10-use-the-active-voice">10. Use the active voice.</h3>
 <p>The active voice is usually more direct and vigorous than the passive:</p>
 <pre class="outline">	I shall always remember my first visit to Boston.</pre>
@@ -421,6 +477,8 @@ figcaption {
 	Failing health compelled him to leave college.</pre>
 <pre class="outline">	It was not long before he was very sorry that he had said what he had.
 	He soon repented his words.</pre>
+</section>
+<section aria-labelledby="11-put-statements-in-positive-form">
 <h3 id="11-put-statements-in-positive-form">11. Put statements in positive form.</h3>
 <p>Make definite assertions. Avoid tame, colorless, hesitating, non-committal language. Use the word <em>not</em> as a means of denial or in antithesis, never as a means of evasion.</p>
 <pre class="outline">	He was not very often on time.
@@ -446,6 +504,8 @@ figcaption {
 	Not that I loved Caesar less, but Rome the more.</pre>
 <p>Negative words other than <em>not</em> are usually strong:</p>
 <pre class="outline">	The sun never sets upon the British flag.</pre>
+</section>
+<section aria-labelledby="12-use-definite-specific-concrete-language">
 <h3 id="12-use-definite-specific-concrete-language">12. Use definite, specific, concrete language.</h3>
 <p>Prefer the specific to the general, the definite to the vague, the concrete to the abstract.</p>
 <pre class="outline">	A period of unfavorable weather set in.
@@ -473,6 +533,8 @@ figcaption {
 <p>Herbert Spencer, from whose <em>Philosophy of Style</em> the preceding paragraph is quoted, illustrates the principle by the sentences:</p>
 <pre class="outline">	In proportion as the manners, customs, and amusements of a nation are cruel and barbarous, the regulations of their penal code will be severe.
 	In proportion as men delight in battles, bull-fights, and combats of gladiators, will they punish by hanging, burning, and the rack.</pre>
+</section>
+<section aria-labelledby="13-omit-needless-words">
 <h3 id="13-omit-needless-words">13. Omit needless words.</h3>
 <p>Vigorous writing is concise. A sentence should contain no unnecessary words, a paragraph no unnecessary sentences, for the same reason that a drawing should have no unnecessary lines and a machine no unnecessary parts. This requires not that the writer make all his sentences short, or that he avoid all detail and treat his subjects only in outline, but that he make every word tell.</p>
 <p>Many expressions in common use violate this principle:</p>
@@ -515,12 +577,16 @@ figcaption {
 	Encouraged by his wife, Macbeth achieved his ambition and realized the prediction of the witches by murdering Duncan and becoming king of Scotland in his place. (26 words.)</pre>
 <pre class="outline">	There were several less important courses, but these were the most important, and although they did not come every day, they came often enough to keep you in such a state of mind that you never knew what your next move would be. (43 words.)
 	These, the most important courses of all, came, if not daily, at least often enough to keep one under constant strain. (21 words.)</pre>
+</section>
+<section aria-labelledby="14-avoid-a-succession-of-loose-sentences">
 <h3 id="14-avoid-a-succession-of-loose-sentences">14. Avoid a succession of loose sentences:</h3>
 <p>This rule refers especially to loose sentences of a particular type, those consisting of two co-ordinate clauses, the second introduced by a conjunction or relative. Although single sentences of this type may be unexceptionable (see under Rule 4), a series soon becomes monotonous and tedious.</p>
 <p>An unskilful writer will sometimes construct a whole paragraph of sentences of this kind, using as connectives <em>and</em>, <em>but</em>, <em>so</em>, and less frequently, <em>who</em>, <em>which</em>, <em>when</em>, <em>where</em>, and <em>while</em>, these last in non-restrictive senses (see under Rule 3).</p>
 <pre class="outline">	The third concert of the subscription series was given last evening, and a large audience was in attendance. Mr. Edward Appleton was the soloist, and the Boston Symphony Orchestra furnished the instrumental music. The former showed himself to be an artist of the first rank, while the latter proved itself fully deserving of its high reputation. The interest aroused by the series has been very gratifying to the Committee, and it is planned to give a similar series annually hereafter. The fourth concert will be given on Tuesday, May 10, when an equally attractive programme will be presented.</pre>
 <p>Apart from its triteness and emptiness, the paragraph above is weak because of the structure of its sentences, with their mechanical symmetry and sing-song. Contrast with them the sentences in the paragraphs quoted under Rule 9, or in any piece of good English prose, as the preface (Before the Curtain) to <em>Vanity Fair</em>.</p>
 <p>If the writer finds that he has written a series of sentences of the type described, he should recast enough of them to remove the monotony, replacing them by simple sentences, by sentences of two clauses joined by a semicolon, by periodic sentences of two clauses, by sentences, loose or periodic, of three clauses—whichever best represent the real relations of the thought.</p>
+</section>
+<section aria-labelledby="15-express-co-ordinate-ideas-in-similar-form">
 <h3 id="15-express-co-ordinate-ideas-in-similar-form">15. Express co-ordinate ideas in similar form.</h3>
 <p>This principle, that of parallel construction, requires that expressions of similar content and function should be outwardly similar. The likeness of form enables the reader to recognize more readily the likeness of content and function. Familiar instances from the Bible are the Ten Commandments, the Beatitudes, and the petitions of the Lord&#x27;s Prayer.</p>
 <p>The unskillful writer often violates this principle, from a mistaken belief that he should constantly vary the form of his expressions. It is true that in repeating a statement in order to emphasize it he may have need to vary its form. For illustration, see the paragraph from Stevenson quoted under Rule 9. But apart from this, he should follow the principle of parallel construction.</p>
@@ -543,6 +609,8 @@ figcaption {
 	My objections are, first, that the measure is unjust; second, that it is unconstitutional.</pre>
 <p>See also the third example under Rule 12 and the last under Rule 13.</p>
 <p>It may be asked, what if a writer needs to express a very large number of similar ideas, say twenty? Must he write twenty consecutive sentences of the same pattern? On closer examination he will probably find that the difficulty is imaginary, that his twenty ideas can be classified in groups, and that he need apply the principle only within each group. Otherwise he had best avoid difficulty by putting his statements in the form of a table.</p>
+</section>
+<section aria-labelledby="16-keep-related-words-together">
 <h3 id="16-keep-related-words-together">16. Keep related words together.</h3>
 <p>The position of the words in a sentence is the principal means of showing their relationship. The writer must therefore, so far as possible, bring together the words, and groups of words, that are related in thought, and keep apart those which are not so related.</p>
 <p>The subject of a sentence and the principal verb should not, as a rule, be separated by a phrase or clause that can be transferred to the beginning.</p>
@@ -574,6 +642,8 @@ figcaption {
 	He found only two mistakes.</pre>
 <pre class="outline">	Major R. E. Joyce will give a lecture on Tuesday evening in Bailey Hall, to which the public is invited, on “My Experiences in Mesopotamia” at eight P. M.
 	On Tuesday evening at eight P. M., Major R. E. Joyce will give in Bailey Hall a lecture on “My Experiences in Mesopotamia.” The public is invited.</pre>
+</section>
+<section aria-labelledby="17-in-summaries-keep-to-one-tense">
 <h3 id="17-in-summaries-keep-to-one-tense">17. In summaries, keep to one tense.</h3>
 <p>In summarizing the action of a drama, the writer should always use the present tense. In summarizing a poem, story, or novel, he should preferably use the present, though he may use the past if he prefers. If the summary is in the present tense, antecedent action should be expressed by the perfect; if in the past, by the past perfect.</p>
 <pre class="outline">	An unforeseen chance prevents Friar John from delivering Friar Lawrence&#x27;s letter to Romeo. Meanwhile, owing to her father&#x27;s arbitrary change of the day set for her wedding, Juliet has been compelled to drink the potion on Tuesday night, with the result that Balthasar informs Romeo of her supposed death before Friar Lawrence learns of the non-delivery of the letter.</pre>
@@ -582,6 +652,8 @@ figcaption {
 <p>Apart from the exceptions noted, whichever tense the writer chooses, he should use throughout. Shifting from one tense to the other gives the appearance of uncertainty and irresolution (compare Rule 15).</p>
 <p>In presenting the statements or the thought of some one else, as in summarizing an essay or reporting a speech, the writer should avoid intercalating such expressions as “he said,” “he stated,” “the speaker added,” “the speaker then went on to say,” “the author also thinks,” or the like. He should indicate clearly at the outset, once for all, that what follows is summary, and then waste no words in repeating the notification.</p>
 <p>In notebooks, in newspapers, in handbooks of literature, summaries of one kind or another may be indispensable, and for children in primary schools it is a useful exercise to retell a story in their own words. But in the criticism or interpretation of literature the writer should be careful to avoid dropping into summary. He may find it necessary to devote one or two sentences to indicating the subject, or the opening situation, of the work he is discussing; he may cite numerous details to illustrate its qualities. But he should aim to write an orderly discussion supported by evidence, not a summary with occasional comment. Similarly, if the scope of his discussion includes a number of works, he will as a rule do better not to take them up singly in chronological order, but to aim from the beginning at establishing general conclusions.</p>
+</section>
+<section aria-labelledby="18-place-the-emphatic-words-of-a-sentence-at-the-end">
 <h3 id="18-place-the-emphatic-words-of-a-sentence-at-the-end">18. Place the emphatic words of a sentence at the end.</h3>
 <p>The proper place in the sentence for the word, or group of words, which the writer desires to make most prominent is usually the end.</p>
 <pre class="outline">	Humanity has hardly advanced in fortitude since that time, though it has advanced in many other ways.
@@ -600,6 +672,8 @@ figcaption {
 <p>the emphasis upon <em>kings</em> arises largely from its meaning and from the context. To receive special emphasis, the subject of a sentence must take the position of the predicate.</p>
 <pre class="outline">	Through the middle of the valley flowed a winding stream.</pre>
 <p>The principle that the proper place for what is to be made most prominent is the end applies equally to the words of a sentence, to the sentences of a paragraph, and to the paragraphs of a composition.</p>
+</section>
+<section aria-labelledby="iv-a-few-matters-of-form">
 <h2 id="iv-a-few-matters-of-form">IV. A Few Matters of Form</h2>
 <p><em>Headings.</em> Leave a blank line, or its equivalent in space, after the title or heading of a manuscript. On succeeding pages, if using ruled paper, begin on the first line.</p>
 <p><em>Numerals.</em> Do not spell out dates or other serial numbers. Write them in figures or in Roman notation, as may be appropriate.</p>
@@ -646,6 +720,8 @@ figcaption {
 <p>The student will do well to examine the syllable-division in a number of pages of any carefully printed book.</p>
 <p><em>Titles.</em> For the titles of literary works, scholarly usage prefers italics with capitalized initials. The usage of editors and publishers varies, some using italics with capitalized initials, others using Roman with capitalized initials and with or without quotation marks. Use italics (indicated in manuscript by underscoring), except in writing for a periodical that follows a different practice. Omit initial <em>A</em> or <em>The</em> from titles when you place the possessive before them.</p>
 <pre class="outline">	The <em>Iliad</em>; the <em>Odyssey</em>; <em>As You Like It</em>; <em>To a Skylark</em>; <em>The Newcomes</em>; <em>A Tale of Two Cities</em>; Dickens&#x27;s <em>Tale of Two Cities</em>.</pre>
+</section>
+<section aria-labelledby="v-words-and-expressions-commonly-misused">
 <h2 id="v-words-and-expressions-commonly-misused">V. Words and Expressions Commonly Misused</h2>
 <p>(Some of the forms here listed, as <em>like I did</em>, are downright bad English; others, as the split infinitive, have their defenders, but are in such general disfavor that it is at least inadvisable to use them; still others, as <em>case</em>, <em>factor</em>, <em>feature</em>, <em>interesting</em>, <em>one of the most</em>, are good in their place, but are constantly obtruding themselves into places where they have no right to be. If the writer will make it his purpose from the beginning to express accurately his own individual thought, and will refuse to be satisfied with a ready-made formula that saves him the trouble of doing so, this last set of expressions will cause him little trouble. But if he finds that in a moment of inadvertence he has used one of them, his proper course will probably be not to patch up the sentence by substituting one word or set of words for another, but to recast it completely, as illustrated in a number of examples below and in others under Rules 12 and 13.)</p>
 <p><em>All right.</em> Idiomatic in familiar speech as a detached phrase in the sense, “Agreed,” or “Go ahead.” In other uses better avoided. Always written as two words.</p>
@@ -846,6 +922,8 @@ figcaption {
 <p>To express habitual or repeated action, the past tense, without <em>would</em>, is usually sufficient, and from its brevity, more emphatic.</p>
 <pre class="outline">	Once a year he would visit the old mansion.
 	Once a year he visited the old mansion.</pre>
+</section>
+<section aria-labelledby="vi-spelling">
 <h2 id="vi-spelling">VI. Spelling</h2>
 <p>The spelling of English words is not fixed and invariable, nor does it depend on any other authority than general agreement. At the present day there is practically unanimous agreement as to the spelling of most words. In the list below, for example, <em>rime</em> for <em>rhyme</em> is the only allowable variation; all the other forms are co-extensive with the English language. At any given moment, however, a relatively small number of words may be spelled in more than one way. Gradually, as a rule, one of these forms comes to be generally preferred, and the less customary form comes to look obsolete and is discarded. From time to time new forms, mostly simplifications, are introduced by innovators, and either win their place or die of neglect.</p>
 <p>The practical objection to unaccepted and over-simplified spellings is the disfavor with which they are received by the reader. They distract his attention and exhaust his patience. He reads the form <em>though</em> automatically, without thought of its needless complexity; he reads the abbreviation <em>tho</em> and mentally supplies the missing letters, at the cost of a fraction of his attention. The writer has defeated his own purpose.</p>
@@ -918,6 +996,8 @@ figcaption {
 <p>Note that a single consonant (other than <em>v</em>) preceded by a stressed short vowel is doubled before <em>-ed</em> and <em>-ing</em>: <em>planned</em>, <em>letting</em>, <em>beginning</em>. (<em>Coming</em> is an exception.)</p>
 <p>Write <em>to-day</em>, <em>to-night</em>, <em>to-morrow</em> (but not <em>together</em>) with a hyphen.</p>
 <p>Write <em>any one</em>, <em>every one</em>, <em>some one</em>, <em>some time</em> (except in the sense of <em>formerly</em>) as two words.</p>
+</section>
+<section aria-labelledby="vii-exercises-on-chapters-ii-and-iii">
 <h2 id="vii-exercises-on-chapters-ii-and-iii">VII. Exercises on Chapters II and III</h2>
 <p>I. Punctuate:</p>
 <p>1. In 1788 the King&#x27;s advisers warned him that the nation was facing bankruptcy therefore he summoned a body called the States-General believing that it would authorize him to levy new taxes. The people of France however were suffering from burdensome taxation oppressive social injustice and acute scarcity of food and their representatives refused to consider projects of taxation until social and economic reforms should be granted. The King who did not realize the gravity of the situation tried to overawe them collecting soldiers in and about Versailles where the sessions were being held. The people of Paris seeing the danger organized militia companies to defend their representatives. In order to supply themselves with arms they attacked the Invalides and the Bastille which contained the principal supplies of arms and munitions in Paris.</p>
@@ -953,6 +1033,10 @@ figcaption {
 <p>23. It is not a strange sight to catch a glimpse of deer along the shore.</p>
 <p>24. Earnings from other sources are of such a favorable character as to enable a splendid showing to be made by the company.</p>
 <p>25. But while earnings have mounted amazingly, the status of affairs is such as to make it impossible to predict the course events may take, with any degree of accuracy.</p>
+</section>
+</section>
+</article>
+</main>
 
 </body>
 </html>

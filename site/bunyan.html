@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>The Pilgrim&#x27;s Progress &mdash; John Bunyan</title>
+	<meta name="description" content="The most famous journey in English — the Slough of Despond, Vanity Fair, and the key called Promise that was in his pocket all along. Both parts complete. Retold in modern English, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/bunyan.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="The Pilgrim&#x27;s Progress — John Bunyan">
+	<meta property="og:description" content="The most famous journey in English — the Slough of Despond, Vanity Fair, and the key called Promise that was in his pocket all along. Both parts complete. Retold in modern English, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/bunyan.html">
+	<meta property="og:image" content="https://emend.press/covers/share/bunyan.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,28 +192,32 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>The Pilgrim&#x27;s Progress</h1>
-	<h3>From This World to That Which Is to Come</h3>
-	<h3>by John Bunyan</h3>
+	<p class="title-line">From This World to That Which Is to Come</p>
+	<p class="title-line">by John Bunyan</p>
 	<p class="center">
 	<s>1678/1684</s> 2026
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is an AI modernization of The Pilgrim&#x27;s Progress into contemporary English. The original is available from <a href="https://standardebooks.org/ebooks/john-bunyan/the-pilgrims-progress">Standard Ebooks</a>. Also available as an <a href="ebooks/john-bunyan_the-pilgrims-progress.epub">epub</a>.</i></p>
 
 	<hr>
+<section aria-labelledby="editors-introduction">
 <h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
 <p>John Bunyan was a tinker&#x27;s son from a village outside Bedford, born in 1628, with a year or two of schooling and no other education at all. He served in the Parliamentary army as a teenager, came home, took up his father&#x27;s trade, and started preaching. After the monarchy was restored he was arrested for preaching without a licence and spent twelve years in Bedford jail, having refused several offers of release on condition that he stop. Part of this book was written there. The man sleeping in a den at the first sentence is Bunyan in prison, and that is the only thing in the volume a note explains.</p>
 <p>The first part came out in 1678 and the second in 1684. For the next two centuries it was the book an English-speaking Protestant household owned if it owned two books, the other being the Bible, and a great deal of English owes its shape to it — a slough of despond, a vanity fair, a hill called Difficulty, a giant named Despair.</p>
 <p>Most editions print only the first part. Both are here. Part One is a man alone: Christian leaves his city with his fingers in his ears so he cannot hear his wife and children calling him back, and everything that happens to him afterwards happens to him by himself, in terror. Part Two sends Christiana down the same road with four sons, a friend, a hired guide and a good deal of company, and its argument is the opposite one — that the weak all get across. Mr. Feeble-mind and Mr. Ready-to-halt on his crutches arrive. It is the warmer book and much the funnier, and it should not be read in the first part&#x27;s register.</p>
 <p>The difficulty for a modern reader is not the old words, because there are almost none. Bunyan wrote deliberately plain English for people like himself and his sentences are short. The difficulty is the ordinary-looking words that have moved. Conversation means conduct, not talk, and it occurs eleven times in Part One. Want means lack. Let means hinder. Prevent means go before, conceit means opinion, and a professor is someone who professes a faith. A reader trips on hath and knows something is wrong; the same reader takes conversation for chat and comes away confident and mistaken.</p>
 <p>Bunyan&#x27;s opinions are his own and are printed as he had them, including what happens to Ignorance, who walks the whole road, and the jokes at the expense of the Roman church.</p>
+</section>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p><a href="#the-author-s-apology-for-his-book">The Author&#x27;s Apology for His Book</a></p>
 <p class="toc-book">Part One: Christian</p>
@@ -230,8 +260,11 @@ figcaption {
 <p><a href="#the-enchanted-ground-2">The Enchanted Ground</a></p>
 <p><a href="#mr-stand-fast-and-madam-bubble">Mr. Stand-fast and Madam Bubble</a></p>
 <p><a href="#the-land-of-beulah">The Land of Beulah</a></p>
+</nav>
 
 <hr>
+<article>
+<section aria-labelledby="the-author-s-apology-for-his-book">
 <h2 id="the-author-s-apology-for-his-book">The Author&#x27;s Apology for His Book</h2>
 <pre class="outline">	When I first took my pen in hand to write
 	like this, I did not for a moment think
@@ -470,7 +503,10 @@ figcaption {
 	by reading the very same lines? Oh, then come here,
 	and lay my book, your head, and your heart together.</pre>
 <h4>John Bunyan</h4>
+</section>
+<section class="part" aria-labelledby="part-one">
 <h2 id="part-one" class="center">Part One: Christian</h2>
+<section aria-labelledby="the-city-of-destruction">
 <h2 id="the-city-of-destruction">The City of Destruction</h2>
 <p>As I walked through the wilderness of this world, I came upon a certain place where there was a den, and I lay down in that place to sleep. And as I slept, I dreamed a dream. I dreamed, and look — &quot;I saw a man dressed in rags, standing in a certain place, his face turned away from his own house, a book in his hand, and a great burden on his back.&quot; I looked, and I saw him open the book and read in it; and as he read, he wept and shook; and at last, unable to hold it in any longer, he broke out in a miserable cry: &quot;What shall I do?&quot;</p>
 <p>[Note: the den is Bedford jail, where Bunyan wrote this book during the twelve years he spent in prison for preaching without a licence.]</p>
@@ -528,6 +564,8 @@ figcaption {
 <p>Christian. The Lord, the Governor of that country, has set it down in this book; and the sum of it is that if we are truly willing to have it, he will give it to us free.</p>
 <p>Pliable. Well, my good companion, I am glad to hear it. Come on, let us pick up the pace.</p>
 <p>Christian. I cannot go as fast as I would like, because of this burden on my back.</p>
+</section>
+<section aria-labelledby="the-slough-of-despond">
 <h2 id="the-slough-of-despond">The Slough of Despond</h2>
 <p>Now I saw in my dream that, just as they had finished this talk, they came up to a very muddy bog in the middle of the plain; and being careless, they both fell suddenly into it. The name of the bog was Despond. So there they floundered for a while, plastered all over with the filth of it; and Christian, because of the burden on his back, began to sink.</p>
 <p>Pliable. Then Pliable said: Well, neighbour Christian — where are you now?</p>
@@ -544,6 +582,8 @@ figcaption {
 <p>It is true that the Lawgiver has had a set of good, solid stepping stones laid right across the middle of the bog. But at the times when the place is throwing up its filth worst — as it does when the weather is on the turn — the steps can hardly be seen; and when they can, men get dizzy in the head and put a foot down beside them, and then they go in properly, steps or no steps. But the ground is good once they have got in at the gate.</p>
 <p>Now I saw in my dream that by this time Pliable had got home again, and his neighbours came round to see him. Some of them called him a wise man for turning back, and some called him a fool for risking himself with Christian at all; and others jeered at him for being a coward, saying, &quot;Well, if I had once set out, I would not have been so feeble as to give up over a few difficulties.&quot; So Pliable sat there among them, sheepish. But eventually he got his confidence back, and then they all changed their tune, and started sneering at poor Christian behind his back.</p>
 <p>And that is all there is to say about Pliable.</p>
+</section>
+<section aria-labelledby="mr-worldly-wiseman">
 <h2 id="mr-worldly-wiseman">Mr. Worldly-Wiseman</h2>
 <p>Now as Christian was walking along by himself, he caught sight of somebody a good way off, coming across the field towards him; and it happened that they met just where their paths crossed. The gentleman&#x27;s name was Mr. Worldly-Wiseman, and he lived in the town of Carnal Policy — a very large town, and close to the one Christian had come from. This man, meeting Christian, had some idea who he was, because Christian&#x27;s setting out from the City of Destruction had been much talked about, not only in the town where he lived but in a few other places as well, where it was becoming the talk of the town. So Master Worldly-Wiseman, having a fair guess about him from the labouring way he walked, and from his sighs and groans and the like, opened a conversation with him.</p>
 <p>Worldly-Wiseman. Well now, my good fellow — where are you off to, loaded up like that?</p>
@@ -605,6 +645,8 @@ figcaption {
 <p>Evangelist. Then Evangelist said to him: Your sin is very great, because by it you have done two wrong things — you have abandoned the good road in order to walk in forbidden paths. And yet the man at the gate will still receive you, because he has goodwill towards people. Only, said he, take care that you do not turn aside again, &quot;in case you perish from the way, when his anger is kindled but a little.&quot;</p>
 <p>Then Christian set himself to go back; and Evangelist, after he had kissed him, gave him one smile and wished him godspeed. So he hurried on, and did not speak to anybody on the road; nor, if anyone asked him a question, would he give them so much as an answer. He walked like a man who was treading the whole way on forbidden ground, and who could not think himself safe by any means until he had got back onto the road he had left to follow Mr. Worldly-Wiseman&#x27;s advice.</p>
 <p>So in the course of time Christian came up to the gate. And over the gate was written: &quot;Knock, and it shall be opened to you.&quot;</p>
+</section>
+<section aria-labelledby="the-wicket-gate">
 <h2 id="the-wicket-gate">The Wicket Gate</h2>
 <p>So he knocked, more than once or twice, saying:</p>
 <pre class="outline">	May I come in? Will the one inside
@@ -640,6 +682,8 @@ figcaption {
 <p>Then I saw in my dream that Christian asked him further whether he could not help him off with the burden on his back — because he still had not been rid of it, and there was no way he could get it off without help.</p>
 <p>Goodwill told him: as for your burden, be content to carry it until you come to the place of deliverance; for there it will fall off your back by itself.</p>
 <p>Then Christian began to tighten his belt and get himself ready for the road. So the other told him that when he had gone some distance on from the gate, he would come to the house of the Interpreter; and that he should knock at the door there, and the Interpreter would show him excellent things. Then Christian said goodbye to his friend, and his friend once more wished him godspeed.</p>
+</section>
+<section aria-labelledby="the-house-of-the-interpreter">
 <h2 id="the-house-of-the-interpreter">The House of the Interpreter</h2>
 <p>Then he went on until he came to the house of the Interpreter, where he knocked over and over. At last somebody came to the door and asked who was there.</p>
 <p>Christian. Sir, here is a traveller, who was told by a friend of the master of this house to call in here for his own good. I would like to speak with the master of the house.</p>
@@ -718,6 +762,8 @@ figcaption {
 	So let me think them over, and think them through,
 	and understand what they were shown me for —
 	and thank you, good Interpreter, once more.</pre>
+</section>
+<section aria-labelledby="the-cross-and-the-sepulchre">
 <h2 id="the-cross-and-the-sepulchre">The Cross and the Sepulchre</h2>
 <p>Now I saw in my dream that the road Christian had to go up was fenced on both sides with a wall, and that wall was called Salvation. So burdened Christian ran up this road — but not without great difficulty, because of the load on his back.</p>
 <p>He ran on like that until he came to a place where the ground rose a little; and on that rise stood a cross, and a little below it, at the bottom, a tomb. So I saw in my dream that just as Christian came level with the cross, his burden came loose from his shoulders and fell off his back, and began to roll, and went on rolling until it came to the mouth of the tomb, where it fell in; and I never saw it again.</p>
@@ -749,6 +795,8 @@ figcaption {
 <p>Christian. Laws and observances will not save you, since you did not come in by the door. And as for this coat on my back, it was given me by the Lord of the place I am going to — and given me, as you say, to cover my nakedness. I take it as a sign of his kindness to me, because I had nothing but rags before. And besides, I comfort myself with this as I go along: surely, I think, when I come to the gate of the city, the Lord of it will recognize me as one of his own, since I have his coat on my back — a coat he gave me the day he stripped me of my rags. What is more, I have a mark on my forehead, which perhaps you have not noticed, put there by one of my Lord&#x27;s closest companions on the day my burden fell off my shoulders. And I will tell you something else: I was given a sealed scroll that day, to comfort me by reading it as I go along the road, and I was told to hand it in at the Celestial Gate as proof that I am certainly to be let in.</p>
 <p>All of which, I suspect, you are without — and without because you did not come in at the gate.</p>
 <p>To all this they gave him no answer at all; they only looked at each other and laughed. Then I saw that they all went on, except that Christian kept ahead, and had nobody to talk to but himself — sometimes with a sigh and sometimes cheerfully. He would also often read in the scroll that one of the Shining Ones had given him, and it refreshed him.</p>
+</section>
+<section aria-labelledby="the-hill-difficulty">
 <h2 id="the-hill-difficulty">The Hill Difficulty</h2>
 <p>Then I watched them all go on until they came to the foot of the Hill Difficulty, at the bottom of which there was a spring. There were also two other roads in that same place, besides the one that came straight from the gate: one turned off to the left and the other to the right at the bottom of the hill. But the narrow road went straight up the hill, and the name of the climb up the hillside is Difficulty. Christian now went to the spring and drank from it to refresh himself, and then began to go up the hill, saying:</p>
 <pre class="outline">	The hill is high, and still I want to climb;
@@ -775,6 +823,8 @@ figcaption {
 <p>Oh, you sinful sleep! Because of you I am going to be caught by the dark on my journey. I have to walk without the sun; darkness will cover the path under my feet; and I shall have to listen to the noise of the dismal creatures — all because of my sinful sleep.</p>
 <p>And now he remembered too the story Mistrust and Timorous had told him, and how frightened they had been by the sight of the lions. So Christian said to himself again: These animals hunt at night. And if they were to come across me in the dark, how would I get away from them? How would I escape being torn to pieces by them?</p>
 <p>So he went on his way. But while he was still lamenting his unhappy mistake, he lifted up his eyes — and there in front of him was a very grand palace, whose name was Beautiful, standing right beside the road.</p>
+</section>
+<section aria-labelledby="the-house-beautiful">
 <h2 id="the-house-beautiful">The House Beautiful</h2>
 <p>So I saw in my dream that he hurried forward, hoping he might be able to get a bed there. Now before he had gone far he came into a very narrow passage, about a couple of hundred yards short of the porter&#x27;s lodge; and looking sharply ahead as he went, he spotted two lions in the road. Now, he thought, I see the dangers that drove Mistrust and Timorous back. (The lions were chained, but he could not see the chains.) Then he was afraid, and he thought of turning back after them himself, because it seemed to him there was nothing but death ahead.</p>
 <p>But the porter at the lodge, whose name is Watchful, seeing that Christian had stopped as though he meant to go back, called out to him: Is your strength as small as that? Do not be afraid of the lions — they are chained, and they are put there to test faith where there is any, and to expose those who have none. Keep to the middle of the path, and no harm will come to you.</p>
@@ -850,6 +900,8 @@ figcaption {
 <p>The next day they took him into the armoury, where they showed him every kind of equipment their Lord had provided for pilgrims: sword, shield, helmet, breastplate, the weapon of all-prayer, and shoes that would never wear out. And there was enough of it here to equip as many men for their Lord&#x27;s service as there are stars in the sky for number.</p>
 <p>They also showed him some of the instruments with which some of his servants had done extraordinary things. They showed him Moses&#x27; staff; the hammer and nail with which Jael killed Sisera; the pitchers, trumpets and lamps too, with which Gideon put the armies of Midian to flight. Then they showed him the ox-goad with which Shamgar killed six hundred men. They showed him as well the jawbone with which Samson did such mighty deeds. They showed him, further, the sling and the stone with which David killed Goliath of Gath; and also the sword with which their Lord will kill the Man of Sin, on the day he rises up to take his prey. And they showed him a great many other excellent things besides, which delighted Christian very much.</p>
 <p>When this was done, they went to their rest again.</p>
+</section>
+<section aria-labelledby="the-valley-of-humiliation-and-apollyon">
 <h2 id="the-valley-of-humiliation-and-apollyon">The Valley of Humiliation and Apollyon</h2>
 <p>Then I saw in my dream that the next morning he got up to go on; but they asked him to stay another day as well. And then, they said, if the day is clear we will show you the Delectable Mountains — which, they said, would add still further to his comfort, because they were nearer the harbour he was making for than the place where he was now. So he agreed, and stayed.</p>
 <p>When the morning came they took him to the top of the house and told him to look south. So he did — and there, a great way off, he saw a most beautiful mountainous country, made lovely with woods and vineyards and fruit of every kind, and flowers too, with springs and fountains, all delightful to look at. Then he asked the name of the country. They said it was Immanuel&#x27;s Land; and it is common ground, they said, just as this hill is, to all pilgrims. And when you get there, they said, from there you will be able to see as far as the gate of the Celestial City, as the shepherds who live there will show you.</p>
@@ -902,6 +954,8 @@ figcaption {
 <p>Then there came to him a hand, holding some of the leaves of the tree of life. Christian took them and put them on the wounds he had taken in the battle, and was healed immediately. He also sat down in that place to eat some bread and drink from the bottle that had been given him a little earlier. And so, refreshed, he set himself to his journey with his sword drawn in his hand; because he said, I do not know but that some other enemy may be close by. But he had no further trouble from Apollyon all the way through this valley.</p>
 <p>Now at the end of this valley there was another, the Valley of the Shadow of Death; and Christian had no choice but to go through it, because the road to the Celestial City lay right through the middle of it. Now this valley is a very lonely place. The prophet Jeremiah describes it like this: &quot;A wilderness, a land of deserts and of pits, a land of drought and of the shadow of death, a land that nobody&quot; — nobody but a Christian — &quot;passed through, and where nobody lived.&quot;</p>
 <p>And here Christian was in worse trouble than he had been in his fight with Apollyon, as you will see from what followed.</p>
+</section>
+<section aria-labelledby="the-valley-of-the-shadow-of-death">
 <h2 id="the-valley-of-the-shadow-of-death">The Valley of the Shadow of Death</h2>
 <p>Then I saw in my dream that when Christian had got to the edge of the Shadow of Death, two men met him — sons of the men who brought back a bad report of the good land — hurrying to go back the way they had come. Christian spoke to them like this.</p>
 <p>Christian. Where are you going?</p>
@@ -932,6 +986,8 @@ figcaption {
 <p>And about this time the sun was rising, and this was another mercy to Christian. Because you have to notice that although the first part of the Valley of the Shadow of Death was dangerous, this second part, which he still had to go, was if anything far more dangerous. From the place where he now stood right to the end of the valley, the road was set so thick with snares, traps, springs and nets on the one hand, and so full of pits, pitfalls, deep holes and sudden drops on the other, that if it had been dark now, as it was when he came through the first part, then had he a thousand souls, by any reasonable reckoning they would all have been thrown away. But, as I said, the sun was just now rising. So he said: &quot;His lamp shines on my head, and by his light I walk through the darkness.&quot;</p>
 <p>So he came to the end of the valley in this light. Now I saw in my dream that at the end of this valley there lay blood, bones, ashes and the mangled bodies of men — pilgrims, in fact, who had come this way before. And while I was wondering what the reason for it might be, I spotted a little ahead of me a cave, where two giants, Pope and Pagan, had lived in the old days; and it was by their power and tyranny that the men whose bones and blood and ashes lay there had been cruelly put to death.</p>
 <p>But Christian went past this place without much danger, which surprised me somewhat. Since then, though, I have learned that Pagan has been dead many a long day; and as for the other, although he is still alive, he has grown so decrepit and so stiff in the joints — partly from age, and partly from the many sharp maulings he took in his younger days — that he can now do little more than sit at the mouth of his cave, grinning at pilgrims as they go past and biting his nails because he cannot get at them.</p>
+</section>
+<section aria-labelledby="faithful">
 <h2 id="faithful">Faithful</h2>
 <p>So I saw that Christian went on his way. Yet at the sight of the Old Man sitting in the mouth of the cave he did not know what to think — especially because the giant spoke to him, though he could not come after him, saying, &quot;You will never learn until more of you are burned.&quot; But Christian held his tongue and put a good face on it, and so went past and took no harm. Then Christian sang:</p>
 <pre class="outline">	What a world of wonders — I can say no less —
@@ -1022,6 +1078,8 @@ figcaption {
 <p>Christian. You are right. But did you meet nobody else in that valley?</p>
 <p>Faithful. No, nobody — because I had sunshine the whole of the rest of the way through it, and through the Valley of the Shadow of Death as well.</p>
 <p>Christian. It was well for you. I am sure it went very differently with me. Almost as soon as I entered that valley, I had a long and terrible fight with that foul fiend Apollyon. In fact I genuinely thought he would have killed me, especially when he got me down and crushed me under him as though he meant to crush me to pieces; because as he threw me, my sword flew out of my hand. He even told me he had me for certain. But I cried out to God, and he heard me and delivered me out of all my troubles. Then I went into the Valley of the Shadow of Death, and had no light for almost half the way through it. I thought over and over that I was going to be killed there. But at last day broke and the sun rose, and I went through what was left of it with far more ease and quiet.</p>
+</section>
+<section aria-labelledby="talkative">
 <h2 id="talkative">Talkative</h2>
 <p>Moreover, I saw in my dream that as they went on, Faithful happened to look to one side and saw a man whose name is Talkative walking a little way off beside them; because in this place there was room enough for them all to walk. He was a tall man, and rather better-looking at a distance than close to. Faithful spoke to him like this.</p>
 <p>Faithful. Friend, where are you off to? Are you going to the heavenly country?</p>
@@ -1120,6 +1178,8 @@ figcaption {
 <p>Evangelist. My sons, you have heard in the words of the truth of the Gospel that you must go through many troubles to enter the kingdom of heaven. And again, that in every city chains and afflictions are waiting for you. So you cannot expect to go long on your pilgrimage without them, in one form or another. You have already found something of the truth of these testimonies for yourselves, and more will follow immediately. Because now, as you see, you are almost out of this wilderness, and so you will soon come to a town that you will shortly see ahead of you; and in that town you will be set upon hard by enemies who will strain every nerve to kill you. And you may be certain that one or both of you must seal the testimony you hold with your blood. But be faithful to the point of death, and the King will give you a crown of life.</p>
 <p>The one who dies there — although his death will be a violent one, and his pain perhaps great — will still have the better of his companion. Not only because he will arrive at the Celestial City soonest, but because he will escape a great many miseries that the other will meet with in the rest of his journey.</p>
 <p>But when you have come to the town and find fulfilled what I have described to you here, then remember your friend, and quit yourselves like men, and commit the keeping of your souls to your God in well-doing, as to a faithful Creator.</p>
+</section>
+<section aria-labelledby="vanity-fair">
 <h2 id="vanity-fair">Vanity Fair</h2>
 <p>Then I saw in my dream that when they had got out of the wilderness, they soon saw a town ahead of them, and the name of that town is Vanity. And at the town there is a fair kept, called Vanity Fair. It is kept all the year round. It is called Vanity Fair because the town where it is held is emptier than emptiness itself, and also because everything sold there, and everything that comes there, is vanity. As the wise man says, &quot;All that comes is vanity.&quot;</p>
 <p>This fair is no newly set-up business, but a thing of long standing; and I will show you how it began.</p>
@@ -1143,6 +1203,8 @@ figcaption {
 <p>This threw the other party into a still greater rage, so that they settled on putting these two men to death. So they announced that the cage and the irons would not do for them after all, but that they should die for the wrong they had done and for leading the men of the fair astray.</p>
 <p>Then they were sent back to the cage again until further orders should be given about them. So they put them in, and fastened their feet in the stocks.</p>
 <p>And here they called to mind again what they had heard from their faithful friend Evangelist, and were all the more settled in their road and in their sufferings by what he had told them would happen. They also comforted each other now with the thought that whichever of them it fell to to suffer, that one would have the better of it. So each man privately wished that he might be the one given that privilege — but committing themselves to the all-wise ordering of the one who rules everything, they stayed contentedly in the state they were in, until something else should be settled about them.</p>
+</section>
+<section aria-labelledby="the-trial-of-faithful">
 <h2 id="the-trial-of-faithful">The Trial of Faithful</h2>
 <p>Then a suitable time was appointed, and they brought them out for trial with a view to condemning them. When the time came they were brought before their enemies and formally charged. The Judge&#x27;s name was Lord Hate-good. Their indictment was one and the same in substance, though it varied a little in wording, and its contents were these:</p>
 <p>&quot;That they were enemies to their trade and disturbers of it; that they had stirred up disorder and division in the town, and had won a following over to their own most dangerous opinions, in contempt of the law of their prince.&quot;</p>
@@ -1180,6 +1242,8 @@ figcaption {
 	their empty pleasures, cry out in the fires.
 	Sing, Faithful, sing, and let your name survive;
 	for though they killed you, you are still alive.</pre>
+</section>
+<section aria-labelledby="hopeful-and-mr-by-ends">
 <h2 id="hopeful-and-mr-by-ends">Hopeful, and Mr. By-ends</h2>
 <p>Now I saw in my dream that Christian did not go out alone. There was one whose name was Hopeful — made so by watching Christian and Faithful, in their words and their behaviour, through their sufferings at the Fair — who joined himself to Christian, and entering into a brotherly agreement with him, told him he would be his companion. So one man died to bear witness to the truth, and another rose out of his ashes to be Christian&#x27;s companion on his pilgrimage. This Hopeful also told Christian that there were a good many more of the men at the Fair who would take their time and follow on after them.</p>
 <p>So I saw that soon after they had got out of the Fair, they caught up with somebody walking ahead of them, whose name was By-ends. So they said to him: What part of the country are you from, sir? And how far are you going this way? He told them he came from the town of Fair-speech and was going to the Celestial City — but he did not tell them his name.</p>
@@ -1241,6 +1305,8 @@ figcaption {
 <p>Then Christian said to his companion: If these men cannot stand before the judgment of men, what will they do with the judgment of God? And if they are struck dumb when they are dealt with by vessels of clay, what will they do when they are rebuked by the flames of a devouring fire?</p>
 <p>Then Christian and Hopeful got ahead of them again, and went on until they came to a delightful plain called Ease, where they went along very contentedly. But that plain was narrow, so they were quickly over it.</p>
 <p>Now on the far side of that plain there was a little hill called Lucre, and in that hill a silver mine, which some of those who had gone that way before had turned aside to look at, because of how unusual it was. But going too near the edge of the pit, they found the ground treacherous under them; it gave way, and they were killed. Some had also been maimed there, and could never to their dying day be themselves again.</p>
+</section>
+<section aria-labelledby="demas-and-the-pillar-of-salt">
 <h2 id="demas-and-the-pillar-of-salt">Demas, and the Pillar of Salt</h2>
 <p>Then I saw in my dream that a little off the road, opposite the silver mine, stood Demas, looking every inch a gentleman, calling to passers-by to come and look. He said to Christian and his companion: Hey there! Turn aside this way, and I will show you something.</p>
 <p>Christian. What is so worth seeing that it would justify turning us off our road?</p>
@@ -1276,6 +1342,8 @@ figcaption {
 <p>Christian. It is a thing to wonder at, and it shows that their hearts have grown desperate in the matter. I cannot think who to compare them to so exactly as to people who pick pockets in the presence of the judge, or cut purses under the gallows. It is said of the men of Sodom that they were sinners exceedingly, because they were sinners before the Lord — that is, in his sight, and in spite of all the kindnesses he had shown them; because the land of Sodom was in those days like the garden of Eden. That is what provoked him all the more to jealousy, and made their punishment as hot as the fire of the Lord out of heaven could make it.</p>
 <p>And it is entirely reasonable to conclude that people like this — sinning in full view, and in the teeth of the very examples set constantly in front of them to warn them off — must come in for the severest judgments there are.</p>
 <p>Hopeful. You have certainly spoken the truth. But what a mercy it is that neither you, and above all not I, has been made into this example! This gives us reason to thank God, to fear him, and always to remember Lot&#x27;s wife.</p>
+</section>
+<section aria-labelledby="doubting-castle-and-giant-despair">
 <h2 id="doubting-castle-and-giant-despair">Doubting Castle and Giant Despair</h2>
 <p>Then I saw that they went on their way to a pleasant river, which King David called &quot;the river of God&quot; and John &quot;the river of the water of life.&quot; Now their road ran right along the bank of the river, and here Christian and his companion walked with great delight. They drank the water of the river too, which was sweet, and put new life into their tired spirits. Besides that, on both banks of this river there were green trees bearing every kind of fruit, and the leaves of the trees were good for medicine. They were delighted with the fruit of these trees as well, and they ate the leaves to keep off the sickness and the other complaints that come to people who overheat their blood with travelling. On each side of the river there was also a meadow, beautifully set with lilies, and it was green all the year round.</p>
 <p>In this meadow they lay down and slept, because here they could lie down in safety. When they woke, they gathered more fruit from the trees and drank more of the water of the river, and then lay down to sleep again. They did this for several days and nights. Then they sang:</p>
@@ -1344,6 +1412,8 @@ figcaption {
 	in case their carelessness should land them where
 	we were — as trespassers, and prisoners there,
 	whose castle&#x27;s Doubting and whose name&#x27;s Despair.</pre>
+</section>
+<section aria-labelledby="the-delectable-mountains">
 <h2 id="the-delectable-mountains">The Delectable Mountains</h2>
 <p>Then they went on until they came to the Delectable Mountains, which belong to the Lord of that hill we spoke of before. So they went up into the mountains to look at the gardens and orchards, the vineyards and the springs of water; and there they drank and washed themselves, and ate freely from the vineyards.</p>
 <p>Now on the tops of these mountains there were shepherds feeding their flocks, and they were standing by the roadside. So the Pilgrims went over to them; and leaning on their staffs, as tired pilgrims usually do when they stop to talk with anybody along the road, they asked: Whose Delectable Mountains are these? And whose are the sheep feeding on them?</p>
@@ -1490,6 +1560,8 @@ figcaption {
 <p>Christian. My brother, I did not put the question to you because I doubted the truth of what we believe myself, but to test you and draw out from you some fruit of the honesty of your heart. As for this man, I know he is blinded by the god of this world. Let us go on, you and I, knowing that we have belief in the truth, &quot;and no lie is of the truth.&quot;</p>
 <p>Hopeful. Now I rejoice in the hope of the glory of God.</p>
 <p>So they turned away from the man; and he, laughing at them, went on his way.</p>
+</section>
+<section aria-labelledby="the-enchanted-ground">
 <h2 id="the-enchanted-ground">The Enchanted Ground</h2>
 <p>Then I saw in my dream that they went on until they came into a certain country whose air naturally makes a person drowsy, if he comes into it as a stranger. And here Hopeful began to get very dull and heavy with sleep; so he said to Christian: I am beginning to get so drowsy now that I can hardly keep my eyes open. Let us lie down here and take a nap.</p>
 <p>Christian. Not on any account, said the other — in case we fall asleep and never wake up again.</p>
@@ -1691,6 +1763,8 @@ figcaption {
 <p>Seventh, then they give way to worldly and dissolute talk in private; and they are delighted if they can see such things in anybody who is reckoned honest, so that they may do it all the more boldly on their example.</p>
 <p>Eighth, after this they begin to play with small sins openly.</p>
 <p>Ninth, and then, being hardened, they show themselves for what they are. And so, launched out again into the gulf of misery, unless a miracle of grace prevents it, they perish everlastingly in their own self-deceptions.</p>
+</section>
+<section aria-labelledby="the-land-of-beulah-and-the-river">
 <h2 id="the-land-of-beulah-and-the-river">The Land of Beulah and the River</h2>
 <p>Now I saw in my dream that by this time the Pilgrims had got over the Enchanted Ground and were coming into the country of Beulah, whose air was very sweet and pleasant. The road ran straight through it, and they took their ease there for a while. Here they heard the singing of birds all day long, and saw the flowers coming up out of the earth every day, and heard the voice of the turtledove in the land. In this country the sun shines night and day; and so this was well beyond the Valley of the Shadow of Death, and out of Giant Despair&#x27;s reach as well — from this place they could not so much as see Doubting Castle.</p>
 <p>Here they were within sight of the city they were going to, and here too some of its citizens came out to meet them; because the Shining Ones walk about freely in this land, since it is on the borders of heaven. In this land the contract between the bride and the bridegroom was renewed as well. Yes, here, &quot;as the bridegroom rejoices over the bride, so did their God rejoice over them.&quot; Here they had no lack of grain or wine; because in this place they met with an abundance of everything they had been looking for through their whole pilgrimage.</p>
@@ -1769,7 +1843,11 @@ figcaption {
 	Nobody throws the apple out for the core.
 	But if you cast the whole lot away as vain,
 	I do not know but it will make me dream again.</pre>
+</section>
+</section>
+<section class="part" aria-labelledby="part-two">
 <h2 id="part-two" class="center">Part Two: Christiana</h2>
+<section aria-labelledby="the-author-s-way-of-sending-forth-his-second-part">
 <h2 id="the-author-s-way-of-sending-forth-his-second-part">The Author&#x27;s Way of Sending Forth His Second Part</h2>
 <pre class="outline">	Go now, my little book, to every place
 	where my first Pilgrim has but shown his face.
@@ -2022,6 +2100,8 @@ figcaption {
 	This is the hearty prayer of</pre>
 <p>The Author,</p>
 <h4>John Bunyan</h4>
+</section>
+<section aria-labelledby="christiana-s-summons">
 <h2 id="christiana-s-summons">Christiana&#x27;s Summons</h2>
 <pre class="outline">	&quot;I have used similitudes.&quot;</pre>
 <p>Courteous Companions,</p>
@@ -2072,6 +2152,8 @@ figcaption {
 <p>But while they were on the point of going, two of the women who were Christiana&#x27;s neighbours came up to the house and knocked at her door. To whom she said, as before: If you come in God&#x27;s name, come in.</p>
 <p>At this the women were taken aback, because they were not used to hearing that kind of language, or noticing it fall from Christiana&#x27;s lips. Still, they came in — and there they found the good woman getting ready to leave her house.</p>
 <p>So they began, and said: Neighbour, tell us, please — what do you mean by this?</p>
+</section>
+<section aria-labelledby="mrs-timorous-and-mercy">
 <h2 id="mrs-timorous-and-mercy">Mrs. Timorous and Mercy</h2>
 <p>Christiana answered the elder of them, whose name was Mrs. Timorous: I am getting ready for a journey. (This Timorous was the daughter of the man who met Christian on the Hill Difficulty and wanted him to turn back for fear of the lions.)</p>
 <p>Timorous. What journey, may I ask?</p>
@@ -2124,6 +2206,8 @@ figcaption {
 	the ones I&#x27;ve left behind;
 	Lord, make them pray to be your own
 	with all their heart and mind.</pre>
+</section>
+<section aria-labelledby="the-slough-and-the-gate">
 <h2 id="the-slough-and-the-gate">The Slough and the Gate</h2>
 <p>Now my old friend went on, and said: But when Christiana came up to the Slough of Despond, she stopped short; because, she said, this is the place where my dear husband was nearly smothered in the mud. She noticed too that in spite of the King&#x27;s order to make this place good for pilgrims, it was rather worse than it had been before.</p>
 <p>So I asked whether that was true. Yes, said the old gentleman, only too true. Because there are a great many who claim to be the King&#x27;s workmen, and who say they are for mending the King&#x27;s highway, who bring dirt and dung instead of stones, and so spoil it instead of mending it.</p>
@@ -2215,6 +2299,8 @@ figcaption {
 <p>Mercy. Then Mercy said: How did you know about it before you left home? Explain this riddle to me.</p>
 <p>Christiana. Why, I will tell you. Before I set foot outside the door, one night as I lay in my bed I had a dream about this very thing. Because I thought I saw two men, as like these two as anything in the world, standing at the foot of my bed and plotting how they might stop my salvation. I will tell you their very words. They said — this was when I was in my troubles — What shall we do with this woman? Because she cries out, waking and sleeping, for forgiveness. If she is allowed to go on as she has begun, we shall lose her as we lost her husband. That, you see, might have made me take care, and provide for it while provision could be had.</p>
 <p>Mercy. Well, said Mercy, just as this neglect has given us the occasion to see our own shortcomings, so our Lord has taken the occasion by it to show the riches of his grace. Because he has, as we can see, followed us with kindness we never asked for, and has delivered us out of the hands of men who were stronger than we are, purely out of his own good pleasure.</p>
+</section>
+<section aria-labelledby="the-house-of-the-interpreter-2">
 <h2 id="the-house-of-the-interpreter-2">The House of the Interpreter</h2>
 <p>So now, when they had talked away a little more time, they came near to a house that stood beside the road — a house that had been built for the relief of pilgrims, as you will find more fully told in the First Part of these Records of the Pilgrim&#x27;s Progress. So they came on towards the house, the House of the Interpreter; and when they got to the door they heard a great deal of talk going on inside. So they listened, and heard, as they thought, Christiana mentioned by name.</p>
 <p>Because you have to understand that news of her and her children going on pilgrimage had run on ahead of her. And this was all the more pleasing to the household because they had heard she was Christian&#x27;s wife — that woman who had been so unwilling, not long since, even to hear of going on pilgrimage. So they stood still and listened to the good people inside praising her, who little thought she was standing at the door.</p>
@@ -2309,6 +2395,8 @@ figcaption {
 <p>Then the Interpreter said again to the young woman who was waiting on these women: Go into the vestry and fetch out clothes for these people.</p>
 <p>So she went and fetched out white clothing and laid it down in front of him; and he told them to put it on. It was fine linen, white and clean.</p>
 <p>When the women had been dressed like this, they seemed almost frightening to one another; because each could not see on herself the glory that she could see on the other. So now they began to think each other better than themselves. &quot;You are lovelier than I am,&quot; said one; and &quot;you are more beautiful than I am,&quot; said the other. The children too stood amazed at the state they had all been brought into.</p>
+</section>
+<section aria-labelledby="great-heart-and-the-cross">
 <h2 id="great-heart-and-the-cross">Great-heart, and the Cross</h2>
 <p>The Interpreter then called for one of his manservants, a man called Great-heart, and told him to take sword and helmet and shield. And take these daughters of mine, he said, and escort them to the house called Beautiful, where they will rest next.</p>
 <p>So Great-heart took up his weapons and went ahead of them; and the Interpreter said, God speed. Those who belonged to the household sent them off as well with many a good wish. So they went on their way, and sang:</p>
@@ -2369,6 +2457,8 @@ figcaption {
 	if to the pilgrims he is not a friend.
 	And you, my soul, of all such men beware
 	who to holiness the opposers are.</pre>
+</section>
+<section aria-labelledby="the-hill-difficulty-and-the-lions">
 <h2 id="the-hill-difficulty-and-the-lions">The Hill Difficulty and the Lions</h2>
 <p>So they went on until they came to the foot of the Hill Difficulty, where again their good friend Mr. Great-heart took the chance to tell them what happened there when Christian himself came past. So he took them first to the spring.</p>
 <p>Look, said he, this is the spring Christian drank from before he went up this hill. It was clear and good then; but now it is dirty, from the feet of people who do not want pilgrims quenching their thirst here.</p>
@@ -2433,6 +2523,8 @@ figcaption {
 <p>Then the Porter rang his bell, as he is accustomed to do at such times, and one of the young women came to the door, whose name was Humble-mind. And the Porter said to her: Go and tell them inside that Christiana, the wife of Christian, and her children, have come here on pilgrimage.</p>
 <p>So she went in and told them. But oh, what a noise of gladness there was inside, when the young woman had barely got the words out of her mouth! So they came hurrying to the Porter — because Christiana was still standing at the door. Then some of the most serious among them said to her: Come in, Christiana; come in, wife of that good man; come in, blessed woman; come in, and all who are with you.</p>
 <p>So she went in, and her children and her companions followed her. Now when they had gone in, they were taken into a very large room and told to sit down; so they sat down, and the heads of the house were called to see the guests and welcome them. Then they came in, and understanding who they were, greeted them each with a kiss and said: Welcome, you vessels of the grace of God; welcome to us, your friends.</p>
+</section>
+<section aria-labelledby="the-house-beautiful-again">
 <h2 id="the-house-beautiful-again">The House Beautiful Again</h2>
 <p>Now because it was getting late, and because the Pilgrims were tired from their journey and faint as well from the sight of the fight and the terrible lions, they asked to get ready for bed as soon as they could.</p>
 <p>No, said the household — refresh yourselves first with a bite of food. Because they had prepared a lamb for them, with the sauce that traditionally goes with it; the Porter had heard beforehand that they were coming and had told those inside.</p>
@@ -2624,6 +2716,8 @@ figcaption {
 <p>So Christiana asked Prudence what it was that made those exquisite notes.</p>
 <p>They are, said she, our country birds. They only sing these notes now and then, except in the spring, when the flowers come out and the sun shines warm; and then you may hear them all day long. I often go out to listen to them, said she; and we often keep them tame in the house too. They are very fine company for us when we are low, and they make the woods and groves and lonely places into places you want to be.</p>
 <p>By this time Piety had come back; so she said to Christiana: Look here — I have brought you an outline of all the things you have seen at our house, which you can look at when you find yourself forgetting, and so call those things back to mind for your building up and your comfort.</p>
+</section>
+<section aria-labelledby="the-valley-of-humiliation">
 <h2 id="the-valley-of-humiliation">The Valley of Humiliation</h2>
 <p>Now they began to go down the hill into the Valley of Humiliation. It was a steep hill and the path was slippery; but they were very careful, so they got down well enough.</p>
 <p>When they were down in the Valley, Piety said to Christiana: This is the place where Christian your husband met with the foul fiend Apollyon, and where they had that dreadful fight. You cannot but have heard about it. But take courage — as long as you have Mr. Great-heart here to be your guide and escort, we hope you will fare the better for it.</p>
@@ -2727,6 +2821,8 @@ figcaption {
 	the pilgrims&#x27; guide, and stood
 	to oppose him, who was he
 	that was their enemy.</pre>
+</section>
+<section aria-labelledby="the-valley-of-the-shadow-and-old-honest">
 <h2 id="the-valley-of-the-shadow-and-old-honest">The Valley of the Shadow, and Old Honest</h2>
 <p>Now I saw that they went to the rise a little further on, which had been thrown up as a lookout for pilgrims — the place from which Christian first caught sight of his brother Faithful. So here they sat down and rested, and here too they ate and drank and made merry, because they had been delivered from such a dangerous enemy.</p>
 <p>As they sat there eating, Christiana asked the guide whether he had taken any hurt in the battle.</p>
@@ -2784,6 +2880,8 @@ figcaption {
 <p>Here he would lie down and hug the ground and kiss the very flowers that grew in the valley. He would be up now every morning at daybreak, walking and tracing to and fro about the place.</p>
 <p>But when he came to the entrance of the Valley of the Shadow of Death, I thought I was going to lose my man. Not because he had any inclination to go back — he always hated that — but because he was ready to die of fright. Oh, the hobgoblins will have me! The hobgoblins will have me! he cried; and I could not get him off it. He made such a noise, such an outcry here, that if they had only heard him it would have been enough to encourage them to come and fall on us.</p>
 <p>But this I noticed particularly: that this valley was as quiet the whole time he was going through it as I have ever known it, before or since. I suppose these enemies here had a special check laid on them from our Lord, and an order not to interfere until Mr. Fearing was past.</p>
+</section>
+<section aria-labelledby="vanity-town">
 <h2 id="vanity-town">Vanity Town</h2>
 <p>It would take too long to tell you everything, so we will only mention a passage or two more. When he came to Vanity Fair, I thought he would have fought every man at the fair. I was afraid the two of us would be knocked on the head there, he was so hot against their follies. On the Enchanted Ground, too, he was very wide awake. But when he came to the river, where there was no bridge, then he was in a bad way again. Now, now, he said, he would be drowned for ever, and would never see with any comfort that Face he had come so many miles to look on.</p>
 <p>And here I noticed something very remarkable: the water of that river was lower at that moment than I have ever seen it in my life. So he went over at last, hardly getting his feet wet. When he was going up to the gate, I began to take my leave of him and to wish him a good reception up there. And he said: I shall have it, I shall. Then we parted, and I never saw him again.</p>
@@ -2840,6 +2938,8 @@ figcaption {
 <p>Now, as they were going along like this, somebody came running to meet them and said: Gentlemen — and you of the weaker sort — if you value your lives, look out for yourselves, because the robbers are up ahead of you.</p>
 <p>Great-heart. Then Mr. Great-heart said: They are the three who attacked Little-faith before now. Well, said he, we are ready for them.</p>
 <p>So they went on their way. And they looked at every turn to see whether they would meet the villains; but whether they had heard about Mr. Great-heart, or whether they had other game in view, they never came up to the Pilgrims.</p>
+</section>
+<section aria-labelledby="the-house-of-gaius">
 <h2 id="the-house-of-gaius">The House of Gaius</h2>
 <p>Christiana then said she wished there were an inn for herself and her children, because they were tired. So Mr. Honest said: There is one a little way ahead of us, where a very honourable disciple lives, one Gaius.</p>
 <p>So they all agreed to turn in there, and all the more readily because the old gentleman gave him such a good report. So when they came to the door they went in without knocking, because people do not usually knock at the door of an inn. Then they called for the master of the house, and he came to them. So they asked whether they might sleep there that night.</p>
@@ -2918,6 +3018,8 @@ figcaption {
 <p>Besides, I have noticed that old men have congratulated themselves on this mistake: taking the decay of their nature for a gracious victory over their corruptions, and so being apt to fool themselves. Old men who have grace really are best able to give advice to the young, because they have seen most of the emptiness of things. But even so, when an old man and a young one set out together, the young one has the advantage in showing the clearest evidence of a work of grace in him — even though the old man&#x27;s corruptions are naturally the weaker.</p>
 <p>So they sat talking until daybreak. Now when the household was up, Christiana asked her son James to read a chapter; so he read the fifty-third of Isaiah. When he had finished, Mr. Honest asked why the Saviour is said to come &quot;out of a dry ground,&quot; and also that &quot;he had no form or comeliness in him.&quot;</p>
 <p>Great-heart. Then Mr. Great-heart said: To the first I answer that it is because the church of the Jews, which Christ came from, had by then lost nearly all the sap and spirit of religion. To the second I say that the words are spoken in the character of unbelievers — who, because they lack the eye that can see into our Prince&#x27;s heart, therefore judge him by the plainness of his outside. Just like people who do not know that precious stones are covered over with a rough crust, and who, when they have found one, throw it away again because they have no idea what they have found, as men throw away a common stone.</p>
+</section>
+<section aria-labelledby="mr-feeble-mind-and-mr-ready-to-halt">
 <h2 id="mr-feeble-mind-and-mr-ready-to-halt">Mr. Feeble-mind and Mr. Ready-to-halt</h2>
 <p>Well, said Gaius, now that you are here, and since I know Mr. Great-heart is good with his weapons, if you like we will walk out into the fields when we have refreshed ourselves, and see whether we can do any good. About a mile from here there is one Slay-good, a giant who does a great deal of harm on the King&#x27;s highway in these parts; and I know roughly where his haunt is. He is master of a number of thieves. It would be a good thing if we could clear these parts of him.</p>
 <p>So they agreed and went — Mr. Great-heart with his sword and helmet and shield, and the rest with spears and staffs. When they came to the place where he was, they found him with one Feeble-mind in his hands, whom his servants had brought to him, having caught him on the road. Now the giant was going through his pockets, meaning after that to pick his bones, because he was of the flesh-eating kind.</p>
@@ -3036,6 +3138,8 @@ figcaption {
 <p>When they had left the townspeople, and their friends had said goodbye, they soon came to the place where Faithful was put to death. So there they stopped, and thanked the one who had enabled him to bear his cross so well — and all the more because they now found they had a benefit from such a manly suffering as his was.</p>
 <p>So after this they went on a good way further, talking about Christian and Faithful, and about how Hopeful joined himself to Christian after Faithful was dead.</p>
 <p>Now they had come up to the Hill Lucre, where the silver mine was that took Demas off his pilgrimage, and into which, as some think, By-ends fell and perished; so they thought about that. But when they came to the old monument standing opposite the Hill Lucre — the pillar of salt that stands within sight of Sodom and its stinking lake — they wondered, as Christian had before them, that men of such knowledge and ripeness of wit as those men were should be so blinded as to turn aside here. Only they considered again that human nature is not much affected by the harm others have come to — especially if the thing they are looking at has some power of attraction over a foolish eye.</p>
+</section>
+<section aria-labelledby="by-path-meadow-revisited">
 <h2 id="by-path-meadow-revisited">By-path Meadow Revisited</h2>
 <p>Now I saw that they went on until they came to the river that lies on this side of the Delectable Mountains — the river where the fine trees grow on both banks, and whose leaves, if taken inwardly, are good against overeating; where the meadows are green all the year round, and where they could lie down safely.</p>
 <p>Along this riverside, in the meadow, there were shelters and folds for sheep, and a house built for the feeding and bringing up of those lambs, the babies of the women who go on pilgrimage. And there was one here who was entrusted with them: one who could feel compassion, and who could gather these lambs in his arm and carry them in his bosom, and who could gently lead those who were with young.</p>
@@ -3058,6 +3162,8 @@ figcaption {
 <p>So, as I say, they took the Giant&#x27;s head with them — his body they had buried under a heap of stones — and came down to the road and to their companions, and showed them what they had done.</p>
 <p>Now when Feeble-mind and Ready-to-halt saw that it really was the head of Giant Despair, they were tremendously cheerful and merry. Now Christiana, when there was need of it, could play the viol, and her daughter Mercy the lute. So, since they were all in such a merry mood, she played them a piece, and Ready-to-halt would dance. So he took Despondency&#x27;s daughter, Much-afraid, by the hand, and off they went dancing in the road. It is true that he could not dance without one crutch in his hand; but I promise you he footed it well. And the girl deserved credit too, because she answered the music handsomely.</p>
 <p>As for Mr. Despondency, the music did not do much for him; he was for eating rather than dancing, since he was very nearly starved. So Christiana gave him some out of her bottle of cordial for immediate relief, and then got him something to eat; and in a little while the old gentleman came round, and began to revive nicely.</p>
+</section>
+<section aria-labelledby="the-fall-of-doubting-castle">
 <h2 id="the-fall-of-doubting-castle">The Fall of Doubting Castle</h2>
 <p>Now I saw in my dream that when all this was finished, Mr. Great-heart took the head of Giant Despair and set it on a pole beside the highway, directly opposite the pillar Christian had put up to warn pilgrims who came after him not to go onto his grounds.</p>
 <pre class="outline">	Though Doubting Castle has been demolished,
@@ -3218,6 +3324,8 @@ figcaption {
 	he&#x27;ll fear not what men say;
 	he&#x27;ll labour night and day
 	to be a pilgrim.</pre>
+</section>
+<section aria-labelledby="the-enchanted-ground-2">
 <h2 id="the-enchanted-ground-2">The Enchanted Ground</h2>
 <p>By this time they had got to the Enchanted Ground, where the air naturally makes a person drowsy. That place was all overgrown with briars and thorns, except here and there where there was an Enchanted Arbour; and if a man sits down in one of those, or falls asleep in one, it is an open question, some say, whether he will ever get up or wake again in this world.</p>
 <p>So over this forest they went, one and all; and Mr. Great-heart went in front, since he was the guide, and Mr. Valiant-for-truth came behind as a rearguard, for fear that some fiend or dragon or giant or thief might fall on their rear and do them harm. They went on here with every man&#x27;s sword drawn in his hand, because they knew it was a dangerous place. They also encouraged one another as well as they could. Mr. Great-heart ordered Feeble-mind to come along right behind him, and Mr. Despondency was kept under Mr. Valiant&#x27;s eye.</p>
@@ -3242,6 +3350,8 @@ figcaption {
 <p>Then the Pilgrims wanted, trembling, to go forward; only they asked their guide to strike a light, so that they might go the rest of their road by the help of a lantern. So he struck a light, and they went by the help of it through the rest of this stretch, though the darkness was very great.</p>
 <p>But the children began to be badly tired out, and they cried out to the one who loves pilgrims to make their road more comfortable. So by the time they had gone a little further, a wind got up that drove the fog away, and the air became clearer.</p>
 <p>They were still a long way from being off the Enchanted Ground; only now they could see one another better, and see the road they were to walk on.</p>
+</section>
+<section aria-labelledby="mr-stand-fast-and-madam-bubble">
 <h2 id="mr-stand-fast-and-madam-bubble">Mr. Stand-fast and Madam Bubble</h2>
 <p>Now when they were almost at the end of this ground, they became aware that a little way ahead of them there was the solemn sound of somebody in great distress. So they went on and looked ahead; and there, as they thought, they saw a man on his knees, with his hands and his eyes lifted up, speaking, so it seemed to them, earnestly to One who was above. They came nearer, but could not make out what he said. So they went quietly until he had finished.</p>
 <p>When he had finished, he got up and began to run towards the Celestial City. Then Mr. Great-heart called after him, saying: Hello there, friend! Let us have your company, if you are going, as I suppose you are, to the Celestial City.</p>
@@ -3289,6 +3399,8 @@ figcaption {
 	lie tumbling in the mire;
 	some, though they shun the frying pan,
 	go leaping in the fire.</pre>
+</section>
+<section aria-labelledby="the-land-of-beulah">
 <h2 id="the-land-of-beulah">The Land of Beulah</h2>
 <p>After this I watched until they had come into the Land of Beulah, where the sun shines night and day. Here, because they were tired, they took themselves off to rest for a while; and because this country is common ground for pilgrims, and because the orchards and vineyards here belonged to the King of the Celestial country, they were licensed to help themselves freely to anything of his.</p>
 <p>But a very little while refreshed them here — because the bells rang so, and the trumpets sounded so melodiously and so constantly, that they could not sleep; and yet they got as much refreshment as if they had slept the soundest sleep in the world.</p>
@@ -3347,6 +3459,10 @@ figcaption {
 <p>As for Christian&#x27;s children — the four boys Christiana brought with her, with their wives and their children — I did not stay where I was until they had gone over. And since I came away, I have heard somebody say that they were still alive, and would be for some time yet, for the increase of the church in the place where they were.</p>
 <p>Should it be my lot to go that way again, I may give those who want it an account of what I have been silent about here.</p>
 <p>In the meantime, I bid my reader goodbye.</p>
+</section>
+</section>
+</article>
+</main>
 
 </body>
 </html>

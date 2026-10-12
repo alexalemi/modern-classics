@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>How Plants Grow &mdash; Asa Gray</title>
+	<meta name="description" content="Botany for young people, 1858: how plants grow, and a Popular Flora of 105 families with keys and 467 woodcuts. A restored edition, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/gray-plants.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="How Plants Grow — Asa Gray">
+	<meta property="og:description" content="Botany for young people, 1858: how plants grow, and a Popular Flora of 105 families with keys and 467 woodcuts. A restored edition, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/gray-plants.html">
+	<meta property="og:image" content="https://emend.press/covers/share/gray-plants.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,28 +192,32 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>How Plants Grow</h1>
-	<h3>A Simple Introduction to Structural Botany, with a Popular Flora, or an Arrangement and Description of Common Plants, Both Wild and Cultivated</h3>
-	<h3>by Asa Gray</h3>
+	<p class="title-line">A Simple Introduction to Structural Botany, with a Popular Flora, or an Arrangement and Description of Common Plants, Both Wild and Cultivated</p>
+	<p class="title-line">by Asa Gray</p>
 	<p class="center">
 	1858
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is a restored edition of How Plants Grow: the author's own words, unchanged. Every plate carries a caption and alt text written for this edition, beginning with the label the book printed. The original is available from <a href="https://archive.org/details/howplantsgrowsim00gray">Internet Archive</a>. Also available as an <a href="ebooks/asa-gray_how-plants-grow.epub">epub</a>. <a href="restored.html">More restored editions</a>.</i></p>
 
 	<hr>
+<section aria-labelledby="editors-introduction">
 <h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
 <p>Asa Gray (1810–1888) was the leading American botanist of his century. He trained as a physician in upstate New York, gave up medicine for plants, and from 1842 held the Fisher Professorship of Natural History at Harvard, where he built up the university&#x27;s herbarium. His Manual of the Botany of the Northern United States (1848) was the standard handbook for the plants of the eastern states for generations. He was also Darwin&#x27;s closest American correspondent, one of the few people shown the argument of the Origin of Species before it was published, and afterwards its leading defender in the United States.</p>
 <p>How Plants Grow is the book he wrote for children. It was entered for copyright in 1858, the year before the Origin appeared, and it was reprinted for decades as a school text; this copy is a later printing, which adds four pages numbered 104<sup>1</sup> to 104<sup>4</sup> on how to use the Flora. It opens on the lilies of the field and speaks throughout of the plan and purpose of the Creator, which is the language of American natural history before Darwin, and Gray kept that faith after it.</p>
 <p>The book has two parts. The first explains, in numbered paragraphs, how a plant grows from a seed, what roots, stems, leaves, flowers, fruits and seeds are, what plants do, and how botanists classify and name them. The second is a Popular Flora: an arrangement of the common wild and cultivated plants of the country in 105 families, with keys that lead a beginner from a plant in the hand to its name. It ends with a dictionary of the botanical terms the book uses.</p>
 <p>A few conventions are worth knowing before the Flora. The marks over Latin names show which syllable is stressed. The signs °, ′ and ″ mean feet, inches and lines (twelfths of an inch), so &quot;leaves 1° long&quot; means a foot long. N., S., E. and W. give the part of the country where a plant grows wild. The keys are read by choosing: at each step follow the line that fits your plant, and each step further in narrows the choice until a name is reached.</p>
 <p>This is a restored edition. Gray&#x27;s words are unchanged. No transcription of the book existed, so every page was read from the scan and the words were checked against two other copies. All 467 woodcut blocks, carrying figures Gray numbered from 1 to 519, were cut from the page and given descriptions for readers who cannot see them. In the keys, where the book sends the reader to a page, this edition gives the family&#x27;s own number instead. Elsewhere, page references are kept as printed and refer to the pages of the original book. The index to the Flora, which is page numbers only, is left out. Three figure numbers that were misprinted, and so contradict their own figures, are corrected.</p>
+</section>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p><a href="#botany-for-young-people">Botany for Young People</a></p>
 <p class="toc-book">Part First: How Plants Grow</p>
@@ -311,8 +341,11 @@ figcaption {
 </ul>
 <p class="toc-book">Index and Dictionary</p>
 <p><a href="#index-to-part-i-and-dictionary-of-the-botanical-terms-used-in-this-book">Index to Part I, and Dictionary of the Botanical Terms Used in This Book</a></p>
+</nav>
 
 <hr>
+<article>
+<section aria-labelledby="botany-for-young-people">
 <h2 id="botany-for-young-people">Botany for Young People</h2>
 <p>Part First.</p>
 <h4>How Plants Grow</h4>
@@ -361,7 +394,10 @@ figcaption {
 <p>When young students have thoroughly mastered this little book, they will be well prepared to continue the study in the <em>Lessons in Botany and Vegetable Physiology</em>, and in the <em>Manual of the Botany of the Northern United States</em>, by the same author.</p>
 <p>The illustrations are referred to throughout by numbers, with &quot;Fig.&quot; prefixed. The numbers occasionally introduced, within parenthesis-marks, and without any prefix, (as on p. 25, line 1, and p. 36, line 9,) are references to former paragraphs, where the subject, or the word used, has already been explained.</p>
 <p>⁂ The illustrations on the first page represent: — Fig. 1. Our commonest wild species of true Lily, viz. the Canada Lily. Fig. 2. The Chalcedonian Lily, a native of Palestine, with scarlet flowers, supposed to be &quot;The Lily of the Field&quot; to which our Saviour referred in the Sermon on the Mount Fig. 3. Lilies of the Valley, not true Lilies, but belonging to the Lily Family.</p>
+</section>
+<section class="part" aria-labelledby="part-first">
 <h2 id="part-first" class="center">Part First: How Plants Grow</h2>
+<section aria-labelledby="chapter-i-how-plants-grow-and-what-their-parts-or-organs-are">
 <h3 id="chapter-i-how-plants-grow-and-what-their-parts-or-organs-are">Chapter I: How Plants Grow, and What Their Parts or Organs Are</h3>
 <figure id="fig-ab">
 <img src="images/gray-plants/figab.png" alt="4. Morning-Glory. — A Morning-Glory twining up a slender stake and trailing across the head of the page, with heart-shaped leaves, open funnel-shaped flowers, buds, and a branching root; small letters mark the parts." width="1429" height="1600" loading="lazy">
@@ -1051,6 +1087,8 @@ figcaption {
 <p>143. Compound Leaves; Leaflets. 144. The two kinds. 145. Pinnate leaves. 146. Palmate or Digitate. 147. Varieties of pinnate leaves. 148. Number of leaflets. 149. Also of palmate leaves; why their leaflets are generally fewer than those of pinnate leaves. 150. Twice or thrice compound and decompound leaves.</p>
 <p>151. Leaves without distinction of blade and footstalk; Needle-shaped; Thread-shaped; Awl-shaped; Equitant. 152. Stipules; often united with the footstalk, or with each other.</p>
 <p>153. The arrangement of leaves on the stem: the three modes, viz. alternate, opposite, whorled.</p>
+</section>
+<section aria-labelledby="chapter-ii-how-plants-are-propagated-or-multiplied-in-numbers">
 <h3 id="chapter-ii-how-plants-are-propagated-or-multiplied-in-numbers">Chapter II: How Plants Are Propagated or Multiplied in Numbers</h3>
 <h4>Section I. — How Propagated from Buds</h4>
 <p>154. Plants not only grow so as to increase in size or extent, but also multiply, or increase their numbers. This they do at such a rate that almost any species, if favorably situated, and not interfered with by other plants or by animals, would soon cover the whole face of a country adapted to its life.</p>
@@ -1598,6 +1636,8 @@ figcaption {
 	  Angiospermous, or closed, 219, 248.
 	  Gymnospermous, or naked-seeded, 218, 219, Cone, · · · 250</pre>
 <p>§ 2. Seeds. — 252. What a seed is. 253. Its nature already considered. 254. Its parts; Aril occasionally met with. 255. Its coats, and the appendages, wings, &amp;c. 256. Seed-stalk, and scar. 257. Kernel. 258. Albumen, sometimes present; its office. 259. Embryo, to which all the other parts of the seed, the fruit, and the flower are subservient. 260. Parts of the Embryo: Radicle, or Stemlet; Cotyledons, or Seed-leaves; Plumule, or Bud.</p>
+</section>
+<section aria-labelledby="chapter-iii-why-plants-grow-what-they-are-made-for-and-what-they-do">
 <h3 id="chapter-iii-why-plants-grow-what-they-are-made-for-and-what-they-do">Chapter III: Why Plants Grow, What They Are Made for, and What They Do</h3>
 <p>261. We have now become acquainted with all the organs of plants, both those concerned in their life and growth, or <em>vegetation</em>, and those concerned in multiplying their numbers, that is, in <em>reproduction.</em> The first being the root, stem, and leaves; the second, the flowers (essentially the stamens and pistils), with their result, fruit and seed. We have learned, also, how plants grow from the seed, produce part after part, branch after branch, and leaf after leaf, and at length blossom and go to seed. We see that plants, with their organs, that is, <em>instruments</em>, are a kind of living machines at work; and it is now time to ask, <em>How they operate</em>, <em>What they bring to pass</em>, and <em>What is the object or the result</em> of their doings. Such questions as these, young people, with their curiosity awakened, would be likely to ask, and they ought to be answered. To understand these things completely, one must know something of chemistry and vegetable anatomy,⁎ — which we do not propose here to teach. But a general account of the matter may be given in a simple way, which shall be perfectly intelligible, and may give a clear idea of the purpose which plants were created to fulfil in the world, and how they do it. Let us begin by considering</p>
 <p>Footnote: ⁎ After studying this chapter, the pupil will be ready to learn more of the subject in the <em>Lessons in Botany and Vegetable Physiology.</em> Lessons 22, 23, 24, and 25 treat of Vegetable Anatomy; and Lesson 26, of the Plant doing its work.</p>
@@ -1628,6 +1668,8 @@ figcaption {
 <p>286. So all our <em>lighting</em> as well as warming, which we do not receive directly from the sun, we receive from plants, in which sunlight has been stored up for our use. And equally so, whether we burn olive-oil or pine-oil of the present day, or candles made from old peat, or coal-gas, or lard, tallow, or wax, — the latter a vegetable matter which has been somewhat changed by animals. And, finally,</p>
 <p>287. <em>The natural warmth of the bodies of animals comes from the food they eat, and so is supplied by plants.</em> A healthy animal, no longer growing, receives into his system a daily supply of food without any corresponding increase in weight, or often without any increase at all. This is because he decomposes as much as he receives. If a vegetable-feeder, far the greater part of his food (all the starch of grain and bread, the sugar, oil, &amp;c.), after being added to the blood, is decomposed, and breathed out from the lungs in the form of carbonic acid and water. That is just what it would become if set on fire and burned, as when we burn oil or tallow in our lamps or candles, or wood in our fire-places; and in the process, in animals no less than in our lamps and fire-places, the heat which was absorbed from the sun, when the vegetable matter was produced from carbonic acid and water, is given out when this matter is decomposed into carbonic acid and water again. And this is what keeps up the natural heat of animals. We are warmed by plants in the food we consume, as well as by the fuel we burn.</p>
 <p>288. In learning, as we have done, How Plants Grow, and Why they Grow, have we not learned more of the lesson of the text placed at the beginning of this book, and of the verses that follow? &quot;<em>Wherefore, if God so clothe the grass of the field, shall he not much more clothe you? . . . . Therefore take no thought, saying, What shall we eat? or, What shall we drink? or, Wherewithal shall we be clothed? For your Heavenly Father knoweth that ye have need of all these things.</em>&quot; And we now perceive that causing plants to grow is the very way in which He bountifully supplies these needs, and feeds, clothes, warms, and shelters the myriads of beings He has made, and especially <em>Man</em>, whom He made to have dominion over them all.</p>
+</section>
+<section aria-labelledby="chapter-iv-how-plants-are-classified-named-and-studied">
 <h3 id="chapter-iv-how-plants-are-classified-named-and-studied">Chapter IV: How Plants Are Classified, Named, and Studied</h3>
 <h4>Section I. — Classification</h4>
 <p>289. Classification in Botany is the arrangement of plants according to their kinds and according to their resemblances.</p>
@@ -1721,7 +1763,11 @@ figcaption {
 <p><em>Accents.</em> In the Latin or scientific names, the syllable upon which the accent falls is marked with a ˊ or ˋ. When the accented vowel has a long sound, it is marked ˋ; as <em>Anemòne</em>, p. 115, <em>Aconìtum</em>, p. 116. When the vowel has the short sound, it is marked ˊ; as <em>Clématis</em> and <em>Hepática</em>, p. 115.</p>
 <p>All Latin or Latinized names, when of only two syllables, take the accent on the first syllable, and therefore do not need to be marked.</p>
 <p>Part Second.</p>
+</section>
+</section>
+<section class="part" aria-labelledby="part-second">
 <h2 id="part-second" class="center">Part Second: Popular Flora</h2>
+<section aria-labelledby="popular-flora">
 <h3 id="popular-flora">Popular Flora</h3>
 <p>A Classification and Description of The Common Plants of the Country, Both Wild and Cultivated, Under Their Natural Orders.</p>
 <p>A Flora is a botanical account of the plants of a country or district, with the orders or families systematically arranged under the classes, the genera under the orders, and the species (when there are more than one) under the genus they belong to, — along with the <em>characters</em> of each class, order, genus, &amp;c.; that is, an enumeration of the principal and surest marks, or some of them, by which they are to be distinguished. A full Flora of all the plants which grow in this country, including those in common cultivation, would at the least fill a large volume; and would be both too expensive and too unwieldy for the young beginner. The <em>Manual of the Botany of the Northern United States</em> (including Virginia and Kentucky, and extending west to the Mississippi River) is a volume of over 600 pages, or 700, including the Mosses. And this work does not include foreign plants cultivated in our fields or gardens, except those that have run wild in some places.</p>
@@ -1781,6 +1827,8 @@ figcaption {
 <img src="images/gray-plants/fighw.png" alt="236. Cherry. — The embryo of the Cherry, two thick, flat-faced seed-leaves laid together into an oval, with the little radicle at the lower end." width="189" height="255" loading="lazy">
 <figcaption>236. Cherry. — The embryo of the Cherry, two thick, flat-faced seed-leaves laid together into an oval, with the little radicle at the lower end.</figcaption>
 </figure>
+</section>
+<section aria-labelledby="key-to-the-families-or-orders-of-class-i">
 <h3 id="key-to-the-families-or-orders-of-class-i">Key to the Families or Orders of Class I</h3>
 <p>Subclass I. — ANGIOSPERMS.</p>
 <p>With a regular pistil, and a seed-vessel in which the seeds are formed. See Paragr. 219, 311.</p>
@@ -2014,6 +2062,8 @@ figcaption {
 <p>Subclass II. — GYMNOSPERMS.</p>
 <pre class="outline">	Proper pistil none; the ovules and seeds naked, on the bottom or inner face of an open scale, as in Pines, or without any scale at all, as in Yew, · · · Pine Family, 201</pre>
 <p>I. Polypetalous Division.</p>
+</section>
+<section aria-labelledby="1-crowfoot-family-order-ranunculace">
 <h3 id="1-crowfoot-family-order-ranunculace">1. Crowfoot Family. Order Ranunculaceæ</h3>
 <p>Herbs, or sometimes slightly woody plants, with a colorless juice, sharp or acrid to the taste. Parts of the flower all separate and distinct, and inserted on the receptacle. Petals often wanting or of singular shapes. Stamens many, or at least more than 12. Pistils many, or more than one (except in Larkspur, Baneberry, and Bugbane), and entirely separate, except in Fennel-flower, in fruit becoming akenes or pods, or sometimes berries. The leaves are generally compound, or much cut or parted, and without stipules.</p>
 <figure id="fig-hx">
@@ -2170,6 +2220,8 @@ figcaption {
 <img src="images/gray-plants/figim.png" alt="255. Its parts displayed: s, the sepals; p, the petals; st, stamens and pistils on the flower-stalk. — The Aconite flower taken apart: the hood-shaped upper sepal at top, the two long-clawed petals beneath it, the other sepals around, and the stamens and pistils on their stalk in the middle." width="522" height="765" loading="lazy">
 <figcaption>255. Its parts displayed: s, the sepals; p, the petals; st, stamens and pistils on the flower-stalk. — The Aconite flower taken apart: the hood-shaped upper sepal at top, the two long-clawed petals beneath it, the other sepals around, and the stamens and pistils on their stalk in the middle.</figcaption>
 </figure>
+</section>
+<section aria-labelledby="2-magnolia-family-order-magnoliace">
 <h3 id="2-magnolia-family-order-magnoliace">2. Magnolia Family. Order Magnoliaceæ</h3>
 <p>Trees or shrubs, with aromatic or strong-scented and bitter bark, and alternate simple leaves, which are never toothed; large, thin stipules form the covering of the buds, but fall off early. Flowers large, single at the ends of the branches; their leaves in threes, viz. 3 sepals colored like the petals, and 6 petals in two ranks or 9 in three ranks, their margins overlapping in the bud. Stamens very many, on the receptacle, with long anthers occupying, as it were, the side of the filament. Pistils many, packed and partly grown together one above the other, so as to make a sort of cone in fruit. — We have only two genera.</p>
 <figure id="fig-in">
@@ -2199,6 +2251,8 @@ figcaption {
 <p>6. Common Umbrella-M. Leaves 1° to 2° long, tapering into a short footstalk.  <em>M. Umbrélla.</em></p>
 <p>7. There is, besides, the Great-leaved M., with much the largest flowers and leaves of all, the latter 2° or 3° long, scattered, heart-shaped at the base, and white-downy beneath; flower 8′ or 10′ broad. S. and cult. rarely. It does not belong exactly to either the above divisions.  <em>M. macrophýlla.</em></p>
 <p>8. The Purple Magnolia, from Japan, is a shrub in some gardens and grounds, flowering before the leaves are out.  <em>M. purpùrea.</em></p>
+</section>
+<section aria-labelledby="3-custard-apple-family-order-anonace">
 <h3 id="3-custard-apple-family-order-anonace">3. Custard-Apple Family. Order Anonaceæ</h3>
 <p>Trees or shrubs, resembling the Magnolia family, but the three petals of each set not overlapping each other in the bud; the bark and foliage not aromatic, but unpleasant-tasted; the seeds large and bony, their albumen variegated like a nutmeg, or cut into slits. Leaves entire, destitute of stipules. Only one genus in this country, and one species common; the</p>
 <figure id="fig-iq">
@@ -2218,10 +2272,14 @@ figcaption {
 <figcaption>264. A seed cut through to show the variegated albumen. — An oval Papaw seed cut through, its thick coat enclosing albumen marked all over with fine crosswise slits.</figcaption>
 </figure>
 <p>1. Common Papaw. A small tree, with dingy-purple flowers appearing in early spring rather before the leaves; the 3 outer petals much larger than the 3 inner ones; fruits eatable when ripe, in autumn, 2′ or 3′ long. Common West and South along rivers, in rich soil.  <em>Asímina trìloba.</em></p>
+</section>
+<section aria-labelledby="4-moonseed-family-order-menispermace">
 <h3 id="4-moonseed-family-order-menispermace">4. Moonseed Family. Order Menispermaceæ</h3>
 <p>Woody climbers, with alternate leaves and small diœcious flowers (as shown in Fig. 167, 168); the sepals and petals each 4 or 6 and both of the same color, and a few one-seeded pistils, becoming small drupes in fruit, with a moon-shaped or kidney-shaped stone. We have two genera of one species each, the first common at the North, the second at the South.</p>
 <p>1. Stamens 12 to 20: pistils 2 to 4. Flowers white: leaves rounded and angled shield-shaped. Fruit blue-black, (<em>Menispérmum</em>) Moonsekd.</p>
 <p>2. Stamens 6, one before each petal. Flowers greenish: leaves heart-shaped. (<em>Cócculus</em>) Cocculus.</p>
+</section>
+<section aria-labelledby="5-barberry-family-order-berberidace">
 <h3 id="5-barberry-family-order-berberidace">5. Barberry Family. Order Berberidaceæ</h3>
 <p>Readily distinguished (with a single exception) by having the sepals and petals in fours, sixes, or eights (not in fives), and with just the same number of stamens as petals, <em>one before each petal</em> (on the receptacle), the anthers opening by an uplifted valve or door on each side. Pistil only one. Harmless, except the May-Apple (also called Mandrake), which has rather poisonous roots, although the fruit is innocent and eatable. Having only one species of each genus, we may ascertain them by the following key: —</p>
 <figure id="fig-iu">
@@ -2252,6 +2310,8 @@ figcaption {
 	  Flowers white, rather large: petals larger than the fugacious calyx.
 	    Stamens and narrow petals 8. The one-flowered scape and the 2-parted leaves rising separately from the ground. Fruit a many-seeded pod opening by a lid, · · · (<em>Jeffersònia</em>) Twinleaf
 	    Stamens 12 to 18: petals rounded, 6 to 9. Flowering stems 2-leaved at the top: leaves shield-shaped and several-cleft, large, with a nodding flower in the fork, · · · (<em>Podophýllum</em>) May-Apple.</pre>
+</section>
+<section aria-labelledby="6-water-lily-family-order-nymph-ace">
 <h3 id="6-water-lily-family-order-nymph-ace">6. Water-Lily Family. Order Nymphæaceæ</h3>
 <p>Water-plants with flowers and leaves on long footstalks, rising out of the water or resting on its surface; the leaves either shield-shaped or deeply heart-shaped. Petals and stamens generally very many. — To the proper Water-Lily family may here well enough be added the Water-shield and the Nelumbo, each of a single species. This gives us four genera, which are distinguished as follows: —</p>
 <figure id="fig-iz">
@@ -2266,6 +2326,8 @@ figcaption {
 <p>2. Leaves and flowers from rootstocks like the last. Sepals 5 or 6, rounded, partly petal-like and yellow. Within these a mass of small, square-topped bodies looking like and not much larger than the stamens, but really answering to petals; and above them the real stamens in great numbers, all under the many-celled and flat-topped pistil, (<em>Nuphar</em>) Yellow Pond-Lily.</p>
 <p>3. Leaves and small dull-purple flowers from a slender stem rising in the water; the oval leaves attached by the middle of the under side (centrally peltate). Sepals and petals narrow, each 4, and 12 to 18 stamens, all under the 4 to 16 separate and few-seeded pistils, (<em>Brasènia</em>) Watershield.</p>
 <p>4. Sepals and petals (alike in many ranks) and stamens many, all falling off early, all under the pistils, which are 12 or more in number and separately embedded in the flat upper face of an enlarged top-shaped receptacle. In fruit they are round and eatable nuts (Fig. 273). Leaves very large (1° or 2° broad), round, attached by the middle underneath, cupped, rising out of the water, as do the great greenish-yellow flowers also, on long stalks. Common W. &amp; S. (<em>Nelúmbium</em>) Nelumbo.</p>
+</section>
+<section aria-labelledby="7-sidesaddle-flower-family-order-sarraceniace">
 <h3 id="7-sidesaddle-flower-family-order-sarraceniace">7. Sidesaddle-Flower Family. Order Sarraceniaceæ</h3>
 <p>Bog-plants with hollow, pitcher-shaped or trumpet-shaped leaves, all from the root, making the curious genus</p>
 <h4>Sidesaddle-Flower. <em>Sarracènia.</em></h4>
@@ -2278,6 +2340,8 @@ figcaption {
 <p>2. Red S. Petals red; leaves long, trumpet-shaped, with a narrow side wing. S.  <em>S. rubra.</em></p>
 <p>3. Spotted S. Petals yellow; leaves trumpet-shaped, 12′ to 18′ long, with a hooded top spotted with white on the back, and a narrow side wing. S.  <em>S. variolàris.</em></p>
 <p>4. Yellow S., or Trumpets. Petals yellow, drooping when old; leaves 1° to 3° long, trumpet-shaped, with an upright rounded top turned back at the sides, side wing hardly any. Very common S.  <em>S. flava.</em></p>
+</section>
+<section aria-labelledby="8-poppy-family-order-papaverace">
 <h3 id="8-poppy-family-order-papaverace">8. Poppy Family. Order Papaveraceæ</h3>
 <p>Herbs with a milk-white, yellow, or reddish juice (colorless in Eschscholtzia), which is bitter or acrid and poisonous, alternate leaves, and flowers remarkable for having only 2 (rarely 3) sepals, which fall when the blossom opens, but 4 (or in one case 8 or 12) petals, which fall early. Stamens many, on the receptacle. Pistil one, compound, but almost always one-celled, many-seeded, the seeds borne on the walls or on projections from them (parietal). Eschscholtzia is remarkable for its calyx shaped like a pointed cap or a candle-extinguisher. — In most cases we have only one species of each genus.</p>
 <figure id="fig-jc">
@@ -2314,6 +2378,8 @@ figcaption {
 	Petals not crumpled in the bud, which does not nod.
 	  Petals 8 to 12, narrow, white. Pod oblong. Juice orange-red, · · · (<em>Sanguinària</em>) Bloodroot.
 	  Petals 4, broad, yellow. Sepals united into a pointed cap which falls off as a lid (Fig. 280, 281). Receptacle or end of the flower-stalk expanded and top-shaped. Stigmas 3 to 7, slender, unequal. Pod many-ribbed. Juice watery, colorless, but strong-scented, · · · ⁎ Eschscholtzia.</pre>
+</section>
+<section aria-labelledby="9-fumitory-family-order-fumariace">
 <h3 id="9-fumitory-family-order-fumariace">9. Fumitory Family. Order Fumariaceæ</h3>
 <p>Tender herbs with a colorless juice, compound alternate leaves, and irregular flowers with only two small scale-like sepals, a flattened and closed corolla of 4 petals more or less grown together, the two outside ones larger with small spreading tips, the two inner small and with spoon-shaped tips sticking together face to face over the anthers and stigma: stamens on the receptacle, 6 in two sets or bundles, one before each of the larger petals, or all joined in one tube below. The middle anther of each set is two-celled; the side ones only one-celled. Pistil one, in the manner of the Poppy family. Pod one-celled. Bitterish, harmless plants, with singularly shaped flowers, some of them handsome. We have four genera, two of them of only one species each.</p>
 <figure id="fig-ji">
@@ -2345,6 +2411,8 @@ figcaption {
 <p>Our two species are leafy-stemmed biennials, glaucous, with twice-pinnate leaves, and linear or slender pods. They grow in rocky places and flower in spring and summer.</p>
 <p>1. Golden C. Low and spreading; flowers yellow in simple racemes; pods hanging.  <em>C. aùrea.</em></p>
 <p>2. Pale C. Upright; flowers purplish and yellowish; racemes panicled; pods erect.  <em>C. glauca.</em></p>
+</section>
+<section aria-labelledby="10-cruciferous-or-cress-family-order-crucifer">
 <h3 id="10-cruciferous-or-cress-family-order-crucifer">10. Cruciferous or Cress Family. Order Cruciferæ</h3>
 <p>Herbs, with alternate leaves, a sharp-tasted watery juice (never poisonous, but often very acrid or biting); perfectly distinguished by their <em>cruciferous</em> flowers, <em>tetradýnamous</em> stamens, and by having the sort of pod called a <em>silique</em> or <em>silicle</em> (240, 241). The flower is called cruciferous because the 4 petals, with claws enclosed in tne 4-sepalled calyx, have their blade spreading so as to form the four arms of a cross. As to the stamens, they are 6 in number (on the receptacle), two of them always shorter than the other four. The pistil makes a pod, like that of the Celandine, &amp;c. in the Poppy family (Fig. 277), except that a partition stretches across between the two thread-shaped placentas, and divides the cavity into two cells. When the pod opens, the two valves fall away, leaving the seeds attached to the edges of this frame. The whole kernel of the seed is an embryo. It is always bent or folded up, in various ways. The flowers of the whole family are so much alike, that the genera have to be distinguished by their pods and seeds. This makes the family too difficult for the beginner. But so many plants of the family are common in cultivation, that we add a tabular key, leading to the names of the principal kinds.</p>
 <figure id="fig-jl">
@@ -2405,12 +2473,16 @@ figcaption {
 	      Petals unlike; the two on the outer side of the flower larger, · · · (<em>Ibèris</em>) ⁎Candytuft.
 	Pod not opening, 1-celled, 1-seeded, wing-like. Flowers yellow, · · · (<em>Isàtis</em>) ⁎Woad.
 	Pod not opening, but jointed across the middle, fleshy. Flowers purplish, · · · (<em>Cakìle</em>) Sea-Rocket.</pre>
+</section>
+<section aria-labelledby="11-mignonette-family-order-resedace">
 <h3 id="11-mignonette-family-order-resedace">11. Mignonette Family. Order Resedaceæ</h3>
 <p>A family consisting of a few European herbs, with small and irregular flowers, which deserves notice merely because it contains the</p>
 <h4>Mignonette. <em>Resèda.</em></h4>
 <p>Sepals 4 to 7, green, not falling off, open in the bud. Petals 4 to 7, unequal, on broad claws, the small blade cleft as if cut into several narrow slips. Stamens 10 or more, borne on an enlargement of the receptacle, turned to one side of the blossom. Pod short and broad, one-celled, dividing at the top into 3 to 6 horns, opening between the horns long before the seeds are ripe. The seeds are kidney-shaped, numerous, and parietal, that is, borne along the walls of the pod. — Herbs, with alternate leaves and small dull-looking flowers crowded in a raceme or spike.</p>
 <p>1. Common Mignonette. Low and spreading; leaves some entire, others 3-cleft; sepals and petals 6 or 7. Cultivated for its very fragrant small flowers.  <em>R. odoràta.</em></p>
 <p>2. Dyer&#x27;s-Weed. Stem simple, upright, 2° high; leaves all entire. broadly lance-shaped; sepals and petals 4. A weed along road-sides in some places; used for dying yellow.  <em>R. Lutèola.</em></p>
+</section>
+<section aria-labelledby="12-violet-family-order-violace">
 <h3 id="12-violet-family-order-violace">12. Violet Family. Order Violaceæ</h3>
 <p>Herbs with 5 sepals, 5 petals, and 5 stamens borne on the receptacle, the lower petal rather different from the rest and enlarged at the bottom into a projecting sac or spur. Stamens very short and broad, the anthers a little united by their edges around the pistil. Pistil one, with one style. Pod one-celled, with three rows of seeds on its walls. — Leaves with stipules. Roots and juice rather acrid. The common plants of the family belong to the genus,</p>
 <h4>1. Violet. <em>Viola.</em></h4>
@@ -2439,6 +2511,8 @@ figcaption {
 <p>14. Downy V. Tall, leafless below, downy; corolla yellow, spur very short.  <em>V. pubéscens.</em></p>
 <p>† † Cultivated or run wild; root annual or biennial.</p>
 <p>15. Heart&#x27;s-ease or Pansy V. Low; upper leaves oval, the lower heart-shaped; stipules large and leaf-like, pinnatifid; corolla yellow-whitish, violet-blue, and purple, varying or mixed, large and showy in the cultivated Pansy, becoming small when run wild.  <em>V. tricolor.</em></p>
+</section>
+<section aria-labelledby="13-cistus-family-order-cistace">
 <h3 id="13-cistus-family-order-cistace">13. Cistus Family. Order Cistaceæ</h3>
 <p>This small family consists of low shrubby plants or perennial herbs, in Europe with a showy corolla which opens only once, in sunshine, the petals falling off at sunset. Here it contains only a few less handsome, or homely, weed-like plants. They may be known by the followiug marks. — Leaves some of them alternate. Calyx remaining after blossoming, of 5 sepals, three of them large and two smaller, often very small, the latter entirely outside in the bud and looking like bracts. Petals 5 or 3, all alike, overlapping each other in the bud, each with one edge covering the one before it, but covered by that behind it. Stamens from 3 to 20 or more, all separate, borne on the receptacle. Pistil one, making a one-celled pod, with the seeds borne on three lines down the walls, or on projections from them, that is, with 3 parietal placentas.</p>
 <figure id="fig-jq">
@@ -2457,6 +2531,8 @@ figcaption {
 	  Style none. Petals crumpled in the bud, · · · (<em>Heliánthemum</em>) Frostweed.
 	  Style slender. Little shrubs with minute leaves on sandy shores, · · · (<em>Hudsònia</em>) Hudsonia.
 	Petals 3, purplish, persistent. Flowers very small. · · · (<em>Léchea</em>) Pinweed.</pre>
+</section>
+<section aria-labelledby="14-st-john-s-wort-family-order-hypericace">
 <h3 id="14-st-john-s-wort-family-order-hypericace">14. St. John&#x27;s-Wort Family. Order Hypericaceæ</h3>
 <p>Herbs or low shrubs, with the leaves all opposite and dotted, as if punctured, with transparent or dark-colored dots, one or both; the juice generally acrid. Flowers with 4 or 5 persistent sepals, as many petals, and more numerous, commonly a great number of stamens, and in 3 or 5 clusters, borne on the receptacle. Styles 2 to 5, commonly separate, or sometimes all united into one. Ovary only one, in fruit a pod, either one-celled with 2 to 5 (commonly 3) parietal placentas, or with as many cells and the placentas in the inner angle of each cell (Fig. 189, 190), when ripe splitting through the partitions (Fig. 212).</p>
 <figure id="fig-jt">
@@ -2495,6 +2571,8 @@ figcaption {
 <p>6. Small S. Stem weak, with spreading branches, leafy to the top; leaves ovate or oblong, partly clasping, 5-ribbed.  <em>H. mùtilum.</em></p>
 <p>7. Canada S. Branches erect, leaves lance-shaped or linear; cymes leafless.  <em>H. Canadénse.</em></p>
 <p>8. Pine-weed S. Bushy-branched, the branches wiry and very slender; the leaves very minute, awl-shaped, close-pressed to the branches; flowers minute, sessile along the branches.  <em>H. Saròthra.</em></p>
+</section>
+<section aria-labelledby="15-pink-family-order-caryophyllace">
 <h3 id="15-pink-family-order-caryophyllace">15. Pink Family. Order Caryophyllaceæ</h3>
 <p>Herbs with opposite and entire leaves, which are not dotted, the stems swollen at the joints. Flowers regular, their parts in fives, sometimes in fours. Stamens never more than twice as many as the petals or sepals, and often fewer, on the receptacle or the calyx. Styles or stigmas generally separate, 2 to 5. Fruit a pod, which is generally one-celled, with the seeds from the bottom or on a central column. These are kidney-shaped, and have the embryo on the outside of the albumen, generally coiled around it. — Bland herbs: some are insignificant weeds; others have handsome flowers, and are cultivated for ornament. They form two main sub-families, one containing the Pinks, the other the Chickweeds. For lack of room, only the principal genera can be given here, without the species, which are numerous.</p>
 <figure id="fig-jy">
@@ -2547,6 +2625,8 @@ figcaption {
 	  Stipules in the form of scales between the bases of the leaves.
 	    Styles 3. Leaves not whorled. Petals purple, · · · (<em>Spergulària</em>) Sand-Spurrey.
 	    Styles 5. Leaves in whorls, narrow. Petals white, · · · (<em>Spérgula</em>) Spurrey.</pre>
+</section>
+<section aria-labelledby="16-purslane-family-order-portulacace">
 <h3 id="16-purslane-family-order-portulacace">16. Purslane Family. Order Portulacaceæ</h3>
 <p>More or less fleshy herbs, with entire leaves, and flowers which open only in sunshine. Sepals fewer than the petals (i. e. sepals 2, petals 5), with a stamen before each one, or else with many stamens. Pod one-celled, with the seeds, like those of the Pink family, on stalks rising from the base of the cell. Harmless and tasteless herbs; the Spring-Beauty has handsome flowers in the spring in woods. The common Purslane is a well-known garden weed and pot-herb, and the Great-flowered Purslane, with its cylindrical fleshy leaves, and large red or scarlet flowers, is a common ornamental annual in cultivation.</p>
 <pre class="outline">	Calyx 2-cleft, the tube united with the lower part of the ovary. Petals opening only once. Stamens 7 to 20. Pod many-seeded, opening round the middle, the top falling off as a lid. Annuals. · · · (<em>Portulàca</em>) Purslane.
@@ -2583,6 +2663,8 @@ figcaption {
 <img src="images/gray-plants/figkm.png" alt="316. Embryo taken out. — The embryo alone: a slender body bent into a hook-shaped coil." width="85" height="80" loading="lazy">
 <figcaption>316. Embryo taken out. — The embryo alone: a slender body bent into a hook-shaped coil.</figcaption>
 </figure>
+</section>
+<section aria-labelledby="17-mallow-family-order-malvace">
 <h3 id="17-mallow-family-order-malvace">17. Mallow Family. Order Malvaceæ</h3>
 <p>Distinguished by the numerous <em>monadelphous</em> stamens (i. e. united by their filaments into a tube or <em>column</em>), with kidney-shaped one-celled anthers, and the five sepals or lobes of the calyx applied edge to edge without overlapping (i. e. <em>valvate</em>) in the bud, and persistent. Leaves almost always palmately-veined, alternate, with stipules. Petals united at the bottom with the tube of stamens. There is often a sort of outer calyx, below the true one, called an <em>involucel.</em> All innocent plants, full of mucilage (it is extracted from the root of Marsh-Mallow), and with a very tough fibrous inner bark. Flowers often handsome.</p>
 <pre class="outline">	Anthers all at the top of the column of united filaments (Fig. 317).
@@ -2638,6 +2720,8 @@ figcaption {
 <p>3. Halberd-leaved H. Herb 6° high from a perennial root, smooth; lower leaves 3-lobed, upper halberd-shaped; calyx bladdery after flowering; corolla flesh-colored, 3′ long.  <em>H. militàris.</em></p>
 <p>4. Marsh H. Herb 5° high from a perennial root; leaves soft-downy and whitish underneath, ovate, pointed, the lower 3-lobed; base of the flower-stalks and leafstalks often grown together; corolla 5′ broad, white or rose-color with a crimson eye. Salt marshes, &amp;c.  <em>H. Moscheùtos.</em></p>
 <p>5. Bladder-Ketmia H. (or <em>Flower-of-an-Hour</em>). Herb 1° to 2° high from an annual root, somewhat hairy; lower leaves toothed, upper 3-parted, with narrow divisions; corolla greenish-yellow with a dark-brown eye, opening only in midday sunshine; calyx bladdery after flowering, enclosing the pod. Gardens, &amp;c.  <em>H. Triònum.</em></p>
+</section>
+<section aria-labelledby="18-linden-family-order-tiliace">
 <h3 id="18-linden-family-order-tiliace">18. Linden Family. Order Tiliaceæ</h3>
 <p>Has the tough and fibrous inner bark and the bland mucilage of the Mallow family. Its distinctions are shown in the only genus we have, viz.: —</p>
 <figure id="fig-kt">
@@ -2664,14 +2748,20 @@ figcaption {
 <p>Sepals 5, thick, valvate (the margins edge to edge) in the bud, falling off after flowering. Petals 5, cream-color. Stamens very many, on the receptacle, in 5 clusters: anthers 2-celled. Pistil one: ovary 5-celled, with two ovules in each cell; in fruit woody, small, closed, mostly one-seeded. — Large, soft-wooded trees, with heart-shaped leaves, often oblique at the base. Flowers in a small cluster on a slender and hanging peduncle from the axil of a leaf, and united part way with a narrow leaf-like bract. (Also called <em>Lime-trees.</em>)</p>
 <p>1. American Linden or Basswood. Leaves green, smooth, or in some varieties downy underneath; a petal-like body in the middle of each of the 5 clusters of stamens.  <em>T. Americàna.</em></p>
 <p>2. European Linden. Leaves smooth or nearly so; stamens hardly in clusters, no petal-like bodies with them. Cultivated in cities, &amp;c. as a shade-tree.  <em>T. Europæa.</em></p>
+</section>
+<section aria-labelledby="19-camellia-family-order-camelliace">
 <h3 id="19-camellia-family-order-camelliace">19. Camellia Family. Order Camelliaceæ</h3>
 <p>Shrubs or small trees, with alternate and simple leaves, not dotted; large and showy flowers, with a persistent calyx of 5 overlapping sepals, and very many stamens, their filaments united at the bottom with each other and with the base of the petals. Anthers 2-celled. Fruit a woody pod of 3 to 6 cells, containing few large seeds. To this belongs the grateful Tea-plant of China, and the</p>
 <p>Camellia, of our green-houses,  <em>Camèllia Japónica.</em></p>
 <h4>Loblolly-Bay, of swamps in the Southern States,  <em>Gordònia Lasiánthus.</em></h4>
+</section>
+<section aria-labelledby="20-orange-family-order-aurantiace">
 <h3 id="20-orange-family-order-aurantiace">20. Orange Family. Order Aurantiaceæ</h3>
 <p>Like the last, this family hardly claims a place here, being only house-plants, except far south. Known by having 20 or more stamens in one row around a single pistil, and the leaves having a joint between the blade and the winged or margined footstalk: they (and the fragrant petals) are punctate with transparent dots, looking like holes when held between the eye and the light, which are little reservoirs of fragrant oil. Fruit a berry with a thick rind.</p>
 <h4>Orange,  <em>Citrus Aurántium.</em></h4>
 <h4>Lemon,  <em>Citrus Limònium.</em></h4>
+</section>
+<section aria-labelledby="21-flax-family-order-linace">
 <h3 id="21-flax-family-order-linace">21. Flax Family. Order Linaceæ</h3>
 <p>Herbs with tough fibres in the inner bark, simple leaves, and oily seeds with a mucilaginous coat; consisting only of the Flax genus, which is known by the following marks: —</p>
 <figure id="fig-ky">
@@ -2690,6 +2780,8 @@ figcaption {
 <p>Sepals 5, overlapping, persistent. Petals 5, on the receptacle. Stamens 5, united with each other at the bottom. Styles 5. Pod 10-celled and splitting when ripe into 10 pieces with one seed in each. Flowers opening only for one day.</p>
 <p>1. Common Flax. Root annual; leaves lance-shaped; flower blue. Cultivated.  <em>L. usitatíssimum.</em></p>
 <p>2. Virginia Flax. Root perennial; leaves oblong or lance-shaped; flowers very small, yellow. Dry woods.  <em>L. Virginiànum.</em></p>
+</section>
+<section aria-labelledby="22-wood-sorrel-family-order-oxalidace">
 <h3 id="22-wood-sorrel-family-order-oxalidace">22. Wood-Sorrel Family. Order Oxalidaceæ</h3>
 <p>Small herbs with sour juice, compound leaves of three leaflets, and flowers nearly as in the Flax family, but with 10 stamens, a 5-celled pod, and two or more seeds in each cell. One genus, viz.</p>
 <h4>Wood-Sorrel. <em>Óxalis.</em></h4>
@@ -2697,6 +2789,8 @@ figcaption {
 <p>1. Common W. One-flowered scape and leaves rising from a scaly rootstock, hairy; petals large, white with reddish veins. N. in cold and moist woods.  <em>O. Acetosélla.</em></p>
 <p>2. Violet W. Several-flowered scape and leaves, from a scaly bulb; petals violet.  <em>O. violàcea.</em></p>
 <p>3. Yellow W. Stems ascending, leafy; flowers 2 to 6 on one peduncle, small, yellow.  <em>O. stricta.</em></p>
+</section>
+<section aria-labelledby="23-geranium-family-order-geraniace">
 <h3 id="23-geranium-family-order-geraniace">23. Geranium Family. Order Geraniaceæ</h3>
 <p>Herbs or small shrubs, with scented leaves, having stipules, the lower ones opposite. Roots astringent. Sepals 5, overlapping. Petals 5. Stamens 10, but part of them in some cases without anthers: filaments commonly united at the bottom. Pistils 5 grown into one, that is, all united to a long beak of the receptacle (except the 5 stigmas); and when the fruit is ripe the styles split away from the beak and curl up or twist, carrying with them the five little one-seeded pods, as shown in Fig. 334. — There are three genera, viz. Geranium or Cranesbill; Erodium, which differs in having only 5 stamens with anthers, and the fruit-bearing styles bearded inside; and Pelargonium, which has the corolla more or less irregular, generally 7 stamens with anthers, &amp;c. The latter are the House Geraniums, from the Cape of Good Hope, of several species and many varieties. We describe only the wild species of true</p>
 <figure id="fig-lb">
@@ -2724,12 +2818,16 @@ figcaption {
 <p>1. Spotted G. Stem erect, from a perennial root; leaves 5-parted, also cut and toothed, often whitish-blotched; petals pale purple. Borders of woods; fl. in spring and summer.  <em>G. maculàtum.</em></p>
 <p>2. Carolina G. Stems spreading from a biennial or annual root; leaves 5-parted, and cut into narrow lobes; flowers small; petals flesh-color, notched at the end. Waste places.  <em>G. Caroliniànum.</em></p>
 <p>3. Herb-Robert G. Stems spreading; leaves 3-divided, and the divisions twice pinnately cleft; flowers small, purple. Moist woods and ravines; fl. summer.  <em>G. Robertiànum.</em></p>
+</section>
+<section aria-labelledby="24-indian-cress-family-order-trop-olace">
 <h3 id="24-indian-cress-family-order-trop-olace">24. Indian-Cress Family. Order Tropæolaceæ</h3>
 <p>Twining, climbing, or trailing herbs, with a watery juice of a sharp taste like Mustard, alternate leaves, and showy irregular flowers, as in</p>
 <h4>Indian-Cress (commonly called Nasturtium). <em>Tropæ̀olum.</em></h4>
 <p>Calyx projecting into a long hollow spur behind, petal-like, 5-cleft. Petals 5, of two sorts, two of them borne on the throat of the calyx, the 3 others with claws. Stamens 8, unequal. Fruit 3-lobed, separating into 3 thick and closed one-seeded pieces.</p>
 <p>1. Common I. or Nasturtium. Very smooth; leaves roundish, shield-shaped; flowers large; petals orange-yellow, the claws of 3 of them fringed. Cult. very common.  <em>T. majus.</em></p>
 <p>2. Canary-bird I. Climbing high; leaves deeply lobed; petals pale yellow, cut-fringed. Cult.  <em>T. peregrìnum.</em></p>
+</section>
+<section aria-labelledby="25-balsam-family-order-balsaminace">
 <h3 id="25-balsam-family-order-balsaminace">25. Balsam Family. Order Balsaminaceæ</h3>
 <p>Tender annuals, with a bland watery juice and very irregular flowers; such as those of the principal genus,</p>
 <h4>Balsam (or Jewel-weed). <em>Impàtiens.</em></h4>
@@ -2745,6 +2843,8 @@ figcaption {
 <p>1. Garden Balsam. Flowers very showy, white, red, or pink, often double, clustered in the axils of the crowded lance-shaped leaves. Garden annual.  <em>I. Balsámina.</em></p>
 <p>2. Pale Jewel-weed. Flowers pale-yellow, sparingly spotted, the hanging sac broader than long; leaves ovate or oblong. Common in rich and shady or wet soil.  <em>I. pállida.</em></p>
 <p>3. Spotted Jewel-weed. Flowers orange, spotted with reddish-brown; sac longer than broad.  <em>I. fulva.</em></p>
+</section>
+<section aria-labelledby="26-rue-family-order-rutace">
 <h3 id="26-rue-family-order-rutace">26. Rue Family. Order Rutaceæ</h3>
 <p>Strong-scented, sharp-tasted, and bitter-acrid plants, the leaves dotted with transparent dots like punctures (which are filled with volatile oil); the stamens on the receptacle, as many or twice as many as the petals.</p>
 <pre class="outline">	Herbs, very strong-scented, with perfect flowers. Stamens 8 or 10.
@@ -2753,6 +2853,8 @@ figcaption {
 	Shrubs or trees. Stamens 4 or 5, only as many as the petals.
 	  Flowers diœcious. Pistils 2 to 5, making fleshy pods with one or two black seeds. Leaves pinnate. Stems prickly, · · · (<em>Zanthóxylum</em>) Prickly-Ash.
 	  Flowers polygamous. Pistil 1, making a 2-celled, 2-seeded key, winged all round. Leaflets 3. Stems not prickly, · · · (<em>Ptèlea</em>) Hop-tree.</pre>
+</section>
+<section aria-labelledby="27-sumach-family-order-anacardiace">
 <h3 id="27-sumach-family-order-anacardiace">27. Sumach Family. Order Anacardiaceæ</h3>
 <p>Trees or shrubs with a milky or a resinous-acrid juice (in some cases poisonous), and alternate leaves: — of which we have only the genus</p>
 <h4>Sumach. <em>Rhus.</em></h4>
@@ -2763,6 +2865,8 @@ figcaption {
 <p>4. Poison S. or Dogwood. Shrub smooth; leaves pinnate; leaflets 7 to 13, entire; panicles slender in the axils; fruit smooth. <em>Poisonous</em> to most people. Swamps.  <em>R. venenàta.</em></p>
 <p>5. Poison Ivy. Smooth; stems climbing by rootlets; leaflets 3, large, ovate, either entire, notched, or lobed, variable on the same stem. Poisonous like the last.  <em>R. Toxicodéndron.</em></p>
 <p>6. Venetian S. or Smoke-tree. Shrub, with simple oval or obovate leaves; branches of the panicle lengthening after flowering, and feathered with long hairs, making large light bunches. Cult.  <em>R. Cotìnus.</em></p>
+</section>
+<section aria-labelledby="28-grape-family-order-vitace">
 <h3 id="28-grape-family-order-vitace">28. Grape Family. Order Vitaceæ</h3>
 <p>Shrubby plants with a watery and sour juice, climbing by tendrils; known by having a minute calyx with scarcely any lobes, the petals valvate (edge to edge) in the bud and falling off very early, and the stamens (5 or 4) one before each petal! — Only two genera.</p>
 <h4>Grape. <em>Vitis.</em></h4>
@@ -2786,6 +2890,8 @@ figcaption {
 <img src="images/gray-plants/figlk.png" alt="341. Same, with the petals fallen. — The same flower after the petals have fallen, showing five spreading stamens around the short pistil in the little cup of the calyx." width="195" height="240" loading="lazy">
 <figcaption>341. Same, with the petals fallen. — The same flower after the petals have fallen, showing five spreading stamens around the short pistil in the little cup of the calyx.</figcaption>
 </figure>
+</section>
+<section aria-labelledby="29-buckthorn-family-order-rhamnace">
 <h3 id="29-buckthorn-family-order-rhamnace">29. Buckthorn Family. Order Rhamnaceæ</h3>
 <p>Woody plants, with simple alternate leaves, known by having the stamens as many as the small petals (4 or 5) and one before each of them, both inserted on the calyx or on a fleshy cup which lines the tube of the calyx; the lobes of the latter valvate, i. e. edge to edge in the bud. Fruit of 2 to 5 cells, and one large seed in each.</p>
 <figure id="fig-ll">
@@ -2798,12 +2904,16 @@ figcaption {
 </figure>
 <pre class="outline">	Calyx free from the ovary, greenish. Petals shorter than the calyx, or none, · · · (<em>Rhamnus</em>) Buckthorn.
 	Calyx below adherent to the ovary, its lobes petal-like (white in our species) and bent inwards, shorter than the stamens and long-clawed petals, · · · (<em>Ceanòthus</em>) New-Jersey Tea.</pre>
+</section>
+<section aria-labelledby="30-staff-tree-family-order-celastrace">
 <h3 id="30-staff-tree-family-order-celastrace">30. Staff-Tree Family. Order Celastraceæ</h3>
 <p>Woody plants, with simple alternate or opposite leaves; the divisions of the calyx and the petals both overlapping in the bud; the stamens as many as the petals (4 or 5) and alternate with them, inserted on a thick expansion of the receptacle (disk) which fills the bottom of the calyx. Pod colored, of 2 to 5 mostly one-seeded cells, showy when ripe in autumn, especially when they open and display the seeds enveloped in a pulpy scarlet aril.</p>
 <pre class="outline">	Flowers polygamous or nearly diœcious, white, in racemes: disk cup-shaped: style long. Pod globular, orange-yellow. Leaves alternate. Our only species is a twining shrub, sometimes called Bittersweet, · · · (<em>Celástrus</em>) Waxwork.
 	Flowers perfect, flat, dull green or dark purple, in axillary racemes: disk flat, covering the ovary, and bearing 4 or 5 very short stamens, the short style just rising through it. Pods red, lobed. Shrubs: leaves opposite,
 	  Pods smooth, strongly lobed, · · · (<em>Euónymus</em>) Burning-bush or Spindle-tree.
 	  Pods roundish, rough, · · · (<em>Euónymus</em>) Strawberry-bush.</pre>
+</section>
+<section aria-labelledby="31-soapberry-family-order-sapindace">
 <h3 id="31-soapberry-family-order-sapindace">31. Soapberry Family. Order Sapindaceæ</h3>
 <p>The proper Soapberry family belongs mostly to warmer climates; but we have shrubs and trees belonging to three of its sub-families:</p>
 <figure id="fig-ln">
@@ -2859,6 +2969,8 @@ figcaption {
 <p>⁎ ⁎ ⁎ Flowers in early spring, considerably earlier than the leaves, on short pedicels, in small umbel-like clusters from lateral leafless buds: stamens generally 5: fruit ripe and falling in early summer.</p>
 <p>6. White or Silver M. Leaves very deeply 5-lobed, cut and toothed, white beneath; flowers greenish-yellow, short-stalked, without petals; fruit woolly when young, with very large and smooth diverging wings. Tree common on river-banks, and planted for shade.  <em>A. dasycárpum.</em></p>
 <p>7. Red or Soft M. Leaves whitish beneath, with 3 or 5 short lobes, toothed; flowers on very short stalks which lengthen in fruit, with linear-oblong petals, red or sometimes yellowish; wings of the fruit small, reddish. Wet places: a common tree.  <em>A. rubrum</em></p>
+</section>
+<section aria-labelledby="32-pulse-family-order-leguminos">
 <h3 id="32-pulse-family-order-leguminos">32. Pulse Family. Order Leguminosæ</h3>
 <p>A large family, distinguished by the peculiar irregular corolla called <em>papilionaceous</em> (i. e. butterfly-shaped), and for having the kind of pod called a <em>legume</em> for its fruit. Leaves alternate, often compound, with stipules. Stamens generally 10, inserted on the calyx. Pistil one, simple. The papilionaceous corolla, which is familiar in the Pea-blossom and the like, consists of 5 irregular petals; viz. an upper one, generally largest and outside in the bud, called the <em>standard;</em> two side petals, called <em>wings</em>, and two lower ones put together and commonly a little joined, forming a kind of pouch which encloses the stamens and style, and which, being shaped somewhat like the prow of an ancient vessel, is named the <em>keel.</em> A few flowers in the family are almost regular, or not papilionaceous. In one case (to be mentioned in its place) all but one petal is wanting. Another set have perfectly regular blossoms; but are known by the pod and leaves. The legume is of every variety of shape and size. The whole kernel of the seed is an embryo, with thick cotyledons, as is familiar in the Bean and Pea (Fig. 32, 42). We give the principal sorts.</p>
 <figure id="fig-lu">
@@ -3008,6 +3120,8 @@ figcaption {
 <p>1. Maryland Senna. Root perennial; stems 3° or 4° high; leaflets 6 to 9 pairs, lance-oblong, 1′ or more long, used for medicine instead of the imported <em>senna.</em> Rich soil.  <em>C. Marilándica.</em></p>
 <p>2. Partridge-Pea S. Annual, low, spreading; leaflets 10 to 15 pairs, linear-oblong, ½′ long; flowers large and showy; anthers 10, six of them purple. Sandy fields.  <em>C. Chamæcrista.</em></p>
 <p>3. Sensitive S. Flowers small, short-stalked; anthers only 5: otherwise like the last.  <em>C. nictitans.</em></p>
+</section>
+<section aria-labelledby="33-rose-family-order-rosace">
 <h3 id="33-rose-family-order-rosace">33. Rose Family. Order Rosaceæ</h3>
 <p>A large and most important family of plants, distinguished by having alternate leaves with stipules, and regular flowers; their generally 5 petals (sometimes wanting) and stamens (generally numerous, at least above 10) inserted on the persistent calyx. The seeds are few and their whole kernel is embryo, as is seen in an almond (Fig. 36), Apple-seed, or Cherry-seed (Fig. 38), &amp;c. The family furnishes some of our most esteemed fruits: all the plants are innocent, except the strong-scented foliage and bark, in the Almond subfamily. For figures illustrating this family, see those of Cherry-blossom (Fig. 193), Hawthorn-blossom (Fig. 194), the fruit of Apple and Quince, (Fig. 200 and 201), Peach (Fig. 202), Rose and Strawberry (Fig. 220-222), and the annexed figures.</p>
 <figure id="fig-md">
@@ -3154,6 +3268,8 @@ figcaption {
 <h4>Quince. <em>Cydònia.</em></h4>
 <p>1. Common Quince. Flowers single at the tips of the branches, white; lobes of the calyx leaf-like and downy, as well as the ovate entire leaves; fruit pear-shaped. Cult.  <em>C. vulgàris.</em></p>
 <p>2. Japan Quince. Shrub, hardly of the same genus, for the flowers are on side spurs of the thorny branches, earlier than the smooth leaves; calyx top-shaped, with short lobes; petals large and red; fruit like a small apple, very hard. Cultivated for ornament.  <em>C. Japónica.</em></p>
+</section>
+<section aria-labelledby="34-carolina-allspice-family-order-calycanthace">
 <h3 id="34-carolina-allspice-family-order-calycanthace">34. Carolina-Allspice Family. Order Calycanthaceæ</h3>
 <p>A small family of a few rather curious shrubs, with opposite leaves; represented by the</p>
 <h4>Carolina-Allspice. <em>Calycánthus.</em></h4>
@@ -3173,6 +3289,8 @@ figcaption {
 <p>1. Common C. Leaves oval or roundish, downy beneath. Commonly cult. in gardens.  <em>C. flóridus.</em></p>
 <p>2. Smooth C. Leaves oblong, smooth, green both sides; flowers smaller.  <em>C. lævigàtus.</em></p>
 <p>3. Glaucous C. Leaves oblong- or lance-ovate, pointed, glaucous or whitened beneath.  <em>C. glaucus.</em></p>
+</section>
+<section aria-labelledby="35-lythrum-family-order-lythrace">
 <h3 id="35-lythrum-family-order-lythrace">35. Lythrum Family. Order Lythraceæ</h3>
 <p>Herbs with entire and mostly opposite leaves, and no stipules; the calyx tubular or cup-shaped, bearing from 4 to 7 petals and 4 to 14 stamens on its throat, and enclosing the many-seeded ovary and thin pod. Between the 4 to 7 teeth of the calyx are as many additional projections or supernumerary teeth. Style one.</p>
 <pre class="outline">	Flowers regular, or nearly so.
@@ -3180,6 +3298,8 @@ figcaption {
 	  Calyx short bell-shaped: petals 5: stamens 10 or 14, long and protruded: pod with 3 to 5 cells: leaves often whorled, · · · (<em>Nesæ̀a</em>) Nesæa.
 	Flowers with an irregular tubular calyx, spurred or projecting at the base on the upper side. Very unequal petals, and 12 unequal stamens in two sets. Pod few-seeded, bursting through one side of the calyx, · · · (<em>Cùphea</em>) Cuphea.</pre>
 <p>Footnote: ⁎ Sometimes called <em>Loosestrife;</em> but this name properly belongs to plants of another family.</p>
+</section>
+<section aria-labelledby="36-evening-primrose-family-order-onagrace">
 <h3 id="36-evening-primrose-family-order-onagrace">36. Evening-Primrose Family. Order Onagraceæ</h3>
 <p>Herbs, or sometimes shrubs, known by having the parts of the blossom in fours, the tube of the ealyx coherent with the 4-celled ovary, and often prolonged beyond, its summit bearing 4 petals, and 4 or 8 stamens. Style 1, slender: stigmas generally 4. In green-house cultivation we have several species of Fuchsia, well known for their pretty hanging flowers, the smaller kinds called <em>Ladies&#x27; Eardrop.</em> The showy part is a colored (generally red) calyx, its 4 lobes longer than the purple petals. Fuchsias are shrubs; the rest of the family are herbs Clarkia, known by the long-clawed petals, and broad petal-like stigmas, is sometimes cultivated, and so are several Evening-Primroses. The commonest wild plants of the family are Evening-Primroses and Willow-herbs.</p>
 <h4>Evening-Primrose. <em>Œnothèra.</em></h4>
@@ -3191,9 +3311,13 @@ figcaption {
 <p>Calyx with its tube not continued beyond the ovary. Petals 4, purple or whitish. Stamens 8. Pod long and slender, many-seeded; the seeds bearing a long tuft of downy hairs.</p>
 <p>1. Great W. Stem simple, 4° to 7° high; leaves lance-shaped; flowers showy, pink-purple, in a long loose spike; petals on claws, widely spreading; stamens and style turned down. Rich ground, especially where it has been burned over or newly cleared.  <em>E. angustifòlium.</em></p>
 <p>2. Small W. Branching, 1° to 2° high; leaves lance-oblong, commonly purple-veined; flowers very small; petals purplish. Wet places, everywhere.  <em>E. coloràtum.</em></p>
+</section>
+<section aria-labelledby="37-cactus-family-order-cactace">
 <h3 id="37-cactus-family-order-cactace">37. Cactus Family. Order Cactaceæ</h3>
 <p>Fleshy and generally prickly plants, without any leaves, except little scales or points, of very various and strange shapes, generally the petals and always the stamens very numerous, and on the one-celled ovary, which in fruit makes a berry. Being house-plants (with one exception) they must here be passed by, merely mentioning the</p>
 <p>Prickly-Pear Cactus, which grows in dry sandy or rocky places, southward, and consists of flat and rather leaf-like rounded joints of stem, growing one out of another, prickly at the buds, and bearing yellow flowers of rather few petals; the ovary making a large berry full of sweet and eatable pulp.  <em>Opúntia vulgàris.</em></p>
+</section>
+<section aria-labelledby="38-gourd-family-order-cucurbitace">
 <h3 id="38-gourd-family-order-cucurbitace">38. Gourd Family. Order Cucurbitaceæ</h3>
 <p>Succulent or tender herbs, with alternate and radiate-veined leaves, and with tendrils. Flowers commonly monœcious, in the axils. Fertile flowers with the tube of the calyx coherent with the ovary. Petals often united with each other into a monopetalous corolla, and united with or borne on the cup of the calyx. Stamens generally 3, and more or less connected by their anthers or their filaments, or by both; the anthers curiously contorted Fruit a pepo (224), berry, or pod. Seeds large and flat; the whole kernel is an embryo. The most important plants of the family are those cultivated.</p>
 <figure id="fig-mi">
@@ -3229,6 +3353,8 @@ figcaption {
 	  Ovary and fruit one-seeded or 4-seeded. Small-flowered climbers, wild in this country.
 	    Corolla of the sterile flowers 6-parted, white. The long racemes rather pretty in cultivation. Fruit an oval, weak-prickly, bladder-like pod, bursting at the top, and containing 2 fibrous-netted cells, with 2 large seeds in each. Leaves sharply 5-lobed, · · · (<em>Echinocýstis</em>) Bladder-Cucumber.
 	    Corolla of the wheel-shaped sterile flowers 5-lobed, greenish-white. Fruit a small, ovate, 1-seeded, prickly-barbed bur. Leaves 5-angled, · · · (<em>Sicyos</em>) Bur-Cucumber.</pre>
+</section>
+<section aria-labelledby="39-passion-flower-family-order-passiflorace">
 <h3 id="39-passion-flower-family-order-passiflorace">39. Passion-Flower Family. Order Passifloraceæ</h3>
 <p>This small family of tendril-bearing vines, with alternate palmately-lobed leaves, is mainly represented by the</p>
 <h4>Passion-Flower. <em>Passiflòra.</em></h4>
@@ -3239,6 +3365,8 @@ figcaption {
 </figure>
 <p>1. Small P. Leaves bluntly 3-lobed, otherwise entire; flowers greenish-yellow, 1′ wide.  <em>P. lùtea.</em></p>
 <p>2. Maypop P. Leaves 3-cleft, the lobes serrate; flowers 2′ broad, white, with a triple flesh-colored and purple crown; fruit like a hen&#x27;s egg in shape and size.  <em>P. incarnàta.</em></p>
+</section>
+<section aria-labelledby="40-currant-family-order-grossulace">
 <h3 id="40-currant-family-order-grossulace">40. Currant Family. Order Grossulaceæ</h3>
 <p>Consists of the Currants and Gooseberries, which belong to the same botanical genus. Shrubs, with alternate rounded and radiate-veined leaves; the tube of the calyx coherent with the one-celled ovary, and continued above it into a cup which is often colored, like a corolla, and bears the 5 little petals and 5 stamens. Seeds many, with a pulpy outer coat, borne upon the walls of the berry on two thickened lines (parietal placentas).</p>
 <figure id="fig-mo">
@@ -3278,6 +3406,8 @@ figcaption {
 <p>3. Wild Black C. Leaves on long foot-stalks, slightly heart-shaped, sharply lobed, sprinkled with dots both sides; racemes rather drooping; flowers oblong, yellowish-white; berries oblong, black, rather spicy. Wooded banks.  <em>R. flóridum.</em></p>
 <p>4. Garden Black C. Leaves on shorter footstalks, less dotted; racemes looser, and black berries larger than in No. 3. Gardens.  <em>R. nìgrum.</em></p>
 <p>5. Missouri or Buffalo C. Leaves smooth; racemes with leafy bracts; flowers (calyx) long and tubular, bright yellow, spicy-fragrant. Cultivated for ornament.  <em>R. aùreum.</em></p>
+</section>
+<section aria-labelledby="41-stonecrop-family-order-crassulace">
 <h3 id="41-stonecrop-family-order-crassulace">41. Stonecrop Family. Order Crassulaceæ</h3>
 <p>Herbs with thick and fleshy leaves (except in one peculiar plant of the family, viz. the Ditchwort); the flowers remarkable for being perfectly regular and symmetrical throughout, i. e. having the sepals, petals, and pistils all of the same number and all separate, or nearly so (except in Ditchwort); the stamens also of the same number, or just twice as many. Pods containing few or many seeds. Mostly small plants: several are found in gardens.</p>
 <figure id="fig-mu">
@@ -3293,6 +3423,8 @@ figcaption {
 <p>2. Three-leaved S. Stems spreading, 3′ to 8′ high; leaves wedge-obovate or oblong, the lower ones in whorls of 3; the earliest flower with the parts in fives, the rest generally in fours; petals white. Rocky woods, S. and W. and in gardens.  <em>S. ternàtum.</em></p>
 <p>3. Handsome S. Stems 4′ to 12′ high; leaves thread-shaped; flowers crowded; petals rose-purple Rocky places, S. W. and cultivated.  <em>S. pulchéllum</em></p>
 <p>4. Great S. or Live-for-ever. Stems 2° high; leaves oval; flowers in a close compound cyme, purple. Gardens.  <em>S. Telèphium.</em></p>
+</section>
+<section aria-labelledby="42-saxifrage-family-order-saxifragace">
 <h3 id="42-saxifrage-family-order-saxifragace">42. Saxifrage Family. Order Saxifragaceæ</h3>
 <p>Herbs, or in the case of Hydrangea, &amp;c. shrubs, differing from the last in having the pistils fewer than the petals, and generally more or less united with each other and with the tube of the calyx. Petals 5 (rarely 4), on the calyx. Stamens 5 or 10, or in Mock-Orange many.</p>
 <pre class="outline">	Herbs. Leaves generally alternate. Petals 5. Styles only 2.
@@ -3312,6 +3444,8 @@ figcaption {
 <h4>Mock-Orange (or Syringa). <em>Philadélphus.</em></h4>
 <p>1. Common M. or Syringa. Flowers cream-colored, fragrant, in large panicles; styles separate. Cultivated.  <em>P. coronàrius.</em></p>
 <p>2. Scentless M. Flowers larger and later than in the first, few on the spreading branchlets, pure white. Cultivated; also wild S. Leaves tasting like cucumbers.  <em>P. inodòrus.</em></p>
+</section>
+<section aria-labelledby="43-parsley-family-order-umbellifer">
 <h3 id="43-parsley-family-order-umbellifer">43. Parsley Family. Order Umbelliferæ</h3>
 <p>Herbs with small flowers in compound umbels, the 5 petals and 5 stamens on the top of the ovary, with which the calyx is so incorporated that it is not apparent, except sometimes by 5 minute teeth. Styles 2. Fruit dry, 2-seeded, splitting when ripe into two akenes. Stems hollow. Leaves generally compound, decompound, or much cut. Some species are aromatic, having a volatile oil in the seeds: most, but not all, of these are harmless. Others contain a deadly poison in the roots and leaves. The deadly poisonous sorts are marked †: the most deadly is the <em>Water-Hemlock</em>, also called <em>Musquash-root</em>, and <em>Beaver-Poison.</em> — The kinds in this large family are known by their fruit, and are too difficult for the beginner. The principal common kinds are merely enumerated in the following key. (Fig. 148 shows the compound umbel in Caraway, a good and familiar example of the family.)</p>
 <figure id="fig-mv">
@@ -3366,6 +3500,8 @@ figcaption {
 	    Fruit long, tapering downwards, · · · (<em>Osmorrhìza</em>) Sweet-Cicely.
 	Seed and fruit curved in at the top and bottom, or kidney-shaped, strong-scented.
 	  Flowers white, · · · (<em>Coriándrum</em>) ⁎Coriander.</pre>
+</section>
+<section aria-labelledby="44-aralia-family-order-araliace">
 <h3 id="44-aralia-family-order-araliace">44. Aralia Family. Order Araliaceæ</h3>
 <p>Much like the last, but often shrubs or trees; the styles almost always more than two, and the fruit becoming berry-like. Also the umbels are not regularly compound, but either simple or panicled. Flowers often polygamous. Here belongs the true or English Ivy, with evergreen simple leaves, which thrives in some places in northern exposures; also the following wild plants.</p>
 <h4>Aralia. <em>Aràlia.</em></h4>
@@ -3378,6 +3514,8 @@ figcaption {
 <p>Styles 2 or 3. Flowers white. Berries red or reddish when ripe. Low herbs with simple stems, bearing at the top a whorl of leaves and one long-stalked umbel.</p>
 <p>1. True Ginseng. Root long and large, warm-aromatic; leaflets 5. Rich woods, N.  <em>A. quinquefòlia.</em></p>
 <p>2. Dwarf G. (or Groundnut). Root round, sharp-tasted; leaflets 3 or 5; stem 4′ to 6′ high. Damp woods, N. Fl. spring.  <em>A. trifòlia.</em></p>
+</section>
+<section aria-labelledby="45-cornel-family-order-cornace">
 <h3 id="45-cornel-family-order-cornace">45. Cornel Family. Order Cornaceæ</h3>
 <p>Shrubs or trees (except our Dwarf Cornel), the calyx coherent with the ovary, which makes a berry-like stone-fruit; represented (except by the Tupelo or Pepperidge-tree, <em>Nyssa</em>, here omitted) only by the genus</p>
 <h4>1. Cornel (or Dogwood). <em>Cornus.</em></h4>
@@ -3404,6 +3542,8 @@ figcaption {
 <p>6. Panicled C. Branches gray; leaves lance-ovate; cymes convex; fruit white.  <em>C. paniculàta.</em></p>
 <p>7. Alternate-leaved C. Branches greenish streaked with white; leaves crowded at the ends of the shoots, but alternate; leaves pointed; fruit bright blue. Hill-sides.  <em>C. alternifòlia.</em></p>
 <p>II. Monopetalous Division.</p>
+</section>
+<section aria-labelledby="46-honeysuckle-family-order-caprifoliace">
 <h3 id="46-honeysuckle-family-order-caprifoliace">46. Honeysuckle Family. Order Caprifoliaceæ</h3>
 <p>Shrubs or woody twiners (or one or two are herbs), distinguished by having a monopetalous corolla bearing the 4 or 5 stamens, and borne on the ovary, and the leaves opposite without stipules.</p>
 <figure id="fig-ne">
@@ -3463,6 +3603,8 @@ figcaption {
 <p>⁎ ⁎ Flowers at the margin of the cyme neutral, consisting merely of a large and flat corolla, white (just as in Hydrangea, p. 69, and Fig. 169.)</p>
 <p>6. Snowball V. or Cranberry-tree. Leaves with 3 pointed lobes, smooth; fruit red, sour. Swamps, N. — The Snowball-tree or Guelder-Rose is a cultivated state of this, with all the flowers become neutral.  <em>V. Ópulus.</em></p>
 <p>7. Hobblebush V. Branches long and spreading, often taking root; leaves large, round-ovate or heart-shaped, many-veined, scurfy beneath; cyme sessile, very broad; fruit red, turning blackish. Damp woods, N.  <em>V. lantanoìdes.</em></p>
+</section>
+<section aria-labelledby="47-madder-family-order-rubiace">
 <h3 id="47-madder-family-order-rubiace">47. Madder Family. Order Rubiaceæ</h3>
 <p>Well distinguished by its regular monopetalous corolla, bearing 4 or 5 stamens alternate with its lobes, and itself borne on the ovary (the calyx being coherent); and the leaves in whorls, or else opposite and with stipules between them.</p>
 <figure id="fig-ni">
@@ -3501,14 +3643,20 @@ figcaption {
 	Small herbs. (Corolla 4-lobed.)
 	  Flowers twin, on one ovary, which makes a double-eyed red berry. Small creeping evergreen, with round leaves. Corolla bearded inside. · · · (<em>Mitchélla</em>) Partridge-berry.
 	  Flowers separate, peduncled. Fruit a dry pod. Stems erect. · · · (<em>Oldenlándia</em>, § <em>Houstònia</em>) Bluets.</pre>
+</section>
+<section aria-labelledby="48-valerian-family-order-valerianace">
 <h3 id="48-valerian-family-order-valerianace">48. Valerian Family. Order Valerianaceæ</h3>
 <p>Herbs, with strong-scented roots, opposite leaves, and no stipules, a 5-lobed monopetalous corolla bearing only 2 or 3 stamens, and borne on the ovary, which makes a small one-seeded dry fruit. Flowers small, in cymes or clusters, white or purplish.</p>
 <pre class="outline">	Limb of the calyx crowning the fruit in the form of feathery bristles, · · · (<em>Valeriàna</em>) ⁎Valerian.
 	Limb of the calyx only one or more blunt teeth, · · · (<em>Fèdia</em>) Lamb-Lettuce.</pre>
+</section>
+<section aria-labelledby="49-teasel-family-order-dipsace">
 <h3 id="49-teasel-family-order-dipsace">49. Teasel Family. Order Dipsaceæ</h3>
 <p>Herbs, with opposite leaves, no stipules, and perfect flowers in dense heads, surrounded by an involucre, and with a chaffy bract under each blossom. Corolla tubular or funnel-form, with 4 or 5 lobes, bearing 4 stamens, and itself borne on the ovary, which becomes an akene in fruit, containing one hanging seed.</p>
 <pre class="outline">	Flowers in a rough-chaffy head: calyx cup-shaped, short: lobes of the corolla 4. Stem and leaves rough or prickly, · · · (<em>Dípsacus</em>) Teasel.
 	Flowers larger than the chaff: calyx with long-awned or bristle-shaped lobes: lobes of the corolla 4 or 5, unequal, · · · (<em>Scabiòsa</em>) ⁎Scabious.</pre>
+</section>
+<section aria-labelledby="50-composite-or-sunflower-family-order-composit">
 <h3 id="50-composite-or-sunflower-family-order-composit">50. Composite or Sunflower Family. Order Compositæ</h3>
 <p>Known by having what were called <em>compound flowers</em>, which are really a number of flowers closely crowded into a head, and this surrounded by an involucre which was taken for a calyx. The Scabious has its flowers in such heads. But the distinguishing mark of the present family is that its five stamens are united by their anthers, or <em>syngenesious.</em> Fig. 400 shows the stamens, their anthers connected into a tube, through which the style passes. Fig. 401 shows this tube split down on one side and spread open flat. What gives the whole head so much the appearance of one large blossom is, that, in most cases, these flowers have a <em>strap-shaped</em> corolla. This will be understood by supposing a long tubular corolla to be split down on one side and spread out flat. In the Cichory (Fig. 402), Dandelion, and the like, all the flowers are strap-shaped. But in Sunflower, Coreopsis (Fig. 404), Aster, and many others, only the flowers round the margin are strap-shaped; these are called <em>rays</em> or ray-flowers, and at first view much resemble the petals of a many-petalled blossom, — all the more so, because in Coreopsis and Sunflower these ray-flowers are <em>neutral</em>, having neither stamens nor pistils. But in Asters and Daisies, they are <em>pistillate</em>, having a pistil only. The blossoms, which in these cases fill the body of the head, and are so small that the superficial observer is apt to take them for stamens or pistils, are regular and perfect, with a tubular and 5-lobed corolla (Fig. 405 <em>a</em>). They are called disk-flowers. In Thistles, Thoroughwort, Wormwood, and some kinds of Groundsel, all the flowers are of this sort, i. e. there are no rays, but all the flowers tubular. In all, the ovary is one-celled and one seeded, and makes an akene in fruit. The corolla being on the ovary, the latter is of course covered by the tube of the calyx adherent to it. Sometimes there is no limb or border to the calyx; then the akene is naked, as in that of Mayweed (Fig. 406). When the limb of the calyx is present in any form on the ovary or akene, it is named the <em>pappus</em> (which means seed-down). In Cichory the pappus or calyx is a ring or cup crowning the akene (Fig. 407); in Sunflower it consists of two chaffy scales, which fall off early (Fig. 408); in Helenium there are five chaffy and pointed scales (Fig. 409). But more commonly the pappus consists of bristles, or downy hairs (as its name denotes). Asters, Groundsels, and especially Thistles, afford most familiar examples of such a hairy or downy pappus; those of Thistles, &amp;c. in autumn sailing about in every breeze. Fig. 411 shows the very soft downy pappus of Sow-Thistle. Fig. 410, that of the Dandelion; this is raised upon a long beak to the akene, which lengthens greatly after flowering.</p>
 <figure id="fig-np">
@@ -3563,6 +3711,8 @@ figcaption {
 <img src="images/gray-plants/figoa.png" alt="Fig. 409. — The akene of Helenium, hairy and top-shaped, crowned with five chaffy, pointed scales." width="177" height="238" loading="lazy">
 <figcaption>Fig. 409. — The akene of Helenium, hairy and top-shaped, crowned with five chaffy, pointed scales.</figcaption>
 </figure>
+</section>
+<section aria-labelledby="51-lobelia-family-order-lobeliace">
 <h3 id="51-lobelia-family-order-lobeliace">51. Lobelia Family. Order Lobeliaceæ</h3>
 <p>Herbs with milky (acrid-poisonous) juice, alternate leaves, and scattered flowers, the stamens free from the peculiarly irregular corolla, which is split down on one side (Fig. 184), and borne with it on the many-seeded ovary. We have only one genus, viz.: —</p>
 <h4>Lobelia. <em>Lobèlia.</em></h4>
@@ -3571,6 +3721,8 @@ figcaption {
 <p>2. Great Blue L. Rather hairy, 1° or 2° high; leaves lance-oblong; flowers 1′ long, crowded in a leafy raceme, light blue.  <em>L. syphilitica.</em></p>
 <p>3. Spiked L. Stem simple, straight, and slender, 1° to 3° high, including the long and naked spike-like raceme of small pale-blue flowers; lowest leaves obovate or oblong.  <em>L. spicàta.</em></p>
 <p>4. Indian-Tobacco L. Branching, 8′ to 18′ high; leaves ovate-oblong; flowers very small, in irregular leafy racemes, pale blue; pods inflated. Open places.  <em>L. inflàta.</em></p>
+</section>
+<section aria-labelledby="52-campanula-family-order-campanulace">
 <h3 id="52-campanula-family-order-campanulace">52. Campanula Family. Order Campanulaceæ</h3>
 <p>Like the last family in all general respects, except that the showy corolla is regular, 5-lobed; the 5 stamens separate; the stigmas and the cells of the pod 3 or 5. Juice milky. The principal genus is</p>
 <figure id="fig-ob">
@@ -3585,6 +3737,8 @@ figcaption {
 <p>3. Tall C. Stem tall, leafy, ending in a leafy loose spike (1° or 2° long) of blue flowers; corolla wheel-shaped; style long and curved. Rich low ground.  <em>C. Americàna.</em></p>
 <p>⁎ ⁎ Garden species: stigmas and cells of the pod 5.</p>
 <p>4. Canterbury Bells. Hairy, with stout stems, very large blue (or white) flowers, and broad appendages of the calyx covering the pod.  <em>C. Mèdium.</em></p>
+</section>
+<section aria-labelledby="53-heath-family-order-ericace">
 <h3 id="53-heath-family-order-ericace">53. Heath Family. Order Ericaceæ</h3>
 <p>Distinguished generally by the anthers opening by a pore or small hole at the top of each cell, and from all the other orders with a monopetalous corolla, except the two foregoing, by having the stamens free from the corolla, as many or twice as many as its lobes. But the petals are sometimes entirely separate, especially in the third and fourth sub-families. Fruit several-celled. Style one. This large order comprises four very distinct sub-families, viz.: —</p>
 <figure id="fig-oc">
@@ -3689,12 +3843,16 @@ figcaption {
 <p>Leaves evergreen, oblong or lance-shaped, toothed, crowded or scattered on short ascending stems, which bears at the summit from 1 to 7 fragrant flesh-colored flowers in a corymb or umbel. Petals orbicular, widely spreading. Stamens 10; their filaments enlarged and hairy in the middle. Style very short: stigma broad and flat. Dry woods; fl. early summer.</p>
 <p>1. Umbelled P. (or Prince&#x27;s-Pine). Leaves lance-shaped with a tapering base, serrate, bright green, not spotted; flowers 4 to 7.  <em>C. umbellàta.</em></p>
 <p>2. Spotted P. Plant smaller, 3′ to 5′ high: leaves lance-ovate, obtuse at the base, blotched with white, flowers 1 to 4.  <em>C. maculàta.</em></p>
+</section>
+<section aria-labelledby="54-holly-family-order-aquifoliace">
 <h3 id="54-holly-family-order-aquifoliace">54. Holly Family. Order Aquifoliaceæ</h3>
 <p>Trees or shrubs, with alternate leaves, and small regular (often polygamous) flowers in the axils; the minute calyx and the 4–6-parted (greenish or white) corolla free from the ovary. Stamens 4 to 6, attached to the very base of the corolla, alternate with its divisions. Anthers opening lengthwise. Stigmas nearly sessile. Fruit a berry-like drupe, containing 4 to 6 small seedlike stones. — Consists mainly of the genus</p>
 <h4>Holly. <em>Ilex.</em></h4>
 <p>Containing several species, some with deciduous, others with evergreen leaves.</p>
 <p>1. American Holly. Leaves thick and evergreen, spiny-toothed, oval; parts of the blossom in fours; fruit red. — Tree with ash-colored bark and white wood.  <em>I. opàca.</em></p>
 <p>2. Winterberry H. or Black Alder. Leaves thin and deciduous, serrate, veiny, obovate or oblong; peduncles very short; parts of the blossom often in sixes; fruit red. Shrub: low grounds. This belongs to the section <em>Prinos.</em>  <em>I. verticillàta.</em></p>
+</section>
+<section aria-labelledby="55-ebony-family-order-ebenace">
 <h3 id="55-ebony-family-order-ebenace">55. Ebony Family. Order Ebenaceæ</h3>
 <p>Of this small family, we have only one species, a tree, which deserves notice, viz.: —</p>
 <h4>Persimmon. <em>Diospýros.</em></h4>
@@ -3715,6 +3873,8 @@ figcaption {
 <img src="images/gray-plants/figon.png" alt="425. Section of the same. — The Persimmon fruit cut across, showing the thick pulp with eight large flat seeds set in a ring round the centre." width="272" height="272" loading="lazy">
 <figcaption>425. Section of the same. — The Persimmon fruit cut across, showing the thick pulp with eight large flat seeds set in a ring round the centre.</figcaption>
 </figure>
+</section>
+<section aria-labelledby="56-plantain-family-order-plantaginace">
 <h3 id="56-plantain-family-order-plantaginace">56. Plantain Family. Order Plantaginaceæ</h3>
 <p>Consists mainly of the genus of low stemless herbs called</p>
 <h4>Plantain (or Rib-Grass). <em>Plantàgo.</em></h4>
@@ -3739,6 +3899,8 @@ figcaption {
 <p>2. Virginia P. Small (2′ to 7′ high), hairy; leaves oblong, 3–5-ribbed; seeds 2.  <em>P. Virgínica.</em></p>
 <p>3. English P. or Ripple-Grass. Hairy, with long lance-shaped or linear leaves, and a short and thick spike or head, on a scape 1° or 2° high; seeds 2. Common E.  <em>P. lanceolàta.</em></p>
 <p>4. Seaside P. Smooth; leaves linear, thick and fleshy; seeds 2. Salt marshes on the coast.  <em>P. marítima.</em></p>
+</section>
+<section aria-labelledby="57-leadwort-family-order-plumbaginace">
 <h3 id="57-leadwort-family-order-plumbaginace">57. Leadwort Family. Order Plumbaginaceæ</h3>
 <p>Familiar to us in two plants only, viz. Marsh-Rosemary on the coast, and Thrift in gardens; known by having a dry and scaly funnel-shaped calyx, and 5 petals united only at their base, with a stamen before each, and 5 styles on a single one-seeded ovary.</p>
 <figure id="fig-os">
@@ -3751,6 +3913,8 @@ figcaption {
 </figure>
 <pre class="outline">	Flowers (rose-color) in a round head on a long and naked scape: leaves very narrow, all in a close tuft at the root, · · · (<em>Armèria</em>) Thrift.
 	Flowers (lavender-color) spiked or sessile along the branches of a forking panicle: leaves spatulate, thickish, on petioles, nearly all of them from the stout rootstock, · · · (<em>Státice</em>) Marsh-Rosemary.</pre>
+</section>
+<section aria-labelledby="58-primrose-family-order-primulace">
 <h3 id="58-primrose-family-order-primulace">58. Primrose Family. Order Primulaceæ</h3>
 <p>Herbs, with regular perfect flowers; completely distinguished by having the stamens of the same number as the lobes to the corolla and <em>one before each</em>, inserted on the tube; the pistil with a one-celled ovary or pod, with one large placenta rising from its base, and bearing many or few seeds.</p>
 <pre class="outline">	Leaves under water pinnately divided into thread-like divisions; flowering stems hollow, and inflated between the joints, · · · (<em>Hottònia</em>) Featherfoil.
@@ -3770,6 +3934,8 @@ figcaption {
 <p>2. Four-leaved L. Stem simple; leaves lance-ovate, in whorls of 4 (sometimes of 3 or 6); flowers long-stalked from the axil of the leaves. Sandy grounds.  <em>L. quadrifòlia.</em></p>
 <p>3. Ciliate L. Leaves opposite, lance-ovate, with a rounded or heart-shaped base, on long ciliate footstalks; flowers long-stalked from the upper axils; divisions of the corolla ovate, pointed, and with wavy or slightly toothed margins. Low grounds.  <em>L. ciliàta.</em></p>
 <p>4. Lance-leaved L. Leaves lance-shaped, oblong, or linear, narrowed into a short margined footstalk; flowers, &amp;c. nearly as in No. 3. S. &amp; W. in low grounds.  <em>L. lanceolàta.</em></p>
+</section>
+<section aria-labelledby="59-bignonia-family-order-bignoniace">
 <h3 id="59-bignonia-family-order-bignoniace">59. Bignonia Family. Order Bignoniaceæ</h3>
 <p>Plants with mostly opposite leaves, and large and showy flowers: the corolla 2-lipped or rather irregular, bearing on its tube 4 stamens (2 long and 2 short) or only 2, often with rudiments of the other one or three. Fruit a large 2-celled pod, with many large seeds: the whole kernel is a flat embryo. Calyx free and corolla on the receptacle, as it is in all the following families with monopetalous corolla.</p>
 <figure id="fig-ou">
@@ -3783,11 +3949,15 @@ figcaption {
 <pre class="outline">	Woody plants, with winged seeds, in long pods. Vine climbing by rootlets: leaves pinnate. Calyx 5-toothed. Corolla funnel-shaped, 5-lobed: stamens 4, · · · (<em>Técoma</em>) Trumpet-Creeper.
 	Tree, with simple heart-shaped leaves, and white flowers (purple-tinged or dotted) in large panicles. Calyx 2-lipped. Corolla bell-shaped and 2-lipped: stamens generally 2, with vestiges of one or three others, · · · (<em>Catálpa</em>) Catalpa.
 	Rank clammy herb (cult. and wild S. W.) with wingless seeds in a large and long-pointed fruit, the outer part of which is fleshy and falls off from the inner fibrous-woody part: this is crested and long-beaked, the beak at length splitting into 2 hooked horns. Corolla dull-colored: stamens 2 or 4, perfect, · · · (<em>Martýnia</em>) Unicorn-plant.</pre>
+</section>
+<section aria-labelledby="60-broom-rape-family-order-orobanchace">
 <h3 id="60-broom-rape-family-order-orobanchace">60. Broom-Rape Family. Order Orobanchaceæ</h3>
 <p>Herbs parasitic on the roots of trees, &amp;c., readily known by their irregular monopetalous corolla, 4 stamens, in two pairs; the ovary one-celled with innumerable small seeds on the walls. Also, like other parasitic plants, they are entirely destitute of green herbage, yellowish or brownish throughout, and with scales in place of leaves.</p>
 <pre class="outline">	Stems slender and branched, with few and small scales and many flowers scattered along the branches, · · · (<em>Epiphègus</em>) Beech-drops.
 	Stems short and thick, covered with broad scales, so that the plant resembles a fir-cone Flowers under the upper scales: stamens projecting, · · · (<em>Conópholis</em>) Squaw-root.
 	Stems or naked and 1-flowered scapes slender, from a scaly base: stamens included in the curved and salver-shaped corolla, · · · (<em>Aphýllon</em>) Naked Broom-rape.</pre>
+</section>
+<section aria-labelledby="61-figwort-family-order-scrophulariace">
 <h3 id="61-figwort-family-order-scrophulariace">61. Figwort Family. Order Scrophulariaceæ</h3>
 <p>Herbs with a 2-lipped or more or less irregular monopetalous corolla, and 4 stamens in pairs (2 long and 2 short), or only 2 perfect stamens; rarely all 5 present: style 1: the ovary 2-celled and making a many-seeded pod (few-seeded in some Speedwells and Cow-wheat). Flowers often showy. Two lobes always belong to the upper lip, three to the lower.</p>
 <figure id="fig-ow">
@@ -3870,6 +4040,8 @@ figcaption {
 <p>3. Downy G. Stem (3° or 4° high) and oblong or lance-shaped leaves clothed with a fine close down, upper leaves entire, lower ones sinuate or pinnatifid. Woods.  <em>G. flava.</em></p>
 <p>4. Smooth G. Smooth throughout and glaucous, 3° to 6° high; lower leaves twice pinnatifid, upper once pinnatifid or entire. Rich woods.  <em>G. quercifòlia.</em></p>
 <p>5. Cut-leaved G. Rather downy, bushy-branched, 2° or 3° high, very leafy; leaves pinnatifid, the crowded divisions cut and toothed.  <em>G. pediculària.</em></p>
+</section>
+<section aria-labelledby="62-vervain-family-order-verbenace">
 <h3 id="62-vervain-family-order-verbenace">62. Vervain Family. Order Verbenaceæ</h3>
 <p>Herbs or shrubby plants, with opposite leaves, a 2-lipped or unequally 5- (or rarely 4-) lobed corolla, and 4 stamens in pairs (i. e. 2 long and 2 short ones): the pistil with a single ovary and only one seed in each cell; the fruit either berry-like with 4 stones, or dry and splitting into 2 or 4 akenes, or in Lopseed consisting of a single akene. This family is intermediate between the foregoing order and the next. The two following are the commonest genera.</p>
 <pre class="outline">	Calyx cylindrical, 2-lipped. Corolla 2-lipped. Ovary 1-celled, simple. Herb, in woods, with small whitish flowers in slender and loose spikes; the calyx containing the akene, turned down in fruit, · · · (<em>Phryma</em>) Lopseed.
@@ -3882,6 +4054,8 @@ figcaption {
 <p>3. White V. Leaves petioled, ovate or oval, serrate; spikes of white flowers very slender.  <em>V. urticifòlia.</em></p>
 <p>4. Blue V. Leaves petioled, lance-shaped or lance-oblong, the lower often cut or 2-lobed at the base; spikes of blue flowers thick and close; stem 4° to 6° high.  <em>V. hastàta.</em></p>
 <p>5. Low V. Stems ½° to 1° high; leaves lance-linear, sessile, scarcely toothed; spikes one or few, thickish; flowers purple. S. and W.  <em>V. angustifòlia.</em></p>
+</section>
+<section aria-labelledby="63-sage-or-mint-family-order-labiat">
 <h3 id="63-sage-or-mint-family-order-labiat">63. Sage or Mint Family. Order Labiatæ</h3>
 <p>Herbs with square stems and opposite aromatic leaves, a 2-lipped (or rather irregular) corolla, 4 stamens in pairs (2 long and 2 shorter), or else only 2 stamens, and a 4-parted ovary, in fruit making 4 akenes around the base of the single style. That is, among the families with 2-lipped or irregular monopetalous corollas this is at once known by the 4-lobed ovary, making 4 akenes. The leaves are commonly more or less dotted with small glands, which contain a volatile oil, peculiar to each species. This gives the warm aromatic properties which all plants of this family possess. By distillation, the oil is extracted from several species, as from Peppermint and Spearmint, Lavender, Pennyroyal, &amp;c. Or the dried foliage is used for seasoning or for herb drinks in the case of Summer-Savory, Marjoram, Thyme, Catnip, and Sage. The following are the common genera or kinds of this large family.</p>
 <figure id="fig-pc">
@@ -3973,6 +4147,8 @@ figcaption {
 <p>⁎ ⁎ ⁎ Flowers single, in the axils of the leaves.</p>
 <p>5. Dwarf S. Minutely downy, 3′ to 6′ high; leaves round-ovate or the upper lance-ovate, entire, ½′ long. Dry or sandy banks of rivers, &amp;c.  <em>S. párvula.</em></p>
 <p>6. Slender S. Slender, 1° or 2° high; leaves lance-ovate, serrate, with a roundish or slightly heart-shaped base, sessile; flowers ⅔′ long. Wet woods.  <em>S. galericulàta.</em></p>
+</section>
+<section aria-labelledby="64-borrage-family-order-borraginace">
 <h3 id="64-borrage-family-order-borraginace">64. Borrage Family. Order Borraginaceæ</h3>
 <p>Herbs with alternate entire leaves, not aromatic, commonly rough: the flowers regular, with a 5-leaved calyx, 5-lobed corolla, 5 stamens on the tube, one style, and a 4-lobed ovary, making 4 akenes. Flowers generally in one-sided raceme-like clusters, coiled up at the tip, and unfolding as the blossoms expand. Innocent mucilaginous and slightly bitter plants, the roots of some species yielding a red dye.</p>
 <figure id="fig-pe">
@@ -4024,6 +4200,8 @@ figcaption {
 	  Erect, prickly on the margins only. Flowers small, · · · (<em>Echinospérmum</em>) Stickseed.
 	  Oblique or flattened from above, short-prickly or rough all over, · · · (<em>Cynoglóssum</em>) Hound&#x27;s-tongue.
 	⁎ ⁎ Ovary not lobed, but splitting when ripe into 4 akenes: corolla short, · · · (<em>Heliotròpium</em>) ⁎Heliotrope.</pre>
+</section>
+<section aria-labelledby="65-waterleaf-family-order-hydrophyllace">
 <h3 id="65-waterleaf-family-order-hydrophyllace">65. Waterleaf Family. Order Hydrophyllaceæ</h3>
 <p>Herbs with lobed, compound, or toothed and mostly alternate leaves; the regular flowers much like those of the Borrage Family, except as to the ovary, which is globular and only one-celled and bears the few or many ovules and seeds on the walls (parietal), or on two projections from them. In Waterleaf, Nemophila, &amp;c., the two placentas, bearing the few seeds, broaden and make a kind of lining to the pod. Corolla bell-shaped or wheel-shaped; its lobes and the stamens always 5. Style 2-cleft above. The Waterleaf furnishes our principal plants of the family that are common wild. But some Nemophilas and Phacelias, from Texas and California, are showy garden annuals.</p>
 <figure id="fig-pl">
@@ -4047,6 +4225,8 @@ figcaption {
 <h4>Waterleaf. <em>Hydrophýllum.</em></h4>
 <p>1. Virginia W. Smoothish, 1° or 2° high; leaves pinnately divided into 5 or 7 narrow and toothed or cleft lobes; calyx hairy. Rich woods.  <em>H. Virgínicum.</em></p>
 <p>2. Canada W. Smoothish; leaves rounded, palmately lobed, longer than the peduncle; calyx smooth. Rich woods.  <em>H. Canadénse.</em></p>
+</section>
+<section aria-labelledby="66-polemonium-family-order-polemoniace">
 <h3 id="66-polemonium-family-order-polemoniace">66. Polemonium Family. Order Polemoniaceæ</h3>
 <p>Herbs, not twining (but Cobæa climbs by tendrils), with regular flowers, all the parts in fives, except the pistil, which is 3-celled and the style 3-cleft at the top, the 5 spreading lobes of the corolla <em>convolute</em> in the bud, i. e. overlapping so that one edge of each is outside of that behind it, but inside of the next one. Flowers generally handsome. All the kinds here given are cultivated; but the Phloxes are wild in this country (especially W. and S.), and so is one Polemonium. Gilias are pretty garden annuals from California, &amp;c. Cobæa, which is placed here, though very different from the rest, is a great-flowered vine from Mexico.</p>
 <figure id="fig-po">
@@ -4081,6 +4261,8 @@ figcaption {
 <h4>Polemonium. <em>Polemònium.</em></h4>
 <p>1. Blue P. (Called in gardens <em>Jacob&#x27;s Ladder</em> or <em>Greek Valerian.</em>) Stem erect, 1° or 2° high, leafy; leaflets many; seeds several. Gardens.  <em>P. cœrùleum.</em></p>
 <p>2. Wild P. Stems weak, spreading; leaflets 7 to 11; flowers few. Woods, W. &amp; S.  <em>P. reptans.</em></p>
+</section>
+<section aria-labelledby="67-convolvulus-family-order-convolvulace">
 <h3 id="67-convolvulus-family-order-convolvulace">67. Convolvulus Family. Order Convolvulaceæ</h3>
 <p>Twining or trailing herbs, often with some milky juice, with alternate leaves and regular flowers: calyx of 5 sepals: corolla 5-plaited or 5-lobed. Stamens 5. Pistil making a round pod, with 2 to 4 cells and one or two large seeds erect from the bottom of each cell. (For illustrations see Fig. 4 to 7, 13 to 22.) Dodders are leafless parasitic plants of the family.</p>
 <pre class="outline">	Plants with foliage, and bearing large flowers, open only for one day. Style one.
@@ -4098,6 +4280,8 @@ figcaption {
 <h4>Morning-Glory. <em>Ipomœ̀a.</em></h4>
 <p>1. Common M. Annual; stem hairy, the hairs bent downwards; leaves heart-shaped, entire; flowers 3 to 5 on the peduncle; flowers purple or pink varying to white, opening early in the morning, closing in bright sunshine; pod 3-celled. Cult. &amp;c.  <em>I. purpùrea.</em></p>
 <p>2. Wild M. (or Man-of-the-Earth). Smooth; root huge, perennial; leaves heart-shaped, entire or some of them narrowed in the middle; flowers 1 to 5 on a peduncle, white with purple in the tube, opening in sunshine. Sandy banks.  <em>I. panduràtus.</em></p>
+</section>
+<section aria-labelledby="68-nightshade-family-order-solanace">
 <h3 id="68-nightshade-family-order-solanace">68. Nightshade Family. Order Solanaceæ</h3>
 <p>Herbs, or sometimes shrubs, with a colorless bitter or nauseous juice (often poisonous); alternate leaves; and regular flowers, with 5 (or in cultivated plants sometimes 6 or 7) mostly equal stamens and one pistil. Ovary with 2 or more cells, in fruit becoming a many-seeded berry or pod. Corolla plaited in the bud, or <em>valvate</em>, i. e. the lobes placed edge to edge.</p>
 <figure id="fig-pr">
@@ -4161,6 +4345,8 @@ figcaption {
 <p>⁎ ⁎ Anthers long and taper-pointed: stems and leaves prickly.</p>
 <p>5. Egg-Plant N. Leaves ovate, wavy or somewhat lobed, downy; berry oblong, purple or whitish, from the size of an egg to that of a melon, eatable when cooked. Cult.  <em>S. Melongèna.</em></p>
 <p>6. Horse-Nettle N. Leaves ovate or oblong, wavy or angled, hoary-hairy; corolla bluish; berry yellow. A weed, S.  <em>S. Carolinénse.</em></p>
+</section>
+<section aria-labelledby="69-gentian-family-order-gentianace">
 <h3 id="69-gentian-family-order-gentianace">69. Gentian Family. Order Gentianaceæ</h3>
 <p>Smooth herbs with a colorless bitter juice; the leaves, with two exceptions, opposite, sessile, and entire; the regular flowers having as many stamens as there are lobes to the corolla, and alternate with them; stigmas or branches of the style 2; pod one-celled, with many and usually very small seeds on the walls, usually in two lines. — Tonic, generally very bitter plants: none of them poisonous. Flowers commonly large and handsome.</p>
 <pre class="outline">	Leaves simple, opposite and sessile. Corolla with the lobes <em>convolute</em>, i. e. each with one edge in and one out, in the bud.
@@ -4176,6 +4362,8 @@ figcaption {
 <p>3. Closed G. Stout, leafy to the top, the flowers in sessile clusters, terminal and in the axils of the upper lance-oblong leaves; corolla pale blue or purplish, rather club-shaped, with the mouth contracted, and with 5 fringe-toothed plaits, the lobes hardly any.  <em>G. Andréwsii.</em></p>
 <p>4. Soapwort G. The light blue corolla more open and bell-shaped, its lobes short and broad, but longer than the intervening plaits; otherwise much as No. 3. S. and W.  <em>G. Saponària.</em></p>
 <p>5. Whitish G. Leaves lance-ovate with a heart-shaped clasping base; corolla dull white or yellowish, with lobes longer than the plaits. S. and W.  <em>G. alba.</em></p>
+</section>
+<section aria-labelledby="70-dogbane-family-order-apocynace">
 <h3 id="70-dogbane-family-order-apocynace">70. Dogbane Family. Order Apocynaceæ</h3>
 <p>Plants with a milky and acrid juice, a tough inner bark, generally opposite and entire leaves, and regular flowers: corolla 5-lobed, the lobes <em>convolute</em> in the bud (one edge in, the other out); the 5 stamens on the corolla alternate with its lobes; the anthers generally more or less adherent to the stigma. Ovaries 2; but the stigmas, and often the styles also, united into one; the fruit two separate pods. Seeds generally many, and with a tuft of down at one end.</p>
 <pre class="outline">	Corolla with a funnel-shaped tube and a wheel-shaped 5-parted border: style one.
@@ -4206,12 +4394,18 @@ figcaption {
 <img src="images/gray-plants/figqd.png" alt="470. A seed, with its tuft of long hairs or down at one end. — A small oblong seed at the bottom with a long tuft of fine straight hairs rising from its top end." width="102" height="427" loading="lazy">
 <figcaption>470. A seed, with its tuft of long hairs or down at one end. — A small oblong seed at the bottom with a long tuft of fine straight hairs rising from its top end.</figcaption>
 </figure>
+</section>
+<section aria-labelledby="71-milkweed-family-order-asclepiadace">
 <h3 id="71-milkweed-family-order-asclepiadace">71. Milkweed Family. Order Asclepiadaceæ</h3>
 <p>Plants with milky juice, tough bark, and in other respects like the Dogbane family, but with the 5 short stamens all united by their filaments into a ring or tube, the anthers grown fast to the large stigma, and the grains of pollen in each cell cohering into a waxy or tough mass. Flowers in simple umbels. Pods a pair of many-seeded follicles: seeds furnished with a long tuft of silky down at one end (Fig. 229). The flowers in this family are curious, but are too difficult for the beginner. The two common genera may be distinguished as follows: —</p>
 <pre class="outline">	Corolla 5-parted, reflexed: five hoods to the stamens, with a horn in each, · · · (<em>Asclèpias</em>) Milkweed.
 	Corolla, &amp;c. as in Milkweed, but the hoods without any horn, · · · (<em>Aceràtes</em>) Green-Milkweed.</pre>
+</section>
+<section aria-labelledby="72-jessamine-family-order-jasminace">
 <h3 id="72-jessamine-family-order-jasminace">72. Jessamine Family. Order Jasminaceæ</h3>
 <p>Shrubby, mostly climbing plants, with opposite and mostly compound (pinnate) leaves, and perfect flowers with a salver-shaped corolla of 5 or more lobes overlapping in the bud but only 2 stamens. Ovary 2-celled, with 2 or 3 ovules erect from the base of each cell. No wild species; but in gardens and houses we have the common (<em>Jásminum</em>) ⁎Jessamine.</p>
+</section>
+<section aria-labelledby="73-olive-family-order-oleace">
 <h3 id="73-olive-family-order-oleace">73. Olive Family. Order Oleaceæ</h3>
 <p>Shrubs or trees, with opposite leaves; the corolla, when there is any, 4-lobed, and the lobes <em>valvate</em> (edge to edge) in the bud, but the stamens only 2 and short: sometimes there are 4 distinct petals; and all our species of Ash are without petals. Ovary 2-celled, with 2 ovules hanging from the top of each cell: the fruit often one-celled and one-seeded; either a stone-fruit, as in the Olive and Fringe-tree; a berry, as in Privet; a pod, as in Lilac; or a key, as in the Ash.</p>
 <pre class="outline">	Corolla salver-shaped or funnel-shaped, with a 4-lobed border: flowers perfect, in thick panicles. Leaves simple, entire.
@@ -4232,6 +4426,8 @@ figcaption {
 <p>4. Black Ash. Leaflets 7 to 11, sessile; oblong-lanceolate, tapering to a point, green both sides; no calyx to the fertile flowers. Swamps; common N.  <em>F. sambucifòlia.</em></p>
 <p>5. Blue Ash. Branchlets square; leaflets 7 to 9, short-stalked, lance-ovate. W.  <em>F. quadrangulàta.</em></p>
 <p>III. Apetalous Division.</p>
+</section>
+<section aria-labelledby="74-birthwort-family-order-aristolochiace">
 <h3 id="74-birthwort-family-order-aristolochiace">74. Birthwort Family. Order Aristolochiaceæ</h3>
 <p>Herbs or twining vines, with perfect and large flowers, the tube of the 3-lobed calyx coherent with the 6-celled and many-seeded ovary. Leaves mostly heart-shaped or kidney-shaped, and entire, on long footstalks, alternate, or else from the rootstock at the surface of the ground. Lobes of the calyx edge to edge in the bud, usually dull-colored.</p>
 <figure id="fig-qe">
@@ -4259,9 +4455,13 @@ figcaption {
 <h4>Birthwort. <em>Aristolòchia.</em></h4>
 <p>1. Snakeroot B. or Virginia Snakeroot. Herb 8′ to 15′ high; several stems from a tufted root, downy; flowers borne next the ground, in general shape much like the letter S; leaves oblong-heart-shaped or halberd-shaped. Rich woods; becoming scarce.  <em>A. serpentària.</em></p>
 <p>2. Pipe-vine B. A tall woody climber, with rounded kidney-shaped leaves, 8′ or 12′ broad when full grown; flower 1½′ long, curved like a Dutch pipe; greenish outside, and with the short 3-lobed border brown-purple within. Alleghany Mountains, or near them; and cultivated for arbors.  <em>A. Sipho.</em></p>
+</section>
+<section aria-labelledby="75-mirabilis-family-order-nyctaginace">
 <h3 id="75-mirabilis-family-order-nyctaginace">75. Mirabilis Family. Order Nyctaginaceæ</h3>
 <p>Has some wild representatives far west and south, viz.: Oxybaphus, &amp;c., with several flowers in a calyx-like involucre, the funnel-shaped calyx rose-purple, and exactly like a corolla. And in gardens Mirabilis or Four-o&#x27;Clock (so called from the flowers opening late in the afternoon) is common. Here there is only one flower in the bell-shaped involucre, which exactly imitates a calyx, while the large funnel-shaped calyx is just like the corolla of a Morning-Glory. Stamens 5: style one. Leaves opposite, heart-shaped, long-stalked. The</p>
 <p>Common Four-o&#x27;Clock or Mirabilis, from Mexico, well known in gardens, is  <em>M. Jalápa.</em></p>
+</section>
+<section aria-labelledby="76-pokeweed-family-order-phytolaccace">
 <h3 id="76-pokeweed-family-order-phytolaccace">76. Pokeweed Family. Order Phytolaccaceæ</h3>
 <p>Is represented with us by one, and that a very common, species of</p>
 <h4>Pokeweed. <em>Phytolácca.</em></h4>
@@ -4290,6 +4490,8 @@ figcaption {
 <img src="images/gray-plants/figqo.png" alt="482. Embryo, more magnified. — The embryo taken out of the seed, curved round into a thick crescent or ring." width="137" height="138" loading="lazy">
 <figcaption>482. Embryo, more magnified. — The embryo taken out of the seed, curved round into a thick crescent or ring.</figcaption>
 </figure>
+</section>
+<section aria-labelledby="77-goosefoot-family-order-chenopodiace">
 <h3 id="77-goosefoot-family-order-chenopodiace">77. Goosefoot Family. Order Chenopodiaceæ</h3>
 <p>Homely herbs, with mostly alternate leaves, without stipules, and no dry scaly bracts among the small and greenish flowers; the calyx enclosing the one-celled and one-seeded ovary, but not adhering to it, and bearing from one to five stamens. Styles 2 to 5, short. Weeds (several called Pigweeds), abounding in cultivated or waste grounds, and some are pot-herbs. The small flowers and fruits make them too difficult for the beginner. The following key will lead the student to the name of the principal common kinds.</p>
 <pre class="outline">	Leafless fleshy herbs, in salt marshes, with perfect flowers in fleshy spikes, · · · (<em>Salicórnia</em>) Samphire.
@@ -4302,6 +4504,8 @@ figcaption {
 	  Flowers monœcious: the fertile ones single in the axils of the leaves. Sea-coast, and one rarely cultivated as a pot-herb, · · · (<em>Atriplex</em>) Orache.
 	  Flowers diœcious, in spiked clusters: calyx over the fruit, with 2 to 4 horns or projections: leaves arrow-shaped, · · · (<em>Spinàcia</em>) ⁎Spinach.
 	Leafy and much-branched plants on the sea-shore; the leaves awl-shaped and prickly-tipped: flowers perfect: calyx winged in fruit, · · · (<em>Salsòla</em>) Saltwort.</pre>
+</section>
+<section aria-labelledby="78-amaranth-family-order-amarantace">
 <h3 id="78-amaranth-family-order-amarantace">78. Amaranth Family. Order Amarantaceæ</h3>
 <p>Herbs, much like the last family in almost every character, except that the flowers are furnished with 3 or more dry and scale-like thin bracts: these are sometimes brightly colored, so as to make showy clusters or bunches, and, being dry, they do not wither after blossoming. The little one-seeded pod in many cases is a pyxis (242), that is, it opens round the middle, the upper part falling off, as a lid. The common species belong mainly to two genera: —</p>
 <figure id="fig-qp">
@@ -4310,6 +4514,8 @@ figcaption {
 </figure>
 <pre class="outline">	Flowers in spiked or panicled clusters, terminal or axillary: stamens 5 or 3, separate: little pod opening by a lid. To this belongs one kind of Pigweed, and the Prince&#x27;s Feather, Love-lies-bleeding, Coxcomb, &amp;c., in gardens and enriched soil, · · · (<em>Amarántus</em>) Amaranth.
 	Flowers in a head: stamens 5, monadelphous, and the filaments 3-cleft, the middle lobe bearing the anther, · · · (<em>Gomphrèna</em>) ⁎Globe-Amaranth.</pre>
+</section>
+<section aria-labelledby="79-buckwheat-family-order-polygonace">
 <h3 id="79-buckwheat-family-order-polygonace">79. Buckwheat Family. Order Polygonaceæ</h3>
 <p>Herbs with alternate entire leaves, and mostly perfect flowers; with a calyx of 4 to 6 sepals (separate or united at the base), and 3 to 9 stamens inserted on its base: ovary one-celled making a one-seeded akene; its styles or stigmas 2 or 3. Besides, this family may always be known by the stipules which form a sheath above each joint (as in Fig. 137). The watery juice is often sour, as in Rhubarb and Sorrel, sometimes sharp and biting.</p>
 <pre class="outline">	Calyx of 5 (rarely 4) nearly similar sepals, all more or less petal-like.
@@ -4339,6 +4545,8 @@ figcaption {
 <p>† † † Twining annuals, with smooth stems and greenish or whitish flowers in panicled racemes; leaves heart-shaped and partly halberd-shaped.</p>
 <p>13. Climbing K. Smooth, climbing high over shrubs, &amp;c.; racemes leafy; 3 of the calyx-lobes more or less winged in fruit. Thickets in low ground.  <em>P. dumetòrum.</em></p>
 <p>14. Bindweed K. Low, stems roughish; racemes corymbed; three of the calyx-lobes ridged in the middle. Cult. and waste grounds.  <em>P. Convólvulus.</em></p>
+</section>
+<section aria-labelledby="80-laurel-family-order-laurace">
 <h3 id="80-laurel-family-order-laurace">80. Laurel Family. Order Lauraceæ</h3>
 <p>Trees or shrubs, with spicy bark and leaves; the latter marked with transparent dots under a magnifying-glass, alternate and simple; the calyx of 6 petal-like sepals. Stamens 9 or 12 on the very bottom of the calyx; the anthers opening by uplifted valves. Pistil simple, with a one-celled ovary, in fruit forming a berry or drupe, one-seeded. Flowers generally polygamous or diœcious in spring. — A very well-marked family, mostly in hot countries, but we possess two or three representatives.</p>
 <figure id="fig-qq">
@@ -4369,6 +4577,8 @@ figcaption {
 	Flowers diœcious or nearly so, greenish-yellow: stamens 9, about 3 of them with yellow glands at the base of the filaments (Fig. 486).
 	  Anthers 4-celled and 4-valved. Tree: flowers in stalked corymbs, appearing with the leaves; some of the latter 3-lobed, · · · (<em>Sássafras</em>) Sassafras.
 	  Anthers 2-celled and opening by a single valve to each cell. Shrub: flowers in sessile clusters, appearing earlier than the entire leaves, · · · (<em>Bénzoin</em>) Spicebush.</pre>
+</section>
+<section aria-labelledby="81-mezereum-family-order-thymeleace">
 <h3 id="81-mezereum-family-order-thymeleace">81. Mezereum Family. Order Thymeleaceæ</h3>
 <p>Shrubs, with very tough and acrid bark; entire generally alternate leaves; and perfect flowers, with a tubular calyx colored like a corolla, bearing 8 or 10 stamens, free from the simple pistil. Ovary one-celled, one-ovuled, making a berry in fruit. — We have one wild plant of the family; <em>Daphne Mezereum</em> is a hardy low shrub in gardens, and <em>D. odora</em> in houses. Flowers appearing earlier than the leaves.</p>
 <figure id="fig-qw">
@@ -4385,6 +4595,8 @@ figcaption {
 </figure>
 <pre class="outline">	Calyx salver-shaped or funnel-shaped, generally rose-color, the border 4-lobed: stamens 8, in two sets, included; filaments hardly any, · · · (<em>Daphne</em>) ⁎Daphne.
 	Calyx tubular, pale yellow, with no spreading border, obscurely 4-toothed: stamens 8, with long protruded filaments, · · · (<em>Dirca</em>) Leatherwood.</pre>
+</section>
+<section aria-labelledby="82-nettle-family-order-urticace">
 <h3 id="82-nettle-family-order-urticace">82. Nettle Family. Order Urticaceæ</h3>
 <p>Monœcious, diœcious, or barely polygamous herbs, shrubs, or trees, with stipules, and a regular calyx, free from the ovary, which forms a one-seeded fruit. Divides into four distinct subfamilies which might be reckoned as families, viz.: —</p>
 <p>I. ELM Subfamily. Trees, with alternate simple leaves, and polygamous or often nearly perfect flowers: styles or long stigmas 2.</p>
@@ -4408,11 +4620,15 @@ figcaption {
 <p>IV. HEMP Subfamily. Herbs, with diœcious flowers, a colorless juice, fibrous tough bark, and opposite, or sometimes alternate, palmately-lobed or compound roughish leaves. Sterile flowers in compound racemes or panicles, with 5 sepals and 5 stamens. Fertile flowers crowded, and with only one sepal, which embraces the ovary and akene: stigmas 2, long.</p>
 <pre class="outline">	Herb erect, annual: leaves of 5 to 7 lance-shaped toothed leaflets. Stamens drooping. Fertile flowers in spiked clusters, each with a narrow bract, · · · (<em>Cánnabis</em>) Hemp.
 	Herb twining: root perennial: leaves heart-shaped and lobed. Fertile flowers in short and scaly catkins, with broad and thin bracts, in fruit making a sort of membranaceous cone, · · · (<em>Hùmulus</em>) Hop.</pre>
+</section>
+<section aria-labelledby="83-plane-tree-family-order-platanace">
 <h3 id="83-plane-tree-family-order-platanace">83. Plane-Tree Family. Order Platanaceæ</h3>
 <p>This consists only of the genus</p>
 <h4>Plane-Tree. <em>Plátanus.</em></h4>
 <p>Flowers monœcious, in separate round catkin-like heads. No calyx nor corolla to either kind. Sterile flowers consisting of short stamens and club-shaped scales intermixed: fertile flowers, of little scales and ovaries, which become club-shaped akenes, covered below with long hairs. Style awl-shaped, simple. Trees, with colorless juice, alternate palmately-lobed leaves and sheathing stipules. Only one species in this country, viz.: —</p>
 <p>American P., Sycamore, or Buttonwood. A well-known tree by river-banks.  <em>P. occidentàlis.</em></p>
+</section>
+<section aria-labelledby="84-walnut-family-order-juglandace">
 <h3 id="84-walnut-family-order-juglandace">84. Walnut Family. Order Juglandaceæ</h3>
 <p>Timber and nut trees, with alternate pinnate leaves, no stipules; the sterile flowers in hanging catkins and with an irregular calyx; the fertile ones single or few together at the end of a shoot; their calyx coherent with the ovary, and 4-toothed at its summit. Fruit a kind of stone-fruit; the outer part becoming dry when ripe, and forming a husk, the stone incompletely 2-celled or 4-celled, but with only one ovule and seed. The whole kernel is a great embryo, with the cotyledons separated, lobed, and crumpled. — Only two genera: —</p>
 <pre class="outline">	Catkins of the sterile flowers single; the bracts or scales united with the calyx: stamens 8 to 40. Fertile flowers with 4 small petals between the teeth of the calyx: short styles and stigmas 2, fringed: husk of the fruit thin, and not separating into valves or regular pieces. Bark and bruised leaves strong-scented and staining brown. Leaf-buds nearly naked, · · · (<em>Juglans</em>) Walnut.
@@ -4429,6 +4645,8 @@ figcaption {
 <p>4. Bitternut or Swamp H. Bark of trunk smooth; buds little scaly: leaflets 7 to 11, lance-oblong, smooth; husk and stone of the fruit thin and tender; seed very bitter. Wet woods.  <em>C. amàra.</em></p>
 <p>⁎ ⁎ Fruit and thin stone narrowly oblong: husk thin.</p>
 <p>5. Pecan-nut H. Leaflets 13 or 15, oblong-lanceolate, oblique, serrate; stone olive-shaped, thin; seed very sweet. W. &amp; S.  <em>C. olivæfórmis.</em></p>
+</section>
+<section aria-labelledby="85-oak-family-order-cupulifer">
 <h3 id="85-oak-family-order-cupulifer">85. Oak Family. Order Cupuliferæ</h3>
 <p>Trees or shrubs, with alternate and simple straight-veined leaves, deciduous stipules, and monœcious flowers; the sterile flowers in slender catkins (or in head-like clusters in the Beech); the fertile flowers surrounded with an involucre which forms a cup, bur, or bag around the nut.</p>
 <pre class="outline">	Fertile flowers scattered, or 2 or 3 together, their
@@ -4463,6 +4681,8 @@ figcaption {
 <p>15. Scarlet Oak. Very like the last, but the oval or oblong leaves smooth and shining, deeply pinnatifid (turning deep scarlet in autumn), the lobes cut-toothed; acorn rather longer than wide. Large tree, common in rich woods.  <em>Q. coccinea.</em></p>
 <p>16. Red Oak. Leaves smooth, pale beneath, oblong or rather obovate, with 4 to 6 short lobes on each side; acorn oblong-oval, 1′ long, with a short saucer-shaped cup of fine scales. Common tree in rocky woods, &amp;c.  <em>Q. rubra.</em></p>
 <p>17. Pin or Swamp Spanish Oak. Leaves smooth and bright green on both sides, deeply pinnatifid, oblong; the lobes diverging, cut and toothed, acute; acorn globular, only ½′ long. Low grounds, N.  <em>Q. palústris.</em></p>
+</section>
+<section aria-labelledby="86-birch-family-order-betulace">
 <h3 id="86-birch-family-order-betulace">86. Birch Family. Order Betulaceæ</h3>
 <p>Monœcious trees, with simple serrate leaves, and both kinds of flowers in scaly catkins (Fig. 146), two or three blossoms under each scale. Sterile flowers each with 4 stamens and a small calyx: fertile flowers with a 2-celled ovary bearing 2 long stigmas, and in fruit becoming a scale-like akene or small key. Only two genera: —</p>
 <pre class="outline">	Sterile flowers with a calyx of one scale: fertile flowers 3 under each 3-lobed bract; each consisting of a naked ovary, in fruit becoming a broad-winged little key. Bark and twigs aromatic, · · · (<em>Bétula</em>) Birch.
@@ -4472,12 +4692,16 @@ figcaption {
 <p>2. Paper B. A large tree, with white outer bark, peeling off in papery layers, and ovate or heart-shaped leaves. Common N.  <em>B. papyràcea.</em></p>
 <p>3. River B. Tree, with ovate and angled acutish leaves, on short stalks, a brownish close bark, and short woolly fertile catkins. Common S. &amp; W.  <em>B. nigra.</em></p>
 <p>4. Cherry or Sweet B. Tree, with heart-ovate and pointed leaves, downy on the veins beneath, and a close bark, bronze-colored on the twigs, which are spicy-tasted, like the foliage of Checkerberry. Common N.  <em>B. lenta.</em></p>
+</section>
+<section aria-labelledby="87-sweet-gale-family-order-myricace">
 <h3 id="87-sweet-gale-family-order-myricace">87. Sweet-Gale Family. Order Myricaceæ</h3>
 <p>Shrubs (generally low), with fragrant alternate leaves; and with catkins much as in the Birch family, but short and with only one naked blossom under each scale; the ovary forming a little nut or dry drupe.</p>
 <pre class="outline">	Flowers monœcious: fertile catkins round and bur-like: fruit a smooth little nut. Leaves lance-linear, pinnatifid. Fern-like, whence the common name, · · · (<em>Comptònia</em>) Sweet-Fern.
 	Flowers diœcious: scales of the fertile catkins falling off, and leaving only the small round fruits, which are incrusted with wax, and so appear like drupes. Leaves entire or serrate, · · · (<em>Myrìca</em>).
 	  One species in wet grounds, N., with wedge-lanceolate pale leaves, · · · (<em>M. Gale</em>) Sweet-Gale.
 	  One on the sea-coast with lance-oblong, shining leaves, and waxy fruit, · · · (<em>M. cerífera</em>) Bayberry.</pre>
+</section>
+<section aria-labelledby="88-willow-family-order-salicace">
 <h3 id="88-willow-family-order-salicace">88. Willow Family. Order Salicaceæ</h3>
 <p>Diœcious trees or shrubs, with both kinds of blossoms in catkins (often earlier than the foliage); the flowers naked (without any calyx or corolla), one sort of two or more stamens under a scaly bract; the other of a one-celled pistil with two styles or stigmas, making a many-seeded pod: the seeds bearing a long tuft of down. Leaves alternate and simple: wood soft and light: bark bitter. — The Willows are of very many species, and are much too difficult for the beginner.</p>
 <figure id="fig-qz">
@@ -4498,6 +4722,8 @@ figcaption {
 </figure>
 <pre class="outline">	Scales of the catkins entire: stamens 2 to 6: stigmas short: leaves narrow, · · · (<em>Salix</em>) Willow.
 	Scales of the catkins cut-lobed: stamens 8 to 40: stigmas long: leaves broad. Scaly leaf-buds covered with a resinous varnish, · · · (<em>Pópulus</em>) Poplar.</pre>
+</section>
+<section aria-labelledby="89-pine-family-order-conifer">
 <h3 id="89-pine-family-order-conifer">89. Pine Family. Order Coniferæ</h3>
 <p>The only familiar family of Gymnospermous plants (218, 250), consisting of trees or shrubs, with resinous juice, mostly awl-shaped or needle-shaped leaves, and monœcious or diœcious flowers of a very simple sort, and collected in catkins, except in Yew. In that the fertile flower is single at the end of the branch. No calyx nor corolla, and no proper pistil. Ovules and seeds naked. Sterile flowers of a few stamens or anthers, fixed to a scale. Cotyledons often more than one pair, sometimes as many as 9 or 12, in a whorl. — For illustrations, see Fig. 49, 50, 134, 196, 197, 224 to 226, and 498, 499. — This family comprises some of our most important timber-trees, and the principal evergreen forest-trees of Northern climates. It consists of three well-marked subfamilies: —</p>
 <figure id="fig-rd">
@@ -4575,6 +4801,8 @@ figcaption {
 <p><em>Flowers</em> with their parts mostly three or six, never five.</p>
 <p><em>Embryo</em> monocotyledonous, i. e. of only one true seed-leaf: so in germination the leaves are all alternate or one above another.</p>
 <p>Except the Palmetto and one or two Yuccas at the South (Fig. 79), and some Greenbriers, all the Endogens of this country are herbs. In warmer climates there are many Palms and other woody plants of the class, all having an appearance very different from our common trees and shrubs (113, 114).</p>
+</section>
+<section aria-labelledby="key-to-the-families-or-orders-of-class-ii">
 <h3 id="key-to-the-families-or-orders-of-class-ii">Key to the Families or Orders of Class II</h3>
 <p>I. Spadiceous Division. Flowers collected on a spadix (184), i. e. sessile and crowded in a spike or head on a thickened axis, and with or without a spathe or enwrapping bract (185).</p>
 <pre class="outline">	Trees or shrubs, with simple stems; the flowers having calyx and corolla, · · · Palm Family, 205
@@ -4606,8 +4834,12 @@ figcaption {
 	Glume one to each flower, the flower in its axil. Flowers collected into heads or spikes, · · · Sedge F., No. 104
 	Glumes 2 or 4 to each flower, in two sets, · · · Grass F., No. 105</pre>
 <p>I. Spadiceous Division.</p>
+</section>
+<section aria-labelledby="90-palm-family-order-palm">
 <h3 id="90-palm-family-order-palm">90. Palm Family. Order Palmæ</h3>
 <p>Although some, like the Dwarf Palmettos of the Southern States, make only rootstocks not rising out of the ground, most Palms form trees, with a simple, unbranched, cylindrical trunk, growing by the terminal bud only, and always surmounted by a crown of large and peculiar, long-petioled leaves. These are fan-shaped in the Palmetto (Fig. 79), pinnate in the Date-Palm, &amp;c. The flowers burst forth from a spathe; are small, but generally perfect, and furnished with a perianth of 6 parts, in two sets, the outer answering to a calyx, the inner to a corolla. Fruit a nut; that of the Cocoanut is a good illustration. The principal Palms of our southern sea-coast belong to the genus (<em>Chámærops</em>) Palmetto.</p>
+</section>
+<section aria-labelledby="91-arum-family-order-arace">
 <h3 id="91-arum-family-order-arace">91. Arum Family. Order Araceæ</h3>
 <p>Herbs with sharp-tasted or acrid juice, and more or less fleshy in their texture; the leaves either simple or compound, and commonly so much netted-veined that the plants might readily be mistaken for Exogens. The small flowers are closely spiked or packed on a fleshy axis, forming a spadix. The fruit is a berry, or sometimes dry and leathery, but containing some pulp or jelly. The following are the principal genera we meet with.</p>
 <pre class="outline">	Spathe present, forming a hood, wrapper, or a petal-like leaf.
@@ -4620,15 +4852,21 @@ figcaption {
 	Spathe none at all; the spadix naked, covered with flowers, which are perfect, with a perianth of 6 or sometimes 4 pieces, and as many stamens.
 	  Spadix on the summit of a scape rising out of the water: leaves oblong, on a long petiole, · · · (<em>Oróntium</em>) Golden-Club.
 	  Spadix from the side of a leaf, or from a stem similar to one of the long and erect, linear, 2-edged or sword-shaped leaves: all springing from a sharp-aromatic and creeping rootstock, · · · (<em>Ácorus</em>) Sweet-Flag.</pre>
+</section>
+<section aria-labelledby="92-cat-tail-family-order-typhace">
 <h3 id="92-cat-tail-family-order-typhace">92. Cat-Tail Family. Order Typhaceæ</h3>
 <p>Marsh herbs, with linear, sword-shaped leaves (erect, except they float in water), and monœcious naked flowers in dense spikes or heads, one sort consisting of some stamens only, the other of pistils only. Fruit a one-seeded akene. No spathe, except some open bracts or leaves.</p>
 <pre class="outline">	Flowers in one long spike or spadix, the upper part bearing stamens only, the lower slender pistils only closely packed together; ovary long-stalked and surrounded by slender down, · · · (<em>Typha</em>) Cat-tail.
 	Flowers in separate heads, some bearing stamens only, others pistils only, each surrounded by several scales, but no down, · · · (<em>Spargànium</em>) Bur-Reed.</pre>
 <p>II. Petaloideous Division.</p>
+</section>
+<section aria-labelledby="93-water-plantain-family-order-alismace">
 <h3 id="93-water-plantain-family-order-alismace">93. Water-Plantain Family. Order Alismaceæ</h3>
 <p>Marsh or aquatic herbs, with a distinct calyx of 3 green or greenish sepals and a corolla of 3 white petals, 6 to many stamens on the receptacle, and many one-ovuled pistils collected into a ring or head, becoming akenes in fruit. Leaves mostly oblong-heart-shaped, lance-shaped, or arrow-shaped, sometimes with cross veinlets, long-petioled. Flowers on scapes. Two genera are common.</p>
 <pre class="outline">	Flowers perfect with about 6 stamens, small, in an open panicle: pistils 15 to 20 in a ring: leaves not arrow-shaped, · · · (<em>Alisma</em>) Water-Plantain.
 	Flowers monœcious or diœcious, in a loose raceme or spike; the sterile ones with many stamens; the fertile with many pistils in a head, making thin winged akenes. Leaves or some of them generally arrow-shaped, · · · (<em>Sagittària</em>) Arrowhead.</pre>
+</section>
+<section aria-labelledby="94-trillium-family-order-trilliace">
 <h3 id="94-trillium-family-order-trilliace">94. Trillium Family. Order Trilliaceæ</h3>
 <p>Herbs with simple stems rising from a short rootstock, rather conspicuously netted-veined leaves in a whorl, and perfect and regular flowers: — containing in this country only the genus Trillium and the Indian Cucumber-root, which are here described.</p>
 <h4>Trillium.⁎ <em>Trillium.</em></h4>
@@ -4646,6 +4884,8 @@ figcaption {
 <p>6. Painted T. Leaves petioled, pale green, ovate, taper-pointed; flower on an upright peduncle; petals lance-ovate, pointed, widely spreading, longer than the sepals, wavy, white, adorned with delicate pink-purple stripes at the base. Cold damp woods, &amp;c. N.  <em>T. erythrocárpum.</em></p>
 <h4>Indian Cucumber-root. <em>Medèola.</em></h4>
 <p>Stem 1° to 3° high, from a white tuberous horizontal rootstock, having the taste of a cucumber, bearing near the middle a whorl of 5 to 9 obovate-lanceolate pointed sessile leaves, and at the top one of 3 ovate smaller leaves, and a few small greenish-yellow flowers in an umbel, on recurved stalks. Sepals and petals each 3, oblong and alike, recurved. Stamens 6: filaments longer than the anthers. Stigmas 3, sessile, long and thread-shaped. Ovary one, making a round 3-celled and few-seeded berry. One species, in damp woods; flowering in summer.  <em>M. Virginica.</em></p>
+</section>
+<section aria-labelledby="95-spiderwort-family-order-commelynace">
 <h3 id="95-spiderwort-family-order-commelynace">95. Spiderwort Family. Order Commelynaceæ</h3>
 <p>Tender herbs, with alternate parallel-veined leaves sheathing at the base, and perfect flowers, having 3 green or greenish sepals and 3 petals on the receptacle. Pistil one, with one long style and one stigma. Pod small, 3-celled or sometimes 2-celled, few-seeded. Flowers opening in the morning for only one day, the delicate (generally blue or purple) petals then melting away. There are two genera wild; and the Spiderwort is cultivated in every flower-garden.</p>
 <figure id="fig-rm">
@@ -4658,11 +4898,15 @@ figcaption {
 </figure>
 <pre class="outline">	Flowers regular: the 3 petals and 6 stamens all alike: filaments bearded with jointed colored hairs: leaves lance-linear, sessile, all alike, · · · (<em>Tradescántia</em>) Spiderwort.
 	Flowers irregular: two of the petals kidney-shaped on long claws, and one smaller: stamens unequal, only three of them with good anthers: filaments naked: lower leaves with sheathing footstalks, the uppermost sessile and somewhat heart-shaped, · · · (<em>Commelyna</em>) Day-flower.</pre>
+</section>
+<section aria-labelledby="96-pickerel-weed-family-order-pontederiace">
 <h3 id="96-pickerel-weed-family-order-pontederiace">96. Pickerel-Weed Family. Order Pontederiaceæ</h3>
 <p>Is represented by three or four plants in this country, of which much the commonest is the</p>
 <h4>Pickerel-weed. <em>Pontedèria.</em></h4>
 <p>Perianth blue, of 6 divisions, unequally united below into a tube; the 3 upper divisions most united and making a 3-lobed upper lip, the 3 lower spreading and separate some way down, making a lower lip: after expanding, for one day only, the upper part coils up and withers away, while the base of the tube thickens and encloses the small one-seeded fruit. Stamens 6; the 3 lower on slender projecting filaments; the 3 upper inserted lower down on the tube, with very short filaments and generally imperfect anthers. Style 1: stigma 3-lobed. Stout herbs in shallow water, with long-petioled leaves and long peduncles or few-leaved stems (their leaves with sheathing footstalks, the uppermost one merely a sheathing spathe or bract), bearing a spike of flowers.</p>
 <p>1. Common Pickerel-weed. Stems 2° or 3° high; leaves thickish, lance-ovate or ovate-oblong, and generally more or less heart-shaped at the base. Common everywhere; fl. all summer.  <em>P. cordàta.</em></p>
+</section>
+<section aria-labelledby="97-greenbrier-family-order-smilace">
 <h3 id="97-greenbrier-family-order-smilace">97. Greenbrier Family. Order Smilaceæ</h3>
 <p>Of this family, as here arranged, we have only a single genus, viz.: —</p>
 <h4>Greenbrier. <em>Smilax.</em></h4>
@@ -4674,6 +4918,8 @@ figcaption {
 <p>4. Laurel-leaved G. Not prickly; leaves lance-oblong or lance-linear, thick and evergreen, with 3 to 5 ribs; peduncles of the umbel very short. Sandy soil, S.  <em>S. laurifòlia.</em></p>
 <p>⁎ ⁎ Stem herbaceous, climbing, not prickly: ovary and blue-black berry 3-celled, 6-seeded.</p>
 <p>5. Carrion-flower G. Leaves thin, pale, mostly heart-shaped, with 7 to 9 ribs, sometimes rather downy beneath, long-petioled; peduncles 3′ to 8′ long, longer than the leaves; flowers of the odor of carrion. Meadows and river-banks.  <em>S. herbàcea.</em></p>
+</section>
+<section aria-labelledby="98-colchicum-family-order-melanthace">
 <h3 id="98-colchicum-family-order-melanthace">98. Colchicum Family. Order Melanthaceæ</h3>
 <p>Herbs, with parallel-veined leaves; the flowers generally perfect or polygamous; the perianth of 6 similar divisions colored alike; the 6 stamens with their anthers turned outwards. Ovary one, 3-celled, bearing 3 styles, which are generally separate, but sometimes united into one. Many are acrid or poisonous plants, none more so than the common Veratrum or White-Hellebore, which is often called <em>Poke</em>, a name which properly belongs to Phytolacca, p. 191.</p>
 <pre class="outline">	Flower and leaves rising from a corm underground: perianth a long tube, bearing 6 similar petal-like lobes, · · · (<em>Cólchicum</em>) ⁎Colchicum.
@@ -4688,6 +4934,8 @@ figcaption {
 <p>1. Large-flowered B. Leaves oblong, clasping-perfoliate, i. e. the stem appearing to run through the lower part of the leaf; perianth pale greenish-yellow, 1½′ long. Rich woods, N. &amp; W. (All the species flower in the spring.)  <em>U. grandiflòra.</em></p>
 <p>2. Perfoliate B. Like the last, but the flower smaller and yellow, and the anthers more pointed. Common E.  <em>U. perfoliàta.</em></p>
 <p>3. Sessile-leaved B. Smaller than the rest; leaves sessile, not encompassing the stem; flower cream-color.  <em>U. sessilifòlia.</em></p>
+</section>
+<section aria-labelledby="99-lily-family-order-liliace">
 <h3 id="99-lily-family-order-liliace">99. Lily Family. Order Liliaceæ</h3>
 <p>A large family, with much variety in appearance. Leaves parallel-veined, and sessile or sheathing. Flowers perfect and regular; the perianth of 6 divisions or lobes (or in one case with only 4), all colored alike, inserted on the receptacle free from the ovary. Stamens as many as the parts of the perianth, with their anthers turned inwards. Pistil one, with a 3-celled (rarely 2-celled) ovary and a single style; but with as many stigmas, or lobes to the stigma, as there are cells in the ovary. Fruit a pod or a berry.</p>
 <pre class="outline">	Fruit a few-seeded berry: flowers small. Herbs from rootstocks: no bulbs.
@@ -4770,6 +5018,8 @@ figcaption {
 </figure>
 <p>2. White D. Flower white or bluish; the style less thick than in No. 1. Rather common W.  <em>E. álbidum.</em></p>
 <p>3. European D. Leaves ovate or oblong, scarcely spotted; flowers purple or rose-color; style thread-shaped and not thickened upwards; stigmas separate. Cultivated; not common.  <em>E. Dens-cànis.</em></p>
+</section>
+<section aria-labelledby="100-amaryllis-family-order-amaryllidace">
 <h3 id="100-amaryllis-family-order-amaryllidace">100. Amaryllis Family. Order Amaryllidaceæ</h3>
 <p>Like the Lily Family, but with the (regular or slightly irregular) 6-cleft perianth coherent below with the surface of the ovary, and therefore in appearance inserted on its summit. Stamens 6. Fruit a 3-celled pod. Herbs generally with naked stems or scapes, and long linear leaves, from a coated bulb, commonly with showy flowers. Herbage and bulbs acrid and poisonous.</p>
 <pre class="outline">	Flower with a cup or crown at the throat of the salver-shaped or funnel-shaped perianth.
@@ -4790,6 +5040,8 @@ figcaption {
 <p>3. Polyanthus N. Flowers several, on a flattish scape, white, with a bell-shaped cup, not fragrant; leaves flat, glaucous. Gardens.  <em>N. Tazétta.</em></p>
 <p>⁎ ⁎ Tube of the flower short, funnel-shaped; the cup or crown very large, bell-shaped, with a wavy-crisped or toothed margin, equalling or longer than the 6 divisions of the perianth, and bearing the stamens on its base.</p>
 <p>4. Daffodil N. Flower one, large, sulphur-yellow, with a deeper yellow cup, on a flattened scape 1° high; leaves flattish. In all gardens; most common with flowers double, so that their structure is obscured.  <em>N. Pseudo-Narcissus.</em></p>
+</section>
+<section aria-labelledby="101-iris-family-order-iridace">
 <h3 id="101-iris-family-order-iridace">101. Iris Family. Order Iridaceæ</h3>
 <p>Herbs with perennial roots, commonly with rootstocks, bulbs, or corms, and with equitant leaves (151, Fig. 64); the flowers perfect, regular or irregular; tube of the corolla-like perianth below coherent with the surface of the ovary, and so appearing to grow from its summit; stamens only 3, one before each of the outer divisions of the perianth; their anthers turned outwards, i. e. looking towards the perianth and opening on that side. Ovary 3-celled, making a many-seeded pod: style one: stigmas 3, often flat or petal-like. Herbage, rootstocks, &amp;c. generally acrid or sharp-tasted. Flowers generally showy, and from a spathe of one or more leaf-like bracts, or from the axils of the uppermost leaves, each one generally opening but once.</p>
 <figure id="fig-rt">
@@ -4832,17 +5084,27 @@ figcaption {
 <p>3. Crested Dwarf Iris. Low and almost stemless, from rootstocks spreading on the ground; leaves short; flower pale blue, the tube thread-shaped (2′ long) and longer than the spatulate divisions, the three outer divisions with a beardless crest. Fl. spring. S. and W., and in some gardens.  <em>I. cristàta.</em></p>
 <p>4. Larger I. or Blue-Flag. Stem stout, 1° to 3° high, bearing several crestless and beardless purple-blue and variegated flowers, their inner divisions much smaller than the outer; leaves sword-shaped, ¾′ wide. Wet places; flowering in late spring.  <em>I. versicolor.</em></p>
 <p>5. Slender I. or Blue-Flag. Stem slender; leaves narrowly linear (¼′ wide), and flower smaller than in No. 4: otherwise much like it. Wet places, E.  <em>I. Virginica.</em></p>
+</section>
+<section aria-labelledby="102-orchis-family-order-orchidace">
 <h3 id="102-orchis-family-order-orchidace">102. Orchis Family. Order Orchidaceæ</h3>
 <p>Plants with irregular and often singular-shaped flowers, the perianth standing as it were on the ovary, as in the two preceding orders; but remarkable for having the stamens, only one or two, united with the style or stigma. This may best be seen in the Lady&#x27;s Slipper, of which we have three or four common species: the slipper is one of the petals, in the form of a sac. The flowers of various sorts of Orchis are striking and peculiar; but the family is too difficult for the young beginner, and therefore the kinds are not described here. Fig. 69 represents two air-plants of this family, belonging to tropical countries.</p>
 <p>III. Glumaceous Division.</p>
+</section>
+<section aria-labelledby="103-rush-family-order-juncace">
 <h3 id="103-rush-family-order-juncace">103. Rush Family. Order Juncaceæ</h3>
 <p>The true Rushes are known by having flowers with a regular perianth, which, although glumaceous, i. e. like the chaffy scales or husks of Grasses, is of 6 regular parts, like a calyx, enclosing 6 (or sometimes 3) stamens, and a triangular ovary. This bears a style tipped with 3 stigmas, and in fruit becomes a 3-seeded or many-seeded pod. There are two common genera, each with several species: the parts are too small and difficult for the young student.</p>
 <pre class="outline">	Pod 1-celled and 3-seeded. Leaves flat and hairy, · · · (<em>Lùzula</em>) Wood-Rush.
 	Pod 3-celled, many-seeded. Leaves generally thread-shaped, or none at all, · · · (<em>Juncus</em>) Rush.</pre>
+</section>
+<section aria-labelledby="104-sedge-family-order-cyperace">
 <h3 id="104-sedge-family-order-cyperace">104. Sedge Family. Order Cyperaceæ</h3>
 <p>A large family of Rush-like or Grass-like plants, including the Sedges, Clubrushes, Bulrushes, and the like, which have no perianth, but the flowers, collected in heads or spikes, are each in the axil of a single glume in the form of a chaff or scale. These plants are much too difficult for the young beginner.</p>
+</section>
+<section aria-labelledby="105-grass-family-order-gramine">
 <h3 id="105-grass-family-order-gramine">105. Grass Family. Order Gramineæ</h3>
 <p>The true Grasses make a large and most important family of plants, with straw stems (called <em>culms</em>, 91); leaves with open sheaths; and flowers with 2-ranked glumes or chaffy scales, a pair to each flower, and another pair to each spikelet. It includes not only the very numerous kinds of true Grasses, but also of Corn, i. e. the Cereal grains, of which Wheat, Barley, Rye, Oats, Rice, and Maize or Indian-Corn are the principal; also Sugar-Cane, Broom-Corn or Guinea-Corn, and Millet.</p>
+</section>
+<section aria-labelledby="series-ii-flowerless-or-cryptogamous-plants">
 <h3 id="series-ii-flowerless-or-cryptogamous-plants">Series II: Flowerless or Cryptogamous Plants</h3>
 <p>Plants destitute of flowers, and propagated by spores instead of seeds. See Part I., Paragr. 165, 308, 312–314.</p>
 <h4>Class III. — Acrogens</h4>
@@ -4851,7 +5113,11 @@ figcaption {
 <p>This class includes the Mosses and the Liverworts.</p>
 <h4>Class V. — Thallophytes</h4>
 <p>Includes the Lichens, the Algæ or Seaweeds, and the Fungi or Mushrooms.</p>
+</section>
+</section>
+<section class="part" aria-labelledby="index-and-dictionary">
 <h2 id="index-and-dictionary" class="center">Index and Dictionary</h2>
+<section aria-labelledby="index-to-part-i-and-dictionary-of-the-botanical-terms-used-in-this-book">
 <h2 id="index-to-part-i-and-dictionary-of-the-botanical-terms-used-in-this-book">Index to Part I, and Dictionary of the Botanical Terms Used in This Book</h2>
 <p>⁂ The numbers refer to the page where the term is explained or illustrated.</p>
 <p>Abortive: imperfectly formed.</p>
@@ -5433,6 +5699,10 @@ figcaption {
 <p>Winged: furnished with a broad and thin appendage or wing-like border of any kind, as the seeds of Trumpet-Creeper (Fig. 228), or the fruit of Maple, Ash, and Elm (Fig. 206–208).</p>
 <p>Wood, 41.</p>
 <p>Woolly: clothed with a coat of long and entangled soft hairs, like wool.</p>
+</section>
+</section>
+</article>
+</main>
 
 </body>
 </html>

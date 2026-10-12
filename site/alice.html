@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Alice’s Adventures in Wonderland &mdash; Lewis Carroll</title>
+	<meta name="description" content="The 1907 Wonderland, with Rackham&#x27;s colour plates at full size and the Mouse&#x27;s tale in its shape. A restored edition, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/alice.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="Alice’s Adventures in Wonderland — Lewis Carroll">
+	<meta property="og:description" content="The 1907 Wonderland, with Rackham&#x27;s colour plates at full size and the Mouse&#x27;s tale in its shape. A restored edition, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/alice.html">
+	<meta property="og:image" content="https://emend.press/covers/share/alice.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,27 +192,31 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>Alice’s Adventures in Wonderland</h1>
-	<h3>Illustrated by Arthur Rackham, with a proem by Austin Dobson</h3>
-	<h3>by Lewis Carroll</h3>
+	<p class="title-line">Illustrated by Arthur Rackham, with a proem by Austin Dobson</p>
+	<p class="title-line">by Lewis Carroll</p>
 	<p class="center">
 	1907
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is a restored edition of Alice’s Adventures in Wonderland: the author's own words, unchanged. Every plate carries a caption and alt text written for this edition, beginning with the label the book printed. The original is available from <a href="https://www.gutenberg.org/ebooks/28885">Project Gutenberg</a>. Also available as an <a href="ebooks/lewis-carroll_alices-adventures-in-wonderland.epub">epub</a>. <a href="restored.html">More restored editions</a>.</i></p>
 
 	<hr>
+<section aria-labelledby="editors-introduction">
 <h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
 <p>Lewis Carroll was the pen name of Charles Lutwidge Dodgson (1832–1898), a mathematics lecturer at Christ Church, Oxford. On 4 July 1862 he and a friend rowed the three daughters of the Dean of Christ Church up the Thames, and he told them a story about the middle one, Alice Liddell. At her request he wrote it down, and he later expanded it into this book, which Macmillan published in 1865 with illustrations by John Tenniel. The poem at the front of the book, &quot;All in the golden afternoon&quot;, is about that trip. Prima, Secunda and Tertia are the three sisters.</p>
 <p>Alice follows a White Rabbit down a hole and spends the rest of the book changing size and arguing with the creatures she meets. Almost every one of them contradicts her, corrects her grammar or tells her she is wrong. Much of the comedy is logic taken literally, and the rest is parody. Nearly all of the verse, &quot;How doth the little crocodile&quot;, &quot;You are old, Father William&quot;, &quot;Twinkle, twinkle, little bat&quot;, parodies poems Victorian children had to learn by heart, most of them now forgotten. The Mouse&#x27;s tale in Chapter III is printed in the shape of a tail, a pun on &quot;tale&quot; that Alice misunderstands.</p>
 <p>This edition is not the first. In 1907 the book&#x27;s British copyright ran out, several publishers brought out new illustrated editions that year, and Heinemann&#x27;s, with pictures by Arthur Rackham, is the best known of them. Rackham drew thirteen colour plates for it, the frontispiece among them, and fourteen pen drawings, and the cover, endpapers and title page carry his designs. Austin Dobson&#x27;s proem was written for this edition. It concedes that nothing &quot;can part you now from Tenniel&quot; and welcomes Rackham anyway, as the illustrator of Rip Van Winkle.</p>
 <p>This is a restored edition: Carroll&#x27;s words are unchanged. It is built from the Project Gutenberg transcription of the 1907 edition and keeps all of Rackham&#x27;s pictures in the places they occupy there. The colour plates are reproduced from full-size scans of the 1907 plates, several times larger than the transcription&#x27;s. The decorated initial that opens each chapter is set here as an ordinary letter. The poems keep their stanzas and indents, and the Mouse&#x27;s tale keeps its shape. The chapter titles are those of the printed Contents. The edition also adds a description of every picture, modern typesetting, a proper ebook, and this introduction.</p>
+</section>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p><a href="#proem">Proem</a></p>
 <p><a href="#all-in-the-golden-afternoon">All in the Golden Afternoon</a></p>
@@ -202,8 +232,11 @@ figcaption {
 <p><a href="#chapter-x-the-lobster-quadrille">Chapter X: The Lobster Quadrille</a></p>
 <p><a href="#chapter-xi-who-stole-the-tarts">Chapter XI: Who Stole the Tarts?</a></p>
 <p><a href="#chapter-xii-alice-s-evidence">Chapter XII: Alice&#x27;s Evidence</a></p>
+</nav>
 
 <hr>
+<article>
+<section aria-labelledby="proem">
 <h2 id="proem">Proem</h2>
 <figure id="fig-aa">
 <img src="images/alice/figaa.jpg" alt="The front cover in red cloth, lettered in gold, with a colour picture of Alice sitting on the seashore between the Mock Turtle and the Gryphon." width="350" height="500" loading="lazy">
@@ -238,6 +271,8 @@ figcaption {
 	  <em>From him who drew with such deft pen</em>
 	    <em>The rags of Rip Van Winkle!</em></pre>
 <p>Austin Dobson.</p>
+</section>
+<section aria-labelledby="all-in-the-golden-afternoon">
 <h2 id="all-in-the-golden-afternoon">All in the Golden Afternoon</h2>
 <pre class="outline">	All in the golden afternoon
 	  Full leisurely we glide;
@@ -281,6 +316,8 @@ figcaption {
 	  In Memory&#x27;s mystic band,
 	Like pilgrim&#x27;s wither&#x27;d wreath of flowers
 	  Pluck&#x27;d in a far-off land.</pre>
+</section>
+<section aria-labelledby="chapter-i-down-the-rabbit-hole">
 <h2 id="chapter-i-down-the-rabbit-hole">Chapter I: Down the Rabbit-hole</h2>
 <p>Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, &quot;and what is the use of a book,&quot; thought Alice, &quot;without pictures or conversations?&quot;</p>
 <p>So she was considering in her own mind (as well as she could, for the hot day made her feel very sleepy and stupid) whether the pleasure of making a daisy-chain would be worth the trouble of getting up and picking the daisies, when suddenly a White Rabbit with pink eyes ran close by her.</p>
@@ -310,6 +347,8 @@ figcaption {
 <p>Soon her eye fell on a little glass box that was lying under the table: she opened it, and found in it a very small cake, on which the words &quot;EAT ME&quot; were beautifully marked in currants. &quot;Well, I&#x27;ll eat it,&quot; said Alice, &quot;and if it makes me grow larger, I can reach the key; and if it makes me grow smaller, I can creep under the door; so either way I&#x27;ll get into the garden, and I don&#x27;t care which happens!&quot;</p>
 <p>She ate a little bit, and said anxiously to herself, &quot;Which way? Which way?&quot; holding her hand on the top of her head to feel which way it was growing, and she was quite surprised to find that she remained the same size; to be sure, this is what generally happens when one eats cake, but Alice had got so much into the way of expecting nothing but out-of-the-way things to happen, that it seemed quite dull and stupid for life to go on in the common way.</p>
 <p>So she set to work, and very soon finished off the cake.</p>
+</section>
+<section aria-labelledby="chapter-ii-the-pool-of-tears">
 <h2 id="chapter-ii-the-pool-of-tears">Chapter II: The Pool of Tears</h2>
 <p>&quot;Curiouser and curiouser!&quot; cried Alice (she was so much surprised, that for a moment she quite forgot how to speak good English); &quot;now I&#x27;m opening out like the largest telescope that ever was! Good-bye, feet!&quot; (for when she looked down at her feet, they seemed to be almost out of sight, they were getting so far off). &quot;Oh, my poor little feet, I wonder who will put on your shoes and stockings for you now, dears? I&#x27;m sure <em>I</em> sha&#x27;n&#x27;t be able! I shall be a great deal too far off to trouble myself about you: you must manage the best way you can—but I must be kind to them,&quot; thought Alice, &quot;or perhaps they won&#x27;t walk the way I want to go! Let me see: I&#x27;ll give them a new pair of boots every Christmas.&quot;</p>
 <p>And she went on planning to herself how she would manage it. &quot;They must go by the carrier,&quot; she thought; &quot;and how funny it&#x27;ll seem, sending presents to one&#x27;s own feet! And how odd the directions will look!</p>
@@ -355,6 +394,8 @@ figcaption {
 <p>So she called softly after it, &quot;Mouse dear! Do come back again, and we won&#x27;t talk about cats or dogs either, if you don&#x27;t like them!&quot;</p>
 <p>When the Mouse heard this, it turned round and swam slowly back to her: its face was quite pale (with passion, Alice thought), and it said in a low trembling voice, &quot;Let us get to the shore, and then I&#x27;ll tell you my history, and you&#x27;ll understand why it is I hate cats and dogs.&quot;</p>
 <p>It was high time to go, for the pool was getting quite crowded with the birds and animals that had fallen into it: there were a Duck and a Dodo, a Lory and an Eaglet, and several other curious creatures. Alice led the way, and the whole party swam to the shore.</p>
+</section>
+<section aria-labelledby="chapter-iii-a-caucus-race-and-a-long-tale">
 <h2 id="chapter-iii-a-caucus-race-and-a-long-tale">Chapter III: A Caucus-race and a Long Tale</h2>
 <p>They were indeed a queer-looking party that assembled on the bank—the birds with draggled feathers, the animals with their fur clinging close to them, and all dripping wet, cross, and uncomfortable.</p>
 <p>The first question of course was, how to get dry again: they had a consultation about this, and after a few minutes it seemed quite natural to Alice to find herself talking familiarly with them, as if she had known them all her life. Indeed, she had quite a long argument with the Lory, who at last turned sulky, and would only say, &quot;I am older than you, and must know better;&quot; and this Alice would not allow without knowing how old it was, and, as the Lory positively refused to tell its age, there was no more to be said.</p>
@@ -462,6 +503,8 @@ figcaption {
 <p>Alice replied eagerly, for she was always ready to talk about her pet: &quot;Dinah&#x27;s our cat. And she&#x27;s such a capital one for catching mice, you ca&#x27;n&#x27;t think! And oh, I wish you could see her after the birds! Why, she&#x27;ll eat a little bird as soon as look at it!&quot;</p>
 <p>This speech caused a remarkable sensation among the party. Some of the birds hurried off at once; one old Magpie began wrapping itself up very carefully, remarking &quot;I really must be getting home; the night-air doesn&#x27;t suit my throat!&quot; and a Canary called out in a trembling voice to its children &quot;Come away, my dears! It&#x27;s high time you were all in bed!&quot; On various pretexts they all moved off, and Alice was soon left alone.</p>
 <p>&quot;I wish I hadn&#x27;t mentioned Dinah!&quot; she said to herself in a melancholy tone. &quot;Nobody seems to like her, down here, and I&#x27;m sure she&#x27;s the best cat in the world! Oh, my dear Dinah! I wonder if I shall ever see you any more!&quot; And here poor Alice began to cry again, for she felt very lonely and low-spirited. In a little while, however, she again heard a little pattering of footsteps in the distance, and she looked up eagerly, half hoping that the Mouse had changed his mind, and was coming back to finish his story.</p>
+</section>
+<section aria-labelledby="chapter-iv-the-rabbit-sends-in-a-little-bill">
 <h2 id="chapter-iv-the-rabbit-sends-in-a-little-bill">Chapter IV: The Rabbit sends in a Little Bill</h2>
 <p>It was the White Rabbit, trotting slowly back again, and looking anxiously about as it went, as if it had lost something; and she heard it muttering to itself, &quot;The Duchess! The Duchess! Oh my dear paws! Oh my fur and whiskers! She&#x27;ll get me executed, as sure as ferrets are ferrets! Where <em>can</em> I have dropped them, I wonder?&quot; Alice guessed in a moment that it was looking for the fan and the pair of white kid gloves, and she very good-naturedly began hunting about for them, but they were nowhere to be seen—everything seemed to have changed since her swim in the pool, and the great hall, with the glass table and the little door, had vanished completely.</p>
 <p>Very soon the Rabbit noticed Alice, as she went hunting about, and called out to her in an angry tone, &quot;Why, Mary Ann, what <em>are</em> you doing out here? Run home this moment, and fetch me a pair of gloves and a fan! Quick, now!&quot; And Alice was so much frightened that she ran off at once in the direction it pointed to, without trying to explain the mistake it had made.</p>
@@ -509,6 +552,8 @@ figcaption {
 <p>&quot;And yet what a dear little puppy it was!&quot; said Alice, as she leant against a buttercup to rest herself, and fanned herself with one of the leaves. &quot;I should have liked teaching it tricks very much, if—if I&#x27;d only been the right size to do it! Oh, dear! I&#x27;d nearly forgotten that I&#x27;ve got to grow up again! Let me see—how <em>is</em> it to be managed? I suppose I ought to eat or drink something or other; but the great question is, what?&quot;</p>
 <p>The great question certainly was, what? Alice looked all round her at the flowers and the blades of grass, but she could not see anything that looked like the right thing to eat or drink under the circumstances. There was a large mushroom growing near her, about the same height as herself; and, when she had looked under it, and on both sides of it, and behind it, it occurred to her that she might as well look and see what was on the top of it.</p>
 <p>She stretched herself up on tiptoe, and peeped over the edge of the mushroom, and her eyes immediately met those of a large blue caterpillar, that was sitting on the top with its arms folded, quietly smoking a long hookah, and taking not the smallest notice of her or of anything else.</p>
+</section>
+<section aria-labelledby="chapter-v-advice-from-a-caterpillar">
 <h2 id="chapter-v-advice-from-a-caterpillar">Chapter V: Advice from a Caterpillar</h2>
 <p>The Caterpillar and Alice looked at each other for some time in silence: at last the Caterpillar took the hookah out of its mouth, and addressed her in a languid, sleepy voice.</p>
 <p>&quot;Who are <em>you?</em>&quot; said the Caterpillar.</p>
@@ -621,6 +666,8 @@ figcaption {
 <p>&quot;It matters a good deal to <em>me</em>,&quot; said Alice hastily; &quot;but I&#x27;m not looking for eggs, as it happens; and if I was, I shouldn&#x27;t want <em>yours:</em> I don&#x27;t like them raw.&quot;</p>
 <p>&quot;Well, be off, then!&quot; said the Pigeon in a sulky tone, as it settled down again into its nest. Alice crouched down among the trees as well as she could, for her neck kept getting entangled among the branches, and every now and then she had to stop and untwist it. After a while she remembered that she still held the pieces of mushroom in her hands, and she set to work very carefully, nibbling first at one and then at the other, and growing sometimes taller and sometimes shorter, until she had succeeded in bringing herself down to her usual height.</p>
 <p>It was so long since she had been anything near the right size, that it felt quite strange at first; but she got used to it in a few minutes, and began talking to herself, as usual. &quot;Come, there&#x27;s half my plan done now! How puzzling all these changes are! I&#x27;m never sure what I&#x27;m going to be, from one minute to another! However, I&#x27;ve got back to my right size: the next thing is, to get into that beautiful garden—how <em>is</em> that to be done, I wonder?&quot; As she said this, she came suddenly upon an open place, with a little house in it about four feet high. &quot;Whoever lives there,&quot; thought Alice, &quot;it&#x27;ll never do to come upon them <em>this</em> size: why, I should frighten them out of their wits!&quot; So she began nibbling at the right-hand bit again, and did not venture to go near the house till she had brought herself down to nine inches high.</p>
+</section>
+<section aria-labelledby="chapter-vi-pig-and-pepper">
 <h2 id="chapter-vi-pig-and-pepper">Chapter VI: Pig and Pepper</h2>
 <p>For a minute or two she stood looking at the house, and wondering what to do next, when suddenly a footman in livery came running out of the wood—(she considered him to be a footman because he was in livery: otherwise, judging by his face only, she would have called him a fish)—and rapped loudly at the door with his knuckles. It was opened by another footman in livery, with a round face and large eyes like a frog; and both footmen, Alice noticed, had powdered hair that curled all over their heads. She felt very curious to know what it was all about, and crept a little way out of the wood to listen.</p>
 <p>The Fish-Footman began by producing from under his arm a great letter, nearly as large as himself, and this he handed over to the other, saying, in a solemn tone, &quot;For the Duchess. An invitation from the Queen to play croquet.&quot; The Frog-Footman repeated, in the same solemn tone, only changing the order of the words a little, &quot;From the Queen. An invitation for the Duchess to play croquet.&quot;</p>
@@ -729,6 +776,8 @@ figcaption {
 <figcaption>Alice stands small at the foot of a great twisted old tree, looking up at the branches where the Cheshire Cat has vanished.</figcaption>
 </figure>
 <p>She had not gone much farther before she came in sight of the house of the March Hare: she thought it must be the right house, because the chimneys were shaped like ears and the roof was thatched with fur. It was so large a house, that she did not like to go nearer till she had nibbled some more of the left-hand bit of mushroom, and raised herself, to about two feet high: even then she walked up towards it rather timidly, saying to herself, &quot;Suppose it should be raving mad after all! I almost wish I&#x27;d gone to see the Hatter instead!&quot;</p>
+</section>
+<section aria-labelledby="chapter-vii-a-mad-tea-party">
 <h2 id="chapter-vii-a-mad-tea-party">Chapter VII: A Mad Tea-party</h2>
 <p>There was a table set out under a tree in front of the house, and the March Hare and the Hatter were having tea at it: a Dormouse was sitting between them, fast asleep, and the other two were using it as a cushion resting their elbows on it, and talking over its head. &quot;Very uncomfortable for the Dormouse,&quot; thought Alice; &quot;only as it&#x27;s asleep, suppose it doesn&#x27;t mind.&quot;</p>
 <p>The table was a large one, but the three were all crowded together at one corner of it. &quot;No room! No room!&quot; they cried out when they saw Alice coming.</p>
@@ -843,6 +892,8 @@ figcaption {
 <p>&quot;At any rate I&#x27;ll never go <em>there</em> again!&quot; said Alice as she picked her way through the wood. &quot;It&#x27;s the stupidest tea-party I ever was at in all my life!&quot;</p>
 <p>Just as she said this, she noticed that one of the trees had a door leading right into it. &quot;That&#x27;s very curious!&quot; she thought. &quot;But everything&#x27;s curious to-day. I think I may as well go in at once.&quot; And in she went.</p>
 <p>Once more she found herself in the long hall, and close to the little glass table. &quot;Now I&#x27;ll manage better this time,&quot; she said to herself, and began by taking the little golden key, and unlocking the door that led into the garden. Then she set to work nibbling at the mushroom (she had kept a piece of it in her pocket) till she was about a foot high: then she walked down the little passage: and <em>then</em>—she found herself at last in the beautiful garden, among the bright flower-beds and the cool fountains.</p>
+</section>
+<section aria-labelledby="chapter-viii-the-queen-s-croquet-ground">
 <h2 id="chapter-viii-the-queen-s-croquet-ground">Chapter VIII: The Queen&#x27;s Croquet-ground</h2>
 <p>A large rose-tree stood near the entrance of the garden: the roses growing on it were white, but there were three gardeners at it, busily painting them red. Alice thought this a very curious thing, and she went nearer to watch them, and just as she came up to them she heard one of them say &quot;Look out now, Five! Don&#x27;t go splashing paint over me like that!&quot;</p>
 <p>&quot;I couldn&#x27;t help it,&quot; said Five, in a sulky tone. &quot;Seven jogged my elbow.&quot;</p>
@@ -931,6 +982,8 @@ figcaption {
 <p>Alice could think of nothing else to say but &quot;It belongs to the Duchess: you&#x27;d better ask <em>her</em> about it.&quot;</p>
 <p>&quot;She&#x27;s in prison,&quot; the Queen said to the executioner; &quot;fetch her here.&quot; And the executioner went off like an arrow.</p>
 <p>The Cat&#x27;s head began fading away the moment he was gone, and by the time he had come back with the Duchess, it had entirely disappeared; so the King and the executioner ran wildly up and down looking for it, while the rest of the party went back to the game.</p>
+</section>
+<section aria-labelledby="chapter-ix-the-mock-turtle-s-story">
 <h2 id="chapter-ix-the-mock-turtle-s-story">Chapter IX: The Mock Turtle&#x27;s Story</h2>
 <p>&quot;You can&#x27;t think how glad I am to see you again, you dear old thing!&quot; said the Duchess, as she tucked her arm affectionately into Alice&#x27;s, and they walked off together.</p>
 <p>Alice was very glad to find her in such a pleasant temper, and thought to herself that perhaps it was only the pepper that had made her so savage when they met in the kitchen.</p>
@@ -1031,6 +1084,8 @@ figcaption {
 <p>&quot;Of course it was,&quot; said the Mock Turtle.</p>
 <p>&quot;And how did you manage on the twelfth?&quot; Alice went on eagerly.</p>
 <p>&quot;That&#x27;s enough about lessons,&quot; the Gryphon interrupted in a very decided tone: &quot;tell her something about the games now.&quot;</p>
+</section>
+<section aria-labelledby="chapter-x-the-lobster-quadrille">
 <h2 id="chapter-x-the-lobster-quadrille">Chapter X: The Lobster Quadrille</h2>
 <p>The Mock Turtle sighed deeply, and drew the back of one flapper across his eyes. He looked at Alice, and tried to speak, but, for a minute or two, sobs choked his voice. &quot;Same as if he had a bone in his throat,&quot; said the Gryphon: and it set to work shaking him and punching him in the back. At last the Mock Turtle recovered his voice, and, with tears running down his cheeks, went on again:</p>
 <p>&quot;You may not have lived much under the sea—&quot; (&quot;I haven&#x27;t,&quot; said Alice) &quot;and perhaps you were never even introduced to a lobster—&quot; (Alice began to say &quot;I once tasted——&quot; but checked herself hastily, and said &quot;No, never,) &quot;—so you can have no idea what a delightful thing a Lobster Quadrille is!&quot;</p>
@@ -1148,6 +1203,8 @@ figcaption {
 <p>&quot;What trial is it?&quot; Alice panted as she ran; but the Gryphon only answered &quot;Come on!&quot; and ran the faster, while more and more faintly came, carried on the breeze that followed them, the melancholy words:—</p>
 <pre class="outline">	&quot;Soo—oop of the e—e—evening,
 	    Beautiful, beautiful Soup!&quot;</pre>
+</section>
+<section aria-labelledby="chapter-xi-who-stole-the-tarts">
 <h2 id="chapter-xi-who-stole-the-tarts">Chapter XI: Who Stole the Tarts?</h2>
 <p>The King and Queen of Hearts were seated on their throne when they arrived, with a great crowd assembled about them—all sorts of little birds and beasts, as well as the whole pack of cards: the Knave was standing before them, in chains, with a soldier on each side to guard him; and near the King was the White Rabbit, with a trumpet in one hand, and a scroll of parchment in the other. In the very middle of the court was a table, with a large dish of tarts upon it: they looked so good, that it made Alice quite hungry to look at them—&quot;I wish they&#x27;d get the trial done,&quot; she thought, &quot;and hand round the refreshments!&quot; But there seemed to be no chance of this, so she began looking about her, to pass away the time.</p>
 <p>Alice had never been in a court of justice before, but she had read about them in books, and she was quite pleased to find that she knew the name of nearly everything there. &quot;That&#x27;s the judge,&quot; she said to herself, &quot;because of his great wig.&quot;</p>
@@ -1234,6 +1291,8 @@ figcaption {
 <p>For some minutes the whole court was in confusion, getting the Dormouse turned out, and, by the time they had settled down again, the cook had disappeared.</p>
 <p>&quot;Never mind!&quot; said the King, with an air of great relief. &quot;Call the next witness.&quot; And he added in an undertone to the Queen, &quot;Really, my dear, <em>you</em> must cross-examine the next witness. It quite makes my forehead ache!&quot;</p>
 <p>Alice watched the White Rabbit as he fumbled over the list, feeling very curious to see what the next witness would be like, &quot;—for they haven&#x27;t got much evidence <em>yet</em>,&quot; she said to herself. Imagine her surprise, when the White Rabbit read out, at the top of his shrill little voice, the name &quot;Alice!&quot;</p>
+</section>
+<section aria-labelledby="chapter-xii-alice-s-evidence">
 <h2 id="chapter-xii-alice-s-evidence">Chapter XII: Alice&#x27;s Evidence</h2>
 <p>&quot;Here!&quot; cried Alice, quite forgetting in the flurry of the moment how large she had grown in the last few minutes, and she jumped up in such a hurry that she tipped over the jury-box with the edge of her skirt, upsetting all the jurymen on to the heads of the crowd below, and there they lay sprawling about, reminding her very much of a globe of gold-fish she had accidentally upset the week before.</p>
 <p>&quot;Oh, I <em>beg</em> your pardon!&quot; she exclaimed in a tone of great dismay, and began picking them up again as quickly as she could, for the accident of the gold-fish kept running in her head, and she had a vague sort of idea that they must be collected at once and put back into the jury-box, or they would die.</p>
@@ -1328,6 +1387,9 @@ figcaption {
 <p>The long grass rustled at her feet as the White Rabbit hurried by—the frightened Mouse splashed his way through the neighbouring pool—she could hear the rattle of the teacups as the March Hare and his friends shared their never-ending meal, and the shrill voice of the Queen ordering off her unfortunate guests to execution—once more the pig-baby was sneezing on the Duchess&#x27; knee, while plates and dishes crashed around it—once more the shriek of the Gryphon, the squeaking of the Lizard&#x27;s slate-pencil, and the choking of the suppressed guinea-pigs, filled the air, mixed up with the distant sobs of the miserable Mock Turtle.</p>
 <p>So she sat on with closed eyes, and half believed herself in Wonderland, though she knew she had but to open them again, and all would change to dull reality—the grass would be only rustling in the wind, and the pool rippling to the waving of the reeds—the rattling teacups would change to the tinkling sheep-bells, and the Queen&#x27;s shrill cries to the voice of the shepherd boy—and the sneeze of the baby, the shriek of the Gryphon, and all the other queer noises, would change (she knew) to the confused clamour of the busy farm-yard—while the lowing of the cattle in the distance would take the place of the Mock Turtle&#x27;s heavy sobs.</p>
 <p>Lastly, she pictured to herself how this same little sister of hers would, in the after-time, be herself a grown woman; and how she would keep, through all her riper years, the simple and loving heart of her childhood: and how she would gather about her other little children, and make <em>their</em> eyes bright and eager with many a strange tale, perhaps even with the dream of Wonderland of long ago: and how she would feel with all their simple sorrows, and find a pleasure in all their simple joys, remembering her own child-life, and the happy summer days.</p>
+</section>
+</article>
+</main>
 
 </body>
 </html>

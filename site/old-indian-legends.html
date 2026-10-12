@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Old Indian Legends &mdash; Zitkala-Ša</title>
+	<meta name="description" content="Fourteen Dakota legends of Iktomi the trickster and his neighbours, with the preface and Angel De Cora’s plates that Gutenberg dropped. A restored edition, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/old-indian-legends.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="Old Indian Legends — Zitkala-Ša">
+	<meta property="og:description" content="Fourteen Dakota legends of Iktomi the trickster and his neighbours, with the preface and Angel De Cora’s plates that Gutenberg dropped. A restored edition, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/old-indian-legends.html">
+	<meta property="og:image" content="https://emend.press/covers/share/old-indian-legends.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,28 +192,32 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>Old Indian Legends</h1>
-	<h3>Illustrated by Angel De Cora</h3>
-	<h3>by Zitkala-Ša</h3>
+	<p class="title-line">Illustrated by Angel De Cora</p>
+	<p class="title-line">by Zitkala-Ša</p>
 	<p class="center">
 	1901
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is a restored edition of Old Indian Legends: the author's own words, unchanged. Every plate carries a caption and alt text written for this edition, beginning with the label the book printed. The original is available from <a href="https://www.gutenberg.org/ebooks/338">Project Gutenberg</a>. Also available as an <a href="ebooks/zitkala-sa_old-indian-legends.epub">epub</a>. <a href="restored.html">More restored editions</a>.</i></p>
 
 	<hr>
+<section aria-labelledby="editors-introduction">
 <h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
 <p>Zitkala-Ša was born in 1876 on the Yankton reservation in what is now South Dakota. Her mother was Yankton Dakota and her father was white. When she was eight, Quaker missionaries took her to a boarding school in Wabash, Indiana, and she spent most of the next fifteen years in white institutions: as a pupil, as a student at Earlham College, and as a teacher at the Carlisle Indian School in Pennsylvania. Zitkala-Ša, the name she wrote under, is Lakota for Red Bird. In 1900 the Atlantic Monthly printed three essays by her about her childhood and her schooling; they are collected in American Indian Stories, the companion to this volume.</p>
 <p>Old Indian Legends came out in Boston in 1901, from Ginn &amp; Company, a publisher of school books. It is a book for children, and the preface says which children: the little black-haired aborigine who heard these tales beside the night fire, and the blue-eyed little patriot who can hear them now. She had the stories from old Dakota story-tellers in both Dakotas, and when two tellings of a tale differed, she writes, each helped her restore what the other had lost.</p>
 <p>Most of the legends are about Iktomi, the spider fairy, a trickster who dresses like a Dakota brave, is vain and greedy, and is usually caught in his own snare. The others bring in the badger and the bear, a rabbit, a turtle, and Iya, the Eater. Animals talk and keep house like people, and the old stone Inyan is prayed to as great-grandfather. A few Dakota exclamations, such as &quot;Hoye!&quot; and &quot;Hinnu!&quot;, are left untranslated, as the book leaves them. She writes both teepee and wigwam.</p>
 <p>The illustrations are by Angel De Cora, a Winnebago artist who studied at Smith College and under Howard Pyle, and who taught art at Carlisle from 1906. The title page adds her Winnebago name, Hinook-Mahiwi-Kilinaka.</p>
 <p>This is a restored edition: Zitkala-Ša&#x27;s words are unchanged. The Project Gutenberg transcription it is built from has no preface, none of De Cora&#x27;s fourteen plates and none of their captions. This edition restores all three from a scan of the 1901 book, keeping the line printed under each plate and adding a description and alt text for each. It also adds modern typesetting, a proper ebook, and this introduction.</p>
+</section>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p><a href="#preface">Preface</a></p>
 <p><a href="#iktomi-and-the-ducks">Iktomi and the Ducks</a></p>
@@ -204,8 +234,11 @@ figcaption {
 <p><a href="#iya-the-camp-eater">Iya, the Camp-Eater</a></p>
 <p><a href="#manstin-the-rabbit">Manstin, the Rabbit</a></p>
 <p><a href="#the-warlike-seven">The Warlike Seven</a></p>
+</nav>
 
 <hr>
+<article>
+<section aria-labelledby="preface">
 <h2 id="preface">Preface</h2>
 <p>These legends are relics of our country&#x27;s once virgin soil. These and many others are the tales the little black-haired aborigine loved so much to hear beside the night fire.</p>
 <p>For him the personified elements and other spirits played in a vast world right around the center fire of the wigwam.</p>
@@ -216,6 +249,8 @@ figcaption {
 <p>The old legends of America belong quite as much to the blue-eyed little patriot as to the black-haired aborigine. And when they are grown tall like the wise grown-ups may they not lack interest in a further study of Indian folklore, a study which so strongly suggests our near kinship with the rest of humanity and points a steady finger toward the great brotherhood of mankind, and by which one is so forcibly impressed with the possible earnestness of life as seen through the teepee door! If it be true that much lies “in the eye of the beholder,” then in the American aborigine as in any other race, sincerity of belief, though it were based upon mere optical illusion, demands a little respect.</p>
 <p>After all he seems at heart much like other peoples.</p>
 <p>Zitkala-Ša.</p>
+</section>
+<section aria-labelledby="iktomi-and-the-ducks">
 <h2 id="iktomi-and-the-ducks">Iktomi and the Ducks</h2>
 <p>Iktomi is a spider fairy. He wears brown deerskin leggins with long soft fringes on either side, and tiny beaded moccasins on his feet. His long black hair is parted in the middle and wrapped with red, red bands. Each round braid hangs over a small brown ear and falls forward over his shoulders.</p>
 <p>He even paints his funny face with red and yellow, and draws big black rings around his eyes. He wears a deerskin jacket, with bright colored beads sewed tightly on it. Iktomi dresses like a real Dakota brave. In truth, his paint and deerskins are the best part of him—if ever dress is part of man or fairy.</p>
@@ -264,6 +299,8 @@ figcaption {
 <p>“Ho! Po!” shouted the mischievous wolves; “he says more ducks are to be found under the ashes! Come! Let us have our fill this once!”</p>
 <p>Running back to the dead fire, they pawed out the ducks with such rude haste that a cloud of ashes rose like gray smoke over them.</p>
 <p>“Hin-hin-hin!” moaned Iktomi, when the wolves had scampered off. All too late, the sturdy breeze returned, and, passing by, pulled apart the broken edges of the tree. Iktomi was released. But alas! he had no duck feast.</p>
+</section>
+<section aria-labelledby="iktomi-s-blanket">
 <h2 id="iktomi-s-blanket">Iktomi&#x27;s Blanket</h2>
 <p>Alone within his teepee sat Iktomi. The sun was but a hand&#x27;s-breadth from the western edge of land.</p>
 <p>“Those, bad, bad gray wolves! They ate up all my nice fat ducks!” muttered he, rocking his body to and fro.</p>
@@ -290,6 +327,8 @@ figcaption {
 <p>He was soon upon the edge of the ravine. A young moon, like a bright bent bow, climbed up from the southwest horizon a little way into the sky.</p>
 <p>In this pale light Iktomi stood motionless as a ghost amid the thicket. His woodpile was not yet kindled. His pointed stakes were still bare as he had left them. But where was the deer—the venison he had felt warm in his hands a moment ago? It was gone. Only the dry rib bones lay on the ground like giant fingers from an open grave. Iktomi was troubled. At length, stooping over the white dried bones, he took hold of one and shook it. The bones, loose in their sockets, rattled together at his touch. Iktomi let go his hold. He sprang back amazed. And though he wore a blanket his teeth chattered more than ever. Then his blunted sense will surprise you, little reader; for instead of being grieved that he had taken back his blanket, he cried aloud, “Hin-hin-hin! If only I had eaten the venison before going for my blanket!”</p>
 <p>Those tears no longer moved the hand of the Generous Giver. They were selfish tears. The Great Spirit does not heed them ever.</p>
+</section>
+<section aria-labelledby="iktomi-and-the-muskrat">
 <h2 id="iktomi-and-the-muskrat">Iktomi and the Muskrat</h2>
 <p>Beside a white lake, beneath a large grown willow tree, sat Iktomi on the bare ground. The heap of smouldering ashes told of a recent open fire. With ankles crossed together around a pot of soup, Iktomi bent over some delicious boiled fish.</p>
 <p>Fast he dipped his black horn spoon into the soup, for he was ravenous. Iktomi had no regular meal times. Often when he was hungry he went without food.</p>
@@ -318,6 +357,8 @@ figcaption {
 <p>“There!” he exclaimed, “I see you, my friend, sitting with your ankles wound around my little pot of fish! My friend, I am hungry. Give me a bone!”</p>
 <p>“Ha! ha! ha!” laughed the water-man, the muskrat. The sound did not rise up out of the lake, for it came down from overhead. With his hands still on his knees, Iktomi turned his face upward into the great willow tree. Opening wide his mouth he begged, “My friend, my friend, give me a bone to gnaw!”</p>
 <p>“Ha! ha!” laughed the muskrat, and leaning over the limb he sat upon, he let fall a small sharp bone which dropped right into Iktomi&#x27;s throat. Iktomi almost choked to death before he could get it out. In the tree the muskrat sat laughing loud. “Next time, say to a visiting friend, &#x27;Be seated beside me, my friend. Let me share with you my food.&#x27;”</p>
+</section>
+<section aria-labelledby="iktomi-and-the-coyote">
 <h2 id="iktomi-and-the-coyote">Iktomi and the Coyote</h2>
 <p>Afar off upon a large level land, a summer sun was shining bright. Here and there over the rolling green were tall bunches of coarse gray weeds. Iktomi in his fringed buckskins walked alone across the prairie with a black bare head glossy in the sunlight. He walked through the grass without following any well-worn footpath.</p>
 <p>From one large bunch of coarse weeds to another he wound his way about the great plain. He lifted his foot lightly and placed it gently forward like a wildcat prowling noiselessly through the thick grass. He stopped a few steps away from a very large bunch of wild sage. From shoulder to shoulder he tilted his head. Still farther he bent from side to side, first low over one hip and then over the other. Far forward he stooped, stretching his long thin neck like a duck, to see what lay under a fur coat beyond the bunch of coarse grass.</p>
@@ -336,6 +377,8 @@ figcaption {
 <p>Sitting on his haunches, on the opposite side of the fire from where Iktomi stood, the coyote began to laugh at him.</p>
 <p>“Another day, my friend, do not take too much for granted. Make sure the enemy is stone dead before you make a fire!”</p>
 <p>Then off he ran so swiftly that his long bushy tail hung out in a straight line with his back.</p>
+</section>
+<section aria-labelledby="iktomi-and-the-fawn">
 <h2 id="iktomi-and-the-fawn">Iktomi and the Fawn</h2>
 <p>In one of his wanderings through the wooded lands, Iktomi saw a rare bird sitting high in a tree-top. Its long fan-like tail feathers had caught all the beautiful colors of the rainbow. Handsome in the glistening summer sun sat the bird of rainbow plumage. Iktomi hurried hither with his eyes fast on the bird.</p>
 <p>He stood beneath the tree looking long and wistfully at the peacock&#x27;s bright feathers. At length he heaved a sigh and began: “Oh, I wish I had such pretty feathers! How I wish I were not I! If only I were a handsome feathered creature how happy I would be! I&#x27;d be so glad to sit upon a very high tree and bask in the summer sun like you!” said he suddenly, pointing his bony finger up toward the peacock, who was eyeing the stranger below, turning his head from side to side.</p>
@@ -381,6 +424,8 @@ figcaption {
 <p>Thus with his own hands he aids in making his grave. After the hole was dug and cushioned with grass, Iktomi, muttering something about brown spots, leaped down into it. Lengthwise, flat on his back, he lay. While the fawn covered him over with cedars, a far-away voice came up through them, “Brown, brown spots to wear forever!” A red ember was tucked under the dry grass. Off scampered the fawns after their mothers; and when a great distance away they looked backward. They saw a blue smoke rising, writhing upward till it vanished in the blue ether.</p>
 <p>“Is that Iktomi&#x27;s spirit?” asked one fawn of another.</p>
 <p>“No! I think he would jump out before he could burn into smoke and cinders,” answered his comrade.</p>
+</section>
+<section aria-labelledby="the-badger-and-the-bear">
 <h2 id="the-badger-and-the-bear">The Badger and the Bear</h2>
 <p>On the edge of a forest there lived a large family of badgers. In the ground their dwelling was made. Its walls and roof were covered with rocks and straw.</p>
 <p>Old father badger was a great hunter. He knew well how to track the deer and buffalo. Every day he came home carrying on his back some wild game. This kept mother badger very busy, and the baby badgers very chubby. While the well-fed children played about, digging little make-believe dwellings, their mother hung thin sliced meats upon long willow racks. As fast as the meats were dried and seasoned by sun and wind, she packed them carefully away in a large thick bag.</p>
@@ -437,6 +482,8 @@ figcaption {
 <p>Singing and laughing, the badgers returned to their own dwelling.</p>
 <p>Then the avenger left them.</p>
 <p>“I go,” said he in parting, “over the earth.”</p>
+</section>
+<section aria-labelledby="the-tree-bound">
 <h2 id="the-tree-bound">The Tree-Bound</h2>
 <p>It was a clear summer day. The blue, blue sky dropped low over the edge of the green level land. A large yellow sun hung directly overhead.</p>
 <p>The singing of birds filled the summer space between earth and sky with sweet music. Again and again sang a yellow-breasted birdie—“Koda Ni Dakota!” He insisted upon it. “Koda Ni Dakota!” which was “Friend, you&#x27;re a Dakota! Friend, you&#x27;re a Dakota!” Perchance the birdie meant the avenger with the magic arrow, for there across the plain he strode. He was handsome in his paint and feathers, proud with his great buckskin quiver on his back and a long bow in his hand. Afar to an eastern camp of cone-shaped teepees he was going. There over the Indian village hovered a large red eagle threatening the safety of the people. Every morning rose this terrible red bird out of a high chalk bluff and spreading out his gigantic wings soared slowly over the round camp ground. Then it was that the people, terror-stricken, ran screaming into their lodges. Covering their heads with their blankets, they sat trembling with fear. No one dared to venture out till the red eagle had disappeared beyond the west, where meet the blue and green.</p>
@@ -477,6 +524,8 @@ figcaption {
 <figcaption>This was a sign of gratitude used when words failed to interpret strong emotion — A young woman in a fringed buckskin dress stands against a tree with her eyes lowered, while a young man in a dark blanket bends toward her and moves his open hands downward before her.</figcaption>
 </figure>
 <p>When the bewildered woman reached her dwelling, she mounted a pony and rode swiftly across the rolling land. To the camp ground in the east, to the chieftain troubled by the red eagle, she carried her story.</p>
+</section>
+<section aria-labelledby="shooting-of-the-red-eagle">
 <h2 id="shooting-of-the-red-eagle">Shooting of the Red Eagle</h2>
 <p>A MAN in buckskins sat upon the top of a little hillock. The setting sun shone bright upon a strong bow in his hand. His face was turned toward the round camp ground at the foot of the hill. He had walked a long journey hither. He was waiting for the chieftain&#x27;s men to spy him.</p>
 <p>Soon four strong men ran forth from the center wigwam toward the hillock, where sat the man with the long bow.</p>
@@ -507,6 +556,8 @@ figcaption {
 <p>So quick was the hand of the avenger, so sure his sight, that no one had seen the arrow fly from his long bent bow.</p>
 <p>In awe and amazement the village was dumb. And when the avenger, plucking a red eagle feather, placed it in his black hair, a loud shout of the people went up to the sky. Then hither and thither ran singing men and women making a great feast for the avenger.</p>
 <p>Thus he won the beautiful Indian princess who never tired of telling to her children the story of the big red eagle.</p>
+</section>
+<section aria-labelledby="iktomi-and-the-turtle">
 <h2 id="iktomi-and-the-turtle">Iktomi and the Turtle</h2>
 <p>The huntsman Patkasa (turtle) stood bent over a newly slain deer.</p>
 <p>The red-tipped arrow he drew from the wounded deer was unlike the arrows in his own quiver. Another&#x27;s stray shot had killed the deer. Patkasa had hunted all the morning without so much as spying an ordinary blackbird.</p>
@@ -542,6 +593,8 @@ figcaption {
 <p>“The cooled fire! The coals!” laughed the brood of Iktomis. Clapping together their little hands, they chased one another along the edge of the creek. They shouted and hooted with great glee.</p>
 <p>“Ahas!” said a gruff voice across the water. It was Patkasa. In a large willow tree leaning far over the water he sat upon a large limb. On the very same branch was a bright burning fire over which Patkasa broiled the venison. By this time the water was calm again. No more danced those black spots on its surface, for they were the toes of old Iktomi. He was drowned.</p>
 <p>The Iktomi children hurried away from the creek, crying and calling for their water-dead father.</p>
+</section>
+<section aria-labelledby="dance-in-a-buffalo-skull">
 <h2 id="dance-in-a-buffalo-skull">Dance in a Buffalo Skull</h2>
 <p>It was night upon the prairie. Overhead the stars were twinkling bright their red and yellow lights. The moon was young. A silvery thread among the stars, it soon drifted low beneath the horizon.</p>
 <p>Upon the ground the land was pitchy black. There are night people on the plain who love the dark. Amid the black level land they meet to frolic under the stars. Then when their sharp ears hear any strange footfalls nigh they scamper away into the deep shadows of night. There they are safely hid from all dangers, they think.</p>
@@ -560,6 +613,8 @@ figcaption {
 <p>Ah, very near are those round yellow eyes! Very low to the ground they seem to creep—creep toward the buffalo skull. All of a sudden they slide into the eye-sockets of the old skull.</p>
 <p>“Spirit of the buffalo!” squeaked a frightened mouse as he jumped out from a hole in the back part of the skull.</p>
 <p>“A cat! a cat!” cried other mice as they scrambled out of holes both large and snug. Noiseless they ran away into the dark.</p>
+</section>
+<section aria-labelledby="the-toad-and-the-boy">
 <h2 id="the-toad-and-the-boy">The Toad and the Boy</h2>
 <p>The water-fowls were flying over the marshy lakes. It was now the hunting season. Indian men, with bows and arrows, were wading waist deep amid the wild rice. Near by, within their wigwams, the wives were roasting wild duck and making down pillows.</p>
 <p>In the largest teepee sat a young mother wrapping red porcupine quills about the long fringes of a buckskin cushion. Beside her lay a black-eyed baby boy cooing and laughing. Reaching and kicking upward with his tiny hands and feet, he played with the dangling strings of his heavy-beaded bonnet hanging empty on a tent pole above him.</p>
@@ -597,6 +652,8 @@ figcaption {
 <p>At once the unhappy father and mother cried out, “&#x27;Tis he, our boy!” Quickly he led them to the lake. Peeping through the wild rice, he pointed with unsteady finger toward the boy playing all unawares.</p>
 <p>“&#x27;Tis he! &#x27;tis he!” cried the mother, for she knew him.</p>
 <p>In silence the hunter stood aside, while the happy father and mother caressed their baby boy grown tall.</p>
+</section>
+<section aria-labelledby="iya-the-camp-eater">
 <h2 id="iya-the-camp-eater">Iya, the Camp-Eater</h2>
 <p>From the tall grass came the voice of a crying babe. The huntsmen who were passing nigh heard and halted.</p>
 <p>The tallest one among them hastened toward the high grass with long, cautious strides. He waded through the growth of green with just a head above it all. Suddenly exclaiming “Hunhe!” he dropped out of sight. In another instant he held up in both his hands a tiny little baby, wrapped in soft brown buckskins.</p>
@@ -645,6 +702,8 @@ figcaption {
 <p>Lo! there rose out of the giant a whole Indian tribe: their camp ground, their teepees in a large circle, and the people laughing and dancing.</p>
 <p>“We are glad to be free!” said these strange people.</p>
 <p>Thus Iya was killed; and no more are the camp grounds in danger of being swallowed up in a single night time.</p>
+</section>
+<section aria-labelledby="manstin-the-rabbit">
 <h2 id="manstin-the-rabbit">Manstin, the Rabbit</h2>
 <p>Manstin was an adventurous brave, but very kind-hearted. Stamping a moccasined foot as he drew on his buckskin leggins, he said: “Grandmother, beware of Iktomi! Do not let him lure you into some cunning trap. I am going to the North country on a long hunt.”</p>
 <figure id="fig-am">
@@ -685,6 +744,8 @@ figcaption {
 <p>It was Manstin&#x27;s friend with the Earth Ear and the old grandfather. “Here Manstin, take back your eyes,” said the old man, “I knew you would not be content in my stead, but I wanted you to learn your lesson. I have had pleasure seeing with your eyes and trying your bow and arrows, but since I am old and feeble I much prefer my own teepee and my magic bags!”</p>
 <p>Thus talking the three returned to the hut. The old grandfather crept into his wigwam, which is often mistaken for a mere oak tree by little Indian girls and boys.</p>
 <p>Manstin, with his own bright eyes fitted into his head again, went on happily to hunt in the North country.</p>
+</section>
+<section aria-labelledby="the-warlike-seven">
 <h2 id="the-warlike-seven">The Warlike Seven</h2>
 <p>Once seven people went out to make war,—the Ashes, the Fire, the Bladder, the Grasshopper, the Dragon Fly, the Fish, and the Turtle. As they were talking excitedly, waving their fists in violent gestures, a wind came and blew the Ashes away. “Ho!” cried the others, “he could not fight, this one!”</p>
 <p>The six went on running to make war more quickly. They descended a deep valley, the Fire going foremost until they came to a river. The Fire said “Hsss—tchu!” and was gone. “Ho!” hooted the others, “he could not fight, this one!”</p>
@@ -722,6 +783,9 @@ figcaption {
 <p>“I will go that way,” said Iktomi, looking at the concave within arm&#x27;s reach.</p>
 <p>He struck his knife upward in the Eater&#x27;s stomach, and the water falling out drowned those people of the village.</p>
 <p>Now when the great water fell into its own bed, the Fish and the Turtle came to the shore. They went home painted victors and loud-voiced singers.</p>
+</section>
+</article>
+</main>
 
 </body>
 </html>

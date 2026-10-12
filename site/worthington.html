@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>A Study of Splashes &mdash; A. M. Worthington</title>
+	<meta name="description" content="The splash of a drop, photographed by electric spark in hundredths of a second — with Worthington’s 1894 Royal Institution discourse on the same subject. A restored edition, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/worthington.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="A Study of Splashes — A. M. Worthington">
+	<meta property="og:description" content="The splash of a drop, photographed by electric spark in hundredths of a second — with Worthington’s 1894 Royal Institution discourse on the same subject. A restored edition, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/worthington.html">
+	<meta property="og:image" content="https://emend.press/covers/share/worthington.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,27 +192,31 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>A Study of Splashes</h1>
-	<h3>With The Splash of a Drop, his Royal Institution discourse of 1894</h3>
-	<h3>by A. M. Worthington</h3>
+	<p class="title-line">With The Splash of a Drop, his Royal Institution discourse of 1894</p>
+	<p class="title-line">by A. M. Worthington</p>
 	<p class="center">
 	1908
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is a restored edition of A Study of Splashes: the author's own words, unchanged. Every plate carries a caption and alt text written for this edition, beginning with the label the book printed. The original is available from <a href="https://www.gutenberg.org/ebooks/39831">Project Gutenberg</a>. Also available as an <a href="ebooks/a-m-worthington_a-study-of-splashes.epub">epub</a>. <a href="restored.html">More restored editions</a>.</i></p>
 
 	<hr>
+<section aria-labelledby="editors-introduction">
 <h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
 <p>Arthur Mason Worthington was born in Manchester in 1852 and went to Rugby School. In 1875 a boy there, his friend H. F. Newall, reported to the school&#x27;s Natural History Society that ink drops falling by accident on smoked glass left a strange pattern of fine rings, and that drops of the same size falling from the same height always left the same one. Worthington took the question up and was still working on it more than thirty years later. He taught science at Clifton College, was elected a Fellow of the Royal Society in 1893, and when this book appeared he was headmaster and professor of physics at the Royal Naval Engineering College at Devonport.</p>
 <p>The difficulty is that a splash is over in a hundredth of a second, far too fast for the eye. His answer was to work in the dark, drop a measured drop, and light it for an instant with an electric spark at a chosen moment. Then he did it again with an identical drop and a spark a thousandth of a second later, and so on, stage by stage. At first he drew what the flash showed him. On 18 May 1894 he gave a Friday Evening Discourse at the Royal Institution in London called The Splash of a Drop, mostly about drops falling onto a flat plate. At the end of it he showed, for the first time, a few photographs of drops falling into liquid, taken with his friend R. S. Cole. The photographs showed him something his drawings had hidden: real splashes are irregular, and his eye had been supplying a symmetry that was not there. The lecture was printed in 1895 and is the second part of this volume.</p>
 <p>A Study of Splashes came out in 1908 and is the book the photographs made possible. Drops, and then solid balls, fall into water, often clouded with a little milk so that the photographs show more; a smooth ball and a rough one make two quite different splashes, and he works out why. He wrote it for the general reader, and especially for the young, putting the references for physicists in footnotes. Two conventions are worth knowing before starting. Each series of pictures reads like a strip of film, but every picture is a different drop, photographed at a later moment than the one before. And the times printed under the pictures use a raised decimal point, so 0·002 sec. is two thousandths of a second. The frontispiece shows the same forms left in the steel armour-plate of a battleship where a shell went in.</p>
 <p>This is a restored edition, not a retelling: Worthington&#x27;s words are unchanged. The Project Gutenberg transcriptions it is built from give every plate an empty description. This edition adds a caption and alt text for each of the 247 plates in the two works, keeping the label and the time he printed; it also adds modern typesetting, a proper ebook, and this introduction.</p>
+</section>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p class="toc-book">A Study of Splashes</p>
 <p><a href="#dedication">Dedication</a></p>
@@ -205,11 +235,17 @@ figcaption {
 <li><a href="#ch-11">Chapter 11: A New Phenomenon That Appears with an Increase in the Velocity of Entry of a Rough Sphere</a></li>
 </ul>
 <p><a href="#the-splash-of-a-drop">The Splash of a Drop</a></p>
+</nav>
 
 <hr>
+<article>
+<section class="part" aria-labelledby="a-study-of-splashes">
 <h2 id="a-study-of-splashes" class="center">A Study of Splashes</h2>
+<section aria-labelledby="dedication">
 <h2 id="dedication">Dedication</h2>
 <pre class="outline">	DEDICATED TO THE NATURAL HISTORY SOCIETY OF RUGBY SCHOOL AND ITS FORMER PRESIDENT ARTHUR SIDGWICK IN REMEMBRANCE OF THE ENCOURAGEMENT GIVEN TO THE EARLY OBSERVATIONS MADE IN BOYHOOD BY MY OLD SCHOOL-FRIEND H. F. NEWALL FROM WHICH THIS STUDY SPRANG.</pre>
+</section>
+<section aria-labelledby="preface">
 <h2 id="preface">Preface</h2>
 <figure id="fig-aa">
 <img src="images/worthington/figaa.jpg" alt="Permanent Splashes left where a Projectile has entered an Armour-plate. (See Chapter 10.) — The steel round the hole has been thrown up into a ragged crater of curled, pointed petals, standing in the middle of a broad, shallow dished hollow in the plate." width="800" height="465" loading="lazy">
@@ -228,6 +264,8 @@ figcaption {
 <p>[Added <em>March 1, 1908</em>.] A slight delay in the publication of this book has afforded the opportunity of obtaining the new and quite unexpected information given in the supplementary chapter.</p>
 <p>Footnote [A] &quot;Impact with a Liquid Surface,&quot; by Worthington and Cole. <em>Phil. Trans. Roy. Soc.</em>, A 193, 1897, and A 255, 1900.</p>
 <p>Footnote [B] <em>Pearson&#x27;s Magazine</em>, July and August, 1898.</p>
+</section>
+<section aria-labelledby="ch-1">
 <h3 id="ch-1">Chapter 1: Preliminary—Methods of Observation and Apparatus</h3>
 <p>There will be but few of my readers who have not, in some heavy shower of rain, beguiled the tedium of enforced waiting by watching, perhaps half-unconsciously, the thousand little crystal fountains that start up from the surface of pool or river; noting now and then a surrounding coronet of lesser jets, or here and there a bubble that floats for a moment and then vanishes.</p>
 <p>It is to this apparently insignificant transaction, which always has been and always will be so familiar, and to others of a like nature, that I desire to call the attention of those who are interested in natural phenomena; hoping to share with them some of the delight that I have myself felt, in contemplating the exquisite forms that the camera has revealed, and in watching the progress of a multitude of events, compressed indeed within the limits of a few hundredths of a second, but none the less orderly and inevitable, and of which the sequence is in part easy to anticipate and understand, while in part it taxes the highest mathematical powers to elucidate.</p>
@@ -307,6 +345,8 @@ figcaption {
 <p>The weakness of the negatives was met by a prolonged development of about forty minutes in a saturated solution of eikonogen. This forbade the use of any artificial light, and all the photographic processes had to be conducted in absolute darkness. To avoid the tedium of long waiting in the dark room, a light-tight tray was constructed, in which several developing dishes could be placed, and the whole brought out into the daylight and suitably rocked. In this way ten or twelve photographs could be developed simultaneously.</p>
 <p>It may be worth while to mention here that the bright spark given by breaking the <em>primary</em> circuit of an induction coil at the surface of mercury was found to be of much too long duration to be useful for the purposes of splash-photography.</p>
 <p>Footnote [C] The plates which I have mostly used have been Thomas&#x27;s A 1 ordinary.</p>
+</section>
+<section aria-labelledby="ch-2">
 <h3 id="ch-2">Chapter 2: The Splash of a Drop—Low Fall</h3>
 <p>We will now turn to the photographic record itself. The first series shows the splash of a drop of water weighing ·2 of a gram, and therefore 7·36 millimetres (or rather less than one-third of an inch) in diameter, falling 40 cm. (about 16 inches) into milk mixed with water. The object of adding milk to the water was to make it more visible. The addition of milk makes, as we shall see, a little but not much difference in the general character of the splash. The scale of the figures is three-quarters of the actual size.</p>
 <p>The number written against any figure gives, on the assumption that no unobserved error has crept in, the time in decimal parts of a second that has elapsed since the stage marked &quot;<em>T = 0</em>,&quot; which is nearest to the first instant of contact. The reader will understand from what has been said that the error in any of these times may be as much as two-thousandths of a second, but is not likely to be more than that, when all precautions were taken.</p>
@@ -456,6 +496,8 @@ figcaption {
 <p>In the same way naked-eye observation reveals the crater thrown up by the entry of a big rain-drop into a pool of water. In either case what we are able to glimpse is a &quot;stationary&quot; stage. The rebounding column reaches a maximum height, remains poised for an instant, and then descends. The same is true of the crater. It is the relatively long duration of the moment of poise that produces on the eye a clear impression where all else is blurred by rapid change.</p>
 <p>But there is frequently a curious illusion. We often seem to see the crater with the column standing erect in the middle of it. We know now that in reality the crater has vanished before the column appears. But the image of the crater has not time to fade before that of the column is superposed on it.</p>
 <p>Those who are accustomed &quot;to believe nothing that they hear and only half of what they see&quot; may be glad to find at least the latter part of their maxim so completely justified.</p>
+</section>
+<section aria-labelledby="ch-3">
 <h3 id="ch-3">Chapter 3: Principles Involved</h3>
 <p>The reader&#x27;s attention has now been directed to various features which, with certain modifications, will be found in many of the splashes that we shall examine; but so far the language used has been simply descriptive and in no way explanatory. Instead of going on to describe other splashes in the same way, and thus to accumulate a great mass of uncoördinated descriptive detail, it will be better to pause for a moment in order to become acquainted with certain principles connected with the behaviour of liquids, the application of which will go a long way towards explaining what we see going on in any splash.</p>
 <p>The first principle to be understood is that the surface layers of any liquid behave like a uniformly stretched skin or membrane, which is always endeavouring to contract and to diminish its area. If the surface is flat, like the surface of still liquid in a bowl, this surface-tension has only the effect of exerting a small inward pull on the walls of the bowl. But if the surface is curved, with a convexity outwards, then the surface layers, on account of their tension, press the interior liquid back, and thus tend to check the growth of any protuberance; while, on the other hand, if the surface is concave outwards, then the surface-tension tends to pull the interior liquid forward, and so to diminish the concavity.</p>
@@ -526,6 +568,8 @@ figcaption {
 <p>These questions, which demand that we should trace the motion of every particle of the water back to the original impulse given by the impact of the drop, are much more difficult to answer, and can only be satisfactorily dealt with by a complicated mathematical analysis. Something, however, in the way of a general explanation will be given in a later chapter.</p>
 <p>Footnote [D] <em>Statique Expérimentale et Théorique des Liquides.</em></p>
 <p>Footnote [E] See Worthington on the &quot;Segmentation of a Liquid Annulus,&quot; <em>Proc. Roy. Soc.</em>, No. 200, 1879.</p>
+</section>
+<section aria-labelledby="ch-4">
 <h3 id="ch-4">Chapter 4: The Splash Continued</h3>
 <p>I have stated that the addition of the milk to the water made but little difference in the character of the resulting splash. It does, however, make certain differences in detail, as will be gathered from an examination of the next Series Ia, which shows the effect of letting the water-drop fall from the same height into water instead of into milk. Such a splash is difficult to photograph unless the illumination is from behind. As shown in this way, the early figures of the crater might be unintelligible to the reader had he not already studied the same crater lighted up from the side. Sometimes, though the front of the crater is hardly visible directly, yet every lobe on it can be clearly traced in the inverted image seen by reflection.</p>
 <p>The most noticeable difference between the two splashes is perhaps the very much greater number of ripples seen with the splash in pure water. This is partly because, with the illumination behind, such ripples are more easily visible, but arises chiefly from the fact that ripples are not so readily propagated over the surface of milk on account both of its smaller surface-tension and its greater viscosity. The first appearance of outward-spreading ripples is in No. 6, just round the subsiding crater.</p>
@@ -633,6 +677,8 @@ figcaption {
 <img src="images/worthington/figcg.jpg" alt="21 0·321 sec. — The central depression has deepened round the foot of a narrow column that is breaking into drops, with a separated droplet high above." width="1300" height="1071" loading="lazy">
 <figcaption>21 0·321 sec. — The central depression has deepened round the foot of a narrow column that is breaking into drops, with a separated droplet high above.</figcaption>
 </figure>
+</section>
+<section aria-labelledby="ch-5">
 <h3 id="ch-5">Chapter 5: Higher Falls—Bubble-Building</h3>
 <p>It might well be expected that the effect of increasing the height of fall of our drop to 100 cm. would be simply to emphasize the phenomena already observed, and to obtain a higher crater and a taller rebounding column. Such an expectation would be mistaken. A new phenomenon makes its appearance. The crater does indeed rise to a greater height, but its mouth closes so as to form a bubble on the surface of the liquid. If the height be not too great the closing is either incomplete or at any rate only temporary, and the bubble reopens at the top to make way for the column which rises as before from the base, but is now much thicker and hardly so high as before.</p>
 <p>In the Series II, which is now given, the drop was of milk, 7·36 mm. in diameter, and fell 100 cm. into water.</p>
@@ -792,6 +838,8 @@ figcaption {
 <img src="images/worthington/fig16.jpg" alt="Arrangement for taking photographs below the surface of the liquid. — The camera C at left; the glass vessel AB of water in the middle, with the roughened glass plate P and condenser lens L behind it; the spark-gap F and concave reflector M at right." width="750" height="274" loading="lazy">
 <figcaption><b>Figure 16</b> &mdash; Arrangement for taking photographs below the surface of the liquid. — The camera C at left; the glass vessel AB of water in the middle, with the roughened glass plate P and condenser lens L behind it; the spark-gap F and concave reflector M at right.</figcaption>
 </figure>
+</section>
+<section aria-labelledby="ch-6">
 <h3 id="ch-6">Chapter 6: Below the Surface</h3>
 <p>Our investigation has so far been limited to what we can see from above the surface of the liquid; nor perhaps would it occur to any one acquainted only with so much as we have yet examined that it might be worth while to look below the general level of the surface. The discovery, however, that when the splash is made by a solid sphere very remarkable phenomena, which will be described in the next chapter, take place below the surface, led at a much later date to a similar examination in the case of a liquid drop.</p>
 <p>A suitable arrangement of the apparatus in the dark room is shown in the accompanying diagram (Fig. 16).</p>
@@ -851,6 +899,8 @@ figcaption {
 </figure>
 <p>It appears possible that the study of this remarkable spherical excavation may afford a clue that will lead to a solution of the very difficult hydro-dynamical questions involved, and the matter is still being investigated.</p>
 <p>Footnote [F] The information conveyed in this chapter was first published in a communication to the Mathematical and Physical Section of the British Association at Leicester in 1907.</p>
+</section>
+<section aria-labelledby="ch-7">
 <h3 id="ch-7">Chapter 7: The Two Kinds of Splashes of Solid Spheres</h3>
 <p>In the present chapter will be described the splash that follows the entry of a <em>solid</em> sphere falling vertically into a liquid from a small height, and I should like to persuade the reader, if possible before he begins to read, or at any rate afterwards, to make a very simple experiment. Let a few child&#x27;s marbles be taken—not glass &quot;marbles,&quot; for these are seldom round enough or smooth enough, but what are sold in the toy-shops as &quot;stone&quot; marbles—and let one of these be well rubbed and polished with a dry handkerchief, and then dropped from a height of about 30 cm., or, say, 1 foot, into a deep bowl or basin of water, the bottom of which may be conveniently protected from breakage by a few folds of fine copper gauze.</p>
 <p>If the polishing has been good, and the surface of the sphere has not been dimmed by subsequent handling with hot or greasy fingers, it will be observed that the splash is singularly insignificant, the sphere slipping noiselessly into the liquid with very little disturbance of the surface.</p>
@@ -1106,6 +1156,8 @@ figcaption {
 <figcaption>6 0·014 sec. — The sphere is wholly below the surface, and above it the sheath has drawn into a low pointed mound topped by a small spray.</figcaption>
 </figure>
 <p>It may here be observed that whether the sphere be rough or smooth, its size makes little or no difference in the character of the splash, within a range of diameter from 12 to 32 millimetres—i.e. from about 1/2 inch to about 1-1/3 inches. No doubt with a very large sphere, taking a long time to enter, the splash would be controlled more by gravity than by surface-tension, but so long as the sphere is within the limits mentioned this is not the case unless the height of fall be made very small indeed.</p>
+</section>
+<section aria-labelledby="ch-8">
 <h3 id="ch-8">Chapter 8: The Transition from the Smooth or “Sheath” Splash to the Rough or “Basket” Splash</h3>
 <p>THE INFLUENCE OF VELOCITY.</p>
 <p>If we gradually increase the velocity with which a well-polished sphere enters the liquid we find that there is a gradual transition from the silent &quot;smooth&quot; or &quot;sheath&quot; splash taking down no air and giving rise to only an insignificant column, to the noisy, &quot;rough,&quot; &quot;basket&quot; splash taking down much air and throwing up a tall and conspicuous jet. Thus in the fourth figure of Series XI, in which the height of fall has been increased from 15 to 60 cm. (i.e. from 6 inches to 2 feet), the sphere being of polished ivory, we see that the enveloping sheath has in many places broken away from the surface before the summit has been covered. It is well known that a sphere moving through a liquid pushes away the liquid in front of it, which flowing round closes in at the back of the sphere.</p>
@@ -1239,6 +1291,8 @@ figcaption {
 <p>Instantaneous photographs obtained under these conditions showed that the presence of the air has no material influence on the early course of the splash, and that a sphere which gives a &quot;smooth&quot; splash in air will give a &quot;smooth&quot; splash in vacuo, while if the splash is &quot;rough&quot; in air, it will also be &quot;rough&quot; in vacuo.</p>
 <p>Footnote [G] Some useful information about the internal flow of the liquid was obtained by the device of letting the sphere descend between two slowly ascending streams of very minute bubbles liberated by electrolysis at two electrodes placed in the liquid. These streams, initially straight and vertical, were displaced and distorted as the sphere passed near them and afforded a measure of the displacement of the fluid at different points. For details see <em>Phil. Trans. Roy. Soc.</em>, Vol. 194, p. 178 (1900).</p>
 <p>Footnote [H] Glycerine was found to be a rather treacherous liquid, requiring special precautions for which the reader who desires details is referred to the original memoir. <em>Phil. Trans. Roy. Soc.</em>, Series A, 1900. Vol. 194, p. 198.</p>
+</section>
+<section aria-labelledby="ch-9">
 <h3 id="ch-9">Chapter 9: The Explanation of the Cause of Difference Between the Two Splashes</h3>
 <p>I have some hope that, by the enumeration of the many surprising and puzzling facts mentioned in the last chapter, I may have succeeded in producing in the mind of my reader some sympathy with the state of perplexity of Mr. Cole and myself when, after four years of experimenting, we found ourselves still unable to answer the question, &quot;Why does the rough sphere make one kind of splash, the smooth sphere another kind?&quot;</p>
 <p>By reflecting, however, on all the facts at our disposal, we were at last led to what seems to be an entirely satisfactory explanation, and one moreover which we were able to test by further experiment.</p>
@@ -1287,6 +1341,8 @@ figcaption {
 <p>Finally, in confirmation of our explanation, we have the fact that with a liquid of small density and surface-tension, such as paraffin oil, a much smaller velocity of impact with a highly polished sphere suffices to give a &quot;rough&quot; splash than with water, a liquid of greater density and surface-tension, the reason being without doubt that the tangential velocity given by the impact is greater with the lighter liquid, as, indeed, is proved to be the case by the greater height to which the surrounding sheath is thrown up. The surface-tension also being smaller, the less is the abatement of velocity on account of work done in extending the surface.</p>
 <p>Footnote [I] See <em>Nature</em>, vol. xxix., January 31, 1884.</p>
 <p>Footnote [J] See Whetham on &quot;The Alleged Slipping at the Boundary of a Liquid in Motion.&quot; <em>Phil. Trans. Roy. Soc.</em>, Vol. 181 (1890).</p>
+</section>
+<section aria-labelledby="ch-10">
 <h3 id="ch-10">Chapter 10: Conclusion</h3>
 <p>We have now reached the end of the story, as far at least as I am able to tell it. But there is certainly more to be found out. No one has yet examined what happens when a rough sphere enters a liquid with a very high velocity. That the motion set up must differ from that at a low velocity is apparent to any one who has thrown stones from a low bridge into deep water below. The stone that is thrown with a great velocity makes neither quite the same sound nor the same kind of splash as a slow-falling stone, and though in the light of our present knowledge we may conjecture the kind of difference to be expected, yet experience has taught me that the subject is so full of unexpected turns that it is better to wait for the photographic record than to speculate without it.</p>
 <p>It would be an immense convenience, as was suggested in the first chapter, if we could use a kinematograph and watch such a splash in broad daylight, without the troublesome necessity of providing darkness and an electric spark. But the difficulties of contriving an exposure of the whole lens short enough to prevent blurring, either from the motion of the object, or from that of the rapidly-shifting sensitive film, are very great, and any one who may be able to overcome them satisfactorily, will find a multitude of applications awaiting his invention.</p>
@@ -1294,6 +1350,8 @@ figcaption {
 <p>To take a single illustration of a possible application in an unexpected quarter, I would invite the attention of the reader to the two photographs in the frontispiece, which exhibit the splash of a projectile on striking the steel armour-plate of a battleship. These are ordinary photographs taken after the plate had been used as a target. They represent the side on which the projectile has entered. In one picture the projectile is still seen embedded in the plate.</p>
 <p>No one looking at these photographs can fail to be struck with the close resemblance to some of the splashes that we have studied. There is the same <em>slight</em> upheaval of the neighbouring surface, the same crater, with the same curled lip, leading to the inference that under the immense and suddenly applied pressure, the steel has behaved like a liquid.</p>
 <p>Such flow of metals under great pressure is familiar enough to mechanical engineers, but what I desire to suggest is, that from a study of the motions set up in a liquid in an analogous case, it may be possible to deduce information about the distribution of internal stress, which may apply also to a solid, and may thus lead to improvements in the construction of a plate that is intended to resist penetration.</p>
+</section>
+<section aria-labelledby="ch-11">
 <h3 id="ch-11">Chapter 11: A New Phenomenon That Appears with an Increase in the Velocity of Entry of a Rough Sphere</h3>
 <p>A slight delay in the passage of this book through the press has enabled me to obtain some of the missing information referred to in the opening paragraph of the last chapter.</p>
 <p>If any reader who may have been persuaded to try for himself the simple experiment mentioned at the beginning of Chapter VII, will extend his observations by increasing the height of fall of the roughened marble to 4 or 5 feet (say to 140 centim.), he will find that while, as before, much air is still carried down, there is nevertheless, now, no rebounding jet projected high into the air, such as is invariably seen with the lower fall of 2 feet (60 centim.), and he will notice a curious &quot;seething&quot; appearance at the surface.[K] Thinking that this appearance which the naked eye detects must be due to an entanglement of the rising jet with the bubble, which entanglement was likely to produce confused motions that could not be profitably studied, I had not till now been sufficiently curious to examine what really happened. But certain recent observations of the persistence with which the seething motion again and again recurred when a stone was dropped or thrown into a river, led me to suspect that something required investigation. I was, however, quite unprepared to find the remarkable change of procedure that is revealed by the following series of photographs (Series XVII), in the taking of which I owe much to the kind and skilful assistance of Dr. Bryan. The earlier figures show the very rapid rise of the crater and its closing as a bubble much before the entrapped column of air divides. Before the division takes place, the liquid now flowing in from all sides closes over the upper end of the long air-tube, separates it from the air outside, and <em>forms a downward jet which shoots down the middle of the air-tube in pursuit of the sphere</em>. The first formation of this jet is not easy to observe, because the view is obscured by much splashing and turbulent vortical motion resulting apparently from the collision of the streams that converge from all sides on the axis of the air-tube at its upper end. Thus in Fig. 5 the jet is not yet well established, or at least not easily discerned; but in Fig. 6 the turbulence has cleared away from the upper part, and from this stage onwards the jet is well seen in all the figures, and it persists long after the segmentation of the air column has taken place. The reader must not suppose that this jet is a mere <em>falling</em> of the water under the action of gravity, for the rapidity with which it advances is far greater than could be accounted for in this way; indeed, as the &quot;times&quot; show, the effect of gravity during the establishment of the jet is insignificant.</p>
@@ -1374,6 +1432,8 @@ figcaption {
 <p>Footnote [K] I can recommend any reader who is not afraid of being late for breakfast to keep a bag of marbles in his bath-room.</p>
 <h4>PRINTED BY WILLIAM BRENDON AND SON, LTD PLYMOUTH</h4>
 <p>The following changes have been made to the original text.</p>
+</section>
+<section aria-labelledby="the-splash-of-a-drop">
 <h2 id="the-splash-of-a-drop">The Splash of a Drop</h2>
 <p>INSTANTANEOUS PHOTOGRAPHS OF THE SPLASH OF A WATER-DROP FALLING ABOUT 16 INCHES INTO MILK.</p>
 <figure id="fig-hm">
@@ -1581,6 +1641,10 @@ figcaption {
 <p>Footnote [4] A detailed account of the optical, mechanical, and electrical arrangements employed, written by Mr. Cole, will be found in <em>Nature</em>, vol. i., p. 222 (July 5, 1894).</p>
 <p>Footnote [5] The black streaks, seen especially in Figs. 11, 15, and 16, are due to particles of lamp-black carried down by the drop from the surface of the smoked watch-glass on which it rested.</p>
 <p>Footnote [6] Three of these photographs, viz. Nos. 11, 12, and 17, are reproduced full size, as a frontispiece, by a <em>photographic</em> process, to enable the reader to form a more correct idea than can be gathered from the engravings, of the amount of detail actually obtained, though even in these reproductions much is inevitably lost.</p>
+</section>
+</section>
+</article>
+</main>
 
 </body>
 </html>

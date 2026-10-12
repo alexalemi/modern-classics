@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Meditations &mdash; Marcus Aurelius</title>
+	<meta name="description" content="A Roman emperor&#x27;s private notes to himself on how to live. Retold in modern English, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/meditations.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="Meditations — Marcus Aurelius">
+	<meta property="og:description" content="A Roman emperor&#x27;s private notes to himself on how to live. Retold in modern English, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/meditations.html">
+	<meta property="og:image" content="https://emend.press/covers/share/meditations.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,27 +192,31 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>Meditations</h1>
-	<h3>by Marcus Aurelius</h3>
+	<p class="title-line">by Marcus Aurelius</p>
 	<p class="center">
 	<s>c. 170-180 AD</s> 2026
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is an AI modernization of Meditations into contemporary English. Also available as an <a href="ebooks/marcus-aurelius_meditations.epub">epub</a>.</i></p>
 
 	<hr>
+<section aria-labelledby="editors-introduction">
 <h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
 <p>Marcus Aurelius ruled the Roman empire from 161 until his death in 180, and wrote this book in Greek, for himself, while he was doing it. Two of the twelve books carry a note of where they were written: one among the Quadi on the river Granua, the other at Carnuntum. Both are army camps on the Danube frontier, where he spent much of the last decade of his life fighting on the northern border while a plague worked through the empire behind him. The book has no title from his hand, no dedication and no reader.</p>
 <p>It was never meant to be published, and that explains most of what is odd about it. There is no argument and no order. Entries run from a page to a single line. He repeats himself constantly, working over the same handful of reminders again and again, because he needed them again and again and a private notebook has no reason to avoid saying a thing twice. How the notebook survived him is not known. It was not printed until the sixteenth century.</p>
 <p>Book One is unlike everything after it and is worth not skipping. It is a list of debts: what he learned from his grandfather, his mother, each of his tutors, and the emperor who adopted him, item by item, down to the man who taught him not to take sides between the racing factions. The rest of the book is what he did with it.</p>
 <p>He is a Stoic and assumes the doctrine rather than explaining it. The short form is that your own judgments are the only thing fully in your power, and that everything else — your body, your reputation, your office, the people you love, your life — is held on loan and will be called in. Marcus is not cheerful about this. Death is on nearly every page: catalogues of emperors who are now dust, the olive falling ripe, the river carrying everything off. He is also often irritated, with himself for not wanting to get out of bed and with other people for being difficult, and then irritated at being irritated. The second person throughout is himself.</p>
 <p>This edition is all twelve books, retold from George Long&#x27;s 1862 translation, whose thou-and-thee English gives the notes a formality the Greek does not have. Marcus thanks one of his teachers, Rusticus, for lending him the lectures of Epictetus, who had been born a slave. Those lectures are in this collection as the Discourses, and the handbook Arrian cut out of them as the Enchiridion.</p>
+</section>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p><a href="#book-i">Book I</a></p>
 <p><a href="#book-ii">Book II</a></p>
@@ -200,8 +230,11 @@ figcaption {
 <p><a href="#book-x">Book X</a></p>
 <p><a href="#book-xi">Book XI</a></p>
 <p><a href="#book-xii">Book XII</a></p>
+</nav>
 
 <hr>
+<article>
+<section aria-labelledby="book-i">
 <h2 id="book-i">Book I</h2>
 <p>From my grandfather Verus, I learned good character and how to keep my temper in check.</p>
 <p>From what people told me about my father, who died when I was young: modesty, and a quiet strength.</p>
@@ -241,6 +274,8 @@ figcaption {
 <p>That I have a wife who is obedient, affectionate, and unpretentious. That I had no shortage of good tutors for my children. That remedies were shown to me in dreams — for various ailments, including the coughing of blood and dizzy spells.</p>
 <p>And that when I developed a passion for philosophy, I didn&#x27;t fall into the hands of some sophist, or get lost in analyzing old texts, or working out logical puzzles, or staring at the sky trying to explain celestial phenomena. All of these things required the help of the gods and of fortune.</p>
 <p>Written among the Quadi, at the Granua.</p>
+</section>
+<section aria-labelledby="book-ii">
 <h2 id="book-ii">Book II</h2>
 <p>Begin each morning by telling yourself: today I will encounter people who are meddlesome, ungrateful, arrogant, dishonest, envious, and antisocial. They are this way because they don&#x27;t understand the difference between good and evil. But I have seen that the good is beautiful and the bad is ugly, and that the person who wrongs me is my kin — not just of the same blood, but sharing in the same intelligence and the same spark of the divine. So no one can truly harm me, because no one can force ugliness on me. And I can&#x27;t be angry at family, or hate them. We were made to work together, like feet, like hands, like eyelids, like the upper and lower rows of teeth. To work against each other is unnatural. And being resentful or turning your back — that&#x27;s working against each other.</p>
 <p>Whatever I am, it comes down to this: a little flesh, a little breath, and my rational mind. Throw away the books. Stop letting yourself be distracted — you don&#x27;t have time for that. Instead, as if you were dying right now, look at the flesh for what it is: gore and bones, a mesh woven of nerves, veins, and arteries. And the breath — what is it, really? Air. Not even the same air, but vomited out and gulped back in, hour after hour. So the third thing is what matters: your rational mind. Think about it this way. You are an old man. Stop letting your mind be a slave. Stop getting jerked around like a puppet into selfish impulses. Stop complaining about your lot, and stop dreading the future.</p>
@@ -260,6 +295,8 @@ figcaption {
 <p>Your soul does violence to itself, first, when it becomes a kind of abscess — a tumor on the universe — by resisting what happens. Because being frustrated with any event is a separation from nature, which contains within itself the natures of everything else. Second, when it turns away from another person, or moves against someone with the intent to harm — as angry people do. Third, when it is defeated by pleasure or pain. Fourth, when it puts on an act, doing or saying anything insincere or false. Fifth, when it lets any action or impulse happen aimlessly, without thought or purpose. Even the smallest thing should be done with some end in view. And the end for rational beings is to follow reason and to live by the law of the oldest and most venerable community there is.</p>
 <p>Human life: its duration is a point in time. Its substance is flowing away. Its perception is dim. The whole body is decaying. The soul is a whirlpool. Fortune is unpredictable. Reputation is meaningless. To sum it up: everything belonging to the body is a river, everything belonging to the soul is dream and smoke, life is warfare and a visit to a foreign land, and fame after death is oblivion. So what can guide us? One thing, and only one: philosophy. And philosophy means keeping the god within you undamaged and whole, stronger than pleasure and pain, never acting without purpose, never with dishonesty or pretense, never depending on what someone else does or doesn&#x27;t do. Accepting everything that happens, everything that is given, as coming from the same source you yourself came from. And above all, waiting for death with a calm mind, seeing it as nothing more than the dissolving of the elements that make up every living thing. If the elements themselves aren&#x27;t harmed by constantly changing into one another, why should you be anxious about the change and dissolution of all of them together? It&#x27;s natural. And nothing natural is evil.</p>
 <p>Written at Carnuntum.</p>
+</section>
+<section aria-labelledby="book-iii">
 <h2 id="book-iii">Book III</h2>
 <p>We should consider not only that our life is draining away day by day, leaving less and less behind, but something else, too: even if you live longer, there&#x27;s no guarantee your mind will still be sharp enough to understand the world around you, or to grasp the things that matter — the knowledge of what is divine and what is human. When senility sets in, you&#x27;ll still breathe, still eat, still have urges and impressions and appetites. What fades first is something else: the ability to use yourself fully, to meet the demands of your duty, to see things clearly, to know whether it&#x27;s time to leave this life — everything that depends on a well-trained mind. So we need to hurry. Not just because death gets closer every day, but because understanding itself — the capacity to think clearly — gives out first.</p>
 <p>Notice, too, that even the by-products of nature have a kind of beauty and charm. When bread bakes, the crust cracks open in places the baker never intended — and yet those cracks are somehow appealing, and make you want to eat it. Figs split open when they&#x27;re fully ripe. Olives on the verge of falling off the branch have a particular beauty precisely because of how close they are to rotting. Ears of corn bending under their own weight. The furrowed brow of a lion. Foam dripping from a wild boar&#x27;s mouth. Taken on their own, these things are far from pretty. But because they follow naturally from the way things are formed, they complete the picture. They please the eye. If you develop a genuine feeling for the workings of the universe, there&#x27;s almost nothing in nature that won&#x27;t strike you as beautifully arranged, one way or another. You&#x27;ll look at the gaping jaws of real predators with the same appreciation you&#x27;d bring to a painter&#x27;s or sculptor&#x27;s rendering of them. You&#x27;ll see a kind of ripeness and dignity in an old man or an old woman. You&#x27;ll be able to see the beauty in young people with clear, uncorrupted eyes. Many things like this will reveal themselves — not to everyone, but to anyone who has become truly intimate with nature and her works.</p>
@@ -281,6 +318,8 @@ figcaption {
 <p>Stop wandering. You&#x27;re not going to reread your old notebooks, or the histories of the ancient Greeks and Romans, or that collection of passages you were saving for your old age. Push on toward the finish line. Let go of empty hopes. Come to your own rescue — if you care about yourself at all — while you still can.</p>
 <p>People don&#x27;t realize how many things are meant by words like stealing, sowing, buying, keeping still, seeing what needs to be done. This kind of seeing isn&#x27;t done with the eyes. It requires a different kind of vision.</p>
 <p>Body, soul, mind. To the body: sensations. To the soul: desires. To the mind: principles. The ability to receive sense-impressions belongs even to animals. The pull of desire tugs at wild beasts, at men who have made themselves into women, at a Phalaris and a Nero. Having a mind that reasons its way toward what seems advantageous — that belongs even to people who don&#x27;t believe in the gods, who betray their country, who do unspeakable things behind closed doors. If all of that is shared with the creatures and people I&#x27;ve just listed, then what remains that is distinctive to the good person? It is this: to be pleased and content with whatever happens, and with the thread that has been spun for them. To never pollute the god within their breast or crowd it with a mob of impressions, but to keep it calm, and follow it obediently — as one follows a god. Never saying anything false. Never doing anything unjust. And if every other person on earth refuses to believe they live simply, modestly, and cheerfully — they are not angry at any of them, and they don&#x27;t step off the path that leads to the end of life, where a person should arrive pure, at peace, ready to go, and without any force needed to make them accept their lot.</p>
+</section>
+<section aria-labelledby="book-iv">
 <h2 id="book-iv">Book IV</h2>
 <p>Your rational mind, when it&#x27;s working as nature intended, is built to adapt to whatever happens. It doesn&#x27;t need any specific set of circumstances. It moves toward its purpose within whatever conditions it finds — and it turns obstacles into fuel. The way a strong fire does. A small flame would be snuffed out by what gets thrown on it. But a great fire seizes on what&#x27;s heaped onto it, consumes it, and rises higher because of it.</p>
 <p>Let nothing be done without a purpose, and never act contrary to sound principles.</p>
@@ -341,6 +380,8 @@ figcaption {
 <p>&quot;I&#x27;m unhappy because this happened to me.&quot; — No. Say instead: &quot;I&#x27;m fortunate, because even though this happened to me, I remain free from pain. The present doesn&#x27;t crush me. The future doesn&#x27;t frighten me.&quot; This could have happened to anyone. But not everyone would have carried it without pain. So why call the event a misfortune rather than calling your endurance good fortune? Can you really call something a misfortune if it doesn&#x27;t violate human nature? And can something violate human nature if it doesn&#x27;t contradict what nature intends for us? Well, you know what nature intends. Does this event prevent you from being just, generous, self-controlled, clear-headed, careful in your judgements, honest? Does it prevent you from having modesty, freedom, and everything else that allows human nature to fulfill itself? So remember this, whenever something pushes you toward bitterness: this is not a misfortune. To bear it well is good fortune.</p>
 <p>It&#x27;s a common technique, but still useful: when you want to get past your fear of death, run through the list of people who clung to life. What did they gain over those who died young? In the end, they all lie in a grave somewhere — Cadicianus, Fabius, Julianus, Lepidus, and others like them — who carried out many funerals before being carried out themselves. The gap between birth and death is small. And look at the conditions of that gap: what kind of trouble fills it, what kind of company, what a feeble body you endure it in. Don&#x27;t treat life as something of great value. Look behind you at the immensity of past time. Look ahead at the other infinity stretching forward. Faced with all that, what&#x27;s the difference between a life of three days and a life of three generations?</p>
 <p>Always take the shortest route. The shortest route is the one in harmony with nature. So say and do everything according to the soundest reason. A purpose like this frees you from trouble, from conflict, from every kind of pretense and display.</p>
+</section>
+<section aria-labelledby="book-v">
 <h2 id="book-v">Book V</h2>
 <p>In the morning, when you don&#x27;t want to get up, tell yourself this: I&#x27;m getting up to do the work of a human being. Why am I resentful if I&#x27;m about to do the things I exist for — the things I was brought into the world to do? Was I made for this, to huddle under the blankets and stay warm? — But it&#x27;s more comfortable. — So you exist to feel comfortable? Not to act, not to exert yourself? Look at the little plants, the birds, the ants, the spiders, the bees — all working together to build their part of the ordered universe. And you don&#x27;t want to do the work of a human being? You won&#x27;t rush to do what your own nature demands? — But rest is necessary too. — Of course it is. Nature has set limits on rest, though — just as she&#x27;s set limits on eating and drinking. But you blow right past those limits, past what&#x27;s sufficient. When it comes to action, though, you stop short of what you&#x27;re capable of. You don&#x27;t really love yourself. If you did, you&#x27;d love your nature and what it asks of you. People who love their work exhaust themselves at it — unwashed, without food. But you value your own nature less than the woodworker values his craft, or the dancer her art, or the miser his money, or the fame-seeker his little moment of glory. When those people are gripped by something, they&#x27;d rather skip eating and sleeping than stop perfecting what they care about. And you think the work of serving society is less worthy? Less deserving of your effort?</p>
 <p>How easy it is to push away every impression that is unwelcome or distracting, and to be immediately at peace.</p>
@@ -383,6 +424,8 @@ figcaption {
 <p>If this is not my own wrongdoing, and not a consequence of my own wrongdoing, and the common good isn&#x27;t damaged — why should it trouble me? And what&#x27;s the actual harm to the common good?</p>
 <p>Don&#x27;t be swept along recklessly by surface impressions. Help everyone to the extent of your ability and their need. And if they&#x27;ve lost something that falls among things that are morally neutral, don&#x27;t treat it as a real injury. That&#x27;s a bad habit. Be like the old man who, when leaving, asked for his foster-child&#x27;s top back — but never forgot that it was just a top.</p>
 <p>When you&#x27;re up on the speaker&#x27;s platform, shouting — have you forgotten, friend, what all this really is? — Yes, but these things matter enormously to the people listening. — And that makes you a fool for caring about them too? — I was once a fortunate man, but somehow I lost it. — But being truly fortunate means giving yourself a good fortune. And a good fortune is a well-disposed soul, good impulses, and good actions.</p>
+</section>
+<section aria-labelledby="book-vi">
 <h2 id="book-vi">Book VI</h2>
 <p>The substance of the universe is obedient and yielding. The reason that governs it has no cause for doing evil — it has no malice, it does no harm to anything, and nothing is injured by it. All things are made and brought to completion according to this reason.</p>
 <p>Let it make no difference to you whether you&#x27;re cold or warm, if you&#x27;re doing your duty. Whether you&#x27;re drowsy or well-rested. Whether people speak badly of you or praise you. Whether you&#x27;re dying or doing something else entirely. Dying is just one of the acts of life. So in this act too, it&#x27;s enough to do well what&#x27;s in front of you.</p>
@@ -442,6 +485,8 @@ figcaption {
 <p>To the jaundiced, honey tastes bitter. To those bitten by a rabid dog, water is terrifying. To little children, a ball is the most wonderful thing. So why am I angry? Do you think a false belief has less power than bile in the jaundiced or venom in the dog-bitten?</p>
 <p>No one will stop you from living in accordance with your own rational nature. Nothing will happen to you contrary to the nature of the universe.</p>
 <p>Think about the kind of people others are trying to please, and for what ends, and by what kind of actions. How quickly time will bury everything — and how much it has buried already.</p>
+</section>
+<section aria-labelledby="book-vii">
 <h2 id="book-vii">Book VII</h2>
 <p>What is evil? It&#x27;s what you&#x27;ve seen many times before. Whenever anything happens, keep this in mind: you&#x27;ve seen it before. Up and down, everywhere — you&#x27;ll find the same things. Ancient history is full of them. Medieval history is full of them. Our own time is full of them. Every city, every household. Nothing is new. Everything is familiar, and everything is brief.</p>
 <p>How can your principles die unless the thoughts that sustain them are snuffed out? And it&#x27;s in your power to keep fanning those thoughts into flame. I can form the right judgement about anything. If I can, why am I disturbed? The things outside my mind have no bearing on my mind at all. — Let this be the condition of your soul, and you stand upright. To recover your life is in your power. Look at things the way you used to look at them. That&#x27;s what it means to recover your life.</p>
@@ -519,6 +564,8 @@ figcaption {
 <p>When you&#x27;ve done a good deed and someone has received it, why do you go looking for a third thing on top of that — as fools do — the reputation for having done good, or a favor in return?</p>
 <p>No one tires of receiving what is useful. And it is useful to act according to nature. So don&#x27;t tire of receiving what is useful — by doing what is useful for others.</p>
 <p>The nature of the whole set itself in motion to create this universe. Now, either everything that happens follows as a consequence of that original motion, or even the most important things — the things toward which the governing power of the universe directs itself — are governed by no rational principle at all. Remembering this will make you calmer about a great many things.</p>
+</section>
+<section aria-labelledby="book-viii">
 <h2 id="book-viii">Book VIII</h2>
 <p>Here&#x27;s another thought that should cure you of craving empty fame: it&#x27;s no longer in your power to have lived your whole life — or at least your life from youth onward — as a philosopher. To plenty of other people, and to yourself, it&#x27;s obvious that you&#x27;re a long way from philosophy. You&#x27;ve gotten off track. So the reputation of a philosopher is no longer within reach — and your way of life works against it. If you&#x27;ve truly seen where the matter lies, then stop worrying about how you&#x27;ll appear to others. Be content if you can live the rest of your life the way your nature wills. So look closely at what it wills, and let nothing else distract you. You&#x27;ve wandered enough already without finding happiness anywhere — not in logic, not in wealth, not in reputation, not in pleasure. Nowhere. So where is it? In doing what human nature requires. And how do you do that? By holding to principles that govern your impulses and actions. What principles? Those that concern good and evil: the belief that nothing is truly good for you unless it makes you just, self-controlled, brave, and free — and nothing truly bad unless it does the opposite.</p>
 <p>With every action, ask yourself: How does this sit with me? Will I regret it? In a little while I&#x27;ll be dead and all of this will be gone. What more do I need, if what I&#x27;m doing now is the work of a rational, social being — one who lives under the same law as God?</p>
@@ -584,6 +631,8 @@ figcaption {
 <p>People exist for the sake of one another. Teach them, or bear with them.</p>
 <p>An arrow moves one way. The mind moves another. But the mind — even when it&#x27;s being cautious, even when it&#x27;s circling around a problem — still moves forward, straight toward its object.</p>
 <p>Enter into every person&#x27;s rational mind. And let every person enter into yours.</p>
+</section>
+<section aria-labelledby="book-ix">
 <h2 id="book-ix">Book IX</h2>
 <p>Anyone who acts unjustly acts against the sacred order. The universe made rational beings for one another — to help each other as they deserve, never to harm. Whoever violates this principle commits an offense against the highest divinity. And so does the liar. The nature of the universe is the nature of everything that exists, and everything that exists is bound to everything that comes into being. This universal nature is called truth, and is the original cause of all that is true. So the deliberate liar sins against the sacred because he deceives. And the unintentional liar sins too, because he&#x27;s out of step with the nature of things — he disrupts the order by fighting against the way the world is. He fights against it whenever he drifts toward what is false, because nature gave him the capacity to tell falsehood from truth, and he neglected it until he lost the ability.</p>
 <p>And the person who chases pleasure as though it were good, and runs from pain as though it were evil — that person also offends the natural order. Someone like that will inevitably find fault with the universe, complaining that it distributes things unfairly — because the bad so often enjoy pleasure and the things that bring it, while the good get pain and the things that cause it. And more: whoever fears pain will also sometimes fear things that are simply going to happen in the world — and that too is an offense. And whoever pursues pleasure will not hold back from injustice — which is plainly an offense.</p>
@@ -638,6 +687,8 @@ figcaption {
 <p>And in every case, it&#x27;s open to you to teach the person who has gone astray. Because everyone who does wrong has missed the mark — they&#x27;ve gone off course. Besides, how have you actually been harmed? You&#x27;ll find that none of the people you&#x27;re angry at has done anything that could make your mind worse. And what is truly harmful and evil for you has its foundation only in the mind.</p>
 <p>What&#x27;s the harm — what&#x27;s the surprise — if an untrained person does the things an untrained person does? Think about whether you should blame yourself instead, for not expecting this person to make exactly this kind of mistake. Your reason gave you the means to see that they would likely err this way. And yet you forgot, and now you&#x27;re shocked.</p>
 <p>Above all, when you blame someone for being untrustworthy or ungrateful, turn the examination on yourself. The fault is clearly your own — either because you trusted someone whose character should have told you they wouldn&#x27;t keep their word, or because when you did them a kindness, you didn&#x27;t do it unconditionally. You didn&#x27;t do it in a way that let the act itself be its own complete reward. What more do you want after doing someone a service? Isn&#x27;t it enough that you&#x27;ve done something in harmony with your nature? Do you need to be paid for it? That&#x27;s like the eye demanding compensation for seeing, or the feet for walking. These organs were made for a specific purpose, and by doing their natural work, they get what is properly theirs. In the same way, a human being is made for acts of generosity. When you&#x27;ve done something generous — or anything else that serves the common good — you&#x27;ve acted in accordance with your nature. You&#x27;ve already received what is yours.</p>
+</section>
+<section aria-labelledby="book-x">
 <h2 id="book-x">Book X</h2>
 <p>Will you ever, my soul, be good and simple and whole and naked — more transparent than the body that surrounds you? Will you ever know the sweetness of a loving, contented nature? Will you ever be full, wanting nothing, craving nothing — no living thing, no object — for the sake of pleasure? Not wishing for more time to enjoy it, or a better place, or a milder climate, or more agreeable company? Will you just be satisfied with how things are, pleased with everything around you, convinced that you have all you need and that it comes from the gods — that whatever pleases them is well, and whatever they give to sustain this perfect living being, this good and just and beautiful whole that generates and holds together all things, that contains and embraces everything that dissolves so that new things like it may come into being? Will you ever be the kind of soul that lives in community with gods and men, finding no fault with them and earning no blame from them?</p>
 <p>Observe what your nature requires, insofar as you are governed by nature alone. Then do it and accept it — as long as your nature as a living being won&#x27;t be made worse by it.</p>
@@ -694,6 +745,8 @@ So is the race of men.</p>
 <p>But don&#x27;t leave with any less goodwill toward them. Keep your own character: be friendly, generous, gentle. And don&#x27;t leave as if you&#x27;re being torn away. When a person dies peacefully, the soul separates easily from the body. Let your departure from these people be like that. Nature joined you to them and bound you together. Now she dissolves the bond. I part from them as from family — not dragged away resisting, but freely. This, too, is one of the things according to nature.</p>
 <p>Make it your habit, whenever anyone does anything, to ask yourself: What is this person really after? But start with yourself. Examine yourself first.</p>
 <p>Remember: what pulls the strings is the thing hidden inside you. That is the power of persuasion. That is life. That, if you like, is what a human being really is. When you think about yourself, never include the container that surrounds you or the organs attached to it. They&#x27;re like a carpenter&#x27;s axe — the only difference being that they grow onto the body. Without the cause that moves and stops them, these parts are no more useful than a weaver&#x27;s shuttle without a weaver, a pen without a writer, a whip without a driver.</p>
+</section>
+<section aria-labelledby="book-xi">
 <h2 id="book-xi">Book XI</h2>
 <p>These are the properties of the rational soul: it sees itself, it examines itself, it makes itself whatever it chooses. The fruit it bears, it enjoys for itself — unlike plants and animals, whose fruit belongs to others. It reaches its own fulfillment wherever the limit of life is set. Not like a dance or a play, where the whole performance is ruined if something cuts it short. No — in every part, wherever it&#x27;s stopped, the rational soul makes what it&#x27;s been given complete. It can say: I have what is mine.</p>
 <p>And more: it ranges across the whole universe, out into the surrounding void. It surveys the shape of things. It stretches into the infinity of time. It grasps and comprehends the periodic renewal of all things. It understands that those who come after us will see nothing new, and those who came before us saw nothing more. In a way, anyone who is forty years old, if they have any understanding at all, has seen everything that has been and everything that will be — so uniform is the world. This too belongs to the rational soul: love of one&#x27;s neighbor, truth, modesty, and valuing nothing above itself — which is also the property of law. And so right reason is no different from the reason of justice.</p>
@@ -756,6 +809,8 @@ this too has its reason.</p>
 <p>Epictetus also said: A person must develop a discipline for giving assent. In the area of impulse, they must take care that it serves social ends, that it respects the value of the thing, that it fits the circumstances. As for sensual desire, they should stay clear of it altogether. And as for aversion, they should direct it at nothing outside their own power.</p>
 <p>The stakes, he said, are not trivial. It&#x27;s a question of sanity or madness.</p>
 <p>Socrates used to say: What do you want? Rational souls or irrational ones? — Rational. — What kind of rational souls? Sound ones or unsound? — Sound. — Then why don&#x27;t you go looking for them? — Because we already have them. — Then why are you fighting and quarreling?</p>
+</section>
+<section aria-labelledby="book-xii">
 <h2 id="book-xii">Book XII</h2>
 <p>All those things you want to reach by the long way around — you can have them now, if you&#x27;ll stop refusing them. All it takes is this: let go of the past. Trust the future to providence. And direct the present toward reverence and justice. Toward reverence, so you can be content with what you&#x27;ve been given — because nature designed it for you and you for it. Toward justice, so you can speak the truth freely and without disguise, and act according to what is right and what each situation deserves. Don&#x27;t let anyone else&#x27;s wickedness stand in your way, or the judgements of others, or what they say, or the sensations of this poor flesh that has grown around you — the body can deal with its own troubles. If, when the time comes for your departure, you set aside everything else and honor only your rational mind and the god within you — if what you fear is not that you will someday stop living, but that you never truly began to live in harmony with nature — then you will be worthy of the universe that produced you. You&#x27;ll stop being a stranger in your own homeland. You&#x27;ll stop being amazed at things that happen every day as though they were unexpected. You&#x27;ll stop being at the mercy of this or that.</p>
 <p>God sees the minds of all people stripped of their material casing, their outer shell, their impurities. With his intelligence alone, he touches only the intelligence that has flowed from himself into these bodies. If you train yourself to do the same, you&#x27;ll free yourself from so much needless trouble. Someone who pays no attention to the poor flesh that envelops them — would they really trouble themselves over clothing, housing, fame, and all the rest of that show?</p>
@@ -796,6 +851,9 @@ this too has its reason.</p>
 <p>Here is the most powerful argument against fearing death: even those who believe pleasure is the good and pain is the evil have still managed to despise it.</p>
 <p>For the person to whom only what comes at the right time is good, to whom it makes no difference whether they&#x27;ve performed more or fewer acts in accordance with right reason, to whom it doesn&#x27;t matter whether they&#x27;ve observed the world for a longer or shorter time — for this person, death holds no terror.</p>
 <p>You have been a citizen in this great city — the world. What does it matter whether for five years or for three? What is in keeping with the law is fair for everyone. So where is the hardship, if it&#x27;s not some tyrant or corrupt judge who sends you away, but the same nature that brought you in? It&#x27;s like a director dismissing an actor from the stage. &quot;But I&#x27;ve only performed three of the five acts!&quot; Yes — but in your life, three acts are the whole play. The complete drama is determined by the one who once composed it and now dissolves it. You are the author of neither. So leave gracefully. The one who releases you is satisfied.</p>
+</section>
+</article>
+</main>
 
 </body>
 </html>

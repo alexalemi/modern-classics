@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Symbolic Logic &mdash; Lewis Carroll</title>
+	<meta name="description" content="The author of Alice teaching logic to children as a board game with red and grey counters — cats that understand French, and a club with no members. The original text, unmodernized: free to read online.">
+	<link rel="canonical" href="https://emend.press/symbolic-logic-original.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="Symbolic Logic — Lewis Carroll (original text)">
+	<meta property="og:description" content="The author of Alice teaching logic to children as a board game with red and grey counters — cats that understand French, and a club with no members. The original text, unmodernized: free to read online.">
+	<meta property="og:url" content="https://emend.press/symbolic-logic-original.html">
+	<meta property="og:image" content="https://emend.press/covers/share/symbolic-logic.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,20 +192,22 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>Symbolic Logic</h1>
-	<h3>Part I, Elementary</h3>
-	<h3>by Lewis Carroll</h3>
+	<p class="title-line">Part I, Elementary</p>
+	<p class="title-line">by Lewis Carroll</p>
 	<p class="center">
 	1896
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is the original text of Symbolic Logic, as it was published, for readers who want to see what the modernization is a modernization of. Every plate carries a caption and alt text written for this edition; the words of the book are the author's, unchanged. <a href="symbolic-logic.html">The modern retelling is here</a>. The original is available from <a href="https://www.gutenberg.org/ebooks/28696">Project Gutenberg</a>. Also available as an <a href="ebooks/lewis-carroll_symbolic-logic-the-original-text.epub">epub</a>.</i></p>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p><a href="#advertisement">Advertisement</a></p>
 <p><a href="#part-ii-advanced">Part II. Advanced</a></p>
@@ -227,8 +255,11 @@ figcaption {
 <p><a href="#addressed-to-teachers">Addressed to Teachers</a></p>
 <p><a href="#notes-to-the-appendix">Notes to the Appendix</a></p>
 <p><a href="#index">Index</a></p>
+</nav>
 
 <hr>
+<article>
+<section aria-labelledby="advertisement">
 <h2 id="advertisement">Advertisement</h2>
 <p>An envelope, containing two blank Diagrams (Biliteral and Triliteral)
 and 9 counters (4 Red and 5 Grey), may be had, from Messrs. Macmillan,
@@ -240,15 +271,21 @@ which he thinks is not clearly expressed.</p>
 able——should life, and health, and opportunity, be granted to me, to
 publish them in the course of the next few years. Their contents will be
 as follows:—</p>
+</section>
+<section aria-labelledby="part-ii-advanced">
 <h2 id="part-ii-advanced">Part II. Advanced</h2>
 <p>Further investigations in the subjects of Part I. Propositions of other
 forms (such as “Not-all x are y”). Triliteral and Multiliteral
 Propositions (such as “All abc are de”). Hypotheticals. Dilemmas. &amp;c.
 &amp;c.</p>
+</section>
+<section aria-labelledby="part-iii-transcendental">
 <h2 id="part-iii-transcendental">Part III. Transcendental</h2>
 <p>Analysis of a Proposition into its Elements. Numerical and Geometrical
 Problems. The Theory of Inference. The Construction of Problems. And
 many other Curiosa Logica.</p>
+</section>
+<section aria-labelledby="preface-to-the-fourth-edition">
 <h2 id="preface-to-the-fourth-edition">Preface to the Fourth Edition</h2>
 <p>The chief alterations, since the First Edition, have been made in the
 Chapter on ‘Classification’ (Book One, Chapter II, Book One, Chapter III) and the Book on ‘Propositions’
@@ -345,6 +382,8 @@ repay ten times the labour that I have expended on it.</p>
 <p>L. C.</p>
 <pre class="outline">29, Bedford Street, Strand.
  Christmas, 1896.</pre>
+</section>
+<section aria-labelledby="to-learners">
 <h2 id="to-learners">To Learners</h2>
 <p>[N.B. Some remarks, addressed to Teachers, will be found in the
 Appendix, at Addressed to Teachers.]</p>
@@ -431,7 +470,10 @@ I ask of you!</p>
 <p>L. C.</p>
 <pre class="outline">29, Bedford Street, Strand.
  February 21, 1896.</pre>
+</section>
+<section class="part" aria-labelledby="book-one">
 <h2 id="book-one" class="center">Book One</h2>
+<section aria-labelledby="book-one-chapter-i-introductory">
 <h2 id="book-one-chapter-i-introductory">Book One, Chapter I: Introductory</h2>
 <h4>The Universe contains ‘Things.’</h4>
 <p>[For example, “I,” “London,” “roses,” “redness,” “old English
@@ -450,6 +492,8 @@ repetition of the phrase “Attribute or Set of Attributes.”</p>
 <p>[Thus, we may say that a rose has the Attribute “red” (or the
 Adjunct “red,” whichever we prefer); or we may say that it has
 the Adjunct “red, scented and full-blown.”]]</p>
+</section>
+<section aria-labelledby="book-one-chapter-ii-classification">
 <h2 id="book-one-chapter-ii-classification">Book One, Chapter II: Classification</h2>
 <p>‘Classification,’ or the formation of Classes, is a Mental Process, in
 which we imagine that we have put together, in a group, certain Things.
@@ -511,6 +555,8 @@ not possessed by any Member of it taken separately.</p>
 regarded as one single Thing, may possess the Attribute
 “formed in square,” which is not possessed by any Member of it
 taken separately.]</p>
+</section>
+<section aria-labelledby="book-one-chapter-iii-division">
 <h2 id="book-one-chapter-iii-division">Book One, Chapter III: Division</h2>
 <p>§ 1</p>
 <h4>Introductory</h4>
@@ -582,6 +628,8 @@ would have been]</p>
 (4) foreign new.]</p>
 <p>[The Reader will easily see that these are the very same four
 Classes which we had before.]]</p>
+</section>
+<section aria-labelledby="book-one-chapter-iv-names">
 <h2 id="book-one-chapter-iv-names">Book One, Chapter IV: Names</h2>
 <p>The word “Thing”, which conveys the idea of a Thing, without any idea
 of an Adjunct, represents any single Thing. Any other word (or
@@ -641,6 +689,8 @@ tall,” and so on.</p>
 in square,” I am using the phrase in the second sense; and it
 is just the same as if I were to say “The Tenth Regiment is
 formed in square.”]]</p>
+</section>
+<section aria-labelledby="book-one-chapter-v-definitions">
 <h2 id="book-one-chapter-v-definitions">Book One, Chapter V: Definitions</h2>
 <p>It is evident that every Member of a Species is also a Member of the
 Genus out of which that Species has been picked, and that it possesses
@@ -678,7 +728,11 @@ we happen to know that there is only one such Thing.</p>
 Process, by simply choosing the Name of any common Thing (such
 as “house,” “tree,” “knife”), making a Definition for it, and
 then testing his answer by referring to any English Dictionary.]]</p>
+</section>
+</section>
+<section class="part" aria-labelledby="book-two">
 <h2 id="book-two" class="center">Book Two</h2>
+<section aria-labelledby="book-two-chapter-i-propositions-generally">
 <h2 id="book-two-chapter-i-propositions-generally">Book Two, Chapter I: Propositions Generally</h2>
 <p>§ 1</p>
 <h4>Introductory</h4>
@@ -748,6 +802,8 @@ the men, who are referred to by the speaker when he mentions
 <p>Propositions are of two kinds, ‘Propositions of Existence’ and
 ‘Propositions of Relation.’</p>
 <p>These shall be discussed separately.</p>
+</section>
+<section aria-labelledby="book-two-chapter-ii-propositions-of-existence">
 <h2 id="book-two-chapter-ii-propositions-of-existence">Book Two, Chapter II: Propositions of Existence</h2>
 <p>A ‘Proposition of Existence’, when in normal form, has, for its
 Subject, the Class “existing Things”.</p>
@@ -778,6 +834,8 @@ one of the following forms:—]</p>
 (3) “The Class ‘men 50 feet high’ does not exist”; 
 (4) “There are not any men 50 feet high”; 
 (5) “There are no men 50 feet high.”]]</p>
+</section>
+<section aria-labelledby="book-two-chapter-iii-propositions-of-relation">
 <h2 id="book-two-chapter-iii-propositions-of-relation">Book Two, Chapter III: Propositions of Relation</h2>
 <p>§ 1</p>
 <h4>Introductory</h4>
@@ -1109,12 +1167,18 @@ rich men” and “No bankers are poor men.”]</p>
  and
  “No | existing Things | are | poor bankers.”]]</pre>
 <p>[Work Examples § 1, 1–4 (Book Eight, Chapter I).]</p>
+</section>
+</section>
+<section class="part" aria-labelledby="book-three">
 <h2 id="book-three" class="center">Book Three</h2>
+<section aria-labelledby="the-biliteral-diagram">
 <h2 id="the-biliteral-diagram">The Biliteral Diagram</h2>
 <figure id="fig-1">
 <img src="images/symbolic-logic/fig1.png" alt="The Biliteral Diagram — a square divided into four Cells, lettered xy and xy prime along the North Half and x prime y and x prime y prime along the South Half." width="101" height="101" loading="lazy">
 <figcaption><b>Figure 1</b> &mdash; The Biliteral Diagram — a square divided into four Cells, lettered xy and xy prime along the North Half and x prime y and x prime y prime along the South Half.</figcaption>
 </figure>
+</section>
+<section aria-labelledby="book-three-chapter-i-symbols-and-cells">
 <h2 id="book-three-chapter-i-symbols-and-cells">Book Three, Chapter I: Symbols and Cells</h2>
 <p>First, let us suppose that the above Diagram is an enclosure assigned to
 a certain Class of Things, which we have selected as our ‘Universe of
@@ -1214,6 +1278,8 @@ this:—</p>
 blank Diagram, and will be able to see it mentally (“in my mind’s
 eye, Horatio!”) while answering the questions of his genial friend. When
 this result has been reached, he may safely go on to the next Chapter.</p>
+</section>
+<section aria-labelledby="book-three-chapter-ii-counters">
 <h2 id="book-three-chapter-ii-counters">Book Three, Chapter II: Counters</h2>
 <p>Let us agree that a Red Counter, placed within a Cell, shall mean
 “This Cell is occupied” (i.e. “There is at least one Thing in it”).</p>
@@ -1231,6 +1297,8 @@ Counter.</p>
 mean “This Cell is empty” (i.e. “There is nothing in it”).</p>
 <p>[The Reader had better provide himself with 4 Red Counters and 5
 Grey ones.]</p>
+</section>
+<section aria-labelledby="book-three-chapter-iii-representation-of-propositions">
 <h2 id="book-three-chapter-iii-representation-of-propositions">Book Three, Chapter III: Representation of Propositions</h2>
 <p>§ 1</p>
 <h4>Introductory</h4>
@@ -1604,6 +1672,8 @@ his friend, e.g. “Some y exist”, “No y′ are x”, “All x are y”, &am
 <figcaption><b>Figure 43</b> &mdash; A Red Counter in each of the two East Cells.</figcaption>
 </figure></td></tr>
 </table>
+</section>
+<section aria-labelledby="book-three-chapter-iv-interpretation-of-the-biliteral-diagram">
 <h2 id="book-three-chapter-iv-interpretation-of-the-biliteral-diagram">Book Three, Chapter IV: Interpretation of the Biliteral Diagram</h2>
 <p>The Diagram is supposed to be set before us, with certain Counters
 placed upon it; and the problem is to find out what Proposition, or
@@ -1698,7 +1768,11 @@ A. “No x′y exist” = “No x′ are y” = “No y are x′”.
 him; but he will soon learn to dispense with these, and to answer with
 his eyes shut or gazing into vacancy.</p>
 <p>[Work Examples § 1, 5–8 (Book Eight, Chapter I).]</p>
+</section>
+</section>
+<section class="part" aria-labelledby="book-four">
 <h2 id="book-four" class="center">Book Four</h2>
+<section aria-labelledby="the-triliteral-diagram">
 <h2 id="the-triliteral-diagram">The Triliteral Diagram</h2>
 <figure id="fig-50">
 <img src="images/symbolic-logic/fig50.png" alt="The Biliteral Diagram of Book Three — a square divided into four Cells, lettered xy and xy′ across the North Half and x′y and x′y′ across the South Half." width="201" height="201" loading="lazy">
@@ -1708,6 +1782,8 @@ his eyes shut or gazing into vacancy.</p>
 <img src="images/symbolic-logic/fig51.png" alt="The Triliteral Diagram — the same square with an Inner Square drawn inside it, cutting each of the four Cells into two. The four Inner Cells, lettered xym, xy′m, x′ym and x′y′m, make up the Inner Square; the four Outer Cells, lettered xym′, xy′m′, x′ym′ and x′y′m′, make up the Outer Border." width="201" height="201" loading="lazy">
 <figcaption><b>Figure 51</b> &mdash; The Triliteral Diagram — the same square with an Inner Square drawn inside it, cutting each of the four Cells into two. The four Inner Cells, lettered xym, xy′m, x′ym and x′y′m, make up the Inner Square; the four Outer Cells, lettered xym′, xy′m′, x′ym′ and x′y′m′, make up the Outer Border.</figcaption>
 </figure>
+</section>
+<section aria-labelledby="book-four-chapter-i-symbols-and-cells">
 <h2 id="book-four-chapter-i-symbols-and-cells">Book Four, Chapter I: Symbols and Cells</h2>
 <p>First, let us suppose that the above left-hand Diagram is the
 Biliteral Diagram that we have been using in Book Three., and that we
@@ -1808,6 +1884,8 @@ given on the next page, in the style of the following specimen-Dialogue.</p>
 	x′ym′ | 〃 | 〃 | 〃 | Outer | 〃
 	x′y′m | 〃 | East | 〃 | Inner | 〃
 	x′y′m′ | 〃 | 〃 | 〃 | Outer | 〃</pre>
+</section>
+<section aria-labelledby="book-four-chapter-ii-representation-of-propositions-in-terms-of-x-and-m">
 <h2 id="book-four-chapter-ii-representation-of-propositions-in-terms-of-x-and-m">Book Four, Chapter II: Representation of Propositions in terms of x and m</h2>
 <p>§ 1</p>
 <p>Representation of Propositions of Existence in terms of x and m, or of
@@ -2001,6 +2079,8 @@ the various Propositions named by the Inquisitor, e.g. “No y′ are m”,
 <figcaption><b>Figure 88</b> &mdash; A Red Counter inside the East Half&#x27;s Outer Portion, and a Grey Counter in each of the two Outer Cells of the West Half.</figcaption>
 </figure></td><td>All m′ are y′</td></tr>
 </table>
+</section>
+<section aria-labelledby="book-four-chapter-iii-two-propositions-of-relation-on-one-diagram">
 <h2 id="book-four-chapter-iii-two-propositions-of-relation-on-one-diagram">Book Four, Chapter III: Two Propositions of Relation on One Diagram</h2>
 <p>Representation of Two Propositions of Relation, One in Terms of x and
 m, and the Other in Terms of y and m, on the Same Diagram</p>
@@ -2125,6 +2205,8 @@ The Diagram already tells us that “Some m are x”.]]</p>
 </figure></td></tr>
 </table>
 <p>[Work Examples § 1, 9–12 (Book Eight, Chapter I); § 2, 1–20 (Book Eight, Chapter I).]</p>
+</section>
+<section aria-labelledby="book-four-chapter-iv-interpretation-of-the-triliteral-diagram">
 <h2 id="book-four-chapter-iv-interpretation-of-the-triliteral-diagram">Book Four, Chapter IV: Interpretation of the Triliteral Diagram</h2>
 <p>INTERPRETATION, IN TERMS OF x AND y, OF TRILITERAL DIAGRAM, WHEN MARKED
 WITH COUNTERS OR DIGITS</p>
@@ -2234,7 +2316,11 @@ the Biliteral Diagram.]</p>
 <p>[We read off the result as “All y are x.”]]</p>
 <p>[Review Tables V, VI (Book Four, Chapter II). Work Examples § 1, 13–16
 (Book Eight, Chapter I); § 2, 21–32 (Book Eight, Chapter I); § 3, 1–20 (Book Eight, Chapter I).]</p>
+</section>
+</section>
+<section class="part" aria-labelledby="book-five">
 <h2 id="book-five" class="center">Book Five</h2>
+<section aria-labelledby="book-five-chapter-i-introductory">
 <h2 id="book-five-chapter-i-introductory">Book Five, Chapter I: Introductory</h2>
 <h4>When a Trio of Biliteral Propositions of Relation is such that</h4>
 <pre class="outline">(1) all their six Terms are Species of the same Genus, 
@@ -2317,6 +2403,8 @@ Retinends.]</p>
 <pre class="outline">[“All cats understand French; 
  Some chickens are cats; 
  ∴ Some chickens understand French”.]]</pre>
+</section>
+<section aria-labelledby="book-five-chapter-ii-problems-in-syllogisms">
 <h2 id="book-five-chapter-ii-problems-in-syllogisms">Book Five, Chapter II: Problems in Syllogisms</h2>
 <p>§ 1</p>
 <h4>Introductory</h4>
@@ -2694,7 +2782,11 @@ would make the Conclusion false, the Syllogism must be
 unsound.]]</p>
 <p>[Review Tables V–VIII (Book Four, Chapter II). Work Examples § 4, 7–12 (Book Eight, Chapter I); § 5, 7–12 (Book Eight, Chapter I); § 6, 1–10 (Book Eight, Chapter I); § 7, 1–6
 (Book Eight, Chapter I).]</p>
+</section>
+</section>
+<section class="part" aria-labelledby="book-six">
 <h2 id="book-six" class="center">Book Six</h2>
+<section aria-labelledby="book-six-chapter-i-introductory">
 <h2 id="book-six-chapter-i-introductory">Book Six, Chapter I: Introductory</h2>
 <p>Let us agree that “x1” shall mean “Some existing Things have the
 Attribute x”, i.e. (more briefly) “Some x exist”; also that “xy1”
@@ -2715,6 +2807,8 @@ would, if true, prove the Proposition ‘No xy exist’”.]</p>
 are said to have ‘Like Signs’, or to be ‘Like’: when one
 is accented, and the other not, they are said to have ‘Unlike Signs’, or
 to be ‘Unlike’.</p>
+</section>
+<section aria-labelledby="book-six-chapter-ii-representation-of-propositions-of-relation">
 <h2 id="book-six-chapter-ii-representation-of-propositions-of-relation">Book Six, Chapter II: Representation of Propositions of Relation</h2>
 <p>Let us take, first, the Proposition “Some x are y”.</p>
 <p>This, we know, is equivalent to the Proposition of Existence “Some xy
@@ -2769,6 +2863,8 @@ negative, or else from negative to positive).</p>
 where the Predicate changes from x′ to x.</p>
 <p>[Again, the expression “x′1y′0” becomes “All x′ are y”,
 where the Predicate changes for y′ to y.]]</p>
+</section>
+<section aria-labelledby="book-six-chapter-iii-syllogisms">
 <h2 id="book-six-chapter-iii-syllogisms">Book Six, Chapter III: Syllogisms</h2>
 <p>§ 1</p>
 <h4>Representation of Syllogisms</h4>
@@ -3116,7 +3212,11 @@ is a case of “Fallacy of Unlike Eliminands with an Entity-Premiss.”</p>
 Entity-Premisses.”</p>
 <p>[Work Examples § 4, 1–11 (Book Eight, Chapter I); § 5, 1–12 (Book Eight, Chapter I);
 § 6, 7–12 (Book Eight, Chapter I); § 7, 7–12 (Book Eight, Chapter I).]</p>
+</section>
+</section>
+<section class="part" aria-labelledby="book-seven">
 <h2 id="book-seven" class="center">Book Seven</h2>
+<section aria-labelledby="book-seven-chapter-i-introductory">
 <h2 id="book-seven-chapter-i-introductory">Book Seven, Chapter I: Introductory</h2>
 <p>When a Set of three or more Biliteral Propositions are such that all
 their Terms are Species of the same Genus, and are also so related that
@@ -3175,6 +3275,8 @@ Partial Conclusions “No c′ are b′”, “All h are b”, “All h are
 c”. There are altogether nine Partial Conclusions to this
 Sorites, which the Reader will find it an interesting task to
 make out for himself.]]</p>
+</section>
+<section aria-labelledby="book-seven-chapter-ii-problems-in-soriteses">
 <h2 id="book-seven-chapter-ii-problems-in-soriteses">Book Seven, Chapter II: Problems in Soriteses</h2>
 <p>§ 1</p>
 <h4>Introductory</h4>
@@ -3483,10 +3585,16 @@ phrases may be found by referring to the Index at Index.</p>
 <pre class="outline">XVII. § 5, 98–101 (Book Eight, Chapter I); § 6, 40 (Book Eight, Chapter I); § 7, 40 (Book Eight, Chapter I); § 8, 30 (Book Eight, Chapter I); § 9, 21, 41, 59, 60 (Book Eight, Chapter I). What are the ‘Universe of Discourse’, the
  ‘Eliminands’, and the ‘Retinends’, of a Syllogism? And of a
  Sorites?</pre>
+</section>
+</section>
+<section class="part" aria-labelledby="book-eight">
 <h2 id="book-eight" class="center">Book Eight</h2>
+<section aria-labelledby="examples-answers-and-solutions">
 <h2 id="examples-answers-and-solutions">Examples, Answers, and Solutions</h2>
 <p>[N.B. Reference tags for Examples, Answers &amp; Solutions will be
 found in the right margin.]</p>
+</section>
+<section aria-labelledby="book-eight-chapter-i-examples">
 <h2 id="book-eight-chapter-i-examples">Book Eight, Chapter I: Examples</h2>
 <p>§ 1</p>
 <p>Propositions of Relation, to be reduced to normal form</p>
@@ -4828,6 +4936,8 @@ sheet; n = written by Brown.</p>
 d = detested by me; e = in this house; h = kangaroos; k = killing mice;
 l = loving to gaze at the moon; m = prowling at night; n = suitable for
 pets; r = taking to me.</p>
+</section>
+<section aria-labelledby="book-eight-chapter-ii-answers">
 <h2 id="book-eight-chapter-ii-answers">Book Eight, Chapter II: Answers</h2>
 <p>Answers to § 1</p>
 <table class="math">
@@ -5350,6 +5460,8 @@ pets; r = taking to me.</p>
 <p>58. No cheque of yours, received by me, is payable to order.</p>
 <p>59. I cannot read any of Brown’s letters.</p>
 <p>60. I always avoid a kangaroo.</p>
+</section>
+<section aria-labelledby="book-eight-chapter-iii-solutions">
 <h2 id="book-eight-chapter-iii-solutions">Book Eight, Chapter III: Solutions</h2>
 <p>§ 1</p>
 <p>Propositions of Relation reduced to normal form</p>
@@ -7329,6 +7441,8 @@ i.e. ¶ b1e0</p>
 (7)hn̳ 
 ¶ a′h0 † h1, i.e. ¶ h1a′0</p>
 <p>i.e. I always avoid a kangaroo.</p>
+</section>
+<section aria-labelledby="notes">
 <h2 id="notes">Notes</h2>
 <p>(A) [See Book Six, Chapter III]</p>
 <p>One of the favourite objections, brought against the Science of Logic by
@@ -7359,6 +7473,8 @@ drive it out of the N. Half of that Square; and it needs the Premiss
 ym0 to drive it out of the W. Half. Hence it needs the two
 Premisses to drive it into the Inner Portion of the S.E. Quarter, and
 thus to prove the Conclusion x′y′1.</p>
+</section>
+<section aria-labelledby="addressed-to-teachers">
 <h2 id="addressed-to-teachers">Addressed to Teachers</h2>
 <p>§ 1</p>
 <h4>Introductory</h4>
@@ -8396,6 +8512,8 @@ nephew”.]</p>
 to be proved. It is permitted to use, as Premisses, not only all that is
 here asserted, but also all that we may reasonably understand to be
 implied.</p>
+</section>
+<section aria-labelledby="notes-to-the-appendix">
 <h2 id="notes-to-the-appendix">Notes to the Appendix</h2>
 <p>(A) [See Addressed to Teachers.]</p>
 <p>It may, perhaps, occur to the Reader, who has studied Formal Logic that
@@ -8465,6 +8583,8 @@ possible, easily intelligible to mere beginners.</p>
 <pre class="outline">“No conceited child of mine is greedy”; 
  “None of my boys could solve this problem”; 
  “Some unlearned boys are not choristers.”</pre>
+</section>
+<section aria-labelledby="index">
 <h2 id="index">Index</h2>
 <p>§ 1</p>
 <h4>Tables</h4>
@@ -8567,6 +8687,10 @@ Propositions of Relation, in terms of x and m | Book Four, Chapter II
 <tr><td>‘Unreal’ Class</td><td>Book One, Chapter II</td></tr>
 <tr><td>‘Unreal’ Name</td><td>Book One, Chapter IV</td></tr>
 </table>
+</section>
+</section>
+</article>
+</main>
 
 </body>
 </html>

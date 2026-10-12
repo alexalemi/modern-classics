@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Sound &mdash; John Tyndall</title>
+	<meta name="description" content="Sound taught with a row of five boys, a shivering glass tube and a flame that ducks at the letter S — then Tyndall discovers the invisible clouds that swallow fog signals on clear days. The original text, unmodernized: free to read online.">
+	<link rel="canonical" href="https://emend.press/tyndall-original.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="Sound — John Tyndall (original text)">
+	<meta property="og:description" content="Sound taught with a row of five boys, a shivering glass tube and a flame that ducks at the letter S — then Tyndall discovers the invisible clouds that swallow fog signals on clear days. The original text, unmodernized: free to read online.">
+	<meta property="og:url" content="https://emend.press/tyndall-original.html">
+	<meta property="og:image" content="https://emend.press/covers/share/tyndall.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,20 +192,22 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>Sound</h1>
-	<h3>A Course of Eight Lectures Delivered at the Royal Institution of Great Britain</h3>
-	<h3>by John Tyndall</h3>
+	<p class="title-line">A Course of Eight Lectures Delivered at the Royal Institution of Great Britain</p>
+	<p class="title-line">by John Tyndall</p>
 	<p class="center">
 	1867
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is the original text of Sound, as it was published, for readers who want to see what the modernization is a modernization of. Every plate carries a caption and alt text written for this edition; the words of the book are the author's, unchanged. <a href="tyndall.html">The modern retelling is here</a>. The original is available from <a href="https://www.gutenberg.org/ebooks/54969">Project Gutenberg</a>. Also available as an <a href="ebooks/john-tyndall_sound-the-original-text.epub">epub</a>.</i></p>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p><a href="#front-matter">Front Matter</a></p>
 <p><a href="#chapter-one-the-nature-of-sound">Chapter One: The Nature of Sound</a></p>
@@ -193,8 +221,11 @@ figcaption {
 <p><a href="#chapter-nine-musical-consonance-and-dissonance">Chapter Nine: Musical Consonance and Dissonance</a></p>
 <p><a href="#appendix-one">Appendix One</a></p>
 <p><a href="#appendix-two">Appendix Two</a></p>
+</nav>
 
 <hr>
+<article>
+<section aria-labelledby="front-matter">
 <h2 id="front-matter">Front Matter</h2>
 <pre class="outline">    To the memory
     of
@@ -263,6 +294,8 @@ figcaption {
 <p>The subject is treated experimentally throughout, and I have endeavored so to place each experiment before the reader that he should realize it as an actual operation. My desire, indeed, has been to give distinct images of the various phenomena of acoustics, and to cause them to be seen mentally in their true relations.</p>
 <p>I have been indebted to the kindness of some of my English friends for a more or less complete examination of the proof-sheets of this work. To my celebrated German friend Clausius, who has given himself the trouble of reading the proofs from beginning to end, my especial thanks are due and tendered.</p>
 <p>There is a growing desire for scientific culture throughout the civilized world. The feeling is natural, and, under the circumstances, inevitable. For a power which influences so mightily the intellectual and material action of the age could not fail to arrest attention and challenge examination. In our schools and universities a movement in favor of science has begun which, no doubt, will end in the recognition of its claims, both as a source of knowledge and as a means of discipline. If by showing, however inadequately, the methods and results of physical science to men of influence, who derive their culture from another source, this book should indirectly aid in promoting the movement referred to, it will not have been written in vain.</p>
+</section>
+<section aria-labelledby="chapter-one-the-nature-of-sound">
 <h2 id="chapter-one-the-nature-of-sound">Chapter One: The Nature of Sound</h2>
 <p>The Nerves and Sensation—Production and Propagation of Sonorous Motion—Experiments on Sounding Bodies placed in Vacuo—Deadening of Sound by Hydrogen—Action of Hydrogen on the Voice—Propagation of Sound through Air of Varying Density—Reflection of Sound—Echoes—Refraction of Sound—Diffraction of Sound; Case of Erith Village and Church—Influence of Temperature on Velocity—Influence of Density on Elasticity—Newton’s Calculation of Velocity—Thermal Changes Produced by the Sonorous Wave—Laplace’s Correction of Newton’s Formula—Ratio of Specific Heats at Constant Pressure and at Constant Volume deduced from Velocities of Sound—Mechanical Equivalent of Heat deduced from this Ratio—Inference that Atmospheric Air Possesses no Sensible Power to Radiate Heat—Velocity of Sound in Different Gases—Velocity in Liquids and Solids—Influence of Molecular Structure on the Velocity of Sound</p>
 <h4>Introduction: Character of Sonorous Motion. Experimental Illustrations</h4>
@@ -539,6 +572,8 @@ figcaption {
 <p>The velocity of sound along the fibre of pine-wood is ten times its velocity in air.</p>
 <p>The cause of this great superiority is that the elasticities of the liquid, the metal, and the wood, as compared with their respective densities, are vastly greater than the elasticity of air in relation to its density.</p>
 <p>The velocity of sound is dependent to some extent upon molecular structure. In wood, for example, it is conveyed with different degrees of rapidity in different directions.</p>
+</section>
+<section aria-labelledby="chapter-two-pitch-and-how-it-is-measured">
 <h2 id="chapter-two-pitch-and-how-it-is-measured">Chapter Two: Pitch, and How It Is Measured</h2>
 <p>Physical Distinction between Noise and Music—A Musical Tone Produced by Periodic, Noise Produced by Unperiodic, Impulses—Production of Musical Sounds by Taps—Production of Musical Sounds by Puffs—Definition of Pitch in Music—Vibrations of a Tuning-Fork; their Graphic Representation on Smoked Glass—Optical Expression of the Vibrations of a Tuning-Fork—Description of the Siren—Limits of the Ear; Highest and Deepest Tones—Rapidity of Vibration Determined by the Siren—Determination of the Lengths of Sonorous Waves—Wave-Lengths of the Voice in Man and Woman—Transmission of Musical Sounds through Liquids and Solids</p>
 <p>IN OUR last chapter we considered the propagation through air of a sound of momentary duration. We have to-day to consider continuous sounds, and to make ourselves in the first place acquainted with the physical distinction between noise and music. As far as sensation goes, everybody knows the difference between these two things. But we have now to inquire into the causes of sensation, and to make ourselves acquainted with the condition of the external air which in one case resolves itself into music and in another into noise.</p>
@@ -705,6 +740,8 @@ figcaption {
 <p>By either condensing or rarefying the air behind the tympanic membrane, deafness to sounds of low pitch may be produced.</p>
 <p>On the approach of a railway train the pitch of the whistle is higher, on the retreat of the train the pitch is lower, than it would be if the train were at rest.</p>
 <p>Musical sounds are transmitted by liquids and solids. Such sounds may be transferred from one room to another; from the ground-floor to the garret of a house of many stories, for example, the sound being unheard in the rooms intervening between both, and rendered audible only when the vibrations are communicated to a suitable sound-board.</p>
+</section>
+<section aria-labelledby="chapter-three-vibrating-strings">
 <h2 id="chapter-three-vibrating-strings">Chapter Three: Vibrating Strings</h2>
 <p>Vibration of Strings—How employed in Music—Influence of Sound-Boards—Laws of Vibrating Strings—Combination of Direct and Reflected Pulses—Stationary and Progressive Waves—Nodes and Ventral Segments—Application of Results to the Vibrations of Musical Strings—Experiments of Melde—Strings set in Vibration by Tuning-Forks—Laws of Vibration thus demonstrated—Harmonic Tones of Strings—Definitions of Timbre or Quality, or Overtones and Clang—Abolition of Special Harmonics—Conditions which affect the Intensity of the Harmonic Tones—Optical Examination of the Vibrations of a Piano-Wire.</p>
 <h4>Vibrations of Strings: Use of Sound-Boards</h4>
@@ -910,6 +947,8 @@ figcaption {
 <p>Instead of the heavy India-rubber tube in the experiment above referred to, we may employ light silk strings, and, instead of the vibrating hand, we may employ vibrating tuning-forks, and cause the strings to swing as a whole, or to divide themselves into any number of ventral segments. Effects of great beauty are thus obtained, and by experiments of this character all the laws of vibrating strings may be demonstrated.</p>
 <p>When a stretched string is plucked aside or agitated by a bow, all the overtones which require the agitated point for a node vanish from the clang of the string.</p>
 <p>The point struck by the hammer of the piano is from one-seventh to one-ninth of the length of the string from its end: by striking this point, the notes which require it as a node cannot be produced, a source of dissonance being thus avoided.</p>
+</section>
+<section aria-labelledby="chapter-four-vibrating-rods-plates-and-bells">
 <h2 id="chapter-four-vibrating-rods-plates-and-bells">Chapter Four: Vibrating Rods, Plates and Bells</h2>
 <p>Vibrations of a Rod fixed at Both Ends: its Subdivisions and Corresponding Overtones—Vibrations of a Rod fixed at One End—The Kaleidophone—The Iron Fiddle and Musical Box—Vibrations of a Rod free at Both Ends—The Claque-bois and Glass Harmonica—Vibrations of a Tuning-Fork: its Subdivisions and Overtones—Vibrations of Square Plates—Chladni’s Discoveries—Wheatstone’s Analysis of the Vibrations of Plates—Chladni’s Figures—Vibrations of Disks and Bells—Experiments of Faraday and Strehlke</p>
 <h4>Transverse Vibrations of a Rod fixed at Both Ends</h4>
@@ -1129,6 +1168,8 @@ figcaption {
 <p>When a bell sounds its deepest note it is divided into four vibrating parts separated from each other by nodal lines, which run upward from the sound-bow and cross each other at the crown.</p>
 <p>It is capable of the same subdivisions as a disk; the succession of its tones being also the same.</p>
 <p>The rate of vibration of a disk or bell is directly proportional to the thickness and inversely proportional to the square of the diameter.</p>
+</section>
+<section aria-labelledby="chapter-five-resonance-organ-pipes-and-the-voice">
 <h2 id="chapter-five-resonance-organ-pipes-and-the-voice">Chapter Five: Resonance, Organ-Pipes and the Voice</h2>
 <p>Longitudinal Vibrations of a Wire—Relative Velocities of Sound in Brass and Iron—Longitudinal Vibrations of Rods fixed at One End—Of Rods free at Both Ends—Divisions and Overtones of Rods vibrating longitudinally—Examination of Vibrating Bars by Polarized Light—Determination of Velocity of Sound in Solids—Resonance—Vibrations of Stopped Pipes: their Divisions and Overtones—Relation of the Tones of Stopped Pipes to those of Open Pipes—Condition of Column of Air within a Sounding Organ-Pipe—Reeds and Reed-Pipes—The Voice—Overtones of the Vocal Chords—The Vowel Sounds—Kundt’s Experiments—New Methods of determining the Velocity of Sound</p>
 <p>Longitudinal Vibrations of Wires and Rods: Conversion of Longitudinal into Transverse Vibrations</p>
@@ -1452,6 +1493,8 @@ figcaption {
 <p>Other gases may be employed instead of air, and the velocity of sound in these gases, compared with its velocity in the substance of the tube, may be determined.</p>
 <p>The end of a rod vibrating longitudinally may be caused to agitate a column of air contained in a tube, compelling the air to divide itself into ventral segments. These segments may be rendered visible by light powders, and from them the velocity of sound in the substance of the vibrating rod, compared with its velocity in air, may be inferred.</p>
 <p>In this way the relative velocities of sound in all solid substances capable of being formed into rods, and of vibrating longitudinally, may be determined.</p>
+</section>
+<section aria-labelledby="chapter-six-singing-flames-and-sensitive-flames">
 <h2 id="chapter-six-singing-flames-and-sensitive-flames">Chapter Six: Singing Flames and Sensitive Flames</h2>
 <p>Singing Flames—Influence of the Tube surrounding the Flame—Influence of Size of Flame—Harmonic Notes of Flames—Effect of Unisonant Notes on Singing Flames—-Action of Sound on Naked Flames—Experiments with Fish-Tail and Bat’s-Wing Burners—Experiments on Tall Flames—Extraordinary Delicacy of Flames as Acoustic Reagents—The Vowel-Flame—Action of Conversational Tones upon Flames—Action of Musical Sounds on Smoke-Jets—Constitution of Water-Jets—Plateau’s Theory of the Resolution of a Liquid Vein into Drops—Action of Musical Sounds on Water-Jets—A Liquid Vein may compete in Point of Delicacy with the Ear</p>
 <h4>Rhythm of Friction: Musical Flow of a Liquid through a Small Aperture</h4>
@@ -1698,6 +1741,8 @@ figcaption {
 <p>Above its point of rupture a vein of water may be caused to enter water silently; but on sounding a suitable note, the rattle of bubbles is immediately heard; the discontinuous part of the vein rises above the surface, and as the sound dies out the successive swellings and contractions produce alternations of the quantity and sound of the bubbles.</p>
 <p>In veins propelled obliquely, the scattered water-drops may be called together by a suitable sound, so as to form an apparently continuous liquid arch.</p>
 <p>Liquid veins may be analyzed by the electric spark, or by a succession of flashes illuminating the veins.</p>
+</section>
+<section aria-labelledby="chapter-seven-sound-in-the-open-air">
 <h2 id="chapter-seven-sound-in-the-open-air">Chapter Seven: Sound in the Open Air</h2>
 <h4>Part I</h4>
 <p>RESEARCHES ON THE ACOUSTIC TRANSPARENCY OF THE ATMOSPHERE IN RELATION TO THE QUESTION OF FOG-SIGNALLING</p>
@@ -1994,6 +2039,8 @@ figcaption {
 <p>Through six layers of thin silk, for example, it passes with little obstruction; it finds its way through a layer of close felt half an inch thick, and it is not wholly intercepted by 200 layers of cotton-net.</p>
 <p>The atmosphere exercises a selective choice upon the waves of sound which varies from day to day, and even from hour to hour. It is sometimes favorable to the transmission of the longer, and at other times favorable to the transmission of the shorter, sonorous waves.</p>
 <p>The recognized action of the wind has been confirmed by this investigation.</p>
+</section>
+<section aria-labelledby="chapter-eight-the-interference-of-sound">
 <h2 id="chapter-eight-the-interference-of-sound">Chapter Eight: The Interference of Sound</h2>
 <p>Law of Vibratory Motions in Water and Air—Superposition of Vibrations—Interference of Sonorous Waves—Destruction of Sound by Sound—Combined Action of Two Sounds nearly in Unison with each other—Theory of Beats—Optical Illustration of the Principle of Interference—Augmentation of Intensity by Partial Extinction of Vibrations—Resultant Tones—Conditions of their Production—Experimental Illustrations—Difference-Tones and Summation-Tones—Theories of Young and Helmholtz</p>
 <h4>Interference of Water-Waves</h4>
@@ -2135,6 +2182,8 @@ figcaption {
 <p>The law of the superposition of vibrations above enunciated is strictly true only when the amplitudes are exceedingly small. When the disturbance of the air by a sounding body is so violent that the law no longer holds good, secondary waves are formed, which correspond to the harmonic tones of the sounding body.</p>
 <p>When two tones are rendered so intense as to exceed the limits of the law of superposition, their secondary waves combine to produce resultant tones.</p>
 <p>Resultant tones are of two kinds; the one class corresponding to rates of vibration equal to the difference of the rates of the two primaries; the other class corresponding to rates of vibration equal to the sum of the two primaries. The former are called difference-tones, the latter summation-tones.</p>
+</section>
+<section aria-labelledby="chapter-nine-musical-consonance-and-dissonance">
 <h2 id="chapter-nine-musical-consonance-and-dissonance">Chapter Nine: Musical Consonance and Dissonance</h2>
 <p>Combination of Musical Sounds—The smaller the Two Numbers which express the Ratio of their Rates of Vibration, the more perfect is the Harmony of Two Sounds—Notions of the Pythagoreans regarding Musical Consonance—Euler’s Theory of Consonance—Theory of Helmholtz—Dissonance due to Beats—Interference of Primary Tones and of Over-tones—Mechanism of Hearing—Schultze’s Bristles—The Otoliths—Corti’s Fibres—Graphic Representation of Consonance and Dissonance—Musical Chords—The Diatonic Scale—Optical Illustration of Musical Intervals—Lissajous’s Figures—Sympathetic Vibrations—Various Modes of illustrating the Composition of Vibrations</p>
 <h4>The Facts of Musical Consonance</h4>
@@ -2342,6 +2391,8 @@ figcaption {
 <p>The optical illustration of the musical intervals has been effected in a very beautiful manner by Lissajous. Corresponding to each interval is a definite figure, produced by the combination of its vibrations.</p>
 <p>The compounding of vibrations has, of late years, been beautifully illustrated by apparatus constructed by Sir C. Wheatstone, Mr. Herbert Airy, and Mr. A. E. Donkin; and by the beautiful pendulum apparatus of Mr. Tisley, of the firm of Tisley and Spiller.</p>
 <p>The pressure which, on a former occasion, prevented me from adding a “summary” to this chapter, was also the cause of hastiness, and partial inaccuracy, in its sketch of the theory of Helmholtz. That the sketch needed emendation I have long known, but I did not think it worth while to anticipate the correction here made; as the chapter, imperfect as it was, had been published, without comment, in Germany, by Helmholtz himself.</p>
+</section>
+<section aria-labelledby="appendix-one">
 <h2 id="appendix-one">Appendix One</h2>
 <p>ON THE INFLUENCE OF MUSICAL SOUNDS ON THE FLAME OF A JET OF COAL-GAS. BY JOHN LE CONTE, M.D.</p>
 <p>Footnote: This able paper was the starting-point of the experiments on sensitive flames, recorded in Chapters VI. and VII.; the researches of Thomas Young and Savart being the starting-point of the experiments on smoke-jets and water-jets.—J. T.</p>
@@ -2368,6 +2419,8 @@ figcaption {
 <p>To apply the principles of Plateau’s theory to gaseous jets, we are compelled to abandon the idea of the non-existence of molecular cohesion in gases. But is there not abundant evidence to show that cohesion does exist among the particles of gaseous masses? Does not the deviation from rigorous accuracy, both in the law of Mariotte and Gay-Lussac—especially in the case of condensable gases, as shown by the admirable experiments of M. Regnault—clearly prove that the hypothesis of the non-existence of cohesion in aëriform bodies is fallacious? Do not the expanding rings which ascend when a bubble of phosphuretted hydrogen takes fire in the air indicate the existence of some cohesive force in the gaseous product of combustion (aqueous vapor), whose outlines are marked by the opaque phosphoric acid? In short, does not the very form of the flame of a “fish-tail” burner demonstrate that cohesion must exist among the particles of the issuing gas? It is well known that in this burner the single jet which issues is formed by the union of two oblique jets immediately before the gas is emitted. The result is a perpendicular sheet of flame. How is such a result produced by the mutual action of two jets, unless the force of cohesion is brought into play? Is it not obvious that such a fanlike flame must be produced by the same causes as those varied and beautiful forms of aqueous sheets, developed by the mutual action of jets of water, so strikingly exhibited in the experiments of Savart and of Magnus?</p>
 <p>If it be granted that gases possess molecular cohesion, it seems to be physically certain that jets of gas must be subject to the same laws as those of liquid. Vibratory movements excited in the neighborhood ought, therefore, to produce modifications in them analogous to those recorded by M. Savart in relation to jets of water. Flame or incandescent gas presents gaseous matter in a visible form, admirably adapted for experimental investigation; and, when produced by a jet, should be amenable to the principles of Plateau’s theory. According to this view, the pulsations or beats which I observed in the gas-flame when under the influence of musical sounds, are produced by the conflict between the aërial vibrations and the “forces of figure” (as Plateau calls them) giving origin to periodical fluctuations of intensity, depending on the sonorous pulses.</p>
 <p>If this view is correct, will it not be necessary for us to modify our ideas in relation to the agency of tubes in developing musical sounds by means of burning jets of gas? Must we not look upon all burning jets—as in the case of water-jets—as musically inclined; and that the use of tubes merely places them in a condition favorable for developing the tones? It is well known that burning jets frequently emit a singing-sound when they are perfectly free. Are these sounds produced by successive explosions analogous to those which take place in glass tubes? It is very certain that, under the influence of molecular forces, any cause which tends to elongate the flame, without affecting the velocity of discharge, must tend to render it discontinuous, and thus bring about that mixture of gas and air which is essential to the production of the explosions. The influence of tubes, as well as of aërial vibrations, in establishing this condition of things, is sufficiently obvious. Was not the “beaded line” with its succession of “luminous stars,” which Prof. Tyndall observed when a flame of olefiant gas, burning in a tube, was examined by means of a moving mirror, an indication that the flame became discontinuous, precisely as the continuous part of a jet of water becomes shortened, and resolved into isolated drops, under the influence of sonorous pulsations? But I forbear enlarging on this very interesting subject, inasmuch as the accomplished physicist last named has promised to examine it at a future period. In the hands of so sagacious a philosopher, we may anticipate a most searching investigation of the phenomena in all their relations. In the meantime I wish to call the attention of men of science to the view presented in this article, in so far as it groups together several classes of phenomena under one head, and may be considered a partial generalization.—From Silliman’s “American Journal” for January, 1858.</p>
+</section>
+<section aria-labelledby="appendix-two">
 <h2 id="appendix-two">Appendix Two</h2>
 <h4>On Acoustic Reversibility</h4>
 <p>Footnote: “Proceedings of the Royal Institution,” January 15, 1875.</p>
@@ -2420,6 +2473,9 @@ figcaption {
 <p>Footnote: Since this was written I have sent the sound through fifteen layers of calico, and echoed it back through the same layers, in strength sufficient to agitate the flame. Thirty layers were here crossed by the sound. The sound was subsequently found able to penetrate two hundred layers of cotton net; a single layer of wetted calico being competent to stop it.</p>
 <p>Note, June 3d.—I annex here a sketch of an apparatus devised by my assistant, Mr. Cottrell, and constructed by Tisley and Spiller, for the demonstration of the law of reflection of sound. It consists of two tubes (A F, B R) with a source of sound at the end R of one of them, and a sensitive flame at the end F of the other. The axes of the tube converge upon the mirror, M, and they are capable of being placed so as to inclose any required angle. The angles of incidence and reflection are read off on the graduated semicircle. The mirror M is also movable round a vertical axis.</p>
 <p>Footnote: The cut reached me too late for introduction at the proper place.</p>
+</section>
+</article>
+</main>
 
 </body>
 </html>

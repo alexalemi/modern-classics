@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>The Boston Cooking-School Cook Book &mdash; Fannie Merritt Farmer</title>
+	<meta name="description" content="Level measurements, from bread to the chafing-dish: the author&#x27;s own 1910 revision, every photograph described. A restored edition, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/farmer.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="The Boston Cooking-School Cook Book — Fannie Merritt Farmer">
+	<meta property="og:description" content="Level measurements, from bread to the chafing-dish: the author&#x27;s own 1910 revision, every photograph described. A restored edition, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/farmer.html">
+	<meta property="og:image" content="https://emend.press/covers/share/farmer.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,26 +192,30 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>The Boston Cooking-School Cook Book</h1>
-	<h3>by Fannie Merritt Farmer</h3>
+	<p class="title-line">by Fannie Merritt Farmer</p>
 	<p class="center">
 	1896/1910
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is a restored edition of The Boston Cooking-School Cook Book: the author's own words, unchanged. Every plate carries a caption and alt text written for this edition, beginning with the label the book printed. The original is available from <a href="https://www.gutenberg.org/ebooks/65061">Project Gutenberg</a>. Also available as an <a href="ebooks/fannie-merritt-farmer_the-boston-cooking-school-cook-book.epub">epub</a>. <a href="restored.html">More restored editions</a>.</i></p>
 
 	<hr>
+<section aria-labelledby="editors-introduction">
 <h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
 <p>Fannie Merritt Farmer (1857–1915) grew up in Boston. As a girl she was left partly paralysed by an illness that kept her from finishing school. In her thirties she trained at the Boston Cooking School and stayed on to run it. The Boston Cooking-School Cook Book was first published in 1896. It was so successful that Farmer&#x27;s name became attached to it, and in America it has been known ever since as &quot;the Fannie Farmer cookbook.&quot; She left the school in 1902 to open one of her own, Miss Farmer&#x27;s School of Cookery, and she revised the book several times. This edition gives her revision of 1910, which adds a hundred and twenty-five recipes and a hundred photographs.</p>
 <p>The book is remembered for its measurements. Older recipes called for a handful of this, butter the size of an egg, a teacup of that. Farmer&#x27;s recipes use standard cups and spoons, measured level, and the second chapter explains exactly how. That made a recipe something a beginner could repeat and get the same result. The first two chapters also set out the food science of the day, what each food is made of and what the body does with it. Then come the recipes, from bread and soups through meat, fish, vegetables and salads, puddings, cakes, confectionery and the chafing-dish. The book ends with hints for young housekeepers, suggested menus and a glossary of cooking terms.</p>
 <p>A modern cook will notice a few things. Ovens are &quot;hot,&quot; &quot;moderate&quot; or &quot;slow,&quot; not set to a temperature, and the stove is a range burning coal, wood or gas. The food science uses the vocabulary of 1910: &quot;proteid&quot; is protein, and the tables of composition come from the Department of Agriculture and similar sources of the time. The quantities and methods are Farmer&#x27;s, and they are left as she wrote them.</p>
 <p>This is a restored edition, and Farmer&#x27;s words and recipes are unchanged. The text is the Project Gutenberg transcription of the 1910 edition. A scan of a 1911 printing was also compared, but that printing differs from 1910 in its own small ways, so the transcription is followed. The ingredient lists and tables are set one item to a line, as they were printed. Every illustration is kept, with the caption printed beneath it, and each now has a description of what it shows, which also serves as its alt text. The index and the pages advertising Miss Farmer&#x27;s school are omitted. The edition also adds modern typesetting, an ebook, and this introduction.</p>
+</section>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p><a href="#preface">Preface</a></p>
 <p><a href="#chapter-i-food">Chapter I: Food</a></p>
@@ -227,8 +257,11 @@ figcaption {
 <p><a href="#chapter-xxxvii-helpful-hints-for-the-young-housekeeper">Chapter XXXVII: Helpful Hints for the Young Housekeeper</a></p>
 <p><a href="#chapter-xxxviii-suitable-combinations-for-serving">Chapter XXXVIII: Suitable Combinations for Serving</a></p>
 <p><a href="#glossary">Glossary</a></p>
+</nav>
 
 <hr>
+<article>
+<section aria-labelledby="preface">
 <h2 id="preface">Preface</h2>
 <figure id="fig-aa">
 <img src="images/farmer/figaa.jpg" alt="Table laid for Formal Dinner. — Frontispiece. — A table under a white damask cloth, with a cut-glass vase of roses on a round mirror at the centre, four candles under fringed shades, and plates, silver and wine glasses at each cover." width="1212" height="741" loading="lazy">
@@ -425,6 +458,8 @@ figcaption {
 <tr><td>Table laid for Reception</td><td>601</td></tr>
 </table>
 <h4>THE BOSTON COOKING-SCHOOL COOK BOOK</h4>
+</section>
+<section aria-labelledby="chapter-i-food">
 <h2 id="chapter-i-food">Chapter I: Food</h2>
 <p>Food is anything which nourishes the body. From fifteen to twenty elements enter into the composition of the body, of which the following thirteen are considered: oxygen, 62½%; carbon, 21½%; hydrogen, 10%; nitrogen, 3%; calcium, phosphorus, potassium, sulphur, chlorine, sodium, magnesium, iron, and fluorine the remaining 3%.</p>
 <p>Food is necessary for growth, repair, and energy; therefore the elements composing the body must be found in the food. The thirteen elements named are formed into chemical compounds by the vegetable and animal kingdoms to support the highest order of being, man. All food must undergo chemical change after being taken into the body, before it can be utilized by the body; this is the office of the digestive system.</p>
@@ -558,6 +593,8 @@ figcaption {
 <img src="images/farmer/figad.jpg" alt="The Whipping of heavy and thin Cream. — A whip churn stands in a banded bowl of thin cream foamed up round it, beside a Dover egg-beater, a small bowl of whipped heavy cream, a pan of whip on a plate, and jars of cream." width="1274" height="706" loading="lazy">
 <figcaption>The Whipping of heavy and thin Cream. — A whip churn stands in a banded bowl of thin cream foamed up round it, beside a Dover egg-beater, a small bowl of whipped heavy cream, a pan of whip on a plate, and jars of cream.</figcaption>
 </figure>
+</section>
+<section aria-labelledby="chapter-ii-cookery">
 <h2 id="chapter-ii-cookery">Chapter II: Cookery</h2>
 <p>Cookery is the art of preparing food for the nourishment of the body.</p>
 <p>Prehistoric man may have lived on uncooked foods, but there are no savage races to-day who do not practise cookery in some way, however crude. Progress in civilization has been accompanied by progress in cookery.</p>
@@ -806,6 +843,8 @@ figcaption {
 <tr><td>Smelts, Trout, and other small Fish</td><td></td><td>3 to 5</td></tr>
 </table>
 <p>Note.—Length of time for cooking fish and meat does not depend so much on the number of pounds to be cooked as the extent of surface exposed to the heat.</p>
+</section>
+<section aria-labelledby="chapter-iii-beverages">
 <h2 id="chapter-iii-beverages">Chapter III: Beverages</h2>
 <p>A beverage is any drink. Water is the beverage provided for man by Nature. Water is an essential to life. All beverages contain a large percentage of water, therefore their uses should be considered:—</p>
 <pre class="outline">	I. To quench thirst.
@@ -1083,6 +1122,8 @@ figcaption {
 	Few slices orange
 	12 strawberries</pre>
 <p>Add Curaçoa to rind of fruit and sugar; cover, and let stand two hours. Add Sauterne, strain, and stand on ice to chill. Add chilled soda water, mint leaves, slices of orange, and strawberries. The success of cups depends upon the addition of charged water just before serving.</p>
+</section>
+<section aria-labelledby="chapter-iv-bread-and-bread-making">
 <h2 id="chapter-iv-bread-and-bread-making">Chapter IV: Bread and Bread Making</h2>
 <p>Bread is the most important article of food, and history tells of its use thousands of years before the Christian era. Many processes have been employed in making and baking; and as a result, from the first flat cake has come the perfect loaf. The study of bread making is of no slight importance, and deserves more attention than it receives.</p>
 <p>Considering its great value, it seems unnecessary and wrong to find poor bread on the table; and would that our standard might be raised as high as that of our friends across the water! Who does not appreciate the loaf produced by the French baker, who has worked months to learn the art of bread making?</p>
@@ -1540,6 +1581,8 @@ figcaption {
 <p>Dry toast is often used for garnishing, cut in various shapes. Always shape before toasting. Cubes of bread, toast points, and small oblong pieces are most common. Cubes of stale bread, from which centres are removed, are fried in deep fat and called croûstades; half-inch cubes, browned in butter, or fried in deep fat, are called croûtons.</p>
 <h4>Uses for Stale Bread</h4>
 <p>All pieces of bread should be saved and utilized. Large pieces are best for toast. Soft stale bread, from which crust is removed, when crumbed, is called stale breadcrumbs, or raspings, and is used for puddings, griddle-cakes, omelets, scalloped dishes, and dipping food to be fried. Remnants of bread, from which crusts have not been removed, are dried in oven, rolled, and sifted. These are called dry bread crumbs, and are useful for crumbing croquettes, cutlets, fish, meat, etc.</p>
+</section>
+<section aria-labelledby="chapter-v-biscuits-breakfast-cakes-and-shortcakes">
 <h2 id="chapter-v-biscuits-breakfast-cakes-and-shortcakes">Chapter V: Biscuits, Breakfast Cakes, and Shortcakes</h2>
 <h4>Batters, Sponges, and Doughs</h4>
 <p>Batter is a mixture of flour and some liquid (usually combined with other ingredients, as sugar, salt, eggs, etc.), of consistency to pour easily, or to drop from a spoon.</p>
@@ -2071,6 +2114,8 @@ figcaption {
 	¼ teaspoon salt</pre>
 <p>Cream the butter, add sugar gradually, and egg well beaten. Mix and sift flour, baking powder, and salt, adding alternately with milk to first mixture. Beat thoroughly, and bake in a buttered round tin. Cool, spread thickly with sweetened fruit, and cover with Cream Sauce I or II. Fresh strawberries, peaches, apricots, raspberries, or canned quince or pineapple may be used. When canned goods are used, drain fruit from syrup and cut in pieces. Dilute cream for Cream Sauce with fruit syrup in place of milk.</p>
 <p>Any shortcake mixture may be made for individual service by shaping with a large biscuit-cutter; or mixture may be baked in a shallow cake pan, centre removed and filled with fruit, and pieces baked separately to introduce to represent handles.</p>
+</section>
+<section aria-labelledby="chapter-vi-cereals">
 <h2 id="chapter-vi-cereals">Chapter VI: Cereals</h2>
 <p>Cereals (cultivated grasses) rank first among vegetable foods; being of hardy growth and easy cultivation, they are more widely diffused over the globe than any of the flowering plants. They include wheat, oats, rye, barley, maize (Indian corn), and rice; some authorities place buckwheat among them. Wheat probably is the most largely consumed; next to wheat, comes rice.</p>
 <h4>Table Showing Composition</h4>
@@ -2224,6 +2269,8 @@ figcaption {
 	1 small can condensed tomato
 	⅔ lb. lean beef</pre>
 <p>Cook first four ingredients eight minutes. Add tomato, 1 pint of water, and beef cut in small pieces, and cook one and one-half hours. Remove meat before serving. Ravioli is a national Italian dish, and the cheese and condensed tomato may be best bought of an Italian grocer.</p>
+</section>
+<section aria-labelledby="chapter-vii-eggs">
 <h2 id="chapter-vii-eggs">Chapter VII: Eggs</h2>
 <pre class="outline">	  COMPOSITION</pre>
 <pre class="outline">	Proteid, 14.9%
@@ -2521,6 +2568,8 @@ figcaption {
 	½ teaspoon vanilla</pre>
 <p>Beat yolks of eggs until thick and lemon-colored, add caramel, salt, and vanilla, and cut and fold in whites of eggs beaten until stiff and dry. Put three-fourths tablespoon butter in a hot omelet pan, cover bottom of pan with shredded almonds, turn in mixture, and cook and fold same as Plain Omelet. Pour around</p>
 <p>Caramel Sauce. Pour one cup sugar in omelet pan, and stir constantly, over hot part of range, until melted to a light brown syrup. Add three-fourths cup hot water, and let simmer ten minutes.</p>
+</section>
+<section aria-labelledby="chapter-viii-soups">
 <h2 id="chapter-viii-soups">Chapter VIII: Soups</h2>
 <p>It cannot be denied that the French excel all nations in the excellence of their cuisine, and to their soups and sauces belong the greatest praise. It would be well to follow their example, and it is the duty of every housekeeper to learn the art of soup making. How may a hearty dinner be better begun than with a thin soup? The hot liquid, taken into an empty stomach, is easily assimilated, acts as a stimulant rather than a nutrient (as is the popular opinion), and prepares the way for the meal which is to follow. The cream soups and purées are so nutritious that, with bread and butter, they furnish a satisfactory meal.</p>
 <p>Soups are divided into two great classes: soups with stock; soups without stock.</p>
@@ -3250,6 +3299,8 @@ figcaption {
 <img src="images/farmer/figbe.jpg" alt="Souffléd Crackers. — Split crackers baked until puffed, blistered and browned, piled on a scalloped plate." width="1348" height="666" loading="lazy">
 <figcaption>Souffléd Crackers. — Split crackers baked until puffed, blistered and browned, piled on a scalloped plate.</figcaption>
 </figure>
+</section>
+<section aria-labelledby="chapter-ix-soups-without-stock">
 <h2 id="chapter-ix-soups-without-stock">Chapter IX: Soups Without Stock</h2>
 <h4>Black Bean Soup</h4>
 <pre class="outline">	1 pint black beans
@@ -3572,6 +3623,8 @@ figcaption {
 	¼ cup butter
 	8 common crackers</pre>
 <p>Clean, skin, and bone fish. Add to bones cold water and vegetables, and let simmer twenty minutes. Strain stock from bones. Chop fish meat; there should be one and one-half cups. Add cracker, seasonings, melted butter and egg, then shape in small balls. Try out pork, add onion, and cook five minutes. Strain, and add to fat, potatoes, balls, and fish stock, and cook until potatoes are soft. Thicken milk with butter and flour cooked together. Combine mixtures, and season highly with salt, pepper, and cayenne. Add crackers, split and soaked in cold milk.</p>
+</section>
+<section aria-labelledby="chapter-x-soup-garnishings-and-force-meats">
 <h2 id="chapter-x-soup-garnishings-and-force-meats">Chapter X: Soup Garnishings and Force-Meats</h2>
 <h4>Crisp Crackers</h4>
 <p>Split common crackers and spread thinly with butter, allowing one-fourth teaspoon butter to each half cracker; put in pan and bake until delicately browned.</p>
@@ -3698,6 +3751,8 @@ figcaption {
 <p>Chop chicken finely, or force through a meat chopper. Pound in mortar, add gradually white of egg, and work until smooth; then add heavy cream slowly until of right consistency, which can only be determined by cooking a small ball in boiling salted water. Add seasonings, and rub through sieve.</p>
 <h4>Quenelles</h4>
 <p>Quenelles are made from any kind of force-meat, shaped in small balls or between tablespoons, making an oval, or by forcing mixture through pastry bag on buttered paper. They are cooked in boiling salted water or stock, and are served as garnish to soups or other dishes; when served with sauce, they are an entrée.</p>
+</section>
+<section aria-labelledby="chapter-xi-fish">
 <h2 id="chapter-xi-fish">Chapter XI: Fish</h2>
 <p>The meat of fish is the animal food next in importance to that of birds and mammals. Fish meat, with but few exceptions, is less stimulating and nourishing than meat of other animals, but is usually easier of digestion. Salmon, mackerel, and eels are exceptions to these rules, and should not be eaten by those of weak digestion. White fish, on account of their easy digestibility, are especially desirable for those of sedentary habits. Fish is not recommended for brain-workers on account of the large amount of phosphorus (an element abounding largely in nerve tissue) which it contains, but because of its easy digestibility. It is a conceded fact that many fish contain less of this element than meat.</p>
 <p>Fish meat is generally considered cheaper than meat of other animals. This is true when compared with the better cuts of meat, but not so when compared with cheaper cuts.</p>
@@ -4327,6 +4382,8 @@ figcaption {
 <p>Split a live lobster and put in a large omelet pan, sprinkle with one-fourth onion finely chopped and a few grains of cayenne and cook five minutes. Add one-half cup Tomato Sauce II and cook three minutes; then add two tablespoons Sherry wine, cover, and cook in oven seven minutes. To the liver add one tablespoon wine, two tablespoons Tomato Sauce, and one-half tablespoon melted butter; heat in pan after lobster has been removed. As soon as sauce is heated, strain, and pour over lobster.</p>
 <h4>Lobster à la Muisset</h4>
 <p>Cut two one and one-half pound live lobsters in pieces for serving and crack large claws. Cook one tablespoon finely chopped shallot and three tablespoons chopped carrot in two tablespoons butter ten minutes, stirring constantly that carrots may not burn. Add two sprigs thyme, one-half bay leaf, two red peppers from pepper sauce, one teaspoon salt, one and one-third cups Brown Stock, two-thirds cup stewed and strained tomatoes, and three tablespoons Sherry wine. Add lobster and cook fifteen minutes. Remove lobster to serving dish, thicken sauce with butter and flour cooked together, and add one and one-half tablespoons brandy. Pour sauce around lobster, and sprinkle all with finely chopped chives.</p>
+</section>
+<section aria-labelledby="chapter-xii-beef">
 <h2 id="chapter-xii-beef">Chapter XII: Beef</h2>
 <p>Meat is the name applied to the flesh of all animals used for food. Beef is the meat of steer, ox, or cow, and is the most nutritious and largely consumed of all animal foods. Meat is chiefly composed of the albuminoids (fibrin, albumen, gelatin), fat, mineral matter, and water.</p>
 <p>Fibrin is that substance in blood which causes it to coagulate when shed. It consists of innumerable delicate fibrils which entangle the blood corpuscles, and form with them a mass called blood clot. Fibrin is insoluble in both cold and hot water.</p>
@@ -4668,6 +4725,8 @@ figcaption {
 	1 cup scalded cream
 	1½ tablespoons flour</pre>
 <p>Remove skin and separate meat in pieces, cover with hot water, let stand ten minutes, and drain. Dilute flour with enough cold water to pour easily, making a smooth paste; add to cream, and cook in double boiler ten minutes. Add beef, and reheat. One cup White Sauce I may be used in place of cream, omitting the salt.</p>
+</section>
+<section aria-labelledby="chapter-xiii-lamb-and-mutton">
 <h2 id="chapter-xiii-lamb-and-mutton">Chapter XIII: Lamb and Mutton</h2>
 <p>Lamb is the name given to the meat of lambs; mutton, to the meat of sheep. Lamb, coming as it does from the young creature, is immature, and less nutritious than mutton. The flesh of mutton ranks with the flesh of beef in nutritive value and digestibility. The fat of mutton, on account of its larger percentage of stearic acid, is more difficult of digestion than the fat of beef.</p>
 <p>Lamb may be eaten soon after the animal is killed and dressed; mutton must hang to ripen. Good mutton comes from a sheep about three years old, and should hang from two to three weeks. The English South Down Mutton is cut from creatures even older than three years. Young lamb, when killed from six weeks to three months old, is called spring lamb, and appears in the market as early as the last of January, but is very scarce until March. Lamb one year old is called a yearling. Many object to the strong flavor of mutton; this is greatly overcome by removing the pink skin and trimming off superfluous fat.</p>
@@ -4785,6 +4844,8 @@ figcaption {
 <p>Line a mould, slightly greased, with steamed rice. Fill the centre with two cups cold, finely chopped, cooked mutton, highly seasoned with salt, pepper, cayenne, celery salt, onion juice and lemon juice; then add one-fourth cup cracker crumbs, one egg slightly beaten, and enough hot stock or water to moisten. Cover meat with rice, cover rice with buttered paper to keep out moisture while steaming, and steam forty-five minutes. Serve on a platter surrounded with Tomato Sauce. Veal may be used in place of mutton.</p>
 <h4>Breast of Lamb</h4>
 <p>Wipe a breast of lamb, put in kettle with bouquet of sweet herbs, a small onion stuck with six cloves, one-half tablespoon salt, one-half teaspoon peppercorns, and one-fourth cup each carrot and turnip cut in dice. Cover with boiling water, and simmer until bones will slip out easily. Take meat from water, remove bones, and press under weight. When cool, trim in shape, dip in crumbs, egg, and crumbs, fry in deep fat, and drain. Serve with Spanish Sauce. Small pieces of cold lamb may be sprinkled with salt and pepper, dipped in crumbs, egg, and crumbs, and fried in deep fat.</p>
+</section>
+<section aria-labelledby="chapter-xiv-veal">
 <h2 id="chapter-xiv-veal">Chapter XIV: Veal</h2>
 <p>Veal is the meat obtained from a young calf killed when six to eight weeks old. Veal from a younger animal is very unwholesome, and is liable to provoke serious gastric disturbances. Veal contains a much smaller percentage of fat than beef or mutton, is less nutritious, and (though from a young creature) more difficult of digestion. Like lamb, it is not improved by long hanging, but should be eaten soon after killing and dressing. It should always be remembered that the flesh of young animals does not keep fresh as long as that of older ones. Veal is divided in same manner as lamb, into fore and hind quarters. The fore-quarter is subdivided into breast, shoulder, and neck; the hind-quarter into loin, leg, and knuckle. Cutlets, fillets (cushion), and fricandeau are cut from the thick part of leg.</p>
 <p>Good veal may be known by its pinkish-colored flesh and white fat; when the flesh lacks color, it has been taken from a creature which was too young to kill for food, or, if of the right age, was bled before killing. Veal may be obtained throughout the year, but is in season during the spring. Veal should be thoroughly cooked; being deficient in fat and having but little flavor, pork or butter should be added while cooking, and more seasoning is required than for other meats.</p>
@@ -4846,6 +4907,8 @@ figcaption {
 <p>Reheat two cups cold roast veal, cut in small strips, in one and one-half cups White Sauce I. Serve in a potato border and sprinkle over all finely chopped parsley.</p>
 <h4>Ragoût of Veal</h4>
 <p>Reheat two cups cold roast veal, cut in cubes, in one and one-half cups Brown Sauce seasoned with one teaspoon Worcestershire Sauce, few drops of onion juice, and a few grains of cayenne.</p>
+</section>
+<section aria-labelledby="chapter-xv-sweetbreads">
 <h2 id="chapter-xv-sweetbreads">Chapter XV: Sweetbreads</h2>
 <p>A sweetbread is the thymus gland of lamb or calf, but in cookery, veal sweetbreads only are considered. It is prenatally developed, of unknown function, and as soon as calf is taken from liquid food it gradually disappears. Pancreas, stomach sweetbread, is sold in some sections of the country, but in our markets this custom is not practised. Sweetbreads are a reputed table delicacy, and a valuable addition to the menu of the convalescent.</p>
 <p>A sweetbread consists of two parts, connected by tubing and membranes. The round, compact part is called the heart sweetbread, as its position is nearer the heart; the other part is called the throat sweetbread. When sweetbread is found in market separated, avoid buying two of the throat sweetbreads, as the heart sweetbread is more desirable.</p>
@@ -4888,6 +4951,8 @@ figcaption {
 <img src="images/farmer/figcf.jpg" alt="Broiled Chicken garnished with French Fried Potatoes, Slices Broiled Tomatoes, Parsley, and Lettuce. — The split broiled chicken lies skin side up on an oval platter, with thick slices of broiled tomato and lettuce at one end, French fried potatoes at the other, and parsley tucked round it." width="1215" height="740" loading="lazy">
 <figcaption>Broiled Chicken garnished with French Fried Potatoes, Slices Broiled Tomatoes, Parsley, and Lettuce. — The split broiled chicken lies skin side up on an oval platter, with thick slices of broiled tomato and lettuce at one end, French fried potatoes at the other, and parsley tucked round it.</figcaption>
 </figure>
+</section>
+<section aria-labelledby="chapter-xvi-pork">
 <h2 id="chapter-xvi-pork">Chapter XVI: Pork</h2>
 <p>Pork is the flesh and fat of pig or hog. Different parts of the creature, when dressed, take different names.</p>
 <p>The chine and spareribs, which correspond to the loin in lamb and veal, are used for roasts or steaks. Two ribs are left on the chine. The hind legs furnish <em>hams</em>. These are cured, salted, and smoked. Sugar-cured hams are considered the best. Pickle, to which is added light brown sugar, molasses, and saltpetre, is introduced close to bone; hams are allowed to hang one week, then smoked with hickory wood. <em>Shoulders</em> are usually corned, or salted and smoked, though sometimes cooked fresh. <em>Pigs’ feet</em> are boiled until tender, split, and covered with vinegar made from white wine. <em>Hocks</em>, the part just above the feet, are corned, and much used by Germans. <em>Heads</em> are soused, and cooked by boiling. The flank, which lies just below the ribs, is salted and smoked, and furnishes <em>bacon</em>. The best pieces of fat salt pork come from the back, on either side of backbone.</p>
@@ -4928,6 +4993,8 @@ figcaption {
 <p>Pick over one quart pea beans, cover with cold water, and soak over night. In morning, drain, cover with fresh water, heat slowly (keeping water below boiling-point), and cook until skins will burst,—which is best determined by taking a few beans on the tip of a spoon and blowing on them, when skins will burst if sufficiently cooked. Beans thus tested must, of course, be thrown away. Drain beans, throwing bean-water out of doors, not in sink. Scald rind of three-fourths pound fat salt pork, scrape, remove one-fourth inch slice and put in bottom of bean-pot. Cut through rind of remaining pork every one-half inch, making cuts one inch deep. Put beans in pot and bury pork in beans, leaving rind exposed. Mix one tablespoon salt, one tablespoon molasses, and three tablespoons sugar; add one cup boiling water, and pour over beans; then add enough more boiling water to cover beans. Cover bean-pot, put in oven, and bake slowly six or eight hours, uncovering the last hour of cooking, that rind may become brown and crisp. Add water as needed. Many feel sure that by adding with seasonings one-half tablespoon mustard, the beans are more easily digested. If pork mixed with lean is preferred, use less salt.</p>
 <p>The fine reputation which Boston Baked Beans have gained has been attributed to the earthen bean-pot with small top and bulging sides in which they are supposed to be cooked. Equally good beans have often been eaten where a five-pound lard pail was substituted for the broken bean-pot.</p>
 <p>Yellow-eyed beans are very good when baked.</p>
+</section>
+<section aria-labelledby="chapter-xvii-poultry-and-game">
 <h2 id="chapter-xvii-poultry-and-game">Chapter XVII: Poultry and Game</h2>
 <p>Poultry includes all domestic birds suitable for food except pigeon and squab. Examples: chicken, fowl, turkey, duck, goose, etc. Game includes such birds and animals suitable for food as are pursued and taken in field and forest. Examples: quail, partridge, wild duck, plover, deer, etc.</p>
 <p>The flesh of chicken, fowl, and turkey has much shorter fibre than that of ruminating animals, and is not intermingled with fat,—the fat always being found in layers directly under the skin, and surrounding the intestines. Chicken, fowl, and turkey are nutritious, and chicken is specially easy of digestion. The white meat found on breast and wing is more readily digested than the dark meat. The legs, on account of constant motion, are of a coarser fibre and darker color.</p>
@@ -5263,6 +5330,8 @@ figcaption {
 <h4>Salmi of Duck</h4>
 <p>Cut cold roast duck in pieces for serving. Reheat in Spanish Sauce.</p>
 <p>Spanish Sauce. Melt one-fourth cup butter, add one tablespoon finely chopped onion, a stalk of celery, two slices carrot cut in pieces, and two tablespoons finely chopped lean raw ham. Cook until butter is brown, then add one-fourth cup flour, and when well browned add two cups Consommé, bit of bay leaf, sprig of parsley, blade of mace, two cloves, one-half teaspoon salt, and one-eighth teaspoon pepper; cook five minutes. Strain, add duck, and when reheated add Sherry wine, stoned olives, and mushrooms cut in quarters. Arrange on dish for serving, and garnish with olives and mushrooms. Grouse may be used in place of duck.</p>
+</section>
+<section aria-labelledby="chapter-xviii-fish-and-meat-sauces">
 <h2 id="chapter-xviii-fish-and-meat-sauces">Chapter XVIII: Fish and Meat Sauces</h2>
 <p>The French chef keeps always on hand four sauces,—White, Brown, Béchamel, and Tomato,—and with these as a basis is able to make kinds innumerable. Butter and flour are usually cooked together for thickening sauces. When not browned, it is called <em>roux</em>; when browned, <em>brown roux</em>. The French mix butter and flour together, put in saucepan, place over fire, stir for five minutes; set aside to cool, again place over fire, and add liquid, stirring constantly until thick and smooth. Butter and flour for brown sauces are cooked together much longer, and watched carefully lest butter should burn. The American cook makes sauce by stirring butter in saucepan until melted and bubbling, adds flour and continues stirring, then adds liquid, gradually stirring or beating until the boiling-point is reached. For Brown Sauce, butter should be stirred until well browned; flour should be added and stirred with butter until both are browned before the addition of liquid. The secret in making a Brown Sauce is to have butter and flour well browned before adding liquid.</p>
 <p>It is well worth remembering that a sauce of average thickness is made by allowing two tablespoons each of butter and flour to one cup liquid, whether it be milk, stock, or tomato. For Brown Sauce a slightly larger quantity of flour is necessary, as by browning flour its thickening property is lessened, its starch being changed to dextrine. When sauces are set away, put a few bits of butter on top to prevent crust from forming.</p>
@@ -5705,6 +5774,8 @@ figcaption {
 	1½ teaspoons Worcestershire Sauce
 	¾ cup stewed and strained tomatoes</pre>
 <p>Cook butter until well browned, and add remaining ingredients.</p>
+</section>
+<section aria-labelledby="chapter-xix-vegetables">
 <h2 id="chapter-xix-vegetables">Chapter XIX: Vegetables</h2>
 <pre class="outline">	Table showing Composition of Vegetables</pre>
 <pre class="outline">	Articles | Proteid | Fat | Carbohydrates | Mineral matter | Water
@@ -6079,6 +6150,8 @@ figcaption {
 <img src="images/farmer/figcm.jpg" alt="O’Brion Potatoes. — The makings rather than the dish: a frying kettle with wire basket, a frying-pan, salt and pepper shakers, a paper-lined pan, potato balls and cubes, chopped parsley and a tin of pimentoes." width="1213" height="741" loading="lazy">
 <figcaption>O’Brion Potatoes. — The makings rather than the dish: a frying kettle with wire basket, a frying-pan, salt and pepper shakers, a paper-lined pan, potato balls and cubes, chopped parsley and a tin of pimentoes.</figcaption>
 </figure>
+</section>
+<section aria-labelledby="chapter-xx-potatoes">
 <h2 id="chapter-xx-potatoes">Chapter XX: Potatoes</h2>
 <h4>Composition</h4>
 <pre class="outline">	Water, 78.9%
@@ -6258,6 +6331,8 @@ figcaption {
 <p>Cut four cold boiled potatoes and six “hard-boiled” eggs in one-fourth inch slices. Put layer of potatoes in buttered baking-dish, sprinkle with salt and pepper, cover with layer of eggs; repeat, and pour over two cups Thin White Sauce. Cover with buttered cracker crumbs and bake until the crumbs are brown.</p>
 <h4>Curried Potatoes</h4>
 <p>Cook one-fourth cup butter with one small onion, finely chopped, until yellow; add three cups cold boiled potato cubes, and cook until potatoes have absorbed butter, then add from one-half to three-fourths cup White Stock, one half tablespoon each curry powder and lemon juice, and salt and pepper to taste. Cook until potatoes have absorbed stock.</p>
+</section>
+<section aria-labelledby="chapter-xxi-salads-and-salad-dressings">
 <h2 id="chapter-xxi-salads-and-salad-dressings">Chapter XXI: Salads and Salad Dressings</h2>
 <p>Salads, which constitute a course in almost every dinner, but a few years since seldom appeared on the table. They are now made in an endless variety of ways, and are composed of meat, fish, vegetables (alone or in combination) or fruits, with the addition of a dressing. The salad plants, lettuce, watercress, chiccory, cucumbers, etc., contain but little nutriment, but are cooling, refreshing, and assist in stimulating the appetite. They are valuable for the water and potash salts they contain. The olive oil, which usually forms the largest part of the dressing, furnishes nutriment, and is of much value to the system.</p>
 <p>Salads made of greens should always be served crisp and cold. The vegetables should be thoroughly washed, allowed to stand in cold or ice-water until crisp, then drained and spread on a towel and set aside in a cold place until serving time. See Lettuce, page 294. Dressing may be added at table or just before sending to table. If greens are allowed to stand in dressing they will soon wilt. It should be remembered that winter greens are raised under glass and should be treated as any other hothouse plant. Lettuce will be affected by a change of temperature and wilt just as quickly as delicate flowers.</p>
@@ -6630,6 +6705,8 @@ figcaption {
 <p>Mix equal parts of parboiled sweetbreads cut in one-half inch cubes and celery finely cut. Moisten with Cream Dressing, and arrange on lettuce leaves.</p>
 <h4>Harvard Salad</h4>
 <p>Make lemon baskets, following directions for Orange Baskets (see p. 429). With a small wooden skewer make an incision in centre of each handle and insert a small sprig of parsley. Fill baskets with equal parts of cold cooked sweetbread and cucumber cut in small cubes, and one-fourth the quantity of finely cut celery, moistened with Cream Dressing II (see p. 324). Pare round red radishes as thinly as possible and finely chop parings. Smooth top of baskets and cover with dressing. Sprinkle top of one-half the baskets with chopped parings, the remaining half with finely chopped parsley. Arrange red and green baskets alternately on serving dish, and garnish with watercress.</p>
+</section>
+<section aria-labelledby="chapter-xxii-entr-es">
 <h2 id="chapter-xxii-entr-es">Chapter XXII: Entrées</h2>
 <h4>Batters and Fritters</h4>
 <h4>Batter I</h4>
@@ -7480,6 +7557,8 @@ figcaption {
 	½ cup sugar
 	¼ teaspoon salt</pre>
 <p>Make sponge of one-half cup flour and dissolved yeast cake; cover and let rise. Mix remaining flour with butter, two eggs, sugar, and salt. Beat thoroughly, and add, while beating, remaining eggs, one at a time, then beat until mixture is perfectly smooth. As soon as sponge has doubled its bulk, combine mixtures, beat thoroughly, and half fill buttered individual tins. Let rise, and bake in a moderate oven. Remove from tins, cut a circular piece from top of each, and scoop out a small quantity of the inside. Fill centres thus made with Apricot Marmalade, replace circular pieces, and serve with Wine Sauce (see p. 409).</p>
+</section>
+<section aria-labelledby="chapter-xxiii-hot-puddings">
 <h2 id="chapter-xxiii-hot-puddings">Chapter XXIII: Hot Puddings</h2>
 <h4>Rice Pudding</h4>
 <pre class="outline">	4 cups milk
@@ -7932,6 +8011,8 @@ figcaption {
 <p>Mix ingredients in order given, turn into a thickly floured square of unbleached cotton cloth. Tie securely, leaving some space to allow the pudding to swell, and plunge into a kettle of boiling water. Cook five hours, allowing pudding to be immersed in water during the entire cooking. Serve with Hard and Liquid Sauce.</p>
 <p>Hard Sauce. Cream one-third cup butter; add gradually one cup brown sugar and two tablespoons brandy, drop by drop. Force through a pastry bag with rose tube, and garnish with green leaves and candied cherries.</p>
 <p>Liquid Sauce. Mix one-half cup sugar, one-half tablespoon corn-starch, and a few grains salt. Add gradually, while stirring constantly, one cup boiling water, and boil five minutes. Remove from fire, add one tablespoon lemon juice and two tablespoons brandy; then color with fruit red.</p>
+</section>
+<section aria-labelledby="chapter-xxiv-pudding-sauces">
 <h2 id="chapter-xxiv-pudding-sauces">Chapter XXIV: Pudding Sauces</h2>
 <h4>Lemon Sauce I</h4>
 <pre class="outline">	¾ cups sugar
@@ -8073,6 +8154,8 @@ figcaption {
 	¾ cup heavy cream
 	Sugar</pre>
 <p>Drain canned apricots from their syrup, and rub through a sieve. Beat cream until stiff, add to apricot pulp, and sweeten to taste. Serve with German toast.</p>
+</section>
+<section aria-labelledby="chapter-xxv-cold-desserts">
 <h2 id="chapter-xxv-cold-desserts">Chapter XXV: Cold Desserts</h2>
 <h4>Irish Moss Blanc-Mange</h4>
 <pre class="outline">	⅓ cup Irish moss
@@ -8616,6 +8699,8 @@ figcaption {
 	½ cup English walnut meats
 	2 tablespoons powdered sugar</pre>
 <p>Soak cherries in rum to cover one hour, then cut in pieces. Cut walnut meats and marshmallows in small pieces. Whip cream, add sugar and vanilla, fold in remaining ingredients. Mould and chill.</p>
+</section>
+<section aria-labelledby="chapter-xxvi-ices-ice-creams-and-other-frozen-desserts">
 <h2 id="chapter-xxvi-ices-ice-creams-and-other-frozen-desserts">Chapter XXVI: Ices, Ice Creams, and Other Frozen Desserts</h2>
 <p>Ices and other frozen dishes comprise the most popular desserts. Hygienically speaking, they cannot be recommended for the final course of a dinner, as cold mixtures reduce the temperature of the stomach, thus retarding digestion until the normal temperature is again reached. But how cooling, refreshing, and nourishing, when properly taken, and of what inestimable value in the sick room!</p>
 <p>Frozen dishes include:—</p>
@@ -9360,6 +9445,8 @@ figcaption {
 <p>Make custard of milk, one-half the sugar, egg yolks, and salt. Caramelize the remaining sugar and add. Strain, cool, add remaining ingredients, freeze, and mould. If a baked ice cream is desired, use whites of eggs for meringue, Baked Alaska (see p. 448).</p>
 <h4>Frozen Charlotte Glacé</h4>
 <p>Mould ice cream in brick form or one-half pound baking-powder boxes. Remove from mould or moulds, and surround with lady fingers, trimmed to come to top of cream. Cover top with whipped cream, sweetened and flavored, and pipe cream between lady fingers. Baking-powder boxes are used when individual service is desired, the cream being cut in halves crosswise.</p>
+</section>
+<section aria-labelledby="chapter-xxvii-pastry">
 <h2 id="chapter-xxvii-pastry">Chapter XXVII: Pastry</h2>
 <p>Pastry cannot be easily excluded from the menu of the New Englander. Who can dream of a Thanksgiving dinner without a pie! The last decade has done much to remove pies from the <em>daily</em> bill of fare, and in their place are found delicate puddings and seasonable fruits.</p>
 <p>If pastry is to be served, have it of the best,—light, flaky, and tender.</p>
@@ -9439,6 +9526,8 @@ figcaption {
 	½ cup butter
 	Cold water</pre>
 <p>Make same as Plain Paste. Roll to one-fourth inch in thickness, cut in finger-shaped pieces, bake, cool, brush over with slightly beaten white one egg diluted with one teaspoon cold water, and sprinkle with chopped nut meat seasoned with salt. Return to oven to slightly brown nut meats. Serve with salad course.</p>
+</section>
+<section aria-labelledby="chapter-xxviii-pies">
 <h2 id="chapter-xxviii-pies">Chapter XXVIII: Pies</h2>
 <p>Paste for pies should be one-fourth inch thick and rolled a little larger than the plate to allow for shrinking. In dividing paste for pies, allow more for upper than under crusts. Always perforate upper crusts that steam may escape. Some make a design, others pierce with a large fork.</p>
 <p>Flat rims for pies should be cut in strips three-fourths inch wide. Under crusts should be brushed with cold water before putting on rims, and rims slightly fulled, otherwise they will shrink from edge of plate. The pastry jagger, a simple device for cutting paste, makes rims with fluted edges.</p>
@@ -9670,6 +9759,8 @@ figcaption {
 <img src="images/farmer/figdw.jpg" alt="Lemon Tartlets. — Six tart cases heaped with meringue drawn up into points and lightly browned, arranged on a round plate with a flowered border." width="1166" height="771" loading="lazy">
 <figcaption>Lemon Tartlets. — Six tart cases heaped with meringue drawn up into points and lightly browned, arranged on a round plate with a flowered border.</figcaption>
 </figure>
+</section>
+<section aria-labelledby="chapter-xxix-pastry-desserts">
 <h2 id="chapter-xxix-pastry-desserts">Chapter XXIX: Pastry Desserts</h2>
 <h4>Banbury Tarts</h4>
 <pre class="outline">	1 cup raisins
@@ -9771,6 +9862,8 @@ figcaption {
 	½ teaspoon vanilla
 	¼ teaspoon salt</pre>
 <p>Blanch almonds, finely shred one-half of them, and dry slowly in oven. Put water and sugar in a saucepan, and as soon as boiling-point is reached, add remaining almonds, and cook until the syrup is of a golden brown color. Turn into a pan, cool, and finely pound in mortar. Beat whites of eggs until stiff, add gradually sugar, then vanilla, almonds, and salt. Shape, sprinkle with shredded almonds, sift sugar over them, and bake in a slow oven twenty-five minutes.</p>
+</section>
+<section aria-labelledby="chapter-xxx-gingerbreads-cookies-and-wafers">
 <h2 id="chapter-xxx-gingerbreads-cookies-and-wafers">Chapter XXX: Gingerbreads, Cookies, and Wafers</h2>
 <h4>Hot Water Gingerbread</h4>
 <pre class="outline">	1 cup molasses
@@ -10255,6 +10348,8 @@ figcaption {
 	¼ teaspoon vanilla
 	Shredded cocoanut</pre>
 <p>Cream the butter, add sugar, eggs well beaten, flour, and salt. Spread mixture on bottom of a buttered inverted dripping-pan, decorate with almonds blanched and cut in strips, and bake in slow oven. Cut in desired shape, using heart, spade, and diamond-shaped cutters before removing from pan. To give variety, divide mixture in halves. To one-half add sugar, cocoa, cinnamon, and vanilla, then spread on pan and sprinkle with shredded cocoanut.</p>
+</section>
+<section aria-labelledby="chapter-xxxi-cake">
 <h2 id="chapter-xxxi-cake">Chapter XXXI: Cake</h2>
 <p>The mixing and baking of cake requires more care and judgment than any other branch of cookery; notwithstanding, it seems the one most frequently attempted by the inexperienced.</p>
 <p>Two kinds of cake mixtures are considered:—</p>
@@ -10989,6 +11084,8 @@ figcaption {
 	½ lb. flour
 	¼ teaspoon soda</pre>
 <p>Mix same as Pound Cake, adding raisins dredged with flour, and nuts at the last.</p>
+</section>
+<section aria-labelledby="chapter-xxxii-cake-fillings-and-frostings">
 <h2 id="chapter-xxxii-cake-fillings-and-frostings">Chapter XXXII: Cake Fillings and Frostings</h2>
 <h4>Cream Filling</h4>
 <pre class="outline">	⅞ cup sugar
@@ -11227,6 +11324,8 @@ figcaption {
 <img src="images/farmer/figej.jpg" alt="Bonbons. — Round white bonbons heaped high in a cut-glass compote on a tall faceted stem." width="917" height="980" loading="lazy">
 <figcaption>Bonbons. — Round white bonbons heaped high in a cut-glass compote on a tall faceted stem.</figcaption>
 </figure>
+</section>
+<section aria-labelledby="chapter-xxxiii-fancy-cakes-and-confections">
 <h2 id="chapter-xxxiii-fancy-cakes-and-confections">Chapter XXXIII: Fancy Cakes and Confections</h2>
 <p>Almond paste for making macaroons and small fancy cakes may be bought of dealers who keep confectioners’ supplies, although sometimes a resident baker or confectioner will sell a small quantity. Almond paste is put up in five-pound tin pails, and retails for one and one-half dollars per pail. During the cold weather it will keep after being opened for a long time.</p>
 <h4>Macaroons</h4>
@@ -11502,6 +11601,8 @@ figcaption {
 <img src="images/farmer/figen.jpg" alt="Noisette Sandwiches. — Triangles of dark nut bread, each with a walnut half pressed on top and a thin line of filling showing at the edge, stand in a row on lace in an oval embossed silver dish." width="1282" height="701" loading="lazy">
 <figcaption>Noisette Sandwiches. — Triangles of dark nut bread, each with a walnut half pressed on top and a thin line of filling showing at the edge, stand in a row on lace in an oval embossed silver dish.</figcaption>
 </figure>
+</section>
+<section aria-labelledby="chapter-xxxiv-sandwiches-and-canap-s">
 <h2 id="chapter-xxxiv-sandwiches-and-canap-s">Chapter XXXIV: Sandwiches and Canapés</h2>
 <p>In preparing bread for sandwiches, cut slices as thinly as possible, and remove crusts. If butter is used, cream the butter, and spread bread before cutting from loaf. Spread half the slices with mixture to be used for filling, cover with remaining pieces, and cut in squares, oblongs, or triangles. If sandwiches are shaped with round or fancy cutters, bread should be shaped before spreading, that there may be no waste of butter. Sandwiches which are prepared several hours before serving time may be kept fresh and moist by wrapping in a napkin wrung as dry as possible out of hot water, and keeping in a cool place. Paraffine paper is often used for the same purpose. Bread for sandwiches cuts better when a day old. Serve sandwiches piled on a plate covered with a doily.</p>
 <h4>Rolled Bread</h4>
@@ -11591,6 +11692,8 @@ figcaption {
 <p>Crab Mixture. Finely chop crab meat, season with salt, cayenne, and a few drops of lemon juice, then moisten with Thick White Sauce. Lobster meat may be used in place of crab meat.</p>
 <h4>Algonquin Canapés</h4>
 <p>Fry one-half tablespoon finely chopped onion, three tablespoons butter, and one-third cup chopped mushroom caps five minutes. Add two tablespoons flour, and two-thirds cup cream. Cook until mixture thickens, then add one cup finnan haddie (soaked in lukewarm water to cover forty-five minutes, then separated into flakes), two tablespoons grated cheese, and yolks two eggs slightly beaten. Season with salt and cayenne and pile on circular pieces of toasted bread. Sprinkle with grated cheese, then with buttered, soft bread crumbs, and bake until crumbs are browned. Serve at once.</p>
+</section>
+<section aria-labelledby="chapter-xxxv-recipes-for-the-chafing-dish">
 <h2 id="chapter-xxxv-recipes-for-the-chafing-dish">Chapter XXXV: Recipes for the Chafing-Dish</h2>
 <p>The chafing-dish, which, within the last few years, has gained so much favor, is by no means a utensil of modern invention, as its history may be traced to the time of Louis XIV. It finds its place on the breakfast table, when the eggs may be cooked to suit the most fastidious; on the luncheon table, when a dainty hot dish may be prepared to serve in place of the so-oft-seen cold meat; but it is made of greatest use for the cooking of late suppers, and always seems to accompany hospitality and good cheer.</p>
 <p>It is appreciated and enjoyed by the housekeeper who does her own work, or has but one maid, as well as by the society girl who, by its use, first gains a taste for the art of cooking. The simple tin chafing-dishes may be bought for as small a sum as ninety cents, while the elaborate silver ones command as high a price as one hundred dollars. Very attractive dishes are made of granite ware, nickel, or copper. The latest patterns have the lamp with a screw adjustment to regulate the flame, and a metal tray on which to set dish, that it may be moved if necessary while hot, without danger of burnt fingers, and that it may not injure the polished table.</p>
@@ -11859,6 +11962,8 @@ figcaption {
 	1 teaspoon lemon juice
 	½ cup wine</pre>
 <p>Stuff figs with almonds. Put sugar, lemon juice, and wine in chafing-dish; when heated, add figs, cover, and cook until figs are tender, turning and basting often. Serve with Lady Fingers.</p>
+</section>
+<section aria-labelledby="chapter-xxxvi-fruits-fresh-preserved-and-canned">
 <h2 id="chapter-xxxvi-fruits-fresh-preserved-and-canned">Chapter XXXVI: Fruits: Fresh, Preserved, and Canned</h2>
 <p>Fruits are usually at their best when served ripe and in season; however, a few cannot be taken in their raw state, and still others are rendered more easy of digestion by cooking. The methods employed are stewing and baking. Fruit should be cooked in earthen or granite ware utensils, and silver or wooden spoons should be employed for stirring. It must be remembered that all fruits contain one or more acids, and when exposed to air and brought in contact with an iron or tin surface, a poisonous compound may be formed.</p>
 <h4>How to Prepare Strawberries for Serving</h4>
@@ -12141,6 +12246,8 @@ figcaption {
 <p>Prepare vegetables and cut in small pieces, cover with salt, let stand twenty-four hours, and drain. Heat vinegar and spices to boiling-point, add vegetables, and cook until soft.</p>
 <h4>Pickled Onions</h4>
 <p>Peel small white onions, cover with brine, allowing one and one-half cups salt to two quarts boiling water, and let stand two days; drain, and cover with more brine; let stand two days, and again drain. Make more brine and heat to boiling-point; put in onions and boil three minutes. Put in jars, interspersing with bits of mace, white peppercorns, cloves, bits of bay leaf, and slices of red pepper. Fill jars to overflow with vinegar scalded with sugar, allowing one cup sugar to one gallon vinegar. Cork while hot.</p>
+</section>
+<section aria-labelledby="chapter-xxxvii-helpful-hints-for-the-young-housekeeper">
 <h2 id="chapter-xxxvii-helpful-hints-for-the-young-housekeeper">Chapter XXXVII: Helpful Hints for the Young Housekeeper</h2>
 <p>To Scald Milk. Put in top of double boiler, having water boiling in under part. Cover, and let stand on top of range until milk around edge of double boiler has a bead-like appearance.</p>
 <p>For Buttered Cracker Crumbs, allow from one-fourth to one-third cup melted butter to each cup of crumbs. Stir lightly with a fork in mixing, that crumbs may be evenly coated and light rather than compact.</p>
@@ -12199,6 +12306,8 @@ figcaption {
 <p>Curtain and Portière Poles allow the hangings to slip easily if rubbed with hard soap. This is much better than greasing.</p>
 <p>Creaking Doors and Drawers should be treated in the same way.</p>
 <p>To Remove Dust from Rattan Furniture use a painter’s small brush.</p>
+</section>
+<section aria-labelledby="chapter-xxxviii-suitable-combinations-for-serving">
 <h2 id="chapter-xxxviii-suitable-combinations-for-serving">Chapter XXXVIII: Suitable Combinations for Serving</h2>
 <h4>Breakfast Menus</h4>
 <p>Oranges Oatmeal with Sugar and Cream Boiled Ham Creamed Potatoes Pop-overs or Fadges Coffee</p>
@@ -12378,6 +12487,8 @@ figcaption {
 <p>Little Neck Clams Consommé au Parmesan Olives Salted Pecans Bouchées Fillets of Halibut à la Poulette with Mayonnaise Tomatoes Delmonico Potatoes String Beans Larded Fillet of Beef with Horseradish Sauce Glazed Sweetbreads Artichokes with Béchamel Sauce Sorbet Broiled Quail with Lettuce and Celery Salad Banana Cantaloupe Sultana Roll with Claret Sauce Cinnamon Bars Lady Fingers Bonbons Crackers Cheese Café Noir</p>
 <p>☸☸☸☸☸</p>
 <p>Anchovy Canapés Julienne Soup Olives Celery Ginger Chips Oyster and Macaroni Croquettes Stuffed Fillets of Halibut, French Hollandaise Sauce Tomato Jelly Spring Lamb Potato Fritters Asparagus Tips with Hollandaise Sauce Chaud-froid of Chicken Crême de Menthe Ice Larded Grouse Bread Sauce Lettuce and Radish Salad Mont Blanc Bombe Glacée Sponge Drops Almond Crescents Bonbons Crackers Cheese Café Noir</p>
+</section>
+<section aria-labelledby="glossary">
 <h2 id="glossary">Glossary</h2>
 <p><em>Accolade de perdreaux.</em> Brace of partridge.</p>
 <p><em>Agneau.</em> Lamb.</p>
@@ -12515,6 +12626,9 @@ figcaption {
 <p><em>Tarte aux pommes.</em> Apple pie.</p>
 <p><em>Tourte.</em> A tart.</p>
 <p><em>Trout saumonée.</em> Salmon trout.</p>
+</section>
+</article>
+</main>
 
 </body>
 </html>

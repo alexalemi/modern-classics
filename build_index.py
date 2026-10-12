@@ -375,6 +375,7 @@ PAGE = '''<!DOCTYPE html>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{doc_title}</title>
+	{head}
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -412,8 +413,16 @@ PAGE = '''<!DOCTYPE html>
 '''
 
 
-def page_shell(current, doc_title, h1, motto, body):
-    return PAGE.format(doc_title=doc_title, h1=h1, motto=motto,
+def page_shell(current, doc_title, h1, motto, body, description=None):
+    """A front page. `description` (plain text) is what search results and
+    link previews show; None means the site's own description. The 404 page
+    passes "" and gets no canonical or preview tags at all."""
+    import seo
+    if description == "":
+        head = ""
+    else:
+        head = seo.head_tags(current, doc_title, description or seo.SITE_DESCRIPTION)
+    return PAGE.format(doc_title=doc_title, h1=h1, motto=motto, head=head,
                        nav=nav(current), body=body)
 
 
@@ -433,6 +442,9 @@ def main():
         "Classic texts, retold in contemporary English", "\n".join(parts)))
     print(f"wrote site/index.html ({len(books)} books on "
           f"{sum(1 for s in SHELVES if any(b['shelf'] == s for b in books))} shelves)")
+    import seo
+    seo.write_sitemap()
+    seo.write_404()
 
 
 if __name__ == "__main__":

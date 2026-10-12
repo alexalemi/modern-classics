@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Chess Fundamentals &mdash; José Raúl Capablanca</title>
+	<meta name="description" content="From the simplest mates to fourteen annotated games, by the new world champion. Every diagram described square by square. A restored edition, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/capablanca.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="Chess Fundamentals — José Raúl Capablanca">
+	<meta property="og:description" content="From the simplest mates to fourteen annotated games, by the new world champion. Every diagram described square by square. A restored edition, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/capablanca.html">
+	<meta property="og:image" content="https://emend.press/covers/share/capablanca.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,26 +192,30 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>Chess Fundamentals</h1>
-	<h3>by José Raúl Capablanca</h3>
+	<p class="title-line">by José Raúl Capablanca</p>
 	<p class="center">
 	1921
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is a restored edition of Chess Fundamentals: the author's own words, unchanged. Every plate carries a caption and alt text written for this edition, beginning with the label the book printed. The original is available from <a href="https://www.gutenberg.org/ebooks/33870">Project Gutenberg</a>. Also available as an <a href="ebooks/jose-raul-capablanca_chess-fundamentals.epub">epub</a>. <a href="restored.html">More restored editions</a>.</i></p>
 
 	<hr>
+<section aria-labelledby="editors-introduction">
 <h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
 <p>José Raúl Capablanca (1888–1942) was a Cuban who learned chess as a small child by watching his father play, and who became one of the strongest players who have ever lived. He wrote Chess Fundamentals in 1921, the year he won the world championship from Emanuel Lasker in Havana. For a world champion to sit down and write a book for beginners was unusual, and the book shows why he thought it worth doing.</p>
 <p>It starts with the ending, not the opening. The first pages teach how to mate with a king and a rook against a lone king, then with two bishops, then with a queen; then how a pawn becomes a queen; and only after that the middle game and the openings. Capablanca&#x27;s argument is that the ending is where the value of each piece and the meaning of each principle can be seen plainly, without the clutter of a full board. The book then goes round the same circuit again at a higher level, and ends with fourteen of his own games, annotated move by move. He includes games he lost, and says where he went wrong.</p>
 <p>The notation will look strange. It is the English descriptive notation that was standard for most of the twentieth century. Each file is named after the piece that starts on it (the Queen&#x27;s Rook&#x27;s file, the King&#x27;s Knight&#x27;s file, and so on), and each rank is counted from the player&#x27;s own side of the board. So the same square has one name for White and another for Black, and &quot;P - K 4&quot; means a pawn moves to the fourth rank of the king&#x27;s file, counted from whoever is moving. &quot;Kt&quot; is a knight, &quot;×&quot; is a capture, and &quot;ch&quot; is check. Modern books use algebraic notation, which names each square once. In a later printing Capablanca added a preface, dated 1934, dismissing the &quot;Hypermodern&quot; school that had become fashionable since the book appeared.</p>
 <p>This is a restored edition, and Capablanca&#x27;s words and notation are unchanged. The text is the Project Gutenberg transcription of the book in its 1934 state, with that preface, compared word by word with two scanned copies of the same printing. What this edition adds is for the reader who cannot see the diagrams. Every one of the 150 positions now has a caption that lists the pieces square by square in algebraic notation, and each was checked against the moves the text plays from it. The six page references in the text now point to sections and games instead. Move tables are set one move to a line. The edition also adds modern typesetting, an ebook, and this introduction.</p>
+</section>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p><a href="#preface">Preface</a></p>
 <p class="toc-book">Part One</p>
@@ -214,8 +244,11 @@ figcaption {
 <li><a href="#game-13-ruy-lopez">Game 13: Ruy Lopez</a></li>
 <li><a href="#game-14-queen-s-gambit-declined">Game 14: Queen&#x27;s Gambit Declined</a></li>
 </ul>
+</nav>
 
 <hr>
+<article>
+<section aria-labelledby="preface">
 <h2 id="preface">Preface</h2>
 <figure id="fig-aa">
 <img src="images/capablanca/figaa.jpg" alt="José R. Capablanca — A studio photograph of the author, turned a little to the left in a dark suit, white shirt and striped tie, his arms folded, looking into the camera with a slight smile." width="1580" height="2000" loading="lazy">
@@ -226,7 +259,10 @@ figcaption {
 <h4>J. R. CAPABLANCA</h4>
 <h4><em>New York</em></h4>
 <p><em>Sept. 1, 1934</em></p>
+</section>
+<section class="part" aria-labelledby="part-one">
 <h2 id="part-one" class="center">Part One</h2>
+<section aria-labelledby="chapter-i-first-principles-endings-middle-game-and-openings">
 <h3 id="chapter-i-first-principles-endings-middle-game-and-openings">Chapter I: First Principles: Endings, Middle-Game and Openings</h3>
 <p>The first thing a student should do, is to familiarise himself with the power of the pieces. This can best be done by learning how to accomplish quickly some of the simple mates.</p>
 <h4>1. Some Simple Mates</h4>
@@ -525,6 +561,8 @@ figcaption {
 	3. Kt × B</pre>
 <p>and White has won a Pawn besides having the better position.</p>
 <p>There are a good many other traps—in fact, there is a book written on traps on the chess board; but the type given above is the most common of all.</p>
+</section>
+<section aria-labelledby="chapter-ii-further-principles-in-end-game-play">
 <h3 id="chapter-ii-further-principles-in-end-game-play">Chapter II: Further Principles in End-Game Play</h3>
 <p>We shall now go back to the endings in search of a few more principles, then again to the middle-game, and finally to the openings once more, so that the advance may not only be gradual but homogeneous. In this way the foundation on which we expect to build the structure will be firm and solid.</p>
 <h4>9. A Cardinal Principle</h4>
@@ -888,6 +926,8 @@ figcaption {
 <p>and the Rook is lost.</p>
 <p>Note, in these examples, that the checks at long range along the diagonals have often been the key to all the winning manœuvres. Also that the Queen and King are often kept on different lines. The student should carefully go over these positions and consider all the possibilities not given in the text.</p>
 <p>He should once more go through everything already written before proceeding further with the book.</p>
+</section>
+<section aria-labelledby="chapter-iii-planning-a-win-in-middle-game-play">
 <h3 id="chapter-iii-planning-a-win-in-middle-game-play">Chapter III: Planning a Win in Middle-Game Play</h3>
 <p>I shall now give a few winning positions taken from my own games. I have selected those that I believe can be considered as <em>types</em>, i.e. positions that may easily occur again in a somewhat similar form. A knowledge of such positions is of great help; in fact, one cannot know too many. It often may help the player to find, with little effort, the right move, which he might not be able to find at all without such knowledge.</p>
 <h4>17. Attacking Without the Aid of Knights</h4>
@@ -988,6 +1028,8 @@ figcaption {
 <p>These positions have been given with the idea of acquainting the student with different types of combinations. I hope they will also help to develop his imagination, a very necessary quality in a good player. The student should note, in all these middle-game positions, that—</p>
 <p><em>once the opportunity is offered, all the pieces are thrown into action &quot;en masse&quot; when necessary;</em> and that <em>all the pieces smoothly co-ordinate their action with machine-like precision.</em></p>
 <p>That, at least, is what the ideal middle-game play should be, if it is not so altogether in these examples.</p>
+</section>
+<section aria-labelledby="chapter-iv-general-theory">
 <h3 id="chapter-iv-general-theory">Chapter IV: General Theory</h3>
 <p>Before we revert to the technique of the openings it will be advisable to dwell a little on general theory, so that the openings in their relation to the rest of the game may be better understood.</p>
 <h4>20. The Initiative</h4>
@@ -1372,6 +1414,8 @@ figcaption {
 <p>(The Queen has no escape, but White has no time to take it.)</p>
 <pre class="outline">	44. R - K Kt 1 Q - B 8</pre>
 <p>White resigns. A very fine finish.</p>
+</section>
+<section aria-labelledby="chapter-v-end-game-strategy">
 <h3 id="chapter-v-end-game-strategy">Chapter V: End-Game Strategy</h3>
 <p>We must now revert once more to the endings. Their importance will have become evident to the student who has taken the trouble to study my game with Janowski (Example 53). After an uneventful opening—a Ruy Lopez—in one of its normal variations, my opponent suddenly made things interesting by offering the exchange; an offer which, of course, I accepted. Then followed a very hard, arduous struggle, in which I had to defend myself against a very dangerous attack made possible by the excellent manœuvring of my adversary. Finally, there came the time when I could give back the material and change off most of the pieces, and come to an ending in which I clearly had the advantage. But yet the ending itself was not as simple as it at first appeared, and finally—perhaps through one weak move on my part—it became a very difficult matter to find a win. Had I been a weak end-game player the game would probably have ended in a draw, and all my previous efforts would have been in vain. Unfortunately, that is very often the case among the large majority of players; they are weak in the endings; a failing from which masters of the first rank are at times not free. Incidentally, I might call attention to the fact that all the world&#x27;s champions of the last sixty years have been exceedingly strong in the endings: Morphy, Steinitz, and Dr. Lasker had no superiors in this department of the game while they held their titles.</p>
 <h4>26. The Sudden Attack from a Different Side</h4>
@@ -1751,6 +1795,8 @@ figcaption {
 	32. Kt - K 3 P - Kt 7
 	Resigns.</pre>
 <p>A very good example on Black&#x27;s part of how to conduct such an ending.</p>
+</section>
+<section aria-labelledby="chapter-vi-further-openings-and-middle-games">
 <h3 id="chapter-vi-further-openings-and-middle-games">Chapter VI: Further Openings and Middle-Games</h3>
 <h4>31. Some Salient Points About Pawns</h4>
 <p>Before going back to the discussion of openings and middle-game positions, it might be well to bear in mind a few facts concerning Pawn positions which will no doubt help to understand certain moves, and sometimes even the object of certain variations in the openings, and of some manœuvres in the middle-games.</p>
@@ -1898,7 +1944,11 @@ figcaption {
 <p>There is nothing to be done. If B - Kt 1; Q - R 2 ch, K - Kt 2; B × P.</p>
 <p>The student should notice that, apart from other things, White throughout the game has had control of the Black squares, principally those at K 5 and Q B 5.</p>
 <p>From now on to the end of the book I shall give a collection of my games both lost and won, chosen so as to serve as illustrations of the general principles laid down in the foregoing pages.</p>
+</section>
+</section>
+<section class="part" aria-labelledby="part-two">
 <h2 id="part-two" class="center">Part Two</h2>
+<section aria-labelledby="game-1-queen-s-gambit-declined">
 <h3 id="game-1-queen-s-gambit-declined">Game 1: Queen&#x27;s Gambit Declined</h3>
 <p>(Match, 1909)</p>
 <p>White: F. J. Marshall. Black: J. R. Capablanca.</p>
@@ -1946,6 +1996,8 @@ figcaption {
 	24. P - K B 4 R - Kt 3
 	25. Q × R ! Resigns.</pre>
 <p>Of course, if 25 Kt × B, R - Kt 8 ch would have drawn. The text move is pretty and finishes quickly. A well-played game on Marshall&#x27;s part.</p>
+</section>
+<section aria-labelledby="game-2-queen-s-gambit-declined">
 <h3 id="game-2-queen-s-gambit-declined">Game 2: Queen&#x27;s Gambit Declined</h3>
 <h4>(San Sebastian, 1911)</h4>
 <p>White: A. K. Rubinstein. Black: J. R. Capablanca.</p>
@@ -2027,6 +2079,8 @@ figcaption {
 <pre class="outline">	41. B - Q 5 P - R 7
 	42. R - R 6 ch Resigns.</pre>
 <p>As an end game, this is rather a sad exhibition for two masters. The redeeming feature of the game is Rubinstein&#x27;s fine combination in the middle game, beginning with 14 B × Kt.</p>
+</section>
+<section aria-labelledby="game-3-irregular-defence">
 <h3 id="game-3-irregular-defence">Game 3: Irregular Defence</h3>
 <p>(Havana, 1913)</p>
 <p>White: D. Janowski. Black: J. R. Capablanca.</p>
@@ -2091,6 +2145,8 @@ figcaption {
 	35. P - K 5 P × P
 	36. Kt × P Kt - Q 5</pre>
 <p>The game went on for a few more moves, and, there being no way to counteract the advance of White&#x27;s two passed Pawns, Black resigned.</p>
+</section>
+<section aria-labelledby="game-4-french-defence">
 <h3 id="game-4-french-defence">Game 4: French Defence</h3>
 <h4>(St. Petersburg, 1913)</h4>
 <p>White: J. R. Capablanca. Black: E. A. Snosko-Borovski.</p>
@@ -2176,6 +2232,8 @@ figcaption {
 	40. Kt - Q 4 R - K 8 ch
 	Resigns.</pre>
 <p>A very interesting battle.</p>
+</section>
+<section aria-labelledby="game-5-ruy-lopez">
 <h3 id="game-5-ruy-lopez">Game 5: Ruy Lopez</h3>
 <h4>(St. Petersburg, 1914)</h4>
 <p>White: Dr. E. Lasker. Black: J. R. Capablanca.</p>
@@ -2253,6 +2311,8 @@ figcaption {
 	40. R - R 1 K - Q 1
 	41. R - R 8 ch B - B 1
 	42. Kt - B 5 Resigns.</pre>
+</section>
+<section aria-labelledby="game-6-french-defence">
 <h3 id="game-6-french-defence">Game 6: French Defence</h3>
 <h4>(Rice Memorial Tournament, 1916)</h4>
 <p>White: O. Chajes. Black: J. R. Capablanca.</p>
@@ -2357,6 +2417,8 @@ figcaption {
 	60. Q × P</pre>
 <p>and after a very few more moves Black resigned.</p>
 <p>A very fine game on Chajes&#x27; part from move 25 on, for while Black, having the best of the position, missed several chances, White, on the other hand, missed none.</p>
+</section>
+<section aria-labelledby="game-7-ruy-lopez">
 <h3 id="game-7-ruy-lopez">Game 7: Ruy Lopez</h3>
 <h4>(San Sebastian, 1911)</h4>
 <h4>White: J. R. Capablanca. Black: A. Burn</h4>
@@ -2428,6 +2490,8 @@ figcaption {
 	44. P - R 5 R × Kt
 	45. P × R R - B 3
 	46. P - Kt 6 Resigns.</pre>
+</section>
+<section aria-labelledby="game-8-centre-game">
 <h3 id="game-8-centre-game">Game 8: Centre Game</h3>
 <p>(Berlin 1913)</p>
 <p>White: J. Mieses. Black: J. R. Capablanca.</p>
@@ -2523,6 +2587,8 @@ figcaption {
 	44. R - Q 1 R - Q B 6
 	Resigns.</pre>
 <p>Of course White must play Q - Q 2, and Black then plays R × P.</p>
+</section>
+<section aria-labelledby="game-9-queen-s-gambit-declined">
 <h3 id="game-9-queen-s-gambit-declined">Game 9: Queen&#x27;s Gambit Declined</h3>
 <p>(Berlin, 1913)</p>
 <p>White: J. R. Capablanca. Black: R. Teichmann.</p>
@@ -2603,6 +2669,8 @@ figcaption {
 <pre class="outline">	37. ........ K - Q 4
 	38. B - Kt 7 Resigns.</pre>
 <p>The student ought to have realised by this time the enormous importance of playing well every kind of ending. In this game again, practically from the opening, White aimed at nothing but the isolation of Black&#x27;s Q P. Once he obtained that, he tried for and obtained, fortunately, another advantage of position elsewhere which translated itself into the material advantage of a Pawn. Then by accurate playing in the ending he gradually forced home his advantage. This ending has the merit of having been played against one of the finest players in the world.</p>
+</section>
+<section aria-labelledby="game-10-petroff-defence">
 <h3 id="game-10-petroff-defence">Game 10: Petroff Defence</h3>
 <h4>(St. Petersburg, 1914)</h4>
 <h4>White: J. R. Capablanca. Black: F. J. Marshall</h4>
@@ -2688,6 +2756,8 @@ figcaption {
 	59. P - Kt 7 R × P
 	60. P - R 7 R - Kt 3 ch
 	61. K - B 5 Resigns.</pre>
+</section>
+<section aria-labelledby="game-11-ruy-lopez">
 <h3 id="game-11-ruy-lopez">Game 11: Ruy Lopez</h3>
 <h4>(St. Petersburg, 1914)</h4>
 <p>White: J. R. Capablanca. Black: D. Janowski.</p>
@@ -2744,6 +2814,8 @@ figcaption {
 	29. P - Q 5 R - K 1
 	30. P - Q 6 P × P
 	31. Q - B 6 Resigns.</pre>
+</section>
+<section aria-labelledby="game-12-french-defence">
 <h3 id="game-12-french-defence">Game 12: French Defence</h3>
 <h4>(New York, 1918)</h4>
 <p>White: J. R. Capablanca. Black: O. Chajes.</p>
@@ -2838,6 +2910,8 @@ figcaption {
 	44. Kt × B Q - Kt 2 ch
 	45. K - B 4 Resigns.</pre>
 <p>The interest of this game centres mainly on the opening and on the march of the White King during the final stage of the game. It is an instance of the King becoming a fighting piece, even while the Queens are still on the board.</p>
+</section>
+<section aria-labelledby="game-13-ruy-lopez">
 <h3 id="game-13-ruy-lopez">Game 13: Ruy Lopez</h3>
 <h4>(New York, 1918)</h4>
 <p>White: J. S. Morrison. Black: J. R. Capablanca.</p>
@@ -2934,6 +3008,8 @@ figcaption {
 	41. R - Q 7 B - K 3
 	Resigns.</pre>
 <p>A very lively game.</p>
+</section>
+<section aria-labelledby="game-14-queen-s-gambit-declined">
 <h3 id="game-14-queen-s-gambit-declined">Game 14: Queen&#x27;s Gambit Declined</h3>
 <h4>(New York, 1918)</h4>
 <p>White: F. J. Marshall. Black: J. R. Capablanca.</p>
@@ -3027,6 +3103,10 @@ figcaption {
 	39. P - B 4 ch K × B P
 	40. Resigns.</pre>
 <p>An ending worth very careful study.</p>
+</section>
+</section>
+</article>
+</main>
 
 </body>
 </html>

@@ -23,7 +23,9 @@ body = markdown.markdown(md, extensions=["smarty"])
 page = build_index.page_shell(
     "about.html", "About &mdash; Modern Classics", "About",
     "Classic texts, retold in contemporary English",
-    f'<article class="prose">\n{body}\n</article>')
+    f'<article class="prose">\n{body}\n</article>',
+    description="What the Modern Classics are, how the retellings and "
+                "restored editions are made, and how to follow along.")
 
 (ROOT / "site" / "about.html").write_text(page)
 print(f"wrote site/about.html ({len(page)} bytes)")

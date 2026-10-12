@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Dialogues &mdash; Plato</title>
+	<meta name="description" content="The complete dialogues — Socrates on trial, in the agora, and at the limits of knowledge. Retold in modern English, free to read online and as an ebook.">
+	<link rel="canonical" href="https://emend.press/dialogues.html">
+	<meta property="og:type" content="book">
+	<meta property="og:site_name" content="Modern Classics">
+	<meta property="og:title" content="Dialogues — Plato">
+	<meta property="og:description" content="The complete dialogues — Socrates on trial, in the agora, and at the limits of knowledge. Retold in modern English, free to read online and as an ebook.">
+	<meta property="og:url" content="https://emend.press/dialogues.html">
+	<meta property="og:image" content="https://emend.press/covers/share/dialogues.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -139,6 +151,20 @@ figcaption {
   text-align: center;
 }
 
+/* the title block: the subtitle and byline are paragraphs set like an
+   h3, not h3s, so the outline holds only real sections */
+.title-block { text-align: center; }
+/* phones: the desktop sizes set ~35 characters to a line at 390px */
+@media (max-width: 40em) {
+  html { font-size: 1em; padding: 1.5em 1em; }
+}
+.title-line {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .subtitle {
   text-align: center;
   font-style: italic;
@@ -166,27 +192,31 @@ figcaption {
 </head>
 
 <body>
+<header class="title-block">
 	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library"></a></p>
-	<center>
 	<h1>Dialogues</h1>
-	<h3>by Plato</h3>
+	<p class="title-line">by Plato</p>
 	<p class="center">
 	<s>399–347 BC</s> 2026
 	</p>
-	</center>
+</header>
 
+<main>
 	<hr>
 	<p><i>This is an AI modernization of Dialogues into contemporary English. Also available as an <a href="ebooks/plato_dialogues.epub">epub</a>.</i></p>
 
 	<hr>
+<section aria-labelledby="editors-introduction">
 <h2 id="editors-introduction">Editor&#x27;s Introduction</h2>
 <p>Socrates was executed by Athens in 399 BC, at about seventy, on charges of impiety and of corrupting the young. He wrote nothing. Everything we have of him comes from people who heard him talk, and chiefly from Plato, who was in his late twenties when his teacher was killed and who spent the next fifty years writing him down. Plato founded a school outside the city, the Academy, and died around 348 BC. How much of the Socrates in these pages is the man and how much is Plato arguing under a borrowed name has never been settled.</p>
 <p>The dialogues are scripts. They have casts, settings and stage business: a porch outside a courtroom, a wrestling school, a walk along a river on a hot day, a drinking party that goes on till dawn. People arrive late, interrupt, get angry, walk out. Socrates asks questions because the question is the method. He says he knows nothing, finds a man who claims to know something, and asks him to define it — piety, courage, justice, self-control, love — then follows the answer until it comes apart. Often nothing replaces it. Several of these end with everybody agreeing they have got nowhere, and that is not a defect in the text. They were written to be read aloud and argued with, and a summary of the conclusions would leave out the entire book.</p>
 <p>This selection is twenty-four works: Euthyphro, the Apology, Crito, Phaedo, Meno, Protagoras, Gorgias, the Symposium, Phaedrus, the Republic complete in ten books, Ion, Laches, Lysis, Charmides, Euthydemus, Cratylus, Theaetetus, Parmenides, the Sophist, the Statesman, Philebus, Timaeus, Critias, and the Laws complete in twelve books. The Apology is not a dialogue at all but a speech — Socrates defending himself to a jury of several hundred Athenians, and losing.</p>
 <p>The first four make one continuous story and can be read straight through as such. Euthyphro is set on the porch of the court where the charge has just been filed. The Apology is the trial. Crito is the cell, some weeks later, with a friend who has bribed the guard and wants him to run. Phaedo is the last afternoon, the conversation with his friends, and the hemlock. It is four acts, and nobody wrote anything like it again.</p>
 <p>Plato taught Aristotle, who came to the Academy at seventeen and stayed twenty years; Aristotle taught Theophrastus, who took over his school. Aristotle&#x27;s Nicomachean Ethics and Theophrastus&#x27; Characters are both in this collection, as is Xenophon&#x27;s Memorabilia, which is another man&#x27;s Socrates and a useful check on this one. The text here is modernized from Benjamin Jowett&#x27;s Victorian English rather than from the Greek.</p>
+</section>
 
 	<hr>
+<nav aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <p><a href="#euthyphro">Euthyphro</a></p>
 <p><a href="#apology">Apology</a></p>
@@ -249,8 +279,11 @@ figcaption {
 <p><a href="#laws-book-x">Laws — Book X</a></p>
 <p><a href="#laws-book-xi">Laws — Book XI</a></p>
 <p><a href="#laws-book-xii">Laws — Book XII</a></p>
+</nav>
 
 <hr>
+<article>
+<section aria-labelledby="euthyphro">
 <h2 id="euthyphro">Euthyphro</h2>
 <pre class="outline">Persons of the dialogue:
   Socrates
@@ -491,6 +524,8 @@ You will not tell: for where there is fear there is also reverence.&quot;</p>
 <p><b>Socrates</b>: Then we have to start over again and ask: what is piety? I won&#x27;t give up on this question as long as I can help it. Please, Euthyphro — don&#x27;t brush me off. Apply your mind to this with everything you&#x27;ve got, and tell me the truth. Because if anyone in the world knows the answer, it&#x27;s you — and I&#x27;m not letting you go, like Proteus, until you tell me. If you didn&#x27;t truly know the nature of piety and impiety, there&#x27;s no way you&#x27;d ever have prosecuted your elderly father for murder on behalf of a hired laborer. You wouldn&#x27;t have risked doing something wrong in the eyes of the gods, and you would&#x27;ve cared too much about what people think. So I&#x27;m certain you know. Speak up, my dear Euthyphro, and don&#x27;t hide what you know.</p>
 <p><b>Euthyphro</b>: Another time, Socrates. I&#x27;m in a hurry and have to go now.</p>
 <p><b>Socrates</b>: What are you doing to me, my friend? You&#x27;re going to leave me in despair? I was hoping you&#x27;d teach me about piety and impiety so I could clear myself of Meletus and his indictment. I was going to tell him that Euthyphro had enlightened me, that I&#x27;d given up my reckless speculations — which I only pursued out of ignorance — and that from now on I was going to lead a better life.</p>
+</section>
+<section aria-labelledby="apology">
 <h2 id="apology">Apology</h2>
 <p>I have no idea what effect my accusers had on you, men of Athens, but I can tell you this: they were so persuasive they almost made me forget who I am. And yet they&#x27;ve barely spoken a word of truth. Of the many lies they told, one in particular amazed me — when they warned you to be on your guard against my &quot;powerful eloquence.&quot; The sheer audacity of saying that, when they were about to be exposed the moment I opened my mouth and proved myself to be no great speaker at all — that struck me as truly shameless. Unless by &quot;powerful eloquence&quot; they mean the power of truth. If that&#x27;s what they mean, then I&#x27;ll gladly plead guilty to being eloquent.</p>
 <p>But my eloquence, if you want to call it that, is nothing like theirs. From them you&#x27;ve heard almost no truth at all. From me you&#x27;ll hear the whole truth. And not delivered the way they do it, gentlemen — no polished speeches decorated with fancy words and phrases. No, by heaven! I&#x27;m going to use whatever words and arguments come to me as I speak, because I&#x27;m confident that what I&#x27;m saying is just. At my age, it would be ridiculous to come before you performing like some young orator — please don&#x27;t expect that of me.</p>
@@ -618,6 +653,8 @@ You will not tell: for where there is fear there is also reverence.&quot;</p>
 <p>So you too, my judges, should face death with hope, and hold on to this one truth: no evil can happen to a good man, either in life or after death. The gods do not neglect him. And what&#x27;s happened to me today hasn&#x27;t happened by accident. I see clearly that it was better for me to die now and be free from trouble. That&#x27;s why my divine sign never held me back. That&#x27;s why I&#x27;m not angry with my condemners or my accusers. They haven&#x27;t harmed me — though they certainly didn&#x27;t intend to help me, and for that I may gently blame them.</p>
 <p>But I have one last request. When my sons are grown, I want you to do for them what I did for you. If they seem to care more about money or anything else than about virtue — give them a hard time. If they pretend to be something when they&#x27;re nothing — call them out, the way I called you out, for caring about the wrong things and thinking they&#x27;re important when they&#x27;re not. If you do this, my sons and I will have received justice from you.</p>
 <p>The hour of departure has arrived. We go our separate ways — I to die, and you to live. Which of us goes to the better fate? Only God knows.</p>
+</section>
+<section aria-labelledby="crito">
 <h2 id="crito">Crito</h2>
 <pre class="outline">Persons of the dialogue:
   Socrates
@@ -774,6 +811,8 @@ You will not tell: for where there is fear there is also reverence.&quot;</p>
 <p>I know that anything more you say will be in vain. But if you have something to say, say it.</p>
 <p><b>Crito</b>: I have nothing to say, Socrates.</p>
 <p><b>Socrates</b>: Then leave me, Crito, to fulfill the will of God, and to follow where he leads.</p>
+</section>
+<section aria-labelledby="phaedo-part-1">
 <h2 id="phaedo-part-1">Phaedo (Part 1)</h2>
 <pre class="outline">Characters in this dialogue:
   Phaedo, who narrates the dialogue to Echecrates of Phlius
@@ -1188,6 +1227,8 @@ You will not tell: for where there is fear there is also reverence.&quot;</p>
 <h4>Phaedo: Careful about what?</h4>
 <p>Socrates: We need to avoid becoming misologists — haters of argument. Just as there are misanthropes, haters of people, there are misologists, haters of ideas. And both come from the same source: inexperience.</p>
 <p>Here&#x27;s how misanthropy works. You trust someone completely — you think they&#x27;re perfectly honest, dependable, and true. Then they turn out to be deceitful and dishonest. Then it happens again, and again, especially with people you thought were your closest and most trusted friends. After enough betrayals, you end up hating everyone and believing there&#x27;s no good in anyone at all. You&#x27;ve seen this happen?</p>
+</section>
+<section aria-labelledby="phaedo-part-2">
 <h2 id="phaedo-part-2">Phaedo (Part 2)</h2>
 <p>Isn&#x27;t that feeling something to be ashamed of? Isn&#x27;t it obvious that someone like that has no real experience of people? Because experience would have taught him the truth: that very few people are truly good, very few are truly evil, and the vast majority fall somewhere in between.</p>
 <p>What do you mean? I said.</p>
@@ -1473,6 +1514,8 @@ Endure, my heart — you&#x27;ve suffered worse than this.&quot;</p>
 <p>A moment later there was a slight movement. The attendants uncovered him. His eyes were fixed. Crito reached over and closed his eyes and his mouth.</p>
 <hr>
 <p>Such was the end, Echecrates, of our friend — a man of whom I may truly say that of all the people I have ever known, he was the wisest, the most just, and the best.</p>
+</section>
+<section aria-labelledby="meno">
 <h2 id="meno">Meno</h2>
 <pre class="outline">Persons of the dialogue:
   Meno
@@ -2067,6 +2110,8 @@ Endure, my heart — you&#x27;ve suffered worse than this.&quot;</p>
 <p><b>Meno</b>: That&#x27;s beautifully put, Socrates.</p>
 <p><b>Socrates</b>: Then the conclusion, Meno, is that virtue comes to those who have it as a gift from the gods. But we&#x27;ll never know this with certainty until we first tackle the question we keep putting off: What is virtue itself? What is its actual nature?</p>
 <p>Now I have to go. But you — do me a favor. Now that you&#x27;ve been persuaded, go persuade your friend Anytus of the same things. Calm him down, if you can. If you succeed in soothing him, you&#x27;ll have done the people of Athens a real service.</p>
+</section>
+<section aria-labelledby="protagoras-part-1">
 <h2 id="protagoras-part-1">Protagoras (Part 1)</h2>
 <pre class="outline">Persons of the dialogue:
   Socrates, who narrates the whole conversation to his Companion
@@ -2377,6 +2422,8 @@ thought him still speaking; still stood fixed to hear.&quot;</p>
 <p>Then Prodicus added: &quot;Well said, Critias. Those of us in the audience should be impartial listeners, hearing both sides. But remember: impartiality isn&#x27;t the same as treating both sides equally. We should hear both speakers without prejudice, but give more weight to the wiser one.</p>
 <p>&quot;So I too ask you, Protagoras and Socrates, to keep discussing — to argue, but not to bicker. Friends argue with friends out of goodwill. Enemies bicker. If you do that, you speakers will earn our genuine esteem — not mere praise. Esteem is the honest conviction that forms in a listener&#x27;s soul. Praise is often just polite words people say without believing them. And we in the audience will experience true satisfaction — not just pleasure. Satisfaction comes to the mind through the intake of wisdom and knowledge. Pleasure is what the body feels when eating or enjoying some other physical delight.&quot;</p>
 <p>The audience applauded Prodicus warmly.</p>
+</section>
+<section aria-labelledby="protagoras-part-2">
 <h2 id="protagoras-part-2">Protagoras (Part 2)</h2>
 <p>Hippias the sage spoke up next. He said: All of you here — I consider you kinsmen, friends, and fellow citizens, by nature if not by law. Because by nature, like is drawn to like, but law is a tyrant over humanity, and often forces us to do things that go against our nature. So how embarrassing would it be if we — people who understand how things really work, the wisest people in all of Greece, gathered here in this city that&#x27;s the capital of wisdom, in the greatest and most impressive house in the city — if we had nothing to show for all this distinction except squabbling with each other like the lowest sort of people? What I&#x27;m urging — begging, really — is that you, Protagoras, and you, Socrates, agree to a compromise. Let us be your peacemakers. Socrates, don&#x27;t insist on that extreme, razor-sharp brevity in your arguments if Protagoras objects. Loosen the reins a bit, let your words flow more freely and grandly. And Protagoras, don&#x27;t set all your sails and go racing off into an ocean of words until you&#x27;re completely out of sight of land. Let there be a happy middle ground between you. And here&#x27;s my advice: choose an umpire or moderator or chairman, someone who&#x27;ll keep an eye on both of you and make sure your speeches stay a reasonable length.</p>
 <p>Everyone approved of this proposal. Callias said he wasn&#x27;t going to let me leave, and they all urged me to choose an umpire. But I said that choosing a referee for a discussion would be inappropriate. If the person chosen were less capable than us, then having someone inferior presiding over his betters would be wrong. If he were our equal, he&#x27;d do exactly what we do, so what&#x27;s the point of choosing him? And if you say, &quot;Let&#x27;s find someone better&quot; — well, I don&#x27;t think you can find anyone wiser than Protagoras. And if you choose someone who isn&#x27;t really better but you just say he is, that would be an insult to Protagoras, as if you were putting a supervisor over him like he were some inferior person — not that something like that would bother me much personally. But here&#x27;s what I&#x27;ll do instead, so that the conversation can go on the way you all want it to. If Protagoras doesn&#x27;t feel like answering, let him ask the questions and I&#x27;ll answer. And at the same time, I&#x27;ll try to show him how I think an answerer ought to respond. Once I&#x27;ve answered as many questions as he likes, he can take his turn answering mine. If he doesn&#x27;t seem to be sticking to the point, all of you can join me in urging him — just as you urged me — not to derail the discussion. This way we won&#x27;t need any special referee. You&#x27;ll all be referees together.</p>
@@ -2613,6 +2660,8 @@ thought him still speaking; still stood fixed to hear.&quot;</p>
 <p>Protagoras replied: Socrates, I&#x27;m not a petty person, and I&#x27;m the last man in the world to be envious. I can only admire your energy and the way you conduct an argument. As I&#x27;ve often said, of all the people I know, I admire you more than anyone — and far more than anyone your age. I believe you&#x27;re going to become truly distinguished in philosophy. Let&#x27;s come back to this another time. For now, I think we should move on to other things.</p>
 <p>By all means, I said. That suits me fine. I should have left a long time ago to keep the appointment I mentioned earlier. I only stayed because I couldn&#x27;t refuse such a gracious host as Callias.</p>
 <p>And with that, the conversation ended. And we went on our way.</p>
+</section>
+<section aria-labelledby="gorgias-part-1">
 <h2 id="gorgias-part-1">Gorgias (Part 1)</h2>
 <pre class="outline">Persons of the dialogue:
   Callicles
@@ -3340,6 +3389,8 @@ Leave these subtleties to others&quot; —</p>
 <p><b>Callicles</b>: I mean the more excellent.</p>
 <p><b>Socrates</b>: Can you see that you&#x27;re just using words that don&#x27;t mean anything yet — that you haven&#x27;t explained a thing? Will you tell me whether by &quot;the better&quot; and &quot;the superior&quot; you mean the wiser? Or something else?</p>
 <p><b>Callicles</b>: Yes, absolutely — I mean the wiser.</p>
+</section>
+<section aria-labelledby="gorgias-part-2">
 <h2 id="gorgias-part-2">Gorgias (Part 2)</h2>
 <p><b>Socrates</b>: So according to you, one wise man can be superior to ten thousand fools, and he should rule over them, and they should be his subjects, and he should have more than they do. That&#x27;s what I believe you&#x27;re saying — and don&#x27;t think I&#x27;m just playing word games — if you grant that the one is superior to the ten thousand?</p>
 <p><b>Callicles</b>: Yes, that&#x27;s what I mean. And that&#x27;s what I take natural justice to be — that the better and wiser should rule and have more than the inferior.</p>
@@ -3871,6 +3922,8 @@ Leave these subtleties to others&quot; —</p>
 <p>Follow me, then, and I&#x27;ll lead you to where you&#x27;ll be happy in life and after death, as the argument has shown. Don&#x27;t worry if someone calls you a fool and treats you with contempt. Let them strike you, by Zeus — and take heart. You&#x27;ll come to no real harm in the practice of virtue, if you&#x27;re a genuinely good and honest person.</p>
 <p>And once we&#x27;ve practiced virtue together, then we&#x27;ll turn to politics, if that seems right — or to whatever else seems good to us. We&#x27;ll be better judges then. In our present state, we shouldn&#x27;t be putting on airs. We keep changing our minds on the most important questions — that&#x27;s how confused we still are.</p>
 <p>So let&#x27;s take the argument as our guide. It has shown us that the best way of life is to practice justice and every virtue, in life and in death. Let&#x27;s follow this path, and let&#x27;s call on all others to follow it too — not the path you trust and urge me to take. Because that path, Callicles, is worth nothing at all.</p>
+</section>
+<section aria-labelledby="symposium-part-1">
 <h2 id="symposium-part-1">Symposium (Part 1)</h2>
 <pre class="outline">Persons of the dialogue:
   Apollodorus, who repeats to his companion the dialogue which he had heard from Aristodemus, and had already once narrated to Glaucon
@@ -4094,6 +4147,8 @@ All right. The speeches on love went like this — but I&#x27;d better start fro
 <p>&quot;Think about it more carefully,&quot; said Socrates. &quot;Don&#x27;t just say &#x27;probably.&#x27; Consider whether it&#x27;s not necessarily the case. If you desire something, mustn&#x27;t you lack it? If you don&#x27;t lack it, you don&#x27;t desire it. This seems to me absolutely and necessarily true, Agathon. What do you think?&quot;</p>
 <p>&quot;I think you&#x27;re right,&quot; said Agathon.</p>
 <p>&quot;Good. Now: would a person who is already tall desire to be tall? Would a person who is already strong desire to be strong?&quot;</p>
+</section>
+<section aria-labelledby="symposium-part-2">
 <h2 id="symposium-part-2">Symposium (Part 2)</h2>
 <p>That would be inconsistent with what we&#x27;ve already agreed to.</p>
 <p>True. Because anyone who already is something can&#x27;t want to be what they already are, can they?</p>
@@ -4292,6 +4347,8 @@ All right. The speeches on love went like this — but I&#x27;d better start fro
 <p>Agathon got up to take his place beside Socrates — but just then a whole mob of partygoers came bursting in through the door (someone going out had left it open) and made themselves at home. The orderly evening fell apart completely. Everyone was forced to drink enormous amounts of wine. Aristodemus said that Eryximachus, Phaedrus, and several others left. He himself fell asleep — the nights were long — and got a good rest.</p>
 <p>He woke near dawn to the sound of a rooster crowing. Most of the others were either asleep or gone. Only Socrates, Aristophanes, and Agathon were still awake, sharing a large cup that they passed around. Socrates was making an argument to them. Aristodemus was only half awake and missed the beginning, but the main point, as he remembered it, was this: Socrates was forcing the other two to admit that the same person who truly understands tragedy must also understand comedy — that the genius of comedy and the genius of tragedy are one and the same. They were giving in to this argument more out of drowsiness than conviction, barely able to follow him. Aristophanes nodded off first. Then, as the sky began to lighten, Agathon fell asleep too.</p>
 <p>Socrates, having put them both to sleep, stood up and left. Aristodemus followed, as he always did. Socrates went to the Lyceum, took a bath, and spent the rest of the day the way he always spent his days. That evening, he went home to bed.</p>
+</section>
+<section aria-labelledby="phaedrus-part-1">
 <h2 id="phaedrus-part-1">Phaedrus (Part 1)</h2>
 <pre class="outline">Persons of the dialogue:
   Socrates
@@ -4471,6 +4528,8 @@ But the gods call him the winged one,
 Because the growing of wings is his gift to give.&#x27;</p>
 <p>&quot;You can take that or leave it. But the experience of lovers and the causes of their love are exactly as I&#x27;ve described.</p>
 <p>&quot;Now, a person whose soul once followed in Zeus&#x27; company is better able to bear the weight of love&#x27;s winged god. But those who followed Ares become dangerous when love seizes them — if they think they&#x27;ve been wronged, they&#x27;re ready to kill, to destroy themselves and their beloved alike. Each person, in fact, lives and loves according to the god he followed. Everyone chooses his beloved from the ranks of beauty, according to his own character. And the beloved becomes a kind of god to the lover — an image he shapes and adorns and worships. Those who followed Zeus seek someone of a philosophical and commanding nature. When they find him and fall in love, they do everything they can to cultivate that nature in him. If they&#x27;ve never encountered such a disposition before, they learn how from any teacher they can find, and they shape themselves accordingly. And they succeed more easily in discovering their god within themselves, because they&#x27;ve been compelled to gaze so intensely on Zeus. Their memory clings to him, and through that connection they absorb his character and disposition, as much as any human being can participate in the divine. They attribute these godlike qualities to their beloved, and love him all the more for them. Like worshippers inspired by Zeus, they pour their own divine inspiration over the beloved, trying to make him as much like their god as possible. Those who followed Hera seek a royal nature, and when they find one, they do the same with him. And in the same way</p>
+</section>
+<section aria-labelledby="phaedrus-part-2">
 <h2 id="phaedrus-part-2">Phaedrus (Part 2)</h2>
 <p>...and in this way, the followers of Apollo — and of every other god — walk in the path of their god and seek a beloved who can be shaped in the same image. When they find him, they imitate their god themselves and encourage their beloved to do the same, educating him into the character and nature of that god as far as they can. They feel no jealousy or resentment toward the one they love. Instead, they do everything in their power to create in him the greatest possible likeness to themselves and to the god they honor. And so the desire of the divinely inspired lover is something beautiful and blessed for the beloved — and the initiation I&#x27;m describing, into the mysteries of true love, is a genuine blessing, if the beloved allows himself to be won over.</p>
 <p>Now, here&#x27;s how the beloved is captured.</p>
@@ -4782,7 +4841,10 @@ Telling all passersby that Midas sleeps below.&quot;</p>
 <p>Is there anything else? I think that prayer is enough for me.</p>
 <p><b>Phaedrus</b>: Pray the same for me too. After all, friends should share everything.</p>
 <p><b>Socrates</b>: Let&#x27;s go.</p>
+</section>
+<section class="part" aria-labelledby="the-republic">
 <h2 id="the-republic" class="center">The Republic</h2>
+<section aria-labelledby="republic-book-i">
 <h2 id="republic-book-i">Republic — Book I</h2>
 <p>I went down to the Piraeus yesterday with Glaucon, Ariston&#x27;s son. I wanted to offer my prayers to the goddess, and I was also curious to see the festival — it was the first time they&#x27;d held it. The procession put on by the locals was impressive, but the Thracian contingent was every bit as beautiful, maybe even more so. After we&#x27;d finished our prayers and taken in the spectacle, we turned to head back toward the city.</p>
 <p>That&#x27;s when Polemarchus, Cephalus&#x27; son, spotted us from a distance as we were setting off. He sent his servant running after us. The servant grabbed my cloak from behind and said, &quot;Polemarchus wants you to wait.&quot;</p>
@@ -5282,6 +5344,8 @@ Telling all passersby that Midas sleeps below.&quot;</p>
 <p>&quot;Then, my blessed Thrasymachus, injustice can never be more profitable than justice.&quot;</p>
 <p>&quot;Let this be your entertainment at the festival, Socrates,&quot; he said.</p>
 <p>&quot;And I have you to thank for it,&quot; I replied, &quot;now that you&#x27;ve stopped snarling at me and become so pleasant. But I haven&#x27;t been well entertained, and that&#x27;s my own fault, not yours. I&#x27;ve been like a glutton at a banquet, snatching a taste of every dish as it comes out without properly enjoying any of them. Before we settled what justice actually is, I abandoned that question and rushed into whether justice is a virtue or a vice. Then when a new question came up — whether injustice is more profitable than justice — I couldn&#x27;t resist chasing that one too. The result of this whole discussion is that I know nothing. Because as long as I don&#x27;t know what justice is, I can hardly know whether it&#x27;s a virtue or not, and I certainly can&#x27;t know whether the just person is happy or unhappy.</p>
+</section>
+<section aria-labelledby="republic-book-ii">
 <h2 id="republic-book-ii">Republic — Book II</h2>
 <p>I thought those words ended the discussion. But as it turned out, they were only the beginning. Glaucon — who&#x27;s always the most combative person in any room — wasn&#x27;t satisfied with Thrasymachus backing down. He wanted the fight to continue. So he turned to me.</p>
 <p>&quot;Socrates, do you actually want to convince us that being just is always better than being unjust? Or do you just want to seem like you&#x27;ve convinced us?&quot;</p>
@@ -5658,6 +5722,8 @@ walk up and down cities in all sorts of forms.&#x27;</p>
 <p>&quot;&#x27;celebrating her fair offspring whose days were to be long and free from sickness. And when he had spoken of my lot as blessed by heaven in all things, he raised a song of triumph and cheered my soul. And I thought that the word of Phoebus, being divine and full of prophecy, could not fail. And now the very god who sang that song, the one who was present at the feast, the one who said all this — he is the one who has killed my son.&#x27;</p>
 <p>&quot;When a poet says things like that about the gods, we&#x27;ll be angry. He won&#x27;t get a chorus. We won&#x27;t allow teachers to use such stories in educating the young. Our guardians must be true worshippers of the gods and, as far as humanly possible, like the gods themselves.&quot;</p>
 <p>&quot;I agree completely,&quot; he said. &quot;I accept these principles, and I&#x27;ll treat them as law.&quot;</p>
+</section>
+<section aria-labelledby="republic-book-iii">
 <h2 id="republic-book-iii">Republic — Book III</h2>
 <p>So those are our principles of theology, I said. Some stories should be told and others shouldn&#x27;t — at least not to our young people, if we want them to honor the gods, respect their parents, and value friendship with each other.</p>
 <p>Yes, he said. And I think our principles are right.</p>
@@ -6156,6 +6222,8 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>But the moment they acquire private houses, land, or money, they&#x27;ll stop being guardians and start being landlords and farmers. Instead of allies of their fellow citizens, they&#x27;ll become enemies and tyrants. Hating and being hated, plotting and being plotted against, they&#x27;ll spend their lives in far greater fear of enemies within than enemies without. And at that point, ruin — for themselves and for the state — will be just around the corner.</p>
 <p>For all these reasons, then — isn&#x27;t this how our state should be organized? Aren&#x27;t these the right regulations for our guardians regarding their housing and everything else?</p>
 <p>Yes, said Glaucon.</p>
+</section>
+<section aria-labelledby="republic-book-iv">
 <h2 id="republic-book-iv">Republic — Book IV</h2>
 <p>At this point Adeimantus jumped in with an objection. &quot;How would you respond, Socrates,&quot; he said, &quot;if someone said you&#x27;re making these guardians miserable? And that it&#x27;s their own fault, too? The city technically belongs to them, but they get nothing out of it. Other people buy land, build big beautiful houses, furnish them with the finest things, make their own private sacrifices to the gods, entertain guests — and on top of that, as you just mentioned, they have gold and silver and everything else that&#x27;s supposed to make a person happy. But your guardians? They&#x27;re basically soldiers quartered in the city, standing watch like hired mercenaries.&quot;</p>
 <p>Yes, I said — and you can add that they only get their meals, with no salary on top. They can&#x27;t even take a vacation if they wanted to. They&#x27;ve got no money for a mistress or any other luxury that most people consider the whole point of being alive. You could pile on plenty of other charges like that.</p>
@@ -6609,6 +6677,8 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>&quot;True,&quot; he replied.</p>
 <p>But I consider these two names to describe a single form. Because whether the rulers are one or many, as long as they&#x27;ve been trained the way we&#x27;ve described, the fundamental laws of the city will be maintained.</p>
 <p>&quot;That&#x27;s true,&quot; he replied.</p>
+</section>
+<section aria-labelledby="republic-book-v">
 <h2 id="republic-book-v">Republic — Book V</h2>
 <p>So that&#x27;s the kind of city-state that&#x27;s good and true, and the good and true person is cut from the same cloth. If this model is right, then every other form of government is wrong. The corruption shows up in four distinct varieties, affecting both the structure of the state and the character of individual souls.</p>
 <p>What are they? Glaucon asked.</p>
@@ -7162,6 +7232,8 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>Then are we wrong to call the first group lovers of opinion rather than lovers of wisdom? Will they be angry with us for describing them this way?</p>
 <p>I&#x27;ll tell them they shouldn&#x27;t be angry. No one should be angry at what&#x27;s true.</p>
 <p>But those who love the truth in each and every thing — those are the ones who deserve to be called lovers of wisdom. Philosophers.</p>
+</section>
+<section aria-labelledby="republic-book-vi">
 <h2 id="republic-book-vi">Republic — Book VI</h2>
 <p>And so, Glaucon, after a long and winding road, the true philosophers and the fakes have finally come into view.</p>
 <p>I don&#x27;t think there was a shorter route, he said.</p>
@@ -7559,6 +7631,8 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>I understand you, he replied — though not perfectly, because what you&#x27;re describing sounds like an enormous undertaking. But I take your point: the knowledge that dialectic provides, in the realm of pure being, is clearer than the knowledge produced by the mathematical sciences. Those sciences work from hypotheses, and while their objects are grasped by understanding rather than by the senses, because they start from assumptions instead of ascending to a first principle, the mathematicians don&#x27;t exercise the highest kind of reason — even though their objects would be fully knowable if a first principle were added. I think you&#x27;d call this mathematical kind of thinking &quot;understanding&quot; rather than &quot;reason&quot; — something between mere opinion and the highest knowledge.</p>
 <p>You&#x27;ve grasped my meaning perfectly, I said. And now, corresponding to these four sections of the line, assign four states of mind. Reason for the highest. Understanding for the second. Belief for the third. And perception of images — conjecture — for the lowest. Arrange them in order, and recognize that each has a degree of clarity proportional to the degree of truth possessed by its objects.</p>
 <p>I understand, he replied. I agree, and I accept your arrangement.</p>
+</section>
+<section aria-labelledby="republic-book-vii">
 <h2 id="republic-book-vii">Republic — Book VII</h2>
 <p>And now, I said, let me paint you a picture of what it means to be enlightened — and what it means to be in the dark.</p>
 <p>Imagine human beings living in an underground cave. The cave has a long entrance open to the light, stretching the full length of the cavern. The people have been there since childhood, with their legs and necks chained so they can&#x27;t move. They can only look straight ahead. The chains prevent them from turning their heads.</p>
@@ -7939,6 +8013,8 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>Yes, he said. That would be the best way. And I think, Socrates, that you&#x27;ve given an excellent account of how such a constitution might actually come into being — if it ever does.</p>
 <p>Then we&#x27;ve said enough about the perfect city, I said, and about the kind of person who embodies it. It&#x27;s not hard to see what that person would look like.</p>
 <p>Not hard at all, he replied. And I agree with you — nothing more needs to be said.</p>
+</section>
+<section aria-labelledby="republic-book-viii">
 <h2 id="republic-book-viii">Republic — Book VIII</h2>
 <p>And so, Glaucon, we&#x27;ve arrived at the conclusion that in the ideal state, wives and children are to be shared in common. Education, warfare, peacetime pursuits — all shared. And the best philosophers and the bravest warriors are to be their kings.</p>
 <p>That, Glaucon replied, has been agreed.</p>
@@ -8378,6 +8454,8 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>True, he said.</p>
 <p>Well then, I said, can&#x27;t we fairly say that we&#x27;ve given a thorough enough account of how tyranny arises from democracy, and what tyranny looks like once it&#x27;s arrived?</p>
 <p>Yes, he said, quite thorough enough.</p>
+</section>
+<section aria-labelledby="republic-book-ix">
 <h2 id="republic-book-ix">Republic — Book IX</h2>
 <p>Last of all comes the tyrannical man. We still need to ask: how does he develop out of the democratic man? And how does he live — happily or miserably?</p>
 <p>Yes, said Adeimantus, he&#x27;s the only one left.</p>
@@ -8784,6 +8862,8 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>I understand, he said. You mean the city we&#x27;ve been building in our argument, the one that exists only in ideas. I don&#x27;t believe it exists anywhere on earth.</p>
 <p>But perhaps, I replied, there&#x27;s a pattern of it laid up in heaven, which anyone who wants to can look at — and looking at it, set his own house in order. Whether it actually exists somewhere, or ever will exist, doesn&#x27;t really matter. He&#x27;ll live by the principles of that city and no other.</p>
 <p>I think that&#x27;s right, he said.</p>
+</section>
+<section aria-labelledby="republic-book-x">
 <h2 id="republic-book-x">Republic — Book X</h2>
 <p>Of all the many excellent features in our ideal state, there&#x27;s none I&#x27;m happier about — now that I think it over — than our rule about poetry.</p>
 <p>Which rule? he asked.</p>
@@ -9125,6 +9205,8 @@ Endure, my heart — you&#x27;ve endured far worse than this!&quot;</p>
 <p>And so, Glaucon, the tale was saved. It didn&#x27;t perish. And it can save us too — if we listen to it. If we hold fast to the upward path and pursue justice with wisdom, always, we&#x27;ll cross the River of Forgetfulness safely and keep our souls undefiled.</p>
 <p>Here is my counsel: hold to the belief that the soul is immortal and capable of enduring every kind of good and every kind of evil. Let us always choose the upward way. Let us pursue justice and wisdom with all our hearts. Then we&#x27;ll be at peace with each other and with the gods — both while we remain here and when, like victors at the games who parade to collect their prizes, we receive our reward.</p>
 <p>It will be well with us — in this life and in the thousand-year journey we&#x27;ve described.</p>
+</section>
+<section aria-labelledby="ion">
 <h2 id="ion">Ion</h2>
 <pre class="outline">Persons of the dialogue:
   Socrates
@@ -9324,6 +9406,8 @@ ancient Greek literary world.</p>
 <p>So which would you rather be called, Ion: dishonest or inspired?</p>
 <p><b>Ion</b>: There&#x27;s a huge difference between those two, Socrates. Inspired is far nobler.</p>
 <p><b>Socrates</b>: Then let&#x27;s go with the nobler option, Ion. When it comes to your brilliance about Homer, you are a man not of skill, but of divine inspiration.</p>
+</section>
+<section aria-labelledby="laches">
 <h2 id="laches">Laches</h2>
 <pre class="outline">Persons of the dialogue:
   Lysimachus, son of Aristides
@@ -9623,6 +9707,8 @@ Yes, father, that&#x27;s him.</p>
 <p>Let&#x27;s forget what people might say. Let the education of these young men be our own education too.</p>
 <p><b>Lysimachus</b>: I like your proposal, Socrates. And since I&#x27;m the oldest, I&#x27;m also the most eager to go back to school alongside the boys. Here&#x27;s what I ask: come to my house tomorrow at dawn, and we&#x27;ll discuss this further. But for now, let&#x27;s end here.</p>
 <p><b>Socrates</b>: I&#x27;ll come to you tomorrow, Lysimachus, as you suggest — God willing.</p>
+</section>
+<section aria-labelledby="lysis">
 <h2 id="lysis">Lysis</h2>
 <pre class="outline">Persons of the dialogue:
   Socrates, who is the narrator
@@ -10020,6 +10106,8 @@ Yes, father, that&#x27;s him.</p>
 <p>&quot;Then what&#x27;s left? What can we possibly say? I feel like one of those lawyers summing up for the jury: if the beloved is not a friend, and the lover is not a friend, and like is not a friend of like, and unlike is not a friend of unlike, and the good is not a friend, and the akin is not a friend — and whatever else we&#x27;ve gone through, because there were so many I can&#x27;t even keep track — if none of these are friends, then I&#x27;m at a total loss.&quot;</p>
 <p>I was on the verge of turning to one of the older people there, hoping for some help. But suddenly we were interrupted. The tutors of Lysis and Menexenus descended on us like some kind of evil apparition, brothers in tow, and told the boys to come home — it was getting late. At first we tried to shoo them away, the bystanders and I. But they wouldn&#x27;t budge. They just kept shouting in their rough foreign accents and getting more and more irritated and calling for the boys. They seemed to have had a bit too much to drink at the festival, which made them hard to deal with. So we finally gave in and broke up the gathering.</p>
 <p>But as they were leaving, I managed to say a few words to the boys: &quot;Well, Lysis and Menexenus, we&#x27;ve made ourselves pretty ridiculous today — you two boys, and me, an old boy who&#x27;d love to count himself one of you. The bystanders are going to walk away saying: these people call themselves friends, but they couldn&#x27;t even figure out what a friend is.&quot;</p>
+</section>
+<section aria-labelledby="charmides">
 <h2 id="charmides">Charmides</h2>
 <h4>Or, On Temperance</h4>
 <pre class="outline">Persons of the dialogue:
@@ -10403,6 +10491,8 @@ Yes, father, that&#x27;s him.</p>
 <p>&quot;The time for thinking is past,&quot; I said. &quot;Once you&#x27;ve made up your mind and turned to force, you&#x27;re irresistible.&quot;</p>
 <p>&quot;Then don&#x27;t resist me,&quot; he said.</p>
 <p>&quot;I won&#x27;t resist you,&quot; I replied.</p>
+</section>
+<section aria-labelledby="euthydemus-part-1">
 <h2 id="euthydemus-part-1">Euthydemus (Part 1)</h2>
 <pre class="outline">Persons of the dialogue:
   Socrates, who narrates the whole thing to Crito
@@ -10755,6 +10845,8 @@ Yes, father, that&#x27;s him.</p>
 <p><b>Crito</b>: I would.</p>
 <p><b>Socrates</b>: And what about your own art, farming — if it had supreme authority over its subordinate arts, what does it produce? Doesn&#x27;t it supply us with the fruits of the earth?</p>
 <p><b>Crito</b>: Yes.</p>
+</section>
+<section aria-labelledby="euthydemus-part-2">
 <h2 id="euthydemus-part-2">Euthydemus (Part 2)</h2>
 <p><b>Socrates</b>: And what does the kingly art produce when it holds supreme power? Maybe you&#x27;re not ready with an answer?</p>
 <p><b>Crito</b>: I&#x27;m certainly not, Socrates.</p>
@@ -11061,6 +11153,8 @@ Yes, father, that&#x27;s him.</p>
 <p><b>Socrates</b>: But would you, on that account, avoid all these pursuits yourself and keep your son from them?</p>
 <p><b>Crito</b>: That wouldn&#x27;t be reasonable, Socrates.</p>
 <p><b>Socrates</b>: Then be reasonable, Crito. Don&#x27;t worry about whether the teachers of philosophy are good or bad. Think about philosophy herself. Examine her carefully and honestly. If she turns out to be worthless, then steer everyone away from her — not just your sons. But if she is what I believe she is, then follow her and serve her, you and your whole household, and be of good cheer.</p>
+</section>
+<section aria-labelledby="cratylus-part-1">
 <h2 id="cratylus-part-1">Cratylus (Part 1)</h2>
 <pre class="outline">Persons of the dialogue:
   Socrates
@@ -11548,6 +11642,8 @@ Sure, if you&#x27;d like.</p>
 <p><b>Hermogenes</b>: That&#x27;s a pretty shabby etymology.</p>
 <p><b>Socrates</b>: Yes, my friend, but you have to remember that the original names have been buried and disguised over time. People stuck on and stripped off letters for the sake of euphony, twisting and decorating them in every possible way. Time has played its part too. Take the word &quot;katoptron&quot; (mirror) — why is the rho in there? Someone who cared nothing for truth but only for how the mouth feels must have added it. These additions pile up until eventually no human being can figure out the original meaning. Another example: the word &quot;sphinx&quot; — which should properly be &quot;phix,&quot; but someone added the sigma.</p>
 <p><b>Hermogenes</b>: That&#x27;s quite true, Socrates.</p>
+</section>
+<section aria-labelledby="cratylus-part-2">
 <h2 id="cratylus-part-2">Cratylus (Part 2)</h2>
 <p><b>Socrates</b>: And yet, if you&#x27;re allowed to add and remove whatever letters you want, names would be far too easy to make, and any name could be adapted to fit any object.</p>
 <p><b>Hermogenes</b>: True.</p>
@@ -11932,6 +12028,8 @@ Sure, if you&#x27;d like.</p>
 <p><b>Cratylus</b>: I&#x27;ll do as you say. But I can assure you, Socrates, that I&#x27;ve already been thinking about this for a long time. And after a great deal of reflection and effort, I lean toward Heraclitus.</p>
 <p><b>Socrates</b>: Well then, another day when you come back, you can teach me. But for now, go ahead to the country, as you&#x27;re planning. And Hermogenes here will see you on your way.</p>
 <p><b>Cratylus</b>: Very good, Socrates. But I hope you&#x27;ll keep thinking about these things yourself.</p>
+</section>
+<section aria-labelledby="theaetetus-part-1">
 <h2 id="theaetetus-part-1">Theaetetus (Part 1)</h2>
 <pre class="outline">Persons of the dialogue:
   Socrates
@@ -12409,6 +12507,8 @@ Sure, if you&#x27;d like.</p>
 <p><b>Socrates</b>: Of course he did, my friend. Nobody would have paid him those enormous fees for conversation if he&#x27;d actually convinced his customers that no one — not even a prophet — could judge what will be, and will seem to be, any better than they could judge for themselves.</p>
 <p><b>Theodorus</b>: Nobody at all.</p>
 <p><b>Socrates</b>: And lawmaking, and the question of what&#x27;s beneficial, are entirely about the future — and everyone will admit that cities, when they pass laws, must often miss what would benefit them most.</p>
+</section>
+<section aria-labelledby="theaetetus-part-2">
 <h2 id="theaetetus-part-2">Theaetetus (Part 2)</h2>
 <p><b>Theodorus</b>: Quite true.</p>
 <p><b>Socrates</b>: Then we have a fair argument against your master: he has to admit that one person is wiser than another, and that the wiser person is a measure. As for me — the one who knows nothing — I&#x27;m under no obligation to accept the honor that Protagoras&#x27; defender was just trying to force on me, like it or not: the honor of being a measure of anything.</p>
@@ -12985,6 +13085,8 @@ Sure, if you&#x27;d like.</p>
 <p><b>Theaetetus</b>: It absolutely does.</p>
 <p><b>Socrates</b>: Then here is what we&#x27;ve gained. If you ever try to conceive again, Theaetetus, and you succeed, what you carry will be the better for today&#x27;s examination. And if you stay empty, you&#x27;ll be easier on the people around you — gentler, and humble enough not to think you know what you don&#x27;t know. That much my art can do; no more. I know none of the things that other men know — the great and admired men of today and yesterday. But this midwife&#x27;s work my mother and I received from God: she delivered women, and I deliver young men — young men who are noble and fair.</p>
 <p>And now I have an appointment at the Porch of the King, to answer the indictment Meletus has filed against me. But tomorrow morning, Theodorus, let&#x27;s meet here again.</p>
+</section>
+<section aria-labelledby="parmenides-part-1">
 <h2 id="parmenides-part-1">Parmenides (Part 1)</h2>
 <pre class="outline">Persons of the dialogue:
   Cephalus (narrator)
@@ -13629,6 +13731,8 @@ Sure, if you&#x27;d like.</p>
 <p>&quot;That follows.&quot;</p>
 <p>&quot;So it would touch both itself and the others.&quot;</p>
 <p>&quot;It would.&quot;</p>
+</section>
+<section aria-labelledby="parmenides-part-2">
 <h2 id="parmenides-part-2">Parmenides (Part 2)</h2>
 <p>&quot;But consider a new point. For something to touch something else, mustn&#x27;t it be right next to it — occupying the adjacent position?&quot;</p>
 <p>&quot;It must.&quot;</p>
@@ -14233,6 +14337,8 @@ Sure, if you&#x27;d like.</p>
 <p>&quot;We may indeed.&quot;</p>
 <p>&quot;Then let this much be said. And let us further affirm what seems to be the truth: whether the One is or is not, the One and the others, in relation to themselves and to one another — all of them, in every way — both are and are not, and both appear to be and appear not to be.&quot;</p>
 <p>&quot;Most true.&quot;</p>
+</section>
+<section aria-labelledby="sophist-part-1">
 <h2 id="sophist-part-1">Sophist (Part 1)</h2>
 <pre class="outline">Persons of the dialogue:
   Theodorus
@@ -14881,6 +14987,8 @@ neither on this side nor on that&quot; —</p>
 <p><b>Theaetetus</b>: True.</p>
 <p><b>Stranger</b>: And once again, &quot;the all&quot; becomes more than one, because being and the whole will each have their own separate nature.</p>
 <p><b>Theaetetus</b>: Yes.</p>
+</section>
+<section aria-labelledby="sophist-part-2">
 <h2 id="sophist-part-2">Sophist (Part 2)</h2>
 <p><b>Stranger</b>: But if the whole doesn&#x27;t exist at all, then all the same difficulties remain — plus a new one. Because besides having no being, being could never have come into being.</p>
 <p><b>Theaetetus</b>: Why not?</p>
@@ -15430,6 +15538,8 @@ neither on this side nor on that&quot; —</p>
 <p><b>Theaetetus</b>: Absolutely.</p>
 <p><b>Stranger</b>: Here, then, is the pedigree of his art: he belongs to the conscious, dissembling section of the art of producing self-contradiction. He&#x27;s an imitator of appearances — separated out from the fantastic branch, which itself is a branch of image-making, which is part of creation. And his creation is human, not divine — the juggling of words. Anyone who says the real sophist is of this blood and lineage will be speaking the absolute truth.</p>
 <p><b>Theaetetus</b>: Without a doubt.</p>
+</section>
+<section aria-labelledby="statesman-part-1">
 <h2 id="statesman-part-1">Statesman (Part 1)</h2>
 <pre class="outline">Persons of the dialogue:
   Theodorus
@@ -15930,6 +16040,8 @@ neither on this side nor on that&quot; —</p>
 <p><b>Young Socrates</b>: What was the point?</p>
 <p><b>Stranger</b>: I wanted to head off any impression of tediousness we might have created — in the discussion of weaving, the myth of the reversed universe, and the earlier discussion about the Sophist and not-being. I was worried they might seem not just long but irrelevant. Everything I&#x27;ve just said was meant to prevent that kind of dissatisfaction going forward.</p>
 <p><b>Young Socrates</b>: Good. Please continue.</p>
+</section>
+<section aria-labelledby="statesman-part-2">
 <h2 id="statesman-part-2">Statesman (Part 2)</h2>
 <p><b>Stranger</b>: So here&#x27;s the principle I&#x27;d like both of us to remember: we should praise or blame the length or shortness of discussions not by comparing them with each other, but by measuring them against what&#x27;s fitting — using that part of measurement we said we should keep in mind.</p>
 <p><b>Young Socrates</b>: Very true.</p>
@@ -16337,6 +16449,8 @@ That&#x27;s quite likely too.</p>
 <p><b>Young Socrates</b>: Certainly not.</p>
 <p><b>Stranger</b>: And this, we declare, is the completion of the political web. The royal science draws courageous and temperate natures together into a single community through shared understanding and friendship, creating the noblest and finest of all the fabrics that political life can produce. It enfolds within this fabric all the other inhabitants of the city — free and slave alike — binding them together under one woven whole. It governs and presides over them, and in every way that happiness is granted to a city, it never fails to secure it.</p>
 <p><b>Young Socrates</b>: Your portrait of the king and statesman, Stranger, is every bit as perfect as your portrait of the Sophist.</p>
+</section>
+<section aria-labelledby="philebus-part-1">
 <h2 id="philebus-part-1">Philebus (Part 1)</h2>
 <h4>Part 1</h4>
 <pre class="outline">Persons of the dialogue:
@@ -16949,6 +17063,8 @@ That&#x27;s quite likely too.</p>
 <p><b>Protarchus</b>: No other way.</p>
 <p><b>Socrates</b>: And pleasures can&#x27;t really be called bad except insofar as they&#x27;re false.</p>
 <p><b>Protarchus</b>: No, Socrates, that&#x27;s the exact opposite of the truth! Nobody would call pleasures and pains bad because they&#x27;re false — they&#x27;re bad because of some other deep corruption they&#x27;re susceptible to.</p>
+</section>
+<section aria-labelledby="philebus-part-2">
 <h2 id="philebus-part-2">Philebus (Part 2)</h2>
 <p><b>Socrates</b>: Well, we&#x27;ll talk about pleasures that are corrupt and caused by corruption later, if we want to continue the inquiry. For now, I&#x27;d rather use a different argument to show that many false pleasures exist — or come into existence — in us, because that might help us reach our final verdict.</p>
 <p><b>Protarchus</b>: Fair enough — assuming such pleasures exist.</p>
@@ -17493,6 +17609,8 @@ That&#x27;s quite likely too.</p>
 <p><b>Protarchus</b>: And now, Socrates, we all declare that what you&#x27;ve been saying is the truth.</p>
 <p><b>Socrates</b>: So will you let me go?</p>
 <p><b>Protarchus</b>: There&#x27;s a little bit left, and I&#x27;ll remind you of it — because I&#x27;m sure you won&#x27;t be the first to walk away from an argument.</p>
+</section>
+<section aria-labelledby="timaeus-part-1">
 <h2 id="timaeus-part-1">Timaeus (Part 1)</h2>
 <pre class="outline">Persons of the dialogue:
   Socrates
@@ -17770,6 +17888,8 @@ Third: the model that the generated thing resembles (the eternal Form).</p>
 <p>But if a large number of the surrounding element attacks a small amount of a different kind, the small particles continue to dissolve until they either escape entirely to rejoin their own kind, or are completely assimilated by the conquering power and remain where they are, transformed from many into one.</p>
 <p>Because of all these transformations, everything is constantly shifting its position. The motion of the receptacle sorts each kind into its proper region. But elements that become unlike themselves and similar to something else are carried by the shaking into the region of whatever they&#x27;ve grown to resemble.</p>
 <p>These are the causes that produce all unmixed, primary bodies. As for the many subordinate species within each major kind, they arise from variations in the size of the two basic triangles. Each triangle type was created not in a single size but in many — some larger, some smaller — producing as many varieties as there are species within the four elements. When these different-sized particles combine with each other, the result is an endless variety — a variety that anyone seeking the probable truth about nature should carefully consider.</p>
+</section>
+<section aria-labelledby="timaeus-part-2">
 <h2 id="timaeus-part-2">Timaeus (Part 2)</h2>
 <h4>Timaeus (continuing)</h4>
 <p>Before going further, we need to get clear about rest and motion, or the discussion ahead will run into all kinds of trouble. I&#x27;ve said something about this already, but one more point needs making: motion never exists where everything is uniform. Think about it. Nothing can move without a mover, and there can&#x27;t be a mover unless there&#x27;s something to be moved. Motion requires both — and where both exist, things can&#x27;t be uniform. So let&#x27;s assign rest to uniformity and motion to non-uniformity. And what causes non-uniformity? Inequality — whose origin we&#x27;ve already described.</p>
@@ -17862,6 +17982,8 @@ Third: the model that the generated thing resembles (the eternal Form).</p>
 <p>Of the men who came into the world, those who were cowards, or who lived unjust lives, were — on the most plausible account — reborn as women in the second generation. And this is when the gods devised the desire for sexual union, constructing one living thing in us men and another in women. They made each as follows. There is a channel for drink, where liquid passes through the lungs, under the kidneys, and into the bladder, which collects it and expels it under air pressure. The gods bored a connection from this channel into the column of marrow that runs from the head down through the neck and along the spine — the marrow which, earlier in our account, we called &quot;seed.&quot; This seed, being alive and now given an outlet to breathe through, planted in that very outlet a living thirst for emission, and so produced our desire to procreate. That is why a man&#x27;s generative organs are unruly and self-willed, like an animal deaf to reason, and try, in their stinging frenzy of lust, to carry all before them. In women, for the same reasons, what is called the womb or matrix is a living creature inside them with a desire for childbearing. When it stays barren long past its proper season, it grows resentful and angry, and wandering all through the body, it blocks the channels of breath and prevents respiration, driving the woman to extremes of distress and causing all kinds of disease — until at last the desire of the man and the longing of the woman bring the two together. And then, as if plucking fruit from a tree, they sow into the womb, as into plowed soil, living things too small to see and still unformed; these take shape inside, are nourished until they&#x27;re matured, and are finally brought out into the light of day. So the generation of living creatures is accomplished.</p>
 <p>That is how women, and the female sex in general, came to be. As for birds: they were remade — sprouting feathers instead of hair — from harmless but light-headed men, men interested in the heavens but simple-minded enough to think that sight provides the surest proof of things above. Wild land animals came from men who never used philosophy at all and never once wondered about the nature of the heavens, because they had stopped using the circuits in the head and followed instead the parts of the soul that live in the chest. Thanks to these habits, their forelimbs and heads were dragged down to the earth by natural kinship and came to rest there, and their skulls were stretched into all sorts of elongated shapes, wherever each man&#x27;s circuits of soul had been crushed out of shape by idleness. This is why their kind was created four-footed and many-footed: God gave the more mindless ones more points of support, to bind them that much closer to the ground. And the most mindless of all, whose entire bodies trail along the earth, no longer had any need of feet, so the gods made them footless, to crawl on the ground. The fourth kind, the water animals, came from the stupidest and most ignorant men of all. The gods who were reshaping them judged these souls no longer even worthy of breathing pure air, because all their transgressions had fouled the soul within them. Instead of breathing the fine, clean air, they were pushed down to inhale the deep and murky water. From them came the tribe of fish and shellfish and every creature of the water, which have been assigned the most remote dwellings of all as punishment for the most extreme ignorance. These, then, are the laws by which all animals, then and now, pass into one another — transformed as they lose or gain intelligence and folly.</p>
 <p>And now we may say that our account of the universe has reached its end. For this world has received mortal and immortal living creatures and been filled full of them, and has itself become a visible living creature embracing all things visible — an image of the intelligible, a perceptible god, greatest and best, most beautiful and most perfect: this one heaven, the only one of its kind that is, or ever will be.</p>
+</section>
+<section aria-labelledby="critias">
 <h2 id="critias">Critias</h2>
 <pre class="outline">Persons of the dialogue:
   Critias
@@ -17935,7 +18057,11 @@ Easy for you to say, Hermocrates — you&#x27;re stationed last, with someone el
 <p>Thanks to this kind of thinking, and because the divine element in their nature endured, all the qualities I&#x27;ve described kept growing and flourishing in them.</p>
 <p>But when the divine portion began to fade — diluted again and again by the mortal element, as it was mixed in too heavily — and when human nature gained the upper hand, then they could no longer handle their good fortune. They behaved disgracefully. To anyone with eyes to see, they were visibly degraded, because they were losing the most precious of their gifts. But to those who couldn&#x27;t see what true happiness was, they appeared more glorious and blessed than ever, right at the moment when they were most consumed by greed and unjust power.</p>
 <p>Zeus, the god of gods, who rules according to law and has the ability to perceive such things, saw that this honorable race had fallen into a wretched state. Wanting to punish them so they might learn and improve, he gathered all the gods into their most sacred dwelling place — the one at the center of the universe, which looks out over all of creation. And when he had assembled them, he spoke as follows —</p>
+</section>
+</section>
+<section class="part" aria-labelledby="the-laws">
 <h2 id="the-laws" class="center">The Laws</h2>
+<section aria-labelledby="laws-book-i">
 <h2 id="laws-book-i">Laws — Book I</h2>
 <pre class="outline">Persons of the dialogue:
   An Athenian stranger
@@ -18223,6 +18349,8 @@ Easy for you to say, Hermocrates — you&#x27;re stationed last, with someone el
 <p><b>Cleinias</b>: That&#x27;s certainly true.</p>
 <p><b>Athenian</b>: And this knowledge of people&#x27;s natures and temperaments will be enormously useful in the art that manages human souls. And that art, if I&#x27;m not mistaken, is politics.</p>
 <p><b>Cleinias</b>: Exactly so.</p>
+</section>
+<section aria-labelledby="laws-book-ii">
 <h2 id="laws-book-ii">Laws — Book II</h2>
 <p><b>Athenian</b>: Now we need to consider whether understanding human nature is the only benefit we get from properly run drinking parties, or whether there are other advantages worth pursuing. The argument seems to suggest there are. But we&#x27;ll need to think carefully about how exactly we get these benefits, or we&#x27;ll end up confused.</p>
 <p><b>Cleinias</b>: Go on.</p>
@@ -18473,6 +18601,8 @@ Easy for you to say, Hermocrates — you&#x27;re stationed last, with someone el
 <p>There are countless other situations where people with good sense and good laws ought not to drink. If what I&#x27;m saying is right, no city would need very many vineyards. Their agriculture and way of life would follow an orderly plan, and grape cultivation would be the most limited and least common of their activities.</p>
 <p>And that, my friends, shall be the crowning statement of my discussion of wine — if you agree.</p>
 <p><b>Cleinias</b>: Excellent. We agree.</p>
+</section>
+<section aria-labelledby="laws-book-iii">
 <h2 id="laws-book-iii">Laws — Book III</h2>
 <p><b>Athenian</b>: Enough of all that. So what should we consider the origin of government? Isn&#x27;t the best way to approach this question to look at it from the perspective of how states progress and change — for better or worse — over time?</p>
 <p><b>Cleinias</b>: What do you mean?</p>
@@ -18789,6 +18919,8 @@ Easy for you to say, Hermocrates — you&#x27;re stationed last, with someone el
 <p><b>Cleinias</b>: Thank you.</p>
 <p><b>Megillus</b>: And you can count on me too.</p>
 <p><b>Cleinias</b>: Excellent. Now let&#x27;s begin building our state.</p>
+</section>
+<section aria-labelledby="laws-book-iv">
 <h2 id="laws-book-iv">Laws — Book IV</h2>
 <p><b>Athenian</b>: So now, what will this city actually look like? I&#x27;m not asking about its name — that&#x27;ll probably be determined by geography or the original settlement. Some river or spring, or maybe a local deity, will lend its name to the new colony. What I really want to know is: what&#x27;s the location? Is it on the coast, or inland?</p>
 <p><b>Cleinias</b>: I&#x27;d say, Stranger, that the city we&#x27;re talking about is roughly eighty stadia from the sea.</p>
@@ -19012,6 +19144,8 @@ Easy for you to say, Hermocrates — you&#x27;re stationed last, with someone el
 <p><b>Cleinias</b>: Exactly.</p>
 <p><b>Athenian</b>: Then what comes next is this: as speaker and listeners together, we&#x27;ll try to work out everything that relates to the souls, bodies, and possessions of the citizens — their occupations and their leisure activities. Through this process, as far as we&#x27;re able, we&#x27;ll arrive at the true nature of education. These, then, are the topics that follow in order.</p>
 <p><b>Cleinias</b>: Very good.</p>
+</section>
+<section aria-labelledby="laws-book-v">
 <h2 id="laws-book-v">Laws — Book V</h2>
 <p>Athenian
 Now listen, all of you who&#x27;ve just heard our laws about the gods and about honoring our ancestors. Of everything a person possesses, the soul is the most divine — second only to the gods themselves — and the most truly his own. In every person there are two parts: a better, ruling part, and a worse, subordinate part. The ruling part should always take priority. So I&#x27;m right when I say that after the gods — our masters — and the divine spirits who follow them, a person should honor his own soul above all else.</p>
@@ -19117,6 +19251,8 @@ Now listen, all of you who&#x27;ve just heard our laws about the gods and about 
 <p>And this is what you need to do, Cleinias. You need to give careful attention to these matters, since you&#x27;re about to found a new colony.</p>
 <p>Cleinias
 Your words are excellent, Athenian, and I&#x27;ll do as you say.</p>
+</section>
+<section aria-labelledby="laws-book-vi-part-1">
 <h2 id="laws-book-vi-part-1">Laws — Book VI (Part 1)</h2>
 <p><b>Athenian</b>: Now that we&#x27;ve finished the preliminaries, let&#x27;s move on to appointing the magistrates.</p>
 <p><b>Cleinias</b>: Sounds good.</p>
@@ -19228,6 +19364,8 @@ Your words are excellent, Athenian, and I&#x27;ll do as you say.</p>
 <p><b>Cleinias</b>: I know a bit about that from what I&#x27;ve heard, though I&#x27;ve never been much of an art expert myself.</p>
 <p><b>Athenian</b>: Doesn&#x27;t matter — we can still use the analogy. Imagine someone who set out to paint the most beautiful figure possible, hoping that instead of deteriorating, his work would only improve with time. Don&#x27;t you see that since he&#x27;s mortal, unless he leaves behind someone to carry on — someone who can fix whatever time damages, add what the artist left incomplete, and continue to refine and improve the painting — all his great labor will last only a short while?</p>
 <p><b>Cleinias</b>: True.</p>
+</section>
+<section aria-labelledby="laws-book-vi-part-2">
 <h2 id="laws-book-vi-part-2">Laws — Book VI (Part 2)</h2>
 <p><b>Athenian</b>: Isn&#x27;t the lawmaker&#x27;s situation similar? First, he wants his laws written down with all possible precision. Then, as time goes on and he actually tests his laws in practice, won&#x27;t he inevitably find gaps? Can you imagine any lawmaker so foolish as to not realize that he&#x27;ll necessarily leave things out — things that someone coming after him will have to fix, if the constitution and the order of government aren&#x27;t going to deteriorate?</p>
 <p><b>Cleinias</b>: Of course. That&#x27;s exactly the sort of thing anyone would want to get right.</p>
@@ -19350,6 +19488,8 @@ Your words are excellent, Athenian, and I&#x27;ll do as you say.</p>
 <p>If most people behave decently, these regulations can remain on the books but dormant. But if people start acting out, the laws shall be enforced.</p>
 <p>Every person&#x27;s first year of life marks their beginning. The date of birth should be recorded in the family&#x27;s ancestral temples. Each phratry — each civic brotherhood — should keep a whitewashed wall inscribed with the names of the successive archons used to reckon the years. Nearby, the names of living phratry members should be written, and erased when they die.</p>
 <p>The legal marriage age for women is sixteen to twenty. For men, thirty to thirty-five. A woman may hold office at forty; a man at thirty. Military service for men runs from twenty to sixty. For women, if military service is deemed necessary, the period of service extends from after they&#x27;ve finished bearing children up to the age of fifty. In all cases, what&#x27;s possible and appropriate for each individual should be taken into account.</p>
+</section>
+<section aria-labelledby="laws-book-vii-part-1">
 <h2 id="laws-book-vii-part-1">Laws — Book VII (Part 1)</h2>
 <p><b>Athenian</b>: Now, assuming children of both sexes have been born, it&#x27;s time for us to consider their upbringing and education. This isn&#x27;t something we can just ignore, and yet it might seem like a topic better suited to advice and guidance than to actual legislation. In private life, there are all sorts of little things — arising from individual pleasures, pains, and desires — that aren&#x27;t always obvious, and that run counter to what the lawgiver intends. They make citizens&#x27; characters varied and inconsistent, and that&#x27;s a real problem for a state. These matters are too small and frequent to make into criminal offenses — and if you did criminalize them, you&#x27;d actually undermine the written law, because people would get into the habit of constantly breaking the law over trivial things. The result is that you can&#x27;t legislate about them, but you can&#x27;t stay silent either. I realize I&#x27;m being a bit vague, but I&#x27;ll try to bring my meaning into the light. I&#x27;ll admit that what I&#x27;m saying right now lacks clarity.</p>
 <p><b>Cleinias</b>: Very true.</p>
@@ -19513,6 +19653,8 @@ Your words are excellent, Athenian, and I&#x27;ll do as you say.</p>
 <p><b>Megillus</b>: Fair enough.</p>
 <p><b>Athenian</b>: Then may I continue?</p>
 <p><b>Cleinias</b>: By all means.</p>
+</section>
+<section aria-labelledby="laws-book-vii-part-2">
 <h2 id="laws-book-vii-part-2">Laws — Book VII (Part 2)</h2>
 <p><b>Athenian</b>: What will daily life look like for people whose food and clothing are provided in moderation, who&#x27;ve handed the practice of crafts over to others, and whose farmland — worked by slaves who pay a share of the harvest — brings in enough for a moderate life? Imagine they have common dining halls, with the men eating separately, and nearby, common tables for their families — their daughters and mothers. Each day, male and female officers inspect the diners, observe the company&#x27;s behavior, and then dismiss them. Afterward, the presiding magistrate and attendants pour libations to whichever gods that day and night are sacred to, and then everyone goes home.</p>
 <p>Now, for people whose lives are arranged this way — is there really no important work left to be done? Should each of them just live like a fattened animal? That&#x27;s neither just nor honorable, and a person who lives like that won&#x27;t escape the consequences they deserve. The proper fate of an idle, fattened beast is to be torn apart by some other brave animal whose body has been hardened by courageous deeds and honest toil.</p>
@@ -19667,6 +19809,8 @@ Your words are excellent, Athenian, and I&#x27;ll do as you say.</p>
 <p>The praise and blame assigned to all these activities has now been declared. And let the law be as follows: no one shall prevent these sacred hunters from pursuing the chase wherever and however they wish. But the hunter who relies on nets and snares at night shall not be allowed to hunt anywhere. The bird-hunter in the mountains and wild places shall be permitted, but on cultivated land or consecrated wilderness, he shall not — and anyone who encounters him may stop him. As for the hunter in waters: he may hunt anywhere except in harbors, sacred streams, marshes, or pools — with the single requirement that he not pollute the water with poison.</p>
 <p>And now we can say that all our regulations about education are complete.</p>
 <p><b>Cleinias</b>: Very good.</p>
+</section>
+<section aria-labelledby="laws-book-viii">
 <h2 id="laws-book-viii">Laws — Book VIII</h2>
 <h4>Book 8</h4>
 <p><b>Athenian</b>: Next, with the help of the Delphian oracle, we need to establish festivals and make laws about them. We have to determine which sacrifices will be good for the city and to which gods they should be offered. But when and how often they should be offered — that&#x27;s something we can partly regulate ourselves.</p>
@@ -19845,6 +19989,8 @@ Your words are excellent, Athenian, and I&#x27;ll do as you say.</p>
 <p>Anyone who wishes may come and settle as a resident alien, on certain conditions. A foreigner may dwell in the land if he&#x27;s willing and able, but he must practice a trade and not stay longer than twenty years from the time he registers. He shall pay no residency tax, however small, except good behavior — no other tax for buying and selling either.</p>
 <p>When the twenty years are up, he shall take his property and leave. If during those years he happens to distinguish himself by doing the state some significant service, and he believes he can persuade the council and assembly to grant him an extension or allow him to stay permanently, let him go make his case. Whatever the city agrees to at his request shall take effect.</p>
 <p>For the children of resident aliens who are craftsmen: the clock starts at age fifteen. Let them stay for twenty years and then go where they please. Any who wish to remain may do so, if they can persuade the council and assembly. And if a resident alien departs, let him erase all the entries that were made in his name in the register kept by the magistrates.</p>
+</section>
+<section aria-labelledby="laws-book-ix">
 <h2 id="laws-book-ix">Laws — Book IX</h2>
 <p><b>Athenian</b>: The next natural step in our legislation, after everything we&#x27;ve covered, is lawsuits. We&#x27;ve already dealt with suits related to agriculture, but the more important ones are still ahead. Let me go through them by their standard categories, lay out the punishments for each offense, and specify who should judge them.</p>
 <p><b>Cleinias</b>: Very good.</p>
@@ -20060,6 +20206,8 @@ Your words are excellent, Athenian, and I&#x27;ll do as you say.</p>
 <p>If a slave strikes a free person — whether a foreigner or a citizen — anyone present must come to the rescue or pay the prescribed penalty. The bystanders shall bind the slave and deliver him to the injured party. The injured party shall put the slave in chains and inflict as many lashes as he pleases. But after punishing him, he must return the slave to his master, as the law requires. He may not keep the slave or deprive the owner of his property.</p>
 <p>Here&#x27;s the law: A slave who strikes a free person without orders from a magistrate shall be received in chains by his owner from the person he struck. The owner shall not release the slave until the slave has convinced the person he struck that he deserves to be released.</p>
 <p>The same laws shall apply in all relations between women and women, and between men and women.</p>
+</section>
+<section aria-labelledby="laws-book-x">
 <h2 id="laws-book-x">Laws — Book X</h2>
 <p><b>Athenian</b>: Now that we&#x27;ve covered assaults, let&#x27;s wrap up all acts of violence under one general law. It goes like this: No one shall take or carry off anything belonging to their neighbor, and no one shall use another person&#x27;s property without the owner&#x27;s consent. These offenses are the source of all the problems we&#x27;ve been discussing — they always have been, and they always will be. The worst of them are the excesses and outrages of the young, and they&#x27;re most serious when directed against religion — especially when they violate public and sacred rites, or the ceremonies shared by tribes and brotherhoods. The second most serious are offenses against private religious rites and burial places. Third in severity — leaving aside the cases we&#x27;ve already discussed — are insults against parents. Fourth are acts of violence against the authority of public officials, when someone takes, carries off, or uses their property without consent. And fifth is any violation of an individual citizen&#x27;s rights that calls for legal remedy. We need a single law covering all of these.</p>
 <p>Now, we&#x27;ve already laid out the punishments for sacrilege, whether committed through fraud or force. What we still need to determine is the punishment for those who speak or act with contempt toward the gods. But first, let&#x27;s give them a warning. It goes something like this:</p>
@@ -20361,6 +20509,8 @@ No one is better suited for it.</p>
 <p>There&#x27;s another consideration as well. The law keeps an eye on the impious, ensuring they don&#x27;t imagine they can propitiate the gods in secret — raising private temples, building private altars, offering private sacrifices and prayers — while actually multiplying their offenses infinitely. Such behavior brings divine punishment not only on themselves but on those who tolerate it, people who may be far better than they are. And in the end, the whole state reaps the harvest of their impiety — which, in a sense, it deserves.</p>
 <p>God will not blame the lawgiver for enacting the following: No one shall possess shrines of the gods in private houses. If someone is found maintaining them and performing any sacred rites not publicly authorized — assuming the offender isn&#x27;t also guilty of some other grave and impious crime — the person who discovers it shall inform the guardians of the law. The guardians shall order the offender to transfer their private rites to the public temples. If they refuse to comply, penalties shall be imposed until they do.</p>
 <p>And if someone is proven guilty of impiety — not the trivial kind that comes from youthful foolishness, but the serious kind that grown adults commit — whether they have sacrificed publicly or privately to unauthorized gods, their sacrifice is impure, and they shall be punished with death. Whether the act was committed in earnest or from childish frivolity shall be determined by the guardians of the law before they bring the case to court and prosecute the offender for impiety.</p>
+</section>
+<section aria-labelledby="laws-book-xi">
 <h2 id="laws-book-xi">Laws — Book XI</h2>
 <p><b>Athenian</b>: Next, we need to properly regulate how people deal with each other in everyday life. The principle is actually very simple: don&#x27;t touch what&#x27;s mine, and don&#x27;t take even the smallest thing that belongs to me without my permission. And may I be wise enough to treat others the way I&#x27;d want them to treat me. Let&#x27;s start with buried treasure. I should never pray to the gods to find treasure that someone else buried for themselves and their family — someone who wasn&#x27;t one of my own ancestors. And if I do stumble across such a treasure, I shouldn&#x27;t dig it up. I should never have dealings with those so-called fortune-tellers who advise me to take what was entrusted to the earth, because the gain to my wallet wouldn&#x27;t come close to matching what I&#x27;d lose in justice and virtue of soul. Justice in the soul is a better possession, in a better part of myself, than any amount of money in the bank. There&#x27;s an old saying that applies to many things — &quot;Don&#x27;t move what shouldn&#x27;t be moved&quot; — and this is one of them. And we&#x27;d do well to believe the common tradition that says people who do such things end up without descendants.</p>
 <p>Now, as for someone who doesn&#x27;t care about having children and couldn&#x27;t care less about the lawgiver — someone who digs up what neither he nor any ancestor of his buried, without the permission of the person who put it there, violating the simplest and most noble of laws, a rule laid down by no ordinary man: &quot;Don&#x27;t pick up what you didn&#x27;t put down&quot; — well, what this person deserves from the gods, only god knows. But here&#x27;s what I&#x27;d have happen in practice: the first person who sees him should report him to the wardens of the city, if it happened in the city; to the wardens of the agora, if it happened in the marketplace; or to the wardens of the country and their commanders, if it happened in the countryside. Once the report is filed, the city shall send to Delphi, and whatever the oracle says about the money and the person who took it, the city shall carry out. If the informer is a free person, he&#x27;ll earn the honor of having done the right thing. If he&#x27;s a free person who fails to report it, he&#x27;ll earn the dishonor of having done the wrong thing. If the informer is a slave, the state shall free him and pay his master the purchase price. But if a slave knows and doesn&#x27;t report it, he&#x27;ll be punished with death.</p>
@@ -20500,6 +20650,8 @@ No one is better suited for it.</p>
 <p>If the practitioners obey, we&#x27;ll say nothing more. But for those who don&#x27;t, here&#x27;s what the law says:</p>
 <p>If anyone is thought to be perverting the power of justice in the judges&#x27; minds — bringing frivolous lawsuits or engaging in dishonest advocacy — any citizen may indict him for malpractice of law and dishonest advocacy before the court of select judges.</p>
 <p>If convicted, the court shall determine whether he acted out of love of money or out of pure combativeness. If it was combativeness, the court shall set a period during which he&#x27;s barred from filing or arguing any case. If it was love of money: a foreigner shall be banished from the country and never allowed to return, on pain of death. A citizen shall die — because he&#x27;s a person who loves money by any means. And likewise, if someone is convicted a second time for combativeness alone, the punishment is death.</p>
+</section>
+<section aria-labelledby="laws-book-xii">
 <h2 id="laws-book-xii">Laws — Book XII</h2>
 <pre class="outline">Persons of the dialogue:
   Athenian
@@ -20726,6 +20878,10 @@ Dear Cleinias, after everything that&#x27;s been said, either we have to convinc
 <p><b>Cleinias</b>: You&#x27;re absolutely right, Megillus. I&#x27;ll do my best. And you have to help me.</p>
 <p>Megillus
 I will.</p>
+</section>
+</section>
+</article>
+</main>
 
 </body>
 </html>
