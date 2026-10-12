@@ -278,6 +278,49 @@ def runhead_text(s, n=38):
     return s[:n].rsplit(" ", 1)[0].rstrip(",;:") + "…"
 
 
+PAGE_REF = re.compile(r"\b(?:[Pp]ages?|pp?\.)\s*\d+")
+
+
+def resolve_page_refs(book, text):
+    """A book that cites its own pages ("see page 73", "1. (page 11)") cites
+    the SOURCE edition's pages, which mean nothing in a new pagination. Each
+    such reference is listed in books/{book}/print_refs.tsv as
+
+        <the citing text, exactly as the Typst has it><TAB><a phrase at the target>
+
+    and becomes this edition's page number: a label is planted before the
+    target phrase (which must occur exactly once) and the last number in the
+    citing text is replaced by the page that label lands on. An anchor of "-"
+    marks a reference to ANOTHER book's pages, left as printed.
+
+    ALWAYS CHECKED: any "page N" / "p. N" / "pp. N" left in the text that the
+    file does not account for stops the build, so a print edition can never
+    ship a cross-reference to a page of some other printing."""
+    f = paths.book_dir(book) / "print_refs.tsv"
+    keep = []
+    if f.exists():
+        for i, row in enumerate(l for l in f.read_text().splitlines() if l.strip() and not l.startswith("#")):
+            ref, anchor = row.split("\t")
+            if anchor == "-":
+                keep.append(ref)
+                continue
+            lab = f"<srcpage-{i}>"
+            if text.count(anchor) != 1:
+                sys.exit(f"print_refs.tsv: anchor occurs {text.count(anchor)} times, not once: {anchor!r}")
+            text = text.replace(anchor, f"#metadata(none){lab}{anchor}")
+            n = text.count(ref)
+            if not n:
+                sys.exit(f"print_refs.tsv: citing text not found: {ref!r}")
+            num = re.search(r"\d+(?!.*\d)", ref)
+            new = ref[:num.start()] + f"#context counter(page).at({lab}).first()" + ref[num.end():]
+            text = text.replace(ref, new)
+    left = [m.group(0) for m in PAGE_REF.finditer(text)
+            if not any(m.group(0) in k for k in keep)]
+    if left:
+        sys.exit(f"{book}: page references to another printing, not in print_refs.tsv: {left}")
+    return text
+
+
 # ------------------------------------------------------------ the book
 SKIP = ("titlepage", "imprint", "halftitlepage", "colophon", "uncopyright", "toc", "endnotes", "loi")
 
@@ -443,12 +486,14 @@ def build_typ(book, env, epub, workdir, inner, tail=0):
         if conv.fnotes:
             sys.exit(f"{h}: notes never cited in the text: {sorted(conv.fnotes, key=int)}")
     restored = env.get("EDITION", "").lower() == "restored"
+    SEP = "\n// ===== body =====\n"
+    intro_s, body_s = resolve_page_refs(book, "".join(intro) + SEP + "".join(body)).split(SEP)
     doc = TEMPLATE % dict(
         navy=NAVY, numerals=tstr(env.get("PRINT_NUMERALS", "old-style")), booktitle=tstr(env["ORIGINAL_WORK"]), author=tstr(env["AUTHOR"]),
         shorttitle=tstr(env.get("SHORT_TITLE") or re.split(r"[:;]| — ", env["ORIGINAL_WORK"])[0].strip()),
         retold=tstr("Restored edition" if restored else "Retold in contemporary English"),
         inner=inner, outer=OUTER, top=TOP, bottom=BOTTOM,
-        copyright=copyright_block(env), intro="".join(intro), body="".join(body),
+        copyright=copyright_block(env), intro=intro_s, body=body_s,
         tail="#pagebreak()\n#box()\n" * tail)
     return doc, conv.figures
 
