@@ -1,0 +1,107 @@
+RUNNING NOTES — EUCLID AND HIS MODERN RIVALS
+
+STATE (2026-08-07): prep complete and verified; translation BEGUN, one
+scene of fifteen files done.
+
+  chapters/            15 files, 54,254 words, from the 1885 scan
+  reference/           the Appendices as a crib (11,000 words)
+  site/images/         19 plates, ink on transparent, each placed once
+  modern_chapters/000  Act One, Scene One — DONE, ratio 0.99
+  modern_chapters/001.txt.partial   Act One, Scene Two — about a fifth
+                       done. Kept with the .partial suffix ON PURPOSE: a
+                       half-finished file under the ordinary name looks
+                       finished, and would pass into assembly as though
+                       it were.
+
+WHAT THE TRANSLATION PASS ACTUALLY INVOLVES, which is more than
+translating. Every paragraph has to be read against the OCR at the same
+time, and the residue is exactly the class no check can see:
+
+  - REAL-WORD OCR ERRORS. "lie" for "he", "Kerens" for "Here's", "AYe"
+    for "We", "hoik" for "both". A dictionary cannot see any of them.
+  - GEOMETRICAL LABELS, which repair.py deliberately refuses to touch
+    (see its guards). "For A Gil and EGB are equal because vertically
+    opposite ... therefore AGE is equal to GIID" has to be read back into
+    "For AGH and EGB are equal ... therefore AGH is equal to GHD", and
+    the only way to do that is to reconstruct the geometry: E above and F
+    below, the transversal cutting AB at G and CD at H, so AGH and EGB
+    are the vertically opposite pair.
+  - PROPOSITION NUMBERS, AND BOTH SCANS GET THEM WRONG IN DIFFERENT
+    PLACES. In one exchange the 1885 says "this proof of I. 39" and the
+    1879 says "I. 29"; the proposition concerns alternate angles and
+    parallels, so it is I. 29 and the 1885 is wrong. Six lines later the
+    1885 has "= 2 right angles" and the 1879 "= 3"; the angles of a
+    triangle are two right angles, so this time the 1879 is wrong. ONLY
+    THE MATHEMATICS SETTLES IT. repair.py refuses to touch a numeral for
+    exactly this reason -- it cannot know -- so every one is a question
+    for the reader.
+
+PACE, honestly. Scene One took a full pass at 1,046 words, including one
+cross-scan check to settle a single proof. The remaining 53,000 words are
+the same density.
+
+===========================================================================
+LOCKED AFTER FILES 000-002. Everything below is settled; do not re-decide.
+===========================================================================
+
+RUN check.py ON EVERY FILE. `python3 books/euclid-rivals/check.py NNN` -- ratio,
+marker parity, SPEAKER SEQUENCE, heading renderability, numeral residue.
+verify.py cannot do the middle two and they are where this book fails.
+
+THE SPEAKER SEQUENCE IS AN EXACT INVARIANT. chapters/ now carries every
+tag Carroll printed, in order, correctly attributed; the modern file's
+sequence must match it name for name. Files 000-002 do. If check.py
+reports a difference, the translation is wrong, not the source -- eight
+separate prep bugs were fixed to make that true (mangled tags, tags the
+scan never marked italic, tags buried mid-paragraph, tags with an empty
+body). Never "fix" a mismatch by adding or dropping a tag to make the
+count agree; find the speech.
+
+CONVENTIONS, all three checked mechanically:
+
+  ASIDES take Carroll's own form -- tag, period, then the parenthetical:
+      Minos. (thoughtfully) Well, if we had him in the Schools ...
+      Euclid. (preserves a disgusted silence)
+  NOT the modern playscript form "Minos (thoughtfully).", which breaks the
+  sequence check. Forty-odd of these remain, most of them Niemand's
+  evasions in Act Two -- and the manner is the comedy, so keep every one.
+
+  CONSECUTIVE SPEECHES BY ONE SPEAKER STAY TWO SPEECHES. Carroll prints
+  "Euc. ... / Euc. In the second place, ..." and a heading often stands
+  between them. Merging them into one speech with two paragraphs reads
+  better and fails the check; the tag is his, so keep it.
+
+  SECTION HEADINGS TAKE NO TERMINAL PERIOD AND ARE TITLE CASE:
+      § 5. Playfair's Axiom          NOT  § 5. Playfair's Axiom.
+      § 7. The Omission of Diagonals in Euclid II
+      Table II / Table III / Euclid's Axiom / Clavius's Axiom
+  ball/'s trap: assemble.is_subheading() rejects anything ending in
+  ".;:,--" and anything not majority-capitalised, so the period alone is
+  the difference between an <h4> and a paragraph shouted in capitals.
+  Fourteen headings in 001-002 were written wrong and fixed.
+
+  NEVER WRITE AN ALL-CAPS LINE. assemble.py reads one as a heading.
+
+MANIFEST TITLES ARE FIXED and prep asserts the eleven-section structure
+against the book's own ARGUMENT OF DRAMA. Head each file with the exact
+manifest title, e.g. "Act Two, Scene Six: Wilson, Pierce and Willock" and
+"(Part 2 of 3)". Act Four has no Scene: its title is just "Act Four".
+The printer's descriptive line under each Scene heading ("Treatment of
+Parallels by equidistances") is furniture and is dropped -- the scene's
+own opening exchange always states the method.
+
+PRINT-PAGE REFERENCES TO OTHER AUTHORS' BOOKS ARE KEPT as printed --
+"pointed out by Mr. Todhunter (see pp. 222, 241)". Dropping it is how the
+numeral check earned its keep in 001. References to THIS book's own pages
+go to word form.
+
+THE II. 4 PROOF (file 002) had to be rebuilt from the standard figure --
+the 1885 scan reduces it to "but ^Z= C6^, and (^Z^ CT". The square is
+ABED on AB (A bottom-left, B bottom-right, E top-right, D top-left), BD
+the diagonal, CF parallel to AD or BE cutting BD at G, HK parallel to AB
+or DE. Then CK is the square on CB, HF the square on AC, and AG, GE the
+complements. Any later reference to it must use these letters.
+
+CARROLL'S WORD COUNTS (128 for his proof, 145 for Wilson's, "seventeen
+words" longer) ARE KEPT AS PRINTED. They count the 1885 text, not the
+modernisation, and the joke is the difference. Do not recount them.

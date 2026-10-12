@@ -23,6 +23,7 @@ The checks divide into three kinds:
                WRONG BOOK, which is otherwise invisible: it reads
                perfectly, renders perfectly, and is about Herodotus.
 """
+import paths
 import re
 import sys
 from pathlib import Path
@@ -156,12 +157,12 @@ def check(book):
 def main():
     books = sys.argv[1:]
     if not books:
-        books = sorted(d.name for d in ROOT.iterdir()
+        books = sorted(d.name for d in paths.all_books()
                        if (d / "env").exists() and (d / "modern_chapters").exists())
     fails = 0
     missing = []
     for name in books:
-        problems = check(ROOT / name)
+        problems = check(paths.book_dir(name))
         if problems == ["no introduction.txt"]:
             missing.append(name)
             continue

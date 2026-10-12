@@ -26,6 +26,7 @@ middle and loses the title. A card that is already 1.91:1, with the whole
 cover on it, survives every platform uncropped. The full covers are also
 ~650 KB, which some previewers refuse.
 """
+import paths
 import html
 import re
 import subprocess
@@ -196,7 +197,7 @@ def make_share_cards():
     for src in sorted(src_dir.glob("*.jpg")):
         dest = out / src.name
         wanted.add(dest.name)
-        env_file = ROOT / src.stem / "env"
+        env_file = paths.book_dir(src.stem) / "env"
         newest = max(src.stat().st_mtime, Path(__file__).stat().st_mtime,
                      env_file.stat().st_mtime if env_file.exists() else 0)
         if dest.exists() and dest.stat().st_mtime >= newest:

@@ -44,6 +44,7 @@ text under 48 pages; barcode mandatory, 100% black on white, or a clear
 60/40/40/100; total ink no more than 240%; images >= 200ppi (300 better).
 The spine default below (pages x caliper) is an estimate for proofs only.
 """
+import paths
 import argparse, json, re, shutil, subprocess, sys, zipfile
 from pathlib import Path
 from lxml import etree
@@ -670,9 +671,9 @@ def main():
     ap.add_argument("--price", help="US list price for the barcode add-on, e.g. 14.99")
     ap.add_argument("--spine", type=float, help="spine width in inches from Ingram's cover template")
     a = ap.parse_args()
-    book = a.book
+    book = paths.book_dir(a.book).name
     env = {}
-    for line in (ROOT / book / "env").read_text().splitlines():
+    for line in (paths.book_dir(book) / "env").read_text().splitlines():
         if "=" in line and not line.lstrip().startswith("#"):
             k, v = line.split("=", 1)
             env[k.strip()] = v.split("  #")[0].strip()
@@ -681,7 +682,7 @@ def main():
     meta = json.load(open(ROOT / "ebook_meta.json"))[book]
     sys.path.insert(0, str(ROOT))
     import assemble
-    found = assemble.find_epub(ROOT / book, ROOT)
+    found = assemble.find_epub(paths.book_dir(book), ROOT)
     epub = (ROOT / "site" / "ebooks" / Path(found).name) if found else None
     if not epub or not epub.exists():
         raise SystemExit(f"no epub for {book}: run build_ebook.py first")

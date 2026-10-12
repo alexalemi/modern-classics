@@ -34,6 +34,7 @@ repair that reached no reader because only build_feeds.py knew the
 published filename. The only per-book text stored below is the blurb,
 which exists nowhere else.
 """
+import paths
 import html
 import re
 import sys
@@ -215,7 +216,7 @@ those captions are the author&rsquo;s and stand as printed.</p>
 
 
 def entry(d, title, author, date, page, epub, blurb, companion=False):
-    read = build_index.read_time(ROOT / d, "chapters" if companion else "modern_chapters")
+    read = build_index.read_time(paths.book_dir(d), "chapters" if companion else "modern_chapters")
     key, tab = build_index.first_year(date)
     bits = [f'{html.escape(author)} ({html.escape(build_index.dashes(date))})']
     if companion:
@@ -247,7 +248,7 @@ def plate_count(d):
 
 def books():
     """(kind, book_dir, env) for every restored edition, from env alone."""
-    for d in sorted(ROOT.iterdir()):
+    for d in paths.all_books():
         envp = d / "env"
         if not envp.is_file():
             continue

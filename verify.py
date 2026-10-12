@@ -22,6 +22,7 @@ Checks (exit code is nonzero if any fail):
      translation do not inflate the prose ratio.
 """
 
+import paths
 import argparse
 import json
 import re
@@ -64,7 +65,7 @@ def main():
     ap.add_argument("--max-ratio", type=float, default=1.6)
     args = ap.parse_args()
 
-    book = Path(args.book_dir)
+    book = paths.book_dir(args.book_dir)
     chapters = book / "chapters"
     modern = book / "modern_chapters"
     failures = []

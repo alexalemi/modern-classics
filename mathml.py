@@ -16,6 +16,7 @@ MATH is the one pattern both renderers use to find a formula in text. It
 runs BEFORE emphasis, because LaTeX is full of underscores and asterisks
 that assemble.EMPH would otherwise read as italics.
 """
+import paths
 import json
 import re
 import subprocess
@@ -100,7 +101,7 @@ def _alts():
     global _alt
     if _alt is None:
         _alt = {}
-        for f in sorted(Path(__file__).parent.glob("*/mathalt.json")):
+        for f in sorted(paths.BOOKS.glob("*/mathalt.json")):
             _alt.update(json.loads(f.read_text()))
     return _alt
 

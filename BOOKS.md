@@ -1,5 +1,9 @@
 # Books Completed — per-book notes
 
+PATHS: since 2026-10-12 every book directory lives under books/, so a
+path written below as `flatland/...` is now `books/flatland/...` (the
+command-line tools still accept the bare name).
+
 Moved verbatim from CLAUDE.md. One entry per book: source, ratio band, prep
 traps, voice, sensitive-content rulings, cover. Read the entry for any book
 you touch, and the entries for its nearest precedents before starting a new one.

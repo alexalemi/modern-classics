@@ -16,6 +16,7 @@ Publication dates come from git: the commit that first added the book's
 site page. Books are ordered newest-first in both feeds.
 """
 
+import paths
 import argparse
 import datetime
 import email.utils
@@ -60,7 +61,7 @@ def collect(base):
     books = []
     meta = json.loads((ROOT / "ebook_meta.json").read_text())
     for key, m in meta.items():
-        bdir = ROOT / m["dir"]
+        bdir = paths.book_dir(m["dir"])
         env = assemble.read_env(bdir / "env")
         page = env.get("PAGE", m["dir"]) + ".html"
         if not (ROOT / "site" / page).exists():

@@ -34,6 +34,7 @@ Nothing here is a hard gate — several checks are deliberately noisy in
 the direction of showing you something to look at. Exit status is 1 if
 anything was reported, so it can still fail a build.
 """
+import paths
 import argparse
 import collections
 import html as _html
@@ -241,7 +242,7 @@ def sweep(book, verbose=False):
     out = []
     note = []
 
-    page = assemble.read_env(ROOT / name / "env").get("PAGE", name)
+    page = assemble.read_env(paths.book_dir(name) / "env").get("PAGE", name)
     pages = [(SITE / f"{page}.html", False)]
     orig = SITE / f"{page}-original.html"
     if orig.exists():
@@ -391,9 +392,9 @@ def main():
     a = ap.parse_args()
 
     if a.books:
-        books = [ROOT / b.rstrip("/") for b in a.books]
+        books = [paths.book_dir(b.rstrip("/")) for b in a.books]
     else:
-        books = sorted(p for p in ROOT.iterdir()
+        books = sorted(p for p in paths.BOOKS.iterdir()
                        if (p / "manifest.json").exists()
                        or (p / "modern_chapters").exists())
 

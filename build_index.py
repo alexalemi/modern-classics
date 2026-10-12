@@ -19,6 +19,7 @@ as a timeline down each section. Stylesheet: site/site.css, shared with
 restored.html and about.html through render_card() and page_shell(). Covers:
 site/covers/thumb/, made by build_feeds.make_thumbs().
 """
+import paths
 import html
 import re
 import sys
@@ -282,7 +283,7 @@ def read_time(bdir, text_dir="modern_chapters"):
 
 def collect():
     books, errors = [], []
-    for envf in sorted(ROOT.glob("*/env")):
+    for envf in sorted(paths.BOOKS.glob("*/env")):
         env = assemble.read_env(envf)
         shelf = env.get("SHELF")
         if not shelf:

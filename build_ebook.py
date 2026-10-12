@@ -23,6 +23,7 @@ branding in place of Standard Ebooks trademarks.
 Requires: pipx-installed standardebooks toolset (`se` on PATH).
 """
 
+import paths
 import argparse
 import html
 import json
@@ -820,7 +821,7 @@ def main():
                     help="build the source text from chapters/ instead")
     args = ap.parse_args()
 
-    book = Path(args.book_dir)
+    book = paths.book_dir(args.book_dir)
     env = assemble.read_env(book / "env")
     # inline pictures (Byrne): the chapter files sit in text/, the images in
     # images/, so an inline picture is referenced as ../images/gID.svg

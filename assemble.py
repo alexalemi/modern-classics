@@ -49,6 +49,7 @@ Conventions read from the chapter files themselves:
 The page shell comes from site/template.html.
 """
 
+import paths
 import argparse
 import html
 import json
@@ -905,7 +906,7 @@ def main():
                     help="assemble chapters/ into site/<book_dir>-original.html")
     args = ap.parse_args()
 
-    book = Path(args.book_dir)
+    book = paths.book_dir(args.book_dir)
     root = Path(__file__).parent
 
     env = read_env(book / "env")

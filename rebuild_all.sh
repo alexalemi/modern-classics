@@ -13,7 +13,7 @@ books=$(python3 -c "import json;print('\n'.join(json.load(open('ebook_meta.json'
 one() {   # one book: its epub(s), then its page(s)
   b=$1; L=build/rebuild_all/$b.log
   { python3 build_ebook.py "$b" && echo "EPUB OK $b" || echo "EPUB FAIL $b"
-    if grep -q '^ORIGINAL_TEXT=yes' "$b/env" 2>/dev/null; then
+    if grep -q '^ORIGINAL_TEXT=yes' "books/$b/env" 2>/dev/null; then
       python3 build_ebook.py "$b" --original && echo "EPUB-ORIG OK $b" || echo "EPUB-ORIG FAIL $b"
       python3 assemble.py "$b" --original >/dev/null && echo "PAGE-ORIG OK $b" || echo "PAGE-ORIG FAIL $b"
     fi

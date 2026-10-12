@@ -18,6 +18,7 @@ Scores are per 1,000 words over the MIDDLE 60% of the text, which skips
 Gutenberg boilerplate, title pages, translators' introductions and
 indexes without having to recognise any of them.
 """
+import paths
 import pathlib
 import re
 import statistics
@@ -116,7 +117,7 @@ def measure(raw):
 
 
 def local(book):
-    d = pathlib.Path(book) / "chapters"
+    d = paths.book_dir(book) / "chapters"
     if not d.is_dir():
         return None
     return "\n\n".join(f.read_text(errors="replace")

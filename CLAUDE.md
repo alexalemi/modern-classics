@@ -17,7 +17,10 @@ Each book goes through these phases:
 
 - Obtain a plain text version of the book (standardebooks.org is the best source,
   Project Gutenberg is the secondary source)
-- Place the source text in a new directory: `{book}/`
+- Place the source text in a new directory: `books/{book}/`. Every book
+  lives under `books/` (moved there 2026-10-12); below, `{book}/...` is short
+  for `books/{book}/...`. The tools take a bare name (`python3 assemble.py
+  flatland`) and resolve it through `paths.book_dir()`.
 - Create a `{book}/env` file with metadata:
   ```
   ORIGINAL_WORK=Title of the Work
@@ -38,7 +41,7 @@ Each book goes through these phases:
   22 early books whose commits carry no trailer.
 - Split the source into chapter files with `splitter.py`:
   ```
-  python3 splitter.py {book}/source.txt --headings '^CHAPTER [IVXL]+\..*$'
+  python3 splitter.py books/{book}/source.txt --headings '^CHAPTER [IVXL]+\..*$'
   ```
   It strips the Gutenberg wrapper, auto-splits chapters over ~7k words into
   parts at paragraph boundaries (a translation agent must *output* as much
@@ -182,7 +185,7 @@ What to preserve:
 ## Directory Structure
 
 ```
-{book}/                    # One directory per book
+books/{book}/              # One directory per book
   env                      # Metadata (see Setup above)
   {source}.txt             # Original full text
   chapters/                # Split chapter files (000.txt, 001.txt, ...)
@@ -197,6 +200,10 @@ What to preserve:
 
 ## Tooling
 
+- `paths.py` — ROOT, BOOKS, `book_dir(name_or_path)` and `all_books()`: the
+  one place that knows books live in `books/`. A book is still NAMED by its
+  directory name everywhere else (ebook_meta "dir", covers, the epub uid,
+  which deliberately still reads `{REPO}/tree/main/{book}`).
 - `splitter.py` — source text → `chapters/` + `manifest.json` (heading-regex
   or legacy splits-file mode; Gutenberg stripping; oversize auto-split)
 - `verify.py` — mechanical completeness/consistency checks before assembly

@@ -19,6 +19,7 @@ for READING -- it is a list to look at, never a list to apply.
   replace/delete  the edition's wording differs from the print
   INSERT n>8      the print has a run of words the edition lacks
 """
+import paths
 import difflib
 import json
 import re
@@ -76,7 +77,7 @@ def opcodes(ew, sw, chunk=5000):
 
 
 def vote(book, id1, id2, start):
-    d = ROOT / book
+    d = paths.book_dir(book)
     text = ""
     for f in sorted((d / "chapters").glob("*.txt")):
         t = mathml.MATH.sub(" ", f.read_text())
@@ -131,7 +132,7 @@ def main(argv):
     book, ident = argv[1], argv[2]
     start = argv[argv.index("--start") + 1] if "--start" in argv else None
     show_all = "--all" in argv
-    d = ROOT / book
+    d = paths.book_dir(book)
     cache = d / "_src" / f"scan-{ident}-djvu.txt"
     if not cache.exists():
         url = f"https://archive.org/download/{ident}/{ident}_djvu.txt"
