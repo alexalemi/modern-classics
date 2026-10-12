@@ -305,7 +305,9 @@ def main():
     all_missing = []
     for i, (title, items) in enumerate(secs):
         if title == "Brief Bibliography":
-            items = [(k, t.replace(" | ", ". ", 1)) if k == "P" else (k, t) for k, t in items]
+            # the printed two columns (name | title) join with ". ", but a name
+            # that ends on an initial already has its stop: "Kleene, S. C." not "C.."
+            items = [(k, re.sub(r"\.? \| ", ". ", t, count=1)) if k == "P" else (k, t) for k, t in items]
         items, missing = place_notes(items, notes)
         all_missing += [(title, m) for m in missing]
         text = render(title, items, notes)

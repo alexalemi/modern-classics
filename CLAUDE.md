@@ -277,6 +277,13 @@ books/{book}/              # One directory per book
   off the source page images; "-" for another book's pages) and the build
   sets this edition's page number. Any unmapped "page N"/"p. N"/"pp. N"
   stops the build. Godel's Proof is the precedent.
+  READ report.txt's LAYOUT CHECKS AND LOOK AT EVERY SPREAD (proof/sheet-*)
+  before calling a print file done: folio parity (odd folios on rectos),
+  blank pages carrying marks, double folios, hyphens across a page turn,
+  hyphen ladders, 1-4-line pages, loose lines, stray markup. The checks are
+  the floor; the sheets catch what they cannot (a split table, a chapter
+  in the wrong place, front matter in the body). Gödel's Proof's first
+  proof had five of these and passed every original check.
 - `brand/` — the Emend Press logos (Emend Press publishes the Modern
   Classics series): `make_logo.py` outlines the type (Cormorant Garamond
   SemiBold + Montserrat Medium, fonts via `fetch_fonts.sh`) so the SVGs need
