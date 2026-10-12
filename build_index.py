@@ -340,8 +340,11 @@ def card(b):
 def render_card(page, thumb, tab, title, meta_html, blurb):
     """One book: cover plate, year tab, title, meta line (already HTML),
     blurb (plain text)."""
+    stem = thumb.rsplit(".", 1)[0]       # covers/thumb/<dir>, see build_feeds.make_thumbs
     plate = (f'<a class="plate" href="{page}" tabindex="-1" aria-hidden="true">'
-             f'<img src="{thumb}" alt="" width="150" height="225" loading="lazy"></a>')
+             f'<img src="{thumb}" srcset="{stem}-160.webp 160w, {stem}-240.webp 240w" '
+             f'sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" '
+             f'loading="lazy" decoding="async"></a>')
     return f'''  <li class="card">
     {plate}
     <div class="copy">
@@ -378,9 +381,9 @@ PAGE = '''<!DOCTYPE html>
 	{head}
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Yellowtail&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+	<link rel="preload" href="fonts/oswald-latin.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="fonts/yellowtail-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="fonts/libre-caslon-text-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="stylesheet" href="site.css">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
@@ -399,7 +402,7 @@ PAGE = '''<!DOCTYPE html>
 </svg>
 
 <header class="masthead">
-  <a class="imprint" href="about.html"><img src="brand/emend-wordmark.svg" alt="Emend Press"></a>
+  <a class="imprint" href="about.html"><img src="brand/emend-wordmark.svg" alt="Emend Press" width="774" height="283"></a>
   <h1>{h1}</h1>
   <p class="motto">{motto}</p>
   <nav>{nav}</nav>

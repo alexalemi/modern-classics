@@ -17,9 +17,9 @@
 	<meta name="twitter:card" content="summary_large_image">
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Yellowtail&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+	<link rel="preload" href="fonts/oswald-latin.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="fonts/yellowtail-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="fonts/libre-caslon-text-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="stylesheet" href="site.css">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
@@ -38,7 +38,7 @@
 </svg>
 
 <header class="masthead">
-  <a class="imprint" href="about.html"><img src="brand/emend-wordmark.svg" alt="Emend Press"></a>
+  <a class="imprint" href="about.html"><img src="brand/emend-wordmark.svg" alt="Emend Press" width="774" height="283"></a>
   <h1>Modern Classics</h1>
   <p class="motto">Classic texts, retold in contemporary English</p>
   <nav><a href="restored.html">Restored editions</a> &middot; <a href="about.html">About</a> &middot; Follow along: <a href="feed.xml">RSS</a> &middot; <a href="opds.atom">OPDS catalog</a> for e-readers</nav>
@@ -48,7 +48,7 @@
 <h2>Epic, Myth &amp; Tragedy</h2>
 <ul class="deck">
   <li class="card">
-    <a class="plate" href="odyssey.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/odyssey.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="odyssey.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/odyssey.jpg" srcset="covers/thumb/odyssey-160.webp 160w, covers/thumb/odyssey-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 700 BC</div>
       <h3><a href="odyssey.html">The Odyssey</a></h3>
@@ -57,7 +57,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="aeschylus.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/aeschylus.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="aeschylus.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/aeschylus.jpg" srcset="covers/thumb/aeschylus-160.webp 160w, covers/thumb/aeschylus-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">472 BC</div>
       <h3><a href="aeschylus.html">The Seven Tragedies</a></h3>
@@ -66,7 +66,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="sophocles.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/sophocles.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="sophocles.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/sophocles.jpg" srcset="covers/thumb/sophocles-160.webp 160w, covers/thumb/sophocles-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 442 BC</div>
       <h3><a href="sophocles.html">The Seven Tragedies</a></h3>
@@ -75,7 +75,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="euripides.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/euripides.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="euripides.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/euripides.jpg" srcset="covers/thumb/euripides-160.webp 160w, covers/thumb/euripides-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">438 BC</div>
       <h3><a href="euripides.html">The Nineteen Plays</a></h3>
@@ -84,7 +84,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="ovid.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/ovid.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="ovid.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/ovid.jpg" srcset="covers/thumb/ovid-160.webp 160w, covers/thumb/ovid-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">8 AD</div>
       <h3><a href="ovid.html">Metamorphoses</a></h3>
@@ -93,7 +93,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="nibelungenlied.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/nibelungenlied.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="nibelungenlied.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/nibelungenlied.jpg" srcset="covers/thumb/nibelungenlied-160.webp 160w, covers/thumb/nibelungenlied-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 1200</div>
       <h3><a href="nibelungenlied.html">The Nibelungenlied</a></h3>
@@ -102,7 +102,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="inferno.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/inferno.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="inferno.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/inferno.jpg" srcset="covers/thumb/inferno-160.webp 160w, covers/thumb/inferno-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 1308</div>
       <h3><a href="inferno.html">Inferno</a></h3>
@@ -111,7 +111,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="purgatorio.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/purgatorio.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="purgatorio.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/purgatorio.jpg" srcset="covers/thumb/purgatorio-160.webp 160w, covers/thumb/purgatorio-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 1308</div>
       <h3><a href="purgatorio.html">Purgatorio</a></h3>
@@ -120,7 +120,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="paradiso.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/paradiso.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="paradiso.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/paradiso.jpg" srcset="covers/thumb/paradiso-160.webp 160w, covers/thumb/paradiso-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 1308</div>
       <h3><a href="paradiso.html">Paradiso</a></h3>
@@ -129,7 +129,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="malory.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/malory.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="malory.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/malory.jpg" srcset="covers/thumb/malory-160.webp 160w, covers/thumb/malory-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1485</div>
       <h3><a href="malory.html">Le Morte d&#x27;Arthur</a></h3>
@@ -142,7 +142,7 @@
 <h2>Tales &amp; Novels</h2>
 <ul class="deck">
   <li class="card">
-    <a class="plate" href="true-history.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/true-history.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="true-history.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/true-history.jpg" srcset="covers/thumb/true-history-160.webp 160w, covers/thumb/true-history-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 175 AD</div>
       <h3><a href="true-history.html">True History</a></h3>
@@ -151,7 +151,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="nights.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/nights.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="nights.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/nights.jpg" srcset="covers/thumb/nights-160.webp 160w, covers/thumb/nights-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 800 AD</div>
       <h3><a href="nights.html">The Thousand Nights and a Night</a></h3>
@@ -160,7 +160,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="decameron.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/decameron.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="decameron.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/decameron.jpg" srcset="covers/thumb/decameron-160.webp 160w, covers/thumb/decameron-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1353</div>
       <h3><a href="decameron.html">The Decameron</a></h3>
@@ -169,7 +169,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="quixote.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/quixote.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="quixote.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/quixote.jpg" srcset="covers/thumb/quixote-160.webp 160w, covers/thumb/quixote-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1605</div>
       <h3><a href="quixote.html">Don Quixote</a></h3>
@@ -178,7 +178,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="princess-of-cleves.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/princess-of-cleves.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="princess-of-cleves.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/princess-of-cleves.jpg" srcset="covers/thumb/princess-of-cleves-160.webp 160w, covers/thumb/princess-of-cleves-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1662</div>
       <h3><a href="princess-of-cleves.html">The Princess of Cleves, with The Princess of Montpensier</a></h3>
@@ -187,7 +187,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="bunyan.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/bunyan.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="bunyan.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/bunyan.jpg" srcset="covers/thumb/bunyan-160.webp 160w, covers/thumb/bunyan-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1678</div>
       <h3><a href="bunyan.html">The Pilgrim&#x27;s Progress</a></h3>
@@ -196,7 +196,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="candide.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/candide.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="candide.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/candide.jpg" srcset="covers/thumb/candide-160.webp 160w, covers/thumb/candide-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1759</div>
       <h3><a href="candide.html">Candide, or Optimism</a></h3>
@@ -205,7 +205,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="grimm.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/grimm.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="grimm.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/grimm.jpg" srcset="covers/thumb/grimm-160.webp 160w, covers/thumb/grimm-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1812</div>
       <h3><a href="grimm.html">Grimm&#x27;s Household Tales</a></h3>
@@ -214,7 +214,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="journey-center-earth.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/journey-center-earth.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="journey-center-earth.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/journey-center-earth.jpg" srcset="covers/thumb/journey-center-earth-160.webp 160w, covers/thumb/journey-center-earth-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1864</div>
       <h3><a href="journey-center-earth.html">A Journey to the Center of the Earth</a></h3>
@@ -223,7 +223,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="twenty-thousand-leagues.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/twenty-thousand-leagues.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="twenty-thousand-leagues.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/twenty-thousand-leagues.jpg" srcset="covers/thumb/twenty-thousand-leagues-160.webp 160w, covers/thumb/twenty-thousand-leagues-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1870</div>
       <h3><a href="twenty-thousand-leagues.html">Twenty Thousand Leagues Under the Sea</a></h3>
@@ -232,7 +232,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="eighty-days.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/eighty-days.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="eighty-days.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/eighty-days.jpg" srcset="covers/thumb/eighty-days-160.webp 160w, covers/thumb/eighty-days-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1872</div>
       <h3><a href="eighty-days.html">Around the World in Eighty Days</a></h3>
@@ -241,7 +241,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="mysterious-island.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/mysterious-island.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="mysterious-island.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/mysterious-island.jpg" srcset="covers/thumb/mysterious-island-160.webp 160w, covers/thumb/mysterious-island-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1874</div>
       <h3><a href="mysterious-island.html">The Mysterious Island</a></h3>
@@ -250,7 +250,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="flatland.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/flatland.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="flatland.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/flatland.jpg" srcset="covers/thumb/flatland-160.webp 160w, covers/thumb/flatland-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1884</div>
       <h3><a href="flatland.html">Flatland: A Romance of Many Dimensions</a></h3>
@@ -263,7 +263,7 @@
 <h2>The Art of Living</h2>
 <ul class="deck">
   <li class="card">
-    <a class="plate" href="memorabilia.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/memorabilia.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="memorabilia.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/memorabilia.jpg" srcset="covers/thumb/memorabilia-160.webp 160w, covers/thumb/memorabilia-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 371 BC</div>
       <h3><a href="memorabilia.html">The Memorabilia</a></h3>
@@ -272,7 +272,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="ethics.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/ethics.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="ethics.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/ethics.jpg" srcset="covers/thumb/ethics-160.webp 160w, covers/thumb/ethics-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 340 BC</div>
       <h3><a href="ethics.html">Nicomachean Ethics</a></h3>
@@ -281,7 +281,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="theophrastus.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/theophrastus.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="theophrastus.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/theophrastus.jpg" srcset="covers/thumb/theophrastus-160.webp 160w, covers/thumb/theophrastus-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 319 BC</div>
       <h3><a href="theophrastus.html">Characters</a></h3>
@@ -290,7 +290,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="gita.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/gita.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="gita.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/gita.jpg" srcset="covers/thumb/gita-160.webp 160w, covers/thumb/gita-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 200 BC</div>
       <h3><a href="gita.html">The Bhagavad Gita</a></h3>
@@ -299,7 +299,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="tusculan.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/tusculan.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="tusculan.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/tusculan.jpg" srcset="covers/thumb/tusculan-160.webp 160w, covers/thumb/tusculan-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">45 BC</div>
       <h3><a href="tusculan.html">Tusculan Disputations</a></h3>
@@ -308,7 +308,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="de-officiis.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/de-officiis.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="de-officiis.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/de-officiis.jpg" srcset="covers/thumb/de-officiis-160.webp 160w, covers/thumb/de-officiis-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">44 BC</div>
       <h3><a href="de-officiis.html">On Duties</a></h3>
@@ -317,7 +317,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="seneca.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/seneca.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="seneca.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/seneca.jpg" srcset="covers/thumb/seneca-160.webp 160w, covers/thumb/seneca-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 65 AD</div>
       <h3><a href="seneca.html">Moral Letters to Lucilius</a></h3>
@@ -326,7 +326,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="epictetus.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/epictetus.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="epictetus.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/epictetus.jpg" srcset="covers/thumb/epictetus-160.webp 160w, covers/thumb/epictetus-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 108 AD</div>
       <h3><a href="epictetus.html">The Discourses</a></h3>
@@ -335,7 +335,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="enchiridion.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/enchiridion.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="enchiridion.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/enchiridion.jpg" srcset="covers/thumb/enchiridion-160.webp 160w, covers/thumb/enchiridion-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 125 AD</div>
       <h3><a href="enchiridion.html">The Enchiridion</a></h3>
@@ -344,7 +344,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="meditations.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/meditations.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="meditations.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/meditations.jpg" srcset="covers/thumb/meditations-160.webp 160w, covers/thumb/meditations-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 170 AD</div>
       <h3><a href="meditations.html">Meditations</a></h3>
@@ -353,7 +353,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="boethius.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/boethius.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="boethius.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/boethius.jpg" srcset="covers/thumb/boethius-160.webp 160w, covers/thumb/boethius-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">524 AD</div>
       <h3><a href="boethius.html">The Consolation of Philosophy</a></h3>
@@ -362,7 +362,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="hojoki.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/hojoki.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="hojoki.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/hojoki.jpg" srcset="covers/thumb/hojoki-160.webp 160w, covers/thumb/hojoki-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1212</div>
       <h3><a href="hojoki.html">An Account of My Hut</a></h3>
@@ -371,7 +371,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="dogen.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/dogen.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="dogen.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/dogen.jpg" srcset="covers/thumb/dogen-160.webp 160w, covers/thumb/dogen-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1227</div>
       <h3><a href="dogen.html">The Practice Instructions</a></h3>
@@ -380,7 +380,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="montaigne.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/montaigne.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="montaigne.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/montaigne.jpg" srcset="covers/thumb/montaigne-160.webp 160w, covers/thumb/montaigne-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1580</div>
       <h3><a href="montaigne.html">Selected Essays</a></h3>
@@ -389,7 +389,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="way-to-wealth.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/way-to-wealth.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="way-to-wealth.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/way-to-wealth.jpg" srcset="covers/thumb/way-to-wealth-160.webp 160w, covers/thumb/way-to-wealth-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1758</div>
       <h3><a href="way-to-wealth.html">The Way to Wealth</a></h3>
@@ -402,7 +402,7 @@
 <h2>Philosophy</h2>
 <ul class="deck">
   <li class="card">
-    <a class="plate" href="dialogues.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/dialogues.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="dialogues.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/dialogues.jpg" srcset="covers/thumb/dialogues-160.webp 160w, covers/thumb/dialogues-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">399 BC</div>
       <h3><a href="dialogues.html">Dialogues</a></h3>
@@ -411,7 +411,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="rhetoric.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/rhetoric.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="rhetoric.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/rhetoric.jpg" srcset="covers/thumb/rhetoric-160.webp 160w, covers/thumb/rhetoric-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 335 BC</div>
       <h3><a href="rhetoric.html">Rhetoric</a></h3>
@@ -420,7 +420,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="lucretius.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/lucretius.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="lucretius.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/lucretius.jpg" srcset="covers/thumb/lucretius-160.webp 160w, covers/thumb/lucretius-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 55 BC</div>
       <h3><a href="lucretius.html">On the Nature of Things</a></h3>
@@ -429,7 +429,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="augustine.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/augustine.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="augustine.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/augustine.jpg" srcset="covers/thumb/augustine-160.webp 160w, covers/thumb/augustine-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 400 AD</div>
       <h3><a href="augustine.html">Confessions</a></h3>
@@ -438,7 +438,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="hayy.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/hayy.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="hayy.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/hayy.jpg" srcset="covers/thumb/hayy-160.webp 160w, covers/thumb/hayy-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 1160</div>
       <h3><a href="hayy.html">Hayy ibn Yaqzan</a></h3>
@@ -447,7 +447,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="philosophical-works.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/descartes.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="philosophical-works.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/descartes.jpg" srcset="covers/thumb/descartes-160.webp 160w, covers/thumb/descartes-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1637</div>
       <h3><a href="philosophical-works.html">Philosophical Works</a></h3>
@@ -456,7 +456,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="spinoza.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/spinoza.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="spinoza.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/spinoza.jpg" srcset="covers/thumb/spinoza-160.webp 160w, covers/thumb/spinoza-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1677</div>
       <h3><a href="spinoza.html">Ethics</a></h3>
@@ -465,7 +465,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="hume.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/hume.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="hume.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/hume.jpg" srcset="covers/thumb/hume-160.webp 160w, covers/thumb/hume-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1748</div>
       <h3><a href="hume.html">An Enquiry Concerning Human Understanding</a></h3>
@@ -474,7 +474,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="zarathustra.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/zarathustra.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="zarathustra.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/zarathustra.jpg" srcset="covers/thumb/zarathustra-160.webp 160w, covers/thumb/zarathustra-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1883</div>
       <h3><a href="zarathustra.html">Thus Spoke Zarathustra</a></h3>
@@ -483,7 +483,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="genealogy.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/genealogy.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="genealogy.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/genealogy.jpg" srcset="covers/thumb/genealogy-160.webp 160w, covers/thumb/genealogy-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1887</div>
       <h3><a href="genealogy.html">On the Genealogy of Morals</a></h3>
@@ -496,7 +496,7 @@
 <h2>Politics, War &amp; Law</h2>
 <ul class="deck">
   <li class="card">
-    <a class="plate" href="sun-tzu.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/sun-tzu.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="sun-tzu.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/sun-tzu.jpg" srcset="covers/thumb/sun-tzu-160.webp 160w, covers/thumb/sun-tzu-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">5th c. BC</div>
       <h3><a href="sun-tzu.html">The Art of War</a></h3>
@@ -505,7 +505,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="utopia.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/utopia.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="utopia.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/utopia.jpg" srcset="covers/thumb/utopia-160.webp 160w, covers/thumb/utopia-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1516</div>
       <h3><a href="utopia.html">Utopia</a></h3>
@@ -514,7 +514,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="the-prince.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/the-prince.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="the-prince.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/the-prince.jpg" srcset="covers/thumb/the-prince-160.webp 160w, covers/thumb/the-prince-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1532</div>
       <h3><a href="the-prince.html">The Prince</a></h3>
@@ -523,7 +523,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="leviathan.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/leviathan.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="leviathan.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/leviathan.jpg" srcset="covers/thumb/leviathan-160.webp 160w, covers/thumb/leviathan-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1651</div>
       <h3><a href="leviathan.html">Leviathan</a></h3>
@@ -532,7 +532,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="two-treatises.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/two-treatises.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="two-treatises.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/two-treatises.jpg" srcset="covers/thumb/two-treatises-160.webp 160w, covers/thumb/two-treatises-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1689</div>
       <h3><a href="two-treatises.html">Two Treatises of Government</a></h3>
@@ -541,7 +541,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="catos-letters.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/catos-letters.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="catos-letters.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/catos-letters.jpg" srcset="covers/thumb/catos-letters-160.webp 160w, covers/thumb/catos-letters-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1720</div>
       <h3><a href="catos-letters.html">Cato&#x27;s Letters</a></h3>
@@ -550,7 +550,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="social-contract.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/social-contract.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="social-contract.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/social-contract.jpg" srcset="covers/thumb/social-contract-160.webp 160w, covers/thumb/social-contract-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1762</div>
       <h3><a href="social-contract.html">The Social Contract</a></h3>
@@ -559,7 +559,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="common-sense.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/common-sense.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="common-sense.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/common-sense.jpg" srcset="covers/thumb/common-sense-160.webp 160w, covers/thumb/common-sense-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1776</div>
       <h3><a href="common-sense.html">Common Sense</a></h3>
@@ -568,7 +568,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="federalist.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/federalist.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="federalist.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/federalist.jpg" srcset="covers/thumb/federalist-160.webp 160w, covers/thumb/federalist-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1787</div>
       <h3><a href="federalist.html">The Federalist Papers</a></h3>
@@ -577,7 +577,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="burke.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/burke.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="burke.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/burke.jpg" srcset="covers/thumb/burke-160.webp 160w, covers/thumb/burke-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1790</div>
       <h3><a href="burke.html">Reflections on the Revolution in France</a></h3>
@@ -586,7 +586,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="wollstonecraft.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/wollstonecraft.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="wollstonecraft.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/wollstonecraft.jpg" srcset="covers/thumb/wollstonecraft-160.webp 160w, covers/thumb/wollstonecraft-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1792</div>
       <h3><a href="wollstonecraft.html">A Vindication of the Rights of Woman</a></h3>
@@ -595,7 +595,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="democracy.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/democracy.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="democracy.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/democracy.jpg" srcset="covers/thumb/democracy-160.webp 160w, covers/thumb/democracy-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1835</div>
       <h3><a href="democracy.html">Democracy in America</a></h3>
@@ -604,7 +604,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="democracy2.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/democracy2.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="democracy2.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/democracy2.jpg" srcset="covers/thumb/democracy2-160.webp 160w, covers/thumb/democracy2-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1835</div>
       <h3><a href="democracy2.html">Democracy in America (From the French)</a></h3>
@@ -613,7 +613,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="mill.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/mill.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="mill.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/mill.jpg" srcset="covers/thumb/mill-160.webp 160w, covers/thumb/mill-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1859</div>
       <h3><a href="mill.html">On Liberty</a></h3>
@@ -622,7 +622,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="subjection.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/subjection.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="subjection.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/subjection.jpg" srcset="covers/thumb/subjection-160.webp 160w, covers/thumb/subjection-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1869</div>
       <h3><a href="subjection.html">The Subjection of Women</a></h3>
@@ -631,7 +631,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="common-law.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/common-law.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="common-law.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/common-law.jpg" srcset="covers/thumb/common-law-160.webp 160w, covers/thumb/common-law-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1881</div>
       <h3><a href="common-law.html">The Common Law</a></h3>
@@ -644,7 +644,7 @@
 <h2>Economics</h2>
 <ul class="deck">
   <li class="card">
-    <a class="plate" href="turgot.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/turgot.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="turgot.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/turgot.jpg" srcset="covers/thumb/turgot-160.webp 160w, covers/thumb/turgot-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1766</div>
       <h3><a href="turgot.html">Reflections on the Formation and Distribution of Wealth</a></h3>
@@ -653,7 +653,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="wealth-of-nations.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/wealth-of-nations.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="wealth-of-nations.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/wealth-of-nations.jpg" srcset="covers/thumb/wealth-of-nations-160.webp 160w, covers/thumb/wealth-of-nations-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1776</div>
       <h3><a href="wealth-of-nations.html">The Wealth of Nations</a></h3>
@@ -662,7 +662,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="population.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/malthus.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="population.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/malthus.jpg" srcset="covers/thumb/malthus-160.webp 160w, covers/thumb/malthus-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1798</div>
       <h3><a href="population.html">An Essay on the Principle of Population</a></h3>
@@ -671,7 +671,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="progress-and-poverty.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/progress-and-poverty.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="progress-and-poverty.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/progress-and-poverty.jpg" srcset="covers/thumb/progress-and-poverty-160.webp 160w, covers/thumb/progress-and-poverty-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1879</div>
       <h3><a href="progress-and-poverty.html">Progress and Poverty</a></h3>
@@ -684,7 +684,7 @@
 <h2>Histories &amp; Lives</h2>
 <ul class="deck">
   <li class="card">
-    <a class="plate" href="peloponnesian-war.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/peloponnesian-war.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="peloponnesian-war.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/peloponnesian-war.jpg" srcset="covers/thumb/peloponnesian-war-160.webp 160w, covers/thumb/peloponnesian-war-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 431 BC</div>
       <h3><a href="peloponnesian-war.html">History of the Peloponnesian War</a></h3>
@@ -693,7 +693,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="herodotus.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/herodotus.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="herodotus.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/herodotus.jpg" srcset="covers/thumb/herodotus-160.webp 160w, covers/thumb/herodotus-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 430 BC</div>
       <h3><a href="herodotus.html">The Histories</a></h3>
@@ -702,7 +702,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="gallic-war.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/gallic-war.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="gallic-war.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/gallic-war.jpg" srcset="covers/thumb/gallic-war-160.webp 160w, covers/thumb/gallic-war-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">50 BC</div>
       <h3><a href="gallic-war.html">Commentaries on the Gallic War</a></h3>
@@ -711,7 +711,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="roman-lives.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/roman-lives.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="roman-lives.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/roman-lives.jpg" srcset="covers/thumb/roman-lives-160.webp 160w, covers/thumb/roman-lives-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 100 AD</div>
       <h3><a href="roman-lives.html">Roman Lives</a></h3>
@@ -720,7 +720,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="kenzeiki.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/kenzeiki.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="kenzeiki.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/kenzeiki.jpg" srcset="covers/thumb/kenzeiki-160.webp 160w, covers/thumb/kenzeiki-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 1470</div>
       <h3><a href="kenzeiki.html">The Illustrated Life of Dōgen</a></h3>
@@ -729,7 +729,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="cellini.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/cellini.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="cellini.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/cellini.jpg" srcset="covers/thumb/cellini-160.webp 160w, covers/thumb/cellini-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1558</div>
       <h3><a href="cellini.html">The Life of Benvenuto Cellini</a></h3>
@@ -738,7 +738,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="autobiography.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/autobiography.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="autobiography.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/autobiography.jpg" srcset="covers/thumb/autobiography-160.webp 160w, covers/thumb/autobiography-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1771</div>
       <h3><a href="autobiography.html">The Autobiography of Benjamin Franklin</a></h3>
@@ -747,7 +747,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="boltzmann.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/boltzmann.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="boltzmann.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/boltzmann.jpg" srcset="covers/thumb/boltzmann-160.webp 160w, covers/thumb/boltzmann-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1905</div>
       <h3><a href="boltzmann.html">A German Professor&#x27;s Journey into Eldorado</a></h3>
@@ -760,7 +760,7 @@
 <h2>Science</h2>
 <ul class="deck">
   <li class="card">
-    <a class="plate" href="galileo.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/galileo.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="galileo.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/galileo.jpg" srcset="covers/thumb/galileo-160.webp 160w, covers/thumb/galileo-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1632</div>
       <h3><a href="galileo.html">Dialogue Concerning the Two Chief World Systems</a></h3>
@@ -769,7 +769,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="fontenelle.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/fontenelle.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="fontenelle.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/fontenelle.jpg" srcset="covers/thumb/fontenelle-160.webp 160w, covers/thumb/fontenelle-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1686</div>
       <h3><a href="fontenelle.html">Conversations on the Plurality of Worlds</a></h3>
@@ -778,7 +778,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="euler.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/euler.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="euler.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/euler.jpg" srcset="covers/thumb/euler-160.webp 160w, covers/thumb/euler-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1768</div>
       <h3><a href="euler.html">Letters to a German Princess</a></h3>
@@ -787,7 +787,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="origin-of-species.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/origin-of-species.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="origin-of-species.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/origin-of-species.jpg" srcset="covers/thumb/origin-of-species-160.webp 160w, covers/thumb/origin-of-species-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1859</div>
       <h3><a href="origin-of-species.html">On the Origin of Species</a></h3>
@@ -796,7 +796,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="forces.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/forces.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="forces.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/forces.jpg" srcset="covers/thumb/forces-160.webp 160w, covers/thumb/forces-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1860</div>
       <h3><a href="forces.html">On the Various Forces of Nature</a></h3>
@@ -805,7 +805,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="candle.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/candle.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="candle.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/candle.jpg" srcset="covers/thumb/candle-160.webp 160w, covers/thumb/candle-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1861</div>
       <h3><a href="candle.html">The Chemical History of a Candle</a></h3>
@@ -814,7 +814,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="tyndall.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/tyndall.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="tyndall.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/tyndall.jpg" srcset="covers/thumb/tyndall-160.webp 160w, covers/thumb/tyndall-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1867</div>
       <h3><a href="tyndall.html">Sound</a></h3>
@@ -823,7 +823,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="ball.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/ball.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="ball.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/ball.jpg" srcset="covers/thumb/ball-160.webp 160w, covers/thumb/ball-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1889</div>
       <h3><a href="ball.html">Star-land</a></h3>
@@ -832,7 +832,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="soap-bubbles.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/soap-bubbles.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="soap-bubbles.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/soap-bubbles.jpg" srcset="covers/thumb/soap-bubbles-160.webp 160w, covers/thumb/soap-bubbles-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1890</div>
       <h3><a href="soap-bubbles.html">Soap Bubbles and the Forces Which Mould Them</a></h3>
@@ -841,7 +841,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="thompson.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/thompson.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="thompson.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/thompson.jpg" srcset="covers/thumb/thompson-160.webp 160w, covers/thumb/thompson-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1897</div>
       <h3><a href="thompson.html">Light Visible and Invisible</a></h3>
@@ -850,7 +850,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="fleming.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/fleming.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="fleming.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/fleming.jpg" srcset="covers/thumb/fleming-160.webp 160w, covers/thumb/fleming-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1902</div>
       <h3><a href="fleming.html">Waves and Ripples in Water, Air, and Aether</a></h3>
@@ -863,7 +863,7 @@
 <h2>Mathematics &amp; Logic</h2>
 <ul class="deck">
   <li class="card">
-    <a class="plate" href="euclid-rivals.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/euclid-rivals.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="euclid-rivals.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/euclid-rivals.jpg" srcset="covers/thumb/euclid-rivals-160.webp 160w, covers/thumb/euclid-rivals-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1879</div>
       <h3><a href="euclid-rivals.html">Euclid and His Modern Rivals</a></h3>
@@ -872,7 +872,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="tangled-tale.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/tangled-tale.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="tangled-tale.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/tangled-tale.jpg" srcset="covers/thumb/tangled-tale-160.webp 160w, covers/thumb/tangled-tale-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1885</div>
       <h3><a href="tangled-tale.html">A Tangled Tale</a></h3>
@@ -881,7 +881,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="pillow-problems.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/pillow-problems.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="pillow-problems.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/pillow-problems.jpg" srcset="covers/thumb/pillow-problems-160.webp 160w, covers/thumb/pillow-problems-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1893</div>
       <h3><a href="pillow-problems.html">Pillow Problems</a></h3>
@@ -890,7 +890,7 @@
     </div>
   </li>
   <li class="card">
-    <a class="plate" href="symbolic-logic.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/symbolic-logic.jpg" alt="" width="150" height="225" loading="lazy"></a>
+    <a class="plate" href="symbolic-logic.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/symbolic-logic.jpg" srcset="covers/thumb/symbolic-logic-160.webp 160w, covers/thumb/symbolic-logic-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1896</div>
       <h3><a href="symbolic-logic.html">Symbolic Logic</a></h3>

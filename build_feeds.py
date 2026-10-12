@@ -97,7 +97,11 @@ def copy_covers(books):
             b["cover"] = None
 
 
-THUMB_SIZE = (300, 450)   # 2x a 150px-wide card image
+THUMB_SIZE = (300, 450)   # the OPDS thumbnail, and the cards' fallback src
+# The index cards show covers 110px wide (80px on phones), so they load WebP
+# at the widths a 2x-3x screen needs instead of the 300px JPEG: a median of
+# 5 KB (160px) or 11 KB (240px) against 25 KB.
+CARD_WIDTHS = (160, 240)
 
 
 def make_thumbs():
@@ -114,14 +118,18 @@ def make_thumbs():
     wanted = set()
     for src in sorted(src_dir.glob("*.jpg")):
         dest = out / src.name
-        wanted.add(dest.name)
-        if dest.exists() and dest.stat().st_mtime >= src.stat().st_mtime:
+        smalls = [out / f"{src.stem}-{w}.webp" for w in CARD_WIDTHS]
+        wanted.update(d.name for d in [dest, *smalls])
+        if all(d.exists() and d.stat().st_mtime >= src.stat().st_mtime
+               for d in [dest, *smalls]):
             continue
         with Image.open(src) as im:
             im = im.convert("RGB")
+            for w, small in zip(CARD_WIDTHS, smalls):
+                im.resize((w, w * 3 // 2), Image.LANCZOS).save(small, "WEBP", quality=78, method=6)
             im.thumbnail(THUMB_SIZE, Image.LANCZOS)
             im.save(dest, "JPEG", quality=80, optimize=True, progressive=True)
-    for stale in out.glob("*.jpg"):
+    for stale in [*out.glob("*.jpg"), *out.glob("*.webp")]:
         if stale.name not in wanted:
             stale.unlink()
 
