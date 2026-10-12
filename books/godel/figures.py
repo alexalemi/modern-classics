@@ -1,6 +1,9 @@
 """The three figures of Gödel's Proof, DRAWN AFRESH for this edition.
 
-    python3 books/godel/figures.py      -> site/images/godel/fig{aa,ab,ac}.png
+    python3 books/godel/figures.py          -> site/images/godel/fig{aa,ab,ac}.png
+    python3 books/godel/figures.py --print  -> build/print_images/godel/ (grayscale,
+                                               ~900 ppi at the print measure; build_print.py
+                                               uses these in place of the epub's)
 
 The book's acknowledgments say several of its diagrams were reproduced from
 the June 1956 Scientific American, whose copyright was renewed in 1984, so
@@ -10,13 +13,17 @@ sphere for Fig. 2, and the Pappus configuration and its dual for Fig. 3,
 with every point computed. Drawn at 3x and reduced, for clean lines.
 """
 import math
+import sys
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
 HERE = Path(__file__).parent
 OUT = HERE.parent.parent / "site/images/godel"
-S = 3                                   # supersampling
+PRINT = "--print" in sys.argv
+S = 6 if PRINT else 3                   # supersampling (print: kept at full size)
+if PRINT:
+    OUT = HERE.parent.parent / "build/print_images/godel"
 INK = (25, 25, 25)
 FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf"
 FONT_I = "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Italic.ttf"
@@ -49,7 +56,10 @@ def label(d, p, text, size=17, italic=False, dx=0, dy=0):
 def save(im, name):
     OUT.mkdir(parents=True, exist_ok=True)
     w, h = im.size
-    im.resize((w // S, h // S), Image.LANCZOS).save(OUT / name, optimize=True)
+    if PRINT:       # line art for press: no reduction, one gray channel
+        im.convert("L").save(OUT / name, optimize=True, dpi=(600, 600))
+    else:
+        im.resize((w // S, h // S), Image.LANCZOS).save(OUT / name, optimize=True)
 
 
 # ---------------------------------------------------------------- Fig. 1
