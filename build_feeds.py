@@ -5,8 +5,11 @@
 Writes:
   site/feed.xml    RSS 2.0 — one item per book, newest first, with the
                    book page as the link and the epub as the enclosure
-  site/opds.xml    OPDS 1.2 acquisition feed — one entry per book with
-                   open-access epub links and cover images
+  site/opds.atom   OPDS 1.2 NAVIGATION root (opds.xml is a copy): Recently
+                   added, one feed per front-page shelf and restored topic,
+                   and All books A-Z in pages; the books themselves are in
+                   site/opds/*.atom with epub links, cover and thumbnail.
+                   Split because CrossPoint keeps only 62 entries per feed.
   site/covers/     cover JPEGs copied from build/ebooks/<slug>/images/
                    (skipped, with a warning, for books whose build tree
                    is missing)
@@ -22,6 +25,7 @@ import datetime
 import email.utils
 import html
 import json
+import re
 import shutil
 import subprocess
 from pathlib import Path
@@ -74,6 +78,9 @@ def collect(base):
             "title": env["ORIGINAL_WORK"], "author": m.get("author_wiki", ""),
             "author_name": env["AUTHOR"], "date": date or "2026-01-01T00:00:00+00:00",
             "description": m.get("description", env.get("SUBTITLE", "")),
+            "shelf": env.get("SHELF"), "topic": env.get("TOPIC"),
+            "restored": env.get("EDITION", "").lower() == "restored",
+            "year": env.get("DATE", ""),
         })
     books.sort(key=lambda b: b["date"], reverse=True)
     return books
@@ -171,7 +178,14 @@ def build_rss(books, base):
 """
 
 
-def build_opds(books, base, self_href):
+ACQ = "application/atom+xml;profile=opds-catalog;kind=acquisition"
+NAV = "application/atom+xml;profile=opds-catalog;kind=navigation"
+ROOT_HREF = "opds.atom"
+RECENT = 25          # books in "Recently added"
+PAGE_SIZE = 50       # books per page of "All books"; CrossPoint keeps 62
+
+
+def book_entries(books, base):
     entries = []
     for b in books:
         links = [f'      <link rel="alternate" type="text/html" href="{base}/{b["page"]}"/>']
@@ -187,8 +201,11 @@ def build_opds(books, base, self_href):
         if b.get("cover"):
             links.append(f'      <link rel="http://opds-spec.org/image" '
                          f'type="image/jpeg" href="{base}/{b["cover"]}"/>')
+            # the 300x450 card thumbnail (~25 KB), not the 1400x2100 cover:
+            # an e-reader lists a whole page of these over slow Wi-Fi
+            thumb = b["cover"].replace("covers/", "covers/thumb/", 1)
             links.append(f'      <link rel="http://opds-spec.org/image/thumbnail" '
-                         f'type="image/jpeg" href="{base}/{b["cover"]}"/>')
+                         f'type="image/jpeg" href="{base}/{thumb}"/>')
         author_uri = f"\n        <uri>{esc(b['author'])}</uri>" if b["author"] else ""
         entries.append(f"""  <entry>
     <title>{esc(b['title'])}</title>
@@ -201,19 +218,98 @@ def build_opds(books, base, self_href):
     <content type="text">{esc(b['description'])}</content>
 {chr(10).join(links)}
   </entry>""")
-    newest = books[0]["date"] if books else ""
+    return entries
+
+
+def feed(base, href, title, kind, entries, updated, extra_links=()):
+    """One OPDS feed document. Every feed links home (start) and to itself."""
+    links = [f'  <link rel="self" type="{kind}" href="{base}/{href}"/>',
+             f'  <link rel="start" type="{NAV}" href="{base}/{ROOT_HREF}"/>']
+    if href != ROOT_HREF:
+        links.append(f'  <link rel="up" type="{NAV}" href="{base}/{ROOT_HREF}"/>')
+    links += list(extra_links)
     return f"""<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"
       xmlns:opds="http://opds-spec.org/2010/catalog">
-  <id>{base}/opds.xml</id>
-  <title>Modern Classics</title>
-  <updated>{newest}</updated>
-  <author><name>Modern Classics</name><uri>{base}/</uri></author>
-  <link rel="self" type="application/atom+xml;profile=opds-catalog;kind=acquisition" href="{base}/{self_href}"/>
-  <link rel="start" type="application/atom+xml;profile=opds-catalog;kind=acquisition" href="{base}/{self_href}"/>
+  <id>{base}/{href}</id>
+  <title>{esc(title)}</title>
+  <updated>{updated}</updated>
+  <author><name>Emend Press</name><uri>{base}/</uri></author>
+{chr(10).join(links)}
 {chr(10).join(entries)}
 </feed>
 """
+
+
+def nav_entry(base, href, title, summary, updated, rel="subsection"):
+    return f"""  <entry>
+    <title>{esc(title)}</title>
+    <id>{base}/{href}</id>
+    <updated>{updated}</updated>
+    <content type="text">{esc(summary)}</content>
+    <link rel="{rel}" type="{ACQ}" href="{base}/{href}"/>
+  </entry>"""
+
+
+def build_opds(books, base):
+    """The OPDS catalog as {path: document}.
+
+    A NAVIGATION ROOT with one entry per category, because CrossPoint (the
+    X3's firmware) keeps only the first 62 entries of any one feed and the
+    flat catalog had 135. Categories are the front page's own: Recently
+    added, the nine retelling shelves (build_index.SHELVES), the restored
+    editions' topics (build_restored.TOPICS), and All books A-Z in pages of
+    PAGE_SIZE with next/previous links. The original-text companions stay
+    out, as before: they are the same books."""
+    import build_index, build_restored
+    from build_index import first_year
+    out = {}
+    newest = books[0]["date"] if books else ""
+    def by_year(bs):
+        return sorted(bs, key=lambda b: (first_year(b["year"])[0], b["date"]))
+    def latest(bs):
+        return max(b["date"] for b in bs)
+    def plural(n):
+        return f"{n} book" + ("" if n == 1 else "s")
+
+    cats = []   # (href, title, summary, books, rel)
+    recent = books[:RECENT]
+    cats.append(("opds/recent.atom", "Recently added",
+                 f"The {len(recent)} newest books, newest first.", recent,
+                 "http://opds-spec.org/sort/new"))
+    for shelf in build_index.SHELVES:
+        bs = by_year([b for b in books if b["shelf"] == shelf and not b["restored"]])
+        if bs:
+            cats.append((f"opds/{assemble.slugify(shelf)}.atom", shelf,
+                         f"Retellings: {plural(len(bs))}, oldest first.", bs, "subsection"))
+    for topic in build_restored.TOPICS:
+        bs = by_year([b for b in books if b["restored"] and b["topic"] == topic])
+        if bs:
+            cats.append((f"opds/restored-{assemble.slugify(topic)}.atom",
+                         f"Restored: {topic}",
+                         f"Restored editions, the author's own words: {plural(len(bs))}.",
+                         bs, "subsection"))
+    for href, title, _, bs, _ in cats:
+        out[href] = feed(base, href, title, ACQ, book_entries(bs, base), latest(bs))
+
+    # All books, A-Z, paged
+    az = sorted(books, key=lambda b: assemble.slugify(re.sub(r"^(the|a|an) ", "", b["title"].lower())))
+    pages = [az[i:i + PAGE_SIZE] for i in range(0, len(az), PAGE_SIZE)]
+    hrefs = [f"opds/all-{i + 1}.atom" for i in range(len(pages))]
+    for i, chunk in enumerate(pages):
+        extra = []
+        if i > 0:
+            extra.append(f'  <link rel="previous" type="{ACQ}" href="{base}/{hrefs[i - 1]}"/>')
+        if i + 1 < len(pages):
+            extra.append(f'  <link rel="next" type="{ACQ}" href="{base}/{hrefs[i + 1]}"/>')
+        out[hrefs[i]] = feed(base, hrefs[i], f"All books, A-Z ({i + 1} of {len(pages)})",
+                             ACQ, book_entries(chunk, base), latest(chunk), extra)
+
+    nav = [nav_entry(base, h, t, s, latest(bs), rel) for h, t, s, bs, rel in cats]
+    nav.append(nav_entry(base, hrefs[0], "All books, A-Z",
+                         f"Every book, {plural(len(books))}, in pages of {PAGE_SIZE}.", newest))
+    out[ROOT_HREF] = feed(base, ROOT_HREF, "Modern Classics", NAV, nav, newest)
+    return out
 
 
 def main():
@@ -235,9 +331,18 @@ def main():
     # "application/atom+xml", which is what the spec asks for, so
     # opds.atom is the URL to hand out. opds.xml stays for anyone
     # already subscribed to it.
-    (ROOT / "site" / "opds.xml").write_text(build_opds(books, base, "opds.atom"))
-    (ROOT / "site" / "opds.atom").write_text(build_opds(books, base, "opds.atom"))
-    print(f"wrote site/feed.xml, site/opds.xml and site/opds.atom "
+    # opds.xml is the same root document, for anyone subscribed to it.
+    catalog = build_opds(books, base)
+    out = ROOT / "site" / "opds"
+    out.mkdir(exist_ok=True)
+    for old_feed in out.glob("*.atom"):      # the set is ours: drop stale categories
+        if f"opds/{old_feed.name}" not in catalog:
+            old_feed.unlink()
+    for href, doc in catalog.items():
+        (ROOT / "site" / href).write_text(doc)
+    (ROOT / "site" / "opds.xml").write_text(catalog[ROOT_HREF])
+    print(f"wrote site/feed.xml, site/opds.xml, site/opds.atom and "
+          f"{len(catalog) - 1} OPDS category feeds "
           f"({len(books)} books, newest: {books[0]['key'] if books else 'n/a'})")
 
 

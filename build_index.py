@@ -379,7 +379,7 @@ PAGE = '''<!DOCTYPE html>
 	<title>{doc_title}</title>
 	{head}
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
-	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
+	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=navigation" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="preload" href="fonts/oswald-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="fonts/yellowtail-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="fonts/libre-caslon-text-400-latin.woff2" as="font" type="font/woff2" crossorigin>

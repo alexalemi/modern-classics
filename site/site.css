@@ -28,6 +28,10 @@
 
 * { box-sizing: border-box; }
 
+/* the hidden attribute must win over display:grid on .card and .deck,
+   or the filter box marks cards hidden and they stay on screen */
+[hidden] { display: none !important; }
+
 html {
   background: var(--page);
   color: var(--ink);
