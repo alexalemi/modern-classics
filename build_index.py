@@ -350,25 +350,23 @@ def render_card(page, thumb, tab, title, meta_html, blurb):
     {plate}
     <div class="copy">
       <div class="tab">{esc(tab)}</div>
-      <h3><a href="{page}">{esc(title)}</a></h3>
+      <h4><a href="{page}">{esc(title)}</a></h4>
       <p class="author">{meta_html}</p>
       <p class="blurb">{esc(blurb)}</p>
     </div>
   </li>'''
 
 
-NAV = {
-    "index.html": "Retellings",
-    "restored.html": "Restored editions",
-    "about.html": "About",
-}
-
-
 def nav(current):
     # the front page is linked as "./" so the address bar shows emend.press/,
-    # not emend.press/index.html (GitHub Pages serves index.html at /)
-    links = [f'<a href="{"./" if href == "index.html" else href}">{label}</a>'
-             for href, label in NAV.items() if href != current]
+    # not emend.press/index.html (GitHub Pages serves index.html at /).
+    # Both collections are on the front page, so the masthead links go there.
+    links = [f'<a href="./#retellings">Retellings</a>',
+             f'<a href="./#restored">Restored editions</a>']
+    if current != "about.html":
+        links.append('<a href="about.html">About</a>')
+    if current == "index.html":
+        links = links[2:]   # the strand links sit just below the masthead instead
     return (" &middot; ".join(links) + ' &middot; Follow along: <a href="feed.xml">RSS</a>'
             ' &middot; <a href="opds.atom">OPDS catalog</a> for e-readers')
 
@@ -385,6 +383,7 @@ PAGE = '''<!DOCTYPE html>
 	<link rel="preload" href="fonts/oswald-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="fonts/yellowtail-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="fonts/libre-caslon-text-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="stylesheet" href="fonts.css">
 	<link rel="stylesheet" href="site.css">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
@@ -400,24 +399,41 @@ PAGE = '''<!DOCTYPE html>
       <feFuncB type="table" tableValues="0.302 0.886"/>
     </feComponentTransfer>
   </filter>
+  <filter id="ink-dark" color-interpolation-filters="sRGB">
+    <feColorMatrix type="matrix" values=".33 .5 .17 0 0  .33 .5 .17 0 0  .33 .5 .17 0 0  0 0 0 1 0"/>
+    <feComponentTransfer>
+      <feFuncR type="table" tableValues="0.114 0.910"/>
+      <feFuncG type="table" tableValues="0.141 0.886"/>
+      <feFuncB type="table" tableValues="0.188 0.831"/>
+    </feComponentTransfer>
+  </filter>
 </svg>
 
 <header class="masthead">
-  <a class="imprint" href="about.html"><img src="brand/emend-wordmark.svg" alt="Emend Press" width="774" height="283"></a>
+  <a class="imprint" href="about.html"><picture><source srcset="brand/emend-wordmark-reversed.svg" media="(prefers-color-scheme: dark)"><img src="brand/emend-wordmark.svg" alt="Emend Press" width="774" height="283"></picture></a>
   <h1>{h1}</h1>
   <p class="motto">{motto}</p>
   <nav>{nav}</nav>
 </header>
 
 <main>
-{body}
+{finder}{body}
 </main>
+<script src="site.js" defer></script>
 </body>
 </html>
 '''
 
 
-def page_shell(current, doc_title, h1, motto, body, description=None):
+FINDER = (
+    '<div class="finder" role="search" hidden>\n'
+    '  <label class="visually-hidden" for="find">Filter the books</label>\n'
+    '  <input id="find" type="search" placeholder="Filter by title, author, year or subject" autocomplete="off">\n'
+    '  <span class="count" aria-live="polite"></span>\n'
+    '</div>\n')
+
+
+def page_shell(current, doc_title, h1, motto, body, description=None, finder=False):
     """A front page. `description` (plain text) is what search results and
     link previews show; None means the site's own description. The 404 page
     passes "" and gets no canonical or preview tags at all."""
@@ -426,24 +442,52 @@ def page_shell(current, doc_title, h1, motto, body, description=None):
         head = ""
     else:
         head = seo.head_tags(current, doc_title, description or seo.SITE_DESCRIPTION)
+        if current == "index.html":
+            head += "\n\t" + seo.site_jsonld()
     return PAGE.format(doc_title=doc_title, h1=h1, motto=motto, head=head,
-                       nav=nav(current), body=body)
+                       nav=nav(current), body=body,
+                       finder=FINDER if finder else "")
+
+
+def strand_head(anchor, title, motto, note=""):
+    """Open one strand of the library: <section id=...> and its heading.
+    The caller closes the section."""
+    return (f'<section class="strand" id="{anchor}" aria-labelledby="{anchor}-title">\n'
+            f'<header class="strand-head">\n<h2 id="{anchor}-title">{title}</h2>\n'
+            f'<p class="strand-motto">{motto}</p>\n{note}</header>\n')
+
+
+RETELLINGS_NOTE = """<p class="note">Every book is complete, chapter by chapter,
+never summarized, and faithful to the meaning and the author&rsquo;s voice.
+Each page links to the original it retells.</p>
+"""
 
 
 def main():
+    import build_restored
     books = collect()
-    parts = []
+    parts = [strand_head("retellings", "Retellings",
+                         "Classic texts, retold in contemporary English",
+                         RETELLINGS_NOTE)]
     for shelf in SHELVES:
         row = sorted((b for b in books if b["shelf"] == shelf),
                      key=lambda b: (b["key"], added(b["page"])))
         if not row:
             continue
-        parts.append(f'<h2>{esc(shelf)}</h2>\n<ul class="deck">')
+        parts.append(f'<h3 class="shelf">{esc(shelf)}</h3>\n<ul class="deck">')
         parts += [card(b) for b in row]
         parts.append("</ul>\n")
+    parts.append("</section>\n")
+    restored, native, companion = build_restored.section()
+    parts.append(restored)
+    jump = (f'<nav class="strands" aria-label="The two collections">'
+            f'<a href="#retellings">Retellings <span>{len(books)}</span></a>'
+            f'<a href="#restored">Restored editions <span>{native + companion}</span></a>'
+            f'</nav>\n')
     (SITE / "index.html").write_text(page_shell(
         "index.html", "Modern Classics", "Modern Classics",
-        "Classic texts, retold in contemporary English", "\n".join(parts)))
+        "Classic books, retold and restored", jump + "\n".join(parts),
+        finder=True))
     print(f"wrote site/index.html ({len(books)} books on "
           f"{sum(1 for s in SHELVES if any(b['shelf'] == s for b in books))} shelves)")
     import seo

@@ -22,7 +22,7 @@ body = markdown.markdown(md, extensions=["smarty"])
 
 page = build_index.page_shell(
     "about.html", "About &mdash; Modern Classics", "About",
-    "Classic texts, retold in contemporary English",
+    "Classic books, retold and restored",
     f'<article class="prose">\n{body}\n</article>',
     description="What the Modern Classics are, how the retellings and "
                 "restored editions are made, and how to follow along.")

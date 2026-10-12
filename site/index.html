@@ -15,11 +15,13 @@
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
 	<meta name="twitter:card" content="summary_large_image">
+	<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Modern Classics", "url": "https://emend.press/", "description": "Classic books retold in plain contemporary English, and restored editions of the originals. Free to read online and as ebooks, from Emend Press.", "publisher": {"@type": "Organization", "name": "Emend Press", "url": "https://emend.press/", "logo": "https://emend.press/apple-touch-icon.png"}}</script>
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="preload" href="fonts/oswald-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="fonts/yellowtail-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="fonts/libre-caslon-text-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="stylesheet" href="fonts.css">
 	<link rel="stylesheet" href="site.css">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
@@ -35,23 +37,46 @@
       <feFuncB type="table" tableValues="0.302 0.886"/>
     </feComponentTransfer>
   </filter>
+  <filter id="ink-dark" color-interpolation-filters="sRGB">
+    <feColorMatrix type="matrix" values=".33 .5 .17 0 0  .33 .5 .17 0 0  .33 .5 .17 0 0  0 0 0 1 0"/>
+    <feComponentTransfer>
+      <feFuncR type="table" tableValues="0.114 0.910"/>
+      <feFuncG type="table" tableValues="0.141 0.886"/>
+      <feFuncB type="table" tableValues="0.188 0.831"/>
+    </feComponentTransfer>
+  </filter>
 </svg>
 
 <header class="masthead">
-  <a class="imprint" href="about.html"><img src="brand/emend-wordmark.svg" alt="Emend Press" width="774" height="283"></a>
+  <a class="imprint" href="about.html"><picture><source srcset="brand/emend-wordmark-reversed.svg" media="(prefers-color-scheme: dark)"><img src="brand/emend-wordmark.svg" alt="Emend Press" width="774" height="283"></picture></a>
   <h1>Modern Classics</h1>
-  <p class="motto">Classic texts, retold in contemporary English</p>
-  <nav><a href="restored.html">Restored editions</a> &middot; <a href="about.html">About</a> &middot; Follow along: <a href="feed.xml">RSS</a> &middot; <a href="opds.atom">OPDS catalog</a> for e-readers</nav>
+  <p class="motto">Classic books, retold and restored</p>
+  <nav><a href="about.html">About</a> &middot; Follow along: <a href="feed.xml">RSS</a> &middot; <a href="opds.atom">OPDS catalog</a> for e-readers</nav>
 </header>
 
 <main>
-<h2>Epic, Myth &amp; Tragedy</h2>
+<div class="finder" role="search" hidden>
+  <label class="visually-hidden" for="find">Filter the books</label>
+  <input id="find" type="search" placeholder="Filter by title, author, year or subject" autocomplete="off">
+  <span class="count" aria-live="polite"></span>
+</div>
+<nav class="strands" aria-label="The two collections"><a href="#retellings">Retellings <span>91</span></a><a href="#restored">Restored editions <span>55</span></a></nav>
+<section class="strand" id="retellings" aria-labelledby="retellings-title">
+<header class="strand-head">
+<h2 id="retellings-title">Retellings</h2>
+<p class="strand-motto">Classic texts, retold in contemporary English</p>
+<p class="note">Every book is complete, chapter by chapter,
+never summarized, and faithful to the meaning and the author&rsquo;s voice.
+Each page links to the original it retells.</p>
+</header>
+
+<h3 class="shelf">Epic, Myth &amp; Tragedy</h3>
 <ul class="deck">
   <li class="card">
     <a class="plate" href="odyssey.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/odyssey.jpg" srcset="covers/thumb/odyssey-160.webp 160w, covers/thumb/odyssey-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 700 BC</div>
-      <h3><a href="odyssey.html">The Odyssey</a></h3>
+      <h4><a href="odyssey.html">The Odyssey</a></h4>
       <p class="author">Homer (c. 700 BC) &middot; ~9-hour read &middot; <a href="ebooks/homer_the-odyssey.epub">epub</a></p>
       <p class="blurb">A soldier ten years trying to get home, a wife holding off a houseful of suitors, and a son who was a baby when he left. From the Greek, all twenty-four books, as prose.</p>
     </div>
@@ -60,7 +85,7 @@
     <a class="plate" href="aeschylus.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/aeschylus.jpg" srcset="covers/thumb/aeschylus-160.webp 160w, covers/thumb/aeschylus-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">472 BC</div>
-      <h3><a href="aeschylus.html">The Seven Tragedies</a></h3>
+      <h4><a href="aeschylus.html">The Seven Tragedies</a></h4>
       <p class="author">Aeschylus (472–458 BC) &middot; ~5-hour read &middot; <a href="ebooks/aeschylus_the-seven-tragedies.epub">epub</a></p>
       <p class="blurb">The Oresteia complete, with the Persians, the Seven, the Suppliants and Prometheus Bound — from the Greek: the scenes as fast modern prose, the odes as verse, and the net, the yoke and the lion cub kept in the same words every time.</p>
     </div>
@@ -69,7 +94,7 @@
     <a class="plate" href="sophocles.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/sophocles.jpg" srcset="covers/thumb/sophocles-160.webp 160w, covers/thumb/sophocles-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 442 BC</div>
-      <h3><a href="sophocles.html">The Seven Tragedies</a></h3>
+      <h4><a href="sophocles.html">The Seven Tragedies</a></h4>
       <p class="author">Sophocles (c. 442–401 BC) &middot; ~7-hour read &middot; <a href="ebooks/sophocles_the-seven-tragedies.epub">epub</a></p>
       <p class="blurb">All seven surviving plays — Oedipus, Antigone, Ajax, Electra and the rest — from the Greek: the arguments as fast modern prose, the odes as verse, because the chorus was singing.</p>
     </div>
@@ -78,7 +103,7 @@
     <a class="plate" href="euripides.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/euripides.jpg" srcset="covers/thumb/euripides-160.webp 160w, covers/thumb/euripides-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">438 BC</div>
-      <h3><a href="euripides.html">The Nineteen Plays</a></h3>
+      <h4><a href="euripides.html">The Nineteen Plays</a></h4>
       <p class="author">Euripides (438–405 BC) &middot; ~18-hour read &middot; <a href="ebooks/euripides_the-nineteen-plays.epub">epub</a></p>
       <p class="blurb">Every surviving play, complete — Medea, the Bacchae, the Trojan Women, and the satyr play about blinding a giant — from the Greek: the arguments as fast modern prose, the songs as verse.</p>
     </div>
@@ -87,7 +112,7 @@
     <a class="plate" href="ovid.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/ovid.jpg" srcset="covers/thumb/ovid-160.webp 160w, covers/thumb/ovid-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">8 AD</div>
-      <h3><a href="ovid.html">Metamorphoses</a></h3>
+      <h4><a href="ovid.html">Metamorphoses</a></h4>
       <p class="author">Ovid (8 CE) &middot; ~9-hour read &middot; <a href="ebooks/ovid_metamorphoses.epub">epub</a></p>
       <p class="blurb">The great storybook of classical myth — Daphne, Phaethon, Narcissus, Icarus, Orpheus, Pygmalion, Midas and hundreds more. All fifteen books, from the Latin.</p>
     </div>
@@ -96,7 +121,7 @@
     <a class="plate" href="nibelungenlied.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/nibelungenlied.jpg" srcset="covers/thumb/nibelungenlied-160.webp 160w, covers/thumb/nibelungenlied-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 1200</div>
-      <h3><a href="nibelungenlied.html">The Nibelungenlied</a></h3>
+      <h4><a href="nibelungenlied.html">The Nibelungenlied</a></h4>
       <p class="author">Anonymous (c. 1200) &middot; ~6-hour read &middot; <a href="ebooks/anonymous_the-nibelungenlied.epub">epub</a></p>
       <p class="blurb">Siegfried murdered at a forest spring, and his widow&#x27;s revenge thirteen years later at the court of the Huns: the great German epic, every strophe, in modern prose.</p>
     </div>
@@ -105,7 +130,7 @@
     <a class="plate" href="inferno.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/inferno.jpg" srcset="covers/thumb/inferno-160.webp 160w, covers/thumb/inferno-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 1308</div>
-      <h3><a href="inferno.html">Inferno</a></h3>
+      <h4><a href="inferno.html">Inferno</a></h4>
       <p class="author">Dante Alighieri (c. 1308–1320) &middot; ~3-hour read &middot; <a href="ebooks/dante-alighieri_inferno.epub">epub</a></p>
       <p class="blurb">Led down through Hell by a dead poet, Dante meets people he knew — popes, neighbours, a former teacher — still arguing Florentine politics. From the Italian, tercet for tercet.</p>
     </div>
@@ -114,7 +139,7 @@
     <a class="plate" href="purgatorio.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/purgatorio.jpg" srcset="covers/thumb/purgatorio-160.webp 160w, covers/thumb/purgatorio-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 1308</div>
-      <h3><a href="purgatorio.html">Purgatorio</a></h3>
+      <h4><a href="purgatorio.html">Purgatorio</a></h4>
       <p class="author">Dante Alighieri (c. 1308–1320) &middot; ~3-hour read &middot; <a href="ebooks/dante-alighieri_purgatorio.epub">epub</a></p>
       <p class="blurb">The second book of the Comedy, where everyone is going to be saved and knows it — the dead embrace, tease, and ask after old friends. From the Italian, tercet for tercet.</p>
     </div>
@@ -123,7 +148,7 @@
     <a class="plate" href="paradiso.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/paradiso.jpg" srcset="covers/thumb/paradiso-160.webp 160w, covers/thumb/paradiso-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 1308</div>
-      <h3><a href="paradiso.html">Paradiso</a></h3>
+      <h4><a href="paradiso.html">Paradiso</a></h4>
       <p class="author">Dante Alighieri (c. 1308–1321) &middot; ~3-hour read &middot; <a href="ebooks/dante-alighieri_paradiso.epub">epub</a></p>
       <p class="blurb">The third book of the Comedy: heaven as a bird waiting for dawn and a baby reaching for milk, and Saint Peter calling the papacy a sewer. From the Italian, tercet for tercet.</p>
     </div>
@@ -132,20 +157,20 @@
     <a class="plate" href="malory.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/malory.jpg" srcset="covers/thumb/malory-160.webp 160w, covers/thumb/malory-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1485</div>
-      <h3><a href="malory.html">Le Morte d&#x27;Arthur</a></h3>
+      <h4><a href="malory.html">Le Morte d&#x27;Arthur</a></h4>
       <p class="author">Sir Thomas Malory (1485) &middot; ~25-hour read &middot; <a href="ebooks/sir-thomas-malory_le-morte-darthur.epub">epub</a></p>
       <p class="blurb">The whole of Arthur, from the sword in the stone to the last battle, written by a knight in prison in 1469. All twenty-one Books, Tristram included.</p>
     </div>
   </li>
 </ul>
 
-<h2>Tales &amp; Novels</h2>
+<h3 class="shelf">Tales &amp; Novels</h3>
 <ul class="deck">
   <li class="card">
     <a class="plate" href="true-history.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/true-history.jpg" srcset="covers/thumb/true-history-160.webp 160w, covers/thumb/true-history-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 175 AD</div>
-      <h3><a href="true-history.html">True History</a></h3>
+      <h4><a href="true-history.html">True History</a></h4>
       <p class="author">Lucian of Samosata (c. 175 AD) &middot; ~1-hour read &middot; <a href="ebooks/lucian-of-samosata_true-history.epub">epub</a></p>
       <p class="blurb">The first science fiction story: a voyage to the moon, war between planets, and a narrator who swears that he lies.</p>
     </div>
@@ -154,7 +179,7 @@
     <a class="plate" href="nights.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/nights.jpg" srcset="covers/thumb/nights-160.webp 160w, covers/thumb/nights-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 800 AD</div>
-      <h3><a href="nights.html">The Thousand Nights and a Night</a></h3>
+      <h4><a href="nights.html">The Thousand Nights and a Night</a></h4>
       <p class="author">Anonymous (c. 800–1400) &middot; ~16-hour read &middot; <a href="ebooks/anonymous_the-thousand-nights-and-a-night.epub">epub</a></p>
       <p class="blurb">Shahrazad&#x27;s frame and eighteen of the great tales — the Fisherman and the Jinni, the Hunchback, Sindbad, Aladdin, Ali Baba — with Burton&#x27;s fake-antique costume taken off.</p>
     </div>
@@ -163,7 +188,7 @@
     <a class="plate" href="decameron.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/decameron.jpg" srcset="covers/thumb/decameron-160.webp 160w, covers/thumb/decameron-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1353</div>
-      <h3><a href="decameron.html">The Decameron</a></h3>
+      <h4><a href="decameron.html">The Decameron</a></h4>
       <p class="author">Giovanni Boccaccio (1353) &middot; ~19-hour read &middot; <a href="ebooks/giovanni-boccaccio_the-decameron.epub">epub</a></p>
       <p class="blurb">Ten friends flee the plague and tell a hundred stories — bawdy, sly, and humane.</p>
     </div>
@@ -172,7 +197,7 @@
     <a class="plate" href="quixote.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/quixote.jpg" srcset="covers/thumb/quixote-160.webp 160w, covers/thumb/quixote-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1605</div>
-      <h3><a href="quixote.html">Don Quixote</a></h3>
+      <h4><a href="quixote.html">Don Quixote</a></h4>
       <p class="author">Miguel de Cervantes (1605/1615) &middot; ~30-hour read &middot; <a href="ebooks/miguel-de-cervantes_don-quixote.epub">epub</a></p>
       <p class="blurb">A gentleman reads too many books of chivalry and rides out to fix the world with a labourer who talks in proverbs. Both volumes, all 126 chapters, from the Spanish.</p>
     </div>
@@ -181,7 +206,7 @@
     <a class="plate" href="princess-of-cleves.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/princess-of-cleves.jpg" srcset="covers/thumb/princess-of-cleves-160.webp 160w, covers/thumb/princess-of-cleves-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1662</div>
-      <h3><a href="princess-of-cleves.html">The Princess of Cleves, with The Princess of Montpensier</a></h3>
+      <h4><a href="princess-of-cleves.html">The Princess of Cleves, with The Princess of Montpensier</a></h4>
       <p class="author">Madame de Lafayette (1662–1678) &middot; ~5-hour read &middot; <a href="ebooks/madame-de-lafayette_the-princess-of-cleves-with-the-princess-of-montpensier.epub">epub</a></p>
       <p class="blurb">A young wife, a perfect husband and the most dazzling man at the court of Henri II: the first great psychological novel, with the novella that led to it, from the French.</p>
     </div>
@@ -190,7 +215,7 @@
     <a class="plate" href="bunyan.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/bunyan.jpg" srcset="covers/thumb/bunyan-160.webp 160w, covers/thumb/bunyan-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1678</div>
-      <h3><a href="bunyan.html">The Pilgrim&#x27;s Progress</a></h3>
+      <h4><a href="bunyan.html">The Pilgrim&#x27;s Progress</a></h4>
       <p class="author">John Bunyan (1678/1684) &middot; ~8-hour read &middot; <a href="ebooks/john-bunyan_the-pilgrims-progress.epub">epub</a></p>
       <p class="blurb">The most famous journey in English — the Slough of Despond, Vanity Fair, and the key called Promise that was in his pocket all along. Both parts complete.</p>
     </div>
@@ -199,7 +224,7 @@
     <a class="plate" href="candide.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/candide.jpg" srcset="covers/thumb/candide-160.webp 160w, covers/thumb/candide-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1759</div>
-      <h3><a href="candide.html">Candide, or Optimism</a></h3>
+      <h4><a href="candide.html">Candide, or Optimism</a></h4>
       <p class="author">Voltaire (1759) &middot; ~2-hour read &middot; <a href="ebooks/voltaire_candide-or-optimism.epub">epub</a></p>
       <p class="blurb">Voltaire&#x27;s whirlwind satire of optimism in a broken world.</p>
     </div>
@@ -208,7 +233,7 @@
     <a class="plate" href="grimm.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/grimm.jpg" srcset="covers/thumb/grimm-160.webp 160w, covers/thumb/grimm-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1812</div>
-      <h3><a href="grimm.html">Grimm&#x27;s Household Tales</a></h3>
+      <h4><a href="grimm.html">Grimm&#x27;s Household Tales</a></h4>
       <p class="author">Jacob and Wilhelm Grimm (1812–1857) &middot; ~20-hour read &middot; <a href="ebooks/jacob-and-wilhelm-grimm_grimms-household-tales.epub">epub</a></p>
       <p class="blurb">All two hundred tales and ten legends, complete — the famous ones and the hundred and sixty that nobody prints.</p>
     </div>
@@ -217,7 +242,7 @@
     <a class="plate" href="journey-center-earth.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/journey-center-earth.jpg" srcset="covers/thumb/journey-center-earth-160.webp 160w, covers/thumb/journey-center-earth-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1864</div>
-      <h3><a href="journey-center-earth.html">A Journey to the Center of the Earth</a></h3>
+      <h4><a href="journey-center-earth.html">A Journey to the Center of the Earth</a></h4>
       <p class="author">Jules Verne (1864) &middot; ~5-hour read &middot; <a href="ebooks/jules-verne_a-journey-to-the-center-of-the-earth.epub">epub</a></p>
       <p class="blurb">A coded parchment, a dead Icelandic volcano, and a plunge into a lost world underground — complete from the French, not the mangled Victorian version.</p>
     </div>
@@ -226,7 +251,7 @@
     <a class="plate" href="twenty-thousand-leagues.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/twenty-thousand-leagues.jpg" srcset="covers/thumb/twenty-thousand-leagues-160.webp 160w, covers/thumb/twenty-thousand-leagues-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1870</div>
-      <h3><a href="twenty-thousand-leagues.html">Twenty Thousand Leagues Under the Sea</a></h3>
+      <h4><a href="twenty-thousand-leagues.html">Twenty Thousand Leagues Under the Sea</a></h4>
       <p class="author">Jules Verne (1870) &middot; ~10-hour read &middot; <a href="ebooks/jules-verne_twenty-thousand-leagues-under-the-sea.epub">epub</a></p>
       <p class="blurb">Captain Nemo&#x27;s Nautilus carries three captives beneath every sea — the complete novel from Verne&#x27;s French, not the abridged Victorian version.</p>
     </div>
@@ -235,7 +260,7 @@
     <a class="plate" href="eighty-days.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/eighty-days.jpg" srcset="covers/thumb/eighty-days-160.webp 160w, covers/thumb/eighty-days-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1872</div>
-      <h3><a href="eighty-days.html">Around the World in Eighty Days</a></h3>
+      <h4><a href="eighty-days.html">Around the World in Eighty Days</a></h4>
       <p class="author">Jules Verne (1872) &middot; ~5-hour read &middot; <a href="ebooks/jules-verne_around-the-world-in-eighty-days.epub">epub</a></p>
       <p class="blurb">Phileas Fogg bets £20,000 that he can circle the globe in eighty days — complete from the French, with a final trick of the calendar.</p>
     </div>
@@ -244,7 +269,7 @@
     <a class="plate" href="mysterious-island.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/mysterious-island.jpg" srcset="covers/thumb/mysterious-island-160.webp 160w, covers/thumb/mysterious-island-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1874</div>
-      <h3><a href="mysterious-island.html">The Mysterious Island</a></h3>
+      <h4><a href="mysterious-island.html">The Mysterious Island</a></h4>
       <p class="author">Jules Verne (1874–1875) &middot; ~15-hour read &middot; <a href="ebooks/jules-verne_the-mysterious-island.epub">epub</a></p>
       <p class="blurb">Five Civil War escapees, a balloon, and an island where someone is watching — with Captain Nemo&#x27;s censored history restored, from Verne&#x27;s French.</p>
     </div>
@@ -253,20 +278,20 @@
     <a class="plate" href="flatland.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/flatland.jpg" srcset="covers/thumb/flatland-160.webp 160w, covers/thumb/flatland-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1884</div>
-      <h3><a href="flatland.html">Flatland: A Romance of Many Dimensions</a></h3>
+      <h4><a href="flatland.html">Flatland: A Romance of Many Dimensions</a></h4>
       <p class="author">Edwin A. Abbott (1884) &middot; ~2-hour read &middot; <a href="ebooks/edwin-a-abbott_flatland-a-romance-of-many-dimensions.epub">epub</a></p>
       <p class="blurb">Geometry as social satire: a square discovers the third dimension.</p>
     </div>
   </li>
 </ul>
 
-<h2>The Art of Living</h2>
+<h3 class="shelf">The Art of Living</h3>
 <ul class="deck">
   <li class="card">
     <a class="plate" href="memorabilia.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/memorabilia.jpg" srcset="covers/thumb/memorabilia-160.webp 160w, covers/thumb/memorabilia-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 371 BC</div>
-      <h3><a href="memorabilia.html">The Memorabilia</a></h3>
+      <h4><a href="memorabilia.html">The Memorabilia</a></h4>
       <p class="author">Xenophon (c. 371 BC) &middot; ~4-hour read &middot; <a href="ebooks/xenophon_the-memorabilia.epub">epub</a></p>
       <p class="blurb">Socrates remembered by his other student — practical, sociable, and useful, with the Choice of Heracles.</p>
     </div>
@@ -275,7 +300,7 @@
     <a class="plate" href="ethics.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/ethics.jpg" srcset="covers/thumb/ethics-160.webp 160w, covers/thumb/ethics-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 340 BC</div>
-      <h3><a href="ethics.html">Nicomachean Ethics</a></h3>
+      <h4><a href="ethics.html">Nicomachean Ethics</a></h4>
       <p class="author">Aristotle (c. 340 BC) &middot; ~6-hour read &middot; <a href="ebooks/aristotle_nicomachean-ethics.epub">epub</a></p>
       <p class="blurb">The original inquiry into the good life — happiness, virtue as habit, the mean, and friendship.</p>
     </div>
@@ -284,7 +309,7 @@
     <a class="plate" href="theophrastus.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/theophrastus.jpg" srcset="covers/thumb/theophrastus-160.webp 160w, covers/thumb/theophrastus-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 319 BC</div>
-      <h3><a href="theophrastus.html">Characters</a></h3>
+      <h4><a href="theophrastus.html">Characters</a></h4>
       <p class="author">Theophrastus (c. 319 BC) &middot; ~40-minute read &middot; <a href="ebooks/theophrastus_characters.epub">epub</a></p>
       <p class="blurb">Thirty ruthless comic sketches of annoying Athenians — every one of them still alive and probably in your contacts.</p>
     </div>
@@ -293,7 +318,7 @@
     <a class="plate" href="gita.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/gita.jpg" srcset="covers/thumb/gita-160.webp 160w, covers/thumb/gita-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 200 BC</div>
-      <h3><a href="gita.html">The Bhagavad Gita</a></h3>
+      <h4><a href="gita.html">The Bhagavad Gita</a></h4>
       <p class="author">Vyasa (c. 200 BC) &middot; ~90-minute read &middot; <a href="ebooks/vyasa_the-bhagavad-gita.epub">epub</a></p>
       <p class="blurb">A warrior drops his bow rather than kill his own family, and his charioteer, who is God, answers him. All seven hundred verses, from the Sanskrit.</p>
     </div>
@@ -302,7 +327,7 @@
     <a class="plate" href="tusculan.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/tusculan.jpg" srcset="covers/thumb/tusculan-160.webp 160w, covers/thumb/tusculan-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">45 BC</div>
-      <h3><a href="tusculan.html">Tusculan Disputations</a></h3>
+      <h4><a href="tusculan.html">Tusculan Disputations</a></h4>
       <p class="author">Cicero (45 BC) &middot; ~5-hour read &middot; <a href="ebooks/cicero_tusculan-disputations.epub">epub</a></p>
       <p class="blurb">Five days on death, pain, grief, and the passions — from the Latin, with the Sword of Damocles.</p>
     </div>
@@ -311,7 +336,7 @@
     <a class="plate" href="de-officiis.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/de-officiis.jpg" srcset="covers/thumb/de-officiis-160.webp 160w, covers/thumb/de-officiis-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">44 BC</div>
-      <h3><a href="de-officiis.html">On Duties</a></h3>
+      <h4><a href="de-officiis.html">On Duties</a></h4>
       <p class="author">Cicero (44 BC) &middot; ~4-hour read &middot; <a href="ebooks/cicero_on-duties.epub">epub</a></p>
       <p class="blurb">Cicero&#x27;s last book, a letter to his son — translated from the Latin: nothing dishonorable is ever truly useful.</p>
     </div>
@@ -320,7 +345,7 @@
     <a class="plate" href="seneca.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/seneca.jpg" srcset="covers/thumb/seneca-160.webp 160w, covers/thumb/seneca-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 65 AD</div>
-      <h3><a href="seneca.html">Moral Letters to Lucilius</a></h3>
+      <h4><a href="seneca.html">Moral Letters to Lucilius</a></h4>
       <p class="author">Seneca (c. 65 AD) &middot; ~14-hour read &middot; <a href="ebooks/seneca_moral-letters-to-lucilius.epub">epub</a></p>
       <p class="blurb">All 124 letters from a Stoic — a daily course in living, from saving time to facing the end.</p>
     </div>
@@ -329,7 +354,7 @@
     <a class="plate" href="epictetus.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/epictetus.jpg" srcset="covers/thumb/epictetus-160.webp 160w, covers/thumb/epictetus-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 108 AD</div>
-      <h3><a href="epictetus.html">The Discourses</a></h3>
+      <h4><a href="epictetus.html">The Discourses</a></h4>
       <p class="author">Epictetus (c. 108 AD) &middot; ~8-hour read &middot; <a href="ebooks/epictetus_the-discourses.epub">epub</a></p>
       <p class="blurb">The lectures the Enchiridion was cut down from — a former slave telling Rome&#x27;s young gentlemen that they are the ones in chains.</p>
     </div>
@@ -338,7 +363,7 @@
     <a class="plate" href="enchiridion.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/enchiridion.jpg" srcset="covers/thumb/enchiridion-160.webp 160w, covers/thumb/enchiridion-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 125 AD</div>
-      <h3><a href="enchiridion.html">The Enchiridion</a></h3>
+      <h4><a href="enchiridion.html">The Enchiridion</a></h4>
       <p class="author">Epictetus (c. 125 AD) &middot; ~30-minute read &middot; <a href="ebooks/epictetus_the-enchiridion.epub">epub</a></p>
       <p class="blurb">The Stoic pocket manual — fifty-one drills for keeping your head, from a philosopher born enslaved.</p>
     </div>
@@ -347,7 +372,7 @@
     <a class="plate" href="meditations.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/meditations.jpg" srcset="covers/thumb/meditations-160.webp 160w, covers/thumb/meditations-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 170 AD</div>
-      <h3><a href="meditations.html">Meditations</a></h3>
+      <h4><a href="meditations.html">Meditations</a></h4>
       <p class="author">Marcus Aurelius (c. 170–180 AD) &middot; ~3-hour read &middot; <a href="ebooks/marcus-aurelius_meditations.epub">epub</a></p>
       <p class="blurb">A Roman emperor&#x27;s private notes to himself on how to live.</p>
     </div>
@@ -356,7 +381,7 @@
     <a class="plate" href="boethius.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/boethius.jpg" srcset="covers/thumb/boethius-160.webp 160w, covers/thumb/boethius-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">524 AD</div>
-      <h3><a href="boethius.html">The Consolation of Philosophy</a></h3>
+      <h4><a href="boethius.html">The Consolation of Philosophy</a></h4>
       <p class="author">Boethius (524) &middot; ~3-hour read &middot; <a href="ebooks/boethius_the-consolation-of-philosophy.epub">epub</a></p>
       <p class="blurb">Waiting to be executed, the last Roman philosopher is visited by Philosophy, who tells him that nothing he has lost was ever his. With all thirty-nine poems.</p>
     </div>
@@ -365,7 +390,7 @@
     <a class="plate" href="hojoki.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/hojoki.jpg" srcset="covers/thumb/hojoki-160.webp 160w, covers/thumb/hojoki-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1212</div>
-      <h3><a href="hojoki.html">An Account of My Hut</a></h3>
+      <h4><a href="hojoki.html">An Account of My Hut</a></h4>
       <p class="author">Kamo no Chōmei (1212) &middot; ~20-minute read &middot; <a href="ebooks/kamo-no-chomei_an-account-of-my-hut.epub">epub</a></p>
       <p class="blurb">A poet who watched Kyoto burn, starve and shake builds a ten-foot hut in the hills and writes about impermanence. The whole of it, from 1212.</p>
     </div>
@@ -374,7 +399,7 @@
     <a class="plate" href="dogen.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/dogen.jpg" srcset="covers/thumb/dogen-160.webp 160w, covers/thumb/dogen-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1227</div>
-      <h3><a href="dogen.html">The Practice Instructions</a></h3>
+      <h4><a href="dogen.html">The Practice Instructions</a></h4>
       <p class="author">Dōgen (1227–1234) &middot; ~50-minute read &middot; <a href="ebooks/dogen_the-practice-instructions.epub">epub</a></p>
       <p class="blurb">Three short manuals from the founder of Sōtō Zen: how to sit, how to study, and how to cook. From the Chinese.</p>
     </div>
@@ -383,7 +408,7 @@
     <a class="plate" href="montaigne.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/montaigne.jpg" srcset="covers/thumb/montaigne-160.webp 160w, covers/thumb/montaigne-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1580</div>
-      <h3><a href="montaigne.html">Selected Essays</a></h3>
+      <h4><a href="montaigne.html">Selected Essays</a></h4>
       <p class="author">Michel de Montaigne (1580) &middot; ~9-hour read &middot; <a href="ebooks/michel-de-montaigne_selected-essays.epub">epub</a></p>
       <p class="blurb">The man who invented the essay, talking to you across four centuries about death, friendship, cannibals, and himself.</p>
     </div>
@@ -392,20 +417,20 @@
     <a class="plate" href="way-to-wealth.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/way-to-wealth.jpg" srcset="covers/thumb/way-to-wealth-160.webp 160w, covers/thumb/way-to-wealth-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1758</div>
-      <h3><a href="way-to-wealth.html">The Way to Wealth</a></h3>
+      <h4><a href="way-to-wealth.html">The Way to Wealth</a></h4>
       <p class="author">Benjamin Franklin (1758) &middot; ~10-minute read &middot; <a href="ebooks/benjamin-franklin_the-way-to-wealth.epub">epub</a></p>
       <p class="blurb">Poor Richard&#x27;s proverbs rolled into one sly speech — delivered to a crowd that applauds, then ignores it.</p>
     </div>
   </li>
 </ul>
 
-<h2>Philosophy</h2>
+<h3 class="shelf">Philosophy</h3>
 <ul class="deck">
   <li class="card">
     <a class="plate" href="dialogues.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/dialogues.jpg" srcset="covers/thumb/dialogues-160.webp 160w, covers/thumb/dialogues-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">399 BC</div>
-      <h3><a href="dialogues.html">Dialogues</a></h3>
+      <h4><a href="dialogues.html">Dialogues</a></h4>
       <p class="author">Plato (399–347 BC) &middot; ~45-hour read &middot; <a href="ebooks/plato_dialogues.epub">epub</a></p>
       <p class="blurb">The complete dialogues — Socrates on trial, in the agora, and at the limits of knowledge.</p>
     </div>
@@ -414,7 +439,7 @@
     <a class="plate" href="rhetoric.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/rhetoric.jpg" srcset="covers/thumb/rhetoric-160.webp 160w, covers/thumb/rhetoric-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 335 BC</div>
-      <h3><a href="rhetoric.html">Rhetoric</a></h3>
+      <h4><a href="rhetoric.html">Rhetoric</a></h4>
       <p class="author">Aristotle (c. 335 BC) &middot; ~5-hour read &middot; <a href="ebooks/aristotle_rhetoric.epub">epub</a></p>
       <p class="blurb">The art of persuasion, from the Greek: argument, character and emotion — anger, fear, envy, the young and the old — then style, ending on “I have spoken; you have heard; judge.”</p>
     </div>
@@ -423,7 +448,7 @@
     <a class="plate" href="lucretius.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/lucretius.jpg" srcset="covers/thumb/lucretius-160.webp 160w, covers/thumb/lucretius-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 55 BC</div>
-      <h3><a href="lucretius.html">On the Nature of Things</a></h3>
+      <h4><a href="lucretius.html">On the Nature of Things</a></h4>
       <p class="author">Lucretius (c. 55 BC) &middot; ~6-hour read &middot; <a href="ebooks/lucretius_on-the-nature-of-things.epub">epub</a></p>
       <p class="blurb">Everything is atoms and empty space, the soul dies with the body, and the gods never lift a finger. From the Latin, the whole poem, as prose — ending, without consolation, on the plague at Athens.</p>
     </div>
@@ -432,7 +457,7 @@
     <a class="plate" href="augustine.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/augustine.jpg" srcset="covers/thumb/augustine-160.webp 160w, covers/thumb/augustine-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 400 AD</div>
-      <h3><a href="augustine.html">Confessions</a></h3>
+      <h4><a href="augustine.html">Confessions</a></h4>
       <p class="author">Augustine of Hippo (c. 400 AD) &middot; ~8-hour read &middot; <a href="ebooks/augustine-of-hippo_confessions.epub">epub</a></p>
       <p class="blurb">The first autobiography — the stolen pears, the garden at Milan, the night at Ostia — every sentence addressed to God, so that reading it is overhearing.</p>
     </div>
@@ -441,7 +466,7 @@
     <a class="plate" href="hayy.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/hayy.jpg" srcset="covers/thumb/hayy-160.webp 160w, covers/thumb/hayy-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 1160</div>
-      <h3><a href="hayy.html">Hayy ibn Yaqzan</a></h3>
+      <h4><a href="hayy.html">Hayy ibn Yaqzan</a></h4>
       <p class="author">Ibn Tufayl (c. 1160–1185) &middot; ~2-hour read &middot; <a href="ebooks/ibn-tufayl_hayy-ibn-yaqzan.epub">epub</a></p>
       <p class="blurb">A child raised by a doe on a desert island discovers anatomy, fire, the stars and God by himself. The great philosophical tale of Muslim Spain.</p>
     </div>
@@ -450,7 +475,7 @@
     <a class="plate" href="philosophical-works.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/descartes.jpg" srcset="covers/thumb/descartes-160.webp 160w, covers/thumb/descartes-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1637</div>
-      <h3><a href="philosophical-works.html">Philosophical Works</a></h3>
+      <h4><a href="philosophical-works.html">Philosophical Works</a></h4>
       <p class="author">René Descartes (1637–1644) &middot; ~7-hour read &middot; <a href="ebooks/rene-descartes_philosophical-works.epub">epub</a></p>
       <p class="blurb">Descartes doubts everything and rebuilds from “I think, therefore I am.”</p>
     </div>
@@ -459,7 +484,7 @@
     <a class="plate" href="spinoza.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/spinoza.jpg" srcset="covers/thumb/spinoza-160.webp 160w, covers/thumb/spinoza-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1677</div>
-      <h3><a href="spinoza.html">Ethics</a></h3>
+      <h4><a href="spinoza.html">Ethics</a></h4>
       <p class="author">Baruch Spinoza (1677) &middot; ~6-hour read &middot; <a href="ebooks/baruch-spinoza_ethics.epub">epub</a></p>
       <p class="blurb">God and Nature are one thing, free will is a name for our ignorance, and forty-eight emotions are defined in order — all set out like a geometry textbook.</p>
     </div>
@@ -468,7 +493,7 @@
     <a class="plate" href="hume.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/hume.jpg" srcset="covers/thumb/hume-160.webp 160w, covers/thumb/hume-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1748</div>
-      <h3><a href="hume.html">An Enquiry Concerning Human Understanding</a></h3>
+      <h4><a href="hume.html">An Enquiry Concerning Human Understanding</a></h4>
       <p class="author">David Hume (1748) &middot; ~3-hour read &middot; <a href="ebooks/david-hume_an-enquiry-concerning-human-understanding.epub">epub</a></p>
       <p class="blurb">Why experience can never prove the sun will rise tomorrow, and why Hume thinks that need not worry you.</p>
     </div>
@@ -477,7 +502,7 @@
     <a class="plate" href="zarathustra.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/zarathustra.jpg" srcset="covers/thumb/zarathustra-160.webp 160w, covers/thumb/zarathustra-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1883</div>
-      <h3><a href="zarathustra.html">Thus Spoke Zarathustra</a></h3>
+      <h4><a href="zarathustra.html">Thus Spoke Zarathustra</a></h4>
       <p class="author">Friedrich Nietzsche (1883–1885) &middot; ~7-hour read &middot; <a href="ebooks/friedrich-nietzsche_thus-spoke-zarathustra.epub">epub</a></p>
       <p class="blurb">A prophet comes down from his mountain to say that God is dead and man is something to be overcome. From the German, without the King James costume.</p>
     </div>
@@ -486,20 +511,20 @@
     <a class="plate" href="genealogy.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/genealogy.jpg" srcset="covers/thumb/genealogy-160.webp 160w, covers/thumb/genealogy-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1887</div>
-      <h3><a href="genealogy.html">On the Genealogy of Morals</a></h3>
+      <h4><a href="genealogy.html">On the Genealogy of Morals</a></h4>
       <p class="author">Friedrich Nietzsche (1887) &middot; ~4-hour read &middot; <a href="ebooks/friedrich-nietzsche_on-the-genealogy-of-morals.epub">epub</a></p>
       <p class="blurb">Where do good and evil come from? Nietzsche&#x27;s three essays on masters and slaves, debts and guilt, and the priests who taught us to hate ourselves, from the German.</p>
     </div>
   </li>
 </ul>
 
-<h2>Politics, War &amp; Law</h2>
+<h3 class="shelf">Politics, War &amp; Law</h3>
 <ul class="deck">
   <li class="card">
     <a class="plate" href="sun-tzu.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/sun-tzu.jpg" srcset="covers/thumb/sun-tzu-160.webp 160w, covers/thumb/sun-tzu-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">5th c. BC</div>
-      <h3><a href="sun-tzu.html">The Art of War</a></h3>
+      <h4><a href="sun-tzu.html">The Art of War</a></h4>
       <p class="author">Sun Tzu (c. 5th century BC) &middot; ~3-hour read &middot; <a href="ebooks/sun-tzu_the-art-of-war.epub">epub</a></p>
       <p class="blurb">The oldest book on war, with the commentary most editions cut: two thousand years of Chinese generals arguing with Sun Tzu and with each other.</p>
     </div>
@@ -508,7 +533,7 @@
     <a class="plate" href="utopia.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/utopia.jpg" srcset="covers/thumb/utopia-160.webp 160w, covers/thumb/utopia-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1516</div>
-      <h3><a href="utopia.html">Utopia</a></h3>
+      <h4><a href="utopia.html">Utopia</a></h4>
       <p class="author">Thomas More (1516) &middot; ~3-hour read &middot; <a href="ebooks/thomas-more_utopia.epub">epub</a></p>
       <p class="blurb">The island where everything works — and the deadpan joke is that you can&#x27;t tell how much More means it.</p>
     </div>
@@ -517,7 +542,7 @@
     <a class="plate" href="the-prince.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/the-prince.jpg" srcset="covers/thumb/the-prince-160.webp 160w, covers/thumb/the-prince-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1532</div>
-      <h3><a href="the-prince.html">The Prince</a></h3>
+      <h4><a href="the-prince.html">The Prince</a></h4>
       <p class="author">Niccolò Machiavelli (1532) &middot; ~2-hour read &middot; <a href="ebooks/niccolo-machiavelli_the-prince.epub">epub</a></p>
       <p class="blurb">The infamous handbook of power politics.</p>
     </div>
@@ -526,7 +551,7 @@
     <a class="plate" href="leviathan.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/leviathan.jpg" srcset="covers/thumb/leviathan-160.webp 160w, covers/thumb/leviathan-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1651</div>
-      <h3><a href="leviathan.html">Leviathan</a></h3>
+      <h4><a href="leviathan.html">Leviathan</a></h4>
       <p class="author">Thomas Hobbes (1651) &middot; ~15-hour read &middot; <a href="ebooks/thomas-hobbes_leviathan.epub">epub</a></p>
       <p class="blurb">Why we need government at all — the founding argument of the modern state, written amid civil war.</p>
     </div>
@@ -535,7 +560,7 @@
     <a class="plate" href="two-treatises.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/two-treatises.jpg" srcset="covers/thumb/two-treatises-160.webp 160w, covers/thumb/two-treatises-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1689</div>
-      <h3><a href="two-treatises.html">Two Treatises of Government</a></h3>
+      <h4><a href="two-treatises.html">Two Treatises of Government</a></h4>
       <p class="author">John Locke (1689) &middot; ~9-hour read &middot; <a href="ebooks/john-locke_two-treatises-of-government.epub">epub</a></p>
       <p class="blurb">The demolition of the divine right of kings, and the case for government by consent.</p>
     </div>
@@ -544,7 +569,7 @@
     <a class="plate" href="catos-letters.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/catos-letters.jpg" srcset="covers/thumb/catos-letters-160.webp 160w, covers/thumb/catos-letters-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1720</div>
-      <h3><a href="catos-letters.html">Cato&#x27;s Letters</a></h3>
+      <h4><a href="catos-letters.html">Cato&#x27;s Letters</a></h4>
       <p class="author">John Trenchard and Thomas Gordon (1720–1723) &middot; ~3-hour read &middot; <a href="ebooks/john-trenchard-and-thomas-gordon_catos-letters.epub">epub</a></p>
       <p class="blurb">Eighteen selected letters on liberty, power, and free speech — the columns that taught America to argue for revolution.</p>
     </div>
@@ -553,7 +578,7 @@
     <a class="plate" href="social-contract.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/social-contract.jpg" srcset="covers/thumb/social-contract-160.webp 160w, covers/thumb/social-contract-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1762</div>
-      <h3><a href="social-contract.html">The Social Contract</a></h3>
+      <h4><a href="social-contract.html">The Social Contract</a></h4>
       <p class="author">Jean-Jacques Rousseau (1762) &middot; ~3-hour read &middot; <a href="ebooks/jean-jacques-rousseau_the-social-contract.epub">epub</a></p>
       <p class="blurb">The general will, the social contract, and the most famous opening line in political philosophy.</p>
     </div>
@@ -562,7 +587,7 @@
     <a class="plate" href="common-sense.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/common-sense.jpg" srcset="covers/thumb/common-sense-160.webp 160w, covers/thumb/common-sense-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1776</div>
-      <h3><a href="common-sense.html">Common Sense</a></h3>
+      <h4><a href="common-sense.html">Common Sense</a></h4>
       <p class="author">Thomas Paine (1776) &middot; ~90-minute read &middot; <a href="ebooks/thomas-paine_common-sense.epub">epub</a></p>
       <p class="blurb">The pamphlet that talked America into independence.</p>
     </div>
@@ -571,7 +596,7 @@
     <a class="plate" href="federalist.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/federalist.jpg" srcset="covers/thumb/federalist-160.webp 160w, covers/thumb/federalist-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1787</div>
-      <h3><a href="federalist.html">The Federalist Papers</a></h3>
+      <h4><a href="federalist.html">The Federalist Papers</a></h4>
       <p class="author">Alexander Hamilton, James Madison, and John Jay (1787–1788) &middot; ~15-hour read &middot; <a href="ebooks/alexander-hamilton-james-madison-and-john-jay_the-federalist-papers.epub">epub</a></p>
       <p class="blurb">The Constitution&#x27;s authors explain — and sell — their design.</p>
     </div>
@@ -580,7 +605,7 @@
     <a class="plate" href="burke.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/burke.jpg" srcset="covers/thumb/burke-160.webp 160w, covers/thumb/burke-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1790</div>
-      <h3><a href="burke.html">Reflections on the Revolution in France</a></h3>
+      <h4><a href="burke.html">Reflections on the Revolution in France</a></h4>
       <p class="author">Edmund Burke (1790) &middot; ~7-hour read &middot; <a href="ebooks/edmund-burke_reflections-on-the-revolution-in-france.epub">epub</a></p>
       <p class="blurb">The book that invented conservatism — a warning, written in 1790, that a society is not a machine you can take apart and rebuild to a drawing.</p>
     </div>
@@ -589,7 +614,7 @@
     <a class="plate" href="wollstonecraft.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/wollstonecraft.jpg" srcset="covers/thumb/wollstonecraft-160.webp 160w, covers/thumb/wollstonecraft-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1792</div>
-      <h3><a href="wollstonecraft.html">A Vindication of the Rights of Woman</a></h3>
+      <h4><a href="wollstonecraft.html">A Vindication of the Rights of Woman</a></h4>
       <p class="author">Mary Wollstonecraft (1792) &middot; ~6-hour read &middot; <a href="ebooks/mary-wollstonecraft_a-vindication-of-the-rights-of-woman.epub">epub</a></p>
       <p class="blurb">Not that women are equal, but that nobody knows what women are like, because their character is manufactured by their upbringing. Written in six weeks, and angrier than its reputation.</p>
     </div>
@@ -598,7 +623,7 @@
     <a class="plate" href="democracy.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/democracy.jpg" srcset="covers/thumb/democracy-160.webp 160w, covers/thumb/democracy-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1835</div>
-      <h3><a href="democracy.html">Democracy in America</a></h3>
+      <h4><a href="democracy.html">Democracy in America</a></h4>
       <p class="author">Alexis de Tocqueville (1835/1840) &middot; ~22-hour read &middot; <a href="ebooks/alexis-de-tocqueville_democracy-in-america.epub">epub</a></p>
       <p class="blurb">A young Frenchman tours the United States and sees the democratic future — flaws and all.</p>
     </div>
@@ -607,7 +632,7 @@
     <a class="plate" href="democracy2.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/democracy2.jpg" srcset="covers/thumb/democracy2-160.webp 160w, covers/thumb/democracy2-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1835</div>
-      <h3><a href="democracy2.html">Democracy in America (From the French)</a></h3>
+      <h4><a href="democracy2.html">Democracy in America (From the French)</a></h4>
       <p class="author">Alexis de Tocqueville (1835/1840) &middot; ~22-hour read &middot; <a href="ebooks/alexis-de-tocqueville_de-la-democratie-en-amerique.epub">epub</a></p>
       <p class="blurb">A second pass, translated directly from Tocqueville&#x27;s French.</p>
     </div>
@@ -616,7 +641,7 @@
     <a class="plate" href="mill.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/mill.jpg" srcset="covers/thumb/mill-160.webp 160w, covers/thumb/mill-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1859</div>
-      <h3><a href="mill.html">On Liberty</a></h3>
+      <h4><a href="mill.html">On Liberty</a></h4>
       <p class="author">John Stuart Mill (1859) &middot; ~3-hour read &middot; <a href="ebooks/john-stuart-mill_on-liberty.epub">epub</a></p>
       <p class="blurb">One principle pushed as far as it will go: the only ground for interfering with anyone&#x27;s freedom is preventing harm to somebody else.</p>
     </div>
@@ -625,7 +650,7 @@
     <a class="plate" href="subjection.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/subjection.jpg" srcset="covers/thumb/subjection-160.webp 160w, covers/thumb/subjection-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1869</div>
-      <h3><a href="subjection.html">The Subjection of Women</a></h3>
+      <h4><a href="subjection.html">The Subjection of Women</a></h4>
       <p class="author">John Stuart Mill (1869) &middot; ~3-hour read &middot; <a href="ebooks/john-stuart-mill_the-subjection-of-women.epub">epub</a></p>
       <p class="blurb">The companion to On Liberty — marriage as the law then stood was bondage, and the real obstacle is that most men cannot yet imagine living with an equal.</p>
     </div>
@@ -634,20 +659,20 @@
     <a class="plate" href="common-law.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/common-law.jpg" srcset="covers/thumb/common-law-160.webp 160w, covers/thumb/common-law-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1881</div>
-      <h3><a href="common-law.html">The Common Law</a></h3>
+      <h4><a href="common-law.html">The Common Law</a></h4>
       <p class="author">Oliver Wendell Holmes Jr. (1881) &middot; ~9-hour read &middot; <a href="ebooks/oliver-wendell-holmes-jr_the-common-law.epub">epub</a> &middot; <a href="common-law-original.html">original text</a> (<a href="ebooks/oliver-wendell-holmes-jr_the-common-law-the-original-text.epub">epub</a>)</p>
       <p class="blurb">The life of the law has not been logic: it has been experience — crime, tort, contract and inheritance traced back to rules whose reasons died centuries ago.</p>
     </div>
   </li>
 </ul>
 
-<h2>Economics</h2>
+<h3 class="shelf">Economics</h3>
 <ul class="deck">
   <li class="card">
     <a class="plate" href="turgot.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/turgot.jpg" srcset="covers/thumb/turgot-160.webp 160w, covers/thumb/turgot-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1766</div>
-      <h3><a href="turgot.html">Reflections on the Formation and Distribution of Wealth</a></h3>
+      <h4><a href="turgot.html">Reflections on the Formation and Distribution of Wealth</a></h4>
       <p class="author">Anne-Robert-Jacques Turgot (1766) &middot; ~90-minute read &middot; <a href="ebooks/anne-robert-jacques-turgot_reflections-on-the-formation-and-distribution-of-wealth.epub">epub</a></p>
       <p class="blurb">How money, capital and interest grow out of a village of farmers, in a hundred short steps, written for two Chinese students ten years before Adam Smith.</p>
     </div>
@@ -656,7 +681,7 @@
     <a class="plate" href="wealth-of-nations.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/wealth-of-nations.jpg" srcset="covers/thumb/wealth-of-nations-160.webp 160w, covers/thumb/wealth-of-nations-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1776</div>
-      <h3><a href="wealth-of-nations.html">The Wealth of Nations</a></h3>
+      <h4><a href="wealth-of-nations.html">The Wealth of Nations</a></h4>
       <p class="author">Adam Smith (1776) &middot; ~24-hour read &middot; <a href="ebooks/adam-smith_the-wealth-of-nations.epub">epub</a></p>
       <p class="blurb">The book that invented economics: pins, markets, and the invisible hand.</p>
     </div>
@@ -665,7 +690,7 @@
     <a class="plate" href="population.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/malthus.jpg" srcset="covers/thumb/malthus-160.webp 160w, covers/thumb/malthus-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1798</div>
-      <h3><a href="population.html">An Essay on the Principle of Population</a></h3>
+      <h4><a href="population.html">An Essay on the Principle of Population</a></h4>
       <p class="author">Thomas Robert Malthus (1798) &middot; ~5-hour read &middot; <a href="ebooks/thomas-robert-malthus_an-essay-on-the-principle-of-population.epub">epub</a></p>
       <p class="blurb">Malthus&#x27; unsettling arithmetic of people and food.</p>
     </div>
@@ -674,20 +699,20 @@
     <a class="plate" href="progress-and-poverty.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/progress-and-poverty.jpg" srcset="covers/thumb/progress-and-poverty-160.webp 160w, covers/thumb/progress-and-poverty-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1879</div>
-      <h3><a href="progress-and-poverty.html">Progress and Poverty</a></h3>
+      <h4><a href="progress-and-poverty.html">Progress and Poverty</a></h4>
       <p class="author">Henry George (1879) &middot; ~14-hour read &middot; <a href="ebooks/henry-george_progress-and-poverty.epub">epub</a></p>
       <p class="blurb">Why progress and poverty rise together — and George&#x27;s famous remedy, the land tax.</p>
     </div>
   </li>
 </ul>
 
-<h2>Histories &amp; Lives</h2>
+<h3 class="shelf">Histories &amp; Lives</h3>
 <ul class="deck">
   <li class="card">
     <a class="plate" href="peloponnesian-war.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/peloponnesian-war.jpg" srcset="covers/thumb/peloponnesian-war-160.webp 160w, covers/thumb/peloponnesian-war-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 431 BC</div>
-      <h3><a href="peloponnesian-war.html">History of the Peloponnesian War</a></h3>
+      <h4><a href="peloponnesian-war.html">History of the Peloponnesian War</a></h4>
       <p class="author">Thucydides (c. 431 BC) &middot; ~15-hour read &middot; <a href="ebooks/thucydides_history-of-the-peloponnesian-war.epub">epub</a></p>
       <p class="blurb">Power, plague, and the ruin of Athens, by the first analytical historian.</p>
     </div>
@@ -696,7 +721,7 @@
     <a class="plate" href="herodotus.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/herodotus.jpg" srcset="covers/thumb/herodotus-160.webp 160w, covers/thumb/herodotus-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 430 BC</div>
-      <h3><a href="herodotus.html">The Histories</a></h3>
+      <h4><a href="herodotus.html">The Histories</a></h4>
       <p class="author">Herodotus (c. 430 BC) &middot; ~19-hour read &middot; <a href="ebooks/herodotus_the-histories.epub">epub</a></p>
       <p class="blurb">The first history book — Persia, Egypt, and the Greek wars, with magnificent detours.</p>
     </div>
@@ -705,7 +730,7 @@
     <a class="plate" href="gallic-war.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/gallic-war.jpg" srcset="covers/thumb/gallic-war-160.webp 160w, covers/thumb/gallic-war-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">50 BC</div>
-      <h3><a href="gallic-war.html">Commentaries on the Gallic War</a></h3>
+      <h4><a href="gallic-war.html">Commentaries on the Gallic War</a></h4>
       <p class="author">Julius Caesar (50 BC) &middot; ~5-hour read &middot; <a href="ebooks/julius-caesar_commentaries-on-the-gallic-war.epub">epub</a></p>
       <p class="blurb">Caesar&#x27;s own dispatches from the conquest of Gaul.</p>
     </div>
@@ -714,7 +739,7 @@
     <a class="plate" href="roman-lives.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/roman-lives.jpg" srcset="covers/thumb/roman-lives-160.webp 160w, covers/thumb/roman-lives-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 100 AD</div>
-      <h3><a href="roman-lives.html">Roman Lives</a></h3>
+      <h4><a href="roman-lives.html">Roman Lives</a></h4>
       <p class="author">Plutarch (c. 100 AD) &middot; ~8-hour read &middot; <a href="ebooks/plutarch_roman-lives.epub">epub</a></p>
       <p class="blurb">The fall of the Republic in five lives — Caesar, Cato, Cicero, Brutus, Antony — five angles on one catastrophe.</p>
     </div>
@@ -723,7 +748,7 @@
     <a class="plate" href="kenzeiki.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/kenzeiki.jpg" srcset="covers/thumb/kenzeiki-160.webp 160w, covers/thumb/kenzeiki-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">c. 1470</div>
-      <h3><a href="kenzeiki.html">The Illustrated Life of Dōgen</a></h3>
+      <h4><a href="kenzeiki.html">The Illustrated Life of Dōgen</a></h4>
       <p class="author">Kenzei (c. 1470; illustrated edition 1806) &middot; ~80-minute read &middot; <a href="ebooks/kenzei_the-illustrated-life-of-dogen.epub">epub</a></p>
       <p class="blurb">The oldest life of the founder of Sōtō Zen, written so that ordinary people could read it — with his letters, his kitchen rules, and the farmers&#x27; sworn statement about a coloured cloud.</p>
     </div>
@@ -732,7 +757,7 @@
     <a class="plate" href="cellini.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/cellini.jpg" srcset="covers/thumb/cellini-160.webp 160w, covers/thumb/cellini-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1558</div>
-      <h3><a href="cellini.html">The Life of Benvenuto Cellini</a></h3>
+      <h4><a href="cellini.html">The Life of Benvenuto Cellini</a></h4>
       <p class="author">Benvenuto Cellini (1558–1567) &middot; ~13-hour read &middot; <a href="ebooks/benvenuto-cellini_the-life-of-benvenuto-cellini.epub">epub</a></p>
       <p class="blurb">A Florentine goldsmith dictates his own life while he works: two popes, the sack of Rome, several killings, a prison escape, and the Perseus cast with the roof on fire. From the Italian.</p>
     </div>
@@ -741,7 +766,7 @@
     <a class="plate" href="autobiography.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/autobiography.jpg" srcset="covers/thumb/autobiography-160.webp 160w, covers/thumb/autobiography-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1771</div>
-      <h3><a href="autobiography.html">The Autobiography of Benjamin Franklin</a></h3>
+      <h4><a href="autobiography.html">The Autobiography of Benjamin Franklin</a></h4>
       <p class="author">Benjamin Franklin (1771–1790) &middot; ~4-hour read &middot; <a href="ebooks/benjamin-franklin_the-autobiography-of-benjamin-franklin.epub">epub</a></p>
       <p class="blurb">The original American life story — runaway apprentice to statesman, told with a wink.</p>
     </div>
@@ -750,20 +775,20 @@
     <a class="plate" href="boltzmann.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/boltzmann.jpg" srcset="covers/thumb/boltzmann-160.webp 160w, covers/thumb/boltzmann-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1905</div>
-      <h3><a href="boltzmann.html">A German Professor&#x27;s Journey into Eldorado</a></h3>
+      <h4><a href="boltzmann.html">A German Professor&#x27;s Journey into Eldorado</a></h4>
       <p class="author">Ludwig Boltzmann (1905) &middot; ~50-minute read &middot; <a href="ebooks/ludwig-boltzmann_a-german-professors-journey-into-eldorado.epub">epub</a></p>
       <p class="blurb">The founder of statistical physics goes to teach at Berkeley in 1905 and writes it up as comedy: his Viennese stomach, a dry town, sung menus, and the joy of coming home.</p>
     </div>
   </li>
 </ul>
 
-<h2>Science</h2>
+<h3 class="shelf">Science</h3>
 <ul class="deck">
   <li class="card">
     <a class="plate" href="galileo.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/galileo.jpg" srcset="covers/thumb/galileo-160.webp 160w, covers/thumb/galileo-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1632</div>
-      <h3><a href="galileo.html">Dialogue Concerning the Two Chief World Systems</a></h3>
+      <h4><a href="galileo.html">Dialogue Concerning the Two Chief World Systems</a></h4>
       <p class="author">Galileo Galilei (1632) &middot; ~14-hour read &middot; <a href="ebooks/galileo-galilei_dialogue-concerning-the-two-chief-world-systems.epub">epub</a></p>
       <p class="blurb">Four days of brilliant argument about whether the Earth moves — the vernacular bestseller that got its author hauled before the Inquisition, translated from Galileo&#x27;s own Italian.</p>
     </div>
@@ -772,7 +797,7 @@
     <a class="plate" href="fontenelle.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/fontenelle.jpg" srcset="covers/thumb/fontenelle-160.webp 160w, covers/thumb/fontenelle-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1686</div>
-      <h3><a href="fontenelle.html">Conversations on the Plurality of Worlds</a></h3>
+      <h4><a href="fontenelle.html">Conversations on the Plurality of Worlds</a></h4>
       <p class="author">Bernard le Bovier de Fontenelle (1686) &middot; ~3-hour read &middot; <a href="ebooks/bernard-le-bovier-de-fontenelle_conversations-on-the-plurality-of-worlds.epub">epub</a></p>
       <p class="blurb">Six evenings in a moonlit garden, a young philosopher and a teasing Marquise, and the whole new astronomy: the first great book of popular science, from 1686.</p>
     </div>
@@ -781,7 +806,7 @@
     <a class="plate" href="euler.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/euler.jpg" srcset="covers/thumb/euler-160.webp 160w, covers/thumb/euler-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1768</div>
-      <h3><a href="euler.html">Letters to a German Princess</a></h3>
+      <h4><a href="euler.html">Letters to a German Princess</a></h4>
       <p class="author">Leonhard Euler (1768) &middot; ~16-hour read &middot; <a href="ebooks/leonhard-euler_letters-to-a-german-princess.epub">epub</a></p>
       <p class="blurb">Twice a week for two years the greatest mathematician of his age wrote to a fifteen-year-old princess about sound, light, gravity, the soul, logic, lightning and telescopes. All 234 letters, from the French.</p>
     </div>
@@ -790,7 +815,7 @@
     <a class="plate" href="origin-of-species.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/origin-of-species.jpg" srcset="covers/thumb/origin-of-species-160.webp 160w, covers/thumb/origin-of-species-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1859</div>
-      <h3><a href="origin-of-species.html">On the Origin of Species</a></h3>
+      <h4><a href="origin-of-species.html">On the Origin of Species</a></h4>
       <p class="author">Charles Darwin (1859) &middot; ~16-hour read &middot; <a href="ebooks/charles-darwin_on-the-origin-of-species.epub">epub</a></p>
       <p class="blurb">Darwin&#x27;s patient, overwhelming case for evolution by natural selection.</p>
     </div>
@@ -799,7 +824,7 @@
     <a class="plate" href="forces.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/forces.jpg" srcset="covers/thumb/forces-160.webp 160w, covers/thumb/forces-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1860</div>
-      <h3><a href="forces.html">On the Various Forces of Nature</a></h3>
+      <h4><a href="forces.html">On the Various Forces of Nature</a></h4>
       <p class="author">Michael Faraday (1860) &middot; ~3-hour read &middot; <a href="ebooks/michael-faraday_on-the-various-forces-of-nature.epub">epub</a> &middot; <a href="forces-original.html">original text</a> (<a href="ebooks/michael-faraday_on-the-various-forces-of-nature-the-original-text.epub">epub</a>)</p>
       <p class="blurb">Six Christmas lectures for children on gravity, heat, magnetism and electricity, arriving at the discovery that they are one force in different forms. With the original figures.</p>
     </div>
@@ -808,7 +833,7 @@
     <a class="plate" href="candle.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/candle.jpg" srcset="covers/thumb/candle-160.webp 160w, covers/thumb/candle-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1861</div>
-      <h3><a href="candle.html">The Chemical History of a Candle</a></h3>
+      <h4><a href="candle.html">The Chemical History of a Candle</a></h4>
       <p class="author">Michael Faraday (1861) &middot; ~3-hour read &middot; <a href="ebooks/michael-faraday_the-chemical-history-of-a-candle.epub">epub</a> &middot; <a href="candle-original.html">original text</a> (<a href="ebooks/michael-faraday_the-chemical-history-of-a-candle-the-original-text.epub">epub</a>)</p>
       <p class="blurb">The most famous science lectures ever given: the whole of chemistry drawn out of one burning candle, ending with the news that you are a slow candle yourself.</p>
     </div>
@@ -817,7 +842,7 @@
     <a class="plate" href="tyndall.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/tyndall.jpg" srcset="covers/thumb/tyndall-160.webp 160w, covers/thumb/tyndall-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1867</div>
-      <h3><a href="tyndall.html">Sound</a></h3>
+      <h4><a href="tyndall.html">Sound</a></h4>
       <p class="author">John Tyndall (1867) &middot; ~9-hour read &middot; <a href="ebooks/john-tyndall_sound.epub">epub</a> &middot; <a href="tyndall-original.html">original text</a> (<a href="ebooks/john-tyndall_sound-the-original-text.epub">epub</a>)</p>
       <p class="blurb">Sound taught with a row of five boys, a shivering glass tube and a flame that ducks at the letter S — then Tyndall discovers the invisible clouds that swallow fog signals on clear days.</p>
     </div>
@@ -826,7 +851,7 @@
     <a class="plate" href="ball.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/ball.jpg" srcset="covers/thumb/ball-160.webp 160w, covers/thumb/ball-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1889</div>
-      <h3><a href="ball.html">Star-land</a></h3>
+      <h4><a href="ball.html">Star-land</a></h4>
       <p class="author">Robert S. Ball (1889/1899) &middot; ~7-hour read &middot; <a href="ebooks/robert-s-ball_star-land.epub">epub</a> &middot; <a href="ball-original.html">original text</a> (<a href="ebooks/robert-s-ball_star-land-the-original-text.epub">epub</a>)</p>
       <p class="blurb">The funniest of the Christmas lecturers takes you from the sun to the nebulae, measuring the sky with two children and a pair of scissors.</p>
     </div>
@@ -835,7 +860,7 @@
     <a class="plate" href="soap-bubbles.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/soap-bubbles.jpg" srcset="covers/thumb/soap-bubbles-160.webp 160w, covers/thumb/soap-bubbles-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1890</div>
-      <h3><a href="soap-bubbles.html">Soap Bubbles and the Forces Which Mould Them</a></h3>
+      <h4><a href="soap-bubbles.html">Soap Bubbles and the Forces Which Mould Them</a></h4>
       <p class="author">C. V. Boys (1890) &middot; ~2-hour read &middot; <a href="ebooks/c-v-boys_soap-bubbles-and-the-forces-which-mould-them.epub">epub</a> &middot; <a href="soap-bubbles-original.html">original text</a> (<a href="ebooks/c-v-boys_soap-bubbles-and-the-forces-which-mould-them-the-original-text.epub">epub</a>)</p>
       <p class="blurb">Three Christmas lectures for children on why a bubble is round, why a jet of water breaks into beads, and how to make a fountain sing.</p>
     </div>
@@ -844,7 +869,7 @@
     <a class="plate" href="thompson.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/thompson.jpg" srcset="covers/thumb/thompson-160.webp 160w, covers/thumb/thompson-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1897</div>
-      <h3><a href="thompson.html">Light Visible and Invisible</a></h3>
+      <h4><a href="thompson.html">Light Visible and Invisible</a></h4>
       <p class="author">Silvanus P. Thompson (1897) &middot; ~5-hour read &middot; <a href="ebooks/silvanus-p-thompson_light-visible-and-invisible.epub">epub</a> &middot; <a href="thompson-original.html">original text</a> (<a href="ebooks/silvanus-p-thompson_light-visible-and-invisible-the-original-text.epub">epub</a>)</p>
       <p class="blurb">Six Christmas lectures on light, given thirteen months after the X-ray was announced. Asked what it is, its discoverer says: I do not know.</p>
     </div>
@@ -853,20 +878,20 @@
     <a class="plate" href="fleming.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/fleming.jpg" srcset="covers/thumb/fleming-160.webp 160w, covers/thumb/fleming-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1902</div>
-      <h3><a href="fleming.html">Waves and Ripples in Water, Air, and Aether</a></h3>
+      <h4><a href="fleming.html">Waves and Ripples in Water, Air, and Aether</a></h4>
       <p class="author">J. A. Fleming (1902) &middot; ~6-hour read &middot; <a href="ebooks/j-a-fleming_waves-and-ripples-in-water-air-and-aether.epub">epub</a> &middot; <a href="fleming-original.html">original text</a> (<a href="ebooks/j-a-fleming_waves-and-ripples-in-water-air-and-aether-the-original-text.epub">epub</a>)</p>
       <p class="blurb">Six Christmas lectures arguing that a ripple, a ship&#x27;s wake, a sung note, a petal&#x27;s colour and Marconi&#x27;s new wireless signal are all one thing in different media.</p>
     </div>
   </li>
 </ul>
 
-<h2>Mathematics &amp; Logic</h2>
+<h3 class="shelf">Mathematics &amp; Logic</h3>
 <ul class="deck">
   <li class="card">
     <a class="plate" href="euclid-rivals.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/euclid-rivals.jpg" srcset="covers/thumb/euclid-rivals-160.webp 160w, covers/thumb/euclid-rivals-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1879</div>
-      <h3><a href="euclid-rivals.html">Euclid and His Modern Rivals</a></h3>
+      <h4><a href="euclid-rivals.html">Euclid and His Modern Rivals</a></h4>
       <p class="author">Lewis Carroll (1879/1885) &middot; ~4-hour read &middot; <a href="ebooks/lewis-carroll_euclid-and-his-modern-rivals.epub">epub</a></p>
       <p class="blurb">The author of Alice puts every geometry textbook of his day on trial, as a farce: the ghost of Euclid against Herr Niemand, Mr. Nobody, who loses every case.</p>
     </div>
@@ -875,7 +900,7 @@
     <a class="plate" href="tangled-tale.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/tangled-tale.jpg" srcset="covers/thumb/tangled-tale-160.webp 160w, covers/thumb/tangled-tale-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1885</div>
-      <h3><a href="tangled-tale.html">A Tangled Tale</a></h3>
+      <h4><a href="tangled-tale.html">A Tangled Tale</a></h4>
       <p class="author">Lewis Carroll (1885) &middot; ~2-hour read &middot; <a href="ebooks/lewis-carroll_a-tangled-tale.epub">epub</a> &middot; <a href="tangled-tale-original.html">original text</a> (<a href="ebooks/lewis-carroll_a-tangled-tale-the-original-text.epub">epub</a>)</p>
       <p class="blurb">Ten comic stories with a puzzle hidden in each — then Carroll&#x27;s gleeful review of the wrong answers his readers sent in.</p>
     </div>
@@ -884,7 +909,7 @@
     <a class="plate" href="pillow-problems.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/pillow-problems.jpg" srcset="covers/thumb/pillow-problems-160.webp 160w, covers/thumb/pillow-problems-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1893</div>
-      <h3><a href="pillow-problems.html">Pillow Problems</a></h3>
+      <h4><a href="pillow-problems.html">Pillow Problems</a></h4>
       <p class="author">Lewis Carroll (1893) &middot; ~2-hour read &middot; <a href="ebooks/lewis-carroll_pillow-problems.epub">epub</a> &middot; <a href="pillow-problems-original.html">original text</a> (<a href="ebooks/lewis-carroll_pillow-problems-the-original-text.epub">epub</a>)</p>
       <p class="blurb">Seventy-two problems the author of Alice worked out in his head, in bed, in the dark — and an introduction saying exactly which thoughts he was keeping out.</p>
     </div>
@@ -893,13 +918,554 @@
     <a class="plate" href="symbolic-logic.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/symbolic-logic.jpg" srcset="covers/thumb/symbolic-logic-160.webp 160w, covers/thumb/symbolic-logic-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
     <div class="copy">
       <div class="tab">1896</div>
-      <h3><a href="symbolic-logic.html">Symbolic Logic</a></h3>
+      <h4><a href="symbolic-logic.html">Symbolic Logic</a></h4>
       <p class="author">Lewis Carroll (1896) &middot; ~4-hour read &middot; <a href="ebooks/lewis-carroll_symbolic-logic.epub">epub</a> &middot; <a href="symbolic-logic-original.html">original text</a> (<a href="ebooks/lewis-carroll_symbolic-logic-the-original-text.epub">epub</a>)</p>
       <p class="blurb">The author of Alice teaching logic to children as a board game with red and grey counters — cats that understand French, and a club with no members.</p>
     </div>
   </li>
 </ul>
 
+</section>
+
+<section class="strand" id="restored" aria-labelledby="restored-title">
+<header class="strand-head">
+<h2 id="restored-title">Restored Editions</h2>
+<p class="strand-motto">The author&rsquo;s own words, properly presented</p>
+<p class="note">Not every old book needs retelling. Some are already
+clear and simply deserve a better edition than they have. In these
+volumes <strong>the prose is the author&rsquo;s, unchanged</strong>;
+what has been added is the apparatus &mdash; a caption and descriptive
+alt text for every plate, modern typesetting, and an ebook worth
+reading on a real device. Where a book captioned its own illustrations,
+those captions are the author&rsquo;s and stand as printed.</p>
+</header>
+
+<h3 class="shelf">Mathematics</h3>
+<ul class="deck">
+  <li class="card">
+    <a class="plate" href="byrne.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/byrne.jpg" srcset="covers/thumb/byrne-160.webp 160w, covers/thumb/byrne-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1847</div>
+      <h4><a href="byrne.html">The First Six Books of the Elements of Euclid</a></h4>
+      <p class="author">Oliver Byrne (1847) &middot; ~3-hour read &middot; <a href="ebooks/oliver-byrne_the-first-six-books-of-the-elements-of-euclid.epub">epub</a></p>
+      <p class="blurb">Euclid with the letters replaced by colour, 1847: every proof written in coloured pictures of its parts. CC BY-SA, after Slyusarev&#x27;s recreation. 212 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="tangled-tale-original.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/tangled-tale.jpg" srcset="covers/thumb/tangled-tale-160.webp 160w, covers/thumb/tangled-tale-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1885</div>
+      <h4><a href="tangled-tale-original.html">A Tangled Tale</a></h4>
+      <p class="author">Original text of a retelling &middot; Lewis Carroll (1885) &middot; ~2-hour read &middot; <a href="ebooks/lewis-carroll_a-tangled-tale-the-original-text.epub">epub</a></p>
+      <p class="blurb">Carroll’s ten Knots as they ran in The Monthly Packet, with his answers and Frost’s drawings. 9 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="game-of-logic.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/game-of-logic.jpg" srcset="covers/thumb/game-of-logic-160.webp 160w, covers/thumb/game-of-logic-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1887</div>
+      <h4><a href="game-of-logic.html">The Game of Logic</a></h4>
+      <p class="author">Lewis Carroll (1887) &middot; ~80-minute read &middot; <a href="ebooks/lewis-carroll_the-game-of-logic.epub">epub</a></p>
+      <p class="blurb">Logic as a board game with red and grey counters, the rulebook for the card that came in its envelope. 200 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="pillow-problems-original.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/pillow-problems.jpg" srcset="covers/thumb/pillow-problems-160.webp 160w, covers/thumb/pillow-problems-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1893</div>
+      <h4><a href="pillow-problems-original.html">Pillow Problems</a></h4>
+      <p class="author">Original text of a retelling &middot; Lewis Carroll (1893) &middot; ~2-hour read &middot; <a href="ebooks/lewis-carroll_pillow-problems-the-original-text.epub">epub</a></p>
+      <p class="blurb">Seventy-two problems solved in bed in the dark, in Carroll’s own Victorian notation. 64 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="symbolic-logic-original.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/symbolic-logic.jpg" srcset="covers/thumb/symbolic-logic-160.webp 160w, covers/thumb/symbolic-logic-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1896</div>
+      <h4><a href="symbolic-logic-original.html">Symbolic Logic</a></h4>
+      <p class="author">Original text of a retelling &middot; Lewis Carroll (1896) &middot; ~4-hour read &middot; <a href="ebooks/lewis-carroll_symbolic-logic-the-original-text.epub">epub</a></p>
+      <p class="blurb">Carroll’s own text of 1896, notation and all, with every diagram described by which cell holds which counter. 308 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="calculus-made-easy.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/calculus-made-easy.jpg" srcset="covers/thumb/calculus-made-easy-160.webp 160w, covers/thumb/calculus-made-easy-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1910</div>
+      <h4><a href="calculus-made-easy.html">Calculus Made Easy</a></h4>
+      <p class="author">Silvanus P. Thompson (1910/1914) &middot; ~3-hour read &middot; <a href="ebooks/silvanus-p-thompson_calculus-made-easy.epub">epub</a></p>
+      <p class="blurb">“What one fool can do, another can.” The 1914 edition, with every formula typeset rather than pictured. 66 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="introduction-to-mathematics.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/introduction-to-mathematics.jpg" srcset="covers/thumb/introduction-to-mathematics-160.webp 160w, covers/thumb/introduction-to-mathematics-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1911</div>
+      <h4><a href="introduction-to-mathematics.html">An Introduction to Mathematics</a></h4>
+      <p class="author">Alfred North Whitehead (1911) &middot; ~3-hour read &middot; <a href="ebooks/alfred-north-whitehead_an-introduction-to-mathematics.epub">epub</a></p>
+      <p class="blurb">What mathematics is, from variables to the calculus, by the co-author of Principia Mathematica. Typeset from the transcription&#x27;s TeX. 35 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="russell-imp.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/russell-imp.jpg" srcset="covers/thumb/russell-imp-160.webp 160w, covers/thumb/russell-imp-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1919</div>
+      <h4><a href="russell-imp.html">Introduction to Mathematical Philosophy</a></h4>
+      <p class="author">Bertrand Russell (1919) &middot; ~5-hour read &middot; <a href="ebooks/bertrand-russell_introduction-to-mathematical-philosophy.epub">epub</a></p>
+      <p class="blurb">What a number is, and the sizes of infinity, written in prison as the plain road into Principia Mathematica. The 1920 text, its formulas typeset. 2 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="godel.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/godel.jpg" srcset="covers/thumb/godel-160.webp 160w, covers/thumb/godel-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1958</div>
+      <h4><a href="godel.html">Gödel&#x27;s Proof</a></h4>
+      <p class="author">Ernest Nagel and James R. Newman (1958) &middot; ~2-hour read &middot; <a href="ebooks/ernest-nagel-and-james-r-newman_godels-proof.epub">epub</a></p>
+      <p class="blurb">Nagel and Newman&#x27;s 1958 classic: how Gödel showed that arithmetic holds truths it cannot prove, with the figures redrawn. 3 plates.</p>
+    </div>
+  </li>
+</ul>
+
+<h3 class="shelf">Physical sciences</h3>
+<ul class="deck">
+  <li class="card">
+    <a class="plate" href="forces-original.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/forces.jpg" srcset="covers/thumb/forces-160.webp 160w, covers/thumb/forces-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1860</div>
+      <h4><a href="forces-original.html">On the Various Forces of Nature</a></h4>
+      <p class="author">Original text of a retelling &middot; Michael Faraday (1860) &middot; ~2-hour read &middot; <a href="ebooks/michael-faraday_on-the-various-forces-of-nature-the-original-text.epub">epub</a></p>
+      <p class="blurb">The Christmas course of 1859, the winter before the Candle, driving at the idea that the forces of nature are one. 50 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="candle-original.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/candle.jpg" srcset="covers/thumb/candle-160.webp 160w, covers/thumb/candle-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1861</div>
+      <h4><a href="candle-original.html">The Chemical History of a Candle</a></h4>
+      <p class="author">Original text of a retelling &middot; Michael Faraday (1861) &middot; ~3-hour read &middot; <a href="ebooks/michael-faraday_the-chemical-history-of-a-candle-the-original-text.epub">epub</a></p>
+      <p class="blurb">Faraday’s last Christmas course, and the most famous science lectures ever given. 38 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="helmholtz.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/helmholtz.jpg" srcset="covers/thumb/helmholtz-160.webp 160w, covers/thumb/helmholtz-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1863</div>
+      <h4><a href="helmholtz.html">On the Sensations of Tone</a></h4>
+      <p class="author">Hermann von Helmholtz (1863/1885) &middot; ~30-hour read &middot; <a href="ebooks/hermann-von-helmholtz_on-the-sensations-of-tone.epub">epub</a></p>
+      <p class="blurb">Why some chords sound smooth and others rough: the physics of tone and the history of scales, in Ellis&#x27;s annotated translation, every page read from the scan. 181 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="tyndall-original.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/tyndall.jpg" srcset="covers/thumb/tyndall-160.webp 160w, covers/thumb/tyndall-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1867</div>
+      <h4><a href="tyndall-original.html">Sound</a></h4>
+      <p class="author">Original text of a retelling &middot; John Tyndall (1867) &middot; ~9-hour read &middot; <a href="ebooks/john-tyndall_sound-the-original-text.epub">epub</a></p>
+      <p class="blurb">Eighteen sixty-seven, and the book every later Royal Institution lecturer is imitating. 187 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="ball-original.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/ball.jpg" srcset="covers/thumb/ball-160.webp 160w, covers/thumb/ball-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1889</div>
+      <h4><a href="ball-original.html">Star-land</a></h4>
+      <p class="author">Original text of a retelling &middot; Robert S. Ball (1889/1899) &middot; ~7-hour read &middot; <a href="ebooks/robert-s-ball_star-land-the-original-text.epub">epub</a></p>
+      <p class="blurb">Six lectures from the sun out to the nebulae, by the funniest of the lecturers; Ball’s own captions are frequently the joke. 94 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="soap-bubbles-original.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/soap-bubbles.jpg" srcset="covers/thumb/soap-bubbles-160.webp 160w, covers/thumb/soap-bubbles-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1890</div>
+      <h4><a href="soap-bubbles-original.html">Soap Bubbles and the Forces Which Mould Them</a></h4>
+      <p class="author">Original text of a retelling &middot; C. V. Boys (1890) &middot; ~2-hour read &middot; <a href="ebooks/c-v-boys_soap-bubbles-and-the-forces-which-mould-them-the-original-text.epub">epub</a></p>
+      <p class="blurb">Three Christmas lectures on why a bubble is round, with the recipes for doing every experiment yourself. 70 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="thompson-original.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/thompson.jpg" srcset="covers/thumb/thompson-160.webp 160w, covers/thumb/thompson-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1897</div>
+      <h4><a href="thompson-original.html">Light Visible and Invisible</a></h4>
+      <p class="author">Original text of a retelling &middot; Silvanus P. Thompson (1897) &middot; ~5-hour read &middot; <a href="ebooks/silvanus-p-thompson_light-visible-and-invisible-the-original-text.epub">epub</a></p>
+      <p class="blurb">The Christmas course given twelve months after Röntgen announced the X-ray, with one lecture on nothing else. The plates were recut and cleaned from the page scans. 127 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="astronomy-for-everybody.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/astronomy-for-everybody.jpg" srcset="covers/thumb/astronomy-for-everybody-160.webp 160w, covers/thumb/astronomy-for-everybody-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1902</div>
+      <h4><a href="astronomy-for-everybody.html">Astronomy for Everybody</a></h4>
+      <p class="author">Simon Newcomb (1902) &middot; ~6-hour read &middot; <a href="ebooks/simon-newcomb_astronomy-for-everybody.epub">epub</a></p>
+      <p class="blurb">The sky from the turning earth out to the fixed stars, as America&#x27;s great calculator of the planets told it in 1902, with all sixty-four figures. 62 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="fleming-original.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/fleming.jpg" srcset="covers/thumb/fleming-160.webp 160w, covers/thumb/fleming-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1902</div>
+      <h4><a href="fleming-original.html">Waves and Ripples in Water, Air, and Aether</a></h4>
+      <p class="author">Original text of a retelling &middot; J. A. Fleming (1902) &middot; ~6-hour read &middot; <a href="ebooks/j-a-fleming_waves-and-ripples-in-water-air-and-aether-the-original-text.epub">epub</a></p>
+      <p class="blurb">Christmas 1901, weeks after Marconi pushed a signal across the Atlantic, reported here as current news. 87 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="science-and-hypothesis.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/science-and-hypothesis.jpg" srcset="covers/thumb/science-and-hypothesis-160.webp 160w, covers/thumb/science-and-hypothesis-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1905</div>
+      <h4><a href="science-and-hypothesis.html">Science and Hypothesis</a></h4>
+      <p class="author">Henri Poincaré (1905) &middot; ~4-hour read &middot; <a href="ebooks/henri-poincare_science-and-hypothesis.epub">epub</a></p>
+      <p class="blurb">Why one geometry cannot be more true than another, only more convenient. Greenstreet&#x27;s 1905 translation, with Larmor&#x27;s introduction.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="worthington.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/worthington.jpg" srcset="covers/thumb/worthington-160.webp 160w, covers/thumb/worthington-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1908</div>
+      <h4><a href="worthington.html">A Study of Splashes</a></h4>
+      <p class="author">A. M. Worthington (1908) &middot; ~2-hour read &middot; <a href="ebooks/a-m-worthington_a-study-of-splashes.epub">epub</a></p>
+      <p class="blurb">The splash of a drop, photographed by electric spark in hundredths of a second — with Worthington’s 1894 Royal Institution discourse on the same subject. 247 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="relativity.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/relativity.jpg" srcset="covers/thumb/relativity-160.webp 160w, covers/thumb/relativity-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1920</div>
+      <h4><a href="relativity.html">Relativity: The Special and General Theory</a></h4>
+      <p class="author">Albert Einstein (1920) &middot; ~2-hour read &middot; <a href="ebooks/albert-einstein_relativity-the-special-and-general-theory.epub">epub</a></p>
+      <p class="blurb">A train, an embankment and two strokes of lightning. Lawson&#x27;s 1920 text, with the formulas typeset. 5 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="bridgman.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/bridgman.jpg" srcset="covers/thumb/bridgman-160.webp 160w, covers/thumb/bridgman-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1922</div>
+      <h4><a href="bridgman.html">Dimensional Analysis</a></h4>
+      <p class="author">P. W. Bridgman (1922) &middot; ~3-hour read &middot; <a href="ebooks/p-w-bridgman_dimensional-analysis.epub">epub</a></p>
+      <p class="blurb">What a pendulum, a drop of liquid and an airplane model have in common: the Π theorem, read from the 1922 printing.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="endless.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/endless.jpg" srcset="covers/thumb/endless-160.webp 160w, covers/thumb/endless-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1945</div>
+      <h4><a href="endless.html">Science, the Endless Frontier</a></h4>
+      <p class="author">Vannevar Bush (1945) &middot; ~70-minute read &middot; <a href="ebooks/vannevar-bush_science-the-endless-frontier.epub">epub</a></p>
+      <p class="blurb">Vannevar Bush&#x27;s 1945 report to the President: basic research as the pacemaker of progress, and the plan that became the National Science Foundation. 1 plates.</p>
+    </div>
+  </li>
+</ul>
+
+<h3 class="shelf">Life sciences</h3>
+<ul class="deck">
+  <li class="card">
+    <a class="plate" href="gray-plants.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/gray-plants.jpg" srcset="covers/thumb/gray-plants-160.webp 160w, covers/thumb/gray-plants-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1858</div>
+      <h4><a href="gray-plants.html">How Plants Grow</a></h4>
+      <p class="author">Asa Gray (1858) &middot; ~7-hour read &middot; <a href="ebooks/asa-gray_how-plants-grow.epub">epub</a></p>
+      <p class="blurb">Botany for young people, 1858: how plants grow, and a Popular Flora of 105 families with keys and 467 woodcuts. 467 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="chalk.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/chalk.jpg" srcset="covers/thumb/chalk-160.webp 160w, covers/thumb/chalk-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1868</div>
+      <h4><a href="chalk.html">On a Piece of Chalk</a></h4>
+      <p class="author">T. H. Huxley (1868) &middot; ~40-minute read &middot; <a href="ebooks/t-h-huxley_on-a-piece-of-chalk.epub">epub</a></p>
+      <p class="blurb">What a carpenter&#x27;s piece of chalk can tell working men about the floor of the Atlantic, deep time and evolution: Huxley&#x27;s Norwich lecture of 1868.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="psychology-briefer-course.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/psychology-briefer-course.jpg" srcset="covers/thumb/psychology-briefer-course-160.webp 160w, covers/thumb/psychology-briefer-course-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1892</div>
+      <h4><a href="psychology-briefer-course.html">Psychology: Briefer Course</a></h4>
+      <p class="author">William James (1892) &middot; ~11-hour read &middot; <a href="ebooks/william-james_psychology-briefer-course.epub">epub</a></p>
+      <p class="blurb">Habit, the stream of consciousness, the self and the will, in James&#x27;s own one-volume version of the Principles. 62 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="kropotkin.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/kropotkin.jpg" srcset="covers/thumb/kropotkin-160.webp 160w, covers/thumb/kropotkin-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1902</div>
+      <h4><a href="kropotkin.html">Mutual Aid: A Factor of Evolution</a></h4>
+      <p class="author">Peter Kropotkin (1902) &middot; ~7-hour read &middot; <a href="ebooks/peter-kropotkin_mutual-aid-a-factor-of-evolution.epub">epub</a></p>
+      <p class="blurb">Cooperation among ants, birds, villagers, guildsmen and strikers as a factor of evolution: Kropotkin&#x27;s reply to Huxley, in the revised edition of 1904.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="de-kruif.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/de-kruif.jpg" srcset="covers/thumb/de-kruif-160.webp 160w, covers/thumb/de-kruif-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1926</div>
+      <h4><a href="de-kruif.html">Microbe Hunters</a></h4>
+      <p class="author">Paul de Kruif (1926) &middot; ~9-hour read &middot; <a href="ebooks/paul-de-kruif_microbe-hunters.epub">epub</a></p>
+      <p class="blurb">Leeuwenhoek, Pasteur, Koch, Reed and Ehrlich, one discoverer to a chapter, told as adventure stories. The 1926 text, with its plates described. 15 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="haldane.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/haldane.jpg" srcset="covers/thumb/haldane-160.webp 160w, covers/thumb/haldane-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1926</div>
+      <h4><a href="haldane.html">On Being the Right Size</a></h4>
+      <p class="author">J. B. S. Haldane (1926) &middot; ~10-minute read &middot; <a href="ebooks/j-b-s-haldane_on-being-the-right-size.epub">epub</a></p>
+      <p class="blurb">Why a mouse survives a fall down a mine shaft and a horse splashes, why insects fear getting wet, and what size a state should be: Haldane&#x27;s essay, as printed in 1927.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="carson.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/carson.jpg" srcset="covers/thumb/carson-160.webp 160w, covers/thumb/carson-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1947</div>
+      <h4><a href="carson.html">Conservation in Action</a></h4>
+      <p class="author">Rachel Carson (1947–1950) &middot; ~3-hour read &middot; <a href="ebooks/rachel-carson_conservation-in-action.epub">epub</a></p>
+      <p class="blurb">Rachel Carson&#x27;s Conservation in Action booklets for the Fish and Wildlife Service: four wildlife refuges, and why wild creatures, like men, must have a place to live. 137 plates.</p>
+    </div>
+  </li>
+</ul>
+
+<h3 class="shelf">Law</h3>
+<ul class="deck">
+  <li class="card">
+    <a class="plate" href="common-law-original.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/common-law.jpg" srcset="covers/thumb/common-law-160.webp 160w, covers/thumb/common-law-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1881</div>
+      <h4><a href="common-law-original.html">The Common Law</a></h4>
+      <p class="author">Original text of a retelling &middot; Oliver Wendell Holmes Jr. (1881) &middot; ~9-hour read &middot; <a href="ebooks/oliver-wendell-holmes-jr_the-common-law-the-original-text.epub">epub</a></p>
+      <p class="blurb"></p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="nature-of-the-judicial-process.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/nature-of-the-judicial-process.jpg" srcset="covers/thumb/nature-of-the-judicial-process-160.webp 160w, covers/thumb/nature-of-the-judicial-process-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1921</div>
+      <h4><a href="nature-of-the-judicial-process.html">The Nature of the Judicial Process</a></h4>
+      <p class="author">Benjamin N. Cardozo (1921) &middot; ~2-hour read &middot; <a href="ebooks/benjamin-n-cardozo_the-nature-of-the-judicial-process.epub">epub</a></p>
+      <p class="blurb">A judge on what judges do: logic, history, custom and social welfare, and legislating only between the gaps.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="sabotage.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/sabotage.jpg" srcset="covers/thumb/sabotage-160.webp 160w, covers/thumb/sabotage-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1944</div>
+      <h4><a href="sabotage.html">Simple Sabotage Field Manual</a></h4>
+      <p class="author">Office of Strategic Services (1944) &middot; ~40-minute read &middot; <a href="ebooks/office-of-strategic-services_simple-sabotage-field-manual.epub">epub</a></p>
+      <p class="blurb">The OSS&#x27;s 1944 manual for occupied Europe: slow the enemy with dull tools, wrong switches and endless committees.</p>
+    </div>
+  </li>
+</ul>
+
+<h3 class="shelf">Humanities</h3>
+<ul class="deck">
+  <li class="card">
+    <a class="plate" href="howard.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/howard.jpg" srcset="covers/thumb/howard-160.webp 160w, covers/thumb/howard-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1902</div>
+      <h4><a href="howard.html">Garden Cities of To-morrow</a></h4>
+      <p class="author">Ebenezer Howard (1902) &middot; ~3-hour read &middot; <a href="ebooks/ebenezer-howard_garden-cities-of-to-morrow.epub">epub</a></p>
+      <p class="blurb">The Three Magnets and the town of 32,000 in its belt of farmland: the book that invented the garden city, its diagrams transcribed. 6 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="problems-of-philosophy.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/problems-of-philosophy.jpg" srcset="covers/thumb/problems-of-philosophy-160.webp 160w, covers/thumb/problems-of-philosophy-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1912</div>
+      <h4><a href="problems-of-philosophy.html">The Problems of Philosophy</a></h4>
+      <p class="author">Bertrand Russell (1912) &middot; ~3-hour read &middot; <a href="ebooks/bertrand-russell_the-problems-of-philosophy.epub">epub</a></p>
+      <p class="blurb">A table, its colour and its shape, and what if anything we know about it. The 1912 text.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="strunk.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/strunk.jpg" srcset="covers/thumb/strunk-160.webp 160w, covers/thumb/strunk-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1920</div>
+      <h4><a href="strunk.html">The Elements of Style</a></h4>
+      <p class="author">William Strunk Jr. (1920) &middot; ~1-hour read &middot; <a href="ebooks/william-strunk-jr_the-elements-of-style.epub">epub</a></p>
+      <p class="blurb">Eighteen numbered rules, the words most often misused, and every faulty sentence beside its correction. The 1920 text, before the later revisions.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="short-history-of-the-world.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/short-history-of-the-world.jpg" srcset="covers/thumb/short-history-of-the-world-160.webp 160w, covers/thumb/short-history-of-the-world-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1922</div>
+      <h4><a href="short-history-of-the-world.html">A Short History of the World</a></h4>
+      <p class="author">H. G. Wells (1922) &middot; ~8-hour read &middot; <a href="ebooks/h-g-wells_a-short-history-of-the-world.epub">epub</a></p>
+      <p class="blurb">From the nebulae to the peace of 1922 in sixty-seven chapters, with all 208 plates and the preface restored. 208 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="fowler.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/fowler.jpg" srcset="covers/thumb/fowler-160.webp 160w, covers/thumb/fowler-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1926</div>
+      <h4><a href="fowler.html">A Dictionary of Modern English Usage</a></h4>
+      <p class="author">H. W. Fowler (1926) &middot; ~32-hour read &middot; <a href="ebooks/h-w-fowler_a-dictionary-of-modern-english-usage.epub">epub</a></p>
+      <p class="blurb">Which spelling, which plural, how to say it, and the essays on Elegant Variation and the Split Infinitive: the 1926 first edition, every cross-reference a link.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="conquest.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/conquest.jpg" srcset="covers/thumb/conquest-160.webp 160w, covers/thumb/conquest-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1930</div>
+      <h4><a href="conquest.html">The Conquest of Happiness</a></h4>
+      <p class="author">Bertrand Russell (1930) &middot; ~4-hour read &middot; <a href="ebooks/bertrand-russell_the-conquest-of-happiness.epub">epub</a></p>
+      <p class="blurb">Envy, boredom, fatigue and fear of the neighbours, then zest, affection and work: Russell&#x27;s 1930 book for the unhappy, not the learned.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="perlman.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/perlman.jpg" srcset="covers/thumb/perlman-160.webp 160w, covers/thumb/perlman-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1983</div>
+      <h4><a href="perlman.html">Against His-story, Against Leviathan!</a></h4>
+      <p class="author">Fredy Perlman (1983) &middot; ~8-hour read &middot; <a href="ebooks/fredy-perlman_against-his-story-against-leviathan.epub">epub</a></p>
+      <p class="blurb">Civilization from Sumer to Detroit as the life of a monster, Hobbes&#x27;s Leviathan, and of everyone who walked away from it: Perlman&#x27;s 1983 polemic, with its Blake plates. 27 plates.</p>
+    </div>
+  </li>
+</ul>
+
+<h3 class="shelf">Stories and verse</h3>
+<ul class="deck">
+  <li class="card">
+    <a class="plate" href="bulfinch.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/bulfinch.jpg" srcset="covers/thumb/bulfinch-160.webp 160w, covers/thumb/bulfinch-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1855</div>
+      <h4><a href="bulfinch.html">The Age of Fable</a></h4>
+      <p class="author">Thomas Bulfinch (1855) &middot; ~9-hour read &middot; <a href="ebooks/thomas-bulfinch_the-age-of-fable.epub">epub</a></p>
+      <p class="blurb">The myths of Greece and Rome, the East and the North, each followed into the English poets who borrowed it. The first edition&#x27;s text of 1855.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="hunting-of-the-snark.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/hunting-of-the-snark.jpg" srcset="covers/thumb/hunting-of-the-snark-160.webp 160w, covers/thumb/hunting-of-the-snark-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1876</div>
+      <h4><a href="hunting-of-the-snark.html">The Hunting of the Snark</a></h4>
+      <p class="author">Lewis Carroll (1876) &middot; ~20-minute read &middot; <a href="ebooks/lewis-carroll_the-hunting-of-the-snark.epub">epub</a></p>
+      <p class="blurb">An agony in eight fits, with Holiday&#x27;s nine illustrations and both of his cover designs. 11 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="old-indian-legends.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/old-indian-legends.jpg" srcset="covers/thumb/old-indian-legends-160.webp 160w, covers/thumb/old-indian-legends-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1901</div>
+      <h4><a href="old-indian-legends.html">Old Indian Legends</a></h4>
+      <p class="author">Zitkala-Ša (1901) &middot; ~80-minute read &middot; <a href="ebooks/zitkala-sa_old-indian-legends.epub">epub</a></p>
+      <p class="blurb">Fourteen Dakota legends of Iktomi the trickster and his neighbours, with the preface and Angel De Cora’s plates that Gutenberg dropped. 14 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="alice.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/alice.jpg" srcset="covers/thumb/alice-160.webp 160w, covers/thumb/alice-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1907</div>
+      <h4><a href="alice.html">Alice’s Adventures in Wonderland</a></h4>
+      <p class="author">Lewis Carroll (1907) &middot; ~2-hour read &middot; <a href="ebooks/lewis-carroll_alices-adventures-in-wonderland.epub">epub</a></p>
+      <p class="blurb">The 1907 Wonderland, with Rackham&#x27;s colour plates at full size and the Mouse&#x27;s tale in its shape. 30 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="aesop.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/aesop.jpg" srcset="covers/thumb/aesop-160.webp 160w, covers/thumb/aesop-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1912</div>
+      <h4><a href="aesop.html">Aesop&#x27;s Fables</a></h4>
+      <p class="author">Aesop (1912) &middot; ~3-hour read &middot; <a href="ebooks/aesop_aesops-fables.epub">epub</a></p>
+      <p class="blurb">All 284 fables in Vernon Jones’s 1912 translation, with Chesterton’s introduction and every Rackham plate and silhouette. 80 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="irish-fairy-tales.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/irish-fairy-tales.jpg" srcset="covers/thumb/irish-fairy-tales-160.webp 160w, covers/thumb/irish-fairy-tales-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1920</div>
+      <h4><a href="irish-fairy-tales.html">Irish Fairy Tales</a></h4>
+      <p class="author">James Stephens (1920) &middot; ~5-hour read &middot; <a href="ebooks/james-stephens_irish-fairy-tales.epub">epub</a></p>
+      <p class="blurb">Ten stories of Fionn, the Fianna and the Shi’, with Rackham’s colour plates and drawings, and the captions Gutenberg dropped. 37 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="american-indian-stories.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/american-indian-stories.jpg" srcset="covers/thumb/american-indian-stories-160.webp 160w, covers/thumb/american-indian-stories-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1921</div>
+      <h4><a href="american-indian-stories.html">American Indian Stories</a></h4>
+      <p class="author">Zitkala-Ša (1921) &middot; ~2-hour read &middot; <a href="ebooks/zitkala-sa_american-indian-stories.epub">epub</a></p>
+      <p class="blurb">Her childhood on the Yankton reservation, her schooldays in the East, her stories, and her 1921 case against the Indian Bureau.</p>
+    </div>
+  </li>
+</ul>
+
+<h3 class="shelf">Home, craft and arts</h3>
+<ul class="deck">
+  <li class="card">
+    <a class="plate" href="beecher.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/beecher.jpg" srcset="covers/thumb/beecher-160.webp 160w, covers/thumb/beecher-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1869</div>
+      <h4><a href="beecher.html">The American Woman&#x27;s Home</a></h4>
+      <p class="author">Catharine E. Beecher and Harriet Beecher Stowe (1869) &middot; ~11-hour read &middot; <a href="ebooks/catharine-e-beecher-and-harriet-beecher-stowe_the-american-womans-home.epub">epub</a></p>
+      <p class="blurb">Catharine Beecher and Harriet Beecher Stowe&#x27;s 1869 manual of domestic science, from house plans and ventilation to cooking and the sick room, with its illustrations restored. 81 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="hoffmann.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/hoffmann.jpg" srcset="covers/thumb/hoffmann-160.webp 160w, covers/thumb/hoffmann-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1876</div>
+      <h4><a href="hoffmann.html">Modern Magic</a></h4>
+      <p class="author">Professor Hoffmann (1876) &middot; ~15-hour read &middot; <a href="ebooks/professor-hoffmann_modern-magic.epub">epub</a></p>
+      <p class="blurb">Cards, coins, the cups and balls and the great stage illusions, explained trick by trick, with every drawing described. 302 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="farmer.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/farmer.jpg" srcset="covers/thumb/farmer-160.webp 160w, covers/thumb/farmer-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1896</div>
+      <h4><a href="farmer.html">The Boston Cooking-School Cook Book</a></h4>
+      <p class="author">Fannie Merritt Farmer (1896/1910) &middot; ~12-hour read &middot; <a href="ebooks/fannie-merritt-farmer_the-boston-cooking-school-cook-book.epub">epub</a></p>
+      <p class="blurb">Level measurements, from bread to the chafing-dish: the author&#x27;s own 1910 revision, every photograph described. 133 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="erdnase.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/erdnase.jpg" srcset="covers/thumb/erdnase-160.webp 160w, covers/thumb/erdnase-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1902</div>
+      <h4><a href="erdnase.html">The Expert at the Card Table</a></h4>
+      <p class="author">S. W. Erdnase (1902) &middot; ~4-hour read &middot; <a href="ebooks/s-w-erdnase_the-expert-at-the-card-table.epub">epub</a></p>
+      <p class="blurb">The 1902 manual of card handling, at the card table and on the stage, with all of M. D. Smith&#x27;s drawings from life. 101 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="speed.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/speed.jpg" srcset="covers/thumb/speed-160.webp 160w, covers/thumb/speed-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1913</div>
+      <h4><a href="speed.html">The Practice and Science of Drawing</a></h4>
+      <p class="author">Harold Speed (1913) &middot; ~6-hour read &middot; <a href="ebooks/harold-speed_the-practice-and-science-of-drawing.epub">epub</a></p>
+      <p class="blurb">Line and mass, rhythm and balance: a painter on what drawing is and how to learn it, with all eighty-eight illustrations described. 88 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="verrill.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/verrill.jpg" srcset="covers/thumb/verrill-160.webp 160w, covers/thumb/verrill-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1917</div>
+      <h4><a href="verrill.html">Knots, Splices and Rope Work</a></h4>
+      <p class="author">A. Hyatt Verrill (1917) &middot; ~70-minute read &middot; <a href="ebooks/a-hyatt-verrill_knots-splices-and-rope-work.epub">epub</a></p>
+      <p class="blurb">Every useful knot, from the square knot to the Turk&#x27;s head, with all 148 drawings described so the rope can be followed. 148 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="capablanca.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/capablanca.jpg" srcset="covers/thumb/capablanca-160.webp 160w, covers/thumb/capablanca-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1921</div>
+      <h4><a href="capablanca.html">Chess Fundamentals</a></h4>
+      <p class="author">José Raúl Capablanca (1921) &middot; ~4-hour read &middot; <a href="ebooks/jose-raul-capablanca_chess-fundamentals.epub">epub</a></p>
+      <p class="blurb">From the simplest mates to fourteen annotated games, by the new world champion. Every diagram described square by square. 151 plates.</p>
+    </div>
+  </li>
+  <li class="card">
+    <a class="plate" href="tarbell.html" tabindex="-1" aria-hidden="true"><img src="covers/thumb/tarbell.jpg" srcset="covers/thumb/tarbell-160.webp 160w, covers/thumb/tarbell-240.webp 240w" sizes="(max-width: 34rem) 80px, 110px" alt="" width="110" height="165" loading="lazy" decoding="async"></a>
+    <div class="copy">
+      <div class="tab">1942</div>
+      <h4><a href="tarbell.html">The Tarbell Course in Magic, Volume II</a></h4>
+      <p class="author">Harlan Tarbell (1942) &middot; ~10-hour read &middot; <a href="ebooks/harlan-tarbell_the-tarbell-course-in-magic-volume-ii.epub">epub</a></p>
+      <p class="blurb">Volume II of Harlan Tarbell&#x27;s correspondence course in stage magic, from coins and cards to ropes and illusions, with his drawings restored and described. 1046 plates.</p>
+    </div>
+  </li>
+</ul>
+
+</section>
+
 </main>
+<script src="site.js" defer></script>
 </body>
 </html>

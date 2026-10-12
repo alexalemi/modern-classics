@@ -18,193 +18,30 @@
 	<link rel="alternate" type="application/rss+xml" title="Modern Classics" href="feed.xml">
 	<link rel="alternate" type="application/atom+xml;profile=opds-catalog;kind=acquisition" title="Modern Classics OPDS catalog" href="opds.atom">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
-<style>
-html {
-  max-width: 70ch;
-  padding: 3em 1em;
-  margin: auto;
-  line-height: 1.75;
-  font-size: 1.25em;
-}
-
-body {
-	font: large/1.556 "Libertine", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
-}
-
-h1,h2,h3,h4,h5,h6 {
-  margin: 3em 0 1em;
-	font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
-}
-
-h1 {
-  margin-top: 1em;
-  text-align: center;
-}
-
-h4 {
-  margin: 2em 0 1em;
-  font-style: italic;
-  font-weight: 600;
-}
-
-p,ul,ol {
-  margin-bottom: 2em;
-  color: #1d1d1d;
-  font-family: Georgia, "Palatino Linotype", "Book Antiqua", serif;
-}
-
-blockquote {
-  margin: 1.5em 2em;
-  padding-left: 1em;
-  border-left: 3px solid #ccc;
-  font-style: italic;
-}
-
-blockquote p {
-  margin-bottom: 1em;
-}
-
-img.glyph { vertical-align: middle; display: inline; }
-span.frac, span.stack { display: inline-block; vertical-align: middle; text-align: center; }
-span.frac > span, span.stack > span { display: block; }
-span.frac > span.num { border-bottom: 1px solid currentColor; }
-span.stack.brace { border-left: 2px solid currentColor; border-right: 2px solid currentColor; border-radius: 0.6em; padding: 0 0.3em; }
-
-pre.outline {
-  font-family: Georgia, "Palatino Linotype", "Book Antiqua", serif;
-  white-space: pre-wrap;
-  line-height: 1.6;
-  margin-bottom: 2em;
-  color: #1d1d1d;
-}
-
-figure {
-  margin: 2.5em auto;
-  text-align: center;
-}
-
-figure + figure {
-  margin-top: 1em;
-}
-
-figure img {
-  max-width: 100%;
-  height: auto;
-  background: #fff;
-}
-
-table.plates {
-  width: 100%;
-  margin: 2.5em 0;
-  border-collapse: collapse;
-  font-family: Georgia, "Palatino Linotype", "Book Antiqua", serif;
-  line-height: 1.5;
-}
-
-table.plates td {
-  padding: 0.4em 0.8em;
-  vertical-align: middle;
-  border-bottom: 1px solid #e6e2da;
-}
-
-table.plates tr:last-child td {
-  border-bottom: none;
-}
-
-table.plates figure,
-table.plates figure + figure {
-  margin: 0.4em auto;
-}
-
-table.plates figcaption {
-  display: none;
-}
-
-/* page locators: a printed page and quarter, for books that cite
-   themselves by them (Helmholtz: "see p. 77c") */
-span.loc {
-  font-size: 0.65em;
-  color: #888;
-  vertical-align: 0.3em;
-  padding: 0 0.15em;
-  font-style: normal;
-}
-a.ref {
-  color: inherit;
-  text-decoration: underline dotted;
-}
-
-span.sc {
-  font-variant: small-caps;
-}
-
-figcaption {
-  margin-top: 0.6em;
-  font-family: Georgia, "Palatino Linotype", "Book Antiqua", serif;
-  font-size: 0.8em;
-  line-height: 1.5;
-  color: #4a4a4a;
-  text-align: left;
-}
-
-.center {
-  text-align: center;
-}
-
-/* the title block: the subtitle and byline are paragraphs set like an
-   h3, not h3s, so the outline holds only real sections */
-.title-block { text-align: center; }
-/* phones: the desktop sizes set ~35 characters to a line at 390px */
-@media (max-width: 40em) {
-  html { font-size: 1em; padding: 1.5em 1em; }
-}
-.title-line {
-  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
-  font-weight: bold;
-  font-size: 1.17em;
-  margin: 1em 0;
-}
-
-.subtitle {
-  text-align: center;
-  font-style: italic;
-  margin-top: -1em;
-  margin-bottom: 3em;
-}
-
-.toc-book {
-  font-weight: bold;
-  margin-top: 1em;
-  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
-}
-
-.toc-list {
-  list-style: none;
-  padding-left: 1.5em;
-}
-
-.toc-list li {
-  margin-bottom: 0.3em;
-}
-.imprint { text-align: center; margin: 0 0 1.5em; }
-.imprint img { height: 3.2em; width: auto; }
-</style>
+	<link rel="preload" href="fonts/libre-caslon-text-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="stylesheet" href="fonts.css">
+	<link rel="stylesheet" href="book.css">
+	<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "The Bhagavad Gita", "author": {"@type": "Person", "name": "Vyasa"}, "inLanguage": "en", "url": "https://emend.press/gita.html", "description": "A warrior drops his bow rather than kill his own family, and his charioteer, who is God, answers him. All seven hundred verses, from the Sanskrit. Retold in modern English, free to read online and as an ebook.", "publisher": {"@type": "Organization", "name": "Emend Press", "url": "https://emend.press/", "logo": "https://emend.press/apple-touch-icon.png"}, "isAccessibleForFree": true, "isPartOf": {"@type": "BookSeries", "name": "Modern Classics", "url": "https://emend.press/"}, "image": "https://emend.press/covers/gita.jpg", "datePublished": "2026", "bookEdition": "Modern English retelling", "isBasedOn": {"@type": "Book", "name": "The Bhagavad Gita", "author": {"@type": "Person", "name": "Vyasa"}}, "workExample": {"@type": "Book", "bookFormat": "https://schema.org/EBook", "encodingFormat": "application/epub+zip", "url": "https://emend.press/ebooks/vyasa_the-bhagavad-gita.epub"}}</script>
 </head>
 
 <body>
 <header class="title-block">
-	<p class="imprint"><a href="./" title="Modern Classics, from Emend Press"><img src="brand/emend-mark.svg" alt="Emend Press: back to the Modern Classics library" width="141" height="263"></a></p>
-	<h1>The Bhagavad Gita</h1>
-	<p class="title-line">The Song of the Lord, retold from the Sanskrit: all eighteen chapters and seven hundred verses, complete, as modern prose</p>
-	<p class="title-line">by Vyasa</p>
-	<p class="center">
-	<s>c. 200 BC</s> 2026
-	</p>
+	<div class="title-inner">
+		<p class="series"><a href="./#retellings" title="Back to the library"><picture><source srcset="brand/emend-mark-reversed.svg" media="(prefers-color-scheme: dark)"><img src="brand/emend-mark.svg" alt="" width="141" height="263"></picture><span>Modern Classics</span></a></p>
+		<p class="cover"><img src="covers/thumb/gita.jpg" srcset="covers/thumb/gita-240.webp 240w, covers/thumb/gita.jpg 300w" sizes="(max-width: 36rem) 110px, 150px" alt="" width="150" height="225"></p>
+		<div class="title-text">
+			<h1>The Bhagavad Gita</h1>
+			<p class="title-line">The Song of the Lord, retold from the Sanskrit: all eighteen chapters and seven hundred verses, complete, as modern prose</p>
+			<p class="title-line byline">by Vyasa</p>
+			<p class="dates"><s>c. 200 BC</s> 2026</p>
+			<ul class="actions"><li><a class="button primary" href="ebooks/vyasa_the-bhagavad-gita.epub" download>Download epub</a></li><li><a class="button" href="#contents">Contents</a></li></ul>
+		</div>
+	</div>
 </header>
 
 <main>
-	<hr>
-	<p><i>This is an AI modernization of The Bhagavad Gita into contemporary English. The original is available from <a href="https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/2_epic/mbh/ext/bhgce__u.htm">GRETIL (the critical edition of the Mahabharata, Bhishma Parva 23-40)</a>. Also available as an <a href="ebooks/vyasa_the-bhagavad-gita.epub">epub</a>.</i></p>
+	<div class="intro-note"><p><i>This is an AI modernization of The Bhagavad Gita into contemporary English. The original is available from <a href="https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/2_epic/mbh/ext/bhgce__u.htm">GRETIL (the critical edition of the Mahabharata, Bhishma Parva 23-40)</a>. Also available as an <a href="ebooks/vyasa_the-bhagavad-gita.epub">epub</a>.</i></p></div>
+	<p class="resume" hidden>Continue reading: <a href="#contents"></a></p>
 
 	<hr>
 <section aria-labelledby="editors-introduction">
@@ -217,7 +54,7 @@ figcaption {
 </section>
 
 	<hr>
-<nav aria-labelledby="contents">
+<nav class="contents" aria-labelledby="contents">
 <h2 id="contents">Contents</h2>
 <ul class="toc-list">
 <li><a href="#ch-1">Chapter 1: Arjuna&#x27;s Despair</a></li>
@@ -2066,6 +1903,7 @@ wise rule that does not waver. That is what I believe.</p>
 </section>
 </article>
 </main>
-
+<a class="to-contents" href="#contents">Contents</a>
+<script src="book.js" defer></script>
 </body>
 </html>

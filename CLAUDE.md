@@ -207,6 +207,17 @@ books/{book}/              # One directory per book
 - `splitter.py` — source text → `chapters/` + `manifest.json` (heading-regex
   or legacy splits-file mode; Gutenberg stripping; oversize auto-split)
 - `verify.py` — mechanical completeness/consistency checks before assembly
+- The site's look lives in four static files in site/: `fonts.css` (the
+  self-hosted fonts, shared), `site.css` + `site.js` (the front pages and
+  the filter box), `book.css` + `book.js` (every book page: the title band
+  with cover and Download button, the floating Contents button, "continue
+  reading" kept in the reader's own localStorage). Book pages set their
+  running text in the reader's own best screen serif for legibility; the
+  Emend fonts are for the title band, headings and controls only. Dark mode
+  follows the system setting. CSS/JS changes need no page rebuild; a change
+  to `site/template.html` does (assemble every book). The front page lists
+  BOTH collections (retellings, then restored editions via
+  `build_restored.section()`); restored.html remains for old links.
 - `seo.py` — search and link-preview plumbing. `seo.BASE`
   (https://emend.press) is the canonical host, the one place it is written
   (build_feeds reads it). Every page gets a description (the shelf blurb),

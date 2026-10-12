@@ -34,6 +34,14 @@ Each book gets more care than a single "please modernize this" prompt. The proce
 
 An honest caveat: these are AI retellings, and despite the checks, a turn of phrase may occasionally drift from the original's nuance. Treat these as a friendly first encounter, not a scholarly edition — and if a book grabs you, go read a real translation of the original. Every page links to the source text for exactly that reason. If you spot something off, [tell me](mailto:contact@emend.press).
 
+## Restored editions
+
+Not every old book needs retelling. Some are already clear and simply deserve a better edition than they have: the plates scanned properly, every illustration captioned and described for readers who can't see it, the mathematics typeset, and an ebook that works on a real device. Those are the [restored editions](./#restored). The words are the author's, unchanged; what's new is the apparatus around them. A few of the retellings also have their original text here as a companion, so you can read the two side by side.
+
+## Emend Press
+
+Modern Classics is published by Emend Press. *To emend* is to correct a text, which is what an editor does. Every book here is free to read online and to download, and the work done on them is dedicated to the public domain (CC0), except where a book's colophon says otherwise. Corrections, suggestions and requests are welcome at [contact@emend.press](mailto:contact@emend.press).
+
 ## Following along
 
 New retellings appear here as they're finished. Two ways to subscribe:

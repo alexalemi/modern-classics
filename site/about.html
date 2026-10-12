@@ -20,6 +20,7 @@
 	<link rel="preload" href="fonts/oswald-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="fonts/yellowtail-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="fonts/libre-caslon-text-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="stylesheet" href="fonts.css">
 	<link rel="stylesheet" href="site.css">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
@@ -35,13 +36,21 @@
       <feFuncB type="table" tableValues="0.302 0.886"/>
     </feComponentTransfer>
   </filter>
+  <filter id="ink-dark" color-interpolation-filters="sRGB">
+    <feColorMatrix type="matrix" values=".33 .5 .17 0 0  .33 .5 .17 0 0  .33 .5 .17 0 0  0 0 0 1 0"/>
+    <feComponentTransfer>
+      <feFuncR type="table" tableValues="0.114 0.910"/>
+      <feFuncG type="table" tableValues="0.141 0.886"/>
+      <feFuncB type="table" tableValues="0.188 0.831"/>
+    </feComponentTransfer>
+  </filter>
 </svg>
 
 <header class="masthead">
-  <a class="imprint" href="about.html"><img src="brand/emend-wordmark.svg" alt="Emend Press" width="774" height="283"></a>
+  <a class="imprint" href="about.html"><picture><source srcset="brand/emend-wordmark-reversed.svg" media="(prefers-color-scheme: dark)"><img src="brand/emend-wordmark.svg" alt="Emend Press" width="774" height="283"></picture></a>
   <h1>About</h1>
-  <p class="motto">Classic texts, retold in contemporary English</p>
-  <nav><a href="./">Retellings</a> &middot; <a href="restored.html">Restored editions</a> &middot; Follow along: <a href="feed.xml">RSS</a> &middot; <a href="opds.atom">OPDS catalog</a> for e-readers</nav>
+  <p class="motto">Classic books, retold and restored</p>
+  <nav><a href="./#retellings">Retellings</a> &middot; <a href="./#restored">Restored editions</a> &middot; Follow along: <a href="feed.xml">RSS</a> &middot; <a href="opds.atom">OPDS catalog</a> for e-readers</nav>
 </header>
 
 <main>
@@ -80,6 +89,10 @@
 </li>
 </ol>
 <p>An honest caveat: these are AI retellings, and despite the checks, a turn of phrase may occasionally drift from the original&rsquo;s nuance. Treat these as a friendly first encounter, not a scholarly edition — and if a book grabs you, go read a real translation of the original. Every page links to the source text for exactly that reason. If you spot something off, <a href="mailto:contact@emend.press">tell me</a>.</p>
+<h2>Restored editions</h2>
+<p>Not every old book needs retelling. Some are already clear and simply deserve a better edition than they have: the plates scanned properly, every illustration captioned and described for readers who can&rsquo;t see it, the mathematics typeset, and an ebook that works on a real device. Those are the <a href="./#restored">restored editions</a>. The words are the author&rsquo;s, unchanged; what&rsquo;s new is the apparatus around them. A few of the retellings also have their original text here as a companion, so you can read the two side by side.</p>
+<h2>Emend Press</h2>
+<p>Modern Classics is published by Emend Press. <em>To emend</em> is to correct a text, which is what an editor does. Every book here is free to read online and to download, and the work done on them is dedicated to the public domain (CC0), except where a book&rsquo;s colophon says otherwise. Corrections, suggestions and requests are welcome at <a href="mailto:contact@emend.press">contact@emend.press</a>.</p>
 <h2>Following along</h2>
 <p>New retellings appear here as they&rsquo;re finished. Two ways to subscribe:</p>
 <p><strong>RSS</strong> — point any feed reader (Feedly, NetNewsWire, Miniflux, …) at:</p>
@@ -92,5 +105,6 @@
 <p>You&rsquo;ll get the full shelf with covers, and can download any book straight to your device — no computer required.</p>
 </article>
 </main>
+<script src="site.js" defer></script>
 </body>
 </html>

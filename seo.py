@@ -104,6 +104,79 @@ def head_tags(page, title, description, image=None, kind="website"):
     return "\n\t".join(lines)
 
 
+def _year(date):
+    """A schema.org date from an env DATE, or None: "1884" yes, "c. 1200" no."""
+    m = re.fullmatch(r"(\d{3,4})", str(date).strip())
+    return m.group(1).zfill(4) if m else None
+
+
+def _ld(obj):
+    """A JSON-LD <script> block; "</" is escaped so text can never close it."""
+    import json
+    text = json.dumps(obj, ensure_ascii=False, indent=None).replace("</", "<\\/")
+    return f'<script type="application/ld+json">{text}</script>'
+
+
+PUBLISHER = {"@type": "Organization", "name": "Emend Press", "url": f"{BASE}/",
+             "logo": f"{BASE}/apple-touch-icon.png"}
+
+
+def book_jsonld(env, page, description, book, epub, original=False):
+    """schema.org/Book for a book page: what search engines read to know the
+    page is a book, by whom, from when, free, with an epub.
+
+    A retelling is a new edition (datePublished = MODERN_YEAR) that
+    isBasedOn the original work (its own DATE); the original-text and
+    restored pages are the work itself."""
+    title, author = _plain(env["ORIGINAL_WORK"]), _plain(env["AUTHOR"])
+    restored = original or env.get("EDITION", "").lower() == "restored"
+    person = {"@type": "Person", "name": author}
+    ld = {
+        "@context": "https://schema.org",
+        "@type": "Book",
+        "name": title + (": The Original Text" if original else ""),
+        "author": person,
+        "inLanguage": "en",
+        "url": url(page),
+        "description": _plain(description),
+        "publisher": PUBLISHER,
+        "isAccessibleForFree": True,
+        "isPartOf": {"@type": "BookSeries", "name": SITE_NAME, "url": f"{BASE}/"},
+    }
+    if (SITE / "covers" / f"{book}.jpg").exists():
+        ld["image"] = f"{BASE}/covers/{book}.jpg"
+    if restored:
+        if _year(env["DATE"]):
+            ld["datePublished"] = _year(env["DATE"])
+    else:
+        ld["datePublished"] = env.get("MODERN_YEAR", "2026")
+        ld["bookEdition"] = "Modern English retelling"
+        based = {"@type": "Book", "name": title, "author": person}
+        if _year(env["DATE"]):
+            based["datePublished"] = _year(env["DATE"])
+        ld["isBasedOn"] = based
+    if epub:
+        ld["workExample"] = {
+            "@type": "Book",
+            "bookFormat": "https://schema.org/EBook",
+            "encodingFormat": "application/epub+zip",
+            "url": f"{BASE}/ebooks/{epub}",
+        }
+    return _ld(ld)
+
+
+def site_jsonld():
+    """WebSite + publisher for the front page."""
+    return _ld({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": SITE_NAME,
+        "url": f"{BASE}/",
+        "description": SITE_DESCRIPTION,
+        "publisher": PUBLISHER,
+    })
+
+
 def share_image(book):
     """The share card for book <dir>, if its cover exists."""
     return f"covers/share/{book}.jpg" if (SITE / "covers" / f"{book}.jpg").exists() else None
@@ -241,7 +314,7 @@ def write_404():
     import build_index
     page = build_index.page_shell(
         "404.html", "Page not found &mdash; Modern Classics", "Page not found",
-        "Classic texts, retold in contemporary English",
+        "Classic books, retold and restored",
         '<article class="prose">\n<p>There is no page at this address. '
         'It may have moved, or the link may have a typo.</p>\n'
         '<p><a href="./">Browse the whole library</a>, or see the '

@@ -59,6 +59,16 @@ choices in ebook_meta.json (each with its crop):
   nude) -> Allan Ramsay's portrait of Rousseau (1766).
 - cellini: a photograph of the nude Perseus model -> Niklaus Manuel, "Saint
   Eligius in His Workshop" (1515), a goldsmith's shop.
+Same day, on Alex's review of the site: THREE COVERS WERE A WHOLE SCANNED
+PAGE. With no crop, prepare_cover centre-crops the Commons file, and when that
+file is a photographed book page the cover is mostly paper. Utopia (Holbein's
+woodcut, crop now 843x1265+247+104, the frame itself), Progress and Poverty
+(Doré's "Over London by Rail", 1206x1809+1430+440) and the Gallic War (Royer's
+Vercingetorix, a print with a caption under it, 1400x2100+1000+262; the canvas
+is too wide for a 2:3 cut to hold both men, so it keeps Vercingetorix and the
+edge of Caesar). Byrne's Euclid traded its Book I.47 page for Ribera's
+"Euclid" (c. 1630-1635, Getty), at Alex's request. CHECK EVERY NEW COVER for a
+page around the picture, not only for what the picture shows.
 Borderline and kept: Blake's Ancient of Days (science-and-hypothesis) and
 West's Franklin with cherubs (autobiography). The per-book "Cover:" notes
 below for these nine describe the SUPERSEDED covers.

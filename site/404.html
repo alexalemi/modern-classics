@@ -12,6 +12,7 @@
 	<link rel="preload" href="fonts/oswald-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="fonts/yellowtail-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="fonts/libre-caslon-text-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="stylesheet" href="fonts.css">
 	<link rel="stylesheet" href="site.css">
 	<link rel="icon" type="image/svg+xml" href="brand/emend-favicon.svg"><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
@@ -27,13 +28,21 @@
       <feFuncB type="table" tableValues="0.302 0.886"/>
     </feComponentTransfer>
   </filter>
+  <filter id="ink-dark" color-interpolation-filters="sRGB">
+    <feColorMatrix type="matrix" values=".33 .5 .17 0 0  .33 .5 .17 0 0  .33 .5 .17 0 0  0 0 0 1 0"/>
+    <feComponentTransfer>
+      <feFuncR type="table" tableValues="0.114 0.910"/>
+      <feFuncG type="table" tableValues="0.141 0.886"/>
+      <feFuncB type="table" tableValues="0.188 0.831"/>
+    </feComponentTransfer>
+  </filter>
 </svg>
 
 <header class="masthead">
-  <a class="imprint" href="about.html"><img src="brand/emend-wordmark.svg" alt="Emend Press" width="774" height="283"></a>
+  <a class="imprint" href="about.html"><picture><source srcset="brand/emend-wordmark-reversed.svg" media="(prefers-color-scheme: dark)"><img src="brand/emend-wordmark.svg" alt="Emend Press" width="774" height="283"></picture></a>
   <h1>Page not found</h1>
-  <p class="motto">Classic texts, retold in contemporary English</p>
-  <nav><a href="/">Retellings</a> &middot; <a href="restored.html">Restored editions</a> &middot; <a href="about.html">About</a> &middot; Follow along: <a href="feed.xml">RSS</a> &middot; <a href="opds.atom">OPDS catalog</a> for e-readers</nav>
+  <p class="motto">Classic books, retold and restored</p>
+  <nav><a href="./#retellings">Retellings</a> &middot; <a href="./#restored">Restored editions</a> &middot; <a href="about.html">About</a> &middot; Follow along: <a href="feed.xml">RSS</a> &middot; <a href="opds.atom">OPDS catalog</a> for e-readers</nav>
 </header>
 
 <main>
@@ -42,5 +51,6 @@
 <p><a href="/">Browse the whole library</a>, or see the <a href="restored.html">restored editions</a>.</p>
 </article>
 </main>
+<script src="site.js" defer></script>
 </body>
 </html>

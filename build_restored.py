@@ -259,7 +259,11 @@ def books():
             yield "companion", d, env
 
 
-def main():
+def section():
+    """The Restored Editions strand as one <section id="restored">: the note,
+    then a shelf per topic. Shared by restored.html and the front page, which
+    lists both strands (Alex, 2026-10-12: the restored editions were hidden
+    behind a link). Returns (html, native count, companion count)."""
     native, companion = [], []
     for kind, d, env in books():
         page_stem = env.get("PAGE", d.name)
@@ -288,24 +292,33 @@ def main():
     # BY TOPIC (Alex, 2026-09-20). A companion (the original text of a
     # retelling) sits with its subject, marked as such, not in a list of
     # its own; within a topic, in order of first publication.
-    out = [NOTE]
+    out = [build_index.strand_head("restored", "Restored Editions",
+                                   "The author&rsquo;s own words, properly presented",
+                                   NOTE)]
     rows = [(t, k, r) for _, _, r, t, k in native + companion]
     for topic in TOPICS:
         these = sorted((x for x in rows if x[0] == topic), key=lambda x: x[1])
         if not these:
             continue
-        out.append(f'<h2>{html.escape(topic)}</h2>\n<ul class="deck">')
+        out.append(f'<h3 class="shelf">{html.escape(topic)}</h3>\n<ul class="deck">')
         out += [r for _, _, r in these]
         out.append("</ul>\n")
+    out.append("</section>\n")
+    return "\n".join(out), len(native), len(companion)
+
+
+def main():
+    body, native, companion = section()
     (SITE / "restored.html").write_text(build_index.page_shell(
         "restored.html", "Restored Editions &mdash; Modern Classics",
         "Restored Editions", "The author&rsquo;s own words, properly presented",
-        "\n".join(out),
+        body,
         description="Restored editions of classic books: the author's own "
                     "words, unchanged, with new captions, introductions and "
-                    "proper ebooks. Free to read online, from Emend Press."))
+                    "proper ebooks. Free to read online, from Emend Press.",
+        finder=True))
     print(f"wrote site/restored.html "
-          f"({len(native)} edition(s), {len(companion)} companion(s))")
+          f"({native} edition(s), {companion} companion(s))")
     return 0
 
 

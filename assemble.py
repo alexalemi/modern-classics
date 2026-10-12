@@ -937,7 +937,7 @@ def main():
                               restore=args.original)
 
     subtitle = env.get("SUBTITLE", "")
-    subtitle_block = (f'\t<p class="title-line">{html.escape(subtitle)}</p>\n'
+    subtitle_block = (f'\t\t\t<p class="title-line">{html.escape(subtitle)}</p>\n'
                       if subtitle else "")
     if env.get("SOURCE_URL"):
         name = env.get("SOURCE_NAME", env["SOURCE_URL"])
@@ -989,16 +989,47 @@ def main():
                  f'{original_sentence}</i></p>')
 
     import seo
+    description = (seo.describe(book.name, args.original,
+                                env.get("EDITION", "").lower() == "restored")
+                   or f"{title} by {env['AUTHOR']}, from the Modern Classics library.")
     head = seo.head_tags(
         f"{stem}.html",
         f"{title} — {env['AUTHOR']}" + (" (original text)" if args.original else ""),
-        seo.describe(book.name, args.original,
-                     env.get("EDITION", "").lower() == "restored")
-        or f"{title} by {env['AUTHOR']}, from the Modern Classics library.",
-        seo.share_image(book.name), kind="book")
+        description, seo.share_image(book.name), kind="book")
+    jsonld = seo.book_jsonld(env, f"{stem}.html", description, book.name,
+                             epub, original=args.original)
+
+    # The title band: the cover (the index card's thumbnails, already made by
+    # build_feeds.make_thumbs) and the buttons a reader looks for first.
+    thumb = root / "site" / "covers" / "thumb" / f"{book.name}.jpg"
+    cover = ""
+    if thumb.exists():
+        t = f"covers/thumb/{book.name}"
+        cover = (f'\t\t<p class="cover"><img src="{t}.jpg" '
+                 f'srcset="{t}-240.webp 240w, {t}.jpg 300w" '
+                 f'sizes="(max-width: 36rem) 110px, 150px" alt="" '
+                 f'width="150" height="225"></p>\n')
+    buttons = []
+    if epub:
+        buttons.append(f'<a class="button primary" href="ebooks/{epub}" download>Download epub</a>')
+    if args.original:
+        if not env.get("EDITION", "").lower() == "restored":
+            buttons.append(f'<a class="button" href="{page}.html">Modern retelling</a>')
+    elif env.get("ORIGINAL_TEXT"):
+        buttons.append(f'<a class="button" href="{page}-original.html">Original text</a>')
+    buttons.append('<a class="button" href="#contents">Contents</a>')
+    actions = ('\t\t\t<ul class="actions">'
+               + "".join(f"<li>{b}</li>" for b in buttons) + "</ul>\n")
+
+    restored_page = args.original or env.get("EDITION", "").lower() == "restored"
     page = (root / "site" / "template.html").read_text()
     for key, val in {
         "{{HEAD}}": head,
+        "{{JSONLD}}": jsonld,
+        "{{COVER}}": cover,
+        "{{ACTIONS}}": actions,
+        "{{SERIES}}": "Restored Editions" if restored_page else "Modern Classics",
+        "{{SERIES_HREF}}": "./#restored" if restored_page else "./#retellings",
         "{{TITLE}}": title,
         "{{AUTHOR}}": html.escape(env["AUTHOR"]),
         "{{DATE_LINE}}": date_line,
