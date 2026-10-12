@@ -3975,6 +3975,13 @@ one side only, or a false one before a footnote); prep reports any orphan.
 Old-style figures OCR as letters ("io" for page 10). The index is dropped;
 the Appendix cites 1958 page numbers, as the introduction says.
 COVER: Dürer, Melencolia I (1514).
+PRINT (2026-10-12): `build_print.py godel` -> 102 pp. PRINT_NUMERALS=lining
+in env (old-style 0 reads as the letter o in s0). The six cross-references
+to 1958 pages (Appendix notes 1-3, "see page 73" x2, "p. 63") are re-pointed
+by print_refs.tsv; "p. 63" cites the Richard-Paradox discussion, whose
+"hoax" passage is on 1958 p. 63 (the number n is defined on p. 62), so the
+anchor is "We can outflank". Figures redrawn at ~900 ppi by figures.py
+--print. RIGHTS: US-only distribution (Newman d. 1966, Nagel d. 1985).
 
 ## beecher/ — Catharine E. Beecher & Harriet Beecher Stowe, The American Woman's Home (1869), RESTORED EDITION
 

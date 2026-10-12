@@ -271,6 +271,12 @@ books/{book}/              # One directory per book
   Ingram's Cover Template Generator before uploading; the default is an
   estimate. Cover colours are Typst cmyk() and RGB SVGs go through
   -dUseFastColor so black stays pure K and total ink stays under 240%.
+  ALWAYS CHECK PAGE CROSS-REFERENCES IN A PRINT EDITION (Alex, 2026-10-12):
+  "see page 73" in the source cites the SOURCE printing's pages. Map each
+  in `{book}/print_refs.tsv` (citing text TAB a phrase at the target, read
+  off the source page images; "-" for another book's pages) and the build
+  sets this edition's page number. Any unmapped "page N"/"p. N"/"pp. N"
+  stops the build. Godel's Proof is the precedent.
 - `brand/` — the Emend Press logos (Emend Press publishes the Modern
   Classics series): `make_logo.py` outlines the type (Cormorant Garamond
   SemiBold + Montserrat Medium, fonts via `fetch_fonts.sh`) so the SVGs need
