@@ -297,8 +297,11 @@ books/{book}/              # One directory per book
   "previous"; build_ebook renders it if missing and strips se's title box
   (untitle_cover), rebrand writes a "drawn for this edition" colophon, and
   build_print redraws it at print resolution (scale 1.25). Quote on a
-  cover only verbatim from our text, and check it. 27 books so far: the
-  whole math shelf and most of the science shelf.
+  cover only verbatim from our text, and check it. 36 books so far: the
+  whole math shelf, most of the science shelf, and (2026-10-13) Howard,
+  Capablanca, Malthus, Verrill and Lucretius. A book with no figures can
+  draw its own central worked example (Malthus's ratios, Lucretius's
+  swerve); a floor plan (Beecher) was too quiet and was declined.
   `artcover.py` composes the PRINT front for a painting cover: the series'
   title band (coloured by SHELF, SHELF_INK) over the artwork full bleed,
   FOCUS per book where the band would hide the subject (Millais's bubble).

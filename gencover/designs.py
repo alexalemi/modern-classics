@@ -1015,6 +1015,211 @@ def speed(seed):
     return p
 
 
+def _rot(pts, a, c):
+    ca, sa = math.cos(a), math.sin(a)
+    pts = np.asarray(pts, float)
+    return np.column_stack([c[0] + pts[:, 0] * ca - pts[:, 1] * sa, c[1] + pts[:, 0] * sa + pts[:, 1] * ca])
+
+
+def _magnet(p, ink, field, c, a, R=150, w=55, L=170):
+    """a horseshoe magnet, open end pointing along angle a (0 = down)"""
+    t = np.linspace(math.pi, 2 * math.pi, 60)
+    outer = np.column_stack([(R + w) * np.cos(t), (R + w) * np.sin(t)])
+    inner = np.column_stack([(R - w) * np.cos(t), (R - w) * np.sin(t)])[::-1]
+    shape = np.vstack([[(-R - w, L)], outer, [(R + w, L), (R - w, L)], inner, [(-R + w, L)]])
+    shape = _rot(shape, a, c)
+    p.use(field).fill(shape, clear=True)
+    p.use(ink).fill(shape)
+    k = p.use("black")
+    k.polyline(shape, width=6)
+    for sx in (-1, 1):                     # the bare steel poles
+        tip = _rot([(sx * (R + w), L * 0.45), (sx * (R - w), L * 0.45), (sx * (R - w), L), (sx * (R + w), L)], a, c)
+        p.use(ink).fill(tip, clear=True)
+        k.line(tuple(tip[0]), tuple(tip[1]), width=5)
+
+
+def howard(seed):
+    """No. 1, The Three Magnets: Town and Country pull on the People, and
+    the third magnet, Town-Country, outpulls both."""
+    p = Press(seed, ["olive", "red", "black"])
+    p.use("olive").field(-20, -20, W + 20, H + 20)
+    title_block(p, "olive", ["GARDEN CITIES", "OF TO-MORROW"], "EBENEZER HOWARD",
+                ["“Each city may be regarded as a magnet, each person as a needle…”"], size=150)
+    cx0, cy0 = W / 2, 1330
+    _magnet(p, "red", "olive", (cx0 - 360, cy0 - 330), -math.pi / 4 + 0.1)
+    _magnet(p, "red", "olive", (cx0 + 360, cy0 - 330), math.pi / 4 - 0.1)
+    _magnet(p, "red", "olive", (cx0, cy0 + 360), math.pi, R=170, w=60, L=170)
+    o = p.use("olive")
+    o.text("TOWN", cx0 - 420, cy0 - 610, 64, font=GROT, clear=True, track=0.08)
+    o.text("COUNTRY", cx0 + 420, cy0 - 610, 64, font=GROT, clear=True, track=0.08)
+    o.text("TOWN-COUNTRY", cx0, cy0 + 660, 64, font=GROT, clear=True, track=0.08)
+    blk = [(cx0 - 190, cy0 - 50), (cx0 + 190, cy0 - 50), (cx0 + 190, cy0 + 40), (cx0 - 190, cy0 + 40)]
+    o.fill(blk, clear=True)
+    p.use("black").polyline(blk, width=6)
+    p.use("black").text("THE PEOPLE", cx0, cy0 + 20, 56, font=GROT, track=0.04)
+    o.text("WHERE WILL THEY GO?", cx0, cy0 + 110, 36, font=GROT, clear=True, track=0.08)
+    return p
+
+
+def capablanca(seed):
+    """Example 1, the ending Rook and King against King: R-R7 shuts the
+    Black King on the last rank."""
+    p = Press(seed, ["red", "mustard", "black"])
+    p.use("red").field(-20, -20, W + 20, H + 20)
+    title_block(p, "red", ["CHESS", "FUNDAMENTALS"], "JOSÉ RAÚL CAPABLANCA",
+                ["“The principle is to drive the opposing King to the last line", "on any side of the board.”"], size=160)
+    S = 132; x0 = (W - 8 * S) / 2 + 20; y0 = 900
+    board = [(x0, y0), (x0 + 8 * S, y0), (x0 + 8 * S, y0 + 8 * S), (x0, y0 + 8 * S)]
+    p.use("red").fill(board, clear=True)
+    for f in range(8):
+        for r in range(8):
+            if (f + r) % 2 == 1:
+                sq = [(x0 + f * S, y0 + r * S), (x0 + (f + 1) * S, y0 + r * S),
+                      (x0 + (f + 1) * S, y0 + (r + 1) * S), (x0 + f * S, y0 + (r + 1) * S)]
+                p.use("mustard").fill(sq, rough=0.6)
+    k = p.use("black")
+    k.polyline(board, width=9)
+    for i, ch in enumerate("abcdefgh"):
+        p.use("red").text(ch, x0 + (i + 0.5) * S, y0 + 8 * S + 62, 44, font=GROT, clear=True)
+        p.use("red").text(str(8 - i), x0 - 44, y0 + (i + 0.5) * S + 16, 44, font=GROT, clear=True)
+
+    def sq(fl, rk):
+        return x0 + ("abcdefgh".index(fl) + 0.5) * S, y0 + (8 - rk + 0.5) * S
+
+    # the confined rank: the seventh is the Rook's, the eighth the King's prison
+    ax, ay = sq("a", 1); bx, by = sq("a", 7)
+    p.use("red").stroke([(ax, ay - 50), (bx, by + 40)], width=16, taper=False)
+    head = [(bx - 34, by + 64), (bx + 34, by + 64), (bx, by + 14)]
+    p.use("red").fill(head)
+    p.use("red").stroke([(x0 + S * 1.0, by), (x0 + 8 * S - 20, by)], width=5, taper=False)
+    for fl, rk, g in (("h", 1, "♔"), ("a", 1, "♖"), ("h", 8, "♚")):
+        x, y = sq(fl, rk)
+        p.use("black").text(g, x, y + 44, 124, font="DejaVu Sans")
+    return p
+
+
+def malthus(seed):
+    """Malthus's two ratios: the people double, 1, 2, 4, 8, 16, 32, while the
+    food is added to, 1, 2, 3, 4, 5, 6."""
+    p = Press(seed, ["mustard", "red", "lime", "black"])
+    p.use("mustard").field(-20, -20, W + 20, H + 20)
+    title_block(p, "mustard", ["AN ESSAY ON THE", "PRINCIPLE OF", "POPULATION"], "THOMAS ROBERT MALTHUS",
+                ["“…1, 2, 4, 8, 16, 32, 64, 128, 256, 512, and so on, while the food", "supply would increase at the rate of 1, 2, 3, 4, 5, 6, 7, 8, 9, 10…”"],
+                size=130, y0=250)
+    k = p.use("black")
+    xl, xr = 210, W - 340
+    G = 6
+    ys = [1000 + g * 158 for g in range(G)]
+    prev = []
+    for g in range(G):
+        n = 2 ** g
+        xs = [xl + (i + 0.5) * (xr - xl) / n for i in range(n)]
+        r = 34 * 0.8 ** g
+        for i, x in enumerate(xs):
+            if prev:
+                px = prev[i // 2]
+                k.line((px, ys[g - 1] + 30 * 0.8 ** (g - 1)), (x, ys[g] - r), width=3.2)
+        for x in xs:
+            p.use("mustard").disc((x, ys[g]), r + 3, clear=True)
+            p.use("red").disc((x, ys[g]), r)
+            k.circle((x, ys[g]), r, width=3.5)
+        prev = xs
+        p.use("mustard").text(str(n), 120, ys[g] + 18, 50, font=GROT, clear=True)
+        # the food, one sheaf more each generation
+        for j in range(g + 1):
+            fx = W - 110 - j * 30
+            p.use("lime").disc((fx, ys[g] + 2), 13)
+            k.circle((fx, ys[g] + 2), 13, width=3)
+    k.line((80, ys[-1] + 80), (W - 80, ys[-1] + 80), width=6)
+    p.use("mustard").text("32 : 6", W / 2, ys[-1] + 175, 64, font=GROT, clear=True, track=0.06)
+    return p
+
+
+def verrill(seed):
+    """Fig. 136, Turks' heads: a braid worked round an upright rod."""
+    p = Press(seed, ["cobalt", "mustard", "black"])
+    p.use("cobalt").field(-20, -20, W + 20, H + 20)
+    title_block(p, "cobalt", ["KNOTS, SPLICES", "AND ROPE WORK"], "A. HYATT VERRILL",
+                ["“…so handsome and ornamental that it is a great favorite.”"], size=150)
+    cx0, Rr = W / 2, 120
+    top, bot = 860, H + 40
+    rod = [(cx0 - Rr, top), (cx0 + Rr, top), (cx0 + Rr, bot), (cx0 - Rr, bot)]
+    segs = []
+    for (yc, P, Q, Rt, A, wid) in ((1130, 4, 3, 175, 95, 64), (1600, 5, 4, 180, 150, 64)):
+        t = np.linspace(0, 2 * math.pi, 1500)
+        phi = P * t
+        rr = Rt + 30 * np.sin(Q * t)            # over and under: the braid
+        y = yc + A * np.cos(Q * t)
+        x = cx0 + rr * np.sin(phi)
+        z = rr * np.cos(phi)
+        pts = np.column_stack([x, y])
+        step = 10
+        for i in range(0, len(t) - 1, step):
+            j = min(i + step + 1, len(t))
+            segs.append((z[i:j].mean(), pts, i, j, wid))
+    segs.sort(key=lambda s: s[0])
+    rod_drawn = False
+
+    def draw(pts, i, j, wid):
+        a, b = max(i - 6, 0), min(j + 6, len(pts))
+        p.use("cobalt").rope(pts[a:b], wid - 4, clear=True)
+        p.use("black").rope(pts[i:j], wid)
+        p.use("black").rope(pts[a:b], wid - 12, clear=True)
+        p.use("mustard").rope(pts[a:b], wid - 12)
+
+    for z, pts, i, j, wid in segs:
+        if z > 0 and not rod_drawn:
+            p.use("cobalt").fill(rod, clear=True)
+            for ink in ("black", "mustard"):
+                p.use(ink).fill(rod, clear=True)
+            k = p.use("black")
+            k.line((cx0 - Rr, top), (cx0 - Rr, bot), width=6)
+            k.line((cx0 + Rr, top), (cx0 + Rr, bot), width=6)
+            for hx in np.linspace(cx0 + Rr * 0.35, cx0 + Rr * 0.9, 5):
+                k.line((hx, top + 10), (hx, bot), width=2)
+            e = np.array([(cx0 + Rr * math.cos(u), top + 22 * math.sin(u)) for u in np.linspace(0, 2 * math.pi, 60)])
+            p.use("mustard").fill(e)
+            k.polyline(e, width=5)
+            rod_drawn = True
+        draw(pts, i, j, wid)
+    return p
+
+
+def lucretius(seed):
+    """Book II: the atoms fall straight down through the void, and one
+    swerves a little out of line, and so they meet."""
+    p = Press(seed, ["violet", "orange", "black"])
+    p.use("violet").field(-20, -20, W + 20, H + 20)
+    title_block(p, "violet", ["ON THE NATURE", "OF THINGS"], "LUCRETIUS",
+                ["“So again and again: the atoms must swerve a little out of line.”"], size=150)
+    rng = p.rng
+    cols = np.linspace(180, W - 180, 6)
+    k = p.use("black")
+    for ci, x in enumerate(cols):
+        for y in np.arange(900 + rng.uniform(0, 160), H - 60, 190):
+            if ci == 2 and y > 1250:
+                continue
+            r = rng.uniform(22, 30)
+            k.line((x, y - 95), (x, y - r - 8), width=3)
+            p.use("violet").disc((x, y), r, clear=True)
+            k.circle((x, y), r, width=3.5)
+    # the swerve: one atom bends from its line into the next, and they knot
+    x4, x5 = cols[2], cols[3]
+    yy = np.linspace(1250, 1640, 60)
+    path = np.column_stack([x4 + (x5 - x4 - 50) * ((yy - 1250) / 390) ** 2, yy])
+    k.stroke(path, width=5)
+    hit = (x5 - 30, 1680)
+    for dx, dy, r in ((0, 0, 40), (62, 22, 34), (20, 76, 30), (-42, 58, 28)):
+        c = (hit[0] + dx, hit[1] + dy)
+        p.use("violet").disc(c, r + 3, clear=True)
+        p.use("orange").disc(c, r)
+        k.circle(c, r, width=3.5)
+    for a in np.linspace(-0.8, 3.9, 7):
+        c0 = np.array(hit) + 120 * np.array([math.cos(a), math.sin(a)])
+        k.line(tuple(c0), tuple(c0 + 45 * np.array([math.cos(a), math.sin(a)])), width=4)
+    return p
+
+
 COVERS = {
     "godel": godel,
     "game-of-logic": game_of_logic,
@@ -1047,4 +1252,9 @@ COVERS = {
     "story-book-of-science": story_book_of_science,
     "gray-plants": gray_plants,
     "speed": speed,
+    "howard": howard,
+    "capablanca": capablanca,
+    "malthus": malthus,
+    "verrill": verrill,
+    "lucretius": lucretius,
 }
