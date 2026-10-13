@@ -181,7 +181,9 @@ class Press:
         self.stroke(pts, taper=False, **kw)
 
     def text(self, s, x, y, size, font="EB Garamond", align="center", bold=False,
-             italic=False, track=0.0, jit=0.5, clear=False):
+             italic=False, track=0.0, jit=0.0, clear=False):
+        # LETTERING IS SET STRAIGHT (Alex, 2026-10-12: per-glyph drift read as
+        # wobbly); the hand shows in the drawing and the misregistered print
         cx = self.cx
         MATH = "∃∀¬⊃∨∼≠→′"
         wt = cairo.FONT_WEIGHT_BOLD if bold else cairo.FONT_WEIGHT_NORMAL
@@ -201,8 +203,9 @@ class Press:
             cx.set_source_rgba(0, 0, 0, 1)
         for ch, w in zip(s, widths):
             cx.save()
-            cx.translate(xx, y + self.rng.normal(0, jit))
-            cx.rotate(self.rng.normal(0, 0.01))
+            dy, rot = self.rng.normal(0, 1), self.rng.normal(0, 1)   # drawn regardless, so a design's
+            cx.translate(xx, y + jit * dy)                              # random stream (its trees and stars)
+            cx.rotate(0.02 * jit * rot)                                 # is the one Alex approved
             face(ch)
             cx.move_to(0, 0)
             cx.show_text(ch)

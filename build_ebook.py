@@ -141,8 +141,22 @@ NUMBER_WORDS = {w: str(i) for i, w in enumerate(
      "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen",
      "sixteen", "seventeen", "eighteen", "nineteen", "twenty"])}
 
+_TENS = {"twenty": 20, "thirty": 30, "forty": 40, "fifty": 50, "sixty": 60,
+         "seventy": 70, "eighty": 80, "ninety": 90}
+for _t, _v in _TENS.items():
+    NUMBER_WORDS[_t] = str(_v)
+    for _u in ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]:
+        NUMBER_WORDS[f"{_t}-{_u}"] = str(_v + int(NUMBER_WORDS[_u]))
+# "Book Twenty-One" and "Book Four (Part 1 of 2)" fell through to a bare
+# title in the Odyssey's contents ("Twenty-One", "Four (Part 1 of 2)") while
+# books 1-20 read "Book 1": hyphenated number words were missing, and a
+# multi-part file's "(Part n of k)" hid the number word from the lookup.
+PART_SUFFIX = re.compile(r"\s*\(Part \d+ of \d+\)\s*$", re.I)
+
+
 def parse_heading(raw):
     """'CHAPTER IV. OF X' -> ('Chapter', 'IV', 'Of X'); bare titles -> (None, None, title)."""
+    raw = PART_SUFFIX.sub("", raw.strip())
     m = HEADING.match(raw.strip())
     label = (m.group("label") or "").title() or None
     ordinal = m.group("ord") or None

@@ -90,7 +90,7 @@ def title_lines(title, maxchars=14):
 FOCUS = {"soap-bubbles": 0.0}
 
 
-def compose(book, seed=1, art_path=None, focus=None):
+def compose(book, seed=1, art_path=None, focus=None, label=None):
     env = env_of(book)
     art = Image.open(art_path or ROOT / "site" / "covers" / f"{book}.jpg").convert("RGB")
     ink = shelf_ink(book) or band_colour(art)
@@ -108,6 +108,9 @@ def compose(book, seed=1, art_path=None, focus=None):
     p.use(ink).text(env["AUTHOR"].upper(), 106, y, 46, font=GROT, align="left", clear=True, track=0.05)
     if sub:
         p.use(ink).text(sub, 106, y + 64, 36, align="left", italic=True, clear=True)
+        y += 50
+    if label:      # the companion print of the source text says so on its face
+        p.use(ink).text(label.upper(), 106, y + 70, 34, font=GROT, align="left", clear=True, track=0.12)
     k = p.use("black")
     k.line((-10, BAND + 4), (W + 10, BAND + 4), width=9, jitter=2.5)
     base = p.print(str(ROOT / "build" / "tmp_band.png")).convert("RGB")
