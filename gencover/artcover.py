@@ -87,7 +87,7 @@ def title_lines(title, maxchars=14):
 
 # where the picture's subject is, top (0) to bottom (1), when the band would
 # otherwise crop it: Millais's bubble floats at the very top of Bubbles
-FOCUS = {"soap-bubbles": 0.0}
+FOCUS = {"soap-bubbles": 0.0, "odyssey": 0.0}
 
 
 def compose(book, seed=1, art_path=None, focus=None, label=None):
