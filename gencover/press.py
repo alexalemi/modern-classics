@@ -55,6 +55,7 @@ class Press:
     # ~1.25, ~330 ppi on a 5x8 front) so paper grain and ink texture are
     # drawn at the size they print, not stretched from the screen size
     SCALE = 1.0
+    PAD = 60
 
     def __init__(self, seed, inks, w=W, h=H):
         self.rng = np.random.default_rng(seed)
@@ -62,8 +63,12 @@ class Press:
         self.w, self.h = int(w * self.scale), int(h * self.scale)
         self.plates = {}
         for name in inks:
-            s = cairo.ImageSurface(cairo.FORMAT_A8, self.w, self.h)
+            # each plate extends PAD px past the page on every side, so a
+            # full-bleed field survives being shifted out of register (a plate
+            # clipped to the page left a strip of bare paper along one edge)
+            s = cairo.ImageSurface(cairo.FORMAT_A8, self.w + 2 * self.PAD, self.h + 2 * self.PAD)
             c = cairo.Context(s)
+            c.translate(self.PAD, self.PAD)
             c.scale(self.scale, self.scale)
             self.plates[name] = (s, c)
         self.order = list(inks)
@@ -229,10 +234,10 @@ class Press:
         out = cairo.ImageSurface(cairo.FORMAT_A8, self.w, self.h)
         cx = cairo.Context(out)
         dx, dy = self.rng.normal(0, sd_px, 2)
-        rot = self.rng.normal(0, 0.0025)
-        cx.translate(self.w / 2 + dx, self.h / 2 + dy)
-        cx.rotate(rot)
-        cx.translate(-self.w / 2, -self.h / 2)
+        self.rng.normal(0, 0.0025)   # (the old rotation draw, kept so seeds reproduce)
+        # SHIFT ONLY, never rotate (Alex, 2026-10-12): a turned plate skews the
+        # full-bleed fields and leaves slivers of paper along the edges
+        cx.translate(dx - self.PAD, dy - self.PAD)
         cx.set_source_surface(s, 0, 0)
         cx.paint()
         out.flush()
