@@ -83,6 +83,13 @@ crozier. Re-crops to drop frame, mat or museum marks: flatland 1680x2520+100+180
 Borderline and kept: Blake's Ancient of Days (science-and-hypothesis) and
 West's Franklin with cherubs (autobiography). The per-book "Cover:" notes
 below for these nine describe the SUPERSEDED covers.
+2026-10-13, with the title band on every cover: peloponnesian-war's Sweerts
+"Plague in an Ancient City" (judged fine as shirtless figures on 10-12)
+showed its nude bathers once the band crop pulled in on the foreground ->
+Philipp von Foltz, "Pericles' Funeral Oration" (1852), from the Rijksmuseum's
+albumen print of it (c. 1875-80, CC0), Commons
+"File:PericlesFuneralOrationRijksmuseum.jpg", band box on Pericles. A NEW
+CROP IS A NEW COVER: re-check it for nudity, not only the painting.
 
 The "Founders' Library" push (July 2026) is COMPLETE: all 13 works of
 the founding generation's shared bookshelf (see the 2026-07-22 DEVLOG
@@ -4412,6 +4419,59 @@ MNHN, cropped to drop the museum watermark and stamp. The original is 4800px
 wide, so the cover comes from the 3840px rendition and the crop (1706x2559+1032+55,
 2026-10-12) is in ITS coordinates; the old crop used the original's and left the
 stamp in. No 2:3 cut holds the whole cluster: both side caps are clipped.
+
+## alice/ — Lewis Carroll, Alice's Adventures in Wonderland (1865), RESTORED EDITION, Tenniel
+
+REPLACED THE RACKHAM EDITION (Alex, 2026-10-13): the book was first built
+(2026-09-20) from Gutenberg #28885, Heinemann's 1907 edition with Rackham's
+plates and Dobson's proem. It is now Carroll's text with Tenniel's 42
+pictures; nothing of the Rackham edition is kept (proem, plates, captions,
+endpapers; the old cover was Rackham's Mad Tea-Party).
+Text: Gutenberg #11 (Millennium Fulcrum 3.0). It has NO prefatory poem
+("All in the golden afternoon": typed into prep.py from the 1867 leaves
+11-13, checked by both scans) and carries Gutenberg's own bracketed
+"[later editions continued as follows ...]" stanzas inside two poems
+(Lobster song, Owl and Panther): removed, with word accounting. #11 is NOT
+the 1866 text: it follows Carroll's later revisions. The two-scan vote
+(alicesadventu00carr 1867 + alicesadventures00carruoft 1872, the epictetus
+rule) plus the plain diff found ~80 differences, every one read on the 1867
+page: 78 TEXT_FIXES restore the 1866 words ("had not the slightest idea",
+"the owl and the oyster", "Classical master", "finishes the guinea-pigs",
+"cackled" -> "called", "Duchess' knee"...). The looking-glass ruling holds:
+the edition is the first published text; a later printing cannot overrule
+it. After the fixes the vote's residue is OCR noise only (41 readings:
+eabbit, contractions split, running heads). Punctuation and capitalisation
+were NOT compared; two quotation-mark slips seen while reading the page
+are fixed ("laughed. ... verdict," and the single quotes round 'said I
+could not swim').
+PLATES: cut from Archive.org `alicesadventu00carr` (U of Toronto, Fisher
+library), Macmillan 1867 "Sixth Thousand", 650 ppi, printed from the 1866
+Clay setting. jp2 leaf index == hOCR page index. 42 plates = Tenniel's 42
+exactly (ABBYY's 42 picture zones; leaves 6/10 are the Macmillan device).
+Boxes are found automatically (prep.cut_plates): hOCR text lines whose
+words are mostly letters mark type; ink components wholly inside a line
+are letters; the rest, joined by dilation, is the picture. About twenty
+pictures have text set beside them, painted out (lines and paragraphs
+inside the box, sparing the picture's strokes; then >228 to white, or
+the paper grain shows as grey bars between painted lines: leaf 202).
+Levelled paper, greyscale, long_side=1300 (19 MB). Placement: before the
+first paragraph/stanza that begins below the picture's top on its page,
+else the next one (34, 42, 193); anchors asserted unique; the frontispiece
+(the trial) heads the prefatory poem's section, since it faces the title.
+MOUSE'S TALE: Gutenberg's <pre> has its own line breaks; the 51 lines and
+indents are read off leaf 53 (hOCR left edges, one level per 50 px), words
+asserted equal to Gutenberg's; the page has "to law;" and "old Fury;"
+(Gutenberg colons). The shrinking type down the tail is not carried.
+"CHORUS." is set "Chorus." (an all-caps line becomes a heading).
+Captions: new writing, captions/t1.txt, all 42 looked at.
+EPUB: verse lines carry no indent (build_ebook renders verse flat), so
+the tale is a straight column in the epub, as it was in the Rackham epub;
+the page has the shape. A reused se draft kept the Rackham proem.xhtml
+(f-007/x-017): delete build/ebooks/lewis-carroll_alices-* before a build.
+Cover: Tenniel, the pack of cards flying at Alice, from the 1869 German
+Macmillan edition on Commons ("De Alice's Abenteuer im Wunderland Carroll
+pic 42.jpg", 2623x3531), crop 2354x3531+269+0, band 0.0 (cards above her
+head, head well clear). No nudity. Topic: Stories and verse.
 
 ## looking-glass/ — Lewis Carroll, Through the Looking-Glass, and What Alice Found There (1871), RESTORED EDITION
 

@@ -1,12 +1,12 @@
 ORIGINAL_WORK=Alice’s Adventures in Wonderland
 AUTHOR=Lewis Carroll
-DATE=1907
-SUBTITLE=Illustrated by Arthur Rackham, with a proem by Austin Dobson
+DATE=1865
+SUBTITLE=With forty-two illustrations by John Tenniel
 SOURCE_NAME=Project Gutenberg
-SOURCE_URL=https://www.gutenberg.org/ebooks/28885
+SOURCE_URL=https://www.gutenberg.org/ebooks/11
 EDITION=restored
 FIGURE_DIR=images/alice
 MODERN_YEAR=2026
 TOPIC=Stories and verse
-MODEL=Claude Opus 5
-MODEL_EVIDENCE=co-author trailer of 6e21c35 (2026-09-20), the commit that added modern_chapters/; the session model, which subagents inherit unless overridden
+MODEL=Claude Opus 5.5
+MODEL_EVIDENCE=the session model that rebuilt this edition as the Tenniel edition (prep.py, captions/, introduction.txt) on 2026-10-13, as a subagent of the main session with no model override. The prose is Carroll's, composed by prep.py, not translated. (The Rackham edition it replaced was built 2026-09-20 by Claude Opus 5.)

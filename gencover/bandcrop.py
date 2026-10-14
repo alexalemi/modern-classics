@@ -9,6 +9,11 @@ picture is W : H - BAND, about 0.9, and each book chooses one of:
          painting, inside its content box (scan margins and plain borders
          trimmed automatically, so no page edges or frame strips)
   f<n>   inside the cover crop, the window placed at n (0 = top, 1 = bottom)
+  box    "box": [x0, y0, x1, y1] in source pixels, chosen by hand; it may
+         reach past the picture's edge (Kamo no Chomei's head sits at the
+         top of the sheet), and what lies outside is filled from "fill", a
+         patch of plain paper [x0, y0, x1, y1] tiled with alternate tiles
+         mirrored so it shows no seam
 
 ebook_meta cover "band": "wide" | 0.3 ... ; the default is "wide" where the
 painting has room, else 0.3.
@@ -73,6 +78,8 @@ def content_box(src):
 
 
 def region_box(src, art, mode):
+    if mode == "box":
+        return tuple(art["box"])
     cw, ch, x0, y0 = cover_crop(src, art)
     if mode == "wide":
         L, T, R, B = content_box(src)
@@ -104,8 +111,33 @@ def default_mode(src, art):
 
 def region(src, art, book=None):
     mode = art.get("band", default_mode(src, art))
-    box = region_box(src, art, mode)
-    return src.crop(tuple(int(v) for v in box)).resize((W, H - BAND), Image.LANCZOS)
+    box = tuple(int(v) for v in region_box(src, art, mode))
+    if box[0] < 0 or box[1] < 0 or box[2] > src.width or box[3] > src.height:
+        src = padded(src, box, art)
+        box = (0, 0, box[2] - box[0], box[3] - box[1])
+    return src.crop(box).resize((W, H - BAND), Image.LANCZOS)
+
+
+def padded(src, box, art):
+    """The picture placed in a canvas the size of box, the rest paper."""
+    x0, y0, x1, y1 = box
+    cw, ch = x1 - x0, y1 - y0
+    if art.get("fill"):
+        patch = src.crop(tuple(art["fill"]))
+        pw, ph = patch.size
+        flips = [patch, patch.transpose(Image.FLIP_LEFT_RIGHT)]
+        flipv = [f.transpose(Image.FLIP_TOP_BOTTOM) for f in flips]
+        canvas = Image.new("RGB", (cw, ch))
+        for j in range(0, ch, ph):
+            for i in range(0, cw, pw):
+                row = flips if (j // ph) % 2 == 0 else flipv
+                canvas.paste(row[(i // pw) % 2], (i, j))
+    else:
+        g = np.asarray(src)
+        edge = np.concatenate([g[0], g[-1], g[:, 0], g[:, -1]])
+        canvas = Image.new("RGB", (cw, ch), tuple(int(v) for v in np.median(edge, axis=0)))
+    canvas.paste(src, (-x0, -y0))
+    return canvas
 
 
 if __name__ == "__main__":
@@ -129,6 +161,8 @@ if __name__ == "__main__":
             ox = (i % 2) * (len(modes) * (tw + 8) + 40)
             oy = (i // 2) * (th + 26)
             for j, mo in enumerate(modes):
+                if mo == "box":
+                    continue
                 if mo == "wide" and not has_room(src, art):
                     continue
                 im = src.crop(tuple(int(v) for v in region_box(src, art, mo))).resize((tw, th))

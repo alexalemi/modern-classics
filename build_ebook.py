@@ -660,9 +660,9 @@ def prepare_cover(dest, meta):
             import make as gencover_make
             gencover_make.render(meta["dir"], original=original)
         out = dest / "images/cover.jpg"
-        for quality in ("92", "85", "75", "65"):
+        for quality in ("92", "91", "85", "84", "75", "74", "65", "64"):
             subprocess.run(["convert", str(src), "-quality", quality, str(out)], check=True)
-            if out.stat().st_size <= 1_500_000:  # se lint f-016 cap
+            if out.stat().st_size <= 1_500_000 and cover_jpeg_ok(out):  # se lint f-016 cap
                 break
         return
     src = cache / f"{meta['dir']}.jpg"
@@ -726,12 +726,22 @@ def prepare_cover(dest, meta):
     framed = dest / "images/cover.framed.png"
     artcover.compose(meta["dir"], art_path=region, original=original).save(framed)
     out = dest / "images/cover.jpg"
-    for quality in ("90", "80", "70", "60"):
+    for quality in ("90", "89", "80", "79", "70", "69", "60", "59"):
         subprocess.run(["convert", str(framed), "-resize", "1400x2100!", "-quality", quality,
                         str(out)], check=True)
-        if out.stat().st_size <= 1_500_000:  # se lint f-016 cap
+        if out.stat().st_size <= 1_500_000 and cover_jpeg_ok(out):  # se lint f-016 cap
             break
     framed.unlink()
+
+
+def cover_jpeg_ok(path):
+    """A JPEG WHOSE BYTES HAPPEN TO CONTAIN "<svg" IS READ AS AN SVG. se
+    build embeds the cover in cover.svg and renders it with cairosvg, whose
+    image() sniffs `b'<svg' in image_bytes` before trying a bitmap; one in a
+    few hundred covers trips it by chance (American Indian Stories,
+    2026-10-13) and the build dies on "not well-formed, line 1, column 0".
+    The cure is any other encoding: the loops above step the quality by one."""
+    return b"<svg" not in path.read_bytes()
 
 
 def untitle_cover(dest):

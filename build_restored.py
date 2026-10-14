@@ -110,8 +110,8 @@ BLURBS = {
     "nature-of-the-judicial-process": "A judge on what judges do: logic, history, "
                                       "custom and social welfare, and legislating "
                                       "only between the gaps.",
-    "alice": "The 1907 Wonderland, with Rackham's colour plates at full size "
-             "and the Mouse's tale in its shape.",
+    "alice": "Down the rabbit-hole with all forty-two of Tenniel's pictures, "
+             "cut from Macmillan's 1867 printing, and the Mouse's tale in its shape.",
     "hunting-of-the-snark": "An agony in eight fits, with Holiday's nine "
                             "illustrations and both of his cover designs.",
     "science-and-hypothesis": "Why one geometry cannot be more true than another, "
