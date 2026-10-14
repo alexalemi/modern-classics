@@ -14,14 +14,20 @@ sys.path.insert(0, str(HERE))
 import designs  # noqa: E402
 
 
-def render(book, seed=None, scale=1.0, out=None):
+def render(book, seed=None, scale=1.0, out=None, original=False, mark=True):
+    """original: the companion edition of the source text, cached apart
+    (build/covers/{book}-original.jpg) since its cover says so"""
     meta = json.load(open(ROOT / "ebook_meta.json")).get(book, {})
     seed = seed if seed is not None else meta.get("cover", {}).get("seed", 1)
-    out = Path(out) if out else ROOT / "build" / "covers" / f"{book}.jpg"
+    out = Path(out) if out else ROOT / "build" / "covers" / (f"{book}-original.jpg" if original else f"{book}.jpg")
     from press import Press
+    import edition
     Press.SCALE = scale
     out.parent.mkdir(parents=True, exist_ok=True)
-    im = designs.COVERS[book](seed).print(str(out.with_suffix(".png")))
+    p = designs.COVERS[book](seed)
+    if mark:
+        p.mark(edition.label(book, original))
+    im = p.print(str(out.with_suffix(".png")))
     im.convert("RGB").save(out, quality=95)
     out.with_suffix(".png").unlink()
     Press.SCALE = 1.0

@@ -83,6 +83,35 @@ class Press:
         self.cx = self.plates[plate][1]
         return _Pen(self, plate)
 
+    def mark(self, label, size=28, y=84):
+        """The edition, top right, where Dover printed its series code
+        (Alex, 2026-10-13: a cover says whether it is a retelling, a
+        restored edition or the original text). Knocked out of EVERY plate,
+        so it reads as bare paper whatever lies under it; the generator's
+        state is put back, so the design's print (misregistration, grain)
+        is the one already approved."""
+        state = self.rng.bit_generator.state
+        cur = self.plate
+        # over bare paper (Byrne's cream page) a knock-out would vanish:
+        # print it in the key ink instead
+        x0, x1 = int((W - 560) * self.scale) + self.PAD, int((W - 100) * self.scale) + self.PAD
+        y0, y1 = int((y - size) * self.scale) + self.PAD, int(y * self.scale) + self.PAD
+        covered = 0.0
+        for name in self.order:
+            surf = self.plates[name][0]; surf.flush()
+            a = np.ndarray((surf.get_height(), surf.get_stride()), np.uint8, surf.get_data())
+            covered = max(covered, a[y0:y1, x0:x1].mean() / 255)
+        if covered < 0.5:
+            key = "black" if "black" in self.order else self.order[-1]
+            self.use(key).text(label.upper(), W - 100, y, size, font="Fira Sans Black",
+                               align="right", track=0.12)
+        else:
+            for name in self.order:
+                self.use(name).text(label.upper(), W - 100, y, size, font="Fira Sans Black",
+                                    align="right", clear=True, track=0.12)
+        self.use(cur)
+        self.rng.bit_generator.state = state
+
     # ------------------------------------------------------------ noise
     def wobble(self, n, amp, freq=3):
         t = np.linspace(0, 1, n)

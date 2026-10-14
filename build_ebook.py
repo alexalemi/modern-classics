@@ -649,13 +649,23 @@ def prepare_cover(dest, meta):
         return
     cache = ROOT / "build" / "covers"
     cache.mkdir(parents=True, exist_ok=True)
-    src = cache / f"{meta['dir']}.jpg"
-    if art.get("generated") and not src.exists():
+    original = BARE_LABEL[0]
+    sys.path.insert(0, str(ROOT / "gencover"))
+    if art.get("generated"):
         # a cover drawn by gencover/ (the Dover-style series): rendered,
-        # never fetched; deterministic from its seed
-        sys.path.insert(0, str(ROOT / "gencover"))
-        import make as gencover_make
-        gencover_make.render(meta["dir"])
+        # never fetched; deterministic from its seed. The --original
+        # companion has its own render, since its edition mark differs.
+        src = cache / (f"{meta['dir']}-original.jpg" if original else f"{meta['dir']}.jpg")
+        if not src.exists():
+            import make as gencover_make
+            gencover_make.render(meta["dir"], original=original)
+        out = dest / "images/cover.jpg"
+        for quality in ("92", "85", "75", "65"):
+            subprocess.run(["convert", str(src), "-quality", quality, str(out)], check=True)
+            if out.stat().st_size <= 1_500_000:  # se lint f-016 cap
+                break
+        return
+    src = cache / f"{meta['dir']}.jpg"
     if not src.exists():
         import urllib.request
         # TIMEOUT AND AN EXPLICIT FAILURE, both learned the hard way. A cover
@@ -702,13 +712,26 @@ def prepare_cover(dest, meta):
             cw, ch = w, int(w * 3 / 2)
             x, y = 0, int((h - ch) * fy)
         geom = ["-crop", f"{cw}x{ch}+{x}+{y}", "+repage"]
+    # EVERY COVER CARRIES THE SERIES TITLE BAND (Alex, 2026-10-13): the
+    # painting is cut to the space under the band (artcover.band_region,
+    # inside the crop above) and cached in build/covers/art/, which is also
+    # what build_print composes from -- never site/covers/, which is this
+    # banded result and would get a second band
+    import artcover
+    from PIL import Image
+    artdir = cache / "art"
+    artdir.mkdir(exist_ok=True)
+    region = artdir / f"{meta['dir']}.jpg"
+    artcover.band_region(Image.open(src).convert("RGB"), art, meta["dir"]).save(region, quality=95)
+    framed = dest / "images/cover.framed.png"
+    artcover.compose(meta["dir"], art_path=region, original=original).save(framed)
     out = dest / "images/cover.jpg"
     for quality in ("90", "80", "70", "60"):
-        subprocess.run(["convert", str(src)] + geom +
-                       ["-resize", "1400x2100!", "-quality", quality,
+        subprocess.run(["convert", str(framed), "-resize", "1400x2100!", "-quality", quality,
                         str(out)], check=True)
         if out.stat().st_size <= 1_500_000:  # se lint f-016 cap
             break
+    framed.unlink()
 
 
 def untitle_cover(dest):
@@ -1004,8 +1027,8 @@ def main():
     rebrand.order_spine(dest, spine)
     run([SE, "build-toc", "."], cwd=dest)
     run([SE, "build-images", "."], cwd=dest)
-    if meta.get("cover", {}).get("titled"):
-        untitle_cover(dest)
+    if meta.get("cover"):
+        untitle_cover(dest)        # every cover now carries its own title
     run([SE, "prepare-release", "."], cwd=dest)
     run([SE, "clean", "."], cwd=dest)
 

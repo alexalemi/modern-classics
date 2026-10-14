@@ -673,8 +673,10 @@ def build_cover(book, env, meta, pages, paper, workdir, spine_override=None, pri
         sys.path.insert(0, str(ROOT / "gencover"))
         import artcover
         framed = workdir / "cover-framed.jpg"
-        artcover.compose(book, art_path=art if (ROOT / "site/covers" / f"{book}.jpg").exists() is False else None,
-                         label="The Original Text" if env.get("_ORIGINAL") else None).save(framed, quality=95)
+        # from the painting cut for the band (build/covers/art/, written by
+        # build_ebook.prepare_cover), never site/covers/, which is banded
+        artcover.compose(book, art_path=ROOT / "build/covers/art" / f"{book}.jpg",
+                         original=bool(env.get("_ORIGINAL"))).save(framed, quality=95)
         prep_art(framed, workdir / "cover-art.jpg")
         titled = True
     else:
@@ -684,7 +686,8 @@ def build_cover(book, env, meta, pages, paper, workdir, spine_override=None, pri
             # drawn at the size it prints, not stretched from 1400px
             sys.path.insert(0, str(ROOT / "gencover"))
             import make as gencover_make
-            hi = gencover_make.render(book, scale=1.25, out=workdir / "cover-hi.jpg")
+            hi = gencover_make.render(book, scale=1.25, out=workdir / "cover-hi.jpg",
+                                      original=bool(env.get("_ORIGINAL")))
             prep_art(hi, workdir / "cover-art.jpg")
     if titled:
         # a titled cover: it IS the front, full bleed
