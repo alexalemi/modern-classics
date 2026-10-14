@@ -1,0 +1,98 @@
+TEXT ANALYSIS — GEORGE BOOLE, AN INVESTIGATION OF THE LAWS OF THOUGHT
+(1854), CHAPTERS I–XV: THE LOGIC
+
+THE BOOK
+Boole, a self-taught schoolmaster's son who became Professor of
+Mathematics at Queen's College, Cork, set out to find the laws of the
+mind's reasoning and to write them as an algebra. Letters stand for
+classes (x = "sheep"), multiplication for "and" (xy = "white sheep"),
+1 for the universe of discourse, 0 for nothing, 1 − x for "not-x". The
+one law ordinary algebra lacks is x² = x, which only 0 and 1 obey; so
+the algebra of logic is the algebra of 0 and 1. From there: every
+proposition is an equation, reasoning is solving and eliminating, and
+any logical function can be "developed" into its constituents (what we
+now call the disjunctive normal form). Chapter XI turns the same algebra
+on whole propositions ("secondary propositions"), the ancestor of
+propositional logic and truth values. Chapters XIII–XIV test the method
+on real arguments (Clarke's and Spinoza's proofs about God), and XV
+re-derives Aristotle's syllogisms. Chapters XVI–XXII apply all this to
+probability and are NOT in this edition.
+
+This edition is a retelling for a reader of fourteen and up who is
+willing to follow algebra. Alex's brief (2026-10-14): make Boole
+comprehensible, with brief modern notes.
+
+STYLE AND VOICE
+Grave, careful, mid-Victorian scientific prose: very long periods,
+heavily qualified ("it may be remarked", "it is evident that", "in the
+strictest sense"), philosophical in the opening chapters, then dense
+worked mathematics. He is never playful, but he is earnest and often
+moving about what the mind is (the end of Chapter I and XXII's spirit).
+Keep his seriousness; lose the scaffolding. Claim first, then the
+reason, then the example. Short sentences. "We" stays his "we".
+
+THE THREE LAYERS OF THIS EDITION — KEEP THEM APART
+1. BOOLE, RETOLD. His argument in plain modern English, every step, in
+   his order. His symbols, equations, numbering and article numbers
+   UNCHANGED. Every \( \) and \[ \] formula is copied BYTE FOR BYTE —
+   check.py --modern fails the file otherwise.
+2. GLOSSES: reading the equation aloud. Where Boole writes an equation
+   and moves on, the retelling may add a short phrase IN THE SENTENCE
+   saying what it means in words: "\(x(1-y) = 0\), that is, nothing is an
+   x that is not a y". A gloss is a READING of what is written. Never a
+   correction, never a step he did not take, never a different method.
+   Use them where a fourteen-year-old would otherwise stall; don't gloss
+   what Boole has just explained in words himself.
+3. EDITOR'S NOTES: the modern view. Only the notes assigned in
+   running_notes.txt, each at its assigned passage, as a separate
+   paragraph beginning "Editor's note: " (precedent: candle, burke),
+   two to five sentences, after the paragraph it comments on. They say
+   where modern Boolean algebra differs or where an idea went. No agent
+   adds an editor's note that is not on the list.
+
+WHAT TO KEEP EXACTLY
+- Every formula (layer 1). Including equation numbers "\qquad (n)".
+- Article numbers ("12.") at paragraph start; "Proposition I." labels
+  with their periods; "Rule.", "Definitions.", "Axioms.", "Examples.",
+  "Class I.", "Form I." labels as printed.
+- Cross-references in his system: "(II. 9)" = Chapter II, article 9;
+  "Chap. V. Prop. 4". Keep them as printed — they are the book's own
+  navigation and the article numbers survive.
+- His technical vocabulary, LOCKED (where first defined in brackets):
+  literal symbols, signs of operation, sign of identity (II.4);
+  "fundamental law of thought" and "law of duality" for x² = x
+  (III.15–16); universe of discourse (III.4); primary and secondary
+  propositions (IV.1–2); the symbol v and "indefinite class" (IV.11);
+  development, expansion (V.9–10); constituents (V.11); moduli (if used);
+  interpretation (VI.1); elimination (VII.1–2); reduction (VIII.1);
+  "logical function", "logical equation"; "law of commutation",
+  "distributive law" or however he names them. Terms of traditional
+  logic (subject, predicate, copula, syllogism, mood, figure,
+  conversion) as in jevons-logic.
+- Quotations from other writers (Aristotle in Greek, Clarke, Spinoza's
+  Latin, Whately, Thomson, Mill...) verbatim. Greek and Latin copied
+  exactly; a short English rendering may follow if he gives none.
+
+WHAT TO MODERNISE
+- Syntax above all: unstack the periods. The opening chapters are
+  philosophy of mind in 1850s idiom; that is where the readability is
+  won or lost.
+- "Symbolical" -> "symbolic"; "viz." -> "namely"; "i.e." -> "that is";
+  "whence" -> "so"; "hence" -> "so" (keep "hence" only inside a formal
+  derivation if it reads naturally); "the same is" -> "this is".
+- Mental-philosophy vocabulary that has drifted: "conceptions" can stay;
+  "the faculties", "the intellect" can stay; "operations of the mind"
+  stays (it is his subject).
+
+SENSITIVE CONTENT
+Chapters XIII–XIV analyse Samuel Clarke's "Demonstration of the Being
+and Attributes of God" and Spinoza's Ethics as LOGICAL ARGUMENTS. This is
+scholarly modernization of a canonical text: render Boole's analysis of
+their reasoning in a measured register, as his argument about logical
+form; do not editorialise on the theology either way. Boole's own
+religious remarks (end of Chapter I and elsewhere) are his and stay.
+
+RATIO
+Formulas are copied unchanged; prose is unstacked; glosses and notes
+add words. Expect 1.0–1.3 per file. Below 0.9 means something was cut:
+check the worked examples first.

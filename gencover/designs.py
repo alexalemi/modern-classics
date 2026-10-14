@@ -1760,6 +1760,46 @@ def jevons_logic(seed):
 
 
 
+def laws_of_thought(seed):
+    """Chapter V's development, drawn: the universe 1 cut by x into x and
+    1 - x, each cut again by y, and again by z, eight constituents in the
+    bottom row; the constituents a premise forbids are struck out, empty,
+    which is how every problem in the book is solved."""
+    p = Press(seed, ["red", "mustard", "black"])
+    p.use("red").field(-20, -20, W + 20, H + 20)
+    title_block(p, "red", ["THE LAWS", "OF THOUGHT"], "GEORGE BOOLE",
+                ["“Among the symbols of Number there are only two, 0 and 1, that satisfy this law.”"], size=170)
+    k = p.use("black")
+    x0, x1 = 150, W - 150
+    rows, top, rh, gap = 4, 900, 180, 80
+    empty = {1, 4, 6}                       # the bottom-row constituents that vanish
+    for r in range(rows):
+        n = 2 ** r
+        y0 = top + r * (rh + gap)
+        w = (x1 - x0) / n
+        for i in range(n):
+            a, b = x0 + i * w + 8, x0 + (i + 1) * w - 8
+            box = [(a, y0), (b, y0), (b, y0 + rh), (a, y0 + rh)]
+            p.use("red").fill(box, clear=True)
+            last = r == rows - 1
+            if not (last and i in empty):
+                # x-side (left half at each cut) in mustard, its complement bare paper
+                if r == 0 or (i % 2 == 0):
+                    p.use("mustard").fill(box)
+            k.polyline(box, width=6)
+            if last and i in empty:
+                k.line((a + 14, y0 + 14), (b - 14, y0 + rh - 14), width=6)
+                k.line((a + 14, y0 + rh - 14), (b - 14, y0 + 14), width=6)
+        if r < rows - 1:                    # the cut lines down to the next row
+            nw = (x1 - x0) / (2 * n)
+            for i in range(n):
+                cx = x0 + (i + 0.5) * w
+                for j in (2 * i, 2 * i + 1):
+                    k.line((cx, y0 + rh), (x0 + (j + 0.5) * nw, y0 + rh + gap), width=3)
+    return p
+
+
+
 COVERS = {
     "godel": godel,
     "game-of-logic": game_of_logic,
@@ -1813,4 +1853,5 @@ COVERS = {
     "ethics": ethics,
     "boethius": boethius,
     "jevons-logic": jevons_logic,
+    "laws-of-thought": laws_of_thought,
 }

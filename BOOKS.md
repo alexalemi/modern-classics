@@ -4680,3 +4680,47 @@ framed as a belief of the 1870s. Examples whose content IS the argument
 COVER: generated (gencover jevons_logic), Lesson 1's iron / metals /
 elements as three nested Euler circles; epigraph "… part of a part is
 part of the whole." (Lesson 1, verbatim).
+
+## laws-of-thought/ — George Boole, An Investigation of the Laws of Thought (1854), Chapters I–XV, MODERNIZATION
+
+SOURCE: Gutenberg #15114, which exists ONLY as LaTeX (15114-t.tex in the
+gitignored _src/). prep.py converts it: displays as \[..\] INSIDE their
+paragraph on their own line (single newlines, no tab — a short lead-in as
+its own paragraph becomes an h4, a tabbed display a one-cell table),
+inline \(..\), eqnarray/align -> aligned, gather/multline -> gathered,
+tabulars -> " | " text tables, footnotes -> "Footnote:" paragraphs.
+SCOPE: Dedication + Preface + Chapters I–XV (the logic); XVI–XXII
+(probability) omitted, said in the introduction, and every forward
+reference into them bracketed "(in the chapters on probability, not
+included in this edition)". Chapters I and XIII split in two at article
+boundaries. 18 files, 78,302 -> 79,195 words, ratio 1.01; 2,772 formulas.
+EQUATION NUMBERS: taken from a pdflatex compile, then CHECKED AGAINST THE
+1854 PRINT (archive.org investigationofl00boolrich, OCR + page images in
+_src/scan/): only Chapter VII was off (the transcription left its first
+equation unnumbered; now (1)-(9) as printed). Boole's prose citations "(n)"
+turned out reliable — when the tag and the prose disagree, believe the
+prose and check the page.
+THE MATH IDENTITY CHECK (check.py --modern) is this book's real safety
+net: every \( \) and \[ \] in modern_chapters/NNN must equal chapters/NNN
+byte for byte and in order. Translators may not add formulas (letters in
+glosses as _x_), and must not reorder them by restructuring a sentence;
+it caught both, repeatedly. MISPRINTS: translators flag, never fix;
+~35 flagged formulas were then decided against the print in one pass
+(prep.py FIXES, each with its page; print misprints corrected only where
+Boole's own working on the page is unambiguous), and the identical
+substitution patched into modern_chapters/.
+THREE LAYERS, KEPT APART (Alex asked for "more comprehensible" with
+modern notes): Boole retold (every step, his article numbers and
+"(II. 9)" cross-references kept); GLOSSES inside the sentence that read
+an equation aloud, never correct it; and exactly SEVEN "Editor's note:"
+paragraphs, pre-assigned in running_notes.txt to one passage each (+ as
+exclusive or; 0 and 1 and Shannon; v as "some"; constituents = DNF and
+Jevons's Lesson 23; 0/0 and division; secondary propositions as truth
+values; existential import in Aristotle's moods). No agent added others.
+Notes avoid ≠ ∨ ∧ ∃ ¬ (CrossPoint fonts). Constituents are explained as
+"compartments" throughout. Sensitive: XIII's Clarke and Spinoza analysed as
+logical form, theology neither endorsed nor mocked.
+COVER: generated (gencover laws_of_thought): the development of 1 into
+x, y, z constituents with three struck out; epigraph from Chapter III,
+"Among the symbols of Number there are only two, 0 and 1, that satisfy
+this law." (the x² = x line rendered badly in the italic face: no ² glyph).

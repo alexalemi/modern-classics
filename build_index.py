@@ -159,6 +159,8 @@ BLURBS = {
         'A coded parchment, a dead Icelandic volcano, and a plunge into a lost world underground — complete from the French, not the mangled Victorian version.',
     'kenzeiki':
         "The oldest life of the founder of Sōtō Zen, written so that ordinary people could read it — with his letters, his kitchen rules, and the farmers' sworn statement about a coloured cloud.",
+    'laws-of-thought':
+        "The book that turned reasoning into algebra — x times x is x, so only 0 and 1 will do — retold plainly, every equation intact.",
     'leviathan':
         'Why we need government at all — the founding argument of the modern state, written amid civil war.',
     'lucretius':

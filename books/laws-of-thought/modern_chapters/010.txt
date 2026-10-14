@@ -1,0 +1,388 @@
+Chapter 9: On Certain Methods of Abbreviation
+
+1. The three fundamental methods set out and illustrated in the previous chapters, development, elimination, and reduction, are enough for every practical purpose of logic. Still, there are cases where they can be simplified a great deal, and this is especially true of elimination. Those cases are the subject of this chapter. I will first prove some propositions that contain the principles of these shortcuts, and afterwards apply them to particular examples.
+
+Let us call any terms that satisfy the fundamental law \(V(1-V) = 0\) _class terms_. Each such term, taken alone, is a constituent. But when several occur together, they need not all involve the same symbols, as the terms of a development must. So \(ax+bxy+cyz\) can be described as an expression made of three class terms, \(x\), \(xy\), and \(yz\), multiplied by the coefficients \(a\), \(b\), \(c\) respectively. The principle used in the next two Propositions, which in some cases shortens elimination a great deal, is the _rejection of superfluous class terms_. A term counts as superfluous if it adds nothing to the constituents of the final result.
+
+Proposition I.
+
+2. Take any equation \(V = 0\) in which \(V\) is a series of class terms with positive coefficients. From it we may throw out any term that contains another term as a factor, and we may change every positive coefficient to unity (that is, 1).
+
+Here is why. What a series of positive terms means depends only on the number and kind of the constituents in its final expansion, that is, its expansion with respect to all the symbols it contains. It does not depend at all on the actual values of the coefficients (VI. 5). Now let \(x\) be any term of the series, and \(xy\) any other term that has \(x\) as a factor. The expansion of \(x\) with respect to the symbols \(x\) and \(y\) is
+\[xy + x \left(1 - y\right),\]
+and the expansion of the sum of the terms \(x\) and \(xy\) is
+\[2xy + x \left(1 - y\right).\]
+
+By what has just been said, these two expressions are equivalent when they stand on the left-hand side of an equation whose right-hand side is 0 and whose left-hand coefficients are all positive. Either way, the final expansion contains just the two constituents \(xy\) and \(x \left(1-y\right)\), and from them come simply the equations
+\[xy = 0\text{, } x \left(1-y\right) = 0.\]
+That is, nothing is both x and y, and nothing is x without being y. So the pair of terms \(x + xy\) can be replaced by the single term \(x\).
+
+The same reasoning covers every case the Proposition describes. For instance, if the term \(x\) is repeated, the sum \(2x\) can be replaced by \(x\), because in these circumstances the equation \(x = 0\) is bound to appear in the final reduction anyway.
+
+Proposition II.
+
+3. Suppose that in the course of an elimination we have to multiply together two factors, each made up only of positive terms that obey the fundamental law of logical symbols. Then we may throw out of both factors any term they have in common, or throw out of either factor any term that is divisible by a term in the other factor. The condition is that every term thrown out must be added to the product of the factors that remain.
+
+In stating this Proposition, the word "divisible" is a term of convenience, used in the algebraic sense. In that sense \(xy\) and \(x \left(1 - y\right)\) are both said to be divisible by \(x\).
+
+To make the meaning of the Proposition clearer, suppose the factors to be multiplied together are \(x + y + z\) and \(x + yw + t\). The Proposition says that we may throw the term \(x\) out of both factors, and the term \(yw\) out of the second factor, as long as these terms are carried over to the final product. The factors that remain are then \(y+z\) and \(t\). If to their product \(yt+zt\) we add the terms \(x\) and \(yw\), we get
+\[x+yw+yt+zt,\]
+as an expression equivalent to the product of the given factors \(x+y+z\) and \(x+yw+t\). It is equivalent, that is, for the purposes of elimination.
+
+First take the case where the two factors share a term \(x\). Write the factors as \(x+P\) and \(x+Q\), where \(P\) in the first factor and \(Q\) in the second stand for the sum of the positive terms besides \(x\).
+
+Now,
+\[(x+P)(x+Q) = x+xP+xQ+PQ. \qquad (1)\]
+But elimination consists in multiplying certain factors together and setting the result equal to \(0\). So there are two possibilities. Either the right-hand side of the equation above is itself to be set equal to \(0\), or it is a factor of some larger expression that is to be set equal to \(0\).
+
+Take the first possibility. By the last Proposition, we may throw out the terms \(xP\) and \(xQ\), since they are positive terms that have another term, \(x\), as a factor. What is left is
+\[x+PQ,\]
+which is exactly what we get by throwing \(x\) out of both factors and adding it to the product of the factors that remain.
+
+Take the second possibility. The only way the right-hand side of (1) can affect the final result of the elimination is through the number and kind of its constituents. Throwing out the terms \(xP\) and \(xQ\) changes neither. The reason is that the development of \(x\) already includes every possible constituent that has \(x\) as a factor.
+
+Finally, take the case where one factor contains a term, such as \(xy\), that is divisible by a term, \(x\), in the other factor.
+
+Let the factors be \(x+P\) and \(xy+Q\). Now
+\[(x+P)(xy+Q) = xy+xQ+xyP+PQ.\]
+By the reasoning of the last Proposition, the term \(xyP\) may be thrown out, because it contains another positive term, \(xy\), as a factor. So we have
+\[\begin{gathered} xy + xQ + PQ \\ = xy + (x + P) Q. \end{gathered}\]
+But this is just what we get by throwing the term \(xy\) out of the second factor and carrying it over to the final product. So the Proposition is plain.
+
+Proposition III.
+
+4. Let \(t\) be any symbol that is kept in the final result when other symbols are eliminated from some system of equations. Then the result of that elimination can be written in the form
+\[Et + E' \left(1-t\right)=0,\]
+in which \(E\) is found by putting \(t = 1\) in the given system and eliminating the same other symbols, and \(E^{\prime}\) is found by putting \(t = 0\) in the given system and eliminating the same other symbols.
+
+For let \(\phi\left(t\right) = 0\) stand for the final result of the elimination. Expanding this equation, we have
+\[\phi\left(1\right)t + \phi\left(0\right)\left(1-t\right)=0.\]
+Now whatever process takes us from the given system of equations to the function \(\phi\left(t\right)\), the same process would take us to \(\phi\left(1\right)\) if \(t\) were changed into \(1\) in those equations. And the same process would take us to \(\phi\left(0\right)\) if \(t\) were changed into \(0\) in them. So the truth of the Proposition is plain.
+
+5. A remark about the three propositions just proved. They are not needed at all for the strict development or application of the general theory. But they serve important practical ends. By Prop. 1 we can simplify the results of addition. By Prop. 2 we can simplify the results of multiplication. And by Prop. 3 we can break any long, tedious elimination into two separate processes, each of which will usually be much less complicated. We will use this method very often when the final aim is to find the value of \(t\) in terms of the other symbols that remain after the elimination.
+
+6. Ex. 1.—In the Nicomachean Ethics, Book II. Cap. 3, Aristotle first settles that actions are virtuous not because of some character they have in themselves, but because they imply a certain state of mind in the person who does them. That person must act knowingly, by deliberate choice, for the action's own sake, and on fixed principles of conduct. In the next two chapters he goes on to ask whether virtue belongs to the genus of Passions, or of Faculties, or of Habits, along with some related points. He bases his inquiry on the following premises. From them he also draws the general doctrine and definition of moral virtue that the rest of the treatise lays out.
+
+Premises.
+
+1. Virtue is either a passion (πάθος), or a faculty (δύναμις), or a habit (ἕξις).
+
+2. Passions are not things according to which we are praised or blamed, or in which we exercise deliberate preference.
+
+3. Faculties are not things according to which we are praised or blamed, and which are accompanied by deliberate preference.
+
+4. Virtue is something according to which we are praised or blamed, and which is accompanied by deliberate preference.
+
+5. Whatever art or science makes its work to be in a good state avoids extremes, and keeps the mean in view relative to human nature (τὸ μέσον … πρὸς ἡμᾶς)
+
+6. Virtue is more exact and excellent than any art or science.
+
+This last is an argument _à fortiori_ (from the stronger case). If science and true art avoid falling short and going too far alike, then virtue keeps to the straight line of moderation all the more. If _they_ make their work to be in a good state, we have all the more reason to say that virtue makes her own particular work to be "in a good state." Let the final premise be read in that way. Let us also leave out every mention of praise and blame. In the premises they are mentioned only alongside deliberate preference, and deliberate preference is an element we mean to keep. We may then take as our symbols:
+
+	\(v\) = virtue.
+	\(p\) = passions.
+	\(f\) = faculties.
+	\(h\) = habits.
+	\(d\) = things accompanied by deliberate preference.
+	\(g\) = things causing their work to be in a good state.
+	\(m\) = things keeping the mean in view relative to human nature.
+
+Using \(q\) as the symbol of an indefinite class, we can express our premises by the following equations:
+\[\begin{aligned} v &= q\left\{p\left(1-f\right)\left(1- h\right) + f\left(1-p\right)\left(1-h\right) + h\left(1-p\right)\left(1-f\right)\right\}. \\ p &= q\left(1-d\right). \\ f &= q\left(1-d\right). \\ v &= qd. \\ g &= qm. \\ v &= qg. \end{aligned}\]
+Eliminating the symbol \(q\) from each of these separately, we get
+\[\begin{gathered} v \{1-p\left(1-f\right)\left(1-h\right) - f\left(1-p\right)\left(1-h\right) - h\left(1-p\right)\left(1-f\right)\}=0. \qquad (1) \\ pd=0. \qquad (2) \\ fd=0. \qquad (3) \\ v\left(1-d\right)=0. \qquad (4) \\ g\left(1-m\right)=0. \qquad (5) \\ v\left(1-g\right)=0. \qquad (6) \end{gathered}\]
+We will first eliminate the symbol \(d\) from (2), (3), and (4), and then find \(v\) in terms of \(p\), \(f\), and \(h\). Adding (2), (3), and (4) gives
+\[\left(p+f\right)d+v\left(1-d\right)=0.\]
+Eliminating \(d\) from this in the ordinary way, we find
+\[\left(p+f\right)v=0. \qquad (7)\]
+That is, nothing is both virtue and either a passion or a faculty. Adding this to (1), and solving for \(v\), we find
+\[v=\frac{0}{p+f+1-p\left(1-f\right)\left(1-h\right)-f\left(1-p\right)\left(1-h\right)-h\left(1-f\right)\left(1-p\right)}.\]
+So by development,
+\[v=\frac{0}{0}h\left(1-f\right)\left(1-p\right).\]
+This equation reads: _Virtue is a habit, and not a faculty or a passion_.
+
+Next we will eliminate \(f\), \(p\), and \(g\) from the original system of equations, and then find \(v\) in terms of \(h\), \(d\), and \(m\). This time we will eliminate \(p\) and \(f\) together. Adding (1), (2), and (3), we get
+\[\begin{gathered} v\{1-p(1-f)(1-h)-f(1-p)(1-h)-h(1-p)(1-f)\} \\ +pd+fd=0. \end{gathered}\]
+
+Developing this with respect to \(p\) and \(f\), we have
+\[\begin{gathered} (v+2d)pf+(vh+d)p(1-f)+(vh+d)(1-p)f \\ +v(1-h)(1-p)(1-f)=0. \end{gathered}\]
+So the result of the elimination will be
+\[(v+2d)(vh+d)(vh+d)v(1-h)=0.\]
+Now \(v+2d=v+d+d\), and by Prop. I. this can be reduced to \(v + d\). Its product with the second factor is
+\[(v+ d)(vh+d),\]
+which by Prop. II. reduces to \(d+v(vh)\) or \(vh+d\).
+
+In the same way, multiplying this result by the third factor gives simply \(vh+d\) again. Finally, multiplying it by the fourth factor, \(v(1-h)\), gives the final equation
+\[vd(1-h)=0 \qquad (8)\]
+that is, there is no virtue accompanied by deliberate preference that is not a habit. It remains to eliminate \(g\) from (5) and (6). The result is
+\[v(1-m)=0 \qquad (9)\]
+that is, all virtue keeps the mean in view.
+
+Finally, adding the equations (4), (8), and (9) gives
+\[v(1-d)+vd(1-h)+v(1-m)=0\]
+from which we have
+\[v=\frac{0}{1-d+d(1-h)+1-m}.\]
+And the development of this result gives
+\[v=\frac{0}{0}hdm,\]
+of which the interpretation is: _Virtue is a habit accompanied by deliberate preference, and keeping in view the mean relative to human nature_.
+
+Strictly speaking, this is not a definition of virtue but a description of it. It is, however, _all_ that can correctly be inferred from the premises. Aristotle ties to it the need for prudence, to find the safe middle line of action. And there is no doubt that the ancient theories of virtue were, in general, more intellectual in character than the theories that have mostly prevailed in modern times (the theory of utility excepted). Virtue was seen as the right state and habit of the whole mind, rather than as the sole rule of conscience or of the moral faculty. To some extent those theories were surely right. Unconditional obedience to what conscience commands is an essential part of virtuous conduct. But another part is that those commands should agree with the unchanging principles of right (αἰώνια δίκαια), which are grounded in the constitution of things, or rather are themselves its foundation. And such agreement, at least in any high degree, cannot go along with ignorance and dullness of mind. To come back to Aristotle's own theory: most people, I think, will find it too negative. Merely avoiding extremes does not give enough room for the nobler energies of our nature. Aristotle seems to have been dimly aware of this weakness in his system when, at the opening of his seventh book, he spoke of a "heroic virtue" that rises above the measure of human nature.
+
+Footnote: τὴν ὑπὲρ ἡμᾶς ἀρετὴν ἡρωϊκήν τινα καὶ θείαν—Nic. Eth. Book vii.
+
+7. I have already remarked (VIII. 1) that the theory of single equations or propositions includes questions that cannot be fully answered except in connection with the theory of systems of equations. We see this when we are asked to take a single equation and find, in terms of the remaining elements, the relation not of some single elementary class but of some compound class, one whose expression involves more than one element. The particular example that follows, and the general problem after it, are of this kind.
+
+Ex. 2.—Let us go back to the symbolic expression of the definition of wealth used in Chap. VII., namely,
+\[w = st \left\{p + r\left(1 - p\right)\right\},\]
+where, as before,
+
+	\(w\) = wealth,
+	\(s\) = things limited in supply,
+	\(t\) = things transferable,
+	\(p\) = things productive of pleasure,
+	\(r\) = things preventive of pain;
+
+and suppose we are asked to find from it how things that are transferable and productive of pleasure are related to the other elements of the definition, namely wealth, things limited in supply, and things preventive of pain.
+
+The expression for things transferable and productive of pleasure is \(tp\). Let us stand for this by a new symbol, \(y\). We then have the equations
+\[\begin{aligned} w &= st\left\{p + r\left(1-p\right)\right\}, \\ y &= tp, \end{aligned}\]
+and if we eliminate \(t\) and \(p\) from them, we can find \(y\) as a function of \(w\), \(s\), and \(r\). That result, interpreted, will give the relation we want.
+
+Bringing all the terms of these equations over to the left-hand side, we have
+\[\begin{gathered} w - stp - str \left(1 - p\right) = 0. \\ y - tp = 0. \qquad (3) \end{gathered}\]
+Adding the squares of these equations together gives
+\[w + stp + str \left(1-p\right) - 2wstp - 2wstr\left(1-p\right) + y + tp - 2ytp = 0. \qquad (4)\]
+To eliminate \(t\) and \(p\), we develop the left-hand side with respect to them, and get
+\[\begin{gathered} \left(w+s-2ws+1-y\right)tp + \left(w+sr-2wsr+y\right)t\left(1-p\right) \\ +\left(w+y\right)\left(1-t\right)p+\left(w+y\right)\left(1-t\right)\left(1-p\right); \qquad (5) \end{gathered}\]
+and the result of eliminating \(t\) and \(p\) is found by setting equal to \(0\) the product of the four coefficients of
+\[tp, t\left(1-p\right), \left(1-t\right)p,\text{ and } \left(1-t\right)\left(1-p\right).\]
+
+Or, by Prop. 3, the result of eliminating \(t\) and \(p\) from the equation above will have the form
+\[Ey+E^\prime\left(1-y\right),\]
+where \(E\) is what we get by changing \(y\) into \(1\) in the given equation and then eliminating \(t\) and \(p\), and \(E^\prime\) is what we get by changing \(y\) into \(0\) in the same equation and then eliminating \(t\) and \(p\). In each case, the way to eliminate \(t\) and \(p\) is to multiply together the coefficients of the four constituents \(tp\), \(t\left(1-p\right)\), and so on.
+
+If we put \(y=1\), the coefficients become as follows.
+
+The first is \(w\left(1-s\right)+s\left(1-w\right)\).
+
+The second is \(1+w\left(1-sr\right)+s\left(1-w\right)r\), which is equivalent to 1 by Prop. I.
+
+The third and fourth are \(1 + w\), which is equivalent to 1 by Prop. I.
+
+So the value of \(E\) is
+\[w\left(1-s\right) + s\left(1-w\right).\]
+Again, putting \(y = 0\) in (5), we have for the coefficients:
+
+The first is \(1+w\left(1-s\right) + s\left(1-w\right)\), which is equivalent to 1.
+
+The second is \(w\left(1-sr\right) + sr\left(1-w\right)\).
+
+The third and fourth are \(w\).
+
+Multiplying these coefficients together gives
+\[E^\prime=w\left(1-sr\right).\]
+
+So the equation from which \(y\) is to be found is
+\[\begin{gathered} \left\{w(1-s)+s(1-w)\right\}y + w(1-sr)(1-y)=0, \\ \therefore y=\frac{w(1-sr)}{w(1-sr)-w(1-s)-s(1-w)}; \end{gathered}\]
+and expanding the right-hand side,
+\[\begin{aligned} y &=\frac{0}{0}wsr+ws(1-r)+\frac{1}{0}w(1-s)r+\frac{1}{0}w(1-s)(1-r) \\ &\quad+0(1-w)sr+0(1-w)s(1-r)+\frac{0}{0}(1-w)(1-s)r \\ &\quad+\frac{0}{0}(1-w)(1-s)(1-r); \end{aligned}\]
+and reducing this, we get
+\[\begin{gathered} y=ws(1-r) + \frac{0}{0}wsr + \frac{0}{0}(1-w)(1-s), \qquad (6) \\ \text{with }w (1-s) = 0. \qquad (7) \end{gathered}\]
+
+Read in words, this says two things.
+
+First, things transferable and productive of pleasure consist of all wealth (limited in supply and) not preventive of pain, an indefinite amount of wealth (limited in supply and) preventive of pain, and an indefinite amount of what is not wealth and not limited in supply.
+
+Second, _all wealth is limited in supply_.
+
+In the solution above I have put in parentheses the part of the full description that is already implied by the separate relation (7) that comes with it.
+
+8. The following problem is more general. It will give us an easy practical rule for problems like the last one.
+
+General Problem.
+
+Given any equation connecting the symbols \(x\), \(y..w\), \(z..\)
+
+Required: to find the logical expression of any class described in any way by the symbols \(x\), \(y..\) in terms of the remaining symbols, \(w\), \(z\), and so on.
+
+Let us keep to the case of just two symbols, \(x\) and \(y\), on one side, and two symbols, \(w\) and \(z\), on the other. That case is enough to establish the general Rule.
+
+Let \(V=0\) be the given equation, and let \(\phi (x,y)\) stand for the class whose expression we want to find.
+
+Put \(t = \phi (x,y)\). Then \(x\) and \(y\) are to be eliminated from these two equations.
+
+Now the equation \(V=0\) can be expanded in the form
+\[Axy + Bx(1-y) + C(1-x)y + D(1-x) (1-y) = 0, \qquad (1)\]
+where \(A\), \(B\), \(C\), and \(D\) are functions of the symbols \(w\) and \(z\).
+
+Again, since \(\phi (x,y)\) stands for a class or collection of things, it must consist of a constituent, or a series of constituents, whose coefficients are 1.
+
+So if the _full_ development of \(\phi (x, y)\) is written in the form
+\[axy+ bx(1 - y) + c(1 - x)y + d(1 - x) (1 - y),\]
+each of the coefficients \(a\), \(b\), \(c\), \(d\) must be 1 or 0.
+
+Now by transposing and squaring, we reduce the equation \(t = \phi (x, y)\) to the form
+\[t\{1-\phi(x,y)\} + \phi(x,y)(1-t) = 0;\]
+and expanding with respect to \(x\) and \(y\), we get
+\[\begin{gathered} \{t(1 -a ) + a (1 - t)\} xy + \{t(1 - b) + b(1 - t)\} x(1 - y) \\ + \{t(1-c) + c(1-t)\} (1-x)y \\ + \{t(1-d) + d(1-t)\} (1-x) (1-y) = 0; \end{gathered}\]
+and adding this to (1), we have
+\[\begin{aligned} \{A + t(1-a) + a(1-t)\}xy \\ + \{B + t(1-b) + b(1-t)\} x(1-y) + \&c. = 0. \end{aligned}\]
+
+Let the result of eliminating \(x\) and \(y\) have the form
+\[Et+E' (1-t)=0,\]
+Then, by what has been said, E will be the reduced product of what the coefficients of the expansion above become when \(t = 1\) , and \(E'\) the product of the same factors, reduced in the same way, when \(t = 0\).
+
+So \(E\) will be the reduced product
+\[(A+1-a)(B+1-b)(C+1-c)(D+1-d).\]
+Look at any one factor of this expression, say \(A + 1 - a\). When \(a = 1\) it becomes A, and when \(a = 0\) it becomes \(1 + A\), which reduces to 1 by Prop. I. From this we may conclude that E is the product of the coefficients of those constituents in the development of \(V\) whose coefficients in the development of \(\phi (x, y)\) are 1.
+
+Moreover, \(E'\) will be the reduced product
+\[(A+a)(B+b)(C+c)(D+d).\]
+Look at any one of these factors, say \(A + a\). It becomes \(A\) when \(a = 0\), and reduces to 1 when \(a = 1\) ; and the same goes for the others. So \(E\) will be the product of the coefficients of those constituents in the development of \(y\), whose coefficients in the development \(\phi (x, y)\) are 0. Putting these two cases together, we can lay down the following Rule.
+
+9. To find, from a logical equation, how any class expressed by a given combination of the symbols \(x\), \(y\), and so on, is related to the classes represented by the other symbols in that equation.
+
+Rule.—Expand the given equation with respect to the symbols \(x\), \(y\). Then form the equation
+\[Et + E'(1-t) = 0,\]
+in which \(E\) is the product of the coefficients of all those constituents in the development whose coefficients in the expression of the given class are 1, and \(E'\) is the product of the coefficients of those constituents in the development whose coefficients in the expression of the given class are 0. The value of \(t\) found from this equation, by solving it and interpreting the result, will be the expression we want.
+
+Note.—In proving this Rule we assumed that \(V\) consists only of positive terms. But it is easy to show that this condition is unnecessary, that the Rule is general, and that the given equation really needs no preparation at all.
+
+10. Ex. 3.—Take the same definition of wealth as in Example 2. We want an expression for _things transferable, but not productive of pleasure_, \(t(1 - p)\), in terms of the other elements, represented by \(w\), \(s\), and \(r\).
+
+The equation
+\[w - stp - str (1 - p) = 0,\]
+gives, when squared,
+\[w + stp + str (1 - p) - 2wstp - 2wstr (1 - p) = 0;\]
+and developing the left-hand side with respect to \(t\) and \(p\),
+\[\begin{gathered} (w + s - 2ws) tp + (w + sr - 2wsr) t (1 - p) + w (1 -t)p \\ + w(1-t)(1-p) = 0. \end{gathered}\]
+
+It is best to write the coefficients as in the following equation:
+\[\begin{gathered} \{w(1-s)+s(1-w)\}tp+\{w(1-sr)+sr(1-w)\}t(1-p)+w(1-t)p \\ +w(1-t)(1-p)=0 \end{gathered}\]
+
+Let the function to be found, \(t (1 -p)\), be represented by \(z\). Then the full development of \(z\) with respect to \(t\) and \(p\) is
+\[z = 0 tp + t (1 - p) + 0(1 - t) p + 0(1 - t) (1 - p).\]
+So, by the last problem, we have
+\[\begin{gathered} Ez + E'(1-z)=0; \\ \text{where }E = w (1 - sr) + sr (1 - w); \\ E'= \{w(1 - s) + s (1 - w) \} \times w \times w = w(1 - s) ; \\ \therefore \{w(1 - sr) + sr(1 - w)\} z + w(1 - s) (1 - z) =0. \end{gathered}\]
+So,
+\[\begin{gathered} z=\frac{w(1-s)}{2wsr-ws-sr} \\ = \frac{0}{0}wsr + 0ws(1 - r) + \frac{1}{0}w(1 - s)r + \frac{1}{0}w(1 - s)(1 - r), \\ + 0(1 - w)sr + \frac{0}{0}(1 - w)s(1 - r) + \frac{0}{0}(1 - w)(1 - s)r \\ + \frac{0}{0}(1 - w)(1 - s)(1 - r). \\ \text{Or, } z = \frac{0}{0} wsr + \frac{0}{0}(1-w)s(1-r) + \frac{0}{0} (1- w)(1 - s), \\ \text{with }w (1 - s) = 0. \end{gathered}\]
+
+So things transferable and not productive of pleasure are either wealth (limited in supply and preventive of pain); or things that are not wealth, but are limited in supply and not preventive of pain; or things that are not wealth and are unlimited in supply.
+
+The following results, found in the same way, are easy to check:
+
+Things limited in supply and productive of pleasure which are not wealth are intransferable (cannot be transferred).
+
+Wealth that is not productive of pleasure is transferable, limited in supply, and preventive of pain.
+
+Things limited in supply which are either wealth or productive of pleasure, but not both, are either transferable and preventive of pain, or intransferable.
+
+11. A great many curious examples could be taken from natural history. But I do not think such applications would have any value of their own. For instance, they would throw no light on the true principles of classification in zoology. To discover those, we need some foundation of positive knowledge: some acquaintance with the structure of living things, and with how their parts are fitted to their purposes. That kind of knowledge can only come from the outside means of observation and analysis. Still, take any collection of propositions in natural history, and a great many logical problems present themselves, whatever system of classification is used. In making up such examples, it is perhaps better to leave out, as superfluous, the property of a class or species that its name already suggests. An example is the ring-structure of the annelida, the class of animals that includes the earthworm and the leech.
+
+Ex. 4.—1. The annelida are soft-bodied, and either naked or enclosed in a tube.
+
+2. The annelida consist of all invertebrate animals having red blood in a double system of circulating vessels.
+
+	Assume | \(a\) = annelida;
+	 | \(s\) = soft-bodied animals;
+	 | \(n\) = naked;
+	 | \(t\) = enclosed in a tube;
+	 | \(i\) = invertebrate;
+	 | \(r\) = having red blood, &c.
+
+Then the propositions are expressed by the equations
+\[\begin{gathered} a = vs \{n(1- t) + t (1 - n)\}; \qquad (1) \\ a = ir; \qquad (2) \end{gathered}\]
+and to these we may add the condition they imply, that nothing is both naked and enclosed in a tube,
+\[nt = 0. \qquad (3)\]
+
+Eliminating \(v\), and reducing the system to a single equation, we have
+\[a [1-sn(1-t)-st(1-n)] + a(1-ir) + ir (1-a) + nt = 0. \qquad (4)\]
+
+Suppose we want to find how soft-bodied animals enclosed in tubes stand, by virtue of the premises, with respect to the following elements: having red blood, having an outer covering, and having a backbone.
+
+We must first eliminate \(a\). The result is
+\[ir \{1 - sn(1-t) - st(1-n)\} + nt=0.\]
+
+Then (IX. 9), developing with respect to \(s\) and \(t\), and reducing the first coefficient by Prop. 1, we have
+\[nst + ir(1-n)s(1-t) + (ir+n)(1-s)t + ir(1-s)(1-t) = 0. \qquad (5)\]
+
+So if we put \(st=w\), we find
+\[nw + ir(1-n) \times (ir+n) \times ir(1-w) = 0;\]
+or,
+\[\begin{gathered} nw + ir(1-n)(1-w) = 0; \\ \therefore w = \frac{ ir(1-n)}{ir(1-n)-n} \\ = 0irn + ir(1-n) + 0i(1-r)n + \frac{0}{0}i(1-r)(1-n) \\ + 0(1-i)rn + \frac{0}{0}(1-i)r(1-n) + 0(1-i)(1-r)n \\ + \frac{0}{0}(1-i)(1-r)(1-n); \\ \text{or, } w = ir(1-n) + \frac{0}{0}i(1-r)(1-n) + \frac{0}{0}(1-i)(1-n). \end{gathered}\]
+
+So soft-bodied animals enclosed in tubes consist of all invertebrate animals that have red blood and are not naked, together with an indefinite remainder made up of invertebrate animals that do not have red blood and are not naked, and of vertebrate animals that are not naked.
+
+In exactly the same way, the following reduced equations have been drawn from the development (5). Their interpretation is left to the reader.
+\[\begin{gathered} s(1-t) = irn + \frac{0}{0}i(1-n) + \frac{0}{0}(1-i) \\ (1-s) t = \frac{0}{0}(1-i)r(1-n) + \frac{0}{0}(1-r)(1-n) \\ (1-s)(1-t) = \frac{0}{0}i(1-r) + \frac{0}{0}(1-i). \end{gathered}\]
+
+In none of these examples have I tried to show off the power of the method in any special way. That power, I believe, can only be fully displayed in connection with the mathematical theory of probability (in the chapters on probability, not included in this edition). But I would make a suggestion to anyone who wants to form a fair opinion on this point. Work through the following problem by the rules of ordinary logic _before_ looking at its solution. And remember that whatever complexity it has could be multiplied without limit. The only effect would be to make its solution by the method of this book more laborious, but no less certain.
+
+Ex. _5_. Suppose that observing a certain class of natural productions has led to the following general results.
+
+First, in whichever of these productions the properties \(A\) and \(C\) are missing, the property \(E\) is found, together with one of the properties \(B\) and \(D\), but not with both.
+
+Second, wherever the properties \(A\) and \(D\) are found while \(E\) is missing, the properties \(B\) and \(C\) will either both be found or both be missing.
+
+Third, wherever the property \(A\) is found together with either \(B\) or \(E\), or both, there either the property \(C\) or the property \(D\) will be found, but not both. And conversely, wherever the property \(C\) or \(D\) is found on its own, there the property \(A\) will be found together with either \(B\) or \(E\), or both.
+
+We are asked to find two things. First, what can be concluded in any particular case from the known presence of the property \(A\), with respect to the properties \(B\), \(C\), and \(D\); and also whether any relations hold among the properties \(B\), \(C\), and \(D\) on their own. Second, what can be concluded in the same way about the property \(B\) and the properties \(A\), \(C\), and \(D\).
+
+Notice that in each of the three data, what we are told about the properties \(A\), \(B\), \(C\), and \(D\) is tangled up with another element, \(E\), about which we want to say nothing in our conclusion. So we will need to eliminate the symbol for the property E from the system of equations that expresses the given propositions.
+
+Let us represent the property \(A\) by \(x\), \(B\) by \(y\), \(C\) by \(z\), \(D\) by \(w\), and \(E\) by \(v\). The data are then
+\[\begin{gathered} \bar{x}\bar{z} = qv(y\bar{w} + w\bar{y}); \qquad (1) \\ \bar{v}xw = q (yz + \bar{y}\bar{z}); \qquad (2) \\ xy + xv\bar{y} = w\bar{z} + z\bar{w}; \qquad (3) \end{gathered}\]
+where \(\bar{x}\) stands for \(1 - x\), and so on, and \(q\) is a symbol of an indefinite class. We eliminate \(q\) from the first and second equations separately, and add the results to the third equation, reduced by (5), Chap. VIII. We get
+\[\begin{aligned} \bar{x}\bar{z} (1 - vy\bar{w} - vw\bar{y}) + \bar{v}xw (y\bar{z} + z\bar{y}) + (xy + xv\bar{y}) (wz + \bar{w}\bar{z}) \\ & {} + (w\bar{z} + z\bar{w}) (1 -xy- xv\bar{y}) = 0. \qquad (4) \end{aligned}\]
+
+From this equation \(v\) must be eliminated, and then the value of \(x\) found from the result. For this purpose it will be convenient to use the method of Prop. 3 of the present chapter.
+
+So let the result of the elimination be represented by the equation
+\[Ex + E' (1-x) = 0.\]
+
+To find \(E\), put \(x = 1\) in the left-hand side of (4). We find
+\[\bar{v}w (y\bar{z} + z\bar{y}) + (y + v\bar{y}) (wz + \bar{w}\bar{z})+ (w\bar{z} + z\bar{w}) \bar{v}\bar{y}.\]
+
+Eliminating \(v\), we have
+\[(wz + \bar{w}\bar{z}) \left\{w(y\bar{z} + z\bar{y}) +y(wz+ \bar{w}\bar{z}) + \bar{y} (w\bar{z} +z\bar{w})\right\};\]
+and when this is actually multiplied out, subject to the conditions \(w\bar{w} = 0\), \(z\bar{z} = 0\), and so on, it gives
+\[E = wz + y\bar{w}\bar{z}\]
+
+Next, to find \(E'\), put \(x = 0\) in (4). We have
+\[z (1 - vy\bar{w} - v\bar{y}w) + w\bar{z} + z\bar{w}.\]
+Eliminating \(v\) from this, and reducing the result by Propositions 1 and 2, we find
+\[E' = w\bar{z} + z\bar{w} + \bar{y}\bar{w}\bar{z};\]
+
+and so, finally, we have
+\[(wz + y\bar{w}\bar{z})x + (w\bar{z} + z\bar{w} + \bar{y}\bar{w}\bar{z})\bar{x} = 0; \qquad (5)\]
+from which
+\[x = \frac{w\bar{z} + z\bar{w} + \bar{y}\bar{w}\bar{z}} {w\bar{z} + z\bar{w} + \bar{y}\bar{w}\bar{z} - wz - y\bar{w}\bar{z}}\]
+and so, by development,
+\[\begin{gathered} x = 0yzw + yz\bar{w} + y\bar{z}w + 0y\bar{z}\bar{w} \\ + 0\bar{y}zw + \bar{y}z\bar{w} + \bar{y}\bar{z}w + \bar{y}\bar{z}\bar{w}; \end{gathered}\]
+or, collecting the terms that stand in the same vertical column,
+\[x = z\bar{w} + \bar{z}w + \bar{y}\bar{z}\bar{w}; \qquad (6)\]
+which reads as follows.
+
+In whatever substances the property \(A\) is found, there will also be found either the property \(C\) or the property \(D\), but not both; or else the properties \(B\), \(C\), and \(D\) will all be missing. And conversely, wherever the property \(C\) or the property \(D\) is found on its own, or the properties \(B\), \(C\), and \(D\) are all missing together, there the property \(A\) will be found.
+
+It also turns out that there is no separate relation among the properties \(B\), \(C\), and \(D\) on their own.
+
+Second, we are to find \(y\). Developing (5) with respect to that symbol, we get
+\[(xwz + x\bar{w}\bar{z} + \bar{x}w\bar{z} + \bar{x}z\bar{w})y + (xwz + \bar{x}w\bar{z} + \bar{x}z\bar{w} + \bar{x}\bar{z}\bar{w})\bar{y} = 0;\]
+and proceeding as before,
+\[y = \bar{x}\bar{w}\bar{z} + \frac{0}{0}(\bar{x}wz + xw\bar{z} + xz\bar{w}), \qquad (7)\]
+together with
+\[\begin{aligned} xzw &= 0; \qquad (8) \\ \bar{x}\bar{z}w &= 0; \qquad (9) \\ \bar{x}z\bar{w} &= 0; \qquad (10) \end{aligned}\]
+
+Solving (10), we reduce it to the form
+\[\bar{x}z = \frac{0}{0}w;\]
+and from it we have the separate relation: _If the property \(A\) is absent and \(C\) present, \(D\) is present_. Again, adding (8) and (9) and solving gives
+\[xz + \bar{x}\bar{z} = \frac{0}{0} \bar{w}.\]
+
+So, for the general solution and the remaining separate relation, we have the following.
+
+First, if the property \(B\) is present in one of the productions, then either the properties \(A\), \(C\), and \(D\) are all absent, or exactly one of them is absent. And conversely, _if they are all absent it may be concluded that the property B is present_ (7).
+
+Second, if \(A\) and \(C\) are both present or both absent, \(D\) will be absent, quite independently of whether \(B\) is present or absent (8) and (9).
+
+I have not attempted to verify these conclusions.

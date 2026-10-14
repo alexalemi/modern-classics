@@ -1,0 +1,227 @@
+Chapter 15: Of the Aristotelian Logic
+
+1. The logical system of Aristotle, altered in its details but unchanged in its essentials, holds such an important place in university education that this book ought to give some account of it, and briefly discuss the main problems it raises. I hope I come to the task in no narrow or harshly critical spirit. My aim is not to set up a direct comparison between the time-honoured system of the schools and the system of this book. It is, putting truth above every other consideration, to show what the ancient doctrine really is, and to clear away one or two common misunderstandings about how far it reaches and whether it is sufficient.
+
+What is essential in the spirit and method of Aristotle's logic, and of every system related to it, is this: it tries to classify the allowable forms of inference, and it refers those forms, together or one by one, to some general principle that is taken as an axiom. One such principle is the "dictum of Aristotle:" Whatsoever is affirmed or denied of the genus may in the same sense be affirmed or denied of any species included under that genus. About such general principles I think we can say this. Either they state directly, but in abstract form, the very argument they are supposed to explain, and in stating it declare it valid; or they use technical terms which, once defined, bring us back to the same place, namely the abstract statement of the forms of inference that are supposed to be allowed. So the idea of classification runs all through these systems. They also divide logic into two great branches. One deals with categorical propositions, the other with hypothetical or conditional ones. This distinction is nearly the same as the one this book draws between primary and secondary propositions. In all the ordinary textbooks of logic, the theory of categorical propositions is treated far more fully and carefully than the theory of hypothetical ones. Part of that treatment is taken up with old scholastic distinctions, and part with the rules of deductive inference. Only the second part needs our attention here.
+
+2. Categorical propositions are sorted under the following four heads:
+
+	 |  |  | Type
+	1st. | Universal affirmative | Propositions: | All \(Y\)’s are \(X\)’s.
+	2nd. | Universal negative | " | No \(Y\)’s are \(X\)’s.
+	3rd. | Particular affirmative | " | Some \(Y\)’s are \(X\)’s.
+	4th. | Particular negative | " | Some \(Y\)’s are not \(X\)’s.
+
+Four more forms have recently been added to these, making eight in all (see the next article). The eight can, however, be reduced to six, and the relations among them have been discussed very fully and ably by Professor De Morgan in his Formal Logic. Sir W. Hamilton has published a somewhat different scheme, and has made it the basis of a method of syllogistic inference that authorities on logic speak of with very high respect.
+
+Footnote: Thomson’s Outlines of the Laws of Thought, p. 177.
+
+The textbooks describe the processes of formal logic, as applied to this system of propositions, as being of two kinds, "Conversion" and "Syllogism." Conversion means stating a proposition of one of these kinds in an equivalent form, but with its terms in reverse order. Syllogism means taking two such propositions that share a common term, whether as subject or as predicate, and deducing from them a third proposition that the two contain between them, called the "conclusion." Most writers on logic hold that these two processes, or, according to some, the single process of syllogism, provide the universal patterns of all reasoning. On their view, in any chain of proof the mind's business is to conform itself, knowingly or not, to the particular models of these processes that logicians have classified in their books.
+
+3. What I mean to do is this. First, I will show how syllogism and conversion can be carried out in the most general way on the principles of this book. Then, viewing them as part of a system of logic whose foundations, I believe, have been laid in the ultimate laws of thought, I will try to settle their true place and their essential character.
+
+In the language of symbols, the eight basic types of proposition are written as follows:
+
+	1. | All \(Y\)’s are \(X\)’s, | \(y = vx\). | ""
+	2. | No \(Y\)’s are \(X\)’s, | \(y = v(1-x)\). | ""
+	3. | Some \(Y\)’s are \(X\)’s, | \(vy = vx\). | ""
+	4. | Some \(Y\)’s are not-\(X\)’s, | \(vy = v(1-x)\). | ""
+	5. | All not-\(Y\)’s are \(X\)’s, | \(1-y = vx.\) | (1)
+	6. | No not-\(Y\)’s are \(X\)’s, | \(1-y = v(1-x)\). | ""
+	7. | Some not-\(Y\)’s are \(X\)’s, | \(v(1-y) = vx\). | ""
+	8. | Some not-\(Y\)’s are not-\(X\)’s, | \(v(1-y) = v(1-x).\) | ""
+
+When we refer to these forms, it will be convenient to use the old words for logical quantity, "universal" and "particular," and for quality, "affirmative" and "negative," in a sense I will explain in a moment. But we will apply them to the _terms_ of propositions, not to the propositions themselves. So we will call the term "All \(Y\)’s" universal-affirmative; the term "\(Y\)’s," or "Some \(Y\)’s," particular-affirmative; the term "All not-\(Y\)’s" universal-negative; and the term "Some not-\(Y\)’s" particular-negative. "No \(Y\)’s" is not really a _term_ of a proposition at all. For the true meaning of "No \(Y\)’s are \(X\)’s" is "All \(Y\)’s are not-\(X\)’s." The subject of that proposition is therefore universal-affirmative, and its predicate particular-negative. That there is a real difference between the ideas "men" and "not men" is obvious. That difference is all I have in mind when I call terms affirmative and negative in this way; I do not insist that the words are etymologically the right ones for terms. The words positive and privative would have fitted better, but "positive" is already used in a fixed sense elsewhere in this book.
+
+4. The laws of conversion follow at once from these symbolic forms. Take the equation
+\[y = vx,\]
+which stands for the proposition "All \(Y\)’s are \(X\)’s." Eliminating \(v\), we get
+\[y(1-x) = 0,\]
+that is, nothing is a _y_ that is not an _x_. Solving this for \(1-x\) gives
+\[1-x=\frac{0}{0}(1-y);\]
+and this reads
+\[\text{All not-$X$'s are not-$Y$'s.}\]
+
+This is an example of what is called "negative conversion." In the same way, the equation
+\[y = v(1-x),\]
+which stands for "No \(Y\)’s are \(X\)’s," gives
+\[x=\frac{0}{0}(1-y),\]
+and this reads "No \(X\)’s are \(Y\)’s," since every _x_ falls among the things that are not _y_. This is an example of what is called simple conversion, though in reality it is the same kind of conversion as the one in the previous example. Every example of conversion that logicians have noticed is of one of two kinds. Either it is of the kind just shown, or it simply swaps the terms of a proposition around without changing their quality, as when we change
+\[vy = vx \text{, representing, Some $Y$'s are $X$'s,}\]
+into
+\[vx = vy \text{, representing, Some $X$'s are $Y$'s;}\]
+Or else it combines these processes with a further step of limitation, as when from the equation
+\[y = vx \text{, representing, All $Y$'s are $X$'s,}\]
+we multiply both sides by \(v\) and deduce
+\[vy = vx \text{, representing, Some $Y$'s are $X$'s,}\]
+and from this
+\[vx = vy \text{, representing, Some $X$'s are $Y$'s.}\]
+In this example the limitation (narrowing "all" to "some") comes first, and the swapping of terms second.
+
+Editor's note: Here Boole passes from "All Y's are X's" to "Some Y's are X's", the step traditional logic calls conversion per accidens, or conversion by limitation. Modern logic does not allow it. It counts "All X are Y" as true even when there are no X's at all, so the statement cannot imply that any X exist. For the same reason some of Aristotle's moods (Darapti, Felapton, Bramantip, Fesapo, and the weakened moods) need an extra premise saying that the class in question is not empty. Boole's v quietly supplies it: to read v times y as "some Y's" is already to assume there are Y's to take some of.
+
+These cases show that conversion is one particular use of a much more general process in logic, a process this book has illustrated many times. Its aim is to find any element of any proposition, however complex, as a logical function of the remaining elements. We need not confine ourselves to the subject and the predicate, treated as simple terms. We can take any element, or any combination of elements, appearing in either of them; make that element or combination the "subject" of a new proposition; and work out what its predicate must be from the data we are given. Even the simple forms of proposition listed above leave room for using such a method beyond what the accepted laws of conversion seem to recognise. So the equation
+\[y=vx,\text{ representing, All }Y\text{'s are }X\text{'s},\]
+gives us, besides the proposition we deduced from it before, the following three:
+
+	1st. | \(y(1-x)=0.\) | There are no \(Y\)’s that are not-\(X\)’s.
+	2nd. | \(\displaystyle 1-y=\frac{0}{0}x+(1-x).\) | Things that are not-\(Y\)’s include all things that are not-\(X\)’s, and an indefinite remainder of things that are \(X\)’s.
+	3rd. | \(\displaystyle x=y+\frac{0}{0}(1-y).\) | Things that are \(X\)’s include all things that are \(Y\)’s, and an indefinite remainder of things that are not-\(Y\)’s.
+
+These conclusions, it is true, only put the given proposition into other, equivalent forms. But that, and no more, is exactly what the accepted method of "negative conversion" does.
+
+Furthermore, these processes of conversion are not elementary. They are combinations of simpler processes, which depend more directly on the ultimate laws and axioms that govern the use of the symbolic instrument of reasoning. The same remark applies to syllogism, which we now go on to consider.
+
+5. The nature of the syllogism is best seen in a particular case. Suppose we have the propositions
+\[\begin{aligned} &\text{All }X\text{'s are }Y\text{'s}, \\ &\text{All }Y\text{'s are }Z\text{'s}. \end{aligned}\]
+
+From these we can deduce the conclusion
+\[\text{All }X\text{'s are }Z\text{'s}.\]
+This is a syllogistic inference. The terms \(X\) and \(Z\) are called the extremes, and \(Y\) is called the middle term. We can now define what a syllogism does in general. We are given two propositions of the kinds listed in (1), sharing one middle or common term \(Y\). In one proposition it is connected with an extreme \(X\), in the other with an extreme \(Z\). We are asked for the relation connecting the extremes \(X\) and \(Z\). The term \(Y\) may appear in its affirmative form, as All \(Y\)’s or Some \(Y\)’s, or in its negative form, as All not-\(Y\)’s or Some not-\(Y\)’s, in either proposition, whatever form it takes in the other.
+
+Nothing is easier than to resolve a particular syllogism by the method of this book. Resolving it is in fact just one application of the process for reducing systems of propositions. Taking the example above, we have
+\[\begin{gathered} x = vy, \\ y = v'z; \end{gathered}\]
+so, substituting,
+\[x = vv'z,\]
+which reads
+\[\text{All }X\text{'s are }Z\text{'s}.\]
+Or, keeping strictly to the method set out in (VIII.7), we deduce
+\[x(1-y)=0,\quad\quad y(1-z)=0.\]
+Adding these equations and eliminating \(y\), we get
+\[x(1-z)=0;\]
+so \(x = \frac{0}{0}z\), or All \(X\)’s are \(Z\)’s. Any other case can be handled in the same way.
+
+6. But let us leave particular examples aside and examine the general forms to which every syllogism can be reduced.
+
+Proposition I.
+
+To deduce the general rules of Syllogism.
+
+By the general rules of syllogism I mean here the rules that apply to premises in which the subjects and predicates may have every variety of quantity and quality, except that no proposition may join two universal terms. The forms of proposition allowed are therefore those set out in the table at (1).
+
+Let \(X\) and \(Y\) be the things in the first premise, and \(Z\) and \(Y\) those in the second. Two cases, fundamentally different in character, then arise. The terms involving \(Y\) will be either of _like_ or of _unlike quality_. They are of like quality when both speak of "\(Y\)’s," or both of "Not-\(Y\)’s"; of unlike quality when one speaks of "\(Y\)’s" and the other of "Not-\(Y\)’s." Any pair of premises of the first sort can be written as the equations
+\[\begin{aligned} vx &= v'y, \qquad (1) \\ wz &= w'y; \qquad (2) \end{aligned}\]
+For we can use the symbol \(y\) to stand either for "All \(Y\)’s" or for "All not-\(Y\)’s," since what the symbol means is purely a matter of convention. If we let \(y\) stand for "All not-\(Y\)’s," then \(1-y\) will stand for "All \(Y\)’s," and nothing else changes. We have the same freedom with the symbols \(x\) and \(z\). So by choosing the meanings of \(x\), \(y\), and \(z\) properly, equations (1) and (2) can be made to represent every combination of premises that depends on the _quality_ of their terms. Again, by giving suitable meanings to the symbols \(v\), \(v'\), \(w\), \(w'\) in those equations, every variety of _quantity_ can be represented as well. For instance, if we take \(v=1\), and let \(v'\) stand for an indefinite class, equation (1) will represent a universal proposition in the ordinary sense of the word, that is, a proposition with a universal subject and a particular predicate. In fact we may give the subject and the predicate in either premise whatever _quantities_ we like (using the word in its scholastic sense), except that, as we assumed, they must not both be universal. The system (1), (2) therefore represents, in complete generality, every possible combination of premises with like middle terms.
+
+7. So that our analysis is as general as the equations it works on, let us eliminate \(y\) from (1) and (2) by the method of this book, and look for the expressions for \(x\), \(1-x\), and \(vx\) in terms of \(z\) and the symbols \(v\), \(v'\), \(w\), \(w'\). These cover every possible form of the subject of the conclusion. The form \(v(1-x)\) is left out, because the premises give us the reading \(vx =\) Some \(X\)’s, and that does not let us read \(v(1-x)\) as Some not-\(X\)’s. When the symbol \(v\) is used to mean "some," it applies only to the term it is attached to in the premises.
+
+The results of the analysis are these:
+\[\begin{gathered} x= \bigl[vv'ww' + \frac{0}{0}\{ vv'\bigl(1-w\bigr) \bigl(1-w'\bigr) + ww'\bigl(1-v\bigr) \bigl(1-v'\bigr) + \bigl(1-v\bigr) \bigl(1-w\bigr)\}\bigr]z \\ + \frac{0}{0}\{vv'\bigl(1-w'\bigr) + 1-v\} \bigl(1-z\bigr), \qquad (I.) \end{gathered}\]
+\[\begin{gathered} 1-x = \bigl[ v\bigl(1-v'\bigr) \{ww' + \bigl(1-w\bigr) \bigl(1-w'\bigr)\} + v\bigl(1-w\bigr)w' \\ + \frac{0}{0}\{ vv'\bigl(1-w\bigr) \bigl(1-w'\bigr) + ww'\bigl(1-v\bigr) \bigl(1-v'\bigr) + \bigl(1-v\bigr) \bigl(1-w\bigr) \} \bigr]z \\ +\bigl[v\bigl(1-w\bigr)w' + \frac{0}{0}\{vv'\bigl(1-w'\bigr) + 1-v\} \bigr] \bigl(1-z\bigr), \qquad (II.) \end{gathered}\]
+\[vx = \{vv'ww' + \frac{0}{0}vv'\bigl(1-w\bigr) \bigl(1-w'\bigr)\}z + \frac{0}{0}\bigl(1-w'\bigr) \bigl(1-z\bigr). \qquad (III.)\]
+
+Each of these expressions has two terms on its right-hand side: one with \(z\) as a factor, the other with \(1-z\). But syllogistic inference, as a matter of form, does not allow opposite classes in its conclusion, such as \(Z\)’s and not-\(Z\)’s together.
+
+So, to find the rules of that kind of inference, we must find out under what conditions the right-hand side of any of our equations shrinks to a single term.
+
+The simplest is (III.), and it shrinks to a single term if \(w' = 1\). The equation then becomes
+\[vx = vv'wz, \qquad (3)\]
+Its left-hand side is the same as the extreme in the first premise. Its right-hand side has the same quantity and quality as the extreme in the second premise. Here is why. Since \(w' = 1\), the right-hand side of (2), which contains the middle term \(y\), is universal. So, by our assumption, the left-hand side of (2) is particular; and so the right-hand side of (3), which has the same symbol \(w\) in its coefficient, is particular too. From this we get the following law.
+
+Condition of Inference.—One middle term, at least, universal.
+
+Rule of Inference.—Equate the extremes.
+
+Examining equations (I.) and (II.) further shows that this is the only condition of syllogistic inference when the middle terms are of like quality. The right-hand side of (I.) shrinks to a single term if \(w' = 1\) and \(v = 1\); the right-hand side of (II.) shrinks to a single term if \(w' = 1\), \(v = 1\), \(w = 1\). In each of these cases \(w' = 1\) is required, and that is the one sufficient condition already found.
+
+Consider next the case in which the middle terms are of unlike quality. The premises can then be written in the forms
+\[\begin{aligned} vx &= v'y, \qquad (4) \\ wz &= w'(1-y); \qquad (5) \end{aligned}\]
+and if, as before, we eliminate \(y\) and find the expressions for \(x\), \(1-x\), and \(vx\), we get
+\[\begin{gathered} x= \bigl[vv'(1-w)w' +\frac{0}{0}\{ww'(1-v) + (1-v)(1-v')(1-w) \\ + v'(1-w)(1-w')\}\bigr]z \\ + \bigl[vv'w' +\frac{0}{0}\{(1-v)(1-v') + v'(1-w')\}\bigr](1-z). \qquad (IV.) \end{gathered}\]
+\[\begin{aligned} 1-x = &\bigl[ww'v + v(1-v')(1-w) + \frac{0}{0}\{ww'(1-v) \\ &+ (1-v)(1-v')(1-w) + v'(1-w)(1-w')\}\bigr]z \\ &+ \bigl[v(1-v') + \frac{0}{0}\{v'(1-w') + (1-v)(1-v')\}\bigr](1-z). \qquad (V.) \end{aligned}\]
+\[\begin{gathered} vx = \{vv'(1-w)w' + \frac{0}{0}vv'(1-w)(1-w')\}z \\ + \{vv'w' + \frac{0}{0}vv'(1-w')\}(1-z). \qquad (VI.) \end{gathered}\]
+
+Now the right-hand side of (VI.) shrinks to a single term in \(z\) if \(w = 1\), giving
+\[vx = \{vv'w' + \frac{0}{0}vv'(1-w')\}(1-z);\]
+and the right-hand side of this is opposite, in both quantity and quality, to the corresponding extreme \(wz\) in the second premise. For since \(w = 1\), \(wz\) is universal. But the factor \(vv'\) shows that the term it is attached to is particular, since by our assumption \(v\) and \(v'\) are not both equal to 1. From this we get the following law of inference in the case of unlike middle terms:
+
+First Condition of Inference.—_At least one universal extreme_.
+
+Rule of Inference.—_Change the quantity and quality of that extreme, and equate the result to the other extreme_.
+
+Again, the right-hand side of (V.) shrinks to a single term if \(v' = 1\), \(w' = 1\); it then gives
+\[1-x = \{vw + \frac{0}{0}(1-v)w\} z.\]
+Now since \(v' = 1\), \(w' = 1\), the middle terms of both premises are universal, and so the extremes \(vx\), \(wz\) are particular. But in the conclusion, the extreme involving \(x\) is opposite in both quantity and quality to the extreme \(vx\) in the first premise, while the extreme involving \(z\) agrees in both quantity and quality with the corresponding extreme \(wz\) in the second premise. From this we get the following general law:
+
+Second Condition of Inference.—_Two universal middle terms_.
+
+Rule of Inference.—_Change the quantity and quality of either extreme, and equate the result to the other extreme unchanged_.
+
+When the middle terms are unlike, there are no other conditions or rules of syllogistic inference than these. Equation (IV.), for instance, can be brought to the form of a syllogistic conclusion when \(w=1\) and \(v = 1\), but that does not give a new condition of inference, since, by what we have already seen, the single condition \(v = 1\), or \(w = 1\), would be enough.
+
+8. The following examples will be enough to illustrate the general rules of syllogism just given:
+\[\begin{aligned} 1. &\text{ All $Y$'s are $X$'s.} \\ &\text{ All $Z$'s are $Y$'s.} \end{aligned}\]
+This belongs to the first case, like middle terms. All \(Y\)’s is the universal middle term. Equating the extremes gives the conclusion
+
+All \(Z\)’s are \(X\)’s;
+
+with the universal term, All \(Z\)’s, as the subject, and the particular term, (some) \(X\)’s, as the predicate.
+\[\begin{aligned} 2. &\text{ All $X$'s are $Y$'s.} \\ &\text{ No $Z$'s are $Y$'s.} \end{aligned}\]
+The proper way to express these premises is
+\[\begin{aligned} &\text{All $X$'s are $Y$'s.} \\ &\text{All $Z$'s are not-$Y$'s.} \end{aligned}\]
+They belong to the second case, unlike middle terms, and they satisfy the first condition of inference. The middle term \(Y\)’s in the first premise is particular-affirmative; the middle term not-\(Y\)’s in the second premise is particular-negative. If we take All \(Z\)’s as the universal extreme and change its quantity and quality as the rule says, we get the term Some not-\(Z\)’s. Equating this with the other extreme, All \(X\)’s, gives
+
+All \(X\)’s are not-\(Z\)’s, that is, No \(X\)’s are \(Z\)’s.
+
+If we start from the other universal extreme and do the same, we get the equivalent result
+
+No \(Z\)’s are \(X\)’s.
+
+\[\begin{aligned} 3. &\text{ All $Y$'s are $X$'s.} \\ &\text{ All not-$Y$'s are $Z$'s.} \end{aligned}\]
+Here too the middle terms are unlike in quality. So the premises belong to the second case, and since both middle terms are universal, the second condition of inference is met. If, following the rule, we change the quantity and quality of the first extreme, (some) \(X\)’s, we get All not-\(X\)’s, and equating this with the other extreme gives
+
+All not-\(X\)’s are \(Z\)’s.
+
+Going the other way round would give the equivalent result
+
+All not-\(Z\)’s are \(X\)’s.
+
+The scholastic system of logic would not accept the conclusions of these last two examples as valid, because in effect it requires the subject of a proposition to be affirmative. They are, however, perfectly legitimate in themselves, and the rules that produce them are without doubt the most general rules of syllogistic inference. The investigation that led to them will probably look needlessly complicated. Certainly they could have been reached more easily, and without any symbolic instrument at all. But my aim was to carry out the investigation in the most general way, by an analysis that left nothing out. With that aim, whether the method is short or long does not matter. Indeed the analysis is not really an analysis of the syllogism, but of a much more general combination of propositions, since we are free to give the symbols \(v\), \(v'\), \(w\), \(w'\) any class-meanings we like. To illustrate this, I will apply the solution (I.) to the following imaginary case.
+
+Suppose a number of pieces of cloth, striped in different colours, were brought for inspection, and the following two observations were made about them:
+
+1st. Every piece striped with white and green was also striped with black and yellow, and _vice versâ_ (and the other way round).
+
+2nd. Every piece striped with red and orange was also striped with blue and yellow, and _vice versâ_. Suppose we are then asked how the pieces marked with green stand with respect to the colours white, black, red, orange, and blue.
+
+Here, if we take \(v=\) white, \(x =\) green, \(v' =\) black, \(y =\) yellow, \(w =\) red, \(z =\) orange, \(w' =\) blue, our premises are written
+\[\begin{aligned} vx &= v'y, \\ wz &= w'y, \end{aligned}\]
+which matches the system (1) (2). Equation (I.) then leads to the following conclusion:
+
+Pieces striped with green are of one of these kinds. Either they are striped with orange, white, black, red, and blue all together, and every piece with that combination is among those striped with green. Or they are striped with orange, white, and black, but not with red or blue. Or they are striped with orange, red, and blue, but not with white or black. Or they are striped with orange, but not with white or red. Or they are striped with white and black, but not with blue or orange. Or they are striped with neither white nor orange.
+
+Given what kind of conclusion this is, neither the symbolic expression (I.) that conveys it nor the analysis that produced that expression can fairly be called needlessly complicated.
+
+9. The way the doctrine of the syllogism has been presented in this chapter leads to an important observation. We have seen that in each of its two great divisions the whole discussion, at least as far as finding rules and methods goes, comes down to analysing a pair of equations: the system (1), (2) when the premises have like middle terms, and the system (4), (5) when the middle terms are unlike. Moreover, that analysis was actually carried out by a method founded on certain general laws. Those laws were drawn directly from the structure of language, Chap. II., confirmed by the study of the operations of the human mind, Chap. III., and proved to apply to the analysis of every system of equations whatever by which propositions, or combinations of propositions, can be represented, Chap. VIII. So here we have the means of settling definitely whether the syllogism really is the fundamental type of reasoning, that is, whether the study of its laws covers the whole of deductive logic. For if it does, some sign of that must show up in the systems of equations we have been analysing. It is impossible to believe that the syllogism could be the one essential process of reasoning and yet, when the process is laid out, show nothing of that high rank. But no such sign appears. Nothing suggests that the treatment of every system of equations expressing propositions is contained in the treatment of the particular system examined in this chapter. And yet writers on logic have been all but unanimous in claiming for syllogistic inference not just supremacy in deductive reasoning, but complete sufficiency. Archbishop Whately, whose language is always clear and definite, and who deserves special attention on the subject of logic, is very explicit on this point. "For Logic," he says, "which is, as it were, the Grammar of Reasoning, does not bring forward the regular Syllogism as a _distinct mode of argumentation_, designed to be _substituted_ for any other mode; but as the form to which _all_ correct reasoning may be ultimately reduced." And Mr. Mill, in a chapter of his System of Logic entitled "Of Ratiocination or Syllogism," lists the ordinary forms of syllogism and then remarks, "All valid ratiocination, all reasoning by which from general propositions previously admitted, other propositions, equally or less general, are inferred, may be exhibited in some of the above forms." And again: "We are therefore at liberty, in conformity with the general opinion of logicians, to consider the two elementary forms of the first figure as the universal types of all correct ratiocination." In line with these views, it has been argued that the science of logic is exempt from the imperfection and the progress to which every other science is subject. Its birth from the labour of one mighty mind of long ago has even been compared, in a rather daring metaphor, to the mythological birth of Pallas (the goddess Athena, who sprang fully armed from the head of Zeus).
+
+Footnote: Elements of Logic, p. 13, ninth edition.
+
+Footnote: Introduction to Kant’s “Logik.”
+
+Since the syllogism is a kind of elimination, the question before us clearly splits into two. First, can all elimination be reduced to syllogism? Second, can deductive reasoning properly be regarded as consisting of elimination and nothing else? After careful examination, I believe the true answer to the first question is this. In theory it is always possible to break down and recombine propositions so that the elimination can then be done by the rules of the syllogism. But in many cases that reduction would be forced and unnatural, and it would involve operations that are not syllogistic. To the second question I answer that reasoning cannot be confined to elimination, except by arbitrarily narrowing what the word means. No definition will do that makes reasoning anything less than the whole collection of methods founded on the laws of thought as they apply to propositions. Among those methods elimination, important as it is, holds only one place.
+
+Much of what I can only regard as error about the nature of the syllogism and the scope of its work seems to come from a habit of mind. It is the habit of treating as _primary_ every truth in logic that is simple and intuitively certain, without asking how it stands to the other truths of the science, or to the general methods of the art, of reasoning. Aristotle's _dictum de omni et nullo_ is a self-evident principle. But it is not one of those _ultimate_ laws of the reasoning faculty to which all its other laws, however plain and self-evident, can be traced back, and from which they can be deduced in strict scientific order. In every science the fundamental truths are usually the simplest to grasp. Yet that simplicity is not the _test_ by which we judge their claim to be fundamental. The test must be found in the nature and size of the structure they can support. On this view, Leibnitz seems to me to have judged rightly when he gave the "principle of contradiction" a fundamental place in logic. For we have seen the consequences of the law of thought of which that principle is the axiom-like statement (III. 15). But enough has been said about the nature of deductive inference and its elements. The subject of induction will perhaps get some attention in another part of this work.
+
+Footnote: Nouveaux Essais sur l’entendement humain. Liv. IV. cap. 2. Theodicée Pt. I. sec. 44.
+
+10. I remarked earlier in this chapter that the ordinary treatment of hypothetical propositions is much more defective than that of categorical ones. What is usually called the hypothetical syllogism seems, in fact, to be no syllogism at all. Take the argument
+
+	If \(A\) is \(B\), \(C\) is \(D\),
+	But \(A\) is \(B\),
+	Therefore \(C\) is \(D\),
+
+and put it in the form
+
+	If the proposition \(X\) is true, \(Y\) is true,
+	But \(X\) is true,
+	Therefore \(Y\) is true;
+
+where \(X\) means the proposition \(A\) is \(B\), and \(Y\) the proposition \(C\) is \(D\). We then see that the premises contain only two terms or elements, while a syllogism essentially involves three. The following would be a genuine hypothetical syllogism:
+
+	 | If \(X\) is true, \(Y\) is true;
+	 | If \(Y\) is true, \(Z\) is true;
+	\(\therefore\) | If \(X\) is true, \(Z\) is true.
+
+After the discussion of secondary propositions earlier in this book, it is clear that the forms of hypothetical syllogism must match those of categorical syllogism exactly, in every respect. _Particular_ propositions, such as "Sometimes if \(X\) is true, \(Y\) is true," can be brought in, and the conditions and rules of inference worked out in this chapter for categorical syllogisms can be read, without any loss, to cover the corresponding cases among hypotheticals.
+
+11. What final conclusions, then, are we led to about the nature and reach of the scholastic logic? I think these. It is not a science, but a collection of scientific truths, too incomplete to form a system by themselves, and not fundamental enough to serve as the foundation on which a perfect system can rest. It does not follow, however, that because the logic of the schools has been credited with qualities it has no right to, it does not deserve our regard. A system that has been bound up with the very growth of language, and has left its stamp on the greatest questions and the most famous proofs of philosophy, cannot be wholly unworthy of attention. Memory, too, and habit, it must be admitted, have a great deal to do with how the intellect works; and some of the rules of the ancient logic have become almost woven into the very fabric of thought in educated minds. But are the memory-aid forms in which the particular rules of conversion and syllogism have been set out of any real use? Might not the very skill they are supposed to give be gained, with more benefit to the powers of the mind, by the unaided efforts of a mind left to its own resources? These are questions that might still be worth examining. As for the particular results worked out in this chapter, it should be noted that they are meant only to help the inquiry into the nature of the ordinary or scholastic logic, and into its relation to a more perfect theory of deductive reasoning.

@@ -1,0 +1,255 @@
+Chapter 7: On Elimination
+
+1. In the examples of the last chapter, every element of the original premise came back in the conclusion, only in a different order and with a different connection. But in ordinary reasoning, and especially when there is more than one premise, it is more usual for some of the elements to be kept out of the conclusion. Such elements are commonly called "middle terms." We may think of them as brought into the original propositions only to help set up a connection among the other elements, and those other elements alone are meant to appear in the conclusion.
+
+2. Some mistaken ideas are current about these intermediate elements, or middle terms. It is a general opinion, though the examples of the last chapter contradict it, that inference consists above all in eliminating such terms (combining the premises so that a term drops out). On this view, the basic pattern of the process is the elimination of one middle term from two premises, giving a single conclusion in which that term no longer appears. So it is commonly held that the _syllogism_ is the basis, or at least the common type, of all inference, and that any inference, however complex its form and structure, can be broken down into a series of syllogisms. Whether this view is right will be considered in a later chapter. For now I want to point to a difference, important but so far unnoticed, between the system of logic expressed in symbols and the system of ordinary algebra, in the matter of elimination. In algebra we can eliminate one symbol from two equations, two symbols from three equations, and in general \(n - 1\) symbols from \(n\) equations. So there is a fixed connection between the number of independent equations we are given and the number of number symbols we can eliminate from them. In logic it is otherwise. There is no fixed connection between the number of equations representing propositions or premises and the number of class symbols that can be eliminated. From a single equation any number of such symbols may be eliminated. On the other hand, from any number of equations, only a single class symbol may be eliminated. We may say that in this unusual system the problem of elimination can be solved in every case alike. This follows from that remarkable law of duality which the symbols of logic obey. To the equations supplied by the given premises, another equation, or system of equations, is added. It is drawn from the fundamental laws of thought themselves, and it supplies what is needed to solve the problem. Of the many consequences of the law of duality, this is perhaps the one that most deserves attention.
+
+3. In algebra, eliminating symbols from a system of equations often leads to a mere identity of the form \(0 = 0\), which means that no independent relations connect the symbols that remain. The same thing can happen in logic, and it means the same thing there. This does not weaken the general principle just stated. The method we are about to take up aims to eliminate any number of symbols from any number of logical equations, and to show in the result whatever relations actually remain. It may be that none remain. In that case the method proves its soundness by leading us to a proposition that says nothing, a mere identity.
+
+4. The notation in the Propositions that follow is like that of the last chapter. By \(f(x)\) is meant any expression containing the logical symbol \(x\), with or without other logical symbols. By \(f(1)\) is meant what \(f(x)\) becomes when \(x\) is changed into 1 throughout it; by \(f(0)\), what the same function becomes when \(x\) is changed into 0.
+
+Proposition I.
+
+5. If \(f(x)=0\) is any logical equation containing the class symbol \(x\), with or without other class symbols, then the equation
+\[f(1)f(0)=0\]
+will be true, whatever \(x\) is taken to mean; and it will be the complete result of eliminating \(x\) from the equation we started with. In words: the function with _x_ put equal to 1, multiplied by the function with _x_ put equal to 0, gives nothing.
+
+In other words, we eliminate \(x\) from any given equation, \(f(x)=0\), by changing \(x\) into 1 in that equation, then changing \(x\) into 0, and multiplying the two resulting equations together.
+
+In the same way, the complete result of eliminating any class symbols, \(x\), \(y\), etc.,from any equation of the form \(V=0\), is obtained as follows. Fully expand the left-hand side of the equation in constituents of those symbols; multiply together all the coefficients of those constituents (the numbers standing in front of the compartments); and set the product equal to 0.
+
+Developing the left-hand side of the equation \(f(x)=0\), we have (V. 10)
+\[\begin{gathered} f(1)x+f(0)(1-x)=0; \\ \text{or, } [f(1)-f(0)]x+f(0)=0. \qquad (1) \\ \therefore x=\frac{f(0)}{f(0)-f(1)}; \\ \text{and } 1-x=-\frac{f(1)}{f(0)-f(1)}. \end{gathered}\]
+Now put these expressions for \(x\) and \(1-x\) into the fundamental equation
+\[x(1-x) = 0,\]
+which says that nothing is at once an _x_ and not an _x_. The result is
+\[\begin{gathered} -\frac{f(0)f(1)}{[f(0)-f(1)]^2}=0; \\ \text{or, }f(1)f(0)=0, \qquad (2) \end{gathered}\]
+which is the form we wanted.
+
+6. This process shows that the elimination really takes place between the given equation \(f(x)=0\) and the equation \(x(1-x)=0\), which is true always and everywhere, because it expresses the fundamental law of logical symbols, _qua_ logical (that is, insofar as they are logical). So we never need more than one premise, or equation, to make it possible to eliminate a term. The necessary law of thought in effect supplies the other premise or equation. The proof of this conclusion can be set out in other forms, but the same element, supplied by the mind itself, will still be present in effect. For instance, we could proceed as follows.
+
+Multiply (1) by \(x\), and we have
+\[f(1)x=0, \qquad (3)\]
+and let us try to eliminate \(x\) from this equation and (1) by the methods of ordinary algebra.
+
+Now if we have two algebraic equations of the form
+\[ax + b = 0,\]
+\[a'x + b'= 0;\]
+it is well known that the result of eliminating \(x\) is
+\[ab'-a'b=0 \qquad (4)\]
+But comparing that pair of equations with (1) and (3) respectively, we find
+\[a=f(1)-f(0),\quad b=f(0);\]
+\[a'=f(1) \quad b'=0;\]
+and these, put into (4), give
+\[f(1)f(0)=0,\]
+as before. In this form of the proof, the fundamental equation \(x(1 - x) = 0\) shows up in the step that takes us from (1) to (3).
+
+7. I shall add one more form of the proof. It is half logical in character, and it may show this important theorem in a clearer light.
+
+We have, as before,
+\[f(1)x+f(0)(1-x)=0.\]
+Multiply this equation first by \(x\), and then by \(1 - x\), and we get
+\[f(1)x=0 \quad f(0)(1-x)=0.\]
+From these, by solving and developing, we have
+\[\begin{gathered} f(1) = \frac{0}{x} = \frac{0}{0}(1-x),\:\text{ on development}, \\ f(0) = \frac{0}{1-x} = \frac{0}{0}x. \end{gathered}\]
+Read directly, these equations say two things.
+
+First, whatever individuals are included in the class represented by \(f(1)\) are not \(x\)'s.
+
+Second, whatever individuals are included in the class represented by \(f(0)\) are \(x\)'s.
+
+So, by ordinary logic, there are no individuals that are at once in the class \(f(1)\) and in the class \(f(0)\); that is, there are no individuals in the class \(f(1)f(0)\). Therefore
+\[f(1)f(0) = 0. \qquad (5)\]
+Or it would be enough to multiply the two developed equations together, and the result would follow at once.
+
+8. The theorem (5) gives us the following Rule:
+
+To Eliminate any Symbol from a Proposed Equation.
+
+Rule.—First bring all the terms of the equation over to the left-hand side, if necessary. Then give the symbol the value 1, and then the value 0, and multiply the two resulting equations together.
+
+This proves the first part of the Proposition.
+
+9. Next, consider the general equation
+\[f(x,y) = 0;\]
+whose left-hand side stands for any function of \(x\), \(y\), and other symbols.
+
+By what we have shown, the result of eliminating \(y\) from this equation will be
+\[f(x,1)f(x,0) = 0;\]
+for that is the form we reach by changing \(y\) into 1 in the given equation, then \(y\) into 0, and multiplying the results together.
+
+Now take this result, change \(x\) into 1, then \(x\) into 0, and multiply the results together. We get
+\[f(1,1)f(1,0)f(0,1)f(0,0) = 0; \qquad (6)\]
+as the final result of elimination. But the four factors on the left-hand side of this equation are exactly the four coefficients of the complete expansion of \(f(x, y)\), the left-hand side of the original equation. So the second part of the Proposition is plain.
+
+Examples.
+
+10. Ex. 1.—We are given the Proposition "All men are mortal," and its symbolic expression in the equation
+\[y = vx,\]
+where \(y\) stands for "men" and \(x\) for "mortals." The task is to eliminate the indefinite class symbol \(v\) and to interpret the result.
+
+Bringing the terms over to the left-hand side, we have
+\[y - vx = 0.\]
+When \(v = 1\) this becomes
+\[y - x = 0;\]
+and when \(v = 0\) it becomes
+\[y = 0;\]
+and these two equations, multiplied together, give
+\[y - yx = 0,\]
+or \(y(1 - x) = 0\), since \(y^2 = y\).
+
+This last equation is the result of elimination we wanted. It says that there are no men who are not mortals, and its interpretation is: _Men who are not mortal do not exist_. That is an obvious conclusion.
+
+Now suppose we use this last equation to look for a description of beings who are not mortal. We have
+\[x = \frac{y}{y},\]
+\[\therefore 1 - x = \frac{0}{y}.\]
+So, by expansion, \(1 - x = \frac{0}{0}(1 - y)\): the not-mortals are some, none, or all of the things that are not men. Interpreted, this gives: _They who are not mortal are not men_. This is an example of what ordinary logic calls conversion by contraposition, or negative conversion (turning "All men are mortal" into "Whatever is not mortal is not a man").
+
+Footnote: Whately’s Logic, Book II. chap. II. sec. 4.
+
+Ex. 2.—Take the Proposition "No men are perfect," represented by the equation
+\[y = v(1-x),\]
+where \(y\) stands for "men" and \(x\) for "perfect beings." The task is to eliminate \(v\), and from the result to find a description both of _perfect beings_ and of _imperfect beings_. We have
+\[y-v(1-x) = 0.\]
+So, by the rule of elimination,
+\[\{y-(1-x)\}\times y = 0,\]
+or
+\[y-y(1-x) = 0,\]
+or
+\[yx = 0;\]
+that is, the class of things both men and perfect is empty. This reads as the Proposition: _Perfect men do not exist_. From that equation we have
+\[x = \frac{0}{y} = \frac{0}{0}(1-y)\:\text{by development};\]
+in words, the perfect beings are some, none, or all of the things that are not men. So, by interpretation: _No perfect beings are men_. Similarly,
+\[1-x = 1-\frac{0}{y} = \frac{y}{y} = y+\frac{0}{0}(1-y),\]
+that is, the imperfect beings are all the men, plus some, none, or all of what is not a man. Interpreted, this gives: _Imperfect beings are all men with an indefinite remainder of beings, which are not men_.
+
+11. In handling propositions, it will generally be most convenient to eliminate the indefinite class symbol \(v\) first, wherever it appears in the equations. This only changes their form; it does not change what they mean. Let us apply this step to one of the examples of Chap. IV. For the Proposition "No men are placed in exalted stations and free from envious regards," we found the expression
+\[y = v(1-xz),\]
+and for the equivalent Proposition "Men in exalted stations are not free from envious regards," the expression
+\[yx = v(1-z);\]
+and we observed that these equations, with \(v\) an indefinite class symbol, were themselves equivalent. To prove it, we need only eliminate the symbol \(v\) from each. The first equation is
+\[y - v (1 - xz) = 0,\]
+so, putting first \(v = 1\) and then \(v = 0\), and multiplying the results, we have
+\[\begin{gathered} (y - 1 + xz) y = 0, \\ \text{or } yxz = 0. \end{gathered}\]
+Now the second of the given equations becomes, when its terms are moved across,
+\[\begin{gathered} yx - v(1 - z) = 0; \\ \text{whence } (yx - 1 + z) yx = 0, \\ \text{or } yxz = 0, \end{gathered}\]
+the same as before. The reader will easily interpret the result: there is nothing that is at once a man, in an exalted station, and free from envious regards.
+
+12. Ex. 3.—As material for the general method of this chapter, we will take up again Mr. Senior's definition of wealth, namely: "Wealth consists of things transferable, limited in supply, and either productive of pleasure or preventive of pain." As remarked earlier, we shall take this definition to include all things that have both of the qualities named in its last part. On that assumption, our equation is
+\[\begin{gathered} w = st \{pr + p (1 - r) + r(1 - p)\}, \\ \text{or } w = st \{p + r(1 -p)\}, \end{gathered}\]
+where
+
+	\(w\) | stands for | wealth.
+	\(s\) | " | things limited in supply.
+	\(t\) | " | things transferable.
+	\(p\) | " | things productive of pleasure.
+	\(r\) | " | things preventive of pain.
+
+From this equation we can eliminate any symbols we do not wish to take into account. We can then express the result, by solving and developing, with whatever arrangement of subject and predicate we choose.
+
+Let us first ask what the expression for \(w\), wealth, would be if we eliminated the element \(r\), which refers to the prevention of pain. Bringing the terms of the equation over to the left-hand side, we get
+\[w - st(p+r-rp) = 0.\]
+Putting \(r = 1\), the left-hand side becomes \(w - st\), and putting \(r = 0\) it becomes \(w - stp\). So, by the Rule, we have
+\[(w-st)(w-stp)=0 \qquad (7)\]
+or
+\[w-wstp - wst + stp = 0; \qquad (8)\]
+and so
+\[w = \frac{stp}{st + stp - 1};\]
+and developing the right-hand side of this equation gives
+\[w = stp + \frac{0}{0}st (1 - p). \qquad (9)\]
+This gives us the conclusion: Wealth consists of all things limited in supply, transferable, and productive of pleasure, and an indefinite remainder of things limited in supply, transferable, and not productive of pleasure. That is obvious enough.
+
+Notice that we do not have to carry out the multiplication shown in (7), and reduce that equation to the form (8), in order to find the expression for \(w\) in terms of the other symbols. Development can always take the place of multiplication. For instance, if we develop (7) with respect to \(w\), we find
+\[(1 - st) (1 - stp)w + stp(1 - w) = 0,\]
+and so
+\[w=\frac{stp}{stp -(1-st)(1-stp)};\]
+and this equation, developed, gives the same result as before:
+\[w = stp + \frac{0}{0} st(1 - p).\]
+
+13. Suppose next that we want a description of things limited in supply, in terms of how they stand to wealth, to transferability, and to the tendency to produce pleasure, leaving out all reference to the prevention of pain.
+
+From equation (8), which is the result of eliminating \(r\) from the original equation, we have
+\[w - s \left(wt + wtp - tp\right) = 0;\]
+and so
+\[\begin{gathered} s = \frac{w}{wt + wtp - tp} \\ = wtp + wt\left(1-p\right) + \frac{1}{0} w\left(1-t\right)p + \frac{1}{0}w \left(1-t\right)\left(1-p\right) \\ + 0 \left(1-w\right) tp + \frac{0}{0} \left(1-w\right) t \left(1-p\right) + \frac{0}{0} \left(1-w\right)\left(1-t\right) p \\ + \frac{0}{0} \left(1-w\right) \left(1-t\right) \left(1-p\right). \end{gathered}\]
+We will first give the direct interpretation of this solution, term by term. Then we shall make some general remarks it suggests. Finally, we shall show how the conclusion can be stated a little more briefly.
+
+First, then, the direct interpretation is this. Things limited in supply consist of all wealth that is transferable and productive of pleasure; all wealth that is transferable and not productive of pleasure; and an indefinite amount of what is not wealth, but is either transferable and not productive of pleasure, or intransferable and productive of pleasure, or neither transferable nor productive of pleasure.
+
+To this, the terms whose coefficient is \(\frac{1}{0}\) let us add the following independent relations, namely:
+
+First, _Wealth that is intransferable, and productive of pleasure, does not exist_.
+
+Second, _Wealth that is intransferable, and not productive of pleasure, does not exist_.
+
+14. I expect the following remarks to be made about this solution.
+
+First, it may be said that in the expression we found for "things limited in supply," the term "All wealth transferable," and so on, is partly redundant. For all wealth is necessarily transferable: the original proposition implies it, and the _independent relations_ state it outright.
+
+My answer is this. In ordinary speech, once another part of our reasoning had shown that there is no wealth that is not transferable, we would not think it necessary to add the word "transferable" to "wealth." But part of what makes this method perfect is that it always defines completely the objects named by each term of the conclusion. It does so by stating how they stand to every quality, every mark of distinction, that we have chosen to use. This is needed to keep the different parts of the solution truly distinct and independent, and it actually prevents redundancy. Suppose the pair of terms we have been looking at had not contained the word "transferable," and had together made up just "All wealth." We could then logically split the single term "All wealth" into two terms, "All wealth transferable" and "All wealth intransferable." But the "independent relations" show that the second of these vanishes. So it is no part of the description we want, and is therefore redundant. The remaining term matches the conclusion we actually obtained.
+
+Solutions that cannot, by any logical division, be made to yield superfluous or redundant terms may be called _pure solutions_. All the solutions given by the method of development and elimination explained above are of this kind. It is worth noticing that if we used the ordinary algebraic method of elimination, in the cases where that method can be used in this system, we could not count on the solutions being pure. Its lack of generality would not be its only defect.
+
+15. Second, it will be remarked that the conclusion contains two terms whose combined meaning would be more conveniently expressed by a single term. Instead of "All wealth productive of pleasure, and transferable" and "All wealth not productive of pleasure, and transferable," we could simply say "All wealth transferable." This remark is quite fair. But notice that whenever such simplifications are possible, the form of the equation we have to interpret points them out at once; and if that equation is brought to its simplest form, the interpretation it leads to will be in its simplest form too. Thus in the original solution, the terms \(wtp\) and \(wt(1 - p)\), which have unity (that is, 1) as their coefficient, add up to \(wt\); the terms \(w \left(1 - t \right) p\) and \(w \left(1 - t \right) \left(1 - p \right)\), which have \(\frac{1}{0}\) as their coefficient, add up to \(w \left(1 - t \right)\); and the terms \(\left(1 - w \right) \left(1 - t \right)p\) and \(\left(1 - w \right) \left(1 - t \right) \left(1 -p \right)\), which have \(\frac{0}{0}\) as their coefficient, add up to \(\left(1 - w \right) \left(1 - t \right)\). So the complete solution is
+\[s = wt + \frac{0}{0}\left(1-w\right)\left(1-t\right) + \frac{0}{0}\left(1-w\right)t\left(1-p\right),\]
+with the independent relation
+\[w\left(1-t\right) = 0,\text{ or }w=\frac{0}{0}t.\]
+The interpretation would now read like this.
+
+First, things limited in supply consist of all wealth that is transferable, together with an indefinite remainder of what is not wealth and not transferable, and of transferable articles that are not wealth and are not productive of pleasure.
+
+Second, _All wealth is transferable_.
+
+This is the simplest form in which the general conclusion, with the condition that goes with it, can be stated.
+
+16. When we need to eliminate two or more symbols from an equation, we can either use (6) Prop. I., or eliminate them one after another; the order does not matter. From the equation
+\[w = st \left(p + r - pr\right),\]
+we have already eliminated \(r\), and found the result
+\[w - wst - wstp + stp = 0.\]
+Suppose we had been asked to eliminate both \(r\) and \(t\). Taking the step above as the first stage of the process, it remains to eliminate \(t\) from this last equation. When \(t = 1\), the left-hand side of that equation becomes
+\[w - ws - wsp + sp,\]
+and when \(t = 0\), the same side becomes \(w\). So we have
+\[w \left(w - ws - wsp + sp\right) = 0,\]
+or
+\[w - ws = 0,\]
+as the result of elimination we wanted: there is no wealth that is not limited in supply.
+
+If we use this last result to find \(w\), we have
+\[w=\frac{0}{1-s}=\frac{0}{0}s,\]
+so "_All wealth is limited in supply_." Since \(p\) does not appear in the equation, this clearly holds no matter how the elements of the conclusion stand to the quality "productive of pleasure."
+
+Going back to the original equation, suppose we are asked to eliminate \(s\) and \(t\). We have
+\[w=st(p+r-pr).\]
+Instead of eliminating \(s\) and \(t\) one at a time by the Rule, however, it is enough to treat \(st\) as a single symbol, since it satisfies the fundamental law of the symbols, by the equation
+\[st (1 - st) = 0.\]
+So we write the given equation in the form
+\[w - st (p + r - pr) = 0;\]
+and, putting \(st\) equal first to 1 and then to 0 and taking the product of the results, we have
+\[\begin{gathered} (w - p - r + pr) w = 0, \\ \text{or } w - wp - wr + wpr = 0, \end{gathered}\]
+as the result we were looking for. In words: there is no wealth that is neither productive of pleasure nor preventive of pain.
+
+As a particular illustration, suppose we are asked to find an expression for "things productive of pleasure" (\(p\)) in terms of "wealth" (\(w\)) and "things preventive of pain" (\(r\)).
+
+Solving the equation, we have
+\[p = \frac{w(1-r)}{w(1-r)}\]
+\[= \frac{0}{0}wr + w(1 - r) + \frac{0}{0}(1 - w)r + \frac{0}{0} (1 - w) (1 - r)\]
+\[= w(1 - r) + \frac{0}{0}wr + \frac{0}{0}(1 - w).\]
+This gives the following conclusion: Things productive of pleasure are all wealth not preventive of pain, an indefinite amount of wealth that is preventive of pain, and an indefinite amount of what is not wealth.
+
+From the same equation we get
+\[1-p = 1-\frac{w(1-r)}{w(1-r)} = \frac{0}{w(1-r)},\]
+and this, developed, gives
+\[\begin{gathered} 1-p = \frac{0}{0}wr+\frac{0}{0}(1-w){\cdot}r+\frac{0}{0}(1-w)\cdot(1-r) \\ = \frac{0}{0}wr+\frac{0}{0}(1-w). \end{gathered}\]
+So: _Things not productive of pleasure are either wealth, preventive of pain, or what is not wealth_.
+
+Any similar case could be worked out just as easily.
+
+17. In the last example we eliminated the compound symbol \(st\) from the given equation by treating it as a single symbol. The same method works for any combination of symbols that satisfies the fundamental law obeyed by each single symbol. For instance, the expression \(p+r-pr\), multiplied by itself, gives itself back. So if we stand for \(p+r-pr\) by a single symbol, say \(y\), the fundamental law will be obeyed, since the equation
+\[y = y^2,\text{ or } y(1-y) = 0,\]
+will be satisfied. The rule of elimination for symbols rests on the assumption that each single symbol obeys that law. So whenever a function or combination of such symbols obeys the law too, it can be eliminated from an equation in a single operation.
+
+The forms of interpretation used in this chapter and the last show, perhaps better than any others, what the symbols 1 and \(\frac{0}{0}\) directly mean. But other ways of putting things, closer to everyday speech, are just as true and just as proper. For example, equation (9) can be read like this: Wealth is either limited in supply, transferable, and productive of pleasure, or limited in supply, transferable, and not productive of pleasure. And, the other way round: _Whatever is limited in supply, transferable, and productive of pleasure, is wealth_. Reverse readings like this one are always available when the final development brings in terms whose coefficient is unity.
+
+18. Note.—The fundamental equation \(f(1)f(0) = 0\), which gives the result of eliminating the symbol \(x\) from any equation \(f(x) = 0\), admits of a remarkable interpretation.
+
+Remember that the equation \(f(x) = 0\) stands for some proposition that speaks of the individuals in the class \(x\), say "men," perhaps together with other individuals. Our aim is to find out whether the proposition implies any relation among those other individuals that does not depend on the class _men_. Now the equation \(f(1) = 0\) says what the original proposition would become if _men_ made up the whole universe, and the equation \(f(0) = 0\) says what it would become if men ceased to exist. So the equation \(f(1)f(0) = 0\) says what, given the original proposition, would be true on either assumption alike: true whether "men" were "all things" or "nothing." The theorem therefore says that whatever is true both when a given class of objects takes in the whole universe and when it vanishes from existence is independent of that class altogether, and _vice versâ_. Here we have another example of formal results, drawn directly from the mathematical laws of thought, being interpreted as general axioms of philosophy.

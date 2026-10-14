@@ -1,0 +1,148 @@
+Chapter 12: Methods in Secondary Propositions
+
+1. We have already seen (XI. 7) that the literal symbols of logic combine by the same laws whether they express primary propositions or secondary ones. The only difference between the two cases is a difference of interpretation. We have also established (V. 6) a general principle: whenever two different systems of thought and interpretation are tied to the same system of formal laws (that is, of laws governing how the symbols are combined and used), then everything that happens in between is the same in both. By "in between" I mean the processes that lie between writing down the first conditions of a problem and interpreting its symbolic solution. Primary and secondary propositions share exactly this kind of common formal law. So the processes we established and illustrated for the first kind of proposition will apply to the second kind without any change at all.
+
+2. In particular, the two fundamental processes of elimination and development obey the same laws for secondary propositions as for primary ones. Again, we saw (Chap. VI. Prop. 2) how to interpret any equation among primary propositions that contains no fractions. We develop it into a series of constituents, and set equal to 0 every constituent whose coefficient is not zero. The same method works for the equations of secondary propositions. And the interpreted result it finally leads to is, as before (VI. 6), a system of denials that hold together. There is one difference. In the primary case those denials deny that certain classes of things exist. In the secondary case they deny the truth of certain combinations of the elementary propositions that make up the _terms_ of the premises. And just as in primary propositions the system of denials could be converted into various other forms of proposition (VI. 7), &c., we shall find that the same conversion is possible here. Again the only difference lies not in the form of the equations but in the nature of their interpretation.
+
+3. Further, in primary propositions we can find the expression of any one element of a system of equations in terms of the remaining elements (VI. 10), or in terms of any chosen few of them, and interpret that expression as a logical inference. The same thing can be done by the same means for secondary propositions, the difference of interpretation alone excepted. The steps are no different from the corresponding steps for primary propositions: eliminating the elements we want to banish from the final solution, reducing the system to a single equation, solving it algebraically, and developing the solution into a form that can be interpreted.
+
+To clear away any possible difficulty, however, it may help to gather into a general Rule the different cases that arise in working with secondary propositions.
+
+Rule.—Express the given propositions in symbols (XI. 11).
+
+_From each equation in which it appears, eliminate separately the indefinite symbol_ \(v\) (VII. 5).
+
+Eliminate the remaining symbols that you want to banish from the final solution. Before each elimination, always reduce to a single equation all the equations in which the symbol or symbols to be eliminated appear (VIII. 7). Collect the resulting equations into a single equation \(V = 0\).
+
+Then proceed according to the particular form in which you want to express the final relation, as follows.
+
+First, if you want it in the form of a denial, or a system of denials, develop the function \(V\), and set equal to 0 all those constituents whose coefficients are not zero.
+
+Second, _if you want it in the form of a disjunctive proposition, set equal to 1 the sum of those constituents whose coefficients are zero_.
+
+Third, if you want it in the form of a conditional proposition whose antecedent is a simple element, such as \(x\) or \(1-x\), find the algebraic expression of that element, and develop that expression.
+
+Fourth, if you want it in the form of a conditional proposition whose antecedent is a compound expression, such as \(xy\), \(xy+(1-x)(1-y)\), &c., set that expression equal to a new symbol \(t\). Then find \(t\) as a developed function of the symbols that are to appear in the consequent, either by the ordinary methods or by the special method of (IX. 9).
+
+Fifth, _interpret the results by_ (XI. 13, 14).
+
+Suppose we only want to find out whether one particular elementary proposition \(x\) is true or false. Then we must eliminate every symbol except \(x\). If the result is the equation \(x = 1\), the proposition is true; if \(x = 0\), it is false; if \(0 = 0\), the premises are not enough to decide whether it is true or false.
+
+4. Ex. 1.—Cicero's treatise On Fate (De Fato), which survives only in fragments, contains a curious discussion of the following prediction: "Si quis (Fabius) natus est oriente Canicula, is in mari non morietur." That is, "If anyone (Fabius) was born at the rising of the dogstar, he will not die at sea." I shall apply the method of this chapter to it. Let \(y\) represent the proposition, "Fabius was born at the rising of the dogstar," and \(x\) the proposition, "Fabius will die in the sea." When I say that \(x\) _represents_ the proposition "Fabius will die in the sea," I mean only that \(x\) is a symbol assigned (XI. 7) to that proposition in such a way that the equation \(x = 1\) asserts its truth and the equation \(x = 0\) denies it. Reading the symbols as times, as in the last chapter, _x_ stands for the time during which "Fabius will die in the sea" is true, and _y_ for the time during which "Fabius was born at the rising of the dogstar" is true. The equation we have to discuss will be
+\[y = v(1-x). \qquad (1)\]
+that is, the time for which the first proposition is true is some part of the time for which the second is false: if Fabius was born at the dogstar's rising, he will not die at sea. First, let us reduce the given proposition to a denial, or a system of denials (XII. 3). Moving the right-hand side across, we have
+\[y-v(1-x) = 0.\]
+Eliminating \(v\),
+\[\begin{gathered} y\left\{y-(1-x)\right\} = 0, \\ \text{or, }y-y(1-x) = 0, \\ \text{or, }yx = 0. \qquad (2) \end{gathered}\]
+This result means: "It is not true that Fabius was born at the rising of the dogstar and will die in the sea." Cicero calls this form of proposition "Conjunctio ex repugnantibus" (a conjunction of things that cannot go together, denied). He remarks that Chrysippus hoped by this form to escape a difficulty he believed he saw in contingent statements about the future, that is, statements about things that may or may not happen: "Hoc loco Chrysippus aestuans falli sperat Chaldaeos caeterosque divinos, neque eos usuros esse conjunctionibus ut ita sua percepta pronuntient: Si quis natus est oriente Canicula is in mari non morietur; sed potius ita dicant: Non et natus est quis oriente Caniculâ, et in mari morietur. O licentiam jocularem! ... Multa genera sunt enuntiandi, nec ullum distortius quam hoc quo Chrysippus sperat Chaldaeos contentos Stoicorum causa fore."—Cic. De Fato, 7, 8. In English: here Chrysippus, sweating over the problem, hopes that the Chaldaean astrologers and the other diviners can be talked out of announcing their findings as "if" statements, such as "If anyone was born at the rising of the dogstar, he will not die at sea," and will say instead, "It is not the case both that someone was born at the rising of the dogstar and that he will die at sea." What playful license! ... There are many ways of stating a thing, and none more twisted than this one, which Chrysippus hopes the Chaldaeans will accept for the Stoics' sake.
+
+5. Next, let us reduce the given proposition to a disjunctive form. The constituents that do not appear on the left-hand side of (2) are
+\[x(1-y), (1-x)y, (1-x)(1-y).\]
+So we have
+\[y(1-x) + x(1-y) + (1-x)(1-y) = 1. \qquad (3)\]
+This means: either Fabius was born at the rising of the dogstar and will not perish in the sea; or he was not born at the rising of the dogstar and will perish in the sea; or he was not born at the rising of the dogstar and will not perish in the sea.
+
+In cases like this one, however, where some constituents differ from each other in only a single factor, it is most convenient, as we have seen (VII. 15), to gather those constituents into a single term. If we combine the first and third terms of (3) in this way, we have
+\[(1 - y)x + 1 - x = 1;\]
+and if we combine the second and third in the same way, we have
+\[y(1-x)+1-y=1.\]
+These two forms of the equation give, respectively, the interpretations:
+
+Either Fabius was not born under the dogstar and will die in the sea, or he will not die in the sea.
+
+Either Fabius was born under the dogstar and will not die in the sea, or he was not born under the dogstar.
+
+Clearly these interpretations say exactly the same as the earlier one.
+
+Now let us find, in the form of a conditional proposition, what follows from the supposition that "Fabius will perish in the sea."
+
+In equation (2), which is what remains of the original equation once \(v\) has been eliminated, we must try to find \(x\) as a function of \(y\).
+
+We have
+\[x = \frac{0}{y} = 0y+\frac{0}{0}(1-y)\text{ on expansion,}\]
+or
+\[x = \frac{0}{0}(1-y);\]
+that is, the time in which Fabius dies at sea lies somewhere within the time in which he was not born at the dogstar's rising. Interpreted: _If Fabius dies in the sea, he was not born at the rising of the dogstar_.
+
+These examples go some way to illustrate the connection we have established in the previous chapters between primary and secondary propositions. That connection has two marks: the processes are identical, and the interpretations are analogous.
+
+6. Ex. 2.—The second book of Plato's Republic contains a remarkable argument meant to prove that the Divine Nature cannot change. It is a very fine example of two things at once. It shows the careful induction from familiar instances by which Plato arrives at general principles, and the clear, connected logic by which he then deduces from them the particular conclusions he wants to establish. The argument is contained in the following dialogue:
+
+"Must not that which departs from its proper form be changed either by itself or by another thing? Necessarily so. Are not things which are in the best state least changed and disturbed, as the body by meats and drinks, and labours, and every species of plant by heats and winds, and such like affections? Is not the healthiest and strongest the least changed? Assuredly. And does not any trouble from without least disturb and change that soul which is strongest and wisest? And as to all made vessels, and furnitures, and garments, according to the same principle, are not those which are well wrought, and in a good condition, least changed by time and other accidents? Even so. And whatever is in a right state, either by nature or by art, or by both these, admits of the smallest change from any other thing. So it seems. But God and things divine are in every sense in the best state. Assuredly. In this way, then, God should least of all bear many forms? Least, indeed, of all. Again, should He transform and change Himself? Manifestly He must do so, if He is changed at all. Changes He then Himself to that which is more good and fair, or to that which is worse and baser? Necessarily to the worse, if he be changed. For never shall we say that God is indigent of beauty or of virtue. You speak most rightly, said I, and the matter being so, seems it to you, O Adimantus, that God or man _willingly_ makes himself in any sense worse? Impossible, said he. Impossible, then, it is, said I, that a god should wish to change himself; but ever being fairest and best, each of them ever remains absolutely in the same form."
+
+The premises of this argument are the following.
+
+First, if the Deity suffers change, He is changed either by Himself or by another.
+
+Second, if He is in the best state, He is not changed by another.
+
+Third, the Deity is in the best state.
+
+Fourth, if the Deity is changed by Himself, He is changed to a worse state.
+
+Fifth, if He acts willingly, He is not changed to a worse state.
+
+Sixth, the Deity acts willingly.
+
+Let us express the elements of these premises as follows.
+
+Let \(x\) represent the proposition, "The Deity suffers change."
+
+Let \(y\) represent the proposition, "He is changed by Himself."
+
+Let \(z\) represent the proposition, "He is changed by another."
+
+Let \(s\) represent the proposition, "He is in the best state."
+
+Let \(t\) represent the proposition, "He is changed to a worse state."
+
+Let \(w\) represent the proposition, "He acts willingly."
+
+Written in symbols, and with the indefinite class symbols \(v\) eliminated, the premises then give the following equations:
+
+\[\begin{gathered} xyz+x(1-y)(1-z) = 0, \qquad (1) \\ sz = 0, \qquad (2) \\ s = 1, \qquad (3) \\ y(1-t) = 0, \qquad (4) \\ wt = 0, \qquad (5) \\ w = 1. \qquad (6) \end{gathered}\]
+
+Read aloud, they say: (1) it is never true that He suffers change and is changed both by Himself and by another, nor that He suffers change and is changed by neither; (2) He is never both in the best state and changed by another; (3) He is in the best state; (4) He is never changed by Himself without being changed to a worse state; (5) He never both acts willingly and is changed to a worse state; (6) He acts willingly.
+
+Keeping \(x\), I shall eliminate in turn \(z\), \(s\), \(y\), \(t\), and \(w\) (the order in which those symbols occur in the system above), and interpret each result as it comes.
+
+Eliminating \(z\) from (1) and (2), we get
+\[xs(1-y) = 0. \qquad (7)\]
+Eliminating \(s\) from (3) and (7),
+\[x(1-y) = 0. \qquad (8)\]
+Eliminating \(y\) from (4) and (8),
+\[x(1-t) = 0. \qquad (9)\]
+Eliminating \(t\) from (5) and (9),
+\[xw = 0. \qquad (10)\]
+Eliminating \(w\) from (6) and (10),
+\[x = 0. \qquad (11)\]
+
+From equation (8) onward, these give the following results.
+
+From (8) we have \(x = \frac{0}{0}y\), so _If the Deity suffers change, He is changed by Himself_.
+
+From (9), \(x = \frac{0}{0}t\): _If the Deity suffers change, He is changed to a worse state_.
+
+From (10), \(x = \frac{0}{0}(1-w)\): _If the Deity suffers change, He does not act willingly_.
+
+From (11): _The Deity does not suffer change_. This is Plato's result.
+
+I have remarked before that the order of elimination makes no difference. Let us test that fact here by eliminating the same symbols in the reverse order, beginning with \(w\). The resulting equations are
+
+\[t=0, y = 0, x(1-z) = 0, z = 0, x = 0;\]
+
+and they give the following interpretations, one for each equation:
+
+God is not changed to a worse state. He is not changed by Himself. If He suffers change, He is changed by another. He is not changed by another. He is not changed.
+
+So we reach the same conclusion by a different route.
+
+As a display of the _power_ of the method, these examples are of little value. But they illustrate its nature and character just as well as more complicated cases would.
+
+7. One last instance of the analogy between the system of primary propositions and that of secondary propositions deserves mention. In the secondary system, too, the fundamental equation,
+\[x (1 - x) = 0,\]
+can be interpreted. It says that there is no time during which the proposition is both true and false; that is, it expresses the axiom, _A proposition cannot be true and false at the same time_. Compare this with the corresponding interpretation for classes of things (III. 15). If we solve the equation in the form
+\[x=\frac{0}{1-x}=\frac{0}{0}x,\]
+and develop it, it gives, in the two systems, the axioms "A thing is what it is" and "If a proposition is true, it is true." Both are forms of what has been called "the principle of identity." People have held the most opposite opinions about the nature and value of these axioms. Some have treated them as the very core and essence of philosophy. Locke gave them a chapter headed "On Trifling Propositions." Both views, I think, mix truth with error. If such propositions are put in place of experience, or used as material for the empty, wordy quarrels of the schools, they are worse than trifling. But seen as closely bound up with the very laws and conditions of thought, they rise to an importance that is at least speculative.
+
+Footnote: Essay on the Human Understanding, Book IV. Chap. viii.

@@ -1,0 +1,191 @@
+RUNNING NOTES — BOOLE, THE LAWS OF THOUGHT
+The orchestrator updates this between batches. Agents read it; they do
+not edit it.
+
+HEADINGS (line 1 exactly; multi-part files put "(Part n of k)" on LINE 2, blank line 3)
+000 Preface            (holds the Dedication then the Preface: keep the
+                        line "Dedication" and the line "Preface" exactly
+                        where they stand — they are split_headings)
+001 Chapter 1: Nature and Design of This Work   (Part 1 of 2)
+002 Chapter 1: Nature and Design of This Work   (Part 2 of 2)
+003 Chapter 2: Signs and Their Laws
+004 Chapter 3: Derivation of the Laws
+005 Chapter 4: Division of Propositions
+006 Chapter 5: Principles of Symbolic Reasoning
+007 Chapter 6: Of Interpretation
+008 Chapter 7: On Elimination
+009 Chapter 8: On the Reduction of Systems of Propositions
+010 Chapter 9: On Certain Methods of Abbreviation
+011 Chapter 10: Of the Conditions of a Perfect Method
+012 Chapter 11: Of Secondary Propositions, and of the Principles of Their Symbolical Expression
+013 Chapter 12: Methods in Secondary Propositions
+014 Chapter 13: Clarke and Spinoza   (Part 1 of 2)
+015 Chapter 13: Clarke and Spinoza   (Part 2 of 2)
+016 Chapter 14: Example of Analysis
+017 Chapter 15: Of the Aristotelian Logic
+Part 2 of a split chapter never re-introduces the chapter; Part 1 never
+concludes it.
+
+ASSIGNED EDITOR'S NOTES — the ONLY ones in the book
+Each is a separate paragraph "Editor's note: ..." placed right after the
+paragraph named. 2-5 sentences, plain, no formulas and NO SYMBOLS (≠ ∨ ∧ ∃ ¬ are
+missing from Alex's e-reader fonts; say it in words).
+N1  003, after article 11's account of "+" (aggregation) — Boole's "+"
+    joins classes that have NO MEMBERS IN COMMON ("either ... or", one
+    excluding the other), and "x − y" is allowed only when the y's are
+    all among the x's. Modern Boolean algebra, following Jevons (1864)
+    and later Peirce, makes "+" an inclusive "or" and drops
+    subtraction for the complement "not-y". Boole's results still come
+    out right, but the reader who knows modern notation should not read
+    his + as "or".
+N2  004, after article 15 (the algebra of 0 and 1) — this is the step
+    that made Boolean algebra the algebra of two values. In 1937 Claude
+    Shannon showed that switching circuits obey these same laws, which
+    is why every digital computer calculates in Boole's algebra.
+N3  005, after the paragraph introducing v (IV.11, Prop. II) — v, an
+    indefinite class, is Boole's way of saying "some". Later logic
+    stopped using it: today "Some X are Y" says that the class of things
+    both X and Y is not empty, and the notion of
+    "some" became the existential quantifier.
+N4  006, after article 11 (constituents) — the "development" of a
+    function into constituents is what is now called its disjunctive
+    normal form, and the constituents are what computer scientists call
+    minterms. Listing all 2, 4, 8 ... constituents and keeping the ones a
+    premise allows is the method Jevons teaches by hand in Lesson 23 of
+    his Elementary Lessons in Logic (in this collection), and the
+    ancestor of the truth table.
+N5  007, after article 10 (interpreting 0/0 and 1/0) — Boole's
+    division and the symbols 0/0 and 1/0 are formal devices, not
+    arithmetic: a coefficient 0/0 marks an indefinite portion of a class
+    (the v of Chapter IV), 1/0 a constituent that must vanish. His
+    contemporaries found this the hardest part of the book; Jevons,
+    Venn and Peirce rebuilt the algebra without division, and modern
+    Boolean algebra has none. His conclusions are correct; only the
+    route was abandoned.
+N6  012, after article 9 (x, y, z as the TIMES a proposition is true) —
+    Boole reads a secondary proposition's symbol as the portion of time
+    in which it is true. Modern logic drops time and gives each
+    proposition one of two truth values, true or false, 1 or 0 — which
+    is exactly where Boole's algebra lands; this chapter is the ancestor
+    of propositional logic.
+N7  017, after the paragraph where Boole first expresses "All Y's are
+    X's" with v and draws the particular conclusion (the existential
+    import question; the agent places it at the first passage where
+    Boole's treatment of a particular conclusion from universal premises
+    appears) — modern logic does not let "All X are Y" imply that any X
+    exist, so some of Aristotle's moods (Darapti, Felapton, Bramantip,
+    Fesapo, and the weakened moods) need an extra premise. Boole's v
+    quietly supplies it.
+That is all. No agent adds a note not on this list. Chapter 1's
+mentions of probability get only the bracket rule (references into
+XVI–XXII: "(in the chapters on probability, not included in this
+edition)").
+
+LOCKED RENDERINGS
+- "symbolical" -> "symbolic" in prose (keep it in the Chapter 11 title).
+- literal symbols; signs of operation; sign of identity; universe of
+  discourse; "the fundamental law of thought" / "the law of duality"
+  for x² = x (do not call it the "index law"); primary / secondary
+  propositions; development; constituents; interpretation; elimination;
+  reduction; logical function; logical equation.
+- Cross-references "(II. 9)", "(VI. 10)", "Chap. V. Prop. 4" exactly.
+- Formulas byte-identical (check.py --modern).
+
+TONE CALIBRATION (from modern_chapters/001.txt — read its first page)
+- Plain, grave, earnest: Boole speaking, "we" and "I" kept, never chatty
+  or jokey. Sentences mostly 12-25 words: claim, then reason, then
+  example. Lists of aims or requirements as "The first is ... The second
+  is ..." or "First, ... Second, ...". His "1st." / "2ndly." -> "First,"
+  / "Second,".
+- At most one hedge per claim, in a modern word ("perhaps", "I believe");
+  stacked qualifiers collapse ("it is almost needless to remark" ->
+  "hardly needs saying").
+- Everyday words where his are dated; his abstractions, figures of speech
+  and rhetorical questions stay.
+- lowercase "logic", "probability", "calculus" in prose.
+- TERM GLOSSES: a short bracket at FIRST USE in the book only, inside the
+  sentence: "calculus (a system of symbols with fixed rules for working
+  with them, as algebra is)"; "elimination (combining equations so that a
+  symbol drops out)"; categorical / hypothetical / disjunctive "(plain
+  statements, 'if' statements, 'either-or' statements)"; antecedent /
+  consequent "(the 'if' part or the 'then' part)"; a priori "by argument
+  in advance of the evidence", a posteriori "after the fact"; dictum de
+  omni et nullo glossed in 001. Do not re-gloss these.
+- "Vide Chap. xv." -> "(see Chap. xv.)".
+- RATIO: the all-prose philosophy files come out ~0.93 (unstacking
+  shrinks them); math files should run higher with glosses. Anything
+  below 0.88 gets checked.
+
+LEDGER ADDITIONS, BATCH 1
+- Chapter II's laws named in words when cited: law (1) "xy is the same as
+  yx", law (2) "xx is the same as x", law (3) "x + y is the same as y + x"
+  (letters as _x_ in prose, never new \( \)).
+- "1 − x" read as "the Universe, leaving out the x's"; dichotomy "(cutting
+  in two)", trichotomy "(cutting in three)".
+- RESOLVED: equation numbers checked against the 1854 print, chapter by
+  chapter; only Chapter VII was off (now (1)-(9) as printed). Formula
+  misprints fixed in prep.py per the scan. Boole's prose citations "(n)"
+  are reliable.
+- Constituents explained as "compartments" (the things that are x and y,
+  x but not y, ... neither): reuse the word from 006 on.
+- "quantitative symbol(s)" -> "number symbol(s)"; "intelligible" ->
+  "meaningful"; "unity" kept, glossed once "(that is, 1)".
+- Development formula read aloud as in 006: "what the function becomes
+  when x is 1, times x, plus what it becomes when x is 0, times one
+  minus x".
+- Equation forms read aloud (005): y = vx "the y's are some of the x's";
+  X = 0 "there is no such thing as an X"; X = 1 "X is the whole universe
+  of discourse".
+- A GLOSS NEVER CONTAINS \( \). Reordering a sentence must not reorder
+  its formulas (check.py catches both).
+- The Preface is in the first person (Boole's "the Author" -> "I").
+- 007 renderings: "first/second member" -> "left-hand/right-hand side";
+  "equate to 0" -> "set equal to 0"; "does not vanish" -> "is not zero";
+  coefficients "(the numbers standing in front of them)" once.
+- N5 sits after article 11 (where 1/0 is finally explained), not 10.
+
+SCAN QUEUE (orchestrator: check against _src/scan after batch 2)
+- X (011) formula (5): third term (1-v)(1-v)v'' — print (1-v)(1-v')v''?
+- X (011) art. 7 prose: "when B = 1, E is equal to B ... E vanishes" —
+  print E′?
+- XII (013) reverse elimination `t=0, y = 0, x(1-x) = 0, z = 0, x = 0;` —
+  print x(1-z) = 0?
+- XII (013) art. 5 "day star" (translator wrote "dogstar"): what does the
+  print say? Restore Boole's word if the print has it.
+- XII (013) Latin "casterosque" — print "ceterosque"?
+- XI (012) "We shall term \(x\); the representative symbol" stray ";"?
+- VII (008) art. 12 `(1 - sf) (1 - stp)w` — print st?
+- VII (008) art. 11 `yx - v(1 - z) - 0;` — print "= 0"?
+- VII (008) art. 16 `w(1-p) = \frac{0}{0}wr+...` — print "1-p ="?
+- VIII (009) art. 3 `xy - v (w(1 - z) +z (1 - w))` — print "="?
+- VIII (009) art. 3 `(c'\bar{y} - c'{z})` — print c'\bar{z}? and the
+  leading `yz (y\bar{z} + ...)`?
+- VIII (009) art. 6 `V_{1}V_{2}=0` (x3) — print V_1 V_0?
+- VIII (009) art. 3 `\[1 - x by \bar{x}, ...\]` — "by" should be \text.
+- VIII (009) art. 2 prose "full development \(V\)" — print V_1?
+- VIII (009) art. 2 c, c' vs c_1, c_2 — as printed?
+- XI (012) `\[x^2 = x, or, x (1 - x) = 0; \qquad (3)\]` — "or" -> \text.
+- XI (012) art. 12 display "\text{1st }" vs "\text{2nd.}x" — as printed?
+- IX (010) art. 4 `\[Et + E \left(1-t\right)=0,\]` — print E'(1-t)?
+- IX (010) art. 8 prose "E will be the product ... development of y" —
+  print E' and V?
+- IX (010) Ex. 5 development last term `\bar{y}\bar{z}\bar{x}` — print w?
+- IX (010) Ex. 5 (9) `\bar{x}z\bar{z}w = 0` — print \bar{x}\bar{z}w?
+- IX (010) end of Ex. 1 "\(f\) which the interpretation is" — OCR for
+  "of which" (a bogus formula: fix in prep and patch modern).
+- IX (010) last paragraph "the property A is present" — print B?
+- XIV (016) art. 3 "write \(u = xy\), and then eliminate \(x\) and \(y\)"
+  — print u = wz / w and z?
+- XIV (016) x–w development last term \bar{v}y\bar{xw} — print two bars?
+- XIII (015) art. 14 `w = v\left\{x(1-y)(1-q) + ...` — print x(1-y)(1-z)?
+- XIII (015) Quest. 1 symbols "z, p, q" vs question about t, p, q — print?
+- XIII (014) `1-x = r(1-r)` — print v(1-r)?
+- XV (017) (IV.) first bracket lacks trailing z (`\bigr] \\ +`) — print ]z?
+- XV (017) (III.) last term `\frac{0}{0}(1-w')(1-z)` — print vv'?
+- XV (017) art. 7 "in the case of like middle terms" — print "unlike"?
+- XIII (014) Prop. I table premise 2 `x=v[y(1-x)+z(1-y)]` — print y(1-z)?
+- XIII (014) eq. (4) `p(q-y)=0` — print p(1-y)?
+- XIII (014) eq. (10) `x(1-y) = 0` — print z(1-y)?
+- XIII (014) `p(1-y) + yz + (1-y)(1-z) = (0)` — stray parens?
+- XIII (014) prose slips: "In what area regarded" (are), "every source
+  doubt", "the process inference", "might almost termed", "is prove are".

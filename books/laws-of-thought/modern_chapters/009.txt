@@ -1,0 +1,299 @@
+Chapter 8: On the Reduction of Systems of Propositions
+
+1. In the preceding chapters we worked out, well enough for the most essential purposes, the theory of single primary propositions; or, to put it more exactly, of primary propositions expressed by a single equation. On that theory we built a method that does the job. We showed how to eliminate any element from the given system of equations, and how to deduce the relation that connects the elements left over, in whatever form is asked for: a denial, an affirmation, or the more usual relation of subject and predicate. What remains is to turn to systems of propositions, and to carry out the same series of investigations for them. We want to know three things. Can we eliminate, _ad libitum_ (as many as we please), any number of the symbols from the equations that express a system of propositions? Can we then deduce, by interpreting the result, every relation that holds among the symbols that remain? And can we find, in particular, the expression of any single element, or of any meaningful combination of elements, in terms of the others, so as to state the conclusion in whatever acceptable form is wanted? The answer to all three will come from showing that any system of equations, or any of the equations in a system, can be reduced to a single equation that is equivalent to it. To that single equation the methods of the previous chapters can be applied at once. We will see, too, that this reduction brings with it an important extension of the theory of single propositions, one we had to do without in the earlier discussion. There is nothing unusual about this. Many special branches of science cannot be fully surveyed from the inside. They have to be studied from an outside point of view as well, and seen in connection with other, related subjects, before their full proportions can be understood.
+
+This chapter will set out two distinct ways of reducing a system of equations to a single equivalent equation. The first uses arbitrary constant multipliers (numbers with no fixed value, multiplied into the equations). It is simple enough in theory, but it makes the later steps of elimination and development, when they come, rather tedious. It was, however, the method of reduction I discovered first, and partly for that reason, partly for its simplicity, I have thought it right to keep it. The second method needs no arbitrary constants, and is better than the first in nearly every respect. So it is the one I will generally use in the rest of this book.
+
+2. We turn to the first method.
+
+Proposition I.
+
+Any system of logical equations can be reduced to a single equivalent equation. Multiply each equation after the first by a different arbitrary constant, and add all the results together, the first equation included.
+
+By Prop. 2, Chap, VI., the interpretation of any single equation \(f(x, y..) = 0\) is found by setting equal to 0 those constituents in the development of the left-hand side whose coefficients are not zero. So if we are given two equations, \(f(x, y..) = 0\), and \(F(x, y..) = 0\), their combined meaning is contained in the set of results we get by setting equal to 0 every constituent that shows up in this way in both, or in either, of the given equations, each developed by the Rule of Chap. VI. For instance, suppose we have the two equations
+\[xy - 2x = 0, \qquad (1)\]
+\[x - y = 0; \qquad (2)\]
+and see what each yields.
+
+The development of the first gives
+\[- xy - 2x (1 - y) = 0;\]
+\[\text{whence, }xy = 0, x (1 - y) = 0. \qquad (3)\]
+That is, nothing is both x and y, and nothing is x without being y.
+
+The development of the second equation gives
+\[x(1-y)-y(1 -x) = 0;\]
+\[\text{whence, }x (1 - y) = 0, y (1 - x) = 0. \qquad (4)\]
+The constituents whose coefficients are not zero, in one development or the other, are \(xy\), \(x (1 - y)\), and \((1 - x) y\). Together these give the system
+\[xy = 0, x(1-y) = 0, (1-x)y=0; \qquad (5)\]
+which is equivalent to the two systems the developments give separately, since the equation \(x (1 - y) = 0\) simply appears in both. Keeping to the case of a pair of equations, then, what we have to find is a single equation which, when developed, yields the same constituents with nonzero coefficients as the given equations do. Now suppose the given equations are
+\[V_1 = 0, V_2 = 0,\]
+\(V_1\) and \(V_2\) being functions of the logical symbols \(x, y, z,\) &c. Then the single equation
+\[V_1 +cV_2=0, \qquad (6)\]
+\(c\) being an arbitrary constant, will do what we want. For let \(At\) stand for any term in the full development \(V_1\), where \(t\) is a constituent and \(A\) its numerical coefficient, and let \(Bt\) stand for the matching term in the full development of \(V_2\). Then the matching term in the development of (6) will be
+\[(A + cB) t.\]
+The coefficient of \(t\) is zero if \(A\) and \(B\) are both zero, and not otherwise. To see this, suppose \(A\) and \(B\) are not both zero, and at the same time suppose
+\[A + cB = 0, \qquad (7)\]
+then only the following cases can arise.
+
+First, \(A\) is zero and \(B\) is not. Then the equation above becomes
+\[cB = 0,\]
+and this requires \(c = 0\). But that contradicts the assumption that \(c\) is an _arbitrary_ constant.
+
+Second, \(B\) is zero and \(A\) is not. Then (7) reduces to
+\[A = 0,\]
+which breaks the very assumption we started from.
+
+Third, neither \(A\) nor \(B\) is zero. Then equation (7) gives
+\[c = \frac{-A}{B}\]
+which is a definite value, and so again conflicts with the assumption that \(c\) is arbitrary.
+
+So the coefficient \(A + cB\) is zero when \(A\) and \(B\) are both zero, and not otherwise. It follows that exactly the same constituents appear with nonzero coefficients in the development of (6) as in the equations \(V_1 = 0, V_2 = 0\), taken singly or together. And so the equation \(V_1 + c V_2 = 0\), is equivalent to the system \(V_1 = 0, V_2 = 0\).
+
+By the same kind of reasoning, the general system of equations
+\[V_1 = 0, V_2 = 0, V_3 = 0, \text{ \&c.}\,;\]
+can be replaced by the single equation
+\[V_1 + cV_2 + c'V_3 + \text{ \&c.} = 0\,,\]
+\(c, c',\) &c., being arbitrary constants. The equation formed this way can be handled in every respect like the ordinary logical equations of the previous chapters. The arbitrary constants \(c_1, c_2\), &c., are not _logical_ symbols. They do not obey the law
+\[c_1 (1 - c_1) = 0, c_2 (1 - c_2) = 0\,.\]
+that is, they are not restricted to the values 0 and 1. But bringing them in is justified by the general principle stated in (II. 15) and (V. 6), and used in nearly all our investigations since: equations in the symbols of logic may be treated in every respect as if those symbols were symbols of quantity, subject to the special law \(x (1 - x) = 0\), until, at the final stage of the solution, they take a form that can be read in the system of thought that logic deals with.
+
+3. The following example will show the method at work.
+
+Ex. 1.—Suppose that a study of the properties of some particular class of substances has led to the following general conclusions.
+
+First, wherever the properties \(A\) and \(B\) occur together, either the property \(C\) or the property \(D\) is present as well, but not both together.
+
+Second, wherever the properties \(B\) and \(C\) occur together, the properties \(A\) and \(D\) are either both present with them or both absent.
+
+Third, wherever the properties \(A\) and \(B\) are both absent, the properties \(C\) and \(D\) are both absent too; and the other way round, wherever \(C\) and \(D\) are both absent, \(A\) and \(B\) are both absent too.
+
+From these, suppose we are asked what can be concluded in any particular case from the presence of the property \(A\), about whether the properties \(B\) and \(C\) are present or absent, leaving the property \(D\) out of account. Let us set up the symbols as follows.
+
+	Represent | the property \(A\) by \(x\);
+	" | the property \(B\) by \(y\);
+	" | the property \(C\) by \(z\);
+	" | the property \(D\) by \(w\).
+
+Then the symbolic expression of the premises will be
+\[xy = v \{w(1 - z) +z (1 - w)\}; yz = v \{xw + (1 - x ) (1 - w)\}; (1-x)(1-y)=(1-z)(1-w).\]
+In words: the things that are x and y are some of those that are w but not z, or z but not w; the things that are y and z are some of those that are both x and w, or neither; and the things that are neither x nor y are exactly the things that are neither z nor w.
+
+From the first two of these equations, eliminating the indefinite class symbol \(v\) from each separately, we have
+\[xy (1 - w (1 - z) - z (1 - w)) = 0;\]
+\[yz (1 - xw - (1 - x)(1 - w)) = 0.\]
+Now we notice that by development
+\[1 - w(1 - z) - z(1 - w) = wz + (1 - w)(1 - z),\]
+and
+\[1 - xw - (1 - x) ( 1 - w) = x(1 - w) + w(1 - x),\]
+and in these expressions we write, for simplicity, a bar over a letter for "one minus" that letter, replacing
+\[1 - x \text{ by } \bar{x}, \quad 1 - y \text{ by } \bar{y}, \quad \text{\&c.},\]
+so that a barred letter means "not" that class. We then get from the last three equations
+\[\begin{gathered} xy (wz + \bar{w}\bar{z}) = 0; \qquad (1) \\ yz (x\bar{w} + \bar{x}w) = 0; \qquad (2) \\ \bar{x}\bar{y} = \bar{w}\bar{z}; \qquad (3) \end{gathered}\]
+and from this system we have to eliminate \(w\).
+
+Multiplying the second of these equations by \(c\), and the third by \(c'\), and adding the results to the first, we have
+\[xy (wz + \bar{w}\bar{z}) + cyz (x\bar{w} + \bar{x}w) + c'(\bar{x}\bar{y} - \bar{w}\bar{z}) = 0.\]
+When \(w\) is set equal to 1, and so \(\bar{w}\) to 0, the left-hand side of this equation becomes
+\[xyz + c\bar{x}yz + c'\bar{x}\bar{y}.\]
+And when in the same expression \(w\) is set to 0 and \(\bar{w}\) = 1, it becomes
+\[xy\bar{z} + cxyz + c'\bar{x}\bar{y} - c'\bar{z}.\]
+So the result of eliminating \(w\) can be written as the product of these two, set equal to zero:
+\[(xyz + c\bar{x}yz + c'\bar{x}\bar{y}) (xy\bar{z} + cxyz + c'\bar{x}\bar{y} - c'\bar{z}) = 0; \qquad (4)\]
+and from this equation we have to find \(x\).
+
+If we went on as in earlier examples, we would multiply out the factors on the left-hand side of this equation. But it is worth showing that this is not needed at all. Let us develop the left-hand side of (4) with respect to \(x\), the symbol whose expression we want. We find
+\[yz (y\bar{z} + cyz - c'\bar{z}) x + (cyz + c'\bar{y}) (c'\bar{y} - c'\bar{z}) (1 - x) = 0;\]
+\[\text{or, }cyzx + (cyz + c'\bar{y}) (c'\bar{y} - c'\bar{z}) (1 - x) = 0;\]
+from which we find
+\[x =\frac{(cyz + c'\bar{y}) (c'\bar{y} - c'\bar{z})}{(cyz + c'\bar{y}) (c'\bar{y} - c'\bar{z}) - cyz};\]
+and, developing the right-hand side with respect to \(y\) and \(z\),
+\[x=0yz+\frac{0}{0}y\bar{z}+\frac{c^{\prime 2}}{c^{\prime 2}}\bar{y}z+\frac{0}{0}\bar{y}\bar{z};\]
+or,
+\[x=\left(1-y\right)z+\frac{0}{0}y\left(1-z\right)+\frac{0}{0}\left(1-y\right)\left(1-z\right);\]
+or,
+\[x=\left(1-y\right)z+\frac{0}{0}\left(1-z\right);\]
+Here the coefficient that is a number divided by itself counts as 1, so the things that are z but not y are all among the x's, while of the things that are not z, an indefinite portion are x's. The interpretation is: _Wherever the property \(A\) is present, either \(C\) is present and \(B\) absent, or \(C\) is absent_. And the other way round: _Wherever the property \(C\) is present and the property \(B\) absent, the property \(A\) is present_.
+
+These results can be reached much more easily by the method I will explain next. Still, it is reassuring to have different routes to the same conclusion, so that each can check the other.
+
+4. We turn to the second method.
+
+Proposition II.
+
+Suppose some equations, \(V_1=0\), \(V_2=0\), \(\&c.\), are such that when their left-hand sides are developed, every constituent has a positive coefficient. Then those equations can be combined into a single equivalent equation simply by adding them.
+
+For, as before, let \(At\) stand for any term in the development of the function \(V_1\), \(Bt\) the matching term in the development of \(V_2\) and so on. Then the matching term in the development of the equation
+\[V_1 + V_2 + \text{\&c.} = 0, \qquad (1)\]
+formed by adding the given equations together, will be
+\[\left(A+B+\text{\&c.}\right)t.\]
+But by assumption none of the coefficients \(A\), \(B\), &c. is negative. So the combined coefficient \(A + B\), &c. in the new equation can be zero only when the separate coefficients \(A\), \(B\), &c. are all zero together: positive numbers cannot cancel one another out. So the same constituents will appear in the development of equation (1) as in the equations \(V_1=0\), \(V_2=0\), &c. of the original system taken together. And therefore the interpretation of equation (1) is equivalent to the combined interpretations of the separate equations it was built from.
+
+Proposition III.
+
+5. Let \(V_1=0, V_2=0, \&c.\) be any system of equations whose terms have all been moved to the same side. Then the combined interpretation of the system is contained in the single equation
+\[V_{1}^2 + V_{2}^2 + \&c. = 0,\]
+formed by adding together the squares of the given equations.
+
+For let any equation of the system, say \(V_1=0\), produce on development an equation
+\[a_1 t_1 + a_2 t_2 + \&c. = 0\]
+in which \(t_1, t_2, \&c.\) are constituents, and \(a_1, a_2, \&c.\) their coefficients. Then the equation \(V_{1}^2=0\) will produce on development the equation
+\[a_{1}^2 t_1 + a_{2}^2 t_2 + \&c. = 0,\]
+with each coefficient squared. This can be proved either from the law of development, or by squaring the function \(a_1 t_1 + a_2 t_2, \&c.\) under the conditions
+\[t_{1}^2=t_1 \text{, } t_{2}^2=t_2, \text{, } t_1 t_2=0\]
+laid down in Prop. 3, Chap. v.; that is, each constituent times itself is itself, and any two different constituents multiplied together give zero. So the constituents that appear in the expansion of the equation \(V_{1}^2=0\), are the same as those that appear in the expansion of the equation \(V_1=0\), and now they have positive coefficients, since a square is never negative. The same holds for the equations \(V_2=0, \&c.\) So, by the last Proposition, the equation
+\[V_{1}^2 + V_{2}^2 +\&c. = 0\]
+will be equivalent in interpretation to the system of equations
+\[V_1=0 \text{, } V_2=0\text{, \&c.}\]
+
+_Corollary_.—Any equation \(V=0\), whose left-hand side already satisfies the condition
+\[V^2=V \text{, or } V(1-V)=0,\]
+does not need squaring, since squaring would leave it unchanged. Such equations, in fact, develop at once into a series of constituents with coefficients equal to 1, Chap. v. Prop. 4.
+
+Proposition IV.
+
+6. Suppose the equations of a system have been brought, by the squaring process above or by any other process, to a form in which every constituent in their development has a positive coefficient. Then any equations derived from them by elimination will have the same character, and may be combined with the other equations by addition.
+
+Suppose we have to eliminate a symbol \(x\) from an equation \(V = 0\), in which none of the constituents in the full development of the left-hand side has a negative coefficient. That expansion can be written in the form
+\[V_{1} x+V_{0}(1-x)=0\]
+\(V_{1}\) and \(V_{0}\) each being of the form
+\[a_{1}t_{1}+a_{2}t_{2}...+a_{n}t_{n},\]
+in which \(t_{1}t_{2}... t_{n}\) are constituents of the other symbols, and \(a_{1}a_{2}...a_{n}\) are in each case positive numbers or zero. The result of elimination is
+\[V_{1}V_{0}=0;\]
+that is, the part multiplying x times the part multiplying one minus x, set equal to zero. And since none of the coefficients in \(V_{1}\) and \(V_{0}\) is negative, there can be no negative coefficients in the product \(V_{1}V_{0}\). So the equation \(V_{1}V_{0}=0\) can be added to any other equation whose constituents all have positive coefficients, and the resulting equation will carry the full meaning of the equations it came from.
+
+Proposition V.
+
+7. To draw from the previous Propositions a practical rule, or method, for reducing systems of equations that express propositions in logic.
+
+The investigations so far have established two points.
+
+First, any equations of the form \(V = 0\), where \(V\) satisfies the fundamental law of duality \(V(1 - V) = 0\), can be combined by simple addition.
+
+Second, any other equations of the form \(V = 0\) can be brought, by squaring, to a form where the same principle of combining by mere addition applies.
+
+All that remains, then, is to settle which equations, among those that actually express propositions, belong to the first class and which to the second.
+
+Now the general types of propositions were set out at the end of Chap. IV. The division of propositions they represent is as follows.
+
+First, propositions whose subject is universal and whose predicate is particular.
+
+The symbolic type (IV. 15) is
+\[X = vY,\]
+that is, the X's are some of the Y's, with \(X\) and \(Y\) satisfying the law of duality. Eliminating \(v\), we have
+\[X(1-Y) = 0, \qquad (1)\]
+that is, nothing is an X that is not a Y; and this, we will find, also satisfies the same law. No further reduction by squaring is needed.
+
+Second, propositions both of whose terms are universal, of the symbolic type
+\[X = Y,\]
+with \(X\) and \(Y\) each satisfying the law of duality. Writing the equation in the form \(X - Y = 0\), and squaring, we have
+\[\begin{gathered} X - 2XY + Y = 0, \\ \text{or, } X(1 - Y) + Y(1- X) = 0. \qquad (2) \end{gathered}\]
+that is, there is nothing that is X but not Y, and nothing that is Y but not X. The left-hand side of this equation satisfies the law of duality, as its very form makes plain.
+
+We can reach the same equation another way. The equation
+\[X = Y\]
+is equivalent to the two equations
+\[X = vY\text{, }Y = vX,\]
+(for to say that the \(X\)’s are identical with the \(Y\)’s is to say both that All \(X\)’s are \(Y\)’s, and that All \(Y\)’s are \(X\)’s). Now these equations give, on eliminating \(v\),
+\[X(1-Y)=0\text{, } Y(1-X)=0,\]
+and these, added together, produce (2).
+
+Third, propositions both of whose terms are particular. Such propositions have the form
+\[vX = vY,\]
+but here \(v\) is not entirely arbitrary, and so must not be eliminated. For \(v\) stands for _some_, and though its meaning can include _all_, it does not include _none_. So we must move the right-hand side over to the left and square the resulting equation, according to the rule. The result will plainly be
+\[vX(1 - Y) + vY(1-X) = 0.\]
+It may be convenient to sum up these conclusions in a Rule, to guide us from now on.
+
+8. Rule.— Express the equations so that the terms \(X\) and \(Y\) in the following typical forms obey the law of duality. Then change the equations
+\[X = vY \text{ into } X(1- Y) = 0,\]
+\[X = Y \text{ into } X(1 - Y) + Y(1 - X) = 0.\]
+\[vX= vY \text{ into } vX(1-Y) + vY(1 - X) = 0.\]
+
+An equation given in the form \(X = 0\) needs no transformation. An equation in the form \(X = 1\) can be replaced by \(1 - X = 0\), as the second of the transformations above shows.
+
+Once the equations of the system have been reduced in this way, any of them, together with any equations derived from them by elimination, can be combined by addition.
+
+9. Note.—We saw in Chapter IV. that if we translate the terms of a proposition into symbols word for word, without attending to its real meaning, we may produce equations whose terms \(X\) and \(Y\) do not obey the law of duality. The equation \(w = st(p + r)\), given in (3) Prop. 3 of that chapter, is of this kind. Such equations, as we saw, do have a meaning. If, out of curiosity or for any other reason, someone decides to use them, it is best to reduce them by the Rule (VI. 5).
+
+10. Ex. 2.—Let us take the following propositions of elementary geometry.
+
+First, similar figures consist of all those whose corresponding angles are equal and whose corresponding sides are proportional.
+
+Second, triangles whose corresponding angles are equal have their corresponding sides proportional, and _vice versâ_ (the other way round).
+
+To represent these premises, let
+
+	\(s\) | = | similar.
+	\(t\) | = | triangles.
+	\(q\) | = | having corresponding angles equal.
+	\(r\) | = | having corresponding sides proportional.
+
+Then the premises are expressed by the following equations:
+\[\begin{aligned} s & = qr, \qquad (1) \\ tq & = tr. \qquad (2) \end{aligned}\]
+that is, the similar figures are exactly those with equal angles and proportional sides, and the triangles with equal angles are exactly the triangles with proportional sides. Reducing by the Rule (or, what comes to the same thing, moving the terms of each equation to the left-hand side, squaring each equation, and then adding), we have
+\[s + qr - 2qrs + tq + tr - 2tqr = 0. \qquad (3)\]
+Suppose we are asked for a description of dissimilar figures in terms of the elements named by the words _triangles_, having corresponding angles equal, and having corresponding sides proportional.
+
+From (3) we have
+\[\begin{gathered} s = \frac{tq + qr + rt - 2tqr}{2qr - 1}, \\ \therefore 1-s = \frac{qr - tq - rt + 2tqr - 1}{2qr - 1}. \qquad (4) \end{gathered}\]
+And developing the right-hand side in full, we find
+\[\begin{gathered} 1 - s = 0tqr + 2tq(1 - r) + 2tr(1 - q) + t(1 - q) (1 - r) \\ + 0(1 - t)qr + (1 - t)q(1 -r) + (1 - t)r(1 - q) \\ + (1 - t)(1 - q) (1 - r). \qquad (5) \end{gathered}\]
+
+In this development two of the terms have the coefficient 2. By the Rule these must be set equal to 0. Then, dropping the terms whose coefficients are 0, we have
+\[\begin{gathered} 1-s=t(1-q)(1-r)+(1-t)q(1-r)+(1-t)r(1-q) \\ +(1-t)(1-q)(1-r); \qquad (6) \\ tq(1-r)=0; \qquad (7) \\ tr(1-q)=0; \qquad (8) \end{gathered}\]
+and the direct interpretation of these is as follows.
+
+First, dissimilar figures consist of all triangles that do not have both their corresponding angles equal and their sides proportional; and of all figures that are not triangles and that have either their angles equal and sides not proportional, or their corresponding sides proportional and angles not equal, or neither their corresponding angles equal nor their corresponding sides proportional.
+
+Second, there are no triangles whose corresponding angles are equal and whose sides are not proportional.
+
+Third, _there are no triangles whose corresponding sides are proportional and whose angles are not equal_.
+
+11. These are the immediate interpretations of the final equation. We see, just as the general theory says, that when we work out a description of one particular class of objects (here, dissimilar figures) in terms of certain other elements of the original premises, we also get the independent relations that hold among those elements because of the same premises. It is easy to show that this is not wasted information, even for the immediate question we asked. For one thing, the independent relations can always be used, if we wish, to shorten the expression of the relation we were directly looking for. Thus if we write (7) in the form
+\[0=tq(1-r),\]
+and add it to (6), we get, since
+\[\begin{gathered} t(1-q)(1-r)+tq(1-r)=t(1-r), \\ 1-s=t(1-r)+(1-t)q(1-r)+(1-t)r(1-q) \\ +(1-t)(1-q)(1-r), \end{gathered}\]
+which, interpreted, gives as the first part of the description of dissimilar figures "Triangles whose corresponding sides are not proportional," in place of the fuller description we had at first. Whether such a reduction is worth making is always a matter of convenience.
+
+12. One reduction is always worth making (VII. 15): gathering the terms of the description we want, such as the right-hand side of (5) or (6), into as few groups as possible. Thus the third and fourth terms on the right-hand side of (6) add up to the single term \((1 - t)(1 - q)\). If we combine this reduction with the last one, we have
+\[1 - s = t (1 - r) + (1 - t) q (1 - r) + (1 - t) (1 - q),\]
+and the interpretation of this is:
+
+Dissimilar figures consist of all triangles whose corresponding sides are not proportional, and of all figures that are not triangles and that have either their corresponding angles unequal, or their corresponding angles equal but their sides not proportional.
+
+So the fullness of the general solution is not something extra we could do without. It gives us all the information we are looking for, and it also gives us the means of stating that information in whatever way suits us best.
+
+13. One more observation remains to be made, illustrating a principle already stated. Two of the terms in the full development of \(1 - s\) in (5) have 2 as their coefficient, instead of \(\frac{1}{0}\). It will be shown later that this means the two premises were not independent of each other. To check this, let us go back to the premises in their reduced forms, namely
+\[\begin{aligned} s(1-qr)+qr(1-s) &= 0, \\ tq(1-r)+tr(1-q) &= 0. \end{aligned}\]
+Now if the left-hand sides of these equations have any constituents in common, those will show up when we multiply the equations together. Doing so, we get
+\[stq(1 - r) + str(1 - q) = 0.\]
+From this follow
+\[stq (1 - r) = 0\text{, }str (1 - q) = 0,\]
+and these are equations that can be deduced from either of the original premises. Their interpretations are as follows.
+
+Similar triangles that have their corresponding angles equal have their corresponding sides proportional.
+
+Similar triangles that have their corresponding sides proportional have their corresponding angles equal.
+
+And these conclusions can be deduced from either premise _on its own_. In this respect, by the definitions laid down, the premises are not independent.
+
+14. To finish, let us go back to the problem we used to illustrate the first method of this chapter, and try to find, by the present method, what can be concluded from the presence of the property \(C\) about the properties \(A\) and \(B\).
+
+On eliminating the symbols \(v\) we found the following equations:
+\[\begin{gathered} xy(wz + \bar{w}\bar{z}) = 0, \qquad (1) \\ yz (x\bar{w} + \bar{x}w) = 0, \qquad (2) \\ \bar{x}\bar{y} = \bar{w}\bar{z}. \qquad (3) \end{gathered}\]
+From these we have to eliminate \(w\) and find \(z\). Now (1) and (2) already satisfy the condition \(V(1 - V) = 0\). The third equation, when we move its terms to the left-hand side and square, gives
+\[\bar{x}\bar{y} (1 -\bar{w}\bar{z}) + \bar{w}\bar{z}(1 - \bar{x}\bar{y}) = 0. \qquad (4)\]
+Adding (1) (2) and (4) together, we have
+\[xy(wz + \bar{w}\bar{z}) + yz(x\bar{w} +\bar{x}w)+\bar{x}\bar{y}(1 - \bar{w}\bar{z}) + \bar{w}\bar{z}(1 - \bar{x}\bar{y}) = 0.\]
+Eliminating _w_, we get
+\[(xyz + yz\bar{x} + \bar{x}\bar{y}) \{xy\bar{z} + yzx + \bar{x}\bar{y}z + \bar{z}(1 - \bar{x}\bar{y})\} = 0.\]
+Now when we multiply the terms of the second factor by those of the first in turn, remembering that
+\[x\bar{x} = 0\text{, }y\bar{y} = 0\text{, }z\bar{z} = 0,\]
+(nothing is both a class and its opposite), nearly all of them vanish, and we are left with only
+\[xyz + \bar{x}\bar{y}z = 0; \qquad (5)\]
+that is, nothing is z together with both x and y, or z with neither. From this,
+\[z = \frac{0}{xy+\bar{x}\bar{y}}\]
+\[= 0xy + \frac{0}{0}x\bar{y} + \frac{0}{0}\bar{x}y + 0\bar{x}\bar{y}\]
+\[= \frac{0}{0}x\bar{y} + \frac{0}{0}\bar{x}y,\]
+which gives the interpretation: wherever the property \(C\) is found, either the property \(A\) or the property \(B\) will be found with it, but not both of them together.
+
+From equation (5) we can easily deduce the result we reached earlier by the method of arbitrary constant multipliers, as well as any other requested form of the relation between \(x\), \(y\), and \(z\). For example: _If the property \(B\) is absent, either \(A\) and \(C\) will be present together, or \(C\) will be absent_. And conversely, _If \(A\) and \(C\) are present together, \(B\) will be absent_. The converse part of this conclusion rests on the presence of a term \(xz\) with unity for its coefficient in the developed value of \(\bar{y}\).

@@ -1,0 +1,331 @@
+Chapter 6: Of Interpretation
+
+1. We have seen that when any function is fully expanded by the general rule proved in the last chapter, the expansion is made of two distinct sets of elements: the constituents of the expansion, and their coefficients (the numbers standing in front of them). In this chapter I will ask, first, how the constituents are to be interpreted, and then how that interpretation is changed by the coefficients attached to them.
+
+I will use the terms "logical equation," "logical function," and the like in a general sense. They mean any equation or function involving the symbols \(x\), \(y\), and so on, that turns up either in expressing a set of premises or in the chain of symbolic results that runs between the premises and the conclusion. If such a function or equation is in a form that cannot be read straight off in logic, then the symbols \(x\), \(y\), and so on, must be treated as symbols of quantity of the special kind described in earlier chapters (II. 15), (V. 6): quantities that obey the law
+\[x\left(1-x\right) = 0.\]
+that is, quantities that can only be 0 or 1.
+
+So by the problem of the interpretation of a logical function or equation, I mean two things. The first is to reduce it to a form which becomes readable once the symbols \(x\), \(y\), and so on, are given their logical meanings. The second is the reading that results. These agreed definitions follow the general principles for conducting the method of this book, laid down in the last chapter.
+
+Proposition I.
+
+2. The constituents of the expansion of any function of the logical symbols \(x\), \(y\), and so on, can be interpreted. They stand for the separate, non-overlapping divisions of the universe of discourse that we get by affirming and denying, in every possible combination, the qualities the symbols \(x\), \(y\), and so on, denote.
+
+To make this concrete, suppose the function involves two symbols, \(x\) and \(y\), and has been expanded with respect to both. The constituents are then:
+\[xy,\; x\left(1-y\right),\; \left(1-x\right)y,\; \left(1-x\right)\; \left(1-y\right).\]
+Clearly the first, \(xy\), stands for the class of things that have both of the qualities named by \(x\) and \(y\). The second, \(x\left(1-y\right)\), stands for the class that has the property \(x\) but not the property \(y\). In the same way the third constituent stands for things that have the property represented by \(y\) but not the one represented by \(x\). And the fourth, \(\left(1-x\right)\left(1-y\right)\), stands for things that have neither quality.
+
+So in this case the constituents stand for all four classes of things that can be described by affirming or denying the properties expressed by \(x\) and \(y\). These classes are distinct. No member of one is a member of another, because each class has some quality that contradicts a quality of every other class. And together they make up the universe. Any object at all can be described by whether it has or lacks a given quality, so every single thing in the universe falls into one or other of the four classes formed by combining the two given classes \(x\) and \(y\) and their contraries (their opposites, "not-x" and "not-y").
+
+What has been said here about the constituents of \(f\left(x,y\right)\) holds in general. The constituents of any expansion stand for classes; those classes are kept distinct by having contrary qualities; and together they make up the universe of discourse.
+
+3. These properties of constituents are expressed in the theorems proved at the end of the last chapter, and could have been deduced from them. Every constituent obeys the fundamental law that the single symbols obey; from that, one might have guessed that each constituent stands for a class. The product of any two constituents of an expansion is zero; from that, one might have concluded that the classes they stand for exclude one another. And the sum of all the constituents of an expansion is 1; from that, one might have inferred that their classes together make up the universe.
+
+4. The analysis and interpretation of logical equations rest on these laws of constituents and on the way of interpreting them just set out. We have already said that every such equation can be interpreted by means of the theorem of development. Here I want to examine the forms of solution that come out at the end of a train of reasoning, and to show how they arise. Strictly speaking they are all versions of one basic type of expression. Still, it will be clearer to present their minor varieties one at a time.
+
+There are three such forms, as follows:
+
+Form I.
+
+5. The first form arises when a logical equation \(V=0\) is developed, broken up into its component equations, and the result is to be interpreted. We assume the function involves the logical symbols \(x\), \(y\), and so on, in combinations that are not fractions. Fractions in fact arise only in the kind of problem we will meet under the third form of solution.
+
+Proposition II.
+
+To interpret the logical equation \(V = 0\).
+
+For simplicity, suppose \(V\) involves just two symbols, \(x\) and \(y\), and write the development of the given equation as
+\[axy + bx\left(1-y\right) + c\left(1-x\right)y + d\left(1-x\right)\left(1-y\right)=0; \qquad (1)\]
+where \(a\), \(b\), \(c\), and \(d\) are definite numbers.
+
+Now suppose some coefficient, say \(a\), is not zero. Multiply both sides of the equation by the constituent \(xy\) that this coefficient belongs to. Since the product of two different constituents is zero, every other term drops out, and we have
+\[axy = 0,\]
+and so, since \(a\) is not zero,
+\[xy = 0,\]
+This result does not depend at all on what the other coefficients are. Giving \(x\) and \(y\) their logical meaning, it reads: "No individuals exist that belong both to the class represented by \(x\) and to the class represented by \(y\)."
+
+But if the coefficient \(a\) _is_ zero, the term \(axy\) does not appear in the development (1), and we cannot deduce \(xy = 0\) from it.
+
+In the same way, if the coefficient \(b\) is not zero, we have
+\[x\left(1-y\right) = 0,\]
+which reads: "There are no individuals that belong to the class \(x\) and do not belong to the class \(y\)."
+
+Either of these readings can also be put in a different form, as we will show later.
+
+Taken together, the separate readings we get from all the terms of the expansion whose coefficients are not zero make up the complete interpretation of the equation \(V = 0\). The argument does not depend on how many logical symbols the function \(V\) contains. So the aim of the proposition is always reached by the following Rule:
+
+Rule.—Develop the function \(V\), and set equal to \(0\) every constituent whose coefficient is not zero. The readings of these results, taken together, make up the interpretation of the given equation.
+
+6. As an example, take the definition of "clean beasts" in the Jewish law (Leviticus 11): "Clean beasts are those which both divide the hoof and chew the cud." Let
+
+	\(x\) = clean beasts;
+	\(y\) = beasts dividing the hoof;
+	\(z\) = beasts chewing the cud;
+
+Then the proposition is represented by the equation
+\[x = yz\]
+that is, the clean beasts are exactly the beasts that both divide the hoof and chew the cud. We bring it to the form
+\[x - yz = 0,\]
+and look for the kind of interpretation this method leads to. Developing the left-hand side fully, we get
+\[\begin{gathered} 0xyz + xy\left(1-z\right) + x\left(1-y\right)z + x\left(1-y\right)\left(1-z\right) \\ - \left(1-x\right)yz + 0\left(1-x\right)y\left(1-z\right) + 0\left(1-x\right)\left(1-y\right)z + 0\left(1-x\right)\left(1-y\right)\left(1-z\right). \end{gathered}\]
+The terms whose coefficients are not zero give
+\[xy\left(1-z\right) = 0,\; xz\left(1-y\right) = 0,\; x\left(1-y\right)\left(1-z\right) = 0,\; \left(1-x\right)yz = 0.\]
+These equations deny that certain classes of things exist. They deny:
+
+First, beasts that are clean and divide the hoof but do not chew the cud.
+
+Second, beasts that are clean and chew the cud but do not divide the hoof.
+
+Third, beasts that are clean and neither divide the hoof nor chew the cud.
+
+Fourth, beasts that divide the hoof and chew the cud but are not clean.
+
+All of these denials are really contained in the original proposition. And the other way round: grant these denials, and the original proposition follows necessarily. They are, in fact, the separate pieces of that proposition. In this way every primary proposition can be broken down into a series of denials that certain defined classes of things exist, and can be rebuilt from that set of denials. Someone may ask how an assertion can be made out of a series of denials. Where does the positive part come from? My answer is that the mind assumes the existence of a universe. It does not assume it _à priori_, as a fact independent of experience. It assumes it either _à posteriori_, as something learned from experience, or _hypothetically_, as the ground that makes assertive reasoning possible at all. Take the proposition "There are no men who are not fallible." It is a denial: it denies that "infallible men" exist. From it we may infer either hypothetically, "All men (if men exist) are fallible," or absolutely, since experience has assured us that the human race exists, "All men are fallible."
+
+The form in which this Proposition's method presents its conclusions may be called the form of "Single or Conjoint Denial."
+
+Form II.
+
+7. The previous form came from developing and interpreting an equation whose right-hand side is \(0\). The present form, which complements it, comes from developing and interpreting an equation whose right-hand side is \(1\). The analysis of the last Proposition points straight to it.
+
+In the example just discussed, we deduced from the equation
+\[x - yz = 0\]
+a joint denial that the classes represented by the constituents
+\[xy\left(1-z\right),\quad xz\left(1-y\right), \quad x\left(1-y\right)\left(1-z\right), \quad \left(1-x\right)yz,\]
+exist, since their coefficients were not 0. It follows that the remaining constituents stand for classes that together make up the universe. So we have
+\[xyz+\left(1-x\right)y\left(1-z\right)+\left(1-x\right)\left(1-y\right)z+\left(1-x\right)\left(1-y\right)\left(1-z\right)=1.\]
+This amounts to saying that everything that exists belongs to one or other of the following classes:
+
+First, clean beasts that both divide the hoof and chew the cud.
+
+Second, unclean beasts that divide the hoof but do not chew the cud.
+
+Third, unclean beasts that chew the cud but do not divide the hoof.
+
+Fourth, things that are not clean beasts, do not chew the cud, and do not divide the hoof.
+
+This form of conclusion may be called the form of "Single or Disjunctive Affirmation": single when only one constituent appears in the final equation, disjunctive when, as here, more than one does.
+
+Any equation \(V=0\) in which \(V\) obeys the law of duality can also be made to yield this form of interpretation. We rewrite it as \(1-V=1\) and develop the left-hand side. But this case is really included in the next general form. Both of the forms so far are of little importance next to the one that follows.
+
+Form III.
+
+8. In the two cases so far, the function to be developed was set equal to \(0\) and to \(1\) respectively. Now I will suppose it set equal to any logical symbol \(w\). Our task is then to interpret the equation \(V = w\), where \(V\) is a function of the logical symbols \(x\), \(y\), \(z\), and so on. First, though, I think it necessary to show how the equation \(V=w\), or, as it will usually appear, \(w=V\), comes about.
+
+Let us go back to the definition of "clean beasts" used in the previous examples: "Clean beasts are those which both divide the hoof and chew the cud." Suppose we want to find how "beasts chewing the cud" are related to "clean beasts" and "beasts dividing the hoof." The equation expressing the proposition is
+\[x=yz,\]
+and we will have what we want if we can find \(z\) as an interpretable function of \(x\) and \(y\).
+
+Treating \(x\), \(y\), \(z\) as symbols of quantity subject to their special law, we can solve the equation above to get
+\[z=\frac{x}{y}.\]
+
+But this equation is not yet in a form we can read. If we can bring it to such a form, it will give us the relation we want.
+
+Developing the right-hand side of the equation, we get
+\[z = xy + \frac{1}{0}x\left(1 -y\right) + 0\left(1 -x\right)y + \frac{0}{0}\left(1-x\right)\left(1-y\right),\]
+and we will show later (Prop. 3) that it can be read as follows:
+
+"Beasts which chew the cud consist of all clean beasts (which also divide the hoof), together with an indefinite remainder (some, none, or all) of unclean beasts which do not divide the hoof."
+
+9. This is one case of a problem of the widest generality in logic, which can be stated like this: "Given any logical equation connecting the symbols \(x\), \(y\), \(z\), \(w\), find an interpretable expression for the relation of the class represented by \(w\) to the classes represented by the other symbols \(x\), \(y\), \(z\), and so on."
+
+In every case the solution consists in finding, from the _given_ equation, an expression for the symbol \(w\) in terms of the other symbols, and then making that expression readable by development. Now the given equation is always of the first degree in each of its symbols (no symbol appears squared, since the square of each equals the symbol itself). So the expression for \(w\) can always be found. In fact, whatever the form of the given equation with respect to \(w\), if we develop it we get an equation of the form
+\[Ew + E^\prime\left(1-w\right) = 0, \qquad (1)\]
+where \(E\) and \(E^\prime\) are functions of the remaining symbols. In words: _E_ is what multiplies the class _w_, and _E′_ what multiplies everything outside it. From this we have
+\[E^\prime=\left(E^\prime - E\right)w.\]
+Therefore
+\[w = \frac{E^\prime}{E^\prime-E} \qquad (2)\]
+and once the right-hand side is expanded by the rule of development, all that is left is to interpret the result in logic by the next proposition.
+
+If the fraction \(\frac{E^\prime}{E^\prime-E}\) has factors common to its top and bottom, we are not allowed to cancel them unless they are mere numbers. The reason is that the symbols \(x\), \(y\), and so on, taken as quantities, may take such values of \(0\) and \(1\) as make the common factors equal to \(0\), and then the algebraic rule of cancelling fails. This is the case we had in mind when we remarked on the failure of the algebraic axiom of division (II. 14). The course this book follows is strictly in line with its general principles: we _express_ the solution in the form (2), attempt no unauthorized cancelling, and interpret the result by the theorem of development.
+
+If we want the relation of the class expressed by \(1 - w\) to the other classes \(x\), \(y\), and so on, we deduce from (1), just as above,
+\[1-w=\frac{E}{E-E^\prime},\]
+and the method of the following Proposition applies to interpreting this as well.
+
+Proposition III.
+
+10. To find the interpretation of any logical equation of the form \(w=V\), where \(w\) is a class symbol and \(V\) is a function of other class symbols, of any form whatever.
+
+Expand the right-hand side of the equation fully. Each coefficient in the result will fall into one of four kinds. We now take them in turn, with what each means.
+
+First, let the coefficient be \(1\). This is the symbol of the universe, and the product of two class symbols stands for the individuals found in both classes. So any constituent with 1 as its coefficient must be read without limit: the whole of the class it stands for is included.
+
+Second, let the coefficient be \(0\). In logic, just as in arithmetic, this is the symbol of Nothing. No part of the class represented by its constituent is to be taken.
+
+Third, let the coefficient have the form \(\frac{0}{0}\). In arithmetic the symbol \(\frac{0}{0}\) stands for an _indefinite number_, unless some special circumstance fixes it. So analogy suggests that in the system of this book the same symbol should stand for an _indefinite class_. The following example will make clear that this is its true meaning.
+
+Take the proposition "Men not mortal do not exist." Let us put it into symbols, and then, obeying the laws those symbols have been shown to follow, look for a reverse definition: a definition of "mortal beings" in terms of "men."
+
+If we let \(y\) stand for "men" and \(x\) for "mortal beings," the proposition "Men who are not mortals do not exist" is expressed by the equation
+\[y \left(1 - x\right) = 0,\]
+from which we are to find the value of \(x\). The equation above gives
+\[y - yx = 0,\text{ or }yx = y.\]
+that is, the men who are mortal are all the men there are. If this were an ordinary algebraic equation, our next step would be to divide both sides by \(y\). But we remarked in Chap. II. that the operation of division cannot be _performed_ with the symbols we are now using. What we can do instead is _express_ the division, and then develop the result by the method of the last chapter. So we have, first,
+\[x = \frac{y}{y},\]
+and, expanding the right-hand side as directed,
+\[x = y + \frac{0}{0}\left(1 - y\right).\]
+This says that mortals (\(x\)) consist of all men (\(y\)), together with whatever remainder of beings who are not men \(\left(1 - y\right)\) the coefficient \(\frac{0}{0}\) indicates. Now let us ask what remainder of "not men" the premise implies. The remainder might include all the beings who are not men; it might include some of them and not others; or it might include none. Any one of these suppositions fits our premise perfectly. In other words, the premise in effect asserts that all men are mortal, and its truth is untouched whether _all_, _some_, or _none_ of the beings who are not men are _mortal_. So the expression \(\frac{0}{0}\) here means that _all_, _some_, or _none_ of the class it is attached to are to be taken.
+
+This account of the meaning of the symbol \(\frac{0}{0}\) rests on one particular case. But the principle behind the argument is general, and the symbol can turn up in no circumstances where the same analysis would not apply. We may properly call \(\frac{0}{0}\) an _indefinite class symbol_, and, where convenient, replace it by a single symbol \(v\), subject to the fundamental law \(v (1 - v) = 0\).
+
+Fourth, a coefficient of a constituent in an expansion may belong to none of the kinds above. To find its true meaning in that case, we must first prove the following theorem.
+
+11. Theorem.—If a function \(V\), meant to represent some class or collection of objects \(w\), is expanded, and if the numerical coefficient \(a\) of any constituent in its development does not satisfy the law
+\[a\left(1-a\right) = 0,\]
+then the constituent in question must be set equal to 0.
+In words: if a coefficient is anything other than 0 or 1, its constituent must be empty.
+
+To prove the theorem in general, write the given expansion in the form
+\[w = a_1 t_1 + a_2 t_2 + a_3 t_3 + \&c., \qquad (1)\]
+where \(t_1\), \(t_2\), \(t_3\), and so on, are the constituents and \(a_1\), \(a_2\), \(a_3\), and so on, the coefficients. Suppose also that \(a_1\) and \(a_2\) do not satisfy the law
+\[a_1 \left(1 - a_1\right) = 0, \quad a_2 \left(1 - a_2\right) = 0;\]
+but that all the other coefficients do obey it, so that we have
+\[{a_3}^2 = a_3, \text{ \&c.}\]
+Now multiply each side of equation (1) by itself. The result is
+\[w = {a_1}^2 t_1 + {a_2}^2 t_2 + \text{ \&c.} \qquad (2)\]
+This is clear because it must be the development of the equation
+\[w = V^2,\]
+(and the square of _w_ is just _w_). But it can also be proved by actually squaring (1) and noting that
+\[{t_1}^2 = t_1, \quad {t_2}^2 = t_2, \quad t_1 t_2 = 0, \text{ \&c.}\]
+by the properties of constituents. Now subtracting (2) from (1), we have
+\[\left(a_1 - {a_1}^2\right) t_1 + \left(a_2 - {a_2}^2\right) t_2 = 0.\]
+or, which is the same thing,
+\[a_1\left(1 - a_1\right) t_1 + a_2 \left(1 - a_2\right) t_2 = 0.\]
+Multiply this last equation by \(t_1\). Then, since \(t_1 t_2 = 0\), we have
+\[a_1 \left(1 - a_1\right) t_1 = 0,\text{ whence } t_1 = 0.\]
+In the same way, multiplying the same equation by \(t_2\), we have
+\[a_2 \left(1 - a_2\right) t_2 = 0,\text{ whence } t_2 = 0.\]
+(In each case the number in front is not zero, so the constituent itself must be.)
+
+In this way it can be shown in general that any constituent whose coefficient does not obey the same fundamental law as the symbols themselves must be set equal to \(0\) on its own. Such coefficients usually appear in the form \(\frac{1}{0}\). This is the algebraic symbol of infinity. And the closer a number comes to infinity (if we may put it that way), the further it is from satisfying the fundamental law just mentioned.
+
+The symbol \(\frac{0}{0}\), whose meaning we discussed earlier, does not necessarily break the law we are now considering, since it can take the numerical values \(0\) and \(1\) equally well. But its actual meaning, as an indefinite class symbol, cannot in my view be deduced from its arithmetical properties, except on the ground of analogy. It has to be established by trial, as we did above.
+
+Editor's note: Boole's division, and the symbols 0/0 and 1/0, are formal devices, not arithmetic. A coefficient 0/0 marks an indefinite portion of a class (the v of Chapter IV), and a coefficient 1/0 marks a constituent that must be empty. His contemporaries found this the hardest part of the book, and Jevons, Venn and Peirce rebuilt the algebra without any division at all; modern Boolean algebra has none. His conclusions are correct; only his route to them was abandoned.
+
+12. We can now gather the results we have reached into the following summary.
+
+First, the symbol 1, as the coefficient of a term in a development, means that the whole of the class that constituent stands for is to be taken.
+
+Second, the coefficient 0 means that none of the class is to be taken.
+
+Third, the symbol \(\frac{0}{0}\) means that a completely _indefinite_ portion of the class is to be taken: that is, _some_, _none_, or _all_ of its members.
+
+Fourth, any other symbol as a coefficient means that the constituent it stands in front of must be set equal to 0.
+
+It follows that if the solution of a problem, found by development, has the form
+\[w = A+0B+\frac{0}{0}C+\frac{1}{0}D,\]
+that solution can be split into the two following equations:
+\[\begin{gathered} w = A + vC, \qquad (3) \\ D = 0, \qquad (4) \end{gathered}\]
+where \(v\) is an indefinite class symbol. Equation (3) says that the class _w_ is all of _A_ together with some, none, or all of _C_; equation (4) says that the class _D_ has no members. The reading of (3) shows what elements make up, or may make up, the class \(w\) whose definition we want. The reading of (4) shows what relations hold among the elements of the original problem, quite independently of \(w\).
+
+These are the rules of interpretation. I may add that they apply universally, and that using them never runs into an exception or a failure.
+
+13. _Corollary_.—If \(V\) is an independently interpretable logical function, it will satisfy the symbolic law \(V(1-V) = 0\).
+
+By an independently interpretable logical function I mean one that can be interpreted without assuming any relation among the things its symbols stand for. So \(x(1-y)\) is independently interpretable, but \(x-y\) is not. The second function assumes, as a condition of its having any meaning, that the class represented by \(y\) is wholly contained in the class represented by \(x\). The first makes no such demand.
+
+Now suppose \(V\) is independently interpretable, and let \(w\) stand for the collection of individuals it contains. Then the equation \(w = V\) holds true without forcing any of the constituents in the development of \(V\) to vanish, since a vanishing constituent would mean some relation among the classes of things the symbols in \(V\) denote. So the development of \(V\) will have the form
+\[a_1t_1+a_2t_2+\text{\&c}.\]
+with the coefficients \(a_1\), \(a_2\), and so on, all satisfying the condition
+\[a_1(1-a_1) = 0, a_2 (1-a_2) = 0, \&c.\]
+that is, every coefficient is 0 or 1.
+
+So, by the reasoning of Prop. 4, Chap. v., the function \(V\) will obey the law
+\[V(1-V) = 0.\]
+that is, nothing is both in the class _V_ and outside it.
+
+This result is obvious _à priori_, since \(V\) is supposed to stand for a class or collection of things. But we now see that it also follows from the properties of the constituents that make it up. The condition \(V(1-V) = 0\) may be called "the condition of interpretability of logical functions."
+
+14. The general form of solution, or of logical conclusion, set out in the last Proposition may be called a "Relation between terms." As before, I use the word "terms" for the parts of a proposition, simple or complex, that are joined by the copula "is" or "are." The classes of things represented by the single symbols may be called the elements of the proposition.
+
+15. Ex. 1.—Going back to the definition of "clean beasts" (VI.6), we want a description of "unclean beasts."
+
+As before, with \(x\) standing for "clean beasts," \(y\) for "beasts dividing the hoof," and \(z\) for "beasts chewing the cud," we have
+\[x = yz; \qquad (5)\]
+so
+\[1-x = 1-yz ;\]
+and developing the right-hand side,
+\[1-x = y(1-z)+z(1-y)+(1-y)(1-z);\]
+which reads as the following proposition: Unclean beasts are all those which divide the hoof without chewing the cud, all those which chew the cud without dividing the hoof, and all those which neither divide the hoof nor chew the cud.
+
+Ex. 2.—With the same definition, we want a description of beasts that do not divide the hoof.
+
+From the equation \(x = yz\) we have
+\[y = \frac{x}{z};\]
+therefore,
+\[1-y = \frac{z-x}{z};\]
+and developing the right-hand side,
+\[1-y = 0\:xz+\frac{-1}{0}x(1-z)+(1-x)z+\frac{0}{0}(1-x)(1-z).\]
+Here, by the Rule, the term whose coefficient is \(\frac{-1}{0}\) must be set equal to \(0\) on its own, and so we have
+\[\begin{gathered} 1-y = (1-x)z+v(1-x)(1-z), \\ x(1-z)=0; \end{gathered}\]
+The first of these equations reads as the proposition: Beasts which do not divide the hoof consist of all unclean beasts which chew the cud, and an indefinite remainder (some, none, or all) of unclean beasts which do not chew the cud.
+
+The second equation reads as the proposition: _There are no clean beasts which do not chew the cud_. This is one of the independent relations mentioned above. We were looking for the direct relation of "beasts not dividing the hoof" to "clean beasts" and "beasts which chew the cud." But it happens that the premise also sets up a separate relation between clean beasts and beasts that chew the cud, quite apart from any relation to beasts not dividing the hoof. The process necessarily gives us this relation too.
+
+Ex. 3.—Take the following definition: "Responsible beings are all rational beings who are either free to act, or have voluntarily sacrificed their freedom," and apply the same analysis to it.
+
+	Let | \(x\) | stand for | responsible beings.
+	 | \(y\) | " | rational beings.
+	 | \(z\) | " | those who are free to act,
+	 | \(w\) | " | those who have voluntarily sacrificed their freedom of action.
+
+In expressing this definition, I will assume that its two alternatives, "rational beings free to act" and "rational beings whose freedom of action has been voluntarily sacrificed," exclude each other, so that no one is found in both. This lets us translate the proposition literally into the language of symbols, as follows:
+\[x = yz + yw. \qquad (6)\]
+that is, the responsible beings are the rational beings who are free, together with the rational beings who have given up their freedom.
+
+First let us find from this the relation of "rational beings" to responsible beings, beings free to act, and beings who have voluntarily given up their freedom of action. Perhaps it is better to put our aim this way: we want to express the relation among the elements of the premise in a form that lets us decide how far rationality can be inferred from responsibility, freedom of action, a voluntary sacrifice of freedom, and their opposites.
+
+From (6) we have
+\[y = \frac{x}{(z + w)},\]
+and developing the right-hand side, but leaving out the terms whose coefficients are 0,
+\[\begin{gathered} y = \frac{1}{2}xzw + xz(1-w) + x(1-z)w + \frac{1}{0}x(1-z)(1-w) \\ + \frac{0}{0}(1-x)(1-z)(1-w), \end{gathered}\]
+so, setting equal to 0 the terms whose coefficients are \(\frac{1}{2}\) and \(\frac{1}{0}\), we have
+\[y = xz(1-w) + xw(1-z) + v(1-x)(1-z)(1-w); \qquad (7)\]
+\[xzw = 0; \qquad (8)\]
+\[x(1-z)(1-w)= 0; \qquad (9)\]
+and these read as follows.
+
+Direct Conclusion.—Rational beings are all responsible beings who are either free to act, not having voluntarily sacrificed their freedom, or not free to act, having voluntarily sacrificed their freedom, together with an indefinite remainder (some, none, or all) of beings not responsible, not free, and not having voluntarily sacrificed their freedom.
+
+First Independent Relation.—No responsible beings are at the same time free to act, and in the condition of having voluntarily sacrificed their freedom.
+
+Second.—No responsible beings are not free to act, and at the same time in the condition of not having sacrificed their freedom.
+
+The independent relations just found can, however, be put in another and handier form. Thus (8) gives
+\[xw=\frac{0}{z}=0z+\frac{0}{0}(1-z), \text{ on development;}\]
+or,
+\[xw=v(1-z); \qquad (10)\]
+and in the same way (9) gives
+\[x(1-w)=\frac{0}{1-z}=\frac{0}{0}z+0(1-z);\]
+or,
+\[x (1 - w) = vz; \qquad (11)\]
+and (10) and (11), interpreted, give the following propositions:
+
+First, _Responsible beings who have voluntarily sacrificed their freedom are not free_.
+
+Second, _Responsible beings who have not voluntarily sacrificed their freedom are free_.
+
+These, however, are only different forms of the relations found before.
+
+16. In looking at these results, the reader must remember that the only business of a method of inference or analysis is to find the relations required by the _connexion_ of the terms in the original proposition, that is, by the way the proposition joins them. So in judging how completely the method does its job, we have nothing at all to do with other relations that the _meaning_ of the words may suggest to us, as distinct from their stated connection. For example, it seems obvious that "They who have voluntarily sacrificed their freedom are not free." That relation is implied in the very meaning of the words. So it might seem that the first of the two independent relations the method gave us is, on the one hand, needlessly narrow, and on the other, unnecessary. But if we look only at how the terms are connected in the original premise, we will see that the relation is open to neither charge. The solution, given by the direct conclusion and the independent relations together, is perfectly complete, and nothing in it is superfluous.
+
+If we want to take into account the unstated relation just mentioned, "They who have voluntarily sacrificed their freedom are not free," we can do so by making it a separate proposition. Its proper expression would be
+\[w = v (1 - z).\]
+that is, those who have sacrificed their freedom are some portion of those who are not free.
+
+We would then have to use this equation together with the one expressing the original premise. How such an examination is to be carried out will appear when we come to the theory of systems of propositions in a later chapter. The only difference this makes to the result is that the first of the independent relations found above is replaced.
+
+17. Ex. 4.—Taking the same definition as in Example 2, we want a description of irrational persons.
+
+We have
+\[\begin{aligned} 1-y &= 1 - \frac{x}{z+w} \\ &= \frac{z + w - x}{z + w} \end{aligned}\]
+\[\begin{aligned} &= \frac{1}{2} xzw + 0 xz (1 - w) + 0 x (1 - z) w - \frac{1}{0} x (1 - z) (1 - w) \\ &+ (1-x)zw + (1-x)z(1-w) + (1-x)(1-z)w + \frac{0}{0}(1-x)(1-z)(1-w) \\ &= (1-x)zw + (1-x)z(1-w) + (1-x)(1-z)w + v(1-x)(1-z)(1-w) \\ &= (1-x)z + (1-x)(1-z)w + v(1-x)(1-z)(1-w), \end{aligned}\]
+together with \(xzw = 0, \quad x(1-z)(1-w) = 0\).
+
+The independent relations here are the same ones we reached before, as they clearly ought to be. Whatever relations hold regardless of whether a given class of things \(y\) exists must also hold regardless of whether the opposite class \(1 - y\) exists.
+
+The direct solution given by the first equation is: Irrational persons consist of all irresponsible beings who are either free to act, or have voluntarily sacrificed their liberty and are not free to act; together with an indefinite remainder of irresponsible beings who have not sacrificed their liberty and are not free to act.
+
+18. The propositions analyzed in this chapter have all been of the kind called definitions. I have discussed none whose second term, the predicate, is particular (that is, speaks only of "some"). The general type of such propositions is \(Y= vX\), where \(Y\) and \(X\) are functions of the logical symbols \(x\), \(y\), \(z\), and so on, and \(v\) is an indefinite class symbol. Their analysis is made much easier, though the step is not essential, by eliminating the symbol \(v\), and that process depends on the method of the next chapter. I also put off another important problem needed to complete the theory of single propositions, because its analysis really depends on the method of reducing systems of propositions, which will be developed later in this work.
