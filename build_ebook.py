@@ -375,8 +375,19 @@ def render_block(par, kind):
                 + "\n\t\t\t\t</tbody>\n\t\t\t</table>")
     lines = [l.strip() for l in s.splitlines() if l.strip()]
     if kind == "verse":
-        inner = "\n".join(
-            f'\t\t\t\t\t\t<p><span>{esct(l)}</span></p>' for l in lines)
+        # A LINE'S INDENT IS PART OF THE POEM: the page keeps it as literal
+        # spaces in a <pre>, and this renderer used to strip it, so the
+        # Mouse's tale in Alice (and every indented stanza in the
+        # collection) printed as a flush-left column in the epub. Two spaces
+        # past the block's shallowest line is one step of 0.5em (a space in
+        # the reading face is about a quarter em), as class="vi-N".
+        raw = [l[1:] if l.startswith("\t") else l for l in par.split("\n") if l.strip()]
+        base = min(len(l) - len(l.lstrip(" ")) for l in raw)
+        def vline(l):
+            depth = min(40, (len(l) - len(l.lstrip(" ")) - base) // 2)
+            cls = f' class="vi-{depth}"' if depth else ""
+            return f'\t\t\t\t\t\t<p><span{cls}>{esct(l.strip())}</span></p>'
+        inner = "\n".join(vline(l) for l in raw)
         return ("\t\t\t<blockquote epub:type=\"z3998:verse\">\n"
                 "\t\t\t\t<div>\n" + inner + "\n\t\t\t\t</div>\n\t\t\t</blockquote>")
     # generic lined matter (outlines, tables of figures, speaker lists)
@@ -744,6 +755,11 @@ def cover_jpeg_ok(path):
     return b"<svg" not in path.read_bytes()
 
 
+# the text files se create-draft writes and rebrand edits in place; every
+# other file in text/ is this script's, rewritten on each build
+SE_FURNITURE = {"titlepage.xhtml", "imprint.xhtml", "colophon.xhtml", "uncopyright.xhtml"}
+
+
 def untitle_cover(dest):
     """A cover that carries its own title (gencover/) must not get se's
     title box and lettering printed over it a second time: keep the image,
@@ -916,15 +932,18 @@ def main():
             cwd=BUILD_ROOT)
 
     textdir = dest / "src/epub/text"
-    for old in textdir.glob("chapter-*.xhtml"):
-        old.unlink()
-    for old in list(textdir.glob("part-*.xhtml")) + list(textdir.glob("body.xhtml")):
-        old.unlink()
     # THE SE DRAFT IS REUSED BETWEEN RUNS: a step that writes a set of
     # files without owning the set ships something stale eventually (the
-    # copy_figures lesson). Drop the introduction and let it be rewritten.
-    if (textdir / INTRO_FILE).exists():
-        (textdir / INTRO_FILE).unlink()
+    # copy_figures lesson). This step owns every text file but se's own
+    # furniture, so it clears them all and writes the set afresh. It used to
+    # clear only chapter-, part-, body and the introduction, and when Alice
+    # became the Tenniel edition (2026-10-13) the Rackham edition's
+    # proem.xhtml shipped in the new epub: any section with its own name
+    # (preface, dedication, foreword-N ...) that a book drops stays behind,
+    # and dedication/preface also feed _has_dedication/_has_preface below.
+    for old in textdir.glob("*.xhtml"):
+        if old.name not in SE_FURNITURE:
+            old.unlink()
 
     sections = load_sections(book, original=args.original)
     spine, matters = build_chapter_files(book, sections, meta, textdir)
@@ -994,6 +1013,8 @@ def main():
         rules.append("figure img{\n\tbackground: #fff;\n}")
     if "z3998:verse" in used:
         rules.append('[epub|type~="z3998:verse"] p{\n\ttext-align: initial;\n\ttext-indent: 0;\n}\n\n[epub|type~="z3998:verse"] p > span{\n\tdisplay: block;\n\tpadding-left: 1em;\n\ttext-indent: -1em;\n}')
+    for d in sorted({int(n) for n in re.findall(r'class="vi-(\d+)"', used)}):
+        rules.append(f'[epub|type~="z3998:verse"] p > span.vi-{d}{{\n\tpadding-left: {1 + d * 0.5:g}em;\n}}')
     css = dest / "src/epub/css/local.css"
     base = css.read_text().split("/* modern-classics */")[0].rstrip()
     css.write_text(base + ("\n\n/* modern-classics */\n" + "\n\n".join(rules) + "\n" if rules else "\n"))

@@ -310,7 +310,8 @@ books/{book}/              # One directory per book
   on the site and in the epub, not only in print: prepare_cover cuts the
   painting for the band (band_region: gencover/bandcrop.py, per-book
   ebook_meta cover "band" -- a window position, "wide", or "box" chosen
-  by hand, which may reach past the picture's edge into tiled paper; keep
+  by hand, which may reach past the picture's edge into tiled paper or a flat
+  mount colour; keep
   heads well clear of the band) into
   build/covers/art/{book}.jpg, which build_print also composes from --
   never from site/covers/, which is the banded result. Every cover, drawn

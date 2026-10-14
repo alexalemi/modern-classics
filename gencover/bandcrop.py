@@ -13,7 +13,8 @@ picture is W : H - BAND, about 0.9, and each book chooses one of:
          reach past the picture's edge (Kamo no Chomei's head sits at the
          top of the sheet), and what lies outside is filled from "fill", a
          patch of plain paper [x0, y0, x1, y1] tiled with alternate tiles
-         mirrored so it shows no seam
+         mirrored so it shows no seam, or a flat [r, g, b], which mounts the
+         picture like a plate (Worthington's photograph, whole jet showing)
 
 ebook_meta cover "band": "wide" | 0.3 ... ; the default is "wide" where the
 painting has room, else 0.3.
@@ -122,7 +123,9 @@ def padded(src, box, art):
     """The picture placed in a canvas the size of box, the rest paper."""
     x0, y0, x1, y1 = box
     cw, ch = x1 - x0, y1 - y0
-    if art.get("fill"):
+    if art.get("fill") and len(art["fill"]) == 3:          # a flat colour: the picture mounted
+        canvas = Image.new("RGB", (cw, ch), tuple(art["fill"]))
+    elif art.get("fill"):
         patch = src.crop(tuple(art["fill"]))
         pw, ph = patch.size
         flips = [patch, patch.transpose(Image.FLIP_LEFT_RIGHT)]
