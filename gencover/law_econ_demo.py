@@ -164,44 +164,53 @@ def sabotage(seed):
 
 
 def wealth_of_nations(seed):
-    """Smith's comparison of land and water carriage between London and
-    Edinburgh: a wagon, two men and eight horses carry about four tons; a
-    ship of six or eight men carries two hundred. One square to the ton."""
-    p = Press(seed, ["red", "sky", "black"])
+    """The labourer's woollen coat: the eight trades Smith names, each one a
+    weft thread, woven together into the one humble garment."""
+    p = Press(seed, ["red", "sky", "mustard", "black"])
     p.use("red").field(-20, -20, W + 20, H + 20)
     title_block(p, "red", ["THE WEALTH", "OF NATIONS"], "ADAM SMITH",
-                ["“…a ship crewed by six or eight men, sailing between London and the port of", "Leith, frequently carries two hundred tons of goods back and forth.”"], size=170)
-    k = p.use("black")
-    q = 44                                   # one ton
-    y_base = 1930
-    # by land: four tons
-    lx = 150
-    for i in range(4):
-        r = [(lx + (i % 2) * q, y_base - (i // 2 + 1) * q), (lx + (i % 2 + 1) * q, y_base - (i // 2 + 1) * q),
-             (lx + (i % 2 + 1) * q, y_base - (i // 2) * q), (lx + (i % 2) * q, y_base - (i // 2) * q)]
-        p.use("red").fill(r, clear=True)
-        k.polyline(r, width=4)
-    # by sea: two hundred tons, ten across and twenty high
-    sx = 470
-    sea = [(sx - 30, y_base + 10), (sx + 10 * q + 30, y_base + 10), (sx + 10 * q + 30, y_base - 20 * q - 30), (sx - 30, y_base - 20 * q - 30)]
-    p.use("red").fill(sea, clear=True)
-    p.use("sky").fill(sea)
-    for i in range(200):
-        c, r_ = i % 10, i // 10
-        sq = [(sx + c * q, y_base - (r_ + 1) * q), (sx + (c + 1) * q, y_base - (r_ + 1) * q),
-              (sx + (c + 1) * q, y_base - r_ * q), (sx + c * q, y_base - r_ * q)]
-        p.use("sky").fill(sq, clear=True)
-        k.polyline(sq, width=3)
-    k.line((100, y_base + 12), (W - 100, y_base + 12), width=8)
-    # the crews: the wagon's two men and eight horses, the ship's six or eight men
-    p.use("red").text("BY LAND", lx + q, y_base - 2 * q - 150, 46, font=GROT, clear=True, track=0.06)
-    p.use("red").text("2 men", lx + q, y_base - 2 * q - 100, 38, italic=True, clear=True)
-    p.use("red").text("8 horses", lx + q, y_base - 2 * q - 56, 38, italic=True, clear=True)
-    p.use("red").text("4 tons", lx + q, y_base + 70, 40, font=GROT, clear=True)
-    p.use("red").text("BY SEA", sx + 5 * q, y_base - 20 * q - 104, 46, font=GROT, clear=True, track=0.06)
-    p.use("red").text("200 tons", sx + 5 * q, y_base + 70, 40, font=GROT, clear=True)
-    p.use("red").text("6 or 8 men", sx + 5 * q, y_base - 20 * q - 56, 38, italic=True, clear=True)
-    p.use("red").text("London to Edinburgh and back, in about six weeks", W / 2, 2055, 40, italic=True, clear=True)
+                ["“…all have to contribute their different skills just to produce", "this one humble garment.”"], size=170)
+    trades = ["THE SHEPHERD", "THE WOOL SORTER", "THE WOOL COMBER", "THE DYER",
+              "THE SPINNER", "THE WEAVER", "THE CLOTH FINISHER", "THE DRESSER"]
+    N, x0, x1, y0 = 8, 560, 1320, 960
+    pitch = (x1 - x0) / N
+    bw = pitch * 0.74
+    xs = [x0 + (i + 0.5) * pitch for i in range(N)]
+    ys = [y0 + 60 + (j + 0.5) * pitch for j in range(N)]
+    top, bot = y0 - 40, H + 40               # the warp runs off the foot
+    INKS = ("red", "sky", "mustard", "black")
+
+    def piece(rect, ink, vertical):
+        (a, b), (c, d) = rect                 # x0, y0, x1, y1
+        poly = [(a, b), (c, b), (c, d), (a, d)]
+        for pl in INKS:
+            p.use(pl).fill(poly, clear=True, rough=0.4)
+        p.use(ink).fill(poly, rough=0.4)
+        k = p.use("black")
+        if vertical:
+            k.line((a, b), (a, d), width=4, taper=False); k.line((c, b), (c, d), width=4, taper=False)
+        else:
+            k.line((a, b), (c, b), width=4, taper=False); k.line((a, d), (c, d), width=4, taper=False)
+        for t in np.arange(0.18, 1, 0.22):   # the twist of the yarn
+            if vertical:
+                yy = np.arange(b + 10, d - 10, 26)
+                for y in yy:
+                    k.line((a + bw * t - 6, y), (a + bw * t + 6, y + 14), width=1.6, taper=False)
+            else:
+                xx = np.arange(a + 10, c - 10, 26)
+                for x in xx:
+                    k.line((x, b + bw * t - 6), (x + 14, b + bw * t + 6), width=1.6, taper=False)
+
+    for x in xs:                              # the warp, plain
+        piece(((x - bw / 2, top), (x + bw / 2, bot)), "sky", True)
+    for j, y in enumerate(ys):                # the weft, one trade to each thread
+        piece(((x0 - 40, y - bw / 2), (x1 + 30, y + bw / 2)), "mustard", False)
+    for j, y in enumerate(ys):                # the warp comes back over at every other crossing
+        for i, x in enumerate(xs):
+            if (i + j) % 2:
+                piece(((x - bw / 2, y - bw / 2 - 4), (x + bw / 2, y + bw / 2 + 4)), "sky", True)
+    for j, y in enumerate(ys):
+        p.use("red").text(trades[j], x0 - 70, y + 13, 36, font=GROT, align="right", clear=True, track=0.04)
     return p
 
 
