@@ -1,6 +1,7 @@
 """Proposals for the Law and Economics books (2026-10-13). None of the six
 has a figure, so each draws the book's own central example or scheme; the
-labels and quotes are verbatim from modern_chapters.
+quotes and the few labels are verbatim from modern_chapters. Text stays
+OUT of the drawings (Alex): a handful of labels at most.
 
     python3 gencover/law_econ_demo.py      # writes the review sheet
 """
@@ -81,10 +82,6 @@ def common_law(seed):
             k.line((x - w * 0.3, yy), (x + w * 0.3, yy), width=4)
         if i < 3:
             _arrow(k, (x + w / 2 + 18, cy), (xs[i + 1] - w / 2 - 18, cy), width=5, head=18)
-    p.use("brown").text("the custom, belief, or necessity disappears, but the rule remains",
-                        W / 2, 1810, 38, italic=True, clear=True)
-    p.use("brown").text("“The life of the law has not been logic: it has been experience.”",
-                        W / 2, 1960, 40, italic=True, clear=True)
     return p
 
 
@@ -113,7 +110,6 @@ def cardozo(seed):
         al = "left" if e[0] < c[0] else "right"
         tx = 110 if al == "left" else W - 110
         p.use("cobalt").text(name, tx, ty, 56, font=GROT, align=al, clear=True, track=0.06)
-        p.use("cobalt").text(sub, tx, ty + (46 if up else 48), 34, align=al, italic=True, clear=True)
     p.use("cobalt").disc(tuple(c), 96, clear=True)
     p.use("orange").disc(tuple(c), 96, clear=True)
     k.circle(tuple(c), 96, width=8)
@@ -159,20 +155,19 @@ def sabotage(seed):
     loop = np.array([(c[0] + 330, c[1] - 60), (W - 90, c[1] - 200), (W - 90, 1060), (1140 + bw / 2 + 12, 1060)])
     k.stroke(loop[:-1], width=6, taper=False)
     _arrow(k, tuple(loop[-2]), tuple(loop[-1]), width=6)
-    p.use("orange").text("never less than five", c[0], c[1] + 340, 40, italic=True, clear=True)
     return p
 
 
 def wealth_of_nations(seed):
-    """The labourer's woollen coat: the eight trades Smith names, each one a
-    weft thread, woven together into the one humble garment."""
+    """The labourer's woollen coat: the eight trades Smith names (in the
+    epigraph), eight weft threads woven into the one humble garment."""
     p = Press(seed, ["red", "sky", "mustard", "black"])
     p.use("red").field(-20, -20, W + 20, H + 20)
     title_block(p, "red", ["THE WEALTH", "OF NATIONS"], "ADAM SMITH",
-                ["“…all have to contribute their different skills just to produce", "this one humble garment.”"], size=170)
-    trades = ["THE SHEPHERD", "THE WOOL SORTER", "THE WOOL COMBER", "THE DYER",
-              "THE SPINNER", "THE WEAVER", "THE CLOTH FINISHER", "THE DRESSER"]
-    N, x0, x1, y0 = 8, 560, 1320, 960
+                ["“The shepherd, the wool sorter, the wool comber, the dyer, the spinner, the weaver,",
+                 "the cloth finisher, the dresser, and many others all have to contribute their",
+                 "different skills just to produce this one humble garment.”"], size=170)
+    N, x0, x1, y0 = 8, 480, 1300, 1000
     pitch = (x1 - x0) / N
     bw = pitch * 0.74
     xs = [x0 + (i + 0.5) * pitch for i in range(N)]
@@ -204,13 +199,11 @@ def wealth_of_nations(seed):
     for x in xs:                              # the warp, plain
         piece(((x - bw / 2, top), (x + bw / 2, bot)), "sky", True)
     for j, y in enumerate(ys):                # the weft, one trade to each thread
-        piece(((x0 - 40, y - bw / 2), (x1 + 30, y + bw / 2)), "mustard", False)
+        piece(((-60, y - bw / 2), (x1 + 40, y + bw / 2)), "mustard", False)
     for j, y in enumerate(ys):                # the warp comes back over at every other crossing
         for i, x in enumerate(xs):
             if (i + j) % 2:
                 piece(((x - bw / 2, y - bw / 2 - 4), (x + bw / 2, y + bw / 2 + 4)), "sky", True)
-    for j, y in enumerate(ys):
-        p.use("red").text(trades[j], x0 - 70, y + 13, 36, font=GROT, align="right", clear=True, track=0.04)
     return p
 
 
@@ -239,10 +232,6 @@ def progress_and_poverty(seed):
         sw = [(lx, base + 40), (lx + 50, base + 40), (lx + 50, base + 90), (lx, base + 90)]
         p.use("teal").fill(sw, clear=True); p.use(ink).fill(sw); k.polyline(sw, width=4)
         p.use("teal").text(lab, lx + 70, base + 84, 44, font=GROT, align="left", clear=True, track=0.05)
-    lx = 152 + 7 * 140 + bw / 2
-    p.use("teal").text("the least productive", lx + 40, margin - 210, 34, align="right", italic=True, clear=True)
-    p.use("teal").text("land still in use", lx + 40, margin - 168, 34, align="right", italic=True, clear=True)
-    _arrow(k, (lx, margin - 140), (lx, margin - 12), width=4, head=18)
     return p
 
 
