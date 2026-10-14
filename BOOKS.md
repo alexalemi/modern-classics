@@ -4630,3 +4630,53 @@ into the narration. Small source slips rendered by sense: 007 portcullis
 "let fall" before the knight rides out -> "raised"; 023 "shield" for
 "sheath" (twice). COVER: Pyle, "How Arthur Drew Forth ye Sword" (1903),
 Commons "Arthur-Pyle How Arthur drew forth ye sword.JPG" — check the crop.
+
+## jevons-logic/ — W. Stanley Jevons, Elementary Lessons in Logic (1870; revised text of 1876), MODERNIZATION
+
+Not on Gutenberg or SE. SOURCE: three archive.org scans, OCR voted
+(prep.py; vote log and dropped regions in _src/, which is gitignored).
+BASE elementarylesson00jevouoft is a 1957 St Martin's reprint from the
+same plates (preface Hampstead, November 1876, the revised text);
+elementarylesson00jevo is an 1893 printing of the same text; and
+elementarylogic00jevouoft is the EARLY pre-1876 text (Jevons "Professor at
+Owens College", "Archbishop Thomson" where the revision has "Mr George
+Bentham"). So both witnesses against the base = OCR error; base + 1893
+against the early text = a real revision, base stands. ~230 hand repairs
+in fixes.py (all Greek read off the page images); tables, the mnemonic
+verse, Thomson's table of moods and Boole's combination tables
+transcribed from the images (transcriptions.py); 36 figures cut from the
+scans as ink on transparent (thompson replate). check.py asserts the
+lesson sequence and, with --modern, the translation's paragraphs.
+STRUCTURE: Preface + Lessons 1-33 + "A Vocabulary of Logical Terms" (his
+index's 106 defining entries, transcribed; page-only entries dropped), 35
+files, 97,397 -> 97,910 words, ratio 1.01. Word-form part dividers
+(Introduction, Terms, Propositions, Syllogism, Fallacies, Recent Logical
+Views, Method, Induction, Subsidiaries of Induction). THE QUESTIONS, which
+Jevons printed at the back, close their lessons ("Questions and
+Exercises"); grouped sets after the last lesson of their group (Examples
+of Propositions -> 10; Questions on Fallacies and Miscellaneous Examples
+21-101 -> 21, continuing Lesson 18's Q5 items 1-20; Questions on the
+Methods of Induction -> 29). No answers (he gave none). Every page
+reference into the book re-pointed to a lesson (map in running_notes.txt;
+p.137 is Lesson 15, p.151 Lesson 17). "Lesson N: Title" headings are
+top-level h2, the euler shape.
+VOICE: the symbolic-logic precedent. His technical vocabulary LOCKED (term,
+distributed, connotation, mood, figure, sorites, the mood names, Mill's
+methods...), no modern notation, his opinions (Hamilton, the fourth
+figure) his. The work is sentences. Examples keep their logical form
+exactly; "All X are not Y" used AS an E proposition in a worked argument
+became "No X are Y", but kept where an exercise tests the ambiguity.
+Passages Jevons translated himself (Pascal, Lesson 13; Bacon's aphorisms,
+27) are his prose and were retold; other writers' published English
+(Mill's canons, Baynes's Port Royal) verbatim. Italics the OCR lost were
+restored only where they carry the logic (Lesson 20's accent fallacy).
+SENSITIVE RULINGS (in the introduction): "Hottentots" -> the Khoikhoi
+(15 Q4); Misc. Ex. 71 "a negro is a fellow-creature" -> "a Black man is a
+fellow human being"; "Mahomet" -> Muhammad; the grammar specimen "Whites
+are civilized" (11), there only as an adjective used as a noun, replaced by
+"The brave are honored"; 33's "savage tribes ... at the present day"
+framed as a belief of the 1870s. Examples whose content IS the argument
+(Aristotle on slavery, 19) kept as his.
+COVER: generated (gencover jevons_logic), Lesson 1's iron / metals /
+elements as three nested Euler circles; epigraph "… part of a part is
+part of the whole." (Lesson 1, verbatim).

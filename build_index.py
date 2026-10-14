@@ -153,6 +153,8 @@ BLURBS = {
         'Why experience can never prove the sun will rise tomorrow, and why Hume thinks that need not worry you.',
     'inferno':
         'Led down through Hell by a dead poet, Dante meets people he knew — popes, neighbours, a former teacher — still arguing Florentine politics. From the Italian, tercet for tercet.',
+    'jevons-logic':
+        "The Victorian schoolbook that taught Britain logic for decades — syllogisms, fallacies and the scientific method in thirty-three lessons, with every exercise.",
     'journey-center-earth':
         'A coded parchment, a dead Icelandic volcano, and a plunge into a lost world underground — complete from the French, not the mangled Victorian version.',
     'kenzeiki':

@@ -1737,6 +1737,29 @@ def boethius(seed):
     return p
 
 
+def jevons_logic(seed):
+    """Lesson 1's first argument and Lesson 9's first figure: iron inside the
+    metals inside the elements, three of Euler's circles, one in another.
+    'Part of a part is part of the whole.'"""
+    p = Press(seed, ["cobalt", "mustard", "red", "black"])
+    p.use("cobalt").field(-20, -20, W + 20, H + 20)
+    title_block(p, "cobalt", ["ELEMENTARY", "LESSONS", "IN LOGIC"], "W. STANLEY JEVONS",
+                ["“… part of a part is part of the whole.”"], size=150)
+    k = p.use("black")
+    big = (W / 2 + 40, 1400, 500)            # the elements
+    mid = (W / 2 - 70, 1520, 320)            # the metals
+    small = (W / 2 - 150, 1610, 140)         # iron
+    p.use("cobalt").disc(big[:2], big[2], clear=True)
+    p.use("mustard").disc(big[:2], big[2])
+    p.use("red").disc(mid[:2], mid[2])       # multiplied over the mustard
+    p.use("mustard").disc(small[:2], small[2], clear=True)
+    p.use("red").disc(small[:2], small[2], clear=True)
+    for c in (big, mid, small):
+        k.circle(c[:2], c[2], width=9 if c is big else 7)
+    return p
+
+
+
 COVERS = {
     "godel": godel,
     "game-of-logic": game_of_logic,
@@ -1789,4 +1812,5 @@ COVERS = {
     "dialogues": dialogues,
     "ethics": ethics,
     "boethius": boethius,
+    "jevons-logic": jevons_logic,
 }
