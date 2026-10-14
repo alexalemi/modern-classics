@@ -297,15 +297,22 @@ books/{book}/              # One directory per book
   "previous"; build_ebook renders it if missing and strips se's title box
   (untitle_cover), rebrand writes a "drawn for this edition" colophon, and
   build_print redraws it at print resolution (scale 1.25). Quote on a
-  cover only verbatim from our text, and check it. 36 books so far: the
-  whole math shelf, most of the science shelf, and (2026-10-13) Howard,
-  Capablanca, Malthus, Verrill and Lucretius. A book with no figures can
-  draw its own central worked example (Malthus's ratios, Lucretius's
-  swerve); a floor plan (Beecher) was too quiet and was declined.
-  `artcover.py` composes the PRINT front for a painting cover: the series'
-  title band (coloured by SHELF, SHELF_INK) over the artwork full bleed,
-  FOCUS per book where the band would hide the subject (Millais's bubble).
-  The website keeps the full-size painting.
+  cover only verbatim from our text, and check it. 42 books so far: the
+  whole math shelf, most of the science shelf, Howard, Capablanca, Malthus,
+  Verrill, Lucretius and the Law and Economics books. A book with no
+  figures can draw its own central worked example (Malthus's ratios,
+  Lucretius's swerve). KEEP WORDS OUT OF THE DRAWINGS (Alex, 2026-10-13):
+  the title block and one epigraph line; a few labels at most.
+  EVERY COVER CARRIES ITS TITLE AND ITS EDITION (Alex, 2026-10-13). A
+  painting gets the series title band (`artcover.py`, coloured by SHELF)
+  on the site and in the epub, not only in print: prepare_cover cuts the
+  painting for the band (band_region, inside the ebook_meta crop, FOCUS
+  per book where the band would hide the subject) into
+  build/covers/art/{book}.jpg, which build_print also composes from --
+  never from site/covers/, which is the banded result. Every cover, drawn
+  or painted, carries one word top right: RETOLD or RESTORED
+  (`edition.py`; the --original companions are RESTORED), printed by
+  `Press.mark`, knocked out of the field or in black over bare paper.
 - `{book}/cover.txt` — the cover note, one paragraph closing the editor's
   introduction (see INTRODUCTIONS.md). `{book}/tags.txt` — hidden search
   terms (subjects, ideas, form, language, era, places, people, "kids" only

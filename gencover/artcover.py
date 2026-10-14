@@ -29,7 +29,7 @@ sys.path.insert(0, str(HERE)); sys.path.insert(0, str(ROOT))
 from press import Press, W, H, PAPER   # noqa: E402
 from designs import GROT              # noqa: E402
 
-BAND = 760
+from bandcrop import BAND, region as _region   # noqa: E402  (the band is 27% of the cover)
 
 
 # the band's colour is the SHELF's (Alex, 2026-10-12), the way Penguin coloured
@@ -80,7 +80,7 @@ def env_of(book):
     return dict(re.findall(r"^(\w+)=(.*)$", d.read_text(), re.M))
 
 
-def title_lines(title, maxchars=14):
+def title_lines(title, maxchars=18):
     words, lines, cur = title.upper().split(), [], ""
     for w in words:
         if cur and len(cur) + 1 + len(w) > maxchars:
@@ -93,11 +93,6 @@ def title_lines(title, maxchars=14):
     return lines
 
 
-# where the picture's subject is, top (0) to bottom (1), when the band would
-# otherwise crop it: Millais's bubble floats at the very top of Bubbles
-FOCUS = {"soap-bubbles": 0.0, "odyssey": 0.0, "aeschylus": 0.0, "american-indian-stories": 0.0,
-         "five-rings": 0.0, "rhetoric": 0.35, "leviathan": 0.0, "erdnase": 0.15, "tarbell": 0.0,
-         "hoffmann": 0.0, "hojoki": 0.0, "herodotus": 0.15}
 
 
 def fit_size(text, width, font=GROT):
@@ -111,30 +106,8 @@ def fit_size(text, width, font=GROT):
 
 
 def band_region(src, art, book):
-    """The painting for the space under the band, cut from the FULL source
-    at that space's proportions (W : H - BAND, nearly square): a wide painting keeps the cover crop's whole height and
-    gains picture at the sides; a tall one loses height, placed by FOCUS
-    (0 = keep the top of the cover crop, 1 = the bottom)."""
-    sw, sh = src.size
-    if art.get("crop"):
-        m = re.match(r"(\d+)x(\d+)\+(\d+)\+(\d+)", art["crop"])
-        cw, ch, x0, y0 = map(int, m.groups())
-    else:
-        fx, fy = art.get("focus_x", 0.5), art.get("focus_y", 0.5)
-        if sw / sh > 2 / 3:
-            cw, ch = int(sh * 2 / 3), sh
-            x0, y0 = int((sw - cw) * fx), 0
-        else:
-            cw, ch = sw, int(sw * 3 / 2)
-            x0, y0 = 0, int((sh - ch) * fy)
-    a = W / (H - BAND)
-    # INSIDE the chosen crop, never wider: ebook_meta crops were set to keep
-    # scan edges and frames out (widening brought them all back)
-    w, h = cw, cw / a
-    f = FOCUS.get(book, art.get("band_focus", 0.5))
-    top = y0 + (ch - h) * f
-    left = x0
-    return src.crop((int(left), int(top), int(left + w), int(top + h))).resize((W, H - BAND), Image.LANCZOS)
+    """The painting for the space under the band: see bandcrop.py."""
+    return _region(src, art, book)
 
 
 def compose(book, seed=1, art_path=None, original=False, label=None):
@@ -147,18 +120,18 @@ def compose(book, seed=1, art_path=None, original=False, label=None):
     title = re.split(r":", env["ORIGINAL_WORK"])[0]
     sub = env["ORIGINAL_WORK"].split(":", 1)[1].strip() if ":" in env["ORIGINAL_WORK"] else ""
     lines = title_lines(title)
-    size = {1: 190, 2: 160, 3: 128}.get(len(lines), 104)
+    size = {1: 170, 2: 132, 3: 104}.get(len(lines), 88)
     size = min(size, min(fit_size(ln, W - 200) for ln in lines))
     p = Press(seed, [ink, "black"])
     p.use(ink).field(-20, -20, W + 20, BAND)              # ragged lower edge = the cut
-    y = 150 + size * 0.85
+    y = 136 + size * 0.78
     for ln in lines:
         p.use(ink).text(ln, 100, y, size, font=GROT, align="left", clear=True, track=-0.01)
-        y += size * 0.92
-    y += 18 - size * 0.92 + size * 0.42
-    p.use(ink).text(env["AUTHOR"].upper(), 106, y, 46, font=GROT, align="left", clear=True, track=0.05)
+        y += size * 0.9
+    y += 14 - size * 0.9 + size * 0.40
+    p.use(ink).text(env["AUTHOR"].upper(), 106, y, 40, font=GROT, align="left", clear=True, track=0.05)
     if sub:
-        p.use(ink).text(sub, 106, y + 64, 36, align="left", italic=True, clear=True)
+        p.use(ink).text(sub, 106, y + 54, 32, align="left", italic=True, clear=True)
     k = p.use("black")
     k.line((-10, BAND + 4), (W + 10, BAND + 4), width=9, jitter=2.5)
     p.mark(label or edition.label(book, original))
