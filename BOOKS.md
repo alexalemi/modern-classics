@@ -4622,8 +4622,8 @@ plates), located by FFT template matching against the thumbnail; the drawn
 title page stays Gutenberg's (the scan's says 1909); 52 of 53 plates
 scored 0.57-0.97 against their thumbnails, every crop checked on a contact
 sheet. prep.py never overwrites a plate already on disk, so a rerun cannot
-put the thumbnails back. _src/ (zip + 83 MB of page scans) is NOT in
-.gitignore: add books/pyle-arthur/_src/.
+put the thumbnails back. _src/ (zip + 83 MB of page scans) is gitignored
+(added in 9baa8b3).
 SEAMS fixed by the orchestrator: duplicate glosses (Seneschal, misericord,
 palfrey, lodestone), Damas le Noir, a bracketed "black friars" note folded
 into the narration. Small source slips rendered by sense: 007 portcullis
