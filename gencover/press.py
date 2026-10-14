@@ -83,7 +83,7 @@ class Press:
         self.cx = self.plates[plate][1]
         return _Pen(self, plate)
 
-    def mark(self, label, size=28, y=84):
+    def mark(self, label, size=34, y=88):
         """The edition, top right, where Dover printed its series code
         (Alex, 2026-10-13: a cover says whether it is a retelling, a
         restored edition or the original text). Knocked out of EVERY plate,
@@ -94,7 +94,7 @@ class Press:
         cur = self.plate
         # over bare paper (Byrne's cream page) a knock-out would vanish:
         # print it in the key ink instead
-        x0, x1 = int((W - 560) * self.scale) + self.PAD, int((W - 100) * self.scale) + self.PAD
+        x0, x1 = int((W - 300) * self.scale) + self.PAD, int((W - 100) * self.scale) + self.PAD
         y0, y1 = int((y - size) * self.scale) + self.PAD, int(y * self.scale) + self.PAD
         covered = 0.0
         for name in self.order:
@@ -104,11 +104,11 @@ class Press:
         if covered < 0.5:
             key = "black" if "black" in self.order else self.order[-1]
             self.use(key).text(label.upper(), W - 100, y, size, font="Fira Sans Black",
-                               align="right", track=0.12)
+                               align="right", track=0.16)
         else:
             for name in self.order:
                 self.use(name).text(label.upper(), W - 100, y, size, font="Fira Sans Black",
-                                    align="right", clear=True, track=0.12)
+                                    align="right", clear=True, track=0.16)
         self.use(cur)
         self.rng.bit_generator.state = state
 

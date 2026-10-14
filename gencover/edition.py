@@ -1,6 +1,5 @@
-"""What a cover says about its edition (Alex, 2026-10-13). The wording is
-build_print.edition_label's, so the cover, the title page and the print
-cover agree."""
+"""What a cover says about its edition (Alex, 2026-10-13): one word, top
+right. The title page keeps build_print.edition_label's longer wording."""
 import re
 from pathlib import Path
 
@@ -12,8 +11,9 @@ def env_of(book):
 
 
 def label(book, original=False):
-    if original:
-        return "The original text"
-    if env_of(book).get("EDITION", "").lower() == "restored":
-        return "Restored edition"
-    return "Retold in contemporary English"
+    """RETOLD or RESTORED, nothing more (Alex, 2026-10-13). The companion
+    edition of the source text is one of the restored editions (RESTORED.md:
+    the COMPANION shape), so it reads RESTORED."""
+    if original or env_of(book).get("EDITION", "").lower() == "restored":
+        return "Restored"
+    return "Retold"
