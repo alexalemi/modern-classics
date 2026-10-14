@@ -318,6 +318,12 @@ books/{book}/              # One directory per book
   or painted, carries one word top right: RETOLD or RESTORED
   (`edition.py`; the --original companions are RESTORED), printed by
   `Press.mark`, knocked out of the field or in black over bare paper.
+- `inkify.py BOOK` — takes the scanned paper out of a book's finished
+  plates (black ink on transparent; thompson/replate.py's method, no
+  re-cutting). Skips colour plates and already-clean ones by itself;
+  name photographs with `--skip`. Run on any new book whose line art
+  comes off a page scan, then rebuild its epub and page (Alex,
+  2026-10-14: five books had shipped cream and grey paper).
 - `{book}/cover.txt` — the cover note, one paragraph closing the editor's
   introduction (see INTRODUCTIONS.md). `{book}/tags.txt` — hidden search
   terms (subjects, ideas, form, language, era, places, people, "kids" only
