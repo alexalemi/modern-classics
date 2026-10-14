@@ -24,26 +24,67 @@ def _arrow(pen, a, b, width=6, head=26):
     pen.fill([tuple(b), tuple(b - d * head * 1.6 + n * head * 0.7), tuple(b - d * head * 1.6 - n * head * 0.7)])
 
 
+def _clip(poly, ycut, above):
+    """Sutherland-Hodgman against the line y = ycut (above = smaller y)"""
+    inside = (lambda q: q[1] <= ycut) if above else (lambda q: q[1] >= ycut)
+    out = []
+    pts = [tuple(q) for q in poly]
+    for a, b in zip(pts, pts[1:] + pts[:1]):
+        if inside(b):
+            if not inside(a):
+                t = (ycut - a[1]) / (b[1] - a[1]); out.append((a[0] + t * (b[0] - a[0]), ycut))
+            out.append(b)
+        elif inside(a):
+            t = (ycut - a[1]) / (b[1] - a[1]); out.append((a[0] + t * (b[0] - a[0]), ycut))
+    return out
+
+
 def common_law(seed):
-    """Holmes's first page, set as the picture: logic, struck out by
-    experience."""
-    p = Press(seed, ["brown", "red", "black"])
+    """Holmes's account of how law grows: the custom, belief, or necessity
+    disappears, but the rule remains; the old form receives a new content,
+    and in time even the form changes to fit it. The same tablet, four
+    times, its content changing and at last its outline."""
+    p = Press(seed, ["brown", "red", "mustard", "black"])
     p.use("brown").field(-20, -20, W + 20, H + 20)
-    title_block(p, "brown", ["THE COMMON", "LAW"], "OLIVER WENDELL HOLMES JR.", [], size=190)
-    b = p.use("brown")
-    x = 110
-    b.text("THE LIFE OF THE LAW", x, 1050, 96, font=GROT, align="left", clear=True, track=0.01)
-    b.text("HAS NOT BEEN", x, 1160, 96, font=GROT, align="left", clear=True, track=0.01)
-    w = b.text("LOGIC:", x, 1330, 200, font=GROT, align="left", clear=True)
-    p.use("black").stroke([(x - 20, 1262), (x + w + 30, 1250)], width=22, jitter=3)
-    b.text("IT HAS BEEN", x, 1460, 96, font=GROT, align="left", clear=True, track=0.01)
-    b.text("EXPERIENCE.", x, 1650, 196, font=GROT, align="left", clear=True)
-    p.use("red").text("EXPERIENCE.", x, 1650, 196, font=GROT, align="left")
-    for i, ln in enumerate(["The felt necessities of the time, the moral and political theories",
-                            "that prevail, intuitions of public policy, whether openly stated or",
-                            "unconscious, even the prejudices that judges share with their fellow",
-                            "men, have had a good deal more to do than the syllogism…"]):
-        b.text(ln, x + 6, 1790 + i * 50, 38, align="left", italic=True, clear=True)
+    title_block(p, "brown", ["THE COMMON", "LAW"], "OLIVER WENDELL HOLMES JR.",
+                ["“The old form receives a new content, and in time even the form", "changes to fit the meaning it has received.”"], size=190)
+    k = p.use("black")
+
+    def tablet(cx, cy, w, h, round_=0.0):
+        # an arched tablet; round_ swells the shoulders and the foot
+        t = np.linspace(math.pi, 2 * math.pi, 40)
+        arch = np.column_stack([cx + w / 2 * np.cos(t), cy - h / 2 + w / 2 + (w / 2) * np.sin(t)])
+        foot_t = np.linspace(0, math.pi, 30)
+        foot = np.column_stack([cx + w / 2 * np.cos(foot_t), cy + h / 2 - round_ * w / 2 + round_ * (w / 2) * np.sin(foot_t)])
+        bulge = 1 + 0.12 * round_
+        side_r = [(cx + w / 2 * bulge, cy), (cx + w / 2, cy + h / 2 - round_ * w / 2)]
+        side_l = [(cx - w / 2, cy + h / 2 - round_ * w / 2), (cx - w / 2 * bulge, cy)]
+        return np.vstack([arch, side_r, foot, side_l])
+
+    contents = [("red", 1.0), ("red", 0.6), ("mustard", 0.65), ("mustard", 1.0)]
+    xs = [250, 550, 850, 1150]
+    w, h = 230, 520
+    cy = 1420
+    for i, (x, (ink, frac)) in enumerate(zip(xs, contents)):
+        shape = tablet(x, cy, w, h, round_=[0, 0, 0.35, 0.8][i])
+        p.use("brown").fill(shape, clear=True)
+        top = cy - h / 2
+        cut = {0: None, 1: cy + h / 2 - h * 0.4, 2: top + h * 0.12, 3: None}[i]
+        if cut is None:
+            p.use(ink).fill(shape)
+        else:           # the old content above the line, the new below it
+            p.use("red").fill(_clip(shape, cut, above=True))
+            p.use("mustard").fill(_clip(shape, cut, above=False))
+        k.polyline(shape, width=8)
+        for j in range(4):      # the lines of the rule, the same on every tablet
+            yy = top + w / 2 + 40 + j * 60
+            k.line((x - w * 0.3, yy), (x + w * 0.3, yy), width=4)
+        if i < 3:
+            _arrow(k, (x + w / 2 + 18, cy), (xs[i + 1] - w / 2 - 18, cy), width=5, head=18)
+    p.use("brown").text("the custom, belief, or necessity disappears, but the rule remains",
+                        W / 2, 1810, 38, italic=True, clear=True)
+    p.use("brown").text("“The life of the law has not been logic: it has been experience.”",
+                        W / 2, 1960, 40, italic=True, clear=True)
     return p
 
 
@@ -123,38 +164,44 @@ def sabotage(seed):
 
 
 def wealth_of_nations(seed):
-    """The pin, in its eighteen distinct operations, one worker to each."""
+    """Smith's comparison of land and water carriage between London and
+    Edinburgh: a wagon, two men and eight horses carry about four tons; a
+    ship of six or eight men carries two hundred. One square to the ton."""
     p = Press(seed, ["red", "sky", "black"])
     p.use("red").field(-20, -20, W + 20, H + 20)
     title_block(p, "red", ["THE WEALTH", "OF NATIONS"], "ADAM SMITH",
-                ["“The simple business of making a pin is, in this way, divided into about", "eighteen distinct operations…”"], size=170)
+                ["“…a ship crewed by six or eight men, sailing between London and the port of", "Leith, frequently carries two hundred tons of goods back and forth.”"], size=170)
     k = p.use("black")
-    for row in range(2):
-        y0 = 1060 + row * 520
-        p.use("red").fill([(90, y0 - 40), (W - 90, y0 - 40), (W - 90, y0 + 400), (90, y0 + 400)], clear=True)
-        k.polyline([(90, y0 - 40), (W - 90, y0 - 40), (W - 90, y0 + 400), (90, y0 + 400)], width=6)
-        for i in range(9):
-            n = row * 9 + i            # 0..17
-            x = 160 + i * 135
-            top = y0 + 20
-            L = 340 if n < 2 else 260
-            if n == 0:                 # the wire, drawn out from the coil
-                t = np.linspace(0, 6 * math.pi, 200)
-                k.stroke(np.column_stack([x + 30 * np.cos(t), top + 120 + 8 * t / math.pi + 30 * np.sin(t) * 0.35]), width=4)
-            else:
-                bot = top + L
-                k.line((x, top + (0 if n < 3 else 40)), (x, bot - (24 if n >= 3 else 0)), width=9, taper=False)
-                if n >= 3:             # pointed
-                    k.fill([(x - 5, bot - 26), (x + 5, bot - 26), (x, bot + 14)])
-                if n >= 7:             # the head
-                    hy = top + 40
-                    p.use("sky" if n >= 12 else "black").fill([(x - 26, hy - 16), (x + 26, hy - 16), (x + 18, hy + 8), (x - 18, hy + 8)])
-                if n >= 12:            # whitened
-                    p.use("sky").stroke([(x, top + 52), (x, bot - 30)], width=11, taper=False)
-                if n == 17:            # put into the paper
-                    p.use("sky").fill([(x - 60, bot - 120), (x + 50, bot - 120), (x + 50, bot - 60), (x - 60, bot - 60)])
-            p.use("black").text(str(n + 1), x, y0 + 385, 34, font=GROT)
-    p.use("red").text("ten workers  ·  more than forty-eight thousand pins in a day", W / 2, 2050, 40, italic=True, clear=True)
+    q = 44                                   # one ton
+    y_base = 1930
+    # by land: four tons
+    lx = 150
+    for i in range(4):
+        r = [(lx + (i % 2) * q, y_base - (i // 2 + 1) * q), (lx + (i % 2 + 1) * q, y_base - (i // 2 + 1) * q),
+             (lx + (i % 2 + 1) * q, y_base - (i // 2) * q), (lx + (i % 2) * q, y_base - (i // 2) * q)]
+        p.use("red").fill(r, clear=True)
+        k.polyline(r, width=4)
+    # by sea: two hundred tons, ten across and twenty high
+    sx = 470
+    sea = [(sx - 30, y_base + 10), (sx + 10 * q + 30, y_base + 10), (sx + 10 * q + 30, y_base - 20 * q - 30), (sx - 30, y_base - 20 * q - 30)]
+    p.use("red").fill(sea, clear=True)
+    p.use("sky").fill(sea)
+    for i in range(200):
+        c, r_ = i % 10, i // 10
+        sq = [(sx + c * q, y_base - (r_ + 1) * q), (sx + (c + 1) * q, y_base - (r_ + 1) * q),
+              (sx + (c + 1) * q, y_base - r_ * q), (sx + c * q, y_base - r_ * q)]
+        p.use("sky").fill(sq, clear=True)
+        k.polyline(sq, width=3)
+    k.line((100, y_base + 12), (W - 100, y_base + 12), width=8)
+    # the crews: the wagon's two men and eight horses, the ship's six or eight men
+    p.use("red").text("BY LAND", lx + q, y_base - 2 * q - 150, 46, font=GROT, clear=True, track=0.06)
+    p.use("red").text("2 men", lx + q, y_base - 2 * q - 100, 38, italic=True, clear=True)
+    p.use("red").text("8 horses", lx + q, y_base - 2 * q - 56, 38, italic=True, clear=True)
+    p.use("red").text("4 tons", lx + q, y_base + 70, 40, font=GROT, clear=True)
+    p.use("red").text("BY SEA", sx + 5 * q, y_base - 20 * q - 104, 46, font=GROT, clear=True, track=0.06)
+    p.use("red").text("200 tons", sx + 5 * q, y_base + 70, 40, font=GROT, clear=True)
+    p.use("red").text("6 or 8 men", sx + 5 * q, y_base - 20 * q - 56, 38, italic=True, clear=True)
+    p.use("red").text("London to Edinburgh and back, in about six weeks", W / 2, 2055, 40, italic=True, clear=True)
     return p
 
 
@@ -168,9 +215,9 @@ def progress_and_poverty(seed):
     k = p.use("black")
     base, margin = 1960, 1640
     hs = [880, 990, 1110, 1230, 1340, 1440, 1540, 1640]
-    bw = 128
+    bw = 116
     for i, top in enumerate(hs):
-        x = 170 + i * 150
+        x = 152 + i * 140
         r = [(x, top), (x + bw, top), (x + bw, base), (x, base)]
         p.use("teal").fill(r, clear=True)
         p.use("mustard").fill([(x, margin), (x + bw, margin), (x + bw, base), (x, base)])
@@ -179,11 +226,11 @@ def progress_and_poverty(seed):
         k.polyline(r, width=5)
     k.stroke([(110, margin), (W - 110, margin)], width=7, taper=False)
     k.line((110, base), (W - 110, base), width=9)
-    for (ink, lab, lx) in (("red", "RENT", 170), ("mustard", "WAGES AND INTEREST", 520)):
+    for (ink, lab, lx) in (("red", "RENT", 152), ("mustard", "WAGES AND INTEREST", 500)):
         sw = [(lx, base + 40), (lx + 50, base + 40), (lx + 50, base + 90), (lx, base + 90)]
         p.use("teal").fill(sw, clear=True); p.use(ink).fill(sw); k.polyline(sw, width=4)
         p.use("teal").text(lab, lx + 70, base + 84, 44, font=GROT, align="left", clear=True, track=0.05)
-    lx = 170 + 7 * 150 + bw / 2
+    lx = 152 + 7 * 140 + bw / 2
     p.use("teal").text("the least productive", lx + 40, margin - 210, 34, align="right", italic=True, clear=True)
     p.use("teal").text("land still in use", lx + 40, margin - 168, 34, align="right", italic=True, clear=True)
     _arrow(k, (lx, margin - 140), (lx, margin - 12), width=4, head=18)
@@ -213,6 +260,7 @@ def turgot(seed):
         q = c + R * np.array([math.cos(a), math.sin(a)])
         p.use("olive").disc(tuple(q), 120, clear=True)
         p.use("mustard").disc(tuple(q), 120, clear=True)
+        p.use("black").disc(tuple(q), 120, clear=True)
         k.circle(tuple(q), 120, width=7)
         p.use("olive").text(name, q[0], q[1] + (-150 if a < 0 else 200), 50, font=GROT, clear=True, track=0.06)
     # in each circle, what it does: the furrows, the house, the hammer's anvil
