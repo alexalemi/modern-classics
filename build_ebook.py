@@ -371,7 +371,8 @@ def render_block(par, kind):
                 tds = "\n".join(f"\t\t\t\t\t\t<td>{esct(assemble.table_cell(c))}</td>"
                                 for c in line.lstrip("\t").split(" | "))
                 rows.append(f"\t\t\t\t\t<tr>\n{tds}\n\t\t\t\t\t</tr>")
-        return ("\t\t\t<table>\n\t\t\t\t<tbody>\n" + "\n".join(rows)
+        cls = ' class="signs"' if assemble.is_sign_table(par) else ""
+        return (f"\t\t\t<table{cls}>\n\t\t\t\t<tbody>\n" + "\n".join(rows)
                 + "\n\t\t\t\t</tbody>\n\t\t\t</table>")
     lines = [l.strip() for l in s.splitlines() if l.strip()]
     if kind == "verse":
@@ -1002,6 +1003,11 @@ def main():
     for d in range(1, 9):
         if f'class="indent-{d}"' in used:
             rules.append(f'span.indent-{d}{{\n\tdisplay: inline-block;\n\tpadding-left: {d * 1.5}em;\n\ttext-indent: -1em;\n}}')
+    if "<table>" in used:
+        # a reader's default cell padding runs neighbouring cells together
+        rules.append('td{\n\tpadding: 0.1em 0.6em;\n\tvertical-align: baseline;\n}')
+    if 'class="signs"' in used:
+        rules.append('table.signs td{\n\ttext-align: center;\n\tpadding: 0.1em 0.3em;\n}')
     if "se:era" in used:
         rules.append('[epub|type~="se:era"]{\n\tfont-variant: all-small-caps;\n}')
     figdir = env.get("FIGURE_DIR")

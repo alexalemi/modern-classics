@@ -324,6 +324,11 @@ books/{book}/              # One directory per book
   name photographs with `--skip`. Run on any new book whose line art
   comes off a page scan, then rebuild its epub and page (Alex,
   2026-10-14: five books had shipped cream and grey paper).
+- `reader_font.py` — Emend Serif, the SD-card font for CrossPoint readers
+  offered on the About page (site/downloads/EmendSerif-crosspoint.zip):
+  Literata plus Noto Serif/Math/Symbols/Runic/Music, all OFL (brand/OFL.txt).
+  It scans every standard epub and stops on any character the font lacks;
+  rerun it when a book brings a new sign. Uses fermat's vendored converter.
 - `{book}/cover.txt` — the cover note, one paragraph closing the editor's
   introduction (see INTRODUCTIONS.md). `{book}/tags.txt` — hidden search
   terms (subjects, ideas, form, language, era, places, people, "kids" only

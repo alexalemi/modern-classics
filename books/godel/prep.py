@@ -278,6 +278,12 @@ def render(title, items, notes):
                     run = []
                 run.append(g)
             runs.append(run)
+            # THE ARROW DIAGRAM IS A TABLE (Alex, 2026-10-15): sign, arrow and
+            # Gödel number lined up by spaces drift apart in a proportional
+            # face, so each column becomes a cell
+            runs = [[" | ".join(g.split()) for g in r]
+                    if any(set(g.split()) == {"↓"} for g in r) else r
+                    for r in runs]
             for r in runs:
                 lines.append("\n".join("\t" + exponents(g) for g in r))
                 lines.append("")

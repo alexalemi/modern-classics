@@ -316,6 +316,13 @@ table.plates tr:last-child td { border-bottom: none; }
 table.plates figure, table.plates figure + figure { margin: 0.4em auto; }
 table.plates figcaption { display: none; }
 
+/* text and formula tables (" | " in the source): the browser's 1px cell
+   padding ran neighbouring cells together -- Gödel's "11 9" read as "119" */
+table.math { border-collapse: collapse; margin: 1em 0; }
+table.math td { padding: 0.1em 0.6em; vertical-align: baseline; }
+table.math td:first-child { padding-left: 0; }
+table.math.signs td { text-align: center; padding: 0.1em 0.3em; }
+
 /* page locators: a printed page and quarter, for books that cite
    themselves by them (Helmholtz: "see p. 77c") */
 span.loc { font-size: 0.65em; color: var(--soft); vertical-align: 0.3em; padding: 0 0.15em; font-style: normal; }

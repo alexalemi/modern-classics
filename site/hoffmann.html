@@ -316,6 +316,13 @@ table.plates tr:last-child td { border-bottom: none; }
 table.plates figure, table.plates figure + figure { margin: 0.4em auto; }
 table.plates figcaption { display: none; }
 
+/* text and formula tables (" | " in the source): the browser's 1px cell
+   padding ran neighbouring cells together -- Gödel's "11 9" read as "119" */
+table.math { border-collapse: collapse; margin: 1em 0; }
+table.math td { padding: 0.1em 0.6em; vertical-align: baseline; }
+table.math td:first-child { padding-left: 0; }
+table.math.signs td { text-align: center; padding: 0.1em 0.3em; }
+
 /* page locators: a printed page and quarter, for books that cite
    themselves by them (Helmholtz: "see p. 77c") */
 span.loc { font-size: 0.65em; color: var(--soft); vertical-align: 0.3em; padding: 0 0.15em; font-style: normal; }
@@ -693,7 +700,7 @@ nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
 <p>The Cards Revealed by the Looking-Glass.—This is rather a joke than a feat of magic, but it will create some fun, and may often be kept up for some time without being discovered. Take up your position on one side of the room, facing a good-sized mirror or chimney-glass. Make your audience stand or sit facing you, when they will, of course, have their backs to the glass. Offer the cards to be shuffled and cut. Take the top card and hold it high up, with its back to you and its face to the audience. As it will be reflected in the mirror opposite you, you will have no difficulty in naming it, or any other card in like manner, till your audience either find you out, or have had enough of the trick.</p>
 <p>To Guess Four Cards thought of by Different Persons.—Offer the pack to be shuffled. Place it on the table, and taking off the four top cards with the right hand, offer them to any person, and ask him to notice one of them, shuffle them, and return them to you. When they are returned, place them, face downwards, in your left hand. Take the next four cards, and offer them to another person in like manner. Proceed in like manner with a third and fourth group of four. When all the sixteen cards are returned, deal them out in four heaps, face upwards. Ask each person in which heap his card now is. That of the first person will be the uppermost of his heap, that of the second person second in his heap, and so on. It will sometimes occur that two of the cards chosen are in the same heap, but the rule will still apply. Should there be three persons only to choose, you should give them three cards each; and deal in three heaps.</p>
 <p>The Pairs Re-paired.—After performing the last trick, you may continue, “As you have not yet found me out, I will repeat the experiment, but in a slightly altered form. This time I will invite you to think of two cards each, and all present may join if they please.” After giving the pack to be shuffled, you deal out twenty cards, face upwards, but placing them in couples. Invite as many of the company as please to note any particular couple they think fit, and to remember those two cards. When they have done so, gather up the cards, picking them up here and there in any order you please, taking care, however, that none of the pairs are separated. You now deal them out again, face upwards, in rows of five, according to the following formula: <em>Mutus dedit nomen Cocis</em>, which, being interpreted, signifies, “Mutus gave a name to the Coci,” a people as yet undiscovered. On examining the sentence closely, you will observe that it consists of ten letters only, m, u, t, s, d, e, i, n, o, c, each twice repeated. This gives you the clue to the arrangement of the cards, which will be as follows:</p>
-<table class="math">
+<table class="math signs">
 <tr><td>M</td><td>U</td><td>T</td><td>U</td><td>S</td></tr>
 <tr><td>1</td><td>2</td><td>3</td><td>2</td><td>4</td></tr>
 <tr><td>D</td><td>E</td><td>D</td><td>I</td><td>T</td></tr>
@@ -705,7 +712,7 @@ nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
 </table>
 <p>You must imagine the four words printed as above upon your table. You must deal your first card upon the imaginary M in MUTUS, and the second on the imaginary M in NOMEN, the two next cards on the two imaginary U’s, the two next on the two T’s, and so on. You have now only to ask each person in which row his two cards now appear, and you will at once know which they are. Thus, if a person says his two cards are now in the second and fourth rows, you will know that they must be the two cards representing the two I’s, that being the only letter common to those two rows. If a person indicates the first and fourth rows, you will know that his cards are those representing the two S’s, and so on.</p>
 <p>The Magic Triplets.—This trick is precisely similar in principle to the last, but twenty-four (instead of twenty) cards are used, and they are dealt in triplets, instead of pairs. After the spectators have made their selection, you take up the cards as directed for the last trick, taking care to keep the respective triplets together. You then deal them in rows of six, the formula in this case being:</p>
-<table class="math">
+<table class="math signs">
 <tr><td>L</td><td>I</td><td>V</td><td>I</td><td>N</td><td>I</td></tr>
 <tr><td>L</td><td>A</td><td>N</td><td>A</td><td>T</td><td>A</td></tr>
 <tr><td>L</td><td>E</td><td>V</td><td>E</td><td>T</td><td>E</td></tr>
@@ -713,7 +720,7 @@ nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
 </table>
 <p>Another Mode of Discovering a Card Thought of.—Have the pack well shuffled. Then deal twenty-five cards, in five rows of five cards each, face upwards. Invite a person to think of a card, and to tell you in which row it is. Note in your own mind the first or left-hand card of that row. Now pick up the cards in vertical rows, <em>i.e.</em>, beginning at the last card of the last row, placing that card face upwards on the last of the next row, those two on the last of the next row, and so on. When you have picked up all the cards in this manner, deal them out again in the same way as at first. You will observe that those cards which at first formed the first cards of each row, now themselves form the first row. Ask the person in which row his card now is. When he has told you, look to the top row for the first card of the original row, when the card thought of will be found in a direct line below it. As you have just been told in which lateral row it is, you will not have the least difficulty in discovering it, and by a slight effort of memory you may even allow several persons each to think of a card, and name it. A comparison of the subjoined tables, showing the original and subsequent order of the cards, will explain the principle of the trick.</p>
 <h3 class="sub"><em>First Order.</em></h3>
-<table class="math">
+<table class="math signs">
 <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
 <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
 <tr><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td></tr>
@@ -721,7 +728,7 @@ nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
 <tr><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td></tr>
 </table>
 <h3 class="sub"><em>Second Order.</em></h3>
-<table class="math">
+<table class="math signs">
 <tr><td>1</td><td>6</td><td>11</td><td>16</td><td>21</td></tr>
 <tr><td>2</td><td>7</td><td>12</td><td>17</td><td>22</td></tr>
 <tr><td>3</td><td>8</td><td>13</td><td>18</td><td>23</td></tr>

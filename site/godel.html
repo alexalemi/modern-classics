@@ -316,6 +316,13 @@ table.plates tr:last-child td { border-bottom: none; }
 table.plates figure, table.plates figure + figure { margin: 0.4em auto; }
 table.plates figcaption { display: none; }
 
+/* text and formula tables (" | " in the source): the browser's 1px cell
+   padding ran neighbouring cells together -- Gödel's "11 9" read as "119" */
+table.math { border-collapse: collapse; margin: 1em 0; }
+table.math td { padding: 0.1em 0.6em; vertical-align: baseline; }
+table.math td:first-child { padding-left: 0; }
+table.math.signs td { text-align: center; padding: 0.1em 0.3em; }
+
 /* page locators: a printed page and quarter, for books that cite
    themselves by them (Helmholtz: "see p. 77c") */
 span.loc { font-size: 0.65em; color: var(--soft); vertical-align: 0.3em; padding: 0 0.15em; font-style: normal; }
@@ -658,9 +665,11 @@ nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
 <tr><td><em>R</em></td><td>17<sup>3</sup></td><td>Greater than</td></tr>
 </table>
 <p>Consider next a formula of the system, for example, ‘(∃<em>x</em>)(<em>x</em> = sy)’. (Literally translated, this reads: ‘There is an <em>x</em> such that <em>x</em> is the immediate successor of <em>y</em>’, and says, in effect, that every number has an immediate successor.) The numbers associated with its ten constituent elementary signs are, respectively, 8, 4, 11, 9, 8, 11, 5, 7, 13, 9. We show this schematically below:</p>
-<pre class="outline">	( ∃ <em>x</em> ) ( <em>x</em> = s <em>y</em> )
-	↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓
-	8 4 11 9 8 11 5 7 13 9</pre>
+<table class="math signs">
+<tr><td>(</td><td>∃</td><td><em>x</em></td><td>)</td><td>(</td><td><em>x</em></td><td>=</td><td>s</td><td><em>y</em></td><td>)</td></tr>
+<tr><td>↓</td><td>↓</td><td>↓</td><td>↓</td><td>↓</td><td>↓</td><td>↓</td><td>↓</td><td>↓</td><td>↓</td></tr>
+<tr><td>8</td><td>4</td><td>11</td><td>9</td><td>8</td><td>11</td><td>5</td><td>7</td><td>13</td><td>9</td></tr>
+</table>
 <p>It is desirable, however, to assign a single number to the formula rather than a set of numbers. This can be done easily. We agree to associate with the formula the unique number that is the product of the first ten primes in order of magnitude, each prime being raised to a power equal to the Gödel number of the corresponding elementary sign. The above formula is accordingly associated with the number</p>
 <pre class="outline">	2<sup>8</sup> × 3<sup>4</sup> × 5<sup>11</sup> × 7<sup>9</sup> × 11<sup>8</sup> × 13<sup>11</sup> × 17<sup>5</sup> × 19<sup>7</sup> × 23<sup>13</sup> × 29<sup>9</sup>;</pre>
 <p>let us refer to this number as <em>m</em>. In a similar fashion, a unique number, the product of as many primes as there are signs (each prime being raised to a power equal to the Gödel number of the corresponding sign), can be assigned to every finite sequence of elementary signs and, in particular, to every formula.<sup>18</sup></p>

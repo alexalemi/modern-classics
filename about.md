@@ -57,3 +57,9 @@ Each new book shows up as an entry with a link to read it here and the epub atta
     https://emend.press/opds.xml
 
 You'll get the full shelf with covers, and can download any book straight to your device — no computer required.
+
+## Symbols on e-readers
+
+A few of the books use signs that ordinary text fonts don't have: the logic in *Gödel's Proof* and Boole's *Laws of Thought* (∃, ∨, ⊃, ∼, ∴), the mathematics in *Calculus Made Easy* and Carroll's *Pillow Problems* (∫, ≠, ∠), the planet signs in Euler's letters, the runes in *Journey to the Center of the Earth*. Phones, tablets, computers and most reading apps borrow a missing sign from another font, so these show up without your doing anything. Some small e-ink readers can't, and print a box instead.
+
+For readers running CrossPoint, such as the Xteink X3, there is a font with every character in these books: [**Emend Serif**](downloads/EmendSerif-crosspoint.zip) (3 MB). Unzip it, copy the `EmendSerif` folder into the `fonts` folder on the reader's SD card (make one if it isn't there), and choose Emend Serif as the reading font in the reader's settings. It is [Literata](https://github.com/googlefonts/literata) for the text, with Google's [Noto](https://notofonts.github.io) fonts filling in the symbols, and like them it is free under the [SIL Open Font License](https://openfontlicense.org).

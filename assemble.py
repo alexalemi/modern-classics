@@ -589,7 +589,16 @@ def render_math_table(par):
             cells = [table_cell(c) for c in line.lstrip("\t").split(" | ")]
             rows.append("<tr>" + "".join(f"<td>{inline(html.escape(c))}</td>"
                                          for c in cells) + "</tr>")
-    return '<table class="math">\n' + "\n".join(rows) + "\n</table>"
+    # a table of single signs (Gödel's formula over its arrows and numbers)
+    # is a diagram: its columns centre
+    cls = "math signs" if is_sign_table(par) else "math"
+    return f'<table class="{cls}">\n' + "\n".join(rows) + "\n</table>"
+
+
+def is_sign_table(par):
+    cells = [table_cell(c).replace("*", "") for l in par.split("\n") if l.strip()
+             for c in l.lstrip("\t").split(" | ")]
+    return len(cells) > 4 and all(len(c) <= 2 for c in cells)
 
 
 def find_speakers(pars):

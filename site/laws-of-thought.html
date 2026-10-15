@@ -11,7 +11,7 @@
 	<meta property="og:title" content="An Investigation of the Laws of Thought — George Boole">
 	<meta property="og:description" content="The book that turned reasoning into algebra — x times x is x, so only 0 and 1 will do — retold plainly, every equation intact. Retold in modern English, free to read online and as an ebook.">
 	<meta property="og:url" content="https://emend.press/laws-of-thought.html">
-	<meta property="og:image" content="https://emend.press/brand/share.jpg">
+	<meta property="og:image" content="https://emend.press/covers/share/laws-of-thought.jpg">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
 	<meta name="twitter:card" content="summary_large_image">
@@ -316,6 +316,13 @@ table.plates tr:last-child td { border-bottom: none; }
 table.plates figure, table.plates figure + figure { margin: 0.4em auto; }
 table.plates figcaption { display: none; }
 
+/* text and formula tables (" | " in the source): the browser's 1px cell
+   padding ran neighbouring cells together -- Gödel's "11 9" read as "119" */
+table.math { border-collapse: collapse; margin: 1em 0; }
+table.math td { padding: 0.1em 0.6em; vertical-align: baseline; }
+table.math td:first-child { padding-left: 0; }
+table.math.signs td { text-align: center; padding: 0.1em 0.3em; }
+
 /* page locators: a printed page and quarter, for books that cite
    themselves by them (Helmholtz: "see p. 77c") */
 span.loc { font-size: 0.65em; color: var(--soft); vertical-align: 0.3em; padding: 0 0.15em; font-style: normal; }
@@ -372,13 +379,14 @@ nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
   .actions, .to-contents, .resume { display: none; }
 }
 </style>
-	<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "An Investigation of the Laws of Thought", "author": {"@type": "Person", "name": "George Boole"}, "inLanguage": "en", "url": "https://emend.press/laws-of-thought.html", "description": "The book that turned reasoning into algebra — x times x is x, so only 0 and 1 will do — retold plainly, every equation intact. Retold in modern English, free to read online and as an ebook.", "publisher": {"@type": "Organization", "name": "Emend Press", "url": "https://emend.press/", "logo": "https://emend.press/apple-touch-icon.png"}, "isAccessibleForFree": true, "isPartOf": {"@type": "BookSeries", "name": "Modern Classics", "url": "https://emend.press/"}, "datePublished": "2026", "bookEdition": "Modern English retelling", "isBasedOn": {"@type": "Book", "name": "An Investigation of the Laws of Thought", "author": {"@type": "Person", "name": "George Boole"}, "datePublished": "1854"}, "workExample": {"@type": "Book", "bookFormat": "https://schema.org/EBook", "encodingFormat": "application/epub+zip", "url": "https://emend.press/ebooks/george-boole_an-investigation-of-the-laws-of-thought.epub"}}</script>
+	<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "An Investigation of the Laws of Thought", "author": {"@type": "Person", "name": "George Boole"}, "inLanguage": "en", "url": "https://emend.press/laws-of-thought.html", "description": "The book that turned reasoning into algebra — x times x is x, so only 0 and 1 will do — retold plainly, every equation intact. Retold in modern English, free to read online and as an ebook.", "publisher": {"@type": "Organization", "name": "Emend Press", "url": "https://emend.press/", "logo": "https://emend.press/apple-touch-icon.png"}, "isAccessibleForFree": true, "isPartOf": {"@type": "BookSeries", "name": "Modern Classics", "url": "https://emend.press/"}, "image": "https://emend.press/covers/laws-of-thought.jpg", "datePublished": "2026", "bookEdition": "Modern English retelling", "isBasedOn": {"@type": "Book", "name": "An Investigation of the Laws of Thought", "author": {"@type": "Person", "name": "George Boole"}, "datePublished": "1854"}, "workExample": {"@type": "Book", "bookFormat": "https://schema.org/EBook", "encodingFormat": "application/epub+zip", "url": "https://emend.press/ebooks/george-boole_an-investigation-of-the-laws-of-thought.epub"}}</script>
 </head>
 
 <body>
 <header class="title-block">
 	<div class="title-inner">
 		<p class="series"><a href="./#retellings" title="Back to the library"><picture><source srcset="brand/emend-mark-reversed.svg" media="(prefers-color-scheme: dark)"><img src="brand/emend-mark.svg" alt="" width="141" height="263"></picture><span>Modern Classics</span></a></p>
+		<p class="cover"><img src="covers/thumb/laws-of-thought.jpg" srcset="covers/thumb/laws-of-thought-240.webp 240w, covers/thumb/laws-of-thought.jpg 300w" sizes="(max-width: 36rem) 110px, 150px" alt="" width="150" height="225"></p>
 		<div class="title-text">
 			<h1>An Investigation of the Laws of Thought</h1>
 			<p class="title-line">The Mathematical Theory of Logic</p>

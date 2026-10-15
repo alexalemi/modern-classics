@@ -316,6 +316,13 @@ table.plates tr:last-child td { border-bottom: none; }
 table.plates figure, table.plates figure + figure { margin: 0.4em auto; }
 table.plates figcaption { display: none; }
 
+/* text and formula tables (" | " in the source): the browser's 1px cell
+   padding ran neighbouring cells together -- Gödel's "11 9" read as "119" */
+table.math { border-collapse: collapse; margin: 1em 0; }
+table.math td { padding: 0.1em 0.6em; vertical-align: baseline; }
+table.math td:first-child { padding-left: 0; }
+table.math.signs td { text-align: center; padding: 0.1em 0.3em; }
+
 /* page locators: a printed page and quarter, for books that cite
    themselves by them (Helmholtz: "see p. 77c") */
 span.loc { font-size: 0.65em; color: var(--soft); vertical-align: 0.3em; padding: 0 0.15em; font-style: normal; }
@@ -1454,7 +1461,7 @@ nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
 <p><em>Judicious methods</em> of remembering things are nothing but logical ways of conceiving them and working them into rational systems, classifying them, analyzing them into parts, etc., etc. All the sciences are such methods.</p>
 <p>Of <em>ingenious methods</em> many have been invented, under the name of technical memories. By means of these systems it is often possible to retain entirely disconnected facts, lists of names, numbers, and so forth, so multitudinous as to be entirely unrememberable in a natural way. The method consists usually in a framework learned mechanically, of which the mind is supposed to remain in secure and permanent possession. Then, whatever is to be remembered is deliberately associated by some fanciful analogy or connection with some part of this framework, and this connection thenceforward helps its recall. The best known and most used of these devices is the figure-alphabet. To remember numbers, e.g., a figure-alphabet is first formed, in which each numerical digit is represented by one or more letters. The number is then translated into such letters as will best make a word, if possible a word suggestive of the object to which the number belongs. The word will then be remembered when the numbers alone might be forgotten. The recent system of Loisette is a method, much less mechanical, of weaving the thing into associations which may aid its recall.</p>
 <p>Footnote: A common figure-alphabet is this:</p>
-<table class="math">
+<table class="math signs">
 <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>0</td></tr>
 <tr><td>t</td><td>n</td><td>m</td><td>r</td><td>l</td><td>sh</td><td>g</td><td>f</td><td>b</td><td>s</td></tr>
 <tr><td>d</td><td></td><td></td><td></td><td></td><td>j</td><td>k</td><td>v</td><td>p</td><td>c</td></tr>

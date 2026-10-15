@@ -316,6 +316,13 @@ table.plates tr:last-child td { border-bottom: none; }
 table.plates figure, table.plates figure + figure { margin: 0.4em auto; }
 table.plates figcaption { display: none; }
 
+/* text and formula tables (" | " in the source): the browser's 1px cell
+   padding ran neighbouring cells together -- Gödel's "11 9" read as "119" */
+table.math { border-collapse: collapse; margin: 1em 0; }
+table.math td { padding: 0.1em 0.6em; vertical-align: baseline; }
+table.math td:first-child { padding-left: 0; }
+table.math.signs td { text-align: center; padding: 0.1em 0.3em; }
+
 /* page locators: a printed page and quarter, for books that cite
    themselves by them (Helmholtz: "see p. 77c") */
 span.loc { font-size: 0.65em; color: var(--soft); vertical-align: 0.3em; padding: 0 0.15em; font-style: normal; }
@@ -4193,7 +4200,7 @@ nav.contents > ul, nav.contents > p > a { line-height: 1.4; }
 </table>
 <p>The Germans generally speak of ♭ and ♯ as Be, Kreuz (cross). I do not remember ever having heard the ♮ named, but I find in Flügel&#x27;s Dictionary <em>Bequadratum</em> (square b) and <em>Wiederherstellungszeichen</em> (sign of restitution, for which ♮ was not used till the seventeenth century). Germans never have occasion to use the word, because, instead of &#x27;<em>d</em> flat, <em>d</em> natural, <em>d</em> sharp,&#x27; they say &#x27;des, de, dis,&#x27; while <em>b</em>♭, <em>b</em> ♮ are termed &#x27;be, ha&#x27;. On older organ pipes ♭ ♮ are constantly used for <em>b</em>♭ <em>b</em>♮, and some organ-builders still use them.—<em>Translator</em>.]</p>
 <p>In the Pythagorean system, which maintained its predominance over theory to the time of Zarlino in the sixteenth century, tuning proceeded by ascending <span class="loc" id="loc-312b">312b</span>Fifths, thus—</p>
-<table class="math">
+<table class="math signs">
 <tr><td><em>C</em></td><td><em>G</em></td><td><em>D</em></td><td><em>A</em></td><td><em>E</em></td><td><em>B</em></td><td><em>F</em>♯</td><td><em>C</em>♯</td><td><em>G</em>♯</td><td><em>D</em>♯</td><td><em>A</em>♯</td><td><em>E</em>♯</td><td><em>B</em>♯</td></tr>
 </table>
 <p>Now if we tune two Fifths upwards and an Octave downwards, we make a step having the ratio <math alttext="\frac{3}{2} \times \frac{3}{2} \times \frac{1}{2} = \frac{9}{8}" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mfrac><mn>3</mn><mn>2</mn></mfrac><mo>×</mo><mfrac><mn>3</mn><mn>2</mn></mfrac><mo>×</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>=</mo><mfrac><mn>9</mn><mn>8</mn></mfrac></mrow></math>, which is a major Second. This gives for the pitch of every second tone in the last list—</p>
