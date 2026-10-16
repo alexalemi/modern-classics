@@ -365,12 +365,14 @@ def render_block(par, kind):
     if kind == "table":
         # Only the TAB is stripped from a row: a table's first cell may be
         # empty, and stripping the whole line would lose that column.
+        # A ragged table fails vnu (Howard's Garden City accounts: a
+        # two-cell heading over three-cell rows), so rows are padded.
+        cells = [[assemble.table_cell(c) for c in line.lstrip("\t").split(" | ")]
+                 for line in par.split("\n") if line.strip()]
         rows = []
-        for line in par.split("\n"):
-            if line.strip():
-                tds = "\n".join(f"\t\t\t\t\t\t<td>{esct(assemble.table_cell(c))}</td>"
-                                for c in line.lstrip("\t").split(" | "))
-                rows.append(f"\t\t\t\t\t<tr>\n{tds}\n\t\t\t\t\t</tr>")
+        for r in pad_rows(cells):
+            tds = "\n".join(f"\t\t\t\t\t\t<td{a}>{esct(c)}</td>" for c, a in r)
+            rows.append(f"\t\t\t\t\t<tr>\n{tds}\n\t\t\t\t\t</tr>")
         cls = ' class="signs"' if assemble.is_sign_table(par) else ""
         return (f"\t\t\t<table{cls}>\n\t\t\t\t<tbody>\n" + "\n".join(rows)
                 + "\n\t\t\t\t</tbody>\n\t\t\t</table>")
@@ -861,7 +863,7 @@ def reescape_amp(dest):
 
 
 def make_endnotes(textdir, spine):
-    """ENDNOTES=yes in env (Gödel's Proof first, 2026-10-16): the notes leave
+    """Every book's notes (Alex, 2026-10-16; ENDNOTES=no opts out) leave
     the flow for an endnotes.xhtml in Standard Ebooks' layout, each mark a
     link to its note and each note a backlink home (assemble.extract_notes
     finds them). Reading apps show these as popups; CrossPoint lists a
@@ -876,7 +878,7 @@ def make_endnotes(textdir, spine):
             f.read_text(), lambda k: f'<sup><a href="endnotes.xhtml#note-{k}" id="noteref-{k}" '
                                      f'epub:type="noteref">{k}</a></sup>', len(notes) + 1)
         f.write_text(t)
-        notes += [(k, fname, blocks) for k, n, blocks in found]
+        notes += [(k, fname, blocks) for k, blocks in found]
     if not notes:
         return None
     items = []
@@ -1011,7 +1013,7 @@ def main():
         first_body = next((i for i, m in enumerate(matters) if m != "frontmatter"), len(matters))
         spine = spine[:first_body] + ["halftitlepage.xhtml"] + spine[first_body:]
 
-    if env.get("ENDNOTES") == "yes" and not args.original:
+    if env.get("ENDNOTES") != "no":
         notes_file = make_endnotes(textdir, spine)
         if notes_file:
             spine.append(notes_file)
@@ -1103,6 +1105,10 @@ def main():
         run([SE] + step, cwd=dest)
     rebrand.order_spine(dest, spine)
     run([SE, "build-toc", "."], cwd=dest)
+    # a chapter's own note hangs its mark on the heading, and build-toc
+    # keeps the empty <sup> of it in the Contents entry
+    toc = dest / "src/epub/toc.xhtml"
+    toc.write_text(re.sub(r"<sup/>|<sup>,?</sup>", "", toc.read_text()))
     run([SE, "build-images", "."], cwd=dest)
     if meta.get("cover"):
         untitle_cover(dest)        # every cover now carries its own title

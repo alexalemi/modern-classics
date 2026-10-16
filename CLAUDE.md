@@ -32,14 +32,19 @@ Each book goes through these phases:
   MODERN_YEAR=2026
   MODEL=Claude Opus 5.5                 # the model that did the translation
   MODEL_EVIDENCE=how MODEL is known
-  ENDNOTES=yes                          # optional: notes as linked endnotes
+  ENDNOTES=no                           # optional: keep notes in the flow
   ```
-  ENDNOTES=yes (Gödel's Proof first, 2026-10-16) lifts the "Footnote: ⁿ ..."
-  paragraphs out of the flow: on the page, linked notes at the end of each
-  chapter; in the epub, Standard Ebooks' endnotes.xhtml with noterefs
-  (inside <sup>, for CrossPoint) and backlinks; in print, real footnotes.
-  A note's own displays, and "Footnote, continued: ..." paragraphs, right
-  after it stay with it (assemble.extract_notes). Notes must run 1, 2, 3.
+  NOTES ARE LINKED ENDNOTES (Alex, 2026-10-16, after trying Gödel's on his
+  X3). Write them as before -- "Footnote: ..." after the paragraph that
+  cites it, its own displays and "Footnote, continued: ..." paragraphs
+  right after -- and the renderers lift them out: on the page, linked
+  notes at the end of each chapter; in the epub, Standard Ebooks'
+  endnotes.xhtml, the noteref inside <sup> (CrossPoint ignores se's
+  attribute-selector CSS); in print, real footnotes. The mark goes where
+  the book's own mark is when that is certain (assemble.extract_notes),
+  else at the end of the citing paragraph. Keep a book's marks when prep
+  can: a <sup>N</sup> in the text and "Footnote: <sup>N</sup> ..." pair
+  exactly.
   MODEL is recorded so books can be revisited as models improve. Write the
   model that translated `modern_chapters/` (subagents included). If a
   subagent model was overridden, say so in MODEL_EVIDENCE. The fields for

@@ -895,39 +895,109 @@ def build_toc(sections):
     return "\n".join(toc)
 
 
-# A NOTE AS LINKED ENDNOTES (ENDNOTES=yes in env; Gödel's Proof first,
-# 2026-10-16). The text keeps the house convention -- "Footnote: ⁿ ..."
-# after the paragraph that cites it, with any displays of its own and
-# "Footnote, continued: ..." paragraphs right after -- and the renderers
-# lift each note out of the flow and link its mark to it.
-NOTE_OPEN = re.compile(r'[ \t]*<p>Footnote: <sup>(\d+)</sup>\s*(.*?)</p>\n?', re.S)
+# NOTES ARE LINKED ENDNOTES (Alex, 2026-10-16, after the Gödel trial worked
+# on his X3). The text keeps the house convention -- "Footnote: ..." after
+# the paragraph that cites it, with any displays of its own and "Footnote,
+# continued: ..." paragraphs right after -- and the renderers lift each note
+# out of the flow and link a mark to it: on the page, notes at the end of
+# each chapter; in the epub, an endnotes.xhtml; in print, real footnotes.
+# ENDNOTES=no in env keeps a book's notes in the flow.
+NOTE_OPEN = re.compile(r'[ \t]*<p>Footnote:\s*(.*?)</p>\n?', re.S)
 NOTE_MORE = re.compile(r'[ \t]*(<p>Footnote, continued: (.*?)</p>'
                        r'|<blockquote class="lines">.*?</blockquote>'
                        r'|<pre class="outline">.*?</pre>)\n?', re.S)
+# the note's own mark, when it printed one: a superscript number or a sign.
+# A bare number is NOT a mark ("Footnote: 198 U.S. 45" is a citation).
+NOTE_MARK = re.compile(r'(<sup>(\d+)</sup>|[*⁎†‡§]+)\s*')
+
+
+def outside_tags(text, i):
+    return text.rfind("<", 0, i) <= text.rfind(">", 0, i)
 
 
 def extract_notes(t, ref, first=1):
-    """Rendered HTML -> (HTML with each mark a link, [(k, number, blocks)]).
-    `ref(k)` returns the mark's markup. The mark is the last <sup>N</sup>
-    before the note, not after a digit (2<sup>8</sup> is an exponent).
-    Notes must run 1, 2, 3 ... through the book: a reader's list renumbers."""
-    notes, k = [], first
-    while (m := NOTE_OPEN.search(t)):
-        n, end = m.group(1), m.end()
-        blocks = [f"<p>{m.group(2).strip()}</p>"]
-        while (c := NOTE_MORE.match(t, end)):
-            blocks.append(f"<p>{c.group(2).strip()}</p>" if c.group(2) is not None
-                          else c.group(1))
-            end = c.end()
-        marks = list(re.finditer(rf"(?<!\d)<sup>{n}</sup>", t[:m.start()]))
-        if not marks:
-            raise SystemExit(f"footnote {n} has no mark before it")
-        if str(k) != n:
-            raise SystemExit(f"footnote {n} is the book's note {k}: endnotes must run 1, 2, 3 ...")
-        mk = marks[-1]
-        t = t[:mk.start()] + ref(k) + t[mk.end():m.start()] + t[end:]
-        notes.append((k, n, blocks))
-        k += 1
+    """Rendered HTML -> (HTML with each mark a link, [(k, blocks)]).
+    `ref(k)` returns the mark's markup; notes are numbered k = first, first+1
+    ... whatever the book printed, since a reader's list numbers them so.
+
+    Notes come in GROUPS, the run after one paragraph. Each mark is placed
+    where the book's own mark is, when that is certain:
+      - <sup>N</sup>: the last one before the group (not after a digit:
+        2<sup>8</sup> is an exponent);
+      - a sign (⁎ † ‡ §): the citing paragraph's signs, in order, when they
+        run exactly as the group's notes do; otherwise only a sign that
+        occurs once in both. Helmholtz's scan put 89 of 461 groups out of
+        mark order ("⁎ † ⁎" under "⁎ ⁎ †"), and a mark linked to the wrong
+        note reads perfectly and is wrong, so an uncertain sign stays as
+        printed and its note's link goes
+      - at the end of the citing paragraph (or heading): where the note was
+        read before, and the only place for the notes, most of them, whose
+        mark the source never kept."""
+    notes, k, floor, prev = [], first, 0, None
+    while (m := NOTE_OPEN.search(t, floor)):
+        start, group, end = m.start(), [], m.start()
+        while (g := NOTE_OPEN.match(t, end)):
+            body, end = g.group(1).strip(), g.end()
+            mark = NOTE_MARK.match(body)
+            blocks = [f"<p>{body[mark.end():] if mark else body}</p>"]
+            while (c := NOTE_MORE.match(t, end)):
+                blocks.append(f"<p>{c.group(2).strip()}</p>" if c.group(2) is not None
+                              else c.group(1))
+                end = c.end()
+            group.append((mark, blocks))
+        # the paragraph, heading, display or table it follows. Notes split by
+        # a plate from the notes before them (Thompson's photometers) share
+        # those notes' paragraph; a plate's caption is new writing and cites
+        # nothing, so it carries a mark only when nothing else can.
+        block = r"</(?:p|h[1-6]|pre|td)>"
+        if not re.search(block, t[floor:start]) and prev is not None:
+            floor = prev
+        before = t[floor:start]
+        ends = (list(re.finditer(block, before))
+                or list(re.finditer(r"</figcaption>", before)))
+        if not ends:
+            floor = end              # nothing to hang it on: leave it in place
+            continue
+        tail = floor + ends[-1].start()
+        para = max(before.rfind("<p>", 0, ends[-1].start()),
+                   before.rfind("<pre", 0, ends[-1].start()),
+                   before.rfind("<table", 0, ends[-1].start()), 0)
+        spots = [None] * len(group)
+        for i, (mark, _) in enumerate(group):
+            if mark and mark.group(2):
+                hits = [h for h in re.finditer(rf"(?<!\d)<sup>{mark.group(2)}</sup>", before)]
+                if hits:
+                    spots[i] = (floor + hits[-1].start(), floor + hits[-1].end())
+        signed = [i for i, (mark, _) in enumerate(group) if mark and not mark.group(2)]
+        if signed:
+            hits = [h for h in re.finditer(r"[*⁎†‡§]+", before)
+                    if h.start() >= para and outside_tags(before, h.start())]
+            want = [group[i][0].group(1).strip() for i in signed]
+            if [h.group() for h in hits] == want:
+                pairs = zip(signed, hits)
+            else:
+                pairs = [(i, h) for i in signed for h in hits
+                         if h.group() == group[i][0].group(1).strip()
+                         and want.count(h.group()) == 1
+                         and [x.group() for x in hits].count(h.group()) == 1]
+            for i, h in pairs:
+                spots[i] = (floor + h.start(), floor + h.end())
+        # write back to front, so the earlier positions hold; the notes'
+        # own numbers run in group order
+        edits = []
+        for i in range(len(group)):
+            edits.append((spots[i] or (tail, tail), k + i, spots[i] is None))
+        t, delta = t[:start] + t[end:], 0
+        for (a_, b_), kk, at_tail in sorted(edits, key=lambda e: (e[0][0], e[1]), reverse=True):
+            r = ref(kk)
+            if at_tail and (any(e[2] and e[1] < kk for e in edits)
+                            or t[:a_].endswith('</a></sup>')):
+                r = "<sup>,</sup>" + r       # two notes on one paragraph: ¹,²
+            t = t[:a_] + r + t[b_:]
+            delta += len(r) - (b_ - a_)
+        notes += [(k + i, blocks) for i, (_, blocks) in enumerate(group)]
+        k += len(group)
+        prev, floor = floor, start + delta    # every edit lies before the group
     return t, notes
 
 
@@ -938,7 +1008,7 @@ def page_notes(body, first):
     if not notes:
         return body, first
     items = []
-    for k, n, blocks in notes:
+    for k, blocks in notes:
         back = f'<a href="#noteref-{k}" class="backlink" aria-label="Back to the text">↩</a>'
         last = blocks[-1]
         last = last[:-4] + f" {back}</p>" if last.endswith("</p>") else last + f"\n<p>{back}</p>"
@@ -962,9 +1032,9 @@ def build_body(sections, figdir=None, site=None, bare_label=False, endnotes=Fals
             in_part = True
         tag = "h3" if s["is_chapter"] else "h2"
         out.append(f'<section aria-labelledby="{s["id"]}">')
-        out.append(f'<{tag} id="{s["id"]}">{html.escape(s["heading"])}</{tag}>')
-        body = render_body(s["body"], figdir, site, bare_label,
-                           sub="h4" if tag == "h3" else "h3")
+        body = (f'<{tag} id="{s["id"]}">{html.escape(s["heading"])}</{tag}>\n'
+                + render_body(s["body"], figdir, site, bare_label,
+                              sub="h4" if tag == "h3" else "h3"))
         if endnotes:
             body, note = page_notes(body, note)
         out.append(body)
@@ -1122,7 +1192,7 @@ def main():
         "{{TOC}}": build_toc(sections),
         "{{BODY}}": build_body(sections, env.get("FIGURE_DIR"), root / "site",
                                bare_label=args.original,
-                               endnotes=env.get("ENDNOTES") == "yes" and not args.original),
+                               endnotes=env.get("ENDNOTES") != "no"),
     }.items():
         page = page.replace(key, val)
 
