@@ -4721,7 +4721,7 @@ from XVI, since formulas cost a translator as much as prose. (7) The
 offset bookkeeping for FIXES (line_at) was wrong once edits were made
 out of order; each edit now moves the recorded edits after it.
 PRINT CHECK: four Opus agents read every formula of XVI–XXI against the
-page images (prompt kept in the session scratchpad, not the repo): ~45
+page images (the standing prompt is books/laws-of-thought/printcheck_prompt.txt, reusable for any typeset book): ~45
 transcription errors and ~20 misprints of 1854 corrected
 (FORMULA_SUBS/FIXES, "PRINT" marks the latter), four equation numbers
 the print has and the transcription lacked restored. The translators'
@@ -4729,6 +4729,11 @@ flags matched the print check almost one for one; the print check
 found the ones a translator cannot see (a dropped prime, a lost
 equation number, "+" for "="). Editor's notes N8–N11 (Kolmogorov;
 Wilbraham/Hailperin; Pitowsky and Bell; Laplace's rule of succession).
+CARRYING PREP CORRECTIONS INTO A FINISHED RETELLING: patch_modern.py
+replaces each formula of modern_chapters/NNN by the one at the same
+position in chapters/NNN (the identity check guarantees the order), so
+prep.py can keep correcting formulas after translation. The logic half
+did this by hand.
 EQUATION NUMBERS: taken from a pdflatex compile, then CHECKED AGAINST THE
 1854 PRINT (archive.org investigationofl00boolrich, OCR + page images in
 _src/scan/): only Chapter VII was off (the transcription left its first

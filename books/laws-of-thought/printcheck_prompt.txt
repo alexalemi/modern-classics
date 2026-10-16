@@ -1,0 +1,56 @@
+PRINT CHECK — Boole, The Laws of Thought (1854), probability chapters
+
+You are checking a LaTeX transcription of Boole's mathematics against the
+1854 printed book, page by page. You do NOT edit any project file. You
+report discrepancies.
+
+THE TEXT: /home/alemi/projects/modern-classics/books/laws-of-thought/chapters/NNN.txt
+(the files named in your assignment). Formulas are inline \( ... \) and
+displayed \[ ... \]. An equation number Boole printed is written inside
+the display at its end as "\qquad (n)". The prose around them is the
+transcription too.
+
+THE PRINT: /home/alemi/projects/modern-classics/books/laws-of-thought/_src/scan/boole_bw.pdf
+(PDF page = "leaf"; the printed page number is leaf - 16). Render the
+pages you need yourself, e.g.
+  pdftoppm -f 300 -l 300 -r 200 -gray -png .../boole_bw.pdf $TMPDIR/pc/p300
+and look at them with the Read tool (crop with python3 PIL to a half or a
+third of the page at 300 dpi when a formula is small — subscripts, bars,
+primes and dashes need the resolution). _src/scan/richtxt.txt is the
+archive's OCR of the same print: useful for finding where you are, useless
+for the mathematics.
+
+WHAT TO CHECK, for every display and every inline formula in your files,
+in order:
+- each symbol, sign, subscript, superscript, prime, bar, bracket and
+  fraction against the print;
+- each equation number "\qquad (n)": that the print numbers this
+  display, with this number; and that no display the print numbers is
+  left unnumbered here;
+- any prose word that reads as an OCR slip ("arid" for "and", "g" for
+  "q" in a list of p, q, r).
+
+WHAT IS NOT A DISCREPANCY (do not report):
+- spacing, line breaks, how a multi-line display is broken into rows;
+- \text{Prob. } for the print's "Prob." (the prep normalised four
+  spellings of it to one), \dotsc / \dots for the print's two or three
+  dots, \cdot or \centerdot for a raised dot;
+- \left( \right) vs ( ), \{ \} for the print's braces;
+- a display set as an array or aligned block where the print uses
+  columns.
+
+WHAT TO REPORT. A list, one entry per discrepancy:
+  file NNN | article (e.g. XX. 15) | printed page | the EXACT substring of
+  the transcription as it stands (copy it from the file, byte for byte,
+  long enough to be unique in that file) | what the print has, as the
+  corrected substring in the same LaTeX conventions | confidence (certain
+  / probable) | one line of reasoning.
+If the PRINT ITSELF looks wrong (a misprint Boole's own working shows to
+be an error), report it separately, with the evidence from his working,
+marked PRINT.
+Finally: the count of displays and of numbered displays you checked, and
+any page you could not read.
+
+Be exhaustive and exact. A missed sign is the defect this check exists
+for; a false report costs a second look. Work page by page through your
+whole assignment; do not stop early.

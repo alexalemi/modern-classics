@@ -905,6 +905,9 @@ def build_toc(sections):
 NOTE_OPEN = re.compile(r'[ \t]*<p>Footnote:\s*(.*?)</p>\n?', re.S)
 NOTE_MORE = re.compile(r'[ \t]*(<p>Footnote, continued: (.*?)</p>'
                        r'|<blockquote class="lines">.*?</blockquote>'
+                       # the epub sets short indented lines as verse (Boole's
+                       # Timon and De Morgan's syllogism in a note)
+                       r'|<blockquote epub:type="z3998:verse">.*?</blockquote>'
                        r'|<pre class="outline">.*?</pre>)\n?', re.S)
 # the note's own mark, when it printed one: a superscript number or a sign.
 # A bare number is NOT a mark ("Footnote: 198 U.S. 45" is a citation).

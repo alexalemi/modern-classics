@@ -264,3 +264,15 @@ reference for XVI–XXII: read its first two pages)
   "Rule.—", "Ex. 2.—" stay exactly. Boole's own "1st." / "2ndly." in
   running prose -> "First," / "Second,".
 - Quotation marks: curly “ ” as in the source.
+
+RESOLVED (probability half, 2026-10-16): every formula and equation
+number of XVI–XXI read against the 1854 print by four agents
+(printcheck_prompt.txt), leaves 400–409 twice; the corrections are in
+prep.py (FORMULA_SUBS / FIXES, "PRINT" marking a misprint of 1854) and
+were carried into modern_chapters/ by patch_modern.py, which replaces
+each formula of a modern file by the formula at the same position in
+chapters/ (safe because check.py --modern guarantees the same formulas
+in the same order). PAGINATION: the transcription's Contents (and so
+manifest.json "source_page") follow a different printing from the 1854
+scan (XXII at 311 there, 399 in the scan); Boole's Note cites the
+scan's pages. Nothing reads source_page.
