@@ -1,0 +1,343 @@
+Chapter 20: Problems Relating to the Connexion of Causes and Effects
+(Part 2 of 3)
+
+10. To keep things simple, I shall take equation (6) above and draw from it the conditions that determine \(\text{Prob. }z\) in the particular case where \(n = 2\). I shall put them in a form that lets us, by following the same line of reasoning in thought, write down the corresponding conditions for the general case, where \(n\) is any whole number at all.
+
+So suppose \(n = 2\). The general method (Chap. XVII) tells us what to write. _V_ is the sum of the compartments that the final logical equation allows, and the probability of _z_ is the share of _V_ made up of the compartments in which _E_ occurs. We have
+\[\begin{gathered} \begin{aligned} V = x_1 x_2 t_1 t_2 + x_1 \bar{x}_2 t_1 \bar{t}_2 + \bar{x}_1 x_2 \bar{t}_1 t_2 + x_1 x_2 \bar{t}_1 \bar{t}_2 + x_1 \bar{x}_2 \bar{t}_1 \bar{t}_2 \\ + \bar{x}_1 x_2 \bar{t}_1 \bar{t}_2 + \bar{x}_1 \bar{x}_2 \bar{t}_1 \bar{t}_2. \end{aligned} \\ \text{Prob. }z = \frac{x_1 x_2 t_1 t_2 + x_1 \bar{x}_2 t_1 \bar{t}_2 + \bar{x}_1 x_2 \bar{t}_1 t_2 }{V}, \end{gathered}\]
+and the conditions that determine \(x_1\), \(t_1\), &c., are these. Each fraction has on top the part of _V_ that contains a letter whose probability is given, and underneath that given probability; all the fractions are equal to one another and to _V_:
+\[\begin{aligned} \frac{x_1 x_2 t_1 t_2 + x_1 \bar{x}_2 t_1 \bar{t}_2 + x_1 x_2 \bar{t}_1 \bar{t}_2 + x_1 \bar{x}_2 \bar{t}_1 \bar{t}_2}{c_1} \\ =\frac{x_1 x_2 t_1 t_2 + \bar{x}_1 x_2 \bar{t}_1 t_2 + x_1 x_2 \bar{t}_1 \bar{t}_2 + \bar{x}_1 x_2 \bar{t}_1 \bar{t}_2}{c_2} \\ =\frac{x_1 x_2 t_1 t_2 + x_1 \bar{x}_2 t_1 \bar{t}_2}{c_1 p_1} =\frac{x_1 x_2 t_1 t_2 + \bar{x}_1 x_2 \bar{t}_1 t_2}{c_2 p_2} = V. \end{aligned}\]
+
+These equations are awkward as they stand, and the next steps only change the unknowns to make them easier to handle. Divide every side of this system of equations by \(\bar{x}_1 \bar{x}_2 \bar{t}_1 \bar{t}_2\), and divide the top and bottom of \(\text{Prob. }z\) by the same quantity. In the results, put
+\[\frac{x_1 t_1}{\bar{x}_1 \bar{t}_1} = m_1, \quad \frac{x_2 t_2}{\bar{x}_2 \bar{t}_2} = m_2, \quad \frac{x_1}{\bar{x}_1}=n_1, \quad \frac{x_2}{\bar{x}_2}=n_2; \qquad (7)\]
+
+and we find
+\[\begin{gathered} \text{Prob. }z = \frac{m_1 m_2 + m_1 + m_2}{m_1 m_2 + m_1 + m_2 + n_1 n_2 + n_1 + n_2 + 1}, \\ \text{and } \frac{m_1 m_2 + m_1 + n_1 n_2 + n_1}{c_1}=\frac{m_1 m_2 + m_2 + n_1 n_2 + n_2}{c_2} \\ = \frac{m_1 m_2 + m_1}{c_1 p_1} = \frac{m_1 m_2 + m_2}{c_2 p_2} =m_1 m_2 + m_1 + m_2 + n_1 n_2 + n_1 + n_2 + 1, \qquad (8) \end{gathered}\]
+Notice that these expressions nearly factor into products. So if we put
+\[(m_1 + 1) (m_2+1)=M, \quad (n_1 + 1) (n_2 + 1) = N, \qquad (9)\]
+we have, after a little simplifying,
+\[\begin{gathered} \text{Prob. }z = \frac{M-1}{M+N-1}, \\ \frac{n_1 (n_2 + 1)}{c_1 (1-p_1)} = \frac{n_2 (n_1 + 1)}{c_2 (1-p_2)} = \frac{m_1 (m_2 + 1)}{c_1 p_1} = \frac{m_2 (m_1 + 1)}{c_2 p_2} =M+N-1; \end{gathered}\]
+or, what is the same,
+\[\begin{aligned} \frac{m_1 M}{(m_1 + 1)c_1 p_1}=\frac{m_2 M}{(m_2 + 1)c_2 p_2} =\frac{n_1 N}{(n_1 + 1)c_1(1-p_1)}\\ =\frac{n_2 N}{(n_2 + 1)c_2(1-p_2)}=M+N-1. \end{aligned}\]
+
+Now carry out, in thought, the same series of changes and simplifications on the general final logical equation (5), for any number of causes. We get the following expression for \(\text{Prob. }z\):
+\[\text{Prob. }z = \frac{M-1}{M+N-1} \qquad (10)\]
+where
+\[\begin{gathered} M=(m_1 + 1) (m_2 + 1)\dotsc (m_n + 1), \\ N = (n_1 + 1) (n_2 + 1)\dotsc (n_n + 1), \end{gathered}\]
+and where \(m_1, \dotsc, m_n, n_1,\dotsc,n_n\), are given by the system of equations,
+\[\begin{aligned} \frac{m_1 M}{(m_1 + 1) c_1 p_1} = \frac{m_2 M}{(m_2 + 1) c_2 p_2} \dotso = \frac{m_n M}{(m_n + 1) c_n p_n} &\\ =\frac{n_1 N}{(n_1 + 1)c_1 (1-p_1)}\dotso = \frac{n_n N}{(n_n+1)c_n(1-p_n)} =M+N-1.& \end{aligned} \qquad (11)\]
+
+To simplify the results still further, we bring in two new auxiliary quantities, _μ_ and _ν_. Put
+\[\frac{M+N-1}{M}=\frac{1}{\mu}, \quad \frac{M+N-1}{N}=\frac{1}{\nu};\]
+so that
+\[M=\frac{\mu}{\mu+\nu-1}, \quad N=\frac{\nu}{\mu+\nu-1}.\]
+Dividing the system (11) through by _M_ in its first half and by _N_ in its second, we find
+\[\begin{gathered} \frac{m_1}{(m_1+1)c_1 p_1}=\frac{m_2}{(m_2+1)c_2 p_2}\dotso =\frac{m_n}{(m_n+1)c_n p_n}=\frac{1}{\mu}, \\ \frac{n_1}{(n_1+1)c_1(1-p_1)}=\frac{n_2}{(n_2+1)c_2(1-p_2)}\dotso =\frac{n_n}{(n_n+1)c_n(1-p_n)}=\frac{1}{\nu}; \end{gathered}\]
+and solving each of these for its own unknown,
+\[m_1=\frac{c_1 p_1}{\mu - c_1 p_1}, \dotsc m_n=\frac{c_n p_n}{\mu - c_n p_n};\]
+and finally,
+\[\begin{gathered} m_1+1=\frac{\mu}{\mu-c_1 p_1}, \dotsc m_n+1=\frac{\mu}{\mu-c_n p_n}, \\ n_1+1=\frac{\nu}{\nu-c_1(1-p_1)}, \dotsc n_n+1=\frac{\nu}{\nu-c_n(1-p_n)}. \end{gathered}\]
+So every one of the unknowns is now written in terms of just two, _μ_ and _ν_.
+
+Put these values, together with those of \(M\) and \(N\), into (9), and we have two equations for _μ_ and _ν_:
+\[\begin{gathered} \frac{\mu^n}{(\mu-c_1 p_1)(\mu-c_2 p_2) \dotsc (\mu - c_n p_n)} =\frac{\mu}{\mu + \nu -1}, \\ \frac{\nu^n}{ \{\nu-c_1(1-p_1)\} \{\nu-c_2(1-p_2)\} \dotsc \{\nu-c_n(1-p_n)\} } =\frac{\nu}{\mu+\nu-1}, \end{gathered}\]
+which can be brought into the symmetrical form
+\[\begin{aligned} \mu+\nu-1=\frac{(\mu-c_1 p_1) \dotsc (\mu - c_n p_n)}{\mu^{n-1}} \\ = \frac{ \{\nu-c_1(1-p_1)\} \dotsc \{\nu-c_n(1-p_n)\} }{\nu^{n-1}}. \end{aligned} \qquad (12)\]
+Finally, the probability sought itself turns out to be very simple:
+\[\text{Prob. }z = \frac{M-1}{M+N-1}=1-\nu. \qquad (13)\]
+So let us put \(1-\nu = u\), the very quantity we want. Then we have
+\[\begin{gathered} \mu - u = \frac{(\mu-c_1 p_1) \dotsc (\mu-c_n p_n)}{\mu^{n-1}} \\ = \frac{ \{1-c_1(1-p_1)-u\} \dotsc \{1-c_n(1-p_n)-u\} }{(1-u)^{n-1}}. \end{gathered}\]
+
+If, for simplicity, we write
+\[c_1 p_1 = a_1, \quad c_n p_n=a_n, \quad 1-c_1(1-p_1)=b_1,\text{ \&c.},\]
+the equations above can be written as follows:
+\[\mu - u = \frac{(\mu - a_1) \dotsc (\mu - a_n)}{\mu^{n-1}}, \qquad (14)\]
+where
+\[\mu = u + \frac{(b_1 - u) \dotsc (b_n - u)}{(1-u)^{n-1}}. \qquad (15)\]
+
+Put this value of \(\mu\) into (14), and we get an equation that contains only \(u\). Solving it will determine \(\text{Prob. }z\), since by (13) \(\text{Prob. }z = u\). Such an equation may have several roots, so it remains to find the limits of \(u\), which tell us which root to take.
+
+11. The very same analysis that fixed the limits in the particular case \(n = 2\), (XIX. 12) leads us here to the following result. If the quantity \(u\) is to stand for the value of \(\text{Prob. }z\), it must have as its lower limits the quantities \(a_1, a_2, \dotsc a_n\), and as its upper limits the quantities \(b_1, b_2,\dotsc b_n\), \(a_1 + a_2 \dotsc + a_n\). In words: _u_ must be at least as large as every one of the _a_'s, and no larger than any of the _b_'s, nor than the sum of the _a_'s. From this we may infer, _à priori_, that the equation (14) will always have one root, and only one, that satisfies these conditions. For a practical check, I think it enough to show that the equation (14) has one root, and only one, between the limits \(a_1, a_2, \dotsc a_n\), and \(b_1, b_2,\dotsc b_n\). The proof has three steps: first, that _μ_ grows as _u_ grows; then that the equation's left-hand side is negative at one end of the range and positive at the other; and last, that it grows steadily in between, so that it passes through zero exactly once.
+
+First, let us look at how \(\mu\) changes in (15) as \(u\) runs from \(a_1\), which we will suppose is the greatest of its minor limits, to \(b_1\), which we will suppose is the least of its major limits. When \(u = a_1\), it is clear that \(\mu\) is positive and greater than \(a_1\). When \(u = b_1\), we have \(\mu = b_1\), which is also positive. Between the limits \(u = a_1\), \(u = b_1\) it can be shown that \(\mu\) increases with \(u\). To show it, we take the rate at which _μ_ changes with _u_, its derivative. We have
+\[\begin{aligned} \frac{d\mu}{du} =1-\frac{(b_2 - u) \dotsc (b_n - u)}{(1-u)^{n-1}} -\frac{(b_1-u)(b_3-u)\dotsc (b_n - u)}{(1-u)^{n-1}}\dotsc \\ + (n-1)\frac{(b_1 - u)(b_2-u)\dotsc (b_n-u)}{(1-u)^n}. \end{aligned} \qquad (16)\]
+Now let
+\[\frac{b_1 - u}{1-u}=x_1 \dotsc \frac{b_n - u}{1-u}=x_n.\]
+Clearly \(x_1, x_2,\dotsc x_n\), will be proper fractions (numbers between 0 and 1), and we have
+\[\begin{aligned} \frac{d\mu}{du}=1 - x_2 x_3\dotsc x_n - x_1 x_3 \dotsc x_n \dotsc - x_1 x_2 \dotsc x_{n-1} + (n-1)x_1 x_2 \dotsc x_n \\ =1 - (1-x_1)x_2 x_3 \dotsc x_n - x_1 (1-x_2)x_3 \dotsc x_n \dotsc \\ - x_1 x_2 \dotsc x_{n-1}(1-x_n) - x_1 x_2 \dotsc x_n. \end{aligned}\]
+
+Now the negative terms on the right-hand side are (if we may borrow the language of the logical developments) _constituents_ formed from the fractions \(x_1, x_2, \dotsc x_n\). They are some of the compartments, and all the compartments together add up to exactly 1, so their sum cannot be more than unity. So \(\displaystyle \frac{d\mu}{du}\) is positive, and \(\mu\) increases with \(u\) between the limits stated.
+
+Next, write (14) in the form
+\[\frac{(\mu-a_1)\dotsc(\mu-a_n)}{\mu^{n-1}} - (\mu-u) = 0, \qquad (17)\]
+and put \(u = a_1\). The left-hand side becomes
+\[(\mu-a_1)\left\{\frac{(\mu-a_2)\dotsc(\mu-a_n)}{\mu^{n-1}} -1\right\}, \qquad (18)\]
+and this expression is negative. For if we make the same assumption in (15), we find
+\[\mu - a_1 = \frac{(b_1 - u)\dotsc(b_n - u)}{(1-u)^{n-1}} = \text{ a positive quantity}.\]
+At the same time we have
+\[\frac{(\mu-a_2)\dotsc (\mu - a_n)}{\mu^{n-1}} =\frac{\mu-a_2}{\mu} \dotsc \frac{\mu-a_n}{\mu},\]
+and since the factors on the right-hand side are positive fractions, that side is less than unity. So the bracket in (18) is negative, its first factor is positive, and (18) is negative. Therefore _the assumption \(u = a_1\) makes the left-hand side of (17) negative_.
+
+Second, let \(u = b_1\). Then by (15) \(\mu=u=b_1\), the second term of (17) vanishes, and the _left-hand side of (17) becomes positive_.
+
+Last, between the limits \(u=a_1\) and \(u=b_1\) the left-hand side of (17) increases steadily. For its first term, written in the form
+\[(\mu-a_1)\frac{\mu - a_2}{\mu}\dotsc \frac{\mu-a_n}{\mu}\]
+increases, since \(\mu\) increases, and with it every factor the term contains. And the negative term \(\mu-u\) gets smaller as \(u\) increases, as we see from its value taken from (15), namely,
+\[\frac{(b_1-u)\dotsc(b_n-u)}{(1-u)^{n-1}}.\]
+So between the limits \(u = a_1\), \(u = b_1\), the left-hand side of (17) increases steadily, and in doing so passes from a negative value to a positive one. Therefore, between the limits assigned, there is one value of \(u\), and only one, that satisfies the equation.
+
+12. Putting these results together, we arrive at the following solution of the general problem.
+
+The probability of the event \(E\) will be the value of \(u\) found from the equation
+\[\mu-u=\frac{(\mu-c_1 p_1)\dotsc(\mu-c_n p_n)}{\mu^{n-1}}, \qquad (19)\]
+where
+\[\mu=u+\frac{\{1-c_1(1-p_1)-u\}\dotsc\{1-c_n(1-p_n)-u\}}{(1-u)^{n-1}},\]
+the value that lies between the two sets of quantities,
+\[c_1 p_1, c_2 p_2, \dotsc, c_n p_n \text{ and } 1-c_1(1-p_1), 1-c_2(1-p_2) \dotsc 1-c_n(1-p_n),\]
+the first set being its lower limits, the second its upper limits.
+
+We may further infer for the general case, as was proved for the particular case of \(n = 2\), that the value of \(u\) found in this way will not be more than the quantity
+\[c_1 p_1 + c_2 p_2 \dotsc + c_n p_n.\]
+That is, the probability of the event is never more than the sum of the chances that each cause occurs and brings it about.
+
+13. Some particular checks follow. In each, we give the data special values for which the answer is known in advance, and see whether the general solution gives it.
+
+First, let \(p_1 = 1, p_2=1, \dotsc p_n = 1\). This is to suppose it certain that if any one of the events \(A_1, A_2 \dotsc A_n\) happens, the event \(E\) will happen. In this case, then, the probability that \(E\) occurs will simply be the probability that the events or causes \(A_1, A_2 \dotsc A_n\) do not all fail to occur, and so its expression will be \(1-(1-c_1)(1-c_2)\dotsc(1-c_n)\): one, minus the chance that every cause is absent.
+
+Now the general solution (19) gives
+\[\mu - u = \frac{(\mu-c_1) \dotsc (\mu-c_n)}{\mu^{n-1}},\]
+where
+\[\mu = u + \frac{(1-u)^n}{(1-u)^{n-1}} = 1.\]
+So,
+\[\begin{gathered} 1 - u = (1-c_1) \dotsc (1-c_n), \\ \therefore u = 1 - (1-c_1) \dotsc (1-c_n), \end{gathered}\]
+which agrees with the answer worked out _à priori_ above.
+
+Second, let \(p_1 = 0\), \(p_2 = 0\), \(p_n = 0\): no cause ever brings the event. Then (19) gives
+\[\begin{gathered} \mu - u = \mu, \\ \therefore u = 0, \end{gathered}\]
+as it clearly ought to be.
+
+Third, let \(c_1, c_2\dotsc c_n\) be small quantities, so small that their squares and products may be neglected. Then, expanding the right-hand sides of the equation (19),
+\[\begin{aligned} \begin{aligned} \mu - u &= \frac{ \mu^n - (c_1p_1 + c_2p_2 \dotsc + c_np_n)\mu^{n-1} } { \mu^{n-1} } \\ &= \mu - (c_1p_1 + c_2p_2 \dotsc + c_np_n), \end{aligned} \\ \therefore u = c_1p_1 + c_2p_2 \dotsc + c_np_n. \end{aligned}\]
+
+Now this is what the solution would be if the causes \(A_1, A_2\dotsc A_n\) excluded one another. But the smaller the probabilities of those causes, the nearer they come to excluding one another, since the smaller is the probability that any of them happen together. So the result just obtained is surely the limiting form of the expression for the probability of \(E\).
+
+Fourth, in the particular case of \(n = 2\), we can easily eliminate \(\mu\) from the general solution. The result is
+\[\frac{(u-c_1p_1)(u-c_2p_2)}{c_1p_1 + c_2p_2 - u} = \frac{ \{1 - c_1(1-p_1) - u\} \{1 - c_2(1-p_2) - u\} }{1 - u},\]
+which agrees with the particular solution found earlier for this case, Problem I.
+
+By the system (19), the solution in general depends on solving an equation of high degree. Even so, it will not be hard in practice. The conditions about the limits let us pick at once a value of \(u\) close to the true one, and the forms of the system (19) suit the methods of successive approximation, in which a rough answer is improved step by step.
+
+14. Problem 7.—The data being the same as in the last problem, required the probability that, if any definite and given combination of the causes \(A_1, A_2,\dotsc A_n\) presents itself, the event \(E\) will be realized.
+
+Given, then: the probability of each cause, and the probability that the event follows each cause. Sought: the probability that the event follows when the causes appear in one stated combination (say, the first and third present and the rest absent, or any such pattern). The answer is a fraction. Its top is the probability that the combination and the event occur together; its bottom is the probability of the combination.
+
+The causes \(A_1, A_2,\dotsc A_n\) being represented as before by \(x_1, x_2, \dotsc x_n\) respectively, let the definite combination of them named in the problem be represented by the \(\phi(x_1, x_2 \dotsc x_n)\), so that the actual occurrence of that combination will be expressed by the logical equation,
+\[\phi(x_1, x_2, \dotsc x_n)=1.\]
+
+The data are
+\[\begin{aligned} &\text{Prob. }x_1 = c_1, \dotsc \; & &\text{Prob. }x_n = c_n, \\ &\text{Prob. }x_1 z = c_1 p_1, \; & &\text{Prob. }x_n z = c_n p_n; \end{aligned} \qquad (1)\]
+and the object of the inquiry is
+\[\frac{\text{Prob. }\phi(x_1, x_2\dotsc x_n)z} {\text{Prob. }\phi(x_1, x_2\dotsc x_n) }. \qquad (2)\]
+We shall look first for the value of the top of this fraction.
+
+As in Problem VI, we give a single letter to each compound event whose probability is known or sought. Let us put
+\[\begin{gathered} x_1 z = t_1 \dotsc x_n z = t_n, \qquad (3) \\ \phi(x_1, x_2\dotsc x_n) z = w. \qquad (4) \end{gathered}\]
+Or, if for simplicity we shorten \(\phi(x_1, x_2\dotsc x_n)\) to \(\phi\), the last equation will be
+\[\phi z = w, \qquad (5)\]
+and to these we must add the equation
+\[\bar{x}_1 \bar{x}_2 \dotsc \bar{x}_n z = 0. \qquad (6)\]
+This says that the event never happens when every cause is absent.
+
+Now any equation \(x_r z = t_r\) of the system (3) can be brought to the form
+\[x_r z \bar{t}_r + t_r(1-x_r z)=0.\]
+Treat (5) in the same way, and add all the results together, and we get the single logical equation
+\[\Sigma \{x_rz\bar{t}_r + t_r(1-x_rz)\} + \bar{x}_1\dotsc \bar{x}_nz + \phi z\bar{w} + w(1-\phi z) = 0, \qquad (7)\]
+from which we must eliminate \(z\), since its probability is not given here, and then find \(w\) as a developed logical function of \(x_1,\dotsc x_n, t_1,\dotsc t_n\).
+
+To eliminate _z_, we set \(z = 1, z = 0\) in turn in the equation above, and multiply the results together. We have
+\[\{\Sigma (x_r\bar{t}_r + \bar{x}_rt_r) + \bar{x}_1\dotsc \bar{x}_n + \phi\bar{w} + w\bar{\phi}\} \times (\Sigma t_r + w) = 0.\]
+Develop this equation with respect to \(w\), and in the result replace \(\sum t_r + 1\) by \(1\), as Prop. I. Chap. IX. allows, and we have
+\[Ew + E'(1-w) = 0;\]
+where
+\[\begin{gathered} E = \Sigma (x_r\bar{t}_r + t_r\bar{x}_r) + \bar{x}_1 \dotsc \bar{x}_n + \bar{\phi}, \\ E'= \Sigma t_r \{ \Sigma (x_r\bar{t}_r + t_r\bar{x}_r) + \bar{x}_1 \dotsc \bar{x}_n + \phi \}. \end{gathered}\]
+And so
+\[w = \frac{E'}{E'-E}. \qquad (8)\]
+
+We must now develop the right-hand side of this equation with respect to the double series of symbols \(x_1, x_2,\dotsc x_n, t_1, t_2,\dotsc t_n\); that is, find the coefficient of every compartment of these letters. The easiest way is to sort the compartments of the development into three classes, and find the coefficients proper to each class separately.
+
+First, take the compartments that have \(\bar{t}_1 \dotsc \bar{t}_n\) as a factor, those in which none of the _t_-events happens. Setting \(t_1 = 0 \dotsc t_n = 0\), we find
+\[E' = 0,\quad E = \Sigma x_r + \bar{x}_1 \dotsc \bar{x}_n + \bar{\phi}.\]
+It is clear that whatever values \((0, 1)\) are given to the \(x\)-symbols, \(E\) is not zero. So the fraction (8) is zero, and the coefficients of all compartments that contain \(\bar{t}_1 \dotsc \bar{t}_n\) are \(0\).
+
+Second, take the compartments that do not contain the factor \(\bar{t}_1 \dotsc \bar{t}_n\), and that are symmetrical with respect to the two sets of symbols \(x_1 \dotsc x_n\) and \(t_1 \dotsc t_n\). By symmetrical compartments I mean those that would stay unchanged if \(x_1\) were turned into \(t_1\), \(x_2\) into \(t_2\), &c., and _vice versâ_. They are the compartments in which each _t_ is present exactly when its _x_ is. The constituents \(x_1 \dotsc x_n\ t_1 \dotsc t_n, \bar{x}_1 \dotsc \bar{x}_n\ \bar{t}_1 \dotsc \bar{t}_n\), &c., are symmetrical in this sense. For all symmetrical constituents it is clear that
+\[\sum (x_r \bar{t}_r + t_r \bar{x}_r)\]
+is zero. For those that do not contain \(\bar{t}_1 \dotsc \bar{t}_n\), it is further clear that \(\bar{x}_1 \dotsc \bar{x}_n\) is zero too, so that
+\[\begin{gathered} E = \bar{\phi} \qquad E' = \Sigma t_r(\phi), \\ w = \frac{\sum t_r(\phi)}{ \sum t_r(\phi) - \bar{\phi} }. \end{gathered}\]
+For the compartments whose \(x\)-factor is found in \(\phi\), the right-hand side of this equation becomes 1; for those whose \(x\)-factor is found in \(\bar{\phi}\), it becomes 0. So the coefficients of the symmetrical compartments not containing \(\bar{t}_1 \dotsc \bar{t}_n\) will be 1 when the \(x\)-factor is found in \(\phi\), and 0 when the \(x\)-factor is not found in \(\phi\).
+
+Last, take the compartments that are unsymmetrical with respect to the two sets of symbols, and that do not contain \(\bar{t}_1 \dotsc \bar{t}_n\).
+
+Here it is clear that neither \(E\) nor \(E'\) can be zero, so the top of the fraction that gives \(w\) in (8) must be larger than the bottom. So that value cannot be 1, 0, or \(\frac{0}{0}\). In the logical development, then, it must be represented by \(\frac{1}{0}\), the mark of a compartment that cannot occur. That, then, is the coefficient of this class of compartments.
+
+15. So the final logical equation, which gives \(w\) as a developed logical function of \(x_1, \dotsc x_n\), \(t_1, \dotsc t_n\), will be of the form
+\[w = \sum\nolimits_1 (XT) + 0\{ \sum\nolimits_2(XT) + \bar{t}_1\dotsc \bar{t}_n \} + \frac{1}{0} \text{(sum of other constituents),} \qquad (9)\]
+where \(\sum_1 (XT)\) stands for the sum of all symmetrical compartments whose factor \(X\) is found in \(\phi\), and \(\sum_2(XT)\) for the sum of all symmetrical compartments whose factor \(X\) is not found in \(\phi\). In either case the constituent \(\bar{x}_1 \dotsc \bar{x}_n\; \bar{t}_1 \dotsc \bar{t}_n\), if it appears, is thrown out.
+
+Now we pass from logic to algebra. Notice that here, and in all similar cases, the function \(V\), from which we form the algebraic system of equations that determines the values of \(x_1, \dotsc x_n, t_1 \dotsc t_n\), does not depend on the nature of any function \(\phi\) that enters not into the _data_ but only into the _quæsitum_ of the problem. The combination we ask about changes the top of the answer, but not the equations that fix the unknowns. So in the present example we have
+\[\begin{gathered} \text{Prob. }w = \frac{\sum\nolimits_1 (XT)}{V}, \\ \text{wherein } V = \sum\nolimits_1 (X T) + \sum\nolimits_2 (X T) + \bar{t}_1 \dotsc \bar{t}_n \\ = \sum (XT) + \bar{t}_1 \dotsc \bar{t}_n. \qquad (10) \end{gathered}\]
+Here \(\sum (X T)\) stands for the sum of all symmetrical compartments of the \(x\) and \(t\) symbols, except the constituent \(\bar{x}_1 \dotsc \bar{x}_n,\; \bar{t}_1 \dotsc \bar{t}_n\). This value of \(V\) is the same as the one in effect used in solving the last problem, so we can make use of the results found there.
+
+If, then, as in that solution, we put
+\[\frac{x_1 t_1}{\bar{x}_1 \bar{t}_1} = m_1,\quad \frac{x_n t_n}{\bar{x}_n \bar{t}_n} = m_n,\quad \frac{x_1}{\bar{x}_1} = n_1, \text{ \&c.,}\]
+we shall get a result that can be written like this:
+\[\text{Prob. }w = \frac{M_1}{M + N - 1}, \qquad (11)\]
+where \(M_1\) is formed as follows. Throw out of the function \(\phi\) the constituent \(\bar{x}_1 \dotsc \bar{x}_n\), if it is there; divide the result by that same constituent \(\bar{x}_1 \dotsc \bar{x}_n\); and then change \(\frac{x_1}{\bar{x}_1}\) into \(m_1\), \(\frac{x_2}{\bar{x}_2}\) into \(m_2\), and so on. The values of \(M\) and \(N\) are the same as in the last problem. Going back to these, and to the values of \(m_1\), \(m_2\), &c. that belong with them, we find
+\[\text{Prob. }w = M_1(\mu + \nu - 1),\]
+the general values of \(m_r\), \(n_r\) being
+\[m_r = \frac{c_r p_r}{\mu - c_rp_r},\qquad n_r = \frac{c_r(1-p_r)}{\nu - c_r(1-p_r)},\]
+and \(\mu\) and \(\nu\) being given by solving the system of equations,
+\[\mu + \nu -1 = \frac{(\mu-c_1p_1)\dotsc (\mu-c_np_n)}{\mu^{n-1}} = \frac{ \{\nu-c_1(1-p_1)\} \dotsc \{\nu-c_n(1-p_n)\} }{\nu^{n-1}} .\]
+This value of Prob. \(w\) is the top of the fraction (2). It remains to find its bottom, the probability of the combination itself.
+
+For this, put
+\[\phi(x_1,x_2 \dotsc x_n)=v,\]
+or
+\[\phi = v ;\]
+which brings the form
+\[\phi \bar{v} + v \bar{\phi} = 0.\]
+
+Put the left-hand side of this equation into (7), in place of the corresponding expression \(\phi z\bar{w}+w(1-\phi z)\), and we get as the primary logical equation
+\[\sum \{x_r z \bar{t}_r + t_r(1-x_r z)\} + \bar{x}_1 \dotsc \bar{x}_n z + \phi \bar{v} + v \bar{\phi} = 0,\]
+and from this, eliminating \(z\) and reducing by Prop. II. Chap. IX.,
+\[\phi \bar{v} + v \bar{\phi} + \sum t_r \{\sum (x_r\bar{t}_r + t_r\bar{x}_r) + \bar{x}_1 \dotsc \bar{x}_n\}=0.\]
+So
+\[v = \frac{\phi + \sum t_r \{\sum(x_r\bar{t}_r + t_r\bar{x}_r) + \bar{x}_1 \dotsc \bar{x}_n\} }{2\phi-1}\]
+and developing as before,
+\[\begin{aligned} v = \sum\nolimits_1(XT)+\bar{t}_1\dotsc\bar{t}_n \sum\nolimits_1(X) + 0\{\sum\nolimits_2(XT)+\bar{t}_1\dotsc\bar{t}_n\sum\nolimits_2(X)\} \\ + \frac{1}{0}(\text{sum of other constituents}). \end{aligned} \qquad (12)\]
+
+Here \(\sum_1(X)\) stands for the sum of all the compartments found in \(\phi\), and \(\sum_2(X)\) for the sum of all the compartments not found in \(\phi\). These expressions are used in place of \(\phi\) and \(1-\phi\) only to keep the symmetry.
+
+It follows that \(\sum_1(X)+\sum_2(X)=1\), and, as before, that \(\sum_1(XT)+\sum_2(XT) = \sum(X T)\). So \(V\) will have the same value as before, and we shall have
+\[\text{Prob. }v = \frac{\sum_1(XT)+\bar{t}_1\dotsc\bar{t}_n \sum_1(X)}{V},\]
+or, transforming as in the previous case,
+\[\text{Prob. }v = \frac{M_1+N_1}{M+N-1}, \qquad (13)\]
+where \(N_1\) is formed by dividing \(\phi\) by \(\bar{x}_1\dotsc\bar{x}_n\), and in the result changing \(\frac{x_1}{\bar{x}_1}\) into \(n_1\), \(\frac{x_2}{\bar{x}_2}\) into \(n_2\), &c.
+
+Now the final solution of the problem is found by giving their values, now determined, to the two terms of the fraction
+\[\frac{\text{Prob. }\phi(x_1,\dotsc x_n)z} {\text{Prob. }\phi(x_1,\dotsc x_n)}, \mathrm{ or } \frac{\text{Prob. }w}{\text{Prob. }v}.\]
+So, by (11) and (13), the common bottom _M_ + _N_ − 1 cancels, and we have
+\[\text{Prob. sought} = \frac{M_1}{M_1 + N_1}\]
+
+A very little attention to how the functions \(M_1\) and \(N_1\) are formed will show that the process can be made much simpler. In fact we can set out the solution of the general problem as a rule, as follows:
+
+Throw out of the function \(\phi(x_1,x_2\dotsc x_n)\) the constituent \(\bar{x}_1 \dotsc \bar{x}_n\), if it is in it. In all the remaining compartments, strike out the factors \(\bar{x}_1\), \(\bar{x}_2\), &c., and in the result change every \(x_r\) into \(\frac{c_r p_r}{\mu - c_r p_r}\). Call this result \(M_1\).
+
+Again, in the function \(\phi(x_1,x_2\dotsc x_n)\), replace the constituent \(\bar{x}_1 \dotsc \bar{x}_n\), if it is there, by unity. In all the remaining compartments strike out the factors \(\bar{x}_1\), \(\bar{x}_2\), &c., and in the result change every \(x_r\) into \(\frac{c_r (1-p_r)}{\nu - c_r (1-p_r)}\). Call this result _N_₁.
+
+Then the solution required will be given by the formula
+\[\frac{M_1}{M_1 + N_1}, \qquad (14)\]
+where \(\mu\) and \(\nu\) are found by solving the system of equations
+\[\begin{gathered} \mu + \nu - 1 = \frac{(\mu - c_1 p_1)\dotsc (\mu - c_n p_n)}{\mu^{n-1}} \\ = \frac{ \{\nu - c_1 (1 - p_1)\} \dotsc \{\nu - c_n (1 - p_n)\} } {\nu^{n-1}}. \qquad (15) \end{gathered}\]
+
+We may add that the limits of \(\mu\) and \(\nu\) are the same as in the last problem. This could be inferred from the general principle of continuity. But conditions of limitation, which are probably enough, can also be established in other ways.
+
+Thus, from the proof of the general method in probabilities, Chap. XVII. Prop. IV., it appears that the quantities \(x_1, \dotsc x_n, t_1, \dotsc t_n\) in the primary system of algebraic equations must be _positive proper fractions_, numbers between 0 and 1, as probabilities are. Now
+\[\frac{x_r}{1-x_r} = n_r = \frac{c_r(1-p_r)}{\nu - c_r(1-p_r)}.\]
+So in general \(n_r\) must be a positive quantity, and therefore we must have
+\[\nu \stackrel{=}{>} c_r(1-p_r).\]
+That is, _ν_ is at least as large as each quantity _c_ times one minus _p_. In the same way, since we have
+\[\frac{x_r t_r}{(1-x_r)(1-t_r)}= m_r = \frac{c_r p_r}{\mu - c_r p_r},\]
+we must have in general
+\[\mu \stackrel{=}{>} c_r p_r.\]
+
+16. These two classes of conditions are probably enough, taken together, to settle in general which roots of the equations for \(\mu\) and \(\nu\) are to be taken. Let us take in particular the case where \(n = 2\). Here we have
+\[\begin{gathered} \mu + \nu - 1 = \frac{(\mu - c_1 p_1)(\mu - c_2\ p_2)}{\mu} = \mu - (c_1 p_1 + c_2 p_2) + \frac{c_1 p_1 c_2 p_2}{\mu}, \\ \therefore\nu = 1 - c_1 p_1 - c_2 p_2 +\frac{c_1 p_1\ c_2 p_2}{\mu} = 1 - c_1 p_1 - \frac{(\mu - c_1 p_1) c_2 p_2}{\mu}. \end{gathered}\]
+So, since \(\mu \stackrel{=}{>} c_1 p_1\), the last fraction cannot be negative, and we have in general
+\[\nu \stackrel{=}{<} 1 - c_1 p_1.\]
+In the same way we have
+\[\nu \stackrel{=}{<} 1 - c_2 p_2,\quad \mu \stackrel{=}{<} 1 - c_1(1-p_1),\quad \mu \stackrel{=}{<} 1 - c_2(1-p_2).\]
+
+Now it has already been shown that only one value of \(\mu\) satisfies all the conditions above that concern that quantity, namely
+\[\mu \stackrel{=}{>} c_r p_r,\quad \mu \stackrel{=}{<} 1 - c_r(1-p_r),\]
+so the solution in this case, at least, is determinate: there is just one answer. And I believe the same method applies, and is enough, in general. But this is a question on which more light would be welcome.
+
+To check the results above, suppose \(\phi(x_1,\dotsc x_n) = 1\): the "combination" is any combination at all, which is in effect the case of the last problem. Now the development of 1 gives all possible compartments of the symbols \(x_1,\dotsc x_n\). Following the Rule, then, we find
+\[\begin{aligned} & M_1 = \frac{\mu^n}{(\mu-c_1 p_1)\dotsc (\mu-c_n p_n)} - 1 = \frac{\mu}{\mu + \nu - 1}-1 \text{ by (15)}. \\ & N_1 = \frac{\nu^n}{ \{\nu - c_1(1-p_1)\}\dotsc \{\nu - c_n(1-p_n)\} } - 1 = \frac{\nu}{\mu+\nu-1}-1. \end{aligned}\]
+Putting these into (14), we find
+\[\text{Prob. }z = 1-\nu,\]
+which agrees with the earlier solution.
+
+Again, let \(\phi(x_1, \dotsc x_n) = x_1\), the case where we know only that the first cause is present. After development and striking out the factors \(\bar{x}_2, \dotsc \bar{x}_n\), this gives \(x_1 (x_2 + 1)\dotsc (x_n+1)\), and so we find
+\[\begin{aligned} & M_1 = \frac{c_1 p_1 \mu^{n-1}}{(\mu-c_1 p_1)\dotsc (\mu-c_n p_n)} = \frac{c_1 p_1}{\mu + \nu - 1} \text{ by (15)}. \\ & N_1 = \frac{c_1 (1-p_1)\nu^{n-1}}{ \{\nu - c_1(1-p_1)\} \dotsc \{\nu - c_n(1-p_n)\} } = \frac{c_1(1-p_1)}{\mu+\nu-1}. \end{aligned}\]
+Putting these in, we have
+\[\text{Probability that if the event $A_1$ occur, $E$ will occur} = p_1.\]
+And this result is confirmed by the data, which gave exactly this probability. Similar checks could easily be added.
+
+Let us look at the case where
+\[\phi(x_1,\dotsc x_n) = x_1 \bar{x}_2 \dotsc \bar{x}_n + x_2 \bar{x}_1 \bar{x}_3 \dotsc \bar{x}_n \dotsc + x_n \bar{x}_1 \dotsc \bar{x}_{n-1}.\]
+That is, exactly one of the causes is present. Here we find
+\[\begin{gathered} M_1 = \frac{c_1 p_1}{\mu - c_1 p_1} \dotsc + \frac{c_n p_n}{\mu - c_n p_n}, \\ N_1 = \frac{c_1 (1-p_1)}{\nu - c_1(1-p_1)} \dotsc + \frac{c_n (1-p_n)}{\nu - c_n(1-p_n)}; \end{gathered}\]
+and so we have the following result:
+\[\left.\begin{array}{l}\text{Probability that if some one}\\ \text{alone of the causes } A_1, A_2\dotsc A_n\\ \text{present itself, the event } E\\ \text{will follow.}\end{array}\right\} =\frac{\sum \displaystyle \frac{c_r p_r}{\mu - c_r p_r}}{\sum \{\displaystyle \frac{c_r p_r}{\mu - c_r p_r}\}+\sum \displaystyle \frac{c_r(1-p_r)}{\nu - c_r(1-p_r)}}\]
+
+Notice that this case is quite different from the well-known one in which the fact that the causes \(A_1,\dotsc A_n\) exclude one another is part of the data. There, it is a condition under which the very observations that fixed the probabilities of \(A_1, A_2,\) &c. were made. Here, the causes may in general occur together, and we only ask what follows on the occasions when just one of them happens to be present.
+
+Last, take the case where \(\phi(x_1,\dotsc x_n)=x_1 x_2 \dotsc x_n\), that is, where all the causes are present together. Here
+\[\begin{gathered} M_1 = \frac{c_1 p_1 \dotsc c_n p_n} {(\mu - c_1 p_1)\dotsc (\mu-c_n p_n)} =\frac{c_1 p_1 \dotsc c_n p_n}{\mu^{n-1}(\mu + \nu - 1)}, \\ N_1 = \frac{c_1(1-p_1)\dotsc c_n(1-p_n)} {\{\nu - c_1(1-p_1)\} \dotsc \{\nu-c_n(1-p_n)\}} =\frac{c_1(1-p_1)\dotsc c_n(1-p_n)}{\nu^{n-1}(\mu + \nu -1)}. \end{gathered}\]
+So we have the following result:
+\[\left.\begin{array}{l}\text{Probability that if all the}\\ \text{causes } A_1, \dotsc A_n\\ \text{conspire, the event } E \text{ will follow.}\end{array}\right\} =\frac{p_1 \dotsc p_n \nu^{n-1}} {p_1 \dotsc p_n \nu^{n-1} + (1-p_1)\dotsc (1-p_n)\mu^{n-1}}.\]
+This expression takes the value 1, as it ought to, when any one of the quantities \(p_1, \dotsc p_n\) is equal to 1. If one of the causes present always brings the event, the event is certain.
+
+17. Problem VIII.—Certain causes \(A_1, A_2,\dotsc A_n\) are so restricted that they cannot all fail, and yet can occur only in certain definite combinations, expressed by the equation
+\[\phi(A_1, A_2 \dotsc A_n)=1,\]
+and we are given the separate probabilities \(c_1,\dotsc c_n\) of these causes, and the corresponding probabilities \(p_1, \dotsc p_n\) that an event \(E\) will follow if each of them is realized. Required the probability of the event \(E\).
+
+This problem differs from the last one in several ways, but chiefly in this. The restriction expressed by the equation \(\phi(A_1, \dotsc A_n)=1\) is one of the data. It is supposed to be supplied by, or at least to agree with, the very experience from which we learned the numbers in the problem.
+
+Represent the events \(A_1,\dotsc A_n\) by \(x_1,\dotsc x_n\) respectively, and the event \(E\) by \(z\). We have
+\[\text{Prob. }x_r=c_r, \quad \text{Prob. }x_r z = c_r p_r. \qquad (1)\]
+Let us put, in general,
+\[x_r z = t_r,\]
+and then combine the system of equations this stands for with the equations
+\[\bar{x}_1 \dotsc \bar{x}_n = 0, \quad \phi(x_1, \dotsc x_n)=1, \quad \text{or } \phi=1,\]
+given in the data: the first says the causes cannot all fail, the second that they occur only in the allowed combinations. In the end we find, as the developed expression of \(z\),
+\[z= {\textstyle \sum}(XT) + 0 \bar{t}_1 \bar{t}_2 \dotsc \bar{t}_n {\textstyle \sum}(X), \qquad (2)\]
+where \(X\) stands in turn for each compartment found in \(\phi\), and \(T\) for a matching series of compartments of the symbols \(t_1,\dotsc t_n\); \(\sum(XT)\) includes only compartments that are _symmetrical_ with respect to the two sets of symbols.
+
+The method of reduction needed here is so like the one already shown in earlier problems that I shall only set out the results it leads to. We find
+\[\text{Prob. }z = \frac{M}{M+N} \qquad (3)\]
+with the relations
+\[\frac{M_1}{c_1 p_1}\dotso = \frac{M_n}{c_n p_n} =\frac{N_1}{c_1 (1-p_1)}=\frac{N_n}{c_n(1-p_n)}=M+N. \qquad (4)\]
+Here \(M\) is formed by striking out in \(\phi(x_1,\dotsc x_n)\) all the factors \(\bar{x}_1, \dotsc \bar{x}_n\), and changing in the result \(x_1\) into \(m_1\), \(x_n\) into \(m_n\), and so on; while \(N\) is formed by putting into \(M\), \(n_1\) for \(m_1\), &c. Further, \(M_1\) is the part of \(M\) that has \(m_1\) as a factor, \(N_1\) the part of \(N\) that has \(n_1\) as a factor, and so on.
+
+As an illustration, take the particular case where the causes \(A_1 \dotsc A_n\) exclude one another. Here we have
+\[\phi(x_1, \dotsc x_n) = x_1 \bar{x}_2 \dotsc \bar{x}_n \dotsc + x_n \bar{x}_1 \dotsc \bar{x}_{n-1}.\]
+So
+\[\begin{aligned} M &= m_1 + m_2 \dotsc + m_n, \\ N &= n_1 + n_2 \dotsc + n_n, \\ M_1 &= m_1, N_1 = n_1, \text{ \&c.} \end{aligned}\]
+Putting these in, we have
+\[\frac{m_1}{c_1 p_1} \dotso = \frac{m_n}{c_n p_n} = \frac{n_1}{c_1 (1-p_1)} \dotso = \frac{n_n}{c_n (1-p_n)} = M + N.\]
+Adding the tops and the bottoms of the first set of these equal fractions, we find
+\[\frac{m_1 + m_2 \dotsc + m_n} {c_1 p_1 + c_2 p_2 \dotsc + c_n p_n} = M + N,\]
+or
+\[\frac{M}{c_1 p_1 \dotsc + c_n p_n} = M + N.\]
+So, by (3),
+\[\text{Prob. }z = c_1 p_1 \dotsc + c_n p_n,\]
+a known result: when the causes exclude one another, the chance of the event is the sum of the chances that each cause occurs and brings it.
+
+There are other particular cases in which the system (4) can be solved readily. It is plain, though, that in most cases it would lead to very complicated results. Nor does it seem likely that actual experience will often present a functional relation among causes of the kind assumed in the data of the general problem, except in the particular cases discussed above.
+
+Suppose the general problem had been changed. Instead of the restriction that the causes cannot all fail, suppose the restriction were that the event \(E\) cannot occur when all the causes \(A_1 \dotsc A_n\) are absent, the other condition, expressed by the equation \(\phi(A_1,\dotsc A_n) = 1\), being kept. Then we should have found as the final logical equation
+\[z = \sum_1(XT) + 0 \sum(X),\]
+\(\sum(X)\) being, as before, equal to \(\phi(x_1,\dotsc x_n)\), but \(\sum_1(XT)\) being formed by throwing out of \(\phi\) the particular constituent \(\bar{x_1}\dotsc\bar{x_n}\), if it is there, and then multiplying each \(x\)-compartment of the result by the matching \(t\)-compartment. It is plain that in the particular case where the causes exclude one another, the value of Prob. \(z\) found from this will be the same as before.
+
+18. Problem IX.—Assuming the data of any of the previous problems, let it be required to find the probability that, if the event \(E\) presents itself, it will be found together with the particular cause \(A_r\); in other words, to find the _à posteriori_ probability of the cause \(A_r\) once the event \(E\) has been observed to occur. This is the question of reasoning backward, from an effect to its likeliest cause.
+
+In this case we must find the value of the fraction
+\[\frac{\text{Prob. }x_r z}{\text{Prob. }z}, \text{ or } \frac{c_r p_r}{\text{Prob. }z}, \text{ by the data.} \qquad (1)\]
+The top of this fraction is given in the data. In the previous problems the value of \(\text{Prob. }z\) has been found under different hypotheses about the connection, or lack of connection, among the causes. So it is clear that in all those cases the present problem can be solved definitely, simply by putting into (1) the value of that quantity found there.
+
+If the _à priori_ probabilities of the causes are equal, we have \(c_1 = c_2 \dotso = c_r\). Then, for the different causes, the value (1) will vary in direct proportion to the quantity \(p_r\). Therefore, _whatever the nature of the connection among the causes_, the _à posteriori_ probability of each cause will be proportional to the probability of the observed event \(E\) when that cause is known to exist. The particular case of this theorem in which the causes exclude one another is well known. We then have
+\[\frac{\text{Prob. }x_r z}{\text{Prob. }z}= \frac{c_r p_r}{{\textstyle \sum} c_r p_r}=\frac{p_r}{p_1 + p_2\dotsc + p_n},\]
+the values of \(c_1, \dotsc c_n\) being equal.
+
+In the particular case where the causes exclude one another, we need not bring in the functional symbol \(\phi\) to prove these and similar theorems; and to bring it in is in fact to claim for ourselves the choice of every possible and conceivable hypothesis about how the causes are connected. Even so, in whatever form it is used, the method of this work, applied to problems where the number of data is indefinitely large, must always be somewhat complex. Its orderly unfolding of a problem, first of its logical relations and second of its numerical ones, may or may not make up for the length and the occasional tediousness of its processes; I do not presume to judge. Its chief value is surely its power: the mastery it gives us over questions that would apparently baffle the unaided strength of human reason. For this reason I have not thought it needless to show in this chapter how it applies to problems, some of which may perhaps be found off-putting because of their difficulty, with no prospect of immediate use to recommend them. What further value such inquiries may have, I believe it is impossible for us at present to judge with any confidence.

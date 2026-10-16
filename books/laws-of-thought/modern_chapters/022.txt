@@ -1,0 +1,231 @@
+Chapter 19: Of Statistical Conditions
+(Part 1 of 2)
+
+1. By _statistical conditions_ I mean the conditions that must connect the numerical data of a problem if those data are to be consistent with one another, and so be data that real statistical observations could actually have produced. Finding these conditions is an important problem. In this chapter I mean to solve it, at least as far as this work requires. I treat it partly as a subject of inquiry in its own right, and partly as a necessary supplement to the theory of probability, which we have already seen at work to some extent. The two subjects are connected in the following way.
+
+Editor's note: Boole's statistical conditions are the inequalities that any set of observed frequencies must satisfy if the data are consistent. He later called them "conditions of possible experience". In 1989 the philosopher Itamar Pitowsky showed that the Bell inequalities of quantum physics are conditions of exactly this kind: measurements on certain pairs of particles break them, which is why those results cannot be explained by any account in which the particles simply carry their properties with them.
+
+2. There are countless cases, and we met one in the last chapter (Ex. 7), where the solution of a question in probability comes down in the end to solving an algebraic equation of high degree. In such cases the right root has to be picked out by certain conditions. Some of these concern the numbers given in the data; others concern the proper limits of the quantity we are looking for. Sometimes plain reasoning, without any special method, will find such conditions. For instance, suppose there is a probability \(p\) that an event \(A\) occurs, and a probability \(q\) that the same event \(A\) and another event \(B\) both occur. Then plainly we must have
+\[p \stackrel{=}{>} q.\]
+that is, _p_ is greater than or equal to _q_, since the two events cannot happen together more often than the first of them happens at all. But to find such relations _in general_, we need a method of its own, and that is what we now set out to build.
+
+When we get it from actual experience, the probability of an event is the result of a process of approximation. It is the limit of a ratio: the number of cases in which the event is seen to occur, divided by the whole number of equally possible cases that observation records. We come closer to this limit the more observations we make. Now let the symbol \(n\), placed in front of the expression for any class, stand for the number of individuals in that class: "n of x" means "the number of things in the class _x_". So, with \(x\) standing for men and \(y\) for white beings, let us set
+\[\begin{array}{lll} nx &=& \text{number of men.}\\ nxy &=& \text{number of white men.}\\ nx(1-y) &=& \text{number of men who are not white; and so on.} \end{array}\]
+In this notation \(n(1)\) will stand for the number of individuals in the whole universe of discourse, and \(\frac{n(x)}{n(1)}\), the number of men divided by the number of all individuals, will stand for the probability that an individual picked out of that universe, the one counted by \(n(1)\), is a man. If observation has not told us the _total_ values of \(n(x)\) and \(n(1)\), then the probability in question is the limit that \(\frac{n(x)}{n(1)}\) approaches as the number of individual observations grows.
+
+In the same way, suppose (as we generally shall in this chapter) that \(x\) stands for an observed event of a particular kind. Then \(n(x)\) will stand for the number of times that event occurred, \(n(1)\) for the number of observed events of all kinds (all equally probable), and \(\frac{n(x)}{n(1)}\), or its limit, for the probability that the event \(x\) occurs.
+
+So it is clear that any conclusions we can draw about the ratios of the quantities \(n(x)\), \(n(y)\), \(n(1)\), and so on, can be turned into conclusions about the probabilities of the events represented by \(x\), \(y\), and so on. For example, suppose we found a relation like this one:
+\[n(x) + n(y) < n(1),\]
+which says that the number of times the event \(x\) occurs and the number of times the event \(y\) occurs, added together, are less than the number of possible occurrences, \(n(1)\). From it we could deduce the relation
+\[\begin{gathered} \frac{n(x)}{n(1)} + \frac{n(y)}{n(1)} < 1, \\ \text{or} \text{Prob. } x + \text{Prob. } y < 1. \end{gathered}\]
+that is, the two probabilities together come to less than 1.
+
+In general, any statistical relation of this kind can be turned into a relation connecting the probabilities of the events concerned. We change \(n(1)\) into \(1\), and every other symbol \(n(x)\) into Prob. \(x\).
+
+3. Our plan, then, has two stages. First, we shall work out a method for finding the numerical relations of classes or events, and above all their major and minor limits (the largest and smallest values possible). Second, we shall apply the method to fixing the limits of the solutions of questions in probability.
+
+It is clear that the symbol \(n\) is distributive in the way it works: it can be applied term by term. So we have
+\[\begin{gathered} n\{xy + (1-x)(1-y)\} = nxy + n(1-x)(1-y) \\ nx(1-y) = nx - nxy, \end{gathered}\]
+and so on. In words, the second line says that the number of men who are not white is the number of men minus the number of white men. The number of things in any class that can be split into separate groups or portions equals the sum of the numbers of things in those separate portions. It is clear, too, that any expression built from the logical symbols \(x\), \(y\), and so on may be developed or expanded in any way the laws of the symbols allow, and the symbol \(n\) then applied to each term of the result, without changing the value of the result, provided that any constant multiplier that turns up is placed outside the symbol \(n\). The expression \(n(1)\), if it appears, will of course stand for the number of individuals in the universe. Thus,
+\[\begin{gathered} n(1-x)(1-y) = n(1-x-y+xy) \\ = n(1) - n(x) - n(y) + n(xy). \\ \text{Again,} n\{xy + (1-x)(1-y)\} = n(1-x-y+2xy) \\ = n(1) - nx - ny + 2nxy). \end{gathered}\]
+The first line says that the number of things that are neither _x_ nor _y_ is the whole universe, minus the _x_'s, minus the _y_'s, plus the things that are both (which were subtracted twice). In the last line the term \(2nxy\) means _twice_ the number of individuals in the class \(xy\).
+
+4. We now turn to finding the numerical limits of classes whose logical expression is given. In this inquiry two principles are basic, and I shall cite them later as Principle I and Principle II.
+
+First, if every member of a given class has a certain property \(x\), then the total number of individuals in the class \(x\) is an upper limit of the number of individuals in the given class. The given class cannot have more members than _x_ has.
+
+Second, a minor limit of the number of individuals in any class \(y\) is found by subtracting a major numerical limit of the contrary class, \(1-y\), from the number of individuals in the universe. If we know that at most so many things are not _y_, then at least the rest are _y_.
+
+To illustrate these principles, let us apply them to the following problem.
+
+Problem.—Given, \(n(1)\), \(n(x)\), and \(n(y)\), required the superior and inferior limits of \(nxy\).
+
+That is: given the number of things in the universe, in _x_, and in _y_, find the upper and lower limits of the number of things that are both _x_ and _y_. Our data are the number of individuals in the universe of discourse, the number in the class \(x\), and the number in the class \(y\). We are to find the limits of the number in the class made up of the individuals that belong at once to the class \(x\) and to the class \(y\).
+
+By Principle I, this number cannot be more than the number in the class \(x\), and it cannot be more than the number in the class \(y\). So its major limit will be the smaller of the two values \(n(x)\) and \(n(y)\).
+
+By Principle II, a minor limit of the class \(xy\) will be given by the expression
+\[n(1) - \text{ major limit of }\{x(1-y) + y(1-x) + (1-x)(1-y)\}, \qquad (1)\]
+that is, the whole universe minus the largest possible number of things that are not both _x_ and _y_. This is because \(x(1-y) + y(1-x) + (1-x)(1-y)\) is the complement of the class \(xy\): what it lacks to make up the universe.
+
+Now \(x(1-y) + (1-x)(1-y) = 1-y\): the things that are _x_ but not _y_, together with the things that are neither, are just the things that are not _y_. So for (1) we have
+\[\begin{aligned} n(1) - \text{ major limit of }\{1-y + y(1-x)\} \\ = n(1) - n(1-y) - \text{ major limit of }y(1-x). \qquad (2) \end{aligned}\]
+The major limit of \(y(1-x)\) is the smaller of the two values \(n(y)\) and \(n(1-x)\). First, let \(n(y)\) be the smaller. Then (2) becomes
+\[\begin{aligned} n(1) - n(1-y) - n(y) \\ = n(1) - n(1) + n(y) -n(y) = 0. \end{aligned}\]
+
+Second, let \(n(1-x)\) be less than \(n(y)\). Then
+\[\text{major limit of }ny(1-x) = n(1-x);\]
+and so (2) becomes
+\[\begin{gathered} n(1) - n(1-y) - n(1-x) \\ = n(1) - n(1) + n(y) - n(1) + n(x) \\ = nx + ny - n(1). \end{gathered}\]
+So the minor limit of \(nxy\) is either \(0\) or \(n(x) + n(y) - n(1)\), depending on whether \(n(y)\) is less or greater than \(n(1-x)\), or, to put the same condition another way, on whether \(n(x)\) is greater or less than \(n(1-y)\).
+
+Now \(0\) is necessarily a minor limit of the number in _any_ class, since no class has fewer than no members. So it is enough to keep the second of the two expressions above as the minor limit of \(n(xy)\). We have, therefore,
+\[\begin{aligned} \text{Major limit of }n(xy) &= \text{ least of values $n(x)$ and $n(y)$.} \\ \text{Minor limit of }n(xy) &= n(x) + n(y) - n(1). \end{aligned}\]
+In words: the number of things that are both _x_ and _y_ is at most the smaller of the two numbers, and at least the number of _x_'s plus the number of _y_'s minus the whole universe.
+
+Footnote: The above expression for the minor limit of \(nxy\) is applied by Professor De Morgan, who seems to have been the first to give it, to the syllogistic form:
+
+	Most men in a certain company have coats.
+	Most men in the same company have waistcoats.
+	Therefore some in the company have coats and waistcoats.
+
+Proposition I.
+
+5. To express the major and minor limits of a class represented by any constituent of the symbols \(x\), \(y\), \(z\), &c., having given the values of \(n(x)\), \(n(y)\), \(n(z)\), &c., and \(n(1)\).
+
+Take first the constituent \(xyz\), the things that are _x_, _y_ and _z_ all at once.
+
+Clearly the major numerical limit will be the smallest of the values \(n(x)\), \(n(y)\), \(n(z)\).
+
+The minor numerical limit could be worked out as in the problem above. But it can also be drawn from the solution of that problem, like this:
+\[\text{Minor limit of }n(xyz) = n(xy) + n(z) - n(1). \qquad (1)\]
+This means that \(n(xyz)\) is at least as great as the expression \(n(xy) + n(z) - n(1)\). But \(n(xy)\) is at least as great as \(n(x) + n(y) - n(1)\). So \(n(xyz)\) is at least as great as
+\[\begin{aligned} &n(x) + n(y) - n(1) + n(z) -n(1), \\ \text{or }\qquad &n(x) + n(y) + n(z) - 2n(1). \end{aligned}\]
+Hence we have
+\[\text{Minor limit of }n(xyz) = n(x) + n(y) + n(z) - 2n(1).\]
+that is, the three numbers added together, minus twice the universe.
+
+Carrying this line of reasoning further, we reach the following conclusions.
+
+First, the major numerical limit of the class represented by any constituent is found by putting \(n\) in front of each factor of the constituent separately, and taking the smallest of the resulting values.
+
+Second, the minor limit is found by adding all those values together, and subtracting from the result the value of \(n(1)\) as many times as there are factors, less one.
+
+So we should have
+\[\begin{aligned} \begin{aligned} \text{Major limit of }nxy(1-z) &= \text{ least of the values $nx$, $ny$, and $n(1-z)$.} \\ \text{Minor limit of }nxy(1-z) &= n(x) + n(y) + n(1-z) - 2n(1) \end{aligned} \\ = nx + n(y) -n(z) - n(1). \end{aligned}\]
+
+When we work with general symbols, it is perhaps better to regard all the values \(n(x)\), \(n(y)\), \(n(1-z)\) as major limits of \(n\{xy(1-z)\}\), since in fact it cannot exceed any of them. In what follows I shall speak in this way.
+
+Proposition II.
+
+6. To determine the major numerical limit of a class expressed by a series of constituents of the symbols \(x\), \(y\), \(z\), &c., the values of \(n(x)\), \(n(y)\), \(n(z)\), &c., and \(n(1)\), being given.
+
+Clearly one way of finding such a limit would be to form the smallest possible sum of the major limits of the separate constituents. So a major limit of the expression
+\[n\{xy + (1-x)(1-y)\}\]
+(the number of things that are either both _x_ and _y_, or neither) would be found by adding the smaller of the two values \(nx\), \(ny\), supplied by the first constituent, to the smaller of the two values \(n(1-x)\), \(n(1-y)\), supplied by the second. If we do not know which value is the smaller in each case, we must form all four possible sums, and throw out any that are equal to \(n(1)\) or exceed it. In the example above we should have
+\[\begin{aligned} &nx\phantom{()} + n(1-x) = n(1). \\ &n(x) + n(1-y) = n(1) + n(x)-n(y). \\ &n(y) + n(1-x) = n(1) + n(y)-n(x). \\ &n(y) + n(1-y) = n(1). \end{aligned}\]
+Throwing out the first and last of these values, we have
+\[n(1) +n(x)-n(y), \text{ and } n(1) + n(y)- n(x),\]
+as the expressions required. Unless \(nx = ny\), one of them will be less than \(n(1)\) and the other greater. Of course the smaller must be taken.
+
+When two or more of the constituents share a common factor, such as \(x\), that factor can supply only a single term \(n(x)\) to the final expression of the major limit, as Principle I makes obvious: the _x_'s are counted once, however many constituents they appear in. So if \(n(x)\) appears as a major limit in two or more constituents, then when we add those limits together we must replace \(nx + nx\) by \(nx\), and so on. Take for example the expression \(n\{xy + x (1-y)z\}\). The major limits of this expression that come straight from addition would be—
+
+	1. \(nx\). | 4. \(ny + nx\).
+	2. \(nx + n(1-y)\). | 5. \(ny + n(1-y)\).
+	3. \(nx + n(z)\). | 6. \(ny + nz\).
+
+Of these we need keep only the first and the sixth. The second, third, and fourth are greater than the first, and the fifth equals \(n(1)\). So the limits are
+\[n(x) \text{ and } n(y) + n(z),\]
+and of these two values the second must be taken, supposing it to be less than \(n(1)\).
+
+These considerations lead us to the following Rule.
+
+Rule.—Take one factor from each constituent, and put the symbol \(n\) in front of it. Add together the terms formed in this way, throwing out every repetition of the same term. The sum obtained is a major limit of the expression, and the smallest of all such sums is the major limit to be used.
+
+So the major limits of the expression
+\[xyz + x(1-y) (1-z) + (1-x) (1-y) (1-z)\]
+would be
+\[\begin{aligned} n(x) + n(1 - y), &\text{ and } n(x) + n(1 - z), \\ \text{or} n(x) + n(1) - n(y), &\text{ and } n(x) + n(1) - n(z). \end{aligned}\]
+
+Suppose instead we began with \(n(y)\), picked from the first term, and took \(n(x)\) from the second. Then we should have to take \(n(1 - y)\) from the third term, and this would give
+\[n(y) + n(x) + n(1 - y), \text{ or } n(1) + n(x).\]
+But this result exceeds \(n(1)\), which is an obvious major limit of _every_ class, so we need not take it into account.
+
+Proposition III.
+
+7. To find the minor numerical limit of any class expressed by constituents of the symbols \(x, y, z\), having given \(n(x), n(y), n(z) \dotsc n(1)\).
+
+We could do this by applying the preceding Proposition together with Principle II. But the following method does it better.
+
+Take any two constituents that differ from each other in a single factor only, and add them, so that they form a single class term; for example, \(x(1 - y) + xy\) form \(x\). Carry this kind of combining as far as it will go. That is, pick out of the given series of constituents as many sums of this kind as can be formed, each sum taking in as many constituents as can be gathered into a single term, without caring whether some of those constituents also go into other terms. Then write down these final combined terms, together with any constituents that cannot be combined in this way, as separate terms. The minor limits of those terms, found by Prop. I, will be the minor limits of the given expression, and at most one of those minor limits will be positive at any one time.
+
+For example, from the expression \(xy + (1 - x)y + (1 - x)(1 - y)\) we can form the combined terms \(y\) and \(1 - x\), by adding the first and second terms, and the second and third. So \(n(y)\) and \(n(1 - x)\) will be the minor limits of the given expression. Again, suppose the given expression were
+\[\begin{gathered} xyz + x (1-y) z + (1-x) yz + (1-x) (1-y) z \\ + xy(1-z) +(1-x)(1-y)(1-z), \end{gathered}\]
+Adding the first four terms we get the single term \(z\); adding the first and fifth we get the single term \(xy\); and adding the fourth and sixth we get the single term \((1-x) (1-y)\). There is no other way of gathering the constituents into single terms, and no constituent is left over that has not been accounted for. The three resulting terms give, as the minor limits of the given expression, the values
+\[\begin{gathered} n(z),\; n(x) + n(y) - n(1), \\ \text{and} n(1-x) + n(1-y) - n(1), \text{ or } n(1) - n(x) - n(y). \end{gathered}\]
+
+8. The proof of this rule rests on applying the following principles correctly. First, the minor limit of any collection of constituents that can be added together into a single term is plainly the minor limit of that single term. This explains the first part of the rule. Second, take two terms that are separate constituents, or are made up of separate constituents, but cannot be added together into one term. The minor limit of their sum will be the sum of their two minor limits if both are positive. But if one is positive and the other negative, it will equal the positive minor limit alone. For if we added the negative one, the limit would go down: it would be smaller for the sum of two terms than for one term on its own. Now whenever two constituents differ in more than one factor, so that they cannot be added together, their minor limits cannot both be positive. Take the terms \(xyz\) and \((1-x) (1-y) z\), which differ in two factors. The minor limit of the first is \(n(x + y + z-2)\), that of the second \(n(1-x + 1-y + z-2)\), or,
+\[\text{1st. }n\{x + y-1-(1-z)\}.\quad \text{2nd. }n\{1-x-y-(1-z)\}.\]
+If \(n(x + y-1)\) is positive, then \(n(1-x-y)\) is negative, and the second limit must be negative. If \(n(x + y-1)\) is negative, the first limit is negative. The same holds for cases with a larger number of factors. In this way it can be shown that, given the way the combined terms are formed under the rule, no two minor limits of separate terms can ever be added together. Either the two terms share some constituent, and then we clearly cannot add their minor limits; or their minor limits are not both positive, and then adding them would be useless.
+
+Proposition IV.
+
+9. Given the respective numbers of individuals comprised in any classes, \(s\), \(t\), &c. logically defined, to deduce a system, of numerical limits of any other class \(w\), also logically defined.
+
+This is the most general problem the chapter means to discuss. The earlier inquiries only lead up to it, and the later ones apply it. So it is worth stating clearly what it is and what it is for.
+
+When we say the classes \(s\), \(t \dotsc w\) are _logically defined_, we mean that they are defined well enough for us to write down their symbolic expressions, whether the classes are simple or compound. By the general method of this book, the symbol \(w\) can then be found directly as a developed function of the symbols \(s\), \(t\), and so on, in the form
+\[w = A + 0B + \frac{0}{0}C + \frac{1}{0}D, \qquad (1)\]
+where \(A\), \(B\), \(C\), and \(D\) are made up of constituents of \(s\), \(t\), and so on. Read aloud, as in Chapter 6: the compartments gathered in _A_ belong wholly to _w_; those in _B_ not at all; of those in _C_ some, none, or all may belong to _w_; and those in _D_ must be empty. How the numerical limits of \(w\) can be found from such an expression in the most general way, we shall consider later. For now I only mean to show how far this can be done on the principles set out in the previous propositions, and that is enough for the purposes of this work. To keep things simple, I shall base my argument on the particular development
+\[w = st + 0s(1 - t) + \frac{1}{0}(1 - s) t + \frac{0}{0}(1 - s)(1 - t), \qquad (2)\]
+in which every kind of coefficient appears.
+
+Of the constituent \((1-s) (1-t)\), whose coefficient is \(\frac{0}{0}\), the equation tells us that some, none, or all of the class it denotes are found in \(w\). Clearly \(n(w)\) will be largest when all the members of the class denoted by \((1-s)(1-t)\) are found in \(w\). And since none of the individuals in the classes denoted by \(s(1-t)\) and \((1-s)t\) are found in \(w\), the upper numerical limits of \(w\) will be the same as those of the class \(st + (1-s)(1-t)\). They are therefore
+\[ns + n(1-t) \text{ and } nt + n(1-s).\]
+In the same way, a system of upper numerical limits of the development \(A + 0 B + \frac{0}{0}C + \frac{1}{0}D\) can be found from those of \(A + C\) by Prop. 2.
+
+Again, by Principle II, any minor numerical limit of \(w\) is given by the expression
+\[n(1) - \text{ major limit of } n(1-w),\]
+that is, the universe minus the largest possible number of things that are not _w_. But since the development of \(w\) is given by (1), that of \(1-w\) will plainly be
+\[1 - w = 0A + B + \frac{0}{0}C + \frac{1}{0}D.\]
+This can be proved directly by the method of Prop. 2, Chap. X. Hence
+\[\begin{aligned} \text{Minor limit of } n(w) &= n(1) - \text{ major limit } (B + C) \\ &= \text{ minor limit of } (A + D), \end{aligned}\]
+by Principle II, since the classes \(A + D\) and \(B + C\) are supplementary: together they make up the universe. So the minor limit of the right-hand side of (2) would be \(n(t)\). Generalizing this line of reasoning, we have the following result:
+
+_A system of minor limits of the development
+\[A + 0B + \frac{0}{0}C + \frac{1}{0}D\]
+will be given by the minor limits of \(A + D\)_.
+
+This result can also be seen directly. Of minor numerical limits, the one we want is always the greatest. Now in general we get a higher minor limit by joining the class \(D\) to \(A\) in the expression of \(w\) than we should get otherwise; and various examples in the Logic have shown that this combination is one we are allowed to make.
+
+Finally, the last term of the development of \(w\) stands for the equation \(D = 0\), the class _D_ must be empty. So clearly \(n(D) = 0\). Hence we have
+\[\text{Minor limit of } n(D) \stackrel{=}{<} 0,\]
+that is, the lower limit of the number in _D_ must be zero or less. This condition, treated by Prop. 3, gives the conditions the numerical elements \(n(s)\), \(n(t)\), and so on must satisfy if the problem is to be real, and its data are to contain the results of a possible experience.
+
+So from the term \(\frac{1}{0}(1-s)t\) on the right-hand side of (2) we should deduce
+\[\begin{gathered} n(1-s) + n(t) - n(1) \stackrel{=}{<} 0, \\ \therefore n(t) \stackrel{=}{<} n(s). \end{gathered}\]
+that is, the number of _t_'s cannot be greater than the number of _s_'s; which is what the term says, since it forbids anything to be _t_ without being _s_. These conclusions can be gathered into the following rule.
+
+10. Rule.—Find the expression of the class \(w\) as a developed logical function of the symbols \(s\), \(t\), and so on, in the form
+\[w = A + 0B + \frac{0}{0}C + \frac{1}{0}D.\]
+Then
+\[\begin{aligned} \text{Maj. lim. } w &= \text{ Maj. lim. } A + C. \\ \text{Min. lim. } w &= \text{ Min. lim. } A + D. \end{aligned}\]
+And the necessary numerical conditions among the data are given by the inequality
+\[\text{Min. lim. } D \stackrel{=}{<} 0.\]
+
+To apply this method to fixing the limits of the solutions of questions in probability, we need only replace, in each of the formulas, \(n(x)\) by Prob. \(x\), \(n(y)\) by Prob. \(y\), and so on, and finally \(n(1)\) by \(1\). But the application is very important, so it may be worth setting out the chief results of this change in the form of a rule.
+
+11. Given the probabilities of any events \(s\), \(t\), &c., whereof another event \(w\) is a developed logical function, in the form
+\[w = A + 0B + \frac{0}{0}C + \frac{1}{0}D,\]
+required the systems of superior and inferior limits of Prob. \(w\), and the conditions among the data.
+
+Solution.—The upper limits of Prob. \((A + C)\), and the lower limits of Prob. \((A + D)\), will form two systems of the kind we want. The conditions among the constants in the data will be given by the inequality
+\[\text{Inf. lim. Prob. } D \stackrel{=}{<} 0.\]
+that is, the lower limit of the probability of _D_ must be zero or less. In applying these principles we always have
+\[\text{Inf. lim. Prob. } x_1 x_2 \dotsc x_n = \text{ Prob. } x_1 + \text{ Prob. }x_2 \dotsc + \text{ Prob. }x_n - (n-1).\]
+that is, the lower limit of the probability that all of a set of events occur together is the sum of their separate probabilities, minus one less than the number of events. Moreover, lower limits can be found only from _single_ terms, either given as such or formed by combining. Upper limits are included in the form \(\sum \text{ Prob. }x\), a sum of probabilities, where Prob. \(x\) applies only to symbols that are different from one another and taken from different terms of the expression whose upper limit we want. So the upper limits of Prob. \(xyz + x(1-y)(1-z)\) are
+\[\text{Prob. }x,\quad \text{Prob. }y + \text{ Prob. }(1-z), \text{ and Prob. }z + \text{ Prob. }(1-y).\]
+Notice that if in the last case we had taken Prob. \(z\) from the first term and Prob. \((1-z)\) from the second (a choice the rule does not forbid), their sum would have been \(1\). That result would be useless, because it is known _à priori_: no probability exceeds 1. Clearly we may throw out any limits that do not fall between 0 and 1.
+
+Let us apply this method to Ex. 7, Case III. of the last chapter.
+
+The final logical solution is
+\[\begin{aligned} x &= \frac{0}{0}stu + \frac{1}{0}s\bar{t}u + \frac{1}{0}st\bar{u} + s\bar{t}\bar{u} \\ &+ \frac{1}{0}\bar{s}tu + 0\bar{s}\bar{t}u + 0\bar{s}t\bar{u} + 0\bar{s}\bar{t}\bar{u}, \end{aligned}\]
+where a bar over a letter means "not": _t_ with a bar is "not _t_". The data are
+\[\text{Prob. }s = p,\quad \text{Prob. }t = q,\quad \text{Prob. }u = r.\]
+
+We shall look for both the numerical limits of \(x\) and the conditions connecting \(p\), \(q\), and \(r\). By the rule, the upper limits of \(x\) are given by those of \(stu + s\bar{t}\bar{u}\), the terms with coefficient 1 or 0/0. They are therefore
+\[p, q + 1 - r,\quad r + 1 - q.\]
+The lower limits of \(x\) are given by those of
+\[s\bar{t}u + st\bar{u} + s\bar{t}\bar{u} + \bar{s}tu.\]
+the terms with coefficient 1 or 1/0.
+
+We can gather the first and third of these constituents into the single term \(s\bar{t}\), and the second and third into the single term \(s\bar{u}\). So the lower limits of \(x\) must be found separately from the terms \(s(1-t)\), \(s(1-u)\), \((1-s)tu\), which give
+\[\begin{gathered} p + 1 - q - 1,\quad p + 1 - r - 1,\quad 1 - p + q + r - 2, \\ \text{or } p - q,\quad p - r,\quad \text{and }q + r - p- 1. \end{gathered}\]
+
+Finally, the conditions among the constants \(p\), \(q\), and \(r\) are given by the terms with coefficient 1/0,
+\[s\bar{t}u, \quad st\bar{u}, \quad \bar{s}tu,\]
+from which the rule gives
+\[\begin{aligned} & p + 1 - q + r - 2 \stackrel{=}{<} 0, \quad p + q + 1 - r - 2 \stackrel{=}{<} 0, \quad 1 - p + q + r - 2 \stackrel{=}{<} 0. \\ &\text{or } 1 + q - p - r \stackrel{=}{>} 0, \quad 1 + r - p - q \stackrel{=}{>} 0, \quad 1 + p - q - r \stackrel{=}{>} 0. \end{aligned}\]
+These are the limiting conditions used in analysing the final solution in that example. The conditions that limited \(\lambda\) in that solution, however, were found simply from the requirement that the quantities \(s\), \(t\), and \(u\) be positive. In all probability, narrower limits for that quantity could have been drawn from the investigation above.

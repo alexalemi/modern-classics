@@ -1,0 +1,204 @@
+Chapter 19: Of Statistical Conditions
+(Part 2 of 2)
+
+12. The following application comes from an important problem whose solution will be given in the next chapter. We are given
+\[\text{Prob. }x = c_1, \quad \text{Prob. }y = c_2, \quad \text{Prob. }s = c_1p_1,\quad \text{Prob. }t = c_2p_2,\]
+together with the logical equation
+\[\begin{aligned} z = stxy + s\bar{t}x\bar{y} + \bar{s}t\bar{x}y + 0\bar{s}\bar{t} \\ + \frac{1}{0}\left\{ \begin{aligned} stx\bar{y} + st\bar{x}y + st\bar{x}\bar{y} + s\bar{t}xy + s\bar{t}\bar{x}y \\ + s\bar{t}\bar{x}\bar{y} + \bar{s}txy + \bar{s}tx\bar{y} + \bar{s}t\bar{x}\bar{y}; \end{aligned} \right. \end{aligned}\]
+which we read as before: the constituents with coefficient 1 make up the class _z_, the one with coefficient 0 lies outside it, and those with coefficient one over zero are combinations that cannot occur at all. We are asked to find the conditions that must hold among the constants \(c_1\), \(c_2\), \(p_1\), \(p_2\), and the major and minor limits of \(z\).
+
+First let us look for the conditions among the constants. Attending only to the terms whose coefficients are \(\frac{1}{0}\), and grouping their constituents together, we easily form the following terms:
+\[s(1-x), \qquad t(1-y), \qquad sy(1-t),\qquad tx(1-s);\]
+and no other term can be formed that is not included under these. So the conditions among the constants, one for each of these terms, are
+\[\begin{aligned} &n(s) + n(1-x) - n(1) \stackrel{=}{<} 0, \\ &n(t) + n(1-y) - n(1) \stackrel{=}{<} 0, \\ &n(s) + n(y) + n(1-t) - 2n(1) \stackrel{=}{<} 0, \\ &n(t) + n(x) + n(1-s) - 2n(1) \stackrel{=}{<} 0. \end{aligned}\]
+The first, for example, says that the number of things in the class _s_, added to the number of things that are not _x_, is at most the number of things in the whole universe.
+
+Now replace \(n(x)\) by \(c_1\), \(n(y)\) by \(c_2\), \(n(s)\) by \(c_1 p_1\), \(n(t)\) by \(c_2 p_2\), and \(n(1)\) by \(1\). After slight reductions we have
+\[\begin{array}{rl} c_1 p_1 \stackrel{=}{<} c_1, \qquad & c_2 p_2 \stackrel{=}{<} c_2,\\ c_1 p_1 \stackrel{=}{<} 1 - c_2(1-p_2), \qquad & c_2 p_2 \stackrel{=}{<} 1 - c_1(1-p_1). \end{array}\]
+These, then, are the conditions required among the constants. The first two say that the probability of _s_ cannot exceed the probability of _x_, nor the probability of _t_ the probability of _y_.
+
+Again, the major limits of \(z\) are the same as those of the expression
+\[stxy + s(1-t) x(1-y) + (1-s)t(1-x)y;\]
+and if we bear in mind the conditions
+\[n (s) \stackrel{=}{<} n (x), \qquad n(t) \stackrel{=}{<} n (y),\]
+found above, these limits will be found to be
+\[\begin{aligned} n(s) + n(t), &\text{ or, } c_1p_1 + c_2p_2, \\ n(s) + n(1-x), &\text{ or, } 1-c_1 (1-p_1). \\ n(t) + n(1-y), &\text{ or, } 1-c_2 (1-p_2). \end{aligned}\]
+
+Lastly, to find the minor limits of \(z\): from the constituents whose coefficients are 1 or \(\frac{1}{0}\) we easily form the single terms \(s\) and \(t\), and no other terms not included under these can be formed, whether by selecting constituents or by grouping them. So for the minor limits of \(z\) we have the values \(c_1p_1\) and \(c_2p_2\).
+
+13. Note that the method developed above does not always give the narrowest limits that it is possible to find. But in every case, I believe, it limits the solutions of questions in the theory of probability well enough.
+
+The problem of finding the _narrowest_ limits of the number of things in a class can, however, always be reduced to a purely algebraic form. Take up again the equation
+\[w = A + 0B + \frac{0}{0}C + \frac{1}{0}D,\]
+and let the highest lower limit of the number of things in \(w\) be represented by the formula \(an(s) + bn(t) \dotsc + dn(1)\), where \(a, b, c,\dotsc d\) are numerical constants still to be found, and \(s\), \(t\), and so on, are the logical symbols of which \(A\), \(B\), \(C\), \(D\) are constituents. Then
+\[\begin{aligned} an(s)+ bn(t)\dotsc + dn(1)=\text{ minor limit of $A$ subject}\\ \text{ to the condition $D = 0$.} \end{aligned}\]
+So suppose we develop the function
+\[as + bt \dotsc + d,\]
+and reject from the result all the constituents that are found in \(D\). Then the coefficients of the remaining constituents that are also found in \(A\) must not, any of them, exceed 1 in value, and the coefficients of the remaining constituents that are not found in \(A\) must not, any of them, exceed 0. So we shall have one series of inequalities of the form \(f \stackrel{=}{<} 1\), and another of the form \(g \stackrel{=}{<} 0\), where \(f\) and \(g\) are linear functions of \(a\), \(b\), \(c\), and so on (sums of these unknowns, each multiplied by a fixed number). We must then find those values of \(a, b \dotsc d\) which satisfy all these conditions and at the same time give the function
+\[an(s) + bn(t) \dotsc + dn(1),\]
+its highest value; and that highest value will be the highest minor limit of \(w\). To this we may add the relations, formed in the same way, that determine the relations among the given constants \(n(s), n(t) \dotsc n(1)\).
+
+Footnote: I regret the loss of a manuscript, written about four years ago, in which, I believe, this method was worked out at considerable length. What I remember of its contents comes down almost entirely to the _impression_ that the principle of the method was the same as the one described above, and that its sufficiency was proved. The earlier methods of this chapter are, it hardly needs saying, easier, though certainly less general.
+
+14. The following rather complicated example shows how a solution is limited when the problem contains an arbitrary element. Such an element makes the problem stand for a whole system of problems, which share the same data but are unlimited in what they seek.
+
+Problem.—Of \(n\) events \(x_1\; x_2 \dotsc x_n\), we know the following:
+
+First, the probability that either the event \(x_1\) will occur, or all the events will fail, is \(p_1\).
+
+Second, the probability that either the event \(x_2\) will occur, or all the events will fail, is \(p_2\). And so on for the others.
+
+We are asked to find the probability of any single event, or combination of events, represented by the general function \(\phi(x_1 \dotsc x_n)\), or \(\phi\) for short.
+
+In a notation used before, the data of the problem are
+\[\text{Prob. }(x_1 + \bar{x}_1 \dotsc \bar{x}_n) = p_1 \dotsc \text{Prob. }(x_n + \bar{x}_1 \dotsc \bar{x}_n) = p_n.\]
+And the probability of \(\phi(x_1 \dotsc x_n)\) is what we seek.
+
+Put, in general,
+\[\begin{gathered} x_r + \bar{x}_1 \dotsc \bar{x}_n = s_r, \qquad (1) \\ \phi = w. \qquad (2) \end{gathered}\]
+From these we obtain the combined logical equation of the problem:
+\[\sum \bigl\{\bigl( x_r + \bar{x}_1 \dotsc \bar{x}_n \bigr)\bar{s}_r + s_r \bigl( \bar{x}_r - \bar{x}_1 \dotsc \bar{x}_n \bigr)\bigr\} + \phi\bar{w} + w\bar{\phi} = 0. \qquad (3)\]
+It is a sum of terms each of which must vanish, and it says two things at once: each _s_ stands for exactly its own event, "this _x_ occurs, or all the events fail", and _w_ stands for exactly the event whose probability is sought. From this equation we must eliminate the symbols \(x_1, \dotsc x_n\), and find \(w\) as a developed logical function of \(s_1 \dotsc s_n\).
+
+Let us write the result of this elimination in the form
+\[Ew + E'(1-w) = 0;\]
+then \(E\) will be the result of eliminating the same symbols from the equation
+\[\sum \bigl\{\bigl( x_r + \bar{x}_1 \dotsc \bar{x}_n \bigr)\bar{s}_r + s_r \bigl( \bar{x}_r - \bar{x}_1 \dotsc \bar{x}_n \bigr)\bigr\} + 1 - \phi = 0. \qquad (4)\]
+which is what equation (3) becomes when _w_ is 1.
+
+Now \(E\) will be the product of the coefficients of all the constituents (taken with respect to the symbols \(x_1, x_2 \dotsc x_n\)) that appear in the development of the left-hand side of this equation. Moreover, \(\phi\), and so also \(1 - \phi\), will consist of a series of such constituents, each with 1 for its coefficient. To work out the forms of the coefficients in the development of the left-hand side of (4), it is convenient to arrange them in three groups, as follows.
+
+First, the coefficients of the constituents found in \(1 - \phi\).
+
+Second, the coefficient of \(\bar{x}_1, \bar{x}_2 \dotsc \bar{x}_n\), if it is found in \(\phi\).
+
+Third, the coefficients of the constituents found in \(\phi\), leaving out the constituent \(\bar{x}_1, \bar{x}_2 \dotsc \bar{x}_n\).
+
+Plainly these three groups between them take in every coefficient there is.
+
+First, then: the coefficient of any constituent found in \(1 - \phi\) will, in the development of the left-hand side of (4), be of the form
+\[1 + \text{ positive terms derived from }\sum.\]
+So every such coefficient may be replaced by unity, by Prop. I. Chap. IX.
+
+Second: the coefficient of \(\bar{x}_1 \dotsc \bar{x}_n\), if it is found in \(\phi\), will in the development of the left-hand side of (4) be
+\[\sum \bar{s}_r, \text{ or } \bar{s}_1 + \bar{s}_2 \dotsc + \bar{s}_n\]
+
+Third: the coefficient of any other constituent, \(x_1 \dotsc x_i, \bar{x}_{i+1} \dotsc \bar{x}_n\), found in \(\phi\), will in the development of the left-hand side of (4) be \(\bar{s}_1 \dotsc + \bar{s}_i + s_{i+1} \dotsc + s_n\).
+
+Now we see that \(E\) is the product of all the coefficients just found. But since the coefficients of the constituents not found in \(\phi\) reduce to 1, \(E\) may be taken as the product of the coefficients of just those constituents that are found in \(\phi\). From the way those coefficients are formed, we get the following rule for finding \(E\). In each constituent found in \(\phi\), except the constituent \(\bar{x}_1 \; \bar{x}_2 \dotsc \bar{x}_n\), for \(x_1\) write \(\bar{s}_1\), for \(\bar{x}_1\) write \(s_1\), and so on, and add the results; but for the constituent \(\bar{x}_1, \bar{x}_2 \dotsc \bar{x}_n\), if it occurs in \(\phi\), write \(\bar{s}_1 + \bar{s}_2 \dotsc + \bar{s}_n\). The product of all these sums is \(E\).
+
+To find \(E'\) we must set \(w = 0\) in (3), and eliminate \(x_1, x_2 \dotsc x_n\) from the reduced equation. That equation will be
+\[\sum \bigl\{ \bigl( x_r + \bar{x}_1 \dotsc + \bar{x}_n \bigr)\bar{s}_r + s_r\bigl(\bar{x}_r - \bar{x}_1 \dotsc \bar{x}_n \bigr) \bigr\} + \phi = 0. \qquad (5)\]
+So \(E'\) will be formed from the constituents in \(1 - \phi\), that is, from the constituents _not_ found in \(\phi\), in the same way as \(E\) is formed from the constituents found in \(\phi\).
+
+Consider next the equation
+\[Ew + E'(1-w) = 0.\]
+This gives
+\[w = \frac{E'}{E'-E}. \qquad (6)\]
+
+Now \(E\) and \(E'\) are functions of the symbols \(s_1, s_2 \dotsc s_n\). So the expansion of the value of \(w\) will consist of all the constituents that can be formed from those symbols, each with its proper coefficient attached, as fixed by the rule of development.
+
+Moreover, \(E\) and \(E'\) are each formed by multiplying factors together, and neither of them can vanish unless one of its own factors vanishes. Again, any factor, such as \(\bar{s}_1 \dotsc + \bar{s}_n\), can vanish only when all the terms added together to form it vanish at once, since in development we give these terms only the values 0 and 1. It is also plain that no two different factors can vanish together. For instance, the factors \(\bar{s}_1 + \bar{s}_2 \dotsc + \bar{s}_n\), and \(s_1 + \bar{s}_2 \dotsc + \bar{s}_n\), cannot vanish at the same time: the former cannot vanish unless \(\bar{s}_1 = 0\), or \(s_1 = 1\); but the latter cannot vanish unless \(s_1 = 0\).
+
+First, let us find the coefficient of the constituent \(\bar{s}_1 \bar{s}_2 \dotsc \bar{s}_n\) in the development of the value of \(w\).
+
+Assuming all at once that \(\bar{s}_1 = 1\), \(\bar{s}_2 = 1 \dotsc \bar{s}_n = 1\), would make the factor \(s_1 + s_2 \dotsc + s_n\) vanish, if that factor occurred in \(E\) or \(E'\); and under the same assumption no other factor would vanish. But \(s_1 + s_2 \dotsc + s_n\) is not a factor of either \(E\) or \(E'\). So neither of these quantities can vanish, and therefore the expression \(\frac{E'}{E'-E}\) is neither \(1\), \(0\), nor \(\frac{0}{0}\).
+
+_So the coefficient of \(\bar{s}_1 \; \bar{s}_2 \dotsc \bar{s}_n\) in the expanded value of \(w\)_ may be represented by \(\frac{1}{0}\).
+
+Second, let us find the coefficient of the constituent \(s_1 \; s_2 \dotsc s_n\). The assumptions \(s_1 = 1, s_2 = 1, \dotsc s_n = 1\) would make the factor \(\bar{s}_1 + \bar{s}_2 \dotsc + \bar{s}_n\) vanish. Now this factor is found in \(E\) and not in \(E'\) whenever \(\phi\) contains both the constituents \(x_1\; x_2 \dotsc x_n\) and \(\bar{x}_1\; \bar{x}_2 \dotsc \bar{x}_n\). In that case \(\frac{E'}{E'-E}\) becomes \(\frac{E'}{E'}\), or 1. The factor \(\bar{s}_1 + \bar{s}_2 \dotsc + \bar{s}_n\) is found in \(E'\) and not in \(E\) if \(\phi\) contains neither of the constituents \(x_1\; x_2 \dotsc x_n\) and \(\bar{x}_1\; \bar{x}_2 \dotsc \bar{x}_n\). In that case \(\frac{E'}{E'-E}\) becomes \(\frac{0}{-E}\), or 0. Last, the factor \(\bar{s}_1 + \bar{s}_2 \dotsc + \bar{s}_n\) is contained in both \(E\) and \(E'\) if one of the constituents \(x_1\; x_2 \dotsc x_n\) and \(\bar{x}_1\; \bar{x}_2 \dotsc \bar{x}_n\) is found in \(\phi\), and the other is not. In that case \(\frac{E'}{E'-E}\) becomes \(\frac{0}{0}\).
+
+So the coefficient of the constituent \(s_1\; s_2 \dotsc s_n\) will be \(1\), \(0\), or \(\frac{0}{0}\), according as \(\phi\) contains both the constituents \(x_1\; x_2 \dotsc x_n\) and \(\bar{x}_1\; \bar{x}_2 \dotsc \bar{x}_n\), or neither of them, or one of them and not the other.
+
+Last, we must find the coefficient of any other constituent, such as \(s_1 \dotsc s_i\) \(\bar{s}_{i+1} \dotsc \bar{s}_n\).
+
+The assumptions \(s_1 = 1, \dotsc s_i = 1,\; s_{i+1} = 0,\; s_n = 0\) would make the factor \(\bar{s}_1 \dotsc + \bar{s}_i + s_{i+1} \dotsc + s_n\) vanish. Now this factor is found in \(E\) if the constituent \(x_1 \dotsc x_i \; \bar{x}_{i+1} \dotsc \bar{x}_n\) is found in \(\phi\), and in \(E'\) if that constituent is not found in \(\phi\). In the first case we have \(\frac{E'}{E'-E} = \frac{E'}{E'} = 1\); in the second we have \(\frac{E'}{E'-E} = \frac{0}{0-E} = 0\).
+
+So the coefficient of any other constituent \(s_1 \dotsc s_i, \; \bar{s}_{i+1} \dotsc \bar{s}_n\) is 1 or 0, according as the matching constituent \(x_1 \dotsc x_i \; \bar{x}_{i+1} \dotsc \bar{x}_n\) is or is not found in \(\phi\).
+
+In practice, then, we may find the value of \(w\) as follows. From the given expression of \(\phi\), reject the constituents \(x_1 \; x_2 \dotsc x_n\) and \(\bar{x}_1 \; \bar{x}_2 \dotsc \bar{x}_n\), if both or either of them occur in it. In the result, change the symbols \(x_1, \; x_2, \dotsc x_n\) into \(s_1, \; s_2, \dotsc s_n\) respectively. Give the constituents \(s_1 \; s_2 \dotsc s_n\) and \(\bar{s}_1 \; \bar{s}_2 \dotsc \bar{s}_n\) the coefficients fixed by the special rules for those cases given above, and give every other constituent the coefficient 0. The result will be the value of \(w\) as a function of \(s_1, s_2, \dotsc s_n\).
+
+As a particular case, let \(\phi = x_1\). We are to find, from the given data, the probability of the event \(x_1\).
+
+The symbol \(x_1\), expanded in terms of the whole series of symbols \(x_1, x_2, \dotsc x_n\), will generate all the constituents of those symbols that have \(x_1\) as a factor. Among those constituents will be the constituent \(x_1 \; x_2 \dotsc x_n\), but not the constituent \(\bar{x}_1 \; \bar{x}_2 \dotsc \bar{x}_n\).
+
+So in the expanded value of \(x_1\) as a function of the symbols \(s_1, s_2, \dotsc s_n\), the constituent \(s_1 \; s_2 \dotsc s_n\) will have the coefficient \(\frac{0}{0}\), and the constituent \(\bar{s}_1 \; \bar{s}_2 \dotsc \bar{s}_n\) the coefficient \(\frac{1}{0}\).
+
+If from \(x_1\) we reject the constituent \(x_1 \; x_2 \dotsc x_n\), the result will be \(x_1 - x_1x_2 \dotsc x_n\). Changing \(x_1\) into \(s_1\) in it, and so on for the rest, we have \(s_1 - s_1s_2 \dotsc s_n\) as the corresponding portion of the expression of \(x_1\) as a function of \(s_1, s_2, \dotsc s_n\).
+
+So the final expression for \(x_1\) is
+\[\begin{aligned} x_1 = s_1 - s_1s_2 \dotsc s_n + \frac{0}{0}s_1s_2 \dotsc s_n + \frac{1}{0}\bar{s}_1\bar{s}_2 \dotsc \bar{s}_n \\ + \text{ constituents whose coefficients are }0. \end{aligned} \qquad (7)\]
+
+The sum of all the constituents in this expansion whose coefficients are 1, 0, or \(\frac{0}{0}\) will be \(1 - \bar{s}_1\bar{s}_2 \dotsc \bar{s}_n\), that is, everything except the one constituent that cannot occur.
+
+So we have the following _algebraic_ system for finding the probability of \(x_1\):
+\[\text{Prob. }x_1 = \frac{s_1 - s_1s_2 \dotsc s_n + cs_1s_2 \dotsc s_n}{1 - \bar{s}_1\bar{s}_2 \dotsc \bar{s}_n}, \qquad (8)\]
+where _c_ takes the place of the indefinite coefficient zero over zero, with the relations
+\[\begin{aligned} \frac{s_1}{p_1} = \frac{s_2}{p_2} \dotsc = \frac{s_n}{p_n} \\ = 1 - \bar{s}_1 \bar{s}_2 \dotsc \bar{s}_n = \lambda. \end{aligned} \qquad (9)\]
+
+Notice that the relations for finding \(s_1 \; s_2 \dotsc s_n\) are quite independent of the form of the function \(\phi\). The values of these quantities, once found, will serve for every possible problem with the same data, however much the things those problems seek may vary. The nature of the event, or combination of events, whose probability is sought affects only the form of the function into which the values found for \(s_1 \; s_2 \dotsc s_n\) are to be substituted. From (9) we have
+\[s_1 = p_1 \lambda, \quad s_2 = p_2 \lambda, \dotsc s_n = p_n \lambda.\]
+So
+\[1 - (1 - p_1 \lambda)(1 - p_2 \lambda) \dotsc (1 - p_n \lambda) = \lambda.\]
+Or,
+\[1 - \lambda = (1 - p_1 \lambda)(1 - p_2 \lambda) \dotsc (1 - p_n \lambda); \qquad (10)\]
+and from this equation the value of \(\lambda\) is to be found.
+
+Supposing this value found, the probability of \(x_1\) will be
+\[\frac{p_1\lambda - (1-c)p_1p_2 \dotsc p_n\lambda^n} {1 - (1-p_1\lambda)(1-p_2\lambda)\dotsc (1-p_n\lambda)},\]
+or, reducing by means of (10),
+\[\text{Prob. }x_1 = p_1 - (1-c)p_1p_2 \dotsc p_n \lambda^{n-1}. \qquad (11)\]
+
+Let us next look for the conditions that must hold among the constants \(p_1, p_2, \dotsc p_n\), and for the limits of the probability of \(x_1\).
+
+Since only one term has the coefficient \(\frac{1}{0}\), there is only one condition among the constants, namely
+\[\begin{aligned} \text{Minor limit, }(1-s_1)(1-s_2) \dotsc (1-s_n) \stackrel{=}{<} 0. \\ \begin{array}{lc} \text{Or,} & n(1-s_1) + n(1-s_2) \dotsc + n(1-s_n) - (n-1)n(1) \stackrel{=}{<} 0. \\ \text{Or,} & n(1) - n(s_1) - n(s_2) \dotsc - n(s_n) \stackrel{=}{<} 0. \\ \text{Whence} & p_1 + p_2 \dotsc + p_n \stackrel{=}{>} 1, \end{array} \end{aligned}\]
+which is the condition required. In words: the given probabilities, added together, must come to at least 1.
+
+The major limit of the probability of \(x_1\) is the major limit of the sum of those constituents whose coefficients are 1 or \(\frac{0}{0}\). But that sum is \(s_1\).
+
+So
+\[\text{Major limit, Prob. }x_1 = \text{ major limit }s_1 = p_1.\]
+The minor limit of the probability of \(x_1\) will be the same as the minor limit of the expression
+\[s_1 - s_1 s_2 \dotsc s_n + (1 -s_1)(1 - s_2)\dotsc (1 - s_n).\]
+
+A little attention will show that the different aggregate terms that can be formed from this, each taking in the greatest possible number of constituents, are the following:
+\[s_1(1-s_2),\quad s_1(1 - s_3), \dotsc s_1(1 - s_n),\quad (1 - s_2)(1 - s_3) \dotsc (1 - s_n).\]
+
+From these we deduce the following expressions for the minor limit:
+\[p_1 - p_2,\quad p_1 - p_3 \dotsc p_1 - p_n,\quad 1 - p_2 - p_3 \dotsc - p_n .\]
+
+So the probability of \(x_1\) will not fall short of any of these values, nor exceed the value of \(p_1\).
+
+Instead of using these conditions, however, we may make direct use of the principle stated in the proof of the general method in probabilities. The condition that \(s_1, s_2, \dotsc s_n\) must each be less than 1 requires that \(\lambda\) be less than each of the quantities \(\frac{1}{p_1}, \frac{1}{p_2}, \dotsc \frac{1}{p_n}\). And the condition that \(s_1, s_2, \dotsc s_n\) must each be greater than 0 requires that \(\lambda\) also be greater than 0. Now \(p_1 \; p_2 \dotsc p_n\) are proper fractions (numbers between 0 and 1) satisfying the condition
+\[p_1 + p_2 \dotsc + p_n > 1,\]
+and it can be shown that the central equation (10) yields only one positive value of \(\lambda\) that is less than each of the quantities \(\frac{1}{p_1}, \frac{1}{p_2}, \dotsc \frac{1}{p_n}\). That value of \(\lambda\), then, is the one required.
+
+To prove this, let us consider the equation
+\[(1 - p_1\lambda)(1 - p_2\lambda) \dotsc (1 - p_n\lambda) - 1 + \lambda = 0.\]
+
+When \(\lambda = 0\) the left-hand side vanishes, and the equation is satisfied. Let us examine how the left-hand side varies between the limits \(\lambda = 0\) and \(\lambda = \frac{1}{p_1}\), supposing \(p_1\) to be the greatest of the values \(p_1 \; p_2 \dotsc p_n\). Calling the left-hand side \(V\), we have, for the rate at which _V_ changes as lambda grows,
+\[\frac{dV}{d\lambda} = -p_1(1-p_2\lambda) \dotsc (1-p_n\lambda) \dotsc -p_n(1-p_1\lambda) \dotsc (1-p_{n-1}\lambda) + 1,\]
+which, when \(\lambda = 0\), takes the form \(-p_1 - p_2 \dotsc - p_n + 1\), and is negative in value.
+
+Again, we have
+\[\frac{d^2V}{d\lambda^2} = p_1p_2(1-p_3\lambda)(1-p_n\lambda) + \text{ \&c.,}\]
+a series of terms which, under the restrictions already placed on the value of \(\lambda\), are all _positive_.
+
+Last, when \(\lambda = \frac{1}{p_1}\), we have
+\[V = -1 + \frac{1}{p_1},\]
+which is positive.
+
+From all this it follows that if we draw a curve whose ordinates (heights) show the value of \(V\) for each abscissa (distance along the horizontal axis) \(\lambda\), the curve will pass through the origin, and for small values of \(\lambda\) will lie below the axis. Between the limits \(\lambda = 0\) and \(\lambda = \frac{1}{p_1}\) its convexity will be downward, so that it bends upward all the way; and at the far limit \(\frac{1}{p_1}\) the curve will be above the axis, its ordinate being positive. It follows from this description that the curve will cross the axis once, and only once, within the limits specified, namely between the values \(\lambda = 0\) and \(\lambda = \frac{1}{p_1}\).
+
+So the solution of the problem is given by (11), where the value of \(\lambda\) is the root of equation (10) that lies between 0 and each of \(\frac{1}{p_1}, \frac{1}{p_2}, \dotsc \frac{1}{p_n}\).
+
+The constant \(c\) is plainly the probability that, if the events \(x_1, x_2, \dotsc x_n\) all happen or all fail, they will all happen.
+
+This determination of the value of \(\lambda\) serves for every problem whose data are the same as in the one just considered. As earlier discussions have prepared us to expect, it does not depend on the form of the function \(\phi\). As another example, let us suppose
+\[\phi = \text{ or } w = x_1(1-x_2) \dotsc (1-x_n) \dotsc + x_n(1-x_1) \dotsc (1-x_{n-1}).\]
+This amounts to asking for the probability that, of the events \(x_1, x_2, \dotsc x_n\), one, and only one, will happen. The value of \(w\) will plainly be
+\[w = s_1(1-s_2) \dotsc (1-s_n) \dotsc + s_n(1-s_1) \dotsc (1-s_{n-1}) + \frac{1}{0}(1-s_1) \dotsc (1-s_n),\]
+from which we should have
+\[\begin{gathered} \text{Prob. } \{ x_1(1-x_2) \dotsc (1-x_n) \dotsc + x_n(1-x_1) \dotsc (1-x_{n-1}) \} \\ = \frac{s_1(1-s_2) \dotsc (1-s_n) \dotsc + s_n(1-s_1) \dotsc (1-s_{n-1})} {1 - (1-s_1) \dotsc (1-s_n)} \\ = \frac{p_1\lambda(1-p_2\lambda) \dotsc (1-p_n\lambda) \dotsc + p_n\lambda(1-p_1\lambda) \dotsc (1-p_{n-1}\lambda)} {\lambda} \\ = \frac{p_1(1-\lambda)}{1-p_1\lambda} + \frac{p_2(1-\lambda)}{1-p_2\lambda} \dotsc + \frac{p_n(1-\lambda)}{1-p_n\lambda} \end{gathered}\]
+This solution illustrates well the remarks made in the introductory chapter (I. 16). The real difficulties of the problem lie in the nature of its data, not in the nature of what it asks. The central equation that determines \(\lambda\), and the particular discussions that go with it, apply equally to every form the problem can be made to take by varying the interpretation of the arbitrary elements in its original statement.

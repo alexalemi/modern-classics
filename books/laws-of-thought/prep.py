@@ -61,7 +61,9 @@ SRC = HERE / "_src" / "15114-t.tex"
 TAGS = HERE / "_src" / "eqtags.txt"
 
 ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X",
-         "XI", "XII", "XIII", "XIV", "XV"]
+         "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX",
+         "XXI", "XXII"]
+LOGIC = ROMAN[:15]        # the logic half; XVI-XXII are on probabilities
 
 # Chapter titles. FULL is Boole's heading in title case; where it runs past
 # about twelve words the heading uses SHORT, Boole's own short title from his
@@ -98,6 +100,15 @@ TITLES = [
      "V(1 \u2212 V) = 0", "Example of Analysis"),
     ("The Aristotelian Logic and Its Modern Extensions, Examined by the Method of "
      "This Treatise", "Of the Aristotelian Logic"),
+    ("On the Theory of Probabilities", None),
+    ("Demonstration of a General Method for the Solution of Problems in the Theory "
+     "of Probabilities", "General Method in Probabilities"),
+    ("Elementary Illustrations of the General Method in Probabilities", None),
+    ("Of Statistical Conditions", None),
+    ("Problems Relating to the Connexion of Causes and Effects", None),
+    ("Particular Application of the Previous General Method to the Question of the "
+     "Probability of Judgments", "Probability of Judgments"),
+    ("On the Nature of Science, and the Constitution of the Intellect", None),
 ]
 # Boole's Contents, to assert the chapter list against (short titles)
 CONTENTS = ["Nature and Design of this Work", "Signs and their Laws", "Derivation of the Laws",
@@ -105,7 +116,10 @@ CONTENTS = ["Nature and Design of this Work", "Signs and their Laws", "Derivatio
             "Of Elimination", "Of Reduction", "Methods of Abbreviation",
             "Conditions of a Perfect Method", "Of Secondary Propositions",
             "Methods in Secondary Propositions", "Clarke and Spinoza", "Example of Analysis",
-            "Of the Aristotelian Logic"]
+            "Of the Aristotelian Logic", "Of the Theory of Probabilities",
+            "General Method in Probabilities", "Elementary Illustrations",
+            "Of Statistical Conditions", "Problems on Causes", "Probability of Judgments",
+            "Constitution of the Intellect"]
 
 MAX_PROSE = 7000          # split a chapter whose prose runs past this
 
@@ -129,6 +143,107 @@ FORMULA_FIXES = [
      r"\text{or, } [f(1)-f(0)]x+f(0)=0. \qquad (1) \\ \therefore",
      "p. 101 prints (1) here; the transcription has no number"),
 ]
+# THE LETTER l IN XVI-XXII. Boole uses l there as a quantity (XVII. 9's
+# l/m, XX's h mu - h' nu = l, l = r/n), so fix_l does not run; each
+# misread 1 is replaced here, (chapter, old, new, how many, why), counted
+# among that chapter's formulas.
+FORMULA_SUBS = [
+    ("XVIII", "c(l-p)", "c(1-p)", 1, "XVIII. Ex. 1 (5): c(1 - p)"),
+    ("XVIII", "(l-u)(l-x) = (l-xy)(1-x)", "(1-u)(1-x) = (1-xy)(1-x)", 1, "XVIII. Ex. 1"),
+    ("XVII", "t_l", "t_1", 1, "XVII. 9: t1, as 'similarly t2' says"),
+    ("XIX", "n(l-x-y+2xy)", "n(1-x-y+2xy)", 1, "XIX: n(1 - x - y + 2xy)"),
+    ("XIX", "n(l)", "n(1)", 4, "XIX: n(1), the number of the universe"),
+    ("XIX", "x(l-y) + y(l-x)", "x(1-y) + y(1-x)", 1, "XIX (1)"),
+    ("XIX", "n(l-y)", "n(1-y)", 2, "XIX"),
+    ("XIX", "n(l-x)", "n(1-x)", 1, "XIX"),
+    ("XIX", "y(l-x)", "y(1-x)", 1, "XIX: the lone y(1 - x)"),
+    ("XIX", "(l-x) (1-y) z", "(1-x) (1-y) z", 1, "XIX: a constituent"),
+    ("XIX", r"\bar{x}_l", r"\bar{x}_1", 1, "XIX: 'for x1 write s1-bar, for x1-bar write s1'"),
+    ("XXI", "(l-k)(l-x)", "(1-k)(1-x)", 1, "XXI: the juror's innocence column"),
+    # the transcriber's \left(\{..\}\right) prints a brace inside the
+    # parenthesis; p. 363 has the parenthesis only
+    ("XX", r"\left(\{\displaystyle \frac{p-a}{1-a}\}\right)", r"\left(\displaystyle \frac{p-a}{1-a}\right)", 1,
+     "XX. 21, p. 362: parentheses, no braces"),
+    ("XX", r"\left(\{\displaystyle \frac{p-la}{1-a}\}\right)", r"\left(\displaystyle \frac{p-la}{1-a}\right)", 2,
+     "XX. 21, p. 363: parentheses, no braces"),
+]
+# THE PRINT CHECK, formulas (each read on the page; "PRINT" marks a
+# misprint of 1854 corrected because Boole's own working shows it).
+FORMULA_SUBS += [
+    ("XVII", r"phi(x, y, z,\dotsc)", r"\phi(x, y, z,\dotsc)", 1, "XVII. 6, p. 258: phi"),
+    ("XVII", r"\frac{[VV']}{V}", r"\frac{[VV']}{[V]}", 1, "XVII. 7, p. 258: [V]"),
+    ("XVII", r"\left[ V_y \right]}{\left[ V \right]} = q,\text{ \&c.,}",
+     r"\left[ V_y \right]}{\left[ V \right]} = q,\text{ \&c.;} \qquad (1)", 1, "XVII. 10, p. 261: numbered (1)"),
+    ("XVII", r"[V_x] = p;\quad [V_y] = q;", r"[V_x] = p',\quad [V_y] = q';", 1, "XVII. 10, p. 262: primes"),
+    ("XVII", r"D-0\text{,}", r"D = 0\text{,}", 1, "XVII. 11, p. 264"),
+    ("XVII", "&w(1-W)-W(1-w) = 0;", "&w(1-W)+W(1-w) = 0;", 1, "XVII. 12, p. 264: +"),
+    ("XVII", r"\frac{1}{n}+\frac{1}{m}\dotsc", r"\frac{1}{n}+\frac{1}{n}\dotsc", 1, "XVII. 19, p. 274: 1/n"),
+    ("XVII", r"{\text{Prob. }c}", r"{\text{Prob. }C}", 1,
+     "PRINT, XVII. 17, p. 270: Prob. c for Prob. C (c is defined in art. 15 as Prob. Cw / Prob. C)"),
+    ("XVIII", "2-p-g-r", "2-p-q-r", 1, "XVIII. 4 (6), p. 281: q"),
+    ("XVIII", r"\frac{1}{0}x(1-y) + \frac{0}{0}x(1-y)(1-w)", r"\frac{1}{0}x(1-y)w + \frac{0}{0}x(1-y)(1-w)", 1,
+     "XVIII. 5, p. 282: the w"),
+    ("XVIII", "y(1w)", "y(1-w)", 1, "XVIII. 5 (4), p. 283"),
+    ("XVIII", r"\bigl( 1 - y \bigr)xz &= q,", r"\bigl( 1 - y \bigr)xz &= t;", 1, "XVIII. 9, p. 288: = t;"),
+    ("XVIII", r"\frac{\text{Prob. } xy}{c'}", r"\frac{\text{Prob. } xz}{c'}", 1,
+     "PRINT, XVIII. 7, p. 285: xy for xz (w = xz, and Prob. w = c'pq + ac'(1 - q) just above)"),
+    ("XVIII", "z (1-t) = 0", "w (1-t) = 0", 1, "PRINT, XVIII. 8, p. 286: z for w ((3) is xy = w)"),
+    ("XVIII", r"\text{Prob. }z = cp", r"\text{Prob. }w = cp", 1, "PRINT, XVIII. 8, p. 287: the same"),
+    ("XVIII", "stu + s + t + 1", "stu + s + t + u + 1", 1, "PRINT, XVIII. 9, p. 292: (10) has the u"),
+    ("XIX", "y(1-x) - (1-x)(1-y)", "y(1-x) + (1-x)(1-y)", 1, "XIX. 4, p. 298: +"),
+    ("XIX", r"\{1-y + y 1-x)\}", r"\{1-y + y(1-x)\}", 1, "XIX. 4, p. 298: the parenthesis"),
+    ("XIX", r"major limit of }y(1-x). \end{aligned}", r"major limit of }y(1-x). \qquad (2) \end{aligned}", 1,
+     "XIX. 4, p. 298: numbered (2), as the text cites it"),
+    ("XIX", "(1-s)(1-f)", "(1-s)(1-t)", 1, "XIX. 9, p. 305: OCR f"),
+    ("XIX", r"1-c_1 (1-p_1) n(t)", r"1-c_1 (1-p_1). \\ n(t)", 1, "XIX. 12, p. 309: two rows run together"),
+    ("XIX", r"\bar{s}_1 \dotsc \bar{s}_i + s_{i+1}", r"\bar{s}_1 \dotsc + \bar{s}_i + s_{i+1}", 1, "XIX. 14, p. 312"),
+    ("XIX", r"x_1 \; x_2 \dotsc x_c", r"x_1 \; x_2 \dotsc x_n", 1, "XIX. 14, p. 314: OCR c"),
+    ("XIX", "n(y) + n(1-y) = n(1) + n(y)-n(x)", "n(y) + n(1-x) = n(1) + n(y)-n(x)", 1,
+     "PRINT, XIX. 6, p. 301: n(1 - y) for n(1 - x) (only n(1 - x) gives the right-hand side)"),
+    ("XIX", r"\text{Min. lim. } D \stackrel{=}{<} n(1)", r"\text{Min. lim. } D \stackrel{=}{<} 0", 1,
+     "PRINT, XIX. 10, p. 306: n(1) for 0 (his working on the page and the probability form on p. 307)"),
+    ("XX", r"-u)\}", r"-u\}", 1, "XX. 2, p. 324: stray parenthesis"),
+    ("XX", r"- a(1-p), \text{ \&c.}}", r"- a(1-p)}, \text{ \&c.}", 1, "XX. 6, p. 330"),
+    ("XX", "= (1 - hh') m", "= (l - hh') m", 1, "XX. 6, p. 331: the letter l"),
+    ("XX", r"terms whose coefficients are } \frac{1}{0}. \end{aligned}",
+     r"terms whose coefficients are } \frac{1}{0}. \qquad (1) \end{aligned}", 1, "XX. 8, p. 334: numbered (1)"),
+    ("XX", r"{c_1 p_1} + \frac{m_1 m_2 + m_2}{c_2 p_2}", r"{c_1 p_1} = \frac{m_1 m_2 + m_2}{c_2 p_2}", 1, "XX. 10, p. 340: ="),
+    ("XX", r"\{1-c_1(1-p_1)\} \dotsc", r"\{1-c_1(1-p_1)-u\} \dotsc", 1, "XX. 10, p. 341: -u"),
+    ("XX", r"\{\mu - c_n (1 - p_n)\}", r"\{\nu - c_n (1 - p_n)\}", 1, "XX. 15 (15), p. 351: nu"),
+    ("XX", r"\phi(x_2,\dotsc x_n)", r"\phi(x_1,\dotsc x_n)", 1, "XX. 17, p. 355: x1"),
+    ("XX", r"\therefore z + \frac{s+t}", r"\therefore z = \frac{s+t}", 1,
+     "PRINT, XX. 2 (6), p. 322: '+' for '=' (corrected by hand in the scanned copy)"),
+    ("XX", "xy=s,", "xz=s,", 1, "PRINT, XX. 6, p. 328: the datum is Prob. xz (corrected by hand in the copy)"),
+    ("XX", r"h=\frac{lh'", r"u=\frac{lh'", 1, "PRINT, XX. 6, p. 331: the root of (9) is u"),
+    ("XX", r"(\mu-a_1)\frac{\mu - a_1}{\mu}", r"(\mu-a_1)\frac{\mu - a_2}{\mu}", 1, "PRINT, XX. 11, p. 343: a2"),
+    ("XX", r"+ t_1 \dotsc \bar{t}_n", r"+ \bar{t}_1 \dotsc \bar{t}_n", 1, "PRINT, XX. 15 (10), p. 349: per (9)"),
+    ("XX", r"\bar{t}_1 \dotsc t_n", r"\bar{t}_1 \dotsc \bar{t}_n", 1, "PRINT, XX. 15 (10), p. 349: per (9)"),
+    ("XX", r"x_1 \dotsc \bar{x}_n", r"\bar{x}_1 \dotsc \bar{x}_n", 1,
+     "PRINT, XX. 15, p. 349: the same sentence then names it x1-bar .. xn-bar"),
+    ("XX", r"n_r = \frac{c_r(1-p_r)}{\mu - c_r(1-p_r)}", r"n_r = \frac{c_r(1-p_r)}{\nu - c_r(1-p_r)}", 1,
+     "PRINT, XX. 15, p. 349: nu (the Rule, p. 351)"),
+    ("XX", r"\times a,", r"\times x,", 1, "PRINT, XX. 19, p. 362: x (the next line)"),
+    ("XX", r"\varepsilon_{n\theta}", r"\varepsilon^{n\theta}", 1, "PRINT, XX. 25, p. 373: a power, as elsewhere"),
+]
+FORMULA_SUBS += [
+    ("XXI", r"x = \frac{1}{2}; \text{ to }x = 1,", r"x = \frac{1}{2}, \text{ to }x = 1,", 1, "XXI. 4, p. 380: comma"),
+    ("XXI", r"t_1, \dotsc \bar{t}_{m-1}", r"t_1, \dotsc t_{m-1}", 1, "XXI. 8, p. 386: no bar"),
+    ("XXI", r"(X X_1)t_1 \bar{t}_2\dotsc \bar{t}_{m-1} + (X X_{m-1})",
+     r"(X X_1)t_1 \bar{t}_2\dotsc \bar{t}_{m-1} \dotsc + (X X_{m-1})", 1, "XXI. 8 (9), p. 387"),
+    ("XXI", r"(x_i X_1)t_1 \bar{t}_2\dotsc \bar{t}_{m-1} + (x_i X_{m-1})",
+     r"(x_i X_1)t_1 \bar{t}_2\dotsc \bar{t}_{m-1} \dotsc + (x_i X_{m-1})", 1, "XXI. 8 (11), p. 388"),
+    ("XXI", r"x_1 = c_1 & \dots x_n=c_n, \\", r"x_1 = c_1 & \dots x_n=c_n, \\ & \text{namely,} \\", 1,
+     "XXI. 9, p. 391: the word between the two lines"),
+    ("XXI", r"(x_i X_{m-1} + x_i X_m}{X_{m-1} + X_m}.", r"(x_i X_{m-1} + x_i X_m)}{X_{m-1} + X_m} = c_i.", 1,
+     "XXI. 9 (20), p. 391: the parenthesis and '= c_i'"),
+    ("XXI", r"(xX_2)\dotsc (xX_m) = x", r"(xX_2)\dotsc + (xX_m) = x", 1, "XXI. 11, p. 395"),
+    ("XXI", r"\frac{(x X_1)}{x_1}", r"\frac{(x X_1)}{X_1}", 1, "XXI. 11, p. 396: capital X"),
+    ("XXI", r"\{ x^r + (1-x)^{n-r} \}", r"\{ x^r(1-x)^{n-r} + x^{n-r}(1-x)^r \}", 1,
+     "PRINT, XXI. 12, p. 396: by Boole's formula (4) of art. 3"),
+    ("XXI", r"x^r + \frac{(n-1)(n-2)\dotsc (n-r)}{1\cdot 2\dotsc r}x^{n-r}",
+     r"x^r(1-x)^{n-r} + \frac{(n-1)(n-2)\dotsc (n-r)}{1\cdot 2\dotsc r}x^{n-r}(1-x)^r", 1,
+     "PRINT, XXI. 12, p. 396: the factors the prose describes (r - 1 of the rest right, or r wrong)"),
+]
 PRINT_LOG = []
 
 
@@ -143,6 +258,22 @@ def print_numbers(held, start, where):
                 PRINT_LOG.append((where, re.findall(r"\\qquad \(([^)]*)\)", tex),
                                   re.findall(r"\\qquad \(([^)]*)\)", new)))
                 held[i] = (kind, new)
+    if where not in LOGIC and where not in ("Preface", "Note"):
+        # XVI-XXII: one spelling of the ordinal suffix, and \cdot for the
+        # transcriber's \centerdot, which the epub's compatible build sets
+        # as U+2B1D and \mathit{th} as math-italic letters, none of them in
+        # a reader's font
+        for i in range(start, len(held)):
+            t = re.sub(r"\^\{(?:\\mathit\{th\}|th)\}", r"^{\\text{th}}", held[i][1])
+            held[i] = (held[i][0], t.replace("\\centerdot", "\\cdot"))
+    for w, old, new, n, why in FORMULA_SUBS:
+        if w != where:
+            continue
+        hits = sum(held[i][1].count(old) for i in range(start, len(held)))
+        assert hits == n, (where, old, hits)
+        for i in range(start, len(held)):
+            held[i] = (held[i][0], held[i][1].replace(old, new))
+        PRINT_LOG.append((where, old, why))
     for w, old, new, why in FORMULA_FIXES:
         if w != where:
             continue
@@ -309,6 +440,162 @@ je>'wn t>'y 'arijm>'y to'nt>'y.}""",
      "De Caelo 268a, OCR-garbled LGR"),
     (r"t\~y a>ut\~y", r"t\~w| a>ut\~w|", "LGR y is psi; the dative is \u03c4\u1ff7 \u03b1\u1f50\u03c4\u1ff7"),
     (r"pasv\~wn", r"pas\~wn", "stray v in \u03c0\u03b1\u03c3\u1ff6\u03bd"),
+]
+
+# The Greek of Chapter XXII's notes. The transcriber typed it in MATH MODE
+# letter by letter (\varepsilon\acute{\iota}..., which TeX sets without
+# spaces and with the accents misplaced), and two notes as a Latin
+# transliteration in \textgreek, the Greek itself commented out with one
+# note's citation inside the comment. Each span, from its first anchor up to
+# (not including) its second, is replaced by the passage in Unicode: the
+# received text, keeping the print's word forms and punctuation, checked
+# against the 1854 pages 411-416 (_src/scan, leaves 427-432).
+GREEK_SPANS = [
+    ("'$E\\delta\\acute{o}\\kappa", "---\\textit{Diog. Laert.}",
+     "\u1f18\u03b4\u03cc\u03ba\u03b5\u03b9 \u03b4\u1f72 \u03b1\u1f50\u03c4\u1ff7 \u03c4\u1f78 \u03c0\u1fb6\u03bd \u1f04\u03c0\u03b5\u03b9\u03c1\u03bf\u03bd \u03b5\u1f36\u03bd\u03b1\u03b9, \u03ba\u03b1\u1f76 \u1f00\u03bd\u03b1\u03bb\u03bb\u03bf\u03af\u03c9\u03c4\u03bf\u03bd, \u03ba\u03b1\u1f76 \u1f00\u03ba\u03af\u03bd\u03b7\u03c4\u03bf\u03bd, \u03ba\u03b1\u1f76 \u1f15\u03bd, "
+     "\u1f45\u03bc\u03bf\u03b9\u03bf\u03bd \u1f11\u03b1\u03c5\u03c4\u1ff7 \u03ba\u03b1\u1f76 \u03c0\u03bb\u1fc6\u03c1\u03b5\u03c2. \u03ba\u03af\u03bd\u03b7\u03c3\u03af\u03bd \u03c4\u03b5 \u03bc\u1f74 \u03b5\u1f36\u03bd\u03b1\u03b9, \u03b4\u03bf\u03ba\u03b5\u1fd6\u03bd \u03b4\u1f72 \u03b5\u1f36\u03bd\u03b1\u03b9.\n",
+     "Melissus, Diogenes Laertius IX. 24, p. 411"),
+    ("$N{o}\\tilde{\\upsilon}\\nu\\;", "---\\textit{Arist. Met.}~\\textsc{i.}~3.",
+     "\u039d\u03bf\u1fe6\u03bd \u03b4\u03ae \u03c4\u03b9\u03c2 \u03b5\u1f30\u03c0\u1f7c\u03bd \u1f10\u03bd\u03b5\u1fd6\u03bd\u03b1\u03b9, \u03ba\u03b1\u03b8\u03ac\u03c0\u03b5\u03c1 \u1f10\u03bd \u03c4\u03bf\u1fd6\u03c2 \u03b6\u1ff4\u03bf\u03b9\u03c2, \u03ba\u03b1\u1f76 \u1f10\u03bd \u03c4\u1fc7 \u03c6\u03cd\u03c3\u03b5\u03b9, \u03c4\u1f78\u03bd \u03b1\u1f34\u03c4\u03b9\u03bf\u03bd \u03c4\u03bf\u1fe6 \u03ba\u03cc\u03c3\u03bc\u03bf\u03c5 "
+     "\u03ba\u03b1\u1f76 \u03c4\u1fc6\u03c2 \u03c4\u03ac\u03be\u03b5\u03c9\u03c2 \u03c0\u03ac\u03c3\u03b7\u03c2 \u03bf\u1f37\u03bf\u03bd \u03bd\u03ae\u03c6\u03c9\u03bd \u1f10\u03c6\u03ac\u03bd\u03b7 \u03c0\u03b1\u03c1\u2019 \u03b5\u1f30\u03ba\u1fc7 \u03bb\u03ad\u03b3\u03bf\u03bd\u03c4\u03b1\u03c2 \u03c4\u03bf\u1f7a\u03c2 \u03c0\u03c1\u03cc\u03c4\u03b5\u03c1\u03bf\u03bd. \u03a6\u03b1\u03bd\u03b5\u03c1\u1ff6\u03c2 \u03bc\u1f72\u03bd \u03bf\u1f56\u03bd "
+     "\u1f08\u03bd\u03b1\u03be\u03b1\u03b3\u03cc\u03c1\u03b1\u03bd \u1f34\u03c3\u03bc\u03b5\u03bd \u1f01\u03c8\u03ac\u03bc\u03b5\u03bd\u03bf\u03bd \u03c4\u03bf\u03cd\u03c4\u03c9\u03bd \u03c4\u1ff6\u03bd \u03bb\u03cc\u03b3\u03c9\u03bd, \u03b1\u1f30\u03c4\u03af\u03b1\u03bd \u03b4\u2019 \u1f14\u03c7\u03b5\u03b9 \u03c0\u03c1\u03cc\u03c4\u03b5\u03c1\u03bf\u03bd \u1f19\u03c1\u03bc\u03cc\u03c4\u03b9\u03bc\u03bf\u03c2 \u1f41 "
+     "\u039a\u03bb\u03b1\u03b6\u03bf\u03bc\u03ad\u03bd\u03b9\u03bf\u03c2 \u03b5\u1f30\u03c0\u03b5\u1fd6\u03bd.\n",
+     "Metaphysics A 3, 984b15, p. 411"),
+    ("$\\Xi\\varepsilon\\nu", "---\\textit{Ib.}",
+     "\u039e\u03b5\u03bd\u03bf\u03c6\u03ac\u03bd\u03b7\u03c2 \u03b4\u1f72 \u2026 \u03b5\u1f30\u03c2 \u03c4\u1f78\u03bd \u1f45\u03bb\u03bf\u03bd \u03bf\u1f50\u03c1\u03b1\u03bd\u1f78\u03bd \u1f00\u03c0\u03bf\u03b2\u03bb\u03ad\u03c8\u03b1\u03c2, \u03c4\u1f78 \u1f13\u03bd \u03b5\u1f36\u03bd\u03b1\u03af \u03c6\u03b7\u03c3\u03b9 \u03c4\u1f78\u03bd \u03b8\u03b5\u03cc\u03bd.\n",
+     "Metaphysics A 5, 986b24, p. 412"),
+    ("$\\acute{\\omega}\\varsigma\\ \\kappa", "\\end{verse}\n% [DPStyleGreek",
+     "\u1f61\u03c2 \u03ba\u03b1\u1f76 \u1f10\u03b3\u1f7c\u03bd \u1f44\u03c6\u03b5\u03bb\u03bf\u03bd \u03c0\u03c5\u03ba\u03b9\u03bd\u03bf\u1fe6 \u03bd\u03cc\u03bf\u03c5 \u1f00\u03bd\u03c4\u03b9\u03b2\u03bf\u03bb\u1fc6\u03c3\u03b1\u03b9\\\\\n"
+     "\u1f00\u03bc\u03c6\u03bf\u03c4\u03b5\u03c1\u03cc\u03b2\u03bb\u03b5\u03c0\u03c4\u03bf\u03c2 (\u03b4\u03bf\u03bb\u03af\u1fc3 \u03b4\u2019 \u1f41\u03b4\u1ff7 \u1f10\u03be\u03b5\u03c0\u03b1\u03c4\u03ae\u03b8\u03b7\u03bd,\\\\\n"
+     "\u03c0\u03c1\u03b5\u03c3\u03b2\u03c5\u03b3\u03b5\u03bd\u1f74\u03c2 \u1f14\u03c4\u2019 \u1f10\u1f7c\u03bd) \u03ba\u03b1\u1f76 \u1f00\u03bd\u03b1\u03bc\u03c6\u03ae\u03c1\u03b9\u03c3\u03c4\u03bf\u03c2 \u1f01\u03c0\u03ac\u03c3\u03b7\u03c2\\\\\n"
+     "\u03c3\u03ba\u03b5\u03c0\u03c4\u03bf\u03c3\u03cd\u03bd\u03b7\u03c2\u00b7 \u1f45\u03c0\u03c0\u1fc3 \u03b3\u1f70\u03c1 \u1f10\u03bc\u1f78\u03bd \u03bd\u03cc\u03bf\u03bd \u03b5\u1f30\u03c1\u03cd\u03c3\u03b1\u03b9\u03bc\u03b9,\\\\\n"
+     "\u03b5\u1f30\u03c2 \u1f13\u03bd \u03c4\u2019 \u03b1\u1f50\u03c4\u03cc \u03c4\u03b5 \u03c0\u1fb6\u03bd \u1f00\u03bd\u03b5\u03bb\u03cd\u03b5\u03c4\u03bf.\n",
+     "Timon, in Sextus Empiricus (Outlines I. 224), as Ritter and the print give it, p. 412"),
+    ("$ \\pi\\alpha\\lambda\\acute{\\iota}\\nu", "---\\textit{Heraclitus}",
+     "\u03c0\u03b1\u03bb\u03af\u03bd\u03c4\u03c1\u03bf\u03c0\u03bf\u03c2 \u1f01\u03c1\u03bc\u03bf\u03bd\u03af\u03b7 \u1f45\u03ba\u03c9\u03c2 \u03c0\u03b5\u03c1 \u03c4\u03cc\u03be\u03bf\u03c5 \u03ba\u03b1\u1f76 \u03bb\u03cd\u03c1\u03b7\u03c2.\n",
+     "Heraclitus B 51, p. 413 (the print's 'okws per' kept)"),
+    ("'$E\\pi\\varepsilon\\grave{\\iota}", "---\\textit{Arist. Metaphysica}",
+     "\u1f18\u03c0\u03b5\u1f76 \u03b4\u1f72 \u03ba\u03b1\u1f76 \u03c4\u1f00\u03bd\u03b1\u03bd\u03c4\u03af\u03b1 \u03c4\u03bf\u1fd6\u03c2 \u1f00\u03b3\u03b1\u03b8\u03bf\u1fd6\u03c2 \u1f10\u03bd\u03cc\u03bd\u03c4\u03b1 \u1f10\u03c6\u03b1\u03af\u03bd\u03b5\u03c4\u03bf \u1f10\u03bd \u03c4\u1fc7 \u03c6\u03cd\u03c3\u03b5\u03b9, \u03ba\u03b1\u1f76 \u03bf\u1f50 \u03bc\u03cc\u03bd\u03bf\u03bd \u03c4\u03ac\u03be\u03b9\u03c2 \u03ba\u03b1\u1f76 "
+     "\u03c4\u1f78 \u03ba\u03b1\u03bb\u1f78\u03bd \u1f00\u03bb\u03bb\u1f70 \u03ba\u03b1\u1f76 \u1f00\u03c4\u03b1\u03be\u03af\u03b1 \u03ba\u03b1\u1f76 \u03c4\u1f78 \u03b1\u1f30\u03c3\u03c7\u03c1\u03cc\u03bd, \u03ba\u03b1\u1f76 \u03c0\u03bb\u03b5\u03af\u03c9 \u03c4\u1f70 \u03ba\u03b1\u03ba\u1f70 \u03c4\u1ff6\u03bd \u1f00\u03b3\u03b1\u03b8\u1ff6\u03bd \u03ba\u03b1\u1f76 \u03c4\u1f70 \u03c6\u03b1\u1fe6\u03bb\u03b1 \u03c4\u1ff6\u03bd "
+     "\u03ba\u03b1\u03bb\u1ff6\u03bd, \u03bf\u1f55\u03c4\u03c9\u03c2 \u1f04\u03bb\u03bb\u03bf\u03c2 \u03c4\u03b9\u03c2 \u03c6\u03b9\u03bb\u03af\u03b1\u03bd \u03b5\u1f30\u03c3\u03ae\u03bd\u03b5\u03b3\u03ba\u03b5 \u03ba\u03b1\u1f76 \u03bd\u03b5\u1fd6\u03ba\u03bf\u03c2, \u1f11\u03ba\u03ac\u03c4\u03b5\u03c1\u03bf\u03bd \u1f11\u03ba\u03b1\u03c4\u03ad\u03c1\u03c9\u03bd \u03b1\u1f34\u03c4\u03b9\u03bf\u03bd \u03c4\u03bf\u03cd\u03c4\u03c9\u03bd.\n",
+     "Metaphysics A 4, 984b32, p. 413"),
+    ("%\\Alpha\\upsilon\\tau", "}%endfootnote\n I would but slightly",
+     "\u0391\u1f50\u03c4\u1f78\u03c2 \u03ba\u03b1\u1f76 \u1f51\u03c0\u1f72\u03c1 \u03b8\u03ad\u03c3\u03b9\u03bd \u1f10\u03c3\u03c4\u1f76 \u03ba\u03b1\u1f76 \u1f00\u03c6\u03b1\u03af\u03c1\u03b5\u03c3\u03b9\u03bd.---\\textit{Dion. Areop. De Divinis Nominibus}, "
+     "cap.~\\textsc{ii}.\n",
+     "Dionysius, Divine Names II, p. 414: the citation was inside the comment"),
+    ("%$O\\upsilon\\delta\\varepsilon\\nu", ".---\\textit{De Divinis Nominibus}, cap.~\\textsc{v}.",
+     "\u039f\u1f50\u03b4\u1f72\u03bd \u03bf\u1f56\u03bd \u1f04\u03c4\u03bf\u03c0\u03bf\u03bd, \u1f10\u03be \u1f00\u03bc\u03c5\u03b4\u03c1\u1ff6\u03bd \u03b5\u1f30\u03ba\u03cc\u03bd\u03c9\u03bd \u1f10\u03c0\u1f76 \u03c4\u1f78 \u03c0\u03ac\u03bd\u03c4\u03c9\u03bd \u03b1\u1f34\u03c4\u03b9\u03bf\u03bd \u1f00\u03bd\u03b1\u03b2\u03ac\u03bd\u03c4\u03b1\u03c2, \u1f51\u03c0\u03b5\u03c1\u03ba\u03bf\u03c3\u03bc\u03af\u03bf\u03b9\u03c2 "
+     "\u1f40\u03c6\u03b8\u03b1\u03bb\u03bc\u03bf\u1fd6\u03c2 \u03b8\u03b5\u03c9\u03c1\u1fc6\u03c3\u03b1\u03b9 \u03c0\u03ac\u03bd\u03c4\u03b1 \u1f10\u03bd \u03c4\u1ff7 \u03c0\u03ac\u03bd\u03c4\u03c9\u03bd \u03b1\u1f30\u03c4\u03af\u1ff3, \u03ba\u03b1\u1f76 \u03c4\u1f70 \u1f00\u03bb\u03bb\u03ae\u03bb\u03bf\u03b9\u03c2 \u1f10\u03bd\u03b1\u03bd\u03c4\u03af\u03b1 "
+     "\u03bc\u03bf\u03bd\u03bf\u03b5\u03b9\u03b4\u1ff6\u03c2 \u03ba\u03b1\u1f76 \u1f21\u03bd\u03c9\u03bc\u03ad\u03bd\u03c9\u03c2",
+     "Dionysius, Divine Names V, p. 415"),
+    ("$\\upsilon\\pi\\varepsilon\\rho\\phi\\omega", "(\\textit{De Mystica Theologia}",
+     "\u1f51\u03c0\u03ad\u03c1\u03c6\u03c9\u03c4\u03bf\u03c2 \u03b3\u03bd\u03cc\u03c6\u03bf\u03c2.\n", "Dionysius, Mystical Theology I, p. 415"),
+]
+GREEK_LOG = []
+# Other spans of the probability half, replaced the same way: the three
+# places the transcription uses \footnotemark/\footnotetext, and the
+# Distributed Proofreaders' own notes, which are not Boole's (their
+# corrections are kept).
+SPANS = [
+    ("%endfootnote\nAnd in Greece", "And in Greece", " ", "XXII. 7: the space after a note TeX would swallow"),
+    ("\\begin{equation*}\\begin{minipage}{.8\\linewidth}\n1st. The probability", "%**[2nd proofer: I probably",
+     "\\begin{verse}\n1st. The probability of a condemnation by an exact majority $m$;\\\\\n"
+     "2nd. The probability of condemnation by the next greater majority $m + 2$;\n\\end{verse}\n",
+     "XXI: two lines of prose set in minipages inside displays, as indented lines"),
+    ("n(1).\n\\footnotemark\n\\end{align*}\n\\footnotetext{", "The above expression for the minor",
+     "n(1).\n\\end{align*}\\footnote{",
+     "XIX: De Morgan's note, its mark inside an align*, set after the display"),
+    ("}%endfootnotetext\n", "\n\\begin{center}\\textsc{Proposition I.}", "}\n",
+     "XIX: the end of that note"),
+    ("and\\footnotemark\\ so on", "\\begin{gather*}\n  (x\\bar{s} + s\\bar{x} + y\\bar{t}",
+     "and so on, we have\n",
+     "XX: a DP note that they corrected 'y-bar for 1 = y' (the correction kept, the note dropped)"),
+    ("probabilities%**[Misspelling corrected.]", "of different constitutions of the universe, so as",
+     "probabilities\\footnote{See an interesting paper by Prof. Forbes in the Philosophical "
+     "Magazine, Dec. 1850; also Mill's Logic, chap. xviii.}\n",
+     "XX. 22, p. 368: the print's 'probabi-bilities' corrected and its dagger, which has no mark "
+     "in the text, set where DP set it; their two notes dropped; 'chap. xviii.' as printed"),
+]
+
+
+# The probability half, XVI-XXII: the same kind of repairs.
+FIXES += [
+    ("""\\begin{alignat*}{2}
+&1.\\; nx.                  &4.\\;& ny + nx. \\\\
+&2.\\; nx + n (1-y). \\qquad &5.\\;& ny + n (1-y).  \\\\
+&3.\\; nx + n (z).          &6.\\;& ny + nz.
+\\end{alignat*}""",
+     """\\begin{tabular}{ll}
+1. $nx$. & 4. $ny + nx$. \\\\
+2. $nx + n(1-y)$. & 5. $ny + n(1-y)$. \\\\
+3. $nx + n(z)$. & 6. $ny + nz$.
+\\end{tabular}""", "XIX: a numbered list in an alignat*, set as a table of its two columns"),
+    ("should be $p, g, r ..$", "should be $p, q, r ..$", "Note: XVII. Prop. II's data are p, q, r (OCR g)"),
+    ("See p. 270, CASE II.*", "See p. 270, CASE II.", "Note: a stray asterisk, no note for it to mark"),
+    ("ph{\\ae}nornena", "ph{\\ae}nomena", "XXII, p. 413: 'phaenomena' (OCR rn for m)"),
+    (r"\text{\raisebox{-1.5ex}{$\genfrac{}{}{0pt}{}{\text{(sum of other con-}}{\text{stituents),}}$}}",
+     r"\text{(sum of other constituents),}",
+     "XX. 15 (9): a stacked label pandoc cannot set; the transcriber's own simpler version"),
+    ("\\left.\\begin{minipage}{.4\\linewidth}Probability that if some one\nalone of the causes $A_1, A_2\\dotsc A_n$\npresent itself, the event $E$\nwill follow.\\end{minipage}\\right\\}",
+     r"\left.\begin{array}{l}\text{Probability that if some one}\\ \text{alone of the causes } A_1, A_2\dotsc A_n"
+     r"\\ \text{present itself, the event } E\\ \text{will follow.}\end{array}\right\}",
+     "XX. 16: words beside a formula as an array of \\text lines, not a minipage"),
+    ("\\left.\\begin{minipage}{.4\\linewidth}Probability that if all the\ncauses $A_1, \\dotsc A_n$\nconspire, the event $E$ will follow.\n\\end{minipage}\\right\\}",
+     r"\left.\begin{array}{l}\text{Probability that if all the}\\ \text{causes } A_1, \dotsc A_n"
+     r"\\ \text{conspire, the event } E \text{ will follow.}\end{array}\right\}",
+     "XX. 16: the same"),
+    ("\\frac{m + 1}{m + 2}.%\n\\footnote{See a memoir by Bishop Terrot, Edinburgh Phil. Trans. vol. xx. Part iv.}\n\\]",
+     "\\frac{m + 1}{m + 2}.\n\\]\\footnote{See a memoir by Bishop Terrot, Edinburgh Phil. Trans. vol. xx. Part iv.}",
+     "XX. 20: a footnote inside a display, set after it"),
+    # --- the PRINT CHECK of XVI-XXII (2026-10-16): every formula and
+    # equation number read against the 1854 pages; prose slips in passing ---
+    ("drawn, arid a probability", "drawn, and a probability", "XVII. 10, p. 261: OCR 'arid'"),
+    ("probability of the concurrence of $x$ and $y$\n", "probability of the concurrence of $x$ and $y$.\n",
+     "XVII. 2, p. 255: the full stop"),
+    ("the values of,$p'$", "the values of $p'$", "XVII. 14, p. 266: stray comma"),
+    ("if is therein found", "if it is therein found", "XX. 15, p. 351"),
+    ("Chap. XVII. Prop,\\textsc{iv.}", "Chap. XVII. Prop.~\\textsc{iv.}", "XX. 15, p. 352"),
+    ("the event $A_1$, occur", "the event $A_1$ occur", "XX. 16, p. 353: stray comma"),
+    ("find Prob, $w$", "find Prob. $w$", "XX. 19, p. 359"),
+    ("those which arc drawn", "those which are drawn", "XX. 23, p. 369: OCR 'arc'"),
+    ("Prob.\\ that if $x$; and $y$", "Prob.\\ that if $x$ and $y$", "XVIII. 9, p. 290: stray semicolon"),
+    ("each of the formula $n(x)$", "each of the formul{\\ae} $n(x)$", "XIX. 10, p. 306: 'formulae'"),
+    ("be $1-r$,\nPerhaps", "be $1-r$.\nPerhaps", "XVIII. 6, p. 284: full stop"),
+    ("(IX.~Prop,~\\textsc{iii}.)", "(IX.~Prop.~\\textsc{iii}.)", "XVIII. 9, p. 290"),
+    ("constituent for\n\neach of the symbols", "constituent for\neach of the symbols",
+     "XX. 24: a blank line (a page turn) split the sentence"),
+    ("$\\dfrac{1}{2^{m+1}}$;\n\nwhence the probability", "$\\dfrac{1}{2^{m+1}}$;\nwhence the probability",
+     "XX. 24: the same"),
+    # article numbers and ordinals typed as formulas
+    ("$18$. It has been stated (I.~$12$)", "18. It has been stated (I.~12)", "XVII. 18: numbers typed as math"),
+    ("$19$. Let it be granted", "19. Let it be granted", "XVII. 19"),
+    ("$20$. From the above investigations it clearly appears, $1$st,",
+     "20. From the above investigations it clearly appears, 1st,", "XVII. 20"),
+    ("results. $2$ndly, that", "results. 2ndly, that", "XVII. 20"),
+    ("$z$, \\&$c$., the values of", "$z$, \\&c., the values of", "XIX. 6: '&c.' typed as math"),
+    ("either, $1$st, of the possibility", "either, 1st, of the possibility", "XXII: ordinals typed as math"),
+    ("or $2$ndly, of", "or 2ndly, of", "XXII"),
+    # XXII prose
+    ("\\emph{expressinq}", "\\emph{expressing}", "XXII. 2: OCR 'q'"),
+    ("Whereever this", "Wherever this", "XXII"),
+    ("Metaphysics, Book\\textsc{i.}", "Metaphysics, Book~\\textsc{i.}", "XXII. 7: the space"),
+    ("{\\centering ''Dark with", "{\\centering ``Dark with", "XXII: an opening quotation mark"),
+    ("\\footnote{''Idcirco cum", "\\footnote{``Idcirco cum", "XXII: an opening quotation mark"),
+    ("values $n(x)$ and $(y)$.", "values $n(x)$ and $n(y)$.", "PRINT, XIX. 4, p. 298: the n dropped"),
+    ("on replacing $n$ by its value", "on replacing $x$ by its value",
+     "PRINT, XX. 19, p. 363 (Donkin's verification): n for x, which was defined as (p - a)/(1 - a) above"),
+    ("represented by $Vy$, \\&c.", "represented by $V_y$, \\&c.", "XVII. 10, p. 261: V_y"),
+    ("by multiply ing $X$", "by multiplying $X$", "XXI. 8, p. 387: a line-end hyphen carried in"),
+    ("\\textbf{3. Ex. 2.}", "\n3. Ex. 2.", "XVIII. 3: roman like Ex. 3, 4, 5; a new article, so a new paragraph"),
+    ("$1$. It is designed here", "1. It is designed here", "XVIII. 1: the article number typed as math"),
+    ("1 - a(1-p).\n\\]\n7. It is a confirmation", "1 - a(1-p).\n\\]\n\n7. It is a confirmation",
+     "XX. 7: a new article, so a new paragraph"),
+    ("(IX.~Prop.~{\\sc ii}.)", "(IX.~Prop.~\\textsc{ii}.)", "{\\sc}"),
+    ("(IX.~Prop.~{\\sc i}.)", "(IX.~Prop.~\\textsc{i}.)", "{\\sc}"),
+    ("Principle~{\\sc i}.,", "Principle~\\textsc{i}.,", "{\\sc}"),
+    # layout the converter has no rule for
+    ("\\multicolumn{5}{c}{\\dotfill}\\\\", "& $\\vdots$ & & $\\vdots$ & \\\\", "XVII, the data table: a row of dots"),
+    ("\\multispan2\\dotfill\\\\", "&\\cdots\\\\", "XVII. 12: a row of dots in an align"),
 ]
 
 # Transcriber notes (TeX comments) in the kept text, and what this prep did.
@@ -478,8 +765,12 @@ def mclean(tex):
     tex = macro(tex, "textsc", 1, smallcaps)     # "(Ax. \textsc{i}.)" in a \text
     tex = macro(tex, "textit", 1, lambda o, a: r"\textit{" + a + "}")
     tex = tex.replace("·", r"\cdot ")
+    # XVI-XXII write Boole's "Prob." four ways; one, and the transcriber's
+    # "\mathrm{Prob. },x" (a comma for a thin space) without its comma
+    tex = re.sub(r"\\(?:operatorname|mathrm)\{Prob\. ?\}\s*,?", r"\\text{Prob. }", tex)
     tex = tex.replace(r"\begin{split}", r"\begin{aligned}").replace(r"\end{split}", r"\end{aligned}")
     tex = re.sub(r"\s+", " ", tex).strip()
+    tex = surd_arg(tex)
     new, changed = fix_braces(tex, None)
     if changed:
         BRACES.append((tex, new))
@@ -487,6 +778,40 @@ def mclean(tex):
 
 
 BRACES = []               # (chapter, formula) whose bare {..} became \{..\}
+
+
+def surd_arg(tex):
+    """BOOLE'S ROOT SIGN, \\surd, STANDS BEFORE A BRACKET: "\\surd\\{..\\}",
+    "\\surd[..]". pandoc reads \\surd as taking the next group and refuses an
+    escaped brace or a bracket there (XX. 15); the bracket is wrapped in a
+    group, which prints the same."""
+    out, i = [], 0
+    while True:
+        j = tex.find("\\surd", i)
+        if j < 0:
+            return "".join(out) + tex[i:]
+        k = j + len("\\surd")
+        while k < len(tex) and tex[k] == " ":
+            k += 1
+        out.append(tex[i:k])
+        if tex.startswith("\\{", k) or tex.startswith("[", k):
+            opener, closer = ("\\{", "\\}") if tex[k] == "\\" else ("[", "]")
+            depth, m = 0, k
+            while m < len(tex):
+                if tex.startswith(opener, m):
+                    depth += 1
+                    m += len(opener)
+                elif tex.startswith(closer, m):
+                    depth -= 1
+                    m += len(closer)
+                    if depth == 0:
+                        break
+                else:
+                    m += 2 if tex[m] == "\\" else 1
+            out.append("{" + tex[k:m] + "}")
+            i = m
+        else:
+            i = k
 
 
 def fix_braces(tex, where):
@@ -506,7 +831,7 @@ def fix_braces(tex, where):
             name = m.group(1)
             nargs = {"frac": 2, "text": 1, "bar": 1, "begin": 1, "end": 1, "sqrt": 1,
                      "textit": 1, "mathrm": 1, "acute": 1, "tilde": 1, "dfrac": 2,
-                     "tfrac": 2, "hat": 1, "underline": 1, "overline": 1}.get(name, 0)
+                     "tfrac": 2, "hat": 1, "underline": 1, "overline": 1, "surd": 1}.get(name, 0)
             for _ in range(nargs):
                 while i < len(tex) and tex[i] == " ":
                     out.append(" ")
@@ -535,7 +860,11 @@ def fix_braces(tex, where):
 
 
 def fix_l(tex, where):
-    """The OCR's letter l for the digit 1, inside a formula."""
+    """The OCR's letter l for the digit 1, inside a formula. Only in the
+    logic half: from XVI on Boole uses l as a quantity (l/m, hmu - h'nu = l),
+    so there each misread 1 is a FIX of its own, checked on the page."""
+    if where not in LOGIC and where not in ("Preface", "Note"):
+        return tex
     bare = re.sub(r"\\text\{[^}]*\}", "", tex)
     if re.search(r"(?<![A-Za-z\\])l(?![A-Za-z])", bare):
         new = re.sub(r"(?<![A-Za-z\\])l(?![A-Za-z])",
@@ -648,7 +977,8 @@ class Math:
             self.in_note = bool(note)
             if note:
                 start = end = line_at(note[0])
-            self.align_like = bool(m.group(1)) and m.group(1).rstrip("*") in ("align", "gather", "multline")
+            self.align_like = bool(m.group(1)) and (m.group(1).rstrip("*") in ("align", "gather", "multline")
+                                                    or "\\begin{split}" in m.group(2))
             if m.group(1):
                 parts = self.display(m.group(1), m.group(2), start, end)
             elif m.group(3) is not None or m.group(4) is not None:
@@ -774,10 +1104,14 @@ def italic(o, a):
 
 def text_chars(s):
     s = macro(s, "textgreek", 1, lambda o, a: lgr(a))
-    s = re.sub(r"\{\\(ae|AE|oe)\}|\\(ae|AE|oe)(?![A-Za-z])(\{\})?",
+    # a bare \ae ends at the space after it, which TeX swallows ("ph\ae nomena")
+    s = re.sub(r"\{\\(ae|AE|oe)\}|\\(ae|AE|oe)(?![A-Za-z])(\{\}| )?",
                lambda m: {"ae": "æ", "AE": "Æ", "oe": "œ"}[m.group(1) or m.group(2)], s)
     s = re.sub(r"\\([`'^\"~])\{?([A-Za-z])\}?",
                lambda m: unicodedata.normalize("NFC", m.group(2) + ACCENTS[m.group(1)]), s)
+    # '' opening a quotation (after a space, a bracket or a dash) is the
+    # transcriber's opening mark: XXII's notes type "''Idcirco", "''Dark"
+    s = re.sub(r"(?:^|(?<=[\s({\-]))''(?=[A-Za-z\u00c0-\u024f])", "“", s)
     s = s.replace("``", "“").replace("''", "”")
     s = re.sub(r"\\lq\\lq|\\rq\\rq", lambda m: "“" if "l" in m.group(0) else "”", s)
     s = re.sub(r"(?<![\w\\])`", "‘", s)
@@ -793,7 +1127,7 @@ def unwrap(s):
     """Plain layout macros and environments with nothing to say."""
     for name in ("bigskip", "medskip", "smallskip", "noindent", "large", "Large", "Huge",
                  "normalsize", "small", "newpage", "clearpage", "mainmatter", "frontmatter",
-                 "hfill", "par", "indent"):
+                 "hfill", "par", "indent", "newline"):
         s = re.sub(r"\\" + name + r"(?![A-Za-z])\s*", " ", s)
     s = re.sub(r"\\(vspace|hspace)\*?\{[^}]*\}", " ", s)
     s = re.sub(r"\\setcounter\{[^}]*\}\{[^}]*\}", "", s)
@@ -871,6 +1205,10 @@ def center(o, body):
 
 def convert(s, notes):
     """Body TeX (math already held) -> paragraphs text with \x10 tab lines."""
+    # "...recovered.\footnote{..}%endfootnote" + newline + " The same": the
+    # transcriber indented the next word to keep its space, which TeX (and
+    # the join below) would drop (XVI. 3, and eight more in XX-XXII)
+    s = re.sub(r"(?<=\})%[ \t]*\n[ \t]+(?=[A-Za-z(])", " ", s)
     # TeX's comment join: "%" + newline + leading space is nothing
     s = re.sub(r"(?<!\\)%[ \t]*\n[ \t]*", "", s)
     s = unwrap(s)
@@ -930,7 +1268,7 @@ def finish(s, notes, held):
         t = macro(t, "text", 1, lambda o, a: a)
         t = macro(t, "textrm", 1, lambda o, a: a)
         t = text_chars(t)
-        assert not re.search(r"\\[A-Za-z]+", t), re.findall(r".{30}\\[A-Za-z]+.{30}", t)[:3]
+        assert not re.search(r"\\[A-Za-z]+", t), re.findall(r".{0,40}\\[A-Za-z]+.{0,40}", t, re.S)[:5]
         t = t.replace("{", "").replace("}", "")
         return t
 
@@ -943,11 +1281,25 @@ def finish(s, notes, held):
             return rf" \[{tex}\] " if in_note else f" \x11\\[{tex}\\]\x11 "
         return re.sub(r"\x00(\d+)\x00", one, t)
 
+    # A NOTE MAY HOLD VERSE (XIX's De Morgan syllogism, XXII's Timon and its
+    # English version) or a quotation (XXII's Milton): its lines become an
+    # indented block after the note, and text after them "Footnote,
+    # continued:", the convention the renderers lift out with the note.
     notes_txt = []
     for n in notes:
-        t = inline_fmt(n)
-        t = math_back(t, in_note=True)
-        notes_txt.append(re.sub(r"\s+", " ", t).strip())
+        pieces = re.split(r"\\begin\{(?:verse|quote)\}(.*?)\\end\{(?:verse|quote)\}", n, flags=re.S)
+        out_n = []
+        for i, piece in enumerate(pieces):
+            if i % 2:
+                piece = re.sub(r"\{\\centering\s*(.*?)\}(?=\\\\)", r"\1", piece, flags=re.S)
+                ls = [re.sub(r"\s+", " ", math_back(inline_fmt(l), in_note=True)).strip()
+                      for l in split_top(piece, "\\\\")]
+                out_n.append("\n".join("\t" + l for l in ls if l))
+            else:
+                t = re.sub(r"\s+", " ", math_back(inline_fmt(piece), in_note=True)).strip()
+                if t:
+                    out_n.append(t if not out_n else "Footnote, continued: " + t)
+        notes_txt.append(out_n)
 
     s = s.replace("\\\\", " ")          # a forced line break in prose
     s = inline_fmt(s)
@@ -985,7 +1337,8 @@ def finish(s, notes, held):
         if lines:
             paras.append("\n".join(lines))
         for k in marks:
-            paras.append("Footnote: " + notes_txt[k])
+            paras.append("Footnote: " + notes_txt[k][0])
+            paras.extend(notes_txt[k][1:])
     # a short lead-in with no stop, then a display ("Thus the equation"):
     # one paragraph, for the same reason as above
     out = []
@@ -1011,6 +1364,17 @@ def main():
     b, comments = blank_comments(raw)
     linestarts = [0] + [m.end() for m in re.finditer(r"\n", b)]
     shifts = []               # (offset in the fixed text, length change)
+    for start, stop, new, why in GREEK_SPANS + SPANS:
+        # offsets agree between raw and its comment-blanked copy b
+        assert raw.count(start) == 1 and raw.count(stop) >= 1, why
+        i = raw.index(start)
+        j = raw.index(stop, i)
+        GREEK_LOG.append((why, raw[i:j]))
+        raw = raw[:i] + new + raw[j:]
+        b = b[:i] + new + b[j:]
+        d = len(new) - (j - i)
+        shifts = [(at + d if at > i else at, dd) for at, dd in shifts]
+        shifts.append((i + len(new), d))
     for old, new, why in FIXES:
         assert raw.count(old) == 1, ("FIX does not match once", why)
         # the same edit in both copies, so offsets stay aligned between them
@@ -1019,7 +1383,10 @@ def main():
         assert bi == i, why
         raw = raw[:i] + new + raw[i + len(old):]
         b = b[:i] + new + b[i + len(old):]
-        shifts.append((i + len(new), len(new) - len(old)))
+        # an edit moves every earlier-recorded edit that lies after it
+        d = len(new) - len(old)
+        shifts = [(at + d if at > i else at, dd) for at, dd in shifts]
+        shifts.append((i + len(new), d))
 
 
     def line_at(off):
@@ -1032,14 +1399,13 @@ def main():
     pre = [o for o, h in heads if h == r"\chapter[PREFACE.]"][0]
     cont = [o for o, h in heads if h == r"\chapter[CONTENTS.]"][0]
     main_ = b.index("\\mainmatter")
-    prob = [o for o, h in heads if h.startswith(r"\chapter[ON THE THEORY OF PROBABILITIES")][0]
-    chap_offs = [o for o, h in heads if main_ < o < prob]
-    assert len(chap_offs) == 15, len(chap_offs)
+    end_ = b.index(r"\centerline{\textsc{the end.}}")
+    chap_offs = [o for o, h in heads if main_ < o < end_]
+    assert len(chap_offs) == 22, len(chap_offs)
 
     # Boole's Contents, asserted
     toc = re.findall(r"\\textsc\{([^}]*),\}\\dotfill\s*(\d+)", b[cont:main_])
-    assert [t for t, p in toc[:15]] == CONTENTS, toc[:15]
-    assert len(toc) == 22
+    assert [t for t, p in toc] == CONTENTS, toc
     pages = [int(p) for t, p in toc]
 
     # dedication: the centred block on the page before the Preface
@@ -1053,6 +1419,12 @@ def main():
     # Preface body: after its centred heading block
     pre_body_start = b.index("\\bigskip", b.index("\\end{center}", pre)) + len("\\bigskip")
     spans = [("Preface", pre_body_start, cont)]
+    # BOOLE'S NOTE, printed before Chapter I: his correction to the
+    # statement of XX. Prop. II and its urn problem, and the principle of
+    # XVII. Prop. IV restated. Kept after the Preface, where he put it.
+    note = [o for o, h in heads if h == r"\chapter[]" and cont < o < main_]
+    assert len(note) == 1
+    spans.append(("Note", b.index("\\end{center}", note[0]) + len("\\end{center}"), main_))
     for k, o in enumerate(chap_offs):
         # body starts after the \chapter[..]{..} heading's closing brace
         j = b.index("]", o) + 1
@@ -1060,7 +1432,7 @@ def main():
             j += 1
         assert b[j] == "{", b[o:o + 80]
         _, j = group(b, j)
-        end = chap_offs[k + 1] if k + 1 < 15 else prob
+        end = chap_offs[k + 1] if k + 1 < 22 else end_
         spans.append((k + 1, j, end))
 
     math = Math(tags)
@@ -1068,8 +1440,17 @@ def main():
     for m in re.finditer(r"\\footnote(?![A-Za-z])\s*", b):
         _, e = group(b, m.end())
         math.notes.append((m.start(), e - 1))
+    # AN ITALIC ENUNCIATION HOLDING A DISPLAY is read whole like a footnote:
+    # TeX logs its numbers at the line where the \textit{..} closes (XX's
+    # general solution, (14) and (15)). Only from XVI on, where it occurs.
+    for m in re.finditer(r"\\(textit|emph)\{", b):
+        if m.start() < chap_offs[15]:
+            continue
+        _, e = group(b, m.end() - 1)
+        if re.search(r"\\\[|\\begin\{(equation|align|gather|multline)", b[m.start():e]):
+            math.notes.append((m.start(), e - 1))
     for key, start, end in spans:
-        math.where = "Preface" if key == "Preface" else ROMAN[key - 1]
+        math.where = key if key in ("Preface", "Note") else ROMAN[key - 1]
         seg = b[start:end]
         seg = seg.replace("\\setcounter{chapter}{13}", "")
         held_from = len(math.held)
@@ -1081,7 +1462,7 @@ def main():
         sections.append((key, paras))
 
     # the equation numbers LaTeX printed in scope must all have been used
-    lo, hi = line_at(pre), line_at(prob)
+    lo, hi = line_at(pre), line_at(end_)
     printed = sum(len(v) for ln, v in tags.items() if lo <= ln < hi)
     unused = sorted((ln, v[i]) for ln, v in tags.items() if lo <= ln < hi
                     for i in range(len(v)) if (ln, i) not in math.used)
@@ -1103,18 +1484,22 @@ def write(sections, ded_lines, pages):
         f.unlink()
     manifest = []
     n = 0
+    note = dict(sections)["Note"]
     for key, paras in sections:
+        if key == "Note":
+            continue
         if key == "Preface":
             ded = "\n".join("\t" + titlecase_ded(l) for l in ded_lines)
-            text = "Dedication\n\n" + ded + "\n\nPreface\n\n" + "\n\n".join(paras) + "\n"
+            text = ("Dedication\n\n" + ded + "\n\nPreface\n\n" + "\n\n".join(paras)
+                    + "\n\nNote\n\n" + "\n\n".join(note) + "\n")
             (out / "000.txt").write_text(text)
             manifest.append({"file": "000.txt", "title": "Preface", "part": 1, "of": 1,
                              "words": len(text.split()),
-                             "split_headings": ["Dedication", "Preface"]})
+                             "split_headings": ["Dedication", "Preface", "Note"]})
             n = 1
             continue
         title = heading(key)
-        parts = split_parts(paras)
+        parts = split_parts(paras, key)
         for p, chunk in enumerate(parts, 1):
             head = title + (f"\n(Part {p} of {len(parts)})" if len(parts) > 1 else "")
             text = head + "\n\n" + "\n\n".join(chunk) + "\n"
@@ -1164,12 +1549,20 @@ def prose_words(t):
     return len(MATHSPAN.sub(" ", t).split())
 
 
-def split_parts(paras):
-    """Split at article boundaries ("12. ...") when the prose runs long."""
-    total = sum(prose_words(p) for p in paras)
-    if total <= MAX_PROSE:
+MAX_CHARS = 38000         # XVI-XXII: split by size, formulas included
+
+
+def split_parts(paras, key=1):
+    """Split at article boundaries ("12. ...") when the prose runs long.
+    From XVI the measure is the file's whole size: the probability chapters
+    are dense with formulas, which a translator must copy out in full, so
+    prose words alone undercount what one agent has to write."""
+    size = prose_words if key <= 15 else len
+    limit = MAX_PROSE if key <= 15 else MAX_CHARS
+    total = sum(size(p) for p in paras)
+    if total <= limit:
         return [paras]
-    k = -(-total // MAX_PROSE)
+    k = -(-total // limit)
     target = total / k
     parts, cur, acc, top = [], [], 0, 0
     for p in paras:
@@ -1183,7 +1576,7 @@ def split_parts(paras):
             parts.append(cur)
             cur = []
         cur.append(p)
-        acc += prose_words(p)
+        acc += size(p)
     parts.append(cur)
     return parts
 

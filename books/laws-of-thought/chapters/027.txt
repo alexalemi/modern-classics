@@ -1,0 +1,210 @@
+Chapter 21: Probability of Judgments
+(Part 1 of 2)
+
+1. On the presumption that the general method of this treatise for the solution of questions in the theory of probabilities, has been sufficiently elucidated in the previous chapters, it is proposed here to enter upon one of its practical applications selected out of the wide field of social statistics, viz., the estimation of the probability of judgments. Perhaps this application, if weighed by its immediate results, is not the best that could have been chosen. One of the first conclusions to which it leads is that of the _necessary_ insufficiency of any data that experience alone can furnish, for the accomplishment of the most important object of the inquiry. But in setting clearly before us the _necessity_ of hypotheses as supplementary to the data of experience, and in enabling us to deduce with rigour the consequences of _any_ hypothesis which may be assumed, the method accomplishes all that properly lies within its scope. And it may be remarked, that in questions which relate to the conduct of our own species, hypotheses are more justifiable than in questions such as those referred to in the concluding sections of the previous chapter. Our general experience of human nature comes in aid of the scantiness and imperfection of statistical records.
+
+2. The elements involved in problems relating to criminal assize are the following:—
+
+1st. The probability that a particular member of the jury will form a correct opinion upon the case.
+
+2nd. The probability that the accused party is guilty.
+
+3rd. The probability that he will be condemned, or that he will be acquitted.
+
+4th. The probability that his condemnation or acquittal will be just.
+
+5th. The constitution of the jury.
+
+6th. The data furnished by experience, such as the relative numbers of cases in which unanimous decisions have been arrived at, or particular majorities obtained; the number of cases in which decisions have been reversed by superior courts, &c.
+
+Again, the class of questions under consideration may be regarded as either direct or inverse. The direct questions of probability are those in which the probability of correct decision for each member of the tribunal, or of guilt for the accused party, are supposed to be known _à priori_, and in which the probability of a decision of a particular kind, or with a definite majority, is sought. Inverse problems are those in which, from the data furnished by experience, it is required to determine some element which, though it stand to those data in the relation of cause to effect, cannot directly be made the subject of observation; as when from the records of the decisions of courts it is required to determine the probability that a member of a court will judge correctly. To this species of problems, the most difficult and the most important of the whole series, attention will chiefly be directed here.
+
+3. There is no difficulty in solving the direct problems referred to in the above enumeration. Suppose there is but one juryman. Let \(k\) be the probability that the accused person is guilty; \(x\) the probability that the juryman will form a correct opinion; \(X\) the probability that the accused person will be condemned: then—
+\[\begin{aligned} kx &= \text{ probability that the accused party is guilty, and that the} \\ & \qquad \text{juryman judges him to be guilty.} \\ (1-k)(1-x) &= \text{ probability that the accused person is inno-} \\ & \qquad \text{cent, and that the juryman pronounces him guilty.} \end{aligned}\]
+
+Now these being the only cases in which a verdict of condemnation can be given, and being moreover mutually exclusive, we have
+\[X = kx + (1-k)(1-x). \qquad (1)\]
+
+In like manner, if there be \(n\) jurymen whose separate probabilities of correct judgment are \(x_1, x_2, \dotsc x_n\), the probability of an unanimous verdict of condemnation will be
+\[X = k x_1 x_2 \dotsc x_n + (1-k)(1-x_1)(1-x_2)\dotsc (1-x_n).\]
+Whence, if the several probabilities \(x_1, x_2 \dotsc x_n\) are equal, and are each represented by \(x\), we have
+\[X = kx^n + (1-k)(1-x)^n. \qquad (2)\]
+The probability in the latter case, that the accused person is guilty, will be
+\[\frac{kx^n}{kx^n + (1-k)(1-x)^n}\]
+All these results assume, that the events whose probabilities are denoted by \(k\), \(x_1\), \(x_2\), &c., are independent, an assumption which, however, so far as we are concerned, is involved in the fact that those events are the only ones of which the probabilities are given.
+
+The probability of condemnation by a given number of voices may be found on the same principles. If a jury is composed of three persons, whose several probabilities of correct decision are \(x\), \(x'\), \(x''\), the probability \(X_2\) that the accused person will be declared guilty by two of them will be
+\[\begin{aligned} X_2 = k \{xx'(1-x'') + xx''(1-x') + x'x''(1-x)\} \\ + (1-k)\{(1-x)(1-x')x'' + (1-x)(1-x'')x' + (1-x')(1-x'')x\}, \end{aligned}\]
+which if \(x = x' = x''\) reduces to
+\[3kx^2(1-x) + 3(1-k)x(1-x)^2.\]
+
+And by the same mode of reasoning, it will appear that if \(X_i\) represent the probability that the accused person will be declared guilty by \(i\) voices out of a jury consisting of \(n\) persons, whose separate probabilities of correct judgment are equal, and represented by \(x\), then
+\[X_i = \frac{n(n-1) \dotsc (n-i+1)}{1 \cdot 2 \dotsc i} \{ kx^i(1-x)^{n-i} + (1-k)x^{n-i}(1-x)^i \}. \qquad (3)\]
+If the probability of condemnation by a determinate majority \(a\) is required, we have simply
+\[i - a = n - i,\]
+whence
+\[i = \frac{n+a}{2},\]
+which must be substituted in the above formula. Of course \(a\) admits only of such values as make \(i\) an integer. If \(n\) is even, those values are 0, 2, 4, &c.; if odd, 1, 3, 5, &c., as is otherwise obvious.
+
+The probability of a condemnation by a majority of at least a given number of voices \(m\), will be found by adding together the following several probabilities determined as above, viz.:
+
+	1st. The probability of a condemnation by an exact majority \(m\);
+	2nd. The probability of condemnation by the next greater majority \(m + 2\);
+
+and so on; the last element of the series being the probability of unanimous condemnation. Thus the probability of condemnation by a majority of 4 at least out of 12 jurors, would be
+\[X_8 + X_9 \dotsc + X_{12},\]
+the values of the above terms being given by (3) after making therein \(n = 12\).
+
+4. When, instead of a jury, we are considering the case of a simple deliberative assembly consisting of \(n\) persons, whose separate probabilities of correct judgment are denoted by \(x\), the above formulæ are replaced by others, made somewhat more simple by the omission of the quantity \(k\).
+
+The probability of unanimous decision is
+\[X = x^n+(1-x)^n.\]
+
+The probability of an agreement of \(i\) voices out of the whole number is
+\[X_i = \frac{n(n-1)\dotsc (n-i+1)}{1 \cdot 2 \dotsc i} \{x^i(1-x)^{n-i}+x^{n-i}(1-x)^i\}. \qquad (4)\]
+
+Of this class of investigations it is unnecessary to give any further account. They have been pursued to a considerable extent by Condorcet, Laplace, Poisson, and other writers, who have investigated in particular the modes of calculation and reduction which are necessary to be employed when \(n\) and \(i\) are large numbers. It is apparent that the whole inquiry is of a very speculative character. The values of \(x\) and \(k\) cannot be determined by direct observation. We can only presume that they must both in general exceed the value \(\dfrac{1}{2}\); that the former, \(x\), must increase with the progress of public intelligence; while the latter, \(k\), must depend much upon those preliminary steps in the administration of the law by which persons suspected of crime are brought before the tribunal of their country. It has been remarked by Poisson, that in periods of revolution, as during the Reign of Terror in France, the value of \(k\) may fall, if account be taken of political offences, far below the limit \(\dfrac{1}{2}\). The history of Europe in days nearer to our own would probably confirm this observation, and would show that it is not from the wild license of democracy alone, that the accusation of innocence is to be apprehended.
+
+Laplace makes the assumption, that all values of \(x\) from
+\[x = \frac{1}{2}, \text{ to }x = 1,\]
+are equally probable. He thus excludes the supposition that a juryman is more likely to be deceived than not, but assumes that within the limits to which the probabilities of individual correctness of judgment are confined, we have no reason to give preference to one value of \(x\) over another. This hypothesis is entirely arbitrary, and it would be unavailing here to examine into its consequences.
+
+Poisson seems first to have endeavoured to deduce the values of \(x\) and \(k\), inferentially, from experience. In the six years from 1825 to 1830 inclusively, the number of individuals accused of crimes against the person before the tribunals of France was 11016, and the number of persons condemned was 5286. The juries consisted each of 12 persons, and the decision was pronounced by a simple majority. Assuming the above numbers to be sufficiently large for the estimation of probabilities, there would therefore be a probability measured by the fraction \(\dfrac{5286}{11016}\) or \(.4782\) that an accused person would be condemned by a simple majority. We should have the equation
+\[X_7 + X_8 \dotsc + X_{12} = .4782, \qquad (5)\]
+the general expression for \(X_i\) being given by (3) after making therein \(n = 12\). In the year 1831 the law, having received alteration, required a majority of at least four persons for condemnation, and the number of persons tried for crimes against the person during that year being \(2046\), and the number condemned \(743\), the probability of the condemnation of an individual by the above majority was \(\frac{743}{2046}\), or \(.3631\). Hence we should have
+\[X_8 + X_9 \dotsc + X_{12} = .3631\,. \qquad (6)\]
+
+Assuming that the values of \(k\) and \(x\) were the same for the year 1831 as for the previous six years, the two equations (5) and (6) enable us to determine approximately their values. Poisson thus found,
+\[k =.5354,\quad x =.6786\,.\]
+
+For crimes against property during the same periods, he found by a similar analysis,
+\[k =.6744,\quad x = .7771\,.\]
+
+The solution of the system (5) (6) conducts in each case to two values of \(k\), and to two values of \(x\), the one value in each pair being greater, and the other less, than \(\dfrac{1}{2}\). It was assumed, that in each case the larger value should be preferred, it being conceived more probable that a party accused should be guilty than innocent, and more probable that a juryman should form a correct than an erroneous opinion upon the evidence.
+
+5. The data employed by Poisson, especially those which were furnished by the year 1831, are evidently too imperfect to permit us to attach much confidence to the above determinations of \(x\) and \(k\); and it is chiefly for the sake of the method that they are here introduced. It would have been possible to record during the six years, 1825-30, or during any similar period, the number of condemnations pronounced with each possible majority of voices. The values of the several elements \(X_8, X_9, \dotsc X_{12}\) were there no reasons of policy to forbid, might have been accurately ascertained. Here then the conception of the general problem, of which Poisson’s is a particular case, arises. How shall we, from this apparently supernumerary system of data, determine the values of \(x\) and \(k\)? If the hypothesis, adopted by Poisson and all other writers on the subject, of the absolute independence of the events whose probabilities are denoted by \(x\) and \(k\) be retained, we should be led to form a system of five equations of the type (3), and either select from these that particular pair of equations which might appear to be most advantageous, or combine together the equations of the system by the method of least squares. There might exist a doubt as to whether the latter method would be strictly applicable in such cases, especially if the values of \(x\) and \(k\) afforded by different selected pairs of the given equations were very different from each other. M. Cournot has considered a somewhat similar problem, in which, from the records of individual votes in a court consisting of four judges, it is proposed to investigate the separate probabilities of a correct verdict from each judge. For the determination of the elements \(x\), \(x'\), \(x''\), \(x'''\), he obtains eight equations, which he divides into two sets of four equations, and he remarks, that should any considerable discrepancy exist between the values of \(x\), \(x'\), \(x''\), \(x'''\), determined from those sets, it might be regarded as an indication that the hypothesis of the independence of the opinions of the judges was, in the particular case, untenable. The principle of this mode of investigation has been adverted to in (XVIII. 4).
+
+6. I proceed to apply to the class of problems above indicated, the method of this treatise, and shall inquire, first, whether the records of courts and deliberative assemblies, _alone_, can furnish any information respecting the probabilities of correct judgment for their individual members, and, it appearing that they cannot, secondly, what kind and amount of necessary hypothesis will best comport with the actual data.
+
+Proposition I.
+
+From the mere records of the decisions of a court or deliberative assembly, it is not possible to deduce any definite conclusion respecting the correctness of the individual judgments of its members.
+
+Though this Proposition may appear to express but the conviction of unassisted good sense, it will not be without interest to show that it admits of rigorous demonstration. Let us suppose the case of a deliberative assembly consisting of \(n\) members, no hypothesis whatever being made respecting the dependence or independence of their judgments. Let the logical symbols \(x_1, x_2, \dotsc x_n\) be employed according to the following definition, viz.: Let the generic symbol \(x_i\) denote that event which consists in the uttering of a correct opinion by the \(i^{\text{th}}\) member, \(A_i\) of the court. We shall consider the values of Prob. \(x_1\), Prob. \(x_2,\dotsc\)Prob. \(x_n\), as the _quæsita_ of a problem, the expression of whose possible data we must in the next place investigate.
+
+Now those data are the probabilities of events capable of being expressed by definite logical functions of the symbols \(x_1, x_2,\dotsc x_n\). Let \(X_1, X_2, \dotsc X_m\) represent the functions in question, and let the actual system of data be
+\[\text{Prob. }X_1 = a_1,\quad \text{Prob. }X_2 = a_2,\quad \text{Prob. }X_m = a_m.\]
+Then from the very nature of the case it may be shown that \(X_1, X_2, \dotsc X_m\), are functions which remain unchanged if \(x_1, x_2, \dotsc x_n\) are therein changed into \(1-x_1, 1-x_2, \dotsc 1-x_n\) respectively. Thus, if it were recorded that in a certain proportion of instances the votes given were unanimous, the event whose probability, supposing the instances sufficiently numerous, is thence determined, is expressed by the logical function
+\[x_1 x_2 \dotsc x_n + (1-x_1)(1-x_2)\dotsc (1-x_n),\]
+a function which satisfies the above condition. Again, let it be recorded, that in a certain proportion of instances, the vote of an individual, suppose \(A_1\), differs from that of all the other members of the court. The event, whose probability is thus given, will be expressed by the function
+\[x_1(1-x_2)\dotsc (1-x_n) + (1-x_1)x_2\dotsc x_n;\]
+also satisfying the above conditions. Thus, as agreement in opinion may be an agreement in either truth or error; and as, when opinions are divided, either party may be right or wrong; it is manifest that the expression of any particular state, whether of agreement or difference of sentiment in the assembly, will depend upon a logical function of the symbols \(x_1, x_2, \dotsc x_n\), which similarly involves the privative symbols \(1-x_1, 1-x_2, \dotsc 1-x_n\). But in the records of assemblies, it is not presumed to declare which set of opinions is right or wrong. Hence the functions \(X_1, X_2, \dotsc X_m\) must be solely of the kind above described.
+
+7. Now in proceeding, according to the general method, to determine the value of Prob. \(x_1\), we should first equate the functions \(X_1, \dotsc X_m\) to a new set of symbols \(t_1, \dotsc t_m\). From the equations
+\[X_1 = t_1, X_2 = t_2, \dotsc X_m = t_m,\]
+thus formed, we should eliminate the symbols \(x_2, x_3,\dotsc x_n\), and then determine \(x_1\) as a developed logical function of the symbols \(t_1, t_2, \dotsc t_m\), expressive of events whose probabilities are given. Let the result of the above elimination be
+\[Ex_1 + E'(1-x_1) = 0; \qquad (1)\]
+\(E\) and \(E'\) being function of \(t_1, t_2, \dotsc t_m\). Then
+\[x_1 = \frac{E'}{E'-E}. \qquad (2)\]
+
+Now the functions \(X_1, X_2,\dotsc X_m\) are symmetrical with reference to the symbols \(x_1,\dotsc x_n\) and \(1-x_1,\dotsc 1-x_n\). It is evident, therefore, that in the equation \(E'\) must be identical with \(E\). Hence (2) gives
+\[x = \frac{E}{0},\]
+and it is evident, that the only coefficients which can appear in the development of the second member of the above equation are \(\frac{0}{0}\) and \(\frac{1}{0}\). The former will present itself whenever the values assigned to \(t_1,\dotsc t_m\) in determining the coefficient of a constituent, are such as to make \(E = 0\), the latter, or an equivalent result, in every other case. Hence we may represent the development under the form
+\[x_1 = \frac{0}{0}C + \frac{1}{0}D \qquad (3)\]
+\(C\) and \(D\) being constituents, or aggregates of constituents, of the symbols \(t_1, t_2, \dotsc t_m\). Passing then from Logic to Algebra, we have
+\[\text{Prob. }x_1 = \frac{cC}{C} = c,\]
+the function \(V\) of the general Rule (XVII. 17) reducing in the present case to \(C\). The value of Prob. \(x_1\) is therefore wholly arbitrary, if we except the condition that it must not transcend the limits \(0\) and \(1\). The individual values of Prob. \(x_2\), \(\dotsc\)Prob. \(x_n\), are in like manner arbitrary. It does not hence follow, that these arbitrary values are not connected with each other by necessary conditions dependent upon the data. The investigation of such conditions would, however, properly fall under the methods of Chap. XIX.
+
+If, reverting to the final logical equation, we seek the interpretation of \(c\), we obtain but a restatement of the original problem. For since \(C\) and \(D\) together include all possible constituents of \(t_1, t_2, \dotsc t_m\), we have
+\[C + D = 1;\]
+and since \(D\) is affected by the coefficient \(\frac{1}{0}\), it is evident that on substituting therein for \(t_1, t_2, \dotsc t_m\), their expressions in terms of \(x_1, x_2, \dotsc x_n\), we should have \(D = 0\). Hence the same substitution would give \(C = 1\). Now by the rule, \(c\) is the probability that if the event denoted by \(C\) take place, the event \(x_1\) will take place. Hence \(C\) being equal to \(1\), and, therefore, embracing all possible contingencies, \(c\) must be interpreted as the absolute probability of the occurrence of the event \(x_1\).
+
+It may be interesting to determine in a particular case the actual form of the final logical equation. Suppose, then, that the elements from which the data are derived are the records of events distinct and mutually exclusive. For instance, let the numerical data \(a_1, a_2, \dotsc a_m\), be the respective probabilities of distinct and definite majorities. Then the logical functions \(X_1, X_2, \dotsc X_m\) being mutually exclusive, must satisfy the conditions
+\[X_1 X_2 = 0,\dotsc X_1 X_m = 0,\quad X_2 X_m = 0, \text{ \&c.}\]
+Whence we have,
+\[t_1 t_2 = 0,\quad t_1 t_m = 0, \text{ \&c.}\]
+Under these circumstances it may easily be shown, that the developed logical value of \(x_1\) will be
+\[\begin{aligned} x_1&=\frac{0}{0}(\bar{t}_1 \bar{t}_2 \dotsc \bar{t}_m + t_1 \bar{t}_2 \dotsc \bar{t}_m \dotsc + t_m \bar{t}_1\dotsc \bar{t}_{m-1}) \\ & + \text{ constitutents whose coefficients are }\frac{1}{0}. \end{aligned}\]
+In the above equation \(\bar{t}_1\) stands for \(1-t_1\), &c.
+
+These investigations are equally applicable to the case in which the probabilities of the verdicts of a jury, so far as agreement and disagreement of opinion are concerned, form the data of a problem. Let the logical symbol \(w\) denote that event or state of things which consists in the guilt of the accused person. Then the functions \(X_1\), \(X_2\) …\(X_m\) of the present problem are such, that no change would therein ensue from simultaneously converting \(w, x_1, x_2 \dotsc x_n\) into \(\bar{w}, \bar{x}_1, \bar{x}_2,\dotsc \bar{x}_n\) respectively. Hence the final logical value of \(w\), as well as those of \(x_1, x_2, \dotsc x_n\) will be exhibited under the same form (3), and a like general conclusion thence deduced.
+
+It is therefore established, that from mere statistical documents nothing can be inferred respecting either the individual correctness of opinion of a judge or counsellor, the guilt of an individual, or the merits of a disputed question. If the determination of such elements as the above can be reduced within the province of science at all, it must be by virtue either of some assumed criterion of truth furnishing us with new data, or of some hypothesis relative to the connexion or the independence of individual judgments, which may warrant a new form of the investigation. In the examination of the results of different hypotheses, the following general Proposition will be of importance.
+
+Proposition II.
+
+8. Given the probabilities of the \(n\) simple events \(x_1, x_2,\dotsc x_n\), viz.:—
+\[\text{Prob. }x_1 = c_1, \quad \text{Prob. }x_2=c_2, \dotsc \text{Prob. }x_n=c_n; \qquad (1)\]
+also the probabilities of the \(m-1\) compound events \(X_1, X_2, \dotsc X_{m-1}\), viz.:—
+\[\text{Prob. }X_1=a_1, \quad \text{Prob. }X_2 = a_2, \dotsc \text{Prob. }X_{m-1}=a_{m-1}; \qquad (2)\]
+the latter events \(X_1 \dotsc X_{m-1}\) being distinct and mutually exclusive; required the probability of any other compound event \(X\).
+
+In this proposition it is supposed, that \(X_1, X_2,\dotsc X_{m-1}\), as well as \(X\), are functions of the symbols \(x_1, x_2, \dotsc x_n\) alone. Moreover, the events \(X_1, X_2,\dotsc X_{m-1}\) being mutually exclusive, we have
+\[X_1 X_2 = 0, \dotsc X_1 X_{m-1}=0, \quad X_2 X_3 = 0, \text{ \&c.;} \qquad (3)\]
+the product of any two members of the system vanishing. Now assume
+\[X_1=t_1, \quad X_{m-1}=t_{m-1}, \quad X=t. \qquad (4)\]
+Then \(t\) must be determined as a logical function of \(x_1, \dotsc x_n, t_1, \dotsc t_{m-1}\).
+
+Now by (3),
+\[t_1 t_2=0, \quad t_1 t_{m-1}=0, \quad t_2 t_3=0, \text{ \&c.;} \qquad (5)\]
+all binary products of \(t_1, \dotsc t_{m-1}\), vanishing. The developed expression for \(t\) can, therefore, only involve in the list of constituents which have 1, 0, or \(\displaystyle \frac{0}{0}\) for their coefficients, such as contain some one of the following factors, viz.:—
+\[\bar{t}_1 \bar{t}_2 \dotsc \bar{t}_{m-1}, \quad t_1 \bar{t}_2 \dotsc \bar{t}_{m-1},\dotsc \bar{t}_1 \dotsc \bar{t}_{m-2} t_{m-1}; \qquad (6)\]
+\(\bar{t}_1\) standing for \(1-t_1\), &c. It remains to assign that portion of each constituent which involves the symbols \(x_1 \dotsc x_n\); together with the corresponding coefficients.
+
+Since \(X_i = t_i\) (\(i\) being any integer between 1 and \(m-1\) inclusive), it is evident that
+\[X_i \bar{t}_1 \dotsc \bar{t}_{m-1}=0,\]
+from the very constitution of the functions. Any constituent included in the first member of the above equation would, therefore, have \(\displaystyle \frac{1}{0}\) for its coefficient.
+
+Now let
+\[X_m = 1 - X_1 \dotsc - X_{m-1}; \qquad (7)\]
+and it is evident that such constituents as involve \(\bar{t}_1 \dotsc \bar{t}_{m-1}\), as a factor, and yet have coefficients of the form 1, 0, or \(\displaystyle \frac{0}{0}\), must be included in the expression
+\[X_m \bar{t}_1 \dotsc \bar{t}_{m-1}.\]
+Now \(X_m\) may be resolved into two portions, viz., \(X\,X_m\) and \((1-X)X_m\), the former being the sum of those constituents of \(X_m\) which are found in \(X\), the latter of those which are not found in \(X\). It is evident that in the developed expression of \(t\), which is equivalent to \(X\), the coefficients of the constituents in the former portion \(X\,X_m\) will be \(1\), while those of the latter portion \((1-X)X_m\) will be \(0\). Hence the elements we have now considered will contribute to the development of \(t\) the terms
+\[X X_m \bar{t}_1 \dotsc \bar{t}_{m-1} + 0(1-X)X_m \bar{t}_1 \dotsc \bar{t}_{m-1} .\]
+Again, since \(X_1 = t_1\), while \(X_2 t_1 = t_2 t_1 = 0\), &c., it is evident that the only constituents involving \(t_1 \bar{t}_2 \dotsc \bar{t}_{m-1}\), as a factor which have coefficients of the form \(1\), \(0\), or \(\frac{0}{0}\), will be included in the expression
+\[X_1 t_1 \bar{t}_2 \dotsc \bar{t}_{m-1};\]
+and reasoning as before, we see that this will contribute to the development of \(t\) the terms
+\[X X_1 t_1 \bar{t}_2 \dotsc \bar{t}_{m-1} + 0(1-X)X_1 t_1 \bar{t}_2 \dotsc \bar{t}_{m-1} .\]
+
+Proceeding thus with the remaining terms of (6), we deduce for the final expression of \(t\),
+\[\begin{aligned} t = X X_m \bar{t}_1 \dotsc \bar{t}_{m-1} + X X_1 t_1 \bar{t}_2 \dotsc \bar{t}_{m-1} \dotsc + X X_{m-1} \bar{t}_1 \dotsc \bar{t}_{m-2} t_{m-1} \\ + 0(1-X)X_m \bar{t}_1 \dotsc \bar{t}_{m-1} + 0(1-X)X_1 t_1 \bar{t}_2 \dotsc \bar{t}_{m-1} + \text{ \&c.} \qquad (8) \\ + \text{terms whose coefficients are }\frac{1}{0}. \end{aligned}\]
+
+In this expression it is to be noted that \(X\,X_m\) denotes the sum of those constituents which are common to \(X\) and \(X_m\), that sum being actually given by multiplying \(X\) and \(X_m\) together, according to the rules of the calculus of Logic.
+
+In passing from Logic to Algebra, we shall represent by (\(X\,X_m\)) what the above product becomes, when, after effecting the multiplication, or selecting the common constituents, we give to the symbols \(x_1, \dotsc x_n\), a quantitative meaning. With this understanding we shall have, by the general Rule (XVII. 17),
+\[\begin{gathered} \text{Prob. }t \\ = \frac{ (X X_m) \bar{t}_1\dotsc \bar{t}_{m-1} + (X X_1)t_1 \bar{t}_2\dotsc \bar{t}_{m-1} \dotsc + (X X_{m-1})\bar{t}_1\dotsc \bar{t}_{m-2} t_{m-1} }{V}, \qquad (9) \\ V = X_m \bar{t}_1\dotsc \bar{t}_{m-1} + X_1 t_1 \bar{t}_2\dotsc \bar{t}_{m-1} \dotsc + X_{m-1} \bar{t}_1\dotsc \bar{t}_{m-2} t_{m-1} \qquad (10) \end{gathered}\]
+whence the relations determining \(x_1, \dotsc x_n, t_1, \dotsc t_{m-1}\) will be of the following type (\(i\) varying from \(1\) to \(n\)),
+\[\begin{gathered} \frac{ (x_i X_m) \bar{t}_1\dotsc \bar{t}_{m-1} + (x_i X_1)t_1 \bar{t}_2\dotsc \bar{t}_{m-1} \dotsc + (x_i X_{m-1})\bar{t}_1\dotsc \bar{t}_{m-2} t_{m-1} }{c_i} \\ = \frac{ X_1 t_1 \bar{t}_2\dotsc \bar{t}_{m-1} }{a_1} \dotso = \frac{ X_{m-1} \bar{t}_1\dotsc \bar{t}_{m-2} t_{m-1}}{a_{m-1}} = V. \qquad (11) \end{gathered}\]
+
+From the above system we shall next eliminate the symbols \(t_1, \dotsc t_{m-1}\).
+
+We have
+\[t_1 \bar{t}_2\dotsc \bar{t}_{m-1} = \frac{a_1V}{X_1},\quad \bar{t}_1\dotsc \bar{t}_{m-2} t_{m-1} = \frac{a_{m-1}V}{X_{m-1}}. \qquad (12)\]
+
+Substituting these values in (10), we find
+\[V = X_m \bar{t}_1 \dotsc \bar{t}_{m-1} + a_1 V \dotsc + a_{m-1} V.\]
+Hence,
+\[\bar{t}_1 \dotsc \bar{t}_{m-1} = \frac{(1 - a_1 \dotsc - a_{m-1})V}{X_m}.\]
+
+Now let
+\[a_m = 1 - a_1 \dotsc - a_{m-1}, \qquad (13)\]
+then we have
+\[\bar{t}_1 \dotsc \bar{t}_{m-1} = \frac{a_m V}{X_m}. \qquad (14)\]
+Now reducing, by means of (12) and (14), the equation (9), and the equation formed by equating the first line of (11) to the symbol \(V\); writing also Prob. \(X\) for Prob. \(t\), we have
+\[\begin{gathered} \text{Prob. }X = \frac{a_1(X X_1)}{X_1} + \frac{a_2(X X_2)}{X_2} \dotsc + \frac{a_m(X X_m)}{X_m}, \qquad (15) \\ \frac{a_1(x_i X_1)}{X_1} + \frac{a_2(x_i X_2)}{X_2} \dotsc + \frac{a_m(x_i X_m)}{X_m} = c_i; \qquad (16) \end{gathered}\]
+wherein \(X_m\) and \(a_m\) are given by (7) and (13). These equations involve the direct solution of the problem under consideration. In (16) we have the type of \(n\) equations (formed by giving to \(i\) the values \(1, 2,\dotsc n\) successively), from which the values of \(x_1, x_2,\dotsc x_n\), will be found, and those values substituted in (15) give the value of \(\text{Prob. }X\) as a function of the constants \(a_1\), \(c_1\), &c.
+
+One conclusion deserving of notice, which is deducible from the above solution, is, that if the probabilities of the compound events \(X_1,\dotsc X_{m-1}\), are the same as they would be were the events \(x_1, \dotsc x_n\) entirely independent, and with given probabilities \(c_1,\dotsc c_n\), then the probability of the event \(X\) will be the same as if calculated upon the same hypothesis of the absolute independence of the events \(x_1, \dotsc x_n\). For upon the hypothesis supposed, the assumption \(x_1 = c_1\), \(x_n = c_n\), in the quantitative system would give \(X_1 = a_1\), \(X_m = a_m\), whence (15) and (16) would give
+\[\text{Prob. }X = (X X_1) + (X X_2)\dotsc + (X X_m), \qquad (17)\]
+\[(x_i X_1)+(x_i X_2)\dotsc + (x_i X_m) = c_i. \qquad (18)\]
+
+But since \(X_1 + X_2\dotsc + X_m=1\), it is evident that the second member of (17) will be formed by taking all the constituents that are contained in \(X\), and giving them an algebraic significance. And a similar remark applies to (18). Whence those equations respectively give
+\[\begin{gathered} \text{Prob. }X \text{ (logical)} = X \text{ (algebraic)}, \\ x_i = c_i. \end{gathered}\]
+
+Wherefore, if \(X = \phi(x_1, x_2,\dotsc x_n)\), we have
+\[\text{Prob. }X = \phi(c_1, c_2, \dotsc c_n),\]
+which is the result in question.
+
+Hence too it would follow, that if the quantities \(c_1,\dotsc c_n\) were indeterminate, and no hypothesis were made as to the possession of a mean common value, the system (15) (16) would be satisfied by giving to those quantities any such values, \(x_1, x_2, \dotsc x_n\), as would satisfy the equations
+\[X_1 = a_1 \dotsc X_{m-1} = a_{m-1}, \quad X=a,\]
+supposing the value of the element \(a\), like the values of \(a_1, \dotsc a_{m-1}\), to be given by experience.

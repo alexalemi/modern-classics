@@ -1,0 +1,146 @@
+Chapter 17: General Method in Probabilities
+(Part 1 of 2)
+
+1. It has been defined (XVI. 2), that “the measure of the probability of an event is the ratio of the number of cases favourable to that event, to the total number of cases favourable or unfavourable, and all equally possible.” In the following investigations the term probability will be used in the above sense of “measure of probability.”
+
+From the above definition we may deduce the following conclusions.
+
+I. When it is certain that an event will occur, the probability of that event, in the above mathematical sense, is 1. For the cases which are favourable to the event, and the cases which are possible, are in this instance the same.
+
+Hence, also, if \(p\) be the probability that an event \(x\) will happen, \(1 - p\) will be the probability that the said event will not happen. To deduce this result directly from the definition, let \(m\) be the number of cases favourable to the event \(x\), \(n\) the number of cases possible, then \(n - m\) is the number of cases unfavourable to the event \(x\). Hence, by definition,
+\[\begin{aligned} &\frac{m}{n} = \text{ probability that $x$ will happen.} \\ &\frac{n - m}{n} = \text{ probability that $x$ will not happen.} \end{aligned}\]
+But
+\[\frac{n - m}{n} = 1- \frac{m}{n} = 1 - p .\]
+
+II. The probability of the concurrence of any two events is the product of the probability of either of those events by the probability that if that event occur, the other will occur also.
+
+Let \(m\) be the number of cases favourable to the happening of the first event, and \(n\) the number of equally possible cases unfavourable to it; then the probability of the first event is, by definition, \(\dfrac{m}{m + n}\). Of the \(m\) cases favourable to the first event, let \(l\) cases be favourable to the conjunction of the first and second events, then, by definition, \(\dfrac{l}{m}\) is the probability that if the first event happen, the second also will happen. Multiplying these fractions together, we have
+\[\frac{m}{m + n} \times \frac{l}{m} = \frac{l}{m + n}.\]
+But the resulting fraction \(\frac{l}{m + n}\) has for its numerator the number of cases favourable to the conjunction of events, and for its denominator, the number \(m + n\) of possible cases. Therefore, it represents the probability of the joint occurrence of the two events.
+
+Hence, if \(p\) be the probability of any event \(x\), and \(q\) the probability that if \(x\) occur \(y\) will occur, the probability of the conjunction \(xy\) will be \(pq\).
+
+III. The probability that if an event \(x\) occur, the event \(y\) will occur, is a fraction whose numerator is the probability of their joint occurrence, and denominator the probability of the occurrence of the event \(x\).
+
+This is an immediate consequence of Principle 2nd.
+
+IV. The probability of the occurrence of some one of a series of exclusive events is equal to the sum of their separate probabilities.
+
+For let \(n\) be the number of possible cases; \(m_1\) the number of those cases favourable to the first event; \(m_2\) the number of cases favourable to the second, &c. Then the separate probabilities of the events are \(\dfrac{m_1}{n}\), \(\dfrac{m_2}{n}\), &c. Again, as the events are exclusive, none of the cases favourable to one of them is favourable to another; and, therefore, the number of cases favourable to some one of the series will be \(m_1 + m_2 \dotsc\), and the probability of some one of the series happening will be \(\dfrac{m_1 + m_2 \dotsc}{n}\). But this is the sum of the previous fractions, \(\dfrac{m_1}{n}\), \(\dfrac{m_2}{n}\), &c. Whence the principle is manifest.
+
+2. Definition.—Two events are said to be independent when the probability of the happening of either of them is unaffected by our expectation of the occurrence or failure of the other.
+
+From this definition, combined with Principle II., we have the following conclusion:
+
+V. The probability of the concurrence of two independent events is equal to the product of the separate probabilities of those events.
+
+For if \(p\) be the probability of an event \(x\), \(q\) that of an event \(y\) regarded as quite independent of \(x\), then is \(q\) also the probability that if \(x\) occur \(y\) will occur. Hence, by Principle II., \(pq\) is the probability of the concurrence of \(x\) and \(y\).
+
+Under the same circumstances, the probability that \(x\) will occur and \(y\) not occur will be \(p(1-q)\). For \(p\) is the probability that \(x\) will occur, and \(1-q\) the probability that \(y\) will not occur. In like manner \((1-p)(1-q)\) will be the probability that both the events fail of occurring.
+
+3. There exists yet another principle, different in kind from the above, but necessary to the subsequent investigations of this chapter, before proceeding to the explicit statement of which I desire to make one or two preliminary observations.
+
+I would, in the first place, remark that the distinction between simple and compound events is not one founded in the nature of events themselves, but upon the mode or connexion in which they are presented to the mind. How many separate particulars, for instance, are implied in the terms “To be in health,” “To prosper,” &c., each of which might still be regarded as expressing a “simple event”? The prescriptive usages of language, which have assigned to particular combinations of events single and definite appellations, and have left unnumbered other combinations to be expressed by corresponding combinations of distinct terms or phrases, is essentially arbitrary. When, then, we designate as simple events those which are expressed by a single verb, or by what grammarians term a simple sentence, we do not thereby imply any real simplicity in the events themselves, but use the term solely with reference to grammatical expression.
+
+4. Now if this distinction of events, as simple or compound, is not founded in their real nature, but rests upon the accidents of language, it cannot affect the question of their mutual dependence or independence. If my knowledge of two simple events is confined to this particular fact, viz., that the probability of the occurrence of one of them is \(p\), and that of the other \(q\); then I regard the events as independent, and thereupon affirm that the probability of their joint occurrence is \(pq\). But the ground of this affirmation is not that the events are simple ones, but that the data afford no information whatever concerning any connexion or dependence between them. When the probabilities of events are given, but all information respecting their dependence withheld, the mind regards them as independent. And this mode of thought is equally correct whether the events, judged according to actual expression, are simple or compound, i.e., whether each of them is expressed by a single verb or by a combination of verbs.
+
+5. Let it, however, be supposed that, together with the probabilities of certain events, we possess some definite information respecting their possible combinations. For example, let it be known that certain combinations are excluded from happening, and therefore that the remaining combinations alone are possible. Then still is the same general principle applicable. The mode in which we avail ourselves of this information in the calculation of the probability of any conceivable issue of events depends not upon the nature of the events whose probabilities and whose limits of possible connexion are given. It matters not whether they are simple or compound. It is indifferent from what source, or by what methods, the knowledge of their probabilities and of their connecting relations has been derived. We must regard the events as independent of any connexion beside that of which we have information, deeming it of no consequence whether such information has been explicitly conveyed to us in the data, or thence deduced by logical inference. And this leads us to the statement of the general principle in question, viz.:
+
+VI. The events whose probabilities are given are to be regarded as independent of any connexion but such as is either expressed, or necessarily implied, in the data; and the mode in which our knowledge of that connexion is to be employed is independent of the nature of the source from which such knowledge has been derived.
+
+The practical importance of the above principle consists in the circumstance, that whatever may be the nature of the events whose probabilities are given,—whatever the nature of the event whose probability is sought, we are always able, by an application of the Calculus of Logic, to determine the expression of the latter event as a definite combination of the former events, and definitely to assign the whole of the implied relations connecting the former events with each other. In other words, we can determine what that combination of the given events is whose probability is required, and what combinations of them are alone possible. It follows then from the above principle, that we can reason upon those events as if they were simple events, whose conditions of possible combination had been directly given by experience, and of which the probability of some definite combination is sought. The possibility of a general method in probabilities depends upon this reduction.
+
+6. As the investigations upon which we are about to enter are based upon the employment of the Calculus of Logic, it is necessary to explain certain terms and modes of expression which are derived from this application.
+
+By the event \(x\), I mean that event of which the proposition which affirms the occurrence is symbolically expressed by the equation
+\[x= 1.\]
+By the event \(\phi(x,y,z,\dotsc)\), I mean that event of which the occurrence is expressed by the equation
+\[\phi(x,y,z,\dotsc) = 1.\]
+Such an event may be termed a compound event, in relation to the simple events \(x\), \(y\), \(z\), which its conception involves. Thus, if \(x\) represent the event “It rains,” \(y\) the event “It thunders,” the separate occurrences of those events being expressed by the logical equations
+\[x = 1,\quad y = 1,\]
+then will \(x(1-y) + y (1-x)\) represent the event or state of things denoted by the Proposition, “It either rains or thunders, but not both;” the expression of that state of things being
+\[x(1 - y) + y(1 - x) = 1.\]
+If for brevity we represent the function \(\phi(x, y, z,\dotsc)\), used in the above acceptation by \(V\), it is evident (VI. 13) that the law of duality
+\[V(1 - V) = 0,\]
+will be identically satisfied.
+
+The simple events \(x\), \(y\), \(z\) will be said to be “conditioned” when they are not free to occur in every possible combination; in other words, when some compound event depending upon them is precluded from occurring. Thus the events denoted by the propositions, “It rains,” “It thunders,” are “conditioned” if the event denoted by the proposition, “It thunders, but does not rain,” is excluded from happening, so that the range of possible is less than the range of conceivable combination. Simple unconditioned events are by definition independent.
+
+Any compound event is similarly said to be conditioned if it is assumed that it can only occur under a certain condition, that is, in combination with some other event constituting, by its presence, that condition.
+
+7. We shall proceed in the natural order of thought, from simple and unconditioned, to compound and conditioned events.
+
+Proposition I.
+
+1st. If \(p\), \(q\), \(r\) are the respective probabilities of any unconditioned simple events \(x\), \(y\), \(z\), the probability of any compound event \(V\) will be \([V]\), this function \([V]\) being formed by changing, in the function \(V\), the symbols \(x\), \(y\), \(z\) into \(p\), \(q\), \(r\), &c.
+
+2ndly. Under the same circumstances, the probability that if the event \(V\) occur, any other event \(V'\) will also occur, will be \(\frac{[VV']}{[V]}\), wherein \([VV']\) denotes the result obtained by multiplying together the logical functions \(V\) and \(V'\), and changing in the result \(x\), \(y\), \(z\), &c. into \(p\), \(q\), \(r\), &c.
+
+Let us confine our attention in the first place to the possible combinations of the two simple events, \(x\) and \(y\), of which the respective probabilities are \(p\) and \(q\). The primary combinations of those events (V.11), and their corresponding probabilities, are as follows:
+\[\begin{array}{lll} Events.& &Probabilities.\\ xy, &\text{ Concurrence of $x$ and $y$, } &pq.\\ x(1-y), &\text{ Occurrence of $x$ without $y$, } &p(1-q). \\ (1-x)y, &\text{ Occurrence of $y$ without $x$, } &(1-p)q. \\ (1-x)(1-y), &\text{ Conjoint failure of $x$ and $y$, }&(1-p)(1-q).\\ \end{array}\]
+We see that in these cases the probability of the compound event represented by a constituent is the same function of \(p\) and \(q\) as the logical expression of that event is of \(x\) and \(y\); and it is obvious that this remark applies, whatever may be the number of the simple events whose probabilities are given, and whose _joint existence or failure_ is involved in the compound event of which we seek the probability.
+
+Consider, in the second place, any _disjunctive_ combination of the above constituents. The compound event, expressed in ordinary language as the occurrence of “either the event \(x\) without the event \(y\), or the event \(y\) without the event \(x\)” is symbolically expressed in the form \(x(1-y)+y(1-x)\), and its probability, determined by Principles IV. and V., is \(p(1-q)+q(1-p)\). The latter of these expressions is the same function of \(p\) and \(q\) as the former is of \(x\) and \(y\). And it is obvious that this is also a particular illustration of a general rule. The events which are expressed by any two or more constituents are mutually exclusive. The only possible combination of them is a _disjunctive_ one, expressed in ordinary language by the conjunction _or_, in the language of symbolical logic by the sign +. Now the probability of the occurrence of some one out of a set of mutually exclusive events is the sum of their separate probabilities, and is expressed by connecting the expressions for those separate probabilities by the sign +. Thus the law above exemplified is seen to be _general_. The probability of any unconditioned event \(V\) will be found by changing in \(V\) the symbols \(x, y, z, \dotsc\) into \(p, q, r, \dotsc\)
+
+8. Again, by Principle III., the probability that if the event \(V\) occur, the event \(V'\) will occur with it, is expressed by a fraction whose numerator is the probability of the joint occurrence of \(V\) and \(V'\), and denominator the probability of the occurrence of \(V\).
+
+Now the expression of that event, or state of things, which is constituted by the joint occurrence of the events \(V\) and \(V'\), will be formed by multiplying together the expressions \(V\) and \(V'\) according to the rules of the Calculus of Logic; since whatever constituents are found in both \(V\) and \(V'\) will appear in the product, and no others. Again, by what has just been shown, the probability of the event represented by that product will be determined by changing therein \(x, y, z\) into \(p, q, r,\dotsc\) Hence the numerator sought will be what \([VV']\) by definition represents. And the denominator will be \([V]\), wherefore
+\[\text{Probability that if $V$ occur, $V'$ will occur with it } = \frac{[VV']}{[V]}.\]
+
+9. For example, if the probabilities of the simple events \(x, y, z\) are \(p, q, r\) respectively, and it is required to find the probability that if either \(x\) or \(y\) occur, then either \(y\) or \(z\) will occur, we have for the logical expressions of the antecedent and consequent—
+\[\begin{gathered} \text{1st. Either $x$ or $y$ occurs, }x(1-y) + y(1-x). \\ \text{2nd. Either $y$ or $z$ occurs, }y(1-z) + z(1-y). \end{gathered}\]
+If now we multiply these two expressions together according to the rules of the Calculus of Logic, we shall have for the expression of the concurrence of antecedent and consequent,
+\[xz(1-y) + y(1-x)(1-z).\]
+Changing in this result \(x, y, z\) into \(p, q, r,\) and similarly transforming the expression of the antecedent, we find for the probability sought the value
+\[\frac{pr(1-q) + q(1-p)(1-r)}{p(1-q) + q(1-p)}.\]
+The special function of the calculus, in a case like the above, is to supply the office of the reason in determining what are the conjunctures involved at once in the consequent and the antecedent. But the advantage of this application is almost entirely prospective, and will be made manifest in a subsequent proposition.
+
+Proposition II.
+
+10. It is known that the probabilities of certain simple events \(x, y, z, \dotsc\) are \(p, q, r, \dotsc\) respectively when a certain condition \(V\) is satisfied; \(V\) being in expression a function of \(x, y, z, \dotsc\). Required the absolute probabilities of the events \(x, y, z, \dotsc\), that is, the probabilities of their respective occurrence independently of the condition V.
+
+Let, \(p'\), \(q'\), \(r'\), &c., be the probabilities required, i. e. the probabilities of the events x, y, z,.., regarded not only as simple, but as independent events. Then by Prop. I. the probabilities that these events will occur when the condition \(V\), represented by the logical equation \(V=1\), is satisfied, are
+\[\frac{\left[ xV \right]}{\left[ V \right]},\quad \frac{\left[ yV \right]}{\left[ V \right]},\quad \frac{\left[ zV \right]}{\left[ V \right]},\text{ \&c.,}\]
+in which \(\left[ xV \right]\) denotes the result obtained by multiplying \(V\) by \(x\), according to the rules of the Calculus of Logic, and changing in the result \(x\), \(y\), \(z\), into \(p'\), \(q'\), \(r'\), &c. But the above conditioned probabilities are by hypothesis equal to \(p, q, r,\dotsc\) respectively. Hence we have,
+\[\frac{\left[ xV \right]}{\left[ V \right]} = p,\quad \frac{\left[ yV \right]}{\left[ V \right]} = q,\quad \frac{\left[ zV \right]}{\left[ V \right]} = r,\text{ \&c.,}\]
+from which system of equations equal in number to the quantities \(p', q', r',\dotsc\), the values of those quantities may be determined.
+
+Now \(x V\) consists simply of those constituents in \(V\) of which \(x\) is a factor. Let this sum be represented by \(V_x\), and in like manner let \(yV\) be represented by \(V_y\), &c. Our equations then assume the form
+\[\frac{\left[ V_x \right]}{\left[ V \right]} = p,\quad \frac{\left[ V_y \right]}{\left[ V \right]} = q,\text{ \&c.;} \qquad (1)\]
+where \(\left[ V_x \right]\) denotes the results obtained by changing in \(V_x\) the symbols \(x\), \(y\), \(z\), &c., into \(p'\), \(q'\), \(r'\), &c.
+
+To render the meaning of the general problem and the principle of its solution more evident, let us take the following example. Suppose that in the drawing of balls from an urn attention had only been paid to those cases in which the balls drawn were either of a particular colour, “white,” or of a particular composition, “marble,” or were marked by both these characters, no record having been kept of those cases in which a ball that was neither white nor of marble had been drawn. Let it then have been found, that whenever the supposed condition was satisfied, there was a probability \(p\) that a white ball would be drawn, and a probability \(q\) that a marble ball would be drawn: and from these data alone let it be required to find the probability that in the next drawing, without reference at all to the condition above mentioned, a white ball will be drawn; also the probability that a marble ball will be drawn.
+
+Here if \(x\) represent the drawing of a white ball, \(y\) that of a marble ball, the condition \(V\) will be represented by the logical function
+\[xy + x(1-y) + (1-x)y.\]
+Hence we have
+\[V_x = xy + x(1-y) = x,\quad V_y = xy + (1-x)y = y;\]
+whence
+\[[V_x] = p',\quad [V_y] = q';\]
+and the final equations of the problem are
+\[\frac{p'}{p'q' + p'(1-q') + q'(1-p')} = p, \quad \frac{q'}{p'q' + p'(1-q') + q'(1-p')} = q;\]
+from which we find
+\[p' = \frac{p + q - 1}{q}, \quad q' = \frac{p + q - 1}{p}.\]
+
+It is seen that \(p'\) and \(q'\) are respectively proportional to \(p\) and \(q\), as by Professor Donkin’s principle they ought to be. The solution of this class of problems might indeed, by a direct application of that principle, be obtained.
+
+To meet a possible objection, I here remark, that the above reasoning does not require that the drawings of a white and a marble ball should be independent, in virtue of the physical constitution of the balls. The assumption of their independence is indeed involved in the solution, but it does not rest upon any prior assumption as to the nature of the balls, and their relations, or freedom from relations, of form, colour, structure, &c. It is founded upon our total ignorance of all these things. Probability always has reference to the state of our actual knowledge, and its numerical value varies with varying information.
+
+Proposition III.
+
+11. To determine in any question of probabilities the logical connexion of the quæsitum with the data; that is, to assign the event whose probability is sought, as a logical function of the event whose probabilities are given.
+
+Let \(S\), \(T\), &c., represent any compound events whose probabilities are given, \(S\) and \(T\) being in expression known functions of the symbols \(x\), \(y\), \(z\), &c., representing simple events. Similarly let \(W\) represent any event whose probability is sought, \(W\) being also a known function of \(x\), \(y\), \(z\), &c. As \(S, T,\dotsc W\) must satisfy the fundamental law of duality, we are permitted to replace them by single logical symbols, \(s, t,\dotsc w\). Assume then
+\[s = S, t=T, w = W.\]
+
+These, by the definition of \(S, T,\dotsc W\), will be a series of logical equations connecting the symbols \(s, t,\dotsc w\), with the symbols \(x, y, z\dotsc\)
+
+By the methods of the Calculus of Logic we can eliminate from the above system any of the symbols \(x, y, z,\dotsc\), representing events whose probabilities are not given, and determine \(w\) as a developed function of \(s\), \(t\), &c., and of such of the symbols \(x\), \(y\), \(z\), &c., if any such there be, as correspond to events whose probabilities are given. The result will be of the form
+\[w = A + 0B +\frac{0}{0} C +\frac{1}{0} D,\]
+where \(A\), \(B\), \(C\), and \(D\) comprise among them all the possible _constituents_ which can be formed from the symbols \(s\), \(t\), &c., i. e. from all the symbols representing events whose probabilities are given.
+
+The above will evidently be the complete expression of the relation sought. For it fully determines the event \(W\), represented by the single symbol \(w\), as a function or combination of the events similarly denoted by the symbols \(s\), \(t\), &c., and it assigns by the laws of the Calculus of Logic the condition
+\[D = 0\text{,}\]
+as connecting the events \(s\), \(t\), &c., among themselves. We may, therefore, by Principle VI., regard \(s\), \(t\), &c., as _simple_ events, of which the combination \(w\), and the condition with which it is associated \(D\), are definitely determined.
+
+Uniformity in the logical processes of reduction being desirable, I shall here state the order which will generally be pursued.

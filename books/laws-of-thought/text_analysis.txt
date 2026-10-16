@@ -1,5 +1,5 @@
 TEXT ANALYSIS — GEORGE BOOLE, AN INVESTIGATION OF THE LAWS OF THOUGHT
-(1854), CHAPTERS I–XV: THE LOGIC
+(1854), THE WHOLE BOOK: THE LOGIC (I–XV) AND PROBABILITY (XVI–XXII)
 
 THE BOOK
 Boole, a self-taught schoolmaster's son who became Professor of
@@ -16,7 +16,8 @@ on whole propositions ("secondary propositions"), the ancestor of
 propositional logic and truth values. Chapters XIII–XIV test the method
 on real arguments (Clarke's and Spinoza's proofs about God), and XV
 re-derives Aristotle's syllogisms. Chapters XVI–XXII apply all this to
-probability and are NOT in this edition.
+probability (retold 2026-10-16, after the logic half had shipped; see
+THE PROBABILITY HALF below).
 
 This edition is a retelling for a reader of fourteen and up who is
 willing to follow algebra. Alex's brief (2026-10-14): make Boole
@@ -96,3 +97,68 @@ RATIO
 Formulas are copied unchanged; prose is unstacked; glosses and notes
 add words. Expect 1.0–1.3 per file. Below 0.9 means something was cut:
 check the worked examples first.
+
+THE PROBABILITY HALF, XVI–XXII (added 2026-10-16)
+What it does. Boole's claim is that any question in probability can be
+turned into a question in his logic: the events become propositions,
+"and", "or", "not" become his algebra, and the probability of a
+compound event follows from the probabilities of the simple ones once
+the logical connexion between them is worked out. XVI surveys the
+received theory (Pascal, Laplace, Poisson, De Morgan, Donkin) and its
+principles. XVII states the GENERAL METHOD in four Propositions; its
+key step treats the simple events as independent unless the data say
+otherwise, under the conditions the data impose. (Boole's NOTE, printed
+before Chapter I and now set after the Preface, corrects the urn
+example of XVII. 10 and restates that principle.) XVIII works seven
+elementary examples. XIX finds "statistical conditions": the limits
+(major and minor) within which data must lie to be consistent, and the
+limits of an answer. XX applies the method to causes and effects:
+general problems of several causes, then Michell's argument from the
+clustering of the stars and Laplace's rule of succession (the sunrise
+problem), where Boole argues that a definite answer from insufficient
+data is an illusion. XXI treats the probability of judgments (juries,
+witnesses), against Laplace and Poisson. XXII is philosophy again: the
+nature of science, the laws of thought as mathematical in form but not
+the whole of the mind, the Greek philosophers' search for "the One",
+and the book's moving close.
+
+Where it is hard. XVII and XX are the heaviest algebra in the book:
+long systems of equations in Prob. x, arbitrary constants c, auxiliary
+quantities mu and nu, roots to be chosen. The reader needs to be told
+at each step WHAT is being found and WHY, in words, without adding a
+step: glosses do that work. XIX's limits are best read aloud ("the
+number of things that are both x and y is at least the number of x's
+plus the number of y's minus the whole universe").
+
+Vocabulary, LOCKED for XVI–XXII:
+- "Prob. x" stays in formulas; in prose "the probability of x".
+- simple / compound events; conditioned / unconditioned; independent;
+  "absolute probability" (the probability apart from any condition).
+- data, and quaesita -> "what is sought" (gloss "quaesita" once if
+  Boole uses the word).
+- the general method; the general rule; final logical equation.
+- arbitrary constant(s) (c, c1 ...): "a constant whose value the data
+  do not fix"; glossed once.
+- statistical conditions (locked, Boole's term); "major and minor
+  limits" kept (the formulas print them), glossed once as "the largest
+  and smallest values possible"; "superior / inferior limit" -> "upper
+  / lower limit".
+- "a posteriori" / "a priori" were glossed in Chapter 1; do not re-gloss.
+- "phaenomenon" -> "phenomenon"; "connexion" -> "connection" (keep
+  "Connexion" in the Chapter 20 title); "the doctrine of chances" stays
+  when he quotes it.
+- Names stay: Laplace, Poisson, Pascal, De Morgan, Donkin, Michell,
+  Herschel, Forbes, Cournot, Bishop Terrot, Ritter.
+
+XXII: Boole's own philosophy and religion, in his voice. Render his
+view of the mind, of Plato, Aristotle, the Neoplatonists, the
+schoolmen, Spinoza and Hegel as HIS argument, in a measured register;
+neither endorse nor mock (the XIII ruling). His notes quote Greek,
+Latin and Italian: copy them exactly (the Greek is set in Unicode by
+prep.py from the received texts, checked on the 1854 page); a short
+English rendering in brackets may follow a quotation Boole leaves
+untranslated, marked as ours only if the sense needs it. His verse
+renderings ("Be mine, to partial views...") are his and stay verbatim.
+
+Ratio for XVI–XXII: math-dense files should run 1.0–1.2; XVI and XXII
+(prose) around 0.9–1.0.

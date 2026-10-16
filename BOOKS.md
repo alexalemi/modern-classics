@@ -4687,7 +4687,7 @@ COVER: generated (gencover jevons_logic), Lesson 1's iron / metals /
 elements as three nested Euler circles; epigraph "… part of a part is
 part of the whole." (Lesson 1, verbatim).
 
-## laws-of-thought/ — George Boole, An Investigation of the Laws of Thought (1854), Chapters I–XV, MODERNIZATION
+## laws-of-thought/ — George Boole, An Investigation of the Laws of Thought (1854), MODERNIZATION (the whole book: logic I–XV 2026-10-14, probability XVI–XXII 2026-10-16)
 
 SOURCE: Gutenberg #15114, which exists ONLY as LaTeX (15114-t.tex in the
 gitignored _src/). prep.py converts it: displays as \[..\] INSIDE their
@@ -4695,11 +4695,40 @@ paragraph on their own line (single newlines, no tab — a short lead-in as
 its own paragraph becomes an h4, a tabbed display a one-cell table),
 inline \(..\), eqnarray/align -> aligned, gather/multline -> gathered,
 tabulars -> " | " text tables, footnotes -> "Footnote:" paragraphs.
-SCOPE: Dedication + Preface + Chapters I–XV (the logic); XVI–XXII
-(probability) omitted, said in the introduction, and every forward
-reference into them bracketed "(in the chapters on probability, not
-included in this edition)". Chapters I and XIII split in two at article
-boundaries. 18 files, 78,302 -> 79,195 words, ratio 1.01; 2,772 formulas.
+SCOPE: Dedication + Preface + Boole's Note + Chapters I–XXII. The logic
+half shipped first (18 files, 78,302 -> 79,195 words) with XVI–XXII
+omitted and every forward reference bracketed; on 2026-10-16 the
+probability half was added (13 files, 58,973 -> 63,266 words) and the
+brackets swept out. 31 files, ratio 1.04, 5,803 formulas.
+THE PROBABILITY HALF, what differed. (1) prep.py runs to "the end." and
+sets BOOLE'S NOTE (printed before Chapter I: his correction to the urn
+example of XVII. 10 and his restatement of the independence principle)
+as a split_heading after the Preface, its page references "p. 261/270"
+turned into (XVII. 10)/(XVII. 17). The note is NOT in the archive.org
+1854 copy we use as print witness; its p. 261 and 270 match that
+printing's pages, so the slip existed in some copies. (2) l IS A
+QUANTITY from XVI on (l/m, hmu - h'nu = l, l = r/n): fix_l is limited to
+I–XV and each misread 1 is a FORMULA_SUBS entry. (3) The transcriber
+typed XXII's Greek in math mode letter by letter, two notes as Latin
+transliteration (one citation inside a comment): GREEK_SPANS replace
+each with Unicode from the received text, checked on pp. 411–416. (4)
+Distributed Proofreaders' own footnotes ("corrected here by DP") are
+dropped, their corrections kept; a \footnotemark inside an align* and a
+footnote inside a display moved after it. (5) pandoc refuses
+\surd\{..\} and \surd[..]: surd_arg wraps the bracket in a group (and
+fix_braces must then skip it). (6) Chapters split by SIZE (38k chars)
+from XVI, since formulas cost a translator as much as prose. (7) The
+offset bookkeeping for FIXES (line_at) was wrong once edits were made
+out of order; each edit now moves the recorded edits after it.
+PRINT CHECK: four Opus agents read every formula of XVI–XXI against the
+page images (prompt kept in the session scratchpad, not the repo): ~45
+transcription errors and ~20 misprints of 1854 corrected
+(FORMULA_SUBS/FIXES, "PRINT" marks the latter), four equation numbers
+the print has and the transcription lacked restored. The translators'
+flags matched the print check almost one for one; the print check
+found the ones a translator cannot see (a dropped prime, a lost
+equation number, "+" for "="). Editor's notes N8–N11 (Kolmogorov;
+Wilbraham/Hailperin; Pitowsky and Bell; Laplace's rule of succession).
 EQUATION NUMBERS: taken from a pdflatex compile, then CHECKED AGAINST THE
 1854 PRINT (archive.org investigationofl00boolrich, OCR + page images in
 _src/scan/): only Chapter VII was off (the transcription left its first
@@ -4718,7 +4747,7 @@ substitution patched into modern_chapters/.
 THREE LAYERS, KEPT APART (Alex asked for "more comprehensible" with
 modern notes): Boole retold (every step, his article numbers and
 "(II. 9)" cross-references kept); GLOSSES inside the sentence that read
-an equation aloud, never correct it; and exactly SEVEN "Editor's note:"
+an equation aloud, never correct it; and exactly SEVEN (eleven with the probability half) "Editor's note:"
 paragraphs, pre-assigned in running_notes.txt to one passage each (+ as
 exclusive or; 0 and 1 and Shannon; v as "some"; constituents = DNF and
 Jevons's Lesson 23; 0/0 and division; secondary propositions as truth

@@ -23,6 +23,21 @@ HEADINGS (line 1 exactly; multi-part files put "(Part n of k)" on LINE 2, blank 
 015 Chapter 13: Clarke and Spinoza   (Part 2 of 2)
 016 Chapter 14: Example of Analysis
 017 Chapter 15: Of the Aristotelian Logic
+018 Chapter 16: On the Theory of Probabilities
+019 Chapter 17: General Method in Probabilities   (Part 1 of 2)
+020 Chapter 17: General Method in Probabilities   (Part 2 of 2)
+021 Chapter 18: Elementary Illustrations of the General Method in Probabilities
+022 Chapter 19: Of Statistical Conditions   (Part 1 of 2)
+023 Chapter 19: Of Statistical Conditions   (Part 2 of 2)
+024 Chapter 20: Problems Relating to the Connexion of Causes and Effects   (Part 1 of 3)
+025 Chapter 20: Problems Relating to the Connexion of Causes and Effects   (Part 2 of 3)
+026 Chapter 20: Problems Relating to the Connexion of Causes and Effects   (Part 3 of 3)
+027 Chapter 21: Probability of Judgments   (Part 1 of 2)
+028 Chapter 21: Probability of Judgments   (Part 2 of 2)
+029 Chapter 22: On the Nature of Science, and the Constitution of the Intellect   (Part 1 of 2)
+030 Chapter 22: On the Nature of Science, and the Constitution of the Intellect   (Part 2 of 2)
+000 now ends with Boole's "Note" (his correction to XVII. 10), retold by
+the orchestrator; the line "Note" is a split_heading.
 Part 2 of a split chapter never re-introduces the chapter; Part 1 never
 concludes it.
 
@@ -76,12 +91,50 @@ N7  017, after the paragraph where Boole first expresses "All Y's are
     exist, so some of Aristotle's moods (Darapti, Felapton, Bramantip,
     Fesapo, and the weakened moods) need an extra premise. Boole's v
     quietly supplies it.
-That is all. No agent adds a note not on this list. Chapter 1's
-mentions of probability get only the bracket rule (references into
-XVI–XXII: "(in the chapters on probability, not included in this
-edition)").
+THE PROBABILITY HALF (assigned 2026-10-16):
+N8  018, after article 6 (events replaced by the propositions that
+    assert them) — this is the idea modern probability theory is built
+    on. In 1933 Andrei Kolmogorov set probability on events treated as
+    sets, combined by "and", "or" and "not" exactly as Boole combines
+    classes; in today's terms a probability is a measure on a Boolean
+    algebra of events.
+N9  019, after the paragraph that ends "its numerical value varies with
+    varying information" (the end of the urn example, XVII. 10) — Boole
+    later saw that this example was wrong. In the Note printed at the
+    front of the book (after the Preface in this edition) he corrected
+    it and restated the principle behind his method: treat the simple
+    events as independent, with whatever probabilities make them agree
+    with the data. That principle was the most criticised step in his
+    theory; Henry Wilbraham attacked it in 1854, and Boole defended it
+    in print for years. Theodore Hailperin later showed (1976) that
+    Boole's problems are best read as finding the range of values the
+    data allow, which is a problem in what is now called linear
+    programming.
+N10 022, after article 1 (the definition of statistical conditions) —
+    Boole's statistical conditions are the inequalities that any set
+    of observed frequencies must satisfy if the data are consistent.
+    He later called them "conditions of possible experience". In 1989
+    the philosopher Itamar Pitowsky showed that the Bell inequalities
+    of quantum physics are conditions of exactly this kind: measurements
+    on certain pairs of particles break them, which is why those results
+    cannot be explained by any account in which the particles simply
+    carry their properties with them.
+N11 026, after article 26 (the close of the sunrise discussion) — the
+    rule Boole examines here, that after m sunrises the chance of
+    another is (m + 1)/(m + 2), is Laplace's "rule of succession". The
+    question behind his objection, whether ignorance can be expressed
+    by spreading probability evenly over the possibilities, is the
+    question of "prior probabilities" that still divides statisticians:
+    Bayesian methods assign them, often in Laplace's way, while others,
+    like Boole, refuse unless the evidence supplies them. (Write the
+    fraction in words: "m plus one over m plus two".)
+That is all. No agent adds a note not on this list. XXI and XXII take
+no editor's note.
 
 LOCKED RENDERINGS
+- XVI–XXII vocabulary: see text_analysis.txt, THE PROBABILITY HALF.
+  References into XVI–XXII stay as printed, NO bracket (the whole book
+  is now in this edition).
 - "symbolical" -> "symbolic" in prose (keep it in the Chapter 11 title).
 - literal symbols; signs of operation; sign of identity; universe of
   discourse; "the fundamental law of thought" / "the law of duality"
@@ -189,3 +242,25 @@ SCAN QUEUE (orchestrator: check against _src/scan after batch 2)
 - XIII (014) `p(1-y) + yz + (1-y)(1-z) = (0)` — stray parens?
 - XIII (014) prose slips: "In what area regarded" (are), "every source
   doubt", "the process inference", "might almost termed", "is prove are".
+
+LEDGER ADDITIONS, PROBABILITY HALF (from 018, Chapter 16 — the voice
+reference for XVI–XXII: read its first two pages)
+- "concurrence of events" -> "both occur" / "happening together";
+  "non-occurrence" -> "does not occur"; "mutually exclusive" / "which
+  cannot concur" -> "exclude one another" / "cannot both occur".
+- "the doctrine/theory of Probabilities" -> "the theory of probability"
+  (lowercase). "the constitution of things" -> "the way things are made"
+  (a die: "the way a die is made"). "if the cause exist" -> "exists";
+  a cause "exists" / "is present".
+- phaenomena -> phenomena; connexion -> connection; "à priori" kept
+  (glossed in Chapter 1, not again).
+- GLOSSED in 018, do not re-gloss: quaesitum "the thing sought",
+  quaesita "(things sought)"; antecedents "(their 'if' parts)";
+  exclusive causation "causes that never act together"; Donkin's
+  principle read aloud once.
+- Laplace's principles keep their labels "Principle 1st." ... "7th.";
+  labels such as "First Datum.—", "Quæsitum.—", "Data.",
+  "Requirements.", "Proposition I.", "Case I.—", "Problem I.—",
+  "Rule.—", "Ex. 2.—" stay exactly. Boole's own "1st." / "2ndly." in
+  running prose -> "First," / "Second,".
+- Quotation marks: curly “ ” as in the source.

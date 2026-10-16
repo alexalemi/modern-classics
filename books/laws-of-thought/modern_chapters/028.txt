@@ -1,0 +1,89 @@
+Chapter 21: Probability of Judgments
+(Part 2 of 2)
+
+9. Before we apply the general solution (15) (16) to the question of the probability of judgments, it will help to make one transformation. Let the data be
+\[\begin{aligned} x_1 = c_1 & \dots x_n=c_n, \\ & \text{namely,} \\ \text{Prob. }X_1 = a_1 & \dots \text{Prob. }X_{m-2} = a_{m-2}; \end{aligned}\]
+that is, we are given the probability of each simple event, and the probabilities of all the compound events except the last two. Let it be required to find \(\text{Prob. }X_{m-1}\), whose unknown value we will write as \(a_{m-1}\). Then in (15) and (16) we must change
+
+	\(X\) into \(X_{m-1}\), | \(\text{Prob. }X\) into \(a_{m-1}\),
+	\(X_{m-1}\) into \(X_{m-2}\), | \(\quad \quad a_{m-1}\) into \(a_{m-2}\),
+	\(X_m\) into \(X_{m-1} + X_m\), | \(\quad \quad a_m\) into \(a_{m-1} + a_m\);
+
+With these changes made, we note that \((X_{m-1} X_r)=0\) except when \(r = m-1\), and that it is then equal to \(X_{m-1}\). (The compound events exclude one another, so the event sought has nothing in common with any of the others, and everything in common with itself.) The equations (15) (16) then give
+\[a_{m-1}=\frac{(a_{m-1} + a_m)X_{m-1}}{X_{m-1}+X_m}, \qquad (19)\]
+\[\frac{a_1(x_i X_1)}{X_1} \dotsc + \frac{a_{m-2}(x_i X_{m-2})}{X_{m-2}} + \frac{(a_{m-1} + a_m)(x_i X_{m-1} + x_i X_m)}{X_{m-1} + X_m} = c_i. \qquad (20)\]
+Now from (19) we find
+\[\frac{X_{m-1}}{a_{m-1}}=\frac{X_m}{a_m} = \frac{X_{m-1}+X_m}{a_{m-1}+a_m},\]
+and because of this the last term of (20) can be brought to the form
+\[\frac{a_{m-1}(x_i X_{m-1})}{X_{m-1}}+\frac{a_m(x_i X_m)}{X_m}.\]
+With these reductions, the system (17) and (18) can be replaced by the following symmetrical one:
+\[\frac{X_{m-1}}{a_{m-1}}=\frac{X_m}{a_m}, \qquad (21)\]
+\[\frac{a_1(x_i X_1)}{X_1} + \frac{a_2(x_i X_2)}{X_2}\dotsc + \frac{a_m(x_i X_m)}{X_m} = c_i. \qquad (22)\]
+These equations, together with (7) and (13), let us find \(a_{m-1}\) as a function of \(c_1 \dotsc c_n, a_1 \dotsc a_{m-2}\), the numbers we suppose experience supplies. We now turn to applying them.
+
+Proposition III.
+
+10. Given any system of probabilities drawn from recorded cases of unanimity, or of a stated numerical majority, in the decisions of a deliberative assembly; required, on a certain definite hypothesis, the mean probability that a member of the assembly judges correctly.
+
+How the probabilities of unanimous decisions, and of particular numerical majorities, may be found from experience was indicated earlier in this chapter. Using the notation of Prop. I., we shall represent the events whose probabilities are given by the functions \(X_1,X_2, \dotsc X_{m-1}\). The very nature of the case has shown that these events exclude one another, and that the functions which represent them are symmetrical with respect to the symbols \(x_1, x_2, \dots x_n\). (Symmetrical here means that the functions are unchanged if the members are relabelled: a record of votes says how many voted each way, not who.) We go on using those symbols in the same sense as in Prop. I.: by \(x_i\) we mean the event that the \(i^\text{th}\) member of the assembly forms a correct opinion.
+
+Now the data that experience gives us directly are these:
+\[\text{Prob. }X_1 = a_1, \quad \text{Prob. }X_2 = a_2\dotsc \text{Prob. }X_{m-2} = a_{m-2}, \qquad (1)\]
+\[\text{Prob. }X_{m-1} = a_{m-1}. \qquad (2)\]
+Here \(X_1\dots X_{m-1}\) are functions of the logical symbols \(x_1, \dotsc x_n\), and to the probabilities of the events those symbols stand for we shall assign one and the same undetermined value \(c\). That is, every member has the same probability of judging rightly, and we do not yet know what it is. So we shall have
+\[\text{Prob. }x_1 = \text{Prob. }x_2 \dots = \text{Prob. }x_n = c. \qquad (3)\]
+
+We saw in Prop. I. that the direct data (1) (2), with no hypothesis to help them, only lead us back to a restatement of the problem. On the other hand, suppose we followed the methods of Laplace and Poisson. We would then use the system (3) alone as the data for this work's method, and only at the end compare the results with the experimental system (1) (2). Plainly we would then be relying _wholly_ on a doubtful hypothesis: that the members' judgments are independent of one another. We ought not to rely on that hypothesis wholly; but we cannot do without it altogether, or without something equivalent in its place. So let us examine what follows from a _limited_ independence of the individual judgments, with the limits set by the data that seemed to be surplus. From the system (1) (3), let us use the method of this work to find Prob. \(X_{m-1}\); then, comparing the result with (2), let us find \(c\). Even here we claim an arbitrary power of choosing which datum to hold back. But Prop. I. makes it plain that something of this kind cannot be avoided if we want a definite solution at all. As for the principle of choice, I believe the equation (2) held back for the final comparison should be the one that, because of the size of its number \(a_{m-1}\), is judged the most important of the first series of data that experience supplies.
+
+Now, since the events denoted by the functions \(X_1, X_2,\dotsc X_{m-1}\) exclude one another, the concluding equations of the previous proposition apply. Because those functions are symmetrical, and because the set of values denoted by \(c_i\) has been reduced to a single value \(c\), the equations represented by (22) all become the same equation. The values of \(x_1, x_2,\dotsc x_n\) become equal and may be replaced by a single value \(x\), and we have simply
+\[\begin{gathered} \frac{X_{m-1}}{a_{m-1}} = \frac{X_m}{a_m}, \qquad (4) \\ \frac{a_1(x X_1)}{X_1} + \frac{a_2(x X_2)}{X_2} \dotsc + \frac{a_m(x X_m)}{X_m} = c. \qquad (5) \end{gathered}\]
+Here is how the solution these equations point to is carried out.
+
+The functions \(X_1,\dotsc X_{m-1}\) and the values \(a_1,\dotsc a_{m-1}\) are given in the data. So first we have
+\[\begin{aligned} X_m &= 1 - X_1 \dotsc - X_{m-1}, \\ a_m &= 1 - a_1 \dotsc - a_{m-1}. \end{aligned}\]
+In words: the last event is "anything else that can happen", and its probability is whatever is left over after the recorded ones.
+
+From each of the functions \(X_1, X_2,\dotsc X_m\), given or found in this way, we must pick out the constituents that contain a particular symbol, such as \(x_1\), as a factor. This fixes the functions (\(x X_1\)), (\(x X_2\)), &c. Then in all the functions we must change each of \(x_1, x_2,\dotsc x_n\) into \(x\). Or we may look at it another way. Any algebraic function \(X_i\) in the system (4) (5) expresses the probability of the event denoted by the logical function \(X_i\), on the supposition that the logical symbols \(x_1, x_2,\dotsc x_n\) stand for independent events, all with the same probability \(x\). On the same supposition, (\(xX_i\)) would stand for the probability that one particular event of the series \(x_1, x_2,\dotsc x_n\) occurs together with \(X_i\): that a given member judges rightly and the vote falls out as that function describes. Once the forms of \(X_i\), (\(xX_i\)), &c. are known, the equation (4) gives the value of \(x\), and this value, put into (5), gives the value of the element \(c\) we want. The solution will offer two values, one greater than \(\tfrac{1}{2}\) and the other less. The greater must be chosen whenever, on general grounds, we think it more likely that a member of the assembly will judge correctly than incorrectly.
+
+Here, then, on the assumed principle that the largest of the values, \(a_{m-1}\), is held back for the final comparison in the equation (2), we have a definite solution of the problem. The same form of solution still applies if some other equation of the system is held back in place of (2) on some other ground, such as its being more accurate.
+
+11. Let us examine how far this choice of which datum to hold back has affected the final solution. Clearly the equation (5) does not depend on the choice at all. Nor does the right-hand side of (4). Had we held back the function \(X_1\) instead of \(X_{m-1}\), the equation for finding \(x\) would have been
+\[\frac{X_1}{a_1} = \frac{X_m}{a_m}, \qquad (6)\]
+but the value of \(x\) found from it would still have to be put into the same final equation (5). We know that if the events \(x_1, x_2,\dotsc x_n\) really were independent, the equations (4), (6), and all the others of which they are examples, would turn out equivalent, and the value of \(x\) given by any one of them would be the true value of \(c\). This gives us a way of checking (5). For if that equation is correct, then in these circumstances it ought to be satisfied by taking \(c = x\). In other words, the equation
+\[\frac{a_1(x X_1)}{X_1} + \frac{a_2(x X_2)}{X_2} \dotsc + \frac{a_m(x X_m)}{X_m} = x \qquad (7)\]
+ought, when solved, to give the same value of \(x\) as the equation (4) or (6). And this is the case. For since, by hypothesis,
+\[\frac{X_1}{a_1} = \frac{X_2}{a_2} \dotso = \frac{X_m}{a_m},\]
+we have, by a known theorem (when several fractions are equal, each equals the sum of their tops over the sum of their bottoms),
+\[\frac{X_1}{a_1} = \frac{X_2}{a_2} \dotso = \frac{X_m}{a_m} = \frac{X_1 + X_2 \dotsc + X_m}{a_1 + a_2 \dotsc + a_m} = 1.\]
+(The last step holds because the events together cover every possibility, so both sums are 1.) So, on putting \(a_1\) for \(X_1\), &c., (7) becomes
+\[(xX_1) + (xX_2)\dotsc + (xX_m) = x\]
+which is a mere identity: the chance that a given member judges rightly, added up over every possible outcome of the vote, is simply the chance that he judges rightly.
+
+So whenever the events \(x_1, x_2,\dotsc x_n\) really are independent, the system (4) (5) is correct, and it does not depend on the arbitrary first step of the process that produced it. When those events are not independent, the final system of equations will contain an arbitrary element, setting aside the principle of choice stated above. But the fact that the equation (5) keeps the same form whichever datum is held back suggests that the solution is less arbitrary than the solutions to which the hypothesis of the complete independence of the individual judgments would lead us. Working out the limits of the value of \(c\), as they depend on the limits of the value of \(x\), would settle such points.
+
+These considerations raise a question. The equation (7) is symmetrical with respect to the functions \(X_1, X_2,\dotsc X_m\); it is free from any arbitrary element; and it is strictly exact when the events \(x_1, x_2,\dotsc x_n\) really are independent. Might it not be accepted as a mean general solution of the problem? The proper way to decide this, I think, would be to find out whether the value of \(x\) it gives would generally fall within the limits of the value of \(c\), as determined by the systems of equations of which the system (4), (5), is the type. It seems likely that under ordinary circumstances it would. Apart from such considerations, however, we may regard (7) as itself expressing a certain principle of solution. On this principle, we treat \(X_1, X_2,\dotsc X_m\) as exclusive _causes_ of the event whose probability is \(x\) (causes that never act together). We accept the probabilities of those causes, \(a_1, a_2,\dotsc a_m\), from experience. But we form the conditional probabilities of the event, given each of those causes,
+\[\frac{(x X_1)}{X_1},\quad \frac{(x X_2)}{X_2}, \text{ \&c. (XVII. Prop~I.)}\]
+on the hypothesis that the individual judgments are independent, and so arrive at the equation (7). I believe, however, that this is a less rigorous way to proceed than the one used in the general solution, though in practice it may be the more convenient.
+
+12. It only remains to give the particular forms that the algebraic functions \(X_i\), (\(x X_i\)), &c. in the equations above take when the logical function \(X_i\) stands for the event that \(r\) members of the assembly vote one way and \(n-r\) members the other way. Clearly, in this case the algebraic function \(X_i\) expresses what the probability of that event would be if the events \(x_1, x_2,\dotsc x_n\) were independent, with a common probability measured by \(x\). So by Art. 3 we should have
+\[X_i = \frac{n(n-1)\dotsc (n-r+1)}{1\cdot 2\dotsc r} \{ x^r(1-x)^{n-r} + x^{n-r}(1-x)^r \}.\]
+The fraction in front counts the number of ways of choosing which _r_ members make up the one side. Under the same circumstances, (\(xX_i\)) would stand for the probability of the compound event in which one particular member of the assembly judges correctly and, along with that, the voting falls out as just described. It would therefore be the probability that a particular member votes correctly while, of the other \(n-1\) members, \(r-1\) vote correctly; or that the same member votes correctly while, of the other \(n-1\) members, \(r\) vote incorrectly. (In the first case he is one of the _r_, and that side is right; in the second he is among the rest, the _n_ minus _r_, and the _r_ are the ones in error.) So
+\[(xX_i) = \frac{(n-1)(n-2)\dotsc (n-r+1)}{1\cdot 2\dotsc r-1}x^r(1-x)^{n-r} + \frac{(n-1)(n-2)\dotsc (n-r)}{1\cdot 2\dotsc r}x^{n-r}(1-x)^r.\]
+
+Proposition IV.
+
+13. Given any system of probabilities drawn from recorded cases of unanimity, or of a stated numerical majority, in the decisions of a criminal court of justice; required, on hypotheses similar to those of the last proposition, the mean probability \(c\) of _correct judgment for a member of the court, and the general probability \(k\) of guilt in an accused person_.
+
+The solution of this problem differs only slightly from that of the last, and can be referred to the same general formulas, (4) and (5), or (7). Note that since there are now two elements, \(c\) and \(k\), to be found, we must hold back two of the functions \(X_1, X_2,\dotsc X_{m-1}\) for final comparison, say \(X_1\), and \(X_{m-1}\). We then use for the data either the remaining \(m-3\) functions, or the two sets \(X_2, X_3,\dotsc X_{m-1}\), and \(X_1, X_2,\dotsc X_{m-2}\), one for each. In either case we suppose there must be at least two independent original data. If the equation (7) alone is used, in this case it will give two equations, which may be written:
+\[\begin{aligned} \frac{a_1(xX_1)}{X_1} + \frac{a_2(xX_2)}{X_2} \dotsc + \frac{a_m(xX_m)}{X_m} &= x, \qquad (1) \\ \frac{a_1(kX_1)}{X_1} + \frac{a_2(kX_2)}{X_2} \dotsc + \frac{a_m(kX_m)}{X_m} &= k. \qquad (2) \end{aligned}\]
+The first is about a juror's judging rightly, the second about the prisoner's being guilty. These equations are to be used in the following way. Let \(x_1, x_2, \dotsc x_n\) stand for the events that the members of the court, respectively, form a correct opinion. Let \(w\) also stand for the event that the accused is guilty. With these symbols we can express in logic the functions \(X_1, X_2,\dotsc X_{m-1}\), whose probabilities are given, and also the function \(X_m\). Then from the function \(X_1\) pick out the constituents that contain, as a factor, some one particular symbol of the set \(x_1, x_2, \dotsc x_n\), and also the constituents that contain \(w\) as a factor. In both results change each of \(x_1, x_2, \dotsc x_n\) into \(x\), and \(w\) into \(k\). These results give (\(xX_1\)) and (\(kX_1\)): the probability that a given juror judges rightly and the verdict falls out as the first recorded event describes, and the probability that the accused is guilty and the verdict falls out so. Make the same changes throughout, and the system (1), (2) will determine \(x\) and \(k\), on the particular hypothesis involved.
+
+14. From these investigations we may gather the following facts and conclusions.
+
+First, from the mere records of agreement and disagreement in the opinions of any body of men, no definite numerical conclusions can be drawn, either about the probability that an individual member of the body judges correctly, or about the merits of the questions put before it.
+
+Second, such conclusions may be drawn on several distinct hypotheses: first, on the usual hypothesis that individual judgments are completely independent; second, on certain definite modifications of that hypothesis that the actual data justify; third, on a distinct principle of solution, suggested by the common form that turned up in the solutions obtained from those modifications.
+
+Last, whatever doubt may attach to the final results comes not from any imperfection in the method, which adapts itself equally to every hypothesis, but from the uncertainty of the hypotheses themselves.
+
+It seems likely, however, that even with the widest range of hypotheses consistent with taking _all_ the data of experience into account, the results would differ only slightly, and that their mean values could be found with great confidence by the methods of Prop. III. Of those methods I would be inclined to prefer the first. Once such a principle of mean solution has been agreed on, other considerations suggest that the values of \(c\) and \(k\) (the chance that a member judges rightly, and the chance that a person brought to trial is guilty) would stay nearly constant for courts and assemblies with a definite constitution, governed in their deliberations by fixed rules. They would be subject only to a small, slow change over the centuries, depending on the progress of knowledge and of justice among mankind. At present there are few data, if any, suitable for finding them.

@@ -6,7 +6,7 @@
 
 Exits nonzero on any failure.
 
-  - Chapters 1-15 in order, each file's first line its manifest title, part
+  - Chapters 1-22 in order, each file's first line its manifest title, part
     markers "(Part n of k)" on the second line of a multi-part file;
   - no TeX left in the prose (outside \\( \\) and \\[ \\]);
   - no paragraph that assemble.is_subheading would set as a heading;
@@ -44,7 +44,7 @@ def main():
     fails = []
     man = json.loads((BOOK / "manifest.json").read_text())
     chapters = [m["number"] for m in man if m.get("number") and m["part"] == 1]
-    if chapters != list(range(1, 16)):
+    if chapters != list(range(1, 23)):
         fails.append(f"chapters out of order or missing: {chapters}")
     dirs = ["chapters"] + (["modern_chapters"] if "--modern" in sys.argv else [])
     skipped = 0
@@ -76,7 +76,7 @@ def main():
             # (a lead-in like "Hence we have" split from its display was)
             body = [q for q in t.split("\n\n")[1:] if q.strip() and not q.startswith("(Part ")]
             for q, nxt in zip(body, body[1:] + [None]):
-                if q not in ("Preface",) and assemble.is_subheading(q.strip(), nxt):
+                if q not in m.get("split_headings", []) and assemble.is_subheading(q.strip(), nxt):
                     fails.append(f"{d}/{m['file']}: would render as a heading: {q[:60]!r}")
             if d == "chapters":
                 prose = MATH.sub(" ", t)

@@ -1,0 +1,88 @@
+Chapter 21: Probability of Judgments
+(Part 2 of 2)
+
+9. Before applying the general solution (15) (16), to the question of the probability of judgments, it will be convenient to make the following transformation. Let the data be
+\[\begin{aligned} x_1 = c_1 & \dots x_n=c_n, \\ & \text{namely,} \\ \text{Prob. }X_1 = a_1 & \dots \text{Prob. }X_{m-2} = a_{m-2}; \end{aligned}\]
+and let it be required to determine \(\text{Prob. }X_{m-1}\), the unknown value of which we will represent by \(a_{m-1}\). Then in (15) and (16) we must change
+
+	\(X\) into \(X_{m-1}\), | \(\text{Prob. }X\) into \(a_{m-1}\),
+	\(X_{m-1}\) into \(X_{m-2}\), | \(\quad \quad a_{m-1}\) into \(a_{m-2}\),
+	\(X_m\) into \(X_{m-1} + X_m\), | \(\quad \quad a_m\) into \(a_{m-1} + a_m\);
+
+with these transformations, and observing that \((X_{m-1} X_r)=0\), except when \(r = m-1\), and that it is then equal to \(X_{m-1}\), the equations (15) (16) give
+\[a_{m-1}=\frac{(a_{m-1} + a_m)X_{m-1}}{X_{m-1}+X_m}, \qquad (19)\]
+\[\frac{a_1(x_i X_1)}{X_1} \dotsc + \frac{a_{m-2}(x_i X_{m-2})}{X_{m-2}} + \frac{(a_{m-1} + a_m)(x_i X_{m-1} + x_i X_m)}{X_{m-1} + X_m} = c_i. \qquad (20)\]
+Now from (19) we find
+\[\frac{X_{m-1}}{a_{m-1}}=\frac{X_m}{a_m} = \frac{X_{m-1}+X_m}{a_{m-1}+a_m},\]
+by virtue of which the last term of (20) may be reduced to the form
+\[\frac{a_{m-1}(x_i X_{m-1})}{X_{m-1}}+\frac{a_m(x_i X_m)}{X_m}.\]
+With these reductions the system (17) and (18) may be replaced by the following symmetrical one, viz.:
+\[\frac{X_{m-1}}{a_{m-1}}=\frac{X_m}{a_m}, \qquad (21)\]
+\[\frac{a_1(x_i X_1)}{X_1} + \frac{a_2(x_i X_2)}{X_2}\dotsc + \frac{a_m(x_i X_m)}{X_m} = c_i. \qquad (22)\]
+These equations, in connexion with (7) and (13), enable us to determine \(a_{m-1}\), as a function of \(c_1 \dotsc c_n, a_1 \dotsc a_{m-2}\), the numerical data supposed to be furnished by experience. We now proceed to their application.
+
+Proposition III.
+
+10. Given any system of probabilities drawn from recorded instances of unanimity, or of assigned numerical majority in the decisions of a deliberative assembly; required, upon a certain determinate hypothesis, the mean probability of correct judgment for a member of the assembly.
+
+In what way the probabilities of unanimous decision and of specific numerical majorities may be determined from experience, has been intimated in a former part of this chapter. Adopting the notation of Prop. I. we shall represent the events whose probabilities are given by the functions \(X_1,X_2, \dotsc X_{m-1}\). It has appeared from the very nature of the case that these events are mutually exclusive, and that the functions by which they are represented are symmetrical with reference to the symbols \(x_1, x_2, \dots x_n\). Those symbols we continue to use in the same sense as in Prop. I., viz., by \(x_i\) we understand that event which consists in the formation of a correct opinion by the \(i^\text{th}\) member of the assembly.
+
+Now the immediate data of experience are—
+\[\text{Prob. }X_1 = a_1, \quad \text{Prob. }X_2 = a_2\dotsc \text{Prob. }X_{m-2} = a_{m-2}, \qquad (1)\]
+\[\text{Prob. }X_{m-1} = a_{m-1}. \qquad (2)\]
+\(X_1\dots X_{m-1}\) being functions of the logical symbols \(x_1, \dotsc x_n\) to the probabilities of the events denoted by which, we shall assign the indeterminate value \(c\). Thus we shall have
+\[\text{Prob. }x_1 = \text{Prob. }x_2 \dots = \text{Prob. }x_n = c. \qquad (3)\]
+
+Now it has been seen, Prop. I., that the immediate data (1) (2), unassisted by any hypothesis, merely conduct us to a restatement of the problem. On the other hand, it is manifest that if, adopting the methods of Laplace and Poisson, we employ the system (3) alone as the data for the application of the method of this work, finally comparing the results obtained with the experimental system (1) (2), we are relying _wholly_ upon a doubtful hypothesis,—the independence of individual judgments. But though we ought not wholly to rely upon this hypothesis, we cannot wholly dispense with it, or with some equivalent substitute. Let us then examine the consequences of a _limited_ independence of the individual judgments; the conditions of limitation being furnished by the apparently superfluous data. From the system (1) (3) let us, by the method of this work, determine Prob. \(X_{m-1}\), and, comparing the result with (2), determine \(c\). Even here an arbitrary power of selection is claimed. But it is manifest from Prop. I. that something of this kind is unavoidable, if we would obtain a definite solution at all. As to the principle of selection, I apprehend that the equation (2) reserved for final comparison should be that which, from the magnitude of its numerical element \(a_{m-1}\), is esteemed the most important of the primary series furnished by experience.
+
+Now, from the mutually exclusive character of the events denoted by the functions \(X_1, X_2,\dotsc X_{m-1}\), the concluding equations of the previous proposition become applicable. On account of the symmetry of the same functions, and the reduction of the system of values denoted by \(c_i\), to a single value \(c\), the equations represented by (22) become identical, the values of \(x_1, x_2,\dotsc x_n\) become equal, and may be replaced by a single value \(x\), and we have simply,
+\[\begin{gathered} \frac{X_{m-1}}{a_{m-1}} = \frac{X_m}{a_m}, \qquad (4) \\ \frac{a_1(x X_1)}{X_1} + \frac{a_2(x X_2)}{X_2} \dotsc + \frac{a_m(x X_m)}{X_m} = c. \qquad (5) \end{gathered}\]
+The following is the nature of the solution thus indicated:
+
+The functions \(X_1,\dotsc X_{m-1}\), and the values \(a_1,\dotsc a_{m-1}\), being given in the data, we have first,
+\[\begin{aligned} X_m &= 1 - X_1 \dotsc - X_{m-1}, \\ a_m &= 1 - a_1 \dotsc - a_{m-1}. \end{aligned}\]
+
+From each of the functions \(X_1, X_2,\dotsc X_m\) thus given or determined, we must select those constituents which contain a particular symbol, as \(x_1\) for a factor. This will determine the functions (\(x X_1\)), (\(x X_2\)), &c., and then in all the functions we must change \(x_1, x_2,\dotsc x_n\) individually to \(x\). Or we may regard any algebraic function \(X_i\) in the system (4) (5) as expressing the probability of the event denoted by the logical function \(X_i\), on the supposition that the logical symbols \(x_1, x_2,\dotsc x_n\) denote independent events whose common probability is \(x\). On the same supposition (\(xX_i\)) would denote the probability of the concurrence of any particular event of the series \(x_1, x_2,\dotsc x_n\) with \(X_i\). The forms of \(X_i\), (\(xX_i\)), &c. being determined, the equation (4) gives the value of \(x\), and this, substituted in (5), determines the value of the element \(c\) required. Of the two values which its solution will offer, one being greater, and the other less, than \(\tfrac{1}{2}\), the greater one must be chosen, whensoever, upon general considerations, it is thought more probable that a member of the assembly will judge correctly, than that he will judge incorrectly.
+
+Here then, upon the assumed principle that the largest of the values \(a_{m-1}\) shall be reserved for final comparison in the equation (2), we possess a definite solution of the problem proposed. And the same form of solution remains applicable should any other equation of the system, upon any other ground, as that of superior accuracy, be similarly reserved in the place of (2).
+
+11. Let us examine to what extent the above reservation has influenced the final solution. It is evident that the equation (5) is quite independent of the choice in question. So is likewise the second member of (4). Had we reserved the function \(X_1\), instead of \(X_{m-1}\), the equation for the determination of \(x\) would have been
+\[\frac{X_1}{a_1} = \frac{X_m}{a_m}, \qquad (6)\]
+but the value of \(x\) thence determined would still have to be substituted in the same final equation (5). We know that were the events \(x_1, x_2,\dotsc x_n\) really independent, the equations (4), (6), and all others of which they are types, would prove equivalent, and that the value of \(x\) furnished by any one of them would be the true value of \(c\). This affords a means of verifying (5). For if that equation be correct, it ought, under the above circumstances, to be satisfied by the assumption \(c = x\). In other words, the equation
+\[\frac{a_1(x X_1)}{X_1} + \frac{a_2(x X_2)}{X_2} \dotsc + \frac{a_m(x X_m)}{X_m} = x \qquad (7)\]
+ought, on solution, to give the same value of \(x\) as the equation (4) or (6). Now this will be the case. For since, by hypothesis,
+\[\frac{X_1}{a_1} = \frac{X_2}{a_2} \dotso = \frac{X_m}{a_m},\]
+we have, by a known theorem,
+\[\frac{X_1}{a_1} = \frac{X_2}{a_2} \dotso = \frac{X_m}{a_m} = \frac{X_1 + X_2 \dotsc + X_m}{a_1 + a_2 \dotsc + a_m} = 1.\]
+Hence (7) becomes on substituting \(a_1\) for \(X_1\), &c.
+\[(xX_1) + (xX_2)\dotsc + (xX_m) = x\]
+a mere identity.
+
+Whenever, therefore, the events \(x_1, x_2,\dotsc x_n\) are really independent, the system (4) (5) is a correct one, and is independent of the arbitrariness of the first step of the process by which it was obtained. When the said events are not independent, the final system of equations will possess, leaving in abeyance the principle of selection above stated, an arbitrary element. But from the persistent form of the equation (5) it may be inferred that the solution is arbitrary in a less degree than the solutions to which the hypothesis of the absolute independence of the individual judgments would conduct us. The discussion of the limits of the value of \(c\), as dependent upon the limits of the value of \(x\), would determine such points.
+
+These considerations suggest to us the question whether the equation (7), which is symmetrical with reference to the functions \(X_1, X_2,\dotsc X_m\), free from any arbitrary elements, and rigorously exact when the events \(x_1, x_2,\dotsc x_n\) are really independent, might not be accepted as a mean general solution of the problem. The proper mode of determining this point would, I conceive, be to ascertain whether the value of \(x\) which it would afford would, in general, fall within the limits of the value of \(c\), as determined by the systems of equations of which the system (4), (5), presents the type. It seems probable that under ordinary circumstances this would be the case. Independently of such considerations, however, we may regard (7) as itself the expression of a certain principle of solution, viz., that regarding \(X_1, X_2,\dotsc X_m\) as exclusive _causes_ of the event whose probability is \(x\), we accept the probabilities of those causes \(a_1, a_2,\dotsc a_m\) from experience, but form the conditional probabilities of the event as dependent upon such causes,
+\[\frac{(x X_1)}{X_1},\quad \frac{(x X_2)}{X_2}, \text{ \&c. (XVII. Prop~I.)}\]
+on the hypothesis of the independence of individual judgments, and so deduce the equation (7). I conceive this, however, to be a less rigorous, though possibly, in practice a more convenient mode of procedure than that adopted in the general solution.
+
+12. It now only remains to assign the particular forms which the algebraic functions \(X_i\), (\(x X_i\)), &c. in the above equations assume when the logical function \(X_i\) represents that event which consists in \(r\) members of the assembly voting one way, and \(n-r\) members the other way. It is evident that in this case the algebraic function \(X_i\) expresses what the probability of the supposed event would be were the events \(x_1, x_2,\dotsc x_n\) independent, and their common probability measured by \(x\). Hence we should have, by Art. 3,
+\[X_i = \frac{n(n-1)\dotsc (n-r+1)}{1\cdot 2\dotsc r} \{ x^r(1-x)^{n-r} + x^{n-r}(1-x)^r \}.\]
+Under the same circumstances (\(xX_i\)) would represent the probability of the compound event, which consists in a particular member of the assembly forming a correct judgment, conjointly with the general state of voting recorded above. It would, therefore, be the probability that a particular member votes correctly, while of the remaining \(n-1\) members, \(r-1\) vote correctly; or that the same member votes correctly, while of the remaining \(n-1\) members \(r\) vote incorrectly. Hence
+\[(xX_i) = \frac{(n-1)(n-2)\dotsc (n-r+1)}{1\cdot 2\dotsc r-1}x^r(1-x)^{n-r} + \frac{(n-1)(n-2)\dotsc (n-r)}{1\cdot 2\dotsc r}x^{n-r}(1-x)^r.\]
+
+Proposition IV.
+
+13. Given any system of probabilities drawn from recorded instances of unanimity, or of assigned numerical majority in the decisions of a criminal court of justice, required upon hypotheses similar to those of the last proposition, the mean probability \(c\) of _correct judgment for a member of the court, and the general probability \(k\) of guilt in an accused person_.
+
+The solution of this problem differs in but a slight degree from that of the last, and may be referred to the same general formulæ, (4) and (5), or (7). It is to be observed, that as there are two elements, \(c\) and \(k\), to be determined, it is necessary to reserve two of the functions \(X_1, X_2,\dotsc X_{m-1}\), let us suppose \(X_1\), and \(X_{m-1}\), for final comparison, employing either the remaining \(m-3\) functions in the expression of the data, or the two respective sets \(X_2, X_3,\dotsc X_{m-1}\), and \(X_1, X_2,\dotsc X_{m-2}\). In either case it is supposed that there must be at least two original independent data. If the equation (7) be alone employed, it would in the present instance furnish two equations, which may thus be written:
+\[\begin{aligned} \frac{a_1(xX_1)}{X_1} + \frac{a_2(xX_2)}{X_2} \dotsc + \frac{a_m(xX_m)}{X_m} &= x, \qquad (1) \\ \frac{a_1(kX_1)}{X_1} + \frac{a_2(kX_2)}{X_2} \dotsc + \frac{a_m(kX_m)}{X_m} &= k. \qquad (2) \end{aligned}\]
+These equations are to be employed in the following manner:— Let \(x_1, x_2, \dotsc x_n\) represent those events which consist in the formation of a correct opinion by the members of the court respectively. Let also \(w\) represent that event which consists in the guilt of the accused member. By the aid of these symbols we can logically express the functions \(X_1, X_2,\dotsc X_{m-1}\), whose probabilities are given, as also the function \(X_m\). Then from the function \(X_1\) select those constituents which contain, as a factor, any particular symbol of the set \(x_1, x_2, \dotsc x_n\), and also those constituents which contain as a factor \(w\). In both results change \(x_1, x_2, \dotsc x_n\) severally into \(x\), and \(w\) into \(k\). The above results will give (\(xX_1\)) and (\(kX_1\)). Effecting the same transformations throughout, the system (1), (2) will, upon the particular hypothesis involved, determine \(x\) and \(k\).
+
+14. We may collect from the above investigations the following facts and conclusions:
+
+1st. That from the mere records of agreement and disagreement in the opinions of any body of men, no definite numerical conclusions can be drawn respecting either the probability of correct judgment in an individual member of the body, or the merit of the questions submitted to its consideration.
+
+2nd. That such conclusions may be drawn upon various distinct hypotheses, as—1st, Upon the usual hypothesis of the absolute independence of individual judgments; 2ndly, upon certain definite modifications of that hypothesis warranted by the actual data; 3rdly, upon a distinct principle of solution suggested by the appearance of a common form in the solutions obtained by the modifications above adverted to.
+
+Lastly. That whatever of doubt may attach to the final results, rests not upon the imperfection of the method, which adapts itself equally to all hypotheses, but upon the uncertainty of the hypotheses themselves.
+
+It seems, however, probable that with even the widest limits of hypothesis, consistent with the taking into account of _all_ the data of experience, the deviation of the results obtained would be but slight, and that their mean values might be determined with great confidence by the methods of Prop. III. Of those methods I should be disposed to give the preference to the first. Such a principle of mean solution having been agreed upon, other considerations seem to indicate that the values of \(c\) and \(k\) for tribunals and assemblies possessing a definite constitution, and governed in their deliberations by fixed rules, would remain nearly constant, subject, however, to a small secular variation, dependent upon the progress of knowledge and of justice among mankind. There exist at present few, if any, data proper for their determination.

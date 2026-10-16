@@ -1,0 +1,348 @@
+Chapter 18: Elementary Illustrations of the General Method in Probabilities
+
+1. My aim here is to illustrate, with elementary examples, the general method proved in the last chapter. Most of the examples are chosen because they are simple enough for their solutions to be checked easily. But there will also be hints of a higher class of problems, to be treated more fully later. The analysis of those problems would be incomplete without a separate method. That method must find the conditions the data have to satisfy if they are to represent a possible experience, and it must fix the corresponding limits of the final solutions. A fuller treatment of that method, and of its uses, is kept for the next chapter.
+
+2. Ex. \(1\).—The probability that it thunders on a given day is \(p\), and the probability that it both thunders and hails is \(q\). Nothing more is supposed to be known about the connection between the two phenomena of thunder and hail. Required: the probability that it hails on that day.
+
+Here what is given is the chance of thunder and the chance of thunder and hail together; what is sought is the chance of hail. Let the symbols stand for the events like this:
+\[\begin{aligned} &\text{Let $x$ represent the event---It thunders.} \\ &\text{Let $y$ represent the event---It hails.} \end{aligned}\]
+Then \(xy\) will represent the event "It thunders and hails," and the data of the problem are
+\[\text{Prob. }x=p,\quad\text{Prob. }xy=q.\]
+Only one compound event, \(xy\), is involved here. So, following the rule, we give it a single letter of its own and assume
+\[xy = u. \qquad (1)\]
+Our data then become
+\[\text{Prob. }x=p,\quad\text{Prob. }u=q; \qquad (2)\]
+and we are required to find \(\text{Prob. }y\). The first step is to express _y_ in terms of the letters whose probabilities are known. Now (\(1\)) gives
+\[y = \frac{u}{x} = ux + \frac{1}{0}u(1-x) + 0(1-u)x + \frac{0}{0}(1-u)(1-x).\]
+This is the development of _y_ into its compartments, the four combinations of _u_ and _x_, each with its coefficient. From it (XVII. 17) we find _V_, the sum of the compartments the data allow (those whose coefficient is not 1/0), together with the parts of it that contain _x_ and that contain _u_:
+\[\begin{aligned} V &= ux + (1-u)x + (1-u)(1-x), \\ V_x &= ux + (1-u)x = x, \quad V_u = ux; \end{aligned}\]
+and the equations of the General Rule, namely
+\[\begin{gathered} \frac{V_x}{p} = \frac{V_u}{q} = V. \\ \text{Prob. }y = \frac{A + cC}{V} \end{gathered}\]
+become, once we substitute, and note that \(A = ux\), \(C = (1-u)(1-x)\), and that \(V\) reduces to \(x + (1-u)(1-x)\),
+\[\begin{aligned} &\frac{x}{p} = \frac{ux}{q} = x + (1-u)(1-x), \qquad (3) \\ &\text{Prob. }y = \frac{ux + c(1-u)(1-x)}{x + (1-u)(1-x)}, \qquad (4) \end{aligned}\]
+Here _A_ is the compartment whose coefficient is 1, and _C_ the one whose coefficient is 0/0, the indefinite one. From these, by eliminating \(x\) and \(u\), we easily deduce
+\[\text{Prob. }y = q + c(1-p). \qquad (5)\]
+In this result \(c\) stands for the unknown probability that if the event \((1-u)(1-x)\) happens, the event \(y\) will happen. Now \((1-u)(1-x) = (1-xy)(1-x) = 1-x\), as we find by actually multiplying it out. So \(c\) is the unknown probability that if it does not thunder, it will hail.
+
+So the general solution (\(5\)) can be read as follows. The probability that it hails equals the probability that it thunders and hails, \(q\), plus the probability that it does not thunder, \(1-p\), multiplied by the probability \(c\) that if it does not thunder it will hail. Ordinary reasoning confirms this result.
+
+If \(c\) cannot be given a numerical value, we can give it its extreme values \(0\) and \(1\), and we then find the following limits of \(\text{Prob. }y\), namely:
+\[\begin{aligned} &\text{Inferior limit $= q$.} \\ &\text{Superior limit $= q + 1-p$.} \end{aligned}\]
+That is, the chance of hail is at least the chance of thunder with hail, and at most that plus the chance of no thunder.
+
+3. Ex. 2.—The probability that one or both of two events happen is \(p\), and the probability that one or both of them fail is \(q\). What is the probability that only one of them happens?
+
+Let \(x\) and \(y\) stand for the two events. Then the data are these:
+\[\begin{array}{c} \text{Prob. }xy + x (1-y) + (1-x)y = p, \\ \text{Prob. }x(1-y) + (1-x)y + (1-x)(1-y) = q; \end{array}\]
+and we are to find
+\[\text{Prob. }x(1-y) + y(1-x).\]
+Read aloud: given the chance of "both, or the first alone, or the second alone," and the chance of "the first alone, or the second alone, or neither," we want the chance of "exactly one." Since all the events concerned here are compound, we give each its own letter and assume
+\[\begin{array}{c} xy + x(1-y) + (1-x)y = s, \\ x(1-y) + (1-x)y + (1-x)(1-y) = t, \\ x(1-y) + (1-x)y = w. \end{array}\]
+Then we eliminate \(x\) and \(y\), and work out \(w\) as a developed function of \(s\) and \(t\). We find
+\[w = st + 0 s(1-t) + 0 (1-s)t + \frac{1}{0} (1-s)(1-t).\]
+So \(A = st, C=0, V=st + s(1-t) + (1-s)t = s + (1-s)t, V_s=s, V_t=t\); and the equations of the General Rule (XVII. 17) become
+\[\frac{s}{p} = \frac{t}{q} = s + (1-s)t, \qquad (1)\]
+\[\text{Prob. }w = \frac{st}{s + (1-s)t};\]
+and from these, eliminating \(s\) and \(t\), we find
+\[\text{Prob. }w = p + q - 1.\]
+So \(p + q - 1\) is the measure of the probability we want. The result can be checked like this. Since \(p\) is the probability that one or both of the events occur, \(1-p\) will be the probability that they both fail. And since \(q\) is the probability that one or both fail, \(1-q\) is the probability that they both happen. So \(1-p + 1-q\), or \(2-p-q\), is the probability that they either both happen or both fail. But the only other possibility left is that just one of the events happens. So the probability of that is \(1-(2-p-q)\), or \(p + q - 1\), as above.
+
+4. Ex. 3.—The probability that a witness \(A\) tells the truth is \(p\), the probability that another witness \(B\) tells the truth is \(q\), and the probability that they disagree in a statement is \(r\). What is the probability that if they agree, their statement is true?
+
+Let \(x\) stand for the hypothesis that \(A\) tells the truth, and \(y\) for the hypothesis that \(B\) tells the truth. Then the hypothesis that \(A\) and \(B\) disagree in their statement will be represented by \(x(1-y) + y(1-x)\), that is, one tells the truth and the other does not. The hypothesis that they agree in their statement is \(xy + (1-x)(1-y)\), both truthful or both not; and the hypothesis that they agree in the truth is \(xy\). So we have the following data:
+\[\text{Prob. } x = p,\quad \text{Prob. } y = q,\quad \text{Prob. } x(1-y) + y(1-x) = r,\]
+and from them we are to find
+\[\frac{ \text{Prob. } xy }{ \text{Prob. } xy + (1-x)(1-y) }.\]
+That is, the chance that both are truthful, out of all the cases in which they agree. But since Prob. \(x(1-y) + y(1-x) = r\), it is clear that Prob. \(xy + (1-x)(1-y)\) will be \(1-r\); so what we have to find is
+\[\frac{ \text{Prob. } xy }{1-r}.\]
+The compound events that appear are \(x(1-y) + y(1-x)\) and \(xy\), so let us assume
+\[\left. \begin{array}{cl} x(1-y) + y(1-x) &= s \\ xy &= w \end{array} \right\} \qquad (1)\]
+Our data are then Prob. \(x = p\), Prob. \(y = q\), Prob. \(s = r\), and we are to find Prob. \(w\).
+
+On reduction, the system (1) becomes the single equation
+\[\begin{gathered} \{x(1-y) + y(1-x)\}(1-s) + s\{xy + (1-x)(1-y)\} \\ + xy(1-w) + w(1-xy) = 0; \end{gathered}\]
+and from this, solving for _w_ and developing,
+\[\begin{gathered} w = \frac{x(1-y)(1-s) + y(1-x)(1-s) + sxy + s(1-x)(1-y) + xy}{2xy-1} \\ = \frac{1}{0}xys + xy(1-s) + 0x(1-y)s + \frac{1}{0}x(1-y)(1-s) \\ + 0(1-x)ys + \frac{1}{0}(1-x)(1-y)s + \frac{1}{0}(1-x)y(1-s) \qquad (2) \\ + 0(1-x)(1-y)(1-s). \end{gathered}\]
+In writing out this development, I have put the coefficient \(\dfrac{1}{0}\) in place of every form equivalent to it (X. 6). Here we have
+\[V = xy(1-s) + x(1-y)s + (1-x)ys + (1-x)(1-y)(1-s);\]
+and so, passing from logic to algebra,
+\[\begin{gathered} \frac{xy(1-s) + x(1-y)s}{p} = \frac{xy(1-s) + (1-x)ys}{q} \\ = \frac{x(1-y)s + (1-x)ys}{r} \\ = xy(1-s) + x(1-y)s + (1-x)ys + (1-x)(1-y)(1-s). \\ \text{Prob. }w = \frac{xy(1-s)}{xy(1-s) + x(1-y)s + (1-x)ys + (1-x)(1-y)(1-s)}, \end{gathered}\]
+In each fraction on the first lines, the top is the part of _V_ that contains the letter whose probability is the number underneath; the last line gives what is sought. From these we easily deduce
+\[\text{Prob. }w = \frac{p+q-r}{2};\]
+and so we have
+\[\frac{ \text{Prob. }xy }{1-r} = \frac{p+q-r}{2(1-r)} \qquad (3)\]
+for the value sought.
+
+Suppose we now ask, in the same way, for the probability that if \(A\) and \(B\) agree in their statement, that statement will be false. Then we must replace the second equation of the system (1) with this one:
+\[(1-x)(1-y) = w;\]
+that is, _w_ now stands for both witnesses being untruthful. The final logical equation will then be
+\[\begin{gathered} w = \frac{1}{0}xys + 0xy(1-s) + 0x(1-y)s + \frac{1}{0}x(1-y)(1-s) \\ + 0(1-x)ys + \frac{1}{0}(1-x)y(1-s) + \frac{1}{0}(1-x)(1-y)s \\ + (1-x)(1-y)(1-s); \qquad (4) \end{gathered}\]
+and, proceeding as before, we finally deduce
+\[\text{Prob. }w = \frac{2 - p - q - r}{2}. \qquad (5)\]
+So we have
+\[\frac{\text{Prob. } (1-x)(1-y)}{1-r} = \frac{2-p-q-r}{2(1-r)} \qquad (6)\]
+for the value sought here.
+
+These results agree with each other. The joint statement of \(A\) and \(B\) must certainly be either true or false. So the right-hand sides of (3) and (5) ought to add up to 1. And in fact we have, identically,
+\[\frac{p+q-r}{2(1-r)} + \frac{2-p-q-r}{2(1-r)} = 1.\]
+
+Since the results (5) and (6) are so simple, they could probably be deduced easily by applying known principles. But it should be noted that they do not fall directly within the reach of known _methods_. The number of data is greater than the number of simple events they involve: here three data, and only two simple events. M. Cournot, in his very able work, “Exposition de la Theorie des Chances," has proposed a way of handling cases like this one. Select from the original premises several different sets of data, each set as large as the number of simple events it involves. Assume that those simple events are independent, and work out their probabilities separately from each set of data. Then compare the different values found in this way for the same quantities, and judge from that how far the assumption of independence is justified. This method can only come near to being correct when the simple events turn out, by that test, to be nearly or quite independent. And in questions of testimony and of judgment, where such a hypothesis is used, it seems doubtful whether actual experience of the ways of men justifies it.
+
+5. Ex. 4.—Observations were made during a period of widespread sickness. They gave a probability \(p\) that any house taken at random in a particular district was visited by fever, and a probability \(q\) that it was visited by cholera. They also gave a probability \(r\) that it escaped both diseases and was not in a defective sanitary condition as regards cleanliness and ventilation. What is the probability that any house taken at random was in a defective sanitary condition?
+
+For any house, let us assign the symbols \(x, y, z,\) as follows:
+
+	The symbol \(x\) | to the house being visited by fever.
+	\(y\) | ” by cholera.
+	\(z\) | to its defective sanitary condition.
+
+The events whose probabilities are given are then denoted by \(x\), \(y\), and \((1-x)(1-y)(1-z)\); the event whose probability is sought is \(z\). The third datum is compound, so we assume
+\[(1-x)(1-y)(1-z) = w;\]
+that is, _w_ is a house with no fever, no cholera, and nothing wrong with its sanitation. Then our data are
+\[\text{Prob. } x = p,\quad \text{Prob. } y = q,\quad \text{Prob. } w = r,\]
+and we are to find Prob. \(z\). Now, solving for _z_ and developing,
+\[\begin{gathered} z = \frac{(1-x)(1-y)-w}{(1-x)(1-y)} \\ = \frac{1}{0}xyw + \frac{0}{0}xy(1-w) + \frac{1}{0}x(1-y)w + \frac{0}{0}x(1-y)(1-w) \\ + \frac{1}{0}(1-x)yw + \frac{0}{0}(1-x)y(1-w) + 0(1-x)(1-y)w \\ + (1-x)(1-y)(1-w). \qquad (1) \end{gathered}\]
+The value of \(V\) we deduce from this is
+\[\begin{array}{c} V = xy(1-w) + x(1-y)(1-w) + (1-x)y(1-w) \\ + (1-x)(1-y)w + (1-x)(1-y)(1-w) = 1-w+w(1-x)(1-y); \end{array}\]
+and reducing \(V_x, V_y, V_w\) in the same way, we get
+\[V_x = x(1-w),\quad V_y = y(1-w), \quad V_w = w(1-x)(1-y);\]
+which give the algebraic equations
+\[\frac{x(1-w)}{p} = \frac{y(1-w)}{q} = \frac{w(1-x)(1-y)}{r} = 1 - w + w(1-x)(1-y). \qquad (2)\]
+As for the terms of the development that carry the coefficient \(\frac{0}{0}\), I shall not gather them into a single term. For the sake of variety (XVII. 18), I shall present them in the form
+\[\frac{0}{0}x(1-w) + \frac{0}{0}(1-x)y(1-w); \qquad (3)\]
+each with its own unknown constant. The value of Prob. \(z\) will then be
+\[\text{Prob. }z = \frac{(1-x)(1-y)(1-w) + cx(1-w) + c'(1-x)y(1-w)} {1 - w + w(1 - x)(1 - y)}. \qquad (4)\]
+
+From (2) and (4) we deduce
+\[\text{Prob. }z = \frac{(1-p-r)(1-q-r)}{1-r} + cp + c'\frac{q(1-p-r)}{1-r},\]
+as the expression of the probability required. If in this result we set \(c = 0\) and \(c' = 0\), we find a lower limit of its value, \(\frac{(1-p-r)(1-q-r)}{1-r}\); and if we set \(c=1\), \(c'=1\), we obtain its upper limit, \(1-r\).
+
+6. Looking at this solution, we can see that the premises chosen were very incomplete. The constants \(c\) and \(c'\) show this, and the corresponding terms (3) of the final logical equation show how the gap is to be filled. Since
+\[\begin{array}{c} x(1-w)=x\{1-(1-x)(1-y)(1-z)\}=x, \\ (1-x)y(1-w)=(1-x)y\{1-(1-x)(1-y)(1-z)\}=(1-x)y, \end{array}\]
+we learn that \(c\) is the probability that if a house was visited by fever its sanitary condition is defective. And \(c'\) is the probability that if a house was visited by cholera without fever, its sanitary condition was defective. These are exactly the further facts the data would need to supply.
+
+If the terms of the logical development with the coefficient \(\frac{0}{0}\) had been gathered together, as in the direct statement of the general rule, the final solution would have taken this form:
+\[\text{Prob. }z = \frac{(1-p-r)(1-q-r)}{1-r} + c\left(p+q-\frac{pq}{1-r}\right)\]
+with \(c\) here standing for the probability that if a house was visited by either or both of the diseases, its sanitary condition was defective. This result is entirely consistent with the former one. Indeed, it can be formally proved that the different forms of solution given in such cases are _necessarily_ equivalent.
+
+The solution above can be checked in particular cases. Take the second form: if \(c = 1\) we find Prob. \(z = 1-r\), a correct result. For if the presence of either fever or cholera _certainly_ meant a defective sanitary condition, then the probability that a house was in a defective sanitary state would simply equal the probability that it was _not_ found in the category denoted by \(z\), and by the data the probability of that would be \(1-r\). A general check of the solution would perhaps be difficult.
+
+The constants \(p\), \(q\), and \(r\) in this solution are subject to the conditions
+\[p + r \stackrel{=}{<} 1, \quad q + r \stackrel{=}{<} 1.\]
+that is, _p_ plus _r_ is at most 1, and so is _q_ plus _r_.
+
+7. Ex. 5.—Given the probabilities of the premises of a hypothetical syllogism, to find the probability of the conclusion.
+
+Let the syllogism, stripped to its bare form, be as follows:
+
+	Major premise: | If the proposition \(Y\) is true \(X\) is true.
+	Minor premise: | If the proposition \(Z\) is true \(Y\) is true.
+	Conclusion: | If the proposition \(Z\) is true \(X\) is true.
+
+Suppose the probability of the major premise is \(p\), and that of the minor premise \(q\).
+
+Represent the proposition \(X\) by \(x\), and so on, and take \(c\) and \(c'\) as arbitrary constants, numbers whose values the data do not fix: _c_ is the probability of _Y_, and _c′_ that of _Z_. The probability of an "if" proposition is the probability that its "then" part is true when its "if" part is. So the data are as follows:
+\[\begin{aligned} \text{Prob. }y &= c, \qquad &\text{ Prob. }xy &= cp; \\ \text{Prob. }z &= c',\qquad &\text{ Prob. }yz &= c'q; \end{aligned}\]
+and from these we are to find
+\[\frac{\text{Prob. }xz}{\text{Prob. }z} \text{ or } \frac{\text{Prob. }xz}{c'}.\]
+that is, the probability that _X_ is true when _Z_ is.
+
+Let us assume
+\[xy = u,\quad yz = v,\quad xz = w,\]
+and then proceed by the usual method to find \(w\) as a developed function of \(y\), \(z\), \(w\), and \(v\), the symbols that stand for propositions whose probabilities are given. We find
+\[\begin{aligned} w &= uzvy + 0u(1-z)(1-v)y + 0(1-u)zvy \\ &+ \frac{0}{0}(1-u)z(1-v)(1-y) + 0(1-u)(1-z)(1-v)y \\ &+ 0(1-u)(1-z)(1-v)(1-y) + \text{ terms whose coefficients are }\frac{1}{0}; \end{aligned}\]
+and passing from logic to algebra,
+\[\begin{gathered} \frac{uzvy + u(1-z)(1-v)y}{cp} = \frac{uzvy + (1-u)zvy + (1-u)z(1-v)(1-y)}{c'} \\ = \frac{uzvy + (1-u)zvy}{c'q} \\ = \frac{uzvy + u(1-z)(1-v)y + (1-u)zvy + (1-u)(1-z)(1-v)y}{c} = V. \\ \text{Prob. }w = \frac{uzvy + a(1-u)z(1-v)(1-y)}{V}, \end{gathered}\]
+where
+\[\begin{aligned} V = uzvy + u(1-z)(1-v)y + (1-u)zvy + (1-u)z(1-v)(1-y) \\ +(1-u)(1-z)(1-v)y + (1-u)(1-z)(1-v)(1-y), \end{aligned}\]
+Here _a_ is the new arbitrary constant belonging to the single indefinite term. Solving this system of equations gives
+\[\text{Prob. }w = c'pq + ac' (1-q),\]
+and so
+\[\frac{\text{Prob. } xz}{c'} = pq + a(1-q),\]
+which is the value required. In this expression the arbitrary constant \(a\) is the probability that if the proposition \(Z\) is true and \(Y\) false, \(X\) is true. In other words, it is the probability that if the minor premise is false, the conclusion is true.
+
+This investigation could have been made much simpler by assuming the proposition \(Z\) to be true, and then looking for the probability of \(X\). The data would then have been simply
+\[\text{Prob. }y = q,\quad \text{Prob. }xy = pq;\]
+and from these we should have found Prob. \(x = pq + a (1-q)\). Clearly this way of proceeding would have been allowable in the circumstances. But I have preferred to deduce the solution by applying the method directly, without conditions. The result is one that ordinary reasoning confirms, and indeed one that needs no calculus to obtain. General methods tend to look most cumbersome when they are applied where their help is least needed.
+
+Note that the method above applies equally to the categorical syllogism. And not to the syllogism only, but to every form of deductive reasoning. Given the probabilities attaching separately to the premises of _any_ chain of argument, the method can always find the resulting probability that a conclusion legitimately drawn from those premises is true. I hardly need to remind the reader that the truth of a conclusion and its correctness are different things.
+
+8. One remarkable fact that turns up in such applications deserves special notice. It is this: propositions that are equivalent when true are not necessarily equivalent when they are regarded only as probable. The following example illustrates this principle.
+
+Ex. 6.—Given the probability \(p\) of the disjunctive proposition “Either the proposition \(Y\) is true, or both the propositions \(X\) and \(Y\) are false,” required: the probability of the conditional proposition, “If the proposition \(X\) is true, \(Y\) is true.”
+
+Let \(x\) and \(y\) stand for the propositions \(X\) and \(Y\) respectively. Then we have
+\[\text{Prob. }y + (1-x) (1-y) = p,\]
+and from this we are required to find the value of \(\frac{\text{Prob. }xy}{\text{Prob. }x}\), the chance that _Y_ is true among the cases where _X_ is. We give the disjunctive proposition a letter of its own:
+\[\text{Assume} y + (1-x) (1-y) = t. \qquad (1)\]
+Eliminating \(y\), we get
+\[(1-x) (1-t) = 0.\]
+that is, whenever the disjunctive proposition is false, _X_ is true. So
+\[x=\frac{0}{0} t + 1 - t;\]
+and proceeding in the usual way,
+\[\text{Prob. }x = 1-p + cp. \qquad (2)\]
+Here \(c\) is the probability that if either \(Y\) is true, or \(X\) and \(Y\) are both false, then \(X\) is true.
+
+Next, to find \(\text{Prob. }xy\), we assume
+\[xy = w. \qquad (3)\]
+Eliminating \(y\) from (1) and (3), we get
+\[w (1-t) = 0;\]
+and from this, proceeding as above,
+\[\text{Prob. }w = cp,\]
+with \(c\) meaning the same as before. So
+\[\frac{\text{Prob. }xy}{\text{Prob. }x} = \frac{cp}{1-p+cp},\]
+is the probability that the given conditional proposition is true.
+
+Now in pure logic, which as such deals only with truth and falsehood, the disjunctive and conditional propositions above are equivalent. They are true together and false together. Yet the investigation above shows that when the disjunctive proposition has a probability \(p\), the conditional proposition has a different and partly indefinite probability, \(\frac{cp}{1-p+cp}\). Still, these expressions are such that _when either of them becomes 1 or 0, the other takes the same value_. So the results are entirely consistent, and the logical transformation serves to check the formula deduced from the theory of probability.
+
+By a similar analysis the reader will easily prove the reverse. If the probability of the conditional proposition were given as \(p\), that of the disjunctive proposition would be \(1-c+cp\), where \(c\) is the arbitrary probability that the proposition \(X\) is true.
+
+9. Ex. 7.—Required: the probability of an event \(x\), when we are given either the first, or the first and second, or the first, second, and third of the following data:
+
+First: the probability that the event \(x\) occurs, or that it alone of the three events \(x\), \(y\), \(z\), fails, is \(p\).
+
+Second: the probability that the event \(y\) occurs, or that it alone of the three events \(x\), \(y\), \(z\), fails, is \(q\).
+
+Third: the probability that the event \(z\) occurs, or that it alone of the three events \(x\), \(y\), \(z\), fails, is \(r\).
+
+Solution of the First Case.
+
+Here we suppose that only the first of these data is given. We then have
+\[\text{Prob. }\{x + \bigl( 1 - x \bigr) yz\} = p,\]
+and we are to find Prob. \(x\). In words: either _x_ happens, or _x_ fails while _y_ and _z_ both happen.
+\[\qquad\text{Let} x + \bigl( 1 - x \bigr) yz = s,\]
+Then, eliminating \(yz\) as if it were a single symbol, we get
+\[x\bigl( 1 - s \bigr) = 0.\]
+that is, _x_ never happens without _s_. So
+\[x = \frac{0}{1-s} = \frac{0}{0}s + 0\bigl( 1-s \bigr),\]
+and from this, proceeding by the rule, we have
+\[\text{Prob. }x = cp, \qquad (1)\]
+where \(c\) is the probability that if either \(x\) occurs or it alone fails, it will be the first of these two alternatives that happens. Clearly the limits of the solution are \(0\) and \(p\).
+
+This solution seems to tell us nothing beyond what plain good sense would have told us. But it is all that the single datum assumed here really entitles us to infer. In the next solution we shall see how adding to our data confines the final solution within narrower limits.
+
+Solution of the Second Case.
+
+Here we take as our data the equations
+\[\begin{aligned} \text{Prob. }\{ x + \bigl( 1 - x \bigr)yz \} &= p, \\ \text{Prob. }\{ y + \bigl( 1 - y \bigr)xz \} &= q. \end{aligned}\]
+Let us write
+\[\begin{aligned} x + \bigl( 1 - x \bigr)yz &= s, \\ y + \bigl( 1 - y \bigr)xz &= t; \end{aligned}\]
+From the first of these we have, by (VIII. 7),
+\[\begin{gathered} \{x+\bigl( 1-x \bigr)yz\} \bigl( 1-s \bigr) + s \{1 - x - \bigl( 1 - x \bigr)yz\} = 0, \\ \text{or} \bigl( x + \bar{x}yz \bigr)\bar{s} + s\bar{x}\bigl( 1 - yz \bigr) = 0; \end{gathered}\]
+where for simplicity we write \(\bar{x}\) for \(1 - x\), \(\bar{y}\) for \(1 - y\), and so on. Now, writing out \(1 - yz\) in constituents (the three compartments in which _y_ and _z_ are not both present), we have
+\[\bigl( x + \bar{x}yz \bigr)\bar{s} + s\bar{x}\bigl( y\bar{z} + \bar{y}z + \bar{y}\bar{z} \bigr) = 0,\]
+an equation made up entirely of positive terms. In the same way we get from the second equation
+\[(y+ \bar{y}xz) \bar{t} + t\bar{y} (x\bar{z} + \bar{x}z + \bar{x}\bar{z}) =0;\]
+and from the sum of these two equations we have to eliminate \(y\) and \(z\). To eliminate them, we put in each of the four pairs of values 1 and 0 for _y_ and _z_, and multiply the results together.
+
+If in that sum we set \(y = 1\), \(z = 1\), we get the result \(\bar{s}+ \bar{t}\).
+
+If in the same sum we set \(y = 1\), \(z = 0\), we get the result
+\[x\bar{s} + s\bar{x} + \bar{t}.\]
+
+If in the same sum we set \(y = 0\), \(z = 1\), we get
+\[x\bar{s} + s \bar{x} + x\bar{t} +t \bar{x}.\]
+
+And if, last, in the same sum we set \(y = 0\), \(z = 0\), we find
+\[x\bar{s} + s \bar{x} + tx + t\bar{x}, \text { or } x\bar{s} + s\bar{x} + t.\]
+
+These four expressions are to be multiplied together. The first and third can be multiplied like this:
+\[\begin{gathered} (\bar{s} +\bar{t}) (x\bar{s} + s\bar{x} + x\bar{t} + t\bar{x}) \\ = x\bar{s} + x\bar{t} + (\bar{s} + \bar{t}) (s\bar{x} + t\bar{x})\text { by (IX.~Prop.~II.)} \\ = x\bar{s} + x\bar{t} + \bar{s}\bar{x}t + s\bar{x}\bar{t}. \qquad (2) \end{gathered}\]
+Next, the second and fourth give, by (IX. Prop. I.),
+\[\begin{gathered} (x\bar{s} + s\bar{x} + \bar{t}) (x\bar{s} + s\bar{x} + t) \\ = x\bar{s} + s\bar{x}. \qquad (3) \end{gathered}\]
+Last, (2) and (3) multiplied together give
+\[\begin{gathered} (x\bar{s} + s\bar{x}) (x\bar{s} + s\bar{x}\bar{t} + x\bar{t} + t\bar{x}\bar{s}) \\ = x\bar{s} + s\bar{x} (s\bar{x}\bar{t}+ x\bar{t} + t\bar{x}\bar{s}) \\ = x \bar{s} + s \bar{x}\bar{t}. \end{gathered}\]
+So the final equation is
+\[(1-s)x +s(1-t)(1-x)=0,\]
+which says that _x_ never happens without _s_, and that _s_ never happens with _t_ failing unless _x_ happens. Solved for \(x\), it gives
+\[\begin{gathered} x =\frac{s(1-t)}{s(1-t)-(1-s)} \\ = \frac{0}{0}st +s(1-t)+0(1-s)t +0(1-s)(1-t) , \end{gathered}\]
+and, working with this by the rule, we have, finally,
+\[\text{Prob. }x = p (1-q) + cpq. \qquad (4)\]
+Here \(c\) is the probability that if the event \(st\) happens, \(x\) will happen. Now if we form the developed expression of \(st\) by multiplying together the expressions for \(s\) and \(t\), we find:
+
+\(c =\) Prob. that if \(x\); and \(y\) happen together, or \(x\) and \(z\) happen together and \(y\) fails, or \(y\) and \(z\) happen together and \(x\) fails, the event \(x\) will happen.
+
+Clearly the limits of Prob. \(x\) are \(p (1 - q)\) and \(p\).
+
+This solution is more definite than the first one, since it contains a term that does not carry an arbitrary constant.
+
+Solution of the Third Case.
+
+Here the data are:
+
+	Prob. \(\{x + (1-x)yz\} = p\),
+	Prob. \(\{y + (1-y)xz\} = q\),
+	Prob. \(\{z + (1-z)xy\} = r\).
+
+As before, let us write \(\bar{x}\) for \(1-x\), and so on, and assume
+\[\begin{gathered} x + \bar{x}yz = s, \\ y + \bar{y}xz = t, \\ z + \bar{z}xy = u. \end{gathered}\]
+Reducing these by (VIII. 8) to a single equation, we obtain
+\[\begin{aligned} &(x + \bar{x}yz)\bar{s} + s\bar{x}(y\bar{z} + \bar{y}z + \bar{y}\bar{z}) \\ &+ (y + \bar{y}xz)\bar{t} + t\bar{y}(z\bar{x} + x\bar{z} + \bar{x}\bar{z}) \\ &+ (z + \bar{z}xy)\bar{u} + u\bar{z}(x\bar{y} + \bar{x}y + \bar{x}\bar{y}) = 0. \end{aligned} \qquad (5)\]
+
+Instead of eliminating \(y\) and \(z\) from this equation directly, let us follow (IX. Prop, III.) and assume that the result of the elimination is
+\[Ex + E'(1-x) = 0,\]
+Then \(E\) will be found by setting \(x = 1\) in the given equation and eliminating \(y\) and \(z\) from the resulting equation. And \(E'\) will be found by setting \(x = 0\) in the given equation and eliminating \(y\) and \(z\) from the result. First, then, setting \(x = 1\), we have
+\[\bar{s} + (y + \bar{y}z)\bar{t} + t\bar{y}\bar{z} + (z + y\bar{z})\bar{u} + u\bar{y}\bar{z} = 0,\]
+Next, in the left-hand side of this equation we set in turn \(y = 1, z = 1, y = 1, z = 0\), and so on, and multiply the results together. We get the expression
+\[(\bar{s} + \bar{t} + \bar{u})(\bar{s} + \bar{t} + \bar{u})(\bar{s} + \bar{t} + \bar{u})(\bar{s} + t + u),\]
+which is equivalent, since a repeated factor may be written once, to
+\[(\bar{s} + \bar{t} + \bar{u})(\bar{s} + t + u).\]
+This is the expression for \(E\). We shall keep it in this form. It has already been shown by example (VIII. 3) that actually reducing such expressions by multiplication is convenient but not necessary.
+
+Again, in \((5)\), setting \(x = 0\), we have
+\[yz\bar{s} + s(y\bar{z} + \bar{y}z + \bar{y}\bar{z}) + y\bar{t} + t\bar{y} + z\bar{u} + u\bar{z} = 0;\]
+and from this, by the same process of elimination, we find for \(E'\) the expression
+\[(\bar{s} + \bar{t} + \bar{u})(s + \bar{t} + u)(s + t + \bar{u})(s + t + u).\]
+So the final result of eliminating \(y\) and \(z\) from \((5)\) is
+\[(\bar{s} + \bar{t} + \bar{u})(\bar{s} + t + u)x + (\bar{s} + \bar{t} + \bar{u})(s + \bar{t} + u)(s + t + \bar{u})(s + t + u)(1 - x) = 0.\]
+From this, solving for _x_, we have
+\[x = \frac{(\bar{s} + \bar{t} + \bar{u})(s + \bar{t} + u)(s + t + \bar{u})(s + t + u)} {(\bar{s} + \bar{t} + \bar{u})(s + \bar{t} + u)(s + t + \bar{u})(s + t + u) - (\bar{s} + \bar{t} + \bar{u})(\bar{s} + t + u)};\]
+or, developing the right-hand side,
+\[\begin{aligned} x = \frac{0}{0}stu + \frac{1}{0}s\bar{t}u + \frac{1}{0}st\bar{u} + s\bar{t}\bar{u} \\ + \frac{1}{0}\bar{s}tu + 0\bar{s}\bar{t}u + 0\bar{s}t\bar{u} + 0\bar{s}\bar{t}\bar{u}. \end{aligned} \qquad (6)\]
+So, passing from logic to algebra,
+\[\begin{aligned} \frac{stu + s\bar{t}\bar{u}}{p} = \frac{stu + \bar{s}t\bar{u}}{q} = \frac{stu + \bar{s}\bar{t}u}{r} \\ = stu + s\bar{t}\bar{u} + \bar{s}\bar{t}u + \bar{s}t\bar{u} + \bar{s}\bar{t}\bar{u}. \end{aligned} \qquad (7)\]
+and the probability sought is
+\[\text{Prob. }x = \frac{s\bar{t}\bar{u} + cstu}{stu + s\bar{t}\bar{u} + \bar{s}\bar{t}u + \bar{s}t\bar{u} + \bar{s}\bar{t}\bar{u}}, \qquad (8)\]
+
+To simplify this system of equations, change \({\displaystyle \frac{s}{\bar{s}}}\) into \({\displaystyle s, \frac{t}{\bar{t}}}\) into \(t\), and so on; that is, divide every term through by the product of the three barred letters, and let the letters stand for the ratios. After the change, let \(\lambda\) stand for \(stu + s + t + u + 1\) . We then have
+\[\text{Prob. }x = \frac{s + cstu}{\lambda}, \qquad (9)\]
+with the relations
+\[\frac{stu + s}{p} = \frac{stu + t}{q} = \frac{stu + u}{r} = stu + s + t + u + 1 = \lambda. \qquad (10)\]
+From these equations we get
+\[\begin{aligned} stu + s &= \lambda p, \qquad (11) \\ stu + s &= \lambda - t - u - 1, \\ \therefore \lambda p &= \lambda - u - t - 1. \\ u + t &= \lambda(1 - p) - 1. \\ \text{Similarly,} u + s &= \lambda(1 - q) - 1, \\ \text{and} s + t &= \lambda(1 - r) - 1. \end{aligned}\]
+The second line comes from the last member of (10): take away _t_, _u_ and 1 from lambda, and what is left is the top of the first fraction.
+
+From these equations, which give the sums of _s_, _t_, _u_ two at a time, we find each one separately:
+\[\begin{gathered} s = \frac{\lambda(1 + p - q - r) - 1}{2}, \quad t = \frac{\lambda(1 + q - r - p) - 1}{2}, \\ u = \frac{\lambda(1 + r - p - q) - 1}{2}. \qquad (12) \end{gathered}\]
+Now, by (10),
+\[stu = \lambda p - s.\]
+Substitute in this equation the values of \(s\), \(t\), and \(u\) just found, and we have
+\[\begin{gathered} \{(1 + p - q - r)\lambda - 1\} \{(1 + q - p - r)\lambda - 1\} \{(1 + r - p - q)\lambda - 1\} \\ =4\{(p + q + r - 1)\lambda + 1\}, \qquad (13) \end{gathered}\]
+an equation that determines \(\lambda\). It is a cubic, an equation of the third degree in lambda. The values of \(s\), \(t\), and \(u\) are then given by (12), and putting them into (9) completes the solution of the problem.
+
+10. Here a difficulty arises, and bringing it clearly before the reader has been one purpose of this investigation. How are we to decide which root of the equation above should be taken as the value of \(\lambda\)? I referred to this difficulty at the opening of this chapter, and said that a fuller treatment of it was kept for the next one. The following results are taken from there.
+
+If the data of the problem are to come from a possible experience, the quantities \(p\), \(q\), and \(r\) must satisfy the following conditions:
+\[\begin{aligned} 1 + p - q - r \stackrel{=}{>} 0, \\ 1 + q - p - r \stackrel{=}{>} 0, \\ 1 + r - p - q \stackrel{=}{>} 0. \end{aligned} \qquad (14)\]
+that is, none of these three quantities may be negative. Moreover, the value of \(\lambda\) used in the general solution must satisfy the following conditions:
+\[\lambda \stackrel{=}{>} \frac{1}{1 + p - q - r}, \quad \lambda \stackrel{=}{>} \frac{1}{1 + q - p - r}, \quad \lambda \stackrel{=}{>} \frac{1}{1 + r - p - q}. \qquad (15)\]
+
+Now these two sets of conditions are enough to pin down the general solution. It can be shown that the central equation (13) gives only one value of \(\lambda\) that satisfies these conditions, and that value of \(\lambda\) is the one required.
+
+Let \(1+p-q-r\) be the smallest of the three coefficients of \(\lambda\) given above. Then \(\dfrac{1}{1+p-q-r}\) will be the largest of those values, and we are to show that above it there is only one value of \(\lambda\). Let us write (13) in the form
+\[\begin{gathered} \{(1+p-q-r)\lambda - 1\} \{(1+q-p-r)\lambda - 1\} \{(1+r-p-q)\lambda - 1\} \\ -4\{(p+q+r-1)\lambda + 1\} = 0; \qquad (16) \end{gathered}\]
+and call its left-hand side \(V\).
+
+Put \(\lambda = \dfrac{1}{1+p-q-r}\). The first bracket then vanishes, and \(V\) becomes
+\[-4\left(\frac{p+q+r-1}{1+p-q-r} + 1\right) = -4\left(\frac{2p}{1+p-q-r} \right),\]
+which is _negative_. Let \(\lambda = \infty\); then \(V\) is _positive_ and infinite.
+
+Again,
+\[\begin{gathered} \frac{d^2V}{d\lambda^2} = (1 + p - q - r)(1 + q - p - r)\{(1 + r - p - q)\lambda - 1\} \\ + \text{ similar positive terms}, \end{gathered}\]
+and this expression, the second derivative of _V_, is positive between the limits \(\lambda = \frac{1}{1 + p - q - r}\) and \(\lambda = \infty\).
+
+Suppose, then, that we draw a curve, with \(\lambda\) measured along the horizontal axis and \(V\) as the height above it. Between the limits specified, that curve will pass from below the axis of \(\lambda\) to above it, and it will always bend upward, its hollow side facing up. So it can cross the axis of \(\lambda\) only once within those limits, and the equation \((16)\) will therefore have only one root in that range.
+
+So the solution is given by \((9)\), with \(\lambda\) the root of \((13)\) that satisfies the conditions \((15)\), and with \(s, t\), and \(u\) given by \((12)\). The meaning of \(c\) can be found in the usual way.
+
+It appears from all this that the problem is, in every case, more or less indeterminate.

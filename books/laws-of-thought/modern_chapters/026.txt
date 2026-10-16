@@ -1,0 +1,239 @@
+Chapter 20: Problems Relating to the Connexion of Causes and Effects
+(Part 3 of 3)
+
+19. The next problem is much easier to describe than the ones before it.
+
+Problem X.—The probability that a certain natural phenomenon occurs under given circumstances is \(p\). Observation has also recorded a probability \(a\) that there exists a permanent cause of that phenomenon, that is, a cause which would always produce the event under the circumstances supposed. If the phenomenon is observed to occur \(n\) times in a row under the given circumstances, what is the probability that it will occur the \({n+1}^{\text{th}}\) time? And what, after such observation, is the probability that the permanent cause exists?
+
+First Case.—Let \(t\) stand for the existence of a permanent cause, and \(x_1, x_2\dotsc x_{n+1}\) for the successive occurrences of the natural phenomenon.
+
+If the permanent cause exists, the events \(x_1, x_2\dots x_{n+1}\) follow from it necessarily. So
+\[t=v x_1, \quad t=v x_2, \text{ \&c.},\]
+which says that the cases of the cause are some of the cases of each occurrence. Eliminating the indefinite symbols, we get
+\[t(1-x_1)=0, \quad t(1-x_2)=0, \quad t(1-x_{n+1})=0.\]
+that is, there is no case in which the cause is present and an occurrence fails. Now we are looking for the probability that if the combination \(x_1 x_2 \dotsc x_n\) happens, the event \(x_{n+1}\) will happen. In other words, we are looking for the value of the fraction
+\[\frac{\text{Prob. }x_1 x_2 \dotsc x_{n+1}} {\text{Prob. }x_1 x_2 \dotsc x_n }.\]
+(the probability of _n_ + 1 occurrences in a row, divided by the probability of _n_ in a row).
+
+We will first find the value of \(\text{Prob. }x_1 x_2 \dotsc x_n\). Represent the combination \(x_1\, x_2 \dotsc x_n\) by \(w\). Then we have the following logical equations:
+\[\begin{gathered} t(1-x_1) = 0,\quad t(1-x_2) = 0, \dotsc t(1-x_n) = 0, \\ x_1\, x_2 \dotsc x_n = w. \end{gathered}\]
+Bring the last of these into the form
+\[(x_1\, x_2 \dotsc x_n)(1-w) + w(1 - x_1\, x_2 \dotsc x_n) = 0,\]
+and add it to the others. We get
+\[\sum t(1-x_i) + x_1\, x_2 \dotsc x_n(1-w) + w(1- x_1\, x_2 \dotsc x_n) = 0, \qquad (1)\]
+where \(\sum\) runs over all values of \(i\) from 1 to \(n\). This is the single logical equation of the data. With it we must join the numerical conditions,
+\[\text{Prob. }x_1 = \text{ Prob. }x_2 \dotso = \text{ Prob. }x_n = p,\quad \text{Prob. }t = a;\]
+and our aim is to find the probability of \(w\).
+
+From (1) we have
+\[\begin{gathered} w = \frac{\sum t(1-x_i) + x_1\, x_2\dotsc x_n} {2x_1\, x_2\dotsc x_n - 1} \\ = \frac{\sum (1-x_i) + x_1\,x_2\dotsc x_n} {2x_1\, x_2\dotsc x_n - 1} t + \frac{x_1\, x_2\dotsc x_n} {2x_1\, x_2\dotsc x_n - 1} (1-t), \qquad (2) \end{gathered}\]
+after developing with respect to \(t\). This result must now be developed further, with respect to \(x_1, x_2,\dotsc x_n\).
+
+If we put \(x_1 = 1, x_2 = 1, \dotsc x_n = 1\), the coefficients of both \(t\) and \(1-t\) become 1. If we give the same symbols any other set of values made up of 0s and 1s, the coefficient of \(t\) plainly becomes negative, while that of \(1-t\) becomes 0. So the full development of (2) will be
+\[\begin{gathered} w = x_1 x_2 \dotsc x_n t + x_1 x_2 \dotsc x_n(1-t) + 0(1 - x_1 x_2 \dotsc x_n)(1-t) \\ + \text{ constituents whose coefficients are $\frac{1}{0}$, or equivalent to$\frac{1}{0}$.} \end{gathered}\]
+Read aloud: _w_ happens whenever all _n_ occurrences happen, cause or no cause; it does not happen when the cause is absent and the occurrences are not all present; and every other case, such as the cause present with some occurrence failing, is impossible. Here we have
+\[\begin{gathered} V = x_1 x_2 \dotsc x_n t + x_1 x_2 \dotsc x_n (1-t) + (1 - x_1 x_2 \dotsc x_n) (1-t) \\ = x_1 x_2 \dotsc x_n t + 1 - t; \end{gathered}\]
+(the sum of the constituents that can actually happen), and so, passing from logic to algebra,
+\[\begin{gathered} \frac{x_1 x_2 \dotsc x_n t + x_1(1-t)}{p} = \frac{x_1 x_2 \dotsc x_n t + x_2(1-t)}{p} \dotso \\ = \frac{x_1 x_2 \dotsc x_n t + x_n(1-t)}{p} = \frac{x_1 x_2 \dotsc x_n t}{a} = x_1 x_2 \dotsc x_n t + 1 - t. \\ \text{Prob. }w = \frac{x_1 x_2 \dotsc x_n}{x_1 x_2 \dotsc x_n t + 1 - t}. \end{gathered}\]
+
+The form of these equations makes it clear that \(x_1 = x_2 \dotso = x_n\): nothing in them tells one occurrence apart from another. So replace each of these quantities by \(x\), and the system becomes
+\[\begin{aligned} \frac{x^n t + (1-t)x}{p} &= \frac{x^n t}{a} = x^n t + 1 - t, \\ \text{Prob. }w &= \frac{x^n}{x^n t + 1 - t}; \end{aligned}\]
+from which we easily find
+\[\text{Prob. }w = \text{ Prob. }x_1 x_2 \dotsc x_n = a + (p-a)\left( \frac{p-a}{1-a} \right)^{n-1}\]
+If in this result we change \(n\) into \(n + 1\), we get
+\[\text{Prob. }x_1 x_2 \dotsc x_{n+1} = a + (p-a)\left( \frac{p-a}{1-a} \right)^n\]
+So we find
+\[\frac{\text{Prob. }x_1 x_2 \dotsc x_{n+1}} {\text{Prob. }x_1 x_2 \dotsc x_n} = \frac{a + (p-a)\left( \frac{p-a}{1-a} \right)^n} {a + (p-a)\left( \frac{p-a}{1-a} \right)^{n-1}} \qquad (3)\]
+as the probability that if the phenomenon has occurred \(n\) times, it will also appear the \(n + 1^{\text{th}}\) time. By the method of Chapter XIX. we find that \(a\) cannot be larger than \(p\): the chance of a cause that always produces the event cannot exceed the chance of the event itself.
+
+The following checks are obvious.
+
+First, if \(a =0\), the expression reduces to \(p\), as it should. For when it is certain that no permanent cause exists, the successive occurrences of the phenomenon are independent of one another.
+
+Second, if \(p = 1\), the expression becomes 1, as it should.
+
+Third, if \(p = a\), the expression becomes 1, unless \(a = 0\). Suppose the probability of a phenomenon equals the probability that there exists a cause which, under given circumstances, would always produce it. Then the mere fact that the phenomenon has ever been seen under those circumstances makes it certain that it will appear again under the same ones.
+
+Fourth, as \(n\) grows, the expression comes closer and closer to 1. This shows that the probability of the event recurring grows with the number of times it has appeared in succession, a result that agrees with the natural laws of expectation.
+
+Footnote: Since we can neither go back into infancy nor remember it, we cannot say how far results like the one above explain the confidence with which young children link events they have once seen together. But we may guess, in general, that the strength of their expectations comes from two things: the need to draw inferences, which is part of their rational nature, and the narrow but vivid experience on which that faculty works. Hence their habit of treating every kind of sequence as cause and effect. A little friend of mine, on being put to bed, was heard to ask his brother the pertinent question, "Why does going to sleep at night make it light in the morning?" The brother, who was a year older, was able to answer that it would be light in the morning even if little boys did not go to sleep at night.
+
+Second Case.—We now want the probability _à posteriori_ that a permanent cause of the phenomenon exists. For this we must find the value of the fraction
+\[\frac{\text{Prob. }t x_1 x_2 \dotsc x_n} {\text{Prob. }x_1 x_2 \dotsc x_n}\]
+(the probability that the cause exists and the _n_ occurrences happen, divided by the probability of the _n_ occurrences), whose denominator we have already found.
+
+To find the numerator, put
+\[t x_1 x_2 \dotsc x_n = w,\]
+then, going on as before, we get the logical development
+\[w = t x_1 x_2 \dotsc x_n + 0 (1-t).\]
+So, passing from logic to algebra, we have at once
+\[\text{Prob. }w = a,\]
+a result we might have foreseen, since when the cause exists the occurrences follow of themselves. Putting these values in for the numerator and denominator of the fraction above, we get the _à posteriori_ probability of a permanent cause:
+\[\frac{a}{a+(p-a)\left(\displaystyle \frac{p-a}{1-a}\right)^{n-1}}.\]
+Clearly this expression grows as \(n\) grows.
+
+I owe to a learned correspondent, whose original contributions to the theory of probability I have mentioned before, the following check of the first of the results above, (3).
+
+Footnote: Professor Donkin.
+
+“The whole _à priori_ probability of the event (under the circumstances) being \(p\), and the probability of some cause \(C\) which would necessarily produce it, \(a\), let \(x\) be the probability that it will happen if no such cause as \(C\) exist. Then we have the equation
+\[p = a + (1-a) x,\]
+whence
+\[x=\frac{p-a}{1-a}.\]
+Now the phænomenon observed is the occurrence of the event \(n\) times. The _à priori_ probability of this would be—
+\[\begin{aligned} & 1 \text{ supposing $C$ to exist,} \\ & x^n \text{ supposing $C$ not to exist;} \end{aligned}\]
+whence the _à posteriori_ probability that \(C\) exists is
+\[\frac{a}{a+(1-a)x^n},\]
+that \(C\) does not exist is
+\[\frac{(1-a)x^n}{a+(1-a)x^n}.\]
+Consequently the probability of another occurrence is
+\[\frac{a}{a+(1-a)x^n}\times 1 + \frac{(1-a)x^n}{a+(1-a)x^n}\times x,\]
+or
+\[\frac{a+(1-a)x^{n+1}}{a+(1-a)x^n},\]
+which, on replacing \(x\) by its value \(\displaystyle \frac{p-a}{1-a}\), will be found to agree with (3)."
+
+Similar checks could probably be found for the following results too, which were obtained by applying the general method directly.
+
+Under the same circumstances, suppose that out of \(n\) occasions the event has happened \(r\) times and failed \(n-r\) times. The probability that it will happen on the \({n + 1}^{\text{th}}\) occasion is
+\[\frac{a+m(p-a )\left(\displaystyle \frac{p-la}{1-a}\right)^r} {a+m(p-la)\left(\displaystyle \frac{p-la}{1-a}\right)^{r-1}}\]
+where \(m=\displaystyle \frac{n(n-1)\dotsc n-r+1}{1 \cdot 2 \dotsc r}\) and \(\displaystyle l=\frac{r}{n}\).
+
+The probability of a permanent cause (with \(r\) less than \(n\)) is 0. This is easy to check: a cause that always produces the event cannot exist once the event has failed even once.
+
+Let \(p\) be the probability of an event, and \(c\) the probability that if it occurs, it will be due to a permanent cause. Then the probability, after \(n\) occurrences observed in a row, that it will recur on the \({n + 1}^{\text{th}}\) similar occasion is
+\[\frac{c+(1-c)x^n}{c+(1-c)x^{n-1}},\]
+where \(\displaystyle x = \frac{p(1-c)}{1-cp}\).
+
+20. It is remarkable that the solutions of the problems above contain no arbitrary element. Looking at the data, we would hardly have expected this. But notice that in all those problems the probabilities of the _causes_ are supposed to be known _à priori_. Without that assumed piece of knowledge, it seems likely that arbitrary constants, numbers the data leave unfixed, would _necessarily_ appear in the final solution. Some support for this remark comes from a class of problems that has drawn a good deal of attention, and which I shall briefly consider to close.
+
+Astronomers have observed that the heavens contain a large number of double stars, pairs extremely close together. Either these apparent cases of connection have some physical basis or they do not. If they do not, we may regard a double star as the accidental result of a “random distribution" of stars over the sky: that is, a distribution that makes it just as likely for either member of the pair to appear in one spot as in another. If we assume this hypothesis, and if we know how many stars there are of the required brightness, we can work out the probability that two of them will be found close enough together to make the observed phenomenon. In this way Michell, estimating that there are 230 stars in the heavens as bright as \(\beta\) Capricorni, found that the odds are 80 to 1 against such a pair appearing if those stars were scattered at random. What is then required is the probability, once such a pair has been observed, that there is a physical connection between its members.
+
+Footnote: Phil. Transactions, An. 1767.
+
+Again, according to the French measurements, the sum of the inclinations of the orbits of the ten known planets to the plane of the ecliptic (the plane of the earth's orbit) in the year 1801 was \(91^{\circ}\cdot\)4187. Laplace works out that, if all inclinations were equally probable, there would be only the extremely small probability .00000011235 that the average of the inclinations would fall within the limit so set. From this he concludes that there is a very high probability in favour of a disposing cause, one that has kept the inclinations of the planets' orbits within such narrow bounds. Professor De Morgan, taking the sum of the inclinations as \(92^{\circ}\), gives the probability above the value .00000012, and infers that “it is \(1\colon .00000012\), that there was a necessary cause in the formation of the solar system for the inclinations being what they are." An equally definite conclusion has been drawn from observed agreements between the direction of circular polarization in rock-crystal (quartz, which twists light passing through it one way or the other) and the direction of certain slanting faces in its crystal structure.
+
+Footnote: Théorie Analytique des Probabilités, p. 276.
+
+Footnote: Encyclopedia Metropolitana. Art. Probabilities.
+
+Footnote: Edinburgh Review, No. 185, p. 32. This article, though not entirely free from error, is well worth attention.
+
+These problems are all alike. We frame a certain hypothesis, and we can assign, with perfect rigour, the probabilities of its various possible consequences. Now some actual observation turns out to be one of those consequences, and so its _hypothetical_ probability, its probability if the hypothesis is true, is known. From this we are asked to find the probability of the hypothesis we assumed, or of its contrary. In Michell's problem the hypothesis is a “random distribution of the stars,"; the possible consequence, which has been observed, is a close double star. The very small probability of such a result is taken to mean that the probability of the hypothesis is equally small, or at least small to the same degree. And from this people infer a high probability, and, as some think, a _definite_ one, that there is a disposing cause behind the arrangement of the stars. The same remarks apply to the other examples.
+
+21. The general problem, in whatever form it is put, admits only an _indefinite_ solution. Let \(x\) stand for the proposed hypothesis, and \(y\) for a phenomenon that might occur as one of its possible consequences, whose probability, calculated on the assumption that the hypothesis is true, is \(p\). We are asked for the probability that if the phenomenon \(y\) is observed, the hypothesis \(x\) is true. The very data of this problem cannot be written down without bringing in an arbitrary element. All we can write is
+\[\text{Prob. }x = a, \quad \text{Prob. }xy = ap; \qquad (1)\]
+where \(a\) is entirely arbitrary, except that it must lie between 0 and 1 inclusive. We know how likely the phenomenon is if the hypothesis holds; we are not told how likely the hypothesis was to begin with. If \(P\) stands for the conditional probability we want, then
+\[P=\frac{\text{Prob. }xy}{\text{Prob. }y} =\frac{ap}{\text{Prob. }y}. \qquad (2)\]
+It remains to find \(\text{Prob. }y\). Let \(xy = t\); then
+\[y = \frac{t}{x}=tx + \frac{1}{0}t(1-x)+0(1-t)x+\frac{0}{0}(1-t)(1-x). \qquad (3)\]
+Read aloud: _y_ happens whenever _t_ and _x_ both happen; _t_ without _x_ is impossible; when _x_ happens without _t_, _y_ does not; and when neither happens, _y_ may or may not. Now note that \(\text{Prob. }x = a\) and \(\text{Prob. }t = ap\), and pass from logic to algebra. We have
+\[\text{Prob. }y = \frac{tx + c(1-t)x}{tx+1-t},\]
+with the relations
+\[\frac{tx + (1-t)x}{a}=\frac{tx}{ap}=tx+1-t.\]
+
+From these we easily find
+\[\text{Prob. }y = ap + c (1-a). \qquad (4)\]
+
+Now go back to (3). We find that \(c\) is the probability that if the event \((1-t) (1-x)\) occurs, the event \(y\) will occur. But
+\[(1-t)(1-x)=(1-xy)(1-x)=1-x.\]
+
+So \(c\) is the probability _that if the event \(x\) does not occur, the event \(y\) will occur_.
+
+Putting this value of \(\text{Prob. }y\) into (2), we get the following theorem:
+
+The calculated probability of any phenomenon \(y\), on an assumed physical hypothesis \(x\), being \(p\), the _à posteriori_ probability \(P\) of the physical hypothesis, once the phenomenon has been observed, is given by the equation
+\[P=\frac{ap}{ap+c(1-a)}, \qquad (5)\]
+where \(a\) and \(c\) are arbitrary constants. The first is the _à priori_ probability of the hypothesis; the second is the probability that the event \(y\) would appear if the hypothesis were false.
+
+The main conclusion to be drawn from this theorem is that, other things being equal, \(P\) rises and falls together with \(p\). So the greater or smaller the probability of the phenomenon when the _hypothesis_ is _assumed_, the greater or smaller the probability of the hypothesis when the _phenomenon_ has been _observed_. When \(p\) is very small, \(P\) is generally small too, unless either \(a\) is large or \(c\) is small. This gives a second conclusion. If the probability of the phenomenon is very small when the hypothesis is assumed, then the probability of the hypothesis is very small when the phenomenon is observed, unless either the _à priori_ probability \(a\) of the hypothesis is large, or the probability of the phenomenon on any other hypothesis is small.
+
+Formula (5) can be checked exactly in various cases, for example when \(c = 0\), or \(a = 1\), or \(a = 0\). But plainly, unless we have some way of fixing the values of \(a\) and \(c\), it does not give a _definite_ value of \(P\). Any solution that claims to give one is either wrong in principle or makes some unstated assumption about these arbitrary elements. Mr. De Morgan's solution of Laplace's problem, whether there is a determining cause behind the narrow limits that confine the inclinations of the planets' orbits to the plane of the ecliptic, seems to me to be of the second kind. He found a probability \(p =.00000012\) that the sum of the inclinations would be less than \(92^\circ\) if all degrees of inclination were equally probable in each orbit. This able writer then remarks: “If there be a reason for the inclinations being as described, the probability of the event is \(1\). Consequently, it is \(1 \colon .00000012\) (i.e. \(1 \colon p\)), that there was a necessary cause in the formation of the solar system for the inclinations being what they are.” Now this is exactly what equation (5) would give if, setting \(p\) at the value above, we assumed \(c = 1\), \(a =\frac{1}{2}\). For we would then find
+\[\begin{gathered} P = \frac{ \frac{1}{2}p }{ \frac{1}{2}p + \frac{1}{2} } = \frac{p}{1+p} \\ \therefore 1 - P \colon P \colon\colon 1 \colon p. \qquad (6) \end{gathered}\]
+(that is, one minus _P_ is to _P_ as 1 is to _p_).
+
+Here \(P\) is the probability, _à posteriori_, that all inclinations are equally probable, so \(1 - P\) is the probability, _à posteriori_, that this is not so, or, taking Mr. De Morgan's alternative, that a determining cause exists. Equation (6) therefore agrees with Mr. De Morgan's result. His answer is definite only because he has, without saying so, given the two hypotheses equal chances to begin with, and supposed that a determining cause would make the observed result certain.
+
+22. But are we entitled to give \(a\) and \(c\) particular values? I am strongly inclined to think we are not. The question matters less in this particular case than in where it leads. In the accepted applications of the theory of probability, arbitrary constants do not appear openly. But in the case above, and in many others approved by the highest authorities, some hidden fixing of their values has been attempted. This has given the results of the theory, especially on questions of causation, an air of definite precision. On the one hand, that precision has seemed to raise the power and widen the province of numbers even beyond their ancient claim to rule the world. On the other hand, it has provoked vigorous protests against their intrusion into regions where conjecture is the only basis for inference. When problems like these are treated by the method of this work, arbitrary constants appear in the solutions. That very fact seems to show that a definite solution is impossible, and to mark the point where inquiry ought to stop. We do have the means of interpreting those constants: each one is the probability of something we could learn only from experience. But the experience they point to is as far beyond our reach as the experience that would make any attempt at a solution unnecessary in the first place.
+
+Footnote: Mundum regunt numeri.
+
+Another difficulty attends these questions, one that is perhaps built into the very make-up of our faculties. It is the difficulty of defining exactly what we mean by Order. We have no trouble detecting the signs of order, except in very complicated cases, and we do not hesitate to credit it with an almost necessary basis in causes working under Law. But to assign it a standard of _numerical_ value would be a vain, not to say presumptuous, undertaking. Yet the attempt must be made before we can hope to weigh accurately the probabilities of different possible constitutions of the universe, and so fix the elements on which alone a definite solution of these problems could rest.
+
+Footnote: See an interesting paper by Prof. Forbes in the Philosophical Magazine, Dec. 1850; also Mill’s Logic, chap. xviii.
+
+23. The most common way of trying to escape the _necessary_ arbitrariness in the solution of probability problems that rest on insufficient data goes like this. Take some element whose real probability is unknown, and give it every possible degree of probability. Suppose that these degrees of probability are themselves equally probable. Then treat them as so many distinct causes of the observed phenomenon, and apply the theorems that cover an effect due to one of a number of equally probable causes that exclude one another (Problem 9). For instance, suppose the sun has been observed to rise after a certain interval of darkness \(m\) times in a row. On the accepted principles, the probability that it will rise again under the same circumstances is worked out as follows. Let \(p\) be any unknown probability between 0 and 1, and let \(c\) (infinitesimal and constant) be the probability that the probability of the sun's rising after an interval of darkness lies between the limits \(p\) and \(p + dp\). (So every possible value of the sun's chance of rising is treated as equally likely.) Then the probability that the sun will rise \(m\) times in a row is
+\[c\int_0^1 p^m dp;\]
+and the probability that he will do this and then rise again, which is the same thing as rising \(m + 1\) times in a row, is
+\[c\int_0^1 p^{m+1} dp,\]
+So the probability that if he rises \(m\) times in a row, he will rise the \({m + 1}^{\text{th}}\) time, is
+\[\frac{c\int_0^1 p^{m+1} dp}{c\int_0^1 p^m dp} = \frac{m+1}{m+2},\]
+the known and generally accepted solution.
+
+This solution usually rests on a supposed likeness between the problem and that of drawing balls from an urn holding a mixture of black and white balls, where every possible ratio between the numbers of the two colours is assumed to be equally probable. And it is remarkable that two or three different hypotheses lead to the same final result. Suppose, for instance, that the balls are finite in number and those drawn are not put back; or that they are infinite in number, whether those drawn are put back or not. Then, if \(m\) drawings in a row have produced only white balls, the probability of a white ball at the \({m + 1}^{\text{th}}\) drawing is
+\[\frac{m + 1}{m + 2}.\]
+
+Footnote: See a memoir by Bishop Terrot, Edinburgh Phil. Trans. vol. xx. Part iv.
+
+It has been said that the principle behind this and similar applications is the equal distribution of our knowledge, or rather of our ignorance: we assign equal degrees of probability to different states of things we know nothing about, and on the very ground that we know nothing about them. I believe, however, that this is an arbitrary way to proceed. Cases may occur, and one has just been given, in which different hypotheses lead to the same final conclusion. But those cases are exceptions. For this very problem, the memoir cited shows that one hypothesis, namely that the balls are finite in number and not put back, leads to a different conclusion. And it is easy to see that there are other hypotheses, which follow the principle of the “equal distribution of knowledge or ignorance” just as strictly, and which would also lead to conflicting results.
+
+24. For instance, let a sunrise be represented by drawing a white ball from a bag holding an infinite number of balls, each either black or white. And let the principle assumed be that _all possible constitutions of the system of balls are equally probable_. By a constitution of the system I mean an arrangement that gives every ball in the system a definite colour, black or white. Let us then look for the probability that if \(m\) white balls are drawn in \(m\) drawings, a white ball will be drawn in the \({m + 1}^{\text{th}}\) drawing.
+
+First, suppose there are \(\mu\) balls, and assign the symbols \(x_1, x_2, \dotsc x_\mu\) to them as follows. Let \(x_i\) stand for the event that the \(i^{\text{th}}\) ball of the system is white; the proposition that says this is so is \(x_i = 1\). In the same way the compound symbol \(1-x_i\) stands for the \(i^{\text{th}}\) ball being black. Clearly the constituents formed from the whole set of symbols \(x_1, x_2,\dotsc x_\mu\) then stand for the possible constitutions of the system of balls, as to black and white. There are \(2^\mu\) such constitutions, so, by the hypothesis, the probability of each will be \(\dfrac{1}{2^\mu}\). This is the value we would get if, in the expression for any constituent, we put for each of the symbols \(x_1, x_2,\dotsc x_\mu\) the value \(\dfrac{1}{2}\). So the probability of any event that can be written as a series of such constituents will be found by putting the value \(\dfrac{1}{2}\) for each of these symbols in that expression.
+
+Now the larger \(\mu\) is, the less likely it is that a ball which has been drawn and put back will be drawn again. As \(\mu\) approaches infinity, this probability approaches \(0\). That being so, the state of the balls actually drawn can be written as a logical function of \(m\) of the symbols \(x_1, x_2,\dotsc x_\mu\), and therefore, by development, as a series of constituents of those \(m\) symbols. So its probability will be found by putting the value \(\dfrac{1}{2}\) for each of the symbols, whether in the undeveloped or the developed form. But this is exactly the substitution we would need to make, and all we would need to make, if we knew _à priori_ that the probability of a white ball at each drawing was \(\dfrac{1}{2}\).
+
+It follows that if the number of balls is infinite, and all constitutions of the system are equally probable, the probability of drawing \(m\) white balls in a row will be \(\dfrac{1}{2^m}\), and the probability of drawing \(m + 1\) white balls in a row \(\dfrac{1}{2^{m+1}}\);
+so the probability that, after _m_ white balls have been drawn, the next drawing will give a white one will be \(\dfrac{1}{2}\). In other words, in this case past experience does not affect future expectation at all. The same principle of evenly spread ignorance, applied to constitutions of the bag instead of to proportions of colours, gives an answer of one half, not the rule above.
+
+25. It may be satisfying to check this result by ordinary methods. To do so, we shall find:
+
+First: The probability of drawing \(r\) white balls and \(p-r\) black balls in \(p\) trials, from a bag holding \(\mu\) balls, each ball being put back after it is drawn, and all constitutions of the system being equally probable _à priori_.
+
+Second: The value this probability takes when \(\mu\) becomes infinite.
+
+Third: The probability that follows from this, that if \(m\) white balls are drawn in a row, the \({m + 1}^{\text{th}}\) ball drawn will be white too.
+
+Take the probability that \(r\) white balls and \(p-r\) black ones will be drawn in \(p\) trials from an urn holding \(\mu\) balls, each ball put back after each trial, and all constitutions of the system, as defined above, equally probable. It equals the sum of the probabilities of the same result on the separate hypotheses that there are no white balls in the urn, 1 white ball, and so on up to \(\mu\) white balls. So it is the sum of the probabilities of this result on the hypothesis that there are \(n\) white balls, with \(n\) running from 0 to \(\mu\).
+
+Now suppose there are \(n\) white balls. The probability of drawing a white ball in a single drawing is \(\frac{n}{\mu}\), and the probability of drawing \(r\) white balls and \(p-r\) black ones in some particular order in \(p\) drawings is
+\[\left( \frac{n}{\mu} \right)^r \left( 1 - \frac{n}{\mu} \right)^{p-r}\]
+But there are as many such orders as there are ways of choosing \(r\) things out of \(p\) things. So the total probability of drawing \(r\) white balls in \(p\) drawings from the system of \(\mu\) balls, of which \(n\) are white, is
+\[\frac{ p(p-1) \dotsc (p-r+1) }{ 1 \cdot 2 \dotsc r } \left( \frac{n}{\mu} \right)^r \left( 1 - \frac{n}{\mu} \right)^{p-r} \qquad (1)\]
+Again, the number of constitutions of the system of \(\mu\) balls in which exactly \(n\) balls are white is
+\[\frac{\mu(\mu-1) \dotsc (\mu-n+1)}{1 \cdot 2 \dotsc n},\]
+and the number of possible constitutions of the system is \(2^\mu\). So the probability that exactly \(n\) balls are white is
+\[\frac{\mu(\mu-1) \dotsc (\mu-n+1)}{1 \cdot 2 \dotsc n 2^\mu},\]
+Multiplying (1) by this expression, and adding up the products from \(n = 0\) to \(n = \mu\), we get
+\[\frac{p(p-1) \dotsc p-r+1}{1 \cdot 2 \dotsc r} \sum_{n=0}^{n=\mu} \frac{\mu(\mu-1) \dotsc (\mu-n+1)}{1 \cdot 2 \dotsc n 2^\mu} \left( \frac{n}{\mu} \right)^r \left( 1-\frac{n}{\mu} \right)^{p-r} , \qquad (2)\]
+as the total probability that, from a system of \(\mu\) balls whose constitutions are all equally probable, \(r\) white balls will come out in \(p\) drawings. Now
+\[\begin{gathered} \sum_{n=0}^{n=\mu} \frac{\mu(\mu-1) \dotsc (\mu-n+1)} {1 \cdot 2 \dotsc n \cdot 2^\mu} \left( \frac{n}{\mu} \right)^r \left( 1-\frac{n}{\mu} \right)^{p-r} \\ = \sum_{n=0}^{n=\mu} \frac{\mu(\mu-1) \dotsc (\mu-n+1)} {1 \cdot 2 \dotsc n 2^\mu} \left( \frac{n}{\mu} \right)^r \left( 1-\frac{n}{\mu} \right)^{p-r} \varepsilon^{n\theta} \dotso (\theta = 0) \\ = \frac{1}{2^\mu} \left( \frac{D}{\mu} \right)^r \left( 1-\frac{D}{\mu} \right)^{p-r} \sum_{n=0}^{n=\mu} \frac{\mu(\mu-1) \dotsc (\mu-n+1)} {1 \cdot 2 \dotsc n} \varepsilon^{n\theta} \\ = \frac{1}{2^\mu} \left( \frac{D}{\mu} \right)^r \left( 1-\frac{D}{\mu} \right)^{p-r} (1 + \varepsilon^\theta)^\mu, \qquad (3) \end{gathered}\]
+where \(D\) stands for the symbol \(\frac{d}{d\theta}\), so that \(\phi(D) \varepsilon^{n\theta} = \phi(n) \varepsilon^{n\theta}\). (The trick is this: multiplying each term by the exponential, which equals 1 when theta is 0, lets the powers of _n_ be produced by differentiating, and then the sum can be done all at once by the binomial theorem.) But by a known theorem,
+\[\begin{aligned} t^m = 1 + \Delta 0^m t + \frac{\Delta^2 0^m}{1\cdot 2} t(t-1) + \frac{\Delta^3 0^m}{1\cdot 2\cdot 3} t(t-1)(t-2). \\ \therefore D^m (1+\varepsilon^\theta)^\mu = \{1 + \Delta 0^mD + \frac{\Delta^2 0^m}{1\cdot 2} D(D-1) + \text{ \&c.}\} (1+\varepsilon^\theta)^\mu. \end{aligned}\]
+On the right-hand side let \(\varepsilon^\theta = x\); then
+\[D^m (1+\varepsilon^\theta)^\mu = (1 + \Delta 0^m x\frac{d}{dx} + \frac{\Delta^2 0^m}{1\cdot 2} x^2 \frac{d^2}{dx^2} + \text{ \&c.}) (1+x)^\mu,\]
+since
+\[D(D-1) \dotsc (D-i+1) = x^i \left( \frac{d}{dx} \right)^i.\]
+
+On the right-hand side of this equation, carry out the differentiations and put \(x=1\) (since \(\theta = 0\)). We get
+\[D^m(1 + \varepsilon^\theta)^\mu = \mu(\Delta 0^m)2^{\mu-1} + \frac{\mu(\mu-1)}{1\cdot 2}(\Delta^2 0^m)2^{\mu-2} + \text{ \&c.}\]
+The last term on the right-hand side of this equation will be
+\[\frac{\mu(\mu-1)\dotsc (\mu-m+1)\Delta^m 0^m} {1\cdot 2\dotsc m} 2^{\mu-m} = \mu(\mu-1)\dotsc (\mu-m+1)2^{\mu-m};\]
+since \(\Delta^m 0^m = 1\cdot 2\dotsc m\). When \(\mu\) is large, this term is bigger than all the others, and as \(\mu\) approaches infinity it becomes infinitely great compared with them. And since, moreover, it takes the form \(\mu^m 2^{\mu-m}\), we have, passing to the limit,
+\[D^m(1 + \varepsilon^\theta)^\mu = \mu^m 2^{\mu-m} = \left( \frac{\mu}{2} \right)^m 2^\mu.\]
+So if \(\phi(D)\) stands for any function of the symbol \(D\) that can be expanded in a series of rising powers of \(D\), we have
+\[\phi(D)(1 + \varepsilon^\theta)^\mu = \phi\left(\frac{\mu}{2}\right)2^\mu , \qquad (4)\]
+if \(\theta = 0\) and \(\mu = \infty\). Strictly speaking, this means that the ratio of the two sides of the equation above comes closer and closer to equality as \(\mu\) increases towards infinity, \(\theta\) being equal to \(0\). In words: when the bag is enormous, every _D_ may simply be replaced by half the number of balls.
+
+By means of this theorem, the last line of (3) reduces to the form
+\[\frac{1}{2^\mu} \left(\frac{1}{2}\right)^r \left(1 - \frac{1}{2}\right)^{p-r} 2^\mu = \left(\frac{1}{2}\right)^p .\]
+So (2) gives
+\[\frac{p(p-1)\dotsc (p-r+1)} {1\cdot 2\dotsc r} \left( \frac{1}{2} \right)^p ,\]
+as the probability that, from an urn holding an infinite number of black and white balls, all constitutions of the system being equally probable, \(r\) white balls will come out in \(p\) drawings. This is exactly what we would get if each ball drawn were as likely to be white as black.
+
+So, putting \(p = m\), \(r = m\), the probability that all the balls in \(m\) drawings will be white is \(\left( \frac{1}{2} \right)^m\), and the probability that this will happen and that the \({m + 1}^{\text{th}}\) drawing will also give a white ball is \(\left(\dfrac{1}{2}\right)^{m+1}\). So the probability that, if the first \(m\) drawings give only white balls, the \({m + 1}^{\text{th}}\) drawing will also give a white ball, is
+\[\left( \frac{1}{2} \right)^{m+1} \div \left( \frac{1}{2} \right)^m = \frac{1}{2};\]
+and in general, any proposed result will have the same probability as if it were an even chance whether each drawing gave a white ball or a black one. This agrees with the conclusion we reached before.
+
+26. These results only illustrate one fact: when hypothesis is used to make up for missing data, the solutions will in general vary with the hypotheses assumed. So the question remains, only in a sharper form, whether the principles of the theory of probability can guide us in choosing such hypotheses. I have already said that I am convinced they cannot, and other reasons besides those given above strengthen that conviction. Here is one. Sometimes, when the method of this work has given a definite solution of a problem, the same method also gives an equally definite solution when one of the data, say Prob. \(x =p_1\) is left out. But I have not been able to find any way of deriving the second solution from the first by _integration_ with respect to \(p\), taken as varying within the limits fixed by Chap. XIX. Yet, I believe, this derivation would be possible if the principle discussed in Art. 23 were valid. Still, it is with some hesitation that I differ on these points from mathematicians in general, and above all from the English writer who has entered most fully into the spirit and methods of Laplace. And I venture to hope that a question second in importance to none in the theory of probability will receive the careful attention it deserves.
+
+Editor's note: The rule Boole examines here, that after m sunrises the chance of another is m plus one over m plus two, is Laplace's "rule of succession". The question behind Boole's objection, whether ignorance can be expressed by spreading probability evenly over the possibilities, is the question of "prior probabilities", and it still divides statisticians. Bayesian methods assign such priors, often in Laplace's way, while others, like Boole, refuse to assign them unless the evidence supplies them. His bag of balls shows why the choice matters: spreading ignorance evenly over the proportions of colours gives Laplace's rule, while spreading it evenly over the colours of the individual balls gives an answer that experience never changes.

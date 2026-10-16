@@ -1,0 +1,149 @@
+Chapter 17: General Method in Probabilities
+(Part 2 of 2)
+
+12. By (VIII. 8), the original equations can be brought into the forms
+\[\begin{aligned} &s(1-S) + S(1-s) = 0; \\ &t(1-T)+ T(1-t) = 0; \qquad (1) \\ &\cdots \\ &w(1-W)+W(1-w) = 0; \end{aligned}\]
+and in these forms they can be added together without losing any of their meaning. (Each one says, in effect, that there is nothing which is _s_ without being _S_, and nothing which is _S_ without being _s_.) We can then eliminate the symbols \(x\), \(y\), \(z\), either one at a time or all together. If we eliminate them together, we must first add up the equations of the system, then develop the result with respect to all the symbols to be eliminated, and set equal to \(0\) the product of all the coefficients of the constituents (VII. 9).
+
+Since \(w\) is the symbol whose expression we are looking for, we may also, by Prop. III. Chap. IX., put the result of elimination in the form
+\[Ew + E'(1-w) = 0\text{.}\]
+
+\(E\) and \(E'\) are found in turn by putting, in the general system (1), first \(w = 1\) and then \(w = 0\), and each time eliminating the symbols \(x\), \(y\), \(z\), \(\dotsc\) So the single equations from which \(E\) and \(E'\) are to be found are
+\[\begin{aligned} &s(1-S)+S(1-s)+t(1-T) + T(1-t)\ldots+1-W=0\text{;} \\ &s(1-S)+S(1-s)+t(1-T) + T(1-t)+W=0\text{.} \end{aligned}\]
+From these it only remains to eliminate \(x\), \(y\), \(z\), &c., and then to find \(w\) by developing the result. In the elimination we may, where it helps, use the shortcuts of Props. I. and II. Chap. IX.
+
+13. Sometimes the data do more than tell us the probabilities of the events. They may also lay down some explicit connection among them. Any such connection must be written in logical form, and the equation or equations that express it must be added to the general system.
+
+Proposition IV.
+
+14. Given the probabilities of any system of events; to determine by a general method the consequent or derived probability of any other event.
+
+As in the last Proposition, let \(S\), \(T\), &c., be the events whose probabilities are given, and \(W\) the event whose probability is sought. All of these are known functions of \(x\), \(y\), \(z\), &c. We write the data like this:
+\[\begin{aligned} \text{Probability of }S &= p;\\ \text{Probability of }T &= q; \end{aligned} \qquad (1)\]
+and so on, where \(p\), \(q\), &c., are known numbers. Now let the compound event \(S\) be represented by \(s\), \(T\) by \(t\), and \(W\) by \(w\). Then by the last Proposition we find
+\[w = A + 0B +\frac{0}{0} C + \frac{1}{0} D; \qquad (2)\]
+where \(A\), \(B\), \(C\), and \(D\) are functions of \(s\), \(t\), &c. Read aloud, this says: _w_ happens in every case of _A_, never in a case of _B_, in some indefinite part of the cases of _C_, and the cases of _D_ cannot happen at all. At the same time the data (1) turn into
+\[\text{Prob. }s =p,\quad \text{Prob. }t = q, \text{ \&c.} \qquad (3)\]
+
+Now equation (2) can be broken into the system
+\[\left. \begin{gathered} w = A + qC\\ D=0, \end{gathered}\quad\right\} \qquad (4)\]
+where \(q\) is a symbol for an indefinite class (VI. 12). But by the properties of constituents (V. Prop. III.), we have
+\[A + B + C + D= 1,\]
+that is, the constituents together make up everything that can happen. So the second equation of the system above can be written in the form
+\[A + B+ C = 1.\]
+
+If we call the function \(A + B + C\) by the single letter \(V\), the system (4) becomes
+\[\begin{gathered} w = A + qC; \qquad (5) \\ V = 1. \qquad (6) \end{gathered}\]
+
+Let us stop for a moment and look at this result. \(V\) is a sum of constituents of \(s\), \(t\), &c. So it stands for a compound event made up of the simple events denoted by \(s\), \(t\), &c. Equation (6) therefore shows something important. The events denoted by \(s\), \(t\), &c., whose probabilities are \(p\), \(q\), &c., do not have these probabilities as _independent events_. They have them as events bound by a certain condition, namely \(V\). Equation (5) then expresses \(w\) as a combination of the same events, bound by the same condition.
+
+Now by Principle VI., the way we came to know this connection between the events makes no difference to the way we must use it once we know it. We must reason on it as if experience had shown us the events \(s\), \(t\), &c., as simple events, free to combine in every possible way, which, when they are actually bound by the condition \(V\), have the probabilities \(p\), \(q\), &c.
+
+So let \(p', q', \dotsc,\) be the probabilities these events would have if the restriction \(V\) were taken away. Then by Prop. II. of this chapter, these quantities are fixed by the system of equations,
+\[\frac{[V_s]}{[V]} = p, \qquad \frac{[V_t]}{[V]} = q, \text{ \&c.;} \qquad (7)\]
+and by Prop. I., the probability of the event \(w\) under the same condition \(V\) will be
+\[\text{Prob. } w = \frac{[A + cC]}{[V]}; \qquad (8)\]
+Here \(V_s\) stands for the sum of those constituents in \(V\) that have \(s\) as a factor, and \([V_s]\) for what that sum becomes when \(s, t, \dotsc,\) are replaced by \(p', q', \dotsc,\) respectively. The constant \(c\) stands for the probability of the indefinite event \(q\). It is therefore arbitrary, a constant whose value the data do not fix, and it may have any value from 0 to 1.
+
+Notice now that we work out the values of \(p'\), \(q'\), &c., from (7) only so that we can put them into (8), and so make Prob. \(w\) a function of the known quantities \(p\), \(q\), &c. Clearly, then, instead of the letters \(p'\), \(q'\), &c., we could use any other letters, such as \(s\), \(t\), &c., taken in the same _number_ sense. This step would simply change the meaning of the symbols \(s\), \(t\), &c.: they would stop being _logical_ symbols and become _number_ symbols. The systems (7) and (8) would then become
+\[\begin{aligned} \frac{V_s}{V} = p,\quad \frac{V_t}{V} = q,\text{ \&c.;} \qquad (9) \\ \text{Prob. }w = \frac{A + cC}{V}. \qquad (10) \end{aligned}\]
+To use these, we only need to solve (9) for \(s\), \(t\), &c., now taken as number symbols, in terms of \(p\), \(q\), &c., and put the values we get into (10). Since \(s\), \(t\), &c., now stand for _probabilities_, they will clearly be positive fractions less than 1.
+
+The system (9) can be written more symmetrically in the form
+\[\frac{V_s}{p} = \frac{V_t}{q} \dotso = V. \qquad (11)\]
+Or we can write (9) and (10) together in the single symmetrical system
+\[\frac{V_s}{p} = \frac{V_t}{q} \dotso = \frac{A+cC}{u} = V; \qquad (12)\]
+where \(u\) stands for Prob. \(w\).
+
+15. It remains to interpret the constant \(c\), which we took to stand for the probability of the indefinite event \(q\). Now the _logical_ equation
+\[w = A + qC,\]
+read in the reverse direction, means this: if either the event \(A\) happens, or the event \(C\) happens together with the event \(q\), then the event \(w\) will happen, and not otherwise. So \(q\) stands for the condition under which, if the event \(C\) happens, the event \(w\) will happen. But the probability of \(q\) is \(c\). So \(c =\) the probability that if the event \(C\) happens, the event \(w\) will happen.
+
+So by Principle II.,
+\[c = \frac{ \text{Probability of concurrence of $C$ and $w$} } { \text{Probability of $C$} }.\]
+In words, _c_ is the probability that _C_ and _w_ both happen, divided by the probability of _C_. From this we can see what new experience would give us the actual value of _c_. Take \(C\), and put back, in place of \(s\), \(t\), &c., their original expressions as functions of the simple events \(x\), \(y\), \(z\), &c. This gives the expression of the event whose probability is the denominator of the value of \(c\) above. Multiply that expression by the original expression of \(w\), and we have the expression of the event whose probability is the numerator of \(c\). Then _the ratio of how often this second event occurs to how often the first one occurs, found by new observations,_ will give the value of \(c\). Notice that the constant \(c\) does not _necessarily_ appear in the solution of a problem. This arbitrary element turns up only when the data are not enough to fix the probability sought. And in that case, as we have just seen, the final logical equation (2) or (5) tells us how it is to be determined.
+
+Suppose the new experience that would fix \(c\) cannot be had. We can still give \(c\) its extreme values 0 and 1, and so find the limits of the probability of \(w\), the smallest and largest values it can have. These limits are
+\[\begin{array}{ll} \text{Minor limit of Prob. } w &= \frac{A}{V}. \\ \text{Superior limit } &= \frac{A+C}{V}. \end{array}\]
+The probability sought is certain to lie between these limits, whatever new experience may bring, so long as that experience does not flatly contradict the past.
+
+Suppose the expression of the event \(C\) is made up of many constituents, so that the logical value of \(w\) has the form
+\[w = A + \frac{0}{0}C_1 + \frac{0}{0}C_2 + \text{ \&c.,}\]
+Then, instead of lumping them together as above, we can give the final solution in the form
+\[\text{Prob. } w = \frac{ A + c_1C_1 + c_2C_2 + \text{ \&c.} }{V}.\]
+
+Here \(c_1 =\) the probability that if the event \(C_1\) occurs, the event \(w\) will occur, and so on for the others. Which form to use is a matter of convenience.
+
+16. This is the complete theoretical solution of the problem we set. We may add that it applies just as well when some of the events named in the original statement are conditioned. Suppose, for instance, that one of the data is the probability \(p\) that if the event \(x\) occurs, the event \(y\) will occur, and that the probability of \(x\) itself is not given. Then we must assume Prob. \(x = c\) (an arbitrary constant), so that Prob. \(xy = cp\), and these two conditions must be put into the data and used by the method already given. Again, suppose we want the probability that if an event \(x\) occurs, an event \(y\) will occur. Then the solution will take the form
+\[\text{Prob. sought }=\frac{ \text{Prob. }xy }{ \text{Prob. }x },\]
+and the numerator and the denominator must each be found separately by the general method above.
+
+17. What we have found lets us lay down a general rule for solving questions in probability.
+
+General Rule.
+
+Case I.—_When all the events are unconditioned_.
+
+Write the symbolic expressions of the events whose probabilities are given or sought.
+
+Set those expressions that stand for compound events equal to a new series of symbols, \(s\), \(t\), &c. Treat each of these symbols as standing for the event whose expression it has been set equal to, now regarded not as compound but as simple.
+
+From the equations so formed, eliminate every logical symbol except those that stand for the events \(s\), \(t\), &c., whose probabilities \(p\), \(q\), &c. are given, and the event \(w\), whose probability is sought. Then find \(w\) as a developed function of \(s\), \(t\), &c. in the form
+\[w = A + 0B + \frac{0}{0}C + \frac{1}{0}D.\]
+Let \(A + B + C = V\). Let \(V_s\) stand for the sum of those constituents in \(V\) that contain \(s\) as a factor, \(V_t\) for the sum of those that contain \(t\) as a factor, and so on for all the symbols whose probabilities are given.
+
+Then, passing from logic to algebra, form the equations
+\[\begin{aligned} &\frac{V_s}{p} = \frac{V_t}{q} = V, \qquad (1) \\ &\text{Prob. } w = \frac{A + cC}{V}, \qquad (2) \end{aligned}\]
+From (1), find \(s\), \(t\), &c. as functions of \(p\), \(q\), &c., and put their values into (2). The result will be the solution required.
+
+Or form the symmetrical system of equations
+\[\frac{V_s}{p} = \frac{V_t}{q} \dotsc = \frac{A+cC}{u} = \frac{V}{1}, \qquad (3)\]
+where \(u\) stands for the probability sought.
+
+If \(c\) appears in the solution, its interpretation will be
+\[c = \frac{\text{Prob. }Cw}{\text{Prob. }C},\]
+and this interpretation shows what kind of experience is needed to find it.
+
+Case II.—_When some of the events are conditioned_.
+
+Suppose we are given the probability \(p\) that if the event \(X\) occurs, the event \(Y\) will occur, and the probability of the antecedent \(X\) is not given. Then break this statement into the following two, namely:
+\[\begin{array}{ll} \text{Probability of } X &= c, \\ \text{Probability of } XY &= cp. \end{array}\]
+If what is sought is the probability that if the event \(W\) occurs, the event \(Z\) will occur, find separately, by the previous case, the top and bottom of the fraction
+\[\frac{\text{Prob. } WZ}{\text{Prob. }W},\]
+and the fraction itself will be the probability sought.
+
+In this case it is understood that \(X\), \(Y\), \(W\), \(Z\) may be any compound events whatever. The expressions \(XY\) and \(WZ\) stand for the products of the symbolic expressions of \(X\) and \(Y\), and of \(W\) and \(Z\), formed by the rules of the calculus of logic.
+
+Finding the single constant \(c\) may in some cases be broken into, or replaced by, finding a series of arbitrary constants \(c_1, c_2\dotsc\) as convenience suggests, as explained above.
+
+18. It was said earlier (I. 12) that there are two distinct definitions, or ways of conceiving probability, on which the theory can be made to rest. One is tied more closely to number, the other more directly to logic. We have now followed out the consequences of the number definition. We have shown how it leads us to a point where the need for a connection with logic plainly suggests itself. We have seen, to some extent, what that connection is. We have seen, too, how the special processes of logic and the more familiar processes of the algebra of quantity both enter into the same general method of solution. Each does its own job, so that the two processes may be thought of as completing each other. What remains is to run the inquiry in the reverse order. We start from a definition of probability in which the logical relation is more directly involved. We then show how the number definition would arise from it, and how the same general method, resting equally on both elements, would in the end be established, though by a different route.
+
+I have often pointed out in this book that there is a close analogy between the symbolic expressions of the logical calculus and those of algebra. One might even say that they share their forms and, to a very large degree, their laws. With a single exception among the laws, they differ only in how they are interpreted. (The exception is the law of duality, which holds for logical symbols and not for numbers in general.) So the same expression can be read logically or as a quantity, depending on the meaning we give to its symbols. Read the first way, the expression \(xy\) stands for the events denoted by \(x\) and \(y\) both occurring. Read the second way, it stands for the product of the numbers or quantities denoted by \(x\) and \(y\). In the same way, every expression that denotes an event, simple or compound, has, under another system of interpretation, a purely numerical meaning. This raises a question. Is there some principle of transition by which the logical meaning and the numerical meaning of the same symbolic expression are connected in a way that makes sense? The following considerations answer that question.
+
+19. Let it be granted that there is such a feeling as expectation: a feeling whose object is the occurrence of events, and which can be more or less intense. Let it also be granted that this feeling of expectation goes along with our knowledge of the circumstances under which events are produced, and that it changes with the amount and kind of that knowledge. We need not assume, openly or quietly, that the intensity of expectation, taken as a feeling in the mind, can be measured exactly in numbers. Even so, it is perfectly fair to ask whether there could be a way of estimating it in numbers that meets at least these conditions: the number it gives should go up when the known circumstances of an event are felt to justify a stronger expectation, go down when they call for a weaker one, and stay the same when they plainly call for the same degree of expectation.
+
+These conditions at least will be met if we take the fundamental principle of expectation to be the following. The laws for expressing expectation, taken as a number, are to be the same as the laws for expressing the expected event, taken as a logical element. So if \(\phi(x, y, z)\) stands for any unconditioned event made up in any way of the events \(x\), \(y\), \(z\), then by this principle the same expression \(\phi(x, y, z)\) is to stand for the expectation of that event; but now \(x\), \(y\), \(z\) stand no longer for the simple events themselves but for the expectations of those events.
+
+For, first, it is clear that on this hypothesis the probability that some one of a set of events that exclude one another will occur is the sum of the separate probabilities of those events. Suppose the set of alternatives in question consists of \(n\) events that exclude one another, whose expressions are
+\[\phi_1(x, y, z),\phi_2(x, y,z),\dotsc\phi_n(x, y, z),\]
+Then the expression of that set of alternatives, the statement that one of them happens, will be
+\[\phi_1(x, y, z) + \phi_2(x, y,z)\dotsc + \phi_n(x, y, z) = 1;\]
+where the letters \(x\), \(y\), \(z\) are logical, and stand for the simple events of which the three alternatives are made up. And by hypothesis, the expression of the probability that some one of those alternatives will occur is
+\[\phi_1(x, y, z) + \phi_2(x, y,z) \dotsc + \phi_n(x, y, z),\]
+where \(x\), \(y\), \(z\) now stand for the probabilities of those simple events. Now this expression grows, _cæteris paribus_ (other things being equal), as the number of alternatives grows, and shrinks as their number shrinks. That agrees with the condition we laid down.
+
+Further, if we start from this hypothetical definition of the measure of probability, we shall be led to the received number definition. We get there either by necessary inference or by steps of suggestion that might perhaps themselves be called _necessary_. We are at once led to recognise unity (\(1\)) as the proper number for certainty. For it is certain that any event \(x\) or its contrary \(1-x\) will occur. The expression of this proposition is
+\[x + (1-x) = 1,\]
+so, by hypothesis, \(x + (1-x)\), the measure of the probability of this proposition, becomes the measure of certainty. But the value of that expression is \(1\), whatever the particular value of \(x\) may be. So on this hypothesis, unity, or \(1\), is the measure of certainty.
+
+Next, let there be \(n\) events that exclude one another but are equally possible, which we will write as \(t_1, t_2, \dotsc t_n\). The proposition that some one of them must occur is expressed by the equation
+\[t_1 + t_2 \dotsc + t_n= 1;\]
+When we pass, by the reasoning of the last section, to probabilities as numbers, this equation still holds in form. And since the probabilities \(t_1, t_2 \dotsc t_n\) are equal, we have
+\[nt_1 = 1,\]
+so \(t_1 = \frac{1}{n}\), and in the same way \(t_2 = \frac{1}{n}\), \(t_n = \frac{1}{n}\). Suppose we then want the probability that some one event of the shorter series \(t_1, t_2 \dotsc t_m\) will occur. The expression we need is
+\[\begin{aligned} t_1+t_2\dotsc+t_m &=\frac{1}{n}+\frac{1}{n}\dotsc&&\text{to $m$ terms} \\ &=\frac{m}{n}. \end{aligned}\]
+So if there are \(m\) cases favourable to some set of alternatives out of \(n\) possible and equally likely cases, the probability that one of those alternatives occurs is the fraction \(\frac{m}{n}\).
+
+Now if an event can happen in several equally possible ways, its happening really amounts to the happening of one of a set of alternatives. So the probability of any event can be written as a fraction: the top is the number of cases favourable to it, and the bottom is the total number of equally possible cases. But this is exactly the strict number definition of the measure of probability. That definition is therefore contained in the more distinctly _logical_ definition whose consequences we have been trying to trace.
+
+20. From these inquiries two things are clear. 1st, it makes no difference which definition we start from. We may start from the ordinary number definition of the measure of probability. Or we may start from the definition that gives the number measure of probability whatever law of value makes the logical expressions of events formally identical with the algebraic expressions of their values. Either way we are led to the same system of practical results. 2ndly, either definition, followed out to its consequences and taken together with the relations it necessarily involves, leads us, by inference or by suggestion, to the other. For a scientific view of the theory of probability, it is essential to see both principles together, each bearing on the other and depending on it.

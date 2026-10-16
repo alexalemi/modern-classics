@@ -1,0 +1,306 @@
+Chapter 20: Problems Relating to the Connexion of Causes and Effects
+(Part 1 of 3)
+
+1. The final object of science is to grasp, in every particular case, the relation of cause and effect: to connect the two ends of it in thought in the same order in which they are connected in nature. (How the cause actually does its work, the _modus operandi_, is unknown to us, and must always remain so.) This treatise has shown that the faculties of the intellect are built with a special reference to that object. There is one sphere of thought that grasps things only as parts of a universe, existing side by side. But there is also a sphere of thought (Chap. XI.) in which things are grasped as links in an unbroken chain, and, as far as we can see, an endless one. Each has its place in an order that connects it both with what went before and with what will follow after. When we contemplate a series like that, we cannot help feeling that the relation of cause and effect deserves first place among all relations.
+
+Here I propose to consider, in their abstract form, some problems that involve this relation. As the nature of the relation would lead us to expect, they are of many different kinds. Suppose we know the probabilities of certain causes, assigned _à priori_ or given by experience, and the probability that each of them goes along with a certain effect. We may be asked to find the probability of that effect: first, absolutely, or second, under given conditions. Some of the earlier problems below are of this kind. On the other hand, we may be asked to find the probability of a particular cause, or of some particular connection among a system of causes, from the effects we have observed and from what we know of how the causes tend, alone or together, to produce such effects. That class of questions will come in a later part of the chapter, and other forms of the general inquiry will be noticed too. I should say one thing. These examples are meant chiefly to illustrate a _method_, but I have paid no attention to making the method easy or convenient to apply. On the contrary, I have tried, with whatever success, to design them as types of the problems we might expect to meet when we study the relation of cause and effect in its more complex real and visible forms.
+
+2. Problem I.—The probabilities of two causes \(A_1\) and \(A_2\) are \(c_1\) and \(c_2\) respectively. The probability that if the cause \(A_1\) is present, an event \(E\) will go along with it (whether as a result of the cause \(A_1\) or not) is \(p_1\). The probability that if the cause \(A_2\) is present, that event \(E\) will go along with it, whether as its result or not, is \(p_2\). Moreover, the event \(E\) cannot appear when both the causes \(A_1\) and \(A_2\) are absent. Required, the probability of the event \(E\).
+
+Footnote: It is easy to imagine how experience might supply data like these. Opposite the window of the room where I write there is a field that can be flooded from two causes, distinct from each other but able to act together: floods from the upper sources of the River Lee, and tides from the ocean. Suppose that observations made on \(N\) separate occasions have given these results. On \(A\) occasions the river was swollen by freshets (sudden rises from rain or melting snow), and on \(P\) of those occasions the field was flooded, whether from this cause or not. On \(B\) occasions the river was swollen by the tide, and on \(Q\) of those occasions the field was flooded, whether from this cause or not. Suppose, then, that the field cannot be flooded when _both_ these causes are absent, and that we are asked to find the total probability that it will be flooded. Here the elements \(a\), \(b\), \(p\), \(q\) of the general problem stand for the ratios \[\frac{A}{N},\; \frac{P}{A},\; \frac{B}{N},\; \frac{Q}{B},\] or rather for the values those ratios approach as the number \(N\) is increased without end.
+
+If the causes \(A_1\), \(A_2\) exclude one another, the problem becomes a familiar one, and its solution is well known to be
+\[\text{Prob. }E = c_1p_1 + c_2p_2;\]
+that is, the chance of the first cause times the chance it brings the effect, plus the same for the second. This is a particular case of a basic and very important principle in the received theory of probability. Here I propose to solve the problem without that restriction.
+
+Let us represent
+\[\begin{array}{l} \text{The cause } A_1 \text{ by } x.\\ \text{The cause } A_2 \text{ by } y.\\ \text{The effect } E \text{ by } z. \end{array}\]
+Then we have the following numerical data:
+\[\begin{aligned} &\text{Prob. }x = c_1, &\text{Prob. }y = c_2, \\ &\text{Prob. }xz = c_1p_1, &\text{Prob. }yz = c_2p_2. \qquad (1) \end{aligned}\]
+(The probability that _x_ and _z_ happen together is the chance of _x_ times the chance that _z_ goes with it, and the same for _y_.) Next, the problem lays down that if the causes \(A_1\), \(A_2\) are both absent, the effect \(E\) does not occur. That gives us the logical equation
+\[(1-x)(1-y) = v(1-z).\]
+which says that the cases with neither cause are some of the cases without the effect. Or, eliminating \(v\),
+\[z(1-x)(1-y) = 0. \qquad (2)\]
+that is, there is no case of the effect with neither cause present.
+
+Now assume,
+\[xz = s,\quad yz = t. \qquad (3)\]
+so that _s_ stands for the compound event "cause one and the effect together", and _t_ for "cause two and the effect together".
+
+Then, reducing these equations (VIII. 7) and joining the result to (2), we get a single equation that holds everything the problem tells us about the connections:
+\[xz(1-s) + s(1-xz) + yz(1-t) + t(1-yz) + z(1-x)(1-y) = 0. \qquad (4)\]
+
+From this equation we must find \(z\) as a developed logical function of \(x\), \(y\), \(s\), and \(t\), and then deduce its probability from the data,
+\[\text{Prob. }x = c_1,\quad \text{Prob. }y = c_2,\quad \text{Prob. }s = c_1p_1,\quad \text{Prob. }t = c_2p_2. \qquad (5)\]
+The point of bringing in _s_ and _t_ is that every datum is now the probability of a single symbol.
+
+Now develop (4) with respect to \(z\), putting \(\bar{x}\) for \(1 - x\), \(\bar{y}\) for \(1 - y\), and so on (a bar over a letter means "not"). We have
+\[\begin{gathered} (x\bar{s} + s\bar{x} + y\bar{t} + t\bar{y} + \bar{x}\bar{y})z + (s + t)\bar{z} = 0, \\ \therefore z = \frac{s+t}{s + t - x\bar{s} - s\bar{x} - y\bar{t} - t\bar{y} - \bar{x}\bar{y}} \\ = st x y + \frac{1}{0}st x \bar{y} + \frac{1}{0}st\bar{x} y + \frac{1}{0}st\bar{x}\bar{y} \\ + \frac{1}{0}s\bar{t} x y + s\bar{t} x \bar{y} + \frac{1}{0}s\bar{t}\bar{x} y + \frac{1}{0}s\bar{t}\bar{x}\bar{y} \\ + \frac{1}{0}\bar{s}t x y + \frac{1}{0}\bar{s}t x \bar{y} + \bar{s}t\bar{x} y + \frac{1}{0}\bar{s}t\bar{x}\bar{y} \\ + 0\bar{s}\bar{t} x y + 0\bar{s}\bar{t} x \bar{y} + 0\bar{s}\bar{t}\bar{x} y + 0\bar{s}\bar{t}\bar{x}\bar{y}. \qquad (6) \end{gathered}\]
+Read aloud, this sorts all sixteen compartments of _s_, _t_, _x_, _y_. Three of them (coefficient 1) are cases where the effect certainly happens. Four (coefficient 0) are cases where it certainly does not. The remaining nine (coefficient 1/0) are combinations the conditions of the problem make impossible.
+
+From this result we find (XVII. 17) the condition _V_, the sum of all the compartments that are possible at all:
+\[\begin{gathered} V=stxy + s \bar{t}x\bar{y} + \bar{s}t\bar{x}y + \bar{s}\bar{t}xy+\bar{s}\bar{t}x\bar{y} \\ + \bar{s}\bar{t}\bar{x}y + \bar{s}\bar{t}\bar{x}\bar{y} \\ = stxy + s\bar{t}x\bar{y} + \bar{s}t\bar{x}y+\bar{s}\bar{t}. \end{gathered}\]
+So, passing from logic to algebra, with \(u\) standing for the probability sought, we have the following system of equations. (Each fraction sets the part of _V_ in which a given event occurs against that event's known probability, as the general rule of Chapter XVII directs; the letters now stand for numbers, the unknown probabilities of the simple events once the restriction _V_ is taken away.)
+\[\begin{aligned} \frac{stxy + s\bar{t}x\bar{y} + \bar{s}\bar{t}x}{c_1} =\frac{stxy + \bar{s}t\bar{x}y + \bar{s}\bar{t}y}{c_2} \\ =\frac{stxy + s\bar{t}x\bar{y}}{c_1 p_1} =\frac{stxy + \bar{s}t\bar{x}y}{c_2 p_2} \\ =\frac{stxy + s\bar{t}x\bar{y} + \bar{s}t\bar{x}y}{u} =\frac{stxy + s\bar{t}x\bar{y} + \bar{s}t\bar{x}y + \bar{s}\bar{t}}{1} =V, \end{aligned} \qquad (7)\]
+and from it we must eliminate \(s\), \(t\), \(x\), \(y\), and \(V\), so that only _u_ and the known numbers remain.
+
+To do this we use a familiar property of equal fractions. If we have any series of equal fractions, such as
+\[\frac{a}{a'}=\frac{b}{b'}=\frac{c}{c'} \dotso =\lambda,\]
+we know that
+\[\frac{la + mb + nc}{la' + mb' + nc'}=\lambda.\]
+In words: add any multiples of the numerators, and the same multiples of the denominators, and the new fraction still has the same value. So by subtracting suitable members of the system above from one another we may deduce
+\[\frac{\bar{s}t\bar{x}y}{u-c_1 p_1} =\frac{s\bar{t}x\bar{y}}{u-c_2 p_2} =\frac{\bar{s}\bar{t}}{1-u}=V;\]
+and so, setting the product of the first three members equal to the cube of the last,
+\[\frac{s \bar{s}^2 t \bar{t}^2 x \bar{x} y \bar{y}} {(u-c_1 p_1)(u-c_2 p_2)(1-u)}=V^3. \qquad (8)\]
+
+Again, from the system (7), combining its members in another way, we have
+\[\frac{\bar{s}\bar{t}\bar{x}}{1-u-c_1 + c_1 p_1} =\frac{\bar{s}\bar{t}\bar{y}}{1-u-c_2 + c_2 p_2} =\frac{stxy}{c_1 p_1 + c_2 p_2 - u}=V,\]
+and so, proceeding as before,
+\[\frac{s \bar{s}^2 t \bar{t}^2 x \bar{x} y \bar{y}} {(1-c_1 + c_1 p_1 - u)(1-c_2 + c_2 p_2 - u) (c_1 p_1 + c_2 p_2 - u)}=V^3. \qquad (9)\]
+The two numerators are the same product of the unknowns. That is the reason for this choice of combinations: when we set the two values of the cube of _V_ in (8) and (9) equal, all of _s_, _t_, _x_, _y_ cancel at once. Equating the values of \(V^3\) in (8) and (9), we have
+\[\begin{aligned} (u-c_1 p_1)(u-c_2 p_2)(1-u) \\ = \{1-c_1(1-p_1)-u\}\{1-c_2(1-p_2)-u\}(c_1 p_1 + c_2 p_2 -u), \end{aligned}\]
+which can be written more conveniently in the form
+\[\frac{(u-c_1 p_1)(u-c_2 p_2)}{c_1 p_1 + c_2 p_2 - u} =\frac{\{1-c_1(1-p_1)-u\}\{1-c_2(1-p_2)-u\}}{1-u}. \qquad (10)\]
+
+The value of \(u\) can be found from this equation, which contains only _u_ and the data. All that remains is to decide which of its roots we must take.
+
+3. It has been shown (XIX. 12) that if \(u\) is to stand for the probability required here, it must be greater than each of the quantities \(c_1 p_1\), \(c_2 p_2\), and smaller than each of the quantities \(1-c_1(1-p_1)\), \(1-c_2(1-p_2)\) and \(c_1 p_1 + c_2 p_2\). The condition the constants themselves must meet is that each of the last three quantities must be greater than each of the first two. I shall now show that when these conditions are met, the final equation (10) has only one root that falls within the limits assigned. That root will therefore be the value of \(u\) we want.
+
+Let us represent the lower limits \(c_1 p_1\), \(c_2 p_2\), by \(a\), \(b\) respectively, and the upper limits \(1-c_1(1-p_1)\), \(1-c_2(1-p_2)\) and \(c_1 p_1 + c_2 p_2\) by \(a'\), \(b'\), \(c'\) respectively. Then the general equation can be written in the form
+\[\begin{gathered} (u-a) (u-b) (1-u)-(a'-u) (b'-u) (c'-u) = 0, \qquad (11) \\ \text{or} (1-a'-b')u^2-\{ab-a'b'+(1-a'-b')c'\} u + ab - a'b'c' = 0. \end{gathered}\]
+(The terms in the cube of _u_ cancel, so the equation is really a quadratic.) Call the left-hand side of this equation \(V\). Then we have
+\[\frac{d^2 V}{du^2}=2(1 - a' - b'). \qquad (12)\]
+that is, the rate at which the slope of _V_ changes is a fixed number, the same for every value of _u_. Now let \(a\) be the highest of the lower limits of \(u\), and \(a'\) the lowest of its upper limits, and let us follow how the value of \(V\) changes between \(u = a\) and \(u = a'\).
+
+When \(u = a\), the form of the left-hand side of (11) shows that \(V\) is negative, and when \(u = a'\) it shows that \(V\) is positive. Between those limits \(V\) changes continuously without becoming infinite, and \(\frac{d^2 V}{du^2}\) always has the same sign.
+
+So suppose \(u\) is the abscissa (the distance along the horizontal axis) and \(V\) the ordinate (the height) of a curve in the plane. The curve will pass from a point below the axis of \(u\), at \(u = a\), to a point above the axis of \(u\), at \(u = a'\). It stays continuous on the way, and it always bends in the same direction. A little attention will show that, in these circumstances, it must cross the axis of \(u\) once, and only once.
+
+So between the limits \(u = a\), \(u = a'\), there is one value of \(u\), and only one, that satisfies the equation (11). If we trace the curve in thought, it will also appear that the other value of \(u\) is less than \(a\) when the quantity \(1-a'-b'\) is positive, and greater than every one of the quantities \(a'\), \(b'\), \(c'\) when \(1-a'-b'\) is negative. It follows that in solving (11) we must take the positive sign of the square root. We thus find
+\[u=\frac{ab-a'b'+(1-a'-b')c'+\surd{Q}}{2(1-a'-b')}, \qquad (13)\]
+where \(Q = \{ab - a'b' + (1-a'-b')c'\}^2 - 4(1-a'-b') (ab-a'b'c')\).
+
+4. These results can be checked to some extent. First, it is clear that the probability of the event \(E\) must in general be greater than the probability that \(E\) occurs together with the cause \(A_1\), or together with \(A_2\). So we must have, as the solution indicates,
+\[u > c_1 p_1, \quad u > c_2 p_2.\]
+
+Again, it is clear that the probability of the effect \(E\) must in general be less than it would be if the causes \(A_1, A_2\) excluded one another. So
+\[u \stackrel{=}{<} c_1 p_1 + c_2 p_2.\]
+that is, _u_ is at most the sum of those two products.
+
+Last, the probability that the effect \(E\) fails while the cause \(A_1\) is present must, in general, be less than the absolute probability that \(E\) fails. So we have
+\[\begin{gathered} c_1 (1-p_1) \stackrel{=}{<} 1-u, \\ \therefore u \stackrel{=}{<} 1 - c_1(1-p_1). \end{gathered}\]
+In the same way,
+\[u \stackrel{=}{<} 1-c_2(1-p_2).\]
+
+So the conditions that limited the general solution are confirmed.
+
+Again, let \(p_1 = 1\), \(p_2=1\). This means supposing that whenever either of the causes \(A_1\), \(A_2\) is present, the event \(E\) will occur. Then we have \(a = c_1\), \(b = c_2\), \(a' = 1\), \(b' = 1\), \(c'= c_1 + c_2\), and substituting these in (13) we get
+\[\begin{gathered} u=\frac{ c_1 c_2 - c_1 - c_2 - 1 + \surd{\{ (c_1 c_2 - c_1 - c_2 - 1)^2 +4(c_1 c_2 - c_1 - c_2) \}} }{-2} \\ = c_1 + c_2 - c_1 c_2 \text{ on reduction} \\ = 1 - (1 - c_1) (1 - c_2). \end{gathered}\]
+Now this is the familiar expression for the probability that at least one cause will be present: one minus the chance that both are absent. In these circumstances that is plainly the probability of the event \(E\).
+
+Finally, suppose that \(c_1\) and \(c_2\) are very small, so small that their product can be neglected. Then the expression for \(u\) reduces to \(c_1 p_1 + c_2 p_2\). The smaller the probability of each cause, the smaller, and in a much higher degree, is the probability that the causes occur together. So in the end, as the probabilities go on shrinking, the probability of the event \(E\) becomes the same as if the causes excluded one another.
+
+I have dwelt on this solution at some length because it serves, in a way, as a model for those that follow. Some of them are more complex, and without this preparation they might look difficult.
+
+5. Problem II.—Instead of the supposition of the last problem, that the event \(E\) cannot happen when both the causes \(A_1\), \(A_2\) are absent, let us assume that the causes \(A_1\), \(A_2\) cannot both be absent, and let everything else stay as before. Required, then, the probability of the event \(E\).
+
+Here, in place of equation (2) of the last solution, we have the equation
+\[(1-x)(1-y) = 0.\]
+which says that there is no case in which both causes are missing. The developed logical expression for \(z\) turns out to be
+\[\begin{aligned} & z = stxy + \frac{1}{0} stx\bar{y} + \frac{1}{0}st\bar{x}y + \frac{1}{0} st\bar{x}\bar{y} \\ & + \frac{1}{0}s\bar{t}xy + s\bar{t}x\bar{y} + \frac{1}{0}s\bar{t}\bar{x}y + \frac{1}{0} s\bar{t}\bar{x}\bar{y} \\ & + \frac{1}{0}\bar{s}txy + \frac{1}{0} \bar{s}tx\bar{y} + \bar{s}t\bar{x}y + \frac{1}{0}\bar{s}t\bar{x}\bar{y} \\ & + 0 \bar{s}\bar{t}xy + 0 \bar{s}\bar{t}x\bar{y} + 0\bar{s}\bar{t}\bar{x}y + \frac{1}{0}\bar{s}\bar{t}\bar{x}\bar{y}; \end{aligned}\]
+It differs from the development in Problem I only in the last compartment, where neither cause is present: that case is now impossible. The final solution is
+\[\text{Prob. }E = u;\]
+where the quantity \(u\) is found by solving the equation
+\[\frac{(u-a)(u-b)}{a+b-u}=\frac{(a'-u)(b'-u)}{u-a'-b'+1}, \qquad (1)\]
+in which \(a=c_1 p_1\), \(b=c_2 p_2\), \(a'=1 - c_1(1-p_1)\), \(b'=1-c_2(1-p_2)\).
+
+The conditions that limit the choice are these. We must choose the value of \(u\) that is greater than each of the three quantities
+\[a, b, \text{ and } a' + b'-1,\]
+and at the same time smaller than each of the three quantities
+\[a', b', \text{ and } a + b.\]
+
+Exactly as in the last problem, we can show that the quadratic equation (1) has one root, and only one, meeting these conditions. The conditions themselves were found by the same rule as before, except that the minor limit (smallest possible value) \(a' + b'-1\) was found by looking for the major limit of \(1-z\), the largest possible probability that the effect fails.
+
+I may add that the constants in the data must meet the conditions implied above, namely that each of the quantities \(a'\), \(b'\), and \(a + b\) must be greater than each of \(a\), \(b\), and \(a' + b'-1\). Besides these, they must also meet the condition \(c_1 + c_2 \stackrel{=}{>} 1\), that is, the two chances of the causes must add up to at least one. This too follows from applying the rule.
+
+6. Problem III.—The probabilities of two events \(A\) and \(B\) are \(a\) and \(b\) respectively. The probability that if the event \(A\) takes place an event \(E\) will go along with it is \(p\), and the probability that if the event \(B\) takes place, the same event \(E\) will go along with it is \(q\). Required, the probability that if the event \(A\) takes place the event \(B\) will take place; or, _vice versâ_, the probability that if \(B\) takes place, \(A\) will take place.
+
+Let us represent the event \(A\) by \(x\), the event \(B\) by \(y\), and the event \(E\) by \(z\). Then the data are—
+\[\begin{aligned} \text{Prob. }x & = a, & \text{Prob. }y & = b. \\ \text{Prob. }x z & = a p,& \text{Prob. }y z & = b q. \end{aligned}\]
+From these we are to find
+\[\frac{\text{Prob. }x y}{\text{Prob. }x} \text{ or } \frac{\text{Prob. }x y}{\text{Prob. }y}.\]
+that is, the probability that both happen, divided by the probability of the one we are told has happened. So the real unknown is the probability of _x_ and _y_ together. Let
+\[xz=s, \quad yz = t, \quad xy=w.\]
+Eliminating \(z\), we have, after reduction,
+\[\begin{aligned} s \bar{x} + t \bar{y} + s y \bar{t} + x t \bar{s} + x y \bar{w} + (1 - x y)w = 0, \\ \therefore w = \frac{s \bar{x} + t \bar{y} + s y \bar{t} + x t \bar{s} + x y}{2 x y -1} \begin{aligned} & = xyst + \frac{1}{0}x\bar{y}st + \frac{1}{0}\bar{x}yst + \frac{1}{0}\bar{x}\bar{y}st \\ & + \frac{1}{0}xys\bar{t} + 0 x\bar{y}s\bar{t} + \frac{1}{0}\bar{x}ys\bar{t} + \frac{1}{0}\bar{x}\bar{y}s\bar{t} \\ & + \frac{1}{0}xy\bar{s}t + \frac{1}{0}x \bar{y}\bar{s}t + 0\bar{x}y\bar{s}t + \frac{1}{0}\bar{x}\bar{y}\bar{s}t \\ & + xy\bar{s}\bar{t} + 0 x\bar{y}\bar{s}\bar{t} + 0\bar{x}y\bar{s}\bar{t} + 0 \bar{x}\bar{y}\bar{s}\bar{t}. \end{aligned} \qquad (1) \end{aligned}\]
+So, passing from logic to algebra, we take the two compartments with coefficient 1 and divide by the condition _V_:
+\[\text{Prob. }xy = \frac{xyst + xy\bar{s}\bar{t}}{V},\]
+where \(x\), \(y\), \(s\), and \(t\) are found from the system of equations
+\[\begin{gathered} \frac{xyst + x\bar{y}s\bar{t} + xy\bar{s}\bar{t} + x\bar{y}\bar{s}\bar{t}}{a} = \frac{xyst + \bar{x}y\bar{s}t + xy\bar{s}\bar{t} + \bar{x}y\bar{s}\bar{t}}{b} \\ = \frac{xyst + x\bar{y}s\bar{t}}{ap}=\frac{xyst + \bar{x}y\bar{s}t}{bq} \\ = xyst + x\bar{y}s\bar{t} + \bar{x}y\bar{s}t + xy\bar{s}\bar{t} + x\bar{y}\bar{s}\bar{t} +\bar{x}y\bar{s}\bar{t}+\bar{x}\bar{y}\bar{s}\bar{t}=V. \end{gathered}\]
+This system has four unknowns besides _V_, and it is awkward as it stands. The steps that follow are a change of unknowns that makes it manageable. To bring it to a more convenient form, divide every member by \(\bar{x}\bar{y}\bar{s}\bar{t}\), and in the result let
+\[\frac{xs}{\bar{x}\bar{s}}=m, \quad \frac{yt}{\bar{y}\bar{t}}=m',\quad \frac{x}{\bar{x}}=n, \quad \frac{y}{\bar{y}}=n'.\]
+We then find
+\[\begin{gathered} \frac{m m' + m + nn' + n}{a}=\frac{mm' + m' + nn' + n'}{b} \\ =\frac{mm'+m}{ap} = \frac{mm'+m'}{bq} \\ = mm' + m + m' + nn' + n + n' + 1. \end{gathered}\]
+Also,
+\[\text{Prob. }xy = \frac{mm' + nn'}{mm'+m+m'+nn'+n+n'+1}.\]
+These equations can be reduced to the form
+\[\begin{gathered} \frac{mm'+m}{ap} =\frac{mm'+m'}{bq} =\frac{nn'+n}{a(1-p)}=\frac{nn'+n'}{b(1-q)} \\ =(m+1)(m'+1) + (n+1)(n'+1) - 1. \\ \text{Prob. }xy = \frac{mm' + nn'}{(m+1)(m'+1)+(n+1)(n'+1)-1}. \end{gathered}\]
+Now we bring in two auxiliary quantities, _μ_ and _ν_ (the Greek letters mu and nu), through which the two products in the last denominator are expressed. Assume
+\[(m+1)(m'+1)=\frac{\mu}{\nu + \mu - 1}, \quad (n+1)(n'+1)=\frac{\nu}{\nu + \mu - 1}. \qquad (2)\]
+Then since \(\displaystyle mm'+m=\frac{m(m'+1)(m+1)}{m+1}=\frac{m\mu}{(m+1)(\nu + \mu - 1)}\), and so on for the other numerators of the system, we substitute and multiply each member of the system by \(\nu + \mu - 1\), and find the following results:
+\[\begin{gathered} \frac{m \mu}{(m +1)ap} =\frac{m'\mu}{(m'+1)bq} =\frac{n \nu}{(n +1)a(1-p)} =\frac{n'\nu}{(n'+1)b(1-q)} = 1. \\ \text{Prob. }xy = (mm' + nn')(\nu + \mu - 1). \qquad (3) \end{gathered}\]
+Each of these fractions equals 1, so each gives one of the old unknowns in terms of _μ_ or _ν_. From the system above we have
+\[\frac{m}{m+1}=\frac{ap}{\mu}, \text{ whence } m=\frac{ap}{\mu-ap}.\]
+In the same way,
+\[m'= \frac{bq}{\mu-bq},\quad n = \frac{a(1-p)}{\nu - a(1-p)},\quad n'= \frac{b(1-q)}{\nu - b(1-q)}.\]
+So
+\[m + 1 = \frac{\mu}{\mu-ap},\quad n + 1 = \frac{\nu}{\nu - a(1-p)}, \text{ \&c.}\]
+Substitute these values in (2), rewritten in the form
+\[\nu + \mu - 1 = \frac{\mu}{(m+1)(m'+1)} = \frac{\nu}{(n+1)(n'+1)},\]
+and we have
+\[\nu + \mu - 1 = \frac{(\mu-ap)(\mu-bq)}{\mu} = \frac{\{\nu - a(1-p)\}\; \{\nu - b(1-q)\}}{\nu}, \qquad (4)\]
+Now _m_, _m′_, _n_, _n′_ have disappeared, and only _μ_ and _ν_ are left to find. Substitute also the values of \(m\), \(m'\), &c. in (3), and we have
+\[\begin{gathered} \text{Prob. }xy \\ = \left[ \frac{abpq}{(\mu-ap)(\mu-bq)} + \frac{ab(1-p)(1-q)} {\{\nu - a(1-p)\} \{\nu - b(1-q)\}}\right] (\nu + \mu - 1) \\ = \frac{abpq}{\mu} + \frac{ab(1-p)(1-q)}{\nu} \text{ by (4).} \end{gathered}\]
+Now the first equation of the system (4) gives
+\[\begin{gathered} \nu + \mu - 1 = \mu - ap - bq + \frac{apbq}{\mu}, \qquad (5) \\ \therefore \frac{apbq}{\mu} = \nu - 1 + ap + bq. \end{gathered}\]
+In the same way,
+\[\frac{ab(1-p)(1-q)}{\nu} = \mu - 1 + a(1-p) + b(1-q).\]
+Add these two equations together. The left-hand side of the result is exactly the expression we have just found for Prob. \(xy\), so we have
+\[\text{Prob. }xy = \nu + \mu + a + b - 2.\]
+Let us represent Prob. \(xy\) by \(u\), and let \(a + b - 2 = m\). (The letter _m_ is now free for this new use, since the old _m_ has been eliminated.) Then
+\[\mu + \nu = u - m. \qquad (6)\]
+This gives the sum of _μ_ and _ν_ in terms of _u_. We next look for a second relation between them. Again, from (5) we have
+\[\mu\nu = abpq - (ap + bq - 1)\mu. \qquad (7)\]
+In the same way, setting the first and third members of (4) equal, we have
+\[\mu \nu = ab(1-p)(1-q) - \{a(1-p)+b(1-q)-1\}\nu.\]
+Let us represent \(ap + bq - 1\) by \(h\), and \(a(1 - p) + b(1 - q) - 1\) by \(h'\). Setting the two values of \(\mu \nu\) above equal, we find
+\[\begin{aligned} h \mu - h'\nu &= ab \{pq + (1-p)(1-q)\} \\ &= ab(p + q - 1). \end{aligned}\]
+Let \(ab (p + q - 1) = l\). Then
+\[h \mu - h'\nu = l. \qquad (8)\]
+Now (6) and (8) are two simple equations in _μ_ and _ν_, and from them we get
+\[\mu = \frac{h' (u-m)+l}{m}, \quad \nu = \frac{h(u-m)-l}{m}.\]
+Substitute these values in (7), rewritten in the form
+\[\mu(\nu + h) = abpq,\]
+and we have
+\[(hu - l) \{h'(u - m) + l\} = abpqm^2, \qquad (9)\]
+a quadratic equation whose solution gives \(u\), the value of \(\text{Prob. }xy\) we are looking for.
+
+The solution can easily be put in the form
+\[u=\frac{lh'+h(h'm-l)\pm\surd{[\{lh'-h(h'm-l)\}^2+4hh'abpqm^2]}}{2hh'}.\]
+But we may also observe that
+\[lh' - h (h'm -l) = l(h + h') - hh'm = (l - hh') m,\]
+since
+\[h = ap + bq - 1, \quad h' = a (1 - p) + b (1 - q) - 1,\]
+and so
+\[h+h'=a + b-2 = m,\]
+With that simplification we find
+\[\text{Prob. }xy = \frac{lh'+h(h'm-l)\pm m\surd{\{(l-hh')^2+4hh'abpq\}}}{2hh'}. \qquad (10)\]
+It remains to decide which sign to give the square root. We could settle this by the general method used in the last problem. But it is far easier, and quite enough in this case, to settle the sign by comparing the formula with the answer in some case where we already know it. For instance, if it were certain that the event \(A\) is _always_, and the event \(B\) _never_, accompanied by the event \(E\), then it is certain that the events \(A\) and \(B\) never happen together. So if \(p = 1\), \(q = 0\), we ought to have \(u = 0\). Now the assumptions \(p = 1\), \(q = 0\), give
+\[h = a - 1,\quad h'= b - 1,\quad l = 0,\quad m = a + b - 2.\]
+Substituting these in (10), we have
+\[\text{Prob. }xy = \frac{(a-1)(b-1)(a+b-2) \pm (a + b - 2)(a-1)(b-1)}{2(a-1)(b-1)},\]
+and this expression is zero when we take the lower sign, the minus. So the final solution of the general problem will be expressed in the form
+\[\frac{\text{Prob. }xy}{\text{Prob. }x} = \frac{ lh' + h(h'm-l) - m\surd{\{(l-hh')^2 + 4hh'abpq\}} }{2ahh'},\]
+where \(h = ap + bq - 1,\quad h' = a(1-p) + b(1-q) - 1\),
+\[l = ab(p + q - 1),\quad m = a + b - 2.\]
+The terms in the final logical solution that carry the coefficient \(\frac{1}{0}\) are the same as in the first problem of this chapter. So the conditions the constants must meet will be the same, namely
+\[ap \stackrel{=}{<} 1 - b(1-q),\quad bq \stackrel{=}{<} 1 - a(1-p).\]
+
+Footnote: The numerator was originally “\((a-1)b-1)(a+b-2)\dots\)”, and was fixed in 2004 by Distributed Proofreaders.
+
+7. One confirmation that this solution is correct is that the expression we found is symmetrical in the two sets of quantities \(p\), \(q\), and \(1 - p\), \(1 - q\). That is, if we change \(p\) into \(1 - p\), and \(q\) into \(1 - q\), the expression is unchanged. This can be seen from the equation
+\[\text{Prob. }xy = ab\left\{ \frac{pq}{\mu} + \frac{(1-p)(1-q)}{\nu} \right\}\]
+which we used on the way to the final result. Now if there are probabilities \(p\), \(q\) of the event \(E\), given that we know \(A\) or \(B\) has occurred, there are also probabilities \(1 - p\), \(1 - q\) of the contrary event, that is, of \(E\) not occurring in the same circumstances. The data keep the same form whether we count in them the occurrence of \(E\) or its failure. So it is clear that the solution ought to be, as it is, a symmetrical function of \(p\), \(q\) and \(1 - p\), \(1 - q\).
+
+Let us look at the particular case in which \(p = 1\), \(q = 1\). We find
+\[h = a + b - 1, \quad h' = -1, \quad l = ab, \quad m = a + b - 2,\]
+and substituting,
+\[\begin{gathered} \frac{\text{Prob. }xy}{\text{Prob. }x} =\frac{-ab + (a+b-1)(2-a-b-ab)-(a+b-2)(ab-a-b+1)}{-2a(a+b-1)} \\ =\frac{-2ab(a+b-1)}{-2a(a+b-1)}=b. \end{gathered}\]
+So it seems that in this case the events \(A\) and \(B\) are in effect independent of each other: knowing that _A_ has happened leaves the chance of _B_ just what it was. Suppose both are invariably accompanied by some other event \(E\), and suppose we know absolutely nothing about how often _E_ occurs, beyond what can be inferred from this particular connection. That supposition does not set up any dependence between the events \(A\) and \(B\) themselves. I believe this conclusion agrees with reason, though particular examples may seem at first sight to point the other way. Take two events: first, a particular species of weed being cast up on the seashore; second, a certain kind of zoophyte (a plant-like sea animal, such as a sponge or coral) being cast up there too. Suppose their probabilities had been separately found, and suppose it had also been established that neither could happen except when the waves are stirred up by a storm. Then, I think, we would rightly conclude that the two events were not independent. Picking up a piece of the weed would, presumably, make finding the zoophytes more likely than it would otherwise have been. But I believe this comes from our knowing something else, which is not contained in the conditions of the problem: that a storm is only an _occasional_ phenomenon. Confine the range of observation to a sea that is _always_ churned by storms. Then, I suppose, we would see that the casting up of the weeds and of the zoophytes ought to count as independent events. To put it more generally, there are conditions common to all phenomena, conditions which, we feel, do not affect whether they are independent of one another. So I believe the solution shows this: when a particular condition has held throughout the whole of our _recorded experience_, it takes on that same character with respect to the class of phenomena that experience has covered.
+
+8. Problem IV.—To illustrate these remarks a little, let us be given, in addition to the data of the last problem, the absolute probability of the event \(E\). The complete system of data is then
+\[\begin{gathered} \text{Prob. }x = a, \quad \text{Prob. }y = b, \quad \text{Prob. }z = c, \\ \text{Prob. }xz = ap, \quad \text{Prob. }yz = bq, \end{gathered}\]
+and we are asked to find \(\text{Prob. }xy\).
+
+Assuming, as before, \(xz = s\), \(yz=t\), \(xy = w\), the final logical equation is
+\[\begin{aligned} w = xystz + xy\bar{s}\bar{t}\bar{z} + 0(x\bar{y}s\bar{t}z + \bar{x}y\bar{s}tz + x\bar{y}\bar{z}\bar{s}\bar{t}+ xy\bar{z}\bar{s}\bar{t} \\ + \bar{x}\bar{y}z\bar{s}\bar{t}+ \bar{x}\bar{y}\bar{z}\bar{s}\bar{t}) \\ + \text{ terms whose coefficients are } \frac{1}{0}. \qquad (1) \end{aligned}\]
+Once the algebraic system has been formed, the eliminations that follow can be simplified by the same changes of unknowns we used in the last problem. The final result is
+\[\text{Prob. }xy = ab \left\{ \frac{pq}{c} + \frac{(1-p)(1-q)}{1-c} \right\}. \qquad (2)\]
+The conditions the constants must meet are
+\[c \stackrel{=}{>} ap, \quad c \stackrel{=}{>} bq, \quad c \stackrel{=}{<} 1 - a(1 - p), \quad c \stackrel{=}{<} 1-b(1-q).\]
+
+Now if \(p = 1\), \(q = 1\), we find
+\[\text{Prob. }xy = \frac{ab}{c},\]
+where \(c\) cannot take any value less than \(a\) or \(b\). It follows that if the event \(E\) is known to be an _occasional_ one, the fact that it always goes along with the events \(x\) and \(y\) _increases_ the probability that they happen together, in inverse proportion to how often _E_ itself happens: the rarer the shared companion, the more closely the two are tied. Formula (2) can be checked in a large number of cases. As one particular instance, let \(q = c\). We find
+\[\text{Prob. }xy = ab. \qquad (3)\]
+Now the assumption \(q = c\) means, by the definition (Chap. XVI.), that the events \(B\) and \(E\) are independent: the chance of _E_ is the same whether or not _B_ has happened. If \(B\) and \(E\) are independent, then no relation that may exist between \(A\) and \(E\) can set up a relation between \(A\) and \(B\). So \(A\) and \(B\) are also independent, as equation (3) above implies.
+
+It can easily be shown from (2) that the value of \(\text{Prob. }z\) that makes \(\text{Prob. }xy\) as small as possible is
+\[\text{Prob. }z = \frac{\surd(pq)}{\surd(pq)+\surd(1-p)(1-q)}.\]
+If \(p = q\), this gives
+\[\text{Prob. }z = p;\]
+a result whose correctness can be shown by the same considerations we applied to (3).
+
+Problem V.—Given the probabilities of any three events, and the probability that all three happen together; required, the probability that any two of them happen together.
+
+Suppose the data are
+\[\text{Prob. }x = p, \quad \text{Prob. }y = q, \quad \text{Prob. }z = r, \quad \text{Prob. }xyz = m,\]
+and the quæsitum is \(\text{Prob. }xy\).
+
+Assuming \(xyz = s\), \(xy = t\), we find as the final logical equation
+\[t=xyzs + xy\bar{z}\bar{s} + 0(x\bar{y}\bar{s} + \bar{x}\bar{s}) + \frac{1}{0}(\text{sum of all other constituents});\]
+and so, in the end,
+\[\text{Prob. }xy = \frac{H-\surd(H^2 - 4pq\bar{r}^2 - 4\bar{p}\bar{q}\bar{r}m)} {2\bar{r}},\]
+where
+\[\bar{p} = 1-p, \text{ \&c}. \quad H= \bar{p}\bar{q} + (p + q)\bar{r}.\]
+This can be checked when \(p = 1\), when \(q = 1\), when \(r = 0\), and so \(m = 0\), and so on.
+
+If the condition \(\text{Prob. }z = r\) had been left out, the solution would still have been definite. We would have had
+\[\text{Prob. }xy = \frac{pq(1-m) + (1-p)(1-q)m}{1 - m};\]
+and I may add, as a final confirmation that both results are correct, that they become identical when \(m = pqr\), that is, when the probability of all three together is just the product of their separate probabilities, as it would be for independent events.
+
+9. The following problem is a generalization of Problem I. Its solution is necessarily more complex, but it is reached by a similar analysis.
+
+Problem VI.—Suppose an event can happen only as a result of one or more of certain causes \(A_1, A_2, \dotsc A_n\). In general, let \(c_i\) stand for the probability of the cause \(A_i\), and \(p_i\) for the probability that if the cause \(A_i\) exists, the event \(E\) will occur. Then, given the series of values of \(c_i\) and \(p_i\), required, the probability of the event \(E\). Let the causes \(A_1, A_2, \dotsc A_n\) be represented by \(x_1, x_2, \dotsc x_n\), and the event \(E\) by \(z\).
+
+Footnote: It may be proper to mention that I put the above problem before mathematicians in the Cambridge and Dublin Mathematical Journal, Nov. 1851, with the following remarks: “The motives which have led me, after much consideration, to adopt, with reference to this question, a course unusual in the present day, and not upon slight grounds to be revived, are the following:—First, I propose the question as a test of the sufficiency of received methods. Secondly, I anticipate that its discussion will in some measure add to our knowledge of an important branch of pure analysis. However, it is upon the former of these grounds alone that I desire to rest my apology. “While hoping that some may be found who, without departing from the line of their previous studies, may deem this question worthy of their attention, I wholly disclaim the notion of its being offered as a trial of personal skill or knowledge, but desire that it may be viewed solely with reference to those public and scientific ends for the sake of which alone it is proposed.” I think it right to add that publishing the problem led to some interesting private correspondence, but did not bring out a solution.
+
+Then in general we have
+\[\text{Prob. }x_i = c_i,\qquad \text{Prob. }x_i z = c_i p_i.\]
+that is, for each cause, its own probability, and the probability that it and the event occur together. Further, the condition that \(E\) can happen only along with one or more of the causes \(A_1, A_2, \dotsc A_n\) sets up the logical condition
+\[z(1-x_1)(1-x_2) \dotsc (1-x_n) = 0. \qquad (1)\]
+which says there is no case of the event when every cause is absent.
+
+Now let us assume in general
+\[x_i z = t_i,\]
+which can be reduced to the form
+\[x_i z(1-t_i) + t_i(1-x_i z) = 0,\]
+This is the pattern for a system of \(n\) equations, one for each cause, which together with (1) express the logical conditions of the problem. After the reduction just made we are allowed to add all these equations together, and doing so we have
+\[\sum\{ x_i z(1-t_i) + t_i(1-x_i z) \} + z(1-x_1)(1-x_2) \dotsc (1-x_n) = 0, \qquad (2)\]
+(the sum marked by \(\sum\) running from \(i = 1\) to \(i = n\)). This single logical equation is enough. Together with the \(2n\) data, represented by the general equations
+\[\text{Prob. }x_i = c_i,\quad \text{Prob. }t_i = c_i p_i, \qquad (3)\]
+it makes up the material from which we are to find Prob. \(z\).
+
+Let (2) be developed with respect to \(z\). We have
+\[\begin{gathered} \left[ \sum\{ x_i (1-t_i) + t_i(1-x_i ) \} + (1-x_1)(1-x_2) \dotsc (1-x_n) \right] z \\ + \sum t_i(1-z) = 0, \end{gathered}\]
+and so
+\[z = \frac{ \sum t_i } { \sum t_i - \sum\{ x_i (1-t_i) + t_i(1-x_i) \} - (1-x_1)(1-x_2) \dotsc (1-x_n) }. \qquad (4)\]
+We now have to work out the coefficient of every constituent when the right-hand side is developed, and we do it by sorting the constituents into kinds. Any constituent in the expansion of the right-hand side of the equation above will have \(2n\) factors. Of these, \(n\) are taken from the set \(x_1, x_2, \dotsc x_n, 1-x_1, 1-x_2, \dotsc 1-x_n\), and \(n\) from the set \(t_1, t_2, \dotsc t_n, 1-t_1, 1-t_2 \dotsc 1-t_n\), and no pairing such as \(x_1(1-x_1), t_1(1-t_1)\) is allowed, since a thing cannot be both _x_ and not _x_. Let us first consider the constituents whose _t_-factor is \((1-t_1), (1-t_2) \dotsc (1-t_n)\), where by the \(t\)-factor I mean the part taken from the set \(t_1,\dotsc 1-t_1\).
+
+We find the coefficient of any such constituent by changing \(t_1, t_2, \dotsc t_n\) each into \(0\) in the right-hand side of (4), and then giving \(x_1, x_2, \dotsc x_n\) the values that the \(x\)-factor of the constituent calls for. Now if we simply put for \(t_1, t_2, \dotsc t_n\) the value \(0\), the right-hand side becomes
+\[\frac{0}{ -\sum x_i - (1-x_1)(1-x_2) \dotsc (1-x_n) },\]
+and this is zero whatever values, 0 or 1, we then give to \(x_1, x_2, \dotsc x_n\). For if those values are not all 0, the term \(\sum x_i\) is not zero; and if they are all 0, the term \(-(1-x_1) \dotsc (1-x_n)\) becomes \(-1\). Either way the denominator is not zero, and so the fraction is. So the coefficients of all constituents that have \((1-t_1) \dotsc (1-t_n)\) as a factor will be 0. And since all the possible \(x\)-constituents added together make unity, there will be an aggregate term \(0(1-t_1)\dotsc (1-t_n)\), standing for all of them at once, in the development of \(z\).
+
+Next, consider any constituent whose \(t\)-factor is \(t_1\; t_2 \dotsc t_r(1-t_{r+1}) \dotsc (1-t_n)\), with \(r\) equal to or greater than unity. Putting \(t_1 = 1,\dotsc t_r = 1, t_{r+1} = 0, \dotsc t_n = 0\) in the right-hand side of (4), we get the expression
+\[\frac{r}{x_1\dotsc + x_r - x_{r+1} \dotsc - x_n - (1-x_1)(1-x_2)\dotsc (1-x_n)}\]
+Now the only values the symbols can take are 0 and 1. So it is clear that this expression will equal 1 when \(x_1 = 1\dotsc x_r = 1, x_{r+1} = 0,\dotsc x_n = 0\), and that for every other combination of values it will take a value greater than unity. So the coefficient 1 will go to all constituents of the final development that have the form
+\[x_1\dotsc x_r(1-x_{r+1})\dotsc (1-x_n)\, t_1\dotsc t_r(1-t_{r+1})\dotsc (1-t_n),\]
+where the \(x\)-factor matches the \(t\)-factor, while the other constituents that fall under this case will in effect have the coefficient \(\frac{1}{0}\). In plain terms: a compartment in which the _t_'s present are exactly the _x_'s present is a case of the event; the other compartments of this kind cannot occur. It is also plain that this reasoning does not depend on the particular arrangement or order of the individual symbols.
+
+So the complete expansion of \(z\) will have the form
+\[\begin{gathered} z = \sum(XT) + 0(1-t_1)(1-t_2)\dotsc (1-t_n) \\ + \text{ constituents whose coefficients are }\frac{1}{0}, \qquad (5) \end{gathered}\]
+where \(T\) stands for any \(t\)-constituent except \((1-t_1)\dotsc (1-t_n)\), and \(X\) for the matching constituent of \(x_1\dotsc x_n\). For instance, if \(n = 2\), we shall have
+\[\sum (XT) = x_1 x_2 t_1 t_2 + x_1 \bar{x}_2 t_1 \bar{t}_2 + \bar{x}_1 x_2 \bar{t}_1 t_2,\]
+with \(\bar{x}_1\), \(\bar{x}_2\), &c. standing for \(1 - x_1\), \(1 - x_2\), &c.; and so
+\[\begin{gathered} \begin{aligned} z = x_1 x_2 t_1 t_2 + x_1 \bar{x}_2 t_1 \bar{t}_2 + \bar{x}_1 x_2 \bar{t}_1 t_2 \qquad (6) \\ + 0(x_1 x_2 \bar{t}_1 \bar{t}_2 + x_1 \bar{x}_2 \bar{t}_1 \bar{t}_2 + \bar{x}_1 x_2 \bar{t}_1 \bar{t}_2 + \bar{x}_1 \bar{x}_2 \bar{t}_1 \bar{t}_2) \\ + \text{ constituents whose coefficients are }\frac{1}{0}. \end{aligned} \end{gathered}\]
+Allowing for the difference of notation, this agrees with the developed form of \(z\) in Problem I. of this chapter, as it clearly should.
