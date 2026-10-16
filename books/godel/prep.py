@@ -168,8 +168,10 @@ def blocks():
 def compose():
     secs, cur = [], None
     pending_num = None
-    notes = {}                  # number -> text
+    notes = Notes()             # number -> text
+    more = {}                   # number -> [(kind, text)]: the note's own displays
     last_fn = None
+    fn_leaf = None
     for leaf, kind, text in blocks():
         if kind == "H":
             if text in CHAPTERS:
@@ -200,7 +202,15 @@ def compose():
             cur[1].append(("H", text))
             continue
         items = cur[1]
+        # A NOTE CAN CARRY DISPLAYS (2026-10-16): footnotes sit at the foot
+        # of the page, so anything after one on the same leaf is still that
+        # note. Footnote 3 (leaf 045) shows its Chicago examples this way, and
+        # they had been set in the body, after the next paragraph.
+        if kind in ("P", "D") and leaf == fn_leaf:
+            more.setdefault(last_fn, []).append((kind, text))
+            continue
         if kind == "FN":
+            fn_leaf = leaf
             num, body = text
             if num == "cont":
                 notes[last_fn] = join_break(notes[last_fn].rstrip(" ⟨cont⟩").rstrip(), body)
@@ -233,7 +243,12 @@ def compose():
             items[k] = (items[k][0], join_break(items[k][1].replace("⟨cont⟩", "").rstrip(), text[len("⟨cont⟩"):].strip()))
             continue
         items.append((kind, text))
+    notes.more = more
     return secs, notes
+
+
+class Notes(dict):
+    more = {}
 
 
 def place_notes(items, notes):
@@ -292,6 +307,11 @@ def render(title, items, notes):
             lines.append(curl(text))
         elif kind == "FN":
             lines.append(f"Footnote: {text.translate(SUP)} " + exponents(notes[text]))
+            # its displays follow it; a paragraph of the note says so, which
+            # is what lets the endnotes build take the note whole
+            for k2, t2 in notes.more.get(text, []):
+                lines.append("")
+                lines.append("\t" + exponents(t2) if k2 == "D" else "Footnote, continued: " + exponents(t2))
         elif kind == "T":
             lines.append(curl(text))
         else:

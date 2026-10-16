@@ -895,11 +895,63 @@ def build_toc(sections):
     return "\n".join(toc)
 
 
-def build_body(sections, figdir=None, site=None, bare_label=False):
+# A NOTE AS LINKED ENDNOTES (ENDNOTES=yes in env; Gödel's Proof first,
+# 2026-10-16). The text keeps the house convention -- "Footnote: ⁿ ..."
+# after the paragraph that cites it, with any displays of its own and
+# "Footnote, continued: ..." paragraphs right after -- and the renderers
+# lift each note out of the flow and link its mark to it.
+NOTE_OPEN = re.compile(r'[ \t]*<p>Footnote: <sup>(\d+)</sup>\s*(.*?)</p>\n?', re.S)
+NOTE_MORE = re.compile(r'[ \t]*(<p>Footnote, continued: (.*?)</p>'
+                       r'|<blockquote class="lines">.*?</blockquote>'
+                       r'|<pre class="outline">.*?</pre>)\n?', re.S)
+
+
+def extract_notes(t, ref, first=1):
+    """Rendered HTML -> (HTML with each mark a link, [(k, number, blocks)]).
+    `ref(k)` returns the mark's markup. The mark is the last <sup>N</sup>
+    before the note, not after a digit (2<sup>8</sup> is an exponent).
+    Notes must run 1, 2, 3 ... through the book: a reader's list renumbers."""
+    notes, k = [], first
+    while (m := NOTE_OPEN.search(t)):
+        n, end = m.group(1), m.end()
+        blocks = [f"<p>{m.group(2).strip()}</p>"]
+        while (c := NOTE_MORE.match(t, end)):
+            blocks.append(f"<p>{c.group(2).strip()}</p>" if c.group(2) is not None
+                          else c.group(1))
+            end = c.end()
+        marks = list(re.finditer(rf"(?<!\d)<sup>{n}</sup>", t[:m.start()]))
+        if not marks:
+            raise SystemExit(f"footnote {n} has no mark before it")
+        if str(k) != n:
+            raise SystemExit(f"footnote {n} is the book's note {k}: endnotes must run 1, 2, 3 ...")
+        mk = marks[-1]
+        t = t[:mk.start()] + ref(k) + t[mk.end():m.start()] + t[end:]
+        notes.append((k, n, blocks))
+        k += 1
+    return t, notes
+
+
+def page_notes(body, first):
+    """One section's notes, gathered at its end."""
+    body, notes = extract_notes(
+        body, lambda k: f'<sup><a href="#note-{k}" id="noteref-{k}" class="noteref">{k}</a></sup>', first)
+    if not notes:
+        return body, first
+    items = []
+    for k, n, blocks in notes:
+        back = f'<a href="#noteref-{k}" class="backlink" aria-label="Back to the text">↩</a>'
+        last = blocks[-1]
+        last = last[:-4] + f" {back}</p>" if last.endswith("</p>") else last + f"\n<p>{back}</p>"
+        items.append(f'<li id="note-{k}" value="{k}">' + "\n".join(blocks[:-1] + [last]) + "</li>")
+    items = "\n".join(items)
+    return body + f'\n<aside class="notes" aria-label="Notes">\n<ol>\n{items}\n</ol>\n</aside>', notes[-1][0] + 1
+
+
+def build_body(sections, figdir=None, site=None, bare_label=False, endnotes=False):
     """Each section is a <section> named by its heading; a part divider opens
     a <section class="part"> that holds every section up to the next divider,
     so the HTML outline is the book's own (Part > Chapter)."""
-    out, in_part = [], False
+    out, in_part, note = [], False, 1
     for s in sections:
         if s["part_before"]:
             if in_part:
@@ -911,8 +963,11 @@ def build_body(sections, figdir=None, site=None, bare_label=False):
         tag = "h3" if s["is_chapter"] else "h2"
         out.append(f'<section aria-labelledby="{s["id"]}">')
         out.append(f'<{tag} id="{s["id"]}">{html.escape(s["heading"])}</{tag}>')
-        out.append(render_body(s["body"], figdir, site, bare_label,
-                               sub="h4" if tag == "h3" else "h3"))
+        body = render_body(s["body"], figdir, site, bare_label,
+                           sub="h4" if tag == "h3" else "h3")
+        if endnotes:
+            body, note = page_notes(body, note)
+        out.append(body)
         out.append("</section>")
     if in_part:
         out.append("</section>")
@@ -1066,7 +1121,8 @@ def main():
         "{{INTRODUCTION}}": render_introduction(book, args.original),
         "{{TOC}}": build_toc(sections),
         "{{BODY}}": build_body(sections, env.get("FIGURE_DIR"), root / "site",
-                               bare_label=args.original),
+                               bare_label=args.original,
+                               endnotes=env.get("ENDNOTES") == "yes" and not args.original),
     }.items():
         page = page.replace(key, val)
 

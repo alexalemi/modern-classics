@@ -323,6 +323,16 @@ table.math td { padding: 0.1em 0.6em; vertical-align: baseline; }
 table.math td:first-child { padding-left: 0; }
 table.math.signs td { text-align: center; padding: 0.1em 0.3em; }
 
+/* linked notes (ENDNOTES=yes): each chapter's notes gathered at its end */
+a.noteref { text-decoration: none; padding: 0 0.1em; }
+aside.notes { margin: 2.5em 0 1em; padding-top: 1em; border-top: 1px solid var(--rule); font-size: 0.9em; }
+aside.notes ol { padding-left: 1.6em; margin: 0; }
+aside.notes li { margin-bottom: 0.8em; }
+aside.notes li p { margin: 0.4em 0; text-indent: 0; }
+aside.notes pre.outline { margin: 0.4em 0; }
+a.backlink { text-decoration: none; }
+:target { scroll-margin-top: 3rem; }
+
 /* page locators: a printed page and quarter, for books that cite
    themselves by them (Helmholtz: "see p. 77c") */
 span.loc { font-size: 0.65em; color: var(--soft); vertical-align: 0.3em; padding: 0 0.15em; font-style: normal; }

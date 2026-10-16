@@ -860,6 +860,41 @@ def reescape_amp(dest):
     return n
 
 
+def make_endnotes(textdir, spine):
+    """ENDNOTES=yes in env (Gödel's Proof first, 2026-10-16): the notes leave
+    the flow for an endnotes.xhtml in Standard Ebooks' layout, each mark a
+    link to its note and each note a backlink home (assemble.extract_notes
+    finds them). Reading apps show these as popups; CrossPoint lists a
+    page's links under "Links and footnotes", and Back returns. The noteref
+    sits INSIDE <sup>: CrossPoint's CSS has no attribute selectors, so se's
+    [epub|type~="noteref"] superscript rule never reaches it there.
+    Returns the endnotes file name, or None if the book has no notes."""
+    notes = []
+    for fname in spine:
+        f = textdir / fname
+        t, found = assemble.extract_notes(
+            f.read_text(), lambda k: f'<sup><a href="endnotes.xhtml#note-{k}" id="noteref-{k}" '
+                                     f'epub:type="noteref">{k}</a></sup>', len(notes) + 1)
+        f.write_text(t)
+        notes += [(k, fname, blocks) for k, n, blocks in found]
+    if not notes:
+        return None
+    items = []
+    for k, fname, blocks in notes:
+        back = f'<a href="{fname}#noteref-{k}" epub:type="backlink">↩</a>'
+        last = blocks[-1]
+        last = last[:-4] + f" {back}</p>" if last.endswith("</p>") else last + f"\n<p>{back}</p>"
+        body = "\n".join("\t\t\t\t\t" + b.strip() for b in blocks[:-1] + [last])
+        items.append(f'\t\t\t\t<li id="note-{k}" epub:type="endnote">\n{body}\n\t\t\t\t</li>')
+    xml = (XHTML_HEAD.format(title="Endnotes", fic="")
+           .replace('epub:type="bodymatter "', 'epub:type="backmatter"')
+           + '\t\t<section id="endnotes" epub:type="endnotes">\n'
+           + '\t\t\t<h2 epub:type="title">Endnotes</h2>\n\t\t\t<ol>\n'
+           + "\n".join(items) + "\n\t\t\t</ol>\n\t\t</section>\n\t</body>\n</html>\n")
+    (textdir / "endnotes.xhtml").write_text(xml)
+    return "endnotes.xhtml"
+
+
 def run(cmd, cwd, check=True):
     r = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True, input="y\n")
     if check and r.returncode not in (0, 18):  # 18 = NoResults on finder tools
@@ -975,6 +1010,11 @@ def main():
         (textdir / "halftitlepage.xhtml").write_text(ht)
         first_body = next((i for i, m in enumerate(matters) if m != "frontmatter"), len(matters))
         spine = spine[:first_body] + ["halftitlepage.xhtml"] + spine[first_body:]
+
+    if env.get("ENDNOTES") == "yes" and not args.original:
+        notes_file = make_endnotes(textdir, spine)
+        if notes_file:
+            spine.append(notes_file)
 
     # local.css additions — only rules actually used by the generated text
     used = "".join((textdir / f).read_text() for f in spine)

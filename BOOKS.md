@@ -3993,6 +3993,12 @@ one side only, or a false one before a footnote); prep reports any orphan.
 Old-style figures OCR as letters ("io" for page 10). The index is dropped;
 the Appendix cites 1958 page numbers, as the introduction says.
 COVER: Dürer, Melencolia I (1514).
+NOTES (2026-10-16): ENDNOTES=yes, the trial of linked notes. Footnote 3
+runs onto leaf 045 with six display lines and four paragraphs (the Chicago
+examples); prep had set them in the body after the next paragraph, on the
+page, in the epub and in print. prep now keeps anything after a note on
+the same leaf with the note (the only such leaf). The arrow diagram in
+Chapter VII is a table (prep.render).
 PRINT (2026-10-12): `build_print.py godel` -> 102 pp. PRINT_NUMERALS=lining
 in env (old-style 0 reads as the letter o in s0). The six cross-references
 to 1958 pages (Appendix notes 1-3, "see page 73" x2, "p. 63") are re-pointed

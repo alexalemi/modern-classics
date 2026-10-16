@@ -124,6 +124,8 @@ class Conv:
                 inner = " \\\n"
             elif tag == "span" and ("z3998:small-caps" in t or "small-caps" in (c.get("class") or "")):
                 inner = f"#smallcaps[{inner.lower()}]"
+            elif tag == "sup" and any("noteref" in types(x) for x in c):
+                pass            # <sup><a noteref> (CrossPoint): the note is the mark
             elif tag == "sup":
                 n = "".join(c.itertext()).strip()
                 prev = "".join(out)[-1:]
@@ -366,7 +368,11 @@ def read_epub(path):
                 for a in li.findall(".//x:a", NS):
                     if "backlink" in types(a):
                         a.getparent().remove(a)
-                notes[li.get("id")] = " ".join(Conv({}).inline(p) for p in li.findall("x:p", NS)).strip()
+                # a note may hold displays of its own (Gödel's note 3): its
+                # paragraphs and display lines, each on a line, displays indented
+                notes[li.get("id")] = " #linebreak() ".join(
+                    ("#h(1.5em)" if etree.QName(p.getparent()).localname == "blockquote" else "")
+                    + Conv({}).inline(p).strip() for p in li.iter("{%s}p" % NS["x"])).strip()
     return z, spine, docs, notes
 
 
