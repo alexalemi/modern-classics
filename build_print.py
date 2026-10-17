@@ -342,6 +342,34 @@ def resolve_page_refs(book, text):
     return text
 
 
+def fit_paragraphs(book, text):
+    """The compositor's last resort for a page the layout checks flag (a
+    chapter's last two lines run onto a page of their own, a word broken
+    across the leaf): set a few paragraphs a hair tighter or looser so they
+    lose or gain a line. books/{book}/print_fit.tsv lists them as
+
+        <a phrase in the paragraph, occurring once><TAB><tracking, e.g. -0.01em>
+
+    Only paragraphs with a short last line give a line back for a tracking
+    no reader can see; keep it within +-0.015em. Returns (text, count)."""
+    f = paths.book_dir(book) / "print_fit.tsv"
+    if not f.exists():
+        return text, 0
+    rows = [l.split("\t") for l in f.read_text().splitlines() if l.strip() and not l.startswith("#")]
+    for phrase, track in rows:
+        if text.count(phrase) != 1:
+            sys.exit(f"print_fit.tsv: phrase occurs {text.count(phrase)} times, not once: {phrase!r}")
+        if not re.fullmatch(r"-?0\.0(0\d*|1[0-5]?\d*)em", track):
+            sys.exit(f"print_fit.tsv: tracking out of range (+-0.015em): {track!r}")
+        # a paragraph is one line of the Typst (a quote's too, inside its [])
+        i = text.index(phrase)
+        a = text.rfind("\n", 0, i) + 1
+        b = text.find("\n", i)
+        b = len(text) if b < 0 else b
+        text = text[:a] + f"#[#set text(tracking: {track})\n{text[a:b]}\n]" + text[b:]
+    return text, len(rows)
+
+
 FRONT = ("acknowledgment", "acknowledgement", "preface", "foreword", "dedication", "epigraph")
 
 
@@ -556,7 +584,8 @@ def build_typ(book, env, epub, workdir, inner, tail=0):
             sys.exit(f"{h}: notes never cited in the text: {sorted(conv.fnotes, key=int)}")
     restored = env.get("EDITION", "").lower() == "restored"
     SEP = "\n// ===== body =====\n"
-    intro_s, body_s = resolve_page_refs(book, "".join(intro) + SEP + "".join(body)).split(SEP)
+    text, _ = fit_paragraphs(book, resolve_page_refs(book, "".join(intro) + SEP + "".join(body)))
+    intro_s, body_s = text.split(SEP)
     doc = TEMPLATE % dict(
         navy=NAVY, numerals=tstr(env.get("PRINT_NUMERALS", "old-style")), booktitle=tstr(env["ORIGINAL_WORK"]), author=tstr(env["AUTHOR"]),
         shorttitle=tstr(env.get("SHORT_TITLE") or re.split(r"[:;]| — ", env["ORIGINAL_WORK"])[0].strip()),

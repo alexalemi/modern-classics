@@ -3999,13 +3999,18 @@ examples); prep had set them in the body after the next paragraph, on the
 page, in the epub and in print. prep now keeps anything after a note on
 the same leaf with the note (the only such leaf). The arrow diagram in
 Chapter VII is a table (prep.render).
-PRINT (2026-10-12): `build_print.py godel` -> 102 pp. PRINT_NUMERALS=lining
+PRINT (2026-10-12): `build_print.py godel` -> 102 pp. (100 since 10-17) PRINT_NUMERALS=lining
 in env (old-style 0 reads as the letter o in s0). The six cross-references
 to 1958 pages (Appendix notes 1-3, "see page 73" x2, "p. 63") are re-pointed
 by print_refs.tsv; "p. 63" cites the Richard-Paradox discussion, whose
 "hoax" passage is on 1958 p. 63 (the number n is defined on p. 62), so the
 anchor is "We can outflank". Figures redrawn at ~900 ppi by figures.py
 --print. RIGHTS: US-only distribution (Newman d. 1966, Nagel d. 1985).
+LAYOUT (2026-10-17): the report's last three flags cleared by print_fit.tsv
+(five paragraphs at +-0.01-0.015em): Chapter III's two-line last page pulled
+back (the book is now 100 pp.), the Appendix's four-line last page given a
+fifth, "meta-|mathematical" off the foot of a recto. The six loose lines
+are the hyphenation trade-off in layout_checks' docstring, left.
 
 ## beecher/ — Catharine E. Beecher & Harriet Beecher Stowe, The American Woman's Home (1869), RESTORED EDITION
 

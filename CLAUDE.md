@@ -295,7 +295,11 @@ books/{book}/              # One directory per book
   hyphen ladders, 1-4-line pages, loose lines, stray markup. The checks are
   the floor; the sheets catch what they cannot (a split table, a chapter
   in the wrong place, front matter in the body). Gödel's Proof's first
-  proof had five of these and passed every original check.
+  proof had five of these and passed every original check. A short page
+  or a word broken across the leaf is fixed the compositor's way, in
+  `{book}/print_fit.tsv`: a phrase from a paragraph TAB a tracking within
+  +-0.015em, tightening a paragraph with a short last line to lose one or
+  loosening a full one to gain one (Gödel's, 2026-10-17).
 - `gencover/` — generated covers (Alex, 2026-10-12), in the manner of the
   1950s-60s Dover science paperbacks: a spot-colour field, the title knocked
   out of it, and ONE DIAGRAM TAKEN FROM THE BOOK (its own figure or worked
