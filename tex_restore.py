@@ -91,7 +91,16 @@ class Doc:
     # ------------------------------------------------------------ cleanup
     @staticmethod
     def strip_comments(s):
+        # a line that is all comment goes with its newline: left empty, it
+        # would end the paragraph it sits in (a transcriber's note mid-paragraph)
+        s = re.sub(r"(?m)^[ \t]*%.*\n", "", s)
         return re.sub(r"(?<!\\)%.*", "", s)
+
+    # markers that print nothing and may sit on a line of their own inside a
+    # paragraph: such a line goes whole, or the two newlines left around it
+    # end the paragraph (Poincare and Whitehead had ~400 paragraphs cut at
+    # page turns and index entries)
+    INLINE_MARKS = ("PageSep", "index", "label", "BookMark")
 
     def drop_macro(self, s, name, nargs, optional=False):
         """Remove every \\name[opt]{..}... with its arguments."""
@@ -104,6 +113,12 @@ class Doc:
                 return "".join(out)
             out.append(s[i:m.start()])
             _, _, i = self.args(s, m.end(), nargs, optional)
+            if name in self.INLINE_MARKS:
+                bol = s.rfind("\n", 0, m.start()) + 1
+                eol = s.find("\n", i)
+                if eol > 0 and not s[bol:m.start()].strip() and not s[i:eol].strip():
+                    out[-1] = out[-1].rstrip(" \t")
+                    i = eol + 1
 
     def replace_macro(self, s, name, nargs, fn, optional=False):
         out, i = [], 0
@@ -204,8 +219,8 @@ class Doc:
             s = s[:i] + f"\x02F{m.group(1)}\x02" + s[i + 6:]
             s = s.replace(m.group(0), "", 1)
         self.footnotes = len(self.notes)
-        s = self.replace_macro(s, "Figure", 1, lambda o, a: f"\n\n\x03FIG:fig{a}\x03\n\n", optional=True)
-        s = self.replace_macro(s, "Diagram", 1, lambda o, a: f"\n\n\x03FIG:{a}\x03\n\n")
+        s = self.replace_macro(s, "Figure", 1, lambda o, a: f" \x03FIG:fig{a}\x03 ", optional=True)
+        s = self.replace_macro(s, "Diagram", 1, lambda o, a: f" \x03FIG:{a}\x03 ")
         # Poincaré's structure: Parts, unnumbered chapters, numbered sections
         s = self.replace_macro(s, "Part", 2, lambda o, a, b: f"\n\n\x04PART:Part {a.rstrip('.')}: {b.rstrip('.')}\x04\n\n")
         s = self.replace_macro(s, "OtherChapter", 1, lambda o, a: f"\n\n\x04H:{a.rstrip('.')}\x04\n\n")
@@ -281,12 +296,21 @@ class Doc:
 
     def split(self, text):
         sections, cur, pending_part = [], None, None
+        pending = []        # figures waiting for their paragraph to end
+
+        def flush():
+            if cur is not None:
+                cur["stream"].extend(("PLATE", f, "") for f in pending)
+            pending.clear()
         for par in re.split(r"\n\s*\n", text):
             raw = par.strip("\n")
             if not raw.strip():
                 continue
             is_block = raw.startswith("\t")
             t = raw if is_block else re.sub(r"\s+", " ", raw).strip()
+            # a display, or text running on from one, continues the paragraph
+            if pending and not t.startswith("\\[") and not re.match(r"[a-z]", t):
+                flush()
             pt = re.fullmatch(r"\x04PART:(.*?)\x04", t)
             if pt:
                 pending_part = re.sub(r"\s+", " ", pt.group(1)).strip()
@@ -304,10 +328,12 @@ class Doc:
             if sub:
                 cur["subtitle"] = sub.group(1)
                 continue
-            f = re.fullmatch(r"\x03FIG:(\w+)\x03", t)
-            if f:
-                cur["stream"].append(("PLATE", f.group(1), ""))
-                continue
+            # a figure the print set inside a paragraph follows the whole
+            # paragraph (and its notes), never cuts it in two
+            figs = re.findall(r"\x03FIG:(\w+)\x03", t)
+            t = re.sub(r"\s*\x03FIG:\w+\x03\s*", " ", t) if figs else t
+            if figs and not is_block:
+                t = t.strip()
             for lab in re.findall(r"\x01L(.*?)\x01", t):
                 self.labels[lab] = len(sections) - 1
             t = re.sub(r"\x01L.*?\x01", "", t)
@@ -326,6 +352,8 @@ class Doc:
                     self.labels[lab] = len(sections) - 1
                 note = re.sub(r"\x01L.*?\x01", "", note)
                 cur["stream"].append(("P", "Footnote: " + note))
+            pending += figs
+        flush()
         return sections
 
     def resolve_pagerefs(self, sections, name=lambda s: s["title"].split(":")[0]):
