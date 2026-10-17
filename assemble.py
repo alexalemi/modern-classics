@@ -918,6 +918,13 @@ def outside_tags(text, i):
     return text.rfind("<", 0, i) <= text.rfind(">", 0, i)
 
 
+def in_math(t, i):
+    """Is position i inside a <math> (or the epub's <m:math>) element?"""
+    opens = [m.start() for m in re.finditer(r"<(?:m:)?math\b", t[:i])]
+    closes = [m.start() for m in re.finditer(r"</(?:m:)?math>", t[:i])]
+    return bool(opens) and (not closes or opens[-1] > closes[-1])
+
+
 def extract_notes(t, ref, first=1):
     """Rendered HTML -> (HTML with each mark a link, [(k, blocks)]).
     `ref(k)` returns the mark's markup; notes are numbered k = first, first+1
@@ -935,7 +942,9 @@ def extract_notes(t, ref, first=1):
         printed and its note's link goes
       - at the end of the citing paragraph (or heading): where the note was
         read before, and the only place for the notes, most of them, whose
-        mark the source never kept."""
+        mark the source never kept, or kept inside a formula (Helmholtz's
+        partials table: a link in MathML is no link once se renders the
+        formula to an image, and its epub: prefix broke that render)."""
     notes, k, floor, prev = [], first, 0, None
     while (m := NOTE_OPEN.search(t, floor)):
         start, group, end = m.start(), [], m.start()
@@ -974,7 +983,8 @@ def extract_notes(t, ref, first=1):
         signed = [i for i, (mark, _) in enumerate(group) if mark and not mark.group(2)]
         if signed:
             hits = [h for h in re.finditer(r"[*⁎†‡§]+", before)
-                    if h.start() >= para and outside_tags(before, h.start())]
+                    if h.start() >= para and outside_tags(before, h.start())
+                    and not in_math(before, h.start())]
             want = [group[i][0].group(1).strip() for i in signed]
             if [h.group() for h in hits] == want:
                 pairs = zip(signed, hits)
